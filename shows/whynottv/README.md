@@ -29,8 +29,6 @@ sources:
     kind: podcast
     external_id: "1824936911"
     url: https://podcasts.apple.com/ca/podcast/whynottv-podcast/id1824936911
-rights:
-  transcript_distribution: unknown
 last_verified_at: 2026-08-05
 ---
 

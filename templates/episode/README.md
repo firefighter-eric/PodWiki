@@ -3,8 +3,13 @@ schema_version: 1
 kind: episode
 id: "showid:episode-key"
 show_id: showid
-episode_number: 1
+episode_key: episode-key
+episode_number: null
 slug: 001-short-slug
+release_type: regular
+numbering:
+  status: unknown
+  checked_at: YYYY-MM-DD
 title: 单集标题
 published_at: "YYYY-MM-DDTHH:MM:SS+08:00"
 duration_ms: 0
@@ -20,11 +25,6 @@ sources:
       aid: ""
       cid: ""
       page: 1
-rights:
-  source_notice: ""
-usage:
-  purpose: personal-research
-  redistribution_intended: false
 workflow:
   metadata: draft
   summary: empty
