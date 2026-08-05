@@ -9,8 +9,6 @@ status: unknown
 formats: []
 topics: []
 sources: []
-rights:
-  transcript_distribution: unknown
 last_verified_at: YYYY-MM-DD
 ---
 

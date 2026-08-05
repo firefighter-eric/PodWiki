@@ -3,8 +3,14 @@ schema_version: 1
 kind: episode
 id: "whynottv:004"
 show_id: whynottv
+episode_key: "004"
 episode_number: 4
 slug: 004-weng-jiayi
+release_type: regular
+numbering:
+  status: verified
+  checked_at: 2026-08-05
+  source: publisher-title
 title: "翁家翌：OpenAI，GPT，强化学习，Infra，后训练，天授，tuixue，开源，CMU，清华｜WhynotTV Podcast #4"
 published_at: "2026-01-17T15:09:39+08:00"
 duration_ms: 7365000
@@ -23,11 +29,6 @@ sources:
       aid: "115909138055436"
       cid: "35438791242"
       page: 1
-rights:
-  source_notice: "未经作者授权，禁止转载"
-usage:
-  purpose: personal-research
-  redistribution_intended: false
 workflow:
   metadata: verified
   summary: outline
@@ -61,6 +62,32 @@ asr_artifacts:
     git_ignored: false
     format: podwiki-refined-asr-json-v1
   renderer: scripts/render_asr_transcript.py
+asr_candidates:
+  - id: qwen3-asr-1.7b-8bit
+    selection_status: candidate
+    engine: mlx-audio
+    model: mlx-community/Qwen3-ASR-1.7B-8bit
+    aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
+    options:
+      language: Chinese
+      temperature: 0
+      max_tokens_per_chunk: 4096
+      chunk_duration_seconds: 240
+    generated_at: "2026-08-05T12:14:38.102466Z"
+    artifacts:
+      raw: asr/qwen3-asr/raw.json
+      aligned: asr/qwen3-asr/aligned.json
+      refined: asr/qwen3-asr/refined.json
+      transcript: asr/qwen3-asr/transcript.zh-CN.md
+    quality:
+      source_chunks: 31
+      alignment_items: 31245
+      refined_segments: 995
+      rendered_lines: 995
+    performance:
+      transcription_seconds: 318.534
+      alignment_seconds: 56.938
+    benchmark: docs/asr-benchmark.md
 local_audio_cache:
   path: .cache/media/whynottv/004-weng-jiayi/source.m4a
   git_ignored: true
@@ -110,10 +137,13 @@ last_verified_at: 2026-08-05
 - [ ] 确认主持人显示名称
 - [x] 检查平台字幕轨；当前视频未暴露独立字幕轨
 - [x] 下载独立音轨并完成本地机器转写
+- [x] 完成 Qwen3-ASR 与 Whisper 的首轮对比并保存完整候选结果
 - [ ] 校对专有名词、断句和识别错误
 - [ ] 增加主持人与嘉宾的说话人区分
 - [ ] 基于完整内容完成事实核查和正式总结
 
-## 权利说明
+## ASR 候选
 
-来源页面标注“未经作者授权，禁止转载”。本项目用途是个人研究记录，`redistribution_intended` 标记为 `false`；机器逐字稿仍与来源提示一起保留，避免丢失上下文。
+- 当前正式逐字稿：[Whisper 版本](./transcript.zh-CN.md)
+- 候选逐字稿：[Qwen3-ASR 版本](./asr/qwen3-asr/transcript.zh-CN.md)
+- 对比记录：[ASR 基准](../../../../docs/asr-benchmark.md)

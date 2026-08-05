@@ -22,7 +22,10 @@ REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
         "OpenAI",
     ),
     (re.compile(r"Open啊"), "OpenAI"),
-    (re.compile(r"(?:翁嘉义|温嘉义|翁家义|温家翌|Wong嘉义)"), "翁家翌"),
+    (
+        re.compile(r"(?:翁嘉义|翁嘉译|温嘉义|翁家义|温家翌|Wong嘉义)"),
+        "翁家翌",
+    ),
     (
         re.compile(
             r"(?<![A-Za-z0-9])(?:Chair|Chai)\s*GPT(?![A-Za-z0-9])",
@@ -73,11 +76,11 @@ REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
     ),
     (
         re.compile(
-            r"(?<![A-Za-z0-9])WhyNotTV(?![A-Za-z0-9])", re.IGNORECASE
+            r"(?<![A-Za-z0-9])Why\s*Not\s*TV(?![A-Za-z0-9])", re.IGNORECASE
         ),
         "WhynotTV",
     ),
-    (re.compile(r"(?:添售|天兽)"), "Tianshou"),
+    (re.compile(r"(?:添售|天兽|天授)"), "Tianshou"),
     (
         re.compile(r"(?<![A-Za-z0-9])Josman(?![A-Za-z0-9])", re.IGNORECASE),
         "John Schulman",
@@ -91,6 +94,7 @@ REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
 )
 TRAILING_PUNCTUATION_RE = re.compile(r"[，。！？；：、,.!?;:]$")
 LEADING_PUNCTUATION_RE = re.compile(r"^[，。！？；：、,.!?;:]")
+MAX_REVERSED_TIMESTAMP_JITTER_SECONDS = 0.250
 
 
 def parse_args() -> argparse.Namespace:
@@ -108,6 +112,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--episode-id", required=True)
     parser.add_argument("--title", required=True, help="Episode title")
+    parser.add_argument("--engine", default="mlx-whisper")
     parser.add_argument("--model", required=True)
     parser.add_argument("--language", default="zh-CN")
     return parser.parse_args()
@@ -134,6 +139,10 @@ def normalized(text: str) -> str:
     )
 
 
+def contains_lexical_content(text: str) -> bool:
+    return any(unicodedata.category(character)[0] in {"L", "N"} for character in text)
+
+
 def append_text(left: str, right: str) -> str:
     if not left:
         return right
@@ -154,20 +163,59 @@ def finite_number(value: Any, *, field: str, segment_index: int) -> float:
     return float(value)
 
 
+def normalize_timestamp_bounds(
+    *, start: Any, end: Any, segment_index: int
+) -> tuple[float, float]:
+    normalized_start = finite_number(
+        start, field="start", segment_index=segment_index
+    )
+    normalized_end = finite_number(end, field="end", segment_index=segment_index)
+
+    if normalized_start < 0 or normalized_end < 0:
+        raise ValueError(
+            f"segment {segment_index} has negative timestamp bounds: "
+            f"start={normalized_start!r}, end={normalized_end!r}"
+        )
+
+    reversed_by = normalized_start - normalized_end
+    if reversed_by > MAX_REVERSED_TIMESTAMP_JITTER_SECONDS:
+        raise ValueError(
+            f"segment {segment_index} end precedes start by "
+            f"{reversed_by:.3f}s, exceeding the "
+            f"{MAX_REVERSED_TIMESTAMP_JITTER_SECONDS:.3f}s tolerance"
+        )
+    if reversed_by > 0:
+        normalized_end = normalized_start
+
+    return normalized_start, normalized_end
+
+
 def refine_segments(raw_segments: list[dict[str, Any]]) -> list[dict[str, Any]]:
     refined: list[dict[str, Any]] = []
+    previous_start: float | None = None
 
     for source_index, segment in enumerate(raw_segments):
         text = clean_text(segment.get("text"))
-        if not text:
+        if not text or not contains_lexical_content(text):
             continue
 
-        start = finite_number(
-            segment.get("start"), field="start", segment_index=source_index
+        start, end = normalize_timestamp_bounds(
+            start=segment.get("start"),
+            end=segment.get("end"),
+            segment_index=source_index,
         )
-        end = finite_number(
-            segment.get("end"), field="end", segment_index=source_index
-        )
+        if previous_start is not None:
+            reversed_by = previous_start - start
+            if reversed_by > MAX_REVERSED_TIMESTAMP_JITTER_SECONDS:
+                raise ValueError(
+                    f"segment {source_index} start precedes the previous "
+                    f"segment start by {reversed_by:.3f}s, exceeding the "
+                    f"{MAX_REVERSED_TIMESTAMP_JITTER_SECONDS:.3f}s tolerance"
+                )
+            if reversed_by > 0:
+                start = previous_start
+                end = max(end, start)
+        previous_start = start
         source_id = segment.get("id", source_index)
 
         if refined and normalized(text) == normalized(refined[-1]["text"]):
@@ -207,7 +255,7 @@ def merge_blocks(refined_segments: list[dict[str, Any]]) -> list[dict[str, Any]]
             can_merge = False
 
         if current is not None and can_merge:
-            current["end"] = segment["end"]
+            current["end"] = max(current["end"], segment["end"])
             current["text"] = merged_text
             current["refined_segment_indexes"].append(refined_index)
         else:
@@ -266,7 +314,7 @@ def main() -> int:
         "language": args.language,
         "source": {
             "raw_asr_path": args.input.as_posix(),
-            "engine": "mlx-whisper",
+            "engine": args.engine,
             "model": args.model,
         },
         "generated_at": generated_at,
