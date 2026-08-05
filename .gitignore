@@ -1,0 +1,13 @@
+.DS_Store
+.cache/
+.venv/
+__pycache__/
+*.py[cod]
+
+*.aac
+*.flac
+*.m4a
+*.mp3
+*.mp4
+*.opus
+*.wav
