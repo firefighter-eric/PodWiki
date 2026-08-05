@@ -1,0 +1,2 @@
+shows/**/transcript.*.md whitespace=-blank-at-eol
+templates/episode/transcript.*.md whitespace=-blank-at-eol
