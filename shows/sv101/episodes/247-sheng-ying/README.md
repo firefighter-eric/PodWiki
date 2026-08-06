@@ -13,6 +13,7 @@ numbering:
   source: publisher-episode-page
   url: https://sv101.fireside.fm/260
 title: "对话盛颖：xAI，Infra的浪漫，SGLang，开源，平权与“甄嬛传”【101视频播客】"
+navigation_title: "盛颖 - SGLang、Infra 产品观与开源"
 published_at: "2026-08-05T12:30:00+08:00"
 duration_ms: 6386000
 language: zh-CN

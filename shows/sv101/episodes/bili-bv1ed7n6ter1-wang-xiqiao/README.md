@@ -13,6 +13,7 @@ numbering:
   source: publisher-rss
   note: "截至 2026-08-06，发布者官方 RSS 未收录这条 Bilibili 新视频，无法取得正式期号或 RSS GUID，保留 episode_number: null"
 title: "对话王熙乔：AI时代的教育者、十年沉浮，与人类文明的下一步【101视频播客】"
+navigation_title: "王熙乔 - AI 时代的教育与文明"
 published_at: "2026-06-27T13:06:06+08:00"
 duration_ms: 8705237
 language: zh-CN

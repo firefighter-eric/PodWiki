@@ -12,6 +12,7 @@ numbering:
   checked_at: 2026-08-06
   source: publisher-rss
 title: "朱啸虎现实主义故事的第三次连载：人工智能的盛筵与泡泡"
+navigation_title: "朱啸虎 - AI 应用、商业化与泡沫判断"
 published_at: "2025-12-09T22:42:24+08:00"
 duration_ms: 2880000
 language: zh-CN

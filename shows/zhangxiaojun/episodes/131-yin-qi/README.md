@@ -12,6 +12,7 @@ numbering:
   checked_at: 2026-08-06
   source: publisher-rss
 title: "印奇出任阶跃星辰董事长的访谈：聪明人的诱惑、取舍与超长链路淘汰赛"
+navigation_title: "印奇 - 基础模型、终端闭环与长期主义"
 published_at: "2026-01-26T09:30:13+08:00"
 duration_ms: 7287000
 language: zh-CN

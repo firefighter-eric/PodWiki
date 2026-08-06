@@ -210,6 +210,9 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
             </div>
 
             <div id="search-results" className="search-results" role="listbox">
+              {loading ? (
+                <p className="search-state" aria-hidden="true">正在搜索…</p>
+              ) : null}
               {failed ? <p className="search-state">搜索暂时不可用，请稍后再试。</p> : null}
               {!failed && deferredQuery && !loading && items.length === 0 ? (
                 <p className="search-state">没有找到相关内容，试试人物名或更短的关键词。</p>

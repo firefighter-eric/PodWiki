@@ -20,7 +20,7 @@ describe("PodWiki content loader", () => {
       "luoyonghao",
       "whynottv",
     ]);
-    expect(episodes).toHaveLength(21);
+    expect(episodes).toHaveLength(31);
     expect(episodes.every((episode) => episode.summaryRaw && episode.transcriptSegments.length > 0)).toBe(true);
   });
 
@@ -31,6 +31,18 @@ describe("PodWiki content loader", () => {
     );
     expect(episode?.episodeNumber).toBeNull();
     expect(episode?.episodeKey).toBe("bili-bv1nb3u6teru");
+  });
+
+  it("provides concise person-topic titles for every navigation item", async () => {
+    const episodes = await getEpisodes();
+
+    for (const episode of episodes) {
+      const guestNames = episode.guests.map((guest) => guest.name).join("、");
+      expect(guestNames).not.toBe("");
+      expect(episode.navigationTitle).toMatch(/^.+ - .+$/u);
+      expect(episode.navigationTitle.startsWith(`${guestNames} - `)).toBe(true);
+      expect(episode.navigationTitle.length).toBeLessThanOrEqual(40);
+    }
   });
 
   it("returns summary and timestamped transcript search results", async () => {
