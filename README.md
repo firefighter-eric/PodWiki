@@ -4,6 +4,25 @@ PodWiki 是一个使用 Markdown 构建的播客 Wiki，收录值得长期阅读
 
 项目优先服务播客内容的发现与阅读：节目页提供单集索引，单集页记录来源与处理状态，独立的总结和逐字稿用于快速理解与深入检索。
 
+## Web 阅读器
+
+`apps/web` 是基于 Next.js App Router 的浅色阅读器，直接从仓库中的节目 Markdown 构建页面，提供节目切换、全文搜索、章节定位、摘要/逐字稿切换和本地阅读设置。当前版本专注文字阅读，不包含音频播放器。
+
+```bash
+cd apps/web
+npm install
+npm run dev
+```
+
+提交前可运行完整门禁：
+
+```bash
+cd apps/web
+npm run check
+```
+
+部署到 Vercel 时将 Root Directory 设为 `apps/web`，并保持构建步骤可包含 Root Directory 之外的源码。默认内容目录是仓库根目录下的 `shows/`；非标准目录结构可通过 `PODWIKI_REPOSITORY_ROOT` 指定仓库根目录。
+
 ## 收录播客
 
 | 播客 | 简介 | 节目页 |
