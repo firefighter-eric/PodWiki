@@ -7,7 +7,9 @@
   "generated_at": "2026-08-05T12:13:40.709710Z",
   "audio": {
     "duration_seconds": 7364.975,
-    "sample_rate_hz": 16000
+    "sample_rate_hz": 16000,
+    "size_bytes": 99676986,
+    "sha256": "9eb8aab184a964f3ff8205a505c26a1acb957d9995bb8d61f0fbc6c1b252b11f"
   },
   "options": {
     "temperature": 0.0,

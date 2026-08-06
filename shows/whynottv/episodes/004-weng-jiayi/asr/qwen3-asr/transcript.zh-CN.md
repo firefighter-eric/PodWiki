@@ -1,4 +1,4 @@
-# 翁家翌：OpenAI，GPT，强化学习，Infra，后训练，天授，tuixue，开源，CMU，清华｜WhynotTV Podcast #4
+# 翁家翌：OpenAI，GPT，强化学习，Infra，后训练，天授，tuixue，开源，CMU，清华｜WhynotTV Podcast
 
 [00:00:00] OpenAI很多这个model release都有我的名字，这个就是因为我在OpenAI的内部搭了整个post training的RL infra，所以整个post training的RL infra你是最核心的贡献者了。  
 [00:00:11] 是的，因为我觉得应该打破信息差，信息差是一个就是如果你在清华生存的话是一个很有用的东西，但是我应我觉得每个人都应该平等的拥有这个信息，哪怕当时有了现在的认知，那么还是做不出来。  

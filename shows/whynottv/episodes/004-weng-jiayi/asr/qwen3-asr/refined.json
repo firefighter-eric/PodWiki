@@ -4,11 +4,16 @@
   "episode_id": "whynottv:004",
   "language": "zh-CN",
   "source": {
-    "raw_asr_path": "shows/whynottv/episodes/004-weng-jiayi/asr/qwen3-asr/aligned.json",
+    "input_asr_path": "shows/whynottv/episodes/004-weng-jiayi/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "047743e985104cd370e08d2281dc999f8fa14b6878c88f49e255a3be58b8b9e1",
     "engine": "mlx-audio",
     "model": "mlx-community/Qwen3-ASR-1.7B-8bit"
   },
-  "generated_at": "2026-08-05T12:15:06.174934Z",
+  "rendered_transcript": {
+    "path": "shows/whynottv/episodes/004-weng-jiayi/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "97857974d08e4d9ccfe611867b7a6eaacd9721adf2efe867304e61aded8021fd"
+  },
+  "generated_at": "2026-08-06T03:56:30.162831Z",
   "statistics": {
     "source_segments": 995,
     "refined_segments": 995,

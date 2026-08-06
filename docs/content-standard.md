@@ -11,10 +11,18 @@ shows/<show_id>/
 ├── README.md
 └── episodes/<episode_folder>/
     ├── README.md
+    ├── summary.<language>.md
     ├── transcript.<language>.md
     └── asr/
-        ├── raw.json
-        └── refined.json
+        ├── qwen3-asr/
+        │   ├── raw.json
+        │   ├── aligned.json
+        │   ├── refined.json
+        │   └── transcript.<language>.md
+        └── whisper/                 # 仅在已有基线时保留
+            ├── raw.json
+            ├── refined.json
+            └── transcript.<language>.md
 
 .cache/media/<show_id>/<episode_folder>/
 ├── source.<audio-extension>
@@ -24,14 +32,17 @@ shows/<show_id>/
 | 文件 | 职责 | 是否人工维护 |
 | --- | --- | --- |
 | 节目 `README.md` | 节目元数据与介绍 | 是 |
-| 单集 `README.md` | 单集元数据、总结与章节 | 是 |
+| 单集 `README.md` | 单集元数据、来源概览、章节与处理状态 | 是 |
+| `summary.<language>.md` | 基于完整内容的结构化总结 | 是 |
 | `transcript.<language>.md` | 正式逐字稿或机器初稿 | 是 |
-| `asr/raw.json` | ASR 引擎原始输出，作为可追溯输入保留 | 否，不修改 |
-| `asr/refined.json` | 确定性清洗、去重和合并后的结构化结果 | 脚本生成 |
+| `asr/<run_id>/raw.json` | ASR 引擎原始输出和音频身份，作为可续跑检查点保留 | 否，不修改 |
+| `asr/<run_id>/aligned.json` | 对齐器输出、句级时间戳和 raw/audio SHA-256 | 脚本生成 |
+| `asr/<run_id>/refined.json` | 确定性清洗、去重和渲染来源的结构化结果 | 脚本生成 |
+| `asr/<run_id>/transcript.<language>.md` | 某次 ASR run 的可读 Markdown | 脚本生成 |
 | `.cache/**/source.*` | 用于转写的本地音频或视频 | 否 |
 | `.cache/**/source.metadata.json` | 来源标识、媒体探测结果与 SHA-256 sidecar | 脚本生成 |
 
-原始 ASR、refined ASR 和最终 Markdown 都提交到 Git：前两者用于复现与调试，Markdown 用于日常阅读和人工校对。`.cache/` 整体不提交 Git，只保存可重新下载或体积较大的媒体、来源 sidecar 与临时文件。
+raw、aligned、refined ASR 和最终 Markdown 都提交到 Git：JSON 用于复现、续跑与调试，Markdown 用于日常阅读和人工校对。`.cache/` 整体不提交 Git，只保存可重新下载或体积较大的媒体、来源 sidecar、模型别名、日志与临时文件。
 
 暂不同时维护 `show.yaml`、`episode.yaml` 或正式 JSONL，避免同一信息出现多个主数据源。将来需要搜索或 API 时，从 Markdown front matter 和逐字稿生成结构化索引。
 
@@ -75,6 +86,9 @@ episode_key: "004"
 `null`，不得用抓取顺序、输入顺序、平台合集位置或发布日期推导。无正式
 期号的 Bilibili 单集使用稳定键 `bili-<lowercase-bvid>`，目录仍可追加人物
 slug，例如：
+
+`episode_number` 与标题分开保存。单集 `title`、Markdown 一级标题和 Wiki
+索引展示标题均不得拼接 `#<number>`、`<number>.` 等期号前缀或后缀。
 
 ```yaml
 id: "zhangxiaojun:bili-bv1nb3u6teru"
@@ -149,6 +163,50 @@ workflow:
 
 总结必须说明依据是完整逐字稿、平台简介还是平台章节，不能把基于简介的概览标成完整内容总结。
 
+### 独立总结文件
+
+发布者简介和章节整理的 `outline` 保留在单集 `README.md`，用于在完整逐字稿
+尚未生成时提供来源概览。基于完整内容形成的 `draft` 或 `reviewed` 总结保存为
+独立的 `summary.<language>.md`，并在单集 front matter 中记录稳定路径：
+
+```yaml
+workflow:
+  summary: draft
+summary_basis:
+  - publisher-description
+  - publisher-chapters
+  - complete-machine-transcript
+summary:
+  path: summary.zh-CN.md
+  language: zh-CN
+  source_transcript:
+    path: transcript.zh-CN.md
+    engine: mlx-audio
+    model: mlx-community/Qwen3-ASR-1.7B-8bit
+    selection_status: selected
+    sha256: "<source-transcript-sha256>"
+```
+
+总结文件采用以下阅读层级：
+
+1. 一句话总结；
+2. 为什么值得听；
+3. 按“嘉宾主张、依据与经历、边界、原文定位”组织的核心观点；
+4. 面向快速阅读的整体总结；
+5. 主题导航；
+6. 事实边界与待核实事项。
+
+`draft` 可以依据完整机器逐字稿生成，但必须明确说明尚未核听。只有在总结所
+引用的关键片段已经回听、专有名词已经校对，并且高影响事实已经完成必要的
+交叉核查后，才能标记为 `reviewed`；这不等同于整份逐字稿已经逐字审核。
+
+`summary.source_transcript` 必须记录总结实际使用的逐字稿，而不是事后改写为
+当前默认模型。总结中的时间码默认必须来自当前正式逐字稿。若正式 ASR 引擎
+切换而尚未迁移总结时间码，必须在总结和单集元数据中明确链接其归档来源逐字
+稿，并把 `selection_status` 记为 `superseded`，不能声称仍指向当前正式稿。
+涉及个人回忆、观点、预测和外部事实时，应明确区分嘉宾陈述、发布者材料、
+PodWiki 归纳和独立核查结果。
+
 ## 6. 逐字稿格式
 
 逐字稿采用紧凑的字幕行格式，每个 refined ASR segment 独占一行：
@@ -174,9 +232,10 @@ workflow:
 
 1. 检查平台人工字幕或自动字幕。
 2. 有权处理且没有字幕时，再从公开媒体生成 ASR。
-3. 说话人识别与专有名词校对。
-4. 人工审核后写入正式逐字稿。
-5. 画面硬字幕 OCR 仅作为最后手段。
+3. 校验并渲染根目录机器初稿，状态标记为 `machine`。
+4. 说话人识别与专有名词校对。
+5. 人工审核后把状态改为 `reviewed`。
+6. 画面硬字幕 OCR 仅作为最后手段。
 
 首版不处理会员、付费、地区限制或其他访问控制，不批量抓取整个账号。
 
@@ -190,18 +249,28 @@ workflow:
 transcript:
   path: transcript.zh-CN.md
   acquisition_method: audio-asr
-  asr_script: scripts/transcribe_audio.py
-  engine: mlx-whisper
-  model: mlx-community/whisper-large-v3-turbo-q4
+  asr_script: scripts/transcribe_qwen3_asr.py
+  engine: mlx-audio
+  model: mlx-community/Qwen3-ASR-1.7B-8bit
+  aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
   options:
-    language: zh
+    language: Chinese
     temperature: 0
-    word_timestamps: false
+    max_tokens_per_chunk: 4096
+    chunk_duration_seconds: 240
+    max_sentence_characters: 160
   generated_at: "YYYY-MM-DDTHH:MM:SSZ"
   quality:
-    source_segments: 0
+    source_chunks: 0
+    aligned_chunks: 0
+    alignment_items: 0
+    sentence_segments: 0
     refined_segments: 0
+    rendered_blocks: 0
     rendered_lines: 0
+  performance:
+    transcription_seconds: 0
+    alignment_seconds: 0
 ```
 
 逐字稿不包含 YAML front matter。语言、来源、转写状态、模型、生成时间和质量统计等信息只保存在单集 `README.md`。
@@ -218,37 +287,84 @@ transcript:
 
 ### ASR 产物层级
 
-1. `raw.json`：ASR 引擎原始结果，不做内容修改；部分引擎可能输出 `NaN` 等非标准 JSON 常量，refine 脚本读取时统一转为 `null`。
-2. `refined.json`：保留清洗后的 segment、可选合并 block，以及它们与原始 segment 的索引映射。
-3. `transcript.<language>.md`：由 refined segment 逐行渲染，供人阅读、校对和版本管理。
+1. `raw.json`：ASR 引擎原始结果和音频 size/SHA-256，不做内容修改，也是续跑检查点。
+2. `aligned.json`：ForcedAligner 输出、逐句时间戳、音频 SHA-256 和 raw JSON SHA-256。
+3. `refined.json`：保留清洗后的 segment、可选合并 block、输入 ASR SHA-256，以及它们与源 segment 的索引映射。
+4. `transcript.<language>.md`：由 refined segment 逐行渲染；其 SHA-256 写回 refined JSON，供人阅读、校对和版本管理。
 
-`scripts/transcribe_audio.py` 使用 MLX Whisper 把本地音频写成格式化的原始 JSON。该步骤通过 uv 的 `asr` 依赖组运行，仅支持 Apple Silicon Mac。
+三层 JSON 的 lineage 字段固定为以下结构。
 
-`scripts/render_asr_transcript.py` 必须在同一次运行中生成 refined JSON 和 Markdown，避免两份结果使用不同的清洗逻辑。
+`raw.json`：
 
-### 多模型候选
+```json
+{
+  "audio": {
+    "size_bytes": 0,
+    "sha256": "<source-audio-sha256>"
+  }
+}
+```
 
-同一单集对比多个 ASR 模型时，不覆盖当前正式产物。候选模型使用稳定的
-`run_id` 保存在独立目录：
+`aligned.json`：
+
+```json
+{
+  "source": {
+    "raw_asr_path": "shows/<show>/episodes/<episode>/asr/qwen3-asr/raw.json",
+    "audio_sha256": "<source-audio-sha256>",
+    "raw_asr_sha256": "<raw-json-sha256>"
+  }
+}
+```
+
+`refined.json`：
+
+```json
+{
+  "source": {
+    "input_asr_path": "shows/<show>/episodes/<episode>/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "<aligned-json-sha256>"
+  },
+  "rendered_transcript": {
+    "path": "shows/<show>/episodes/<episode>/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "<run-markdown-sha256>"
+  }
+}
+```
+
+所有记录到 Git 的路径必须是仓库相对 POSIX 路径，不能写入开发者机器的绝对
+路径。SHA-256 使用 64 位小写十六进制；JSON 必须是严格 JSON，不能包含重复
+key、`NaN` 或 `Infinity`。
+
+`scripts/transcribe_qwen3_asr.py` 使用 Qwen3-ASR 生成 raw JSON，再用 Qwen3-ForcedAligner 生成 aligned JSON。有效 raw 存在而 aligned 缺失时只重跑对齐；两者完整且身份、参数和 SHA-256 均匹配时直接跳过。长音频必须逐集、逐子进程串行运行，以子进程退出作为 Metal/unified memory 的回收边界。
+
+`scripts/render_asr_transcript.py` 必须在同一次运行中生成 refined JSON 和 Markdown，使用临时文件和哈希关联两份产物，避免结果使用不同的清洗逻辑。
+
+### 多模型运行记录
+
+同一单集的每个 ASR 模型使用稳定 `run_id` 保存在独立目录；选中模型的
+Markdown 同时复制到单集根目录，已有基线不删除：
 
 ```text
 asr/
-├── raw.json
-├── refined.json
-└── qwen3-asr/
+├── qwen3-asr/
+│   ├── raw.json
+│   ├── aligned.json
+│   ├── refined.json
+│   └── transcript.zh-CN.md
+└── whisper/
     ├── raw.json
-    ├── aligned.json
     ├── refined.json
     └── transcript.zh-CN.md
 ```
 
 单集根目录的 `transcript.<language>.md` 及 `transcript` front matter 始终表示
-当前选中的正式版本。候选结果记录在 `asr_candidates`，例如：
+当前选中的正式版本。各次运行记录在 `asr_runs`，例如：
 
 ```yaml
-asr_candidates:
+asr_runs:
   - id: qwen3-asr-1.7b-8bit
-    selection_status: candidate
+    selection_status: selected
     engine: mlx-audio
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
@@ -259,6 +375,7 @@ asr_candidates:
       transcript: asr/qwen3-asr/transcript.zh-CN.md
 ```
 
-`selection_status` 允许值为 `candidate`、`selected`、`rejected`。候选被选中后，
-先更新正式 Markdown 和 `transcript` 元数据，再将状态改为 `selected`；其他
-引擎结果继续保留以便追溯。
+`selection_status` 允许值为 `candidate`、`selected`、`superseded`、`rejected`。
+只有 raw、aligned、refined、run Markdown 及其哈希全部通过校验后，才能把 run
+Markdown 复制为根目录正式逐字稿并标记 `selected`。先前正式引擎改为
+`superseded` 并继续保留，以便追溯和比较。

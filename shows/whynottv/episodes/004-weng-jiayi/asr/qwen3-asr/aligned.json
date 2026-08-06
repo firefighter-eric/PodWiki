@@ -6,9 +6,14 @@
     "raw_asr_path": "shows/whynottv/episodes/004-weng-jiayi/asr/qwen3-asr/raw.json",
     "engine": "mlx-audio",
     "model": "mlx-community/Qwen3-ASR-1.7B-8bit",
-    "aligner": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
+    "aligner": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit",
+    "audio_sha256": "9eb8aab184a964f3ff8205a505c26a1acb957d9995bb8d61f0fbc6c1b252b11f",
+    "raw_asr_sha256": "abf19a7b58155ceec6c817da3b80815f581d788b8011d29fef84a1f550d973d1"
   },
   "generated_at": "2026-08-05T12:14:38.102466Z",
+  "options": {
+    "max_sentence_characters": 160
+  },
   "performance": {
     "aligner_load_seconds": 0.304,
     "alignment_seconds": 56.938

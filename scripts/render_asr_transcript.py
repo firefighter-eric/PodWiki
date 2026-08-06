@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
-"""Refine raw MLX Whisper output and render a readable Markdown transcript."""
+"""Refine structured ASR output and render a readable Markdown transcript."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
+import os
 import re
+import tempfile
 import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
@@ -103,7 +109,9 @@ def parse_args() -> argparse.Namespace:
             "Preserve a refined JSON artifact and render it as transcript Markdown."
         )
     )
-    parser.add_argument("--input", required=True, type=Path, help="Raw ASR JSON")
+    parser.add_argument(
+        "--input", required=True, type=Path, help="Raw or aligned ASR JSON"
+    )
     parser.add_argument(
         "--refined-output", required=True, type=Path, help="Refined ASR JSON"
     )
@@ -293,8 +301,72 @@ def render_markdown(
 """
 
 
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def repository_path(path: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        return resolved.as_posix()
+
+
+def sha256_text(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def write_artifact_pair_atomically(
+    *, refined_path: Path, refined_text: str, transcript_path: Path, transcript_text: str
+) -> None:
+    if refined_path.resolve() == transcript_path.resolve():
+        raise ValueError("refined JSON and transcript paths must be distinct")
+    temporary_paths: dict[str, Path] = {}
+    try:
+        for label, path, text in (
+            ("refined", refined_path, refined_text),
+            ("transcript", transcript_path, transcript_text),
+        ):
+            path.parent.mkdir(parents=True, exist_ok=True)
+            with tempfile.NamedTemporaryFile(
+                mode="w",
+                encoding="utf-8",
+                dir=path.parent,
+                prefix=f".podwiki-{path.name}.",
+                suffix=".tmp",
+                delete=False,
+            ) as stream:
+                stream.write(text)
+                stream.flush()
+                os.fsync(stream.fileno())
+                temporary_paths[label] = Path(stream.name)
+
+        temporary_paths["transcript"].replace(transcript_path)
+        transcript_path.chmod(0o644)
+        temporary_paths.pop("transcript")
+        temporary_paths["refined"].replace(refined_path)
+        refined_path.chmod(0o644)
+        temporary_paths.pop("refined")
+    finally:
+        for temporary_path in temporary_paths.values():
+            temporary_path.unlink(missing_ok=True)
+
+
 def main() -> int:
     args = parse_args()
+    if len(
+        {
+            args.input.resolve(),
+            args.refined_output.resolve(),
+            args.output.resolve(),
+        }
+    ) != 3:
+        raise ValueError("input, refined output, and transcript paths must be distinct")
     raw = json.loads(
         args.input.read_text(encoding="utf-8"),
         parse_constant=lambda _constant: None,
@@ -306,6 +378,10 @@ def main() -> int:
     refined_segments = refine_segments(raw_segments)
     blocks = merge_blocks(refined_segments)
     generated_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    markdown = render_markdown(
+        refined_segments=refined_segments,
+        title=args.title,
+    )
 
     refined_document = {
         "schema_version": 1,
@@ -313,9 +389,14 @@ def main() -> int:
         "episode_id": args.episode_id,
         "language": args.language,
         "source": {
-            "raw_asr_path": args.input.as_posix(),
+            "input_asr_path": repository_path(args.input),
+            "input_asr_sha256": sha256_file(args.input),
             "engine": args.engine,
             "model": args.model,
+        },
+        "rendered_transcript": {
+            "path": repository_path(args.output),
+            "sha256": sha256_text(markdown),
         },
         "generated_at": generated_at,
         "statistics": {
@@ -328,24 +409,21 @@ def main() -> int:
         "blocks": blocks,
     }
 
-    args.refined_output.parent.mkdir(parents=True, exist_ok=True)
-    args.refined_output.write_text(
+    refined_text = (
         json.dumps(
             refined_document,
             ensure_ascii=False,
             indent=2,
             allow_nan=False,
         )
-        + "\n",
-        encoding="utf-8",
+        + "\n"
     )
-
-    markdown = render_markdown(
-        refined_segments=refined_segments,
-        title=args.title,
+    write_artifact_pair_atomically(
+        refined_path=args.refined_output,
+        refined_text=refined_text,
+        transcript_path=args.output,
+        transcript_text=markdown,
     )
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(markdown, encoding="utf-8")
 
     print(
         json.dumps(

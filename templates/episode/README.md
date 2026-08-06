@@ -30,18 +30,31 @@ workflow:
   summary: empty
   transcript: not-started
 summary_basis: []
+summary:
+  path: summary.zh-CN.md
+  language: zh-CN
+  source_transcript: null
 transcript:
   path: transcript.zh-CN.md
 asr_artifacts:
   raw:
-    path: asr/raw.json
+    path: asr/qwen3-asr/raw.json
     git_ignored: false
-    format: engine-native-json
+    format: podwiki-raw-asr-json-v1
+  aligned:
+    path: asr/qwen3-asr/aligned.json
+    git_ignored: false
+    format: podwiki-aligned-asr-json-v1
   refined:
-    path: asr/refined.json
+    path: asr/qwen3-asr/refined.json
     git_ignored: false
     format: podwiki-refined-asr-json-v1
+  transcript:
+    path: asr/qwen3-asr/transcript.zh-CN.md
+    git_ignored: false
+    format: podwiki-transcript-markdown-v1
   renderer: scripts/render_asr_transcript.py
+asr_runs: []
 last_verified_at: YYYY-MM-DD
 ---
 
@@ -50,6 +63,8 @@ last_verified_at: YYYY-MM-DD
 > 说明总结依据。
 
 ## 单集信息
+
+- 总结：[查看总结](./summary.zh-CN.md)
 
 ## 内容概览
 
