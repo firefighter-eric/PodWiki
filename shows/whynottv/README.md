@@ -29,7 +29,7 @@ sources:
     kind: podcast
     external_id: "1824936911"
     url: https://podcasts.apple.com/ca/podcast/whynottv-podcast/id1824936911
-last_verified_at: 2026-08-05
+last_verified_at: 2026-08-06
 ---
 
 # WhynotTV Podcast
@@ -38,4 +38,6 @@ last_verified_at: 2026-08-05
 
 ## 单集
 
-- [#4 翁家翌：OpenAI、强化学习、Infra 与后训练](./episodes/004-weng-jiayi/)
+| 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
+| --- | --- | --- | --- | --- |
+| [翁家翌：OpenAI、强化学习、Infra 与后训练](https://www.bilibili.com/video/BV1darmBcE4A/) | WhynotTV | 2026-01-17 | [总结](./episodes/004-weng-jiayi/summary.zh-CN.md) | [逐字稿](./episodes/004-weng-jiayi/transcript.zh-CN.md) |

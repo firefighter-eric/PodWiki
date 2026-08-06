@@ -11,7 +11,7 @@ numbering:
   status: verified
   checked_at: 2026-08-05
   source: publisher-rss
-title: "148. 对游凯超3小时访谈：开源Infra、和模型Co-design 、“如果vLLM失败，我们会后悔一辈子”"
+title: "对游凯超3小时访谈：开源Infra、和模型Co-design 、“如果vLLM失败，我们会后悔一辈子”"
 published_at: "2026-07-28T08:00:00+08:00"
 duration_ms: 10826000
 language: zh-CN
@@ -41,24 +41,77 @@ sources:
       page: 1
 workflow:
   metadata: verified
-  summary: outline
-  transcript: source-acquired
+  summary: draft
+  transcript: machine
 summary_basis:
   - publisher-description
   - publisher-chapters
+  - complete-machine-transcript
+summary:
+  path: summary.zh-CN.md
+  language: zh-CN
+  source_transcript:
+    path: transcript.zh-CN.md
+    engine: mlx-audio
+    model: mlx-community/Qwen3-ASR-1.7B-8bit
+    selection_status: selected
+    sha256: 3c44db870658466a8f193b36a4d0f073e1dbba8cd1b83b34d344d2a3dc6d58ff
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: not-exposed-as-public-track
+  acquisition_method: audio-asr
+  asr_script: scripts/transcribe_qwen3_asr.py
+  engine: mlx-audio
+  model: mlx-community/Qwen3-ASR-1.7B-8bit
+  aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
+  options:
+    language: Chinese
+    temperature: 0
+    max_tokens_per_chunk: 4096
+    chunk_duration_seconds: 240
+    max_sentence_characters: 160
+  generated_at: "2026-08-06T04:21:00.821450Z"
+  quality:
+    source_chunks: 45
+    aligned_chunks: 45
+    alignment_items: 55701
+    sentence_segments: 1608
+    refined_segments: 1608
+    rendered_blocks: 358
+    rendered_lines: 1608
+  performance:
+    transcription_seconds: 385.432
+    alignment_seconds: 79.089
 asr_artifacts:
   raw:
-    path: asr/raw.json
+    path: asr/qwen3-asr/raw.json
     git_ignored: false
-    format: engine-native-json
+    format: podwiki-raw-asr-json-v1
+  aligned:
+    path: asr/qwen3-asr/aligned.json
+    git_ignored: false
+    format: podwiki-aligned-asr-json-v1
   refined:
-    path: asr/refined.json
+    path: asr/qwen3-asr/refined.json
     git_ignored: false
     format: podwiki-refined-asr-json-v1
+  transcript:
+    path: asr/qwen3-asr/transcript.zh-CN.md
+    git_ignored: false
+    format: podwiki-transcript-markdown-v1
   renderer: scripts/render_asr_transcript.py
+asr_runs:
+  - id: qwen3-asr-1.7b-8bit
+    selection_status: selected
+    engine: mlx-audio
+    model: mlx-community/Qwen3-ASR-1.7B-8bit
+    aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
+    generated_at: "2026-08-06T04:21:00.821450Z"
+    artifacts:
+      raw: asr/qwen3-asr/raw.json
+      aligned: asr/qwen3-asr/aligned.json
+      refined: asr/qwen3-asr/refined.json
+      transcript: asr/qwen3-asr/transcript.zh-CN.md
 local_audio_cache:
   path: .cache/media/zhangxiaojun/148-you-kaichao/source.m4a
   metadata_path: .cache/media/zhangxiaojun/148-you-kaichao/source.metadata.json
@@ -71,16 +124,16 @@ local_audio_cache:
   sha256: b3b2e1c16cb04f8433530ed5928e6287da85b4a73b0a57f20876b451e5504f29
   acquired_at: "2026-08-05T12:00:46.159856Z"
   verified_at: "2026-08-05T12:00:46.159856Z"
-last_verified_at: 2026-08-05
+last_verified_at: 2026-08-06
 ---
 
-# 148. 对游凯超 3 小时访谈：开源 Infra、模型 Co-design 与 vLLM
+# 对游凯超 3 小时访谈：开源 Infra、模型 Co-design 与 vLLM
 
-> 当前内容根据发布者 RSS 与 Bilibili 简介及章节整理，是结构化概览，不是基于完整逐字稿完成的总结。
+> 本页保留发布者简介与章节形成的结构化概览；另有依据完整机器逐字稿整理的总结草稿，尚未完成关键片段核听和独立事实核查。
 
 ## 单集信息
 
-- 节目：张小珺Jùn｜商业访谈录 #148
+- 节目：张小珺商业访谈录 #148
 - 主持人：张小珺
 - 嘉宾：游凯超，Inferact 联合创始人兼首席科学家
 - 发布时间：2026-07-28 08:00（UTC+8）
@@ -90,6 +143,8 @@ last_verified_at: 2026-08-05
 - 来源：[发布者 RSS 单集页](https://www.xiaoyuzhoufm.com/episode/6a66ed17a3fec224d5a3f744)、[Bilibili 视频](https://www.bilibili.com/video/BV18Qg96YE1W/)
 - 字幕状态：匿名访问未发现独立公开字幕轨；播放器元数据提示字幕能力需要登录，但未证明登录后存在字幕
 - 本地音频：AAC、48 kHz、双声道、164,063,328 字节；sidecar 已记录 SHA-256 和来源身份
+- 逐字稿：[Qwen3-ASR 机器初稿](./transcript.zh-CN.md)
+- 总结：[核心观点与 5 分钟版](./summary.zh-CN.md)
 
 ## 内容概览
 
@@ -127,7 +182,8 @@ last_verified_at: 2026-08-05
 - [x] 核对 Bilibili 视频的 aid、cid 和 page
 - [x] 检查匿名访问可见的平台字幕轨
 - [x] 获取并验证本地独立音轨及来源 sidecar
-- [ ] 运行机器转写并生成逐字稿
+- [x] 使用 Qwen3-ASR 与 ForcedAligner 生成机器逐字稿
 - [ ] 校对专有名词、断句和识别错误
 - [ ] 增加主持人与嘉宾的说话人区分
-- [ ] 基于完整内容完成事实核查和正式总结
+- [x] 基于完整机器逐字稿生成总结草稿
+- [ ] 核听总结引用的关键片段并完成必要事实核查

@@ -1,15 +1,27 @@
 from __future__ import annotations
 
 import copy
+import contextlib
+import hashlib
+import io
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from render_asr_transcript import refine_segments  # noqa: E402
+from render_asr_transcript import (  # noqa: E402
+    main,
+    refine_segments,
+    repository_path,
+    sha256_text,
+    write_artifact_pair_atomically,
+)
 
 
 class RefineSegmentTimestampTests(unittest.TestCase):
@@ -144,6 +156,94 @@ class RefineSegmentContentTests(unittest.TestCase):
                     ),
                     [],
                 )
+
+
+class AtomicArtifactTests(unittest.TestCase):
+    def test_writes_matching_refined_and_transcript_files(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            refined_path = root / "asr" / "refined.json"
+            transcript_path = root / "transcript.zh-CN.md"
+            transcript = "# 标题\n\n[00:00:00] 内容  \n"
+
+            write_artifact_pair_atomically(
+                refined_path=refined_path,
+                refined_text='{"kind":"refined-asr"}\n',
+                transcript_path=transcript_path,
+                transcript_text=transcript,
+            )
+
+            self.assertEqual(
+                refined_path.read_text(encoding="utf-8"),
+                '{"kind":"refined-asr"}\n',
+            )
+            self.assertEqual(
+                transcript_path.read_text(encoding="utf-8"), transcript
+            )
+            self.assertEqual(
+                sha256_text(transcript),
+                hashlib.sha256(transcript.encode("utf-8")).hexdigest(),
+            )
+            self.assertEqual(list(root.rglob(".podwiki-*.tmp")), [])
+
+    def test_rejects_the_same_output_path(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "artifact"
+            with self.assertRaisesRegex(ValueError, "must be distinct"):
+                write_artifact_pair_atomically(
+                    refined_path=path,
+                    refined_text="{}",
+                    transcript_path=path,
+                    transcript_text="# 标题",
+                )
+
+    def test_repository_path_is_portable_for_tracked_artifacts(self) -> None:
+        self.assertEqual(
+            repository_path(ROOT / "shows" / "example" / "aligned.json"),
+            "shows/example/aligned.json",
+        )
+
+    def test_refined_lineage_names_generic_input_asr(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            input_path = root / "aligned.json"
+            refined_path = root / "refined.json"
+            transcript_path = root / "transcript.md"
+            input_path.write_text(
+                json.dumps(
+                    {
+                        "segments": [
+                            {"id": 0, "start": 0.0, "end": 1.0, "text": "内容"}
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            arguments = [
+                "render_asr_transcript.py",
+                "--input",
+                str(input_path),
+                "--refined-output",
+                str(refined_path),
+                "--output",
+                str(transcript_path),
+                "--episode-id",
+                "show:001",
+                "--title",
+                "标题",
+                "--model",
+                "model",
+            ]
+
+            with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(
+                io.StringIO()
+            ):
+                self.assertEqual(main(), 0)
+
+            source = json.loads(refined_path.read_text(encoding="utf-8"))["source"]
+            self.assertIn("input_asr_path", source)
+            self.assertIn("input_asr_sha256", source)
+            self.assertNotIn("raw_asr_path", source)
 
 
 if __name__ == "__main__":

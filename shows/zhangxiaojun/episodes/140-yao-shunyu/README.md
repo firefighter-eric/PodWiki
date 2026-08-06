@@ -11,7 +11,7 @@ numbering:
   status: verified
   checked_at: 2026-08-05
   source: publisher-rss
-title: "140. 对姚顺宇的4小时访谈：请允许我小疯一下！在Anthropic和Gemini训模型、技术预测、英雄主义已过去"
+title: "对姚顺宇的4小时访谈：请允许我小疯一下！在Anthropic和Gemini训模型、技术预测、英雄主义已过去"
 published_at: "2026-05-11T08:00:00+08:00"
 duration_ms: 13835000
 language: zh-CN
@@ -43,24 +43,77 @@ sources:
       page: 1
 workflow:
   metadata: verified
-  summary: outline
-  transcript: source-acquired
+  summary: draft
+  transcript: machine
 summary_basis:
   - publisher-description
   - publisher-chapters
+  - complete-machine-transcript
+summary:
+  path: summary.zh-CN.md
+  language: zh-CN
+  source_transcript:
+    path: transcript.zh-CN.md
+    engine: mlx-audio
+    model: mlx-community/Qwen3-ASR-1.7B-8bit
+    selection_status: selected
+    sha256: e03d99a5c268b71c5749c7263e90eded038d35c2972b7e23d653028c87f0e9e4
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: no-anonymous-track-login-indicated
+  acquisition_method: audio-asr
+  asr_script: scripts/transcribe_qwen3_asr.py
+  engine: mlx-audio
+  model: mlx-community/Qwen3-ASR-1.7B-8bit
+  aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
+  options:
+    language: Chinese
+    temperature: 0
+    max_tokens_per_chunk: 4096
+    chunk_duration_seconds: 240
+    max_sentence_characters: 160
+  generated_at: "2026-08-06T04:02:32.189252Z"
+  quality:
+    source_chunks: 58
+    aligned_chunks: 58
+    alignment_items: 63545
+    sentence_segments: 2067
+    refined_segments: 2061
+    rendered_blocks: 479
+    rendered_lines: 2061
+  performance:
+    transcription_seconds: 495.064
+    alignment_seconds: 97.538
 asr_artifacts:
   raw:
-    path: asr/raw.json
+    path: asr/qwen3-asr/raw.json
     git_ignored: false
-    format: engine-native-json
+    format: podwiki-raw-asr-json-v1
+  aligned:
+    path: asr/qwen3-asr/aligned.json
+    git_ignored: false
+    format: podwiki-aligned-asr-json-v1
   refined:
-    path: asr/refined.json
+    path: asr/qwen3-asr/refined.json
     git_ignored: false
     format: podwiki-refined-asr-json-v1
+  transcript:
+    path: asr/qwen3-asr/transcript.zh-CN.md
+    git_ignored: false
+    format: podwiki-transcript-markdown-v1
   renderer: scripts/render_asr_transcript.py
+asr_runs:
+  - id: qwen3-asr-1.7b-8bit
+    selection_status: selected
+    engine: mlx-audio
+    model: mlx-community/Qwen3-ASR-1.7B-8bit
+    aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
+    generated_at: "2026-08-06T04:02:32.189252Z"
+    artifacts:
+      raw: asr/qwen3-asr/raw.json
+      aligned: asr/qwen3-asr/aligned.json
+      refined: asr/qwen3-asr/refined.json
+      transcript: asr/qwen3-asr/transcript.zh-CN.md
 local_audio_cache:
   path: .cache/media/zhangxiaojun/140-yao-shunyu/source.m4a
   metadata_path: .cache/media/zhangxiaojun/140-yao-shunyu/source.metadata.json
@@ -73,16 +126,16 @@ local_audio_cache:
   size_bytes: 115870716
   duration_ms: 13680686
   sha256: 4cd0ade2bfe69491c29f8c979de99ecefa920c6e62a301cbbe931fa947f6a0ca
-last_verified_at: 2026-08-05
+last_verified_at: 2026-08-06
 ---
 
-# 140. 对姚顺宇的 4 小时访谈：请允许我小疯一下
+# 对姚顺宇的 4 小时访谈：请允许我小疯一下
 
-> 当前内容根据发布者 RSS 信息与 Bilibili 简介及章节整理，是结构化概览，不是基于完整逐字稿完成的总结。
+> 本页保留发布者简介与章节形成的结构化概览；另有依据完整机器逐字稿整理的总结草稿，尚未完成关键片段核听和独立事实核查。
 
 ## 单集信息
 
-- 节目：张小珺Jùn｜商业访谈录 #140
+- 节目：张小珺商业访谈录 #140
 - 主持人：张小珺
 - 嘉宾：姚顺宇（Shunyu Yao），发布者介绍他先后在 Anthropic 与 Google DeepMind 担任研究科学家
 - Bilibili 发布时间：2026-05-11 08:00（UTC+8）
@@ -93,6 +146,8 @@ last_verified_at: 2026-08-05
 - 来源：[发布者 RSS 单集页](https://www.xiaoyuzhoufm.com/episode/6a00aa051b7bd50295dfe41d)、[Bilibili 视频](https://www.bilibili.com/video/BV1YR5E6EE9o/)
 - 字幕状态：匿名访问未发现公开独立字幕轨；平台 API 标记需要登录才能进一步检查，未使用 cookies 或登录态
 - 本地来源：独立音轨已下载，并通过媒体探测、时长和 SHA-256 校验
+- 逐字稿：[Qwen3-ASR 机器初稿](./transcript.zh-CN.md)
+- 总结：[核心观点与 5 分钟版](./summary.zh-CN.md)
 
 ## 内容概览
 
@@ -135,7 +190,8 @@ last_verified_at: 2026-08-05
 - [x] 核对 Bilibili 视频的 aid、cid 和 page
 - [x] 检查匿名访问可见的平台字幕轨
 - [x] 获取独立音轨并完成编码、时长、大小和哈希校验
-- [ ] 运行机器转写并生成逐字稿
+- [x] 使用 Qwen3-ASR 与 ForcedAligner 生成机器逐字稿
 - [ ] 校对专有名词、断句和识别错误
 - [ ] 增加主持人与嘉宾的说话人区分
-- [ ] 基于完整内容完成事实核查和正式总结
+- [x] 基于完整机器逐字稿生成总结草稿
+- [ ] 核听总结引用的关键片段并完成必要事实核查

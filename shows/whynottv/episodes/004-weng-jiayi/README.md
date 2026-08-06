@@ -11,7 +11,7 @@ numbering:
   status: verified
   checked_at: 2026-08-05
   source: publisher-title
-title: "翁家翌：OpenAI，GPT，强化学习，Infra，后训练，天授，tuixue，开源，CMU，清华｜WhynotTV Podcast #4"
+title: "翁家翌：OpenAI，GPT，强化学习，Infra，后训练，天授，tuixue，开源，CMU，清华｜WhynotTV Podcast"
 published_at: "2026-01-17T15:09:39+08:00"
 duration_ms: 7365000
 language: zh-CN
@@ -31,40 +31,68 @@ sources:
       page: 1
 workflow:
   metadata: verified
-  summary: outline
+  summary: draft
   transcript: machine
 summary_basis:
   - publisher-description
   - publisher-chapters
+  - complete-machine-transcript
+summary:
+  path: summary.zh-CN.md
+  language: zh-CN
+  source_transcript:
+    path: asr/whisper/transcript.zh-CN.md
+    engine: mlx-whisper
+    model: mlx-community/whisper-large-v3-turbo-q4
+    selection_status: superseded
+    sha256: e9c928f628ac9fbbf9efdbccfb7cfab1a90cd2a0d40e907b8ddf1451056ab3da
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: not-exposed-as-track
   acquisition_method: audio-asr
-  asr_script: scripts/transcribe_audio.py
-  engine: mlx-whisper
-  model: mlx-community/whisper-large-v3-turbo-q4
+  asr_script: scripts/transcribe_qwen3_asr.py
+  engine: mlx-audio
+  model: mlx-community/Qwen3-ASR-1.7B-8bit
+  aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
   options:
-    language: zh
+    language: Chinese
     temperature: 0
-    word_timestamps: false
-  generated_at: "2026-08-05T09:28:34.626819Z"
+    max_tokens_per_chunk: 4096
+    chunk_duration_seconds: 240
+    max_sentence_characters: 160
+  generated_at: "2026-08-06T03:56:30.162831Z"
   quality:
-    source_segments: 3062
-    refined_segments: 2989
-    rendered_lines: 2989
+    source_chunks: 31
+    aligned_chunks: 31
+    alignment_items: 31245
+    sentence_segments: 995
+    refined_segments: 995
+    rendered_blocks: 247
+    rendered_lines: 995
+  performance:
+    transcription_seconds: 318.534
+    alignment_seconds: 56.938
 asr_artifacts:
   raw:
-    path: asr/raw.json
+    path: asr/qwen3-asr/raw.json
     git_ignored: false
-    format: mlx-whisper-json
+    format: podwiki-raw-asr-json-v1
+  aligned:
+    path: asr/qwen3-asr/aligned.json
+    git_ignored: false
+    format: podwiki-aligned-asr-json-v1
   refined:
-    path: asr/refined.json
+    path: asr/qwen3-asr/refined.json
     git_ignored: false
     format: podwiki-refined-asr-json-v1
+  transcript:
+    path: asr/qwen3-asr/transcript.zh-CN.md
+    git_ignored: false
+    format: podwiki-transcript-markdown-v1
   renderer: scripts/render_asr_transcript.py
-asr_candidates:
+asr_runs:
   - id: qwen3-asr-1.7b-8bit
-    selection_status: candidate
+    selection_status: selected
     engine: mlx-audio
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
@@ -73,7 +101,8 @@ asr_candidates:
       temperature: 0
       max_tokens_per_chunk: 4096
       chunk_duration_seconds: 240
-    generated_at: "2026-08-05T12:14:38.102466Z"
+      max_sentence_characters: 160
+    generated_at: "2026-08-06T03:56:30.162831Z"
     artifacts:
       raw: asr/qwen3-asr/raw.json
       aligned: asr/qwen3-asr/aligned.json
@@ -81,13 +110,24 @@ asr_candidates:
       transcript: asr/qwen3-asr/transcript.zh-CN.md
     quality:
       source_chunks: 31
+      aligned_chunks: 31
       alignment_items: 31245
+      sentence_segments: 995
       refined_segments: 995
+      rendered_blocks: 247
       rendered_lines: 995
     performance:
       transcription_seconds: 318.534
       alignment_seconds: 56.938
     benchmark: docs/asr-benchmark.md
+  - id: whisper-large-v3-turbo-q4
+    selection_status: superseded
+    engine: mlx-whisper
+    model: mlx-community/whisper-large-v3-turbo-q4
+    artifacts:
+      raw: asr/whisper/raw.json
+      refined: asr/whisper/refined.json
+      transcript: asr/whisper/transcript.zh-CN.md
 local_audio_cache:
   path: .cache/media/whynottv/004-weng-jiayi/source.m4a
   git_ignored: true
@@ -96,12 +136,13 @@ local_audio_cache:
   channels: 2
   size_bytes: 99676986
   duration_ms: 7364975
-last_verified_at: 2026-08-05
+  sha256: 9eb8aab184a964f3ff8205a505c26a1acb957d9995bb8d61f0fbc6c1b252b11f
+last_verified_at: 2026-08-06
 ---
 
 # 翁家翌：OpenAI、强化学习、Infra 与后训练
 
-> 当前内容是根据发布者公开简介和章节整理的结构化概览，不是基于完整逐字稿完成的总结。
+> 本页概览根据发布者公开简介和章节整理；基于完整机器逐字稿生成的总结初稿单独保存在 [`summary.zh-CN.md`](./summary.zh-CN.md)。
 
 ## 单集信息
 
@@ -109,7 +150,8 @@ last_verified_at: 2026-08-05
 - 嘉宾：翁家翌
 - 时长：02:02:45
 - 来源：[Bilibili 视频](https://www.bilibili.com/video/BV1darmBcE4A/)
-- 逐字稿：[查看处理状态](./transcript.zh-CN.md)
+- 总结：[查看结构化总结初稿](./summary.zh-CN.md)
+- 逐字稿：[Qwen3-ASR 机器初稿](./transcript.zh-CN.md)
 
 ## 内容概览
 
@@ -137,13 +179,15 @@ last_verified_at: 2026-08-05
 - [ ] 确认主持人显示名称
 - [x] 检查平台字幕轨；当前视频未暴露独立字幕轨
 - [x] 下载独立音轨并完成本地机器转写
-- [x] 完成 Qwen3-ASR 与 Whisper 的首轮对比并保存完整候选结果
+- [x] 完成 Qwen3-ASR 与 Whisper 的首轮对比，选用 Qwen 并保留 Whisper 基线
 - [ ] 校对专有名词、断句和识别错误
 - [ ] 增加主持人与嘉宾的说话人区分
-- [ ] 基于完整内容完成事实核查和正式总结
+- [x] 基于完整机器逐字稿生成结构化总结初稿
+- [ ] 核听总结引用的关键片段并校对专有名词
+- [ ] 完成事实核查并将总结标记为 `reviewed`
 
-## ASR 候选
+## ASR 运行记录
 
-- 当前正式逐字稿：[Whisper 版本](./transcript.zh-CN.md)
-- 候选逐字稿：[Qwen3-ASR 版本](./asr/qwen3-asr/transcript.zh-CN.md)
+- 当前正式逐字稿：[Qwen3-ASR 版本](./transcript.zh-CN.md)
+- 已归档基线：[Whisper 版本](./asr/whisper/transcript.zh-CN.md)
 - 对比记录：[ASR 基准](../../../../docs/asr-benchmark.md)

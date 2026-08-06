@@ -11,7 +11,7 @@ numbering:
   status: verified
   checked_at: 2026-08-05
   source: publisher-rss
-title: "146. 对Physical Intelligence柯丽一鸣4小时访谈：Pi的开源模型研究，机器人的江湖、族谱与主角"
+title: "对Physical Intelligence柯丽一鸣4小时访谈：Pi的开源模型研究，机器人的江湖、族谱与主角"
 published_at: "2026-07-16T08:30:00+08:00"
 duration_ms: 13684000
 language: zh-CN
@@ -51,24 +51,77 @@ sources:
       page: 1
 workflow:
   metadata: verified
-  summary: outline
-  transcript: source-acquired
+  summary: draft
+  transcript: machine
 summary_basis:
   - publisher-description
   - publisher-chapters
+  - complete-machine-transcript
+summary:
+  path: summary.zh-CN.md
+  language: zh-CN
+  source_transcript:
+    path: transcript.zh-CN.md
+    engine: mlx-audio
+    model: mlx-community/Qwen3-ASR-1.7B-8bit
+    selection_status: selected
+    sha256: 27675ca1815e07fdb15f6be3f51524f45d8a712faa6ffae986fbf2b49ab6b3ac
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: not-exposed-as-track
+  acquisition_method: audio-asr
+  asr_script: scripts/transcribe_qwen3_asr.py
+  engine: mlx-audio
+  model: mlx-community/Qwen3-ASR-1.7B-8bit
+  aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
+  options:
+    language: Chinese
+    temperature: 0
+    max_tokens_per_chunk: 4096
+    chunk_duration_seconds: 240
+    max_sentence_characters: 160
+  generated_at: "2026-08-06T04:12:54.445737Z"
+  quality:
+    source_chunks: 57
+    aligned_chunks: 57
+    alignment_items: 72433
+    sentence_segments: 1833
+    refined_segments: 1832
+    rendered_blocks: 456
+    rendered_lines: 1832
+  performance:
+    transcription_seconds: 489.043
+    alignment_seconds: 105.025
 asr_artifacts:
   raw:
-    path: asr/raw.json
+    path: asr/qwen3-asr/raw.json
     git_ignored: false
-    format: engine-native-json
+    format: podwiki-raw-asr-json-v1
+  aligned:
+    path: asr/qwen3-asr/aligned.json
+    git_ignored: false
+    format: podwiki-aligned-asr-json-v1
   refined:
-    path: asr/refined.json
+    path: asr/qwen3-asr/refined.json
     git_ignored: false
     format: podwiki-refined-asr-json-v1
+  transcript:
+    path: asr/qwen3-asr/transcript.zh-CN.md
+    git_ignored: false
+    format: podwiki-transcript-markdown-v1
   renderer: scripts/render_asr_transcript.py
+asr_runs:
+  - id: qwen3-asr-1.7b-8bit
+    selection_status: selected
+    engine: mlx-audio
+    model: mlx-community/Qwen3-ASR-1.7B-8bit
+    aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
+    generated_at: "2026-08-06T04:12:54.445737Z"
+    artifacts:
+      raw: asr/qwen3-asr/raw.json
+      aligned: asr/qwen3-asr/aligned.json
+      refined: asr/qwen3-asr/refined.json
+      transcript: asr/qwen3-asr/transcript.zh-CN.md
 local_audio_cache:
   path: .cache/media/zhangxiaojun/146-ke-liyiming/source.m4a
   metadata_path: .cache/media/zhangxiaojun/146-ke-liyiming/source.metadata.json
@@ -81,16 +134,16 @@ local_audio_cache:
   size_bytes: 188616174
   duration_ms: 13572224
   sha256: d22317ea1ad994b7f699e9115e5636eb9b9c4aa550eda9f31bf4ca627e1a9f65
-last_verified_at: 2026-08-05
+last_verified_at: 2026-08-06
 ---
 
-# 146. 对 Physical Intelligence 柯丽一鸣 4 小时访谈
+# 对 Physical Intelligence 柯丽一鸣 4 小时访谈
 
-> 当前内容根据发布者 RSS 简介和章节整理，是结构化概览，不是基于完整逐字稿完成的总结。
+> 本页保留发布者简介与章节形成的结构化概览；另有依据完整机器逐字稿整理的总结草稿，尚未完成关键片段核听和独立事实核查。
 
 ## 单集信息
 
-- 节目：张小珺Jùn｜商业访谈录 #146
+- 节目：张小珺商业访谈录 #146
 - 主持人：张小珺
 - 嘉宾：柯丽一鸣（Kay Ke），Physical Intelligence 研究员
 - 发布时间：2026-07-16 08:30（UTC+8）
@@ -98,6 +151,8 @@ last_verified_at: 2026-08-05
 - 本地 Bilibili 音轨：03:46:12（AAC、48 kHz、双声道）
 - 来源：[发布者 RSS 单集页](https://www.xiaoyuzhoufm.com/episode/6a57a05da4972c496dfc67f1)、[Apple Podcasts](https://podcasts.apple.com/podcast/id1634356920?i=1000776989957)、[Bilibili 视频](https://www.bilibili.com/video/BV12bNB6vEtt/)
 - 字幕状态：匿名访问未发现独立平台字幕轨
+- 逐字稿：[Qwen3-ASR 机器初稿](./transcript.zh-CN.md)
+- 总结：[核心观点与 5 分钟版](./summary.zh-CN.md)
 
 ## 内容概览
 
@@ -137,7 +192,8 @@ last_verified_at: 2026-08-05
 - [x] 核对 Bilibili 视频的 aid、cid 和 page
 - [x] 检查匿名访问可见的平台字幕轨
 - [x] 获取并验证本地独立音轨
-- [ ] 运行机器转写并生成逐字稿
+- [x] 使用 Qwen3-ASR 与 ForcedAligner 生成机器逐字稿
 - [ ] 校对专有名词、断句和识别错误
 - [ ] 增加主持人与嘉宾的说话人区分
-- [ ] 基于完整内容完成事实核查和正式总结
+- [x] 基于完整机器逐字稿生成总结草稿
+- [ ] 核听总结引用的关键片段并完成必要事实核查

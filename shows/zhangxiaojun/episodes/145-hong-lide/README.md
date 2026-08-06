@@ -11,7 +11,7 @@ numbering:
   status: verified
   checked_at: 2026-08-05
   source: publisher-rss
-title: "145. 口述SpaceX开发史：和前高管洪力德聊，马斯克用人观、最大IPO、太空与AI、人类文明扩张前奏？"
+title: "口述SpaceX开发史：和前高管洪力德聊，马斯克用人观、最大IPO、太空与AI、人类文明扩张前奏？"
 published_at: "2026-06-12T20:52:25+08:00"
 duration_ms: 10886000
 language: zh-CN
@@ -43,41 +43,85 @@ sources:
       page: 1
 workflow:
   metadata: verified
-  summary: outline
+  summary: draft
   transcript: machine
 summary_basis:
   - publisher-description
   - publisher-chapters
+  - complete-machine-transcript
+summary:
+  path: summary.zh-CN.md
+  language: zh-CN
+  source_transcript:
+    path: asr/whisper/transcript.zh-CN.md
+    engine: mlx-whisper
+    model: mlx-community/whisper-large-v3-turbo-q4
+    selection_status: superseded
+    sha256: 8f144e97ae70c2e4d8bd754a5cb614ba18fa1cef50bf2ecf3e6deecc89ca657a
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: no-anonymous-track-login-indicated
   acquisition_method: audio-asr
-  asr_script: scripts/transcribe_audio.py
-  engine: mlx-whisper
-  model: mlx-community/whisper-large-v3-turbo-q4
+  asr_script: scripts/transcribe_qwen3_asr.py
+  engine: mlx-audio
+  model: mlx-community/Qwen3-ASR-1.7B-8bit
+  aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
   options:
-    language: zh
+    language: Chinese
     temperature: 0
-    word_timestamps: false
-    clip_timestamps: "0"
-    initial_prompt: "张小珺、洪力德、Lewis Hong、SpaceX、Starship、Starlink、Falcon 9、Raptor、Elon Musk、马斯克、Gwynne Shotwell、NASA、xAI、Tesla"
-    verbose: false
-  generated_at: "2026-08-05T12:29:35.332723Z"
+    max_tokens_per_chunk: 4096
+    chunk_duration_seconds: 240
+    max_sentence_characters: 160
+  generated_at: "2026-08-06T03:51:49.182609Z"
   quality:
-    source_segments: 7108
-    refined_segments: 6331
-    rendered_blocks: 310
-    rendered_lines: 6331
+    source_chunks: 45
+    aligned_chunks: 45
+    alignment_items: 48094
+    sentence_segments: 1590
+    refined_segments: 1587
+    rendered_blocks: 368
+    rendered_lines: 1587
+  performance:
+    transcription_seconds: 382.777
+    alignment_seconds: 81.902
 asr_artifacts:
   raw:
-    path: asr/raw.json
+    path: asr/qwen3-asr/raw.json
     git_ignored: false
-    format: engine-native-json
+    format: podwiki-raw-asr-json-v1
+  aligned:
+    path: asr/qwen3-asr/aligned.json
+    git_ignored: false
+    format: podwiki-aligned-asr-json-v1
   refined:
-    path: asr/refined.json
+    path: asr/qwen3-asr/refined.json
     git_ignored: false
     format: podwiki-refined-asr-json-v1
+  transcript:
+    path: asr/qwen3-asr/transcript.zh-CN.md
+    git_ignored: false
+    format: podwiki-transcript-markdown-v1
   renderer: scripts/render_asr_transcript.py
+asr_runs:
+  - id: qwen3-asr-1.7b-8bit
+    selection_status: selected
+    engine: mlx-audio
+    model: mlx-community/Qwen3-ASR-1.7B-8bit
+    aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
+    generated_at: "2026-08-06T03:51:49.182609Z"
+    artifacts:
+      raw: asr/qwen3-asr/raw.json
+      aligned: asr/qwen3-asr/aligned.json
+      refined: asr/qwen3-asr/refined.json
+      transcript: asr/qwen3-asr/transcript.zh-CN.md
+  - id: whisper-large-v3-turbo-q4
+    selection_status: superseded
+    engine: mlx-whisper
+    model: mlx-community/whisper-large-v3-turbo-q4
+    artifacts:
+      raw: asr/whisper/raw.json
+      refined: asr/whisper/refined.json
+      transcript: asr/whisper/transcript.zh-CN.md
 local_audio_cache:
   path: .cache/media/zhangxiaojun/145-hong-lide/source.m4a
   metadata_path: .cache/media/zhangxiaojun/145-hong-lide/source.metadata.json
@@ -90,16 +134,16 @@ local_audio_cache:
   size_bytes: 183554521
   duration_ms: 10803605
   sha256: 265c9fd3feda67252160fefc67ecfd56f6fd8d3c63439c1ca5793ae2b0edcd1a
-last_verified_at: 2026-08-05
+last_verified_at: 2026-08-06
 ---
 
-# 145. 口述 SpaceX 开发史：和前高管洪力德聊
+# 口述 SpaceX 开发史：和前高管洪力德聊
 
-> 当前内容根据发布者 RSS 与 Bilibili 简介、章节整理，是结构化概览，不是基于完整逐字稿完成的总结。
+> 本页概览根据发布者 RSS 与 Bilibili 简介、章节整理；基于完整机器逐字稿生成的总结初稿单独保存在 [`summary.zh-CN.md`](./summary.zh-CN.md)。
 
 ## 单集信息
 
-- 节目：张小珺Jùn｜商业访谈录 #145
+- 节目：张小珺商业访谈录 #145
 - 主持人：张小珺
 - 嘉宾：洪力德（Lewis Hong），SpaceX 前火箭首席制造工程师
 - 发布者 RSS 时间：2026-06-12 19:18:46（UTC+8）
@@ -109,7 +153,8 @@ last_verified_at: 2026-08-05
 - 来源：[发布者 RSS 单集页](https://www.xiaoyuzhoufm.com/episode/6a2be5da43a22a695582ad20)、[Bilibili 视频](https://www.bilibili.com/video/BV1HfEy6jEUx/)
 - 字幕状态：匿名访问未发现公开独立字幕轨；平台 API 标记需要登录才能进一步检查，未使用 cookies 或登录态
 - 本地来源：独立音轨已下载并通过媒体探测、时长和 SHA-256 校验
-- 逐字稿状态：已生成 MLX Whisper 机器初稿，尚未完成人工校对、说话人识别和事实核查
+- 总结：[查看结构化总结初稿](./summary.zh-CN.md)
+- 逐字稿：[Qwen3-ASR 机器初稿](./transcript.zh-CN.md)；尚未完成人工校对、说话人识别和事实核查
 
 ## 内容概览
 
@@ -143,7 +188,9 @@ last_verified_at: 2026-08-05
 - [x] 核对 Bilibili 视频的 aid、cid 和 page
 - [x] 检查匿名访问可见的平台字幕轨
 - [x] 获取独立音轨并完成编码、时长、大小和哈希校验
-- [x] 运行机器转写并生成逐字稿（机器初稿）
+- [x] 使用 Qwen3-ASR 与 ForcedAligner 生成机器逐字稿
 - [ ] 校对专有名词、断句和识别错误
 - [ ] 增加主持人与嘉宾的说话人区分
-- [ ] 基于完整内容完成事实核查和正式总结
+- [x] 基于完整机器逐字稿生成结构化总结初稿
+- [ ] 核听总结引用的关键片段并校对专有名词
+- [ ] 完成事实核查并将总结标记为 `reviewed`
