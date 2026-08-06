@@ -55,6 +55,15 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 
 脚本会规范化 URL，检查公开元数据，下载或续传音频，并用 `ffprobe`、时长、文件大小和 SHA-256 校验结果。未指定 `--metadata-output` 时，来源信息保存在音频旁的 `source.metadata.json`。
 
+若 Bilibili 的公开视频页出现已知的 `Unable to extract initial state` extractor
+兼容错误，但官方匿名 view、player 和 playurl API 对请求 BVID、aid、cid、page
+均验证一致，脚本会从公开 DASH 清单中选择码率最高的匿名音轨作为回退。其他
+extractor 或传输错误不会触发这条回退。回退要求 `state == 0`，并要求付费、
+试看、充电专属和 upower 等关键访问字段全部显式为 `0`/`false`；字段缺失时
+按拒绝处理。`no_reprint` 会作为来源边界记录但不等同于访问限制，`download`
+字段也不构成处理授权。脚本不会使用 cookies，也不会把临时签名媒体 URL 写入
+sidecar。
+
 只检查来源而不下载：
 
 ```bash
@@ -115,6 +124,18 @@ env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
 ```
 
 不传 `--episode` 时，脚本发现所有已有缓存音频的单集。它会串行启动 worker，在 `.cache/logs/qwen3-asr/` 保存每集日志，继续处理其他单集，并在任一单集失败时最终返回非零状态。
+
+默认按中文语音处理并生成 `transcript.zh-CN.md`。处理英文等其他语言时，同时
+传入 ASR 使用的语言名称和用于产物文件名的 BCP 47 标签，例如：
+
+```bash
+env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
+  UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  --episode shows/<show-id>/episodes/<episode-folder> \
+  --language English --transcript-language en \
+  --model-path .cache/models/qwen3-asr-1.7b-8bit \
+  --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit
+```
 
 ## MLX Whisper 基线
 

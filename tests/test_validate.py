@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate import (  # noqa: E402
     check_bilibili_urls,
     check_front_matter,
+    validate_episode_translations,
     validate_qwen_chain,
 )
 
@@ -32,15 +33,22 @@ def write_json(path: Path, document: dict[str, Any]) -> None:
 
 
 class QwenChainFixture:
-    def __init__(self, root: Path, *, selection_status: str = "selected") -> None:
+    def __init__(
+        self,
+        root: Path,
+        *,
+        selection_status: str = "selected",
+        transcript_language: str = "zh-CN",
+    ) -> None:
         self.root = root
         self.episode = root / "shows" / "example" / "episodes" / "001"
         self.qwen = self.episode / "asr" / "qwen3-asr"
         self.raw_path = self.qwen / "raw.json"
         self.aligned_path = self.qwen / "aligned.json"
         self.refined_path = self.qwen / "refined.json"
-        self.candidate_path = self.qwen / "transcript.zh-CN.md"
-        self.root_transcript_path = self.episode / "transcript.zh-CN.md"
+        self.transcript_name = f"transcript.{transcript_language}.md"
+        self.candidate_path = self.qwen / self.transcript_name
+        self.root_transcript_path = self.episode / self.transcript_name
         self.readme_path = self.episode / "README.md"
         self.audio_path = root / ".cache" / "media" / "example" / "001" / "source.m4a"
 
@@ -76,6 +84,7 @@ class QwenChainFixture:
         refined = {
             "schema_version": 1,
             "kind": "refined-asr",
+            "language": transcript_language,
             "source": {
                 "input_asr_path": self.aligned_path.relative_to(root).as_posix(),
                 "input_asr_sha256": sha256_bytes(self.aligned_path.read_bytes()),
@@ -91,28 +100,27 @@ class QwenChainFixture:
 
     def write_readme(self, selection_status: str) -> None:
         self.readme_path.write_text(
-            """---
+            f"""---
 schema_version: 1
 kind: episode
 id: "example:001"
 transcript:
-  path: transcript.zh-CN.md
+  path: {self.transcript_name}
 asr_runs:
   - id: qwen3-asr-1.7b-8bit
-    selection_status: %s
+    selection_status: {selection_status}
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     artifacts:
       raw: asr/qwen3-asr/raw.json
       aligned: asr/qwen3-asr/aligned.json
       refined: asr/qwen3-asr/refined.json
-      transcript: asr/qwen3-asr/transcript.zh-CN.md
+      transcript: asr/qwen3-asr/{self.transcript_name}
 local_audio_cache:
   path: .cache/media/example/001/source.m4a
 ---
 
 # 测试单集
-"""
-            % selection_status,
+""",
             encoding="utf-8",
         )
 
@@ -137,12 +145,124 @@ local_audio_cache:
         return complete, errors
 
 
+class EnglishTranslationFixture:
+    def __init__(self, root: Path) -> None:
+        self.root = root
+        self.episode = root / "shows" / "example" / "episodes" / "english"
+        self.episode.mkdir(parents=True)
+        self.source_path = self.episode / "transcript.en.md"
+        self.translation_path = self.episode / "transcript.zh-CN.md"
+        self.readme_path = self.episode / "README.md"
+        self.source_path.write_text(
+            "# Shared title\n\n"
+            "[00:00:00] Hello.  \n"
+            "[00:00:04] World.  \n",
+            encoding="utf-8",
+        )
+        self.translation_path.write_text(
+            "# Shared title\n\n"
+            "[00:00:00] 你好。  \n"
+            "[00:00:04] 世界。  \n",
+            encoding="utf-8",
+        )
+        self.write_readme()
+
+    def write_readme(
+        self,
+        *,
+        include_translation: bool = True,
+        episode_language: str = "en",
+        metadata_overrides: dict[str, str] | None = None,
+    ) -> None:
+        metadata = {
+            "language": "zh-CN",
+            "path": "transcript.zh-CN.md",
+            "source_language": "en",
+            "source_path": "transcript.en.md",
+            "alignment": "segment",
+            "status": "machine",
+            "generated_at": '"2026-08-07T12:00:00Z"',
+            "source_sha256": sha256_bytes(self.source_path.read_bytes()),
+            "sha256": sha256_bytes(self.translation_path.read_bytes()),
+        }
+        if metadata_overrides:
+            metadata.update(metadata_overrides)
+        translations = ""
+        if include_translation:
+            fields = list(metadata.items())
+            first_key, first_value = fields[0]
+            translations = f"  translations:\n    - {first_key}: {first_value}\n"
+            translations += "".join(
+                f"      {key}: {value}\n" for key, value in fields[1:]
+            )
+        self.readme_path.write_text(
+            f"""---
+schema_version: 1
+kind: episode
+id: example:english
+language: {episode_language}
+transcript:
+  path: transcript.en.md
+{translations}---
+
+# Shared title
+""",
+            encoding="utf-8",
+        )
+
+    def validate(self) -> list[str]:
+        errors: list[str] = []
+        validate_episode_translations(
+            self.episode,
+            repository_root=self.root,
+            readme_text=self.readme_path.read_text(encoding="utf-8"),
+            errors=errors,
+        )
+        return errors
+
+
 class QwenArtifactChainTests(unittest.TestCase):
     def test_accepts_complete_selected_chain_with_matching_cached_audio(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = QwenChainFixture(Path(directory))
 
             self.assertEqual(fixture.validate(), (True, []))
+
+    def test_accepts_language_specific_qwen_transcript(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory), transcript_language="en")
+
+            self.assertEqual(fixture.validate(), (True, []))
+
+    def test_discovers_english_chain_before_readme_run_is_registered(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory), transcript_language="en")
+            fixture.readme_path.write_text(
+                """---
+transcript:
+  path: transcript.en.md
+asr_runs: []
+---
+""",
+                encoding="utf-8",
+            )
+            fixture.refined_path.write_text("{bad json\n", encoding="utf-8")
+
+            complete, errors = fixture.validate()
+
+            self.assertTrue(complete)
+            self.assertTrue(any("refined.json is not strict JSON" in e for e in errors))
+
+    def test_rejects_transcript_filename_language_mismatch(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory), transcript_language="en")
+            refined = json.loads(fixture.refined_path.read_text(encoding="utf-8"))
+            refined["language"] = "zh-CN"
+            write_json(fixture.refined_path, refined)
+
+            _, errors = fixture.validate()
+
+            self.assertTrue(any("refined.language must match" in e for e in errors))
 
     def test_rejects_duplicate_json_keys(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -314,6 +434,178 @@ asr_runs:
             self.assertEqual(len(errors), 1)
             self.assertIn("marks Qwen selected", errors[0])
             self.assertIn("aligned.json", errors[0])
+
+
+class EnglishTranscriptTranslationTests(unittest.TestCase):
+    def test_accepts_segment_aligned_chinese_translation(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = EnglishTranslationFixture(Path(directory))
+
+            self.assertEqual(fixture.validate(), [])
+
+    def test_requires_translation_for_english_episode(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = EnglishTranslationFixture(Path(directory))
+            fixture.write_readme(include_translation=False)
+
+            errors = fixture.validate()
+
+            self.assertIn(
+                "English selected transcript requires exactly one zh-CN item in "
+                "transcript.translations",
+                errors,
+            )
+
+    def test_english_selected_path_triggers_rule_even_if_episode_language_differs(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = EnglishTranslationFixture(Path(directory))
+            fixture.write_readme(
+                include_translation=False,
+                episode_language="zh-CN",
+            )
+
+            errors = fixture.validate()
+
+            self.assertTrue(
+                any("requires exactly one zh-CN item" in error for error in errors)
+            )
+
+    def test_rejects_translation_title_and_segment_count_mismatches(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = EnglishTranslationFixture(Path(directory))
+            fixture.translation_path.write_text(
+                "# 不同标题\n\n[00:00:00] 合并后的译文。  \n",
+                encoding="utf-8",
+            )
+            fixture.write_readme()
+
+            errors = fixture.validate()
+
+            self.assertIn(
+                "transcript.en.md and transcript.zh-CN.md must have the same title",
+                errors,
+            )
+            self.assertIn(
+                "transcript.en.md and transcript.zh-CN.md must have the same "
+                "number of segment lines",
+                errors,
+            )
+
+    def test_rejects_per_segment_timestamp_mismatch(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = EnglishTranslationFixture(Path(directory))
+            fixture.translation_path.write_text(
+                "# Shared title\n\n"
+                "[00:00:00] 你好。  \n"
+                "[00:00:05] 世界。  \n",
+                encoding="utf-8",
+            )
+            fixture.write_readme()
+
+            errors = fixture.validate()
+
+            self.assertTrue(
+                any(
+                    "segment 2 timestamp [00:00:05] does not match "
+                    "transcript.en.md [00:00:04]" in error
+                    for error in errors
+                )
+            )
+
+    def test_rejects_translation_hash_mismatches(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = EnglishTranslationFixture(Path(directory))
+            fixture.write_readme(
+                metadata_overrides={
+                    "source_sha256": "0" * 64,
+                    "sha256": "1" * 64,
+                }
+            )
+
+            errors = fixture.validate()
+
+            self.assertIn(
+                "transcript.translations[0].source_sha256 does not match "
+                "transcript.en.md",
+                errors,
+            )
+            self.assertIn(
+                "transcript.translations[0].sha256 does not match "
+                "transcript.zh-CN.md",
+                errors,
+            )
+
+    def test_rejects_invalid_translation_contract_values(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = EnglishTranslationFixture(Path(directory))
+            fixture.write_readme(
+                metadata_overrides={
+                    "language": "zh",
+                    "path": "translation.zh-CN.md",
+                    "source_language": "zh-CN",
+                    "source_path": "source.en.md",
+                    "alignment": "paragraph",
+                    "status": "draft",
+                    "generated_at": '"2026-13-07T12:00:00Z"',
+                }
+            )
+
+            errors = fixture.validate()
+
+            self.assertIn(
+                "transcript.translations[0].language must be 'zh-CN'", errors
+            )
+            self.assertTrue(
+                any(
+                    "transcript.translations[0].path must point to" in error
+                    for error in errors
+                )
+            )
+            self.assertIn(
+                "transcript.translations[0].source_language must be 'en'", errors
+            )
+            self.assertTrue(
+                any(
+                    "transcript.translations[0].source_path must point to" in error
+                    for error in errors
+                )
+            )
+            self.assertIn(
+                "transcript.translations[0].alignment must be 'segment'", errors
+            )
+            self.assertIn(
+                "transcript.translations[0].status must be one of machine, "
+                "edited, reviewed",
+                errors,
+            )
+            self.assertIn(
+                "transcript.translations[0].generated_at must be an RFC 3339 "
+                "timestamp",
+                errors,
+            )
+
+    def test_does_not_require_translation_for_non_english_episode(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            episode = root / "shows" / "example" / "episodes" / "chinese"
+            errors: list[str] = []
+
+            validate_episode_translations(
+                episode,
+                repository_root=root,
+                readme_text="""---
+language: zh-CN
+transcript:
+  path: transcript.zh-CN.md
+  translations: []
+---
+""",
+                errors=errors,
+            )
+
+            self.assertEqual(errors, [])
 
 
 class ExistingMarkdownValidationTests(unittest.TestCase):

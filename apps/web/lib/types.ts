@@ -43,6 +43,30 @@ export type TranscriptSegment = {
   id: string;
 };
 
+export type TranscriptTranslationMetadata = {
+  language: string;
+  path: string;
+  sourceLanguage: string;
+  sourcePath: string;
+  alignment: "segment";
+  status: "machine" | "edited" | "reviewed";
+  generatedAt: string;
+  sourceSha256: string;
+  sha256: string;
+};
+
+export type BilingualTranscriptSegment = {
+  timestamp: string;
+  seconds: number;
+  id: string;
+  sourceText: string;
+  translationText: string;
+};
+
+export type BilingualTranscript = TranscriptTranslationMetadata & {
+  segments: BilingualTranscriptSegment[];
+};
+
 export type Episode = {
   id: string;
   showId: string;
@@ -58,6 +82,7 @@ export type Episode = {
   publishedDate: string;
   durationMs: number;
   durationLabel: string;
+  language: string;
   participants: Participant[];
   guests: Participant[];
   hosts: Participant[];
@@ -75,6 +100,8 @@ export type Episode = {
   readmeRaw: string;
   chapters: Chapter[];
   transcriptSegments: TranscriptSegment[];
+  transcriptTranslations: TranscriptTranslationMetadata[];
+  bilingualTranscript?: BilingualTranscript;
   href: string;
 };
 
@@ -100,7 +127,7 @@ export type SearchResult = {
   id: string;
   title: string;
   showTitle: string;
-  section: "单集" | "总结" | "逐字稿";
+  section: "单集" | "总结" | "逐字稿" | "译稿";
   snippet: string;
   href: string;
   timestamp?: string;

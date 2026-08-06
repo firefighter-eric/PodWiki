@@ -1,16 +1,20 @@
 import "server-only";
 import { cache } from "react";
+import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
 import type {
+  BilingualTranscript,
+  BilingualTranscriptSegment,
   Chapter,
   Episode,
   EpisodeCard,
   SearchResult,
   ShowSummary,
   TranscriptSegment,
+  TranscriptTranslationMetadata,
 } from "@/lib/types";
 
 const participantSchema = z
@@ -40,6 +44,24 @@ const transcriptProvenanceSchema = z
   })
   .passthrough();
 
+const transcriptTranslationSchema = z
+  .object({
+    language: z.string().min(1),
+    path: z.string().min(1),
+    source_language: z.string().min(1),
+    source_path: z.string().min(1),
+    alignment: z.literal("segment"),
+    status: z.enum(["machine", "edited", "reviewed"]),
+    generated_at: z.union([z.string().datetime({ offset: true }), z.date()]),
+    source_sha256: z.string().regex(/^[0-9a-f]{64}$/u),
+    sha256: z.string().regex(/^[0-9a-f]{64}$/u),
+  })
+  .passthrough();
+
+const episodeTranscriptSchema = transcriptProvenanceSchema.extend({
+  translations: z.array(transcriptTranslationSchema).optional().default([]),
+});
+
 const episodeSchema = z
   .object({
     id: z.string(),
@@ -50,6 +72,7 @@ const episodeSchema = z
     title: z.string(),
     published_at: z.union([z.string(), z.date()]),
     duration_ms: z.number(),
+    language: z.string(),
     participants: z.array(participantSchema).default([]),
     sources: z.array(sourceSchema).default([]),
     workflow: z
@@ -65,7 +88,7 @@ const episodeSchema = z
         source_transcript: transcriptProvenanceSchema.optional(),
       })
       .passthrough(),
-    transcript: transcriptProvenanceSchema,
+    transcript: episodeTranscriptSchema,
   })
   .passthrough();
 
@@ -76,7 +99,7 @@ const showSchema = z
   })
   .passthrough();
 
-const showOrder = ["zhangxiaojun", "luoyonghao", "whynottv"];
+const showOrder = ["zhangxiaojun", "sv101", "luoyonghao", "whynottv"];
 
 function findRepositoryRoot(): string {
   const configuredRoot = process.env.PODWIKI_REPOSITORY_ROOT;
@@ -96,10 +119,32 @@ function findRepositoryRoot(): string {
   return found;
 }
 
-function readMarkdown(filePath: string): { data: Record<string, unknown>; content: string } {
-  const raw = fs.readFileSync(filePath, "utf8");
+function readMarkdown(filePath: string): {
+  data: Record<string, unknown>;
+  content: string;
+  sha256: string;
+} {
+  const bytes = fs.readFileSync(filePath);
+  const raw = bytes.toString("utf8");
   const parsed = matter(raw);
-  return { data: parsed.data, content: parsed.content.trim() };
+  return {
+    data: parsed.data,
+    content: parsed.content.trim(),
+    sha256: createHash("sha256").update(bytes).digest("hex"),
+  };
+}
+
+function resolveEpisodeAsset(episodeRoot: string, relativePath: string, label: string): string {
+  const resolvedPath = path.resolve(episodeRoot, relativePath);
+  const relativeToEpisode = path.relative(episodeRoot, resolvedPath);
+  if (
+    relativeToEpisode === "" ||
+    relativeToEpisode.startsWith(`..${path.sep}`) ||
+    path.isAbsolute(relativeToEpisode)
+  ) {
+    throw new Error(`${label} must stay inside the episode directory: ${relativePath}`);
+  }
+  return resolvedPath;
 }
 
 function formatDuration(durationMs: number): string {
@@ -137,6 +182,24 @@ function normalizeProvenance(
     engine: value.engine,
     model: value.model,
     selectionStatus: value.selection_status,
+  };
+}
+
+function normalizeTranslationMetadata(
+  value: z.infer<typeof transcriptTranslationSchema>,
+): TranscriptTranslationMetadata {
+  return {
+    language: value.language,
+    path: value.path,
+    sourceLanguage: value.source_language,
+    sourcePath: value.source_path,
+    alignment: value.alignment,
+    status: value.status,
+    generatedAt: value.generated_at instanceof Date
+      ? value.generated_at.toISOString()
+      : value.generated_at,
+    sourceSha256: value.source_sha256,
+    sha256: value.sha256,
   };
 }
 
@@ -190,6 +253,134 @@ function parseTranscript(raw: string): TranscriptSegment[] {
   }
 
   return segments;
+}
+
+export function pairTranscriptSegments(
+  sourceSegments: TranscriptSegment[],
+  translationSegments: TranscriptSegment[],
+  label = "transcript translation",
+): BilingualTranscriptSegment[] {
+  if (sourceSegments.length !== translationSegments.length) {
+    throw new Error(
+      `${label} segment count mismatch: source has ${sourceSegments.length}, translation has ${translationSegments.length}`,
+    );
+  }
+
+  return sourceSegments.map((source, index) => {
+    const translation = translationSegments[index];
+    if (source.timestamp !== translation.timestamp) {
+      throw new Error(
+        `${label} timestamp mismatch at segment ${index + 1}: source ${source.timestamp}, translation ${translation.timestamp}`,
+      );
+    }
+    return {
+      timestamp: source.timestamp,
+      seconds: source.seconds,
+      id: source.id,
+      sourceText: source.text,
+      translationText: translation.text,
+    };
+  });
+}
+
+function loadTranscriptTranslations({
+  episodeRoot,
+  episodeId,
+  episodeLanguage,
+  sourcePath,
+  sourceSha256,
+  sourceContent,
+  sourceSegments,
+  values,
+}: {
+  episodeRoot: string;
+  episodeId: string;
+  episodeLanguage: string;
+  sourcePath: string;
+  sourceSha256: string;
+  sourceContent: string;
+  sourceSegments: TranscriptSegment[];
+  values: z.infer<typeof transcriptTranslationSchema>[];
+}): {
+  translations: TranscriptTranslationMetadata[];
+  bilingualTranscript?: BilingualTranscript;
+} {
+  const sourceIsEnglish = /^en(?:-|$)/iu.test(episodeLanguage);
+  if (!sourceIsEnglish && values.length > 0) {
+    throw new Error(`${episodeId} transcript translations are only supported for English sources`);
+  }
+
+  const sourceTitle = extractMarkdownTitle(sourceContent);
+  if (sourceIsEnglish && !sourceTitle) {
+    throw new Error(`${episodeId} English transcript is missing its Markdown H1 title`);
+  }
+
+  const languages = new Set<string>();
+  let bilingualTranscript: BilingualTranscript | undefined;
+  const translations = values.map((value) => {
+    const metadata = normalizeTranslationMetadata(value);
+    if (languages.has(metadata.language)) {
+      throw new Error(`${episodeId} has more than one ${metadata.language} transcript translation`);
+    }
+    languages.add(metadata.language);
+
+    if (!/^en(?:-|$)/iu.test(metadata.sourceLanguage)) {
+      throw new Error(
+        `${episodeId} ${metadata.language} translation source_language must be an English language tag`,
+      );
+    }
+    if (metadata.sourcePath !== sourcePath) {
+      throw new Error(
+        `${episodeId} ${metadata.language} translation source_path ${metadata.sourcePath} does not match selected transcript ${sourcePath}`,
+      );
+    }
+    if (metadata.path === sourcePath) {
+      throw new Error(`${episodeId} ${metadata.language} translation must not overwrite its source transcript`);
+    }
+    if (metadata.sourceSha256 !== sourceSha256) {
+      throw new Error(
+        `${episodeId} ${metadata.language} translation source SHA-256 does not match ${sourcePath}`,
+      );
+    }
+
+    const translationPath = resolveEpisodeAsset(
+      episodeRoot,
+      metadata.path,
+      `${episodeId} ${metadata.language} translation path`,
+    );
+    if (!fs.existsSync(translationPath)) {
+      throw new Error(`${episodeId} is missing ${metadata.language} translation: ${translationPath}`);
+    }
+    const translation = readMarkdown(translationPath);
+    if (translation.sha256 !== metadata.sha256) {
+      throw new Error(`${episodeId} ${metadata.language} translation SHA-256 does not match ${metadata.path}`);
+    }
+    if (extractMarkdownTitle(translation.content) !== sourceTitle) {
+      throw new Error(
+        `${episodeId} ${metadata.language} translation Markdown H1 does not match ${sourcePath}`,
+      );
+    }
+
+    const segments = parseTranscript(translation.content);
+    const pairedSegments = pairTranscriptSegments(
+      sourceSegments,
+      segments,
+      `${episodeId} ${metadata.language} translation`,
+    );
+    if (sourceIsEnglish && metadata.language === "zh-CN") {
+      bilingualTranscript = { ...metadata, segments: pairedSegments };
+    }
+    return metadata;
+  });
+
+  if (sourceIsEnglish && !bilingualTranscript) {
+    throw new Error(`${episodeId} has an English transcript but no zh-CN segment translation`);
+  }
+
+  return {
+    translations,
+    bilingualTranscript,
+  };
 }
 
 function parseChapters(
@@ -282,8 +473,16 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
 
       const readme = readMarkdown(readmePath);
       const metadata = episodeSchema.parse(readme.data);
-      const summaryPath = path.join(episodeRoot, metadata.summary.path);
-      const transcriptPath = path.join(episodeRoot, metadata.transcript.path);
+      const summaryPath = resolveEpisodeAsset(
+        episodeRoot,
+        metadata.summary.path,
+        `${metadata.id} summary path`,
+      );
+      const transcriptPath = resolveEpisodeAsset(
+        episodeRoot,
+        metadata.transcript.path,
+        `${metadata.id} transcript path`,
+      );
       if (!fs.existsSync(summaryPath)) {
         throw new Error(`Missing summary for ${metadata.id}: ${summaryPath}`);
       }
@@ -302,6 +501,16 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
       const preferredSource = metadata.sources.find((source) => source.preferred) ?? metadata.sources[0];
 
       const transcriptSegments = parseTranscript(transcript.content);
+      const { translations: transcriptTranslations, bilingualTranscript } = loadTranscriptTranslations({
+        episodeRoot,
+        episodeId: metadata.id,
+        episodeLanguage: metadata.language,
+        sourcePath: metadata.transcript.path,
+        sourceSha256: transcript.sha256,
+        sourceContent: transcript.content,
+        sourceSegments: transcriptSegments,
+        values: metadata.transcript.translations,
+      });
       const episode: Episode = {
         id: metadata.id,
         showId: metadata.show_id,
@@ -317,6 +526,7 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
         publishedDate: publishedAt.slice(0, 10),
         durationMs: metadata.duration_ms,
         durationLabel: formatDuration(metadata.duration_ms),
+        language: metadata.language,
         participants: metadata.participants,
         guests: metadata.participants.filter((participant) => participant.role === "guest"),
         hosts: metadata.participants.filter((participant) => participant.role === "host"),
@@ -332,6 +542,8 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
         readmeRaw: readme.content,
         chapters: [],
         transcriptSegments,
+        transcriptTranslations,
+        bilingualTranscript,
         href,
       };
       episode.chapters = parseChapters(
@@ -462,6 +674,22 @@ export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
         href: `${episode.href}?view=transcript#${segment.id}`,
         timestamp: segment.timestamp,
         score: 50,
+      });
+    }
+
+    const translationMatches = episode.bilingualTranscript?.segments
+      .filter((segment) => segment.translationText.toLocaleLowerCase("zh-CN").includes(lowerQuery))
+      .slice(0, 3) ?? [];
+    for (const segment of translationMatches) {
+      results.push({
+        id: `${episode.id}:translation:${segment.id}`,
+        title: episode.displayTitle,
+        showTitle: episode.showTitle,
+        section: "译稿",
+        snippet: snippetAround(segment.translationText, query),
+        href: `${episode.href}?view=transcript#${segment.id}`,
+        timestamp: segment.timestamp,
+        score: 49,
       });
     }
   }

@@ -36,6 +36,7 @@ summary:
   source_transcript: null
 transcript:
   path: transcript.zh-CN.md
+  translations: []
 asr_artifacts:
   raw:
     path: asr/qwen3-asr/raw.json

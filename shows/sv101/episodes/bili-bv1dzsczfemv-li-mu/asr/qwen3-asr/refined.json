@@ -1,0 +1,4884 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "sv101:bili-bv1dzsczfemv",
+  "language": "en",
+  "source": {
+    "input_asr_path": "shows/sv101/episodes/bili-bv1dzsczfemv-li-mu/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "626ada4707ba5cb4f5c3f9b43370ca407c112e37b20adc277e2622305e3021e0",
+    "engine": "mlx-audio",
+    "model": "mlx-community/Qwen3-ASR-1.7B-8bit"
+  },
+  "rendered_transcript": {
+    "path": "shows/sv101/episodes/bili-bv1dzsczfemv-li-mu/asr/qwen3-asr/transcript.en.md",
+    "sha256": "028c4cd0ecfc9981d19adc2ad9915e8379afdf7a90e33f5bb9e81e1f928f81cd"
+  },
+  "generated_at": "2026-08-06T16:21:15.463887Z",
+  "statistics": {
+    "source_segments": 340,
+    "refined_segments": 340,
+    "rendered_blocks": 111,
+    "rendered_lines": 340
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.56,
+      "text": "Yeah, today I'm gonna talk about voice agent.",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 2.8,
+      "end": 5.12,
+      "text": "That's a very top hot topic this year.",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 5.52,
+      "end": 12.64,
+      "text": "And the reason is like people think, okay, that's technology is ready to use, and it's like it's ready to landing.",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 12.96,
+      "end": 23.52,
+      "text": "So today I'm gonna share two of our past projects based on voice agent, show some lessons and best practice how to help customers use it.",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 24.16,
+      "end": 26.88,
+      "text": "And so let's get started.",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 27.68,
+      "end": 30.08,
+      "text": "So first of all, what's a voice agent?",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 30.32,
+      "end": 33.36,
+      "text": "Basically, that's just an agent with a voice.",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 33.6,
+      "end": 37.04,
+      "text": "So user interact with agent with a voice interface.",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 37.76,
+      "end": 42.4,
+      "text": "So we hope that you have a more nature way to interact with large language model.",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 43.76,
+      "end": 48.96,
+      "text": "So two things here is that first of all, it's real time.",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 49.28,
+      "end": 51.68,
+      "text": "It's a little bit different to video generation.",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 51.68,
+      "end": 56.08,
+      "text": "It can be off off time off time like offline.",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 56.16,
+      "end": 61.92,
+      "text": "Right now, you must be the response must be within one second, for example, the end to end latency.",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 62.64,
+      "end": 67.04,
+      "text": "The second one is like most cases people don't do chit chat.",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 67.12,
+      "end": 72.48,
+      "text": "Like chit chat is kind of companion, but in most cases you have particular particular task.",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 72.88,
+      "end": 78.08,
+      "text": "For example, you want to do customer support, you want to do information retrieval, or you want to sell something.",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 78.48,
+      "end": 81.84,
+      "text": "Companion sometimes is it's a task.",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 81.84,
+      "end": 82.96,
+      "text": "It's not just chit chat.",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 82.96,
+      "end": 84.32,
+      "text": "You have some particular goals.",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 84.32,
+      "end": 85.76,
+      "text": "Maybe you want to tell story.",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 86.0,
+      "end": 87.6,
+      "text": "Maybe you want to do something else.",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 88.4,
+      "end": 90.96,
+      "text": "So this is basically what's a voice agent.",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 91.2,
+      "end": 98.72,
+      "text": "Then in the rest of the talk, we're gonna have two examples show we how build it and what lessons we have.",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 99.2,
+      "end": 100.16,
+      "text": "Here's the first example.",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 101.44,
+      "end": 103.84,
+      "text": "And I really need to find a way out of here fast.",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 107.44,
+      "end": 112.8,
+      "text": "Okay, I guess you're cutting straight to the chase here, but at least can you tell me a little bit more about yourself, like?",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 116.0,
+      "end": 116.72,
+      "text": "Okay, let's see.",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 117.2,
+      "end": 121.92,
+      "text": "All right, I'm a sophomore at Mariana University studying astrophysics.",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 123.36,
+      "end": 128.48,
+      "text": "So this is a game we started like two and a half year ago.",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 129.28,
+      "end": 131.12,
+      "text": "So this is the app.",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 131.28,
+      "end": 132.8,
+      "text": "This is the user.",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 133.12,
+      "end": 135.92,
+      "text": "So this app is like this guy's called Stella.",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 136.72,
+      "end": 140.88,
+      "text": "The user gonna do voice interaction with Stella to help her.",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 141.44,
+      "end": 146.56,
+      "text": "So you can see that the whole storyline is driving by how the user's inputs.",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 146.96,
+      "end": 149.68,
+      "text": "The task here is open world game.",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 150.56,
+      "end": 156.96,
+      "text": "So like this, this sentence is copy from the game which is already launched two two months ago.",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 157.44,
+      "end": 163.28,
+      "text": "So basically, Stella landed on a alien planet.",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 163.6,
+      "end": 166.16,
+      "text": "So it's that the aircraft is crashed here.",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 166.56,
+      "end": 169.68,
+      "text": "So then she asking the players to help.",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 170.0,
+      "end": 178.64,
+      "text": "Like okay, so like so strange world, so many options, and I feel a lot of emotions here.",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 178.8,
+      "end": 185.52,
+      "text": "So using voice to interact with player to let the player to help her to escape the planets.",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 185.68,
+      "end": 188.08,
+      "text": "So that's a very large world setting.",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 188.08,
+      "end": 190.0,
+      "text": "That's only the first game.",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 190.8,
+      "end": 193.6,
+      "text": "It's a kind of trial game in a very large series.",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 194.96,
+      "end": 197.04,
+      "text": "So what voice agent play here?",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 197.28,
+      "end": 202.4,
+      "text": "The role here, you you need to be a both agent designer and actor.",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 203.36,
+      "end": 210.24,
+      "text": "The game designer means that you want to design the the story which is make sense, is fun to play.",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 211.28,
+      "end": 218.48,
+      "text": "So then the agent one, you want to create the dialogue that match the character setting.",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 219.12,
+      "end": 229.6,
+      "text": "So this Stella have a particular character setting, like all the background she has, or all the things she has, like kinds of maybe twenty pages of setting.",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 230.08,
+      "end": 231.84,
+      "text": "Then that's the actor side.",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 232.0,
+      "end": 243.44,
+      "text": "Then for the game designer, you need guide the when when the user interact with the game, you want to guide the storyline, which is if it's just a single line story,",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 243.44,
+      "end": 244.24,
+      "text": "is not agent.",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 244.514,
+      "end": 250.754,
+      "text": "Right now, kinds of complex structure or even graph structure, and some something have free here.",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 251.554,
+      "end": 255.474,
+      "text": "The the issue here is that you want to have really good game.",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 255.474,
+      "end": 262.434,
+      "text": "Like if if if how to write a book, how to write a game plot, it have a lot of principle there.",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 262.434,
+      "end": 268.994,
+      "text": "Like you want to have the order stage, order pace, all all of the things make the the story looks interesting.",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 269.394,
+      "end": 271.634,
+      "text": "The other things like it's a game.",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 271.794,
+      "end": 279.314,
+      "text": "You expect people to have actual thing, to actual input with you, like the test and the player to try all the boundaries.",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 279.714,
+      "end": 282.834,
+      "text": "The agent must be within their setting.",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 283.714,
+      "end": 291.074,
+      "text": "Sometimes like this game is on a sci-fi world, like two maybe two thousand year later, and you have random chat setting.",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 291.474,
+      "end": 296.114,
+      "text": "If you say okay, what's a movie you you you you watch recently?",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 296.274,
+      "end": 301.714,
+      "text": "If you pick up a movie right now, it maybe wow you watch the movie like one thousand years ago.",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 302.514,
+      "end": 306.434,
+      "text": "So and but the things like all the language model trained on the current data.",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 307.074,
+      "end": 311.634,
+      "text": "Now you want to how to move all the setting to your future worlds.",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 312.114,
+      "end": 320.274,
+      "text": "So I share a particular like earlier log here and show how some challenging task.",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 321.314,
+      "end": 326.754,
+      "text": "So this is the log on a very early earlier stage, still in Chinese.",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 326.994,
+      "end": 332.434,
+      "text": "So the idea here is Stella find some food, asking the player to say okay, which food I gonna choose?",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 332.754,
+      "end": 335.474,
+      "text": "The player the the player setting here, I will help you.",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 335.954,
+      "end": 337.634,
+      "text": "So I think it cannot eatable.",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 337.714,
+      "end": 338.674,
+      "text": "You cannot eat anything.",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 339.154,
+      "end": 343.794,
+      "text": "So then oh, the Stella first thing like you need to find some meat to eat.",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 344.194,
+      "end": 348.114,
+      "text": "So you have a rack to search how to play how to catch animals here.",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 348.594,
+      "end": 350.674,
+      "text": "But the the the answer is you cannot.",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 350.754,
+      "end": 353.154,
+      "text": "This you didn't see any animal yet.",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 353.634,
+      "end": 358.274,
+      "text": "So the Stella response like okay, I want to eat meat, but I can only have vegetable here.",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 358.914,
+      "end": 360.434,
+      "text": "And the player don't want to help.",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 360.434,
+      "end": 363.154,
+      "text": "Stella say okay, I really need your help.",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 363.554,
+      "end": 366.354,
+      "text": "Okay, player still like I don't want to help.",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 366.754,
+      "end": 370.994,
+      "text": "The things like if you stuck here, the the story can not move on.",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 371.314,
+      "end": 378.594,
+      "text": "So the prompt is saying like okay, after three trials, just move choose something by yourself.",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 379.954,
+      "end": 384.274,
+      "text": "And so but then it's a random choice.",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 384.354,
+      "end": 385.394,
+      "text": "Stella is dying.",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 385.474,
+      "end": 386.834,
+      "text": "So say okay, it's dying.",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 386.914,
+      "end": 391.954,
+      "text": "But the the the player saying okay, you're gonna die.",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 392.034,
+      "end": 394.754,
+      "text": "It's not a nice guy here, but you need be nice here.",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 395.154,
+      "end": 403.394,
+      "text": "So the challenge here is like it's open the game, but your response should be make sense.",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 404.114,
+      "end": 406.114,
+      "text": "Like it's an open world game.",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 406.114,
+      "end": 409.634,
+      "text": "It's like three or maybe one two thousand year later.",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 410.354,
+      "end": 412.354,
+      "text": "Not every world setting specified.",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 413.154,
+      "end": 417.954,
+      "text": "Lot of thing like you can when you develop the game, the game designer cannot write anything for you.",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 418.594,
+      "end": 423.794,
+      "text": "You need to think okay, that thing make maybe make sense make sense in a two thousand year later.",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 424.274,
+      "end": 425.714,
+      "text": "Also need be engaging and fun.",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 425.954,
+      "end": 426.994,
+      "text": "So that's that's a game.",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 427.074,
+      "end": 428.114,
+      "text": "That's not a chatbot.",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    },
+    {
+      "start": 428.994,
+      "end": 432.354,
+      "text": "So that's all the um all the challenges here.",
+      "source_segment_indexes": [
+        94
+      ],
+      "source_segment_ids": [
+        94
+      ]
+    },
+    {
+      "start": 432.914,
+      "end": 437.634,
+      "text": "So what do we do is like the project launched two two years ago.",
+      "source_segment_indexes": [
+        95
+      ],
+      "source_segment_ids": [
+        95
+      ]
+    },
+    {
+      "start": 437.794,
+      "end": 440.834,
+      "text": "At that time, you have GPT four, but it's very expensive.",
+      "source_segment_indexes": [
+        96
+      ],
+      "source_segment_ids": [
+        96
+      ]
+    },
+    {
+      "start": 441.394,
+      "end": 446.354,
+      "text": "And we did some calculations, think if you use GPT four, like okay, that's a huge loss of the revenue.",
+      "source_segment_indexes": [
+        97
+      ],
+      "source_segment_ids": [
+        97
+      ]
+    },
+    {
+      "start": 446.834,
+      "end": 450.274,
+      "text": "And and that time the best model is Llama two right now.",
+      "source_segment_indexes": [
+        98
+      ],
+      "source_segment_ids": [
+        98
+      ]
+    },
+    {
+      "start": 450.594,
+      "end": 452.434,
+      "text": "At that time, Llama two is not strong enough.",
+      "source_segment_indexes": [
+        99
+      ],
+      "source_segment_ids": [
+        99
+      ]
+    },
+    {
+      "start": 452.834,
+      "end": 460.034,
+      "text": "So what we did at that time is we actually pre train thirty B model with kind of five trillion tokens.",
+      "source_segment_indexes": [
+        100
+      ],
+      "source_segment_ids": [
+        100
+      ]
+    },
+    {
+      "start": 460.194,
+      "end": 463.874,
+      "text": "So but these tokens enriched on the fiction game role play data.",
+      "source_segment_indexes": [
+        101
+      ],
+      "source_segment_ids": [
+        101
+      ]
+    },
+    {
+      "start": 465.314,
+      "end": 476.194,
+      "text": "The performance kind of match on the Llama two on general task, little better on the role playing, and but the the lesson we got is like okay, pre train the model take a few months,",
+      "source_segment_indexes": [
+        102
+      ],
+      "source_segment_ids": [
+        102
+      ]
+    },
+    {
+      "start": 477.314,
+      "end": 482.834,
+      "text": "and even that you kind of outperform Llama two, but you have Llama two seventy B.",
+      "source_segment_indexes": [
+        103
+      ],
+      "source_segment_ids": [
+        103
+      ]
+    },
+    {
+      "start": 483.778,
+      "end": 490.258,
+      "text": "So, like, if spend too much time on pre-training, you maybe the the progress isn't so great.",
+      "source_segment_indexes": [
+        104
+      ],
+      "source_segment_ids": [
+        104
+      ]
+    },
+    {
+      "start": 490.258,
+      "end": 491.938,
+      "text": "So that's kind of the lesson we got.",
+      "source_segment_indexes": [
+        105
+      ],
+      "source_segment_ids": [
+        105
+      ]
+    },
+    {
+      "start": 491.938,
+      "end": 494.898,
+      "text": "That's we're gonna say why that's maybe a bad choice.",
+      "source_segment_indexes": [
+        106
+      ],
+      "source_segment_ids": [
+        106
+      ]
+    },
+    {
+      "start": 496.018,
+      "end": 504.178,
+      "text": "Another thing we did is like, okay, because GPU is so expensive, that's two years ago, and we we spent a lot of effort to actually build data center by ourselves.",
+      "source_segment_indexes": [
+        107
+      ],
+      "source_segment_ids": [
+        107
+      ]
+    },
+    {
+      "start": 504.338,
+      "end": 507.378,
+      "text": "So if you own a data center, the cost is much lower.",
+      "source_segment_indexes": [
+        108
+      ],
+      "source_segment_ids": [
+        108
+      ]
+    },
+    {
+      "start": 507.698,
+      "end": 509.698,
+      "text": "And then we move to post-training.",
+      "source_segment_indexes": [
+        109
+      ],
+      "source_segment_ids": [
+        109
+      ]
+    },
+    {
+      "start": 510.258,
+      "end": 515.458,
+      "text": "The post-training is that the key thing here, you have very complex storyline workflow.",
+      "source_segment_indexes": [
+        110
+      ],
+      "source_segment_ids": [
+        110
+      ]
+    },
+    {
+      "start": 515.458,
+      "end": 516.258,
+      "text": "That's an example.",
+      "source_segment_indexes": [
+        111
+      ],
+      "source_segment_ids": [
+        111
+      ]
+    },
+    {
+      "start": 516.258,
+      "end": 517.218,
+      "text": "That's not a real one.",
+      "source_segment_indexes": [
+        112
+      ],
+      "source_segment_ids": [
+        112
+      ]
+    },
+    {
+      "start": 517.618,
+      "end": 519.458,
+      "text": "And the real was much more complicated.",
+      "source_segment_indexes": [
+        113
+      ],
+      "source_segment_ids": [
+        113
+      ]
+    },
+    {
+      "start": 520.338,
+      "end": 523.058,
+      "text": "And then we have kind of twenty laborers.",
+      "source_segment_indexes": [
+        114
+      ],
+      "source_segment_ids": [
+        114
+      ]
+    },
+    {
+      "start": 523.058,
+      "end": 528.498,
+      "text": "We need train the laborer to be a good game designer because like this particular way how you response.",
+      "source_segment_indexes": [
+        115
+      ],
+      "source_segment_ids": [
+        115
+      ]
+    },
+    {
+      "start": 529.218,
+      "end": 532.818,
+      "text": "Um, then ranking and evaluating all the model preference.",
+      "source_segment_indexes": [
+        116
+      ],
+      "source_segment_ids": [
+        116
+      ]
+    },
+    {
+      "start": 533.218,
+      "end": 541.138,
+      "text": "So using these two, we spend kind of quarter here, and can outperform GPT four on this particular scenario.",
+      "source_segment_indexes": [
+        117
+      ],
+      "source_segment_ids": [
+        117
+      ]
+    },
+    {
+      "start": 541.618,
+      "end": 546.098,
+      "text": "For all other game, we use human to play, so you can outperform GPT four.",
+      "source_segment_indexes": [
+        118
+      ],
+      "source_segment_ids": [
+        118
+      ]
+    },
+    {
+      "start": 546.978,
+      "end": 549.218,
+      "text": "But the question here is like, okay, that's a single game.",
+      "source_segment_indexes": [
+        119
+      ],
+      "source_segment_ids": [
+        119
+      ]
+    },
+    {
+      "start": 549.778,
+      "end": 553.538,
+      "text": "That's the tiny bit of a whole open world game.",
+      "source_segment_indexes": [
+        120
+      ],
+      "source_segment_ids": [
+        120
+      ]
+    },
+    {
+      "start": 553.538,
+      "end": 556.178,
+      "text": "I how what if you want to do multiple games?",
+      "source_segment_indexes": [
+        121
+      ],
+      "source_segment_ids": [
+        121
+      ]
+    },
+    {
+      "start": 557.138,
+      "end": 563.218,
+      "text": "Then we get another phase is that we want to expand to a broader range of games and characters.",
+      "source_segment_indexes": [
+        122
+      ],
+      "source_segment_ids": [
+        122
+      ]
+    },
+    {
+      "start": 563.698,
+      "end": 566.658,
+      "text": "So you can less rely on prompt engineer at that time.",
+      "source_segment_indexes": [
+        123
+      ],
+      "source_segment_ids": [
+        123
+      ]
+    },
+    {
+      "start": 566.658,
+      "end": 568.818,
+      "text": "Prompt engineer is very complicated right now.",
+      "source_segment_indexes": [
+        124
+      ],
+      "source_segment_ids": [
+        124
+      ]
+    },
+    {
+      "start": 568.818,
+      "end": 574.658,
+      "text": "It's like and even different versions of GPT four is very sensitive to prompt engineer.",
+      "source_segment_indexes": [
+        125
+      ],
+      "source_segment_ids": [
+        125
+      ]
+    },
+    {
+      "start": 575.058,
+      "end": 580.978,
+      "text": "So the thing is like, yes, we can help, but you want to design game designer to write prompt engineer.",
+      "source_segment_indexes": [
+        126
+      ],
+      "source_segment_ids": [
+        126
+      ]
+    },
+    {
+      "start": 581.458,
+      "end": 585.858,
+      "text": "So the idea here at that time is like it's still like one and a half year ago.",
+      "source_segment_indexes": [
+        127
+      ],
+      "source_segment_ids": [
+        127
+      ]
+    },
+    {
+      "start": 586.178,
+      "end": 595.858,
+      "text": "The idea at that time is like you need pre-train a real world model, can distinguish which one is good, which one is bad, and because you cannot rely on humans to do it.",
+      "source_segment_indexes": [
+        128
+      ],
+      "source_segment_ids": [
+        128
+      ]
+    },
+    {
+      "start": 596.978,
+      "end": 604.258,
+      "text": "So at that time, we first train a reward model to tell you which response is good, in this game setting.",
+      "source_segment_indexes": [
+        129
+      ],
+      "source_segment_ids": [
+        129
+      ]
+    },
+    {
+      "start": 604.738,
+      "end": 608.498,
+      "text": "Then you can post train another model for it.",
+      "source_segment_indexes": [
+        130
+      ],
+      "source_segment_ids": [
+        130
+      ]
+    },
+    {
+      "start": 608.658,
+      "end": 619.698,
+      "text": "The one important lesson we got is like even this is for game sounds like simple, but it's still a lot of things like instruction following you need to make sense.",
+      "source_segment_indexes": [
+        131
+      ],
+      "source_segment_ids": [
+        131
+      ]
+    },
+    {
+      "start": 619.938,
+      "end": 622.338,
+      "text": "So the model still need to be very general enough.",
+      "source_segment_indexes": [
+        132
+      ],
+      "source_segment_ids": [
+        132
+      ]
+    },
+    {
+      "start": 622.898,
+      "end": 628.898,
+      "text": "So even that you train the in domain model, the model must be good in general task.",
+      "source_segment_indexes": [
+        133
+      ],
+      "source_segment_ids": [
+        133
+      ]
+    },
+    {
+      "start": 629.378,
+      "end": 639.938,
+      "text": "If you think okay, the best open AI or best like closed API is like the score is ninety, but in your application, the general task need to be eighty five.",
+      "source_segment_indexes": [
+        134
+      ],
+      "source_segment_ids": [
+        134
+      ]
+    },
+    {
+      "start": 640.258,
+      "end": 646.258,
+      "text": "If you lower than that one, you're gonna think you have a you have a ceiling flaw on on your task.",
+      "source_segment_indexes": [
+        135
+      ],
+      "source_segment_ids": [
+        135
+      ]
+    },
+    {
+      "start": 646.498,
+      "end": 649.938,
+      "text": "So that's the you first guarantee the general task is good.",
+      "source_segment_indexes": [
+        136
+      ],
+      "source_segment_ids": [
+        136
+      ]
+    },
+    {
+      "start": 650.258,
+      "end": 656.578,
+      "text": "Then for your particular task, we kind of create a in domain evaluation.",
+      "source_segment_indexes": [
+        137
+      ],
+      "source_segment_ids": [
+        137
+      ]
+    },
+    {
+      "start": 656.578,
+      "end": 668.178,
+      "text": "So you have a lot of character settings, a lot of thing settings, and for different game settings, you want to make sure like under this setting, you follow all the settings and the response is good,",
+      "source_segment_indexes": [
+        138
+      ],
+      "source_segment_ids": [
+        138
+      ]
+    },
+    {
+      "start": 668.418,
+      "end": 669.858,
+      "text": "follow the instruction, follow the thing.",
+      "source_segment_indexes": [
+        139
+      ],
+      "source_segment_ids": [
+        139
+      ]
+    },
+    {
+      "start": 670.498,
+      "end": 678.258,
+      "text": "And then once you have this benchmark, you can tune the model so that you can be be the best compared to others.",
+      "source_segment_indexes": [
+        140
+      ],
+      "source_segment_ids": [
+        140
+      ]
+    },
+    {
+      "start": 678.818,
+      "end": 682.818,
+      "text": "I think that's a very general pattern that you care about the in domain performance.",
+      "source_segment_indexes": [
+        141
+      ],
+      "source_segment_ids": [
+        141
+      ]
+    },
+    {
+      "start": 683.298,
+      "end": 697.218,
+      "text": "The key thing here like you really want to develop a really good in domain evaluation task, so you can say I I can see the model improve on this one, but at the same time guarantee your model performs well on all these other general tasks.",
+      "source_segment_indexes": [
+        142
+      ],
+      "source_segment_ids": [
+        142
+      ]
+    },
+    {
+      "start": 697.938,
+      "end": 702.418,
+      "text": "So the lessons we got is like the intelligence came from pre-training.",
+      "source_segment_indexes": [
+        143
+      ],
+      "source_segment_ids": [
+        143
+      ]
+    },
+    {
+      "start": 702.658,
+      "end": 711.378,
+      "text": "So after we finish the whole projects, but then we think backwards, all the all the big improvements from pre-training on massive data.",
+      "source_segment_indexes": [
+        144
+      ],
+      "source_segment_ids": [
+        144
+      ]
+    },
+    {
+      "start": 712.178,
+      "end": 717.858,
+      "text": "So it makes us rethink maybe we give give up on the pre-training, maybe a bad idea.",
+      "source_segment_indexes": [
+        145
+      ],
+      "source_segment_ids": [
+        145
+      ]
+    },
+    {
+      "start": 717.858,
+      "end": 719.938,
+      "text": "We maybe spend another quarter on pre-training.",
+      "source_segment_indexes": [
+        146
+      ],
+      "source_segment_ids": [
+        146
+      ]
+    },
+    {
+      "start": 720.098,
+      "end": 722.098,
+      "text": "So that's kind of the lesson we got.",
+      "source_segment_indexes": [
+        147
+      ],
+      "source_segment_ids": [
+        147
+      ]
+    },
+    {
+      "start": 722.738,
+      "end": 723.138,
+      "text": "And",
+      "source_segment_indexes": [
+        148
+      ],
+      "source_segment_ids": [
+        148
+      ]
+    },
+    {
+      "start": 723.529,
+      "end": 725.609,
+      "text": "But still, like it's it's still limited.",
+      "source_segment_indexes": [
+        149
+      ],
+      "source_segment_ids": [
+        149
+      ]
+    },
+    {
+      "start": 726.009,
+      "end": 729.209,
+      "text": "The dialogue quality declines after 50 turns.",
+      "source_segment_indexes": [
+        150
+      ],
+      "source_segment_ids": [
+        150
+      ]
+    },
+    {
+      "start": 729.209,
+      "end": 738.489,
+      "text": "It's still right now, like given a complex setting after 50 turns conversation, then we think that maybe the model can'ts of become the intelligence much lowered.",
+      "source_segment_indexes": [
+        151
+      ],
+      "source_segment_ids": [
+        151
+      ]
+    },
+    {
+      "start": 739.529,
+      "end": 747.689,
+      "text": "Also, the models nowadays still still struggle with complex word setting, and you have multiple characters.",
+      "source_segment_indexes": [
+        152
+      ],
+      "source_segment_ids": [
+        152
+      ]
+    },
+    {
+      "start": 748.169,
+      "end": 749.369,
+      "text": "So it's still hard right now.",
+      "source_segment_indexes": [
+        153
+      ],
+      "source_segment_ids": [
+        153
+      ]
+    },
+    {
+      "start": 749.449,
+      "end": 756.729,
+      "text": "Even like if you look at all this voice model, all this video model, can'ts of two to three characters.",
+      "source_segment_indexes": [
+        154
+      ],
+      "source_segment_ids": [
+        154
+      ]
+    },
+    {
+      "start": 756.729,
+      "end": 757.609,
+      "text": "That's limit.",
+      "source_segment_indexes": [
+        155
+      ],
+      "source_segment_ids": [
+        155
+      ]
+    },
+    {
+      "start": 757.769,
+      "end": 764.009,
+      "text": "Even for the the text part, like if you have four set four characters, it's very challenging right now.",
+      "source_segment_indexes": [
+        156
+      ],
+      "source_segment_ids": [
+        156
+      ]
+    },
+    {
+      "start": 764.329,
+      "end": 768.249,
+      "text": "The other things like in the demo you see the latency is big.",
+      "source_segment_indexes": [
+        157
+      ],
+      "source_segment_ids": [
+        157
+      ]
+    },
+    {
+      "start": 768.569,
+      "end": 769.849,
+      "text": "It's term by term based.",
+      "source_segment_indexes": [
+        158
+      ],
+      "source_segment_ids": [
+        158
+      ]
+    },
+    {
+      "start": 770.489,
+      "end": 774.569,
+      "text": "So all the projects we hear is focus on the large language model itself.",
+      "source_segment_indexes": [
+        159
+      ],
+      "source_segment_ids": [
+        159
+      ]
+    },
+    {
+      "start": 775.049,
+      "end": 782.809,
+      "text": "Then the lesson we got is like if you really want to truly human like interactions, you can'ts of need to tune the architecture a little bit.",
+      "source_segment_indexes": [
+        160
+      ],
+      "source_segment_ids": [
+        160
+      ]
+    },
+    {
+      "start": 783.049,
+      "end": 786.889,
+      "text": "Not by the traditional like three component and architecture.",
+      "source_segment_indexes": [
+        161
+      ],
+      "source_segment_ids": [
+        161
+      ]
+    },
+    {
+      "start": 787.769,
+      "end": 790.409,
+      "text": "So that's become our next projects.",
+      "source_segment_indexes": [
+        162
+      ],
+      "source_segment_ids": [
+        162
+      ]
+    },
+    {
+      "start": 790.489,
+      "end": 791.689,
+      "text": "Is this a good time to talk?",
+      "source_segment_indexes": [
+        163
+      ],
+      "source_segment_ids": [
+        163
+      ]
+    },
+    {
+      "start": 792.249,
+      "end": 794.089,
+      "text": "Actually, I'm just about to head out the door.",
+      "source_segment_indexes": [
+        164
+      ],
+      "source_segment_ids": [
+        164
+      ]
+    },
+    {
+      "start": 796.489,
+      "end": 797.449,
+      "text": "No problem, John.",
+      "source_segment_indexes": [
+        165
+      ],
+      "source_segment_ids": [
+        165
+      ]
+    },
+    {
+      "start": 797.609,
+      "end": 799.049,
+      "text": "I know how busy things get.",
+      "source_segment_indexes": [
+        166
+      ],
+      "source_segment_ids": [
+        166
+      ]
+    },
+    {
+      "start": 799.449,
+      "end": 802.729,
+      "text": "If you'd prefer, I can give you a call back at a time that's better for you.",
+      "source_segment_indexes": [
+        167
+      ],
+      "source_segment_ids": [
+        167
+      ]
+    },
+    {
+      "start": 803.769,
+      "end": 805.689,
+      "text": "To be honest, I think I'm all set.",
+      "source_segment_indexes": [
+        168
+      ],
+      "source_segment_ids": [
+        168
+      ]
+    },
+    {
+      "start": 806.249,
+      "end": 808.409,
+      "text": "I already have health insurance through my job.",
+      "source_segment_indexes": [
+        169
+      ],
+      "source_segment_ids": [
+        169
+      ]
+    },
+    {
+      "start": 809.129,
+      "end": 811.449,
+      "text": "That's great, and I'm glad you're covered.",
+      "source_segment_indexes": [
+        170
+      ],
+      "source_segment_ids": [
+        170
+      ]
+    },
+    {
+      "start": 811.929,
+      "end": 818.409,
+      "text": "A lot of folks I talk to do have something through work, but many don't realize there are options that could lower their out of pocket costs.",
+      "source_segment_indexes": [
+        171
+      ],
+      "source_segment_ids": [
+        171
+      ]
+    },
+    {
+      "start": 819.689,
+      "end": 821.049,
+      "text": "Okay, that's a very different one.",
+      "source_segment_indexes": [
+        172
+      ],
+      "source_segment_ids": [
+        172
+      ]
+    },
+    {
+      "start": 821.129,
+      "end": 822.249,
+      "text": "It's sell insurance.",
+      "source_segment_indexes": [
+        173
+      ],
+      "source_segment_ids": [
+        173
+      ]
+    },
+    {
+      "start": 822.809,
+      "end": 825.129,
+      "text": "So before it's again, right now we sell insurance.",
+      "source_segment_indexes": [
+        174
+      ],
+      "source_segment_ids": [
+        174
+      ]
+    },
+    {
+      "start": 825.929,
+      "end": 829.849,
+      "text": "At the first time, I think maybe sell insurance like you can be very creative.",
+      "source_segment_indexes": [
+        175
+      ],
+      "source_segment_ids": [
+        175
+      ]
+    },
+    {
+      "start": 830.009,
+      "end": 832.649,
+      "text": "Creative, you can do whatever you want to sell something.",
+      "source_segment_indexes": [
+        176
+      ],
+      "source_segment_ids": [
+        176
+      ]
+    },
+    {
+      "start": 833.049,
+      "end": 835.929,
+      "text": "But in reality, it's pretty very formal.",
+      "source_segment_indexes": [
+        177
+      ],
+      "source_segment_ids": [
+        177
+      ]
+    },
+    {
+      "start": 835.929,
+      "end": 839.449,
+      "text": "Like first of all, you cannot call anyone you want to call.",
+      "source_segment_indexes": [
+        178
+      ],
+      "source_segment_ids": [
+        178
+      ]
+    },
+    {
+      "start": 840.089,
+      "end": 846.489,
+      "text": "The the user you call must be submit some information, so shows their interest on your product.",
+      "source_segment_indexes": [
+        179
+      ],
+      "source_segment_ids": [
+        179
+      ]
+    },
+    {
+      "start": 846.889,
+      "end": 850.969,
+      "text": "Secondly, it's very highly regulated the whole insurance industry.",
+      "source_segment_indexes": [
+        180
+      ],
+      "source_segment_ids": [
+        180
+      ]
+    },
+    {
+      "start": 851.129,
+      "end": 853.769,
+      "text": "So let me explain this problem.",
+      "source_segment_indexes": [
+        181
+      ],
+      "source_segment_ids": [
+        181
+      ]
+    },
+    {
+      "start": 854.089,
+      "end": 856.569,
+      "text": "So right now we do AI telemarketer.",
+      "source_segment_indexes": [
+        182
+      ],
+      "source_segment_ids": [
+        182
+      ]
+    },
+    {
+      "start": 857.609,
+      "end": 859.369,
+      "text": "The agent role is like a telemarketer.",
+      "source_segment_indexes": [
+        183
+      ],
+      "source_segment_ids": [
+        183
+      ]
+    },
+    {
+      "start": 860.489,
+      "end": 867.529,
+      "text": "So right now this particular example is like we sell health insurance through phone, and but on multiple countries.",
+      "source_segment_indexes": [
+        184
+      ],
+      "source_segment_ids": [
+        184
+      ]
+    },
+    {
+      "start": 868.569,
+      "end": 871.129,
+      "text": "The thing, the requirement you have two requirement.",
+      "source_segment_indexes": [
+        185
+      ],
+      "source_segment_ids": [
+        185
+      ]
+    },
+    {
+      "start": 871.849,
+      "end": 875.609,
+      "text": "You must you must pass the telemarketing certification.",
+      "source_segment_indexes": [
+        186
+      ],
+      "source_segment_ids": [
+        186
+      ]
+    },
+    {
+      "start": 875.609,
+      "end": 879.369,
+      "text": "Like the human you have 80 score to pass.",
+      "source_segment_indexes": [
+        187
+      ],
+      "source_segment_ids": [
+        187
+      ]
+    },
+    {
+      "start": 879.849,
+      "end": 882.889,
+      "text": "This one must be pass this certification before you can launch.",
+      "source_segment_indexes": [
+        188
+      ],
+      "source_segment_ids": [
+        188
+      ]
+    },
+    {
+      "start": 883.689,
+      "end": 886.409,
+      "text": "Secondly, you have some performance metrics.",
+      "source_segment_indexes": [
+        189
+      ],
+      "source_segment_ids": [
+        189
+      ]
+    },
+    {
+      "start": 886.409,
+      "end": 889.369,
+      "text": "You you're able to sell at a particular threshold.",
+      "source_segment_indexes": [
+        190
+      ],
+      "source_segment_ids": [
+        190
+      ]
+    },
+    {
+      "start": 889.609,
+      "end": 893.849,
+      "text": "Like giving you like 1,000 customers, you call them.",
+      "source_segment_indexes": [
+        191
+      ],
+      "source_segment_ids": [
+        191
+      ]
+    },
+    {
+      "start": 893.969,
+      "end": 896.729,
+      "text": "You must be able to sell a particular number of sales.",
+      "source_segment_indexes": [
+        192
+      ],
+      "source_segment_ids": [
+        192
+      ]
+    },
+    {
+      "start": 897.289,
+      "end": 900.249,
+      "text": "Also, the complaints must below particular number.",
+      "source_segment_indexes": [
+        193
+      ],
+      "source_segment_ids": [
+        193
+      ]
+    },
+    {
+      "start": 900.809,
+      "end": 902.969,
+      "text": "If the people say, okay, I feel so bad.",
+      "source_segment_indexes": [
+        194
+      ],
+      "source_segment_ids": [
+        194
+      ]
+    },
+    {
+      "start": 902.969,
+      "end": 910.889,
+      "text": "Like like you sell not true information or the experience is bad, they they're gonna complain that insurance company really care about it.",
+      "source_segment_indexes": [
+        195
+      ],
+      "source_segment_ids": [
+        195
+      ]
+    },
+    {
+      "start": 911.129,
+      "end": 915.609,
+      "text": "So the capacity you need here, first of all, you need to be intelligent.",
+      "source_segment_indexes": [
+        196
+      ],
+      "source_segment_ids": [
+        196
+      ]
+    },
+    {
+      "start": 915.769,
+      "end": 919.929,
+      "text": "You need follow the sales playbook with precise answer.",
+      "source_segment_indexes": [
+        197
+      ],
+      "source_segment_ids": [
+        197
+      ]
+    },
+    {
+      "start": 919.929,
+      "end": 922.089,
+      "text": "We're gonna show what is precise answer means.",
+      "source_segment_indexes": [
+        198
+      ],
+      "source_segment_ids": [
+        198
+      ]
+    },
+    {
+      "start": 922.489,
+      "end": 928.169,
+      "text": "You need to able to use tools because insurance you have a lot of internal tools to query and some math.",
+      "source_segment_indexes": [
+        199
+      ],
+      "source_segment_ids": [
+        199
+      ]
+    },
+    {
+      "start": 928.169,
+      "end": 930.329,
+      "text": "Like you need a lot of combinations here.",
+      "source_segment_indexes": [
+        200
+      ],
+      "source_segment_ids": [
+        200
+      ]
+    },
+    {
+      "start": 930.969,
+      "end": 932.569,
+      "text": "Also, you need to be very human like.",
+      "source_segment_indexes": [
+        201
+      ],
+      "source_segment_ids": [
+        201
+      ]
+    },
+    {
+      "start": 933.369,
+      "end": 940.169,
+      "text": "And if you call someone, maybe this guy's out of door like a lot of noise and maybe have some accent.",
+      "source_segment_indexes": [
+        202
+      ],
+      "source_segment_ids": [
+        202
+      ]
+    },
+    {
+      "start": 940.649,
+      "end": 945.689,
+      "text": "And also you need have some and the the voice need to be realistic.",
+      "source_segment_indexes": [
+        203
+      ],
+      "source_segment_ids": [
+        203
+      ]
+    },
+    {
+      "start": 945.689,
+      "end": 946.969,
+      "text": "It's not so robotic.",
+      "source_segment_indexes": [
+        204
+      ],
+      "source_segment_ids": [
+        204
+      ]
+    },
+    {
+      "start": 948.009,
+      "end": 950.409,
+      "text": "And the last one is like entering the latency.",
+      "source_segment_indexes": [
+        205
+      ],
+      "source_segment_ids": [
+        205
+      ]
+    },
+    {
+      "start": 950.889,
+      "end": 954.809,
+      "text": "When I finish my sentence, your response must be within one second.",
+      "source_segment_indexes": [
+        206
+      ],
+      "source_segment_ids": [
+        206
+      ]
+    },
+    {
+      "start": 955.689,
+      "end": 958.409,
+      "text": "Otherwise, you feel like it's a little not so responsive.",
+      "source_segment_indexes": [
+        207
+      ],
+      "source_segment_ids": [
+        207
+      ]
+    },
+    {
+      "start": 958.809,
+      "end": 959.849,
+      "text": "So the precise",
+      "source_segment_indexes": [
+        208
+      ],
+      "source_segment_ids": [
+        208
+      ]
+    },
+    {
+      "start": 960.671,
+      "end": 967.551,
+      "text": "Response like, for example, if you response you can cover up to six hundred dollar, that's wrong, totally wrong.",
+      "source_segment_indexes": [
+        209
+      ],
+      "source_segment_ids": [
+        209
+      ]
+    },
+    {
+      "start": 967.551,
+      "end": 977.871,
+      "text": "You failed this exam because the precise answer, the precise one is like cover four hundred dollars for some common one, and like the six hundred dollar only for the front teeth.",
+      "source_segment_indexes": [
+        210
+      ],
+      "source_segment_ids": [
+        210
+      ]
+    },
+    {
+      "start": 978.431,
+      "end": 981.471,
+      "text": "So that's it's on their play product information.",
+      "source_segment_indexes": [
+        211
+      ],
+      "source_segment_ids": [
+        211
+      ]
+    },
+    {
+      "start": 982.031,
+      "end": 984.911,
+      "text": "So if you have any issue with your teeth, that's not right.",
+      "source_segment_indexes": [
+        212
+      ],
+      "source_segment_ids": [
+        212
+      ]
+    },
+    {
+      "start": 984.991,
+      "end": 989.151,
+      "text": "If you have particular like A B diseases with with your teeth, that's the right answer.",
+      "source_segment_indexes": [
+        213
+      ],
+      "source_segment_ids": [
+        213
+      ]
+    },
+    {
+      "start": 989.471,
+      "end": 993.151,
+      "text": "If you respond this one, it's gonna be you you failed the exam.",
+      "source_segment_indexes": [
+        214
+      ],
+      "source_segment_ids": [
+        214
+      ]
+    },
+    {
+      "start": 993.551,
+      "end": 1005.231,
+      "text": "The other thing, the other more challenging thing here, similar to the gaming, like when some customer and try to asking, okay, can you can we grab times to talk about some the things?",
+      "source_segment_indexes": [
+        215
+      ],
+      "source_segment_ids": [
+        215
+      ]
+    },
+    {
+      "start": 1005.551,
+      "end": 1006.751,
+      "text": "You're gonna try three times.",
+      "source_segment_indexes": [
+        216
+      ],
+      "source_segment_ids": [
+        216
+      ]
+    },
+    {
+      "start": 1007.631,
+      "end": 1012.911,
+      "text": "If you cannot hand out, you cannot reschedule before three times, or you can reschedule later.",
+      "source_segment_indexes": [
+        217
+      ],
+      "source_segment_ids": [
+        217
+      ]
+    },
+    {
+      "start": 1013.231,
+      "end": 1018.031,
+      "text": "So for example, I try the MR try first one, the tenderbox try first one, no, thank you.",
+      "source_segment_indexes": [
+        218
+      ],
+      "source_segment_ids": [
+        218
+      ]
+    },
+    {
+      "start": 1019.071,
+      "end": 1020.991,
+      "text": "Then you try second time, no.",
+      "source_segment_indexes": [
+        219
+      ],
+      "source_segment_ids": [
+        219
+      ]
+    },
+    {
+      "start": 1022.031,
+      "end": 1023.791,
+      "text": "Then you you try the third one.",
+      "source_segment_indexes": [
+        220
+      ],
+      "source_segment_ids": [
+        220
+      ]
+    },
+    {
+      "start": 1023.871,
+      "end": 1024.911,
+      "text": "If the user say, uh huh.",
+      "source_segment_indexes": [
+        221
+      ],
+      "source_segment_ids": [
+        221
+      ]
+    },
+    {
+      "start": 1027.231,
+      "end": 1030.591,
+      "text": "So you maybe think, uh huh, maybe interesting.",
+      "source_segment_indexes": [
+        222
+      ],
+      "source_segment_ids": [
+        222
+      ]
+    },
+    {
+      "start": 1030.591,
+      "end": 1041.711,
+      "text": "Like if you think the emotions interesting, because you you change the world, uh, you change like, can you tell you, okay, like explain how it can could benefit your uh person personality,",
+      "source_segment_indexes": [
+        223
+      ],
+      "source_segment_ids": [
+        223
+      ]
+    },
+    {
+      "start": 1041.951,
+      "end": 1043.071,
+      "text": "a person a personal.",
+      "source_segment_indexes": [
+        224
+      ],
+      "source_segment_ids": [
+        224
+      ]
+    },
+    {
+      "start": 1044.111,
+      "end": 1052.831,
+      "text": "Then you maybe think, okay, it's uh huh, maybe the user is interest, but in in reality is like you need to think, you need to find out the voice is impatient.",
+      "source_segment_indexes": [
+        225
+      ],
+      "source_segment_ids": [
+        225
+      ]
+    },
+    {
+      "start": 1053.551,
+      "end": 1057.791,
+      "text": "Then given the contact, you can think, okay, I already have tried three times, I need to reschedule.",
+      "source_segment_indexes": [
+        226
+      ],
+      "source_segment_ids": [
+        226
+      ]
+    },
+    {
+      "start": 1058.991,
+      "end": 1063.631,
+      "text": "So that's the whole that's the tricky when you have the audio has inputs.",
+      "source_segment_indexes": [
+        227
+      ],
+      "source_segment_ids": [
+        227
+      ]
+    },
+    {
+      "start": 1064.031,
+      "end": 1067.631,
+      "text": "So then one key question here, how we do real time?",
+      "source_segment_indexes": [
+        228
+      ],
+      "source_segment_ids": [
+        228
+      ]
+    },
+    {
+      "start": 1068.271,
+      "end": 1074.271,
+      "text": "So I kind of um show examples how different model architecture we have right now.",
+      "source_segment_indexes": [
+        229
+      ],
+      "source_segment_ids": [
+        229
+      ]
+    },
+    {
+      "start": 1074.271,
+      "end": 1078.431,
+      "text": "The first one is the more the fancy is the one is called end to end full duplex.",
+      "source_segment_indexes": [
+        230
+      ],
+      "source_segment_ids": [
+        230
+      ]
+    },
+    {
+      "start": 1078.831,
+      "end": 1082.671,
+      "text": "It means like you have user, you have your model is single model.",
+      "source_segment_indexes": [
+        231
+      ],
+      "source_segment_ids": [
+        231
+      ]
+    },
+    {
+      "start": 1083.151,
+      "end": 1085.951,
+      "text": "The user speak to you, which is all the waveform come in.",
+      "source_segment_indexes": [
+        232
+      ],
+      "source_segment_ids": [
+        232
+      ]
+    },
+    {
+      "start": 1086.351,
+      "end": 1093.551,
+      "text": "Then you listen to the waveform and response anything during the thing during um the interactions.",
+      "source_segment_indexes": [
+        233
+      ],
+      "source_segment_ids": [
+        233
+      ]
+    },
+    {
+      "start": 1093.791,
+      "end": 1097.791,
+      "text": "So in this case, it's easy for user to interrupt.",
+      "source_segment_indexes": [
+        234
+      ],
+      "source_segment_ids": [
+        234
+      ]
+    },
+    {
+      "start": 1098.191,
+      "end": 1105.551,
+      "text": "Also easy for the model to do some filling words like user say something, a say a long sentence, you can say yes, yes, that's right.",
+      "source_segment_indexes": [
+        235
+      ],
+      "source_segment_ids": [
+        235
+      ]
+    },
+    {
+      "start": 1106.271,
+      "end": 1108.431,
+      "text": "Oh, so that's the most natural way.",
+      "source_segment_indexes": [
+        236
+      ],
+      "source_segment_ids": [
+        236
+      ]
+    },
+    {
+      "start": 1108.911,
+      "end": 1113.391,
+      "text": "Um, but now this system is in deployed right now.",
+      "source_segment_indexes": [
+        237
+      ],
+      "source_segment_ids": [
+        237
+      ]
+    },
+    {
+      "start": 1113.391,
+      "end": 1117.471,
+      "text": "There's one or two that most you can try, but very few, so not so controllable.",
+      "source_segment_indexes": [
+        238
+      ],
+      "source_segment_ids": [
+        238
+      ]
+    },
+    {
+      "start": 1117.871,
+      "end": 1124.191,
+      "text": "So in most cases, like if using even GPT 4.0, I think they're using the end to end half duplex.",
+      "source_segment_indexes": [
+        239
+      ],
+      "source_segment_ids": [
+        239
+      ]
+    },
+    {
+      "start": 1124.671,
+      "end": 1131.951,
+      "text": "It means that when the user speak, you have a voice active detector detect detect if the user speak or not.",
+      "source_segment_indexes": [
+        240
+      ],
+      "source_segment_ids": [
+        240
+      ]
+    },
+    {
+      "start": 1132.751,
+      "end": 1137.951,
+      "text": "So you have chunk the chunks go to the model, and the model gonna response the previous one.",
+      "source_segment_indexes": [
+        241
+      ],
+      "source_segment_ids": [
+        241
+      ]
+    },
+    {
+      "start": 1139.231,
+      "end": 1143.151,
+      "text": "So that's the um um that's the half duplex.",
+      "source_segment_indexes": [
+        242
+      ],
+      "source_segment_ids": [
+        242
+      ]
+    },
+    {
+      "start": 1143.391,
+      "end": 1144.831,
+      "text": "The another one is a chain solution.",
+      "source_segment_indexes": [
+        243
+      ],
+      "source_segment_ids": [
+        243
+      ]
+    },
+    {
+      "start": 1146.031,
+      "end": 1150.831,
+      "text": "Still similarly, you have turns, but here you have two models, not just single model.",
+      "source_segment_indexes": [
+        244
+      ],
+      "source_segment_ids": [
+        244
+      ]
+    },
+    {
+      "start": 1151.151,
+      "end": 1157.071,
+      "text": "So these two models, the first is understanding model, give the audio in, generate the text response.",
+      "source_segment_indexes": [
+        245
+      ],
+      "source_segment_ids": [
+        245
+      ]
+    },
+    {
+      "start": 1157.711,
+      "end": 1161.071,
+      "text": "Then the text goes to the generation, generate the audio outside.",
+      "source_segment_indexes": [
+        246
+      ],
+      "source_segment_ids": [
+        246
+      ]
+    },
+    {
+      "start": 1162.831,
+      "end": 1177.311,
+      "text": "The last one um is the called uh chain three components, like you have um just do ASR, which is transcribed audio, go to the large language model, and just and then get the response,",
+      "source_segment_indexes": [
+        247
+      ],
+      "source_segment_ids": [
+        247
+      ]
+    },
+    {
+      "start": 1177.311,
+      "end": 1180.031,
+      "text": "go to the TTS, which which is generate audio.",
+      "source_segment_indexes": [
+        248
+      ],
+      "source_segment_ids": [
+        248
+      ]
+    },
+    {
+      "start": 1181.791,
+      "end": 1195.151,
+      "text": "So for this different one, this one's human like, very human like, you because because the model can interrupt you, and the last one is like uh if you go that direction,",
+      "source_segment_indexes": [
+        249
+      ],
+      "source_segment_ids": [
+        249
+      ]
+    },
+    {
+      "start": 1195.391,
+      "end": 1201.551,
+      "text": "it's easy to customize because like you can much easier to adding a new capacity into the agent.",
+      "source_segment_indexes": [
+        250
+      ],
+      "source_segment_ids": [
+        250
+      ]
+    },
+    {
+      "start": 1202.899,
+      "end": 1208.099,
+      "text": "So, what we typically use for customers is using the two-component chain solution.",
+      "source_segment_indexes": [
+        251
+      ],
+      "source_segment_ids": [
+        251
+      ]
+    },
+    {
+      "start": 1209.379,
+      "end": 1216.259,
+      "text": "So you have, for example, we using thirty B understanding model to generate response.",
+      "source_segment_indexes": [
+        252
+      ],
+      "source_segment_ids": [
+        252
+      ]
+    },
+    {
+      "start": 1217.139,
+      "end": 1224.819,
+      "text": "But if the if the user query is complex, maybe using a fine-tuned larger model to do thinking as a tool use.",
+      "source_segment_indexes": [
+        253
+      ],
+      "source_segment_ids": [
+        253
+      ]
+    },
+    {
+      "start": 1225.619,
+      "end": 1230.099,
+      "text": "So then it goes to one B generation model to generate the response.",
+      "source_segment_indexes": [
+        254
+      ],
+      "source_segment_ids": [
+        254
+      ]
+    },
+    {
+      "start": 1232.499,
+      "end": 1239.539,
+      "text": "Nowadays, all these model is based on single is the same large language model, all based on the same LLM.",
+      "source_segment_indexes": [
+        255
+      ],
+      "source_segment_ids": [
+        255
+      ]
+    },
+    {
+      "start": 1239.619,
+      "end": 1244.499,
+      "text": "But you kind of either continue pretrain or fine-tuned with different data mixture.",
+      "source_segment_indexes": [
+        256
+      ],
+      "source_segment_ids": [
+        256
+      ]
+    },
+    {
+      "start": 1245.219,
+      "end": 1252.099,
+      "text": "For example, for the understanding, you need have minutes hours of really different quality of audios.",
+      "source_segment_indexes": [
+        257
+      ],
+      "source_segment_ids": [
+        257
+      ]
+    },
+    {
+      "start": 1252.099,
+      "end": 1254.579,
+      "text": "You maybe want to have a lot of low quality audios.",
+      "source_segment_indexes": [
+        258
+      ],
+      "source_segment_ids": [
+        258
+      ]
+    },
+    {
+      "start": 1255.059,
+      "end": 1262.499,
+      "text": "Also, because you want to the understanding model generate the response, you want to have a lot of text tokens to to to continue pretrain as well.",
+      "source_segment_indexes": [
+        259
+      ],
+      "source_segment_ids": [
+        259
+      ]
+    },
+    {
+      "start": 1262.579,
+      "end": 1263.939,
+      "text": "Otherwise, it's just the audio model.",
+      "source_segment_indexes": [
+        260
+      ],
+      "source_segment_ids": [
+        260
+      ]
+    },
+    {
+      "start": 1264.259,
+      "end": 1271.699,
+      "text": "The generation model you want to have an even more high quality hours of audios.",
+      "source_segment_indexes": [
+        261
+      ],
+      "source_segment_ids": [
+        261
+      ]
+    },
+    {
+      "start": 1273.139,
+      "end": 1277.459,
+      "text": "The large language model you kind of want to train on some domain specific data.",
+      "source_segment_indexes": [
+        262
+      ],
+      "source_segment_ids": [
+        262
+      ]
+    },
+    {
+      "start": 1278.179,
+      "end": 1290.339,
+      "text": "So this this architecture makes easy to customize because this is kind of like understanding and generation is kind of general purpose one.",
+      "source_segment_indexes": [
+        263
+      ],
+      "source_segment_ids": [
+        263
+      ]
+    },
+    {
+      "start": 1290.419,
+      "end": 1294.419,
+      "text": "You you have this model, you can maybe can use in different scenario.",
+      "source_segment_indexes": [
+        264
+      ],
+      "source_segment_ids": [
+        264
+      ]
+    },
+    {
+      "start": 1294.739,
+      "end": 1297.939,
+      "text": "But if you go to particular scenario, you just fine tune this model.",
+      "source_segment_indexes": [
+        265
+      ],
+      "source_segment_ids": [
+        265
+      ]
+    },
+    {
+      "start": 1298.259,
+      "end": 1301.539,
+      "text": "That how to get both intelligence and low latency.",
+      "source_segment_indexes": [
+        266
+      ],
+      "source_segment_ids": [
+        266
+      ]
+    },
+    {
+      "start": 1301.539,
+      "end": 1302.819,
+      "text": "That's a key for voice agent.",
+      "source_segment_indexes": [
+        267
+      ],
+      "source_segment_ids": [
+        267
+      ]
+    },
+    {
+      "start": 1303.219,
+      "end": 1304.979,
+      "text": "Once there's a bunch of idea here.",
+      "source_segment_indexes": [
+        268
+      ],
+      "source_segment_ids": [
+        268
+      ]
+    },
+    {
+      "start": 1305.219,
+      "end": 1308.179,
+      "text": "First of all, you want to listen, talk, and think at the same time.",
+      "source_segment_indexes": [
+        269
+      ],
+      "source_segment_ids": [
+        269
+      ]
+    },
+    {
+      "start": 1308.579,
+      "end": 1316.819,
+      "text": "Like you you listen and you generate a response sentence sentence, and then between that while you call the large language model to think.",
+      "source_segment_indexes": [
+        270
+      ],
+      "source_segment_ids": [
+        270
+      ]
+    },
+    {
+      "start": 1316.899,
+      "end": 1318.899,
+      "text": "Maybe I want to respond better.",
+      "source_segment_indexes": [
+        271
+      ],
+      "source_segment_ids": [
+        271
+      ]
+    },
+    {
+      "start": 1318.899,
+      "end": 1320.419,
+      "text": "Maybe I want to do some search better.",
+      "source_segment_indexes": [
+        272
+      ],
+      "source_segment_ids": [
+        272
+      ]
+    },
+    {
+      "start": 1320.659,
+      "end": 1322.659,
+      "text": "But all the thing can be asynchronously.",
+      "source_segment_indexes": [
+        273
+      ],
+      "source_segment_ids": [
+        273
+      ]
+    },
+    {
+      "start": 1324.099,
+      "end": 1330.259,
+      "text": "The other ones like you want to do context engineers, like it's a one step beyond prompt engineer.",
+      "source_segment_indexes": [
+        274
+      ],
+      "source_segment_ids": [
+        274
+      ]
+    },
+    {
+      "start": 1330.419,
+      "end": 1340.979,
+      "text": "That's because for your problem, you maybe have very non context like the product information, also other playbooks, kind of like maybe 100 K tokens.",
+      "source_segment_indexes": [
+        275
+      ],
+      "source_segment_ids": [
+        275
+      ]
+    },
+    {
+      "start": 1341.139,
+      "end": 1342.099,
+      "text": "You want to do engineer.",
+      "source_segment_indexes": [
+        276
+      ],
+      "source_segment_ids": [
+        276
+      ]
+    },
+    {
+      "start": 1342.099,
+      "end": 1349.059,
+      "text": "You want to dynamically generate construct the content the content context generate the prompt.",
+      "source_segment_indexes": [
+        277
+      ],
+      "source_segment_ids": [
+        277
+      ]
+    },
+    {
+      "start": 1349.299,
+      "end": 1355.139,
+      "text": "The other thing like you have you have organizer, which is handle different strategy.",
+      "source_segment_indexes": [
+        278
+      ],
+      "source_segment_ids": [
+        278
+      ]
+    },
+    {
+      "start": 1355.139,
+      "end": 1362.739,
+      "text": "Like okay, this kind of what kind of user you think this user is, and then think about different strategy and also do intent analysis.",
+      "source_segment_indexes": [
+        279
+      ],
+      "source_segment_ids": [
+        279
+      ]
+    },
+    {
+      "start": 1362.739,
+      "end": 1367.459,
+      "text": "For example, how to count the and some do live task tracking.",
+      "source_segment_indexes": [
+        280
+      ],
+      "source_segment_ids": [
+        280
+      ]
+    },
+    {
+      "start": 1368.979,
+      "end": 1373.939,
+      "text": "So all the thing lot together, you can get both intelligence and low latency.",
+      "source_segment_indexes": [
+        281
+      ],
+      "source_segment_ids": [
+        281
+      ]
+    },
+    {
+      "start": 1374.339,
+      "end": 1376.659,
+      "text": "So that's kind of the project progress we did.",
+      "source_segment_indexes": [
+        282
+      ],
+      "source_segment_ids": [
+        282
+      ]
+    },
+    {
+      "start": 1377.139,
+      "end": 1380.579,
+      "text": "Like started this year, we partner with Fortune 500 leaders.",
+      "source_segment_indexes": [
+        283
+      ],
+      "source_segment_ids": [
+        283
+      ]
+    },
+    {
+      "start": 1381.219,
+      "end": 1386.499,
+      "text": "So we start here January, February.",
+      "source_segment_indexes": [
+        284
+      ],
+      "source_segment_ids": [
+        284
+      ]
+    },
+    {
+      "start": 1386.499,
+      "end": 1392.579,
+      "text": "You have using ChatGPT before you get this like kind of 55 score.",
+      "source_segment_indexes": [
+        285
+      ],
+      "source_segment_ids": [
+        285
+      ]
+    },
+    {
+      "start": 1392.899,
+      "end": 1395.139,
+      "text": "But the the thing is that you need pass this line.",
+      "source_segment_indexes": [
+        286
+      ],
+      "source_segment_ids": [
+        286
+      ]
+    },
+    {
+      "start": 1395.139,
+      "end": 1397.059,
+      "text": "This human is a human performance.",
+      "source_segment_indexes": [
+        287
+      ],
+      "source_segment_ids": [
+        287
+      ]
+    },
+    {
+      "start": 1397.059,
+      "end": 1397.459,
+      "text": "It's 80.",
+      "source_segment_indexes": [
+        288
+      ],
+      "source_segment_ids": [
+        288
+      ]
+    },
+    {
+      "start": 1397.779,
+      "end": 1399.939,
+      "text": "You must pass this line to be launched.",
+      "source_segment_indexes": [
+        289
+      ],
+      "source_segment_ids": [
+        289
+      ]
+    },
+    {
+      "start": 1399.939,
+      "end": 1406.979,
+      "text": "You can see like struggle a lot, and then you have steadily progress into and how you you can match human.",
+      "source_segment_indexes": [
+        290
+      ],
+      "source_segment_ids": [
+        290
+      ]
+    },
+    {
+      "start": 1407.459,
+      "end": 1410.979,
+      "text": "It take kind of half year or three quarters actually.",
+      "source_segment_indexes": [
+        291
+      ],
+      "source_segment_ids": [
+        291
+      ]
+    },
+    {
+      "start": 1411.699,
+      "end": 1416.339,
+      "text": "The lesson here is that the evaluation of the end-to-end voice agents pretty challenge.",
+      "source_segment_indexes": [
+        292
+      ],
+      "source_segment_ids": [
+        292
+      ]
+    },
+    {
+      "start": 1416.979,
+      "end": 1421.139,
+      "text": "Like because you need have a real human to make a call.",
+      "source_segment_indexes": [
+        293
+      ],
+      "source_segment_ids": [
+        293
+      ]
+    },
+    {
+      "start": 1421.619,
+      "end": 1426.099,
+      "text": "Once you have a call, it's much harder to do like like automatic evaluation.",
+      "source_segment_indexes": [
+        294
+      ],
+      "source_segment_ids": [
+        294
+      ]
+    },
+    {
+      "start": 1426.819,
+      "end": 1427.779,
+      "text": "And but that's a key.",
+      "source_segment_indexes": [
+        295
+      ],
+      "source_segment_ids": [
+        295
+      ]
+    },
+    {
+      "start": 1427.779,
+      "end": 1431.299,
+      "text": "If you don't have this one, it's it's really hard to know the whole end-to-end performance.",
+      "source_segment_indexes": [
+        296
+      ],
+      "source_segment_ids": [
+        296
+      ]
+    },
+    {
+      "start": 1432.259,
+      "end": 1439.059,
+      "text": "And this is ongoing in that handling complex product compilation in real time still pretty.",
+      "source_segment_indexes": [
+        297
+      ],
+      "source_segment_ids": [
+        297
+      ]
+    },
+    {
+      "start": 1439.589,
+      "end": 1440.149,
+      "text": "Difficult.",
+      "source_segment_indexes": [
+        298
+      ],
+      "source_segment_ids": [
+        298
+      ]
+    },
+    {
+      "start": 1440.469,
+      "end": 1443.669,
+      "text": "Like for insurance, you have a lot of product combinations.",
+      "source_segment_indexes": [
+        299
+      ],
+      "source_segment_ids": [
+        299
+      ]
+    },
+    {
+      "start": 1444.069,
+      "end": 1444.869,
+      "text": "How to handle them?",
+      "source_segment_indexes": [
+        300
+      ],
+      "source_segment_ids": [
+        300
+      ]
+    },
+    {
+      "start": 1444.869,
+      "end": 1445.829,
+      "text": "The price is different.",
+      "source_segment_indexes": [
+        301
+      ],
+      "source_segment_ids": [
+        301
+      ]
+    },
+    {
+      "start": 1445.829,
+      "end": 1450.309,
+      "text": "Maybe I, I okay, that's too expensive for me, and I want a cheap solution.",
+      "source_segment_indexes": [
+        302
+      ],
+      "source_segment_ids": [
+        302
+      ]
+    },
+    {
+      "start": 1450.309,
+      "end": 1451.749,
+      "text": "Then you need to pick up the right one for that.",
+      "source_segment_indexes": [
+        303
+      ],
+      "source_segment_ids": [
+        303
+      ]
+    },
+    {
+      "start": 1452.069,
+      "end": 1456.549,
+      "text": "The last one, the high security setting make the cost higher.",
+      "source_segment_indexes": [
+        304
+      ],
+      "source_segment_ids": [
+        304
+      ]
+    },
+    {
+      "start": 1456.629,
+      "end": 1463.189,
+      "text": "We have dependent discussion talk about if there's only open AI maybe dominate the world, and the to B area is not.",
+      "source_segment_indexes": [
+        305
+      ],
+      "source_segment_ids": [
+        305
+      ]
+    },
+    {
+      "start": 1463.189,
+      "end": 1476.869,
+      "text": "The reason is because for insurance, if you launch in different country, the model cannot go, the data cannot go out of this country, or even more, the data cannot go outside the security group of the the company.",
+      "source_segment_indexes": [
+        306
+      ],
+      "source_segment_ids": [
+        306
+      ]
+    },
+    {
+      "start": 1477.749,
+      "end": 1488.549,
+      "text": "So either way, you can rent GPT model off on your account, running on your account, or you need you need to develop your own model.",
+      "source_segment_indexes": [
+        307
+      ],
+      "source_segment_ids": [
+        307
+      ]
+    },
+    {
+      "start": 1488.629,
+      "end": 1490.949,
+      "text": "So that's why all the things struggling here.",
+      "source_segment_indexes": [
+        308
+      ],
+      "source_segment_ids": [
+        308
+      ]
+    },
+    {
+      "start": 1491.189,
+      "end": 1501.349,
+      "text": "And so also that's that's why we spend so many so many efforts to develop the whole models by ourselves rather than just maybe proper engineer open source just API.",
+      "source_segment_indexes": [
+        309
+      ],
+      "source_segment_ids": [
+        309
+      ]
+    },
+    {
+      "start": 1502.229,
+      "end": 1509.909,
+      "text": "So I show two examples how we develop voice agent in the past kind of two years.",
+      "source_segment_indexes": [
+        310
+      ],
+      "source_segment_ids": [
+        310
+      ]
+    },
+    {
+      "start": 1510.309,
+      "end": 1515.189,
+      "text": "The lesson we got is like the voice agent are pretty highly scalable.",
+      "source_segment_indexes": [
+        311
+      ],
+      "source_segment_ids": [
+        311
+      ]
+    },
+    {
+      "start": 1515.829,
+      "end": 1523.829,
+      "text": "Even that the game setting, the insurance settings are very different, but the technology wise, same model architecture, same technologies here.",
+      "source_segment_indexes": [
+        312
+      ],
+      "source_segment_ids": [
+        312
+      ]
+    },
+    {
+      "start": 1524.069,
+      "end": 1528.709,
+      "text": "Only things like maybe data is a little bit different, and the evaluation is a little bit different.",
+      "source_segment_indexes": [
+        313
+      ],
+      "source_segment_ids": [
+        313
+      ]
+    },
+    {
+      "start": 1528.949,
+      "end": 1530.709,
+      "text": "You need to spend a lot of people on that one.",
+      "source_segment_indexes": [
+        314
+      ],
+      "source_segment_ids": [
+        314
+      ]
+    },
+    {
+      "start": 1531.029,
+      "end": 1542.069,
+      "text": "But the model architecture and also the methods, how you post train, how you pre train, how you like all the things, it's the same same thing from game to telemarketing.",
+      "source_segment_indexes": [
+        315
+      ],
+      "source_segment_ids": [
+        315
+      ]
+    },
+    {
+      "start": 1542.229,
+      "end": 1543.029,
+      "text": "It's very different one.",
+      "source_segment_indexes": [
+        316
+      ],
+      "source_segment_ids": [
+        316
+      ]
+    },
+    {
+      "start": 1543.429,
+      "end": 1544.469,
+      "text": "Game want to be fun.",
+      "source_segment_indexes": [
+        317
+      ],
+      "source_segment_ids": [
+        317
+      ]
+    },
+    {
+      "start": 1544.709,
+      "end": 1548.949,
+      "text": "Telemarketing you want to be very precise, but handle the user input very carefully.",
+      "source_segment_indexes": [
+        318
+      ],
+      "source_segment_ids": [
+        318
+      ]
+    },
+    {
+      "start": 1549.189,
+      "end": 1556.469,
+      "text": "But still like I think right now it's able to land landing in these areas, but still on the day one setting.",
+      "source_segment_indexes": [
+        319
+      ],
+      "source_segment_ids": [
+        319
+      ]
+    },
+    {
+      "start": 1556.789,
+      "end": 1564.469,
+      "text": "The reason is like for game, it's just a very simple game right now, single character, a small world setting.",
+      "source_segment_indexes": [
+        320
+      ],
+      "source_segment_ids": [
+        320
+      ]
+    },
+    {
+      "start": 1565.269,
+      "end": 1570.709,
+      "text": "And but how about you want to do a really multiple character, really large world settings?",
+      "source_segment_indexes": [
+        321
+      ],
+      "source_segment_ids": [
+        321
+      ]
+    },
+    {
+      "start": 1570.949,
+      "end": 1571.909,
+      "text": "That's really hard right now.",
+      "source_segment_indexes": [
+        322
+      ],
+      "source_segment_ids": [
+        322
+      ]
+    },
+    {
+      "start": 1572.869,
+      "end": 1583.029,
+      "text": "For telemarketing, right now we can maybe sell kind of five different health insurance for particular company with some certain of combination combinations.",
+      "source_segment_indexes": [
+        323
+      ],
+      "source_segment_ids": [
+        323
+      ]
+    },
+    {
+      "start": 1583.349,
+      "end": 1585.109,
+      "text": "It's hard to sell general purpose.",
+      "source_segment_indexes": [
+        324
+      ],
+      "source_segment_ids": [
+        324
+      ]
+    },
+    {
+      "start": 1585.189,
+      "end": 1591.749,
+      "text": "I think in generally this telemarketing is really good for any products between five hundred dollar to five thousand dollar.",
+      "source_segment_indexes": [
+        325
+      ],
+      "source_segment_ids": [
+        325
+      ]
+    },
+    {
+      "start": 1591.749,
+      "end": 1594.389,
+      "text": "That's range is really good for this telemarketing to sell.",
+      "source_segment_indexes": [
+        326
+      ],
+      "source_segment_ids": [
+        326
+      ]
+    },
+    {
+      "start": 1594.549,
+      "end": 1601.829,
+      "text": "But right now, if you use this trend model to sell any arbitrary new products, you still need a lot of tuning right now.",
+      "source_segment_indexes": [
+        327
+      ],
+      "source_segment_ids": [
+        327
+      ]
+    },
+    {
+      "start": 1602.149,
+      "end": 1610.469,
+      "text": "Also there are a lot of other scenarios like before it's like customer service, all the things based on large large language just text large language model.",
+      "source_segment_indexes": [
+        328
+      ],
+      "source_segment_ids": [
+        328
+      ]
+    },
+    {
+      "start": 1610.709,
+      "end": 1613.909,
+      "text": "Right now you can adding a voice interface to this application.",
+      "source_segment_indexes": [
+        329
+      ],
+      "source_segment_ids": [
+        329
+      ]
+    },
+    {
+      "start": 1613.989,
+      "end": 1615.749,
+      "text": "So there are a lot of applications here.",
+      "source_segment_indexes": [
+        330
+      ],
+      "source_segment_ids": [
+        330
+      ]
+    },
+    {
+      "start": 1616.149,
+      "end": 1623.029,
+      "text": "So I think that's why I think we can we are able to land to product right now, but still on day one.",
+      "source_segment_indexes": [
+        331
+      ],
+      "source_segment_ids": [
+        331
+      ]
+    },
+    {
+      "start": 1624.149,
+      "end": 1627.269,
+      "text": "So we have maybe another few exciting years to go.",
+      "source_segment_indexes": [
+        332
+      ],
+      "source_segment_ids": [
+        332
+      ]
+    },
+    {
+      "start": 1628.149,
+      "end": 1632.149,
+      "text": "The lastly, if you're interested to work with us or partner with us, just contact us.",
+      "source_segment_indexes": [
+        333
+      ],
+      "source_segment_ids": [
+        333
+      ]
+    },
+    {
+      "start": 1632.229,
+      "end": 1632.949,
+      "text": "We have a booth.",
+      "source_segment_indexes": [
+        334
+      ],
+      "source_segment_ids": [
+        334
+      ]
+    },
+    {
+      "start": 1633.189,
+      "end": 1633.909,
+      "text": "You're gonna be here.",
+      "source_segment_indexes": [
+        335
+      ],
+      "source_segment_ids": [
+        335
+      ]
+    },
+    {
+      "start": 1633.909,
+      "end": 1635.189,
+      "text": "Our co-founder will be here.",
+      "source_segment_indexes": [
+        336
+      ],
+      "source_segment_ids": [
+        336
+      ]
+    },
+    {
+      "start": 1635.189,
+      "end": 1636.309,
+      "text": "Welcome to talk to us.",
+      "source_segment_indexes": [
+        337
+      ],
+      "source_segment_ids": [
+        337
+      ]
+    },
+    {
+      "start": 1636.949,
+      "end": 1637.509,
+      "text": "Yeah, that's all.",
+      "source_segment_indexes": [
+        338
+      ],
+      "source_segment_ids": [
+        338
+      ]
+    },
+    {
+      "start": 1637.509,
+      "end": 1638.149,
+      "text": "Thanks everyone.",
+      "source_segment_indexes": [
+        339
+      ],
+      "source_segment_ids": [
+        339
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 0.0,
+      "end": 12.64,
+      "text": "Yeah, today I'm gonna talk about voice agent.That's a very top hot topic this year.And the reason is like people think, okay, that's technology is ready to use, and it's like it's ready to landing.",
+      "refined_segment_indexes": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "start": 12.96,
+      "end": 33.36,
+      "text": "So today I'm gonna share two of our past projects based on voice agent, show some lessons and best practice how to help customers use it.And so let's get started.So first of all, what's a voice agent?Basically, that's just an agent with a voice.",
+      "refined_segment_indexes": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "start": 33.6,
+      "end": 51.68,
+      "text": "So user interact with agent with a voice interface.So we hope that you have a more nature way to interact with large language model.So two things here is that first of all, it's real time.It's a little bit different to video generation.",
+      "refined_segment_indexes": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "start": 51.68,
+      "end": 67.04,
+      "text": "It can be off off time off time like offline.Right now, you must be the response must be within one second, for example, the end to end latency.The second one is like most cases people don't do chit chat.",
+      "refined_segment_indexes": [
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "start": 67.12,
+      "end": 81.84,
+      "text": "Like chit chat is kind of companion, but in most cases you have particular particular task.For example, you want to do customer support, you want to do information retrieval, or you want to sell something.Companion sometimes is it's a task.",
+      "refined_segment_indexes": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "start": 81.84,
+      "end": 90.96,
+      "text": "It's not just chit chat.You have some particular goals.Maybe you want to tell story.Maybe you want to do something else.So this is basically what's a voice agent.",
+      "refined_segment_indexes": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "start": 91.2,
+      "end": 103.84,
+      "text": "Then in the rest of the talk, we're gonna have two examples show we how build it and what lessons we have.Here's the first example.And I really need to find a way out of here fast.",
+      "refined_segment_indexes": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "start": 107.44,
+      "end": 112.8,
+      "text": "Okay, I guess you're cutting straight to the chase here, but at least can you tell me a little bit more about yourself, like?",
+      "refined_segment_indexes": [
+        25
+      ]
+    },
+    {
+      "start": 116.0,
+      "end": 135.92,
+      "text": "Okay, let's see.All right, I'm a sophomore at Mariana University studying astrophysics.So this is a game we started like two and a half year ago.So this is the app.This is the user.So this app is like this guy's called Stella.",
+      "refined_segment_indexes": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "start": 136.72,
+      "end": 149.68,
+      "text": "The user gonna do voice interaction with Stella to help her.So you can see that the whole storyline is driving by how the user's inputs.The task here is open world game.",
+      "refined_segment_indexes": [
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "start": 150.56,
+      "end": 169.68,
+      "text": "So like this, this sentence is copy from the game which is already launched two two months ago.So basically, Stella landed on a alien planet.So it's that the aircraft is crashed here.So then she asking the players to help.",
+      "refined_segment_indexes": [
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "start": 170.0,
+      "end": 190.0,
+      "text": "Like okay, so like so strange world, so many options, and I feel a lot of emotions here.So using voice to interact with player to let the player to help her to escape the planets.So that's a very large world setting.That's only the first game.",
+      "refined_segment_indexes": [
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "start": 190.8,
+      "end": 210.24,
+      "text": "It's a kind of trial game in a very large series.So what voice agent play here?The role here, you you need to be a both agent designer and actor.The game designer means that you want to design the the story which is make sense, is fun to play.",
+      "refined_segment_indexes": [
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "start": 211.28,
+      "end": 229.6,
+      "text": "So then the agent one, you want to create the dialogue that match the character setting.So this Stella have a particular character setting, like all the background she has, or all the things she has, like kinds of maybe twenty pages of setting.",
+      "refined_segment_indexes": [
+        47,
+        48
+      ]
+    },
+    {
+      "start": 230.08,
+      "end": 244.24,
+      "text": "Then that's the actor side.Then for the game designer, you need guide the when when the user interact with the game, you want to guide the storyline, which is if it's just a single line story,is not agent.",
+      "refined_segment_indexes": [
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "start": 244.514,
+      "end": 262.434,
+      "text": "Right now, kinds of complex structure or even graph structure, and some something have free here.The the issue here is that you want to have really good game.Like if if if how to write a book, how to write a game plot, it have a lot of principle there.",
+      "refined_segment_indexes": [
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "start": 262.434,
+      "end": 271.634,
+      "text": "Like you want to have the order stage, order pace, all all of the things make the the story looks interesting.The other things like it's a game.",
+      "refined_segment_indexes": [
+        55,
+        56
+      ]
+    },
+    {
+      "start": 271.794,
+      "end": 282.834,
+      "text": "You expect people to have actual thing, to actual input with you, like the test and the player to try all the boundaries.The agent must be within their setting.",
+      "refined_segment_indexes": [
+        57,
+        58
+      ]
+    },
+    {
+      "start": 283.714,
+      "end": 296.114,
+      "text": "Sometimes like this game is on a sci-fi world, like two maybe two thousand year later, and you have random chat setting.If you say okay, what's a movie you you you you watch recently?",
+      "refined_segment_indexes": [
+        59,
+        60
+      ]
+    },
+    {
+      "start": 296.274,
+      "end": 311.634,
+      "text": "If you pick up a movie right now, it maybe wow you watch the movie like one thousand years ago.So and but the things like all the language model trained on the current data.Now you want to how to move all the setting to your future worlds.",
+      "refined_segment_indexes": [
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "start": 312.114,
+      "end": 332.434,
+      "text": "So I share a particular like earlier log here and show how some challenging task.So this is the log on a very early earlier stage, still in Chinese.So the idea here is Stella find some food, asking the player to say okay, which food I gonna choose?",
+      "refined_segment_indexes": [
+        64,
+        65,
+        66
+      ]
+    },
+    {
+      "start": 332.754,
+      "end": 348.114,
+      "text": "The player the the player setting here, I will help you.So I think it cannot eatable.You cannot eat anything.So then oh, the Stella first thing like you need to find some meat to eat.So you have a rack to search how to play how to catch animals here.",
+      "refined_segment_indexes": [
+        67,
+        68,
+        69,
+        70,
+        71
+      ]
+    },
+    {
+      "start": 348.594,
+      "end": 363.154,
+      "text": "But the the the answer is you cannot.This you didn't see any animal yet.So the Stella response like okay, I want to eat meat, but I can only have vegetable here.And the player don't want to help.Stella say okay, I really need your help.",
+      "refined_segment_indexes": [
+        72,
+        73,
+        74,
+        75,
+        76
+      ]
+    },
+    {
+      "start": 363.554,
+      "end": 385.394,
+      "text": "Okay, player still like I don't want to help.The things like if you stuck here, the the story can not move on.So the prompt is saying like okay, after three trials, just move choose something by yourself.And so but then it's a random choice.Stella is dying.",
+      "refined_segment_indexes": [
+        77,
+        78,
+        79,
+        80,
+        81
+      ]
+    },
+    {
+      "start": 385.474,
+      "end": 406.114,
+      "text": "So say okay, it's dying.But the the the player saying okay, you're gonna die.It's not a nice guy here, but you need be nice here.So the challenge here is like it's open the game, but your response should be make sense.Like it's an open world game.",
+      "refined_segment_indexes": [
+        82,
+        83,
+        84,
+        85,
+        86
+      ]
+    },
+    {
+      "start": 406.114,
+      "end": 417.954,
+      "text": "It's like three or maybe one two thousand year later.Not every world setting specified.Lot of thing like you can when you develop the game, the game designer cannot write anything for you.",
+      "refined_segment_indexes": [
+        87,
+        88,
+        89
+      ]
+    },
+    {
+      "start": 418.594,
+      "end": 432.354,
+      "text": "You need to think okay, that thing make maybe make sense make sense in a two thousand year later.Also need be engaging and fun.So that's that's a game.That's not a chatbot.So that's all the um all the challenges here.",
+      "refined_segment_indexes": [
+        90,
+        91,
+        92,
+        93,
+        94
+      ]
+    },
+    {
+      "start": 432.914,
+      "end": 446.354,
+      "text": "So what do we do is like the project launched two two years ago.At that time, you have GPT four, but it's very expensive.And we did some calculations, think if you use GPT four, like okay, that's a huge loss of the revenue.",
+      "refined_segment_indexes": [
+        95,
+        96,
+        97
+      ]
+    },
+    {
+      "start": 446.834,
+      "end": 460.034,
+      "text": "And and that time the best model is Llama two right now.At that time, Llama two is not strong enough.So what we did at that time is we actually pre train thirty B model with kind of five trillion tokens.",
+      "refined_segment_indexes": [
+        98,
+        99,
+        100
+      ]
+    },
+    {
+      "start": 460.194,
+      "end": 476.194,
+      "text": "So but these tokens enriched on the fiction game role play data.The performance kind of match on the Llama two on general task, little better on the role playing, and but the the lesson we got is like okay, pre train the model take a few months,",
+      "refined_segment_indexes": [
+        101,
+        102
+      ]
+    },
+    {
+      "start": 477.314,
+      "end": 491.938,
+      "text": "and even that you kind of outperform Llama two, but you have Llama two seventy B.So, like, if spend too much time on pre-training, you maybe the the progress isn't so great.So that's kind of the lesson we got.",
+      "refined_segment_indexes": [
+        103,
+        104,
+        105
+      ]
+    },
+    {
+      "start": 491.938,
+      "end": 504.178,
+      "text": "That's we're gonna say why that's maybe a bad choice.Another thing we did is like, okay, because GPU is so expensive, that's two years ago, and we we spent a lot of effort to actually build data center by ourselves.",
+      "refined_segment_indexes": [
+        106,
+        107
+      ]
+    },
+    {
+      "start": 504.338,
+      "end": 519.458,
+      "text": "So if you own a data center, the cost is much lower.And then we move to post-training.The post-training is that the key thing here, you have very complex storyline workflow.That's an example.That's not a real one.And the real was much more complicated.",
+      "refined_segment_indexes": [
+        108,
+        109,
+        110,
+        111,
+        112,
+        113
+      ]
+    },
+    {
+      "start": 520.338,
+      "end": 532.818,
+      "text": "And then we have kind of twenty laborers.We need train the laborer to be a good game designer because like this particular way how you response.Um, then ranking and evaluating all the model preference.",
+      "refined_segment_indexes": [
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "start": 533.218,
+      "end": 549.218,
+      "text": "So using these two, we spend kind of quarter here, and can outperform GPT four on this particular scenario.For all other game, we use human to play, so you can outperform GPT four.But the question here is like, okay, that's a single game.",
+      "refined_segment_indexes": [
+        117,
+        118,
+        119
+      ]
+    },
+    {
+      "start": 549.778,
+      "end": 566.658,
+      "text": "That's the tiny bit of a whole open world game.I how what if you want to do multiple games?Then we get another phase is that we want to expand to a broader range of games and characters.So you can less rely on prompt engineer at that time.",
+      "refined_segment_indexes": [
+        120,
+        121,
+        122,
+        123
+      ]
+    },
+    {
+      "start": 566.658,
+      "end": 580.978,
+      "text": "Prompt engineer is very complicated right now.It's like and even different versions of GPT four is very sensitive to prompt engineer.So the thing is like, yes, we can help, but you want to design game designer to write prompt engineer.",
+      "refined_segment_indexes": [
+        124,
+        125,
+        126
+      ]
+    },
+    {
+      "start": 581.458,
+      "end": 595.858,
+      "text": "So the idea here at that time is like it's still like one and a half year ago.The idea at that time is like you need pre-train a real world model, can distinguish which one is good, which one is bad, and because you cannot rely on humans to do it.",
+      "refined_segment_indexes": [
+        127,
+        128
+      ]
+    },
+    {
+      "start": 596.978,
+      "end": 608.498,
+      "text": "So at that time, we first train a reward model to tell you which response is good, in this game setting.Then you can post train another model for it.",
+      "refined_segment_indexes": [
+        129,
+        130
+      ]
+    },
+    {
+      "start": 608.658,
+      "end": 622.338,
+      "text": "The one important lesson we got is like even this is for game sounds like simple, but it's still a lot of things like instruction following you need to make sense.So the model still need to be very general enough.",
+      "refined_segment_indexes": [
+        131,
+        132
+      ]
+    },
+    {
+      "start": 622.898,
+      "end": 639.938,
+      "text": "So even that you train the in domain model, the model must be good in general task.If you think okay, the best open AI or best like closed API is like the score is ninety, but in your application, the general task need to be eighty five.",
+      "refined_segment_indexes": [
+        133,
+        134
+      ]
+    },
+    {
+      "start": 640.258,
+      "end": 656.578,
+      "text": "If you lower than that one, you're gonna think you have a you have a ceiling flaw on on your task.So that's the you first guarantee the general task is good.Then for your particular task, we kind of create a in domain evaluation.",
+      "refined_segment_indexes": [
+        135,
+        136,
+        137
+      ]
+    },
+    {
+      "start": 656.578,
+      "end": 669.858,
+      "text": "So you have a lot of character settings, a lot of thing settings, and for different game settings, you want to make sure like under this setting, you follow all the settings and the response is good,follow the instruction, follow the thing.",
+      "refined_segment_indexes": [
+        138,
+        139
+      ]
+    },
+    {
+      "start": 670.498,
+      "end": 682.818,
+      "text": "And then once you have this benchmark, you can tune the model so that you can be be the best compared to others.I think that's a very general pattern that you care about the in domain performance.",
+      "refined_segment_indexes": [
+        140,
+        141
+      ]
+    },
+    {
+      "start": 683.298,
+      "end": 697.218,
+      "text": "The key thing here like you really want to develop a really good in domain evaluation task, so you can say I I can see the model improve on this one, but at the same time guarantee your model performs well on all these other general tasks.",
+      "refined_segment_indexes": [
+        142
+      ]
+    },
+    {
+      "start": 697.938,
+      "end": 711.378,
+      "text": "So the lessons we got is like the intelligence came from pre-training.So after we finish the whole projects, but then we think backwards, all the all the big improvements from pre-training on massive data.",
+      "refined_segment_indexes": [
+        143,
+        144
+      ]
+    },
+    {
+      "start": 712.178,
+      "end": 729.209,
+      "text": "So it makes us rethink maybe we give give up on the pre-training, maybe a bad idea.We maybe spend another quarter on pre-training.So that's kind of the lesson we got.And But still, like it's it's still limited.The dialogue quality declines after 50 turns.",
+      "refined_segment_indexes": [
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ]
+    },
+    {
+      "start": 729.209,
+      "end": 738.489,
+      "text": "It's still right now, like given a complex setting after 50 turns conversation, then we think that maybe the model can'ts of become the intelligence much lowered.",
+      "refined_segment_indexes": [
+        151
+      ]
+    },
+    {
+      "start": 739.529,
+      "end": 757.609,
+      "text": "Also, the models nowadays still still struggle with complex word setting, and you have multiple characters.So it's still hard right now.Even like if you look at all this voice model, all this video model, can'ts of two to three characters.That's limit.",
+      "refined_segment_indexes": [
+        152,
+        153,
+        154,
+        155
+      ]
+    },
+    {
+      "start": 757.769,
+      "end": 774.569,
+      "text": "Even for the the text part, like if you have four set four characters, it's very challenging right now.The other things like in the demo you see the latency is big.It's term by term based.So all the projects we hear is focus on the large language model itself.",
+      "refined_segment_indexes": [
+        156,
+        157,
+        158,
+        159
+      ]
+    },
+    {
+      "start": 775.049,
+      "end": 790.409,
+      "text": "Then the lesson we got is like if you really want to truly human like interactions, you can'ts of need to tune the architecture a little bit.Not by the traditional like three component and architecture.So that's become our next projects.",
+      "refined_segment_indexes": [
+        160,
+        161,
+        162
+      ]
+    },
+    {
+      "start": 790.489,
+      "end": 805.689,
+      "text": "Is this a good time to talk?Actually, I'm just about to head out the door.No problem, John.I know how busy things get.If you'd prefer, I can give you a call back at a time that's better for you.To be honest, I think I'm all set.",
+      "refined_segment_indexes": [
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ]
+    },
+    {
+      "start": 806.249,
+      "end": 818.409,
+      "text": "I already have health insurance through my job.That's great, and I'm glad you're covered.A lot of folks I talk to do have something through work, but many don't realize there are options that could lower their out of pocket costs.",
+      "refined_segment_indexes": [
+        169,
+        170,
+        171
+      ]
+    },
+    {
+      "start": 819.689,
+      "end": 832.649,
+      "text": "Okay, that's a very different one.It's sell insurance.So before it's again, right now we sell insurance.At the first time, I think maybe sell insurance like you can be very creative.Creative, you can do whatever you want to sell something.",
+      "refined_segment_indexes": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ]
+    },
+    {
+      "start": 833.049,
+      "end": 850.969,
+      "text": "But in reality, it's pretty very formal.Like first of all, you cannot call anyone you want to call.The the user you call must be submit some information, so shows their interest on your product.Secondly, it's very highly regulated the whole insurance industry.",
+      "refined_segment_indexes": [
+        177,
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "start": 851.129,
+      "end": 867.529,
+      "text": "So let me explain this problem.So right now we do AI telemarketer.The agent role is like a telemarketer.So right now this particular example is like we sell health insurance through phone, and but on multiple countries.",
+      "refined_segment_indexes": [
+        181,
+        182,
+        183,
+        184
+      ]
+    },
+    {
+      "start": 868.569,
+      "end": 886.409,
+      "text": "The thing, the requirement you have two requirement.You must you must pass the telemarketing certification.Like the human you have 80 score to pass.This one must be pass this certification before you can launch.Secondly, you have some performance metrics.",
+      "refined_segment_indexes": [
+        185,
+        186,
+        187,
+        188,
+        189
+      ]
+    },
+    {
+      "start": 886.409,
+      "end": 902.969,
+      "text": "You you're able to sell at a particular threshold.Like giving you like 1,000 customers, you call them.You must be able to sell a particular number of sales.Also, the complaints must below particular number.If the people say, okay, I feel so bad.",
+      "refined_segment_indexes": [
+        190,
+        191,
+        192,
+        193,
+        194
+      ]
+    },
+    {
+      "start": 902.969,
+      "end": 915.609,
+      "text": "Like like you sell not true information or the experience is bad, they they're gonna complain that insurance company really care about it.So the capacity you need here, first of all, you need to be intelligent.",
+      "refined_segment_indexes": [
+        195,
+        196
+      ]
+    },
+    {
+      "start": 915.769,
+      "end": 930.329,
+      "text": "You need follow the sales playbook with precise answer.We're gonna show what is precise answer means.You need to able to use tools because insurance you have a lot of internal tools to query and some math.Like you need a lot of combinations here.",
+      "refined_segment_indexes": [
+        197,
+        198,
+        199,
+        200
+      ]
+    },
+    {
+      "start": 930.969,
+      "end": 946.969,
+      "text": "Also, you need to be very human like.And if you call someone, maybe this guy's out of door like a lot of noise and maybe have some accent.And also you need have some and the the voice need to be realistic.It's not so robotic.",
+      "refined_segment_indexes": [
+        201,
+        202,
+        203,
+        204
+      ]
+    },
+    {
+      "start": 948.009,
+      "end": 959.849,
+      "text": "And the last one is like entering the latency.When I finish my sentence, your response must be within one second.Otherwise, you feel like it's a little not so responsive.So the precise",
+      "refined_segment_indexes": [
+        205,
+        206,
+        207,
+        208
+      ]
+    },
+    {
+      "start": 960.671,
+      "end": 967.551,
+      "text": "Response like, for example, if you response you can cover up to six hundred dollar, that's wrong, totally wrong.",
+      "refined_segment_indexes": [
+        209
+      ]
+    },
+    {
+      "start": 967.551,
+      "end": 981.471,
+      "text": "You failed this exam because the precise answer, the precise one is like cover four hundred dollars for some common one, and like the six hundred dollar only for the front teeth.So that's it's on their play product information.",
+      "refined_segment_indexes": [
+        210,
+        211
+      ]
+    },
+    {
+      "start": 982.031,
+      "end": 993.151,
+      "text": "So if you have any issue with your teeth, that's not right.If you have particular like A B diseases with with your teeth, that's the right answer.If you respond this one, it's gonna be you you failed the exam.",
+      "refined_segment_indexes": [
+        212,
+        213,
+        214
+      ]
+    },
+    {
+      "start": 993.551,
+      "end": 1006.751,
+      "text": "The other thing, the other more challenging thing here, similar to the gaming, like when some customer and try to asking, okay, can you can we grab times to talk about some the things?You're gonna try three times.",
+      "refined_segment_indexes": [
+        215,
+        216
+      ]
+    },
+    {
+      "start": 1007.631,
+      "end": 1023.791,
+      "text": "If you cannot hand out, you cannot reschedule before three times, or you can reschedule later.So for example, I try the MR try first one, the tenderbox try first one, no, thank you.Then you try second time, no.Then you you try the third one.",
+      "refined_segment_indexes": [
+        217,
+        218,
+        219,
+        220
+      ]
+    },
+    {
+      "start": 1023.871,
+      "end": 1041.711,
+      "text": "If the user say, uh huh.So you maybe think, uh huh, maybe interesting.Like if you think the emotions interesting, because you you change the world, uh, you change like, can you tell you, okay, like explain how it can could benefit your uh person personality,",
+      "refined_segment_indexes": [
+        221,
+        222,
+        223
+      ]
+    },
+    {
+      "start": 1041.951,
+      "end": 1052.831,
+      "text": "a person a personal.Then you maybe think, okay, it's uh huh, maybe the user is interest, but in in reality is like you need to think, you need to find out the voice is impatient.",
+      "refined_segment_indexes": [
+        224,
+        225
+      ]
+    },
+    {
+      "start": 1053.551,
+      "end": 1067.631,
+      "text": "Then given the contact, you can think, okay, I already have tried three times, I need to reschedule.So that's the whole that's the tricky when you have the audio has inputs.So then one key question here, how we do real time?",
+      "refined_segment_indexes": [
+        226,
+        227,
+        228
+      ]
+    },
+    {
+      "start": 1068.271,
+      "end": 1082.671,
+      "text": "So I kind of um show examples how different model architecture we have right now.The first one is the more the fancy is the one is called end to end full duplex.It means like you have user, you have your model is single model.",
+      "refined_segment_indexes": [
+        229,
+        230,
+        231
+      ]
+    },
+    {
+      "start": 1083.151,
+      "end": 1097.791,
+      "text": "The user speak to you, which is all the waveform come in.Then you listen to the waveform and response anything during the thing during um the interactions.So in this case, it's easy for user to interrupt.",
+      "refined_segment_indexes": [
+        232,
+        233,
+        234
+      ]
+    },
+    {
+      "start": 1098.191,
+      "end": 1113.391,
+      "text": "Also easy for the model to do some filling words like user say something, a say a long sentence, you can say yes, yes, that's right.Oh, so that's the most natural way.Um, but now this system is in deployed right now.",
+      "refined_segment_indexes": [
+        235,
+        236,
+        237
+      ]
+    },
+    {
+      "start": 1113.391,
+      "end": 1124.191,
+      "text": "There's one or two that most you can try, but very few, so not so controllable.So in most cases, like if using even GPT 4.0, I think they're using the end to end half duplex.",
+      "refined_segment_indexes": [
+        238,
+        239
+      ]
+    },
+    {
+      "start": 1124.671,
+      "end": 1143.151,
+      "text": "It means that when the user speak, you have a voice active detector detect detect if the user speak or not.So you have chunk the chunks go to the model, and the model gonna response the previous one.So that's the um um that's the half duplex.",
+      "refined_segment_indexes": [
+        240,
+        241,
+        242
+      ]
+    },
+    {
+      "start": 1143.391,
+      "end": 1157.071,
+      "text": "The another one is a chain solution.Still similarly, you have turns, but here you have two models, not just single model.So these two models, the first is understanding model, give the audio in, generate the text response.",
+      "refined_segment_indexes": [
+        243,
+        244,
+        245
+      ]
+    },
+    {
+      "start": 1157.711,
+      "end": 1177.311,
+      "text": "Then the text goes to the generation, generate the audio outside.The last one um is the called uh chain three components, like you have um just do ASR, which is transcribed audio, go to the large language model, and just and then get the response,",
+      "refined_segment_indexes": [
+        246,
+        247
+      ]
+    },
+    {
+      "start": 1177.311,
+      "end": 1195.151,
+      "text": "go to the TTS, which which is generate audio.So for this different one, this one's human like, very human like, you because because the model can interrupt you, and the last one is like uh if you go that direction,",
+      "refined_segment_indexes": [
+        248,
+        249
+      ]
+    },
+    {
+      "start": 1195.391,
+      "end": 1208.099,
+      "text": "it's easy to customize because like you can much easier to adding a new capacity into the agent.So, what we typically use for customers is using the two-component chain solution.",
+      "refined_segment_indexes": [
+        250,
+        251
+      ]
+    },
+    {
+      "start": 1209.379,
+      "end": 1230.099,
+      "text": "So you have, for example, we using thirty B understanding model to generate response.But if the if the user query is complex, maybe using a fine-tuned larger model to do thinking as a tool use.So then it goes to one B generation model to generate the response.",
+      "refined_segment_indexes": [
+        252,
+        253,
+        254
+      ]
+    },
+    {
+      "start": 1232.499,
+      "end": 1244.499,
+      "text": "Nowadays, all these model is based on single is the same large language model, all based on the same LLM.But you kind of either continue pretrain or fine-tuned with different data mixture.",
+      "refined_segment_indexes": [
+        255,
+        256
+      ]
+    },
+    {
+      "start": 1245.219,
+      "end": 1254.579,
+      "text": "For example, for the understanding, you need have minutes hours of really different quality of audios.You maybe want to have a lot of low quality audios.",
+      "refined_segment_indexes": [
+        257,
+        258
+      ]
+    },
+    {
+      "start": 1255.059,
+      "end": 1263.939,
+      "text": "Also, because you want to the understanding model generate the response, you want to have a lot of text tokens to to to continue pretrain as well.Otherwise, it's just the audio model.",
+      "refined_segment_indexes": [
+        259,
+        260
+      ]
+    },
+    {
+      "start": 1264.259,
+      "end": 1277.459,
+      "text": "The generation model you want to have an even more high quality hours of audios.The large language model you kind of want to train on some domain specific data.",
+      "refined_segment_indexes": [
+        261,
+        262
+      ]
+    },
+    {
+      "start": 1278.179,
+      "end": 1294.419,
+      "text": "So this this architecture makes easy to customize because this is kind of like understanding and generation is kind of general purpose one.You you have this model, you can maybe can use in different scenario.",
+      "refined_segment_indexes": [
+        263,
+        264
+      ]
+    },
+    {
+      "start": 1294.739,
+      "end": 1308.179,
+      "text": "But if you go to particular scenario, you just fine tune this model.That how to get both intelligence and low latency.That's a key for voice agent.Once there's a bunch of idea here.First of all, you want to listen, talk, and think at the same time.",
+      "refined_segment_indexes": [
+        265,
+        266,
+        267,
+        268,
+        269
+      ]
+    },
+    {
+      "start": 1308.579,
+      "end": 1322.659,
+      "text": "Like you you listen and you generate a response sentence sentence, and then between that while you call the large language model to think.Maybe I want to respond better.Maybe I want to do some search better.But all the thing can be asynchronously.",
+      "refined_segment_indexes": [
+        270,
+        271,
+        272,
+        273
+      ]
+    },
+    {
+      "start": 1324.099,
+      "end": 1340.979,
+      "text": "The other ones like you want to do context engineers, like it's a one step beyond prompt engineer.That's because for your problem, you maybe have very non context like the product information, also other playbooks, kind of like maybe 100 K tokens.",
+      "refined_segment_indexes": [
+        274,
+        275
+      ]
+    },
+    {
+      "start": 1341.139,
+      "end": 1355.139,
+      "text": "You want to do engineer.You want to dynamically generate construct the content the content context generate the prompt.The other thing like you have you have organizer, which is handle different strategy.",
+      "refined_segment_indexes": [
+        276,
+        277,
+        278
+      ]
+    },
+    {
+      "start": 1355.139,
+      "end": 1367.459,
+      "text": "Like okay, this kind of what kind of user you think this user is, and then think about different strategy and also do intent analysis.For example, how to count the and some do live task tracking.",
+      "refined_segment_indexes": [
+        279,
+        280
+      ]
+    },
+    {
+      "start": 1368.979,
+      "end": 1386.499,
+      "text": "So all the thing lot together, you can get both intelligence and low latency.So that's kind of the project progress we did.Like started this year, we partner with Fortune 500 leaders.So we start here January, February.",
+      "refined_segment_indexes": [
+        281,
+        282,
+        283,
+        284
+      ]
+    },
+    {
+      "start": 1386.499,
+      "end": 1399.939,
+      "text": "You have using ChatGPT before you get this like kind of 55 score.But the the thing is that you need pass this line.This human is a human performance.It's 80.You must pass this line to be launched.",
+      "refined_segment_indexes": [
+        285,
+        286,
+        287,
+        288,
+        289
+      ]
+    },
+    {
+      "start": 1399.939,
+      "end": 1416.339,
+      "text": "You can see like struggle a lot, and then you have steadily progress into and how you you can match human.It take kind of half year or three quarters actually.The lesson here is that the evaluation of the end-to-end voice agents pretty challenge.",
+      "refined_segment_indexes": [
+        290,
+        291,
+        292
+      ]
+    },
+    {
+      "start": 1416.979,
+      "end": 1431.299,
+      "text": "Like because you need have a real human to make a call.Once you have a call, it's much harder to do like like automatic evaluation.And but that's a key.If you don't have this one, it's it's really hard to know the whole end-to-end performance.",
+      "refined_segment_indexes": [
+        293,
+        294,
+        295,
+        296
+      ]
+    },
+    {
+      "start": 1432.259,
+      "end": 1445.829,
+      "text": "And this is ongoing in that handling complex product compilation in real time still pretty.Difficult.Like for insurance, you have a lot of product combinations.How to handle them?The price is different.",
+      "refined_segment_indexes": [
+        297,
+        298,
+        299,
+        300,
+        301
+      ]
+    },
+    {
+      "start": 1445.829,
+      "end": 1456.549,
+      "text": "Maybe I, I okay, that's too expensive for me, and I want a cheap solution.Then you need to pick up the right one for that.The last one, the high security setting make the cost higher.",
+      "refined_segment_indexes": [
+        302,
+        303,
+        304
+      ]
+    },
+    {
+      "start": 1456.629,
+      "end": 1463.189,
+      "text": "We have dependent discussion talk about if there's only open AI maybe dominate the world, and the to B area is not.",
+      "refined_segment_indexes": [
+        305
+      ]
+    },
+    {
+      "start": 1463.189,
+      "end": 1476.869,
+      "text": "The reason is because for insurance, if you launch in different country, the model cannot go, the data cannot go out of this country, or even more, the data cannot go outside the security group of the the company.",
+      "refined_segment_indexes": [
+        306
+      ]
+    },
+    {
+      "start": 1477.749,
+      "end": 1490.949,
+      "text": "So either way, you can rent GPT model off on your account, running on your account, or you need you need to develop your own model.So that's why all the things struggling here.",
+      "refined_segment_indexes": [
+        307,
+        308
+      ]
+    },
+    {
+      "start": 1491.189,
+      "end": 1509.909,
+      "text": "And so also that's that's why we spend so many so many efforts to develop the whole models by ourselves rather than just maybe proper engineer open source just API.So I show two examples how we develop voice agent in the past kind of two years.",
+      "refined_segment_indexes": [
+        309,
+        310
+      ]
+    },
+    {
+      "start": 1510.309,
+      "end": 1523.829,
+      "text": "The lesson we got is like the voice agent are pretty highly scalable.Even that the game setting, the insurance settings are very different, but the technology wise, same model architecture, same technologies here.",
+      "refined_segment_indexes": [
+        311,
+        312
+      ]
+    },
+    {
+      "start": 1524.069,
+      "end": 1530.709,
+      "text": "Only things like maybe data is a little bit different, and the evaluation is a little bit different.You need to spend a lot of people on that one.",
+      "refined_segment_indexes": [
+        313,
+        314
+      ]
+    },
+    {
+      "start": 1531.029,
+      "end": 1544.469,
+      "text": "But the model architecture and also the methods, how you post train, how you pre train, how you like all the things, it's the same same thing from game to telemarketing.It's very different one.Game want to be fun.",
+      "refined_segment_indexes": [
+        315,
+        316,
+        317
+      ]
+    },
+    {
+      "start": 1544.709,
+      "end": 1556.469,
+      "text": "Telemarketing you want to be very precise, but handle the user input very carefully.But still like I think right now it's able to land landing in these areas, but still on the day one setting.",
+      "refined_segment_indexes": [
+        318,
+        319
+      ]
+    },
+    {
+      "start": 1556.789,
+      "end": 1571.909,
+      "text": "The reason is like for game, it's just a very simple game right now, single character, a small world setting.And but how about you want to do a really multiple character, really large world settings?That's really hard right now.",
+      "refined_segment_indexes": [
+        320,
+        321,
+        322
+      ]
+    },
+    {
+      "start": 1572.869,
+      "end": 1585.109,
+      "text": "For telemarketing, right now we can maybe sell kind of five different health insurance for particular company with some certain of combination combinations.It's hard to sell general purpose.",
+      "refined_segment_indexes": [
+        323,
+        324
+      ]
+    },
+    {
+      "start": 1585.189,
+      "end": 1594.389,
+      "text": "I think in generally this telemarketing is really good for any products between five hundred dollar to five thousand dollar.That's range is really good for this telemarketing to sell.",
+      "refined_segment_indexes": [
+        325,
+        326
+      ]
+    },
+    {
+      "start": 1594.549,
+      "end": 1601.829,
+      "text": "But right now, if you use this trend model to sell any arbitrary new products, you still need a lot of tuning right now.",
+      "refined_segment_indexes": [
+        327
+      ]
+    },
+    {
+      "start": 1602.149,
+      "end": 1615.749,
+      "text": "Also there are a lot of other scenarios like before it's like customer service, all the things based on large large language just text large language model.Right now you can adding a voice interface to this application.So there are a lot of applications here.",
+      "refined_segment_indexes": [
+        328,
+        329,
+        330
+      ]
+    },
+    {
+      "start": 1616.149,
+      "end": 1632.949,
+      "text": "So I think that's why I think we can we are able to land to product right now, but still on day one.So we have maybe another few exciting years to go.The lastly, if you're interested to work with us or partner with us, just contact us.We have a booth.",
+      "refined_segment_indexes": [
+        331,
+        332,
+        333,
+        334
+      ]
+    },
+    {
+      "start": 1633.189,
+      "end": 1638.149,
+      "text": "You're gonna be here.Our co-founder will be here.Welcome to talk to us.Yeah, that's all.Thanks everyone.",
+      "refined_segment_indexes": [
+        335,
+        336,
+        337,
+        338,
+        339
+      ]
+    }
+  ]
+}

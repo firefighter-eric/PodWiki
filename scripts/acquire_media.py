@@ -22,6 +22,18 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 BILIBILI_VIDEO_RE = re.compile(r"^/video/(BV[A-Za-z0-9]+)/?$")
 YOUTUBE_ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
+BILIBILI_PUBLIC_ACCESS_FLAGS = (
+    "pay",
+    "ugc_pay",
+    "ugc_pay_preview",
+    "arc_pay",
+    "is_chargeable_season",
+    "is_upower_exclusive",
+    "is_upower_play",
+)
+BILIBILI_EXTRACTOR_FALLBACK_MARKERS = (
+    "Unable to extract initial state",
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -153,18 +165,91 @@ def fetch_bilibili_api(path: str, parameters: str) -> dict[str, Any]:
     return document["data"]
 
 
+def bilibili_api_integer(value: Any, *, field: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"Bilibili API returned no numeric {field}")
+    return value
+
+
+def validate_bilibili_public_access(platform_metadata: dict[str, Any]) -> None:
+    """Fail closed unless the anonymous APIs explicitly describe public media."""
+    state = platform_metadata.get("state")
+    if isinstance(state, bool) or not isinstance(state, int):
+        raise PermissionError("Bilibili availability state is missing or invalid")
+    if state != 0:
+        raise PermissionError("unavailable Bilibili media is unsupported")
+
+    rights = platform_metadata.get("rights")
+    if not isinstance(rights, dict):
+        raise PermissionError("Bilibili access metadata is missing")
+    for field in BILIBILI_PUBLIC_ACCESS_FLAGS:
+        if field not in rights:
+            raise PermissionError(f"Bilibili access flag {field} is missing")
+        value = rights[field]
+        if isinstance(value, bool):
+            blocked = value
+        elif isinstance(value, int):
+            blocked = value != 0
+        else:
+            raise PermissionError(
+                f"Bilibili access flag {field} is not explicitly public"
+            )
+        if blocked:
+            raise PermissionError(
+                f"paid or access-controlled Bilibili media is unsupported: {field}"
+            )
+
+
+def is_bilibili_extractor_compatibility_error(error: Exception | None) -> bool:
+    """Limit the API fallback to known public-page extractor compatibility errors."""
+    if error is None:
+        return False
+    message = str(error)
+    return any(marker in message for marker in BILIBILI_EXTRACTOR_FALLBACK_MARKERS)
+
+
 def bilibili_platform_metadata(bvid: str) -> dict[str, Any]:
     view = fetch_bilibili_api("/x/web-interface/view", f"bvid={bvid}")
+    view_bvid = view.get("bvid")
+    if not isinstance(view_bvid, str):
+        raise ValueError("Bilibili view API returned no BVID")
+    if view_bvid != bvid:
+        raise ValueError(
+            f"Bilibili view API BVID mismatch: requested={bvid} actual={view_bvid}"
+        )
+    aid = bilibili_api_integer(view.get("aid"), field="view aid")
+    view_cid = bilibili_api_integer(view.get("cid"), field="view cid")
     pages = view.get("pages")
     if not isinstance(pages, list) or len(pages) != 1:
         raise ValueError("only single-page Bilibili videos are supported")
     page = pages[0]
     if not isinstance(page, dict):
         raise ValueError("Bilibili view API returned invalid page metadata")
-    cid = page.get("cid")
-    if not isinstance(cid, int):
-        raise ValueError("Bilibili view API did not return a numeric cid")
-    player = fetch_bilibili_api("/x/player/v2", f"bvid={bvid}&cid={cid}")
+    page_number = bilibili_api_integer(page.get("page"), field="page number")
+    if page_number != 1:
+        raise ValueError("only page 1 of a Bilibili video is supported")
+    page_cid = bilibili_api_integer(page.get("cid"), field="page cid")
+    if page_cid != view_cid:
+        raise ValueError(
+            f"Bilibili view/page cid mismatch: view={view_cid} page={page_cid}"
+        )
+
+    player = fetch_bilibili_api("/x/player/v2", f"bvid={bvid}&cid={view_cid}")
+    player_bvid = player.get("bvid")
+    player_aid = bilibili_api_integer(player.get("aid"), field="player aid")
+    player_cid = bilibili_api_integer(player.get("cid"), field="player cid")
+    if player_bvid != bvid:
+        raise ValueError(
+            f"Bilibili player API BVID mismatch: expected={bvid} actual={player_bvid}"
+        )
+    if player_aid != aid:
+        raise ValueError(
+            f"Bilibili view/player aid mismatch: view={aid} player={player_aid}"
+        )
+    if player_cid != view_cid:
+        raise ValueError(
+            f"Bilibili view/player cid mismatch: view={view_cid} player={player_cid}"
+        )
     subtitle = player.get("subtitle")
     subtitle = subtitle if isinstance(subtitle, dict) else {}
     tracks = subtitle.get("subtitles")
@@ -173,12 +258,17 @@ def bilibili_platform_metadata(bvid: str) -> dict[str, Any]:
     owner = owner if isinstance(owner, dict) else {}
     rights = view.get("rights")
     rights = rights if isinstance(rights, dict) else {}
+    view_points = player.get("view_points")
+    view_points = view_points if isinstance(view_points, list) else []
     return {
-        "aid": view.get("aid"),
-        "bvid": view.get("bvid") or bvid,
-        "cid": cid,
-        "page": page.get("page") or 1,
+        "aid": aid,
+        "bvid": view_bvid,
+        "cid": view_cid,
+        "page": page_number,
         "part": page.get("part"),
+        "title": view.get("title"),
+        "description": view.get("desc"),
+        "state": view.get("state"),
         "published_timestamp": view.get("pubdate"),
         "created_timestamp": view.get("ctime"),
         "duration_seconds": view.get("duration"),
@@ -188,9 +278,12 @@ def bilibili_platform_metadata(bvid: str) -> dict[str, Any]:
             "no_reprint": rights.get("no_reprint"),
             "pay": rights.get("pay"),
             "ugc_pay": rights.get("ugc_pay"),
+            "ugc_pay_preview": rights.get("ugc_pay_preview"),
+            "arc_pay": rights.get("arc_pay"),
             "is_cooperation": rights.get("is_cooperation"),
             "is_chargeable_season": view.get("is_chargeable_season"),
             "is_upower_exclusive": view.get("is_upower_exclusive"),
+            "is_upower_play": view.get("is_upower_play"),
         },
         "subtitle": {
             "need_login": (
@@ -208,7 +301,146 @@ def bilibili_platform_metadata(bvid: str) -> dict[str, Any]:
                 if isinstance(track, dict)
             ],
         },
+        "chapters": [
+            {
+                "start_time": point.get("from"),
+                "end_time": point.get("to"),
+                "title": point.get("content"),
+            }
+            for point in view_points
+            if isinstance(point, dict)
+        ],
     }
+
+
+def bilibili_api_info(platform_metadata: dict[str, Any]) -> dict[str, Any]:
+    """Build the yt-dlp-compatible metadata subset from public Bilibili APIs."""
+    owner = platform_metadata.get("owner")
+    owner = owner if isinstance(owner, dict) else {}
+    subtitle = platform_metadata.get("subtitle")
+    subtitle = subtitle if isinstance(subtitle, dict) else {}
+    tracks = subtitle.get("tracks")
+    tracks = tracks if isinstance(tracks, list) else []
+    subtitles = {
+        str(track["language"]): []
+        for track in tracks
+        if isinstance(track, dict) and track.get("language")
+    }
+    return validate_extracted_info(
+        {
+            "id": platform_metadata.get("bvid"),
+            "display_id": platform_metadata.get("bvid"),
+            "bvid": platform_metadata.get("bvid"),
+            "aid": platform_metadata.get("aid"),
+            "cid": platform_metadata.get("cid"),
+            "page": platform_metadata.get("page") or 1,
+            "title": platform_metadata.get("title") or platform_metadata.get("part"),
+            "description": platform_metadata.get("description"),
+            "uploader": owner.get("name"),
+            "uploader_id": (
+                str(owner["id"]) if owner.get("id") is not None else None
+            ),
+            "timestamp": platform_metadata.get("published_timestamp"),
+            "duration": platform_metadata.get("duration_seconds"),
+            "extractor": "BiliBiliPublicAPI",
+            "extractor_key": "BiliBiliPublicAPI",
+            "availability": None,
+            "live_status": None,
+            "subtitles": subtitles,
+            "automatic_captions": {},
+            "chapters": platform_metadata.get("chapters") or [],
+        }
+    )
+
+
+def bilibili_public_audio(
+    platform_metadata: dict[str, Any],
+) -> dict[str, Any]:
+    """Select the highest-bandwidth anonymous DASH audio returned by Bilibili."""
+    validate_bilibili_public_access(platform_metadata)
+    bvid = platform_metadata.get("bvid")
+    cid = platform_metadata.get("cid")
+    if not isinstance(bvid, str) or not isinstance(cid, int):
+        raise ValueError("Bilibili metadata has no stable BVID/CID identity")
+    playurl = fetch_bilibili_api(
+        "/x/player/playurl",
+        f"bvid={bvid}&cid={cid}&fnval=16&fnver=0&fourk=1",
+    )
+    dash = playurl.get("dash")
+    dash = dash if isinstance(dash, dict) else {}
+    candidates = dash.get("audio")
+    candidates = candidates if isinstance(candidates, list) else []
+    public_audio = [
+        candidate
+        for candidate in candidates
+        if isinstance(candidate, dict)
+        and isinstance(candidate.get("baseUrl") or candidate.get("base_url"), str)
+        and bool(candidate.get("baseUrl") or candidate.get("base_url"))
+    ]
+    if not public_audio:
+        raise PermissionError("Bilibili public playurl returned no anonymous audio")
+    selected = max(
+        public_audio,
+        key=lambda candidate: (
+            candidate.get("bandwidth")
+            if isinstance(candidate.get("bandwidth"), (int, float))
+            else 0
+        ),
+    )
+    base_url = selected.get("baseUrl") or selected.get("base_url")
+    backups = selected.get("backupUrl") or selected.get("backup_url") or []
+    urls = [base_url]
+    if isinstance(backups, list):
+        urls.extend(url for url in backups if isinstance(url, str))
+    timelength = playurl.get("timelength")
+    return {
+        "urls": urls,
+        "duration_seconds": (
+            float(timelength) / 1000
+            if isinstance(timelength, (int, float)) and timelength > 0
+            else platform_metadata.get("duration_seconds")
+        ),
+        "format_id": selected.get("id"),
+        "bandwidth": selected.get("bandwidth"),
+    }
+
+
+def download_bilibili_public_audio(
+    *,
+    audio: dict[str, Any],
+    options: dict[str, Any],
+    canonical_url: str,
+    expected_output: Path,
+    downloader_type: Any,
+    download_error_type: type[Exception],
+) -> None:
+    """Download one anonymous API-selected stream without persisting its signed URL."""
+    urls = audio.get("urls")
+    if not isinstance(urls, list) or not urls:
+        raise ValueError("Bilibili public audio selection has no URLs")
+    direct_options = dict(options)
+    direct_options.pop("match_filter", None)
+    direct_options["http_headers"] = {
+        "Referer": canonical_url,
+        "User-Agent": "Mozilla/5.0 PodWiki/0.1",
+    }
+    last_error: Exception | None = None
+    for url in urls:
+        if not isinstance(url, str) or not url:
+            continue
+        try:
+            with downloader_type(direct_options) as downloader:
+                downloader.download([url])
+            if expected_output.is_file():
+                return
+            raise FileNotFoundError(
+                f"Bilibili direct download produced no output: {expected_output}"
+            )
+        except download_error_type as error:
+            last_error = error
+    if last_error is not None:
+        raise last_error
+    raise ValueError("Bilibili public audio selection has no usable URLs")
 
 
 def source_metadata(
@@ -457,17 +689,8 @@ def main() -> int:
         if platform == "bilibili"
         else {}
     )
-    rights = platform_metadata.get("rights")
-    if isinstance(rights, dict) and any(
-        rights.get(key)
-        for key in (
-            "pay",
-            "ugc_pay",
-            "is_chargeable_season",
-            "is_upower_exclusive",
-        )
-    ):
-        raise PermissionError("paid or access-controlled Bilibili media is unsupported")
+    if platform == "bilibili":
+        validate_bilibili_public_access(platform_metadata)
     output_path = args.output.resolve()
     metadata_output = (
         args.metadata_output.resolve()
@@ -569,7 +792,27 @@ def main() -> int:
                 break
             time.sleep(2**attempt)
     if info is None:
-        raise ConnectionError("yt-dlp failed after extractor retries") from last_download_error
+        if platform != "bilibili":
+            raise ConnectionError(
+                "yt-dlp failed after extractor retries"
+            ) from last_download_error
+        if not is_bilibili_extractor_compatibility_error(last_download_error):
+            if last_download_error is not None:
+                raise last_download_error
+            raise ConnectionError("yt-dlp failed without an extractor error")
+        info = bilibili_api_info(platform_metadata)
+        if download_requested:
+            public_audio = bilibili_public_audio(platform_metadata)
+            if isinstance(public_audio.get("duration_seconds"), (int, float)):
+                info["duration"] = public_audio["duration_seconds"]
+            download_bilibili_public_audio(
+                audio=public_audio,
+                options=options,
+                canonical_url=canonical_url,
+                expected_output=download_output,
+                downloader_type=YoutubeDL,
+                download_error_type=DownloadError,
+            )
     if download_requested:
         if not download_output.is_file():
             raise FileNotFoundError(

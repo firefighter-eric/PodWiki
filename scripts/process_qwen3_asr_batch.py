@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -16,6 +17,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
 DEFAULT_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
+TRANSCRIPT_LANGUAGE_RE = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -33,6 +35,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--aligner", default=DEFAULT_ALIGNER)
     parser.add_argument("--aligner-path", type=Path)
     parser.add_argument("--language", default="Chinese")
+    parser.add_argument(
+        "--transcript-language",
+        default="zh-CN",
+        help="BCP 47 language tag used in the rendered transcript filename",
+    )
     parser.add_argument("--max-tokens", type=int, default=4096)
     parser.add_argument("--chunk-duration", type=float, default=240.0)
     parser.add_argument("--max-sentence-characters", type=int, default=160)
@@ -98,6 +105,12 @@ def repository_argument(path: Path) -> str:
         return resolved.as_posix()
 
 
+def transcript_filename(language: str) -> str:
+    if TRANSCRIPT_LANGUAGE_RE.fullmatch(language) is None:
+        raise ValueError(f"invalid transcript language tag: {language!r}")
+    return f"transcript.{language}.md"
+
+
 def validate_local_model_path(path: Path, *, label: str) -> None:
     resolved = path if path.is_absolute() else ROOT / path
     resolved = resolved.resolve()
@@ -154,6 +167,7 @@ def run_logged(
 
 def main() -> int:
     args = parse_args()
+    rendered_transcript_name = transcript_filename(args.transcript_language)
     episodes = discover_episode_dirs(args.episode)
     if not episodes:
         raise SystemExit("no cached episodes were found")
@@ -183,7 +197,7 @@ def main() -> int:
             raw_path = run_dir / "raw.json"
             aligned_path = run_dir / "aligned.json"
             refined_path = run_dir / "refined.json"
-            transcript_path = run_dir / "transcript.zh-CN.md"
+            transcript_path = run_dir / rendered_transcript_name
             log_path = (
                 ROOT
                 / ".cache"
@@ -257,6 +271,8 @@ def main() -> int:
                     "mlx-audio",
                     "--model",
                     args.model,
+                    "--language",
+                    args.transcript_language,
                 ]
                 rendered, render_output = run_logged(
                     command=render_command,

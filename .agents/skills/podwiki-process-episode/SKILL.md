@@ -70,8 +70,8 @@ hf download mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
 4. Never silently switch to a paid or remote ASR service. Report credentials, data transfer,
    and cost implications before using one.
 5. Preserve Qwen engine-native output under `asr/qwen3-asr/`: `raw.json`, `aligned.json`,
-   `refined.json`, and `transcript.zh-CN.md`. Copy the selected Markdown to the episode root
-   only after all four artifacts validate.
+   `refined.json`, and `transcript.<language>.md` (`zh-CN` for Chinese, `en` for English).
+   Copy the selected Markdown to the episode root only after all four artifacts validate.
 6. Run long local ASR jobs serially, one episode per subprocess. The process boundary is the
    reliable Metal/unified-memory cleanup boundary; do not call the worker `main()` repeatedly
    in one Python process.
@@ -130,6 +130,39 @@ repository-relative even when discovery returns absolute filesystem paths.
    Then copy the validated Qwen Markdown to the episode root and update the `transcript` and
    `asr_artifacts` metadata to point at Qwen.
 
+## Translate selected English transcripts
+
+When the episode language is `en`, or the selected `transcript.path` ends in `.en.md`, keep
+`transcript.en.md` as the selected original and also provide a segment-aligned root
+`transcript.zh-CN.md` translation.
+
+1. Translate exactly one source segment into exactly one target segment. Keep the same
+   level-one title, body-line count, line order, and per-line timestamps; never merge, split,
+   omit, or invent segments.
+2. Keep `transcript.path: transcript.en.md`. The Chinese derivative is not an ASR artifact:
+   never add it to `asr/`, `asr_artifacts`, or `asr_runs`, and never use it to replace the
+   selected English source.
+3. Register the derivative under `transcript.translations` with this complete contract:
+
+   ```yaml
+   translations:
+     - language: zh-CN
+       path: transcript.zh-CN.md
+       source_language: en
+       source_path: transcript.en.md
+       alignment: segment
+       status: machine
+       generated_at: "YYYY-MM-DDTHH:MM:SSZ"
+       source_sha256: "<transcript.en.md SHA-256>"
+       sha256: "<transcript.zh-CN.md SHA-256>"
+   ```
+
+4. Use only `machine`, `edited`, or `reviewed` for the translation status. Record the actual
+   RFC 3339 generation time and exact file hashes; when the English source changes, regenerate
+   or re-review the translation and update both hashes.
+5. Do not complete an English episode until both Markdown files validate with identical
+   titles, segment counts, and timestamp sequences.
+
 ## Keep Wiki indexes and usage docs current
 
 1. The root `README.md` contains a `收录播客` table with columns `播客`、`简介`、`节目页`.
@@ -158,7 +191,9 @@ repository-relative even when discovery returns absolute filesystem paths.
 1. Run the relevant unit tests.
 2. Run `env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py`.
 3. Run `git diff --check` and inspect `git status --short`.
-4. Confirm media remains ignored and expected ASR/Markdown artifacts are trackable.
+4. Confirm media remains ignored and expected ASR/Markdown artifacts are trackable. For an
+   English selected transcript, also confirm the required root Chinese translation and its
+   `transcript.translations` hashes and segment alignment.
 5. Confirm the root show table has three columns and links every podcast name to its verified
    Bilibili space and every `节目页` to its local README. Confirm the root episode table uses
    the required six columns, the relevant show table keeps the required five columns, and both

@@ -7,6 +7,7 @@ import hashlib
 import json
 import re
 import sys
+from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any
 
@@ -20,14 +21,22 @@ CANONICAL_BILIBILI_URL_RE = re.compile(
     r"https://www\.bilibili\.com/video/BV[A-Za-z0-9]+/"
 )
 TRACKING_PARAMETERS = ("spm_id_from", "vd_source")
-QWEN_ARTIFACT_NAMES = (
+QWEN_JSON_ARTIFACT_NAMES = (
     "raw.json",
     "aligned.json",
     "refined.json",
-    "transcript.zh-CN.md",
+)
+DEFAULT_QWEN_TRANSCRIPT_NAME = "transcript.zh-CN.md"
+QWEN_TRANSCRIPT_NAME_RE = re.compile(
+    r"transcript\.[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*\.md"
 )
 SHA256_RE = re.compile(r"[0-9a-f]{64}")
+RFC3339_RE = re.compile(
+    r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})"
+)
 TRANSCRIPT_LINE_RE = re.compile(r"^\[\d{2,}:\d{2}:\d{2}\] \S.*  $")
+TRANSCRIPT_TIMESTAMP_RE = re.compile(r"^(\[\d{2,}:\d{2}:\d{2}\]) ")
+TRANSLATION_STATUSES = {"machine", "edited", "reviewed"}
 
 
 def relative(path: Path) -> str:
@@ -127,6 +136,80 @@ def nested_front_matter_scalar(
         if indent == 2 and stripped.startswith(f"{key}:"):
             return decode_yaml_scalar(stripped.split(":", 1)[1])
     return None
+
+
+def top_level_front_matter_scalar(lines: list[str], key: str) -> str | None:
+    for line in lines:
+        stripped = line.strip()
+        indent = len(line) - len(line.lstrip(" "))
+        if indent == 0 and stripped.startswith(f"{key}:"):
+            return decode_yaml_scalar(stripped.split(":", 1)[1])
+    return None
+
+
+def parse_transcript_translations(
+    lines: list[str], *, errors: list[str]
+) -> tuple[bool, list[dict[str, Any]]]:
+    translations: list[dict[str, Any]] = []
+    current: dict[str, Any] | None = None
+    in_transcript = False
+    in_translations = False
+    translations_present = False
+
+    for line in lines:
+        stripped = line.strip()
+        indent = len(line) - len(line.lstrip(" "))
+        if not in_transcript:
+            if indent == 0 and stripped == "transcript:":
+                in_transcript = True
+            continue
+        if stripped and indent == 0:
+            break
+        if not stripped or stripped.startswith("#"):
+            continue
+
+        if indent == 2 and stripped.startswith("translations:"):
+            translations_present = True
+            in_translations = True
+            current = None
+            inline = stripped.split(":", 1)[1].strip()
+            if inline == "[]":
+                in_translations = False
+            elif inline:
+                errors.append("transcript.translations must be a YAML list")
+                in_translations = False
+            continue
+        if not in_translations:
+            continue
+        if indent <= 2:
+            in_translations = False
+            current = None
+            continue
+        if indent == 4 and (stripped == "-" or stripped.startswith("- ")):
+            current = {}
+            translations.append(current)
+            item = stripped[1:].strip()
+            if item:
+                if ":" not in item:
+                    errors.append(
+                        "transcript.translations items must be YAML mappings"
+                    )
+                    continue
+                key, value = item.split(":", 1)
+                current[key.strip()] = decode_yaml_scalar(value)
+            continue
+        if indent == 6 and current is not None and ":" in stripped:
+            key, value = stripped.split(":", 1)
+            key = key.strip()
+            if key in current:
+                errors.append(
+                    f"transcript.translations item has duplicate field {key!r}"
+                )
+            current[key] = decode_yaml_scalar(value)
+            continue
+        errors.append("transcript.translations items must be YAML mappings")
+
+    return translations_present, translations
 
 
 def parse_asr_runs(lines: list[str]) -> list[dict[str, Any]]:
@@ -264,6 +347,269 @@ def valid_sha256(value: Any, *, field: str, errors: list[str]) -> str | None:
     return value
 
 
+def is_rfc3339_timestamp(value: Any) -> bool:
+    if not isinstance(value, str) or RFC3339_RE.fullmatch(value) is None:
+        return False
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    return parsed.tzinfo is not None
+
+
+def transcript_structure(
+    path: Path,
+    *,
+    repository_root: Path,
+    field: str,
+    errors: list[str],
+) -> tuple[str, list[str], list[str | None]] | None:
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except (OSError, UnicodeError) as error:
+        errors.append(
+            f"{field} cannot be read at "
+            f"{display_path(path, repository_root)}: {error}"
+        )
+        return None
+
+    if len(lines) < 3 or not lines[0].startswith("# ") or lines[1] != "":
+        errors.append(
+            f"{field} must start with a level-one title, a blank line, "
+            "and at least one segment"
+        )
+        return None
+
+    body = lines[2:]
+    timestamps: list[str | None] = []
+    for index, line in enumerate(body, start=3):
+        if TRANSCRIPT_LINE_RE.fullmatch(line) is None:
+            errors.append(
+                f"{field} line {index} must be one timestamped sentence "
+                "with a Markdown hard break"
+            )
+            timestamps.append(None)
+            continue
+        match = TRANSCRIPT_TIMESTAMP_RE.match(line)
+        timestamps.append(match.group(1) if match is not None else None)
+    return lines[0], body, timestamps
+
+
+def validate_episode_translations(
+    episode_dir: Path,
+    *,
+    repository_root: Path,
+    readme_text: str,
+    errors: list[str],
+) -> None:
+    """Validate required segment-aligned Chinese translations of English roots."""
+
+    front_matter = extract_front_matter_lines(readme_text)
+    episode_language = top_level_front_matter_scalar(front_matter, "language")
+    selected_value = nested_front_matter_scalar(front_matter, "transcript", "path")
+    selected_is_english = isinstance(selected_value, str) and selected_value.endswith(
+        ".en.md"
+    )
+    required = episode_language == "en" or selected_is_english
+    translations_present, translations = parse_transcript_translations(
+        front_matter, errors=errors
+    )
+
+    if not required:
+        if translations:
+            errors.append(
+                "transcript.translations is only valid when the selected transcript "
+                "is English"
+            )
+        return
+
+    expected_source = episode_dir / "transcript.en.md"
+    source_path = check_recorded_path(
+        selected_value,
+        base=episode_dir,
+        expected=expected_source,
+        repository_root=repository_root,
+        field="transcript.path",
+        errors=errors,
+    )
+    if source_path is not None and not source_path.is_file():
+        errors.append(
+            "selected English transcript is missing: "
+            f"{display_path(source_path, repository_root)}"
+        )
+
+    chinese_items = [
+        item for item in translations if item.get("language") == "zh-CN"
+    ]
+    if not translations_present or len(chinese_items) != 1:
+        errors.append(
+            "English selected transcript requires exactly one zh-CN item in "
+            "transcript.translations"
+        )
+
+    source_structure = (
+        transcript_structure(
+            source_path,
+            repository_root=repository_root,
+            field="selected English transcript",
+            errors=errors,
+        )
+        if source_path is not None and source_path.is_file()
+        else None
+    )
+
+    for index, translation in enumerate(translations):
+        field = f"transcript.translations[{index}]"
+        language = translation.get("language")
+        if language != "zh-CN":
+            errors.append(f"{field}.language must be 'zh-CN'")
+        if translation.get("source_language") != "en":
+            errors.append(f"{field}.source_language must be 'en'")
+        if translation.get("alignment") != "segment":
+            errors.append(f"{field}.alignment must be 'segment'")
+        status = translation.get("status")
+        if status not in TRANSLATION_STATUSES:
+            errors.append(
+                f"{field}.status must be one of machine, edited, reviewed"
+            )
+        generated_at = translation.get("generated_at")
+        if not is_rfc3339_timestamp(generated_at):
+            errors.append(f"{field}.generated_at must be an RFC 3339 timestamp")
+
+        translation_path = check_recorded_path(
+            translation.get("path"),
+            base=episode_dir,
+            expected=episode_dir / "transcript.zh-CN.md",
+            repository_root=repository_root,
+            field=f"{field}.path",
+            errors=errors,
+        )
+        translation_source_path = check_recorded_path(
+            translation.get("source_path"),
+            base=episode_dir,
+            expected=expected_source,
+            repository_root=repository_root,
+            field=f"{field}.source_path",
+            errors=errors,
+        )
+
+        source_sha = valid_sha256(
+            translation.get("source_sha256"),
+            field=f"{field}.source_sha256",
+            errors=errors,
+        )
+        translation_sha = valid_sha256(
+            translation.get("sha256"),
+            field=f"{field}.sha256",
+            errors=errors,
+        )
+        if source_path is not None and source_path.is_file() and source_sha is not None:
+            if source_sha != sha256_file(source_path):
+                errors.append(
+                    f"{field}.source_sha256 does not match transcript.en.md"
+                )
+        if (
+            translation_source_path is not None
+            and source_path is not None
+            and translation_source_path != source_path
+        ):
+            errors.append(f"{field}.source_path must match transcript.path")
+
+        if translation_path is None:
+            continue
+        if not translation_path.is_file():
+            errors.append(
+                "Chinese transcript translation is missing: "
+                f"{display_path(translation_path, repository_root)}"
+            )
+            continue
+        if translation_sha is not None and translation_sha != sha256_file(
+            translation_path
+        ):
+            errors.append(f"{field}.sha256 does not match transcript.zh-CN.md")
+
+        translation_structure = transcript_structure(
+            translation_path,
+            repository_root=repository_root,
+            field="Chinese transcript translation",
+            errors=errors,
+        )
+        if source_structure is None or translation_structure is None:
+            continue
+        source_title, source_body, source_timestamps = source_structure
+        translation_title, translation_body, translation_timestamps = (
+            translation_structure
+        )
+        if translation_title != source_title:
+            errors.append(
+                "transcript.en.md and transcript.zh-CN.md must have the same title"
+            )
+        if len(translation_body) != len(source_body):
+            errors.append(
+                "transcript.en.md and transcript.zh-CN.md must have the same "
+                "number of segment lines"
+            )
+        for line_number, (source_timestamp, translation_timestamp) in enumerate(
+            zip(source_timestamps, translation_timestamps), start=1
+        ):
+            if (
+                source_timestamp is not None
+                and translation_timestamp is not None
+                and source_timestamp != translation_timestamp
+            ):
+                errors.append(
+                    "transcript.zh-CN.md segment "
+                    f"{line_number} timestamp {translation_timestamp} does not "
+                    f"match transcript.en.md {source_timestamp}"
+                )
+
+
+def qwen_transcript_name(
+    *,
+    qwen_dir: Path,
+    front_matter: list[str],
+    qwen_runs: list[dict[str, Any]],
+    errors: list[str],
+) -> str:
+    """Discover the rendered language even before a run is recorded in README."""
+
+    names: set[str] = set()
+    for run in qwen_runs:
+        artifacts = run.get("artifacts")
+        value = artifacts.get("transcript") if isinstance(artifacts, dict) else None
+        if isinstance(value, str):
+            names.add(PurePosixPath(value).name)
+
+    root_transcript = nested_front_matter_scalar(
+        front_matter, "transcript", "path"
+    )
+    if isinstance(root_transcript, str) and root_transcript:
+        names.add(PurePosixPath(root_transcript).name)
+
+    if qwen_dir.is_dir():
+        names.update(
+            path.name
+            for path in qwen_dir.glob("transcript.*.md")
+            if path.is_file()
+        )
+
+    invalid_names = sorted(
+        name for name in names if QWEN_TRANSCRIPT_NAME_RE.fullmatch(name) is None
+    )
+    for name in invalid_names:
+        errors.append(
+            "Qwen transcript artifact must use transcript.<language>.md naming: "
+            f"{name!r}"
+        )
+    valid_names = sorted(names.difference(invalid_names))
+    if len(valid_names) > 1:
+        errors.append(
+            "episode records multiple Qwen transcript languages: "
+            + ", ".join(valid_names)
+        )
+    return valid_names[0] if valid_names else DEFAULT_QWEN_TRANSCRIPT_NAME
+
+
 def validate_qwen_chain(
     episode_dir: Path,
     *,
@@ -273,8 +619,6 @@ def validate_qwen_chain(
 ) -> bool:
     """Validate one complete chain; intentional raw/aligned checkpoints are skipped."""
 
-    qwen_dir = episode_dir / "asr" / "qwen3-asr"
-    paths = {name: qwen_dir / name for name in QWEN_ARTIFACT_NAMES}
     front_matter = extract_front_matter_lines(readme_text)
     qwen_runs = [run for run in parse_asr_runs(front_matter) if is_qwen_run(run)]
     selected_runs = [
@@ -282,6 +626,15 @@ def validate_qwen_chain(
         for run in qwen_runs
         if str(run.get("selection_status", "")).lower() == "selected"
     ]
+    qwen_dir = episode_dir / "asr" / "qwen3-asr"
+    transcript_name = qwen_transcript_name(
+        qwen_dir=qwen_dir,
+        front_matter=front_matter,
+        qwen_runs=qwen_runs,
+        errors=errors,
+    )
+    paths = {name: qwen_dir / name for name in QWEN_JSON_ARTIFACT_NAMES}
+    paths[transcript_name] = qwen_dir / transcript_name
     missing = [name for name, path in paths.items() if not path.is_file()]
     if missing:
         if selected_runs:
@@ -294,7 +647,7 @@ def validate_qwen_chain(
     raw_path = paths["raw.json"]
     aligned_path = paths["aligned.json"]
     refined_path = paths["refined.json"]
-    transcript_path = paths["transcript.zh-CN.md"]
+    transcript_path = paths[transcript_name]
     raw = read_json_strict(raw_path, repository_root=repository_root, errors=errors)
     aligned = read_json_strict(
         aligned_path, repository_root=repository_root, errors=errors
@@ -304,6 +657,15 @@ def validate_qwen_chain(
     )
     if raw is None or aligned is None or refined is None:
         return True
+
+    transcript_language = transcript_name.removeprefix("transcript.").removesuffix(
+        ".md"
+    )
+    if refined.get("language") != transcript_language:
+        errors.append(
+            "refined.language must match the Qwen transcript filename: "
+            f"expected={transcript_language!r} actual={refined.get('language')!r}"
+        )
 
     raw_sha = sha256_file(raw_path)
     aligned_sha = sha256_file(aligned_path)
@@ -425,7 +787,7 @@ def validate_qwen_chain(
     )
     if rendered_sha is not None and rendered_sha != transcript_sha:
         errors.append(
-            "refined.rendered_transcript.sha256 does not match transcript.zh-CN.md"
+            f"refined.rendered_transcript.sha256 does not match {transcript_name}"
         )
 
     raw_audio_sha = valid_sha256(
@@ -542,7 +904,7 @@ def validate_qwen_chain(
             elif root_transcript.read_bytes() != transcript_path.read_bytes():
                 errors.append(
                     "selected Qwen root transcript is not byte-identical to "
-                    "asr/qwen3-asr/transcript.zh-CN.md"
+                    f"asr/qwen3-asr/{transcript_name}"
                 )
 
     return True
@@ -601,6 +963,12 @@ def main() -> int:
             continue
         readme = episode_dir / "README.md"
         readme_text = readme.read_text(encoding="utf-8") if readme.is_file() else ""
+        validate_episode_translations(
+            episode_dir,
+            repository_root=ROOT,
+            readme_text=readme_text,
+            errors=errors,
+        )
         if validate_qwen_chain(
             episode_dir,
             repository_root=ROOT,

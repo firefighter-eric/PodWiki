@@ -14,6 +14,7 @@ from process_qwen3_asr_batch import (  # noqa: E402
     parse_json_output,
     read_episode_identity,
     repository_argument,
+    transcript_filename,
     validate_local_model_path,
 )
 
@@ -49,6 +50,12 @@ class OutputParsingTests(unittest.TestCase):
 
 
 class PathTests(unittest.TestCase):
+    def test_uses_language_tag_in_transcript_filename(self) -> None:
+        self.assertEqual(transcript_filename("zh-CN"), "transcript.zh-CN.md")
+        self.assertEqual(transcript_filename("en"), "transcript.en.md")
+        with self.assertRaisesRegex(ValueError, "invalid transcript language"):
+            transcript_filename("../en")
+
     def test_repository_argument_is_relative_inside_repository(self) -> None:
         path = ROOT / "shows" / "example" / "episodes" / "001"
         self.assertEqual(
