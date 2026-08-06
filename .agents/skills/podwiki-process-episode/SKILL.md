@@ -132,17 +132,25 @@ repository-relative even when discovery returns absolute filesystem paths.
 
 ## Keep Wiki indexes and usage docs current
 
-1. The root `README.md` contains the canonical episode Wiki table. Its columns must remain,
-   in this order: `标题`、`播客名称`、`日期`、`总结链接`、`逐字稿链接`.
-2. After every episode addition or update, update its row in both the root `README.md` and
+1. The root `README.md` contains a `收录播客` table with columns `播客`、`简介`、`节目页`.
+   Link each podcast name to the verified Bilibili channel/space URL from show metadata, and
+   link `节目页` to its local show README. Add or update this row whenever a show is added or
+   its identity, source, or description changes.
+2. The root `README.md` contains the canonical `单集索引` table. Its columns must remain,
+   in this order: `标题`、`访谈人物`、`播客名称`、`日期`、`总结`、`逐字稿`.
+   Show-level tables keep five columns in this order: `标题`、`播客名称`、`日期`、
+   `总结链接`、`逐字稿链接`.
+3. After every episode addition or update, update its row in both the root `README.md` and
    `shows/<show-id>/README.md`. Link the episode title to the canonical URL of its preferred
-   publisher source, such as Bilibili or YouTube. Keep the verified episode number in
-   `episode_number`; do not prefix the displayed title with `#<number>`. Link the summary and
-   transcript columns directly to their local Markdown files. Completing episode work while
-   either table is stale is incomplete.
-3. Keep the root `README.md` focused on introducing PodWiki and navigating the podcast Wiki.
+   publisher source, such as Bilibili or YouTube. In the root table only, populate `访谈人物`
+   from front-matter participants whose role is `guest`; join multiple guests with `、` and
+   never infer an unverified guest. Keep the verified episode number in `episode_number`; do
+   not prefix the displayed title with `#<number>`. Link the summary and transcript columns
+   directly to their local Markdown files. Completing episode work while either table is stale
+   is incomplete.
+4. Keep the root `README.md` focused on introducing PodWiki and navigating the podcast Wiki.
    Do not add Python command blocks or operational runbooks there.
-4. Record Python script usage in `docs/python-scripts.md`. Whenever a script's CLI or the
+5. Record Python script usage in `docs/python-scripts.md`. Whenever a script's CLI or the
    recommended workflow changes, update that document in the same change.
 
 ## Validate completion
@@ -151,7 +159,9 @@ repository-relative even when discovery returns absolute filesystem paths.
 2. Run `env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py`.
 3. Run `git diff --check` and inspect `git status --short`.
 4. Confirm media remains ignored and expected ASR/Markdown artifacts are trackable.
-5. Confirm the root episode table and relevant show table use the required five columns and
-   match the final episode metadata and artifact paths.
+5. Confirm the root show table has three columns and links every podcast name to its verified
+   Bilibili space and every `节目页` to its local README. Confirm the root episode table uses
+   the required six columns, the relevant show table keeps the required five columns, and both
+   match the final metadata and paths.
 6. Report each episode separately with its reached state, artifact paths, engine/model,
    validation result, and any remaining human review or access blocker.
