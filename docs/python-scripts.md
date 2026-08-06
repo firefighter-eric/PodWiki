@@ -142,6 +142,6 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python -m unittest discover -s tests
 env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py
 ```
 
-最后还应运行 `git diff --check`，检查 `git status --short`，并确认根 README 与节目 README 的单集表格均采用“标题、播客名称、日期、总结链接、逐字稿链接”五列且内容已经同步。
+最后还应运行 `git diff --check`，检查 `git status --short`，并确认根 README 的三列节目介绍表中，播客名称链接已核实的 Bilibili 空间，节目页链接本地节目 README。根 README 的单集表格采用“标题、访谈人物、播客名称、日期、总结、逐字稿”六列，节目 README 的单集表格仍采用“标题、播客名称、日期、总结链接、逐字稿链接”五列，且两处内容已经同步。根表的访谈人物来自单集 front matter 中 `role: guest` 的参与者；多位嘉宾使用顿号分隔。
 
 完整处理规则、恢复语义和来源限制见 [PodWiki episode 处理 skill](../.agents/skills/podwiki-process-episode/SKILL.md)；内容字段和状态定义见[内容标准](./content-standard.md)。
