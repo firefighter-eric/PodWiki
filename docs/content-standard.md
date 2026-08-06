@@ -12,7 +12,8 @@ shows/<show_id>/
 └── episodes/<episode_folder>/
     ├── README.md
     ├── summary.<language>.md
-    ├── transcript.<language>.md
+    ├── transcript.<language>.md       # 当前选中的正式原文逐字稿
+    ├── transcript.zh-CN.md            # selected 为英文时必需的逐段中文译稿
     └── asr/
         ├── qwen3-asr/
         │   ├── raw.json
@@ -35,6 +36,7 @@ shows/<show_id>/
 | 单集 `README.md` | 单集元数据、来源概览、章节与处理状态 | 是 |
 | `summary.<language>.md` | 基于完整内容的结构化总结 | 是 |
 | `transcript.<language>.md` | 正式逐字稿或机器初稿 | 是 |
+| `transcript.zh-CN.md`（英文原稿的派生译稿） | 与 selected 英文稿逐段对齐的中文译稿 | 是 |
 | `asr/<run_id>/raw.json` | ASR 引擎原始输出和音频身份，作为可续跑检查点保留 | 否，不修改 |
 | `asr/<run_id>/aligned.json` | 对齐器输出、句级时间戳和 raw/audio SHA-256 | 脚本生成 |
 | `asr/<run_id>/refined.json` | 确定性清洗、去重和渲染来源的结构化结果 | 脚本生成 |
@@ -244,6 +246,46 @@ PodWiki 归纳和独立核查结果。
 - 听不清写为 `[听不清 00:23:14]`，不根据上下文猜测。
 - 事实不确定写为 `[待核实]`。
 - 逐字稿记录获取方式；校对状态和生成信息统一保存在单集 `README.md`，不在逐字稿中重复。
+
+### 英文正式逐字稿的中文逐行译稿
+
+当单集 `language: en`，或当前 selected `transcript.path` 以 `.en.md` 结尾时，
+根目录必须同时提供 `transcript.zh-CN.md`。英文稿仍是正式原稿：
+`transcript.path` 必须继续指向 `transcript.en.md`，索引仍链接英文 selected 稿，
+中文译稿只登记在 `transcript.translations`：
+
+```yaml
+language: en
+transcript:
+  path: transcript.en.md
+  translations:
+    - language: zh-CN
+      path: transcript.zh-CN.md
+      source_language: en
+      source_path: transcript.en.md
+      alignment: segment
+      status: machine
+      generated_at: "YYYY-MM-DDTHH:MM:SSZ"
+      source_sha256: "<transcript.en.md SHA-256>"
+      sha256: "<transcript.zh-CN.md SHA-256>"
+```
+
+`status` 允许值为 `machine`、`edited`、`reviewed`；它只描述译稿自身的审核
+程度。`generated_at` 使用带时区的 RFC 3339 时间。两个 SHA-256 分别绑定当前
+selected 英文稿和中文译稿，英文原稿发生变化后必须重新生成或重新核验译稿并
+更新哈希。
+
+译稿沿用逐字稿格式，并遵守严格的一对一 segment 契约：
+
+- 两份 Markdown 的一级标题完全相同，标题后都保留一个空行。
+- 正文行数完全相同；英文原稿的每一行只对应中文译稿的一行。
+- 每对正文行的 `[HH:MM:SS]` 必须逐行完全一致，顺序也不得变化。
+- 只翻译该 segment 的文本，不合并、拆分、遗漏或新增 segment，也不重新估算
+  时间戳；每行继续保留 Markdown 硬换行。
+
+中文译稿不是 ASR 引擎产物，不进入 `asr/`、`asr_artifacts` 或 `asr_runs`，
+也不得替代 selected 英文稿。中文总结与这份逐行译稿是不同内容层：总结负责
+提炼，译稿负责忠实保持原稿的逐段结构。
 
 ## 7. Bilibili 获取顺序
 

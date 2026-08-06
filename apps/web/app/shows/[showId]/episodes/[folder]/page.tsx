@@ -49,6 +49,13 @@ export default async function EpisodePage({ params, searchParams }: EpisodePageP
   );
   const guests = episode.guests.map((guest) => guest.name).join("、");
   const hosts = episode.hosts.map((host) => host.name).join("、");
+  const transcriptStatus = episode.bilingualTranscript
+    ? {
+        machine: "总结初稿 · 中英对照含机器翻译（未审核）",
+        edited: "总结初稿 · 中英对照译稿已编辑",
+        reviewed: "总结初稿 · 中英对照译稿已审核",
+      }[episode.bilingualTranscript.status]
+    : "总结初稿 · 逐字稿由机器生成";
 
   return (
     <ReaderPreferences>
@@ -79,7 +86,7 @@ export default async function EpisodePage({ params, searchParams }: EpisodePageP
               <time dateTime={episode.publishedAt}>{episode.publishedDate}</time>
             </p>
             <div className="episode-status">
-              <span><i aria-hidden="true" />总结初稿 · 逐字稿由机器生成</span>
+              <span><i aria-hidden="true" />{transcriptStatus}</span>
               <span>基于仓库内容构建</span>
             </div>
           </header>

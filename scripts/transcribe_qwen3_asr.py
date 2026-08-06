@@ -20,7 +20,7 @@ DEFAULT_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
 DEFAULT_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
 SAMPLE_RATE = 16_000
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SENTENCE_ENDINGS = frozenset("。！？!?")
+SENTENCE_ENDINGS = frozenset("。！？!?.")
 SOFT_ENDINGS = frozenset("，,；;：:")
 
 
@@ -380,8 +380,32 @@ def is_alignment_character(character: str) -> bool:
     return unicodedata.category(character).startswith(("L", "N"))
 
 
-def alignment_units(text: str) -> list[str]:
-    """Tokenize like Qwen3 ForcedAligner's Chinese mixed-text processor."""
+def alignment_units(text: str, *, language: str = "Chinese") -> list[str]:
+    """Tokenize like Qwen3 ForcedAligner for Chinese or space-delimited text."""
+    if language.lower() != "chinese":
+        units: list[str] = []
+        for segment in text.split():
+            cleaned = "".join(
+                character
+                for character in segment
+                if is_alignment_character(character)
+            )
+            latin_buffer: list[str] = []
+
+            def flush_space_latin() -> None:
+                if latin_buffer:
+                    units.append("".join(latin_buffer))
+                    latin_buffer.clear()
+
+            for character in cleaned:
+                if is_cjk_character(character):
+                    flush_space_latin()
+                    units.append(character)
+                else:
+                    latin_buffer.append(character)
+            flush_space_latin()
+        return units
+
     units: list[str] = []
     latin_buffer: list[str] = []
 
@@ -414,9 +438,19 @@ def sentence_texts(text: str, *, max_characters: int) -> list[str]:
         if sentence:
             sentences.append(sentence)
 
-    for character in text:
+    for index, character in enumerate(text):
         buffer.append(character)
-        if character in SENTENCE_ENDINGS:
+        is_english_period_ending = (
+            character == "."
+            and (
+                index + 1 == len(text)
+                or text[index + 1].isspace()
+            )
+        )
+        if (
+            character in SENTENCE_ENDINGS.difference({"."})
+            or is_english_period_ending
+        ):
             flush()
         elif len(buffer) >= max_characters and character in SOFT_ENDINGS:
             flush()
@@ -433,10 +467,11 @@ def sentence_segments(
     chunk_id: int,
     first_segment_id: int,
     max_characters: int,
+    language: str = "Chinese",
 ) -> list[dict[str, Any]]:
     """Map sentence text back onto character/word alignment items."""
     sentences = sentence_texts(text, max_characters=max_characters)
-    expected_units = alignment_units(text)
+    expected_units = alignment_units(text, language=language)
     actual_units = [str(item["text"]) for item in aligned_items]
     if expected_units != actual_units:
         mismatch_index = next(
@@ -456,7 +491,7 @@ def sentence_segments(
     segments: list[dict[str, Any]] = []
     item_index = 0
     for sentence in sentences:
-        unit_count = len(alignment_units(sentence))
+        unit_count = len(alignment_units(sentence, language=language))
         if unit_count == 0:
             if segments:
                 segments[-1]["text"] += sentence
@@ -713,6 +748,7 @@ def main() -> int:
             chunk_id=int(chunk["id"]),
             first_segment_id=len(all_segments),
             max_characters=args.max_sentence_characters,
+            language=args.language,
         )
         all_segments.extend(chunk_segments)
         aligned_chunks.append(

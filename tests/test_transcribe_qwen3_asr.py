@@ -37,6 +37,12 @@ class AlignmentUnitsTests(unittest.TestCase):
             ["翁", "家", "翌", "在", "OpenAI", "做", "RL", "infra"],
         )
 
+    def test_tokenizes_english_like_forced_aligner(self) -> None:
+        self.assertEqual(
+            alignment_units("A sci-fi world's version 3.14.", language="English"),
+            ["A", "scifi", "world's", "version", "314"],
+        )
+
 
 class SentenceTextTests(unittest.TestCase):
     def test_preserves_sentence_punctuation(self) -> None:
@@ -49,6 +55,21 @@ class SentenceTextTests(unittest.TestCase):
         self.assertEqual(
             sentence_texts("一二三四五六，七八九。", max_characters=6),
             ["一二三四五六，", "七八九。"],
+        )
+
+    def test_splits_english_sentences_without_splitting_decimal_points(self) -> None:
+        self.assertEqual(
+            sentence_texts(
+                "First sentence. Version 3.14 works! Final question?",
+                max_characters=160,
+            ),
+            ["First sentence.", "Version 3.14 works!", "Final question?"],
+        )
+
+    def test_keeps_periods_inside_one_english_token_together(self) -> None:
+        self.assertEqual(
+            sentence_texts("D.N.A. works.", max_characters=160),
+            ["D.N.A.", "works."],
         )
 
 

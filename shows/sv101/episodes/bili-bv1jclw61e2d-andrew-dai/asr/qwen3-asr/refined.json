@@ -1,0 +1,7520 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "sv101:bili-bv1jclw61e2d",
+  "language": "zh-CN",
+  "source": {
+    "input_asr_path": "shows/sv101/episodes/bili-bv1jclw61e2d-andrew-dai/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "a25e9b4c4fa11f12c1e77129ab2021cff618ba64a2e50d08e0eb5092d4eaef3b",
+    "engine": "mlx-audio",
+    "model": "mlx-community/Qwen3-ASR-1.7B-8bit"
+  },
+  "rendered_transcript": {
+    "path": "shows/sv101/episodes/bili-bv1jclw61e2d-andrew-dai/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "f4b6b99e2987c1b9db59b87cd11533cbbff960f008db8127030f4d2ae6e88545"
+  },
+  "generated_at": "2026-08-06T16:13:47.033092Z",
+  "statistics": {
+    "source_segments": 548,
+    "refined_segments": 548,
+    "rendered_blocks": 131,
+    "rendered_lines": 548
+  },
+  "segments": [
+    {
+      "start": 0.16,
+      "end": 4.0,
+      "text": "今天我们要对谈的人，他的论文启发了 OpenAI GPT 的诞生。",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 4.4,
+      "end": 14.0,
+      "text": "他是在谷歌研究 AI 十四年，推动数项重要论文，辗转数个产品，最后成为带领 Gemini 打下翻身之战的核心人物之一 Andrew Dai。",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 14.48,
+      "end": 30.08,
+      "text": "Andrew 长期处在谷歌 AI 研发的中枢，从早期的 Sequence Learning、文本生成、对抗训练到 Palm、Flan、Gemini 多模态和长上下文等等，与他合作论文的都是谷歌的众多传奇大佬人物，Quoc Le、Yann LeCun、Leonidas、Jeff Dean 等人。",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 30.4,
+      "end": 35.6,
+      "text": "而我发现啊，Andrew 的职业轨迹就是一部谷歌 AI 大模型的编年史。",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 35.76,
+      "end": 44.4,
+      "text": "而为什么谷歌一度在大模型上被 OpenAI 挂打，而又如何通过强行合并 Google Brain 和 DeepMind，用 Gemini 重回巅峰的？",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 45.04,
+      "end": 49.92,
+      "text": "OpenAI 为什么能够看到 Semi-Supervised Sequence Learning 的能力，而谷歌看不到呢？",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 50.16,
+      "end": 58.0,
+      "text": "第二天我就给 She 说，前两年我们有这个文章就是预训练，他就没有时间做，后面就是 OpenAI 做了。",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 58.24,
+      "end": 65.2,
+      "text": "我看到 Gemini 一点五才用到 MoE 架构，但是这是你在二零二一年就在研发的东西，为什么这么晚呢？",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 65.28,
+      "end": 73.52,
+      "text": "我们不知道 GPT 四会是一个 MoE 的模型，但是我的 Intern Leonidas 过去 OpenAI 之后，他们就开始做了 MoE。",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 73.84,
+      "end": 75.84,
+      "text": "所以硅谷其实是没有什么秘密可言的嘛？",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 75.92,
+      "end": 80.64,
+      "text": "对，特别是大模型 Palm Two 就是很顺，从来没有见过那么顺的预训练。",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 80.88,
+      "end": 84.48,
+      "text": "但是我知道你们的这个风头还是被 GPT 四给抢了。",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 84.64,
+      "end": 87.36,
+      "text": "早一点发表，我们就可以说哦，我们是世界上最好的模型。",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 87.52,
+      "end": 88.24,
+      "text": "觉得可惜吗？",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 88.32,
+      "end": 89.36,
+      "text": "对，有一点可惜。",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 89.52,
+      "end": 92.48,
+      "text": "Google Brain 和 DeepMind 谁都不服谁，很多人离职。",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 92.56,
+      "end": 95.36,
+      "text": "从两边都有离职，从 Brain 这边也有，DeepMind 这边也有。",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 95.52,
+      "end": 97.84,
+      "text": "二点五的时候，Shazair 他带来了什么东西？",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 98.0,
+      "end": 99.36,
+      "text": "他带来他的能力。",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 100.96,
+      "end": 102.96,
+      "text": "数据是很大的一个差异点嘛？",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 103.04,
+      "end": 105.6,
+      "text": "我觉得最大的啊差异就是数据。",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 105.76,
+      "end": 108.88,
+      "text": "但是在谷歌，你觉得它拖速度了？",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 109.2,
+      "end": 115.12,
+      "text": "对，对谷歌来说，可能就是有点危险，因为用这个方法会大量改变数据。",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 115.44,
+      "end": 117.04,
+      "text": "所以你的新方法是什么？",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 117.04,
+      "end": 118.48,
+      "text": "啊，那我不能说。",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 119.76,
+      "end": 129.92,
+      "text": "然而，这样 Gemini 三顺利上线之后，Andrew Dai 决定离开了待了近十四年的谷歌，原因呢是希望有更多的研究自由与更快的速度。",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 130.32,
+      "end": 137.28,
+      "text": "他想做的事情是目前领先大模型公司和实验室不愿意选择的路线，或者说发展的太慢的路线。",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 137.68,
+      "end": 152.64,
+      "text": "Andrew 的结论是，光是大语言模型无法将我们带到 AGI，但是呢，他也不信仰纯视觉的世界模型，他选择的是语言加视觉的中间派系，做多模态视觉推理模型。",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 153.28,
+      "end": 155.6,
+      "text": "那为什么你们现在做的事情谷歌做不了？",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 155.84,
+      "end": 158.96,
+      "text": "如果你做一个 Specialist Model，那 Generalist Model 就超不了。",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 159.12,
+      "end": 170.96,
+      "text": "现在很多的 New Lab 出来，现在这些模型都不会数东西，光 Scale 这个语言这部分还是不够了解我们的世界世界模型，觉得视觉 is the key to intelligence。",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 171.04,
+      "end": 182.0,
+      "text": "但是从语言角度来说，视觉就是不够，我们就是觉得要把语言推理加上视觉推理，才可以做到一个模型可以帮大家，可以帮所有的行业。",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 182.24,
+      "end": 189.68,
+      "text": "今年四月，Andrew 创立的 Lorian AI 宣布融资五千五百万美元，估值三亿美元，正式从保密阶段走向公众视野。",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 189.84,
+      "end": 196.64,
+      "text": "投资方包括 Melo Ventures、Ultimate Capital 等主流硅谷基金，还包括英伟达和以个人身份参与的 Jeff Dean。",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 196.88,
+      "end": 205.36,
+      "text": "另外说一嘴啊，Andrew 五岁就跟随父母去到了英国，那英文呢是他的第一语言，但是他坚持想试试用中文上节目。",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 205.6,
+      "end": 210.56,
+      "text": "如果呢有表达不够准确的地方，或者中英夹杂的部分，还请大家见谅。",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 210.88,
+      "end": 214.56,
+      "text": "那之后呢有机会我也会跟 Andrew 再用英文来对谈一期。",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 214.72,
+      "end": 216.64,
+      "text": "那么以下就是我跟 Andrew Dai 的专访。",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 217.44,
+      "end": 220.0,
+      "text": "非常感谢 Andrew，欢迎你来做客硅谷幺零幺。",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 220.08,
+      "end": 220.32,
+      "text": "谢谢。",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 220.64,
+      "end": 227.04,
+      "text": "所以这就是你们的新办公室，我故意挑了一个这个非常空旷的房间哈，我觉得这边的采光很好。",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 227.12,
+      "end": 228.8,
+      "text": "这个房间你们以后准备用来做什么？",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 228.88,
+      "end": 238.7,
+      "text": "很多研究员也应该是坐在这里和工程师，因为我们这里租房子都至少要租两年，所以我们就已经预测好，我们过了两年会有多少人。",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 238.8,
+      "end": 239.92,
+      "text": "过了两年你会有多少人？",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 240.235,
+      "end": 242.155,
+      "text": "可能就五十、六十、七十。",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 242.475,
+      "end": 243.275,
+      "text": "嗯，现在多少人？",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 243.675,
+      "end": 249.115,
+      "text": "现在我们是十四个人，但是还有两个人现在在搬迁中，所以很快就十六个人了。",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 249.435,
+      "end": 257.915,
+      "text": "我在来的时候在听你一个之前的英文播客哈，然后我发现你有一点British accent，是因为你之前在英国念书是吗？",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 258.075,
+      "end": 264.555,
+      "text": "对我是在中国出生，但是我五岁就去英国，我爸爸去英国读博士，所以我们就一起过去。",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 264.635,
+      "end": 268.235,
+      "text": "我在英国本科就在剑桥，然后去爱丁堡读博士。",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 268.475,
+      "end": 270.235,
+      "text": "你的中文其实还讲的挺好的。",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 270.315,
+      "end": 277.835,
+      "text": "这是我的家人老是要我练中文，然后我也是认识一些中国来的朋友，一直在坚持学。",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 278.155,
+      "end": 279.675,
+      "text": "你是什么时候来到硅谷的？",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 279.755,
+      "end": 284.715,
+      "text": "是四年前，是二零一二年来的，就是为了在谷歌工作。",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 284.795,
+      "end": 286.315,
+      "text": "当时为什么那么喜欢谷歌？",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 286.635,
+      "end": 297.035,
+      "text": "博士我就是读人工智能，然后我一直从中学我都想做人工智能，然后那时候Google Brain比较有名，所以我就是想加入Google大脑团队。",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 297.115,
+      "end": 307.115,
+      "text": "然后那时候Deep Mind还是一个startup，还是一个很小公司，所以我那时候不知道呃有Deep Mind这个公司，所以我就直接想来到呃人工智能中心，就要来到硅谷。",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 307.195,
+      "end": 312.555,
+      "text": "如果你留在伦敦的话，是不是也有可能会加入Deep Mind的，然后最后也来到谷歌？",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 312.635,
+      "end": 320.395,
+      "text": "很可能，我后来我的lab很多我的同学都是去了Deep Mind，就是我一个来到Google Brain。",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 320.795,
+      "end": 331.035,
+      "text": "但是还有个原因我要来这里，是因为这里很容易创业，很多新的公司都是从硅谷来，所以我也是打算来了这里待几年，然后就创业。",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 331.515,
+      "end": 333.195,
+      "text": "啊，没有想到一待就待了十四年。",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 333.355,
+      "end": 334.715,
+      "text": "对，没有想到那么久。",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 334.955,
+      "end": 337.595,
+      "text": "那我们来讲一讲你进入谷歌之后的一些工作吧。",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 337.835,
+      "end": 352.795,
+      "text": "然后第一份工作呢，其实你是去到了Google Now，在二零一二年到二零一四年，那个团队应该是当时Larry Page希望说Android跟Search团队一起搭建的一个能结合用户数据，主动给用户推送提醒信息的这样的一个功能。",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 352.955,
+      "end": 357.115,
+      "text": "那那个时候我理解说背后已经有一点AI的研究在后面了。",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 357.195,
+      "end": 359.435,
+      "text": "当时你在Google Now里面在做什么？",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 359.515,
+      "end": 366.795,
+      "text": "那个公司比较有意思，我来Google Now，他们是招我为了做AI，因为他们知道我是爱丁堡AI博士毕业。",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 367.035,
+      "end": 367.115,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 367.195,
+      "end": 374.475,
+      "text": "但是其实我到了这个团队，他们就发现哦，这个其实在工程上有很多东西要做，在这个infrastructure还是有很多东西。",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 374.555,
+      "end": 384.475,
+      "text": "所以比如说他们如果有个新的新闻出来，想personalize，然后发给用这个app的人，我就编了一个系统，十五分钟之内新的新闻出来就可以推到所有人手机。",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 384.555,
+      "end": 387.195,
+      "text": "这个我就学到很多infrastructure。",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 387.515,
+      "end": 392.795,
+      "text": "我们有一次看到发这个新闻很慢，需要一百个milliseconds，大家在想为什么这么慢？",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 392.955,
+      "end": 402.555,
+      "text": "我看了这个数据在哪里，然后我看了一边是在东海岸，但是我把这个数据送到西海岸，按照这个speed of light，呃，就需要这么多时间，你不能更快。",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 402.795,
+      "end": 406.315,
+      "text": "我学到很多那个engineering的东西，啊，很多end to end。",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 406.475,
+      "end": 411.195,
+      "text": "但是后来我快走的时候，我也开始做更多AI，更多personalization。",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 411.275,
+      "end": 412.795,
+      "text": "后来我就去Google Brain了。",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 412.875,
+      "end": 417.595,
+      "text": "然后谷歌呢，在二零一三年、二零一四年有几个重要的节点哈。",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 417.595,
+      "end": 423.595,
+      "text": "第一个节点呢，就是二零一三年的时候，应该是收购了Jeffrey Hinton的这个公司DNN Research。",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 423.755,
+      "end": 425.915,
+      "text": "Hinton之后就加入Google开始工作了嘛？",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 425.915,
+      "end": 429.675,
+      "text": "你觉得Hinton来到谷歌之后，对谷歌产生了什么样的影响呢？",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 429.915,
+      "end": 433.515,
+      "text": "对Hinton来了之后，谷歌就很看重AI。",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 433.515,
+      "end": 450.635,
+      "text": "那几年我记得我们的CEO也说了，Google是一个AI company，因为他们AI就是他们的core，像Larry Page、Google Brain一开始创造了那个algorithm，他们的目标也是AI，就是让机器帮助大家懂这个网络上大家写的东西。",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 450.715,
+      "end": 453.195,
+      "text": "所以他们一直都是很看重AI。",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 453.435,
+      "end": 459.355,
+      "text": "但是二零一二之后就开始一个新的阶段，就是deep learning深度学习的阶段。",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 459.435,
+      "end": 465.435,
+      "text": "他们就觉得哦，如果我们不投这个方向，那我们就会落后，所以他们就做了Jeffrey Hinton的公司。",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 465.595,
+      "end": 472.715,
+      "text": "从那一段之后，deep learning对Google就很重要，他们的模型也都是越来越多都是neural network那样的模型。",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 472.955,
+      "end": 476.795,
+      "text": "然后二零一四年的时候，谷歌又继续收了Deep Mind。",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 477.355,
+      "end": 483.275,
+      "text": "你觉得Deep Mind的团队进来，包括Demis Hassabis进来，又在什么样的程度上面改变了谷歌吗？",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 483.435,
+      "end": 484.235,
+      "text": "对Deep Mind。",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 484.32,
+      "end": 506.08,
+      "text": "呃，跟那个DNA Research呃收购的方法很不一样，所以Deep Mind收购的时候，他们是做了一个agreement，就是说Deep Mind还是要独立，他们都可以待在伦敦，不用来美国，所以有很多这些呃condition，所以他们基本上就是一个独立的research lab，跟Google Brain不一样，Google Brain它的目标就是要做一些研究，",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 506.16,
+      "end": 520.16,
+      "text": "然后以后呃跟产品合作，然后以后把这些模型推到产品，Deep Mind就是更像是哦你你什么都可以做，如果你觉得是重要的东西，像Alpha Go就可以做，所以这些philosophy有点不一样。",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 520.56,
+      "end": 522.96,
+      "text": "所以Deep Mind还是非常非常独立的。",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 522.96,
+      "end": 524.0,
+      "text": "嗯，对，非常非常独立。",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 524.08,
+      "end": 528.0,
+      "text": "他们想做什么东西也都是哈斯贝斯说了算，其实谷歌也不太会管他们。",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    },
+    {
+      "start": 528.32,
+      "end": 537.68,
+      "text": "对他们招聘也有他们自己的方法，然后他们的很多内部的东西都是跟谷歌分开，像他们的代码那些东西都分了。",
+      "source_segment_indexes": [
+        94
+      ],
+      "source_segment_ids": [
+        94
+      ]
+    },
+    {
+      "start": 538.0,
+      "end": 544.16,
+      "text": "那所以谷歌当时Google Brain的AI的research，比如说像你会跟Deep Mind的人有任何的合作吗？",
+      "source_segment_indexes": [
+        95
+      ],
+      "source_segment_ids": [
+        95
+      ]
+    },
+    {
+      "start": 544.48,
+      "end": 544.8,
+      "text": "还是？",
+      "source_segment_indexes": [
+        96
+      ],
+      "source_segment_ids": [
+        96
+      ]
+    },
+    {
+      "start": 545.28,
+      "end": 564.88,
+      "text": "呃，会，但是比较少，呃，因为合作的时候就会有一些credit assignment的问题，就是说哦是这个项目是谁own的，ownership在大公司都很重要，是到底是Deep Mind own这个项目，或者呃Google大脑own这个项目，然后呃就有的有的项目就是这样的，就更复杂了。",
+      "source_segment_indexes": [
+        97
+      ],
+      "source_segment_ids": [
+        97
+      ]
+    },
+    {
+      "start": 565.04,
+      "end": 579.12,
+      "text": "我知道这样的磨合在之后Google Brain跟Deep Mind那个合并的时候会更加显现出来，但是这个我们可以稍后来聊哈，啊，我还是想啊把开始的时间就是聚焦在你最早期的一些工作上面。",
+      "source_segment_indexes": [
+        98
+      ],
+      "source_segment_ids": [
+        98
+      ]
+    },
+    {
+      "start": 579.92,
+      "end": 587.12,
+      "text": "啊，我看到你在二零一五年开始研究language model pretraining and fine tuning，当时就是应该是在Google Brain部门了哈。",
+      "source_segment_indexes": [
+        99
+      ],
+      "source_segment_ids": [
+        99
+      ]
+    },
+    {
+      "start": 587.2,
+      "end": 606.72,
+      "text": "我看到这一轮G A I的一个奠基石Transformer这篇论文是二零一七年发布的嘛，但是之前其实你们还发布了一个啊你跟Google Brain的创始人之一库克勒一起主导的这篇文章叫做semi supervised sequence learning，嗯，能不能给我们解释一下这篇论文主要解决的是什么问题？",
+      "source_segment_indexes": [
+        100
+      ],
+      "source_segment_ids": [
+        100
+      ]
+    },
+    {
+      "start": 607.04,
+      "end": 626.32,
+      "text": "这个文章不是我们一开始就预测好，不是我们planned，it's not planned，我们本来是做这个technology叫paragraph vectors，所以那时候有word to vec叫word embeddings，L M之前大家都是用这些东西，然后我们想做一个更好的，我做了很多很多实验，然后那些实验都是失败，",
+      "source_segment_indexes": [
+        101
+      ],
+      "source_segment_ids": [
+        101
+      ]
+    },
+    {
+      "start": 626.56,
+      "end": 651.52,
+      "text": "但是有一天我跑了一个实验，然后我就发现哦这个结果很好，比其他的文章分都高，但是我想reproduce它重跑一次，但是我跑不了之前的那些结果，所以我就想哦肯定哪里有一个bug哪里出问题了，所以我就在挖了一段时间，然后我就发现是因为我训练这个模型的时候我是从一个另外一个叫checkpoint开始，那个项目是一个另外一个项目，",
+      "source_segment_indexes": [
+        102
+      ],
+      "source_segment_ids": [
+        102
+      ]
+    },
+    {
+      "start": 651.52,
+      "end": 680.56,
+      "text": "那个项目就是做语言模型，然后我是从那个开始，所以那时候我就发现了如果你是先做呃语言模型，然后你再做这个微调这些supervised data，你就可以有很好的模型，所以这个就是我们我们发现的东西，然后我们就变成一个文章，之前这两个都是分开的，大家没有想用语言模型用来做语言理解，但是我们的idea就是把语言模型和fine tuning微调合到一起就可以做一个很好的模型，",
+      "source_segment_indexes": [
+        103
+      ],
+      "source_segment_ids": [
+        103
+      ]
+    },
+    {
+      "start": 680.64,
+      "end": 683.84,
+      "text": "所以我们就是第一个把这两个部门放在一起。",
+      "source_segment_indexes": [
+        104
+      ],
+      "source_segment_ids": [
+        104
+      ]
+    },
+    {
+      "start": 684.08,
+      "end": 705.36,
+      "text": "这篇论文我们现在回看它很像是大规模预训练加下游微调的这种方式啊，当然这篇论文出来的时候Transformer还没有出来啊，所以当时你们其实用的模型聚焦的还是L S T M这个模型上面啊，但是你当时有没有意识到说哎它可能会lead到一个更大的一个东西？",
+      "source_segment_indexes": [
+        105
+      ],
+      "source_segment_ids": [
+        105
+      ]
+    },
+    {
+      "start": 705.44,
+      "end": 722.56,
+      "text": "所以那时候我们的卡很少，那时候大家都没有用很多这种显示卡做训练，所以我们还是用的比较少的模型，但是我记得那一年我们开会，我们就在那个会上叫Neurips就发表那个文章，然后set for create L S T M的第一author。",
+      "source_segment_indexes": [
+        106
+      ],
+      "source_segment_ids": [
+        106
+      ]
+    },
+    {
+      "start": 722.734,
+      "end": 737.854,
+      "text": "他就来我们的poster，他说他已经试了我们这个方法，结果很好，所以从那时候我们就知道，哦，这个以后应该会很多人用这个方法，但是我们没有想到过了十年还会用这个，然后加了几倍这么大的模型。",
+      "source_segment_indexes": [
+        107
+      ],
+      "source_segment_ids": [
+        107
+      ]
+    },
+    {
+      "start": 738.414,
+      "end": 739.054,
+      "text": "嗯，对。",
+      "source_segment_indexes": [
+        108
+      ],
+      "source_segment_ids": [
+        108
+      ]
+    },
+    {
+      "start": 739.374,
+      "end": 746.094,
+      "text": "那当时transformer出来的时候，你有意识到这两个东西可以融合起来，然后变成一个something much bigger吗？",
+      "source_segment_indexes": [
+        109
+      ],
+      "source_segment_ids": [
+        109
+      ]
+    },
+    {
+      "start": 746.334,
+      "end": 766.094,
+      "text": "transformer出来的时候，我觉得就很适合跟我们做的这个预训练一起用，所以transformer出来之后，第二天我就给旭旭，旭旭是一个呃transformer的first author，然后也是一个朋友，我给他说，哦，我们前两年我们有这个文章就是预训练，然后结果很好，你要不要在transformer上也试一试预训练？",
+      "source_segment_indexes": [
+        110
+      ],
+      "source_segment_ids": [
+        110
+      ]
+    },
+    {
+      "start": 766.414,
+      "end": 773.454,
+      "text": "但是那时候他很忙，他在做一些图片处理的东西，所以他就没有时间做，后面就是open ai做了。",
+      "source_segment_indexes": [
+        111
+      ],
+      "source_segment_ids": [
+        111
+      ]
+    },
+    {
+      "start": 773.774,
+      "end": 777.694,
+      "text": "对，所以open ai是谁啊来主导的这件事情？",
+      "source_segment_indexes": [
+        112
+      ],
+      "source_segment_ids": [
+        112
+      ]
+    },
+    {
+      "start": 777.934,
+      "end": 781.454,
+      "text": "发现了就是呃transformer可以跟你们这篇文章结合起来。",
+      "source_segment_indexes": [
+        113
+      ],
+      "source_segment_ids": [
+        113
+      ]
+    },
+    {
+      "start": 781.534,
+      "end": 792.814,
+      "text": "open ai是alec ratford，他就是写gpt一二三的文章，他也引用我们那个文章，所以他就看出来了，哦，这个scale，然后继续scale越来越大，它的出来的语言就越来越好。",
+      "source_segment_indexes": [
+        114
+      ],
+      "source_segment_ids": [
+        114
+      ]
+    },
+    {
+      "start": 793.134,
+      "end": 799.534,
+      "text": "谷歌在什么时候意识到说，哎，这两个东西都是我这边出来的，结果open ai给结合在一起用了？",
+      "source_segment_indexes": [
+        115
+      ],
+      "source_segment_ids": [
+        115
+      ]
+    },
+    {
+      "start": 799.694,
+      "end": 804.094,
+      "text": "对，我觉得这个是gpt三，所以到了gpt三的时候才意识到。",
+      "source_segment_indexes": [
+        116
+      ],
+      "source_segment_ids": [
+        116
+      ]
+    },
+    {
+      "start": 804.734,
+      "end": 817.134,
+      "text": "对，对，gpt三是一个可能是一个turning moment，整个世界的turning moment，所以不光是谷歌，很多公司都发现，哦，gpt三出来的语言可以干的东西都很好，所以可能scaling是对的方向。",
+      "source_segment_indexes": [
+        117
+      ],
+      "source_segment_ids": [
+        117
+      ]
+    },
+    {
+      "start": 817.294,
+      "end": 824.574,
+      "text": "之前啊大家都不想投这么多显示卡做在一个实验上，但是gpt三之后，谷歌就开始愿意这样投。",
+      "source_segment_indexes": [
+        118
+      ],
+      "source_segment_ids": [
+        118
+      ]
+    },
+    {
+      "start": 824.734,
+      "end": 833.614,
+      "text": "那在gpt三出来之前啊，google brain的这个co founders啊，jeff dean，andrew n还有quark他们当时在做什么事情？",
+      "source_segment_indexes": [
+        119
+      ],
+      "source_segment_ids": [
+        119
+      ]
+    },
+    {
+      "start": 833.614,
+      "end": 836.334,
+      "text": "然后deep mind的hassibes他们在做什么事情？",
+      "source_segment_indexes": [
+        120
+      ],
+      "source_segment_ids": [
+        120
+      ]
+    },
+    {
+      "start": 836.414,
+      "end": 848.574,
+      "text": "hassibes那一段时间我记得好像他们是在做alphago那个项目，他们是觉得把游戏做的很好，像atari游戏和围棋这些，那就可以发生intelligence。",
+      "source_segment_indexes": [
+        121
+      ],
+      "source_segment_ids": [
+        121
+      ]
+    },
+    {
+      "start": 848.734,
+      "end": 860.814,
+      "text": "google brain就是另外一个方向，我觉得jeff dean也是这个方向想的，就是如果你做一个ai就什么都可以做，那就是real intelligence，就不要只专注一个小的领域。",
+      "source_segment_indexes": [
+        122
+      ],
+      "source_segment_ids": [
+        122
+      ]
+    },
+    {
+      "start": 861.134,
+      "end": 868.654,
+      "text": "但是那时候google brain还是很自由，啊，google brain的文化都是比较有名，很自由，你想做什么都可以做什么。",
+      "source_segment_indexes": [
+        123
+      ],
+      "source_segment_ids": [
+        123
+      ]
+    },
+    {
+      "start": 868.734,
+      "end": 879.134,
+      "text": "那时候jeff dean在lead这个brain团队，但是下面的研究员什么都在做，像有的团队在做音乐，怎么可以用ai做出新的歌这样的东西。",
+      "source_segment_indexes": [
+        124
+      ],
+      "source_segment_ids": [
+        124
+      ]
+    },
+    {
+      "start": 879.374,
+      "end": 888.814,
+      "text": "其实做语言的人很少，就基本上是quark和我还有几个人，大部分都都是在做像视觉、视频处理这些东西。",
+      "source_segment_indexes": [
+        125
+      ],
+      "source_segment_ids": [
+        125
+      ]
+    },
+    {
+      "start": 889.214,
+      "end": 897.934,
+      "text": "嗯，对，就没有一个人来lead，强有力的来lead，说没有集合所有的资源跟力量去压住在同一个赛道上。",
+      "source_segment_indexes": [
+        126
+      ],
+      "source_segment_ids": [
+        126
+      ]
+    },
+    {
+      "start": 898.254,
+      "end": 900.734,
+      "text": "对，嗯，直到他们看到gpt三出来。",
+      "source_segment_indexes": [
+        127
+      ],
+      "source_segment_ids": [
+        127
+      ]
+    },
+    {
+      "start": 900.894,
+      "end": 909.214,
+      "text": "对，所以你觉得open ai为什么能够看到啊semi supervised sequence learning的能力，而谷歌看不到呢？",
+      "source_segment_indexes": [
+        128
+      ],
+      "source_segment_ids": [
+        128
+      ]
+    },
+    {
+      "start": 909.294,
+      "end": 916.014,
+      "text": "因因为就是当时你跟transformer的作者说了一下这个东西是不是可以尝试，他没有理你，那之后你就没有再尝试了吗？",
+      "source_segment_indexes": [
+        129
+      ],
+      "source_segment_ids": [
+        129
+      ]
+    },
+    {
+      "start": 916.094,
+      "end": 938.414,
+      "text": "哦，对，那时候那是二零一七的时候，那个时间和特别google brain开始谷歌健康的部门，那时候health就是一个很hot的领域，大家都是想进health，包括苹果和微软，所以谷歌也觉得哦我们也要把ai放到health里面，所以那时候他们就让我选我要进health或者待在brain，然后我就选择去health，所以我就没有机会做这些gpt的模型。",
+      "source_segment_indexes": [
+        130
+      ],
+      "source_segment_ids": [
+        130
+      ]
+    },
+    {
+      "start": 938.894,
+      "end": 943.054,
+      "text": "那有也没有其他的人继续在往这方面深推了，是吧？",
+      "source_segment_indexes": [
+        131
+      ],
+      "source_segment_ids": [
+        131
+      ]
+    },
+    {
+      "start": 943.054,
+      "end": 952.734,
+      "text": "啊，对，后来就没有没有往上scale，但是有有人把这个放在产品，就像smart compose，smart reply，他们就是用这个预训练的方法。",
+      "source_segment_indexes": [
+        132
+      ],
+      "source_segment_ids": [
+        132
+      ]
+    },
+    {
+      "start": 952.734,
+      "end": 957.054,
+      "text": "了解，对，然后跟我们说一下你在health部门啊在研究什么？",
+      "source_segment_indexes": [
+        133
+      ],
+      "source_segment_ids": [
+        133
+      ]
+    },
+    {
+      "start": 957.294,
+      "end": 958.574,
+      "text": "你去做产品了是吗？",
+      "source_segment_indexes": [
+        134
+      ],
+      "source_segment_ids": [
+        134
+      ]
+    },
+    {
+      "start": 958.814,
+      "end": 961.854,
+      "text": "我做的研究是帮助产品，啊，所以那时候就是。",
+      "source_segment_indexes": [
+        135
+      ],
+      "source_segment_ids": [
+        135
+      ]
+    },
+    {
+      "start": 962.296,
+      "end": 972.536,
+      "text": "负责这个医疗的records，预测这个人以后可能会有什么病，或者会要吃什么药，就可以帮助医院省钱，或者帮助这些医生。",
+      "source_segment_indexes": [
+        136
+      ],
+      "source_segment_ids": [
+        136
+      ]
+    },
+    {
+      "start": 972.776,
+      "end": 978.056,
+      "text": "我们也是用预训练，因为我们知道预训练很成功，我们就在这个医疗上面用预训练。",
+      "source_segment_indexes": [
+        137
+      ],
+      "source_segment_ids": [
+        137
+      ]
+    },
+    {
+      "start": 978.216,
+      "end": 983.976,
+      "text": "但是那时候的模型还是很小，所以最后就没有做出来预训练，但是发表其他的文章。",
+      "source_segment_indexes": [
+        138
+      ],
+      "source_segment_ids": [
+        138
+      ]
+    },
+    {
+      "start": 984.216,
+      "end": 1001.576,
+      "text": "但是那时候也是一个比较好的时代，那时候也是那个Google Brain residency program，所以招了很多，就像intern待一年，后来就创业的人，像Leonidas和戴密国、David Ha，他们就是我的intern那一段，所以那也是一个比较好的时间。",
+      "source_segment_indexes": [
+        139
+      ],
+      "source_segment_ids": [
+        139
+      ]
+    },
+    {
+      "start": 1001.896,
+      "end": 1014.616,
+      "text": "在2018年的时候，就是你在去health部门的一年之后，我看你跟比如说Ian Goodfellow这些人还合作了一篇重量性的论文，叫MaskGAN，其实是来改善文本生成的质量哈。",
+      "source_segment_indexes": [
+        140
+      ],
+      "source_segment_ids": [
+        140
+      ]
+    },
+    {
+      "start": 1014.776,
+      "end": 1027.336,
+      "text": "因为我看到中间的一些技术探讨，比如说他用的这个填空任务或者是infilling啊，这些技术在后来的比如说BERT啊、Gemini多模态预训练中都有一定程度的启发和影响。",
+      "source_segment_indexes": [
+        141
+      ],
+      "source_segment_ids": [
+        141
+      ]
+    },
+    {
+      "start": 1027.576,
+      "end": 1030.056,
+      "text": "那你觉得这篇论文对你来说意味着什么？",
+      "source_segment_indexes": [
+        142
+      ],
+      "source_segment_ids": [
+        142
+      ]
+    },
+    {
+      "start": 1030.216,
+      "end": 1043.176,
+      "text": "这个文章是我跟Leonidas和Ian Goodfellow就一起写的，然后我们就觉得把这个空填起来是一个很好的task，就可以让这个模型就学到很复杂的东西。",
+      "source_segment_indexes": [
+        143
+      ],
+      "source_segment_ids": [
+        143
+      ]
+    },
+    {
+      "start": 1043.256,
+      "end": 1048.776,
+      "text": "但是我觉得有一个地方，这个我们文章做的比较好，就是RL方面。",
+      "source_segment_indexes": [
+        144
+      ],
+      "source_segment_ids": [
+        144
+      ]
+    },
+    {
+      "start": 1048.936,
+      "end": 1061.016,
+      "text": "那时候做预训练，然后做RL就基本上没有其他的人做，可能还有一个文章在做这个，但是我们可能是前几个文章就在预训练之后做RL，然后现在大家都是用这个方法。",
+      "source_segment_indexes": [
+        145
+      ],
+      "source_segment_ids": [
+        145
+      ]
+    },
+    {
+      "start": 1061.336,
+      "end": 1065.816,
+      "text": "就相当于是你们是首批团队把RL用在了语言模型上。",
+      "source_segment_indexes": [
+        146
+      ],
+      "source_segment_ids": [
+        146
+      ]
+    },
+    {
+      "start": 1065.816,
+      "end": 1075.656,
+      "text": "对，我们那时候就觉得哦，光做预训练不够，因为这些模型就不会学到写出来的字怎么改，或者哪些地方写得好，哪些地方写的不好。",
+      "source_segment_indexes": [
+        147
+      ],
+      "source_segment_ids": [
+        147
+      ]
+    },
+    {
+      "start": 1076.056,
+      "end": 1085.336,
+      "text": "然后有RL的话，那这些模型就可以看到我自己写的这一这一段就不像英文，或者不像哪一个语语言，然后RL就可以把这个改好。",
+      "source_segment_indexes": [
+        148
+      ],
+      "source_segment_ids": [
+        148
+      ]
+    },
+    {
+      "start": 1085.576,
+      "end": 1093.256,
+      "text": "在其他的很多大家都觉得是有共识的技术范式上面，你们也都是第一批团队去做的，就包括MoE。",
+      "source_segment_indexes": [
+        149
+      ],
+      "source_segment_ids": [
+        149
+      ]
+    },
+    {
+      "start": 1093.256,
+      "end": 1096.936,
+      "text": "然后你当时研究MoE的时候，还是在2021年的时候，对吧？",
+      "source_segment_indexes": [
+        150
+      ],
+      "source_segment_ids": [
+        150
+      ]
+    },
+    {
+      "start": 1096.936,
+      "end": 1100.136,
+      "text": "你联合主导了GLM MoE LLM的这个开发。",
+      "source_segment_indexes": [
+        151
+      ],
+      "source_segment_ids": [
+        151
+      ]
+    },
+    {
+      "start": 1100.136,
+      "end": 1109.096,
+      "text": "那现在MoE架构我们都很熟悉了，但我觉得真正把MoE这个词儿带到大众视野的，可能还是去年DeepSeek V3的时候的发布啊。",
+      "source_segment_indexes": [
+        152
+      ],
+      "source_segment_ids": [
+        152
+      ]
+    },
+    {
+      "start": 1109.096,
+      "end": 1113.096,
+      "text": "但是我是没有想到在2021年的时候，谷歌内部就已经在研发这个路线了。",
+      "source_segment_indexes": [
+        153
+      ],
+      "source_segment_ids": [
+        153
+      ]
+    },
+    {
+      "start": 1113.096,
+      "end": 1122.696,
+      "text": "那时候是GPT3出来了，Google Brain团队有的人有一点着急，嗯，他就说哦，我们一定要做一个模型比他们好，然后也要更多功能这些东西。",
+      "source_segment_indexes": [
+        154
+      ],
+      "source_segment_ids": [
+        154
+      ]
+    },
+    {
+      "start": 1123.016,
+      "end": 1131.496,
+      "text": "所以我们那时候就觉得哦，这些模型越来越大，serve他们通过一个API就会很贵，因为他们有很多参数，然后就要很多很多电。",
+      "source_segment_indexes": [
+        155
+      ],
+      "source_segment_ids": [
+        155
+      ]
+    },
+    {
+      "start": 1131.736,
+      "end": 1136.216,
+      "text": "但是如果你只用那个模型一部分，用的电就少很多。",
+      "source_segment_indexes": [
+        156
+      ],
+      "source_segment_ids": [
+        156
+      ]
+    },
+    {
+      "start": 1136.696,
+      "end": 1152.216,
+      "text": "所以那时候前几年，Noam学界他也出了一个文章，就是做MoE，但是那个时候就没有做预训练，所以我们就是用MoE加上预训练，加上fine tuning，然后我们最后就做了一个模型比GPT3还好，所以那就是我们的achievement。",
+      "source_segment_indexes": [
+        157
+      ],
+      "source_segment_ids": [
+        157
+      ]
+    },
+    {
+      "start": 1152.216,
+      "end": 1157.736,
+      "text": "2021年的时候，GPT3出来了，谷歌内部你说开始感到压力了是吗？",
+      "source_segment_indexes": [
+        158
+      ],
+      "source_segment_ids": [
+        158
+      ]
+    },
+    {
+      "start": 1157.816,
+      "end": 1159.256,
+      "text": "当时是什么样的一个情况？",
+      "source_segment_indexes": [
+        159
+      ],
+      "source_segment_ids": [
+        159
+      ]
+    },
+    {
+      "start": 1159.496,
+      "end": 1161.496,
+      "text": "能不能给我们来描述一下？",
+      "source_segment_indexes": [
+        160
+      ],
+      "source_segment_ids": [
+        160
+      ]
+    },
+    {
+      "start": 1161.496,
+      "end": 1178.936,
+      "text": "我那时候的经理他是叫Claire，他就是我的Google Health的那个经理，然后他回到Google Brain，我那时候就跟他谈我说哦，我要离开Google Health，他就说哦，我们现在正在做这个模型，但是这个模型就达不到GPT3那么好，你们帮我们解决这个问题。",
+      "source_segment_indexes": [
+        161
+      ],
+      "source_segment_ids": [
+        161
+      ]
+    },
+    {
+      "start": 1179.016,
+      "end": 1188.456,
+      "text": "我们觉得这个问题是数据上面的问题，所以我就过去了，把那个数据处理了一段时间，终于做了一个模型比GPT3好，发表一个文章。",
+      "source_segment_indexes": [
+        162
+      ],
+      "source_segment_ids": [
+        162
+      ]
+    },
+    {
+      "start": 1188.856,
+      "end": 1197.176,
+      "text": "然后那时候DeepMind也是也是发表一个文章，所以那时候就开始有一点这个竞争的东西，然后后面几年就可以。",
+      "source_segment_indexes": [
+        163
+      ],
+      "source_segment_ids": [
+        163
+      ]
+    },
+    {
+      "start": 1197.423,
+      "end": 1209.583,
+      "text": "看出来有什么结果，但是那时候就就开始了，因为两边都比较都看了GPT three，然后DiMa也觉得哦我们要竞争，然后Brain也是我们要竞争，要不然大家都会觉得谷歌做不出了这样的模型。",
+      "source_segment_indexes": [
+        164
+      ],
+      "source_segment_ids": [
+        164
+      ]
+    },
+    {
+      "start": 1209.903,
+      "end": 1211.343,
+      "text": "你当时为什么想要离开Health？",
+      "source_segment_indexes": [
+        165
+      ],
+      "source_segment_ids": [
+        165
+      ]
+    },
+    {
+      "start": 1212.063,
+      "end": 1224.463,
+      "text": "啊Health，呃，我觉得对一个Big Tech公司来说很是很难很难的一个东西，然后这个难度不是因为呃科技难度是因为文化，为什么？",
+      "source_segment_indexes": [
+        166
+      ],
+      "source_segment_ids": [
+        166
+      ]
+    },
+    {
+      "start": 1224.783,
+      "end": 1245.423,
+      "text": "医生他们有自己的文化，然后他们的文化就是传下来的几百代的医生，然后他们有自己的方法做东西，所以这个本身这个行业resource这个understanding就是更难，所以很多医生就是按照他们自己的intuition决定东西，然后我们如果我们要把AI推上去，那他们就会问啊为什么AI要我做这个东西？",
+      "source_segment_indexes": [
+        167
+      ],
+      "source_segment_ids": [
+        167
+      ]
+    },
+    {
+      "start": 1245.583,
+      "end": 1253.183,
+      "text": "我我有我做了好几十年，我肯定知道比这个AI好，所以就很难呃要那些医生用到AI那时候。",
+      "source_segment_indexes": [
+        168
+      ],
+      "source_segment_ids": [
+        168
+      ]
+    },
+    {
+      "start": 1253.343,
+      "end": 1270.063,
+      "text": "嗯，是不是可以说就是在嗯实际的产品落地的时候，一个大的科技公司它是比不上，比如说跟一些医院或者医生关系很好的，或者是药企也好，是比不上他们去推这个产品落地的。",
+      "source_segment_indexes": [
+        169
+      ],
+      "source_segment_ids": [
+        169
+      ]
+    },
+    {
+      "start": 1270.783,
+      "end": 1284.063,
+      "text": "对对，然后还有一个是这个大公司，像有的医生就可能觉得哦这个大公司要抢我们的工作，抢我们的医院的钱嘛，如果是一个startup，那他们就不会那么feel threatened，所以我觉得这是一个部分。",
+      "source_segment_indexes": [
+        170
+      ],
+      "source_segment_ids": [
+        170
+      ]
+    },
+    {
+      "start": 1284.223,
+      "end": 1287.823,
+      "text": "对，是不是当时技术也没有好到让大家觉得说啊非用你不可？",
+      "source_segment_indexes": [
+        171
+      ],
+      "source_segment_ids": [
+        171
+      ]
+    },
+    {
+      "start": 1287.903,
+      "end": 1312.303,
+      "text": "对，像现在大家都是就是因为ChatGPT那些医生就觉得哦那那我可以用上AI，大家都在用ChatGPT，所以我就要用，但是那时候不是那样的，呃那时候我他们是比较一个呃新的customer for AI，嗯，但是现在他们是他们不是一个新的，很多人都在用，所以他们就觉得哦没有那么危险，嗯，所以时间不对，对对时间不对，可能当时技术也比较粗糙一点，",
+      "source_segment_indexes": [
+        172
+      ],
+      "source_segment_ids": [
+        172
+      ]
+    },
+    {
+      "start": 1312.383,
+      "end": 1312.703,
+      "text": "是不是？",
+      "source_segment_indexes": [
+        173
+      ],
+      "source_segment_ids": [
+        173
+      ]
+    },
+    {
+      "start": 1312.943,
+      "end": 1322.223,
+      "text": "然后产品可能也没有做的那么的让他们称心如意，然后go to market上面其实美国医疗产业本来就是一个很难去打入的产业。",
+      "source_segment_indexes": [
+        174
+      ],
+      "source_segment_ids": [
+        174
+      ]
+    },
+    {
+      "start": 1322.463,
+      "end": 1323.183,
+      "text": "It's a big lesson。",
+      "source_segment_indexes": [
+        175
+      ],
+      "source_segment_ids": [
+        175
+      ]
+    },
+    {
+      "start": 1323.343,
+      "end": 1329.023,
+      "text": "对，所以你的take away就是要在right time to do the right thing，work on the right technology。",
+      "source_segment_indexes": [
+        176
+      ],
+      "source_segment_ids": [
+        176
+      ]
+    },
+    {
+      "start": 1329.583,
+      "end": 1330.063,
+      "text": "Exactly。",
+      "source_segment_indexes": [
+        177
+      ],
+      "source_segment_ids": [
+        177
+      ]
+    },
+    {
+      "start": 1330.383,
+      "end": 1332.303,
+      "text": "对创业，我觉得创业这个很重要。",
+      "source_segment_indexes": [
+        178
+      ],
+      "source_segment_ids": [
+        178
+      ]
+    },
+    {
+      "start": 1332.543,
+      "end": 1341.423,
+      "text": "嗯，那我们来讲讲你从Health出来了，然后呢在二零二二年的时候你是主到了谷歌Palm two模型的这个预训练嘛？",
+      "source_segment_indexes": [
+        179
+      ],
+      "source_segment_ids": [
+        179
+      ]
+    },
+    {
+      "start": 1341.583,
+      "end": 1352.463,
+      "text": "这个模型其实对谷歌来说是非常重要的，因为那个时候谷歌跟OpenAI已经是有这个模型的比拼的这种压力在了，但是Palm two出来的时候你们满意吗？",
+      "source_segment_indexes": [
+        180
+      ],
+      "source_segment_ids": [
+        180
+      ]
+    },
+    {
+      "start": 1352.863,
+      "end": 1376.943,
+      "text": "对Palm two是二零二三初就训练好了，我那时候觉得是一个挺好的模型，从来没有见过那么顺的预训练，从头到底就一次都没有停，一次都不用rewind，不像那时候啊Meta出了一个OPT那个模型，那个也是那那段时间也是比较有名，但是你看他们的那个logbook就重启了很多很多次，然后做了很久，但是Palm two就是很顺，",
+      "source_segment_indexes": [
+        181
+      ],
+      "source_segment_ids": [
+        181
+      ]
+    },
+    {
+      "start": 1377.023,
+      "end": 1383.823,
+      "text": "就一年之内从计划这个项目到这个模型做完了就不到一年，所以我觉得那个就特别顺。",
+      "source_segment_indexes": [
+        182
+      ],
+      "source_segment_ids": [
+        182
+      ]
+    },
+    {
+      "start": 1384.063,
+      "end": 1384.943,
+      "text": "为什么这么顺？",
+      "source_segment_indexes": [
+        183
+      ],
+      "source_segment_ids": [
+        183
+      ]
+    },
+    {
+      "start": 1385.103,
+      "end": 1387.423,
+      "text": "你们做对了什么事情让它这么顺？",
+      "source_segment_indexes": [
+        184
+      ],
+      "source_segment_ids": [
+        184
+      ]
+    },
+    {
+      "start": 1387.423,
+      "end": 1407.183,
+      "text": "那时候有一些经验，就是训练啊GLM和训练Palm一的经验，我们也是选了一些architecture上面的东西，做了很多测试，做了很多实验，我们就知道哦这个很稳，这个不会出问题，然后我们跑了那个大训练之前，我们也做了一些high load runs，所以我们就有high confidence这个这个会成功。",
+      "source_segment_indexes": [
+        185
+      ],
+      "source_segment_ids": [
+        185
+      ]
+    },
+    {
+      "start": 1407.183,
+      "end": 1424.143,
+      "text": "嗯，然后在二零二二年我看你还写了一个蛮重要的一个论文，就是Flan scaling instruction fine-tuned language models，想要去探索任务数量、模型大小以及加入这个chain of thought（COT）的一些数据，能不能给我们讲一下这个Flan它的重要性在哪里？",
+      "source_segment_indexes": [
+        186
+      ],
+      "source_segment_ids": [
+        186
+      ]
+    },
+    {
+      "start": 1424.223,
+      "end": 1436.143,
+      "text": "Flan之前大家都是用像few shot prompting，呃用这些模型，所以如果你要它做一个东西，你先要给它举一个例子，像如果是一个数学问题，你要给它一个数学问题，告诉它那个答案，然后",
+      "source_segment_indexes": [
+        187
+      ],
+      "source_segment_ids": [
+        187
+      ]
+    },
+    {
+      "start": 1436.363,
+      "end": 1438.843,
+      "text": "给了这几个例子，然后你再可以问他做一个东西。",
+      "source_segment_indexes": [
+        188
+      ],
+      "source_segment_ids": [
+        188
+      ]
+    },
+    {
+      "start": 1439.323,
+      "end": 1453.083,
+      "text": "但是 Flan 这个文章就是说，哦，其实你不用给他举例子，你就在微调的数据里放这些例子就够了，然后这模型就会学会，你给他什么问题，他就必须要答案。",
+      "source_segment_indexes": [
+        189
+      ],
+      "source_segment_ids": [
+        189
+      ]
+    },
+    {
+      "start": 1453.243,
+      "end": 1455.723,
+      "text": "这是有好的部分，但是也有不好的部分。",
+      "source_segment_indexes": [
+        190
+      ],
+      "source_segment_ids": [
+        190
+      ]
+    },
+    {
+      "start": 1455.803,
+      "end": 1459.483,
+      "text": "好的部分就是你就不用给他这些 few shot 这些例子，以后。",
+      "source_segment_indexes": [
+        191
+      ],
+      "source_segment_ids": [
+        191
+      ]
+    },
+    {
+      "start": 1459.723,
+      "end": 1465.003,
+      "text": "但是不好的部分，大家现在都知道，如果你问他东西，他不知道，他还会假装他知道。",
+      "source_segment_indexes": [
+        192
+      ],
+      "source_segment_ids": [
+        192
+      ]
+    },
+    {
+      "start": 1465.323,
+      "end": 1469.163,
+      "text": "有了这个之后，就可以有 ChatGPT 这个 Chatbot，因为你可以直接问他问题。",
+      "source_segment_indexes": [
+        193
+      ],
+      "source_segment_ids": [
+        193
+      ]
+    },
+    {
+      "start": 1469.803,
+      "end": 1477.803,
+      "text": "嗯，好，呃，所以 Palm Two 你们还是比较满意的，但是我知道你们的这个风头还是被 GPT 四给抢了，是吗？",
+      "source_segment_indexes": [
+        194
+      ],
+      "source_segment_ids": [
+        194
+      ]
+    },
+    {
+      "start": 1477.803,
+      "end": 1497.163,
+      "text": "嗯，对，对我们的时候，我们做完了比较早，因为我们的是二零二三初的时候就做完了，但是谷歌的内部的这些 bureaucracy 和谷歌内部的系统很大，他们就觉得我们要等到 Google I/O 再统一发布，对，再统一发布。",
+      "source_segment_indexes": [
+        195
+      ],
+      "source_segment_ids": [
+        195
+      ]
+    },
+    {
+      "start": 1497.563,
+      "end": 1518.923,
+      "text": "但是 OpenAI 他们当然知道 Google I/O 是什么，他们知道我们要出这个模型，因为谷歌那么大，没有没有什么秘密在内部的，呃，所以他们就刚好 Google I/O 之前，他们就出了 GPT 四，然后 GPT 四的结果就比 Palm Two 好，所以我们发表 Palm Two 的时候，就我就觉得晚了一点，我觉得早一点的发表，",
+      "source_segment_indexes": [
+        196
+      ],
+      "source_segment_ids": [
+        196
+      ]
+    },
+    {
+      "start": 1518.923,
+      "end": 1521.003,
+      "text": "我们就可以说，哦，我们是世界上最好的模型。",
+      "source_segment_indexes": [
+        197
+      ],
+      "source_segment_ids": [
+        197
+      ]
+    },
+    {
+      "start": 1522.123,
+      "end": 1523.083,
+      "text": "嗯嗯，觉得可惜吗？",
+      "source_segment_indexes": [
+        198
+      ],
+      "source_segment_ids": [
+        198
+      ]
+    },
+    {
+      "start": 1523.403,
+      "end": 1524.443,
+      "text": "对，有点可惜。",
+      "source_segment_indexes": [
+        199
+      ],
+      "source_segment_ids": [
+        199
+      ]
+    },
+    {
+      "start": 1524.923,
+      "end": 1534.763,
+      "text": "但是 Palm Two 还是很重要，就虽然 GPT 四可能在 benchmark 上面比你们好，但起码 Google 会告诉大家说，哎，我们站稳了，对吧？",
+      "source_segment_indexes": [
+        200
+      ],
+      "source_segment_ids": [
+        200
+      ]
+    },
+    {
+      "start": 1534.763,
+      "end": 1537.003,
+      "text": "我们没有就是 fall behind 的态度。",
+      "source_segment_indexes": [
+        201
+      ],
+      "source_segment_ids": [
+        201
+      ]
+    },
+    {
+      "start": 1537.323,
+      "end": 1545.483,
+      "text": "对，因为没有，还有个原因是没有 Palm Two 的话，那那时候有那个产品是叫 Bard，Bard 后来就叫 Gemini，对对。",
+      "source_segment_indexes": [
+        202
+      ],
+      "source_segment_ids": [
+        202
+      ]
+    },
+    {
+      "start": 1545.483,
+      "end": 1556.123,
+      "text": "然后没有 Palm Two 的话，那个 Bard 产品也是比较危险，因为 Bard 就是用 Palm Two 做出来 Chatbot，所以那样的话，那谷歌的就没有 Chatbot。",
+      "source_segment_indexes": [
+        203
+      ],
+      "source_segment_ids": [
+        203
+      ]
+    },
+    {
+      "start": 1556.363,
+      "end": 1562.603,
+      "text": "刚才你也说了，二零二二年年底的时候，OpenAI 是上了 ChatGPT，然后把整个 AI 市场引爆了嘛？",
+      "source_segment_indexes": [
+        204
+      ],
+      "source_segment_ids": [
+        204
+      ]
+    },
+    {
+      "start": 1562.763,
+      "end": 1562.923,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        205
+      ],
+      "source_segment_ids": [
+        205
+      ]
+    },
+    {
+      "start": 1563.003,
+      "end": 1569.163,
+      "text": "当时谷歌内部也是拉响了口燃，然后 Search Brain 也是回归到了谷歌啊。",
+      "source_segment_indexes": [
+        206
+      ],
+      "source_segment_ids": [
+        206
+      ]
+    },
+    {
+      "start": 1569.243,
+      "end": 1574.923,
+      "text": "当时做出来的一个决定就是把 DeepMind 跟 Google Brain 给整合起来啊。",
+      "source_segment_indexes": [
+        207
+      ],
+      "source_segment_ids": [
+        207
+      ]
+    },
+    {
+      "start": 1575.003,
+      "end": 1577.403,
+      "text": "给我们讲讲那是整合的时候发生了什么故事吧？",
+      "source_segment_indexes": [
+        208
+      ],
+      "source_segment_ids": [
+        208
+      ]
+    },
+    {
+      "start": 1577.483,
+      "end": 1580.683,
+      "text": "这个整合是顺利呢，还是会有很多的摩擦在里面？",
+      "source_segment_indexes": [
+        209
+      ],
+      "source_segment_ids": [
+        209
+      ]
+    },
+    {
+      "start": 1580.923,
+      "end": 1588.763,
+      "text": "这个整合大家有个 preview，大家都是觉得 Gemini 就是一个 preview，这个整合之后会怎么样发生？",
+      "source_segment_indexes": [
+        210
+      ],
+      "source_segment_ids": [
+        210
+      ]
+    },
+    {
+      "start": 1588.923,
+      "end": 1594.043,
+      "text": "因为 Gemini 前几个月就是 DeepMind 和 Brain people 一起做，但是不是 official，嗯。",
+      "source_segment_indexes": [
+        211
+      ],
+      "source_segment_ids": [
+        211
+      ]
+    },
+    {
+      "start": 1594.363,
+      "end": 1612.603,
+      "text": "啊，然后那时候呃，就有一点摩擦，但是后来我觉得那个 leadership 就觉得，哦，我们这个是这个 timeline 要更快，我们不能呃比 ChatGPT 再落后，所以他们就决定要快一点把这两个团队放到一起啊。",
+      "source_segment_indexes": [
+        212
+      ],
+      "source_segment_ids": [
+        212
+      ]
+    },
+    {
+      "start": 1612.683,
+      "end": 1631.403,
+      "text": "所以那时候那确实有摩擦，因为两边都有一样的团队，所以 DeepMind 有个 infrastructure 团队，Brain 也有；DeepMind 有个 multi-modal 团队，Brain 也有；数据也是 DeepMind 有个数据团队，然后我就是代表这个 Brain 的数据团队，所以一开始都是有这个 tension，",
+      "source_segment_indexes": [
+        213
+      ],
+      "source_segment_ids": [
+        213
+      ]
+    },
+    {
+      "start": 1631.803,
+      "end": 1638.843,
+      "text": "他们决定每一个部门要一个领导从 DeepMind 那边，一个领导从 Brain 这边，所以呃就比较复杂。",
+      "source_segment_indexes": [
+        214
+      ],
+      "source_segment_ids": [
+        214
+      ]
+    },
+    {
+      "start": 1639.323,
+      "end": 1657.803,
+      "text": "对，所以他的意思就是说，比如说数据部门，然后你其实是 co lead，你是一个 co lead，然后 DeepMind 会出一个 co lead，嗯，就包括可能其他的部门也是，嗯，多模态的部门也是，嗯，Google Brain 出一个 co lead，DeepMind 出一个 co lead，就是每个部门都是这样，是吧？",
+      "source_segment_indexes": [
+        215
+      ],
+      "source_segment_ids": [
+        215
+      ]
+    },
+    {
+      "start": 1657.803,
+      "end": 1658.523,
+      "text": "对，嗯。",
+      "source_segment_indexes": [
+        216
+      ],
+      "source_segment_ids": [
+        216
+      ]
+    },
+    {
+      "start": 1658.523,
+      "end": 1672.283,
+      "text": "呃，出了之后，我们还要分，我们还要说，哦，来这个数据部门里面哪一部分是呃伦敦可以做，哪一部分啊 Mountain View Brain 这边可以做，然后这就很复杂，这就浪费了很多时间了，我觉得。",
+      "source_segment_indexes": [
+        217
+      ],
+      "source_segment_ids": [
+        217
+      ]
+    },
+    {
+      "start": 1672.283,
+      "end": 1675.323,
+      "text": "嗯，为什么一定要设置这样的一个机制呢？",
+      "source_segment_indexes": [
+        218
+      ],
+      "source_segment_ids": [
+        218
+      ]
+    },
+    {
+      "start": 1675.738,
+      "end": 1677.098,
+      "text": "就更公平吧。",
+      "source_segment_indexes": [
+        219
+      ],
+      "source_segment_ids": [
+        219
+      ]
+    },
+    {
+      "start": 1677.178,
+      "end": 1683.418,
+      "text": "Google Brain跟Deep Mind谁都不服谁，对，这就是一个OK，我给两边都同时给这样的一个结局。",
+      "source_segment_indexes": [
+        220
+      ],
+      "source_segment_ids": [
+        220
+      ]
+    },
+    {
+      "start": 1683.418,
+      "end": 1686.138,
+      "text": "对，像一个equal even的呃setup。",
+      "source_segment_indexes": [
+        221
+      ],
+      "source_segment_ids": [
+        221
+      ]
+    },
+    {
+      "start": 1686.378,
+      "end": 1689.818,
+      "text": "那你觉得这样的setup会拖累模型的研发速度吗？",
+      "source_segment_indexes": [
+        222
+      ],
+      "source_segment_ids": [
+        222
+      ]
+    },
+    {
+      "start": 1689.978,
+      "end": 1710.538,
+      "text": "我觉得一开始可能我们可能出的模型就慢一些，啊，因为做这个，因为你把两个团队就之前就都没有合作过，然后之前都已经有一点这种tension，那你突然把它放在一起，那肯定会有有一些东西变慢了，然后会有人换组，所以这些东西都都发生了。",
+      "source_segment_indexes": [
+        223
+      ],
+      "source_segment_ids": [
+        223
+      ]
+    },
+    {
+      "start": 1710.938,
+      "end": 1715.338,
+      "text": "整个的磨合过程，你觉得经历了多长时间？",
+      "source_segment_indexes": [
+        224
+      ],
+      "source_segment_ids": [
+        224
+      ]
+    },
+    {
+      "start": 1715.338,
+      "end": 1717.338,
+      "text": "嗯，还是说到现在还在磨合。",
+      "source_segment_indexes": [
+        225
+      ],
+      "source_segment_ids": [
+        225
+      ]
+    },
+    {
+      "start": 1718.538,
+      "end": 1720.698,
+      "text": "对，可能现在还在磨合吧。",
+      "source_segment_indexes": [
+        226
+      ],
+      "source_segment_ids": [
+        226
+      ]
+    },
+    {
+      "start": 1720.858,
+      "end": 1724.458,
+      "text": "对，有的部门磨合速度更慢，有的部门更快。",
+      "source_segment_indexes": [
+        227
+      ],
+      "source_segment_ids": [
+        227
+      ]
+    },
+    {
+      "start": 1724.538,
+      "end": 1730.938,
+      "text": "就像Infer就是很快，他们就觉得哦，我们必须要用这个Infer模型，你之前做的就不怎么用了。",
+      "source_segment_indexes": [
+        228
+      ],
+      "source_segment_ids": [
+        228
+      ]
+    },
+    {
+      "start": 1731.178,
+      "end": 1731.978,
+      "text": "多模态也是。",
+      "source_segment_indexes": [
+        229
+      ],
+      "source_segment_ids": [
+        229
+      ]
+    },
+    {
+      "start": 1732.378,
+      "end": 1737.818,
+      "text": "所以就是两边整合的一个结果，就是很多人离职，对吧？",
+      "source_segment_indexes": [
+        230
+      ],
+      "source_segment_ids": [
+        230
+      ]
+    },
+    {
+      "start": 1737.818,
+      "end": 1742.458,
+      "text": "呃，对，有不少的人离职，从两边都有离职，从Brain这边也有，Deep Mind这边也有。",
+      "source_segment_indexes": [
+        231
+      ],
+      "source_segment_ids": [
+        231
+      ]
+    },
+    {
+      "start": 1742.458,
+      "end": 1750.458,
+      "text": "嗯，这两个谁都看不上谁的部门整合在一起了，然后一起来啊，同心协力的work on Gemini。",
+      "source_segment_indexes": [
+        232
+      ],
+      "source_segment_ids": [
+        232
+      ]
+    },
+    {
+      "start": 1750.698,
+      "end": 1754.298,
+      "text": "然后啊，二零二三年年底的时候，Gemini一点零出来了。",
+      "source_segment_indexes": [
+        233
+      ],
+      "source_segment_ids": [
+        233
+      ]
+    },
+    {
+      "start": 1754.298,
+      "end": 1755.898,
+      "text": "嗯，这个模型你们满意吗？",
+      "source_segment_indexes": [
+        234
+      ],
+      "source_segment_ids": [
+        234
+      ]
+    },
+    {
+      "start": 1756.138,
+      "end": 1767.498,
+      "text": "这个模型我觉得是有一点rush的出来，那时候我们刚开始一起合作，然后很多东西都是呃拼命就赶那个deadline。",
+      "source_segment_indexes": [
+        235
+      ],
+      "source_segment_ids": [
+        235
+      ]
+    },
+    {
+      "start": 1767.738,
+      "end": 1779.098,
+      "text": "那时候有个圣诞节的deadline，呃，因为五月份Google还有刚出来，我们刚announce Palm Two，但是我们要我们觉得哦，每六个月都都要出，下六个月就要出一个新的模型，所以大家都在赶这个时间。",
+      "source_segment_indexes": [
+        236
+      ],
+      "source_segment_ids": [
+        236
+      ]
+    },
+    {
+      "start": 1779.658,
+      "end": 1792.538,
+      "text": "然后你那么拼命赶，然后这些人都没有合作过，然后这个模型也是从start from scratch基本上，所以就有一些地方就做的不是很好，就像那个小书的语言就没做的很好。",
+      "source_segment_indexes": [
+        237
+      ],
+      "source_segment_ids": [
+        237
+      ]
+    },
+    {
+      "start": 1792.938,
+      "end": 1800.858,
+      "text": "然后那时候媒体都报道了，说Gemini一点零有的语言上就不行，所以我们赶紧做Gemini一点五。",
+      "source_segment_indexes": [
+        238
+      ],
+      "source_segment_ids": [
+        238
+      ]
+    },
+    {
+      "start": 1800.858,
+      "end": 1809.498,
+      "text": "然后我看到Gemini一点五才用到MOE架构，嗯，但是这是你在二零二一年就在研发的东西，为什么这么晚呢？",
+      "source_segment_indexes": [
+        239
+      ],
+      "source_segment_ids": [
+        239
+      ]
+    },
+    {
+      "start": 1809.658,
+      "end": 1827.098,
+      "text": "对，这个也是我觉得一个速度的问题，所以他们像一点零就很赶紧推出来，啊，所以呃他们就没有时间就做这个MOE的模型，就只能做一个dense模型，因为MOE你还要tune，还要花时间做optimization。",
+      "source_segment_indexes": [
+        240
+      ],
+      "source_segment_ids": [
+        240
+      ]
+    },
+    {
+      "start": 1827.178,
+      "end": 1840.938,
+      "text": "然后ChatGPT出来之后，这个整个想法都变成一个race，就哎我们就在跟OpenAI比赛，啊，所以有如果有个MOE要把我们的schedule变得慢，啊，那就不能做，所以啊。",
+      "source_segment_indexes": [
+        241
+      ],
+      "source_segment_ids": [
+        241
+      ]
+    },
+    {
+      "start": 1841.258,
+      "end": 1848.298,
+      "text": "所以它的优先级还是说我先不管创新了，啊，我先就把它给追上，所以这个时候谷歌其实是变成了一个追赶者。",
+      "source_segment_indexes": [
+        242
+      ],
+      "source_segment_ids": [
+        242
+      ]
+    },
+    {
+      "start": 1848.538,
+      "end": 1855.738,
+      "text": "嗯嗯，对对，嗯，是不是也是因为GPT四用了MOE，然后一点五的时候才说哎，我们必须要用MOE了？",
+      "source_segment_indexes": [
+        243
+      ],
+      "source_segment_ids": [
+        243
+      ]
+    },
+    {
+      "start": 1856.298,
+      "end": 1860.298,
+      "text": "我觉得本来我们都是打算用MOE，嗯，啊，这是什么时候用？",
+      "source_segment_indexes": [
+        244
+      ],
+      "source_segment_ids": [
+        244
+      ]
+    },
+    {
+      "start": 1860.618,
+      "end": 1861.418,
+      "text": "对，这是什么时候？",
+      "source_segment_indexes": [
+        245
+      ],
+      "source_segment_ids": [
+        245
+      ]
+    },
+    {
+      "start": 1861.578,
+      "end": 1885.978,
+      "text": "这是一个it's matter of time，因为我们知道MOE的结果更好，那个二零二一的文章已经给大家看了是更好，但是我们不知道OpenAI会那么快用MOE，我们不知道GPT四呃会是一个MOE的模型，我们还是有些人觉得哦应该是一个dense模型，但是我的intern Leon Fedus过去啊OpenAI之后，他们就开始做了MOE。",
+      "source_segment_indexes": [
+        246
+      ],
+      "source_segment_ids": [
+        246
+      ]
+    },
+    {
+      "start": 1885.978,
+      "end": 1889.418,
+      "text": "所以他是他他跟你一起work on了这个事情之后，他就带去了OpenAI。",
+      "source_segment_indexes": [
+        247
+      ],
+      "source_segment_ids": [
+        247
+      ]
+    },
+    {
+      "start": 1889.898,
+      "end": 1892.138,
+      "text": "嗯，所以硅谷其实是没有什么秘密可言的嘛。",
+      "source_segment_indexes": [
+        248
+      ],
+      "source_segment_ids": [
+        248
+      ]
+    },
+    {
+      "start": 1892.378,
+      "end": 1902.298,
+      "text": "对，特别是大模型和大公司，那这些大公司就肯定会有人去OpenAI买topic，所以对大公司就很难保持秘密。",
+      "source_segment_indexes": [
+        249
+      ],
+      "source_segment_ids": [
+        249
+      ]
+    },
+    {
+      "start": 1902.698,
+      "end": 1906.858,
+      "text": "Gemini二点零对你来说，对你们来说是一个比较大的翻身仗。",
+      "source_segment_indexes": [
+        250
+      ],
+      "source_segment_ids": [
+        250
+      ]
+    },
+    {
+      "start": 1907.018,
+      "end": 1911.818,
+      "text": "对，Gemini二点零就是像一个evolution，就是这些方法就。",
+      "source_segment_indexes": [
+        251
+      ],
+      "source_segment_ids": [
+        251
+      ]
+    },
+    {
+      "start": 1911.986,
+      "end": 1919.746,
+      "text": "更成熟，包括MoE，包括这些很长的context的问题，所以那个模型就是对一个evolution一个更好的模型。",
+      "source_segment_indexes": [
+        252
+      ],
+      "source_segment_ids": [
+        252
+      ]
+    },
+    {
+      "start": 1920.066,
+      "end": 1925.106,
+      "text": "对，因为我知道好像在data上面，你也是在Gemini二点零上面有一些创新的。",
+      "source_segment_indexes": [
+        253
+      ],
+      "source_segment_ids": [
+        253
+      ]
+    },
+    {
+      "start": 1925.506,
+      "end": 1928.946,
+      "text": "对，能不能给我们解释一下你做了什么让Gemini二点零变得更好？",
+      "source_segment_indexes": [
+        254
+      ],
+      "source_segment_ids": [
+        254
+      ]
+    },
+    {
+      "start": 1929.346,
+      "end": 1937.906,
+      "text": "对，在data上有个很有很大的变化，我们是用个新方法处理这个数据质量，然后我们检测质量也是更严格。",
+      "source_segment_indexes": [
+        255
+      ],
+      "source_segment_ids": [
+        255
+      ]
+    },
+    {
+      "start": 1938.066,
+      "end": 1946.466,
+      "text": "可能有的公司觉得，呃，这个architecture和卡够了就可以做一个很好的模型，但是其实数据还是很重要。",
+      "source_segment_indexes": [
+        256
+      ],
+      "source_segment_ids": [
+        256
+      ]
+    },
+    {
+      "start": 1946.626,
+      "end": 1958.306,
+      "text": "所以你看这些文章，他们一般都不会说数据有什么，也不会说，呃，数据从哪里来的，这是一个很一个secret source啊，这些模型，所以我们就发表了新的方法。",
+      "source_segment_indexes": [
+        257
+      ],
+      "source_segment_ids": [
+        257
+      ]
+    },
+    {
+      "start": 1958.466,
+      "end": 1963.986,
+      "text": "嗯，所以你觉得现在数据是大模型们很大的一个差异点吗？",
+      "source_segment_indexes": [
+        258
+      ],
+      "source_segment_ids": [
+        258
+      ]
+    },
+    {
+      "start": 1964.066,
+      "end": 1975.346,
+      "text": "因为看起来模型架构大家都在用同样的东西，算力大公司都不缺，infrastructure其实都是很类似的东西，是不是差异点就在数据上？",
+      "source_segment_indexes": [
+        259
+      ],
+      "source_segment_ids": [
+        259
+      ]
+    },
+    {
+      "start": 1975.826,
+      "end": 1978.706,
+      "text": "对，我觉得最大的啊差异就是数据。",
+      "source_segment_indexes": [
+        260
+      ],
+      "source_segment_ids": [
+        260
+      ]
+    },
+    {
+      "start": 1979.026,
+      "end": 1990.066,
+      "text": "但是数据不是说数据来源的问题，因为大家反正都把互联网的数据都穷尽了，而是说怎么去优化这个数据，或者是怎么去挑选更优化的数据来用于训练，是吗？",
+      "source_segment_indexes": [
+        261
+      ],
+      "source_segment_ids": [
+        261
+      ]
+    },
+    {
+      "start": 1990.226,
+      "end": 2006.706,
+      "text": "对你选用什么数据很重要，因为网络上是有很多数据，但是也有很多spam，很多就没有用，帮不了这个模型的数据，所以要找到那个好的数据可以让这个模型学新的东西，就像人一样，你给一个人每天都让他读广告，那他也是学不了东西。",
+      "source_segment_indexes": [
+        262
+      ],
+      "source_segment_ids": [
+        262
+      ]
+    },
+    {
+      "start": 2007.026,
+      "end": 2023.906,
+      "text": "你要给他有information有knowledge的数据才行，但是那个来源也是有一点区别，因为谷歌他们有谷歌搜索，所以他们有搜索的那个经验，就知道怎么爬这个网络，其他的公司也是有有自己的优点。",
+      "source_segment_indexes": [
+        263
+      ],
+      "source_segment_ids": [
+        263
+      ]
+    },
+    {
+      "start": 2024.226,
+      "end": 2031.346,
+      "text": "所以呃，你其实，在Gemini二点零主要在数据上面做的一个提升，就是把这些spam的数据都给剔除了。",
+      "source_segment_indexes": [
+        264
+      ],
+      "source_segment_ids": [
+        264
+      ]
+    },
+    {
+      "start": 2031.346,
+      "end": 2037.746,
+      "text": "spam还有一些其他的数据，对，嗯，呃，不光是spam，嗯，就更多的就不能讲了，是吧？",
+      "source_segment_indexes": [
+        265
+      ],
+      "source_segment_ids": [
+        265
+      ]
+    },
+    {
+      "start": 2038.066,
+      "end": 2039.266,
+      "text": "对，低质量的数据。",
+      "source_segment_indexes": [
+        266
+      ],
+      "source_segment_ids": [
+        266
+      ]
+    },
+    {
+      "start": 2039.426,
+      "end": 2043.986,
+      "text": "在合成数据上面，你你也是在管这个合成数据方面，对不对？",
+      "source_segment_indexes": [
+        267
+      ],
+      "source_segment_ids": [
+        267
+      ]
+    },
+    {
+      "start": 2043.986,
+      "end": 2060.466,
+      "text": "对我也是在联合主导那个合成数据，然后合成数据，呃，用的不好，那也就会有个很不好的模型，但是用的好，就像GPT五，它就是用合成数据，可以用它把模型做的很好。",
+      "source_segment_indexes": [
+        268
+      ],
+      "source_segment_ids": [
+        268
+      ]
+    },
+    {
+      "start": 2060.626,
+      "end": 2061.346,
+      "text": "什么叫用的好？",
+      "source_segment_indexes": [
+        269
+      ],
+      "source_segment_ids": [
+        269
+      ]
+    },
+    {
+      "start": 2061.346,
+      "end": 2062.146,
+      "text": "什么叫用的不好？",
+      "source_segment_indexes": [
+        270
+      ],
+      "source_segment_ids": [
+        270
+      ]
+    },
+    {
+      "start": 2062.386,
+      "end": 2069.266,
+      "text": "用的不好就是你处理的不好，你处理的不好的话，这个模型就会老是做出你的合成数据的东西。",
+      "source_segment_indexes": [
+        271
+      ],
+      "source_segment_ids": [
+        271
+      ]
+    },
+    {
+      "start": 2069.426,
+      "end": 2077.346,
+      "text": "如果你的合成数据有很多deal这个词，那你训练完，那你的模型也会更多说这个deal这个词。",
+      "source_segment_indexes": [
+        272
+      ],
+      "source_segment_ids": [
+        272
+      ]
+    },
+    {
+      "start": 2077.506,
+      "end": 2084.306,
+      "text": "所以合成数据你要它也是需要很高质量，要不然你的模型也会学到不好的东西，学到错的东西。",
+      "source_segment_indexes": [
+        273
+      ],
+      "source_segment_ids": [
+        273
+      ]
+    },
+    {
+      "start": 2084.866,
+      "end": 2090.946,
+      "text": "嗯嗯，像如果合成数据有错的数学，那你的模型学到那个，那它的数学也会变得更差。",
+      "source_segment_indexes": [
+        274
+      ],
+      "source_segment_ids": [
+        274
+      ]
+    },
+    {
+      "start": 2091.186,
+      "end": 2100.946,
+      "text": "这中间的呃差异点就是说怎么去确保说喂给模型的是尽量优质的数据，这样的话，其实模型它也在能力上能够有一个很大的提升。",
+      "source_segment_indexes": [
+        275
+      ],
+      "source_segment_ids": [
+        275
+      ]
+    },
+    {
+      "start": 2101.026,
+      "end": 2111.266,
+      "text": "嗯，对，然后但是user数据也是很难用，因为user他们也会呃copy paste从其他的模型，所以所以是比较难用这个数据。",
+      "source_segment_indexes": [
+        276
+      ],
+      "source_segment_ids": [
+        276
+      ]
+    },
+    {
+      "start": 2111.746,
+      "end": 2128.706,
+      "text": "Gemini二点五的时候在去年年终的时候有发布，然后在年底的时候是发了Gemini三点零哈，我觉得在那个时候真的是短暂的超过了GPT吧，然后可以说是惊艳了整个市场啊，然后大家都在欢呼说啊，谷歌又回来了，然后看你们谷歌的股价也是涨得非常快啊。",
+      "source_segment_indexes": [
+        277
+      ],
+      "source_segment_ids": [
+        277
+      ]
+    },
+    {
+      "start": 2128.786,
+      "end": 2133.826,
+      "text": "但是你在Gemini三点零的时候就离开了，嗯，能给我们讲讲为什么？",
+      "source_segment_indexes": [
+        278
+      ],
+      "source_segment_ids": [
+        278
+      ]
+    },
+    {
+      "start": 2133.826,
+      "end": 2155.746,
+      "text": "啊，可以，对，嗯，我先讲Gemini二点五，二点五是Norm实际从Caltech AI就来到谷歌，他就帮了二点五，所以二点五是一个比较好的模型，然后三点零就是我们挑了我们做数据的方法，有更多的新的方法，然后嗯，等一下我打断一下，二点五的时候，Shazier他带来了什么东西到谷歌，然后让你们二点五变得更好？",
+      "source_segment_indexes": [
+        279
+      ],
+      "source_segment_ids": [
+        279
+      ]
+    },
+    {
+      "start": 2156.206,
+      "end": 2160.606,
+      "text": "他带来他的能力，能力具体指的什么？",
+      "source_segment_indexes": [
+        280
+      ],
+      "source_segment_ids": [
+        280
+      ]
+    },
+    {
+      "start": 2161.166,
+      "end": 2172.126,
+      "text": "呃，能力是，我有一次跟Noah讨论Transformer这个architecture，然后我说，那我们从这里加到这里加一个connection，加一个连接，好不好？",
+      "source_segment_indexes": [
+        281
+      ],
+      "source_segment_ids": [
+        281
+      ]
+    },
+    {
+      "start": 2172.206,
+      "end": 2182.846,
+      "text": "然后他说，呃，这样不会好，因为它的gradient就会从这里移到这里，他都不用跑那个模型，他就知道训练之后会会是什么样的结果。",
+      "source_segment_indexes": [
+        282
+      ],
+      "source_segment_ids": [
+        282
+      ]
+    },
+    {
+      "start": 2183.086,
+      "end": 2191.326,
+      "text": "他是真的是一个genius，他一看那个代码，他就知道，哦，这是一个好的模型或者不好的模型，他自己就知道这个模型是怎么怎么work。",
+      "source_segment_indexes": [
+        283
+      ],
+      "source_segment_ids": [
+        283
+      ]
+    },
+    {
+      "start": 2191.726,
+      "end": 2193.726,
+      "text": "所以，AI hire是make sense的。",
+      "source_segment_indexes": [
+        284
+      ],
+      "source_segment_ids": [
+        284
+      ]
+    },
+    {
+      "start": 2194.286,
+      "end": 2195.486,
+      "text": "对，这good deal。",
+      "source_segment_indexes": [
+        285
+      ],
+      "source_segment_ids": [
+        285
+      ]
+    },
+    {
+      "start": 2195.566,
+      "end": 2202.126,
+      "text": "所以，哇，现在看起来真的是一个人他的能力就能够帮公司省很多钱跟时间。",
+      "source_segment_indexes": [
+        286
+      ],
+      "source_segment_ids": [
+        286
+      ]
+    },
+    {
+      "start": 2202.606,
+      "end": 2204.686,
+      "text": "对，是的，对他很厉害。",
+      "source_segment_indexes": [
+        287
+      ],
+      "source_segment_ids": [
+        287
+      ]
+    },
+    {
+      "start": 2204.686,
+      "end": 2206.526,
+      "text": "嗯，那三角零呢？",
+      "source_segment_indexes": [
+        288
+      ],
+      "source_segment_ids": [
+        288
+      ]
+    },
+    {
+      "start": 2206.526,
+      "end": 2210.366,
+      "text": "就是说你们继续在数据上有一些创新跟优化，对吧？",
+      "source_segment_indexes": [
+        289
+      ],
+      "source_segment_ids": [
+        289
+      ]
+    },
+    {
+      "start": 2210.446,
+      "end": 2217.326,
+      "text": "然后能够在数据上给Gemini三角零能够带来更好的一个差异点，或者在benchmark上面跑分跑的更好。",
+      "source_segment_indexes": [
+        290
+      ],
+      "source_segment_ids": [
+        290
+      ]
+    },
+    {
+      "start": 2217.566,
+      "end": 2246.766,
+      "text": "嗯，对，那时候数据有一些新的方法，然后但是我走的原因是，呃，因为我可以感觉到用的方法和做的progress都是用的比较保守的方法，因为这么多人，几千个人在这个项目上，很多很多显示卡用来预训练，所以他们就不能用很aggressive、很不同的新的想法，就是比较risky，所以我就觉得这时候就比较好的时间就离开，然后创业。",
+      "source_segment_indexes": [
+        291
+      ],
+      "source_segment_ids": [
+        291
+      ]
+    },
+    {
+      "start": 2247.086,
+      "end": 2259.806,
+      "text": "所以你觉得从数据上还可以提升、优化更快，用一些更加大胆或者是更加激进的aggressive的方式去做事情，但是在谷歌，你觉得它拖速度了？",
+      "source_segment_indexes": [
+        292
+      ],
+      "source_segment_ids": [
+        292
+      ]
+    },
+    {
+      "start": 2259.886,
+      "end": 2266.206,
+      "text": "对，对谷歌来说可能就是有点危险，因为用这个方法会大量改变数据。",
+      "source_segment_indexes": [
+        293
+      ],
+      "source_segment_ids": [
+        293
+      ]
+    },
+    {
+      "start": 2266.366,
+      "end": 2267.646,
+      "text": "对，所以你的新方法是什么？",
+      "source_segment_indexes": [
+        294
+      ],
+      "source_segment_ids": [
+        294
+      ]
+    },
+    {
+      "start": 2268.126,
+      "end": 2271.726,
+      "text": "啊，那我不能说。",
+      "source_segment_indexes": [
+        295
+      ],
+      "source_segment_ids": [
+        295
+      ]
+    },
+    {
+      "start": 2271.726,
+      "end": 2285.326,
+      "text": "好，但是你的新方法就是你来，嗯，要自己创业，你其实想做的是视觉推理模型，在你能说的范围内，能不能跟我解释一下你想要用什么样的技术路径去实现什么样的事情？",
+      "source_segment_indexes": [
+        296
+      ],
+      "source_segment_ids": [
+        296
+      ]
+    },
+    {
+      "start": 2285.406,
+      "end": 2304.206,
+      "text": "对，我们的团队是一个full stack团队，所以我们有很了解数据、很了解预训练、很了解多模态RL post training infra的人，所以其实我们不光是想数据做一些变化，做一个更好的多模态推理的模型，我们是整个呃full stack approach。",
+      "source_segment_indexes": [
+        297
+      ],
+      "source_segment_ids": [
+        297
+      ]
+    },
+    {
+      "start": 2304.286,
+      "end": 2310.526,
+      "text": "我觉得Anthropic就是这样的，Anthropic就是一个full stack for coding，就每一个部分都要专注coding。",
+      "source_segment_indexes": [
+        298
+      ],
+      "source_segment_ids": [
+        298
+      ]
+    },
+    {
+      "start": 2310.926,
+      "end": 2322.366,
+      "text": "我们就是数据，然后那个architecture、RL algorithms，我们都会专注于多模态，所以我们这些地方都会改，包括那个vision encoder，我们都会有一些新的方法。",
+      "source_segment_indexes": [
+        299
+      ],
+      "source_segment_ids": [
+        299
+      ]
+    },
+    {
+      "start": 2322.526,
+      "end": 2324.766,
+      "text": "为什么你们现在做的事情谷歌做不了？",
+      "source_segment_indexes": [
+        300
+      ],
+      "source_segment_ids": [
+        300
+      ]
+    },
+    {
+      "start": 2324.926,
+      "end": 2335.646,
+      "text": "对，这个是可以看Anthropic做的，Anthropic他们编程模型做的很好，但是这个模型它不会做多模态的东西，然后这是因为他们就专注于编程。",
+      "source_segment_indexes": [
+        301
+      ],
+      "source_segment_ids": [
+        301
+      ]
+    },
+    {
+      "start": 2335.886,
+      "end": 2340.126,
+      "text": "你看Gemini和Chat GPT，他们就没有这样，他们就做模型，就什么都可以做。",
+      "source_segment_indexes": [
+        302
+      ],
+      "source_segment_ids": [
+        302
+      ]
+    },
+    {
+      "start": 2340.446,
+      "end": 2345.406,
+      "text": "在我们的行业就是叫generalist models，Claude这个模型可能就叫一个specialist model。",
+      "source_segment_indexes": [
+        303
+      ],
+      "source_segment_ids": [
+        303
+      ]
+    },
+    {
+      "start": 2345.406,
+      "end": 2368.446,
+      "text": "我们这个公司也是这样觉得，就是如果你做一个specialist model，那generalist model就超不了，因为我们会有更多多模态数据，我们会把那个数据调了，对多模态没有用的数据，比如说二战是谁赢了，在什么地方打，那可能对多模态没有什么帮助，所以我们就可以减少那些数据，把更多数据就留给多模态数据，视频和图片，",
+      "source_segment_indexes": [
+        304
+      ],
+      "source_segment_ids": [
+        304
+      ]
+    },
+    {
+      "start": 2368.766,
+      "end": 2371.406,
+      "text": "这样的方法就很难其他的公司赶上来。",
+      "source_segment_indexes": [
+        305
+      ],
+      "source_segment_ids": [
+        305
+      ]
+    },
+    {
+      "start": 2371.646,
+      "end": 2383.486,
+      "text": "现在的视觉模型，比如说Google的View系列，或者是OpenAI的Sora系列，你觉得他们就还不够好，因为视觉里面他们还不够理解他们在生成的东西，是吗？",
+      "source_segment_indexes": [
+        306
+      ],
+      "source_segment_ids": [
+        306
+      ]
+    },
+    {
+      "start": 2383.566,
+      "end": 2386.286,
+      "text": "能不能给我们解释一下视觉理解模型是什么？",
+      "source_segment_indexes": [
+        307
+      ],
+      "source_segment_ids": [
+        307
+      ]
+    },
+    {
+      "start": 2386.366,
+      "end": 2390.686,
+      "text": "然后它跟Sora还有View这样的视频生成模型有什么样的区别？",
+      "source_segment_indexes": [
+        308
+      ],
+      "source_segment_ids": [
+        308
+      ]
+    },
+    {
+      "start": 2390.766,
+      "end": 2398.766,
+      "text": "其实生成和理解和推理是很不一样的东西，你就看语言模型的话，五年前。",
+      "source_segment_indexes": [
+        309
+      ],
+      "source_segment_ids": [
+        309
+      ]
+    },
+    {
+      "start": 2399.121,
+      "end": 2408.161,
+      "text": "这些模型已经会编程，你让GPT三出一些，变成它可以一般的人看这个程序，他会觉得哦这个程序很好，就像一个工程师写的一样。",
+      "source_segment_indexes": [
+        310
+      ],
+      "source_segment_ids": [
+        310
+      ]
+    },
+    {
+      "start": 2408.721,
+      "end": 2414.401,
+      "text": "但是如果工程师来看他写的代码，那他肯定会说哦这个不对，这个跑不了。",
+      "source_segment_indexes": [
+        311
+      ],
+      "source_segment_ids": [
+        311
+      ]
+    },
+    {
+      "start": 2414.481,
+      "end": 2417.441,
+      "text": "所以这就是生成和理解的区别。",
+      "source_segment_indexes": [
+        312
+      ],
+      "source_segment_ids": [
+        312
+      ]
+    },
+    {
+      "start": 2417.601,
+      "end": 2422.881,
+      "text": "一般就是这些大模型都很容易生成东西，就一你一下看都会觉得很好。",
+      "source_segment_indexes": [
+        313
+      ],
+      "source_segment_ids": [
+        313
+      ]
+    },
+    {
+      "start": 2423.201,
+      "end": 2429.681,
+      "text": "但是你仔细看的话，像那个图片，你会看哦那个字写的不对，或者那个人有三只手。",
+      "source_segment_indexes": [
+        314
+      ],
+      "source_segment_ids": [
+        314
+      ]
+    },
+    {
+      "start": 2429.841,
+      "end": 2436.721,
+      "text": "导演也会看这些视频，导演看了这视频也会觉得这个地方不对，这个地方明显是AI做出来的东西。",
+      "source_segment_indexes": [
+        315
+      ],
+      "source_segment_ids": [
+        315
+      ]
+    },
+    {
+      "start": 2436.881,
+      "end": 2445.761,
+      "text": "所以我们在视觉理解能力就可能是跟五年前的呃GPT三GPT二对语言理解差不多。",
+      "source_segment_indexes": [
+        316
+      ],
+      "source_segment_ids": [
+        316
+      ]
+    },
+    {
+      "start": 2446.081,
+      "end": 2452.481,
+      "text": "我记得就是我们在前产的时候，你还跟我说过一个老鹰抓兔子的比喻哈，我觉得那还挺挺形象的。",
+      "source_segment_indexes": [
+        317
+      ],
+      "source_segment_ids": [
+        317
+      ]
+    },
+    {
+      "start": 2452.721,
+      "end": 2460.721,
+      "text": "我们那时候是产世界模型，所以世界模型我觉得你可以想象像一个老鹰，很多老鹰都吃鸟。",
+      "source_segment_indexes": [
+        318
+      ],
+      "source_segment_ids": [
+        318
+      ]
+    },
+    {
+      "start": 2461.361,
+      "end": 2479.601,
+      "text": "但是你抓这个鸟的时候，那你肯定要理解gravity和wind和turbulence，也要懂这个翅膀要什么角度才可以赶上另外一只鸟，你也要预测另外一只鸟会用什么方向飞，你要算哦我要什么速度才可以到那个地方再捅一点就可以把那个鸟抓起来。",
+      "source_segment_indexes": [
+        319
+      ],
+      "source_segment_ids": [
+        319
+      ]
+    },
+    {
+      "start": 2479.681,
+      "end": 2483.681,
+      "text": "所以他们的脑筋其实都都可以算这些东西，都很复杂的东西。",
+      "source_segment_indexes": [
+        320
+      ],
+      "source_segment_ids": [
+        320
+      ]
+    },
+    {
+      "start": 2483.921,
+      "end": 2486.961,
+      "text": "不管可以抓鸟，他们也会抓兔子吃老鼠吃。",
+      "source_segment_indexes": [
+        321
+      ],
+      "source_segment_ids": [
+        321
+      ]
+    },
+    {
+      "start": 2487.201,
+      "end": 2491.201,
+      "text": "算出来哦这个兔子如果它跑到一个桥下面，那它从哪里会出来？",
+      "source_segment_indexes": [
+        322
+      ],
+      "source_segment_ids": [
+        322
+      ]
+    },
+    {
+      "start": 2491.521,
+      "end": 2495.521,
+      "text": "或者一个老鼠跑到一堆草里面，那最后会从哪里出来？",
+      "source_segment_indexes": [
+        323
+      ],
+      "source_segment_ids": [
+        323
+      ]
+    },
+    {
+      "start": 2495.681,
+      "end": 2499.841,
+      "text": "这些动物他们很了解这个natural world这个physical world。",
+      "source_segment_indexes": [
+        324
+      ],
+      "source_segment_ids": [
+        324
+      ]
+    },
+    {
+      "start": 2500.641,
+      "end": 2504.001,
+      "text": "但是如果我们可以问老鹰的大脑，what is the law of gravity？",
+      "source_segment_indexes": [
+        325
+      ],
+      "source_segment_ids": [
+        325
+      ]
+    },
+    {
+      "start": 2504.321,
+      "end": 2506.321,
+      "text": "或者what is the gravitational constant？",
+      "source_segment_indexes": [
+        326
+      ],
+      "source_segment_ids": [
+        326
+      ]
+    },
+    {
+      "start": 2506.401,
+      "end": 2509.921,
+      "text": "或者what angle do you need to have lift to fly？",
+      "source_segment_indexes": [
+        327
+      ],
+      "source_segment_ids": [
+        327
+      ]
+    },
+    {
+      "start": 2510.081,
+      "end": 2516.561,
+      "text": "我们不会知道这些knowledge，因为这样的concept一些概念都是人发明的。",
+      "source_segment_indexes": [
+        328
+      ],
+      "source_segment_ids": [
+        328
+      ]
+    },
+    {
+      "start": 2517.041,
+      "end": 2523.681,
+      "text": "如果我们是有呃四只手或者有二十个手指，那我们数学可能可能就很不一样。",
+      "source_segment_indexes": [
+        329
+      ],
+      "source_segment_ids": [
+        329
+      ]
+    },
+    {
+      "start": 2523.841,
+      "end": 2530.241,
+      "text": "老鹰想的自己的这个视觉模型就可能帮不了其他的行业其他的领域。",
+      "source_segment_indexes": [
+        330
+      ],
+      "source_segment_ids": [
+        330
+      ]
+    },
+    {
+      "start": 2530.561,
+      "end": 2533.041,
+      "text": "所以这就是世界模型和这些语言模型的区别。",
+      "source_segment_indexes": [
+        331
+      ],
+      "source_segment_ids": [
+        331
+      ]
+    },
+    {
+      "start": 2533.281,
+      "end": 2539.281,
+      "text": "现在很多的new lab出来，他们也是想尝试一下不同的一些模型的研发的思路嘛。",
+      "source_segment_indexes": [
+        332
+      ],
+      "source_segment_ids": [
+        332
+      ]
+    },
+    {
+      "start": 2539.601,
+      "end": 2545.921,
+      "text": "那有一派就是可能就是大语言模型这一类的，那有一派呢就是世界模型。",
+      "source_segment_indexes": [
+        333
+      ],
+      "source_segment_ids": [
+        333
+      ]
+    },
+    {
+      "start": 2546.081,
+      "end": 2566.001,
+      "text": "但是你相信有一个中间点，就是你做的这一派又需要语言的模型，嗯，然后又需要视觉的模型，嗯，对，啊能不能这三派给我们来梳理一下，就是每派他们他们相信的是什么，他们信仰的是什么，然后他们betting on的是一个是怎么样能够达到AGI的一个路径呢？",
+      "source_segment_indexes": [
+        334
+      ],
+      "source_segment_ids": [
+        334
+      ]
+    },
+    {
+      "start": 2566.001,
+      "end": 2570.081,
+      "text": "好，啊如果这一块你觉得有点难用中文解释的话，用英文也没有关系。",
+      "source_segment_indexes": [
+        335
+      ],
+      "source_segment_ids": [
+        335
+      ]
+    },
+    {
+      "start": 2570.161,
+      "end": 2572.401,
+      "text": "好好，我先试一试用中文。",
+      "source_segment_indexes": [
+        336
+      ],
+      "source_segment_ids": [
+        336
+      ]
+    },
+    {
+      "start": 2572.481,
+      "end": 2593.681,
+      "text": "不过我们现在看语言模型他们的思维链都是用语言做出来的，就包括Gemini ChatGPT和Claude，他们就是觉得这思维链变得越来越长，越来越diverse，那模型就越来越聪明，都可以做越来越多的东西，然后最后就可以达到AGI，通过编程越来越好，用这个编程就做越好的模型。",
+      "source_segment_indexes": [
+        337
+      ],
+      "source_segment_ids": [
+        337
+      ]
+    },
+    {
+      "start": 2593.761,
+      "end": 2598.961,
+      "text": "但是如果你看模型做视觉问题的话，现在这些模型都不会数东西。",
+      "source_segment_indexes": [
+        338
+      ],
+      "source_segment_ids": [
+        338
+      ]
+    },
+    {
+      "start": 2599.041,
+      "end": 2604.881,
+      "text": "如果呃有几个杯子在一个桌子，他们经常会就hallucinate，就说错，就乱说。",
+      "source_segment_indexes": [
+        339
+      ],
+      "source_segment_ids": [
+        339
+      ]
+    },
+    {
+      "start": 2604.961,
+      "end": 2612.081,
+      "text": "所以我觉得你光scale这个语言这部分还是不够，了解我们的世界，然后了解呃图片和视频。",
+      "source_segment_indexes": [
+        340
+      ],
+      "source_segment_ids": [
+        340
+      ]
+    },
+    {
+      "start": 2612.241,
+      "end": 2620.069,
+      "text": "另外一个方向就是你说的世界模型，这些lab都是从计算机视觉部门出来的，就像飞飞和Yang Lucon。",
+      "source_segment_indexes": [
+        341
+      ],
+      "source_segment_ids": [
+        341
+      ]
+    },
+    {
+      "start": 2620.252,
+      "end": 2631.281,
+      "text": "嗯，那他们的想法我觉得是更偏academia那样的想法，就是说哦我要做一个新的模型，novelty很重要，因为对academia你必须要novel你才可以发表文章。",
+      "source_segment_indexes": [
+        342
+      ],
+      "source_segment_ids": [
+        342
+      ]
+    },
+    {
+      "start": 2631.521,
+      "end": 2641.201,
+      "text": "我觉得他们就是比较相信视觉，其实有一点历史，NeurIPS之前大部分的文章都是视觉，整个机器学习大部分都是做视觉。",
+      "source_segment_indexes": [
+        343
+      ],
+      "source_segment_ids": [
+        343
+      ]
+    },
+    {
+      "start": 2641.563,
+      "end": 2646.763,
+      "text": "就是做语言理解是很少，包括我和COC，我们就是算很少数的呃人。",
+      "source_segment_indexes": [
+        344
+      ],
+      "source_segment_ids": [
+        344
+      ]
+    },
+    {
+      "start": 2647.083,
+      "end": 2653.723,
+      "text": "最近可能变了，因为LLM，但是我们这个是算一个比较 niche的领域。",
+      "source_segment_indexes": [
+        345
+      ],
+      "source_segment_ids": [
+        345
+      ]
+    },
+    {
+      "start": 2653.963,
+      "end": 2663.243,
+      "text": "然后这次就是因为很多researcher之前也包括加Fenton，他们就是觉得视觉is the key to intelligence，就是因为有视觉，人就很聪明。",
+      "source_segment_indexes": [
+        346
+      ],
+      "source_segment_ids": [
+        346
+      ]
+    },
+    {
+      "start": 2663.323,
+      "end": 2675.883,
+      "text": "但是从语言角度来说，嗯，视觉就是不够，就光靠视觉不够有intelligence，因为动物、生物他们还可以做我们现在机器人做不了东西，他们视觉还是比我们现在的模型好。",
+      "source_segment_indexes": [
+        347
+      ],
+      "source_segment_ids": [
+        347
+      ]
+    },
+    {
+      "start": 2676.123,
+      "end": 2685.563,
+      "text": "就像那个老鹰可以抓那只鸟，就算我们可以做出来一个很好的虚拟老鹰，我们还不会有呃intelligence，还是达不到AGI。",
+      "source_segment_indexes": [
+        348
+      ],
+      "source_segment_ids": [
+        348
+      ]
+    },
+    {
+      "start": 2685.883,
+      "end": 2694.043,
+      "text": "但是视觉领域的人，他们会觉得呃vision is the key to intelligence，所以这些世界模型更靠视觉和图像的数据。",
+      "source_segment_indexes": [
+        349
+      ],
+      "source_segment_ids": [
+        349
+      ]
+    },
+    {
+      "start": 2694.043,
+      "end": 2711.163,
+      "text": "但是这样的话，就是像我刚才说的呃那个老鹰，你就不能跟人人做出来的概念合到一起，就像呃数学和物理和化学，因为这都是人造的东西，那就跟世界模型还是比较远。",
+      "source_segment_indexes": [
+        350
+      ],
+      "source_segment_ids": [
+        350
+      ]
+    },
+    {
+      "start": 2711.323,
+      "end": 2721.483,
+      "text": "所以我们在我们这个公司，我们就是觉得要把语言推理加上视觉推理，才可以做到一个模型，可以帮大家，可以帮所有的行业。",
+      "source_segment_indexes": [
+        351
+      ],
+      "source_segment_ids": [
+        351
+      ]
+    },
+    {
+      "start": 2721.883,
+      "end": 2728.843,
+      "text": "就相当于是把那些什么重力的gravity的公式给它输到老鹰的脑子里面去。",
+      "source_segment_indexes": [
+        352
+      ],
+      "source_segment_ids": [
+        352
+      ]
+    },
+    {
+      "start": 2729.003,
+      "end": 2731.403,
+      "text": "对，对，可以这样理解吗？",
+      "source_segment_indexes": [
+        353
+      ],
+      "source_segment_ids": [
+        353
+      ]
+    },
+    {
+      "start": 2731.483,
+      "end": 2738.523,
+      "text": "呃，对，然后用老鹰的眼睛，然后呃脑筋一部分，但是还是要用人人的推理。",
+      "source_segment_indexes": [
+        354
+      ],
+      "source_segment_ids": [
+        354
+      ]
+    },
+    {
+      "start": 2738.763,
+      "end": 2743.803,
+      "text": "嗯，理解，对，呃世界模型这个概念这两年很火哈。",
+      "source_segment_indexes": [
+        355
+      ],
+      "source_segment_ids": [
+        355
+      ]
+    },
+    {
+      "start": 2743.803,
+      "end": 2746.763,
+      "text": "啊，你觉得这些公司他们的发展能够到达AGI吗？",
+      "source_segment_indexes": [
+        356
+      ],
+      "source_segment_ids": [
+        356
+      ]
+    },
+    {
+      "start": 2747.003,
+      "end": 2767.323,
+      "text": "我觉得可能过了五年你再问我这个问题，我觉得他们还是很早，有可能是跟对大模型很早的一个阶段，他们做训练的时候还在一个显示卡在跑，这可能就是跟我们在二零一五的时候做那个一开始那个预训练也是在一个显示卡在跑，但是需要很多很多年才可以做成一个大模型。",
+      "source_segment_indexes": [
+        357
+      ],
+      "source_segment_ids": [
+        357
+      ]
+    },
+    {
+      "start": 2767.483,
+      "end": 2768.523,
+      "text": "嗯，理解。",
+      "source_segment_indexes": [
+        358
+      ],
+      "source_segment_ids": [
+        358
+      ]
+    },
+    {
+      "start": 2768.763,
+      "end": 2771.643,
+      "text": "所以你觉得现在世界模型还没有到transformer时刻？",
+      "source_segment_indexes": [
+        359
+      ],
+      "source_segment_ids": [
+        359
+      ]
+    },
+    {
+      "start": 2772.123,
+      "end": 2780.843,
+      "text": "嗯，还没有，他们可能需要新的结构，像GPT，但是可能我觉得还是要要再加几步才可以到呃一个useful model。",
+      "source_segment_indexes": [
+        360
+      ],
+      "source_segment_ids": [
+        360
+      ]
+    },
+    {
+      "start": 2781.003,
+      "end": 2785.243,
+      "text": "你觉得做这个视觉推理的其他公司，大家的竞争优势是什么？",
+      "source_segment_indexes": [
+        361
+      ],
+      "source_segment_ids": [
+        361
+      ]
+    },
+    {
+      "start": 2785.883,
+      "end": 2791.003,
+      "text": "就比如说Google，我想他们是不是内部可能也看到了这个东西，所以他们可能内部也会在做。",
+      "source_segment_indexes": [
+        362
+      ],
+      "source_segment_ids": [
+        362
+      ]
+    },
+    {
+      "start": 2791.403,
+      "end": 2798.763,
+      "text": "Maybe Meta，Maybe OpenAI也会做，因为我看到DeepSeek之前好像推出了一篇文章，好像也是很similar的一些东西，他后来把那个文章给删掉了。",
+      "source_segment_indexes": [
+        363
+      ],
+      "source_segment_ids": [
+        363
+      ]
+    },
+    {
+      "start": 2799.083,
+      "end": 2803.483,
+      "text": "对啊，你觉得这个competition landscape现在是什么样子的？",
+      "source_segment_indexes": [
+        364
+      ],
+      "source_segment_ids": [
+        364
+      ]
+    },
+    {
+      "start": 2804.283,
+      "end": 2813.883,
+      "text": "对，呃那个DeepSeek文章很有意思，因为他们呃发了，然后后来他们就把那个又删了，但是在网络什么都删不了，这样大家都读过了。",
+      "source_segment_indexes": [
+        365
+      ],
+      "source_segment_ids": [
+        365
+      ]
+    },
+    {
+      "start": 2813.963,
+      "end": 2835.163,
+      "text": "对，其实DeepSeek的想法是跟我们的很像，他们的path呃有点像我们的path，但是其他的Frontier Lab、OpenAI、DeepMind和Anthropic，我觉得他们是越来越偏编程的方向，因为编程这个市场很大，很多人现在都是在用模型编程，他们也是觉得你要做一个很好的编程模型，你就可以有self improvement，",
+      "source_segment_indexes": [
+        366
+      ],
+      "source_segment_ids": [
+        366
+      ]
+    },
+    {
+      "start": 2835.243,
+      "end": 2841.403,
+      "text": "这个叫recursive self improvement，有的人叫RSI，谁先把那个突破，那谁就先可以达到AGI。",
+      "source_segment_indexes": [
+        367
+      ],
+      "source_segment_ids": [
+        367
+      ]
+    },
+    {
+      "start": 2841.723,
+      "end": 2850.043,
+      "text": "然后这些Frontier Lab他们都不想第二达到AGI，都想第一，所以其实他们有很多压力做一个更好的编程模型。",
+      "source_segment_indexes": [
+        368
+      ],
+      "source_segment_ids": [
+        368
+      ]
+    },
+    {
+      "start": 2850.283,
+      "end": 2855.003,
+      "text": "所以因为这个压力，他们就不是很看重多模态视觉推理这个问题。",
+      "source_segment_indexes": [
+        369
+      ],
+      "source_segment_ids": [
+        369
+      ]
+    },
+    {
+      "start": 2855.403,
+      "end": 2862.603,
+      "text": "所以我在Gemini的时候，我就我就感觉到了这个，所以我就觉得哦，现在是一个很好的机会做一个多模态推理的模型。",
+      "source_segment_indexes": [
+        370
+      ],
+      "source_segment_ids": [
+        370
+      ]
+    },
+    {
+      "start": 2862.923,
+      "end": 2866.123,
+      "text": "所以你觉得DeepSeek会是你们的比较的一个大的竞争对手吗？",
+      "source_segment_indexes": [
+        371
+      ],
+      "source_segment_ids": [
+        371
+      ]
+    },
+    {
+      "start": 2866.603,
+      "end": 2872.923,
+      "text": "可能是，可能是，对，但是我不知道他们为什么把那个文章删了，他们是不是又换了一个方向？",
+      "source_segment_indexes": [
+        372
+      ],
+      "source_segment_ids": [
+        372
+      ]
+    },
+    {
+      "start": 2874.443,
+      "end": 2880.523,
+      "text": "如果你们是一个非常research driven的团队的话，啊，到达AGI可能还有一些时间嘛？",
+      "source_segment_indexes": [
+        373
+      ],
+      "source_segment_ids": [
+        373
+      ]
+    },
+    {
+      "start": 2881.078,
+      "end": 2886.198,
+      "text": "中间的话，你的投资人肯定也会问我说：“你中间用什么来养活你们自己？",
+      "source_segment_indexes": [
+        374
+      ],
+      "source_segment_ids": [
+        374
+      ]
+    },
+    {
+      "start": 2886.198,
+      "end": 2891.158,
+      "text": "就除了VC的钱，所以你们的产品商业化落地是怎么去规划的？",
+      "source_segment_indexes": [
+        375
+      ],
+      "source_segment_ids": [
+        375
+      ]
+    },
+    {
+      "start": 2891.478,
+      "end": 2898.518,
+      "text": "”我们是一个呃research and product lab，所以我们也是做研究，也是做这个frontier research。",
+      "source_segment_indexes": [
+        376
+      ],
+      "source_segment_ids": [
+        376
+      ]
+    },
+    {
+      "start": 2898.758,
+      "end": 2910.278,
+      "text": "但是我们也我也是有那个Google Brain的背景啊，然后Google Brain的时候，我们就也是有个目标，就是把这些模型就放在产品里啊，然后就让几十亿的人用。",
+      "source_segment_indexes": [
+        377
+      ],
+      "source_segment_ids": [
+        377
+      ]
+    },
+    {
+      "start": 2910.678,
+      "end": 2914.358,
+      "text": "然后现在Gemini就有很多很多人用了，所以那是比较成功。",
+      "source_segment_indexes": [
+        378
+      ],
+      "source_segment_ids": [
+        378
+      ]
+    },
+    {
+      "start": 2914.358,
+      "end": 2924.198,
+      "text": "但是我们在这个公司也是一样的目标，也是要做一个API，然后让大家用，帮助公司解决他们的视觉问题。",
+      "source_segment_indexes": [
+        379
+      ],
+      "source_segment_ids": [
+        379
+      ]
+    },
+    {
+      "start": 2924.438,
+      "end": 2925.798,
+      "text": "嗯啊，所以我们也有这个目标。",
+      "source_segment_indexes": [
+        380
+      ],
+      "source_segment_ids": [
+        380
+      ]
+    },
+    {
+      "start": 2926.038,
+      "end": 2929.398,
+      "text": "嗯，好，就是还是通过模型API的这个方式去变现。",
+      "source_segment_indexes": [
+        381
+      ],
+      "source_segment_ids": [
+        381
+      ]
+    },
+    {
+      "start": 2929.638,
+      "end": 2930.518,
+      "text": "对，嗯，对。",
+      "source_segment_indexes": [
+        382
+      ],
+      "source_segment_ids": [
+        382
+      ]
+    },
+    {
+      "start": 2930.998,
+      "end": 2938.198,
+      "text": "但是你的ultimate goal还是说就去帮助大语言模型啊和视觉模型一起达到AGI。",
+      "source_segment_indexes": [
+        383
+      ],
+      "source_segment_ids": [
+        383
+      ]
+    },
+    {
+      "start": 2938.198,
+      "end": 2940.518,
+      "text": "对，达到视觉AGI，呃，至少。",
+      "source_segment_indexes": [
+        384
+      ],
+      "source_segment_ids": [
+        384
+      ]
+    },
+    {
+      "start": 2940.758,
+      "end": 2942.838,
+      "text": "嗯，怎么去定义视觉AGI啊？",
+      "source_segment_indexes": [
+        385
+      ],
+      "source_segment_ids": [
+        385
+      ]
+    },
+    {
+      "start": 2942.998,
+      "end": 2951.718,
+      "text": "视觉AGI，我觉得应该是比AGI更好表达啊，因为AGI它的这个bar每天都在变。",
+      "source_segment_indexes": [
+        386
+      ],
+      "source_segment_ids": [
+        386
+      ]
+    },
+    {
+      "start": 2952.038,
+      "end": 2956.198,
+      "text": "对，有时候是说哦，有的人说我们已经到了AGI，有的人说我们没有到AGI。",
+      "source_segment_indexes": [
+        387
+      ],
+      "source_segment_ids": [
+        387
+      ]
+    },
+    {
+      "start": 2956.198,
+      "end": 2972.198,
+      "text": "但是视觉世界大部分人都可以看到东西，都有视觉，大部分人看东西基本的level都是差不多，可能有些人反应更快，但是大部分如果你看一个车的方向盘，都都懂，这是这是怎么用的？",
+      "source_segment_indexes": [
+        388
+      ],
+      "source_segment_ids": [
+        388
+      ]
+    },
+    {
+      "start": 2972.358,
+      "end": 2977.958,
+      "text": "系鞋带、拼像乐高、瑜伽的家具，那些都是视觉问题，这些模型都不行。",
+      "source_segment_indexes": [
+        389
+      ],
+      "source_segment_ids": [
+        389
+      ]
+    },
+    {
+      "start": 2978.438,
+      "end": 2987.158,
+      "text": "所以我觉得有了一个模型可以做这些最基本的东西，那我们就是on the path to AGI，从那时候到AGI可能就不远了。",
+      "source_segment_indexes": [
+        390
+      ],
+      "source_segment_ids": [
+        390
+      ]
+    },
+    {
+      "start": 2987.878,
+      "end": 2990.438,
+      "text": "出来做公司跟在谷歌有什么不一样？",
+      "source_segment_indexes": [
+        391
+      ],
+      "source_segment_ids": [
+        391
+      ]
+    },
+    {
+      "start": 2990.518,
+      "end": 2997.798,
+      "text": "我问这个问题的原因是因为当你在谷歌十四年，你有无限的资源，你有无限的资金，你有无限的人才。",
+      "source_segment_indexes": [
+        392
+      ],
+      "source_segment_ids": [
+        392
+      ]
+    },
+    {
+      "start": 2998.198,
+      "end": 3003.398,
+      "text": "然后当你出来了之后，就什么都要自己搞，要自己去找人、找钱、找方向，对吧？",
+      "source_segment_indexes": [
+        393
+      ],
+      "source_segment_ids": [
+        393
+      ]
+    },
+    {
+      "start": 3003.798,
+      "end": 3009.318,
+      "text": "嗯嗯，这中间的差异对你来说是什么样的一个体验啊？",
+      "source_segment_indexes": [
+        394
+      ],
+      "source_segment_ids": [
+        394
+      ]
+    },
+    {
+      "start": 3009.318,
+      "end": 3015.478,
+      "text": "呃，对，有很多地方不一样，所以呃，在卡上面，在显示卡，那当然会少很多。",
+      "source_segment_indexes": [
+        395
+      ],
+      "source_segment_ids": [
+        395
+      ]
+    },
+    {
+      "start": 3015.798,
+      "end": 3029.078,
+      "text": "但是有一个地方是一个呃优点是呃在谷歌话，在大公司，他们每个礼拜那个priorities可能都变，所以可能今天有卡，可能下一个礼拜或者下一个月那也就没有卡了。",
+      "source_segment_indexes": [
+        396
+      ],
+      "source_segment_ids": [
+        396
+      ]
+    },
+    {
+      "start": 3029.238,
+      "end": 3034.678,
+      "text": "但是在一个新公司的话，我们买了卡，那那就不会有人拿走。",
+      "source_segment_indexes": [
+        397
+      ],
+      "source_segment_ids": [
+        397
+      ]
+    },
+    {
+      "start": 3035.478,
+      "end": 3037.798,
+      "text": "那在大公司就不是这样啊。",
+      "source_segment_indexes": [
+        398
+      ],
+      "source_segment_ids": [
+        398
+      ]
+    },
+    {
+      "start": 3037.798,
+      "end": 3047.558,
+      "text": "然后还有一个是，我觉得我突然要学很多新的东西，学怎么用PyTorch，因为在DeepMind都是用JAX。",
+      "source_segment_indexes": [
+        399
+      ],
+      "source_segment_ids": [
+        399
+      ]
+    },
+    {
+      "start": 3047.558,
+      "end": 3047.878,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        400
+      ],
+      "source_segment_ids": [
+        400
+      ]
+    },
+    {
+      "start": 3047.958,
+      "end": 3061.398,
+      "text": "然后要学怎么用Megatron，怎么用AWS，怎么用Slurm，有很多很多东西要学，因为Google基本上不用呃开源的东西，所以那个learning curve是很steep对我来说。",
+      "source_segment_indexes": [
+        401
+      ],
+      "source_segment_ids": [
+        401
+      ]
+    },
+    {
+      "start": 3061.638,
+      "end": 3064.598,
+      "text": "还有一个我觉得呃比较难是招聘。",
+      "source_segment_indexes": [
+        402
+      ],
+      "source_segment_ids": [
+        402
+      ]
+    },
+    {
+      "start": 3064.918,
+      "end": 3065.078,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        403
+      ],
+      "source_segment_ids": [
+        403
+      ]
+    },
+    {
+      "start": 3065.158,
+      "end": 3074.998,
+      "text": "啊，因为在DeepMind，那我是在Gemini那个团队，那很多很多人都想进Gemini，所以一般发了一个offer，那那个看的得会接受。",
+      "source_segment_indexes": [
+        404
+      ],
+      "source_segment_ids": [
+        404
+      ]
+    },
+    {
+      "start": 3075.398,
+      "end": 3088.038,
+      "text": "但是在一个小公司那就不一样，我们现在还不是很大的名气，他们知道一个小公司有就是有更多risk，跟一个大公司很稳定，所以招聘就是更难。",
+      "source_segment_indexes": [
+        405
+      ],
+      "source_segment_ids": [
+        405
+      ]
+    },
+    {
+      "start": 3088.198,
+      "end": 3101.718,
+      "text": "就有的人就喜欢这个大大公司的安全感，但是有的人就想呃试一试，就出来一个新的地方，可能我们就可能会变成下一个OpenAI或者Anthropic，所以他们就会加入我们。",
+      "source_segment_indexes": [
+        406
+      ],
+      "source_segment_ids": [
+        406
+      ]
+    },
+    {
+      "start": 3101.718,
+      "end": 3107.478,
+      "text": "嗯，但是你出来了之后，你跟我说啊，会有很多的research freedom，嗯，对吧？",
+      "source_segment_indexes": [
+        407
+      ],
+      "source_segment_ids": [
+        407
+      ]
+    },
+    {
+      "start": 3107.478,
+      "end": 3108.358,
+      "text": "就研究自由。",
+      "source_segment_indexes": [
+        408
+      ],
+      "source_segment_ids": [
+        408
+      ]
+    },
+    {
+      "start": 3108.678,
+      "end": 3110.406,
+      "text": "但是研究自由的代价是什么？",
+      "source_segment_indexes": [
+        409
+      ],
+      "source_segment_ids": [
+        409
+      ]
+    },
+    {
+      "start": 3110.614,
+      "end": 3113.158,
+      "text": "The cost of research freedom是什么？",
+      "source_segment_indexes": [
+        410
+      ],
+      "source_segment_ids": [
+        410
+      ]
+    },
+    {
+      "start": 3113.158,
+      "end": 3118.198,
+      "text": "Cost of research freedom就可能这个support会少一些，嗯，就像。",
+      "source_segment_indexes": [
+        411
+      ],
+      "source_segment_ids": [
+        411
+      ]
+    },
+    {
+      "start": 3118.521,
+      "end": 3128.441,
+      "text": "谷歌如果一个 research idea 不成功，那就没关系，嗯，你还可以做下一个项目，还有很多资源，公司还有很多钱可以支持你。",
+      "source_segment_indexes": [
+        412
+      ],
+      "source_segment_ids": [
+        412
+      ]
+    },
+    {
+      "start": 3128.521,
+      "end": 3135.161,
+      "text": "但是在一个 startup 那一个 failed research idea 那个 risk 高一些，因为那些资源已经消耗了，不会带回来。",
+      "source_segment_indexes": [
+        413
+      ],
+      "source_segment_ids": [
+        413
+      ]
+    },
+    {
+      "start": 3135.561,
+      "end": 3139.321,
+      "text": "我觉得压力会稍微高一点，啊，做呃 research。",
+      "source_segment_indexes": [
+        414
+      ],
+      "source_segment_ids": [
+        414
+      ]
+    },
+    {
+      "start": 3139.321,
+      "end": 3146.841,
+      "text": "所以我们现在就是找，呃，世界上最好的一些研究员，靠他们做很好的 research，就可以有很好的结果。",
+      "source_segment_indexes": [
+        415
+      ],
+      "source_segment_ids": [
+        415
+      ]
+    },
+    {
+      "start": 3147.161,
+      "end": 3150.601,
+      "text": "你觉得谷歌这十四年，嗯，带给你最大的是什么？",
+      "source_segment_indexes": [
+        416
+      ],
+      "source_segment_ids": [
+        416
+      ]
+    },
+    {
+      "start": 3151.001,
+      "end": 3161.481,
+      "text": "对我觉得我这几年运气很好，可以待在这个世界一流的呃研究室，然后可以呃看到 AI 发展这么多。",
+      "source_segment_indexes": [
+        417
+      ],
+      "source_segment_ids": [
+        417
+      ]
+    },
+    {
+      "start": 3161.561,
+      "end": 3166.601,
+      "text": "我们十年前没有人会觉得 AI 会发展这么快，这是不可能的。",
+      "source_segment_indexes": [
+        418
+      ],
+      "source_segment_ids": [
+        418
+      ]
+    },
+    {
+      "start": 3166.841,
+      "end": 3174.201,
+      "text": "我本来都是觉得，呃，世界变化比较慢，就像包括到月球都是四十年前的事情，呃，六十年前的事情。",
+      "source_segment_indexes": [
+        419
+      ],
+      "source_segment_ids": [
+        419
+      ]
+    },
+    {
+      "start": 3174.361,
+      "end": 3179.561,
+      "text": "可能我觉得我我这一代都是觉得，哦，世界都变化的很慢，包括这个电子车、自动驾驶车。",
+      "source_segment_indexes": [
+        420
+      ],
+      "source_segment_ids": [
+        420
+      ]
+    },
+    {
+      "start": 3179.641,
+      "end": 3184.921,
+      "text": "但是突然 AI 之后，就又感觉，哦，其实科技又开始呃速度变快了。",
+      "source_segment_indexes": [
+        421
+      ],
+      "source_segment_ids": [
+        421
+      ]
+    },
+    {
+      "start": 3185.161,
+      "end": 3199.401,
+      "text": "之前还跟我提到过一个词叫 research taste，然后你说呢，出来开 new lab 的这群人，都是因为他们所看到的路线，或者他们觉得比较重要的一些研究方向，在大厂、大公司里面不被看重。",
+      "source_segment_indexes": [
+        422
+      ],
+      "source_segment_ids": [
+        422
+      ]
+    },
+    {
+      "start": 3199.481,
+      "end": 3204.761,
+      "text": "其实这个是很考验一个研究员的 research taste，他的他的研究品味的。",
+      "source_segment_indexes": [
+        423
+      ],
+      "source_segment_ids": [
+        423
+      ]
+    },
+    {
+      "start": 3205.241,
+      "end": 3211.641,
+      "text": "嗯，对你能不能呃再给我们说一下，就是研究品味对研究员来说，它重要在什么样的地方？",
+      "source_segment_indexes": [
+        424
+      ],
+      "source_segment_ids": [
+        424
+      ]
+    },
+    {
+      "start": 3211.641,
+      "end": 3216.601,
+      "text": "那对你来说，研究品味这个东西，在谷歌的这十四年，你是怎么去养成的？",
+      "source_segment_indexes": [
+        425
+      ],
+      "source_segment_ids": [
+        425
+      ]
+    },
+    {
+      "start": 3216.841,
+      "end": 3227.241,
+      "text": "对研究品味，品味很重要，就是啊，不光是因为跑实验需要卡，需要资源，啊，我觉得最最重要的资源是时间。",
+      "source_segment_indexes": [
+        426
+      ],
+      "source_segment_ids": [
+        426
+      ]
+    },
+    {
+      "start": 3227.481,
+      "end": 3232.281,
+      "text": "如果你跑了一个错的实验或者错的方法，那那个时间就不会回来。",
+      "source_segment_indexes": [
+        427
+      ],
+      "source_segment_ids": [
+        427
+      ]
+    },
+    {
+      "start": 3232.521,
+      "end": 3239.721,
+      "text": "但是你也要知道什么时候追一个方向，但是也要知道什么时候要放弃一个方向。",
+      "source_segment_indexes": [
+        428
+      ],
+      "source_segment_ids": [
+        428
+      ]
+    },
+    {
+      "start": 3239.961,
+      "end": 3244.761,
+      "text": "研究品味就帮助你决定，哦，这个方向我要继续追，我要继续花时间。",
+      "source_segment_indexes": [
+        429
+      ],
+      "source_segment_ids": [
+        429
+      ]
+    },
+    {
+      "start": 3245.081,
+      "end": 3255.161,
+      "text": "我的研究品味就是我觉得是从 Jeff Hinton 他们来的，然后 Jeff Hinton 他就是觉得我们做 AI 的话，我们就要根据这个大脑的思想。",
+      "source_segment_indexes": [
+        430
+      ],
+      "source_segment_ids": [
+        430
+      ]
+    },
+    {
+      "start": 3255.321,
+      "end": 3272.921,
+      "text": "我们觉得大脑，呃，这部分是用来做视觉，用这些方法做视觉，那我们也应该做模型，也是用差不多方法，就像 CNN，包括这些网络模型，这些 neural networks 也是看 neurons，他们也是学，然后他们就是从数据学的。",
+      "source_segment_indexes": [
+        431
+      ],
+      "source_segment_ids": [
+        431
+      ]
+    },
+    {
+      "start": 3272.921,
+      "end": 3275.401,
+      "text": "然后现在我们的模型也都是从数据学的。",
+      "source_segment_indexes": [
+        432
+      ],
+      "source_segment_ids": [
+        432
+      ]
+    },
+    {
+      "start": 3275.561,
+      "end": 3282.041,
+      "text": "我们本身建一个 transformer 的时候，transformer 什么都不知道，你要给他数据，他才可以做任何东西。",
+      "source_segment_indexes": [
+        433
+      ],
+      "source_segment_ids": [
+        433
+      ]
+    },
+    {
+      "start": 3282.201,
+      "end": 3293.401,
+      "text": "所以这个也是可能那些神经科学的想法，就是说，哦，一开始这个 brain 什么都不知道，要通过长大就可以学会很多东西。",
+      "source_segment_indexes": [
+        434
+      ],
+      "source_segment_ids": [
+        434
+      ]
+    },
+    {
+      "start": 3293.561,
+      "end": 3297.881,
+      "text": "所以，我做研究的时候，我也是按照这个方法想。",
+      "source_segment_indexes": [
+        435
+      ],
+      "source_segment_ids": [
+        435
+      ]
+    },
+    {
+      "start": 3297.881,
+      "end": 3304.601,
+      "text": "如果有个新的方向，然后跟人的神经很大的区别，那我可能就不会追那个方向。",
+      "source_segment_indexes": [
+        436
+      ],
+      "source_segment_ids": [
+        436
+      ]
+    },
+    {
+      "start": 3304.841,
+      "end": 3308.601,
+      "text": "你的新公司 Jeff Dean 也有投资，啊，对吧？",
+      "source_segment_indexes": [
+        437
+      ],
+      "source_segment_ids": [
+        437
+      ]
+    },
+    {
+      "start": 3308.601,
+      "end": 3313.881,
+      "text": "你觉得你在整个的谷歌的生涯当中，Jeff Dean 对你来说是一个什么样的存在？",
+      "source_segment_indexes": [
+        438
+      ],
+      "source_segment_ids": [
+        438
+      ]
+    },
+    {
+      "start": 3314.441,
+      "end": 3317.321,
+      "text": "对 Jeff Dean 是一个很好的 advisor。",
+      "source_segment_indexes": [
+        439
+      ],
+      "source_segment_ids": [
+        439
+      ]
+    },
+    {
+      "start": 3317.481,
+      "end": 3320.121,
+      "text": "我刚进那个 brain 团队，我就认识他。",
+      "source_segment_indexes": [
+        440
+      ],
+      "source_segment_ids": [
+        440
+      ]
+    },
+    {
+      "start": 3320.361,
+      "end": 3328.121,
+      "text": "那时候我们的模型就跑得很慢，我的经理就说，呃，如果有速度问题，你就直接问 Jeff Dean，他什么都知道。",
+      "source_segment_indexes": [
+        441
+      ],
+      "source_segment_ids": [
+        441
+      ]
+    },
+    {
+      "start": 3328.121,
+      "end": 3340.201,
+      "text": "然后他就来到我的电脑旁边，然后他就不光是看那个代码，他还是看那个机器代码，就是 machine code，就是比 C 加加和 Python 还是深的代码。",
+      "source_segment_indexes": [
+        442
+      ],
+      "source_segment_ids": [
+        442
+      ]
+    },
+    {
+      "start": 3340.201,
+      "end": 3343.401,
+      "text": "然后他说，哦，这个这个地方不对，然后他就改了。",
+      "source_segment_indexes": [
+        443
+      ],
+      "source_segment_ids": [
+        443
+      ]
+    },
+    {
+      "start": 3343.561,
+      "end": 3354.441,
+      "text": "从那时候我就知道，哦，Jeff Dean 是很悍壮的人，他什么都懂，他什么都学，他也包括就是自己学了深度学习和这些方法，他才可以做出 Google Brain。",
+      "source_segment_indexes": [
+        444
+      ],
+      "source_segment_ids": [
+        444
+      ]
+    },
+    {
+      "start": 3354.921,
+      "end": 3358.121,
+      "text": "啊，所以他就是一个比较，呃，就是一个 role model。",
+      "source_segment_indexes": [
+        445
+      ],
+      "source_segment_ids": [
+        445
+      ]
+    },
+    {
+      "start": 3358.361,
+      "end": 3358.921,
+      "text": "我觉得他。",
+      "source_segment_indexes": [
+        446
+      ],
+      "source_segment_ids": [
+        446
+      ]
+    },
+    {
+      "start": 3359.228,
+      "end": 3362.028,
+      "text": "对他做的很好了，那他现在就是做 Gemini 的 lead。",
+      "source_segment_indexes": [
+        447
+      ],
+      "source_segment_ids": [
+        447
+      ]
+    },
+    {
+      "start": 3362.268,
+      "end": 3365.148,
+      "text": "在谷歌里面还有没有谁对你影响非常大的？",
+      "source_segment_indexes": [
+        448
+      ],
+      "source_segment_ids": [
+        448
+      ]
+    },
+    {
+      "start": 3365.548,
+      "end": 3374.828,
+      "text": "Paul Clay 影响也是比较大，我跟他合作了好几个项目，然后我们也一起 host 好几个实习生，所以我跟他合作了很久。",
+      "source_segment_indexes": [
+        449
+      ],
+      "source_segment_ids": [
+        449
+      ]
+    },
+    {
+      "start": 3375.068,
+      "end": 3379.948,
+      "text": "对谷歌的厉害人太多了，呃，厉害和聪明的人太多了。",
+      "source_segment_indexes": [
+        450
+      ],
+      "source_segment_ids": [
+        450
+      ]
+    },
+    {
+      "start": 3380.028,
+      "end": 3395.708,
+      "text": "他们，我觉得谷歌 Brian 和 Demis 就是这一代的 Bell Labs，很多很聪明的人，包括 Noam Shazeer，他也是很厉害，和 Demis Hassabis，他也是很 unique，他是要用 AI 帮助整个世界，所以我觉得这个是很好。",
+      "source_segment_indexes": [
+        451
+      ],
+      "source_segment_ids": [
+        451
+      ]
+    },
+    {
+      "start": 3396.028,
+      "end": 3399.948,
+      "text": "好的，最后呢，啊，我们节目可以让你免费来打个广告啊。",
+      "source_segment_indexes": [
+        452
+      ],
+      "source_segment_ids": [
+        452
+      ]
+    },
+    {
+      "start": 3400.588,
+      "end": 3404.588,
+      "text": "首先你想招什么样的人才来你们的这个 New Lab 实验室？",
+      "source_segment_indexes": [
+        453
+      ],
+      "source_segment_ids": [
+        453
+      ]
+    },
+    {
+      "start": 3404.908,
+      "end": 3413.868,
+      "text": "然后呢，呃，对于好的人才，你跟他们喊几句话，告诉大家为什么他们应该来你的公司，然后跟你一起达到世界 AGI。",
+      "source_segment_indexes": [
+        454
+      ],
+      "source_segment_ids": [
+        454
+      ]
+    },
+    {
+      "start": 3413.948,
+      "end": 3424.588,
+      "text": "我们现在就是呃招世界一流的 一个团队，我们觉得要人才呃密集很高就可以进步更快啊。",
+      "source_segment_indexes": [
+        455
+      ],
+      "source_segment_ids": [
+        455
+      ]
+    },
+    {
+      "start": 3424.588,
+      "end": 3432.348,
+      "text": "然后我看这些中国的呃研究所，就像 DeepSeek，呃和这些地方，只是因为他们小，密集很高就可以做出很好的东西。",
+      "source_segment_indexes": [
+        456
+      ],
+      "source_segment_ids": [
+        456
+      ]
+    },
+    {
+      "start": 3432.428,
+      "end": 3448.108,
+      "text": "我们在招有多模态经验的人，RL 经验的呃研究员，然后我们也在招 infrastructure 的工程师，管理过呃这些 GPU clusters，或者做了呃 training kernels、cuda kernel optimization 这些东西。",
+      "source_segment_indexes": [
+        457
+      ],
+      "source_segment_ids": [
+        457
+      ]
+    },
+    {
+      "start": 3448.268,
+      "end": 3449.388,
+      "text": "为什么要加入我们？",
+      "source_segment_indexes": [
+        458
+      ],
+      "source_segment_ids": [
+        458
+      ]
+    },
+    {
+      "start": 3449.868,
+      "end": 3467.228,
+      "text": "那是因为我觉得我们这个团队是 New Lab 的一个 top tier New Lab，这个团队在其他的地方这么多数据经验，这么多预训练经验，这么多 frontier model 经验，只能在可能三四个地方可以找到，大部分其他 New Lab 都没有这么多的经验。",
+      "source_segment_indexes": [
+        459
+      ],
+      "source_segment_ids": [
+        459
+      ]
+    },
+    {
+      "start": 3467.308,
+      "end": 3476.108,
+      "text": "我们的方向也是一个比较新的方向，我们觉得我们就会带过来下一代的推理，下一代的 reasoning 就离人的推理近很多。",
+      "source_segment_indexes": [
+        460
+      ],
+      "source_segment_ids": [
+        460
+      ]
+    },
+    {
+      "start": 3476.268,
+      "end": 3482.268,
+      "text": "我们希望大家来跟我们一起成长到下一个呃 anthropic 或者下一个 OpenAI。",
+      "source_segment_indexes": [
+        461
+      ],
+      "source_segment_ids": [
+        461
+      ]
+    },
+    {
+      "start": 3482.668,
+      "end": 3485.308,
+      "text": "好，谢谢 Andrew。",
+      "source_segment_indexes": [
+        462
+      ],
+      "source_segment_ids": [
+        462
+      ]
+    },
+    {
+      "start": 3485.308,
+      "end": 3487.308,
+      "text": "好，谢谢。",
+      "source_segment_indexes": [
+        463
+      ],
+      "source_segment_ids": [
+        463
+      ]
+    },
+    {
+      "start": 3487.308,
+      "end": 3489.068,
+      "text": "你们也是刚刚搬进来？",
+      "source_segment_indexes": [
+        464
+      ],
+      "source_segment_ids": [
+        464
+      ]
+    },
+    {
+      "start": 3489.708,
+      "end": 3492.988,
+      "text": "对，刚刚搬进来，我们还是用钥匙开门。",
+      "source_segment_indexes": [
+        465
+      ],
+      "source_segment_ids": [
+        465
+      ]
+    },
+    {
+      "start": 3493.708,
+      "end": 3498.108,
+      "text": "现在那个应该是周五的下午，所以员工都差不多离开了哈。",
+      "source_segment_indexes": [
+        466
+      ],
+      "source_segment_ids": [
+        466
+      ]
+    },
+    {
+      "start": 3498.108,
+      "end": 3498.988,
+      "text": "你们现在有多少人？",
+      "source_segment_indexes": [
+        467
+      ],
+      "source_segment_ids": [
+        467
+      ]
+    },
+    {
+      "start": 3499.228,
+      "end": 3501.228,
+      "text": "我们现在是差不多十五个人。",
+      "source_segment_indexes": [
+        468
+      ],
+      "source_segment_ids": [
+        468
+      ]
+    },
+    {
+      "start": 3501.388,
+      "end": 3502.108,
+      "text": "十五个人。",
+      "source_segment_indexes": [
+        469
+      ],
+      "source_segment_ids": [
+        469
+      ]
+    },
+    {
+      "start": 3502.108,
+      "end": 3503.788,
+      "text": "嗯，还有两个人在办签证。",
+      "source_segment_indexes": [
+        470
+      ],
+      "source_segment_ids": [
+        470
+      ]
+    },
+    {
+      "start": 3504.028,
+      "end": 3510.748,
+      "text": "嗯，可能是十二个人在 research，一个人在 infra，然后两个人在 operations。",
+      "source_segment_indexes": [
+        471
+      ],
+      "source_segment_ids": [
+        471
+      ]
+    },
+    {
+      "start": 3510.748,
+      "end": 3512.648,
+      "text": "哦，所以我们是 very research heavy。",
+      "source_segment_indexes": [
+        472
+      ],
+      "source_segment_ids": [
+        472
+      ]
+    },
+    {
+      "start": 3512.748,
+      "end": 3515.388,
+      "text": "OK，所以我们还有一些这个 unpack。",
+      "source_segment_indexes": [
+        473
+      ],
+      "source_segment_ids": [
+        473
+      ]
+    },
+    {
+      "start": 3515.468,
+      "end": 3517.468,
+      "text": "对，很多亚马逊的合作。",
+      "source_segment_indexes": [
+        474
+      ],
+      "source_segment_ids": [
+        474
+      ]
+    },
+    {
+      "start": 3517.628,
+      "end": 3520.828,
+      "text": "哦，没有关系，非常理解，因为是公司刚成立的时候嘛。",
+      "source_segment_indexes": [
+        475
+      ],
+      "source_segment_ids": [
+        475
+      ]
+    },
+    {
+      "start": 3520.988,
+      "end": 3524.988,
+      "text": "对，嗯，这会成为你们公司以后壮大了之后很珍贵的早期资料。",
+      "source_segment_indexes": [
+        476
+      ],
+      "source_segment_ids": [
+        476
+      ]
+    },
+    {
+      "start": 3525.388,
+      "end": 3527.308,
+      "text": "嗯，对，one of kind。",
+      "source_segment_indexes": [
+        477
+      ],
+      "source_segment_ids": [
+        477
+      ]
+    },
+    {
+      "start": 3527.548,
+      "end": 3529.628,
+      "text": "我们选了这个办公室，就是因为这个院子。",
+      "source_segment_indexes": [
+        478
+      ],
+      "source_segment_ids": [
+        478
+      ]
+    },
+    {
+      "start": 3530.508,
+      "end": 3533.068,
+      "text": "对，就像一个 quad，就像一个大学里面的 quad。",
+      "source_segment_indexes": [
+        479
+      ],
+      "source_segment_ids": [
+        479
+      ]
+    },
+    {
+      "start": 3533.308,
+      "end": 3537.228,
+      "text": "对，我们就午饭 happy hour 来这里吃饭，然后有客人都是来这里。",
+      "source_segment_indexes": [
+        480
+      ],
+      "source_segment_ids": [
+        480
+      ]
+    },
+    {
+      "start": 3537.548,
+      "end": 3538.988,
+      "text": "你们还需要多一点位置。",
+      "source_segment_indexes": [
+        481
+      ],
+      "source_segment_ids": [
+        481
+      ]
+    },
+    {
+      "start": 3539.388,
+      "end": 3541.228,
+      "text": "啊，对，多一点。",
+      "source_segment_indexes": [
+        482
+      ],
+      "source_segment_ids": [
+        482
+      ]
+    },
+    {
+      "start": 3541.708,
+      "end": 3543.868,
+      "text": "然后我们也有个喷泉可以 relax。",
+      "source_segment_indexes": [
+        483
+      ],
+      "source_segment_ids": [
+        483
+      ]
+    },
+    {
+      "start": 3543.948,
+      "end": 3545.708,
+      "text": "你打算还要再加一点什么东西？",
+      "source_segment_indexes": [
+        484
+      ],
+      "source_segment_ids": [
+        484
+      ]
+    },
+    {
+      "start": 3545.868,
+      "end": 3548.108,
+      "text": "啊，有个 research 的他要加一个啊 sauna。",
+      "source_segment_indexes": [
+        485
+      ],
+      "source_segment_ids": [
+        485
+      ]
+    },
+    {
+      "start": 3548.108,
+      "end": 3548.508,
+      "text": "sauna。",
+      "source_segment_indexes": [
+        486
+      ],
+      "source_segment_ids": [
+        486
+      ]
+    },
+    {
+      "start": 3548.588,
+      "end": 3549.548,
+      "text": "对，白天去 sauna。",
+      "source_segment_indexes": [
+        487
+      ],
+      "source_segment_ids": [
+        487
+      ]
+    },
+    {
+      "start": 3550.188,
+      "end": 3554.908,
+      "text": "白天的 sauna 我不知道，就是就累了就就去泡就去做 sauna。",
+      "source_segment_indexes": [
+        488
+      ],
+      "source_segment_ids": [
+        488
+      ]
+    },
+    {
+      "start": 3554.908,
+      "end": 3557.068,
+      "text": "你们在 sauna 的时候能够 thinking。",
+      "source_segment_indexes": [
+        489
+      ],
+      "source_segment_ids": [
+        489
+      ]
+    },
+    {
+      "start": 3557.068,
+      "end": 3565.948,
+      "text": "对他可能是是，就像我就洗澡的时候 thinking，然后可能可以加一个乒乓球桌或者台球桌，啊，但是我们现在主要是用这个打桌游。",
+      "source_segment_indexes": [
+        490
+      ],
+      "source_segment_ids": [
+        490
+      ]
+    },
+    {
+      "start": 3566.428,
+      "end": 3568.028,
+      "text": "啊，对，因为我比较喜欢桌游。",
+      "source_segment_indexes": [
+        491
+      ],
+      "source_segment_ids": [
+        491
+      ]
+    },
+    {
+      "start": 3568.268,
+      "end": 3570.508,
+      "text": "你会用视觉模型去玩桌游吗？",
+      "source_segment_indexes": [
+        492
+      ],
+      "source_segment_ids": [
+        492
+      ]
+    },
+    {
+      "start": 3570.508,
+      "end": 3573.788,
+      "text": "呃，我试过了，但是他们太差了，像那个象棋版他们都不会。",
+      "source_segment_indexes": [
+        493
+      ],
+      "source_segment_ids": [
+        493
+      ]
+    },
+    {
+      "start": 3573.948,
+      "end": 3576.748,
+      "text": "可能我们的模型做完之后，那就可以用它打桌游了。",
+      "source_segment_indexes": [
+        494
+      ],
+      "source_segment_ids": [
+        494
+      ]
+    },
+    {
+      "start": 3577.228,
+      "end": 3577.708,
+      "text": "你的模型？",
+      "source_segment_indexes": [
+        495
+      ],
+      "source_segment_ids": [
+        495
+      ]
+    },
+    {
+      "start": 3578.268,
+      "end": 3578.268,
+      "text": "对。",
+      "source_segment_indexes": [
+        496
+      ],
+      "source_segment_ids": [
+        496
+      ]
+    },
+    {
+      "start": 3578.908,
+      "end": 3580.348,
+      "text": "所以你最爱的办公室是哪一间？",
+      "source_segment_indexes": [
+        497
+      ],
+      "source_segment_ids": [
+        497
+      ]
+    },
+    {
+      "start": 3580.348,
+      "end": 3582.668,
+      "text": "就是那个那个角落那里。",
+      "source_segment_indexes": [
+        498
+      ],
+      "source_segment_ids": [
+        498
+      ]
+    },
+    {
+      "start": 3582.668,
+      "end": 3583.628,
+      "text": "啊，是这件吗？",
+      "source_segment_indexes": [
+        499
+      ],
+      "source_segment_ids": [
+        499
+      ]
+    },
+    {
+      "start": 3583.708,
+      "end": 3584.748,
+      "text": "对，就是这一间。",
+      "source_segment_indexes": [
+        500
+      ],
+      "source_segment_ids": [
+        500
+      ]
+    },
+    {
+      "start": 3585.148,
+      "end": 3585.788,
+      "text": "哦。",
+      "source_segment_indexes": [
+        501
+      ],
+      "source_segment_ids": [
+        501
+      ]
+    },
+    {
+      "start": 3585.788,
+      "end": 3586.828,
+      "text": "对，这个光线很好。",
+      "source_segment_indexes": [
+        502
+      ],
+      "source_segment_ids": [
+        502
+      ]
+    },
+    {
+      "start": 3587.548,
+      "end": 3587.708,
+      "text": "OK。",
+      "source_segment_indexes": [
+        503
+      ],
+      "source_segment_ids": [
+        503
+      ]
+    },
+    {
+      "start": 3587.708,
+      "end": 3588.94,
+      "text": "然后有一个 standing desk。",
+      "source_segment_indexes": [
+        504
+      ],
+      "source_segment_ids": [
+        504
+      ]
+    },
+    {
+      "start": 3589.244,
+      "end": 3594.348,
+      "text": "啊，所以就是你经常会在这边看着外面，然后想一想，对对对。",
+      "source_segment_indexes": [
+        505
+      ],
+      "source_segment_ids": [
+        505
+      ]
+    },
+    {
+      "start": 3594.348,
+      "end": 3596.028,
+      "text": "或者打电话都在这里。",
+      "source_segment_indexes": [
+        506
+      ],
+      "source_segment_ids": [
+        506
+      ]
+    },
+    {
+      "start": 3596.028,
+      "end": 3596.908,
+      "text": "你现在大概？",
+      "source_segment_indexes": [
+        507
+      ],
+      "source_segment_ids": [
+        507
+      ]
+    },
+    {
+      "start": 3597.242,
+      "end": 3598.842,
+      "text": "一天的时间分配是什么样子的？",
+      "source_segment_indexes": [
+        508
+      ],
+      "source_segment_ids": [
+        508
+      ]
+    },
+    {
+      "start": 3598.842,
+      "end": 3601.082,
+      "text": "有多少时间是在做 operation 的工作？",
+      "source_segment_indexes": [
+        509
+      ],
+      "source_segment_ids": [
+        509
+      ]
+    },
+    {
+      "start": 3601.082,
+      "end": 3603.242,
+      "text": "有多少时间是在做 research 跟 thinking？",
+      "source_segment_indexes": [
+        510
+      ],
+      "source_segment_ids": [
+        510
+      ]
+    },
+    {
+      "start": 3603.242,
+      "end": 3612.522,
+      "text": "白天大部分时间都是做 operation，就像做 interviews 和把我们的 IT 设计好，把 AWS 设计好。",
+      "source_segment_indexes": [
+        511
+      ],
+      "source_segment_ids": [
+        511
+      ]
+    },
+    {
+      "start": 3613.082,
+      "end": 3621.882,
+      "text": "然后我做 research，现在大部分是周末和晚上，嗯，坐在家里就就很安静，就可以思考想新的方法。",
+      "source_segment_indexes": [
+        512
+      ],
+      "source_segment_ids": [
+        512
+      ]
+    },
+    {
+      "start": 3622.042,
+      "end": 3623.402,
+      "text": "很多 idea 都是洗澡出来的。",
+      "source_segment_indexes": [
+        513
+      ],
+      "source_segment_ids": [
+        513
+      ]
+    },
+    {
+      "start": 3623.402,
+      "end": 3630.122,
+      "text": "我也是，嗯，对，嗯，所以就是 idea 完了之后，马上用 cloud code 就可以实现。",
+      "source_segment_indexes": [
+        514
+      ],
+      "source_segment_ids": [
+        514
+      ]
+    },
+    {
+      "start": 3630.442,
+      "end": 3633.162,
+      "text": "idea 来自于 researcher 还是你？",
+      "source_segment_indexes": [
+        515
+      ],
+      "source_segment_ids": [
+        515
+      ]
+    },
+    {
+      "start": 3633.322,
+      "end": 3635.962,
+      "text": "idea 在你们公司是怎么样去产生的？",
+      "source_segment_indexes": [
+        516
+      ],
+      "source_segment_ids": [
+        516
+      ]
+    },
+    {
+      "start": 3635.962,
+      "end": 3647.642,
+      "text": "啊，都有啊，所以有一些新的 vision encode idea 是我来的，然后有一些新的像 SFT 和数据的 idea 在我们 team 来的，现在在跑。",
+      "source_segment_indexes": [
+        517
+      ],
+      "source_segment_ids": [
+        517
+      ]
+    },
+    {
+      "start": 3648.282,
+      "end": 3658.522,
+      "text": "啊，但是最后我们还是觉得这像 auto research 这些模型，他们也可以做 research，但是他们的 idea 就太太 average 了，都没有 creativity。",
+      "source_segment_indexes": [
+        518
+      ],
+      "source_segment_ids": [
+        518
+      ]
+    },
+    {
+      "start": 3658.922,
+      "end": 3660.602,
+      "text": "然后做 research，肯定要 creativity。",
+      "source_segment_indexes": [
+        519
+      ],
+      "source_segment_ids": [
+        519
+      ]
+    },
+    {
+      "start": 3660.682,
+      "end": 3667.482,
+      "text": "我们就是觉得以前啊，这些 idea 就很便宜，因为编程很难，execution 很难。",
+      "source_segment_indexes": [
+        520
+      ],
+      "source_segment_ids": [
+        520
+      ]
+    },
+    {
+      "start": 3667.882,
+      "end": 3676.922,
+      "text": "但是有 cloud code 和 GPT Codex 之后，这个 execution 就容易很多，然后现在 idea 就那个价值就增长了。",
+      "source_segment_indexes": [
+        521
+      ],
+      "source_segment_ids": [
+        521
+      ]
+    },
+    {
+      "start": 3676.922,
+      "end": 3685.962,
+      "text": "嗯嗯，所以就是这些最嗯宝贵的 researcher 现在是大家都在互相对争抢的宝贵的资产。",
+      "source_segment_indexes": [
+        522
+      ],
+      "source_segment_ids": [
+        522
+      ]
+    },
+    {
+      "start": 3686.202,
+      "end": 3689.482,
+      "text": "对，就是对这些 creative researchers 很重要。",
+      "source_segment_indexes": [
+        523
+      ],
+      "source_segment_ids": [
+        523
+      ]
+    },
+    {
+      "start": 3689.882,
+      "end": 3690.282,
+      "text": "嗯，对。",
+      "source_segment_indexes": [
+        524
+      ],
+      "source_segment_ids": [
+        524
+      ]
+    },
+    {
+      "start": 3690.682,
+      "end": 3696.682,
+      "text": "然后最近我们看到 new lab 真的出来很多人做创业公司了，你觉得这个趋势还会持续吗？",
+      "source_segment_indexes": [
+        525
+      ],
+      "source_segment_ids": [
+        525
+      ]
+    },
+    {
+      "start": 3696.922,
+      "end": 3715.882,
+      "text": "嗯，我觉得还会吧，啊，因为现在这个很多 opportunities 开源也也有很多模型啊，你可以用，然后融钱也变容易了一点，因为这这么多公司都来 IPO，所以这一这一段时间我觉得还会有很多，嗯，但是我觉得这是这也是一个窗口。",
+      "source_segment_indexes": [
+        526
+      ],
+      "source_segment_ids": [
+        526
+      ]
+    },
+    {
+      "start": 3716.442,
+      "end": 3722.362,
+      "text": "过了一段时间，我们这一代的 new lab 就就发展了很多，那那就更难有新的了。",
+      "source_segment_indexes": [
+        527
+      ],
+      "source_segment_ids": [
+        527
+      ]
+    },
+    {
+      "start": 3722.362,
+      "end": 3726.362,
+      "text": "嗯，你觉得这个窗口 deadline 截止是在什么时候？",
+      "source_segment_indexes": [
+        528
+      ],
+      "source_segment_ids": [
+        528
+      ]
+    },
+    {
+      "start": 3726.442,
+      "end": 3730.602,
+      "text": "窗口 deadline，呃，那很难说，可能这两年吧。",
+      "source_segment_indexes": [
+        529
+      ],
+      "source_segment_ids": [
+        529
+      ]
+    },
+    {
+      "start": 3731.242,
+      "end": 3737.882,
+      "text": "嗯，对，对，然后要再等一会儿，那那就下一代的呃实验室。",
+      "source_segment_indexes": [
+        530
+      ],
+      "source_segment_ids": [
+        530
+      ]
+    },
+    {
+      "start": 3737.882,
+      "end": 3739.802,
+      "text": "嗯，下一代的实验室会是什么样子？",
+      "source_segment_indexes": [
+        531
+      ],
+      "source_segment_ids": [
+        531
+      ]
+    },
+    {
+      "start": 3740.282,
+      "end": 3745.242,
+      "text": "下一代的实验室，那我就不知道了，那可能是 AGI 后的实验室，那我不知道。",
+      "source_segment_indexes": [
+        532
+      ],
+      "source_segment_ids": [
+        532
+      ]
+    },
+    {
+      "start": 3745.242,
+      "end": 3747.562,
+      "text": "嗯，那可能都是 AI 跑的。",
+      "source_segment_indexes": [
+        533
+      ],
+      "source_segment_ids": [
+        533
+      ]
+    },
+    {
+      "start": 3747.562,
+      "end": 3748.922,
+      "text": "哦，呀，有可能。",
+      "source_segment_indexes": [
+        534
+      ],
+      "source_segment_ids": [
+        534
+      ]
+    },
+    {
+      "start": 3748.922,
+      "end": 3749.242,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        535
+      ],
+      "source_segment_ids": [
+        535
+      ]
+    },
+    {
+      "start": 3749.242,
+      "end": 3754.442,
+      "text": "但现在对，但现现在他们 creativity 还离人的 creativity 太太远了。",
+      "source_segment_indexes": [
+        536
+      ],
+      "source_segment_ids": [
+        536
+      ]
+    },
+    {
+      "start": 3754.442,
+      "end": 3755.882,
+      "text": "嗯嗯，所以还是不适合。",
+      "source_segment_indexes": [
+        537
+      ],
+      "source_segment_ids": [
+        537
+      ]
+    },
+    {
+      "start": 3756.122,
+      "end": 3757.802,
+      "text": "好的，谢谢 Andrew。",
+      "source_segment_indexes": [
+        538
+      ],
+      "source_segment_ids": [
+        538
+      ]
+    },
+    {
+      "start": 3757.802,
+      "end": 3758.282,
+      "text": "好的，谢谢。",
+      "source_segment_indexes": [
+        539
+      ],
+      "source_segment_ids": [
+        539
+      ]
+    },
+    {
+      "start": 3759.082,
+      "end": 3763.162,
+      "text": "那以上呢，就是我们与 Andrew 带的全部访谈和办公室探访了。",
+      "source_segment_indexes": [
+        540
+      ],
+      "source_segment_ids": [
+        540
+      ]
+    },
+    {
+      "start": 3763.482,
+      "end": 3771.162,
+      "text": "New Lab 是如今在硅谷非常重要的一个支线，也是今年以来在硅谷幺零幺选题会上我们着重关注的方向。",
+      "source_segment_indexes": [
+        541
+      ],
+      "source_segment_ids": [
+        541
+      ]
+    },
+    {
+      "start": 3771.562,
+      "end": 3785.322,
+      "text": "如今呢，VC 的大量资金涌向这样的新型 AI 实验室，是因为这些大基金们在 OpenAI 等前沿模型上的赌注呢已经太重了，他们需要一些对冲，万一但语言模型无法走到最后呢？",
+      "source_segment_indexes": [
+        542
+      ],
+      "source_segment_ids": [
+        542
+      ]
+    },
+    {
+      "start": 3785.802,
+      "end": 3791.162,
+      "text": "那么接下来 AI 怎么发展，可能就是要看这些 new lab 的研究的成果了。",
+      "source_segment_indexes": [
+        543
+      ],
+      "source_segment_ids": [
+        543
+      ]
+    },
+    {
+      "start": 3791.562,
+      "end": 3797.402,
+      "text": "就像 AI 技术灵魂领袖 Elias Susskind 说的那样，我们正在重新回到研究时代。",
+      "source_segment_indexes": [
+        544
+      ],
+      "source_segment_ids": [
+        544
+      ]
+    },
+    {
+      "start": 3797.882,
+      "end": 3801.802,
+      "text": "那硅谷幺零幺的 new lab 系列呢还会继续，大家不要忘了关注我们。",
+      "source_segment_indexes": [
+        545
+      ],
+      "source_segment_ids": [
+        545
+      ]
+    },
+    {
+      "start": 3801.802,
+      "end": 3806.682,
+      "text": "你们的点赞、留言和转发，是我们做好深度科技和商业内容的最佳动力。",
+      "source_segment_indexes": [
+        546
+      ],
+      "source_segment_ids": [
+        546
+      ]
+    },
+    {
+      "start": 3806.682,
+      "end": 3809.402,
+      "text": "我是陈倩，那我们就下期视频再见了，拜。",
+      "source_segment_indexes": [
+        547
+      ],
+      "source_segment_ids": [
+        547
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 0.16,
+      "end": 30.08,
+      "text": "今天我们要对谈的人，他的论文启发了 OpenAI GPT 的诞生。他是在谷歌研究 AI 十四年，推动数项重要论文，辗转数个产品，最后成为带领 Gemini 打下翻身之战的核心人物之一 Andrew Dai。Andrew 长期处在谷歌 AI 研发的中枢，从早期的 Sequence Learning、文本生成、对抗训练到 Palm、Flan、Gemini 多模态和长上下文等等，与他合作论文的都是谷歌的众多传奇大佬人物，Quoc Le、Yann LeCun、Leonidas、Jeff Dean 等人。",
+      "refined_segment_indexes": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "start": 30.4,
+      "end": 58.0,
+      "text": "而我发现啊，Andrew 的职业轨迹就是一部谷歌 AI 大模型的编年史。而为什么谷歌一度在大模型上被 OpenAI 挂打，而又如何通过强行合并 Google Brain 和 DeepMind，用 Gemini 重回巅峰的？OpenAI 为什么能够看到 Semi-Supervised Sequence Learning 的能力，而谷歌看不到呢？第二天我就给 She 说，前两年我们有这个文章就是预训练，他就没有时间做，后面就是 OpenAI 做了。",
+      "refined_segment_indexes": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "start": 58.24,
+      "end": 89.36,
+      "text": "我看到 Gemini 一点五才用到 MoE 架构，但是这是你在二零二一年就在研发的东西，为什么这么晚呢？我们不知道 GPT 四会是一个 MoE 的模型，但是我的 Intern Leonidas 过去 OpenAI 之后，他们就开始做了 MoE。所以硅谷其实是没有什么秘密可言的嘛？对，特别是大模型 Palm Two 就是很顺，从来没有见过那么顺的预训练。但是我知道你们的这个风头还是被 GPT 四给抢了。早一点发表，我们就可以说哦，我们是世界上最好的模型。觉得可惜吗？对，有一点可惜。",
+      "refined_segment_indexes": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "start": 89.52,
+      "end": 118.48,
+      "text": "Google Brain 和 DeepMind 谁都不服谁，很多人离职。从两边都有离职，从 Brain 这边也有，DeepMind 这边也有。二点五的时候，Shazair 他带来了什么东西？他带来他的能力。数据是很大的一个差异点嘛？我觉得最大的啊差异就是数据。但是在谷歌，你觉得它拖速度了？对，对谷歌来说，可能就是有点危险，因为用这个方法会大量改变数据。所以你的新方法是什么？啊，那我不能说。",
+      "refined_segment_indexes": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "start": 119.76,
+      "end": 152.64,
+      "text": "然而，这样 Gemini 三顺利上线之后，Andrew Dai 决定离开了待了近十四年的谷歌，原因呢是希望有更多的研究自由与更快的速度。他想做的事情是目前领先大模型公司和实验室不愿意选择的路线，或者说发展的太慢的路线。Andrew 的结论是，光是大语言模型无法将我们带到 AGI，但是呢，他也不信仰纯视觉的世界模型，他选择的是语言加视觉的中间派系，做多模态视觉推理模型。",
+      "refined_segment_indexes": [
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "start": 153.28,
+      "end": 182.0,
+      "text": "那为什么你们现在做的事情谷歌做不了？如果你做一个 Specialist Model，那 Generalist Model 就超不了。现在很多的 New Lab 出来，现在这些模型都不会数东西，光 Scale 这个语言这部分还是不够了解我们的世界世界模型，觉得视觉 is the key to intelligence。但是从语言角度来说，视觉就是不够，我们就是觉得要把语言推理加上视觉推理，才可以做到一个模型可以帮大家，可以帮所有的行业。",
+      "refined_segment_indexes": [
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "start": 182.24,
+      "end": 214.56,
+      "text": "今年四月，Andrew 创立的 Lorian AI 宣布融资五千五百万美元，估值三亿美元，正式从保密阶段走向公众视野。投资方包括 Melo Ventures、Ultimate Capital 等主流硅谷基金，还包括英伟达和以个人身份参与的 Jeff Dean。另外说一嘴啊，Andrew 五岁就跟随父母去到了英国，那英文呢是他的第一语言，但是他坚持想试试用中文上节目。如果呢有表达不够准确的地方，或者中英夹杂的部分，还请大家见谅。那之后呢有机会我也会跟 Andrew 再用英文来对谈一期。",
+      "refined_segment_indexes": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "start": 214.72,
+      "end": 249.115,
+      "text": "那么以下就是我跟 Andrew Dai 的专访。非常感谢 Andrew，欢迎你来做客硅谷幺零幺。谢谢。所以这就是你们的新办公室，我故意挑了一个这个非常空旷的房间哈，我觉得这边的采光很好。这个房间你们以后准备用来做什么？很多研究员也应该是坐在这里和工程师，因为我们这里租房子都至少要租两年，所以我们就已经预测好，我们过了两年会有多少人。过了两年你会有多少人？可能就五十、六十、七十。嗯，现在多少人？现在我们是十四个人，但是还有两个人现在在搬迁中，所以很快就十六个人了。",
+      "refined_segment_indexes": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "start": 249.435,
+      "end": 279.675,
+      "text": "我在来的时候在听你一个之前的英文播客哈，然后我发现你有一点British accent，是因为你之前在英国念书是吗？对我是在中国出生，但是我五岁就去英国，我爸爸去英国读博士，所以我们就一起过去。我在英国本科就在剑桥，然后去爱丁堡读博士。你的中文其实还讲的挺好的。这是我的家人老是要我练中文，然后我也是认识一些中国来的朋友，一直在坚持学。你是什么时候来到硅谷的？",
+      "refined_segment_indexes": [
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "start": 279.755,
+      "end": 312.555,
+      "text": "是四年前，是二零一二年来的，就是为了在谷歌工作。当时为什么那么喜欢谷歌？博士我就是读人工智能，然后我一直从中学我都想做人工智能，然后那时候Google Brain比较有名，所以我就是想加入Google大脑团队。然后那时候Deep Mind还是一个startup，还是一个很小公司，所以我那时候不知道呃有Deep Mind这个公司，所以我就直接想来到呃人工智能中心，就要来到硅谷。如果你留在伦敦的话，是不是也有可能会加入Deep Mind的，然后最后也来到谷歌？",
+      "refined_segment_indexes": [
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "start": 312.635,
+      "end": 337.595,
+      "text": "很可能，我后来我的lab很多我的同学都是去了Deep Mind，就是我一个来到Google Brain。但是还有个原因我要来这里，是因为这里很容易创业，很多新的公司都是从硅谷来，所以我也是打算来了这里待几年，然后就创业。啊，没有想到一待就待了十四年。对，没有想到那么久。那我们来讲一讲你进入谷歌之后的一些工作吧。",
+      "refined_segment_indexes": [
+        58,
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    {
+      "start": 337.835,
+      "end": 367.115,
+      "text": "然后第一份工作呢，其实你是去到了Google Now，在二零一二年到二零一四年，那个团队应该是当时Larry Page希望说Android跟Search团队一起搭建的一个能结合用户数据，主动给用户推送提醒信息的这样的一个功能。那那个时候我理解说背后已经有一点AI的研究在后面了。当时你在Google Now里面在做什么？那个公司比较有意思，我来Google Now，他们是招我为了做AI，因为他们知道我是爱丁堡AI博士毕业。嗯。",
+      "refined_segment_indexes": [
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "start": 367.195,
+      "end": 392.795,
+      "text": "但是其实我到了这个团队，他们就发现哦，这个其实在工程上有很多东西要做，在这个infrastructure还是有很多东西。所以比如说他们如果有个新的新闻出来，想personalize，然后发给用这个app的人，我就编了一个系统，十五分钟之内新的新闻出来就可以推到所有人手机。这个我就学到很多infrastructure。我们有一次看到发这个新闻很慢，需要一百个milliseconds，大家在想为什么这么慢？",
+      "refined_segment_indexes": [
+        68,
+        69,
+        70,
+        71
+      ]
+    },
+    {
+      "start": 392.955,
+      "end": 423.595,
+      "text": "我看了这个数据在哪里，然后我看了一边是在东海岸，但是我把这个数据送到西海岸，按照这个speed of light，呃，就需要这么多时间，你不能更快。我学到很多那个engineering的东西，啊，很多end to end。但是后来我快走的时候，我也开始做更多AI，更多personalization。后来我就去Google Brain了。然后谷歌呢，在二零一三年、二零一四年有几个重要的节点哈。第一个节点呢，就是二零一三年的时候，应该是收购了Jeffrey Hinton的这个公司DNN Research。",
+      "refined_segment_indexes": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "start": 423.755,
+      "end": 453.195,
+      "text": "Hinton之后就加入Google开始工作了嘛？你觉得Hinton来到谷歌之后，对谷歌产生了什么样的影响呢？对Hinton来了之后，谷歌就很看重AI。那几年我记得我们的CEO也说了，Google是一个AI company，因为他们AI就是他们的core，像Larry Page、Google Brain一开始创造了那个algorithm，他们的目标也是AI，就是让机器帮助大家懂这个网络上大家写的东西。所以他们一直都是很看重AI。",
+      "refined_segment_indexes": [
+        78,
+        79,
+        80,
+        81,
+        82
+      ]
+    },
+    {
+      "start": 453.435,
+      "end": 484.235,
+      "text": "但是二零一二之后就开始一个新的阶段，就是deep learning深度学习的阶段。他们就觉得哦，如果我们不投这个方向，那我们就会落后，所以他们就做了Jeffrey Hinton的公司。从那一段之后，deep learning对Google就很重要，他们的模型也都是越来越多都是neural network那样的模型。然后二零一四年的时候，谷歌又继续收了Deep Mind。你觉得Deep Mind的团队进来，包括Demis Hassabis进来，又在什么样的程度上面改变了谷歌吗？对Deep Mind。",
+      "refined_segment_indexes": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ]
+    },
+    {
+      "start": 484.32,
+      "end": 506.08,
+      "text": "呃，跟那个DNA Research呃收购的方法很不一样，所以Deep Mind收购的时候，他们是做了一个agreement，就是说Deep Mind还是要独立，他们都可以待在伦敦，不用来美国，所以有很多这些呃condition，所以他们基本上就是一个独立的research lab，跟Google Brain不一样，Google Brain它的目标就是要做一些研究，",
+      "refined_segment_indexes": [
+        89
+      ]
+    },
+    {
+      "start": 506.16,
+      "end": 537.68,
+      "text": "然后以后呃跟产品合作，然后以后把这些模型推到产品，Deep Mind就是更像是哦你你什么都可以做，如果你觉得是重要的东西，像Alpha Go就可以做，所以这些philosophy有点不一样。所以Deep Mind还是非常非常独立的。嗯，对，非常非常独立。他们想做什么东西也都是哈斯贝斯说了算，其实谷歌也不太会管他们。对他们招聘也有他们自己的方法，然后他们的很多内部的东西都是跟谷歌分开，像他们的代码那些东西都分了。",
+      "refined_segment_indexes": [
+        90,
+        91,
+        92,
+        93,
+        94
+      ]
+    },
+    {
+      "start": 538.0,
+      "end": 564.88,
+      "text": "那所以谷歌当时Google Brain的AI的research，比如说像你会跟Deep Mind的人有任何的合作吗？还是？呃，会，但是比较少，呃，因为合作的时候就会有一些credit assignment的问题，就是说哦是这个项目是谁own的，ownership在大公司都很重要，是到底是Deep Mind own这个项目，或者呃Google大脑own这个项目，然后呃就有的有的项目就是这样的，就更复杂了。",
+      "refined_segment_indexes": [
+        95,
+        96,
+        97
+      ]
+    },
+    {
+      "start": 565.04,
+      "end": 587.12,
+      "text": "我知道这样的磨合在之后Google Brain跟Deep Mind那个合并的时候会更加显现出来，但是这个我们可以稍后来聊哈，啊，我还是想啊把开始的时间就是聚焦在你最早期的一些工作上面。啊，我看到你在二零一五年开始研究language model pretraining and fine tuning，当时就是应该是在Google Brain部门了哈。",
+      "refined_segment_indexes": [
+        98,
+        99
+      ]
+    },
+    {
+      "start": 587.2,
+      "end": 606.72,
+      "text": "我看到这一轮G A I的一个奠基石Transformer这篇论文是二零一七年发布的嘛，但是之前其实你们还发布了一个啊你跟Google Brain的创始人之一库克勒一起主导的这篇文章叫做semi supervised sequence learning，嗯，能不能给我们解释一下这篇论文主要解决的是什么问题？",
+      "refined_segment_indexes": [
+        100
+      ]
+    },
+    {
+      "start": 607.04,
+      "end": 626.32,
+      "text": "这个文章不是我们一开始就预测好，不是我们planned，it's not planned，我们本来是做这个technology叫paragraph vectors，所以那时候有word to vec叫word embeddings，L M之前大家都是用这些东西，然后我们想做一个更好的，我做了很多很多实验，然后那些实验都是失败，",
+      "refined_segment_indexes": [
+        101
+      ]
+    },
+    {
+      "start": 626.56,
+      "end": 651.52,
+      "text": "但是有一天我跑了一个实验，然后我就发现哦这个结果很好，比其他的文章分都高，但是我想reproduce它重跑一次，但是我跑不了之前的那些结果，所以我就想哦肯定哪里有一个bug哪里出问题了，所以我就在挖了一段时间，然后我就发现是因为我训练这个模型的时候我是从一个另外一个叫checkpoint开始，那个项目是一个另外一个项目，",
+      "refined_segment_indexes": [
+        102
+      ]
+    },
+    {
+      "start": 651.52,
+      "end": 683.84,
+      "text": "那个项目就是做语言模型，然后我是从那个开始，所以那时候我就发现了如果你是先做呃语言模型，然后你再做这个微调这些supervised data，你就可以有很好的模型，所以这个就是我们我们发现的东西，然后我们就变成一个文章，之前这两个都是分开的，大家没有想用语言模型用来做语言理解，但是我们的idea就是把语言模型和fine tuning微调合到一起就可以做一个很好的模型，所以我们就是第一个把这两个部门放在一起。",
+      "refined_segment_indexes": [
+        103,
+        104
+      ]
+    },
+    {
+      "start": 684.08,
+      "end": 705.36,
+      "text": "这篇论文我们现在回看它很像是大规模预训练加下游微调的这种方式啊，当然这篇论文出来的时候Transformer还没有出来啊，所以当时你们其实用的模型聚焦的还是L S T M这个模型上面啊，但是你当时有没有意识到说哎它可能会lead到一个更大的一个东西？",
+      "refined_segment_indexes": [
+        105
+      ]
+    },
+    {
+      "start": 705.44,
+      "end": 739.054,
+      "text": "所以那时候我们的卡很少，那时候大家都没有用很多这种显示卡做训练，所以我们还是用的比较少的模型，但是我记得那一年我们开会，我们就在那个会上叫Neurips就发表那个文章，然后set for create L S T M的第一author。他就来我们的poster，他说他已经试了我们这个方法，结果很好，所以从那时候我们就知道，哦，这个以后应该会很多人用这个方法，但是我们没有想到过了十年还会用这个，然后加了几倍这么大的模型。嗯，对。",
+      "refined_segment_indexes": [
+        106,
+        107,
+        108
+      ]
+    },
+    {
+      "start": 739.374,
+      "end": 766.094,
+      "text": "那当时transformer出来的时候，你有意识到这两个东西可以融合起来，然后变成一个something much bigger吗？transformer出来的时候，我觉得就很适合跟我们做的这个预训练一起用，所以transformer出来之后，第二天我就给旭旭，旭旭是一个呃transformer的first author，然后也是一个朋友，我给他说，哦，我们前两年我们有这个文章就是预训练，然后结果很好，你要不要在transformer上也试一试预训练？",
+      "refined_segment_indexes": [
+        109,
+        110
+      ]
+    },
+    {
+      "start": 766.414,
+      "end": 799.534,
+      "text": "但是那时候他很忙，他在做一些图片处理的东西，所以他就没有时间做，后面就是open ai做了。对，所以open ai是谁啊来主导的这件事情？发现了就是呃transformer可以跟你们这篇文章结合起来。open ai是alec ratford，他就是写gpt一二三的文章，他也引用我们那个文章，所以他就看出来了，哦，这个scale，然后继续scale越来越大，它的出来的语言就越来越好。谷歌在什么时候意识到说，哎，这两个东西都是我这边出来的，结果open ai给结合在一起用了？",
+      "refined_segment_indexes": [
+        111,
+        112,
+        113,
+        114,
+        115
+      ]
+    },
+    {
+      "start": 799.694,
+      "end": 833.614,
+      "text": "对，我觉得这个是gpt三，所以到了gpt三的时候才意识到。对，对，gpt三是一个可能是一个turning moment，整个世界的turning moment，所以不光是谷歌，很多公司都发现，哦，gpt三出来的语言可以干的东西都很好，所以可能scaling是对的方向。之前啊大家都不想投这么多显示卡做在一个实验上，但是gpt三之后，谷歌就开始愿意这样投。那在gpt三出来之前啊，google brain的这个co founders啊，jeff dean，andrew n还有quark他们当时在做什么事情？",
+      "refined_segment_indexes": [
+        116,
+        117,
+        118,
+        119
+      ]
+    },
+    {
+      "start": 833.614,
+      "end": 860.814,
+      "text": "然后deep mind的hassibes他们在做什么事情？hassibes那一段时间我记得好像他们是在做alphago那个项目，他们是觉得把游戏做的很好，像atari游戏和围棋这些，那就可以发生intelligence。google brain就是另外一个方向，我觉得jeff dean也是这个方向想的，就是如果你做一个ai就什么都可以做，那就是real intelligence，就不要只专注一个小的领域。",
+      "refined_segment_indexes": [
+        120,
+        121,
+        122
+      ]
+    },
+    {
+      "start": 861.134,
+      "end": 888.814,
+      "text": "但是那时候google brain还是很自由，啊，google brain的文化都是比较有名，很自由，你想做什么都可以做什么。那时候jeff dean在lead这个brain团队，但是下面的研究员什么都在做，像有的团队在做音乐，怎么可以用ai做出新的歌这样的东西。其实做语言的人很少，就基本上是quark和我还有几个人，大部分都都是在做像视觉、视频处理这些东西。",
+      "refined_segment_indexes": [
+        123,
+        124,
+        125
+      ]
+    },
+    {
+      "start": 889.214,
+      "end": 916.014,
+      "text": "嗯，对，就没有一个人来lead，强有力的来lead，说没有集合所有的资源跟力量去压住在同一个赛道上。对，嗯，直到他们看到gpt三出来。对，所以你觉得open ai为什么能够看到啊semi supervised sequence learning的能力，而谷歌看不到呢？因因为就是当时你跟transformer的作者说了一下这个东西是不是可以尝试，他没有理你，那之后你就没有再尝试了吗？",
+      "refined_segment_indexes": [
+        126,
+        127,
+        128,
+        129
+      ]
+    },
+    {
+      "start": 916.094,
+      "end": 943.054,
+      "text": "哦，对，那时候那是二零一七的时候，那个时间和特别google brain开始谷歌健康的部门，那时候health就是一个很hot的领域，大家都是想进health，包括苹果和微软，所以谷歌也觉得哦我们也要把ai放到health里面，所以那时候他们就让我选我要进health或者待在brain，然后我就选择去health，所以我就没有机会做这些gpt的模型。那有也没有其他的人继续在往这方面深推了，是吧？",
+      "refined_segment_indexes": [
+        130,
+        131
+      ]
+    },
+    {
+      "start": 943.054,
+      "end": 972.536,
+      "text": "啊，对，后来就没有没有往上scale，但是有有人把这个放在产品，就像smart compose，smart reply，他们就是用这个预训练的方法。了解，对，然后跟我们说一下你在health部门啊在研究什么？你去做产品了是吗？我做的研究是帮助产品，啊，所以那时候就是。负责这个医疗的records，预测这个人以后可能会有什么病，或者会要吃什么药，就可以帮助医院省钱，或者帮助这些医生。",
+      "refined_segment_indexes": [
+        132,
+        133,
+        134,
+        135,
+        136
+      ]
+    },
+    {
+      "start": 972.776,
+      "end": 1001.576,
+      "text": "我们也是用预训练，因为我们知道预训练很成功，我们就在这个医疗上面用预训练。但是那时候的模型还是很小，所以最后就没有做出来预训练，但是发表其他的文章。但是那时候也是一个比较好的时代，那时候也是那个Google Brain residency program，所以招了很多，就像intern待一年，后来就创业的人，像Leonidas和戴密国、David Ha，他们就是我的intern那一段，所以那也是一个比较好的时间。",
+      "refined_segment_indexes": [
+        137,
+        138,
+        139
+      ]
+    },
+    {
+      "start": 1001.896,
+      "end": 1030.056,
+      "text": "在2018年的时候，就是你在去health部门的一年之后，我看你跟比如说Ian Goodfellow这些人还合作了一篇重量性的论文，叫MaskGAN，其实是来改善文本生成的质量哈。因为我看到中间的一些技术探讨，比如说他用的这个填空任务或者是infilling啊，这些技术在后来的比如说BERT啊、Gemini多模态预训练中都有一定程度的启发和影响。那你觉得这篇论文对你来说意味着什么？",
+      "refined_segment_indexes": [
+        140,
+        141,
+        142
+      ]
+    },
+    {
+      "start": 1030.216,
+      "end": 1061.016,
+      "text": "这个文章是我跟Leonidas和Ian Goodfellow就一起写的，然后我们就觉得把这个空填起来是一个很好的task，就可以让这个模型就学到很复杂的东西。但是我觉得有一个地方，这个我们文章做的比较好，就是RL方面。那时候做预训练，然后做RL就基本上没有其他的人做，可能还有一个文章在做这个，但是我们可能是前几个文章就在预训练之后做RL，然后现在大家都是用这个方法。",
+      "refined_segment_indexes": [
+        143,
+        144,
+        145
+      ]
+    },
+    {
+      "start": 1061.336,
+      "end": 1093.256,
+      "text": "就相当于是你们是首批团队把RL用在了语言模型上。对，我们那时候就觉得哦，光做预训练不够，因为这些模型就不会学到写出来的字怎么改，或者哪些地方写得好，哪些地方写的不好。然后有RL的话，那这些模型就可以看到我自己写的这一这一段就不像英文，或者不像哪一个语语言，然后RL就可以把这个改好。在其他的很多大家都觉得是有共识的技术范式上面，你们也都是第一批团队去做的，就包括MoE。",
+      "refined_segment_indexes": [
+        146,
+        147,
+        148,
+        149
+      ]
+    },
+    {
+      "start": 1093.256,
+      "end": 1122.696,
+      "text": "然后你当时研究MoE的时候，还是在2021年的时候，对吧？你联合主导了GLM MoE LLM的这个开发。那现在MoE架构我们都很熟悉了，但我觉得真正把MoE这个词儿带到大众视野的，可能还是去年DeepSeek V3的时候的发布啊。但是我是没有想到在2021年的时候，谷歌内部就已经在研发这个路线了。那时候是GPT3出来了，Google Brain团队有的人有一点着急，嗯，他就说哦，我们一定要做一个模型比他们好，然后也要更多功能这些东西。",
+      "refined_segment_indexes": [
+        150,
+        151,
+        152,
+        153,
+        154
+      ]
+    },
+    {
+      "start": 1123.016,
+      "end": 1157.736,
+      "text": "所以我们那时候就觉得哦，这些模型越来越大，serve他们通过一个API就会很贵，因为他们有很多参数，然后就要很多很多电。但是如果你只用那个模型一部分，用的电就少很多。所以那时候前几年，Noam学界他也出了一个文章，就是做MoE，但是那个时候就没有做预训练，所以我们就是用MoE加上预训练，加上fine tuning，然后我们最后就做了一个模型比GPT3还好，所以那就是我们的achievement。2021年的时候，GPT3出来了，谷歌内部你说开始感到压力了是吗？",
+      "refined_segment_indexes": [
+        155,
+        156,
+        157,
+        158
+      ]
+    },
+    {
+      "start": 1157.816,
+      "end": 1188.456,
+      "text": "当时是什么样的一个情况？能不能给我们来描述一下？我那时候的经理他是叫Claire，他就是我的Google Health的那个经理，然后他回到Google Brain，我那时候就跟他谈我说哦，我要离开Google Health，他就说哦，我们现在正在做这个模型，但是这个模型就达不到GPT3那么好，你们帮我们解决这个问题。我们觉得这个问题是数据上面的问题，所以我就过去了，把那个数据处理了一段时间，终于做了一个模型比GPT3好，发表一个文章。",
+      "refined_segment_indexes": [
+        159,
+        160,
+        161,
+        162
+      ]
+    },
+    {
+      "start": 1188.856,
+      "end": 1211.343,
+      "text": "然后那时候DeepMind也是也是发表一个文章，所以那时候就开始有一点这个竞争的东西，然后后面几年就可以。看出来有什么结果，但是那时候就就开始了，因为两边都比较都看了GPT three，然后DiMa也觉得哦我们要竞争，然后Brain也是我们要竞争，要不然大家都会觉得谷歌做不出了这样的模型。你当时为什么想要离开Health？",
+      "refined_segment_indexes": [
+        163,
+        164,
+        165
+      ]
+    },
+    {
+      "start": 1212.063,
+      "end": 1245.423,
+      "text": "啊Health，呃，我觉得对一个Big Tech公司来说很是很难很难的一个东西，然后这个难度不是因为呃科技难度是因为文化，为什么？医生他们有自己的文化，然后他们的文化就是传下来的几百代的医生，然后他们有自己的方法做东西，所以这个本身这个行业resource这个understanding就是更难，所以很多医生就是按照他们自己的intuition决定东西，然后我们如果我们要把AI推上去，那他们就会问啊为什么AI要我做这个东西？",
+      "refined_segment_indexes": [
+        166,
+        167
+      ]
+    },
+    {
+      "start": 1245.583,
+      "end": 1270.063,
+      "text": "我我有我做了好几十年，我肯定知道比这个AI好，所以就很难呃要那些医生用到AI那时候。嗯，是不是可以说就是在嗯实际的产品落地的时候，一个大的科技公司它是比不上，比如说跟一些医院或者医生关系很好的，或者是药企也好，是比不上他们去推这个产品落地的。",
+      "refined_segment_indexes": [
+        168,
+        169
+      ]
+    },
+    {
+      "start": 1270.783,
+      "end": 1287.823,
+      "text": "对对，然后还有一个是这个大公司，像有的医生就可能觉得哦这个大公司要抢我们的工作，抢我们的医院的钱嘛，如果是一个startup，那他们就不会那么feel threatened，所以我觉得这是一个部分。对，是不是当时技术也没有好到让大家觉得说啊非用你不可？",
+      "refined_segment_indexes": [
+        170,
+        171
+      ]
+    },
+    {
+      "start": 1287.903,
+      "end": 1322.223,
+      "text": "对，像现在大家都是就是因为ChatGPT那些医生就觉得哦那那我可以用上AI，大家都在用ChatGPT，所以我就要用，但是那时候不是那样的，呃那时候我他们是比较一个呃新的customer for AI，嗯，但是现在他们是他们不是一个新的，很多人都在用，所以他们就觉得哦没有那么危险，嗯，所以时间不对，对对时间不对，可能当时技术也比较粗糙一点，是不是？然后产品可能也没有做的那么的让他们称心如意，然后go to market上面其实美国医疗产业本来就是一个很难去打入的产业。",
+      "refined_segment_indexes": [
+        172,
+        173,
+        174
+      ]
+    },
+    {
+      "start": 1322.463,
+      "end": 1352.463,
+      "text": "It's a big lesson。对，所以你的take away就是要在right time to do the right thing，work on the right technology。Exactly。对创业，我觉得创业这个很重要。嗯，那我们来讲讲你从Health出来了，然后呢在二零二二年的时候你是主到了谷歌Palm two模型的这个预训练嘛？这个模型其实对谷歌来说是非常重要的，因为那个时候谷歌跟OpenAI已经是有这个模型的比拼的这种压力在了，但是Palm two出来的时候你们满意吗？",
+      "refined_segment_indexes": [
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "start": 1352.863,
+      "end": 1387.423,
+      "text": "对Palm two是二零二三初就训练好了，我那时候觉得是一个挺好的模型，从来没有见过那么顺的预训练，从头到底就一次都没有停，一次都不用rewind，不像那时候啊Meta出了一个OPT那个模型，那个也是那那段时间也是比较有名，但是你看他们的那个logbook就重启了很多很多次，然后做了很久，但是Palm two就是很顺，就一年之内从计划这个项目到这个模型做完了就不到一年，所以我觉得那个就特别顺。为什么这么顺？你们做对了什么事情让它这么顺？",
+      "refined_segment_indexes": [
+        181,
+        182,
+        183,
+        184
+      ]
+    },
+    {
+      "start": 1387.423,
+      "end": 1407.183,
+      "text": "那时候有一些经验，就是训练啊GLM和训练Palm一的经验，我们也是选了一些architecture上面的东西，做了很多测试，做了很多实验，我们就知道哦这个很稳，这个不会出问题，然后我们跑了那个大训练之前，我们也做了一些high load runs，所以我们就有high confidence这个这个会成功。",
+      "refined_segment_indexes": [
+        185
+      ]
+    },
+    {
+      "start": 1407.183,
+      "end": 1436.143,
+      "text": "嗯，然后在二零二二年我看你还写了一个蛮重要的一个论文，就是Flan scaling instruction fine-tuned language models，想要去探索任务数量、模型大小以及加入这个chain of thought（COT）的一些数据，能不能给我们讲一下这个Flan它的重要性在哪里？Flan之前大家都是用像few shot prompting，呃用这些模型，所以如果你要它做一个东西，你先要给它举一个例子，像如果是一个数学问题，你要给它一个数学问题，告诉它那个答案，然后",
+      "refined_segment_indexes": [
+        186,
+        187
+      ]
+    },
+    {
+      "start": 1436.363,
+      "end": 1469.163,
+      "text": "给了这几个例子，然后你再可以问他做一个东西。但是 Flan 这个文章就是说，哦，其实你不用给他举例子，你就在微调的数据里放这些例子就够了，然后这模型就会学会，你给他什么问题，他就必须要答案。这是有好的部分，但是也有不好的部分。好的部分就是你就不用给他这些 few shot 这些例子，以后。但是不好的部分，大家现在都知道，如果你问他东西，他不知道，他还会假装他知道。有了这个之后，就可以有 ChatGPT 这个 Chatbot，因为你可以直接问他问题。",
+      "refined_segment_indexes": [
+        188,
+        189,
+        190,
+        191,
+        192,
+        193
+      ]
+    },
+    {
+      "start": 1469.803,
+      "end": 1497.163,
+      "text": "嗯，好，呃，所以 Palm Two 你们还是比较满意的，但是我知道你们的这个风头还是被 GPT 四给抢了，是吗？嗯，对，对我们的时候，我们做完了比较早，因为我们的是二零二三初的时候就做完了，但是谷歌的内部的这些 bureaucracy 和谷歌内部的系统很大，他们就觉得我们要等到 Google I/O 再统一发布，对，再统一发布。",
+      "refined_segment_indexes": [
+        194,
+        195
+      ]
+    },
+    {
+      "start": 1497.563,
+      "end": 1524.443,
+      "text": "但是 OpenAI 他们当然知道 Google I/O 是什么，他们知道我们要出这个模型，因为谷歌那么大，没有没有什么秘密在内部的，呃，所以他们就刚好 Google I/O 之前，他们就出了 GPT 四，然后 GPT 四的结果就比 Palm Two 好，所以我们发表 Palm Two 的时候，就我就觉得晚了一点，我觉得早一点的发表，我们就可以说，哦，我们是世界上最好的模型。嗯嗯，觉得可惜吗？对，有点可惜。",
+      "refined_segment_indexes": [
+        196,
+        197,
+        198,
+        199
+      ]
+    },
+    {
+      "start": 1524.923,
+      "end": 1556.123,
+      "text": "但是 Palm Two 还是很重要，就虽然 GPT 四可能在 benchmark 上面比你们好，但起码 Google 会告诉大家说，哎，我们站稳了，对吧？我们没有就是 fall behind 的态度。对，因为没有，还有个原因是没有 Palm Two 的话，那那时候有那个产品是叫 Bard，Bard 后来就叫 Gemini，对对。然后没有 Palm Two 的话，那个 Bard 产品也是比较危险，因为 Bard 就是用 Palm Two 做出来 Chatbot，所以那样的话，那谷歌的就没有 Chatbot。",
+      "refined_segment_indexes": [
+        200,
+        201,
+        202,
+        203
+      ]
+    },
+    {
+      "start": 1556.363,
+      "end": 1588.763,
+      "text": "刚才你也说了，二零二二年年底的时候，OpenAI 是上了 ChatGPT，然后把整个 AI 市场引爆了嘛？嗯。当时谷歌内部也是拉响了口燃，然后 Search Brain 也是回归到了谷歌啊。当时做出来的一个决定就是把 DeepMind 跟 Google Brain 给整合起来啊。给我们讲讲那是整合的时候发生了什么故事吧？这个整合是顺利呢，还是会有很多的摩擦在里面？这个整合大家有个 preview，大家都是觉得 Gemini 就是一个 preview，这个整合之后会怎么样发生？",
+      "refined_segment_indexes": [
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210
+      ]
+    },
+    {
+      "start": 1588.923,
+      "end": 1612.603,
+      "text": "因为 Gemini 前几个月就是 DeepMind 和 Brain people 一起做，但是不是 official，嗯。啊，然后那时候呃，就有一点摩擦，但是后来我觉得那个 leadership 就觉得，哦，我们这个是这个 timeline 要更快，我们不能呃比 ChatGPT 再落后，所以他们就决定要快一点把这两个团队放到一起啊。",
+      "refined_segment_indexes": [
+        211,
+        212
+      ]
+    },
+    {
+      "start": 1612.683,
+      "end": 1638.843,
+      "text": "所以那时候那确实有摩擦，因为两边都有一样的团队，所以 DeepMind 有个 infrastructure 团队，Brain 也有；DeepMind 有个 multi-modal 团队，Brain 也有；数据也是 DeepMind 有个数据团队，然后我就是代表这个 Brain 的数据团队，所以一开始都是有这个 tension，他们决定每一个部门要一个领导从 DeepMind 那边，一个领导从 Brain 这边，所以呃就比较复杂。",
+      "refined_segment_indexes": [
+        213,
+        214
+      ]
+    },
+    {
+      "start": 1639.323,
+      "end": 1658.523,
+      "text": "对，所以他的意思就是说，比如说数据部门，然后你其实是 co lead，你是一个 co lead，然后 DeepMind 会出一个 co lead，嗯，就包括可能其他的部门也是，嗯，多模态的部门也是，嗯，Google Brain 出一个 co lead，DeepMind 出一个 co lead，就是每个部门都是这样，是吧？对，嗯。",
+      "refined_segment_indexes": [
+        215,
+        216
+      ]
+    },
+    {
+      "start": 1658.523,
+      "end": 1689.818,
+      "text": "呃，出了之后，我们还要分，我们还要说，哦，来这个数据部门里面哪一部分是呃伦敦可以做，哪一部分啊 Mountain View Brain 这边可以做，然后这就很复杂，这就浪费了很多时间了，我觉得。嗯，为什么一定要设置这样的一个机制呢？就更公平吧。Google Brain跟Deep Mind谁都不服谁，对，这就是一个OK，我给两边都同时给这样的一个结局。对，像一个equal even的呃setup。那你觉得这样的setup会拖累模型的研发速度吗？",
+      "refined_segment_indexes": [
+        217,
+        218,
+        219,
+        220,
+        221,
+        222
+      ]
+    },
+    {
+      "start": 1689.978,
+      "end": 1724.458,
+      "text": "我觉得一开始可能我们可能出的模型就慢一些，啊，因为做这个，因为你把两个团队就之前就都没有合作过，然后之前都已经有一点这种tension，那你突然把它放在一起，那肯定会有有一些东西变慢了，然后会有人换组，所以这些东西都都发生了。整个的磨合过程，你觉得经历了多长时间？嗯，还是说到现在还在磨合。对，可能现在还在磨合吧。对，有的部门磨合速度更慢，有的部门更快。",
+      "refined_segment_indexes": [
+        223,
+        224,
+        225,
+        226,
+        227
+      ]
+    },
+    {
+      "start": 1724.538,
+      "end": 1755.898,
+      "text": "就像Infer就是很快，他们就觉得哦，我们必须要用这个Infer模型，你之前做的就不怎么用了。多模态也是。所以就是两边整合的一个结果，就是很多人离职，对吧？呃，对，有不少的人离职，从两边都有离职，从Brain这边也有，Deep Mind这边也有。嗯，这两个谁都看不上谁的部门整合在一起了，然后一起来啊，同心协力的work on Gemini。然后啊，二零二三年年底的时候，Gemini一点零出来了。嗯，这个模型你们满意吗？",
+      "refined_segment_indexes": [
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234
+      ]
+    },
+    {
+      "start": 1756.138,
+      "end": 1779.098,
+      "text": "这个模型我觉得是有一点rush的出来，那时候我们刚开始一起合作，然后很多东西都是呃拼命就赶那个deadline。那时候有个圣诞节的deadline，呃，因为五月份Google还有刚出来，我们刚announce Palm Two，但是我们要我们觉得哦，每六个月都都要出，下六个月就要出一个新的模型，所以大家都在赶这个时间。",
+      "refined_segment_indexes": [
+        235,
+        236
+      ]
+    },
+    {
+      "start": 1779.658,
+      "end": 1809.498,
+      "text": "然后你那么拼命赶，然后这些人都没有合作过，然后这个模型也是从start from scratch基本上，所以就有一些地方就做的不是很好，就像那个小书的语言就没做的很好。然后那时候媒体都报道了，说Gemini一点零有的语言上就不行，所以我们赶紧做Gemini一点五。然后我看到Gemini一点五才用到MOE架构，嗯，但是这是你在二零二一年就在研发的东西，为什么这么晚呢？",
+      "refined_segment_indexes": [
+        237,
+        238,
+        239
+      ]
+    },
+    {
+      "start": 1809.658,
+      "end": 1840.938,
+      "text": "对，这个也是我觉得一个速度的问题，所以他们像一点零就很赶紧推出来，啊，所以呃他们就没有时间就做这个MOE的模型，就只能做一个dense模型，因为MOE你还要tune，还要花时间做optimization。然后ChatGPT出来之后，这个整个想法都变成一个race，就哎我们就在跟OpenAI比赛，啊，所以有如果有个MOE要把我们的schedule变得慢，啊，那就不能做，所以啊。",
+      "refined_segment_indexes": [
+        240,
+        241
+      ]
+    },
+    {
+      "start": 1841.258,
+      "end": 1861.418,
+      "text": "所以它的优先级还是说我先不管创新了，啊，我先就把它给追上，所以这个时候谷歌其实是变成了一个追赶者。嗯嗯，对对，嗯，是不是也是因为GPT四用了MOE，然后一点五的时候才说哎，我们必须要用MOE了？我觉得本来我们都是打算用MOE，嗯，啊，这是什么时候用？对，这是什么时候？",
+      "refined_segment_indexes": [
+        242,
+        243,
+        244,
+        245
+      ]
+    },
+    {
+      "start": 1861.578,
+      "end": 1892.138,
+      "text": "这是一个it's matter of time，因为我们知道MOE的结果更好，那个二零二一的文章已经给大家看了是更好，但是我们不知道OpenAI会那么快用MOE，我们不知道GPT四呃会是一个MOE的模型，我们还是有些人觉得哦应该是一个dense模型，但是我的intern Leon Fedus过去啊OpenAI之后，他们就开始做了MOE。所以他是他他跟你一起work on了这个事情之后，他就带去了OpenAI。嗯，所以硅谷其实是没有什么秘密可言的嘛。",
+      "refined_segment_indexes": [
+        246,
+        247,
+        248
+      ]
+    },
+    {
+      "start": 1892.378,
+      "end": 1925.106,
+      "text": "对，特别是大模型和大公司，那这些大公司就肯定会有人去OpenAI买topic，所以对大公司就很难保持秘密。Gemini二点零对你来说，对你们来说是一个比较大的翻身仗。对，Gemini二点零就是像一个evolution，就是这些方法就。更成熟，包括MoE，包括这些很长的context的问题，所以那个模型就是对一个evolution一个更好的模型。对，因为我知道好像在data上面，你也是在Gemini二点零上面有一些创新的。",
+      "refined_segment_indexes": [
+        249,
+        250,
+        251,
+        252,
+        253
+      ]
+    },
+    {
+      "start": 1925.506,
+      "end": 1958.306,
+      "text": "对，能不能给我们解释一下你做了什么让Gemini二点零变得更好？对，在data上有个很有很大的变化，我们是用个新方法处理这个数据质量，然后我们检测质量也是更严格。可能有的公司觉得，呃，这个architecture和卡够了就可以做一个很好的模型，但是其实数据还是很重要。所以你看这些文章，他们一般都不会说数据有什么，也不会说，呃，数据从哪里来的，这是一个很一个secret source啊，这些模型，所以我们就发表了新的方法。",
+      "refined_segment_indexes": [
+        254,
+        255,
+        256,
+        257
+      ]
+    },
+    {
+      "start": 1958.466,
+      "end": 1990.066,
+      "text": "嗯，所以你觉得现在数据是大模型们很大的一个差异点吗？因为看起来模型架构大家都在用同样的东西，算力大公司都不缺，infrastructure其实都是很类似的东西，是不是差异点就在数据上？对，我觉得最大的啊差异就是数据。但是数据不是说数据来源的问题，因为大家反正都把互联网的数据都穷尽了，而是说怎么去优化这个数据，或者是怎么去挑选更优化的数据来用于训练，是吗？",
+      "refined_segment_indexes": [
+        258,
+        259,
+        260,
+        261
+      ]
+    },
+    {
+      "start": 1990.226,
+      "end": 2023.906,
+      "text": "对你选用什么数据很重要，因为网络上是有很多数据，但是也有很多spam，很多就没有用，帮不了这个模型的数据，所以要找到那个好的数据可以让这个模型学新的东西，就像人一样，你给一个人每天都让他读广告，那他也是学不了东西。你要给他有information有knowledge的数据才行，但是那个来源也是有一点区别，因为谷歌他们有谷歌搜索，所以他们有搜索的那个经验，就知道怎么爬这个网络，其他的公司也是有有自己的优点。",
+      "refined_segment_indexes": [
+        262,
+        263
+      ]
+    },
+    {
+      "start": 2024.226,
+      "end": 2043.986,
+      "text": "所以呃，你其实，在Gemini二点零主要在数据上面做的一个提升，就是把这些spam的数据都给剔除了。spam还有一些其他的数据，对，嗯，呃，不光是spam，嗯，就更多的就不能讲了，是吧？对，低质量的数据。在合成数据上面，你你也是在管这个合成数据方面，对不对？",
+      "refined_segment_indexes": [
+        264,
+        265,
+        266,
+        267
+      ]
+    },
+    {
+      "start": 2043.986,
+      "end": 2077.346,
+      "text": "对我也是在联合主导那个合成数据，然后合成数据，呃，用的不好，那也就会有个很不好的模型，但是用的好，就像GPT五，它就是用合成数据，可以用它把模型做的很好。什么叫用的好？什么叫用的不好？用的不好就是你处理的不好，你处理的不好的话，这个模型就会老是做出你的合成数据的东西。如果你的合成数据有很多deal这个词，那你训练完，那你的模型也会更多说这个deal这个词。",
+      "refined_segment_indexes": [
+        268,
+        269,
+        270,
+        271,
+        272
+      ]
+    },
+    {
+      "start": 2077.506,
+      "end": 2111.266,
+      "text": "所以合成数据你要它也是需要很高质量，要不然你的模型也会学到不好的东西，学到错的东西。嗯嗯，像如果合成数据有错的数学，那你的模型学到那个，那它的数学也会变得更差。这中间的呃差异点就是说怎么去确保说喂给模型的是尽量优质的数据，这样的话，其实模型它也在能力上能够有一个很大的提升。嗯，对，然后但是user数据也是很难用，因为user他们也会呃copy paste从其他的模型，所以所以是比较难用这个数据。",
+      "refined_segment_indexes": [
+        273,
+        274,
+        275,
+        276
+      ]
+    },
+    {
+      "start": 2111.746,
+      "end": 2133.826,
+      "text": "Gemini二点五的时候在去年年终的时候有发布，然后在年底的时候是发了Gemini三点零哈，我觉得在那个时候真的是短暂的超过了GPT吧，然后可以说是惊艳了整个市场啊，然后大家都在欢呼说啊，谷歌又回来了，然后看你们谷歌的股价也是涨得非常快啊。但是你在Gemini三点零的时候就离开了，嗯，能给我们讲讲为什么？",
+      "refined_segment_indexes": [
+        277,
+        278
+      ]
+    },
+    {
+      "start": 2133.826,
+      "end": 2160.606,
+      "text": "啊，可以，对，嗯，我先讲Gemini二点五，二点五是Norm实际从Caltech AI就来到谷歌，他就帮了二点五，所以二点五是一个比较好的模型，然后三点零就是我们挑了我们做数据的方法，有更多的新的方法，然后嗯，等一下我打断一下，二点五的时候，Shazier他带来了什么东西到谷歌，然后让你们二点五变得更好？他带来他的能力，能力具体指的什么？",
+      "refined_segment_indexes": [
+        279,
+        280
+      ]
+    },
+    {
+      "start": 2161.166,
+      "end": 2195.486,
+      "text": "呃，能力是，我有一次跟Noah讨论Transformer这个architecture，然后我说，那我们从这里加到这里加一个connection，加一个连接，好不好？然后他说，呃，这样不会好，因为它的gradient就会从这里移到这里，他都不用跑那个模型，他就知道训练之后会会是什么样的结果。他是真的是一个genius，他一看那个代码，他就知道，哦，这是一个好的模型或者不好的模型，他自己就知道这个模型是怎么怎么work。所以，AI hire是make sense的。对，这good deal。",
+      "refined_segment_indexes": [
+        281,
+        282,
+        283,
+        284,
+        285
+      ]
+    },
+    {
+      "start": 2195.566,
+      "end": 2217.326,
+      "text": "所以，哇，现在看起来真的是一个人他的能力就能够帮公司省很多钱跟时间。对，是的，对他很厉害。嗯，那三角零呢？就是说你们继续在数据上有一些创新跟优化，对吧？然后能够在数据上给Gemini三角零能够带来更好的一个差异点，或者在benchmark上面跑分跑的更好。",
+      "refined_segment_indexes": [
+        286,
+        287,
+        288,
+        289,
+        290
+      ]
+    },
+    {
+      "start": 2217.566,
+      "end": 2246.766,
+      "text": "嗯，对，那时候数据有一些新的方法，然后但是我走的原因是，呃，因为我可以感觉到用的方法和做的progress都是用的比较保守的方法，因为这么多人，几千个人在这个项目上，很多很多显示卡用来预训练，所以他们就不能用很aggressive、很不同的新的想法，就是比较risky，所以我就觉得这时候就比较好的时间就离开，然后创业。",
+      "refined_segment_indexes": [
+        291
+      ]
+    },
+    {
+      "start": 2247.086,
+      "end": 2271.726,
+      "text": "所以你觉得从数据上还可以提升、优化更快，用一些更加大胆或者是更加激进的aggressive的方式去做事情，但是在谷歌，你觉得它拖速度了？对，对谷歌来说可能就是有点危险，因为用这个方法会大量改变数据。对，所以你的新方法是什么？啊，那我不能说。",
+      "refined_segment_indexes": [
+        292,
+        293,
+        294,
+        295
+      ]
+    },
+    {
+      "start": 2271.726,
+      "end": 2304.206,
+      "text": "好，但是你的新方法就是你来，嗯，要自己创业，你其实想做的是视觉推理模型，在你能说的范围内，能不能跟我解释一下你想要用什么样的技术路径去实现什么样的事情？对，我们的团队是一个full stack团队，所以我们有很了解数据、很了解预训练、很了解多模态RL post training infra的人，所以其实我们不光是想数据做一些变化，做一个更好的多模态推理的模型，我们是整个呃full stack approach。",
+      "refined_segment_indexes": [
+        296,
+        297
+      ]
+    },
+    {
+      "start": 2304.286,
+      "end": 2335.646,
+      "text": "我觉得Anthropic就是这样的，Anthropic就是一个full stack for coding，就每一个部分都要专注coding。我们就是数据，然后那个architecture、RL algorithms，我们都会专注于多模态，所以我们这些地方都会改，包括那个vision encoder，我们都会有一些新的方法。为什么你们现在做的事情谷歌做不了？对，这个是可以看Anthropic做的，Anthropic他们编程模型做的很好，但是这个模型它不会做多模态的东西，然后这是因为他们就专注于编程。",
+      "refined_segment_indexes": [
+        298,
+        299,
+        300,
+        301
+      ]
+    },
+    {
+      "start": 2335.886,
+      "end": 2345.406,
+      "text": "你看Gemini和Chat GPT，他们就没有这样，他们就做模型，就什么都可以做。在我们的行业就是叫generalist models，Claude这个模型可能就叫一个specialist model。",
+      "refined_segment_indexes": [
+        302,
+        303
+      ]
+    },
+    {
+      "start": 2345.406,
+      "end": 2371.406,
+      "text": "我们这个公司也是这样觉得，就是如果你做一个specialist model，那generalist model就超不了，因为我们会有更多多模态数据，我们会把那个数据调了，对多模态没有用的数据，比如说二战是谁赢了，在什么地方打，那可能对多模态没有什么帮助，所以我们就可以减少那些数据，把更多数据就留给多模态数据，视频和图片，这样的方法就很难其他的公司赶上来。",
+      "refined_segment_indexes": [
+        304,
+        305
+      ]
+    },
+    {
+      "start": 2371.646,
+      "end": 2398.766,
+      "text": "现在的视觉模型，比如说Google的View系列，或者是OpenAI的Sora系列，你觉得他们就还不够好，因为视觉里面他们还不够理解他们在生成的东西，是吗？能不能给我们解释一下视觉理解模型是什么？然后它跟Sora还有View这样的视频生成模型有什么样的区别？其实生成和理解和推理是很不一样的东西，你就看语言模型的话，五年前。",
+      "refined_segment_indexes": [
+        306,
+        307,
+        308,
+        309
+      ]
+    },
+    {
+      "start": 2399.121,
+      "end": 2429.681,
+      "text": "这些模型已经会编程，你让GPT三出一些，变成它可以一般的人看这个程序，他会觉得哦这个程序很好，就像一个工程师写的一样。但是如果工程师来看他写的代码，那他肯定会说哦这个不对，这个跑不了。所以这就是生成和理解的区别。一般就是这些大模型都很容易生成东西，就一你一下看都会觉得很好。但是你仔细看的话，像那个图片，你会看哦那个字写的不对，或者那个人有三只手。",
+      "refined_segment_indexes": [
+        310,
+        311,
+        312,
+        313,
+        314
+      ]
+    },
+    {
+      "start": 2429.841,
+      "end": 2460.721,
+      "text": "导演也会看这些视频，导演看了这视频也会觉得这个地方不对，这个地方明显是AI做出来的东西。所以我们在视觉理解能力就可能是跟五年前的呃GPT三GPT二对语言理解差不多。我记得就是我们在前产的时候，你还跟我说过一个老鹰抓兔子的比喻哈，我觉得那还挺挺形象的。我们那时候是产世界模型，所以世界模型我觉得你可以想象像一个老鹰，很多老鹰都吃鸟。",
+      "refined_segment_indexes": [
+        315,
+        316,
+        317,
+        318
+      ]
+    },
+    {
+      "start": 2461.361,
+      "end": 2495.521,
+      "text": "但是你抓这个鸟的时候，那你肯定要理解gravity和wind和turbulence，也要懂这个翅膀要什么角度才可以赶上另外一只鸟，你也要预测另外一只鸟会用什么方向飞，你要算哦我要什么速度才可以到那个地方再捅一点就可以把那个鸟抓起来。所以他们的脑筋其实都都可以算这些东西，都很复杂的东西。不管可以抓鸟，他们也会抓兔子吃老鼠吃。算出来哦这个兔子如果它跑到一个桥下面，那它从哪里会出来？或者一个老鼠跑到一堆草里面，那最后会从哪里出来？",
+      "refined_segment_indexes": [
+        319,
+        320,
+        321,
+        322,
+        323
+      ]
+    },
+    {
+      "start": 2495.681,
+      "end": 2523.681,
+      "text": "这些动物他们很了解这个natural world这个physical world。但是如果我们可以问老鹰的大脑，what is the law of gravity？或者what is the gravitational constant？或者what angle do you need to have lift to fly？我们不会知道这些knowledge，因为这样的concept一些概念都是人发明的。如果我们是有呃四只手或者有二十个手指，那我们数学可能可能就很不一样。",
+      "refined_segment_indexes": [
+        324,
+        325,
+        326,
+        327,
+        328,
+        329
+      ]
+    },
+    {
+      "start": 2523.841,
+      "end": 2545.921,
+      "text": "老鹰想的自己的这个视觉模型就可能帮不了其他的行业其他的领域。所以这就是世界模型和这些语言模型的区别。现在很多的new lab出来，他们也是想尝试一下不同的一些模型的研发的思路嘛。那有一派就是可能就是大语言模型这一类的，那有一派呢就是世界模型。",
+      "refined_segment_indexes": [
+        330,
+        331,
+        332,
+        333
+      ]
+    },
+    {
+      "start": 2546.081,
+      "end": 2572.401,
+      "text": "但是你相信有一个中间点，就是你做的这一派又需要语言的模型，嗯，然后又需要视觉的模型，嗯，对，啊能不能这三派给我们来梳理一下，就是每派他们他们相信的是什么，他们信仰的是什么，然后他们betting on的是一个是怎么样能够达到AGI的一个路径呢？好，啊如果这一块你觉得有点难用中文解释的话，用英文也没有关系。好好，我先试一试用中文。",
+      "refined_segment_indexes": [
+        334,
+        335,
+        336
+      ]
+    },
+    {
+      "start": 2572.481,
+      "end": 2604.881,
+      "text": "不过我们现在看语言模型他们的思维链都是用语言做出来的，就包括Gemini ChatGPT和Claude，他们就是觉得这思维链变得越来越长，越来越diverse，那模型就越来越聪明，都可以做越来越多的东西，然后最后就可以达到AGI，通过编程越来越好，用这个编程就做越好的模型。但是如果你看模型做视觉问题的话，现在这些模型都不会数东西。如果呃有几个杯子在一个桌子，他们经常会就hallucinate，就说错，就乱说。",
+      "refined_segment_indexes": [
+        337,
+        338,
+        339
+      ]
+    },
+    {
+      "start": 2604.961,
+      "end": 2631.281,
+      "text": "所以我觉得你光scale这个语言这部分还是不够，了解我们的世界，然后了解呃图片和视频。另外一个方向就是你说的世界模型，这些lab都是从计算机视觉部门出来的，就像飞飞和Yang Lucon。嗯，那他们的想法我觉得是更偏academia那样的想法，就是说哦我要做一个新的模型，novelty很重要，因为对academia你必须要novel你才可以发表文章。",
+      "refined_segment_indexes": [
+        340,
+        341,
+        342
+      ]
+    },
+    {
+      "start": 2631.521,
+      "end": 2663.243,
+      "text": "我觉得他们就是比较相信视觉，其实有一点历史，NeurIPS之前大部分的文章都是视觉，整个机器学习大部分都是做视觉。就是做语言理解是很少，包括我和COC，我们就是算很少数的呃人。最近可能变了，因为LLM，但是我们这个是算一个比较 niche的领域。然后这次就是因为很多researcher之前也包括加Fenton，他们就是觉得视觉is the key to intelligence，就是因为有视觉，人就很聪明。",
+      "refined_segment_indexes": [
+        343,
+        344,
+        345,
+        346
+      ]
+    },
+    {
+      "start": 2663.323,
+      "end": 2694.043,
+      "text": "但是从语言角度来说，嗯，视觉就是不够，就光靠视觉不够有intelligence，因为动物、生物他们还可以做我们现在机器人做不了东西，他们视觉还是比我们现在的模型好。就像那个老鹰可以抓那只鸟，就算我们可以做出来一个很好的虚拟老鹰，我们还不会有呃intelligence，还是达不到AGI。但是视觉领域的人，他们会觉得呃vision is the key to intelligence，所以这些世界模型更靠视觉和图像的数据。",
+      "refined_segment_indexes": [
+        347,
+        348,
+        349
+      ]
+    },
+    {
+      "start": 2694.043,
+      "end": 2728.843,
+      "text": "但是这样的话，就是像我刚才说的呃那个老鹰，你就不能跟人人做出来的概念合到一起，就像呃数学和物理和化学，因为这都是人造的东西，那就跟世界模型还是比较远。所以我们在我们这个公司，我们就是觉得要把语言推理加上视觉推理，才可以做到一个模型，可以帮大家，可以帮所有的行业。就相当于是把那些什么重力的gravity的公式给它输到老鹰的脑子里面去。",
+      "refined_segment_indexes": [
+        350,
+        351,
+        352
+      ]
+    },
+    {
+      "start": 2729.003,
+      "end": 2746.763,
+      "text": "对，对，可以这样理解吗？呃，对，然后用老鹰的眼睛，然后呃脑筋一部分，但是还是要用人人的推理。嗯，理解，对，呃世界模型这个概念这两年很火哈。啊，你觉得这些公司他们的发展能够到达AGI吗？",
+      "refined_segment_indexes": [
+        353,
+        354,
+        355,
+        356
+      ]
+    },
+    {
+      "start": 2747.003,
+      "end": 2780.843,
+      "text": "我觉得可能过了五年你再问我这个问题，我觉得他们还是很早，有可能是跟对大模型很早的一个阶段，他们做训练的时候还在一个显示卡在跑，这可能就是跟我们在二零一五的时候做那个一开始那个预训练也是在一个显示卡在跑，但是需要很多很多年才可以做成一个大模型。嗯，理解。所以你觉得现在世界模型还没有到transformer时刻？嗯，还没有，他们可能需要新的结构，像GPT，但是可能我觉得还是要要再加几步才可以到呃一个useful model。",
+      "refined_segment_indexes": [
+        357,
+        358,
+        359,
+        360
+      ]
+    },
+    {
+      "start": 2781.003,
+      "end": 2813.883,
+      "text": "你觉得做这个视觉推理的其他公司，大家的竞争优势是什么？就比如说Google，我想他们是不是内部可能也看到了这个东西，所以他们可能内部也会在做。Maybe Meta，Maybe OpenAI也会做，因为我看到DeepSeek之前好像推出了一篇文章，好像也是很similar的一些东西，他后来把那个文章给删掉了。对啊，你觉得这个competition landscape现在是什么样子的？对，呃那个DeepSeek文章很有意思，因为他们呃发了，然后后来他们就把那个又删了，但是在网络什么都删不了，这样大家都读过了。",
+      "refined_segment_indexes": [
+        361,
+        362,
+        363,
+        364,
+        365
+      ]
+    },
+    {
+      "start": 2813.963,
+      "end": 2841.403,
+      "text": "对，其实DeepSeek的想法是跟我们的很像，他们的path呃有点像我们的path，但是其他的Frontier Lab、OpenAI、DeepMind和Anthropic，我觉得他们是越来越偏编程的方向，因为编程这个市场很大，很多人现在都是在用模型编程，他们也是觉得你要做一个很好的编程模型，你就可以有self improvement，这个叫recursive self improvement，有的人叫RSI，谁先把那个突破，那谁就先可以达到AGI。",
+      "refined_segment_indexes": [
+        366,
+        367
+      ]
+    },
+    {
+      "start": 2841.723,
+      "end": 2872.923,
+      "text": "然后这些Frontier Lab他们都不想第二达到AGI，都想第一，所以其实他们有很多压力做一个更好的编程模型。所以因为这个压力，他们就不是很看重多模态视觉推理这个问题。所以我在Gemini的时候，我就我就感觉到了这个，所以我就觉得哦，现在是一个很好的机会做一个多模态推理的模型。所以你觉得DeepSeek会是你们的比较的一个大的竞争对手吗？可能是，可能是，对，但是我不知道他们为什么把那个文章删了，他们是不是又换了一个方向？",
+      "refined_segment_indexes": [
+        368,
+        369,
+        370,
+        371,
+        372
+      ]
+    },
+    {
+      "start": 2874.443,
+      "end": 2898.518,
+      "text": "如果你们是一个非常research driven的团队的话，啊，到达AGI可能还有一些时间嘛？中间的话，你的投资人肯定也会问我说：“你中间用什么来养活你们自己？就除了VC的钱，所以你们的产品商业化落地是怎么去规划的？”我们是一个呃research and product lab，所以我们也是做研究，也是做这个frontier research。",
+      "refined_segment_indexes": [
+        373,
+        374,
+        375,
+        376
+      ]
+    },
+    {
+      "start": 2898.758,
+      "end": 2930.518,
+      "text": "但是我们也我也是有那个Google Brain的背景啊，然后Google Brain的时候，我们就也是有个目标，就是把这些模型就放在产品里啊，然后就让几十亿的人用。然后现在Gemini就有很多很多人用了，所以那是比较成功。但是我们在这个公司也是一样的目标，也是要做一个API，然后让大家用，帮助公司解决他们的视觉问题。嗯啊，所以我们也有这个目标。嗯，好，就是还是通过模型API的这个方式去变现。对，嗯，对。",
+      "refined_segment_indexes": [
+        377,
+        378,
+        379,
+        380,
+        381,
+        382
+      ]
+    },
+    {
+      "start": 2930.998,
+      "end": 2956.198,
+      "text": "但是你的ultimate goal还是说就去帮助大语言模型啊和视觉模型一起达到AGI。对，达到视觉AGI，呃，至少。嗯，怎么去定义视觉AGI啊？视觉AGI，我觉得应该是比AGI更好表达啊，因为AGI它的这个bar每天都在变。对，有时候是说哦，有的人说我们已经到了AGI，有的人说我们没有到AGI。",
+      "refined_segment_indexes": [
+        383,
+        384,
+        385,
+        386,
+        387
+      ]
+    },
+    {
+      "start": 2956.198,
+      "end": 2990.438,
+      "text": "但是视觉世界大部分人都可以看到东西，都有视觉，大部分人看东西基本的level都是差不多，可能有些人反应更快，但是大部分如果你看一个车的方向盘，都都懂，这是这是怎么用的？系鞋带、拼像乐高、瑜伽的家具，那些都是视觉问题，这些模型都不行。所以我觉得有了一个模型可以做这些最基本的东西，那我们就是on the path to AGI，从那时候到AGI可能就不远了。出来做公司跟在谷歌有什么不一样？",
+      "refined_segment_indexes": [
+        388,
+        389,
+        390,
+        391
+      ]
+    },
+    {
+      "start": 2990.518,
+      "end": 3015.478,
+      "text": "我问这个问题的原因是因为当你在谷歌十四年，你有无限的资源，你有无限的资金，你有无限的人才。然后当你出来了之后，就什么都要自己搞，要自己去找人、找钱、找方向，对吧？嗯嗯，这中间的差异对你来说是什么样的一个体验啊？呃，对，有很多地方不一样，所以呃，在卡上面，在显示卡，那当然会少很多。",
+      "refined_segment_indexes": [
+        392,
+        393,
+        394,
+        395
+      ]
+    },
+    {
+      "start": 3015.798,
+      "end": 3047.878,
+      "text": "但是有一个地方是一个呃优点是呃在谷歌话，在大公司，他们每个礼拜那个priorities可能都变，所以可能今天有卡，可能下一个礼拜或者下一个月那也就没有卡了。但是在一个新公司的话，我们买了卡，那那就不会有人拿走。那在大公司就不是这样啊。然后还有一个是，我觉得我突然要学很多新的东西，学怎么用PyTorch，因为在DeepMind都是用JAX。嗯。",
+      "refined_segment_indexes": [
+        396,
+        397,
+        398,
+        399,
+        400
+      ]
+    },
+    {
+      "start": 3047.958,
+      "end": 3074.998,
+      "text": "然后要学怎么用Megatron，怎么用AWS，怎么用Slurm，有很多很多东西要学，因为Google基本上不用呃开源的东西，所以那个learning curve是很steep对我来说。还有一个我觉得呃比较难是招聘。嗯。啊，因为在DeepMind，那我是在Gemini那个团队，那很多很多人都想进Gemini，所以一般发了一个offer，那那个看的得会接受。",
+      "refined_segment_indexes": [
+        401,
+        402,
+        403,
+        404
+      ]
+    },
+    {
+      "start": 3075.398,
+      "end": 3108.358,
+      "text": "但是在一个小公司那就不一样，我们现在还不是很大的名气，他们知道一个小公司有就是有更多risk，跟一个大公司很稳定，所以招聘就是更难。就有的人就喜欢这个大大公司的安全感，但是有的人就想呃试一试，就出来一个新的地方，可能我们就可能会变成下一个OpenAI或者Anthropic，所以他们就会加入我们。嗯，但是你出来了之后，你跟我说啊，会有很多的research freedom，嗯，对吧？就研究自由。",
+      "refined_segment_indexes": [
+        405,
+        406,
+        407,
+        408
+      ]
+    },
+    {
+      "start": 3108.678,
+      "end": 3139.321,
+      "text": "但是研究自由的代价是什么？The cost of research freedom是什么？Cost of research freedom就可能这个support会少一些，嗯，就像。谷歌如果一个 research idea 不成功，那就没关系，嗯，你还可以做下一个项目，还有很多资源，公司还有很多钱可以支持你。但是在一个 startup 那一个 failed research idea 那个 risk 高一些，因为那些资源已经消耗了，不会带回来。我觉得压力会稍微高一点，啊，做呃 research。",
+      "refined_segment_indexes": [
+        409,
+        410,
+        411,
+        412,
+        413,
+        414
+      ]
+    },
+    {
+      "start": 3139.321,
+      "end": 3174.201,
+      "text": "所以我们现在就是找，呃，世界上最好的一些研究员，靠他们做很好的 research，就可以有很好的结果。你觉得谷歌这十四年，嗯，带给你最大的是什么？对我觉得我这几年运气很好，可以待在这个世界一流的呃研究室，然后可以呃看到 AI 发展这么多。我们十年前没有人会觉得 AI 会发展这么快，这是不可能的。我本来都是觉得，呃，世界变化比较慢，就像包括到月球都是四十年前的事情，呃，六十年前的事情。",
+      "refined_segment_indexes": [
+        415,
+        416,
+        417,
+        418,
+        419
+      ]
+    },
+    {
+      "start": 3174.361,
+      "end": 3204.761,
+      "text": "可能我觉得我我这一代都是觉得，哦，世界都变化的很慢，包括这个电子车、自动驾驶车。但是突然 AI 之后，就又感觉，哦，其实科技又开始呃速度变快了。之前还跟我提到过一个词叫 research taste，然后你说呢，出来开 new lab 的这群人，都是因为他们所看到的路线，或者他们觉得比较重要的一些研究方向，在大厂、大公司里面不被看重。其实这个是很考验一个研究员的 research taste，他的他的研究品味的。",
+      "refined_segment_indexes": [
+        420,
+        421,
+        422,
+        423
+      ]
+    },
+    {
+      "start": 3205.241,
+      "end": 3239.721,
+      "text": "嗯，对你能不能呃再给我们说一下，就是研究品味对研究员来说，它重要在什么样的地方？那对你来说，研究品味这个东西，在谷歌的这十四年，你是怎么去养成的？对研究品味，品味很重要，就是啊，不光是因为跑实验需要卡，需要资源，啊，我觉得最最重要的资源是时间。如果你跑了一个错的实验或者错的方法，那那个时间就不会回来。但是你也要知道什么时候追一个方向，但是也要知道什么时候要放弃一个方向。",
+      "refined_segment_indexes": [
+        424,
+        425,
+        426,
+        427,
+        428
+      ]
+    },
+    {
+      "start": 3239.961,
+      "end": 3272.921,
+      "text": "研究品味就帮助你决定，哦，这个方向我要继续追，我要继续花时间。我的研究品味就是我觉得是从 Jeff Hinton 他们来的，然后 Jeff Hinton 他就是觉得我们做 AI 的话，我们就要根据这个大脑的思想。我们觉得大脑，呃，这部分是用来做视觉，用这些方法做视觉，那我们也应该做模型，也是用差不多方法，就像 CNN，包括这些网络模型，这些 neural networks 也是看 neurons，他们也是学，然后他们就是从数据学的。",
+      "refined_segment_indexes": [
+        429,
+        430,
+        431
+      ]
+    },
+    {
+      "start": 3272.921,
+      "end": 3304.601,
+      "text": "然后现在我们的模型也都是从数据学的。我们本身建一个 transformer 的时候，transformer 什么都不知道，你要给他数据，他才可以做任何东西。所以这个也是可能那些神经科学的想法，就是说，哦，一开始这个 brain 什么都不知道，要通过长大就可以学会很多东西。所以，我做研究的时候，我也是按照这个方法想。如果有个新的方向，然后跟人的神经很大的区别，那我可能就不会追那个方向。",
+      "refined_segment_indexes": [
+        432,
+        433,
+        434,
+        435,
+        436
+      ]
+    },
+    {
+      "start": 3304.841,
+      "end": 3328.121,
+      "text": "你的新公司 Jeff Dean 也有投资，啊，对吧？你觉得你在整个的谷歌的生涯当中，Jeff Dean 对你来说是一个什么样的存在？对 Jeff Dean 是一个很好的 advisor。我刚进那个 brain 团队，我就认识他。那时候我们的模型就跑得很慢，我的经理就说，呃，如果有速度问题，你就直接问 Jeff Dean，他什么都知道。",
+      "refined_segment_indexes": [
+        437,
+        438,
+        439,
+        440,
+        441
+      ]
+    },
+    {
+      "start": 3328.121,
+      "end": 3362.028,
+      "text": "然后他就来到我的电脑旁边，然后他就不光是看那个代码，他还是看那个机器代码，就是 machine code，就是比 C 加加和 Python 还是深的代码。然后他说，哦，这个这个地方不对，然后他就改了。从那时候我就知道，哦，Jeff Dean 是很悍壮的人，他什么都懂，他什么都学，他也包括就是自己学了深度学习和这些方法，他才可以做出 Google Brain。啊，所以他就是一个比较，呃，就是一个 role model。我觉得他。对他做的很好了，那他现在就是做 Gemini 的 lead。",
+      "refined_segment_indexes": [
+        442,
+        443,
+        444,
+        445,
+        446,
+        447
+      ]
+    },
+    {
+      "start": 3362.268,
+      "end": 3395.708,
+      "text": "在谷歌里面还有没有谁对你影响非常大的？Paul Clay 影响也是比较大，我跟他合作了好几个项目，然后我们也一起 host 好几个实习生，所以我跟他合作了很久。对谷歌的厉害人太多了，呃，厉害和聪明的人太多了。他们，我觉得谷歌 Brian 和 Demis 就是这一代的 Bell Labs，很多很聪明的人，包括 Noam Shazeer，他也是很厉害，和 Demis Hassabis，他也是很 unique，他是要用 AI 帮助整个世界，所以我觉得这个是很好。",
+      "refined_segment_indexes": [
+        448,
+        449,
+        450,
+        451
+      ]
+    },
+    {
+      "start": 3396.028,
+      "end": 3424.588,
+      "text": "好的，最后呢，啊，我们节目可以让你免费来打个广告啊。首先你想招什么样的人才来你们的这个 New Lab 实验室？然后呢，呃，对于好的人才，你跟他们喊几句话，告诉大家为什么他们应该来你的公司，然后跟你一起达到世界 AGI。我们现在就是呃招世界一流的 一个团队，我们觉得要人才呃密集很高就可以进步更快啊。",
+      "refined_segment_indexes": [
+        452,
+        453,
+        454,
+        455
+      ]
+    },
+    {
+      "start": 3424.588,
+      "end": 3449.388,
+      "text": "然后我看这些中国的呃研究所，就像 DeepSeek，呃和这些地方，只是因为他们小，密集很高就可以做出很好的东西。我们在招有多模态经验的人，RL 经验的呃研究员，然后我们也在招 infrastructure 的工程师，管理过呃这些 GPU clusters，或者做了呃 training kernels、cuda kernel optimization 这些东西。为什么要加入我们？",
+      "refined_segment_indexes": [
+        456,
+        457,
+        458
+      ]
+    },
+    {
+      "start": 3449.868,
+      "end": 3482.268,
+      "text": "那是因为我觉得我们这个团队是 New Lab 的一个 top tier New Lab，这个团队在其他的地方这么多数据经验，这么多预训练经验，这么多 frontier model 经验，只能在可能三四个地方可以找到，大部分其他 New Lab 都没有这么多的经验。我们的方向也是一个比较新的方向，我们觉得我们就会带过来下一代的推理，下一代的 reasoning 就离人的推理近很多。我们希望大家来跟我们一起成长到下一个呃 anthropic 或者下一个 OpenAI。",
+      "refined_segment_indexes": [
+        459,
+        460,
+        461
+      ]
+    },
+    {
+      "start": 3482.668,
+      "end": 3517.468,
+      "text": "好，谢谢 Andrew。好，谢谢。你们也是刚刚搬进来？对，刚刚搬进来，我们还是用钥匙开门。现在那个应该是周五的下午，所以员工都差不多离开了哈。你们现在有多少人？我们现在是差不多十五个人。十五个人。嗯，还有两个人在办签证。嗯，可能是十二个人在 research，一个人在 infra，然后两个人在 operations。哦，所以我们是 very research heavy。OK，所以我们还有一些这个 unpack。对，很多亚马逊的合作。",
+      "refined_segment_indexes": [
+        462,
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473,
+        474
+      ]
+    },
+    {
+      "start": 3517.628,
+      "end": 3549.548,
+      "text": "哦，没有关系，非常理解，因为是公司刚成立的时候嘛。对，嗯，这会成为你们公司以后壮大了之后很珍贵的早期资料。嗯，对，one of kind。我们选了这个办公室，就是因为这个院子。对，就像一个 quad，就像一个大学里面的 quad。对，我们就午饭 happy hour 来这里吃饭，然后有客人都是来这里。你们还需要多一点位置。啊，对，多一点。然后我们也有个喷泉可以 relax。你打算还要再加一点什么东西？啊，有个 research 的他要加一个啊 sauna。sauna。对，白天去 sauna。",
+      "refined_segment_indexes": [
+        475,
+        476,
+        477,
+        478,
+        479,
+        480,
+        481,
+        482,
+        483,
+        484,
+        485,
+        486,
+        487
+      ]
+    },
+    {
+      "start": 3550.188,
+      "end": 3584.748,
+      "text": "白天的 sauna 我不知道，就是就累了就就去泡就去做 sauna。你们在 sauna 的时候能够 thinking。对他可能是是，就像我就洗澡的时候 thinking，然后可能可以加一个乒乓球桌或者台球桌，啊，但是我们现在主要是用这个打桌游。啊，对，因为我比较喜欢桌游。你会用视觉模型去玩桌游吗？呃，我试过了，但是他们太差了，像那个象棋版他们都不会。可能我们的模型做完之后，那就可以用它打桌游了。你的模型？对。所以你最爱的办公室是哪一间？就是那个那个角落那里。啊，是这件吗？对，就是这一间。",
+      "refined_segment_indexes": [
+        488,
+        489,
+        490,
+        491,
+        492,
+        493,
+        494,
+        495,
+        496,
+        497,
+        498,
+        499,
+        500
+      ]
+    },
+    {
+      "start": 3585.148,
+      "end": 3612.522,
+      "text": "哦。对，这个光线很好。OK。然后有一个 standing desk。啊，所以就是你经常会在这边看着外面，然后想一想，对对对。或者打电话都在这里。你现在大概？一天的时间分配是什么样子的？有多少时间是在做 operation 的工作？有多少时间是在做 research 跟 thinking？白天大部分时间都是做 operation，就像做 interviews 和把我们的 IT 设计好，把 AWS 设计好。",
+      "refined_segment_indexes": [
+        501,
+        502,
+        503,
+        504,
+        505,
+        506,
+        507,
+        508,
+        509,
+        510,
+        511
+      ]
+    },
+    {
+      "start": 3613.082,
+      "end": 3647.642,
+      "text": "然后我做 research，现在大部分是周末和晚上，嗯，坐在家里就就很安静，就可以思考想新的方法。很多 idea 都是洗澡出来的。我也是，嗯，对，嗯，所以就是 idea 完了之后，马上用 cloud code 就可以实现。idea 来自于 researcher 还是你？idea 在你们公司是怎么样去产生的？啊，都有啊，所以有一些新的 vision encode idea 是我来的，然后有一些新的像 SFT 和数据的 idea 在我们 team 来的，现在在跑。",
+      "refined_segment_indexes": [
+        512,
+        513,
+        514,
+        515,
+        516,
+        517
+      ]
+    },
+    {
+      "start": 3648.282,
+      "end": 3676.922,
+      "text": "啊，但是最后我们还是觉得这像 auto research 这些模型，他们也可以做 research，但是他们的 idea 就太太 average 了，都没有 creativity。然后做 research，肯定要 creativity。我们就是觉得以前啊，这些 idea 就很便宜，因为编程很难，execution 很难。但是有 cloud code 和 GPT Codex 之后，这个 execution 就容易很多，然后现在 idea 就那个价值就增长了。",
+      "refined_segment_indexes": [
+        518,
+        519,
+        520,
+        521
+      ]
+    },
+    {
+      "start": 3676.922,
+      "end": 3696.682,
+      "text": "嗯嗯，所以就是这些最嗯宝贵的 researcher 现在是大家都在互相对争抢的宝贵的资产。对，就是对这些 creative researchers 很重要。嗯，对。然后最近我们看到 new lab 真的出来很多人做创业公司了，你觉得这个趋势还会持续吗？",
+      "refined_segment_indexes": [
+        522,
+        523,
+        524,
+        525
+      ]
+    },
+    {
+      "start": 3696.922,
+      "end": 3730.602,
+      "text": "嗯，我觉得还会吧，啊，因为现在这个很多 opportunities 开源也也有很多模型啊，你可以用，然后融钱也变容易了一点，因为这这么多公司都来 IPO，所以这一这一段时间我觉得还会有很多，嗯，但是我觉得这是这也是一个窗口。过了一段时间，我们这一代的 new lab 就就发展了很多，那那就更难有新的了。嗯，你觉得这个窗口 deadline 截止是在什么时候？窗口 deadline，呃，那很难说，可能这两年吧。",
+      "refined_segment_indexes": [
+        526,
+        527,
+        528,
+        529
+      ]
+    },
+    {
+      "start": 3731.242,
+      "end": 3763.162,
+      "text": "嗯，对，对，然后要再等一会儿，那那就下一代的呃实验室。嗯，下一代的实验室会是什么样子？下一代的实验室，那我就不知道了，那可能是 AGI 后的实验室，那我不知道。嗯，那可能都是 AI 跑的。哦，呀，有可能。嗯。但现在对，但现现在他们 creativity 还离人的 creativity 太太远了。嗯嗯，所以还是不适合。好的，谢谢 Andrew。好的，谢谢。那以上呢，就是我们与 Andrew 带的全部访谈和办公室探访了。",
+      "refined_segment_indexes": [
+        530,
+        531,
+        532,
+        533,
+        534,
+        535,
+        536,
+        537,
+        538,
+        539,
+        540
+      ]
+    },
+    {
+      "start": 3763.482,
+      "end": 3797.402,
+      "text": "New Lab 是如今在硅谷非常重要的一个支线，也是今年以来在硅谷幺零幺选题会上我们着重关注的方向。如今呢，VC 的大量资金涌向这样的新型 AI 实验室，是因为这些大基金们在 OpenAI 等前沿模型上的赌注呢已经太重了，他们需要一些对冲，万一但语言模型无法走到最后呢？那么接下来 AI 怎么发展，可能就是要看这些 new lab 的研究的成果了。就像 AI 技术灵魂领袖 Elias Susskind 说的那样，我们正在重新回到研究时代。",
+      "refined_segment_indexes": [
+        541,
+        542,
+        543,
+        544
+      ]
+    },
+    {
+      "start": 3797.882,
+      "end": 3809.402,
+      "text": "那硅谷幺零幺的 new lab 系列呢还会继续，大家不要忘了关注我们。你们的点赞、留言和转发，是我们做好深度科技和商业内容的最佳动力。我是陈倩，那我们就下期视频再见了，拜。",
+      "refined_segment_indexes": [
+        545,
+        546,
+        547
+      ]
+    }
+  ]
+}
