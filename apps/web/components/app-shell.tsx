@@ -55,6 +55,7 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
     () => window.matchMedia("(max-width: 960px)").matches,
     () => false,
   );
+  const isReaderRoute = pathname.includes("/episodes/");
   const totalEpisodes = shows.reduce((total, show) => total + show.episodeCount, 0);
 
   useEffect(() => {
@@ -166,7 +167,12 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
           transition={{ duration: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
         >
           <div className="sidebar-header">
-            <Link className="wordmark" href="/" aria-label="PodWiki 首页">
+            <Link
+              className="wordmark"
+              href="/shows"
+              aria-label="PodWiki 首页"
+              onClick={() => setMobileOpen(false)}
+            >
               <span className="wordmark-full">PodWiki</span>
               <span className="wordmark-short" aria-hidden="true">P</span>
             </Link>
@@ -248,7 +254,7 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                                 ref={active ? activeEpisodeRef : undefined}
                                 className={`episode-nav-row${active ? " active" : ""}`}
                                 href={episode.href}
-                                aria-label={`${show.title} ${episodeLabel} ${episode.displayTitle}`}
+                                aria-label={`${show.title} ${episodeLabel} ${episode.navigationTitle}`}
                                 aria-current={active ? "page" : undefined}
                                 onClick={() => setMobileOpen(false)}
                               >
@@ -256,7 +262,7 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                                   {episodeLabel}
                                 </span>
                                 <span className="episode-nav-copy sidebar-label">
-                                  <strong>{episode.displayTitle}</strong>
+                                  <strong>{episode.navigationTitle}</strong>
                                   <small>{episode.publishedDate} · {episode.durationLabel}</small>
                                 </span>
                               </Link>
@@ -271,16 +277,18 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
             </nav>
           </div>
 
-          <a
-            className="sidebar-settings"
-            href="#reading-settings"
-            aria-label="阅读设置"
-            onClick={() => setMobileOpen(false)}
-          >
-            <GearSix size={20} />
-            <span className="sidebar-label">阅读设置</span>
-            <CaretRight className="sidebar-label settings-caret" size={18} />
-          </a>
+          {isReaderRoute ? (
+            <a
+              className="sidebar-settings"
+              href="#reading-settings"
+              aria-label="阅读设置"
+              onClick={() => setMobileOpen(false)}
+            >
+              <GearSix size={20} />
+              <span className="sidebar-label">阅读设置</span>
+              <CaretRight className="sidebar-label settings-caret" size={18} />
+            </a>
+          ) : null}
         </m.aside>
 
         <div className="app-surface">{children}</div>

@@ -12,6 +12,7 @@ numbering:
   checked_at: 2026-08-05
   source: publisher-title
 title: "翁家翌：OpenAI，GPT，强化学习，Infra，后训练，天授，tuixue，开源，CMU，清华｜WhynotTV Podcast"
+navigation_title: "翁家翌 - OpenAI、强化学习、Infra 与后训练"
 published_at: "2026-01-17T15:09:39+08:00"
 duration_ms: 7365000
 language: zh-CN

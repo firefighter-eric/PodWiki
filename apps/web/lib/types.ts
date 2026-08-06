@@ -75,6 +75,7 @@ export type Episode = {
   episodeNumber: number | null;
   folder: string;
   title: string;
+  navigationTitle: string;
   editorialTitle: string;
   displayTitle: string;
   subtitle: string;
@@ -113,6 +114,7 @@ export type EpisodeCard = Pick<
   | "episodeNumber"
   | "folder"
   | "title"
+  | "navigationTitle"
   | "editorialTitle"
   | "displayTitle"
   | "subtitle"

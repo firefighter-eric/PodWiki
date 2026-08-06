@@ -13,6 +13,7 @@ numbering:
   source: publisher-rss
   note: "硅谷101官方 RSS 未收录与该 Bilibili 视频对应的单集；发布者称其为 Neolabs 特辑第一期，但不能据此推导硅谷101全节目正式期号"
 title: "“谷歌太慢了”：与Andrew Dai聊Gemini的翻身之战，出走与视觉理解模型【硅谷101视频播客】"
+navigation_title: "Andrew Dai - Gemini 追赶与视觉推理创业"
 published_at: "2026-05-19T11:00:00+08:00"
 duration_ms: 3816512
 language: zh-CN

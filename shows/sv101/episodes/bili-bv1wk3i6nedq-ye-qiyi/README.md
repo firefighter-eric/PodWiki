@@ -13,6 +13,7 @@ numbering:
   source: publisher-rss
   note: "硅谷101官方 RSS 未收录与该 Bilibili 视频对应的单集，无法据此核实或推导正式期号"
 title: "对话叶奇意：“寻找”月之暗面杨植麟、中国两代AI、十年人才迁徙，与AGI信仰【101视频播客】"
+navigation_title: "叶奇意 - AI 人才迁徙、Kimi 投资与 AGI"
 published_at: "2026-07-28T15:49:07+08:00"
 duration_ms: 4224000
 language: zh-CN

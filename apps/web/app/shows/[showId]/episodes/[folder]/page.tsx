@@ -7,8 +7,8 @@ import { ReaderTabs } from "@/components/reader-tabs";
 import { RightRail } from "@/components/right-rail";
 import { SummaryView } from "@/components/summary-view";
 import { TranscriptView } from "@/components/transcript-view";
-import { getEpisode, getEpisodes, timestampToSeconds } from "@/lib/content";
-import { getCorePoints, getFirstTimestamp } from "@/lib/markdown";
+import { getEpisode, getEpisodes } from "@/lib/content";
+import { getEpisodeDescription, getEpisodeLabel } from "@/lib/episode-label";
 
 type EpisodePageProps = {
   params: Promise<{ showId: string; folder: string }>;
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: EpisodePageProps): Promise<Me
   if (!episode) return {};
   return {
     title: episode.displayTitle,
-    description: episode.subtitle || `${episode.showTitle}第 ${episode.episodeKey} 期播客总结与逐字稿`,
+    description: getEpisodeDescription(episode),
   };
 }
 
@@ -39,14 +39,6 @@ export default async function EpisodePage({ params, searchParams }: EpisodePageP
 
   const rawView = Array.isArray(query.view) ? query.view[0] : query.view;
   const view: "summary" | "transcript" = rawView === "transcript" ? "transcript" : "summary";
-  const corePoints = getCorePoints(episode.summaryRaw);
-  const highlightedPoint = corePoints.find((point) => point.title.includes("第一性原理")) ?? corePoints[0];
-  const targetTimestamp = getFirstTimestamp(highlightedPoint?.body ?? episode.summaryRaw);
-  const targetSeconds = targetTimestamp ? timestampToSeconds(targetTimestamp) : 0;
-  const activeChapter = episode.chapters.reduce<(typeof episode.chapters)[number] | undefined>(
-    (active, chapter) => (chapter.seconds <= targetSeconds ? chapter : active),
-    episode.chapters[0],
-  );
   const guests = episode.guests.map((guest) => guest.name).join("、");
   const hosts = episode.hosts.map((host) => host.name).join("、");
   const transcriptStatus = episode.bilingualTranscript
@@ -59,24 +51,26 @@ export default async function EpisodePage({ params, searchParams }: EpisodePageP
 
   return (
     <ReaderPreferences>
-      <div className="reader-grid">
-        <ChapterRail
-          chapters={episode.chapters}
-          activeTimestamp={view === "summary" ? activeChapter?.timestamp : episode.chapters[0]?.timestamp}
-        />
+      <div className={`reader-grid reader-grid-${view}`}>
+        {view === "transcript" ? <ChapterRail chapters={episode.chapters} /> : null}
 
         <main id="main-content" className="reader-main" tabIndex={-1}>
-          <MobileReaderTools chapters={episode.chapters} />
+          <div className="reader-view-toolbar">
+            <ReaderTabs href={episode.href} view={view} />
+          </div>
+          <MobileReaderTools
+            chapters={episode.chapters}
+            showChapters={view === "transcript"}
+          />
           <header className="episode-hero">
             <div className="episode-kicker-row">
               <p className="episode-kicker">
                 {episode.showTitle}
                 <span>·</span>
-                {episode.episodeNumber ? `第 ${episode.episodeNumber} 期` : "特别访谈"}
+                {getEpisodeLabel(episode.episodeNumber)}
                 <span>·</span>
                 {episode.durationLabel}
               </p>
-              <ReaderTabs href={episode.href} view={view} />
             </div>
             <h1>{episode.displayTitle}</h1>
             {episode.subtitle ? <p className="episode-subtitle">{episode.subtitle}</p> : null}

@@ -11,6 +11,7 @@ numbering:
   status: unknown
   checked_at: YYYY-MM-DD
 title: 单集标题
+navigation_title: "访谈人物 - 精简题目"
 published_at: "YYYY-MM-DDTHH:MM:SS+08:00"
 duration_ms: 0
 language: zh-CN

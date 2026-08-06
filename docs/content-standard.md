@@ -109,12 +109,18 @@ slug，例如：
 `episode_number` 与标题分开保存。单集 `title`、Markdown 一级标题和 Wiki
 索引展示标题均不得拼接 `#<number>`、`<number>.` 等期号前缀或后缀。
 
+侧栏使用单独维护的 `navigation_title`，统一写成“访谈人物 - 精简题目”。
+人物必须来自 `participants` 中 `role: guest` 的记录；题目保留最有辨识度的
+主题，避免平台栏目名、访谈时长、期号和内部 `episode_key`，并控制在侧栏两行
+内可读。发布者原标题继续原样保存在 `title`，不要为了导航展示而覆盖它。
+
 ```yaml
 id: "zhangxiaojun:bili-bv1nb3u6teru"
 episode_key: bili-bv1nb3u6teru
 episode_number: null
 slug: bili-bv1nb3u6teru-liao-heng
 release_type: special
+navigation_title: "廖恒 - 芯片产业周期与昇腾工程史"
 numbering:
   status: not-in-publisher-feed
   checked_at: 2026-08-05

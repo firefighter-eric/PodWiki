@@ -22,11 +22,6 @@
 html {
   scroll-behavior: smooth;
   background: var(--paper);
-  scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-  display: none;
 }
 
 body {
@@ -36,11 +31,6 @@ body {
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  scrollbar-width: none;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 button,
@@ -328,7 +318,7 @@ button {
 
 .episode-show-heading small {
   color: var(--ink-faint);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
 }
 
@@ -388,6 +378,7 @@ button {
 .episode-nav-copy strong {
   display: -webkit-box;
   overflow: hidden;
+  overflow-wrap: anywhere;
   font-size: 13px;
   font-weight: 560;
   line-height: 1.42;
@@ -398,7 +389,7 @@ button {
 .episode-nav-copy small {
   overflow: hidden;
   color: var(--ink-faint);
-  font-size: 10.5px;
+  font-size: 11px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -512,6 +503,13 @@ button {
 .reader-grid {
   display: grid;
   min-height: 100dvh;
+}
+
+.reader-grid-summary {
+  grid-template-columns: minmax(0, 1fr) 236px;
+}
+
+.reader-grid-transcript {
   grid-template-columns: 228px minmax(0, 1fr) 236px;
 }
 
@@ -567,27 +565,6 @@ button {
   color: var(--ink);
 }
 
-.chapter-link.active {
-  color: var(--accent-dark);
-  background: #fff9f1;
-  font-weight: 620;
-}
-
-.chapter-link.active::before {
-  position: absolute;
-  top: 6px;
-  bottom: 6px;
-  left: -21px;
-  width: 3px;
-  background: var(--accent);
-  content: "";
-}
-
-.chapter-link.active time,
-.chapter-link.active span {
-  color: var(--accent-dark);
-}
-
 .reader-main {
   min-width: 0;
   padding: 20px 32px 100px;
@@ -597,12 +574,26 @@ button {
   outline: none;
 }
 
+.reader-view-toolbar,
 .episode-hero,
 .summary-view,
 .transcript-view,
 .mobile-reader-tools {
   width: min(100%, var(--content-measure));
   margin-inline: auto;
+}
+
+.reader-view-toolbar {
+  position: sticky;
+  z-index: 15;
+  top: env(safe-area-inset-top, 0px);
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 7px 0;
+  background: rgba(251, 250, 246, 0.96);
+  backdrop-filter: blur(10px);
 }
 
 .episode-hero {
@@ -653,6 +644,11 @@ button {
   transition: color 160ms ease, background-color 160ms ease;
 }
 
+.reader-tabs a:hover {
+  color: var(--ink);
+  background: #f5f2ec;
+}
+
 .reader-tabs a[aria-current="page"] {
   color: var(--accent-dark);
   background: var(--paper-warm);
@@ -669,7 +665,7 @@ button {
 
 .episode-subtitle {
   margin: 0;
-  color: #7e7b75;
+  color: var(--ink-soft);
   font-family: var(--serif);
   font-size: clamp(18px, 1.65vw, 23px);
   line-height: 1.5;
@@ -734,8 +730,9 @@ button {
 .summary-section,
 .related-transcript,
 .extended-summary,
+.transcript-view,
 .transcript-line {
-  scroll-margin-top: 24px;
+  scroll-margin-top: 72px;
 }
 
 .prose h2,
@@ -859,6 +856,11 @@ button {
   text-decoration: none;
 }
 
+.related-lines a:hover {
+  color: var(--ink);
+  background: #f5f2ec;
+}
+
 .related-lines time {
   color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
@@ -902,7 +904,7 @@ button {
 
 .markdown-body h2 {
   margin-top: 42px;
-  scroll-margin-top: 24px;
+  scroll-margin-top: 72px;
 }
 
 .markdown-body h2:first-child {
@@ -912,7 +914,7 @@ button {
 .markdown-body h3 {
   margin: 30px 0 9px;
   font-size: 19px;
-  scroll-margin-top: 24px;
+  scroll-margin-top: 72px;
 }
 
 .markdown-body blockquote {
@@ -962,10 +964,6 @@ button {
 
 .source-section p:first-of-type {
   color: var(--ink);
-}
-
-.source-section .source-note {
-  margin-top: 18px;
 }
 
 .source-section a {
@@ -1233,7 +1231,7 @@ button {
 }
 
 .search-box input::placeholder {
-  color: #99958e;
+  color: var(--ink-faint);
 }
 
 .search-result-header {
@@ -1281,7 +1279,7 @@ button {
 
 .search-result-copy small {
   color: var(--accent-dark);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .search-result-copy strong {
@@ -1313,7 +1311,7 @@ button {
   margin: 0;
   color: var(--ink-faint);
   border-top: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 11px;
   text-align: right;
 }
 
@@ -1352,7 +1350,7 @@ button {
   display: grid;
   gap: 12px;
   margin-bottom: 64px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .show-card {
@@ -1487,7 +1485,15 @@ button {
 }
 
 @media (max-width: 1260px) {
-  .reader-grid {
+  .sidebar-settings {
+    display: none;
+  }
+
+  .reader-grid-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reader-grid-transcript {
     grid-template-columns: 210px minmax(0, 1fr);
   }
 
@@ -1505,6 +1511,10 @@ button {
 
   .mobile-reader-tools details {
     position: relative;
+  }
+
+  .mobile-reader-tools .mobile-chapter-tool {
+    display: none;
   }
 
   .mobile-reader-tools summary {
@@ -1763,6 +1773,10 @@ button {
     margin-bottom: 8px;
   }
 
+  .mobile-reader-tools .mobile-chapter-tool {
+    display: block;
+  }
+
   .episode-kicker-row {
     align-items: flex-start;
     flex-direction: column;
@@ -1853,7 +1867,7 @@ button {
   .mobile-reader-tools details > nav,
   .mobile-reader-tools details > .reading-controls {
     position: fixed;
-    top: 58px;
+    top: 158px;
     right: 12px;
     left: 12px;
     width: auto;
@@ -1865,7 +1879,7 @@ button {
   }
 
   .episode-kicker {
-    padding-left: 44px;
+    padding-left: 0;
   }
 
   .episode-hero h1 {
