@@ -5,7 +5,9 @@
 - Entry point: `scripts/transcribe_audio.py`.
 - Engine value: `mlx-whisper`.
 - Proven project baseline: `mlx-community/whisper-large-v3-turbo-q4`.
-- Retain as a fast baseline or use when explicitly requested.
+- Retain existing historical baselines. When explicitly requested for a new comparison, write
+  it under `.cache/benchmarks/`; the current worker can emit non-strict JSON `NaN` values, so
+  do not select, promote, or commit new output until that contract is fixed.
 - Produces engine-native `raw.json` with timestamped segments accepted by the renderer.
 
 ## Qwen3-ASR with ForcedAligner

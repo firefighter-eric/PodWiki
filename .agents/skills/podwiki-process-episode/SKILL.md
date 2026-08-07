@@ -1,6 +1,6 @@
 ---
 name: podwiki-process-episode
-description: Process PodWiki podcast episodes from Bilibili, YouTube, or local media. Use when adding, downloading, resuming, retranscribing, regenerating, or validating an episode through source acquisition, ASR, transcript rendering, metadata updates, and repository checks.
+description: Fully process PodWiki episodes from public Bilibili sources, acquire public YouTube media, or resume existing local-media artifacts. Use when adding, downloading, resuming, retranscribing, regenerating, or validating an episode through source acquisition, ASR, transcript rendering, metadata updates, and repository checks.
 ---
 
 # Process a PodWiki episode
@@ -10,7 +10,9 @@ preserving source provenance, resumability, and the repository content standard.
 
 ## Establish scope
 
-1. Read `docs/content-standard.md` and the relevant templates before editing.
+1. Read `docs/episode-processing.md`, `docs/content-standard.md`, and the relevant templates
+   before editing. Treat the runbook as the canonical end-to-end order and this skill as its
+   execution and safety policy.
 2. Inspect the existing show, episode directory, cache, ASR artifacts, and Git changes.
 3. Infer the requested stopping point:
    - Download or acquire: stop after verified local media and metadata.
@@ -24,12 +26,22 @@ preserving source provenance, resumability, and the repository content standard.
 
 ## Process sources
 
-1. Canonicalize the supplied URL and remove tracking parameters.
+1. Canonicalize the supplied URL and remove tracking parameters. When a Bilibili festival or
+   campaign URL carries `bvid=<BVID>`, extract that identifier and form
+   `https://www.bilibili.com/video/<BVID>/`; never pass the festival page to the acquisition
+   script.
 2. Read `references/bilibili.md` for Bilibili or `references/youtube.md` for YouTube.
-3. Check for a public subtitle track before downloading media.
-4. Do not bypass login, membership, payment, region, or other access controls. Do not use
-   browser cookies unless the user explicitly authorizes that source and access method.
-5. Acquire only one video, never an account or playlist, with:
+3. Run the metadata-only intake and check for a public subtitle track before downloading
+   media. The repository does not yet provide a subtitle importer. If a public subtitle is
+   present, stop and report that unsupported branch instead of silently falling through to
+   audio ASR.
+4. YouTube currently supports canonicalization, metadata intake, and public media acquisition
+   only. Stop before tracked episode ingestion because the repository has not defined its
+   source-identifiers contract or a stable key for unnumbered videos.
+5. Do not bypass login, membership, payment, region, or other access controls. This workflow
+   never uses browser cookies; even an authorized request requires a separate, explicitly
+   documented source-handling workflow.
+6. Acquire only one video, never an account or playlist, with:
 
    ```bash
    env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
@@ -37,13 +49,17 @@ preserving source provenance, resumability, and the repository content standard.
      --output .cache/media/<show-id>/<episode-folder>/source.m4a
    ```
 
-6. Require the sidecar `source.metadata.json` and verify codec, duration, size, sample rate,
+7. Require the sidecar `source.metadata.json` and verify codec, duration, size, sample rate,
    channels, and SHA-256 before marking the source acquired.
-7. Keep downloaded media and temporary files under `.cache/`; never add them to Git.
+8. Keep downloaded media and temporary files under `.cache/`; never add them to Git.
 
 ## Select and run ASR
 
 Read `references/asr-backends.md` before choosing an engine.
+
+Confirm the prerequisites and platform boundary in `docs/episode-processing.md`. The current
+official local ASR path requires Apple Silicon and MLX; do not silently substitute a remote
+service on another platform.
 
 Before starting workers, run `uv sync --all-groups` once. Every worker must then use
 `env UV_CACHE_DIR=.cache/uv uv run --no-sync` so dependency groups do not mutate the
@@ -56,9 +72,11 @@ export HF_ENDPOINT=https://hf-mirror.com
 For a cold local cache, download only after that export and use stable ignored paths:
 
 ```bash
-hf download mlx-community/Qwen3-ASR-1.7B-8bit \
+env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
+  mlx-community/Qwen3-ASR-1.7B-8bit \
   --local-dir .cache/models/qwen3-asr-1.7b-8bit
-hf download mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
+env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
+  mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
   --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
@@ -84,10 +102,14 @@ For the MLX Whisper baseline:
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/transcribe_audio.py \
   --input .cache/media/<show-id>/<episode-folder>/source.m4a \
-  --output shows/<show-id>/episodes/<episode-folder>/asr/whisper/raw.json \
+  --output .cache/benchmarks/<show-id>/<episode-folder>/whisper/raw.json \
   --model mlx-community/whisper-large-v3-turbo-q4 \
   --language zh
 ```
+
+The current Whisper worker may emit non-strict JSON `NaN` values. Keep new comparison output
+under `.cache/benchmarks/`; do not select, promote, or commit it until the worker satisfies the
+repository strict-JSON contract. Preserve already tracked historical baselines.
 
 For one Qwen episode with already cached local models:
 
@@ -111,13 +133,22 @@ successful aligned artifacts, and returns non-zero after the full batch if any i
 Local model paths are preflighted before the first episode, and tracked JSON paths are stored
 repository-relative even when discovery returns absolute filesystem paths.
 
+The batch language options apply to every selected episode and default to Chinese. Group work
+by language and always pass each intended episode explicitly with repeated `--episode` flags.
+Never use cache autodiscovery in a mixed-language repository, especially with `--retranscribe`
+or `--realign`. Do not rerun completed batches merely to verify them; use the repository
+validator so the renderer does not create unnecessary artifact churn.
+
 ## Render and record provenance
 
 1. Render Qwen `aligned.json` into both `refined.json` and `transcript.<language>.md` in one
    run. The renderer writes temporary files first and records the generic input-ASR SHA-256
    (raw for Whisper, aligned for Qwen) plus the rendered transcript SHA-256.
-2. Pass the actual engine and model; never leave a misleading default provenance value.
-3. Update the episode README with:
+2. Remember that the batch script stops at run-directory ASR artifacts. It does not promote
+   the root transcript, update front matter, translate English, write the summary, or update
+   either Wiki index; complete those stages explicitly before reporting ingestion complete.
+3. Pass the actual engine and model; never leave a misleading default provenance value.
+4. Update the episode README with:
    - canonical source URL and verified identifiers;
    - `navigation_title` and `catalog_keyword` set and validated against
      `docs/content-standard.md`;
@@ -125,9 +156,9 @@ repository-relative even when discovery returns absolute filesystem paths.
    - engine, model, options, generation timestamp, and artifact paths;
    - source/refined/rendered segment counts;
    - the exact workflow state reached.
-4. Base an outline summary only on publisher material until the complete transcript exists.
+5. Base an outline summary only on publisher material until the complete transcript exists.
    Do not mark summary or transcript as reviewed without the corresponding review work.
-5. When selecting Qwen as the official transcript, preserve any existing Whisper raw,
+6. When selecting Qwen as the official transcript, preserve any existing Whisper raw,
    refined, and Markdown artifacts under `asr/whisper/`; never delete the previous baseline.
    Then copy the validated Qwen Markdown to the episode root and update the `transcript` and
    `asr_artifacts` metadata to point at Qwen.
@@ -137,6 +168,10 @@ repository-relative even when discovery returns absolute filesystem paths.
 When the episode language is `en`, or the selected `transcript.path` ends in `.en.md`, keep
 `transcript.en.md` as the selected original and also provide a segment-aligned root
 `transcript.zh-CN.md` translation.
+
+For a long transcript, follow the ordered chunking, checkpoint, terminology, SHA-256, and
+structural QA procedure in `docs/episode-processing.md`; never ask a model to rewrite the
+entire file without preserving a resumable segment mapping.
 
 1. Translate exactly one source segment into exactly one target segment. Keep the same
    level-one title, body-line count, line order, and per-line timestamps; never merge, split,
@@ -192,13 +227,15 @@ When the episode language is `en`, or the selected `transcript.path` ends in `.e
 
 1. Run the relevant unit tests.
 2. Run `env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py`.
-3. Run `git diff --check` and inspect `git status --short`.
-4. Confirm media remains ignored and expected ASR/Markdown artifacts are trackable. For an
+3. Run `npm run check` from `apps/web` so the strict content loader, tests, and production
+   build all consume the final repository content.
+4. Run `git diff --check` and inspect `git status --short`.
+5. Confirm media remains ignored and expected ASR/Markdown artifacts are trackable. For an
    English selected transcript, also confirm the required root Chinese translation and its
    `transcript.translations` hashes and segment alignment.
-5. Confirm the root show table has three columns and links every podcast name to its verified
+6. Confirm the root show table has three columns and links every podcast name to its verified
    Bilibili space and every `节目页` to its local README. Confirm the root episode table uses
    the required six columns, the relevant show table keeps the required five columns, and both
    match the final metadata and paths.
-6. Report each episode separately with its reached state, artifact paths, engine/model,
+7. Report each episode separately with its reached state, artifact paths, engine/model,
    validation result, and any remaining human review or access blocker.

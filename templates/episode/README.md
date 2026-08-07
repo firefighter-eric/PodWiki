@@ -58,6 +58,7 @@ asr_artifacts:
     format: podwiki-transcript-markdown-v1
   renderer: scripts/render_asr_transcript.py
 asr_runs: []
+local_audio_cache: null
 last_verified_at: YYYY-MM-DD
 ---
 

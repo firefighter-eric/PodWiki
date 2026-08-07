@@ -16,6 +16,9 @@
 - Record BVID, aid, cid, and page from verified metadata.
 - Treat an empty anonymous subtitle list as "no public subtitle found", not proof that a
   login-visible or hard-burned subtitle does not exist.
+- The repository does not yet provide a public-subtitle importer. When an anonymous subtitle
+  track exists, stop and report that unsupported branch; do not silently ignore it and start
+  audio ASR.
 - If no public subtitle exists and the source is publicly accessible, acquire only the audio
   needed for local processing.
 - Do not infer processing authorization from technical download availability; stay within
