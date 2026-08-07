@@ -180,6 +180,22 @@ function extractMarkdownTitle(markdown: string): string | undefined {
   return /^#\s+(.+)$/mu.exec(markdown)?.[1]?.trim();
 }
 
+function extractSummaryIntro(markdown: string): string {
+  const heading = /^##\s+一句话总结\s*$/mu.exec(markdown);
+  if (!heading) return "";
+
+  const remainder = markdown.slice(heading.index + heading[0].length);
+  const nextHeading = /^##\s+/mu.exec(remainder);
+  return remainder
+    .slice(0, nextHeading?.index ?? remainder.length)
+    .replace(/!\[[^\]]*\]\([^)]+\)/gu, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/gu, "$1")
+    .replace(/\[(?:\d{2}:){2}\d{2}\]/gu, "")
+    .replace(/[*_`]/gu, "")
+    .replace(/\s+/gu, " ")
+    .trim();
+}
+
 function normalizeProvenance(
   value: z.infer<typeof transcriptProvenanceSchema>,
 ) {
@@ -504,6 +520,7 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
       const href = `/shows/${metadata.show_id}/episodes/${folder}`;
       const editorialTitle = extractMarkdownTitle(summary.content) ?? metadata.title;
       const normalizedTitle = normalizeTitle(editorialTitle);
+      const summaryIntro = extractSummaryIntro(summary.content);
       const preferredSource = metadata.sources.find((source) => source.preferred) ?? metadata.sources[0];
 
       const transcriptSegments = parseTranscript(transcript.content);
@@ -531,6 +548,7 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
         editorialTitle,
         displayTitle: normalizedTitle.displayTitle,
         subtitle: normalizedTitle.subtitle,
+        summaryIntro,
         publishedAt,
         publishedDate: publishedAt.slice(0, 10),
         durationMs: metadata.duration_ms,
@@ -619,6 +637,7 @@ export async function getEpisodeCards(showId?: string): Promise<EpisodeCard[]> {
     editorialTitle: episode.editorialTitle,
     displayTitle: episode.displayTitle,
     subtitle: episode.subtitle,
+    summaryIntro: episode.summaryIntro,
     publishedDate: episode.publishedDate,
     guests: episode.guests,
     workflow: episode.workflow,

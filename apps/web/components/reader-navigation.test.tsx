@@ -1,11 +1,16 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
+import {
+  EpisodeHeroTitle,
+  EpisodeSidebarTitle,
+} from "@/components/episode-navigation-title";
 import { MobileReaderTools } from "@/components/mobile-reader-tools";
 import { ReaderPreferences } from "@/components/reader-preferences";
 import { RightRail } from "@/components/right-rail";
 import { getRecentEpisodeCommandItems } from "@/components/search-dialog";
 import { ShowCatalog } from "@/components/show-catalog";
+import { SummaryView } from "@/components/summary-view";
 import { getEpisode, getEpisodes, getShows } from "@/lib/content";
 import { getEpisodeDescription, getEpisodeLabel } from "@/lib/episode-label";
 
@@ -14,6 +19,34 @@ function renderWithPreferences(element: React.ReactNode) {
 }
 
 describe("reader navigation", () => {
+  it("uses the canonical person-topic title in the reader hero", async () => {
+    const episode = await getEpisode("zhangxiaojun", "145-hong-lide");
+    expect(episode).toBeDefined();
+
+    const html = renderToStaticMarkup(createElement(EpisodeHeroTitle, {
+      title: episode!.navigationTitle,
+    }));
+
+    expect(html).toBe(
+      "<h1>洪力德</h1><p class=\"episode-subtitle\">SpaceX 开发史与工程组织</p>",
+    );
+    expect(html).not.toContain("口述 SpaceX 开发史");
+    expect(episode!.title).toContain("口述SpaceX开发史");
+  });
+
+  it("renders sidebar episodes as name-date metadata above a one-line topic", () => {
+    const html = renderToStaticMarkup(createElement(EpisodeSidebarTitle, {
+      title: "游凯超 · vLLM、开源治理与模型—Infra 协同",
+      publishedDate: "2026-07-28",
+    }));
+
+    expect(html).toContain('<strong class="episode-nav-name">游凯超</strong>');
+    expect(html).toContain('<time dateTime="2026-07-28">2026-07-28</time>');
+    expect(html).toContain(
+      '<span class="episode-nav-topic" title="vLLM、开源治理与模型—Infra 协同">vLLM、开源治理与模型—Infra 协同</span>',
+    );
+  });
+
   it("shows the chapter menu only for the transcript view", async () => {
     const episode = await getEpisode("sv101", "247-sheng-ying");
     expect(episode).toBeDefined();
@@ -106,6 +139,8 @@ describe("reader navigation", () => {
     }));
     expect(catalogHtml).toContain('<span class="episode-keyword">SGLang</span>');
     expect(catalogHtml).toContain('<span class="episode-keyword">Kimi</span>');
+    expect(catalogHtml).toContain('class="catalog-tally" aria-label="2 期内容，来自 4 档播客"');
+    expect(catalogHtml).not.toContain('class="show-grid"');
     expect(catalogHtml).toContain('<strong>盛颖</strong><span>SGLang、Infra 产品观与开源</span>');
     expect(catalogHtml).toContain('<strong>叶奇意</strong><span>AI 人才迁徙、Kimi 投资与 AGI</span>');
     expect(catalogHtml).not.toContain('class="episode-navigation-title"');
@@ -120,8 +155,13 @@ describe("reader navigation", () => {
       episodes: selectedEpisodes,
       selectedShow: shows.find((show) => show.id === "sv101"),
     }));
-    expect(selectedShowHtml).toContain('<span class="episode-keyword">SGLang</span>');
-    expect(selectedShowHtml).toContain('<strong>盛颖</strong><span>SGLang、Infra 产品观与开源</span>');
+    expect(selectedShowHtml).toContain('<strong class="show-episode-person">盛颖</strong>');
+    expect(selectedShowHtml).toContain('<span class="show-episode-title">SGLang、Infra 产品观与开源</span>');
+    expect(selectedShowHtml).toContain('class="show-episode-intro"');
+    expect(selectedShowHtml.indexOf('class="show-episode-title"')).toBeLessThan(
+      selectedShowHtml.indexOf('class="show-episode-intro"'),
+    );
+    expect(selectedShowHtml).not.toContain('class="episode-keyword"');
 
     const recentItems = getRecentEpisodeCommandItems(selectedEpisodes);
     expect(recentItems.map((item) => item.title)).toEqual([
@@ -133,5 +173,43 @@ describe("reader navigation", () => {
       "2026-07-28",
     ]);
     expect(recentItems.every((item) => !item.meta.includes("第 "))).toBe(true);
+  });
+
+  it("shows three recent episodes for each podcast on the homepage only", async () => {
+    const [shows, episodes] = await Promise.all([getShows(), getEpisodes()]);
+    const homeHtml = renderToStaticMarkup(createElement(ShowCatalog, { shows, episodes }));
+
+    expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(4);
+    expect(homeHtml.match(/class="podcast-preview-episode"/g)).toHaveLength(12);
+    expect(homeHtml).toContain("按播客浏览");
+    expect(homeHtml).toContain("查看全部 12 期");
+    expect(homeHtml).toContain("查看全部 8 期");
+    expect(homeHtml).toContain("查看全部 6 期");
+    expect(homeHtml).toContain("查看全部 5 期");
+
+    const showHtml = renderToStaticMarkup(createElement(ShowCatalog, {
+      shows,
+      episodes: episodes.filter((episode) => episode.showId === "sv101"),
+      selectedShow: shows.find((show) => show.id === "sv101"),
+    }));
+    expect(showHtml).not.toContain("podcast-preview-card");
+  });
+
+  it("renders episode-authored core-point logic tables for every podcast", async () => {
+    const episodes = await getEpisodes();
+    const showIds = ["zhangxiaojun", "sv101", "luoyonghao", "whynottv"];
+
+    for (const showId of showIds) {
+      const episode = episodes.find((candidate) => candidate.showId === showId);
+      expect(episode).toBeDefined();
+
+      const html = renderToStaticMarkup(await SummaryView({ episode: episode! }));
+      expect(html).toContain('<table class="core-points-table">');
+      expect(html).toContain('<caption class="sr-only">本期核心观点逻辑表</caption>');
+      expect(html).toContain('<th scope="col">');
+      expect(html).toContain('data-label=');
+      expect(html).not.toContain('<th scope="row">01</th>');
+      expect(html).not.toContain('class="core-points-summary"><h2>核心观点</h2><ul>');
+    }
   });
 });

@@ -13,7 +13,7 @@ import { LazyMotion, domAnimation, m } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { EpisodeNavigationTitle } from "@/components/episode-navigation-title";
+import { EpisodeSidebarTitle } from "@/components/episode-navigation-title";
 import type { EpisodeCard, ShowSummary } from "@/lib/types";
 import { SearchDialog } from "@/components/search-dialog";
 
@@ -58,6 +58,14 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
   );
   const isReaderRoute = pathname.includes("/episodes/");
   const totalEpisodes = shows.reduce((total, show) => total + show.episodeCount, 0);
+  const selectedShow = shows.find(
+    (show) => pathname === show.href || pathname.startsWith(`${show.href}/`),
+  );
+  const visibleShows = selectedShow ? [selectedShow] : shows;
+  const visibleEpisodeCount = visibleShows.reduce(
+    (total, show) => total + show.episodeCount,
+    0,
+  );
 
   useEffect(() => {
     const handleShortcut = (event: KeyboardEvent) => {
@@ -212,37 +220,69 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
               <kbd className="sidebar-shortcut">⌘K</kbd>
             </button>
 
-            <nav className="show-navigation" aria-label="播客单集">
+            <nav className="show-navigation" aria-label="播客与单集">
               <div className="sidebar-section-heading sidebar-label">
-                <p>具体单集</p>
-                <span>{episodes.length} 期</span>
+                <p>播客来源</p>
+                <span>{shows.length} 档</span>
               </div>
-              <Link
-                className={`show-row all-shows-row${pathname === "/shows" ? " active" : ""}`}
-                href="/shows"
-                aria-label="全部节目"
-                aria-current={pathname === "/shows" ? "page" : undefined}
-                onClick={() => setMobileOpen(false)}
-              >
-                <span className="all-shows-icon" aria-hidden="true">
-                  <SquaresFour size={24} />
-                </span>
-                <span className="show-copy sidebar-label">
-                  <strong>全部节目</strong>
-                  <small>{totalEpisodes} 期节目</small>
-                </span>
-              </Link>
-
-              <div className="episode-nav-list">
+              <div className="show-filter-list">
+                <Link
+                  className={`show-row all-shows-row${pathname === "/shows" ? " active" : ""}`}
+                  href="/shows"
+                  aria-label="全部播客来源"
+                  aria-current={pathname === "/shows" ? "page" : undefined}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <span className="all-shows-icon" aria-hidden="true">
+                    <SquaresFour size={22} />
+                  </span>
+                  <span className="show-copy sidebar-label">
+                    <strong>全部节目</strong>
+                    <small>{totalEpisodes} 期内容</small>
+                  </span>
+                </Link>
                 {shows.map((show) => {
+                  const active = selectedShow?.id === show.id;
+                  return (
+                    <Link
+                      key={show.id}
+                      className={`show-row source-show-row${active ? " active" : ""}`}
+                      href={show.href}
+                      aria-label={`${show.title}，${show.episodeCount} 期内容`}
+                      aria-current={active ? "page" : undefined}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      <span className="source-show-mark" aria-hidden="true" />
+                      <span className="show-copy sidebar-label">
+                        <strong>{show.shortTitle}</strong>
+                        <small>{show.episodeCount} 期内容</small>
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+
+              <div className="sidebar-section-heading episode-list-heading sidebar-label">
+                <p>{selectedShow ? "节目单集" : "全部单集"}</p>
+                <span>{visibleEpisodeCount} 期</span>
+              </div>
+              <div className="episode-nav-list">
+                {visibleShows.map((show) => {
                   const showEpisodes = episodes.filter((episode) => episode.showId === show.id);
                   const headingId = `episode-group-${show.id}`;
                   return (
-                    <section key={show.id} className="episode-show-group" aria-labelledby={headingId}>
-                      <h2 id={headingId} className="episode-show-heading sidebar-label">
-                        <span>{show.shortTitle}</span>
-                        <small>{showEpisodes.length}</small>
-                      </h2>
+                    <section
+                      key={show.id}
+                      className="episode-show-group"
+                      aria-labelledby={selectedShow ? undefined : headingId}
+                      aria-label={selectedShow ? `${show.title}单集` : undefined}
+                    >
+                      {!selectedShow ? (
+                        <h2 id={headingId} className="episode-show-heading sidebar-label">
+                          <span>{show.shortTitle}</span>
+                          <small>{showEpisodes.length}</small>
+                        </h2>
+                      ) : null}
                       <ul>
                         {showEpisodes.map((episode) => {
                           const active = pathname === episode.href;
@@ -256,12 +296,10 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                                 aria-current={active ? "page" : undefined}
                                 onClick={() => setMobileOpen(false)}
                               >
-                                <span className="episode-nav-copy sidebar-label">
-                                  <strong>
-                                    <EpisodeNavigationTitle title={episode.navigationTitle} />
-                                  </strong>
-                                  <small>{episode.publishedDate}</small>
-                                </span>
+                                <EpisodeSidebarTitle
+                                  title={episode.navigationTitle}
+                                  publishedDate={episode.publishedDate}
+                                />
                               </Link>
                             </li>
                           );

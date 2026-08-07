@@ -8,7 +8,7 @@ import {
   timestampToId,
 } from "@/lib/content";
 import type { TranscriptSegment } from "@/lib/types";
-import { getMarkdownSection } from "@/lib/markdown";
+import { getCorePointTable, getMarkdownSection } from "@/lib/markdown";
 
 describe("PodWiki content loader", () => {
   it("loads every current show and episode from the repository", async () => {
@@ -50,6 +50,9 @@ describe("PodWiki content loader", () => {
       expect(episode.navigationTitle).toMatch(/^.+ · .+$/u);
       expect(episode.navigationTitle.startsWith(`${guestNames} · `)).toBe(true);
       expect(episode.navigationTitle.length).toBeLessThanOrEqual(40);
+      expect(episode.summaryIntro.length).toBeGreaterThan(0);
+      expect(episode.summaryIntro).not.toContain("##");
+      expect(episode.summaryIntro).not.toMatch(/\[(?:\d{2}:){2}\d{2}\]/u);
       expect(episode.catalogKeyword).toBe(episode.catalogKeyword.trim());
       expect(episode.catalogKeyword.length).toBeGreaterThan(0);
       expect(episode.catalogKeyword.length).toBeLessThanOrEqual(20);
@@ -151,6 +154,11 @@ describe("PodWiki content loader", () => {
     for (const episode of episodes) {
       expect(getMarkdownSection(episode.summaryRaw, "一句话总结")).not.toBe("");
       expect(getMarkdownSection(episode.summaryRaw, "核心观点")).not.toBe("");
+      const table = getCorePointTable(episode.summaryRaw);
+      expect(table, episode.id).toBeDefined();
+      expect(table!.columns.length, episode.id).toBeGreaterThanOrEqual(2);
+      expect(table!.rows.length, episode.id).toBeGreaterThanOrEqual(3);
+      expect(table!.rows.every((row) => row.length === table!.columns.length), episode.id).toBe(true);
     }
   });
 });

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { findNearestTranscriptSegment, findRelatedSegments } from "@/lib/content";
 import {
+  getCorePointTable,
   getCorePoints,
   getExtendedSummary,
   getFirstTimestamp,
@@ -15,6 +16,7 @@ export async function SummaryView({ episode }: { episode: Episode }) {
   const whyReadItems = whyRead.split("\n").filter((line) => /^-\s+/u.test(line));
   const whyReadPreview = whyReadItems.length > 2 ? whyReadItems.slice(0, 2).join("\n") : whyRead;
   const corePoints = getCorePoints(episode.summaryRaw);
+  const corePointTable = getCorePointTable(episode.summaryRaw);
   const highlightedPoint = corePoints.find((point) => point.title.includes("第一性原理")) ?? corePoints[0];
   const targetTimestamp = getFirstTimestamp(highlightedPoint?.body ?? episode.summaryRaw);
   const targetSegment = targetTimestamp
@@ -42,9 +44,33 @@ export async function SummaryView({ episode }: { episode: Episode }) {
 
       <section id="core-points" className="summary-section core-points-summary">
         <h2>核心观点</h2>
-        <ul>
-          {corePoints.slice(0, 4).map((point) => <li key={point.id}>{point.title}</li>)}
-        </ul>
+        {corePointTable ? (
+          <div className="core-points-table-wrap">
+            <table className="core-points-table">
+              <caption className="sr-only">本期核心观点逻辑表</caption>
+              <thead>
+                <tr>
+                  {corePointTable.columns.map((column) => <th key={column} scope="col">{column}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {corePointTable.rows.map((row, rowIndex) => (
+                  <tr key={`${row[0]}-${rowIndex}`}>
+                    {row.map((cell, cellIndex) => (
+                      <td key={`${cellIndex}-${cell}`} data-label={corePointTable.columns[cellIndex]}>
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <ul>
+            {corePoints.slice(0, 4).map((point) => <li key={point.id}>{point.title}</li>)}
+          </ul>
+        )}
       </section>
 
       {extended ? (
