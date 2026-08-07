@@ -13,6 +13,7 @@ import { LazyMotion, domAnimation, m } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { EpisodeNavigationTitle } from "@/components/episode-navigation-title";
 import type { EpisodeCard, ShowSummary } from "@/lib/types";
 import { SearchDialog } from "@/components/search-dialog";
 
@@ -245,25 +246,21 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                       <ul>
                         {showEpisodes.map((episode) => {
                           const active = pathname === episode.href;
-                          const episodeLabel = episode.episodeNumber === null
-                            ? "特访"
-                            : `#${String(episode.episodeNumber).padStart(3, "0")}`;
                           return (
                             <li key={episode.id}>
                               <Link
                                 ref={active ? activeEpisodeRef : undefined}
                                 className={`episode-nav-row${active ? " active" : ""}`}
                                 href={episode.href}
-                                aria-label={`${show.title} ${episodeLabel} ${episode.navigationTitle}`}
+                                aria-label={`${show.title} · ${episode.navigationTitle} · ${episode.publishedDate}`}
                                 aria-current={active ? "page" : undefined}
                                 onClick={() => setMobileOpen(false)}
                               >
-                                <span className="episode-nav-index" aria-hidden="true">
-                                  {episodeLabel}
-                                </span>
                                 <span className="episode-nav-copy sidebar-label">
-                                  <strong>{episode.navigationTitle}</strong>
-                                  <small>{episode.publishedDate} · {episode.durationLabel}</small>
+                                  <strong>
+                                    <EpisodeNavigationTitle title={episode.navigationTitle} />
+                                  </strong>
+                                  <small>{episode.publishedDate}</small>
                                 </span>
                               </Link>
                             </li>

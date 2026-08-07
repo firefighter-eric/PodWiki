@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-06
   source: publisher-rss
 title: "Manus 决定出售前最后的访谈：啊，这奇幻的 2025 年漂流啊…"
-navigation_title: "季逸超 - Manus 与产品驱动的通用 Agent"
+navigation_title: "季逸超 · Manus 与产品驱动的通用 Agent"
+catalog_keyword: "Manus"
 published_at: "2025-12-30T10:41:23+08:00"
 duration_ms: 12677000
 language: zh-CN

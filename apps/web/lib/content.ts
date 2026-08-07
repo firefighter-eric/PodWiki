@@ -68,9 +68,14 @@ const episodeSchema = z
     show_id: z.string(),
     episode_key: z.union([z.string(), z.number()]).transform(String),
     episode_number: z.number().nullable().optional().default(null),
+    release_type: z.enum(["regular", "special", "bonus", "trailer"]).default("regular"),
     slug: z.string().optional(),
     title: z.string(),
     navigation_title: z.string(),
+    catalog_keyword: z.string().min(1).max(20).refine(
+      (value) => value === value.trim(),
+      "catalog_keyword must not have leading or trailing whitespace",
+    ),
     published_at: z.union([z.string(), z.date()]),
     duration_ms: z.number(),
     language: z.string(),
@@ -518,9 +523,11 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
         showTitle: currentShow.title,
         episodeKey: metadata.episode_key,
         episodeNumber: metadata.episode_number,
+        releaseType: metadata.release_type,
         folder,
         title: metadata.title,
         navigationTitle: metadata.navigation_title,
+        catalogKeyword: metadata.catalog_keyword,
         editorialTitle,
         displayTitle: normalizedTitle.displayTitle,
         subtitle: normalizedTitle.subtitle,
@@ -608,11 +615,11 @@ export async function getEpisodeCards(showId?: string): Promise<EpisodeCard[]> {
     folder: episode.folder,
     title: episode.title,
     navigationTitle: episode.navigationTitle,
+    catalogKeyword: episode.catalogKeyword,
     editorialTitle: episode.editorialTitle,
     displayTitle: episode.displayTitle,
     subtitle: episode.subtitle,
     publishedDate: episode.publishedDate,
-    durationLabel: episode.durationLabel,
     guests: episode.guests,
     workflow: episode.workflow,
     href: episode.href,
@@ -637,13 +644,15 @@ export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
   for (const episode of await getEpisodes()) {
     const episodeHaystack = [
       episode.title,
+      episode.navigationTitle,
+      episode.catalogKeyword,
       episode.showTitle,
       ...episode.participants.flatMap((participant) => [participant.name, ...(participant.aliases ?? [])]),
     ].join(" ");
     if (episodeHaystack.toLocaleLowerCase("zh-CN").includes(lowerQuery)) {
       results.push({
         id: `${episode.id}:episode`,
-        title: episode.displayTitle,
+        title: episode.navigationTitle,
         showTitle: episode.showTitle,
         section: "单集",
         snippet: snippetAround(episodeHaystack, query),
@@ -655,7 +664,7 @@ export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
     if (episode.summaryRaw.toLocaleLowerCase("zh-CN").includes(lowerQuery)) {
       results.push({
         id: `${episode.id}:summary`,
-        title: episode.displayTitle,
+        title: episode.navigationTitle,
         showTitle: episode.showTitle,
         section: "总结",
         snippet: snippetAround(episode.summaryRaw.replace(/[#*`>\[\]]/gu, ""), query),
@@ -670,7 +679,7 @@ export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
     for (const segment of transcriptMatches) {
       results.push({
         id: `${episode.id}:${segment.id}`,
-        title: episode.displayTitle,
+        title: episode.navigationTitle,
         showTitle: episode.showTitle,
         section: "逐字稿",
         snippet: snippetAround(segment.text, query),
@@ -686,7 +695,7 @@ export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
     for (const segment of translationMatches) {
       results.push({
         id: `${episode.id}:translation:${segment.id}`,
-        title: episode.displayTitle,
+        title: episode.navigationTitle,
         showTitle: episode.showTitle,
         section: "译稿",
         snippet: snippetAround(segment.translationText, query),

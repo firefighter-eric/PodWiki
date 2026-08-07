@@ -13,7 +13,8 @@ numbering:
   source: publisher-description
   url: https://www.xiaoyuzhoufm.com/episode/6a037114e1eb34a939471baf
 title: "【正片】李想×罗永浩！李想的理想：通过 AI 技术，让普通人也过上富豪的生活"
-navigation_title: "李想 - AI、具身智能与 L9 Livis"
+navigation_title: "李想 · AI、具身智能与 L9 Livis"
+catalog_keyword: "具身智能"
 published_at: "2026-05-13T12:00:00+08:00"
 duration_ms: 8544619
 language: zh-CN

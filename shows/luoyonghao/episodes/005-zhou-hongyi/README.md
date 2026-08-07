@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-07
   source: publisher-description
 title: "【正片】周鸿祎×罗永浩！近四小时高密度输出！周鸿祎深度谈 AI"
-navigation_title: "周鸿祎 - AI 革命、企业转型与未来"
+navigation_title: "周鸿祎 · AI 革命、企业转型与未来"
+catalog_keyword: "AI 转型"
 published_at: "2025-09-24T12:00:00+08:00"
 duration_ms: 12895082
 language: zh-CN

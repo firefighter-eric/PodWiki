@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-05
   source: publisher-rss
 title: "口述SpaceX开发史：和前高管洪力德聊，马斯克用人观、最大IPO、太空与AI、人类文明扩张前奏？"
-navigation_title: "洪力德 - SpaceX 开发史与工程组织"
+navigation_title: "洪力德 · SpaceX 开发史与工程组织"
+catalog_keyword: "SpaceX"
 published_at: "2026-06-12T20:52:25+08:00"
 duration_ms: 10886000
 language: zh-CN

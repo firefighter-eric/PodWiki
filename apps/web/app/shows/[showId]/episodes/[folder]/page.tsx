@@ -39,6 +39,7 @@ export default async function EpisodePage({ params, searchParams }: EpisodePageP
 
   const rawView = Array.isArray(query.view) ? query.view[0] : query.view;
   const view: "summary" | "transcript" = rawView === "transcript" ? "transcript" : "summary";
+  const episodeLabel = getEpisodeLabel(episode.episodeNumber, episode.releaseType);
   const guests = episode.guests.map((guest) => guest.name).join("、");
   const hosts = episode.hosts.map((host) => host.name).join("、");
   const transcriptStatus = episode.bilingualTranscript
@@ -66,8 +67,12 @@ export default async function EpisodePage({ params, searchParams }: EpisodePageP
             <div className="episode-kicker-row">
               <p className="episode-kicker">
                 {episode.showTitle}
-                <span>·</span>
-                {getEpisodeLabel(episode.episodeNumber)}
+                {episodeLabel ? (
+                  <>
+                    <span>·</span>
+                    {episodeLabel}
+                  </>
+                ) : null}
                 <span>·</span>
                 {episode.durationLabel}
               </p>

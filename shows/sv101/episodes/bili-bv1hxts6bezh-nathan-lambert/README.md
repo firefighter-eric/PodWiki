@@ -14,7 +14,8 @@ numbering:
   url: https://feeds.fireside.fm/sv101/rss
   note: "硅谷101官方 RSS 未收录与该发布者视频对应的单集，无法核实或推导正式期号"
 title: "美国AI研究员的中国之旅：年轻人，追赶者，算力焦虑与“AGI展示厅” ｜专访Nathan Lambert【101视频播客】"
-navigation_title: "Nathan Lambert - 中国 AI 生态、开源模型与算力焦虑"
+navigation_title: "Nathan Lambert · 中国 AI 生态、开源模型与算力焦虑"
+catalog_keyword: "开源模型"
 published_at: "2026-07-03T14:10:30+08:00"
 duration_ms: 5225163
 language: en

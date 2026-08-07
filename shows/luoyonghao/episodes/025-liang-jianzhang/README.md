@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-06
   source: publisher-description
 title: "携程梁建章 × 罗永浩：企业家与学者之间的“往返票”"
-navigation_title: "梁建章 - 携程、人口研究与长期主义"
+navigation_title: "梁建章 · 携程、人口研究与长期主义"
+catalog_keyword: "人口研究"
 published_at: "2026-04-17T12:02:05+08:00"
 duration_ms: 13247488
 language: zh-CN

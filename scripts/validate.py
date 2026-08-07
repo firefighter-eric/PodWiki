@@ -919,6 +919,56 @@ def check_front_matter(path: Path, text: str, errors: list[str]) -> None:
         errors.append(f"{relative(path)} has no closing front matter marker")
 
 
+def validate_episode_catalog_keyword(
+    path: Path,
+    text: str,
+    errors: list[str],
+) -> None:
+    lines = extract_front_matter_lines(text)
+    value = top_level_front_matter_scalar(lines, "catalog_keyword")
+    if value is None:
+        errors.append(f"{relative(path)} is missing catalog_keyword")
+        return
+    if value != value.strip():
+        errors.append(f"{relative(path)} catalog_keyword has surrounding whitespace")
+    if not 1 <= len(value) <= 20:
+        errors.append(f"{relative(path)} catalog_keyword must be 1-20 characters")
+    if re.match(r"^(?:#|第\s*\d+|特访|特别)", value):
+        errors.append(
+            f"{relative(path)} catalog_keyword must not contain episode numbering or release labels"
+        )
+    navigation_title = top_level_front_matter_scalar(lines, "navigation_title")
+    if navigation_title is not None:
+        person = navigation_title.split(" · ", 1)[0]
+        if value in {person, navigation_title}:
+            errors.append(
+                f"{relative(path)} catalog_keyword must not duplicate the person or full navigation title"
+            )
+
+
+def validate_episode_navigation_title(
+    path: Path,
+    text: str,
+    errors: list[str],
+) -> None:
+    lines = extract_front_matter_lines(text)
+    value = top_level_front_matter_scalar(lines, "navigation_title")
+    if value is None:
+        errors.append(f"{relative(path)} is missing navigation_title")
+        return
+    parts = value.split(" · ")
+    if len(parts) != 2 or not all(parts):
+        errors.append(
+            f"{relative(path)} navigation_title must use 'person · topic' format"
+        )
+    if len(value) > 40:
+        errors.append(f"{relative(path)} navigation_title must be at most 40 characters")
+    if re.match(r"^(?:#|第\s*\d+|特访|特别)", value):
+        errors.append(
+            f"{relative(path)} navigation_title must not contain episode numbering or release labels"
+        )
+
+
 def check_bilibili_urls(path: Path, text: str, errors: list[str]) -> int:
     for parameter in TRACKING_PARAMETERS:
         if parameter in text:
@@ -963,6 +1013,8 @@ def main() -> int:
             continue
         readme = episode_dir / "README.md"
         readme_text = readme.read_text(encoding="utf-8") if readme.is_file() else ""
+        validate_episode_catalog_keyword(readme, readme_text, errors)
+        validate_episode_navigation_title(readme, readme_text, errors)
         validate_episode_translations(
             episode_dir,
             repository_root=ROOT,

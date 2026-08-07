@@ -15,6 +15,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate import (  # noqa: E402
     check_bilibili_urls,
     check_front_matter,
+    validate_episode_catalog_keyword,
+    validate_episode_navigation_title,
     validate_episode_translations,
     validate_qwen_chain,
 )
@@ -609,6 +611,58 @@ transcript:
 
 
 class ExistingMarkdownValidationTests(unittest.TestCase):
+    def test_episode_catalog_keyword_is_required_and_bounded(self) -> None:
+        path = ROOT / "shows" / "example" / "episodes" / "001" / "README.md"
+
+        valid_errors: list[str] = []
+        validate_episode_catalog_keyword(
+            path,
+            "---\ncatalog_keyword: \"SGLang\"\n---\n",
+            valid_errors,
+        )
+        self.assertEqual(valid_errors, [])
+
+        invalid_errors: list[str] = []
+        validate_episode_catalog_keyword(
+            path,
+            "---\ncatalog_keyword: \"特别\"\n---\n",
+            invalid_errors,
+        )
+        self.assertTrue(any("release labels" in error for error in invalid_errors))
+
+        missing_errors: list[str] = []
+        validate_episode_catalog_keyword(path, "---\ntitle: example\n---\n", missing_errors)
+        self.assertTrue(any("missing catalog_keyword" in error for error in missing_errors))
+
+        duplicate_errors: list[str] = []
+        validate_episode_catalog_keyword(
+            path,
+            "---\nnavigation_title: \"盛颖 · SGLang 与开源\"\n"
+            "catalog_keyword: \"盛颖\"\n---\n",
+            duplicate_errors,
+        )
+        self.assertTrue(any("must not duplicate" in error for error in duplicate_errors))
+
+    def test_episode_navigation_title_uses_person_topic_format(self) -> None:
+        path = ROOT / "shows" / "example" / "episodes" / "001" / "README.md"
+
+        valid_errors: list[str] = []
+        validate_episode_navigation_title(
+            path,
+            "---\nnavigation_title: \"盛颖 · SGLang 与开源\"\n---\n",
+            valid_errors,
+        )
+        self.assertEqual(valid_errors, [])
+
+        invalid_errors: list[str] = []
+        validate_episode_navigation_title(
+            path,
+            "---\nnavigation_title: \"#247 盛颖 - SGLang\"\n---\n",
+            invalid_errors,
+        )
+        self.assertTrue(any("person · topic" in error for error in invalid_errors))
+        self.assertTrue(any("release labels" in error for error in invalid_errors))
+
     def test_front_matter_checks_remain_active(self) -> None:
         path = ROOT / "shows" / "example" / "README.md"
         errors: list[str] = []

@@ -119,6 +119,8 @@ repository-relative even when discovery returns absolute filesystem paths.
 2. Pass the actual engine and model; never leave a misleading default provenance value.
 3. Update the episode README with:
    - canonical source URL and verified identifiers;
+   - `navigation_title` and `catalog_keyword` set and validated against
+     `docs/content-standard.md`;
    - local media metadata from the acquisition sidecar;
    - engine, model, options, generation timestamp, and artifact paths;
    - source/refined/rendered segment counts;

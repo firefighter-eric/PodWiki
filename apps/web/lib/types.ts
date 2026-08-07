@@ -12,6 +12,8 @@ export type SourceLink = {
   preferred?: boolean;
 };
 
+export type EpisodeReleaseType = "regular" | "special" | "bonus" | "trailer";
+
 export type TranscriptProvenance = {
   path: string;
   engine?: string;
@@ -73,9 +75,11 @@ export type Episode = {
   showTitle: string;
   episodeKey: string;
   episodeNumber: number | null;
+  releaseType: EpisodeReleaseType;
   folder: string;
   title: string;
   navigationTitle: string;
+  catalogKeyword: string;
   editorialTitle: string;
   displayTitle: string;
   subtitle: string;
@@ -115,11 +119,11 @@ export type EpisodeCard = Pick<
   | "folder"
   | "title"
   | "navigationTitle"
+  | "catalogKeyword"
   | "editorialTitle"
   | "displayTitle"
   | "subtitle"
   | "publishedDate"
-  | "durationLabel"
   | "guests"
   | "workflow"
   | "href"

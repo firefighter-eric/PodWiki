@@ -13,7 +13,8 @@ numbering:
   source: publisher-rss
   note: "硅谷101官方 RSS 未收录与该 Bilibili 视频对应的年度科技大会演讲，无法据此核实或推导正式期号"
 title: "语音智能体商业落地的教训、经验与实践｜李沐硅谷101年度线下大会演讲（全英）"
-navigation_title: "李沐 - 语音智能体商业落地与系统门槛"
+navigation_title: "李沐 · 语音智能体商业落地与系统门槛"
+catalog_keyword: "语音智能体"
 published_at: "2025-10-27T12:33:28+08:00"
 duration_ms: 1640938
 language: en

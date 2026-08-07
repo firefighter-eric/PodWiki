@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-05
   source: publisher-rss
 title: "对Physical Intelligence柯丽一鸣4小时访谈：Pi的开源模型研究，机器人的江湖、族谱与主角"
-navigation_title: "柯丽一鸣 - 通用机器人、Pi 模型与强化学习"
+navigation_title: "柯丽一鸣 · 通用机器人、Pi 模型与强化学习"
+catalog_keyword: "Pi"
 published_at: "2026-07-16T08:30:00+08:00"
 duration_ms: 13684000
 language: zh-CN

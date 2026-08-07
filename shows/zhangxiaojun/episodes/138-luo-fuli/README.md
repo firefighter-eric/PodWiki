@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-06
   source: publisher-rss
 title: "对罗福莉3.5小时访谈：AI 范式已然巨变"
-navigation_title: "罗福莉 - Agent 时代的模型、Infra 与组织"
+navigation_title: "罗福莉 · Agent 时代的模型、Infra 与组织"
+catalog_keyword: "Agent"
 published_at: "2026-04-24T11:44:26+08:00"
 duration_ms: 12996000
 language: zh-CN

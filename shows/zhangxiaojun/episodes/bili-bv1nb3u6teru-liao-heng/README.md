@@ -13,7 +13,8 @@ numbering:
   source: publisher-rss
   note: "截至核验日期未出现在发布者 RSS/feed 中，且无 RSS GUID；不推导正式期号"
 title: "对华为半导体首席科学家廖恒的5小时访谈：一部昇腾史、18层宝塔与全球芯片恢弘30年史诗| B站 x WAIC AI会客厅"
-navigation_title: "廖恒 - 芯片产业周期与昇腾工程史"
+navigation_title: "廖恒 · 芯片产业周期与昇腾工程史"
+catalog_keyword: "昇腾"
 published_at: "2026-07-25T21:19:38+08:00"
 duration_ms: 16672000
 language: zh-CN

@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-06
   source: publisher-rss
 title: "对谢赛宁的7小时马拉松访谈：世界模型、逃出硅谷与 AMI Labs"
-navigation_title: "谢赛宁 - 表征学习、世界模型与 AMI Labs"
+navigation_title: "谢赛宁 · 表征学习、世界模型与 AMI Labs"
+catalog_keyword: "AMI Labs"
 published_at: "2026-03-16T12:01:08+08:00"
 duration_ms: 24329000
 language: zh-CN
