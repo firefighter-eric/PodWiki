@@ -25,7 +25,7 @@ cd apps/web
 npm run check
 ```
 
-部署到 Vercel 时将 Root Directory 设为 `apps/web`，并保持构建步骤可包含 Root Directory 之外的源码。默认内容目录是仓库根目录下的 `shows/`；非标准目录结构可通过 `PODWIKI_REPOSITORY_ROOT` 指定仓库根目录。
+部署到 Vercel 时将 Root Directory 设为 `apps/web`，并保持构建步骤可包含 Root Directory 之外的源码。默认内容目录是仓库根目录下的 `shows/`；非标准目录结构可通过 `PODWIKI_REPOSITORY_ROOT` 指定仓库根目录。静态路由、内容加载量和同机 A/B 数据见 [Web 阅读器性能基准](./docs/web-performance.md)。
 
 ## 收录播客
 

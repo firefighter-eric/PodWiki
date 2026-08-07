@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
+import { getTranscriptHref } from "@/lib/reader-routes";
 import type {
   BilingualTranscript,
   BilingualTranscriptSegment,
@@ -432,7 +433,7 @@ function parseChapters(
         timestamp,
         title,
         seconds: timestampToSeconds(timestamp),
-        href: `${href}?view=transcript#${target?.id ?? timestampToId(timestamp)}`,
+        href: getTranscriptHref(href, target?.id ?? timestampToId(timestamp)),
       });
     }
     return result;
@@ -448,7 +449,7 @@ function parseChapters(
       timestamp: firstSegment.timestamp,
       title: "开场",
       seconds: firstSegment.seconds,
-      href: `${href}?view=transcript#${firstSegment.id}`,
+      href: getTranscriptHref(href, firstSegment.id),
     });
   }
 
@@ -465,24 +466,113 @@ function extractShowDescription(markdown: string): string {
   return withoutHeading.split(/^##\s+/mu)[0].replace(/\s+/gu, " ").trim();
 }
 
-const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Episode[] }> => {
+type ShowCatalogData = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+type EpisodeCatalogEntry = {
+  card: EpisodeCard;
+  publishedAt: string;
+};
+
+type ContentCatalog = {
+  shows: ShowSummary[];
+  episodeEntries: EpisodeCatalogEntry[];
+};
+
+function resolveNamedDirectory(parent: string, name: string): string | undefined {
+  if (!name) return undefined;
+  const resolved = path.resolve(parent, name);
+  const relative = path.relative(parent, resolved);
+  if (
+    !relative ||
+    relative.startsWith(`..${path.sep}`) ||
+    path.isAbsolute(relative) ||
+    relative.includes(path.sep)
+  ) {
+    return undefined;
+  }
+  return resolved;
+}
+
+const loadShowById = cache(async (showId: string): Promise<ShowCatalogData | undefined> => {
+  const showsRoot = path.join(findRepositoryRoot(), "shows");
+  const showRoot = resolveNamedDirectory(showsRoot, showId);
+  if (!showRoot) return undefined;
+  const readmePath = path.join(showRoot, "README.md");
+  if (!fs.existsSync(readmePath)) return undefined;
+
+  const readme = readMarkdown(readmePath);
+  const metadata = showSchema.parse(readme.data);
+  return {
+    id: metadata.id,
+    title: metadata.title,
+    description: extractShowDescription(readme.content),
+  };
+});
+
+function episodeCardFromMetadata({
+  metadata,
+  showTitle,
+  folder,
+  summaryRaw,
+}: {
+  metadata: z.infer<typeof episodeSchema>;
+  showTitle: string;
+  folder: string;
+  summaryRaw: string;
+}): EpisodeCatalogEntry {
+  const publishedAt = metadata.published_at instanceof Date
+    ? metadata.published_at.toISOString()
+    : metadata.published_at;
+  const editorialTitle = extractMarkdownTitle(summaryRaw) ?? metadata.title;
+  const normalizedTitle = normalizeTitle(editorialTitle);
+
+  return {
+    publishedAt,
+    card: {
+      id: metadata.id,
+      showId: metadata.show_id,
+      showTitle,
+      episodeNumber: metadata.episode_number,
+      folder,
+      title: metadata.title,
+      navigationTitle: metadata.navigation_title,
+      catalogKeyword: metadata.catalog_keyword,
+      editorialTitle,
+      displayTitle: normalizedTitle.displayTitle,
+      subtitle: normalizedTitle.subtitle,
+      summaryIntro: extractSummaryIntro(summaryRaw),
+      publishedDate: publishedAt.slice(0, 10),
+      guests: metadata.participants.filter((participant) => participant.role === "guest"),
+      workflow: metadata.workflow,
+      href: `/shows/${metadata.show_id}/episodes/${folder}`,
+    },
+  };
+}
+
+const loadCatalog = cache(async (): Promise<ContentCatalog> => {
   const repositoryRoot = findRepositoryRoot();
   const showsRoot = path.join(repositoryRoot, "shows");
   const showDirectories = fs
     .readdirSync(showsRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(showsRoot, entry.name, "README.md")));
 
-  const showData = new Map<string, { title: string; description: string }>();
+  const showData = new Map<string, ShowCatalogData>();
   for (const directory of showDirectories) {
-    const parsed = readMarkdown(path.join(showsRoot, directory.name, "README.md"));
-    const show = showSchema.parse(parsed.data);
-    showData.set(show.id, {
-      title: show.title,
-      description: extractShowDescription(parsed.content),
-    });
+    const show = await loadShowById(directory.name);
+    if (!show) continue;
+    if (show.id !== directory.name) {
+      throw new Error(
+        `Show id ${show.id} does not match its directory name ${directory.name}`,
+      );
+    }
+    showData.set(directory.name, show);
   }
 
-  const episodes: Episode[] = [];
+  const episodeEntries: EpisodeCatalogEntry[] = [];
   for (const [showId, currentShow] of showData) {
     const episodesRoot = path.join(showsRoot, showId, "episodes");
     if (!fs.existsSync(episodesRoot)) continue;
@@ -495,6 +585,11 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
 
       const readme = readMarkdown(readmePath);
       const metadata = episodeSchema.parse(readme.data);
+      if (metadata.show_id !== showId) {
+        throw new Error(
+          `Episode ${metadata.id} declares show ${metadata.show_id} but is stored under ${showId}`,
+        );
+      }
       const summaryPath = resolveEpisodeAsset(
         episodeRoot,
         metadata.summary.path,
@@ -513,81 +608,20 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
       }
 
       const summary = readMarkdown(summaryPath);
-      const transcript = readMarkdown(transcriptPath);
-      const publishedAt = metadata.published_at instanceof Date
-        ? metadata.published_at.toISOString()
-        : metadata.published_at;
-      const href = `/shows/${metadata.show_id}/episodes/${folder}`;
-      const editorialTitle = extractMarkdownTitle(summary.content) ?? metadata.title;
-      const normalizedTitle = normalizeTitle(editorialTitle);
-      const summaryIntro = extractSummaryIntro(summary.content);
-      const preferredSource = metadata.sources.find((source) => source.preferred) ?? metadata.sources[0];
-
-      const transcriptSegments = parseTranscript(transcript.content);
-      const { translations: transcriptTranslations, bilingualTranscript } = loadTranscriptTranslations({
-        episodeRoot,
-        episodeId: metadata.id,
-        episodeLanguage: metadata.language,
-        sourcePath: metadata.transcript.path,
-        sourceSha256: transcript.sha256,
-        sourceContent: transcript.content,
-        sourceSegments: transcriptSegments,
-        values: metadata.transcript.translations,
-      });
-      const episode: Episode = {
-        id: metadata.id,
-        showId: metadata.show_id,
+      episodeEntries.push(episodeCardFromMetadata({
+        metadata,
         showTitle: currentShow.title,
-        episodeKey: metadata.episode_key,
-        episodeNumber: metadata.episode_number,
-        releaseType: metadata.release_type,
         folder,
-        title: metadata.title,
-        navigationTitle: metadata.navigation_title,
-        catalogKeyword: metadata.catalog_keyword,
-        editorialTitle,
-        displayTitle: normalizedTitle.displayTitle,
-        subtitle: normalizedTitle.subtitle,
-        summaryIntro,
-        publishedAt,
-        publishedDate: publishedAt.slice(0, 10),
-        durationMs: metadata.duration_ms,
-        durationLabel: formatDuration(metadata.duration_ms),
-        language: metadata.language,
-        participants: metadata.participants,
-        guests: metadata.participants.filter((participant) => participant.role === "guest"),
-        hosts: metadata.participants.filter((participant) => participant.role === "host"),
-        sources: metadata.sources,
-        preferredSource,
-        workflow: metadata.workflow,
-        summarySourceTranscript: metadata.summary.source_transcript
-          ? normalizeProvenance(metadata.summary.source_transcript)
-          : undefined,
-        transcriptMeta: normalizeProvenance(metadata.transcript),
         summaryRaw: summary.content,
-        transcriptRaw: transcript.content,
-        readmeRaw: readme.content,
-        chapters: [],
-        transcriptSegments,
-        transcriptTranslations,
-        bilingualTranscript,
-        href,
-      };
-      episode.chapters = parseChapters(
-        episode.readmeRaw,
-        episode.summaryRaw,
-        href,
-        transcriptSegments,
-      );
-      episodes.push(episode);
+      }));
     }
   }
 
-  episodes.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  episodeEntries.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
 
   const shows: ShowSummary[] = [...showData.entries()]
     .map(([id, data]) => {
-      const showEpisodes = episodes.filter((episode) => episode.showId === id);
+      const showEpisodes = episodeEntries.filter((entry) => entry.card.showId === id);
       return {
         id,
         title: data.title,
@@ -595,26 +629,138 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
         description: data.description,
         episodeCount: showEpisodes.length,
         href: `/shows/${id}`,
-        latestEpisodeHref: showEpisodes[0]?.href ?? `/shows/${id}`,
+        latestEpisodeHref: showEpisodes[0]?.card.href ?? `/shows/${id}`,
       };
     })
     .sort((a, b) => showOrder.indexOf(a.id) - showOrder.indexOf(b.id));
 
-  return { shows, episodes };
+  return { shows, episodeEntries };
+});
+
+const loadEpisodeByLocation = cache(async (
+  showId: string,
+  folder: string,
+): Promise<Episode | undefined> => {
+  const repositoryRoot = findRepositoryRoot();
+  const showsRoot = path.join(repositoryRoot, "shows");
+  const showRoot = resolveNamedDirectory(showsRoot, showId);
+  if (!showRoot) return undefined;
+
+  const show = await loadShowById(showId);
+  if (!show || show.id !== showId) return undefined;
+
+  const episodesRoot = path.join(showRoot, "episodes");
+  const episodeRoot = resolveNamedDirectory(episodesRoot, folder);
+  if (!episodeRoot) return undefined;
+  const readmePath = path.join(episodeRoot, "README.md");
+  if (!fs.existsSync(readmePath)) return undefined;
+
+  const readme = readMarkdown(readmePath);
+  const metadata = episodeSchema.parse(readme.data);
+  if (metadata.show_id !== showId) return undefined;
+
+  const summaryPath = resolveEpisodeAsset(
+    episodeRoot,
+    metadata.summary.path,
+    `${metadata.id} summary path`,
+  );
+  const transcriptPath = resolveEpisodeAsset(
+    episodeRoot,
+    metadata.transcript.path,
+    `${metadata.id} transcript path`,
+  );
+  if (!fs.existsSync(summaryPath)) {
+    throw new Error(`Missing summary for ${metadata.id}: ${summaryPath}`);
+  }
+  if (!fs.existsSync(transcriptPath)) {
+    throw new Error(`Missing transcript for ${metadata.id}: ${transcriptPath}`);
+  }
+
+  const summary = readMarkdown(summaryPath);
+  const transcript = readMarkdown(transcriptPath);
+  const publishedAt = metadata.published_at instanceof Date
+    ? metadata.published_at.toISOString()
+    : metadata.published_at;
+  const href = `/shows/${metadata.show_id}/episodes/${folder}`;
+  const editorialTitle = extractMarkdownTitle(summary.content) ?? metadata.title;
+  const normalizedTitle = normalizeTitle(editorialTitle);
+  const transcriptSegments = parseTranscript(transcript.content);
+  const { translations: transcriptTranslations, bilingualTranscript } = loadTranscriptTranslations({
+    episodeRoot,
+    episodeId: metadata.id,
+    episodeLanguage: metadata.language,
+    sourcePath: metadata.transcript.path,
+    sourceSha256: transcript.sha256,
+    sourceContent: transcript.content,
+    sourceSegments: transcriptSegments,
+    values: metadata.transcript.translations,
+  });
+  const episode: Episode = {
+    id: metadata.id,
+    showId: metadata.show_id,
+    showTitle: show.title,
+    episodeKey: metadata.episode_key,
+    episodeNumber: metadata.episode_number,
+    releaseType: metadata.release_type,
+    folder,
+    title: metadata.title,
+    navigationTitle: metadata.navigation_title,
+    catalogKeyword: metadata.catalog_keyword,
+    editorialTitle,
+    displayTitle: normalizedTitle.displayTitle,
+    subtitle: normalizedTitle.subtitle,
+    summaryIntro: extractSummaryIntro(summary.content),
+    publishedAt,
+    publishedDate: publishedAt.slice(0, 10),
+    durationMs: metadata.duration_ms,
+    durationLabel: formatDuration(metadata.duration_ms),
+    language: metadata.language,
+    participants: metadata.participants,
+    guests: metadata.participants.filter((participant) => participant.role === "guest"),
+    hosts: metadata.participants.filter((participant) => participant.role === "host"),
+    sources: metadata.sources,
+    preferredSource: metadata.sources.find((source) => source.preferred) ?? metadata.sources[0],
+    workflow: metadata.workflow,
+    summarySourceTranscript: metadata.summary.source_transcript
+      ? normalizeProvenance(metadata.summary.source_transcript)
+      : undefined,
+    transcriptMeta: normalizeProvenance(metadata.transcript),
+    summaryRaw: summary.content,
+    transcriptRaw: transcript.content,
+    readmeRaw: readme.content,
+    chapters: [],
+    transcriptSegments,
+    transcriptTranslations,
+    bilingualTranscript,
+    href,
+  };
+  episode.chapters = parseChapters(
+    episode.readmeRaw,
+    episode.summaryRaw,
+    href,
+    transcriptSegments,
+  );
+  return episode;
+});
+
+const loadAllEpisodes = cache(async (): Promise<Episode[]> => {
+  const { episodeEntries } = await loadCatalog();
+  const episodes = await Promise.all(
+    episodeEntries.map(({ card }) => loadEpisodeByLocation(card.showId, card.folder)),
+  );
+  return episodes.filter((episode): episode is Episode => episode !== undefined);
 });
 
 export async function getShows(): Promise<ShowSummary[]> {
-  return (await loadContent()).shows;
+  return (await loadCatalog()).shows;
 }
 
 export async function getEpisodes(): Promise<Episode[]> {
-  return (await loadContent()).episodes;
+  return loadAllEpisodes();
 }
 
 export async function getEpisode(showId: string, folder: string): Promise<Episode | undefined> {
-  return (await getEpisodes()).find(
-    (episode) => episode.showId === showId && episode.folder === folder,
-  );
+  return loadEpisodeByLocation(showId, folder);
 }
 
 export async function getShow(showId: string): Promise<ShowSummary | undefined> {
@@ -622,27 +768,9 @@ export async function getShow(showId: string): Promise<ShowSummary | undefined> 
 }
 
 export async function getEpisodeCards(showId?: string): Promise<EpisodeCard[]> {
-  const episodes = showId
-    ? (await getEpisodes()).filter((episode) => episode.showId === showId)
-    : await getEpisodes();
-  return episodes.map((episode) => ({
-    id: episode.id,
-    showId: episode.showId,
-    showTitle: episode.showTitle,
-    episodeNumber: episode.episodeNumber,
-    folder: episode.folder,
-    title: episode.title,
-    navigationTitle: episode.navigationTitle,
-    catalogKeyword: episode.catalogKeyword,
-    editorialTitle: episode.editorialTitle,
-    displayTitle: episode.displayTitle,
-    subtitle: episode.subtitle,
-    summaryIntro: episode.summaryIntro,
-    publishedDate: episode.publishedDate,
-    guests: episode.guests,
-    workflow: episode.workflow,
-    href: episode.href,
-  }));
+  const { episodeEntries } = await loadCatalog();
+  const cards = episodeEntries.map((entry) => entry.card);
+  return showId ? cards.filter((episode) => episode.showId === showId) : cards;
 }
 
 function snippetAround(text: string, query: string, radius = 58): string {
@@ -687,7 +815,7 @@ export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
         showTitle: episode.showTitle,
         section: "总结",
         snippet: snippetAround(episode.summaryRaw.replace(/[#*`>\[\]]/gu, ""), query),
-        href: `${episode.href}?view=summary`,
+        href: episode.href,
         score: 60,
       });
     }
@@ -702,7 +830,7 @@ export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
         showTitle: episode.showTitle,
         section: "逐字稿",
         snippet: snippetAround(segment.text, query),
-        href: `${episode.href}?view=transcript#${segment.id}`,
+        href: getTranscriptHref(episode.href, segment.id),
         timestamp: segment.timestamp,
         score: 50,
       });
@@ -718,7 +846,7 @@ export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
         showTitle: episode.showTitle,
         section: "译稿",
         snippet: snippetAround(segment.translationText, query),
-        href: `${episode.href}?view=transcript#${segment.id}`,
+        href: getTranscriptHref(episode.href, segment.id),
         timestamp: segment.timestamp,
         score: 49,
       });

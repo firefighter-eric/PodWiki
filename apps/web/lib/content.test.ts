@@ -1,6 +1,9 @@
-import { describe, expect, it } from "vitest";
+import fs from "node:fs";
+import path from "node:path";
+import { describe, expect, it, vi } from "vitest";
 import {
   getEpisode,
+  getEpisodeCards,
   getEpisodes,
   getShows,
   pairTranscriptSegments,
@@ -11,6 +14,55 @@ import type { TranscriptSegment } from "@/lib/types";
 import { getCorePointTable, getMarkdownSection } from "@/lib/markdown";
 
 describe("PodWiki content loader", () => {
+  it("builds the lightweight episode catalog without reading transcript Markdown", async () => {
+    vi.resetModules();
+    const content = await import("@/lib/content");
+    const readFileSync = vi.spyOn(fs, "readFileSync");
+
+    try {
+      const cards = await content.getEpisodeCards();
+      const markdownReads = readFileSync.mock.calls.flatMap(([file]) => (
+        typeof file === "string" && file.endsWith(".md") ? [path.resolve(file)] : []
+      ));
+
+      expect(cards).toHaveLength(43);
+      expect(markdownReads.some((file) => path.basename(file).startsWith("summary."))).toBe(true);
+      expect(markdownReads.filter((file) => path.basename(file).startsWith("transcript."))).toEqual([]);
+    } finally {
+      readFileSync.mockRestore();
+    }
+  });
+
+  it("loads only the requested episode body and its translation assets", async () => {
+    vi.resetModules();
+    const content = await import("@/lib/content");
+    const readFileSync = vi.spyOn(fs, "readFileSync");
+    const folder = "bili-bv1dzsczfemv-li-mu";
+
+    try {
+      const episode = await content.getEpisode("sv101", folder);
+      const markdownReads = readFileSync.mock.calls.flatMap(([file]) => (
+        typeof file === "string" && file.endsWith(".md") ? [path.resolve(file)] : []
+      ));
+      const episodeReads = markdownReads.filter((file) => (
+        file.includes(`${path.sep}episodes${path.sep}`)
+      ));
+      const targetSuffix = path.join("shows", "sv101", "episodes", folder);
+
+      expect(episode?.bilingualTranscript?.segments.length).toBeGreaterThan(0);
+      expect(episodeReads.length).toBeGreaterThan(0);
+      expect(episodeReads.every((file) => file.includes(targetSuffix))).toBe(true);
+      expect(episodeReads.map((file) => path.basename(file))).toEqual(expect.arrayContaining([
+        "README.md",
+        "summary.zh-CN.md",
+        "transcript.en.md",
+        "transcript.zh-CN.md",
+      ]));
+    } finally {
+      readFileSync.mockRestore();
+    }
+  });
+
   it("loads every current show and episode from the repository", async () => {
     const shows = await getShows();
     const episodes = await getEpisodes();
@@ -43,7 +95,7 @@ describe("PodWiki content loader", () => {
   });
 
   it("provides concise person-topic titles for every navigation item", async () => {
-    const episodes = await getEpisodes();
+    const episodes = await getEpisodeCards();
 
     for (const episode of episodes) {
       const guestNames = episode.guests.map((guest) => guest.name).join("、");
@@ -114,7 +166,7 @@ describe("PodWiki content loader", () => {
     expect(results).toContainEqual(expect.objectContaining({
       section: "译稿",
       timestamp: "00:00:56",
-      href: expect.stringContaining("bili-bv1dzsczfemv-li-mu?view=transcript#t-00-00-56"),
+      href: expect.stringContaining("bili-bv1dzsczfemv-li-mu/transcript#t-00-00-56"),
       snippet: expect.stringContaining("端到端延迟必须很低"),
     }));
   });

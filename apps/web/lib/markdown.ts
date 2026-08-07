@@ -6,6 +6,7 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import GithubSlugger from "github-slugger";
 import { findNearestTranscriptSegment, timestampToId } from "@/lib/content";
+import { getTranscriptHref } from "@/lib/reader-routes";
 import type { TranscriptSegment } from "@/lib/types";
 
 function linkTimestampReferences(
@@ -19,7 +20,10 @@ function linkTimestampReferences(
       const nearest = transcriptSegments
         ? findNearestTranscriptSegment(transcriptSegments, timestamp)
         : undefined;
-      return `[${timestamp}](${episodeHref}?view=transcript#${nearest?.id ?? timestampToId(timestamp)})`;
+      return `[${timestamp}](${getTranscriptHref(
+        episodeHref,
+        nearest?.id ?? timestampToId(timestamp),
+      )})`;
     },
   );
 }

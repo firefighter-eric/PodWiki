@@ -53,10 +53,12 @@ describe("reader navigation", () => {
 
     const summaryHtml = renderWithPreferences(createElement(MobileReaderTools, {
       chapters: episode!.chapters,
+      episodeHref: episode!.href,
       showChapters: false,
     }));
     const transcriptHtml = renderWithPreferences(createElement(MobileReaderTools, {
       chapters: episode!.chapters,
+      episodeHref: episode!.href,
       showChapters: true,
     }));
 
@@ -64,7 +66,8 @@ describe("reader navigation", () => {
     expect(summaryHtml).toContain("阅读设置");
     expect(transcriptHtml).toContain('class="mobile-chapter-tool"');
     expect(transcriptHtml).toContain("章节目录");
-    expect(transcriptHtml).toContain("?view=transcript#t-00-00-00");
+    expect(transcriptHtml).toContain("/transcript#t-00-00-00");
+    expect(transcriptHtml).not.toContain("?view=transcript");
   });
 
   it("does not render the redundant chapter link in the right rail", async () => {

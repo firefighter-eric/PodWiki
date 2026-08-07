@@ -10,6 +10,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { canonicalizeReaderHref } from "@/lib/reader-routes";
 import type { EpisodeCard, SearchResult } from "@/lib/types";
 
 type SearchDialogProps = {
@@ -105,7 +106,7 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
         title: result.title,
         meta: `${result.showTitle} · ${result.section}${result.timestamp ? ` · ${result.timestamp}` : ""}`,
         snippet: result.snippet,
-        href: result.href,
+        href: canonicalizeReaderHref(result.href),
       }));
     }
     return getRecentEpisodeCommandItems(recentEpisodes);
