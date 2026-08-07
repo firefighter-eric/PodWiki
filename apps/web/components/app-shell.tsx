@@ -16,7 +16,7 @@ import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "
 import { EpisodeSidebarTitle } from "@/components/episode-navigation-title";
 import type { EpisodeCard, ShowSummary } from "@/lib/types";
 import { SearchDialog } from "@/components/search-dialog";
-import { getSidebarEpisodes } from "@/lib/sidebar-episodes";
+import { getSidebarEpisodeAriaLabel, getSidebarEpisodes } from "@/lib/sidebar-episodes";
 
 const sidebarStorageKey = "podwiki.sidebar.v1";
 
@@ -313,7 +313,10 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                             className={`episode-nav-row selectable-content-link${active ? " active" : ""}`}
                             href={episode.href}
                             draggable={false}
-                            aria-label={`${episode.showTitle} · ${episode.navigationTitle} · ${episode.publishedDate}`}
+                            aria-label={getSidebarEpisodeAriaLabel(
+                              episode,
+                              selectedShow === undefined,
+                            )}
                             aria-current={active ? "page" : undefined}
                             onClick={(event) => {
                               if (!event.defaultPrevented) setMobileOpen(false);
