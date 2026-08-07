@@ -58,6 +58,46 @@ export type CorePoint = {
   body: string;
 };
 
+export type CorePointTable = {
+  columns: string[];
+  rows: string[][];
+};
+
+function parseMarkdownTableRow(line: string): string[] {
+  return line
+    .trim()
+    .replace(/^\|/u, "")
+    .replace(/\|$/u, "")
+    .split("|")
+    .map((cell) => cell.trim());
+}
+
+export function getCorePointTable(markdown: string): CorePointTable | undefined {
+  const section = getMarkdownSection(markdown, "核心观点");
+  const overview = section.split(/^###\s+/mu)[0]?.trim() ?? "";
+  const lines = overview.split("\n").map((line) => line.trim()).filter(Boolean);
+  const tableStart = lines.findIndex((line) => line.startsWith("|") && line.endsWith("|"));
+  if (tableStart < 0 || tableStart + 2 >= lines.length) return undefined;
+
+  const columns = parseMarkdownTableRow(lines[tableStart]);
+  const separators = parseMarkdownTableRow(lines[tableStart + 1]);
+  if (
+    columns.length < 2
+    || separators.length !== columns.length
+    || separators.some((cell) => !/^:?-{3,}:?$/u.test(cell))
+  ) {
+    return undefined;
+  }
+
+  const rows = lines
+    .slice(tableStart + 2)
+    .filter((line) => line.startsWith("|") && line.endsWith("|"))
+    .map(parseMarkdownTableRow)
+    .filter((row) => row.length === columns.length && row.some(Boolean));
+
+  return rows.length > 0 ? { columns, rows } : undefined;
+}
+
 export function getCorePoints(markdown: string): CorePoint[] {
   const section = getMarkdownSection(markdown, "核心观点");
   const slugger = new GithubSlugger();

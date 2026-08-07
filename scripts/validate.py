@@ -969,6 +969,61 @@ def validate_episode_navigation_title(
         )
 
 
+def parse_markdown_table_row(line: str) -> list[str]:
+    stripped = line.strip()
+    if not stripped.startswith("|") or not stripped.endswith("|"):
+        return []
+    return [cell.strip() for cell in stripped[1:-1].split("|")]
+
+
+def validate_core_point_logic_table(
+    path: Path,
+    text: str,
+    errors: list[str],
+) -> None:
+    section = re.search(
+        r"^## 核心观点[ \t]*\n(?P<body>.*?)(?=^###\s|\Z)",
+        text,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+    if section is None:
+        errors.append(f"{relative(path)} is missing the 核心观点 section")
+        return
+
+    lines = [line for line in section.group("body").splitlines() if line.strip()]
+    if len(lines) < 3:
+        errors.append(f"{relative(path)} 核心观点 must begin with a logic table")
+        return
+
+    columns = parse_markdown_table_row(lines[0])
+    separator = parse_markdown_table_row(lines[1])
+    rows = [parse_markdown_table_row(line) for line in lines[2:]]
+    if not 2 <= len(columns) <= 4 or any(not column for column in columns):
+        errors.append(
+            f"{relative(path)} 核心观点 logic table must have 2-4 named columns"
+        )
+        return
+    if len(separator) != len(columns) or any(
+        re.fullmatch(r":?-{3,}:?", cell) is None for cell in separator
+    ):
+        errors.append(f"{relative(path)} 核心观点 logic table has an invalid separator")
+        return
+    if len(rows) < 3:
+        errors.append(f"{relative(path)} 核心观点 logic table must have at least 3 rows")
+    if any(len(row) != len(columns) or any(not cell for cell in row) for row in rows):
+        errors.append(
+            f"{relative(path)} 核心观点 logic table rows must match its named columns"
+        )
+
+    decorative_number = re.compile(r"^(?:0?\d+|第\s*\d+)$")
+    if any(decorative_number.fullmatch(column) for column in columns) or any(
+        decorative_number.fullmatch(cell) for row in rows for cell in row
+    ):
+        errors.append(
+            f"{relative(path)} 核心观点 logic table must not use decorative numbering"
+        )
+
+
 def check_bilibili_urls(path: Path, text: str, errors: list[str]) -> int:
     for parameter in TRACKING_PARAMETERS:
         if parameter in text:
@@ -1006,6 +1061,8 @@ def main() -> int:
             errors.append(
                 f"{relative(path)} must keep metadata in its episode README"
             )
+        elif path.name.startswith("summary."):
+            validate_core_point_logic_table(path, text, errors)
         bilibili_url_count += check_bilibili_urls(path, text, errors)
 
     for episode_dir in sorted(SHOWS_ROOT.glob("*/episodes/*")):

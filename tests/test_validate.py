@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate import (  # noqa: E402
     check_bilibili_urls,
     check_front_matter,
+    validate_core_point_logic_table,
     validate_episode_catalog_keyword,
     validate_episode_navigation_title,
     validate_episode_translations,
@@ -611,6 +612,70 @@ transcript:
 
 
 class ExistingMarkdownValidationTests(unittest.TestCase):
+    def test_core_point_logic_table_requires_semantic_columns_and_rows(self) -> None:
+        path = (
+            ROOT
+            / "shows"
+            / "example"
+            / "episodes"
+            / "001"
+            / "summary.zh-CN.md"
+        )
+
+        valid_errors: list[str] = []
+        validate_core_point_logic_table(
+            path,
+            """## 核心观点
+
+| 产业层级 | 关键变化 | 工程含义 |
+| --- | --- | --- |
+| 需求周期 | AI 打开计算需求 | 应按真实负载校正产品 |
+| 全球分工 | 供应前提发生变化 | 需要重建跨层能力 |
+| 产品工程 | 原型不等于产品 | 可靠性依赖组织流程 |
+
+### 1. 完整展开
+""",
+            valid_errors,
+        )
+        self.assertEqual(valid_errors, [])
+
+        numeric_errors: list[str] = []
+        validate_core_point_logic_table(
+            path,
+            """## 核心观点
+
+| 序号 | 观点 |
+| --- | --- |
+| 01 | 第一条 |
+| 02 | 第二条 |
+| 03 | 第三条 |
+
+### 1. 完整展开
+""",
+            numeric_errors,
+        )
+        self.assertTrue(any("decorative numbering" in error for error in numeric_errors))
+
+        malformed_errors: list[str] = []
+        validate_core_point_logic_table(
+            path,
+            """## 核心观点
+
+| 问题 | 机制 | 边界 |
+| --- | --- | --- |
+| 一个问题 | 一个机制 |
+
+### 1. 完整展开
+""",
+            malformed_errors,
+        )
+        self.assertTrue(any("at least 3 rows" in error for error in malformed_errors))
+        self.assertTrue(any("match its named columns" in error for error in malformed_errors))
+
+        missing_errors: list[str] = []
+        validate_core_point_logic_table(path, "## 核心观点\n\n- 普通列表\n", missing_errors)
+        self.assertTrue(any("must begin with a logic table" in error for error in missing_errors))
+
     def test_episode_catalog_keyword_is_required_and_bounded(self) -> None:
         path = ROOT / "shows" / "example" / "episodes" / "001" / "README.md"
 

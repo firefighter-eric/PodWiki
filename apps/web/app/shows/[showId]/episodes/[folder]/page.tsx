@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ChapterRail } from "@/components/chapter-rail";
+import { EpisodeHeroTitle } from "@/components/episode-navigation-title";
 import { MobileReaderTools } from "@/components/mobile-reader-tools";
 import { ReaderPreferences } from "@/components/reader-preferences";
 import { ReaderTabs } from "@/components/reader-tabs";
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: EpisodePageProps): Promise<Me
   const episode = await getEpisode(showId, folder);
   if (!episode) return {};
   return {
-    title: episode.displayTitle,
+    title: episode.navigationTitle,
     description: getEpisodeDescription(episode),
   };
 }
@@ -42,13 +43,6 @@ export default async function EpisodePage({ params, searchParams }: EpisodePageP
   const episodeLabel = getEpisodeLabel(episode.episodeNumber, episode.releaseType);
   const guests = episode.guests.map((guest) => guest.name).join("、");
   const hosts = episode.hosts.map((host) => host.name).join("、");
-  const transcriptStatus = episode.bilingualTranscript
-    ? {
-        machine: "总结初稿 · 中英对照含机器翻译（未审核）",
-        edited: "总结初稿 · 中英对照译稿已编辑",
-        reviewed: "总结初稿 · 中英对照译稿已审核",
-      }[episode.bilingualTranscript.status]
-    : "总结初稿 · 逐字稿由机器生成";
 
   return (
     <ReaderPreferences>
@@ -77,17 +71,12 @@ export default async function EpisodePage({ params, searchParams }: EpisodePageP
                 {episode.durationLabel}
               </p>
             </div>
-            <h1>{episode.displayTitle}</h1>
-            {episode.subtitle ? <p className="episode-subtitle">{episode.subtitle}</p> : null}
+            <EpisodeHeroTitle title={episode.navigationTitle} />
             <p className="episode-byline">
               {guests ? <span>嘉宾：{guests}</span> : null}
               {hosts ? <span>主持人：{hosts}</span> : null}
               <time dateTime={episode.publishedAt}>{episode.publishedDate}</time>
             </p>
-            <div className="episode-status">
-              <span><i aria-hidden="true" />{transcriptStatus}</span>
-              <span>基于仓库内容构建</span>
-            </div>
           </header>
 
           {view === "summary" ? (

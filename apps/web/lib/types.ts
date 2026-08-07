@@ -83,6 +83,7 @@ export type Episode = {
   editorialTitle: string;
   displayTitle: string;
   subtitle: string;
+  summaryIntro: string;
   publishedAt: string;
   publishedDate: string;
   durationMs: number;
@@ -123,6 +124,7 @@ export type EpisodeCard = Pick<
   | "editorialTitle"
   | "displayTitle"
   | "subtitle"
+  | "summaryIntro"
   | "publishedDate"
   | "guests"
   | "workflow"
