@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import {
+  compareEpisodePublicationOrder,
   getEpisode,
   getEpisodeCards,
   getEpisodes,
@@ -75,6 +76,26 @@ describe("PodWiki content loader", () => {
     ]);
     expect(episodes).toHaveLength(43);
     expect(episodes.every((episode) => episode.summaryRaw && episode.transcriptSegments.length > 0)).toBe(true);
+    const publishedTimes = episodes.map((episode) => Date.parse(episode.publishedAt));
+    expect(publishedTimes).toEqual(publishedTimes.toSorted((a, b) => b - a));
+  });
+
+  it("uses the episode href as a deterministic publication-time tie breaker", () => {
+    const publishedAt = "2026-08-08T12:00:00+08:00";
+    const episodes = [
+      { href: "/shows/b/episodes/2" },
+      { href: "/shows/a/episodes/1" },
+    ];
+
+    expect(episodes.toSorted((a, b) => compareEpisodePublicationOrder(
+      publishedAt,
+      a.href,
+      publishedAt,
+      b.href,
+    ))).toEqual([
+      { href: "/shows/a/episodes/1" },
+      { href: "/shows/b/episodes/2" },
+    ]);
   });
 
   it("keeps official nullable episode numbering intact", async () => {

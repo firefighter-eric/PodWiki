@@ -2,6 +2,7 @@
 
 import { ArrowRight, MagnifyingGlass, X } from "@phosphor-icons/react";
 import { AnimatePresence, m } from "motion/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   useDeferredValue,
@@ -26,6 +27,16 @@ type CommandItem = {
   snippet: string;
   href: string;
 };
+
+function hasSelectionWithin(element: HTMLElement) {
+  const selection = window.getSelection();
+  if (!selection || selection.isCollapsed) return false;
+
+  return Boolean(
+    (selection.anchorNode && element.contains(selection.anchorNode))
+    || (selection.focusNode && element.contains(selection.focusNode)),
+  );
+}
 
 export function getRecentEpisodeCommandItems(recentEpisodes: EpisodeCard[]): CommandItem[] {
   return recentEpisodes.map((episode) => ({
@@ -223,15 +234,28 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
                 <p className="search-state">没有找到相关内容，试试人物名或更短的关键词。</p>
               ) : null}
               {!failed && items.map((item, index) => (
-                <button
+                <Link
                   key={item.id}
                   id={`search-option-${index}`}
-                  className={`search-result${index === currentIndex ? " active" : ""}`}
-                  type="button"
+                  className={`search-result selectable-content-link${index === currentIndex ? " active" : ""}`}
+                  href={item.href}
+                  draggable={false}
                   role="option"
                   aria-selected={index === currentIndex}
                   onMouseMove={() => setActiveIndex(index)}
-                  onClick={() => navigate(item)}
+                  onClick={(event) => {
+                    if (
+                      !event.metaKey
+                      && !event.ctrlKey
+                      && !event.shiftKey
+                      && !event.altKey
+                      && hasSelectionWithin(event.currentTarget)
+                    ) {
+                      event.preventDefault();
+                      return;
+                    }
+                    onClose();
+                  }}
                 >
                   <span className="search-result-copy">
                     <small>{item.meta}</small>
@@ -239,7 +263,7 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
                     <span>{item.snippet}</span>
                   </span>
                   <ArrowRight size={18} aria-hidden="true" />
-                </button>
+                </Link>
               ))}
             </div>
 

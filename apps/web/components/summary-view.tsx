@@ -91,8 +91,9 @@ export async function SummaryView({ episode }: { episode: Episode }) {
           {relatedSegments.map((segment) => (
             <a
               key={segment.id}
-              className={segment.id === targetSegment?.id ? "highlighted" : undefined}
+              className={`selectable-content-link${segment.id === targetSegment?.id ? " highlighted" : ""}`}
               href={getTranscriptHref(episode.href, segment.id)}
+              draggable={false}
             >
               <time>{segment.timestamp}</time>
               <span>{segment.text}</span>

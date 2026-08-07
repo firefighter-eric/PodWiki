@@ -21,7 +21,9 @@ export function MobileReaderTools({
             {chapters.map((chapter) => (
               <a
                 key={`${chapter.timestamp}-${chapter.title}`}
+                className="selectable-content-link"
                 href={getTranscriptHref(episodeHref, chapter.href)}
+                draggable={false}
               >
                 <time>{chapter.timestamp}</time>
                 <span>{chapter.title}</span>

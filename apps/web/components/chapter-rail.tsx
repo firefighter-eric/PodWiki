@@ -9,8 +9,9 @@ export function ChapterRail({ chapters, episodeHref }: { chapters: Chapter[]; ep
         {chapters.map((chapter) => (
           <a
             key={`${chapter.timestamp}-${chapter.title}`}
-            className="chapter-link"
+            className="chapter-link selectable-content-link"
             href={getTranscriptHref(episodeHref, chapter.href)}
+            draggable={false}
           >
             <time>{chapter.timestamp}</time>
             <span>{chapter.title}</span>

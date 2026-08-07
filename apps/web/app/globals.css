@@ -49,6 +49,12 @@ a {
   text-decoration: none;
 }
 
+.selectable-content-link {
+  -webkit-user-drag: none;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 button {
   border: 0;
 }
@@ -405,6 +411,13 @@ button {
   gap: 10px;
 }
 
+.episode-nav-identity {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  gap: 4px;
+}
+
 .episode-nav-name {
   overflow: hidden;
   color: var(--accent-dark);
@@ -413,6 +426,30 @@ button {
   line-height: 1.35;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.episode-nav-identity .episode-nav-name {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.episode-nav-source {
+  max-width: 74px;
+  flex: 0 1 auto;
+  overflow: hidden;
+  min-width: 0;
+  color: var(--ink-faint);
+  font-size: 10px;
+  font-weight: 520;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.episode-nav-source-separator {
+  flex: 0 0 auto;
+  color: var(--ink-faint);
+  font-size: 10px;
 }
 
 .episode-navigation-name {

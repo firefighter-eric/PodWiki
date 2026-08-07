@@ -1,6 +1,7 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
+import { ChapterRail } from "@/components/chapter-rail";
 import {
   EpisodeHeroTitle,
   EpisodeSidebarTitle,
@@ -45,6 +46,18 @@ describe("reader navigation", () => {
     expect(html).toContain(
       '<span class="episode-nav-topic" title="vLLM、开源治理与模型—Infra 协同">vLLM、开源治理与模型—Infra 协同</span>',
     );
+
+    const globalHtml = renderToStaticMarkup(createElement(EpisodeSidebarTitle, {
+      title: "游凯超 · vLLM、开源治理与模型—Infra 协同",
+      publishedDate: "2026-07-28",
+      showTitle: "硅谷101",
+    }));
+    expect(globalHtml).toContain(
+      '<small class="episode-nav-source" title="硅谷101">硅谷101</small>',
+    );
+    expect(globalHtml).toContain(
+      '<strong class="episode-nav-name">游凯超</strong>',
+    );
   });
 
   it("shows the chapter menu only for the transcript view", async () => {
@@ -67,7 +80,18 @@ describe("reader navigation", () => {
     expect(transcriptHtml).toContain('class="mobile-chapter-tool"');
     expect(transcriptHtml).toContain("章节目录");
     expect(transcriptHtml).toContain("/transcript#t-00-00-00");
+    expect(transcriptHtml).toMatch(
+      /<a class="selectable-content-link"[^>]*draggable="false">/,
+    );
     expect(transcriptHtml).not.toContain("?view=transcript");
+
+    const desktopChapterHtml = renderToStaticMarkup(createElement(ChapterRail, {
+      chapters: episode!.chapters,
+      episodeHref: episode!.href,
+    }));
+    expect(desktopChapterHtml).toMatch(
+      /class="chapter-link selectable-content-link"[^>]*draggable="false"/,
+    );
   });
 
   it("does not render the redundant chapter link in the right rail", async () => {
@@ -152,6 +176,9 @@ describe("reader navigation", () => {
     expect(catalogHtml).not.toContain(">特别<");
     expect(catalogHtml).not.toContain("01:46:26");
     expect(catalogHtml).not.toContain("01:10:24");
+    expect(catalogHtml).toMatch(
+      /class="episode-card selectable-content-link"[^>]*draggable="false"/,
+    );
 
     const selectedShowHtml = renderToStaticMarkup(createElement(ShowCatalog, {
       shows,
@@ -161,6 +188,9 @@ describe("reader navigation", () => {
     expect(selectedShowHtml).toContain('<strong class="show-episode-person">盛颖</strong>');
     expect(selectedShowHtml).toContain('<span class="show-episode-title">SGLang、Infra 产品观与开源</span>');
     expect(selectedShowHtml).toContain('class="show-episode-intro"');
+    expect(selectedShowHtml).toMatch(
+      /class="episode-card show-episode-card selectable-content-link"[^>]*draggable="false"/,
+    );
     expect(selectedShowHtml.indexOf('class="show-episode-title"')).toBeLessThan(
       selectedShowHtml.indexOf('class="show-episode-intro"'),
     );
@@ -183,7 +213,7 @@ describe("reader navigation", () => {
     const homeHtml = renderToStaticMarkup(createElement(ShowCatalog, { shows, episodes }));
 
     expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(5);
-    expect(homeHtml.match(/class="podcast-preview-episode"/g)).toHaveLength(15);
+    expect(homeHtml.match(/class="podcast-preview-episode selectable-content-link"/g)).toHaveLength(15);
     expect(homeHtml).toContain("按播客浏览");
     expect(homeHtml.match(/查看全部 12 期/g)).toHaveLength(2);
     expect(homeHtml).toContain("查看全部 8 期");
@@ -211,6 +241,9 @@ describe("reader navigation", () => {
       expect(html).toContain('<caption class="sr-only">本期核心观点逻辑表</caption>');
       expect(html).toContain('<th scope="col">');
       expect(html).toContain('data-label=');
+      expect(html).toMatch(
+        /class="selectable-content-link(?: highlighted)?"[^>]*draggable="false"/,
+      );
       expect(html).not.toContain('<th scope="row">01</th>');
       expect(html).not.toContain('class="core-points-summary"><h2>核心观点</h2><ul>');
     }

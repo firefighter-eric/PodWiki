@@ -4,6 +4,7 @@ type EpisodeNavigationTitleProps = {
 
 type EpisodeSidebarTitleProps = EpisodeNavigationTitleProps & {
   publishedDate: string;
+  showTitle?: string;
 };
 
 const navigationTitleSeparator = " · ";
@@ -49,13 +50,25 @@ export function EpisodeHeroTitle({ title }: EpisodeNavigationTitleProps) {
   );
 }
 
-export function EpisodeSidebarTitle({ title, publishedDate }: EpisodeSidebarTitleProps) {
+export function EpisodeSidebarTitle({
+  title,
+  publishedDate,
+  showTitle,
+}: EpisodeSidebarTitleProps) {
   const { name, topic } = splitEpisodeNavigationTitle(title);
 
   return (
     <span className="episode-nav-copy sidebar-label">
       <span className="episode-nav-meta">
-        <strong className="episode-nav-name">{name}</strong>
+        <span className="episode-nav-identity">
+          {showTitle ? (
+            <>
+              <small className="episode-nav-source" title={showTitle}>{showTitle}</small>
+              <span className="episode-nav-source-separator" aria-hidden="true">·</span>
+            </>
+          ) : null}
+          <strong className="episode-nav-name">{name}</strong>
+        </span>
         <time dateTime={publishedDate}>{publishedDate}</time>
       </span>
       {topic ? (
