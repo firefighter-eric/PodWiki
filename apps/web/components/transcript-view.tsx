@@ -24,7 +24,7 @@ export function TranscriptView({ episode }: { episode: Episode }) {
           </p>
           <h2>{bilingualTranscript ? "中英对照逐字稿" : "完整逐字稿"}</h2>
         </div>
-        <Link href={`${episode.href}?view=summary`}>返回总结</Link>
+        <Link href={episode.href}>返回总结</Link>
       </div>
       <p className="transcript-notice">
         {bilingualTranscript ? (

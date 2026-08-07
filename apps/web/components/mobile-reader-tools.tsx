@@ -1,12 +1,15 @@
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import { ReadingControls } from "@/components/reader-preferences";
+import { getTranscriptHref } from "@/lib/reader-routes";
 import type { Chapter } from "@/lib/types";
 
 export function MobileReaderTools({
   chapters,
+  episodeHref,
   showChapters,
 }: {
   chapters: Chapter[];
+  episodeHref: string;
   showChapters: boolean;
 }) {
   return (
@@ -16,7 +19,10 @@ export function MobileReaderTools({
           <summary>章节目录 <CaretDown size={16} /></summary>
           <nav aria-label="移动端章节目录">
             {chapters.map((chapter) => (
-              <a key={`${chapter.timestamp}-${chapter.title}`} href={chapter.href}>
+              <a
+                key={`${chapter.timestamp}-${chapter.title}`}
+                href={getTranscriptHref(episodeHref, chapter.href)}
+              >
                 <time>{chapter.timestamp}</time>
                 <span>{chapter.title}</span>
               </a>

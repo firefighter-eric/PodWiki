@@ -5,6 +5,12 @@ import { getEpisodeCards, getShow, getShows } from "@/lib/content";
 
 type ShowPageProps = { params: Promise<{ showId: string }> };
 
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return (await getShows()).map((show) => ({ showId: show.id }));
+}
+
 export async function generateMetadata({ params }: ShowPageProps): Promise<Metadata> {
   const show = await getShow((await params).showId);
   return show ? { title: show.title, description: show.description } : {};

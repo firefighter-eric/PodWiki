@@ -1,6 +1,7 @@
 import type { Chapter } from "@/lib/types";
+import { getTranscriptHref } from "@/lib/reader-routes";
 
-export function ChapterRail({ chapters }: { chapters: Chapter[] }) {
+export function ChapterRail({ chapters, episodeHref }: { chapters: Chapter[]; episodeHref: string }) {
   return (
     <aside id="chapter-list" className="chapter-rail" aria-label="章节目录">
       <p className="rail-title">章节目录</p>
@@ -9,7 +10,7 @@ export function ChapterRail({ chapters }: { chapters: Chapter[] }) {
           <a
             key={`${chapter.timestamp}-${chapter.title}`}
             className="chapter-link"
-            href={chapter.href}
+            href={getTranscriptHref(episodeHref, chapter.href)}
           >
             <time>{chapter.timestamp}</time>
             <span>{chapter.title}</span>

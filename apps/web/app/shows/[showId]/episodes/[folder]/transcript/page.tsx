@@ -4,7 +4,7 @@ import { EpisodeReader } from "@/components/episode-reader";
 import { getEpisode, getEpisodeCards } from "@/lib/content";
 import { getEpisodeDescription } from "@/lib/episode-label";
 
-type EpisodePageProps = {
+type TranscriptPageProps = {
   params: Promise<{ showId: string; folder: string }>;
 };
 
@@ -17,20 +17,20 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: EpisodePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: TranscriptPageProps): Promise<Metadata> {
   const { showId, folder } = await params;
   const episode = await getEpisode(showId, folder);
   if (!episode) return {};
   return {
-    title: episode.navigationTitle,
+    title: `${episode.navigationTitle} · 逐字稿`,
     description: getEpisodeDescription(episode),
   };
 }
 
-export default async function EpisodePage({ params }: EpisodePageProps) {
+export default async function TranscriptPage({ params }: TranscriptPageProps) {
   const { showId, folder } = await params;
   const episode = await getEpisode(showId, folder);
   if (!episode) notFound();
 
-  return <EpisodeReader episode={episode} view="summary" />;
+  return <EpisodeReader episode={episode} view="transcript" />;
 }

@@ -8,6 +8,7 @@ import {
   getMarkdownSection,
   markdownToHtml,
 } from "@/lib/markdown";
+import { getTranscriptHref } from "@/lib/reader-routes";
 import type { Episode } from "@/lib/types";
 
 export async function SummaryView({ episode }: { episode: Episode }) {
@@ -91,14 +92,14 @@ export async function SummaryView({ episode }: { episode: Episode }) {
             <a
               key={segment.id}
               className={segment.id === targetSegment?.id ? "highlighted" : undefined}
-              href={`${episode.href}?view=transcript#${segment.id}`}
+              href={getTranscriptHref(episode.href, segment.id)}
             >
               <time>{segment.timestamp}</time>
               <span>{segment.text}</span>
             </a>
           ))}
         </div>
-        <Link className="full-transcript-link" href={`${episode.href}?view=transcript`}>
+        <Link className="full-transcript-link" href={getTranscriptHref(episode.href)}>
           查看完整逐字稿（共 {episode.transcriptSegments.length.toLocaleString("zh-CN")} 段） →
         </Link>
       </section>

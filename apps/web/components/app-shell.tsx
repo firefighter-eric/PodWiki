@@ -285,7 +285,8 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                       ) : null}
                       <ul>
                         {showEpisodes.map((episode) => {
-                          const active = pathname === episode.href;
+                          const active = pathname === episode.href
+                            || pathname === `${episode.href}/transcript`;
                           return (
                             <li key={episode.id}>
                               <Link
