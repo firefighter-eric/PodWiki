@@ -1,0 +1,6912 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "latetalk:bili-bv1gsgd6senu",
+  "language": "zh-CN",
+  "source": {
+    "input_asr_path": "shows/latetalk/episodes/bili-bv1gsgd6senu-wang-tao/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "31138112614a860729e2463f48b893a5aa9371b9fdd0e51bd45fe61e57d5f6e6",
+    "engine": "mlx-audio",
+    "model": "mlx-community/Qwen3-ASR-1.7B-8bit"
+  },
+  "rendered_transcript": {
+    "path": "shows/latetalk/episodes/bili-bv1gsgd6senu-wang-tao/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "f0d5171a845e03871649c4f70ff15bddce4bc8e7cfd82f5e446e65a3c987eef0"
+  },
+  "generated_at": "2026-08-07T10:35:36.894950Z",
+  "statistics": {
+    "source_segments": 504,
+    "refined_segments": 503,
+    "rendered_blocks": 121,
+    "rendered_lines": 503
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.16,
+      "text": "如果你当时去了李飞飞那边的话，那你现在会是一个 professor 王吗？",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 4.32,
+      "end": 8.16,
+      "text": "斯坦福我觉得更多是一个标签，这背后有点像一个导演。",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 8.4,
+      "end": 11.84,
+      "text": "任何响应速度高四百毫秒的生物都已经被灭绝了。",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 12.16,
+      "end": 22.0,
+      "text": "还是回到我刚才那个观点，就是任何智能体最首要的工作就是感知，它是能通过生命感的图灵测试这样一个东西。",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 22.08,
+      "end": 25.6,
+      "text": "你觉得 ROBA 会成为一个巨神陪伴的 iPhone 一吗？",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 25.76,
+      "end": 29.52,
+      "text": "它是一个宠物，它是一个玩伴，它是一个智能助手。",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 31.52,
+      "end": 34.08,
+      "text": "大家好，这是我们的产品 ROBA。",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 41.2,
+      "end": 46.8,
+      "text": "欢迎大家来到晚点聊的播客间，然后我们这次非常有幸邀请到了生庭记的创始人王涛。",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 47.04,
+      "end": 48.24,
+      "text": "大家好，我是王涛。",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 52.72,
+      "end": 56.96,
+      "text": "生庭记是一家在苏州的巨神智能公司。",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 57.36,
+      "end": 65.28,
+      "text": "我们从公司创立的第一天起就想要做的是让机器人走入千家万户，成为人类的伙伴，而不仅仅是一个工具。",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 65.52,
+      "end": 73.76,
+      "text": "公司是在二零二四年我从小鹏出来之后就成立的，二零二四年的四月份到今天的话，差不多两年多的时间。",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 74.0,
+      "end": 79.92,
+      "text": "今年下半年的话，我们的第一代产品 ROBA 也会在中美两地同步去推向市场。",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 80.24,
+      "end": 95.12,
+      "text": "我觉得过去的话其实是分了三个阶段，第一个阶段就是差不多从公司成立，就二四年的四月份到二四年的年底，这个时间段呢，其实公司是维持在一个非常低生命体征的这样一个状态。",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 95.28,
+      "end": 96.16,
+      "text": "低生命体征？",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 96.16,
+      "end": 100.56,
+      "text": "呃，最低生命体征吧，就是呃 burn rate 也压的够低，人员也不多。",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 100.96,
+      "end": 106.16,
+      "text": "我们在做的事情是一定要把自己想要做什么给想清楚、说清楚。",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 106.48,
+      "end": 108.32,
+      "text": "为什么当时会处于低生命体征？",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 109.12,
+      "end": 110.08,
+      "text": "是因为拿钱不够吗？",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 110.4,
+      "end": 122.56,
+      "text": "不是，是因为我们觉得在完全把这件事情想清楚之前，我宁可不要去拿钱，因为拿了钱其实是你就开始了一个倒计时嘛。",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 122.8,
+      "end": 137.92,
+      "text": "因为钱进来，那股东必然会对公司的业务发展有所期待，呃，但我又不希望是因为股东的期待而提前的在不成熟的条件下去去走一个呃我认为还没有想清楚的道路。",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 138.24,
+      "end": 147.52,
+      "text": "其实，在你创业的时候，那时候巨神已经相对比较热了，嗯，然后很多投资人在看，可能很多人他如果没有拿到钱，他就不会去做创业，他可能是先融资然后再创业。",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 147.76,
+      "end": 148.72,
+      "text": "但是你是反过来的。",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 148.8,
+      "end": 152.96,
+      "text": "其实我们当时也拿了一些钱，但拿的并不多，是非常克制的一个状态。",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 153.12,
+      "end": 155.76,
+      "text": "二四年一整年都可以认为是这种状态吧。",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 155.84,
+      "end": 164.96,
+      "text": "当时也有不错的机会，如果我我当时说我要出来做一个人形机器人，或者讲一个巨神大脑的故事，当时也也许也能融到不少钱。",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 165.12,
+      "end": 176.88,
+      "text": "但是我因为经历了过去 drive AI 的这些创业上面的一些 lessons learned，对于创业这个事儿，我我从第一天起就是逼迫自己要有一个中局的思维。",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 177.36,
+      "end": 182.48,
+      "text": "在跟您见面之前，我也去找了一些投资人聊一下，嗯，对，然后他们其实也非常的感兴趣。",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 182.48,
+      "end": 190.24,
+      "text": "可能相比于目前的很多的所谓的巨神的百亿俱乐部的创业者，其实你的履历是要比某些人会更好的，大家的关注度也非常的高。",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 190.56,
+      "end": 193.44,
+      "text": "但是你却选择了一个 C 端的陪伴的一个赛道。",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 193.52,
+      "end": 197.68,
+      "text": "如果那时候你选人形，或者你选大脑，其实你现在虽然你们现在也拿了很多钱，对吧？",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 198.0,
+      "end": 199.2,
+      "text": "但是你们会拿更多的钱。",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 199.76,
+      "end": 203.84,
+      "text": "我要去做的事情，必然是我内心坚定相信的一件事情。",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 204.08,
+      "end": 213.68,
+      "text": "我们选择 C 端这个赛道，呃，包括做呃进入家庭的陪伴机器人，这是从公司创立第一天起我就定下的愿景。",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 214.08,
+      "end": 219.76,
+      "text": "我认为做一家创业公司，就是整个团队、整个组织需要有的一种特质叫什么？",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 219.84,
+      "end": 222.24,
+      "text": "就一个是知行合一，第二个是上下同欲。",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 222.72,
+      "end": 225.52,
+      "text": "那先做 AGI，先做脑，然后再做伙伴，不行吗？",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 225.92,
+      "end": 235.44,
+      "text": "这个肯定也是有一个先后吧，因为我现在是看到啊伙伴这件事情做出来是已经近在眼前的一件事情，也许。",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 235.864,
+      "end": 245.784,
+      "text": "不同的人有不同的看法，至少我对于技术和行业的发展的判断，没那么快，肯定没那么快，特别是物理的AGI是是更没有那么快的。",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 246.184,
+      "end": 262.104,
+      "text": "那作为创业公司来说，肯定也是要先找一个明确的方向，而且这个方向呢，的是能够聚拢一波相信这个方向的人，而且是大家能够去执行，在可以预见的未来是是可以看到正向反馈的。",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 262.424,
+      "end": 263.704,
+      "text": "你判断AGI要多久？",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 264.264,
+      "end": 274.264,
+      "text": "时间上面我觉得是不好判断的，这个也是最前沿科技发展的一个规律，呃，没有人能够说得准这个时间到底是什么时候。",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 274.344,
+      "end": 276.824,
+      "text": "那或者你觉得AGI多久之内不会来？",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 277.384,
+      "end": 287.304,
+      "text": "看你怎么定义吧，物理的AGI，我觉得至少五年之内不会有真正落地的机会，到那个时候会有更多的信息，更多的input，我才能去做这个判断。",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 287.464,
+      "end": 296.664,
+      "text": "我们一直开玩笑说，Elon Musk当时二零一二年的时候就说自动驾驶还有两年就可以实现了，对，我当时也是不太相信，对吧？",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 296.904,
+      "end": 303.784,
+      "text": "然后过了可能五年六年之后，他出来再讲的时候又又还是两年，是是可以实现，永远是两，永远是两年。",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 304.024,
+      "end": 306.584,
+      "text": "自动驾驶可能技术都不完全是唯一的因素吧？",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 306.584,
+      "end": 316.584,
+      "text": "对，但是在我看来的话，其实真正制约的还是在于技术，因为如果你的技术确实是可以证明它比人类更安全，对吧？",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 316.584,
+      "end": 344.264,
+      "text": "我是二零一二年一三年的时候就开始在斯坦福研究自动驾驶，特别是深度学习在自动驾驶领域的应用，然后一五年的时候跟着吴文达一块出来创业，作为Drive AI的联创，后来是被苹果在一九年的时候收购，一九年之后我就出来加入了小鹏汽车，也是一直在小鹏汽车负责自动驾驶的感知部门，所以过去差不多十二三年吧，一直是在自动驾驶领域。",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 344.664,
+      "end": 355.224,
+      "text": "其实，在很早的时候我们就有过一个判断，就是在数据足够多的情况下，自动驾驶在技术上面其实是没有太多瓶颈了。",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 355.384,
+      "end": 363.784,
+      "text": "这个其实在二零一二一三年的时候我们就得出过这个结论，呃，在学校，一二一三年就没有瓶颈了。",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 363.864,
+      "end": 372.904,
+      "text": "对，当时我们是在呃有限的数据集量上面，只是看到了这个性能曲线的一个向上的很明显的趋势。",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 373.304,
+      "end": 390.264,
+      "text": "那当时我们也做过一个呃曲线的一个外延的去预测，当时的结论就是说数据量如果足够多，到比如说几亿甚至几十亿公里的累积的这个数据量，从这个图上来看，它是能够超越人类的驾驶的表现和安全性的。",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 390.504,
+      "end": 410.264,
+      "text": "但是因为当时受限于在学校不可能有这么多的资源让你去采集这个数据，对，对，包括我们在斯坦福的时候也跟特斯拉当时有过一段时间的合作，讨论过一些这这方面的问题，后来就意识到觉得还是出来作为一家公司能够向社会资本去募资，能够有更多的资源。",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 410.424,
+      "end": 423.784,
+      "text": "那个时候马斯克已经说是两年以后要实现自动驾驶，我记得一二年的时候他在某一个场合大会上面就讲过还有两年，当然这个趋势是对的，但但是时间上面我我觉得是过于激进，我不是很相信的。",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 423.784,
+      "end": 426.744,
+      "text": "回到你刚才那个问题，为什么我从自动驾驶领域出来？",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 427.304,
+      "end": 428.904,
+      "text": "呃，因为我看到了这个终局了。",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 429.304,
+      "end": 432.104,
+      "text": "就是看到终局这个事儿，对你来说就没有意思了吗？",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 432.184,
+      "end": 441.144,
+      "text": "我觉得接下来无非就是说我我看到了这颗宝石，我弯腰去把它捡起来，弯腰去捡的这个过程对于我来说就没有那么有趣了。",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 441.624,
+      "end": 448.504,
+      "text": "其实中间还有一个小插曲嘛，因为Drive AI被苹果收购了以后，其实你当时至少有两个选择，对吧？",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 448.504,
+      "end": 456.904,
+      "text": "一个是跟Drive AI去苹果，然后第二个是你可能去一家新的公司，但你你后面就是选择了小鹏。",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 457.224,
+      "end": 459.144,
+      "text": "为什么要拒绝苹果去小鹏呢？",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 459.464,
+      "end": 474.664,
+      "text": "说一个比较反共识的，在当时看来非常反共识的看法，就是我当时就判断苹果做自动驾驶，以当时的路径来看大概率做不出来，因为苹果当时选择的路径跟Waymo是非常相似。",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 475.416,
+      "end": 478.696,
+      "text": "它当时的技术上面肯定是不如Waymo走的更快的。",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 478.936,
+      "end": 484.536,
+      "text": "那在苹果如果再做个四到五年，也就是能做到当时Waymo的这个水平。",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 485.336,
+      "end": 488.056,
+      "text": "对，那所以当时苹果为什么要买Drive AI啊？",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 488.456,
+      "end": 510.536,
+      "text": "我们在这个领域确实是有很多no号，包括我们在呃一六年就实现了在加州道路上一镜到底的这个视频的拍摄，呃视频的demo，这个是全球第一个一镜到底的视频，开了四十多分钟都没有接管，而且是又是下雨又是夜晚，这样很复杂的环境，当时他们看了以后也确实是很惊艳。",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 510.856,
+      "end": 518.536,
+      "text": "第二呢，我们是真的能够把驾驶员拿掉的这个demo也是第一个能都能能够在全球做到。",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 518.856,
+      "end": 526.216,
+      "text": "我所了解到的，他当时想要做的汽车都是围绕着自动驾驶这个核心技术去设计的。",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 526.216,
+      "end": 529.336,
+      "text": "嗯，他就是想要设计一个没有驾驶员、没有方向盘的一个车。",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 529.736,
+      "end": 530.776,
+      "text": "你当时跟他们聊过吗？",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 531.096,
+      "end": 536.776,
+      "text": "有，但具体很多的细节，因为我当时也是签了NDA，所以没有办法随便去透露。",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 537.256,
+      "end": 541.736,
+      "text": "了解，自动驾驶，后面对你来说是一个相对boring的事情吗？",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 542.056,
+      "end": 556.616,
+      "text": "我觉得在小鹏期间还是很有意思的，从零到一搭建了团队，包括在国内，呃，我们是第一家能够跟特斯拉掰掰手腕的公司，甚至很多地方是做的比特斯拉的这个效果更好的，因为适配了国内的环境嘛。",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 557.256,
+      "end": 565.176,
+      "text": "而且我们也是从使用激光雷达到不用激光雷达和高精地图这一条路也是走通了。",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 565.496,
+      "end": 570.216,
+      "text": "呃，从差不多二三年开始，小鹏就慢慢转向纯视觉的方案。",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 570.376,
+      "end": 581.256,
+      "text": "呃，包括激光雷达的团队是我一手招进来建立起来的，然后后面也是我一手慢慢把它转到别的方向，慢慢拆掉，都经历了这样的一个过程。",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 581.576,
+      "end": 587.416,
+      "text": "就你在Drive AI把激光雷达加进去了，然后在小鹏把激光雷达给拆掉了。",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 587.576,
+      "end": 591.096,
+      "text": "小鹏也是先把激光雷达加进去，然后再把激光雷达拆掉。",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 591.496,
+      "end": 593.336,
+      "text": "对，当时为什么选择小鹏啊？",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 593.816,
+      "end": 594.936,
+      "text": "是吴欣昼找了你是吗？",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 595.096,
+      "end": 602.296,
+      "text": "欣昼找我是很大的一部分原因，在斯坦福期间，我们整个团队都是做深度学习和感知。",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 602.616,
+      "end": 613.576,
+      "text": "在Drive AI期间呢，呃，因为我们要做全栈，所以缺少一个规划控制的负责人，我当时就自告奋勇，我说我这这个我我自己来一边学一边做吧。",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 613.896,
+      "end": 617.176,
+      "text": "所以后来规划控制这一块是我在负责的。",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 617.256,
+      "end": 623.816,
+      "text": "到小鹏的话，呃，当时有一个机会，就我去负责感知这个团队，相当于又回到老本行了。",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 623.976,
+      "end": 630.216,
+      "text": "而且在当时看来，就是感知是离AI最近的一个模块。",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 630.936,
+      "end": 649.096,
+      "text": "对，而且我一直觉得感知是自动驾驶最先需要解决的问题，所以这个scope又足够，然后做的东西又是在这个关键路径上面，呃，就是通过L2开始迭代，然后采集数据，然后一步一步迭代到呃面向L4的终局。",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 649.576,
+      "end": 651.336,
+      "text": "这个路径我当时也是比较认可。",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 651.896,
+      "end": 657.656,
+      "text": "那这三个一吻合，又又有吴欣昼这样的大牛过来作证，我觉得这个事情非常靠谱。",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 658.136,
+      "end": 661.256,
+      "text": "就是你你是从什么时候开始关注感知这个领域的？",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 661.736,
+      "end": 668.456,
+      "text": "做这个事情是从斯坦福开始，在在斯坦福开始读研究生，零九年吧，就跟文达在一起的时候做的。",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 668.456,
+      "end": 678.376,
+      "text": "是的，本科的时候我做无人机嘛，但是当时就发现感知是一个巨大的瓶颈，我想把无人机做的更聪明，能够在室内自主的去导航，对吧？",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 678.376,
+      "end": 680.936,
+      "text": "但是我的双眼是瞎的，对吧？",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 681.256,
+      "end": 687.336,
+      "text": "所以所以其实当时做不到我想想象中的那种就非常聪明的这个智能体。",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    },
+    {
+      "start": 687.736,
+      "end": 688.936,
+      "text": "本科当时是几几年啊？",
+      "source_segment_indexes": [
+        94
+      ],
+      "source_segment_ids": [
+        94
+      ]
+    },
+    {
+      "start": 689.576,
+      "end": 692.776,
+      "text": "零五到零九年吧，在在新加坡国大。",
+      "source_segment_indexes": [
+        95
+      ],
+      "source_segment_ids": [
+        95
+      ]
+    },
+    {
+      "start": 692.856,
+      "end": 698.776,
+      "text": "你其实也是看到了文达当时在做无人机相关的项目，然后所以去到文达那边。",
+      "source_segment_indexes": [
+        96
+      ],
+      "source_segment_ids": [
+        96
+      ]
+    },
+    {
+      "start": 699.256,
+      "end": 707.496,
+      "text": "录取了斯坦福之后呢，我肯定是希望能够在某一个教授那边去去深造，去去学一些这个新的东西吧。",
+      "source_segment_indexes": [
+        97
+      ],
+      "source_segment_ids": [
+        97
+      ]
+    },
+    {
+      "start": 707.656,
+      "end": 712.376,
+      "text": "当时看了一圈CS的那些教授，当时还看了哪些老师？",
+      "source_segment_indexes": [
+        98
+      ],
+      "source_segment_ids": [
+        98
+      ]
+    },
+    {
+      "start": 713.176,
+      "end": 716.776,
+      "text": "文达，呃，李飞飞，呃，还有奥萨马卡蒂。",
+      "source_segment_indexes": [
+        99
+      ],
+      "source_segment_ids": [
+        99
+      ]
+    },
+    {
+      "start": 717.332,
+      "end": 725.412,
+      "text": "包括达芬奇机器人的创始人，也都跟都去上过他们的课，然后了解过他们的这个研究方向。",
+      "source_segment_indexes": [
+        100
+      ],
+      "source_segment_ids": [
+        100
+      ]
+    },
+    {
+      "start": 725.892,
+      "end": 730.532,
+      "text": "对，达芬奇机器人是目前整个医疗行业最 top 的机器人公司。",
+      "source_segment_indexes": [
+        101
+      ],
+      "source_segment_ids": [
+        101
+      ]
+    },
+    {
+      "start": 730.772,
+      "end": 730.852,
+      "text": "对。",
+      "source_segment_indexes": [
+        102
+      ],
+      "source_segment_ids": [
+        102
+      ]
+    },
+    {
+      "start": 731.492,
+      "end": 734.452,
+      "text": "那为什么没有选择其他的教授，最后选了吴文达呢？",
+      "source_segment_indexes": [
+        103
+      ],
+      "source_segment_ids": [
+        103
+      ]
+    },
+    {
+      "start": 734.692,
+      "end": 736.292,
+      "text": "可能还是跟智能有关。",
+      "source_segment_indexes": [
+        104
+      ],
+      "source_segment_ids": [
+        104
+      ]
+    },
+    {
+      "start": 736.612,
+      "end": 742.372,
+      "text": "呃，因为我自己一直以来的梦想是做出这个有智能的生命体。",
+      "source_segment_indexes": [
+        105
+      ],
+      "source_segment_ids": [
+        105
+      ]
+    },
+    {
+      "start": 742.852,
+      "end": 752.532,
+      "text": "在机械这个领域，你如果去做这个手术机器人，就像达芬奇这样的话，它其实没有太多智能发挥发挥的空间的。",
+      "source_segment_indexes": [
+        106
+      ],
+      "source_segment_ids": [
+        106
+      ]
+    },
+    {
+      "start": 752.932,
+      "end": 754.132,
+      "text": "你是选修了他的课吗？",
+      "source_segment_indexes": [
+        107
+      ],
+      "source_segment_ids": [
+        107
+      ]
+    },
+    {
+      "start": 754.292,
+      "end": 766.132,
+      "text": "选修了他的课，对，内容更多就是前向后向的这个动力学，就是呃一个六自由度的机械臂，你你怎么通过每一个关节的角度去算最后的这这个末端执行器？",
+      "source_segment_indexes": [
+        108
+      ],
+      "source_segment_ids": [
+        108
+      ]
+    },
+    {
+      "start": 766.372,
+      "end": 768.052,
+      "text": "为什么没有去李飞飞那边呢？",
+      "source_segment_indexes": [
+        109
+      ],
+      "source_segment_ids": [
+        109
+      ]
+    },
+    {
+      "start": 768.052,
+      "end": 769.012,
+      "text": "嗯，都聊过。",
+      "source_segment_indexes": [
+        110
+      ],
+      "source_segment_ids": [
+        110
+      ]
+    },
+    {
+      "start": 769.572,
+      "end": 782.052,
+      "text": "对，然后我我感觉的话呢，李飞飞可能会更追求学术圈的影响力，吴文达呢他的这个行业的洞见会更深。",
+      "source_segment_indexes": [
+        111
+      ],
+      "source_segment_ids": [
+        111
+      ]
+    },
+    {
+      "start": 782.692,
+      "end": 784.372,
+      "text": "就那个时候，ImageNet其实还没有发布。",
+      "source_segment_indexes": [
+        112
+      ],
+      "source_segment_ids": [
+        112
+      ]
+    },
+    {
+      "start": 784.772,
+      "end": 785.412,
+      "text": "还没有发布。",
+      "source_segment_indexes": [
+        113
+      ],
+      "source_segment_ids": [
+        113
+      ]
+    },
+    {
+      "start": 785.812,
+      "end": 785.892,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        114
+      ],
+      "source_segment_ids": [
+        114
+      ]
+    },
+    {
+      "start": 785.972,
+      "end": 791.092,
+      "text": "对，我跟他的博士也聊了一下，说他们最近在干什么？",
+      "source_segment_indexes": [
+        115
+      ],
+      "source_segment_ids": [
+        115
+      ]
+    },
+    {
+      "start": 791.172,
+      "end": 792.452,
+      "text": "他说天天在画框。",
+      "source_segment_indexes": [
+        116
+      ],
+      "source_segment_ids": [
+        116
+      ]
+    },
+    {
+      "start": 793.892,
+      "end": 795.972,
+      "text": "你如果去的话，你也是做ImageNet项目吗？",
+      "source_segment_indexes": [
+        117
+      ],
+      "source_segment_ids": [
+        117
+      ]
+    },
+    {
+      "start": 796.532,
+      "end": 801.892,
+      "text": "呃，很有可能ImageNet这个那篇论文上面会挂我，会挂您的名字。",
+      "source_segment_indexes": [
+        118
+      ],
+      "source_segment_ids": [
+        118
+      ]
+    },
+    {
+      "start": 802.052,
+      "end": 804.052,
+      "text": "如果我去了的话，那是很大的损失。",
+      "source_segment_indexes": [
+        119
+      ],
+      "source_segment_ids": [
+        119
+      ]
+    },
+    {
+      "start": 804.052,
+      "end": 807.092,
+      "text": "呃，对，引用量上面是一个很大的机会成本吧。",
+      "source_segment_indexes": [
+        120
+      ],
+      "source_segment_ids": [
+        120
+      ]
+    },
+    {
+      "start": 807.492,
+      "end": 811.972,
+      "text": "那如果你当时去了李飞飞那边的话，那你现在会是一个Professor王吗？",
+      "source_segment_indexes": [
+        121
+      ],
+      "source_segment_ids": [
+        121
+      ]
+    },
+    {
+      "start": 813.172,
+      "end": 813.652,
+      "text": "不确定。",
+      "source_segment_indexes": [
+        122
+      ],
+      "source_segment_ids": [
+        122
+      ]
+    },
+    {
+      "start": 813.972,
+      "end": 830.132,
+      "text": "呃，我现在回想的话，大概率我可能也会待了几年就待待不住，也有可能博士读一半就就跑出来创业了，也有可能说博士读完了，在大厂工作了两年，但是最后可能也会熬不住。",
+      "source_segment_indexes": [
+        123
+      ],
+      "source_segment_ids": [
+        123
+      ]
+    },
+    {
+      "start": 830.612,
+      "end": 835.332,
+      "text": "因为我回看的话，我觉得在一个就是你是一个一定要创业的人。",
+      "source_segment_indexes": [
+        124
+      ],
+      "source_segment_ids": [
+        124
+      ]
+    },
+    {
+      "start": 835.652,
+      "end": 843.572,
+      "text": "我觉得创业是我去实现梦想，或者是追求我我自己想做的有意思的事情的一个最好的路径。",
+      "source_segment_indexes": [
+        125
+      ],
+      "source_segment_ids": [
+        125
+      ]
+    },
+    {
+      "start": 843.812,
+      "end": 847.652,
+      "text": "其他的路径目前看下来都差点意思。",
+      "source_segment_indexes": [
+        126
+      ],
+      "source_segment_ids": [
+        126
+      ]
+    },
+    {
+      "start": 847.972,
+      "end": 850.532,
+      "text": "所以哪怕那时候我不知道，对吧？",
+      "source_segment_indexes": [
+        127
+      ],
+      "source_segment_ids": [
+        127
+      ]
+    },
+    {
+      "start": 850.772,
+      "end": 854.932,
+      "text": "这些路径我我对对于我来说都是未探索过的路径嘛。",
+      "source_segment_indexes": [
+        128
+      ],
+      "source_segment_ids": [
+        128
+      ]
+    },
+    {
+      "start": 855.012,
+      "end": 858.772,
+      "text": "但凡我都探索过一遍，我觉得一定会收敛到今天的这个路径上来。",
+      "source_segment_indexes": [
+        129
+      ],
+      "source_segment_ids": [
+        129
+      ]
+    },
+    {
+      "start": 859.012,
+      "end": 866.452,
+      "text": "你是吴文达的学生，然后你是Drive AI的联创，然后后面到了小鹏，然后现在做了这家公司。",
+      "source_segment_indexes": [
+        130
+      ],
+      "source_segment_ids": [
+        130
+      ]
+    },
+    {
+      "start": 867.012,
+      "end": 870.372,
+      "text": "这些以上的所有的经历，你觉得哪一个对你的影响是最大的？",
+      "source_segment_indexes": [
+        131
+      ],
+      "source_segment_ids": [
+        131
+      ]
+    },
+    {
+      "start": 871.012,
+      "end": 876.772,
+      "text": "我觉得看不同的维度，Drive AI其实是让我第一次尝到了创业的滋味。",
+      "source_segment_indexes": [
+        132
+      ],
+      "source_segment_ids": [
+        132
+      ]
+    },
+    {
+      "start": 877.172,
+      "end": 887.892,
+      "text": "对，在小鹏期间这这段经历呢，是让我用大厂的这种方法论和这个大团队作战的经验武装了自己。",
+      "source_segment_indexes": [
+        133
+      ],
+      "source_segment_ids": [
+        133
+      ]
+    },
+    {
+      "start": 888.212,
+      "end": 896.852,
+      "text": "如果没有小鹏的这段经历，我可能也不会那么坚决的说自己出来创业，能够有信心能能够做好一家公司。",
+      "source_segment_indexes": [
+        134
+      ],
+      "source_segment_ids": [
+        134
+      ]
+    },
+    {
+      "start": 897.012,
+      "end": 900.532,
+      "text": "对，所以我觉得这两段经历都是非常重要的。",
+      "source_segment_indexes": [
+        135
+      ],
+      "source_segment_ids": [
+        135
+      ]
+    },
+    {
+      "start": 900.612,
+      "end": 901.092,
+      "text": "斯坦福呢？",
+      "source_segment_indexes": [
+        136
+      ],
+      "source_segment_ids": [
+        136
+      ]
+    },
+    {
+      "start": 901.892,
+      "end": 913.012,
+      "text": "斯坦福我觉得更多是一个标签，就是读一个PhD就是把人类的对对于未知世界的知识稍微往前拱那么一点点，不是我真正想要的。",
+      "source_segment_indexes": [
+        137
+      ],
+      "source_segment_ids": [
+        137
+      ]
+    },
+    {
+      "start": 913.252,
+      "end": 916.612,
+      "text": "对我更希望看到的是一个全局的一个完整的东西。",
+      "source_segment_indexes": [
+        138
+      ],
+      "source_segment_ids": [
+        138
+      ]
+    },
+    {
+      "start": 917.172,
+      "end": 922.612,
+      "text": "所以你看，呃，我也没有去投身这个移动互联网这些App，对对吧？",
+      "source_segment_indexes": [
+        139
+      ],
+      "source_segment_ids": [
+        139
+      ]
+    },
+    {
+      "start": 923.012,
+      "end": 929.652,
+      "text": "其实如果当时从斯坦福出来，我立刻去做一个App，可能没两年卖给谷歌，我我也财务自由了。",
+      "source_segment_indexes": [
+        140
+      ],
+      "source_segment_ids": [
+        140
+      ]
+    },
+    {
+      "start": 930.052,
+      "end": 932.372,
+      "text": "斯坦福有一个，我记得有你们有校友基金会。",
+      "source_segment_indexes": [
+        141
+      ],
+      "source_segment_ids": [
+        141
+      ]
+    },
+    {
+      "start": 932.372,
+      "end": 941.892,
+      "text": "是的，但是对于这一块，我就我也不知道为啥就没有提起太大的兴趣，但反而是说这个做一个实体的机器人，对吧？",
+      "source_segment_indexes": [
+        142
+      ],
+      "source_segment_ids": [
+        142
+      ]
+    },
+    {
+      "start": 941.892,
+      "end": 948.772,
+      "text": "它在现实世界当中能够产生一定的影响力，这个事情一直是非常非常吸引我的。",
+      "source_segment_indexes": [
+        143
+      ],
+      "source_segment_ids": [
+        143
+      ]
+    },
+    {
+      "start": 949.172,
+      "end": 951.252,
+      "text": "你理想的一个产品是什么样的？",
+      "source_segment_indexes": [
+        144
+      ],
+      "source_segment_ids": [
+        144
+      ]
+    },
+    {
+      "start": 951.252,
+      "end": 952.612,
+      "text": "足够生命感的东西。",
+      "source_segment_indexes": [
+        145
+      ],
+      "source_segment_ids": [
+        145
+      ]
+    },
+    {
+      "start": 953.092,
+      "end": 954.372,
+      "text": "怎么理解“生命感”这个词儿？",
+      "source_segment_indexes": [
+        146
+      ],
+      "source_segment_ids": [
+        146
+      ]
+    },
+    {
+      "start": 954.603,
+      "end": 960.043,
+      "text": "生命感有几个维度吧，呃，生命感本身是一个很泛的概念，对吧？",
+      "source_segment_indexes": [
+        147
+      ],
+      "source_segment_ids": [
+        147
+      ]
+    },
+    {
+      "start": 960.123,
+      "end": 968.923,
+      "text": "呃，有会有些人会觉得，哎，能跳舞，能能到处跑，这个叫生命感；有些人会觉得，哎，我我跳起来翻个跟斗是生命感。",
+      "source_segment_indexes": [
+        148
+      ],
+      "source_segment_ids": [
+        148
+      ]
+    },
+    {
+      "start": 969.003,
+      "end": 972.523,
+      "text": "也许有些人会说，那我不需要它能动，对吧？",
+      "source_segment_indexes": [
+        149
+      ],
+      "source_segment_ids": [
+        149
+      ]
+    },
+    {
+      "start": 972.523,
+      "end": 975.003,
+      "text": "它的它的眼睛能眨巴一下，对吧？",
+      "source_segment_indexes": [
+        150
+      ],
+      "source_segment_ids": [
+        150
+      ]
+    },
+    {
+      "start": 975.163,
+      "end": 979.723,
+      "text": "然后身上软软的，有有这个温度，这也是生命感。",
+      "source_segment_indexes": [
+        151
+      ],
+      "source_segment_ids": [
+        151
+      ]
+    },
+    {
+      "start": 979.723,
+      "end": 992.123,
+      "text": "那我们需要想要去主打的是，它能够自主的跟你出去，能够跟你回来，就像一个小狗一样，你可以无障碍的把它带到户外，然后也能带回来。",
+      "source_segment_indexes": [
+        152
+      ],
+      "source_segment_ids": [
+        152
+      ]
+    },
+    {
+      "start": 992.363,
+      "end": 995.643,
+      "text": "其实我觉得机器人行业聊生命感的人还挺多的。",
+      "source_segment_indexes": [
+        153
+      ],
+      "source_segment_ids": [
+        153
+      ]
+    },
+    {
+      "start": 995.643,
+      "end": 998.763,
+      "text": "你们其实对生命感好像有属于你们自己比较独特的理解。",
+      "source_segment_indexes": [
+        154
+      ],
+      "source_segment_ids": [
+        154
+      ]
+    },
+    {
+      "start": 998.763,
+      "end": 1011.883,
+      "text": "对，其实生命感如果概括来说，就是它的一个主体性，它不是一个被动去响应命令的东西，它是有自己的主体性，它自己的呃，它可以跟你有交互，对吧？",
+      "source_segment_indexes": [
+        155
+      ],
+      "source_segment_ids": [
+        155
+      ]
+    },
+    {
+      "start": 1011.963,
+      "end": 1013.403,
+      "text": "你给它命令，它会有响应。",
+      "source_segment_indexes": [
+        156
+      ],
+      "source_segment_ids": [
+        156
+      ]
+    },
+    {
+      "start": 1013.963,
+      "end": 1021.403,
+      "text": "但是呢，它不是一个智能硬件，它自己的一些行为，有些时候看起来都是在智能硬件上面是没有意义的。",
+      "source_segment_indexes": [
+        157
+      ],
+      "source_segment_ids": [
+        157
+      ]
+    },
+    {
+      "start": 1021.643,
+      "end": 1027.483,
+      "text": "如果你做一个智能音箱，你会希望这个智能音箱自己在房间里面到处跑了去探索吗？",
+      "source_segment_indexes": [
+        158
+      ],
+      "source_segment_ids": [
+        158
+      ]
+    },
+    {
+      "start": 1027.563,
+      "end": 1028.203,
+      "text": "其实也不会。",
+      "source_segment_indexes": [
+        159
+      ],
+      "source_segment_ids": [
+        159
+      ]
+    },
+    {
+      "start": 1028.363,
+      "end": 1032.203,
+      "text": "功能是建立在情绪价值的底气底色上面。",
+      "source_segment_indexes": [
+        160
+      ],
+      "source_segment_ids": [
+        160
+      ]
+    },
+    {
+      "start": 1032.443,
+      "end": 1041.643,
+      "text": "它首先得是一个主体，它首先得有自己的人设，能够以这个人设进入到你的家庭、你你的生活而不显得违和。",
+      "source_segment_indexes": [
+        161
+      ],
+      "source_segment_ids": [
+        161
+      ]
+    },
+    {
+      "start": 1042.523,
+      "end": 1046.123,
+      "text": "然后在这个基础上，这个角色能够帮你做一些力所能及的事情。",
+      "source_segment_indexes": [
+        162
+      ],
+      "source_segment_ids": [
+        162
+      ]
+    },
+    {
+      "start": 1046.603,
+      "end": 1049.083,
+      "text": "首先，它要有一定的不可预测性。",
+      "source_segment_indexes": [
+        163
+      ],
+      "source_segment_ids": [
+        163
+      ]
+    },
+    {
+      "start": 1050.043,
+      "end": 1067.403,
+      "text": "我举一个简单的例子，就比如说之前我我给一些外部的朋友做做一个演示的时候，我在跟robo交互，跟他打招呼，跟他说话，然后说到一半的时候，robo一言不合，转身就跟我说了句拜拜，就转转身就自己跑了，对吧？",
+      "source_segment_indexes": [
+        164
+      ],
+      "source_segment_ids": [
+        164
+      ]
+    },
+    {
+      "start": 1067.403,
+      "end": 1075.803,
+      "text": "然后就是在那个moment，外部的这这些访客，呃，他们看到之后就会说，哇，这东西是真的有自己的灵魂。",
+      "source_segment_indexes": [
+        165
+      ],
+      "source_segment_ids": [
+        165
+      ]
+    },
+    {
+      "start": 1076.123,
+      "end": 1078.683,
+      "text": "你们是怎么去设计这里面的随机性的？",
+      "source_segment_indexes": [
+        166
+      ],
+      "source_segment_ids": [
+        166
+      ]
+    },
+    {
+      "start": 1079.323,
+      "end": 1096.123,
+      "text": "这个就是比较复杂的一个过程了，因为我们产品经理当中也有这个心理学出身的，比如说通过呃VAD的这个情绪模型去设计一套机器人，它自己的一些内部状态，根据这个内部状态，它有有会有一个朝外的映射。",
+      "source_segment_indexes": [
+        167
+      ],
+      "source_segment_ids": [
+        167
+      ]
+    },
+    {
+      "start": 1096.523,
+      "end": 1100.203,
+      "text": "就它不是一个真正随机的，它可能是会跟环境去互动的随机。",
+      "source_segment_indexes": [
+        168
+      ],
+      "source_segment_ids": [
+        168
+      ]
+    },
+    {
+      "start": 1100.763,
+      "end": 1104.363,
+      "text": "对，它跟环境肯定是有互动，然后让人感觉到它是随机。",
+      "source_segment_indexes": [
+        169
+      ],
+      "source_segment_ids": [
+        169
+      ]
+    },
+    {
+      "start": 1104.843,
+      "end": 1110.683,
+      "text": "呃，那你要非得深究的话，今天任何一个随机数，它都是pseudo random，它都它都是伪随机，对吧？",
+      "source_segment_indexes": [
+        170
+      ],
+      "source_segment_ids": [
+        170
+      ]
+    },
+    {
+      "start": 1110.683,
+      "end": 1113.003,
+      "text": "生成随机数是一个世纪难题。",
+      "source_segment_indexes": [
+        171
+      ],
+      "source_segment_ids": [
+        171
+      ]
+    },
+    {
+      "start": 1113.003,
+      "end": 1123.403,
+      "text": "对对是的，是的，但是基于这个，呃，在用户感知的这这个层面，我们是可以把它做到随机，它的随机性是能够自洽的。",
+      "source_segment_indexes": [
+        172
+      ],
+      "source_segment_ids": [
+        172
+      ]
+    },
+    {
+      "start": 1124.203,
+      "end": 1131.643,
+      "text": "它不会说上一秒它是开开心心的，下一秒它突然随机的开始哭，完全完违反了它的人设，破坏了它的主体性。",
+      "source_segment_indexes": [
+        173
+      ],
+      "source_segment_ids": [
+        173
+      ]
+    },
+    {
+      "start": 1131.723,
+      "end": 1133.083,
+      "text": "这个这种随机就是有害。",
+      "source_segment_indexes": [
+        174
+      ],
+      "source_segment_ids": [
+        174
+      ]
+    },
+    {
+      "start": 1133.243,
+      "end": 1137.803,
+      "text": "随机也得符合常理，符合它的人设，符合逻辑，它是一个自洽的主体。",
+      "source_segment_indexes": [
+        175
+      ],
+      "source_segment_ids": [
+        175
+      ]
+    },
+    {
+      "start": 1138.043,
+      "end": 1142.683,
+      "text": "就比如刚才你说的，它转头离开，嗯，那个是一个什么样的场景会让他转头离开？",
+      "source_segment_indexes": [
+        176
+      ],
+      "source_segment_ids": [
+        176
+      ]
+    },
+    {
+      "start": 1143.243,
+      "end": 1145.003,
+      "text": "呃，这个可能就是一定的随机性。",
+      "source_segment_indexes": [
+        177
+      ],
+      "source_segment_ids": [
+        177
+      ]
+    },
+    {
+      "start": 1145.723,
+      "end": 1152.443,
+      "text": "就比如说它每一轮对话之后，它都会去决策说我现在要不要终止这个对话，对吧？",
+      "source_segment_indexes": [
+        178
+      ],
+      "source_segment_ids": [
+        178
+      ]
+    },
+    {
+      "start": 1152.763,
+      "end": 1159.163,
+      "text": "就有一点像大语言模型，你你最后一个token都是随机去取采样采出来的嘛？",
+      "source_segment_indexes": [
+        179
+      ],
+      "source_segment_ids": [
+        179
+      ]
+    },
+    {
+      "start": 1159.483,
+      "end": 1159.643,
+      "text": "对。",
+      "source_segment_indexes": [
+        180
+      ],
+      "source_segment_ids": [
+        180
+      ]
+    },
+    {
+      "start": 1159.723,
+      "end": 1174.763,
+      "text": "那我们在在采样的时候，它在里面就有一个选项叫做终止对话，它自己判定当前的这个对话，呃，对于它来说有点无聊啊，或者说其他地方有一个更吸引它的一个attractor，它就会被这个影响。",
+      "source_segment_indexes": [
+        181
+      ],
+      "source_segment_ids": [
+        181
+      ]
+    },
+    {
+      "start": 1175.563,
+      "end": 1177.403,
+      "text": "是你们在后面做了哪些智能的工作呢？",
+      "source_segment_indexes": [
+        182
+      ],
+      "source_segment_ids": [
+        182
+      ]
+    },
+    {
+      "start": 1177.643,
+      "end": 1185.083,
+      "text": "我觉得首先就还是回到我刚才那个观点，就是任何智能体的最呃首要的工作就是感知。",
+      "source_segment_indexes": [
+        183
+      ],
+      "source_segment_ids": [
+        183
+      ]
+    },
+    {
+      "start": 1185.883,
+      "end": 1197.163,
+      "text": "那我们这边说的广义的感知，其实不光是视觉，包括听觉，呃，包括它的触觉，呃，包括它对于整个环境的理解跟认知。",
+      "source_segment_indexes": [
+        184
+      ],
+      "source_segment_ids": [
+        184
+      ]
+    },
+    {
+      "start": 1197.786,
+      "end": 1203.386,
+      "text": "呃，这些其实第一步你得先把它做的非常 solid，其实就是你过去一直在做的事情。",
+      "source_segment_indexes": [
+        185
+      ],
+      "source_segment_ids": [
+        185
+      ]
+    },
+    {
+      "start": 1203.626,
+      "end": 1224.506,
+      "text": "对对，因为只有把感知做 solid 之后，你才能去在这个上面去去发散的去做一些他自己的小情绪啊，他的一些人设，你你才能说，我看到什么时候我应该有什么样的表现，或者是这个他的这个皮皮贱贱的这种小情绪也好，对吧？",
+      "source_segment_indexes": [
+        186
+      ],
+      "source_segment_ids": [
+        186
+      ]
+    },
+    {
+      "start": 1224.746,
+      "end": 1228.106,
+      "text": "呃，都都是需要建立在他对于周围环境的认知上面。",
+      "source_segment_indexes": [
+        187
+      ],
+      "source_segment_ids": [
+        187
+      ]
+    },
+    {
+      "start": 1228.266,
+      "end": 1247.066,
+      "text": "我们前期的话也做过很多呃不同模型之间的对比，那我们发现在这种大语言模型，包括多模态的模型，它的广义上面的理解能力是更强一些，呃，但是它也有很多弱点，就比如说它对于时序的理解就非常差。",
+      "source_segment_indexes": [
+        188
+      ],
+      "source_segment_ids": [
+        188
+      ]
+    },
+    {
+      "start": 1247.386,
+      "end": 1259.146,
+      "text": "现在市面上面最好的多模态模型，它其实很难识别到说你你给他做一个招手的动作让他过来，他只能基于单帧去猜测说你现在可能是在做这个动作。",
+      "source_segment_indexes": [
+        189
+      ],
+      "source_segment_ids": [
+        189
+      ]
+    },
+    {
+      "start": 1259.146,
+      "end": 1259.226,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        190
+      ],
+      "source_segment_ids": [
+        190
+      ]
+    },
+    {
+      "start": 1259.466,
+      "end": 1266.106,
+      "text": "但是你如果这个手放在这边，只是在看你自己的手心，基于单帧你是没有办法判断他他到底是不是在动的。",
+      "source_segment_indexes": [
+        191
+      ],
+      "source_segment_ids": [
+        191
+      ]
+    },
+    {
+      "start": 1266.506,
+      "end": 1269.626,
+      "text": "那可能我玩手机，他手机被遮住了，他可能也以为你在叫他。",
+      "source_segment_indexes": [
+        192
+      ],
+      "source_segment_ids": [
+        192
+      ]
+    },
+    {
+      "start": 1269.786,
+      "end": 1278.666,
+      "text": "是的，基于 transformer 的感知模型呢，它还有一个缺点，就是它对于精细的这个细节的识别是相对比较差的。",
+      "source_segment_indexes": [
+        193
+      ],
+      "source_segment_ids": [
+        193
+      ]
+    },
+    {
+      "start": 1278.666,
+      "end": 1286.026,
+      "text": "因为 convolution 你其实三乘三、五乘五的这个 patch，它可以做的非常非常细，所以很小的一些细节是可以看到的。",
+      "source_segment_indexes": [
+        194
+      ],
+      "source_segment_ids": [
+        194
+      ]
+    },
+    {
+      "start": 1286.186,
+      "end": 1297.466,
+      "text": "当时我们在做自动驾驶的时候就发现，vit 对于整个环境的判定是更准确、更更泛化，但是对于远处非常非常小的这个车的框，它检测不到。",
+      "source_segment_indexes": [
+        195
+      ],
+      "source_segment_ids": [
+        195
+      ]
+    },
+    {
+      "start": 1297.946,
+      "end": 1306.746,
+      "text": "transformer 它的每一个视觉 token 都是切了一个一个 patch 出来，对，所以它其实，在在小的东西上面，它是它是个近视眼。",
+      "source_segment_indexes": [
+        196
+      ],
+      "source_segment_ids": [
+        196
+      ]
+    },
+    {
+      "start": 1307.066,
+      "end": 1310.666,
+      "text": "对我看到你们其实，在那个硬件上的感知方案其实也在变化嘛。",
+      "source_segment_indexes": [
+        197
+      ],
+      "source_segment_ids": [
+        197
+      ]
+    },
+    {
+      "start": 1310.746,
+      "end": 1317.226,
+      "text": "你们第一代的时候可能就是主要是向前的这个视觉，对，然后你们第二代可能加了一些新的向后的，然后可能立体的。",
+      "source_segment_indexes": [
+        198
+      ],
+      "source_segment_ids": [
+        198
+      ]
+    },
+    {
+      "start": 1317.546,
+      "end": 1325.466,
+      "text": "对，其实我们发现去做环视，去达到三百六十度的一个感知认知，这个是一件 ROI 非常高的事情。",
+      "source_segment_indexes": [
+        199
+      ],
+      "source_segment_ids": [
+        199
+      ]
+    },
+    {
+      "start": 1325.786,
+      "end": 1330.586,
+      "text": "因为呃，首先我们是要在户外能够随时跟随人，对吧？",
+      "source_segment_indexes": [
+        200
+      ],
+      "source_segment_ids": [
+        200
+      ]
+    },
+    {
+      "start": 1331.146,
+      "end": 1338.346,
+      "text": "那如果人出了这个视觉范围，如果是一个活生生的动物的话，它是有脖子的。",
+      "source_segment_indexes": [
+        201
+      ],
+      "source_segment_ids": [
+        201
+      ]
+    },
+    {
+      "start": 1338.426,
+      "end": 1343.386,
+      "text": "虽然这个方方位上面的人不在我的视野范围内，我可以转头，对吧？",
+      "source_segment_indexes": [
+        202
+      ],
+      "source_segment_ids": [
+        202
+      ]
+    },
+    {
+      "start": 1343.626,
+      "end": 1348.746,
+      "text": "但是转头这件事情又带来额外的自由度上面的成本，包括整个系统的复杂度。",
+      "source_segment_indexes": [
+        203
+      ],
+      "source_segment_ids": [
+        203
+      ]
+    },
+    {
+      "start": 1348.826,
+      "end": 1355.626,
+      "text": "加一个眼睛，加一个摄像头会更便宜，而且对于系统的复杂度上面，它的带来的负面是更低的。",
+      "source_segment_indexes": [
+        204
+      ],
+      "source_segment_ids": [
+        204
+      ]
+    },
+    {
+      "start": 1355.946,
+      "end": 1360.906,
+      "text": "然后还有一些重要的因素，就比如说旁边有人喊我，对吧？",
+      "source_segment_indexes": [
+        205
+      ],
+      "source_segment_ids": [
+        205
+      ]
+    },
+    {
+      "start": 1361.146,
+      "end": 1375.466,
+      "text": "对，呃，喊我的时候，其实在这这个 ASR 就是语音的领域会有一个呃长久的难题，就是在没有唤醒词的情况下，呃，我怎么知道旁边的人在喊我？",
+      "source_segment_indexes": [
+        206
+      ],
+      "source_segment_ids": [
+        206
+      ]
+    },
+    {
+      "start": 1375.786,
+      "end": 1378.266,
+      "text": "呃，或者旁边的人在给我下达命令？",
+      "source_segment_indexes": [
+        207
+      ],
+      "source_segment_ids": [
+        207
+      ]
+    },
+    {
+      "start": 1378.266,
+      "end": 1382.186,
+      "text": "呃，我怎么知道这个不是一个因为噪声而带来的一个误触发？",
+      "source_segment_indexes": [
+        208
+      ],
+      "source_segment_ids": [
+        208
+      ]
+    },
+    {
+      "start": 1382.506,
+      "end": 1384.506,
+      "text": "那传统的语音怎么去解决呢？",
+      "source_segment_indexes": [
+        209
+      ],
+      "source_segment_ids": [
+        209
+      ]
+    },
+    {
+      "start": 1384.506,
+      "end": 1385.706,
+      "text": "它就需要一个唤醒词。",
+      "source_segment_indexes": [
+        210
+      ],
+      "source_segment_ids": [
+        210
+      ]
+    },
+    {
+      "start": 1386.106,
+      "end": 1394.986,
+      "text": "这个唤醒词在念出来的时候，它可以非常精确的识别到，呃，有很多都是用低功耗的芯片去做的，因为我们觉得唤醒词这个体验非常差。",
+      "source_segment_indexes": [
+        211
+      ],
+      "source_segment_ids": [
+        211
+      ]
+    },
+    {
+      "start": 1395.386,
+      "end": 1407.466,
+      "text": "但是如果不用唤醒词，你又会有各种误触，因为我在周围有了摄像头，我可以精准的判断这个声音来的时候，它的方向跟我检测到人的这个方向是不是吻合的。",
+      "source_segment_indexes": [
+        212
+      ],
+      "source_segment_ids": [
+        212
+      ]
+    },
+    {
+      "start": 1408.266,
+      "end": 1412.426,
+      "text": "如果吻合了，那其实我就可以判断这个是人发出的一个声音。",
+      "source_segment_indexes": [
+        213
+      ],
+      "source_segment_ids": [
+        213
+      ]
+    },
+    {
+      "start": 1413.946,
+      "end": 1418.186,
+      "text": "啊，这其实是在一个物理 AI 里面，其实多模态融合的一个挺好的一个案例。",
+      "source_segment_indexes": [
+        214
+      ],
+      "source_segment_ids": [
+        214
+      ]
+    },
+    {
+      "start": 1418.266,
+      "end": 1419.066,
+      "text": "是的，是的。",
+      "source_segment_indexes": [
+        215
+      ],
+      "source_segment_ids": [
+        215
+      ]
+    },
+    {
+      "start": 1419.306,
+      "end": 1428.186,
+      "text": "其实大家都说多模态，说物理 AI，呃，说了很多概念，但是我们其实一直想的是说，这些新的技术看起来是黑科技，对吧？",
+      "source_segment_indexes": [
+        216
+      ],
+      "source_segment_ids": [
+        216
+      ]
+    },
+    {
+      "start": 1428.426,
+      "end": 1430.346,
+      "text": "那你怎么去做落地？",
+      "source_segment_indexes": [
+        217
+      ],
+      "source_segment_ids": [
+        217
+      ]
+    },
+    {
+      "start": 1430.906,
+      "end": 1435.466,
+      "text": "呃，我自己跟团队一直说，我们团队的一个底色就是要把黑科技落地。",
+      "source_segment_indexes": [
+        218
+      ],
+      "source_segment_ids": [
+        218
+      ]
+    },
+    {
+      "start": 1435.866,
+      "end": 1438.986,
+      "text": "这些黑科技也许在我们看来是可以实现的。",
+      "source_segment_indexes": [
+        219
+      ],
+      "source_segment_ids": [
+        219
+      ]
+    },
+    {
+      "start": 1439.38,
+      "end": 1449.62,
+      "text": "对，但是我也很惊讶，就是因为免唤醒词这个事儿，可能在汽车里面你很好理解，就是它可能可以定位到某一排，因为它是一个很结构化的一个座位。",
+      "source_segment_indexes": [
+        220
+      ],
+      "source_segment_ids": [
+        220
+      ]
+    },
+    {
+      "start": 1449.62,
+      "end": 1452.66,
+      "text": "然后如果你可能在家里面的话，你其实没有什么其他人。",
+      "source_segment_indexes": [
+        221
+      ],
+      "source_segment_ids": [
+        221
+      ]
+    },
+    {
+      "start": 1452.98,
+      "end": 1453.22,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        222
+      ],
+      "source_segment_ids": [
+        222
+      ]
+    },
+    {
+      "start": 1453.3,
+      "end": 1454.9,
+      "text": "但是你是在户外。",
+      "source_segment_indexes": [
+        223
+      ],
+      "source_segment_ids": [
+        223
+      ]
+    },
+    {
+      "start": 1455.14,
+      "end": 1455.3,
+      "text": "对。",
+      "source_segment_indexes": [
+        224
+      ],
+      "source_segment_ids": [
+        224
+      ]
+    },
+    {
+      "start": 1455.46,
+      "end": 1457.38,
+      "text": "所以这个事儿其实是挺夸张的。",
+      "source_segment_indexes": [
+        225
+      ],
+      "source_segment_ids": [
+        225
+      ]
+    },
+    {
+      "start": 1457.86,
+      "end": 1466.9,
+      "text": "对，当时我们定这个目标的时候，呃，团队当中也是有挺多质疑，说这这个好像行业当中也没有人这么做，对吧？",
+      "source_segment_indexes": [
+        226
+      ],
+      "source_segment_ids": [
+        226
+      ]
+    },
+    {
+      "start": 1466.98,
+      "end": 1473.3,
+      "text": "然后成熟的方案呢都是基于唤醒词，我们要不要去冒这么大的风险？",
+      "source_segment_indexes": [
+        227
+      ],
+      "source_segment_ids": [
+        227
+      ]
+    },
+    {
+      "start": 1473.78,
+      "end": 1485.86,
+      "text": "但是当时我我跟几个技术骨干商量下来，包括产品的同学一起进来讨论，就觉得唤醒词这个事儿其实真的是行业苦它已经久矣。",
+      "source_segment_indexes": [
+        228
+      ],
+      "source_segment_ids": [
+        228
+      ]
+    },
+    {
+      "start": 1486.26,
+      "end": 1494.58,
+      "text": "目前大家习惯的这个唤醒词，并不是因为大家接受它，而是没有别的选择，只能去去捏着鼻子忍受了。",
+      "source_segment_indexes": [
+        229
+      ],
+      "source_segment_ids": [
+        229
+      ]
+    },
+    {
+      "start": 1494.74,
+      "end": 1507.22,
+      "text": "对，最早是就是某家大厂当时设计的也是四字唤醒词，因为他发现可能三字的成本就会高很多，就不要说你可能砍掉唤醒词，你让唤醒词变短也是一件很有难度的事情。",
+      "source_segment_indexes": [
+        230
+      ],
+      "source_segment_ids": [
+        230
+      ]
+    },
+    {
+      "start": 1507.54,
+      "end": 1515.94,
+      "text": "其实它还是基于一个智能硬件、智能音箱的一个逻辑，就是你不能有误唤醒，而且一旦有了误唤醒，它的体验会非常差。",
+      "source_segment_indexes": [
+        231
+      ],
+      "source_segment_ids": [
+        231
+      ]
+    },
+    {
+      "start": 1516.66,
+      "end": 1522.1,
+      "text": "经常比如说，就我们如果旁边有一个智能音箱，我们在聊天的时候，它突然冒出来说：“哎，今天天气怎么样？",
+      "source_segment_indexes": [
+        232
+      ],
+      "source_segment_ids": [
+        232
+      ]
+    },
+    {
+      "start": 1522.74,
+      "end": 1531.3,
+      "text": "”或者说我们提到了某一个关键词的时候，它突然开始跟你长篇大论来一个，这个就非常的让人出戏，我会会人会抓狂，对吧？",
+      "source_segment_indexes": [
+        233
+      ],
+      "source_segment_ids": [
+        233
+      ]
+    },
+    {
+      "start": 1531.7,
+      "end": 1539.7,
+      "text": "但是在 Rover 这样的产品上面，其实一定程度的误唤醒，从产品上来说，可能甚至是一个加分。",
+      "source_segment_indexes": [
+        234
+      ],
+      "source_segment_ids": [
+        234
+      ]
+    },
+    {
+      "start": 1540.18,
+      "end": 1545.7,
+      "text": "就比如说它有一个误触，只要它不是特别频繁，它转过来说：“嗯，你刚才叫我了吗？",
+      "source_segment_indexes": [
+        235
+      ],
+      "source_segment_ids": [
+        235
+      ]
+    },
+    {
+      "start": 1546.66,
+      "end": 1546.9,
+      "text": "”对吧？",
+      "source_segment_indexes": [
+        236
+      ],
+      "source_segment_ids": [
+        236
+      ]
+    },
+    {
+      "start": 1547.3,
+      "end": 1548.98,
+      "text": "那我跟他说：“我没叫你，你听错了。",
+      "source_segment_indexes": [
+        237
+      ],
+      "source_segment_ids": [
+        237
+      ]
+    },
+    {
+      "start": 1549.38,
+      "end": 1555.46,
+      "text": "”他就哦，又回去自己做自己的事儿去了，这感觉就会就会完全不一样，它不是一种打扰。",
+      "source_segment_indexes": [
+        238
+      ],
+      "source_segment_ids": [
+        238
+      ]
+    },
+    {
+      "start": 1556.26,
+      "end": 1562.02,
+      "text": "对，但那其实对它的这个表现也是有一个要要规划的，就是是要规划。",
+      "source_segment_indexes": [
+        239
+      ],
+      "source_segment_ids": [
+        239
+      ]
+    },
+    {
+      "start": 1562.18,
+      "end": 1571.54,
+      "text": "对它，呃，我不做唤醒词，但是对于误触的这个要求还是存在的。",
+      "source_segment_indexes": [
+        240
+      ],
+      "source_segment_ids": [
+        240
+      ]
+    },
+    {
+      "start": 1571.54,
+      "end": 1575.06,
+      "text": "对它还是对有有这种 KPI 指标是是需要去达成的。",
+      "source_segment_indexes": [
+        241
+      ],
+      "source_segment_ids": [
+        241
+      ]
+    },
+    {
+      "start": 1575.3,
+      "end": 1580.42,
+      "text": "人有些时候也会误触嘛，就是可能我以为我的谁在叫我，我可能也要去 check 一下。",
+      "source_segment_indexes": [
+        242
+      ],
+      "source_segment_ids": [
+        242
+      ]
+    },
+    {
+      "start": 1580.58,
+      "end": 1591.06,
+      "text": "对，有一个原则就是说，哪怕说它的误触了，但是这个误触得是符合逻辑，就是说这个声音的来源，我们确实在这边说话，对吧？",
+      "source_segment_indexes": [
+        243
+      ],
+      "source_segment_ids": [
+        243
+      ]
+    },
+    {
+      "start": 1591.14,
+      "end": 1602.98,
+      "text": "然后他感觉到我们在说话的时候，他他有一个误触，认为是我们在说话，而不是说那边有个空调发出一些噪声的时候，他跑过去跟跟空调去去做交互了，对吧？",
+      "source_segment_indexes": [
+        244
+      ],
+      "source_segment_ids": [
+        244
+      ]
+    },
+    {
+      "start": 1603.06,
+      "end": 1605.46,
+      "text": "那就这个就不符合逻辑，你会觉得它非常蠢。",
+      "source_segment_indexes": [
+        245
+      ],
+      "source_segment_ids": [
+        245
+      ]
+    },
+    {
+      "start": 1605.54,
+      "end": 1613.86,
+      "text": "但是因为你们在你们做户外嘛，其实户外可能会有很多人，那如果一群人围着叽叽喳喳的时候，那它是不是很容易处于误触的状态？",
+      "source_segment_indexes": [
+        246
+      ],
+      "source_segment_ids": [
+        246
+      ]
+    },
+    {
+      "start": 1614.66,
+      "end": 1618.74,
+      "text": "其实这里面就需要去做这个意图的识别跟区分。",
+      "source_segment_indexes": [
+        247
+      ],
+      "source_segment_ids": [
+        247
+      ]
+    },
+    {
+      "start": 1619.22,
+      "end": 1624.42,
+      "text": "那这些人他是互相之间在对话，还是在朝着机器人说话，对吧？",
+      "source_segment_indexes": [
+        248
+      ],
+      "source_segment_ids": [
+        248
+      ]
+    },
+    {
+      "start": 1624.5,
+      "end": 1626.26,
+      "text": "这个我们也是要做做判断的。",
+      "source_segment_indexes": [
+        249
+      ],
+      "source_segment_ids": [
+        249
+      ]
+    },
+    {
+      "start": 1626.66,
+      "end": 1634.66,
+      "text": "就比如说我们两个在对话的时候，我的眼睛去不会去看这个机器人，这个 gaze 其实是非常细节的一个点。",
+      "source_segment_indexes": [
+        250
+      ],
+      "source_segment_ids": [
+        250
+      ]
+    },
+    {
+      "start": 1634.9,
+      "end": 1647.7,
+      "text": "如果纯粹从语音的角度去试图去解决这个事情是无解的，因为你看不见人的 gaze，你也看不到人当前的状态，他也许是完全没有朝向机器人，他在说话，对吧？",
+      "source_segment_indexes": [
+        251
+      ],
+      "source_segment_ids": [
+        251
+      ]
+    },
+    {
+      "start": 1647.7,
+      "end": 1653.46,
+      "text": "但是你你听到了一个你认为的唤醒词或者关键词，你就被唤醒了，对吧？",
+      "source_segment_indexes": [
+        252
+      ],
+      "source_segment_ids": [
+        252
+      ]
+    },
+    {
+      "start": 1653.54,
+      "end": 1667.06,
+      "text": "但是如果你有视觉，你可以看到人眼睛，他到底有没有在看着你，这个你是可以去判断当前他的交互状态的，包括人的嘴巴有没有在动，唇语我不需要读到读唇，对吧？",
+      "source_segment_indexes": [
+        253
+      ],
+      "source_segment_ids": [
+        253
+      ]
+    },
+    {
+      "start": 1667.14,
+      "end": 1667.76,
+      "text": "那个太难了。",
+      "source_segment_indexes": [
+        254
+      ],
+      "source_segment_ids": [
+        254
+      ]
+    },
+    {
+      "start": 1667.86,
+      "end": 1677.7,
+      "text": "对对，就那个很难的，在小鹏期间也做过这个唇读唇语，但是你你至少是能判断当前这个人有没有在说话，这个是很好判断的，对吧？",
+      "source_segment_indexes": [
+        255
+      ],
+      "source_segment_ids": [
+        255
+      ]
+    },
+    {
+      "start": 1677.78,
+      "end": 1679.54,
+      "text": "如果当前这个人完全没说话。",
+      "source_segment_indexes": [
+        256
+      ],
+      "source_segment_ids": [
+        256
+      ]
+    },
+    {
+      "start": 1679.929,
+      "end": 1684.809,
+      "text": "旁边那个人的嘴一直在动，那我就能区分，同样来自这个方向，大概是哪一个人在说话。",
+      "source_segment_indexes": [
+        257
+      ],
+      "source_segment_ids": [
+        257
+      ]
+    },
+    {
+      "start": 1685.289,
+      "end": 1687.769,
+      "text": "我我知道你们还加了一些，比如说摄像的一些功能。",
+      "source_segment_indexes": [
+        258
+      ],
+      "source_segment_ids": [
+        258
+      ]
+    },
+    {
+      "start": 1688.089,
+      "end": 1694.089,
+      "text": "我们其实发现拍摄跟记录是一个刚需，对。",
+      "source_segment_indexes": [
+        259
+      ],
+      "source_segment_ids": [
+        259
+      ]
+    },
+    {
+      "start": 1694.169,
+      "end": 1701.449,
+      "text": "但是如果只做这一个点呢，我们会把自己做成一个工具项的产品，对这个又不是我想要去做的。",
+      "source_segment_indexes": [
+        260
+      ],
+      "source_segment_ids": [
+        260
+      ]
+    },
+    {
+      "start": 1702.169,
+      "end": 1707.129,
+      "text": "当然切中了细分领域之后，我觉得这个方向是非常make sense。",
+      "source_segment_indexes": [
+        261
+      ],
+      "source_segment_ids": [
+        261
+      ]
+    },
+    {
+      "start": 1707.529,
+      "end": 1721.289,
+      "text": "所以在第一代上面呢，我觉得呃我们也比较克制，呃我们不会去卷说做很好的这个呃非常非常强的成像质量，我去跟大疆和影视去PK，对吧？",
+      "source_segment_indexes": [
+        262
+      ],
+      "source_segment_ids": [
+        262
+      ]
+    },
+    {
+      "start": 1721.289,
+      "end": 1725.129,
+      "text": "那作为创业公司来说，你在第一代上面不可能去这么做。",
+      "source_segment_indexes": [
+        263
+      ],
+      "source_segment_ids": [
+        263
+      ]
+    },
+    {
+      "start": 1725.289,
+      "end": 1728.729,
+      "text": "对，但是你们好像可以加一个杆子，然后可以在上面加一个。",
+      "source_segment_indexes": [
+        264
+      ],
+      "source_segment_ids": [
+        264
+      ]
+    },
+    {
+      "start": 1728.889,
+      "end": 1733.849,
+      "text": "这这个叫这个叫打不不打不过就加入嘛，我可以借力对吧？",
+      "source_segment_indexes": [
+        265
+      ],
+      "source_segment_ids": [
+        265
+      ]
+    },
+    {
+      "start": 1733.849,
+      "end": 1738.169,
+      "text": "你可以加一个手机，今天手机的拍摄效果其实非常好，对吧？",
+      "source_segment_indexes": [
+        266
+      ],
+      "source_segment_ids": [
+        266
+      ]
+    },
+    {
+      "start": 1738.249,
+      "end": 1744.649,
+      "text": "它已经有自带的这些这个白平衡啊ISP啊，包括这个防抖的一些算法都有，对吧？",
+      "source_segment_indexes": [
+        267
+      ],
+      "source_segment_ids": [
+        267
+      ]
+    },
+    {
+      "start": 1744.729,
+      "end": 1749.689,
+      "text": "我们不需要自己再去在第一代上面重新辛苦的去造造轮子，对吧？",
+      "source_segment_indexes": [
+        268
+      ],
+      "source_segment_ids": [
+        268
+      ]
+    },
+    {
+      "start": 1749.769,
+      "end": 1768.169,
+      "text": "可能你你你造了大半年的你你做出来的东西也不如人家一个基础的东西，所以我我们是可以作为一个移动的拍摄平台，你在上面加装了配件，呃加了自拍杆，达到一个足够的高度，它的视角其实是可以走在你前面拍你正面。",
+      "source_segment_indexes": [
+        269
+      ],
+      "source_segment_ids": [
+        269
+      ]
+    },
+    {
+      "start": 1768.729,
+      "end": 1772.889,
+      "text": "然后我们自己ROBA上面的摄像头呢，它主打的是一个抓拍的功能。",
+      "source_segment_indexes": [
+        270
+      ],
+      "source_segment_ids": [
+        270
+      ]
+    },
+    {
+      "start": 1773.609,
+      "end": 1784.809,
+      "text": "很多时候家长在呃出游的过程当中，看到小孩有一些精彩的瞬间，想要把摄像头掏出来拍，已经过掉了，这个瞬间已经已经错过了。",
+      "source_segment_indexes": [
+        271
+      ],
+      "source_segment_ids": [
+        271
+      ]
+    },
+    {
+      "start": 1784.809,
+      "end": 1788.889,
+      "text": "也许这一错过，你你接下来几年都不会再有，对吧？",
+      "source_segment_indexes": [
+        272
+      ],
+      "source_segment_ids": [
+        272
+      ]
+    },
+    {
+      "start": 1788.889,
+      "end": 1794.249,
+      "text": "那这种精彩的瞬间，我们是可以通过后验的方式去给它呃储存下来。",
+      "source_segment_indexes": [
+        273
+      ],
+      "source_segment_ids": [
+        273
+      ]
+    },
+    {
+      "start": 1794.809,
+      "end": 1799.849,
+      "text": "就有了触发之后，它它可以把过去几秒的一个片段给落到盘上。",
+      "source_segment_indexes": [
+        274
+      ],
+      "source_segment_ids": [
+        274
+      ]
+    },
+    {
+      "start": 1800.409,
+      "end": 1812.089,
+      "text": "那其实对于ROBA来说也是一样，我们有这种精彩瞬间的检测的模型，它在触发之后，它可以把过去一段时间的这个视频存到端测。",
+      "source_segment_indexes": [
+        275
+      ],
+      "source_segment_ids": [
+        275
+      ]
+    },
+    {
+      "start": 1813.129,
+      "end": 1815.609,
+      "text": "嗯，你们其实做了很多不同的模型，对吗？",
+      "source_segment_indexes": [
+        276
+      ],
+      "source_segment_ids": [
+        276
+      ]
+    },
+    {
+      "start": 1816.009,
+      "end": 1840.009,
+      "text": "目前应该有十来个吧，有视觉感知的，通用的这个环境的认知，对于人的这种human centric的这些检测，比如说人在哪儿，人的面部表情，人的年龄性别，眼睛有没有在看机器人，手部的一些关键点，肢体的关键点，现在在做哪些动作，这些我们都会做的非常非常详细。",
+      "source_segment_indexes": [
+        277
+      ],
+      "source_segment_ids": [
+        277
+      ]
+    },
+    {
+      "start": 1840.569,
+      "end": 1865.849,
+      "text": "在这一块呢，其实并不适合去用现在主流的这些多模态大模型，它其实抓不到这些细节，比如说眼睛有没有在看你，然后语音语音我们也是做了端测的方案，因为我们发现用云端的方案呢，一方面有延时，第二个是在任何这个网络出现波动的情况下，这个产品的体验会变成非常不可控。",
+      "source_segment_indexes": [
+        278
+      ],
+      "source_segment_ids": [
+        278
+      ]
+    },
+    {
+      "start": 1866.889,
+      "end": 1894.409,
+      "text": "而且对于用户来说，一旦有过一两次这种网络不可控造成的体验下降，它会自动把它降级成一个工具或者一个机器，它的生命感可能就会受到损失，并不是说百分之九十的情况都可以就可以了，正好它可能就是那百分之十甚至百分之五的情况，你跟他说一个话，他没有响应，这个时候他在你心目当中这个生命感就一下子这个曲线就下来。",
+      "source_segment_indexes": [
+        279
+      ],
+      "source_segment_ids": [
+        279
+      ]
+    },
+    {
+      "start": 1894.409,
+      "end": 1898.969,
+      "text": "哎，语音其实现在已经有一些成熟的解决方案了。",
+      "source_segment_indexes": [
+        280
+      ],
+      "source_segment_ids": [
+        280
+      ]
+    },
+    {
+      "start": 1899.209,
+      "end": 1915.929,
+      "text": "对，嗯，我们会去做微调，针对我们的这个语音环境，因为语音是其实是一个比视觉更复杂的一个链路，对，因为视觉的话ISP其实相对来说比较标准，呃而且有一套标准的评判。",
+      "source_segment_indexes": [
+        281
+      ],
+      "source_segment_ids": [
+        281
+      ]
+    },
+    {
+      "start": 1916.274,
+      "end": 1918.354,
+      "text": "评判的 criteria 有 KPI，对吧？",
+      "source_segment_indexes": [
+        282
+      ],
+      "source_segment_ids": [
+        282
+      ]
+    },
+    {
+      "start": 1918.674,
+      "end": 1919.954,
+      "text": "ISP 到底做的好不好？",
+      "source_segment_indexes": [
+        283
+      ],
+      "source_segment_ids": [
+        283
+      ]
+    },
+    {
+      "start": 1920.674,
+      "end": 1922.354,
+      "text": "成像做的好不好，对吧？",
+      "source_segment_indexes": [
+        284
+      ],
+      "source_segment_ids": [
+        284
+      ]
+    },
+    {
+      "start": 1922.754,
+      "end": 1929.154,
+      "text": "但是语音的话，其实首先传感器就分很多，什么单麦的、四麦的、六麦的这种方案。",
+      "source_segment_indexes": [
+        285
+      ],
+      "source_segment_ids": [
+        285
+      ]
+    },
+    {
+      "start": 1929.234,
+      "end": 1930.594,
+      "text": "对，你们是一个环形的。",
+      "source_segment_indexes": [
+        286
+      ],
+      "source_segment_ids": [
+        286
+      ]
+    },
+    {
+      "start": 1931.474,
+      "end": 1939.634,
+      "text": "对，然后用了这些麦之后，它跟机器人自己腔体内部的这个声学环境也有很大的关系。",
+      "source_segment_indexes": [
+        287
+      ],
+      "source_segment_ids": [
+        287
+      ]
+    },
+    {
+      "start": 1940.034,
+      "end": 1946.114,
+      "text": "对，有一些厂家他选择的是把这个麦突出一点，这样的话它更好的去收声，对吧？",
+      "source_segment_indexes": [
+        288
+      ],
+      "source_segment_ids": [
+        288
+      ]
+    },
+    {
+      "start": 1946.514,
+      "end": 1956.514,
+      "text": "我们是坐在这个机器人内部是做成一体的，但这样的话机器人内部的一些噪音也会对这个前端收声，对，却会会有一些噪声。",
+      "source_segment_indexes": [
+        289
+      ],
+      "source_segment_ids": [
+        289
+      ]
+    },
+    {
+      "start": 1956.994,
+      "end": 1959.394,
+      "text": "哎，除了这几个，还有其他的模型可以分享吗？",
+      "source_segment_indexes": [
+        290
+      ],
+      "source_segment_ids": [
+        290
+      ]
+    },
+    {
+      "start": 1959.794,
+      "end": 1963.714,
+      "text": "导航和避障，然后呃，运动控制。",
+      "source_segment_indexes": [
+        291
+      ],
+      "source_segment_ids": [
+        291
+      ]
+    },
+    {
+      "start": 1963.874,
+      "end": 1965.314,
+      "text": "你的老本行了，导航避障。",
+      "source_segment_indexes": [
+        292
+      ],
+      "source_segment_ids": [
+        292
+      ]
+    },
+    {
+      "start": 1966.114,
+      "end": 1982.354,
+      "text": "对，我们现在是基本上没有用到规则式的这种导航，即使在户外去跟人，或者说是在户内从端到端，或者依照 GPS 从某个点走到另外一个点，我们现在都是用模型训练的方式去解决。",
+      "source_segment_indexes": [
+        293
+      ],
+      "source_segment_ids": [
+        293
+      ]
+    },
+    {
+      "start": 1982.994,
+      "end": 1988.674,
+      "text": "呃，因为我我发现，其实在这个时代，你用模型训练方式去解决更高效。",
+      "source_segment_indexes": [
+        294
+      ],
+      "source_segment_ids": [
+        294
+      ]
+    },
+    {
+      "start": 1989.074,
+      "end": 1996.834,
+      "text": "对，因为解决这件事情，你其实已经有更多的很多的这种仿真去可以去使用，你不用自己一条一条的去写规则。",
+      "source_segment_indexes": [
+        295
+      ],
+      "source_segment_ids": [
+        295
+      ]
+    },
+    {
+      "start": 1997.074,
+      "end": 1999.474,
+      "text": "导航这件事儿和你之前做有什么不一样吗？",
+      "source_segment_indexes": [
+        296
+      ],
+      "source_segment_ids": [
+        296
+      ]
+    },
+    {
+      "start": 1999.954,
+      "end": 2016.594,
+      "text": "我觉得在环境上面来说更开放了，你不是沿着车道线去走，而是你要实时的去看哪些区域是可以走的，包括什么时候是可以走到草地上，什么时候你最好是跟着这个步道，跟跟着看得见的这个路去走。",
+      "source_segment_indexes": [
+        297
+      ],
+      "source_segment_ids": [
+        297
+      ]
+    },
+    {
+      "start": 2016.994,
+      "end": 2023.554,
+      "text": "如果前面有个障碍物，人是往这边绕的，它的初始条件是更偏右边的话，它会往另外一个方向去绕。",
+      "source_segment_indexes": [
+        298
+      ],
+      "source_segment_ids": [
+        298
+      ]
+    },
+    {
+      "start": 2023.954,
+      "end": 2026.034,
+      "text": "它也会选择通过性更好的路面。",
+      "source_segment_indexes": [
+        299
+      ],
+      "source_segment_ids": [
+        299
+      ]
+    },
+    {
+      "start": 2026.274,
+      "end": 2030.034,
+      "text": "如果它的地形特别复杂，它刚好碰到了它过不去的坎，它怎么办？",
+      "source_segment_indexes": [
+        300
+      ],
+      "source_segment_ids": [
+        300
+      ]
+    },
+    {
+      "start": 2030.194,
+      "end": 2030.674,
+      "text": "它求救。",
+      "source_segment_indexes": [
+        301
+      ],
+      "source_segment_ids": [
+        301
+      ]
+    },
+    {
+      "start": 2031.074,
+      "end": 2044.114,
+      "text": "它就像一个小狗，如果有时候有个坎儿爬不过去，它也会在原地急得团团转，在在叫，就是可能会发出一些声音或者有些表情，呃，让人知道它这边过不去，然后请求人来帮它一下。",
+      "source_segment_indexes": [
+        302
+      ],
+      "source_segment_ids": [
+        302
+      ]
+    },
+    {
+      "start": 2044.514,
+      "end": 2048.914,
+      "text": "然后你把它帮完了之后，它还会有一个开心的表情。",
+      "source_segment_indexes": [
+        303
+      ],
+      "source_segment_ids": [
+        303
+      ]
+    },
+    {
+      "start": 2049.394,
+      "end": 2063.554,
+      "text": "啊，包括我们的呃机器上面，它是是设计了一个把手，这个把手的捏上去的材质是比较亲肤的，所以其实，在拎起这件事情上，我们也是做把这个体验做的足够好。",
+      "source_segment_indexes": [
+        304
+      ],
+      "source_segment_ids": [
+        304
+      ]
+    },
+    {
+      "start": 2063.714,
+      "end": 2071.874,
+      "text": "刚才聊了很多跟模型相关的话题嘛，你们其实做了像你刚才说，可能做了十几个模型，声学的和这个视觉的，其实很多时候它是要联动的。",
+      "source_segment_indexes": [
+        305
+      ],
+      "source_segment_ids": [
+        305
+      ]
+    },
+    {
+      "start": 2072.114,
+      "end": 2074.194,
+      "text": "对，那不同的模型之间怎么去串联？",
+      "source_segment_indexes": [
+        306
+      ],
+      "source_segment_ids": [
+        306
+      ]
+    },
+    {
+      "start": 2074.274,
+      "end": 2077.874,
+      "text": "不同的模块之间，他们是会呃传递消息的。",
+      "source_segment_indexes": [
+        307
+      ],
+      "source_segment_ids": [
+        307
+      ]
+    },
+    {
+      "start": 2078.114,
+      "end": 2091.874,
+      "text": "那这个其实就是在自动驾驶领域之前也积累过一些经验，自动驾驶也是一个多模块、多进程，然后互相之间都会发消息的这样一个整整体的一个架构系统。",
+      "source_segment_indexes": [
+        308
+      ],
+      "source_segment_ids": [
+        308
+      ]
+    },
+    {
+      "start": 2092.354,
+      "end": 2100.514,
+      "text": "对，那在机器人身身上其实也是类似，因为今天的模型还做不到说一到两个大模型，它就涵盖了陪伴机器人所有的一切。",
+      "source_segment_indexes": [
+        309
+      ],
+      "source_segment_ids": [
+        309
+      ]
+    },
+    {
+      "start": 2100.754,
+      "end": 2109.714,
+      "text": "你一定是一个多模型互相交互，然后呃互相之间传递消息，然后收到消息之后，根据这个消息，它会有一些这个处理的逻辑。",
+      "source_segment_indexes": [
+        310
+      ],
+      "source_segment_ids": [
+        310
+      ]
+    },
+    {
+      "start": 2110.194,
+      "end": 2114.914,
+      "text": "这个其实就比较考验呃团队对于复杂工程系统的一个把控的能力。",
+      "source_segment_indexes": [
+        311
+      ],
+      "source_segment_ids": [
+        311
+      ]
+    },
+    {
+      "start": 2114.914,
+      "end": 2120.754,
+      "text": "可能有点像五年前的、十年前的自动驾驶，肯定比五年前的要要更超前一些，要要好一些了。",
+      "source_segment_indexes": [
+        312
+      ],
+      "source_segment_ids": [
+        312
+      ]
+    },
+    {
+      "start": 2121.074,
+      "end": 2134.114,
+      "text": "对，因为今天我们用的模型很多已经用到了 transformer 的架构啊，包括它的泛化性，它的这个呃识别物体的多样性，包括像刚才说的语音，也都是有一些革命性的变化。",
+      "source_segment_indexes": [
+        313
+      ],
+      "source_segment_ids": [
+        313
+      ]
+    },
+    {
+      "start": 2134.434,
+      "end": 2147.794,
+      "text": "其实更主要的是我们要有足够的真实用户场景当中的数据，所以我们现在第一代产品出去之后，就会有这个契机，有有这个条件能够采集到这这一类的数据来进行迭代。",
+      "source_segment_indexes": [
+        314
+      ],
+      "source_segment_ids": [
+        314
+      ]
+    },
+    {
+      "start": 2148.434,
+      "end": 2149.874,
+      "text": "那你们为什么会选择户外呢？",
+      "source_segment_indexes": [
+        315
+      ],
+      "source_segment_ids": [
+        315
+      ]
+    },
+    {
+      "start": 2150.034,
+      "end": 2154.434,
+      "text": "如果你走进家庭的话，其实户外和室内其实还是很不一样的一个场景。",
+      "source_segment_indexes": [
+        316
+      ],
+      "source_segment_ids": [
+        316
+      ]
+    },
+    {
+      "start": 2154.594,
+      "end": 2158.194,
+      "text": "因为今天如果要真的走入室内的话，它的",
+      "source_segment_indexes": [
+        317
+      ],
+      "source_segment_ids": [
+        317
+      ]
+    },
+    {
+      "start": 2159.226,
+      "end": 2190.666,
+      "text": "用户对于隐私上面的一些顾虑，从户外来说的话，首先这个产品的成立性会更高一些，我们觉得，对，因为首先户外看来是一个蓝海，然后人在户外，从心理上来说，他会更希望有一个陪伴，有一个物理存在的陪伴，呃，因为在家里的话，任何陪伴类的产品，它最大的对手是手机，是屏幕，但是在户外这个屏幕跟手机这个最大的敌对就被去掉了，其实这个也是我们发现的一个洞察，",
+      "source_segment_indexes": [
+        318
+      ],
+      "source_segment_ids": [
+        318
+      ]
+    },
+    {
+      "start": 2191.066,
+      "end": 2204.666,
+      "text": "你做户内的室内的这些情感陪伴，竞争来竞争去，到最后你的竞争对手并不是友商，还是屏幕，还是屏幕，但是在户外现在没有人愿意去做，是因为户外的门槛比较高。",
+      "source_segment_indexes": [
+        319
+      ],
+      "source_segment_ids": [
+        319
+      ]
+    },
+    {
+      "start": 2205.146,
+      "end": 2208.346,
+      "text": "还有哪一些是可以支撑生命感的技术元素？",
+      "source_segment_indexes": [
+        320
+      ],
+      "source_segment_ids": [
+        320
+      ]
+    },
+    {
+      "start": 2208.986,
+      "end": 2232.106,
+      "text": "实时响应，实时反馈，我不知道你有没有看过 Lovot 的这个作者写的那本书，叫温暖的科技，他其中提到一个观点，就是在应该是四百毫秒是一个门槛，任何的语音的响应，包括视觉 event 的响应，如果超过四百毫秒，它的呃生命感的那种感觉，主观的感受就会指数级的下降。",
+      "source_segment_indexes": [
+        321
+      ],
+      "source_segment_ids": [
+        321
+      ]
+    },
+    {
+      "start": 2232.426,
+      "end": 2241.466,
+      "text": "那个作者他提到一个观点，就是说在漫长的进化过程当中，任何响应速度高于四百毫秒的生物都已经被灭绝了。",
+      "source_segment_indexes": [
+        322
+      ],
+      "source_segment_ids": [
+        322
+      ]
+    },
+    {
+      "start": 2241.626,
+      "end": 2243.706,
+      "text": "所以你们的设计目标是按照四百毫秒去做的？",
+      "source_segment_indexes": [
+        323
+      ],
+      "source_segment_ids": [
+        323
+      ]
+    },
+    {
+      "start": 2244.026,
+      "end": 2255.066,
+      "text": "我们甚至可以做的更短，我们的语音甚至是可以做到一两百毫秒的一个响应，所以是可以做的非常快，然后这里面又给我们留出了更多人物拥有的体验的一些空间。",
+      "source_segment_indexes": [
+        324
+      ],
+      "source_segment_ids": [
+        324
+      ]
+    },
+    {
+      "start": 2255.466,
+      "end": 2259.226,
+      "text": "我想说的就是低延时这件事情对于生命感是非常重要的。",
+      "source_segment_indexes": [
+        325
+      ],
+      "source_segment_ids": [
+        325
+      ]
+    },
+    {
+      "start": 2259.386,
+      "end": 2263.866,
+      "text": "说到生命感的话，还有一条比较重要的，但是也是大家容易忽略的，就是眼神。",
+      "source_segment_indexes": [
+        326
+      ],
+      "source_segment_ids": [
+        326
+      ]
+    },
+    {
+      "start": 2264.266,
+      "end": 2287.386,
+      "text": "我们是通过屏幕去体现他的眼神，我们的眼神呢，并没有把它做的非常细致，像 Lovot 这样生成有几十亿种不同的排列组合，我们的眼神会给你一种注视感，就它通过视觉能感知到你人在哪里，人脸在哪里的时候，他会看着你，他跟你交互的时候，他就看着你，跟目前市面上看到的一些产品比起来，它的这种注视感会强很多。",
+      "source_segment_indexes": [
+        327
+      ],
+      "source_segment_ids": [
+        327
+      ]
+    },
+    {
+      "start": 2288.186,
+      "end": 2296.186,
+      "text": "你跟他说话的时候，你会觉得他有在听，因为他在看着你，而且你如果走动的时候，他还会转过来。",
+      "source_segment_indexes": [
+        328
+      ],
+      "source_segment_ids": [
+        328
+      ]
+    },
+    {
+      "start": 2296.506,
+      "end": 2314.426,
+      "text": "我不知道你看过这个很多人形或者其他类型的机器人，他跟人用大语言模型聊天的时候，他可能是侧着身子，对，他基本上就是朝着一个方向，他不会朝不会对着人去讲，呃，这是一个细节，也许大家觉得这个事情没有那么重要，但我觉得在生命感这件事情上是很重要的。",
+      "source_segment_indexes": [
+        329
+      ],
+      "source_segment_ids": [
+        329
+      ]
+    },
+    {
+      "start": 2314.666,
+      "end": 2321.226,
+      "text": "嗯，可能在那些场景上，他们并没有很强调对生命感，对他可能更多的是一个提供信息的工具。",
+      "source_segment_indexes": [
+        330
+      ],
+      "source_segment_ids": [
+        330
+      ]
+    },
+    {
+      "start": 2321.546,
+      "end": 2328.746,
+      "text": "我去到什么医院或者政务大厅，它有一个带屏幕的一个头，其实表情交互这件事情很多人都在做，对吧？",
+      "source_segment_indexes": [
+        331
+      ],
+      "source_segment_ids": [
+        331
+      ]
+    },
+    {
+      "start": 2328.906,
+      "end": 2341.466,
+      "text": "我觉得真正要把眼睛的神给做出来，你是要把眼睛和真正视觉看到的东西去做结合的，而不是说我简单的做一个更漂亮的眼睛。",
+      "source_segment_indexes": [
+        332
+      ],
+      "source_segment_ids": [
+        332
+      ]
+    },
+    {
+      "start": 2342.186,
+      "end": 2358.826,
+      "text": "我觉得 Lovot 做的其实有一个讨巧的地方，因为它跟人的交互方式基本上就是它在地面，然后抬眼去看人，对对，所以它的一个标准动作就是抬起水汪汪的大眼睛，看上面的一个方向，嗯，对吧？",
+      "source_segment_indexes": [
+        333
+      ],
+      "source_segment_ids": [
+        333
+      ]
+    },
+    {
+      "start": 2358.986,
+      "end": 2364.426,
+      "text": "它也有时候也会给你一种注视感，但是你们好像没有做一个水汪汪的大眼睛。",
+      "source_segment_indexes": [
+        334
+      ],
+      "source_segment_ids": [
+        334
+      ]
+    },
+    {
+      "start": 2365.066,
+      "end": 2381.866,
+      "text": "对，因为我我们觉得做一个水汪汪的大眼睛有点太萌了，嗯，太可爱了，嗯，不太符合我们这个有点贱贱的这这种小坏蛋的这种人设，嗯，对，我们给他的人设是一个小黄人的人设，啊，对，为什么是小黄人？",
+      "source_segment_indexes": [
+        335
+      ],
+      "source_segment_ids": [
+        335
+      ]
+    },
+    {
+      "start": 2382.106,
+      "end": 2387.866,
+      "text": "因为我喜欢小黄人，我觉得他很好玩，而且如果家里面有这样一个角色的话，会让人很开心。",
+      "source_segment_indexes": [
+        336
+      ],
+      "source_segment_ids": [
+        336
+      ]
+    },
+    {
+      "start": 2388.266,
+      "end": 2393.946,
+      "text": "他不会长篇大论来来跟你聊天，但是呢，他对于周围的环境，对于你跟他说什么，他其实听得懂。",
+      "source_segment_indexes": [
+        337
+      ],
+      "source_segment_ids": [
+        337
+      ]
+    },
+    {
+      "start": 2395.014,
+      "end": 2414.854,
+      "text": "它能够有认知，这个能够体现出它的智能，但是它的智能不是说我来跟你聊天来体现的，它更多是通过自己的表情、肢体动作、它的一些行为来体现说，哎，我其现在其实看到你了，而且我也理解当前的这个情境，甚至我我听得懂你在跟我说什么。",
+      "source_segment_indexes": [
+        338
+      ],
+      "source_segment_ids": [
+        338
+      ]
+    },
+    {
+      "start": 2414.854,
+      "end": 2422.054,
+      "text": "但是你给我下一个命令，我不一定愿意照着你说的去做，甚至有时候我会有一点恶搞或者呃小的恶作剧。",
+      "source_segment_indexes": [
+        339
+      ],
+      "source_segment_ids": [
+        339
+      ]
+    },
+    {
+      "start": 2422.374,
+      "end": 2427.494,
+      "text": "你在对标小黄人之前有参考过其他的一些卡通或者IP吗？",
+      "source_segment_indexes": [
+        340
+      ],
+      "source_segment_ids": [
+        340
+      ]
+    },
+    {
+      "start": 2428.054,
+      "end": 2433.974,
+      "text": "我给Rover现在的定义，这这一类吧，我我都给它定义叫类瓦力机器人。",
+      "source_segment_indexes": [
+        341
+      ],
+      "source_segment_ids": [
+        341
+      ]
+    },
+    {
+      "start": 2434.534,
+      "end": 2439.494,
+      "text": "造型呢，呃，它其实跟瓦力没有什么相似的元素，但是就会给人这种感觉。",
+      "source_segment_indexes": [
+        342
+      ],
+      "source_segment_ids": [
+        342
+      ]
+    },
+    {
+      "start": 2439.734,
+      "end": 2445.574,
+      "text": "我我们有时候把它带去街上，甚至在美国去炸街的时候，很多人看到，哦，It's Wall-E。",
+      "source_segment_indexes": [
+        343
+      ],
+      "source_segment_ids": [
+        343
+      ]
+    },
+    {
+      "start": 2446.374,
+      "end": 2449.494,
+      "text": "对，但是你仔细看，它没有任何地方像瓦力，对吧？",
+      "source_segment_indexes": [
+        344
+      ],
+      "source_segment_ids": [
+        344
+      ]
+    },
+    {
+      "start": 2449.574,
+      "end": 2451.494,
+      "text": "瓦力是履带的，我们是轮式的。",
+      "source_segment_indexes": [
+        345
+      ],
+      "source_segment_ids": [
+        345
+      ]
+    },
+    {
+      "start": 2451.894,
+      "end": 2454.374,
+      "text": "瓦力是有两个物理的眼睛，对吧？",
+      "source_segment_indexes": [
+        346
+      ],
+      "source_segment_ids": [
+        346
+      ]
+    },
+    {
+      "start": 2454.374,
+      "end": 2462.534,
+      "text": "但我们的眼睛是长在屏幕上的，但就给人那种感觉，呃，美国人叫vibe，vibe coding那个vibe，It has a Wall-E vibe。",
+      "source_segment_indexes": [
+        347
+      ],
+      "source_segment_ids": [
+        347
+      ]
+    },
+    {
+      "start": 2462.774,
+      "end": 2477.734,
+      "text": "呃，当然瓦力可能是作为电影的主角啊，但是呃，我们给这个Rover的定义是电影的配角，嗯，它不是主角，主角应该是家庭成员，应该是你自己，应该是用户，对吧？",
+      "source_segment_indexes": [
+        348
+      ],
+      "source_segment_ids": [
+        348
+      ]
+    },
+    {
+      "start": 2477.894,
+      "end": 2490.134,
+      "text": "那配角的话，其实它的定位就有点像《冰雪奇缘》里面那个雪宝，雪宝，嗯，对，或者是《狮子王》里面那只巨嘴鸟，对，包括呃《花木兰》里面那条龙，对吧？",
+      "source_segment_indexes": [
+        349
+      ],
+      "source_segment_ids": [
+        349
+      ]
+    },
+    {
+      "start": 2490.294,
+      "end": 2500.214,
+      "text": "你你会发现迪士尼的电影里面很多时候都会有这样一个小配角，都有一个最佳配角，对，最佳配角，而且它是搞怪，它的情绪是时高时低，对吧？",
+      "source_segment_indexes": [
+        350
+      ],
+      "source_segment_ids": [
+        350
+      ]
+    },
+    {
+      "start": 2500.774,
+      "end": 2509.014,
+      "text": "然后它永远是把自己放在一个配角的角色上面，它不会来喧宾夺主，但是你会觉得它非常可爱，你会去喜欢它。",
+      "source_segment_indexes": [
+        351
+      ],
+      "source_segment_ids": [
+        351
+      ]
+    },
+    {
+      "start": 2509.254,
+      "end": 2512.454,
+      "text": "就是其实你们在表情上面是根据人设也是做了一些调整。",
+      "source_segment_indexes": [
+        352
+      ],
+      "source_segment_ids": [
+        352
+      ]
+    },
+    {
+      "start": 2512.534,
+      "end": 2525.334,
+      "text": "是的，表情的话，我我会希望它是参数化的，就同样那个表情，眼珠的看的方向，它是可以通过参数去调整，呃，包括眉毛抬的这个高度，它也是可以去调整。",
+      "source_segment_indexes": [
+        353
+      ],
+      "source_segment_ids": [
+        353
+      ]
+    },
+    {
+      "start": 2525.974,
+      "end": 2533.574,
+      "text": "呃，这样算下来肯定还是有限，但是它它也不是说这种呃几十上百能够穷举的。",
+      "source_segment_indexes": [
+        354
+      ],
+      "source_segment_ids": [
+        354
+      ]
+    },
+    {
+      "start": 2533.654,
+      "end": 2536.774,
+      "text": "你刚才问生命感，其实还有一点就是参数化。",
+      "source_segment_indexes": [
+        355
+      ],
+      "source_segment_ids": [
+        355
+      ]
+    },
+    {
+      "start": 2537.014,
+      "end": 2546.294,
+      "text": "我刚才说了表情的参数化，但是其实动作也是需要有参数化，而不是说某一个标准的动作，它每次都是以这样的角度去做。",
+      "source_segment_indexes": [
+        356
+      ],
+      "source_segment_ids": [
+        356
+      ]
+    },
+    {
+      "start": 2546.534,
+      "end": 2554.454,
+      "text": "这个我觉得又回到我刚才说的随机性上面，就是它做任何的动作，哪怕做同样的动作，它是也是有一定的随机性的。",
+      "source_segment_indexes": [
+        357
+      ],
+      "source_segment_ids": [
+        357
+      ]
+    },
+    {
+      "start": 2554.454,
+      "end": 2564.374,
+      "text": "这个跟现在主流的说做做这个动作捕捉去做动作复现的这一套技术，它是有一定的很不一样，其实不同的地方。",
+      "source_segment_indexes": [
+        358
+      ],
+      "source_segment_ids": [
+        358
+      ]
+    },
+    {
+      "start": 2564.534,
+      "end": 2567.574,
+      "text": "但我觉得呃这个才是生命感的真精髓。",
+      "source_segment_indexes": [
+        359
+      ],
+      "source_segment_ids": [
+        359
+      ]
+    },
+    {
+      "start": 2568.054,
+      "end": 2575.094,
+      "text": "如果你每天跳同一支舞，它都是以一样的角度去跳，那它就是还是一台机器，对吧？",
+      "source_segment_indexes": [
+        360
+      ],
+      "source_segment_ids": [
+        360
+      ]
+    },
+    {
+      "start": 2575.414,
+      "end": 2578.214,
+      "text": "给你所有的技术条件，你想做一个什么样的产品出来？",
+      "source_segment_indexes": [
+        361
+      ],
+      "source_segment_ids": [
+        361
+      ]
+    },
+    {
+      "start": 2578.774,
+      "end": 2598.534,
+      "text": "我觉得从宽泛的来说，它是能通过生命感的图灵测试的这样一个东西，就是让用户觉得它真的是一个生命，或者说他没有办法区分说它是机器和AI在控制，还是说真的自己有一个灵魂。",
+      "source_segment_indexes": [
+        362
+      ],
+      "source_segment_ids": [
+        362
+      ]
+    },
+    {
+      "start": 2599.094,
+      "end": 2599.974,
+      "text": "有这样的测试吗？",
+      "source_segment_indexes": [
+        363
+      ],
+      "source_segment_ids": [
+        363
+      ]
+    },
+    {
+      "start": 2600.614,
+      "end": 2606.614,
+      "text": "呃，目前没有，我们也希望是能够到某一天，我们是可以去定义这样的一个测试。",
+      "source_segment_indexes": [
+        364
+      ],
+      "source_segment_ids": [
+        364
+      ]
+    },
+    {
+      "start": 2607.094,
+      "end": 2610.454,
+      "text": "我觉得还是在非常早期的阶段，整个行业都是有一定距离。",
+      "source_segment_indexes": [
+        365
+      ],
+      "source_segment_ids": [
+        365
+      ]
+    },
+    {
+      "start": 2610.694,
+      "end": 2615.494,
+      "text": "哪怕今天GPT，你说它真的通过了图灵测试吗？",
+      "source_segment_indexes": [
+        366
+      ],
+      "source_segment_ids": [
+        366
+      ]
+    },
+    {
+      "start": 2615.494,
+      "end": 2616.454,
+      "text": "我觉得也不一定。",
+      "source_segment_indexes": [
+        367
+      ],
+      "source_segment_ids": [
+        367
+      ]
+    },
+    {
+      "start": 2616.854,
+      "end": 2620.454,
+      "text": "你如果跟他聊天，你聊着聊着，你就会聊出AI味了。",
+      "source_segment_indexes": [
+        368
+      ],
+      "source_segment_ids": [
+        368
+      ]
+    },
+    {
+      "start": 2620.454,
+      "end": 2629.814,
+      "text": "包括今天的很多骚扰电话，其实你接起来的时候，你听那个音色跟他语气，其实都像一个真人，对吧？",
+      "source_segment_indexes": [
+        369
+      ],
+      "source_segment_ids": [
+        369
+      ]
+    },
+    {
+      "start": 2629.984,
+      "end": 2634.144,
+      "text": "但是你只要跟他说随便说几句话，你就能听出来他是个AI。",
+      "source_segment_indexes": [
+        370
+      ],
+      "source_segment_ids": [
+        370
+      ]
+    },
+    {
+      "start": 2634.384,
+      "end": 2640.224,
+      "text": "你们是要做陪伴，所以你们是跟用户是一个很长周期的相处，那它的这个背后的周转率会更高。",
+      "source_segment_indexes": [
+        371
+      ],
+      "source_segment_ids": [
+        371
+      ]
+    },
+    {
+      "start": 2640.224,
+      "end": 2650.784,
+      "text": "是的，当然我觉得这个是一个最终的梦想啊，但是在完成图灵测试之前，其实很长的一段时间内，这个产品就已经有价值了。",
+      "source_segment_indexes": [
+        372
+      ],
+      "source_segment_ids": [
+        372
+      ]
+    },
+    {
+      "start": 2651.024,
+      "end": 2661.344,
+      "text": "就像这个Chatbot，你说Chatbot今天即使是在有AI加持的情况下，它离图灵测试可能还是有那么一点距离。",
+      "source_segment_indexes": [
+        373
+      ],
+      "source_segment_ids": [
+        373
+      ]
+    },
+    {
+      "start": 2661.824,
+      "end": 2662.944,
+      "text": "你们这个产品什么时候开卖？",
+      "source_segment_indexes": [
+        374
+      ],
+      "source_segment_ids": [
+        374
+      ]
+    },
+    {
+      "start": 2663.584,
+      "end": 2667.984,
+      "text": "今年下半年，我们其实是在北美和国内会双轨去推进。",
+      "source_segment_indexes": [
+        375
+      ],
+      "source_segment_ids": [
+        375
+      ]
+    },
+    {
+      "start": 2668.624,
+      "end": 2683.184,
+      "text": "对，因为北美的话是全球消费电子的一个产品的高地，然后国内的话呢，对于这种新奇的机器人品类的产品，其实大众的接受程度是更高的。",
+      "source_segment_indexes": [
+        376
+      ],
+      "source_segment_ids": [
+        376
+      ]
+    },
+    {
+      "start": 2683.184,
+      "end": 2686.064,
+      "text": "对，所以这两个市场都有自己的利弊。",
+      "source_segment_indexes": [
+        377
+      ],
+      "source_segment_ids": [
+        377
+      ]
+    },
+    {
+      "start": 2686.464,
+      "end": 2693.424,
+      "text": "其实你是在美国待了非常多的时间，然后其实我知道你经常也是往返中美之间嘛。",
+      "source_segment_indexes": [
+        378
+      ],
+      "source_segment_ids": [
+        378
+      ]
+    },
+    {
+      "start": 2693.824,
+      "end": 2693.984,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        379
+      ],
+      "source_segment_ids": [
+        379
+      ]
+    },
+    {
+      "start": 2694.304,
+      "end": 2701.664,
+      "text": "对，其实你会感觉中国和美国的消费者消费文化在对你的这个产品设计上面会产生什么样的影响吗？",
+      "source_segment_indexes": [
+        380
+      ],
+      "source_segment_ids": [
+        380
+      ]
+    },
+    {
+      "start": 2701.984,
+      "end": 2707.824,
+      "text": "其实说实话，我们最早的时候做这个产品，并没有说用双轮足的这个构型。",
+      "source_segment_indexes": [
+        381
+      ],
+      "source_segment_ids": [
+        381
+      ]
+    },
+    {
+      "start": 2708.544,
+      "end": 2731.824,
+      "text": "呃，但是后面我们用这个最早的四足的构型去做了一些测试之后，发现其实北美的用户对于四足这个构型是非常排斥，因为他们觉得四足是一个军用或者警用的工具，他们脑中的这个对于四足的认知已经被波士顿动力或者宇树这样的这个比较工业风的机器狗给占据了。",
+      "source_segment_indexes": [
+        382
+      ],
+      "source_segment_ids": [
+        382
+      ]
+    },
+    {
+      "start": 2732.304,
+      "end": 2746.384,
+      "text": "所以他们看到同样的构型的产品的时候，他会觉得这是一个军用的产品上面加装了一个试图去这个让它To C成分更多一点的一个头，那这个就会给人一种恐怖谷效应。",
+      "source_segment_indexes": [
+        383
+      ],
+      "source_segment_ids": [
+        383
+      ]
+    },
+    {
+      "start": 2746.944,
+      "end": 2753.984,
+      "text": "这个恐怖谷效应不仅仅是作用在类人型的机器人上面，我发现在北美的话，其实，在狗的身上，狗身上也有，也有。",
+      "source_segment_indexes": [
+        384
+      ],
+      "source_segment_ids": [
+        384
+      ]
+    },
+    {
+      "start": 2754.384,
+      "end": 2764.464,
+      "text": "特别是他们过去有一些影视作品，像《终结者》啊，或者像《黑镜》啊，里面描述一些人形或者机器狗的构型会去呃追杀人类。",
+      "source_segment_indexes": [
+        385
+      ],
+      "source_segment_ids": [
+        385
+      ]
+    },
+    {
+      "start": 2764.784,
+      "end": 2768.064,
+      "text": "其实感觉确实，美国的民众对于AI的警惕性会更高。",
+      "source_segment_indexes": [
+        386
+      ],
+      "source_segment_ids": [
+        386
+      ]
+    },
+    {
+      "start": 2768.064,
+      "end": 2768.384,
+      "text": "是的。",
+      "source_segment_indexes": [
+        387
+      ],
+      "source_segment_ids": [
+        387
+      ]
+    },
+    {
+      "start": 2768.624,
+      "end": 2771.904,
+      "text": "嗯，然后可能对某一些话题会更加敏感。",
+      "source_segment_indexes": [
+        388
+      ],
+      "source_segment_ids": [
+        388
+      ]
+    },
+    {
+      "start": 2772.144,
+      "end": 2780.864,
+      "text": "是的，你但凡是提到说机器人会取代人类，那在舆论场上一定是一边倒的，觉得这这个东西就就是有害的。",
+      "source_segment_indexes": [
+        389
+      ],
+      "source_segment_ids": [
+        389
+      ]
+    },
+    {
+      "start": 2781.264,
+      "end": 2781.504,
+      "text": "对。",
+      "source_segment_indexes": [
+        390,
+        391
+      ],
+      "source_segment_ids": [
+        390,
+        391
+      ]
+    },
+    {
+      "start": 2782.144,
+      "end": 2786.384,
+      "text": "之前好像美国也出现过砸那个无人运送车，对，波士顿也没砸过。",
+      "source_segment_indexes": [
+        392
+      ],
+      "source_segment_ids": [
+        392
+      ]
+    },
+    {
+      "start": 2786.544,
+      "end": 2790.624,
+      "text": "但是我看你们其实当时走走在那个街上，其实还蛮受欢迎。",
+      "source_segment_indexes": [
+        393
+      ],
+      "source_segment_ids": [
+        393
+      ]
+    },
+    {
+      "start": 2790.864,
+      "end": 2811.104,
+      "text": "因为他做的就是一个小可怜嘛，我我觉得就是做To C端的话，至少今天来看，你做To C的机器人一定要把自己放在一个低位上面去做一定的示弱，而不是像很多现在看到的很很多宣传片里面一样，都是在秀肌肉，讲这个关节的参数，对吧？",
+      "source_segment_indexes": [
+        394
+      ],
+      "source_segment_ids": [
+        394
+      ]
+    },
+    {
+      "start": 2811.184,
+      "end": 2820.704,
+      "text": "这些我觉得在工业界可能有价值有意义，但是To C的话，你起到的是反作用，用户第一个想到的是他这个关节多强，打到我一下怎么办？",
+      "source_segment_indexes": [
+        395
+      ],
+      "source_segment_ids": [
+        395
+      ]
+    },
+    {
+      "start": 2820.944,
+      "end": 2824.144,
+      "text": "而且用户其实不关心这些事情，他要的就是一个好的体验。",
+      "source_segment_indexes": [
+        396
+      ],
+      "source_segment_ids": [
+        396
+      ]
+    },
+    {
+      "start": 2824.384,
+      "end": 2828.624,
+      "text": "是的，嗯，你是六个自由度、八个自由度、十个自由度，对他来说没有没有什么区别。",
+      "source_segment_indexes": [
+        397
+      ],
+      "source_segment_ids": [
+        397
+      ]
+    },
+    {
+      "start": 2828.704,
+      "end": 2836.144,
+      "text": "对，现在很多人就都是我们叫Fearmongering，呃，很很多媒体他他都在兜售或者贩卖这种焦虑嘛。",
+      "source_segment_indexes": [
+        398
+      ],
+      "source_segment_ids": [
+        398
+      ]
+    },
+    {
+      "start": 2836.384,
+      "end": 2844.464,
+      "text": "国内包括美国很多自媒体也都这样，呃，哪怕他有时候说的不是真实的情况，他也会通过这个去去收割流量。",
+      "source_segment_indexes": [
+        399
+      ],
+      "source_segment_ids": [
+        399
+      ]
+    },
+    {
+      "start": 2844.864,
+      "end": 2847.424,
+      "text": "那你们就确定不做四足机四足狗吗？",
+      "source_segment_indexes": [
+        400
+      ],
+      "source_segment_ids": [
+        400
+      ]
+    },
+    {
+      "start": 2847.664,
+      "end": 2850.224,
+      "text": "至少在很短期内，我们会去做。",
+      "source_segment_indexes": [
+        401
+      ],
+      "source_segment_ids": [
+        401
+      ]
+    },
+    {
+      "start": 2850.464,
+      "end": 2855.104,
+      "text": "我觉得这个都需要看真正产品的需求，呃，市场的需求。",
+      "source_segment_indexes": [
+        402
+      ],
+      "source_segment_ids": [
+        402
+      ]
+    },
+    {
+      "start": 2855.344,
+      "end": 2869.024,
+      "text": "我们目前看到的用户对于这种户外机器人最大的顾虑是续航，轮式轮足对于续航的呃优势，相对于点足来说是非常大，差不多三三到四倍的一个能量效率的提升。",
+      "source_segment_indexes": [
+        403
+      ],
+      "source_segment_ids": [
+        403
+      ]
+    },
+    {
+      "start": 2869.824,
+      "end": 2871.584,
+      "text": "另外就是用户。",
+      "source_segment_indexes": [
+        404
+      ],
+      "source_segment_ids": [
+        404
+      ]
+    },
+    {
+      "start": 2872.401,
+      "end": 2875.761,
+      "text": "还有一个大的顾虑是说，呃，通过性。",
+      "source_segment_indexes": [
+        405
+      ],
+      "source_segment_ids": [
+        405
+      ]
+    },
+    {
+      "start": 2876.241,
+      "end": 2884.401,
+      "text": "今天在AI没有办法做到百分之一百通过的情况下，那把重量做轻就是一个呃必须的选择。",
+      "source_segment_indexes": [
+        406
+      ],
+      "source_segment_ids": [
+        406
+      ]
+    },
+    {
+      "start": 2884.401,
+      "end": 2891.281,
+      "text": "我觉得在可以预见的未来，应该都是双轮组，但是在自由度上面，我们会去做一些变化。",
+      "source_segment_indexes": [
+        407
+      ],
+      "source_segment_ids": [
+        407
+      ]
+    },
+    {
+      "start": 2891.521,
+      "end": 2894.481,
+      "text": "比如说二四年的时候就已经在这上面有一些技术的积累。",
+      "source_segment_indexes": [
+        408
+      ],
+      "source_segment_ids": [
+        408
+      ]
+    },
+    {
+      "start": 2894.881,
+      "end": 2899.281,
+      "text": "整个行业都很缺PMF的产品和场景，如果你们能证明的话，肯定会有很多人进来。",
+      "source_segment_indexes": [
+        409
+      ],
+      "source_segment_ids": [
+        409
+      ]
+    },
+    {
+      "start": 2899.521,
+      "end": 2902.481,
+      "text": "对，这是一个好事儿，对我们其实也非常欢迎。",
+      "source_segment_indexes": [
+        410
+      ],
+      "source_segment_ids": [
+        410
+      ]
+    },
+    {
+      "start": 2902.961,
+      "end": 2912.081,
+      "text": "然后第二个呢，就是说，但凡是有头部玩家愿意进来，那说明这个方向其实对于他们自己的估值是有好处的，否则他们不会来。",
+      "source_segment_indexes": [
+        411
+      ],
+      "source_segment_ids": [
+        411
+      ]
+    },
+    {
+      "start": 2912.241,
+      "end": 2916.401,
+      "text": "我们的估值会跑得更好，这个是是一个现实的呃直接的影响吧。",
+      "source_segment_indexes": [
+        412
+      ],
+      "source_segment_ids": [
+        412
+      ]
+    },
+    {
+      "start": 2916.401,
+      "end": 2929.361,
+      "text": "从技术上面来说，因为我们已经跑了这么多时间，包括之前在小鹏在自动驾驶领域的一些积累，所以我们现在在技术上面是不说一骑绝尘吧，肯定是走的非常领先的。",
+      "source_segment_indexes": [
+        413
+      ],
+      "source_segment_ids": [
+        413
+      ]
+    },
+    {
+      "start": 2930.001,
+      "end": 2943.601,
+      "text": "啊，包括跟随的效果，我们通过呃纯视觉的跟随就已经可以做的非常可靠，在户外，而且是可可用的一个状态，在有有户外多人的这种情况下，它可以去锁定其中一个人。",
+      "source_segment_indexes": [
+        414
+      ],
+      "source_segment_ids": [
+        414
+      ]
+    },
+    {
+      "start": 2943.841,
+      "end": 2945.921,
+      "text": "你怎么定位你在公司的角色？",
+      "source_segment_indexes": [
+        415
+      ],
+      "source_segment_ids": [
+        415
+      ]
+    },
+    {
+      "start": 2946.401,
+      "end": 2952.001,
+      "text": "我现在戴的帽子比较多，我是CEO，然后CPO，CTO。",
+      "source_segment_indexes": [
+        416
+      ],
+      "source_segment_ids": [
+        416
+      ]
+    },
+    {
+      "start": 2952.001,
+      "end": 2953.601,
+      "text": "这次CTO跟之前有什么不同吗？",
+      "source_segment_indexes": [
+        417
+      ],
+      "source_segment_ids": [
+        417
+      ]
+    },
+    {
+      "start": 2954.081,
+      "end": 2968.001,
+      "text": "这次的CTO我觉得是我戴着CPO的帽子戴了很长一段时间，觉得现在这个产品已经定义的七七八八了，能够说这个产品本身应该是能立得住的。",
+      "source_segment_indexes": [
+        418
+      ],
+      "source_segment_ids": [
+        418
+      ]
+    },
+    {
+      "start": 2968.161,
+      "end": 2978.001,
+      "text": "那在这个情况下，呃，很多技术的攻关，我觉得现在是还差临门一脚，去把这个技术真正落地做的非常鲁棒。",
+      "source_segment_indexes": [
+        419
+      ],
+      "source_segment_ids": [
+        419
+      ]
+    },
+    {
+      "start": 2978.161,
+      "end": 2983.281,
+      "text": "就是你第一次当CPO，当产品一号位，你作为CEO给CPO打一个分。",
+      "source_segment_indexes": [
+        420
+      ],
+      "source_segment_ids": [
+        420
+      ]
+    },
+    {
+      "start": 2984.721,
+      "end": 2993.201,
+      "text": "这个我觉得我得先把我左右脑给给割开了，然后独立出两个人格来，才才能客观的去做一个评价。",
+      "source_segment_indexes": [
+        421
+      ],
+      "source_segment_ids": [
+        421
+      ]
+    },
+    {
+      "start": 2993.601,
+      "end": 3001.441,
+      "text": "我觉得从目前的产品的角度来说的话，我可能给自己打个七点五到八分吧，应该算及格。",
+      "source_segment_indexes": [
+        422
+      ],
+      "source_segment_ids": [
+        422
+      ]
+    },
+    {
+      "start": 3002.241,
+      "end": 3007.201,
+      "text": "对，但是具体的我觉得还是得靠整个市场来打分来验证。",
+      "source_segment_indexes": [
+        423
+      ],
+      "source_segment_ids": [
+        423
+      ]
+    },
+    {
+      "start": 3007.761,
+      "end": 3010.801,
+      "text": "你更喜欢做CTO还是CPO？",
+      "source_segment_indexes": [
+        424
+      ],
+      "source_segment_ids": [
+        424
+      ]
+    },
+    {
+      "start": 3010.801,
+      "end": 3011.601,
+      "text": "嗯，好问题。",
+      "source_segment_indexes": [
+        425
+      ],
+      "source_segment_ids": [
+        425
+      ]
+    },
+    {
+      "start": 3012.081,
+      "end": 3014.561,
+      "text": "我觉得其实没有说哪个更喜欢。",
+      "source_segment_indexes": [
+        426
+      ],
+      "source_segment_ids": [
+        426
+      ]
+    },
+    {
+      "start": 3015.041,
+      "end": 3020.961,
+      "text": "其实如果说到更喜欢的话，我我更喜欢去从头创造一一件东西。",
+      "source_segment_indexes": [
+        427
+      ],
+      "source_segment_ids": [
+        427
+      ]
+    },
+    {
+      "start": 3021.681,
+      "end": 3033.921,
+      "text": "而且有时候我觉得戴两个帽子好处是说我在看技术的时候，我会从产品的思维去去想这件事情，而不是一味的去追求所谓的黑科技。",
+      "source_segment_indexes": [
+        428
+      ],
+      "source_segment_ids": [
+        428
+      ]
+    },
+    {
+      "start": 3034.081,
+      "end": 3037.201,
+      "text": "因为我刚才说黑科技落地嘛，其实落地是更重要的。",
+      "source_segment_indexes": [
+        429
+      ],
+      "source_segment_ids": [
+        429
+      ]
+    },
+    {
+      "start": 3037.281,
+      "end": 3038.641,
+      "text": "为什么是七点五？",
+      "source_segment_indexes": [
+        430
+      ],
+      "source_segment_ids": [
+        430
+      ]
+    },
+    {
+      "start": 3039.201,
+      "end": 3054.401,
+      "text": "我觉得一个好的产品经理，或者说在我心目当中完美的产品经理，应该是能够非常清晰的描述清楚自己想做的是什么东西。",
+      "source_segment_indexes": [
+        431
+      ],
+      "source_segment_ids": [
+        431
+      ]
+    },
+    {
+      "start": 3054.561,
+      "end": 3065.521,
+      "text": "但是呃，我觉得我目前可能相对欠缺一些的是说，对于这个产品本身，我能不能用一个字去或者一个简短的词去描绘它？",
+      "source_segment_indexes": [
+        432
+      ],
+      "source_segment_ids": [
+        432
+      ]
+    },
+    {
+      "start": 3065.681,
+      "end": 3068.641,
+      "text": "这个可能是因为我们做的是一个全新品类的产品。",
+      "source_segment_indexes": [
+        433
+      ],
+      "source_segment_ids": [
+        433
+      ]
+    },
+    {
+      "start": 3069.521,
+      "end": 3076.641,
+      "text": "就像当时乔布斯最早的时候描述iPhone的时候，他也用了三句话去描述它。",
+      "source_segment_indexes": [
+        434
+      ],
+      "source_segment_ids": [
+        434
+      ]
+    },
+    {
+      "start": 3076.641,
+      "end": 3080.481,
+      "text": "他最终说这三个东西不是三个产品，而是一个产品。",
+      "source_segment_indexes": [
+        435
+      ],
+      "source_segment_ids": [
+        435
+      ]
+    },
+    {
+      "start": 3080.961,
+      "end": 3086.561,
+      "text": "对对，所以我们现在也类似，我还是需要用三句话去描述这个产品。",
+      "source_segment_indexes": [
+        436
+      ],
+      "source_segment_ids": [
+        436
+      ]
+    },
+    {
+      "start": 3086.801,
+      "end": 3090.721,
+      "text": "它是一个宠物，它是一个玩伴，它是一个智能助手。",
+      "source_segment_indexes": [
+        437
+      ],
+      "source_segment_ids": [
+        437
+      ]
+    },
+    {
+      "start": 3091.521,
+      "end": 3097.361,
+      "text": "宠物的话更多的是说它跟人的这种自然的交互，讲究的是它的活物感和生命感。",
+      "source_segment_indexes": [
+        438
+      ],
+      "source_segment_ids": [
+        438
+      ]
+    },
+    {
+      "start": 3097.921,
+      "end": 3104.561,
+      "text": "玩伴的话，它更多的是它能给你带来的乐趣，它有各各种全新的在物理世界当中的玩法。",
+      "source_segment_indexes": [
+        439
+      ],
+      "source_segment_ids": [
+        439
+      ]
+    },
+    {
+      "start": 3104.961,
+      "end": 3116.401,
+      "text": "然后智能助手的话就更偏功能性一些，比如说它在跟小孩玩的时候，对于家长来说，它就是一个助手，哪怕是说家长就在旁边，他还是在看着小孩，但是呢。",
+      "source_segment_indexes": [
+        440
+      ],
+      "source_segment_ids": [
+        440
+      ]
+    },
+    {
+      "start": 3116.916,
+      "end": 3122.196,
+      "text": "他不用去陪着小孩玩了，这个其实也会释放他的很多焦虑跟跟这个精力。",
+      "source_segment_indexes": [
+        441
+      ],
+      "source_segment_ids": [
+        441
+      ]
+    },
+    {
+      "start": 3122.676,
+      "end": 3126.596,
+      "text": "你觉得Rova会成为一个巨神陪伴的iPhone一吗？",
+      "source_segment_indexes": [
+        442
+      ],
+      "source_segment_ids": [
+        442
+      ]
+    },
+    {
+      "start": 3127.636,
+      "end": 3132.436,
+      "text": "我们希望是这样，对，但我们也不会直接的简单的去做一个类比。",
+      "source_segment_indexes": [
+        443
+      ],
+      "source_segment_ids": [
+        443
+      ]
+    },
+    {
+      "start": 3132.676,
+      "end": 3142.836,
+      "text": "iPhone的话，它有自己在当时那个时间条件下，它的一些呃得天独厚的一些特质，比如说它非常小，对吧？",
+      "source_segment_indexes": [
+        444
+      ],
+      "source_segment_ids": [
+        444
+      ]
+    },
+    {
+      "start": 3142.916,
+      "end": 3154.276,
+      "text": "呃，smartphone这个form factor非常小，啊，同时呢，它的APP都是纯软的，对，啊，而且它的APP每一个都是自己是self-contained是相对独立的。",
+      "source_segment_indexes": [
+        445
+      ],
+      "source_segment_ids": [
+        445
+      ]
+    },
+    {
+      "start": 3154.436,
+      "end": 3165.236,
+      "text": "就会机器人这个领域呢，呃，你要去做一个APP，现在是相对比较难的，因为首先你你呃上手的话，你要做运动控制，你要做视觉感知，对吧？",
+      "source_segment_indexes": [
+        446
+      ],
+      "source_segment_ids": [
+        446
+      ]
+    },
+    {
+      "start": 3165.556,
+      "end": 3169.396,
+      "text": "这些你你如果都要让开发者自己去做，这个门槛太高了。",
+      "source_segment_indexes": [
+        447
+      ],
+      "source_segment_ids": [
+        447
+      ]
+    },
+    {
+      "start": 3169.716,
+      "end": 3177.636,
+      "text": "第二呢，它是一个软件结软硬结合的一个产品，有时候它缺少一个硬件，你就有些事情就没有办法去完成。",
+      "source_segment_indexes": [
+        448
+      ],
+      "source_segment_ids": [
+        448
+      ]
+    },
+    {
+      "start": 3177.876,
+      "end": 3204.596,
+      "text": "所以我们现在想到的方式是通过软硬结合，通过配件和软件包升级的方式去作为这个呃类似于APP的开发，然后通过呃我们自己先去打样，呃，做了三十多种不同配件玩法，先给这个社区去打一个样，有一些就就会非常简单，就比如说它自己闲逛的时候，如果你在它上面加一个泡泡机，那它在公园闲逛的时候，它就会变成最靓的仔。",
+      "source_segment_indexes": [
+        449
+      ],
+      "source_segment_ids": [
+        449
+      ]
+    },
+    {
+      "start": 3204.836,
+      "end": 3215.956,
+      "text": "我们有一个可以捡网球的装置，这个装置呢，很多访客包括我的一些朋友看了之后都觉得这个还是能打中一些刚需的。",
+      "source_segment_indexes": [
+        450
+      ],
+      "source_segment_ids": [
+        450
+      ]
+    },
+    {
+      "start": 3216.276,
+      "end": 3219.316,
+      "text": "对，打打球的时候捡球其实是一个很痛苦的事情。",
+      "source_segment_indexes": [
+        451
+      ],
+      "source_segment_ids": [
+        451
+      ]
+    },
+    {
+      "start": 3219.396,
+      "end": 3219.636,
+      "text": "是的。",
+      "source_segment_indexes": [
+        452
+      ],
+      "source_segment_ids": [
+        452
+      ]
+    },
+    {
+      "start": 3220.036,
+      "end": 3227.476,
+      "text": "你觉得你们做的软件的这些模型之间的耦合、协作和iOS会有相似的地方？",
+      "source_segment_indexes": [
+        453
+      ],
+      "source_segment_ids": [
+        453
+      ]
+    },
+    {
+      "start": 3227.556,
+      "end": 3229.556,
+      "text": "会有一个底层的能力。",
+      "source_segment_indexes": [
+        454
+      ],
+      "source_segment_ids": [
+        454
+      ]
+    },
+    {
+      "start": 3229.796,
+      "end": 3247.636,
+      "text": "iOS更多的是一个传统意义上的就操作系统嘛，那在AI时代的操作系统，我觉得很多是在传统操作系统再往上一层，它要有这个呃一些呃最基础的智能化的能力，就比如说它自己的移动，对吧？",
+      "source_segment_indexes": [
+        455
+      ],
+      "source_segment_ids": [
+        455
+      ]
+    },
+    {
+      "start": 3247.636,
+      "end": 3267.796,
+      "text": "你那你最好是把移动作为一个抽象层给给它抽象出来，不要让开发者自己再再进来开发一套，每个人都都自己去写运控，包括视觉感知，包括对于环境的理解，这些最好都是能够做做成这个底层的抽象的模块，然后在这个基础上我再去搭建各种应用。",
+      "source_segment_indexes": [
+        456
+      ],
+      "source_segment_ids": [
+        456
+      ]
+    },
+    {
+      "start": 3268.276,
+      "end": 3270.276,
+      "text": "你觉得应用生态这个时候什么时候会到来？",
+      "source_segment_indexes": [
+        457
+      ],
+      "source_segment_ids": [
+        457
+      ]
+    },
+    {
+      "start": 3271.076,
+      "end": 3275.876,
+      "text": "我觉得是需要有一定量的情况下，我认为至少是要差不多百万台的出货量。",
+      "source_segment_indexes": [
+        458
+      ],
+      "source_segment_ids": [
+        458
+      ]
+    },
+    {
+      "start": 3276.036,
+      "end": 3282.836,
+      "text": "有人说他觉得Rova对于你来说是你的孩子，你觉得这个评价是对的吗？",
+      "source_segment_indexes": [
+        459
+      ],
+      "source_segment_ids": [
+        459
+      ]
+    },
+    {
+      "start": 3283.156,
+      "end": 3308.276,
+      "text": "更多的是我对于伙伴的一种映射，包括可能会有一些我自己的人格偏好，在这个他的这些人设上面也去做一些体现，比如说刚才提到的，我自己其实挺喜欢小黄人的，所以我给Rova的定义也是一个这样萌萌的、贱贱的这种性格，有时候会有一些小的调皮捣蛋，啊，对吧？",
+      "source_segment_indexes": [
+        460
+      ],
+      "source_segment_ids": [
+        460
+      ]
+    },
+    {
+      "start": 3308.276,
+      "end": 3310.756,
+      "text": "然后有时候也不完全是听你的命令。",
+      "source_segment_indexes": [
+        461
+      ],
+      "source_segment_ids": [
+        461
+      ]
+    },
+    {
+      "start": 3311.236,
+      "end": 3315.876,
+      "text": "对我听说你给Rova录了音，为什么要用自己的声音给Rova录音？",
+      "source_segment_indexes": [
+        462
+      ],
+      "source_segment_ids": [
+        462
+      ]
+    },
+    {
+      "start": 3316.676,
+      "end": 3351.796,
+      "text": "其实当时公司里面试了一圈，听下来我我觉得我都不太满意，然后在外部也找了这种配音的老师，呃，但是呢，配音老师他有时候他的戏剧性会做的非常强，但我自己听下来呢，跟我自己想要的这种人设的定义还是有一些偏差，有时候沟通里面确实会有一些gap，就比如说我们会我自己会非常希望它是一个这种不太讨好或者有点贱贱的，甚至有时候有些毒舌的这么一个角色。",
+      "source_segment_indexes": [
+        463
+      ],
+      "source_segment_ids": [
+        463
+      ]
+    },
+    {
+      "start": 3352.282,
+      "end": 3359.002,
+      "text": "但是配音老师配出来呢，有时候给人的感觉又是在迎合、讨好人类这种感觉。",
+      "source_segment_indexes": [
+        464
+      ],
+      "source_segment_ids": [
+        464
+      ]
+    },
+    {
+      "start": 3359.082,
+      "end": 3366.602,
+      "text": "他希望更多的做出那种很萌、很可爱、很希望这个主人能够去夸奖他的这样一种感觉。",
+      "source_segment_indexes": [
+        465
+      ],
+      "source_segment_ids": [
+        465
+      ]
+    },
+    {
+      "start": 3367.162,
+      "end": 3370.522,
+      "text": "呃，这个跟我们想要的人设有点偏差。",
+      "source_segment_indexes": [
+        466
+      ],
+      "source_segment_ids": [
+        466
+      ]
+    },
+    {
+      "start": 3370.842,
+      "end": 3373.162,
+      "text": "对，其实这个这背后有点像一个导演。",
+      "source_segment_indexes": [
+        467
+      ],
+      "source_segment_ids": [
+        467
+      ]
+    },
+    {
+      "start": 3373.642,
+      "end": 3374.602,
+      "text": "对，有一点像。",
+      "source_segment_indexes": [
+        468
+      ],
+      "source_segment_ids": [
+        468
+      ]
+    },
+    {
+      "start": 3374.842,
+      "end": 3379.162,
+      "text": "然后我觉得很多时候是需要有一定的想象。",
+      "source_segment_indexes": [
+        469
+      ],
+      "source_segment_ids": [
+        469
+      ]
+    },
+    {
+      "start": 3379.242,
+      "end": 3385.002,
+      "text": "这个声音你配完之后，你还得配上他的动作，配上他的表情。",
+      "source_segment_indexes": [
+        470
+      ],
+      "source_segment_ids": [
+        470
+      ]
+    },
+    {
+      "start": 3385.402,
+      "end": 3390.362,
+      "text": "其实这这一整套做下来，这一个完整的体验，才是真正的这个产品给人的感觉。",
+      "source_segment_indexes": [
+        471
+      ],
+      "source_segment_ids": [
+        471
+      ]
+    },
+    {
+      "start": 3391.162,
+      "end": 3395.482,
+      "text": "Ruba这个产品，那是你的某一种人格的或者灵魂的映射吗？",
+      "source_segment_indexes": [
+        472
+      ],
+      "source_segment_ids": [
+        472
+      ]
+    },
+    {
+      "start": 3396.122,
+      "end": 3410.042,
+      "text": "可能是我自己人格当中比较调皮的一面吧，就是比较玩世不恭，或者是想要去追求一些突破世俗的框架的这样一些层面吧，一一些我我自己的这一部分。",
+      "source_segment_indexes": [
+        473
+      ],
+      "source_segment_ids": [
+        473
+      ]
+    },
+    {
+      "start": 3410.202,
+      "end": 3412.922,
+      "text": "你你人生有什么时刻你觉得是比较调皮的吗？",
+      "source_segment_indexes": [
+        474
+      ],
+      "source_segment_ids": [
+        474
+      ]
+    },
+    {
+      "start": 3413.242,
+      "end": 3414.442,
+      "text": "或者比较打破常规的吗？",
+      "source_segment_indexes": [
+        475
+      ],
+      "source_segment_ids": [
+        475
+      ]
+    },
+    {
+      "start": 3414.602,
+      "end": 3415.802,
+      "text": "比如说做这家公司算吗？",
+      "source_segment_indexes": [
+        476
+      ],
+      "source_segment_ids": [
+        476
+      ]
+    },
+    {
+      "start": 3416.602,
+      "end": 3417.482,
+      "text": "我觉得应该也不算。",
+      "source_segment_indexes": [
+        477
+      ],
+      "source_segment_ids": [
+        477
+      ]
+    },
+    {
+      "start": 3417.962,
+      "end": 3422.042,
+      "text": "就创业，其实在我看来也是一个水到渠成、自然而然的一个过程。",
+      "source_segment_indexes": [
+        478
+      ],
+      "source_segment_ids": [
+        478
+      ]
+    },
+    {
+      "start": 3422.362,
+      "end": 3423.002,
+      "text": "休学算吗？",
+      "source_segment_indexes": [
+        479
+      ],
+      "source_segment_ids": [
+        479
+      ]
+    },
+    {
+      "start": 3423.402,
+      "end": 3425.322,
+      "text": "就在我自己看来，这些可能都不算。",
+      "source_segment_indexes": [
+        480
+      ],
+      "source_segment_ids": [
+        480
+      ]
+    },
+    {
+      "start": 3425.562,
+      "end": 3430.042,
+      "text": "可能在在世俗的眼光看来，可能这些是比较突破常规。",
+      "source_segment_indexes": [
+        481
+      ],
+      "source_segment_ids": [
+        481
+      ]
+    },
+    {
+      "start": 3430.602,
+      "end": 3432.842,
+      "text": "自己评价自己就会遇到这种悖论。",
+      "source_segment_indexes": [
+        482
+      ],
+      "source_segment_ids": [
+        482
+      ]
+    },
+    {
+      "start": 3433.402,
+      "end": 3435.162,
+      "text": "或者说，你一直在做你想做的事情。",
+      "source_segment_indexes": [
+        483
+      ],
+      "source_segment_ids": [
+        483
+      ]
+    },
+    {
+      "start": 3435.482,
+      "end": 3437.082,
+      "text": "对，这个我觉得是比较幸运。",
+      "source_segment_indexes": [
+        484
+      ],
+      "source_segment_ids": [
+        484
+      ]
+    },
+    {
+      "start": 3437.402,
+      "end": 3443.162,
+      "text": "但我其实见过更幸幸运的人，可能在自己十六岁的时候就知道自己人生当中想要什么。",
+      "source_segment_indexes": [
+        485
+      ],
+      "source_segment_ids": [
+        485
+      ]
+    },
+    {
+      "start": 3443.642,
+      "end": 3444.762,
+      "text": "所以你是什么时候想到的？",
+      "source_segment_indexes": [
+        486
+      ],
+      "source_segment_ids": [
+        486
+      ]
+    },
+    {
+      "start": 3445.082,
+      "end": 3446.282,
+      "text": "三十出头吧。",
+      "source_segment_indexes": [
+        487
+      ],
+      "source_segment_ids": [
+        487
+      ]
+    },
+    {
+      "start": 3446.762,
+      "end": 3452.122,
+      "text": "我可能是做完Drive AI之后，在那差不多半年的时间当中，我做了很多的思考。",
+      "source_segment_indexes": [
+        488
+      ],
+      "source_segment_ids": [
+        488
+      ]
+    },
+    {
+      "start": 3452.442,
+      "end": 3455.322,
+      "text": "你希望这家公司成为一个什么样的公司？",
+      "source_segment_indexes": [
+        489
+      ],
+      "source_segment_ids": [
+        489
+      ]
+    },
+    {
+      "start": 3455.882,
+      "end": 3462.202,
+      "text": "我在内部一直跟团队说，首先我希望两百年后还有人能够记得这家公司。",
+      "source_segment_indexes": [
+        490
+      ],
+      "source_segment_ids": [
+        490
+      ]
+    },
+    {
+      "start": 3462.362,
+      "end": 3463.162,
+      "text": "为什么是两百年？",
+      "source_segment_indexes": [
+        491
+      ],
+      "source_segment_ids": [
+        491
+      ]
+    },
+    {
+      "start": 3464.842,
+      "end": 3472.922,
+      "text": "我自己觉得，呃，两百年后，要么人类已经灭亡了，要么人类已经走向星辰大海，已经开始星际航行了。",
+      "source_segment_indexes": [
+        492
+      ],
+      "source_segment_ids": [
+        492
+      ]
+    },
+    {
+      "start": 3472.922,
+      "end": 3474.042,
+      "text": "我喜欢看科幻嘛。",
+      "source_segment_indexes": [
+        493
+      ],
+      "source_segment_ids": [
+        493
+      ]
+    },
+    {
+      "start": 3474.442,
+      "end": 3481.082,
+      "text": "刘慈欣在《三体》里面就讲到一个概念：地球的速，这个呃科技发展是是加速发展的，是指数发展的。",
+      "source_segment_indexes": [
+        494
+      ],
+      "source_segment_ids": [
+        494
+      ]
+    },
+    {
+      "start": 3481.482,
+      "end": 3485.242,
+      "text": "你想象一下，一百年前或者两百年前人们过的是什么样的生活？",
+      "source_segment_indexes": [
+        495
+      ],
+      "source_segment_ids": [
+        495
+      ]
+    },
+    {
+      "start": 3485.722,
+      "end": 3492.442,
+      "text": "你映射到今天，其实这个变化是非常非常大，可能比过去这个一千年的变化还要大。",
+      "source_segment_indexes": [
+        496
+      ],
+      "source_segment_ids": [
+        496
+      ]
+    },
+    {
+      "start": 3493.242,
+      "end": 3497.722,
+      "text": "但是这个两百年对于一家公司来说，或者对一个公司的管理者来说意味着什么？",
+      "source_segment_indexes": [
+        497
+      ],
+      "source_segment_ids": [
+        497
+      ]
+    },
+    {
+      "start": 3498.202,
+      "end": 3501.162,
+      "text": "我觉得还是要成事儿，做成事情。",
+      "source_segment_indexes": [
+        498
+      ],
+      "source_segment_ids": [
+        498
+      ]
+    },
+    {
+      "start": 3501.642,
+      "end": 3506.842,
+      "text": "从历史上来看，有很多公司它玩的是这个呃金融的游戏、资本的游戏。",
+      "source_segment_indexes": [
+        499
+      ],
+      "source_segment_ids": [
+        499
+      ]
+    },
+    {
+      "start": 3506.842,
+      "end": 3513.402,
+      "text": "像这样的公司，它没有自己的真正的产品，或者它的它的产品并没有形成多大的impact。",
+      "source_segment_indexes": [
+        500
+      ],
+      "source_segment_ids": [
+        500
+      ]
+    },
+    {
+      "start": 3513.562,
+      "end": 3515.642,
+      "text": "这样的公司，我觉得不太容易被人记住。",
+      "source_segment_indexes": [
+        501
+      ],
+      "source_segment_ids": [
+        501
+      ]
+    },
+    {
+      "start": 3515.962,
+      "end": 3525.322,
+      "text": "第二呢，它一定是对于大众有一种普惠的价值，而不是在某一个特别细分的领域、细分的点上面去做到一个专精特长。",
+      "source_segment_indexes": [
+        502
+      ],
+      "source_segment_ids": [
+        502
+      ]
+    },
+    {
+      "start": 3525.802,
+      "end": 3531.002,
+      "text": "所以你们要做两百年以后还work的事情，两百年以后还有人记得的一个一个公司。",
+      "source_segment_indexes": [
+        503
+      ],
+      "source_segment_ids": [
+        503
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 0.0,
+      "end": 34.08,
+      "text": "如果你当时去了李飞飞那边的话，那你现在会是一个 professor 王吗？斯坦福我觉得更多是一个标签，这背后有点像一个导演。任何响应速度高四百毫秒的生物都已经被灭绝了。还是回到我刚才那个观点，就是任何智能体最首要的工作就是感知，它是能通过生命感的图灵测试这样一个东西。你觉得 ROBA 会成为一个巨神陪伴的 iPhone 一吗？它是一个宠物，它是一个玩伴，它是一个智能助手。大家好，这是我们的产品 ROBA。",
+      "refined_segment_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "start": 41.2,
+      "end": 48.24,
+      "text": "欢迎大家来到晚点聊的播客间，然后我们这次非常有幸邀请到了生庭记的创始人王涛。大家好，我是王涛。",
+      "refined_segment_indexes": [
+        7,
+        8
+      ]
+    },
+    {
+      "start": 52.72,
+      "end": 79.92,
+      "text": "生庭记是一家在苏州的巨神智能公司。我们从公司创立的第一天起就想要做的是让机器人走入千家万户，成为人类的伙伴，而不仅仅是一个工具。公司是在二零二四年我从小鹏出来之后就成立的，二零二四年的四月份到今天的话，差不多两年多的时间。今年下半年的话，我们的第一代产品 ROBA 也会在中美两地同步去推向市场。",
+      "refined_segment_indexes": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "start": 80.24,
+      "end": 110.08,
+      "text": "我觉得过去的话其实是分了三个阶段，第一个阶段就是差不多从公司成立，就二四年的四月份到二四年的年底，这个时间段呢，其实公司是维持在一个非常低生命体征的这样一个状态。低生命体征？呃，最低生命体征吧，就是呃 burn rate 也压的够低，人员也不多。我们在做的事情是一定要把自己想要做什么给想清楚、说清楚。为什么当时会处于低生命体征？是因为拿钱不够吗？",
+      "refined_segment_indexes": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "start": 110.4,
+      "end": 137.92,
+      "text": "不是，是因为我们觉得在完全把这件事情想清楚之前，我宁可不要去拿钱，因为拿了钱其实是你就开始了一个倒计时嘛。因为钱进来，那股东必然会对公司的业务发展有所期待，呃，但我又不希望是因为股东的期待而提前的在不成熟的条件下去去走一个呃我认为还没有想清楚的道路。",
+      "refined_segment_indexes": [
+        19,
+        20
+      ]
+    },
+    {
+      "start": 138.24,
+      "end": 164.96,
+      "text": "其实，在你创业的时候，那时候巨神已经相对比较热了，嗯，然后很多投资人在看，可能很多人他如果没有拿到钱，他就不会去做创业，他可能是先融资然后再创业。但是你是反过来的。其实我们当时也拿了一些钱，但拿的并不多，是非常克制的一个状态。二四年一整年都可以认为是这种状态吧。当时也有不错的机会，如果我我当时说我要出来做一个人形机器人，或者讲一个巨神大脑的故事，当时也也许也能融到不少钱。",
+      "refined_segment_indexes": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "start": 165.12,
+      "end": 199.2,
+      "text": "但是我因为经历了过去 drive AI 的这些创业上面的一些 lessons learned，对于创业这个事儿，我我从第一天起就是逼迫自己要有一个中局的思维。在跟您见面之前，我也去找了一些投资人聊一下，嗯，对，然后他们其实也非常的感兴趣。可能相比于目前的很多的所谓的巨神的百亿俱乐部的创业者，其实你的履历是要比某些人会更好的，大家的关注度也非常的高。但是你却选择了一个 C 端的陪伴的一个赛道。如果那时候你选人形，或者你选大脑，其实你现在虽然你们现在也拿了很多钱，对吧？但是你们会拿更多的钱。",
+      "refined_segment_indexes": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "start": 199.76,
+      "end": 225.52,
+      "text": "我要去做的事情，必然是我内心坚定相信的一件事情。我们选择 C 端这个赛道，呃，包括做呃进入家庭的陪伴机器人，这是从公司创立第一天起我就定下的愿景。我认为做一家创业公司，就是整个团队、整个组织需要有的一种特质叫什么？就一个是知行合一，第二个是上下同欲。那先做 AGI，先做脑，然后再做伙伴，不行吗？",
+      "refined_segment_indexes": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "start": 225.92,
+      "end": 245.784,
+      "text": "这个肯定也是有一个先后吧，因为我现在是看到啊伙伴这件事情做出来是已经近在眼前的一件事情，也许。不同的人有不同的看法，至少我对于技术和行业的发展的判断，没那么快，肯定没那么快，特别是物理的AGI是是更没有那么快的。",
+      "refined_segment_indexes": [
+        37,
+        38
+      ]
+    },
+    {
+      "start": 246.184,
+      "end": 276.824,
+      "text": "那作为创业公司来说，肯定也是要先找一个明确的方向，而且这个方向呢，的是能够聚拢一波相信这个方向的人，而且是大家能够去执行，在可以预见的未来是是可以看到正向反馈的。你判断AGI要多久？时间上面我觉得是不好判断的，这个也是最前沿科技发展的一个规律，呃，没有人能够说得准这个时间到底是什么时候。那或者你觉得AGI多久之内不会来？",
+      "refined_segment_indexes": [
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "start": 277.384,
+      "end": 306.584,
+      "text": "看你怎么定义吧，物理的AGI，我觉得至少五年之内不会有真正落地的机会，到那个时候会有更多的信息，更多的input，我才能去做这个判断。我们一直开玩笑说，Elon Musk当时二零一二年的时候就说自动驾驶还有两年就可以实现了，对，我当时也是不太相信，对吧？然后过了可能五年六年之后，他出来再讲的时候又又还是两年，是是可以实现，永远是两，永远是两年。自动驾驶可能技术都不完全是唯一的因素吧？",
+      "refined_segment_indexes": [
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "start": 306.584,
+      "end": 316.584,
+      "text": "对，但是在我看来的话，其实真正制约的还是在于技术，因为如果你的技术确实是可以证明它比人类更安全，对吧？",
+      "refined_segment_indexes": [
+        47
+      ]
+    },
+    {
+      "start": 316.584,
+      "end": 344.264,
+      "text": "我是二零一二年一三年的时候就开始在斯坦福研究自动驾驶，特别是深度学习在自动驾驶领域的应用，然后一五年的时候跟着吴文达一块出来创业，作为Drive AI的联创，后来是被苹果在一九年的时候收购，一九年之后我就出来加入了小鹏汽车，也是一直在小鹏汽车负责自动驾驶的感知部门，所以过去差不多十二三年吧，一直是在自动驾驶领域。",
+      "refined_segment_indexes": [
+        48
+      ]
+    },
+    {
+      "start": 344.664,
+      "end": 372.904,
+      "text": "其实，在很早的时候我们就有过一个判断，就是在数据足够多的情况下，自动驾驶在技术上面其实是没有太多瓶颈了。这个其实在二零一二一三年的时候我们就得出过这个结论，呃，在学校，一二一三年就没有瓶颈了。对，当时我们是在呃有限的数据集量上面，只是看到了这个性能曲线的一个向上的很明显的趋势。",
+      "refined_segment_indexes": [
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "start": 373.304,
+      "end": 390.264,
+      "text": "那当时我们也做过一个呃曲线的一个外延的去预测，当时的结论就是说数据量如果足够多，到比如说几亿甚至几十亿公里的累积的这个数据量，从这个图上来看，它是能够超越人类的驾驶的表现和安全性的。",
+      "refined_segment_indexes": [
+        52
+      ]
+    },
+    {
+      "start": 390.504,
+      "end": 423.784,
+      "text": "但是因为当时受限于在学校不可能有这么多的资源让你去采集这个数据，对，对，包括我们在斯坦福的时候也跟特斯拉当时有过一段时间的合作，讨论过一些这这方面的问题，后来就意识到觉得还是出来作为一家公司能够向社会资本去募资，能够有更多的资源。那个时候马斯克已经说是两年以后要实现自动驾驶，我记得一二年的时候他在某一个场合大会上面就讲过还有两年，当然这个趋势是对的，但但是时间上面我我觉得是过于激进，我不是很相信的。",
+      "refined_segment_indexes": [
+        53,
+        54
+      ]
+    },
+    {
+      "start": 423.784,
+      "end": 456.904,
+      "text": "回到你刚才那个问题，为什么我从自动驾驶领域出来？呃，因为我看到了这个终局了。就是看到终局这个事儿，对你来说就没有意思了吗？我觉得接下来无非就是说我我看到了这颗宝石，我弯腰去把它捡起来，弯腰去捡的这个过程对于我来说就没有那么有趣了。其实中间还有一个小插曲嘛，因为Drive AI被苹果收购了以后，其实你当时至少有两个选择，对吧？一个是跟Drive AI去苹果，然后第二个是你可能去一家新的公司，但你你后面就是选择了小鹏。",
+      "refined_segment_indexes": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    {
+      "start": 457.224,
+      "end": 488.056,
+      "text": "为什么要拒绝苹果去小鹏呢？说一个比较反共识的，在当时看来非常反共识的看法，就是我当时就判断苹果做自动驾驶，以当时的路径来看大概率做不出来，因为苹果当时选择的路径跟Waymo是非常相似。它当时的技术上面肯定是不如Waymo走的更快的。那在苹果如果再做个四到五年，也就是能做到当时Waymo的这个水平。对，那所以当时苹果为什么要买Drive AI啊？",
+      "refined_segment_indexes": [
+        61,
+        62,
+        63,
+        64,
+        65
+      ]
+    },
+    {
+      "start": 488.456,
+      "end": 518.536,
+      "text": "我们在这个领域确实是有很多no号，包括我们在呃一六年就实现了在加州道路上一镜到底的这个视频的拍摄，呃视频的demo，这个是全球第一个一镜到底的视频，开了四十多分钟都没有接管，而且是又是下雨又是夜晚，这样很复杂的环境，当时他们看了以后也确实是很惊艳。第二呢，我们是真的能够把驾驶员拿掉的这个demo也是第一个能都能能够在全球做到。",
+      "refined_segment_indexes": [
+        66,
+        67
+      ]
+    },
+    {
+      "start": 518.856,
+      "end": 541.736,
+      "text": "我所了解到的，他当时想要做的汽车都是围绕着自动驾驶这个核心技术去设计的。嗯，他就是想要设计一个没有驾驶员、没有方向盘的一个车。你当时跟他们聊过吗？有，但具体很多的细节，因为我当时也是签了NDA，所以没有办法随便去透露。了解，自动驾驶，后面对你来说是一个相对boring的事情吗？",
+      "refined_segment_indexes": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "start": 542.056,
+      "end": 570.216,
+      "text": "我觉得在小鹏期间还是很有意思的，从零到一搭建了团队，包括在国内，呃，我们是第一家能够跟特斯拉掰掰手腕的公司，甚至很多地方是做的比特斯拉的这个效果更好的，因为适配了国内的环境嘛。而且我们也是从使用激光雷达到不用激光雷达和高精地图这一条路也是走通了。呃，从差不多二三年开始，小鹏就慢慢转向纯视觉的方案。",
+      "refined_segment_indexes": [
+        73,
+        74,
+        75
+      ]
+    },
+    {
+      "start": 570.376,
+      "end": 602.296,
+      "text": "呃，包括激光雷达的团队是我一手招进来建立起来的，然后后面也是我一手慢慢把它转到别的方向，慢慢拆掉，都经历了这样的一个过程。就你在Drive AI把激光雷达加进去了，然后在小鹏把激光雷达给拆掉了。小鹏也是先把激光雷达加进去，然后再把激光雷达拆掉。对，当时为什么选择小鹏啊？是吴欣昼找了你是吗？欣昼找我是很大的一部分原因，在斯坦福期间，我们整个团队都是做深度学习和感知。",
+      "refined_segment_indexes": [
+        76,
+        77,
+        78,
+        79,
+        80,
+        81
+      ]
+    },
+    {
+      "start": 602.616,
+      "end": 630.216,
+      "text": "在Drive AI期间呢，呃，因为我们要做全栈，所以缺少一个规划控制的负责人，我当时就自告奋勇，我说我这这个我我自己来一边学一边做吧。所以后来规划控制这一块是我在负责的。到小鹏的话，呃，当时有一个机会，就我去负责感知这个团队，相当于又回到老本行了。而且在当时看来，就是感知是离AI最近的一个模块。",
+      "refined_segment_indexes": [
+        82,
+        83,
+        84,
+        85
+      ]
+    },
+    {
+      "start": 630.936,
+      "end": 661.256,
+      "text": "对，而且我一直觉得感知是自动驾驶最先需要解决的问题，所以这个scope又足够，然后做的东西又是在这个关键路径上面，呃，就是通过L2开始迭代，然后采集数据，然后一步一步迭代到呃面向L4的终局。这个路径我当时也是比较认可。那这三个一吻合，又又有吴欣昼这样的大牛过来作证，我觉得这个事情非常靠谱。就是你你是从什么时候开始关注感知这个领域的？",
+      "refined_segment_indexes": [
+        86,
+        87,
+        88,
+        89
+      ]
+    },
+    {
+      "start": 661.736,
+      "end": 692.776,
+      "text": "做这个事情是从斯坦福开始，在在斯坦福开始读研究生，零九年吧，就跟文达在一起的时候做的。是的，本科的时候我做无人机嘛，但是当时就发现感知是一个巨大的瓶颈，我想把无人机做的更聪明，能够在室内自主的去导航，对吧？但是我的双眼是瞎的，对吧？所以所以其实当时做不到我想想象中的那种就非常聪明的这个智能体。本科当时是几几年啊？零五到零九年吧，在在新加坡国大。",
+      "refined_segment_indexes": [
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ]
+    },
+    {
+      "start": 692.856,
+      "end": 725.412,
+      "text": "你其实也是看到了文达当时在做无人机相关的项目，然后所以去到文达那边。录取了斯坦福之后呢，我肯定是希望能够在某一个教授那边去去深造，去去学一些这个新的东西吧。当时看了一圈CS的那些教授，当时还看了哪些老师？文达，呃，李飞飞，呃，还有奥萨马卡蒂。包括达芬奇机器人的创始人，也都跟都去上过他们的课，然后了解过他们的这个研究方向。",
+      "refined_segment_indexes": [
+        96,
+        97,
+        98,
+        99,
+        100
+      ]
+    },
+    {
+      "start": 725.892,
+      "end": 754.132,
+      "text": "对，达芬奇机器人是目前整个医疗行业最 top 的机器人公司。对。那为什么没有选择其他的教授，最后选了吴文达呢？可能还是跟智能有关。呃，因为我自己一直以来的梦想是做出这个有智能的生命体。在机械这个领域，你如果去做这个手术机器人，就像达芬奇这样的话，它其实没有太多智能发挥发挥的空间的。你是选修了他的课吗？",
+      "refined_segment_indexes": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ]
+    },
+    {
+      "start": 754.292,
+      "end": 785.892,
+      "text": "选修了他的课，对，内容更多就是前向后向的这个动力学，就是呃一个六自由度的机械臂，你你怎么通过每一个关节的角度去算最后的这这个末端执行器？为什么没有去李飞飞那边呢？嗯，都聊过。对，然后我我感觉的话呢，李飞飞可能会更追求学术圈的影响力，吴文达呢他的这个行业的洞见会更深。就那个时候，ImageNet其实还没有发布。还没有发布。嗯。",
+      "refined_segment_indexes": [
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114
+      ]
+    },
+    {
+      "start": 785.972,
+      "end": 813.652,
+      "text": "对，我跟他的博士也聊了一下，说他们最近在干什么？他说天天在画框。你如果去的话，你也是做ImageNet项目吗？呃，很有可能ImageNet这个那篇论文上面会挂我，会挂您的名字。如果我去了的话，那是很大的损失。呃，对，引用量上面是一个很大的机会成本吧。那如果你当时去了李飞飞那边的话，那你现在会是一个Professor王吗？不确定。",
+      "refined_segment_indexes": [
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122
+      ]
+    },
+    {
+      "start": 813.972,
+      "end": 847.652,
+      "text": "呃，我现在回想的话，大概率我可能也会待了几年就待待不住，也有可能博士读一半就就跑出来创业了，也有可能说博士读完了，在大厂工作了两年，但是最后可能也会熬不住。因为我回看的话，我觉得在一个就是你是一个一定要创业的人。我觉得创业是我去实现梦想，或者是追求我我自己想做的有意思的事情的一个最好的路径。其他的路径目前看下来都差点意思。",
+      "refined_segment_indexes": [
+        123,
+        124,
+        125,
+        126
+      ]
+    },
+    {
+      "start": 847.972,
+      "end": 876.772,
+      "text": "所以哪怕那时候我不知道，对吧？这些路径我我对对于我来说都是未探索过的路径嘛。但凡我都探索过一遍，我觉得一定会收敛到今天的这个路径上来。你是吴文达的学生，然后你是Drive AI的联创，然后后面到了小鹏，然后现在做了这家公司。这些以上的所有的经历，你觉得哪一个对你的影响是最大的？我觉得看不同的维度，Drive AI其实是让我第一次尝到了创业的滋味。",
+      "refined_segment_indexes": [
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
+      ]
+    },
+    {
+      "start": 877.172,
+      "end": 901.092,
+      "text": "对，在小鹏期间这这段经历呢，是让我用大厂的这种方法论和这个大团队作战的经验武装了自己。如果没有小鹏的这段经历，我可能也不会那么坚决的说自己出来创业，能够有信心能能够做好一家公司。对，所以我觉得这两段经历都是非常重要的。斯坦福呢？",
+      "refined_segment_indexes": [
+        133,
+        134,
+        135,
+        136
+      ]
+    },
+    {
+      "start": 901.892,
+      "end": 932.372,
+      "text": "斯坦福我觉得更多是一个标签，就是读一个PhD就是把人类的对对于未知世界的知识稍微往前拱那么一点点，不是我真正想要的。对我更希望看到的是一个全局的一个完整的东西。所以你看，呃，我也没有去投身这个移动互联网这些App，对对吧？其实如果当时从斯坦福出来，我立刻去做一个App，可能没两年卖给谷歌，我我也财务自由了。斯坦福有一个，我记得有你们有校友基金会。",
+      "refined_segment_indexes": [
+        137,
+        138,
+        139,
+        140,
+        141
+      ]
+    },
+    {
+      "start": 932.372,
+      "end": 960.043,
+      "text": "是的，但是对于这一块，我就我也不知道为啥就没有提起太大的兴趣，但反而是说这个做一个实体的机器人，对吧？它在现实世界当中能够产生一定的影响力，这个事情一直是非常非常吸引我的。你理想的一个产品是什么样的？足够生命感的东西。怎么理解“生命感”这个词儿？生命感有几个维度吧，呃，生命感本身是一个很泛的概念，对吧？",
+      "refined_segment_indexes": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147
+      ]
+    },
+    {
+      "start": 960.123,
+      "end": 992.123,
+      "text": "呃，有会有些人会觉得，哎，能跳舞，能能到处跑，这个叫生命感；有些人会觉得，哎，我我跳起来翻个跟斗是生命感。也许有些人会说，那我不需要它能动，对吧？它的它的眼睛能眨巴一下，对吧？然后身上软软的，有有这个温度，这也是生命感。那我们需要想要去主打的是，它能够自主的跟你出去，能够跟你回来，就像一个小狗一样，你可以无障碍的把它带到户外，然后也能带回来。",
+      "refined_segment_indexes": [
+        148,
+        149,
+        150,
+        151,
+        152
+      ]
+    },
+    {
+      "start": 992.363,
+      "end": 1021.403,
+      "text": "其实我觉得机器人行业聊生命感的人还挺多的。你们其实对生命感好像有属于你们自己比较独特的理解。对，其实生命感如果概括来说，就是它的一个主体性，它不是一个被动去响应命令的东西，它是有自己的主体性，它自己的呃，它可以跟你有交互，对吧？你给它命令，它会有响应。但是呢，它不是一个智能硬件，它自己的一些行为，有些时候看起来都是在智能硬件上面是没有意义的。",
+      "refined_segment_indexes": [
+        153,
+        154,
+        155,
+        156,
+        157
+      ]
+    },
+    {
+      "start": 1021.643,
+      "end": 1049.083,
+      "text": "如果你做一个智能音箱，你会希望这个智能音箱自己在房间里面到处跑了去探索吗？其实也不会。功能是建立在情绪价值的底气底色上面。它首先得是一个主体，它首先得有自己的人设，能够以这个人设进入到你的家庭、你你的生活而不显得违和。然后在这个基础上，这个角色能够帮你做一些力所能及的事情。首先，它要有一定的不可预测性。",
+      "refined_segment_indexes": [
+        158,
+        159,
+        160,
+        161,
+        162,
+        163
+      ]
+    },
+    {
+      "start": 1050.043,
+      "end": 1078.683,
+      "text": "我举一个简单的例子，就比如说之前我我给一些外部的朋友做做一个演示的时候，我在跟robo交互，跟他打招呼，跟他说话，然后说到一半的时候，robo一言不合，转身就跟我说了句拜拜，就转转身就自己跑了，对吧？然后就是在那个moment，外部的这这些访客，呃，他们看到之后就会说，哇，这东西是真的有自己的灵魂。你们是怎么去设计这里面的随机性的？",
+      "refined_segment_indexes": [
+        164,
+        165,
+        166
+      ]
+    },
+    {
+      "start": 1079.323,
+      "end": 1113.003,
+      "text": "这个就是比较复杂的一个过程了，因为我们产品经理当中也有这个心理学出身的，比如说通过呃VAD的这个情绪模型去设计一套机器人，它自己的一些内部状态，根据这个内部状态，它有有会有一个朝外的映射。就它不是一个真正随机的，它可能是会跟环境去互动的随机。对，它跟环境肯定是有互动，然后让人感觉到它是随机。呃，那你要非得深究的话，今天任何一个随机数，它都是pseudo random，它都它都是伪随机，对吧？生成随机数是一个世纪难题。",
+      "refined_segment_indexes": [
+        167,
+        168,
+        169,
+        170,
+        171
+      ]
+    },
+    {
+      "start": 1113.003,
+      "end": 1145.003,
+      "text": "对对是的，是的，但是基于这个，呃，在用户感知的这这个层面，我们是可以把它做到随机，它的随机性是能够自洽的。它不会说上一秒它是开开心心的，下一秒它突然随机的开始哭，完全完违反了它的人设，破坏了它的主体性。这个这种随机就是有害。随机也得符合常理，符合它的人设，符合逻辑，它是一个自洽的主体。就比如刚才你说的，它转头离开，嗯，那个是一个什么样的场景会让他转头离开？呃，这个可能就是一定的随机性。",
+      "refined_segment_indexes": [
+        172,
+        173,
+        174,
+        175,
+        176,
+        177
+      ]
+    },
+    {
+      "start": 1145.723,
+      "end": 1177.403,
+      "text": "就比如说它每一轮对话之后，它都会去决策说我现在要不要终止这个对话，对吧？就有一点像大语言模型，你你最后一个token都是随机去取采样采出来的嘛？对。那我们在在采样的时候，它在里面就有一个选项叫做终止对话，它自己判定当前的这个对话，呃，对于它来说有点无聊啊，或者说其他地方有一个更吸引它的一个attractor，它就会被这个影响。是你们在后面做了哪些智能的工作呢？",
+      "refined_segment_indexes": [
+        178,
+        179,
+        180,
+        181,
+        182
+      ]
+    },
+    {
+      "start": 1177.643,
+      "end": 1203.386,
+      "text": "我觉得首先就还是回到我刚才那个观点，就是任何智能体的最呃首要的工作就是感知。那我们这边说的广义的感知，其实不光是视觉，包括听觉，呃，包括它的触觉，呃，包括它对于整个环境的理解跟认知。呃，这些其实第一步你得先把它做的非常 solid，其实就是你过去一直在做的事情。",
+      "refined_segment_indexes": [
+        183,
+        184,
+        185
+      ]
+    },
+    {
+      "start": 1203.626,
+      "end": 1228.106,
+      "text": "对对，因为只有把感知做 solid 之后，你才能去在这个上面去去发散的去做一些他自己的小情绪啊，他的一些人设，你你才能说，我看到什么时候我应该有什么样的表现，或者是这个他的这个皮皮贱贱的这种小情绪也好，对吧？呃，都都是需要建立在他对于周围环境的认知上面。",
+      "refined_segment_indexes": [
+        186,
+        187
+      ]
+    },
+    {
+      "start": 1228.266,
+      "end": 1259.226,
+      "text": "我们前期的话也做过很多呃不同模型之间的对比，那我们发现在这种大语言模型，包括多模态的模型，它的广义上面的理解能力是更强一些，呃，但是它也有很多弱点，就比如说它对于时序的理解就非常差。现在市面上面最好的多模态模型，它其实很难识别到说你你给他做一个招手的动作让他过来，他只能基于单帧去猜测说你现在可能是在做这个动作。嗯。",
+      "refined_segment_indexes": [
+        188,
+        189,
+        190
+      ]
+    },
+    {
+      "start": 1259.466,
+      "end": 1286.026,
+      "text": "但是你如果这个手放在这边，只是在看你自己的手心，基于单帧你是没有办法判断他他到底是不是在动的。那可能我玩手机，他手机被遮住了，他可能也以为你在叫他。是的，基于 transformer 的感知模型呢，它还有一个缺点，就是它对于精细的这个细节的识别是相对比较差的。因为 convolution 你其实三乘三、五乘五的这个 patch，它可以做的非常非常细，所以很小的一些细节是可以看到的。",
+      "refined_segment_indexes": [
+        191,
+        192,
+        193,
+        194
+      ]
+    },
+    {
+      "start": 1286.186,
+      "end": 1317.226,
+      "text": "当时我们在做自动驾驶的时候就发现，vit 对于整个环境的判定是更准确、更更泛化，但是对于远处非常非常小的这个车的框，它检测不到。transformer 它的每一个视觉 token 都是切了一个一个 patch 出来，对，所以它其实，在在小的东西上面，它是它是个近视眼。对我看到你们其实，在那个硬件上的感知方案其实也在变化嘛。你们第一代的时候可能就是主要是向前的这个视觉，对，然后你们第二代可能加了一些新的向后的，然后可能立体的。",
+      "refined_segment_indexes": [
+        195,
+        196,
+        197,
+        198
+      ]
+    },
+    {
+      "start": 1317.546,
+      "end": 1348.746,
+      "text": "对，其实我们发现去做环视，去达到三百六十度的一个感知认知，这个是一件 ROI 非常高的事情。因为呃，首先我们是要在户外能够随时跟随人，对吧？那如果人出了这个视觉范围，如果是一个活生生的动物的话，它是有脖子的。虽然这个方方位上面的人不在我的视野范围内，我可以转头，对吧？但是转头这件事情又带来额外的自由度上面的成本，包括整个系统的复杂度。",
+      "refined_segment_indexes": [
+        199,
+        200,
+        201,
+        202,
+        203
+      ]
+    },
+    {
+      "start": 1348.826,
+      "end": 1382.186,
+      "text": "加一个眼睛，加一个摄像头会更便宜，而且对于系统的复杂度上面，它的带来的负面是更低的。然后还有一些重要的因素，就比如说旁边有人喊我，对吧？对，呃，喊我的时候，其实在这这个 ASR 就是语音的领域会有一个呃长久的难题，就是在没有唤醒词的情况下，呃，我怎么知道旁边的人在喊我？呃，或者旁边的人在给我下达命令？呃，我怎么知道这个不是一个因为噪声而带来的一个误触发？",
+      "refined_segment_indexes": [
+        204,
+        205,
+        206,
+        207,
+        208
+      ]
+    },
+    {
+      "start": 1382.506,
+      "end": 1412.426,
+      "text": "那传统的语音怎么去解决呢？它就需要一个唤醒词。这个唤醒词在念出来的时候，它可以非常精确的识别到，呃，有很多都是用低功耗的芯片去做的，因为我们觉得唤醒词这个体验非常差。但是如果不用唤醒词，你又会有各种误触，因为我在周围有了摄像头，我可以精准的判断这个声音来的时候，它的方向跟我检测到人的这个方向是不是吻合的。如果吻合了，那其实我就可以判断这个是人发出的一个声音。",
+      "refined_segment_indexes": [
+        209,
+        210,
+        211,
+        212,
+        213
+      ]
+    },
+    {
+      "start": 1413.946,
+      "end": 1438.986,
+      "text": "啊，这其实是在一个物理 AI 里面，其实多模态融合的一个挺好的一个案例。是的，是的。其实大家都说多模态，说物理 AI，呃，说了很多概念，但是我们其实一直想的是说，这些新的技术看起来是黑科技，对吧？那你怎么去做落地？呃，我自己跟团队一直说，我们团队的一个底色就是要把黑科技落地。这些黑科技也许在我们看来是可以实现的。",
+      "refined_segment_indexes": [
+        214,
+        215,
+        216,
+        217,
+        218,
+        219
+      ]
+    },
+    {
+      "start": 1439.38,
+      "end": 1473.3,
+      "text": "对，但是我也很惊讶，就是因为免唤醒词这个事儿，可能在汽车里面你很好理解，就是它可能可以定位到某一排，因为它是一个很结构化的一个座位。然后如果你可能在家里面的话，你其实没有什么其他人。嗯。但是你是在户外。对。所以这个事儿其实是挺夸张的。对，当时我们定这个目标的时候，呃，团队当中也是有挺多质疑，说这这个好像行业当中也没有人这么做，对吧？然后成熟的方案呢都是基于唤醒词，我们要不要去冒这么大的风险？",
+      "refined_segment_indexes": [
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227
+      ]
+    },
+    {
+      "start": 1473.78,
+      "end": 1507.22,
+      "text": "但是当时我我跟几个技术骨干商量下来，包括产品的同学一起进来讨论，就觉得唤醒词这个事儿其实真的是行业苦它已经久矣。目前大家习惯的这个唤醒词，并不是因为大家接受它，而是没有别的选择，只能去去捏着鼻子忍受了。对，最早是就是某家大厂当时设计的也是四字唤醒词，因为他发现可能三字的成本就会高很多，就不要说你可能砍掉唤醒词，你让唤醒词变短也是一件很有难度的事情。",
+      "refined_segment_indexes": [
+        228,
+        229,
+        230
+      ]
+    },
+    {
+      "start": 1507.54,
+      "end": 1539.7,
+      "text": "其实它还是基于一个智能硬件、智能音箱的一个逻辑，就是你不能有误唤醒，而且一旦有了误唤醒，它的体验会非常差。经常比如说，就我们如果旁边有一个智能音箱，我们在聊天的时候，它突然冒出来说：“哎，今天天气怎么样？”或者说我们提到了某一个关键词的时候，它突然开始跟你长篇大论来一个，这个就非常的让人出戏，我会会人会抓狂，对吧？但是在 Rover 这样的产品上面，其实一定程度的误唤醒，从产品上来说，可能甚至是一个加分。",
+      "refined_segment_indexes": [
+        231,
+        232,
+        233,
+        234
+      ]
+    },
+    {
+      "start": 1540.18,
+      "end": 1575.06,
+      "text": "就比如说它有一个误触，只要它不是特别频繁，它转过来说：“嗯，你刚才叫我了吗？”对吧？那我跟他说：“我没叫你，你听错了。”他就哦，又回去自己做自己的事儿去了，这感觉就会就会完全不一样，它不是一种打扰。对，但那其实对它的这个表现也是有一个要要规划的，就是是要规划。对它，呃，我不做唤醒词，但是对于误触的这个要求还是存在的。对它还是对有有这种 KPI 指标是是需要去达成的。",
+      "refined_segment_indexes": [
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241
+      ]
+    },
+    {
+      "start": 1575.3,
+      "end": 1605.46,
+      "text": "人有些时候也会误触嘛，就是可能我以为我的谁在叫我，我可能也要去 check 一下。对，有一个原则就是说，哪怕说它的误触了，但是这个误触得是符合逻辑，就是说这个声音的来源，我们确实在这边说话，对吧？然后他感觉到我们在说话的时候，他他有一个误触，认为是我们在说话，而不是说那边有个空调发出一些噪声的时候，他跑过去跟跟空调去去做交互了，对吧？那就这个就不符合逻辑，你会觉得它非常蠢。",
+      "refined_segment_indexes": [
+        242,
+        243,
+        244,
+        245
+      ]
+    },
+    {
+      "start": 1605.54,
+      "end": 1634.66,
+      "text": "但是因为你们在你们做户外嘛，其实户外可能会有很多人，那如果一群人围着叽叽喳喳的时候，那它是不是很容易处于误触的状态？其实这里面就需要去做这个意图的识别跟区分。那这些人他是互相之间在对话，还是在朝着机器人说话，对吧？这个我们也是要做做判断的。就比如说我们两个在对话的时候，我的眼睛去不会去看这个机器人，这个 gaze 其实是非常细节的一个点。",
+      "refined_segment_indexes": [
+        246,
+        247,
+        248,
+        249,
+        250
+      ]
+    },
+    {
+      "start": 1634.9,
+      "end": 1667.76,
+      "text": "如果纯粹从语音的角度去试图去解决这个事情是无解的，因为你看不见人的 gaze，你也看不到人当前的状态，他也许是完全没有朝向机器人，他在说话，对吧？但是你你听到了一个你认为的唤醒词或者关键词，你就被唤醒了，对吧？但是如果你有视觉，你可以看到人眼睛，他到底有没有在看着你，这个你是可以去判断当前他的交互状态的，包括人的嘴巴有没有在动，唇语我不需要读到读唇，对吧？那个太难了。",
+      "refined_segment_indexes": [
+        251,
+        252,
+        253,
+        254
+      ]
+    },
+    {
+      "start": 1667.86,
+      "end": 1701.449,
+      "text": "对对，就那个很难的，在小鹏期间也做过这个唇读唇语，但是你你至少是能判断当前这个人有没有在说话，这个是很好判断的，对吧？如果当前这个人完全没说话。旁边那个人的嘴一直在动，那我就能区分，同样来自这个方向，大概是哪一个人在说话。我我知道你们还加了一些，比如说摄像的一些功能。我们其实发现拍摄跟记录是一个刚需，对。但是如果只做这一个点呢，我们会把自己做成一个工具项的产品，对这个又不是我想要去做的。",
+      "refined_segment_indexes": [
+        255,
+        256,
+        257,
+        258,
+        259,
+        260
+      ]
+    },
+    {
+      "start": 1702.169,
+      "end": 1733.849,
+      "text": "当然切中了细分领域之后，我觉得这个方向是非常make sense。所以在第一代上面呢，我觉得呃我们也比较克制，呃我们不会去卷说做很好的这个呃非常非常强的成像质量，我去跟大疆和影视去PK，对吧？那作为创业公司来说，你在第一代上面不可能去这么做。对，但是你们好像可以加一个杆子，然后可以在上面加一个。这这个叫这个叫打不不打不过就加入嘛，我可以借力对吧？",
+      "refined_segment_indexes": [
+        261,
+        262,
+        263,
+        264,
+        265
+      ]
+    },
+    {
+      "start": 1733.849,
+      "end": 1768.169,
+      "text": "你可以加一个手机，今天手机的拍摄效果其实非常好，对吧？它已经有自带的这些这个白平衡啊ISP啊，包括这个防抖的一些算法都有，对吧？我们不需要自己再去在第一代上面重新辛苦的去造造轮子，对吧？可能你你你造了大半年的你你做出来的东西也不如人家一个基础的东西，所以我我们是可以作为一个移动的拍摄平台，你在上面加装了配件，呃加了自拍杆，达到一个足够的高度，它的视角其实是可以走在你前面拍你正面。",
+      "refined_segment_indexes": [
+        266,
+        267,
+        268,
+        269
+      ]
+    },
+    {
+      "start": 1768.729,
+      "end": 1799.849,
+      "text": "然后我们自己ROBA上面的摄像头呢，它主打的是一个抓拍的功能。很多时候家长在呃出游的过程当中，看到小孩有一些精彩的瞬间，想要把摄像头掏出来拍，已经过掉了，这个瞬间已经已经错过了。也许这一错过，你你接下来几年都不会再有，对吧？那这种精彩的瞬间，我们是可以通过后验的方式去给它呃储存下来。就有了触发之后，它它可以把过去几秒的一个片段给落到盘上。",
+      "refined_segment_indexes": [
+        270,
+        271,
+        272,
+        273,
+        274
+      ]
+    },
+    {
+      "start": 1800.409,
+      "end": 1815.609,
+      "text": "那其实对于ROBA来说也是一样，我们有这种精彩瞬间的检测的模型，它在触发之后，它可以把过去一段时间的这个视频存到端测。嗯，你们其实做了很多不同的模型，对吗？",
+      "refined_segment_indexes": [
+        275,
+        276
+      ]
+    },
+    {
+      "start": 1816.009,
+      "end": 1840.009,
+      "text": "目前应该有十来个吧，有视觉感知的，通用的这个环境的认知，对于人的这种human centric的这些检测，比如说人在哪儿，人的面部表情，人的年龄性别，眼睛有没有在看机器人，手部的一些关键点，肢体的关键点，现在在做哪些动作，这些我们都会做的非常非常详细。",
+      "refined_segment_indexes": [
+        277
+      ]
+    },
+    {
+      "start": 1840.569,
+      "end": 1865.849,
+      "text": "在这一块呢，其实并不适合去用现在主流的这些多模态大模型，它其实抓不到这些细节，比如说眼睛有没有在看你，然后语音语音我们也是做了端测的方案，因为我们发现用云端的方案呢，一方面有延时，第二个是在任何这个网络出现波动的情况下，这个产品的体验会变成非常不可控。",
+      "refined_segment_indexes": [
+        278
+      ]
+    },
+    {
+      "start": 1866.889,
+      "end": 1898.969,
+      "text": "而且对于用户来说，一旦有过一两次这种网络不可控造成的体验下降，它会自动把它降级成一个工具或者一个机器，它的生命感可能就会受到损失，并不是说百分之九十的情况都可以就可以了，正好它可能就是那百分之十甚至百分之五的情况，你跟他说一个话，他没有响应，这个时候他在你心目当中这个生命感就一下子这个曲线就下来。哎，语音其实现在已经有一些成熟的解决方案了。",
+      "refined_segment_indexes": [
+        279,
+        280
+      ]
+    },
+    {
+      "start": 1899.209,
+      "end": 1930.594,
+      "text": "对，嗯，我们会去做微调，针对我们的这个语音环境，因为语音是其实是一个比视觉更复杂的一个链路，对，因为视觉的话ISP其实相对来说比较标准，呃而且有一套标准的评判。评判的 criteria 有 KPI，对吧？ISP 到底做的好不好？成像做的好不好，对吧？但是语音的话，其实首先传感器就分很多，什么单麦的、四麦的、六麦的这种方案。对，你们是一个环形的。",
+      "refined_segment_indexes": [
+        281,
+        282,
+        283,
+        284,
+        285,
+        286
+      ]
+    },
+    {
+      "start": 1931.474,
+      "end": 1965.314,
+      "text": "对，然后用了这些麦之后，它跟机器人自己腔体内部的这个声学环境也有很大的关系。对，有一些厂家他选择的是把这个麦突出一点，这样的话它更好的去收声，对吧？我们是坐在这个机器人内部是做成一体的，但这样的话机器人内部的一些噪音也会对这个前端收声，对，却会会有一些噪声。哎，除了这几个，还有其他的模型可以分享吗？导航和避障，然后呃，运动控制。你的老本行了，导航避障。",
+      "refined_segment_indexes": [
+        287,
+        288,
+        289,
+        290,
+        291,
+        292
+      ]
+    },
+    {
+      "start": 1966.114,
+      "end": 1999.474,
+      "text": "对，我们现在是基本上没有用到规则式的这种导航，即使在户外去跟人，或者说是在户内从端到端，或者依照 GPS 从某个点走到另外一个点，我们现在都是用模型训练的方式去解决。呃，因为我我发现，其实在这个时代，你用模型训练方式去解决更高效。对，因为解决这件事情，你其实已经有更多的很多的这种仿真去可以去使用，你不用自己一条一条的去写规则。导航这件事儿和你之前做有什么不一样吗？",
+      "refined_segment_indexes": [
+        293,
+        294,
+        295,
+        296
+      ]
+    },
+    {
+      "start": 1999.954,
+      "end": 2030.674,
+      "text": "我觉得在环境上面来说更开放了，你不是沿着车道线去走，而是你要实时的去看哪些区域是可以走的，包括什么时候是可以走到草地上，什么时候你最好是跟着这个步道，跟跟着看得见的这个路去走。如果前面有个障碍物，人是往这边绕的，它的初始条件是更偏右边的话，它会往另外一个方向去绕。它也会选择通过性更好的路面。如果它的地形特别复杂，它刚好碰到了它过不去的坎，它怎么办？它求救。",
+      "refined_segment_indexes": [
+        297,
+        298,
+        299,
+        300,
+        301
+      ]
+    },
+    {
+      "start": 2031.074,
+      "end": 2063.554,
+      "text": "它就像一个小狗，如果有时候有个坎儿爬不过去，它也会在原地急得团团转，在在叫，就是可能会发出一些声音或者有些表情，呃，让人知道它这边过不去，然后请求人来帮它一下。然后你把它帮完了之后，它还会有一个开心的表情。啊，包括我们的呃机器上面，它是是设计了一个把手，这个把手的捏上去的材质是比较亲肤的，所以其实，在拎起这件事情上，我们也是做把这个体验做的足够好。",
+      "refined_segment_indexes": [
+        302,
+        303,
+        304
+      ]
+    },
+    {
+      "start": 2063.714,
+      "end": 2091.874,
+      "text": "刚才聊了很多跟模型相关的话题嘛，你们其实做了像你刚才说，可能做了十几个模型，声学的和这个视觉的，其实很多时候它是要联动的。对，那不同的模型之间怎么去串联？不同的模块之间，他们是会呃传递消息的。那这个其实就是在自动驾驶领域之前也积累过一些经验，自动驾驶也是一个多模块、多进程，然后互相之间都会发消息的这样一个整整体的一个架构系统。",
+      "refined_segment_indexes": [
+        305,
+        306,
+        307,
+        308
+      ]
+    },
+    {
+      "start": 2092.354,
+      "end": 2120.754,
+      "text": "对，那在机器人身身上其实也是类似，因为今天的模型还做不到说一到两个大模型，它就涵盖了陪伴机器人所有的一切。你一定是一个多模型互相交互，然后呃互相之间传递消息，然后收到消息之后，根据这个消息，它会有一些这个处理的逻辑。这个其实就比较考验呃团队对于复杂工程系统的一个把控的能力。可能有点像五年前的、十年前的自动驾驶，肯定比五年前的要要更超前一些，要要好一些了。",
+      "refined_segment_indexes": [
+        309,
+        310,
+        311,
+        312
+      ]
+    },
+    {
+      "start": 2121.074,
+      "end": 2154.434,
+      "text": "对，因为今天我们用的模型很多已经用到了 transformer 的架构啊，包括它的泛化性，它的这个呃识别物体的多样性，包括像刚才说的语音，也都是有一些革命性的变化。其实更主要的是我们要有足够的真实用户场景当中的数据，所以我们现在第一代产品出去之后，就会有这个契机，有有这个条件能够采集到这这一类的数据来进行迭代。那你们为什么会选择户外呢？如果你走进家庭的话，其实户外和室内其实还是很不一样的一个场景。",
+      "refined_segment_indexes": [
+        313,
+        314,
+        315,
+        316
+      ]
+    },
+    {
+      "start": 2154.594,
+      "end": 2158.194,
+      "text": "因为今天如果要真的走入室内的话，它的",
+      "refined_segment_indexes": [
+        317
+      ]
+    },
+    {
+      "start": 2159.226,
+      "end": 2190.666,
+      "text": "用户对于隐私上面的一些顾虑，从户外来说的话，首先这个产品的成立性会更高一些，我们觉得，对，因为首先户外看来是一个蓝海，然后人在户外，从心理上来说，他会更希望有一个陪伴，有一个物理存在的陪伴，呃，因为在家里的话，任何陪伴类的产品，它最大的对手是手机，是屏幕，但是在户外这个屏幕跟手机这个最大的敌对就被去掉了，其实这个也是我们发现的一个洞察，",
+      "refined_segment_indexes": [
+        318
+      ]
+    },
+    {
+      "start": 2191.066,
+      "end": 2208.346,
+      "text": "你做户内的室内的这些情感陪伴，竞争来竞争去，到最后你的竞争对手并不是友商，还是屏幕，还是屏幕，但是在户外现在没有人愿意去做，是因为户外的门槛比较高。还有哪一些是可以支撑生命感的技术元素？",
+      "refined_segment_indexes": [
+        319,
+        320
+      ]
+    },
+    {
+      "start": 2208.986,
+      "end": 2243.706,
+      "text": "实时响应，实时反馈，我不知道你有没有看过 Lovot 的这个作者写的那本书，叫温暖的科技，他其中提到一个观点，就是在应该是四百毫秒是一个门槛，任何的语音的响应，包括视觉 event 的响应，如果超过四百毫秒，它的呃生命感的那种感觉，主观的感受就会指数级的下降。那个作者他提到一个观点，就是说在漫长的进化过程当中，任何响应速度高于四百毫秒的生物都已经被灭绝了。所以你们的设计目标是按照四百毫秒去做的？",
+      "refined_segment_indexes": [
+        321,
+        322,
+        323
+      ]
+    },
+    {
+      "start": 2244.026,
+      "end": 2263.866,
+      "text": "我们甚至可以做的更短，我们的语音甚至是可以做到一两百毫秒的一个响应，所以是可以做的非常快，然后这里面又给我们留出了更多人物拥有的体验的一些空间。我想说的就是低延时这件事情对于生命感是非常重要的。说到生命感的话，还有一条比较重要的，但是也是大家容易忽略的，就是眼神。",
+      "refined_segment_indexes": [
+        324,
+        325,
+        326
+      ]
+    },
+    {
+      "start": 2264.266,
+      "end": 2296.186,
+      "text": "我们是通过屏幕去体现他的眼神，我们的眼神呢，并没有把它做的非常细致，像 Lovot 这样生成有几十亿种不同的排列组合，我们的眼神会给你一种注视感，就它通过视觉能感知到你人在哪里，人脸在哪里的时候，他会看着你，他跟你交互的时候，他就看着你，跟目前市面上看到的一些产品比起来，它的这种注视感会强很多。你跟他说话的时候，你会觉得他有在听，因为他在看着你，而且你如果走动的时候，他还会转过来。",
+      "refined_segment_indexes": [
+        327,
+        328
+      ]
+    },
+    {
+      "start": 2296.506,
+      "end": 2328.746,
+      "text": "我不知道你看过这个很多人形或者其他类型的机器人，他跟人用大语言模型聊天的时候，他可能是侧着身子，对，他基本上就是朝着一个方向，他不会朝不会对着人去讲，呃，这是一个细节，也许大家觉得这个事情没有那么重要，但我觉得在生命感这件事情上是很重要的。嗯，可能在那些场景上，他们并没有很强调对生命感，对他可能更多的是一个提供信息的工具。我去到什么医院或者政务大厅，它有一个带屏幕的一个头，其实表情交互这件事情很多人都在做，对吧？",
+      "refined_segment_indexes": [
+        329,
+        330,
+        331
+      ]
+    },
+    {
+      "start": 2328.906,
+      "end": 2358.826,
+      "text": "我觉得真正要把眼睛的神给做出来，你是要把眼睛和真正视觉看到的东西去做结合的，而不是说我简单的做一个更漂亮的眼睛。我觉得 Lovot 做的其实有一个讨巧的地方，因为它跟人的交互方式基本上就是它在地面，然后抬眼去看人，对对，所以它的一个标准动作就是抬起水汪汪的大眼睛，看上面的一个方向，嗯，对吧？",
+      "refined_segment_indexes": [
+        332,
+        333
+      ]
+    },
+    {
+      "start": 2358.986,
+      "end": 2393.946,
+      "text": "它也有时候也会给你一种注视感，但是你们好像没有做一个水汪汪的大眼睛。对，因为我我们觉得做一个水汪汪的大眼睛有点太萌了，嗯，太可爱了，嗯，不太符合我们这个有点贱贱的这这种小坏蛋的这种人设，嗯，对，我们给他的人设是一个小黄人的人设，啊，对，为什么是小黄人？因为我喜欢小黄人，我觉得他很好玩，而且如果家里面有这样一个角色的话，会让人很开心。他不会长篇大论来来跟你聊天，但是呢，他对于周围的环境，对于你跟他说什么，他其实听得懂。",
+      "refined_segment_indexes": [
+        334,
+        335,
+        336,
+        337
+      ]
+    },
+    {
+      "start": 2395.014,
+      "end": 2427.494,
+      "text": "它能够有认知，这个能够体现出它的智能，但是它的智能不是说我来跟你聊天来体现的，它更多是通过自己的表情、肢体动作、它的一些行为来体现说，哎，我其现在其实看到你了，而且我也理解当前的这个情境，甚至我我听得懂你在跟我说什么。但是你给我下一个命令，我不一定愿意照着你说的去做，甚至有时候我会有一点恶搞或者呃小的恶作剧。你在对标小黄人之前有参考过其他的一些卡通或者IP吗？",
+      "refined_segment_indexes": [
+        338,
+        339,
+        340
+      ]
+    },
+    {
+      "start": 2428.054,
+      "end": 2462.534,
+      "text": "我给Rover现在的定义，这这一类吧，我我都给它定义叫类瓦力机器人。造型呢，呃，它其实跟瓦力没有什么相似的元素，但是就会给人这种感觉。我我们有时候把它带去街上，甚至在美国去炸街的时候，很多人看到，哦，It's Wall-E。对，但是你仔细看，它没有任何地方像瓦力，对吧？瓦力是履带的，我们是轮式的。瓦力是有两个物理的眼睛，对吧？但我们的眼睛是长在屏幕上的，但就给人那种感觉，呃，美国人叫vibe，vibe coding那个vibe，It has a Wall-E vibe。",
+      "refined_segment_indexes": [
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347
+      ]
+    },
+    {
+      "start": 2462.774,
+      "end": 2490.134,
+      "text": "呃，当然瓦力可能是作为电影的主角啊，但是呃，我们给这个Rover的定义是电影的配角，嗯，它不是主角，主角应该是家庭成员，应该是你自己，应该是用户，对吧？那配角的话，其实它的定位就有点像《冰雪奇缘》里面那个雪宝，雪宝，嗯，对，或者是《狮子王》里面那只巨嘴鸟，对，包括呃《花木兰》里面那条龙，对吧？",
+      "refined_segment_indexes": [
+        348,
+        349
+      ]
+    },
+    {
+      "start": 2490.294,
+      "end": 2512.454,
+      "text": "你你会发现迪士尼的电影里面很多时候都会有这样一个小配角，都有一个最佳配角，对，最佳配角，而且它是搞怪，它的情绪是时高时低，对吧？然后它永远是把自己放在一个配角的角色上面，它不会来喧宾夺主，但是你会觉得它非常可爱，你会去喜欢它。就是其实你们在表情上面是根据人设也是做了一些调整。",
+      "refined_segment_indexes": [
+        350,
+        351,
+        352
+      ]
+    },
+    {
+      "start": 2512.534,
+      "end": 2546.294,
+      "text": "是的，表情的话，我我会希望它是参数化的，就同样那个表情，眼珠的看的方向，它是可以通过参数去调整，呃，包括眉毛抬的这个高度，它也是可以去调整。呃，这样算下来肯定还是有限，但是它它也不是说这种呃几十上百能够穷举的。你刚才问生命感，其实还有一点就是参数化。我刚才说了表情的参数化，但是其实动作也是需要有参数化，而不是说某一个标准的动作，它每次都是以这样的角度去做。",
+      "refined_segment_indexes": [
+        353,
+        354,
+        355,
+        356
+      ]
+    },
+    {
+      "start": 2546.534,
+      "end": 2578.214,
+      "text": "这个我觉得又回到我刚才说的随机性上面，就是它做任何的动作，哪怕做同样的动作，它是也是有一定的随机性的。这个跟现在主流的说做做这个动作捕捉去做动作复现的这一套技术，它是有一定的很不一样，其实不同的地方。但我觉得呃这个才是生命感的真精髓。如果你每天跳同一支舞，它都是以一样的角度去跳，那它就是还是一台机器，对吧？给你所有的技术条件，你想做一个什么样的产品出来？",
+      "refined_segment_indexes": [
+        357,
+        358,
+        359,
+        360,
+        361
+      ]
+    },
+    {
+      "start": 2578.774,
+      "end": 2610.454,
+      "text": "我觉得从宽泛的来说，它是能通过生命感的图灵测试的这样一个东西，就是让用户觉得它真的是一个生命，或者说他没有办法区分说它是机器和AI在控制，还是说真的自己有一个灵魂。有这样的测试吗？呃，目前没有，我们也希望是能够到某一天，我们是可以去定义这样的一个测试。我觉得还是在非常早期的阶段，整个行业都是有一定距离。",
+      "refined_segment_indexes": [
+        362,
+        363,
+        364,
+        365
+      ]
+    },
+    {
+      "start": 2610.694,
+      "end": 2640.224,
+      "text": "哪怕今天GPT，你说它真的通过了图灵测试吗？我觉得也不一定。你如果跟他聊天，你聊着聊着，你就会聊出AI味了。包括今天的很多骚扰电话，其实你接起来的时候，你听那个音色跟他语气，其实都像一个真人，对吧？但是你只要跟他说随便说几句话，你就能听出来他是个AI。你们是要做陪伴，所以你们是跟用户是一个很长周期的相处，那它的这个背后的周转率会更高。",
+      "refined_segment_indexes": [
+        366,
+        367,
+        368,
+        369,
+        370,
+        371
+      ]
+    },
+    {
+      "start": 2640.224,
+      "end": 2667.984,
+      "text": "是的，当然我觉得这个是一个最终的梦想啊，但是在完成图灵测试之前，其实很长的一段时间内，这个产品就已经有价值了。就像这个Chatbot，你说Chatbot今天即使是在有AI加持的情况下，它离图灵测试可能还是有那么一点距离。你们这个产品什么时候开卖？今年下半年，我们其实是在北美和国内会双轨去推进。",
+      "refined_segment_indexes": [
+        372,
+        373,
+        374,
+        375
+      ]
+    },
+    {
+      "start": 2668.624,
+      "end": 2701.664,
+      "text": "对，因为北美的话是全球消费电子的一个产品的高地，然后国内的话呢，对于这种新奇的机器人品类的产品，其实大众的接受程度是更高的。对，所以这两个市场都有自己的利弊。其实你是在美国待了非常多的时间，然后其实我知道你经常也是往返中美之间嘛。嗯。对，其实你会感觉中国和美国的消费者消费文化在对你的这个产品设计上面会产生什么样的影响吗？",
+      "refined_segment_indexes": [
+        376,
+        377,
+        378,
+        379,
+        380
+      ]
+    },
+    {
+      "start": 2701.984,
+      "end": 2731.824,
+      "text": "其实说实话，我们最早的时候做这个产品，并没有说用双轮足的这个构型。呃，但是后面我们用这个最早的四足的构型去做了一些测试之后，发现其实北美的用户对于四足这个构型是非常排斥，因为他们觉得四足是一个军用或者警用的工具，他们脑中的这个对于四足的认知已经被波士顿动力或者宇树这样的这个比较工业风的机器狗给占据了。",
+      "refined_segment_indexes": [
+        381,
+        382
+      ]
+    },
+    {
+      "start": 2732.304,
+      "end": 2764.464,
+      "text": "所以他们看到同样的构型的产品的时候，他会觉得这是一个军用的产品上面加装了一个试图去这个让它To C成分更多一点的一个头，那这个就会给人一种恐怖谷效应。这个恐怖谷效应不仅仅是作用在类人型的机器人上面，我发现在北美的话，其实，在狗的身上，狗身上也有，也有。特别是他们过去有一些影视作品，像《终结者》啊，或者像《黑镜》啊，里面描述一些人形或者机器狗的构型会去呃追杀人类。",
+      "refined_segment_indexes": [
+        383,
+        384,
+        385
+      ]
+    },
+    {
+      "start": 2764.784,
+      "end": 2790.624,
+      "text": "其实感觉确实，美国的民众对于AI的警惕性会更高。是的。嗯，然后可能对某一些话题会更加敏感。是的，你但凡是提到说机器人会取代人类，那在舆论场上一定是一边倒的，觉得这这个东西就就是有害的。对。之前好像美国也出现过砸那个无人运送车，对，波士顿也没砸过。但是我看你们其实当时走走在那个街上，其实还蛮受欢迎。",
+      "refined_segment_indexes": [
+        386,
+        387,
+        388,
+        389,
+        390,
+        391,
+        392
+      ]
+    },
+    {
+      "start": 2790.864,
+      "end": 2824.144,
+      "text": "因为他做的就是一个小可怜嘛，我我觉得就是做To C端的话，至少今天来看，你做To C的机器人一定要把自己放在一个低位上面去做一定的示弱，而不是像很多现在看到的很很多宣传片里面一样，都是在秀肌肉，讲这个关节的参数，对吧？这些我觉得在工业界可能有价值有意义，但是To C的话，你起到的是反作用，用户第一个想到的是他这个关节多强，打到我一下怎么办？而且用户其实不关心这些事情，他要的就是一个好的体验。",
+      "refined_segment_indexes": [
+        393,
+        394,
+        395
+      ]
+    },
+    {
+      "start": 2824.384,
+      "end": 2855.104,
+      "text": "是的，嗯，你是六个自由度、八个自由度、十个自由度，对他来说没有没有什么区别。对，现在很多人就都是我们叫Fearmongering，呃，很很多媒体他他都在兜售或者贩卖这种焦虑嘛。国内包括美国很多自媒体也都这样，呃，哪怕他有时候说的不是真实的情况，他也会通过这个去去收割流量。那你们就确定不做四足机四足狗吗？至少在很短期内，我们会去做。我觉得这个都需要看真正产品的需求，呃，市场的需求。",
+      "refined_segment_indexes": [
+        396,
+        397,
+        398,
+        399,
+        400,
+        401
+      ]
+    },
+    {
+      "start": 2855.344,
+      "end": 2884.401,
+      "text": "我们目前看到的用户对于这种户外机器人最大的顾虑是续航，轮式轮足对于续航的呃优势，相对于点足来说是非常大，差不多三三到四倍的一个能量效率的提升。另外就是用户。还有一个大的顾虑是说，呃，通过性。今天在AI没有办法做到百分之一百通过的情况下，那把重量做轻就是一个呃必须的选择。",
+      "refined_segment_indexes": [
+        402,
+        403,
+        404,
+        405
+      ]
+    },
+    {
+      "start": 2884.401,
+      "end": 2916.401,
+      "text": "我觉得在可以预见的未来，应该都是双轮组，但是在自由度上面，我们会去做一些变化。比如说二四年的时候就已经在这上面有一些技术的积累。整个行业都很缺PMF的产品和场景，如果你们能证明的话，肯定会有很多人进来。对，这是一个好事儿，对我们其实也非常欢迎。然后第二个呢，就是说，但凡是有头部玩家愿意进来，那说明这个方向其实对于他们自己的估值是有好处的，否则他们不会来。我们的估值会跑得更好，这个是是一个现实的呃直接的影响吧。",
+      "refined_segment_indexes": [
+        406,
+        407,
+        408,
+        409,
+        410,
+        411
+      ]
+    },
+    {
+      "start": 2916.401,
+      "end": 2945.921,
+      "text": "从技术上面来说，因为我们已经跑了这么多时间，包括之前在小鹏在自动驾驶领域的一些积累，所以我们现在在技术上面是不说一骑绝尘吧，肯定是走的非常领先的。啊，包括跟随的效果，我们通过呃纯视觉的跟随就已经可以做的非常可靠，在户外，而且是可可用的一个状态，在有有户外多人的这种情况下，它可以去锁定其中一个人。你怎么定位你在公司的角色？",
+      "refined_segment_indexes": [
+        412,
+        413,
+        414
+      ]
+    },
+    {
+      "start": 2946.401,
+      "end": 2978.001,
+      "text": "我现在戴的帽子比较多，我是CEO，然后CPO，CTO。这次CTO跟之前有什么不同吗？这次的CTO我觉得是我戴着CPO的帽子戴了很长一段时间，觉得现在这个产品已经定义的七七八八了，能够说这个产品本身应该是能立得住的。那在这个情况下，呃，很多技术的攻关，我觉得现在是还差临门一脚，去把这个技术真正落地做的非常鲁棒。",
+      "refined_segment_indexes": [
+        415,
+        416,
+        417,
+        418
+      ]
+    },
+    {
+      "start": 2978.161,
+      "end": 3011.601,
+      "text": "就是你第一次当CPO，当产品一号位，你作为CEO给CPO打一个分。这个我觉得我得先把我左右脑给给割开了，然后独立出两个人格来，才才能客观的去做一个评价。我觉得从目前的产品的角度来说的话，我可能给自己打个七点五到八分吧，应该算及格。对，但是具体的我觉得还是得靠整个市场来打分来验证。你更喜欢做CTO还是CPO？嗯，好问题。",
+      "refined_segment_indexes": [
+        419,
+        420,
+        421,
+        422,
+        423,
+        424
+      ]
+    },
+    {
+      "start": 3012.081,
+      "end": 3038.641,
+      "text": "我觉得其实没有说哪个更喜欢。其实如果说到更喜欢的话，我我更喜欢去从头创造一一件东西。而且有时候我觉得戴两个帽子好处是说我在看技术的时候，我会从产品的思维去去想这件事情，而不是一味的去追求所谓的黑科技。因为我刚才说黑科技落地嘛，其实落地是更重要的。为什么是七点五？",
+      "refined_segment_indexes": [
+        425,
+        426,
+        427,
+        428,
+        429
+      ]
+    },
+    {
+      "start": 3039.201,
+      "end": 3068.641,
+      "text": "我觉得一个好的产品经理，或者说在我心目当中完美的产品经理，应该是能够非常清晰的描述清楚自己想做的是什么东西。但是呃，我觉得我目前可能相对欠缺一些的是说，对于这个产品本身，我能不能用一个字去或者一个简短的词去描绘它？这个可能是因为我们做的是一个全新品类的产品。",
+      "refined_segment_indexes": [
+        430,
+        431,
+        432
+      ]
+    },
+    {
+      "start": 3069.521,
+      "end": 3097.361,
+      "text": "就像当时乔布斯最早的时候描述iPhone的时候，他也用了三句话去描述它。他最终说这三个东西不是三个产品，而是一个产品。对对，所以我们现在也类似，我还是需要用三句话去描述这个产品。它是一个宠物，它是一个玩伴，它是一个智能助手。宠物的话更多的是说它跟人的这种自然的交互，讲究的是它的活物感和生命感。",
+      "refined_segment_indexes": [
+        433,
+        434,
+        435,
+        436,
+        437
+      ]
+    },
+    {
+      "start": 3097.921,
+      "end": 3132.436,
+      "text": "玩伴的话，它更多的是它能给你带来的乐趣，它有各各种全新的在物理世界当中的玩法。然后智能助手的话就更偏功能性一些，比如说它在跟小孩玩的时候，对于家长来说，它就是一个助手，哪怕是说家长就在旁边，他还是在看着小孩，但是呢。他不用去陪着小孩玩了，这个其实也会释放他的很多焦虑跟跟这个精力。你觉得Rova会成为一个巨神陪伴的iPhone一吗？我们希望是这样，对，但我们也不会直接的简单的去做一个类比。",
+      "refined_segment_indexes": [
+        438,
+        439,
+        440,
+        441,
+        442
+      ]
+    },
+    {
+      "start": 3132.676,
+      "end": 3165.236,
+      "text": "iPhone的话，它有自己在当时那个时间条件下，它的一些呃得天独厚的一些特质，比如说它非常小，对吧？呃，smartphone这个form factor非常小，啊，同时呢，它的APP都是纯软的，对，啊，而且它的APP每一个都是自己是self-contained是相对独立的。就会机器人这个领域呢，呃，你要去做一个APP，现在是相对比较难的，因为首先你你呃上手的话，你要做运动控制，你要做视觉感知，对吧？",
+      "refined_segment_indexes": [
+        443,
+        444,
+        445
+      ]
+    },
+    {
+      "start": 3165.556,
+      "end": 3177.636,
+      "text": "这些你你如果都要让开发者自己去做，这个门槛太高了。第二呢，它是一个软件结软硬结合的一个产品，有时候它缺少一个硬件，你就有些事情就没有办法去完成。",
+      "refined_segment_indexes": [
+        446,
+        447
+      ]
+    },
+    {
+      "start": 3177.876,
+      "end": 3204.596,
+      "text": "所以我们现在想到的方式是通过软硬结合，通过配件和软件包升级的方式去作为这个呃类似于APP的开发，然后通过呃我们自己先去打样，呃，做了三十多种不同配件玩法，先给这个社区去打一个样，有一些就就会非常简单，就比如说它自己闲逛的时候，如果你在它上面加一个泡泡机，那它在公园闲逛的时候，它就会变成最靓的仔。",
+      "refined_segment_indexes": [
+        448
+      ]
+    },
+    {
+      "start": 3204.836,
+      "end": 3229.556,
+      "text": "我们有一个可以捡网球的装置，这个装置呢，很多访客包括我的一些朋友看了之后都觉得这个还是能打中一些刚需的。对，打打球的时候捡球其实是一个很痛苦的事情。是的。你觉得你们做的软件的这些模型之间的耦合、协作和iOS会有相似的地方？会有一个底层的能力。",
+      "refined_segment_indexes": [
+        449,
+        450,
+        451,
+        452,
+        453
+      ]
+    },
+    {
+      "start": 3229.796,
+      "end": 3247.636,
+      "text": "iOS更多的是一个传统意义上的就操作系统嘛，那在AI时代的操作系统，我觉得很多是在传统操作系统再往上一层，它要有这个呃一些呃最基础的智能化的能力，就比如说它自己的移动，对吧？",
+      "refined_segment_indexes": [
+        454
+      ]
+    },
+    {
+      "start": 3247.636,
+      "end": 3275.876,
+      "text": "你那你最好是把移动作为一个抽象层给给它抽象出来，不要让开发者自己再再进来开发一套，每个人都都自己去写运控，包括视觉感知，包括对于环境的理解，这些最好都是能够做做成这个底层的抽象的模块，然后在这个基础上我再去搭建各种应用。你觉得应用生态这个时候什么时候会到来？我觉得是需要有一定量的情况下，我认为至少是要差不多百万台的出货量。",
+      "refined_segment_indexes": [
+        455,
+        456,
+        457
+      ]
+    },
+    {
+      "start": 3276.036,
+      "end": 3310.756,
+      "text": "有人说他觉得Rova对于你来说是你的孩子，你觉得这个评价是对的吗？更多的是我对于伙伴的一种映射，包括可能会有一些我自己的人格偏好，在这个他的这些人设上面也去做一些体现，比如说刚才提到的，我自己其实挺喜欢小黄人的，所以我给Rova的定义也是一个这样萌萌的、贱贱的这种性格，有时候会有一些小的调皮捣蛋，啊，对吧？然后有时候也不完全是听你的命令。",
+      "refined_segment_indexes": [
+        458,
+        459,
+        460
+      ]
+    },
+    {
+      "start": 3311.236,
+      "end": 3315.876,
+      "text": "对我听说你给Rova录了音，为什么要用自己的声音给Rova录音？",
+      "refined_segment_indexes": [
+        461
+      ]
+    },
+    {
+      "start": 3316.676,
+      "end": 3351.796,
+      "text": "其实当时公司里面试了一圈，听下来我我觉得我都不太满意，然后在外部也找了这种配音的老师，呃，但是呢，配音老师他有时候他的戏剧性会做的非常强，但我自己听下来呢，跟我自己想要的这种人设的定义还是有一些偏差，有时候沟通里面确实会有一些gap，就比如说我们会我自己会非常希望它是一个这种不太讨好或者有点贱贱的，甚至有时候有些毒舌的这么一个角色。",
+      "refined_segment_indexes": [
+        462
+      ]
+    },
+    {
+      "start": 3352.282,
+      "end": 3385.002,
+      "text": "但是配音老师配出来呢，有时候给人的感觉又是在迎合、讨好人类这种感觉。他希望更多的做出那种很萌、很可爱、很希望这个主人能够去夸奖他的这样一种感觉。呃，这个跟我们想要的人设有点偏差。对，其实这个这背后有点像一个导演。对，有一点像。然后我觉得很多时候是需要有一定的想象。这个声音你配完之后，你还得配上他的动作，配上他的表情。",
+      "refined_segment_indexes": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469
+      ]
+    },
+    {
+      "start": 3385.402,
+      "end": 3417.482,
+      "text": "其实这这一整套做下来，这一个完整的体验，才是真正的这个产品给人的感觉。Ruba这个产品，那是你的某一种人格的或者灵魂的映射吗？可能是我自己人格当中比较调皮的一面吧，就是比较玩世不恭，或者是想要去追求一些突破世俗的框架的这样一些层面吧，一一些我我自己的这一部分。你你人生有什么时刻你觉得是比较调皮的吗？或者比较打破常规的吗？比如说做这家公司算吗？我觉得应该也不算。",
+      "refined_segment_indexes": [
+        470,
+        471,
+        472,
+        473,
+        474,
+        475,
+        476
+      ]
+    },
+    {
+      "start": 3417.962,
+      "end": 3452.122,
+      "text": "就创业，其实在我看来也是一个水到渠成、自然而然的一个过程。休学算吗？就在我自己看来，这些可能都不算。可能在在世俗的眼光看来，可能这些是比较突破常规。自己评价自己就会遇到这种悖论。或者说，你一直在做你想做的事情。对，这个我觉得是比较幸运。但我其实见过更幸幸运的人，可能在自己十六岁的时候就知道自己人生当中想要什么。所以你是什么时候想到的？三十出头吧。我可能是做完Drive AI之后，在那差不多半年的时间当中，我做了很多的思考。",
+      "refined_segment_indexes": [
+        477,
+        478,
+        479,
+        480,
+        481,
+        482,
+        483,
+        484,
+        485,
+        486,
+        487
+      ]
+    },
+    {
+      "start": 3452.442,
+      "end": 3485.242,
+      "text": "你希望这家公司成为一个什么样的公司？我在内部一直跟团队说，首先我希望两百年后还有人能够记得这家公司。为什么是两百年？我自己觉得，呃，两百年后，要么人类已经灭亡了，要么人类已经走向星辰大海，已经开始星际航行了。我喜欢看科幻嘛。刘慈欣在《三体》里面就讲到一个概念：地球的速，这个呃科技发展是是加速发展的，是指数发展的。你想象一下，一百年前或者两百年前人们过的是什么样的生活？",
+      "refined_segment_indexes": [
+        488,
+        489,
+        490,
+        491,
+        492,
+        493,
+        494
+      ]
+    },
+    {
+      "start": 3485.722,
+      "end": 3515.642,
+      "text": "你映射到今天，其实这个变化是非常非常大，可能比过去这个一千年的变化还要大。但是这个两百年对于一家公司来说，或者对一个公司的管理者来说意味着什么？我觉得还是要成事儿，做成事情。从历史上来看，有很多公司它玩的是这个呃金融的游戏、资本的游戏。像这样的公司，它没有自己的真正的产品，或者它的它的产品并没有形成多大的impact。这样的公司，我觉得不太容易被人记住。",
+      "refined_segment_indexes": [
+        495,
+        496,
+        497,
+        498,
+        499,
+        500
+      ]
+    },
+    {
+      "start": 3515.962,
+      "end": 3531.002,
+      "text": "第二呢，它一定是对于大众有一种普惠的价值，而不是在某一个特别细分的领域、细分的点上面去做到一个专精特长。所以你们要做两百年以后还work的事情，两百年以后还有人记得的一个一个公司。",
+      "refined_segment_indexes": [
+        501,
+        502
+      ]
+    }
+  ]
+}

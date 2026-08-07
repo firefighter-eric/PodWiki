@@ -17,10 +17,11 @@ describe("PodWiki content loader", () => {
     expect(shows.map((show) => show.id)).toEqual([
       "zhangxiaojun",
       "sv101",
+      "latetalk",
       "luoyonghao",
       "whynottv",
     ]);
-    expect(episodes).toHaveLength(31);
+    expect(episodes).toHaveLength(43);
     expect(episodes.every((episode) => episode.summaryRaw && episode.transcriptSegments.length > 0)).toBe(true);
   });
 
