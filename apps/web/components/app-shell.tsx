@@ -16,6 +16,7 @@ import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "
 import { EpisodeSidebarTitle } from "@/components/episode-navigation-title";
 import type { EpisodeCard, ShowSummary } from "@/lib/types";
 import { SearchDialog } from "@/components/search-dialog";
+import { getSidebarEpisodes } from "@/lib/sidebar-episodes";
 
 const sidebarStorageKey = "podwiki.sidebar.v1";
 
@@ -24,6 +25,30 @@ type AppShellProps = {
   episodes: EpisodeCard[];
   children: React.ReactNode;
 };
+
+function preserveSelectableLinkText(event: React.MouseEvent<HTMLDivElement>) {
+  if (
+    event.detail === 0
+    || event.metaKey
+    || event.ctrlKey
+    || event.shiftKey
+    || event.altKey
+    || !(event.target instanceof Element)
+  ) return;
+
+  const link = event.target.closest<HTMLAnchorElement>("a.selectable-content-link");
+  if (!link || !event.currentTarget.contains(link)) return;
+
+  const selection = window.getSelection();
+  if (!selection || selection.isCollapsed) return;
+
+  if (
+    (selection.anchorNode && link.contains(selection.anchorNode))
+    || (selection.focusNode && link.contains(selection.focusNode))
+  ) {
+    event.preventDefault();
+  }
+}
 
 export function AppShell({ shows, episodes, children }: AppShellProps) {
   const pathname = usePathname();
@@ -61,11 +86,8 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
   const selectedShow = shows.find(
     (show) => pathname === show.href || pathname.startsWith(`${show.href}/`),
   );
-  const visibleShows = selectedShow ? [selectedShow] : shows;
-  const visibleEpisodeCount = visibleShows.reduce(
-    (total, show) => total + show.episodeCount,
-    0,
-  );
+  const visibleEpisodes = getSidebarEpisodes(episodes, selectedShow?.id);
+  const showShortTitleById = new Map(shows.map((show) => [show.id, show.shortTitle]));
 
   useEffect(() => {
     const handleShortcut = (event: KeyboardEvent) => {
@@ -139,7 +161,10 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
   return (
     <LazyMotion features={domAnimation}>
       <a className="skip-link" href="#main-content">跳到正文</a>
-      <div className={`app-shell${collapsed ? " sidebar-collapsed" : ""}`}>
+      <div
+        className={`app-shell${collapsed ? " sidebar-collapsed" : ""}`}
+        onClickCapture={preserveSelectableLinkText}
+      >
         <button
           ref={mobileTriggerRef}
           className="mobile-nav-trigger icon-button"
@@ -227,11 +252,14 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
               </div>
               <div className="show-filter-list">
                 <Link
-                  className={`show-row all-shows-row${pathname === "/shows" ? " active" : ""}`}
+                  className={`show-row all-shows-row selectable-content-link${pathname === "/shows" ? " active" : ""}`}
                   href="/shows"
+                  draggable={false}
                   aria-label="全部播客来源"
                   aria-current={pathname === "/shows" ? "page" : undefined}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(event) => {
+                    if (!event.defaultPrevented) setMobileOpen(false);
+                  }}
                 >
                   <span className="all-shows-icon" aria-hidden="true">
                     <SquaresFour size={22} />
@@ -246,11 +274,14 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                   return (
                     <Link
                       key={show.id}
-                      className={`show-row source-show-row${active ? " active" : ""}`}
+                      className={`show-row source-show-row selectable-content-link${active ? " active" : ""}`}
                       href={show.href}
+                      draggable={false}
                       aria-label={`${show.title}，${show.episodeCount} 期内容`}
-                      aria-current={active ? "page" : undefined}
-                      onClick={() => setMobileOpen(false)}
+                      aria-current={pathname === show.href ? "page" : undefined}
+                      onClick={(event) => {
+                        if (!event.defaultPrevented) setMobileOpen(false);
+                      }}
                     >
                       <span className="source-show-mark" aria-hidden="true" />
                       <span className="show-copy sidebar-label">
@@ -264,51 +295,43 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
 
               <div className="sidebar-section-heading episode-list-heading sidebar-label">
                 <p>{selectedShow ? "节目单集" : "全部单集"}</p>
-                <span>{visibleEpisodeCount} 期</span>
+                <span>{visibleEpisodes.length} 期</span>
               </div>
               <div className="episode-nav-list">
-                {visibleShows.map((show) => {
-                  const showEpisodes = episodes.filter((episode) => episode.showId === show.id);
-                  const headingId = `episode-group-${show.id}`;
-                  return (
-                    <section
-                      key={show.id}
-                      className="episode-show-group"
-                      aria-labelledby={selectedShow ? undefined : headingId}
-                      aria-label={selectedShow ? `${show.title}单集` : undefined}
-                    >
-                      {!selectedShow ? (
-                        <h2 id={headingId} className="episode-show-heading sidebar-label">
-                          <span>{show.shortTitle}</span>
-                          <small>{showEpisodes.length}</small>
-                        </h2>
-                      ) : null}
-                      <ul>
-                        {showEpisodes.map((episode) => {
-                          const active = pathname === episode.href
-                            || pathname === `${episode.href}/transcript`;
-                          return (
-                            <li key={episode.id}>
-                              <Link
-                                ref={active ? activeEpisodeRef : undefined}
-                                className={`episode-nav-row${active ? " active" : ""}`}
-                                href={episode.href}
-                                aria-label={`${show.title} · ${episode.navigationTitle} · ${episode.publishedDate}`}
-                                aria-current={active ? "page" : undefined}
-                                onClick={() => setMobileOpen(false)}
-                              >
-                                <EpisodeSidebarTitle
-                                  title={episode.navigationTitle}
-                                  publishedDate={episode.publishedDate}
-                                />
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </section>
-                  );
-                })}
+                <section
+                  className="episode-show-group"
+                  aria-label={selectedShow ? `${selectedShow.title}单集` : "全部单集，按发布日期倒序"}
+                >
+                  <ul>
+                    {visibleEpisodes.map((episode) => {
+                      const active = pathname === episode.href
+                        || pathname === `${episode.href}/transcript`;
+                      return (
+                        <li key={episode.id}>
+                          <Link
+                            ref={active ? activeEpisodeRef : undefined}
+                            className={`episode-nav-row selectable-content-link${active ? " active" : ""}`}
+                            href={episode.href}
+                            draggable={false}
+                            aria-label={`${episode.showTitle} · ${episode.navigationTitle} · ${episode.publishedDate}`}
+                            aria-current={active ? "page" : undefined}
+                            onClick={(event) => {
+                              if (!event.defaultPrevented) setMobileOpen(false);
+                            }}
+                          >
+                            <EpisodeSidebarTitle
+                              title={episode.navigationTitle}
+                              publishedDate={episode.publishedDate}
+                              showTitle={selectedShow
+                                ? undefined
+                                : showShortTitleById.get(episode.showId) ?? episode.showTitle}
+                            />
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
               </div>
             </nav>
           </div>

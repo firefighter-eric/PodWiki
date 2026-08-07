@@ -482,6 +482,15 @@ type ContentCatalog = {
   episodeEntries: EpisodeCatalogEntry[];
 };
 
+export function compareEpisodePublicationOrder(
+  publishedAtA: string,
+  hrefA: string,
+  publishedAtB: string,
+  hrefB: string,
+): number {
+  return Date.parse(publishedAtB) - Date.parse(publishedAtA) || hrefA.localeCompare(hrefB);
+}
+
 function resolveNamedDirectory(parent: string, name: string): string | undefined {
   if (!name) return undefined;
   const resolved = path.resolve(parent, name);
@@ -617,7 +626,12 @@ const loadCatalog = cache(async (): Promise<ContentCatalog> => {
     }
   }
 
-  episodeEntries.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  episodeEntries.sort((a, b) => compareEpisodePublicationOrder(
+    a.publishedAt,
+    a.card.href,
+    b.publishedAt,
+    b.card.href,
+  ));
 
   const shows: ShowSummary[] = [...showData.entries()]
     .map(([id, data]) => {

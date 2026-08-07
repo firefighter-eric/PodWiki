@@ -62,7 +62,7 @@ export function ShowCatalog({
                   <span className="podcast-preview-rule" aria-hidden="true" />
                   <small>{show.episodeCount} 期节目</small>
                   <h3>
-                    <Link href={show.href}>
+                    <Link className="selectable-content-link" href={show.href} draggable={false}>
                       {show.title}
                       <ArrowRight size={18} aria-hidden="true" />
                     </Link>
@@ -75,8 +75,9 @@ export function ShowCatalog({
                     return (
                       <li key={episode.id}>
                         <Link
-                          className="podcast-preview-episode"
+                          className="podcast-preview-episode selectable-content-link"
                           href={episode.href}
+                          draggable={false}
                           aria-label={`${show.title} · ${episode.navigationTitle} · ${episode.publishedDate}`}
                         >
                           <span className="podcast-preview-meta">
@@ -115,7 +116,8 @@ export function ShowCatalog({
                 <Link
                   key={episode.id}
                   href={episode.href}
-                  className="episode-card show-episode-card"
+                  className="episode-card show-episode-card selectable-content-link"
+                  draggable={false}
                   aria-label={`${episode.navigationTitle} · ${episode.showTitle} · ${episode.publishedDate}`}
                 >
                   <strong className="show-episode-person">{name}</strong>
@@ -132,7 +134,12 @@ export function ShowCatalog({
             }
 
             return (
-              <Link key={episode.id} href={episode.href} className="episode-card">
+              <Link
+                key={episode.id}
+                href={episode.href}
+                className="episode-card selectable-content-link"
+                draggable={false}
+              >
                 <span className="episode-keyword">{episode.catalogKeyword}</span>
                 <span className="episode-card-copy">
                   <small>{episode.showTitle} · {episode.publishedDate}</small>
