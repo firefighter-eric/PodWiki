@@ -36,6 +36,10 @@ npm run check
 | [晚点聊 LateTalk](https://space.bilibili.com/3546915742419882/) | 《晚点 LatePost》出品的科技访谈节目，关注从业者的真实思考。 | [README](./shows/latetalk/) |
 | [罗永浩的十字路口](https://space.bilibili.com/538596213/) | 围绕创业、科技与社会议题，与企业家和研究者展开长谈。 | [README](./shows/luoyonghao/) |
 | [WhynotTV](https://space.bilibili.com/14145636/) | 聚焦 AI 技术、工程实践、商业逻辑与个人成长的长篇对谈。 | [README](./shows/whynottv/) |
+| [跑步播客「大概纸示」](https://www.xiaoyuzhoufm.com/podcast/6697cbecf103d7b06d18488b) | 以长跑为起点，延伸到越野跑、骑行、徒步等户外运动。 | [README](./shows/dagaizhishi/) |
+| [一起铁TALK](https://www.xiaoyuzhoufm.com/podcast/6951e312febad13106eb017e) | 以跑步为入口，聊训练、生活经验和真实处境。 | [README](./shows/yiqitietalk/) |
+| [信口开合·跑步播客](https://www.xiaoyuzhoufm.com/podcast/6588196412e01d7ba13aad47) | 用跑步的方式，探索和连接更大的世界。 | [README](./shows/xinkoukaihe/) |
+| [二的三次方](https://www.xiaoyuzhoufm.com/podcast/64bf965274d8c90965c62fff) | 八位喜剧人发起的聊天播客，记录喜剧人线下的样子。 | [README](./shows/erdesancifang/) |
 
 ## 单集索引
 

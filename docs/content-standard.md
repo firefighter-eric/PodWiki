@@ -51,8 +51,8 @@ raw、aligned、refined ASR 和最终 Markdown 都提交到 Git：JSON 用于复
 ### Wiki 索引表
 
 根 `README.md` 先使用节目介绍表展示当前收录范围，顺序固定为：`播客`、
-`简介`、`节目页`。播客名称链接到节目 front matter 中已核实的 Bilibili
-频道或空间 URL，节目页链接到本地节目 README。新增节目或节目简介、来源
+`简介`、`节目页`。播客名称链接到节目 front matter 中已核实的首选发布者
+页面，节目页链接到本地节目 README。新增节目或节目简介、来源
 发生变化时必须同步更新该表。
 
 根 `README.md` 的单集表格使用六列，顺序固定为：`标题`、`访谈人物`、
@@ -81,6 +81,10 @@ zhangxiaojun
 sv101
 luoyonghao
 latetalk
+dagaizhishi
+yiqitietalk
+xinkoukaihe
+erdesancifang
 ```
 
 ### 单集 ID
@@ -188,6 +192,17 @@ https://www.bilibili.com/video/<BVID>/
 ```
 
 `sources[].identifiers` 同时记录 `bvid`、`aid`、`cid` 和 `page`，避免只依赖可能变化的网页路径。
+
+小宇宙栏目和单集地址分别固定为：
+
+```text
+https://www.xiaoyuzhoufm.com/podcast/<podcast-id>
+https://www.xiaoyuzhoufm.com/episode/<episode-id>
+```
+
+`podcast-id` 和 `episode-id` 均为 24 位小写十六进制标识。保存时删除查询参数、
+片段和末尾斜杠。栏目 README 使用 podcast URL；单集来源使用 episode URL，
+并在 `sources[].identifiers` 中记录 `eid`、`pid` 和已核对的媒体标识。
 
 ## 4. 时间和日期
 
@@ -332,7 +347,7 @@ selected 英文稿和中文译稿，英文原稿发生变化后必须重新生�
 也不得替代 selected 英文稿。中文总结与这份逐行译稿是不同内容层：总结负责
 提炼，译稿负责忠实保持原稿的逐段结构。
 
-## 7. Bilibili 获取顺序
+## 7. 公开来源获取顺序
 
 1. 检查平台人工字幕或自动字幕。
 2. 当前仓库尚未提供公开字幕的下载、转换和 lineage 导入工具；发现公开字幕时
@@ -343,7 +358,9 @@ selected 英文稿和中文译稿，英文原稿发生变化后必须重新生�
 6. 人工审核后把状态改为 `reviewed`。
 7. 画面硬字幕 OCR 仅作为最后手段。
 
-首版不处理会员、付费、地区限制或其他访问控制，不批量抓取整个账号。
+首版不处理会员、付费、私密、地区限制或其他访问控制，不批量抓取整个账号、
+频道、播放列表或播客栏目。小宇宙来源还必须核对单集与栏目身份、免费公开状态、
+enclosure 与媒体 URL，以及公开 M4A 的字节数和时长。
 
 ## 8. 机器转写
 

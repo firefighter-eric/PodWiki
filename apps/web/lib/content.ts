@@ -105,7 +105,17 @@ const showSchema = z
   })
   .passthrough();
 
-const showOrder = ["zhangxiaojun", "sv101", "latetalk", "luoyonghao", "whynottv"];
+const showOrder = [
+  "zhangxiaojun",
+  "sv101",
+  "latetalk",
+  "luoyonghao",
+  "whynottv",
+  "dagaizhishi",
+  "yiqitietalk",
+  "xinkoukaihe",
+  "erdesancifang",
+];
 
 function findRepositoryRoot(): string {
   const configuredRoot = process.env.PODWIKI_REPOSITORY_ROOT;

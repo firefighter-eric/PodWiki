@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Acquire one public podcast video as a local audio file with yt-dlp."""
+"""Acquire one public podcast episode or video as a verified local audio file."""
 
 from __future__ import annotations
 
@@ -12,16 +12,20 @@ import subprocess
 import tempfile
 import time
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
-from urllib.parse import parse_qs, urlparse
 from urllib.error import URLError
+from urllib.parse import parse_qs, urlparse
 from urllib.request import Request, urlopen
 
 
 ROOT = Path(__file__).resolve().parents[1]
 BILIBILI_VIDEO_RE = re.compile(r"^/video/(BV[A-Za-z0-9]+)/?$")
 YOUTUBE_ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
+XIAOYUZHOU_ID_RE = re.compile(r"^[0-9a-f]{24}$")
+XIAOYUZHOU_EPISODE_RE = re.compile(r"^/episode/([0-9a-f]{24})/?$")
+XIAOYUZHOU_MAX_PAGE_BYTES = 16 * 1024 * 1024
 BILIBILI_PUBLIC_ACCESS_FLAGS = (
     "pay",
     "ugc_pay",
@@ -39,8 +43,8 @@ BILIBILI_EXTRACTOR_FALLBACK_MARKERS = (
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Download one public Bilibili or YouTube video as audio and save "
-            "reproducible source metadata."
+            "Download one public Bilibili or YouTube video, or one public "
+            "Xiaoyuzhou episode, as audio and save reproducible source metadata."
         )
     )
     parser.add_argument("--url", required=True)
@@ -93,7 +97,245 @@ def canonical_source_url(url: str) -> tuple[str, str]:
             raise ValueError("youtu.be URL must contain one valid video ID")
         return "youtube", f"https://www.youtube.com/watch?v={video_id}"
 
-    raise ValueError("only public Bilibili and YouTube video URLs are supported")
+    if hostname in {"xiaoyuzhoufm.com", "www.xiaoyuzhoufm.com"}:
+        match = XIAOYUZHOU_EPISODE_RE.fullmatch(parsed.path)
+        if match is None:
+            raise ValueError(
+                "Xiaoyuzhou URL must point to one /episode/<episode-id> page"
+            )
+        return (
+            "xiaoyuzhou",
+            f"https://www.xiaoyuzhoufm.com/episode/{match.group(1)}",
+        )
+
+    raise ValueError(
+        "only public Bilibili and YouTube videos or Xiaoyuzhou episodes are supported"
+    )
+
+
+class XiaoyuzhouNextDataParser(HTMLParser):
+    """Extract the public Next.js data document without executing page scripts."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=False)
+        self._capturing = False
+        self._chunks: list[str] = []
+
+    def handle_starttag(
+        self, tag: str, attrs: list[tuple[str, str | None]]
+    ) -> None:
+        attributes = dict(attrs)
+        if tag == "script" and attributes.get("id") == "__NEXT_DATA__":
+            self._capturing = True
+
+    def handle_data(self, data: str) -> None:
+        if self._capturing:
+            self._chunks.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "script" and self._capturing:
+            self._capturing = False
+
+    @property
+    def document_text(self) -> str:
+        return "".join(self._chunks)
+
+
+def extract_xiaoyuzhou_next_data(page_html: str) -> dict[str, Any]:
+    parser = XiaoyuzhouNextDataParser()
+    parser.feed(page_html)
+    document_text = parser.document_text
+    if not document_text:
+        raise ValueError("Xiaoyuzhou page has no __NEXT_DATA__ document")
+    document = json.loads(document_text)
+    if not isinstance(document, dict):
+        raise ValueError("Xiaoyuzhou __NEXT_DATA__ is not an object")
+    return document
+
+
+def fetch_xiaoyuzhou_next_data(episode_id: str) -> dict[str, Any]:
+    if not XIAOYUZHOU_ID_RE.fullmatch(episode_id):
+        raise ValueError("invalid Xiaoyuzhou episode ID")
+    canonical_url = f"https://www.xiaoyuzhoufm.com/episode/{episode_id}"
+    request = Request(
+        canonical_url,
+        headers={
+            "Accept": "text/html,application/xhtml+xml",
+            "User-Agent": "Mozilla/5.0 PodWiki/0.1",
+        },
+    )
+    page_bytes: bytes | None = None
+    last_error: Exception | None = None
+    for attempt in range(4):
+        try:
+            with urlopen(request, timeout=60) as response:
+                page_bytes = response.read(XIAOYUZHOU_MAX_PAGE_BYTES + 1)
+            break
+        except (TimeoutError, URLError, OSError) as error:
+            last_error = error
+            if attempt == 3:
+                break
+            time.sleep(2**attempt)
+    if page_bytes is None:
+        raise ConnectionError(
+            "Xiaoyuzhou episode page failed after retries"
+        ) from last_error
+    if len(page_bytes) > XIAOYUZHOU_MAX_PAGE_BYTES:
+        raise ValueError("Xiaoyuzhou episode page exceeds the safe size limit")
+    return extract_xiaoyuzhou_next_data(page_bytes.decode("utf-8"))
+
+
+def rfc3339_timestamp(value: Any, *, field: str) -> int:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"Xiaoyuzhou metadata has no {field}")
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as error:
+        raise ValueError(f"Xiaoyuzhou metadata has invalid {field}") from error
+    if parsed.tzinfo is None:
+        raise ValueError(f"Xiaoyuzhou metadata {field} has no timezone")
+    return int(parsed.timestamp())
+
+
+def parse_xiaoyuzhou_episode_metadata(
+    document: dict[str, Any], expected_episode_id: str
+) -> dict[str, Any]:
+    props = document.get("props")
+    props = props if isinstance(props, dict) else {}
+    page_props = props.get("pageProps")
+    page_props = page_props if isinstance(page_props, dict) else {}
+    episode = page_props.get("episode")
+    if not isinstance(episode, dict) or episode.get("type") != "EPISODE":
+        raise ValueError("Xiaoyuzhou page has no episode metadata")
+
+    episode_id = episode.get("eid")
+    if episode_id != expected_episode_id:
+        raise ValueError(
+            "Xiaoyuzhou requested/episode eid mismatch: "
+            f"requested={expected_episode_id} actual={episode_id}"
+        )
+    if not isinstance(episode_id, str) or not XIAOYUZHOU_ID_RE.fullmatch(
+        episode_id
+    ):
+        raise ValueError("Xiaoyuzhou episode metadata has no stable eid")
+
+    podcast_id = episode.get("pid")
+    if not isinstance(podcast_id, str) or not XIAOYUZHOU_ID_RE.fullmatch(
+        podcast_id
+    ):
+        raise ValueError("Xiaoyuzhou episode metadata has no stable pid")
+    podcast = episode.get("podcast")
+    if not isinstance(podcast, dict):
+        raise ValueError("Xiaoyuzhou episode metadata has no podcast identity")
+    if podcast.get("pid") != podcast_id:
+        raise ValueError(
+            "Xiaoyuzhou episode/podcast pid mismatch: "
+            f"episode={podcast_id} podcast={podcast.get('pid')}"
+        )
+
+    media = episode.get("media")
+    media = media if isinstance(media, dict) else {}
+    media_source = media.get("source")
+    media_source = media_source if isinstance(media_source, dict) else {}
+    enclosure = episode.get("enclosure")
+    enclosure = enclosure if isinstance(enclosure, dict) else {}
+    media_key = episode.get("mediaKey")
+    media_id = media.get("id")
+    if not isinstance(media_key, str) or not media_key:
+        raise ValueError("Xiaoyuzhou episode metadata has no mediaKey")
+    if media_id != media_key:
+        raise ValueError(
+            "Xiaoyuzhou media id/mediaKey mismatch: "
+            f"media={media_id} mediaKey={media_key}"
+        )
+
+    title = episode.get("title")
+    if not isinstance(title, str) or not title.strip():
+        raise ValueError("Xiaoyuzhou episode metadata has no title")
+    published_at = episode.get("pubDate")
+    published_timestamp = rfc3339_timestamp(published_at, field="pubDate")
+
+    return {
+        "eid": episode_id,
+        "pid": podcast_id,
+        "title": title,
+        "description": episode.get("description"),
+        "published_at": published_at,
+        "published_timestamp": published_timestamp,
+        "duration_seconds": episode.get("duration"),
+        "status": episode.get("status"),
+        "pay_type": episode.get("payType"),
+        "is_private_media": episode.get("isPrivateMedia"),
+        "podcast": {
+            "id": podcast_id,
+            "title": podcast.get("title"),
+            "author": podcast.get("author"),
+        },
+        "media": {
+            "id": media_id,
+            "size_bytes": media.get("size"),
+            "mime_type": media.get("mimeType"),
+            "mode": media_source.get("mode"),
+            "url": media_source.get("url"),
+        },
+        "enclosure_url": enclosure.get("url"),
+    }
+
+
+def validate_xiaoyuzhou_public_access(
+    platform_metadata: dict[str, Any],
+) -> None:
+    """Fail closed unless the public page explicitly exposes a free enclosure."""
+    if platform_metadata.get("status") != "NORMAL":
+        raise PermissionError("unavailable Xiaoyuzhou media is unsupported")
+    if platform_metadata.get("pay_type") != "FREE":
+        raise PermissionError("paid Xiaoyuzhou media is unsupported")
+    if platform_metadata.get("is_private_media") is not False:
+        raise PermissionError("private Xiaoyuzhou media is unsupported")
+
+    duration = platform_metadata.get("duration_seconds")
+    if isinstance(duration, bool) or not isinstance(duration, (int, float)):
+        raise ValueError("Xiaoyuzhou metadata has no numeric duration")
+    if duration <= 0:
+        raise ValueError("Xiaoyuzhou metadata has no positive duration")
+
+    media = platform_metadata.get("media")
+    if not isinstance(media, dict):
+        raise PermissionError("Xiaoyuzhou public media metadata is missing")
+    if media.get("mode") != "PUBLIC":
+        raise PermissionError("non-public Xiaoyuzhou media is unsupported")
+    media_url = media.get("url")
+    if not isinstance(media_url, str) or not media_url:
+        raise PermissionError("Xiaoyuzhou public media URL is missing")
+    parsed_media_url = urlparse(media_url)
+    if (
+        parsed_media_url.scheme != "https"
+        or parsed_media_url.netloc != "media.xyzcdn.net"
+        or parsed_media_url.username is not None
+        or parsed_media_url.password is not None
+        or not parsed_media_url.path.endswith(".m4a")
+        or bool(parsed_media_url.query)
+        or bool(parsed_media_url.fragment)
+    ):
+        raise PermissionError("Xiaoyuzhou media URL is not an approved public CDN URL")
+    if platform_metadata.get("enclosure_url") != media_url:
+        raise ValueError("Xiaoyuzhou public media/enclosure URL mismatch")
+
+    size_bytes = media.get("size_bytes")
+    if isinstance(size_bytes, bool) or not isinstance(size_bytes, int):
+        raise ValueError("Xiaoyuzhou public media size is missing")
+    if size_bytes <= 0:
+        raise ValueError("Xiaoyuzhou public media size is not positive")
+    if media.get("mime_type") not in {"audio/mp4", "audio/m4a", "audio/x-m4a"}:
+        raise ValueError("Xiaoyuzhou public media is not an M4A audio resource")
+
+
+def xiaoyuzhou_platform_metadata(episode_id: str) -> dict[str, Any]:
+    metadata = parse_xiaoyuzhou_episode_metadata(
+        fetch_xiaoyuzhou_next_data(episode_id), episode_id
+    )
+    validate_xiaoyuzhou_public_access(metadata)
+    return metadata
 
 
 def write_json_atomically(path: Path, document: dict[str, Any]) -> None:
@@ -353,6 +595,36 @@ def bilibili_api_info(platform_metadata: dict[str, Any]) -> dict[str, Any]:
     )
 
 
+def xiaoyuzhou_api_info(platform_metadata: dict[str, Any]) -> dict[str, Any]:
+    """Build the common source metadata subset from a public episode page."""
+    validate_xiaoyuzhou_public_access(platform_metadata)
+    podcast = platform_metadata.get("podcast")
+    podcast = podcast if isinstance(podcast, dict) else {}
+    return validate_extracted_info(
+        {
+            "id": platform_metadata.get("eid"),
+            "display_id": platform_metadata.get("eid"),
+            "eid": platform_metadata.get("eid"),
+            "pid": platform_metadata.get("pid"),
+            "title": platform_metadata.get("title"),
+            "description": platform_metadata.get("description"),
+            "uploader": podcast.get("author"),
+            "uploader_id": platform_metadata.get("pid"),
+            "channel": podcast.get("title"),
+            "channel_id": platform_metadata.get("pid"),
+            "timestamp": platform_metadata.get("published_timestamp"),
+            "duration": platform_metadata.get("duration_seconds"),
+            "extractor": "XiaoyuzhouPublicPage",
+            "extractor_key": "XiaoyuzhouPublicPage",
+            "availability": None,
+            "live_status": None,
+            "subtitles": {},
+            "automatic_captions": {},
+            "chapters": [],
+        }
+    )
+
+
 def bilibili_public_audio(
     platform_metadata: dict[str, Any],
 ) -> dict[str, Any]:
@@ -405,7 +677,22 @@ def bilibili_public_audio(
     }
 
 
-def download_bilibili_public_audio(
+def xiaoyuzhou_public_audio(
+    platform_metadata: dict[str, Any],
+) -> dict[str, Any]:
+    """Select the public M4A enclosure exposed by an episode page."""
+    validate_xiaoyuzhou_public_access(platform_metadata)
+    media = platform_metadata["media"]
+    return {
+        "urls": [media["url"]],
+        "duration_seconds": platform_metadata["duration_seconds"],
+        "format_id": media["id"],
+        "filesize": media["size_bytes"],
+        "mime_type": media["mime_type"],
+    }
+
+
+def download_direct_public_audio(
     *,
     audio: dict[str, Any],
     options: dict[str, Any],
@@ -413,11 +700,12 @@ def download_bilibili_public_audio(
     expected_output: Path,
     downloader_type: Any,
     download_error_type: type[Exception],
+    source_label: str,
 ) -> None:
-    """Download one anonymous API-selected stream without persisting its signed URL."""
+    """Download one validated public stream, retrying only transport errors."""
     urls = audio.get("urls")
     if not isinstance(urls, list) or not urls:
-        raise ValueError("Bilibili public audio selection has no URLs")
+        raise ValueError(f"{source_label} public audio selection has no URLs")
     direct_options = dict(options)
     direct_options.pop("match_filter", None)
     direct_options["http_headers"] = {
@@ -434,13 +722,55 @@ def download_bilibili_public_audio(
             if expected_output.is_file():
                 return
             raise FileNotFoundError(
-                f"Bilibili direct download produced no output: {expected_output}"
+                f"{source_label} direct download produced no output: {expected_output}"
             )
         except download_error_type as error:
             last_error = error
     if last_error is not None:
         raise last_error
-    raise ValueError("Bilibili public audio selection has no usable URLs")
+    raise ValueError(f"{source_label} public audio selection has no usable URLs")
+
+
+def download_bilibili_public_audio(
+    *,
+    audio: dict[str, Any],
+    options: dict[str, Any],
+    canonical_url: str,
+    expected_output: Path,
+    downloader_type: Any,
+    download_error_type: type[Exception],
+) -> None:
+    """Download one anonymous Bilibili stream without persisting its signed URL."""
+    download_direct_public_audio(
+        audio=audio,
+        options=options,
+        canonical_url=canonical_url,
+        expected_output=expected_output,
+        downloader_type=downloader_type,
+        download_error_type=download_error_type,
+        source_label="Bilibili",
+    )
+
+
+def download_xiaoyuzhou_public_audio(
+    *,
+    audio: dict[str, Any],
+    options: dict[str, Any],
+    canonical_url: str,
+    expected_output: Path,
+    downloader_type: Any,
+    download_error_type: type[Exception],
+) -> None:
+    """Download one public Xiaoyuzhou enclosure without credentials."""
+    download_direct_public_audio(
+        audio=audio,
+        options=options,
+        canonical_url=canonical_url,
+        expected_output=expected_output,
+        downloader_type=downloader_type,
+        download_error_type=download_error_type,
+        source_label="Xiaoyuzhou",
+    )
 
 
 def source_metadata(
@@ -471,13 +801,19 @@ def source_metadata(
         "bvid": platform_metadata.get("bvid") or info.get("bvid") or (
             info.get("id") if platform == "bilibili" else None
         ),
+        "eid": platform_metadata.get("eid") or info.get("eid"),
+        "pid": platform_metadata.get("pid") or info.get("pid"),
         "aid": platform_metadata.get("aid") or info.get("aid"),
         "cid": platform_metadata.get("cid") or info.get("cid"),
         "page": (
-            platform_metadata.get("page")
-            or info.get("page")
-            or info.get("playlist_index")
-            or 1
+            None
+            if platform == "xiaoyuzhou"
+            else (
+                platform_metadata.get("page")
+                or info.get("page")
+                or info.get("playlist_index")
+                or 1
+            )
         ),
         "title": info.get("title"),
         "description": info.get("description"),
@@ -547,6 +883,21 @@ def validate_media_duration(
             "downloaded audio duration differs from the source: "
             f"expected={expected_ms}ms actual={actual_ms}ms"
         )
+
+
+def validate_public_enclosure_size(
+    media: dict[str, Any], *, platform_metadata: dict[str, Any]
+) -> None:
+    source_media = platform_metadata.get("media")
+    source_media = source_media if isinstance(source_media, dict) else {}
+    expected_size = source_media.get("size_bytes")
+    if expected_size is not None:
+        actual_size = media.get("size_bytes")
+        if actual_size != expected_size:
+            raise ValueError(
+                "downloaded audio size differs from the public enclosure: "
+                f"expected={expected_size} actual={actual_size}"
+            )
 
 
 def available_javascript_runtime() -> str | None:
@@ -682,15 +1033,22 @@ def retain_existing_media(
 def main() -> int:
     args = parse_args()
     platform, canonical_url = canonical_source_url(args.url)
-    platform_metadata = (
-        bilibili_platform_metadata(
-            BILIBILI_VIDEO_RE.fullmatch(urlparse(canonical_url).path).group(1)  # type: ignore[union-attr]
-        )
-        if platform == "bilibili"
-        else {}
-    )
+    if platform == "bilibili":
+        match = BILIBILI_VIDEO_RE.fullmatch(urlparse(canonical_url).path)
+        if match is None:
+            raise ValueError("canonical Bilibili URL has no BVID")
+        platform_metadata = bilibili_platform_metadata(match.group(1))
+    elif platform == "xiaoyuzhou":
+        match = XIAOYUZHOU_EPISODE_RE.fullmatch(urlparse(canonical_url).path)
+        if match is None:
+            raise ValueError("canonical Xiaoyuzhou URL has no episode ID")
+        platform_metadata = xiaoyuzhou_platform_metadata(match.group(1))
+    else:
+        platform_metadata = {}
     if platform == "bilibili":
         validate_bilibili_public_access(platform_metadata)
+    elif platform == "xiaoyuzhou":
+        validate_xiaoyuzhou_public_access(platform_metadata)
     output_path = args.output.resolve()
     metadata_output = (
         args.metadata_output.resolve()
@@ -727,18 +1085,19 @@ def main() -> int:
         )
     download_requested = not args.metadata_only and (args.overwrite or not output_path.exists())
     if download_requested:
-        if shutil.which("ffmpeg") is None:
+        if platform != "xiaoyuzhou" and shutil.which("ffmpeg") is None:
             raise SystemExit("ffmpeg is required to extract downloaded audio")
         if shutil.which("ffprobe") is None:
             raise SystemExit("ffprobe is required to validate downloaded audio")
     staging_directory: Path | None = None
     download_output = output_path
     if download_requested:
-        source_id = (
-            platform_metadata.get("bvid")
-            if platform == "bilibili"
-            else parse_qs(urlparse(canonical_url).query)["v"][0]
-        )
+        if platform == "bilibili":
+            source_id = platform_metadata.get("bvid")
+        elif platform == "xiaoyuzhou":
+            source_id = platform_metadata.get("eid")
+        else:
+            source_id = parse_qs(urlparse(canonical_url).query)["v"][0]
         staging_directory = output_path.parent / ".downloads" / str(source_id)
         staging_directory.mkdir(parents=True, exist_ok=True)
         download_output = staging_directory / output_path.name
@@ -764,7 +1123,7 @@ def main() -> int:
         if javascript_runtime is None:
             raise SystemExit("Deno or Node.js is required for full YouTube support")
         options["js_runtimes"] = {javascript_runtime: {}}
-    if download_requested:
+    if download_requested and platform != "xiaoyuzhou":
         options["postprocessors"] = [
             {
                 "key": "FFmpegExtractAudio",
@@ -776,36 +1135,11 @@ def main() -> int:
     downloaded_media: dict[str, Any] | None = None
     last_download_error: Exception | None = None
     info: dict[str, Any] | None = None
-    for attempt in range(5):
-        try:
-            with YoutubeDL(options) as downloader:
-                info = validate_extracted_info(
-                    downloader.extract_info(
-                        canonical_url,
-                        download=download_requested,
-                    )
-                )
-            break
-        except DownloadError as error:
-            last_download_error = error
-            if attempt == 4:
-                break
-            time.sleep(2**attempt)
-    if info is None:
-        if platform != "bilibili":
-            raise ConnectionError(
-                "yt-dlp failed after extractor retries"
-            ) from last_download_error
-        if not is_bilibili_extractor_compatibility_error(last_download_error):
-            if last_download_error is not None:
-                raise last_download_error
-            raise ConnectionError("yt-dlp failed without an extractor error")
-        info = bilibili_api_info(platform_metadata)
+    if platform == "xiaoyuzhou":
+        info = xiaoyuzhou_api_info(platform_metadata)
         if download_requested:
-            public_audio = bilibili_public_audio(platform_metadata)
-            if isinstance(public_audio.get("duration_seconds"), (int, float)):
-                info["duration"] = public_audio["duration_seconds"]
-            download_bilibili_public_audio(
+            public_audio = xiaoyuzhou_public_audio(platform_metadata)
+            download_xiaoyuzhou_public_audio(
                 audio=public_audio,
                 options=options,
                 canonical_url=canonical_url,
@@ -813,6 +1147,44 @@ def main() -> int:
                 downloader_type=YoutubeDL,
                 download_error_type=DownloadError,
             )
+    else:
+        for attempt in range(5):
+            try:
+                with YoutubeDL(options) as downloader:
+                    info = validate_extracted_info(
+                        downloader.extract_info(
+                            canonical_url,
+                            download=download_requested,
+                        )
+                    )
+                break
+            except DownloadError as error:
+                last_download_error = error
+                if attempt == 4:
+                    break
+                time.sleep(2**attempt)
+        if info is None:
+            if platform != "bilibili":
+                raise ConnectionError(
+                    "yt-dlp failed after extractor retries"
+                ) from last_download_error
+            if not is_bilibili_extractor_compatibility_error(last_download_error):
+                if last_download_error is not None:
+                    raise last_download_error
+                raise ConnectionError("yt-dlp failed without an extractor error")
+            info = bilibili_api_info(platform_metadata)
+            if download_requested:
+                public_audio = bilibili_public_audio(platform_metadata)
+                if isinstance(public_audio.get("duration_seconds"), (int, float)):
+                    info["duration"] = public_audio["duration_seconds"]
+                download_bilibili_public_audio(
+                    audio=public_audio,
+                    options=options,
+                    canonical_url=canonical_url,
+                    expected_output=download_output,
+                    downloader_type=YoutubeDL,
+                    download_error_type=DownloadError,
+                )
     if download_requested:
         if not download_output.is_file():
             raise FileNotFoundError(
@@ -822,6 +1194,10 @@ def main() -> int:
         validate_media_duration(
             downloaded_media,
             info=info,
+            platform_metadata=platform_metadata,
+        )
+        validate_public_enclosure_size(
+            downloaded_media,
             platform_metadata=platform_metadata,
         )
         download_output.replace(output_path)
@@ -855,6 +1231,10 @@ def main() -> int:
         validate_media_duration(
             media,
             info=info,
+            platform_metadata=platform_metadata,
+        )
+        validate_public_enclosure_size(
+            media,
             platform_metadata=platform_metadata,
         )
         document["media"] = media

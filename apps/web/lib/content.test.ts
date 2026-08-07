@@ -20,8 +20,13 @@ describe("PodWiki content loader", () => {
       "latetalk",
       "luoyonghao",
       "whynottv",
+      "dagaizhishi",
+      "yiqitietalk",
+      "xinkoukaihe",
+      "erdesancifang",
     ]);
     expect(episodes).toHaveLength(43);
+    expect(shows.slice(5).every((show) => show.episodeCount === 0)).toBe(true);
     expect(episodes.every((episode) => episode.summaryRaw && episode.transcriptSegments.length > 0)).toBe(true);
   });
 

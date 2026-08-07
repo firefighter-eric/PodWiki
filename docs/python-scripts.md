@@ -60,7 +60,7 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
 
 | 脚本 | 用途 | 主要产物 |
 | --- | --- | --- |
-| `scripts/acquire_media.py` | 获取一个公开 Bilibili 或 YouTube 视频的音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
+| `scripts/acquire_media.py` | 获取一个公开 Bilibili/YouTube 视频或小宇宙单集的音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
 | `scripts/transcribe_qwen3_asr.py` | 使用 Qwen3-ASR 转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/render_asr_transcript.py` | 清理对齐结果并渲染逐字稿 | `refined.json`、`transcript.<language>.md` |
 | `scripts/process_qwen3_asr_batch.py` | 串行处理一个或多个已缓存单集 | 每集完整 Qwen 产物与日志 |
@@ -69,7 +69,7 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
 
 ## 获取公开音轨
 
-`acquire_media.py` 只处理单个公开 Bilibili 或 YouTube 视频，不处理账号、播放列表、多 P 或受访问控制的内容。
+`acquire_media.py` 只处理单个公开 Bilibili/YouTube 视频或小宇宙单集，不处理账号、播放列表、多 P、整个播客或受访问控制的内容。
 
 传给脚本的 Bilibili 地址必须已经是
 `https://www.bilibili.com/video/<BVID>/`。如果收到
@@ -109,6 +109,20 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 不要绕过字幕直接启动 ASR。只有确认没有可用公开字幕且来源允许处理时，才下载音频。
 
 已有音频默认不会被替换；只有明确需要覆盖时才使用 `--overwrite`。
+
+小宇宙输入必须是单集页，播客栏目页不能直接下载：
+
+```bash
+env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+  --url https://www.xiaoyuzhoufm.com/episode/<episode-id> \
+  --output .cache/media/<show-id>/<episode-folder>/source.m4a
+```
+
+脚本只读取无需登录即可访问的单集 HTML 与其中的 `__NEXT_DATA__`，核对 `eid`、
+`pid`、媒体标识及公开状态后，从 `media.xyzcdn.net` 获取与 enclosure 一致的
+M4A。只有 `NORMAL`、`FREE`、`isPrivateMedia: false`、`PUBLIC` 四项均明确成立
+时才继续；付费、私密、登录态或字段缺失一律拒绝，也不会使用 cookie、Token
+或整栏批量下载。下载结果还会与发布页给出的字节数和时长交叉校验。
 
 ## 处理单个 Qwen3-ASR 单集
 
@@ -226,7 +240,7 @@ npm --prefix apps/web ci
 npm --prefix apps/web run check
 ```
 
-最后还应运行 `git diff --check`，检查 `git status --short`，并确认根 README 的三列节目介绍表中，播客名称链接已核实的 Bilibili 空间，节目页链接本地节目 README。根 README 的单集表格采用“标题、访谈人物、播客名称、日期、总结、逐字稿”六列，节目 README 的单集表格仍采用“标题、播客名称、日期、总结链接、逐字稿链接”五列，且两处内容已经同步。根表的访谈人物来自单集 front matter 中 `role: guest` 的参与者；多位嘉宾使用顿号分隔。
+最后还应运行 `git diff --check`，检查 `git status --short`，并确认根 README 的三列节目介绍表中，播客名称链接已核实的首选发布者页面，节目页链接本地节目 README。根 README 的单集表格采用“标题、访谈人物、播客名称、日期、总结、逐字稿”六列，节目 README 的单集表格仍采用“标题、播客名称、日期、总结链接、逐字稿链接”五列，且两处内容已经同步。根表的访谈人物来自单集 front matter 中 `role: guest` 的参与者；多位嘉宾使用顿号分隔。
 
 完整编排顺序见[单集端到端处理流程](./episode-processing.md)，恢复语义和来源限制见
 [PodWiki episode 处理 skill](../.agents/skills/podwiki-process-episode/SKILL.md)，

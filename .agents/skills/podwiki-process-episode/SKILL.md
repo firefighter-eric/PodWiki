@@ -1,6 +1,6 @@
 ---
 name: podwiki-process-episode
-description: Fully process PodWiki episodes from public Bilibili sources, acquire public YouTube media, or resume existing local-media artifacts. Use when adding, downloading, resuming, retranscribing, regenerating, or validating an episode through source acquisition, ASR, transcript rendering, metadata updates, and repository checks.
+description: Fully process PodWiki episodes from public Bilibili or Xiaoyuzhou sources, acquire public YouTube media, or resume existing local-media artifacts. Use when adding, downloading, resuming, retranscribing, regenerating, or validating an episode through source acquisition, ASR, transcript rendering, metadata updates, and repository checks.
 ---
 
 # Process a PodWiki episode
@@ -30,7 +30,8 @@ preserving source provenance, resumability, and the repository content standard.
    campaign URL carries `bvid=<BVID>`, extract that identifier and form
    `https://www.bilibili.com/video/<BVID>/`; never pass the festival page to the acquisition
    script.
-2. Read `references/bilibili.md` for Bilibili or `references/youtube.md` for YouTube.
+2. Read the matching source guide: `references/bilibili.md`, `references/youtube.md`, or
+   `references/xiaoyuzhou.md`.
 3. Run the metadata-only intake and check for a public subtitle track before downloading
    media. The repository does not yet provide a subtitle importer. If a public subtitle is
    present, stop and report that unsupported branch instead of silently falling through to
@@ -41,7 +42,8 @@ preserving source provenance, resumability, and the repository content standard.
 5. Do not bypass login, membership, payment, region, or other access controls. This workflow
    never uses browser cookies; even an authorized request requires a separate, explicitly
    documented source-handling workflow.
-6. Acquire only one video, never an account or playlist, with:
+6. Acquire only one video or podcast episode, never an account, channel, playlist, or
+   entire podcast, with:
 
    ```bash
    env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
@@ -203,7 +205,7 @@ entire file without preserving a resumable segment mapping.
 ## Keep Wiki indexes and usage docs current
 
 1. The root `README.md` contains a `收录播客` table with columns `播客`、`简介`、`节目页`.
-   Link each podcast name to the verified Bilibili channel/space URL from show metadata, and
+   Link each podcast name to its verified preferred publisher URL from show metadata, and
    link `节目页` to its local show README. Add or update this row whenever a show is added or
    its identity, source, or description changes.
 2. The root `README.md` contains the canonical `单集索引` table. Its columns must remain,
@@ -212,7 +214,8 @@ entire file without preserving a resumable segment mapping.
    `总结链接`、`逐字稿链接`.
 3. After every episode addition or update, update its row in both the root `README.md` and
    `shows/<show-id>/README.md`. Link the episode title to the canonical URL of its preferred
-   publisher source, such as Bilibili or YouTube. In the root table only, populate `访谈人物`
+   publisher source, such as Bilibili, YouTube, or Xiaoyuzhou. In the root table only,
+   populate `访谈人物`
    from front-matter participants whose role is `guest`; join multiple guests with `、` and
    never infer an unverified guest. Keep the verified episode number in `episode_number`; do
    not prefix the displayed title with `#<number>`. Link the summary and transcript columns
@@ -234,7 +237,7 @@ entire file without preserving a resumable segment mapping.
    English selected transcript, also confirm the required root Chinese translation and its
    `transcript.translations` hashes and segment alignment.
 6. Confirm the root show table has three columns and links every podcast name to its verified
-   Bilibili space and every `节目页` to its local README. Confirm the root episode table uses
+   preferred publisher page and every `节目页` to its local README. Confirm the root episode table uses
    the required six columns, the relevant show table keeps the required five columns, and both
    match the final metadata and paths.
 7. Report each episode separately with its reached state, artifact paths, engine/model,
