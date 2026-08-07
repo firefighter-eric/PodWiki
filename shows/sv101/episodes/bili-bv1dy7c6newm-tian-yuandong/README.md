@@ -13,7 +13,8 @@ numbering:
   source: publisher-rss
   note: "截至 2026-08-06，发布者官方 RSS 未收录这条 2026 年 Bilibili 新视频；RSS 中 2024 年的 E145 是另一场更早的田渊栋访谈，不能为本集复用该编号"
 title: "再访田渊栋：46.5亿美金估值的RSI，与AI自进化｜Neolabs特辑【101视频播客】"
-navigation_title: "田渊栋 - RSI、递归自我改进与 AI 科研"
+navigation_title: "田渊栋 · RSI、递归自我改进与 AI 科研"
+catalog_keyword: "RSI"
 published_at: "2026-06-05T17:03:28+08:00"
 duration_ms: 5545366
 language: zh-CN

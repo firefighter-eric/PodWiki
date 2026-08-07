@@ -13,7 +13,8 @@ numbering:
   source: publisher-weibo
   url: https://www.weibo.com/7762107285/Q1BG11Jel
 title: "【正片】何小鹏×罗永浩！何小鹏讲述从财富自由奔赴无尽地狱模式的创业故事"
-navigation_title: "何小鹏 - 从 UC 到造车、芯片与飞行汽车"
+navigation_title: "何小鹏 · 从 UC 到造车、芯片与飞行汽车"
+catalog_keyword: "飞行汽车"
 published_at: "2025-08-26T12:00:00+08:00"
 duration_ms: 10024298
 language: zh-CN

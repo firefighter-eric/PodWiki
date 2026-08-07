@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-07
   source: publisher-rss
 title: "胡渊鸣：Meshy AI，太极，MIT，清华姚班，图形学，物理仿真模拟，开源，商业化，勇气 ，智慧 ｜ WhynotTV Podcast #2"
-navigation_title: "胡渊鸣 - Meshy AI、太极与图形学创业"
+navigation_title: "胡渊鸣 · Meshy AI、太极与图形学创业"
+catalog_keyword: "Meshy AI"
 published_at: "2025-08-08T08:28:28+08:00"
 duration_ms: 11059896
 language: zh-CN

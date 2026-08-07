@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-05
   source: publisher-rss
 title: "对姚顺宇的4小时访谈：请允许我小疯一下！在Anthropic和Gemini训模型、技术预测、英雄主义已过去"
-navigation_title: "姚顺宇 - 模型进展、Coding 与研究方法"
+navigation_title: "姚顺宇 · 模型进展、Coding 与研究方法"
+catalog_keyword: "OpenAI"
 published_at: "2026-05-11T08:00:00+08:00"
 duration_ms: 13835000
 language: zh-CN

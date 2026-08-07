@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-06
   source: publisher-rss
 title: "和杨植麟时隔1年的对话：K2、Agentic LLM、缸中之脑和“站在无限的开端”"
-navigation_title: "杨植麟 - K2、Agent 泛化与 AI 自我改进"
+navigation_title: "杨植麟 · K2、Agent 泛化与 AI 自我改进"
+catalog_keyword: "K2"
 published_at: "2025-08-27T12:21:01+08:00"
 duration_ms: 6073000
 language: zh-CN

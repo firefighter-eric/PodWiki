@@ -109,10 +109,20 @@ slug，例如：
 `episode_number` 与标题分开保存。单集 `title`、Markdown 一级标题和 Wiki
 索引展示标题均不得拼接 `#<number>`、`<number>.` 等期号前缀或后缀。
 
-侧栏使用单独维护的 `navigation_title`，统一写成“访谈人物 - 精简题目”。
-人物必须来自 `participants` 中 `role: guest` 的记录；题目保留最有辨识度的
-主题，避免平台栏目名、访谈时长、期号和内部 `episode_key`，并控制在侧栏两行
-内可读。发布者原标题继续原样保存在 `title`，不要为了导航展示而覆盖它。
+侧栏和搜索结果使用单独维护的 `navigation_title`，
+统一写成“访谈人物 · 精简题目”。人物必须来自 `participants` 中 `role: guest`
+的记录，多位嘉宾按记录顺序用 `、` 连接；人物和题目之间使用两侧各有一个
+空格的 ` · `。题目保留最有辨识度的主题，避免平台栏目名、访谈时长、期号和
+内部 `episode_key`，完整标题不超过 40 个字符。发布者原标题继续原样保存在
+`title`，不要为了导航展示而覆盖它。
+这些导航和发现列表不得在标题前增加 `#<期号>`、`第 <期号> 期`、`特访`、
+`特别` 等徽标；期号与发布类型只在单集详情、来源和元数据语境中展示。
+
+节目单集和最近更新目录另行维护 `catalog_keyword`，用于左侧红色索引词。
+它必须是 1–20 个字符的单个编辑关键词，优先选择最有辨识度的品牌、模型或
+独特主题，并保留官方大小写，例如 `SGLang`、`OpenAI`、`昇腾`。关键词不是
+人物名或完整标题，不得写入期号、`特访`、`特别` 等发布类型。目录正文仍从
+`navigation_title` 和 `participants` 渲染黑色人物名与灰色精简题目。
 
 ```yaml
 id: "zhangxiaojun:bili-bv1nb3u6teru"
@@ -120,7 +130,8 @@ episode_key: bili-bv1nb3u6teru
 episode_number: null
 slug: bili-bv1nb3u6teru-liao-heng
 release_type: special
-navigation_title: "廖恒 - 芯片产业周期与昇腾工程史"
+navigation_title: "廖恒 · 芯片产业周期与昇腾工程史"
+catalog_keyword: "昇腾"
 numbering:
   status: not-in-publisher-feed
   checked_at: 2026-08-05

@@ -1,5 +1,6 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import { splitEpisodeNavigationTitle } from "@/components/episode-navigation-title";
 import type { EpisodeCard, ShowSummary } from "@/lib/types";
 
 export function ShowCatalog({
@@ -46,13 +47,11 @@ export function ShowCatalog({
         <div className="episode-list">
           {episodes.map((episode) => (
             <Link key={episode.id} href={episode.href} className="episode-card">
-              <span className="episode-number">
-                {episode.episodeNumber ? `#${episode.episodeNumber}` : "特别"}
-              </span>
+              <span className="episode-keyword">{episode.catalogKeyword}</span>
               <span className="episode-card-copy">
-                <small>{episode.showTitle} · {episode.publishedDate} · {episode.durationLabel}</small>
-                <strong>{episode.displayTitle}</strong>
-                {episode.subtitle ? <span>{episode.subtitle}</span> : null}
+                <small>{episode.showTitle} · {episode.publishedDate}</small>
+                <strong>{episode.guests.map((guest) => guest.name).join("、")}</strong>
+                <span>{splitEpisodeNavigationTitle(episode.navigationTitle).topic}</span>
               </span>
               <ArrowRight size={20} aria-hidden="true" />
             </Link>

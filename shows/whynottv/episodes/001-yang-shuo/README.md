@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-07
   source: publisher-rss
 title: "杨硕：妙动科技，特斯拉Optimus，CMU，大疆，无人机，人形机器人｜WhynotTV Podcast #1"
-navigation_title: "杨硕 - 妙动科技、Optimus 与人形机器人"
+navigation_title: "杨硕 · 妙动科技、Optimus 与人形机器人"
+catalog_keyword: "Optimus"
 published_at: "2025-07-05T17:10:58+08:00"
 duration_ms: 5381294
 language: zh-CN

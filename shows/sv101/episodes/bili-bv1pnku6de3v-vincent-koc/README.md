@@ -14,7 +14,8 @@ numbering:
   url: https://feeds.fireside.fm/sv101/rss
   note: "硅谷101官方 RSS 未收录与该发布者视频对应的单集，无法核实或推导正式期号"
 title: "对话Vincent Koc：OpenClaw的反思与进化，与Agent的下一步 | B站 x WAIC AI会客厅【101视频播客】"
-navigation_title: "Vincent Koc - OpenClaw 反思、架构与 Agent 未来"
+navigation_title: "Vincent Koc · OpenClaw 反思、架构与 Agent 未来"
+catalog_keyword: "OpenClaw"
 published_at: "2026-07-20T20:25:06+08:00"
 duration_ms: 3938752
 language: en

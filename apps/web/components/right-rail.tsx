@@ -13,14 +13,14 @@ const summaryNavigation = [
 ] as const;
 
 export function RightRail({ episode, view }: { episode: Episode; view: "summary" | "transcript" }) {
-  const episodeLabel = getEpisodeLabel(episode.episodeNumber);
+  const episodeLabel = getEpisodeLabel(episode.episodeNumber, episode.releaseType);
 
   return (
     <aside className="right-rail" aria-label="阅读辅助信息">
       <section className="right-section source-section">
         <h2>内容来源</h2>
         <p>{episode.showTitle}</p>
-        <p>{episodeLabel} · {episode.publishedDate}</p>
+        <p>{episodeLabel ? `${episodeLabel} · ` : ""}{episode.publishedDate}</p>
         {episode.preferredSource ? (
           <a href={episode.preferredSource.url} target="_blank" rel="noreferrer">
             查看原始来源 <ArrowSquareOut size={15} />

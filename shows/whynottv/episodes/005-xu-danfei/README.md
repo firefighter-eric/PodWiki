@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-07
   source: publisher-rss
 title: "Danfei Xu：人类数据，行为克隆，机器人GPT-3，全栈，EgoMimic，遥操作，UMI，斯坦福 | WhynotTV Podcast #5"
-navigation_title: "徐丹飞 - 人类数据、行为克隆与机器人学习"
+navigation_title: "徐丹飞 · 人类数据、行为克隆与机器人学习"
+catalog_keyword: "EgoMimic"
 published_at: "2026-05-01T19:46:59+08:00"
 duration_ms: 8243541
 language: zh-CN

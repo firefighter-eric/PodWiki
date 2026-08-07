@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-07
   source: publisher-rss
 title: "陈天奇：机器学习系统，长期主义，初心，XGBoost，MXNet，TVM，MLC LLM，OctoML｜WhynotTV Podcast #3"
-navigation_title: "陈天奇 - XGBoost、TVM 与机器学习系统"
+navigation_title: "陈天奇 · XGBoost、TVM 与机器学习系统"
+catalog_keyword: "XGBoost"
 published_at: "2025-09-12T22:11:25+08:00"
 duration_ms: 9610346
 language: zh-CN

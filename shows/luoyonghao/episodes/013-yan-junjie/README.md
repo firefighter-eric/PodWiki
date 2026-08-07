@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-06
   source: publisher-description
 title: "MiniMax 创始人闫俊杰 × 罗永浩：大山并非无法翻越"
-navigation_title: "闫俊杰 - MiniMax、多模态与全球化"
+navigation_title: "闫俊杰 · MiniMax、多模态与全球化"
+catalog_keyword: "MiniMax"
 published_at: "2025-12-10T14:31:12+08:00"
 duration_ms: 13889642
 language: zh-CN

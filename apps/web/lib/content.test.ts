@@ -30,7 +30,15 @@ describe("PodWiki content loader", () => {
       "bili-bv1nb3u6teru-liao-heng",
     );
     expect(episode?.episodeNumber).toBeNull();
+    expect(episode?.releaseType).toBe("special");
     expect(episode?.episodeKey).toBe("bili-bv1nb3u6teru");
+
+    const unnumberedRegularEpisode = await getEpisode(
+      "sv101",
+      "bili-bv1wk3i6nedq-ye-qiyi",
+    );
+    expect(unnumberedRegularEpisode?.episodeNumber).toBeNull();
+    expect(unnumberedRegularEpisode?.releaseType).toBe("regular");
   });
 
   it("provides concise person-topic titles for every navigation item", async () => {
@@ -39,16 +47,40 @@ describe("PodWiki content loader", () => {
     for (const episode of episodes) {
       const guestNames = episode.guests.map((guest) => guest.name).join("、");
       expect(guestNames).not.toBe("");
-      expect(episode.navigationTitle).toMatch(/^.+ - .+$/u);
-      expect(episode.navigationTitle.startsWith(`${guestNames} - `)).toBe(true);
+      expect(episode.navigationTitle).toMatch(/^.+ · .+$/u);
+      expect(episode.navigationTitle.startsWith(`${guestNames} · `)).toBe(true);
       expect(episode.navigationTitle.length).toBeLessThanOrEqual(40);
+      expect(episode.catalogKeyword).toBe(episode.catalogKeyword.trim());
+      expect(episode.catalogKeyword.length).toBeGreaterThan(0);
+      expect(episode.catalogKeyword.length).toBeLessThanOrEqual(20);
+      expect(episode.catalogKeyword).not.toMatch(/^(?:#|第\s*\d+|特访|特别)/u);
     }
+
+    expect(episodes.find((episode) => episode.folder === "247-sheng-ying")?.catalogKeyword)
+      .toBe("SGLang");
+    expect(episodes.find((episode) => episode.folder === "140-yao-shunyu")?.catalogKeyword)
+      .toBe("OpenAI");
   });
 
   it("returns summary and timestamped transcript search results", async () => {
     const results = await searchContent("第一性原理");
     expect(results.some((result) => result.section === "总结")).toBe(true);
     expect(results.some((result) => result.section === "逐字稿" && result.timestamp)).toBe(true);
+
+    const episodes = await getEpisodes();
+    for (const result of results) {
+      const episode = episodes.find((candidate) => result.id.startsWith(`${candidate.id}:`));
+      expect(episode).toBeDefined();
+      expect(result.title).toBe(episode?.navigationTitle);
+    }
+  });
+
+  it("indexes curated catalog keywords", async () => {
+    const results = await searchContent("OpenAI");
+    expect(results).toContainEqual(expect.objectContaining({
+      id: "zhangxiaojun:140:episode",
+      title: "姚顺宇 · 模型进展、Coding 与研究方法",
+    }));
   });
 
   it("loads and strictly pairs the English transcript with its Chinese machine translation", async () => {

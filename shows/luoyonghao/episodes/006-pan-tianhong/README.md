@@ -13,7 +13,8 @@ numbering:
   source: publisher-description
   url: https://www.xiaoyuzhoufm.com/episode/68e74f521bef327f3d7ddcd7
 title: "【正片】影视飓风TIM×罗永浩！用影像打开世界的梦想家"
-navigation_title: "潘天鸿 - 影视飓风、影像冒险与创业"
+navigation_title: "潘天鸿 · 影视飓风、影像冒险与创业"
+catalog_keyword: "影视飓风"
 published_at: "2025-10-10T12:00:00+08:00"
 duration_ms: 10346688
 language: zh-CN

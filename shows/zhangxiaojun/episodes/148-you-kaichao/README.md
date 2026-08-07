@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-05
   source: publisher-rss
 title: "对游凯超3小时访谈：开源Infra、和模型Co-design 、“如果vLLM失败，我们会后悔一辈子”"
-navigation_title: "游凯超 - vLLM、开源治理与模型—Infra 协同"
+navigation_title: "游凯超 · vLLM、开源治理与模型—Infra 协同"
+catalog_keyword: "vLLM"
 published_at: "2026-07-28T08:00:00+08:00"
 duration_ms: 10826000
 language: zh-CN

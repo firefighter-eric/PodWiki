@@ -26,6 +26,16 @@ type CommandItem = {
   href: string;
 };
 
+export function getRecentEpisodeCommandItems(recentEpisodes: EpisodeCard[]): CommandItem[] {
+  return recentEpisodes.map((episode) => ({
+    id: episode.id,
+    title: episode.navigationTitle,
+    meta: episode.showTitle,
+    snippet: episode.publishedDate,
+    href: episode.href,
+  }));
+}
+
 export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProps) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -98,13 +108,7 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
         href: result.href,
       }));
     }
-    return recentEpisodes.map((episode) => ({
-      id: episode.id,
-      title: episode.displayTitle,
-      meta: `${episode.showTitle}${episode.episodeNumber ? ` · 第 ${episode.episodeNumber} 期` : ""}`,
-      snippet: episode.subtitle || `${episode.publishedDate} · ${episode.durationLabel}`,
-      href: episode.href,
-    }));
+    return getRecentEpisodeCommandItems(recentEpisodes);
   }, [deferredQuery, recentEpisodes, searchState]);
 
   const currentIndex = Math.min(activeIndex, Math.max(0, items.length - 1));

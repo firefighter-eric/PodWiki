@@ -12,7 +12,8 @@ numbering:
   checked_at: 2026-08-06
   source: publisher-rss
 title: "全球大模型第一股的上市访谈，和智谱 CEO 张鹏聊：敢问路在何方？"
-navigation_title: "张鹏 - 智谱上市、GLM 与 AGI 商业化"
+navigation_title: "张鹏 · 智谱上市、GLM 与 AGI 商业化"
+catalog_keyword: "GLM"
 published_at: "2026-01-08T09:09:14+08:00"
 duration_ms: 8799000
 language: zh-CN
