@@ -139,7 +139,7 @@ describe("reader navigation", () => {
     }));
     expect(catalogHtml).toContain('<span class="episode-keyword">SGLang</span>');
     expect(catalogHtml).toContain('<span class="episode-keyword">Kimi</span>');
-    expect(catalogHtml).toContain('class="catalog-tally" aria-label="2 期内容，来自 5 档播客"');
+    expect(catalogHtml).toContain(`class="catalog-tally" aria-label="2 期内容，来自 ${shows.length} 档播客"`);
     expect(catalogHtml).not.toContain('class="show-grid"');
     expect(catalogHtml).toContain('<strong>盛颖</strong><span>SGLang、Infra 产品观与开源</span>');
     expect(catalogHtml).toContain('<strong>叶奇意</strong><span>AI 人才迁徙、Kimi 投资与 AGI</span>');
@@ -175,13 +175,19 @@ describe("reader navigation", () => {
     expect(recentItems.every((item) => !item.meta.includes("第 "))).toBe(true);
   });
 
-  it("shows three recent episodes for each podcast on the homepage only", async () => {
+  it("shows every podcast and up to three recent episodes on the homepage only", async () => {
     const [shows, episodes] = await Promise.all([getShows(), getEpisodes()]);
     const homeHtml = renderToStaticMarkup(createElement(ShowCatalog, { shows, episodes }));
 
-    expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(5);
+    expect(shows).toHaveLength(9);
+    expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(shows.length);
     expect(homeHtml.match(/class="podcast-preview-episode"/g)).toHaveLength(15);
+    expect(homeHtml.match(/查看全部 0 期/g)).toHaveLength(4);
     expect(homeHtml).toContain("按播客浏览");
+    expect(homeHtml).toContain('href="/shows/dagaizhishi"');
+    expect(homeHtml).toContain('href="/shows/yiqitietalk"');
+    expect(homeHtml).toContain('href="/shows/xinkoukaihe"');
+    expect(homeHtml).toContain('href="/shows/erdesancifang"');
     expect(homeHtml.match(/查看全部 12 期/g)).toHaveLength(2);
     expect(homeHtml).toContain("查看全部 8 期");
     expect(homeHtml).toContain("查看全部 6 期");

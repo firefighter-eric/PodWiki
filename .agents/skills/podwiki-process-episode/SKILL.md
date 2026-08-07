@@ -20,7 +20,7 @@ preserving source provenance, resumability, and the repository content standard.
    - Process, add, or ingest: continue through rendered machine transcript and validation.
 4. Never treat list order as an official episode number. Use a verified publisher number;
    otherwise use the documented source-ID key (for example, a lower-cased BVID key for
-   Bilibili).
+   Bilibili or the canonical `eid` key for Xiaoyuzhou).
 5. Preserve existing artifacts. Reuse only when identity metadata and hashes match; require
    an explicit overwrite request to replace an existing source or raw ASR result.
 
@@ -50,6 +50,11 @@ preserving source provenance, resumability, and the repository content standard.
      --url <canonical-url> \
      --output .cache/media/<show-id>/<episode-folder>/source.m4a
    ```
+
+   On PowerShell, set `$env:UV_CACHE_DIR = ".cache/uv"` once, omit the leading POSIX
+   `env UV_CACHE_DIR=...`, and either run each command on one line or replace `\` with the
+   PowerShell backtick. Use `$env:HF_ENDPOINT = "https://hf-mirror.com"` instead of
+   `export` below. These equivalents apply to every command in this skill.
 
 7. Require the sidecar `source.metadata.json` and verify codec, duration, size, sample rate,
    channels, and SHA-256 before marking the source acquired.
@@ -229,7 +234,8 @@ entire file without preserving a resumable segment mapping.
 ## Validate completion
 
 1. Run the relevant unit tests.
-2. Run `env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py`.
+2. Run `env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py` (PowerShell:
+   after setting `$env:UV_CACHE_DIR`, run `uv run --no-sync python scripts/validate.py`).
 3. Run `npm run check` from `apps/web` so the strict content loader, tests, and production
    build all consume the final repository content.
 4. Run `git diff --check` and inspect `git status --short`.

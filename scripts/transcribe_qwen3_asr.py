@@ -323,6 +323,7 @@ def write_json_atomically(path: Path, document: dict[str, Any]) -> None:
         with tempfile.NamedTemporaryFile(
             mode="w",
             encoding="utf-8",
+            newline="\n",
             dir=path.parent,
             prefix=f".podwiki-{path.name}.",
             suffix=".tmp",

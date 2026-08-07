@@ -180,6 +180,8 @@ class AtomicArtifactTests(unittest.TestCase):
             self.assertEqual(
                 transcript_path.read_text(encoding="utf-8"), transcript
             )
+            self.assertNotIn(b"\r\n", refined_path.read_bytes())
+            self.assertNotIn(b"\r\n", transcript_path.read_bytes())
             self.assertEqual(
                 sha256_text(transcript),
                 hashlib.sha256(transcript.encode("utf-8")).hexdigest(),

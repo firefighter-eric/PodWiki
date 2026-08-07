@@ -39,7 +39,7 @@ npm run check
 | [跑步播客「大概纸示」](https://www.xiaoyuzhoufm.com/podcast/6697cbecf103d7b06d18488b) | 以长跑为起点，延伸到越野跑、骑行、徒步等户外运动。 | [README](./shows/dagaizhishi/) |
 | [一起铁TALK](https://www.xiaoyuzhoufm.com/podcast/6951e312febad13106eb017e) | 以跑步为入口，聊训练、生活经验和真实处境。 | [README](./shows/yiqitietalk/) |
 | [信口开合·跑步播客](https://www.xiaoyuzhoufm.com/podcast/6588196412e01d7ba13aad47) | 用跑步的方式，探索和连接更大的世界。 | [README](./shows/xinkoukaihe/) |
-| [二的三次方](https://www.xiaoyuzhoufm.com/podcast/64bf965274d8c90965c62fff) | 八位喜剧人发起的聊天播客，记录喜剧人线下的样子。 | [README](./shows/erdesancifang/) |
+| [二的三次方](https://www.xiaoyuzhoufm.com/podcast/64bf965274d8c90965c62fff) | 肆笑喜剧与漫喜利工作室联合出品的聊天播客，记录喜剧人线下的样子。 | [README](./shows/erdesancifang/) |
 
 ## 单集索引
 

@@ -4,20 +4,25 @@
 from __future__ import annotations
 
 import argparse
+import codecs
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import time
+from contextlib import ExitStack, contextmanager
 from datetime import datetime, timezone
 from html.parser import HTMLParser
+from http.client import HTTPException
 from pathlib import Path
 from typing import Any
-from urllib.error import URLError
+from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qs, urlparse
-from urllib.request import Request, urlopen
+from urllib.request import HTTPRedirectHandler, Request, build_opener, urlopen
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,6 +30,9 @@ BILIBILI_VIDEO_RE = re.compile(r"^/video/(BV[A-Za-z0-9]+)/?$")
 YOUTUBE_ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
 XIAOYUZHOU_ID_RE = re.compile(r"^[0-9a-f]{24}$")
 XIAOYUZHOU_EPISODE_RE = re.compile(r"^/episode/([0-9a-f]{24})/?$")
+XIAOYUZHOU_MEDIA_ID_RE = re.compile(
+    r"^([0-9a-f]{24})/([A-Za-z0-9_-]+\.m4a)$"
+)
 XIAOYUZHOU_MAX_PAGE_BYTES = 16 * 1024 * 1024
 BILIBILI_PUBLIC_ACCESS_FLAGS = (
     "pay",
@@ -161,17 +169,46 @@ def fetch_xiaoyuzhou_next_data(episode_id: str) -> dict[str, Any]:
         canonical_url,
         headers={
             "Accept": "text/html,application/xhtml+xml",
+            "Accept-Encoding": "identity",
             "User-Agent": "Mozilla/5.0 PodWiki/0.1",
         },
     )
+    opener = build_opener(RejectRedirects())
     page_bytes: bytes | None = None
     last_error: Exception | None = None
     for attempt in range(4):
         try:
-            with urlopen(request, timeout=60) as response:
+            with opener.open(request, timeout=60) as response:
+                if response.geturl() != canonical_url:
+                    raise PermissionError(
+                        "Xiaoyuzhou episode page changed its canonical URL"
+                    )
+                if getattr(response, "status", None) != 200:
+                    raise ValueError("Xiaoyuzhou episode page did not return HTTP 200")
+                content_type = response.headers.get("Content-Type")
+                if (
+                    not isinstance(content_type, str)
+                    or content_type.split(";", 1)[0].strip().lower()
+                    not in {"text/html", "application/xhtml+xml"}
+                ):
+                    raise ValueError("Xiaoyuzhou episode page is not HTML")
+                content_encoding = response.headers.get("Content-Encoding")
+                if content_encoding is not None and content_encoding.strip().lower() != "identity":
+                    raise ValueError("Xiaoyuzhou episode page uses unsupported encoding")
                 page_bytes = response.read(XIAOYUZHOU_MAX_PAGE_BYTES + 1)
             break
-        except (TimeoutError, URLError, OSError) as error:
+        except PermissionError:
+            raise
+        except HTTPError as error:
+            retryable = retryable_http_error(error)
+            error.close()
+            if not retryable:
+                raise
+            last_error = error
+            if attempt == 3:
+                break
+            time.sleep(2**attempt)
+        except (TimeoutError, URLError, OSError, HTTPException) as error:
             last_error = error
             if attempt == 3:
                 break
@@ -182,7 +219,11 @@ def fetch_xiaoyuzhou_next_data(episode_id: str) -> dict[str, Any]:
         ) from last_error
     if len(page_bytes) > XIAOYUZHOU_MAX_PAGE_BYTES:
         raise ValueError("Xiaoyuzhou episode page exceeds the safe size limit")
-    return extract_xiaoyuzhou_next_data(page_bytes.decode("utf-8"))
+    try:
+        page_html = page_bytes.decode("utf-8")
+    except UnicodeDecodeError as error:
+        raise ValueError("Xiaoyuzhou episode page is not valid UTF-8") from error
+    return extract_xiaoyuzhou_next_data(page_html)
 
 
 def rfc3339_timestamp(value: Any, *, field: str) -> int:
@@ -307,13 +348,23 @@ def validate_xiaoyuzhou_public_access(
     media_url = media.get("url")
     if not isinstance(media_url, str) or not media_url:
         raise PermissionError("Xiaoyuzhou public media URL is missing")
+    media_id = media.get("id")
+    media_id_match = (
+        XIAOYUZHOU_MEDIA_ID_RE.fullmatch(media_id)
+        if isinstance(media_id, str)
+        else None
+    )
+    if media_id_match is None or media_id_match.group(1) != platform_metadata.get(
+        "pid"
+    ):
+        raise ValueError("Xiaoyuzhou episode/podcast/media identity mismatch")
     parsed_media_url = urlparse(media_url)
     if (
         parsed_media_url.scheme != "https"
         or parsed_media_url.netloc != "media.xyzcdn.net"
         or parsed_media_url.username is not None
         or parsed_media_url.password is not None
-        or not parsed_media_url.path.endswith(".m4a")
+        or parsed_media_url.path != f"/{media_id}"
         or bool(parsed_media_url.query)
         or bool(parsed_media_url.fragment)
     ):
@@ -345,6 +396,7 @@ def write_json_atomically(path: Path, document: dict[str, Any]) -> None:
         with tempfile.NamedTemporaryFile(
             mode="w",
             encoding="utf-8",
+            newline="\n",
             dir=path.parent,
             prefix=f".{path.name}.",
             suffix=".tmp",
@@ -358,6 +410,21 @@ def write_json_atomically(path: Path, document: dict[str, Any]) -> None:
     finally:
         if temporary_path is not None:
             temporary_path.unlink(missing_ok=True)
+
+
+def render_json_for_stdout(
+    document: dict[str, Any], *, encoding: str | None
+) -> str:
+    """Render readable UTF-8 JSON and portable ASCII JSON elsewhere."""
+    rendered = json.dumps(document, ensure_ascii=False, indent=2, allow_nan=False)
+    if encoding is None:
+        return rendered
+    try:
+        if codecs.lookup(encoding).name == "utf-8":
+            return rendered
+    except LookupError:
+        pass
+    return json.dumps(document, ensure_ascii=True, indent=2, allow_nan=False)
 
 
 def compact_chapters(value: Any) -> list[dict[str, Any]]:
@@ -752,25 +819,379 @@ def download_bilibili_public_audio(
     )
 
 
+class RejectRedirects(HTTPRedirectHandler):
+    """Reject redirects before urllib can send a request to another location."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if fp is not None:
+            try:
+                fp.close()
+            except Exception:
+                pass
+        raise PermissionError("Xiaoyuzhou redirects are unsupported")
+
+
+class RetryableMediaDownloadError(Exception):
+    """A transport failure that may succeed when the same byte range is retried."""
+
+
+class MediaRepresentationChangedError(Exception):
+    """The enclosure changed while a byte-range download was in progress."""
+
+
+def retryable_http_error(error: HTTPError) -> bool:
+    return error.code in {408, 429} or 500 <= error.code <= 599
+
+
+def is_strong_etag(value: Any) -> bool:
+    return (
+        isinstance(value, str)
+        and len(value) >= 2
+        and value.startswith('"')
+        and value.endswith('"')
+        and not value.startswith('W/"')
+    )
+
+
+@contextmanager
+def exclusive_download_lock(path: Path):
+    """Hold a non-blocking OS lock for one output without stale lock semantics."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    stream = path.open("a+b")
+    try:
+        if os.name == "nt":
+            import msvcrt
+
+            if path.stat().st_size == 0:
+                stream.write(b"\0")
+                stream.flush()
+            stream.seek(0)
+            try:
+                msvcrt.locking(stream.fileno(), msvcrt.LK_NBLCK, 1)
+            except OSError as error:
+                raise FileExistsError(
+                    f"another download is already using this output: {path}"
+                ) from error
+        else:
+            import fcntl
+
+            try:
+                fcntl.flock(stream.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except OSError as error:
+                raise FileExistsError(
+                    f"another download is already using this output: {path}"
+                ) from error
+        try:
+            yield
+        finally:
+            if os.name == "nt":
+                stream.seek(0)
+                msvcrt.locking(stream.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+    finally:
+        stream.close()
+
+
+def acquisition_resource_lock_path(resource_path: Path) -> Path:
+    """Map a resource to a sibling lock whose aliases follow filesystem semantics."""
+    normalized_path = os.path.realpath(os.path.abspath(os.fspath(resource_path)))
+    if os.name == "nt":
+        if normalized_path.startswith("\\\\?\\UNC\\"):
+            normalized_path = f"\\\\{normalized_path[8:]}"
+        elif normalized_path.startswith("\\\\?\\"):
+            normalized_path = normalized_path[4:]
+    normalized_resource = Path(normalized_path)
+    return (
+        normalized_resource.parent
+        / ".podwiki-locks"
+        / f"{normalized_resource.name}.lock"
+    )
+
+
+@contextmanager
+def exclusive_acquisition_locks(resource_paths: list[Path]):
+    """Lock final audio and metadata resources in a deadlock-free order."""
+    lock_paths = sorted(
+        {acquisition_resource_lock_path(path) for path in resource_paths},
+        key=lambda path: path.as_posix(),
+    )
+    with ExitStack() as stack:
+        for lock_path in lock_paths:
+            stack.enter_context(exclusive_download_lock(lock_path))
+        yield
+
+
+def discard_partial_download(partial_path: Path, checkpoint_path: Path) -> None:
+    partial_path.unlink(missing_ok=True)
+    checkpoint_path.unlink(missing_ok=True)
+
+
+def validated_partial_checkpoint(
+    *,
+    partial_path: Path,
+    checkpoint_path: Path,
+    media_url: str,
+    expected_size: int,
+) -> tuple[int, str | None]:
+    if not partial_path.is_file():
+        try:
+            checkpoint_path.unlink(missing_ok=True)
+        except OSError:
+            pass
+        return 0, None
+    partial_size = partial_path.stat().st_size
+    if partial_size <= 0 or partial_size >= expected_size or not checkpoint_path.is_file():
+        discard_partial_download(partial_path, checkpoint_path)
+        return 0, None
+    try:
+        checkpoint = json.loads(checkpoint_path.read_text(encoding="utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        discard_partial_download(partial_path, checkpoint_path)
+        return 0, None
+    if not isinstance(checkpoint, dict):
+        discard_partial_download(partial_path, checkpoint_path)
+        return 0, None
+    resume_etag = checkpoint.get("etag")
+    valid_identity = (
+        checkpoint.get("schema_version") == 1
+        and checkpoint.get("media_url") == media_url
+        and checkpoint.get("expected_size") == expected_size
+        and checkpoint.get("size_bytes") == partial_size
+        and is_strong_etag(resume_etag)
+    )
+    expected_hash = checkpoint.get("sha256")
+    if (
+        not valid_identity
+        or not isinstance(expected_hash, str)
+        or not re.fullmatch(r"[0-9a-f]{64}", expected_hash)
+        or sha256_file(partial_path) != expected_hash
+    ):
+        discard_partial_download(partial_path, checkpoint_path)
+        return 0, None
+    return partial_size, resume_etag
+
+
+def write_partial_checkpoint(
+    *,
+    partial_path: Path,
+    checkpoint_path: Path,
+    media_url: str,
+    expected_size: int,
+    etag: str,
+) -> None:
+    partial_size = partial_path.stat().st_size if partial_path.is_file() else 0
+    if partial_size <= 0 or partial_size >= expected_size or not is_strong_etag(etag):
+        discard_partial_download(partial_path, checkpoint_path)
+        return
+    write_json_atomically(
+        checkpoint_path,
+        {
+            "schema_version": 1,
+            "media_url": media_url,
+            "expected_size": expected_size,
+            "etag": etag,
+            "size_bytes": partial_size,
+            "sha256": sha256_file(partial_path),
+        },
+    )
+
+
 def download_xiaoyuzhou_public_audio(
     *,
     audio: dict[str, Any],
-    options: dict[str, Any],
     canonical_url: str,
     expected_output: Path,
-    downloader_type: Any,
-    download_error_type: type[Exception],
 ) -> None:
-    """Download one public Xiaoyuzhou enclosure without credentials."""
-    download_direct_public_audio(
-        audio=audio,
-        options=options,
-        canonical_url=canonical_url,
-        expected_output=expected_output,
-        downloader_type=downloader_type,
-        download_error_type=download_error_type,
-        source_label="Xiaoyuzhou",
+    expected_output.parent.mkdir(parents=True, exist_ok=True)
+    lock_path = acquisition_resource_lock_path(expected_output)
+    with exclusive_download_lock(lock_path):
+        _download_xiaoyuzhou_public_audio_locked(
+            audio=audio,
+            canonical_url=canonical_url,
+            expected_output=expected_output,
+        )
+
+
+def _download_xiaoyuzhou_public_audio_locked(
+    *,
+    audio: dict[str, Any],
+    canonical_url: str,
+    expected_output: Path,
+) -> None:
+    """Atomically stream and resume one enclosure without following redirects."""
+    urls = audio.get("urls")
+    expected_size = audio.get("filesize")
+    if (
+        not isinstance(urls, list)
+        or len(urls) != 1
+        or not isinstance(urls[0], str)
+        or not urls[0]
+    ):
+        raise ValueError("Xiaoyuzhou public audio selection must have one URL")
+    if isinstance(expected_size, bool) or not isinstance(expected_size, int):
+        raise ValueError("Xiaoyuzhou public audio selection has no byte size")
+    if expected_size <= 0:
+        raise ValueError("Xiaoyuzhou public audio byte size is not positive")
+
+    media_url = urls[0]
+    expected_output.parent.mkdir(parents=True, exist_ok=True)
+    media_identity = hashlib.sha256(media_url.encode("utf-8")).hexdigest()[:16]
+    partial_path = expected_output.with_name(
+        f".{expected_output.name}.{media_identity}.part"
     )
+    checkpoint_path = partial_path.with_suffix(
+        f"{partial_path.suffix}.checkpoint.json"
+    )
+
+    opener = build_opener(RejectRedirects())
+    last_error: Exception | None = None
+    for attempt in range(4):
+        partial_size, resume_etag = validated_partial_checkpoint(
+            partial_path=partial_path,
+            checkpoint_path=checkpoint_path,
+            media_url=media_url,
+            expected_size=expected_size,
+        )
+        headers = {
+            "Accept": "audio/mp4,audio/m4a,audio/x-m4a",
+            "Accept-Encoding": "identity",
+            "Referer": canonical_url,
+            "User-Agent": "Mozilla/5.0 PodWiki/0.1",
+        }
+        if partial_size:
+            headers["Range"] = f"bytes={partial_size}-"
+            headers["If-Range"] = resume_etag
+        request = Request(media_url, headers=headers)
+
+        response_etag: str | None = None
+        try:
+            try:
+                response = opener.open(request, timeout=60)
+            except PermissionError:
+                raise
+            except HTTPError as error:
+                retryable = retryable_http_error(error)
+                error.close()
+                if not retryable:
+                    raise
+                raise RetryableMediaDownloadError(
+                    f"retryable Xiaoyuzhou HTTP status {error.code}"
+                ) from error
+            except (TimeoutError, URLError, OSError, HTTPException) as error:
+                raise RetryableMediaDownloadError(
+                    "Xiaoyuzhou media connection failed"
+                ) from error
+
+            with response:
+                if response.geturl() != media_url:
+                    raise PermissionError(
+                        "Xiaoyuzhou public media response changed enclosure URL"
+                    )
+                status = getattr(response, "status", None)
+                expected_status = 206 if partial_size else 200
+                if partial_size and status == 200:
+                    raise MediaRepresentationChangedError(
+                        "Xiaoyuzhou public media changed during range resume"
+                    )
+                if status != expected_status:
+                    raise ValueError(
+                        "Xiaoyuzhou public media returned an unexpected status: "
+                        f"expected={expected_status} actual={status}"
+                    )
+                content_encoding = response.headers.get("Content-Encoding")
+                if (
+                    content_encoding is not None
+                    and content_encoding.strip().lower() != "identity"
+                ):
+                    raise ValueError(
+                        "Xiaoyuzhou public media uses unsupported content encoding"
+                    )
+                expected_response_size = expected_size - partial_size
+                content_length = response.headers.get("Content-Length")
+                if content_length is not None:
+                    try:
+                        response_size = int(content_length)
+                    except ValueError as error:
+                        raise ValueError(
+                            "Xiaoyuzhou public media has invalid Content-Length"
+                        ) from error
+                    if response_size != expected_response_size:
+                        raise ValueError(
+                            "Xiaoyuzhou public media Content-Length differs from metadata: "
+                            f"expected={expected_response_size} actual={response_size}"
+                        )
+                if partial_size:
+                    expected_range = (
+                        f"bytes {partial_size}-{expected_size - 1}/{expected_size}"
+                    )
+                    if response.headers.get("Content-Range") != expected_range:
+                        raise ValueError(
+                            "Xiaoyuzhou public media returned an invalid Content-Range"
+                        )
+                response_etag = response.headers.get("ETag")
+                if partial_size and response_etag != resume_etag:
+                    raise MediaRepresentationChangedError(
+                        "Xiaoyuzhou public media ETag changed during range resume"
+                    )
+                content_type = response.headers.get("Content-Type")
+                if (
+                    content_type is not None
+                    and content_type.split(";", 1)[0].strip().lower()
+                    not in {"audio/mp4", "audio/m4a", "audio/x-m4a"}
+                ):
+                    raise ValueError(
+                        "Xiaoyuzhou public media response is not M4A audio"
+                    )
+
+                with partial_path.open("ab" if partial_size else "wb") as stream:
+                    downloaded_size = partial_size
+                    while True:
+                        try:
+                            chunk = response.read(1024 * 1024)
+                        except (TimeoutError, URLError, OSError, HTTPException) as error:
+                            raise RetryableMediaDownloadError(
+                                "Xiaoyuzhou media transfer was interrupted"
+                            ) from error
+                        if not chunk:
+                            break
+                        downloaded_size += len(chunk)
+                        if downloaded_size > expected_size:
+                            raise ValueError(
+                                "Xiaoyuzhou public media exceeds its published byte size"
+                            )
+                        stream.write(chunk)
+                if downloaded_size != expected_size:
+                    raise RetryableMediaDownloadError(
+                        "Xiaoyuzhou public media download is incomplete: "
+                        f"expected={expected_size} actual={downloaded_size}"
+                    )
+            try:
+                checkpoint_path.unlink(missing_ok=True)
+            except OSError:
+                pass
+            partial_path.replace(expected_output)
+            return
+        except MediaRepresentationChangedError as error:
+            discard_partial_download(partial_path, checkpoint_path)
+            last_error = error
+        except RetryableMediaDownloadError as error:
+            last_error = error
+            if is_strong_etag(response_etag):
+                write_partial_checkpoint(
+                    partial_path=partial_path,
+                    checkpoint_path=checkpoint_path,
+                    media_url=media_url,
+                    expected_size=expected_size,
+                    etag=response_etag,
+                )
+            elif partial_size == 0:
+                discard_partial_download(partial_path, checkpoint_path)
+            if attempt < 3:
+                time.sleep(2**attempt)
+    raise ConnectionError(
+        "Xiaoyuzhou public media download failed after retries"
+    ) from last_error
 
 
 def source_metadata(
@@ -781,6 +1202,8 @@ def source_metadata(
     platform_metadata: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     platform_metadata = platform_metadata or {}
+    platform_media = platform_metadata.get("media")
+    platform_media = platform_media if isinstance(platform_media, dict) else {}
     subtitles = info.get("subtitles")
     automatic_captions = info.get("automatic_captions")
     subtitle_languages = sorted(
@@ -803,6 +1226,7 @@ def source_metadata(
         ),
         "eid": platform_metadata.get("eid") or info.get("eid"),
         "pid": platform_metadata.get("pid") or info.get("pid"),
+        "media_id": platform_media.get("id"),
         "aid": platform_metadata.get("aid") or info.get("aid"),
         "cid": platform_metadata.get("cid") or info.get("cid"),
         "page": (
@@ -948,10 +1372,6 @@ def probe_audio(path: Path) -> dict[str, Any]:
         raise ValueError(f"downloaded file has no audio stream: {path}")
     stream = audio_streams[0]
     format_info = document.get("format", {})
-    digest = hashlib.sha256()
-    with path.open("rb") as stream_reader:
-        for chunk in iter(lambda: stream_reader.read(1024 * 1024), b""):
-            digest.update(chunk)
     return {
         "path": path.as_posix(),
         "size_bytes": int(format_info["size"]),
@@ -959,8 +1379,16 @@ def probe_audio(path: Path) -> dict[str, Any]:
         "codec": stream.get("codec_name"),
         "sample_rate_hz": int(stream["sample_rate"]),
         "channels": int(stream["channels"]),
-        "sha256": digest.hexdigest(),
+        "sha256": sha256_file(path),
     }
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def validate_reusable_media(
@@ -987,12 +1415,63 @@ def validate_reusable_media(
             f"existing media metadata has no sha256: {metadata_output}; "
             "use --overwrite to recreate it"
         )
-    digest = hashlib.sha256()
-    with output_path.open("rb") as stream:
-        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(chunk)
-    if digest.hexdigest() != expected_hash:
+    if sha256_file(output_path) != expected_hash:
         raise ValueError(f"existing audio hash does not match {metadata_output}")
+
+
+def validate_reusable_source_identity(
+    *, existing_document: dict[str, Any], current_source: dict[str, Any]
+) -> None:
+    existing_source = existing_document.get("source")
+    if not isinstance(existing_source, dict):
+        raise ValueError("existing media metadata has no source identity")
+    platform = current_source.get("platform")
+    identity_fields = {
+        "bilibili": ("bvid", "aid", "cid", "page"),
+        "youtube": ("id",),
+        "xiaoyuzhou": ("eid", "pid", "media_id"),
+    }.get(platform)
+    if identity_fields is None:
+        raise ValueError(f"unsupported reusable source platform: {platform!r}")
+    if existing_source.get("platform") != platform:
+        raise FileExistsError(
+            "existing audio platform differs from the current source; "
+            "use --overwrite to replace it"
+        )
+    for field in identity_fields:
+        current_value = current_source.get(field)
+        if current_value is None:
+            raise ValueError(f"current {platform} source has no stable {field} identity")
+        if existing_source.get(field) != current_value:
+            raise FileExistsError(
+                f"existing audio {field} identity differs from the current source; "
+                "use --overwrite to replace it"
+            )
+
+
+def refresh_existing_media(
+    *,
+    output_path: Path,
+    metadata_output: Path,
+    canonical_url: str,
+    info: dict[str, Any],
+    platform_metadata: dict[str, Any],
+) -> dict[str, Any] | None:
+    if not output_path.is_file():
+        return None
+    validate_reusable_media(
+        output_path=output_path,
+        metadata_output=metadata_output,
+        canonical_url=canonical_url,
+    )
+    media = probe_audio(output_path)
+    validate_media_duration(
+        media,
+        info=info,
+        platform_metadata=platform_metadata,
+    )
+    validate_public_enclosure_size(media, platform_metadata=platform_metadata)
+    return media
 
 
 def read_existing_metadata(
@@ -1017,22 +1496,65 @@ def read_existing_metadata(
     return existing
 
 
-def retain_existing_media(
-    document: dict[str, Any], existing_document: dict[str, Any] | None
-) -> None:
-    if not isinstance(existing_document, dict):
-        return
-    existing_media = existing_document.get("media")
-    if not isinstance(existing_media, dict):
-        return
-    document["media"] = existing_media
-    if existing_document.get("acquired_at") is not None:
-        document["acquired_at"] = existing_document["acquired_at"]
+def validate_output_path(path: Path) -> None:
+    if path.suffix != ".m4a":
+        raise ValueError("output path must end in lowercase .m4a")
 
 
 def main() -> int:
     args = parse_args()
     platform, canonical_url = canonical_source_url(args.url)
+    output_path = args.output.resolve()
+    metadata_output = (
+        args.metadata_output.resolve()
+        if args.metadata_output is not None
+        else output_path.with_name(f"{output_path.stem}.metadata.json")
+    )
+    validate_output_path(output_path)
+    if metadata_output == output_path:
+        raise ValueError("metadata output must not overwrite the audio output")
+    if args.metadata_only and args.overwrite:
+        raise ValueError("--overwrite cannot be combined with --metadata-only")
+    with exclusive_acquisition_locks([output_path, metadata_output]):
+        return acquire_media_locked(
+            args=args,
+            platform=platform,
+            canonical_url=canonical_url,
+            output_path=output_path,
+            metadata_output=metadata_output,
+        )
+
+
+def acquire_media_locked(
+    *,
+    args: argparse.Namespace,
+    platform: str,
+    canonical_url: str,
+    output_path: Path,
+    metadata_output: Path,
+) -> int:
+    existing_document = read_existing_metadata(
+        metadata_output=metadata_output,
+        canonical_url=canonical_url,
+        allow_replacement=args.overwrite,
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_exists = output_path.exists()
+    if output_exists and not output_path.is_file():
+        raise FileExistsError(f"audio output exists but is not a file: {output_path}")
+    if output_exists and not args.overwrite:
+        validate_reusable_media(
+            output_path=output_path,
+            metadata_output=metadata_output,
+            canonical_url=canonical_url,
+        )
+    media_reused = not args.metadata_only and output_exists and not args.overwrite
+    download_requested = not args.metadata_only and (args.overwrite or not output_exists)
+    if download_requested and platform != "xiaoyuzhou" and shutil.which("ffmpeg") is None:
+        raise SystemExit("ffmpeg is required to extract downloaded audio")
+    if (not args.metadata_only or output_exists) and shutil.which("ffprobe") is None:
+        raise SystemExit("ffprobe is required to validate downloaded audio")
+
     if platform == "bilibili":
         match = BILIBILI_VIDEO_RE.fullmatch(urlparse(canonical_url).path)
         if match is None:
@@ -1049,46 +1571,18 @@ def main() -> int:
         validate_bilibili_public_access(platform_metadata)
     elif platform == "xiaoyuzhou":
         validate_xiaoyuzhou_public_access(platform_metadata)
-    output_path = args.output.resolve()
-    metadata_output = (
-        args.metadata_output.resolve()
-        if args.metadata_output is not None
-        else output_path.with_name(f"{output_path.stem}.metadata.json")
-    )
-    if output_path.suffix.lower() != ".m4a":
-        raise ValueError("output path must end in .m4a")
-    if metadata_output == output_path:
-        raise ValueError("metadata output must not overwrite the audio output")
-    if args.metadata_only and args.overwrite:
-        raise ValueError("--overwrite cannot be combined with --metadata-only")
-    existing_document = read_existing_metadata(
-        metadata_output=metadata_output,
-        canonical_url=canonical_url,
-        allow_replacement=args.overwrite,
-    )
 
-    try:
-        from yt_dlp import YoutubeDL
-        from yt_dlp.utils import DownloadError
-    except ImportError as error:
-        raise SystemExit(
-            "yt-dlp is unavailable; run `uv sync --all-groups` before workers"
-        ) from error
+    YoutubeDL: Any = None
+    DownloadError: type[Exception] = Exception
+    if platform != "xiaoyuzhou":
+        try:
+            from yt_dlp import YoutubeDL
+            from yt_dlp.utils import DownloadError
+        except ImportError as error:
+            raise SystemExit(
+                "yt-dlp is unavailable; run `uv sync --all-groups` before workers"
+            ) from error
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    media_reused = not args.metadata_only and output_path.exists() and not args.overwrite
-    if media_reused:
-        validate_reusable_media(
-            output_path=output_path,
-            metadata_output=metadata_output,
-            canonical_url=canonical_url,
-        )
-    download_requested = not args.metadata_only and (args.overwrite or not output_path.exists())
-    if download_requested:
-        if platform != "xiaoyuzhou" and shutil.which("ffmpeg") is None:
-            raise SystemExit("ffmpeg is required to extract downloaded audio")
-        if shutil.which("ffprobe") is None:
-            raise SystemExit("ffprobe is required to validate downloaded audio")
     staging_directory: Path | None = None
     download_output = output_path
     if download_requested:
@@ -1141,11 +1635,8 @@ def main() -> int:
             public_audio = xiaoyuzhou_public_audio(platform_metadata)
             download_xiaoyuzhou_public_audio(
                 audio=public_audio,
-                options=options,
                 canonical_url=canonical_url,
                 expected_output=download_output,
-                downloader_type=YoutubeDL,
-                download_error_type=DownloadError,
             )
     else:
         for attempt in range(5):
@@ -1185,6 +1676,30 @@ def main() -> int:
                     downloader_type=YoutubeDL,
                     download_error_type=DownloadError,
                 )
+    current_source = source_metadata(
+        info,
+        platform=platform,
+        canonical_url=canonical_url,
+        platform_metadata=platform_metadata,
+    )
+    if output_exists and not args.overwrite:
+        if not isinstance(existing_document, dict):
+            raise ValueError("existing audio has no reusable source metadata")
+        validate_reusable_source_identity(
+            existing_document=existing_document,
+            current_source=current_source,
+        )
+    refreshed_media = (
+        refresh_existing_media(
+            output_path=output_path,
+            metadata_output=metadata_output,
+            canonical_url=canonical_url,
+            info=info,
+            platform_metadata=platform_metadata,
+        )
+        if args.metadata_only
+        else None
+    )
     if download_requested:
         if not download_output.is_file():
             raise FileNotFoundError(
@@ -1213,17 +1728,20 @@ def main() -> int:
         "schema_version": 1,
         "kind": "podwiki-source-media",
         "inspected_at": inspected_at,
-        "source": source_metadata(
-            info,
-            platform=platform,
-            canonical_url=canonical_url,
-            platform_metadata=platform_metadata,
-        ),
+        "source": current_source,
         "download_requested": download_requested,
         "media_reused": media_reused,
     }
     if args.metadata_only:
-        retain_existing_media(document, existing_document)
+        if refreshed_media is not None:
+            document["media"] = refreshed_media
+            document["media_reused"] = True
+            document["verified_at"] = inspected_at
+            if (
+                isinstance(existing_document, dict)
+                and existing_document.get("acquired_at") is not None
+            ):
+                document["acquired_at"] = existing_document["acquired_at"]
     if not args.metadata_only:
         if not output_path.is_file():
             raise FileNotFoundError(f"yt-dlp did not produce expected output: {output_path}")
@@ -1250,7 +1768,7 @@ def main() -> int:
         )
 
     write_json_atomically(metadata_output, document)
-    print(json.dumps(document, ensure_ascii=False, indent=2, allow_nan=False))
+    print(render_json_for_stdout(document, encoding=sys.stdout.encoding))
     return 0
 
 

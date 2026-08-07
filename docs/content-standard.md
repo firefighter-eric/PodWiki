@@ -120,6 +120,17 @@ bili-bv1nb3u6teru-liao-heng
 `sources[].identifiers` 契约也尚未定义，因此当前仅支持 intake 与公开媒体获取，
 不自动创建正式单集。
 
+无正式期号的小宇宙单集使用稳定键 `xiaoyuzhou-<eid>`；`eid` 是规范单集 URL
+中的 24 位小写十六进制标识。例如：
+
+```text
+xiaoyuzhou-6a58ef45016dcc7e05434f8e-wang-wei-wuwa
+```
+
+小宇宙页面标题中的 `EP98`、`S6E1` 或 `vol:152` 不能单独作为正式期号证据；
+只有发布者明确确认其编号语义后才能写入 `episode_number`。否则保持 `null`，
+并使用上述来源键。
+
 `episode_number` 与标题分开保存。单集 `title`、Markdown 一级标题和 Wiki
 索引展示标题均不得拼接 `#<number>`、`<number>.` 等期号前缀或后缀。
 
@@ -201,8 +212,19 @@ https://www.xiaoyuzhoufm.com/episode/<episode-id>
 ```
 
 `podcast-id` 和 `episode-id` 均为 24 位小写十六进制标识。保存时删除查询参数、
-片段和末尾斜杠。栏目 README 使用 podcast URL；单集来源使用 episode URL，
-并在 `sources[].identifiers` 中记录 `eid`、`pid` 和已核对的媒体标识。
+片段和末尾斜杠。栏目 README 使用 podcast URL；单集来源使用 episode URL。
+单集 `sources[].identifiers` 固定记录以下三个字段：
+
+```yaml
+identifiers:
+  eid: 6a58ef45016dcc7e05434f8e
+  pid: 6588196412e01d7ba13aad47
+  media_id: 6588196412e01d7ba13aad47/example-token.m4a
+```
+
+`media_id` 必须同时等于公开页面的 `mediaKey` 与 `media.id`，其首段必须等于
+该单集自己的 `pid`，且公开 CDN URL path 必须精确为 `/<media_id>`。不能用外层
+栏目列表的 PID 覆盖联播或串台单集自身已核实的 `episode.pid`。
 
 ## 4. 时间和日期
 

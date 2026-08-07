@@ -7,10 +7,10 @@
 
 ## 1. 适用范围与停止条件
 
-当前完整 happy path 是：单个公开 Bilibili 视频，没有可直接使用的公开字幕，在
-Apple Silicon 上以 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿。YouTube 当前支持
-规范化、metadata intake 和公开媒体获取，但 tracked episode 的 source identifiers
-与无正式期号 key 尚未形成内容契约，因此不能自动完成入库。
+当前完整 happy path 是：单个公开 Bilibili 视频或小宇宙单集，没有可直接使用的
+公开字幕，在 Apple Silicon 上以 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿。
+YouTube 当前支持规范化、metadata intake 和公开媒体获取，但 tracked episode 的
+source identifiers 与无正式期号 key 尚未形成内容契约，因此不能自动完成入库。
 
 先根据请求确定停止点：
 
@@ -30,7 +30,9 @@ Apple Silicon 上以 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿。YouTube
 - 非 Apple Silicon 环境需要新跑正式 ASR；
 - YouTube 单集需要完整入库：当前尚未定义 tracked source identifiers，且无正式
   期号时也没有稳定 episode key；
-- 新节目没有可核实的 Bilibili 频道或空间：当前根节目索引契约无法登记；
+- 新节目没有可核实的首选发布者页面：当前根节目索引契约无法登记；
+- 单集没有可核实的 `role: guest` 参与者：当前导航标题契约尚不支持纯主播单集，
+  不得把主播伪标为嘉宾；
 - 需要远端或付费 ASR，但用户没有明确授权数据传输、凭据和费用。
 
 不要把停止条件改写为成功。每集分别报告已到达阶段、已有产物、可恢复点和下一步。
@@ -68,6 +70,9 @@ uv sync --all-groups
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
 ```
 
+PowerShell 先设置 `$env:UV_CACHE_DIR = ".cache/uv"`，再省略命令前的 POSIX `env`
+写法；`export` 与反斜杠续行的替换规则见[脚本用法](./python-scripts.md#环境准备)。
+
 首次 checkout 或 `apps/web/package-lock.json` 变化后安装锁定的前端依赖：
 
 ```bash
@@ -90,11 +95,13 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
 
 ## 3. 规范化来源并做 metadata intake
 
-先把用户输入转换为单视频规范 URL：
+先把用户输入转换为单视频或单集规范 URL：
 
 - Bilibili：`https://www.bilibili.com/video/<BVID>/`；
 - Bilibili 活动页 `/festival/...?...bvid=<BVID>`：提取 `bvid` 后改写为上述视频地址；
 - YouTube：`https://www.youtube.com/watch?v=<video-id>`；
+- 小宇宙：`https://www.xiaoyuzhoufm.com/episode/<episode-id>`；栏目页只用于登记
+  节目身份，不能作为媒体获取输入；
 - 删除 `spm_id_from`、`vd_source`、播放列表和其他追踪参数。
 
 不要把活动页直接传给脚本。先用来源 ID 做临时 intake，只读取元数据而不下载：
@@ -111,18 +118,20 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 1. `source.canonical_url` 与输入的规范 URL 一致；
 2. Bilibili 的 `source.bvid`、`source.aid`、`source.cid`、`source.page` 完整且
    身份一致；
-3. `source.title`、发布者、发布时间和时长合理；
-4. `source.availability`、`source.live_status` 和平台字段表明来源公开、非直播、
+3. 小宇宙的 `source.eid`、`source.pid`、`source.media_id` 完整，页面中的
+   episode/podcast/media 身份一致，并明确为 `NORMAL`、`FREE`、非私密、`PUBLIC`；
+4. `source.title`、发布者、发布时间和时长合理；
+5. `source.availability`、`source.live_status` 和平台字段表明来源公开、非直播、
    非受限；
-5. `source.subtitle_languages`、`source.automatic_caption_languages` 和
+6. `source.subtitle_languages`、`source.automatic_caption_languages` 和
    `source.platform_metadata.subtitle.tracks` 均无可用公开字幕。
 
 存在公开字幕时在这里停止。不要因为当前没有 importer 就忽略字幕改跑音频 ASR。
 
 ## 4. 确定身份并创建目录
 
-先确认节目是否已经存在于 `shows/<show-id>/`。新节目必须有可核实的 Bilibili
-频道或空间，使用 `templates/show/README.md`，节目 ID 只使用稳定的小写 ASCII
+先确认节目是否已经存在于 `shows/<show-id>/`。新节目必须有可核实的首选发布者
+页面，使用 `templates/show/README.md`，节目 ID 只使用稳定的小写 ASCII
 字母和数字。
 
 只有确认节目尚不存在时才创建节目目录：
@@ -137,8 +146,9 @@ cp -n templates/show/README.md shows/<show-id>/README.md
 1. 只有发布者明确给出的正式期号才能写入 `episode_number`；
 2. 有正式期号时，`episode_key` 使用保留前导零的正式编号；
 3. 无正式期号的 Bilibili 视频使用 `bili-<lowercase-bvid>`；
-4. 不根据输入顺序、发布日期、合集位置或抓取顺序猜期号；
-5. YouTube 单集当前只完成 intake/acquire；完整入库前请求维护者补充 source
+4. 无正式期号的小宇宙单集使用 `xiaoyuzhou-<eid>`；
+5. 不根据输入顺序、发布日期、合集位置或抓取顺序猜期号；
+6. YouTube 单集当前只完成 intake/acquire；完整入库前请求维护者补充 source
    identifiers 和稳定 episode key 契约。
 
 目录名为 `<episode-key>-<short-slug>`，但 front matter 中的
@@ -157,6 +167,7 @@ cp -n templates/episode/README.md shows/<show-id>/episodes/<episode-folder>/READ
 | --- | --- |
 | `source.canonical_url` | `sources[].url` |
 | `source.bvid`、`source.aid`、`source.cid`、`source.page` | `sources[].identifiers` |
+| `source.eid`、`source.pid`、`source.media_id` | 小宇宙 `sources[].identifiers` |
 | 发布者原标题 | `title` |
 | 发布时间 | 带时区 RFC 3339 `published_at` |
 | `source.duration_seconds` | 换算为整数毫秒 `duration_ms` |
@@ -324,7 +335,7 @@ SHA-256。完整机器稿可以支持 `workflow.summary: draft`；没有回听�
 每次新增或更新单集都同时修改：
 
 1. 新节目还要更新根 `README.md` 的三列“收录播客”表，节目名链接已核实的
-   Bilibili 频道或空间，节目页链接本地 README；
+   首选发布者页面，节目页链接本地 README；
 2. 根 `README.md` 的六列表：标题、访谈人物、播客名称、日期、总结、逐字稿；
 3. `shows/<show-id>/README.md` 的五列表：标题、播客名称、日期、总结链接、逐字稿链接。
 

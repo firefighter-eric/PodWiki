@@ -38,6 +38,18 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
 env UV_CACHE_DIR=.cache/uv uv run --no-sync python <script> <arguments>
 ```
 
+PowerShell 不提供 POSIX 的 `env`、`export` 或反斜杠续行。先在当前终端设置环境变量，
+再运行后续命令；多行命令可改成单行，或把示例中的 `\` 换成 PowerShell 反引号：
+
+```powershell
+$env:UV_CACHE_DIR = ".cache/uv"
+$env:HF_ENDPOINT = "https://hf-mirror.com"
+uv run --no-sync python <script> <arguments>
+```
+
+本页余下 `env UV_CACHE_DIR=.cache/uv ...` 示例在 PowerShell 中均省略该前缀，沿用上面已
+设置的 `$env:UV_CACHE_DIR`；`export HF_ENDPOINT=...` 同理只需设置一次。
+
 在中国大陆首次下载 Hugging Face 模型前，为当前终端设置镜像：
 
 ```bash
@@ -118,11 +130,24 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
   --output .cache/media/<show-id>/<episode-folder>/source.m4a
 ```
 
-脚本只读取无需登录即可访问的单集 HTML 与其中的 `__NEXT_DATA__`，核对 `eid`、
-`pid`、媒体标识及公开状态后，从 `media.xyzcdn.net` 获取与 enclosure 一致的
-M4A。只有 `NORMAL`、`FREE`、`isPrivateMedia: false`、`PUBLIC` 四项均明确成立
-时才继续；付费、私密、登录态或字段缺失一律拒绝，也不会使用 cookie、Token
-或整栏批量下载。下载结果还会与发布页给出的字节数和时长交叉校验。
+脚本只读取无需登录即可访问的规范单集 HTML 与其中的 `__NEXT_DATA__`，拒绝页面或媒体
+重定向，并核对 `eid`、单集自身 `pid`、嵌套栏目 `pid`、`mediaKey`、`media.id` 和 CDN
+path。`media.id` 必须是 `<episode-pid>/<token>.m4a`，不能用外层栏目列表的 PID 覆盖
+联播单集自己的身份。只有 `NORMAL`、`FREE`、`isPrivateMedia: false`、`PUBLIC` 四项均
+明确成立，且 `media.xyzcdn.net` 的 M4A URL 与 enclosure 完全一致时才继续；付费、私密、
+登录态或字段缺失一律拒绝，也不会使用 cookie、token 或整栏批量下载。
+
+每次采集会按固定顺序锁住最终音频和 metadata sidecar，直到音频探测、原子提升和 sidecar
+原子写入全部结束，避免并发任务交错身份。小宇宙音频另在 staging 目标的系统级独占锁下，
+先写入与媒体 URL 绑定的 partial 文件并实时限制总字节数。续传 checkpoint 原子记录 URL、
+strong ETag、partial 大小和 SHA-256；每次续传前都会重算前缀哈希。只有 checkpoint 完整时才用 `Range`、
+`If-Range`、精确 HTTP 206 和 `Content-Range` 续传，否则从零重下。请求固定为 identity
+content encoding，编码响应、永久 4xx 与本地磁盘错误不会当作网络暂态重试。最终结果还会
+用 `ffprobe`、发布页字节数、时长和 SHA-256 交叉校验；输出文件名必须使用小写 `.m4a`。
+
+`--metadata-only` 遇到已有本地音频时，不会盲目复制旧 sidecar：它先校验规范 URL、旧
+SHA-256 和当前 `eid`/`pid`/`media_id`，再重新探测大小与时长。任一身份或内容发生变化
+都会拒绝复用并要求显式 `--overwrite`；没有本地音频时，新 sidecar 不写 `media` 字段。
 
 ## 处理单个 Qwen3-ASR 单集
 
