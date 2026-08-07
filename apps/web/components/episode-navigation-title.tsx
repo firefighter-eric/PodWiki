@@ -61,13 +61,13 @@ export function EpisodeSidebarTitle({
     <span className="episode-nav-copy sidebar-label">
       <span className="episode-nav-meta">
         <span className="episode-nav-identity">
+          <strong className="episode-nav-name">{name}</strong>
           {showTitle ? (
             <>
-              <small className="episode-nav-source" title={showTitle}>{showTitle}</small>
               <span className="episode-nav-source-separator" aria-hidden="true">·</span>
+              <small className="episode-nav-source" title={showTitle}>{showTitle}</small>
             </>
           ) : null}
-          <strong className="episode-nav-name">{name}</strong>
         </span>
         <time dateTime={publishedDate}>{publishedDate}</time>
       </span>

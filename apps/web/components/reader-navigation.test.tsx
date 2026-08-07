@@ -46,6 +46,8 @@ describe("reader navigation", () => {
     expect(html).toContain(
       '<span class="episode-nav-topic" title="vLLM、开源治理与模型—Infra 协同">vLLM、开源治理与模型—Infra 协同</span>',
     );
+    expect(html).not.toContain("episode-nav-source");
+    expect(html).not.toContain("episode-nav-source-separator");
 
     const globalHtml = renderToStaticMarkup(createElement(EpisodeSidebarTitle, {
       title: "游凯超 · vLLM、开源治理与模型—Infra 协同",
@@ -57,6 +59,12 @@ describe("reader navigation", () => {
     );
     expect(globalHtml).toContain(
       '<strong class="episode-nav-name">游凯超</strong>',
+    );
+    expect(globalHtml.indexOf('<strong class="episode-nav-name">')).toBeLessThan(
+      globalHtml.indexOf('<small class="episode-nav-source"'),
+    );
+    expect(globalHtml).toContain(
+      '<strong class="episode-nav-name">游凯超</strong><span class="episode-nav-source-separator" aria-hidden="true">·</span><small class="episode-nav-source" title="硅谷101">硅谷101</small>',
     );
   });
 
