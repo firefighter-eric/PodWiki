@@ -4,6 +4,16 @@ import { useEffect } from "react";
 
 const alignmentDelays = [0, 120, 300, 600, 1000] as const;
 
+export function decodeTranscriptAnchor(hash: string): string | undefined {
+  const encodedId = hash.replace(/^#/u, "");
+  if (!encodedId) return undefined;
+  try {
+    return decodeURIComponent(encodedId);
+  } catch {
+    return undefined;
+  }
+}
+
 export function TranscriptAnchorSync() {
   useEffect(() => {
     const animationFrames: number[] = [];
@@ -16,7 +26,7 @@ export function TranscriptAnchorSync() {
     };
 
     const scrollToHash = () => {
-      const id = decodeURIComponent(window.location.hash.slice(1));
+      const id = decodeTranscriptAnchor(window.location.hash);
       if (!id) return;
       const target = document.getElementById(id);
       target?.scrollIntoView({ block: "start" });

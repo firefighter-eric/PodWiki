@@ -31,12 +31,26 @@ QWEN_TRANSCRIPT_NAME_RE = re.compile(
     r"transcript\.[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*\.md"
 )
 SHA256_RE = re.compile(r"[0-9a-f]{64}")
+SHOW_ID_RE = re.compile(r"[a-z0-9]+")
+EPISODE_KEY_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 RFC3339_RE = re.compile(
     r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})"
 )
-TRANSCRIPT_LINE_RE = re.compile(r"^\[\d{2,}:\d{2}:\d{2}\] \S.*  $")
-TRANSCRIPT_TIMESTAMP_RE = re.compile(r"^(\[\d{2,}:\d{2}:\d{2}\]) ")
+TRANSCRIPT_LINE_RE = re.compile(r"^\[\d{2}:[0-5]\d:[0-5]\d\] \S.*  $")
+TRANSCRIPT_TIMESTAMP_RE = re.compile(r"^(\[\d{2}:[0-5]\d:[0-5]\d\]) ")
 TRANSLATION_STATUSES = {"machine", "edited", "reviewed"}
+WORKFLOW_METADATA_STATUSES = {"draft", "verified"}
+WORKFLOW_SUMMARY_STATUSES = {"empty", "outline", "draft", "reviewed"}
+WORKFLOW_TRANSCRIPT_STATUSES = {
+    "not-started",
+    "source-acquired",
+    "machine",
+    "edited",
+    "reviewed",
+    "blocked",
+}
+WEB_SUMMARY_STATUSES = {"draft", "reviewed"}
+WEB_TRANSCRIPT_STATUSES = {"machine", "edited", "reviewed"}
 
 
 def relative(path: Path) -> str:
@@ -144,6 +158,15 @@ def top_level_front_matter_scalar(lines: list[str], key: str) -> str | None:
         indent = len(line) - len(line.lstrip(" "))
         if indent == 0 and stripped.startswith(f"{key}:"):
             return decode_yaml_scalar(stripped.split(":", 1)[1])
+    return None
+
+
+def top_level_front_matter_raw_scalar(lines: list[str], key: str) -> str | None:
+    for line in lines:
+        stripped = line.strip()
+        indent = len(line) - len(line.lstrip(" "))
+        if indent == 0 and stripped.startswith(f"{key}:"):
+            return stripped.split(":", 1)[1].strip()
     return None
 
 
@@ -280,6 +303,7 @@ def safe_recorded_path(
     repository_root: Path,
     field: str,
     errors: list[str],
+    containment_label: str = "repository",
 ) -> Path | None:
     if not isinstance(value, str) or not value:
         errors.append(f"{field} must be a non-empty relative path")
@@ -298,7 +322,7 @@ def safe_recorded_path(
     try:
         path.resolve(strict=False).relative_to(repository_root.resolve())
     except ValueError:
-        errors.append(f"{field} escapes the repository: {value!r}")
+        errors.append(f"{field} escapes the {containment_label}: {value!r}")
         return None
     return path
 
@@ -357,6 +381,172 @@ def is_rfc3339_timestamp(value: Any) -> bool:
     return parsed.tzinfo is not None
 
 
+def is_episode_web_publishable(workflow: dict[str, str | None]) -> bool:
+    return (
+        workflow.get("metadata") == "verified"
+        and workflow.get("summary") in WEB_SUMMARY_STATUSES
+        and workflow.get("transcript") in WEB_TRANSCRIPT_STATUSES
+    )
+
+
+def validate_source_preferences(
+    lines: list[str], *, field_prefix: str, errors: list[str]
+) -> None:
+    in_sources = False
+    sources_present = False
+    source_count = 0
+    preferred_count = 0
+    current_has_preferred = False
+
+    def record_preferred(raw_value: str) -> None:
+        nonlocal preferred_count, current_has_preferred
+        if current_has_preferred:
+            errors.append(f"{field_prefix} source has duplicate preferred fields")
+            return
+        current_has_preferred = True
+        value = raw_value.strip()
+        if value not in {"true", "false"}:
+            errors.append(
+                f"{field_prefix} sources[].preferred must be a YAML boolean"
+            )
+        elif value == "true":
+            preferred_count += 1
+
+    for line in lines:
+        stripped = line.strip()
+        indent = len(line) - len(line.lstrip(" "))
+        if not in_sources:
+            if indent == 0 and stripped.startswith("sources:"):
+                in_sources = True
+                sources_present = True
+            continue
+        if stripped and indent == 0:
+            break
+        if not stripped or stripped.startswith("#"):
+            continue
+        if indent == 2 and (stripped == "-" or stripped.startswith("- ")):
+            source_count += 1
+            current_has_preferred = False
+            inline = stripped[1:].strip()
+            if inline.startswith("preferred:"):
+                record_preferred(inline.split(":", 1)[1])
+            continue
+        if indent == 4 and stripped.startswith("preferred:"):
+            if source_count == 0:
+                errors.append(f"{field_prefix} sources must be a YAML list")
+                continue
+            record_preferred(stripped.split(":", 1)[1])
+
+    if not sources_present or source_count == 0:
+        errors.append(f"{field_prefix} sources must contain at least one source")
+    if preferred_count != 1:
+        errors.append(
+            f"{field_prefix} sources must contain exactly one preferred source"
+        )
+
+
+def validate_episode_metadata_contract(
+    readme_path: Path,
+    readme_text: str,
+    *,
+    repository_root: Path,
+    episode_ids: dict[str, Path],
+    errors: list[str],
+) -> bool:
+    """Validate metadata shared by the repository gate and the web catalog."""
+
+    front_matter = extract_front_matter_lines(readme_text)
+    label = display_path(readme_path, repository_root)
+    episode_dir = readme_path.parent
+    episode_id = top_level_front_matter_scalar(front_matter, "id")
+    show_id = top_level_front_matter_scalar(front_matter, "show_id")
+    episode_key = top_level_front_matter_scalar(front_matter, "episode_key")
+    published_at = top_level_front_matter_scalar(front_matter, "published_at")
+    episode_key_raw = top_level_front_matter_raw_scalar(front_matter, "episode_key")
+    published_at_raw = top_level_front_matter_raw_scalar(front_matter, "published_at")
+    duration_ms_raw = top_level_front_matter_raw_scalar(front_matter, "duration_ms")
+
+    if not episode_id:
+        errors.append(f"{label} is missing id")
+    else:
+        previous = episode_ids.get(episode_id)
+        if previous is not None:
+            errors.append(
+                f"{label} duplicates episode id {episode_id!r} from "
+                f"{display_path(previous, repository_root)}"
+            )
+        else:
+            episode_ids[episode_id] = readme_path
+
+    if not show_id or SHOW_ID_RE.fullmatch(show_id) is None:
+        errors.append(f"{label} show_id must contain only lowercase letters and digits")
+    elif len(readme_path.parents) >= 3 and readme_path.parents[2].name != show_id:
+        errors.append(
+            f"{label} show_id {show_id!r} does not match its show directory "
+            f"{readme_path.parents[2].name!r}"
+        )
+
+    if not episode_key or EPISODE_KEY_RE.fullmatch(episode_key) is None:
+        errors.append(f"{label} episode_key has an invalid stable-key format")
+    elif episode_key.isdigit() and episode_key_raw == episode_key:
+        errors.append(f"{label} numeric episode_key must be a quoted YAML string")
+
+    if episode_id and show_id and episode_key:
+        expected_id = f"{show_id}:{episode_key}"
+        if episode_id != expected_id:
+            errors.append(f"{label} id must equal {expected_id!r}")
+
+    if (
+        not is_rfc3339_timestamp(published_at)
+        or published_at_raw is None
+        or len(published_at_raw) < 2
+        or published_at_raw[0] not in {'"', "'"}
+        or published_at_raw[-1] != published_at_raw[0]
+    ):
+        errors.append(f"{label} published_at must be an RFC 3339 timestamp with offset")
+
+    if duration_ms_raw is None or re.fullmatch(r"[1-9]\d*", duration_ms_raw) is None:
+        errors.append(f"{label} duration_ms must be a positive integer")
+
+    workflow = {
+        "metadata": nested_front_matter_scalar(front_matter, "workflow", "metadata"),
+        "summary": nested_front_matter_scalar(front_matter, "workflow", "summary"),
+        "transcript": nested_front_matter_scalar(
+            front_matter, "workflow", "transcript"
+        ),
+    }
+    workflow_contracts = {
+        "metadata": WORKFLOW_METADATA_STATUSES,
+        "summary": WORKFLOW_SUMMARY_STATUSES,
+        "transcript": WORKFLOW_TRANSCRIPT_STATUSES,
+    }
+    for field, allowed in workflow_contracts.items():
+        if workflow[field] not in allowed:
+            errors.append(
+                f"{label} workflow.{field} must be one of {', '.join(sorted(allowed))}"
+            )
+
+    validate_source_preferences(front_matter, field_prefix=label, errors=errors)
+    publishable = is_episode_web_publishable(workflow)
+
+    for section in ("summary", "transcript"):
+        value = nested_front_matter_scalar(front_matter, section, "path")
+        asset_path = safe_recorded_path(
+            value,
+            base=episode_dir,
+            repository_root=episode_dir,
+            field=f"{label} {section}.path",
+            errors=errors,
+            containment_label="episode directory",
+        )
+        if publishable and asset_path is not None and not asset_path.is_file():
+            errors.append(
+                f"{label} is web-publishable but {section}.path is missing: {value!r}"
+            )
+
+    return publishable
+
+
 def transcript_structure(
     path: Path,
     *,
@@ -401,6 +591,7 @@ def validate_episode_translations(
     repository_root: Path,
     readme_text: str,
     errors: list[str],
+    require_complete: bool = True,
 ) -> None:
     """Validate required segment-aligned Chinese translations of English roots."""
 
@@ -432,7 +623,12 @@ def validate_episode_translations(
         field="transcript.path",
         errors=errors,
     )
-    if source_path is not None and not source_path.is_file():
+    translation_claimed = bool(translations)
+    if (
+        (require_complete or translation_claimed)
+        and source_path is not None
+        and not source_path.is_file()
+    ):
         errors.append(
             "selected English transcript is missing: "
             f"{display_path(source_path, repository_root)}"
@@ -441,7 +637,9 @@ def validate_episode_translations(
     chinese_items = [
         item for item in translations if item.get("language") == "zh-CN"
     ]
-    if not translations_present or len(chinese_items) != 1:
+    if (require_complete or translation_claimed) and (
+        not translations_present or len(chinese_items) != 1
+    ):
         errors.append(
             "English selected transcript requires exactly one zh-CN item in "
             "transcript.translations"
@@ -1047,6 +1245,7 @@ def main() -> int:
     markdown_count = 0
     bilibili_url_count = 0
     qwen_chain_count = 0
+    episode_ids: dict[str, Path] = {}
 
     if not SHOWS_ROOT.is_dir():
         print("PodWiki validation failed:\n\n- shows directory is missing", file=sys.stderr)
@@ -1070,6 +1269,13 @@ def main() -> int:
             continue
         readme = episode_dir / "README.md"
         readme_text = readme.read_text(encoding="utf-8") if readme.is_file() else ""
+        publishable = validate_episode_metadata_contract(
+            readme,
+            readme_text,
+            repository_root=ROOT,
+            episode_ids=episode_ids,
+            errors=errors,
+        )
         validate_episode_catalog_keyword(readme, readme_text, errors)
         validate_episode_navigation_title(readme, readme_text, errors)
         validate_episode_translations(
@@ -1077,6 +1283,7 @@ def main() -> int:
             repository_root=ROOT,
             readme_text=readme_text,
             errors=errors,
+            require_complete=publishable,
         )
         if validate_qwen_chain(
             episode_dir,

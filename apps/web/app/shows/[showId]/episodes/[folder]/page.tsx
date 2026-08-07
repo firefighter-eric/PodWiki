@@ -21,9 +21,29 @@ export async function generateMetadata({ params }: EpisodePageProps): Promise<Me
   const { showId, folder } = await params;
   const episode = await getEpisode(showId, folder);
   if (!episode) return {};
+
+  const description = getEpisodeDescription(episode);
+  const title = `${episode.navigationTitle} · PodWiki`;
   return {
     title: episode.navigationTitle,
-    description: getEpisodeDescription(episode),
+    description,
+    alternates: {
+      canonical: episode.href,
+    },
+    openGraph: {
+      type: "article",
+      locale: "zh_CN",
+      siteName: "PodWiki",
+      title,
+      description,
+      url: episode.href,
+      publishedTime: episode.publishedAt,
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
   };
 }
 

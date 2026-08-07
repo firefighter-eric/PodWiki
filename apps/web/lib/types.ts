@@ -131,6 +131,11 @@ export type EpisodeCard = Pick<
   | "href"
 >;
 
+export type SidebarEpisode = Pick<
+  EpisodeCard,
+  "id" | "showId" | "showTitle" | "navigationTitle" | "publishedDate" | "href"
+>;
+
 export type SearchResult = {
   id: string;
   title: string;
