@@ -4,6 +4,10 @@ PodWiki 是一个使用 Markdown 构建的播客 Wiki，收录值得长期阅读
 
 项目优先服务播客内容的发现与阅读：节目页提供单集索引，单集页记录来源与处理状态，独立的总结和逐字稿用于快速理解与深入检索。
 
+## 新增单集 / AI 处理
+
+新增、下载、转写、翻译或更新单集时，从[单集处理流程](./docs/episode-processing.md)开始，并同时遵守[内容标准](./docs/content-standard.md)与项目的 [PodWiki episode 处理 skill](./.agents/skills/podwiki-process-episode/SKILL.md)。
+
 ## Web 阅读器
 
 `apps/web` 是基于 Next.js App Router 的浅色阅读器，直接从仓库中的节目 Markdown 构建页面，提供节目切换、全文搜索、章节定位、摘要/逐字稿切换和本地阅读设置。当前版本专注文字阅读，不包含音频播放器。

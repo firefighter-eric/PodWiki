@@ -1,13 +1,35 @@
 # Python 脚本用法
 
 本页集中记录 PodWiki 的 Python 工具和推荐运行方式。所有命令都从仓库根目录执行。
+第一次新增单集时，先按[单集端到端处理流程](./episode-processing.md)确定目录、元数据、
+语言分组和停止点，再回到本页复制具体命令。
 
 ## 环境准备
 
-项目使用 Python 3.12+ 和 `uv`。开始媒体处理或 ASR 前，先同步全部依赖：
+项目使用 Python 3.12+ 和 `uv`。媒体获取还要求系统可执行文件 `ffmpeg`、
+`ffprobe`；YouTube 处理另外要求 Deno 或 Node.js。当前正式本地 ASR 路径依赖
+Apple Silicon（macOS `arm64`）和 MLX；其他平台可以整理元数据和已有文本，不能
+静默换用远端或付费 ASR。前端最终门禁需要 Node.js 和 npm。
+
+开始前先完成一次预检：
+
+```bash
+python3 --version
+uv --version
+ffmpeg -version
+ffprobe -version
+node --version
+npm --version
+```
+
+只处理 Bilibili 且不运行前端时，Deno/Node.js 与 npm 不是下载阶段的必需项；
+但交付完整仓库变更前仍需在具备 Node.js/npm 的环境运行 Web 门禁。
+
+开始媒体处理或 ASR 前，先同步全部依赖：
 
 ```bash
 uv sync --all-groups
+env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
 ```
 
 后续命令统一使用仓库内的 uv 缓存，并通过 `--no-sync` 避免 worker 运行期间改写共享 `.venv`：
@@ -25,10 +47,12 @@ export HF_ENDPOINT=https://hf-mirror.com
 下载项目默认的 Qwen3-ASR 和 ForcedAligner：
 
 ```bash
-hf download mlx-community/Qwen3-ASR-1.7B-8bit \
+env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
+  mlx-community/Qwen3-ASR-1.7B-8bit \
   --local-dir .cache/models/qwen3-asr-1.7b-8bit
 
-hf download mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
+env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
+  mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
   --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
@@ -38,7 +62,7 @@ hf download mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
 | --- | --- | --- |
 | `scripts/acquire_media.py` | 获取一个公开 Bilibili 或 YouTube 视频的音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
 | `scripts/transcribe_qwen3_asr.py` | 使用 Qwen3-ASR 转写并强制对齐 | `raw.json`、`aligned.json` |
-| `scripts/render_asr_transcript.py` | 清理对齐结果并渲染逐字稿 | `refined.json`、`transcript.zh-CN.md` |
+| `scripts/render_asr_transcript.py` | 清理对齐结果并渲染逐字稿 | `refined.json`、`transcript.<language>.md` |
 | `scripts/process_qwen3_asr_batch.py` | 串行处理一个或多个已缓存单集 | 每集完整 Qwen 产物与日志 |
 | `scripts/transcribe_audio.py` | 生成 MLX Whisper 对比基线 | Whisper `raw.json` |
 | `scripts/validate.py` | 校验内容、来源和 ASR 产物链 | 终端校验结果 |
@@ -46,6 +70,11 @@ hf download mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
 ## 获取公开音轨
 
 `acquire_media.py` 只处理单个公开 Bilibili 或 YouTube 视频，不处理账号、播放列表、多 P 或受访问控制的内容。
+
+传给脚本的 Bilibili 地址必须已经是
+`https://www.bilibili.com/video/<BVID>/`。如果收到
+`/festival/...?...bvid=<BVID>` 一类活动页，先提取查询参数中的 BVID 并改写成
+上述规范视频地址；脚本会拒绝直接传入活动页。
 
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
@@ -73,6 +102,12 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
   --metadata-only
 ```
 
+先检查 sidecar 中的 `source.subtitle_languages`、
+`source.automatic_caption_languages` 和
+`source.platform_metadata.subtitle.tracks`。仓库目前尚未提供公开字幕的下载、
+转换与 lineage 导入工具；发现可用字幕时应停止自动流程、报告该分支尚未实现，
+不要绕过字幕直接启动 ASR。只有确认没有可用公开字幕且来源允许处理时，才下载音频。
+
 已有音频默认不会被替换；只有明确需要覆盖时才使用 `--overwrite`。
 
 ## 处理单个 Qwen3-ASR 单集
@@ -96,7 +131,8 @@ env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
 
 ## 渲染逐字稿
 
-对齐完成后，用同一次运行生成哈希关联的 refined JSON 和 Markdown：
+对齐完成后，用同一次运行生成哈希关联的 refined JSON 和 Markdown。以下是中文示例；
+其他语言使用对应的 BCP 47 文件名和 `--language`：
 
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/render_asr_transcript.py \
@@ -109,7 +145,8 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/render_asr_transcript
   --model mlx-community/Qwen3-ASR-1.7B-8bit
 ```
 
-四份 Qwen 产物全部校验通过后，才把 run Markdown 作为单集根目录的正式 `transcript.zh-CN.md`，并同步更新单集 README 的来源、哈希和 workflow 状态。
+四份 Qwen 产物全部校验通过后，才把 run Markdown 作为单集根目录的正式
+`transcript.<language>.md`，并同步更新单集 README 的来源、哈希和 workflow 状态。
 
 ## 串行批处理
 
@@ -123,7 +160,16 @@ env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
-不传 `--episode` 时，脚本发现所有已有缓存音频的单集。它会串行启动 worker，在 `.cache/logs/qwen3-asr/` 保存每集日志，继续处理其他单集，并在任一单集失败时最终返回非零状态。
+仓库同时包含中文和英文单集。批处理的 `--language` 与
+`--transcript-language` 是整次运行共享的参数，默认值为 `Chinese` / `zh-CN`；
+因此正式处理时必须按语言分组，并为每一集显式重复传入 `--episode`。不要在混合
+语言仓库中省略 `--episode` 让脚本扫描所有缓存，更不要把这种全库扫描与
+`--retranscribe` 或 `--realign` 组合。
+
+技术上不传 `--episode` 时，脚本会发现所有已有缓存音频的单集；当前混合语言仓库
+的正式流程不使用这个模式。对显式选中的同语言单集，它会串行启动 worker，在
+`.cache/logs/qwen3-asr/` 保存每集日志，继续处理其他单集，并在任一单集失败时
+最终返回非零状态。
 
 默认按中文语音处理并生成 `transcript.zh-CN.md`。处理英文等其他语言时，同时
 传入 ASR 使用的语言名称和用于产物文件名的 BCP 47 标签，例如：
@@ -144,10 +190,15 @@ MLX Whisper 只用于保留已有基线或显式对比，不作为当前中文�
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/transcribe_audio.py \
   --input .cache/media/<show-id>/<episode-folder>/source.m4a \
-  --output shows/<show-id>/episodes/<episode-folder>/asr/whisper/raw.json \
+  --output .cache/benchmarks/<show-id>/<episode-folder>/whisper/raw.json \
   --model mlx-community/whisper-large-v3-turbo-q4 \
   --language zh
 ```
+
+当前 Whisper worker 可能把引擎返回的 `NaN` 写入 raw JSON，而内容标准要求跟踪
+的 JSON 为严格 JSON。正常新增单集不要创建、选择或提升新的 Whisper run；保留
+已有基线即可。只有用户明确要求实验对比时才运行，并把新结果留在 `.cache/`，
+同时在交付中说明该限制。
 
 ## 校验
 
@@ -163,6 +214,20 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python -m unittest discover -s tests
 env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py
 ```
 
+首次 checkout 或 lockfile 变化后先安装锁定依赖：
+
+```bash
+npm --prefix apps/web ci
+```
+
+然后确认内容能够被前端严格加载并完成生产构建：
+
+```bash
+npm --prefix apps/web run check
+```
+
 最后还应运行 `git diff --check`，检查 `git status --short`，并确认根 README 的三列节目介绍表中，播客名称链接已核实的 Bilibili 空间，节目页链接本地节目 README。根 README 的单集表格采用“标题、访谈人物、播客名称、日期、总结、逐字稿”六列，节目 README 的单集表格仍采用“标题、播客名称、日期、总结链接、逐字稿链接”五列，且两处内容已经同步。根表的访谈人物来自单集 front matter 中 `role: guest` 的参与者；多位嘉宾使用顿号分隔。
 
-完整处理规则、恢复语义和来源限制见 [PodWiki episode 处理 skill](../.agents/skills/podwiki-process-episode/SKILL.md)；内容字段和状态定义见[内容标准](./content-standard.md)。
+完整编排顺序见[单集端到端处理流程](./episode-processing.md)，恢复语义和来源限制见
+[PodWiki episode 处理 skill](../.agents/skills/podwiki-process-episode/SKILL.md)，
+内容字段和状态定义见[内容标准](./content-standard.md)。

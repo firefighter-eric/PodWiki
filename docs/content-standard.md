@@ -106,6 +106,15 @@ episode_key: "004"
 期号的 Bilibili 单集使用稳定键 `bili-<lowercase-bvid>`，目录仍可追加人物
 slug，例如：
 
+```text
+bili-bv1nb3u6teru-liao-heng
+```
+
+无正式期号的 YouTube 单集尚未定义稳定 key；在规范补充前停止建档并请求维护者
+确认，不得直接小写或改写大小写敏感的 YouTube video ID。YouTube 的 tracked
+`sources[].identifiers` 契约也尚未定义，因此当前仅支持 intake 与公开媒体获取，
+不自动创建正式单集。
+
 `episode_number` 与标题分开保存。单集 `title`、Markdown 一级标题和 Wiki
 索引展示标题均不得拼接 `#<number>`、`<number>.` 等期号前缀或后缀。
 
@@ -325,11 +334,13 @@ selected 英文稿和中文译稿，英文原稿发生变化后必须重新生�
 ## 7. Bilibili 获取顺序
 
 1. 检查平台人工字幕或自动字幕。
-2. 有权处理且没有字幕时，再从公开媒体生成 ASR。
-3. 校验并渲染根目录机器初稿，状态标记为 `machine`。
-4. 说话人识别与专有名词校对。
-5. 人工审核后把状态改为 `reviewed`。
-6. 画面硬字幕 OCR 仅作为最后手段。
+2. 当前仓库尚未提供公开字幕的下载、转换和 lineage 导入工具；发现公开字幕时
+   停止自动流程并报告该分支尚未实现，不得直接忽略字幕改跑音频 ASR。
+3. 有权处理且没有公开字幕时，再从公开媒体生成 ASR。
+4. 校验并渲染根目录机器初稿，状态标记为 `machine`。
+5. 说话人识别与专有名词校对。
+6. 人工审核后把状态改为 `reviewed`。
+7. 画面硬字幕 OCR 仅作为最后手段。
 
 首版不处理会员、付费、地区限制或其他访问控制，不批量抓取整个账号。
 
@@ -368,6 +379,27 @@ transcript:
 ```
 
 逐字稿不包含 YAML front matter。语言、来源、转写状态、模型、生成时间和质量统计等信息只保存在单集 `README.md`。
+
+本地音频验证完成后，在单集 README 记录可重建但不提交 Git 的 cache 身份：
+
+```yaml
+local_audio_cache:
+  path: .cache/media/<show-id>/<episode-folder>/source.m4a
+  metadata_path: .cache/media/<show-id>/<episode-folder>/source.metadata.json
+  git_ignored: true
+  acquired_at: "YYYY-MM-DDTHH:MM:SSZ"
+  verified_at: "YYYY-MM-DDTHH:MM:SSZ"
+  codec: aac
+  sample_rate_hz: 44100
+  channels: 2
+  size_bytes: 0
+  duration_ms: 0
+  sha256: "<source-audio-sha256>"
+```
+
+未获取音频时模板中的 `local_audio_cache` 保持 `null`。所有值来自最终
+`source.metadata.json` 的真实媒体探测结果，路径仍使用仓库相对 POSIX 形式；
+不得把 intake sidecar 或另一集的值复制进来。
 
 渲染规则：
 
