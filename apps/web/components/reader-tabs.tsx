@@ -9,7 +9,11 @@ export function ReaderTabs({ href, view }: { href: string; view: "summary" | "tr
         <NoteBlank size={16} />
         总结
       </Link>
-      <Link href={getTranscriptHref(href)} aria-current={view === "transcript" ? "page" : undefined}>
+      <Link
+        href={getTranscriptHref(href)}
+        prefetch={false}
+        aria-current={view === "transcript" ? "page" : undefined}
+      >
         <Quotes size={16} />
         逐字稿
       </Link>

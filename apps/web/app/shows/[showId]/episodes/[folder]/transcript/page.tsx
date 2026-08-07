@@ -21,9 +21,30 @@ export async function generateMetadata({ params }: TranscriptPageProps): Promise
   const { showId, folder } = await params;
   const episode = await getEpisode(showId, folder);
   if (!episode) return {};
+
+  const description = getEpisodeDescription(episode);
+  const transcriptTitle = `${episode.navigationTitle} · 逐字稿`;
+  const canonical = `${episode.href}/transcript`;
   return {
-    title: `${episode.navigationTitle} · 逐字稿`,
-    description: getEpisodeDescription(episode),
+    title: transcriptTitle,
+    description,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      type: "article",
+      locale: "zh_CN",
+      siteName: "PodWiki",
+      title: `${transcriptTitle} · PodWiki`,
+      description,
+      url: canonical,
+      publishedTime: episode.publishedAt,
+    },
+    twitter: {
+      card: "summary",
+      title: `${transcriptTitle} · PodWiki`,
+      description,
+    },
   };
 }
 

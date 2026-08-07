@@ -39,7 +39,11 @@ export function TranscriptView({ episode }: { episode: Episode }) {
       <div className={`transcript-lines${bilingualTranscript ? " bilingual-transcript-lines" : ""}`}>
         {bilingualTranscript ? bilingualTranscript.segments.map((segment) => (
           <p key={segment.id} id={segment.id} className="transcript-line bilingual-transcript-line">
-            <a href={`#${segment.id}`} aria-label={`定位到 ${segment.timestamp}`}>
+            <a
+              href={`#${segment.id}`}
+              tabIndex={-1}
+              aria-label={`定位到 ${segment.timestamp}`}
+            >
               {segment.timestamp}
             </a>
             <span className="transcript-pair">
@@ -49,7 +53,11 @@ export function TranscriptView({ episode }: { episode: Episode }) {
           </p>
         )) : episode.transcriptSegments.map((segment) => (
           <p key={segment.id} id={segment.id} className="transcript-line">
-            <a href={`#${segment.id}`} aria-label={`定位到 ${segment.timestamp}`}>
+            <a
+              href={`#${segment.id}`}
+              tabIndex={-1}
+              aria-label={`定位到 ${segment.timestamp}`}
+            >
               {segment.timestamp}
             </a>
             <span>{segment.text}</span>

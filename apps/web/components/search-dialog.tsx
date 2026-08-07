@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, MagnifyingGlass, X } from "@phosphor-icons/react";
-import { AnimatePresence, m } from "motion/react";
+import { AnimatePresence, domAnimation, LazyMotion, m } from "motion/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -12,12 +12,13 @@ import {
   useState,
 } from "react";
 import { canonicalizeReaderHref } from "@/lib/reader-routes";
-import type { EpisodeCard, SearchResult } from "@/lib/types";
+import type { SearchResult, SidebarEpisode } from "@/lib/types";
 
 type SearchDialogProps = {
   open: boolean;
   onClose: () => void;
-  recentEpisodes: EpisodeCard[];
+  recentEpisodes: SidebarEpisode[];
+  returnFocusRef?: React.RefObject<HTMLElement | null>;
 };
 
 type CommandItem = {
@@ -38,7 +39,7 @@ function hasSelectionWithin(element: HTMLElement) {
   );
 }
 
-export function getRecentEpisodeCommandItems(recentEpisodes: EpisodeCard[]): CommandItem[] {
+export function getRecentEpisodeCommandItems(recentEpisodes: SidebarEpisode[]): CommandItem[] {
   return recentEpisodes.map((episode) => ({
     id: episode.id,
     title: episode.navigationTitle,
@@ -48,7 +49,12 @@ export function getRecentEpisodeCommandItems(recentEpisodes: EpisodeCard[]): Com
   }));
 }
 
-export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProps) {
+export function SearchDialog({
+  open,
+  onClose,
+  recentEpisodes,
+  returnFocusRef,
+}: SearchDialogProps) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -66,14 +72,17 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
   useEffect(() => {
     if (!open) return;
     previousFocusRef.current = document.activeElement as HTMLElement | null;
+    const returnFocusTarget = returnFocusRef?.current ?? previousFocusRef.current;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.setTimeout(() => inputRef.current?.focus(), 0);
     return () => {
       document.body.style.overflow = previousOverflow;
-      window.requestAnimationFrame(() => previousFocusRef.current?.focus());
+      window.requestAnimationFrame(() => {
+        if (returnFocusTarget?.isConnected) returnFocusTarget.focus();
+      });
     };
-  }, [open]);
+  }, [open, returnFocusRef]);
 
   useEffect(() => {
     if (!open || !deferredQuery) return;
@@ -167,8 +176,9 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
   };
 
   return (
-    <AnimatePresence>
-      {open ? (
+    <LazyMotion features={domAnimation} strict>
+      <AnimatePresence>
+        {open ? (
         <m.div
           className="search-overlay"
           role="presentation"
@@ -204,6 +214,7 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
                 autoComplete="off"
                 role="combobox"
                 aria-expanded="true"
+                aria-autocomplete="list"
                 aria-controls="search-results"
                 aria-activedescendant={items[currentIndex] ? `search-option-${currentIndex}` : undefined}
                 onChange={(event) => {
@@ -225,13 +236,24 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
               </span>
             </div>
 
-            <div id="search-results" className="search-results" role="listbox">
+            <div
+              id="search-results"
+              className="search-results"
+              role={items.length > 0 ? "listbox" : undefined}
+              aria-label={items.length > 0
+                ? deferredQuery ? "全文搜索结果" : "最近更新"
+                : undefined}
+            >
               {loading ? (
-                <p className="search-state" aria-hidden="true">正在搜索…</p>
+                <p className="search-state" role="status">正在搜索…</p>
               ) : null}
-              {failed ? <p className="search-state">搜索暂时不可用，请稍后再试。</p> : null}
+              {failed ? (
+                <p className="search-state" role="alert">搜索暂时不可用，请稍后再试。</p>
+              ) : null}
               {!failed && deferredQuery && !loading && items.length === 0 ? (
-                <p className="search-state">没有找到相关内容，试试人物名或更短的关键词。</p>
+                <p className="search-state" role="status">
+                  没有找到相关内容，试试人物名或更短的关键词。
+                </p>
               ) : null}
               {!failed && items.map((item, index) => (
                 <Link
@@ -239,6 +261,7 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
                   id={`search-option-${index}`}
                   className={`search-result selectable-content-link${index === currentIndex ? " active" : ""}`}
                   href={item.href}
+                  prefetch={false}
                   draggable={false}
                   role="option"
                   aria-selected={index === currentIndex}
@@ -270,7 +293,8 @@ export function SearchDialog({ open, onClose, recentEpisodes }: SearchDialogProp
             <p className="search-help">↑↓ 选择 · Enter 打开 · Esc 关闭</p>
           </m.div>
         </m.div>
-      ) : null}
-    </AnimatePresence>
+        ) : null}
+      </AnimatePresence>
+    </LazyMotion>
   );
 }

@@ -22,5 +22,7 @@ describe("search dialog navigation", () => {
       /<a[^>]*class="search-result selectable-content-link active"[^>]*draggable="false"/,
     );
     expect(html).not.toContain('<button id="search-option-0"');
+    expect(html).toContain('aria-autocomplete="list"');
+    expect(html).toContain('role="listbox" aria-label="最近更新"');
   });
 });

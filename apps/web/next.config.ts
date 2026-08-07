@@ -6,7 +6,12 @@ const repositoryRoot = path.resolve(process.cwd(), "../..");
 const nextConfig: NextConfig = {
   outputFileTracingRoot: repositoryRoot,
   outputFileTracingIncludes: {
-    "/api/search": ["../../shows/**/*.md"],
+    "/api/search": [
+      "../../shows/*/README.md",
+      "../../shows/*/episodes/*/README.md",
+      "../../shows/*/episodes/*/summary*.md",
+      "../../shows/*/episodes/*/transcript*.md",
+    ],
   },
   async redirects() {
     return [

@@ -123,7 +123,8 @@ button {
   transition: grid-template-columns 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.app-shell.sidebar-collapsed {
+.app-shell.sidebar-collapsed,
+:where(html[data-sidebar-state="collapsed"]) .app-shell {
   --sidebar-width: 76px;
 }
 
@@ -496,60 +497,74 @@ button {
   margin-left: auto;
 }
 
-.sidebar-collapsed .sidebar-header {
+.sidebar-collapsed .sidebar-header,
+:where(html[data-sidebar-state="collapsed"]) .sidebar-header {
   justify-content: center;
   padding: 0;
 }
 
 .sidebar-collapsed .wordmark-full,
 .sidebar-collapsed .sidebar-label,
-.sidebar-collapsed .sidebar-shortcut {
+.sidebar-collapsed .sidebar-shortcut,
+:where(html[data-sidebar-state="collapsed"]) .wordmark-full,
+:where(html[data-sidebar-state="collapsed"]) .sidebar-label,
+:where(html[data-sidebar-state="collapsed"]) .sidebar-shortcut {
   display: none;
 }
 
-.sidebar-collapsed .wordmark-short {
+.sidebar-collapsed .wordmark-short,
+:where(html[data-sidebar-state="collapsed"]) .wordmark-short {
   display: inline;
 }
 
-.sidebar-collapsed .desktop-collapse {
+.sidebar-collapsed .desktop-collapse,
+:where(html[data-sidebar-state="collapsed"]) .desktop-collapse {
   position: absolute;
   top: 74px;
 }
 
-.sidebar-collapsed .sidebar-content {
+.sidebar-collapsed .sidebar-content,
+:where(html[data-sidebar-state="collapsed"]) .sidebar-content {
   padding: 38px 10px 20px;
 }
 
-.sidebar-collapsed .search-trigger {
+.sidebar-collapsed .search-trigger,
+:where(html[data-sidebar-state="collapsed"]) .search-trigger {
   justify-content: center;
   padding: 0;
 }
 
-.sidebar-collapsed .show-navigation {
+.sidebar-collapsed .show-navigation,
+:where(html[data-sidebar-state="collapsed"]) .show-navigation {
   margin-top: 20px;
 }
 
-.sidebar-collapsed .episode-nav-list {
+.sidebar-collapsed .episode-nav-list,
+:where(html[data-sidebar-state="collapsed"]) .episode-nav-list {
   display: none;
 }
 
-.sidebar-collapsed .show-row {
+.sidebar-collapsed .show-row,
+:where(html[data-sidebar-state="collapsed"]) .show-row {
   min-height: 60px;
   justify-content: center;
   padding: 6px 0;
 }
 
-.sidebar-collapsed .show-row.active::before {
+.sidebar-collapsed .show-row.active::before,
+:where(html[data-sidebar-state="collapsed"]) .show-row.active::before {
   left: -10px;
 }
 
-.sidebar-collapsed .all-shows-icon {
+.sidebar-collapsed .all-shows-icon,
+:where(html[data-sidebar-state="collapsed"]) .all-shows-icon {
   width: 44px;
   height: 44px;
   flex-basis: 44px;
 }
 
-.sidebar-collapsed .sidebar-settings {
+.sidebar-collapsed .sidebar-settings,
+:where(html[data-sidebar-state="collapsed"]) .sidebar-settings {
   justify-content: center;
   margin: 0 10px;
   padding: 0;
@@ -568,21 +583,25 @@ button {
   min-height: 100dvh;
 }
 
-.episode-reader[data-font-size="small"] {
+.episode-reader[data-font-size="small"],
+:where(html[data-reader-font-size="small"]) .episode-reader {
   --body-size: 14.5px;
   --body-leading: 1.72;
 }
 
-.episode-reader[data-font-size="large"] {
+.episode-reader[data-font-size="large"],
+:where(html[data-reader-font-size="large"]) .episode-reader {
   --body-size: 17px;
   --body-leading: 1.9;
 }
 
-.episode-reader[data-measure="narrow"] {
+.episode-reader[data-measure="narrow"],
+:where(html[data-reader-measure="narrow"]) .episode-reader {
   --content-measure: 570px;
 }
 
-.episode-reader[data-measure="wide"] {
+.episode-reader[data-measure="wide"],
+:where(html[data-reader-measure="wide"]) .episode-reader {
   --content-measure: 760px;
 }
 
@@ -657,7 +676,8 @@ button {
 }
 
 .reader-main:focus {
-  outline: none;
+  outline: 2px solid #e8b8ae;
+  outline-offset: -2px;
 }
 
 .reader-view-toolbar,
@@ -1258,11 +1278,11 @@ button {
   grid-template-columns: 72px minmax(0, 1fr);
   border-bottom: 1px solid #eeebe5;
   content-visibility: auto;
-  contain-intrinsic-size: auto 52px;
+  contain-intrinsic-block-size: auto 52px;
 }
 
 .bilingual-transcript-line {
-  contain-intrinsic-size: auto 104px;
+  contain-intrinsic-block-size: auto 104px;
 }
 
 .transcript-line:target {
@@ -1439,7 +1459,8 @@ button {
 }
 
 .catalog-page:focus {
-  outline: none;
+  outline: 2px solid #e8b8ae;
+  outline-offset: -2px;
 }
 
 .home-catalog-page {
@@ -2226,6 +2247,12 @@ button {
     display: block;
     cursor: pointer;
     background: rgba(28, 25, 20, 0.34);
+    animation: sidebar-scrim-in 160ms ease both;
+  }
+
+  @keyframes sidebar-scrim-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   .global-sidebar {

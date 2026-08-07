@@ -1,4 +1,5 @@
 import rehypeSlug from "rehype-slug";
+import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -39,6 +40,7 @@ export async function markdownToHtml(
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeSlug)
+    .use(rehypeSanitize)
     .use(rehypeStringify)
     .process(linkedMarkdown);
   return String(file);

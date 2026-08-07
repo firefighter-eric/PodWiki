@@ -9,22 +9,48 @@ import {
   SquaresFour,
   X,
 } from "@phosphor-icons/react";
-import { LazyMotion, domAnimation, m } from "motion/react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { EpisodeSidebarTitle } from "@/components/episode-navigation-title";
-import type { EpisodeCard, ShowSummary } from "@/lib/types";
-import { SearchDialog } from "@/components/search-dialog";
-import { getSidebarEpisodeAriaLabel, getSidebarEpisodes } from "@/lib/sidebar-episodes";
+import type { ShowSummary, SidebarEpisode } from "@/lib/types";
+import {
+  getInitialSidebarScope,
+  getSidebarCatalogScope,
+  getSidebarEpisodeAriaLabel,
+  getSidebarEpisodes,
+  getSidebarScopeShowId,
+  retainSidebarScope,
+} from "@/lib/sidebar-episodes";
 
 const sidebarStorageKey = "podwiki.sidebar.v1";
+const SearchDialog = dynamic(() =>
+  import("@/components/search-dialog").then((module) => module.SearchDialog),
+);
 
 type AppShellProps = {
   shows: ShowSummary[];
-  episodes: EpisodeCard[];
+  episodes: SidebarEpisode[];
   children: React.ReactNode;
 };
+
+function sidebarIsCollapsed(): boolean {
+  return window.localStorage.getItem(sidebarStorageKey) === "collapsed";
+}
+
+function syncSidebarDocumentState() {
+  document.documentElement.dataset.sidebarState = sidebarIsCollapsed()
+    ? "collapsed"
+    : "expanded";
+}
 
 function preserveSelectableLinkText(event: React.MouseEvent<HTMLDivElement>) {
   if (
@@ -52,8 +78,23 @@ function preserveSelectableLinkText(event: React.MouseEvent<HTMLDivElement>) {
 
 export function AppShell({ shows, episodes, children }: AppShellProps) {
   const pathname = usePathname();
+  const catalogScope = getSidebarCatalogScope(pathname, shows);
+  const [sidebarScopeState, setSidebarScopeState] = useState(() => ({
+    catalogScope,
+    retainedScope: getInitialSidebarScope(pathname, shows),
+  }));
+  if (catalogScope !== sidebarScopeState.catalogScope) {
+    setSidebarScopeState({
+      catalogScope,
+      retainedScope: retainSidebarScope(sidebarScopeState.retainedScope, catalogScope),
+    });
+  }
+  const sidebarScope = catalogScope ?? sidebarScopeState.retainedScope;
   const subscribeToSidebar = useCallback((callback: () => void) => {
-    const handleChange = () => callback();
+    const handleChange = () => {
+      syncSidebarDocumentState();
+      callback();
+    };
     window.addEventListener("storage", handleChange);
     window.addEventListener("podwiki-sidebar-change", handleChange);
     return () => {
@@ -63,12 +104,14 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
   }, []);
   const collapsed = useSyncExternalStore(
     subscribeToSidebar,
-    () => window.localStorage.getItem(sidebarStorageKey) === "collapsed",
+    sidebarIsCollapsed,
     () => false,
   );
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchLoaded, setSearchLoaded] = useState(false);
   const mobileTriggerRef = useRef<HTMLButtonElement>(null);
+  const searchReturnFocusRef = useRef<HTMLElement | null>(null);
   const sidebarRef = useRef<HTMLElement>(null);
   const activeEpisodeRef = useRef<HTMLAnchorElement>(null);
   const subscribeToMobileViewport = useCallback((callback: () => void) => {
@@ -83,22 +126,30 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
   );
   const isReaderRoute = pathname.includes("/episodes/");
   const totalEpisodes = shows.reduce((total, show) => total + show.episodeCount, 0);
-  const selectedShow = shows.find(
-    (show) => pathname === show.href || pathname.startsWith(`${show.href}/`),
-  );
+  const selectedShowId = getSidebarScopeShowId(sidebarScope);
+  const selectedShow = shows.find((show) => show.id === selectedShowId);
   const visibleEpisodes = getSidebarEpisodes(episodes, selectedShow?.id);
   const showShortTitleById = new Map(shows.map((show) => [show.id, show.shortTitle]));
+
+  useLayoutEffect(() => {
+    syncSidebarDocumentState();
+  }, []);
 
   useEffect(() => {
     const handleShortcut = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
+        searchReturnFocusRef.current = isMobile
+          ? mobileTriggerRef.current
+          : document.activeElement instanceof HTMLElement ? document.activeElement : null;
+        setMobileOpen(false);
+        setSearchLoaded(true);
         setSearchOpen(true);
       }
     };
     window.addEventListener("keydown", handleShortcut);
     return () => window.removeEventListener("keydown", handleShortcut);
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     if (!mobileOpen || !isMobile) return;
@@ -135,6 +186,15 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
     window.setTimeout(() => mobileTriggerRef.current?.focus(), 0);
   };
 
+  const openSearch = () => {
+    searchReturnFocusRef.current = isMobile
+      ? mobileTriggerRef.current
+      : document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    setMobileOpen(false);
+    setSearchLoaded(true);
+    setSearchOpen(true);
+  };
+
   const handleSidebarKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
     if (!mobileOpen || !isMobile) return;
     if (event.key === "Escape") {
@@ -159,10 +219,17 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
-      <a className="skip-link" href="#main-content">跳到正文</a>
+    <>
+      <a
+        className="skip-link"
+        href="#main-content"
+        inert={searchOpen || (isMobile && mobileOpen) ? true : undefined}
+      >
+        跳到正文
+      </a>
       <div
         className={`app-shell${collapsed ? " sidebar-collapsed" : ""}`}
+        inert={searchOpen ? true : undefined}
         onClickCapture={preserveSelectableLinkText}
       >
         <button
@@ -172,33 +239,32 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
           aria-label="打开节目导航"
           aria-expanded={mobileOpen}
           aria-controls="global-sidebar"
+          inert={mobileOpen ? true : undefined}
           onClick={() => setMobileOpen(true)}
         >
           <List size={22} weight="regular" />
         </button>
 
         {mobileOpen ? (
-          <m.button
+          <button
             className="sidebar-scrim"
             type="button"
-            aria-label="关闭节目导航"
+            aria-hidden="true"
+            tabIndex={-1}
             onClick={closeMobile}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
           />
         ) : null}
 
-        <m.aside
+        <aside
           ref={sidebarRef}
           id="global-sidebar"
           className={`global-sidebar${mobileOpen ? " mobile-open" : ""}`}
           aria-label="节目导航"
+          role={isMobile ? "dialog" : undefined}
+          aria-modal={isMobile && mobileOpen ? true : undefined}
           aria-hidden={isMobile && !mobileOpen ? true : undefined}
           inert={isMobile && !mobileOpen ? true : undefined}
           onKeyDown={handleSidebarKeyDown}
-          layout
-          transition={{ duration: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
         >
           <div className="sidebar-header">
             <Link
@@ -235,14 +301,13 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
               className="search-trigger"
               type="button"
               aria-label="搜索全文"
-              onClick={() => {
-                setMobileOpen(false);
-                setSearchOpen(true);
-              }}
+              onClick={openSearch}
             >
               <MagnifyingGlass size={19} />
               <span className="sidebar-label">搜索全文</span>
-              <kbd className="sidebar-shortcut">⌘K</kbd>
+              <kbd className="sidebar-shortcut" aria-label="快捷键 Command K 或 Control K">
+                ⌘/Ctrl K
+              </kbd>
             </button>
 
             <nav className="show-navigation" aria-label="播客与单集">
@@ -252,11 +317,11 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
               </div>
               <div className="show-filter-list">
                 <Link
-                  className={`show-row all-shows-row selectable-content-link${pathname === "/shows" ? " active" : ""}`}
+                  className={`show-row all-shows-row selectable-content-link${sidebarScope === "all" ? " active" : ""}`}
                   href="/shows"
                   draggable={false}
                   aria-label="全部播客来源"
-                  aria-current={pathname === "/shows" ? "page" : undefined}
+                  aria-current={pathname === "/shows" ? "page" : sidebarScope === "all" ? "location" : undefined}
                   onClick={(event) => {
                     if (!event.defaultPrevented) setMobileOpen(false);
                   }}
@@ -270,7 +335,7 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                   </span>
                 </Link>
                 {shows.map((show) => {
-                  const active = selectedShow?.id === show.id;
+                  const active = selectedShowId === show.id;
                   return (
                     <Link
                       key={show.id}
@@ -278,7 +343,7 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                       href={show.href}
                       draggable={false}
                       aria-label={`${show.title}，${show.episodeCount} 期内容`}
-                      aria-current={pathname === show.href ? "page" : undefined}
+                      aria-current={pathname === show.href ? "page" : active ? "location" : undefined}
                       onClick={(event) => {
                         if (!event.defaultPrevented) setMobileOpen(false);
                       }}
@@ -351,16 +416,24 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
               <CaretRight className="sidebar-label settings-caret" size={18} />
             </a>
           ) : null}
-        </m.aside>
+        </aside>
 
-        <div className="app-surface">{children}</div>
+        <div
+          className="app-surface"
+          inert={isMobile && mobileOpen ? true : undefined}
+        >
+          {children}
+        </div>
       </div>
 
-      <SearchDialog
-        open={searchOpen}
-        onClose={() => setSearchOpen(false)}
-        recentEpisodes={episodes.slice(0, 8)}
-      />
-    </LazyMotion>
+      {searchLoaded ? (
+        <SearchDialog
+          open={searchOpen}
+          onClose={() => setSearchOpen(false)}
+          recentEpisodes={episodes.slice(0, 8)}
+          returnFocusRef={searchReturnFocusRef}
+        />
+      ) : null}
+    </>
   );
 }

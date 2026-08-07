@@ -100,7 +100,11 @@ export async function SummaryView({ episode }: { episode: Episode }) {
             </a>
           ))}
         </div>
-        <Link className="full-transcript-link" href={getTranscriptHref(episode.href)}>
+        <Link
+          className="full-transcript-link"
+          href={getTranscriptHref(episode.href)}
+          prefetch={false}
+        >
           查看完整逐字稿（共 {episode.transcriptSegments.length.toLocaleString("zh-CN")} 段） →
         </Link>
       </section>

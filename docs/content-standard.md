@@ -94,6 +94,10 @@ show_id: whynottv
 episode_key: "004"
 ```
 
+`episode_key` 只使用小写 ASCII 字母、数字和分隔单词的单个连字符，不能使用
+空格、下划线、连续连字符或首尾连字符。纯数字 key 必须作为带引号的 YAML
+字符串保存，避免 `004` 被解析成数值后丢失前导零。
+
 单集目录使用 `<episode_key>-<short-slug>`，例如：
 
 ```text
@@ -101,6 +105,8 @@ episode_key: "004"
 ```
 
 目录名用于阅读，front matter 中的 `id` 才是稳定主键。
+每个单集 `id` 在整个仓库中必须唯一，并且必须精确等于
+`<show_id>:<episode_key>`；不得让两个目录复用同一主键。
 
 `episode_number` 只保存出版方明确给出的正式期号；没有正式期号时写为
 `null`，不得用抓取顺序、输入顺序、平台合集位置或发布日期推导。无正式
@@ -165,6 +171,8 @@ numbering:
 ## 3. URL 规范
 
 所有内容来源只保存规范链接，不保存用户提供的原始追踪链接。
+每集必须至少登记一个 `sources` 条目，并且恰好一个条目使用 YAML 布尔值
+`preferred: true` 作为 Web 首选来源；其余条目可以写 `preferred: false` 或省略。
 
 Bilibili 视频地址固定为：
 
@@ -191,9 +199,11 @@ https://www.bilibili.com/video/<BVID>/
 
 ## 4. 时间和日期
 
-- `published_at` 使用带时区的 RFC 3339 时间。
-- `duration_ms` 使用整数毫秒。
-- 正文时间码统一显示为 `[HH:MM:SS]`。
+- `published_at` 使用带时区的 RFC 3339 时间，并作为带引号的 YAML 字符串保存。
+- `duration_ms` 使用正整数毫秒。
+- 正文时间码统一显示为 `[HH:MM:SS]`：小时固定为两位 `00`–`99`，分钟和秒
+  必须为 `00`–`59`。当前内容超过 99 小时时，应先更新格式契约与两端校验器，
+  不能直接写入三位小时。
 
 示例：
 
@@ -216,6 +226,15 @@ workflow:
 - `metadata`: `draft`、`verified`
 - `summary`: `empty`、`outline`、`draft`、`reviewed`
 - `transcript`: `not-started`、`source-acquired`、`machine`、`edited`、`reviewed`、`blocked`
+
+Web 只收录同时满足以下三项的单集：`metadata: verified`、`summary` 为
+`draft` 或 `reviewed`、`transcript` 为 `machine`、`edited` 或 `reviewed`。
+其他合法状态表示处理中的仓库记录，可以暂时没有总结或逐字稿资产，但不会进入
+节目页、侧栏、搜索或详情路由。达到 Web 收录状态后，`summary.path` 和
+`transcript.path` 指向的文件必须存在，否则构建与仓库校验失败，不能静默降级。
+处理中英文单集也可以先登记计划中的 `transcript.en.md` 并保留空的
+`transcript.translations`；一旦声明具体译稿条目，该条目的路径、哈希和对齐契约
+仍会立即校验。
 
 总结必须说明依据是完整逐字稿、平台简介还是平台章节，不能把基于简介的概览标成完整内容总结。
 
@@ -242,6 +261,9 @@ summary:
     selection_status: selected
     sha256: "<source-transcript-sha256>"
 ```
+
+通用的 `summary.path` 和 `transcript.path` 必须是单集目录内的相对 POSIX 路径；
+路径解析后的真实文件也必须留在该目录内，不能借助符号链接指向目录外文件。
 
 总结文件采用以下阅读层级：
 
