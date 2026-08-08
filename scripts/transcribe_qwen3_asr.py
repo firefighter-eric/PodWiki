@@ -498,11 +498,36 @@ def sentence_segments(
 
     segments: list[dict[str, Any]] = []
     item_index = 0
+    sentence_ranges: list[tuple[int, int]] = []
+    search_index = 0
     for sentence in sentences:
-        unit_count = len(alignment_units(sentence, language=language))
+        sentence_start = text.find(sentence, search_index)
+        if sentence_start < 0:
+            raise ValueError(f"could not locate sentence text after index {search_index}")
+        sentence_end = sentence_start + len(sentence)
+        sentence_ranges.append((sentence_start, sentence_end))
+        search_index = sentence_end
+
+    pending_start: int | None = None
+    for sentence_start, sentence_end in sentence_ranges:
+        if pending_start is None:
+            pending_start = sentence_start
+        sentence = text[pending_start:sentence_end].strip()
+        sentence_units = alignment_units(sentence, language=language)
+        unit_count = len(sentence_units)
+        expected_prefix = expected_units[item_index:item_index + unit_count]
+        if sentence_units != expected_prefix:
+            # English alignment removes punctuation inside each whitespace-delimited
+            # token. When mixed-language text has no gap after punctuation (for
+            # example, ``CEO。If``), the aligner emits one ``CEOIf`` item even though
+            # sentence splitting found a boundary. Keep the original intervening
+            # text and accumulate sentences until the token boundary is real.
+            continue
+
         if unit_count == 0:
             if segments:
                 segments[-1]["text"] += sentence
+            pending_start = None
             continue
 
         first_item = aligned_items[item_index]
@@ -521,6 +546,16 @@ def sentence_segments(
             }
         )
         item_index += unit_count
+        pending_start = None
+
+    if pending_start is not None:
+        pending_text = text[pending_start:sentence_ranges[-1][1]].strip()
+        pending_units = alignment_units(pending_text, language=language)
+        raise ValueError(
+            "sentence/alignment boundary mismatch after item "
+            f"{item_index}: sentence_units={pending_units[:5]!r}, "
+            f"expected={expected_units[item_index:item_index + 5]!r}"
+        )
 
     if item_index != len(aligned_items):
         raise ValueError(

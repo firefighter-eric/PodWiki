@@ -144,6 +144,7 @@ const showSchema = z
 const showOrder = [
   "zhangxiaojun",
   "sv101",
+  "svvector",
   "latetalk",
   "luoyonghao",
   "whynottv",

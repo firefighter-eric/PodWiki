@@ -174,7 +174,8 @@ describe("reader navigation", () => {
     }));
     expect(catalogHtml).toContain('<span class="episode-keyword">SGLang</span>');
     expect(catalogHtml).toContain('<span class="episode-keyword">Kimi</span>');
-    expect(catalogHtml).toContain(`class="catalog-tally" aria-label="2 期内容，来自 ${shows.length} 档播客"`);
+    expect(shows).toHaveLength(7);
+    expect(catalogHtml).toContain('class="catalog-tally" aria-label="2 期内容，来自 7 档播客"');
     expect(catalogHtml).not.toContain('class="show-grid"');
     expect(catalogHtml).toContain('<strong>盛颖</strong><span>SGLang、Infra 产品观与开源</span>');
     expect(catalogHtml).toContain('<strong>叶奇意</strong><span>AI 人才迁徙、Kimi 投资与 AGI</span>');
@@ -216,13 +217,40 @@ describe("reader navigation", () => {
     expect(recentItems.every((item) => !item.meta.includes("第 "))).toBe(true);
   });
 
+  it("uses verified participants before hosts and falls back to hosts in navigation", async () => {
+    const [shows, participantEpisode, hostEpisode] = await Promise.all([
+      getShows(),
+      getEpisode("yiqitietalk", "20-yao-miao"),
+      getEpisode("yiqitietalk", "1-sun-ruiyi-wu-xiangdong"),
+    ]);
+    expect(participantEpisode).toBeDefined();
+    expect(hostEpisode).toBeDefined();
+    expect(participantEpisode!.guests).toEqual([]);
+    expect(participantEpisode!.navigationTitle).toBe("姚妙 · 崇礼首野与少儿跑现场");
+    expect(hostEpisode!.guests).toEqual([]);
+    expect(hostEpisode!.navigationTitle).toBe("孙瑞一、吴向东 · 跑步媒体与播客初心");
+
+    const catalogHtml = renderToStaticMarkup(createElement(ShowCatalog, {
+      shows,
+      episodes: [participantEpisode!, hostEpisode!],
+      selectedShow: shows.find((show) => show.id === "yiqitietalk"),
+    }));
+    expect(catalogHtml).toContain('<strong class="show-episode-person">姚妙</strong>');
+    expect(catalogHtml).toContain(
+      '<strong class="show-episode-person">孙瑞一、吴向东</strong>',
+    );
+    expect(catalogHtml).not.toContain(
+      '<strong class="show-episode-person">吴向东</strong>',
+    );
+  });
+
   it("shows every podcast and up to three recent episodes on the homepage only", async () => {
     const [shows, episodes] = await Promise.all([getShows(), getEpisodes()]);
     const homeHtml = renderToStaticMarkup(createElement(ShowCatalog, { shows, episodes }));
 
-    expect(shows).toHaveLength(6);
-    expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(shows.length);
-    expect(homeHtml.match(/class="podcast-preview-episode selectable-content-link"/g)).toHaveLength(18);
+    expect(shows).toHaveLength(7);
+    expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(7);
+    expect(homeHtml.match(/class="podcast-preview-episode selectable-content-link"/g)).toHaveLength(21);
     expect(homeHtml).not.toContain("查看全部 0 期");
     expect(homeHtml).toContain("按播客浏览");
     expect(homeHtml).toContain('href="/shows/yiqitietalk"');
@@ -230,6 +258,7 @@ describe("reader navigation", () => {
     expect(homeHtml).not.toContain('href="/shows/xinkoukaihe"');
     expect(homeHtml).not.toContain('href="/shows/erdesancifang"');
     expect(homeHtml.match(/查看全部 12 期/g)).toHaveLength(2);
+    expect(homeHtml).toContain("查看全部 10 期");
     expect(homeHtml).toContain("查看全部 8 期");
     expect(homeHtml).toContain("查看全部 6 期");
     expect(homeHtml).toContain("查看全部 5 期");
@@ -248,6 +277,7 @@ describe("reader navigation", () => {
     const showIds = [
       "zhangxiaojun",
       "sv101",
+      "svvector",
       "latetalk",
       "luoyonghao",
       "whynottv",
