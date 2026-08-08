@@ -289,12 +289,29 @@ Windows/CUDA 中文组使用官方模型和独立解释器：
 engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B` 和
 `Qwen/Qwen3-ForcedAligner-0.6B`。默认参数为 `cuda:0`、`bfloat16`、SDPA、
 120 秒名义归属 chunk、5 秒上下文和 batch size 1；每个内部边界向两侧各多解码
-5 秒，再使用 ForcedAligner 的精确文字与时间对齐选择唯一交叉点；精确锚点必须来自至少
-3 个连续字符的匹配链；只有松散到超过 250 ms、且左右索引范围都被另一条链完整包住的短候选，才可被至少两倍长且全部配对均在 250 ms 内的冲突链淘汰。
-若一条完全位于 seam 之前的可靠链与跨 seam 长链仅复用长链开头 1–2 字，worker 会保留前链并裁掉长链的重复前缀；
+5 秒，再使用 ForcedAligner 的精确文字与时间对齐选择唯一交叉点。即使显式使用更宽 context，
+`forced-alignment-time-crossover-v3` 也只在 seam 前后各 3 秒内枚举 crossover anchor；宽 context 的其余部分仅用于完整强制对齐和 coverage，
+避免远离 seam 的重复口语制造假多解。精确锚点必须来自至少
+3 个连续字符的匹配链；只有松散到超过 400 ms、比冲突长链至少再松 250 ms，且左右索引范围都被该长链完整包住的短候选，才可被至少两倍长且全部配对均在 400 ms 内的冲突链淘汰。
+若一条完全位于 seam 单侧的可靠链与跨 seam 长链仅复用长链相邻边缘 1–2 字，worker 会保留单侧链并裁掉长链的重复前缀或后缀；
 裁后长链仍须至少两倍长、seam 两侧各有至少 3 字且全部配对在 250 ms 内。其余达到门限的最大连续候选链
 在两份对齐中必须形成不重叠、不交叉的唯一单调映射，
-等长、时间更紧或无法比较的重复短语多解仍失败关闭；只有全局唯一的连续 2 字符匹配链，且两组对齐时间差均不超过
+等长、时间更紧或无法比较的重复短语多解通常仍失败关闭。唯一例外是先按既有排序选出的最终 ownership cut 能证明所有可靠 exact pair
+都完整落在 cut 同一侧：此时多解只存在于最终完全取自同一个 decode 的内部，不会造成正文双留或双删；产物必须记录
+`ownership-cut-consistent-v1`、核对的 run 数和 pair 数。任何一对被 cut 分到不同 ownership 侧（包括只有一端恰好落在边界）仍立即失败，不得另找一个较宽松的 cut。
+重复单字造成相邻 diagonal 分叉时，只允许
+`adjacent-diagonal-repeated-token-indel-bubble-v1` 这一种窄修复：右侧必须恰好多一个相同单字，tight chain 与 shifted chain 的 offset 恰差 1，
+冲突只能位于前链尾部与后链开头的 1–2 个 pair。替代 pair 的时间差不得优于 tight chain，平均劣势至少 250 ms；裁去 shifted chain 的冲突前缀后，
+剩余 chain 必须至少两倍长、全部 pair 在 250 ms 内，并与其他 chain 形成严格唯一映射。最终按原排序选出的 anchor 仍必须来自 tight chain，
+所有 pair 对 resulting cut 一致。产物必须逐项记录 diagonal offset、裁前/裁后范围、时间差统计、anchor pair 和 cut；不能用模糊字符串去重或一般编辑距离扩大该例外。
+
+标准 3 字 anchor、严格 2 字 anchor 和 aligned-gap 全部无解时，worker 还可识别
+`exhausted-side-context-anchor`，但当前只允许左候选在 seam 前至少 15 秒、且至少占该 ownership core 的 15%（上限 27 秒）时明确耗尽；右候选还必须在默认 seam±3 秒窗口两侧各至少覆盖 3 字且有 item 跨 seam。
+左侧末端附近 ±3 秒必须只有一条至少 3 字、全部 pair 在 250 ms 内的原始 exact chain；完整 shared context 只用来收集反证，所有可靠 pair 都必须与该 handoff cut 一致，
+不得把全局 anchor 搜索半径扩大到 30 秒。接管最多丢弃左候选 1 个 item、1 个字、3 秒，最后保留的左 item 到首个右 item 的音频空隙不得超过 750 ms；
+survivor 在 exhausted frontier 到 seam 的桥段中不得留下超过 3 秒的未核实 alignment 空洞；每个更长空洞都必须单独解码并通过严格静音探测，活跃语音立即拒绝。产物记录窗口、frontier、shortfall、跨缝证据、原始完整 context 的全部可靠 run/pair、桥段最大空洞与逐段声学结果、弃尾和 handoff；随后仍执行全局 active-audio coverage。
+
+只有全局唯一的连续 2 字符匹配链，且两组对齐时间差均不超过
 250 ms 并记录严格置信证据时，才允许短链回退。aligned-gap 回退还必须证明整个空隙在声学上接近静音。短尾块会
 重新均分到最后两个归属区间，使边界语句只归属一个 chunk。对齐结果还会执行 active-audio coverage guard：worker 先汇总所有 chunk 的
 owned alignment，再把这份全局并集分别裁剪到每个归属区间；覆盖区间和文字密度都使用全局相交 items，不能因 item 由相邻 chunk 拥有而制造假空洞。

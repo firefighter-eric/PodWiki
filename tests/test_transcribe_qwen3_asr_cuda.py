@@ -143,6 +143,351 @@ def worker_args(directory: Path) -> argparse.Namespace:
     )
 
 
+def alignment_items_at_midpoints(
+    text: str,
+    midpoints: list[float],
+) -> list[dict[str, object]]:
+    return [
+        {
+            "text": character,
+            "start": midpoint - 0.02,
+            "end": midpoint + 0.02,
+        }
+        for character, midpoint in zip(text, midpoints, strict=True)
+    ]
+
+
+def observed_right_extra_indel_items(
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    left_text = "虽然我我这几天一直在遇到很多"
+    right_text = "虽然我我我这几天一直在遇到很多"
+    left_midpoints = [
+        1259.48,
+        1259.60,
+        1259.80,
+        1260.28,
+        1260.60,
+        1260.88,
+        1261.16,
+        1261.32,
+        1261.48,
+        1261.72,
+        1261.88,
+        1262.16,
+        1262.72,
+        1262.88,
+    ]
+    right_midpoints = [
+        1259.44,
+        1259.60,
+        1259.80,
+        1260.28,
+        1260.44,
+        1260.64,
+        1260.88,
+        1261.16,
+        1261.32,
+        1261.48,
+        1261.72,
+        1261.88,
+        1262.16,
+        1262.72,
+        1262.88,
+    ]
+    return (
+        alignment_items_at_midpoints(left_text, left_midpoints),
+        alignment_items_at_midpoints(right_text, right_midpoints),
+    )
+
+
+def observed_right_extra_indel_runs(
+    left_items: list[dict[str, object]],
+    right_items: list[dict[str, object]],
+    *,
+    earlier_run: list[tuple[int, int]] | None = None,
+    later_run: list[tuple[int, int]] | None = None,
+) -> list[tuple[list[tuple[int, int]], int, float]]:
+    left_overlap = list(enumerate(left_items))
+    right_overlap = list(enumerate(right_items))
+    runs = [
+        earlier_run or [(index, index) for index in range(4)],
+        later_run or [(2 + index, 3 + index) for index in range(12)],
+    ]
+    return [
+        (
+            run,
+            cuda_worker._match_run_characters(run, left_overlap),
+            cuda_worker._match_run_max_pair_delta(
+                run,
+                left_overlap,
+                right_overlap,
+            ),
+        )
+        for run in runs
+    ]
+
+
+def left_exhausted_seam_items(
+    *,
+    terminal_midpoint: float = 96.0,
+    edge_text: str = "甲乙丙",
+    edge_delta: float = 0.04,
+    tail_text: str = "",
+    handoff_gap: float = 0.28,
+    right_crosses_seam: bool = True,
+    crossing_start: float = 119.8,
+    crossing_end: float = 120.2,
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    last_anchor_midpoint = terminal_midpoint - 0.75 * len(tail_text)
+    first_anchor_midpoint = last_anchor_midpoint - 0.5 * (len(edge_text) - 1)
+    prefix_count = 36 - len(edge_text) - len(tail_text)
+    prefix_stop = first_anchor_midpoint - 1.0
+    prefix_step = (prefix_stop - 61.0) / max(1, prefix_count - 1)
+    prefix_midpoints = [61.0 + prefix_step * index for index in range(prefix_count)]
+    anchor_midpoints = [
+        first_anchor_midpoint + 0.5 * index for index in range(len(edge_text))
+    ]
+    tail_midpoints = [
+        last_anchor_midpoint + 0.75 * (index + 1)
+        for index in range(len(tail_text))
+    ]
+    left_items = alignment_items_at_midpoints(
+        "".join(chr(0x6000 + index) for index in range(prefix_count))
+        + edge_text
+        + tail_text,
+        [*prefix_midpoints, *anchor_midpoints, *tail_midpoints],
+    )
+    right_items = alignment_items_at_midpoints(
+        edge_text,
+        [midpoint + edge_delta for midpoint in anchor_midpoints],
+    )
+
+    next_text = 0x7000
+    bridge_start = float(left_items[prefix_count + len(edge_text) - 1]["end"])
+    bridge_start += handoff_gap
+    while bridge_start + 0.04 < 119.8:
+        right_items.append(
+            {
+                "text": chr(next_text),
+                "start": bridge_start,
+                "end": bridge_start + 0.04,
+            }
+        )
+        next_text += 1
+        bridge_start += 0.5
+    if right_crosses_seam:
+        right_items.append(
+            {
+                "text": chr(next_text),
+                "start": crossing_start,
+                "end": crossing_end,
+            }
+        )
+        next_text += 1
+    else:
+        right_items.extend(
+            [
+                {"text": chr(next_text), "start": 119.8, "end": 120.0},
+                {"text": chr(next_text + 1), "start": 120.0, "end": 120.2},
+            ]
+        )
+        next_text += 2
+    for midpoint in (120.5, 121.0, 121.5, 122.0, 122.5, 123.0):
+        right_items.append(
+            {
+                "text": chr(next_text),
+                "start": midpoint - 0.02,
+                "end": midpoint + 0.02,
+            }
+        )
+        next_text += 1
+    return left_items, right_items
+
+
+def shifted_alignment_items(
+    items: list[dict[str, object]],
+    offset_seconds: float,
+) -> list[dict[str, object]]:
+    return [
+        {
+            **item,
+            "start": float(item["start"]) + offset_seconds,
+            "end": float(item["end"]) + offset_seconds,
+        }
+        for item in items
+    ]
+
+
+def completed_two_chunk_raw_fixture(
+    *,
+    chunk_context: float,
+    left_items: list[dict[str, object]],
+    right_items: list[dict[str, object]],
+    left_stop: int,
+    right_start: int,
+    seam_record: dict[str, object],
+) -> tuple[argparse.Namespace, dict[str, object], dict[str, object]]:
+    args = worker_args(Path("fixture"))
+    args.language = "Chinese"
+    args.chunk_context = chunk_context
+    backend_options = cuda_worker.raw_backend_options(args)
+    windows = list(
+        cuda_worker.audio_chunk_ranges(
+            240.0,
+            chunk_duration=args.chunk_duration,
+            chunk_context=args.chunk_context,
+        )
+    )
+    item_sets = (left_items, right_items)
+    ownership_slices = ((0, left_stop), (right_start, len(right_items)))
+    segments: list[dict[str, object]] = []
+    for index, (window, items, ownership) in enumerate(
+        zip(windows, item_sets, ownership_slices, strict=True)
+    ):
+        decoded_text = "".join(str(item["text"]) for item in items)
+        owned_start, owned_stop = ownership
+        segments.append(
+            {
+                "id": index,
+                "start": cuda_worker.rounded_seconds(window.ownership_start),
+                "end": cuda_worker.rounded_seconds(window.ownership_end),
+                "decode_start": cuda_worker.rounded_seconds(window.decode_start),
+                "decode_end": cuda_worker.rounded_seconds(window.decode_end),
+                "decoded_text": decoded_text,
+                "text": "".join(
+                    str(item["text"])
+                    for item in items[owned_start:owned_stop]
+                ),
+                "owned_item_start": owned_start,
+                "owned_item_stop": owned_stop,
+            }
+        )
+    seam = {
+        "left_chunk_id": 0,
+        "right_chunk_id": 1,
+        **copy.deepcopy(seam_record),
+    }
+    document: dict[str, object] = {
+        "audio": {
+            "sample_rate_hz": cuda_worker.SAMPLE_RATE,
+            "duration_seconds": 240.0,
+        },
+        "options": {
+            "temperature": args.temperature,
+            "max_tokens_per_chunk": args.max_tokens,
+            "chunk_duration_seconds": args.chunk_duration,
+            "chunk_context_seconds": args.chunk_context,
+            "boundary_reconciliation": cuda_worker.BOUNDARY_RECONCILIATION_METHOD,
+            "alignment_coverage_guard": cuda_worker.ALIGNMENT_COVERAGE_GUARD,
+            "aligned_gap_guard": cuda_worker.ALIGNED_GAP_GUARD,
+            **backend_options,
+        },
+        "boundary_reconciliation": {
+            "method": cuda_worker.BOUNDARY_RECONCILIATION_METHOD,
+            "status": "complete",
+            "chunk_context_seconds": args.chunk_context,
+            "seams": [seam],
+        },
+        "text": cuda_worker.join_transcript_chunks(
+            [str(segment["text"]) for segment in segments],
+            language=args.language,
+        ),
+        "segments": segments,
+    }
+    return args, backend_options, document
+
+
+def completed_exhausted_fixture(
+    *,
+    edge_delta: float = 0.04,
+    crossing_start: float = 119.8,
+    crossing_end: float = 120.2,
+) -> tuple[
+    argparse.Namespace,
+    dict[str, object],
+    dict[str, object],
+    list[dict[str, object]],
+    list[dict[str, object]],
+]:
+    left_items, right_items = left_exhausted_seam_items(
+        edge_delta=edge_delta,
+        crossing_start=crossing_start,
+        crossing_end=crossing_end,
+    )
+    # Keep the synthetic first 120-second ownership dense enough that the
+    # exhausted frontier is its only coverage suspicion. The seam proof itself
+    # remains entirely inside the shared 90-150 second decode window.
+    left_items = alignment_items_at_midpoints(
+        "".join(chr(0x5800 + index) for index in range(30)),
+        [0.5 + 2.0 * index for index in range(30)],
+    ) + left_items
+    left_stop, right_start, record = cuda_worker.seam_crossover(
+        left_items,
+        right_items,
+        seam_seconds=120.0,
+        shared_start=90.0,
+        shared_end=150.0,
+        left_ownership_start=0.0,
+        right_ownership_end=240.0,
+    )
+    args, backend_options, document = completed_two_chunk_raw_fixture(
+        chunk_context=30.0,
+        left_items=left_items,
+        right_items=right_items,
+        left_stop=left_stop,
+        right_start=right_start,
+        seam_record=record,
+    )
+    return args, backend_options, document, left_items, right_items
+
+
+def aligned_document_for_two_chunk_fixture(
+    raw_document: dict[str, object],
+    *,
+    left_items: list[dict[str, object]],
+    right_items: list[dict[str, object]],
+    raw_output_path: Path,
+) -> dict[str, object]:
+    raw_segments = raw_document["segments"]
+    if not isinstance(raw_segments, list):
+        raise AssertionError("fixture raw segments must be a list")
+    item_sets = (left_items, right_items)
+    chunks: list[dict[str, object]] = []
+    for raw_chunk, items in zip(raw_segments, item_sets, strict=True):
+        if not isinstance(raw_chunk, dict):
+            raise AssertionError("fixture raw chunk must be an object")
+        owned_start = int(raw_chunk["owned_item_start"])
+        owned_stop = int(raw_chunk["owned_item_stop"])
+        owned_alignment = copy.deepcopy(items[owned_start:owned_stop])
+        chunks.append(
+            {
+                "decode_start": raw_chunk["decode_start"],
+                "decode_end": raw_chunk["decode_end"],
+                "decoded_text": raw_chunk["decoded_text"],
+                "owned_item_start": owned_start,
+                "owned_item_stop": owned_stop,
+                "text": "".join(
+                    str(item["text"]) for item in owned_alignment
+                ),
+                "alignment": owned_alignment,
+            }
+        )
+    raw_options = raw_document["options"]
+    if not isinstance(raw_options, dict):
+        raise AssertionError("fixture raw options must be an object")
+    return {
+        "options": {
+            "final_outro_exemption_seconds": raw_options[
+                "final_outro_exemption_seconds"
+            ]
+        },
+        "source": {
+            "raw_asr_path": cuda_worker.repository_path(raw_output_path),
+        },
+        "chunks": chunks,
+    }
+
+
 class ArgumentAndResultValidationTests(unittest.TestCase):
     def test_cli_defaults_to_bfloat16_batch_one_configuration(self) -> None:
         argv = [
@@ -375,15 +720,15 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
 
     def test_does_not_choose_an_isolated_filler_over_a_reliable_match_run(self) -> None:
         left = [
-            {"text": "甲", "start": 115.9, "end": 116.1},
-            {"text": "乙", "start": 116.1, "end": 116.3},
-            {"text": "丙", "start": 116.3, "end": 116.5},
+            {"text": "甲", "start": 117.1, "end": 117.3},
+            {"text": "乙", "start": 117.3, "end": 117.5},
+            {"text": "丙", "start": 117.5, "end": 117.7},
             {"text": "嗯", "start": 119.8, "end": 120.0},
         ]
         right = [
-            {"text": "甲", "start": 115.95, "end": 116.15},
-            {"text": "乙", "start": 116.15, "end": 116.35},
-            {"text": "丙", "start": 116.35, "end": 116.55},
+            {"text": "甲", "start": 117.15, "end": 117.35},
+            {"text": "乙", "start": 117.35, "end": 117.55},
+            {"text": "丙", "start": 117.55, "end": 117.75},
             {"text": "啊", "start": 119.5, "end": 119.7},
             {"text": "嗯", "start": 119.85, "end": 120.05},
         ]
@@ -398,6 +743,943 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
 
         self.assertEqual(record["anchor_text"], "丙")
         self.assertEqual(record["anchor_run_characters"], 3)
+
+    def test_ignores_repeated_phrase_candidates_outside_the_seam_search_window(
+        self,
+    ) -> None:
+        left = [
+            {"text": "a", "start": 115.0, "end": 115.1},
+            {"text": "b", "start": 115.1, "end": 115.2},
+            {"text": "c", "start": 115.2, "end": 115.3},
+            {"text": "x", "start": 119.6, "end": 119.7},
+            {"text": "y", "start": 119.9, "end": 120.0},
+            {"text": "z", "start": 120.2, "end": 120.3},
+        ]
+        right = [
+            {"text": "a", "start": 114.95, "end": 115.05},
+            {"text": "b", "start": 115.05, "end": 115.15},
+            {"text": "c", "start": 115.15, "end": 115.25},
+            {"text": "a", "start": 115.35, "end": 115.45},
+            {"text": "b", "start": 115.45, "end": 115.55},
+            {"text": "c", "start": 115.55, "end": 115.65},
+            {"text": "x", "start": 119.65, "end": 119.75},
+            {"text": "y", "start": 119.95, "end": 120.05},
+            {"text": "z", "start": 120.25, "end": 120.35},
+        ]
+
+        _, _, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=120.0,
+            shared_start=114.0,
+            shared_end=126.0,
+        )
+
+        self.assertEqual(record["strategy"], "exact-time-anchor")
+        self.assertEqual(record["anchor_run_characters"], 3)
+        self.assertIn(record["anchor_text"], {"x", "y", "z"})
+
+    def test_repairs_the_observed_right_extra_repeated_token_indel_bubble(
+        self,
+    ) -> None:
+        left_core, right_core = observed_right_extra_indel_items()
+        left = [
+            {"text": "左", "start": 1229.0, "end": 1229.01}
+            for _ in range(394)
+        ] + left_core
+        right = [
+            {"text": "右", "start": 1229.0, "end": 1229.01}
+            for _ in range(144)
+        ] + right_core
+
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=1260.0,
+            shared_start=1230.0,
+            shared_end=1290.0,
+        )
+
+        self.assertEqual((left_stop, right_start), (397, 147))
+        self.assertEqual(
+            "".join(str(item["text"]) for item in left[394:left_stop])
+            + "".join(str(item["text"]) for item in right[right_start:159]),
+            "虽然我我我这几天一直在遇到很多",
+        )
+        self.assertEqual(record["strategy"], "exact-time-anchor")
+        self.assertEqual(
+            record["ambiguity_resolution"],
+            cuda_worker.REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION,
+        )
+        repair = record["match_run_repair"]
+        self.assertEqual(
+            repair["method"],
+            cuda_worker.REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION,
+        )
+        self.assertEqual(repair["indel_side"], "right")
+        self.assertEqual(repair["repeated_text"], "我")
+        self.assertEqual(repair["diagonal_offsets"], [-250, -249])
+        self.assertEqual(repair["discarded_candidate_pair_count"], 2)
+        self.assertEqual(
+            repair["earlier_run"],
+            {
+                "left": [394, 397],
+                "right": [144, 147],
+                "characters": 4,
+                "max_pair_delta_seconds": 0.04,
+            },
+        )
+        self.assertEqual(repair["later_run_before"]["left"], [396, 407])
+        self.assertEqual(repair["later_run_before"]["right"], [147, 158])
+        self.assertEqual(
+            repair["alternative_delta_margin_seconds"],
+            {"minimum": 0.16, "mean": 0.32, "maximum": 0.48},
+        )
+        self.assertEqual(
+            repair["resulting_cut"],
+            {"left_stop": left_stop, "right_start": right_start},
+        )
+        self.assertTrue(repair["ownership_cut_consistent"])
+
+    def test_repeated_token_indel_repair_rejects_every_narrow_gate_violation(
+        self,
+    ) -> None:
+        cases: list[
+            tuple[
+                str,
+                list[dict[str, object]],
+                list[dict[str, object]],
+                list[tuple[list[tuple[int, int]], int, float]],
+            ]
+        ] = []
+
+        low_margin_left, low_margin_right = observed_right_extra_indel_items()
+        low_margin_left[2] = {
+            **low_margin_left[2],
+            "start": 1259.98,
+            "end": 1260.02,
+        }
+        cases.append(
+            (
+                "mean timing margin below 250 ms",
+                low_margin_left,
+                low_margin_right,
+                observed_right_extra_indel_runs(
+                    low_margin_left,
+                    low_margin_right,
+                ),
+            )
+        )
+
+        nonidentical_left, nonidentical_right = observed_right_extra_indel_items()
+        nonidentical_right[4] = {**nonidentical_right[4], "text": "你"}
+        cases.append(
+            (
+                "bubble tokens are not identical",
+                nonidentical_left,
+                nonidentical_right,
+                observed_right_extra_indel_runs(
+                    nonidentical_left,
+                    nonidentical_right,
+                ),
+            )
+        )
+
+        offset_left, offset_right = observed_right_extra_indel_items()
+        offset_right.append(
+            {"text": "尾", "start": 1263.0, "end": 1263.04}
+        )
+        offset_later_run = [(2 + index, 4 + index) for index in range(12)]
+        cases.append(
+            (
+                "diagonal offset differs by two",
+                offset_left,
+                offset_right,
+                observed_right_extra_indel_runs(
+                    offset_left,
+                    offset_right,
+                    later_run=offset_later_run,
+                ),
+            )
+        )
+
+        long_trim_left, long_trim_right = observed_right_extra_indel_items()
+        long_trim_earlier_run = [(index, index) for index in range(5)]
+        cases.append(
+            (
+                "repair would trim three pairs",
+                long_trim_left,
+                long_trim_right,
+                observed_right_extra_indel_runs(
+                    long_trim_left,
+                    long_trim_right,
+                    earlier_run=long_trim_earlier_run,
+                ),
+            )
+        )
+
+        crossing_left, crossing_right = observed_right_extra_indel_items()
+        crossing_runs = observed_right_extra_indel_runs(
+            crossing_left,
+            crossing_right,
+        )
+        crossing_run = [(4 + index, 4 + index) for index in range(3)]
+        crossing_runs.append(
+            (
+                crossing_run,
+                cuda_worker._match_run_characters(
+                    crossing_run,
+                    list(enumerate(crossing_left)),
+                ),
+                cuda_worker._match_run_max_pair_delta(
+                    crossing_run,
+                    list(enumerate(crossing_left)),
+                    list(enumerate(crossing_right)),
+                ),
+            )
+        )
+        cases.append(
+            (
+                "another candidate still crosses after repair",
+                crossing_left,
+                crossing_right,
+                crossing_runs,
+            )
+        )
+
+        for label, left, right, runs in cases:
+            with self.subTest(label=label):
+                self.assertIsNone(
+                    cuda_worker._repair_right_extra_repeated_token_indel_bubble(
+                        runs,
+                        list(enumerate(left)),
+                        list(enumerate(right)),
+                    )
+                )
+
+    def test_uses_a_unique_tight_anchor_at_an_exhausted_left_frontier(
+        self,
+    ) -> None:
+        left, right = left_exhausted_seam_items()
+
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=120.0,
+            shared_start=90.0,
+            shared_end=150.0,
+            left_ownership_start=60.0,
+            right_ownership_end=180.0,
+        )
+
+        self.assertEqual((left_stop, right_start), (len(left), 3))
+        self.assertEqual(
+            record["strategy"],
+            cuda_worker.EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY,
+        )
+        self.assertEqual(
+            record["fallback_method"],
+            cuda_worker.EXHAUSTED_SIDE_CONTEXT_ANCHOR_METHOD,
+        )
+        self.assertEqual(record["exhausted_side"], "left")
+        self.assertEqual(record["anchor_run_text"], "甲乙丙")
+        self.assertEqual(record["anchor_run_characters"], 3)
+        self.assertLessEqual(
+            record["anchor_run_max_pair_delta_seconds"],
+            cuda_worker.STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS,
+        )
+        self.assertEqual(record["expanded_run_count"], 1)
+        self.assertEqual(record["expanded_pair_count"], 3)
+        self.assertEqual(
+            record["discarded_exhausted_tail"],
+            {"items": 0, "characters": 0, "duration_seconds": 0.0, "text": ""},
+        )
+        self.assertLessEqual(
+            record["handoff_gap_seconds"],
+            cuda_worker.MAX_EXHAUSTED_HANDOFF_GAP_SECONDS,
+        )
+        self.assertTrue(record["ownership_cut_consistent"])
+
+    def test_exhausted_left_fallback_rejects_each_missing_proof(self) -> None:
+        ambiguous_left, ambiguous_right = left_exhausted_seam_items(
+            edge_text="甲乙丙丁甲乙丙"
+        )
+        ambiguous_edge_start = len(ambiguous_left) - 7
+        for items, index in (
+            (ambiguous_left, ambiguous_edge_start),
+            (ambiguous_right, 0),
+        ):
+            items[index] = {
+                **items[index],
+                "start": float(items[index]["start"]) + 0.1,
+                "end": float(items[index]["end"]) + 0.1,
+            }
+        ambiguous_right[3] = {**ambiguous_right[3], "text": "戊"}
+        cases = [
+            (
+                "shortfall below ten seconds",
+                left_exhausted_seam_items(terminal_midpoint=110.5),
+            ),
+            (
+                "right candidate does not span the seam",
+                left_exhausted_seam_items(right_crosses_seam=False),
+            ),
+            (
+                "edge anchor has only two characters",
+                left_exhausted_seam_items(edge_text="甲乙"),
+            ),
+            (
+                "edge anchor is ambiguous",
+                (ambiguous_left, ambiguous_right),
+            ),
+            (
+                "edge anchor exceeds the strict timing gate",
+                left_exhausted_seam_items(edge_delta=0.251),
+            ),
+            (
+                "more than one exhausted item would be discarded",
+                left_exhausted_seam_items(tail_text="丁戊"),
+            ),
+            (
+                "handoff gap exceeds 750 ms",
+                left_exhausted_seam_items(handoff_gap=0.751),
+            ),
+        ]
+        for label, (left, right) in cases:
+            with self.subTest(label=label), self.assertRaises(ValueError):
+                cuda_worker.seam_crossover(
+                    left,
+                    right,
+                    seam_seconds=120.0,
+                    shared_start=90.0,
+                    shared_end=150.0,
+                    left_ownership_start=60.0,
+                    right_ownership_end=180.0,
+                )
+
+    def test_exhausted_shortfall_is_bounded_from_fifteen_to_twenty_seven_seconds(
+        self,
+    ) -> None:
+        for shortfall, accepted in (
+            (14.999, False),
+            (15.0, True),
+            (27.0, True),
+            (27.001, False),
+        ):
+            left, right = left_exhausted_seam_items(
+                terminal_midpoint=120.0 - shortfall - 0.02,
+            )
+            with self.subTest(shortfall=shortfall):
+                if not accepted:
+                    with self.assertRaises(ValueError):
+                        cuda_worker.seam_crossover(
+                            left,
+                            right,
+                            seam_seconds=120.0,
+                            shared_start=90.0,
+                            shared_end=150.0,
+                            left_ownership_start=60.0,
+                            right_ownership_end=180.0,
+                        )
+                    continue
+                _, _, record = cuda_worker.seam_crossover(
+                    left,
+                    right,
+                    seam_seconds=120.0,
+                    shared_start=90.0,
+                    shared_end=150.0,
+                    left_ownership_start=60.0,
+                    right_ownership_end=180.0,
+                )
+                self.assertEqual(
+                    record["strategy"],
+                    cuda_worker.EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY,
+                )
+                self.assertAlmostEqual(
+                    record["uncovered_to_seam_seconds"],
+                    shortfall,
+                    places=3,
+                )
+
+    def test_exhausted_shortfall_minimum_scales_with_core_duration(self) -> None:
+        def candidate(
+            *,
+            core_seconds: float,
+            shortfall: float,
+        ) -> tuple[
+            list[dict[str, object]],
+            list[dict[str, object]],
+            int,
+            int,
+            dict[str, object],
+        ]:
+            left, right = left_exhausted_seam_items(
+                terminal_midpoint=120.0 - shortfall - 0.02,
+            )
+            if core_seconds == 120.0:
+                left = alignment_items_at_midpoints(
+                    "".join(chr(0x5900 + index) for index in range(30)),
+                    [0.5 + 2.0 * index for index in range(30)],
+                ) + left
+            left_stop, right_start, record = cuda_worker.seam_crossover(
+                left,
+                right,
+                seam_seconds=120.0,
+                shared_start=90.0,
+                shared_end=150.0,
+                left_ownership_start=120.0 - core_seconds,
+                right_ownership_end=120.0 + core_seconds,
+            )
+            return left, right, left_stop, right_start, record
+
+        for core_seconds, rejected, accepted in (
+            (120.0, 17.999, 18.0),
+            (60.0, 14.999, 15.0),
+        ):
+            with self.subTest(core_seconds=core_seconds, shortfall=rejected):
+                with self.assertRaises(ValueError):
+                    candidate(
+                        core_seconds=core_seconds,
+                        shortfall=rejected,
+                    )
+
+            left, right, _, _, record = candidate(
+                core_seconds=core_seconds,
+                shortfall=accepted,
+            )
+            self.assertAlmostEqual(
+                record["uncovered_to_seam_seconds"],
+                accepted,
+                places=3,
+            )
+            seam = {
+                "left_chunk_id": 0,
+                "right_chunk_id": 1,
+                **record,
+            }
+            left_segment = {
+                "start": 120.0 - core_seconds,
+                "end": 120.0,
+                "decode_start": 90.0,
+                "decode_end": 150.0,
+                "decoded_text": "".join(str(item["text"]) for item in left),
+            }
+            right_segment = {
+                "start": 120.0,
+                "end": 120.0 + core_seconds,
+                "decode_start": 90.0,
+                "decode_end": 150.0,
+                "decoded_text": "".join(str(item["text"]) for item in right),
+            }
+            cuda_worker._validate_exhausted_side_context_anchor(
+                seam,
+                index=0,
+                left_segment=left_segment,
+                right_segment=right_segment,
+            )
+
+            underflow = copy.deepcopy(seam)
+            underflow["terminal_alignment_end_seconds"] = (
+                cuda_worker.rounded_seconds(120.0 - rejected)
+            )
+            underflow["uncovered_to_seam_seconds"] = rejected
+            with self.subTest(
+                core_seconds=core_seconds,
+                validator_shortfall=rejected,
+            ), self.assertRaises(ValueError):
+                cuda_worker._validate_exhausted_side_context_anchor(
+                    underflow,
+                    index=0,
+                    left_segment=left_segment,
+                    right_segment=right_segment,
+                )
+
+    def test_exhausted_anchor_pair_accepts_the_strict_delta_boundary(self) -> None:
+        for pair_delta in (0.2, 0.25):
+            with self.subTest(pair_delta=pair_delta):
+                args, backend_options, document, _, _ = (
+                    completed_exhausted_fixture(edge_delta=pair_delta)
+                )
+                seam = document["boundary_reconciliation"]["seams"][0]
+                self.assertAlmostEqual(
+                    seam["anchor_pair_delta_seconds"],
+                    pair_delta,
+                    places=3,
+                )
+                self.assertGreater(
+                    seam["anchor_midpoint_seconds"],
+                    seam["last_retained_left_end_seconds"],
+                )
+                self.assertLessEqual(
+                    seam["anchor_midpoint_seconds"],
+                    seam["last_retained_left_end_seconds"]
+                    + seam["anchor_pair_delta_seconds"] / 2.0
+                    + 0.001,
+                )
+                cuda_worker.validate_cuda_raw_integrity(
+                    document,
+                    args=args,
+                    backend_options=backend_options,
+                )
+
+        left, right = left_exhausted_seam_items(edge_delta=0.251)
+        with self.assertRaises(ValueError):
+            cuda_worker.seam_crossover(
+                left,
+                right,
+                seam_seconds=120.0,
+                shared_start=90.0,
+                shared_end=150.0,
+                left_ownership_start=60.0,
+                right_ownership_end=180.0,
+            )
+
+    def test_exhausted_crossing_item_is_bounded_by_midpoint_not_endpoints(
+        self,
+    ) -> None:
+        args, backend_options, document, _, _ = completed_exhausted_fixture(
+            crossing_start=116.9,
+            crossing_end=123.1,
+        )
+        seam = document["boundary_reconciliation"]["seams"][0]
+        self.assertEqual(seam["default_window_seconds"], [117.0, 123.0])
+        crossing = seam["right_crossing_item"]
+        self.assertEqual(crossing["start_seconds"], 116.9)
+        self.assertEqual(crossing["end_seconds"], 123.1)
+        self.assertEqual(
+            (crossing["start_seconds"] + crossing["end_seconds"]) / 2.0,
+            120.0,
+        )
+        cuda_worker.validate_cuda_raw_integrity(
+            document,
+            args=args,
+            backend_options=backend_options,
+        )
+
+        left, right = left_exhausted_seam_items(
+            crossing_start=119.8,
+            crossing_end=126.4,
+        )
+        with self.assertRaises(ValueError):
+            cuda_worker.seam_crossover(
+                left,
+                right,
+                seam_seconds=120.0,
+                shared_start=90.0,
+                shared_end=150.0,
+                left_ownership_start=60.0,
+                right_ownership_end=180.0,
+            )
+
+    def test_exhausted_bridge_cannot_borrow_a_discarded_crossing_item(self) -> None:
+        left, right = left_exhausted_seam_items()
+        crossing_index = next(
+            index
+            for index, item in enumerate(right)
+            if float(item["start"]) < 120.0 < float(item["end"])
+        )
+        discarded_crossing = right.pop(crossing_index)
+        right.insert(0, discarded_crossing)
+        expected_right_start = 4
+        self.assertLess(right.index(discarded_crossing), expected_right_start)
+        self.assertFalse(
+            any(
+                float(item["start"]) < 120.0 < float(item["end"])
+                for item in right[expected_right_start:]
+            )
+        )
+
+        with self.assertRaises(ValueError):
+            cuda_worker.seam_crossover(
+                left,
+                right,
+                seam_seconds=120.0,
+                shared_start=90.0,
+                shared_end=150.0,
+                left_ownership_start=60.0,
+                right_ownership_end=180.0,
+            )
+
+    def test_exhausted_bridge_gap_guard_probes_strictly_over_three_seconds(
+        self,
+    ) -> None:
+        def seam_with_bridge_gap(duration: float) -> dict[str, object]:
+            left, right = left_exhausted_seam_items()
+            right = [*right[:4], *copy.deepcopy(right[10:])]
+            right[4] = {
+                **right[4],
+                "start": float(right[3]["end"]) + duration,
+                "end": float(right[3]["end"]) + duration + 0.04,
+            }
+            _, _, record = cuda_worker.seam_crossover(
+                left,
+                right,
+                seam_seconds=120.0,
+                shared_start=90.0,
+                shared_end=150.0,
+                left_ownership_start=60.0,
+                right_ownership_end=180.0,
+            )
+            return record
+
+        exactly_three = seam_with_bridge_gap(3.0)
+        self.assertEqual(
+            exactly_three["bridge_gap_guard"],
+            {
+                "method": cuda_worker.EXHAUSTED_BRIDGE_GAP_GUARD,
+                "status": "verified",
+                "maximum_unprobed_gap_seconds": 3.0,
+                "maximum_observed_gap_seconds": 3.0,
+                "probes": [],
+            },
+        )
+
+        active = seam_with_bridge_gap(3.001)
+        active_guard = active["bridge_gap_guard"]
+        self.assertEqual(active_guard["status"], "pending")
+        self.assertEqual(
+            active_guard["probes"],
+            [
+                {
+                    "start_seconds": 96.34,
+                    "end_seconds": 99.341,
+                    "duration_seconds": 3.001,
+                    "acoustic_status": "pending",
+                }
+            ],
+        )
+        with (
+            patch.object(cuda_worker, "decode_audio_chunk", return_value=FakeAudio()),
+            patch.object(cuda_worker, "contains_low_energy_window", return_value=True),
+            patch.object(
+                cuda_worker,
+                "active_audio_statistics",
+                return_value=(0.5, 0.5),
+            ),
+            self.assertRaisesRegex(ValueError, "survivor bridge is not acoustically quiet"),
+        ):
+            cuda_worker.enforce_exhausted_bridge_gap_silence(
+                input_path=Path("source.m4a"),
+                seam_records=[active],
+                ffmpeg="ffmpeg",
+                numpy_module=object(),
+            )
+        self.assertEqual(active_guard["status"], "pending")
+
+        quiet = seam_with_bridge_gap(3.001)
+        with (
+            patch.object(cuda_worker, "decode_audio_chunk", return_value=FakeAudio()),
+            patch.object(cuda_worker, "contains_low_energy_window", return_value=True),
+            patch.object(
+                cuda_worker,
+                "active_audio_statistics",
+                return_value=(0.2, 0.2),
+            ),
+        ):
+            cuda_worker.enforce_exhausted_bridge_gap_silence(
+                input_path=Path("source.m4a"),
+                seam_records=[quiet],
+                ffmpeg="ffmpeg",
+                numpy_module=object(),
+            )
+        quiet_guard = quiet["bridge_gap_guard"]
+        self.assertEqual(quiet_guard["status"], "verified")
+        self.assertEqual(
+            quiet_guard["probes"][0],
+            {
+                "start_seconds": 96.34,
+                "end_seconds": 99.341,
+                "duration_seconds": 3.001,
+                "acoustic_status": "verified-quiet",
+                "window_seconds": cuda_worker.GAP_SILENCE_WINDOW_SECONDS,
+                "maximum_dbfs": cuda_worker.GAP_SILENCE_DBFS,
+                "maximum_active_seconds": cuda_worker.GAP_MAX_ACTIVE_SECONDS,
+                "maximum_active_fraction": cuda_worker.GAP_MAX_ACTIVE_FRACTION,
+                "active_seconds": 0.2,
+                "active_fraction": 0.2,
+            },
+        )
+
+    def test_indel_validator_rejects_structurally_plausible_tampering(self) -> None:
+        left_core, right_core = observed_right_extra_indel_items()
+        left = [
+            {"text": "左", "start": 1229.0, "end": 1229.01}
+            for _ in range(394)
+        ] + left_core
+        right = [
+            {"text": "右", "start": 1229.0, "end": 1229.01}
+            for _ in range(144)
+        ] + right_core
+        _, _, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=1260.0,
+            shared_start=1230.0,
+            shared_end=1290.0,
+        )
+        cuda_worker._validate_repeated_token_indel_evidence(record, index=0)
+
+        cases: list[tuple[str, dict[str, object]]] = []
+
+        boolean_count = copy.deepcopy(record)
+        boolean_count["match_run_repair"]["post_repair_run_count"] = True
+        cases.append(("boolean count", boolean_count))
+
+        off_diagonal = copy.deepcopy(record)
+        off_diagonal["match_run_repair"]["diagonal_offsets"][1] += 1
+        cases.append(("off-diagonal run", off_diagonal))
+
+        shortened_endpoint = copy.deepcopy(record)
+        later_after = shortened_endpoint["match_run_repair"]["later_run_after"]
+        later_after["left"][1] -= 1
+        later_after["right"][1] -= 1
+        cases.append(("later-after endpoint", shortened_endpoint))
+
+        top_level_anchor = copy.deepcopy(record)
+        top_level_anchor["anchor_run_characters"] += 1
+        cases.append(("top-level anchor mismatch", top_level_anchor))
+
+        for label, tampered in cases:
+            with self.subTest(label=label), self.assertRaises(ValueError):
+                cuda_worker._validate_repeated_token_indel_evidence(
+                    tampered,
+                    index=0,
+                )
+
+    def test_specialized_raw_cuts_are_bound_to_their_adjacent_chunks(self) -> None:
+        left_core, right_core = observed_right_extra_indel_items()
+        left = shifted_alignment_items(
+            [
+                {"text": "左", "start": 1229.0, "end": 1229.01}
+                for _ in range(394)
+            ]
+            + left_core,
+            -1140.0,
+        )
+        right = shifted_alignment_items(
+            [
+                {"text": "右", "start": 1229.0, "end": 1229.01}
+                for _ in range(144)
+            ]
+            + right_core,
+            -1140.0,
+        )
+        left_stop, right_start, indel_record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=120.0,
+            shared_start=115.0,
+            shared_end=125.0,
+        )
+        args, backend_options, indel_raw = completed_two_chunk_raw_fixture(
+            chunk_context=5.0,
+            left_items=left,
+            right_items=right,
+            left_stop=left_stop,
+            right_start=right_start,
+            seam_record=indel_record,
+        )
+        cuda_worker.validate_cuda_raw_integrity(
+            indel_raw,
+            args=args,
+            backend_options=backend_options,
+        )
+
+        exhausted_args, exhausted_backend, exhausted_raw, _, _ = (
+            completed_exhausted_fixture()
+        )
+        cuda_worker.validate_cuda_raw_integrity(
+            exhausted_raw,
+            args=exhausted_args,
+            backend_options=exhausted_backend,
+        )
+
+        for label, baseline, cut_field in (
+            ("indel left", indel_raw, (0, "owned_item_stop")),
+            ("indel right", indel_raw, (1, "owned_item_start")),
+            ("exhausted left", exhausted_raw, (0, "owned_item_stop")),
+            ("exhausted right", exhausted_raw, (1, "owned_item_start")),
+        ):
+            tampered = copy.deepcopy(baseline)
+            chunk_index, field = cut_field
+            tampered["segments"][chunk_index][field] += 1
+            with self.subTest(label=label), self.assertRaisesRegex(
+                ValueError,
+                "cut does not match its chunks",
+            ):
+                selected_args = args if baseline is indel_raw else exhausted_args
+                selected_backend = (
+                    backend_options
+                    if baseline is indel_raw
+                    else exhausted_backend
+                )
+                cuda_worker.validate_cuda_raw_integrity(
+                    tampered,
+                    args=selected_args,
+                    backend_options=selected_backend,
+                )
+
+    def test_exhausted_raw_validator_rejects_forged_bounds_and_bridge_evidence(
+        self,
+    ) -> None:
+        args, backend_options, document, _, _ = completed_exhausted_fixture()
+        cuda_worker.validate_cuda_raw_integrity(
+            document,
+            args=args,
+            backend_options=backend_options,
+        )
+
+        cases: list[tuple[str, dict[str, object]]] = []
+
+        shared_window = copy.deepcopy(document)
+        shared_seam = shared_window["boundary_reconciliation"]["seams"][0]
+        shared_seam["shared_window_seconds"] = [89.0, 150.0]
+        shared_seam["expanded_window_seconds"] = [89.0, 150.0]
+        cases.append(("shared window", shared_window))
+
+        crossing_time = copy.deepcopy(document)
+        crossing_time["boundary_reconciliation"]["seams"][0][
+            "right_crossing_item"
+        ]["start_seconds"] = 120.0
+        cases.append(("crossing time", crossing_time))
+
+        crossing_index = copy.deepcopy(document)
+        crossing_seam = crossing_index["boundary_reconciliation"]["seams"][0]
+        crossing_seam["right_crossing_item"]["index"] = (
+            crossing_seam["right_start"] - 1
+        )
+        cases.append(("crossing index", crossing_index))
+
+        bridge = copy.deepcopy(document)
+        bridge_guard = bridge["boundary_reconciliation"]["seams"][0][
+            "bridge_gap_guard"
+        ]
+        bridge_guard["maximum_observed_gap_seconds"] = 25.0
+        cases.append(("bridge maximum", bridge))
+
+        for label, tampered in cases:
+            with self.subTest(label=label), self.assertRaises(ValueError):
+                cuda_worker.validate_cuda_raw_integrity(
+                    tampered,
+                    args=args,
+                    backend_options=backend_options,
+                )
+
+    def test_normal_exact_anchor_must_stay_near_seam_and_own_its_side(self) -> None:
+        left = [
+            {"text": "甲", "start": 119.5, "end": 119.8},
+            {"text": "乙", "start": 119.8, "end": 120.1},
+            {"text": "丙", "start": 120.6, "end": 120.9},
+            {"text": "丁", "start": 120.9, "end": 121.1},
+        ]
+        right = [
+            {"text": "甲", "start": 119.45, "end": 119.75},
+            {"text": "乙", "start": 119.78, "end": 120.12},
+            {"text": "丙", "start": 120.65, "end": 120.85},
+            {"text": "丁", "start": 120.92, "end": 121.08},
+        ]
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=120.0,
+            shared_start=115.0,
+            shared_end=125.0,
+        )
+        args, backend_options, document = completed_two_chunk_raw_fixture(
+            chunk_context=5.0,
+            left_items=left,
+            right_items=right,
+            left_stop=left_stop,
+            right_start=right_start,
+            seam_record=record,
+        )
+        cuda_worker.validate_cuda_raw_integrity(
+            document,
+            args=args,
+            backend_options=backend_options,
+        )
+
+        far_midpoint = copy.deepcopy(document)
+        far_midpoint["boundary_reconciliation"]["seams"][0][
+            "anchor_midpoint_seconds"
+        ] = 124.0
+        reversed_owner = copy.deepcopy(document)
+        owner_seam = reversed_owner["boundary_reconciliation"]["seams"][0]
+        owner_seam["anchor_owner"] = (
+            "right" if owner_seam["anchor_owner"] == "left" else "left"
+        )
+
+        for label, tampered in (
+            ("far midpoint", far_midpoint),
+            ("reversed owner", reversed_owner),
+        ):
+            with self.subTest(label=label), self.assertRaisesRegex(
+                ValueError,
+                "outside its search window",
+            ):
+                cuda_worker.validate_cuda_raw_integrity(
+                    tampered,
+                    args=args,
+                    backend_options=backend_options,
+                )
+
+    def test_aligned_exhausted_evidence_is_recomputed_from_owned_items(self) -> None:
+        args, backend_options, raw, left_items, right_items = (
+            completed_exhausted_fixture()
+        )
+        cuda_worker.validate_cuda_raw_integrity(
+            raw,
+            args=args,
+            backend_options=backend_options,
+        )
+        raw_output_path = ROOT / "fixture-raw.json"
+        aligned = aligned_document_for_two_chunk_fixture(
+            raw,
+            left_items=left_items,
+            right_items=right_items,
+            raw_output_path=raw_output_path,
+        )
+        cuda_worker.validate_cuda_aligned_integrity(
+            aligned,
+            raw_output_path=raw_output_path,
+            raw_document=raw,
+        )
+
+        cases: list[tuple[str, dict[str, object]]] = []
+        before_count = copy.deepcopy(raw)
+        before_count["boundary_reconciliation"]["seams"][0][
+            "right_default_before_characters"
+        ] += 1
+        cases.append(("right before characters", before_count))
+
+        after_count = copy.deepcopy(raw)
+        after_count["boundary_reconciliation"]["seams"][0][
+            "right_default_after_characters"
+        ] += 1
+        cases.append(("right after characters", after_count))
+
+        crossing = copy.deepcopy(raw)
+        crossing["boundary_reconciliation"]["seams"][0][
+            "right_crossing_item"
+        ]["index"] += 1
+        cases.append(("crossing index", crossing))
+
+        bridge = copy.deepcopy(raw)
+        bridge["boundary_reconciliation"]["seams"][0]["bridge_gap_guard"][
+            "maximum_observed_gap_seconds"
+        ] += 0.1
+        cases.append(("bridge gaps", bridge))
+
+        for label, tampered_raw in cases:
+            with self.subTest(label=label), self.assertRaisesRegex(
+                ValueError,
+                "evidence does not match owned items|bridge gaps do not match owned items",
+            ):
+                cuda_worker.validate_cuda_aligned_integrity(
+                    aligned,
+                    raw_output_path=raw_output_path,
+                    raw_document=tampered_raw,
+                )
 
     def test_rejects_ambiguous_three_character_exact_match_runs(self) -> None:
         left = [
@@ -424,6 +1706,148 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
                 shared_start=118.5,
                 shared_end=120.8,
             )
+
+    def test_accepts_ambiguous_matches_wholly_on_one_ownership_side(self) -> None:
+        texts = list("abcabcxyz")
+        left = [
+            {
+                "text": text,
+                "start": 119.1 + index * 0.1,
+                "end": 119.15 + index * 0.1,
+            }
+            for index, text in enumerate(texts)
+        ]
+        right = [
+            {
+                "text": text,
+                "start": 119.11 + index * 0.1,
+                "end": 119.16 + index * 0.1,
+            }
+            for index, text in enumerate(texts)
+        ]
+
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=120.0,
+            shared_start=118.5,
+            shared_end=120.8,
+        )
+
+        self.assertEqual((left_stop, right_start), (9, 9))
+        self.assertEqual(
+            record["ambiguity_resolution"],
+            cuda_worker.OWNERSHIP_CUT_AMBIGUITY_RESOLUTION,
+        )
+        self.assertEqual(record["ambiguity_checked_run_count"], 3)
+        self.assertEqual(record["ambiguity_checked_pair_count"], 15)
+
+    def test_ownership_cut_guard_covers_observed_shapes_and_crossings(self) -> None:
+        left_overlap = [(index, {}) for index in range(520)]
+        right_overlap = [(index, {}) for index in range(190)]
+
+        def diagonal(
+            left_start: int,
+            left_end: int,
+            right_start: int,
+            right_end: int,
+        ) -> list[tuple[int, int]]:
+            self.assertEqual(left_end - left_start, right_end - right_start)
+            return list(
+                zip(
+                    range(left_start, left_end + 1),
+                    range(right_start, right_end + 1),
+                )
+            )
+
+        observed = [
+            (
+                478,
+                174,
+                [
+                    diagonal(457, 466, 154, 163),
+                    diagonal(463, 465, 167, 169),
+                    diagonal(469, 492, 165, 188),
+                    diagonal(471, 473, 160, 162),
+                ],
+            ),
+            (
+                493,
+                149,
+                [
+                    diagonal(474, 492, 130, 148),
+                    diagonal(495, 505, 152, 162),
+                    diagonal(505, 507, 163, 165),
+                ],
+            ),
+            (
+                472,
+                166,
+                [
+                    diagonal(456, 468, 151, 163),
+                    diagonal(470, 475, 164, 169),
+                    diagonal(475, 477, 170, 172),
+                    diagonal(481, 487, 175, 181),
+                    diagonal(488, 490, 183, 185),
+                ],
+            ),
+            (
+                495,
+                164,
+                [
+                    diagonal(478, 484, 148, 154),
+                    diagonal(485, 506, 154, 175),
+                ],
+            ),
+            (
+                387,
+                128,
+                [
+                    diagonal(380, 384, 122, 126),
+                    diagonal(381, 384, 124, 127),
+                    diagonal(381, 383, 125, 127),
+                    diagonal(382, 384, 123, 125),
+                    diagonal(387, 390, 128, 131),
+                    diagonal(394, 396, 135, 137),
+                ],
+            ),
+        ]
+        for left_stop, right_start, runs in observed:
+            with self.subTest(left_stop=left_stop, right_start=right_start):
+                candidates = [(run, len(run), 0.0) for run in runs]
+                consistent, checked_runs, checked_pairs = (
+                    cuda_worker._ownership_cut_consistency(
+                        candidates,
+                        left_overlap,
+                        right_overlap,
+                        left_stop=left_stop,
+                        right_start=right_start,
+                    )
+                )
+                self.assertTrue(consistent)
+                self.assertEqual(checked_runs, len(runs))
+                self.assertEqual(checked_pairs, sum(map(len, runs)))
+
+        crossing_cases = [
+            ([(4, 5)], 5, 5),
+            ([(5, 4)], 5, 5),
+            ([(5, 3)], 5, 4),
+            ([(3, 4)], 4, 4),
+        ]
+        for run, left_stop, right_start in crossing_cases:
+            with self.subTest(
+                run=run,
+                left_stop=left_stop,
+                right_start=right_start,
+            ):
+                consistent, _, _ = cuda_worker._ownership_cut_consistency(
+                    [(run, len(run), 0.0)],
+                    left_overlap,
+                    right_overlap,
+                    left_stop=left_stop,
+                    right_start=right_start,
+                )
+                self.assertFalse(consistent)
 
     def test_accepts_disjoint_ordered_three_character_match_runs(self) -> None:
         left = [
@@ -461,16 +1885,16 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
         left = [
             {
                 "text": text,
-                "start": 119.0 + index * 0.1,
-                "end": 119.05 + index * 0.1,
+                "start": 119.0 + index * 0.15,
+                "end": 119.05 + index * 0.15,
             }
             for index, text in enumerate(texts)
         ]
         right = [
             {
                 "text": text,
-                "start": 119.02 + index * 0.1,
-                "end": 119.07 + index * 0.1,
+                "start": 119.02 + index * 0.15,
+                "end": 119.07 + index * 0.15,
             }
             for index, text in enumerate(texts)
         ]
@@ -520,6 +1944,47 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
         )
 
         self.assertEqual(retained, [strong])
+
+    def test_dominance_accepts_observed_bounded_drift_for_a_contained_phrase(
+        self,
+    ) -> None:
+        strong = ([(487 + offset, 149 + offset) for offset in range(26)], 26, 0.32)
+        swapped_first = (
+            [(504 + offset, 169 + offset) for offset in range(3)],
+            3,
+            0.68,
+        )
+        swapped_second = (
+            [(507 + offset, 166 + offset) for offset in range(3)],
+            3,
+            0.68,
+        )
+
+        retained = cuda_worker._drop_strictly_dominated_match_runs(
+            [strong, swapped_first, swapped_second]
+        )
+
+        self.assertEqual(retained, [strong])
+
+    def test_dominance_requires_a_material_timing_advantage_and_containment(
+        self,
+    ) -> None:
+        strong_run = [(index, index) for index in range(8)]
+        contained_run = [(2 + index, 2 + index) for index in range(3)]
+        outside_run = [(2 + index, 7 + index) for index in range(3)]
+
+        cases = [
+            ((strong_run, 8, 0.399), (contained_run, 3, 0.401)),
+            ((strong_run, 8, 0.10), (contained_run, 3, 0.40)),
+            ((strong_run, 8, 0.401), (contained_run, 3, 0.80)),
+            ((strong_run, 8, 0.10), (outside_run, 3, 0.80)),
+        ]
+        for strong, alternative in cases:
+            with self.subTest(strong=strong, alternative=alternative):
+                retained = cuda_worker._drop_strictly_dominated_match_runs(
+                    [strong, alternative]
+                )
+                self.assertEqual(retained, [strong, alternative])
 
     def test_shorter_but_tighter_match_run_is_not_dominated(self) -> None:
         shorter = ([(0, 0), (1, 1), (2, 2)], 3, 0.04)
@@ -681,7 +2146,7 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
             nonspanning_runs,
         )
 
-    def test_edge_reuse_repair_does_not_infer_the_reverse_direction(self) -> None:
+    def test_edge_reuse_repair_accepts_the_symmetric_after_seam_suffix(self) -> None:
         def overlap_items(count: int) -> list[tuple[int, dict[str, object]]]:
             return [
                 (
@@ -706,15 +2171,59 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
             (after_seam_weak_run, 13, 0.04),
         ]
 
-        self.assertEqual(
-            cuda_worker._repair_edge_reuse_match_runs(
-                runs,
-                left_items,
-                right_items,
-                seam_seconds=119.5,
-            ),
+        repaired = cuda_worker._repair_edge_reuse_match_runs(
             runs,
+            left_items,
+            right_items,
+            seam_seconds=119.4,
         )
+
+        self.assertEqual(repaired[0][0], strong_run[:-2])
+        self.assertEqual(repaired[0][1], 27)
+        self.assertEqual(repaired[1], runs[1])
+
+    def test_edge_reuse_repair_matches_the_observed_one_sided_suffix(self) -> None:
+        def item(text: str, midpoint: float) -> dict[str, object]:
+            return {
+                "text": text,
+                "start": midpoint - 0.02,
+                "end": midpoint + 0.02,
+            }
+
+        left_midpoints = [117.0 + index * 0.12 for index in range(22)] + [
+            120.28,
+            120.40,
+            120.52,
+            120.64,
+        ]
+        right_midpoints = [
+            *(117.2 + index * 0.12 for index in range(22)),
+            119.84,
+            119.96,
+            120.08,
+        ]
+        left_items = [
+            (index, item(chr(0x5500 + index), midpoint))
+            for index, midpoint in enumerate(left_midpoints)
+        ]
+        right_items = [
+            (index, item(chr(0x5600 + index), midpoint))
+            for index, midpoint in enumerate(right_midpoints)
+        ]
+        strong_run = [(index, index) for index in range(22)]
+        weak_run = [(22 + offset, 21 + offset) for offset in range(4)]
+        runs = [(strong_run, 22, 0.20), (weak_run, 4, 0.56)]
+
+        repaired = cuda_worker._repair_edge_reuse_match_runs(
+            runs,
+            left_items,
+            right_items,
+            seam_seconds=119.0,
+        )
+
+        self.assertEqual(repaired[0][0], strong_run[:-1])
+        self.assertEqual(repaired[0][1], 21)
+        self.assertEqual(repaired[1], runs[1])
 
     def test_accepts_one_unique_tightly_aligned_two_character_run(self) -> None:
         left = [
@@ -1660,6 +3169,12 @@ class ResumableWorkerTests(unittest.TestCase):
 
             legacy_raw = read_json_strict(args.output)
             legacy_raw["options"].pop("final_outro_exemption_seconds")
+            legacy_raw["options"]["boundary_reconciliation"] = (
+                cuda_worker.LEGACY_BOUNDARY_RECONCILIATION_METHOD
+            )
+            legacy_raw["boundary_reconciliation"]["method"] = (
+                cuda_worker.LEGACY_BOUNDARY_RECONCILIATION_METHOD
+            )
             write_json_atomically(args.output, legacy_raw)
 
             with (
@@ -1695,6 +3210,14 @@ class ResumableWorkerTests(unittest.TestCase):
                 17.0,
             )
             self.assertEqual(
+                migrated_raw["options"]["boundary_reconciliation"],
+                cuda_worker.BOUNDARY_RECONCILIATION_METHOD,
+            )
+            self.assertEqual(
+                migrated_raw["boundary_reconciliation"]["method"],
+                cuda_worker.BOUNDARY_RECONCILIATION_METHOD,
+            )
+            self.assertEqual(
                 migrated_aligned["options"]["final_outro_exemption_seconds"],
                 17.0,
             )
@@ -1703,6 +3226,39 @@ class ResumableWorkerTests(unittest.TestCase):
                 sha256_file(args.output),
             )
             self.assertFalse(any(event == "load-asr" for event, _ in harness.events))
+
+    def test_normal_resume_rejects_a_v2_method_without_mutating_raw(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            args = worker_args(root)
+            args.input.write_bytes(b"fake-audio")
+            self.assertEqual(self.run_worker(args, WorkerHarness()), 0)
+
+            legacy_raw = read_json_strict(args.output)
+            legacy_raw["options"]["boundary_reconciliation"] = (
+                cuda_worker.LEGACY_BOUNDARY_RECONCILIATION_METHOD
+            )
+            legacy_raw["boundary_reconciliation"]["method"] = (
+                cuda_worker.LEGACY_BOUNDARY_RECONCILIATION_METHOD
+            )
+            write_json_atomically(args.output, legacy_raw)
+            legacy_bytes = args.output.read_bytes()
+
+            with (
+                patch.object(cuda_worker, "parse_args", return_value=args),
+                patch.object(
+                    cuda_worker,
+                    "load_cuda_runtime",
+                    side_effect=AssertionError("CUDA must not load"),
+                ),
+                self.assertRaisesRegex(
+                    ValueError,
+                    "raw ASR decoding options do not match exactly",
+                ),
+            ):
+                cuda_worker.main()
+
+            self.assertEqual(args.output.read_bytes(), legacy_bytes)
 
     def test_explicit_realign_may_refresh_only_reconciliation_evidence(
         self,

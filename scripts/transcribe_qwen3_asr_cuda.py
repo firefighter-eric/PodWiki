@@ -53,10 +53,31 @@ DEFAULT_CHUNK_CONTEXT_SECONDS = 5.0
 DEFAULT_FINAL_OUTRO_EXEMPTION_SECONDS = 0.0
 MAX_FINAL_OUTRO_EXEMPTION_SECONDS = 30.0
 SEAM_MATCH_TOLERANCE_SECONDS = 1.0
+SEAM_ANCHOR_SEARCH_RADIUS_SECONDS = 3.0
 MIN_SEAM_ANCHOR_RUN_CHARACTERS = 3
 MIN_STRICT_SEAM_ANCHOR_RUN_CHARACTERS = 2
 STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS = 0.25
-BOUNDARY_RECONCILIATION_METHOD = "forced-alignment-time-crossover-v2"
+CONTAINED_DOMINANT_RUN_MAX_DELTA_SECONDS = 0.4
+CONTAINED_DOMINANCE_MIN_DELTA_MARGIN_SECONDS = 0.25
+LEGACY_BOUNDARY_RECONCILIATION_METHOD = "forced-alignment-time-crossover-v2"
+BOUNDARY_RECONCILIATION_METHOD = "forced-alignment-time-crossover-v3"
+OWNERSHIP_CUT_AMBIGUITY_RESOLUTION = "ownership-cut-consistent-v1"
+REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION = (
+    "adjacent-diagonal-repeated-token-indel-bubble-v1"
+)
+EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY = "exhausted-side-context-anchor"
+EXHAUSTED_SIDE_CONTEXT_ANCHOR_METHOD = (
+    "prefer-non-exhausted-after-last-common-anchor-v1"
+)
+MIN_EXHAUSTED_ALIGNMENT_SHORTFALL_SECONDS = 15.0
+MAX_EXHAUSTED_ALIGNMENT_SHORTFALL_SECONDS = 27.0
+MAX_EXHAUSTED_SHARED_CONTEXT_SECONDS = 30.0
+MAX_EXHAUSTED_DISCARDED_TAIL_ITEMS = 1
+MAX_EXHAUSTED_DISCARDED_TAIL_CHARACTERS = 1
+MAX_EXHAUSTED_DISCARDED_TAIL_SECONDS = 3.0
+MAX_EXHAUSTED_HANDOFF_GAP_SECONDS = 0.75
+EXHAUSTED_BRIDGE_GAP_GUARD = "bounded-alignment-bridge-gaps-v1"
+MAX_EXHAUSTED_UNPROBED_BRIDGE_GAP_SECONDS = 3.0
 ALIGNMENT_COVERAGE_GUARD = "active-audio-coverage-v1"
 ALIGNED_GAP_GUARD = "low-energy-gap-v1"
 COVERAGE_FRAME_SECONDS = 0.5
@@ -224,6 +245,774 @@ def validated_final_outro_exemption_seconds(value: Any) -> float:
     return float(value)
 
 
+def _validated_boundary_number(value: Any, *, field: str) -> float:
+    return float(finite_document_number(value, field=field))
+
+
+def _validate_repeated_token_indel_evidence(
+    seam: dict[str, Any],
+    *,
+    index: int,
+) -> None:
+    repair = seam.get("match_run_repair")
+    expected_keys = {
+        "method",
+        "indel_side",
+        "repeated_text",
+        "indel_item_count",
+        "indel_character_count",
+        "reused_edge_pair_count",
+        "discarded_candidate_edge",
+        "discarded_candidate_pair_count",
+        "diagonal_offsets",
+        "earlier_run",
+        "later_run_before",
+        "later_run_after",
+        "alternative_delta_margin_seconds",
+        "selected_anchor_source",
+        "selected_anchor_pair",
+        "resulting_cut",
+        "post_repair_run_count",
+        "post_repair_pair_count",
+        "ownership_cut_consistent",
+    }
+    if not isinstance(repair, dict) or set(repair) != expected_keys:
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid indel repair evidence"
+        )
+
+    def validated_integer(value: Any, *, field: str, minimum: int = 0) -> int:
+        if (
+            not isinstance(value, int)
+            or isinstance(value, bool)
+            or value < minimum
+        ):
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid {field}"
+            )
+        return value
+
+    def validated_range(value: Any, *, field: str) -> tuple[int, int]:
+        if not isinstance(value, list) or len(value) != 2:
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid {field}"
+            )
+        start = validated_integer(value[0], field=field)
+        end = validated_integer(value[1], field=field)
+        if start > end:
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid {field}"
+            )
+        return start, end
+
+    def validated_run(value: Any, *, field: str) -> dict[str, Any]:
+        if not isinstance(value, dict) or set(value) != {
+            "left",
+            "right",
+            "characters",
+            "max_pair_delta_seconds",
+        }:
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid {field}"
+            )
+        left = validated_range(value["left"], field=f"{field} left range")
+        right = validated_range(value["right"], field=f"{field} right range")
+        characters = validated_integer(
+            value["characters"],
+            field=f"{field} characters",
+            minimum=MIN_SEAM_ANCHOR_RUN_CHARACTERS,
+        )
+        maximum_delta = _validated_boundary_number(
+            value["max_pair_delta_seconds"],
+            field=f"boundary seam {index} {field} maximum pair delta",
+        )
+        if maximum_delta < 0.0 or maximum_delta > SEAM_MATCH_TOLERANCE_SECONDS:
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid {field}"
+            )
+        left_item_count = left[1] - left[0] + 1
+        right_item_count = right[1] - right[0] + 1
+        if left_item_count != right_item_count or characters < left_item_count:
+            raise ValueError(
+                f"raw ASR boundary seam {index} has inconsistent {field} span"
+            )
+        return {
+            "left": left,
+            "right": right,
+            "characters": characters,
+            "maximum_delta": maximum_delta,
+        }
+
+    indel_items = validated_integer(
+        repair["indel_item_count"], field="indel item count", minimum=1
+    )
+    indel_characters = validated_integer(
+        repair["indel_character_count"],
+        field="indel character count",
+        minimum=1,
+    )
+    if (
+        repair["method"] != REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION
+        or repair["indel_side"] != "right"
+        or indel_items != 1
+        or indel_characters != 1
+        or repair["discarded_candidate_edge"] != "later-prefix"
+        or repair["selected_anchor_source"] != "earlier-tight-run"
+        or repair["ownership_cut_consistent"] is not True
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid indel repair evidence"
+        )
+    repeated_text = repair["repeated_text"]
+    if (
+        not isinstance(repeated_text, str)
+        or repeated_text != cleaned_alignment_text(repeated_text)
+        or len(cleaned_alignment_text(repeated_text)) != 1
+        or seam.get("anchor_text") != repeated_text
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid repeated indel token"
+        )
+    reused_pairs = validated_integer(
+        repair["reused_edge_pair_count"],
+        field="reused edge pair count",
+        minimum=1,
+    )
+    discarded_pairs = validated_integer(
+        repair["discarded_candidate_pair_count"],
+        field="discarded candidate pair count",
+        minimum=1,
+    )
+    if reused_pairs != discarded_pairs or reused_pairs > 2:
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid indel repair width"
+        )
+
+    offsets = repair["diagonal_offsets"]
+    if (
+        not isinstance(offsets, list)
+        or len(offsets) != 2
+        or any(
+            not isinstance(value, int) or isinstance(value, bool)
+            for value in offsets
+        )
+        or offsets[1] != offsets[0] + 1
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid indel diagonal offsets"
+        )
+    earlier = validated_run(repair["earlier_run"], field="earlier run")
+    later_before = validated_run(
+        repair["later_run_before"], field="later run before repair"
+    )
+    later_after = validated_run(
+        repair["later_run_after"], field="later run after repair"
+    )
+    if (
+        earlier["right"][0] - earlier["left"][0] != offsets[0]
+        or earlier["right"][1] - earlier["left"][1] != offsets[0]
+        or later_before["right"][0] - later_before["left"][0]
+        != offsets[1]
+        or later_before["right"][1] - later_before["left"][1]
+        != offsets[1]
+        or later_after["right"][0] - later_after["left"][0]
+        != offsets[1]
+        or later_after["right"][1] - later_after["left"][1]
+        != offsets[1]
+        or later_after["left"][1] != later_before["left"][1]
+        or later_after["right"][1] != later_before["right"][1]
+        or earlier["maximum_delta"] > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+        or later_after["maximum_delta"]
+        > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+        or later_before["characters"] - later_after["characters"]
+        != discarded_pairs
+        or later_after["characters"] < 2 * earlier["characters"]
+        or later_before["left"][0]
+        != earlier["left"][1] - discarded_pairs + 1
+        or later_before["right"][0] != earlier["right"][1]
+        or later_after["left"][0]
+        != later_before["left"][0] + discarded_pairs
+        or later_after["right"][0]
+        != later_before["right"][0] + discarded_pairs
+        or seam.get("anchor_run_characters") != earlier["characters"]
+        or abs(
+            float(seam.get("anchor_run_max_pair_delta_seconds", -1.0))
+            - earlier["maximum_delta"]
+        )
+        > 0.001
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has inconsistent indel run evidence"
+        )
+
+    margins = repair["alternative_delta_margin_seconds"]
+    if not isinstance(margins, dict) or set(margins) != {
+        "minimum",
+        "mean",
+        "maximum",
+    }:
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid indel timing evidence"
+        )
+    minimum_margin = _validated_boundary_number(
+        margins["minimum"],
+        field=f"boundary seam {index} minimum indel margin",
+    )
+    mean_margin = _validated_boundary_number(
+        margins["mean"],
+        field=f"boundary seam {index} mean indel margin",
+    )
+    maximum_margin = _validated_boundary_number(
+        margins["maximum"],
+        field=f"boundary seam {index} maximum indel margin",
+    )
+    if not (
+        0.0 <= minimum_margin <= mean_margin <= maximum_margin
+        and mean_margin >= 0.25
+        and maximum_margin <= later_before["maximum_delta"] + 0.001
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has insufficient indel timing evidence"
+        )
+
+    selected_pair_value = repair["selected_anchor_pair"]
+    if (
+        not isinstance(selected_pair_value, list)
+        or len(selected_pair_value) != 2
+        or any(
+            not isinstance(value, int) or isinstance(value, bool) or value < 0
+            for value in selected_pair_value
+        )
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid selected anchor pair"
+        )
+    selected_pair = (selected_pair_value[0], selected_pair_value[1])
+    if not (
+        earlier["left"][0] <= selected_pair[0] <= earlier["left"][1]
+        and earlier["right"][0] <= selected_pair[1] <= earlier["right"][1]
+        and selected_pair[1] - selected_pair[0] == offsets[0]
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} selected anchor is outside its tight run"
+        )
+    resulting_cut = repair["resulting_cut"]
+    if not isinstance(resulting_cut, dict) or set(resulting_cut) != {
+        "left_stop",
+        "right_start",
+    }:
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid indel ownership cut"
+        )
+    left_stop = validated_integer(
+        resulting_cut["left_stop"], field="indel left stop"
+    )
+    right_start = validated_integer(
+        resulting_cut["right_start"], field="indel right start"
+    )
+    expected_cut = (
+        (selected_pair[0] + 1, selected_pair[1] + 1)
+        if seam.get("anchor_owner") == "left"
+        else selected_pair
+    )
+    if (left_stop, right_start) != expected_cut:
+        raise ValueError(
+            f"raw ASR boundary seam {index} indel cut does not match its anchor"
+        )
+    run_count = validated_integer(
+        repair["post_repair_run_count"],
+        field="post-repair run count",
+        minimum=2,
+    )
+    pair_count = validated_integer(
+        repair["post_repair_pair_count"],
+        field="post-repair pair count",
+        minimum=run_count,
+    )
+    if (
+        seam.get("ambiguity_checked_run_count") != run_count
+        or seam.get("ambiguity_checked_pair_count") != pair_count
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} indel counts do not match"
+        )
+
+
+def _validate_exhausted_side_context_anchor(
+    seam: dict[str, Any],
+    *,
+    index: int,
+    left_segment: dict[str, Any],
+    right_segment: dict[str, Any],
+) -> None:
+    expected_keys = {
+        "left_chunk_id",
+        "right_chunk_id",
+        "seam_seconds",
+        "strategy",
+        "fallback_method",
+        "matched_characters",
+        "anchor_text",
+        "anchor_midpoint_seconds",
+        "anchor_owner",
+        "anchor_run_characters",
+        "anchor_run_max_pair_delta_seconds",
+        "exhausted_side",
+        "default_window_seconds",
+        "shared_window_seconds",
+        "expanded_window_seconds",
+        "left_terminal_item_index",
+        "terminal_alignment_end_seconds",
+        "uncovered_to_seam_seconds",
+        "right_default_before_characters",
+        "right_default_after_characters",
+        "right_crossing_item",
+        "left_alignment_item_count",
+        "right_alignment_item_count",
+        "expanded_run_count",
+        "expanded_pair_count",
+        "anchor_run_text",
+        "anchor_pair",
+        "anchor_pair_delta_seconds",
+        "anchor_distance_to_seam_seconds",
+        "discarded_exhausted_tail",
+        "last_retained_left_end_seconds",
+        "first_retained_right_start_seconds",
+        "handoff_gap_seconds",
+        "left_stop",
+        "right_start",
+        "ownership_cut_consistent",
+        "bridge_gap_guard",
+    }
+    if set(seam) != expected_keys:
+        raise ValueError(
+            f"raw ASR boundary seam {index} has partial exhausted-side evidence"
+        )
+
+    def validated_integer(value: Any, *, field: str, minimum: int = 0) -> int:
+        if (
+            not isinstance(value, int)
+            or isinstance(value, bool)
+            or value < minimum
+        ):
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid {field}"
+            )
+        return value
+
+    def validated_window(value: Any, *, field: str) -> tuple[float, float]:
+        if not isinstance(value, list) or len(value) != 2:
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid {field}"
+            )
+        start = _validated_boundary_number(
+            value[0], field=f"boundary seam {index} {field} start"
+        )
+        end = _validated_boundary_number(
+            value[1], field=f"boundary seam {index} {field} end"
+        )
+        if start >= end:
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid {field}"
+            )
+        return start, end
+
+    seam_seconds = _validated_boundary_number(
+        seam["seam_seconds"], field=f"boundary seam {index} timestamp"
+    )
+    default_window = validated_window(
+        seam["default_window_seconds"], field="default window"
+    )
+    shared_window = validated_window(
+        seam["shared_window_seconds"], field="shared window"
+    )
+    expanded_window = validated_window(
+        seam["expanded_window_seconds"], field="expanded window"
+    )
+    expected_shared_window = (
+        max(
+            finite_document_number(
+                left_segment.get("decode_start"),
+                field=f"boundary seam {index} left decode start",
+            ),
+            finite_document_number(
+                right_segment.get("decode_start"),
+                field=f"boundary seam {index} right decode start",
+            ),
+        ),
+        min(
+            finite_document_number(
+                left_segment.get("decode_end"),
+                field=f"boundary seam {index} left decode end",
+            ),
+            finite_document_number(
+                right_segment.get("decode_end"),
+                field=f"boundary seam {index} right decode end",
+            ),
+        ),
+    )
+    terminal_end = _validated_boundary_number(
+        seam["terminal_alignment_end_seconds"],
+        field=f"boundary seam {index} terminal alignment end",
+    )
+    uncovered = _validated_boundary_number(
+        seam["uncovered_to_seam_seconds"],
+        field=f"boundary seam {index} uncovered duration",
+    )
+    anchor_midpoint = _validated_boundary_number(
+        seam["anchor_midpoint_seconds"],
+        field=f"boundary seam {index} exhausted anchor midpoint",
+    )
+    anchor_distance = _validated_boundary_number(
+        seam["anchor_distance_to_seam_seconds"],
+        field=f"boundary seam {index} exhausted anchor distance",
+    )
+    anchor_delta = _validated_boundary_number(
+        seam["anchor_pair_delta_seconds"],
+        field=f"boundary seam {index} exhausted anchor pair delta",
+    )
+    run_delta = _validated_boundary_number(
+        seam["anchor_run_max_pair_delta_seconds"],
+        field=f"boundary seam {index} exhausted anchor run delta",
+    )
+    left_ownership_start = finite_document_number(
+        left_segment.get("start"),
+        field=f"boundary seam {index} left ownership start",
+    )
+    effective_minimum_shortfall = max(
+        MIN_EXHAUSTED_ALIGNMENT_SHORTFALL_SECONDS,
+        0.15 * (seam_seconds - left_ownership_start),
+    )
+    expected_default_window = (
+        max(
+            shared_window[0],
+            seam_seconds - SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+        ),
+        min(
+            shared_window[1],
+            seam_seconds + SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+        ),
+    )
+    if (
+        seam.get("fallback_method")
+        != EXHAUSTED_SIDE_CONTEXT_ANCHOR_METHOD
+        or seam.get("exhausted_side") != "left"
+        or seam.get("anchor_owner") != "left"
+        or seam.get("ownership_cut_consistent") is not True
+        or expanded_window != shared_window
+        or any(
+            abs(actual - expected) > 0.001
+            for actual, expected in zip(
+                shared_window,
+                expected_shared_window,
+                strict=True,
+            )
+        )
+        or shared_window[0] >= seam_seconds
+        or shared_window[1] <= seam_seconds
+        or seam_seconds - shared_window[0]
+        > MAX_EXHAUSTED_SHARED_CONTEXT_SECONDS + 0.001
+        or shared_window[1] - seam_seconds
+        > MAX_EXHAUSTED_SHARED_CONTEXT_SECONDS + 0.001
+        or any(
+            abs(actual - expected) > 0.001
+            for actual, expected in zip(
+                default_window,
+                expected_default_window,
+                strict=True,
+            )
+        )
+        or abs((seam_seconds - terminal_end) - uncovered) > 0.001
+        or not effective_minimum_shortfall
+        <= uncovered
+        <= MAX_EXHAUSTED_ALIGNMENT_SHORTFALL_SECONDS
+        or abs(anchor_midpoint - terminal_end)
+        > SEAM_ANCHOR_SEARCH_RADIUS_SECONDS
+        or terminal_end - SEAM_ANCHOR_SEARCH_RADIUS_SECONDS
+        < shared_window[0] - 0.001
+        or terminal_end + SEAM_ANCHOR_SEARCH_RADIUS_SECONDS
+        > shared_window[1] + 0.001
+        or not shared_window[0]
+        <= anchor_midpoint
+        <= terminal_end + anchor_delta / 2.0 + 0.001
+        or not terminal_end < default_window[0] < seam_seconds
+        or abs(abs(anchor_midpoint - seam_seconds) - anchor_distance) > 0.001
+        or anchor_delta < 0.0
+        or run_delta < anchor_delta
+        or run_delta > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid exhausted-side bounds"
+        )
+
+    validated_integer(
+        seam["right_default_before_characters"],
+        field="right default before characters",
+        minimum=MIN_SEAM_ANCHOR_RUN_CHARACTERS,
+    )
+    validated_integer(
+        seam["right_default_after_characters"],
+        field="right default after characters",
+        minimum=MIN_SEAM_ANCHOR_RUN_CHARACTERS,
+    )
+    crossing_item = seam["right_crossing_item"]
+    if not isinstance(crossing_item, dict) or set(crossing_item) != {
+        "index",
+        "start_seconds",
+        "end_seconds",
+    }:
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid right crossing item"
+        )
+    crossing_index = validated_integer(
+        crossing_item["index"], field="right crossing item index"
+    )
+    crossing_start = _validated_boundary_number(
+        crossing_item["start_seconds"],
+        field=f"boundary seam {index} crossing item start",
+    )
+    crossing_end = _validated_boundary_number(
+        crossing_item["end_seconds"],
+        field=f"boundary seam {index} crossing item end",
+    )
+    crossing_midpoint = (crossing_start + crossing_end) / 2.0
+    if not (
+        crossing_start < seam_seconds < crossing_end
+        and default_window[0] <= crossing_midpoint <= default_window[1]
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid right crossing item"
+        )
+    run_count = validated_integer(
+        seam["expanded_run_count"],
+        field="expanded run count",
+        minimum=1,
+    )
+    validated_integer(
+        seam["expanded_pair_count"],
+        field="expanded pair count",
+        minimum=run_count,
+    )
+    anchor_pair = seam["anchor_pair"]
+    if (
+        not isinstance(anchor_pair, list)
+        or len(anchor_pair) != 2
+        or any(
+            not isinstance(value, int) or isinstance(value, bool) or value < 0
+            for value in anchor_pair
+        )
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid exhausted anchor pair"
+        )
+    left_stop = validated_integer(seam["left_stop"], field="left stop")
+    right_start = validated_integer(seam["right_start"], field="right start")
+    if (left_stop, right_start) != (
+        anchor_pair[0] + 1,
+        anchor_pair[1] + 1,
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} exhausted cut does not match anchor"
+        )
+
+    terminal_index = validated_integer(
+        seam["left_terminal_item_index"], field="left terminal item index"
+    )
+    left_item_count = validated_integer(
+        seam["left_alignment_item_count"],
+        field="left alignment item count",
+        minimum=1,
+    )
+    right_item_count = validated_integer(
+        seam["right_alignment_item_count"],
+        field="right alignment item count",
+        minimum=1,
+    )
+    if (
+        terminal_index + 1 != left_item_count
+        or left_stop > left_item_count
+        or crossing_index < right_start
+        or crossing_index >= right_item_count
+        or right_start > right_item_count
+        or left_item_count
+        > len(cleaned_alignment_text(str(left_segment.get("decoded_text", ""))))
+        or right_item_count
+        > len(cleaned_alignment_text(str(right_segment.get("decoded_text", ""))))
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid exhausted item bounds"
+        )
+    tail = seam["discarded_exhausted_tail"]
+    if not isinstance(tail, dict) or set(tail) != {
+        "items",
+        "characters",
+        "duration_seconds",
+        "text",
+    }:
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid discarded tail"
+        )
+    tail_items = validated_integer(tail["items"], field="discarded tail items")
+    tail_characters = validated_integer(
+        tail["characters"], field="discarded tail characters"
+    )
+    tail_duration = _validated_boundary_number(
+        tail["duration_seconds"],
+        field=f"boundary seam {index} discarded tail duration",
+    )
+    if (
+        not isinstance(tail["text"], str)
+        or len(cleaned_alignment_text(tail["text"])) != tail_characters
+        or tail_items > MAX_EXHAUSTED_DISCARDED_TAIL_ITEMS
+        or tail_characters > MAX_EXHAUSTED_DISCARDED_TAIL_CHARACTERS
+        or tail_duration < 0.0
+        or tail_duration > MAX_EXHAUSTED_DISCARDED_TAIL_SECONDS
+        or terminal_index - left_stop + 1 != tail_items
+        or not cleaned_alignment_text(str(left_segment.get("decoded_text", ""))).endswith(
+            cleaned_alignment_text(tail["text"])
+        )
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid discarded tail"
+        )
+    last_left_end = _validated_boundary_number(
+        seam["last_retained_left_end_seconds"],
+        field=f"boundary seam {index} last retained left end",
+    )
+    first_right_start = _validated_boundary_number(
+        seam["first_retained_right_start_seconds"],
+        field=f"boundary seam {index} first retained right start",
+    )
+    handoff_gap = _validated_boundary_number(
+        seam["handoff_gap_seconds"],
+        field=f"boundary seam {index} handoff gap",
+    )
+    if (
+        abs((terminal_end - last_left_end) - tail_duration) > 0.001
+        or abs(max(0.0, first_right_start - last_left_end) - handoff_gap)
+        > 0.001
+        or handoff_gap > MAX_EXHAUSTED_HANDOFF_GAP_SECONDS
+        or not shared_window[0]
+        <= anchor_midpoint
+        <= last_left_end + anchor_delta / 2.0 + 0.001
+        or not shared_window[0] <= first_right_start <= seam_seconds
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid exhausted handoff"
+        )
+    anchor_run_text = seam["anchor_run_text"]
+    if (
+        not isinstance(anchor_run_text, str)
+        or len(cleaned_alignment_text(anchor_run_text))
+        != seam["anchor_run_characters"]
+        or seam["anchor_text"] not in anchor_run_text
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid exhausted anchor text"
+        )
+
+    bridge_guard = seam["bridge_gap_guard"]
+    if not isinstance(bridge_guard, dict) or set(bridge_guard) != {
+        "method",
+        "status",
+        "maximum_unprobed_gap_seconds",
+        "maximum_observed_gap_seconds",
+        "probes",
+    }:
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid bridge gap evidence"
+        )
+    maximum_observed_gap = _validated_boundary_number(
+        bridge_guard["maximum_observed_gap_seconds"],
+        field=f"boundary seam {index} maximum bridge gap",
+    )
+    probes = bridge_guard["probes"]
+    if (
+        bridge_guard["method"] != EXHAUSTED_BRIDGE_GAP_GUARD
+        or bridge_guard["status"] != "verified"
+        or bridge_guard["maximum_unprobed_gap_seconds"]
+        != MAX_EXHAUSTED_UNPROBED_BRIDGE_GAP_SECONDS
+        or maximum_observed_gap < 0.0
+        or maximum_observed_gap > uncovered + 0.001
+        or not isinstance(probes, list)
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid bridge gap evidence"
+        )
+    previous_probe_end = terminal_end
+    probe_durations: list[float] = []
+    for probe_index, probe in enumerate(probes):
+        if not isinstance(probe, dict) or set(probe) != {
+            "start_seconds",
+            "end_seconds",
+            "duration_seconds",
+            "acoustic_status",
+            "window_seconds",
+            "maximum_dbfs",
+            "maximum_active_seconds",
+            "maximum_active_fraction",
+            "active_seconds",
+            "active_fraction",
+        }:
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid bridge probe {probe_index}"
+            )
+        probe_start = _validated_boundary_number(
+            probe["start_seconds"],
+            field=f"boundary seam {index} bridge probe {probe_index} start",
+        )
+        probe_end = _validated_boundary_number(
+            probe["end_seconds"],
+            field=f"boundary seam {index} bridge probe {probe_index} end",
+        )
+        probe_duration = _validated_boundary_number(
+            probe["duration_seconds"],
+            field=f"boundary seam {index} bridge probe {probe_index} duration",
+        )
+        active_seconds = _validated_boundary_number(
+            probe["active_seconds"],
+            field=f"boundary seam {index} bridge probe {probe_index} active seconds",
+        )
+        active_fraction = _validated_boundary_number(
+            probe["active_fraction"],
+            field=f"boundary seam {index} bridge probe {probe_index} active fraction",
+        )
+        if (
+            probe["acoustic_status"] != "verified-quiet"
+            or probe["window_seconds"] != GAP_SILENCE_WINDOW_SECONDS
+            or probe["maximum_dbfs"] != GAP_SILENCE_DBFS
+            or probe["maximum_active_seconds"] != GAP_MAX_ACTIVE_SECONDS
+            or probe["maximum_active_fraction"] != GAP_MAX_ACTIVE_FRACTION
+            or probe_start < terminal_end - 0.001
+            or probe_start < previous_probe_end - 0.001
+            or probe_end > seam_seconds + 0.001
+            or probe_end <= probe_start
+            or abs((probe_end - probe_start) - probe_duration) > 0.001
+            or probe_duration
+            <= MAX_EXHAUSTED_UNPROBED_BRIDGE_GAP_SECONDS
+            or active_seconds < 0.0
+            or active_seconds > GAP_MAX_ACTIVE_SECONDS
+            or active_seconds > probe_duration + 0.001
+            or not 0.0 <= active_fraction <= GAP_MAX_ACTIVE_FRACTION
+        ):
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid bridge probe {probe_index}"
+            )
+        previous_probe_end = probe_end
+        probe_durations.append(probe_duration)
+    if (
+        (maximum_observed_gap > MAX_EXHAUSTED_UNPROBED_BRIDGE_GAP_SECONDS)
+        != bool(probes)
+        or (
+            probe_durations
+            and abs(maximum_observed_gap - max(probe_durations)) > 0.001
+        )
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} bridge probe coverage is inconsistent"
+        )
+
+
 def join_transcript_chunks(texts: list[str], *, language: str) -> str:
     nonempty_texts = [text for text in texts if text]
     separator = "" if language in NO_SPACE_CHUNK_JOIN_LANGUAGES else " "
@@ -235,6 +1024,7 @@ def validate_cuda_raw_integrity(
     *,
     args: argparse.Namespace,
     backend_options: dict[str, Any],
+    allow_reconciliation_evidence_refresh: bool = False,
 ) -> None:
     expected_options = {
         "temperature": args.temperature,
@@ -360,14 +1150,22 @@ def validate_cuda_raw_integrity(
                 not isinstance(seam, dict)
                 or seam.get("left_chunk_id") != index
                 or seam.get("right_chunk_id") != index + 1
-                or seam.get("strategy") not in {"exact-time-anchor", "aligned-gap"}
+                or seam.get("strategy")
+                not in {
+                    "exact-time-anchor",
+                    "aligned-gap",
+                    EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY,
+                }
                 or seam.get("seam_seconds") != segments[index].get("end")
             ):
                 raise ValueError(f"raw ASR boundary reconciliation seam {index} is invalid")
             matched_characters = seam.get("matched_characters")
             if not isinstance(matched_characters, int) or matched_characters < 0:
                 raise ValueError(f"raw ASR boundary seam {index} has invalid confidence")
-            if seam["strategy"] == "exact-time-anchor":
+            if seam["strategy"] in {
+                "exact-time-anchor",
+                EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY,
+            }:
                 anchor_run_characters = seam.get("anchor_run_characters")
                 anchor_run_max_delta = seam.get(
                     "anchor_run_max_pair_delta_seconds"
@@ -375,10 +1173,20 @@ def validate_cuda_raw_integrity(
                 strict_short_anchor = anchor_run_characters == (
                     MIN_STRICT_SEAM_ANCHOR_RUN_CHARACTERS
                 )
-                invalid_anchor_delta = anchor_run_max_delta is not None and (
+                missing_refreshable_anchor_delta = (
+                    allow_reconciliation_evidence_refresh
+                    and seam["strategy"] == "exact-time-anchor"
+                    and anchor_run_max_delta is None
+                    and anchor_run_characters
+                    != MIN_STRICT_SEAM_ANCHOR_RUN_CHARACTERS
+                    and seam.get("ambiguity_resolution")
+                    != REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION
+                )
+                invalid_anchor_delta = not missing_refreshable_anchor_delta and (
                     not isinstance(anchor_run_max_delta, (int, float))
                     or isinstance(anchor_run_max_delta, bool)
                     or not math.isfinite(float(anchor_run_max_delta))
+                    or float(anchor_run_max_delta) < 0.0
                     or float(anchor_run_max_delta) > SEAM_MATCH_TOLERANCE_SECONDS
                 )
                 if (
@@ -408,10 +1216,146 @@ def validate_cuda_raw_integrity(
                     raise ValueError(
                         f"raw ASR boundary seam {index} has an unreliable exact anchor"
                     )
-                finite_document_number(
+                anchor_midpoint = finite_document_number(
                     seam.get("anchor_midpoint_seconds"),
                     field=f"boundary seam {index} anchor midpoint",
                 )
+                left_segment = segments[index]
+                right_segment = segments[index + 1]
+                if not isinstance(left_segment, dict) or not isinstance(
+                    right_segment, dict
+                ):
+                    raise ValueError(
+                        f"raw ASR boundary seam {index} has invalid chunks"
+                    )
+                if seam["strategy"] == "exact-time-anchor":
+                    shared_start = max(
+                        float(left_segment["decode_start"]),
+                        float(right_segment["decode_start"]),
+                    )
+                    shared_end = min(
+                        float(left_segment["decode_end"]),
+                        float(right_segment["decode_end"]),
+                    )
+                    anchor_window_start = max(
+                        shared_start,
+                        float(seam["seam_seconds"])
+                        - SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+                    )
+                    anchor_window_end = min(
+                        shared_end,
+                        float(seam["seam_seconds"])
+                        + SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+                    )
+                    expected_owner = (
+                        "left"
+                        if anchor_midpoint <= float(seam["seam_seconds"])
+                        else "right"
+                    )
+                    if (
+                        not anchor_window_start
+                        <= anchor_midpoint
+                        <= anchor_window_end
+                        or seam.get("anchor_owner") != expected_owner
+                    ):
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} anchor is outside its search window"
+                        )
+                ambiguity_resolution = seam.get("ambiguity_resolution")
+                ambiguity_run_count = seam.get("ambiguity_checked_run_count")
+                ambiguity_pair_count = seam.get("ambiguity_checked_pair_count")
+                if ambiguity_resolution is None:
+                    if (
+                        "ambiguity_checked_run_count" in seam
+                        or "ambiguity_checked_pair_count" in seam
+                        or "match_run_repair" in seam
+                    ):
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} has partial ambiguity evidence"
+                        )
+                elif ambiguity_resolution == OWNERSHIP_CUT_AMBIGUITY_RESOLUTION:
+                    if (
+                        not isinstance(ambiguity_run_count, int)
+                        or isinstance(ambiguity_run_count, bool)
+                        or ambiguity_run_count < 2
+                        or not isinstance(ambiguity_pair_count, int)
+                        or isinstance(ambiguity_pair_count, bool)
+                        or ambiguity_pair_count < ambiguity_run_count
+                        or strict_short_anchor
+                        or "match_run_repair" in seam
+                    ):
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} has invalid ambiguity evidence"
+                        )
+                elif (
+                    ambiguity_resolution
+                    == REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION
+                ):
+                    if strict_short_anchor:
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} has invalid indel anchor"
+                        )
+                    _validate_repeated_token_indel_evidence(
+                        seam,
+                        index=index,
+                    )
+                    repair = seam["match_run_repair"]
+                    repair_cut = repair["resulting_cut"]
+                    left_decoded_characters = len(
+                        cleaned_alignment_text(
+                            str(left_segment.get("decoded_text", ""))
+                        )
+                    )
+                    right_decoded_characters = len(
+                        cleaned_alignment_text(
+                            str(right_segment.get("decoded_text", ""))
+                        )
+                    )
+                    if any(
+                        run["left"][1] >= left_decoded_characters
+                        or run["right"][1] >= right_decoded_characters
+                        for run in (
+                            repair["earlier_run"],
+                            repair["later_run_before"],
+                            repair["later_run_after"],
+                        )
+                    ):
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} indel ranges exceed their chunks"
+                        )
+                    if (
+                        repair_cut["left_stop"]
+                        != left_segment.get("owned_item_stop")
+                        or repair_cut["right_start"]
+                        != right_segment.get("owned_item_start")
+                    ):
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} indel cut does not match its chunks"
+                        )
+                else:
+                    raise ValueError(
+                        f"raw ASR boundary seam {index} has invalid ambiguity evidence"
+                    )
+                if seam["strategy"] == EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY:
+                    if strict_short_anchor or ambiguity_resolution is not None:
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} has invalid exhausted anchor"
+                        )
+                    _validate_exhausted_side_context_anchor(
+                        seam,
+                        index=index,
+                        left_segment=left_segment,
+                        right_segment=right_segment,
+                    )
+                    if (
+                        seam["left_stop"]
+                        != left_segment.get("owned_item_stop")
+                        or seam["right_start"]
+                        != right_segment.get("owned_item_start")
+                    ):
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} exhausted cut does not match its chunks"
+                        )
             else:
                 gap_start = finite_document_number(
                     seam.get("gap_start_seconds"),
@@ -478,6 +1422,8 @@ def validate_cuda_aligned_integrity(
     raw_chunks = raw_document.get("segments")
     if not isinstance(chunks, list) or not isinstance(raw_chunks, list):
         raise ValueError("aligned ASR has invalid CUDA chunk lineage")
+    if len(chunks) != len(raw_chunks):
+        raise ValueError("aligned ASR CUDA chunk count does not match raw")
     previous_start = -1.0
     for index, (chunk, raw_chunk) in enumerate(zip(chunks, raw_chunks)):
         if not isinstance(chunk, dict) or not isinstance(raw_chunk, dict):
@@ -536,6 +1482,154 @@ def validate_cuda_aligned_integrity(
                     f"aligned ASR CUDA chunk {index} has invalid owned timestamps"
                 )
             previous_start = max(previous_start, item_start)
+
+    seams = reconciliation.get("seams")
+    if not isinstance(seams, list):
+        raise ValueError("aligned ASR has invalid boundary seam lineage")
+    for index, seam in enumerate(seams):
+        if not isinstance(seam, dict):
+            continue
+        left_chunk = chunks[index]
+        right_chunk = chunks[index + 1]
+        if not isinstance(left_chunk, dict) or not isinstance(right_chunk, dict):
+            raise ValueError(
+                f"aligned ASR exhausted boundary seam {index} has invalid chunks"
+            )
+        left_alignment = left_chunk.get("alignment")
+        right_alignment = right_chunk.get("alignment")
+        if not isinstance(left_alignment, list) or not isinstance(
+            right_alignment, list
+        ):
+            raise ValueError(
+                f"aligned ASR exhausted boundary seam {index} has no alignment"
+            )
+        if seam.get("strategy") in {
+            "exact-time-anchor",
+            EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY,
+        }:
+            owner = seam.get("anchor_owner")
+            if (owner == "left" and not left_alignment) or (
+                owner == "right" and not right_alignment
+            ):
+                raise ValueError(
+                    f"aligned ASR boundary seam {index} has no owned anchor"
+                )
+            owner_item = (
+                left_alignment[-1]
+                if owner == "left"
+                else right_alignment[0]
+            )
+            owner_midpoint = alignment_item_midpoint(owner_item)
+            recorded_midpoint = float(seam["anchor_midpoint_seconds"])
+            maximum_delta = float(seam["anchor_run_max_pair_delta_seconds"])
+            if (
+                cleaned_alignment_text(str(owner_item.get("text", "")))
+                != seam.get("anchor_text")
+                or abs(owner_midpoint - recorded_midpoint)
+                > maximum_delta / 2.0 + 0.001
+            ):
+                raise ValueError(
+                    f"aligned ASR boundary seam {index} anchor does not match its ownership edge"
+                )
+        if seam.get("strategy") != EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY:
+            continue
+        if not left_alignment or not right_alignment:
+            raise ValueError(
+                f"aligned ASR exhausted boundary seam {index} has empty ownership"
+            )
+        seam_seconds = float(seam["seam_seconds"])
+        default_start, default_end = map(
+            float, seam["default_window_seconds"]
+        )
+        right_before_characters = sum(
+            len(cleaned_alignment_text(str(item["text"])))
+            for item in right_alignment
+            if default_start
+            <= alignment_item_midpoint(item)
+            < seam_seconds
+        )
+        right_after_characters = sum(
+            len(cleaned_alignment_text(str(item["text"])))
+            for item in right_alignment
+            if seam_seconds
+            <= alignment_item_midpoint(item)
+            <= default_end
+        )
+        right_owned_start = int(right_chunk["owned_item_start"])
+        crossing_items = [
+            {
+                "index": right_owned_start + item_index,
+                "start_seconds": rounded_seconds(float(item["start"])),
+                "end_seconds": rounded_seconds(float(item["end"])),
+            }
+            for item_index, item in enumerate(right_alignment)
+            if float(item["start"]) < seam_seconds < float(item["end"])
+            and default_start
+            <= alignment_item_midpoint(item)
+            <= default_end
+        ]
+        if (
+            right_before_characters
+            != seam["right_default_before_characters"]
+            or right_after_characters
+            != seam["right_default_after_characters"]
+            or not crossing_items
+            or seam["right_crossing_item"] != crossing_items[0]
+            or abs(
+                float(left_alignment[-1]["end"])
+                - float(seam["last_retained_left_end_seconds"])
+            )
+            > 0.001
+            or abs(
+                float(right_alignment[0]["start"])
+                - float(seam["first_retained_right_start_seconds"])
+            )
+            > 0.001
+        ):
+            raise ValueError(
+                f"aligned ASR exhausted boundary seam {index} evidence does not match owned items"
+            )
+
+        terminal_end = float(seam["terminal_alignment_end_seconds"])
+        bridge_gaps = _alignment_gaps(
+            right_alignment,
+            start_seconds=terminal_end,
+            end_seconds=seam_seconds,
+        )
+        maximum_bridge_gap = max(
+            (gap_end - gap_start for gap_start, gap_end in bridge_gaps),
+            default=0.0,
+        )
+        expected_probe_ranges = [
+            (
+                rounded_seconds(gap_start),
+                rounded_seconds(gap_end),
+                rounded_seconds(gap_end - gap_start),
+            )
+            for gap_start, gap_end in bridge_gaps
+            if gap_end - gap_start
+            > MAX_EXHAUSTED_UNPROBED_BRIDGE_GAP_SECONDS
+        ]
+        bridge_guard = seam["bridge_gap_guard"]
+        actual_probe_ranges = [
+            (
+                probe["start_seconds"],
+                probe["end_seconds"],
+                probe["duration_seconds"],
+            )
+            for probe in bridge_guard["probes"]
+        ]
+        if (
+            abs(
+                float(bridge_guard["maximum_observed_gap_seconds"])
+                - maximum_bridge_gap
+            )
+            > 0.001
+            or actual_probe_ranges != expected_probe_ranges
+        ):
+            raise ValueError(
+                f"aligned ASR exhausted boundary seam {index} bridge gaps do not match owned items"
+            )
 
 
 def validate_file_identity(
@@ -739,8 +1833,9 @@ def _drop_strictly_dominated_match_runs(
     Treating the swapped phrase as an equal alternative makes valid speech fail
     closed.  Discard it only when the strong run fully contains its left and right
     index ranges, has at least twice as many characters, and is entirely inside the
-    strict 250 ms gate while the alternative is outside it.  Uncontained, equally
-    loose, and otherwise incomparable conflicts remain ambiguous.
+    contained-run 400 ms gate while the alternative is outside it and at least
+    250 ms looser.  Uncontained, nearly as tight, and otherwise incomparable
+    conflicts remain ambiguous.
     """
 
     def dominates(
@@ -755,9 +1850,13 @@ def _drop_strictly_dominated_match_runs(
         weaker_left_last, weaker_right_last = weaker_run[-1]
         return (
             not _match_runs_are_disjoint_and_ordered(stronger_run, weaker_run)
-            and weaker_delta > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+            and weaker_delta > CONTAINED_DOMINANT_RUN_MAX_DELTA_SECONDS
+            and (
+                weaker_delta - stronger_delta
+                >= CONTAINED_DOMINANCE_MIN_DELTA_MARGIN_SECONDS
+            )
             and stronger_characters >= 2 * weaker_characters
-            and stronger_delta <= STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+            and stronger_delta <= CONTAINED_DOMINANT_RUN_MAX_DELTA_SECONDS
             and stronger_left_first <= weaker_left_first
             and stronger_left_last >= weaker_left_last
             and stronger_right_first <= weaker_right_first
@@ -843,10 +1942,10 @@ def _repair_edge_reuse_match_runs(
     """Repair one uniquely provable 1-2 character edge reuse.
 
     Two decodes can disagree about whether a short phrase was repeated.  When a
-    reliable run lies wholly before the seam and a much longer run crosses the seam
-    but reuses only that run's last one or two item characters, keep the short run
-    and trim the duplicated prefix from the long run.  Interior overlap, reverse
-    direction, pure crossing, larger trims, or multiple repairs remain ambiguous.
+    reliable run lies wholly on one side of the seam and a much longer run crosses
+    the seam but reuses only the adjacent one or two item characters, keep the short
+    run and trim the duplicated edge from the long run.  Interior overlap, pure
+    crossing, larger trims, or multiple repairs remain ambiguous.
     """
 
     repairs: list[
@@ -865,7 +1964,7 @@ def _repair_edge_reuse_match_runs(
             right_items,
             seam_seconds=seam_seconds,
         )
-        if weak_side != "before":
+        if weak_side is None:
             return None
 
         weak_first_left, weak_first_right = weak_run[0]
@@ -875,29 +1974,54 @@ def _repair_edge_reuse_match_runs(
         repaired_run: list[tuple[int, int]]
         removed_run: list[tuple[int, int]]
 
-        # The strong mapping must continue after the weak mapping in both
-        # decodes; only a reused prefix at its weak-side edge is repairable.
-        if (
-            strong_first_left < weak_first_left
-            or strong_first_right < weak_first_right
-            or strong_last_left <= weak_last_left
-            or strong_last_right <= weak_last_right
-            or (
-                strong_first_left > weak_last_left
-                and strong_first_right > weak_last_right
-            )
-        ):
-            return None
-        trim = 0
-        while trim < len(strong_run) and (
-            strong_run[trim][0] <= weak_last_left
-            or strong_run[trim][1] <= weak_last_right
-        ):
-            trim += 1
-        if trim == 0 or trim == len(strong_run):
-            return None
-        removed_run = strong_run[:trim]
-        repaired_run = strong_run[trim:]
+        if weak_side == "before":
+            # The strong mapping must continue after the weak mapping in both
+            # decodes; only a reused prefix at its weak-side edge is repairable.
+            if (
+                strong_first_left < weak_first_left
+                or strong_first_right < weak_first_right
+                or strong_last_left <= weak_last_left
+                or strong_last_right <= weak_last_right
+                or (
+                    strong_first_left > weak_last_left
+                    and strong_first_right > weak_last_right
+                )
+            ):
+                return None
+            trim = 0
+            while trim < len(strong_run) and (
+                strong_run[trim][0] <= weak_last_left
+                or strong_run[trim][1] <= weak_last_right
+            ):
+                trim += 1
+            if trim == 0 or trim == len(strong_run):
+                return None
+            removed_run = strong_run[:trim]
+            repaired_run = strong_run[trim:]
+        else:
+            # Symmetric observed case: the strong mapping starts before the weak
+            # mapping and may reuse only a suffix at its after-seam edge.
+            if (
+                strong_first_left >= weak_first_left
+                or strong_first_right >= weak_first_right
+                or strong_last_left > weak_last_left
+                or strong_last_right > weak_last_right
+                or (
+                    strong_last_left < weak_first_left
+                    and strong_last_right < weak_first_right
+                )
+            ):
+                return None
+            trim = len(strong_run)
+            while trim > 0 and (
+                strong_run[trim - 1][0] >= weak_first_left
+                or strong_run[trim - 1][1] >= weak_first_right
+            ):
+                trim -= 1
+            if trim == 0 or trim == len(strong_run):
+                return None
+            repaired_run = strong_run[:trim]
+            removed_run = strong_run[trim:]
 
         removed_characters = _match_run_characters(removed_run, left_items)
         if not 1 <= removed_characters <= 2:
@@ -964,6 +2088,294 @@ def _repair_edge_reuse_match_runs(
     ]
 
 
+def _repair_right_extra_repeated_token_indel_bubble(
+    runs: list[tuple[list[tuple[int, int]], int, float]],
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+) -> tuple[
+    list[tuple[list[tuple[int, int]], int, float]],
+    list[tuple[int, int]],
+    dict[str, Any],
+] | None:
+    """Repair one uniquely evidenced right-side repeated-token insertion.
+
+    This is deliberately narrower than generic edit-distance reconciliation.  It
+    accepts only the observed shape where a tight earlier diagonal ends in one or
+    two copies of a single-character token and the next diagonal is shifted right
+    by exactly one item.  The shifted prefix is discarded as mapping evidence, not
+    as decoded text; the eventual ownership cut still decides which audio decode
+    contributes every token.
+    """
+
+    conflicting_pairs: list[tuple[int, int]] = []
+    conflict_neighbors: dict[int, set[int]] = {}
+    for left_index, left_candidate in enumerate(runs):
+        for right_index, right_candidate in enumerate(
+            runs[left_index + 1 :],
+            left_index + 1,
+        ):
+            if _match_runs_are_disjoint_and_ordered(
+                left_candidate[0], right_candidate[0]
+            ):
+                continue
+            conflicting_pairs.append((left_index, right_index))
+            conflict_neighbors.setdefault(left_index, set()).add(right_index)
+            conflict_neighbors.setdefault(right_index, set()).add(left_index)
+    if not conflicting_pairs:
+        return None
+
+    remaining = set(conflict_neighbors)
+    components: list[set[int]] = []
+    while remaining:
+        pending = [remaining.pop()]
+        component: set[int] = set()
+        while pending:
+            current = pending.pop()
+            if current in component:
+                continue
+            component.add(current)
+            for neighbor in conflict_neighbors.get(current, set()):
+                if neighbor in remaining:
+                    remaining.remove(neighbor)
+                    pending.append(neighbor)
+        components.append(component)
+    if len(components) != 1 or len(components[0]) != 2:
+        return None
+
+    def global_pair(run_pair: tuple[int, int]) -> tuple[int, int]:
+        left_local, right_local = run_pair
+        return left_items[left_local][0], right_items[right_local][0]
+
+    def constant_global_offset(run: list[tuple[int, int]]) -> int | None:
+        offsets = {
+            global_right - global_left
+            for global_left, global_right in map(global_pair, run)
+        }
+        return offsets.pop() if len(offsets) == 1 else None
+
+    def run_record(
+        run: list[tuple[int, int]],
+        characters: int,
+        maximum_delta: float,
+    ) -> dict[str, Any]:
+        first_left, first_right = global_pair(run[0])
+        last_left, last_right = global_pair(run[-1])
+        return {
+            "left": [first_left, last_left],
+            "right": [first_right, last_right],
+            "characters": characters,
+            "max_pair_delta_seconds": rounded_seconds(maximum_delta),
+        }
+
+    repairs: list[
+        tuple[
+            list[tuple[list[tuple[int, int]], int, float]],
+            list[tuple[int, int]],
+            dict[str, Any],
+        ]
+    ] = []
+    component = components[0]
+    for earlier_index in component:
+        for later_index in component:
+            if earlier_index == later_index:
+                continue
+            earlier_run, earlier_characters, earlier_delta = runs[earlier_index]
+            later_run, later_characters, later_delta = runs[later_index]
+            earlier_offset = constant_global_offset(earlier_run)
+            later_offset = constant_global_offset(later_run)
+            if (
+                earlier_offset is None
+                or later_offset is None
+                or later_offset != earlier_offset + 1
+                or earlier_delta > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+            ):
+                continue
+
+            trim = 0
+            repaired_run: list[tuple[int, int]] = later_run
+            while trim < min(2, len(later_run) - 1):
+                trim += 1
+                repaired_run = later_run[trim:]
+                if _match_runs_are_disjoint_and_ordered(
+                    earlier_run, repaired_run
+                ):
+                    break
+            if (
+                not 1 <= trim <= 2
+                or not repaired_run
+                or not _match_runs_are_disjoint_and_ordered(
+                    earlier_run, repaired_run
+                )
+            ):
+                continue
+
+            discarded_run = later_run[:trim]
+            if len(earlier_run) < trim:
+                continue
+            direct_run = earlier_run[-trim:]
+            direct_global_pairs = list(map(global_pair, direct_run))
+            discarded_global_pairs = list(map(global_pair, discarded_run))
+            if [pair[0] for pair in direct_global_pairs] != [
+                pair[0] for pair in discarded_global_pairs
+            ]:
+                continue
+            if any(
+                discarded_right != direct_right + 1
+                for (_, direct_right), (_, discarded_right) in zip(
+                    direct_global_pairs,
+                    discarded_global_pairs,
+                    strict=True,
+                )
+            ):
+                continue
+
+            bubble_characters: list[str] = []
+            for direct_pair, discarded_pair in zip(
+                direct_run,
+                discarded_run,
+                strict=True,
+            ):
+                direct_left, direct_right = direct_pair
+                _, discarded_right = discarded_pair
+                bubble_characters.extend(
+                    (
+                        cleaned_alignment_text(
+                            str(left_items[direct_left][1]["text"])
+                        ),
+                        cleaned_alignment_text(
+                            str(right_items[direct_right][1]["text"])
+                        ),
+                        cleaned_alignment_text(
+                            str(right_items[discarded_right][1]["text"])
+                        ),
+                    )
+                )
+            if (
+                any(len(character) != 1 for character in bubble_characters)
+                or len(set(bubble_characters)) != 1
+            ):
+                continue
+            right_bubble_indices = sorted(
+                {
+                    pair[1]
+                    for pair in (*direct_global_pairs, *discarded_global_pairs)
+                }
+            )
+            if (
+                len(right_bubble_indices) != trim + 1
+                or right_bubble_indices
+                != list(
+                    range(
+                        right_bubble_indices[0],
+                        right_bubble_indices[0] + trim + 1,
+                    )
+                )
+            ):
+                continue
+
+            direct_deltas = [
+                abs(
+                    alignment_item_midpoint(left_items[left_local][1])
+                    - alignment_item_midpoint(right_items[right_local][1])
+                )
+                for left_local, right_local in direct_run
+            ]
+            alternative_deltas = [
+                abs(
+                    alignment_item_midpoint(left_items[left_local][1])
+                    - alignment_item_midpoint(right_items[right_local][1])
+                )
+                for left_local, right_local in discarded_run
+            ]
+            margins = [
+                alternative - direct
+                for alternative, direct in zip(
+                    alternative_deltas,
+                    direct_deltas,
+                    strict=True,
+                )
+            ]
+            mean_margin = sum(margins) / len(margins)
+            if min(margins) < 0.0 or mean_margin < 0.25:
+                continue
+
+            repaired_characters = _match_run_characters(
+                repaired_run, left_items
+            )
+            repaired_delta = _match_run_max_pair_delta(
+                repaired_run,
+                left_items,
+                right_items,
+            )
+            if (
+                repaired_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+                or repaired_characters < 2 * earlier_characters
+                or repaired_delta > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+            ):
+                continue
+
+            repaired_candidate = (
+                repaired_run,
+                repaired_characters,
+                repaired_delta,
+            )
+            repaired_runs = [
+                repaired_candidate if index == later_index else candidate
+                for index, candidate in enumerate(runs)
+            ]
+            try:
+                _validate_unique_monotonic_match_runs(
+                    [run for run, _, _ in repaired_runs]
+                )
+            except ValueError:
+                continue
+            repairs.append(
+                (
+                    repaired_runs,
+                    earlier_run,
+                    {
+                        "method": REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION,
+                        "indel_side": "right",
+                        "repeated_text": bubble_characters[0],
+                        "indel_item_count": 1,
+                        "indel_character_count": 1,
+                        "reused_edge_pair_count": trim,
+                        "discarded_candidate_edge": "later-prefix",
+                        "discarded_candidate_pair_count": trim,
+                        "diagonal_offsets": [earlier_offset, later_offset],
+                        "earlier_run": run_record(
+                            earlier_run,
+                            earlier_characters,
+                            earlier_delta,
+                        ),
+                        "later_run_before": run_record(
+                            later_run,
+                            later_characters,
+                            later_delta,
+                        ),
+                        "later_run_after": run_record(
+                            repaired_run,
+                            repaired_characters,
+                            repaired_delta,
+                        ),
+                        "alternative_delta_margin_seconds": {
+                            "minimum": rounded_seconds(min(margins)),
+                            "mean": rounded_seconds(mean_margin),
+                            "maximum": rounded_seconds(max(margins)),
+                        },
+                        "selected_anchor_source": "earlier-tight-run",
+                        "post_repair_run_count": len(repaired_runs),
+                        "post_repair_pair_count": sum(
+                            len(run) for run, _, _ in repaired_runs
+                        ),
+                    },
+                )
+            )
+    if len(repairs) != 1:
+        return None
+    return repairs[0]
+
+
 def _validate_unique_monotonic_match_runs(
     runs: list[list[tuple[int, int]]],
 ) -> None:
@@ -975,6 +2387,479 @@ def _validate_unique_monotonic_match_runs(
                 raise ValueError(
                     "overlapping ASR chunks have ambiguous exact alignment candidates"
                 )
+
+
+def _ownership_cut_consistency(
+    runs: list[tuple[list[tuple[int, int]], int, float]],
+    left_overlap: list[tuple[int, dict[str, Any]]],
+    right_overlap: list[tuple[int, dict[str, Any]]],
+    *,
+    left_stop: int,
+    right_start: int,
+) -> tuple[bool, int, int]:
+    """Check that every reliable exact pair stays on one splice side.
+
+    The final text owns ``left[:left_stop]`` and ``right[right_start:]``.  A
+    matched pair split across that cut proves that known-identical content would
+    be kept twice or dropped twice.  Ambiguity wholly inside either owned side is
+    harmless because that side comes from only one decode.
+    """
+
+    pair_count = 0
+    for run, _, _ in runs:
+        for left_local, right_local in run:
+            pair_count += 1
+            left_index = left_overlap[left_local][0]
+            right_index = right_overlap[right_local][0]
+            kept_from_left = left_index < left_stop
+            kept_from_right = right_index >= right_start
+            if kept_from_left == kept_from_right:
+                return False, len(runs), pair_count
+    return True, len(runs), pair_count
+
+
+def _alignment_gaps(
+    alignment: list[dict[str, Any]],
+    *,
+    start_seconds: float,
+    end_seconds: float,
+) -> list[tuple[float, float]]:
+    """Return every positive gap in one clipped alignment interval."""
+
+    if not start_seconds < end_seconds:
+        raise ValueError("alignment gap interval is invalid")
+    intervals = sorted(
+        (
+            max(start_seconds, float(item["start"])),
+            min(end_seconds, float(item["end"])),
+        )
+        for item in alignment
+        if float(item["end"]) > start_seconds
+        and float(item["start"]) < end_seconds
+    )
+    merged: list[list[float]] = []
+    for interval_start, interval_end in intervals:
+        if interval_end < interval_start:
+            raise ValueError("alignment gap interval contains a negative item")
+        if merged and interval_start <= merged[-1][1]:
+            merged[-1][1] = max(merged[-1][1], interval_end)
+        else:
+            merged.append([interval_start, interval_end])
+
+    gaps: list[tuple[float, float]] = []
+    cursor = start_seconds
+    for interval_start, interval_end in merged:
+        if interval_start > cursor:
+            gaps.append((cursor, interval_start))
+        cursor = max(cursor, interval_end)
+    if cursor < end_seconds:
+        gaps.append((cursor, end_seconds))
+    return gaps
+
+
+def _left_exhausted_context_crossover(
+    left_items: list[dict[str, Any]],
+    right_items: list[dict[str, Any]],
+    *,
+    seam_seconds: float,
+    shared_start: float,
+    shared_end: float,
+    left_ownership_start: float | None,
+    tolerance_seconds: float,
+) -> tuple[int, int, dict[str, Any]] | None:
+    """Hand off from one provably exhausted left candidate to its survivor.
+
+    The normal seam-local search must already have found neither an exact anchor
+    nor an aligned gap.  This fallback does not widen that search globally: the
+    complete shared context is used only to collect counter-evidence, while the
+    takeover anchor must be unique within three seconds of the exhausted
+    candidate's terminal alignment frontier.
+    """
+
+    if left_ownership_start is None or not left_items or not right_items:
+        return None
+    if (
+        seam_seconds - shared_start > MAX_EXHAUSTED_SHARED_CONTEXT_SECONDS
+        + 0.001
+        or shared_end - seam_seconds > MAX_EXHAUSTED_SHARED_CONTEXT_SECONDS
+        + 0.001
+    ):
+        return None
+
+    default_start = max(
+        shared_start,
+        seam_seconds - SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+    )
+    default_end = min(
+        shared_end,
+        seam_seconds + SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+    )
+    default_left = [
+        item
+        for item in left_items
+        if default_start <= alignment_item_midpoint(item) <= default_end
+    ]
+    if sum(
+        len(cleaned_alignment_text(str(item["text"]))) for item in default_left
+    ):
+        return None
+
+    right_before_characters = sum(
+        len(cleaned_alignment_text(str(item["text"])))
+        for item in right_items
+        if default_start <= alignment_item_midpoint(item) < seam_seconds
+    )
+    right_after_characters = sum(
+        len(cleaned_alignment_text(str(item["text"])))
+        for item in right_items
+        if seam_seconds <= alignment_item_midpoint(item) <= default_end
+    )
+    crossing_indices = [
+        index
+        for index, item in enumerate(right_items)
+        if float(item["start"]) < seam_seconds < float(item["end"])
+        and default_start
+        <= alignment_item_midpoint(item)
+        <= default_end
+    ]
+    if (
+        right_before_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+        or right_after_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+        or not crossing_indices
+    ):
+        return None
+
+    terminal_alignment_end = max(float(item["end"]) for item in left_items)
+    uncovered_to_seam = seam_seconds - terminal_alignment_end
+    effective_minimum_shortfall = max(
+        MIN_EXHAUSTED_ALIGNMENT_SHORTFALL_SECONDS,
+        0.15 * (seam_seconds - left_ownership_start),
+    )
+    if not (
+        effective_minimum_shortfall
+        <= uncovered_to_seam
+        <= MAX_EXHAUSTED_ALIGNMENT_SHORTFALL_SECONDS
+    ):
+        return None
+    left_suspicions = alignment_coverage_suspicions(
+        ownership_start=left_ownership_start,
+        ownership_end=seam_seconds,
+        text="".join(str(item["text"]) for item in left_items),
+        alignment=left_items,
+        is_first_chunk=False,
+        is_last_chunk=False,
+    )
+    if (
+        len(left_suspicions) != 1
+        or left_suspicions[0].get("kind") != "active-trailing-gap"
+        or abs(float(left_suspicions[0]["start"]) - terminal_alignment_end)
+        > 0.001
+        or abs(float(left_suspicions[0]["end"]) - seam_seconds) > 0.001
+    ):
+        return None
+
+    edge_start = terminal_alignment_end - SEAM_ANCHOR_SEARCH_RADIUS_SECONDS
+    edge_end = terminal_alignment_end + SEAM_ANCHOR_SEARCH_RADIUS_SECONDS
+    if edge_start < shared_start or edge_end > shared_end:
+        return None
+    edge_left = [
+        (index, item)
+        for index, item in enumerate(left_items)
+        if edge_start <= alignment_item_midpoint(item) <= edge_end
+    ]
+    edge_right = [
+        (index, item)
+        for index, item in enumerate(right_items)
+        if edge_start <= alignment_item_midpoint(item) <= edge_end
+    ]
+    edge_runs: list[tuple[list[tuple[int, int]], int, float]] = []
+    for run in _maximal_exact_match_runs(
+        edge_left,
+        edge_right,
+        tolerance_seconds=tolerance_seconds,
+    ):
+        characters = _match_run_characters(run, edge_left)
+        if characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS:
+            continue
+        maximum_delta = _match_run_max_pair_delta(
+            run,
+            edge_left,
+            edge_right,
+        )
+        edge_runs.append((run, characters, maximum_delta))
+    if (
+        len(edge_runs) != 1
+        or edge_runs[0][2] > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+    ):
+        return None
+
+    edge_run, edge_run_characters, edge_run_delta = edge_runs[0]
+    edge_anchors: list[tuple[float, float, int, int, str]] = []
+    for left_local, right_local in edge_run:
+        left_index, left_item = edge_left[left_local]
+        right_index, right_item = edge_right[right_local]
+        left_midpoint = alignment_item_midpoint(left_item)
+        right_midpoint = alignment_item_midpoint(right_item)
+        anchor_midpoint = (left_midpoint + right_midpoint) / 2.0
+        edge_anchors.append(
+            (
+                abs(anchor_midpoint - seam_seconds),
+                abs(left_midpoint - right_midpoint),
+                left_index,
+                right_index,
+                cleaned_alignment_text(str(left_item["text"])),
+            )
+        )
+    if not edge_anchors:
+        return None
+    _, anchor_pair_delta, left_index, right_index, anchor_text = min(
+        edge_anchors
+    )
+    left_midpoint = alignment_item_midpoint(left_items[left_index])
+    right_midpoint = alignment_item_midpoint(right_items[right_index])
+    anchor_midpoint = (left_midpoint + right_midpoint) / 2.0
+    if anchor_midpoint <= seam_seconds:
+        left_stop = left_index + 1
+        right_start = right_index + 1
+        owner = "left"
+    else:
+        left_stop = left_index
+        right_start = right_index
+        owner = "right"
+    if owner != "left" or left_stop <= 0 or right_start >= len(right_items):
+        return None
+
+    survivor_right_items = right_items[right_start:]
+    right_before_characters = sum(
+        len(cleaned_alignment_text(str(item["text"])))
+        for item in survivor_right_items
+        if default_start <= alignment_item_midpoint(item) < seam_seconds
+    )
+    right_after_characters = sum(
+        len(cleaned_alignment_text(str(item["text"])))
+        for item in survivor_right_items
+        if seam_seconds <= alignment_item_midpoint(item) <= default_end
+    )
+    crossing_indices = [
+        right_start + index
+        for index, item in enumerate(survivor_right_items)
+        if float(item["start"]) < seam_seconds < float(item["end"])
+        and default_start
+        <= alignment_item_midpoint(item)
+        <= default_end
+    ]
+    if (
+        right_before_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+        or right_after_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+        or not crossing_indices
+    ):
+        return None
+    bridge_gaps = _alignment_gaps(
+        survivor_right_items,
+        start_seconds=terminal_alignment_end,
+        end_seconds=seam_seconds,
+    )
+    maximum_bridge_gap = max(
+        (gap_end - gap_start for gap_start, gap_end in bridge_gaps),
+        default=0.0,
+    )
+    bridge_probes = [
+        {
+            "start_seconds": rounded_seconds(gap_start),
+            "end_seconds": rounded_seconds(gap_end),
+            "duration_seconds": rounded_seconds(gap_end - gap_start),
+            "acoustic_status": "pending",
+        }
+        for gap_start, gap_end in bridge_gaps
+        if gap_end - gap_start
+        > MAX_EXHAUSTED_UNPROBED_BRIDGE_GAP_SECONDS
+    ]
+    bridge_gap_guard = {
+        "method": EXHAUSTED_BRIDGE_GAP_GUARD,
+        "status": "pending" if bridge_probes else "verified",
+        "maximum_unprobed_gap_seconds": (
+            MAX_EXHAUSTED_UNPROBED_BRIDGE_GAP_SECONDS
+        ),
+        "maximum_observed_gap_seconds": rounded_seconds(maximum_bridge_gap),
+        "probes": bridge_probes,
+    }
+
+    discarded_tail = left_items[left_stop:]
+    discarded_tail_characters = sum(
+        len(cleaned_alignment_text(str(item["text"])))
+        for item in discarded_tail
+    )
+    last_retained_left_end = float(left_items[left_stop - 1]["end"])
+    discarded_tail_duration = terminal_alignment_end - last_retained_left_end
+    first_retained_right_start = float(right_items[right_start]["start"])
+    handoff_gap = max(0.0, first_retained_right_start - last_retained_left_end)
+    if (
+        len(discarded_tail) > MAX_EXHAUSTED_DISCARDED_TAIL_ITEMS
+        or discarded_tail_characters
+        > MAX_EXHAUSTED_DISCARDED_TAIL_CHARACTERS
+        or discarded_tail_duration > MAX_EXHAUSTED_DISCARDED_TAIL_SECONDS
+        or handoff_gap > MAX_EXHAUSTED_HANDOFF_GAP_SECONDS
+    ):
+        return None
+
+    full_left = [
+        (index, item)
+        for index, item in enumerate(left_items)
+        if shared_start <= alignment_item_midpoint(item) <= shared_end
+    ]
+    full_right = [
+        (index, item)
+        for index, item in enumerate(right_items)
+        if shared_start <= alignment_item_midpoint(item) <= shared_end
+    ]
+    _, matched_characters = _monotonic_exact_match_chain(
+        full_left,
+        full_right,
+        tolerance_seconds=tolerance_seconds,
+    )
+    full_runs: list[tuple[list[tuple[int, int]], int, float]] = []
+    for run in _maximal_exact_match_runs(
+        full_left,
+        full_right,
+        tolerance_seconds=tolerance_seconds,
+    ):
+        characters = _match_run_characters(run, full_left)
+        if characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS:
+            continue
+        full_runs.append(
+            (
+                run,
+                characters,
+                _match_run_max_pair_delta(run, full_left, full_right),
+            )
+        )
+    # The full shared context is counter-evidence, not an anchor search.  Do not
+    # discard or repair any reliable run before proving that every exact pair is
+    # compatible with the already selected ownership cut.
+    if not full_runs:
+        return None
+
+    edge_global_pairs = [
+        (edge_left[left_local][0], edge_right[right_local][0])
+        for left_local, right_local in edge_run
+    ]
+
+    def full_global_pairs(run: list[tuple[int, int]]) -> list[tuple[int, int]]:
+        return [
+            (full_left[left_local][0], full_right[right_local][0])
+            for left_local, right_local in run
+        ]
+
+    if not any(
+        any(
+            candidate_pairs[offset : offset + len(edge_global_pairs)]
+            == edge_global_pairs
+            for offset in range(
+                max(0, len(candidate_pairs) - len(edge_global_pairs) + 1)
+            )
+        )
+        for candidate_pairs in map(
+            full_global_pairs,
+            (run for run, _, _ in full_runs),
+        )
+    ):
+        return None
+    if any(
+        alignment_item_midpoint(full_left[left_local][1]) >= default_start
+        or alignment_item_midpoint(full_right[right_local][1]) >= default_start
+        for run, _, _ in full_runs
+        for left_local, right_local in run
+    ):
+        return None
+    consistent, checked_runs, checked_pairs = _ownership_cut_consistency(
+        full_runs,
+        full_left,
+        full_right,
+        left_stop=left_stop,
+        right_start=right_start,
+    )
+    if not consistent:
+        return None
+
+    run_text = "".join(
+        cleaned_alignment_text(str(edge_left[left_local][1]["text"]))
+        for left_local, _ in edge_run
+    )
+    return (
+        left_stop,
+        right_start,
+        {
+            "seam_seconds": rounded_seconds(seam_seconds),
+            "strategy": EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY,
+            "fallback_method": EXHAUSTED_SIDE_CONTEXT_ANCHOR_METHOD,
+            "matched_characters": matched_characters,
+            "anchor_text": anchor_text,
+            "anchor_midpoint_seconds": rounded_seconds(anchor_midpoint),
+            "anchor_owner": owner,
+            "anchor_run_characters": edge_run_characters,
+            "anchor_run_max_pair_delta_seconds": rounded_seconds(
+                edge_run_delta
+            ),
+            "exhausted_side": "left",
+            "default_window_seconds": [
+                rounded_seconds(default_start),
+                rounded_seconds(default_end),
+            ],
+            "shared_window_seconds": [
+                rounded_seconds(shared_start),
+                rounded_seconds(shared_end),
+            ],
+            "expanded_window_seconds": [
+                rounded_seconds(shared_start),
+                rounded_seconds(shared_end),
+            ],
+            "left_terminal_item_index": len(left_items) - 1,
+            "terminal_alignment_end_seconds": rounded_seconds(
+                terminal_alignment_end
+            ),
+            "uncovered_to_seam_seconds": rounded_seconds(
+                uncovered_to_seam
+            ),
+            "right_default_before_characters": right_before_characters,
+            "right_default_after_characters": right_after_characters,
+            "right_crossing_item": {
+                "index": crossing_indices[0],
+                "start_seconds": rounded_seconds(
+                    float(right_items[crossing_indices[0]]["start"])
+                ),
+                "end_seconds": rounded_seconds(
+                    float(right_items[crossing_indices[0]]["end"])
+                ),
+            },
+            "left_alignment_item_count": len(left_items),
+            "right_alignment_item_count": len(right_items),
+            "expanded_run_count": checked_runs,
+            "expanded_pair_count": checked_pairs,
+            "anchor_run_text": run_text,
+            "anchor_pair": [left_index, right_index],
+            "anchor_pair_delta_seconds": rounded_seconds(anchor_pair_delta),
+            "anchor_distance_to_seam_seconds": rounded_seconds(
+                abs(anchor_midpoint - seam_seconds)
+            ),
+            "discarded_exhausted_tail": {
+                "items": len(discarded_tail),
+                "characters": discarded_tail_characters,
+                "duration_seconds": rounded_seconds(discarded_tail_duration),
+                "text": "".join(str(item["text"]) for item in discarded_tail),
+            },
+            "last_retained_left_end_seconds": rounded_seconds(
+                last_retained_left_end
+            ),
+            "first_retained_right_start_seconds": rounded_seconds(
+                first_retained_right_start
+            ),
+            "handoff_gap_seconds": rounded_seconds(handoff_gap),
+            "left_stop": left_stop,
+            "right_start": right_start,
+            "ownership_cut_consistent": True,
+            "bridge_gap_guard": bridge_gap_guard,
+        },
+    )
 
 
 def _gap_crossover(
@@ -1022,19 +2907,29 @@ def seam_crossover(
     seam_seconds: float,
     shared_start: float,
     shared_end: float,
+    left_ownership_start: float | None = None,
+    right_ownership_end: float | None = None,
     tolerance_seconds: float = SEAM_MATCH_TOLERANCE_SECONDS,
 ) -> tuple[int, int, dict[str, Any]]:
     """Choose one exact, time-constrained ownership switch for a seam."""
 
+    anchor_start = max(
+        shared_start,
+        seam_seconds - SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+    )
+    anchor_end = min(
+        shared_end,
+        seam_seconds + SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+    )
     left_overlap = [
         (index, item)
         for index, item in enumerate(left_items)
-        if shared_start <= alignment_item_midpoint(item) <= shared_end
+        if anchor_start <= alignment_item_midpoint(item) <= anchor_end
     ]
     right_overlap = [
         (index, item)
         for index, item in enumerate(right_items)
-        if shared_start <= alignment_item_midpoint(item) <= shared_end
+        if anchor_start <= alignment_item_midpoint(item) <= anchor_end
     ]
     _, matched_characters = _monotonic_exact_match_chain(
         left_overlap,
@@ -1075,45 +2970,27 @@ def seam_crossover(
     reliable_match_runs = _drop_strictly_dominated_match_runs(
         reliable_match_runs
     )
+    runs_before_edge_repair = reliable_match_runs
     reliable_match_runs = _repair_edge_reuse_match_runs(
         reliable_match_runs,
         left_overlap,
         right_overlap,
         seam_seconds=seam_seconds,
     )
-    if reliable_match_runs:
-        try:
-            _validate_unique_monotonic_match_runs(
-                [run for run, _, _ in reliable_match_runs]
-            )
-        except ValueError as error:
-            candidate_summary = [
-                {
-                    "left": [
-                        left_overlap[run[0][0]][0],
-                        left_overlap[run[-1][0]][0],
-                    ],
-                    "right": [
-                        right_overlap[run[0][1]][0],
-                        right_overlap[run[-1][1]][0],
-                    ],
-                    "characters": run_characters,
-                    "maximum_pair_delta_seconds": rounded_seconds(
-                        run_max_pair_delta
-                    ),
-                    "text": "".join(
-                        cleaned_alignment_text(
-                            str(left_overlap[left_local][1]["text"])
-                        )
-                        for left_local, _ in run
-                    ),
-                }
-                for run, run_characters, run_max_pair_delta in reliable_match_runs
-            ]
-            raise ValueError(
-                f"{error} at {seam_seconds:.3f}s: "
-                f"{json.dumps(candidate_summary, ensure_ascii=False)}"
-            ) from error
+    indel_anchor_run: list[tuple[int, int]] | None = None
+    indel_repair_evidence: dict[str, Any] | None = None
+    if reliable_match_runs == runs_before_edge_repair:
+        indel_repair = _repair_right_extra_repeated_token_indel_bubble(
+            reliable_match_runs,
+            left_overlap,
+            right_overlap,
+        )
+        if indel_repair is not None:
+            (
+                reliable_match_runs,
+                indel_anchor_run,
+                indel_repair_evidence,
+            ) = indel_repair
     for run, run_characters, run_max_pair_delta in reliable_match_runs:
         run_anchors: list[tuple[float, float, int, int, str, int, float]] = []
         for left_local, right_local in run:
@@ -1134,10 +3011,78 @@ def seam_crossover(
                 )
             )
         anchors.extend(run_anchors)
+    ambiguity_evidence: tuple[int, int] | None = None
+    if reliable_match_runs:
+        try:
+            _validate_unique_monotonic_match_runs(
+                [run for run, _, _ in reliable_match_runs]
+            )
+        except ValueError as error:
+            (
+                _,
+                _,
+                provisional_left_index,
+                provisional_right_index,
+                _,
+                _,
+                _,
+            ) = min(anchors)
+            provisional_left_midpoint = alignment_item_midpoint(
+                left_items[provisional_left_index]
+            )
+            provisional_right_midpoint = alignment_item_midpoint(
+                right_items[provisional_right_index]
+            )
+            provisional_anchor_midpoint = (
+                provisional_left_midpoint + provisional_right_midpoint
+            ) / 2.0
+            if provisional_anchor_midpoint <= seam_seconds:
+                provisional_left_stop = provisional_left_index + 1
+                provisional_right_start = provisional_right_index + 1
+            else:
+                provisional_left_stop = provisional_left_index
+                provisional_right_start = provisional_right_index
+            consistent, checked_runs, checked_pairs = _ownership_cut_consistency(
+                reliable_match_runs,
+                left_overlap,
+                right_overlap,
+                left_stop=provisional_left_stop,
+                right_start=provisional_right_start,
+            )
+            if consistent:
+                ambiguity_evidence = (checked_runs, checked_pairs)
+            else:
+                candidate_summary = [
+                    {
+                        "left": [
+                            left_overlap[run[0][0]][0],
+                            left_overlap[run[-1][0]][0],
+                        ],
+                        "right": [
+                            right_overlap[run[0][1]][0],
+                            right_overlap[run[-1][1]][0],
+                        ],
+                        "characters": run_characters,
+                        "maximum_pair_delta_seconds": rounded_seconds(
+                            run_max_pair_delta
+                        ),
+                        "text": "".join(
+                            cleaned_alignment_text(
+                                str(left_overlap[left_local][1]["text"])
+                            )
+                            for left_local, _ in run
+                        ),
+                    }
+                    for run, run_characters, run_max_pair_delta in reliable_match_runs
+                ]
+                raise ValueError(
+                    f"{error} at {seam_seconds:.3f}s: "
+                    f"{json.dumps(candidate_summary, ensure_ascii=False)}"
+                ) from error
+    strict_short_anchor_runs: list[
+        list[tuple[float, float, int, int, str, int, float]]
+    ] = []
     if not anchors:
-        strict_short_anchor_runs: list[
-            list[tuple[float, float, int, int, str, int, float]]
-        ] = []
         for left_local in range(len(left_overlap) - 1):
             left_pair = left_overlap[left_local : left_local + 2]
             left_texts = [
@@ -1214,6 +3159,63 @@ def seam_crossover(
             left_stop = left_index
             right_start = right_index
             owner = "right"
+        if indel_repair_evidence is not None:
+            if indel_anchor_run is None:
+                raise ValueError("repeated-token indel repair lost its anchor run")
+            indel_anchor_pairs = {
+                (
+                    left_overlap[left_local][0],
+                    right_overlap[right_local][0],
+                )
+                for left_local, right_local in indel_anchor_run
+            }
+            if (left_index, right_index) not in indel_anchor_pairs:
+                raise ValueError(
+                    "repeated-token indel repair did not select its tight anchor"
+                )
+            consistent, checked_runs, checked_pairs = _ownership_cut_consistency(
+                reliable_match_runs,
+                left_overlap,
+                right_overlap,
+                left_stop=left_stop,
+                right_start=right_start,
+            )
+            before_characters = 0
+            after_characters = 0
+            for run, _, _ in reliable_match_runs:
+                for pair in run:
+                    pair_characters = _match_run_characters(
+                        [pair], left_overlap
+                    )
+                    pair_side = _match_run_pair_side(
+                        [pair],
+                        left_overlap,
+                        right_overlap,
+                        seam_seconds=seam_seconds,
+                    )
+                    if pair_side == "before":
+                        before_characters += pair_characters
+                    elif pair_side == "after":
+                        after_characters += pair_characters
+            if (
+                not consistent
+                or before_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+                or after_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+            ):
+                raise ValueError(
+                    "repeated-token indel repair does not prove one ownership cut"
+                )
+            indel_repair_evidence = {
+                **indel_repair_evidence,
+                "selected_anchor_pair": [left_index, right_index],
+                "resulting_cut": {
+                    "left_stop": left_stop,
+                    "right_start": right_start,
+                },
+                "post_repair_run_count": checked_runs,
+                "post_repair_pair_count": checked_pairs,
+                "ownership_cut_consistent": True,
+            }
         record = {
             "seam_seconds": rounded_seconds(seam_seconds),
             "strategy": "exact-time-anchor",
@@ -1228,6 +3230,31 @@ def seam_crossover(
         }
         if anchor_confidence is not None:
             record["anchor_confidence"] = anchor_confidence
+        if ambiguity_evidence is not None:
+            record.update(
+                {
+                    "ambiguity_resolution": (
+                        OWNERSHIP_CUT_AMBIGUITY_RESOLUTION
+                    ),
+                    "ambiguity_checked_run_count": ambiguity_evidence[0],
+                    "ambiguity_checked_pair_count": ambiguity_evidence[1],
+                }
+            )
+        if indel_repair_evidence is not None:
+            record.update(
+                {
+                    "ambiguity_resolution": (
+                        REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION
+                    ),
+                    "ambiguity_checked_run_count": indel_repair_evidence[
+                        "post_repair_run_count"
+                    ],
+                    "ambiguity_checked_pair_count": indel_repair_evidence[
+                        "post_repair_pair_count"
+                    ],
+                    "match_run_repair": indel_repair_evidence,
+                }
+            )
         return (
             left_stop,
             right_start,
@@ -1258,6 +3285,18 @@ def seam_crossover(
                 "gap_end_seconds": rounded_seconds(gap_end),
             },
         )
+    if not reliable_match_runs and not strict_short_anchor_runs:
+        exhausted_crossover = _left_exhausted_context_crossover(
+            left_items,
+            right_items,
+            seam_seconds=seam_seconds,
+            shared_start=shared_start,
+            shared_end=shared_end,
+            left_ownership_start=left_ownership_start,
+            tolerance_seconds=tolerance_seconds,
+        )
+        if exhausted_crossover is not None:
+            return exhausted_crossover
     raise ValueError(
         "overlapping ASR chunks have no reliable exact alignment crossover at "
         f"{seam_seconds:.3f}s"
@@ -1333,6 +3372,8 @@ def reconcile_candidate_slices(
             seam_seconds=seam_seconds,
             shared_start=shared_start,
             shared_end=shared_end,
+            left_ownership_start=float(left["ownership_start"]),
+            right_ownership_end=float(right["ownership_end"]),
         )
         slices[index][1] = left_stop
         slices[index + 1][0] = right_start
@@ -1579,6 +3620,104 @@ def enforce_aligned_gap_silence(
         }
 
 
+def enforce_exhausted_bridge_gap_silence(
+    *,
+    input_path: Path,
+    seam_records: list[dict[str, Any]],
+    ffmpeg: str,
+    numpy_module: Any,
+) -> None:
+    """Verify every >3s survivor-bridge alignment gap is truly quiet."""
+
+    for seam in seam_records:
+        if seam.get("strategy") != EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY:
+            continue
+        guard = seam.get("bridge_gap_guard")
+        if not isinstance(guard, dict):
+            raise ValueError("exhausted-side ASR seam has no bridge gap guard")
+        probes = guard.get("probes")
+        if not isinstance(probes, list):
+            raise ValueError("exhausted-side ASR seam has invalid bridge probes")
+        if not probes:
+            if guard.get("status") != "verified":
+                raise ValueError("bounded exhausted-side bridge was not verified")
+            continue
+        if guard.get("status") != "pending":
+            raise ValueError("exhausted-side bridge probes have invalid state")
+
+        verified_probes: list[dict[str, Any]] = []
+        for probe in probes:
+            if not isinstance(probe, dict) or set(probe) != {
+                "start_seconds",
+                "end_seconds",
+                "duration_seconds",
+                "acoustic_status",
+            }:
+                raise ValueError("exhausted-side bridge probe is malformed")
+            probe_start = finite_document_number(
+                probe.get("start_seconds"), field="bridge probe start"
+            )
+            probe_end = finite_document_number(
+                probe.get("end_seconds"), field="bridge probe end"
+            )
+            duration = finite_document_number(
+                probe.get("duration_seconds"), field="bridge probe duration"
+            )
+            if (
+                probe.get("acoustic_status") != "pending"
+                or probe_end <= probe_start
+                or abs((probe_end - probe_start) - duration) > 0.001
+                or duration <= MAX_EXHAUSTED_UNPROBED_BRIDGE_GAP_SECONDS
+            ):
+                raise ValueError("exhausted-side bridge probe is invalid")
+            probe_audio = decode_audio_chunk(
+                input_path,
+                start_seconds=probe_start,
+                end_seconds=probe_end,
+                ffmpeg=ffmpeg,
+                numpy_module=numpy_module,
+            )
+            contains_quiet_window = contains_low_energy_window(
+                probe_audio,
+                numpy_module=numpy_module,
+            )
+            active_seconds, active_fraction = active_audio_statistics(
+                probe_audio,
+                numpy_module=numpy_module,
+                frame_seconds=GAP_SILENCE_WINDOW_SECONDS,
+                active_dbfs=COVERAGE_ACTIVE_DBFS,
+            )
+            del probe_audio
+            if (
+                not contains_quiet_window
+                or active_seconds > GAP_MAX_ACTIVE_SECONDS
+                or active_fraction > GAP_MAX_ACTIVE_FRACTION
+            ):
+                raise ValueError(
+                    "exhausted-side ASR survivor bridge is not acoustically "
+                    f"quiet at {float(seam['seam_seconds']):.3f}s: "
+                    f"gap={probe_start:.3f}-{probe_end:.3f}s, "
+                    f"active_seconds={active_seconds:.3f}, "
+                    f"active_fraction={active_fraction:.3f}"
+                )
+            verified_probes.append(
+                {
+                    "start_seconds": rounded_seconds(probe_start),
+                    "end_seconds": rounded_seconds(probe_end),
+                    "duration_seconds": rounded_seconds(duration),
+                    "acoustic_status": "verified-quiet",
+                    "window_seconds": GAP_SILENCE_WINDOW_SECONDS,
+                    "maximum_dbfs": GAP_SILENCE_DBFS,
+                    "maximum_active_seconds": GAP_MAX_ACTIVE_SECONDS,
+                    "maximum_active_fraction": GAP_MAX_ACTIVE_FRACTION,
+                    "active_seconds": rounded_seconds(active_seconds),
+                    "active_fraction": rounded_seconds(active_fraction),
+                }
+            )
+        guard["probes"] = verified_probes
+        guard["status"] = "verified"
+
+
 def enforce_alignment_coverage(
     *,
     input_path: Path,
@@ -1586,12 +3725,20 @@ def enforce_alignment_coverage(
     ffmpeg: str,
     numpy_module: Any,
     final_outro_exemption_seconds: float = DEFAULT_FINAL_OUTRO_EXEMPTION_SECONDS,
+    seam_records: list[dict[str, Any]] | None = None,
 ) -> None:
     """Fail closed when a long untranscribed region contains sustained audio."""
 
     final_outro_exemption_seconds = validated_final_outro_exemption_seconds(
         final_outro_exemption_seconds
     )
+    if seam_records is not None:
+        enforce_exhausted_bridge_gap_silence(
+            input_path=input_path,
+            seam_records=seam_records,
+            ffmpeg=ffmpeg,
+            numpy_module=numpy_module,
+        )
 
     global_owned_alignment: list[dict[str, Any]] = []
     for index, chunk in enumerate(chunks):
@@ -2023,6 +4170,7 @@ def main() -> int:
     raw_document: dict[str, Any] | None = None
     loaded_raw_asr_sha256: str | None = None
     replace_final_outro_option = False
+    replace_boundary_reconciliation_method = False
     replace_reconciliation_evidence = False
     if mode in {"align-only", "complete"}:
         raw_sha256_before_read = sha256_file(output_path)
@@ -2033,6 +4181,43 @@ def main() -> int:
             else None
         )
         if args.realign and isinstance(loaded_options, dict):
+            loaded_reconciliation = loaded_raw_document.get(
+                "boundary_reconciliation"
+            )
+            loaded_option_method = loaded_options.get(
+                "boundary_reconciliation"
+            )
+            loaded_evidence_method = (
+                loaded_reconciliation.get("method")
+                if isinstance(loaded_reconciliation, dict)
+                else None
+            )
+            legacy_method_values = {
+                loaded_option_method,
+                loaded_evidence_method,
+            }
+            if LEGACY_BOUNDARY_RECONCILIATION_METHOD in legacy_method_values:
+                if legacy_method_values != {
+                    LEGACY_BOUNDARY_RECONCILIATION_METHOD
+                }:
+                    raise ValueError(
+                        "legacy raw ASR boundary methods do not match exactly"
+                    )
+                loaded_raw_document = {
+                    **loaded_raw_document,
+                    "options": {
+                        **loaded_options,
+                        "boundary_reconciliation": (
+                            BOUNDARY_RECONCILIATION_METHOD
+                        ),
+                    },
+                    "boundary_reconciliation": {
+                        **loaded_reconciliation,
+                        "method": BOUNDARY_RECONCILIATION_METHOD,
+                    },
+                }
+                loaded_options = loaded_raw_document["options"]
+                replace_boundary_reconciliation_method = True
             if "final_outro_exemption_seconds" in loaded_options:
                 recorded_final_outro = validated_final_outro_exemption_seconds(
                     loaded_options["final_outro_exemption_seconds"]
@@ -2066,6 +4251,7 @@ def main() -> int:
             raw_document,
             args=args,
             backend_options=raw_options,
+            allow_reconciliation_evidence_refresh=args.realign,
         )
         loaded_raw_asr_sha256 = sha256_file(output_path)
         if loaded_raw_asr_sha256 != raw_sha256_before_read:
@@ -2444,6 +4630,7 @@ def main() -> int:
         ffmpeg=ffmpeg,
         numpy_module=np,
         final_outro_exemption_seconds=args.final_outro_exemption_seconds,
+        seam_records=seam_records,
     )
 
     reconciled_text = join_transcript_chunks(
@@ -2562,7 +4749,11 @@ def main() -> int:
             or sha256_file(output_path) != loaded_raw_asr_sha256
         ):
             raise ValueError("raw ASR changed while forced alignment was running")
-        if replace_final_outro_option or replace_reconciliation_evidence:
+        if (
+            replace_final_outro_option
+            or replace_boundary_reconciliation_method
+            or replace_reconciliation_evidence
+        ):
             validate_file_identity(
                 input_path,
                 expected_size_bytes=audio_size_bytes,
