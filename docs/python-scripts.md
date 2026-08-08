@@ -7,9 +7,10 @@
 ## 环境准备
 
 项目使用 Python 3.12+ 和 `uv`。媒体获取还要求系统可执行文件 `ffmpeg`、
-`ffprobe`；YouTube 处理另外要求 Deno 或 Node.js。当前正式本地 ASR 路径依赖
-Apple Silicon（macOS `arm64`）和 MLX；其他平台可以整理元数据和已有文本，不能
-静默换用远端或付费 ASR。前端最终门禁需要 Node.js 和 npm。
+`ffprobe`；YouTube 处理另外要求 Deno 或 Node.js。正式本地 Qwen ASR 支持两条
+明确路径：Apple Silicon（macOS `arm64`）上的 MLX，以及 Windows x86-64 上的
+NVIDIA CUDA。其他平台可以整理元数据和已有文本，不能静默换用远端或付费 ASR。
+前端最终门禁需要 Node.js 和 npm。
 
 开始前先完成一次预检：
 
@@ -25,14 +26,16 @@ npm --version
 只处理 Bilibili 且不运行前端时，Deno/Node.js 与 npm 不是下载阶段的必需项；
 但交付完整仓库变更前仍需在具备 Node.js/npm 的环境运行 Web 门禁。
 
-开始媒体处理或 ASR 前，先同步全部依赖：
+`asr`（MLX）与 `asr-cuda` 依赖组互斥，不能使用 `uv sync --all-groups`。
+Apple Silicon/MLX 先同步对应依赖：
 
 ```bash
-uv sync --all-groups
+uv sync --group asr
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
 ```
 
-后续命令统一使用仓库内的 uv 缓存，并通过 `--no-sync` 避免 worker 运行期间改写共享 `.venv`：
+后续 MLX 命令统一使用仓库内的 uv 缓存，并通过 `--no-sync` 避免 worker 运行期间
+改写共享 `.venv`：
 
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync python <script> <arguments>
@@ -47,6 +50,17 @@ $env:HF_ENDPOINT = "https://hf-mirror.com"
 uv run --no-sync python <script> <arguments>
 ```
 
+Windows/CUDA 建议使用被 Git 忽略的独立环境。首次创建并锁定依赖时：
+
+```powershell
+uv venv --python 3.12 .cache/venvs/qwen-cuda
+. .\.cache\venvs\qwen-cuda\Scripts\Activate.ps1
+uv sync --active --group asr-cuda --locked
+```
+
+正式 worker 直接使用
+`.cache/venvs/qwen-cuda/Scripts/python.exe`，不要在长任务运行期间同步依赖。
+
 本页余下 `env UV_CACHE_DIR=.cache/uv ...` 示例在 PowerShell 中均省略该前缀，沿用上面已
 设置的 `$env:UV_CACHE_DIR`；`export HF_ENDPOINT=...` 同理只需设置一次。
 
@@ -56,7 +70,7 @@ uv run --no-sync python <script> <arguments>
 export HF_ENDPOINT=https://hf-mirror.com
 ```
 
-下载项目默认的 Qwen3-ASR 和 ForcedAligner：
+下载 Apple Silicon/MLX 使用的 Qwen3-ASR 和 ForcedAligner：
 
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
@@ -68,12 +82,23 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
   --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
+Windows/CUDA 使用官方模型：
+
+```powershell
+$env:HF_ENDPOINT = "https://huggingface.co"
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B `
+  --local-dir .cache/models/Qwen3-ASR-1.7B
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B `
+  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B
+```
+
 ## 脚本一览
 
 | 脚本 | 用途 | 主要产物 |
 | --- | --- | --- |
 | `scripts/acquire_media.py` | 获取一个公开 Bilibili/YouTube 视频或小宇宙单集的音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
 | `scripts/transcribe_qwen3_asr.py` | 使用 Qwen3-ASR 转写并强制对齐 | `raw.json`、`aligned.json` |
+| `scripts/transcribe_qwen3_asr_cuda.py` | 在 Windows/NVIDIA CUDA 上使用官方 Qwen 模型转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/render_asr_transcript.py` | 清理对齐结果并渲染逐字稿 | `refined.json`、`transcript.<language>.md` |
 | `scripts/process_qwen3_asr_batch.py` | 串行处理一个或多个已缓存单集 | 每集完整 Qwen 产物与日志 |
 | `scripts/transcribe_audio.py` | 生成 MLX Whisper 对比基线 | Whisper `raw.json` |
@@ -81,7 +106,11 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
 
 ## 获取公开音轨
 
-`acquire_media.py` 只处理单个公开 Bilibili/YouTube 视频或小宇宙单集，不处理账号、播放列表、多 P、整个播客或受访问控制的内容。
+`acquire_media.py` 的每次调用只处理一个公开 Bilibili/YouTube 视频或小宇宙单集，
+不直接接收账号、播放列表、多 P、播客栏目页或受访问控制的内容。用户明确授权的
+单一已核实栏目批量导入，必须先按[单集处理流程](./episode-processing.md)冻结 PID、
+规范单集 URL 与 `eid` manifest，再由外层任务逐集串行调用本脚本；脚本本身不会
+枚举栏目或在运行中扩展范围。
 
 传给脚本的 Bilibili 地址必须已经是
 `https://www.bilibili.com/video/<BVID>/`。如果收到
@@ -135,7 +164,17 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 path。`media.id` 必须是 `<episode-pid>/<token>.m4a`，不能用外层栏目列表的 PID 覆盖
 联播单集自己的身份。只有 `NORMAL`、`FREE`、`isPrivateMedia: false`、`PUBLIC` 四项均
 明确成立，且 `media.xyzcdn.net` 的 M4A URL 与 enclosure 完全一致时才继续；付费、私密、
-登录态或字段缺失一律拒绝，也不会使用 cookie、token 或整栏批量下载。
+登录态或字段缺失一律拒绝，也不会使用 cookie 或 token。即使处于已授权的单栏目
+批量导入，每次调用也仍只下载 frozen manifest 中的一个规范单集 URL，并逐集执行
+相同的公开状态和媒体身份校验。
+
+如果 `__NEXT_DATA__` 明确暴露 transcript、subtitle 或 caption 文本、分段或 HTTPS
+轨道 URL，脚本会在 `source.platform_metadata.subtitle` 中保留页面字段与规范化轨道，
+并据此填充人工字幕或自动字幕语言列表。小宇宙页面常见的
+`transcript.mediaId == media.id` / `transcriptMediaId == media.id` 只是音频身份占位，
+不能据此声称存在字幕。未知候选字段、冲突标记、错误类型或没有公开文本/URL 的另一
+裸 media ID 一律拒绝；脚本不会跟随字幕 URL，也不会调用需登录的字幕 API、cookie
+或 token。发现规范化轨道后仍按上文 intake 契约停止，不启动音频 ASR。
 
 每次采集会按固定顺序锁住最终音频和 metadata sidecar，直到音频探测、原子提升和 sidecar
 原子写入全部结束，避免并发任务交错身份。小宇宙音频另在 staging 目标的系统级独占锁下，
@@ -151,7 +190,8 @@ SHA-256 和当前 `eid`/`pid`/`media_id`，再重新探测大小与时长。任�
 
 ## 处理单个 Qwen3-ASR 单集
 
-Apple Silicon 上的中文单集默认使用 Qwen3-ASR 1.7B 8-bit 和 Qwen3-ForcedAligner 0.6B 8-bit：
+Apple Silicon/MLX 上的中文单集使用 Qwen3-ASR 1.7B 8-bit 和
+Qwen3-ForcedAligner 0.6B 8-bit：
 
 ```bash
 env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
@@ -166,11 +206,17 @@ env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   --language Chinese --no-verbose
 ```
 
+Windows/CUDA 正式流程优先使用下文的批处理入口。它会调用
+`transcribe_qwen3_asr_cuda.py`，并在 tracked metadata 中保留官方 Hub ID：
+`Qwen/Qwen3-ASR-1.7B`、`Qwen/Qwen3-ForcedAligner-0.6B`，engine 为
+`qwen-asr-transformers`。直接调用 worker 只用于单集诊断；同样必须提供本地
+输入、raw 与 aligned 输出，并遵守恢复/覆盖语义。
+
 有效的 `raw.json` 是转写检查点：缺少对齐产物时会从对齐阶段恢复；有效且身份匹配的 raw/aligned 会直接跳过。只有显式传入 `--retranscribe` 或 `--realign` 才会替换相应产物。
 
 ## 渲染逐字稿
 
-对齐完成后，用同一次运行生成哈希关联的 refined JSON 和 Markdown。以下是中文示例；
+对齐完成后，用同一次运行生成哈希关联的 refined JSON 和 Markdown。以下是 MLX 中文示例；
 其他语言使用对应的 BCP 47 文件名和 `--language`：
 
 ```bash
@@ -184,20 +230,42 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/render_asr_transcript
   --model mlx-community/Qwen3-ASR-1.7B-8bit
 ```
 
+手工渲染 CUDA 产物时，把 `--engine` 与 `--model` 分别改为
+`qwen-asr-transformers` 和 `Qwen/Qwen3-ASR-1.7B`。正常批处理会自动传入正确值。
+
 四份 Qwen 产物全部校验通过后，才把 run Markdown 作为单集根目录的正式
 `transcript.<language>.md`，并同步更新单集 README 的来源、哈希和 workflow 状态。
 
 ## 串行批处理
 
-`process_qwen3_asr_batch.py` 会让每个单集运行在独立子进程中，避免连续长任务积累 Metal/统一内存状态。重复传入 `--episode` 可以限制处理范围：
+`process_qwen3_asr_batch.py` 会让每个单集运行在独立子进程中，避免连续长任务积累
+Metal 统一内存或 CUDA 显存状态。重复传入 `--episode` 可以限制处理范围。
+Apple Silicon/MLX 示例：
 
 ```bash
 env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --model-path .cache/models/qwen3-asr-1.7b-8bit \
   --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
+
+Windows/CUDA 示例：
+
+```powershell
+& .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
+  --backend cuda `
+  --episode shows/<show-id>/episodes/<episode-folder> `
+  --model-path .cache/models/Qwen3-ASR-1.7B `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B
+```
+
+`--backend cuda` 默认使用 `cuda:0`、`bfloat16`、SDPA、120 秒 chunk、batch size 1，
+并按“ASR 模型完成并释放，再加载 ForcedAligner”的顺序控制显存。本机 NVIDIA RTX
+A2000 8GB Laptop GPU 已验证适配这些默认值；只有目标 GPU 确实不支持 bf16 时才加
+`--dtype float16`。同时提供 `--model-path` 与 `--aligner-path` 会强制设置
+`HF_HUB_OFFLINE=1` 和 `TRANSFORMERS_OFFLINE=1`，禁止 worker 联网补取模型。
 
 仓库同时包含中文和英文单集。批处理的 `--language` 与
 `--transcript-language` 是整次运行共享的参数，默认值为 `Chinese` / `zh-CN`；
@@ -211,11 +279,13 @@ env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
 最终返回非零状态。
 
 默认按中文语音处理并生成 `transcript.zh-CN.md`。处理英文等其他语言时，同时
-传入 ASR 使用的语言名称和用于产物文件名的 BCP 47 标签，例如：
+传入 ASR 使用的语言名称和用于产物文件名的 BCP 47 标签。以下继续以 MLX 为例；
+Windows/CUDA 命令追加相同的两个语言参数即可：
 
 ```bash
 env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --language English --transcript-language en \
   --model-path .cache/models/qwen3-asr-1.7b-8bit \

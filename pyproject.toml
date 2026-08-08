@@ -14,7 +14,27 @@ asr = [
   "mlx-audio==0.3.1; sys_platform == 'darwin' and platform_machine == 'arm64'",
   "mlx-whisper==0.4.3; sys_platform == 'darwin' and platform_machine == 'arm64'",
 ]
+asr-cuda = [
+  "qwen-asr==0.0.6; sys_platform == 'win32' and platform_machine == 'AMD64'",
+  "torch==2.11.0; sys_platform == 'win32' and platform_machine == 'AMD64'",
+]
 
 [tool.uv]
 package = false
 prerelease = "allow"
+conflicts = [
+  [
+    { group = "asr" },
+    { group = "asr-cuda" },
+  ],
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu128", marker = "sys_platform == 'win32' and platform_machine == 'AMD64'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

@@ -8,7 +8,10 @@
 ## 1. 适用范围与停止条件
 
 当前完整 happy path 是：单个公开 Bilibili 视频或小宇宙单集，没有可直接使用的
-公开字幕，在 Apple Silicon 上以 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿。
+公开字幕，在 Apple Silicon/MLX 或 Windows/NVIDIA CUDA 上以 Qwen3-ASR 和
+ForcedAligner 生成机器逐字稿。
+用户明确授权时，也可以把一个已核实的小宇宙栏目的公开免费单集作为冻结后的有界
+批次处理；批次中的每一集仍执行同一套单集流程和停止条件。
 YouTube 当前支持规范化、metadata intake 和公开媒体获取，但 tracked episode 的
 source identifiers 与无正式期号 key 尚未形成内容契约，因此不能自动完成入库。
 
@@ -27,12 +30,13 @@ source identifiers 与无正式期号 key 尚未形成内容契约，因此不�
 - 登录、会员、付费、地区、年龄或其他访问控制；
 - 找到公开字幕：仓库目前只有字幕发现能力，尚无下载、转换和 lineage 导入工具；
 - 只有本地媒体但没有可核实的来源与授权记录；
-- 非 Apple Silicon 环境需要新跑正式 ASR；
+- 当前机器既不满足 Apple Silicon/MLX，也不满足 Windows x86-64/NVIDIA CUDA
+  本地路径，却需要新跑正式 ASR；
 - YouTube 单集需要完整入库：当前尚未定义 tracked source identifiers，且无正式
   期号时也没有稳定 episode key；
 - 新节目没有可核实的首选发布者页面：当前根节目索引契约无法登记；
-- 单集没有可核实的 `role: guest` 参与者：当前导航标题契约尚不支持纯主播单集，
-  不得把主播伪标为嘉宾；
+- 单集没有任何可核实的实际出场人物：无法按内容标准形成导航标题；不得从标题
+  猜测人物，也不得把一般参与者或主播伪标为嘉宾；
 - 需要远端或付费 ASR，但用户没有明确授权数据传输、凭据和费用。
 
 不要把停止条件改写为成功。每集分别报告已到达阶段、已有产物、可恢复点和下一步。
@@ -50,7 +54,9 @@ git branch --show-current
 
 - Python 3.12+、`uv`；
 - `ffmpeg`、`ffprobe`；
-- macOS Apple Silicon 和 MLX，用于当前正式本地 ASR；
+- macOS Apple Silicon/MLX，或 Windows x86-64/NVIDIA CUDA，用于正式本地 ASR；
+  Windows CUDA 路径已在支持 `bfloat16` 的 NVIDIA RTX A2000 8GB Laptop GPU
+  上验证可用；
 - Deno 或 Node.js，用于 YouTube 获取；
 - Node.js 和 npm，用于最终 Web 门禁。
 
@@ -63,12 +69,25 @@ node --version
 npm --version
 ```
 
-先同步一次依赖。多个 worker 之后都使用 `--no-sync`，不能并发修改共享 `.venv`：
+MLX 与 CUDA 依赖组互斥，按本机平台只同步其中一个；不要使用
+`uv sync --all-groups`。Apple Silicon/MLX 使用：
 
 ```bash
-uv sync --all-groups
+uv sync --group asr
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
 ```
+
+Windows/CUDA 建议使用被 Git 忽略的独立环境，避免改写项目 `.venv`。首次创建时：
+
+```powershell
+$env:UV_CACHE_DIR = ".cache/uv"
+uv venv --python 3.12 .cache/venvs/qwen-cuda
+. .\.cache\venvs\qwen-cuda\Scripts\Activate.ps1
+uv sync --active --group asr-cuda --locked
+```
+
+之后的 CUDA 命令直接调用
+`.cache/venvs/qwen-cuda/Scripts/python.exe`，不在 worker 运行期间同步依赖。
 
 PowerShell 先设置 `$env:UV_CACHE_DIR = ".cache/uv"`，再省略命令前的 POSIX `env`
 写法；`export` 与反斜杠续行的替换规则见[脚本用法](./python-scripts.md#环境准备)。
@@ -79,7 +98,7 @@ PowerShell 先设置 `$env:UV_CACHE_DIR = ".cache/uv"`，再省略命令前的 P
 npm --prefix apps/web ci
 ```
 
-首次准备 Qwen 模型时：
+首次准备 Apple Silicon/MLX 模型时：
 
 ```bash
 export HF_ENDPOINT=https://hf-mirror.com
@@ -91,6 +110,16 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
   --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
+Windows/CUDA 使用官方非量化模型，并继续只写入 `.cache/models/`：
+
+```powershell
+$env:HF_ENDPOINT = "https://huggingface.co"
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B `
+  --local-dir .cache/models/Qwen3-ASR-1.7B
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B `
+  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B
+```
+
 模型、媒体、sidecar、日志和翻译检查点全部放在 `.cache/`，不得提交 Git。
 
 ## 3. 规范化来源并做 metadata intake
@@ -100,8 +129,8 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
 - Bilibili：`https://www.bilibili.com/video/<BVID>/`；
 - Bilibili 活动页 `/festival/...?...bvid=<BVID>`：提取 `bvid` 后改写为上述视频地址；
 - YouTube：`https://www.youtube.com/watch?v=<video-id>`；
-- 小宇宙：`https://www.xiaoyuzhoufm.com/episode/<episode-id>`；栏目页只用于登记
-  节目身份，不能作为媒体获取输入；
+- 小宇宙：`https://www.xiaoyuzhoufm.com/episode/<episode-id>`；栏目页用于登记节目
+  身份，也可在明确授权的单栏目批次中发现单集，但不能作为媒体获取输入；
 - 删除 `spm_id_from`、`vd_source`、播放列表和其他追踪参数。
 
 不要把活动页直接传给脚本。先用来源 ID 做临时 intake，只读取元数据而不下载：
@@ -127,6 +156,24 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
    `source.platform_metadata.subtitle.tracks` 均无可用公开字幕。
 
 存在公开字幕时在这里停止。不要因为当前没有 importer 就忽略字幕改跑音频 ASR。
+
+### 明确授权的单栏目批次
+
+未获授权时仍只处理用户指定的单集，不枚举整栏。只有用户明确点名并授权一个已
+核实的小宇宙栏目后，才可以发现其匿名可见的单集列表；不得把授权扩大到其他栏目、
+账号或平台列表。下载任何媒体前先把本次范围冻结到
+`.cache/intake/<show-id>/manifest.json`，至少记录：
+
+- 栏目规范 URL、栏目 PID、发现时间和发现总数；
+- 每集的规范 URL 与 `eid`；后续校验结果写入各集 intake sidecar，不改写清单范围；
+- 稳定顺序仅用于执行和复核，不作为正式期号。
+
+冻结后不因栏目新增单集而自动扩展本次批次。先逐集执行 metadata-only intake，只有
+栏目身份一致且明确为 `NORMAL`、`FREE`、非私密、`PUBLIC` 的条目才能进入下载清单；
+跨栏目、未知状态、付费、私密或需登录的条目必须拒绝并记录原因。随后严格按 manifest
+串行、限速调用单集采集命令，每次仍只把一个规范 episode URL 传给脚本，并在进入
+下一集前完成该集的身份、sidecar、字节数、时长与 SHA-256 校验。中断后从冻结的
+manifest 和已验证 sidecar 恢复，不重新发现或静默替换批次范围。
 
 ## 4. 确定身份并创建目录
 
@@ -172,8 +219,8 @@ cp -n templates/episode/README.md shows/<show-id>/episodes/<episode-folder>/READ
 | 发布时间 | 带时区 RFC 3339 `published_at` |
 | `source.duration_seconds` | 换算为整数毫秒 `duration_ms` |
 | `source.language` 或核实后的实际口语 | BCP 47 `language`；不能沿用模板默认值猜测 |
-| 已核实嘉宾 | `participants`，嘉宾使用 `role: guest` |
-| 嘉宾与精简主题 | `navigation_title`，格式为“人物 · 题目” |
+| 已核实出场人物 | `participants`；区分 `guest`、一般 `participant` 与 `host` |
+| 证据化人物与精简主题 | `navigation_title`；guest 优先，其次 participant、host |
 | 独特主题词 | `catalog_keyword` |
 
 元数据只在完成来源核验后标为 `verified`。尚未取得音频时保持
@@ -202,21 +249,23 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 `--episode` 扫描全部缓存，也不要把全库扫描与 `--retranscribe` 或 `--realign`
 组合。
 
-中文组：
+Apple Silicon/MLX 中文组：
 
 ```bash
 env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --model-path .cache/models/qwen3-asr-1.7b-8bit \
   --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
-英文组：
+Apple Silicon/MLX 英文组：
 
 ```bash
 env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --language English \
   --transcript-language en \
@@ -224,7 +273,27 @@ env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
-脚本内部逐集、逐子进程串行运行，不再并发启动额外 Metal worker。每集产物为：
+Windows/CUDA 中文组使用官方模型和独立解释器：
+
+```powershell
+& .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
+  --backend cuda `
+  --episode shows/<show-id>/episodes/<episode-folder> `
+  --model-path .cache/models/Qwen3-ASR-1.7B `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B
+```
+
+同时提供两个本地模型路径时，批处理会设置 `HF_HUB_OFFLINE=1` 和
+`TRANSFORMERS_OFFLINE=1`，因此 worker 不会联网补取模型。CUDA backend 记录的
+engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B` 和
+`Qwen/Qwen3-ForcedAligner-0.6B`。默认参数为 `cuda:0`、`bfloat16`、SDPA、
+120 秒 chunk 和 batch size 1；本机 RTX A2000 8GB 已验证可容纳该路径，且 worker
+会先完成并释放 ASR 模型，再加载 aligner。只有设备确实不支持 `bfloat16` 时才显式
+传入 `--dtype float16`。英文组在同一命令追加 `--language English` 和
+`--transcript-language en`。
+
+脚本内部逐集、逐子进程串行运行，不再并发启动额外加速器 worker；子进程退出同时
+作为 Metal 统一内存或 CUDA 显存的回收边界。每集产物为：
 
 ```text
 asr/qwen3-asr/raw.json
@@ -339,9 +408,10 @@ SHA-256。完整机器稿可以支持 `workflow.summary: draft`；没有回听�
 2. 根 `README.md` 的六列表：标题、访谈人物、播客名称、日期、总结、逐字稿；
 3. `shows/<show-id>/README.md` 的五列表：标题、播客名称、日期、总结链接、逐字稿链接。
 
-标题链接规范发布者 URL，访谈人物只来自 `role: guest` 的已核实参与者。英文单集
-同时提供“英文逐字稿”和“中文机器翻译”链接。当前 validator 不检查根 README，
-因此两个表的排序、列数、人物和相对路径必须人工复核。
+标题链接规范发布者 URL，访谈人物只来自 `role: guest` 的已核实参与者；没有嘉宾
+时写 `—`，不得用 participant 或 host 冒充。英文单集同时提供“英文逐字稿”和
+“中文机器翻译”链接。当前 validator 不检查根 README，因此两个表的排序、列数、
+人物和相对路径必须人工复核。
 
 ## 11. 统一完成门禁
 

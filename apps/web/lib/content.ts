@@ -111,10 +111,7 @@ const showOrder = [
   "latetalk",
   "luoyonghao",
   "whynottv",
-  "dagaizhishi",
   "yiqitietalk",
-  "xinkoukaihe",
-  "erdesancifang",
 ];
 
 function findRepositoryRoot(): string {

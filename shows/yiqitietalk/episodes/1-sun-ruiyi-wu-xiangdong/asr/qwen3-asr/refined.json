@@ -1,0 +1,5327 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "yiqitietalk:1",
+  "language": "zh-CN",
+  "source": {
+    "input_asr_path": "shows/yiqitietalk/episodes/1-sun-ruiyi-wu-xiangdong/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "6ca4f453aeaa13d0572a8276eefeab691c260bbea277d885194c877fbb66fb21",
+    "engine": "qwen-asr-transformers",
+    "model": "Qwen/Qwen3-ASR-1.7B"
+  },
+  "rendered_transcript": {
+    "path": "shows/yiqitietalk/episodes/1-sun-ruiyi-wu-xiangdong/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "98a6321510899fb9592563dd94800a01ed58e2fbe224eaec741da24a67b94eea"
+  },
+  "generated_at": "2026-08-07T13:21:17.861813Z",
+  "statistics": {
+    "source_segments": 402,
+    "refined_segments": 402,
+    "rendered_blocks": 68,
+    "rendered_lines": 402
+  },
+  "segments": [
+    {
+      "start": 7.52,
+      "end": 9.6,
+      "text": "首先介绍一下，我是孙瑞一。",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 10.16,
+      "end": 11.28,
+      "text": "你先自我介绍一下。",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 11.6,
+      "end": 12.56,
+      "text": "好的，我是吴向东。",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 12.88,
+      "end": 15.28,
+      "text": "你怎么会想要想的要做播客这件事情？",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 15.84,
+      "end": 21.6,
+      "text": "因为你其实平时在公共空间里面的表达其实已经蛮多的了。",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 22.24,
+      "end": 31.84,
+      "text": "我的想法是，因为我第一个我听播客，另一个呢，我觉得播客还是有别于视频的形式的，还是有不一样的，所以我也蛮感兴趣的。",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 32.08,
+      "end": 34.08,
+      "text": "我们的播客，我们你想讲点什么呢？",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 34.96,
+      "end": 53.68,
+      "text": "我想讲的就是瞎聊呀，就是今天不是第一期嘛，我们俩的第一期，那希望我们俩以后的播客的内容可能有更多丰富的嘉宾，可以聊的更发散一些，更乱七八糟一些，让大家毫无负担的在任何时候都可以打开我们这个播客来听。",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 54.4,
+      "end": 55.52,
+      "text": "这就是我想要做的。",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 55.84,
+      "end": 57.52,
+      "text": "对你最近有什么好玩的事情吗？",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 57.6,
+      "end": 58.48,
+      "text": "跟我们分享分享。",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 59.12,
+      "end": 69.2,
+      "text": "没有啊，我不就是从家然后去了上海，完成跟耐克的一些活动的任务啊，然后我跑去跟黑马完成了一堂课。",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 69.44,
+      "end": 73.2,
+      "text": "其实我当时本来准备去卢湾跑的，因为我觉得卢湾可能氛围更好一些。",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 73.2,
+      "end": 86.88,
+      "text": "周二我也了解到卢湾它也是一个训练日吧，但是我们本家嘛，上海的这个黑马训练营，然后去跟他们去活动了一下，完成了一堂训练课，有氧课，我觉得还不错，感觉还不错。",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 87.04,
+      "end": 88.64,
+      "text": "你这是第一次去火车头吗？",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 88.88,
+      "end": 89.52,
+      "text": "这个体育场。",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 90.16,
+      "end": 104.08,
+      "text": "这个体育场我在今年的四月份还是五月份，我去拍某牛的广告，我去了，发现啊，这个体育场它跟卢湾是不一样的，它是封闭的，它就是被人家包场的，所以我后来我被保安赶出来了。",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 104.48,
+      "end": 110.32,
+      "text": "一开始让我进去了，他们可能没发现我，我可能跑的比较快，四分被冲进去了，跑两圈被赶出来了。",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 112.08,
+      "end": 119.92,
+      "text": "对，这个体育场它是上海比较少有的，呃，它叫火车体育场，它其实是属于这个铁道部的，它离。",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 120.0,
+      "end": 132.72,
+      "text": "离呃上海火车站非常的近，现在也是上海比较有名的一个体育场，因为黑马有这个周二的时间，然后周三是这个内道包了周三的时间，因为它是可以做这个商业包场。",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 133.12,
+      "end": 139.12,
+      "text": "嗯，所以说还是有蛮多的品牌活动，包括品牌就周期性的包场都会包在那。",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 139.52,
+      "end": 143.2,
+      "text": "挺好，挺好，就是我觉得它跑道好像不如卢安的好。",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 143.52,
+      "end": 150.08,
+      "text": "呃，对，卢安最近又清洗了一次，但是上海能够有这个包场的体育场已经挺不容易了。",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 150.4,
+      "end": 155.76,
+      "text": "是是是，嗯，我就觉得它那个可能内道有点破，就是被黑马跑的多了呀。",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 156.0,
+      "end": 158.32,
+      "text": "哈哈，对，在我玩是吧？",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 159.76,
+      "end": 169.68,
+      "text": "这个说到这个体育场，我有个很有意思的事情可以跟你分享一下，因为你知道体育场其实黑马也好，内道也好，还有很多别的商业活动，他们摄影师都要去拍照嘛。",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 170.08,
+      "end": 174.08,
+      "text": "就摄影师现在看到这个火车，这个体育场非常的头痛，你知道为什么吗？",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 174.4,
+      "end": 174.72,
+      "text": "why？",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 174.88,
+      "end": 184.8,
+      "text": "就因为体育场它是一成不变的嘛，但是如果你每次活动也好，什么样你要拍照，你每次要拍出一些新意来，其实还蛮有挑战的。",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 185.04,
+      "end": 193.36,
+      "text": "嗯，我懂了，我懂了，它那个背景总是那个背景板，第一次去我感觉还行，拍了蛮多，对于我来说还蛮新鲜的。",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 193.68,
+      "end": 195.6,
+      "text": "哎，所以你觉得拍广告累吗？",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 195.84,
+      "end": 207.84,
+      "text": "嗯，品牌跟品牌不同还是有区别的，还是有不一样的，就是有的真的蛮累的，有的就还挺贴心的，或者说有的可以拍的很开心。",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 208.48,
+      "end": 218.16,
+      "text": "拿这次举例子啊，比如说我耐克，我我们算是拍了一个小采访的一个片子啊，呃，很短，可能采访时间有十几二十分钟左右吧。",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 218.56,
+      "end": 225.92,
+      "text": "然后我在化妆的时候，在我们采访之前，他会放一些BGM，就是让我更轻松、更放松一些。",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 226.32,
+      "end": 234.0,
+      "text": "然后他这些BGM的歌都是我之前Vlog里面的用的BGM用的歌，我觉得哇，就很贴心、很细心。",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 234.64,
+      "end": 238.8,
+      "text": "在采访之前有看过我很多的Vlog的视频的，就懂你。",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 239.12,
+      "end": 239.92,
+      "text": "对，有懂我对。",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 240.16,
+      "end": 242.4,
+      "text": "对这个，我觉得的确是很不一样。",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 242.56,
+      "end": 252.24,
+      "text": "这个就让我想起来，另外我们经常在采访时候会遇到的问题，就是如何问出想问的问题，而且不是一个重复的问题。",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 252.56,
+      "end": 266.48,
+      "text": "对，我觉得作为你们作为你们采访者也很难，因为首先你要对被采访者做功课，因为你们一年要采访的人那么多，还要事先做功课，还要问的不会很浅的问题。",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 266.96,
+      "end": 269.76,
+      "text": "嗯，我觉得对你们来说也是挺难的一件事情。",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 270.08,
+      "end": 271.68,
+      "text": "对，现在其实对我们挑战蛮大的。",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 271.68,
+      "end": 281.28,
+      "text": "我经常还跟同事说，呃，运动员自己现在社交媒体也经常会表达，大家经常如果是在赛场上其实比赛来问的问题，有的时候会还是会蛮棘手的。",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 281.68,
+      "end": 290.48,
+      "text": "对，那如何在采访的时候，运动员能够表达出想要表达，媒体想要问出想要问的，这个其实挑战性现在越来越大了。",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 290.56,
+      "end": 301.28,
+      "text": "对啊，而且有的运动员可能他自己不会主动的把自己想要表达的表达出来，但是他可以顺着你的引导，你问的问题好，他就可以答的很好。",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 301.52,
+      "end": 303.84,
+      "text": "这是确实是采访者的艺术。",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 304.48,
+      "end": 319.68,
+      "text": "这就让我想起了现在有一个你熟悉的，跟我住在同一幢楼里，今年我和你在同一场比赛的赛后都采访了这个人，然后两个的采访的效果大相径庭，大家互相还在两个视频底下互相在问，你猜这个运动员是谁？",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 320.4,
+      "end": 324.0,
+      "text": "就是你跟他互相拍了个视频，然后我是采访了他，春龙吗？",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 324.08,
+      "end": 331.12,
+      "text": "对，春龙现在应该在我和我在一个酒店里，就我采访他的时候，他不就很紧张，这个啊，我想起来了，啊，无戏嘛，无戏对吧？",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 331.2,
+      "end": 344.4,
+      "text": "对，他后来跟我采访就很放松，然后状态很好，但是这个确实没办法，他跟我毕竟我们都是运动员，采访他不会顾虑那么多，那可能在你们的镜头面前，他还是比较拘谨的，我觉得。",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 344.8,
+      "end": 346.72,
+      "text": "对，但那个拘谨也很可爱。",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 346.88,
+      "end": 347.68,
+      "text": "嗯，对对对。",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 348.16,
+      "end": 354.64,
+      "text": "哎，这个一年就过去了，这个周末的广州比完之后，基本上今年就整个赛季都已经结束了。",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 354.96,
+      "end": 355.84,
+      "text": "是的，相当快。",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 356.24,
+      "end": 359.84,
+      "text": "但是我觉得可能明年的夏嘛。",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 360.0,
+      "end": 370.4,
+      "text": "和筹码完全过了才算真正的赛季结束，还是你们在你们媒体的定义里面，十二月三十一号之前就赛季结束了？",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 371.12,
+      "end": 375.6,
+      "text": "对我来说分两个逻辑啊，我们现在已经在做年终总结和年终盘点了。",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 376.16,
+      "end": 379.04,
+      "text": "那一般来说呢，这个肯定都是以自然年为结束的。",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 379.36,
+      "end": 379.6,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 380.0,
+      "end": 384.96,
+      "text": "但是呢，现在好像对于媒体来说，坦率的说，好像没有什么结束这个概念。",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 385.76,
+      "end": 393.84,
+      "text": "每周事情都还挺多的，甚至你想这周结束之后，我下周还要出差，你猜我去哪里？",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 394.48,
+      "end": 399.6,
+      "text": "下周的话，啊，华东，我不去华东，我去眉山。",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 400.16,
+      "end": 402.88,
+      "text": "眉山今年咖位都很大呀。",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 403.04,
+      "end": 413.92,
+      "text": "对，而且我们还有挺多的内容要求要去做，所以说我下面就眉山，然后眉山一结束就一周吧，一周之后就是湘跟和厦门了。",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 414.56,
+      "end": 416.72,
+      "text": "哦，对对对，那我挺好。",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 416.72,
+      "end": 425.6,
+      "text": "我觉得，对于不管是你们媒体还是我们运动员来说，作为观众来说，都是一个非常好的事情，就是它不会有沉静期。",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 425.6,
+      "end": 432.0,
+      "text": "哦，大家都在一个信息可以不断获取到信息的一个这样的一个时代当中，我觉得挺好的。",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 432.0,
+      "end": 435.28,
+      "text": "对，现在就是信息爆炸时代，太多太多的信息了。",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 435.84,
+      "end": 444.72,
+      "text": "对，所以我觉得有的时候，嗯，某些运动员遇到什么事情，也不用太放在心上，因为信息流真的刷的太快了。",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 445.44,
+      "end": 448.0,
+      "text": "你今天说这句话别有一些意味啊。",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 449.84,
+      "end": 455.52,
+      "text": "呃，这句话跟今天这个事情没关系，我只是想到之前的是一些事情。",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 455.6,
+      "end": 469.04,
+      "text": "不过的确，是我觉得现在的事情都刷的太快了，就是除非这件事情被人恶意的或者故意的不断去把它反复拿出来讲，其实很多事情过了几天就过去了。",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 469.2,
+      "end": 472.64,
+      "text": "算了，算了，我也想问一下，我们这个节目到底尺度能放到多大？",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 472.72,
+      "end": 473.6,
+      "text": "我都可以放。",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 474.08,
+      "end": 477.92,
+      "text": "那你说的就是引导引导流量，我觉得博客应该还好。",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 477.92,
+      "end": 479.92,
+      "text": "那比如说，你像你这种被。",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 480.0,
+      "end": 483.36,
+      "text": "放大被引导，那可能说到的不就是像张水华这类的事情吗？",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 483.6,
+      "end": 495.12,
+      "text": "张水华这个事情，我觉得如果没有白岩松在福州马拉松之前再讲了这件事情，可能上一周这件事情就不会变得那么的大。",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 495.76,
+      "end": 504.08,
+      "text": "嗯，因为没有人会想到，在一个特别的时间比赛时间节点上面，白岩松在此之前又讲了一段话，而且是放在CCTV上面讲。",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 504.56,
+      "end": 507.92,
+      "text": "我看了他的发言，我很不赞同他说的话。",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 508.24,
+      "end": 515.92,
+      "text": "嗯，真的真的，我很不赞同说，首先他拿张水华的成绩去跟张德顺全运会的成绩去比，我就觉得很不合理。",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 515.92,
+      "end": 520.64,
+      "text": "我觉得这不是一个你真正了解马拉松的人该说出来的话。",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 521.12,
+      "end": 526.48,
+      "text": "我同意，因为这个不同的比赛、不同的天气条件，其实的确差别都非常的大。",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 526.88,
+      "end": 534.48,
+      "text": "还有后面去建议他转到其他岗位还是对，嗯，怎么说呢？",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 534.48,
+      "end": 541.28,
+      "text": "反正我觉得这个事情，我觉得一开始没必要发酵成这个样子的。",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 541.36,
+      "end": 543.36,
+      "text": "确实是他自己也有点责任吧。",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 543.6,
+      "end": 558.56,
+      "text": "但是我觉得确实白岩松说的话也也不完全正确，或者说在这样的事情上面，似乎就没有一个人能说出完全正确的话，因为每个人看这件事情的角度差别都非常非常的大。",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 559.12,
+      "end": 571.68,
+      "text": "对，而且我觉得对于他来说，在当时那个事情已经已经爆发了之后，就他就已经很被动，能做的东西不多，甚至他PPT也没有能够帮助到他太多。",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 572.0,
+      "end": 582.24,
+      "text": "对，那除非PPT到上能上能上奥运的程度，那可以，但是也就不存在这个问题了，也就你也不需要医院这份工作了，也就不存在这些问题了。",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 582.56,
+      "end": 586.72,
+      "text": "是的，好好好，我们我们还是不要谈这么多敏感的问题啊！",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 586.72,
+      "end": 589.68,
+      "text": "你自己斟酌着看啊，到时候能我真操心。",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 589.84,
+      "end": 592.32,
+      "text": "好的，我可以讲讲我最近忙了点啥。",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 593.28,
+      "end": 597.92,
+      "text": "我们上马见完面之后，第二天就去美国了。",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 598.16,
+      "end": 599.92,
+      "text": "哦，我听说了，我分到了这个圣。",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    },
+    {
+      "start": 600.08,
+      "end": 605.92,
+      "text": "安东尼奥马刺队的所在地，就看了很多二六年会出的鞋子，还蛮有意思的。",
+      "source_segment_indexes": [
+        94
+      ],
+      "source_segment_ids": [
+        94
+      ]
+    },
+    {
+      "start": 606.4,
+      "end": 607.68,
+      "text": "有看到我们耐克的鞋吗？",
+      "source_segment_indexes": [
+        95
+      ],
+      "source_segment_ids": [
+        95
+      ]
+    },
+    {
+      "start": 608.0,
+      "end": 609.6,
+      "text": "哎，你应该已经穿了吧？",
+      "source_segment_indexes": [
+        96
+      ],
+      "source_segment_ids": [
+        96
+      ]
+    },
+    {
+      "start": 609.6,
+      "end": 611.52,
+      "text": "Shock Plus啊，对，稳成。",
+      "source_segment_indexes": [
+        97
+      ],
+      "source_segment_ids": [
+        97
+      ]
+    },
+    {
+      "start": 611.52,
+      "end": 612.72,
+      "text": "我真，我拿到了已经。",
+      "source_segment_indexes": [
+        98
+      ],
+      "source_segment_ids": [
+        98
+      ]
+    },
+    {
+      "start": 612.96,
+      "end": 620.8,
+      "text": "对，但今年耐克有一点很有意思，就是他把耐克和A C G两个部分，他就放了一个一模一样大的一个展位。",
+      "source_segment_indexes": [
+        99
+      ],
+      "source_segment_ids": [
+        99
+      ]
+    },
+    {
+      "start": 621.2,
+      "end": 622.8,
+      "text": "就是A C G的投入越来越大了。",
+      "source_segment_indexes": [
+        100
+      ],
+      "source_segment_ids": [
+        100
+      ]
+    },
+    {
+      "start": 622.96,
+      "end": 627.2,
+      "text": "我看也有，也有看到在北京开了全球首家A C G的店，是不是？",
+      "source_segment_indexes": [
+        101
+      ],
+      "source_segment_ids": [
+        101
+      ]
+    },
+    {
+      "start": 627.44,
+      "end": 631.28,
+      "text": "应该是在二月份左右会营业的，在三里屯。",
+      "source_segment_indexes": [
+        102
+      ],
+      "source_segment_ids": [
+        102
+      ]
+    },
+    {
+      "start": 631.84,
+      "end": 634.64,
+      "text": "全球首家竟然开在中国，我这个我没太想到。",
+      "source_segment_indexes": [
+        103
+      ],
+      "source_segment_ids": [
+        103
+      ]
+    },
+    {
+      "start": 634.96,
+      "end": 638.08,
+      "text": "但你也知道，中国机会还是蛮大的吧？",
+      "source_segment_indexes": [
+        104
+      ],
+      "source_segment_ids": [
+        104
+      ]
+    },
+    {
+      "start": 638.16,
+      "end": 638.88,
+      "text": "在这个市场上。",
+      "source_segment_indexes": [
+        105
+      ],
+      "source_segment_ids": [
+        105
+      ]
+    },
+    {
+      "start": 639.36,
+      "end": 644.88,
+      "text": "对对对，我觉得中国的跑步，不管是跑步越野的市场，还有很大的可发掘性。",
+      "source_segment_indexes": [
+        106
+      ],
+      "source_segment_ids": [
+        106
+      ]
+    },
+    {
+      "start": 645.36,
+      "end": 653.12,
+      "text": "因为我在上海感觉到很多人哎，呃，喜欢我，然后跑步的人很多，看到我会认出来我。",
+      "source_segment_indexes": [
+        107
+      ],
+      "source_segment_ids": [
+        107
+      ]
+    },
+    {
+      "start": 653.52,
+      "end": 659.52,
+      "text": "但是你在西部的城市，还有很多人他还没有加入到跑步这种这项活动中来。",
+      "source_segment_indexes": [
+        108
+      ],
+      "source_segment_ids": [
+        108
+      ]
+    },
+    {
+      "start": 659.52,
+      "end": 662.0,
+      "text": "我觉得还有很多人可以去加入跑步。",
+      "source_segment_indexes": [
+        109
+      ],
+      "source_segment_ids": [
+        109
+      ]
+    },
+    {
+      "start": 662.32,
+      "end": 666.48,
+      "text": "对我也是这样觉得的，因为这两年跑步你也知道很火吧？",
+      "source_segment_indexes": [
+        110
+      ],
+      "source_segment_ids": [
+        110
+      ]
+    },
+    {
+      "start": 667.04,
+      "end": 671.76,
+      "text": "然后那次就说，哎，美国的第一个跑步热潮究竟持续了多久？",
+      "source_segment_indexes": [
+        111
+      ],
+      "source_segment_ids": [
+        111
+      ]
+    },
+    {
+      "start": 671.76,
+      "end": 678.88,
+      "text": "后来我去搜了一下，从他们有一个运动员拿了一个奥运冠军开始，持续了十几年，持续了一个非常长的时间。",
+      "source_segment_indexes": [
+        112
+      ],
+      "source_segment_ids": [
+        112
+      ]
+    },
+    {
+      "start": 678.88,
+      "end": 691.52,
+      "text": "而且到了八十年代的时候，他不是说跑步潮它消退了，而是这些跑步的人去又更多的去从事了各种多种多样的运动，就他们能够选择的运动范围更广。",
+      "source_segment_indexes": [
+        113
+      ],
+      "source_segment_ids": [
+        113
+      ]
+    },
+    {
+      "start": 691.76,
+      "end": 702.24,
+      "text": "所以我也觉得在现在的这个环境之下，其实跑步的机会还非常多，而且毕竟我们也知道，跑步相对于河边、路边都可以跑，其实是真的蛮不错的。",
+      "source_segment_indexes": [
+        114
+      ],
+      "source_segment_ids": [
+        114
+      ]
+    },
+    {
+      "start": 702.32,
+      "end": 712.64,
+      "text": "而且前段时间也不算前段时间，去年还是前年，我有看到说，哎，之前有什么飞盘，有什么自行车，可能会掀起新的浪潮。",
+      "source_segment_indexes": [
+        115
+      ],
+      "source_segment_ids": [
+        115
+      ]
+    },
+    {
+      "start": 712.64,
+      "end": 719.68,
+      "text": "但是我觉得这些运动在跑步面前还是没有办法做到这么的普世化，做到这么的低门槛。",
+      "source_segment_indexes": [
+        116
+      ],
+      "source_segment_ids": [
+        116
+      ]
+    },
+    {
+      "start": 720.16,
+      "end": 724.32,
+      "text": "这个市场还是不错的，所以从这个程度来说，我们都是幸运啊。",
+      "source_segment_indexes": [
+        117
+      ],
+      "source_segment_ids": [
+        117
+      ]
+    },
+    {
+      "start": 724.48,
+      "end": 727.76,
+      "text": "呃，确实非常感谢这样一个市场和现状。",
+      "source_segment_indexes": [
+        118
+      ],
+      "source_segment_ids": [
+        118
+      ]
+    },
+    {
+      "start": 728.0,
+      "end": 732.88,
+      "text": "就像我们今年马博会，我们两个在一起和去年、前年的确是有一些不一样啊。",
+      "source_segment_indexes": [
+        119
+      ],
+      "source_segment_ids": [
+        119
+      ]
+    },
+    {
+      "start": 733.36,
+      "end": 738.4,
+      "text": "前年你没跟我一起，前年我就可以我我有跟你说吧，我就可以自己去轻松的逛展。",
+      "source_segment_indexes": [
+        120
+      ],
+      "source_segment_ids": [
+        120
+      ]
+    },
+    {
+      "start": 738.56,
+      "end": 741.28,
+      "text": "但今年基本上已经是水泄不通了。",
+      "source_segment_indexes": [
+        121
+      ],
+      "source_segment_ids": [
+        121
+      ]
+    },
+    {
+      "start": 741.28,
+      "end": 745.44,
+      "text": "啊，对，今年周六就没有办法正常的自由活动了，已经。",
+      "source_segment_indexes": [
+        122
+      ],
+      "source_segment_ids": [
+        122
+      ]
+    },
+    {
+      "start": 746.08,
+      "end": 749.52,
+      "text": "但总体来说，就是这个热潮还还蛮久的时间。",
+      "source_segment_indexes": [
+        123
+      ],
+      "source_segment_ids": [
+        123
+      ]
+    },
+    {
+      "start": 750.08,
+      "end": 758.88,
+      "text": "我期待期待能够变得更好，我希望更多更多的人加入跑步，就包括我身边小巴，还有我的亲戚。",
+      "source_segment_indexes": [
+        124
+      ],
+      "source_segment_ids": [
+        124
+      ]
+    },
+    {
+      "start": 758.88,
+      "end": 759.92,
+      "text": "希望下一代。",
+      "source_segment_indexes": [
+        125
+      ],
+      "source_segment_ids": [
+        125
+      ]
+    },
+    {
+      "start": 760.4,
+      "end": 770.0,
+      "text": "前段时间我采访，我又想说，为什么日本他跑步好，或者各种热门的商业体育项目都做的很好？",
+      "source_segment_indexes": [
+        126
+      ],
+      "source_segment_ids": [
+        126
+      ]
+    },
+    {
+      "start": 770.0,
+      "end": 790.08,
+      "text": "我就觉得他的小孩运动习惯从小就培养的很好，课余时间总要有一个运动的项目习惯，然后即使我长大了以后工作了以后，依然会在下班之后选择去参与一项运动，比如说是足球，比如说是篮球，或者是拳击之类的。",
+      "source_segment_indexes": [
+        127
+      ],
+      "source_segment_ids": [
+        127
+      ]
+    },
+    {
+      "start": 790.8,
+      "end": 796.16,
+      "text": "我觉得这要是从小培养的，所以未来青少年的体育还是很重要很重要。",
+      "source_segment_indexes": [
+        128
+      ],
+      "source_segment_ids": [
+        128
+      ]
+    },
+    {
+      "start": 796.16,
+      "end": 796.72,
+      "text": "我觉得。",
+      "source_segment_indexes": [
+        129
+      ],
+      "source_segment_ids": [
+        129
+      ]
+    },
+    {
+      "start": 796.72,
+      "end": 797.2,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        130
+      ],
+      "source_segment_ids": [
+        130
+      ]
+    },
+    {
+      "start": 797.28,
+      "end": 805.28,
+      "text": "但是目前十年内我看不到，目前十年内的中小学生的体育运动还是局限在体育课上。",
+      "source_segment_indexes": [
+        131
+      ],
+      "source_segment_ids": [
+        131
+      ]
+    },
+    {
+      "start": 805.76,
+      "end": 809.2,
+      "text": "你的娃现在有做体育运动吗？",
+      "source_segment_indexes": [
+        132
+      ],
+      "source_segment_ids": [
+        132
+      ]
+    },
+    {
+      "start": 809.52,
+      "end": 812.96,
+      "text": "有，他有去上那个体适能的一些。",
+      "source_segment_indexes": [
+        133
+      ],
+      "source_segment_ids": [
+        133
+      ]
+    },
+    {
+      "start": 813.36,
+      "end": 830.08,
+      "text": "他第一个，我觉得他胆子比较小，然后呢，嗯，也不怎么爱动，体力消耗我觉得也少，所以导致他可能体力精精力一直很旺盛，晚上动不动十一点不睡觉，所以也去让他做一做体适能，就是一些蹦蹦跳跳的运动啊之类的。",
+      "source_segment_indexes": [
+        134
+      ],
+      "source_segment_ids": [
+        134
+      ]
+    },
+    {
+      "start": 830.16,
+      "end": 839.92,
+      "text": "他韧带跟我一样很差很差，之前他有去跳舞，但是发现他的韧带根本就不适合跳舞，后来就去尝试一下体适能，哎，发现他还蛮喜欢的，虽然最",
+      "source_segment_indexes": [
+        135
+      ],
+      "source_segment_ids": [
+        135
+      ]
+    },
+    {
+      "start": 840.0,
+      "end": 842.64,
+      "text": "后他锻炼完了，他还是十一点睡觉。",
+      "source_segment_indexes": [
+        136
+      ],
+      "source_segment_ids": [
+        136
+      ]
+    },
+    {
+      "start": 843.6,
+      "end": 848.48,
+      "text": "那说明锻炼对能量的获取有帮助啊，Enhanced这个能量。",
+      "source_segment_indexes": [
+        137
+      ],
+      "source_segment_ids": [
+        137
+      ]
+    },
+    {
+      "start": 848.88,
+      "end": 852.72,
+      "text": "因为我知道董哥他们小孩好像也在练练这个练练那个。",
+      "source_segment_indexes": [
+        138
+      ],
+      "source_segment_ids": [
+        138
+      ]
+    },
+    {
+      "start": 853.2,
+      "end": 864.96,
+      "text": "是的，他们都有练一些项目，但是我觉得我们这几个像我跟大福啊，还有董哥他们的孩子走专业竞技的可能性不会很大。",
+      "source_segment_indexes": [
+        139
+      ],
+      "source_segment_ids": [
+        139
+      ]
+    },
+    {
+      "start": 865.28,
+      "end": 867.52,
+      "text": "哎，但我听说李有才你知道吗？",
+      "source_segment_indexes": [
+        140
+      ],
+      "source_segment_ids": [
+        140
+      ]
+    },
+    {
+      "start": 867.52,
+      "end": 878.16,
+      "text": "就是我知道啊，李有才教练对林翠林、林美的教练和叔叔，他的孩子现在的八百米水平很高，我听说是这样子的。",
+      "source_segment_indexes": [
+        141
+      ],
+      "source_segment_ids": [
+        141
+      ]
+    },
+    {
+      "start": 878.4,
+      "end": 888.0,
+      "text": "他们家感觉是有一些基因天赋的，我觉得啊，对啊，对啊，你看他侄女两个侄女都二三零左右的水平，然后他女儿应该听说也是挺强的。",
+      "source_segment_indexes": [
+        142
+      ],
+      "source_segment_ids": [
+        142
+      ]
+    },
+    {
+      "start": 888.64,
+      "end": 894.0,
+      "text": "我包括我女儿，我觉得她以后未来真的有这个天赋，她愿意练，那我肯定也不会阻拦的。",
+      "source_segment_indexes": [
+        143
+      ],
+      "source_segment_ids": [
+        143
+      ]
+    },
+    {
+      "start": 894.16,
+      "end": 896.56,
+      "text": "我只是觉得可能吃不了那份苦。",
+      "source_segment_indexes": [
+        144
+      ],
+      "source_segment_ids": [
+        144
+      ]
+    },
+    {
+      "start": 897.2,
+      "end": 915.44,
+      "text": "嗯，跑步这么的让更多人着迷，他真的是有他自己的存在的，而且我是觉得他第一个门槛低，第二个是为数不多你真正每天的枯燥的付出可以给你带来收获的一项运动。",
+      "source_segment_indexes": [
+        145
+      ],
+      "source_segment_ids": [
+        145
+      ]
+    },
+    {
+      "start": 915.92,
+      "end": 917.2,
+      "text": "那有的运动是不是这样子的？",
+      "source_segment_indexes": [
+        146
+      ],
+      "source_segment_ids": [
+        146
+      ]
+    },
+    {
+      "start": 917.52,
+      "end": 923.44,
+      "text": "对，比如说我下棋可能就不是这样的，虽然下棋也是个运动，但我实在是下不了一点，水平太差了。",
+      "source_segment_indexes": [
+        147
+      ],
+      "source_segment_ids": [
+        147
+      ]
+    },
+    {
+      "start": 923.84,
+      "end": 926.56,
+      "text": "真的跟你的功夫有关系，那你也没有那么多精力去。",
+      "source_segment_indexes": [
+        148
+      ],
+      "source_segment_ids": [
+        148
+      ]
+    },
+    {
+      "start": 926.64,
+      "end": 941.36,
+      "text": "你看你现在又要忙工作，又要忙你那么大的产业链，你的公司矩阵，然后还有你的现在很重要的一个家庭，你的孩子，你没有办法投入那么多在跑步上了。",
+      "source_segment_indexes": [
+        149
+      ],
+      "source_segment_ids": [
+        149
+      ]
+    },
+    {
+      "start": 941.6,
+      "end": 945.36,
+      "text": "的确是，我我说实话，的确跑的肯定是比以前少蛮多的。",
+      "source_segment_indexes": [
+        150
+      ],
+      "source_segment_ids": [
+        150
+      ]
+    },
+    {
+      "start": 945.84,
+      "end": 948.64,
+      "text": "对，还好我不是这个跑鞋评测博主，所以还好。",
+      "source_segment_indexes": [
+        151
+      ],
+      "source_segment_ids": [
+        151
+      ]
+    },
+    {
+      "start": 949.52,
+      "end": 952.32,
+      "text": "没关系，可以让铁蛋继承你的意志。",
+      "source_segment_indexes": [
+        152
+      ],
+      "source_segment_ids": [
+        152
+      ]
+    },
+    {
+      "start": 952.48,
+      "end": 954.96,
+      "text": "没事，我们公司跑得快的，我们公司还挺有意思。",
+      "source_segment_indexes": [
+        153
+      ],
+      "source_segment_ids": [
+        153
+      ]
+    },
+    {
+      "start": 954.96,
+      "end": 956.64,
+      "text": "我们公司有三代的黑马，你知道吧？",
+      "source_segment_indexes": [
+        154
+      ],
+      "source_segment_ids": [
+        154
+      ]
+    },
+    {
+      "start": 956.88,
+      "end": 959.76,
+      "text": "猴子初代黑马，二代黑马是李健。",
+      "source_segment_indexes": [
+        155
+      ],
+      "source_segment_ids": [
+        155
+      ]
+    },
+    {
+      "start": 960.08,
+      "end": 966.8,
+      "text": "现在我们还有个实习同事叫小蔡，他今年还是那个破竹之队去肯尼亚的，可以可以，继续培养，继续培养。",
+      "source_segment_indexes": [
+        156
+      ],
+      "source_segment_ids": [
+        156
+      ]
+    },
+    {
+      "start": 967.36,
+      "end": 975.2,
+      "text": "说实话，我还是很喜欢在比赛场上见到这些熟悉的朋友们的，我也是很开心的。",
+      "source_segment_indexes": [
+        157
+      ],
+      "source_segment_ids": [
+        157
+      ]
+    },
+    {
+      "start": 975.68,
+      "end": 977.76,
+      "text": "从这个角度来说，我还是很喜欢去现场的。",
+      "source_segment_indexes": [
+        158
+      ],
+      "source_segment_ids": [
+        158
+      ]
+    },
+    {
+      "start": 978.24,
+      "end": 983.04,
+      "text": "很多时候你也知道，就比赛比完，前之后这个真情实感的部分也很多。",
+      "source_segment_indexes": [
+        159
+      ],
+      "source_segment_ids": [
+        159
+      ]
+    },
+    {
+      "start": 983.6,
+      "end": 989.44,
+      "text": "对啊，对，你说的真的是，因为你在赛场上确实能见到运动员很不一样的一面。",
+      "source_segment_indexes": [
+        160
+      ],
+      "source_segment_ids": [
+        160
+      ]
+    },
+    {
+      "start": 990.0,
+      "end": 994.32,
+      "text": "他表现好了，能看到他这样的一面；，那表现差了，就能看到另一面。",
+      "source_segment_indexes": [
+        161
+      ],
+      "source_segment_ids": [
+        161
+      ]
+    },
+    {
+      "start": 994.72,
+      "end": 1001.12,
+      "text": "或者他在冲线之后，他很激动，他能说出很多你平时怎么引导都说不出来的话。",
+      "source_segment_indexes": [
+        162
+      ],
+      "source_segment_ids": [
+        162
+      ]
+    },
+    {
+      "start": 1001.44,
+      "end": 1011.44,
+      "text": "没错，就是这种是会让你觉得你在那个时间把这个记录下来，或者你问了之后有一些交流也好，你觉得那个时刻是非常非常重要的。",
+      "source_segment_indexes": [
+        163
+      ],
+      "source_segment_ids": [
+        163
+      ]
+    },
+    {
+      "start": 1011.92,
+      "end": 1018.08,
+      "text": "我记得很清楚，去年柏林，我喊董哥，董哥就说了一句：“我老了，跑不动了。",
+      "source_segment_indexes": [
+        164
+      ],
+      "source_segment_ids": [
+        164
+      ]
+    },
+    {
+      "start": 1018.16,
+      "end": 1019.36,
+      "text": "”他他每次不就这两句吗？",
+      "source_segment_indexes": [
+        165
+      ],
+      "source_segment_ids": [
+        165
+      ]
+    },
+    {
+      "start": 1019.52,
+      "end": 1022.88,
+      "text": "但他那次就讲的就，因为他看上去也也蛮疲劳的。",
+      "source_segment_indexes": [
+        166
+      ],
+      "source_segment_ids": [
+        166
+      ]
+    },
+    {
+      "start": 1023.36,
+      "end": 1026.08,
+      "text": "然后你那时候就觉得哇，还蛮不一样的。",
+      "source_segment_indexes": [
+        167
+      ],
+      "source_segment_ids": [
+        167
+      ]
+    },
+    {
+      "start": 1026.88,
+      "end": 1028.24,
+      "text": "但我们董哥继续跑啊！",
+      "source_segment_indexes": [
+        168
+      ],
+      "source_segment_ids": [
+        168
+      ]
+    },
+    {
+      "start": 1028.24,
+      "end": 1033.52,
+      "text": "我我前全运会之后跟他聊，他说：“我说那你这个明年呢？",
+      "source_segment_indexes": [
+        169
+      ],
+      "source_segment_ids": [
+        169
+      ]
+    },
+    {
+      "start": 1033.6,
+      "end": 1033.92,
+      "text": "厦门？",
+      "source_segment_indexes": [
+        170
+      ],
+      "source_segment_ids": [
+        170
+      ]
+    },
+    {
+      "start": 1034.0,
+      "end": 1035.84,
+      "text": "”他说：“我跟你说一下，我打算继续跑。",
+      "source_segment_indexes": [
+        171
+      ],
+      "source_segment_ids": [
+        171
+      ]
+    },
+    {
+      "start": 1036.08,
+      "end": 1036.72,
+      "text": "”我说：“Great！",
+      "source_segment_indexes": [
+        172
+      ],
+      "source_segment_ids": [
+        172
+      ]
+    },
+    {
+      "start": 1037.2,
+      "end": 1038.16,
+      "text": "”我一直在怂恿他。",
+      "source_segment_indexes": [
+        173
+      ],
+      "source_segment_ids": [
+        173
+      ]
+    },
+    {
+      "start": 1038.24,
+      "end": 1039.68,
+      "text": "我平时训练我就一直怂恿他。",
+      "source_segment_indexes": [
+        174
+      ],
+      "source_segment_ids": [
+        174
+      ]
+    },
+    {
+      "start": 1039.76,
+      "end": 1042.4,
+      "text": "对，就我视频有看到，大家不都说嘛？",
+      "source_segment_indexes": [
+        175
+      ],
+      "source_segment_ids": [
+        175
+      ]
+    },
+    {
+      "start": 1042.56,
+      "end": 1048.8,
+      "text": "我的天天的三个任务：鼓励老人、拒绝亲家，还有欺负瘸子。",
+      "source_segment_indexes": [
+        176
+      ],
+      "source_segment_ids": [
+        176
+      ]
+    },
+    {
+      "start": 1050.24,
+      "end": 1052.8,
+      "text": "对，所以，我我觉得鼓励老人也很重要。",
+      "source_segment_indexes": [
+        177
+      ],
+      "source_segment_ids": [
+        177
+      ]
+    },
+    {
+      "start": 1053.2,
+      "end": 1057.84,
+      "text": "我觉得董哥在，他只要他在跑，我觉得一直在激励我们。",
+      "source_segment_indexes": [
+        178
+      ],
+      "source_segment_ids": [
+        178
+      ]
+    },
+    {
+      "start": 1058.32,
+      "end": 1059.92,
+      "text": "是的，真的，的确是真的。",
+      "source_segment_indexes": [
+        179
+      ],
+      "source_segment_ids": [
+        179
+      ]
+    },
+    {
+      "start": 1060.16,
+      "end": 1063.2,
+      "text": "你这认识董哥也那么多年了，你之前也讲过。",
+      "source_segment_indexes": [
+        180
+      ],
+      "source_segment_ids": [
+        180
+      ]
+    },
+    {
+      "start": 1063.44,
+      "end": 1072.96,
+      "text": "对啊，我从一零年一年过来训练，那时候我刚来的时候，我我分不清他跟杨丽红两个人，我觉得长得好像。",
+      "source_segment_indexes": [
+        181
+      ],
+      "source_segment_ids": [
+        181
+      ]
+    },
+    {
+      "start": 1072.96,
+      "end": 1079.76,
+      "text": "当然，现在我觉得是明显两个人不一样的人，因为那个时候网络视频又没有现在这么发达，他们在。",
+      "source_segment_indexes": [
+        182
+      ],
+      "source_segment_ids": [
+        182
+      ]
+    },
+    {
+      "start": 1080.16,
+      "end": 1097.52,
+      "text": "网上的视频可能就局限于直播赛事直播的那个远远的长焦的距镜头，他可能真正的近景的采访的视频不多，所以我对他们两个印象没有那么深，所以我来的时候，嗯也认不清他们两个哪个是董国建和杨宁好。",
+      "source_segment_indexes": [
+        183
+      ],
+      "source_segment_ids": [
+        183
+      ]
+    },
+    {
+      "start": 1097.6,
+      "end": 1100.48,
+      "text": "那最后多久的时候才认认出来的？",
+      "source_segment_indexes": [
+        184
+      ],
+      "source_segment_ids": [
+        184
+      ]
+    },
+    {
+      "start": 1100.64,
+      "end": 1104.16,
+      "text": "啊，也很快，也很快，天天就在一起训练，嗯，三四天就认识了。",
+      "source_segment_indexes": [
+        185
+      ],
+      "source_segment_ids": [
+        185
+      ]
+    },
+    {
+      "start": 1104.4,
+      "end": 1113.44,
+      "text": "然后我第一次跟他们出去跑公路，跑出去我就迷路了，跟不上他们，因为刚上高原又跟他们水平又有差距，然后跑有氧也跑丢了。",
+      "source_segment_indexes": [
+        186
+      ],
+      "source_segment_ids": [
+        186
+      ]
+    },
+    {
+      "start": 1113.76,
+      "end": 1115.36,
+      "text": "后来还是董哥回来找了我。",
+      "source_segment_indexes": [
+        187
+      ],
+      "source_segment_ids": [
+        187
+      ]
+    },
+    {
+      "start": 1115.76,
+      "end": 1118.8,
+      "text": "哎，这一晃十几年就过去了，太快了。",
+      "source_segment_indexes": [
+        188
+      ],
+      "source_segment_ids": [
+        188
+      ]
+    },
+    {
+      "start": 1119.04,
+      "end": 1133.36,
+      "text": "是，我现在活在的是肯定是最好的时代，可能未来还是，但是我觉得可能又有的时候又觉得，包括董哥也这么觉得，哎，自己在自己正当年华的时候，在他巅峰的时候，他没有赶上这个时代。",
+      "source_segment_indexes": [
+        189
+      ],
+      "source_segment_ids": [
+        189
+      ]
+    },
+    {
+      "start": 1133.76,
+      "end": 1138.72,
+      "text": "我多多少有的时候也会有这种感觉，但是好歹我赶上了，我们都赶上了，是吧？",
+      "source_segment_indexes": [
+        190
+      ],
+      "source_segment_ids": [
+        190
+      ]
+    },
+    {
+      "start": 1138.88,
+      "end": 1140.08,
+      "text": "对，都赶上了。",
+      "source_segment_indexes": [
+        191
+      ],
+      "source_segment_ids": [
+        191
+      ]
+    },
+    {
+      "start": 1140.08,
+      "end": 1141.6,
+      "text": "其实我觉得还是都赶上了。",
+      "source_segment_indexes": [
+        192
+      ],
+      "source_segment_ids": [
+        192
+      ]
+    },
+    {
+      "start": 1142.16,
+      "end": 1152.48,
+      "text": "对啊，那可能比如说，在我最想退役可能是一七年，一七年左右那个时候，那我如果真退了，那你赶都没赶上呢。",
+      "source_segment_indexes": [
+        193
+      ],
+      "source_segment_ids": [
+        193
+      ]
+    },
+    {
+      "start": 1153.04,
+      "end": 1155.6,
+      "text": "所以讲到底，坚持是一件非常重要的事情。",
+      "source_segment_indexes": [
+        194
+      ],
+      "source_segment_ids": [
+        194
+      ]
+    },
+    {
+      "start": 1155.92,
+      "end": 1164.32,
+      "text": "对，坚持，而且我也真的觉得在里面寻找的乐趣，跟商业化，跟我赚的钱多少没有关系。",
+      "source_segment_indexes": [
+        195
+      ],
+      "source_segment_ids": [
+        195
+      ]
+    },
+    {
+      "start": 1165.12,
+      "end": 1179.04,
+      "text": "就是我在不断的日复一日的训练、努力，然后贯彻我认为正确的训练方式，最后我站上了更高的领奖台，我我跑到了更快的成绩，我是有个很大的成就感的。",
+      "source_segment_indexes": [
+        196
+      ],
+      "source_segment_ids": [
+        196
+      ]
+    },
+    {
+      "start": 1179.28,
+      "end": 1192.24,
+      "text": "我在这里面循环我往复的寻找到了我的乐趣，我没有在跑步里面寻找到乐趣，就是我没有在我痛苦的法德拉克跑、痛苦的艰辛跑这种跑里面寻找到乐趣，我觉得没有。",
+      "source_segment_indexes": [
+        197
+      ],
+      "source_segment_ids": [
+        197
+      ]
+    },
+    {
+      "start": 1193.12,
+      "end": 1200.0,
+      "text": "但是我在这样一个整体的过程，找到了我的我认为的乐趣，跟这个跟我的赚的钱多少没有。",
+      "source_segment_indexes": [
+        198
+      ],
+      "source_segment_ids": [
+        198
+      ]
+    },
+    {
+      "start": 1200.0,
+      "end": 1205.2,
+      "text": "关系的，这个是在一个更长的时间周期里面，不是看今天这节课或者这周练的怎么样。",
+      "source_segment_indexes": [
+        199
+      ],
+      "source_segment_ids": [
+        199
+      ]
+    },
+    {
+      "start": 1205.6,
+      "end": 1206.24,
+      "text": "对的，对的。",
+      "source_segment_indexes": [
+        200
+      ],
+      "source_segment_ids": [
+        200
+      ]
+    },
+    {
+      "start": 1206.72,
+      "end": 1212.96,
+      "text": "那有的时候，有的时候跑一堂课特别锻炼，特别好，跑的出来的成绩也特别好，我也会，我也会开心的，我会激动。",
+      "source_segment_indexes": [
+        201
+      ],
+      "source_segment_ids": [
+        201
+      ]
+    },
+    {
+      "start": 1213.36,
+      "end": 1213.76,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        202
+      ],
+      "source_segment_ids": [
+        202
+      ]
+    },
+    {
+      "start": 1214.08,
+      "end": 1215.44,
+      "text": "对，我觉得我变得更强了。",
+      "source_segment_indexes": [
+        203
+      ],
+      "source_segment_ids": [
+        203
+      ]
+    },
+    {
+      "start": 1215.84,
+      "end": 1217.52,
+      "text": "变得更强是一种什么样的感觉？",
+      "source_segment_indexes": [
+        204
+      ],
+      "source_segment_ids": [
+        204
+      ]
+    },
+    {
+      "start": 1218.24,
+      "end": 1224.4,
+      "text": "但我觉得这个应该每个人都能感受到，这不光是我们就是成绩非常好的运动员才能感受到的。",
+      "source_segment_indexes": [
+        205
+      ],
+      "source_segment_ids": [
+        205
+      ]
+    },
+    {
+      "start": 1224.4,
+      "end": 1236.32,
+      "text": "我相信，即使是我的父亲，他也能感觉到，他在随着他嗯每一堂有氧课、每一堂长距离之后，他会感觉到自己变强。",
+      "source_segment_indexes": [
+        206
+      ],
+      "source_segment_ids": [
+        206
+      ]
+    },
+    {
+      "start": 1236.4,
+      "end": 1238.32,
+      "text": "这个真的跟成绩无关。",
+      "source_segment_indexes": [
+        207
+      ],
+      "source_segment_ids": [
+        207
+      ]
+    },
+    {
+      "start": 1238.64,
+      "end": 1238.88,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        208
+      ],
+      "source_segment_ids": [
+        208
+      ]
+    },
+    {
+      "start": 1239.04,
+      "end": 1243.04,
+      "text": "就像耐克说的那句话：“只要你有身体，你就是运动员。",
+      "source_segment_indexes": [
+        209
+      ],
+      "source_segment_ids": [
+        209
+      ]
+    },
+    {
+      "start": 1243.04,
+      "end": 1249.2,
+      "text": "”真的，每个人都有自己变得更强的这个感受，能够有这种成就感。",
+      "source_segment_indexes": [
+        210
+      ],
+      "source_segment_ids": [
+        210
+      ]
+    },
+    {
+      "start": 1250.16,
+      "end": 1250.8,
+      "text": "对，的确是。",
+      "source_segment_indexes": [
+        211
+      ],
+      "source_segment_ids": [
+        211
+      ]
+    },
+    {
+      "start": 1250.8,
+      "end": 1259.52,
+      "text": "我觉得跑步从锻炼到训练，其实很多人就是在追求自己的变得更强，身体上也好，心灵上也好。",
+      "source_segment_indexes": [
+        212
+      ],
+      "source_segment_ids": [
+        212
+      ]
+    },
+    {
+      "start": 1259.6,
+      "end": 1266.48,
+      "text": "你从我记得我刚开始跑步五公里、十公里，那时候觉得跑一个百米似乎是一件遥不可及的事情。",
+      "source_segment_indexes": [
+        213
+      ],
+      "source_segment_ids": [
+        213
+      ]
+    },
+    {
+      "start": 1266.88,
+      "end": 1267.28,
+      "text": "是的。",
+      "source_segment_indexes": [
+        214
+      ],
+      "source_segment_ids": [
+        214
+      ]
+    },
+    {
+      "start": 1267.6,
+      "end": 1271.2,
+      "text": "但是慢慢慢慢，你就会从中也会获得很多的乐趣。",
+      "source_segment_indexes": [
+        215
+      ],
+      "source_segment_ids": [
+        215
+      ]
+    },
+    {
+      "start": 1271.68,
+      "end": 1272.0,
+      "text": "对啊。",
+      "source_segment_indexes": [
+        216
+      ],
+      "source_segment_ids": [
+        216
+      ]
+    },
+    {
+      "start": 1272.64,
+      "end": 1281.44,
+      "text": "就我特别能理解很多像他第一次破三到终点那种感受，就是每个人属于自己的那种时刻。",
+      "source_segment_indexes": [
+        217
+      ],
+      "source_segment_ids": [
+        217
+      ]
+    },
+    {
+      "start": 1281.92,
+      "end": 1289.36,
+      "text": "我也能记得我从十分零二秒到八分零四秒那种感觉，太难忘了，太难忘了。",
+      "source_segment_indexes": [
+        218
+      ],
+      "source_segment_ids": [
+        218
+      ]
+    },
+    {
+      "start": 1290.24,
+      "end": 1293.92,
+      "text": "对，因为你维持付出、维持痛苦、维持欢乐。",
+      "source_segment_indexes": [
+        219
+      ],
+      "source_segment_ids": [
+        219
+      ]
+    },
+    {
+      "start": 1294.4,
+      "end": 1296.88,
+      "text": "对啊，因为你付出了多少，你自己清楚呀。",
+      "source_segment_indexes": [
+        220
+      ],
+      "source_segment_ids": [
+        220
+      ]
+    },
+    {
+      "start": 1297.6,
+      "end": 1300.0,
+      "text": "这个只有你自己跑过了，你才懂吧？",
+      "source_segment_indexes": [
+        221
+      ],
+      "source_segment_ids": [
+        221
+      ]
+    },
+    {
+      "start": 1300.08,
+      "end": 1301.2,
+      "text": "哎，这句话也是耐克说的。",
+      "source_segment_indexes": [
+        222
+      ],
+      "source_segment_ids": [
+        222
+      ]
+    },
+    {
+      "start": 1301.68,
+      "end": 1303.12,
+      "text": "是的，好，好，好。",
+      "source_segment_indexes": [
+        223
+      ],
+      "source_segment_ids": [
+        223
+      ]
+    },
+    {
+      "start": 1304.72,
+      "end": 1311.2,
+      "text": "所以你前面说这个跑步有一些痛苦，你觉得这个痛苦是因为训练来带来的这个难吗？",
+      "source_segment_indexes": [
+        224
+      ],
+      "source_segment_ids": [
+        224
+      ]
+    },
+    {
+      "start": 1311.68,
+      "end": 1312.96,
+      "text": "因为跑步究竟是怎么样？",
+      "source_segment_indexes": [
+        225
+      ],
+      "source_segment_ids": [
+        225
+      ]
+    },
+    {
+      "start": 1312.96,
+      "end": 1319.92,
+      "text": "其实现在大家也很难定，因为我们现在看到社交媒体上看到的非常多的这种欢乐的跑步，非常的开心。",
+      "source_segment_indexes": [
+        226
+      ],
+      "source_segment_ids": [
+        226
+      ]
+    },
+    {
+      "start": 1320.56,
+      "end": 1326.72,
+      "text": "大家似乎没有看到那么多痛苦的表达，在这个跑步这件事情里面，以前好像要练的很苦。",
+      "source_segment_indexes": [
+        227
+      ],
+      "source_segment_ids": [
+        227
+      ]
+    },
+    {
+      "start": 1326.72,
+      "end": 1333.36,
+      "text": "以前五普四有一次，马老师在那个上马之前还做了一个 slogan，叫什么“明天都给我顶一顶”。",
+      "source_segment_indexes": [
+        228
+      ],
+      "source_segment_ids": [
+        228
+      ]
+    },
+    {
+      "start": 1334.48,
+      "end": 1339.12,
+      "text": "现在这种大家对跑步的内容的传达的方式和角度，有了很大的很大的变化。",
+      "source_segment_indexes": [
+        229
+      ],
+      "source_segment_ids": [
+        229
+      ]
+    },
+    {
+      "start": 1339.52,
+      "end": 1349.84,
+      "text": "是，我其实我的视频也一直都是这种风格，就是我希望把快乐的一面展现给大家，我很少拍很痛苦的那个训练。",
+      "source_segment_indexes": [
+        230
+      ],
+      "source_segment_ids": [
+        230
+      ]
+    },
+    {
+      "start": 1350.0,
+      "end": 1364.88,
+      "text": "对，因为你也说过，你说你拍的训练课都是比较轻松的，比较大家，但是很少或者把这种真的是发特难啊、间加速啊、特别长距离啊，可能要跑破的这些内容把它呈现出来。",
+      "source_segment_indexes": [
+        231
+      ],
+      "source_segment_ids": [
+        231
+      ]
+    },
+    {
+      "start": 1365.44,
+      "end": 1369.28,
+      "text": "因为我也担心你把这些东西过多的展现出来。",
+      "source_segment_indexes": [
+        232
+      ],
+      "source_segment_ids": [
+        232
+      ]
+    },
+    {
+      "start": 1369.68,
+      "end": 1385.36,
+      "text": "第一个，我从创作的角度来考虑，我会觉得不会有那么多的人想看到这么看到你痛苦的那个东西，因为可能一堂课两堂课还好，看多了会觉得至少从观感上来说不会那么的好。",
+      "source_segment_indexes": [
+        233
+      ],
+      "source_segment_ids": [
+        233
+      ]
+    },
+    {
+      "start": 1385.68,
+      "end": 1388.32,
+      "text": "而且我觉得真的痛苦的时候你也没有力气展现了。",
+      "source_segment_indexes": [
+        234
+      ],
+      "source_segment_ids": [
+        234
+      ]
+    },
+    {
+      "start": 1388.64,
+      "end": 1389.04,
+      "text": "啊，对啊。",
+      "source_segment_indexes": [
+        235
+      ],
+      "source_segment_ids": [
+        235
+      ]
+    },
+    {
+      "start": 1389.2,
+      "end": 1397.76,
+      "text": "我能够理解一点，因为当跑的还挺辛苦的时候，就是你那时候只是想跑的快点，别的一切都已经不重要了，也没有什么表情管理。",
+      "source_segment_indexes": [
+        236
+      ],
+      "source_segment_ids": [
+        236
+      ]
+    },
+    {
+      "start": 1398.16,
+      "end": 1400.96,
+      "text": "对啊，表情管理已经没有了，你可能动作也变形了。",
+      "source_segment_indexes": [
+        237
+      ],
+      "source_segment_ids": [
+        237
+      ]
+    },
+    {
+      "start": 1401.6,
+      "end": 1406.72,
+      "text": "对，你可能会会累了，然后痛苦的跟教练商量，我能不能少跑两个？",
+      "source_segment_indexes": [
+        238
+      ],
+      "source_segment_ids": [
+        238
+      ]
+    },
+    {
+      "start": 1406.8,
+      "end": 1408.08,
+      "text": "这都是你懦弱的一面。",
+      "source_segment_indexes": [
+        239
+      ],
+      "source_segment_ids": [
+        239
+      ]
+    },
+    {
+      "start": 1408.72,
+      "end": 1410.08,
+      "text": "但这也是非常真实的一面。",
+      "source_segment_indexes": [
+        240
+      ],
+      "source_segment_ids": [
+        240
+      ]
+    },
+    {
+      "start": 1410.64,
+      "end": 1418.4,
+      "text": "啊，这是真实的一面，但是我并不是说这样是不对的，因为你要根据你的体感来，并不是说我累了我就一定要强撑着去把量完成。",
+      "source_segment_indexes": [
+        241
+      ],
+      "source_segment_ids": [
+        241
+      ]
+    },
+    {
+      "start": 1418.88,
+      "end": 1435.84,
+      "text": "啊，我训练年限到这么长时间过来，我真的觉得有的时候你真的备战一场大赛，并不是一定要这样的，就是即使我特别特别累，我也要为了完成量、完成计划而去完成，根据体感来。",
+      "source_segment_indexes": [
+        242
+      ],
+      "source_segment_ids": [
+        242
+      ]
+    },
+    {
+      "start": 1435.92,
+      "end": 1439.84,
+      "text": "你真的累了，那我觉得可能少跑两个，我调整过来了。",
+      "source_segment_indexes": [
+        243
+      ],
+      "source_segment_ids": [
+        243
+      ]
+    },
+    {
+      "start": 1440.16,
+      "end": 1444.64,
+      "text": "我反而比赛比的更好，这也是对自己身体的掌控，我觉得。",
+      "source_segment_indexes": [
+        244
+      ],
+      "source_segment_ids": [
+        244
+      ]
+    },
+    {
+      "start": 1444.8,
+      "end": 1445.12,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        245
+      ],
+      "source_segment_ids": [
+        245
+      ]
+    },
+    {
+      "start": 1445.36,
+      "end": 1451.68,
+      "text": "但是有的时候，你确实在镜头面前展现，会让观众觉得你懦弱，就挺难的。",
+      "source_segment_indexes": [
+        246
+      ],
+      "source_segment_ids": [
+        246
+      ]
+    },
+    {
+      "start": 1451.68,
+      "end": 1464.88,
+      "text": "我觉得这个度也很难，观众想看的和你想要表达的本身也也不一致，特别现在内容创作的角度也很多，但是大家都催更了，所以说只要能够保持产量就已经很好了。",
+      "source_segment_indexes": [
+        247
+      ],
+      "source_segment_ids": [
+        247
+      ]
+    },
+    {
+      "start": 1465.36,
+      "end": 1468.8,
+      "text": "那我看你这个周二黑板的视视频都已经发了的。",
+      "source_segment_indexes": [
+        248
+      ],
+      "source_segment_ids": [
+        248
+      ]
+    },
+    {
+      "start": 1469.28,
+      "end": 1472.24,
+      "text": "这个我说实话，这个内容量也很少，就四分钟。",
+      "source_segment_indexes": [
+        249
+      ],
+      "source_segment_ids": [
+        249
+      ]
+    },
+    {
+      "start": 1472.24,
+      "end": 1476.16,
+      "text": "我今天也被很多人说我，这太短了吧，就四分钟。",
+      "source_segment_indexes": [
+        250
+      ],
+      "source_segment_ids": [
+        250
+      ]
+    },
+    {
+      "start": 1476.16,
+      "end": 1480.72,
+      "text": "但是那没办法，确实内容量就这么点多，也是一个矛盾点吧。",
+      "source_segment_indexes": [
+        251
+      ],
+      "source_segment_ids": [
+        251
+      ]
+    },
+    {
+      "start": 1480.72,
+      "end": 1487.28,
+      "text": "我不可能去参加那么多过多的比赛，然后给大家带来那么大产量的比赛的vlog作品。",
+      "source_segment_indexes": [
+        252
+      ],
+      "source_segment_ids": [
+        252
+      ]
+    },
+    {
+      "start": 1487.84,
+      "end": 1493.04,
+      "text": "我还是有我的优先级的，就是我我要训练，我要冬训，我要去比赛。",
+      "source_segment_indexes": [
+        253
+      ],
+      "source_segment_ids": [
+        253
+      ]
+    },
+    {
+      "start": 1493.04,
+      "end": 1496.56,
+      "text": "当然，我冬训也可以给大家带来一些冬训的训练的vlog。",
+      "source_segment_indexes": [
+        254
+      ],
+      "source_segment_ids": [
+        254
+      ]
+    },
+    {
+      "start": 1497.52,
+      "end": 1502.88,
+      "text": "当然，我也觉得训练的vlog跟比赛的vlog质量还是没办法相比的。",
+      "source_segment_indexes": [
+        255
+      ],
+      "source_segment_ids": [
+        255
+      ]
+    },
+    {
+      "start": 1503.36,
+      "end": 1508.08,
+      "text": "比赛我们听因为叫叫moment，但是有个时刻嘛，你会见很多不同的人。",
+      "source_segment_indexes": [
+        256
+      ],
+      "source_segment_ids": [
+        256
+      ]
+    },
+    {
+      "start": 1508.56,
+      "end": 1509.44,
+      "text": "对对对对对。",
+      "source_segment_indexes": [
+        257
+      ],
+      "source_segment_ids": [
+        257
+      ]
+    },
+    {
+      "start": 1509.76,
+      "end": 1522.56,
+      "text": "虽然前面说的这个，呃，亲家也好，老人也好，圈子也好，是在训练视频里面始终会贯穿的，但是它也会导致一定程度的，就是它有很多内容是不能说是重复，是会接近的。",
+      "source_segment_indexes": [
+        258
+      ],
+      "source_segment_ids": [
+        258
+      ]
+    },
+    {
+      "start": 1522.56,
+      "end": 1526.0,
+      "text": "对，这也是我们的生活的常态，其实。",
+      "source_segment_indexes": [
+        259
+      ],
+      "source_segment_ids": [
+        259
+      ]
+    },
+    {
+      "start": 1526.16,
+      "end": 1531.44,
+      "text": "这也是马拉松的常态，马拉松训练的常态就是日复一日的有氧跑。",
+      "source_segment_indexes": [
+        260
+      ],
+      "source_segment_ids": [
+        260
+      ]
+    },
+    {
+      "start": 1531.92,
+      "end": 1537.76,
+      "text": "就是这样，所以说在这种内容里面要找每次都要有新的亮点，这个的确是巨大的挑战。",
+      "source_segment_indexes": [
+        261
+      ],
+      "source_segment_ids": [
+        261
+      ]
+    },
+    {
+      "start": 1538.24,
+      "end": 1549.12,
+      "text": "对，所以我有的时候也很佩服像像大震这样的创作者，至少目前来看，他的一直能保持一定的创作的内容的更新。",
+      "source_segment_indexes": [
+        262
+      ],
+      "source_segment_ids": [
+        262
+      ]
+    },
+    {
+      "start": 1549.68,
+      "end": 1550.0,
+      "text": "是啊。",
+      "source_segment_indexes": [
+        263
+      ],
+      "source_segment_ids": [
+        263
+      ]
+    },
+    {
+      "start": 1550.24,
+      "end": 1556.32,
+      "text": "这个内容创作真的是花很多时间精力，对他要得想嘛，日常你平时就得想这些东西。",
+      "source_segment_indexes": [
+        264
+      ],
+      "source_segment_ids": [
+        264
+      ]
+    },
+    {
+      "start": 1557.04,
+      "end": 1558.96,
+      "text": "对，所以你跑步的时候在想些什么？",
+      "source_segment_indexes": [
+        265
+      ],
+      "source_segment_ids": [
+        265
+      ]
+    },
+    {
+      "start": 1559.44,
+      "end": 1559.92,
+      "text": "小课。",
+      "source_segment_indexes": [
+        266
+      ],
+      "source_segment_ids": [
+        266
+      ]
+    },
+    {
+      "start": 1560.64,
+      "end": 1572.4,
+      "text": "小课有氧课，那就是，呃，我首先我会听音乐，一个人跑的时候我会听播客，然后跟队友一起跑的时候我会听音乐，然后呢穿插着跟他们聊聊天。",
+      "source_segment_indexes": [
+        267
+      ],
+      "source_segment_ids": [
+        267
+      ]
+    },
+    {
+      "start": 1573.04,
+      "end": 1584.8,
+      "text": "今天我刚回来，我第一天我跟大福、跟董哥第一堂课，那聊天聊蛮多，因为毕竟我们有二十多天、二十天左右没见了，所以可聊的东西还蛮多的。",
+      "source_segment_indexes": [
+        268
+      ],
+      "source_segment_ids": [
+        268
+      ]
+    },
+    {
+      "start": 1585.12,
+      "end": 1589.68,
+      "text": "这个小范围团体在私下面没有镜头、没有麦克风面前，那尺度就更大了。",
+      "source_segment_indexes": [
+        269
+      ],
+      "source_segment_ids": [
+        269
+      ]
+    },
+    {
+      "start": 1590.08,
+      "end": 1592.24,
+      "text": "哦，那肯定啊，我还想放个麦克风啊。",
+      "source_segment_indexes": [
+        270
+      ],
+      "source_segment_ids": [
+        270
+      ]
+    },
+    {
+      "start": 1594.0,
+      "end": 1604.72,
+      "text": "那麦克风就不可能那么聊了，所以宋老师，你我真的建议你努力能跑到四分，在高原跑到四分配，这样你可以听到很多有意思的事情。",
+      "source_segment_indexes": [
+        271
+      ],
+      "source_segment_ids": [
+        271
+      ]
+    },
+    {
+      "start": 1605.28,
+      "end": 1612.0,
+      "text": "啊，我平原跑四分配也得要在我的Peak状态，高原跑四分配没事。",
+      "source_segment_indexes": [
+        272
+      ],
+      "source_segment_ids": [
+        272
+      ]
+    },
+    {
+      "start": 1612.4,
+      "end": 1615.92,
+      "text": "高原跑四分配，我们公司三四五个人可以做到的呀，我不是很担心。",
+      "source_segment_indexes": [
+        273
+      ],
+      "source_segment_ids": [
+        273
+      ]
+    },
+    {
+      "start": 1616.16,
+      "end": 1617.6,
+      "text": "好呀，好呀，你看真的。",
+      "source_segment_indexes": [
+        274
+      ],
+      "source_segment_ids": [
+        274
+      ]
+    },
+    {
+      "start": 1617.76,
+      "end": 1623.84,
+      "text": "因为我这次还跟铁蛋给他布置了一个工作任务，因为他现在高原时间也很多嘛。",
+      "source_segment_indexes": [
+        275
+      ],
+      "source_segment_ids": [
+        275
+      ]
+    },
+    {
+      "start": 1624.0,
+      "end": 1636.56,
+      "text": "我说，其实你就应该做一个专栏，因为你是有得天独厚的优势，在高原你会见到很多的人和运运动员也好，教练也好，相关的人也好。",
+      "source_segment_indexes": [
+        276
+      ],
+      "source_segment_ids": [
+        276
+      ]
+    },
+    {
+      "start": 1637.12,
+      "end": 1639.28,
+      "text": "所以说，其实你有很多的机会去做很多。",
+      "source_segment_indexes": [
+        277
+      ],
+      "source_segment_ids": [
+        277
+      ]
+    },
+    {
+      "start": 1639.28,
+      "end": 1644.48,
+      "text": "大家从媒体的角度，除了你之外，没有别人会在高原待那么久，待那么频繁的时间。",
+      "source_segment_indexes": [
+        278
+      ],
+      "source_segment_ids": [
+        278
+      ]
+    },
+    {
+      "start": 1645.12,
+      "end": 1648.0,
+      "text": "对别人来说很困难的事情，对你来说很容易嘛？",
+      "source_segment_indexes": [
+        279
+      ],
+      "source_segment_ids": [
+        279
+      ]
+    },
+    {
+      "start": 1648.56,
+      "end": 1656.32,
+      "text": "所以说也会有一些调整吧，因为他现在跑了二四多少，他肯定还是有更多的想法和野心的。",
+      "source_segment_indexes": [
+        280
+      ],
+      "source_segment_ids": [
+        280
+      ]
+    },
+    {
+      "start": 1656.72,
+      "end": 1660.16,
+      "text": "真的是，我首先你得贪心，你不贪心你做不了运动员。",
+      "source_segment_indexes": [
+        281
+      ],
+      "source_segment_ids": [
+        281
+      ]
+    },
+    {
+      "start": 1660.64,
+      "end": 1663.76,
+      "text": "你看你跑的越快，你就想以后更快。",
+      "source_segment_indexes": [
+        282
+      ],
+      "source_segment_ids": [
+        282
+      ]
+    },
+    {
+      "start": 1664.16,
+      "end": 1667.44,
+      "text": "当然到一定程度可能会变得越来越难嘛。",
+      "source_segment_indexes": [
+        283
+      ],
+      "source_segment_ids": [
+        283
+      ]
+    },
+    {
+      "start": 1667.92,
+      "end": 1671.52,
+      "text": "但是运动员好胜的心，我觉得都是一直在的。",
+      "source_segment_indexes": [
+        284
+      ],
+      "source_segment_ids": [
+        284
+      ]
+    },
+    {
+      "start": 1671.84,
+      "end": 1676.96,
+      "text": "那下一期我们也别我们俩干聊了，真的得找个找个嘉宾。",
+      "source_segment_indexes": [
+        285
+      ],
+      "source_segment_ids": [
+        285
+      ]
+    },
+    {
+      "start": 1677.12,
+      "end": 1679.84,
+      "text": "没问题，我可以把铁蛋找来。",
+      "source_segment_indexes": [
+        286
+      ],
+      "source_segment_ids": [
+        286
+      ]
+    },
+    {
+      "start": 1680.48,
+      "end": 1687.2,
+      "text": "甚至欢迎在播客的节目下面留言，你们想邀请谁，我们也许也可以努力一下。",
+      "source_segment_indexes": [
+        287
+      ],
+      "source_segment_ids": [
+        287
+      ]
+    },
+    {
+      "start": 1687.36,
+      "end": 1688.48,
+      "text": "可以啊，我觉得可以的。",
+      "source_segment_indexes": [
+        288
+      ],
+      "source_segment_ids": [
+        288
+      ]
+    },
+    {
+      "start": 1688.88,
+      "end": 1695.36,
+      "text": "哎，你一般比赛前一天，虽然你有的时候也拍比赛，我比如说你有很熟悉的人去跑比赛，你会给他们发微信吗？",
+      "source_segment_indexes": [
+        289
+      ],
+      "source_segment_ids": [
+        289
+      ]
+    },
+    {
+      "start": 1696.08,
+      "end": 1698.56,
+      "text": "不会，我很熟悉的人好像都不会。",
+      "source_segment_indexes": [
+        290
+      ],
+      "source_segment_ids": [
+        290
+      ]
+    },
+    {
+      "start": 1699.52,
+      "end": 1702.64,
+      "text": "也就乐哥他会骚扰我，我不会给他发。",
+      "source_segment_indexes": [
+        291
+      ],
+      "source_segment_ids": [
+        291
+      ]
+    },
+    {
+      "start": 1703.28,
+      "end": 1704.48,
+      "text": "他是因为心虚吗？",
+      "source_segment_indexes": [
+        292
+      ],
+      "source_segment_ids": [
+        292
+      ]
+    },
+    {
+      "start": 1704.48,
+      "end": 1705.92,
+      "text": "还是打个谈一下钱？",
+      "source_segment_indexes": [
+        293
+      ],
+      "source_segment_ids": [
+        293
+      ]
+    },
+    {
+      "start": 1706.16,
+      "end": 1710.16,
+      "text": "不是，他就是，哎，他私下面跟我说，还真不怎么提钱。",
+      "source_segment_indexes": [
+        294
+      ],
+      "source_segment_ids": [
+        294
+      ]
+    },
+    {
+      "start": 1710.4,
+      "end": 1714.56,
+      "text": "他在镜头里面可能为了，他就喜欢搞那种剧本嘛，他可能会提。",
+      "source_segment_indexes": [
+        295
+      ],
+      "source_segment_ids": [
+        295
+      ]
+    },
+    {
+      "start": 1714.8,
+      "end": 1722.08,
+      "text": "但是我们私下面，他就是拿我像大哥，可能就像他师兄啊，像他哥哥一样，就跟我讲。",
+      "source_segment_indexes": [
+        296
+      ],
+      "source_segment_ids": [
+        296
+      ]
+    },
+    {
+      "start": 1722.56,
+      "end": 1723.52,
+      "text": "反正他老去骚扰我。",
+      "source_segment_indexes": [
+        297
+      ],
+      "source_segment_ids": [
+        297
+      ]
+    },
+    {
+      "start": 1724.16,
+      "end": 1724.48,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        298
+      ],
+      "source_segment_ids": [
+        298
+      ]
+    },
+    {
+      "start": 1724.96,
+      "end": 1729.44,
+      "text": "我在镜头之外，我对他就是，我承认就是比较敷衍那种。",
+      "source_segment_indexes": [
+        299
+      ],
+      "source_segment_ids": [
+        299
+      ]
+    },
+    {
+      "start": 1730.8,
+      "end": 1735.2,
+      "text": "对，不好意思，平时那么敷衍你，但是我会继续下去的。",
+      "source_segment_indexes": [
+        300
+      ],
+      "source_segment_ids": [
+        300
+      ]
+    },
+    {
+      "start": 1736.56,
+      "end": 1738.24,
+      "text": "乐哥说：“没关系，请继续敷衍我。",
+      "source_segment_indexes": [
+        301
+      ],
+      "source_segment_ids": [
+        301
+      ]
+    },
+    {
+      "start": 1738.8,
+      "end": 1745.2,
+      "text": "”不是他，平时你不知道他的，一句已经跟我说过的话，他能再重复三四次。",
+      "source_segment_indexes": [
+        302
+      ],
+      "source_segment_ids": [
+        302
+      ]
+    },
+    {
+      "start": 1746.08,
+      "end": 1748.0,
+      "text": "他是处于那种亢奋的状态。",
+      "source_segment_indexes": [
+        303
+      ],
+      "source_segment_ids": [
+        303
+      ]
+    },
+    {
+      "start": 1748.56,
+      "end": 1749.52,
+      "text": "乐哥还蛮有意思的。",
+      "source_segment_indexes": [
+        304
+      ],
+      "source_segment_ids": [
+        304
+      ]
+    },
+    {
+      "start": 1750.24,
+      "end": 1751.36,
+      "text": "对，蛮有意思的，蛮有意思的。",
+      "source_segment_indexes": [
+        305
+      ],
+      "source_segment_ids": [
+        305
+      ]
+    },
+    {
+      "start": 1751.76,
+      "end": 1755.6,
+      "text": "所以你也你也给他寄语的，希望他这个自媒体也能做起来。",
+      "source_segment_indexes": [
+        306
+      ],
+      "source_segment_ids": [
+        306
+      ]
+    },
+    {
+      "start": 1755.6,
+      "end": 1757.04,
+      "text": "那你只能敷衍他一下。",
+      "source_segment_indexes": [
+        307
+      ],
+      "source_segment_ids": [
+        307
+      ]
+    },
+    {
+      "start": 1758.16,
+      "end": 1760.72,
+      "text": "我我所以我在镜头面前我一直都很配合他。",
+      "source_segment_indexes": [
+        308
+      ],
+      "source_segment_ids": [
+        308
+      ]
+    },
+    {
+      "start": 1760.96,
+      "end": 1763.84,
+      "text": "他用他的话说是拿我当抖家用。",
+      "source_segment_indexes": [
+        309
+      ],
+      "source_segment_ids": [
+        309
+      ]
+    },
+    {
+      "start": 1764.48,
+      "end": 1765.2,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        310
+      ],
+      "source_segment_ids": [
+        310
+      ]
+    },
+    {
+      "start": 1765.84,
+      "end": 1776.0,
+      "text": "我希望他自媒体能做好，这样能作为他的可能未来的另一条路能走的也很好，因为每个人肯定有自身的上限的。",
+      "source_segment_indexes": [
+        311
+      ],
+      "source_segment_ids": [
+        311
+      ]
+    },
+    {
+      "start": 1776.64,
+      "end": 1782.32,
+      "text": "可能他在自媒体上面能走到，还不错的，哎，前几名这样的一个水平。",
+      "source_segment_indexes": [
+        312
+      ],
+      "source_segment_ids": [
+        312
+      ]
+    },
+    {
+      "start": 1782.32,
+      "end": 1787.92,
+      "text": "嗯，对，而且现在这条路也很宽了，有很多人已经把这条路走了出来了，所以说还是有很多的机会。",
+      "source_segment_indexes": [
+        313
+      ],
+      "source_segment_ids": [
+        313
+      ]
+    },
+    {
+      "start": 1788.64,
+      "end": 1789.68,
+      "text": "对啊，对啊，是这样子的。",
+      "source_segment_indexes": [
+        314
+      ],
+      "source_segment_ids": [
+        314
+      ]
+    },
+    {
+      "start": 1789.92,
+      "end": 1790.08,
+      "text": "对。",
+      "source_segment_indexes": [
+        315
+      ],
+      "source_segment_ids": [
+        315
+      ]
+    },
+    {
+      "start": 1790.96,
+      "end": 1800.0,
+      "text": "我前几天，因为我们最近一局跑把从俱乐部开营了，我前几天在看之前，对啊，我看你们跟一局又弄了一个俱乐部，但是我看你。",
+      "source_segment_indexes": [
+        316
+      ],
+      "source_segment_ids": [
+        316
+      ]
+    },
+    {
+      "start": 1800.0,
+      "end": 1804.96,
+      "text": "你们的面向的群体是不是也是偏大众的形式？",
+      "source_segment_indexes": [
+        317
+      ],
+      "source_segment_ids": [
+        317
+      ]
+    },
+    {
+      "start": 1805.2,
+      "end": 1808.24,
+      "text": "对，就这个事情呢，就变化的也很很多。",
+      "source_segment_indexes": [
+        318
+      ],
+      "source_segment_ids": [
+        318
+      ]
+    },
+    {
+      "start": 1808.32,
+      "end": 1818.24,
+      "text": "因为其实你也知道，最开始一局一开始成立的时候呢，的确是房地产集团在后面，就是想要做，丁总想要做，所以说那时候投入非常的大。",
+      "source_segment_indexes": [
+        319
+      ],
+      "source_segment_ids": [
+        319
+      ]
+    },
+    {
+      "start": 1818.96,
+      "end": 1823.2,
+      "text": "我记得最厉害的时候，东京的时候基本上把国外的基本上都签了马拉松。",
+      "source_segment_indexes": [
+        320
+      ],
+      "source_segment_ids": [
+        320
+      ]
+    },
+    {
+      "start": 1823.28,
+      "end": 1828.48,
+      "text": "那时候到了后来是那个调整战略之后，不做了，就这把就还接了两年。",
+      "source_segment_indexes": [
+        321
+      ],
+      "source_segment_ids": [
+        321
+      ]
+    },
+    {
+      "start": 1829.2,
+      "end": 1837.12,
+      "text": "这几年呢，受到这个房地产冲击影响也很大，俱乐部这两年其实也没有签签任何的这个专业或职业运动员了。",
+      "source_segment_indexes": [
+        322
+      ],
+      "source_segment_ids": [
+        322
+      ]
+    },
+    {
+      "start": 1837.28,
+      "end": 1846.48,
+      "text": "但是呢，这个呃业余体系一直在做，所以说今年呢，我们基本上就是等于托管了这个一些运营、商业开发这些东西，就我们在做。",
+      "source_segment_indexes": [
+        323
+      ],
+      "source_segment_ids": [
+        323
+      ]
+    },
+    {
+      "start": 1846.48,
+      "end": 1851.2,
+      "text": "因为其实之前我们刚刚开始做的时候，俱乐部也帮了我们很多。",
+      "source_segment_indexes": [
+        324
+      ],
+      "source_segment_ids": [
+        324
+      ]
+    },
+    {
+      "start": 1851.68,
+      "end": 1858.48,
+      "text": "之前俱乐部签的运动员要做采访什么，我们跟运动员什么都一直一直来，运动员啊、教练啊，都是那时候认识的。",
+      "source_segment_indexes": [
+        325
+      ],
+      "source_segment_ids": [
+        325
+      ]
+    },
+    {
+      "start": 1859.2,
+      "end": 1861.6,
+      "text": "所以说，我们今年就觉得一起就做一下。",
+      "source_segment_indexes": [
+        326
+      ],
+      "source_segment_ids": [
+        326
+      ]
+    },
+    {
+      "start": 1862.0,
+      "end": 1864.96,
+      "text": "所以说，基本上都是以大众跑者为主。",
+      "source_segment_indexes": [
+        327
+      ],
+      "source_segment_ids": [
+        327
+      ]
+    },
+    {
+      "start": 1865.28,
+      "end": 1868.24,
+      "text": "那有点像袁大都之前那种吗？",
+      "source_segment_indexes": [
+        328
+      ],
+      "source_segment_ids": [
+        328
+      ]
+    },
+    {
+      "start": 1868.48,
+      "end": 1874.32,
+      "text": "其实蛮像袁大都的，只是就是基于在上海这个城市，没有在非常多的城市铺开。",
+      "source_segment_indexes": [
+        329
+      ],
+      "source_segment_ids": [
+        329
+      ]
+    },
+    {
+      "start": 1874.72,
+      "end": 1882.8,
+      "text": "基本上水平嘛，大概也就在二四零到三个小时二十分钟左右，男的女的，也是一个尝试吧。",
+      "source_segment_indexes": [
+        330
+      ],
+      "source_segment_ids": [
+        330
+      ]
+    },
+    {
+      "start": 1883.12,
+      "end": 1887.2,
+      "text": "我真的很佩服孙老师的热情和活力。",
+      "source_segment_indexes": [
+        331
+      ],
+      "source_segment_ids": [
+        331
+      ]
+    },
+    {
+      "start": 1887.28,
+      "end": 1890.4,
+      "text": "你看，就你这么忙，还抽一个小时。",
+      "source_segment_indexes": [
+        332
+      ],
+      "source_segment_ids": [
+        332
+      ]
+    },
+    {
+      "start": 1890.4,
+      "end": 1891.92,
+      "text": "你看，我们一定要这样好吧？",
+      "source_segment_indexes": [
+        333
+      ],
+      "source_segment_ids": [
+        333
+      ]
+    },
+    {
+      "start": 1892.4,
+      "end": 1893.44,
+      "text": "你不要这样好吧？",
+      "source_segment_indexes": [
+        334
+      ],
+      "source_segment_ids": [
+        334
+      ]
+    },
+    {
+      "start": 1893.52,
+      "end": 1899.04,
+      "text": "我知道你今天的大纲里面有一有一句说不要互捧，但是我觉得这句话我真的要说。",
+      "source_segment_indexes": [
+        335
+      ],
+      "source_segment_ids": [
+        335
+      ]
+    },
+    {
+      "start": 1899.28,
+      "end": 1907.12,
+      "text": "不，其实我说实话，我一直也很想做播客，但是呢，其实你也知道，我之前采访过一些运动员，大家也愿意讲很多东西。",
+      "source_segment_indexes": [
+        336
+      ],
+      "source_segment_ids": [
+        336
+      ]
+    },
+    {
+      "start": 1907.28,
+      "end": 1913.6,
+      "text": "但是呢，那些采访从一个保护运动员的角度来说呢，你很多东西有没有办法放出来？",
+      "source_segment_indexes": [
+        337
+      ],
+      "source_segment_ids": [
+        337
+      ]
+    },
+    {
+      "start": 1914.48,
+      "end": 1918.08,
+      "text": "但是如果你要把内容放出来，你要切掉很多东西。",
+      "source_segment_indexes": [
+        338
+      ],
+      "source_segment_ids": [
+        338
+      ]
+    },
+    {
+      "start": 1918.8,
+      "end": 1920.0,
+      "text": "但切完了之后呢，你的。",
+      "source_segment_indexes": [
+        339
+      ],
+      "source_segment_ids": [
+        339
+      ]
+    },
+    {
+      "start": 1920.08,
+      "end": 1927.28,
+      "text": "内容会很不完整，而且他真正可以说是有价值的部分是那些会被你切掉的东西。",
+      "source_segment_indexes": [
+        340
+      ],
+      "source_segment_ids": [
+        340
+      ]
+    },
+    {
+      "start": 1927.68,
+      "end": 1933.12,
+      "text": "我有几个采访我记得很深，我有一个采访是大富那年拿全国纪录，福冈那次。",
+      "source_segment_indexes": [
+        341
+      ],
+      "source_segment_ids": [
+        341
+      ]
+    },
+    {
+      "start": 1933.44,
+      "end": 1939.44,
+      "text": "对，我在跟他是远程的一个采访，晚上我觉得他还挺累的，我跟他说你要不要聊，他可以。",
+      "source_segment_indexes": [
+        342
+      ],
+      "source_segment_ids": [
+        342
+      ]
+    },
+    {
+      "start": 1940.08,
+      "end": 1944.24,
+      "text": "就聊了两个小时，聊了一个小时的时候，我说大富，你有没有些累？",
+      "source_segment_indexes": [
+        343
+      ],
+      "source_segment_ids": [
+        343
+      ]
+    },
+    {
+      "start": 1944.24,
+      "end": 1944.8,
+      "text": "要不要休息？",
+      "source_segment_indexes": [
+        344
+      ],
+      "source_segment_ids": [
+        344
+      ]
+    },
+    {
+      "start": 1944.8,
+      "end": 1945.92,
+      "text": "他说没有，我就要讲。",
+      "source_segment_indexes": [
+        345
+      ],
+      "source_segment_ids": [
+        345
+      ]
+    },
+    {
+      "start": 1946.72,
+      "end": 1948.96,
+      "text": "他讲了很多，聊爽了，聊爽了。",
+      "source_segment_indexes": [
+        346
+      ],
+      "source_segment_ids": [
+        346
+      ]
+    },
+    {
+      "start": 1948.96,
+      "end": 1952.32,
+      "text": "但是你这个东西没有办法，很多东西没有办法拿出来讲的呀。",
+      "source_segment_indexes": [
+        347
+      ],
+      "source_segment_ids": [
+        347
+      ]
+    },
+    {
+      "start": 1953.12,
+      "end": 1959.44,
+      "text": "没有办法播点，那毕竟他会有对很多运动员的评价也好，对自己在这段时间自己的回审视也。",
+      "source_segment_indexes": [
+        348
+      ],
+      "source_segment_ids": [
+        348
+      ]
+    },
+    {
+      "start": 1959.68,
+      "end": 1965.04,
+      "text": "这个只有哪天大富想回忆一下的时候，我可以帮他把这个东西再拿出来，但是也蛮难的。",
+      "source_segment_indexes": [
+        349
+      ],
+      "source_segment_ids": [
+        349
+      ]
+    },
+    {
+      "start": 1965.44,
+      "end": 1968.72,
+      "text": "因为我太太做了两档博客，做的都还蛮成功的。",
+      "source_segment_indexes": [
+        350
+      ],
+      "source_segment_ids": [
+        350
+      ]
+    },
+    {
+      "start": 1969.04,
+      "end": 1969.28,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        351
+      ],
+      "source_segment_ids": [
+        351
+      ]
+    },
+    {
+      "start": 1969.52,
+      "end": 1974.88,
+      "text": "我也跟他讨论过很多关于做博客的事情，但是我那时候一直觉得有点难。",
+      "source_segment_indexes": [
+        352
+      ],
+      "source_segment_ids": [
+        352
+      ]
+    },
+    {
+      "start": 1975.36,
+      "end": 1982.96,
+      "text": "就单纯如果这样聊的话还蛮难，因为他曾经也跟我说讨论要跟我做博客，后来我觉得我们两个时间也也对不拢。",
+      "source_segment_indexes": [
+        353
+      ],
+      "source_segment_ids": [
+        353
+      ]
+    },
+    {
+      "start": 1983.12,
+      "end": 1991.68,
+      "text": "其实我今年最坚持做的一件事情就是我做的那个我们那个周报，这个是我一直非常认真的在做的一个项目。",
+      "source_segment_indexes": [
+        354
+      ],
+      "source_segment_ids": [
+        354
+      ]
+    },
+    {
+      "start": 1991.92,
+      "end": 1992.4,
+      "text": "鼓掌鼓掌！",
+      "source_segment_indexes": [
+        355
+      ],
+      "source_segment_ids": [
+        355
+      ]
+    },
+    {
+      "start": 1992.4,
+      "end": 2001.76,
+      "text": "虽然我知道这个活很累，但是我真的我非常的赞同，然后我也非常的佩服你能每周做这个东西，贡献很大，真的贡献很大。",
+      "source_segment_indexes": [
+        356
+      ],
+      "source_segment_ids": [
+        356
+      ]
+    },
+    {
+      "start": 2002.0,
+      "end": 2005.44,
+      "text": "就周报，我觉得做到就还挺好玩的，我也做的挺开心的。",
+      "source_segment_indexes": [
+        357
+      ],
+      "source_segment_ids": [
+        357
+      ]
+    },
+    {
+      "start": 2005.44,
+      "end": 2012.88,
+      "text": "虽然我们同事的压力很大，我是每个星期一的早上九点钟，如果在上海，我坐在办公室里面就开始讲。",
+      "source_segment_indexes": [
+        358
+      ],
+      "source_segment_ids": [
+        358
+      ]
+    },
+    {
+      "start": 2013.52,
+      "end": 2015.68,
+      "text": "一般呢，讲半个小时，然后同事就开始剪。",
+      "source_segment_indexes": [
+        359
+      ],
+      "source_segment_ids": [
+        359
+      ]
+    },
+    {
+      "start": 2016.24,
+      "end": 2022.48,
+      "text": "的确是有同事会帮忙去做一些资料的收集工作的，然后呢，就当天就是必须这个视频要出掉它的。",
+      "source_segment_indexes": [
+        360
+      ],
+      "source_segment_ids": [
+        360
+      ]
+    },
+    {
+      "start": 2023.12,
+      "end": 2023.84,
+      "text": "对啊，很累啊！",
+      "source_segment_indexes": [
+        361
+      ],
+      "source_segment_ids": [
+        361
+      ]
+    },
+    {
+      "start": 2024.32,
+      "end": 2025.68,
+      "text": "你要汇总那么多的消息。",
+      "source_segment_indexes": [
+        362
+      ],
+      "source_segment_ids": [
+        362
+      ]
+    },
+    {
+      "start": 2026.08,
+      "end": 2027.28,
+      "text": "对，但我觉得还蛮有意思的。",
+      "source_segment_indexes": [
+        363
+      ],
+      "source_segment_ids": [
+        363
+      ]
+    },
+    {
+      "start": 2027.6,
+      "end": 2028.72,
+      "text": "有意思，绝对有意思。",
+      "source_segment_indexes": [
+        364
+      ],
+      "source_segment_ids": [
+        364
+      ]
+    },
+    {
+      "start": 2028.88,
+      "end": 2033.36,
+      "text": "对，我觉得作为观众是很享受的这样一个。",
+      "source_segment_indexes": [
+        365
+      ],
+      "source_segment_ids": [
+        365
+      ]
+    },
+    {
+      "start": 2034.24,
+      "end": 2037.6,
+      "text": "对，下次发一个这个没有剪辑的版本更刺激。",
+      "source_segment_indexes": [
+        366
+      ],
+      "source_segment_ids": [
+        366
+      ]
+    },
+    {
+      "start": 2038.08,
+      "end": 2039.84,
+      "text": "好，我期待一下。",
+      "source_segment_indexes": [
+        367
+      ],
+      "source_segment_ids": [
+        367
+      ]
+    },
+    {
+      "start": 2040.32,
+      "end": 2045.28,
+      "text": "我也希望某一天，我能去帮你录一期这个周报。",
+      "source_segment_indexes": [
+        368
+      ],
+      "source_segment_ids": [
+        368
+      ]
+    },
+    {
+      "start": 2045.6,
+      "end": 2052.4,
+      "text": "那就看你星期只要有时间呀，你就大家知道，就每个星期的早上九点钟在我们公司准时就录周报。",
+      "source_segment_indexes": [
+        369
+      ],
+      "source_segment_ids": [
+        369
+      ]
+    },
+    {
+      "start": 2052.8,
+      "end": 2055.28,
+      "text": "对啊，我觉得就蛮有意思的，我想尝试。",
+      "source_segment_indexes": [
+        370
+      ],
+      "source_segment_ids": [
+        370
+      ]
+    },
+    {
+      "start": 2055.36,
+      "end": 2058.4,
+      "text": "其实我很多东西我都想去尝试，所以就从博客开始呗。",
+      "source_segment_indexes": [
+        371
+      ],
+      "source_segment_ids": [
+        371
+      ]
+    },
+    {
+      "start": 2058.72,
+      "end": 2064.16,
+      "text": "对，正好说到博客开始，那我们这我们这个节目的名字叫什么？",
+      "source_segment_indexes": [
+        372
+      ],
+      "source_segment_ids": [
+        372
+      ]
+    },
+    {
+      "start": 2064.56,
+      "end": 2069.52,
+      "text": "对，我们要把名字想一想，或者我们这期也可以向大家网友征集一下名字，对吧？",
+      "source_segment_indexes": [
+        373
+      ],
+      "source_segment_ids": [
+        373
+      ]
+    },
+    {
+      "start": 2069.6,
+      "end": 2070.64,
+      "text": "征集博客名字。",
+      "source_segment_indexes": [
+        374
+      ],
+      "source_segment_ids": [
+        374
+      ]
+    },
+    {
+      "start": 2071.36,
+      "end": 2078.16,
+      "text": "我们两个自己管，到时候我们选几个各自觉得不错的，然后我们再汇总一下，再汇总一下就选一个就行了。",
+      "source_segment_indexes": [
+        375
+      ],
+      "source_segment_ids": [
+        375
+      ]
+    },
+    {
+      "start": 2078.64,
+      "end": 2079.2,
+      "text": "哎，好棒！",
+      "source_segment_indexes": [
+        376
+      ],
+      "source_segment_ids": [
+        376
+      ]
+    },
+    {
+      "start": 2079.28,
+      "end": 2081.6,
+      "text": "我觉得蛮有意思，我蛮喜欢这种聊天方式的。",
+      "source_segment_indexes": [
+        377
+      ],
+      "source_segment_ids": [
+        377
+      ]
+    },
+    {
+      "start": 2082.0,
+      "end": 2087.84,
+      "text": "聊天还比较轻松，所以我们我们以后每次聊天先报一下大家在哪里，都不要在哪里。",
+      "source_segment_indexes": [
+        378
+      ],
+      "source_segment_ids": [
+        378
+      ]
+    },
+    {
+      "start": 2087.92,
+      "end": 2088.88,
+      "text": "好呀，好呀，好呀。",
+      "source_segment_indexes": [
+        379
+      ],
+      "source_segment_ids": [
+        379
+      ]
+    },
+    {
+      "start": 2089.2,
+      "end": 2092.8,
+      "text": "对，我现在就在广州广百的起点旁边正佳。",
+      "source_segment_indexes": [
+        380
+      ],
+      "source_segment_ids": [
+        380
+      ]
+    },
+    {
+      "start": 2093.36,
+      "end": 2093.76,
+      "text": "我在成功。",
+      "source_segment_indexes": [
+        381
+      ],
+      "source_segment_ids": [
+        381
+      ]
+    },
+    {
+      "start": 2094.08,
+      "end": 2096.16,
+      "text": "成功，你这一年待的时间真的也不少。",
+      "source_segment_indexes": [
+        382
+      ],
+      "source_segment_ids": [
+        382
+      ]
+    },
+    {
+      "start": 2096.72,
+      "end": 2102.0,
+      "text": "对啊，我我现在一到成功，他们就说：“哎，现在这是你家呀，这就是我家。",
+      "source_segment_indexes": [
+        383
+      ],
+      "source_segment_ids": [
+        383
+      ]
+    },
+    {
+      "start": 2102.72,
+      "end": 2104.4,
+      "text": "”那就这样，这期就这么结束了。",
+      "source_segment_indexes": [
+        384
+      ],
+      "source_segment_ids": [
+        384
+      ]
+    },
+    {
+      "start": 2104.64,
+      "end": 2110.64,
+      "text": "好的，一会儿把音频发给我，然后我会先剪辑完之后，我会出一个竹子稿，我们可以看一点。",
+      "source_segment_indexes": [
+        385
+      ],
+      "source_segment_ids": [
+        385
+      ]
+    },
+    {
+      "start": 2111.04,
+      "end": 2114.16,
+      "text": "哇，那工作量也不小，你们的工作量也不小，还要竹子稿。",
+      "source_segment_indexes": [
+        386
+      ],
+      "source_segment_ids": [
+        386
+      ]
+    },
+    {
+      "start": 2114.64,
+      "end": 2115.92,
+      "text": "竹子稿现在都是AI。",
+      "source_segment_indexes": [
+        387
+      ],
+      "source_segment_ids": [
+        387
+      ]
+    },
+    {
+      "start": 2116.24,
+      "end": 2118.72,
+      "text": "好，那行，我怕我普通话不标准。",
+      "source_segment_indexes": [
+        388
+      ],
+      "source_segment_ids": [
+        388
+      ]
+    },
+    {
+      "start": 2119.52,
+      "end": 2121.6,
+      "text": "我今天李娜楼被他们吐槽死了。",
+      "source_segment_indexes": [
+        389
+      ],
+      "source_segment_ids": [
+        389
+      ]
+    },
+    {
+      "start": 2123.04,
+      "end": 2123.84,
+      "text": "李娜楼。",
+      "source_segment_indexes": [
+        390
+      ],
+      "source_segment_ids": [
+        390
+      ]
+    },
+    {
+      "start": 2124.24,
+      "end": 2127.6,
+      "text": "李娜楼，我LN不带分，你知道吗？",
+      "source_segment_indexes": [
+        391
+      ],
+      "source_segment_ids": [
+        391
+      ]
+    },
+    {
+      "start": 2128.08,
+      "end": 2130.96,
+      "text": "正常的，大家的普通话都不是那么标准，问题不大。",
+      "source_segment_indexes": [
+        392
+      ],
+      "source_segment_ids": [
+        392
+      ]
+    },
+    {
+      "start": 2131.52,
+      "end": 2135.84,
+      "text": "博客圈最讨厌的是北京口音，所以我们都是安全的。",
+      "source_segment_indexes": [
+        393
+      ],
+      "source_segment_ids": [
+        393
+      ]
+    },
+    {
+      "start": 2135.84,
+      "end": 2136.64,
+      "text": "啊，是吗？",
+      "source_segment_indexes": [
+        394
+      ],
+      "source_segment_ids": [
+        394
+      ]
+    },
+    {
+      "start": 2136.64,
+      "end": 2137.36,
+      "text": "原来是这样的吗？",
+      "source_segment_indexes": [
+        395
+      ],
+      "source_segment_ids": [
+        395
+      ]
+    },
+    {
+      "start": 2138.0,
+      "end": 2143.92,
+      "text": "对，因为说北京口音地位太重，但我经常听的博客好像还真是北京人做的。",
+      "source_segment_indexes": [
+        396
+      ],
+      "source_segment_ids": [
+        396
+      ]
+    },
+    {
+      "start": 2144.88,
+      "end": 2149.12,
+      "text": "因为北方人他在语言表达上面，我觉得是有一定的优势的。",
+      "source_segment_indexes": [
+        397
+      ],
+      "source_segment_ids": [
+        397
+      ]
+    },
+    {
+      "start": 2149.44,
+      "end": 2150.96,
+      "text": "对，先天的优势的。",
+      "source_segment_indexes": [
+        398
+      ],
+      "source_segment_ids": [
+        398
+      ]
+    },
+    {
+      "start": 2151.68,
+      "end": 2153.2,
+      "text": "好的，那就这样，宋哥再见。",
+      "source_segment_indexes": [
+        399
+      ],
+      "source_segment_ids": [
+        399
+      ]
+    },
+    {
+      "start": 2153.28,
+      "end": 2158.32,
+      "text": "好的，谢谢观众们，再见，拜拜。",
+      "source_segment_indexes": [
+        400
+      ],
+      "source_segment_ids": [
+        400
+      ]
+    },
+    {
+      "start": 2160.0,
+      "end": 2160.0,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        401
+      ],
+      "source_segment_ids": [
+        401
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 7.52,
+      "end": 34.08,
+      "text": "首先介绍一下，我是孙瑞一。你先自我介绍一下。好的，我是吴向东。你怎么会想要想的要做播客这件事情？因为你其实平时在公共空间里面的表达其实已经蛮多的了。我的想法是，因为我第一个我听播客，另一个呢，我觉得播客还是有别于视频的形式的，还是有不一样的，所以我也蛮感兴趣的。我们的播客，我们你想讲点什么呢？",
+      "refined_segment_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "start": 34.96,
+      "end": 69.2,
+      "text": "我想讲的就是瞎聊呀，就是今天不是第一期嘛，我们俩的第一期，那希望我们俩以后的播客的内容可能有更多丰富的嘉宾，可以聊的更发散一些，更乱七八糟一些，让大家毫无负担的在任何时候都可以打开我们这个播客来听。这就是我想要做的。对你最近有什么好玩的事情吗？跟我们分享分享。没有啊，我不就是从家然后去了上海，完成跟耐克的一些活动的任务啊，然后我跑去跟黑马完成了一堂课。",
+      "refined_segment_indexes": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "start": 69.44,
+      "end": 104.08,
+      "text": "其实我当时本来准备去卢湾跑的，因为我觉得卢湾可能氛围更好一些。周二我也了解到卢湾它也是一个训练日吧，但是我们本家嘛，上海的这个黑马训练营，然后去跟他们去活动了一下，完成了一堂训练课，有氧课，我觉得还不错，感觉还不错。你这是第一次去火车头吗？这个体育场。这个体育场我在今年的四月份还是五月份，我去拍某牛的广告，我去了，发现啊，这个体育场它跟卢湾是不一样的，它是封闭的，它就是被人家包场的，所以我后来我被保安赶出来了。",
+      "refined_segment_indexes": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "start": 104.48,
+      "end": 139.12,
+      "text": "一开始让我进去了，他们可能没发现我，我可能跑的比较快，四分被冲进去了，跑两圈被赶出来了。对，这个体育场它是上海比较少有的，呃，它叫火车体育场，它其实是属于这个铁道部的，它离。离呃上海火车站非常的近，现在也是上海比较有名的一个体育场，因为黑马有这个周二的时间，然后周三是这个内道包了周三的时间，因为它是可以做这个商业包场。嗯，所以说还是有蛮多的品牌活动，包括品牌就周期性的包场都会包在那。",
+      "refined_segment_indexes": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "start": 139.52,
+      "end": 174.08,
+      "text": "挺好，挺好，就是我觉得它跑道好像不如卢安的好。呃，对，卢安最近又清洗了一次，但是上海能够有这个包场的体育场已经挺不容易了。是是是，嗯，我就觉得它那个可能内道有点破，就是被黑马跑的多了呀。哈哈，对，在我玩是吧？这个说到这个体育场，我有个很有意思的事情可以跟你分享一下，因为你知道体育场其实黑马也好，内道也好，还有很多别的商业活动，他们摄影师都要去拍照嘛。就摄影师现在看到这个火车，这个体育场非常的头痛，你知道为什么吗？",
+      "refined_segment_indexes": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "start": 174.4,
+      "end": 207.84,
+      "text": "why？就因为体育场它是一成不变的嘛，但是如果你每次活动也好，什么样你要拍照，你每次要拍出一些新意来，其实还蛮有挑战的。嗯，我懂了，我懂了，它那个背景总是那个背景板，第一次去我感觉还行，拍了蛮多，对于我来说还蛮新鲜的。哎，所以你觉得拍广告累吗？嗯，品牌跟品牌不同还是有区别的，还是有不一样的，就是有的真的蛮累的，有的就还挺贴心的，或者说有的可以拍的很开心。",
+      "refined_segment_indexes": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "start": 208.48,
+      "end": 242.4,
+      "text": "拿这次举例子啊，比如说我耐克，我我们算是拍了一个小采访的一个片子啊，呃，很短，可能采访时间有十几二十分钟左右吧。然后我在化妆的时候，在我们采访之前，他会放一些BGM，就是让我更轻松、更放松一些。然后他这些BGM的歌都是我之前Vlog里面的用的BGM用的歌，我觉得哇，就很贴心、很细心。在采访之前有看过我很多的Vlog的视频的，就懂你。对，有懂我对。对这个，我觉得的确是很不一样。",
+      "refined_segment_indexes": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "start": 242.56,
+      "end": 271.68,
+      "text": "这个就让我想起来，另外我们经常在采访时候会遇到的问题，就是如何问出想问的问题，而且不是一个重复的问题。对，我觉得作为你们作为你们采访者也很难，因为首先你要对被采访者做功课，因为你们一年要采访的人那么多，还要事先做功课，还要问的不会很浅的问题。嗯，我觉得对你们来说也是挺难的一件事情。对，现在其实对我们挑战蛮大的。",
+      "refined_segment_indexes": [
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "start": 271.68,
+      "end": 303.84,
+      "text": "我经常还跟同事说，呃，运动员自己现在社交媒体也经常会表达，大家经常如果是在赛场上其实比赛来问的问题，有的时候会还是会蛮棘手的。对，那如何在采访的时候，运动员能够表达出想要表达，媒体想要问出想要问的，这个其实挑战性现在越来越大了。对啊，而且有的运动员可能他自己不会主动的把自己想要表达的表达出来，但是他可以顺着你的引导，你问的问题好，他就可以答的很好。这是确实是采访者的艺术。",
+      "refined_segment_indexes": [
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "start": 304.48,
+      "end": 331.12,
+      "text": "这就让我想起了现在有一个你熟悉的，跟我住在同一幢楼里，今年我和你在同一场比赛的赛后都采访了这个人，然后两个的采访的效果大相径庭，大家互相还在两个视频底下互相在问，你猜这个运动员是谁？就是你跟他互相拍了个视频，然后我是采访了他，春龙吗？对，春龙现在应该在我和我在一个酒店里，就我采访他的时候，他不就很紧张，这个啊，我想起来了，啊，无戏嘛，无戏对吧？",
+      "refined_segment_indexes": [
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "start": 331.2,
+      "end": 359.84,
+      "text": "对，他后来跟我采访就很放松，然后状态很好，但是这个确实没办法，他跟我毕竟我们都是运动员，采访他不会顾虑那么多，那可能在你们的镜头面前，他还是比较拘谨的，我觉得。对，但那个拘谨也很可爱。嗯，对对对。哎，这个一年就过去了，这个周末的广州比完之后，基本上今年就整个赛季都已经结束了。是的，相当快。但是我觉得可能明年的夏嘛。",
+      "refined_segment_indexes": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "start": 360.0,
+      "end": 393.84,
+      "text": "和筹码完全过了才算真正的赛季结束，还是你们在你们媒体的定义里面，十二月三十一号之前就赛季结束了？对我来说分两个逻辑啊，我们现在已经在做年终总结和年终盘点了。那一般来说呢，这个肯定都是以自然年为结束的。嗯。但是呢，现在好像对于媒体来说，坦率的说，好像没有什么结束这个概念。每周事情都还挺多的，甚至你想这周结束之后，我下周还要出差，你猜我去哪里？",
+      "refined_segment_indexes": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    {
+      "start": 394.48,
+      "end": 425.6,
+      "text": "下周的话，啊，华东，我不去华东，我去眉山。眉山今年咖位都很大呀。对，而且我们还有挺多的内容要求要去做，所以说我下面就眉山，然后眉山一结束就一周吧，一周之后就是湘跟和厦门了。哦，对对对，那我挺好。我觉得，对于不管是你们媒体还是我们运动员来说，作为观众来说，都是一个非常好的事情，就是它不会有沉静期。",
+      "refined_segment_indexes": [
+        61,
+        62,
+        63,
+        64,
+        65
+      ]
+    },
+    {
+      "start": 425.6,
+      "end": 455.52,
+      "text": "哦，大家都在一个信息可以不断获取到信息的一个这样的一个时代当中，我觉得挺好的。对，现在就是信息爆炸时代，太多太多的信息了。对，所以我觉得有的时候，嗯，某些运动员遇到什么事情，也不用太放在心上，因为信息流真的刷的太快了。你今天说这句话别有一些意味啊。呃，这句话跟今天这个事情没关系，我只是想到之前的是一些事情。",
+      "refined_segment_indexes": [
+        66,
+        67,
+        68,
+        69,
+        70
+      ]
+    },
+    {
+      "start": 455.6,
+      "end": 483.36,
+      "text": "不过的确，是我觉得现在的事情都刷的太快了，就是除非这件事情被人恶意的或者故意的不断去把它反复拿出来讲，其实很多事情过了几天就过去了。算了，算了，我也想问一下，我们这个节目到底尺度能放到多大？我都可以放。那你说的就是引导引导流量，我觉得博客应该还好。那比如说，你像你这种被。放大被引导，那可能说到的不就是像张水华这类的事情吗？",
+      "refined_segment_indexes": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ]
+    },
+    {
+      "start": 483.6,
+      "end": 515.92,
+      "text": "张水华这个事情，我觉得如果没有白岩松在福州马拉松之前再讲了这件事情，可能上一周这件事情就不会变得那么的大。嗯，因为没有人会想到，在一个特别的时间比赛时间节点上面，白岩松在此之前又讲了一段话，而且是放在CCTV上面讲。我看了他的发言，我很不赞同他说的话。嗯，真的真的，我很不赞同说，首先他拿张水华的成绩去跟张德顺全运会的成绩去比，我就觉得很不合理。",
+      "refined_segment_indexes": [
+        77,
+        78,
+        79,
+        80
+      ]
+    },
+    {
+      "start": 515.92,
+      "end": 543.36,
+      "text": "我觉得这不是一个你真正了解马拉松的人该说出来的话。我同意，因为这个不同的比赛、不同的天气条件，其实的确差别都非常的大。还有后面去建议他转到其他岗位还是对，嗯，怎么说呢？反正我觉得这个事情，我觉得一开始没必要发酵成这个样子的。确实是他自己也有点责任吧。",
+      "refined_segment_indexes": [
+        81,
+        82,
+        83,
+        84,
+        85
+      ]
+    },
+    {
+      "start": 543.6,
+      "end": 571.68,
+      "text": "但是我觉得确实白岩松说的话也也不完全正确，或者说在这样的事情上面，似乎就没有一个人能说出完全正确的话，因为每个人看这件事情的角度差别都非常非常的大。对，而且我觉得对于他来说，在当时那个事情已经已经爆发了之后，就他就已经很被动，能做的东西不多，甚至他PPT也没有能够帮助到他太多。",
+      "refined_segment_indexes": [
+        86,
+        87
+      ]
+    },
+    {
+      "start": 572.0,
+      "end": 605.92,
+      "text": "对，那除非PPT到上能上能上奥运的程度，那可以，但是也就不存在这个问题了，也就你也不需要医院这份工作了，也就不存在这些问题了。是的，好好好，我们我们还是不要谈这么多敏感的问题啊！你自己斟酌着看啊，到时候能我真操心。好的，我可以讲讲我最近忙了点啥。我们上马见完面之后，第二天就去美国了。哦，我听说了，我分到了这个圣。安东尼奥马刺队的所在地，就看了很多二六年会出的鞋子，还蛮有意思的。",
+      "refined_segment_indexes": [
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94
+      ]
+    },
+    {
+      "start": 606.4,
+      "end": 638.88,
+      "text": "有看到我们耐克的鞋吗？哎，你应该已经穿了吧？Shock Plus啊，对，稳成。我真，我拿到了已经。对，但今年耐克有一点很有意思，就是他把耐克和A C G两个部分，他就放了一个一模一样大的一个展位。就是A C G的投入越来越大了。我看也有，也有看到在北京开了全球首家A C G的店，是不是？应该是在二月份左右会营业的，在三里屯。全球首家竟然开在中国，我这个我没太想到。但你也知道，中国机会还是蛮大的吧？在这个市场上。",
+      "refined_segment_indexes": [
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105
+      ]
+    },
+    {
+      "start": 639.36,
+      "end": 671.76,
+      "text": "对对对，我觉得中国的跑步，不管是跑步越野的市场，还有很大的可发掘性。因为我在上海感觉到很多人哎，呃，喜欢我，然后跑步的人很多，看到我会认出来我。但是你在西部的城市，还有很多人他还没有加入到跑步这种这项活动中来。我觉得还有很多人可以去加入跑步。对我也是这样觉得的，因为这两年跑步你也知道很火吧？然后那次就说，哎，美国的第一个跑步热潮究竟持续了多久？",
+      "refined_segment_indexes": [
+        106,
+        107,
+        108,
+        109,
+        110,
+        111
+      ]
+    },
+    {
+      "start": 671.76,
+      "end": 702.24,
+      "text": "后来我去搜了一下，从他们有一个运动员拿了一个奥运冠军开始，持续了十几年，持续了一个非常长的时间。而且到了八十年代的时候，他不是说跑步潮它消退了，而是这些跑步的人去又更多的去从事了各种多种多样的运动，就他们能够选择的运动范围更广。所以我也觉得在现在的这个环境之下，其实跑步的机会还非常多，而且毕竟我们也知道，跑步相对于河边、路边都可以跑，其实是真的蛮不错的。",
+      "refined_segment_indexes": [
+        112,
+        113,
+        114
+      ]
+    },
+    {
+      "start": 702.32,
+      "end": 732.88,
+      "text": "而且前段时间也不算前段时间，去年还是前年，我有看到说，哎，之前有什么飞盘，有什么自行车，可能会掀起新的浪潮。但是我觉得这些运动在跑步面前还是没有办法做到这么的普世化，做到这么的低门槛。这个市场还是不错的，所以从这个程度来说，我们都是幸运啊。呃，确实非常感谢这样一个市场和现状。就像我们今年马博会，我们两个在一起和去年、前年的确是有一些不一样啊。",
+      "refined_segment_indexes": [
+        115,
+        116,
+        117,
+        118,
+        119
+      ]
+    },
+    {
+      "start": 733.36,
+      "end": 759.92,
+      "text": "前年你没跟我一起，前年我就可以我我有跟你说吧，我就可以自己去轻松的逛展。但今年基本上已经是水泄不通了。啊，对，今年周六就没有办法正常的自由活动了，已经。但总体来说，就是这个热潮还还蛮久的时间。我期待期待能够变得更好，我希望更多更多的人加入跑步，就包括我身边小巴，还有我的亲戚。希望下一代。",
+      "refined_segment_indexes": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125
+      ]
+    },
+    {
+      "start": 760.4,
+      "end": 790.08,
+      "text": "前段时间我采访，我又想说，为什么日本他跑步好，或者各种热门的商业体育项目都做的很好？我就觉得他的小孩运动习惯从小就培养的很好，课余时间总要有一个运动的项目习惯，然后即使我长大了以后工作了以后，依然会在下班之后选择去参与一项运动，比如说是足球，比如说是篮球，或者是拳击之类的。",
+      "refined_segment_indexes": [
+        126,
+        127
+      ]
+    },
+    {
+      "start": 790.8,
+      "end": 812.96,
+      "text": "我觉得这要是从小培养的，所以未来青少年的体育还是很重要很重要。我觉得。嗯。但是目前十年内我看不到，目前十年内的中小学生的体育运动还是局限在体育课上。你的娃现在有做体育运动吗？有，他有去上那个体适能的一些。",
+      "refined_segment_indexes": [
+        128,
+        129,
+        130,
+        131,
+        132,
+        133
+      ]
+    },
+    {
+      "start": 813.36,
+      "end": 842.64,
+      "text": "他第一个，我觉得他胆子比较小，然后呢，嗯，也不怎么爱动，体力消耗我觉得也少，所以导致他可能体力精精力一直很旺盛，晚上动不动十一点不睡觉，所以也去让他做一做体适能，就是一些蹦蹦跳跳的运动啊之类的。他韧带跟我一样很差很差，之前他有去跳舞，但是发现他的韧带根本就不适合跳舞，后来就去尝试一下体适能，哎，发现他还蛮喜欢的，虽然最后他锻炼完了，他还是十一点睡觉。",
+      "refined_segment_indexes": [
+        134,
+        135,
+        136
+      ]
+    },
+    {
+      "start": 843.6,
+      "end": 878.16,
+      "text": "那说明锻炼对能量的获取有帮助啊，Enhanced这个能量。因为我知道董哥他们小孩好像也在练练这个练练那个。是的，他们都有练一些项目，但是我觉得我们这几个像我跟大福啊，还有董哥他们的孩子走专业竞技的可能性不会很大。哎，但我听说李有才你知道吗？就是我知道啊，李有才教练对林翠林、林美的教练和叔叔，他的孩子现在的八百米水平很高，我听说是这样子的。",
+      "refined_segment_indexes": [
+        137,
+        138,
+        139,
+        140,
+        141
+      ]
+    },
+    {
+      "start": 878.4,
+      "end": 896.56,
+      "text": "他们家感觉是有一些基因天赋的，我觉得啊，对啊，对啊，你看他侄女两个侄女都二三零左右的水平，然后他女儿应该听说也是挺强的。我包括我女儿，我觉得她以后未来真的有这个天赋，她愿意练，那我肯定也不会阻拦的。我只是觉得可能吃不了那份苦。",
+      "refined_segment_indexes": [
+        142,
+        143,
+        144
+      ]
+    },
+    {
+      "start": 897.2,
+      "end": 926.56,
+      "text": "嗯，跑步这么的让更多人着迷，他真的是有他自己的存在的，而且我是觉得他第一个门槛低，第二个是为数不多你真正每天的枯燥的付出可以给你带来收获的一项运动。那有的运动是不是这样子的？对，比如说我下棋可能就不是这样的，虽然下棋也是个运动，但我实在是下不了一点，水平太差了。真的跟你的功夫有关系，那你也没有那么多精力去。",
+      "refined_segment_indexes": [
+        145,
+        146,
+        147,
+        148
+      ]
+    },
+    {
+      "start": 926.64,
+      "end": 959.76,
+      "text": "你看你现在又要忙工作，又要忙你那么大的产业链，你的公司矩阵，然后还有你的现在很重要的一个家庭，你的孩子，你没有办法投入那么多在跑步上了。的确是，我我说实话，的确跑的肯定是比以前少蛮多的。对，还好我不是这个跑鞋评测博主，所以还好。没关系，可以让铁蛋继承你的意志。没事，我们公司跑得快的，我们公司还挺有意思。我们公司有三代的黑马，你知道吧？猴子初代黑马，二代黑马是李健。",
+      "refined_segment_indexes": [
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155
+      ]
+    },
+    {
+      "start": 960.08,
+      "end": 994.32,
+      "text": "现在我们还有个实习同事叫小蔡，他今年还是那个破竹之队去肯尼亚的，可以可以，继续培养，继续培养。说实话，我还是很喜欢在比赛场上见到这些熟悉的朋友们的，我也是很开心的。从这个角度来说，我还是很喜欢去现场的。很多时候你也知道，就比赛比完，前之后这个真情实感的部分也很多。对啊，对，你说的真的是，因为你在赛场上确实能见到运动员很不一样的一面。他表现好了，能看到他这样的一面；，那表现差了，就能看到另一面。",
+      "refined_segment_indexes": [
+        156,
+        157,
+        158,
+        159,
+        160,
+        161
+      ]
+    },
+    {
+      "start": 994.72,
+      "end": 1028.24,
+      "text": "或者他在冲线之后，他很激动，他能说出很多你平时怎么引导都说不出来的话。没错，就是这种是会让你觉得你在那个时间把这个记录下来，或者你问了之后有一些交流也好，你觉得那个时刻是非常非常重要的。我记得很清楚，去年柏林，我喊董哥，董哥就说了一句：“我老了，跑不动了。”他他每次不就这两句吗？但他那次就讲的就，因为他看上去也也蛮疲劳的。然后你那时候就觉得哇，还蛮不一样的。但我们董哥继续跑啊！",
+      "refined_segment_indexes": [
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ]
+    },
+    {
+      "start": 1028.24,
+      "end": 1063.2,
+      "text": "我我前全运会之后跟他聊，他说：“我说那你这个明年呢？厦门？”他说：“我跟你说一下，我打算继续跑。”我说：“Great！”我一直在怂恿他。我平时训练我就一直怂恿他。对，就我视频有看到，大家不都说嘛？我的天天的三个任务：鼓励老人、拒绝亲家，还有欺负瘸子。对，所以，我我觉得鼓励老人也很重要。我觉得董哥在，他只要他在跑，我觉得一直在激励我们。是的，真的，的确是真的。你这认识董哥也那么多年了，你之前也讲过。",
+      "refined_segment_indexes": [
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "start": 1063.44,
+      "end": 1097.52,
+      "text": "对啊，我从一零年一年过来训练，那时候我刚来的时候，我我分不清他跟杨丽红两个人，我觉得长得好像。当然，现在我觉得是明显两个人不一样的人，因为那个时候网络视频又没有现在这么发达，他们在。网上的视频可能就局限于直播赛事直播的那个远远的长焦的距镜头，他可能真正的近景的采访的视频不多，所以我对他们两个印象没有那么深，所以我来的时候，嗯也认不清他们两个哪个是董国建和杨宁好。",
+      "refined_segment_indexes": [
+        181,
+        182,
+        183
+      ]
+    },
+    {
+      "start": 1097.6,
+      "end": 1118.8,
+      "text": "那最后多久的时候才认认出来的？啊，也很快，也很快，天天就在一起训练，嗯，三四天就认识了。然后我第一次跟他们出去跑公路，跑出去我就迷路了，跟不上他们，因为刚上高原又跟他们水平又有差距，然后跑有氧也跑丢了。后来还是董哥回来找了我。哎，这一晃十几年就过去了，太快了。",
+      "refined_segment_indexes": [
+        184,
+        185,
+        186,
+        187,
+        188
+      ]
+    },
+    {
+      "start": 1119.04,
+      "end": 1152.48,
+      "text": "是，我现在活在的是肯定是最好的时代，可能未来还是，但是我觉得可能又有的时候又觉得，包括董哥也这么觉得，哎，自己在自己正当年华的时候，在他巅峰的时候，他没有赶上这个时代。我多多少有的时候也会有这种感觉，但是好歹我赶上了，我们都赶上了，是吧？对，都赶上了。其实我觉得还是都赶上了。对啊，那可能比如说，在我最想退役可能是一七年，一七年左右那个时候，那我如果真退了，那你赶都没赶上呢。",
+      "refined_segment_indexes": [
+        189,
+        190,
+        191,
+        192,
+        193
+      ]
+    },
+    {
+      "start": 1153.04,
+      "end": 1179.04,
+      "text": "所以讲到底，坚持是一件非常重要的事情。对，坚持，而且我也真的觉得在里面寻找的乐趣，跟商业化，跟我赚的钱多少没有关系。就是我在不断的日复一日的训练、努力，然后贯彻我认为正确的训练方式，最后我站上了更高的领奖台，我我跑到了更快的成绩，我是有个很大的成就感的。",
+      "refined_segment_indexes": [
+        194,
+        195,
+        196
+      ]
+    },
+    {
+      "start": 1179.28,
+      "end": 1213.76,
+      "text": "我在这里面循环我往复的寻找到了我的乐趣，我没有在跑步里面寻找到乐趣，就是我没有在我痛苦的法德拉克跑、痛苦的艰辛跑这种跑里面寻找到乐趣，我觉得没有。但是我在这样一个整体的过程，找到了我的我认为的乐趣，跟这个跟我的赚的钱多少没有。关系的，这个是在一个更长的时间周期里面，不是看今天这节课或者这周练的怎么样。对的，对的。那有的时候，有的时候跑一堂课特别锻炼，特别好，跑的出来的成绩也特别好，我也会，我也会开心的，我会激动。嗯。",
+      "refined_segment_indexes": [
+        197,
+        198,
+        199,
+        200,
+        201,
+        202
+      ]
+    },
+    {
+      "start": 1214.08,
+      "end": 1243.04,
+      "text": "对，我觉得我变得更强了。变得更强是一种什么样的感觉？但我觉得这个应该每个人都能感受到，这不光是我们就是成绩非常好的运动员才能感受到的。我相信，即使是我的父亲，他也能感觉到，他在随着他嗯每一堂有氧课、每一堂长距离之后，他会感觉到自己变强。这个真的跟成绩无关。嗯。就像耐克说的那句话：“只要你有身体，你就是运动员。",
+      "refined_segment_indexes": [
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209
+      ]
+    },
+    {
+      "start": 1243.04,
+      "end": 1272.0,
+      "text": "”真的，每个人都有自己变得更强的这个感受，能够有这种成就感。对，的确是。我觉得跑步从锻炼到训练，其实很多人就是在追求自己的变得更强，身体上也好，心灵上也好。你从我记得我刚开始跑步五公里、十公里，那时候觉得跑一个百米似乎是一件遥不可及的事情。是的。但是慢慢慢慢，你就会从中也会获得很多的乐趣。对啊。",
+      "refined_segment_indexes": [
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216
+      ]
+    },
+    {
+      "start": 1272.64,
+      "end": 1303.12,
+      "text": "就我特别能理解很多像他第一次破三到终点那种感受，就是每个人属于自己的那种时刻。我也能记得我从十分零二秒到八分零四秒那种感觉，太难忘了，太难忘了。对，因为你维持付出、维持痛苦、维持欢乐。对啊，因为你付出了多少，你自己清楚呀。这个只有你自己跑过了，你才懂吧？哎，这句话也是耐克说的。是的，好，好，好。",
+      "refined_segment_indexes": [
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223
+      ]
+    },
+    {
+      "start": 1304.72,
+      "end": 1339.12,
+      "text": "所以你前面说这个跑步有一些痛苦，你觉得这个痛苦是因为训练来带来的这个难吗？因为跑步究竟是怎么样？其实现在大家也很难定，因为我们现在看到社交媒体上看到的非常多的这种欢乐的跑步，非常的开心。大家似乎没有看到那么多痛苦的表达，在这个跑步这件事情里面，以前好像要练的很苦。以前五普四有一次，马老师在那个上马之前还做了一个 slogan，叫什么“明天都给我顶一顶”。现在这种大家对跑步的内容的传达的方式和角度，有了很大的很大的变化。",
+      "refined_segment_indexes": [
+        224,
+        225,
+        226,
+        227,
+        228,
+        229
+      ]
+    },
+    {
+      "start": 1339.52,
+      "end": 1369.28,
+      "text": "是，我其实我的视频也一直都是这种风格，就是我希望把快乐的一面展现给大家，我很少拍很痛苦的那个训练。对，因为你也说过，你说你拍的训练课都是比较轻松的，比较大家，但是很少或者把这种真的是发特难啊、间加速啊、特别长距离啊，可能要跑破的这些内容把它呈现出来。因为我也担心你把这些东西过多的展现出来。",
+      "refined_segment_indexes": [
+        230,
+        231,
+        232
+      ]
+    },
+    {
+      "start": 1369.68,
+      "end": 1400.96,
+      "text": "第一个，我从创作的角度来考虑，我会觉得不会有那么多的人想看到这么看到你痛苦的那个东西，因为可能一堂课两堂课还好，看多了会觉得至少从观感上来说不会那么的好。而且我觉得真的痛苦的时候你也没有力气展现了。啊，对啊。我能够理解一点，因为当跑的还挺辛苦的时候，就是你那时候只是想跑的快点，别的一切都已经不重要了，也没有什么表情管理。对啊，表情管理已经没有了，你可能动作也变形了。",
+      "refined_segment_indexes": [
+        233,
+        234,
+        235,
+        236,
+        237
+      ]
+    },
+    {
+      "start": 1401.6,
+      "end": 1435.84,
+      "text": "对，你可能会会累了，然后痛苦的跟教练商量，我能不能少跑两个？这都是你懦弱的一面。但这也是非常真实的一面。啊，这是真实的一面，但是我并不是说这样是不对的，因为你要根据你的体感来，并不是说我累了我就一定要强撑着去把量完成。啊，我训练年限到这么长时间过来，我真的觉得有的时候你真的备战一场大赛，并不是一定要这样的，就是即使我特别特别累，我也要为了完成量、完成计划而去完成，根据体感来。",
+      "refined_segment_indexes": [
+        238,
+        239,
+        240,
+        241,
+        242
+      ]
+    },
+    {
+      "start": 1435.92,
+      "end": 1468.8,
+      "text": "你真的累了，那我觉得可能少跑两个，我调整过来了。我反而比赛比的更好，这也是对自己身体的掌控，我觉得。嗯。但是有的时候，你确实在镜头面前展现，会让观众觉得你懦弱，就挺难的。我觉得这个度也很难，观众想看的和你想要表达的本身也也不一致，特别现在内容创作的角度也很多，但是大家都催更了，所以说只要能够保持产量就已经很好了。那我看你这个周二黑板的视视频都已经发了的。",
+      "refined_segment_indexes": [
+        243,
+        244,
+        245,
+        246,
+        247,
+        248
+      ]
+    },
+    {
+      "start": 1469.28,
+      "end": 1502.88,
+      "text": "这个我说实话，这个内容量也很少，就四分钟。我今天也被很多人说我，这太短了吧，就四分钟。但是那没办法，确实内容量就这么点多，也是一个矛盾点吧。我不可能去参加那么多过多的比赛，然后给大家带来那么大产量的比赛的vlog作品。我还是有我的优先级的，就是我我要训练，我要冬训，我要去比赛。当然，我冬训也可以给大家带来一些冬训的训练的vlog。当然，我也觉得训练的vlog跟比赛的vlog质量还是没办法相比的。",
+      "refined_segment_indexes": [
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255
+      ]
+    },
+    {
+      "start": 1503.36,
+      "end": 1537.76,
+      "text": "比赛我们听因为叫叫moment，但是有个时刻嘛，你会见很多不同的人。对对对对对。虽然前面说的这个，呃，亲家也好，老人也好，圈子也好，是在训练视频里面始终会贯穿的，但是它也会导致一定程度的，就是它有很多内容是不能说是重复，是会接近的。对，这也是我们的生活的常态，其实。这也是马拉松的常态，马拉松训练的常态就是日复一日的有氧跑。就是这样，所以说在这种内容里面要找每次都要有新的亮点，这个的确是巨大的挑战。",
+      "refined_segment_indexes": [
+        256,
+        257,
+        258,
+        259,
+        260,
+        261
+      ]
+    },
+    {
+      "start": 1538.24,
+      "end": 1572.4,
+      "text": "对，所以我有的时候也很佩服像像大震这样的创作者，至少目前来看，他的一直能保持一定的创作的内容的更新。是啊。这个内容创作真的是花很多时间精力，对他要得想嘛，日常你平时就得想这些东西。对，所以你跑步的时候在想些什么？小课。小课有氧课，那就是，呃，我首先我会听音乐，一个人跑的时候我会听播客，然后跟队友一起跑的时候我会听音乐，然后呢穿插着跟他们聊聊天。",
+      "refined_segment_indexes": [
+        262,
+        263,
+        264,
+        265,
+        266,
+        267
+      ]
+    },
+    {
+      "start": 1573.04,
+      "end": 1604.72,
+      "text": "今天我刚回来，我第一天我跟大福、跟董哥第一堂课，那聊天聊蛮多，因为毕竟我们有二十多天、二十天左右没见了，所以可聊的东西还蛮多的。这个小范围团体在私下面没有镜头、没有麦克风面前，那尺度就更大了。哦，那肯定啊，我还想放个麦克风啊。那麦克风就不可能那么聊了，所以宋老师，你我真的建议你努力能跑到四分，在高原跑到四分配，这样你可以听到很多有意思的事情。",
+      "refined_segment_indexes": [
+        268,
+        269,
+        270,
+        271
+      ]
+    },
+    {
+      "start": 1605.28,
+      "end": 1639.28,
+      "text": "啊，我平原跑四分配也得要在我的Peak状态，高原跑四分配没事。高原跑四分配，我们公司三四五个人可以做到的呀，我不是很担心。好呀，好呀，你看真的。因为我这次还跟铁蛋给他布置了一个工作任务，因为他现在高原时间也很多嘛。我说，其实你就应该做一个专栏，因为你是有得天独厚的优势，在高原你会见到很多的人和运运动员也好，教练也好，相关的人也好。所以说，其实你有很多的机会去做很多。",
+      "refined_segment_indexes": [
+        272,
+        273,
+        274,
+        275,
+        276,
+        277
+      ]
+    },
+    {
+      "start": 1639.28,
+      "end": 1671.52,
+      "text": "大家从媒体的角度，除了你之外，没有别人会在高原待那么久，待那么频繁的时间。对别人来说很困难的事情，对你来说很容易嘛？所以说也会有一些调整吧，因为他现在跑了二四多少，他肯定还是有更多的想法和野心的。真的是，我首先你得贪心，你不贪心你做不了运动员。你看你跑的越快，你就想以后更快。当然到一定程度可能会变得越来越难嘛。但是运动员好胜的心，我觉得都是一直在的。",
+      "refined_segment_indexes": [
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284
+      ]
+    },
+    {
+      "start": 1671.84,
+      "end": 1705.92,
+      "text": "那下一期我们也别我们俩干聊了，真的得找个找个嘉宾。没问题，我可以把铁蛋找来。甚至欢迎在播客的节目下面留言，你们想邀请谁，我们也许也可以努力一下。可以啊，我觉得可以的。哎，你一般比赛前一天，虽然你有的时候也拍比赛，我比如说你有很熟悉的人去跑比赛，你会给他们发微信吗？不会，我很熟悉的人好像都不会。也就乐哥他会骚扰我，我不会给他发。他是因为心虚吗？还是打个谈一下钱？",
+      "refined_segment_indexes": [
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293
+      ]
+    },
+    {
+      "start": 1706.16,
+      "end": 1738.24,
+      "text": "不是，他就是，哎，他私下面跟我说，还真不怎么提钱。他在镜头里面可能为了，他就喜欢搞那种剧本嘛，他可能会提。但是我们私下面，他就是拿我像大哥，可能就像他师兄啊，像他哥哥一样，就跟我讲。反正他老去骚扰我。嗯。我在镜头之外，我对他就是，我承认就是比较敷衍那种。对，不好意思，平时那么敷衍你，但是我会继续下去的。乐哥说：“没关系，请继续敷衍我。",
+      "refined_segment_indexes": [
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301
+      ]
+    },
+    {
+      "start": 1738.8,
+      "end": 1765.2,
+      "text": "”不是他，平时你不知道他的，一句已经跟我说过的话，他能再重复三四次。他是处于那种亢奋的状态。乐哥还蛮有意思的。对，蛮有意思的，蛮有意思的。所以你也你也给他寄语的，希望他这个自媒体也能做起来。那你只能敷衍他一下。我我所以我在镜头面前我一直都很配合他。他用他的话说是拿我当抖家用。嗯。",
+      "refined_segment_indexes": [
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310
+      ]
+    },
+    {
+      "start": 1765.84,
+      "end": 1800.0,
+      "text": "我希望他自媒体能做好，这样能作为他的可能未来的另一条路能走的也很好，因为每个人肯定有自身的上限的。可能他在自媒体上面能走到，还不错的，哎，前几名这样的一个水平。嗯，对，而且现在这条路也很宽了，有很多人已经把这条路走了出来了，所以说还是有很多的机会。对啊，对啊，是这样子的。对。我前几天，因为我们最近一局跑把从俱乐部开营了，我前几天在看之前，对啊，我看你们跟一局又弄了一个俱乐部，但是我看你。",
+      "refined_segment_indexes": [
+        311,
+        312,
+        313,
+        314,
+        315,
+        316
+      ]
+    },
+    {
+      "start": 1800.0,
+      "end": 1828.48,
+      "text": "你们的面向的群体是不是也是偏大众的形式？对，就这个事情呢，就变化的也很很多。因为其实你也知道，最开始一局一开始成立的时候呢，的确是房地产集团在后面，就是想要做，丁总想要做，所以说那时候投入非常的大。我记得最厉害的时候，东京的时候基本上把国外的基本上都签了马拉松。那时候到了后来是那个调整战略之后，不做了，就这把就还接了两年。",
+      "refined_segment_indexes": [
+        317,
+        318,
+        319,
+        320,
+        321
+      ]
+    },
+    {
+      "start": 1829.2,
+      "end": 1861.6,
+      "text": "这几年呢，受到这个房地产冲击影响也很大，俱乐部这两年其实也没有签签任何的这个专业或职业运动员了。但是呢，这个呃业余体系一直在做，所以说今年呢，我们基本上就是等于托管了这个一些运营、商业开发这些东西，就我们在做。因为其实之前我们刚刚开始做的时候，俱乐部也帮了我们很多。之前俱乐部签的运动员要做采访什么，我们跟运动员什么都一直一直来，运动员啊、教练啊，都是那时候认识的。所以说，我们今年就觉得一起就做一下。",
+      "refined_segment_indexes": [
+        322,
+        323,
+        324,
+        325,
+        326
+      ]
+    },
+    {
+      "start": 1862.0,
+      "end": 1893.44,
+      "text": "所以说，基本上都是以大众跑者为主。那有点像袁大都之前那种吗？其实蛮像袁大都的，只是就是基于在上海这个城市，没有在非常多的城市铺开。基本上水平嘛，大概也就在二四零到三个小时二十分钟左右，男的女的，也是一个尝试吧。我真的很佩服孙老师的热情和活力。你看，就你这么忙，还抽一个小时。你看，我们一定要这样好吧？你不要这样好吧？",
+      "refined_segment_indexes": [
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334
+      ]
+    },
+    {
+      "start": 1893.52,
+      "end": 1927.28,
+      "text": "我知道你今天的大纲里面有一有一句说不要互捧，但是我觉得这句话我真的要说。不，其实我说实话，我一直也很想做播客，但是呢，其实你也知道，我之前采访过一些运动员，大家也愿意讲很多东西。但是呢，那些采访从一个保护运动员的角度来说呢，你很多东西有没有办法放出来？但是如果你要把内容放出来，你要切掉很多东西。但切完了之后呢，你的。内容会很不完整，而且他真正可以说是有价值的部分是那些会被你切掉的东西。",
+      "refined_segment_indexes": [
+        335,
+        336,
+        337,
+        338,
+        339,
+        340
+      ]
+    },
+    {
+      "start": 1927.68,
+      "end": 1959.44,
+      "text": "我有几个采访我记得很深，我有一个采访是大富那年拿全国纪录，福冈那次。对，我在跟他是远程的一个采访，晚上我觉得他还挺累的，我跟他说你要不要聊，他可以。就聊了两个小时，聊了一个小时的时候，我说大富，你有没有些累？要不要休息？他说没有，我就要讲。他讲了很多，聊爽了，聊爽了。但是你这个东西没有办法，很多东西没有办法拿出来讲的呀。没有办法播点，那毕竟他会有对很多运动员的评价也好，对自己在这段时间自己的回审视也。",
+      "refined_segment_indexes": [
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348
+      ]
+    },
+    {
+      "start": 1959.68,
+      "end": 1992.4,
+      "text": "这个只有哪天大富想回忆一下的时候，我可以帮他把这个东西再拿出来，但是也蛮难的。因为我太太做了两档博客，做的都还蛮成功的。嗯。我也跟他讨论过很多关于做博客的事情，但是我那时候一直觉得有点难。就单纯如果这样聊的话还蛮难，因为他曾经也跟我说讨论要跟我做博客，后来我觉得我们两个时间也也对不拢。其实我今年最坚持做的一件事情就是我做的那个我们那个周报，这个是我一直非常认真的在做的一个项目。鼓掌鼓掌！",
+      "refined_segment_indexes": [
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        355
+      ]
+    },
+    {
+      "start": 1992.4,
+      "end": 2027.28,
+      "text": "虽然我知道这个活很累，但是我真的我非常的赞同，然后我也非常的佩服你能每周做这个东西，贡献很大，真的贡献很大。就周报，我觉得做到就还挺好玩的，我也做的挺开心的。虽然我们同事的压力很大，我是每个星期一的早上九点钟，如果在上海，我坐在办公室里面就开始讲。一般呢，讲半个小时，然后同事就开始剪。的确是有同事会帮忙去做一些资料的收集工作的，然后呢，就当天就是必须这个视频要出掉它的。对啊，很累啊！你要汇总那么多的消息。对，但我觉得还蛮有意思的。",
+      "refined_segment_indexes": [
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363
+      ]
+    },
+    {
+      "start": 2027.6,
+      "end": 2058.4,
+      "text": "有意思，绝对有意思。对，我觉得作为观众是很享受的这样一个。对，下次发一个这个没有剪辑的版本更刺激。好，我期待一下。我也希望某一天，我能去帮你录一期这个周报。那就看你星期只要有时间呀，你就大家知道，就每个星期的早上九点钟在我们公司准时就录周报。对啊，我觉得就蛮有意思的，我想尝试。其实我很多东西我都想去尝试，所以就从博客开始呗。",
+      "refined_segment_indexes": [
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371
+      ]
+    },
+    {
+      "start": 2058.72,
+      "end": 2092.8,
+      "text": "对，正好说到博客开始，那我们这我们这个节目的名字叫什么？对，我们要把名字想一想，或者我们这期也可以向大家网友征集一下名字，对吧？征集博客名字。我们两个自己管，到时候我们选几个各自觉得不错的，然后我们再汇总一下，再汇总一下就选一个就行了。哎，好棒！我觉得蛮有意思，我蛮喜欢这种聊天方式的。聊天还比较轻松，所以我们我们以后每次聊天先报一下大家在哪里，都不要在哪里。好呀，好呀，好呀。对，我现在就在广州广百的起点旁边正佳。",
+      "refined_segment_indexes": [
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380
+      ]
+    },
+    {
+      "start": 2093.36,
+      "end": 2127.6,
+      "text": "我在成功。成功，你这一年待的时间真的也不少。对啊，我我现在一到成功，他们就说：“哎，现在这是你家呀，这就是我家。”那就这样，这期就这么结束了。好的，一会儿把音频发给我，然后我会先剪辑完之后，我会出一个竹子稿，我们可以看一点。哇，那工作量也不小，你们的工作量也不小，还要竹子稿。竹子稿现在都是AI。好，那行，我怕我普通话不标准。我今天李娜楼被他们吐槽死了。李娜楼。李娜楼，我LN不带分，你知道吗？",
+      "refined_segment_indexes": [
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391
+      ]
+    },
+    {
+      "start": 2128.08,
+      "end": 2160.0,
+      "text": "正常的，大家的普通话都不是那么标准，问题不大。博客圈最讨厌的是北京口音，所以我们都是安全的。啊，是吗？原来是这样的吗？对，因为说北京口音地位太重，但我经常听的博客好像还真是北京人做的。因为北方人他在语言表达上面，我觉得是有一定的优势的。对，先天的优势的。好的，那就这样，宋哥再见。好的，谢谢观众们，再见，拜拜。嗯。",
+      "refined_segment_indexes": [
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401
+      ]
+    }
+  ]
+}

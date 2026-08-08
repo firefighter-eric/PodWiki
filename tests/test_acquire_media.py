@@ -115,6 +115,8 @@ def xiaoyuzhou_episode_document() -> dict[str, object]:
                     "payType": "FREE",
                     "isPrivateMedia": False,
                     "mediaKey": XIAOYUZHOU_MEDIA_ID,
+                    "transcript": {"mediaId": XIAOYUZHOU_MEDIA_ID},
+                    "transcriptMediaId": XIAOYUZHOU_MEDIA_ID,
                     "media": {
                         "id": XIAOYUZHOU_MEDIA_ID,
                         "size": 1_234_567,
@@ -304,6 +306,113 @@ class XiaoyuzhouMetadataTests(unittest.TestCase):
         self.assertEqual(metadata["media"]["url"], XIAOYUZHOU_MEDIA_URL)
         self.assertEqual(metadata["published_timestamp"], 1_786_106_096)
 
+    def test_real_transcript_media_stub_is_not_reported_as_subtitles(self) -> None:
+        metadata = parse_xiaoyuzhou_episode_metadata(
+            xiaoyuzhou_episode_document(), XIAOYUZHOU_EID
+        )
+        info = xiaoyuzhou_api_info(metadata)
+        source = source_metadata(
+            info,
+            platform="xiaoyuzhou",
+            canonical_url=(
+                f"https://www.xiaoyuzhoufm.com/episode/{XIAOYUZHOU_EID}"
+            ),
+            platform_metadata=metadata,
+        )
+
+        self.assertEqual(metadata["subtitle"]["tracks"], [])
+        self.assertEqual(
+            metadata["subtitle"]["page_fields"]["transcript"],
+            {"mediaId": XIAOYUZHOU_MEDIA_ID},
+        )
+        self.assertEqual(info["subtitles"], {})
+        self.assertEqual(info["automatic_captions"], {})
+        self.assertEqual(source["subtitle_languages"], [])
+        self.assertEqual(source["automatic_caption_languages"], [])
+
+    def test_preserves_and_discovers_public_transcript_tracks(self) -> None:
+        document = xiaoyuzhou_episode_document()
+        episode = document["props"]["pageProps"]["episode"]
+        episode["transcript"] = {
+            "tracks": [
+                {
+                    "language": "zh-CN",
+                    "url": "https://public.example/transcript.zh-CN.vtt",
+                    "format": "vtt",
+                }
+            ]
+        }
+        episode["automaticCaptions"] = {
+            "en": [
+                {
+                    "text": "Public automatic caption text.",
+                    "isAutomatic": True,
+                }
+            ]
+        }
+
+        metadata = parse_xiaoyuzhou_episode_metadata(document, XIAOYUZHOU_EID)
+        info = xiaoyuzhou_api_info(metadata)
+        source = source_metadata(
+            info,
+            platform="xiaoyuzhou",
+            canonical_url=(
+                f"https://www.xiaoyuzhoufm.com/episode/{XIAOYUZHOU_EID}"
+            ),
+            platform_metadata=metadata,
+        )
+
+        self.assertEqual(len(metadata["subtitle"]["tracks"]), 2)
+        self.assertEqual(
+            metadata["subtitle"]["tracks"][0]["url"],
+            "https://public.example/transcript.zh-CN.vtt",
+        )
+        self.assertEqual(list(info["subtitles"]), ["zh-CN"])
+        self.assertEqual(list(info["automatic_captions"]), ["en"])
+        self.assertEqual(source["subtitle_languages"], ["zh-CN"])
+        self.assertEqual(source["automatic_caption_languages"], ["en"])
+        self.assertEqual(
+            source["platform_metadata"]["subtitle"]["page_fields"][
+                "automaticCaptions"
+            ],
+            episode["automaticCaptions"],
+        )
+
+    def test_rejects_unknown_ambiguous_or_malformed_transcript_fields(self) -> None:
+        cases: list[tuple[str, dict[str, object], str]] = []
+
+        document = xiaoyuzhou_episode_document()
+        episode = document["props"]["pageProps"]["episode"]
+        episode["subtitleBlob"] = {
+            "url": "https://public.example/transcript.vtt"
+        }
+        cases.append(("unknown", document, "unknown transcript field"))
+
+        document = xiaoyuzhou_episode_document()
+        episode = document["props"]["pageProps"]["episode"]
+        episode["subtitles"] = {"tracks": "not-a-list"}
+        cases.append(("malformed tracks", document, "tracks is not a list"))
+
+        document = xiaoyuzhou_episode_document()
+        episode = document["props"]["pageProps"]["episode"]
+        episode["transcript"] = {
+            "mediaId": f"{XIAOYUZHOU_PID}/different-transcript.m4a"
+        }
+        cases.append(("ambiguous media id", document, "no explicit public text"))
+
+        document = xiaoyuzhou_episode_document()
+        episode = document["props"]["pageProps"]["episode"]
+        episode["captions"] = [
+            {"language": "zh-CN", "url": "http://public.example/captions.vtt"}
+        ]
+        cases.append(("non-https URL", document, "invalid public track URL"))
+
+        for label, document, message in cases:
+            with self.subTest(label=label), self.assertRaisesRegex(
+                ValueError, message
+            ):
+                parse_xiaoyuzhou_episode_metadata(document, XIAOYUZHOU_EID)
+
     def test_rejects_identity_mismatches(self) -> None:
         cases: list[tuple[str, dict[str, object]]] = []
 
@@ -338,6 +447,8 @@ class XiaoyuzhouMetadataTests(unittest.TestCase):
         self.assertEqual(info["id"], XIAOYUZHOU_EID)
         self.assertEqual(info["channel_id"], XIAOYUZHOU_PID)
         self.assertEqual(info["extractor"], "XiaoyuzhouPublicPage")
+        self.assertEqual(info["subtitles"], {})
+        self.assertEqual(info["automatic_captions"], {})
         self.assertEqual(audio["urls"], [XIAOYUZHOU_MEDIA_URL])
         self.assertEqual(audio["filesize"], 1_234_567)
 
@@ -1464,7 +1575,41 @@ class MainWorkflowTests(unittest.TestCase):
         self.assertNotIn("media", sidecar)
         self.assertFalse(sidecar["download_requested"])
         self.assertEqual(sidecar["source"]["media_id"], XIAOYUZHOU_MEDIA_ID)
+        self.assertEqual(sidecar["source"]["subtitle_languages"], [])
+        self.assertEqual(sidecar["source"]["automatic_caption_languages"], [])
         print_output.assert_called_once()
+
+    @patch("builtins.print")
+    @patch("acquire_media.xiaoyuzhou_platform_metadata")
+    @patch("acquire_media.parse_args")
+    def test_metadata_only_sidecar_surfaces_public_transcript_branch(
+        self, parse_args, platform_metadata, _print_output
+    ) -> None:
+        document = xiaoyuzhou_episode_document()
+        episode = document["props"]["pageProps"]["episode"]
+        episode["subtitles"] = {
+            "zh-CN": [{"url": "https://public.example/subtitles.vtt"}]
+        }
+        metadata = parse_xiaoyuzhou_episode_metadata(document, XIAOYUZHOU_EID)
+        platform_metadata.return_value = metadata
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            parse_args.return_value = self.arguments(root, metadata_only=True)
+
+            self.assertEqual(main(), 0)
+            sidecar = json.loads(
+                (root / "source.metadata.json").read_text(encoding="utf-8")
+            )
+
+        self.assertEqual(sidecar["source"]["subtitle_languages"], ["zh-CN"])
+        self.assertEqual(sidecar["source"]["automatic_caption_languages"], [])
+        self.assertEqual(
+            sidecar["source"]["platform_metadata"]["subtitle"]["tracks"][0][
+                "url"
+            ],
+            "https://public.example/subtitles.vtt",
+        )
 
     @patch("builtins.print")
     @patch("acquire_media.write_json_atomically")

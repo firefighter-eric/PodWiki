@@ -20,13 +20,18 @@ describe("PodWiki content loader", () => {
       "latetalk",
       "luoyonghao",
       "whynottv",
-      "dagaizhishi",
       "yiqitietalk",
-      "xinkoukaihe",
-      "erdesancifang",
     ]);
-    expect(episodes).toHaveLength(43);
-    expect(shows.slice(5).every((show) => show.episodeCount === 0)).toBe(true);
+    expect(episodes).toHaveLength(63);
+    expect(Object.fromEntries(shows.map((show) => [show.id, show.episodeCount]))).toEqual({
+      zhangxiaojun: 12,
+      sv101: 8,
+      latetalk: 12,
+      luoyonghao: 6,
+      whynottv: 5,
+      yiqitietalk: 20,
+    });
+    expect(shows.every((show) => show.episodeCount > 0)).toBe(true);
     expect(episodes.every((episode) => episode.summaryRaw && episode.transcriptSegments.length > 0)).toBe(true);
   });
 
@@ -52,9 +57,15 @@ describe("PodWiki content loader", () => {
 
     for (const episode of episodes) {
       const guestNames = episode.guests.map((guest) => guest.name).join("、");
-      expect(guestNames).not.toBe("");
+      const participantNames = episode.participants
+        .filter((participant) => participant.role === "participant")
+        .map((participant) => participant.name)
+        .join("、");
+      const hostNames = episode.hosts.map((host) => host.name).join("、");
+      const navigationNames = guestNames || participantNames || hostNames;
+      expect(navigationNames).not.toBe("");
       expect(episode.navigationTitle).toMatch(/^.+ · .+$/u);
-      expect(episode.navigationTitle.startsWith(`${guestNames} · `)).toBe(true);
+      expect(episode.navigationTitle.startsWith(`${navigationNames} · `)).toBe(true);
       expect(episode.navigationTitle.length).toBeLessThanOrEqual(40);
       expect(episode.summaryIntro.length).toBeGreaterThan(0);
       expect(episode.summaryIntro).not.toContain("##");

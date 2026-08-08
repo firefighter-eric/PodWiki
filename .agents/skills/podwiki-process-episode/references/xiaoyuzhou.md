@@ -1,7 +1,8 @@
 # Xiaoyuzhou source handling
 
-- Accept one canonical `https://www.xiaoyuzhoufm.com/episode/<episode-id>` source.
-  Podcast pages identify shows but are not media-acquisition inputs.
+- Accept one canonical `https://www.xiaoyuzhoufm.com/episode/<episode-id>` source per
+  acquisition command. Podcast pages identify shows but are not media-acquisition inputs.
+  By default, do not enumerate them.
 - Remove queries, fragments, and a trailing slash from the stored episode URL.
 - Fetch only the anonymous public HTML page. Parse its `__NEXT_DATA__` document without
   executing JavaScript, sending cookies, or using login/session tokens. Reject redirects,
@@ -26,8 +27,15 @@
   `If-Range`, HTTP 206, and an exact `Content-Range`; otherwise restart from byte zero. Ask
   for identity content encoding and reject encoded responses. Do not retry permanent 4xx or
   local filesystem errors.
-- Download only the requested public episode. Never crawl or batch-download a podcast,
-  and never use a token to enumerate or acquire paid/private episodes.
+- Download only the requested public episode by default. A bounded whole-podcast import is
+  allowed only after the user explicitly authorizes one verified podcast. Anonymous discovery
+  must be limited to that podcast, and its PID plus every canonical episode URL/eid must be
+  frozen in a manifest before any media download. Do not add newly discovered episodes during
+  the run. Validate each item independently as `NORMAL`, `FREE`, non-private, explicitly
+  `PUBLIC`, and bound to the authorized podcast; reject and report mismatches or unknown
+  states. Process the manifest sequentially with rate limiting, passing one episode URL to
+  each acquisition command. Never use cookies or tokens, cross into another podcast, or
+  enumerate/acquire paid or private episodes.
 - Verify the downloaded enclosure against its published byte size and duration, then
   record `eid`, `pid`, media identity, probe data, and SHA-256 in the source sidecar.
 - Before reusing cached audio, verify its canonical URL and SHA-256 locally, then compare

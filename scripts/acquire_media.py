@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import codecs
+import copy
 import hashlib
 import json
 import os
@@ -34,6 +35,59 @@ XIAOYUZHOU_MEDIA_ID_RE = re.compile(
     r"^([0-9a-f]{24})/([A-Za-z0-9_-]+\.m4a)$"
 )
 XIAOYUZHOU_MAX_PAGE_BYTES = 16 * 1024 * 1024
+XIAOYUZHOU_PUBLIC_TRANSCRIPT_FIELDS = {
+    "transcript": False,
+    "transcripts": False,
+    "subtitle": False,
+    "subtitles": False,
+    "caption": False,
+    "captions": False,
+    "automaticCaption": True,
+    "automaticCaptions": True,
+    "automatic_caption": True,
+    "automatic_captions": True,
+}
+XIAOYUZHOU_TRANSCRIPT_MARKER_FIELD = "transcriptMediaId"
+XIAOYUZHOU_LANGUAGE_RE = re.compile(
+    r"^(?:und|[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*)$"
+)
+XIAOYUZHOU_TRACK_LANGUAGE_FIELDS = (
+    "language",
+    "languageCode",
+    "lang",
+    "locale",
+)
+XIAOYUZHOU_TRACK_AUTOMATIC_FIELDS = ("automatic", "isAutomatic")
+XIAOYUZHOU_TRACK_TEXT_FIELDS = ("text", "content", "body")
+XIAOYUZHOU_TRACK_FIELDS = {
+    "url",
+    "mediaId",
+    "segments",
+    "kind",
+    "type",
+    "label",
+    "name",
+    "format",
+    "ext",
+    "mimeType",
+    *XIAOYUZHOU_TRACK_LANGUAGE_FIELDS,
+    *XIAOYUZHOU_TRACK_AUTOMATIC_FIELDS,
+    *XIAOYUZHOU_TRACK_TEXT_FIELDS,
+}
+XIAOYUZHOU_TRACK_CONTAINER_FIELDS = {
+    "tracks",
+    "mediaId",
+    *XIAOYUZHOU_TRACK_LANGUAGE_FIELDS,
+    *XIAOYUZHOU_TRACK_AUTOMATIC_FIELDS,
+}
+XIAOYUZHOU_SEGMENT_FIELDS = {
+    "text",
+    "startMs",
+    "endMs",
+    "durationMs",
+    "speaker",
+    "speakerId",
+}
 BILIBILI_PUBLIC_ACCESS_FLAGS = (
     "pay",
     "ugc_pay",
@@ -238,6 +292,440 @@ def rfc3339_timestamp(value: Any, *, field: str) -> int:
     return int(parsed.timestamp())
 
 
+def validate_xiaoyuzhou_public_track_url(value: Any, *, field: str) -> str:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"Xiaoyuzhou {field} has no public track URL")
+    url = value.strip()
+    parsed = urlparse(url)
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname is None
+        or parsed.username is not None
+        or parsed.password is not None
+        or not parsed.path
+        or bool(parsed.fragment)
+    ):
+        raise ValueError(f"Xiaoyuzhou {field} has an invalid public track URL")
+    return url
+
+
+def xiaoyuzhou_track_language(
+    track: dict[str, Any],
+    *,
+    field: str,
+    inherited_language: str | None,
+) -> str:
+    candidates: list[str] = []
+    if inherited_language is not None:
+        candidates.append(inherited_language)
+    for language_field in XIAOYUZHOU_TRACK_LANGUAGE_FIELDS:
+        if language_field not in track:
+            continue
+        value = track[language_field]
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(
+                f"Xiaoyuzhou {field}.{language_field} is not a language tag"
+            )
+        candidates.append(value.strip())
+    if not candidates:
+        return "und"
+    if any(value.casefold() != candidates[0].casefold() for value in candidates[1:]):
+        raise ValueError(f"Xiaoyuzhou {field} has ambiguous language metadata")
+    if XIAOYUZHOU_LANGUAGE_RE.fullmatch(candidates[0]) is None:
+        raise ValueError(f"Xiaoyuzhou {field} has an invalid language tag")
+    return candidates[0]
+
+
+def xiaoyuzhou_track_automatic(
+    track: dict[str, Any],
+    *,
+    field: str,
+    default_automatic: bool,
+) -> bool:
+    candidates: list[bool] = []
+    for automatic_field in XIAOYUZHOU_TRACK_AUTOMATIC_FIELDS:
+        if automatic_field not in track:
+            continue
+        value = track[automatic_field]
+        if not isinstance(value, bool):
+            raise ValueError(
+                f"Xiaoyuzhou {field}.{automatic_field} is not boolean"
+            )
+        candidates.append(value)
+
+    classification_values = {
+        "automatic": True,
+        "automatic_caption": True,
+        "auto": True,
+        "machine": True,
+        "manual": False,
+        "human": False,
+        "transcript": False,
+        "subtitle": False,
+        "caption": False,
+    }
+    for classification_field in ("kind", "type"):
+        if classification_field not in track:
+            continue
+        value = track[classification_field]
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(
+                f"Xiaoyuzhou {field}.{classification_field} is not a track kind"
+            )
+        normalized = value.strip().lower().replace("-", "_").replace(" ", "_")
+        if normalized in classification_values:
+            candidates.append(classification_values[normalized])
+
+    if candidates and any(value != candidates[0] for value in candidates[1:]):
+        raise ValueError(f"Xiaoyuzhou {field} has ambiguous automatic-caption metadata")
+    if default_automatic and candidates and candidates[0] is not True:
+        raise ValueError(f"Xiaoyuzhou {field} contradicts its automatic-caption field")
+    return candidates[0] if candidates else default_automatic
+
+
+def validate_xiaoyuzhou_transcript_segments(
+    value: Any, *, field: str
+) -> list[dict[str, Any]]:
+    if not isinstance(value, list) or not value:
+        raise ValueError(f"Xiaoyuzhou {field}.segments is not a non-empty list")
+    segments: list[dict[str, Any]] = []
+    for index, segment in enumerate(value):
+        segment_field = f"{field}.segments[{index}]"
+        if not isinstance(segment, dict):
+            raise ValueError(f"Xiaoyuzhou {segment_field} is not an object")
+        unknown = set(segment) - XIAOYUZHOU_SEGMENT_FIELDS
+        if unknown:
+            raise ValueError(
+                f"Xiaoyuzhou {segment_field} has unknown fields: "
+                f"{', '.join(sorted(unknown))}"
+            )
+        text = segment.get("text")
+        if not isinstance(text, str) or not text.strip():
+            raise ValueError(f"Xiaoyuzhou {segment_field} has no text")
+        for timing_field in ("startMs", "endMs", "durationMs"):
+            if timing_field not in segment:
+                continue
+            timing = segment[timing_field]
+            if isinstance(timing, bool) or not isinstance(timing, (int, float)):
+                raise ValueError(
+                    f"Xiaoyuzhou {segment_field}.{timing_field} is not numeric"
+                )
+            if timing < 0:
+                raise ValueError(
+                    f"Xiaoyuzhou {segment_field}.{timing_field} is negative"
+                )
+        for speaker_field in ("speaker", "speakerId"):
+            if speaker_field in segment and not isinstance(
+                segment[speaker_field], str
+            ):
+                raise ValueError(
+                    f"Xiaoyuzhou {segment_field}.{speaker_field} is not text"
+                )
+        segments.append(copy.deepcopy(segment))
+    return segments
+
+
+def xiaoyuzhou_public_track_from_scalar(
+    value: str,
+    *,
+    source_field: str,
+    media_id: str,
+    inherited_language: str | None,
+    default_automatic: bool,
+) -> list[dict[str, Any]]:
+    stripped = value.strip()
+    if not stripped:
+        return []
+    if source_field.startswith("transcript") and stripped == media_id:
+        return []
+    if XIAOYUZHOU_MEDIA_ID_RE.fullmatch(stripped) is not None:
+        raise ValueError(
+            f"Xiaoyuzhou {source_field} has an ambiguous transcript media id"
+        )
+
+    track = {
+        "source_field": source_field,
+        "kind": "automatic_caption" if default_automatic else source_field.rstrip("s"),
+        "language": inherited_language or "und",
+        "automatic": default_automatic,
+    }
+    looks_like_url = bool(
+        re.match(r"^[A-Za-z][A-Za-z0-9+.-]*://", stripped)
+    ) or stripped.startswith("//")
+    if looks_like_url:
+        track["url"] = validate_xiaoyuzhou_public_track_url(
+            stripped, field=source_field
+        )
+    else:
+        track["text"] = stripped
+    return [track]
+
+
+def xiaoyuzhou_public_track_from_object(
+    track: dict[str, Any],
+    *,
+    source_field: str,
+    media_id: str,
+    inherited_language: str | None,
+    default_automatic: bool,
+) -> list[dict[str, Any]]:
+    unknown = set(track) - XIAOYUZHOU_TRACK_FIELDS
+    if unknown:
+        raise ValueError(
+            f"Xiaoyuzhou {source_field} track has unknown fields: "
+            f"{', '.join(sorted(unknown))}"
+        )
+
+    track_media_id = track.get("mediaId")
+    if "mediaId" in track and (
+        not isinstance(track_media_id, str) or not track_media_id.strip()
+    ):
+        raise ValueError(f"Xiaoyuzhou {source_field}.mediaId is not text")
+
+    text_values: list[str] = []
+    for text_field in XIAOYUZHOU_TRACK_TEXT_FIELDS:
+        if text_field not in track:
+            continue
+        value = track[text_field]
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"Xiaoyuzhou {source_field}.{text_field} has no text")
+        text_values.append(value.strip())
+    if text_values and any(value != text_values[0] for value in text_values[1:]):
+        raise ValueError(f"Xiaoyuzhou {source_field} has ambiguous transcript text")
+
+    public_url = (
+        validate_xiaoyuzhou_public_track_url(track["url"], field=source_field)
+        if "url" in track
+        else None
+    )
+    segments = (
+        validate_xiaoyuzhou_transcript_segments(
+            track["segments"], field=source_field
+        )
+        if "segments" in track
+        else None
+    )
+    if public_url is None and not text_values and segments is None:
+        if (
+            source_field.startswith("transcript")
+            and set(track) == {"mediaId"}
+            and track_media_id == media_id
+        ):
+            return []
+        raise ValueError(
+            f"Xiaoyuzhou {source_field} has no explicit public text or track URL"
+        )
+
+    language = xiaoyuzhou_track_language(
+        track,
+        field=source_field,
+        inherited_language=inherited_language,
+    )
+    automatic = xiaoyuzhou_track_automatic(
+        track,
+        field=source_field,
+        default_automatic=default_automatic,
+    )
+    normalized: dict[str, Any] = {
+        "source_field": source_field,
+        "kind": "automatic_caption" if automatic else source_field.rstrip("s"),
+        "language": language,
+        "automatic": automatic,
+    }
+    if public_url is not None:
+        normalized["url"] = public_url
+    if text_values:
+        normalized["text"] = text_values[0]
+    if segments is not None:
+        normalized["segments"] = segments
+    for metadata_field in (
+        "mediaId",
+        "label",
+        "name",
+        "format",
+        "ext",
+        "mimeType",
+    ):
+        if metadata_field not in track:
+            continue
+        value = track[metadata_field]
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(
+                f"Xiaoyuzhou {source_field}.{metadata_field} is not text"
+            )
+        normalized[metadata_field] = value.strip()
+    return [normalized]
+
+
+def parse_xiaoyuzhou_public_track_value(
+    value: Any,
+    *,
+    source_field: str,
+    media_id: str,
+    default_automatic: bool,
+    inherited_language: str | None = None,
+    depth: int = 0,
+) -> list[dict[str, Any]]:
+    if depth > 4:
+        raise ValueError(f"Xiaoyuzhou {source_field} track metadata is too deeply nested")
+    if value is None or value == "" or value == [] or value == {}:
+        return []
+    if isinstance(value, str):
+        return xiaoyuzhou_public_track_from_scalar(
+            value,
+            source_field=source_field,
+            media_id=media_id,
+            inherited_language=inherited_language,
+            default_automatic=default_automatic,
+        )
+    if isinstance(value, list):
+        tracks: list[dict[str, Any]] = []
+        for item in value:
+            if not isinstance(item, (str, dict)):
+                raise ValueError(f"Xiaoyuzhou {source_field} track list is malformed")
+            tracks.extend(
+                parse_xiaoyuzhou_public_track_value(
+                    item,
+                    source_field=source_field,
+                    media_id=media_id,
+                    default_automatic=default_automatic,
+                    inherited_language=inherited_language,
+                    depth=depth + 1,
+                )
+            )
+        return tracks
+    if not isinstance(value, dict):
+        raise ValueError(f"Xiaoyuzhou {source_field} metadata is malformed")
+
+    if "tracks" in value:
+        unknown = set(value) - XIAOYUZHOU_TRACK_CONTAINER_FIELDS
+        if unknown:
+            raise ValueError(
+                f"Xiaoyuzhou {source_field} track container has unknown fields: "
+                f"{', '.join(sorted(unknown))}"
+            )
+        raw_tracks = value["tracks"]
+        if not isinstance(raw_tracks, list):
+            raise ValueError(f"Xiaoyuzhou {source_field}.tracks is not a list")
+        container_media_id = value.get("mediaId")
+        if "mediaId" in value and (
+            not isinstance(container_media_id, str) or not container_media_id
+        ):
+            raise ValueError(f"Xiaoyuzhou {source_field}.mediaId is not text")
+        if not raw_tracks and container_media_id not in {None, media_id}:
+            raise ValueError(
+                f"Xiaoyuzhou {source_field} has an ambiguous transcript media id"
+            )
+        container_language = (
+            xiaoyuzhou_track_language(
+                value,
+                field=source_field,
+                inherited_language=inherited_language,
+            )
+            if inherited_language is not None
+            or any(field in value for field in XIAOYUZHOU_TRACK_LANGUAGE_FIELDS)
+            else None
+        )
+        container_automatic = xiaoyuzhou_track_automatic(
+            value,
+            field=source_field,
+            default_automatic=default_automatic,
+        )
+        tracks: list[dict[str, Any]] = []
+        for item in raw_tracks:
+            if not isinstance(item, (str, dict)):
+                raise ValueError(f"Xiaoyuzhou {source_field}.tracks is malformed")
+            tracks.extend(
+                parse_xiaoyuzhou_public_track_value(
+                    item,
+                    source_field=source_field,
+                    media_id=media_id,
+                    default_automatic=container_automatic,
+                    inherited_language=container_language,
+                    depth=depth + 1,
+                )
+            )
+        return tracks
+
+    if value and not set(value).intersection(XIAOYUZHOU_TRACK_FIELDS) and all(
+        isinstance(language, str)
+        and XIAOYUZHOU_LANGUAGE_RE.fullmatch(language) is not None
+        for language in value
+    ):
+        tracks = []
+        for language, item in value.items():
+            tracks.extend(
+                parse_xiaoyuzhou_public_track_value(
+                    item,
+                    source_field=source_field,
+                    media_id=media_id,
+                    default_automatic=default_automatic,
+                    inherited_language=language,
+                    depth=depth + 1,
+                )
+            )
+        return tracks
+
+    return xiaoyuzhou_public_track_from_object(
+        value,
+        source_field=source_field,
+        media_id=media_id,
+        inherited_language=inherited_language,
+        default_automatic=default_automatic,
+    )
+
+
+def extract_xiaoyuzhou_public_transcripts(
+    episode: dict[str, Any], *, media_id: str
+) -> dict[str, Any]:
+    allowed_fields = {
+        *XIAOYUZHOU_PUBLIC_TRANSCRIPT_FIELDS,
+        XIAOYUZHOU_TRANSCRIPT_MARKER_FIELD,
+    }
+    for field in episode:
+        if not isinstance(field, str):
+            continue
+        lowered = field.lower()
+        if any(name in lowered for name in ("transcript", "subtitle", "caption")):
+            if field not in allowed_fields:
+                raise ValueError(
+                    f"Xiaoyuzhou episode has unknown transcript field: {field}"
+                )
+
+    page_fields: dict[str, Any] = {}
+    tracks: list[dict[str, Any]] = []
+    for field, automatic in XIAOYUZHOU_PUBLIC_TRANSCRIPT_FIELDS.items():
+        if field not in episode:
+            continue
+        page_fields[field] = copy.deepcopy(episode[field])
+        tracks.extend(
+            parse_xiaoyuzhou_public_track_value(
+                episode[field],
+                source_field=field,
+                media_id=media_id,
+                default_automatic=automatic,
+            )
+        )
+
+    if XIAOYUZHOU_TRANSCRIPT_MARKER_FIELD in episode:
+        transcript_media_id = episode[XIAOYUZHOU_TRANSCRIPT_MARKER_FIELD]
+        page_fields[XIAOYUZHOU_TRANSCRIPT_MARKER_FIELD] = copy.deepcopy(
+            transcript_media_id
+        )
+        if transcript_media_id is not None:
+            if not isinstance(transcript_media_id, str) or not transcript_media_id:
+                raise ValueError("Xiaoyuzhou transcriptMediaId is malformed")
+            if transcript_media_id != media_id and not tracks:
+                raise ValueError(
+                    "Xiaoyuzhou transcriptMediaId is ambiguous without a public track"
+                )
+
+    subtitle: dict[str, Any] = {"tracks": tracks}
+    if page_fields:
+        subtitle["page_fields"] = page_fields
+    return subtitle
+
+
 def parse_xiaoyuzhou_episode_metadata(
     document: dict[str, Any], expected_episode_id: str
 ) -> dict[str, Any]:
@@ -289,6 +777,9 @@ def parse_xiaoyuzhou_episode_metadata(
             "Xiaoyuzhou media id/mediaKey mismatch: "
             f"media={media_id} mediaKey={media_key}"
         )
+    if not isinstance(media_id, str):
+        raise ValueError("Xiaoyuzhou episode metadata has no media id")
+    subtitle = extract_xiaoyuzhou_public_transcripts(episode, media_id=media_id)
 
     title = episode.get("title")
     if not isinstance(title, str) or not title.strip():
@@ -320,6 +811,7 @@ def parse_xiaoyuzhou_episode_metadata(
             "url": media_source.get("url"),
         },
         "enclosure_url": enclosure.get("url"),
+        "subtitle": subtitle,
     }
 
 
@@ -667,6 +1159,27 @@ def xiaoyuzhou_api_info(platform_metadata: dict[str, Any]) -> dict[str, Any]:
     validate_xiaoyuzhou_public_access(platform_metadata)
     podcast = platform_metadata.get("podcast")
     podcast = podcast if isinstance(podcast, dict) else {}
+    subtitle = platform_metadata.get("subtitle")
+    if not isinstance(subtitle, dict):
+        raise ValueError("Xiaoyuzhou subtitle metadata is missing")
+    tracks = subtitle.get("tracks")
+    if not isinstance(tracks, list):
+        raise ValueError("Xiaoyuzhou subtitle tracks are malformed")
+    subtitles: dict[str, list[dict[str, Any]]] = {}
+    automatic_captions: dict[str, list[dict[str, Any]]] = {}
+    for index, track in enumerate(tracks):
+        if not isinstance(track, dict):
+            raise ValueError(f"Xiaoyuzhou subtitle track {index} is malformed")
+        language = track.get("language")
+        automatic = track.get("automatic")
+        if (
+            not isinstance(language, str)
+            or not language
+            or not isinstance(automatic, bool)
+        ):
+            raise ValueError(f"Xiaoyuzhou subtitle track {index} is ambiguous")
+        target = automatic_captions if automatic else subtitles
+        target.setdefault(language, []).append(copy.deepcopy(track))
     return validate_extracted_info(
         {
             "id": platform_metadata.get("eid"),
@@ -685,8 +1198,8 @@ def xiaoyuzhou_api_info(platform_metadata: dict[str, Any]) -> dict[str, Any]:
             "extractor_key": "XiaoyuzhouPublicPage",
             "availability": None,
             "live_status": None,
-            "subtitles": {},
-            "automatic_captions": {},
+            "subtitles": subtitles,
+            "automatic_captions": automatic_captions,
             "chapters": [],
         }
     )
@@ -1580,7 +2093,7 @@ def acquire_media_locked(
             from yt_dlp.utils import DownloadError
         except ImportError as error:
             raise SystemExit(
-                "yt-dlp is unavailable; run `uv sync --all-groups` before workers"
+                "yt-dlp is unavailable; run `uv sync --group media` before workers"
             ) from error
 
     staging_directory: Path | None = None

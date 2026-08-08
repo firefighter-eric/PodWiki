@@ -179,19 +179,20 @@ describe("reader navigation", () => {
     const [shows, episodes] = await Promise.all([getShows(), getEpisodes()]);
     const homeHtml = renderToStaticMarkup(createElement(ShowCatalog, { shows, episodes }));
 
-    expect(shows).toHaveLength(9);
+    expect(shows).toHaveLength(6);
     expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(shows.length);
-    expect(homeHtml.match(/class="podcast-preview-episode"/g)).toHaveLength(15);
-    expect(homeHtml.match(/查看全部 0 期/g)).toHaveLength(4);
+    expect(homeHtml.match(/class="podcast-preview-episode"/g)).toHaveLength(18);
+    expect(homeHtml).not.toContain("查看全部 0 期");
     expect(homeHtml).toContain("按播客浏览");
-    expect(homeHtml).toContain('href="/shows/dagaizhishi"');
     expect(homeHtml).toContain('href="/shows/yiqitietalk"');
-    expect(homeHtml).toContain('href="/shows/xinkoukaihe"');
-    expect(homeHtml).toContain('href="/shows/erdesancifang"');
+    expect(homeHtml).not.toContain('href="/shows/dagaizhishi"');
+    expect(homeHtml).not.toContain('href="/shows/xinkoukaihe"');
+    expect(homeHtml).not.toContain('href="/shows/erdesancifang"');
     expect(homeHtml.match(/查看全部 12 期/g)).toHaveLength(2);
     expect(homeHtml).toContain("查看全部 8 期");
     expect(homeHtml).toContain("查看全部 6 期");
     expect(homeHtml).toContain("查看全部 5 期");
+    expect(homeHtml).toContain("查看全部 20 期");
 
     const showHtml = renderToStaticMarkup(createElement(ShowCatalog, {
       shows,
@@ -203,7 +204,14 @@ describe("reader navigation", () => {
 
   it("renders episode-authored core-point logic tables for every podcast", async () => {
     const episodes = await getEpisodes();
-    const showIds = ["zhangxiaojun", "sv101", "latetalk", "luoyonghao", "whynottv"];
+    const showIds = [
+      "zhangxiaojun",
+      "sv101",
+      "latetalk",
+      "luoyonghao",
+      "whynottv",
+      "yiqitietalk",
+    ];
 
     for (const showId of showIds) {
       const episode = episodes.find((candidate) => candidate.showId === showId);
