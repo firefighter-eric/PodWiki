@@ -111,6 +111,36 @@ class SentenceSegmentsTests(unittest.TestCase):
             ],
         )
 
+    def test_merges_false_english_boundary_inside_one_aligner_token(self) -> None:
+        text = "CEO。If the cycle changes."
+        items = [
+            {"text": "CEOIf", "start_time": 0.1, "end_time": 0.3},
+            {"text": "the", "start_time": 0.31, "end_time": 0.4},
+            {"text": "cycle", "start_time": 0.41, "end_time": 0.5},
+            {"text": "changes", "start_time": 0.51, "end_time": 0.6},
+        ]
+
+        self.assertEqual(
+            sentence_segments(
+                text=text,
+                aligned_items=items,
+                offset_seconds=12.0,
+                chunk_id=3,
+                first_segment_id=7,
+                max_characters=160,
+                language="English",
+            ),
+            [
+                {
+                    "id": 7,
+                    "start": 12.1,
+                    "end": 12.6,
+                    "text": text,
+                    "source_chunk_id": 3,
+                }
+            ],
+        )
+
 
 class ResumeModeTests(unittest.TestCase):
     def test_resumes_at_the_next_incomplete_stage(self) -> None:

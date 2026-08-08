@@ -174,7 +174,7 @@ describe("reader navigation", () => {
     }));
     expect(catalogHtml).toContain('<span class="episode-keyword">SGLang</span>');
     expect(catalogHtml).toContain('<span class="episode-keyword">Kimi</span>');
-    expect(catalogHtml).toContain('class="catalog-tally" aria-label="2 期内容，来自 5 档播客"');
+    expect(catalogHtml).toContain('class="catalog-tally" aria-label="2 期内容，来自 6 档播客"');
     expect(catalogHtml).not.toContain('class="show-grid"');
     expect(catalogHtml).toContain('<strong>盛颖</strong><span>SGLang、Infra 产品观与开源</span>');
     expect(catalogHtml).toContain('<strong>叶奇意</strong><span>AI 人才迁徙、Kimi 投资与 AGI</span>');
@@ -220,10 +220,11 @@ describe("reader navigation", () => {
     const [shows, episodes] = await Promise.all([getShows(), getEpisodes()]);
     const homeHtml = renderToStaticMarkup(createElement(ShowCatalog, { shows, episodes }));
 
-    expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(5);
-    expect(homeHtml.match(/class="podcast-preview-episode selectable-content-link"/g)).toHaveLength(15);
+    expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(6);
+    expect(homeHtml.match(/class="podcast-preview-episode selectable-content-link"/g)).toHaveLength(18);
     expect(homeHtml).toContain("按播客浏览");
     expect(homeHtml.match(/查看全部 12 期/g)).toHaveLength(2);
+    expect(homeHtml).toContain("查看全部 10 期");
     expect(homeHtml).toContain("查看全部 8 期");
     expect(homeHtml).toContain("查看全部 6 期");
     expect(homeHtml).toContain("查看全部 5 期");
@@ -238,7 +239,14 @@ describe("reader navigation", () => {
 
   it("renders episode-authored core-point logic tables for every podcast", async () => {
     const episodes = await getEpisodes();
-    const showIds = ["zhangxiaojun", "sv101", "latetalk", "luoyonghao", "whynottv"];
+    const showIds = [
+      "zhangxiaojun",
+      "sv101",
+      "svvector",
+      "latetalk",
+      "luoyonghao",
+      "whynottv",
+    ];
 
     for (const showId of showIds) {
       const episode = episodes.find((candidate) => candidate.showId === showId);
