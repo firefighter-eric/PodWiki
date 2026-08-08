@@ -132,6 +132,7 @@ def worker_args(directory: Path) -> argparse.Namespace:
         max_tokens=2048,
         chunk_duration=120.0,
         chunk_context=5.0,
+        final_outro_exemption_seconds=0.0,
         max_sentence_characters=160,
         device="cuda:0",
         dtype="float16",
@@ -159,6 +160,7 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
         self.assertEqual(args.dtype, "bfloat16")
         self.assertEqual(args.chunk_duration, 120.0)
         self.assertEqual(args.chunk_context, 5.0)
+        self.assertEqual(args.final_outro_exemption_seconds, 0.0)
         self.assertEqual(cuda_worker.MAX_INFERENCE_BATCH_SIZE, 1)
 
     def test_chunks_audio_with_bounded_context_and_gapless_ownership(self) -> None:
@@ -397,6 +399,63 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
         self.assertEqual(record["anchor_text"], "丙")
         self.assertEqual(record["anchor_run_characters"], 3)
 
+    def test_rejects_ambiguous_three_character_exact_match_runs(self) -> None:
+        left = [
+            {"text": "a", "start": 119.10, "end": 119.15},
+            {"text": "b", "start": 119.20, "end": 119.25},
+            {"text": "c", "start": 119.30, "end": 119.35},
+            {"text": "X", "start": 120.30, "end": 120.35},
+        ]
+        right = [
+            {"text": "a", "start": 118.95, "end": 119.00},
+            {"text": "b", "start": 119.05, "end": 119.10},
+            {"text": "c", "start": 119.15, "end": 119.20},
+            {"text": "a", "start": 119.35, "end": 119.40},
+            {"text": "b", "start": 119.45, "end": 119.50},
+            {"text": "c", "start": 119.55, "end": 119.60},
+            {"text": "Y", "start": 120.35, "end": 120.40},
+        ]
+
+        with self.assertRaisesRegex(ValueError, "ambiguous exact alignment"):
+            cuda_worker.seam_crossover(
+                left,
+                right,
+                seam_seconds=119.4,
+                shared_start=118.5,
+                shared_end=120.8,
+            )
+
+    def test_accepts_disjoint_ordered_three_character_match_runs(self) -> None:
+        left = [
+            {"text": "a", "start": 118.9, "end": 118.95},
+            {"text": "b", "start": 119.0, "end": 119.05},
+            {"text": "c", "start": 119.1, "end": 119.15},
+            {"text": "X", "start": 119.8, "end": 119.85},
+            {"text": "d", "start": 120.2, "end": 120.25},
+            {"text": "e", "start": 120.3, "end": 120.35},
+            {"text": "f", "start": 120.4, "end": 120.45},
+        ]
+        right = [
+            {"text": "a", "start": 118.95, "end": 119.0},
+            {"text": "b", "start": 119.05, "end": 119.1},
+            {"text": "c", "start": 119.15, "end": 119.2},
+            {"text": "Y", "start": 119.85, "end": 119.9},
+            {"text": "d", "start": 120.25, "end": 120.3},
+            {"text": "e", "start": 120.35, "end": 120.4},
+            {"text": "f", "start": 120.45, "end": 120.5},
+        ]
+
+        _, _, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=120.0,
+            shared_start=118.5,
+            shared_end=120.8,
+        )
+
+        self.assertEqual(record["strategy"], "exact-time-anchor")
+        self.assertEqual(record["anchor_run_characters"], 3)
+
     def test_accepts_one_unique_tightly_aligned_two_character_run(self) -> None:
         left = [
             {"text": "a", "start": 119.0, "end": 119.1},
@@ -502,7 +561,7 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
             ["sparse-text", "active-trailing-gap"],
         )
 
-    def test_terminal_punctuation_only_exempts_a_moderate_tail(self) -> None:
+    def test_terminal_punctuation_does_not_exempt_an_uncovered_tail(self) -> None:
         moderate = cuda_worker.alignment_coverage_suspicions(
             ownership_start=0.0,
             ownership_end=120.0,
@@ -520,8 +579,42 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
             is_last_chunk=False,
         )
 
-        self.assertFalse(any(item["kind"] == "active-trailing-gap" for item in moderate))
+        self.assertTrue(any(item["kind"] == "active-trailing-gap" for item in moderate))
         self.assertTrue(any(item["kind"] == "active-trailing-gap" for item in severe))
+
+    def test_flags_first_internal_and_final_forty_second_gaps(self) -> None:
+        dense_text = "recognized speech words " * 8
+        leading = cuda_worker.alignment_coverage_suspicions(
+            ownership_start=0.0,
+            ownership_end=120.0,
+            text=dense_text,
+            alignment=[{"text": "word", "start": 40.0, "end": 120.0}],
+            is_first_chunk=True,
+            is_last_chunk=False,
+        )
+        internal = cuda_worker.alignment_coverage_suspicions(
+            ownership_start=0.0,
+            ownership_end=120.0,
+            text=dense_text,
+            alignment=[
+                {"text": "before", "start": 0.0, "end": 30.0},
+                {"text": "after", "start": 70.0, "end": 120.0},
+            ],
+            is_first_chunk=True,
+            is_last_chunk=False,
+        )
+        trailing = cuda_worker.alignment_coverage_suspicions(
+            ownership_start=0.0,
+            ownership_end=120.0,
+            text=f"{dense_text}.",
+            alignment=[{"text": "word", "start": 0.0, "end": 80.0}],
+            is_first_chunk=True,
+            is_last_chunk=True,
+        )
+
+        self.assertEqual([item["kind"] for item in leading], ["active-leading-gap"])
+        self.assertEqual([item["kind"] for item in internal], ["active-internal-gap"])
+        self.assertEqual([item["kind"] for item in trailing], ["active-trailing-gap"])
 
     def test_flags_internal_leading_gaps_and_sparse_final_chunks(self) -> None:
         leading = cuda_worker.alignment_coverage_suspicions(
@@ -638,7 +731,127 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
                     numpy_module=object(),
                 )
 
-    def test_short_final_unfinished_tail_is_probed_without_rejecting_outro(self) -> None:
+    def test_coverage_uses_global_owned_alignment_union_across_cores(self) -> None:
+        chunks = [
+            {
+                "start": 2880.0,
+                "end": 3000.0,
+                "text": "",
+                "alignment": [
+                    {
+                        "text": "a" * 60,
+                        "start": 2880.0,
+                        "end": 2974.72,
+                    }
+                ],
+            },
+            {
+                "start": 3000.0,
+                "end": 3120.0,
+                "text": "",
+                "alignment": [
+                    {
+                        "text": "b" * 60,
+                        "start": 2975.44,
+                        "end": 3120.0,
+                    }
+                ],
+            },
+        ]
+        with patch.object(
+            cuda_worker,
+            "decode_audio_chunk",
+            side_effect=AssertionError("global coverage should require no probe"),
+        ):
+            cuda_worker.enforce_alignment_coverage(
+                input_path=Path("source.m4a"),
+                chunks=chunks,
+                ffmpeg="ffmpeg",
+                numpy_module=object(),
+            )
+
+    def test_coverage_probes_first_internal_and_final_gaps(self) -> None:
+        dense_text = "recognized speech words " * 8
+        cases = [
+            (
+                "active-leading-gap",
+                {
+                    "start": 0.0,
+                    "end": 120.0,
+                    "text": dense_text,
+                    "alignment": [
+                        {"text": dense_text, "start": 40.0, "end": 120.0}
+                    ],
+                },
+            ),
+            (
+                "active-internal-gap",
+                {
+                    "start": 0.0,
+                    "end": 120.0,
+                    "text": dense_text,
+                    "alignment": [
+                        {"text": dense_text, "start": 0.0, "end": 30.0},
+                        {"text": dense_text, "start": 70.0, "end": 120.0},
+                    ],
+                },
+            ),
+            (
+                "active-trailing-gap",
+                {
+                    "start": 0.0,
+                    "end": 120.0,
+                    "text": f"{dense_text}.",
+                    "alignment": [
+                        {"text": dense_text, "start": 0.0, "end": 80.0}
+                    ],
+                },
+            ),
+        ]
+        for expected_kind, chunk in cases:
+            with self.subTest(expected_kind=expected_kind, audio="active"):
+                with (
+                    patch.object(
+                        cuda_worker,
+                        "decode_audio_chunk",
+                        return_value=FakeAudio(),
+                    ),
+                    patch.object(
+                        cuda_worker,
+                        "active_audio_statistics",
+                        return_value=(40.0, 0.99),
+                    ),
+                ):
+                    with self.assertRaisesRegex(ValueError, expected_kind):
+                        cuda_worker.enforce_alignment_coverage(
+                            input_path=Path("source.m4a"),
+                            chunks=[chunk],
+                            ffmpeg="ffmpeg",
+                            numpy_module=object(),
+                        )
+
+            with self.subTest(expected_kind=expected_kind, audio="quiet"):
+                with (
+                    patch.object(
+                        cuda_worker,
+                        "decode_audio_chunk",
+                        return_value=FakeAudio(),
+                    ) as decode,
+                    patch.object(
+                        cuda_worker,
+                        "active_audio_statistics",
+                        return_value=(0.0, 0.0),
+                    ),
+                ):
+                    cuda_worker.enforce_alignment_coverage(
+                        input_path=Path("source.m4a"),
+                        chunks=[chunk],
+                        ffmpeg="ffmpeg",
+                        numpy_module=object(),
+                    )
+                decode.assert_called_once()
+
+    def test_short_final_tail_is_probed_without_rejecting_quiet_outro(self) -> None:
         truncated = [
             {
                 "start": 0.0,
@@ -680,10 +893,17 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
 
         completed_before_outro = copy.deepcopy(truncated)
         completed_before_outro[0]["text"] = "Finished."
-        with patch.object(
-            cuda_worker,
-            "decode_audio_chunk",
-            side_effect=AssertionError("completed outro must not be probed"),
+        with (
+            patch.object(
+                cuda_worker,
+                "decode_audio_chunk",
+                return_value=FakeAudio(),
+            ) as decode,
+            patch.object(
+                cuda_worker,
+                "active_audio_statistics",
+                return_value=(0.0, 0.0),
+            ),
         ):
             cuda_worker.enforce_alignment_coverage(
                 input_path=Path("source.m4a"),
@@ -691,6 +911,104 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
                 ffmpeg="ffmpeg",
                 numpy_module=object(),
             )
+        decode.assert_called_once()
+
+    def test_explicit_final_outro_exemption_allows_only_a_bounded_final_tail(
+        self,
+    ) -> None:
+        final_chunk = {
+            "start": 0.0,
+            "end": 50.0,
+            "text": "finished",
+            "alignment": [
+                {"text": "a" * 30, "start": 0.0, "end": 33.0}
+            ],
+        }
+        with (
+            patch.object(cuda_worker, "decode_audio_chunk", return_value=FakeAudio()),
+            patch.object(
+                cuda_worker,
+                "active_audio_statistics",
+                return_value=(17.0, 0.99),
+            ),
+        ):
+            with self.assertRaisesRegex(ValueError, "active-trailing-gap"):
+                cuda_worker.enforce_alignment_coverage(
+                    input_path=Path("source.m4a"),
+                    chunks=[final_chunk],
+                    ffmpeg="ffmpeg",
+                    numpy_module=object(),
+                )
+
+        with patch.object(
+            cuda_worker,
+            "decode_audio_chunk",
+            side_effect=AssertionError("verified final outro must not be probed"),
+        ):
+            cuda_worker.enforce_alignment_coverage(
+                input_path=Path("source.m4a"),
+                chunks=[final_chunk],
+                ffmpeg="ffmpeg",
+                numpy_module=object(),
+                final_outro_exemption_seconds=17.0,
+            )
+
+    def test_final_outro_exemption_does_not_allow_internal_or_nonfinal_gaps(
+        self,
+    ) -> None:
+        cases = [
+            [
+                {
+                    "start": 0.0,
+                    "end": 50.0,
+                    "text": "first",
+                    "alignment": [
+                        {"text": "a" * 30, "start": 0.0, "end": 33.0}
+                    ],
+                },
+                {
+                    "start": 50.0,
+                    "end": 100.0,
+                    "text": "last",
+                    "alignment": [
+                        {"text": "b" * 30, "start": 50.0, "end": 100.0}
+                    ],
+                },
+            ],
+            [
+                {
+                    "start": 0.0,
+                    "end": 50.0,
+                    "text": "internal",
+                    "alignment": [
+                        {"text": "a" * 20, "start": 0.0, "end": 10.0},
+                        {"text": "b" * 20, "start": 27.0, "end": 50.0},
+                    ],
+                }
+            ],
+        ]
+        for chunks in cases:
+            with self.subTest(chunks=len(chunks)):
+                with (
+                    patch.object(
+                        cuda_worker,
+                        "decode_audio_chunk",
+                        return_value=FakeAudio(),
+                    ),
+                    patch.object(
+                        cuda_worker,
+                        "active_audio_statistics",
+                        return_value=(17.0, 0.99),
+                    ),
+                ):
+                    with self.assertRaisesRegex(ValueError, "active-"):
+                        cuda_worker.enforce_alignment_coverage(
+                            input_path=Path("source.m4a"),
+                            chunks=chunks,
+                            ffmpeg="ffmpeg",
+                            numpy_module=object(),
+                            final_outro_exemption_seconds=30.0,
+                        )
 
     def test_joins_space_delimited_languages_without_merging_words(self) -> None:
         self.assertEqual(
@@ -789,6 +1107,15 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
                 cuda_worker.validate_arguments(args)
 
             args.chunk_duration = 120.0
+            args.final_outro_exemption_seconds = float("nan")
+            with self.assertRaisesRegex(ValueError, "final outro exemption"):
+                cuda_worker.validate_arguments(args)
+
+            args.final_outro_exemption_seconds = 30.001
+            with self.assertRaisesRegex(ValueError, "final outro exemption"):
+                cuda_worker.validate_arguments(args)
+
+            args.final_outro_exemption_seconds = 0.0
             args.language = "Arabic"
             with self.assertRaisesRegex(ValueError, "not supported"):
                 cuda_worker.validate_arguments(args)
@@ -909,9 +1236,15 @@ class ResumableWorkerTests(unittest.TestCase):
             self.assertEqual(raw["options"]["qwen_asr_version"], "0.0.6")
             self.assertEqual(raw["options"]["torch_version"], "2.11.0")
             self.assertEqual(raw["options"]["max_inference_batch_size"], 1)
+            self.assertEqual(
+                raw["options"]["final_outro_exemption_seconds"], 0.0
+            )
             self.assertEqual(aligned["source"]["aligner"], cuda_worker.DEFAULT_ALIGNER)
             self.assertEqual(aligned["source"]["audio_sha256"], sha256_file(args.input))
             self.assertEqual(aligned["source"]["raw_asr_sha256"], sha256_file(args.output))
+            self.assertEqual(
+                aligned["options"]["final_outro_exemption_seconds"], 0.0
+            )
             self.assertNotIn(b"\r\n", args.output.read_bytes())
             self.assertNotIn(b"\r\n", args.aligned_output.read_bytes())
 
@@ -1055,6 +1388,61 @@ class ResumableWorkerTests(unittest.TestCase):
 
             self.assertEqual(args.output.read_bytes(), raw_bytes)
             self.assertEqual(args.aligned_output.read_bytes(), aligned_bytes)
+
+    def test_only_explicit_realign_migrates_a_legacy_final_outro_option(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            args = worker_args(root)
+            args.input.write_bytes(b"fake-audio")
+            self.assertEqual(self.run_worker(args, WorkerHarness()), 0)
+
+            legacy_raw = read_json_strict(args.output)
+            legacy_raw["options"].pop("final_outro_exemption_seconds")
+            write_json_atomically(args.output, legacy_raw)
+
+            with (
+                patch.object(cuda_worker, "parse_args", return_value=args),
+                patch.object(
+                    cuda_worker,
+                    "load_cuda_runtime",
+                    side_effect=AssertionError("CUDA must not load"),
+                ),
+            ):
+                with self.assertRaisesRegex(
+                    ValueError,
+                    "option final_outro_exemption_seconds mismatch",
+                ):
+                    cuda_worker.main()
+
+            args.realign = True
+            args.final_outro_exemption_seconds = 17.0
+            harness = WorkerHarness()
+
+            class ForbiddenASR:
+                @classmethod
+                def from_pretrained(cls, *args: object, **kwargs: object) -> object:
+                    raise AssertionError("ASR model must not load during realign")
+
+            harness.asr_model = ForbiddenASR
+            self.assertEqual(self.run_worker(args, harness), 0)
+
+            migrated_raw = read_json_strict(args.output)
+            migrated_aligned = read_json_strict(args.aligned_output)
+            self.assertEqual(
+                migrated_raw["options"]["final_outro_exemption_seconds"],
+                17.0,
+            )
+            self.assertEqual(
+                migrated_aligned["options"]["final_outro_exemption_seconds"],
+                17.0,
+            )
+            self.assertEqual(
+                migrated_aligned["source"]["raw_asr_sha256"],
+                sha256_file(args.output),
+            )
+            self.assertFalse(any(event == "load-asr" for event, _ in harness.events))
 
     def test_align_only_skips_asr_model_and_reuses_valid_raw(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

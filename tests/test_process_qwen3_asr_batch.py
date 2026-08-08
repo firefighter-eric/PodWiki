@@ -182,6 +182,7 @@ class BackendTests(unittest.TestCase):
             max_tokens=None,
             chunk_duration=None,
             chunk_context=None,
+            final_outro_exemption_seconds=17.0,
             max_sentence_characters=160,
             device="cuda:0",
             dtype="bfloat16",
@@ -227,6 +228,12 @@ class BackendTests(unittest.TestCase):
         self.assertEqual(transcribe[transcribe.index("--dtype") + 1], "bfloat16")
         self.assertEqual(
             transcribe[transcribe.index("--chunk-context") + 1], "5.0"
+        )
+        self.assertEqual(
+            transcribe[
+                transcribe.index("--final-outro-exemption-seconds") + 1
+            ],
+            "17.0",
         )
         self.assertEqual(
             transcribe[transcribe.index("--model") + 1],

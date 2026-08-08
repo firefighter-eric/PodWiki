@@ -290,10 +290,31 @@ engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B` �
 `Qwen/Qwen3-ForcedAligner-0.6B`。默认参数为 `cuda:0`、`bfloat16`、SDPA、
 120 秒名义归属 chunk、5 秒上下文和 batch size 1；每个内部边界向两侧各多解码
 5 秒，再使用 ForcedAligner 的精确文字与时间对齐选择唯一交叉点；精确锚点必须来自至少
-3 个连续字符的匹配链；只有全局唯一的连续 2 字符匹配链，且两组对齐时间差均不超过
+3 个连续字符的匹配链，所有达到门限的最大连续候选链在两份对齐中必须形成不重叠、
+不交叉的唯一单调映射，重复短语造成任一侧复用或多解时失败关闭；只有全局唯一的连续 2 字符匹配链，且两组对齐时间差均不超过
 250 ms 并记录严格置信证据时，才允许短链回退。aligned-gap 回退还必须证明整个空隙在声学上接近静音。短尾块会
-重新均分到最后两个归属区间，使边界语句只归属一个 chunk。对齐结果还会执行 active-audio coverage guard；如果对齐在仍有活跃语音的归属区间
-内过早结束，worker 必须失败关闭，不得将截断结果标记为完成。本机 RTX A2000 8GB 已验证可容纳
+重新均分到最后两个归属区间，使边界语句只归属一个 chunk。对齐结果还会执行 active-audio coverage guard：worker 先汇总所有 chunk 的
+owned alignment，再把这份全局并集分别裁剪到每个归属区间；覆盖区间和文字密度都使用全局相交 items，不能因 item 由相邻 chunk 拥有而制造假空洞。
+如果全局并集在归属区间的首部、相邻 item 之间或尾部留下长空洞，worker 必须实际探测对应音频；只有安静区域可以继续，
+持续活跃时失败关闭。首块、末块和句末标点都不构成默认豁免，不得将截断结果标记为完成。
+
+唯一的活跃音频例外是显式 `--final-outro-exemption-seconds <seconds>`：默认值为 `0`、硬上限为 30 秒，且只适用于最后一个归属区间中
+最后一个全局 aligned item 之后、不超过所给额度的 trailing gap。首部、内部和非末块空洞仍必须通过声学门禁。使用该选项前必须取得并保留
+人工完整试听记录，或发布者章节、节目说明等能够证明该段只是告别后的片尾而非漏转写语音的证据；在单集处理记录或 PR 说明中写明证据和实际秒数。
+该数值会同时进入 raw/aligned options，并由 aligned 的 raw SHA-256 lineage 绑定。旧 raw 缺少该字段时，普通 resume 必须失败关闭；只有显式
+`--realign` 才可在完整校验其他 options、音频身份和 raw 内容后迁移并原子替换，例如：
+
+```powershell
+& .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
+  --backend cuda `
+  --episode shows/<show-id>/episodes/<episode-folder> `
+  --realign `
+  --final-outro-exemption-seconds <verified-seconds> `
+  --model-path .cache/models/Qwen3-ASR-1.7B `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B
+```
+
+本机 RTX A2000 8GB 已验证可容纳
 该路径，且 worker 会先完成并释放 ASR 模型，再加载 aligner。只有设备确实不支持
 `bfloat16` 时才显式传入 `--dtype float16`。英文组在同一命令追加
 `--language English` 和 `--transcript-language en`。

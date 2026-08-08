@@ -50,6 +50,8 @@ AUDIO_DECODE_BOUNDARY_TOLERANCE_SECONDS = 0.01
 # sample. Keep this allowance final-window-only so interior ownership stays strict.
 FINAL_AUDIO_DECODE_SHORTFALL_TOLERANCE_SECONDS = 0.125
 DEFAULT_CHUNK_CONTEXT_SECONDS = 5.0
+DEFAULT_FINAL_OUTRO_EXEMPTION_SECONDS = 0.0
+MAX_FINAL_OUTRO_EXEMPTION_SECONDS = 30.0
 SEAM_MATCH_TOLERANCE_SECONDS = 1.0
 MIN_SEAM_ANCHOR_RUN_CHARACTERS = 3
 MIN_STRICT_SEAM_ANCHOR_RUN_CHARACTERS = 2
@@ -82,9 +84,6 @@ SUPPORTED_ALIGNMENT_LANGUAGES = frozenset(
 )
 NO_SPACE_CHUNK_JOIN_LANGUAGES = frozenset({"Chinese", "Cantonese", "Japanese"})
 CUDA_DEVICE_RE = re.compile(r"^cuda:(\d+)$")
-TERMINAL_PUNCTUATION_RE = re.compile(
-    r"[\u3002\uff01\uff1f.!?][\"\u201d\u2019']*$"
-)
 
 
 @dataclass(frozen=True)
@@ -147,6 +146,16 @@ def parse_args() -> argparse.Namespace:
             "overlap with forced-alignment timestamps"
         ),
     )
+    parser.add_argument(
+        "--final-outro-exemption-seconds",
+        type=float,
+        default=DEFAULT_FINAL_OUTRO_EXEMPTION_SECONDS,
+        help=(
+            "Explicitly permit at most this many uncovered seconds after the "
+            "last aligned item of the final ownership chunk; requires external "
+            "human or publisher evidence and is capped at 30 seconds"
+        ),
+    )
     parser.add_argument("--max-sentence-characters", type=int, default=160)
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument(
@@ -180,6 +189,7 @@ def raw_backend_options(args: argparse.Namespace) -> dict[str, Any]:
         "dtype": args.dtype,
         "attention_implementation": args.attention_implementation,
         "max_inference_batch_size": MAX_INFERENCE_BATCH_SIZE,
+        "final_outro_exemption_seconds": args.final_outro_exemption_seconds,
     }
 
 
@@ -196,7 +206,22 @@ def aligned_backend_options(args: argparse.Namespace) -> dict[str, Any]:
         "boundary_reconciliation": BOUNDARY_RECONCILIATION_METHOD,
         "alignment_coverage_guard": ALIGNMENT_COVERAGE_GUARD,
         "aligned_gap_guard": ALIGNED_GAP_GUARD,
+        "final_outro_exemption_seconds": args.final_outro_exemption_seconds,
     }
+
+
+def validated_final_outro_exemption_seconds(value: Any) -> float:
+    if (
+        isinstance(value, bool)
+        or not isinstance(value, (int, float))
+        or not math.isfinite(value)
+        or value < 0.0
+        or value > MAX_FINAL_OUTRO_EXEMPTION_SECONDS
+    ):
+        raise ValueError(
+            "final outro exemption must be between 0 and 30 seconds"
+        )
+    return float(value)
 
 
 def join_transcript_chunks(texts: list[str], *, language: str) -> str:
@@ -221,8 +246,16 @@ def validate_cuda_raw_integrity(
         "aligned_gap_guard": ALIGNED_GAP_GUARD,
         **backend_options,
     }
-    if document.get("options") != expected_options:
+    options = document.get("options")
+    if options != expected_options:
         raise ValueError("raw ASR decoding options do not match exactly")
+    if not isinstance(options, dict):
+        raise ValueError("raw ASR decoding options do not match exactly")
+    recorded_final_outro = validated_final_outro_exemption_seconds(
+        options.get("final_outro_exemption_seconds")
+    )
+    if recorded_final_outro != args.final_outro_exemption_seconds:
+        raise ValueError("raw ASR final outro exemption does not match")
     audio = document.get("audio")
     if not isinstance(audio, dict) or audio.get("sample_rate_hz") != SAMPLE_RATE:
         raise ValueError("raw ASR sample rate does not match the CUDA backend")
@@ -421,6 +454,18 @@ def validate_cuda_aligned_integrity(
     raw_output_path: Path,
     raw_document: dict[str, Any],
 ) -> None:
+    aligned_options = document.get("options")
+    raw_options = raw_document.get("options")
+    if not isinstance(aligned_options, dict) or not isinstance(raw_options, dict):
+        raise ValueError("aligned ASR has invalid final outro provenance")
+    aligned_final_outro = validated_final_outro_exemption_seconds(
+        aligned_options.get("final_outro_exemption_seconds")
+    )
+    raw_final_outro = validated_final_outro_exemption_seconds(
+        raw_options.get("final_outro_exemption_seconds")
+    )
+    if aligned_final_outro != raw_final_outro:
+        raise ValueError("aligned ASR final outro provenance does not match raw")
     source = document.get("source")
     if not isinstance(source, dict) or source.get("raw_asr_path") != repository_path(
         raw_output_path
@@ -617,6 +662,80 @@ def _monotonic_exact_match_chain(
     return chain, scores[rows][columns]
 
 
+def _maximal_exact_match_runs(
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+    *,
+    tolerance_seconds: float,
+) -> list[list[tuple[int, int]]]:
+    """Enumerate every maximal contiguous exact/time-gated match run.
+
+    A single weighted-LCS traceback is insufficient here: repeated speech can have
+    multiple equally valid tracebacks, and choosing one can silently drop or duplicate
+    words at the ownership seam. Enumerating maximal diagonal runs exposes every
+    reliable candidate mapping before a crossover is selected.
+    """
+
+    left_texts = [cleaned_alignment_text(str(item["text"])) for _, item in left_items]
+    right_texts = [cleaned_alignment_text(str(item["text"])) for _, item in right_items]
+
+    def matches(left_index: int, right_index: int) -> bool:
+        left_text = left_texts[left_index]
+        return (
+            bool(left_text)
+            and left_text == right_texts[right_index]
+            and abs(
+                alignment_item_midpoint(left_items[left_index][1])
+                - alignment_item_midpoint(right_items[right_index][1])
+            )
+            <= tolerance_seconds
+        )
+
+    runs: list[list[tuple[int, int]]] = []
+    for left_index in range(len(left_items)):
+        for right_index in range(len(right_items)):
+            if not matches(left_index, right_index):
+                continue
+            if (
+                left_index > 0
+                and right_index > 0
+                and matches(left_index - 1, right_index - 1)
+            ):
+                continue
+            run: list[tuple[int, int]] = []
+            offset = 0
+            while (
+                left_index + offset < len(left_items)
+                and right_index + offset < len(right_items)
+                and matches(left_index + offset, right_index + offset)
+            ):
+                run.append((left_index + offset, right_index + offset))
+                offset += 1
+            runs.append(run)
+    return runs
+
+
+def _validate_unique_monotonic_match_runs(
+    runs: list[list[tuple[int, int]]],
+) -> None:
+    """Reject candidate runs that permit more than one monotonic item mapping."""
+
+    for index, left_run in enumerate(runs):
+        left_first, right_first = left_run[0]
+        left_last, right_last = left_run[-1]
+        for right_run in runs[index + 1 :]:
+            other_left_first, other_right_first = right_run[0]
+            other_left_last, other_right_last = right_run[-1]
+            left_before = left_last < other_left_first
+            right_before = right_last < other_right_first
+            left_after = other_left_last < left_first
+            right_after = other_right_last < right_first
+            if not ((left_before and right_before) or (left_after and right_after)):
+                raise ValueError(
+                    "overlapping ASR chunks have ambiguous exact alignment candidates"
+                )
+
+
 def _gap_crossover(
     left_items: list[dict[str, Any]],
     right_items: list[dict[str, Any]],
@@ -676,23 +795,21 @@ def seam_crossover(
         for index, item in enumerate(right_items)
         if shared_start <= alignment_item_midpoint(item) <= shared_end
     ]
-    chain, matched_characters = _monotonic_exact_match_chain(
+    _, matched_characters = _monotonic_exact_match_chain(
         left_overlap,
         right_overlap,
         tolerance_seconds=tolerance_seconds,
     )
     anchors: list[tuple[float, float, int, int, str, int, float]] = []
     anchor_confidence: str | None = None
-    match_runs: list[list[tuple[int, int]]] = []
-    for pair in chain:
-        if (
-            match_runs
-            and pair[0] == match_runs[-1][-1][0] + 1
-            and pair[1] == match_runs[-1][-1][1] + 1
-        ):
-            match_runs[-1].append(pair)
-        else:
-            match_runs.append([pair])
+    match_runs = _maximal_exact_match_runs(
+        left_overlap,
+        right_overlap,
+        tolerance_seconds=tolerance_seconds,
+    )
+    reliable_match_runs: list[
+        tuple[list[tuple[int, int]], int, float]
+    ] = []
     for run in match_runs:
         run_characters = sum(
             len(
@@ -711,6 +828,14 @@ def seam_crossover(
         )
         if run_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS:
             continue
+        reliable_match_runs.append(
+            (run, run_characters, run_max_pair_delta)
+        )
+    if reliable_match_runs:
+        _validate_unique_monotonic_match_runs(
+            [run for run, _, _ in reliable_match_runs]
+        )
+    for run, run_characters, run_max_pair_delta in reliable_match_runs:
         run_anchors: list[tuple[float, float, int, int, str, int, float]] = []
         for left_local, right_local in run:
             left_index, left_item = left_overlap[left_local]
@@ -963,7 +1088,12 @@ def alignment_coverage_suspicions(
     is_first_chunk: bool,
     is_last_chunk: bool,
 ) -> list[dict[str, Any]]:
-    """Find structural coverage gaps that require an active-audio probe."""
+    """Find every large ownership gap that requires an active-audio probe.
+
+    Chunk position remains part of the call contract, but neither first/last
+    position nor terminal punctuation exempts uncovered audio. The acoustic
+    probe decides whether a leading, internal, or trailing gap is safe.
+    """
 
     duration = ownership_end - ownership_start
     if duration <= 0:
@@ -981,22 +1111,39 @@ def alignment_coverage_suspicions(
             }
         )
 
-    relevant_alignment = [
-        item
+    moderate_threshold = max(15.0, 0.15 * duration)
+    coverage_intervals = sorted(
+        (
+            max(ownership_start, float(item["start"])),
+            min(ownership_end, float(item["end"])),
+        )
         for item in alignment
         if float(item["end"]) > ownership_start
         and float(item["start"]) < ownership_end
-    ]
-    first_start = min(
-        (
-            max(ownership_start, float(item["start"]))
-            for item in relevant_alignment
-        ),
-        default=ownership_end,
     )
+    merged_intervals: list[list[float]] = []
+    for interval_start, interval_end in coverage_intervals:
+        if interval_end < interval_start:
+            raise ValueError("alignment coverage interval is invalid")
+        if merged_intervals and interval_start <= merged_intervals[-1][1]:
+            merged_intervals[-1][1] = max(merged_intervals[-1][1], interval_end)
+        else:
+            merged_intervals.append([interval_start, interval_end])
+
+    if not merged_intervals:
+        suspicions.append(
+            {
+                "kind": "active-leading-gap",
+                "start": ownership_start,
+                "end": ownership_end,
+                "detail": f"{duration:.3f}s with no aligned item",
+            }
+        )
+        return suspicions
+
+    first_start = merged_intervals[0][0]
     leading_gap = max(0.0, first_start - ownership_start)
-    moderate_threshold = max(15.0, 0.15 * duration)
-    if not is_first_chunk and leading_gap >= moderate_threshold:
+    if leading_gap >= moderate_threshold:
         suspicions.append(
             {
                 "kind": "active-leading-gap",
@@ -1006,19 +1153,26 @@ def alignment_coverage_suspicions(
             }
         )
 
-    last_end = max(
-        (
-            min(ownership_end, float(item["end"]))
-            for item in relevant_alignment
-        ),
-        default=ownership_start,
-    )
-    trailing_gap = max(0.0, ownership_end - last_end)
-    severe_threshold = max(30.0, 0.25 * duration)
-    unfinished_text = TERMINAL_PUNCTUATION_RE.search(text.strip()) is None
-    if trailing_gap >= moderate_threshold and (
-        unfinished_text or (not is_last_chunk and trailing_gap >= severe_threshold)
+    for left_interval, right_interval in zip(
+        merged_intervals,
+        merged_intervals[1:],
     ):
+        gap_start = left_interval[1]
+        gap_end = right_interval[0]
+        internal_gap = max(0.0, gap_end - gap_start)
+        if internal_gap >= moderate_threshold:
+            suspicions.append(
+                {
+                    "kind": "active-internal-gap",
+                    "start": gap_start,
+                    "end": gap_end,
+                    "detail": f"{internal_gap:.3f}s between aligned items",
+                }
+            )
+
+    last_end = merged_intervals[-1][1]
+    trailing_gap = max(0.0, ownership_end - last_end)
+    if trailing_gap >= moderate_threshold:
         suspicions.append(
             {
                 "kind": "active-trailing-gap",
@@ -1152,20 +1306,53 @@ def enforce_alignment_coverage(
     chunks: list[dict[str, Any]],
     ffmpeg: str,
     numpy_module: Any,
+    final_outro_exemption_seconds: float = DEFAULT_FINAL_OUTRO_EXEMPTION_SECONDS,
 ) -> None:
     """Fail closed when a long untranscribed region contains sustained audio."""
+
+    final_outro_exemption_seconds = validated_final_outro_exemption_seconds(
+        final_outro_exemption_seconds
+    )
+
+    global_owned_alignment: list[dict[str, Any]] = []
+    for index, chunk in enumerate(chunks):
+        alignment = chunk.get("alignment")
+        if not isinstance(alignment, list):
+            raise ValueError(f"ASR chunk {index} has invalid owned alignment")
+        for item_index, item in enumerate(alignment):
+            if not isinstance(item, dict):
+                raise ValueError(
+                    f"ASR chunk {index} owned alignment {item_index} is invalid"
+                )
+            item_start = finite_document_number(
+                item.get("start"),
+                field=f"chunk {index} owned alignment {item_index} start",
+            )
+            item_end = finite_document_number(
+                item.get("end"),
+                field=f"chunk {index} owned alignment {item_index} end",
+            )
+            if item_end < item_start:
+                raise ValueError(
+                    f"ASR chunk {index} owned alignment {item_index} is invalid"
+                )
+            global_owned_alignment.append(item)
 
     for index, chunk in enumerate(chunks):
         ownership_start = float(chunk["start"])
         ownership_end = float(chunk["end"])
-        alignment = chunk.get("alignment")
-        if not isinstance(alignment, list):
-            raise ValueError(f"ASR chunk {index} has invalid owned alignment")
+        core_alignment = [
+            item
+            for item in global_owned_alignment
+            if float(item["end"]) > ownership_start
+            and float(item["start"]) < ownership_end
+        ]
+        core_text = "".join(str(item.get("text", "")) for item in core_alignment)
         suspicions = alignment_coverage_suspicions(
             ownership_start=ownership_start,
             ownership_end=ownership_end,
-            text=str(chunk.get("text", "")),
-            alignment=alignment,
+            text=core_text,
+            alignment=core_alignment,
             is_first_chunk=index == 0,
             is_last_chunk=index == len(chunks) - 1,
         )
@@ -1173,6 +1360,14 @@ def enforce_alignment_coverage(
             probe_start = float(suspicion["start"])
             probe_end = float(suspicion["end"])
             if probe_end <= probe_start:
+                continue
+            if (
+                final_outro_exemption_seconds > 0.0
+                and index == len(chunks) - 1
+                and suspicion["kind"] == "active-trailing-gap"
+                and probe_end - probe_start
+                <= final_outro_exemption_seconds + 0.001
+            ):
                 continue
             probe_audio = decode_audio_chunk(
                 input_path,
@@ -1506,6 +1701,9 @@ def validate_arguments(args: argparse.Namespace) -> None:
         raise ValueError(
             "chunk duration plus both context margins must be at most 180 seconds"
         )
+    validated_final_outro_exemption_seconds(
+        args.final_outro_exemption_seconds
+    )
     if args.max_tokens <= 0:
         raise ValueError("max tokens must be greater than 0")
     if args.max_sentence_characters <= 0:
@@ -1545,10 +1743,35 @@ def main() -> int:
 
     raw_document: dict[str, Any] | None = None
     loaded_raw_asr_sha256: str | None = None
+    replace_final_outro_option = False
     if mode in {"align-only", "complete"}:
         raw_sha256_before_read = sha256_file(output_path)
+        loaded_raw_document = read_json_strict(output_path)
+        loaded_options = (
+            loaded_raw_document.get("options")
+            if isinstance(loaded_raw_document, dict)
+            else None
+        )
+        if args.realign and isinstance(loaded_options, dict):
+            if "final_outro_exemption_seconds" in loaded_options:
+                recorded_final_outro = validated_final_outro_exemption_seconds(
+                    loaded_options["final_outro_exemption_seconds"]
+                )
+            else:
+                recorded_final_outro = None
+            if recorded_final_outro != args.final_outro_exemption_seconds:
+                loaded_raw_document = {
+                    **loaded_raw_document,
+                    "options": {
+                        **loaded_options,
+                        "final_outro_exemption_seconds": (
+                            args.final_outro_exemption_seconds
+                        ),
+                    },
+                }
+                replace_final_outro_option = True
         raw_document = validate_raw_document(
-            read_json_strict(output_path),
+            loaded_raw_document,
             engine=ENGINE,
             model=args.model,
             language=args.language,
@@ -1940,6 +2163,7 @@ def main() -> int:
         chunks=aligned_chunks,
         ffmpeg=ffmpeg,
         numpy_module=np,
+        final_outro_exemption_seconds=args.final_outro_exemption_seconds,
     )
 
     reconciled_text = join_transcript_chunks(
@@ -2013,7 +2237,17 @@ def main() -> int:
             or sha256_file(output_path) != loaded_raw_asr_sha256
         ):
             raise ValueError("raw ASR changed while forced alignment was running")
-        raw_asr_sha256 = loaded_raw_asr_sha256
+        if replace_final_outro_option:
+            validate_file_identity(
+                input_path,
+                expected_size_bytes=audio_size_bytes,
+                expected_sha256=audio_sha256,
+                label="input audio",
+            )
+            write_json_atomically(output_path, reconciled_raw_document)
+            raw_asr_sha256 = sha256_file(output_path)
+        else:
+            raw_asr_sha256 = loaded_raw_asr_sha256
     else:
         if (
             loaded_raw_asr_sha256 is None

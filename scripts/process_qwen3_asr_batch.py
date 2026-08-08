@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import re
 import subprocess
@@ -20,6 +21,7 @@ DEFAULT_MLX_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
 DEFAULT_MLX_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
 DEFAULT_CUDA_MODEL = "Qwen/Qwen3-ASR-1.7B"
 DEFAULT_CUDA_ALIGNER = "Qwen/Qwen3-ForcedAligner-0.6B"
+MAX_FINAL_OUTRO_EXEMPTION_SECONDS = 30.0
 TRANSCRIPT_LANGUAGE_RE = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
 
 
@@ -104,6 +106,15 @@ def parse_args() -> argparse.Namespace:
         "--chunk-context",
         type=float,
         help="CUDA-only context added to each side before aligned reconciliation",
+    )
+    parser.add_argument(
+        "--final-outro-exemption-seconds",
+        type=float,
+        default=0.0,
+        help=(
+            "CUDA-only, provenance-recorded allowance for a verified final outro; "
+            "must be between 0 and 30 seconds"
+        ),
     )
     parser.add_argument("--max-sentence-characters", type=int, default=160)
     parser.add_argument("--device", default="cuda:0")
@@ -269,6 +280,19 @@ def main() -> int:
         retranscribe=args.retranscribe,
         realign=args.realign,
     )
+    if (
+        not math.isfinite(args.final_outro_exemption_seconds)
+        or args.final_outro_exemption_seconds < 0.0
+        or args.final_outro_exemption_seconds
+        > MAX_FINAL_OUTRO_EXEMPTION_SECONDS
+    ):
+        raise ValueError(
+            "final outro exemption must be between 0 and 30 seconds"
+        )
+    if args.backend != "cuda" and args.final_outro_exemption_seconds != 0.0:
+        raise ValueError(
+            "--final-outro-exemption-seconds is supported by the CUDA backend only"
+        )
     backend = resolve_backend_settings(
         args.backend,
         model=args.model,
@@ -352,6 +376,8 @@ def main() -> int:
                     [
                         "--chunk-context",
                         str(backend.chunk_context),
+                        "--final-outro-exemption-seconds",
+                        str(args.final_outro_exemption_seconds),
                         "--device",
                         args.device,
                         "--dtype",

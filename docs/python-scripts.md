@@ -270,6 +270,15 @@ CUDA 的 120 秒参数表示每块独占的时间范围；worker 默认在两侧
 本集失败关闭，不生成可选中的 complete 产物。raw checkpoint 会明确记录 `pending` / `complete`
 归并状态；旧的无重叠产物必须使用 `--retranscribe` 更新。
 
+coverage guard 会先汇总全部 chunk 的 owned alignment，再把全局并集裁剪到每个 ownership core；
+覆盖区间与文字密度都来自全局相交 items，因此相邻 chunk 中跨越 core 边界的 item 仍能提供真实覆盖。
+首部、内部或尾部的大空洞默认都要实际探测音频，持续活跃时拒绝。只有已经通过人工完整试听，
+或有发布者章节、节目说明等证据确认是告别后的片尾时，才可对单个显式 episode 使用
+`--realign --final-outro-exemption-seconds <seconds>`。该 CUDA-only 参数默认 `0`、最大 30 秒，
+只豁免最后 core 的 trailing gap；必须在单集处理记录或 PR 说明中保留证据和实际秒数。
+参数会写入 raw/aligned options 并受 raw SHA-256 lineage 约束。旧 raw 缺少字段时普通 resume
+失败关闭；显式 `--realign` 会在其余 lineage 完整匹配且新对齐通过后安全升级该字段。
+
 `--backend cuda` 默认使用 `cuda:0`、`bfloat16`、SDPA、120 秒 chunk、batch size 1，
 并按“ASR 模型完成并释放，再加载 ForcedAligner”的顺序控制显存。本机 NVIDIA RTX
 A2000 8GB Laptop GPU 已验证适配这些默认值；只有目标 GPU 确实不支持 bf16 时才加
