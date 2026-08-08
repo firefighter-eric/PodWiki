@@ -141,7 +141,14 @@ const showSchema = z
   })
   .passthrough();
 
-const showOrder = ["zhangxiaojun", "sv101", "latetalk", "luoyonghao", "whynottv"];
+const showOrder = [
+  "zhangxiaojun",
+  "sv101",
+  "svvector",
+  "latetalk",
+  "luoyonghao",
+  "whynottv",
+];
 const showOrderIndex = new Map(showOrder.map((id, index) => [id, index]));
 
 export function compareShowOrder(

@@ -1,0 +1,5377 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "svvector:002",
+  "language": "zh-CN",
+  "source": {
+    "input_asr_path": "shows/svvector/episodes/002-alan-du/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "f3b3e65119757f54b16d17ec5459d887221dae656713101313c511d4f77f1df8",
+    "engine": "mlx-audio",
+    "model": "mlx-community/Qwen3-ASR-1.7B-8bit"
+  },
+  "rendered_transcript": {
+    "path": "shows/svvector/episodes/002-alan-du/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "94f1dc3903e946a24758fa7af110d5340fdf5cf90b02fee1aa9e8c55f4c7e255"
+  },
+  "generated_at": "2026-08-08T14:38:04.255570Z",
+  "statistics": {
+    "source_segments": 377,
+    "refined_segments": 377,
+    "rendered_blocks": 118,
+    "rendered_lines": 377
+  },
+  "segments": [
+    {
+      "start": 3.12,
+      "end": 4.88,
+      "text": "你怎么看待微软的护城河？",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 4.88,
+      "end": 6.32,
+      "text": "它是变强了还是变弱了？",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 8.4,
+      "end": 9.2,
+      "text": "变得非常强了。",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 10.08,
+      "end": 12.48,
+      "text": "Context is king，是是王道。",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 13.44,
+      "end": 15.44,
+      "text": "实际上，真正的最终护城河在哪里？",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 15.52,
+      "end": 19.04,
+      "text": "是这个workflow的这个know how，是独有的这个企业级数据。",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 19.44,
+      "end": 22.64,
+      "text": "真正的有用的数据，实际上都是在防火墙后面的。",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 22.96,
+      "end": 25.52,
+      "text": "一般做agent的公司不能轻易能拿到的。",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 25.84,
+      "end": 30.72,
+      "text": "整个对AI算力啊，实际上它已经超过了万亿级的级别。",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 30.88,
+      "end": 39.84,
+      "text": "而你看，所以最大的AI公司就包括OpenAI、Cloud这种公司，它实际上它所有的年化的ARR加在一起，可能都不过百亿。",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 54.32,
+      "end": 56.64,
+      "text": "阿冷，今天欢迎你来到硅谷坐标的节目。",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 56.96,
+      "end": 66.56,
+      "text": "你是微软战投M12的合伙人，微软又是一个最重要的企业软件的玩家，你又在微软的生态里看到的是最前沿的软件的一些变化。",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 66.8,
+      "end": 70.96,
+      "text": "你今天的分享将会对我们来说有非常重要的一个指导意义。",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 71.52,
+      "end": 73.36,
+      "text": "你可以先给我们介绍一下M12吗？",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 73.76,
+      "end": 76.16,
+      "text": "可以可以，感谢感谢热情邀请哈。",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 76.24,
+      "end": 110.96,
+      "text": "呃，M12是这个微软的战投基金，呃，我们是直接从资产负债表上啊做投资的，大概每年的投资额有呃一点五亿美元左右啊，基本上呃去看中的几个方向，包括这个基础的啊算力啊，新一代的这种芯片硬件啊，再往上呢会看一些软件类，包括这个相对来说水平的软件啊，数据库这方面的科技，然后外加还有一些到后面是垂直的这个具体的软件application啊，",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 110.96,
+      "end": 121.68,
+      "text": "另外这里头还包括比如说网络安全啊，然后甚至到后期还会涉及到一些比如说做gaming啊游戏产业呀啊，还有一些更前沿的技术，基本上就这几个大块。",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 122.56,
+      "end": 124.56,
+      "text": "对，你们一般是投哪一个阶段呢？",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 124.56,
+      "end": 126.32,
+      "text": "大概你们的ticket size有多大？",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 126.32,
+      "end": 128.8,
+      "text": "ticket size基本上是五到十个million吧。",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 129.04,
+      "end": 140.72,
+      "text": "啊，我们一般呢是愿意跟这个比较头部的所谓的财务投资人去合作，类似于就是能叫得出来名字的，基本上都是跟我们有这个use case的合同案例的。",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 141.44,
+      "end": 156.56,
+      "text": "啊，基本上是focus在就是A轮和B轮之间，当然呢也会有时候啊有例外会看一些比较早期啊或者甚至更后期的项目，这个没有一个特别特别硬性的规定，但是我们对外说基本上就是A轮B轮为主。",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 157.36,
+      "end": 161.52,
+      "text": "明白，所以你们是更加处在一个跟投，不是一个领头的一个角色是吧？",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 162.0,
+      "end": 166.0,
+      "text": "对，我觉得其实跟投与领投，实际上怎么说呢？",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 166.32,
+      "end": 175.44,
+      "text": "嗯，从创业者角度来讲啊，有一个好的商业投资人、财务投资人作为领头，我觉得是更合适的。",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 175.44,
+      "end": 188.8,
+      "text": "啊，因为从这个这个价格制定啊，以及它的这个呃投资条款的制定方面，在商业投资人、财务投资人这边，他们可能会做的更专业性更强一点，更强一点。",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 189.36,
+      "end": 200.64,
+      "text": "二呢，呃，就是由于战投基金往往会带一些他们自己商业方面的考虑，这个使得就是在投资的时候，可能他们考虑的维度不大一样啊。",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 200.88,
+      "end": 205.04,
+      "text": "那就是考虑到这些呢，实际上作为财务投资人，他们更适合做为领头。",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 205.6,
+      "end": 213.76,
+      "text": "这里我觉得其实领头与否，嗯，更重要其实要看重，就是说首先，呃，这个战投基金它投多少？",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 214.08,
+      "end": 225.28,
+      "text": "多数的战投基金是投相对来说比较小的ticket size啊，基本上很多你像这边比较有名的SaaS公司，他们每次投可能就投五十万、一百万，是就是大概几百万这样。",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 225.76,
+      "end": 234.4,
+      "text": "像微软M12这边能投一次五千呃五百万到一千万之之类的，呃这种这种区间的这个战投基金还是相对少的。",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 235.12,
+      "end": 238.88,
+      "text": "啊，我们也愿意就是提供更多更多的资源，所以我们带来的不光是",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 238.855,
+      "end": 247.095,
+      "text": "是这个五百万到一千万之间的资金支持，更多的是我们后端庞大的这个生态系统啊，以及给他们带来的商业价值。",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 247.495,
+      "end": 252.215,
+      "text": "现在如果有一个初创公司，然后他想去融资，那你觉得他应该怎么样去思考？",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 252.215,
+      "end": 256.775,
+      "text": "我应该去找企业战投部，还是去找像独立的这种VC财务考虑的VC？",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 257.335,
+      "end": 260.855,
+      "text": "嗯，我觉得都要去。",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 260.935,
+      "end": 262.535,
+      "text": "我我的建议是都都要去聊。",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 262.855,
+      "end": 263.335,
+      "text": "为什么呢？",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 263.335,
+      "end": 280.615,
+      "text": "就是尤其是就是现在我们看到，就是特别特别多的这个就是AI深层科技的创业者，嗯，他的技术性非常强，聊的东西呢也是需要对方或者或者投资人的这种技术啊经验啊，也需要有一定的门槛的。",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 281.415,
+      "end": 286.455,
+      "text": "那么我觉得在这方面，你如果光跟财务投资人聊，可能聊的深度是有限的。",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 287.255,
+      "end": 299.815,
+      "text": "呃，比如说你在确定了一个财务投资人领投之外，啊，我的建议是去找一些比较合适、比较懂这个领域的战略投资人，帮你去round out这个这个这个round啊。",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 300.375,
+      "end": 309.095,
+      "text": "这样子呢，我觉得这个combination实际上是这个组合啊是非常非常powerful的，而且会给整个呃整个市场一个非常强的信号。",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 310.295,
+      "end": 318.775,
+      "text": "现在如果有一个初创公司，他出来创业，他很担心的是自己可能做的一个idea很快就被大厂的一个feature给淹没了。",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 319.255,
+      "end": 324.535,
+      "text": "那你会作为这个呃M twelve，你会怎么样去考量这个初创公司？",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 324.615,
+      "end": 327.575,
+      "text": "他在面对这些大厂，他真正的这个生存空间有多大？",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 328.615,
+      "end": 331.655,
+      "text": "哎，我觉得这个担心有点被过度放大化了。",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 331.895,
+      "end": 332.375,
+      "text": "为什么呢？",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 332.375,
+      "end": 343.415,
+      "text": "就是我当我在最早最早开始设涉及这个涉入这个VC领域的时候，经常就有人会问我在做一家公司，经常有投资人问我为什么Google Google不能这么做？",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 343.975,
+      "end": 360.375,
+      "text": "我觉得其实你觉得Google或者是微软Amazon这样的公司，它是一个非常非常庞大的公司，但是真正涉及到具体产品的时候，他们其实很小的一个团队在做某一个具体的产品，那实际上他们能够调用到的资源也是有限的。",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 361.015,
+      "end": 364.615,
+      "text": "还有更更重要的一点，实际上就是你的速度。",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 365.415,
+      "end": 380.215,
+      "text": "很多情况下，大的公司由于它的现有的产品已经非常的赚钱，或者已经卖给了很多很多的客户，他要再做自己的这个新的产品，自己去去革命自己的话，这个是有一定阻力，或者是有一定的惯性在里面的。",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 380.695,
+      "end": 389.095,
+      "text": "那你作为一个初创公司，你是没有全面的那些包袱的，你可以跑得更快，可以用最新的技术，可以去反复的试错。",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 389.175,
+      "end": 395.335,
+      "text": "相对来说，你的试错成本又很低，因为你是个初创公司，而不是亚马逊、谷歌、微软这样的公司。",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 395.335,
+      "end": 400.375,
+      "text": "你这边要出一点错，你的客户是非常非常不愿意这个原谅你的，对吧？",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 400.615,
+      "end": 410.695,
+      "text": "那你作为一个初创公司，你卖给的一般卖给的对象可能是相对来说比较呃，也是类似于初创公司吧，更愿意去试错的啊这种这种对象。",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 411.335,
+      "end": 419.175,
+      "text": "那么对你来说，你可以可以迅速的去迭代，迅速的去去调整你的产品，你还是有非常非常大的优势的。",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 419.175,
+      "end": 431.895,
+      "text": "呃，除此之外呢，我觉得还有像类似于这种大的公司、大的平台，他们更多是在呃专注于建一个通用的呃技术，比如说针对市场中百分之八十的用户。",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 432.455,
+      "end": 441.815,
+      "text": "而你作为一个这初创公司，你可以先找到一个相对比较niche或者一个比较窄的垂直，这个垂直呢是你非常非常懂的，对吧？",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 442.055,
+      "end": 451.575,
+      "text": "那你不去做这种百分之八十的通用式技术、通用式软件，你可以就做这百分之一、百分之二的垂直性软件、垂直性技术，这个实际上也可以做的非常非常的大。",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 452.455,
+      "end": 456.535,
+      "text": "今天想跟你聊一聊这个软件行业的整个的一个背景吧。",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 456.935,
+      "end": 461.095,
+      "text": "呃，软件行业今年是从去年开始发生了一个很大的变化。",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 461.575,
+      "end": 464.215,
+      "text": "你是怎么去看待现在这些公司？",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 464.215,
+      "end": 465.655,
+      "text": "哪些是被颠覆的？",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 466.135,
+      "end": 467.495,
+      "text": "哪些可能部分颠覆？",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 467.895,
+      "end": 469.815,
+      "text": "哪些可能是被错误定价的？",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 470.135,
+      "end": 473.015,
+      "text": "或哪些其实是护城河在这个过程中是被增强的？",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 473.175,
+      "end": 479.095,
+      "text": "嗯嗯，这个这个就是大家在市场上经常叫的这个trillion dollar question啊，就是万亿级的一个问题。",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 479.815,
+      "end": 482.455,
+      "text": "呃，我觉得首先SaaS",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 482.584,
+      "end": 492.344,
+      "text": "公司啊，软件公司不能一概而论，啊，因为软件它分垂直软件，分水平式软件，然后呢，这个里面细分化就特层次又非常非常的复杂。",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 493.224,
+      "end": 506.184,
+      "text": "那我觉得最容易被这个颠覆的软件，属于那种怎么说那种类似于搬运工的软件，比如说把你的数据从这里搬到那里，它非常的非常怎么说呢，非常的浅。",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 507.064,
+      "end": 518.824,
+      "text": "啊，二呢，类似于像像比如说RPA软件，叫Robotic Process Automation的这种软件呢，它从最早的只是说把你的行为录下来，录下来之后呢，再用机器相当于是重复它。",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 519.464,
+      "end": 522.424,
+      "text": "这个里面实际上是相对来说比较简单的一个技术。",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 523.144,
+      "end": 537.144,
+      "text": "那实际上用现在这种AI的agents啊，去去智能体去代替的话，它是从最早的一个呃录制反复，到现在是去去reason啊，去去推理，然后呢再去act再去执行。",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 537.624,
+      "end": 546.584,
+      "text": "啊，我觉得这是一个是非常颠覆性的一个技术，这个可能会取代市场上绝大多数提供这RPA啊呃服务的公司。",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 547.224,
+      "end": 553.304,
+      "text": "啊，除此之外呢，我觉得类似于单feature的公司，单功能的这种软件公司肯定是会被颠覆的。",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 553.624,
+      "end": 567.304,
+      "text": "一个很好的例子就是我前一段时间跟呃跟一个朋友聊到，他去做这个核磁啊，核磁共振，结果呢，他跟他的医生说，你把那个我的呃这个这个拍出来的片子给我好吗？",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 567.944,
+      "end": 575.384,
+      "text": "然后医生就给他寄了一个CD过来，他放进电脑里一看，首先在你现在找能读CD的那个盒子，现在大家基本上都没有没有那个东西了。",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 575.944,
+      "end": 578.184,
+      "text": "他把它放进去一看，他这需要一个非常特殊的软件。",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 578.824,
+      "end": 586.984,
+      "text": "这个软件呢，你要去买，这是一家公司，不知道是可能是美国中中西部地区的一家公司提供的软件，你要去花可能几百美金去买一个软件。",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 587.384,
+      "end": 595.384,
+      "text": "他说我不可能是花这个钱的，那直接就把他这个他把这个文件就扔给了Cloud，Cloud实时就造了一个软件去把这个东西读取出来了。",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 595.944,
+      "end": 608.024,
+      "text": "所以类似类似于做这种非常呃非常薄啊，或者是非常非常这个single feature，就是单单功能的软件，我觉得是非常容易被颠覆的。",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 608.664,
+      "end": 618.104,
+      "text": "啊，除此之外还有比如说我们经常提到这个做consulting做这个咨询公司啊，做这个research市场调研的，我觉得这一块也很可能啊很快的。",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 618.184,
+      "end": 645.464,
+      "text": "而且我们现在正在看到它被它它被取代被颠覆，因为就是你作为一个consultant，作为一个这个咨询师，你其实就是读取很多二手的这种市场材料，你可能会做一些一手的这种市场调查，但多数是以二手材料为主啊，那你肯定跑不过一个agent的速度，它可以在很短的时间内读完所有这个网上这个有限的这这种网网网上能够看到的看到的资料，这个你是没法去跟它竞争的。",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 646.184,
+      "end": 650.424,
+      "text": "那我觉得什么东西是不容易被取代或者不容易被颠覆的呢？",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 650.504,
+      "end": 662.424,
+      "text": "就是其实你看去pull agent去去这个deploy agent的时候呢，agent首先它是个智能体，但是agent需要大量的是大量的context，对吧？",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 662.424,
+      "end": 674.824,
+      "text": "它需要大量的数据，真实的数据，我们经常管的叫ground truth，也就是说你的数据的本身的真实性啊，这个数据的来源，agent是作为一个提供agent的公司，它是没有的，对吧？",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 674.904,
+      "end": 678.104,
+      "text": "它是类似于从外到里这么一个motion。",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 678.664,
+      "end": 690.504,
+      "text": "那如果你比如说你是一个像Llassian或者ServiceNow这种公司，你本身就是一个非常自然的啊呃焦点，什么呢？",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 690.504,
+      "end": 691.304,
+      "text": "什么自然焦点？",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 691.304,
+      "end": 695.224,
+      "text": "就是整个企业信息流的焦点。",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 696.264,
+      "end": 708.664,
+      "text": "不管你是从你的ticketing啊，这个这个IT的support这一块IT的支持ticketing system到后端的呃Slack，比如说聊天软件，就是整一套它会集中在某一个点。",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 709.224,
+      "end": 713.064,
+      "text": "那类似于像ServiceNow这种公司，它就变成了一个非常自然的焦点。",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 713.544,
+      "end": 716.184,
+      "text": "这种公司我觉得是是非常非常有持久性的。",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 716.984,
+      "end": 717.384,
+      "text": "为什么呢？",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    },
+    {
+      "start": 717.384,
+      "end": 721.224,
+      "text": "因为它实际上是不会被agent取代，而是它以",
+      "source_segment_indexes": [
+        94
+      ],
+      "source_segment_ids": [
+        94
+      ]
+    },
+    {
+      "start": 721.252,
+      "end": 728.052,
+      "text": "在 enable agent，他会给 agent 真正他需要的信息，这个我觉得是很难很难取代的。",
+      "source_segment_indexes": [
+        95
+      ],
+      "source_segment_ids": [
+        95
+      ]
+    },
+    {
+      "start": 728.532,
+      "end": 751.492,
+      "text": "还有一点更重要的就是，首先，就像我们最早这个造汽车哈，啊，就是从这种作坊式的这种制造，就是你基本上从这个发动机到后面的轮胎到后面拧螺丝都要一套一个一个师傅，呃，去去做下来，到后面呢变成非常非常 specialized、非常专业化的这种流水线，你的工作就是这么一拧这么一个螺丝。",
+      "source_segment_indexes": [
+        96
+      ],
+      "source_segment_ids": [
+        96
+      ]
+    },
+    {
+      "start": 752.052,
+      "end": 763.572,
+      "text": "那如果我做一个公司，我的核心竞争力是比如说服务给啊这个 healthcare、服务给这个健康产业的，那我的核心竞争力并不再去搭建一个 AI agent，对吧？",
+      "source_segment_indexes": [
+        97
+      ],
+      "source_segment_ids": [
+        97
+      ]
+    },
+    {
+      "start": 763.572,
+      "end": 771.172,
+      "text": "那我要搭建 AI agent，取消在我现在现有的这个供应商，那我是不是还得出去再去招这类的这类的专业的人士？",
+      "source_segment_indexes": [
+        98
+      ],
+      "source_segment_ids": [
+        98
+      ]
+    },
+    {
+      "start": 771.252,
+      "end": 778.852,
+      "text": "这类人士又很贵，建起来之后我还就要再测试做合规，这一套成本算下来可能是不划算的，对吧？",
+      "source_segment_indexes": [
+        99
+      ],
+      "source_segment_ids": [
+        99
+      ]
+    },
+    {
+      "start": 779.092,
+      "end": 791.172,
+      "text": "还有就是这个责任的呃这个转移，当你出现任何问题的时候，你可以直接去找 ServiceNow，可以去找了拉线，他们会负责帮你去做这个这个回滚啊，帮你去做这个 patching。",
+      "source_segment_indexes": [
+        100
+      ],
+      "source_segment_ids": [
+        100
+      ]
+    },
+    {
+      "start": 792.052,
+      "end": 795.812,
+      "text": "那如果你是完全自己建立的，那你的责任人就是你自己，对吧？",
+      "source_segment_indexes": [
+        101
+      ],
+      "source_segment_ids": [
+        101
+      ]
+    },
+    {
+      "start": 795.892,
+      "end": 806.852,
+      "text": "甚至你就是说这个责任就是在这个 agent 这里，那你怎么去到后期解决这个所有 support 啊，这个支持啊，回滚啊，或者 patching remediation 这一套流程？",
+      "source_segment_indexes": [
+        102
+      ],
+      "source_segment_ids": [
+        102
+      ]
+    },
+    {
+      "start": 807.172,
+      "end": 813.812,
+      "text": "这个我觉得企业如果去算一笔这个账的话，它很快会发现这这边是不 make sense 的。",
+      "source_segment_indexes": [
+        103
+      ],
+      "source_segment_ids": [
+        103
+      ]
+    },
+    {
+      "start": 814.212,
+      "end": 825.172,
+      "text": "所以像 Atlassian 的 CEO，呃，也是在之前接受采访的时候说，其实企业的这个真正护城河是他们积累下的几十年的这种呃流程的经验，这就是他们的护城河，是吧？",
+      "source_segment_indexes": [
+        104
+      ],
+      "source_segment_ids": [
+        104
+      ]
+    },
+    {
+      "start": 825.332,
+      "end": 826.772,
+      "text": "对对，说的完全正确。",
+      "source_segment_indexes": [
+        105
+      ],
+      "source_segment_ids": [
+        105
+      ]
+    },
+    {
+      "start": 827.412,
+      "end": 832.932,
+      "text": "呃，举一个例子啊，我这个数据有点有点有点老了，但是我觉得还是非常有代表性的。",
+      "source_segment_indexes": [
+        106
+      ],
+      "source_segment_ids": [
+        106
+      ]
+    },
+    {
+      "start": 833.412,
+      "end": 838.052,
+      "text": "啊，GPT four 这已经是很很感觉很久以前的一个尖端的 model。",
+      "source_segment_indexes": [
+        107
+      ],
+      "source_segment_ids": [
+        107
+      ]
+    },
+    {
+      "start": 838.852,
+      "end": 845.652,
+      "text": "呃，GPT four 整个在训练过程中大概用了一点五个 petabyte，呃的数据量。",
+      "source_segment_indexes": [
+        108
+      ],
+      "source_segment_ids": [
+        108
+      ]
+    },
+    {
+      "start": 846.532,
+      "end": 856.292,
+      "text": "这个数据听起来好像很大，实际上跟真正企业防火墙后边的数据的呃这个量来比，这个是微不足道的。",
+      "source_segment_indexes": [
+        109
+      ],
+      "source_segment_ids": [
+        109
+      ]
+    },
+    {
+      "start": 856.772,
+      "end": 868.612,
+      "text": "首先，你像类似于 JP Morgan，像我之前的这个公司 PayPal，每一家公司防火墙后面都有十五、二十、三十 petabyte 这种 data，呃，它的数据量很明显的。",
+      "source_segment_indexes": [
+        110
+      ],
+      "source_segment_ids": [
+        110
+      ]
+    },
+    {
+      "start": 868.612,
+      "end": 876.532,
+      "text": "其实你看，达到一个 GPT four 这种呃 GPT 四的这种啊水平的智能，它才用了那么一点点的数据。",
+      "source_segment_indexes": [
+        111
+      ],
+      "source_segment_ids": [
+        111
+      ]
+    },
+    {
+      "start": 876.772,
+      "end": 886.612,
+      "text": "当企业能够把自己的这个数据利用起来，合理利用起来，这个对性能的提升、对可用性的提升，这个是不是一点点的？",
+      "source_segment_indexes": [
+        112
+      ],
+      "source_segment_ids": [
+        112
+      ]
+    },
+    {
+      "start": 887.092,
+      "end": 888.052,
+      "text": "会非常非常的可观。",
+      "source_segment_indexes": [
+        113
+      ],
+      "source_segment_ids": [
+        113
+      ]
+    },
+    {
+      "start": 888.372,
+      "end": 891.332,
+      "text": "所以这个 Atlassian CEO 讲的，我觉得完全正确。",
+      "source_segment_indexes": [
+        114
+      ],
+      "source_segment_ids": [
+        114
+      ]
+    },
+    {
+      "start": 891.492,
+      "end": 901.012,
+      "text": "真正的有用的数据实际上都是在防火墙后面的，那这个东西是一般做 agent 的公司不能轻易能拿到的，所以真正的 moat 是在那里。",
+      "source_segment_indexes": [
+        115
+      ],
+      "source_segment_ids": [
+        115
+      ]
+    },
+    {
+      "start": 901.572,
+      "end": 910.052,
+      "text": "所以这些呃传统的软件公司加上 AI 的功能，呃，对比于这些 AI 原生的公司，你更看好哪一个？",
+      "source_segment_indexes": [
+        116
+      ],
+      "source_segment_ids": [
+        116
+      ]
+    },
+    {
+      "start": 910.772,
+      "end": 912.452,
+      "text": "呃，我觉得要分开来看吧。",
+      "source_segment_indexes": [
+        117
+      ],
+      "source_segment_ids": [
+        117
+      ]
+    },
+    {
+      "start": 912.612,
+      "end": 916.292,
+      "text": "嗯，首先看你针对的客户是什么。",
+      "source_segment_indexes": [
+        118
+      ],
+      "source_segment_ids": [
+        118
+      ]
+    },
+    {
+      "start": 917.092,
+      "end": 931.412,
+      "text": "呃，传统的公司，我觉得卖给大企业，大企业是由于它整个购买采购的这个流程是非常非常复杂的，而且涉及到呃可能非常非常严格复杂的监管程序。",
+      "source_segment_indexes": [
+        119
+      ],
+      "source_segment_ids": [
+        119
+      ]
+    },
+    {
+      "start": 931.972,
+      "end": 941.732,
+      "text": "那他更愿意去买这个，比如说类似于微软呀，买 Atlassian、买 ServiceNow 这种公司的服务，因为它是一套成熟的服务体系已经建成了。",
+      "source_segment_indexes": [
+        120
+      ],
+      "source_segment_ids": [
+        120
+      ]
+    },
+    {
+      "start": 942.612,
+      "end": 947.172,
+      "text": "那对他们来说，一旦出现错误，这个成本是非常非常可观的，甚至是不能容忍的。",
+      "source_segment_indexes": [
+        121
+      ],
+      "source_segment_ids": [
+        121
+      ]
+    },
+    {
+      "start": 947.892,
+      "end": 958.292,
+      "text": "那对于一个相对来说可能服务于新兴的这种呃产业，或者是嗯就服务给别的 startup、别的 startup。",
+      "source_segment_indexes": [
+        122
+      ],
+      "source_segment_ids": [
+        122
+      ]
+    },
+    {
+      "start": 958.651,
+      "end": 962.011,
+      "text": "可能更愿意用这个比较AI native的工具。",
+      "source_segment_indexes": [
+        123
+      ],
+      "source_segment_ids": [
+        123
+      ]
+    },
+    {
+      "start": 962.811,
+      "end": 970.651,
+      "text": "他们比如说新的小的startup，他招到招来的人，他可能就是在学校里的时候，就是一直在用这种新的工具再去试验。",
+      "source_segment_indexes": [
+        124
+      ],
+      "source_segment_ids": [
+        124
+      ]
+    },
+    {
+      "start": 971.131,
+      "end": 974.171,
+      "text": "对他们来说，试错成本很低，而且他们可以跑得更快。",
+      "source_segment_indexes": [
+        125
+      ],
+      "source_segment_ids": [
+        125
+      ]
+    },
+    {
+      "start": 974.171,
+      "end": 982.891,
+      "text": "我之前讲说，你作为一个startup，你怎么觉得，怎么怎么才能保证说不被谷歌的一个feature release啊这个发布淹淹没掉？",
+      "source_segment_indexes": [
+        126
+      ],
+      "source_segment_ids": [
+        126
+      ]
+    },
+    {
+      "start": 983.051,
+      "end": 989.851,
+      "text": "那你就是比别人跑得更快，那就要去敢于去试用这种新的呃新的工具、新的平台、新的model。",
+      "source_segment_indexes": [
+        127
+      ],
+      "source_segment_ids": [
+        127
+      ]
+    },
+    {
+      "start": 990.571,
+      "end": 996.491,
+      "text": "那我觉得实际上它是有针对不同的市场，都是可以我觉得活得很好的。",
+      "source_segment_indexes": [
+        128
+      ],
+      "source_segment_ids": [
+        128
+      ]
+    },
+    {
+      "start": 996.491,
+      "end": 998.651,
+      "text": "嗯，你怎么看待微软的护城河？",
+      "source_segment_indexes": [
+        129
+      ],
+      "source_segment_ids": [
+        129
+      ]
+    },
+    {
+      "start": 998.651,
+      "end": 1001.051,
+      "text": "它是变强了还是变弱了？",
+      "source_segment_indexes": [
+        130
+      ],
+      "source_segment_ids": [
+        130
+      ]
+    },
+    {
+      "start": 1001.051,
+      "end": 1003.851,
+      "text": "呃，我觉得总体来说是变得强，变得非常强了。",
+      "source_segment_indexes": [
+        131
+      ],
+      "source_segment_ids": [
+        131
+      ]
+    },
+    {
+      "start": 1004.091,
+      "end": 1004.971,
+      "text": "啊，怎么说呢？",
+      "source_segment_indexes": [
+        132
+      ],
+      "source_segment_ids": [
+        132
+      ]
+    },
+    {
+      "start": 1005.131,
+      "end": 1009.131,
+      "text": "回到我们刚刚的那个话题，就是实际上真正的最终护城河在哪里？",
+      "source_segment_indexes": [
+        133
+      ],
+      "source_segment_ids": [
+        133
+      ]
+    },
+    {
+      "start": 1009.211,
+      "end": 1015.531,
+      "text": "就像你说的，是这个workflow的这个know how是是独有的这个企业级数据这一块呢？",
+      "source_segment_indexes": [
+        134
+      ],
+      "source_segment_ids": [
+        134
+      ]
+    },
+    {
+      "start": 1015.531,
+      "end": 1024.171,
+      "text": "首先，微软本身它是服务于整个全世界所有的企业，甚至多数的个人都在都在用微软的呃服务嘛。",
+      "source_segment_indexes": [
+        135
+      ],
+      "source_segment_ids": [
+        135
+      ]
+    },
+    {
+      "start": 1024.811,
+      "end": 1037.531,
+      "text": "那我们呃能够看到的数据，能够看到的人的这种在生产过程中呃积累的这种know how，我觉得是很少公司能够跟我们相媲美的。",
+      "source_segment_indexes": [
+        136
+      ],
+      "source_segment_ids": [
+        136
+      ]
+    },
+    {
+      "start": 1038.251,
+      "end": 1049.851,
+      "text": "啊，这一点呢，实际上在搭建agent中可以使，虽然我们可能速度没有人跑得快，但是真正搭起来的agent，我觉得从使用呃体验这一块儿呃可以做的非常非常的好。",
+      "source_segment_indexes": [
+        137
+      ],
+      "source_segment_ids": [
+        137
+      ]
+    },
+    {
+      "start": 1050.491,
+      "end": 1057.211,
+      "text": "啊，还有更重要的一点就是企业其实在购买软件、购买服务的时候，它还是存在一定惯性的。",
+      "source_segment_indexes": [
+        138
+      ],
+      "source_segment_ids": [
+        138
+      ]
+    },
+    {
+      "start": 1057.931,
+      "end": 1080.091,
+      "text": "它每去onboard一个新的软件进来，它是有非常非常复杂流程，就是很多这种它的区分啊，并不是发生在技术层面的，而是发生在这种非技术层面，比如说人跟人之间的这种交流，就是你销售团队懂不懂怎么去卖给enterprise，懂不懂卖给n这个卖给SMB，所谓中小企业，它实际上是完全不同的一种，甚至讲了不同的语言。",
+      "source_segment_indexes": [
+        139
+      ],
+      "source_segment_ids": [
+        139
+      ]
+    },
+    {
+      "start": 1080.891,
+      "end": 1089.211,
+      "text": "所以说在这一块，你有现有的这个渠道、现有的distribution，这是一个非常非常难以跨越的啊一个一个一个护城河。",
+      "source_segment_indexes": [
+        140
+      ],
+      "source_segment_ids": [
+        140
+      ]
+    },
+    {
+      "start": 1090.011,
+      "end": 1102.171,
+      "text": "那当然，我觉得微软其实自己做的产品很多地方也需要提升，在这一块用户体验上，比如说我们的GitHub Copilot，那这一块我们是承认其实是有一些提升的空间的。",
+      "source_segment_indexes": [
+        141
+      ],
+      "source_segment_ids": [
+        141
+      ]
+    },
+    {
+      "start": 1102.651,
+      "end": 1114.971,
+      "text": "但是对我们来说，由于这前面大量的这种积累，由于我们庞大的这种用户群体、生态群体，我们一旦需要去有新的这个质量、性能提升的时候，我们是可以做的非常非常好的。",
+      "source_segment_indexes": [
+        142
+      ],
+      "source_segment_ids": [
+        142
+      ]
+    },
+    {
+      "start": 1115.451,
+      "end": 1122.251,
+      "text": "嗯，资本市场一直在反复的讨论，像微软这样的大厂资本开支和它的AI收入之间的这个落差。",
+      "source_segment_indexes": [
+        143
+      ],
+      "source_segment_ids": [
+        143
+      ]
+    },
+    {
+      "start": 1122.811,
+      "end": 1123.051,
+      "text": "嗯嗯。",
+      "source_segment_indexes": [
+        144
+      ],
+      "source_segment_ids": [
+        144
+      ]
+    },
+    {
+      "start": 1123.051,
+      "end": 1128.571,
+      "text": "嗯，包括一些谷歌，谷歌的CEO也承认会有一些可能AI的这种泡沫的一些元素。",
+      "source_segment_indexes": [
+        145
+      ],
+      "source_segment_ids": [
+        145
+      ]
+    },
+    {
+      "start": 1128.731,
+      "end": 1128.971,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        146
+      ],
+      "source_segment_ids": [
+        146
+      ]
+    },
+    {
+      "start": 1129.051,
+      "end": 1141.771,
+      "text": "那你们从微软的角度上，特别是你们看到的就是企业在真正的部署环境中的有多少的比例，versus像还是在POC探索阶段的这个比例，你觉得趋势是怎么样的？",
+      "source_segment_indexes": [
+        147
+      ],
+      "source_segment_ids": [
+        147
+      ]
+    },
+    {
+      "start": 1142.171,
+      "end": 1152.651,
+      "text": "对，就是对AI的应用部署，它不是一个齐头并进，它不是一个水平式的前进，它是在某些领域里面跑得非常非常快，某些领域基本为零。",
+      "source_segment_indexes": [
+        148
+      ],
+      "source_segment_ids": [
+        148
+      ]
+    },
+    {
+      "start": 1153.291,
+      "end": 1164.491,
+      "text": "呃，很好的一个例子就是在AI写代码这里，啊，基本上现在我们碰到过的公司，甚至就是微软内部，绝大多数的写代码的这个过程是被agent取代了。",
+      "source_segment_indexes": [
+        149
+      ],
+      "source_segment_ids": [
+        149
+      ]
+    },
+    {
+      "start": 1164.971,
+      "end": 1169.051,
+      "text": "就在这一块，其实AI的推进是非常非常快的。",
+      "source_segment_indexes": [
+        150
+      ],
+      "source_segment_ids": [
+        150
+      ]
+    },
+    {
+      "start": 1169.051,
+      "end": 1181.051,
+      "text": "啊，在有一些领域就稍微慢一些，比如说类似于传统的这个生产呃制造业啊啊health care啊啊这一类呢，我觉得AI它是相对来说可能还是在慢慢的开始。",
+      "source_segment_indexes": [
+        151
+      ],
+      "source_segment_ids": [
+        151
+      ]
+    },
+    {
+      "start": 1181.691,
+      "end": 1190.811,
+      "text": "啊，它有很多这种也是非技术上的原因，监管啊、privacy就隐私这个这个法律上面这一套东西会限制它的呃进度。",
+      "source_segment_indexes": [
+        152
+      ],
+      "source_segment_ids": [
+        152
+      ]
+    },
+    {
+      "start": 1191.691,
+      "end": 1196.331,
+      "text": "那说说回到这个投资这一块啊，其实怎么说呢？",
+      "source_segment_indexes": [
+        153
+      ],
+      "source_segment_ids": [
+        153
+      ]
+    },
+    {
+      "start": 1196.331,
+      "end": 1198.171,
+      "text": "不能叫，我觉得叫。",
+      "source_segment_indexes": [
+        154
+      ],
+      "source_segment_ids": [
+        154
+      ]
+    },
+    {
+      "start": 1198.63,
+      "end": 1202.31,
+      "text": "泡沫这个词儿其实是一个非常不严谨的叫法。",
+      "source_segment_indexes": [
+        155
+      ],
+      "source_segment_ids": [
+        155
+      ]
+    },
+    {
+      "start": 1203.03,
+      "end": 1205.91,
+      "text": "呃，首先，泡沫的定义是什么呢？",
+      "source_segment_indexes": [
+        156
+      ],
+      "source_segment_ids": [
+        156
+      ]
+    },
+    {
+      "start": 1206.31,
+      "end": 1210.63,
+      "text": "呃，我觉得要区分来看，就是这个东西它的价值和它的价格要分开来看。",
+      "source_segment_indexes": [
+        157
+      ],
+      "source_segment_ids": [
+        157
+      ]
+    },
+    {
+      "start": 1212.15,
+      "end": 1213.83,
+      "text": "AI是没有价值，是不是有价值？",
+      "source_segment_indexes": [
+        158
+      ],
+      "source_segment_ids": [
+        158
+      ]
+    },
+    {
+      "start": 1213.83,
+      "end": 1214.87,
+      "text": "它是绝对有价值的。",
+      "source_segment_indexes": [
+        159
+      ],
+      "source_segment_ids": [
+        159
+      ]
+    },
+    {
+      "start": 1214.87,
+      "end": 1217.83,
+      "text": "这个我觉得是没有办法去去质疑它本身的价值。",
+      "source_segment_indexes": [
+        160
+      ],
+      "source_segment_ids": [
+        160
+      ]
+    },
+    {
+      "start": 1218.39,
+      "end": 1222.39,
+      "text": "那在价格上面，我觉得是不是有一些存在跟风呢？",
+      "source_segment_indexes": [
+        161
+      ],
+      "source_segment_ids": [
+        161
+      ]
+    },
+    {
+      "start": 1222.47,
+      "end": 1226.55,
+      "text": "或者就我们这边叫FOMO啊啊，这个这叫错过恐惧症吧？",
+      "source_segment_indexes": [
+        162
+      ],
+      "source_segment_ids": [
+        162
+      ]
+    },
+    {
+      "start": 1227.75,
+      "end": 1229.67,
+      "text": "是绝对绝对是有存在的。",
+      "source_segment_indexes": [
+        163
+      ],
+      "source_segment_ids": [
+        163
+      ]
+    },
+    {
+      "start": 1229.67,
+      "end": 1246.47,
+      "text": "呃，很多公司初创公司，由于它创创始人背景很厉害，出来之后，我觉得可能都不要说产品成熟与否，就是连技术可能做研发这块是刚刚开始，就可能会融几亿甚至十亿这样的这个种子轮。",
+      "source_segment_indexes": [
+        164
+      ],
+      "source_segment_ids": [
+        164
+      ]
+    },
+    {
+      "start": 1247.35,
+      "end": 1255.19,
+      "text": "呃，我觉得这个可能是市场呃多少有一些过热，多少有一些FOMO的表现啊，这个是存在的。",
+      "source_segment_indexes": [
+        165
+      ],
+      "source_segment_ids": [
+        165
+      ]
+    },
+    {
+      "start": 1255.83,
+      "end": 1268.47,
+      "text": "而且从具体数字上来看，这个整个对AI算力啊啊，还有就是包括早期公司的投资，实际上它已经超过了万亿级的级别，或者已经接近万亿级了。",
+      "source_segment_indexes": [
+        166
+      ],
+      "source_segment_ids": [
+        166
+      ]
+    },
+    {
+      "start": 1269.27,
+      "end": 1279.59,
+      "text": "而你看，最最大的AI公司就包OpenAI啊、Quant这种公司，它实际上它所有的年化的ARR加在一起，可能都不过百亿。",
+      "source_segment_indexes": [
+        167
+      ],
+      "source_segment_ids": [
+        167
+      ]
+    },
+    {
+      "start": 1281.11,
+      "end": 1282.87,
+      "text": "这个实际上是有一个很大的落差。",
+      "source_segment_indexes": [
+        168
+      ],
+      "source_segment_ids": [
+        168
+      ]
+    },
+    {
+      "start": 1282.87,
+      "end": 1290.15,
+      "text": "那么中间这个gap是可能有人估算是可能一万亿，或者是八千亿美元左右，这么一个一个一个一个gap。",
+      "source_segment_indexes": [
+        169
+      ],
+      "source_segment_ids": [
+        169
+      ]
+    },
+    {
+      "start": 1290.95,
+      "end": 1304.23,
+      "text": "也就是说，接下来三年到五年之间，这些公司或者新兴的AI公司需要产生大概八千亿美元的总体的这个营收，才能够去justify前面这个万亿级的投资。",
+      "source_segment_indexes": [
+        170
+      ],
+      "source_segment_ids": [
+        170
+      ]
+    },
+    {
+      "start": 1304.71,
+      "end": 1307.27,
+      "text": "我觉得这个gap还是挺大的。",
+      "source_segment_indexes": [
+        171
+      ],
+      "source_segment_ids": [
+        171
+      ]
+    },
+    {
+      "start": 1307.27,
+      "end": 1316.31,
+      "text": "嗯，市场可能需要重新考虑一下，就是说早期公司的这种啊投资定价。",
+      "source_segment_indexes": [
+        172
+      ],
+      "source_segment_ids": [
+        172
+      ]
+    },
+    {
+      "start": 1317.03,
+      "end": 1337.27,
+      "text": "二呢，就是硬件算力中心这块投资方面，可能更需要专注于，比如说不光是建新的data center数据中心，而是要把现有的数据中心的效率提升，通过新的硬件的开发啊，或者是在软件层面对现有数据中心的使用率提升。",
+      "source_segment_indexes": [
+        173
+      ],
+      "source_segment_ids": [
+        173
+      ]
+    },
+    {
+      "start": 1337.27,
+      "end": 1342.55,
+      "text": "现有数据中心实际上在看那种G GPU集群的时候，它的使用率是非常非常低的。",
+      "source_segment_indexes": [
+        174
+      ],
+      "source_segment_ids": [
+        174
+      ]
+    },
+    {
+      "start": 1343.03,
+      "end": 1347.51,
+      "text": "有的人会说是百分之三十到四十，我们可能觉得这个可能会更低。",
+      "source_segment_indexes": [
+        175
+      ],
+      "source_segment_ids": [
+        175
+      ]
+    },
+    {
+      "start": 1348.15,
+      "end": 1354.15,
+      "text": "那你其实花了上万亿的投资在这里面建了这么多的data center，你的使用率却那么低，对吧？",
+      "source_segment_indexes": [
+        176
+      ],
+      "source_segment_ids": [
+        176
+      ]
+    },
+    {
+      "start": 1354.15,
+      "end": 1360.63,
+      "text": "你那是去继继续去建新的data center，还是说focus on就是把现有的这个data center的使用率提升？",
+      "source_segment_indexes": [
+        177
+      ],
+      "source_segment_ids": [
+        177
+      ]
+    },
+    {
+      "start": 1360.79,
+      "end": 1367.75,
+      "text": "我觉得这个也是市场可能接下来十十二到十八个月之间需要去去搞清楚的一件事情。",
+      "source_segment_indexes": [
+        178
+      ],
+      "source_segment_ids": [
+        178
+      ]
+    },
+    {
+      "start": 1368.47,
+      "end": 1369.99,
+      "text": "为什么它的这个使用率这么低？",
+      "source_segment_indexes": [
+        179
+      ],
+      "source_segment_ids": [
+        179
+      ]
+    },
+    {
+      "start": 1370.47,
+      "end": 1373.27,
+      "text": "啊，这里头原因就复很复杂了啊。",
+      "source_segment_indexes": [
+        180
+      ],
+      "source_segment_ids": [
+        180
+      ]
+    },
+    {
+      "start": 1373.35,
+      "end": 1381.99,
+      "text": "首先就是GPU在做训练或者在做inference的时候，啊，它的这个failure就失败率是出错率是非常非常高的。",
+      "source_segment_indexes": [
+        181
+      ],
+      "source_segment_ids": [
+        181
+      ]
+    },
+    {
+      "start": 1382.71,
+      "end": 1388.07,
+      "text": "啊，它有时候会出错是软出错在软件软件层面，甚至有时候出错会出错在什么呢？",
+      "source_segment_indexes": [
+        182
+      ],
+      "source_segment_ids": [
+        182
+      ]
+    },
+    {
+      "start": 1388.07,
+      "end": 1401.27,
+      "text": "就是在比如说这个GPU跟GPU之间，或者这个blade跟就是我们讲板子跟板子之间的这种连接线的这种安装出错，都是有可能造成整个这个训练过程去去出错啊失败的。",
+      "source_segment_indexes": [
+        183
+      ],
+      "source_segment_ids": [
+        183
+      ]
+    },
+    {
+      "start": 1402.79,
+      "end": 1404.31,
+      "text": "它其实出错的原因会有很多。",
+      "source_segment_indexes": [
+        184
+      ],
+      "source_segment_ids": [
+        184
+      ]
+    },
+    {
+      "start": 1404.31,
+      "end": 1421.67,
+      "text": "还有一点呢，就是在呃去做训练的时候，他们会叫overprovision，就相当于是会有很多backup的GPU的放在里面，就是空闲着，但是是是需要去做，一旦出错的时候，马上把这个workload shift到另外一个GPU这边。",
+      "source_segment_indexes": [
+        185
+      ],
+      "source_segment_ids": [
+        185
+      ]
+    },
+    {
+      "start": 1422.79,
+      "end": 1425.59,
+      "text": "它是非常非常有益的这种做法。",
+      "source_segment_indexes": [
+        186
+      ],
+      "source_segment_ids": [
+        186
+      ]
+    },
+    {
+      "start": 1426.55,
+      "end": 1428.31,
+      "text": "那如果有什么好办法可以去改进吗？",
+      "source_segment_indexes": [
+        187
+      ],
+      "source_segment_ids": [
+        187
+      ]
+    },
+    {
+      "start": 1428.55,
+      "end": 1429.35,
+      "text": "呃，有啊。",
+      "source_segment_indexes": [
+        188
+      ],
+      "source_segment_ids": [
+        188
+      ]
+    },
+    {
+      "start": 1429.43,
+      "end": 1435.91,
+      "text": "现在有一些人提出来，就是说怎么把GPU像早期的做这个虚拟啊VM。",
+      "source_segment_indexes": [
+        189
+      ],
+      "source_segment_ids": [
+        189
+      ]
+    },
+    {
+      "start": 1436.01,
+      "end": 1447.29,
+      "text": "啊，虚拟机的方式啊，能够让这个虚首先就VM就像Docker、Container、Kubernetes，实际上最早是提升了这个使呃硬件的使用率嘛。",
+      "source_segment_indexes": [
+        190
+      ],
+      "source_segment_ids": [
+        190
+      ]
+    },
+    {
+      "start": 1447.69,
+      "end": 1451.77,
+      "text": "那大家想说，是不可以用同样的VM的方式去解决GPU的使用率？",
+      "source_segment_indexes": [
+        191
+      ],
+      "source_segment_ids": [
+        191
+      ]
+    },
+    {
+      "start": 1452.25,
+      "end": 1473.29,
+      "text": "还有呢，就是我觉得甚至在硬件方面都有很多新的技术出来啊，去想去tackle这个这个GPU，它比如说七百分之七十的这种failure，呃是出错率，其中可能涉及到有大概百分之十到二十五原因是出在啊硬件的这个这个数据数据线连接端，这都有可能的。",
+      "source_segment_indexes": [
+        192
+      ],
+      "source_segment_ids": [
+        192
+      ]
+    },
+    {
+      "start": 1473.93,
+      "end": 1503.45,
+      "text": "那光纤呢是一个比较昂贵的一个替代品，但是光纤本身自己也有一些物理特性，比如说它对温度的敏感，可能提升或者降低一摄氏度都会都影响它的这个performance啊，甚至就是它的这个弯折呀，就是传光纤的这个管子里面的这个如果有折呃把它把它弯弯到一定程度，也可能是使它的这个信号衰减，就是它有很多很多问题，这个都会导致啊整个GPU在在跑，",
+      "source_segment_indexes": [
+        193
+      ],
+      "source_segment_ids": [
+        193
+      ]
+    },
+    {
+      "start": 1503.45,
+      "end": 1505.77,
+      "text": "不管你是training还是跑inference的时候出错。",
+      "source_segment_indexes": [
+        194
+      ],
+      "source_segment_ids": [
+        194
+      ]
+    },
+    {
+      "start": 1506.33,
+      "end": 1515.45,
+      "text": "那么现在有一些新的技术，比如说想用这个RF啊，就是我们讲的这个叫毫米波啊，去去代替这个铜或者是光纤。",
+      "source_segment_indexes": [
+        195
+      ],
+      "source_segment_ids": [
+        195
+      ]
+    },
+    {
+      "start": 1515.53,
+      "end": 1525.21,
+      "text": "我我的意思想说，就是实际上大家都在从不同的角度去解决这个GPU应用率以及降呃应用率低的问题，去降低它的出错率。",
+      "source_segment_indexes": [
+        196
+      ],
+      "source_segment_ids": [
+        196
+      ]
+    },
+    {
+      "start": 1525.37,
+      "end": 1537.69,
+      "text": "这样子，你可以从比如说原来百分之三十甚至更低的应用率提升到比如说百分之六十到七十，而且与此同时还可以提升你的这个energy分，降低你对能源的这个这个需求。",
+      "source_segment_indexes": [
+        197
+      ],
+      "source_segment_ids": [
+        197
+      ]
+    },
+    {
+      "start": 1538.73,
+      "end": 1539.05,
+      "text": "明白。",
+      "source_segment_indexes": [
+        198
+      ],
+      "source_segment_ids": [
+        198
+      ]
+    },
+    {
+      "start": 1539.45,
+      "end": 1548.49,
+      "text": "那想跟你聊聊你们M十二一一共投了大概有一百多家的被投公司，然后其中有十五家是独角兽，然后六家已经IPO了。",
+      "source_segment_indexes": [
+        199
+      ],
+      "source_segment_ids": [
+        199
+      ]
+    },
+    {
+      "start": 1548.81,
+      "end": 1553.13,
+      "text": "你可不可以给我们提供一张就是你们的portfolio的一张这个投资的画像？",
+      "source_segment_indexes": [
+        200
+      ],
+      "source_segment_ids": [
+        200
+      ]
+    },
+    {
+      "start": 1553.61,
+      "end": 1555.05,
+      "text": "哪一些是你们重仓的赛道？",
+      "source_segment_indexes": [
+        201
+      ],
+      "source_segment_ids": [
+        201
+      ]
+    },
+    {
+      "start": 1555.21,
+      "end": 1557.21,
+      "text": "然后都有一些哪些代表性的公司？",
+      "source_segment_indexes": [
+        202
+      ],
+      "source_segment_ids": [
+        202
+      ]
+    },
+    {
+      "start": 1557.45,
+      "end": 1559.29,
+      "text": "呃，重仓的赛道有几个吧？",
+      "source_segment_indexes": [
+        203
+      ],
+      "source_segment_ids": [
+        203
+      ]
+    },
+    {
+      "start": 1559.29,
+      "end": 1574.81,
+      "text": "我觉得呃一就是我们讲的新的硬件啊，比如说呃这个用光学呃去取代传统的传统的硬件传统的芯片啊，这个现在是一个非常非常热的一个赛道。",
+      "source_segment_indexes": [
+        204
+      ],
+      "source_segment_ids": [
+        204
+      ]
+    },
+    {
+      "start": 1574.97,
+      "end": 1582.81,
+      "text": "我们在这边也做了一些布局，在正硬件层面，我们有比如说类似比较代表性的NeuralFast啊、DMatrix，这都是非常非常成功的公司。",
+      "source_segment_indexes": [
+        205
+      ],
+      "source_segment_ids": [
+        205
+      ]
+    },
+    {
+      "start": 1583.61,
+      "end": 1594.09,
+      "text": "啊，另外呢，我觉得一个方还有一个方向就是数据层面啊，大家我觉得都能看到，实际上数据是最终的这个护城河之一。",
+      "source_segment_indexes": [
+        206
+      ],
+      "source_segment_ids": [
+        206
+      ]
+    },
+    {
+      "start": 1594.89,
+      "end": 1604.89,
+      "text": "那么我们也投了像MicroOne这类的公司，就是帮助企企业啊去有一手的非常有针对性的非常干净的高质量的数据啊。",
+      "source_segment_indexes": [
+        207
+      ],
+      "source_segment_ids": [
+        207
+      ]
+    },
+    {
+      "start": 1604.89,
+      "end": 1630.81,
+      "text": "除此之外呢，我们也投了比如说类似于像这个做网络安全，而且是在就是也比较AI Native的情况下提供网络安全啊服务，提供这个呃模型安全，类似于像比较代表性的就是HiddenLayer啊、Reach Security啊这类的公司呢，我们还是比较看好，甚至对这个这个模型的这种performance的eval啊，类似于Aris，",
+      "source_segment_indexes": [
+        208
+      ],
+      "source_segment_ids": [
+        208
+      ]
+    },
+    {
+      "start": 1631.05,
+      "end": 1632.49,
+      "text": "这都是比较有代表性的公司。",
+      "source_segment_indexes": [
+        209
+      ],
+      "source_segment_ids": [
+        209
+      ]
+    },
+    {
+      "start": 1633.13,
+      "end": 1648.17,
+      "text": "嗯，除此之外呢，我们还看了一些呃类似于垂直垂直方面的公司啊，比如说我们最近投了一家叫Didaril，它是用AI去替代传统的这个供应链上的一些一些workflow。",
+      "source_segment_indexes": [
+        210
+      ],
+      "source_segment_ids": [
+        210
+      ]
+    },
+    {
+      "start": 1648.57,
+      "end": 1654.49,
+      "text": "这家公司我觉得是我们在垂直领呃垂直领域这边还是投的不错的一家公司。",
+      "source_segment_indexes": [
+        211
+      ],
+      "source_segment_ids": [
+        211
+      ]
+    },
+    {
+      "start": 1655.45,
+      "end": 1669.85,
+      "text": "呃，除此之外呢，我们也慢慢在看一些哦，我还有一个领域忘忘记了，就是类似于在在gaming这一块儿啊，gaming实际上我觉得现在慢慢也是在回回暖的一个过程中，就是gaming之前整个产业的投资量是非常非常的低的。",
+      "source_segment_indexes": [
+        212
+      ],
+      "source_segment_ids": [
+        212
+      ]
+    },
+    {
+      "start": 1670.49,
+      "end": 1674.57,
+      "text": "呃，我觉得现在是在在回暖的过程中，尤其是在",
+      "source_segment_indexes": [
+        213
+      ],
+      "source_segment_ids": [
+        213
+      ]
+    },
+    {
+      "start": 1675.104,
+      "end": 1688.224,
+      "text": "大量的世界模型或者物理模型的这种开发的情况下，gaming变成了一个非常自然的使用场景，那使得大家对整个这个游戏产业有一个新的呃兴奋点吧。",
+      "source_segment_indexes": [
+        214
+      ],
+      "source_segment_ids": [
+        214
+      ]
+    },
+    {
+      "start": 1688.864,
+      "end": 1693.024,
+      "text": "呃，除此之外呢，我们也在慢慢看一些有关区块链的呃项目。",
+      "source_segment_indexes": [
+        215
+      ],
+      "source_segment_ids": [
+        215
+      ]
+    },
+    {
+      "start": 1693.584,
+      "end": 1704.464,
+      "text": "这个领域呢，是一个对我们来说相对来说本身区块链这个这个产业并不新，但对我们来说去寻找它和AI的结合点，这是一个相对来说比较新的课题。",
+      "source_segment_indexes": [
+        216
+      ],
+      "source_segment_ids": [
+        216
+      ]
+    },
+    {
+      "start": 1704.944,
+      "end": 1717.424,
+      "text": "啊，尤其涉及到对这个agent的管理，agent身份的管理，啊，以及甚至涉及到了这个agent的支付这一块，我觉得还是可能会看到一些区块链技术的应用的。",
+      "source_segment_indexes": [
+        217
+      ],
+      "source_segment_ids": [
+        217
+      ]
+    },
+    {
+      "start": 1717.904,
+      "end": 1720.384,
+      "text": "所以这一点我们也在慢慢的去去发掘。",
+      "source_segment_indexes": [
+        218
+      ],
+      "source_segment_ids": [
+        218
+      ]
+    },
+    {
+      "start": 1720.944,
+      "end": 1729.424,
+      "text": "讲到支付，因为你之前是背景是在PayPal Venture做投资，然后支付的这个赛道，其实你投了很多非常经典的一些标的。",
+      "source_segment_indexes": [
+        219
+      ],
+      "source_segment_ids": [
+        219
+      ]
+    },
+    {
+      "start": 1729.824,
+      "end": 1734.864,
+      "text": "你看到的在这个AI agent的时代，这个支付的范式跟原来有一些什么样的不一样？",
+      "source_segment_indexes": [
+        220
+      ],
+      "source_segment_ids": [
+        220
+      ]
+    },
+    {
+      "start": 1735.904,
+      "end": 1736.464,
+      "text": "非常不一样。",
+      "source_segment_indexes": [
+        221
+      ],
+      "source_segment_ids": [
+        221
+      ]
+    },
+    {
+      "start": 1737.184,
+      "end": 1743.664,
+      "text": "首先，呃，支付的人变了，接这个接受这个payment接受支付的这个对象也变了。",
+      "source_segment_indexes": [
+        222
+      ],
+      "source_segment_ids": [
+        222
+      ]
+    },
+    {
+      "start": 1744.464,
+      "end": 1757.104,
+      "text": "那我们最早看到的，大家都会讲说这个这个agent支付啊，这个智能体支付，市场现在基本上还停留在一个叙事或者是一个实验的阶段，demo的阶段。",
+      "source_segment_indexes": [
+        223
+      ],
+      "source_segment_ids": [
+        223
+      ]
+    },
+    {
+      "start": 1757.744,
+      "end": 1765.264,
+      "text": "呃，真正你说智能体去去做支付大量的这种呃支付还是基本上是看不到的。",
+      "source_segment_indexes": [
+        224
+      ],
+      "source_segment_ids": [
+        224
+      ]
+    },
+    {
+      "start": 1765.264,
+      "end": 1769.104,
+      "text": "呃，大家觉得这个会是一个嗯下一个爆发点吧？",
+      "source_segment_indexes": [
+        225
+      ],
+      "source_segment_ids": [
+        225
+      ]
+    },
+    {
+      "start": 1769.744,
+      "end": 1787.984,
+      "text": "嗯，很多它的这个obstacles它的它的挑战存在于首先法律上规定智能体是不能拿个人的信用卡信息的，这个是就是违反了我们叫叫PCI compliance。",
+      "source_segment_indexes": [
+        226
+      ],
+      "source_segment_ids": [
+        226
+      ]
+    },
+    {
+      "start": 1788.544,
+      "end": 1795.424,
+      "text": "啊，就是你任何个人的信息，尤其是涉及到信用卡这种支付信息是不能直接给AI。",
+      "source_segment_indexes": [
+        227
+      ],
+      "source_segment_ids": [
+        227
+      ]
+    },
+    {
+      "start": 1795.424,
+      "end": 1804.864,
+      "text": "啊，那这里就是就有衍生了几个早期的解决方案，比如说给这个啊，你像Stripe就早早期推了一个解决方案是什么呢？",
+      "source_segment_indexes": [
+        228
+      ],
+      "source_segment_ids": [
+        228
+      ]
+    },
+    {
+      "start": 1804.864,
+      "end": 1807.664,
+      "text": "给你一个叫虚拟卡，相当于就是一次性的。",
+      "source_segment_indexes": [
+        229
+      ],
+      "source_segment_ids": [
+        229
+      ]
+    },
+    {
+      "start": 1807.984,
+      "end": 1816.784,
+      "text": "这个卡里头，比如说你可以提前写好这个卡里就只装一百块钱，然后你让agent去去去购物的时候就花到一百块钱，花完了就就结束了。",
+      "source_segment_indexes": [
+        230
+      ],
+      "source_segment_ids": [
+        230
+      ]
+    },
+    {
+      "start": 1817.584,
+      "end": 1821.024,
+      "text": "去从别的维度来限制这个agent这个呃的自由。",
+      "source_segment_indexes": [
+        231
+      ],
+      "source_segment_ids": [
+        231
+      ]
+    },
+    {
+      "start": 1822.144,
+      "end": 1826.544,
+      "text": "那这个呢，实际上我觉得不是一个长期的有持可持续性的解决方案。",
+      "source_segment_indexes": [
+        232
+      ],
+      "source_segment_ids": [
+        232
+      ]
+    },
+    {
+      "start": 1826.544,
+      "end": 1836.704,
+      "text": "首先，这个速度非常的慢，而且这个还是在利用原有的真人的身份啊去去衍生一个新的信用卡，这个成本也很高。",
+      "source_segment_indexes": [
+        233
+      ],
+      "source_segment_ids": [
+        233
+      ]
+    },
+    {
+      "start": 1837.584,
+      "end": 1857.104,
+      "text": "嗯，还有呢，就是比如说你去让你的agent去买东西之后，一旦出现了纠纷或者出现了错误的时候，原本是你跟一对一你跟商家之间的一个一个问题，现在变成了你跟商家再加agent一个问题，这个就变成了非常复杂的一个一个一个纠纷，这个是很难去解决的。",
+      "source_segment_indexes": [
+        234
+      ],
+      "source_segment_ids": [
+        234
+      ]
+    },
+    {
+      "start": 1857.824,
+      "end": 1884.224,
+      "text": "呃，另外一种解决方案呢，就是像Visa、MasterCard他们推出了叫tokenized credentials，就实际上是跳过了虚拟卡这一部分，直接用你个人的credentials，你个人的这个这个背景信息背景信息去直接跳到你的银行里，然后告诉银行里你是可以放这个这么多的款的，比如说这里可以放五块钱，然后呢，它通过你的这个呃叫tokenized credential去authenticate这个这个payment，",
+      "source_segment_indexes": [
+        235
+      ],
+      "source_segment_ids": [
+        235
+      ]
+    },
+    {
+      "start": 1884.304,
+      "end": 1885.104,
+      "text": "这是一种做法。",
+      "source_segment_indexes": [
+        236
+      ],
+      "source_segment_ids": [
+        236
+      ]
+    },
+    {
+      "start": 1885.664,
+      "end": 1890.624,
+      "text": "这个我觉得可能是近期来呃来看，我觉得还是相对可行的一个方案。",
+      "source_segment_indexes": [
+        237
+      ],
+      "source_segment_ids": [
+        237
+      ]
+    },
+    {
+      "start": 1891.184,
+      "end": 1897.664,
+      "text": "但是涉及到真正的，我觉得这都不不能叫完全纯粹的agentic支付。",
+      "source_segment_indexes": [
+        238
+      ],
+      "source_segment_ids": [
+        238
+      ]
+    },
+    {
+      "start": 1898.464,
+      "end": 1899.184,
+      "text": "呃，为什么呢？",
+      "source_segment_indexes": [
+        239
+      ],
+      "source_segment_ids": [
+        239
+      ]
+    },
+    {
+      "start": 1899.184,
+      "end": 1903.024,
+      "text": "这个归根到底还是在用一个真人的身份。",
+      "source_segment_indexes": [
+        240
+      ],
+      "source_segment_ids": [
+        240
+      ]
+    },
+    {
+      "start": 1903.904,
+      "end": 1918.704,
+      "text": "那么agent如果是比如说我是一家公司的这个采购，那我需要agent去帮我同时采购，比如说我要去做一个大模型的训练，去采购数据，去采购算力。",
+      "source_segment_indexes": [
+        241
+      ],
+      "source_segment_ids": [
+        241
+      ]
+    },
+    {
+      "start": 1919.184,
+      "end": 1925.744,
+      "text": "甚至去采购不知道别的什么一套东西的话，那 agent 本身，他用谁的身份呢？",
+      "source_segment_indexes": [
+        242
+      ],
+      "source_segment_ids": [
+        242
+      ]
+    },
+    {
+      "start": 1925.824,
+      "end": 1929.664,
+      "text": "他是用我采购员的身份呢，还是说自己有一个 agent native 的身份？",
+      "source_segment_indexes": [
+        243
+      ],
+      "source_segment_ids": [
+        243
+      ]
+    },
+    {
+      "start": 1929.744,
+      "end": 1931.104,
+      "text": "这是一个很难解决的问题。",
+      "source_segment_indexes": [
+        244
+      ],
+      "source_segment_ids": [
+        244
+      ]
+    },
+    {
+      "start": 1931.184,
+      "end": 1933.104,
+      "text": "怎么去给 agent 自己的一个身份？",
+      "source_segment_indexes": [
+        245
+      ],
+      "source_segment_ids": [
+        245
+      ]
+    },
+    {
+      "start": 1933.184,
+      "end": 1942.544,
+      "text": "然后这个身份呢，怎么能够把它做成一个，呃，嗯，去可以去 verify、可以去审计的一个身份？",
+      "source_segment_indexes": [
+        246
+      ],
+      "source_segment_ids": [
+        246
+      ]
+    },
+    {
+      "start": 1943.424,
+      "end": 1951.264,
+      "text": "还有就是涉及到之前我们可能看多数看到支付场景是一对一的，我去这个商店买东西，我给这个商店做支付。",
+      "source_segment_indexes": [
+        247
+      ],
+      "source_segment_ids": [
+        247
+      ]
+    },
+    {
+      "start": 1951.744,
+      "end": 1963.504,
+      "text": "那我像我刚刚讲到的那个场景，比如说我这个 agent 要从这里去购买 data、购买数据，然后从这里购买算力，然后从别的地方再去可能给这个模型的提供商再付钱。",
+      "source_segment_indexes": [
+        248
+      ],
+      "source_segment_ids": [
+        248
+      ]
+    },
+    {
+      "start": 1964.464,
+      "end": 1978.864,
+      "text": "首先涉及到，往往这种的呃交互场景啊，它不是以就是一个 dollar 一一块钱来做，它可能都不是以一分钱来做单位的，它可能是非常非常小，就是 fraction of a penny。",
+      "source_segment_indexes": [
+        249
+      ],
+      "source_segment_ids": [
+        249
+      ]
+    },
+    {
+      "start": 1979.344,
+      "end": 1985.984,
+      "text": "那这个时候传统的这个轨道是跑不了这种，就是所谓的叫微 payment 微支付，它跑不了的。",
+      "source_segment_indexes": [
+        250
+      ],
+      "source_segment_ids": [
+        250
+      ]
+    },
+    {
+      "start": 1986.944,
+      "end": 1997.824,
+      "text": "二呢，我刚刚回到回到我刚刚讲，就是它原来是一对一的一个支付关系，现在可能是一对多，甚至一对多再对多，它可能有不同层次的。",
+      "source_segment_indexes": [
+        251
+      ],
+      "source_segment_ids": [
+        251
+      ]
+    },
+    {
+      "start": 1998.464,
+      "end": 2003.584,
+      "text": "那整个在这个 payment 流程中，可能传统的呃管道还是解决不了。",
+      "source_segment_indexes": [
+        252
+      ],
+      "source_segment_ids": [
+        252
+      ]
+    },
+    {
+      "start": 2004.864,
+      "end": 2023.744,
+      "text": "所以说，真正要做到这个 agent 能够自己有自己的身份，然后自己能有自己的这个 permission 啊，然后再去跟多个别的 agent 啊去去交互，这个传统肯定解决不了，它是需要一个完全新的 infra 去出呃来来来去 enable 这个这个场景的。",
+      "source_segment_indexes": [
+        253
+      ],
+      "source_segment_ids": [
+        253
+      ]
+    },
+    {
+      "start": 2024.144,
+      "end": 2032.144,
+      "text": "那么现在我们看到有一些初创公司在试着在做，但是应该还没有说跑到非常成熟的这种阶段。",
+      "source_segment_indexes": [
+        254
+      ],
+      "source_segment_ids": [
+        254
+      ]
+    },
+    {
+      "start": 2033.104,
+      "end": 2051.744,
+      "text": "所以说，在这个刚刚你讲到的这个支付轨道，相比于像 Visa、Mastercard 还有 PayPal 这样的老玩家的改造，他们已有的管呃轨道 versus 这些 Web 三啊、Crypto 这样的新玩家去建立他们的这个基建，你会更看好 Web 三、Crypto 这样的？",
+      "source_segment_indexes": [
+        255
+      ],
+      "source_segment_ids": [
+        255
+      ]
+    },
+    {
+      "start": 2052.144,
+      "end": 2055.504,
+      "text": "呃，我觉得，取还是取决于具体的使用场景。",
+      "source_segment_indexes": [
+        256
+      ],
+      "source_segment_ids": [
+        256
+      ]
+    },
+    {
+      "start": 2056.304,
+      "end": 2064.224,
+      "text": "如果是简简单单的，比如说我让我的 agent 去网上帮我找一双，找一双这个跑步鞋，对吧？",
+      "source_segment_indexes": [
+        257
+      ],
+      "source_segment_ids": [
+        257
+      ]
+    },
+    {
+      "start": 2064.304,
+      "end": 2079.264,
+      "text": "这个完全不需要用任何的这个 stable coin 稳定币去解决，这个是相对来说是比较简单的一个场景，可能用传统的轨道是更呃廉价、更可靠、更安全的这么一套解决方案。",
+      "source_segment_indexes": [
+        258
+      ],
+      "source_segment_ids": [
+        258
+      ]
+    },
+    {
+      "start": 2079.984,
+      "end": 2104.864,
+      "text": "但我涉及到就是我刚刚描述的相对比较复杂，比如说 agent 对就是一对多对多，而且是非常微小的，甚至是我们叫不光是微呃支付，甚至叫流支付，就是说你在每次用一定算力的时候，马上去做这个计价，然后再去做支付的时候，这个可能我觉得在这个场景下，可能对这种稳定币啊这个使用还是我觉得有一些潜力的。",
+      "source_segment_indexes": [
+        259
+      ],
+      "source_segment_ids": [
+        259
+      ]
+    },
+    {
+      "start": 2105.264,
+      "end": 2107.824,
+      "text": "嗯，在跟你探讨一下这个网络安全的问题。",
+      "source_segment_indexes": [
+        260
+      ],
+      "source_segment_ids": [
+        260
+      ]
+    },
+    {
+      "start": 2108.144,
+      "end": 2114.544,
+      "text": "我们知道，当疫情期间的时候，呃，当时的这个城堡的内外的物理的这种边界被打破。",
+      "source_segment_indexes": [
+        261
+      ],
+      "source_segment_ids": [
+        261
+      ]
+    },
+    {
+      "start": 2115.024,
+      "end": 2120.544,
+      "text": "那我们现在的这个网络安全，你从 agentic 的这个 AI 开始看到，有没有看到一些新的方式？",
+      "source_segment_indexes": [
+        262
+      ],
+      "source_segment_ids": [
+        262
+      ]
+    },
+    {
+      "start": 2120.544,
+      "end": 2129.744,
+      "text": "呃，我觉得目前在 agent 这一块儿，大家聊的最火的题目之一就是 agent identity，啊，就是 agent 的身份。",
+      "source_segment_indexes": [
+        263
+      ],
+      "source_segment_ids": [
+        263
+      ]
+    },
+    {
+      "start": 2130.544,
+      "end": 2160.144,
+      "text": "呃，从早期的 agent 借呃这个智能体借用人的身份去做一些一些工作，比如说呃调用 API，啊，到现在说 agent，呃啊必须要有自己的 agent native identity，然后甚至甚至涉及到就是 agent，实际上你看我们早期的这个网络安全哈，相对来说它是一个呃简单的描述就是看门。",
+      "source_segment_indexes": [
+        264
+      ],
+      "source_segment_ids": [
+        264
+      ]
+    },
+    {
+      "start": 2160.9,
+      "end": 2161.14,
+      "text": "对吧？",
+      "source_segment_indexes": [
+        265
+      ],
+      "source_segment_ids": [
+        265
+      ]
+    },
+    {
+      "start": 2161.22,
+      "end": 2163.62,
+      "text": "就是确定你这个人是可以进到这里来的。",
+      "source_segment_indexes": [
+        266
+      ],
+      "source_segment_ids": [
+        266
+      ]
+    },
+    {
+      "start": 2164.18,
+      "end": 2168.1,
+      "text": "进到这里来之后做什么，可能会有一些简单的解决方案。",
+      "source_segment_indexes": [
+        267
+      ],
+      "source_segment_ids": [
+        267
+      ]
+    },
+    {
+      "start": 2168.5,
+      "end": 2177.3,
+      "text": "但是更多情况就是看你这个知道你这个作作为作为一个有智慧的人，是不会去去乱呃调用工具啊去做一些不该做的事情。",
+      "source_segment_indexes": [
+        268
+      ],
+      "source_segment_ids": [
+        268
+      ]
+    },
+    {
+      "start": 2177.86,
+      "end": 2181.06,
+      "text": "那实际上人们对A阵的这种信任还没有达到那个程度。",
+      "source_segment_indexes": [
+        269
+      ],
+      "source_segment_ids": [
+        269
+      ]
+    },
+    {
+      "start": 2181.54,
+      "end": 2191.54,
+      "text": "那也就是说，现在我我决定说这个A阵是可以去接触这些resources，接触不管是data啊，接触是呃接触各种各样的工具的时候，那我还要看到这个A阵实时它在做什么。",
+      "source_segment_indexes": [
+        270
+      ],
+      "source_segment_ids": [
+        270
+      ]
+    },
+    {
+      "start": 2192.18,
+      "end": 2198.26,
+      "text": "我还要后期再能再能做审计，然后A阵出错的时候，我怎么再去做这种回滚，去做remediation。",
+      "source_segment_indexes": [
+        271
+      ],
+      "source_segment_ids": [
+        271
+      ]
+    },
+    {
+      "start": 2198.82,
+      "end": 2206.34,
+      "text": "这一套系统，我觉得现在大家是非常非常关注的一个一个领域，啊，也是有一些不错的公司。",
+      "source_segment_indexes": [
+        272
+      ],
+      "source_segment_ids": [
+        272
+      ]
+    },
+    {
+      "start": 2207.06,
+      "end": 2213.38,
+      "text": "我觉得一是融了很多钱，二是可能现在都已经达到，比如说啊被收购啊。",
+      "source_segment_indexes": [
+        273
+      ],
+      "source_segment_ids": [
+        273
+      ]
+    },
+    {
+      "start": 2213.38,
+      "end": 2221.38,
+      "text": "你像之前有一家公司叫Security AI，有一家公司叫Vesa，这都是相对来说比较成功的案例啊，就是在Agent Identity这一块儿。",
+      "source_segment_indexes": [
+        274
+      ],
+      "source_segment_ids": [
+        274
+      ]
+    },
+    {
+      "start": 2221.86,
+      "end": 2227.94,
+      "text": "啊，还有一块呢，就是数数据安全，这个也是一个比较永恒的话题啊。",
+      "source_segment_indexes": [
+        275
+      ],
+      "source_segment_ids": [
+        275
+      ]
+    },
+    {
+      "start": 2228.02,
+      "end": 2249.38,
+      "text": "当你这个A阵在实时的调用数据的时候，啊，数据安全的这一套这套防防御体系要做的非常非常的严密啊，因为很多数据是A阵是不能看到的啊，涉及到比如说个人隐私的东西，这这一套东西怎么去做更颗粒化的管理，这也是一个相对来说比较热的话题。",
+      "source_segment_indexes": [
+        276
+      ],
+      "source_segment_ids": [
+        276
+      ]
+    },
+    {
+      "start": 2249.54,
+      "end": 2258.1,
+      "text": "除此之外，数据安全我觉得还有还有非常非常多的这个领域吧，这个是一个相对来说啊大家永远都会会关注的。",
+      "source_segment_indexes": [
+        277
+      ],
+      "source_segment_ids": [
+        277
+      ]
+    },
+    {
+      "start": 2258.5,
+      "end": 2268.74,
+      "text": "比如说这个Model Security这一块，你像我们之前投的那个Hidden Layer啊，还有之前有一家公司叫Protect AI，也是被很高的价格收购了啊。",
+      "source_segment_indexes": [
+        278
+      ],
+      "source_segment_ids": [
+        278
+      ]
+    },
+    {
+      "start": 2268.82,
+      "end": 2285.54,
+      "text": "大家对这个Model Security不停的去做这种类似于Red Teaming或者做Pen Testing啊，去确认你的Model在这个投放了之后不会被啊，比如说叫Prompt Injection Attack啊，不会被这个别人提走一些秘密的数据啊。",
+      "source_segment_indexes": [
+        279
+      ],
+      "source_segment_ids": [
+        279
+      ]
+    },
+    {
+      "start": 2285.62,
+      "end": 2292.02,
+      "text": "这一套东西是一个相对来说啊比较新的领域，大家也都会比较在乎啊。",
+      "source_segment_indexes": [
+        280
+      ],
+      "source_segment_ids": [
+        280
+      ]
+    },
+    {
+      "start": 2292.34,
+      "end": 2310.5,
+      "text": "首先，你的Model在放在外面，我不会被一个黑客去去呃去去黑，相当于是让这个Model去leak去泄露啊，比如说客户的数据啊，我比较比较隐私的数据这一套东西啊，这一块也是相对来说比较比较受关注的。",
+      "source_segment_indexes": [
+        281
+      ],
+      "source_segment_ids": [
+        281
+      ]
+    },
+    {
+      "start": 2311.46,
+      "end": 2317.38,
+      "text": "你觉得现在传统的安全类的公司，他们已经具备能力去解决这些新的问题吗？",
+      "source_segment_indexes": [
+        282
+      ],
+      "source_segment_ids": [
+        282
+      ]
+    },
+    {
+      "start": 2318.02,
+      "end": 2320.82,
+      "text": "很多都没有，很多都没有啊。",
+      "source_segment_indexes": [
+        283
+      ],
+      "source_segment_ids": [
+        283
+      ]
+    },
+    {
+      "start": 2320.9,
+      "end": 2329.06,
+      "text": "我觉得首先A阵的出现，完全创造了一个新的Attack Surface，一个一个一个攻击面。",
+      "source_segment_indexes": [
+        284
+      ],
+      "source_segment_ids": [
+        284
+      ]
+    },
+    {
+      "start": 2330.02,
+      "end": 2338.02,
+      "text": "而且传统的Cyber Security，传统的网络安全是我觉得是以防御被动防御为主吧。",
+      "source_segment_indexes": [
+        285
+      ],
+      "source_segment_ids": [
+        285
+      ]
+    },
+    {
+      "start": 2338.58,
+      "end": 2357.14,
+      "text": "啊，现在完全要变成主动防御啊，因为A阵它做事的速度，它能够造成的这个呃潜在的风险是这种传统的被动防御是无法预见到的啊，也没有办法避免啊。",
+      "source_segment_indexes": [
+        286
+      ],
+      "source_segment_ids": [
+        286
+      ]
+    },
+    {
+      "start": 2357.86,
+      "end": 2360.1,
+      "text": "所以怎么去提供这种主动防御？",
+      "source_segment_indexes": [
+        287
+      ],
+      "source_segment_ids": [
+        287
+      ]
+    },
+    {
+      "start": 2360.1,
+      "end": 2384.66,
+      "text": "就像我之前说的这种啊，模型安全这边啊，实际上就是大家投入了很多很多的这个资金，很多精力去去研究研究这个方面啊，这个就是一个主动防御的代表，就做比如说类似于叫我们经常说的叫Red Teaming这一块啊，这个是很多传统的这个比如说做Firewall啊，做这种Human啊人的Identity啊这块是无法解决的。",
+      "source_segment_indexes": [
+        288
+      ],
+      "source_segment_ids": [
+        288
+      ]
+    },
+    {
+      "start": 2385.14,
+      "end": 2398.1,
+      "text": "实际上除了A阵本身作为一个新的Attack Surface之外啊，还有还有非常非常多的这个啊，比如像这个数据数据安全。",
+      "source_segment_indexes": [
+        289
+      ],
+      "source_segment_ids": [
+        289
+      ]
+    },
+    {
+      "start": 2398.538,
+      "end": 2430.058,
+      "text": "就是得叫对data security，啊，就是AI的这个部署使得，首先你的你的我们叫threat actors变了，就是从原来这种你的威胁是全是来自于外部，现在变成了其实内部也可以形成威胁，因为往往agents不管是受外部的这种prompt injection的影响，或者说自己就去做产生一些机器的这种幻觉，它会产生很多就是你无法预见的内部的这个威胁，",
+      "source_segment_indexes": [
+        290
+      ],
+      "source_segment_ids": [
+        290
+      ]
+    },
+    {
+      "start": 2430.378,
+      "end": 2431.658,
+      "text": "这个东西你怎么去解决？",
+      "source_segment_indexes": [
+        291
+      ],
+      "source_segment_ids": [
+        291
+      ]
+    },
+    {
+      "start": 2432.378,
+      "end": 2456.378,
+      "text": "现在是很难解决的这个事儿，啊，agent我们叫这个运行时runtime security现在是非常难解决的一件事，就是你可以知道，OK，我是给了这个agent access，它可以去到这种几个不同的环境里去做事情，但是它实时的在正在做什么，做的这个事儿是不是我让它做的事儿，这个事儿是不是合规的，这个现在是很难真正看到的，",
+      "source_segment_indexes": [
+        292
+      ],
+      "source_segment_ids": [
+        292
+      ]
+    },
+    {
+      "start": 2456.858,
+      "end": 2462.618,
+      "text": "有很多公司现在在说我们是在做这个runtime security，但是真正其实做到规模的我们现在还没有看到。",
+      "source_segment_indexes": [
+        293
+      ],
+      "source_segment_ids": [
+        293
+      ]
+    },
+    {
+      "start": 2462.858,
+      "end": 2466.778,
+      "text": "你觉得现在AI它能够胜任去写底层的一些代码吗？",
+      "source_segment_indexes": [
+        294
+      ],
+      "source_segment_ids": [
+        294
+      ]
+    },
+    {
+      "start": 2466.778,
+      "end": 2474.458,
+      "text": "比如说数据库的这些引擎，特别是对于这个延迟，然后吞吐量以及对于稳定性要求极高的这种环境？",
+      "source_segment_indexes": [
+        295
+      ],
+      "source_segment_ids": [
+        295
+      ]
+    },
+    {
+      "start": 2474.778,
+      "end": 2510.698,
+      "text": "嗯，我觉得它写底层的代码可能现在还是有一些距离的，我觉得停停停留在应用层面为主吧，写底层的代码它的复杂程度远远超过于现在现有agent能力范围，而且底层代码实际上它本身你看在agent写代码的时候，它是一个类似于机概率有有一个概率性的呃这个这个元素在里面的，啊，而底层代码百分之九十九的这个这个可这个可靠度是不行的，必须要百分之百，",
+      "source_segment_indexes": [
+        296
+      ],
+      "source_segment_ids": [
+        296
+      ]
+    },
+    {
+      "start": 2511.178,
+      "end": 2537.898,
+      "text": "因为底层代码底层的工具，这个底层的infra一旦出错，整个公司可能面临的是一个可能是毁灭性的打击，所以在这里我觉得首先agent它能力还没有到那一部分，二是人对它的这种信任还没有到那一部分，而在这个application层面就是应用层面写出现出现错误，它有一定的这种概率性是可以容忍的，因为它一旦出错之后，它产生的风险它产生的这种damage实际上是有限的。",
+      "source_segment_indexes": [
+        297
+      ],
+      "source_segment_ids": [
+        297
+      ]
+    },
+    {
+      "start": 2538.378,
+      "end": 2542.298,
+      "text": "那这样的一个能力边界对于infra的一些创业公司有一些什么启发呢？",
+      "source_segment_indexes": [
+        298
+      ],
+      "source_segment_ids": [
+        298
+      ]
+    },
+    {
+      "start": 2542.778,
+      "end": 2568.058,
+      "text": "呃，有一些比如说在这个呃写代码这一块，你看就是大家最熟悉的就是这个codex呀，code，code啊，然后另外有一项什么open用open，hand，open，code这个kilo啊，cline这种公司就可以就有很多很多啊这类相对来说叫叫open，source的platform啊，然后呢，除此之外就是由于这个机器写的代码的这个量在在飞速的增长，",
+      "source_segment_indexes": [
+        299
+      ],
+      "source_segment_ids": [
+        299
+      ]
+    },
+    {
+      "start": 2568.058,
+      "end": 2572.458,
+      "text": "很多人就说OK，那我们做这个做review的时候，是不是也要用机器来做review？",
+      "source_segment_indexes": [
+        300
+      ],
+      "source_segment_ids": [
+        300
+      ]
+    },
+    {
+      "start": 2572.618,
+      "end": 2597.578,
+      "text": "这个是肯定的，因为多数时间这个你把你的code给另外一个一个engineer去review的时候，人家也做自己的工作，人家可能就是多数看一下，比如说就是就是很简单的看一下你有没有你的你的difference啊什么的，呃，基本上就是一个check the box的这么一个motion啊，那另外这一块儿我觉得呃就是code review这一块儿现在有很多比较有趣的公司，",
+      "source_segment_indexes": [
+        301
+      ],
+      "source_segment_ids": [
+        301
+      ]
+    },
+    {
+      "start": 2597.658,
+      "end": 2629.098,
+      "text": "你像code，rabbit啊，codal啊，呃这个这个grabtile这类的公司其实也是融了不少钱，而且是成长还是相对比较快的，啊，因为对这个呃机器产生的这个code这个这个这个呃质量啊，大家现在还是存在一定的这种质疑质疑程度的，那除此之外，实际上现在很多呃就是你刚刚提到的这个基础层面的呃软件或者基础层面的代码去写，因为它出错的成本是非常非常高的，",
+      "source_segment_indexes": [
+        302
+      ],
+      "source_segment_ids": [
+        302
+      ]
+    },
+    {
+      "start": 2629.498,
+      "end": 2636.538,
+      "text": "那这个时候呢，呃呃就需要在早期做这个计划叫planning stage或者在做。",
+      "source_segment_indexes": [
+        303
+      ],
+      "source_segment_ids": [
+        303
+      ]
+    },
+    {
+      "start": 2636.582,
+      "end": 2654.742,
+      "text": "这个设计的时候就需要有一些AI的辅助，啊，确定你在早期设计这一套后端怎么写code，后端写这个软件的时候，你的合规、你的这个风险的控制就已经在最早最早设计层面的时候，啊，被考虑到了。",
+      "source_segment_indexes": [
+        304
+      ],
+      "source_segment_ids": [
+        304
+      ]
+    },
+    {
+      "start": 2655.382,
+      "end": 2677.142,
+      "text": "那现在有一有一些很很有趣的公司在这在这个层面已经做出了一些呃小的traction，比如说像那个呃Clover Security啊，这个Prime Security啊，还有啊Clearly，Ciso啊，Depth First，就是这个这个list还是这个这个这个这个list还是蛮长的。",
+      "source_segment_indexes": [
+        305
+      ],
+      "source_segment_ids": [
+        305
+      ]
+    },
+    {
+      "start": 2677.142,
+      "end": 2678.742,
+      "text": "他们实际上的理念是什么呢？",
+      "source_segment_indexes": [
+        306
+      ],
+      "source_segment_ids": [
+        306
+      ]
+    },
+    {
+      "start": 2679.782,
+      "end": 2694.742,
+      "text": "就是说在这个code gen就是是呃这个代码生成啊这一块呢，他们觉得是基本上是用比较前端的模型，比如说用Opus用Codex去去去写，就已经呃写的可可很好了。",
+      "source_segment_indexes": [
+        307
+      ],
+      "source_segment_ids": [
+        307
+      ]
+    },
+    {
+      "start": 2695.382,
+      "end": 2702.742,
+      "text": "那真正能够有护城河、长期护城河或者长期能站得住脚的呢是什么呢？",
+      "source_segment_indexes": [
+        308
+      ],
+      "source_segment_ids": [
+        308
+      ]
+    },
+    {
+      "start": 2702.742,
+      "end": 2710.102,
+      "text": "是你必须确定你的呃记忆、你的context是会集中到你的这层面。",
+      "source_segment_indexes": [
+        309
+      ],
+      "source_segment_ids": [
+        309
+      ]
+    },
+    {
+      "start": 2711.222,
+      "end": 2726.022,
+      "text": "那么你看像Claude Code还有这个Codex，如果Codex有一天决定要要变成完全closed的一个system，像像Claude Code一样的话，啊，它可能会威胁到很多这个做open呃open source的这个platform的生存。",
+      "source_segment_indexes": [
+        310
+      ],
+      "source_segment_ids": [
+        310
+      ]
+    },
+    {
+      "start": 2727.302,
+      "end": 2736.742,
+      "text": "而且code review本身这一块呢，它是最后review所有的成品，它对本身的这个context，它我觉得看到的是非常有限的。",
+      "source_segment_indexes": [
+        311
+      ],
+      "source_segment_ids": [
+        311
+      ]
+    },
+    {
+      "start": 2737.382,
+      "end": 2757.782,
+      "text": "那很多人现在想法就是说，真正能够看到更多context呃的地方，还是在我刚刚提到的这个design这一块，它的这个软件的设计层面啊，因为在早期设计的层面，你你的这个接触的数据就非常的多，比如说你要看你的Jira啊里面的ticket的这个这个information，然后你要看你的Slack，你要看你的Notion Board，",
+      "source_segment_indexes": [
+        312
+      ],
+      "source_segment_ids": [
+        312
+      ]
+    },
+    {
+      "start": 2758.262,
+      "end": 2783.302,
+      "text": "这一套就是呃就变成了一个非常呃自然的natural的一个一个焦点，就是你在整个software呃设计软件设计的流程中，这个公司对这个软件的preference，它的它的这个嗯呃比如说个人的喜好或者个性化的一些设置是设定啊，或者甚至产业具体产业的要求，就完全集中在这一点上，他们能够看到所有的context。",
+      "source_segment_indexes": [
+        313
+      ],
+      "source_segment_ids": [
+        313
+      ]
+    },
+    {
+      "start": 2784.022,
+      "end": 2787.942,
+      "text": "我觉得这一块实际上就回到你刚刚的问题那里，是一个非常有趣的领域。",
+      "source_segment_indexes": [
+        314
+      ],
+      "source_segment_ids": [
+        314
+      ]
+    },
+    {
+      "start": 2787.942,
+      "end": 2790.422,
+      "text": "这个领域我们现在在真的是在看的比较多一些。",
+      "source_segment_indexes": [
+        315
+      ],
+      "source_segment_ids": [
+        315
+      ]
+    },
+    {
+      "start": 2790.822,
+      "end": 2798.822,
+      "text": "我觉得其实到最后最简单的一句话就是context king is king，就context是是是是是王道啊。",
+      "source_segment_indexes": [
+        316
+      ],
+      "source_segment_ids": [
+        316
+      ]
+    },
+    {
+      "start": 2798.982,
+      "end": 2807.702,
+      "text": "在整个的这个流程中，谁是能抓住这个context accumulation的，就是context的集中，谁我觉得是最终能够能够啊跑赢的。",
+      "source_segment_indexes": [
+        317
+      ],
+      "source_segment_ids": [
+        317
+      ]
+    },
+    {
+      "start": 2809.062,
+      "end": 2823.942,
+      "text": "最后一个问题，是想问关于这个合规行业的AI落地，比如说像医院呐，还有这个金融行业这种强监管的行业，我们知道AI落地的这个难度可能不是在技术本身，而是在它的这个合规、可审计、包括问责。",
+      "source_segment_indexes": [
+        318
+      ],
+      "source_segment_ids": [
+        318
+      ]
+    },
+    {
+      "start": 2824.262,
+      "end": 2827.382,
+      "text": "合规行业的AI未来应该是怎么样往前推进？",
+      "source_segment_indexes": [
+        319
+      ],
+      "source_segment_ids": [
+        319
+      ]
+    },
+    {
+      "start": 2829.222,
+      "end": 2833.462,
+      "text": "呃，我觉得这个实际上它不是一个技术问题，这是一个know how的问题。",
+      "source_segment_indexes": [
+        320
+      ],
+      "source_segment_ids": [
+        320
+      ]
+    },
+    {
+      "start": 2834.022,
+      "end": 2844.182,
+      "text": "嗯，首先你必须在这个领域待了很久，呃，往往最后卡住这些公司的，或者就是让他们有受阻力的地方，并不是在技术层面。",
+      "source_segment_indexes": [
+        321
+      ],
+      "source_segment_ids": [
+        321
+      ]
+    },
+    {
+      "start": 2844.742,
+      "end": 2854.662,
+      "text": "呃，我觉得你能够把这个整个合规这一套复杂的这个流程跑通，呃，才是才是真正的重点啊。",
+      "source_segment_indexes": [
+        322
+      ],
+      "source_segment_ids": [
+        322
+      ]
+    },
+    {
+      "start": 2854.822,
+      "end": 2861.462,
+      "text": "比如说一个一个例子就是我们现在投了一家，我们现在还没有没有发布这个信息啊，可能下周这个信息就发布出来了。",
+      "source_segment_indexes": [
+        323
+      ],
+      "source_segment_ids": [
+        323
+      ]
+    },
+    {
+      "start": 2861.942,
+      "end": 2874.662,
+      "text": "我们投了一家呃软件平台，这个软件平台实际上帮助实际上是帮助啊别的软件啊，尤其是网络安全这一块儿啊，把它的产品卖给卖给政府的。",
+      "source_segment_indexes": [
+        324
+      ],
+      "source_segment_ids": [
+        324
+      ]
+    },
+    {
+      "start": 2875.68,
+      "end": 2881.44,
+      "text": "那涉及到政府这一块，就是相对来说是真的是高监管、高风险的一些具体的应用场景。",
+      "source_segment_indexes": [
+        325
+      ],
+      "source_segment_ids": [
+        325
+      ]
+    },
+    {
+      "start": 2882.24,
+      "end": 2888.72,
+      "text": "那这一块很多公司是不愿意去去花这个时间、花这个精力去研究，我怎么把我的产品直接卖给政府？",
+      "source_segment_indexes": [
+        326
+      ],
+      "source_segment_ids": [
+        326
+      ]
+    },
+    {
+      "start": 2889.44,
+      "end": 2895.2,
+      "text": "卖给政府，首先卖，尤其是美国联邦政府，它是有一个相对严格的审核体系，叫FedRAMP。",
+      "source_segment_indexes": [
+        327
+      ],
+      "source_segment_ids": [
+        327
+      ]
+    },
+    {
+      "start": 2895.84,
+      "end": 2915.04,
+      "text": "这个东西基本上，除非你是特别特别大的一家公司，然后这个钱是很多，然后可以去去请很多 lawyer 帮你做这个，然后请审计帮你做这个事儿，啊，它的成本可能下来要基本上到五百万到一千五百万美元才能够跑完这个流程，而且这个流程总总总总共的长度是三年时间。",
+      "source_segment_indexes": [
+        328
+      ],
+      "source_segment_ids": [
+        328
+      ]
+    },
+    {
+      "start": 2916.08,
+      "end": 2923.52,
+      "text": "那这个过程使得绝大多数的公司对跟这种类似于高监管、高风险的这种生意是望而却步的。",
+      "source_segment_indexes": [
+        329
+      ],
+      "source_segment_ids": [
+        329
+      ]
+    },
+    {
+      "start": 2924.16,
+      "end": 2929.92,
+      "text": "啊，他自己首先就是我我自己现有的这个客户都跑不完呢，那我干嘛要花这个钱？",
+      "source_segment_indexes": [
+        330
+      ],
+      "source_segment_ids": [
+        330
+      ]
+    },
+    {
+      "start": 2930.72,
+      "end": 2932.96,
+      "text": "而且是要三年以后才能见到见到效果。",
+      "source_segment_indexes": [
+        331
+      ],
+      "source_segment_ids": [
+        331
+      ]
+    },
+    {
+      "start": 2933.68,
+      "end": 2958.56,
+      "text": "那实际上就是有这种类似于，呃，其实你在这个网络安全这一块也会看到类似于一个叫 MSSP，叫 Manage Service Security Service Provider 这种公司，实际上它是一个类似于像是承包商吧，或者一个中介，别人的软件卖给他们的平台，然后呢，他们的平台再转卖给呃，比如说后端的这个呃医院系统啊，或者政府系统啊，",
+      "source_segment_indexes": [
+        332
+      ],
+      "source_segment_ids": [
+        332
+      ]
+    },
+    {
+      "start": 2958.64,
+      "end": 2959.84,
+      "text": "或者甚至大的公司。",
+      "source_segment_indexes": [
+        333
+      ],
+      "source_segment_ids": [
+        333
+      ]
+    },
+    {
+      "start": 2960.48,
+      "end": 2969.84,
+      "text": "啊，这个实际上就把整个合规的这个负担从本身软件公司这一块转嫁到了这个中间商这这一层面。",
+      "source_segment_indexes": [
+        334
+      ],
+      "source_segment_ids": [
+        334
+      ]
+    },
+    {
+      "start": 2970.32,
+      "end": 2978.0,
+      "text": "那中间商实际上他在做了很多很多年的这种积累之后呢，他对整个流程是非常了解，甚至他已经有现有的渠道了。",
+      "source_segment_indexes": [
+        335
+      ],
+      "source_segment_ids": [
+        335
+      ]
+    },
+    {
+      "start": 2978.56,
+      "end": 2988.08,
+      "text": "那对啊，这种这类的公司想要进入呃，如果他们有需要进入到这种高监管的这种环境下，其实这一条路我觉得是一个挺好的解决方案。",
+      "source_segment_indexes": [
+        336
+      ],
+      "source_segment_ids": [
+        336
+      ]
+    },
+    {
+      "start": 2988.56,
+      "end": 3011.6,
+      "text": "这也是为什么我们投了这家公司之后，发现确实是这个呃，处在一个客户是追主要主动来找我们的这种情况下，我们不需要去去花太多精力去去说服客户，而客户会直接来找我们，因为他们也是呃在这方面啊啊 struggle 很很久很久。",
+      "source_segment_indexes": [
+        337
+      ],
+      "source_segment_ids": [
+        337
+      ]
+    },
+    {
+      "start": 3012.4,
+      "end": 3017.68,
+      "text": "如果你要给现在正在创业的小伙伴们指一个你比较看好的方向，你会指哪些方向？",
+      "source_segment_indexes": [
+        338
+      ],
+      "source_segment_ids": [
+        338
+      ]
+    },
+    {
+      "start": 3018.4,
+      "end": 3033.68,
+      "text": "方向不敢说吧，我觉得其实 AI 的这种普遍的部署、大众化甚至平民化，呃，使得创业的成本或者创业的门槛变得非常非常的低。",
+      "source_segment_indexes": [
+        339
+      ],
+      "source_segment_ids": [
+        339
+      ]
+    },
+    {
+      "start": 3034.72,
+      "end": 3050.72,
+      "text": "呃，就像早期这个这个这个 cloud 这个云的这个部署，使得软件公司啊去做创业啊去做新的产品也变得很低，你自己不需要建数据中心，自己不需要买一堆这个这个这个机器。",
+      "source_segment_indexes": [
+        340
+      ],
+      "source_segment_ids": [
+        340
+      ]
+    },
+    {
+      "start": 3051.52,
+      "end": 3059.76,
+      "text": "呃，那 AI 这个尤其尤其替代了这个写代码的这些呃需需你不需要再去学写写代码了。",
+      "source_segment_indexes": [
+        341
+      ],
+      "source_segment_ids": [
+        341
+      ]
+    },
+    {
+      "start": 3060.16,
+      "end": 3075.44,
+      "text": "实际上你很简单就可以再再利用不管是 Lovable、Replit，甚至 Cursor 啊、CodeX 这这套就是非常非常普遍的系统去写一套啊相对来说比较完善的这个小的程序啊、小的小的呃呃小的产品。",
+      "source_segment_indexes": [
+        342
+      ],
+      "source_segment_ids": [
+        342
+      ]
+    },
+    {
+      "start": 3076.48,
+      "end": 3078.72,
+      "text": "那使得创业的门槛变得非常低。",
+      "source_segment_indexes": [
+        343
+      ],
+      "source_segment_ids": [
+        343
+      ]
+    },
+    {
+      "start": 3079.44,
+      "end": 3083.92,
+      "text": "那相对来说对你来对你这个门槛低了，对大家门槛都低了。",
+      "source_segment_indexes": [
+        344
+      ],
+      "source_segment_ids": [
+        344
+      ]
+    },
+    {
+      "start": 3084.64,
+      "end": 3088.64,
+      "text": "那更重要，最后它细分是细分差或者差异是出现在哪里呢？",
+      "source_segment_indexes": [
+        345
+      ],
+      "source_segment_ids": [
+        345
+      ]
+    },
+    {
+      "start": 3088.64,
+      "end": 3102.48,
+      "text": "就是对你你针对的某一个领域，你自己的 know how，在这一块可能就是你是来自于比如说这个传统健康服务产业，你对这个产业是非常非常了解的，它很多细节的东西是别人不知道的。",
+      "source_segment_indexes": [
+        346
+      ],
+      "source_segment_ids": [
+        346
+      ]
+    },
+    {
+      "start": 3102.88,
+      "end": 3113.04,
+      "text": "虽然大家用的工具都一样，但是你可以更合理的利用这个工具，而且你在早期在设计这个产品的时候，你就知道哪些东西是我只有在这个产业里待过的人泡过的人。",
+      "source_segment_indexes": [
+        347
+      ],
+      "source_segment_ids": [
+        347
+      ]
+    },
+    {
+      "start": 3113.343,
+      "end": 3118.223,
+      "text": "才知道的东西，这个我觉得是真正做出差异化的呃地方。",
+      "source_segment_indexes": [
+        348
+      ],
+      "source_segment_ids": [
+        348
+      ]
+    },
+    {
+      "start": 3118.383,
+      "end": 3124.943,
+      "text": "你在微软的站头部看到了这么多的创业项目，你最想给这些创业圈的小伙伴们一些什么样的建议？",
+      "source_segment_indexes": [
+        349
+      ],
+      "source_segment_ids": [
+        349
+      ]
+    },
+    {
+      "start": 3126.143,
+      "end": 3142.943,
+      "text": "呃，我觉得首先在技术层面，我觉得很多很多新的创业者是非常优秀的啊，但是可能我经常呃会遇到的一些问题，就是在后期的产品化、市场化上面还是有一些欠缺的。",
+      "source_segment_indexes": [
+        350
+      ],
+      "source_segment_ids": [
+        350
+      ]
+    },
+    {
+      "start": 3143.183,
+      "end": 3151.023,
+      "text": "当然，这个东西是很多是需要经验积累的啊，尤其是针对华人创业者，在这一块，我觉得还是有一些小的建议。",
+      "source_segment_indexes": [
+        351
+      ],
+      "source_segment_ids": [
+        351
+      ]
+    },
+    {
+      "start": 3151.023,
+      "end": 3172.783,
+      "text": "也就是说，早期的时候，呃，不要光考虑在技术层面做事情啊，我觉得要在整个生态系统里啊做一些调研，然后呢去了解你做的这个技术将来的应用针对的这个市场是哪些啊，把这个技术的应用具体化一些。",
+      "source_segment_indexes": [
+        352
+      ],
+      "source_segment_ids": [
+        352
+      ]
+    },
+    {
+      "start": 3173.583,
+      "end": 3190.383,
+      "text": "嗯，除此之外呢，我的建议是在比如说早期融资的过程中啊，不要光考虑啊，比如说我一定要达到某种啊估值啊，或者说我一定要拿非常非常大的投资机构呃的钱才算成功。",
+      "source_segment_indexes": [
+        353
+      ],
+      "source_segment_ids": [
+        353
+      ]
+    },
+    {
+      "start": 3190.703,
+      "end": 3204.783,
+      "text": "我觉得很多情况下，在早期创业的时候更注重的是速度，你能够找到相对合理的估值、相对合理的条款啊，和一个真正能够帮到你的投资人啊，其实是更重要的。",
+      "source_segment_indexes": [
+        354
+      ],
+      "source_segment_ids": [
+        354
+      ]
+    },
+    {
+      "start": 3205.103,
+      "end": 3208.463,
+      "text": "我觉得这会让你的速度提升很多啊。",
+      "source_segment_indexes": [
+        355
+      ],
+      "source_segment_ids": [
+        355
+      ]
+    },
+    {
+      "start": 3208.543,
+      "end": 3214.623,
+      "text": "还有呢，就是我觉得在融资量方面可以做一些考虑啊，更灵活一些啊。",
+      "source_segment_indexes": [
+        356
+      ],
+      "source_segment_ids": [
+        356
+      ]
+    },
+    {
+      "start": 3214.623,
+      "end": 3221.583,
+      "text": "很多当然我也知道很多，比如说做这个基础模型开发啊，原来起步价是非常非常高的。",
+      "source_segment_indexes": [
+        357
+      ],
+      "source_segment_ids": [
+        357
+      ]
+    },
+    {
+      "start": 3221.983,
+      "end": 3228.143,
+      "text": "现在呢，可能由于这个整个产业呃的的增长，这个起步价降低了。",
+      "source_segment_indexes": [
+        358
+      ],
+      "source_segment_ids": [
+        358
+      ]
+    },
+    {
+      "start": 3228.383,
+      "end": 3235.183,
+      "text": "但是你要想做基础模型训练，可能还是需要三千到五千万美元左右这一块呢。",
+      "source_segment_indexes": [
+        359
+      ],
+      "source_segment_ids": [
+        359
+      ]
+    },
+    {
+      "start": 3235.183,
+      "end": 3241.343,
+      "text": "我觉得很多投资人就比较比较头痛，你说我怎么第一笔就融这么大的啊？",
+      "source_segment_indexes": [
+        360
+      ],
+      "source_segment_ids": [
+        360
+      ]
+    },
+    {
+      "start": 3241.663,
+      "end": 3245.023,
+      "text": "这个这个款项，我觉得可以把它拆分开来。",
+      "source_segment_indexes": [
+        361
+      ],
+      "source_segment_ids": [
+        361
+      ]
+    },
+    {
+      "start": 3245.023,
+      "end": 3257.743,
+      "text": "嗯，比如说我先去融五个五个million，然后呢，先有一定早期的这个叫proof of concept啊，能够做到一些就是能够给人demo的东西。",
+      "source_segment_indexes": [
+        362
+      ],
+      "source_segment_ids": [
+        362
+      ]
+    },
+    {
+      "start": 3257.903,
+      "end": 3267.503,
+      "text": "我觉得把一个很大的一个融资的round拆分成一个一两个小的融资的round，然后呢，这样你的这个milestone可以设置的更更小一些。",
+      "source_segment_indexes": [
+        363
+      ],
+      "source_segment_ids": [
+        363
+      ]
+    },
+    {
+      "start": 3267.983,
+      "end": 3271.583,
+      "text": "这个可能到最后实际上是让你跑得更快的一种方式。",
+      "source_segment_indexes": [
+        364
+      ],
+      "source_segment_ids": [
+        364
+      ]
+    },
+    {
+      "start": 3272.543,
+      "end": 3281.663,
+      "text": "嗯，还有呢，我觉得嗯，更多的是我会看到很多创业者他在自己的领域他会非常熟悉。",
+      "source_segment_indexes": [
+        365
+      ],
+      "source_segment_ids": [
+        365
+      ]
+    },
+    {
+      "start": 3281.663,
+      "end": 3285.423,
+      "text": "我自己的领域内，我认识所有的人，我认识所有的公司。",
+      "source_segment_indexes": [
+        366
+      ],
+      "source_segment_ids": [
+        366
+      ]
+    },
+    {
+      "start": 3285.983,
+      "end": 3294.463,
+      "text": "但是往往你做的这个产品不光是卖给你自己的领域，是要卖给很多别的垂直领域，甚至你可能完全不了解的领域。",
+      "source_segment_indexes": [
+        367
+      ],
+      "source_segment_ids": [
+        367
+      ]
+    },
+    {
+      "start": 3295.023,
+      "end": 3316.383,
+      "text": "在这个时候，我觉得早期搭建团队的时候要在这上面有一些考量，这个人是不是就完全是跟你一样只做技术的，还是说在在他在技术层之外，他对别的产业有深度的了解，他知道怎么去帮你做go to market这一块，我觉得可能是在早期就需要做到做到一些考虑的。",
+      "source_segment_indexes": [
+        368
+      ],
+      "source_segment_ids": [
+        368
+      ]
+    },
+    {
+      "start": 3317.183,
+      "end": 3327.983,
+      "text": "啊，还有呢，就是我觉得嗯，可能不管是在尤其是华人创业者啊，我见到很多华人创业在这在这在这上面就是踩坑啊。",
+      "source_segment_indexes": [
+        369
+      ],
+      "source_segment_ids": [
+        369
+      ]
+    },
+    {
+      "start": 3328.463,
+      "end": 3335.023,
+      "text": "他们更多不不管是因为性格啊，或者是文化方面，可能更愿意跟别的华人一起一起创业啊。",
+      "source_segment_indexes": [
+        370
+      ],
+      "source_segment_ids": [
+        370
+      ]
+    },
+    {
+      "start": 3335.023,
+      "end": 3352.223,
+      "text": "我觉得在这个团队上的这种多元化也可以有一些考量，因为毕竟你做生意卖给的这个对象不不只是华人企业啊，你可能涉及到一些别的传统产业，还是需要有一些不同背景的人一起来帮你提供不同的这种perspective啊。",
+      "source_segment_indexes": [
+        371
+      ],
+      "source_segment_ids": [
+        371
+      ]
+    },
+    {
+      "start": 3352.889,
+      "end": 3372.969,
+      "text": "所以在早期团队搭建的时候，我更建议说去跨出自己的这个舒适圈，去了解一些呃别的背景的人啊，然后跟你实际上不光是在技术上有呃认同，但是更多在别的skill的呃这个这个gap上面可以有一定互补的。",
+      "source_segment_indexes": [
+        372
+      ],
+      "source_segment_ids": [
+        372
+      ]
+    },
+    {
+      "start": 3372.969,
+      "end": 3385.929,
+      "text": "啊，除此之外呢，我也自己打一个小广告啊，就是呃我非常非常喜欢跟跟创业者合作啊，喜欢跟他们聊天，因为我觉得在这个过程中啊，对我自己是个很大的提升啊。",
+      "source_segment_indexes": [
+        373
+      ],
+      "source_segment_ids": [
+        373
+      ]
+    },
+    {
+      "start": 3385.929,
+      "end": 3393.609,
+      "text": "我也曾经帮过很多啊很很优秀的创业者们啊去融资啊，去考虑后端的这个业务拓展啊。",
+      "source_segment_indexes": [
+        374
+      ],
+      "source_segment_ids": [
+        374
+      ]
+    },
+    {
+      "start": 3393.609,
+      "end": 3401.689,
+      "text": "所以有这个有兴趣做做创业的这个小伙伴们啊，愿意愿意找我聊天的，我也很很开心，很欢迎。",
+      "source_segment_indexes": [
+        375
+      ],
+      "source_segment_ids": [
+        375
+      ]
+    },
+    {
+      "start": 3402.329,
+      "end": 3406.009,
+      "text": "谢谢你今天精彩的分享，哎，非常感谢，感谢感谢，嗯。",
+      "source_segment_indexes": [
+        376
+      ],
+      "source_segment_ids": [
+        376
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 3.12,
+      "end": 30.72,
+      "text": "你怎么看待微软的护城河？它是变强了还是变弱了？变得非常强了。Context is king，是是王道。实际上，真正的最终护城河在哪里？是这个workflow的这个know how，是独有的这个企业级数据。真正的有用的数据，实际上都是在防火墙后面的。一般做agent的公司不能轻易能拿到的。整个对AI算力啊，实际上它已经超过了万亿级的级别。",
+      "refined_segment_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "start": 30.88,
+      "end": 39.84,
+      "text": "而你看，所以最大的AI公司就包括OpenAI、Cloud这种公司，它实际上它所有的年化的ARR加在一起，可能都不过百亿。",
+      "refined_segment_indexes": [
+        9
+      ]
+    },
+    {
+      "start": 54.32,
+      "end": 76.16,
+      "text": "阿冷，今天欢迎你来到硅谷坐标的节目。你是微软战投M12的合伙人，微软又是一个最重要的企业软件的玩家，你又在微软的生态里看到的是最前沿的软件的一些变化。你今天的分享将会对我们来说有非常重要的一个指导意义。你可以先给我们介绍一下M12吗？可以可以，感谢感谢热情邀请哈。",
+      "refined_segment_indexes": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "start": 76.24,
+      "end": 110.96,
+      "text": "呃，M12是这个微软的战投基金，呃，我们是直接从资产负债表上啊做投资的，大概每年的投资额有呃一点五亿美元左右啊，基本上呃去看中的几个方向，包括这个基础的啊算力啊，新一代的这种芯片硬件啊，再往上呢会看一些软件类，包括这个相对来说水平的软件啊，数据库这方面的科技，然后外加还有一些到后面是垂直的这个具体的软件application啊，",
+      "refined_segment_indexes": [
+        15
+      ]
+    },
+    {
+      "start": 110.96,
+      "end": 140.72,
+      "text": "另外这里头还包括比如说网络安全啊，然后甚至到后期还会涉及到一些比如说做gaming啊游戏产业呀啊，还有一些更前沿的技术，基本上就这几个大块。对，你们一般是投哪一个阶段呢？大概你们的ticket size有多大？ticket size基本上是五到十个million吧。啊，我们一般呢是愿意跟这个比较头部的所谓的财务投资人去合作，类似于就是能叫得出来名字的，基本上都是跟我们有这个use case的合同案例的。",
+      "refined_segment_indexes": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "start": 141.44,
+      "end": 175.44,
+      "text": "啊，基本上是focus在就是A轮和B轮之间，当然呢也会有时候啊有例外会看一些比较早期啊或者甚至更后期的项目，这个没有一个特别特别硬性的规定，但是我们对外说基本上就是A轮B轮为主。明白，所以你们是更加处在一个跟投，不是一个领头的一个角色是吧？对，我觉得其实跟投与领投，实际上怎么说呢？嗯，从创业者角度来讲啊，有一个好的商业投资人、财务投资人作为领头，我觉得是更合适的。",
+      "refined_segment_indexes": [
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "start": 175.44,
+      "end": 205.04,
+      "text": "啊，因为从这个这个价格制定啊，以及它的这个呃投资条款的制定方面，在商业投资人、财务投资人这边，他们可能会做的更专业性更强一点，更强一点。二呢，呃，就是由于战投基金往往会带一些他们自己商业方面的考虑，这个使得就是在投资的时候，可能他们考虑的维度不大一样啊。那就是考虑到这些呢，实际上作为财务投资人，他们更适合做为领头。",
+      "refined_segment_indexes": [
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "start": 205.6,
+      "end": 238.88,
+      "text": "这里我觉得其实领头与否，嗯，更重要其实要看重，就是说首先，呃，这个战投基金它投多少？多数的战投基金是投相对来说比较小的ticket size啊，基本上很多你像这边比较有名的SaaS公司，他们每次投可能就投五十万、一百万，是就是大概几百万这样。像微软M12这边能投一次五千呃五百万到一千万之之类的，呃这种这种区间的这个战投基金还是相对少的。啊，我们也愿意就是提供更多更多的资源，所以我们带来的不光是",
+      "refined_segment_indexes": [
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "start": 238.855,
+      "end": 263.335,
+      "text": "是这个五百万到一千万之间的资金支持，更多的是我们后端庞大的这个生态系统啊，以及给他们带来的商业价值。现在如果有一个初创公司，然后他想去融资，那你觉得他应该怎么样去思考？我应该去找企业战投部，还是去找像独立的这种VC财务考虑的VC？嗯，我觉得都要去。我我的建议是都都要去聊。为什么呢？",
+      "refined_segment_indexes": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "start": 263.335,
+      "end": 286.455,
+      "text": "就是尤其是就是现在我们看到，就是特别特别多的这个就是AI深层科技的创业者，嗯，他的技术性非常强，聊的东西呢也是需要对方或者或者投资人的这种技术啊经验啊，也需要有一定的门槛的。那么我觉得在这方面，你如果光跟财务投资人聊，可能聊的深度是有限的。",
+      "refined_segment_indexes": [
+        38,
+        39
+      ]
+    },
+    {
+      "start": 287.255,
+      "end": 318.775,
+      "text": "呃，比如说你在确定了一个财务投资人领投之外，啊，我的建议是去找一些比较合适、比较懂这个领域的战略投资人，帮你去round out这个这个这个round啊。这样子呢，我觉得这个combination实际上是这个组合啊是非常非常powerful的，而且会给整个呃整个市场一个非常强的信号。现在如果有一个初创公司，他出来创业，他很担心的是自己可能做的一个idea很快就被大厂的一个feature给淹没了。",
+      "refined_segment_indexes": [
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "start": 319.255,
+      "end": 343.415,
+      "text": "那你会作为这个呃M twelve，你会怎么样去考量这个初创公司？他在面对这些大厂，他真正的这个生存空间有多大？哎，我觉得这个担心有点被过度放大化了。为什么呢？就是我当我在最早最早开始设涉及这个涉入这个VC领域的时候，经常就有人会问我在做一家公司，经常有投资人问我为什么Google Google不能这么做？",
+      "refined_segment_indexes": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "start": 343.975,
+      "end": 364.615,
+      "text": "我觉得其实你觉得Google或者是微软Amazon这样的公司，它是一个非常非常庞大的公司，但是真正涉及到具体产品的时候，他们其实很小的一个团队在做某一个具体的产品，那实际上他们能够调用到的资源也是有限的。还有更更重要的一点，实际上就是你的速度。",
+      "refined_segment_indexes": [
+        48,
+        49
+      ]
+    },
+    {
+      "start": 365.415,
+      "end": 400.375,
+      "text": "很多情况下，大的公司由于它的现有的产品已经非常的赚钱，或者已经卖给了很多很多的客户，他要再做自己的这个新的产品，自己去去革命自己的话，这个是有一定阻力，或者是有一定的惯性在里面的。那你作为一个初创公司，你是没有全面的那些包袱的，你可以跑得更快，可以用最新的技术，可以去反复的试错。相对来说，你的试错成本又很低，因为你是个初创公司，而不是亚马逊、谷歌、微软这样的公司。你这边要出一点错，你的客户是非常非常不愿意这个原谅你的，对吧？",
+      "refined_segment_indexes": [
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "start": 400.615,
+      "end": 431.895,
+      "text": "那你作为一个初创公司，你卖给的一般卖给的对象可能是相对来说比较呃，也是类似于初创公司吧，更愿意去试错的啊这种这种对象。那么对你来说，你可以可以迅速的去迭代，迅速的去去调整你的产品，你还是有非常非常大的优势的。呃，除此之外呢，我觉得还有像类似于这种大的公司、大的平台，他们更多是在呃专注于建一个通用的呃技术，比如说针对市场中百分之八十的用户。",
+      "refined_segment_indexes": [
+        54,
+        55,
+        56
+      ]
+    },
+    {
+      "start": 432.455,
+      "end": 465.655,
+      "text": "而你作为一个这初创公司，你可以先找到一个相对比较niche或者一个比较窄的垂直，这个垂直呢是你非常非常懂的，对吧？那你不去做这种百分之八十的通用式技术、通用式软件，你可以就做这百分之一、百分之二的垂直性软件、垂直性技术，这个实际上也可以做的非常非常的大。今天想跟你聊一聊这个软件行业的整个的一个背景吧。呃，软件行业今年是从去年开始发生了一个很大的变化。你是怎么去看待现在这些公司？哪些是被颠覆的？",
+      "refined_segment_indexes": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    {
+      "start": 466.135,
+      "end": 492.344,
+      "text": "哪些可能部分颠覆？哪些可能是被错误定价的？或哪些其实是护城河在这个过程中是被增强的？嗯嗯，这个这个就是大家在市场上经常叫的这个trillion dollar question啊，就是万亿级的一个问题。呃，我觉得首先SaaS公司啊，软件公司不能一概而论，啊，因为软件它分垂直软件，分水平式软件，然后呢，这个里面细分化就特层次又非常非常的复杂。",
+      "refined_segment_indexes": [
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ]
+    },
+    {
+      "start": 493.224,
+      "end": 522.424,
+      "text": "那我觉得最容易被这个颠覆的软件，属于那种怎么说那种类似于搬运工的软件，比如说把你的数据从这里搬到那里，它非常的非常怎么说呢，非常的浅。啊，二呢，类似于像像比如说RPA软件，叫Robotic Process Automation的这种软件呢，它从最早的只是说把你的行为录下来，录下来之后呢，再用机器相当于是重复它。这个里面实际上是相对来说比较简单的一个技术。",
+      "refined_segment_indexes": [
+        69,
+        70,
+        71
+      ]
+    },
+    {
+      "start": 523.144,
+      "end": 553.304,
+      "text": "那实际上用现在这种AI的agents啊，去去智能体去代替的话，它是从最早的一个呃录制反复，到现在是去去reason啊，去去推理，然后呢再去act再去执行。啊，我觉得这是一个是非常颠覆性的一个技术，这个可能会取代市场上绝大多数提供这RPA啊呃服务的公司。啊，除此之外呢，我觉得类似于单feature的公司，单功能的这种软件公司肯定是会被颠覆的。",
+      "refined_segment_indexes": [
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "start": 553.624,
+      "end": 586.984,
+      "text": "一个很好的例子就是我前一段时间跟呃跟一个朋友聊到，他去做这个核磁啊，核磁共振，结果呢，他跟他的医生说，你把那个我的呃这个这个拍出来的片子给我好吗？然后医生就给他寄了一个CD过来，他放进电脑里一看，首先在你现在找能读CD的那个盒子，现在大家基本上都没有没有那个东西了。他把它放进去一看，他这需要一个非常特殊的软件。这个软件呢，你要去买，这是一家公司，不知道是可能是美国中中西部地区的一家公司提供的软件，你要去花可能几百美金去买一个软件。",
+      "refined_segment_indexes": [
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    {
+      "start": 587.384,
+      "end": 618.104,
+      "text": "他说我不可能是花这个钱的，那直接就把他这个他把这个文件就扔给了Cloud，Cloud实时就造了一个软件去把这个东西读取出来了。所以类似类似于做这种非常呃非常薄啊，或者是非常非常这个single feature，就是单单功能的软件，我觉得是非常容易被颠覆的。啊，除此之外还有比如说我们经常提到这个做consulting做这个咨询公司啊，做这个research市场调研的，我觉得这一块也很可能啊很快的。",
+      "refined_segment_indexes": [
+        79,
+        80,
+        81
+      ]
+    },
+    {
+      "start": 618.184,
+      "end": 650.424,
+      "text": "而且我们现在正在看到它被它它被取代被颠覆，因为就是你作为一个consultant，作为一个这个咨询师，你其实就是读取很多二手的这种市场材料，你可能会做一些一手的这种市场调查，但多数是以二手材料为主啊，那你肯定跑不过一个agent的速度，它可以在很短的时间内读完所有这个网上这个有限的这这种网网网上能够看到的看到的资料，这个你是没法去跟它竞争的。那我觉得什么东西是不容易被取代或者不容易被颠覆的呢？",
+      "refined_segment_indexes": [
+        82,
+        83
+      ]
+    },
+    {
+      "start": 650.504,
+      "end": 678.104,
+      "text": "就是其实你看去pull agent去去这个deploy agent的时候呢，agent首先它是个智能体，但是agent需要大量的是大量的context，对吧？它需要大量的数据，真实的数据，我们经常管的叫ground truth，也就是说你的数据的本身的真实性啊，这个数据的来源，agent是作为一个提供agent的公司，它是没有的，对吧？它是类似于从外到里这么一个motion。",
+      "refined_segment_indexes": [
+        84,
+        85,
+        86
+      ]
+    },
+    {
+      "start": 678.664,
+      "end": 713.064,
+      "text": "那如果你比如说你是一个像Llassian或者ServiceNow这种公司，你本身就是一个非常自然的啊呃焦点，什么呢？什么自然焦点？就是整个企业信息流的焦点。不管你是从你的ticketing啊，这个这个IT的support这一块IT的支持ticketing system到后端的呃Slack，比如说聊天软件，就是整一套它会集中在某一个点。那类似于像ServiceNow这种公司，它就变成了一个非常自然的焦点。",
+      "refined_segment_indexes": [
+        87,
+        88,
+        89,
+        90,
+        91
+      ]
+    },
+    {
+      "start": 713.544,
+      "end": 728.052,
+      "text": "这种公司我觉得是是非常非常有持久性的。为什么呢？因为它实际上是不会被agent取代，而是它以在 enable agent，他会给 agent 真正他需要的信息，这个我觉得是很难很难取代的。",
+      "refined_segment_indexes": [
+        92,
+        93,
+        94,
+        95
+      ]
+    },
+    {
+      "start": 728.532,
+      "end": 751.492,
+      "text": "还有一点更重要的就是，首先，就像我们最早这个造汽车哈，啊，就是从这种作坊式的这种制造，就是你基本上从这个发动机到后面的轮胎到后面拧螺丝都要一套一个一个师傅，呃，去去做下来，到后面呢变成非常非常 specialized、非常专业化的这种流水线，你的工作就是这么一拧这么一个螺丝。",
+      "refined_segment_indexes": [
+        96
+      ]
+    },
+    {
+      "start": 752.052,
+      "end": 778.852,
+      "text": "那如果我做一个公司，我的核心竞争力是比如说服务给啊这个 healthcare、服务给这个健康产业的，那我的核心竞争力并不再去搭建一个 AI agent，对吧？那我要搭建 AI agent，取消在我现在现有的这个供应商，那我是不是还得出去再去招这类的这类的专业的人士？这类人士又很贵，建起来之后我还就要再测试做合规，这一套成本算下来可能是不划算的，对吧？",
+      "refined_segment_indexes": [
+        97,
+        98,
+        99
+      ]
+    },
+    {
+      "start": 779.092,
+      "end": 813.812,
+      "text": "还有就是这个责任的呃这个转移，当你出现任何问题的时候，你可以直接去找 ServiceNow，可以去找了拉线，他们会负责帮你去做这个这个回滚啊，帮你去做这个 patching。那如果你是完全自己建立的，那你的责任人就是你自己，对吧？甚至你就是说这个责任就是在这个 agent 这里，那你怎么去到后期解决这个所有 support 啊，这个支持啊，回滚啊，或者 patching remediation 这一套流程？这个我觉得企业如果去算一笔这个账的话，它很快会发现这这边是不 make sense 的。",
+      "refined_segment_indexes": [
+        100,
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "start": 814.212,
+      "end": 845.652,
+      "text": "所以像 Atlassian 的 CEO，呃，也是在之前接受采访的时候说，其实企业的这个真正护城河是他们积累下的几十年的这种呃流程的经验，这就是他们的护城河，是吧？对对，说的完全正确。呃，举一个例子啊，我这个数据有点有点有点老了，但是我觉得还是非常有代表性的。啊，GPT four 这已经是很很感觉很久以前的一个尖端的 model。呃，GPT four 整个在训练过程中大概用了一点五个 petabyte，呃的数据量。",
+      "refined_segment_indexes": [
+        104,
+        105,
+        106,
+        107,
+        108
+      ]
+    },
+    {
+      "start": 846.532,
+      "end": 876.532,
+      "text": "这个数据听起来好像很大，实际上跟真正企业防火墙后边的数据的呃这个量来比，这个是微不足道的。首先，你像类似于 JP Morgan，像我之前的这个公司 PayPal，每一家公司防火墙后面都有十五、二十、三十 petabyte 这种 data，呃，它的数据量很明显的。其实你看，达到一个 GPT four 这种呃 GPT 四的这种啊水平的智能，它才用了那么一点点的数据。",
+      "refined_segment_indexes": [
+        109,
+        110,
+        111
+      ]
+    },
+    {
+      "start": 876.772,
+      "end": 910.052,
+      "text": "当企业能够把自己的这个数据利用起来，合理利用起来，这个对性能的提升、对可用性的提升，这个是不是一点点的？会非常非常的可观。所以这个 Atlassian CEO 讲的，我觉得完全正确。真正的有用的数据实际上都是在防火墙后面的，那这个东西是一般做 agent 的公司不能轻易能拿到的，所以真正的 moat 是在那里。所以这些呃传统的软件公司加上 AI 的功能，呃，对比于这些 AI 原生的公司，你更看好哪一个？",
+      "refined_segment_indexes": [
+        112,
+        113,
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "start": 910.772,
+      "end": 941.732,
+      "text": "呃，我觉得要分开来看吧。嗯，首先看你针对的客户是什么。呃，传统的公司，我觉得卖给大企业，大企业是由于它整个购买采购的这个流程是非常非常复杂的，而且涉及到呃可能非常非常严格复杂的监管程序。那他更愿意去买这个，比如说类似于微软呀，买 Atlassian、买 ServiceNow 这种公司的服务，因为它是一套成熟的服务体系已经建成了。",
+      "refined_segment_indexes": [
+        117,
+        118,
+        119,
+        120
+      ]
+    },
+    {
+      "start": 942.612,
+      "end": 974.171,
+      "text": "那对他们来说，一旦出现错误，这个成本是非常非常可观的，甚至是不能容忍的。那对于一个相对来说可能服务于新兴的这种呃产业，或者是嗯就服务给别的 startup、别的 startup。可能更愿意用这个比较AI native的工具。他们比如说新的小的startup，他招到招来的人，他可能就是在学校里的时候，就是一直在用这种新的工具再去试验。对他们来说，试错成本很低，而且他们可以跑得更快。",
+      "refined_segment_indexes": [
+        121,
+        122,
+        123,
+        124,
+        125
+      ]
+    },
+    {
+      "start": 974.171,
+      "end": 1009.131,
+      "text": "我之前讲说，你作为一个startup，你怎么觉得，怎么怎么才能保证说不被谷歌的一个feature release啊这个发布淹淹没掉？那你就是比别人跑得更快，那就要去敢于去试用这种新的呃新的工具、新的平台、新的model。那我觉得实际上它是有针对不同的市场，都是可以我觉得活得很好的。嗯，你怎么看待微软的护城河？它是变强了还是变弱了？呃，我觉得总体来说是变得强，变得非常强了。啊，怎么说呢？回到我们刚刚的那个话题，就是实际上真正的最终护城河在哪里？",
+      "refined_segment_indexes": [
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133
+      ]
+    },
+    {
+      "start": 1009.211,
+      "end": 1037.531,
+      "text": "就像你说的，是这个workflow的这个know how是是独有的这个企业级数据这一块呢？首先，微软本身它是服务于整个全世界所有的企业，甚至多数的个人都在都在用微软的呃服务嘛。那我们呃能够看到的数据，能够看到的人的这种在生产过程中呃积累的这种know how，我觉得是很少公司能够跟我们相媲美的。",
+      "refined_segment_indexes": [
+        134,
+        135,
+        136
+      ]
+    },
+    {
+      "start": 1038.251,
+      "end": 1057.211,
+      "text": "啊，这一点呢，实际上在搭建agent中可以使，虽然我们可能速度没有人跑得快，但是真正搭起来的agent，我觉得从使用呃体验这一块儿呃可以做的非常非常的好。啊，还有更重要的一点就是企业其实在购买软件、购买服务的时候，它还是存在一定惯性的。",
+      "refined_segment_indexes": [
+        137,
+        138
+      ]
+    },
+    {
+      "start": 1057.931,
+      "end": 1089.211,
+      "text": "它每去onboard一个新的软件进来，它是有非常非常复杂流程，就是很多这种它的区分啊，并不是发生在技术层面的，而是发生在这种非技术层面，比如说人跟人之间的这种交流，就是你销售团队懂不懂怎么去卖给enterprise，懂不懂卖给n这个卖给SMB，所谓中小企业，它实际上是完全不同的一种，甚至讲了不同的语言。所以说在这一块，你有现有的这个渠道、现有的distribution，这是一个非常非常难以跨越的啊一个一个一个护城河。",
+      "refined_segment_indexes": [
+        139,
+        140
+      ]
+    },
+    {
+      "start": 1090.011,
+      "end": 1123.051,
+      "text": "那当然，我觉得微软其实自己做的产品很多地方也需要提升，在这一块用户体验上，比如说我们的GitHub Copilot，那这一块我们是承认其实是有一些提升的空间的。但是对我们来说，由于这前面大量的这种积累，由于我们庞大的这种用户群体、生态群体，我们一旦需要去有新的这个质量、性能提升的时候，我们是可以做的非常非常好的。嗯，资本市场一直在反复的讨论，像微软这样的大厂资本开支和它的AI收入之间的这个落差。嗯嗯。",
+      "refined_segment_indexes": [
+        141,
+        142,
+        143,
+        144
+      ]
+    },
+    {
+      "start": 1123.051,
+      "end": 1152.651,
+      "text": "嗯，包括一些谷歌，谷歌的CEO也承认会有一些可能AI的这种泡沫的一些元素。嗯。那你们从微软的角度上，特别是你们看到的就是企业在真正的部署环境中的有多少的比例，versus像还是在POC探索阶段的这个比例，你觉得趋势是怎么样的？对，就是对AI的应用部署，它不是一个齐头并进，它不是一个水平式的前进，它是在某些领域里面跑得非常非常快，某些领域基本为零。",
+      "refined_segment_indexes": [
+        145,
+        146,
+        147,
+        148
+      ]
+    },
+    {
+      "start": 1153.291,
+      "end": 1181.051,
+      "text": "呃，很好的一个例子就是在AI写代码这里，啊，基本上现在我们碰到过的公司，甚至就是微软内部，绝大多数的写代码的这个过程是被agent取代了。就在这一块，其实AI的推进是非常非常快的。啊，在有一些领域就稍微慢一些，比如说类似于传统的这个生产呃制造业啊啊health care啊啊这一类呢，我觉得AI它是相对来说可能还是在慢慢的开始。",
+      "refined_segment_indexes": [
+        149,
+        150,
+        151
+      ]
+    },
+    {
+      "start": 1181.691,
+      "end": 1214.87,
+      "text": "啊，它有很多这种也是非技术上的原因，监管啊、privacy就隐私这个这个法律上面这一套东西会限制它的呃进度。那说说回到这个投资这一块啊，其实怎么说呢？不能叫，我觉得叫。泡沫这个词儿其实是一个非常不严谨的叫法。呃，首先，泡沫的定义是什么呢？呃，我觉得要区分来看，就是这个东西它的价值和它的价格要分开来看。AI是没有价值，是不是有价值？它是绝对有价值的。",
+      "refined_segment_indexes": [
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159
+      ]
+    },
+    {
+      "start": 1214.87,
+      "end": 1246.47,
+      "text": "这个我觉得是没有办法去去质疑它本身的价值。那在价格上面，我觉得是不是有一些存在跟风呢？或者就我们这边叫FOMO啊啊，这个这叫错过恐惧症吧？是绝对绝对是有存在的。呃，很多公司初创公司，由于它创创始人背景很厉害，出来之后，我觉得可能都不要说产品成熟与否，就是连技术可能做研发这块是刚刚开始，就可能会融几亿甚至十亿这样的这个种子轮。",
+      "refined_segment_indexes": [
+        160,
+        161,
+        162,
+        163,
+        164
+      ]
+    },
+    {
+      "start": 1247.35,
+      "end": 1279.59,
+      "text": "呃，我觉得这个可能是市场呃多少有一些过热，多少有一些FOMO的表现啊，这个是存在的。而且从具体数字上来看，这个整个对AI算力啊啊，还有就是包括早期公司的投资，实际上它已经超过了万亿级的级别，或者已经接近万亿级了。而你看，最最大的AI公司就包OpenAI啊、Quant这种公司，它实际上它所有的年化的ARR加在一起，可能都不过百亿。",
+      "refined_segment_indexes": [
+        165,
+        166,
+        167
+      ]
+    },
+    {
+      "start": 1281.11,
+      "end": 1307.27,
+      "text": "这个实际上是有一个很大的落差。那么中间这个gap是可能有人估算是可能一万亿，或者是八千亿美元左右，这么一个一个一个一个gap。也就是说，接下来三年到五年之间，这些公司或者新兴的AI公司需要产生大概八千亿美元的总体的这个营收，才能够去justify前面这个万亿级的投资。我觉得这个gap还是挺大的。",
+      "refined_segment_indexes": [
+        168,
+        169,
+        170,
+        171
+      ]
+    },
+    {
+      "start": 1307.27,
+      "end": 1337.27,
+      "text": "嗯，市场可能需要重新考虑一下，就是说早期公司的这种啊投资定价。二呢，就是硬件算力中心这块投资方面，可能更需要专注于，比如说不光是建新的data center数据中心，而是要把现有的数据中心的效率提升，通过新的硬件的开发啊，或者是在软件层面对现有数据中心的使用率提升。",
+      "refined_segment_indexes": [
+        172,
+        173
+      ]
+    },
+    {
+      "start": 1337.27,
+      "end": 1369.99,
+      "text": "现有数据中心实际上在看那种G GPU集群的时候，它的使用率是非常非常低的。有的人会说是百分之三十到四十，我们可能觉得这个可能会更低。那你其实花了上万亿的投资在这里面建了这么多的data center，你的使用率却那么低，对吧？你那是去继继续去建新的data center，还是说focus on就是把现有的这个data center的使用率提升？我觉得这个也是市场可能接下来十十二到十八个月之间需要去去搞清楚的一件事情。为什么它的这个使用率这么低？",
+      "refined_segment_indexes": [
+        174,
+        175,
+        176,
+        177,
+        178,
+        179
+      ]
+    },
+    {
+      "start": 1370.47,
+      "end": 1404.31,
+      "text": "啊，这里头原因就复很复杂了啊。首先就是GPU在做训练或者在做inference的时候，啊，它的这个failure就失败率是出错率是非常非常高的。啊，它有时候会出错是软出错在软件软件层面，甚至有时候出错会出错在什么呢？就是在比如说这个GPU跟GPU之间，或者这个blade跟就是我们讲板子跟板子之间的这种连接线的这种安装出错，都是有可能造成整个这个训练过程去去出错啊失败的。它其实出错的原因会有很多。",
+      "refined_segment_indexes": [
+        180,
+        181,
+        182,
+        183,
+        184
+      ]
+    },
+    {
+      "start": 1404.31,
+      "end": 1435.91,
+      "text": "还有一点呢，就是在呃去做训练的时候，他们会叫overprovision，就相当于是会有很多backup的GPU的放在里面，就是空闲着，但是是是需要去做，一旦出错的时候，马上把这个workload shift到另外一个GPU这边。它是非常非常有益的这种做法。那如果有什么好办法可以去改进吗？呃，有啊。现在有一些人提出来，就是说怎么把GPU像早期的做这个虚拟啊VM。",
+      "refined_segment_indexes": [
+        185,
+        186,
+        187,
+        188,
+        189
+      ]
+    },
+    {
+      "start": 1436.01,
+      "end": 1451.77,
+      "text": "啊，虚拟机的方式啊，能够让这个虚首先就VM就像Docker、Container、Kubernetes，实际上最早是提升了这个使呃硬件的使用率嘛。那大家想说，是不可以用同样的VM的方式去解决GPU的使用率？",
+      "refined_segment_indexes": [
+        190,
+        191
+      ]
+    },
+    {
+      "start": 1452.25,
+      "end": 1473.29,
+      "text": "还有呢，就是我觉得甚至在硬件方面都有很多新的技术出来啊，去想去tackle这个这个GPU，它比如说七百分之七十的这种failure，呃是出错率，其中可能涉及到有大概百分之十到二十五原因是出在啊硬件的这个这个数据数据线连接端，这都有可能的。",
+      "refined_segment_indexes": [
+        192
+      ]
+    },
+    {
+      "start": 1473.93,
+      "end": 1505.77,
+      "text": "那光纤呢是一个比较昂贵的一个替代品，但是光纤本身自己也有一些物理特性，比如说它对温度的敏感，可能提升或者降低一摄氏度都会都影响它的这个performance啊，甚至就是它的这个弯折呀，就是传光纤的这个管子里面的这个如果有折呃把它把它弯弯到一定程度，也可能是使它的这个信号衰减，就是它有很多很多问题，这个都会导致啊整个GPU在在跑，不管你是training还是跑inference的时候出错。",
+      "refined_segment_indexes": [
+        193,
+        194
+      ]
+    },
+    {
+      "start": 1506.33,
+      "end": 1539.05,
+      "text": "那么现在有一些新的技术，比如说想用这个RF啊，就是我们讲的这个叫毫米波啊，去去代替这个铜或者是光纤。我我的意思想说，就是实际上大家都在从不同的角度去解决这个GPU应用率以及降呃应用率低的问题，去降低它的出错率。这样子，你可以从比如说原来百分之三十甚至更低的应用率提升到比如说百分之六十到七十，而且与此同时还可以提升你的这个energy分，降低你对能源的这个这个需求。明白。",
+      "refined_segment_indexes": [
+        195,
+        196,
+        197,
+        198
+      ]
+    },
+    {
+      "start": 1539.45,
+      "end": 1559.29,
+      "text": "那想跟你聊聊你们M十二一一共投了大概有一百多家的被投公司，然后其中有十五家是独角兽，然后六家已经IPO了。你可不可以给我们提供一张就是你们的portfolio的一张这个投资的画像？哪一些是你们重仓的赛道？然后都有一些哪些代表性的公司？呃，重仓的赛道有几个吧？",
+      "refined_segment_indexes": [
+        199,
+        200,
+        201,
+        202,
+        203
+      ]
+    },
+    {
+      "start": 1559.29,
+      "end": 1594.09,
+      "text": "我觉得呃一就是我们讲的新的硬件啊，比如说呃这个用光学呃去取代传统的传统的硬件传统的芯片啊，这个现在是一个非常非常热的一个赛道。我们在这边也做了一些布局，在正硬件层面，我们有比如说类似比较代表性的NeuralFast啊、DMatrix，这都是非常非常成功的公司。啊，另外呢，我觉得一个方还有一个方向就是数据层面啊，大家我觉得都能看到，实际上数据是最终的这个护城河之一。",
+      "refined_segment_indexes": [
+        204,
+        205,
+        206
+      ]
+    },
+    {
+      "start": 1594.89,
+      "end": 1604.89,
+      "text": "那么我们也投了像MicroOne这类的公司，就是帮助企企业啊去有一手的非常有针对性的非常干净的高质量的数据啊。",
+      "refined_segment_indexes": [
+        207
+      ]
+    },
+    {
+      "start": 1604.89,
+      "end": 1632.49,
+      "text": "除此之外呢，我们也投了比如说类似于像这个做网络安全，而且是在就是也比较AI Native的情况下提供网络安全啊服务，提供这个呃模型安全，类似于像比较代表性的就是HiddenLayer啊、Reach Security啊这类的公司呢，我们还是比较看好，甚至对这个这个模型的这种performance的eval啊，类似于Aris，这都是比较有代表性的公司。",
+      "refined_segment_indexes": [
+        208,
+        209
+      ]
+    },
+    {
+      "start": 1633.13,
+      "end": 1654.49,
+      "text": "嗯，除此之外呢，我们还看了一些呃类似于垂直垂直方面的公司啊，比如说我们最近投了一家叫Didaril，它是用AI去替代传统的这个供应链上的一些一些workflow。这家公司我觉得是我们在垂直领呃垂直领域这边还是投的不错的一家公司。",
+      "refined_segment_indexes": [
+        210,
+        211
+      ]
+    },
+    {
+      "start": 1655.45,
+      "end": 1688.224,
+      "text": "呃，除此之外呢，我们也慢慢在看一些哦，我还有一个领域忘忘记了，就是类似于在在gaming这一块儿啊，gaming实际上我觉得现在慢慢也是在回回暖的一个过程中，就是gaming之前整个产业的投资量是非常非常的低的。呃，我觉得现在是在在回暖的过程中，尤其是在大量的世界模型或者物理模型的这种开发的情况下，gaming变成了一个非常自然的使用场景，那使得大家对整个这个游戏产业有一个新的呃兴奋点吧。",
+      "refined_segment_indexes": [
+        212,
+        213,
+        214
+      ]
+    },
+    {
+      "start": 1688.864,
+      "end": 1720.384,
+      "text": "呃，除此之外呢，我们也在慢慢看一些有关区块链的呃项目。这个领域呢，是一个对我们来说相对来说本身区块链这个这个产业并不新，但对我们来说去寻找它和AI的结合点，这是一个相对来说比较新的课题。啊，尤其涉及到对这个agent的管理，agent身份的管理，啊，以及甚至涉及到了这个agent的支付这一块，我觉得还是可能会看到一些区块链技术的应用的。所以这一点我们也在慢慢的去去发掘。",
+      "refined_segment_indexes": [
+        215,
+        216,
+        217,
+        218
+      ]
+    },
+    {
+      "start": 1720.944,
+      "end": 1743.664,
+      "text": "讲到支付，因为你之前是背景是在PayPal Venture做投资，然后支付的这个赛道，其实你投了很多非常经典的一些标的。你看到的在这个AI agent的时代，这个支付的范式跟原来有一些什么样的不一样？非常不一样。首先，呃，支付的人变了，接这个接受这个payment接受支付的这个对象也变了。",
+      "refined_segment_indexes": [
+        219,
+        220,
+        221,
+        222
+      ]
+    },
+    {
+      "start": 1744.464,
+      "end": 1769.104,
+      "text": "那我们最早看到的，大家都会讲说这个这个agent支付啊，这个智能体支付，市场现在基本上还停留在一个叙事或者是一个实验的阶段，demo的阶段。呃，真正你说智能体去去做支付大量的这种呃支付还是基本上是看不到的。呃，大家觉得这个会是一个嗯下一个爆发点吧？",
+      "refined_segment_indexes": [
+        223,
+        224,
+        225
+      ]
+    },
+    {
+      "start": 1769.744,
+      "end": 1795.424,
+      "text": "嗯，很多它的这个obstacles它的它的挑战存在于首先法律上规定智能体是不能拿个人的信用卡信息的，这个是就是违反了我们叫叫PCI compliance。啊，就是你任何个人的信息，尤其是涉及到信用卡这种支付信息是不能直接给AI。",
+      "refined_segment_indexes": [
+        226,
+        227
+      ]
+    },
+    {
+      "start": 1795.424,
+      "end": 1826.544,
+      "text": "啊，那这里就是就有衍生了几个早期的解决方案，比如说给这个啊，你像Stripe就早早期推了一个解决方案是什么呢？给你一个叫虚拟卡，相当于就是一次性的。这个卡里头，比如说你可以提前写好这个卡里就只装一百块钱，然后你让agent去去去购物的时候就花到一百块钱，花完了就就结束了。去从别的维度来限制这个agent这个呃的自由。那这个呢，实际上我觉得不是一个长期的有持可持续性的解决方案。",
+      "refined_segment_indexes": [
+        228,
+        229,
+        230,
+        231,
+        232
+      ]
+    },
+    {
+      "start": 1826.544,
+      "end": 1857.104,
+      "text": "首先，这个速度非常的慢，而且这个还是在利用原有的真人的身份啊去去衍生一个新的信用卡，这个成本也很高。嗯，还有呢，就是比如说你去让你的agent去买东西之后，一旦出现了纠纷或者出现了错误的时候，原本是你跟一对一你跟商家之间的一个一个问题，现在变成了你跟商家再加agent一个问题，这个就变成了非常复杂的一个一个一个纠纷，这个是很难去解决的。",
+      "refined_segment_indexes": [
+        233,
+        234
+      ]
+    },
+    {
+      "start": 1857.824,
+      "end": 1890.624,
+      "text": "呃，另外一种解决方案呢，就是像Visa、MasterCard他们推出了叫tokenized credentials，就实际上是跳过了虚拟卡这一部分，直接用你个人的credentials，你个人的这个这个背景信息背景信息去直接跳到你的银行里，然后告诉银行里你是可以放这个这么多的款的，比如说这里可以放五块钱，然后呢，它通过你的这个呃叫tokenized credential去authenticate这个这个payment，这是一种做法。这个我觉得可能是近期来呃来看，我觉得还是相对可行的一个方案。",
+      "refined_segment_indexes": [
+        235,
+        236,
+        237
+      ]
+    },
+    {
+      "start": 1891.184,
+      "end": 1925.744,
+      "text": "但是涉及到真正的，我觉得这都不不能叫完全纯粹的agentic支付。呃，为什么呢？这个归根到底还是在用一个真人的身份。那么agent如果是比如说我是一家公司的这个采购，那我需要agent去帮我同时采购，比如说我要去做一个大模型的训练，去采购数据，去采购算力。甚至去采购不知道别的什么一套东西的话，那 agent 本身，他用谁的身份呢？",
+      "refined_segment_indexes": [
+        238,
+        239,
+        240,
+        241,
+        242
+      ]
+    },
+    {
+      "start": 1925.824,
+      "end": 1951.264,
+      "text": "他是用我采购员的身份呢，还是说自己有一个 agent native 的身份？这是一个很难解决的问题。怎么去给 agent 自己的一个身份？然后这个身份呢，怎么能够把它做成一个，呃，嗯，去可以去 verify、可以去审计的一个身份？还有就是涉及到之前我们可能看多数看到支付场景是一对一的，我去这个商店买东西，我给这个商店做支付。",
+      "refined_segment_indexes": [
+        243,
+        244,
+        245,
+        246,
+        247
+      ]
+    },
+    {
+      "start": 1951.744,
+      "end": 1985.984,
+      "text": "那我像我刚刚讲到的那个场景，比如说我这个 agent 要从这里去购买 data、购买数据，然后从这里购买算力，然后从别的地方再去可能给这个模型的提供商再付钱。首先涉及到，往往这种的呃交互场景啊，它不是以就是一个 dollar 一一块钱来做，它可能都不是以一分钱来做单位的，它可能是非常非常小，就是 fraction of a penny。那这个时候传统的这个轨道是跑不了这种，就是所谓的叫微 payment 微支付，它跑不了的。",
+      "refined_segment_indexes": [
+        248,
+        249,
+        250
+      ]
+    },
+    {
+      "start": 1986.944,
+      "end": 2003.584,
+      "text": "二呢，我刚刚回到回到我刚刚讲，就是它原来是一对一的一个支付关系，现在可能是一对多，甚至一对多再对多，它可能有不同层次的。那整个在这个 payment 流程中，可能传统的呃管道还是解决不了。",
+      "refined_segment_indexes": [
+        251,
+        252
+      ]
+    },
+    {
+      "start": 2004.864,
+      "end": 2032.144,
+      "text": "所以说，真正要做到这个 agent 能够自己有自己的身份，然后自己能有自己的这个 permission 啊，然后再去跟多个别的 agent 啊去去交互，这个传统肯定解决不了，它是需要一个完全新的 infra 去出呃来来来去 enable 这个这个场景的。那么现在我们看到有一些初创公司在试着在做，但是应该还没有说跑到非常成熟的这种阶段。",
+      "refined_segment_indexes": [
+        253,
+        254
+      ]
+    },
+    {
+      "start": 2033.104,
+      "end": 2064.224,
+      "text": "所以说，在这个刚刚你讲到的这个支付轨道，相比于像 Visa、Mastercard 还有 PayPal 这样的老玩家的改造，他们已有的管呃轨道 versus 这些 Web 三啊、Crypto 这样的新玩家去建立他们的这个基建，你会更看好 Web 三、Crypto 这样的？呃，我觉得，取还是取决于具体的使用场景。如果是简简单单的，比如说我让我的 agent 去网上帮我找一双，找一双这个跑步鞋，对吧？",
+      "refined_segment_indexes": [
+        255,
+        256,
+        257
+      ]
+    },
+    {
+      "start": 2064.304,
+      "end": 2079.264,
+      "text": "这个完全不需要用任何的这个 stable coin 稳定币去解决，这个是相对来说是比较简单的一个场景，可能用传统的轨道是更呃廉价、更可靠、更安全的这么一套解决方案。",
+      "refined_segment_indexes": [
+        258
+      ]
+    },
+    {
+      "start": 2079.984,
+      "end": 2114.544,
+      "text": "但我涉及到就是我刚刚描述的相对比较复杂，比如说 agent 对就是一对多对多，而且是非常微小的，甚至是我们叫不光是微呃支付，甚至叫流支付，就是说你在每次用一定算力的时候，马上去做这个计价，然后再去做支付的时候，这个可能我觉得在这个场景下，可能对这种稳定币啊这个使用还是我觉得有一些潜力的。嗯，在跟你探讨一下这个网络安全的问题。我们知道，当疫情期间的时候，呃，当时的这个城堡的内外的物理的这种边界被打破。",
+      "refined_segment_indexes": [
+        259,
+        260,
+        261
+      ]
+    },
+    {
+      "start": 2115.024,
+      "end": 2129.744,
+      "text": "那我们现在的这个网络安全，你从 agentic 的这个 AI 开始看到，有没有看到一些新的方式？呃，我觉得目前在 agent 这一块儿，大家聊的最火的题目之一就是 agent identity，啊，就是 agent 的身份。",
+      "refined_segment_indexes": [
+        262,
+        263
+      ]
+    },
+    {
+      "start": 2130.544,
+      "end": 2163.62,
+      "text": "呃，从早期的 agent 借呃这个智能体借用人的身份去做一些一些工作，比如说呃调用 API，啊，到现在说 agent，呃啊必须要有自己的 agent native identity，然后甚至甚至涉及到就是 agent，实际上你看我们早期的这个网络安全哈，相对来说它是一个呃简单的描述就是看门。对吧？就是确定你这个人是可以进到这里来的。",
+      "refined_segment_indexes": [
+        264,
+        265,
+        266
+      ]
+    },
+    {
+      "start": 2164.18,
+      "end": 2198.26,
+      "text": "进到这里来之后做什么，可能会有一些简单的解决方案。但是更多情况就是看你这个知道你这个作作为作为一个有智慧的人，是不会去去乱呃调用工具啊去做一些不该做的事情。那实际上人们对A阵的这种信任还没有达到那个程度。那也就是说，现在我我决定说这个A阵是可以去接触这些resources，接触不管是data啊，接触是呃接触各种各样的工具的时候，那我还要看到这个A阵实时它在做什么。我还要后期再能再能做审计，然后A阵出错的时候，我怎么再去做这种回滚，去做remediation。",
+      "refined_segment_indexes": [
+        267,
+        268,
+        269,
+        270,
+        271
+      ]
+    },
+    {
+      "start": 2198.82,
+      "end": 2227.94,
+      "text": "这一套系统，我觉得现在大家是非常非常关注的一个一个领域，啊，也是有一些不错的公司。我觉得一是融了很多钱，二是可能现在都已经达到，比如说啊被收购啊。你像之前有一家公司叫Security AI，有一家公司叫Vesa，这都是相对来说比较成功的案例啊，就是在Agent Identity这一块儿。啊，还有一块呢，就是数数据安全，这个也是一个比较永恒的话题啊。",
+      "refined_segment_indexes": [
+        272,
+        273,
+        274,
+        275
+      ]
+    },
+    {
+      "start": 2228.02,
+      "end": 2258.1,
+      "text": "当你这个A阵在实时的调用数据的时候，啊，数据安全的这一套这套防防御体系要做的非常非常的严密啊，因为很多数据是A阵是不能看到的啊，涉及到比如说个人隐私的东西，这这一套东西怎么去做更颗粒化的管理，这也是一个相对来说比较热的话题。除此之外，数据安全我觉得还有还有非常非常多的这个领域吧，这个是一个相对来说啊大家永远都会会关注的。",
+      "refined_segment_indexes": [
+        276,
+        277
+      ]
+    },
+    {
+      "start": 2258.5,
+      "end": 2292.02,
+      "text": "比如说这个Model Security这一块，你像我们之前投的那个Hidden Layer啊，还有之前有一家公司叫Protect AI，也是被很高的价格收购了啊。大家对这个Model Security不停的去做这种类似于Red Teaming或者做Pen Testing啊，去确认你的Model在这个投放了之后不会被啊，比如说叫Prompt Injection Attack啊，不会被这个别人提走一些秘密的数据啊。这一套东西是一个相对来说啊比较新的领域，大家也都会比较在乎啊。",
+      "refined_segment_indexes": [
+        278,
+        279,
+        280
+      ]
+    },
+    {
+      "start": 2292.34,
+      "end": 2320.82,
+      "text": "首先，你的Model在放在外面，我不会被一个黑客去去呃去去黑，相当于是让这个Model去leak去泄露啊，比如说客户的数据啊，我比较比较隐私的数据这一套东西啊，这一块也是相对来说比较比较受关注的。你觉得现在传统的安全类的公司，他们已经具备能力去解决这些新的问题吗？很多都没有，很多都没有啊。",
+      "refined_segment_indexes": [
+        281,
+        282,
+        283
+      ]
+    },
+    {
+      "start": 2320.9,
+      "end": 2338.02,
+      "text": "我觉得首先A阵的出现，完全创造了一个新的Attack Surface，一个一个一个攻击面。而且传统的Cyber Security，传统的网络安全是我觉得是以防御被动防御为主吧。",
+      "refined_segment_indexes": [
+        284,
+        285
+      ]
+    },
+    {
+      "start": 2338.58,
+      "end": 2360.1,
+      "text": "啊，现在完全要变成主动防御啊，因为A阵它做事的速度，它能够造成的这个呃潜在的风险是这种传统的被动防御是无法预见到的啊，也没有办法避免啊。所以怎么去提供这种主动防御？",
+      "refined_segment_indexes": [
+        286,
+        287
+      ]
+    },
+    {
+      "start": 2360.1,
+      "end": 2384.66,
+      "text": "就像我之前说的这种啊，模型安全这边啊，实际上就是大家投入了很多很多的这个资金，很多精力去去研究研究这个方面啊，这个就是一个主动防御的代表，就做比如说类似于叫我们经常说的叫Red Teaming这一块啊，这个是很多传统的这个比如说做Firewall啊，做这种Human啊人的Identity啊这块是无法解决的。",
+      "refined_segment_indexes": [
+        288
+      ]
+    },
+    {
+      "start": 2385.14,
+      "end": 2398.1,
+      "text": "实际上除了A阵本身作为一个新的Attack Surface之外啊，还有还有非常非常多的这个啊，比如像这个数据数据安全。",
+      "refined_segment_indexes": [
+        289
+      ]
+    },
+    {
+      "start": 2398.538,
+      "end": 2431.658,
+      "text": "就是得叫对data security，啊，就是AI的这个部署使得，首先你的你的我们叫threat actors变了，就是从原来这种你的威胁是全是来自于外部，现在变成了其实内部也可以形成威胁，因为往往agents不管是受外部的这种prompt injection的影响，或者说自己就去做产生一些机器的这种幻觉，它会产生很多就是你无法预见的内部的这个威胁，这个东西你怎么去解决？",
+      "refined_segment_indexes": [
+        290,
+        291
+      ]
+    },
+    {
+      "start": 2432.378,
+      "end": 2466.778,
+      "text": "现在是很难解决的这个事儿，啊，agent我们叫这个运行时runtime security现在是非常难解决的一件事，就是你可以知道，OK，我是给了这个agent access，它可以去到这种几个不同的环境里去做事情，但是它实时的在正在做什么，做的这个事儿是不是我让它做的事儿，这个事儿是不是合规的，这个现在是很难真正看到的，有很多公司现在在说我们是在做这个runtime security，但是真正其实做到规模的我们现在还没有看到。你觉得现在AI它能够胜任去写底层的一些代码吗？",
+      "refined_segment_indexes": [
+        292,
+        293,
+        294
+      ]
+    },
+    {
+      "start": 2466.778,
+      "end": 2474.458,
+      "text": "比如说数据库的这些引擎，特别是对于这个延迟，然后吞吐量以及对于稳定性要求极高的这种环境？",
+      "refined_segment_indexes": [
+        295
+      ]
+    },
+    {
+      "start": 2474.778,
+      "end": 2510.698,
+      "text": "嗯，我觉得它写底层的代码可能现在还是有一些距离的，我觉得停停停留在应用层面为主吧，写底层的代码它的复杂程度远远超过于现在现有agent能力范围，而且底层代码实际上它本身你看在agent写代码的时候，它是一个类似于机概率有有一个概率性的呃这个这个元素在里面的，啊，而底层代码百分之九十九的这个这个可这个可靠度是不行的，必须要百分之百，",
+      "refined_segment_indexes": [
+        296
+      ]
+    },
+    {
+      "start": 2511.178,
+      "end": 2542.298,
+      "text": "因为底层代码底层的工具，这个底层的infra一旦出错，整个公司可能面临的是一个可能是毁灭性的打击，所以在这里我觉得首先agent它能力还没有到那一部分，二是人对它的这种信任还没有到那一部分，而在这个application层面就是应用层面写出现出现错误，它有一定的这种概率性是可以容忍的，因为它一旦出错之后，它产生的风险它产生的这种damage实际上是有限的。那这样的一个能力边界对于infra的一些创业公司有一些什么启发呢？",
+      "refined_segment_indexes": [
+        297,
+        298
+      ]
+    },
+    {
+      "start": 2542.778,
+      "end": 2572.458,
+      "text": "呃，有一些比如说在这个呃写代码这一块，你看就是大家最熟悉的就是这个codex呀，code，code啊，然后另外有一项什么open用open，hand，open，code这个kilo啊，cline这种公司就可以就有很多很多啊这类相对来说叫叫open，source的platform啊，然后呢，除此之外就是由于这个机器写的代码的这个量在在飞速的增长，很多人就说OK，那我们做这个做review的时候，是不是也要用机器来做review？",
+      "refined_segment_indexes": [
+        299,
+        300
+      ]
+    },
+    {
+      "start": 2572.618,
+      "end": 2597.578,
+      "text": "这个是肯定的，因为多数时间这个你把你的code给另外一个一个engineer去review的时候，人家也做自己的工作，人家可能就是多数看一下，比如说就是就是很简单的看一下你有没有你的你的difference啊什么的，呃，基本上就是一个check the box的这么一个motion啊，那另外这一块儿我觉得呃就是code review这一块儿现在有很多比较有趣的公司，",
+      "refined_segment_indexes": [
+        301
+      ]
+    },
+    {
+      "start": 2597.658,
+      "end": 2629.098,
+      "text": "你像code，rabbit啊，codal啊，呃这个这个grabtile这类的公司其实也是融了不少钱，而且是成长还是相对比较快的，啊，因为对这个呃机器产生的这个code这个这个这个呃质量啊，大家现在还是存在一定的这种质疑质疑程度的，那除此之外，实际上现在很多呃就是你刚刚提到的这个基础层面的呃软件或者基础层面的代码去写，因为它出错的成本是非常非常高的，",
+      "refined_segment_indexes": [
+        302
+      ]
+    },
+    {
+      "start": 2629.498,
+      "end": 2654.742,
+      "text": "那这个时候呢，呃呃就需要在早期做这个计划叫planning stage或者在做。这个设计的时候就需要有一些AI的辅助，啊，确定你在早期设计这一套后端怎么写code，后端写这个软件的时候，你的合规、你的这个风险的控制就已经在最早最早设计层面的时候，啊，被考虑到了。",
+      "refined_segment_indexes": [
+        303,
+        304
+      ]
+    },
+    {
+      "start": 2655.382,
+      "end": 2678.742,
+      "text": "那现在有一有一些很很有趣的公司在这在这个层面已经做出了一些呃小的traction，比如说像那个呃Clover Security啊，这个Prime Security啊，还有啊Clearly，Ciso啊，Depth First，就是这个这个list还是这个这个这个这个list还是蛮长的。他们实际上的理念是什么呢？",
+      "refined_segment_indexes": [
+        305,
+        306
+      ]
+    },
+    {
+      "start": 2679.782,
+      "end": 2710.102,
+      "text": "就是说在这个code gen就是是呃这个代码生成啊这一块呢，他们觉得是基本上是用比较前端的模型，比如说用Opus用Codex去去去写，就已经呃写的可可很好了。那真正能够有护城河、长期护城河或者长期能站得住脚的呢是什么呢？是你必须确定你的呃记忆、你的context是会集中到你的这层面。",
+      "refined_segment_indexes": [
+        307,
+        308,
+        309
+      ]
+    },
+    {
+      "start": 2711.222,
+      "end": 2736.742,
+      "text": "那么你看像Claude Code还有这个Codex，如果Codex有一天决定要要变成完全closed的一个system，像像Claude Code一样的话，啊，它可能会威胁到很多这个做open呃open source的这个platform的生存。而且code review本身这一块呢，它是最后review所有的成品，它对本身的这个context，它我觉得看到的是非常有限的。",
+      "refined_segment_indexes": [
+        310,
+        311
+      ]
+    },
+    {
+      "start": 2737.382,
+      "end": 2757.782,
+      "text": "那很多人现在想法就是说，真正能够看到更多context呃的地方，还是在我刚刚提到的这个design这一块，它的这个软件的设计层面啊，因为在早期设计的层面，你你的这个接触的数据就非常的多，比如说你要看你的Jira啊里面的ticket的这个这个information，然后你要看你的Slack，你要看你的Notion Board，",
+      "refined_segment_indexes": [
+        312
+      ]
+    },
+    {
+      "start": 2758.262,
+      "end": 2790.422,
+      "text": "这一套就是呃就变成了一个非常呃自然的natural的一个一个焦点，就是你在整个software呃设计软件设计的流程中，这个公司对这个软件的preference，它的它的这个嗯呃比如说个人的喜好或者个性化的一些设置是设定啊，或者甚至产业具体产业的要求，就完全集中在这一点上，他们能够看到所有的context。我觉得这一块实际上就回到你刚刚的问题那里，是一个非常有趣的领域。这个领域我们现在在真的是在看的比较多一些。",
+      "refined_segment_indexes": [
+        313,
+        314,
+        315
+      ]
+    },
+    {
+      "start": 2790.822,
+      "end": 2823.942,
+      "text": "我觉得其实到最后最简单的一句话就是context king is king，就context是是是是是王道啊。在整个的这个流程中，谁是能抓住这个context accumulation的，就是context的集中，谁我觉得是最终能够能够啊跑赢的。最后一个问题，是想问关于这个合规行业的AI落地，比如说像医院呐，还有这个金融行业这种强监管的行业，我们知道AI落地的这个难度可能不是在技术本身，而是在它的这个合规、可审计、包括问责。",
+      "refined_segment_indexes": [
+        316,
+        317,
+        318
+      ]
+    },
+    {
+      "start": 2824.262,
+      "end": 2854.662,
+      "text": "合规行业的AI未来应该是怎么样往前推进？呃，我觉得这个实际上它不是一个技术问题，这是一个know how的问题。嗯，首先你必须在这个领域待了很久，呃，往往最后卡住这些公司的，或者就是让他们有受阻力的地方，并不是在技术层面。呃，我觉得你能够把这个整个合规这一套复杂的这个流程跑通，呃，才是才是真正的重点啊。",
+      "refined_segment_indexes": [
+        319,
+        320,
+        321,
+        322
+      ]
+    },
+    {
+      "start": 2854.822,
+      "end": 2888.72,
+      "text": "比如说一个一个例子就是我们现在投了一家，我们现在还没有没有发布这个信息啊，可能下周这个信息就发布出来了。我们投了一家呃软件平台，这个软件平台实际上帮助实际上是帮助啊别的软件啊，尤其是网络安全这一块儿啊，把它的产品卖给卖给政府的。那涉及到政府这一块，就是相对来说是真的是高监管、高风险的一些具体的应用场景。那这一块很多公司是不愿意去去花这个时间、花这个精力去研究，我怎么把我的产品直接卖给政府？",
+      "refined_segment_indexes": [
+        323,
+        324,
+        325,
+        326
+      ]
+    },
+    {
+      "start": 2889.44,
+      "end": 2923.52,
+      "text": "卖给政府，首先卖，尤其是美国联邦政府，它是有一个相对严格的审核体系，叫FedRAMP。这个东西基本上，除非你是特别特别大的一家公司，然后这个钱是很多，然后可以去去请很多 lawyer 帮你做这个，然后请审计帮你做这个事儿，啊，它的成本可能下来要基本上到五百万到一千五百万美元才能够跑完这个流程，而且这个流程总总总总共的长度是三年时间。那这个过程使得绝大多数的公司对跟这种类似于高监管、高风险的这种生意是望而却步的。",
+      "refined_segment_indexes": [
+        327,
+        328,
+        329
+      ]
+    },
+    {
+      "start": 2924.16,
+      "end": 2958.56,
+      "text": "啊，他自己首先就是我我自己现有的这个客户都跑不完呢，那我干嘛要花这个钱？而且是要三年以后才能见到见到效果。那实际上就是有这种类似于，呃，其实你在这个网络安全这一块也会看到类似于一个叫 MSSP，叫 Manage Service Security Service Provider 这种公司，实际上它是一个类似于像是承包商吧，或者一个中介，别人的软件卖给他们的平台，然后呢，他们的平台再转卖给呃，比如说后端的这个呃医院系统啊，或者政府系统啊，",
+      "refined_segment_indexes": [
+        330,
+        331,
+        332
+      ]
+    },
+    {
+      "start": 2958.64,
+      "end": 2988.08,
+      "text": "或者甚至大的公司。啊，这个实际上就把整个合规的这个负担从本身软件公司这一块转嫁到了这个中间商这这一层面。那中间商实际上他在做了很多很多年的这种积累之后呢，他对整个流程是非常了解，甚至他已经有现有的渠道了。那对啊，这种这类的公司想要进入呃，如果他们有需要进入到这种高监管的这种环境下，其实这一条路我觉得是一个挺好的解决方案。",
+      "refined_segment_indexes": [
+        333,
+        334,
+        335,
+        336
+      ]
+    },
+    {
+      "start": 2988.56,
+      "end": 3017.68,
+      "text": "这也是为什么我们投了这家公司之后，发现确实是这个呃，处在一个客户是追主要主动来找我们的这种情况下，我们不需要去去花太多精力去去说服客户，而客户会直接来找我们，因为他们也是呃在这方面啊啊 struggle 很很久很久。如果你要给现在正在创业的小伙伴们指一个你比较看好的方向，你会指哪些方向？",
+      "refined_segment_indexes": [
+        337,
+        338
+      ]
+    },
+    {
+      "start": 3018.4,
+      "end": 3050.72,
+      "text": "方向不敢说吧，我觉得其实 AI 的这种普遍的部署、大众化甚至平民化，呃，使得创业的成本或者创业的门槛变得非常非常的低。呃，就像早期这个这个这个 cloud 这个云的这个部署，使得软件公司啊去做创业啊去做新的产品也变得很低，你自己不需要建数据中心，自己不需要买一堆这个这个这个机器。",
+      "refined_segment_indexes": [
+        339,
+        340
+      ]
+    },
+    {
+      "start": 3051.52,
+      "end": 3083.92,
+      "text": "呃，那 AI 这个尤其尤其替代了这个写代码的这些呃需需你不需要再去学写写代码了。实际上你很简单就可以再再利用不管是 Lovable、Replit，甚至 Cursor 啊、CodeX 这这套就是非常非常普遍的系统去写一套啊相对来说比较完善的这个小的程序啊、小的小的呃呃小的产品。那使得创业的门槛变得非常低。那相对来说对你来对你这个门槛低了，对大家门槛都低了。",
+      "refined_segment_indexes": [
+        341,
+        342,
+        343,
+        344
+      ]
+    },
+    {
+      "start": 3084.64,
+      "end": 3118.223,
+      "text": "那更重要，最后它细分是细分差或者差异是出现在哪里呢？就是对你你针对的某一个领域，你自己的 know how，在这一块可能就是你是来自于比如说这个传统健康服务产业，你对这个产业是非常非常了解的，它很多细节的东西是别人不知道的。虽然大家用的工具都一样，但是你可以更合理的利用这个工具，而且你在早期在设计这个产品的时候，你就知道哪些东西是我只有在这个产业里待过的人泡过的人。才知道的东西，这个我觉得是真正做出差异化的呃地方。",
+      "refined_segment_indexes": [
+        345,
+        346,
+        347,
+        348
+      ]
+    },
+    {
+      "start": 3118.383,
+      "end": 3151.023,
+      "text": "你在微软的站头部看到了这么多的创业项目，你最想给这些创业圈的小伙伴们一些什么样的建议？呃，我觉得首先在技术层面，我觉得很多很多新的创业者是非常优秀的啊，但是可能我经常呃会遇到的一些问题，就是在后期的产品化、市场化上面还是有一些欠缺的。当然，这个东西是很多是需要经验积累的啊，尤其是针对华人创业者，在这一块，我觉得还是有一些小的建议。",
+      "refined_segment_indexes": [
+        349,
+        350,
+        351
+      ]
+    },
+    {
+      "start": 3151.023,
+      "end": 3172.783,
+      "text": "也就是说，早期的时候，呃，不要光考虑在技术层面做事情啊，我觉得要在整个生态系统里啊做一些调研，然后呢去了解你做的这个技术将来的应用针对的这个市场是哪些啊，把这个技术的应用具体化一些。",
+      "refined_segment_indexes": [
+        352
+      ]
+    },
+    {
+      "start": 3173.583,
+      "end": 3208.463,
+      "text": "嗯，除此之外呢，我的建议是在比如说早期融资的过程中啊，不要光考虑啊，比如说我一定要达到某种啊估值啊，或者说我一定要拿非常非常大的投资机构呃的钱才算成功。我觉得很多情况下，在早期创业的时候更注重的是速度，你能够找到相对合理的估值、相对合理的条款啊，和一个真正能够帮到你的投资人啊，其实是更重要的。我觉得这会让你的速度提升很多啊。",
+      "refined_segment_indexes": [
+        353,
+        354,
+        355
+      ]
+    },
+    {
+      "start": 3208.543,
+      "end": 3241.343,
+      "text": "还有呢，就是我觉得在融资量方面可以做一些考虑啊，更灵活一些啊。很多当然我也知道很多，比如说做这个基础模型开发啊，原来起步价是非常非常高的。现在呢，可能由于这个整个产业呃的的增长，这个起步价降低了。但是你要想做基础模型训练，可能还是需要三千到五千万美元左右这一块呢。我觉得很多投资人就比较比较头痛，你说我怎么第一笔就融这么大的啊？",
+      "refined_segment_indexes": [
+        356,
+        357,
+        358,
+        359,
+        360
+      ]
+    },
+    {
+      "start": 3241.663,
+      "end": 3271.583,
+      "text": "这个这个款项，我觉得可以把它拆分开来。嗯，比如说我先去融五个五个million，然后呢，先有一定早期的这个叫proof of concept啊，能够做到一些就是能够给人demo的东西。我觉得把一个很大的一个融资的round拆分成一个一两个小的融资的round，然后呢，这样你的这个milestone可以设置的更更小一些。这个可能到最后实际上是让你跑得更快的一种方式。",
+      "refined_segment_indexes": [
+        361,
+        362,
+        363,
+        364
+      ]
+    },
+    {
+      "start": 3272.543,
+      "end": 3294.463,
+      "text": "嗯，还有呢，我觉得嗯，更多的是我会看到很多创业者他在自己的领域他会非常熟悉。我自己的领域内，我认识所有的人，我认识所有的公司。但是往往你做的这个产品不光是卖给你自己的领域，是要卖给很多别的垂直领域，甚至你可能完全不了解的领域。",
+      "refined_segment_indexes": [
+        365,
+        366,
+        367
+      ]
+    },
+    {
+      "start": 3295.023,
+      "end": 3327.983,
+      "text": "在这个时候，我觉得早期搭建团队的时候要在这上面有一些考量，这个人是不是就完全是跟你一样只做技术的，还是说在在他在技术层之外，他对别的产业有深度的了解，他知道怎么去帮你做go to market这一块，我觉得可能是在早期就需要做到做到一些考虑的。啊，还有呢，就是我觉得嗯，可能不管是在尤其是华人创业者啊，我见到很多华人创业在这在这在这上面就是踩坑啊。",
+      "refined_segment_indexes": [
+        368,
+        369
+      ]
+    },
+    {
+      "start": 3328.463,
+      "end": 3352.223,
+      "text": "他们更多不不管是因为性格啊，或者是文化方面，可能更愿意跟别的华人一起一起创业啊。我觉得在这个团队上的这种多元化也可以有一些考量，因为毕竟你做生意卖给的这个对象不不只是华人企业啊，你可能涉及到一些别的传统产业，还是需要有一些不同背景的人一起来帮你提供不同的这种perspective啊。",
+      "refined_segment_indexes": [
+        370,
+        371
+      ]
+    },
+    {
+      "start": 3352.889,
+      "end": 3385.929,
+      "text": "所以在早期团队搭建的时候，我更建议说去跨出自己的这个舒适圈，去了解一些呃别的背景的人啊，然后跟你实际上不光是在技术上有呃认同，但是更多在别的skill的呃这个这个gap上面可以有一定互补的。啊，除此之外呢，我也自己打一个小广告啊，就是呃我非常非常喜欢跟跟创业者合作啊，喜欢跟他们聊天，因为我觉得在这个过程中啊，对我自己是个很大的提升啊。",
+      "refined_segment_indexes": [
+        372,
+        373
+      ]
+    },
+    {
+      "start": 3385.929,
+      "end": 3406.009,
+      "text": "我也曾经帮过很多啊很很优秀的创业者们啊去融资啊，去考虑后端的这个业务拓展啊。所以有这个有兴趣做做创业的这个小伙伴们啊，愿意愿意找我聊天的，我也很很开心，很欢迎。谢谢你今天精彩的分享，哎，非常感谢，感谢感谢，嗯。",
+      "refined_segment_indexes": [
+        374,
+        375,
+        376
+      ]
+    }
+  ]
+}

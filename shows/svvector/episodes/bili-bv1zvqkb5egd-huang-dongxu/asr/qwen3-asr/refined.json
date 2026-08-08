@@ -1,0 +1,4744 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "svvector:bili-bv1zvqkb5egd",
+  "language": "zh-CN",
+  "source": {
+    "input_asr_path": "shows/svvector/episodes/bili-bv1zvqkb5egd-huang-dongxu/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "9f749e2f9027688dcd436d0071a696a204d9990749ae074bac13f5b748b6c80b",
+    "engine": "mlx-audio",
+    "model": "mlx-community/Qwen3-ASR-1.7B-8bit"
+  },
+  "rendered_transcript": {
+    "path": "shows/svvector/episodes/bili-bv1zvqkb5egd-huang-dongxu/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "f0555c106a0b45ca4e627f7346cc69592f8e8f4de1bf72b954c634f4b9d775be"
+  },
+  "generated_at": "2026-08-08T14:57:42.946761Z",
+  "statistics": {
+    "source_segments": 340,
+    "refined_segments": 340,
+    "rendered_blocks": 91,
+    "rendered_lines": 340
+  },
+  "segments": [
+    {
+      "start": 4.96,
+      "end": 28.0,
+      "text": "Agent application它绝对不会像今天这样是由软件工程师编写代码，而是由可能无数的这个人类的领域专家在他们的记忆里面去提取出一些高价值的东西，变成一个引号app，这可能是一堆Markdown文档，或者一堆这个从你的记忆里面提取出来。",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 28.72,
+      "end": 40.4,
+      "text": "你最好的策略就是，无论用户跟他的龙虾或者他的agent聊过什么东西，我作为提供商，我一定得存下来，这是对未来来说最宝贵的资源。",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 40.64,
+      "end": 49.2,
+      "text": "我很认同Google的一个philosophy，我永远不删除，这个数据产生的价值能够cover它的存储成本，那你就应该都存着。",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 51.44,
+      "end": 55.52,
+      "text": "你觉得未来AI的能力的下一个突破的边界在哪里？",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 55.76,
+      "end": 71.12,
+      "text": "我隐约觉得在这个组织多个agent再去干这种复杂任务里边，会 somehow存在一种scaling law，就是今天我们刚刚开始去把多个agent协同在一起，能够去呃干一些事情。",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 71.2,
+      "end": 77.12,
+      "text": "如果我放一百个、一千个、一万个进去，他们能够产生什么样的效果？",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 77.12,
+      "end": 79.92,
+      "text": "我觉得是现在是一个open开始。",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 95.2,
+      "end": 96.88,
+      "text": "东旭，欢迎你来到硅谷坐标。",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 97.2,
+      "end": 103.2,
+      "text": "今年整个硅谷科技迭代的这个速度非常非常的快，你在第一线肯定感受是最强烈的。",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 103.36,
+      "end": 107.84,
+      "text": "想问问你，今年Open Cloud出来之后，你现在最大的感受是什么？",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 108.16,
+      "end": 121.44,
+      "text": "我举个简单的一个小例子吧，可能在我家里，我父母啊，包括我这个太太，可能并不是那种计算机背景很强的人，现在已经都开始引号养龙虾了。",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 121.52,
+      "end": 130.88,
+      "text": "所以我相信，呃，其实我觉得这标志着一种AI native的application的产品的形态的定义现在出现了。",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 131.12,
+      "end": 138.56,
+      "text": "但我觉得Open Cloud它是一个及格线，做的比Open Cloud差的，那那就是属于上一个时代，未来只会比它更好。",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 138.96,
+      "end": 156.56,
+      "text": "所以我现在每天都非常high，然后呃手上有好几个Cloud Code加CodeX的这种呃Pro Max的账号，可能我的峰值的每天消耗token在十亿这个量级左右，最普通的这个日子里边也是大概几亿的这样的一个规模。",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 156.56,
+      "end": 167.12,
+      "text": "呃，我认为现在的这个这个agentic呃或者coding agent达到了一个能力的边界，你会发现你很多想法得到的这个反馈的速度就非常非常快。",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 167.12,
+      "end": 172.32,
+      "text": "比如今天我有一个想法，我马上让我的agent去干，可能这个一个小时之后这个东西就上线了。",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 172.96,
+      "end": 180.64,
+      "text": "这时候他们会等着你，我其实非常想避免这种他等着我的状态，于是我就会push我自己说，哎，我下一个想法在哪里？",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 181.12,
+      "end": 187.12,
+      "text": "然后就持续进入到这种有新想法去试，得到反馈，再下一个想法。",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 187.44,
+      "end": 190.8,
+      "text": "所以呃很兴奋，同时也很焦虑。",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 190.96,
+      "end": 201.04,
+      "text": "我我觉得现在在头部的一波呃实践这些Harness Engineering的资深工程师吧，多多少少都会有我现在这样的一个一个状态。",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 201.44,
+      "end": 210.16,
+      "text": "我不能称之为焦虑，但是是一种被你的agent team推着你跑的感觉，很有意思。",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 210.4,
+      "end": 218.8,
+      "text": "前两年大家都还在讲这个prompt engineering，对，然后后来大家转成讲context engineering，然后现在是所有头部的人、前沿的人都开始讲Harness Engineering。",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 219.44,
+      "end": 224.16,
+      "text": "嗯，你先给大家介绍一下，它大概AI时代的Harness Engineering是个什么样的概念？",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 224.4,
+      "end": 225.84,
+      "text": "它跟前两代有什么不一样？",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 225.92,
+      "end": 235.6,
+      "text": "Prompt Engineering我觉得有有两个关键点，第一个关键点它是few shots，就是在一个比较短程的一个对话里边，你通过调整对话的上下文。",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 235.909,
+      "end": 239.589,
+      "text": "来去得到一个及时的更好的结果。",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 239.749,
+      "end": 246.309,
+      "text": "第二个呢，它基本上没有涉及到外部的工具调用，基本还是在一个问答的flow里边。",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 246.709,
+      "end": 268.629,
+      "text": "我觉得早期可能二二年底、二三年初，包括一直可能到二四年，都是在这种prompt engineering的这个这个框架里边，context engineering更多的像是在一系列的这种长程的这个任务里边，agent能够把结果给交付出来。",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 268.629,
+      "end": 273.989,
+      "text": "呃，所以刚才两个关键字，一个是任务的这个这个长度变长，对话轮次变多。",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 274.389,
+      "end": 285.349,
+      "text": "第二呢，它可能就也涉及到外部的这些工具的调用，结果的这些分析，最后你怎么高效的利用你的这个有限的上下文空间？",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 285.669,
+      "end": 289.109,
+      "text": "所以context engineering它比prompt engineering又高一层。",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 290.149,
+      "end": 299.109,
+      "text": "Harness engineering今天其实仍然是一个非常前沿的话题，但我用我自己的理解来说，它可能又是更升高一个维度。",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 299.269,
+      "end": 306.149,
+      "text": "比如刚才我们其实不管是prompt还是context，都是在一个对话流、一个agent或者一个大语言模型的窗口里边。",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 306.869,
+      "end": 309.829,
+      "text": "但是Harness今天强调的是多agent的协同。",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 310.469,
+      "end": 321.749,
+      "text": "比如说在context engineering里面有一个非常普遍的问题，就是当你的一个任务太长的时候，你的上下文窗口已经装不下你之前的对话历史了。",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 321.829,
+      "end": 325.429,
+      "text": "这时候其实就会引入一个技术叫compaction，叫叫压缩。",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 325.909,
+      "end": 331.349,
+      "text": "这个压缩经常会伴随着这种灾难性的失忆。",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 331.749,
+      "end": 340.709,
+      "text": "所以在一个更复杂的Harness的环境里边，你需要去把每一个子agent的这种上下文的压缩都得考虑进去。",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 341.029,
+      "end": 349.669,
+      "text": "所以你就必须在这个之上去构建一层信息的同步、子任务的管理，然后外挂的记忆等等的东西。",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 350.149,
+      "end": 363.269,
+      "text": "所以呃，对我来说，这个Harness engineering更像在管一个真正的开发团队，让他们去永续的、持续的去产出，在一这种复杂的大型项目里边。",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 363.909,
+      "end": 371.829,
+      "text": "所以它其实是一个层层递进的关系，而且这里边每一层都是依赖着上一层的一些最佳实践封装出来的。",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 372.629,
+      "end": 374.309,
+      "text": "你觉得Harness的边界到哪里？",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 375.589,
+      "end": 379.909,
+      "text": "我说句实话，我没有感觉到现在有边界。",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 380.229,
+      "end": 386.389,
+      "text": "我每一次觉得我快到边界了，但是呢，agent又能够给我一些惊喜。",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 386.709,
+      "end": 394.949,
+      "text": "因为你在提到边界这个词的时候，就有一个暗示，它的能力是可以被人类感知，或者说可以有一个明确的上限的。",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 395.189,
+      "end": 406.869,
+      "text": "我甚至觉得有的时候我们是没有办法评估现在的SOTA的模型的，因为模型本身很聪明了，只是我们的题设计的不好，就没有办法去测出它真正的能力。",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 407.509,
+      "end": 414.469,
+      "text": "而且大多数benchmark还只是在一个单一的agent在单一任务和单一环境里边的一些评分。",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 415.189,
+      "end": 426.309,
+      "text": "但你想想，就是人类通过无数个个体的组织变成了社会，我们能够在一起协同去完成超出任何一个人的能力边界的一些事情。",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 426.549,
+      "end": 428.549,
+      "text": "那agent我相信也一样是可以的。",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 428.869,
+      "end": 432.309,
+      "text": "所以也许未来我们会发现一些agent的社会学之类的事情。",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 432.709,
+      "end": 434.309,
+      "text": "那这时候还有什么边界吗？",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 434.309,
+      "end": 435.349,
+      "text": "我觉得没有边界了就。",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 435.829,
+      "end": 444.309,
+      "text": "嗯，既然Harness是一个系统级的工程，你觉得它未来有没有可能像数据库或者是像云平台一样，会变成一个比较通用的产品？",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 444.549,
+      "end": 447.669,
+      "text": "还是说可能未来是各家各公司做自己的Harness？",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 448.469,
+      "end": 450.069,
+      "text": "你觉得未来的终局会是什么样子？",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 450.309,
+      "end": 454.709,
+      "text": "今天其实大家千万不要被Harness这个词给吓到。",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 454.709,
+      "end": 459.429,
+      "text": "呃，Harness engineering对我来说还是software engineering。",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 459.909,
+      "end": 463.669,
+      "text": "一个好的Harness就是一个好的软件工程。",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 463.989,
+      "end": 468.949,
+      "text": "我自己的体感就是，我会去给我的agent团队设置不同的role。",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 469.269,
+      "end": 473.669,
+      "text": "其实跟我以前管理真人构成的软件工程团队。",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 474.204,
+      "end": 476.844,
+      "text": "我觉得没有太大区别，只是说这帮 agent 不睡觉而已。",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 477.084,
+      "end": 485.004,
+      "text": "所以我觉得这是第一阶段，因为 agent 它会产生什么样的组织形态，或者说什么样的形态是 agent native 的，我们现在不知道。",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 485.724,
+      "end": 501.244,
+      "text": "我们现在知道的是人类几十年积累下来的做复杂软件的组织架构、工具和一些方法论这些东西，我觉得可以被用来做 bootstrap。",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 501.404,
+      "end": 507.324,
+      "text": "第一阶段让 agent 先能够协同起来，产生一些单个 agent 干不了的事情。",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 507.644,
+      "end": 515.644,
+      "text": "第二阶段可能就会像包括伊隆说的递归的资金化的这些 agent 的工具啊或者形态会出现。",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 515.884,
+      "end": 521.084,
+      "text": "如果进入到递归的自我优化的阶段以后，就会超出人类能理解的范围了。",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 521.404,
+      "end": 526.604,
+      "text": "所以我们现在能做的就是先把人类的先先映射过来，先让它完成第一步。",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 526.924,
+      "end": 531.244,
+      "text": "回到你刚才那个问题，会不会每个公司都有一套自己的 harness 啊？",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 531.324,
+      "end": 532.284,
+      "text": "我相信会的。",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 532.844,
+      "end": 546.924,
+      "text": "但是呢，这些各家不同的 harness 的思想，我觉得它不会脱离传统的团队管理、软件开发的 ground truth 太远，它还是会收敛的。",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 547.244,
+      "end": 553.244,
+      "text": "最近你发布了 Mem9 的一个龙虾记忆的插件，也在龙虾社区里呃引起了非常大的反响。",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 553.564,
+      "end": 555.084,
+      "text": "你可以给我们介绍一下这个插件吗？",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 555.404,
+      "end": 557.484,
+      "text": "其实这个插件解决问题很简单。",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 557.564,
+      "end": 563.164,
+      "text": "大家用小龙虾的时候，经常会发现他在聊着聊着就就忘了前面的这个事情啊。",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 563.164,
+      "end": 570.124,
+      "text": "你想象一下，如果他在做一件重要的事儿，结果到最后一步他他把前面忘了，其实是挺糟心的。",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 570.524,
+      "end": 572.764,
+      "text": "我经常就有这样的体验，这是第一个痛点。",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 573.244,
+      "end": 579.004,
+      "text": "第二个痛点就是我跟我的小龙虾聊了非常非常多、很重要的、很私密的、很个人的这个东西。",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 579.724,
+      "end": 584.044,
+      "text": "如果哪一天更新把它给升级升挂了，那岂不是很难过？",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 584.364,
+      "end": 588.924,
+      "text": "所以云端的这种备份也是我一个特别大的一个需求。",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 589.084,
+      "end": 591.804,
+      "text": "基于这两个需求，就做了 Mem9。",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 591.804,
+      "end": 594.444,
+      "text": "这首先它是一个开源项目，你可以自己去部署。",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 594.604,
+      "end": 602.924,
+      "text": "第二呢，其实 Mem9 这条产品线它也会去提供一个云上托管的这个永续的龙虾记忆服务。",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 603.164,
+      "end": 612.364,
+      "text": "我当时在设计 Mem9 的时候，我一直在思考一个问题，就是如何去设计 agent native 的软件使用体验。",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 613.244,
+      "end": 619.164,
+      "text": "就比如说以前我们要去安装一个软件，你可能要配置 A B C D，要下这个安装包，安装各种东西。",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 619.884,
+      "end": 627.724,
+      "text": "但是在这个 Mem9 里边，你其实只是给你的龙虾复制粘贴一句话，这个软件就自动安装上去了。",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 628.124,
+      "end": 634.124,
+      "text": "可以跟大家解释一下长上下文窗口（context window）和记忆（memory）它们的区别吗？",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 634.684,
+      "end": 639.564,
+      "text": "Context window 你可以认为就是一个很小的一个窗口。",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 639.804,
+      "end": 648.124,
+      "text": "这个窗口就是这个这个大语言模型短时间在这个对话里边，超过这个窗口之外的东西它是不知道的，就是短期记忆。",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 648.604,
+      "end": 650.604,
+      "text": "然后 memory 是什么呢？",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 650.764,
+      "end": 653.164,
+      "text": "我用一个更形象的比喻吧，就是一个笔记本。",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 653.164,
+      "end": 660.124,
+      "text": "这个笔记本可可能记了非常非常多相关的事实，就是像相当于你的长期记忆。",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 660.444,
+      "end": 662.924,
+      "text": "但这个长期记忆不在你脑子里，可能在一个小本本里。",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 663.404,
+      "end": 673.724,
+      "text": "比如在你短期记忆里，当下我们要做一些事情的时候，你发现哎，我要要看的这个东西在上下文窗口里没有，这个好记性就不如烂笔头了，对吧？",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 673.804,
+      "end": 695.404,
+      "text": "我就要拿出我的笔记本 memory 来去找到相关的这个信息以及这条信息相关的一些上下文，which is 就是这条具体的记忆，然后再把这个记忆放到短期的 context window 里，这样你的大语言模型就能更知道你在讨论什么上下文。",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    },
+    {
+      "start": 695.804,
+      "end": 712.044,
+      "text": "其实，在过去我们这个东西叫 rag，呃，但是 rag 我觉得不是一个好的技术概念吧，因为今天其实我们再去聊记忆的时候，已经超过了原来 rag 所代表的这些技术，因为 rag 可能跟具体的技术绑定太紧了。",
+      "source_segment_indexes": [
+        94
+      ],
+      "source_segment_ids": [
+        94
+      ]
+    },
+    {
+      "start": 712.538,
+      "end": 728.298,
+      "text": "对，但记忆可能是一个更大的一个话题，可能理解成，比如说以后多agents或者是多步骤的这些任务，使得你的短期记忆的窗口，哪怕越越来越大，哪怕再大，可能也都对，很快就填满了，还是要去长期去解决这个长期记忆的问题。",
+      "source_segment_indexes": [
+        95
+      ],
+      "source_segment_ids": [
+        95
+      ]
+    },
+    {
+      "start": 728.298,
+      "end": 738.218,
+      "text": "是的，不管怎么样，反正只要大家现在的模型还是基于这个transformer的这个模型，上下文窗口一定是个定值，你哪怕做的再大，它也是个定值。",
+      "source_segment_indexes": [
+        96
+      ],
+      "source_segment_ids": [
+        96
+      ]
+    },
+    {
+      "start": 739.178,
+      "end": 739.338,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        97
+      ],
+      "source_segment_ids": [
+        97
+      ]
+    },
+    {
+      "start": 739.418,
+      "end": 746.538,
+      "text": "所以必须得有一个外挂的一个记忆系统来去，嗯，我觉得人也一样嘛，对吧？",
+      "source_segment_indexes": [
+        98
+      ],
+      "source_segment_ids": [
+        98
+      ]
+    },
+    {
+      "start": 747.098,
+      "end": 756.858,
+      "text": "短期记忆、长期记忆，因为我们的世界太复杂了，嗯，或者说很多任务其实可以几乎是无限长的。",
+      "source_segment_indexes": [
+        99
+      ],
+      "source_segment_ids": [
+        99
+      ]
+    },
+    {
+      "start": 757.178,
+      "end": 779.498,
+      "text": "我就就举个例子，我要开发一个大型的系统软件，然后可能需要几十万个步骤，就是短期的这个原模型的context window再长，你也不可能说把现实世界的复杂性塞到一个固定的窗口里边，啊，但是呢，在至少从transformer的这个架构上来看，一个外挂的记忆系统可能还是必须的。",
+      "source_segment_indexes": [
+        100
+      ],
+      "source_segment_ids": [
+        100
+      ]
+    },
+    {
+      "start": 780.058,
+      "end": 783.818,
+      "text": "记忆为什么现在成了整个harness里面最困难的一环啊？",
+      "source_segment_indexes": [
+        101
+      ],
+      "source_segment_ids": [
+        101
+      ]
+    },
+    {
+      "start": 783.978,
+      "end": 806.698,
+      "text": "刚才我也提到了一个单体agent的重要的痛点，就是在一个长程任务的过程中，你只要上下文一压缩，它刚才在聊的事儿就全忘了，所以你在做这种关键的harness的时候，你就必须得用外挂的记忆来去解决单体的这个agent compaction带来的这些问题。",
+      "source_segment_indexes": [
+        102
+      ],
+      "source_segment_ids": [
+        102
+      ]
+    },
+    {
+      "start": 807.258,
+      "end": 811.898,
+      "text": "所以，呃，这就是为什么这个memory如此重要。",
+      "source_segment_indexes": [
+        103
+      ],
+      "source_segment_ids": [
+        103
+      ]
+    },
+    {
+      "start": 812.378,
+      "end": 813.338,
+      "text": "我觉得这是第一方面。",
+      "source_segment_indexes": [
+        104
+      ],
+      "source_segment_ids": [
+        104
+      ]
+    },
+    {
+      "start": 813.658,
+      "end": 830.938,
+      "text": "第二方面就是，不管是ChatGPT还是早期的这些基聊天机器人的这个形态，它不停的让你在对每个任务强行要开一个新的对话，啊，它它并没有解决这个记忆的问题，它其实只是通过这个产品形态给给掩盖过去了。",
+      "source_segment_indexes": [
+        105
+      ],
+      "source_segment_ids": [
+        105
+      ]
+    },
+    {
+      "start": 831.258,
+      "end": 834.458,
+      "text": "但是这种产品形态又会带来一个不好的这个用户体验。",
+      "source_segment_indexes": [
+        106
+      ],
+      "source_segment_ids": [
+        106
+      ]
+    },
+    {
+      "start": 835.098,
+      "end": 858.618,
+      "text": "而且再从这个重要性来说，大语言模型其实是没有状态的，它并没有办法自我的跟你持续的聊天，最后持续的变强，或者说真正有差异性的其实是你跟他聊的这些这些内容，以及呃他自己在这些内容里边的反思。",
+      "source_segment_indexes": [
+        107
+      ],
+      "source_segment_ids": [
+        107
+      ]
+    },
+    {
+      "start": 860.058,
+      "end": 860.938,
+      "text": "简单来说就是记忆。",
+      "source_segment_indexes": [
+        108
+      ],
+      "source_segment_ids": [
+        108
+      ]
+    },
+    {
+      "start": 861.498,
+      "end": 873.338,
+      "text": "最后，其实我觉得很多的价值其实是会在这个记忆这一层，而不是说在大语言模型这一层，因为大语言模型每家可能T1的model都很聪明，但是它有多了解你呢？",
+      "source_segment_indexes": [
+        109
+      ],
+      "source_segment_ids": [
+        109
+      ]
+    },
+    {
+      "start": 873.818,
+      "end": 875.578,
+      "text": "它还是得靠记忆来去了解你。",
+      "source_segment_indexes": [
+        110
+      ],
+      "source_segment_ids": [
+        110
+      ]
+    },
+    {
+      "start": 875.738,
+      "end": 887.498,
+      "text": "记忆要解决的两个问题，一个是这东西怎么记，什么东西要需要记，什么东西是不需要记的，呃，另外一个就是怎么样去提取这个信息，你们是怎么解决这个难题的？",
+      "source_segment_indexes": [
+        111
+      ],
+      "source_segment_ids": [
+        111
+      ]
+    },
+    {
+      "start": 888.058,
+      "end": 896.058,
+      "text": "哎，呃，我这这里面提到一个非常哲学的东西，我其实一向是更相信模型自己的能力的。",
+      "source_segment_indexes": [
+        112
+      ],
+      "source_segment_ids": [
+        112
+      ]
+    },
+    {
+      "start": 896.938,
+      "end": 897.338,
+      "text": "什么意思呢？",
+      "source_segment_indexes": [
+        113
+      ],
+      "source_segment_ids": [
+        113
+      ]
+    },
+    {
+      "start": 897.578,
+      "end": 902.138,
+      "text": "不是像记忆的这个远期的记忆跟近期的记忆，它的这个重要性是不一样的。",
+      "source_segment_indexes": [
+        114
+      ],
+      "source_segment_ids": [
+        114
+      ]
+    },
+    {
+      "start": 902.378,
+      "end": 916.378,
+      "text": "包括我们自己的一些开发人员经常会想，哎，我要去设计一个精妙的算法，去搞一个什么遗忘曲线之类的，超过多久时间就自动的剔除掉，可能做一个很复杂的模型。",
+      "source_segment_indexes": [
+        115
+      ],
+      "source_segment_ids": [
+        115
+      ]
+    },
+    {
+      "start": 916.618,
+      "end": 918.618,
+      "text": "但你知道我最近最后怎么解决这个问题的？",
+      "source_segment_indexes": [
+        116
+      ],
+      "source_segment_ids": [
+        116
+      ]
+    },
+    {
+      "start": 918.698,
+      "end": 931.978,
+      "text": "解决这个问题的这个方式非常简单，就是相关性的我检索出来，但是呢，我在它的这个数据后面我加一个标签，这个标签叫做这个事实离当前时间有多少天。",
+      "source_segment_indexes": [
+        117
+      ],
+      "source_segment_ids": [
+        117
+      ]
+    },
+    {
+      "start": 933.178,
+      "end": 941.098,
+      "text": "我把这个所有信息直接丢给大模型，在上面再加一句说，根据你自己的这个判断，哪条是最重要的？",
+      "source_segment_indexes": [
+        118
+      ],
+      "source_segment_ids": [
+        118
+      ]
+    },
+    {
+      "start": 941.098,
+      "end": 945.818,
+      "text": "就是我把模型本身的能力当成一个评估函数。",
+      "source_segment_indexes": [
+        119
+      ],
+      "source_segment_ids": [
+        119
+      ]
+    },
+    {
+      "start": 946.218,
+      "end": 948.938,
+      "text": "今天我觉得开发软件的思路变了。",
+      "source_segment_indexes": [
+        120
+      ],
+      "source_segment_ids": [
+        120
+      ]
+    },
+    {
+      "start": 949.783,
+      "end": 958.023,
+      "text": "变成了我应该去怎么更好的利用模型本身的能力去做做事情，因为模型它一定有自己的判断。",
+      "source_segment_indexes": [
+        121
+      ],
+      "source_segment_ids": [
+        121
+      ]
+    },
+    {
+      "start": 958.423,
+      "end": 964.103,
+      "text": "另外一个例子可能是安全，其实现在大家经常会觉得哦，龙虾的这个安全应该怎么做？",
+      "source_segment_indexes": [
+        122
+      ],
+      "source_segment_ids": [
+        122
+      ]
+    },
+    {
+      "start": 964.183,
+      "end": 965.063,
+      "text": "当然我不是做安全的。",
+      "source_segment_indexes": [
+        123
+      ],
+      "source_segment_ids": [
+        123
+      ]
+    },
+    {
+      "start": 965.303,
+      "end": 974.903,
+      "text": "也许未来这个最好的安全软件，对于agent最好的安全软件，可能就是一句话叫做你要注意安全。",
+      "source_segment_indexes": [
+        124
+      ],
+      "source_segment_ids": [
+        124
+      ]
+    },
+    {
+      "start": 975.543,
+      "end": 976.183,
+      "text": "对，明白了。",
+      "source_segment_indexes": [
+        125
+      ],
+      "source_segment_ids": [
+        125
+      ]
+    },
+    {
+      "start": 976.263,
+      "end": 985.543,
+      "text": "是的，对，所以就是怎么记，还有怎么提取这两个步骤，基本上都是你让大模型大模型自己去发挥它自己的判断。",
+      "source_segment_indexes": [
+        126
+      ],
+      "source_segment_ids": [
+        126
+      ]
+    },
+    {
+      "start": 985.703,
+      "end": 986.583,
+      "text": "对，明白。",
+      "source_segment_indexes": [
+        127
+      ],
+      "source_segment_ids": [
+        127
+      ]
+    },
+    {
+      "start": 986.583,
+      "end": 990.503,
+      "text": "所以更更多的是跟一个prompt来提示它，而不是通过算法来解决。",
+      "source_segment_indexes": [
+        128
+      ],
+      "source_segment_ids": [
+        128
+      ]
+    },
+    {
+      "start": 990.503,
+      "end": 991.463,
+      "text": "不是通过算法解决。",
+      "source_segment_indexes": [
+        129
+      ],
+      "source_segment_ids": [
+        129
+      ]
+    },
+    {
+      "start": 991.463,
+      "end": 999.383,
+      "text": "对，OK，就是所以这就为什么我我会觉得今天的coding agent呢，可能会变成未来的操作系统内核，它在上面能做很多很多事情。",
+      "source_segment_indexes": [
+        130
+      ],
+      "source_segment_ids": [
+        130
+      ]
+    },
+    {
+      "start": 999.543,
+      "end": 1006.103,
+      "text": "但是呢，传统的编程的逻辑，我觉得不能直接套用到今天的这种agent native的软件开发上。",
+      "source_segment_indexes": [
+        131
+      ],
+      "source_segment_ids": [
+        131
+      ]
+    },
+    {
+      "start": 1006.343,
+      "end": 1015.463,
+      "text": "那听起来好像就是以时间为标注，然后以这件事情离当下发生的时间的这个这种长短，然后大模型自己去判断这件事情。",
+      "source_segment_indexes": [
+        132
+      ],
+      "source_segment_ids": [
+        132
+      ]
+    },
+    {
+      "start": 1015.463,
+      "end": 1017.223,
+      "text": "对，是的，这只是个很小的例子。",
+      "source_segment_indexes": [
+        133
+      ],
+      "source_segment_ids": [
+        133
+      ]
+    },
+    {
+      "start": 1017.303,
+      "end": 1027.223,
+      "text": "其实我我设计这套东西里边大量的都是类似的方法，比如说这段话讲了什么，归纳总结，我一定是丢给大模型帮我总结。",
+      "source_segment_indexes": [
+        134
+      ],
+      "source_segment_ids": [
+        134
+      ]
+    },
+    {
+      "start": 1027.703,
+      "end": 1036.263,
+      "text": "比如说我要去构建这个知识图谱，我不会说我写一个东西去分析它的关联，而是说直接丢给模型说他们之间的关联是什么。",
+      "source_segment_indexes": [
+        135
+      ],
+      "source_segment_ids": [
+        135
+      ]
+    },
+    {
+      "start": 1036.823,
+      "end": 1043.863,
+      "text": "嗯，你提到的这种多agent协作的这种呃状态，其实对于龙虾来说，它需要记住的东西是非常多的。",
+      "source_segment_indexes": [
+        136
+      ],
+      "source_segment_ids": [
+        136
+      ]
+    },
+    {
+      "start": 1043.943,
+      "end": 1047.703,
+      "text": "对，你知道它这样的一个记忆量的增长是一个什么量级的增长吗？",
+      "source_segment_indexes": [
+        137
+      ],
+      "source_segment_ids": [
+        137
+      ]
+    },
+    {
+      "start": 1048.103,
+      "end": 1058.583,
+      "text": "我本身是做数据库出身的，呃，目前这些agent在完成我们个人任务或甚至企业的任务的时候，它的数量不会太大的。",
+      "source_segment_indexes": [
+        138
+      ],
+      "source_segment_ids": [
+        138
+      ]
+    },
+    {
+      "start": 1059.223,
+      "end": 1071.703,
+      "text": "它比起我在Web二点零时候接触到这些互联网公司它产生的数据量来说，对于一个agent它要处理的这些数据简直是太少了，其实有点反直觉，对吧？",
+      "source_segment_indexes": [
+        139
+      ],
+      "source_segment_ids": [
+        139
+      ]
+    },
+    {
+      "start": 1071.703,
+      "end": 1072.183,
+      "text": "对，为什么？",
+      "source_segment_indexes": [
+        140
+      ],
+      "source_segment_ids": [
+        140
+      ]
+    },
+    {
+      "start": 1072.423,
+      "end": 1084.663,
+      "text": "比如说我我用淘宝，我用美团，全世界只有一个淘宝，淘宝的背后的数据系统、存储系统要面临的这些数据量，可能都是以PB为单位计算的。",
+      "source_segment_indexes": [
+        141
+      ],
+      "source_segment_ids": [
+        141
+      ]
+    },
+    {
+      "start": 1085.303,
+      "end": 1085.783,
+      "text": "PB什么？",
+      "source_segment_indexes": [
+        142
+      ],
+      "source_segment_ids": [
+        142
+      ]
+    },
+    {
+      "start": 1085.783,
+      "end": 1093.223,
+      "text": "一千零二十四个terabyte，一个PB，但可能这个淘宝可能是数百甚至这个上千个PB这个级别。",
+      "source_segment_indexes": [
+        143
+      ],
+      "source_segment_ids": [
+        143
+      ]
+    },
+    {
+      "start": 1094.183,
+      "end": 1105.383,
+      "text": "但你想想，现在当每个人都有一个自己的agent的时候，它不再是一个集中的大数据，而是高度碎片化的无数个小数据。",
+      "source_segment_indexes": [
+        144
+      ],
+      "source_segment_ids": [
+        144
+      ]
+    },
+    {
+      "start": 1106.103,
+      "end": 1113.223,
+      "text": "我举个例子，就是现在你跟你小龙虾，你就算天天聊，往死里聊，你能聊出一本莎士比亚的这么这么长的话吗？",
+      "source_segment_indexes": [
+        145
+      ],
+      "source_segment_ids": [
+        145
+      ]
+    },
+    {
+      "start": 1113.703,
+      "end": 1130.903,
+      "text": "哪怕算上你个人电脑上所有的文档，或者说所有的这些你看过的书，加起来，其实对于过去数据库这样的软件的存储的极限来说吧，还离非常非常长的距离，所以都都不是大数据。",
+      "source_segment_indexes": [
+        146
+      ],
+      "source_segment_ids": [
+        146
+      ]
+    },
+    {
+      "start": 1131.063,
+      "end": 1150.903,
+      "text": "今天agent的使用数据的方式是海量的小数据，这就是为什么我其实可以敢于说给龙虾无限的记忆，因为我假设一个人他跟着他的小龙虾一起产生的这些有价值的对话、有价值的数据，在今天这种以语言模型为主的产品形态里边不会太多。",
+      "source_segment_indexes": [
+        147
+      ],
+      "source_segment_ids": [
+        147
+      ]
+    },
+    {
+      "start": 1151.863,
+      "end": 1157.703,
+      "text": "哪怕是以后就是这么多agent非常多步骤的，对复杂的这种呃agent也不会产生。",
+      "source_segment_indexes": [
+        148
+      ],
+      "source_segment_ids": [
+        148
+      ]
+    },
+    {
+      "start": 1157.703,
+      "end": 1162.823,
+      "text": "只要是以文本语言来去交互的，它的数据量就不会太大。",
+      "source_segment_indexes": [
+        149
+      ],
+      "source_segment_ids": [
+        149
+      ]
+    },
+    {
+      "start": 1163.143,
+      "end": 1170.183,
+      "text": "因为我们都还很关心现在存储整个供应链都很短缺，对，你觉得multi agent的一个趋势其实不会产生特别大的影响？",
+      "source_segment_indexes": [
+        150
+      ],
+      "source_segment_ids": [
+        150
+      ]
+    },
+    {
+      "start": 1170.503,
+      "end": 1188.663,
+      "text": "我觉得会产生影响，但是这个影响是就刚才其实我提到一个词叫海量的小数据，嗯，你想海量的小数据加起来其实也很大，而且这个加起来了以后会比刚才我说的这种中心化的淘宝、中心化的美团。",
+      "source_segment_indexes": [
+        151
+      ],
+      "source_segment_ids": [
+        151
+      ]
+    },
+    {
+      "start": 1189.36,
+      "end": 1203.12,
+      "text": "的数据量会更大，只是说它不不再是一个集中的一个形态，而是会可能有无数若干个提供龙虾服务的厂商顺便提供了记忆服务，比如说我们就属于提供记忆和存储服务的厂商之一。",
+      "source_segment_indexes": [
+        152
+      ],
+      "source_segment_ids": [
+        152
+      ]
+    },
+    {
+      "start": 1203.6,
+      "end": 1215.84,
+      "text": "你最好的策略就是，无论用户跟他的龙虾或者他的agent聊过什么东西，我作为提供商，我一定得存下来，这是对未来来说最宝贵的资源。",
+      "source_segment_indexes": [
+        153
+      ],
+      "source_segment_ids": [
+        153
+      ]
+    },
+    {
+      "start": 1216.48,
+      "end": 1222.56,
+      "text": "所以今天可能大家就要布局去采购各种这个这个存储。",
+      "source_segment_indexes": [
+        154
+      ],
+      "source_segment_ids": [
+        154
+      ]
+    },
+    {
+      "start": 1223.04,
+      "end": 1232.96,
+      "text": "第二个呢，就是我觉得大语言模型或者今天的这个多模态已经具备了初步的能力，把很多非结构化数据变成结构化数据，这意味着什么？",
+      "source_segment_indexes": [
+        155
+      ],
+      "source_segment_ids": [
+        155
+      ]
+    },
+    {
+      "start": 1232.96,
+      "end": 1237.68,
+      "text": "这意味着它能产生价值了，因为结构化数据通常是价值更高的。",
+      "source_segment_indexes": [
+        156
+      ],
+      "source_segment_ids": [
+        156
+      ]
+    },
+    {
+      "start": 1237.92,
+      "end": 1258.64,
+      "text": "有这样的机会了以后，作为一个比如说你是一个服务的提供商，呃，所以我觉得对于全社会来说，存储肯定还是我能理解它为什么这个这个价格在在涨，因为agent确实创造了更多产生数据的机会和产生数据的场景，比如说热数据、温数据、冷数据。",
+      "source_segment_indexes": [
+        157
+      ],
+      "source_segment_ids": [
+        157
+      ]
+    },
+    {
+      "start": 1258.64,
+      "end": 1260.8,
+      "text": "对，你觉得就说全部都是需要的？",
+      "source_segment_indexes": [
+        158
+      ],
+      "source_segment_ids": [
+        158
+      ]
+    },
+    {
+      "start": 1260.88,
+      "end": 1262.24,
+      "text": "全都需要，全都需要。",
+      "source_segment_indexes": [
+        159
+      ],
+      "source_segment_ids": [
+        159
+      ]
+    },
+    {
+      "start": 1262.32,
+      "end": 1264.08,
+      "text": "结构化数据、非结构化数据也都需要。",
+      "source_segment_indexes": [
+        160
+      ],
+      "source_segment_ids": [
+        160
+      ]
+    },
+    {
+      "start": 1264.4,
+      "end": 1272.24,
+      "text": "人跟机器产生的所有的footprint脚印都要被存储下来，因为这些东西都有价值。",
+      "source_segment_indexes": [
+        161
+      ],
+      "source_segment_ids": [
+        161
+      ]
+    },
+    {
+      "start": 1272.56,
+      "end": 1274.4,
+      "text": "哪些是需要永久保留的？",
+      "source_segment_indexes": [
+        162
+      ],
+      "source_segment_ids": [
+        162
+      ]
+    },
+    {
+      "start": 1274.4,
+      "end": 1276.72,
+      "text": "然后哪些是可能用一段时间就删掉了？",
+      "source_segment_indexes": [
+        163
+      ],
+      "source_segment_ids": [
+        163
+      ]
+    },
+    {
+      "start": 1276.72,
+      "end": 1288.16,
+      "text": "我很认同Google的一个这个philosophy，我永远不删数据，只要我的存储成本能够cover它的存储成本，那你就应该都存着。",
+      "source_segment_indexes": [
+        164
+      ],
+      "source_segment_ids": [
+        164
+      ]
+    },
+    {
+      "start": 1288.56,
+      "end": 1289.52,
+      "text": "怎么去衡量它的？",
+      "source_segment_indexes": [
+        165
+      ],
+      "source_segment_ids": [
+        165
+      ]
+    },
+    {
+      "start": 1290.48,
+      "end": 1292.32,
+      "text": "以哎，你问了一个非常好的问题。",
+      "source_segment_indexes": [
+        166
+      ],
+      "source_segment_ids": [
+        166
+      ]
+    },
+    {
+      "start": 1292.72,
+      "end": 1303.36,
+      "text": "以前人是没有办法去衡量个人数据这种非常零散的这些个人数据的价值的，它是不划算的，因为你没有办法去利用这些个人数据。",
+      "source_segment_indexes": [
+        167
+      ],
+      "source_segment_ids": [
+        167
+      ]
+    },
+    {
+      "start": 1303.52,
+      "end": 1321.28,
+      "text": "但今天不一样了，以前因为没有办法去做到这种千人千面，所以只能把所有人的数据汇集在一起，大数据做分析，说哎给所有的消费者我打十个标签，啊这个是一个白领啊那个是一个三线城市的青年啊那个是个老人。",
+      "source_segment_indexes": [
+        168
+      ],
+      "source_segment_ids": [
+        168
+      ]
+    },
+    {
+      "start": 1322.08,
+      "end": 1336.72,
+      "text": "但你想象一下在agent的这个时代，你的agent会非常非常了解你，他知道你经常吃什么，最近感兴趣什么，这时候给你再去推荐东西非常非常的精准，那它的价值是不是就就非常非常高了？",
+      "source_segment_indexes": [
+        169
+      ],
+      "source_segment_ids": [
+        169
+      ]
+    },
+    {
+      "start": 1337.04,
+      "end": 1341.2,
+      "text": "只是说以前没有办法利用，但现在有了AI有了agent，它一定可以利用上。",
+      "source_segment_indexes": [
+        170
+      ],
+      "source_segment_ids": [
+        170
+      ]
+    },
+    {
+      "start": 1341.68,
+      "end": 1345.92,
+      "text": "现在存储的产能这么缺，你觉得未来有一些什么好的办法去解决吗？",
+      "source_segment_indexes": [
+        171
+      ],
+      "source_segment_ids": [
+        171
+      ]
+    },
+    {
+      "start": 1346.0,
+      "end": 1358.16,
+      "text": "我觉得这个其实可能是短期供应的供应链的波动，因为这个本身也不是什么航天科技之类的，没有没有什么秘密在里边，只是可能一个产能临时的短缺吧，所以我觉得会会回归的。",
+      "source_segment_indexes": [
+        172
+      ],
+      "source_segment_ids": [
+        172
+      ]
+    },
+    {
+      "start": 1358.88,
+      "end": 1365.36,
+      "text": "第二呢，我觉得用长期来看，嗯，需求肯定是在持续的增加，也是可以被预期到的。",
+      "source_segment_indexes": [
+        173
+      ],
+      "source_segment_ids": [
+        173
+      ]
+    },
+    {
+      "start": 1365.68,
+      "end": 1368.56,
+      "text": "未来agent的时代，我们需要怎样的存储的范式？",
+      "source_segment_indexes": [
+        174
+      ],
+      "source_segment_ids": [
+        174
+      ]
+    },
+    {
+      "start": 1368.8,
+      "end": 1389.12,
+      "text": "其实我刚才说到这个范式的海量的个人的小的灵活的数据，它不再是说我集中的一个固定的形态的数据，而是每个人就像真正的记记忆一样，我我未来会更看好这样的这种数据库和数据形态，不是给人做的，而是给这个agent去做的。",
+      "source_segment_indexes": [
+        175
+      ],
+      "source_segment_ids": [
+        175
+      ]
+    },
+    {
+      "start": 1389.44,
+      "end": 1400.32,
+      "text": "什么样的数据库或者说数据平台能够适合这样的这种高度灵活、千人千面以及非常个人化的这个场景？",
+      "source_segment_indexes": [
+        176
+      ],
+      "source_segment_ids": [
+        176
+      ]
+    },
+    {
+      "start": 1400.64,
+      "end": 1409.28,
+      "text": "就你刚刚其实也提到了一虾一库的概念，而同时你又提出来可以是很多的虾去共享一个存储的空间，这个是怎么做到的？",
+      "source_segment_indexes": [
+        177
+      ],
+      "source_segment_ids": [
+        177
+      ]
+    },
+    {
+      "start": 1409.68,
+      "end": 1416.8,
+      "text": "一虾一库，我觉得这是一个必然的趋势，因为每一个人自己的记忆的结构跟另外一个人都是不一样的。",
+      "source_segment_indexes": [
+        178
+      ],
+      "source_segment_ids": [
+        178
+      ]
+    },
+    {
+      "start": 1417.28,
+      "end": 1424.08,
+      "text": "比如安全吧，安全是个硬性的限制，就每一个人的数据我都应该是给个人的数据做加密。",
+      "source_segment_indexes": [
+        179
+      ],
+      "source_segment_ids": [
+        179
+      ]
+    },
+    {
+      "start": 1424.619,
+      "end": 1433.979,
+      "text": "每个人的这个这个密钥可能都是不一样的，所以你不会愿意你把你的这个记忆跟这个陌生人全都放在一起，对吧？",
+      "source_segment_indexes": [
+        180
+      ],
+      "source_segment_ids": [
+        180
+      ]
+    },
+    {
+      "start": 1434.059,
+      "end": 1436.379,
+      "text": "你还是希望你有一个自己的一个空间。",
+      "source_segment_indexes": [
+        181
+      ],
+      "source_segment_ids": [
+        181
+      ]
+    },
+    {
+      "start": 1436.859,
+      "end": 1440.699,
+      "text": "你的龙虾也是，我觉得一个好的记忆系统，你必须得提供这样的一个能力。",
+      "source_segment_indexes": [
+        182
+      ],
+      "source_segment_ids": [
+        182
+      ]
+    },
+    {
+      "start": 1441.019,
+      "end": 1444.379,
+      "text": "第二个呢，为什么要去做这个 consolidate？",
+      "source_segment_indexes": [
+        183
+      ],
+      "source_segment_ids": [
+        183
+      ]
+    },
+    {
+      "start": 1444.459,
+      "end": 1452.939,
+      "text": "就是我怎么去提供这样的一个平台，给每一个龙虾都提供一个免费或者说一个很低的成本去提供。",
+      "source_segment_indexes": [
+        184
+      ],
+      "source_segment_ids": [
+        184
+      ]
+    },
+    {
+      "start": 1453.659,
+      "end": 1470.299,
+      "text": "啊，我其实这里面有一些这个技术的细节啊，啊，但大概有核心的原理就是我对外提供了一层这个数据库的虚拟化，但是底下呢其实是基于云的存储来去做了一层这个对象存储作为底层的一个大型的共享存储吧。",
+      "source_segment_indexes": [
+        185
+      ],
+      "source_segment_ids": [
+        185
+      ]
+    },
+    {
+      "start": 1470.459,
+      "end": 1485.739,
+      "text": "但在上面我可以说针对不同的用户，我画出了一个个虚拟的门户，但每一个门户里边，他的 agent 看到他认为自己 owns 整个这个 db，但其实底下是一个大的这个共享的底层存储。",
+      "source_segment_indexes": [
+        186
+      ],
+      "source_segment_ids": [
+        186
+      ]
+    },
+    {
+      "start": 1486.059,
+      "end": 1507.259,
+      "text": "那核心的目标就是说，它会节省很多的成本，因为大多数时候，大多数人不会跟他的 agent 的天天聊天，可能重度用户就是百分之一，但这时候你不能说我为了那些呃可能一天就聊两三句话的用户去 maintain 一套他自己专属的 infra，这是很不划算的。",
+      "source_segment_indexes": [
+        187
+      ],
+      "source_segment_ids": [
+        187
+      ]
+    },
+    {
+      "start": 1507.579,
+      "end": 1511.499,
+      "text": "所以我还是需需要有一个共享的一套基础设施。",
+      "source_segment_indexes": [
+        188
+      ],
+      "source_segment_ids": [
+        188
+      ]
+    },
+    {
+      "start": 1512.139,
+      "end": 1513.259,
+      "text": "为什么要这这么设计？",
+      "source_segment_indexes": [
+        189
+      ],
+      "source_segment_ids": [
+        189
+      ]
+    },
+    {
+      "start": 1513.579,
+      "end": 1521.339,
+      "text": "我觉得也是给 agent 提供了一个更加易用或者说更加好理解的一个数据的模型。",
+      "source_segment_indexes": [
+        190
+      ],
+      "source_segment_ids": [
+        190
+      ]
+    },
+    {
+      "start": 1522.139,
+      "end": 1530.619,
+      "text": "因为你与其教一个 agent 说，哎，你要去存储服务上注册个账号，还不如直接告诉这个 agent 说，好，你现在看到就是一个完整的数据库，你随便搞。",
+      "source_segment_indexes": [
+        191
+      ],
+      "source_segment_ids": [
+        191
+      ]
+    },
+    {
+      "start": 1530.779,
+      "end": 1533.099,
+      "text": "这样其实对于 agent 来说，是更友好的。",
+      "source_segment_indexes": [
+        192
+      ],
+      "source_segment_ids": [
+        192
+      ]
+    },
+    {
+      "start": 1533.099,
+      "end": 1540.139,
+      "text": "嗯，从数据的安全角度来说，你觉得以后这些记忆是存在云端的，还是应该是存在本地的，还是混合的？",
+      "source_segment_indexes": [
+        193
+      ],
+      "source_segment_ids": [
+        193
+      ]
+    },
+    {
+      "start": 1540.939,
+      "end": 1541.899,
+      "text": "我觉得一定是云端。",
+      "source_segment_indexes": [
+        194
+      ],
+      "source_segment_ids": [
+        194
+      ]
+    },
+    {
+      "start": 1542.539,
+      "end": 1545.099,
+      "text": "这个结论不是从安全性来去得出的。",
+      "source_segment_indexes": [
+        195
+      ],
+      "source_segment_ids": [
+        195
+      ]
+    },
+    {
+      "start": 1545.339,
+      "end": 1552.459,
+      "text": "比如说微信支付，我的银行账号，我的银行数据，你可以认为这也都是云端了，是吧？",
+      "source_segment_indexes": [
+        196
+      ],
+      "source_segment_ids": [
+        196
+      ]
+    },
+    {
+      "start": 1552.859,
+      "end": 1572.059,
+      "text": "其实我觉得小龙虾的一个问题是说，它是一个 geek 设计的，Peter 就是一个特别极客的人，他的一个理念是 local first，来 local，确实很安全，也不会有一个云端的引号邪恶公司然后控制着你的数据。",
+      "source_segment_indexes": [
+        197
+      ],
+      "source_segment_ids": [
+        197
+      ]
+    },
+    {
+      "start": 1572.139,
+      "end": 1573.019,
+      "text": "但它牺牲掉什么呢？",
+      "source_segment_indexes": [
+        198
+      ],
+      "source_segment_ids": [
+        198
+      ]
+    },
+    {
+      "start": 1573.339,
+      "end": 1574.379,
+      "text": "牺牲掉用户体验。",
+      "source_segment_indexes": [
+        199
+      ],
+      "source_segment_ids": [
+        199
+      ]
+    },
+    {
+      "start": 1574.539,
+      "end": 1581.499,
+      "text": "如果你没有一些本地的 debug 的能力，或者这个系统怎么开发的这个能力，你会发现经常把龙虾养死了。",
+      "source_segment_indexes": [
+        200
+      ],
+      "source_segment_ids": [
+        200
+      ]
+    },
+    {
+      "start": 1582.219,
+      "end": 1591.819,
+      "text": "比如说你跟你的龙虾聊了十年，突然有一天升级说不好意思我挂了，你就可能跟家里真的有亲人这个这个去世的感觉很像是吧？",
+      "source_segment_indexes": [
+        201
+      ],
+      "source_segment_ids": [
+        201
+      ]
+    },
+    {
+      "start": 1592.139,
+      "end": 1592.779,
+      "text": "就很吓人。",
+      "source_segment_indexes": [
+        202
+      ],
+      "source_segment_ids": [
+        202
+      ]
+    },
+    {
+      "start": 1593.259,
+      "end": 1607.819,
+      "text": "所以我觉得未来从产品形态和体验的角，如果你要变成一个 C 端的产品，更广泛的在用着，它一定是个云端的，因为你只有在云端，你才能提供这种通用的和易用的这个用户体验。",
+      "source_segment_indexes": [
+        203
+      ],
+      "source_segment_ids": [
+        203
+      ]
+    },
+    {
+      "start": 1608.059,
+      "end": 1611.339,
+      "text": "比如说你这个龙虾养死了，我的数据还给你备份着呢，是吧？",
+      "source_segment_indexes": [
+        204
+      ],
+      "source_segment_ids": [
+        204
+      ]
+    },
+    {
+      "start": 1611.339,
+      "end": 1616.539,
+      "text": "我马上再给你起一个龙虾的身体啊，再回到你的记忆上，一下又能又能复活了。",
+      "source_segment_indexes": [
+        205
+      ],
+      "source_segment_ids": [
+        205
+      ]
+    },
+    {
+      "start": 1617.259,
+      "end": 1623.499,
+      "text": "你不需要去了解 Linux，你不需要去了解本地怎么装这些开发工具，所以一定是云端。",
+      "source_segment_indexes": [
+        206
+      ],
+      "source_segment_ids": [
+        206
+      ]
+    },
+    {
+      "start": 1624.459,
+      "end": 1627.739,
+      "text": "你觉得未来的记忆层它的商业化前景怎么样？",
+      "source_segment_indexes": [
+        207
+      ],
+      "source_segment_ids": [
+        207
+      ]
+    },
+    {
+      "start": 1628.539,
+      "end": 1631.099,
+      "text": "它以后会是被吸收成一个基础设施呢？",
+      "source_segment_indexes": [
+        208
+      ],
+      "source_segment_ids": [
+        208
+      ]
+    },
+    {
+      "start": 1631.339,
+      "end": 1636.059,
+      "text": "就从你看到用户付费意愿最强烈的那个场景是什么？",
+      "source_segment_indexes": [
+        209
+      ],
+      "source_segment_ids": [
+        209
+      ]
+    },
+    {
+      "start": 1636.059,
+      "end": 1647.019,
+      "text": "嗯，我觉得几个场景，第一个是记忆的备份恢复，因为大家都知道记忆的价值，尤其是你在重度的使用跟你的龙虾一起在在用的时候，记的价值是非常重要的。",
+      "source_segment_indexes": [
+        210
+      ],
+      "source_segment_ids": [
+        210
+      ]
+    },
+    {
+      "start": 1647.579,
+      "end": 1657.419,
+      "text": "这里面有几种商业模式，一种商业模式是针对这个服务本身的这个备份恢复这种周边服务去做一个增值服务。",
+      "source_segment_indexes": [
+        211
+      ],
+      "source_segment_ids": [
+        211
+      ]
+    },
+    {
+      "start": 1657.899,
+      "end": 1661.499,
+      "text": "可能我基础的这个记忆本身是免费，但是如果你需要有一个",
+      "source_segment_indexes": [
+        212
+      ],
+      "source_segment_ids": [
+        212
+      ]
+    },
+    {
+      "start": 1662.148,
+      "end": 1671.348,
+      "text": "导入导出，或者说一些这种云端备份，你可以设计一个订阅制的商业模式在上面，但它肯定不是一个企业级的这种产品的定价模式。",
+      "source_segment_indexes": [
+        213
+      ],
+      "source_segment_ids": [
+        213
+      ]
+    },
+    {
+      "start": 1671.668,
+      "end": 1681.748,
+      "text": "第二种，我个人理想中啊，就是 memory 会变成一个真正通用的基础设施，因为我其实在赌下一代的 agent native 的 application 的形态。",
+      "source_segment_indexes": [
+        214
+      ],
+      "source_segment_ids": [
+        214
+      ]
+    },
+    {
+      "start": 1682.228,
+      "end": 1697.668,
+      "text": "agent application 它绝对不会像今天这样是由软件工程师编写代码，而是由可能无数的这个人类的领域专家，在他们的记忆里边去提取出一些高价值的东西。",
+      "source_segment_indexes": [
+        215
+      ],
+      "source_segment_ids": [
+        215
+      ]
+    },
+    {
+      "start": 1697.748,
+      "end": 1717.828,
+      "text": "比如说我是一个厨师，我跟我的小龙虾天天在聊做饭，之后我有一个能力是说，把这个厨师的小龙虾的脑子里关于做饭的记忆抽取出来，变成一个外挂记忆，这个外挂记忆接到其他人的 agent 上，然后我通过这个 marketplace 来去收钱。",
+      "source_segment_indexes": [
+        216
+      ],
+      "source_segment_ids": [
+        216
+      ]
+    },
+    {
+      "start": 1718.148,
+      "end": 1725.748,
+      "text": "你想象一下，这个厨师他可能完全不会写代码，他只会做饭，他一直在跟他的龙虾讨论这个做饭的内容。",
+      "source_segment_indexes": [
+        217
+      ],
+      "source_segment_ids": [
+        217
+      ]
+    },
+    {
+      "start": 1726.068,
+      "end": 1734.548,
+      "text": "我现在能够帮你去把你的这个知识变现成一个可以被付费的东西，那这时候你就变成了一个新的分发渠道了。",
+      "source_segment_indexes": [
+        218
+      ],
+      "source_segment_ids": [
+        218
+      ]
+    },
+    {
+      "start": 1735.108,
+      "end": 1740.388,
+      "text": "这也是我觉得基于记忆来去变现的一条，呃，很有意思的路径吧。",
+      "source_segment_indexes": [
+        219
+      ],
+      "source_segment_ids": [
+        219
+      ]
+    },
+    {
+      "start": 1740.708,
+      "end": 1747.828,
+      "text": "我们现在再拉回去看整个 agent 时代的基础设施，你又是这个领域做数据库的呃专家。",
+      "source_segment_indexes": [
+        220
+      ],
+      "source_segment_ids": [
+        220
+      ]
+    },
+    {
+      "start": 1747.908,
+      "end": 1749.188,
+      "text": "数据库是一个重要的基础设施。",
+      "source_segment_indexes": [
+        221
+      ],
+      "source_segment_ids": [
+        221
+      ]
+    },
+    {
+      "start": 1749.588,
+      "end": 1753.108,
+      "text": "对，你觉得 agent 时代整个基础设施会被怎么样重写？",
+      "source_segment_indexes": [
+        222
+      ],
+      "source_segment_ids": [
+        222
+      ]
+    },
+    {
+      "start": 1753.668,
+      "end": 1758.228,
+      "text": "我觉得第一点就是面向 agent 的基础设施一定会出现。",
+      "source_segment_indexes": [
+        223
+      ],
+      "source_segment_ids": [
+        223
+      ]
+    },
+    {
+      "start": 1758.708,
+      "end": 1775.908,
+      "text": "就现在我们今天看到的呃云、数据库、网络这些东西，本质上来说这些东西的用户还是开发者，我们引号基础设施或者说生态生态链吧，都是围绕人去构建的。",
+      "source_segment_indexes": [
+        224
+      ],
+      "source_segment_ids": [
+        224
+      ]
+    },
+    {
+      "start": 1776.228,
+      "end": 1784.948,
+      "text": "但是我觉得在 agent 的时代，今天已经正在发生了，就是围绕着 agent，它会有一套属于 agent 应用的基础设施。",
+      "source_segment_indexes": [
+        225
+      ],
+      "source_segment_ids": [
+        225
+      ]
+    },
+    {
+      "start": 1785.188,
+      "end": 1797.188,
+      "text": "比如说它一定会有给 agent 用的云，但给 agent 用的云的形态，它会跟今天我们看到 AWS、GCP、跟阿里云的形态是完全不一样的。",
+      "source_segment_indexes": [
+        226
+      ],
+      "source_segment_ids": [
+        226
+      ]
+    },
+    {
+      "start": 1797.348,
+      "end": 1811.508,
+      "text": "今天其实包括我们可能用过 Minus 的同学都都都知道，Minus 其实是相当于给了一台小电脑，在电脑里面什么东西都有，然后这个 agent 可以在里边我我们称这个环境为 sandbox，一个沙箱。",
+      "source_segment_indexes": [
+        227
+      ],
+      "source_segment_ids": [
+        227
+      ]
+    },
+    {
+      "start": 1812.148,
+      "end": 1825.028,
+      "text": "现在对于 agent 来说，因为每一个任务都是特别的，所以对于 agent 的云来说，它可能提供的就不是一个这个底层的云平台，而是一个个小型的沙箱，让 agent 在里边干活。",
+      "source_segment_indexes": [
+        228
+      ],
+      "source_segment_ids": [
+        228
+      ]
+    },
+    {
+      "start": 1825.188,
+      "end": 1833.908,
+      "text": "如果我是做这个 agent 的 AWS，我一定会提供这个服务，一沙一库，这个是我们在 M9 这个产品里边的提出的一个理念。",
+      "source_segment_indexes": [
+        229
+      ],
+      "source_segment_ids": [
+        229
+      ]
+    },
+    {
+      "start": 1834.708,
+      "end": 1842.068,
+      "text": "但想想对于基础设施的提供商来说，从来没有一个 database 提供数据服务的公司敢这么卖，为什么呢？",
+      "source_segment_indexes": [
+        230
+      ],
+      "source_segment_ids": [
+        230
+      ]
+    },
+    {
+      "start": 1842.388,
+      "end": 1871.268,
+      "text": "因为我们当提到给 agent 设计数据库的时候，可能几百万、几千万个 agent 同时要去使用数据库，那这时候你去看现在的这个云或者现在基础设施，每个数据库最便宜可能一个月也得几美金，但是当你要给几十亿的 agent 提供，你这个成本是是扛不住的，所以就必须得重新去设计这个数据库底层的实现，才能去适应 agent 的这种用法。",
+      "source_segment_indexes": [
+        231
+      ],
+      "source_segment_ids": [
+        231
+      ]
+    },
+    {
+      "start": 1871.588,
+      "end": 1876.788,
+      "text": "同样的逻辑，你可以套用在很多的其他产品上，比如通信是吧？",
+      "source_segment_indexes": [
+        232
+      ],
+      "source_segment_ids": [
+        232
+      ]
+    },
+    {
+      "start": 1877.268,
+      "end": 1887.028,
+      "text": "人和人之间通信用邮箱，电子邮箱，哎，但是 agent 是不需要界面的，而且 agent 它应该是更高频的跟其他 agent 的通信。",
+      "source_segment_indexes": [
+        233
+      ],
+      "source_segment_ids": [
+        233
+      ]
+    },
+    {
+      "start": 1887.988,
+      "end": 1891.108,
+      "text": "那现在谁有给 agent 提供邮箱的服务呢？",
+      "source_segment_indexes": [
+        234
+      ],
+      "source_segment_ids": [
+        234
+      ]
+    },
+    {
+      "start": 1891.828,
+      "end": 1892.148,
+      "text": "没有。",
+      "source_segment_indexes": [
+        235
+      ],
+      "source_segment_ids": [
+        235
+      ]
+    },
+    {
+      "start": 1892.388,
+      "end": 1899.428,
+      "text": "另外支付、鉴权或者说这个 ID 这种都值得为 agent 的场景重新设计一遍。",
+      "source_segment_indexes": [
+        236
+      ],
+      "source_segment_ids": [
+        236
+      ]
+    },
+    {
+      "start": 1899.746,
+      "end": 1904.226,
+      "text": "这是是一个非常朝阳，同时又非常重要的一个一个事儿。",
+      "source_segment_indexes": [
+        237
+      ],
+      "source_segment_ids": [
+        237
+      ]
+    },
+    {
+      "start": 1904.626,
+      "end": 1910.706,
+      "text": "你怎么看待 SQL 和 file system 这样的经典抽象在 Agent 时代的前景？",
+      "source_segment_indexes": [
+        238
+      ],
+      "source_segment_ids": [
+        238
+      ]
+    },
+    {
+      "start": 1910.946,
+      "end": 1919.026,
+      "text": "现在我们的这 coding agent 也好，或者说模型也好，它是从人类的这些数据里边训练出来的。",
+      "source_segment_indexes": [
+        239
+      ],
+      "source_segment_ids": [
+        239
+      ]
+    },
+    {
+      "start": 1919.506,
+      "end": 1931.266,
+      "text": "人类发明了 SQL，人类发明了 file system，所以在 Agent 背后的代元模型的脑子里，这些就是他们最熟悉的操作计算机的心智模型。",
+      "source_segment_indexes": [
+        240
+      ],
+      "source_segment_ids": [
+        240
+      ]
+    },
+    {
+      "start": 1931.666,
+      "end": 1942.386,
+      "text": "不管你今天提供什么样 agent native 的新的 infra，但是呢，你给 agent 使用的接口一定是这些经典的接口。",
+      "source_segment_indexes": [
+        241
+      ],
+      "source_segment_ids": [
+        241
+      ]
+    },
+    {
+      "start": 1943.186,
+      "end": 1949.426,
+      "text": "这就是为什么我们去提供记忆的时候，是通过这个数据库的接口去去把存储给做了。",
+      "source_segment_indexes": [
+        242
+      ],
+      "source_segment_ids": [
+        242
+      ]
+    },
+    {
+      "start": 1949.906,
+      "end": 1956.626,
+      "text": "因为 agent 最最擅长写 SQL，比如说像小龙虾原生的这个记忆系统，它就是一堆 Markdown 文件。",
+      "source_segment_indexes": [
+        243
+      ],
+      "source_segment_ids": [
+        243
+      ]
+    },
+    {
+      "start": 1956.946,
+      "end": 1960.306,
+      "text": "代元模型和 coding agent 的操作文件系统也非常擅长。",
+      "source_segment_indexes": [
+        244
+      ],
+      "source_segment_ids": [
+        244
+      ]
+    },
+    {
+      "start": 1960.946,
+      "end": 1976.306,
+      "text": "所以我的结论是，至少在 agent 自己自我进化出更符合 agent 使用的这种接口啊形式之前，呃，这些经典的心智模型会长期存在。",
+      "source_segment_indexes": [
+        245
+      ],
+      "source_segment_ids": [
+        245
+      ]
+    },
+    {
+      "start": 1976.946,
+      "end": 1981.186,
+      "text": "只是呢，这些心智模型下面的实现会不一样。",
+      "source_segment_indexes": [
+        246
+      ],
+      "source_segment_ids": [
+        246
+      ]
+    },
+    {
+      "start": 1981.666,
+      "end": 1991.906,
+      "text": "我们知道这几年向量数据库非常的火，呃，但同时我们也看到一些现存的玩家也在把这个向量的能力给加到自己的这个功能里。",
+      "source_segment_indexes": [
+        247
+      ],
+      "source_segment_ids": [
+        247
+      ]
+    },
+    {
+      "start": 1991.906,
+      "end": 1995.586,
+      "text": "你觉得未来这些独立的向量数据库，他们的终局会怎么样？",
+      "source_segment_indexes": [
+        248
+      ],
+      "source_segment_ids": [
+        248
+      ]
+    },
+    {
+      "start": 1996.226,
+      "end": 1997.986,
+      "text": "哎，我觉得这问题挺好的。",
+      "source_segment_indexes": [
+        249
+      ],
+      "source_segment_ids": [
+        249
+      ]
+    },
+    {
+      "start": 1997.986,
+      "end": 2000.466,
+      "text": "其实我的观点可能有点极端啊。",
+      "source_segment_indexes": [
+        250
+      ],
+      "source_segment_ids": [
+        250
+      ]
+    },
+    {
+      "start": 2000.706,
+      "end": 2013.506,
+      "text": "就刚其实我我提到这个记忆的检索的部分里边会用到向量数据库的一些检索能力，但是向量检索只是我若干个检索手段中的一个。",
+      "source_segment_indexes": [
+        251
+      ],
+      "source_segment_ids": [
+        251
+      ]
+    },
+    {
+      "start": 2014.146,
+      "end": 2019.186,
+      "text": "我不仅要做向量检索，我还要做全文匹配，我还要做原始信息的过滤。",
+      "source_segment_indexes": [
+        252
+      ],
+      "source_segment_ids": [
+        252
+      ]
+    },
+    {
+      "start": 2019.506,
+      "end": 2026.226,
+      "text": "其实我是非常不赞同把向量数据库单独变成一个独立的划分的。",
+      "source_segment_indexes": [
+        253
+      ],
+      "source_segment_ids": [
+        253
+      ]
+    },
+    {
+      "start": 2026.546,
+      "end": 2030.786,
+      "text": "它应该是所有数据平台都提供的一个标准的能力而已。",
+      "source_segment_indexes": [
+        254
+      ],
+      "source_segment_ids": [
+        254
+      ]
+    },
+    {
+      "start": 2031.186,
+      "end": 2038.226,
+      "text": "就是如果你把它单独拆成另外一个独立的东西，对于 agent 来说是不友好的。",
+      "source_segment_indexes": [
+        255
+      ],
+      "source_segment_ids": [
+        255
+      ]
+    },
+    {
+      "start": 2038.466,
+      "end": 2044.706,
+      "text": "有些数据在这边，有些数据在那边，这时候我想交叉的去做一些事情，其实非常费劲。",
+      "source_segment_indexes": [
+        256
+      ],
+      "source_segment_ids": [
+        256
+      ]
+    },
+    {
+      "start": 2045.346,
+      "end": 2048.786,
+      "text": "那还不如说我都在一起，我提供一个更加自然的接口。",
+      "source_segment_indexes": [
+        257
+      ],
+      "source_segment_ids": [
+        257
+      ]
+    },
+    {
+      "start": 2048.946,
+      "end": 2056.866,
+      "text": "所以我的结论非常简单，大家都会有这个能力，不需要有一个单独的一个向量的数据库出现。",
+      "source_segment_indexes": [
+        258
+      ],
+      "source_segment_ids": [
+        258
+      ]
+    },
+    {
+      "start": 2057.346,
+      "end": 2061.186,
+      "text": "那所以就是说，你觉得以后分布在各个地方这些能力未来还是收敛的？",
+      "source_segment_indexes": [
+        259
+      ],
+      "source_segment_ids": [
+        259
+      ]
+    },
+    {
+      "start": 2061.586,
+      "end": 2063.906,
+      "text": "对，就是它是收敛的。",
+      "source_segment_indexes": [
+        260
+      ],
+      "source_segment_ids": [
+        260
+      ]
+    },
+    {
+      "start": 2064.226,
+      "end": 2066.226,
+      "text": "对于每个 agent 的接口层是收敛的。",
+      "source_segment_indexes": [
+        261
+      ],
+      "source_segment_ids": [
+        261
+      ]
+    },
+    {
+      "start": 2066.626,
+      "end": 2069.746,
+      "text": "嗯，但是它面向的数据量不会太多。",
+      "source_segment_indexes": [
+        262
+      ],
+      "source_segment_ids": [
+        262
+      ]
+    },
+    {
+      "start": 2070.306,
+      "end": 2073.586,
+      "text": "其实一直在强调的一个点就是海量的个人数据。",
+      "source_segment_indexes": [
+        263
+      ],
+      "source_segment_ids": [
+        263
+      ]
+    },
+    {
+      "start": 2074.226,
+      "end": 2077.186,
+      "text": "当你在个人数据的这个语境之下，数量不会太大。",
+      "source_segment_indexes": [
+        264
+      ],
+      "source_segment_ids": [
+        264
+      ]
+    },
+    {
+      "start": 2077.746,
+      "end": 2083.506,
+      "text": "那这个时候你所谓的多高的性能，多大的数据量，其实没有什么意义。",
+      "source_segment_indexes": [
+        265
+      ],
+      "source_segment_ids": [
+        265
+      ]
+    },
+    {
+      "start": 2084.066,
+      "end": 2085.426,
+      "text": "但是接口一定是这个接口。",
+      "source_segment_indexes": [
+        266
+      ],
+      "source_segment_ids": [
+        266
+      ]
+    },
+    {
+      "start": 2085.746,
+      "end": 2091.106,
+      "text": "还想问你一个问题，就是给 agent 用的软件，你怎么样去做才能让它更好用？",
+      "source_segment_indexes": [
+        267
+      ],
+      "source_segment_ids": [
+        267
+      ]
+    },
+    {
+      "start": 2091.986,
+      "end": 2094.626,
+      "text": "哎，这个是个很好的问题，也是研究的前沿。",
+      "source_segment_indexes": [
+        268
+      ],
+      "source_segment_ids": [
+        268
+      ]
+    },
+    {
+      "start": 2094.866,
+      "end": 2100.306,
+      "text": "我觉得有一个新兴的领域吧，过去我们叫人体工学，就是开发者其实经常会给自己造一些工具。",
+      "source_segment_indexes": [
+        269
+      ],
+      "source_segment_ids": [
+        269
+      ]
+    },
+    {
+      "start": 2100.866,
+      "end": 2102.546,
+      "text": "有些工具好用，有些工具不好用。",
+      "source_segment_indexes": [
+        270
+      ],
+      "source_segment_ids": [
+        270
+      ]
+    },
+    {
+      "start": 2103.026,
+      "end": 2107.266,
+      "text": "有很多技术你一用你就知道，哇，这个东西太爽了，太舒服了。",
+      "source_segment_indexes": [
+        271
+      ],
+      "source_segment_ids": [
+        271
+      ]
+    },
+    {
+      "start": 2108.066,
+      "end": 2116.306,
+      "text": "我的猜想是，对于 agent 来说，一个对于开发者友好的体验，一样也会对 agent 友好。",
+      "source_segment_indexes": [
+        272
+      ],
+      "source_segment_ids": [
+        272
+      ]
+    },
+    {
+      "start": 2116.946,
+      "end": 2128.786,
+      "text": "我一直觉得图形界面不是真正的好用，它可能对普通老百姓用电脑是一个很好，但是它并不是一个对于 agent 的这种灵活场景最合适的抽象。",
+      "source_segment_indexes": [
+        273
+      ],
+      "source_segment_ids": [
+        273
+      ]
+    },
+    {
+      "start": 2129.906,
+      "end": 2134.626,
+      "text": "因为比如说你两个图形界面的东西，你不能融合出第三个图形界面。",
+      "source_segment_indexes": [
+        274
+      ],
+      "source_segment_ids": [
+        274
+      ]
+    },
+    {
+      "start": 2135.106,
+      "end": 2137.666,
+      "text": "但是在命令行的世界，这这个是可以的。",
+      "source_segment_indexes": [
+        275
+      ],
+      "source_segment_ids": [
+        275
+      ]
+    },
+    {
+      "start": 2138.201,
+      "end": 2142.121,
+      "text": "其实这种体验就是程序员说的“哇，好体验”。",
+      "source_segment_indexes": [
+        276
+      ],
+      "source_segment_ids": [
+        276
+      ]
+    },
+    {
+      "start": 2142.361,
+      "end": 2161.961,
+      "text": "在 agent 的时代，我觉得反而是是更好的，因为 agent 面临的需求是非常非常多的，所以你能用一套简洁的自洽的心智模型去囊括尽可能多的灵活任务，这个就是对 agent 来说的好体验。",
+      "source_segment_indexes": [
+        277
+      ],
+      "source_segment_ids": [
+        277
+      ]
+    },
+    {
+      "start": 2162.921,
+      "end": 2178.521,
+      "text": "所以 Unix 道学最近突然又非常非常火，核心是这个，就是因为这套方法论原则就那么几个，但是它通过组合能变出一个更大更复杂的世界出来。",
+      "source_segment_indexes": [
+        278
+      ],
+      "source_segment_ids": [
+        278
+      ]
+    },
+    {
+      "start": 2179.161,
+      "end": 2183.321,
+      "text": "你觉得未来 AI 的能力的下一个突破的边界在哪里？",
+      "source_segment_indexes": [
+        279
+      ],
+      "source_segment_ids": [
+        279
+      ]
+    },
+    {
+      "start": 2184.041,
+      "end": 2201.881,
+      "text": "我隐约觉得，在这个组织多个 agent 再去干这种复杂任务里边，会 somehow 存在一种 scaling law，就是今天我们刚刚开始去把多个 agent 协同在一起，能够去呃干一些事情，对吧？",
+      "source_segment_indexes": [
+        280
+      ],
+      "source_segment_ids": [
+        280
+      ]
+    },
+    {
+      "start": 2201.961,
+      "end": 2209.401,
+      "text": "如果我放一百个、一千个、一万个进去，他们能够产生什么样的效果？",
+      "source_segment_indexes": [
+        281
+      ],
+      "source_segment_ids": [
+        281
+      ]
+    },
+    {
+      "start": 2209.881,
+      "end": 2213.561,
+      "text": "我觉得是现在是一个 open question，也让我挺兴奋的。",
+      "source_segment_indexes": [
+        282
+      ],
+      "source_segment_ids": [
+        282
+      ]
+    },
+    {
+      "start": 2213.641,
+      "end": 2217.801,
+      "text": "编程的语言和开发者的工具，你觉得在 agent 的时代还重要吗？",
+      "source_segment_indexes": [
+        283
+      ],
+      "source_segment_ids": [
+        283
+      ]
+    },
+    {
+      "start": 2217.961,
+      "end": 2232.921,
+      "text": "我觉得这个其实还是挺重要的，非常重要，因为刚才我其实在反复提心智模型，就是大家知道这个东西被强化学习训练出来的，它还是人发明了数学以及人用的编程语言，但这里边反过来又不太重要。",
+      "source_segment_indexes": [
+        284
+      ],
+      "source_segment_ids": [
+        284
+      ]
+    },
+    {
+      "start": 2233.241,
+      "end": 2248.521,
+      "text": "我觉得包括在 harness engineering 里边，你不用再去关心具体的代码，反正我自己的这个开发的过程，我每天消耗这么多的 token，产生这么多新的代码，但是我是一行具体的代码细节都不会看的。",
+      "source_segment_indexes": [
+        285
+      ],
+      "source_segment_ids": [
+        285
+      ]
+    },
+    {
+      "start": 2249.241,
+      "end": 2256.681,
+      "text": "你要去关注这个架构，你要去关注软件工程，你要去关注这个代码不要快速的腐化，更上层的事情。",
+      "source_segment_indexes": [
+        286
+      ],
+      "source_segment_ids": [
+        286
+      ]
+    },
+    {
+      "start": 2257.161,
+      "end": 2271.161,
+      "text": "所以对我来说就是既重要又不重要，重要的是说你必须得贴合这个 agent 的心智模型，不重要的是你需要作为人要去关注一些更高层或者更抽象的一些事情。",
+      "source_segment_indexes": [
+        287
+      ],
+      "source_segment_ids": [
+        287
+      ]
+    },
+    {
+      "start": 2271.481,
+      "end": 2273.641,
+      "text": "以后人与 agent 需要协同吗？",
+      "source_segment_indexes": [
+        288
+      ],
+      "source_segment_ids": [
+        288
+      ]
+    },
+    {
+      "start": 2273.801,
+      "end": 2286.281,
+      "text": "这种协同可能不会是针对具体某些事情的对齐，或者说在细节上的这个把控，而更多的是提我的需求，以及我怎么验证你给我交付的结果。",
+      "source_segment_indexes": [
+        289
+      ],
+      "source_segment_ids": [
+        289
+      ]
+    },
+    {
+      "start": 2287.321,
+      "end": 2310.441,
+      "text": "还有就是人会把自己的经验通过 skill 或者 spec 传递给 agent team，中间这些软件的生产过程，agent 自己的这个它是怎么开会的，它是怎么管理的，嗯，你可以跟他点拨一下，你不要参与进去，因为你一旦参与进去，你就变成整个这个系统的瓶颈了。",
+      "source_segment_indexes": [
+        290
+      ],
+      "source_segment_ids": [
+        290
+      ]
+    },
+    {
+      "start": 2311.161,
+      "end": 2314.841,
+      "text": "所以我觉得会有交互，但这个交互会是在最上层的。",
+      "source_segment_indexes": [
+        291
+      ],
+      "source_segment_ids": [
+        291
+      ]
+    },
+    {
+      "start": 2315.161,
+      "end": 2328.841,
+      "text": "你最近说过一句非常耐人寻味又细思极恐的一句话，就是说你现在所有的认知可能过一个月之后就会严重的过时，在这种快速的变化下，你到底怎么样去建立自己的护城河呢？",
+      "source_segment_indexes": [
+        292
+      ],
+      "source_segment_ids": [
+        292
+      ]
+    },
+    {
+      "start": 2329.321,
+      "end": 2331.241,
+      "text": "我自己也在寻找这个问题的答案。",
+      "source_segment_indexes": [
+        293
+      ],
+      "source_segment_ids": [
+        293
+      ]
+    },
+    {
+      "start": 2331.481,
+      "end": 2345.241,
+      "text": "我的方向是我一定要在这个浪潮的身处其中，要有天天去用的这种手感，保持自己对这个技术的判断吧。",
+      "source_segment_indexes": [
+        294
+      ],
+      "source_segment_ids": [
+        294
+      ]
+    },
+    {
+      "start": 2345.401,
+      "end": 2356.521,
+      "text": "我觉得现在很多大家学习 AI 或者说学习这个 agent，它其实是靠看各种科技文章或者看像我们今天这样的这些对话，都不是最高效的。",
+      "source_segment_indexes": [
+        295
+      ],
+      "source_segment_ids": [
+        295
+      ]
+    },
+    {
+      "start": 2356.521,
+      "end": 2358.201,
+      "text": "最高效你就是亲自自己去用。",
+      "source_segment_indexes": [
+        296
+      ],
+      "source_segment_ids": [
+        296
+      ]
+    },
+    {
+      "start": 2358.601,
+      "end": 2370.361,
+      "text": "当你自己有这个感受了以后，我今天我的所有的经验会去引导未来下一个月的我去走向这个更前面的一个阶段啊，保持手感吧。",
+      "source_segment_indexes": [
+        297
+      ],
+      "source_segment_ids": [
+        297
+      ]
+    },
+    {
+      "start": 2370.521,
+      "end": 2375.161,
+      "text": "还想问问，就是你现在做的这些软件是你们多大的一个团队做出来的？",
+      "source_segment_indexes": [
+        298
+      ],
+      "source_segment_ids": [
+        298
+      ]
+    },
+    {
+      "start": 2375.607,
+      "end": 2388.567,
+      "text": "呃，现在大多数我这这些新产品，包括 MemEye、DBEye，可能就是一两个人的团队，包括可能我一个人就是主力，对，就跟传统的软件开发的这个流程不太一样了。",
+      "source_segment_indexes": [
+        299
+      ],
+      "source_segment_ids": [
+        299
+      ]
+    },
+    {
+      "start": 2389.047,
+      "end": 2395.607,
+      "text": "可能我过去三个月干了传统软件公司一百个人年的事儿，对，就就很夸张。",
+      "source_segment_indexes": [
+        300
+      ],
+      "source_segment_ids": [
+        300
+      ]
+    },
+    {
+      "start": 2396.327,
+      "end": 2399.367,
+      "text": "你觉得未来的这种公司的组织形态会发生什么样的变化？",
+      "source_segment_indexes": [
+        301
+      ],
+      "source_segment_ids": [
+        301
+      ]
+    },
+    {
+      "start": 2400.327,
+      "end": 2401.447,
+      "text": "啊，这是个好问题。",
+      "source_segment_indexes": [
+        302
+      ],
+      "source_segment_ids": [
+        302
+      ]
+    },
+    {
+      "start": 2401.607,
+      "end": 2413.527,
+      "text": "我最近其实也在经历这个过程，就是软件的生产的过程会发生变化，人不再去直接参与到代码的生产了。",
+      "source_segment_indexes": [
+        303
+      ],
+      "source_segment_ids": [
+        303
+      ]
+    },
+    {
+      "start": 2413.927,
+      "end": 2420.647,
+      "text": "如果你是一个全职的 coder，可能我觉得是挺危险的，因为慢慢的软件的生产会变成黑盒化。",
+      "source_segment_indexes": [
+        304
+      ],
+      "source_segment_ids": [
+        304
+      ]
+    },
+    {
+      "start": 2421.447,
+      "end": 2430.247,
+      "text": "就比如现在我每天可能在数万行代码 checking 到这个软件里边，但是 AI 写了这一万行写了什么，我其实完全不知道的。",
+      "source_segment_indexes": [
+        305
+      ],
+      "source_segment_ids": [
+        305
+      ]
+    },
+    {
+      "start": 2430.807,
+      "end": 2453.367,
+      "text": "包括我现在我们公司自己百分之九十的代码其实都是 AI agent 在写，所以对于人的组织形态会变成由若干个吧，非常强的这种 harness engineer 带领他自己的 agent 团队负责一个垂直的业务，然后配上一个领域专家。",
+      "source_segment_indexes": [
+        306
+      ],
+      "source_segment_ids": [
+        306
+      ]
+    },
+    {
+      "start": 2454.167,
+      "end": 2462.887,
+      "text": "这个领域专家是相当于他对于现实世界的某个问题非常了解，但他不会编程，他也不会去做软件。",
+      "source_segment_indexes": [
+        307
+      ],
+      "source_segment_ids": [
+        307
+      ]
+    },
+    {
+      "start": 2463.527,
+      "end": 2472.567,
+      "text": "这两个人配合在一起，去用 agent 的 team 用 harness engineering 快速的生产去解决现现实的问题。",
+      "source_segment_indexes": [
+        308
+      ],
+      "source_segment_ids": [
+        308
+      ]
+    },
+    {
+      "start": 2472.967,
+      "end": 2484.407,
+      "text": "我我觉得可能未来组织形态就是这样了，一个个小型的部落，然后不会再是一个大公司，我有个大平台，而是这种高度碎片化的，嗯，团队。",
+      "source_segment_indexes": [
+        309
+      ],
+      "source_segment_ids": [
+        309
+      ]
+    },
+    {
+      "start": 2484.807,
+      "end": 2484.967,
+      "text": "对。",
+      "source_segment_indexes": [
+        310
+      ],
+      "source_segment_ids": [
+        310
+      ]
+    },
+    {
+      "start": 2485.607,
+      "end": 2494.167,
+      "text": "那你觉得现在硅谷的这么多呃大厂里面这么多的软件工程师，你觉得这个裁员大概现在是一个什么阶段？",
+      "source_segment_indexes": [
+        311
+      ],
+      "source_segment_ids": [
+        311
+      ]
+    },
+    {
+      "start": 2494.327,
+      "end": 2496.087,
+      "text": "未来还需要这么多码农吗？",
+      "source_segment_indexes": [
+        312
+      ],
+      "source_segment_ids": [
+        312
+      ]
+    },
+    {
+      "start": 2496.167,
+      "end": 2498.807,
+      "text": "在我看来啊，就上一个时代软件工程已经终结了。",
+      "source_segment_indexes": [
+        313
+      ],
+      "source_segment_ids": [
+        313
+      ]
+    },
+    {
+      "start": 2499.207,
+      "end": 2502.247,
+      "text": "我个人体验是真的不需要这么多软件工程师了。",
+      "source_segment_indexes": [
+        314
+      ],
+      "source_segment_ids": [
+        314
+      ]
+    },
+    {
+      "start": 2502.727,
+      "end": 2511.287,
+      "text": "其实这是个好的现象，它意味着软件进行真正的民主化了，任何一个人都可以实现他想实现的软件。",
+      "source_segment_indexes": [
+        315
+      ],
+      "source_segment_ids": [
+        315
+      ]
+    },
+    {
+      "start": 2511.927,
+      "end": 2517.927,
+      "text": "哎，这个其实是这一波浪潮带来最大的意义，而不是说像纺织女工一样。",
+      "source_segment_indexes": [
+        316
+      ],
+      "source_segment_ids": [
+        316
+      ]
+    },
+    {
+      "start": 2518.327,
+      "end": 2521.607,
+      "text": "其实我们现在穿的衣服是更多的，而不是更少的。",
+      "source_segment_indexes": [
+        317
+      ],
+      "source_segment_ids": [
+        317
+      ]
+    },
+    {
+      "start": 2522.007,
+      "end": 2532.487,
+      "text": "今天最后一个问题，想就是帮年轻人问一下，因为现在有很多正在学计算机专业的同学都很焦虑，因为现在可能在学校里学的东西，毕业了以后就完全没有用了。",
+      "source_segment_indexes": [
+        318
+      ],
+      "source_segment_ids": [
+        318
+      ]
+    },
+    {
+      "start": 2532.647,
+      "end": 2532.887,
+      "text": "那是。",
+      "source_segment_indexes": [
+        319
+      ],
+      "source_segment_ids": [
+        319
+      ]
+    },
+    {
+      "start": 2532.887,
+      "end": 2534.567,
+      "text": "你觉得他们应该现在学什么？",
+      "source_segment_indexes": [
+        320
+      ],
+      "source_segment_ids": [
+        320
+      ]
+    },
+    {
+      "start": 2535.607,
+      "end": 2547.287,
+      "text": "如果你真的喜欢计算机，你就会发现啊，有很多东西其实哪怕是在今天 agent 这个时代，它都是不变，或者说甚至更有价值的。",
+      "source_segment_indexes": [
+        321
+      ],
+      "source_segment_ids": [
+        321
+      ]
+    },
+    {
+      "start": 2547.447,
+      "end": 2559.847,
+      "text": "正好刚才说的这种 Unix philosophy，啊，一些经典的软件工程、一些模型，就是思维模型这些东西，其实是一直都不变的。",
+      "source_segment_indexes": [
+        322
+      ],
+      "source_segment_ids": [
+        322
+      ]
+    },
+    {
+      "start": 2560.167,
+      "end": 2564.967,
+      "text": "你要找到这些永恒不变的东西去学这些东西，然后投身到软件行业里边。",
+      "source_segment_indexes": [
+        323
+      ],
+      "source_segment_ids": [
+        323
+      ]
+    },
+    {
+      "start": 2565.447,
+      "end": 2576.487,
+      "text": "如果你现在可能刚学计算机只是为了以后找一份码农的工作，那可能你就得想一想，嗯，你真正喜欢什么？",
+      "source_segment_indexes": [
+        324
+      ],
+      "source_segment_ids": [
+        324
+      ]
+    },
+    {
+      "start": 2576.647,
+      "end": 2582.807,
+      "text": "我觉得不管怎么样，最后人还是要去做自己热爱的事情是才能最幸福的。",
+      "source_segment_indexes": [
+        325
+      ],
+      "source_segment_ids": [
+        325
+      ]
+    },
+    {
+      "start": 2583.047,
+      "end": 2599.687,
+      "text": "所以正好现在有这么一个时机，老天让你去做你真正喜欢的事情，而且今天大语言模型那么强，你在学任何你感兴趣的东西的时候的门槛、学习的成本都已经大幅的下降了。",
+      "source_segment_indexes": [
+        326
+      ],
+      "source_segment_ids": [
+        326
+      ]
+    },
+    {
+      "start": 2600.487,
+      "end": 2606.407,
+      "text": "所以我对于年轻朋友就是做你想做的事情，热爱的事情就去做就好。",
+      "source_segment_indexes": [
+        327
+      ],
+      "source_segment_ids": [
+        327
+      ]
+    },
+    {
+      "start": 2606.567,
+      "end": 2607.767,
+      "text": "非常感谢今天的分享。",
+      "source_segment_indexes": [
+        328
+      ],
+      "source_segment_ids": [
+        328
+      ]
+    },
+    {
+      "start": 2608.327,
+      "end": 2609.687,
+      "text": "哎，最后想问你一个彩蛋啊。",
+      "source_segment_indexes": [
+        329
+      ],
+      "source_segment_ids": [
+        329
+      ]
+    },
+    {
+      "start": 2609.687,
+      "end": 2610.007,
+      "text": "嗯。",
+      "source_segment_indexes": [
+        330
+      ],
+      "source_segment_ids": [
+        330
+      ]
+    },
+    {
+      "start": 2610.007,
+      "end": 2612.887,
+      "text": "嗯，如果给大家推荐一本书的话，你推荐什么？",
+      "source_segment_indexes": [
+        331
+      ],
+      "source_segment_ids": [
+        331
+      ]
+    },
+    {
+      "start": 2613.207,
+      "end": 2616.407,
+      "text": "我想想，我其实有有有有一些 candidate，嗯。",
+      "source_segment_indexes": [
+        332
+      ],
+      "source_segment_ids": [
+        332
+      ]
+    },
+    {
+      "start": 2617.448,
+      "end": 2619.608,
+      "text": "那还是《残余摩托车维修艺术》吧。",
+      "source_segment_indexes": [
+        333
+      ],
+      "source_segment_ids": [
+        333
+      ]
+    },
+    {
+      "start": 2620.008,
+      "end": 2623.448,
+      "text": "对，那本书真的我看过无数遍，非常喜欢。",
+      "source_segment_indexes": [
+        334
+      ],
+      "source_segment_ids": [
+        334
+      ]
+    },
+    {
+      "start": 2624.008,
+      "end": 2624.888,
+      "text": "最打动你的是什么？",
+      "source_segment_indexes": [
+        335
+      ],
+      "source_segment_ids": [
+        335
+      ]
+    },
+    {
+      "start": 2625.208,
+      "end": 2642.408,
+      "text": "其实那本书是一个父子在骑着摩托车在环游美国的一个road trip，在这过程中，每一天他会去思考工匠精神和一个事物它为什么好，它好的点在哪里。",
+      "source_segment_indexes": [
+        336
+      ],
+      "source_segment_ids": [
+        336
+      ]
+    },
+    {
+      "start": 2642.728,
+      "end": 2656.248,
+      "text": "所以我觉得它是一本让人能够去认真的思考你造物这件事情的本质是什么，你为什么会enjoy做好的东西，什么是好的东西。",
+      "source_segment_indexes": [
+        337
+      ],
+      "source_segment_ids": [
+        337
+      ]
+    },
+    {
+      "start": 2656.728,
+      "end": 2658.408,
+      "text": "他在讨论的是这些这些内容。",
+      "source_segment_indexes": [
+        338
+      ],
+      "source_segment_ids": [
+        338
+      ]
+    },
+    {
+      "start": 2658.728,
+      "end": 2670.088,
+      "text": "读完那本书了以后，如果你是一个工程师，或者说你是一个广义上的工匠，你会更加明白自己为什么是这样的人。",
+      "source_segment_indexes": [
+        339
+      ],
+      "source_segment_ids": [
+        339
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 4.96,
+      "end": 28.0,
+      "text": "Agent application它绝对不会像今天这样是由软件工程师编写代码，而是由可能无数的这个人类的领域专家在他们的记忆里面去提取出一些高价值的东西，变成一个引号app，这可能是一堆Markdown文档，或者一堆这个从你的记忆里面提取出来。",
+      "refined_segment_indexes": [
+        0
+      ]
+    },
+    {
+      "start": 28.72,
+      "end": 55.52,
+      "text": "你最好的策略就是，无论用户跟他的龙虾或者他的agent聊过什么东西，我作为提供商，我一定得存下来，这是对未来来说最宝贵的资源。我很认同Google的一个philosophy，我永远不删除，这个数据产生的价值能够cover它的存储成本，那你就应该都存着。你觉得未来AI的能力的下一个突破的边界在哪里？",
+      "refined_segment_indexes": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "start": 55.76,
+      "end": 79.92,
+      "text": "我隐约觉得在这个组织多个agent再去干这种复杂任务里边，会 somehow存在一种scaling law，就是今天我们刚刚开始去把多个agent协同在一起，能够去呃干一些事情。如果我放一百个、一千个、一万个进去，他们能够产生什么样的效果？我觉得是现在是一个open开始。",
+      "refined_segment_indexes": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "start": 95.2,
+      "end": 121.44,
+      "text": "东旭，欢迎你来到硅谷坐标。今年整个硅谷科技迭代的这个速度非常非常的快，你在第一线肯定感受是最强烈的。想问问你，今年Open Cloud出来之后，你现在最大的感受是什么？我举个简单的一个小例子吧，可能在我家里，我父母啊，包括我这个太太，可能并不是那种计算机背景很强的人，现在已经都开始引号养龙虾了。",
+      "refined_segment_indexes": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "start": 121.52,
+      "end": 138.56,
+      "text": "所以我相信，呃，其实我觉得这标志着一种AI native的application的产品的形态的定义现在出现了。但我觉得Open Cloud它是一个及格线，做的比Open Cloud差的，那那就是属于上一个时代，未来只会比它更好。",
+      "refined_segment_indexes": [
+        11,
+        12
+      ]
+    },
+    {
+      "start": 138.96,
+      "end": 172.32,
+      "text": "所以我现在每天都非常high，然后呃手上有好几个Cloud Code加CodeX的这种呃Pro Max的账号，可能我的峰值的每天消耗token在十亿这个量级左右，最普通的这个日子里边也是大概几亿的这样的一个规模。呃，我认为现在的这个这个agentic呃或者coding agent达到了一个能力的边界，你会发现你很多想法得到的这个反馈的速度就非常非常快。比如今天我有一个想法，我马上让我的agent去干，可能这个一个小时之后这个东西就上线了。",
+      "refined_segment_indexes": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "start": 172.96,
+      "end": 201.04,
+      "text": "这时候他们会等着你，我其实非常想避免这种他等着我的状态，于是我就会push我自己说，哎，我下一个想法在哪里？然后就持续进入到这种有新想法去试，得到反馈，再下一个想法。所以呃很兴奋，同时也很焦虑。我我觉得现在在头部的一波呃实践这些Harness Engineering的资深工程师吧，多多少少都会有我现在这样的一个一个状态。",
+      "refined_segment_indexes": [
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "start": 201.44,
+      "end": 225.84,
+      "text": "我不能称之为焦虑，但是是一种被你的agent team推着你跑的感觉，很有意思。前两年大家都还在讲这个prompt engineering，对，然后后来大家转成讲context engineering，然后现在是所有头部的人、前沿的人都开始讲Harness Engineering。嗯，你先给大家介绍一下，它大概AI时代的Harness Engineering是个什么样的概念？它跟前两代有什么不一样？",
+      "refined_segment_indexes": [
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "start": 225.92,
+      "end": 246.309,
+      "text": "Prompt Engineering我觉得有有两个关键点，第一个关键点它是few shots，就是在一个比较短程的一个对话里边，你通过调整对话的上下文。来去得到一个及时的更好的结果。第二个呢，它基本上没有涉及到外部的工具调用，基本还是在一个问答的flow里边。",
+      "refined_segment_indexes": [
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "start": 246.709,
+      "end": 273.989,
+      "text": "我觉得早期可能二二年底、二三年初，包括一直可能到二四年，都是在这种prompt engineering的这个这个框架里边，context engineering更多的像是在一系列的这种长程的这个任务里边，agent能够把结果给交付出来。呃，所以刚才两个关键字，一个是任务的这个这个长度变长，对话轮次变多。",
+      "refined_segment_indexes": [
+        27,
+        28
+      ]
+    },
+    {
+      "start": 274.389,
+      "end": 306.149,
+      "text": "第二呢，它可能就也涉及到外部的这些工具的调用，结果的这些分析，最后你怎么高效的利用你的这个有限的上下文空间？所以context engineering它比prompt engineering又高一层。Harness engineering今天其实仍然是一个非常前沿的话题，但我用我自己的理解来说，它可能又是更升高一个维度。比如刚才我们其实不管是prompt还是context，都是在一个对话流、一个agent或者一个大语言模型的窗口里边。",
+      "refined_segment_indexes": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "start": 306.869,
+      "end": 340.709,
+      "text": "但是Harness今天强调的是多agent的协同。比如说在context engineering里面有一个非常普遍的问题，就是当你的一个任务太长的时候，你的上下文窗口已经装不下你之前的对话历史了。这时候其实就会引入一个技术叫compaction，叫叫压缩。这个压缩经常会伴随着这种灾难性的失忆。所以在一个更复杂的Harness的环境里边，你需要去把每一个子agent的这种上下文的压缩都得考虑进去。",
+      "refined_segment_indexes": [
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "start": 341.029,
+      "end": 374.309,
+      "text": "所以你就必须在这个之上去构建一层信息的同步、子任务的管理，然后外挂的记忆等等的东西。所以呃，对我来说，这个Harness engineering更像在管一个真正的开发团队，让他们去永续的、持续的去产出，在一这种复杂的大型项目里边。所以它其实是一个层层递进的关系，而且这里边每一层都是依赖着上一层的一些最佳实践封装出来的。你觉得Harness的边界到哪里？",
+      "refined_segment_indexes": [
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "start": 375.589,
+      "end": 406.869,
+      "text": "我说句实话，我没有感觉到现在有边界。我每一次觉得我快到边界了，但是呢，agent又能够给我一些惊喜。因为你在提到边界这个词的时候，就有一个暗示，它的能力是可以被人类感知，或者说可以有一个明确的上限的。我甚至觉得有的时候我们是没有办法评估现在的SOTA的模型的，因为模型本身很聪明了，只是我们的题设计的不好，就没有办法去测出它真正的能力。",
+      "refined_segment_indexes": [
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "start": 407.509,
+      "end": 435.349,
+      "text": "而且大多数benchmark还只是在一个单一的agent在单一任务和单一环境里边的一些评分。但你想想，就是人类通过无数个个体的组织变成了社会，我们能够在一起协同去完成超出任何一个人的能力边界的一些事情。那agent我相信也一样是可以的。所以也许未来我们会发现一些agent的社会学之类的事情。那这时候还有什么边界吗？我觉得没有边界了就。",
+      "refined_segment_indexes": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "start": 435.829,
+      "end": 468.949,
+      "text": "嗯，既然Harness是一个系统级的工程，你觉得它未来有没有可能像数据库或者是像云平台一样，会变成一个比较通用的产品？还是说可能未来是各家各公司做自己的Harness？你觉得未来的终局会是什么样子？今天其实大家千万不要被Harness这个词给吓到。呃，Harness engineering对我来说还是software engineering。一个好的Harness就是一个好的软件工程。我自己的体感就是，我会去给我的agent团队设置不同的role。",
+      "refined_segment_indexes": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ]
+    },
+    {
+      "start": 469.269,
+      "end": 501.244,
+      "text": "其实跟我以前管理真人构成的软件工程团队。我觉得没有太大区别，只是说这帮 agent 不睡觉而已。所以我觉得这是第一阶段，因为 agent 它会产生什么样的组织形态，或者说什么样的形态是 agent native 的，我们现在不知道。我们现在知道的是人类几十年积累下来的做复杂软件的组织架构、工具和一些方法论这些东西，我觉得可以被用来做 bootstrap。",
+      "refined_segment_indexes": [
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    {
+      "start": 501.404,
+      "end": 532.284,
+      "text": "第一阶段让 agent 先能够协同起来，产生一些单个 agent 干不了的事情。第二阶段可能就会像包括伊隆说的递归的资金化的这些 agent 的工具啊或者形态会出现。如果进入到递归的自我优化的阶段以后，就会超出人类能理解的范围了。所以我们现在能做的就是先把人类的先先映射过来，先让它完成第一步。回到你刚才那个问题，会不会每个公司都有一套自己的 harness 啊？我相信会的。",
+      "refined_segment_indexes": [
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ]
+    },
+    {
+      "start": 532.844,
+      "end": 563.164,
+      "text": "但是呢，这些各家不同的 harness 的思想，我觉得它不会脱离传统的团队管理、软件开发的 ground truth 太远，它还是会收敛的。最近你发布了 Mem9 的一个龙虾记忆的插件，也在龙虾社区里呃引起了非常大的反响。你可以给我们介绍一下这个插件吗？其实这个插件解决问题很简单。大家用小龙虾的时候，经常会发现他在聊着聊着就就忘了前面的这个事情啊。",
+      "refined_segment_indexes": [
+        69,
+        70,
+        71,
+        72,
+        73
+      ]
+    },
+    {
+      "start": 563.164,
+      "end": 594.444,
+      "text": "你想象一下，如果他在做一件重要的事儿，结果到最后一步他他把前面忘了，其实是挺糟心的。我经常就有这样的体验，这是第一个痛点。第二个痛点就是我跟我的小龙虾聊了非常非常多、很重要的、很私密的、很个人的这个东西。如果哪一天更新把它给升级升挂了，那岂不是很难过？所以云端的这种备份也是我一个特别大的一个需求。基于这两个需求，就做了 Mem9。这首先它是一个开源项目，你可以自己去部署。",
+      "refined_segment_indexes": [
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ]
+    },
+    {
+      "start": 594.604,
+      "end": 627.724,
+      "text": "第二呢，其实 Mem9 这条产品线它也会去提供一个云上托管的这个永续的龙虾记忆服务。我当时在设计 Mem9 的时候，我一直在思考一个问题，就是如何去设计 agent native 的软件使用体验。就比如说以前我们要去安装一个软件，你可能要配置 A B C D，要下这个安装包，安装各种东西。但是在这个 Mem9 里边，你其实只是给你的龙虾复制粘贴一句话，这个软件就自动安装上去了。",
+      "refined_segment_indexes": [
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "start": 628.124,
+      "end": 662.924,
+      "text": "可以跟大家解释一下长上下文窗口（context window）和记忆（memory）它们的区别吗？Context window 你可以认为就是一个很小的一个窗口。这个窗口就是这个这个大语言模型短时间在这个对话里边，超过这个窗口之外的东西它是不知道的，就是短期记忆。然后 memory 是什么呢？我用一个更形象的比喻吧，就是一个笔记本。这个笔记本可可能记了非常非常多相关的事实，就是像相当于你的长期记忆。但这个长期记忆不在你脑子里，可能在一个小本本里。",
+      "refined_segment_indexes": [
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ]
+    },
+    {
+      "start": 663.404,
+      "end": 695.404,
+      "text": "比如在你短期记忆里，当下我们要做一些事情的时候，你发现哎，我要要看的这个东西在上下文窗口里没有，这个好记性就不如烂笔头了，对吧？我就要拿出我的笔记本 memory 来去找到相关的这个信息以及这条信息相关的一些上下文，which is 就是这条具体的记忆，然后再把这个记忆放到短期的 context window 里，这样你的大语言模型就能更知道你在讨论什么上下文。",
+      "refined_segment_indexes": [
+        92,
+        93
+      ]
+    },
+    {
+      "start": 695.804,
+      "end": 728.298,
+      "text": "其实，在过去我们这个东西叫 rag，呃，但是 rag 我觉得不是一个好的技术概念吧，因为今天其实我们再去聊记忆的时候，已经超过了原来 rag 所代表的这些技术，因为 rag 可能跟具体的技术绑定太紧了。对，但记忆可能是一个更大的一个话题，可能理解成，比如说以后多agents或者是多步骤的这些任务，使得你的短期记忆的窗口，哪怕越越来越大，哪怕再大，可能也都对，很快就填满了，还是要去长期去解决这个长期记忆的问题。",
+      "refined_segment_indexes": [
+        94,
+        95
+      ]
+    },
+    {
+      "start": 728.298,
+      "end": 756.858,
+      "text": "是的，不管怎么样，反正只要大家现在的模型还是基于这个transformer的这个模型，上下文窗口一定是个定值，你哪怕做的再大，它也是个定值。嗯。所以必须得有一个外挂的一个记忆系统来去，嗯，我觉得人也一样嘛，对吧？短期记忆、长期记忆，因为我们的世界太复杂了，嗯，或者说很多任务其实可以几乎是无限长的。",
+      "refined_segment_indexes": [
+        96,
+        97,
+        98,
+        99
+      ]
+    },
+    {
+      "start": 757.178,
+      "end": 783.818,
+      "text": "我就就举个例子，我要开发一个大型的系统软件，然后可能需要几十万个步骤，就是短期的这个原模型的context window再长，你也不可能说把现实世界的复杂性塞到一个固定的窗口里边，啊，但是呢，在至少从transformer的这个架构上来看，一个外挂的记忆系统可能还是必须的。记忆为什么现在成了整个harness里面最困难的一环啊？",
+      "refined_segment_indexes": [
+        100,
+        101
+      ]
+    },
+    {
+      "start": 783.978,
+      "end": 813.338,
+      "text": "刚才我也提到了一个单体agent的重要的痛点，就是在一个长程任务的过程中，你只要上下文一压缩，它刚才在聊的事儿就全忘了，所以你在做这种关键的harness的时候，你就必须得用外挂的记忆来去解决单体的这个agent compaction带来的这些问题。所以，呃，这就是为什么这个memory如此重要。我觉得这是第一方面。",
+      "refined_segment_indexes": [
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "start": 813.658,
+      "end": 834.458,
+      "text": "第二方面就是，不管是ChatGPT还是早期的这些基聊天机器人的这个形态，它不停的让你在对每个任务强行要开一个新的对话，啊，它它并没有解决这个记忆的问题，它其实只是通过这个产品形态给给掩盖过去了。但是这种产品形态又会带来一个不好的这个用户体验。",
+      "refined_segment_indexes": [
+        105,
+        106
+      ]
+    },
+    {
+      "start": 835.098,
+      "end": 860.938,
+      "text": "而且再从这个重要性来说，大语言模型其实是没有状态的，它并没有办法自我的跟你持续的聊天，最后持续的变强，或者说真正有差异性的其实是你跟他聊的这些这些内容，以及呃他自己在这些内容里边的反思。简单来说就是记忆。",
+      "refined_segment_indexes": [
+        107,
+        108
+      ]
+    },
+    {
+      "start": 861.498,
+      "end": 896.058,
+      "text": "最后，其实我觉得很多的价值其实是会在这个记忆这一层，而不是说在大语言模型这一层，因为大语言模型每家可能T1的model都很聪明，但是它有多了解你呢？它还是得靠记忆来去了解你。记忆要解决的两个问题，一个是这东西怎么记，什么东西要需要记，什么东西是不需要记的，呃，另外一个就是怎么样去提取这个信息，你们是怎么解决这个难题的？哎，呃，我这这里面提到一个非常哲学的东西，我其实一向是更相信模型自己的能力的。",
+      "refined_segment_indexes": [
+        109,
+        110,
+        111,
+        112
+      ]
+    },
+    {
+      "start": 896.938,
+      "end": 918.618,
+      "text": "什么意思呢？不是像记忆的这个远期的记忆跟近期的记忆，它的这个重要性是不一样的。包括我们自己的一些开发人员经常会想，哎，我要去设计一个精妙的算法，去搞一个什么遗忘曲线之类的，超过多久时间就自动的剔除掉，可能做一个很复杂的模型。但你知道我最近最后怎么解决这个问题的？",
+      "refined_segment_indexes": [
+        113,
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "start": 918.698,
+      "end": 948.938,
+      "text": "解决这个问题的这个方式非常简单，就是相关性的我检索出来，但是呢，我在它的这个数据后面我加一个标签，这个标签叫做这个事实离当前时间有多少天。我把这个所有信息直接丢给大模型，在上面再加一句说，根据你自己的这个判断，哪条是最重要的？就是我把模型本身的能力当成一个评估函数。今天我觉得开发软件的思路变了。",
+      "refined_segment_indexes": [
+        117,
+        118,
+        119,
+        120
+      ]
+    },
+    {
+      "start": 949.783,
+      "end": 976.183,
+      "text": "变成了我应该去怎么更好的利用模型本身的能力去做做事情，因为模型它一定有自己的判断。另外一个例子可能是安全，其实现在大家经常会觉得哦，龙虾的这个安全应该怎么做？当然我不是做安全的。也许未来这个最好的安全软件，对于agent最好的安全软件，可能就是一句话叫做你要注意安全。对，明白了。",
+      "refined_segment_indexes": [
+        121,
+        122,
+        123,
+        124,
+        125
+      ]
+    },
+    {
+      "start": 976.263,
+      "end": 1006.103,
+      "text": "是的，对，所以就是怎么记，还有怎么提取这两个步骤，基本上都是你让大模型大模型自己去发挥它自己的判断。对，明白。所以更更多的是跟一个prompt来提示它，而不是通过算法来解决。不是通过算法解决。对，OK，就是所以这就为什么我我会觉得今天的coding agent呢，可能会变成未来的操作系统内核，它在上面能做很多很多事情。但是呢，传统的编程的逻辑，我觉得不能直接套用到今天的这种agent native的软件开发上。",
+      "refined_segment_indexes": [
+        126,
+        127,
+        128,
+        129,
+        130,
+        131
+      ]
+    },
+    {
+      "start": 1006.343,
+      "end": 1036.263,
+      "text": "那听起来好像就是以时间为标注，然后以这件事情离当下发生的时间的这个这种长短，然后大模型自己去判断这件事情。对，是的，这只是个很小的例子。其实我我设计这套东西里边大量的都是类似的方法，比如说这段话讲了什么，归纳总结，我一定是丢给大模型帮我总结。比如说我要去构建这个知识图谱，我不会说我写一个东西去分析它的关联，而是说直接丢给模型说他们之间的关联是什么。",
+      "refined_segment_indexes": [
+        132,
+        133,
+        134,
+        135
+      ]
+    },
+    {
+      "start": 1036.823,
+      "end": 1071.703,
+      "text": "嗯，你提到的这种多agent协作的这种呃状态，其实对于龙虾来说，它需要记住的东西是非常多的。对，你知道它这样的一个记忆量的增长是一个什么量级的增长吗？我本身是做数据库出身的，呃，目前这些agent在完成我们个人任务或甚至企业的任务的时候，它的数量不会太大的。它比起我在Web二点零时候接触到这些互联网公司它产生的数据量来说，对于一个agent它要处理的这些数据简直是太少了，其实有点反直觉，对吧？",
+      "refined_segment_indexes": [
+        136,
+        137,
+        138,
+        139
+      ]
+    },
+    {
+      "start": 1071.703,
+      "end": 1105.383,
+      "text": "对，为什么？比如说我我用淘宝，我用美团，全世界只有一个淘宝，淘宝的背后的数据系统、存储系统要面临的这些数据量，可能都是以PB为单位计算的。PB什么？一千零二十四个terabyte，一个PB，但可能这个淘宝可能是数百甚至这个上千个PB这个级别。但你想想，现在当每个人都有一个自己的agent的时候，它不再是一个集中的大数据，而是高度碎片化的无数个小数据。",
+      "refined_segment_indexes": [
+        140,
+        141,
+        142,
+        143,
+        144
+      ]
+    },
+    {
+      "start": 1106.103,
+      "end": 1130.903,
+      "text": "我举个例子，就是现在你跟你小龙虾，你就算天天聊，往死里聊，你能聊出一本莎士比亚的这么这么长的话吗？哪怕算上你个人电脑上所有的文档，或者说所有的这些你看过的书，加起来，其实对于过去数据库这样的软件的存储的极限来说吧，还离非常非常长的距离，所以都都不是大数据。",
+      "refined_segment_indexes": [
+        145,
+        146
+      ]
+    },
+    {
+      "start": 1131.063,
+      "end": 1162.823,
+      "text": "今天agent的使用数据的方式是海量的小数据，这就是为什么我其实可以敢于说给龙虾无限的记忆，因为我假设一个人他跟着他的小龙虾一起产生的这些有价值的对话、有价值的数据，在今天这种以语言模型为主的产品形态里边不会太多。哪怕是以后就是这么多agent非常多步骤的，对复杂的这种呃agent也不会产生。只要是以文本语言来去交互的，它的数据量就不会太大。",
+      "refined_segment_indexes": [
+        147,
+        148,
+        149
+      ]
+    },
+    {
+      "start": 1163.143,
+      "end": 1188.663,
+      "text": "因为我们都还很关心现在存储整个供应链都很短缺，对，你觉得multi agent的一个趋势其实不会产生特别大的影响？我觉得会产生影响，但是这个影响是就刚才其实我提到一个词叫海量的小数据，嗯，你想海量的小数据加起来其实也很大，而且这个加起来了以后会比刚才我说的这种中心化的淘宝、中心化的美团。",
+      "refined_segment_indexes": [
+        150,
+        151
+      ]
+    },
+    {
+      "start": 1189.36,
+      "end": 1222.56,
+      "text": "的数据量会更大，只是说它不不再是一个集中的一个形态，而是会可能有无数若干个提供龙虾服务的厂商顺便提供了记忆服务，比如说我们就属于提供记忆和存储服务的厂商之一。你最好的策略就是，无论用户跟他的龙虾或者他的agent聊过什么东西，我作为提供商，我一定得存下来，这是对未来来说最宝贵的资源。所以今天可能大家就要布局去采购各种这个这个存储。",
+      "refined_segment_indexes": [
+        152,
+        153,
+        154
+      ]
+    },
+    {
+      "start": 1223.04,
+      "end": 1237.68,
+      "text": "第二个呢，就是我觉得大语言模型或者今天的这个多模态已经具备了初步的能力，把很多非结构化数据变成结构化数据，这意味着什么？这意味着它能产生价值了，因为结构化数据通常是价值更高的。",
+      "refined_segment_indexes": [
+        155,
+        156
+      ]
+    },
+    {
+      "start": 1237.92,
+      "end": 1272.24,
+      "text": "有这样的机会了以后，作为一个比如说你是一个服务的提供商，呃，所以我觉得对于全社会来说，存储肯定还是我能理解它为什么这个这个价格在在涨，因为agent确实创造了更多产生数据的机会和产生数据的场景，比如说热数据、温数据、冷数据。对，你觉得就说全部都是需要的？全都需要，全都需要。结构化数据、非结构化数据也都需要。人跟机器产生的所有的footprint脚印都要被存储下来，因为这些东西都有价值。",
+      "refined_segment_indexes": [
+        157,
+        158,
+        159,
+        160,
+        161
+      ]
+    },
+    {
+      "start": 1272.56,
+      "end": 1303.36,
+      "text": "哪些是需要永久保留的？然后哪些是可能用一段时间就删掉了？我很认同Google的一个这个philosophy，我永远不删数据，只要我的存储成本能够cover它的存储成本，那你就应该都存着。怎么去衡量它的？以哎，你问了一个非常好的问题。以前人是没有办法去衡量个人数据这种非常零散的这些个人数据的价值的，它是不划算的，因为你没有办法去利用这些个人数据。",
+      "refined_segment_indexes": [
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ]
+    },
+    {
+      "start": 1303.52,
+      "end": 1336.72,
+      "text": "但今天不一样了，以前因为没有办法去做到这种千人千面，所以只能把所有人的数据汇集在一起，大数据做分析，说哎给所有的消费者我打十个标签，啊这个是一个白领啊那个是一个三线城市的青年啊那个是个老人。但你想象一下在agent的这个时代，你的agent会非常非常了解你，他知道你经常吃什么，最近感兴趣什么，这时候给你再去推荐东西非常非常的精准，那它的价值是不是就就非常非常高了？",
+      "refined_segment_indexes": [
+        168,
+        169
+      ]
+    },
+    {
+      "start": 1337.04,
+      "end": 1368.56,
+      "text": "只是说以前没有办法利用，但现在有了AI有了agent，它一定可以利用上。现在存储的产能这么缺，你觉得未来有一些什么好的办法去解决吗？我觉得这个其实可能是短期供应的供应链的波动，因为这个本身也不是什么航天科技之类的，没有没有什么秘密在里边，只是可能一个产能临时的短缺吧，所以我觉得会会回归的。第二呢，我觉得用长期来看，嗯，需求肯定是在持续的增加，也是可以被预期到的。未来agent的时代，我们需要怎样的存储的范式？",
+      "refined_segment_indexes": [
+        170,
+        171,
+        172,
+        173,
+        174
+      ]
+    },
+    {
+      "start": 1368.8,
+      "end": 1400.32,
+      "text": "其实我刚才说到这个范式的海量的个人的小的灵活的数据，它不再是说我集中的一个固定的形态的数据，而是每个人就像真正的记记忆一样，我我未来会更看好这样的这种数据库和数据形态，不是给人做的，而是给这个agent去做的。什么样的数据库或者说数据平台能够适合这样的这种高度灵活、千人千面以及非常个人化的这个场景？",
+      "refined_segment_indexes": [
+        175,
+        176
+      ]
+    },
+    {
+      "start": 1400.64,
+      "end": 1433.979,
+      "text": "就你刚刚其实也提到了一虾一库的概念，而同时你又提出来可以是很多的虾去共享一个存储的空间，这个是怎么做到的？一虾一库，我觉得这是一个必然的趋势，因为每一个人自己的记忆的结构跟另外一个人都是不一样的。比如安全吧，安全是个硬性的限制，就每一个人的数据我都应该是给个人的数据做加密。每个人的这个这个密钥可能都是不一样的，所以你不会愿意你把你的这个记忆跟这个陌生人全都放在一起，对吧？",
+      "refined_segment_indexes": [
+        177,
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "start": 1434.059,
+      "end": 1452.939,
+      "text": "你还是希望你有一个自己的一个空间。你的龙虾也是，我觉得一个好的记忆系统，你必须得提供这样的一个能力。第二个呢，为什么要去做这个 consolidate？就是我怎么去提供这样的一个平台，给每一个龙虾都提供一个免费或者说一个很低的成本去提供。",
+      "refined_segment_indexes": [
+        181,
+        182,
+        183,
+        184
+      ]
+    },
+    {
+      "start": 1453.659,
+      "end": 1485.739,
+      "text": "啊，我其实这里面有一些这个技术的细节啊，啊，但大概有核心的原理就是我对外提供了一层这个数据库的虚拟化，但是底下呢其实是基于云的存储来去做了一层这个对象存储作为底层的一个大型的共享存储吧。但在上面我可以说针对不同的用户，我画出了一个个虚拟的门户，但每一个门户里边，他的 agent 看到他认为自己 owns 整个这个 db，但其实底下是一个大的这个共享的底层存储。",
+      "refined_segment_indexes": [
+        185,
+        186
+      ]
+    },
+    {
+      "start": 1486.059,
+      "end": 1513.259,
+      "text": "那核心的目标就是说，它会节省很多的成本，因为大多数时候，大多数人不会跟他的 agent 的天天聊天，可能重度用户就是百分之一，但这时候你不能说我为了那些呃可能一天就聊两三句话的用户去 maintain 一套他自己专属的 infra，这是很不划算的。所以我还是需需要有一个共享的一套基础设施。为什么要这这么设计？",
+      "refined_segment_indexes": [
+        187,
+        188,
+        189
+      ]
+    },
+    {
+      "start": 1513.579,
+      "end": 1545.099,
+      "text": "我觉得也是给 agent 提供了一个更加易用或者说更加好理解的一个数据的模型。因为你与其教一个 agent 说，哎，你要去存储服务上注册个账号，还不如直接告诉这个 agent 说，好，你现在看到就是一个完整的数据库，你随便搞。这样其实对于 agent 来说，是更友好的。嗯，从数据的安全角度来说，你觉得以后这些记忆是存在云端的，还是应该是存在本地的，还是混合的？我觉得一定是云端。这个结论不是从安全性来去得出的。",
+      "refined_segment_indexes": [
+        190,
+        191,
+        192,
+        193,
+        194,
+        195
+      ]
+    },
+    {
+      "start": 1545.339,
+      "end": 1574.379,
+      "text": "比如说微信支付，我的银行账号，我的银行数据，你可以认为这也都是云端了，是吧？其实我觉得小龙虾的一个问题是说，它是一个 geek 设计的，Peter 就是一个特别极客的人，他的一个理念是 local first，来 local，确实很安全，也不会有一个云端的引号邪恶公司然后控制着你的数据。但它牺牲掉什么呢？牺牲掉用户体验。",
+      "refined_segment_indexes": [
+        196,
+        197,
+        198,
+        199
+      ]
+    },
+    {
+      "start": 1574.539,
+      "end": 1607.819,
+      "text": "如果你没有一些本地的 debug 的能力，或者这个系统怎么开发的这个能力，你会发现经常把龙虾养死了。比如说你跟你的龙虾聊了十年，突然有一天升级说不好意思我挂了，你就可能跟家里真的有亲人这个这个去世的感觉很像是吧？就很吓人。所以我觉得未来从产品形态和体验的角，如果你要变成一个 C 端的产品，更广泛的在用着，它一定是个云端的，因为你只有在云端，你才能提供这种通用的和易用的这个用户体验。",
+      "refined_segment_indexes": [
+        200,
+        201,
+        202,
+        203
+      ]
+    },
+    {
+      "start": 1608.059,
+      "end": 1636.059,
+      "text": "比如说你这个龙虾养死了，我的数据还给你备份着呢，是吧？我马上再给你起一个龙虾的身体啊，再回到你的记忆上，一下又能又能复活了。你不需要去了解 Linux，你不需要去了解本地怎么装这些开发工具，所以一定是云端。你觉得未来的记忆层它的商业化前景怎么样？它以后会是被吸收成一个基础设施呢？就从你看到用户付费意愿最强烈的那个场景是什么？",
+      "refined_segment_indexes": [
+        204,
+        205,
+        206,
+        207,
+        208,
+        209
+      ]
+    },
+    {
+      "start": 1636.059,
+      "end": 1661.499,
+      "text": "嗯，我觉得几个场景，第一个是记忆的备份恢复，因为大家都知道记忆的价值，尤其是你在重度的使用跟你的龙虾一起在在用的时候，记的价值是非常重要的。这里面有几种商业模式，一种商业模式是针对这个服务本身的这个备份恢复这种周边服务去做一个增值服务。可能我基础的这个记忆本身是免费，但是如果你需要有一个",
+      "refined_segment_indexes": [
+        210,
+        211,
+        212
+      ]
+    },
+    {
+      "start": 1662.148,
+      "end": 1681.748,
+      "text": "导入导出，或者说一些这种云端备份，你可以设计一个订阅制的商业模式在上面，但它肯定不是一个企业级的这种产品的定价模式。第二种，我个人理想中啊，就是 memory 会变成一个真正通用的基础设施，因为我其实在赌下一代的 agent native 的 application 的形态。",
+      "refined_segment_indexes": [
+        213,
+        214
+      ]
+    },
+    {
+      "start": 1682.228,
+      "end": 1697.668,
+      "text": "agent application 它绝对不会像今天这样是由软件工程师编写代码，而是由可能无数的这个人类的领域专家，在他们的记忆里边去提取出一些高价值的东西。",
+      "refined_segment_indexes": [
+        215
+      ]
+    },
+    {
+      "start": 1697.748,
+      "end": 1725.748,
+      "text": "比如说我是一个厨师，我跟我的小龙虾天天在聊做饭，之后我有一个能力是说，把这个厨师的小龙虾的脑子里关于做饭的记忆抽取出来，变成一个外挂记忆，这个外挂记忆接到其他人的 agent 上，然后我通过这个 marketplace 来去收钱。你想象一下，这个厨师他可能完全不会写代码，他只会做饭，他一直在跟他的龙虾讨论这个做饭的内容。",
+      "refined_segment_indexes": [
+        216,
+        217
+      ]
+    },
+    {
+      "start": 1726.068,
+      "end": 1758.228,
+      "text": "我现在能够帮你去把你的这个知识变现成一个可以被付费的东西，那这时候你就变成了一个新的分发渠道了。这也是我觉得基于记忆来去变现的一条，呃，很有意思的路径吧。我们现在再拉回去看整个 agent 时代的基础设施，你又是这个领域做数据库的呃专家。数据库是一个重要的基础设施。对，你觉得 agent 时代整个基础设施会被怎么样重写？我觉得第一点就是面向 agent 的基础设施一定会出现。",
+      "refined_segment_indexes": [
+        218,
+        219,
+        220,
+        221,
+        222,
+        223
+      ]
+    },
+    {
+      "start": 1758.708,
+      "end": 1784.948,
+      "text": "就现在我们今天看到的呃云、数据库、网络这些东西，本质上来说这些东西的用户还是开发者，我们引号基础设施或者说生态生态链吧，都是围绕人去构建的。但是我觉得在 agent 的时代，今天已经正在发生了，就是围绕着 agent，它会有一套属于 agent 应用的基础设施。",
+      "refined_segment_indexes": [
+        224,
+        225
+      ]
+    },
+    {
+      "start": 1785.188,
+      "end": 1811.508,
+      "text": "比如说它一定会有给 agent 用的云，但给 agent 用的云的形态，它会跟今天我们看到 AWS、GCP、跟阿里云的形态是完全不一样的。今天其实包括我们可能用过 Minus 的同学都都都知道，Minus 其实是相当于给了一台小电脑，在电脑里面什么东西都有，然后这个 agent 可以在里边我我们称这个环境为 sandbox，一个沙箱。",
+      "refined_segment_indexes": [
+        226,
+        227
+      ]
+    },
+    {
+      "start": 1812.148,
+      "end": 1842.068,
+      "text": "现在对于 agent 来说，因为每一个任务都是特别的，所以对于 agent 的云来说，它可能提供的就不是一个这个底层的云平台，而是一个个小型的沙箱，让 agent 在里边干活。如果我是做这个 agent 的 AWS，我一定会提供这个服务，一沙一库，这个是我们在 M9 这个产品里边的提出的一个理念。但想想对于基础设施的提供商来说，从来没有一个 database 提供数据服务的公司敢这么卖，为什么呢？",
+      "refined_segment_indexes": [
+        228,
+        229,
+        230
+      ]
+    },
+    {
+      "start": 1842.388,
+      "end": 1876.788,
+      "text": "因为我们当提到给 agent 设计数据库的时候，可能几百万、几千万个 agent 同时要去使用数据库，那这时候你去看现在的这个云或者现在基础设施，每个数据库最便宜可能一个月也得几美金，但是当你要给几十亿的 agent 提供，你这个成本是是扛不住的，所以就必须得重新去设计这个数据库底层的实现，才能去适应 agent 的这种用法。同样的逻辑，你可以套用在很多的其他产品上，比如通信是吧？",
+      "refined_segment_indexes": [
+        231,
+        232
+      ]
+    },
+    {
+      "start": 1877.268,
+      "end": 1910.706,
+      "text": "人和人之间通信用邮箱，电子邮箱，哎，但是 agent 是不需要界面的，而且 agent 它应该是更高频的跟其他 agent 的通信。那现在谁有给 agent 提供邮箱的服务呢？没有。另外支付、鉴权或者说这个 ID 这种都值得为 agent 的场景重新设计一遍。这是是一个非常朝阳，同时又非常重要的一个一个事儿。你怎么看待 SQL 和 file system 这样的经典抽象在 Agent 时代的前景？",
+      "refined_segment_indexes": [
+        233,
+        234,
+        235,
+        236,
+        237,
+        238
+      ]
+    },
+    {
+      "start": 1910.946,
+      "end": 1942.386,
+      "text": "现在我们的这 coding agent 也好，或者说模型也好，它是从人类的这些数据里边训练出来的。人类发明了 SQL，人类发明了 file system，所以在 Agent 背后的代元模型的脑子里，这些就是他们最熟悉的操作计算机的心智模型。不管你今天提供什么样 agent native 的新的 infra，但是呢，你给 agent 使用的接口一定是这些经典的接口。",
+      "refined_segment_indexes": [
+        239,
+        240,
+        241
+      ]
+    },
+    {
+      "start": 1943.186,
+      "end": 1976.306,
+      "text": "这就是为什么我们去提供记忆的时候，是通过这个数据库的接口去去把存储给做了。因为 agent 最最擅长写 SQL，比如说像小龙虾原生的这个记忆系统，它就是一堆 Markdown 文件。代元模型和 coding agent 的操作文件系统也非常擅长。所以我的结论是，至少在 agent 自己自我进化出更符合 agent 使用的这种接口啊形式之前，呃，这些经典的心智模型会长期存在。",
+      "refined_segment_indexes": [
+        242,
+        243,
+        244,
+        245
+      ]
+    },
+    {
+      "start": 1976.946,
+      "end": 2000.466,
+      "text": "只是呢，这些心智模型下面的实现会不一样。我们知道这几年向量数据库非常的火，呃，但同时我们也看到一些现存的玩家也在把这个向量的能力给加到自己的这个功能里。你觉得未来这些独立的向量数据库，他们的终局会怎么样？哎，我觉得这问题挺好的。其实我的观点可能有点极端啊。",
+      "refined_segment_indexes": [
+        246,
+        247,
+        248,
+        249,
+        250
+      ]
+    },
+    {
+      "start": 2000.706,
+      "end": 2030.786,
+      "text": "就刚其实我我提到这个记忆的检索的部分里边会用到向量数据库的一些检索能力，但是向量检索只是我若干个检索手段中的一个。我不仅要做向量检索，我还要做全文匹配，我还要做原始信息的过滤。其实我是非常不赞同把向量数据库单独变成一个独立的划分的。它应该是所有数据平台都提供的一个标准的能力而已。",
+      "refined_segment_indexes": [
+        251,
+        252,
+        253,
+        254
+      ]
+    },
+    {
+      "start": 2031.186,
+      "end": 2063.906,
+      "text": "就是如果你把它单独拆成另外一个独立的东西，对于 agent 来说是不友好的。有些数据在这边，有些数据在那边，这时候我想交叉的去做一些事情，其实非常费劲。那还不如说我都在一起，我提供一个更加自然的接口。所以我的结论非常简单，大家都会有这个能力，不需要有一个单独的一个向量的数据库出现。那所以就是说，你觉得以后分布在各个地方这些能力未来还是收敛的？对，就是它是收敛的。",
+      "refined_segment_indexes": [
+        255,
+        256,
+        257,
+        258,
+        259,
+        260
+      ]
+    },
+    {
+      "start": 2064.226,
+      "end": 2094.626,
+      "text": "对于每个 agent 的接口层是收敛的。嗯，但是它面向的数据量不会太多。其实一直在强调的一个点就是海量的个人数据。当你在个人数据的这个语境之下，数量不会太大。那这个时候你所谓的多高的性能，多大的数据量，其实没有什么意义。但是接口一定是这个接口。还想问你一个问题，就是给 agent 用的软件，你怎么样去做才能让它更好用？哎，这个是个很好的问题，也是研究的前沿。",
+      "refined_segment_indexes": [
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268
+      ]
+    },
+    {
+      "start": 2094.866,
+      "end": 2128.786,
+      "text": "我觉得有一个新兴的领域吧，过去我们叫人体工学，就是开发者其实经常会给自己造一些工具。有些工具好用，有些工具不好用。有很多技术你一用你就知道，哇，这个东西太爽了，太舒服了。我的猜想是，对于 agent 来说，一个对于开发者友好的体验，一样也会对 agent 友好。我一直觉得图形界面不是真正的好用，它可能对普通老百姓用电脑是一个很好，但是它并不是一个对于 agent 的这种灵活场景最合适的抽象。",
+      "refined_segment_indexes": [
+        269,
+        270,
+        271,
+        272,
+        273
+      ]
+    },
+    {
+      "start": 2129.906,
+      "end": 2161.961,
+      "text": "因为比如说你两个图形界面的东西，你不能融合出第三个图形界面。但是在命令行的世界，这这个是可以的。其实这种体验就是程序员说的“哇，好体验”。在 agent 的时代，我觉得反而是是更好的，因为 agent 面临的需求是非常非常多的，所以你能用一套简洁的自洽的心智模型去囊括尽可能多的灵活任务，这个就是对 agent 来说的好体验。",
+      "refined_segment_indexes": [
+        274,
+        275,
+        276,
+        277
+      ]
+    },
+    {
+      "start": 2162.921,
+      "end": 2183.321,
+      "text": "所以 Unix 道学最近突然又非常非常火，核心是这个，就是因为这套方法论原则就那么几个，但是它通过组合能变出一个更大更复杂的世界出来。你觉得未来 AI 的能力的下一个突破的边界在哪里？",
+      "refined_segment_indexes": [
+        278,
+        279
+      ]
+    },
+    {
+      "start": 2184.041,
+      "end": 2217.801,
+      "text": "我隐约觉得，在这个组织多个 agent 再去干这种复杂任务里边，会 somehow 存在一种 scaling law，就是今天我们刚刚开始去把多个 agent 协同在一起，能够去呃干一些事情，对吧？如果我放一百个、一千个、一万个进去，他们能够产生什么样的效果？我觉得是现在是一个 open question，也让我挺兴奋的。编程的语言和开发者的工具，你觉得在 agent 的时代还重要吗？",
+      "refined_segment_indexes": [
+        280,
+        281,
+        282,
+        283
+      ]
+    },
+    {
+      "start": 2217.961,
+      "end": 2248.521,
+      "text": "我觉得这个其实还是挺重要的，非常重要，因为刚才我其实在反复提心智模型，就是大家知道这个东西被强化学习训练出来的，它还是人发明了数学以及人用的编程语言，但这里边反过来又不太重要。我觉得包括在 harness engineering 里边，你不用再去关心具体的代码，反正我自己的这个开发的过程，我每天消耗这么多的 token，产生这么多新的代码，但是我是一行具体的代码细节都不会看的。",
+      "refined_segment_indexes": [
+        284,
+        285
+      ]
+    },
+    {
+      "start": 2249.241,
+      "end": 2273.641,
+      "text": "你要去关注这个架构，你要去关注软件工程，你要去关注这个代码不要快速的腐化，更上层的事情。所以对我来说就是既重要又不重要，重要的是说你必须得贴合这个 agent 的心智模型，不重要的是你需要作为人要去关注一些更高层或者更抽象的一些事情。以后人与 agent 需要协同吗？",
+      "refined_segment_indexes": [
+        286,
+        287,
+        288
+      ]
+    },
+    {
+      "start": 2273.801,
+      "end": 2286.281,
+      "text": "这种协同可能不会是针对具体某些事情的对齐，或者说在细节上的这个把控，而更多的是提我的需求，以及我怎么验证你给我交付的结果。",
+      "refined_segment_indexes": [
+        289
+      ]
+    },
+    {
+      "start": 2287.321,
+      "end": 2314.841,
+      "text": "还有就是人会把自己的经验通过 skill 或者 spec 传递给 agent team，中间这些软件的生产过程，agent 自己的这个它是怎么开会的，它是怎么管理的，嗯，你可以跟他点拨一下，你不要参与进去，因为你一旦参与进去，你就变成整个这个系统的瓶颈了。所以我觉得会有交互，但这个交互会是在最上层的。",
+      "refined_segment_indexes": [
+        290,
+        291
+      ]
+    },
+    {
+      "start": 2315.161,
+      "end": 2345.241,
+      "text": "你最近说过一句非常耐人寻味又细思极恐的一句话，就是说你现在所有的认知可能过一个月之后就会严重的过时，在这种快速的变化下，你到底怎么样去建立自己的护城河呢？我自己也在寻找这个问题的答案。我的方向是我一定要在这个浪潮的身处其中，要有天天去用的这种手感，保持自己对这个技术的判断吧。",
+      "refined_segment_indexes": [
+        292,
+        293,
+        294
+      ]
+    },
+    {
+      "start": 2345.401,
+      "end": 2375.161,
+      "text": "我觉得现在很多大家学习 AI 或者说学习这个 agent，它其实是靠看各种科技文章或者看像我们今天这样的这些对话，都不是最高效的。最高效你就是亲自自己去用。当你自己有这个感受了以后，我今天我的所有的经验会去引导未来下一个月的我去走向这个更前面的一个阶段啊，保持手感吧。还想问问，就是你现在做的这些软件是你们多大的一个团队做出来的？",
+      "refined_segment_indexes": [
+        295,
+        296,
+        297,
+        298
+      ]
+    },
+    {
+      "start": 2375.607,
+      "end": 2401.447,
+      "text": "呃，现在大多数我这这些新产品，包括 MemEye、DBEye，可能就是一两个人的团队，包括可能我一个人就是主力，对，就跟传统的软件开发的这个流程不太一样了。可能我过去三个月干了传统软件公司一百个人年的事儿，对，就就很夸张。你觉得未来的这种公司的组织形态会发生什么样的变化？啊，这是个好问题。",
+      "refined_segment_indexes": [
+        299,
+        300,
+        301,
+        302
+      ]
+    },
+    {
+      "start": 2401.607,
+      "end": 2430.247,
+      "text": "我最近其实也在经历这个过程，就是软件的生产的过程会发生变化，人不再去直接参与到代码的生产了。如果你是一个全职的 coder，可能我觉得是挺危险的，因为慢慢的软件的生产会变成黑盒化。就比如现在我每天可能在数万行代码 checking 到这个软件里边，但是 AI 写了这一万行写了什么，我其实完全不知道的。",
+      "refined_segment_indexes": [
+        303,
+        304,
+        305
+      ]
+    },
+    {
+      "start": 2430.807,
+      "end": 2462.887,
+      "text": "包括我现在我们公司自己百分之九十的代码其实都是 AI agent 在写，所以对于人的组织形态会变成由若干个吧，非常强的这种 harness engineer 带领他自己的 agent 团队负责一个垂直的业务，然后配上一个领域专家。这个领域专家是相当于他对于现实世界的某个问题非常了解，但他不会编程，他也不会去做软件。",
+      "refined_segment_indexes": [
+        306,
+        307
+      ]
+    },
+    {
+      "start": 2463.527,
+      "end": 2496.087,
+      "text": "这两个人配合在一起，去用 agent 的 team 用 harness engineering 快速的生产去解决现现实的问题。我我觉得可能未来组织形态就是这样了，一个个小型的部落，然后不会再是一个大公司，我有个大平台，而是这种高度碎片化的，嗯，团队。对。那你觉得现在硅谷的这么多呃大厂里面这么多的软件工程师，你觉得这个裁员大概现在是一个什么阶段？未来还需要这么多码农吗？",
+      "refined_segment_indexes": [
+        308,
+        309,
+        310,
+        311,
+        312
+      ]
+    },
+    {
+      "start": 2496.167,
+      "end": 2521.607,
+      "text": "在我看来啊，就上一个时代软件工程已经终结了。我个人体验是真的不需要这么多软件工程师了。其实这是个好的现象，它意味着软件进行真正的民主化了，任何一个人都可以实现他想实现的软件。哎，这个其实是这一波浪潮带来最大的意义，而不是说像纺织女工一样。其实我们现在穿的衣服是更多的，而不是更少的。",
+      "refined_segment_indexes": [
+        313,
+        314,
+        315,
+        316,
+        317
+      ]
+    },
+    {
+      "start": 2522.007,
+      "end": 2547.287,
+      "text": "今天最后一个问题，想就是帮年轻人问一下，因为现在有很多正在学计算机专业的同学都很焦虑，因为现在可能在学校里学的东西，毕业了以后就完全没有用了。那是。你觉得他们应该现在学什么？如果你真的喜欢计算机，你就会发现啊，有很多东西其实哪怕是在今天 agent 这个时代，它都是不变，或者说甚至更有价值的。",
+      "refined_segment_indexes": [
+        318,
+        319,
+        320,
+        321
+      ]
+    },
+    {
+      "start": 2547.447,
+      "end": 2576.487,
+      "text": "正好刚才说的这种 Unix philosophy，啊，一些经典的软件工程、一些模型，就是思维模型这些东西，其实是一直都不变的。你要找到这些永恒不变的东西去学这些东西，然后投身到软件行业里边。如果你现在可能刚学计算机只是为了以后找一份码农的工作，那可能你就得想一想，嗯，你真正喜欢什么？",
+      "refined_segment_indexes": [
+        322,
+        323,
+        324
+      ]
+    },
+    {
+      "start": 2576.647,
+      "end": 2610.007,
+      "text": "我觉得不管怎么样，最后人还是要去做自己热爱的事情是才能最幸福的。所以正好现在有这么一个时机，老天让你去做你真正喜欢的事情，而且今天大语言模型那么强，你在学任何你感兴趣的东西的时候的门槛、学习的成本都已经大幅的下降了。所以我对于年轻朋友就是做你想做的事情，热爱的事情就去做就好。非常感谢今天的分享。哎，最后想问你一个彩蛋啊。嗯。",
+      "refined_segment_indexes": [
+        325,
+        326,
+        327,
+        328,
+        329,
+        330
+      ]
+    },
+    {
+      "start": 2610.007,
+      "end": 2642.408,
+      "text": "嗯，如果给大家推荐一本书的话，你推荐什么？我想想，我其实有有有有一些 candidate，嗯。那还是《残余摩托车维修艺术》吧。对，那本书真的我看过无数遍，非常喜欢。最打动你的是什么？其实那本书是一个父子在骑着摩托车在环游美国的一个road trip，在这过程中，每一天他会去思考工匠精神和一个事物它为什么好，它好的点在哪里。",
+      "refined_segment_indexes": [
+        331,
+        332,
+        333,
+        334,
+        335,
+        336
+      ]
+    },
+    {
+      "start": 2642.728,
+      "end": 2670.088,
+      "text": "所以我觉得它是一本让人能够去认真的思考你造物这件事情的本质是什么，你为什么会enjoy做好的东西，什么是好的东西。他在讨论的是这些这些内容。读完那本书了以后，如果你是一个工程师，或者说你是一个广义上的工匠，你会更加明白自己为什么是这样的人。",
+      "refined_segment_indexes": [
+        337,
+        338,
+        339
+      ]
+    }
+  ]
+}
