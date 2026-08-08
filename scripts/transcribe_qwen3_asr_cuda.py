@@ -13,6 +13,7 @@ import shutil
 import subprocess
 import sys
 import time
+from dataclasses import dataclass
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from typing import Any, Iterator
@@ -44,6 +45,26 @@ TORCH_PUBLIC_VERSION = "2.11.0"
 MAX_INFERENCE_BATCH_SIZE = 1
 MAX_ALIGNMENT_CHUNK_SECONDS = 180.0
 ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS = 1.0
+AUDIO_DECODE_BOUNDARY_TOLERANCE_SECONDS = 0.01
+# Container duration metadata can extend slightly beyond the final decodable PCM
+# sample. Keep this allowance final-window-only so interior ownership stays strict.
+FINAL_AUDIO_DECODE_SHORTFALL_TOLERANCE_SECONDS = 0.125
+DEFAULT_CHUNK_CONTEXT_SECONDS = 5.0
+SEAM_MATCH_TOLERANCE_SECONDS = 1.0
+MIN_SEAM_ANCHOR_RUN_CHARACTERS = 3
+MIN_STRICT_SEAM_ANCHOR_RUN_CHARACTERS = 2
+STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS = 0.25
+BOUNDARY_RECONCILIATION_METHOD = "forced-alignment-time-crossover-v2"
+ALIGNMENT_COVERAGE_GUARD = "active-audio-coverage-v1"
+ALIGNED_GAP_GUARD = "low-energy-gap-v1"
+COVERAGE_FRAME_SECONDS = 0.5
+COVERAGE_ACTIVE_DBFS = -35.0
+COVERAGE_MIN_ACTIVE_SECONDS = 10.0
+COVERAGE_MIN_ACTIVE_FRACTION = 0.5
+GAP_SILENCE_WINDOW_SECONDS = 0.1
+GAP_SILENCE_DBFS = -40.0
+GAP_MAX_ACTIVE_SECONDS = 0.25
+GAP_MAX_ACTIVE_FRACTION = 0.25
 SUPPORTED_ALIGNMENT_LANGUAGES = frozenset(
     {
         "Chinese",
@@ -61,6 +82,19 @@ SUPPORTED_ALIGNMENT_LANGUAGES = frozenset(
 )
 NO_SPACE_CHUNK_JOIN_LANGUAGES = frozenset({"Chinese", "Cantonese", "Japanese"})
 CUDA_DEVICE_RE = re.compile(r"^cuda:(\d+)$")
+TERMINAL_PUNCTUATION_RE = re.compile(
+    r"[\u3002\uff01\uff1f.!?][\"\u201d\u2019']*$"
+)
+
+
+@dataclass(frozen=True)
+class AudioChunkWindow:
+    """One contiguous ownership range decoded with bounded acoustic context."""
+
+    ownership_start: float
+    ownership_end: float
+    decode_start: float
+    decode_end: float
 
 
 def parse_args() -> argparse.Namespace:
@@ -102,7 +136,16 @@ def parse_args() -> argparse.Namespace:
         "--chunk-duration",
         type=float,
         default=120.0,
-        help="Decode and process one bounded chunk; must not exceed 180 seconds",
+        help="Own this many seconds per chunk before adding bounded context",
+    )
+    parser.add_argument(
+        "--chunk-context",
+        type=float,
+        default=DEFAULT_CHUNK_CONTEXT_SECONDS,
+        help=(
+            "Decode this many extra seconds on each side, then reconcile the "
+            "overlap with forced-alignment timestamps"
+        ),
     )
     parser.add_argument("--max-sentence-characters", type=int, default=160)
     parser.add_argument("--device", default="cuda:0")
@@ -149,6 +192,10 @@ def aligned_backend_options(args: argparse.Namespace) -> dict[str, Any]:
         "dtype": args.dtype,
         "attention_implementation": args.attention_implementation,
         "max_inference_batch_size": MAX_INFERENCE_BATCH_SIZE,
+        "chunk_context_seconds": args.chunk_context,
+        "boundary_reconciliation": BOUNDARY_RECONCILIATION_METHOD,
+        "alignment_coverage_guard": ALIGNMENT_COVERAGE_GUARD,
+        "aligned_gap_guard": ALIGNED_GAP_GUARD,
     }
 
 
@@ -168,6 +215,10 @@ def validate_cuda_raw_integrity(
         "temperature": args.temperature,
         "max_tokens_per_chunk": args.max_tokens,
         "chunk_duration_seconds": args.chunk_duration,
+        "chunk_context_seconds": args.chunk_context,
+        "boundary_reconciliation": BOUNDARY_RECONCILIATION_METHOD,
+        "alignment_coverage_guard": ALIGNMENT_COVERAGE_GUARD,
+        "aligned_gap_guard": ALIGNED_GAP_GUARD,
         **backend_options,
     }
     if document.get("options") != expected_options:
@@ -175,26 +226,271 @@ def validate_cuda_raw_integrity(
     audio = document.get("audio")
     if not isinstance(audio, dict) or audio.get("sample_rate_hz") != SAMPLE_RATE:
         raise ValueError("raw ASR sample rate does not match the CUDA backend")
+    reconciliation = document.get("boundary_reconciliation")
+    if (
+        not isinstance(reconciliation, dict)
+        or reconciliation.get("method") != BOUNDARY_RECONCILIATION_METHOD
+        or reconciliation.get("status") not in {"pending", "complete"}
+        or reconciliation.get("chunk_context_seconds") != args.chunk_context
+    ):
+        raise ValueError("raw ASR has invalid boundary reconciliation metadata")
     segments = document.get("segments")
-    if not isinstance(segments, list) or document.get("text") != join_transcript_chunks(
+    if not isinstance(segments, list):
+        raise ValueError("raw ASR has invalid source chunks")
+    recorded_duration = finite_document_number(
+        audio.get("duration_seconds"), field="audio duration"
+    )
+    expected_windows = list(
+        audio_chunk_ranges(
+            recorded_duration,
+            chunk_duration=args.chunk_duration,
+            chunk_context=args.chunk_context,
+        )
+    )
+    if len(segments) != len(expected_windows):
+        raise ValueError("raw ASR source chunk count does not match its audio windows")
+    previous_ownership_end = 0.0
+    for index, (segment, expected_window) in enumerate(
+        zip(segments, expected_windows)
+    ):
+        if not isinstance(segment, dict):
+            raise ValueError(f"raw ASR source chunk {index} is invalid")
+        decoded_text = segment.get("decoded_text")
+        if not isinstance(decoded_text, str):
+            raise ValueError(f"raw ASR source chunk {index} has no decoded text")
+        ownership_start = finite_document_number(
+            segment.get("start"), field=f"chunk {index} ownership start"
+        )
+        ownership_end = finite_document_number(
+            segment.get("end"), field=f"chunk {index} ownership end"
+        )
+        decode_start = finite_document_number(
+            segment.get("decode_start"), field=f"chunk {index} decode start"
+        )
+        decode_end = finite_document_number(
+            segment.get("decode_end"), field=f"chunk {index} decode end"
+        )
+        expected_ownership_start = rounded_seconds(
+            expected_window.ownership_start
+        )
+        expected_ownership_end = rounded_seconds(expected_window.ownership_end)
+        expected_decode_start = rounded_seconds(expected_window.decode_start)
+        expected_decode_end = rounded_seconds(expected_window.decode_end)
+        decode_end_shortfall = expected_decode_end - decode_end
+        maximum_decode_shortfall = (
+            FINAL_AUDIO_DECODE_SHORTFALL_TOLERANCE_SECONDS
+            if index == len(expected_windows) - 1
+            else AUDIO_DECODE_BOUNDARY_TOLERANCE_SECONDS
+        )
+        if (
+            abs(ownership_start - expected_ownership_start) > 0.001
+            or abs(ownership_end - expected_ownership_end) > 0.001
+            or abs(decode_start - expected_decode_start) > 0.001
+            or decode_end_shortfall < -AUDIO_DECODE_BOUNDARY_TOLERANCE_SECONDS
+            or decode_end_shortfall > maximum_decode_shortfall
+            or not 0.0 <= decode_start < decode_end
+            or decode_end
+            > recorded_duration + AUDIO_DECODE_BOUNDARY_TOLERANCE_SECONDS
+            or decode_end - decode_start
+            > MAX_ALIGNMENT_CHUNK_SECONDS
+            + AUDIO_DECODE_BOUNDARY_TOLERANCE_SECONDS
+        ):
+            raise ValueError(f"raw ASR source chunk {index} has invalid ownership")
+        previous_ownership_end = ownership_end
+        if reconciliation["status"] == "pending":
+            if segment.get("text") != decoded_text:
+                raise ValueError("pending raw ASR must preserve each full decoded candidate")
+            if "owned_item_start" in segment or "owned_item_stop" in segment:
+                raise ValueError("pending raw ASR cannot claim reconciled ownership")
+        else:
+            owned_start = segment.get("owned_item_start")
+            owned_stop = segment.get("owned_item_stop")
+            if (
+                not isinstance(owned_start, int)
+                or not isinstance(owned_stop, int)
+                or owned_start < 0
+                or owned_stop < owned_start
+            ):
+                raise ValueError(f"raw ASR source chunk {index} has invalid ownership items")
+    if abs(previous_ownership_end - recorded_duration) > 0.1:
+        raise ValueError("raw ASR chunk ownership does not cover the full audio")
+    seams = reconciliation.get("seams")
+    if not isinstance(seams, list):
+        raise ValueError("raw ASR boundary reconciliation has invalid seams")
+    if reconciliation["status"] == "pending" and seams:
+        raise ValueError("pending raw ASR cannot contain completed seam records")
+    if reconciliation["status"] == "complete":
+        if len(seams) != max(0, len(segments) - 1):
+            raise ValueError("raw ASR boundary reconciliation seam count is invalid")
+        for index, seam in enumerate(seams):
+            if (
+                not isinstance(seam, dict)
+                or seam.get("left_chunk_id") != index
+                or seam.get("right_chunk_id") != index + 1
+                or seam.get("strategy") not in {"exact-time-anchor", "aligned-gap"}
+                or seam.get("seam_seconds") != segments[index].get("end")
+            ):
+                raise ValueError(f"raw ASR boundary reconciliation seam {index} is invalid")
+            matched_characters = seam.get("matched_characters")
+            if not isinstance(matched_characters, int) or matched_characters < 0:
+                raise ValueError(f"raw ASR boundary seam {index} has invalid confidence")
+            if seam["strategy"] == "exact-time-anchor":
+                anchor_run_characters = seam.get("anchor_run_characters")
+                anchor_run_max_delta = seam.get(
+                    "anchor_run_max_pair_delta_seconds"
+                )
+                strict_short_anchor = anchor_run_characters == (
+                    MIN_STRICT_SEAM_ANCHOR_RUN_CHARACTERS
+                )
+                invalid_anchor_delta = anchor_run_max_delta is not None and (
+                    not isinstance(anchor_run_max_delta, (int, float))
+                    or isinstance(anchor_run_max_delta, bool)
+                    or not math.isfinite(float(anchor_run_max_delta))
+                    or float(anchor_run_max_delta) > SEAM_MATCH_TOLERANCE_SECONDS
+                )
+                if (
+                    not isinstance(seam.get("anchor_text"), str)
+                    or not seam["anchor_text"]
+                    or seam.get("anchor_owner") not in {"left", "right"}
+                    or not isinstance(anchor_run_characters, int)
+                    or anchor_run_characters
+                    < MIN_STRICT_SEAM_ANCHOR_RUN_CHARACTERS
+                    or matched_characters < anchor_run_characters
+                    or invalid_anchor_delta
+                    or (
+                        strict_short_anchor
+                        and (
+                            seam.get("anchor_confidence")
+                            != "unique-tight-two-character-run"
+                            or anchor_run_max_delta is None
+                            or float(anchor_run_max_delta)
+                            > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+                        )
+                    )
+                    or (
+                        not strict_short_anchor
+                        and "anchor_confidence" in seam
+                    )
+                ):
+                    raise ValueError(
+                        f"raw ASR boundary seam {index} has an unreliable exact anchor"
+                    )
+                finite_document_number(
+                    seam.get("anchor_midpoint_seconds"),
+                    field=f"boundary seam {index} anchor midpoint",
+                )
+            else:
+                gap_start = finite_document_number(
+                    seam.get("gap_start_seconds"),
+                    field=f"boundary seam {index} gap start",
+                )
+                gap_end = finite_document_number(
+                    seam.get("gap_end_seconds"),
+                    field=f"boundary seam {index} gap end",
+                )
+                if not gap_start < float(seam["seam_seconds"]) < gap_end:
+                    raise ValueError(
+                        f"raw ASR boundary seam {index} has invalid gap bounds"
+                    )
+                if seam.get("acoustic_guard") != {
+                    "method": ALIGNED_GAP_GUARD,
+                    "status": "verified",
+                    "window_seconds": GAP_SILENCE_WINDOW_SECONDS,
+                    "maximum_dbfs": GAP_SILENCE_DBFS,
+                    "maximum_active_seconds": GAP_MAX_ACTIVE_SECONDS,
+                    "maximum_active_fraction": GAP_MAX_ACTIVE_FRACTION,
+                }:
+                    raise ValueError(
+                        f"raw ASR boundary seam {index} has no verified acoustic gap"
+                    )
+    expected_text = join_transcript_chunks(
         [
             str(segment.get("text", ""))
             for segment in segments
             if isinstance(segment, dict)
         ],
         language=args.language,
-    ):
+    )
+    if document.get("text") != expected_text:
         raise ValueError("raw ASR text does not match its source chunks")
 
 
 def validate_cuda_aligned_integrity(
-    document: dict[str, Any], *, raw_output_path: Path
+    document: dict[str, Any],
+    *,
+    raw_output_path: Path,
+    raw_document: dict[str, Any],
 ) -> None:
     source = document.get("source")
     if not isinstance(source, dict) or source.get("raw_asr_path") != repository_path(
         raw_output_path
     ):
         raise ValueError("aligned ASR raw artifact path does not match")
+    reconciliation = raw_document.get("boundary_reconciliation")
+    if not isinstance(reconciliation, dict) or reconciliation.get("status") != "complete":
+        raise ValueError("aligned ASR requires a completed boundary reconciliation")
+    chunks = document.get("chunks")
+    raw_chunks = raw_document.get("segments")
+    if not isinstance(chunks, list) or not isinstance(raw_chunks, list):
+        raise ValueError("aligned ASR has invalid CUDA chunk lineage")
+    previous_start = -1.0
+    for index, (chunk, raw_chunk) in enumerate(zip(chunks, raw_chunks)):
+        if not isinstance(chunk, dict) or not isinstance(raw_chunk, dict):
+            raise ValueError(f"aligned ASR CUDA chunk {index} is invalid")
+        for field in (
+            "decode_start",
+            "decode_end",
+            "decoded_text",
+            "owned_item_start",
+            "owned_item_stop",
+        ):
+            if chunk.get(field) != raw_chunk.get(field):
+                raise ValueError(
+                    f"aligned ASR CUDA chunk {index} field {field} does not match raw"
+                )
+        alignment = chunk.get("alignment")
+        if not isinstance(alignment, list):
+            raise ValueError(f"aligned ASR CUDA chunk {index} has no alignment")
+        owned_start = raw_chunk.get("owned_item_start")
+        owned_stop = raw_chunk.get("owned_item_stop")
+        if (
+            not isinstance(owned_start, int)
+            or not isinstance(owned_stop, int)
+            or owned_start < 0
+            or owned_stop < owned_start
+            or len(alignment) != owned_stop - owned_start
+        ):
+            raise ValueError(f"aligned ASR CUDA chunk {index} has invalid ownership")
+        if cleaned_alignment_text(str(chunk.get("text", ""))) != "".join(
+            cleaned_alignment_text(str(item.get("text", "")))
+            for item in alignment
+            if isinstance(item, dict)
+        ):
+            raise ValueError(
+                f"aligned ASR CUDA chunk {index} text does not match owned items"
+            )
+        decode_start = float(chunk["decode_start"])
+        decode_end = float(chunk["decode_end"])
+        for item in alignment:
+            if not isinstance(item, dict):
+                raise ValueError(f"aligned ASR CUDA chunk {index} item is invalid")
+            item_start = finite_document_number(
+                item.get("start"), field=f"CUDA chunk {index} alignment start"
+            )
+            item_end = finite_document_number(
+                item.get("end"), field=f"CUDA chunk {index} alignment end"
+            )
+            if (
+                item_start + ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS < decode_start
+                or item_end < item_start
+                or item_start > decode_end + ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS
+                or item_end > decode_end + ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS
+                or item_start + ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS < previous_start
+            ):
+                raise ValueError(
+                    f"aligned ASR CUDA chunk {index} has invalid owned timestamps"
+                )
+            previous_start = max(previous_start, item_start)
 
 
 def validate_file_identity(
@@ -211,15 +507,695 @@ def validate_file_identity(
 
 
 def audio_chunk_ranges(
-    duration_seconds: float, *, chunk_duration: float
-) -> Iterator[tuple[float, float]]:
-    start = 0.0
-    while start < duration_seconds:
-        end = min(duration_seconds, start + chunk_duration)
-        if end <= start:
-            raise ValueError("audio chunk duration did not advance")
-        yield start, end
-        start = end
+    duration_seconds: float,
+    *,
+    chunk_duration: float,
+    chunk_context: float,
+) -> Iterator[AudioChunkWindow]:
+    chunk_count = max(1, math.ceil(duration_seconds / chunk_duration))
+    ownership_ranges: list[tuple[float, float]] = []
+    if chunk_count == 1:
+        ownership_ranges.append((0.0, duration_seconds))
+    else:
+        prefix_count = chunk_count - 2
+        for index in range(prefix_count):
+            ownership_ranges.append(
+                (index * chunk_duration, (index + 1) * chunk_duration)
+            )
+        tail_start = prefix_count * chunk_duration
+        tail_midpoint = tail_start + (duration_seconds - tail_start) / 2.0
+        ownership_ranges.extend(
+            [
+                (tail_start, tail_midpoint),
+                (tail_midpoint, duration_seconds),
+            ]
+        )
+
+    for ownership_start, ownership_end in ownership_ranges:
+        if (
+            ownership_end <= ownership_start
+            or ownership_end - ownership_start > chunk_duration + 0.001
+        ):
+            raise ValueError("audio chunk duration did not advance within its limit")
+        yield AudioChunkWindow(
+            ownership_start=ownership_start,
+            ownership_end=ownership_end,
+            decode_start=max(0.0, ownership_start - chunk_context),
+            decode_end=min(duration_seconds, ownership_end + chunk_context),
+        )
+
+
+def alignment_item_midpoint(item: dict[str, Any]) -> float:
+    return (float(item["start"]) + float(item["end"])) / 2.0
+
+
+def _monotonic_exact_match_chain(
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+    *,
+    tolerance_seconds: float,
+) -> tuple[list[tuple[int, int]], int]:
+    """Match exact alignment units monotonically inside one acoustic overlap."""
+
+    left_texts = [cleaned_alignment_text(str(item["text"])) for _, item in left_items]
+    right_texts = [cleaned_alignment_text(str(item["text"])) for _, item in right_items]
+    rows = len(left_items)
+    columns = len(right_items)
+    scores = [[0] * (columns + 1) for _ in range(rows + 1)]
+    for left_index in range(rows):
+        for right_index in range(columns):
+            left_text = left_texts[left_index]
+            right_text = right_texts[right_index]
+            matches = (
+                bool(left_text)
+                and left_text == right_text
+                and abs(
+                    alignment_item_midpoint(left_items[left_index][1])
+                    - alignment_item_midpoint(right_items[right_index][1])
+                )
+                <= tolerance_seconds
+            )
+            diagonal = (
+                scores[left_index][right_index] + len(left_text)
+                if matches
+                else -1
+            )
+            scores[left_index + 1][right_index + 1] = max(
+                diagonal,
+                scores[left_index][right_index + 1],
+                scores[left_index + 1][right_index],
+            )
+
+    chain: list[tuple[int, int]] = []
+    left_index = rows
+    right_index = columns
+    while left_index and right_index:
+        left_text = left_texts[left_index - 1]
+        right_text = right_texts[right_index - 1]
+        matches = (
+            bool(left_text)
+            and left_text == right_text
+            and abs(
+                alignment_item_midpoint(left_items[left_index - 1][1])
+                - alignment_item_midpoint(right_items[right_index - 1][1])
+            )
+            <= tolerance_seconds
+        )
+        if (
+            matches
+            and scores[left_index][right_index]
+            == scores[left_index - 1][right_index - 1] + len(left_text)
+        ):
+            chain.append((left_index - 1, right_index - 1))
+            left_index -= 1
+            right_index -= 1
+        elif scores[left_index - 1][right_index] >= scores[left_index][right_index - 1]:
+            left_index -= 1
+        else:
+            right_index -= 1
+    chain.reverse()
+    return chain, scores[rows][columns]
+
+
+def _gap_crossover(
+    left_items: list[dict[str, Any]],
+    right_items: list[dict[str, Any]],
+    *,
+    seam_seconds: float,
+) -> tuple[int, int, float, float] | None:
+    """Return a deterministic crossover only when both decodes expose a gap."""
+
+    def gap(items: list[dict[str, Any]]) -> tuple[float, float, int]:
+        next_index = next(
+            (
+                index
+                for index, item in enumerate(items)
+                if alignment_item_midpoint(item) >= seam_seconds
+            ),
+            len(items),
+        )
+        before_end = (
+            max(float(item["end"]) for item in items[:next_index])
+            if next_index
+            else float("-inf")
+        )
+        after_start = (
+            min(float(item["start"]) for item in items[next_index:])
+            if next_index < len(items)
+            else float("inf")
+        )
+        return before_end, after_start, next_index
+
+    left_before, left_after, left_cut = gap(left_items)
+    right_before, right_after, right_cut = gap(right_items)
+    common_gap_start = max(left_before, right_before)
+    common_gap_end = min(left_after, right_after)
+    if common_gap_start <= seam_seconds <= common_gap_end:
+        return left_cut, right_cut, common_gap_start, common_gap_end
+    return None
+
+
+def seam_crossover(
+    left_items: list[dict[str, Any]],
+    right_items: list[dict[str, Any]],
+    *,
+    seam_seconds: float,
+    shared_start: float,
+    shared_end: float,
+    tolerance_seconds: float = SEAM_MATCH_TOLERANCE_SECONDS,
+) -> tuple[int, int, dict[str, Any]]:
+    """Choose one exact, time-constrained ownership switch for a seam."""
+
+    left_overlap = [
+        (index, item)
+        for index, item in enumerate(left_items)
+        if shared_start <= alignment_item_midpoint(item) <= shared_end
+    ]
+    right_overlap = [
+        (index, item)
+        for index, item in enumerate(right_items)
+        if shared_start <= alignment_item_midpoint(item) <= shared_end
+    ]
+    chain, matched_characters = _monotonic_exact_match_chain(
+        left_overlap,
+        right_overlap,
+        tolerance_seconds=tolerance_seconds,
+    )
+    anchors: list[tuple[float, float, int, int, str, int, float]] = []
+    anchor_confidence: str | None = None
+    match_runs: list[list[tuple[int, int]]] = []
+    for pair in chain:
+        if (
+            match_runs
+            and pair[0] == match_runs[-1][-1][0] + 1
+            and pair[1] == match_runs[-1][-1][1] + 1
+        ):
+            match_runs[-1].append(pair)
+        else:
+            match_runs.append([pair])
+    for run in match_runs:
+        run_characters = sum(
+            len(
+                cleaned_alignment_text(
+                    str(left_overlap[left_local][1]["text"])
+                )
+            )
+            for left_local, _ in run
+        )
+        run_max_pair_delta = max(
+            abs(
+                alignment_item_midpoint(left_overlap[left_local][1])
+                - alignment_item_midpoint(right_overlap[right_local][1])
+            )
+            for left_local, right_local in run
+        )
+        if run_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS:
+            continue
+        run_anchors: list[tuple[float, float, int, int, str, int, float]] = []
+        for left_local, right_local in run:
+            left_index, left_item = left_overlap[left_local]
+            right_index, right_item = right_overlap[right_local]
+            left_midpoint = alignment_item_midpoint(left_item)
+            right_midpoint = alignment_item_midpoint(right_item)
+            anchor_midpoint = (left_midpoint + right_midpoint) / 2.0
+            run_anchors.append(
+                (
+                    abs(anchor_midpoint - seam_seconds),
+                    abs(left_midpoint - right_midpoint),
+                    left_index,
+                    right_index,
+                    cleaned_alignment_text(str(left_item["text"])),
+                    run_characters,
+                    run_max_pair_delta,
+                )
+            )
+        anchors.extend(run_anchors)
+    if not anchors:
+        strict_short_anchor_runs: list[
+            list[tuple[float, float, int, int, str, int, float]]
+        ] = []
+        for left_local in range(len(left_overlap) - 1):
+            left_pair = left_overlap[left_local : left_local + 2]
+            left_texts = [
+                cleaned_alignment_text(str(item["text"]))
+                for _, item in left_pair
+            ]
+            if (
+                left_pair[1][0] != left_pair[0][0] + 1
+                or any(len(text) != 1 for text in left_texts)
+            ):
+                continue
+            for right_local in range(len(right_overlap) - 1):
+                right_pair = right_overlap[right_local : right_local + 2]
+                right_texts = [
+                    cleaned_alignment_text(str(item["text"]))
+                    for _, item in right_pair
+                ]
+                if (
+                    right_pair[1][0] != right_pair[0][0] + 1
+                    or left_texts != right_texts
+                    or any(len(text) != 1 for text in right_texts)
+                ):
+                    continue
+                pair_deltas = [
+                    abs(
+                        alignment_item_midpoint(left_pair[offset][1])
+                        - alignment_item_midpoint(right_pair[offset][1])
+                    )
+                    for offset in range(2)
+                ]
+                if max(pair_deltas) > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS:
+                    continue
+                run_max_pair_delta = max(pair_deltas)
+                run_anchors = []
+                for offset in range(2):
+                    left_index, left_item = left_pair[offset]
+                    right_index, right_item = right_pair[offset]
+                    left_midpoint = alignment_item_midpoint(left_item)
+                    right_midpoint = alignment_item_midpoint(right_item)
+                    anchor_midpoint = (left_midpoint + right_midpoint) / 2.0
+                    run_anchors.append(
+                        (
+                            abs(anchor_midpoint - seam_seconds),
+                            abs(left_midpoint - right_midpoint),
+                            left_index,
+                            right_index,
+                            left_texts[offset],
+                            MIN_STRICT_SEAM_ANCHOR_RUN_CHARACTERS,
+                            run_max_pair_delta,
+                        )
+                    )
+                strict_short_anchor_runs.append(run_anchors)
+        if len(strict_short_anchor_runs) == 1:
+            anchors = strict_short_anchor_runs[0]
+            anchor_confidence = "unique-tight-two-character-run"
+    if anchors:
+        (
+            _,
+            _,
+            left_index,
+            right_index,
+            anchor_text,
+            anchor_run_characters,
+            anchor_run_max_pair_delta,
+        ) = min(anchors)
+        left_midpoint = alignment_item_midpoint(left_items[left_index])
+        right_midpoint = alignment_item_midpoint(right_items[right_index])
+        anchor_midpoint = (left_midpoint + right_midpoint) / 2.0
+        if anchor_midpoint <= seam_seconds:
+            left_stop = left_index + 1
+            right_start = right_index + 1
+            owner = "left"
+        else:
+            left_stop = left_index
+            right_start = right_index
+            owner = "right"
+        record = {
+            "seam_seconds": rounded_seconds(seam_seconds),
+            "strategy": "exact-time-anchor",
+            "anchor_text": anchor_text,
+            "anchor_midpoint_seconds": rounded_seconds(anchor_midpoint),
+            "anchor_owner": owner,
+            "matched_characters": matched_characters,
+            "anchor_run_characters": anchor_run_characters,
+            "anchor_run_max_pair_delta_seconds": rounded_seconds(
+                anchor_run_max_pair_delta
+            ),
+        }
+        if anchor_confidence is not None:
+            record["anchor_confidence"] = anchor_confidence
+        return (
+            left_stop,
+            right_start,
+            record,
+        )
+
+    gap = _gap_crossover(
+        left_items,
+        right_items,
+        seam_seconds=seam_seconds,
+    )
+    if gap is not None:
+        gap_start = max(shared_start, gap[2])
+        gap_end = min(shared_end, gap[3])
+        if not gap_start < seam_seconds < gap_end:
+            raise ValueError(
+                "overlapping ASR chunks have no positive aligned gap around "
+                f"{seam_seconds:.3f}s"
+            )
+        return (
+            gap[0],
+            gap[1],
+            {
+                "seam_seconds": rounded_seconds(seam_seconds),
+                "strategy": "aligned-gap",
+                "matched_characters": matched_characters,
+                "gap_start_seconds": rounded_seconds(gap_start),
+                "gap_end_seconds": rounded_seconds(gap_end),
+            },
+        )
+    raise ValueError(
+        "overlapping ASR chunks have no reliable exact alignment crossover at "
+        f"{seam_seconds:.3f}s"
+    )
+
+
+def text_for_alignment_slice(
+    text: str,
+    aligned_items: list[dict[str, Any]],
+    *,
+    start_item: int,
+    stop_item: int,
+) -> str:
+    """Map one contiguous aligner-item slice back to the original punctuation."""
+
+    if not 0 <= start_item <= stop_item <= len(aligned_items):
+        raise ValueError("alignment ownership slice is out of bounds")
+    normalized_items = [
+        cleaned_alignment_text(str(item["text"])) for item in aligned_items
+    ]
+    if any(not item for item in normalized_items):
+        raise ValueError("forced alignment returned an empty normalized item")
+    expected_text = cleaned_alignment_text(text)
+    if "".join(normalized_items) != expected_text:
+        raise ValueError("forced-alignment text cannot be mapped back to its decode")
+    if start_item == stop_item:
+        return ""
+
+    significant_positions = [
+        index for index, character in enumerate(text) if is_alignment_character(character)
+    ]
+    item_character_offsets = [0]
+    for item in normalized_items:
+        item_character_offsets.append(item_character_offsets[-1] + len(item))
+    if item_character_offsets[-1] != len(significant_positions):
+        raise ValueError("forced-alignment character accounting mismatch")
+
+    if start_item == 0:
+        original_start = 0
+    else:
+        original_start = significant_positions[item_character_offsets[start_item]]
+    if stop_item == len(aligned_items):
+        original_stop = len(text)
+    else:
+        original_stop = significant_positions[item_character_offsets[stop_item]]
+    owned_text = text[original_start:original_stop].strip()
+    expected_owned_text = "".join(normalized_items[start_item:stop_item])
+    if cleaned_alignment_text(owned_text) != expected_owned_text:
+        raise ValueError("reconciled text does not match its owned alignment items")
+    return owned_text
+
+
+def reconcile_candidate_slices(
+    candidates: list[dict[str, Any]],
+) -> tuple[list[tuple[int, int]], list[dict[str, Any]]]:
+    """Assign every overlap through one monotonic, auditable crossover."""
+
+    slices = [[0, len(candidate["alignment"])] for candidate in candidates]
+    seam_records: list[dict[str, Any]] = []
+    for index in range(len(candidates) - 1):
+        left = candidates[index]
+        right = candidates[index + 1]
+        seam_seconds = float(left["ownership_end"])
+        if abs(seam_seconds - float(right["ownership_start"])) > 0.001:
+            raise ValueError("ASR chunk ownership ranges are not contiguous")
+        shared_start = max(float(left["decode_start"]), float(right["decode_start"]))
+        shared_end = min(float(left["decode_end"]), float(right["decode_end"]))
+        if not shared_start < seam_seconds < shared_end:
+            raise ValueError("ASR chunk context does not surround its ownership seam")
+        left_stop, right_start, record = seam_crossover(
+            left["alignment"],
+            right["alignment"],
+            seam_seconds=seam_seconds,
+            shared_start=shared_start,
+            shared_end=shared_end,
+        )
+        slices[index][1] = left_stop
+        slices[index + 1][0] = right_start
+        seam_records.append(
+            {
+                "left_chunk_id": index,
+                "right_chunk_id": index + 1,
+                **record,
+            }
+        )
+
+    previous_start = -1.0
+    finalized: list[tuple[int, int]] = []
+    for index, (start_item, stop_item) in enumerate(slices):
+        if not 0 <= start_item <= stop_item <= len(candidates[index]["alignment"]):
+            raise ValueError(f"ASR chunk {index} has an invalid ownership slice")
+        for item in candidates[index]["alignment"][start_item:stop_item]:
+            item_start = float(item["start"])
+            if item_start + ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS < previous_start:
+                raise ValueError("reconciled alignment items are not globally monotonic")
+            previous_start = max(previous_start, item_start)
+        finalized.append((start_item, stop_item))
+    return finalized, seam_records
+
+
+def alignment_coverage_suspicions(
+    *,
+    ownership_start: float,
+    ownership_end: float,
+    text: str,
+    alignment: list[dict[str, Any]],
+    is_first_chunk: bool,
+    is_last_chunk: bool,
+) -> list[dict[str, Any]]:
+    """Find structural coverage gaps that require an active-audio probe."""
+
+    duration = ownership_end - ownership_start
+    if duration <= 0:
+        raise ValueError("alignment coverage ownership duration is invalid")
+    suspicions: list[dict[str, Any]] = []
+    normalized_characters = len(cleaned_alignment_text(text))
+    density = normalized_characters / duration
+    if duration >= 60.0 and density < 0.5:
+        suspicions.append(
+            {
+                "kind": "sparse-text",
+                "start": ownership_start,
+                "end": ownership_end,
+                "detail": f"{density:.3f} normalized characters/second",
+            }
+        )
+
+    relevant_alignment = [
+        item
+        for item in alignment
+        if float(item["end"]) > ownership_start
+        and float(item["start"]) < ownership_end
+    ]
+    first_start = min(
+        (
+            max(ownership_start, float(item["start"]))
+            for item in relevant_alignment
+        ),
+        default=ownership_end,
+    )
+    leading_gap = max(0.0, first_start - ownership_start)
+    moderate_threshold = max(15.0, 0.15 * duration)
+    if not is_first_chunk and leading_gap >= moderate_threshold:
+        suspicions.append(
+            {
+                "kind": "active-leading-gap",
+                "start": ownership_start,
+                "end": first_start,
+                "detail": f"{leading_gap:.3f}s before the first aligned item",
+            }
+        )
+
+    last_end = max(
+        (
+            min(ownership_end, float(item["end"]))
+            for item in relevant_alignment
+        ),
+        default=ownership_start,
+    )
+    trailing_gap = max(0.0, ownership_end - last_end)
+    severe_threshold = max(30.0, 0.25 * duration)
+    unfinished_text = TERMINAL_PUNCTUATION_RE.search(text.strip()) is None
+    if trailing_gap >= moderate_threshold and (
+        unfinished_text or (not is_last_chunk and trailing_gap >= severe_threshold)
+    ):
+        suspicions.append(
+            {
+                "kind": "active-trailing-gap",
+                "start": last_end,
+                "end": ownership_end,
+                "detail": f"{trailing_gap:.3f}s after the last aligned item",
+            }
+        )
+    return suspicions
+
+
+def active_audio_statistics(
+    audio: Any,
+    *,
+    numpy_module: Any,
+    frame_seconds: float = COVERAGE_FRAME_SECONDS,
+    active_dbfs: float = COVERAGE_ACTIVE_DBFS,
+) -> tuple[float, float]:
+    """Return active seconds and active-frame fraction for float32 mono audio."""
+
+    frame_samples = max(1, round(frame_seconds * SAMPLE_RATE))
+    active_seconds = 0.0
+    total_seconds = 0.0
+    active_frames = 0
+    total_frames = 0
+    for start in range(0, len(audio), frame_samples):
+        frame = audio[start : start + frame_samples]
+        if len(frame) == 0:
+            continue
+        centered = frame - numpy_module.mean(frame)
+        rms = float(numpy_module.sqrt(numpy_module.mean(centered * centered)))
+        dbfs = 20.0 * math.log10(max(rms, 1e-12))
+        seconds = len(frame) / SAMPLE_RATE
+        total_seconds += seconds
+        total_frames += 1
+        if dbfs >= active_dbfs:
+            active_seconds += seconds
+            active_frames += 1
+    active_fraction = active_frames / total_frames if total_frames else 0.0
+    return active_seconds, active_fraction
+
+
+def contains_low_energy_window(
+    audio: Any,
+    *,
+    numpy_module: Any,
+    window_seconds: float = GAP_SILENCE_WINDOW_SECONDS,
+    maximum_dbfs: float = GAP_SILENCE_DBFS,
+) -> bool:
+    """Return whether audio contains one short, genuinely low-energy window."""
+
+    window_samples = max(1, round(window_seconds * SAMPLE_RATE))
+    if len(audio) < window_samples:
+        return False
+    hop_samples = max(1, window_samples // 2)
+    starts = list(range(0, len(audio) - window_samples + 1, hop_samples))
+    final_start = len(audio) - window_samples
+    if not starts or starts[-1] != final_start:
+        starts.append(final_start)
+    for start in starts:
+        frame = audio[start : start + window_samples]
+        centered = frame - numpy_module.mean(frame)
+        rms = float(numpy_module.sqrt(numpy_module.mean(centered * centered)))
+        dbfs = 20.0 * math.log10(max(rms, 1e-12))
+        if dbfs <= maximum_dbfs:
+            return True
+    return False
+
+
+def enforce_aligned_gap_silence(
+    *,
+    input_path: Path,
+    seam_records: list[dict[str, Any]],
+    ffmpeg: str,
+    numpy_module: Any,
+) -> None:
+    """Permit an alignment-gap crossover only after an acoustic silence check."""
+
+    for seam in seam_records:
+        if seam.get("strategy") != "aligned-gap":
+            continue
+        gap_start = float(seam["gap_start_seconds"])
+        gap_end = float(seam["gap_end_seconds"])
+        if gap_end - gap_start < GAP_SILENCE_WINDOW_SECONDS:
+            raise ValueError(
+                "aligned ASR gap is too short for an acoustic silence check at "
+                f"{float(seam['seam_seconds']):.3f}s"
+            )
+        gap_audio = decode_audio_chunk(
+            input_path,
+            start_seconds=gap_start,
+            end_seconds=gap_end,
+            ffmpeg=ffmpeg,
+            numpy_module=numpy_module,
+        )
+        verified = contains_low_energy_window(
+            gap_audio,
+            numpy_module=numpy_module,
+        )
+        active_seconds, active_fraction = active_audio_statistics(
+            gap_audio,
+            numpy_module=numpy_module,
+            frame_seconds=GAP_SILENCE_WINDOW_SECONDS,
+            active_dbfs=COVERAGE_ACTIVE_DBFS,
+        )
+        del gap_audio
+        if (
+            not verified
+            or active_seconds > GAP_MAX_ACTIVE_SECONDS
+            or active_fraction > GAP_MAX_ACTIVE_FRACTION
+        ):
+            raise ValueError(
+                "aligned ASR gap is not acoustically quiet at "
+                f"{float(seam['seam_seconds']):.3f}s: "
+                f"active_seconds={active_seconds:.3f}, "
+                f"active_fraction={active_fraction:.3f}"
+            )
+        seam["acoustic_guard"] = {
+            "method": ALIGNED_GAP_GUARD,
+            "status": "verified",
+            "window_seconds": GAP_SILENCE_WINDOW_SECONDS,
+            "maximum_dbfs": GAP_SILENCE_DBFS,
+            "maximum_active_seconds": GAP_MAX_ACTIVE_SECONDS,
+            "maximum_active_fraction": GAP_MAX_ACTIVE_FRACTION,
+        }
+
+
+def enforce_alignment_coverage(
+    *,
+    input_path: Path,
+    chunks: list[dict[str, Any]],
+    ffmpeg: str,
+    numpy_module: Any,
+) -> None:
+    """Fail closed when a long untranscribed region contains sustained audio."""
+
+    for index, chunk in enumerate(chunks):
+        ownership_start = float(chunk["start"])
+        ownership_end = float(chunk["end"])
+        alignment = chunk.get("alignment")
+        if not isinstance(alignment, list):
+            raise ValueError(f"ASR chunk {index} has invalid owned alignment")
+        suspicions = alignment_coverage_suspicions(
+            ownership_start=ownership_start,
+            ownership_end=ownership_end,
+            text=str(chunk.get("text", "")),
+            alignment=alignment,
+            is_first_chunk=index == 0,
+            is_last_chunk=index == len(chunks) - 1,
+        )
+        for suspicion in suspicions:
+            probe_start = float(suspicion["start"])
+            probe_end = float(suspicion["end"])
+            if probe_end <= probe_start:
+                continue
+            probe_audio = decode_audio_chunk(
+                input_path,
+                start_seconds=probe_start,
+                end_seconds=probe_end,
+                ffmpeg=ffmpeg,
+                numpy_module=numpy_module,
+            )
+            active_seconds, active_fraction = active_audio_statistics(
+                probe_audio,
+                numpy_module=numpy_module,
+            )
+            del probe_audio
+            if (
+                active_seconds >= COVERAGE_MIN_ACTIVE_SECONDS
+                and active_fraction >= COVERAGE_MIN_ACTIVE_FRACTION
+            ):
+                raise ValueError(
+                    f"ASR chunk {index} failed {ALIGNMENT_COVERAGE_GUARD}: "
+                    f"{suspicion['kind']} ({suspicion['detail']}), "
+                    f"active_seconds={active_seconds:.3f}, "
+                    f"active_fraction={active_fraction:.3f}"
+                )
 
 
 def probe_audio_duration(input_path: Path, *, ffprobe: str) -> float:
@@ -416,6 +1392,7 @@ def transformers_sentence_segments(
     chunk_id: int,
     first_segment_id: int,
     max_characters: int,
+    item_source_chunk_ids: list[int] | None = None,
 ) -> list[dict[str, Any]]:
     """Map sentences to official qwen-asr alignment items without splitting an item.
 
@@ -445,6 +1422,25 @@ def transformers_sentence_segments(
         )
     if not aligned_items:
         raise ValueError("forced alignment returned no timestamp items")
+    if item_source_chunk_ids is not None and (
+        len(item_source_chunk_ids) != len(aligned_items)
+        or any(
+            not isinstance(source_chunk_id, int) or source_chunk_id < 0
+            for source_chunk_id in item_source_chunk_ids
+        )
+    ):
+        raise ValueError("forced alignment has invalid source chunk ownership")
+    previous_item_start = -1.0
+    for index, item in enumerate(aligned_items):
+        item_start = finite_document_number(
+            item.get("start_time"), field=f"sentence alignment item {index} start"
+        )
+        item_end = finite_document_number(
+            item.get("end_time"), field=f"sentence alignment item {index} end"
+        )
+        if item_start < previous_item_start or item_end < item_start:
+            raise ValueError("forced alignment is not globally monotonic")
+        previous_item_start = item_start
 
     item_boundaries: dict[int, int] = {}
     item_character_count = 0
@@ -479,7 +1475,11 @@ def transformers_sentence_segments(
                     offset_seconds + float(last_item["end_time"])
                 ),
                 "text": pending_text,
-                "source_chunk_id": chunk_id,
+                "source_chunk_id": (
+                    chunk_id
+                    if item_source_chunk_ids is None
+                    else item_source_chunk_ids[first_item_index]
+                ),
             }
         )
         pending_text = ""
@@ -498,9 +1498,13 @@ def transformers_sentence_segments(
 
 
 def validate_arguments(args: argparse.Namespace) -> None:
-    if not 0 < args.chunk_duration <= MAX_ALIGNMENT_CHUNK_SECONDS:
+    if not math.isfinite(args.chunk_duration) or args.chunk_duration <= 0:
+        raise ValueError("chunk duration must be greater than 0")
+    if not math.isfinite(args.chunk_context) or args.chunk_context <= 0:
+        raise ValueError("chunk context must be greater than 0")
+    if args.chunk_duration + 2 * args.chunk_context > MAX_ALIGNMENT_CHUNK_SECONDS:
         raise ValueError(
-            "chunk duration must be greater than 0 and at most 180 seconds"
+            "chunk duration plus both context margins must be at most 180 seconds"
         )
     if args.max_tokens <= 0:
         raise ValueError("max tokens must be greater than 0")
@@ -540,7 +1544,9 @@ def main() -> int:
     alignment_options = aligned_backend_options(args)
 
     raw_document: dict[str, Any] | None = None
+    loaded_raw_asr_sha256: str | None = None
     if mode in {"align-only", "complete"}:
+        raw_sha256_before_read = sha256_file(output_path)
         raw_document = validate_raw_document(
             read_json_strict(output_path),
             engine=ENGINE,
@@ -558,8 +1564,18 @@ def main() -> int:
             args=args,
             backend_options=raw_options,
         )
+        loaded_raw_asr_sha256 = sha256_file(output_path)
+        if loaded_raw_asr_sha256 != raw_sha256_before_read:
+            raise ValueError("raw ASR changed while it was being loaded")
+        if (
+            mode == "complete"
+            and raw_document["boundary_reconciliation"]["status"] == "pending"
+        ):
+            mode = "align-only"
     if mode == "complete":
-        raw_asr_sha256 = sha256_file(output_path)
+        raw_asr_sha256 = loaded_raw_asr_sha256
+        if raw_asr_sha256 is None:
+            raise AssertionError("complete ASR has no loaded raw identity")
         aligned_document = validate_aligned_document(
             read_json_strict(aligned_output_path),
             engine=ENGINE,
@@ -575,6 +1591,7 @@ def main() -> int:
         validate_cuda_aligned_integrity(
             aligned_document,
             raw_output_path=output_path,
+            raw_document=raw_document,
         )
         validate_file_identity(
             input_path,
@@ -649,33 +1666,43 @@ def main() -> int:
         raw_chunks: list[dict[str, Any]] = []
         text_parts: list[str] = []
         transcription_started = time.perf_counter()
-        for chunk_id, (start, requested_end) in enumerate(
+        chunk_windows = list(
             audio_chunk_ranges(
-                audio_duration_seconds, chunk_duration=args.chunk_duration
+                audio_duration_seconds,
+                chunk_duration=args.chunk_duration,
+                chunk_context=args.chunk_context,
             )
-        ):
+        )
+        for chunk_id, window in enumerate(chunk_windows):
             if args.verbose:
                 print(
-                    f"transcribing chunk {chunk_id + 1} at {start:.3f}s",
+                    f"transcribing chunk {chunk_id + 1} at "
+                    f"{window.decode_start:.3f}s",
                     file=sys.stderr,
                     flush=True,
                 )
             chunk_audio = decode_audio_chunk(
                 input_path,
-                start_seconds=start,
-                end_seconds=requested_end,
+                start_seconds=window.decode_start,
+                end_seconds=window.decode_end,
                 ffmpeg=ffmpeg,
                 numpy_module=np,
             )
             actual_end = min(
                 audio_duration_seconds,
-                requested_end,
-                start + len(chunk_audio) / SAMPLE_RATE,
+                window.decode_end,
+                window.decode_start + len(chunk_audio) / SAMPLE_RATE,
             )
-            if actual_end + 0.5 < requested_end:
+            maximum_decode_shortfall = (
+                FINAL_AUDIO_DECODE_SHORTFALL_TOLERANCE_SECONDS
+                if chunk_id == len(chunk_windows) - 1
+                else AUDIO_DECODE_BOUNDARY_TOLERANCE_SECONDS
+            )
+            if window.decode_end - actual_end > maximum_decode_shortfall:
                 raise ValueError(
                     "ffmpeg decoded an unexpectedly short audio chunk: "
-                    f"requested_end={requested_end:.3f}, actual_end={actual_end:.3f}"
+                    f"requested_end={window.decode_end:.3f}, "
+                    f"actual_end={actual_end:.3f}"
                 )
             results = model.transcribe(
                 audio=(chunk_audio, SAMPLE_RATE),
@@ -691,8 +1718,11 @@ def main() -> int:
             raw_chunks.append(
                 {
                     "id": chunk_id,
-                    "start": rounded_seconds(start),
-                    "end": rounded_seconds(actual_end),
+                    "start": rounded_seconds(window.ownership_start),
+                    "end": rounded_seconds(window.ownership_end),
+                    "decode_start": rounded_seconds(window.decode_start),
+                    "decode_end": rounded_seconds(actual_end),
+                    "decoded_text": text,
                     "text": text,
                 }
             )
@@ -726,6 +1756,10 @@ def main() -> int:
                 "temperature": args.temperature,
                 "max_tokens_per_chunk": args.max_tokens,
                 "chunk_duration_seconds": args.chunk_duration,
+                "chunk_context_seconds": args.chunk_context,
+                "boundary_reconciliation": BOUNDARY_RECONCILIATION_METHOD,
+                "alignment_coverage_guard": ALIGNMENT_COVERAGE_GUARD,
+                "aligned_gap_guard": ALIGNED_GAP_GUARD,
                 **raw_options,
             },
             "performance": {
@@ -734,6 +1768,12 @@ def main() -> int:
                 "cuda_device_name": device_name,
                 "cuda_total_memory_bytes": total_memory_bytes,
                 "cuda_peak_memory_bytes": transcription_peak_memory_bytes,
+            },
+            "boundary_reconciliation": {
+                "method": BOUNDARY_RECONCILIATION_METHOD,
+                "status": "pending",
+                "chunk_context_seconds": args.chunk_context,
+                "seams": [],
             },
             "text": transcript_text,
             "segments": raw_chunks,
@@ -761,9 +1801,10 @@ def main() -> int:
             expected_sha256=audio_sha256,
             label="input audio",
         )
-        write_json_atomically(output_path, raw_document)
         if args.retranscribe:
             aligned_output_path.unlink(missing_ok=True)
+        write_json_atomically(output_path, raw_document)
+        loaded_raw_asr_sha256 = sha256_file(output_path)
         del model
         clear_cuda(torch)
     else:
@@ -774,7 +1815,6 @@ def main() -> int:
             raise ValueError("raw ASR duration does not match the decoded input audio")
 
     raw_chunks = raw_document["segments"]
-    raw_asr_sha256 = sha256_file(output_path)
     torch.cuda.reset_peak_memory_stats(device_index)
     aligner_load_started = time.perf_counter()
     aligner = Qwen3ForcedAligner.from_pretrained(
@@ -784,83 +1824,213 @@ def main() -> int:
     cuda_synchronize(torch, device_index)
     aligner_load_seconds = time.perf_counter() - aligner_load_started
 
-    aligned_chunks: list[dict[str, Any]] = []
-    all_segments: list[dict[str, Any]] = []
+    aligned_candidates: list[dict[str, Any]] = []
     alignment_started = time.perf_counter()
     for chunk in raw_chunks:
-        chunk_start = float(chunk["start"])
-        chunk_end = float(chunk["end"])
-        chunk_text = str(chunk["text"]).strip()
-        if not chunk_text:
-            aligned_chunks.append(
+        decode_start = float(chunk["decode_start"])
+        decode_end = float(chunk["decode_end"])
+        decoded_text = str(chunk["decoded_text"]).strip()
+        if not decoded_text:
+            aligned_candidates.append(
                 {
-                    **chunk,
+                    "chunk": chunk,
+                    "ownership_start": float(chunk["start"]),
+                    "ownership_end": float(chunk["end"]),
+                    "decode_start": decode_start,
+                    "decode_end": decode_end,
                     "alignment_seconds": 0.0,
+                    "relative_alignment": [],
                     "alignment": [],
-                    "sentence_segment_ids": [],
                 }
             )
             continue
         if args.verbose:
             print(
-                f"aligning chunk {int(chunk['id']) + 1} at {chunk_start:.3f}s",
+                f"aligning chunk {int(chunk['id']) + 1} at {decode_start:.3f}s",
                 file=sys.stderr,
                 flush=True,
             )
         chunk_audio = decode_audio_chunk(
             input_path,
-            start_seconds=chunk_start,
-            end_seconds=chunk_end,
+            start_seconds=decode_start,
+            end_seconds=decode_end,
             ffmpeg=ffmpeg,
             numpy_module=np,
         )
         chunk_alignment_started = time.perf_counter()
         alignment_results = aligner.align(
             audio=(chunk_audio, SAMPLE_RATE),
-            text=chunk_text,
+            text=decoded_text,
             language=args.language,
         )
         if not isinstance(alignment_results, list) or len(alignment_results) != 1:
             raise ValueError("Qwen3-ForcedAligner returned an unexpected result count")
         aligned_items = validate_alignment_items(
-            alignment_results[0], chunk_duration=chunk_end - chunk_start
-        )
-        chunk_segments = transformers_sentence_segments(
-            text=chunk_text,
-            aligned_items=aligned_items,
-            offset_seconds=chunk_start,
-            chunk_id=int(chunk["id"]),
-            first_segment_id=len(all_segments),
-            max_characters=args.max_sentence_characters,
+            alignment_results[0], chunk_duration=decode_end - decode_start
         )
         chunk_alignment_seconds = time.perf_counter() - chunk_alignment_started
-        all_segments.extend(chunk_segments)
-        aligned_chunks.append(
+        absolute_alignment = [
             {
-                **chunk,
+                "text": item["text"],
+                "start": rounded_seconds(
+                    decode_start + float(item["start_time"])
+                ),
+                "end": rounded_seconds(decode_start + float(item["end_time"])),
+            }
+            for item in aligned_items
+        ]
+        aligned_candidates.append(
+            {
+                "chunk": chunk,
+                "ownership_start": float(chunk["start"]),
+                "ownership_end": float(chunk["end"]),
+                "decode_start": decode_start,
+                "decode_end": decode_end,
                 "alignment_seconds": rounded_seconds(chunk_alignment_seconds),
-                "alignment": [
-                    {
-                        "text": item["text"],
-                        "start": rounded_seconds(
-                            chunk_start + float(item["start_time"])
-                        ),
-                        "end": rounded_seconds(
-                            chunk_start + float(item["end_time"])
-                        ),
-                    }
-                    for item in aligned_items
-                ],
-                "sentence_segment_ids": [
-                    segment["id"] for segment in chunk_segments
-                ],
+                "relative_alignment": aligned_items,
+                "alignment": absolute_alignment,
             }
         )
-        del alignment_results, aligned_items, chunk_segments, chunk_audio
+        del alignment_results, aligned_items, absolute_alignment, chunk_audio
         clear_cuda(torch)
     cuda_synchronize(torch, device_index)
     alignment_seconds = time.perf_counter() - alignment_started
     alignment_peak_memory_bytes = cuda_peak_memory(torch, device_index)
+
+    ownership_slices, seam_records = reconcile_candidate_slices(
+        aligned_candidates
+    )
+    enforce_aligned_gap_silence(
+        input_path=input_path,
+        seam_records=seam_records,
+        ffmpeg=ffmpeg,
+        numpy_module=np,
+    )
+    reconciled_raw_chunks: list[dict[str, Any]] = []
+    aligned_chunks: list[dict[str, Any]] = []
+    for candidate, (start_item, stop_item) in zip(
+        aligned_candidates, ownership_slices
+    ):
+        chunk = candidate["chunk"]
+        relative_alignment = candidate["relative_alignment"]
+        owned_relative_alignment = relative_alignment[start_item:stop_item]
+        owned_text = text_for_alignment_slice(
+            str(chunk["decoded_text"]),
+            relative_alignment,
+            start_item=start_item,
+            stop_item=stop_item,
+        )
+        reconciled_chunk = {
+            **chunk,
+            "text": owned_text,
+            "owned_item_start": start_item,
+            "owned_item_stop": stop_item,
+        }
+        reconciled_raw_chunks.append(reconciled_chunk)
+        aligned_chunks.append(
+            {
+                **reconciled_chunk,
+                "alignment_seconds": candidate["alignment_seconds"],
+                "alignment": candidate["alignment"][start_item:stop_item],
+            }
+        )
+
+    enforce_alignment_coverage(
+        input_path=input_path,
+        chunks=aligned_chunks,
+        ffmpeg=ffmpeg,
+        numpy_module=np,
+    )
+
+    reconciled_text = join_transcript_chunks(
+        [str(chunk["text"]) for chunk in reconciled_raw_chunks],
+        language=args.language,
+    )
+    if not reconciled_text.strip():
+        raise ValueError("boundary reconciliation returned an empty transcript")
+    global_alignment: list[dict[str, Any]] = []
+    global_source_chunk_ids: list[int] = []
+    for chunk in aligned_chunks:
+        source_chunk_id = int(chunk["id"])
+        for item in chunk["alignment"]:
+            global_alignment.append(
+                {
+                    "text": item["text"],
+                    "start_time": item["start"],
+                    "end_time": item["end"],
+                }
+            )
+            global_source_chunk_ids.append(source_chunk_id)
+    all_segments = transformers_sentence_segments(
+        text=reconciled_text,
+        aligned_items=global_alignment,
+        offset_seconds=0.0,
+        chunk_id=0,
+        first_segment_id=0,
+        max_characters=args.max_sentence_characters,
+        item_source_chunk_ids=global_source_chunk_ids,
+    )
+    for chunk in aligned_chunks:
+        chunk["sentence_segment_ids"] = [
+            segment["id"]
+            for segment in all_segments
+            if segment["source_chunk_id"] == chunk["id"]
+        ]
+    reconciliation = {
+        "method": BOUNDARY_RECONCILIATION_METHOD,
+        "status": "complete",
+        "chunk_context_seconds": args.chunk_context,
+        "seams": seam_records,
+    }
+    reconciled_raw_document = {
+        **raw_document,
+        "boundary_reconciliation": reconciliation,
+        "text": reconciled_text,
+        "segments": reconciled_raw_chunks,
+    }
+    validate_raw_document(
+        reconciled_raw_document,
+        engine=ENGINE,
+        model=args.model,
+        language=args.language,
+        temperature=args.temperature,
+        max_tokens=args.max_tokens,
+        chunk_duration=args.chunk_duration,
+        audio_size_bytes=audio_size_bytes,
+        audio_sha256=audio_sha256,
+        backend_options=raw_options,
+    )
+    validate_cuda_raw_integrity(
+        reconciled_raw_document,
+        args=args,
+        backend_options=raw_options,
+    )
+    if raw_document["boundary_reconciliation"]["status"] == "complete":
+        if raw_document != reconciled_raw_document:
+            raise ValueError("completed raw ASR does not reproduce its reconciliation")
+        if (
+            loaded_raw_asr_sha256 is None
+            or sha256_file(output_path) != loaded_raw_asr_sha256
+        ):
+            raise ValueError("raw ASR changed while forced alignment was running")
+        raw_asr_sha256 = loaded_raw_asr_sha256
+    else:
+        if (
+            loaded_raw_asr_sha256 is None
+            or not output_path.is_file()
+            or sha256_file(output_path) != loaded_raw_asr_sha256
+        ):
+            raise ValueError("raw ASR changed while forced alignment was running")
+        validate_file_identity(
+            input_path,
+            expected_size_bytes=audio_size_bytes,
+            expected_sha256=audio_sha256,
+            label="input audio",
+        )
+        write_json_atomically(output_path, reconciled_raw_document)
+        raw_asr_sha256 = sha256_file(output_path)
+    raw_document = reconciled_raw_document
+    raw_chunks = reconciled_raw_chunks
 
     aligned_document = {
         "schema_version": 1,
@@ -913,6 +2083,7 @@ def main() -> int:
     validate_cuda_aligned_integrity(
         aligned_document,
         raw_output_path=output_path,
+        raw_document=raw_document,
     )
     validate_file_identity(
         input_path,

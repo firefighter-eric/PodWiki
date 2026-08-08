@@ -258,8 +258,17 @@ Windows/CUDA 示例：
   --backend cuda `
   --episode shows/<show-id>/episodes/<episode-folder> `
   --model-path .cache/models/Qwen3-ASR-1.7B `
-  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B `
+  --chunk-context 5
 ```
+
+CUDA 的 120 秒参数表示每块独占的时间范围；worker 默认在两侧各增加 5 秒声学上下文。
+重叠候选先完整转写、完整强制对齐，再以精确文本和时间约束的单一交接点分配边界；精确
+锚点通常必须属于至少 3 个连续字符的匹配链；只有全局唯一的连续 2 字符匹配链，且两组
+对齐时间差均不超过 250 ms 并记录严格置信证据时，才允许短链回退。aligned-gap 回退则要求整个空隙通过声学静音门禁。
+短尾块会重新均分到最后两个归属区间，不会直接拼接两份重叠文字。找不到可靠交接点，或未对齐的长区间仍含持续活跃音频时，
+本集失败关闭，不生成可选中的 complete 产物。raw checkpoint 会明确记录 `pending` / `complete`
+归并状态；旧的无重叠产物必须使用 `--retranscribe` 更新。
 
 `--backend cuda` 默认使用 `cuda:0`、`bfloat16`、SDPA、120 秒 chunk、batch size 1，
 并按“ASR 模型完成并释放，再加载 ForcedAligner”的顺序控制显存。本机 NVIDIA RTX

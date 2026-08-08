@@ -280,17 +280,23 @@ Windows/CUDA 中文组使用官方模型和独立解释器：
   --backend cuda `
   --episode shows/<show-id>/episodes/<episode-folder> `
   --model-path .cache/models/Qwen3-ASR-1.7B `
-  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B `
+  --chunk-context 5
 ```
 
 同时提供两个本地模型路径时，批处理会设置 `HF_HUB_OFFLINE=1` 和
 `TRANSFORMERS_OFFLINE=1`，因此 worker 不会联网补取模型。CUDA backend 记录的
 engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B` 和
 `Qwen/Qwen3-ForcedAligner-0.6B`。默认参数为 `cuda:0`、`bfloat16`、SDPA、
-120 秒 chunk 和 batch size 1；本机 RTX A2000 8GB 已验证可容纳该路径，且 worker
-会先完成并释放 ASR 模型，再加载 aligner。只有设备确实不支持 `bfloat16` 时才显式
-传入 `--dtype float16`。英文组在同一命令追加 `--language English` 和
-`--transcript-language en`。
+120 秒名义归属 chunk、5 秒上下文和 batch size 1；每个内部边界向两侧各多解码
+5 秒，再使用 ForcedAligner 的精确文字与时间对齐选择唯一交叉点；精确锚点必须来自至少
+3 个连续字符的匹配链；只有全局唯一的连续 2 字符匹配链，且两组对齐时间差均不超过
+250 ms 并记录严格置信证据时，才允许短链回退。aligned-gap 回退还必须证明整个空隙在声学上接近静音。短尾块会
+重新均分到最后两个归属区间，使边界语句只归属一个 chunk。对齐结果还会执行 active-audio coverage guard；如果对齐在仍有活跃语音的归属区间
+内过早结束，worker 必须失败关闭，不得将截断结果标记为完成。本机 RTX A2000 8GB 已验证可容纳
+该路径，且 worker 会先完成并释放 ASR 模型，再加载 aligner。只有设备确实不支持
+`bfloat16` 时才显式传入 `--dtype float16`。英文组在同一命令追加
+`--language English` 和 `--transcript-language en`。
 
 脚本内部逐集、逐子进程串行运行，不再并发启动额外加速器 worker；子进程退出同时
 作为 Metal 统一内存或 CUDA 显存的回收边界。每集产物为：

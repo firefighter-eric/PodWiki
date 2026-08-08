@@ -51,7 +51,7 @@ summary:
     engine: qwen-asr-transformers
     model: Qwen/Qwen3-ASR-1.7B
     selection_status: selected
-    sha256: e34d1c78d5a46a72018e832f7ad13ae46c3d218a23828d7f617c7302dc2ab3d8
+    sha256: 0789febaaad61cb95910fee1e1a80fbed019b323d3249c9ec59ff37059d3d45c
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: no-anonymous-track
@@ -65,7 +65,11 @@ transcript:
     language: Chinese
     temperature: 0.0
     max_tokens_per_chunk: 2048
-    chunk_duration_seconds: 120.0
+    chunk_duration_seconds: 60.0
+    chunk_context_seconds: 30.0
+    boundary_reconciliation: forced-alignment-time-crossover-v2
+    alignment_coverage_guard: active-audio-coverage-v1
+    aligned_gap_guard: low-energy-gap-v1
     max_sentence_characters: 160
     backend: transformers
     qwen_asr_version: "0.0.6"
@@ -74,24 +78,24 @@ transcript:
     dtype: bfloat16
     attention_implementation: sdpa
     max_inference_batch_size: 1
-  generated_at: "2026-08-08T01:46:20.724306Z"
+  generated_at: "2026-08-08T16:27:19.723154Z"
   quality:
-    source_chunks: 50
-    aligned_chunks: 50
-    alignment_items: 30395
-    sentence_segments: 1492
-    refined_segments: 1490
-    rendered_blocks: 186
-    rendered_lines: 1490
+    source_chunks: 100
+    aligned_chunks: 100
+    alignment_items: 30680
+    sentence_segments: 1458
+    refined_segments: 1458
+    rendered_blocks: 187
+    rendered_lines: 1458
   performance:
-    model_load_seconds: 2.896
-    transcription_seconds: 1556.867
-    aligner_load_seconds: 1.525
-    alignment_seconds: 171.169
+    model_load_seconds: 6.987
+    transcription_seconds: 2888.85
+    aligner_load_seconds: 3.322
+    alignment_seconds: 339.058
     cuda_device_name: NVIDIA RTX A2000 8GB Laptop GPU
     cuda_total_memory_bytes: 8589475840
     asr_cuda_peak_memory_bytes: 5030753280
-    aligner_cuda_peak_memory_bytes: 4446060032
+    aligner_cuda_peak_memory_bytes: 4451743232
 asr_artifacts:
   raw:
     path: asr/qwen3-asr/raw.json
@@ -116,7 +120,7 @@ asr_runs:
     engine: qwen-asr-transformers
     model: Qwen/Qwen3-ASR-1.7B
     aligner: Qwen/Qwen3-ForcedAligner-0.6B
-    generated_at: "2026-08-08T01:46:20.724306Z"
+    generated_at: "2026-08-08T16:27:19.723154Z"
     artifacts:
       raw: asr/qwen3-asr/raw.json
       aligned: asr/qwen3-asr/aligned.json

@@ -126,6 +126,15 @@ $env:HF_ENDPOINT = "https://huggingface.co"
 7. Treat raw as the stage checkpoint. A valid raw with no aligned artifact resumes at
    alignment; two valid artifacts are a no-op. Existing invalid or mismatched artifacts fail
    closed. Only `--retranscribe` or `--realign` may replace a corresponding artifact.
+8. On Windows/CUDA, use 120-second nominal ownership chunks with five seconds of decode
+   context on each side of every internal boundary. Reconcile overlaps only through the
+   ForcedAligner's exact text-and-time crossover, retain every boundary phrase exactly once,
+   and require the active-audio coverage guard to pass before raw and aligned artifacts become
+   complete. An exact crossover normally belongs to a contiguous match of at least three
+   characters. A unique two-character run is accepted only when both forced alignments agree
+   within 250 ms for the entire run and record that stricter confidence evidence; an
+   alignment-gap fallback additionally requires the whole gap to pass the recorded acoustic
+   silence guard. A pending CUDA raw is a resume checkpoint, never a downstream source.
 
 For the MLX Whisper baseline:
 
@@ -163,14 +172,18 @@ For one or more Windows/CUDA episodes, use the batch entry point even for a one-
   --backend cuda `
   --episode shows/<show-id>/episodes/<episode-folder> `
   --model-path .cache/models/Qwen3-ASR-1.7B `
-  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B `
+  --chunk-context 5
 ```
 
 Providing both local paths forces `HF_HUB_OFFLINE=1` and `TRANSFORMERS_OFFLINE=1`; the worker
 must not retrieve either model from the network. CUDA defaults are `cuda:0`, `bfloat16`, SDPA,
-120-second chunks, and batch size 1. The RTX A2000 8GB Laptop GPU has been verified with these
-defaults because the worker releases the ASR model before loading the aligner. Use
-`--dtype float16` only when the selected CUDA device does not support bf16.
+120-second nominal ownership chunks, five seconds of context on both sides of internal
+boundaries, and batch size 1. The context, exact-time ForcedAligner crossover, active-audio
+coverage guard, and aligned-gap acoustic guard are part of the recorded reproducibility
+contract. The RTX A2000 8GB Laptop GPU has been verified with these defaults because the
+worker releases the ASR model before loading the aligner. Use `--dtype float16` only when the
+selected CUDA device does not support bf16.
 
 For multiple episodes, use `scripts/process_qwen3_asr_batch.py`. It discovers cached audio
 or accepts repeated `--episode` paths, launches one worker subprocess at a time, writes a

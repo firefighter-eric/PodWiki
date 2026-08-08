@@ -536,6 +536,16 @@ Qwen3-ForcedAligner 生成 aligned JSON。有效 raw 存在而 aligned 缺失时
 对齐；两者完整且身份、参数和 SHA-256 均匹配时直接跳过。长音频必须逐集、
 逐子进程串行运行，以子进程退出作为 Metal unified memory 或 CUDA VRAM 的回收边界。
 
+Windows/NVIDIA CUDA 的分块契约是 120 秒名义归属区间，每个内部边界向两侧各带
+5 秒解码上下文。ForcedAligner 必须以精确文字和时间对齐选出唯一交叉点，且精确锚点必须
+通常属于至少 3 个连续字符的匹配链；只有唯一的连续 2 字符匹配链，且两组对齐时间差均不超过
+250 ms 并记录严格置信证据时，才可作为短链回退。aligned-gap 回退只有在整个空隙通过声学静音门禁时才可用。
+短尾块必须重新分摊到最后两个归属区间。重叠文字只归属一次，不得直接拼接相邻解码窗口。在 boundary reconciliation 完成前，raw 只是
+`pending` 检查点，不能成为下游输入；只有边界全部可重现地完成，且 active-audio
+coverage guard 确认每个归属区间未在活跃语音中过早截断后，才可写入 `complete` raw
+和 aligned 产物。`chunk_duration_seconds`、`chunk_context_seconds`、boundary reconciliation
+方法、alignment coverage guard 和 aligned-gap guard 方法都是可重现参数；任一项不匹配都不得复用旧产物。
+
 `scripts/render_asr_transcript.py` 必须在同一次运行中生成 refined JSON 和 Markdown，使用临时文件和哈希关联两份产物，避免结果使用不同的清洗逻辑。
 
 ### 多模型运行记录

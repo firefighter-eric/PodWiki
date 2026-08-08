@@ -24,6 +24,7 @@ from process_qwen3_asr_batch import (  # noqa: E402
     run_logged,
     transcript_filename,
     validate_local_model_path,
+    validate_replacement_scope,
 )
 
 
@@ -96,6 +97,47 @@ class PathTests(unittest.TestCase):
                 validate_local_model_path(Path(directory), label="model")
 
 
+class ReplacementScopeTests(unittest.TestCase):
+    def test_retranscribe_without_explicit_episode_fails_before_discovery(self) -> None:
+        args = SimpleNamespace(episode=None, retranscribe=True, realign=False)
+        with (
+            patch.object(batch, "parse_args", return_value=args),
+            patch.object(batch, "discover_episode_dirs") as discover,
+            self.assertRaisesRegex(
+                SystemExit,
+                r"--retranscribe requires at least one explicit --episode",
+            ),
+        ):
+            batch.main()
+
+        discover.assert_not_called()
+
+    def test_realign_without_explicit_episode_fails_before_discovery(self) -> None:
+        args = SimpleNamespace(episode=None, retranscribe=False, realign=True)
+        with (
+            patch.object(batch, "parse_args", return_value=args),
+            patch.object(batch, "discover_episode_dirs") as discover,
+            self.assertRaisesRegex(
+                SystemExit,
+                r"--realign requires at least one explicit --episode",
+            ),
+        ):
+            batch.main()
+
+        discover.assert_not_called()
+
+    def test_replacement_with_explicit_episode_is_allowed(self) -> None:
+        explicit = [ROOT / "shows" / "fake-show" / "episodes" / "fake-episode"]
+
+        self.assertIsNone(
+            validate_replacement_scope(
+                explicit,
+                retranscribe=True,
+                realign=False,
+            )
+        )
+
+
 class BackendTests(unittest.TestCase):
     def test_preserves_mlx_defaults_and_selects_official_cuda_models(self) -> None:
         mlx = resolve_backend_settings(
@@ -104,6 +146,7 @@ class BackendTests(unittest.TestCase):
             aligner=None,
             max_tokens=None,
             chunk_duration=None,
+            chunk_context=None,
         )
         cuda = resolve_backend_settings(
             "cuda",
@@ -111,6 +154,7 @@ class BackendTests(unittest.TestCase):
             aligner=None,
             max_tokens=None,
             chunk_duration=None,
+            chunk_context=None,
         )
 
         self.assertEqual(mlx.worker_name, "transcribe_qwen3_asr.py")
@@ -123,6 +167,7 @@ class BackendTests(unittest.TestCase):
         self.assertEqual(cuda.aligner, "Qwen/Qwen3-ForcedAligner-0.6B")
         self.assertEqual(cuda.max_tokens, 2048)
         self.assertEqual(cuda.chunk_duration, 120.0)
+        self.assertEqual(cuda.chunk_context, 5.0)
 
     def test_cuda_batch_invokes_cuda_worker_and_renders_matching_engine(self) -> None:
         args = argparse.Namespace(
@@ -136,6 +181,7 @@ class BackendTests(unittest.TestCase):
             transcript_language="zh-CN",
             max_tokens=None,
             chunk_duration=None,
+            chunk_context=None,
             max_sentence_characters=160,
             device="cuda:0",
             dtype="bfloat16",
@@ -179,6 +225,9 @@ class BackendTests(unittest.TestCase):
         self.assertIn("--device", transcribe)
         self.assertEqual(transcribe[transcribe.index("--device") + 1], "cuda:0")
         self.assertEqual(transcribe[transcribe.index("--dtype") + 1], "bfloat16")
+        self.assertEqual(
+            transcribe[transcribe.index("--chunk-context") + 1], "5.0"
+        )
         self.assertEqual(
             transcribe[transcribe.index("--model") + 1],
             "Qwen/Qwen3-ASR-1.7B",

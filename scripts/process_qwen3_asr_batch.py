@@ -31,6 +31,7 @@ class BackendSettings:
     aligner: str
     max_tokens: int
     chunk_duration: float
+    chunk_context: float | None
 
 
 def resolve_backend_settings(
@@ -40,8 +41,11 @@ def resolve_backend_settings(
     aligner: str | None,
     max_tokens: int | None,
     chunk_duration: float | None,
+    chunk_context: float | None,
 ) -> BackendSettings:
     if backend == "mlx":
+        if chunk_context is not None:
+            raise ValueError("--chunk-context is supported by the CUDA backend only")
         return BackendSettings(
             worker_name="transcribe_qwen3_asr.py",
             engine="mlx-audio",
@@ -51,6 +55,7 @@ def resolve_backend_settings(
             chunk_duration=(
                 chunk_duration if chunk_duration is not None else 240.0
             ),
+            chunk_context=None,
         )
     if backend == "cuda":
         return BackendSettings(
@@ -62,6 +67,7 @@ def resolve_backend_settings(
             chunk_duration=(
                 chunk_duration if chunk_duration is not None else 120.0
             ),
+            chunk_context=(chunk_context if chunk_context is not None else 5.0),
         )
     raise ValueError(f"unsupported ASR backend: {backend}")
 
@@ -94,6 +100,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--max-tokens", type=int)
     parser.add_argument("--chunk-duration", type=float)
+    parser.add_argument(
+        "--chunk-context",
+        type=float,
+        help="CUDA-only context added to each side before aligned reconciliation",
+    )
     parser.add_argument("--max-sentence-characters", type=int, default=160)
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument(
@@ -111,6 +122,23 @@ def parse_args() -> argparse.Namespace:
     replacement.add_argument("--retranscribe", action="store_true")
     replacement.add_argument("--realign", action="store_true")
     return parser.parse_args()
+
+
+def validate_replacement_scope(
+    explicit_episodes: list[Path] | None,
+    *,
+    retranscribe: bool,
+    realign: bool,
+) -> None:
+    """Require an explicit episode allowlist for destructive replacement modes."""
+    replacement_flag = (
+        "--retranscribe" if retranscribe else "--realign" if realign else None
+    )
+    if replacement_flag is not None and not explicit_episodes:
+        raise SystemExit(
+            f"{replacement_flag} requires at least one explicit --episode; "
+            "automatic discovery is not allowed for replacement modes"
+        )
 
 
 def utc_now() -> str:
@@ -236,12 +264,18 @@ def run_logged(
 
 def main() -> int:
     args = parse_args()
+    validate_replacement_scope(
+        args.episode,
+        retranscribe=args.retranscribe,
+        realign=args.realign,
+    )
     backend = resolve_backend_settings(
         args.backend,
         model=args.model,
         aligner=args.aligner,
         max_tokens=args.max_tokens,
         chunk_duration=args.chunk_duration,
+        chunk_context=args.chunk_context,
     )
     rendered_transcript_name = transcript_filename(args.transcript_language)
     episodes = discover_episode_dirs(args.episode)
@@ -316,6 +350,8 @@ def main() -> int:
             if args.backend == "cuda":
                 transcribe_command.extend(
                     [
+                        "--chunk-context",
+                        str(backend.chunk_context),
                         "--device",
                         args.device,
                         "--dtype",

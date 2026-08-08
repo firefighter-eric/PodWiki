@@ -51,7 +51,7 @@ summary:
     engine: qwen-asr-transformers
     model: Qwen/Qwen3-ASR-1.7B
     selection_status: selected
-    sha256: 5915a912c829444b5e40bde0d2e9668f07e40f1eace929f98c61c0a8bd296d94
+    sha256: 1ef677246f24ffafa73bb1897dee072285ff581a58b0b5c344f806f3a30c24d8
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: no-anonymous-track
@@ -66,6 +66,10 @@ transcript:
     temperature: 0.0
     max_tokens_per_chunk: 2048
     chunk_duration_seconds: 120.0
+    chunk_context_seconds: 5.0
+    boundary_reconciliation: forced-alignment-time-crossover-v2
+    alignment_coverage_guard: active-audio-coverage-v1
+    aligned_gap_guard: low-energy-gap-v1
     max_sentence_characters: 160
     backend: transformers
     qwen_asr_version: "0.0.6"
@@ -74,24 +78,24 @@ transcript:
     dtype: bfloat16
     attention_implementation: sdpa
     max_inference_batch_size: 1
-  generated_at: "2026-08-07T17:23:23.797520Z"
+  generated_at: "2026-08-08T12:57:06.441903Z"
   quality:
     source_chunks: 43
     aligned_chunks: 43
-    alignment_items: 25088
-    sentence_segments: 817
-    refined_segments: 816
-    rendered_blocks: 169
-    rendered_lines: 816
+    alignment_items: 25054
+    sentence_segments: 816
+    refined_segments: 812
+    rendered_blocks: 167
+    rendered_lines: 812
   performance:
-    model_load_seconds: 2.926
-    transcription_seconds: 1037.367
-    aligner_load_seconds: 1.901
-    alignment_seconds: 140.787
+    model_load_seconds: 6.624
+    transcription_seconds: 1165.085
+    aligner_load_seconds: 3.376
+    alignment_seconds: 157.542
     cuda_device_name: NVIDIA RTX A2000 8GB Laptop GPU
     cuda_total_memory_bytes: 8589475840
-    asr_cuda_peak_memory_bytes: 5030753280
-    aligner_cuda_peak_memory_bytes: 4226453504
+    asr_cuda_peak_memory_bytes: 5108148224
+    aligner_cuda_peak_memory_bytes: 4568962048
 asr_artifacts:
   raw:
     path: asr/qwen3-asr/raw.json
@@ -116,7 +120,7 @@ asr_runs:
     engine: qwen-asr-transformers
     model: Qwen/Qwen3-ASR-1.7B
     aligner: Qwen/Qwen3-ForcedAligner-0.6B
-    generated_at: "2026-08-07T17:23:23.797520Z"
+    generated_at: "2026-08-08T12:57:06.441903Z"
     artifacts:
       raw: asr/qwen3-asr/raw.json
       aligned: asr/qwen3-asr/aligned.json
