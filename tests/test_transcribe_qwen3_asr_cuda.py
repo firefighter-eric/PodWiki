@@ -456,6 +456,62 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
         self.assertEqual(record["strategy"], "exact-time-anchor")
         self.assertEqual(record["anchor_run_characters"], 3)
 
+    def test_discards_a_shorter_looser_conflict_inside_one_long_match(self) -> None:
+        texts = list("abcdbcde")
+        left = [
+            {
+                "text": text,
+                "start": 119.0 + index * 0.1,
+                "end": 119.05 + index * 0.1,
+            }
+            for index, text in enumerate(texts)
+        ]
+        right = [
+            {
+                "text": text,
+                "start": 119.02 + index * 0.1,
+                "end": 119.07 + index * 0.1,
+            }
+            for index, text in enumerate(texts)
+        ]
+
+        _, _, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=119.5,
+            shared_start=118.5,
+            shared_end=120.5,
+        )
+
+        self.assertEqual(record["strategy"], "exact-time-anchor")
+        self.assertEqual(record["anchor_run_characters"], len(texts))
+        self.assertLessEqual(record["anchor_run_max_pair_delta_seconds"], 0.02)
+
+    def test_match_run_dominance_does_not_cascade_through_conflicts(self) -> None:
+        first = ([(0, 0), (1, 1), (2, 2)], 3, 0.30)
+        bridge = ([(2, 3), (3, 4), (4, 5), (5, 6)], 4, 0.20)
+        last = ([(5, 7), (6, 8), (7, 9), (8, 10), (9, 11)], 5, 0.10)
+
+        retained = cuda_worker._drop_strictly_dominated_match_runs(
+            [first, bridge, last]
+        )
+
+        self.assertEqual(retained, [first, last])
+
+    def test_shorter_but_tighter_match_run_is_not_dominated(self) -> None:
+        shorter = ([(0, 0), (1, 1), (2, 2)], 3, 0.04)
+        longer = ([(0, 0), (1, 1), (2, 2), (3, 3)], 4, 0.08)
+
+        retained = cuda_worker._drop_strictly_dominated_match_runs(
+            [shorter, longer]
+        )
+
+        self.assertEqual(retained, [shorter, longer])
+        with self.assertRaisesRegex(ValueError, "ambiguous exact alignment"):
+            cuda_worker._validate_unique_monotonic_match_runs(
+                [run for run, _, _ in retained]
+            )
+
     def test_accepts_one_unique_tightly_aligned_two_character_run(self) -> None:
         left = [
             {"text": "a", "start": 119.0, "end": 119.1},
@@ -1440,6 +1496,92 @@ class ResumableWorkerTests(unittest.TestCase):
             )
             self.assertEqual(
                 migrated_aligned["source"]["raw_asr_sha256"],
+                sha256_file(args.output),
+            )
+            self.assertFalse(any(event == "load-asr" for event, _ in harness.events))
+
+    def test_explicit_realign_may_refresh_only_reconciliation_evidence(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            args = worker_args(root)
+            args.input.write_bytes(b"fake-audio")
+            args.chunk_duration = 2.0
+            args.chunk_context = 1.0
+            def evidence_harness() -> WorkerHarness:
+                harness = WorkerHarness()
+                events = harness.events
+
+                class EvidenceAligner:
+                    @classmethod
+                    def from_pretrained(
+                        cls, target: str, **kwargs: object
+                    ) -> "EvidenceAligner":
+                        events.append(("load-aligner", (target, kwargs)))
+                        return cls()
+
+                    def align(
+                        self, **kwargs: object
+                    ) -> list[list[SimpleNamespace]]:
+                        events.append(("align", kwargs))
+                        return [
+                            [
+                                SimpleNamespace(
+                                    text="Test",
+                                    start_time=1.2,
+                                    end_time=1.4,
+                                )
+                            ]
+                        ]
+
+                harness.aligner = EvidenceAligner
+                return harness
+
+            with patch.object(
+                cuda_worker,
+                "active_audio_statistics",
+                return_value=(0.0, 0.0),
+            ):
+                self.assertEqual(
+                    self.run_worker(
+                        args,
+                        evidence_harness(),
+                        duration_seconds=4.0,
+                    ),
+                    0,
+                )
+
+            raw = read_json_strict(args.output)
+            raw["boundary_reconciliation"]["seams"][0].pop(
+                "anchor_run_max_pair_delta_seconds"
+            )
+            previous_text = raw["text"]
+            previous_segments = copy.deepcopy(raw["segments"])
+            write_json_atomically(args.output, raw)
+
+            args.realign = True
+            harness = evidence_harness()
+            with patch.object(
+                cuda_worker,
+                "active_audio_statistics",
+                return_value=(0.0, 0.0),
+            ):
+                self.assertEqual(
+                    self.run_worker(args, harness, duration_seconds=4.0),
+                    0,
+                )
+
+            refreshed_raw = read_json_strict(args.output)
+            refreshed_aligned = read_json_strict(args.aligned_output)
+            self.assertEqual(refreshed_raw["text"], previous_text)
+            self.assertEqual(refreshed_raw["segments"], previous_segments)
+            self.assertIn(
+                "anchor_run_max_pair_delta_seconds",
+                refreshed_raw["boundary_reconciliation"]["seams"][0],
+            )
+            self.assertEqual(
+                refreshed_aligned["source"]["raw_asr_sha256"],
                 sha256_file(args.output),
             )
             self.assertFalse(any(event == "load-asr" for event, _ in harness.events))

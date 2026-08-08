@@ -715,22 +715,72 @@ def _maximal_exact_match_runs(
     return runs
 
 
+def _match_runs_are_disjoint_and_ordered(
+    left_run: list[tuple[int, int]],
+    right_run: list[tuple[int, int]],
+) -> bool:
+    left_first, right_first = left_run[0]
+    left_last, right_last = left_run[-1]
+    other_left_first, other_right_first = right_run[0]
+    other_left_last, other_right_last = right_run[-1]
+    left_before = left_last < other_left_first
+    right_before = right_last < other_right_first
+    left_after = other_left_last < left_first
+    right_after = other_right_last < right_first
+    return (left_before and right_before) or (left_after and right_after)
+
+
+def _drop_strictly_dominated_match_runs(
+    runs: list[tuple[list[tuple[int, int]], int, float]],
+) -> list[tuple[list[tuple[int, int]], int, float]]:
+    """Discard only weaker conflicts that cannot represent a better mapping.
+
+    A short common phrase can appear inside a much longer, tighter exact match and
+    again nearby.  Treating that incidental phrase as an equal alternative makes
+    valid speech fail closed.  It is safe to discard it only when a conflicting run
+    has strictly more exact characters and no worse maximum timestamp delta.  Equal
+    length, tighter, or otherwise incomparable conflicts remain ambiguous.
+    """
+
+    def dominates(
+        stronger: tuple[list[tuple[int, int]], int, float],
+        weaker: tuple[list[tuple[int, int]], int, float],
+    ) -> bool:
+        stronger_run, stronger_characters, stronger_delta = stronger
+        weaker_run, weaker_characters, weaker_delta = weaker
+        return (
+            not _match_runs_are_disjoint_and_ordered(stronger_run, weaker_run)
+            and stronger_characters > weaker_characters
+            and stronger_delta <= weaker_delta
+        )
+
+    frontier_indices = {
+        index
+        for index, candidate in enumerate(runs)
+        if not any(
+            other_index != index and dominates(other, candidate)
+            for other_index, other in enumerate(runs)
+        )
+    }
+    return [
+        candidate
+        for index, candidate in enumerate(runs)
+        if index in frontier_indices
+        or not any(
+            dominates(runs[frontier_index], candidate)
+            for frontier_index in frontier_indices
+        )
+    ]
+
+
 def _validate_unique_monotonic_match_runs(
     runs: list[list[tuple[int, int]]],
 ) -> None:
     """Reject candidate runs that permit more than one monotonic item mapping."""
 
     for index, left_run in enumerate(runs):
-        left_first, right_first = left_run[0]
-        left_last, right_last = left_run[-1]
         for right_run in runs[index + 1 :]:
-            other_left_first, other_right_first = right_run[0]
-            other_left_last, other_right_last = right_run[-1]
-            left_before = left_last < other_left_first
-            right_before = right_last < other_right_first
-            left_after = other_left_last < left_first
-            right_after = other_right_last < right_first
-            if not ((left_before and right_before) or (left_after and right_after)):
+            if not _match_runs_are_disjoint_and_ordered(left_run, right_run):
                 raise ValueError(
                     "overlapping ASR chunks have ambiguous exact alignment candidates"
                 )
@@ -831,10 +881,42 @@ def seam_crossover(
         reliable_match_runs.append(
             (run, run_characters, run_max_pair_delta)
         )
+    reliable_match_runs = _drop_strictly_dominated_match_runs(
+        reliable_match_runs
+    )
     if reliable_match_runs:
-        _validate_unique_monotonic_match_runs(
-            [run for run, _, _ in reliable_match_runs]
-        )
+        try:
+            _validate_unique_monotonic_match_runs(
+                [run for run, _, _ in reliable_match_runs]
+            )
+        except ValueError as error:
+            candidate_summary = [
+                {
+                    "left": [
+                        left_overlap[run[0][0]][0],
+                        left_overlap[run[-1][0]][0],
+                    ],
+                    "right": [
+                        right_overlap[run[0][1]][0],
+                        right_overlap[run[-1][1]][0],
+                    ],
+                    "characters": run_characters,
+                    "maximum_pair_delta_seconds": rounded_seconds(
+                        run_max_pair_delta
+                    ),
+                    "text": "".join(
+                        cleaned_alignment_text(
+                            str(left_overlap[left_local][1]["text"])
+                        )
+                        for left_local, _ in run
+                    ),
+                }
+                for run, run_characters, run_max_pair_delta in reliable_match_runs
+            ]
+            raise ValueError(
+                f"{error} at {seam_seconds:.3f}s: "
+                f"{json.dumps(candidate_summary, ensure_ascii=False)}"
+            ) from error
     for run, run_characters, run_max_pair_delta in reliable_match_runs:
         run_anchors: list[tuple[float, float, int, int, str, int, float]] = []
         for left_local, right_local in run:
@@ -1744,6 +1826,7 @@ def main() -> int:
     raw_document: dict[str, Any] | None = None
     loaded_raw_asr_sha256: str | None = None
     replace_final_outro_option = False
+    replace_reconciliation_evidence = False
     if mode in {"align-only", "complete"}:
         raw_sha256_before_read = sha256_file(output_path)
         loaded_raw_document = read_json_strict(output_path)
@@ -2231,13 +2314,58 @@ def main() -> int:
     )
     if raw_document["boundary_reconciliation"]["status"] == "complete":
         if raw_document != reconciled_raw_document:
-            raise ValueError("completed raw ASR does not reproduce its reconciliation")
+            previous_segments = raw_document.get("segments")
+            changed_chunk_ids = [
+                index
+                for index, (previous, current) in enumerate(
+                    zip(
+                        previous_segments
+                        if isinstance(previous_segments, list)
+                        else [],
+                        reconciled_raw_chunks,
+                    )
+                )
+                if previous != current
+            ]
+            previous_reconciliation = raw_document.get("boundary_reconciliation")
+            previous_seams = (
+                previous_reconciliation.get("seams")
+                if isinstance(previous_reconciliation, dict)
+                else None
+            )
+            changed_seam_ids = [
+                index
+                for index, (previous, current) in enumerate(
+                    zip(
+                        previous_seams if isinstance(previous_seams, list) else [],
+                        seam_records,
+                    )
+                )
+                if previous != current
+            ]
+            previous_without_reconciliation = dict(raw_document)
+            previous_without_reconciliation.pop("boundary_reconciliation", None)
+            current_without_reconciliation = dict(reconciled_raw_document)
+            current_without_reconciliation.pop("boundary_reconciliation", None)
+            if (
+                args.realign
+                and previous_without_reconciliation
+                == current_without_reconciliation
+            ):
+                replace_reconciliation_evidence = True
+            else:
+                raise ValueError(
+                    "completed raw ASR does not reproduce its reconciliation: "
+                    f"text_changed={raw_document.get('text') != reconciled_text}, "
+                    f"changed_chunk_ids={changed_chunk_ids}, "
+                    f"changed_seam_ids={changed_seam_ids}"
+                )
         if (
             loaded_raw_asr_sha256 is None
             or sha256_file(output_path) != loaded_raw_asr_sha256
         ):
             raise ValueError("raw ASR changed while forced alignment was running")
-        if replace_final_outro_option:
+        if replace_final_outro_option or replace_reconciliation_evidence:
             validate_file_identity(
                 input_path,
                 expected_size_bytes=audio_size_bytes,
