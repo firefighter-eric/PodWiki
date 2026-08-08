@@ -1,4 +1,5 @@
 import rehypeSlug from "rehype-slug";
+import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -6,6 +7,7 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import GithubSlugger from "github-slugger";
 import { findNearestTranscriptSegment, timestampToId } from "@/lib/content";
+import { getTranscriptHref } from "@/lib/reader-routes";
 import type { TranscriptSegment } from "@/lib/types";
 
 function linkTimestampReferences(
@@ -19,7 +21,10 @@ function linkTimestampReferences(
       const nearest = transcriptSegments
         ? findNearestTranscriptSegment(transcriptSegments, timestamp)
         : undefined;
-      return `[${timestamp}](${episodeHref}?view=transcript#${nearest?.id ?? timestampToId(timestamp)})`;
+      return `[${timestamp}](${getTranscriptHref(
+        episodeHref,
+        nearest?.id ?? timestampToId(timestamp),
+      )})`;
     },
   );
 }
@@ -35,6 +40,7 @@ export async function markdownToHtml(
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeSlug)
+    .use(rehypeSanitize)
     .use(rehypeStringify)
     .process(linkedMarkdown);
   return String(file);

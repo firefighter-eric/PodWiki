@@ -4,7 +4,7 @@ import { EpisodeReader } from "@/components/episode-reader";
 import { getEpisode, getEpisodeCards } from "@/lib/content";
 import { getEpisodeDescription } from "@/lib/episode-label";
 
-type EpisodePageProps = {
+type TranscriptPageProps = {
   params: Promise<{ showId: string; folder: string }>;
 };
 
@@ -17,40 +17,41 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: EpisodePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: TranscriptPageProps): Promise<Metadata> {
   const { showId, folder } = await params;
   const episode = await getEpisode(showId, folder);
   if (!episode) return {};
 
   const description = getEpisodeDescription(episode);
-  const title = `${episode.navigationTitle} · PodWiki`;
+  const transcriptTitle = `${episode.navigationTitle} · 逐字稿`;
+  const canonical = `${episode.href}/transcript`;
   return {
-    title: episode.navigationTitle,
+    title: transcriptTitle,
     description,
     alternates: {
-      canonical: episode.href,
+      canonical,
     },
     openGraph: {
       type: "article",
       locale: "zh_CN",
       siteName: "PodWiki",
-      title,
+      title: `${transcriptTitle} · PodWiki`,
       description,
-      url: episode.href,
+      url: canonical,
       publishedTime: episode.publishedAt,
     },
     twitter: {
       card: "summary",
-      title,
+      title: `${transcriptTitle} · PodWiki`,
       description,
     },
   };
 }
 
-export default async function EpisodePage({ params }: EpisodePageProps) {
+export default async function TranscriptPage({ params }: TranscriptPageProps) {
   const { showId, folder } = await params;
   const episode = await getEpisode(showId, folder);
   if (!episode) notFound();
 
-  return <EpisodeReader episode={episode} view="summary" />;
+  return <EpisodeReader episode={episode} view="transcript" />;
 }

@@ -1,7 +1,14 @@
 "use client";
 
 import { TextAlignCenter, TextAlignLeft, TextAlignRight } from "@phosphor-icons/react";
-import { createContext, useCallback, useContext, useMemo, useSyncExternalStore } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useLayoutEffect,
+  useMemo,
+  useSyncExternalStore,
+} from "react";
 
 type FontSize = "small" | "medium" | "large";
 type Measure = "narrow" | "standard" | "wide";
@@ -38,9 +45,20 @@ function parseSettings(snapshot: string): Pick<ReaderSettings, "fontSize" | "mea
   }
 }
 
+function syncReaderDocumentSettings(snapshot: string) {
+  const settings = parseSettings(snapshot);
+  document.documentElement.dataset.readerFontSize = settings.fontSize;
+  document.documentElement.dataset.readerMeasure = settings.measure;
+}
+
 export function ReaderPreferences({ children }: { children: React.ReactNode }) {
   const subscribe = useCallback((callback: () => void) => {
-    const handleChange = () => callback();
+    const handleChange = () => {
+      syncReaderDocumentSettings(
+        window.localStorage.getItem(settingsStorageKey) ?? defaultSnapshot,
+      );
+      callback();
+    };
     window.addEventListener("storage", handleChange);
     window.addEventListener("podwiki-reader-change", handleChange);
     return () => {
@@ -54,6 +72,12 @@ export function ReaderPreferences({ children }: { children: React.ReactNode }) {
     () => defaultSnapshot,
   );
   const { fontSize, measure } = useMemo(() => parseSettings(snapshot), [snapshot]);
+
+  useLayoutEffect(() => {
+    syncReaderDocumentSettings(
+      window.localStorage.getItem(settingsStorageKey) ?? defaultSnapshot,
+    );
+  }, []);
 
   const persist = (nextFontSize: FontSize, nextMeasure: Measure) => {
     window.localStorage.setItem(
@@ -136,7 +160,7 @@ export function ReadingControls({ id }: { id?: string }) {
                 checked={measure === value}
                 onChange={() => setMeasure(value)}
               />
-              <span><Icon size={19} aria-label={label} /></span>
+              <span><Icon size={19} aria-hidden="true" /></span>
             </label>
           ))}
         </div>

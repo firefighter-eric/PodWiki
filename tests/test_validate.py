@@ -16,8 +16,10 @@ from validate import (  # noqa: E402
     check_bilibili_urls,
     check_front_matter,
     check_xiaoyuzhou_urls,
+    transcript_structure,
     validate_core_point_logic_table,
     validate_episode_catalog_keyword,
+    validate_episode_metadata_contract,
     validate_episode_navigation_title,
     validate_episode_translations,
     validate_qwen_chain,
@@ -34,6 +36,71 @@ def write_json(path: Path, document: dict[str, Any]) -> None:
         json.dumps(document, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+
+
+def write_episode_contract_fixture(
+    root: Path,
+    *,
+    folder: str,
+    episode_key: str,
+    episode_id: str | None = None,
+    episode_key_scalar: str | None = None,
+    published_at: str = '"2026-08-08T12:00:00+08:00"',
+    duration_ms: str = "60000",
+    workflow: dict[str, str] | None = None,
+    source_preferences: tuple[str, ...] = ("true",),
+    language: str = "zh-CN",
+    transcript_path: str = "transcript.zh-CN.md",
+    create_summary: bool = True,
+    create_transcript: bool = True,
+) -> Path:
+    episode = root / "shows" / "example" / "episodes" / folder
+    episode.mkdir(parents=True)
+    resolved_workflow = workflow or {
+        "metadata": "verified",
+        "summary": "draft",
+        "transcript": "machine",
+    }
+    sources = "".join(
+        "  - platform: website\n"
+        "    kind: episode\n"
+        f"    url: https://example.com/{folder}/{index}\n"
+        f"    preferred: {preferred}\n"
+        for index, preferred in enumerate(source_preferences, start=1)
+    )
+    readme = episode / "README.md"
+    readme.write_text(
+        f"""---
+id: "{episode_id or f'example:{episode_key}'}"
+show_id: example
+episode_key: {episode_key_scalar or json.dumps(episode_key)}
+published_at: {published_at}
+duration_ms: {duration_ms}
+language: {language}
+sources:
+{sources}workflow:
+  metadata: {resolved_workflow['metadata']}
+  summary: {resolved_workflow['summary']}
+  transcript: {resolved_workflow['transcript']}
+summary:
+  path: summary.zh-CN.md
+transcript:
+  path: {transcript_path}
+  translations: []
+---
+
+# 测试单集
+""",
+        encoding="utf-8",
+    )
+    if create_summary:
+        (episode / "summary.zh-CN.md").write_text("# 测试总结\n", encoding="utf-8")
+    if create_transcript:
+        (episode / transcript_path).write_text(
+            "# 测试逐字稿\n\n[00:00:00] 测试。  \n",
+            encoding="utf-8",
+        )
+    return readme
 
 
 class QwenChainFixture:
@@ -460,6 +527,24 @@ class EnglishTranscriptTranslationTests(unittest.TestCase):
                 errors,
             )
 
+    def test_incomplete_workflow_still_validates_a_declared_translation(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = EnglishTranslationFixture(Path(directory))
+            fixture.source_path.unlink()
+            errors: list[str] = []
+
+            validate_episode_translations(
+                fixture.episode,
+                repository_root=fixture.root,
+                readme_text=fixture.readme_path.read_text(encoding="utf-8"),
+                errors=errors,
+                require_complete=False,
+            )
+
+            self.assertTrue(
+                any("selected English transcript is missing" in error for error in errors)
+            )
+
     def test_english_selected_path_triggers_rule_even_if_episode_language_differs(
         self,
     ) -> None:
@@ -610,6 +695,247 @@ transcript:
             )
 
             self.assertEqual(errors, [])
+
+
+class EpisodeMetadataContractTests(unittest.TestCase):
+    @staticmethod
+    def validate(
+        root: Path,
+        readme: Path,
+        episode_ids: dict[str, Path] | None = None,
+    ) -> tuple[bool, list[str]]:
+        errors: list[str] = []
+        publishable = validate_episode_metadata_contract(
+            readme,
+            readme.read_text(encoding="utf-8"),
+            repository_root=root,
+            episode_ids=episode_ids if episode_ids is not None else {},
+            errors=errors,
+        )
+        return publishable, errors
+
+    def test_accepts_publishable_and_unfinished_workflow_states(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            episode_ids: dict[str, Path] = {}
+            published = write_episode_contract_fixture(
+                root,
+                folder="001-published",
+                episode_key="001",
+            )
+            unfinished = write_episode_contract_fixture(
+                root,
+                folder="002-unfinished",
+                episode_key="002",
+                workflow={
+                    "metadata": "verified",
+                    "summary": "outline",
+                    "transcript": "not-started",
+                },
+                create_summary=False,
+                create_transcript=False,
+            )
+
+            self.assertEqual(
+                self.validate(root, published, episode_ids),
+                (True, []),
+            )
+            self.assertEqual(
+                self.validate(root, unfinished, episode_ids),
+                (False, []),
+            )
+
+    def test_publishable_episode_requires_both_web_assets(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root,
+                folder="001-missing-summary",
+                episode_key="001",
+                create_summary=False,
+            )
+
+            publishable, errors = self.validate(root, readme)
+
+            self.assertTrue(publishable)
+            self.assertTrue(any("summary.path is missing" in error for error in errors))
+
+    def test_unfinished_english_episode_may_lack_transcript_and_translation(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root,
+                folder="english-unfinished",
+                episode_key="english-unfinished",
+                language="en",
+                transcript_path="transcript.en.md",
+                workflow={
+                    "metadata": "verified",
+                    "summary": "outline",
+                    "transcript": "not-started",
+                },
+                create_summary=False,
+                create_transcript=False,
+            )
+
+            publishable, errors = self.validate(root, readme)
+            validate_episode_translations(
+                readme.parent,
+                repository_root=root,
+                readme_text=readme.read_text(encoding="utf-8"),
+                errors=errors,
+                require_complete=publishable,
+            )
+
+            self.assertFalse(publishable)
+            self.assertEqual(errors, [])
+
+    def test_rejects_invalid_metadata_and_source_preference_contracts(self) -> None:
+        cases: list[tuple[str, dict[str, Any], str]] = [
+            (
+                "publication timestamp",
+                {"published_at": '"2026-08-08"'},
+                "published_at must be an RFC 3339 timestamp with offset",
+            ),
+            (
+                "positive duration",
+                {"duration_ms": "0"},
+                "duration_ms must be a positive integer",
+            ),
+            (
+                "stable id",
+                {"episode_id": "example:other"},
+                "id must equal 'example:001'",
+            ),
+            (
+                "workflow enum",
+                {
+                    "workflow": {
+                        "metadata": "verified",
+                        "summary": "published",
+                        "transcript": "machine",
+                    }
+                },
+                "workflow.summary must be one of",
+            ),
+            (
+                "one preferred source",
+                {"source_preferences": ("true", "true")},
+                "sources must contain exactly one preferred source",
+            ),
+            (
+                "a preferred source is required",
+                {"source_preferences": ()},
+                "sources must contain exactly one preferred source",
+            ),
+            (
+                "numeric key is a string",
+                {"episode_key_scalar": "001"},
+                "numeric episode_key must be a quoted YAML string",
+            ),
+            (
+                "integer duration is not quoted",
+                {"duration_ms": '"60000"'},
+                "duration_ms must be a positive integer",
+            ),
+        ]
+
+        for label, overrides, expected in cases:
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                readme = write_episode_contract_fixture(
+                    root,
+                    folder="001-invalid",
+                    episode_key="001",
+                    **overrides,
+                )
+
+                _, errors = self.validate(root, readme)
+
+                self.assertTrue(
+                    any(expected in error for error in errors),
+                    f"expected {expected!r} in {errors!r}",
+                )
+
+    def test_rejects_duplicate_episode_ids(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            episode_ids: dict[str, Path] = {}
+            first = write_episode_contract_fixture(
+                root,
+                folder="first",
+                episode_key="001",
+            )
+            second = write_episode_contract_fixture(
+                root,
+                folder="second",
+                episode_key="001",
+            )
+
+            self.assertEqual(self.validate(root, first, episode_ids), (True, []))
+            _, errors = self.validate(root, second, episode_ids)
+
+            self.assertTrue(any("duplicates episode id 'example:001'" in error for error in errors))
+
+    def test_rejects_episode_asset_symlink_escape(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root,
+                folder="001-symlink",
+                episode_key="001",
+                create_summary=False,
+            )
+            outside = root / "outside-summary.md"
+            outside.write_text("# Outside\n", encoding="utf-8")
+            try:
+                (readme.parent / "summary.zh-CN.md").symlink_to(outside)
+            except OSError as error:
+                if getattr(error, "winerror", None) == 1314:
+                    self.skipTest("Windows symlink creation requires extra privileges")
+                raise
+
+            _, errors = self.validate(root, readme)
+
+            self.assertTrue(any("summary.path escapes the episode directory" in error for error in errors))
+
+    def test_timestamp_contract_keeps_two_digit_hours_and_bounded_clock_fields(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            transcript = root / "transcript.zh-CN.md"
+            transcript.write_text(
+                "# 测试逐字稿\n\n[99:59:59] 合法边界。  \n",
+                encoding="utf-8",
+            )
+            errors: list[str] = []
+
+            transcript_structure(
+                transcript,
+                repository_root=root,
+                field="transcript",
+                errors=errors,
+            )
+
+            self.assertEqual(errors, [])
+
+            for timestamp in ("100:00:00", "00:60:00", "00:00:60"):
+                with self.subTest(timestamp=timestamp):
+                    transcript.write_text(
+                        f"# 测试逐字稿\n\n[{timestamp}] 非法时间戳。  \n",
+                        encoding="utf-8",
+                    )
+                    invalid_errors: list[str] = []
+                    transcript_structure(
+                        transcript,
+                        repository_root=root,
+                        field="transcript",
+                        errors=invalid_errors,
+                    )
+                    self.assertTrue(
+                        any("one timestamped sentence" in error for error in invalid_errors)
+                    )
 
 
 class ExistingMarkdownValidationTests(unittest.TestCase):

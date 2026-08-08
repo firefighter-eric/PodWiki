@@ -126,9 +126,16 @@ export type EpisodeCard = Pick<
   | "subtitle"
   | "summaryIntro"
   | "publishedDate"
+  | "participants"
   | "guests"
+  | "hosts"
   | "workflow"
   | "href"
+>;
+
+export type SidebarEpisode = Pick<
+  EpisodeCard,
+  "id" | "showId" | "showTitle" | "navigationTitle" | "publishedDate" | "href"
 >;
 
 export type SearchResult = {

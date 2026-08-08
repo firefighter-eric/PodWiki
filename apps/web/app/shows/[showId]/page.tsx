@@ -5,9 +5,37 @@ import { getEpisodeCards, getShow, getShows } from "@/lib/content";
 
 type ShowPageProps = { params: Promise<{ showId: string }> };
 
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return (await getShows()).map((show) => ({ showId: show.id }));
+}
+
 export async function generateMetadata({ params }: ShowPageProps): Promise<Metadata> {
   const show = await getShow((await params).showId);
-  return show ? { title: show.title, description: show.description } : {};
+  if (!show) return {};
+
+  const title = `${show.title} · PodWiki`;
+  return {
+    title: show.title,
+    description: show.description,
+    alternates: {
+      canonical: show.href,
+    },
+    openGraph: {
+      type: "website",
+      locale: "zh_CN",
+      siteName: "PodWiki",
+      title,
+      description: show.description,
+      url: show.href,
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description: show.description,
+    },
+  };
 }
 
 export default async function ShowPage({ params }: ShowPageProps) {

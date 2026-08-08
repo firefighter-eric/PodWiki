@@ -6,7 +6,28 @@ const repositoryRoot = path.resolve(process.cwd(), "../..");
 const nextConfig: NextConfig = {
   outputFileTracingRoot: repositoryRoot,
   outputFileTracingIncludes: {
-    "/*": ["../../shows/**/*.md"],
+    "/api/search": [
+      "../../shows/*/README.md",
+      "../../shows/*/episodes/*/README.md",
+      "../../shows/*/episodes/*/summary*.md",
+      "../../shows/*/episodes/*/transcript*.md",
+    ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/shows/:showId/episodes/:folder",
+        has: [
+          {
+            type: "query",
+            key: "view",
+            value: "transcript",
+          },
+        ],
+        destination: "/shows/:showId/episodes/:folder/transcript",
+        permanent: true,
+      },
+    ];
   },
   experimental: {
     optimizePackageImports: ["@phosphor-icons/react"],

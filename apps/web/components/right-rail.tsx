@@ -43,7 +43,7 @@ export function RightRail({ episode, view }: { episode: Episode; view: "summary"
               <a className="active" href="#full-transcript">
                 {episode.bilingualTranscript ? "中英对照逐字稿" : "完整逐字稿"}
               </a>
-              <Link href={`${episode.href}?view=summary`}>返回总结</Link>
+              <Link href={episode.href}>返回总结</Link>
             </>
           )}
         </nav>

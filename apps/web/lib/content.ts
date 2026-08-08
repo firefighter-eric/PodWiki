@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
+import { getTranscriptHref } from "@/lib/reader-routes";
 import type {
   BilingualTranscript,
   BilingualTranscriptSegment,
@@ -62,11 +63,39 @@ const episodeTranscriptSchema = transcriptProvenanceSchema.extend({
   translations: z.array(transcriptTranslationSchema).optional().default([]),
 });
 
+const workflowSchema = z.object({
+  metadata: z.enum(["draft", "verified"]),
+  summary: z.enum(["empty", "outline", "draft", "reviewed"]),
+  transcript: z.enum([
+    "not-started",
+    "source-acquired",
+    "machine",
+    "edited",
+    "reviewed",
+    "blocked",
+  ]),
+});
+
+type EpisodeWorkflow = z.infer<typeof workflowSchema>;
+
+const webSummaryStatuses = new Set<EpisodeWorkflow["summary"]>(["draft", "reviewed"]);
+const webTranscriptStatuses = new Set<EpisodeWorkflow["transcript"]>([
+  "machine",
+  "edited",
+  "reviewed",
+]);
+
+export function isEpisodeWebPublishable(workflow: EpisodeWorkflow): boolean {
+  return workflow.metadata === "verified"
+    && webSummaryStatuses.has(workflow.summary)
+    && webTranscriptStatuses.has(workflow.transcript);
+}
+
 const episodeSchema = z
   .object({
-    id: z.string(),
-    show_id: z.string(),
-    episode_key: z.union([z.string(), z.number()]).transform(String),
+    id: z.string().min(1),
+    show_id: z.string().regex(/^[a-z0-9]+$/u),
+    episode_key: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/u),
     episode_number: z.number().nullable().optional().default(null),
     release_type: z.enum(["regular", "special", "bonus", "trailer"]).default("regular"),
     slug: z.string().optional(),
@@ -76,27 +105,34 @@ const episodeSchema = z
       (value) => value === value.trim(),
       "catalog_keyword must not have leading or trailing whitespace",
     ),
-    published_at: z.union([z.string(), z.date()]),
-    duration_ms: z.number(),
+    published_at: z.string().datetime({ offset: true }),
+    duration_ms: z.number().int().positive(),
     language: z.string(),
     participants: z.array(participantSchema).default([]),
-    sources: z.array(sourceSchema).default([]),
-    workflow: z
-      .object({
-        metadata: z.string().optional(),
-        summary: z.string().optional(),
-        transcript: z.string().optional(),
-      })
-      .default({}),
+    sources: z.array(sourceSchema).min(1).refine(
+      (sources) => sources.filter((source) => source.preferred === true).length === 1,
+      "sources must contain exactly one preferred source",
+    ),
+    workflow: workflowSchema,
     summary: z
       .object({
         path: z.string(),
-        source_transcript: transcriptProvenanceSchema.optional(),
+        source_transcript: transcriptProvenanceSchema.nullable().optional(),
       })
       .passthrough(),
     transcript: episodeTranscriptSchema,
   })
-  .passthrough();
+  .passthrough()
+  .superRefine((value, context) => {
+    const expectedId = `${value.show_id}:${value.episode_key}`;
+    if (value.id !== expectedId) {
+      context.addIssue({
+        code: "custom",
+        path: ["id"],
+        message: `episode id must equal ${expectedId}`,
+      });
+    }
+  });
 
 const showSchema = z
   .object({
@@ -113,6 +149,21 @@ const showOrder = [
   "whynottv",
   "yiqitietalk",
 ];
+const showOrderIndex = new Map(showOrder.map((id, index) => [id, index]));
+
+export function compareShowOrder(
+  left: Pick<ShowSummary, "id" | "title">,
+  right: Pick<ShowSummary, "id" | "title">,
+): number {
+  const leftIndex = showOrderIndex.get(left.id);
+  const rightIndex = showOrderIndex.get(right.id);
+  if (leftIndex !== undefined || rightIndex !== undefined) {
+    if (leftIndex === undefined) return 1;
+    if (rightIndex === undefined) return -1;
+    return leftIndex - rightIndex;
+  }
+  return left.title.localeCompare(right.title, "zh-CN") || left.id.localeCompare(right.id);
+}
 
 function findRepositoryRoot(): string {
   const configuredRoot = process.env.PODWIKI_REPOSITORY_ROOT;
@@ -156,6 +207,19 @@ function resolveEpisodeAsset(episodeRoot: string, relativePath: string, label: s
     path.isAbsolute(relativeToEpisode)
   ) {
     throw new Error(`${label} must stay inside the episode directory: ${relativePath}`);
+  }
+
+  if (fs.existsSync(resolvedPath)) {
+    const realEpisodeRoot = fs.realpathSync.native(episodeRoot);
+    const realResolvedPath = fs.realpathSync.native(resolvedPath);
+    const realRelativeToEpisode = path.relative(realEpisodeRoot, realResolvedPath);
+    if (
+      realRelativeToEpisode === ""
+      || realRelativeToEpisode.startsWith(`..${path.sep}`)
+      || path.isAbsolute(realRelativeToEpisode)
+    ) {
+      throw new Error(`${label} must resolve inside the episode directory: ${relativePath}`);
+    }
   }
   return resolvedPath;
 }
@@ -242,11 +306,15 @@ function extractHeadingSection(markdown: string, heading: string): string {
 }
 
 export function timestampToSeconds(timestamp: string): number {
-  const [hours, minutes, seconds] = timestamp.split(":").map(Number);
-  return hours * 3600 + minutes * 60 + seconds;
+  const match = /^(\d{2}):([0-5]\d):([0-5]\d)$/u.exec(timestamp);
+  if (!match) {
+    throw new Error(`Invalid transcript timestamp: ${timestamp}`);
+  }
+  return Number(match[1]) * 3600 + Number(match[2]) * 60 + Number(match[3]);
 }
 
 export function timestampToId(timestamp: string): string {
+  timestampToSeconds(timestamp);
   return `t-${timestamp.replaceAll(":", "-")}`;
 }
 
@@ -266,7 +334,7 @@ export function findNearestTranscriptSegment(
 function parseTranscript(raw: string): TranscriptSegment[] {
   const seen = new Map<string, number>();
   const segments: TranscriptSegment[] = [];
-  const linePattern = /^\[(\d{2}:\d{2}:\d{2})\]\s+(.+?)\s{0,2}$/gmu;
+  const linePattern = /^\[(\d{2}:[0-5]\d:[0-5]\d)\]\s+(.+?)\s{0,2}$/gmu;
 
   for (const match of raw.matchAll(linePattern)) {
     const timestamp = match[1];
@@ -419,8 +487,8 @@ function parseChapters(
   transcriptSegments: TranscriptSegment[],
 ): Chapter[] {
   const patterns = [
-    /^-\s+(\d{2}:\d{2}:\d{2})\s+[—–-]\s+(.+)$/gmu,
-    /^-\s+(?:\*\*)?\[(\d{2}:\d{2}:\d{2})\](?:[^*]*\*\*)?\s*[—–-]?\s*(.+)$/gmu,
+    /^-\s+(\d{2}:[0-5]\d:[0-5]\d)\s+[—–-]\s+(.+)$/gmu,
+    /^-\s+(?:\*\*)?\[(\d{2}:[0-5]\d:[0-5]\d)\](?:[^*]*\*\*)?\s*[—–-]?\s*(.+)$/gmu,
   ];
 
   const collect = (source: string, pattern: RegExp): Chapter[] => {
@@ -439,7 +507,7 @@ function parseChapters(
         timestamp,
         title,
         seconds: timestampToSeconds(timestamp),
-        href: `${href}?view=transcript#${target?.id ?? timestampToId(timestamp)}`,
+        href: getTranscriptHref(href, target?.id ?? timestampToId(timestamp)),
       });
     }
     return result;
@@ -455,7 +523,7 @@ function parseChapters(
       timestamp: firstSegment.timestamp,
       title: "开场",
       seconds: firstSegment.seconds,
-      href: `${href}?view=transcript#${firstSegment.id}`,
+      href: getTranscriptHref(href, firstSegment.id),
     });
   }
 
@@ -472,24 +540,147 @@ function extractShowDescription(markdown: string): string {
   return withoutHeading.split(/^##\s+/mu)[0].replace(/\s+/gu, " ").trim();
 }
 
-const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Episode[] }> => {
+type ShowCatalogData = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+type EpisodeCatalogEntry = {
+  card: EpisodeCard;
+  publishedAt: string;
+  searchAssets: {
+    episodeRoot: string;
+    episodeTitle: string;
+    episodeLanguage: string;
+    participants: z.infer<typeof participantSchema>[];
+    summaryRaw: string;
+    transcriptPath: string;
+    transcriptRelativePath: string;
+    transcriptTranslations: z.infer<typeof transcriptTranslationSchema>[];
+  };
+};
+
+type ContentCatalog = {
+  shows: ShowSummary[];
+  episodeEntries: EpisodeCatalogEntry[];
+};
+
+export function compareEpisodePublicationOrder(
+  publishedAtA: string,
+  hrefA: string,
+  publishedAtB: string,
+  hrefB: string,
+): number {
+  return Date.parse(publishedAtB) - Date.parse(publishedAtA) || hrefA.localeCompare(hrefB);
+}
+
+function resolveNamedDirectory(parent: string, name: string): string | undefined {
+  if (!name) return undefined;
+  const resolved = path.resolve(parent, name);
+  const relative = path.relative(parent, resolved);
+  if (
+    !relative ||
+    relative.startsWith(`..${path.sep}`) ||
+    path.isAbsolute(relative) ||
+    relative.includes(path.sep)
+  ) {
+    return undefined;
+  }
+  return resolved;
+}
+
+const loadShowById = cache(async (showId: string): Promise<ShowCatalogData | undefined> => {
+  const showsRoot = path.join(findRepositoryRoot(), "shows");
+  const showRoot = resolveNamedDirectory(showsRoot, showId);
+  if (!showRoot) return undefined;
+  const readmePath = path.join(showRoot, "README.md");
+  if (!fs.existsSync(readmePath)) return undefined;
+
+  const readme = readMarkdown(readmePath);
+  const metadata = showSchema.parse(readme.data);
+  return {
+    id: metadata.id,
+    title: metadata.title,
+    description: extractShowDescription(readme.content),
+  };
+});
+
+function episodeCardFromMetadata({
+  metadata,
+  showTitle,
+  folder,
+  summaryRaw,
+  episodeRoot,
+  transcriptPath,
+}: {
+  metadata: z.infer<typeof episodeSchema>;
+  showTitle: string;
+  folder: string;
+  summaryRaw: string;
+  episodeRoot: string;
+  transcriptPath: string;
+}): EpisodeCatalogEntry {
+  const publishedAt = metadata.published_at;
+  const editorialTitle = extractMarkdownTitle(summaryRaw) ?? metadata.title;
+  const normalizedTitle = normalizeTitle(editorialTitle);
+
+  return {
+    publishedAt,
+    searchAssets: {
+      episodeRoot,
+      episodeTitle: metadata.title,
+      episodeLanguage: metadata.language,
+      participants: metadata.participants,
+      summaryRaw,
+      transcriptPath,
+      transcriptRelativePath: metadata.transcript.path,
+      transcriptTranslations: metadata.transcript.translations,
+    },
+    card: {
+      id: metadata.id,
+      showId: metadata.show_id,
+      showTitle,
+      episodeNumber: metadata.episode_number,
+      folder,
+      title: metadata.title,
+      navigationTitle: metadata.navigation_title,
+      catalogKeyword: metadata.catalog_keyword,
+      editorialTitle,
+      displayTitle: normalizedTitle.displayTitle,
+      subtitle: normalizedTitle.subtitle,
+      summaryIntro: extractSummaryIntro(summaryRaw),
+      publishedDate: publishedAt.slice(0, 10),
+      participants: metadata.participants,
+      guests: metadata.participants.filter((participant) => participant.role === "guest"),
+      hosts: metadata.participants.filter((participant) => participant.role === "host"),
+      workflow: metadata.workflow,
+      href: `/shows/${metadata.show_id}/episodes/${folder}`,
+    },
+  };
+}
+
+const loadCatalog = cache(async (): Promise<ContentCatalog> => {
   const repositoryRoot = findRepositoryRoot();
   const showsRoot = path.join(repositoryRoot, "shows");
   const showDirectories = fs
     .readdirSync(showsRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(showsRoot, entry.name, "README.md")));
 
-  const showData = new Map<string, { title: string; description: string }>();
+  const showData = new Map<string, ShowCatalogData>();
   for (const directory of showDirectories) {
-    const parsed = readMarkdown(path.join(showsRoot, directory.name, "README.md"));
-    const show = showSchema.parse(parsed.data);
-    showData.set(show.id, {
-      title: show.title,
-      description: extractShowDescription(parsed.content),
-    });
+    const show = await loadShowById(directory.name);
+    if (!show) continue;
+    if (show.id !== directory.name) {
+      throw new Error(
+        `Show id ${show.id} does not match its directory name ${directory.name}`,
+      );
+    }
+    showData.set(directory.name, show);
   }
 
-  const episodes: Episode[] = [];
+  const episodeEntries: EpisodeCatalogEntry[] = [];
+  const episodeLocations = new Map<string, string>();
   for (const [showId, currentShow] of showData) {
     const episodesRoot = path.join(showsRoot, showId, "episodes");
     if (!fs.existsSync(episodesRoot)) continue;
@@ -502,6 +693,21 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
 
       const readme = readMarkdown(readmePath);
       const metadata = episodeSchema.parse(readme.data);
+      if (metadata.show_id !== showId) {
+        throw new Error(
+          `Episode ${metadata.id} declares show ${metadata.show_id} but is stored under ${showId}`,
+        );
+      }
+      const previousLocation = episodeLocations.get(metadata.id);
+      if (previousLocation) {
+        throw new Error(
+          `Duplicate episode id ${metadata.id}: ${previousLocation} and ${readmePath}`,
+        );
+      }
+      episodeLocations.set(metadata.id, readmePath);
+
+      if (!isEpisodeWebPublishable(metadata.workflow)) continue;
+
       const summaryPath = resolveEpisodeAsset(
         episodeRoot,
         metadata.summary.path,
@@ -520,81 +726,27 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
       }
 
       const summary = readMarkdown(summaryPath);
-      const transcript = readMarkdown(transcriptPath);
-      const publishedAt = metadata.published_at instanceof Date
-        ? metadata.published_at.toISOString()
-        : metadata.published_at;
-      const href = `/shows/${metadata.show_id}/episodes/${folder}`;
-      const editorialTitle = extractMarkdownTitle(summary.content) ?? metadata.title;
-      const normalizedTitle = normalizeTitle(editorialTitle);
-      const summaryIntro = extractSummaryIntro(summary.content);
-      const preferredSource = metadata.sources.find((source) => source.preferred) ?? metadata.sources[0];
-
-      const transcriptSegments = parseTranscript(transcript.content);
-      const { translations: transcriptTranslations, bilingualTranscript } = loadTranscriptTranslations({
-        episodeRoot,
-        episodeId: metadata.id,
-        episodeLanguage: metadata.language,
-        sourcePath: metadata.transcript.path,
-        sourceSha256: transcript.sha256,
-        sourceContent: transcript.content,
-        sourceSegments: transcriptSegments,
-        values: metadata.transcript.translations,
-      });
-      const episode: Episode = {
-        id: metadata.id,
-        showId: metadata.show_id,
+      episodeEntries.push(episodeCardFromMetadata({
+        metadata,
         showTitle: currentShow.title,
-        episodeKey: metadata.episode_key,
-        episodeNumber: metadata.episode_number,
-        releaseType: metadata.release_type,
         folder,
-        title: metadata.title,
-        navigationTitle: metadata.navigation_title,
-        catalogKeyword: metadata.catalog_keyword,
-        editorialTitle,
-        displayTitle: normalizedTitle.displayTitle,
-        subtitle: normalizedTitle.subtitle,
-        summaryIntro,
-        publishedAt,
-        publishedDate: publishedAt.slice(0, 10),
-        durationMs: metadata.duration_ms,
-        durationLabel: formatDuration(metadata.duration_ms),
-        language: metadata.language,
-        participants: metadata.participants,
-        guests: metadata.participants.filter((participant) => participant.role === "guest"),
-        hosts: metadata.participants.filter((participant) => participant.role === "host"),
-        sources: metadata.sources,
-        preferredSource,
-        workflow: metadata.workflow,
-        summarySourceTranscript: metadata.summary.source_transcript
-          ? normalizeProvenance(metadata.summary.source_transcript)
-          : undefined,
-        transcriptMeta: normalizeProvenance(metadata.transcript),
         summaryRaw: summary.content,
-        transcriptRaw: transcript.content,
-        readmeRaw: readme.content,
-        chapters: [],
-        transcriptSegments,
-        transcriptTranslations,
-        bilingualTranscript,
-        href,
-      };
-      episode.chapters = parseChapters(
-        episode.readmeRaw,
-        episode.summaryRaw,
-        href,
-        transcriptSegments,
-      );
-      episodes.push(episode);
+        episodeRoot,
+        transcriptPath,
+      }));
     }
   }
 
-  episodes.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  episodeEntries.sort((a, b) => compareEpisodePublicationOrder(
+    a.publishedAt,
+    a.card.href,
+    b.publishedAt,
+    b.card.href,
+  ));
 
   const shows: ShowSummary[] = [...showData.entries()]
     .map(([id, data]) => {
-      const showEpisodes = episodes.filter((episode) => episode.showId === id);
+      const showEpisodes = episodeEntries.filter((entry) => entry.card.showId === id);
       return {
         id,
         title: data.title,
@@ -602,26 +754,138 @@ const loadContent = cache(async (): Promise<{ shows: ShowSummary[]; episodes: Ep
         description: data.description,
         episodeCount: showEpisodes.length,
         href: `/shows/${id}`,
-        latestEpisodeHref: showEpisodes[0]?.href ?? `/shows/${id}`,
+        latestEpisodeHref: showEpisodes[0]?.card.href ?? `/shows/${id}`,
       };
     })
-    .sort((a, b) => showOrder.indexOf(a.id) - showOrder.indexOf(b.id));
+    .sort(compareShowOrder);
 
-  return { shows, episodes };
+  return { shows, episodeEntries };
+});
+
+const loadEpisodeByLocation = cache(async (
+  showId: string,
+  folder: string,
+): Promise<Episode | undefined> => {
+  const repositoryRoot = findRepositoryRoot();
+  const showsRoot = path.join(repositoryRoot, "shows");
+  const showRoot = resolveNamedDirectory(showsRoot, showId);
+  if (!showRoot) return undefined;
+
+  const show = await loadShowById(showId);
+  if (!show || show.id !== showId) return undefined;
+
+  const episodesRoot = path.join(showRoot, "episodes");
+  const episodeRoot = resolveNamedDirectory(episodesRoot, folder);
+  if (!episodeRoot) return undefined;
+  const readmePath = path.join(episodeRoot, "README.md");
+  if (!fs.existsSync(readmePath)) return undefined;
+
+  const readme = readMarkdown(readmePath);
+  const metadata = episodeSchema.parse(readme.data);
+  if (metadata.show_id !== showId) return undefined;
+  if (!isEpisodeWebPublishable(metadata.workflow)) return undefined;
+
+  const summaryPath = resolveEpisodeAsset(
+    episodeRoot,
+    metadata.summary.path,
+    `${metadata.id} summary path`,
+  );
+  const transcriptPath = resolveEpisodeAsset(
+    episodeRoot,
+    metadata.transcript.path,
+    `${metadata.id} transcript path`,
+  );
+  // Runtime search assets are explicitly included by next.config.ts.
+  if (!fs.existsSync(/* turbopackIgnore: true */ summaryPath)) {
+    throw new Error(`Missing summary for ${metadata.id}: ${summaryPath}`);
+  }
+  if (!fs.existsSync(/* turbopackIgnore: true */ transcriptPath)) {
+    throw new Error(`Missing transcript for ${metadata.id}: ${transcriptPath}`);
+  }
+
+  const summary = readMarkdown(summaryPath);
+  const transcript = readMarkdown(transcriptPath);
+  const publishedAt = metadata.published_at;
+  const href = `/shows/${metadata.show_id}/episodes/${folder}`;
+  const editorialTitle = extractMarkdownTitle(summary.content) ?? metadata.title;
+  const normalizedTitle = normalizeTitle(editorialTitle);
+  const transcriptSegments = parseTranscript(transcript.content);
+  const { translations: transcriptTranslations, bilingualTranscript } = loadTranscriptTranslations({
+    episodeRoot,
+    episodeId: metadata.id,
+    episodeLanguage: metadata.language,
+    sourcePath: metadata.transcript.path,
+    sourceSha256: transcript.sha256,
+    sourceContent: transcript.content,
+    sourceSegments: transcriptSegments,
+    values: metadata.transcript.translations,
+  });
+  const episode: Episode = {
+    id: metadata.id,
+    showId: metadata.show_id,
+    showTitle: show.title,
+    episodeKey: metadata.episode_key,
+    episodeNumber: metadata.episode_number,
+    releaseType: metadata.release_type,
+    folder,
+    title: metadata.title,
+    navigationTitle: metadata.navigation_title,
+    catalogKeyword: metadata.catalog_keyword,
+    editorialTitle,
+    displayTitle: normalizedTitle.displayTitle,
+    subtitle: normalizedTitle.subtitle,
+    summaryIntro: extractSummaryIntro(summary.content),
+    publishedAt,
+    publishedDate: publishedAt.slice(0, 10),
+    durationMs: metadata.duration_ms,
+    durationLabel: formatDuration(metadata.duration_ms),
+    language: metadata.language,
+    participants: metadata.participants,
+    guests: metadata.participants.filter((participant) => participant.role === "guest"),
+    hosts: metadata.participants.filter((participant) => participant.role === "host"),
+    sources: metadata.sources,
+    preferredSource: metadata.sources.find((source) => source.preferred) ?? metadata.sources[0],
+    workflow: metadata.workflow,
+    summarySourceTranscript: metadata.summary.source_transcript
+      ? normalizeProvenance(metadata.summary.source_transcript)
+      : undefined,
+    transcriptMeta: normalizeProvenance(metadata.transcript),
+    summaryRaw: summary.content,
+    transcriptRaw: transcript.content,
+    readmeRaw: readme.content,
+    chapters: [],
+    transcriptSegments,
+    transcriptTranslations,
+    bilingualTranscript,
+    href,
+  };
+  episode.chapters = parseChapters(
+    episode.readmeRaw,
+    episode.summaryRaw,
+    href,
+    transcriptSegments,
+  );
+  return episode;
+});
+
+const loadAllEpisodes = cache(async (): Promise<Episode[]> => {
+  const { episodeEntries } = await loadCatalog();
+  const episodes = await Promise.all(
+    episodeEntries.map(({ card }) => loadEpisodeByLocation(card.showId, card.folder)),
+  );
+  return episodes.filter((episode): episode is Episode => episode !== undefined);
 });
 
 export async function getShows(): Promise<ShowSummary[]> {
-  return (await loadContent()).shows;
+  return (await loadCatalog()).shows;
 }
 
 export async function getEpisodes(): Promise<Episode[]> {
-  return (await loadContent()).episodes;
+  return loadAllEpisodes();
 }
 
 export async function getEpisode(showId: string, folder: string): Promise<Episode | undefined> {
-  return (await getEpisodes()).find(
-    (episode) => episode.showId === showId && episode.folder === folder,
-  );
+  return loadEpisodeByLocation(showId, folder);
 }
 
 export async function getShow(showId: string): Promise<ShowSummary | undefined> {
@@ -629,112 +893,225 @@ export async function getShow(showId: string): Promise<ShowSummary | undefined> 
 }
 
 export async function getEpisodeCards(showId?: string): Promise<EpisodeCard[]> {
-  const episodes = showId
-    ? (await getEpisodes()).filter((episode) => episode.showId === showId)
-    : await getEpisodes();
-  return episodes.map((episode) => ({
-    id: episode.id,
-    showId: episode.showId,
-    showTitle: episode.showTitle,
-    episodeNumber: episode.episodeNumber,
-    folder: episode.folder,
-    title: episode.title,
-    navigationTitle: episode.navigationTitle,
-    catalogKeyword: episode.catalogKeyword,
-    editorialTitle: episode.editorialTitle,
-    displayTitle: episode.displayTitle,
-    subtitle: episode.subtitle,
-    summaryIntro: episode.summaryIntro,
-    publishedDate: episode.publishedDate,
-    guests: episode.guests,
-    workflow: episode.workflow,
-    href: episode.href,
-  }));
+  const { episodeEntries } = await loadCatalog();
+  const cards = episodeEntries.map((entry) => entry.card);
+  return showId ? cards.filter((episode) => episode.showId === showId) : cards;
 }
 
-function snippetAround(text: string, query: string, radius = 58): string {
-  const normalizedText = text.replace(/\s+/gu, " ").trim();
-  const index = normalizedText.toLocaleLowerCase("zh-CN").indexOf(query.toLocaleLowerCase("zh-CN"));
-  if (index < 0) return normalizedText.slice(0, radius * 2);
+type IndexedSearchText = {
+  text: string;
+  normalized: string;
+};
+
+type SearchSegmentDocument = {
+  id: string;
+  timestamp: string;
+  content: IndexedSearchText;
+};
+
+type SearchEpisodeDocument = {
+  id: string;
+  title: string;
+  titleNormalized: string;
+  showTitle: string;
+  href: string;
+  episodeHaystack: IndexedSearchText;
+  summaryNormalized: string;
+  summarySnippet: IndexedSearchText;
+  transcriptSegments: SearchSegmentDocument[];
+  translationSegments: SearchSegmentDocument[];
+};
+
+const searchResultCacheLimit = 64;
+const searchResultCache = new Map<string, SearchResult[]>();
+let searchDocumentsPromise: Promise<SearchEpisodeDocument[]> | undefined;
+
+function compactSearchText(text: string): string {
+  return text.replace(/\s+/gu, " ").trim();
+}
+
+function indexSearchText(text: string): IndexedSearchText {
+  const compact = compactSearchText(text);
+  return {
+    text: compact,
+    normalized: compact.toLocaleLowerCase("zh-CN"),
+  };
+}
+
+function toSearchSegment(segment: TranscriptSegment): SearchSegmentDocument {
+  return {
+    id: segment.id,
+    timestamp: segment.timestamp,
+    content: indexSearchText(segment.text),
+  };
+}
+
+async function buildSearchDocuments(): Promise<SearchEpisodeDocument[]> {
+  const { episodeEntries } = await loadCatalog();
+
+  return episodeEntries.map(({ card, searchAssets }) => {
+    const transcript = readMarkdown(searchAssets.transcriptPath);
+    const transcriptSegments = parseTranscript(transcript.content);
+    const { bilingualTranscript } = loadTranscriptTranslations({
+      episodeRoot: searchAssets.episodeRoot,
+      episodeId: card.id,
+      episodeLanguage: searchAssets.episodeLanguage,
+      sourcePath: searchAssets.transcriptRelativePath,
+      sourceSha256: transcript.sha256,
+      sourceContent: transcript.content,
+      sourceSegments: transcriptSegments,
+      values: searchAssets.transcriptTranslations,
+    });
+    const episodeHaystack = [
+      searchAssets.episodeTitle,
+      card.navigationTitle,
+      card.catalogKeyword,
+      card.showTitle,
+      ...searchAssets.participants.flatMap((participant) => [
+        participant.name,
+        ...(participant.aliases ?? []),
+      ]),
+    ].join(" ");
+    const summarySnippet = searchAssets.summaryRaw.replace(/[#*`>\[\]]/gu, "");
+
+    return {
+      id: card.id,
+      title: card.navigationTitle,
+      titleNormalized: searchAssets.episodeTitle.toLocaleLowerCase("zh-CN"),
+      showTitle: card.showTitle,
+      href: card.href,
+      episodeHaystack: indexSearchText(episodeHaystack),
+      summaryNormalized: searchAssets.summaryRaw.toLocaleLowerCase("zh-CN"),
+      summarySnippet: indexSearchText(summarySnippet),
+      transcriptSegments: transcriptSegments.map(toSearchSegment),
+      translationSegments: bilingualTranscript?.segments.map((segment) => ({
+        id: segment.id,
+        timestamp: segment.timestamp,
+        content: indexSearchText(segment.translationText),
+      })) ?? [],
+    };
+  });
+}
+
+function getSearchDocuments(): Promise<SearchEpisodeDocument[]> {
+  if (!searchDocumentsPromise) {
+    searchDocumentsPromise = buildSearchDocuments().catch((error: unknown) => {
+      searchDocumentsPromise = undefined;
+      throw error;
+    });
+  }
+  return searchDocumentsPromise;
+}
+
+function getCachedSearchResults(query: string): SearchResult[] | undefined {
+  const cached = searchResultCache.get(query);
+  if (!cached) return undefined;
+  searchResultCache.delete(query);
+  searchResultCache.set(query, cached);
+  return cached;
+}
+
+function cacheSearchResults(query: string, results: SearchResult[]): SearchResult[] {
+  searchResultCache.set(query, results);
+  if (searchResultCache.size > searchResultCacheLimit) {
+    const oldestQuery = searchResultCache.keys().next().value;
+    if (oldestQuery !== undefined) searchResultCache.delete(oldestQuery);
+  }
+  return results;
+}
+
+function snippetAround(
+  indexedText: IndexedSearchText,
+  normalizedQuery: string,
+  queryLength: number,
+  radius = 58,
+): string {
+  const index = indexedText.normalized.indexOf(normalizedQuery);
+  if (index < 0) return indexedText.text.slice(0, radius * 2);
   const start = Math.max(0, index - radius);
-  const end = Math.min(normalizedText.length, index + query.length + radius);
-  return `${start > 0 ? "…" : ""}${normalizedText.slice(start, end)}${end < normalizedText.length ? "…" : ""}`;
+  const end = Math.min(indexedText.text.length, index + queryLength + radius);
+  return `${start > 0 ? "…" : ""}${indexedText.text.slice(start, end)}${end < indexedText.text.length ? "…" : ""}`;
+}
+
+function findFirstSegmentMatches(
+  segments: SearchSegmentDocument[],
+  normalizedQuery: string,
+  limit = 3,
+): SearchSegmentDocument[] {
+  const matches: SearchSegmentDocument[] = [];
+  for (const segment of segments) {
+    if (!segment.content.normalized.includes(normalizedQuery)) continue;
+    matches.push(segment);
+    if (matches.length === limit) break;
+  }
+  return matches;
 }
 
 export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
   const query = rawQuery.trim();
   if (!query) return [];
   const lowerQuery = query.toLocaleLowerCase("zh-CN");
+  const cached = getCachedSearchResults(lowerQuery);
+  if (cached) return cached;
   const results: SearchResult[] = [];
 
-  for (const episode of await getEpisodes()) {
-    const episodeHaystack = [
-      episode.title,
-      episode.navigationTitle,
-      episode.catalogKeyword,
-      episode.showTitle,
-      ...episode.participants.flatMap((participant) => [participant.name, ...(participant.aliases ?? [])]),
-    ].join(" ");
-    if (episodeHaystack.toLocaleLowerCase("zh-CN").includes(lowerQuery)) {
+  for (const episode of await getSearchDocuments()) {
+    if (episode.episodeHaystack.normalized.includes(lowerQuery)) {
       results.push({
         id: `${episode.id}:episode`,
-        title: episode.navigationTitle,
+        title: episode.title,
         showTitle: episode.showTitle,
         section: "单集",
-        snippet: snippetAround(episodeHaystack, query),
+        snippet: snippetAround(episode.episodeHaystack, lowerQuery, query.length),
         href: episode.href,
-        score: episode.title.toLocaleLowerCase("zh-CN").includes(lowerQuery) ? 90 : 70,
+        score: episode.titleNormalized.includes(lowerQuery) ? 90 : 70,
       });
     }
 
-    if (episode.summaryRaw.toLocaleLowerCase("zh-CN").includes(lowerQuery)) {
+    if (episode.summaryNormalized.includes(lowerQuery)) {
       results.push({
         id: `${episode.id}:summary`,
-        title: episode.navigationTitle,
+        title: episode.title,
         showTitle: episode.showTitle,
         section: "总结",
-        snippet: snippetAround(episode.summaryRaw.replace(/[#*`>\[\]]/gu, ""), query),
-        href: `${episode.href}?view=summary`,
+        snippet: snippetAround(episode.summarySnippet, lowerQuery, query.length),
+        href: episode.href,
         score: 60,
       });
     }
 
-    const transcriptMatches = episode.transcriptSegments
-      .filter((segment) => segment.text.toLocaleLowerCase("zh-CN").includes(lowerQuery))
-      .slice(0, 3);
+    const transcriptMatches = findFirstSegmentMatches(episode.transcriptSegments, lowerQuery);
     for (const segment of transcriptMatches) {
       results.push({
         id: `${episode.id}:${segment.id}`,
-        title: episode.navigationTitle,
+        title: episode.title,
         showTitle: episode.showTitle,
         section: "逐字稿",
-        snippet: snippetAround(segment.text, query),
-        href: `${episode.href}?view=transcript#${segment.id}`,
+        snippet: snippetAround(segment.content, lowerQuery, query.length),
+        href: getTranscriptHref(episode.href, segment.id),
         timestamp: segment.timestamp,
         score: 50,
       });
     }
 
-    const translationMatches = episode.bilingualTranscript?.segments
-      .filter((segment) => segment.translationText.toLocaleLowerCase("zh-CN").includes(lowerQuery))
-      .slice(0, 3) ?? [];
+    const translationMatches = findFirstSegmentMatches(episode.translationSegments, lowerQuery);
     for (const segment of translationMatches) {
       results.push({
         id: `${episode.id}:translation:${segment.id}`,
-        title: episode.navigationTitle,
+        title: episode.title,
         showTitle: episode.showTitle,
         section: "译稿",
-        snippet: snippetAround(segment.translationText, query),
-        href: `${episode.href}?view=transcript#${segment.id}`,
+        snippet: snippetAround(segment.content, lowerQuery, query.length),
+        href: getTranscriptHref(episode.href, segment.id),
         timestamp: segment.timestamp,
         score: 49,
       });
     }
   }
 
-  return results
+  return cacheSearchResults(lowerQuery, results
     .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title, "zh-CN"))
-    .slice(0, 24);
+    .slice(0, 24));
 }
 
 export function findRelatedSegments(episode: Episode, targetTimestamp?: string): TranscriptSegment[] {
