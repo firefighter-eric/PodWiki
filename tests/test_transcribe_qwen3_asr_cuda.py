@@ -487,7 +487,9 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
         self.assertEqual(record["anchor_run_characters"], len(texts))
         self.assertLessEqual(record["anchor_run_max_pair_delta_seconds"], 0.02)
 
-    def test_match_run_dominance_does_not_cascade_through_conflicts(self) -> None:
+    def test_match_run_dominance_does_not_cascade_or_drop_longer_weak_runs(
+        self,
+    ) -> None:
         first = ([(0, 0), (1, 1), (2, 2)], 3, 0.30)
         bridge = ([(2, 3), (3, 4), (4, 5), (5, 6)], 4, 0.20)
         last = ([(5, 7), (6, 8), (7, 9), (8, 10), (9, 11)], 5, 0.10)
@@ -496,7 +498,28 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
             [first, bridge, last]
         )
 
-        self.assertEqual(retained, [first, last])
+        self.assertEqual(retained, [first, bridge, last])
+
+    def test_dominance_discards_loose_repeated_phrase_contained_by_long_run(
+        self,
+    ) -> None:
+        strong = ([(572 + offset, offset) for offset in range(53)], 53, 0.04)
+        swapped_first = (
+            [(611 + offset, 45 + offset) for offset in range(5)],
+            5,
+            0.92,
+        )
+        swapped_second = (
+            [(617 + offset, 39 + offset) for offset in range(5)],
+            5,
+            1.0,
+        )
+
+        retained = cuda_worker._drop_strictly_dominated_match_runs(
+            [strong, swapped_first, swapped_second]
+        )
+
+        self.assertEqual(retained, [strong])
 
     def test_shorter_but_tighter_match_run_is_not_dominated(self) -> None:
         shorter = ([(0, 0), (1, 1), (2, 2)], 3, 0.04)
@@ -511,6 +534,187 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
             cuda_worker._validate_unique_monotonic_match_runs(
                 [run for run, _, _ in retained]
             )
+
+    def test_repairs_only_a_two_character_edge_reuse_across_the_seam(self) -> None:
+        weak_text = [chr(0x4E00 + index) for index in range(11)] + ["甲", "乙"]
+        strong_tail = [chr(0x5000 + index) for index in range(27)]
+        strong_text = ["甲", "乙", *strong_tail]
+        left_text = [*weak_text, *strong_text]
+        right_text = [*weak_text, *strong_tail]
+
+        weak_left_midpoints = [115.0 + index * 0.3 for index in range(13)]
+        weak_right_midpoints = [value + 0.04 for value in weak_left_midpoints]
+        strong_left_midpoints = [
+            118.5,
+            118.8,
+            *(119.0 + index * 0.12 for index in range(27)),
+        ]
+        left_midpoints = [*weak_left_midpoints, *strong_left_midpoints]
+        right_midpoints = [
+            *weak_right_midpoints,
+            *(value + 0.08 for value in strong_left_midpoints[2:]),
+        ]
+
+        def items(texts: list[str], midpoints: list[float]) -> list[dict[str, object]]:
+            return [
+                {"text": text, "start": midpoint - 0.02, "end": midpoint + 0.02}
+                for text, midpoint in zip(texts, midpoints, strict=True)
+            ]
+
+        left = items(left_text, left_midpoints)
+        right = items(right_text, right_midpoints)
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=120.0,
+            shared_start=114.0,
+            shared_end=123.0,
+        )
+
+        self.assertEqual(record["strategy"], "exact-time-anchor")
+        self.assertEqual(record["anchor_run_characters"], 27)
+        self.assertEqual(
+            "".join(str(item["text"]) for item in left[:left_stop])
+            + "".join(str(item["text"]) for item in right[right_start:]),
+            "".join(left_text),
+        )
+
+    def test_edge_reuse_repair_rejects_three_characters_or_loose_timing(self) -> None:
+        def overlap_items(count: int) -> list[tuple[int, dict[str, object]]]:
+            return [
+                (
+                    index,
+                    {
+                        "text": chr(0x5200 + index),
+                        "start": 117.0 + index * 0.1,
+                        "end": 117.04 + index * 0.1,
+                    },
+                )
+                for index in range(count)
+            ]
+
+        left_items = overlap_items(50)
+        right_items = overlap_items(50)
+        weak_run = [(index, index) for index in range(13)]
+        three_character_reuse = [
+            (13 + offset, 10 + offset) for offset in range(30)
+        ]
+        three_character_runs = [
+            (weak_run, 13, 0.04),
+            (three_character_reuse, 30, 0.20),
+        ]
+        self.assertEqual(
+            cuda_worker._repair_edge_reuse_match_runs(
+                three_character_runs,
+                left_items,
+                right_items,
+                seam_seconds=120.0,
+            ),
+            three_character_runs,
+        )
+
+        two_character_reuse = [
+            (13 + offset, 11 + offset) for offset in range(29)
+        ]
+        loose_runs = [
+            (weak_run, 13, 0.04),
+            (two_character_reuse, 29, 0.251),
+        ]
+        loose_right_items = copy.deepcopy(right_items)
+        for _, item in loose_right_items[13:]:
+            item["start"] = float(item["start"]) - 0.051
+            item["end"] = float(item["end"]) - 0.051
+        self.assertEqual(
+            cuda_worker._repair_edge_reuse_match_runs(
+                loose_runs,
+                left_items,
+                loose_right_items,
+                seam_seconds=120.0,
+            ),
+            loose_runs,
+        )
+
+    def test_edge_reuse_repair_rejects_crossing_or_nonspanning_evidence(self) -> None:
+        def overlap_items(count: int) -> list[tuple[int, dict[str, object]]]:
+            return [
+                (
+                    index,
+                    {
+                        "text": chr(0x5300 + index),
+                        "start": 117.0 + index * 0.1,
+                        "end": 117.04 + index * 0.1,
+                    },
+                )
+                for index in range(count)
+            ]
+
+        left_items = overlap_items(50)
+        right_items = overlap_items(50)
+        weak_run = [(index, index) for index in range(13)]
+        crossing_run = [(10 + offset, 13 + offset) for offset in range(29)]
+        crossing_runs = [
+            (weak_run, 13, 0.04),
+            (crossing_run, 29, 0.20),
+        ]
+        self.assertEqual(
+            cuda_worker._repair_edge_reuse_match_runs(
+                crossing_runs,
+                left_items,
+                right_items,
+                seam_seconds=120.0,
+            ),
+            crossing_runs,
+        )
+
+        edge_reuse_run = [(13 + offset, 11 + offset) for offset in range(29)]
+        nonspanning_runs = [
+            (weak_run, 13, 0.04),
+            (edge_reuse_run, 29, 0.20),
+        ]
+        self.assertEqual(
+            cuda_worker._repair_edge_reuse_match_runs(
+                nonspanning_runs,
+                left_items,
+                right_items,
+                seam_seconds=125.0,
+            ),
+            nonspanning_runs,
+        )
+
+    def test_edge_reuse_repair_does_not_infer_the_reverse_direction(self) -> None:
+        def overlap_items(count: int) -> list[tuple[int, dict[str, object]]]:
+            return [
+                (
+                    index,
+                    {
+                        "text": chr(0x5400 + index),
+                        "start": 117.0 + index * 0.1,
+                        "end": 117.04 + index * 0.1,
+                    },
+                )
+                for index in range(count)
+            ]
+
+        left_items = overlap_items(45)
+        right_items = overlap_items(45)
+        strong_run = [(index, index) for index in range(29)]
+        after_seam_weak_run = [
+            (27 + offset, 27 + offset) for offset in range(13)
+        ]
+        runs = [
+            (strong_run, 29, 0.20),
+            (after_seam_weak_run, 13, 0.04),
+        ]
+
+        self.assertEqual(
+            cuda_worker._repair_edge_reuse_match_runs(
+                runs,
+                left_items,
+                right_items,
+                seam_seconds=119.5,
+            ),
+            runs,
+        )
 
     def test_accepts_one_unique_tightly_aligned_two_character_run(self) -> None:
         left = [

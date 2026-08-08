@@ -733,13 +733,14 @@ def _match_runs_are_disjoint_and_ordered(
 def _drop_strictly_dominated_match_runs(
     runs: list[tuple[list[tuple[int, int]], int, float]],
 ) -> list[tuple[list[tuple[int, int]], int, float]]:
-    """Discard only weaker conflicts that cannot represent a better mapping.
+    """Discard only contained, loose conflicts with much stronger evidence.
 
-    A short common phrase can appear inside a much longer, tighter exact match and
-    again nearby.  Treating that incidental phrase as an equal alternative makes
-    valid speech fail closed.  It is safe to discard it only when a conflicting run
-    has strictly more exact characters and no worse maximum timestamp delta.  Equal
-    length, tighter, or otherwise incomparable conflicts remain ambiguous.
+    A short common phrase can appear twice inside a much longer, tighter exact match.
+    Treating the swapped phrase as an equal alternative makes valid speech fail
+    closed.  Discard it only when the strong run fully contains its left and right
+    index ranges, has at least twice as many characters, and is entirely inside the
+    strict 250 ms gate while the alternative is outside it.  Uncontained, equally
+    loose, and otherwise incomparable conflicts remain ambiguous.
     """
 
     def dominates(
@@ -748,10 +749,19 @@ def _drop_strictly_dominated_match_runs(
     ) -> bool:
         stronger_run, stronger_characters, stronger_delta = stronger
         weaker_run, weaker_characters, weaker_delta = weaker
+        stronger_left_first, stronger_right_first = stronger_run[0]
+        stronger_left_last, stronger_right_last = stronger_run[-1]
+        weaker_left_first, weaker_right_first = weaker_run[0]
+        weaker_left_last, weaker_right_last = weaker_run[-1]
         return (
             not _match_runs_are_disjoint_and_ordered(stronger_run, weaker_run)
-            and stronger_characters > weaker_characters
-            and stronger_delta <= weaker_delta
+            and weaker_delta > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+            and stronger_characters >= 2 * weaker_characters
+            and stronger_delta <= STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+            and stronger_left_first <= weaker_left_first
+            and stronger_left_last >= weaker_left_last
+            and stronger_right_first <= weaker_right_first
+            and stronger_right_last >= weaker_right_last
         )
 
     frontier_indices = {
@@ -770,6 +780,187 @@ def _drop_strictly_dominated_match_runs(
             dominates(runs[frontier_index], candidate)
             for frontier_index in frontier_indices
         )
+    ]
+
+
+def _match_run_pair_side(
+    run: list[tuple[int, int]],
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+    *,
+    seam_seconds: float,
+) -> str | None:
+    """Return the strict common side occupied by both copies of every item."""
+
+    pair_sides: list[str | None] = []
+    for left_index, right_index in run:
+        left_midpoint = alignment_item_midpoint(left_items[left_index][1])
+        right_midpoint = alignment_item_midpoint(right_items[right_index][1])
+        if left_midpoint < seam_seconds and right_midpoint < seam_seconds:
+            pair_sides.append("before")
+        elif left_midpoint > seam_seconds and right_midpoint > seam_seconds:
+            pair_sides.append("after")
+        else:
+            pair_sides.append(None)
+    if pair_sides and all(side == "before" for side in pair_sides):
+        return "before"
+    if pair_sides and all(side == "after" for side in pair_sides):
+        return "after"
+    return None
+
+
+def _match_run_characters(
+    run: list[tuple[int, int]],
+    left_items: list[tuple[int, dict[str, Any]]],
+) -> int:
+    return sum(
+        len(cleaned_alignment_text(str(left_items[left_index][1]["text"])))
+        for left_index, _ in run
+    )
+
+
+def _match_run_max_pair_delta(
+    run: list[tuple[int, int]],
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+) -> float:
+    return max(
+        abs(
+            alignment_item_midpoint(left_items[left_index][1])
+            - alignment_item_midpoint(right_items[right_index][1])
+        )
+        for left_index, right_index in run
+    )
+
+
+def _repair_edge_reuse_match_runs(
+    runs: list[tuple[list[tuple[int, int]], int, float]],
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+    *,
+    seam_seconds: float,
+) -> list[tuple[list[tuple[int, int]], int, float]]:
+    """Repair one uniquely provable 1-2 character edge reuse.
+
+    Two decodes can disagree about whether a short phrase was repeated.  When a
+    reliable run lies wholly before the seam and a much longer run crosses the seam
+    but reuses only that run's last one or two item characters, keep the short run
+    and trim the duplicated prefix from the long run.  Interior overlap, reverse
+    direction, pure crossing, larger trims, or multiple repairs remain ambiguous.
+    """
+
+    repairs: list[
+        tuple[int, int, tuple[list[tuple[int, int]], int, float]]
+    ] = []
+
+    def repaired_candidate(
+        weak_index: int,
+        strong_index: int,
+    ) -> tuple[list[tuple[int, int]], int, float] | None:
+        weak_run, weak_characters, _ = runs[weak_index]
+        strong_run, _, _ = runs[strong_index]
+        weak_side = _match_run_pair_side(
+            weak_run,
+            left_items,
+            right_items,
+            seam_seconds=seam_seconds,
+        )
+        if weak_side != "before":
+            return None
+
+        weak_first_left, weak_first_right = weak_run[0]
+        weak_last_left, weak_last_right = weak_run[-1]
+        strong_first_left, strong_first_right = strong_run[0]
+        strong_last_left, strong_last_right = strong_run[-1]
+        repaired_run: list[tuple[int, int]]
+        removed_run: list[tuple[int, int]]
+
+        # The strong mapping must continue after the weak mapping in both
+        # decodes; only a reused prefix at its weak-side edge is repairable.
+        if (
+            strong_first_left < weak_first_left
+            or strong_first_right < weak_first_right
+            or strong_last_left <= weak_last_left
+            or strong_last_right <= weak_last_right
+            or (
+                strong_first_left > weak_last_left
+                and strong_first_right > weak_last_right
+            )
+        ):
+            return None
+        trim = 0
+        while trim < len(strong_run) and (
+            strong_run[trim][0] <= weak_last_left
+            or strong_run[trim][1] <= weak_last_right
+        ):
+            trim += 1
+        if trim == 0 or trim == len(strong_run):
+            return None
+        removed_run = strong_run[:trim]
+        repaired_run = strong_run[trim:]
+
+        removed_characters = _match_run_characters(removed_run, left_items)
+        if not 1 <= removed_characters <= 2:
+            return None
+        if not _match_runs_are_disjoint_and_ordered(weak_run, repaired_run):
+            return None
+
+        repaired_characters = _match_run_characters(repaired_run, left_items)
+        repaired_delta = _match_run_max_pair_delta(
+            repaired_run,
+            left_items,
+            right_items,
+        )
+        if (
+            repaired_characters < 2 * weak_characters
+            or repaired_delta > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+        ):
+            return None
+
+        before_characters = 0
+        after_characters = 0
+        for pair in repaired_run:
+            pair_characters = _match_run_characters([pair], left_items)
+            pair_side = _match_run_pair_side(
+                [pair],
+                left_items,
+                right_items,
+                seam_seconds=seam_seconds,
+            )
+            if pair_side == "before":
+                before_characters += pair_characters
+            elif pair_side == "after":
+                after_characters += pair_characters
+        if (
+            before_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+            or after_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+        ):
+            return None
+        return repaired_run, repaired_characters, repaired_delta
+
+    for left_index, left_candidate in enumerate(runs):
+        for right_index, right_candidate in enumerate(
+            runs[left_index + 1 :],
+            left_index + 1,
+        ):
+            if _match_runs_are_disjoint_and_ordered(
+                left_candidate[0], right_candidate[0]
+            ):
+                continue
+            for weak_index, strong_index in (
+                (left_index, right_index),
+                (right_index, left_index),
+            ):
+                repaired = repaired_candidate(weak_index, strong_index)
+                if repaired is not None:
+                    repairs.append((weak_index, strong_index, repaired))
+
+    if len(repairs) != 1:
+        return runs
+    _, strong_index, repaired = repairs[0]
+    return [
+        repaired if index == strong_index else candidate
+        for index, candidate in enumerate(runs)
     ]
 
 
@@ -883,6 +1074,12 @@ def seam_crossover(
         )
     reliable_match_runs = _drop_strictly_dominated_match_runs(
         reliable_match_runs
+    )
+    reliable_match_runs = _repair_edge_reuse_match_runs(
+        reliable_match_runs,
+        left_overlap,
+        right_overlap,
+        seam_seconds=seam_seconds,
     )
     if reliable_match_runs:
         try:
