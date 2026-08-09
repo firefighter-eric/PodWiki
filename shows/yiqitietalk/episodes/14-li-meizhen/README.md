@@ -16,7 +16,7 @@ title: "李美珍：我是你们的马拉松运动员李美珍"
 navigation_title: "李美珍 · 训练低谷、赛季规划与生活"
 catalog_keyword: "赛季规划"
 published_at: "2026-06-07T12:27:56.635Z"
-duration_ms: 6424000
+duration_ms: 6424800
 language: zh-CN
 participants:
   - id: li-meizhen
@@ -24,7 +24,7 @@ participants:
     role: guest
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "14 李美珍：我是你们的马拉松运动员李美珍"
     url: https://www.xiaoyuzhoufm.com/episode/6a25611c7444b5722234d445
     preferred: true

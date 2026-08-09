@@ -33,7 +33,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "11 申加升、巴斯（李鹏程）：F4初出道，顶级耐力运动员的大聊天"
     url: https://www.xiaoyuzhoufm.com/episode/69c9b88eb977fb2c4790ec42
     preferred: true

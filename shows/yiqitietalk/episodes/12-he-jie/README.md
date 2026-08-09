@@ -16,7 +16,7 @@ title: "何杰：亚运会、全运会马拉松男子冠军，两次男子马拉
 navigation_title: "何杰 · 国家纪录、大赛心态与职业转型"
 catalog_keyword: "大赛心态"
 published_at: "2026-04-07T11:00:00.000Z"
-duration_ms: 6936000
+duration_ms: 6936300
 language: zh-CN
 participants:
   - id: he-jie
@@ -24,7 +24,7 @@ participants:
     role: guest
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "12 何杰：亚运会、全运会马拉松男子冠军，两次男子马拉松国家纪录创造者"
     url: https://www.xiaoyuzhoufm.com/episode/69d4aacee2c8be3155905460
     preferred: true

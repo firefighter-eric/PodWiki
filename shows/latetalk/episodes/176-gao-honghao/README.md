@@ -16,7 +16,7 @@ title: "姚顺雨，来到腾讯 300 天【晚点聊LateTalk】"
 navigation_title: "高洪浩 · 腾讯混元 300 天的组织变化"
 catalog_keyword: "腾讯混元"
 published_at: "2026-08-01T10:46:49+08:00"
-duration_ms: 5968000
+duration_ms: 5967083
 language: zh-CN
 participants:
   - id: cheng-manqi
@@ -187,6 +187,6 @@ Bilibili 匿名元数据未提供平台章节。
 - [x] 确认姚顺雨是讨论对象而非本期嘉宾
 - [x] 检查匿名访问可见的平台字幕轨并记录边界
 - [x] 获取公开音轨并完成编码、时长、大小和哈希校验
-- [x] 生成 Qwen3-ASR 机器逐字稿及完整 lineage
+- [x] 生成 Qwen3-ASR 机器逐字稿及旧版产物哈希链
 - [x] 基于完整机器稿形成独立总结草稿
 - [ ] 核听关键片段、校对专有名词并核查高影响事实

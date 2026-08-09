@@ -88,15 +88,7 @@ describe("metadata routes", () => {
     for (const show of shows) {
       expect(urls).toContain(`${productionUrl}${show.href}`);
     }
-    for (const episode of episodes) {
-      const summaryEntry = entries.find((entry) => entry.url === `${productionUrl}${episode.href}`);
-      const transcriptEntry = entries.find(
-        (entry) => entry.url === `${productionUrl}${episode.href}/transcript`,
-      );
-      expect(summaryEntry?.lastModified).toBe(episode.publishedDate);
-      expect(transcriptEntry?.lastModified).toBe(episode.publishedDate);
-    }
-    expect(entries.every((entry) => entry.lastModified !== undefined)).toBe(true);
+    expect(entries.every((entry) => entry.lastModified === undefined)).toBe(true);
   });
 
   it("allows crawling and advertises the production sitemap", () => {

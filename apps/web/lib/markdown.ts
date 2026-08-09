@@ -10,6 +10,8 @@ import { findNearestTranscriptSegment, timestampToId } from "@/lib/content";
 import { getTranscriptHref } from "@/lib/reader-routes";
 import type { TranscriptSegment } from "@/lib/types";
 
+const extendedSummaryMarker = /^##\s+(5\s*分钟读完|整体总结)\s*$/mu;
+
 function linkTimestampReferences(
   markdown: string,
   episodeHref: string,
@@ -122,11 +124,21 @@ export function getCorePoints(markdown: string): CorePoint[] {
     .filter((point) => point.title);
 }
 
+export function getCorePointDetails(markdown: string): string {
+  const section = getMarkdownSection(markdown, "核心观点");
+  const detailsStart = section.search(/^###\s+/mu);
+  return detailsStart < 0 ? "" : section.slice(detailsStart).trim();
+}
+
 export function getExtendedSummary(markdown: string): string {
-  const marker = /^##\s+5\s*分钟读完\s*$/mu;
-  const index = markdown.search(marker);
+  const index = markdown.search(extendedSummaryMarker);
   if (index < 0) return "";
   return markdown.slice(index).trim();
+}
+
+export function getExtendedSummaryTitle(markdown: string): string | undefined {
+  const title = extendedSummaryMarker.exec(markdown)?.[1];
+  return title?.startsWith("5") ? "5 分钟读完" : title;
 }
 
 export function getFirstTimestamp(markdown: string): string | undefined {

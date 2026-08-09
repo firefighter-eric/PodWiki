@@ -6,9 +6,9 @@
 
 ## 环境准备
 
-项目使用 Python 3.12+ 和 `uv`。媒体获取还要求系统可执行文件 `ffmpeg`、
+项目使用 Python 3.12 和 `uv 0.9.16`。媒体获取还要求系统可执行文件 `ffmpeg`、
 `ffprobe`；YouTube 处理另外要求 Deno 或 Node.js。正式本地 Qwen ASR 支持两条
-明确路径：Apple Silicon（macOS `arm64`）上的 MLX，以及 Windows x86-64 上的
+明确路径：Apple Silicon（macOS 14+ `arm64`）上的 MLX，以及 Windows x86-64 上的
 NVIDIA CUDA。其他平台可以整理元数据和已有文本，不能静默换用远端或付费 ASR。
 前端最终门禁需要 Node.js 和 npm。
 
@@ -26,11 +26,12 @@ npm --version
 只处理 Bilibili 且不运行前端时，Deno/Node.js 与 npm 不是下载阶段的必需项；
 但交付完整仓库变更前仍需在具备 Node.js/npm 的环境运行 Web 门禁。
 
-`asr`（MLX）与 `asr-cuda` 依赖组互斥，不能使用 `uv sync --all-groups`。
-Apple Silicon/MLX 先同步对应依赖：
+`asr`（MLX）与 `asr-cuda` extras 互斥。媒体和目标 ASR extra 在同一次 locked
+命令中同步，避免后一次安装卸载前一次依赖；不能组合两个互斥的 ASR extras。
+Apple Silicon/MLX 使用：
 
 ```bash
-uv sync --group asr
+uv sync --locked --extra media --extra asr
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
 ```
 
@@ -46,7 +47,6 @@ PowerShell 不提供 POSIX 的 `env`、`export` 或反斜杠续行。先在当�
 
 ```powershell
 $env:UV_CACHE_DIR = ".cache/uv"
-$env:HF_ENDPOINT = "https://hf-mirror.com"
 uv run --no-sync python <script> <arguments>
 ```
 
@@ -55,41 +55,42 @@ Windows/CUDA 建议使用被 Git 忽略的独立环境。首次创建并锁定�
 ```powershell
 uv venv --python 3.12 .cache/venvs/qwen-cuda
 . .\.cache\venvs\qwen-cuda\Scripts\Activate.ps1
-uv sync --active --group asr-cuda --locked
+uv sync --active --locked --extra media --extra asr-cuda
 ```
 
 正式 worker 直接使用
 `.cache/venvs/qwen-cuda/Scripts/python.exe`，不要在长任务运行期间同步依赖。
 
 本页余下 `env UV_CACHE_DIR=.cache/uv ...` 示例在 PowerShell 中均省略该前缀，沿用上面已
-设置的 `$env:UV_CACHE_DIR`；`export HF_ENDPOINT=...` 同理只需设置一次。
-
-在中国大陆首次下载 Hugging Face 模型前，为当前终端设置镜像：
-
-```bash
-export HF_ENDPOINT=https://hf-mirror.com
-```
+设置的 `$env:UV_CACHE_DIR`。模型下载默认使用 Hugging Face 官方入口；仅当官方入口在
+当前网络不可达时，才临时设置 `HF_ENDPOINT` 镜像。镜像只是传输入口，不是上游真实性
+证明；完整 commit pin、每个下载 payload 的 metadata/ETag 与重新计算的 SHA-256
+只负责锁定和复现取得的本地 snapshot，来源信任仍以官方 Hub 为准。新的
+`*-pinned-v2` 目录不得与缺少逐文件 metadata 的旧 snapshot/symlink cache 混用。
 
 下载 Apple Silicon/MLX 使用的 Qwen3-ASR 和 ForcedAligner：
 
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
   mlx-community/Qwen3-ASR-1.7B-8bit \
-  --local-dir .cache/models/qwen3-asr-1.7b-8bit
+  --revision a8379a2e2f9e313c9292cdf1af4055ab56d50d55 \
+  --local-dir .cache/models/qwen3-asr-1.7b-8bit-pinned-v2
 
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
   mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
-  --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit
+  --revision 0e1a68e91d815300c7c9754b2a7639378b23db15 \
+  --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit-pinned-v2
 ```
 
 Windows/CUDA 使用官方模型：
 
 ```powershell
-$env:HF_ENDPOINT = "https://huggingface.co"
 & .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B `
-  --local-dir .cache/models/Qwen3-ASR-1.7B
+  --revision 7278e1e70fe206f11671096ffdd38061171dd6e5 `
+  --local-dir .cache/models/Qwen3-ASR-1.7B-pinned-v2
 & .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B `
-  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B
+  --revision c7cbfc2048c462b0d63a45797104fc9db3ad62b7 `
+  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2
 ```
 
 ## 脚本一览
@@ -103,6 +104,7 @@ $env:HF_ENDPOINT = "https://huggingface.co"
 | `scripts/process_qwen3_asr_batch.py` | 串行处理一个或多个已缓存单集 | 每集完整 Qwen 产物与日志 |
 | `scripts/transcribe_audio.py` | 生成 MLX Whisper 对比基线 | Whisper `raw.json` |
 | `scripts/validate.py` | 校验内容、来源和 ASR 产物链 | 终端校验结果 |
+| `scripts/audit_correction_migration.py` | 重放按集修正规则并校验旧产物等价性 | JSON 审计报告 |
 
 ## 获取公开音轨
 
@@ -151,6 +153,20 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 
 已有音频默认不会被替换；只有明确需要覆盖时才使用 `--overwrite`。
 
+已有音频缺 sidecar 时，只有已从独立记录核对出原音频 SHA-256 才能恢复：
+
+```bash
+env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+  --url <canonical-url> \
+  --output .cache/media/<show-id>/<episode-folder>/source.m4a \
+  --metadata-only --repair-metadata \
+  --expected-sha256 <64位小写SHA-256>
+```
+
+该模式拒绝已存在 sidecar、错误 hash、来源身份漂移和访问状态变化；它不修改音频，
+不伪造未知历史 `acquired_at`，只记录实际 `verified_at` / `recovered_at` 与 legacy
+恢复标记。普通下载使用可恢复 transaction journal 成对提交音频和 sidecar。
+
 小宇宙输入必须是单集页，播客栏目页不能直接下载：
 
 ```bash
@@ -194,15 +210,15 @@ Apple Silicon/MLX 上的中文单集使用 Qwen3-ASR 1.7B 8-bit 和
 Qwen3-ForcedAligner 0.6B 8-bit：
 
 ```bash
-env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
+env HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/transcribe_qwen3_asr.py \
   --input .cache/media/<show-id>/<episode-folder>/source.m4a \
   --output shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/raw.json \
   --aligned-output shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/aligned.json \
   --model mlx-community/Qwen3-ASR-1.7B-8bit \
-  --model-path .cache/models/qwen3-asr-1.7b-8bit \
+  --model-path .cache/models/qwen3-asr-1.7b-8bit-pinned-v2 \
   --aligner mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
-  --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit \
+  --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit-pinned-v2 \
   --language Chinese --no-verbose
 ```
 
@@ -212,7 +228,11 @@ Windows/CUDA 正式流程优先使用下文的批处理入口。它会调用
 `qwen-asr-transformers`。直接调用 worker 只用于单集诊断；同样必须提供本地
 输入、raw 与 aligned 输出，并遵守恢复/覆盖语义。
 
-有效的 `raw.json` 是转写检查点：缺少对齐产物时会从对齐阶段恢复；有效且身份匹配的 raw/aligned 会直接跳过。只有显式传入 `--retranscribe` 或 `--realign` 才会替换相应产物。
+有效的 v2 `raw.json` 是转写检查点：缺少对齐产物时会从对齐阶段恢复；有效且身份匹配的
+raw/aligned 会直接跳过。markerless legacy 只允许完整链被校验并只读跳过；markerless
+raw 缺 aligned、CUDA pending raw 需要 reconciliation，或请求 `--realign` 时都会在加载
+运行时前失败，并提示 `--retranscribe`。不能用当前模型缓存给历史 raw 回填身份；只有
+已有 v2 raw 才可 align-only/`--realign`，且必须同时验证 pinned model/aligner 本地路径。
 
 ## 渲染逐字稿
 
@@ -233,6 +253,40 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/render_asr_transcript
 手工渲染 CUDA 产物时，把 `--engine` 与 `--model` 分别改为
 `qwen-asr-transformers` 和 `Qwen/Qwen3-ASR-1.7B`。正常批处理会自动传入正确值。
 
+不带替换参数时，输入 hash、engine/model 和 transcript hash 全部匹配的现有 pair 会
+直接 no-op；不匹配则失败关闭。只有已明确限定单集时才使用 `--rerender`。如需术语
+修正，在该集 `asr/corrections.json` 写入：
+
+```json
+{
+  "schema_version": 1,
+  "episode_id": "<show-id>:<episode-key>",
+  "version": 1,
+  "input_asr_sha256": "<aligned.json SHA-256>",
+  "rules": [
+    {
+      "id": "verified-name",
+      "match": "机器误写",
+      "replacement": "核实名称",
+      "reason": "publisher metadata and human review",
+      "case_sensitive": true,
+      "expected_hits": 1
+    }
+  ]
+}
+```
+
+map 必须绑定精确 `input_asr_sha256`。规则按顺序执行 literal replacement，不接受未
+登记 regex。每条规则必须声明正数
+`expected_hits`；实际命中变化会失败关闭。refined 会记录 map 路径/SHA-256、版本、
+完整规则、预期命中和实际命中数。批处理自动读取该固定路径；成对写入通过
+transaction journal 恢复，不能留下新旧 refined/Markdown 混合状态。
+
+旧 refined 不批量回写 map provenance，避免仅为迁移元数据改变 14 集 selected artifact
+哈希。CI 运行 `python scripts/audit_correction_migration.py`，以 map 内 aligned SHA 和
+56 次预期命中重放 14 集，并逐字节校验现有 run Markdown、逐字段校验 segments/blocks；
+新渲染则直接把 map SHA、版本、预期/实际命中写入 refined。
+
 四份 Qwen 产物全部校验通过后，才把 run Markdown 作为单集根目录的正式
 `transcript.<language>.md`，并同步更新单集 README 的来源、哈希和 workflow 状态。
 
@@ -243,12 +297,12 @@ Metal 统一内存或 CUDA 显存状态。重复传入 `--episode` 可以限制�
 Apple Silicon/MLX 示例：
 
 ```bash
-env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
+env HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
   --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
-  --model-path .cache/models/qwen3-asr-1.7b-8bit \
-  --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit
+  --model-path .cache/models/qwen3-asr-1.7b-8bit-pinned-v2 \
+  --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit-pinned-v2
 ```
 
 Windows/CUDA 示例：
@@ -257,8 +311,8 @@ Windows/CUDA 示例：
 & .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
   --backend cuda `
   --episode shows/<show-id>/episodes/<episode-folder> `
-  --model-path .cache/models/Qwen3-ASR-1.7B `
-  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B `
+  --model-path .cache/models/Qwen3-ASR-1.7B-pinned-v2 `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2 `
   --chunk-context 5
 ```
 
@@ -276,8 +330,9 @@ coverage guard 会先汇总全部 chunk 的 owned alignment，再把全局并集
 或有发布者章节、节目说明等证据确认是告别后的片尾时，才可对单个显式 episode 使用
 `--realign --final-outro-exemption-seconds <seconds>`。该 CUDA-only 参数默认 `0`、最大 30 秒，
 只豁免最后 core 的 trailing gap；必须在单集处理记录或 PR 说明中保留证据和实际秒数。
-参数会写入 raw/aligned options 并受 raw SHA-256 lineage 约束。旧 raw 缺少字段时普通 resume
-失败关闭；显式 `--realign` 会在其余 lineage 完整匹配且新对齐通过后安全升级该字段。
+参数会写入 raw/aligned options 并受 raw SHA-256 lineage 约束。已有 v2 raw 缺少字段时
+普通 resume 失败关闭；显式 `--realign` 会在其余 v2 lineage 完整匹配且新对齐通过后
+安全升级该字段。markerless legacy raw 不适用该迁移，必须 `--retranscribe`。
 
 `--backend cuda` 默认使用 `cuda:0`、`bfloat16`、SDPA、120 秒 chunk、batch size 1，
 并按“ASR 模型完成并释放，再加载 ForcedAligner”的顺序控制显存。本机 NVIDIA RTX
@@ -301,13 +356,13 @@ A2000 8GB Laptop GPU 已验证适配这些默认值；只有目标 GPU 确实不
 Windows/CUDA 命令追加相同的两个语言参数即可：
 
 ```bash
-env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
+env HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
   --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --language English --transcript-language en \
-  --model-path .cache/models/qwen3-asr-1.7b-8bit \
-  --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit
+  --model-path .cache/models/qwen3-asr-1.7b-8bit-pinned-v2 \
+  --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit-pinned-v2
 ```
 
 ## MLX Whisper 基线
@@ -322,10 +377,10 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/transcribe_audio.py \
   --language zh
 ```
 
-当前 Whisper worker 可能把引擎返回的 `NaN` 写入 raw JSON，而内容标准要求跟踪
-的 JSON 为严格 JSON。正常新增单集不要创建、选择或提升新的 Whisper run；保留
-已有基线即可。只有用户明确要求实验对比时才运行，并把新结果留在 `.cache/`，
-同时在交付中说明该限制。
+Whisper worker 会在写入前拒绝 `NaN`、`Infinity` 或不可序列化值，并且拒绝任何不在
+`.cache/benchmarks/` 下的输出路径。既有两份历史 raw 中的 `avg_logprob: NaN` 已
+规范为 JSON `null`，没有改动文本或时间戳。新结果仍只用于显式实验对比，不得选择、
+提升或提交为正式 run。
 
 ## 校验
 
@@ -339,18 +394,21 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python -m unittest discover -s tests
 
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py
+env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/audit_correction_migration.py
 ```
 
 首次 checkout 或 lockfile 变化后先安装锁定依赖：
 
 ```bash
 npm --prefix apps/web ci
+npm --prefix apps/web exec -- playwright install --with-deps chromium
 ```
 
 然后确认内容能够被前端严格加载并完成生产构建：
 
 ```bash
 npm --prefix apps/web run check
+npm --prefix apps/web audit --audit-level=high
 ```
 
 最后还应运行 `git diff --check`，检查 `git status --short`，并确认根 README 的三列节目介绍表中，播客名称链接已核实的首选发布者页面，节目页链接本地节目 README。根 README 的单集表格采用“标题、访谈人物、播客名称、日期、总结、逐字稿”六列，节目 README 的单集表格仍采用“标题、播客名称、日期、总结链接、逐字稿链接”五列，且两处内容已经同步。根表的访谈人物来自单集 front matter 中 `role: guest` 的参与者；多位嘉宾使用顿号分隔。

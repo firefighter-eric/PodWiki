@@ -123,6 +123,22 @@ def parse_args() -> argparse.Namespace:
         help="Replace an existing local audio file",
     )
     parser.add_argument(
+        "--repair-metadata",
+        action="store_true",
+        help=(
+            "Rebuild a missing sidecar for an existing audio file after "
+            "anonymous source verification; requires --metadata-only and "
+            "--expected-sha256"
+        ),
+    )
+    parser.add_argument(
+        "--expected-sha256",
+        help=(
+            "Previously verified lowercase SHA-256 for the existing audio used "
+            "by --repair-metadata"
+        ),
+    )
+    parser.add_argument(
         "--verbose",
         action=argparse.BooleanOptionalAction,
         default=True,
@@ -579,11 +595,11 @@ def parse_xiaoyuzhou_public_track_value(
             default_automatic=default_automatic,
         )
     if isinstance(value, list):
-        tracks: list[dict[str, Any]] = []
+        container_tracks: list[dict[str, Any]] = []
         for item in value:
             if not isinstance(item, (str, dict)):
                 raise ValueError(f"Xiaoyuzhou {source_field} track list is malformed")
-            tracks.extend(
+            container_tracks.extend(
                 parse_xiaoyuzhou_public_track_value(
                     item,
                     source_field=source_field,
@@ -593,7 +609,7 @@ def parse_xiaoyuzhou_public_track_value(
                     depth=depth + 1,
                 )
             )
-        return tracks
+        return container_tracks
     if not isinstance(value, dict):
         raise ValueError(f"Xiaoyuzhou {source_field} metadata is malformed")
 
@@ -1122,7 +1138,7 @@ def bilibili_api_info(platform_metadata: dict[str, Any]) -> dict[str, Any]:
     subtitle = subtitle if isinstance(subtitle, dict) else {}
     tracks = subtitle.get("tracks")
     tracks = tracks if isinstance(tracks, list) else []
-    subtitles = {
+    subtitles: dict[str, list[Any]] = {
         str(track["language"]): []
         for track in tracks
         if isinstance(track, dict) and track.get("language")
@@ -1233,11 +1249,9 @@ def bilibili_public_audio(
         raise PermissionError("Bilibili public playurl returned no anonymous audio")
     selected = max(
         public_audio,
-        key=lambda candidate: (
-            candidate.get("bandwidth")
-            if isinstance(candidate.get("bandwidth"), (int, float))
-            else 0
-        ),
+        key=lambda candidate: float(candidate.get("bandwidth", 0))
+        if isinstance(candidate.get("bandwidth"), (int, float))
+        else 0.0,
     )
     base_url = selected.get("baseUrl") or selected.get("base_url")
     backups = selected.get("backupUrl") or selected.get("backup_url") or []
@@ -1380,7 +1394,9 @@ def exclusive_download_lock(path: Path):
                 stream.flush()
             stream.seek(0)
             try:
-                msvcrt.locking(stream.fileno(), msvcrt.LK_NBLCK, 1)
+                msvcrt.locking(  # type: ignore[attr-defined]
+                    stream.fileno(), msvcrt.LK_NBLCK, 1  # type: ignore[attr-defined]
+                )
             except OSError as error:
                 raise FileExistsError(
                     f"another download is already using this output: {path}"
@@ -1399,7 +1415,9 @@ def exclusive_download_lock(path: Path):
         finally:
             if os.name == "nt":
                 stream.seek(0)
-                msvcrt.locking(stream.fileno(), msvcrt.LK_UNLCK, 1)
+                msvcrt.locking(  # type: ignore[attr-defined]
+                    stream.fileno(), msvcrt.LK_UNLCK, 1  # type: ignore[attr-defined]
+                )
             else:
                 fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
     finally:
@@ -1573,6 +1591,8 @@ def _download_xiaoyuzhou_public_audio_locked(
             "User-Agent": "Mozilla/5.0 PodWiki/0.1",
         }
         if partial_size:
+            if resume_etag is None:
+                raise ValueError("partial download checkpoint has no strong ETag")
             headers["Range"] = f"bytes={partial_size}-"
             headers["If-Range"] = resume_etag
         request = Request(media_url, headers=headers)
@@ -1691,6 +1711,8 @@ def _download_xiaoyuzhou_public_audio_locked(
         except RetryableMediaDownloadError as error:
             last_error = error
             if is_strong_etag(response_etag):
+                if not isinstance(response_etag, str):
+                    raise AssertionError("strong ETag validator accepted a non-string")
                 write_partial_checkpoint(
                     partial_path=partial_path,
                     checkpoint_path=checkpoint_path,
@@ -1904,6 +1926,262 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def acquisition_transaction_path(
+    *, output_path: Path, metadata_output: Path
+) -> Path:
+    identity = "\0".join(
+        sorted((output_path.resolve().as_posix(), metadata_output.resolve().as_posix()))
+    )
+    suffix = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:16]
+    return metadata_output.resolve().parent / (
+        f".podwiki-acquire-{suffix}.transaction.json"
+    )
+
+
+def promote_acquisition_artifact(temporary_path: Path, target_path: Path) -> None:
+    temporary_path.replace(target_path)
+
+
+def validate_acquisition_temporary_path(
+    *, label: str, temporary: Path, target: Path
+) -> None:
+    expected_prefix = f".podwiki-{target.name}."
+    if temporary == target:
+        raise ValueError(
+            f"acquisition transaction {label} temporary path equals its target"
+        )
+    if temporary.parent != target.parent:
+        raise ValueError(
+            f"acquisition transaction {label} temporary path is outside the target directory"
+        )
+    if not (
+        temporary.name.startswith(expected_prefix)
+        and temporary.name.endswith(".tmp")
+    ):
+        raise ValueError(
+            f"acquisition transaction {label} temporary filename is invalid"
+        )
+
+
+def prepare_acquisition_media_temporary(
+    *, staged_audio: Path, output_path: Path
+) -> Path:
+    descriptor, temporary_name = tempfile.mkstemp(
+        dir=output_path.parent,
+        prefix=f".podwiki-{output_path.name}.",
+        suffix=".tmp",
+    )
+    os.close(descriptor)
+    temporary = Path(temporary_name)
+    temporary.unlink()
+    try:
+        try:
+            os.link(staged_audio, temporary)
+        except OSError:
+            shutil.copyfile(staged_audio, temporary)
+        with temporary.open("rb+") as stream:
+            stream.flush()
+            os.fsync(stream.fileno())
+        if sha256_file(temporary) != sha256_file(staged_audio):
+            raise ValueError("prepared acquisition media does not match staged audio")
+    except BaseException:
+        temporary.unlink(missing_ok=True)
+        raise
+    return temporary
+
+
+def recover_acquisition_transaction(
+    *, output_path: Path, metadata_output: Path
+) -> bool:
+    transaction_path = acquisition_transaction_path(
+        output_path=output_path,
+        metadata_output=metadata_output,
+    )
+    if not transaction_path.is_file():
+        return False
+    transaction = json.loads(transaction_path.read_text(encoding="utf-8"))
+    if not isinstance(transaction, dict) or transaction.get("schema_version") != 1:
+        raise ValueError(f"invalid acquisition transaction: {transaction_path}")
+    if transaction.get("kind") != "podwiki-acquisition-transaction":
+        raise ValueError(f"invalid acquisition transaction kind: {transaction_path}")
+    artifacts = transaction.get("artifacts")
+    if not isinstance(artifacts, dict) or set(artifacts) != {"media", "metadata"}:
+        raise ValueError(f"invalid acquisition transaction artifacts: {transaction_path}")
+    expected_targets = {
+        "media": output_path.resolve(),
+        "metadata": metadata_output.resolve(),
+    }
+    validated_artifacts: list[tuple[str, Path, Path, str]] = []
+    for label in ("media", "metadata"):
+        entry = artifacts.get(label)
+        if not isinstance(entry, dict):
+            raise ValueError(f"invalid acquisition transaction {label} entry")
+        target = Path(str(entry.get("target"))).resolve()
+        temporary = Path(str(entry.get("temporary"))).resolve()
+        expected_sha256 = entry.get("sha256")
+        if target != expected_targets[label]:
+            raise ValueError(f"acquisition transaction {label} target changed")
+        if not isinstance(expected_sha256, str) or re.fullmatch(
+            r"[0-9a-f]{64}", expected_sha256
+        ) is None:
+            raise ValueError(f"acquisition transaction {label} hash is invalid")
+        validate_acquisition_temporary_path(
+            label=label,
+            temporary=temporary,
+            target=target,
+        )
+        validated_artifacts.append((label, temporary, target, expected_sha256))
+
+    for label, temporary, target, expected_sha256 in validated_artifacts:
+        if target.is_file() and sha256_file(target) == expected_sha256:
+            temporary.unlink(missing_ok=True)
+            continue
+        if not temporary.is_file() or sha256_file(temporary) != expected_sha256:
+            raise ValueError(
+                f"cannot recover {label} from acquisition transaction: "
+                f"{transaction_path}"
+            )
+        promote_acquisition_artifact(temporary, target)
+        target.chmod(0o644)
+    transaction_path.unlink()
+    return True
+
+
+def commit_acquired_media_pair(
+    *,
+    staged_audio: Path,
+    output_path: Path,
+    metadata_output: Path,
+    document: dict[str, Any],
+) -> None:
+    if staged_audio.resolve() == output_path.resolve():
+        raise ValueError("staged and final audio paths must be distinct")
+    if not staged_audio.is_file():
+        raise FileNotFoundError(f"staged audio does not exist: {staged_audio}")
+    metadata_output.parent.mkdir(parents=True, exist_ok=True)
+    metadata_text = (
+        json.dumps(document, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    media_temporary: Path | None = None
+    metadata_temporary: Path | None = None
+    transaction_path = acquisition_transaction_path(
+        output_path=output_path,
+        metadata_output=metadata_output,
+    )
+    transaction_written = False
+    try:
+        media_temporary = prepare_acquisition_media_temporary(
+            staged_audio=staged_audio,
+            output_path=output_path,
+        )
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            newline="\n",
+            dir=metadata_output.parent,
+            prefix=f".podwiki-{metadata_output.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as stream:
+            stream.write(metadata_text)
+            stream.flush()
+            os.fsync(stream.fileno())
+            metadata_temporary = Path(stream.name)
+        write_json_atomically(
+            transaction_path,
+            {
+                "schema_version": 1,
+                "kind": "podwiki-acquisition-transaction",
+                "artifacts": {
+                    "media": {
+                        "target": output_path.resolve().as_posix(),
+                        "temporary": media_temporary.resolve().as_posix(),
+                        "sha256": sha256_file(media_temporary),
+                    },
+                    "metadata": {
+                        "target": metadata_output.resolve().as_posix(),
+                        "temporary": metadata_temporary.resolve().as_posix(),
+                        "sha256": hashlib.sha256(
+                            metadata_text.encode("utf-8")
+                        ).hexdigest(),
+                    },
+                },
+            },
+        )
+        transaction_written = True
+        promote_acquisition_artifact(media_temporary, output_path)
+        media_temporary = None
+        output_path.chmod(0o644)
+        staged_audio.unlink()
+        promote_acquisition_artifact(metadata_temporary, metadata_output)
+        metadata_temporary = None
+        metadata_output.chmod(0o644)
+        transaction_path.unlink()
+        transaction_written = False
+    finally:
+        if not transaction_written:
+            if metadata_temporary is not None:
+                metadata_temporary.unlink(missing_ok=True)
+            if media_temporary is not None and media_temporary.is_file():
+                media_temporary.unlink()
+
+
+def validate_repair_request(
+    *,
+    output_path: Path,
+    metadata_output: Path,
+    expected_sha256: str | None,
+) -> str:
+    """Validate an explicit, fail-closed orphan-sidecar recovery request."""
+    if not isinstance(expected_sha256, str) or re.fullmatch(
+        r"[0-9a-f]{64}", expected_sha256
+    ) is None:
+        raise ValueError(
+            "--repair-metadata requires --expected-sha256 as 64 lowercase hex digits"
+        )
+    if not output_path.is_file():
+        raise FileNotFoundError(
+            f"--repair-metadata requires an existing audio file: {output_path}"
+        )
+    if metadata_output.exists():
+        raise FileExistsError(
+            "--repair-metadata only rebuilds a missing sidecar; the metadata output "
+            f"already exists: {metadata_output}"
+        )
+    actual_sha256 = sha256_file(output_path)
+    if actual_sha256 != expected_sha256:
+        raise ValueError(
+            "existing audio SHA-256 does not match --expected-sha256; "
+            "metadata was not repaired"
+        )
+    return actual_sha256
+
+
+def repair_existing_media(
+    *,
+    output_path: Path,
+    expected_sha256: str,
+    info: dict[str, Any],
+    platform_metadata: dict[str, Any],
+) -> dict[str, Any]:
+    """Re-probe an already hash-bound audio file without claiming when it was acquired."""
+    if sha256_file(output_path) != expected_sha256:
+        raise ValueError(
+            "existing audio changed after repair preflight; metadata was not repaired"
+        )
+    media = probe_audio(output_path)
+    if media.get("sha256") != expected_sha256:
+        raise ValueError("ffprobe media SHA-256 differs from --expected-sha256")
+    validate_media_duration(
+        media,
+        info=info,
+        platform_metadata=platform_metadata,
+    )
+    validate_public_enclosure_size(media, platform_metadata=platform_metadata)
+    return media
+
+
 def validate_reusable_media(
     *, output_path: Path, metadata_output: Path, canonical_url: str
 ) -> None:
@@ -1939,6 +2217,8 @@ def validate_reusable_source_identity(
     if not isinstance(existing_source, dict):
         raise ValueError("existing media metadata has no source identity")
     platform = current_source.get("platform")
+    if not isinstance(platform, str):
+        raise ValueError("current source has no platform identity")
     identity_fields = {
         "bilibili": ("bvid", "aid", "cid", "page"),
         "youtube": ("id",),
@@ -2026,9 +2306,21 @@ def main() -> int:
     validate_output_path(output_path)
     if metadata_output == output_path:
         raise ValueError("metadata output must not overwrite the audio output")
+    repair_metadata = bool(getattr(args, "repair_metadata", False))
+    expected_sha256 = getattr(args, "expected_sha256", None)
     if args.metadata_only and args.overwrite:
         raise ValueError("--overwrite cannot be combined with --metadata-only")
+    if repair_metadata and not args.metadata_only:
+        raise ValueError("--repair-metadata requires --metadata-only")
+    if repair_metadata and args.overwrite:
+        raise ValueError("--repair-metadata cannot be combined with --overwrite")
+    if expected_sha256 is not None and not repair_metadata:
+        raise ValueError("--expected-sha256 is only valid with --repair-metadata")
     with exclusive_acquisition_locks([output_path, metadata_output]):
+        recover_acquisition_transaction(
+            output_path=output_path,
+            metadata_output=metadata_output,
+        )
         return acquire_media_locked(
             args=args,
             platform=platform,
@@ -2046,6 +2338,8 @@ def acquire_media_locked(
     output_path: Path,
     metadata_output: Path,
 ) -> int:
+    repair_metadata = bool(getattr(args, "repair_metadata", False))
+    expected_sha256 = getattr(args, "expected_sha256", None)
     existing_document = read_existing_metadata(
         metadata_output=metadata_output,
         canonical_url=canonical_url,
@@ -2055,13 +2349,22 @@ def acquire_media_locked(
     output_exists = output_path.exists()
     if output_exists and not output_path.is_file():
         raise FileExistsError(f"audio output exists but is not a file: {output_path}")
-    if output_exists and not args.overwrite:
+    if repair_metadata:
+        expected_sha256 = validate_repair_request(
+            output_path=output_path,
+            metadata_output=metadata_output,
+            expected_sha256=expected_sha256,
+        )
+    elif output_exists and not args.overwrite:
         validate_reusable_media(
             output_path=output_path,
             metadata_output=metadata_output,
             canonical_url=canonical_url,
         )
-    media_reused = not args.metadata_only and output_exists and not args.overwrite
+    media_reused = (
+        repair_metadata
+        or (not args.metadata_only and output_exists and not args.overwrite)
+    )
     download_requested = not args.metadata_only and (args.overwrite or not output_exists)
     if download_requested and platform != "xiaoyuzhou" and shutil.which("ffmpeg") is None:
         raise SystemExit("ffmpeg is required to extract downloaded audio")
@@ -2089,11 +2392,11 @@ def acquire_media_locked(
     DownloadError: type[Exception] = Exception
     if platform != "xiaoyuzhou":
         try:
-            from yt_dlp import YoutubeDL
-            from yt_dlp.utils import DownloadError
+            from yt_dlp import YoutubeDL  # type: ignore[no-redef]
+            from yt_dlp.utils import DownloadError  # type: ignore[no-redef]
         except ImportError as error:
             raise SystemExit(
-                "yt-dlp is unavailable; run `uv sync --group media` before workers"
+                "yt-dlp is unavailable; install the project with `uv sync --extra media`"
             ) from error
 
     staging_directory: Path | None = None
@@ -2195,24 +2498,33 @@ def acquire_media_locked(
         canonical_url=canonical_url,
         platform_metadata=platform_metadata,
     )
-    if output_exists and not args.overwrite:
+    if output_exists and not args.overwrite and not repair_metadata:
         if not isinstance(existing_document, dict):
             raise ValueError("existing audio has no reusable source metadata")
         validate_reusable_source_identity(
             existing_document=existing_document,
             current_source=current_source,
         )
-    refreshed_media = (
-        refresh_existing_media(
+    refreshed_media: dict[str, Any] | None
+    if repair_metadata:
+        if not isinstance(expected_sha256, str):
+            raise AssertionError("repair preflight did not bind an expected SHA-256")
+        refreshed_media = repair_existing_media(
+            output_path=output_path,
+            expected_sha256=expected_sha256,
+            info=info,
+            platform_metadata=platform_metadata,
+        )
+    elif args.metadata_only:
+        refreshed_media = refresh_existing_media(
             output_path=output_path,
             metadata_output=metadata_output,
             canonical_url=canonical_url,
             info=info,
             platform_metadata=platform_metadata,
         )
-        if args.metadata_only
-        else None
-    )
+    else:
+        refreshed_media = None
     if download_requested:
         if not download_output.is_file():
             raise FileNotFoundError(
@@ -2228,14 +2540,7 @@ def acquire_media_locked(
             downloaded_media,
             platform_metadata=platform_metadata,
         )
-        download_output.replace(output_path)
         downloaded_media["path"] = output_path.as_posix()
-        if staging_directory is not None:
-            try:
-                staging_directory.rmdir()
-                staging_directory.parent.rmdir()
-            except OSError:
-                pass
     inspected_at = utc_now()
     document: dict[str, Any] = {
         "schema_version": 1,
@@ -2250,14 +2555,24 @@ def acquire_media_locked(
             document["media"] = refreshed_media
             document["media_reused"] = True
             document["verified_at"] = inspected_at
-            if (
+            if repair_metadata:
+                document["recovered_at"] = inspected_at
+                document["recovery"] = {
+                    "method": "verified-existing-audio-v1",
+                    "expected_sha256": expected_sha256,
+                    "acquired_at_status": "unknown-legacy",
+                }
+            elif (
                 isinstance(existing_document, dict)
                 and existing_document.get("acquired_at") is not None
             ):
                 document["acquired_at"] = existing_document["acquired_at"]
     if not args.metadata_only:
-        if not output_path.is_file():
-            raise FileNotFoundError(f"yt-dlp did not produce expected output: {output_path}")
+        committed_or_staged_path = download_output if download_requested else output_path
+        if not committed_or_staged_path.is_file():
+            raise FileNotFoundError(
+                f"yt-dlp did not produce expected output: {committed_or_staged_path}"
+            )
         media = downloaded_media or probe_audio(output_path)
         validate_media_duration(
             media,
@@ -2280,7 +2595,21 @@ def acquire_media_locked(
             )
         )
 
-    write_json_atomically(metadata_output, document)
+    if download_requested:
+        commit_acquired_media_pair(
+            staged_audio=download_output,
+            output_path=output_path,
+            metadata_output=metadata_output,
+            document=document,
+        )
+        if staging_directory is not None:
+            try:
+                staging_directory.rmdir()
+                staging_directory.parent.rmdir()
+            except OSError:
+                pass
+    else:
+        write_json_atomically(metadata_output, document)
     print(render_json_for_stdout(document, encoding=sys.stdout.encoding))
     return 0
 

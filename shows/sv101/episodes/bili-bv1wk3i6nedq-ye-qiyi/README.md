@@ -16,7 +16,7 @@ title: "对话叶奇意：“寻找”月之暗面杨植麟、中国两代AI、�
 navigation_title: "叶奇意 · AI 人才迁徙、Kimi 投资与 AGI"
 catalog_keyword: "Kimi"
 published_at: "2026-07-28T15:49:07+08:00"
-duration_ms: 4224000
+duration_ms: 4223744
 language: zh-CN
 participants:
   - id: ye-qiyi

@@ -1,9 +1,16 @@
 .DS_Store
 .cache/
 .venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
 __pycache__/
 *.py[cod]
 .podwiki-*.tmp
+.podwiki-*.transaction.json
+
+.env*
+!.env.example
 
 *.aac
 *.flac

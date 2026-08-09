@@ -16,7 +16,7 @@ title: "杨春龙：我的过去与我的未来"
 navigation_title: "杨春龙 · 离队转型、越野尝试与未来"
 catalog_keyword: "体制外转型"
 published_at: "2026-04-26T10:00:00.000Z"
-duration_ms: 5298000
+duration_ms: 5298200
 language: zh-CN
 participants:
   - id: yang-chunlong
@@ -24,7 +24,7 @@ participants:
     role: guest
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "13 杨春龙：我的过去与我的未来"
     url: https://www.xiaoyuzhoufm.com/episode/69eda0281e94ae69212b1c74
     preferred: true

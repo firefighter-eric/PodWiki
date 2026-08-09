@@ -16,7 +16,7 @@ title: "张德顺：山里跑出来的天才女子正在向下一座山进发"
 navigation_title: "张德顺 · 天赋训练、东京突破与全国纪录"
 catalog_keyword: "全国纪录"
 published_at: "2026-01-17T14:26:57.710Z"
-duration_ms: 4640000
+duration_ms: 4640200
 language: zh-CN
 participants:
   - id: zhang-deshun
@@ -27,7 +27,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "3 张德顺：山里跑出来的天才女子正在向下一座山进发"
     url: https://www.xiaoyuzhoufm.com/episode/696b98a8109824f9e1050609
     preferred: true

@@ -16,7 +16,7 @@ title: "姚妙：在奔跑中寻找"
 navigation_title: "姚妙 · 路野双修、商业合作与百公里"
 catalog_keyword: "路野双修"
 published_at: "2026-01-31T12:42:36.706Z"
-duration_ms: 5181000
+duration_ms: 5181600
 language: zh-CN
 participants:
   - id: yao-miao
@@ -24,7 +24,7 @@ participants:
     role: guest
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "5 姚妙：在奔跑中寻找"
     url: https://www.xiaoyuzhoufm.com/episode/697df6e62fc7f49d0925c9e4
     preferred: true

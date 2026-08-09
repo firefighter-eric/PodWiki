@@ -16,7 +16,7 @@ title: "吴健：运动员与迈胜创始人"
 navigation_title: "吴健 · 运动营养创业与品牌方法"
 catalog_keyword: "运动营养"
 published_at: "2026-07-16T11:11:30.906Z"
-duration_ms: 5499000
+duration_ms: 5499700
 language: zh-CN
 participants:
   - id: wu-jian
@@ -24,7 +24,7 @@ participants:
     role: guest
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "18 吴健：运动员与迈胜创始人"
     url: https://www.xiaoyuzhoufm.com/episode/6a58b864016dcc7e05433391
     preferred: true

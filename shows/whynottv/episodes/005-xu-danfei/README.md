@@ -11,7 +11,7 @@ numbering:
   status: verified
   checked_at: 2026-08-07
   source: publisher-rss
-title: "Danfei Xu：人类数据，行为克隆，机器人GPT-3，全栈，EgoMimic，遥操作，UMI，斯坦福 | WhynotTV Podcast #5"
+title: "Danfei Xu：人类数据，行为克隆，机器人GPT-3，全栈，EgoMimic，遥操作，UMI，斯坦福 | WhynotTV Podcast"
 navigation_title: "徐丹飞 · 人类数据、行为克隆与机器人学习"
 catalog_keyword: "EgoMimic"
 published_at: "2026-05-01T19:46:59+08:00"
@@ -28,6 +28,7 @@ participants:
 sources:
   - platform: bilibili
     kind: video
+    title: "Danfei Xu：人类数据，行为克隆，机器人GPT-3，全栈，EgoMimic，遥操作，UMI，斯坦福 | WhynotTV Podcast #5"
     url: https://www.bilibili.com/video/BV1usRgBEESe/
     preferred: true
     identifiers:
@@ -50,7 +51,7 @@ summary:
     engine: mlx-audio
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     selection_status: selected
-    sha256: f7c65735ed89679ed34bebf15d85165bd247cc6a1a719a14c17c7120f09ace93
+    sha256: 67c4d0d2cd45f3c352082f454f9fd45d811a886fed36d390ac23474982963130
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: no-anonymous-track-login-indicated

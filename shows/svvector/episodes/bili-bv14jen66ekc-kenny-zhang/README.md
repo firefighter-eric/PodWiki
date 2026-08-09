@@ -17,7 +17,7 @@ title: "硅谷坐标x璞林资本Kenny Zhang：Neocloud崛起背后的供需博�
 navigation_title: "Kenny Zhang · Neocloud 与 AI 基建重构"
 catalog_keyword: "Neocloud"
 published_at: "2026-06-05T03:31:05+08:00"
-duration_ms: 5245802
+duration_ms: 5245803
 language: zh-CN
 participants:
   - id: cao-qingyun
@@ -210,7 +210,7 @@ last_verified_at: 2026-08-08
 - [x] 核对发布者官方小宇宙 feed，确认内容已收录但没有明确正式期号
 - [x] 检查匿名访问可见的平台字幕轨并记录登录提示边界
 - [x] 获取独立音轨并完成编码、时长、大小和哈希校验
-- [x] 使用 Qwen3-ASR 与 ForcedAligner 生成中文机器逐字稿及完整 lineage
+- [x] 使用 Qwen3-ASR 与 ForcedAligner 生成中文机器逐字稿及旧版产物哈希链
 - [x] 基于完整机器逐字稿生成结构化中文总结草稿
 - [ ] 校对说话人、公司名、数字、交易关系和基础设施术语
 - [ ] 核听关键片段并独立核查高影响外部事实

@@ -15,7 +15,7 @@ title: "对游凯超3小时访谈：开源Infra、和模型Co-design 、“如�
 navigation_title: "游凯超 · vLLM、开源治理与模型—Infra 协同"
 catalog_keyword: "vLLM"
 published_at: "2026-07-28T08:00:00+08:00"
-duration_ms: 10826000
+duration_ms: 10748821
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -32,11 +32,14 @@ participants:
           status: current
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/6a66ed17a3fec224d5a3f744
     preferred: false
     identifiers:
+      eid: 6a66ed17a3fec224d5a3f744
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/lg-fhgPMq4r-8L_-5_YRimxgkIms.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 6a66ed17a3fec224d5a3f744
   - platform: bilibili

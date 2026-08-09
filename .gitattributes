@@ -1,3 +1,17 @@
+* text=auto eol=lf
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+*.aac binary
+*.flac binary
+*.m4a binary
+*.mp3 binary
+*.mp4 binary
+*.opus binary
+*.wav binary
+
 shows/**/asr/**/*.json text eol=lf
 shows/**/transcript.*.md text eol=lf whitespace=-blank-at-eol
 templates/episode/transcript.*.md text eol=lf whitespace=-blank-at-eol

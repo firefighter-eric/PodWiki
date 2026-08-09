@@ -16,7 +16,7 @@ title: "Momenta IPO 后再访曹旭东：就是想做没有尽头的 AI【晚点
 navigation_title: "曹旭东 · Momenta 十年与物理 AI"
 catalog_keyword: "Momenta"
 published_at: "2026-07-24T18:31:09+08:00"
-duration_ms: 7401000
+duration_ms: 7400943
 language: zh-CN
 participants:
   - id: cheng-manqi
@@ -182,6 +182,6 @@ last_verified_at: 2026-08-07
 - [x] 核对 BVID、aid、cid、page、正式期号与参与者
 - [x] 检查匿名访问可见的平台字幕轨并记录边界
 - [x] 获取公开音轨并完成编码、时长、大小和哈希校验
-- [x] 生成 Qwen3-ASR 机器逐字稿及完整 lineage
+- [x] 生成 Qwen3-ASR 机器逐字稿及旧版产物哈希链
 - [x] 基于完整机器稿形成独立总结草稿
 - [ ] 核听关键片段、校对专有名词并核查高影响事实

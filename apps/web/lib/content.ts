@@ -6,7 +6,6 @@ import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
 import { getTranscriptHref } from "@/lib/reader-routes";
-import { getWebVisibleSummaryMarkdown } from "@/lib/summary-visibility";
 import type {
   BilingualTranscript,
   BilingualTranscriptSegment,
@@ -19,11 +18,15 @@ import type {
   TranscriptTranslationMetadata,
 } from "@/lib/types";
 
-const profileCheckedAtSchema = z.preprocess((value) => {
+const yamlDateSchema = z.preprocess((value) => {
   if (!(value instanceof Date)) return value;
   const isoValue = value.toISOString();
   return isoValue.endsWith("T00:00:00.000Z") ? isoValue.slice(0, 10) : value;
 }, z.iso.date());
+
+const stableSlugSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/u);
+const sha256Schema = z.string().regex(/^[0-9a-f]{64}$/u);
+const xiaoyuzhouIdSchema = z.string().regex(/^[0-9a-f]{24}$/u);
 
 const participantAffiliationSchema = z
   .object({
@@ -31,7 +34,7 @@ const participantAffiliationSchema = z
     title: z.string().min(1).optional(),
     status: z.enum(["current", "former"]),
   })
-  .passthrough();
+  .strict();
 
 const participantEducationSchema = z
   .object({
@@ -39,7 +42,7 @@ const participantEducationSchema = z
     credential: z.string().min(1).optional(),
     field: z.string().min(1).optional(),
   })
-  .passthrough();
+  .strict();
 
 const participantProfileSchema = z
   .object({
@@ -47,9 +50,9 @@ const participantProfileSchema = z
     bio: z.string().min(1).optional(),
     affiliations: z.array(participantAffiliationSchema).optional().default([]),
     education: z.array(participantEducationSchema).optional().default([]),
-    checked_at: profileCheckedAtSchema,
+    checked_at: yamlDateSchema,
   })
-  .passthrough()
+  .strict()
   .transform(({ checked_at, ...profile }) => ({
     ...profile,
     checkedAt: checked_at,
@@ -57,31 +60,172 @@ const participantProfileSchema = z
 
 const participantSchema = z
   .object({
-    id: z.string().optional(),
-    name: z.string(),
-    role: z.string().optional(),
-    aliases: z.array(z.string()).optional(),
+    id: stableSlugSchema,
+    name: z.string().min(1),
+    role: z.enum(["guest", "participant", "host"]),
+    aliases: z.array(z.string().min(1)).optional(),
     profile: participantProfileSchema.optional(),
   })
-  .passthrough();
+  .strict();
+
+const sourceIdentifiersSchema = z
+  .object({
+    aid: z.string().regex(/^[1-9]\d*$/u).optional(),
+    apple_podcasts_id: z.string().min(1).optional(),
+    bvid: z.string().regex(/^BV[0-9A-Za-z]+$/u).optional(),
+    cid: z.string().regex(/^[1-9]\d*$/u).optional(),
+    eid: xiaoyuzhouIdSchema.optional(),
+    episode_id: z.string().min(1).optional(),
+    episode_number: z.string().min(1).optional(),
+    feed_url: z.url().optional(),
+    guid: z.string().min(1).optional(),
+    media_id: z.string().regex(/^[0-9a-f]{24}\/[^/]+\.m4a$/u).optional(),
+    mid: z.string().regex(/^[1-9]\d*$/u).optional(),
+    page: z.number().int().positive().optional(),
+    page_id: z.string().min(1).optional(),
+    pid: xiaoyuzhouIdSchema.optional(),
+    rss_guid: z.string().min(1).optional(),
+    show_id: z.string().min(1).optional(),
+  })
+  .strict();
 
 const sourceSchema = z
   .object({
-    platform: z.string().optional(),
-    kind: z.string().optional(),
-    url: z.string(),
+    platform: z.enum(["apple-podcasts", "bilibili", "rss", "website", "xiaoyuzhou"]),
+    kind: z.enum([
+      "audio",
+      "channel",
+      "episode",
+      "feed",
+      "feed-item",
+      "podcast",
+      "show",
+      "video",
+      "video-channel",
+    ]),
+    title: z.string().min(1).optional(),
+    external_id: z.union([z.string().min(1), z.number()]).optional(),
+    url: z.url().refine((url) => url.startsWith("https://"), "source URL must use HTTPS"),
     preferred: z.boolean().optional(),
+    identifiers: sourceIdentifiersSchema.optional(),
   })
-  .passthrough();
+  .strict()
+  .superRefine((source, context) => {
+    const bilibiliVideo = /^https:\/\/www\.bilibili\.com\/video\/(BV[0-9A-Za-z]+)\/$/u
+      .exec(source.url);
+    if (source.platform === "bilibili" && source.kind === "video" && !bilibiliVideo) {
+      context.addIssue({
+        code: "custom",
+        path: ["url"],
+        message: "Bilibili video URL must be canonical",
+      });
+    }
+    if (bilibiliVideo) {
+      if (source.platform !== "bilibili") {
+        context.addIssue({
+          code: "custom",
+          path: ["platform"],
+          message: "Bilibili video URL must use platform bilibili",
+        });
+      }
+      if (source.kind !== "video") {
+        context.addIssue({
+          code: "custom",
+          path: ["kind"],
+          message: "Bilibili video source must use kind video",
+        });
+      }
+      const identifiers = source.identifiers;
+      for (const field of ["bvid", "aid", "cid", "page"] as const) {
+        if (identifiers?.[field] === undefined) {
+          context.addIssue({
+            code: "custom",
+            path: ["identifiers", field],
+            message: `Bilibili video source requires identifiers.${field}`,
+          });
+        }
+      }
+      if (bilibiliVideo[1] !== identifiers?.bvid) {
+        context.addIssue({
+          code: "custom",
+          path: ["url"],
+          message: "Bilibili video URL must be canonical and match identifiers.bvid",
+        });
+      }
+    }
+
+    const xiaoyuzhouEpisode = /^https:\/\/www\.xiaoyuzhoufm\.com\/episode\/([0-9a-f]{24})$/u
+      .exec(source.url);
+    if (source.platform === "xiaoyuzhou" && source.kind === "episode" && !xiaoyuzhouEpisode) {
+      context.addIssue({
+        code: "custom",
+        path: ["url"],
+        message: "Xiaoyuzhou episode URL must be canonical",
+      });
+    }
+    if (xiaoyuzhouEpisode) {
+      if (source.platform !== "xiaoyuzhou") {
+        context.addIssue({
+          code: "custom",
+          path: ["platform"],
+          message: "Xiaoyuzhou episode URL must use platform xiaoyuzhou",
+        });
+      }
+      if (source.kind !== "episode") {
+        context.addIssue({
+          code: "custom",
+          path: ["kind"],
+          message: "Xiaoyuzhou episode source must use kind episode",
+        });
+      }
+      const identifiers = source.identifiers;
+      for (const field of ["eid", "pid", "media_id"] as const) {
+        if (identifiers?.[field] === undefined) {
+          context.addIssue({
+            code: "custom",
+            path: ["identifiers", field],
+            message: `Xiaoyuzhou episode source requires identifiers.${field}`,
+          });
+        }
+      }
+      const urlEid = xiaoyuzhouEpisode[1];
+      if (!urlEid || urlEid !== identifiers?.eid) {
+        context.addIssue({
+          code: "custom",
+          path: ["url"],
+          message: "Xiaoyuzhou episode URL must be canonical and match identifiers.eid",
+        });
+      }
+      if (identifiers?.media_id && identifiers.pid) {
+        if (!identifiers.media_id.startsWith(`${identifiers.pid}/`)) {
+          context.addIssue({
+            code: "custom",
+            path: ["identifiers", "media_id"],
+            message: "Xiaoyuzhou identifiers.media_id must start with identifiers.pid",
+          });
+        }
+      }
+    }
+  });
 
 const transcriptProvenanceSchema = z
   .object({
-    path: z.string(),
-    engine: z.string().optional(),
-    model: z.string().optional(),
-    selection_status: z.string().optional(),
+    path: z.string().min(1),
+    engine: z.string().min(1).optional(),
+    model: z.string().min(1).optional(),
+    selection_status: z.enum(["selected", "superseded"]).optional(),
+    sha256: sha256Schema.optional(),
+  });
+
+const summarySourceTranscriptSchema = z
+  .object({
+    path: z.string().min(1),
+    engine: z.string().min(1),
+    model: z.string().min(1),
+    selection_status: z.enum(["selected", "superseded"]),
+    sha256: sha256Schema,
   })
-  .passthrough();
+  .strict();
 
 const transcriptTranslationSchema = z
   .object({
@@ -92,14 +236,50 @@ const transcriptTranslationSchema = z
     alignment: z.literal("segment"),
     status: z.enum(["machine", "edited", "reviewed"]),
     generated_at: z.union([z.string().datetime({ offset: true }), z.date()]),
-    source_sha256: z.string().regex(/^[0-9a-f]{64}$/u),
-    sha256: z.string().regex(/^[0-9a-f]{64}$/u),
+    source_sha256: sha256Schema,
+    sha256: sha256Schema,
   })
-  .passthrough();
+  .strict();
 
 const episodeTranscriptSchema = transcriptProvenanceSchema.extend({
   translations: z.array(transcriptTranslationSchema).optional().default([]),
 });
+
+function isQwenAsr(engine: string, model: string): boolean {
+  return engine.includes("qwen") || model.includes("Qwen3-ASR");
+}
+
+const asrRunSchema = z
+  .object({
+    id: z.string().min(1),
+    selection_status: z.enum(["candidate", "selected", "superseded", "rejected"]),
+    engine: z.string().min(1),
+    model: z.string().min(1),
+    aligner: z.string().min(1).optional(),
+    generated_at: z.union([z.string().datetime({ offset: true }), z.date()]).optional(),
+    artifacts: z
+      .object({
+        raw: z.string().min(1),
+        aligned: z.string().min(1).optional(),
+        refined: z.string().min(1),
+        transcript: z.string().min(1),
+      })
+      .strict(),
+    options: z.record(z.string(), z.unknown()).optional(),
+    quality: z.record(z.string(), z.unknown()).optional(),
+    performance: z.record(z.string(), z.unknown()).optional(),
+    benchmark: z.unknown().optional(),
+  })
+  .strict()
+  .superRefine((run, context) => {
+    if (isQwenAsr(run.engine, run.model) && !run.artifacts.aligned) {
+      context.addIssue({
+        code: "custom",
+        path: ["artifacts", "aligned"],
+        message: "Qwen ASR runs require an aligned artifact",
+      });
+    }
+  });
 
 const workflowSchema = z.object({
   metadata: z.enum(["draft", "verified"]),
@@ -112,7 +292,7 @@ const workflowSchema = z.object({
     "reviewed",
     "blocked",
   ]),
-});
+}).strict();
 
 type EpisodeWorkflow = z.infer<typeof workflowSchema>;
 
@@ -129,24 +309,45 @@ export function isEpisodeWebPublishable(workflow: EpisodeWorkflow): boolean {
     && webTranscriptStatuses.has(workflow.transcript);
 }
 
+function getExpectedNavigationPerson(
+  participants: z.infer<typeof participantSchema>[],
+): string | undefined {
+  for (const role of ["guest", "participant", "host"] as const) {
+    const names = participants
+      .filter((participant) => participant.role === role)
+      .map((participant) => participant.name);
+    if (names.length > 0) return names.join("、");
+  }
+  return undefined;
+}
+
 const episodeSchema = z
   .object({
+    schema_version: z.literal(1),
+    kind: z.literal("episode"),
     id: z.string().min(1),
     show_id: z.string().regex(/^[a-z0-9]+$/u),
-    episode_key: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/u),
-    episode_number: z.number().nullable().optional().default(null),
-    release_type: z.enum(["regular", "special", "bonus", "trailer"]).default("regular"),
-    slug: z.string().optional(),
-    title: z.string(),
-    navigation_title: z.string(),
+    episode_key: stableSlugSchema,
+    episode_number: z.number().int().positive().nullable(),
+    release_type: z.enum(["regular", "special", "bonus", "trailer"]),
+    slug: stableSlugSchema,
+    numbering: z.object({
+      status: z.enum(["verified", "not-in-publisher-feed", "unknown"]),
+      checked_at: yamlDateSchema,
+      source: z.string().min(1),
+      url: z.url().optional(),
+      note: z.string().min(1).optional(),
+    }).strict(),
+    title: z.string().min(1),
+    navigation_title: z.string().min(1).max(40),
     catalog_keyword: z.string().min(1).max(20).refine(
       (value) => value === value.trim(),
       "catalog_keyword must not have leading or trailing whitespace",
     ),
     published_at: z.string().datetime({ offset: true }),
     duration_ms: z.number().int().positive(),
-    language: z.string(),
-    participants: z.array(participantSchema).default([]),
+    language: z.string().min(1),
+    participants: z.array(participantSchema).min(1),
     sources: z.array(sourceSchema).min(1).refine(
       (sources) => sources.filter((source) => source.preferred === true).length === 1,
       "sources must contain exactly one preferred source",
@@ -154,13 +355,14 @@ const episodeSchema = z
     workflow: workflowSchema,
     summary: z
       .object({
-        path: z.string(),
-        source_transcript: transcriptProvenanceSchema.nullable().optional(),
+        path: z.string().min(1),
+        language: z.string().min(1).optional(),
+        source_transcript: summarySourceTranscriptSchema.nullable().optional(),
       })
-      .passthrough(),
+      .strict(),
     transcript: episodeTranscriptSchema,
+    asr_runs: z.array(asrRunSchema).optional().default([]),
   })
-  .passthrough()
   .superRefine((value, context) => {
     const expectedId = `${value.show_id}:${value.episode_key}`;
     if (value.id !== expectedId) {
@@ -170,14 +372,131 @@ const episodeSchema = z
         message: `episode id must equal ${expectedId}`,
       });
     }
+    const participantIds = new Set<string>();
+    value.participants.forEach((participant, index) => {
+      if (participantIds.has(participant.id)) {
+        context.addIssue({
+          code: "custom",
+          path: ["participants", index, "id"],
+          message: `participant id must be unique within the episode: ${participant.id}`,
+        });
+      }
+      participantIds.add(participant.id);
+    });
+    const expectedNavigationPerson = getExpectedNavigationPerson(value.participants);
+    const navigationPerson = value.navigation_title.split(" · ", 1)[0];
+    if (expectedNavigationPerson && navigationPerson !== expectedNavigationPerson) {
+      context.addIssue({
+        code: "custom",
+        path: ["navigation_title"],
+        message: `navigation_title person must equal ${expectedNavigationPerson}`,
+      });
+    }
+    if (value.episode_number === null && value.numbering.status === "verified") {
+      context.addIssue({
+        code: "custom",
+        path: ["numbering", "status"],
+        message: "numbering.status cannot be verified when episode_number is null",
+      });
+    }
+    if (value.episode_number !== null && value.numbering.status !== "verified") {
+      context.addIssue({
+        code: "custom",
+        path: ["numbering", "status"],
+        message: "numbering.status must be verified when episode_number is present",
+      });
+    }
+    if (isEpisodeWebPublishable(value.workflow) && !value.summary.source_transcript) {
+      context.addIssue({
+        code: "custom",
+        path: ["summary", "source_transcript"],
+        message: "publishable episodes require complete summary.source_transcript provenance",
+      });
+    }
+    const selectedRuns = value.asr_runs.filter((run) => run.selection_status === "selected");
+    if (isEpisodeWebPublishable(value.workflow) && selectedRuns.length !== 1) {
+      context.addIssue({
+        code: "custom",
+        path: ["asr_runs"],
+        message: "publishable episodes require exactly one selected ASR run",
+      });
+    }
+    const selectedRun = selectedRuns[0];
+    if (selectedRun) {
+      if (selectedRun.engine !== value.transcript.engine) {
+        context.addIssue({
+          code: "custom",
+          path: ["transcript", "engine"],
+          message: "transcript.engine must match the selected ASR run",
+        });
+      }
+      if (selectedRun.model !== value.transcript.model) {
+        context.addIssue({
+          code: "custom",
+          path: ["transcript", "model"],
+          message: "transcript.model must match the selected ASR run",
+        });
+      }
+    }
+    const summarySource = value.summary.source_transcript;
+    if (summarySource?.selection_status === "selected" && summarySource.path !== value.transcript.path) {
+      context.addIssue({
+        code: "custom",
+        path: ["summary", "source_transcript", "path"],
+        message: "selected summary.source_transcript must match transcript.path",
+      });
+    }
+    if (summarySource?.selection_status === "superseded" && summarySource.path === value.transcript.path) {
+      context.addIssue({
+        code: "custom",
+        path: ["summary", "source_transcript", "path"],
+        message: "superseded summary.source_transcript must differ from transcript.path",
+      });
+    }
+    if (summarySource) {
+      const matchingRuns = value.asr_runs.filter((run) => (
+        run.engine === summarySource.engine
+        && run.model === summarySource.model
+        && run.selection_status === summarySource.selection_status
+      ));
+      if (matchingRuns.length !== 1) {
+        context.addIssue({
+          code: "custom",
+          path: ["summary", "source_transcript"],
+          message: "summary.source_transcript must match exactly one ASR run",
+        });
+      }
+      if (
+        summarySource.selection_status === "superseded"
+        && matchingRuns[0]?.artifacts.transcript !== summarySource.path
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["summary", "source_transcript", "path"],
+          message: "superseded summary source must match its ASR run transcript artifact",
+        });
+      }
+    }
   });
 
 const showSchema = z
   .object({
-    id: z.string(),
-    title: z.string(),
+    schema_version: z.literal(1),
+    kind: z.literal("show"),
+    id: z.string().regex(/^[a-z0-9]+$/u),
+    title: z.string().min(1),
+    aliases: z.array(z.string().min(1)),
+    language: z.string().min(1),
+    status: z.enum(["active", "inactive", "archived"]),
+    formats: z.array(z.string().min(1)).min(1),
+    topics: z.array(z.string().min(1)).min(1),
+    sources: z.array(sourceSchema).min(1).refine(
+      (sources) => sources.filter((source) => source.preferred === true).length === 1,
+      "show sources must contain exactly one preferred source",
+    ),
+    last_verified_at: yamlDateSchema,
   })
-  .passthrough();
+  .strict();
 
 const showOrder = [
   "zhangxiaojun",
@@ -314,6 +633,7 @@ function normalizeProvenance(
     engine: value.engine,
     model: value.model,
     selectionStatus: value.selection_status,
+    sha256: value.sha256,
   };
 }
 
@@ -629,6 +949,23 @@ function resolveNamedDirectory(parent: string, name: string): string | undefined
   return resolved;
 }
 
+function assertEpisodeDirectoryContract(
+  metadata: z.infer<typeof episodeSchema>,
+  folder: string,
+  label: string,
+) {
+  if (metadata.slug !== folder) {
+    throw new Error(
+      `${label} slug ${JSON.stringify(metadata.slug)} does not match directory ${JSON.stringify(folder)}`,
+    );
+  }
+  if (folder !== metadata.episode_key && !folder.startsWith(`${metadata.episode_key}-`)) {
+    throw new Error(
+      `${label} directory ${JSON.stringify(folder)} must start with episode_key ${JSON.stringify(metadata.episode_key)}`,
+    );
+  }
+}
+
 const loadShowById = cache(async (showId: string): Promise<ShowCatalogData | undefined> => {
   const showsRoot = path.join(findRepositoryRoot(), "shows");
   const showRoot = resolveNamedDirectory(showsRoot, showId);
@@ -732,6 +1069,7 @@ const loadCatalog = cache(async (): Promise<ContentCatalog> => {
 
       const readme = readMarkdown(readmePath);
       const metadata = episodeSchema.parse(readme.data);
+      assertEpisodeDirectoryContract(metadata, folder, `Episode ${metadata.id}`);
       if (metadata.show_id !== showId) {
         throw new Error(
           `Episode ${metadata.id} declares show ${metadata.show_id} but is stored under ${showId}`,
@@ -757,11 +1095,25 @@ const loadCatalog = cache(async (): Promise<ContentCatalog> => {
         metadata.transcript.path,
         `${metadata.id} transcript path`,
       );
+      const summarySource = metadata.summary.source_transcript;
+      if (!summarySource) {
+        throw new Error(`Missing summary source transcript provenance for ${metadata.id}`);
+      }
+      const summarySourceTranscriptPath = resolveEpisodeAsset(
+        episodeRoot,
+        summarySource.path,
+        `${metadata.id} summary source transcript path`,
+      );
       if (!fs.existsSync(summaryPath)) {
         throw new Error(`Missing summary for ${metadata.id}: ${summaryPath}`);
       }
       if (!fs.existsSync(transcriptPath)) {
         throw new Error(`Missing transcript for ${metadata.id}: ${transcriptPath}`);
+      }
+      if (!fs.existsSync(summarySourceTranscriptPath)) {
+        throw new Error(
+          `Missing summary source transcript for ${metadata.id}: ${summarySourceTranscriptPath}`,
+        );
       }
 
       const summary = readMarkdown(summaryPath);
@@ -821,6 +1173,7 @@ const loadEpisodeByLocation = cache(async (
 
   const readme = readMarkdown(readmePath);
   const metadata = episodeSchema.parse(readme.data);
+  assertEpisodeDirectoryContract(metadata, folder, `Episode ${metadata.id}`);
   if (metadata.show_id !== showId) return undefined;
   if (!isEpisodeWebPublishable(metadata.workflow)) return undefined;
 
@@ -834,6 +1187,15 @@ const loadEpisodeByLocation = cache(async (
     metadata.transcript.path,
     `${metadata.id} transcript path`,
   );
+  const summarySource = metadata.summary.source_transcript;
+  if (!summarySource) {
+    throw new Error(`Missing summary source transcript provenance for ${metadata.id}`);
+  }
+  const summarySourceTranscriptPath = resolveEpisodeAsset(
+    episodeRoot,
+    summarySource.path,
+    `${metadata.id} summary source transcript path`,
+  );
   // Runtime search assets are explicitly included by next.config.ts.
   if (!fs.existsSync(/* turbopackIgnore: true */ summaryPath)) {
     throw new Error(`Missing summary for ${metadata.id}: ${summaryPath}`);
@@ -841,9 +1203,66 @@ const loadEpisodeByLocation = cache(async (
   if (!fs.existsSync(/* turbopackIgnore: true */ transcriptPath)) {
     throw new Error(`Missing transcript for ${metadata.id}: ${transcriptPath}`);
   }
+  if (!fs.existsSync(/* turbopackIgnore: true */ summarySourceTranscriptPath)) {
+    throw new Error(
+      `Missing summary source transcript for ${metadata.id}: ${summarySourceTranscriptPath}`,
+    );
+  }
 
   const summary = readMarkdown(summaryPath);
   const transcript = readMarkdown(transcriptPath);
+  const summarySourceTranscript = summarySourceTranscriptPath === transcriptPath
+    ? transcript
+    : readMarkdown(summarySourceTranscriptPath);
+  if (summarySourceTranscript.sha256 !== summarySource.sha256) {
+    throw new Error(
+      `Summary source transcript SHA-256 mismatch for ${metadata.id}: ${summarySource.path}`,
+    );
+  }
+  const sourceTranscriptTimestamps = new Set(
+    [...summarySourceTranscript.content.matchAll(/^\[(\d{2}:[0-5]\d:[0-5]\d)\]/gmu)]
+      .map((match) => match[1]),
+  );
+  for (const match of summary.content.matchAll(/\[(\d{2}:[0-5]\d:[0-5]\d)\]/gu)) {
+    if (!sourceTranscriptTimestamps.has(match[1])) {
+      throw new Error(
+        `Summary timestamp ${match[1]} for ${metadata.id} is missing from ${summarySource.path}`,
+      );
+    }
+  }
+  const selectedRun = metadata.asr_runs.find((run) => run.selection_status === "selected");
+  if (selectedRun) {
+    const requiredArtifacts = ["raw", "refined", "transcript"] as const;
+    const artifactNames = isQwenAsr(selectedRun.engine, selectedRun.model)
+      ? [...requiredArtifacts, "aligned"] as const
+      : requiredArtifacts;
+    for (const artifactName of artifactNames) {
+      const artifactPathValue = selectedRun.artifacts[artifactName];
+      if (!artifactPathValue) {
+        throw new Error(`Selected ASR run for ${metadata.id} is missing ${artifactName}`);
+      }
+      const artifactPath = resolveEpisodeAsset(
+        episodeRoot,
+        artifactPathValue,
+        `${metadata.id} selected ASR ${artifactName} artifact`,
+      );
+      if (!fs.existsSync(/* turbopackIgnore: true */ artifactPath)) {
+        throw new Error(
+          `Missing selected ASR ${artifactName} artifact for ${metadata.id}: ${artifactPath}`,
+        );
+      }
+    }
+    const selectedTranscriptPath = resolveEpisodeAsset(
+      episodeRoot,
+      selectedRun.artifacts.transcript,
+      `${metadata.id} selected ASR transcript artifact`,
+    );
+    if (readMarkdown(selectedTranscriptPath).sha256 !== transcript.sha256) {
+      throw new Error(
+        `Selected ASR transcript artifact is not byte-identical to transcript.path for ${metadata.id}`,
+      );
+    }
+  }
   const publishedAt = metadata.published_at;
   const href = `/shows/${metadata.show_id}/episodes/${folder}`;
   const editorialTitle = extractMarkdownTitle(summary.content) ?? metadata.title;
@@ -1031,8 +1450,7 @@ async function buildSearchDocuments(): Promise<SearchEpisodeDocument[]> {
       card.showTitle,
       ...searchAssets.participants.flatMap(getParticipantSearchTerms),
     ].join(" ");
-    const visibleSummary = getWebVisibleSummaryMarkdown(searchAssets.summaryRaw);
-    const summarySnippet = visibleSummary.replace(/[#*`>\[\]]/gu, "");
+    const summarySnippet = searchAssets.summaryRaw.replace(/[#*`>\[\]]/gu, "");
 
     return {
       id: card.id,
@@ -1041,7 +1459,7 @@ async function buildSearchDocuments(): Promise<SearchEpisodeDocument[]> {
       showTitle: card.showTitle,
       href: card.href,
       episodeHaystack: indexSearchText(episodeHaystack),
-      summaryNormalized: visibleSummary.toLocaleLowerCase("zh-CN"),
+      summaryNormalized: searchAssets.summaryRaw.toLocaleLowerCase("zh-CN"),
       summarySnippet: indexSearchText(summarySnippet),
       transcriptSegments: transcriptSegments.map(toSearchSegment),
       translationSegments: bilingualTranscript?.segments.map((segment) => ({

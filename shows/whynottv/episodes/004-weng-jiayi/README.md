@@ -15,7 +15,7 @@ title: "翁家翌：OpenAI，GPT，强化学习，Infra，后训练，天授，t
 navigation_title: "翁家翌 · OpenAI、强化学习、Infra 与后训练"
 catalog_keyword: "后训练"
 published_at: "2026-01-17T15:09:39+08:00"
-duration_ms: 7365000
+duration_ms: 7364975
 language: zh-CN
 participants:
   - id: weng-jiayi
@@ -138,6 +138,7 @@ asr_runs:
       transcript: asr/whisper/transcript.zh-CN.md
 local_audio_cache:
   path: .cache/media/whynottv/004-weng-jiayi/source.m4a
+  metadata_path: .cache/media/whynottv/004-weng-jiayi/source.metadata.json
   git_ignored: true
   codec: aac
   sample_rate_hz: 44100
@@ -145,7 +146,9 @@ local_audio_cache:
   size_bytes: 99676986
   duration_ms: 7364975
   sha256: 9eb8aab184a964f3ff8205a505c26a1acb957d9995bb8d61f0fbc6c1b252b11f
-last_verified_at: 2026-08-06
+  verified_at: "2026-08-09T07:22:58.359734Z"
+  recovered_at: "2026-08-09T07:22:58.359734Z"
+last_verified_at: 2026-08-09
 ---
 
 # 翁家翌：OpenAI、强化学习、Infra 与后训练

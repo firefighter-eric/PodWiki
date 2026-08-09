@@ -17,7 +17,7 @@ title: "硅谷坐标 x黄东旭-龙虾的“记忆” ：谈 Agent 时代基础�
 navigation_title: "黄东旭 · Agent 记忆与基础设施重构"
 catalog_keyword: "Agent 记忆"
 published_at: "2026-04-11T11:13:36+08:00"
-duration_ms: 2670847
+duration_ms: 2670848
 language: zh-CN
 participants:
   - id: cao-qingyun
@@ -35,11 +35,13 @@ participants:
       checked_at: "2026-08-08"
 sources:
   - platform: xiaoyuzhou
-    kind: feed-item
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/69d9bef7e2c8be3155e93e3a
     preferred: false
     identifiers:
-      episode_id: 69d9bef7e2c8be3155e93e3a
+      eid: 69d9bef7e2c8be3155e93e3a
+      pid: 69a4b82b27e15c06061cfc2d
+      media_id: 69a4b82b27e15c06061cfc2d/lmMa4hQhV1iyAtFivUQl8ZBc3YjG.m4a
   - platform: bilibili
     kind: video
     url: https://www.bilibili.com/video/BV1zvQKB5EGd/

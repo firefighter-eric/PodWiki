@@ -15,7 +15,7 @@ title: "口述SpaceX开发史：和前高管洪力德聊，马斯克用人观、
 navigation_title: "洪力德 · SpaceX 开发史与工程组织"
 catalog_keyword: "SpaceX"
 published_at: "2026-06-12T20:52:25+08:00"
-duration_ms: 10886000
+duration_ms: 10803605
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -34,11 +34,14 @@ participants:
           status: former
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/6a2be5da43a22a695582ad20
     preferred: false
     identifiers:
+      eid: 6a2be5da43a22a695582ad20
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/lua5jan_xOpZ99VwXmLshdTC-gSp.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 6a2be5da43a22a695582ad20
   - platform: bilibili

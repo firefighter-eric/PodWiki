@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, MagnifyingGlass, X } from "@phosphor-icons/react";
-import { AnimatePresence, domAnimation, LazyMotion, m } from "motion/react";
+import { AnimatePresence, domAnimation, LazyMotion, m, MotionConfig } from "motion/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -58,6 +58,7 @@ export function SearchDialog({
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const optionRefs = useRef<Array<HTMLAnchorElement | null>>([]);
   const previousFocusRef = useRef<HTMLElement | null>(null);
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query.trim());
@@ -134,6 +135,11 @@ export function SearchDialog({
 
   const currentIndex = Math.min(activeIndex, Math.max(0, items.length - 1));
 
+  useEffect(() => {
+    if (!open || items.length === 0) return;
+    optionRefs.current[currentIndex]?.scrollIntoView({ block: "nearest" });
+  }, [currentIndex, items.length, open]);
+
   const navigate = (item: CommandItem | undefined) => {
     if (!item) return;
     onClose();
@@ -176,10 +182,11 @@ export function SearchDialog({
   };
 
   return (
-    <LazyMotion features={domAnimation} strict>
-      <AnimatePresence>
-        {open ? (
-        <m.div
+    <MotionConfig reducedMotion="user">
+      <LazyMotion features={domAnimation} strict>
+        <AnimatePresence>
+          {open ? (
+          <m.div
           className="search-overlay"
           role="presentation"
           initial={{ opacity: 0 }}
@@ -258,6 +265,9 @@ export function SearchDialog({
               {!failed && items.map((item, index) => (
                 <Link
                   key={item.id}
+                  ref={(element) => {
+                    optionRefs.current[index] = element;
+                  }}
                   id={`search-option-${index}`}
                   className={`search-result selectable-content-link${index === currentIndex ? " active" : ""}`}
                   href={item.href}
@@ -292,9 +302,10 @@ export function SearchDialog({
 
             <p className="search-help">↑↓ 选择 · Enter 打开 · Esc 关闭</p>
           </m.div>
-        </m.div>
-        ) : null}
-      </AnimatePresence>
-    </LazyMotion>
+          </m.div>
+          ) : null}
+        </AnimatePresence>
+      </LazyMotion>
+    </MotionConfig>
   );
 }

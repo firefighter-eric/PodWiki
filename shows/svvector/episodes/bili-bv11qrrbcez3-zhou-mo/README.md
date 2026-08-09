@@ -17,7 +17,7 @@ title: "硅谷坐标 x FundaAI创始人周默：四大科技公司财报后的AI
 navigation_title: "周默 · 四大科技公司财报后的 AI 产业观察"
 catalog_keyword: "Capex"
 published_at: "2026-05-05T10:35:23+08:00"
-duration_ms: 5622954
+duration_ms: 5622955
 language: zh-CN
 participants:
   - id: cao-qingyun
@@ -35,11 +35,13 @@ participants:
       checked_at: "2026-08-08"
 sources:
   - platform: xiaoyuzhou
-    kind: feed-item
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/69f90313e05c0efcd6e0a30f
     preferred: false
     identifiers:
-      episode_id: 69f90313e05c0efcd6e0a30f
+      eid: 69f90313e05c0efcd6e0a30f
+      pid: 69a4b82b27e15c06061cfc2d
+      media_id: 69a4b82b27e15c06061cfc2d/lkhfbg4JsShfzodKt0awWekLzB3p.m4a
   - platform: bilibili
     kind: video
     url: https://www.bilibili.com/video/BV11QRrBcEz3/

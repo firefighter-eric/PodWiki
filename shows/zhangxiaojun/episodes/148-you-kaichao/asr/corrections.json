@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode_id": "zhangxiaojun:148",
+  "version": "legacy-global-v1-migration",
+  "input_asr_sha256": "453416c5243961db1c2eb575193dbfb9e2d9b116dad5b0e378482de40f1d727a",
+  "rules": [
+    {
+      "id": "tianshou-chinese",
+      "match": "天授",
+      "replacement": "Tianshou",
+      "reason": "project name in the selected transcript",
+      "case_sensitive": true,
+      "expected_hits": 3
+    }
+  ]
+}

@@ -15,7 +15,7 @@ title: "对罗福莉3.5小时访谈：AI 范式已然巨变"
 navigation_title: "罗福莉 · Agent 时代的模型、Infra 与组织"
 catalog_keyword: "Agent"
 published_at: "2026-04-24T11:44:26+08:00"
-duration_ms: 12996000
+duration_ms: 12878869
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -32,11 +32,14 @@ participants:
           status: current
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/69eae15a1e94ae692107cc50
     preferred: false
     identifiers:
+      eid: 69eae15a1e94ae692107cc50
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/lvjthrP5i6nloL64YOJ_JDDRa4WF.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 69eae15a1e94ae692107cc50
   - platform: bilibili

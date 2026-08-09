@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "episode_id": "zhangxiaojun:bili-bv1nb3u6teru",
+  "version": "legacy-global-v1-migration",
+  "input_asr_sha256": "e1dbe2f05af42e9886055d35d331750d1fed0b7e371d8373ce96698b33a6a999",
+  "rules": [
+    {
+      "id": "deepseek-lowercase",
+      "match": "deepseek",
+      "replacement": "DeepSeek",
+      "reason": "canonical DeepSeek brand spelling",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "deepseek-titlecase",
+      "match": "Deepseek",
+      "replacement": "DeepSeek",
+      "reason": "canonical DeepSeek brand spelling",
+      "case_sensitive": true,
+      "expected_hits": 1
+    }
+  ]
+}

@@ -61,8 +61,7 @@ preserving source provenance, resumability, and the repository content standard.
 
    On PowerShell, set `$env:UV_CACHE_DIR = ".cache/uv"` once, omit the leading POSIX
    `env UV_CACHE_DIR=...`, and either run each command on one line or replace `\` with the
-   PowerShell backtick. Use `$env:HF_ENDPOINT = "https://hf-mirror.com"` instead of
-   `export` below. These equivalents apply to every command in this skill.
+   PowerShell backtick. These equivalents apply to every command in this skill.
 
 7. Require the sidecar `source.metadata.json` and verify codec, duration, size, sample rate,
    channels, and SHA-256 before marking the source acquired.
@@ -76,37 +75,43 @@ Confirm the prerequisites and platform boundary in `docs/episode-processing.md`.
 local Qwen paths are Apple Silicon/MLX and Windows x86-64/NVIDIA CUDA. Select the matching
 backend explicitly; do not silently substitute a remote service on another platform.
 
-The `asr` and `asr-cuda` dependency groups are mutually exclusive; never run
-`uv sync --all-groups`. On Apple Silicon, run `uv sync --group asr` once and then use
-`env UV_CACHE_DIR=.cache/uv uv run --no-sync` for every MLX worker. On Windows, prepare the
-ignored `.cache/venvs/qwen-cuda` environment with `uv sync --active --group asr-cuda --locked`
-and invoke its `Scripts/python.exe` directly. Never sync dependencies while workers are
-running. Before an MLX `hf download`, export the configured mirror:
-
-```bash
-export HF_ENDPOINT=https://hf-mirror.com
-```
-
-For a cold Apple Silicon/MLX cache, download only after that export and use stable ignored paths:
+The `asr` and `asr-cuda` extras are mutually exclusive. On macOS 14+ Apple Silicon, install
+the media and MLX stacks together with `uv sync --locked --extra media --extra asr`, then use
+`env UV_CACHE_DIR=.cache/uv uv run --no-sync` for every worker. On Windows, prepare the ignored
+`.cache/venvs/qwen-cuda` environment with
+`uv sync --active --locked --extra media --extra asr-cuda` and invoke its
+`Scripts/python.exe` directly. Never sync dependencies while workers are running. For a cold
+Apple Silicon/MLX cache, use the official Hugging Face endpoint by default and stable ignored
+paths:
 
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
   mlx-community/Qwen3-ASR-1.7B-8bit \
-  --local-dir .cache/models/qwen3-asr-1.7b-8bit
+  --revision a8379a2e2f9e313c9292cdf1af4055ab56d50d55 \
+  --local-dir .cache/models/qwen3-asr-1.7b-8bit-pinned-v2
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
   mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
-  --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit
+  --revision 0e1a68e91d815300c7c9754b2a7639378b23db15 \
+  --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit-pinned-v2
 ```
 
 For a cold Windows/CUDA cache, download the official models to their ignored local paths:
 
 ```powershell
-$env:HF_ENDPOINT = "https://huggingface.co"
 & .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B `
-  --local-dir .cache/models/Qwen3-ASR-1.7B
+  --revision 7278e1e70fe206f11671096ffdd38061171dd6e5 `
+  --local-dir .cache/models/Qwen3-ASR-1.7B-pinned-v2
 & .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B `
-  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B
+  --revision c7cbfc2048c462b0d63a45797104fc9db3ad62b7 `
+  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2
 ```
+
+Only when the official endpoint is unreachable on the current network may `HF_ENDPOINT` be
+temporarily pointed at a mirror. A mirror is transport, not evidence of upstream authenticity.
+The full commit pin, per-payload download metadata/ETag, and freshly computed SHA-256 values make
+the acquired local snapshot reproducible; upstream trust still comes from the official Hugging
+Face Hub. Keep the new `*-pinned-v2` directories separate from legacy snapshot/symlink caches that
+do not contain download metadata for every payload file.
 
 1. Use an explicitly requested engine and model when compatible.
 2. Otherwise reuse the episode's recorded engine and model for reproducibility.
@@ -123,9 +128,12 @@ $env:HF_ENDPOINT = "https://huggingface.co"
 6. Run long local ASR jobs serially, one episode per subprocess. The process boundary is the
    reliable Metal/unified-memory or CUDA-VRAM cleanup boundary; do not call either worker
    `main()` repeatedly in one Python process.
-7. Treat raw as the stage checkpoint. A valid raw with no aligned artifact resumes at
-   alignment; two valid artifacts are a no-op. Existing invalid or mismatched artifacts fail
-   closed. Only `--retranscribe` or `--realign` may replace a corresponding artifact.
+7. Treat only a v2 raw as an alignable stage checkpoint. A valid v2 raw with no aligned artifact
+   resumes at alignment; a valid complete pair is a no-op. A markerless legacy pair may only be
+   validated and skipped read-only. If markerless raw lacks aligned output, has pending CUDA
+   reconciliation, or is passed with `--realign`, fail before loading a model and require explicit
+   `--retranscribe`; never backfill today's cache identity into a historical raw. Only a v2 raw may
+   use align-only/`--realign`, with both pinned local model and aligner paths verified.
 8. On Windows/CUDA, use 120-second nominal ownership chunks with five seconds of decode
    context on each side of every internal boundary. Reconcile overlaps only through the
    ForcedAligner's exact text-and-time crossover, retain every boundary phrase exactly once,
@@ -146,22 +154,23 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/transcribe_audio.py \
   --language zh
 ```
 
-The current Whisper worker may emit non-strict JSON `NaN` values. Keep new comparison output
-under `.cache/benchmarks/`; do not select, promote, or commit it until the worker satisfies the
-repository strict-JSON contract. Preserve already tracked historical baselines.
+The Whisper worker rejects non-finite values and writes strict JSON atomically. Keep every new
+comparison under `.cache/benchmarks/`; do not select, promote, or commit benchmark output.
+The two tracked historical baselines have been normalized from non-standard `NaN` tokens to
+JSON `null` without changing text or timestamps.
 
 For one Qwen episode on Apple Silicon/MLX with already cached local models:
 
 ```bash
-env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
+env HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/transcribe_qwen3_asr.py \
   --input .cache/media/<show-id>/<episode-folder>/source.m4a \
   --output shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/raw.json \
   --aligned-output shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/aligned.json \
   --model mlx-community/Qwen3-ASR-1.7B-8bit \
-  --model-path .cache/models/qwen3-asr-1.7b-8bit \
+  --model-path .cache/models/qwen3-asr-1.7b-8bit-pinned-v2 \
   --aligner mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
-  --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit \
+  --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit-pinned-v2 \
   --language Chinese --no-verbose
 ```
 
@@ -171,8 +180,8 @@ For one or more Windows/CUDA episodes, use the batch entry point even for a one-
 & .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
   --backend cuda `
   --episode shows/<show-id>/episodes/<episode-folder> `
-  --model-path .cache/models/Qwen3-ASR-1.7B `
-  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B `
+  --model-path .cache/models/Qwen3-ASR-1.7B-pinned-v2 `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2 `
   --chunk-context 5
 ```
 
@@ -302,15 +311,19 @@ entire file without preserving a resumable segment mapping.
 1. Run the relevant unit tests.
 2. Run `env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py` (PowerShell:
    after setting `$env:UV_CACHE_DIR`, run `uv run --no-sync python scripts/validate.py`).
-3. Run `npm run check` from `apps/web` so the strict content loader, tests, and production
+3. Run `env UV_CACHE_DIR=.cache/uv uv run --no-sync python
+   scripts/audit_correction_migration.py` to bind legacy correction recipes to selected output.
+4. After the locked npm install, run `npm exec -- playwright install --with-deps chromium`,
+   `npm audit --audit-level=high`, and `npm run check` from `apps/web` so the strict content
+   loader, browser tests, and production
    build all consume the final repository content.
-4. Run `git diff --check` and inspect `git status --short`.
-5. Confirm media remains ignored and expected ASR/Markdown artifacts are trackable. For an
+5. Run `git diff --check` and inspect `git status --short`.
+6. Confirm media remains ignored and expected ASR/Markdown artifacts are trackable. For an
    English selected transcript, also confirm the required root Chinese translation and its
    `transcript.translations` hashes and segment alignment.
-6. Confirm the root show table has three columns and links every podcast name to its verified
+7. Confirm the root show table has three columns and links every podcast name to its verified
    preferred publisher page and every `节目页` to its local README. Confirm the root episode table uses
    the required six columns, the relevant show table keeps the required five columns, and both
    match the final metadata and paths.
-7. Report each episode separately with its reached state, artifact paths, engine/model,
+8. Report each episode separately with its reached state, artifact paths, engine/model,
    validation result, and any remaining human review or access blocker.

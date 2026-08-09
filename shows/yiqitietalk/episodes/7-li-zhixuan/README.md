@@ -16,7 +16,7 @@ title: "李芷萱：我的PB 奥运 全运 和结婚"
 navigation_title: "李芷萱 · 奥运全运、PB与婚后生活"
 catalog_keyword: "马拉松PB"
 published_at: "2026-02-21T03:45:43.429Z"
-duration_ms: 7225000
+duration_ms: 7225500
 language: zh-CN
 participants:
   - id: li-zhixuan
@@ -27,7 +27,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "7 李芷萱：我的PB 奥运 全运 和结婚"
     url: https://www.xiaoyuzhoufm.com/episode/69992553a22480add6994d83
     preferred: true

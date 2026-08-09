@@ -5,10 +5,18 @@ id: showid
 title: 节目名称
 aliases: []
 language: zh-CN
-status: unknown
-formats: []
-topics: []
-sources: []
+# 按节目实际状态填写 active、inactive 或 archived。
+status: active
+# 以下 formats 与 topics 仅为示例，按实际节目内容替换。
+formats:
+  - interview
+topics:
+  - technology
+sources:
+  - platform: website
+    kind: show
+    url: https://publisher.example/show
+    preferred: true
 last_verified_at: YYYY-MM-DD
 ---
 

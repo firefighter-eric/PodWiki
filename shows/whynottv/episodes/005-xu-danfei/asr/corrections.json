@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode_id": "whynottv:005",
+  "version": "legacy-global-v1-migration",
+  "input_asr_sha256": "6763a541a518c673567fbdf9fd859416890bd8d3bd3207aa1340908cd8590191",
+  "rules": [
+    {
+      "id": "whynottv-spaced",
+      "match": "Why Not TV",
+      "replacement": "WhynotTV",
+      "reason": "publisher brand spelling",
+      "case_sensitive": true,
+      "expected_hits": 1
+    }
+  ]
+}

@@ -15,7 +15,7 @@ title: "印奇出任阶跃星辰董事长的访谈：聪明人的诱惑、取舍
 navigation_title: "印奇 · 基础模型、终端闭环与长期主义"
 catalog_keyword: "阶跃星辰"
 published_at: "2026-01-26T09:30:13+08:00"
-duration_ms: 7287000
+duration_ms: 7204409
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -35,11 +35,14 @@ participants:
           status: current
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/6976bdf0ef1cf272a76fa9f3
     preferred: false
     identifiers:
+      eid: 6976bdf0ef1cf272a76fa9f3
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/lo-xQNj9qSh16zHeUQI6pQ3jOkjq.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 6976bdf0ef1cf272a76fa9f3
   - platform: bilibili

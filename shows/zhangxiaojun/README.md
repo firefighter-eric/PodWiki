@@ -16,6 +16,7 @@ sources:
   - platform: bilibili
     kind: channel
     url: https://space.bilibili.com/280780745/
+    preferred: true
     identifiers:
       mid: "280780745"
   - platform: apple-podcasts
@@ -34,11 +35,11 @@ last_verified_at: 2026-08-06
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
-| [游凯超：开源 Infra、模型 Co-design 与 vLLM](https://www.bilibili.com/video/BV18Qg96YE1W/) | 张小珺商业访谈录 | 2026-07-28 | [总结](./episodes/148-you-kaichao/summary.zh-CN.md) | [逐字稿](./episodes/148-you-kaichao/transcript.zh-CN.md) |
-| [特别访谈：廖恒、昇腾史与全球芯片产业](https://www.bilibili.com/video/BV1nB3u6tERu/) | 张小珺商业访谈录 | 2026-07-25 | [总结](./episodes/bili-bv1nb3u6teru-liao-heng/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1nb3u6teru-liao-heng/transcript.zh-CN.md) |
-| [柯丽一鸣：Pi 与通用机器人](https://www.bilibili.com/video/BV12bNB6vEtt/) | 张小珺商业访谈录 | 2026-07-16 | [总结](./episodes/146-ke-liyiming/summary.zh-CN.md) | [逐字稿](./episodes/146-ke-liyiming/transcript.zh-CN.md) |
-| [洪力德：SpaceX 开发史](https://www.bilibili.com/video/BV1HfEy6jEUx/) | 张小珺商业访谈录 | 2026-06-12 | [总结](./episodes/145-hong-lide/summary.zh-CN.md) | [逐字稿](./episodes/145-hong-lide/transcript.zh-CN.md) |
-| [姚顺宇：模型训练与技术预测](https://www.bilibili.com/video/BV1YR5E6EE9o/) | 张小珺商业访谈录 | 2026-05-11 | [总结](./episodes/140-yao-shunyu/summary.zh-CN.md) | [逐字稿](./episodes/140-yao-shunyu/transcript.zh-CN.md) |
+| [对游凯超3小时访谈：开源Infra、和模型Co-design 、“如果vLLM失败，我们会后悔一辈子”](https://www.bilibili.com/video/BV18Qg96YE1W/) | 张小珺商业访谈录 | 2026-07-28 | [总结](./episodes/148-you-kaichao/summary.zh-CN.md) | [逐字稿](./episodes/148-you-kaichao/transcript.zh-CN.md) |
+| [对华为半导体首席科学家廖恒的5小时访谈：一部昇腾史、18层宝塔与全球芯片恢弘30年史诗\| B站 x WAIC AI会客厅](https://www.bilibili.com/video/BV1nB3u6tERu/) | 张小珺商业访谈录 | 2026-07-25 | [总结](./episodes/bili-bv1nb3u6teru-liao-heng/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1nb3u6teru-liao-heng/transcript.zh-CN.md) |
+| [对Physical Intelligence柯丽一鸣4小时访谈：Pi的开源模型研究，机器人的江湖、族谱与主角](https://www.bilibili.com/video/BV12bNB6vEtt/) | 张小珺商业访谈录 | 2026-07-16 | [总结](./episodes/146-ke-liyiming/summary.zh-CN.md) | [逐字稿](./episodes/146-ke-liyiming/transcript.zh-CN.md) |
+| [口述SpaceX开发史：和前高管洪力德聊，马斯克用人观、最大IPO、太空与AI、人类文明扩张前奏？](https://www.bilibili.com/video/BV1HfEy6jEUx/) | 张小珺商业访谈录 | 2026-06-12 | [总结](./episodes/145-hong-lide/summary.zh-CN.md) | [逐字稿](./episodes/145-hong-lide/transcript.zh-CN.md) |
+| [对姚顺宇的4小时访谈：请允许我小疯一下！在Anthropic和Gemini训模型、技术预测、英雄主义已过去](https://www.bilibili.com/video/BV1YR5E6EE9o/) | 张小珺商业访谈录 | 2026-05-11 | [总结](./episodes/140-yao-shunyu/summary.zh-CN.md) | [逐字稿](./episodes/140-yao-shunyu/transcript.zh-CN.md) |
 | [对罗福莉3.5小时访谈：AI 范式已然巨变](https://www.bilibili.com/video/BV1iVoVBgERD/) | 张小珺商业访谈录 | 2026-04-24 | [总结](./episodes/138-luo-fuli/summary.zh-CN.md) | [逐字稿](./episodes/138-luo-fuli/transcript.zh-CN.md) |
 | [对谢赛宁的7小时马拉松访谈：世界模型、逃出硅谷与 AMI Labs](https://www.bilibili.com/video/BV1tew5zVEDf/) | 张小珺商业访谈录 | 2026-03-16 | [总结](./episodes/133-xie-saining/summary.zh-CN.md) | [逐字稿](./episodes/133-xie-saining/transcript.zh-CN.md) |
 | [印奇出任阶跃星辰董事长的访谈：聪明人的诱惑、取舍与超长链路淘汰赛](https://www.bilibili.com/video/BV1ZczaBJE58/) | 张小珺商业访谈录 | 2026-01-26 | [总结](./episodes/131-yin-qi/summary.zh-CN.md) | [逐字稿](./episodes/131-yin-qi/transcript.zh-CN.md) |

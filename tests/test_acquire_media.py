@@ -17,13 +17,16 @@ from unittest.mock import call, patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import acquire_media as acquire_module  # noqa: E402
 from acquire_media import (  # noqa: E402
+    acquisition_transaction_path,
     acquisition_resource_lock_path,
     available_javascript_runtime,
     bilibili_api_info,
     bilibili_platform_metadata,
     bilibili_public_audio,
     canonical_source_url,
+    commit_acquired_media_pair,
     download_bilibili_public_audio,
     download_xiaoyuzhou_public_audio,
     exclusive_acquisition_locks,
@@ -34,12 +37,12 @@ from acquire_media import (  # noqa: E402
     main,
     parse_xiaoyuzhou_episode_metadata,
     refresh_existing_media,
+    recover_acquisition_transaction,
     RejectRedirects,
     render_json_for_stdout,
     sha256_file,
     source_metadata,
     validate_bilibili_public_access,
-    validate_media_duration,
     validate_public_enclosure_size,
     validate_reusable_source_identity,
     validate_output_path,
@@ -1413,6 +1416,187 @@ class RuntimeTests(unittest.TestCase):
             self.assertEqual(available_javascript_runtime(), "node")
 
 
+class AcquisitionTransactionTests(unittest.TestCase):
+    def test_prepare_failure_keeps_unique_staging_and_final_targets_untouched(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            staged = root / ".downloads" / "episode" / "source.m4a"
+            staged.parent.mkdir(parents=True)
+            staged_bytes = b"unique verified staged audio"
+            staged.write_bytes(staged_bytes)
+            output = root / "source.m4a"
+            sidecar = root / "source.metadata.json"
+            document = {
+                "schema_version": 1,
+                "kind": "podwiki-source-media",
+                "media": {"sha256": hashlib.sha256(staged_bytes).hexdigest()},
+            }
+
+            def fail_before_journal(path: Path, payload: object) -> None:
+                self.assertEqual(
+                    path,
+                    acquisition_transaction_path(
+                        output_path=output,
+                        metadata_output=sidecar,
+                    ),
+                )
+                self.assertIsInstance(payload, dict)
+                if not isinstance(payload, dict):
+                    raise AssertionError("transaction payload must be a mapping")
+                artifacts = payload.get("artifacts")
+                if not isinstance(artifacts, dict):
+                    raise AssertionError("transaction artifacts must be a mapping")
+                media = artifacts.get("media")
+                if not isinstance(media, dict):
+                    raise AssertionError("transaction media must be a mapping")
+                prepared = Path(str(media.get("temporary")))
+                self.assertEqual(staged.read_bytes(), staged_bytes)
+                self.assertEqual(prepared.read_bytes(), staged_bytes)
+                self.assertFalse(output.exists())
+                self.assertFalse(sidecar.exists())
+                raise OSError("injected failure before journal commit")
+
+            with patch(
+                "acquire_media.write_json_atomically",
+                side_effect=fail_before_journal,
+            ), self.assertRaisesRegex(OSError, "before journal"):
+                commit_acquired_media_pair(
+                    staged_audio=staged,
+                    output_path=output,
+                    metadata_output=sidecar,
+                    document=document,
+                )
+
+            self.assertEqual(staged.read_bytes(), staged_bytes)
+            self.assertFalse(output.exists())
+            self.assertFalse(sidecar.exists())
+            self.assertFalse(
+                acquisition_transaction_path(
+                    output_path=output,
+                    metadata_output=sidecar,
+                ).exists()
+            )
+            self.assertEqual(list(root.rglob(".podwiki-*.tmp")), [])
+
+    def test_recovers_audio_and_sidecar_after_second_promotion_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            staged = root / ".downloads" / "episode" / "source.m4a"
+            staged.parent.mkdir(parents=True)
+            staged.write_bytes(b"verified staged audio")
+            output = root / "source.m4a"
+            sidecar = root / "source.metadata.json"
+            document = {
+                "schema_version": 1,
+                "kind": "podwiki-source-media",
+                "media": {"sha256": sha256_file(staged)},
+            }
+            original_promote = acquire_module.promote_acquisition_artifact
+            promotion_count = 0
+
+            def fail_second_promotion(temporary: Path, target: Path) -> None:
+                nonlocal promotion_count
+                promotion_count += 1
+                if promotion_count == 2:
+                    raise OSError("injected sidecar promotion failure")
+                original_promote(temporary, target)
+
+            with patch(
+                "acquire_media.promote_acquisition_artifact",
+                side_effect=fail_second_promotion,
+            ), self.assertRaisesRegex(OSError, "injected"):
+                commit_acquired_media_pair(
+                    staged_audio=staged,
+                    output_path=output,
+                    metadata_output=sidecar,
+                    document=document,
+                )
+
+            journal = acquisition_transaction_path(
+                output_path=output,
+                metadata_output=sidecar,
+            )
+            self.assertTrue(output.is_file())
+            self.assertFalse(sidecar.exists())
+            self.assertTrue(journal.is_file())
+            self.assertTrue(
+                recover_acquisition_transaction(
+                    output_path=output,
+                    metadata_output=sidecar,
+                )
+            )
+            self.assertEqual(json.loads(sidecar.read_text("utf-8")), document)
+            self.assertFalse(journal.exists())
+            self.assertEqual(list(root.rglob(".podwiki-*.tmp")), [])
+
+    def test_recovery_rejects_target_or_external_temporary_without_mutation(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target_directory = root / "targets"
+            target_directory.mkdir()
+            output = target_directory / "source.m4a"
+            sidecar = target_directory / "source.metadata.json"
+            output_bytes = b"existing verified media"
+            sidecar_bytes = b'{"kind":"existing metadata"}\n'
+            output.write_bytes(output_bytes)
+            sidecar.write_bytes(sidecar_bytes)
+            external = root / ".podwiki-source.m4a.external.tmp"
+            external_bytes = b"external file must survive"
+            external.write_bytes(external_bytes)
+            safe_metadata_temporary = (
+                target_directory / ".podwiki-source.metadata.json.safe.tmp"
+            )
+            journal = acquisition_transaction_path(
+                output_path=output,
+                metadata_output=sidecar,
+            )
+
+            for temporary, message in (
+                (output, "equals its target"),
+                (external, "outside the target directory"),
+            ):
+                with self.subTest(message=message):
+                    journal.write_text(
+                        json.dumps(
+                            {
+                                "schema_version": 1,
+                                "kind": "podwiki-acquisition-transaction",
+                                "artifacts": {
+                                    "media": {
+                                        "target": output.resolve().as_posix(),
+                                        "temporary": temporary.resolve().as_posix(),
+                                        "sha256": hashlib.sha256(
+                                            output_bytes
+                                        ).hexdigest(),
+                                    },
+                                    "metadata": {
+                                        "target": sidecar.resolve().as_posix(),
+                                        "temporary": (
+                                            safe_metadata_temporary.resolve().as_posix()
+                                        ),
+                                        "sha256": hashlib.sha256(
+                                            sidecar_bytes
+                                        ).hexdigest(),
+                                    },
+                                },
+                            }
+                        ),
+                        encoding="utf-8",
+                    )
+                    with self.assertRaisesRegex(ValueError, message):
+                        recover_acquisition_transaction(
+                            output_path=output,
+                            metadata_output=sidecar,
+                        )
+                    self.assertEqual(output.read_bytes(), output_bytes)
+                    self.assertEqual(sidecar.read_bytes(), sidecar_bytes)
+                    self.assertEqual(external.read_bytes(), external_bytes)
+
+
 class MetadataRefreshTests(unittest.TestCase):
     def write_sidecar(self, path: Path, *, canonical_url: str, digest: str) -> None:
         path.write_text(
@@ -1542,6 +1726,8 @@ class MainWorkflowTests(unittest.TestCase):
         *,
         metadata_only: bool,
         overwrite: bool = False,
+        repair_metadata: bool = False,
+        expected_sha256: str | None = None,
     ) -> SimpleNamespace:
         return SimpleNamespace(
             url=f"https://www.xiaoyuzhoufm.com/episode/{XIAOYUZHOU_EID}",
@@ -1549,8 +1735,141 @@ class MainWorkflowTests(unittest.TestCase):
             metadata_output=None,
             metadata_only=metadata_only,
             overwrite=overwrite,
+            repair_metadata=repair_metadata,
+            expected_sha256=expected_sha256,
             verbose=False,
         )
+
+    @patch("builtins.print")
+    @patch("acquire_media.probe_audio")
+    @patch("acquire_media.shutil.which", return_value="ffprobe")
+    @patch("acquire_media.xiaoyuzhou_platform_metadata")
+    @patch("acquire_media.parse_args")
+    def test_repairs_missing_sidecar_only_after_hash_source_and_probe_verification(
+        self,
+        parse_args,
+        platform_metadata,
+        _which,
+        probe,
+        _print_output,
+    ) -> None:
+        metadata = parse_xiaoyuzhou_episode_metadata(
+            xiaoyuzhou_episode_document(), XIAOYUZHOU_EID
+        )
+        platform_metadata.return_value = metadata
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root / "source.m4a"
+            original_bytes = b"already acquired public audio"
+            output.write_bytes(original_bytes)
+            digest = sha256_file(output)
+            probe.return_value = {
+                "path": output.resolve().as_posix(),
+                "size_bytes": 1_234_567,
+                "duration_ms": 122_500,
+                "codec": "aac",
+                "sample_rate_hz": 48_000,
+                "channels": 1,
+                "sha256": digest,
+            }
+            parse_args.return_value = self.arguments(
+                root,
+                metadata_only=True,
+                repair_metadata=True,
+                expected_sha256=digest,
+            )
+
+            self.assertEqual(main(), 0)
+
+            sidecar = json.loads(
+                (root / "source.metadata.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(output.read_bytes(), original_bytes)
+
+        self.assertEqual(sidecar["media"]["sha256"], digest)
+        self.assertTrue(sidecar["media_reused"])
+        self.assertEqual(sidecar["verified_at"], sidecar["recovered_at"])
+        self.assertNotIn("acquired_at", sidecar)
+        self.assertEqual(
+            sidecar["recovery"],
+            {
+                "method": "verified-existing-audio-v1",
+                "expected_sha256": digest,
+                "acquired_at_status": "unknown-legacy",
+            },
+        )
+
+    @patch("acquire_media.xiaoyuzhou_platform_metadata")
+    @patch("acquire_media.parse_args")
+    def test_repair_rejects_wrong_hash_before_anonymous_platform_request(
+        self, parse_args, platform_metadata
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "source.m4a").write_bytes(b"different bytes")
+            parse_args.return_value = self.arguments(
+                root,
+                metadata_only=True,
+                repair_metadata=True,
+                expected_sha256="0" * 64,
+            )
+
+            with self.assertRaisesRegex(ValueError, "does not match"):
+                main()
+
+            self.assertFalse((root / "source.metadata.json").exists())
+
+        platform_metadata.assert_not_called()
+
+    @patch("builtins.print")
+    @patch("acquire_media.probe_audio")
+    @patch("acquire_media.shutil.which", return_value="ffprobe")
+    @patch("acquire_media.xiaoyuzhou_platform_metadata")
+    @patch("acquire_media.parse_args")
+    def test_repair_can_resume_after_atomic_sidecar_write_failure(
+        self,
+        parse_args,
+        platform_metadata,
+        _which,
+        probe,
+        _print_output,
+    ) -> None:
+        metadata = parse_xiaoyuzhou_episode_metadata(
+            xiaoyuzhou_episode_document(), XIAOYUZHOU_EID
+        )
+        platform_metadata.return_value = metadata
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root / "source.m4a"
+            original_bytes = b"recoverable public audio"
+            output.write_bytes(original_bytes)
+            digest = sha256_file(output)
+            probe.return_value = {
+                "path": output.resolve().as_posix(),
+                "size_bytes": 1_234_567,
+                "duration_ms": 122_500,
+                "codec": "aac",
+                "sample_rate_hz": 48_000,
+                "channels": 1,
+                "sha256": digest,
+            }
+            parse_args.return_value = self.arguments(
+                root,
+                metadata_only=True,
+                repair_metadata=True,
+                expected_sha256=digest,
+            )
+
+            with patch(
+                "acquire_media.write_json_atomically",
+                side_effect=OSError("injected sidecar promotion failure"),
+            ), self.assertRaisesRegex(OSError, "injected"):
+                main()
+
+            self.assertEqual(output.read_bytes(), original_bytes)
+            self.assertFalse((root / "source.metadata.json").exists())
+            self.assertEqual(main(), 0)
+            self.assertTrue((root / "source.metadata.json").is_file())
 
     @patch("builtins.print")
     @patch("acquire_media.xiaoyuzhou_platform_metadata")

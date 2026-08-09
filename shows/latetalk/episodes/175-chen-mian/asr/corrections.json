@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode_id": "latetalk:175",
+  "version": "legacy-global-v1-migration",
+  "input_asr_sha256": "0994ef4429bb91f094e1b474fd23d6e1056ca2473458a8cc9603818d882279d5",
+  "rules": [
+    {
+      "id": "deepseek-spaced",
+      "match": "Deep Seek",
+      "replacement": "DeepSeek",
+      "reason": "canonical DeepSeek brand spelling",
+      "case_sensitive": true,
+      "expected_hits": 2
+    }
+  ]
+}

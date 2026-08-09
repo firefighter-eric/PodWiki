@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
 import sys
@@ -24,6 +25,8 @@ from validate import (  # noqa: E402
     validate_episode_translations,
     validate_participant_profiles,
     validate_qwen_chain,
+    validate_show_metadata_contract,
+    validate_wiki_indexes,
 )
 
 
@@ -69,15 +72,38 @@ def write_episode_contract_fixture(
         f"    preferred: {preferred}\n"
         for index, preferred in enumerate(source_preferences, start=1)
     )
+    summary_text = "# 测试总结\n"
+    transcript_text = "# 测试逐字稿\n\n[00:00:00] 测试。  \n"
+    if create_summary:
+        (episode / "summary.zh-CN.md").write_text(summary_text, encoding="utf-8")
+    if create_transcript:
+        (episode / transcript_path).write_text(transcript_text, encoding="utf-8")
+    transcript_sha = sha256_bytes(transcript_text.encode())
     readme = episode / "README.md"
     readme.write_text(
         f"""---
+schema_version: 1
+kind: episode
 id: "{episode_id or f'example:{episode_key}'}"
 show_id: example
 episode_key: {episode_key_scalar or json.dumps(episode_key)}
+episode_number: null
+slug: {folder}
+release_type: regular
+numbering:
+  status: unknown
+  checked_at: 2026-08-08
+  source: test-fixture
+title: 测试单集
+navigation_title: "测试嘉宾 · 测试主题"
 published_at: {published_at}
 duration_ms: {duration_ms}
 language: {language}
+participants:
+  - id: test-guest
+    name: 测试嘉宾
+    aliases: []
+    role: guest
 sources:
 {sources}workflow:
   metadata: {resolved_workflow['metadata']}
@@ -85,22 +111,45 @@ sources:
   transcript: {resolved_workflow['transcript']}
 summary:
   path: summary.zh-CN.md
+  source_transcript:
+    path: {transcript_path}
+    engine: fixture-engine
+    model: fixture-model
+    selection_status: selected
+    sha256: {transcript_sha}
 transcript:
   path: {transcript_path}
+  acquisition_method: audio-asr
+  engine: fixture-engine
+  model: fixture-model
   translations: []
+asr_runs:
+  - id: fixture-run
+    selection_status: selected
+    engine: fixture-engine
+    model: fixture-model
+    artifacts:
+      raw: asr/fixture/raw.json
+      refined: asr/fixture/refined.json
+      transcript: asr/fixture/transcript.zh-CN.md
+local_audio_cache:
+  path: .cache/media/example/{folder}/source.m4a
+  metadata_path: .cache/media/example/{folder}/source.metadata.json
+  git_ignored: true
+  acquired_at: "2026-08-08T12:00:00Z"
+  verified_at: "2026-08-08T12:00:00Z"
+  codec: aac
+  sample_rate_hz: 48000
+  channels: 2
+  size_bytes: 100
+  duration_ms: {duration_ms}
+  sha256: "{'0' * 64}"
 ---
 
 # 测试单集
 """,
         encoding="utf-8",
     )
-    if create_summary:
-        (episode / "summary.zh-CN.md").write_text("# 测试总结\n", encoding="utf-8")
-    if create_transcript:
-        (episode / transcript_path).write_text(
-            "# 测试逐字稿\n\n[00:00:00] 测试。  \n",
-            encoding="utf-8",
-        )
     return readme
 
 
@@ -206,6 +255,61 @@ local_audio_cache:
         )
         write_json(self.refined_path, refined)
 
+    def upgrade_to_v2(self) -> None:
+        model_identity = {
+            "schema_version": 1,
+            "repository": "example/model",
+            "requested_revision": "a" * 40,
+            "resolved_commit": "a" * 40,
+            "files_sha256": {
+                "config.json": "1" * 64,
+                "model.safetensors": "2" * 64,
+            },
+        }
+        aligner_identity = {
+            "schema_version": 1,
+            "repository": "example/aligner",
+            "requested_revision": "b" * 40,
+            "resolved_commit": "b" * 40,
+            "files_sha256": {
+                "config.json": "3" * 64,
+                "model.safetensors": "4" * 64,
+            },
+        }
+        raw = json.loads(self.raw_path.read_text(encoding="utf-8"))
+        raw.update(
+            {
+                "lineage_schema_version": 2,
+                "model": "example/model",
+                "model_identity": copy.deepcopy(model_identity),
+            }
+        )
+        write_json(self.raw_path, raw)
+        aligned = json.loads(self.aligned_path.read_text(encoding="utf-8"))
+        aligned["lineage_schema_version"] = 2
+        aligned["source"].update(
+            {
+                "raw_asr_sha256": sha256_bytes(self.raw_path.read_bytes()),
+                "model": "example/model",
+                "aligner": "example/aligner",
+                "model_identity": copy.deepcopy(model_identity),
+                "aligner_identity": copy.deepcopy(aligner_identity),
+            }
+        )
+        write_json(self.aligned_path, aligned)
+        refined = json.loads(self.refined_path.read_text(encoding="utf-8"))
+        refined["lineage_schema_version"] = 2
+        refined["source"].update(
+            {
+                "input_asr_sha256": sha256_bytes(self.aligned_path.read_bytes()),
+                "model": "example/model",
+                "aligner": "example/aligner",
+                "model_identity": copy.deepcopy(model_identity),
+                "aligner_identity": copy.deepcopy(aligner_identity),
+            }
+        )
+        write_json(self.refined_path, refined)
+
     def validate(self) -> tuple[bool, list[str]]:
         errors: list[str] = []
         complete = validate_qwen_chain(
@@ -294,6 +398,100 @@ transcript:
 
 
 class QwenArtifactChainTests(unittest.TestCase):
+    def test_accepts_strict_v2_model_identity_chain(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            fixture.upgrade_to_v2()
+
+            self.assertEqual(fixture.validate(), (True, []))
+
+    def test_rejects_missing_unknown_and_string_identity_schema_versions(self) -> None:
+        for schema_version in (None, 2, "1"):
+            with self.subTest(schema_version=schema_version), tempfile.TemporaryDirectory() as directory:
+                fixture = QwenChainFixture(Path(directory))
+                fixture.upgrade_to_v2()
+                raw = json.loads(fixture.raw_path.read_text(encoding="utf-8"))
+                if schema_version is None:
+                    del raw["model_identity"]["schema_version"]
+                else:
+                    raw["model_identity"]["schema_version"] = schema_version
+                write_json(fixture.raw_path, raw)
+                fixture.rewrite_aligned(
+                    lambda document: document["source"].__setitem__(
+                        "raw_asr_sha256", sha256_bytes(fixture.raw_path.read_bytes())
+                    )
+                )
+
+                _, errors = fixture.validate()
+
+                self.assertTrue(
+                    any("model_identity.schema_version" in error for error in errors),
+                    errors,
+                )
+
+    def test_rejects_identity_unknown_fields_and_unsafe_file_paths(self) -> None:
+        cases = {
+            "unknown": lambda identity: identity.__setitem__("unexpected", True),
+            "absolute": lambda identity: identity["files_sha256"].__setitem__(
+                "/weights.safetensors", "5" * 64
+            ),
+            "traversal": lambda identity: identity["files_sha256"].__setitem__(
+                "../weights.safetensors", "5" * 64
+            ),
+        }
+        for label, mutate in cases.items():
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
+                fixture = QwenChainFixture(Path(directory))
+                fixture.upgrade_to_v2()
+                raw = json.loads(fixture.raw_path.read_text(encoding="utf-8"))
+                mutate(raw["model_identity"])
+                write_json(fixture.raw_path, raw)
+                fixture.rewrite_aligned(
+                    lambda document: document["source"].__setitem__(
+                        "raw_asr_sha256", sha256_bytes(fixture.raw_path.read_bytes())
+                    )
+                )
+
+                _, errors = fixture.validate()
+
+                self.assertTrue(
+                    any(
+                        "model identity schema" in error
+                        or "normalized relative POSIX paths" in error
+                        for error in errors
+                    ),
+                    errors,
+                )
+
+    def test_rejects_cross_stage_identity_for_another_repository(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            fixture.upgrade_to_v2()
+            raw = json.loads(fixture.raw_path.read_text(encoding="utf-8"))
+            raw["model_identity"]["repository"] = "other/model"
+            write_json(fixture.raw_path, raw)
+            aligned = json.loads(fixture.aligned_path.read_text(encoding="utf-8"))
+            aligned["source"]["raw_asr_sha256"] = sha256_bytes(
+                fixture.raw_path.read_bytes()
+            )
+            aligned["source"]["model_identity"]["repository"] = "other/model"
+            write_json(fixture.aligned_path, aligned)
+            refined = json.loads(fixture.refined_path.read_text(encoding="utf-8"))
+            refined["source"]["input_asr_sha256"] = sha256_bytes(
+                fixture.aligned_path.read_bytes()
+            )
+            refined["source"]["model_identity"]["repository"] = "other/model"
+            write_json(fixture.refined_path, refined)
+
+            _, errors = fixture.validate()
+
+            self.assertTrue(
+                any(
+                    "model_identity.repository must equal raw.model" in error
+                    for error in errors
+                ),
+                errors,
+            )
     def test_accepts_complete_selected_chain_with_matching_cached_audio(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = QwenChainFixture(Path(directory))
@@ -362,6 +560,41 @@ asr_runs: []
 
             self.assertTrue(any("not strict JSON" in error for error in errors))
             self.assertTrue(any("non-finite number NaN" in error for error in errors))
+
+    def test_rejects_unknown_mixed_and_non_integer_lineage_markers(self) -> None:
+        cases = (
+            (1, 1, 1),
+            (3, 3, 3),
+            ("2", "2", "2"),
+            (True, True, True),
+            (2, None, 2),
+        )
+        for markers in cases:
+            with self.subTest(markers=markers), tempfile.TemporaryDirectory() as directory:
+                fixture = QwenChainFixture(Path(directory))
+                raw = json.loads(fixture.raw_path.read_text(encoding="utf-8"))
+                raw["lineage_schema_version"] = markers[0]
+                write_json(fixture.raw_path, raw)
+                aligned = json.loads(fixture.aligned_path.read_text(encoding="utf-8"))
+                if markers[1] is not None:
+                    aligned["lineage_schema_version"] = markers[1]
+                aligned["source"]["raw_asr_sha256"] = sha256_bytes(
+                    fixture.raw_path.read_bytes()
+                )
+                write_json(fixture.aligned_path, aligned)
+                refined = json.loads(fixture.refined_path.read_text(encoding="utf-8"))
+                refined["lineage_schema_version"] = markers[2]
+                refined["source"]["input_asr_sha256"] = sha256_bytes(
+                    fixture.aligned_path.read_bytes()
+                )
+                write_json(fixture.refined_path, refined)
+
+                _, errors = fixture.validate()
+
+                self.assertTrue(
+                    any("lineage_schema_version must be absent" in error for error in errors),
+                    errors,
+                )
 
     def test_rejects_non_repository_and_incorrect_recorded_paths(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -698,6 +931,59 @@ transcript:
             self.assertEqual(errors, [])
 
 
+class ShowMetadataContractTests(unittest.TestCase):
+    def validate(self, root: Path, text: str) -> list[str]:
+        readme = root / "shows" / "example" / "README.md"
+        readme.parent.mkdir(parents=True)
+        readme.write_text(text, encoding="utf-8")
+        errors: list[str] = []
+        validate_show_metadata_contract(
+            readme,
+            text,
+            repository_root=root,
+            show_ids={},
+            errors=errors,
+        )
+        return errors
+
+    def test_show_template_is_valid_after_filling_its_date_placeholder(self) -> None:
+        template = (ROOT / "templates" / "show" / "README.md").read_text(
+            encoding="utf-8"
+        ).replace("id: showid", "id: example").replace(
+            "YYYY-MM-DD", "2026-08-09"
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertEqual(self.validate(Path(directory), template), [])
+
+    def test_rejects_fields_that_the_web_show_schema_rejects(self) -> None:
+        template = (ROOT / "templates" / "show" / "README.md").read_text(
+            encoding="utf-8"
+        ).replace("id: showid", "id: example").replace(
+            "YYYY-MM-DD", "2026-08-09"
+        )
+        cases = {
+            "status": template.replace("status: active", "status: unknown"),
+            "formats": template.replace("formats:\n  - interview", "formats: []"),
+            "topics": template.replace("topics:\n  - technology", "topics: []"),
+            "platform": template.replace("platform: website", "platform: publisher-platform"),
+            "source URL": template.replace(
+                "https://publisher.example/show", "http://publisher.example/show"
+            ),
+            "malformed source URL": template.replace(
+                "https://publisher.example/show", "https://"
+            ),
+            "source field": template.replace(
+                "    preferred: true", "    preferred: true\n    invented: value"
+            ),
+            "verified date": template.replace(
+                "last_verified_at: 2026-08-09", "last_verified_at: someday"
+            ),
+        }
+        for label, text in cases.items():
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
+                self.assertTrue(self.validate(Path(directory), text))
+
+
 class EpisodeMetadataContractTests(unittest.TestCase):
     @staticmethod
     def validate(
@@ -761,6 +1047,157 @@ class EpisodeMetadataContractTests(unittest.TestCase):
             self.assertTrue(publishable)
             self.assertTrue(any("summary.path is missing" in error for error in errors))
 
+    def test_publishable_episode_requires_one_selected_run(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root, folder="001-no-selected", episode_key="001"
+            )
+            readme.write_text(
+                readme.read_text(encoding="utf-8").replace(
+                    "selection_status: selected", "selection_status: candidate"
+                ),
+                encoding="utf-8",
+            )
+            _, errors = self.validate(root, readme)
+            self.assertTrue(any("exactly one selected ASR run" in error for error in errors))
+
+    def test_numbering_requires_a_source_matching_the_web_schema(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root, folder="001-numbering-source", episode_key="001"
+            )
+            readme.write_text(
+                readme.read_text(encoding="utf-8").replace(
+                    "  source: test-fixture\n", ""
+                ),
+                encoding="utf-8",
+            )
+            _, errors = self.validate(root, readme)
+            self.assertTrue(
+                any("numbering.source must be a non-empty string" in error for error in errors)
+            )
+
+    def test_summary_provenance_rejects_unknown_timestamp(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root, folder="001-bad-timecode", episode_key="001"
+            )
+            (readme.parent / "summary.zh-CN.md").write_text(
+                "# 测试总结\n\n错误引用 [00:59:59]\n", encoding="utf-8"
+            )
+            _, errors = self.validate(root, readme)
+            self.assertTrue(any("does not exist in summary.source_transcript" in error for error in errors))
+
+    def test_xiaoyuzhou_source_requires_complete_identity(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root, folder="001-xiaoyu", episode_key="001"
+            )
+            text = readme.read_text(encoding="utf-8").replace(
+                "platform: website\n    kind: episode\n    url: https://example.com/001-xiaoyu/1",
+                "platform: xiaoyuzhou\n    kind: episode\n    url: https://www.xiaoyuzhoufm.com/episode/0123456789abcdef01234567",
+            )
+            readme.write_text(text, encoding="utf-8")
+            _, errors = self.validate(root, readme)
+            self.assertTrue(any("identifiers.eid is required" in error for error in errors))
+
+    def test_xiaoyuzhou_source_requires_episode_platform_and_kind(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root, folder="001-xiaoyu-kind", episode_key="001"
+            )
+            source = (
+                "platform: xiaoyuzhou\n"
+                "    kind: audio\n"
+                "    url: https://www.xiaoyuzhoufm.com/episode/0123456789abcdef01234567\n"
+                "    identifiers:\n"
+                "      eid: 0123456789abcdef01234567\n"
+                "      pid: fedcba987654321001234567\n"
+                "      media_id: fedcba987654321001234567/example.m4a"
+            )
+            readme.write_text(
+                readme.read_text(encoding="utf-8").replace(
+                    "platform: website\n"
+                    "    kind: episode\n"
+                    "    url: https://example.com/001-xiaoyu-kind/1",
+                    source,
+                ),
+                encoding="utf-8",
+            )
+
+            _, errors = self.validate(root, readme)
+
+            self.assertTrue(
+                any("must use platform xiaoyuzhou and kind episode" in error for error in errors)
+            )
+
+    def test_episode_may_register_a_bilibili_channel_as_a_secondary_source(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root, folder="001-channel", episode_key="001"
+            )
+            readme.write_text(
+                readme.read_text(encoding="utf-8").replace(
+                    "platform: website\n"
+                    "    kind: episode\n"
+                    "    url: https://example.com/001-channel/1",
+                    "platform: bilibili\n"
+                    "    kind: channel\n"
+                    "    url: https://space.bilibili.com/12345/",
+                ),
+                encoding="utf-8",
+            )
+
+            _, errors = self.validate(root, readme)
+
+            self.assertEqual(errors, [])
+
+    def test_audio_asr_duration_must_equal_local_cache(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root, folder="001-duration", episode_key="001"
+            )
+            readme.write_text(
+                readme.read_text(encoding="utf-8").replace(
+                    "  duration_ms: 60000", "  duration_ms: 59999", 1
+                ),
+                encoding="utf-8",
+            )
+
+            _, errors = self.validate(root, readme)
+
+            self.assertTrue(
+                any("must equal local_audio_cache.duration_ms" in error for error in errors)
+            )
+
+    def test_non_audio_transcript_may_omit_local_audio_cache(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root, folder="001-publisher-text", episode_key="001"
+            )
+            text = readme.read_text(encoding="utf-8").replace(
+                "acquisition_method: audio-asr",
+                "acquisition_method: publisher-transcript",
+            )
+            cache_start = text.index("local_audio_cache:\n")
+            cache_end = text.index("---\n", cache_start)
+            readme.write_text(
+                text[:cache_start] + "local_audio_cache: null\n" + text[cache_end:],
+                encoding="utf-8",
+            )
+
+            _, errors = self.validate(root, readme)
+
+            self.assertFalse(any("local_audio_cache" in error for error in errors), errors)
+
     def test_participant_profile_validation_is_part_of_metadata_contract(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -770,9 +1207,9 @@ class EpisodeMetadataContractTests(unittest.TestCase):
                 episode_key="001-profile",
             )
             text = readme.read_text(encoding="utf-8").replace(
+                "    role: guest\n"
                 "sources:\n",
-                "participants:\n"
-                "  - id: guest\n"
+                "    role: guest\n"
                 "    profile:\n"
                 "      headline: \"\"\n"
                 "      checked_at: 2026-08-09\n"
@@ -963,6 +1400,154 @@ class EpisodeMetadataContractTests(unittest.TestCase):
                     self.assertTrue(
                         any("one timestamped sentence" in error for error in invalid_errors)
                     )
+
+
+class WikiIndexContractTests(unittest.TestCase):
+    ROOT_EPISODE_ROW = (
+        "| [Canonical \\| Title](https://publisher.example/episode) | Test Guest | "
+        "[Example Show](./shows/example/) | 2026-08-08 | "
+        "[总结](./shows/example/episodes/001-test/summary.zh-CN.md) | "
+        "[逐字稿](./shows/example/episodes/001-test/transcript.zh-CN.md) |"
+    )
+    SHOW_EPISODE_ROW = (
+        "| [Canonical \\| Title](https://publisher.example/episode) | Example Show | "
+        "2026-08-08 | [总结](./episodes/001-test/summary.zh-CN.md) | "
+        "[逐字稿](./episodes/001-test/transcript.zh-CN.md) |"
+    )
+
+    @classmethod
+    def write_fixture(
+        cls,
+        root: Path,
+        *,
+        root_episode_rows: list[str] | None = None,
+        show_episode_rows: list[str] | None = None,
+    ) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]]]:
+        root_rows = root_episode_rows or [cls.ROOT_EPISODE_ROW]
+        show_rows = show_episode_rows or [cls.SHOW_EPISODE_ROW]
+        (root / "README.md").write_text(
+            "# Test\n\n"
+            "## 收录播客\n\n"
+            "| 播客 | 简介 | 节目页 |\n"
+            "| --- | --- | --- |\n"
+            "| [Example Show](https://publisher.example/show) | Intro | "
+            "[README](./shows/example/) |\n\n"
+            "## 单集索引\n\n"
+            "| 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |\n"
+            "| --- | --- | --- | --- | --- | --- |\n"
+            + "\n".join(root_rows)
+            + "\n",
+            encoding="utf-8",
+        )
+        show_dir = root / "shows" / "example"
+        show_dir.mkdir(parents=True)
+        (show_dir / "README.md").write_text(
+            "# Example Show\n\n"
+            "## 单集\n\n"
+            "| 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |\n"
+            "| --- | --- | --- | --- | --- |\n"
+            + "\n".join(show_rows)
+            + "\n",
+            encoding="utf-8",
+        )
+        shows = {
+            "example": {
+                "id": "example",
+                "title": "Example Show",
+                "preferred": {"url": "https://publisher.example/show"},
+            }
+        }
+        episodes = [
+            {
+                "show_id": "example",
+                "show_title": "Example Show",
+                "title": "Canonical | Title",
+                "date": "2026-08-08",
+                "guests": "Test Guest",
+                "preferred_url": "https://publisher.example/episode",
+                "root_show_link": "./shows/example/",
+                "root_summary_link": "./shows/example/episodes/001-test/summary.zh-CN.md",
+                "root_transcript_link": "./shows/example/episodes/001-test/transcript.zh-CN.md",
+                "show_summary_link": "./episodes/001-test/summary.zh-CN.md",
+                "show_transcript_link": "./episodes/001-test/transcript.zh-CN.md",
+            }
+        ]
+        return shows, episodes
+
+    def validate(
+        self,
+        root: Path,
+        *,
+        root_episode_rows: list[str] | None = None,
+        show_episode_rows: list[str] | None = None,
+    ) -> list[str]:
+        shows, episodes = self.write_fixture(
+            root,
+            root_episode_rows=root_episode_rows,
+            show_episode_rows=show_episode_rows,
+        )
+        errors: list[str] = []
+        validate_wiki_indexes(
+            repository_root=root,
+            shows=shows,
+            episodes=episodes,
+            errors=errors,
+        )
+        return errors
+
+    def test_accepts_exact_index_contract_and_escaped_title_pipe(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertEqual(self.validate(Path(directory)), [])
+
+    def test_rejects_duplicate_summary_rows(self) -> None:
+        cases = {
+            "root": {
+                "root_episode_rows": [self.ROOT_EPISODE_ROW, self.ROOT_EPISODE_ROW]
+            },
+            "show": {
+                "show_episode_rows": [self.SHOW_EPISODE_ROW, self.SHOW_EPISODE_ROW]
+            },
+        }
+        for label, values in cases.items():
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
+                errors = self.validate(Path(directory), **values)
+                self.assertTrue(any("duplicates summary link" in error for error in errors))
+
+    def test_rejects_tampered_title_and_show_columns(self) -> None:
+        cases = {
+            "root title": {
+                "root_episode_rows": [
+                    self.ROOT_EPISODE_ROW.replace("Canonical \\| Title", "Wrong Title")
+                ],
+                "expected": "title must equal metadata",
+            },
+            "root show": {
+                "root_episode_rows": [
+                    self.ROOT_EPISODE_ROW.replace(
+                        "[Example Show](./shows/example/)",
+                        "[Wrong Show](./shows/wrong/)",
+                    )
+                ],
+                "expected": "podcast must equal and link its show",
+            },
+            "show title": {
+                "show_episode_rows": [
+                    self.SHOW_EPISODE_ROW.replace("Canonical \\| Title", "Wrong Title")
+                ],
+                "expected": "title must equal metadata",
+            },
+            "show name": {
+                "show_episode_rows": [
+                    self.SHOW_EPISODE_ROW.replace("| Example Show |", "| Wrong Show |")
+                ],
+                "expected": "podcast name must equal show title",
+            },
+        }
+        for label, values in cases.items():
+            expected = values.pop("expected")
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
+                errors = self.validate(Path(directory), **values)
+                self.assertTrue(any(expected in error for error in errors), errors)
 
 
 class ParticipantProfileValidationTests(unittest.TestCase):

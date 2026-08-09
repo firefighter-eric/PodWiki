@@ -11,7 +11,7 @@ numbering:
   status: verified
   checked_at: 2026-08-07
   source: publisher-rss
-title: "陈天奇：机器学习系统，长期主义，初心，XGBoost，MXNet，TVM，MLC LLM，OctoML｜WhynotTV Podcast #3"
+title: "陈天奇：机器学习系统，长期主义，初心，XGBoost，MXNet，TVM，MLC LLM，OctoML｜WhynotTV Podcast"
 navigation_title: "陈天奇 · XGBoost、TVM 与机器学习系统"
 catalog_keyword: "XGBoost"
 published_at: "2025-09-12T22:11:25+08:00"
@@ -39,6 +39,7 @@ participants:
 sources:
   - platform: bilibili
     kind: video
+    title: "陈天奇：机器学习系统，长期主义，初心，XGBoost，MXNet，TVM，MLC LLM，OctoML｜WhynotTV Podcast #3"
     url: https://www.bilibili.com/video/BV1s6pgzLE3y/
     preferred: true
     identifiers:
@@ -61,7 +62,7 @@ summary:
     engine: mlx-audio
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     selection_status: selected
-    sha256: faa71039a20ff377e6ca58924bd3ef20d5535f0da0ef3f20c22d32feb56521d1
+    sha256: 6192e39e36bd1414df3964307dcd7a7efb3285a656e479c8f62057f33afbb26c
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: no-anonymous-track

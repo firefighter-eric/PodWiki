@@ -11,7 +11,7 @@ numbering:
   status: verified
   checked_at: 2026-08-07
   source: publisher-rss
-title: "杨硕：妙动科技，特斯拉Optimus，CMU，大疆，无人机，人形机器人｜WhynotTV Podcast #1"
+title: "杨硕：妙动科技，特斯拉Optimus，CMU，大疆，无人机，人形机器人｜WhynotTV Podcast"
 navigation_title: "杨硕 · 妙动科技、Optimus 与人形机器人"
 catalog_keyword: "Optimus"
 published_at: "2025-07-05T17:10:58+08:00"
@@ -38,6 +38,7 @@ participants:
 sources:
   - platform: bilibili
     kind: video
+    title: "杨硕：妙动科技，特斯拉Optimus，CMU，大疆，无人机，人形机器人｜WhynotTV Podcast #1"
     url: https://www.bilibili.com/video/BV1em3XznEFx/
     preferred: true
     identifiers:
@@ -60,7 +61,7 @@ summary:
     engine: mlx-audio
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     selection_status: selected
-    sha256: 2f816ba886dc2fc0fc6c8f818e1d124286578d6db7d488effb21bed2d8387783
+    sha256: 8c065c49f3c2ca637a31e796e6517e54189a1e8d327ec8e01f79eafa42d06a81
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: no-anonymous-track-login-indicated
