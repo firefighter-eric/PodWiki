@@ -1,6 +1,8 @@
 .DS_Store
 .cache/
 .venv/
+node_modules/
+.playwright-mcp/
 .mypy_cache/
 .pytest_cache/
 .ruff_cache/

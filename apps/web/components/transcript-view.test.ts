@@ -18,8 +18,11 @@ describe("TranscriptView", () => {
 
     const html = renderToStaticMarkup(createElement(TranscriptView, { episode: episode! }));
     expect(html).toContain("中英对照逐字稿");
-    expect(html).toContain("机器翻译 · 未审核");
-    expect(html).toContain("英文原稿由语音识别生成");
+    expect(html).toMatch(/<p class="section-kicker">[\d,]+ 段<\/p>/u);
+    expect(html).not.toContain("机器翻译");
+    expect(html).not.toContain("未审核");
+    expect(html).not.toContain("语音识别生成");
+    expect(html).not.toContain('class="transcript-notice"');
     expect(html).toContain('class="transcript-lines bilingual-transcript-lines"');
     expect(html).toContain('lang="en"');
     expect(html).toContain('lang="zh-CN"');
@@ -35,7 +38,7 @@ describe("TranscriptView", () => {
     const html = renderToStaticMarkup(createElement(TranscriptView, { episode: episode! }));
     expect(html).toContain("完整逐字稿");
     expect(html).not.toContain("中英对照逐字稿");
-    expect(html).not.toContain("当前文本由语音识别生成");
+    expect(html).not.toContain("机器逐字稿");
     expect(html).not.toContain('class="transcript-notice"');
     expect(html).not.toContain("bilingual-transcript-lines");
     expect(html).toMatch(/href="#t-[^"]+" tabindex="-1"/u);

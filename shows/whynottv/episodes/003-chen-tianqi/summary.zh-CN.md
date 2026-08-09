@@ -182,15 +182,18 @@ TVM 因此不是突然转向编译器，而是继续追问怎样让更少的人�
 - [02:38:00] 留给二〇二五年的时间胶囊
 - [02:39:36] 接受失败并继续重新出发
 
-## 事实边界与待核实事项
+## 阅读边界
 
-- 当前正式逐字稿是尚未核听、没有说话人标签的 Qwen3-ASR 机器初稿。稿中存在中英文混排切分、断句、近音词和项目名误识别；逐字引用、归属具体说话人或制作字幕前必须回听对应音频。
-- 机器稿将 XGBoost 多次识别为“超级boost”“差距boost”“Chaiji Boost”，将 MXNet 写成“MXN”“M X Net”，将 MLC LLM 写成“MLCLOM”“MLCM”，也出现“Window TV”“A三班”“库大”“He Light”等近音形式。本文仅在语义明确处按 README 和上下文归一为 WhynotTV、ACM 班、CUDA、Halide 等名称。
-- SVDFeature、CXXNet、Minerva、Mocha、VTA、Relax、MLC LLM、XGrammar、GluonCV、GluonNLP 及人物姓名在机器稿中可能存在拼写、断词或归属错误；正式引用项目历史、作者关系、论文标题和发布日期前，应对照论文、代码仓库、个人主页及音频核验。
 - XGBoost 的“世界最快”、论文引用量，MXNet 的多卡表现和 NVIDIA/Amazon 使用情况，项目发布年份、团队贡献分工、KDD Cup 成绩、GPU 型号及 CMU 集群规模等来自访谈口述，尚未逐项对照历史版本、基准、论文或机构记录。
 - 关于 OctoML 的产品路线、客户类型、商业模式、内部技术决策和 NVIDIA 收购动机主要来自技术联合创始人的回忆；节目未提供收入、合同、竞争数据、收购条款或其他联合创始人的交叉叙述。
 - 大数据、深度学习、大模型“三阶段”是嘉宾用于解释系统作用的概括；AlexNet、Caffe、Spark、PyTorch、TensorFlow、TPU、DeepSeek 等技术史和因果关系应以一手论文、官方文档及同期资料核验，不能把访谈概述当作完整历史。
 - 关于预训练放缓、模型趋同、端侧 AI 份额、硬件专用化、hardware lottery、AI agent 优化系统工程及 AI 编程工具生产率的内容属于观察或预测，没有统一结论和确定时间表。
 - “失败会带来勇气”“长期随机过程将收敛”“重要与平庸问题花费相近”等是嘉宾的方法论或比喻，不构成职业、投资或健康建议；长期投入不保证回报，风险选择需要结合责任、资源与退出条件。
 - 嘉宾关于写代码、教授角色、博士训练和开源维护的选择具有个人与学科背景，不能推广为评价所有研究者、管理者或学生的统一标准。
+
+## 编辑记录（不对读者展示）
+
+- 当前正式逐字稿是尚未核听、没有说话人标签的 Qwen3-ASR 机器初稿。稿中存在中英文混排切分、断句、近音词和项目名误识别；逐字引用、归属具体说话人或制作字幕前必须回听对应音频。
+- 机器稿将 XGBoost 多次识别为“超级boost”“差距boost”“Chaiji Boost”，将 MXNet 写成“MXN”“M X Net”，将 MLC LLM 写成“MLCLOM”“MLCM”，也出现“Window TV”“A三班”“库大”“He Light”等近音形式。本文仅在语义明确处按 README 和上下文归一为 WhynotTV、ACM 班、CUDA、Halide 等名称。
+- SVDFeature、CXXNet、Minerva、Mocha、VTA、Relax、MLC LLM、XGrammar、GluonCV、GluonNLP 及人物姓名在机器稿中可能存在拼写、断词或归属错误；正式引用项目历史、作者关系、论文标题和发布日期前，应对照论文、代码仓库、个人主页及音频核验。
 - 本文时间码对应当前正式稿 `transcript.zh-CN.md`（SHA-256：`faa71039a20ff377e6ca58924bd3ef20d5535f0da0ef3f20c22d32feb56521d1`）。若后续人工校订逐字稿，必须重新计算哈希并迁移、复核全部定位。

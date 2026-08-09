@@ -84,10 +84,6 @@ export function GuestProfiles({ guests }: { guests: Participant[] }) {
                     ) : null}
                   </dl>
                 ) : null}
-                <p className="guest-profile-checked">
-                  资料核验于 <time dateTime={profile.checkedAt}>{profile.checkedAt}</time>
-                  ；“现任”均指截至该日。
-                </p>
               </div>
             </article>
           );

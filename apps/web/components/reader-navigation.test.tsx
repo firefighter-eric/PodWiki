@@ -301,21 +301,24 @@ describe("reader navigation", () => {
     }
   });
 
-  it("preserves the complete authored summary and discloses its draft status", async () => {
+  it("preserves the reader-facing summary without exposing editorial workflow", async () => {
     const episodes = await getEpisodes();
     const episode = episodes.find((candidate) => candidate.id === "latetalk:178");
     expect(episode).toBeDefined();
 
     const html = renderToStaticMarkup(await SummaryView({ episode: episode! }));
-    expect(html).toContain('class="summary-status-note"');
     expect(html).toContain('<h2>为什么值得听</h2>');
-    expect(html).toContain("本页总结基于机器逐字稿整理，当前为草稿");
     expect(html).toContain("适合关注 AI 研究方法");
     expect(html).toContain("RSI 变得可做，关键不是概念新");
     expect(html).toContain("嘉宾主张");
     expect(html).toContain("原文定位");
-    expect(html).toContain("事实边界与待核实");
     expect(html).toContain("一百五十人临界点");
+    expect(html).toContain("阅读边界");
+    expect(html).toContain("不代表公司的正式路线");
+    expect(html).not.toContain("内容状态");
+    expect(html).not.toContain("当前为草稿");
+    expect(html).not.toContain("事实边界与待核实");
+    expect(html).not.toContain("人工审核时应重点回听");
 
     const railHtml = renderWithPreferences(createElement(RightRail, {
       episode: episode!,
@@ -325,7 +328,7 @@ describe("reader navigation", () => {
     expect(railHtml).toContain('href="#extended-reading">5 分钟读完</a>');
   });
 
-  it("preserves legacy overall-summary sections and every following fact boundary", async () => {
+  it("preserves legacy overall-summary sections without their editorial checklist", async () => {
     const legacyEpisodes = [
       ["luoyonghao", "002-he-xiaopeng"],
       ["luoyonghao", "005-zhou-hongyi"],
@@ -340,7 +343,8 @@ describe("reader navigation", () => {
       const html = renderToStaticMarkup(await SummaryView({ episode: episode! }));
       expect(html, `${showId}/${folder}`).toContain("整体总结");
       expect(html, `${showId}/${folder}`).toContain("主题导航");
-      expect(html, `${showId}/${folder}`).toContain("事实边界与待核实事项");
+      expect(html, `${showId}/${folder}`).toContain("阅读边界");
+      expect(html, `${showId}/${folder}`).not.toContain("事实边界与待核实事项");
 
       const railHtml = renderWithPreferences(createElement(RightRail, {
         episode: episode!,

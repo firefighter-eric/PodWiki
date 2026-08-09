@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ShowCatalog } from "@/components/show-catalog";
 import { getEpisodeCards, getShows } from "@/lib/content";
 
-const description = "浏览 PodWiki 已收录的节目，进入任意一期阅读结构化总结与完整机器逐字稿。";
+const description = "浏览 PodWiki 已收录的节目，进入任意一期阅读结构化总结与完整逐字稿。";
 
 export const metadata: Metadata = {
   title: "全部节目",

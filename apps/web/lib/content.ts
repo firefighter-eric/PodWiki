@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
+import { getReaderFacingSummary } from "@/lib/reader-copy";
 import { getTranscriptHref } from "@/lib/reader-routes";
 import {
   createSearchContent,
@@ -1409,7 +1410,8 @@ async function buildSearchDocuments(): Promise<SearchEpisodeDocument[]> {
       card.showTitle,
       ...searchAssets.participants.flatMap(getParticipantSearchTerms),
     ].join(" ");
-    const summarySnippet = searchAssets.summaryRaw.replace(/[#*`>\[\]]/gu, "");
+    const readerSummary = getReaderFacingSummary(searchAssets.summaryRaw);
+    const summarySnippet = readerSummary.replace(/[#*`>\[\]]/gu, "");
 
     return {
       id: card.id,
@@ -1418,7 +1420,7 @@ async function buildSearchDocuments(): Promise<SearchEpisodeDocument[]> {
       showTitle: card.showTitle,
       href: card.href,
       episodeHaystack: indexSearchText(episodeHaystack),
-      summaryNormalized: searchAssets.summaryRaw.toLocaleLowerCase("zh-CN"),
+      summaryNormalized: readerSummary.toLocaleLowerCase("zh-CN"),
       summarySnippet: indexSearchText(summarySnippet),
       transcriptSegments: transcriptSegments.map(toSearchSegment),
       translationSegments: bilingualTranscript?.segments.map((segment) => ({

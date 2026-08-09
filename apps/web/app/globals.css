@@ -960,17 +960,6 @@ button {
   font-size: 10.5px;
 }
 
-.guest-profile-checked {
-  margin: 0;
-  color: var(--ink-faint);
-  font-size: 10.5px;
-  line-height: 1.55;
-}
-
-.guest-profile-checked time {
-  font-variant-numeric: tabular-nums;
-}
-
 .summary-view,
 .transcript-view {
   padding-top: 28px;
@@ -1005,25 +994,6 @@ button {
 
 .summary-section {
   margin-bottom: 21px;
-}
-
-.summary-status-note {
-  display: grid;
-  gap: 4px;
-  padding: 12px 14px;
-  margin: 0 0 26px;
-  border-left: 2px solid var(--accent);
-  color: var(--ink-soft);
-  background: var(--paper-warm);
-  font-size: 12.5px;
-  line-height: 1.65;
-}
-
-.summary-status-note strong {
-  color: var(--accent-dark);
-  font-size: 11px;
-  font-weight: 650;
-  letter-spacing: 0.06em;
 }
 
 #one-line {
@@ -1434,30 +1404,6 @@ button {
 .transcript-heading > a {
   color: var(--accent-dark);
   font-size: 12px;
-}
-
-.transcript-notice {
-  margin: 0 0 26px;
-  padding: 12px 14px;
-  color: var(--ink-soft);
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  background: #f8f5ef;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-.transcript-notice strong {
-  display: inline-flex;
-  margin-right: 8px;
-  padding: 1px 7px;
-  color: var(--accent-dark);
-  border: 1px solid #e8b8ae;
-  border-radius: 999px;
-  background: #fff5ee;
-  font-size: 11px;
-  font-weight: 650;
-  line-height: 1.55;
 }
 
 .transcript-lines {
