@@ -15,7 +15,7 @@ title: "朱啸虎现实主义故事的第三次连载：人工智能的盛筵与
 navigation_title: "朱啸虎 · AI 应用、商业化与泡沫判断"
 catalog_keyword: "AI 泡沫"
 published_at: "2025-12-09T22:42:24+08:00"
-duration_ms: 2880000
+duration_ms: 2786046
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -32,11 +32,14 @@ participants:
           status: current
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/693834013fec3166cf262bd0
     preferred: false
     identifiers:
+      eid: 693834013fec3166cf262bd0
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/lt8N4mGIZOL0FRxV0kUOVoqOnFu5.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 693834013fec3166cf262bd0
   - platform: bilibili

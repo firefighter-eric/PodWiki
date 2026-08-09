@@ -19,9 +19,9 @@ export type ParticipantProfile = {
 };
 
 export type Participant = {
-  id?: string;
+  id: string;
   name: string;
-  role?: string;
+  role: "guest" | "participant" | "host";
   aliases?: string[];
   profile?: ParticipantProfile;
 };
@@ -39,7 +39,8 @@ export type TranscriptProvenance = {
   path: string;
   engine?: string;
   model?: string;
-  selectionStatus?: string;
+  selectionStatus?: "selected" | "superseded";
+  sha256?: string;
 };
 
 export type ShowSummary = {

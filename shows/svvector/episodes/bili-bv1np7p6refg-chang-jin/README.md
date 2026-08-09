@@ -17,7 +17,7 @@ title: "硅谷坐标 x 喜马拉雅资本常劲：AI时代的价值投资"
 navigation_title: "常劲 · AI 时代的价值投资"
 catalog_keyword: "价值投资"
 published_at: "2026-06-22T14:03:32+08:00"
-duration_ms: 2742380
+duration_ms: 2742379
 language: zh-CN
 participants:
   - id: cao-qingyun

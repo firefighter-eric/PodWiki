@@ -15,7 +15,7 @@ title: "对姚顺宇的4小时访谈：请允许我小疯一下！在Anthropic�
 navigation_title: "姚顺宇 · 模型进展、Coding 与研究方法"
 catalog_keyword: "OpenAI"
 published_at: "2026-05-11T08:00:00+08:00"
-duration_ms: 13835000
+duration_ms: 13680686
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -41,11 +41,14 @@ participants:
         - institution: "斯坦福大学"
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/6a00aa051b7bd50295dfe41d
     preferred: false
     identifiers:
+      eid: 6a00aa051b7bd50295dfe41d
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/ll7qIcIWWGFSsORHr4yY-UuqAe8h.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 6a00aa051b7bd50295dfe41d
   - platform: bilibili

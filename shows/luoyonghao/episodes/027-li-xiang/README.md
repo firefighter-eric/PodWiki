@@ -47,7 +47,9 @@ sources:
     url: https://www.xiaoyuzhoufm.com/episode/6a037114e1eb34a939471baf
     preferred: false
     identifiers:
-      episode_id: 6a037114e1eb34a939471baf
+      eid: 6a037114e1eb34a939471baf
+      pid: 68981df29e7bcd326eb91d88
+      media_id: 68981df29e7bcd326eb91d88/lifY6z4XND4-vT9qQvxv_Pccs7FP.m4a
 workflow:
   metadata: verified
   summary: draft

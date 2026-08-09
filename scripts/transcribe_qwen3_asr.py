@@ -15,6 +15,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+from asr_lineage import (
+    LINEAGE_SCHEMA_VERSION,
+    build_model_identity,
+    pinned_revision,
+    require_requested_identity,
+    validate_model_identity,
+)
+
 
 DEFAULT_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
 DEFAULT_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
@@ -40,11 +48,19 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument(
+        "--model-revision",
+        help="Pinned full Hugging Face model commit; defaults to the project pin",
+    )
+    parser.add_argument(
         "--model-path",
         type=Path,
         help="Optional local model directory; artifact metadata still uses --model",
     )
     parser.add_argument("--aligner", default=DEFAULT_ALIGNER)
+    parser.add_argument(
+        "--aligner-revision",
+        help="Pinned full Hugging Face aligner commit; defaults to the project pin",
+    )
     parser.add_argument(
         "--aligner-path",
         type=Path,
@@ -166,10 +182,11 @@ def validate_raw_document(
     audio_size_bytes: int,
     audio_sha256: str,
     backend_options: dict[str, Any] | None = None,
+    model_identity: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     if not isinstance(document, dict) or document.get("schema_version") != 1:
         raise ValueError("raw ASR artifact must contain a JSON object")
-    expected_values = {
+    expected_values: dict[str, Any] = {
         "kind": "raw-asr",
         "engine": engine,
         "model": model,
@@ -181,6 +198,16 @@ def validate_raw_document(
                 f"raw ASR {field} mismatch: expected={expected!r}, "
                 f"actual={document.get(field)!r}"
             )
+
+    lineage_version = document.get("lineage_schema_version")
+    if lineage_version is not None:
+        if type(lineage_version) is not int or lineage_version != LINEAGE_SCHEMA_VERSION:
+            raise ValueError("raw ASR has an unsupported lineage schema version")
+        recorded_identity = validate_model_identity(
+            document.get("model_identity"), label="raw ASR"
+        )
+        if model_identity is not None and recorded_identity != model_identity:
+            raise ValueError("raw ASR model identity does not match the pinned local model")
 
     audio = document.get("audio")
     if not isinstance(audio, dict):
@@ -196,7 +223,7 @@ def validate_raw_document(
     options = document.get("options")
     if not isinstance(options, dict):
         raise ValueError("raw ASR has no decoding options")
-    expected_options = {
+    expected_options: dict[str, Any] = {
         "temperature": temperature,
         "max_tokens_per_chunk": max_tokens,
         "chunk_duration_seconds": chunk_duration,
@@ -242,6 +269,8 @@ def validate_aligned_document(
     raw_document: dict[str, Any],
     max_sentence_characters: int,
     backend_options: dict[str, Any] | None = None,
+    model_identity: dict[str, Any] | None = None,
+    aligner_identity: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     if (
         not isinstance(document, dict)
@@ -264,6 +293,28 @@ def validate_aligned_document(
     for field, expected in expected_source.items():
         if source.get(field) != expected:
             raise ValueError(f"aligned ASR source {field} does not match")
+    lineage_version = document.get("lineage_schema_version")
+    raw_lineage_version = raw_document.get("lineage_schema_version")
+    if lineage_version != raw_lineage_version:
+        raise ValueError("aligned ASR lineage schema does not match raw ASR")
+    if lineage_version is not None:
+        if type(lineage_version) is not int or lineage_version != LINEAGE_SCHEMA_VERSION:
+            raise ValueError("aligned ASR has an unsupported lineage schema version")
+        recorded_model_identity = validate_model_identity(
+            source.get("model_identity"), label="aligned ASR model"
+        )
+        recorded_aligner_identity = validate_model_identity(
+            source.get("aligner_identity"), label="aligned ASR aligner"
+        )
+        raw_model_identity = validate_model_identity(
+            raw_document.get("model_identity"), label="raw ASR"
+        )
+        if recorded_model_identity != raw_model_identity:
+            raise ValueError("aligned ASR model identity does not match raw ASR")
+        if model_identity is not None and recorded_model_identity != model_identity:
+            raise ValueError("aligned ASR model identity does not match the pinned model")
+        if aligner_identity is not None and recorded_aligner_identity != aligner_identity:
+            raise ValueError("aligned ASR aligner identity does not match the pinned aligner")
     expected_options = {"max_sentence_characters": max_sentence_characters}
     if backend_options is not None:
         expected_options.update(backend_options)
@@ -391,28 +442,28 @@ def is_alignment_character(character: str) -> bool:
 def alignment_units(text: str, *, language: str = "Chinese") -> list[str]:
     """Tokenize like Qwen3 ForcedAligner for Chinese or space-delimited text."""
     if language.lower() != "chinese":
-        units: list[str] = []
+        spaced_units: list[str] = []
         for segment in text.split():
             cleaned = "".join(
                 character
                 for character in segment
                 if is_alignment_character(character)
             )
-            latin_buffer: list[str] = []
+            spaced_latin_buffer: list[str] = []
 
             def flush_space_latin() -> None:
-                if latin_buffer:
-                    units.append("".join(latin_buffer))
-                    latin_buffer.clear()
+                if spaced_latin_buffer:
+                    spaced_units.append("".join(spaced_latin_buffer))
+                    spaced_latin_buffer.clear()
 
             for character in cleaned:
                 if is_cjk_character(character):
                     flush_space_latin()
-                    units.append(character)
+                    spaced_units.append(character)
                 else:
-                    latin_buffer.append(character)
+                    spaced_latin_buffer.append(character)
             flush_space_latin()
-        return units
+        return spaced_units
 
     units: list[str] = []
     latin_buffer: list[str] = []
@@ -601,11 +652,27 @@ def main() -> int:
     )
     audio_size_bytes = input_path.stat().st_size
     audio_sha256 = sha256_file(input_path)
+    model_revision = pinned_revision(args.model, getattr(args, "model_revision", None))
+    aligner_revision = pinned_revision(
+        args.aligner, getattr(args, "aligner_revision", None)
+    )
 
     raw_document: dict[str, Any] | None = None
     if mode in {"align-only", "complete"}:
+        loaded_raw_document = read_json_strict(output_path)
+        loaded_lineage_version = loaded_raw_document.get("lineage_schema_version")
+        if loaded_lineage_version is not None and (
+            type(loaded_lineage_version) is not int
+            or loaded_lineage_version != LINEAGE_SCHEMA_VERSION
+        ):
+            raise ValueError("raw ASR has an unsupported lineage schema version")
+        if mode == "align-only" and loaded_lineage_version is None:
+            raise ValueError(
+                "markerless legacy raw ASR cannot be aligned or realigned; "
+                "pass --retranscribe to establish v2 model and aligner lineage"
+            )
         raw_document = validate_raw_document(
-            read_json_strict(output_path),
+            loaded_raw_document,
             model=args.model,
             language=args.language,
             temperature=args.temperature,
@@ -614,7 +681,16 @@ def main() -> int:
             audio_size_bytes=audio_size_bytes,
             audio_sha256=audio_sha256,
         )
+        if raw_document.get("lineage_schema_version") == LINEAGE_SCHEMA_VERSION:
+            require_requested_identity(
+                raw_document.get("model_identity"),
+                repository=args.model,
+                requested_revision=model_revision,
+                label="raw ASR model",
+            )
     if mode == "complete":
+        if raw_document is None:
+            raise AssertionError("complete ASR has no loaded raw document")
         raw_asr_sha256 = sha256_file(output_path)
         aligned_document = validate_aligned_document(
             read_json_strict(aligned_output_path),
@@ -626,6 +702,13 @@ def main() -> int:
             raw_document=raw_document,
             max_sentence_characters=args.max_sentence_characters,
         )
+        if aligned_document.get("lineage_schema_version") == LINEAGE_SCHEMA_VERSION:
+            require_requested_identity(
+                aligned_document["source"].get("aligner_identity"),
+                repository=args.aligner,
+                requested_revision=aligner_revision,
+                label="aligned ASR aligner",
+            )
         print(
             json.dumps(
                 {
@@ -642,6 +725,14 @@ def main() -> int:
         )
         return 0
 
+    if mode == "fresh" and args.model_path is None:
+        raise ValueError("fresh ASR requires --model-path for pinned model verification")
+    if mode == "align-only" and args.model_path is None:
+        raise ValueError(
+            "v2 alignment requires --model-path to verify the original model identity"
+        )
+    if args.aligner_path is None:
+        raise ValueError("alignment requires --aligner-path for pinned model verification")
     model_load_target = (
         local_model_target(args.model_path, label="model", fallback=args.model)
         if mode == "fresh"
@@ -652,6 +743,23 @@ def main() -> int:
         label="aligner",
         fallback=args.aligner,
     )
+    model_identity = (
+        build_model_identity(
+            repository=args.model,
+            requested_revision=model_revision,
+            local_path=args.model_path,
+        )
+        if args.model_path is not None
+        else None
+    )
+    aligner_identity = build_model_identity(
+        repository=args.aligner,
+        requested_revision=aligner_revision,
+        local_path=args.aligner_path,
+    )
+    if raw_document is not None and raw_document.get("lineage_schema_version") == 2:
+        if raw_document.get("model_identity") != model_identity and model_identity is not None:
+            raise ValueError("raw ASR model identity does not match the local model files")
 
     try:
         import mlx.core as mx
@@ -660,7 +768,7 @@ def main() -> int:
         from mlx_audio.stt.utils import load_audio
     except ImportError as error:
         raise SystemExit(
-            "MLX Audio is unavailable; run `uv sync --group asr`, then use "
+            "MLX Audio is unavailable; run `uv sync --extra media --extra asr`, then use "
             "`uv run --no-sync` for this worker"
         ) from error
 
@@ -692,9 +800,11 @@ def main() -> int:
         raw_chunks = serialize_chunks(result.segments)
         raw_document = {
             "schema_version": 1,
+            "lineage_schema_version": LINEAGE_SCHEMA_VERSION,
             "kind": "raw-asr",
             "engine": "mlx-audio",
             "model": args.model,
+            "model_identity": model_identity,
             "language": args.language,
             "generated_at": utc_now(),
             "audio": {
@@ -728,6 +838,7 @@ def main() -> int:
             chunk_duration=args.chunk_duration,
             audio_size_bytes=audio_size_bytes,
             audio_sha256=audio_sha256,
+            model_identity=model_identity,
         )
         write_json_atomically(output_path, raw_document)
         if args.retranscribe:
@@ -851,6 +962,10 @@ def main() -> int:
         "chunks": aligned_chunks,
         "segments": all_segments,
     }
+    if raw_document.get("lineage_schema_version") == LINEAGE_SCHEMA_VERSION:
+        aligned_document["lineage_schema_version"] = LINEAGE_SCHEMA_VERSION
+        aligned_document["source"]["model_identity"] = raw_document["model_identity"]
+        aligned_document["source"]["aligner_identity"] = aligner_identity
     validate_aligned_document(
         aligned_document,
         model=args.model,
@@ -860,6 +975,8 @@ def main() -> int:
         raw_asr_sha256=raw_asr_sha256,
         raw_document=raw_document,
         max_sentence_characters=args.max_sentence_characters,
+        model_identity=model_identity,
+        aligner_identity=aligner_identity,
     )
     write_json_atomically(aligned_output_path, aligned_document)
 

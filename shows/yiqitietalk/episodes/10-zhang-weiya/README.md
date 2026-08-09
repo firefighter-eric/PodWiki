@@ -16,7 +16,7 @@ title: "张唯雅：三个跑步的人，坐在家里瞎聊"
 navigation_title: "张唯雅 · 妈妈跑者、训练与家庭闲聊"
 catalog_keyword: "妈妈跑者"
 published_at: "2026-03-21T12:31:25.264Z"
-duration_ms: 4597000
+duration_ms: 4597700
 language: zh-CN
 participants:
   - id: zhang-weiya
@@ -30,7 +30,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "10 张唯雅：三个跑步的人，坐在家里瞎聊"
     url: https://www.xiaoyuzhoufm.com/episode/69be8dc42d318777c90884be
     preferred: true

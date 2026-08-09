@@ -12,30 +12,123 @@ concurrency:
   group: quality-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  UV_CACHE_DIR: .cache/uv
+
 jobs:
   python-content:
-    name: Python and content
-    runs-on: ubuntu-latest
+    name: Python, supply chain, and content
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           fetch-depth: 0
 
-      - name: Set up uv
+      - name: Set up pinned uv
         uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
+          version: 0.9.16
           enable-cache: true
 
+      - name: Install Python 3.12
+        run: uv python install 3.12
+
+      - name: Check lock freshness
+        run: uv lock --check
+
+      - name: Install locked development and media dependencies
+        run: uv sync --locked --group dev --extra media
+
+      - name: Smoke-test installed media dependency
+        run: uv run --no-sync python -c "import yt_dlp"
+
+      - name: Lint Python
+        run: uv run --no-sync ruff check scripts tests
+
+      - name: Type-check runtime scripts
+        run: >-
+          uv run --no-sync mypy
+          scripts/acquire_media.py
+          scripts/audit_correction_migration.py
+          scripts/asr_lineage.py
+          scripts/process_qwen3_asr_batch.py
+          scripts/render_asr_transcript.py
+          scripts/transcribe_audio.py
+          scripts/transcribe_qwen3_asr.py
+          scripts/transcribe_qwen3_asr_cuda.py
+
+      - name: Compile Python sources
+        run: uv run --no-sync python -m compileall -q scripts tests
+
       - name: Run Python tests
-        run: uv run --python 3.12 --no-project python -m unittest discover -s tests -v
+        run: uv run --no-sync python -m unittest discover -s tests -v
 
       - name: Validate content contracts
-        run: uv run --python 3.12 --no-project python scripts/validate.py
+        run: uv run --no-sync python scripts/validate.py
+
+      - name: Verify episode correction migration
+        run: uv run --no-sync python scripts/audit_correction_migration.py
+
+      - name: Audit installed Python dependencies
+        run: >-
+          uv run --no-sync pip-audit --local --strict
+          --progress-spinner off
+
+  apple-silicon-lock:
+    name: Apple Silicon MLX install and imports
+    runs-on: macos-15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Require Apple Silicon runner
+        run: test "$(uname -m)" = arm64
+
+      - name: Set up pinned uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          version: 0.9.16
+          enable-cache: true
+
+      - name: Install Python 3.12
+        run: uv python install 3.12
+
+      - name: Install locked MLX and media dependencies
+        run: uv sync --locked --extra media --extra asr
+
+      - name: Import MLX runtime dependencies
+        run: >-
+          uv run --no-sync python -c
+          "import mlx, mlx_audio, mlx_whisper, torch, yt_dlp"
+
+  windows-cuda-install:
+    name: Windows x64 CUDA install and imports
+    runs-on: windows-2025
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Set up pinned uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          version: 0.9.16
+          enable-cache: true
+
+      - name: Install Python 3.12
+        run: uv python install 3.12
+
+      - name: Install locked CUDA and media dependencies
+        run: uv sync --locked --extra media --extra asr-cuda
+
+      - name: Import CUDA runtime dependencies without GPU inference
+        run: >-
+          uv run --no-sync python -c
+          "import qwen_asr, torch, yt_dlp; print(torch.__version__)"
 
   web:
     name: Web
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
@@ -51,6 +144,14 @@ jobs:
 
       - name: Install web dependencies
         run: npm ci
+        working-directory: apps/web
+
+      - name: Install locked Playwright browser
+        run: npx --no-install playwright install --with-deps chromium
+        working-directory: apps/web
+
+      - name: Audit web dependencies
+        run: npm audit --audit-level=high
         working-directory: apps/web
 
       - name: Run web quality gate

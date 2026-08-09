@@ -16,7 +16,7 @@ title: "对华为半导体首席科学家廖恒的5小时访谈：一部昇腾�
 navigation_title: "廖恒 · 芯片产业周期与昇腾工程史"
 catalog_keyword: "昇腾"
 published_at: "2026-07-25T21:19:38+08:00"
-duration_ms: 16672000
+duration_ms: 16671403
 language: zh-CN
 participants:
   - id: zhang-xiaojun

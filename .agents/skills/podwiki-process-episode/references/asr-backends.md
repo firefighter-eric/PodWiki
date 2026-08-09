@@ -23,8 +23,8 @@
   paths are used.
 - The `asr-cuda` dependency group locks `qwen-asr==0.0.6` and the CUDA 12.8 build of
   PyTorch 2.11.0 on Windows AMD64; the worker rejects incompatible runtime versions.
-- Stable ignored paths are `.cache/models/Qwen3-ASR-1.7B` and
-  `.cache/models/Qwen3-ForcedAligner-0.6B`. Supplying both `--model-path` and
+- Stable ignored v2 paths are `.cache/models/Qwen3-ASR-1.7B-pinned-v2` and
+  `.cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2`. Supplying both `--model-path` and
   `--aligner-path` forces both Hugging Face and Transformers offline modes; do not omit one
   path and claim a fully local run.
 - Defaults are `cuda:0`, `bfloat16`, SDPA, 120-second ownership chunks, 5 seconds of
@@ -57,9 +57,11 @@
   SHA-256, so the readable transcript can be checked against its structured lineage.
 - A CUDA raw overlap checkpoint records full candidate text plus non-overlapping ownership
   ranges. Its reconciliation status is `pending` until forced alignment has selected the
-  owned slices; only `complete` raw may be referenced by aligned output. Existing valid raw
-  resumes at alignment/reconciliation; existing valid complete raw and aligned artifacts
-  are a no-op. Replacement requires `--retranscribe` or `--realign`.
+  owned slices; only `complete` raw may be referenced by aligned output. Only v2 raw may resume
+  at alignment/reconciliation or use `--realign`, and both pinned local identities are required.
+  A complete markerless raw/aligned pair remains a read-only no-op; markerless raw that needs any
+  new alignment fails closed and requires `--retranscribe` rather than fabricated identity
+  backfill.
 - Use local model paths for workers while retaining canonical Hub IDs in tracked metadata.
 
 ## MLX Whisper
@@ -68,8 +70,8 @@
 - Engine value: `mlx-whisper`.
 - Proven project baseline: `mlx-community/whisper-large-v3-turbo-q4`.
 - Retain existing historical baselines. When explicitly requested for a new comparison, write
-  it under `.cache/benchmarks/`; the current worker can emit non-strict JSON `NaN` values, so
-  do not select, promote, or commit new output until that contract is fixed.
+  it under `.cache/benchmarks/`. The worker rejects non-finite values and writes strict JSON;
+  benchmark output remains ignored and must not be selected, promoted, or committed.
 - Produces engine-native `raw.json` with timestamped segments accepted by the renderer.
 
 ## Backend contract

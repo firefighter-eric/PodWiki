@@ -27,7 +27,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "2 李健 铁蛋：职业运动员就是要做自己认为对的事情"
     url: https://www.xiaoyuzhoufm.com/episode/69624948f8b05f9f75d72c22
     preferred: true

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode_id": "zhangxiaojun:131",
+  "version": "legacy-global-v1-migration",
+  "input_asr_sha256": "5a7377f3e86cb4f8f093c4739bfc0fc9d0d36e5f16c2074ed7c0c43ee1ce4814",
+  "rules": [
+    {
+      "id": "deepseek-spaced",
+      "match": "Deep Seek",
+      "replacement": "DeepSeek",
+      "reason": "canonical DeepSeek brand spelling",
+      "case_sensitive": true,
+      "expected_hits": 1
+    }
+  ]
+}

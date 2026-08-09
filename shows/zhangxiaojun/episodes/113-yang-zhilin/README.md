@@ -15,7 +15,7 @@ title: "和杨植麟时隔1年的对话：K2、Agentic LLM、缸中之脑和“�
 navigation_title: "杨植麟 · K2、Agent 泛化与 AI 自我改进"
 catalog_keyword: "K2"
 published_at: "2025-08-27T12:21:01+08:00"
-duration_ms: 6073000
+duration_ms: 5978837
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -32,11 +32,14 @@ participants:
           status: current
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/68ae86d18ce45d46d49c4d50
     preferred: false
     identifiers:
+      eid: 68ae86d18ce45d46d49c4d50
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/liW7qgxAt8UFB4_sEptGTXmH1NAe.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 68ae86d18ce45d46d49c4d50
   - platform: bilibili

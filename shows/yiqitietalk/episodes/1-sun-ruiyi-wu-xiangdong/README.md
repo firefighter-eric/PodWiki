@@ -16,7 +16,7 @@ title: "在赛场狂奔，在播客走心，一起铁Talk"
 navigation_title: "孙瑞一、吴向东 · 跑步媒体与播客初心"
 catalog_keyword: "播客初心"
 published_at: "2025-12-29T14:46:12.112Z"
-duration_ms: 2171000
+duration_ms: 2171500
 language: zh-CN
 participants:
   - id: sun-ruiyi
@@ -27,7 +27,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "1 在赛场狂奔，在播客走心，一起铁Talk"
     url: https://www.xiaoyuzhoufm.com/episode/6952860114db1df9ef5c3a88
     preferred: true

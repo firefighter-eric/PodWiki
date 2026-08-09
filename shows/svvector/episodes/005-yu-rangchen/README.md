@@ -41,11 +41,13 @@ participants:
       checked_at: "2026-08-08"
 sources:
   - platform: xiaoyuzhou
-    kind: feed-item
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/69ebf1d71d989496e7729801
     preferred: false
     identifiers:
-      episode_id: 69ebf1d71d989496e7729801
+      eid: 69ebf1d71d989496e7729801
+      pid: 69a4b82b27e15c06061cfc2d
+      media_id: 69a4b82b27e15c06061cfc2d/lgiznAZGLKP1Ae-_VBRTbR_DiYUj.m4a
   - platform: bilibili
     kind: video
     url: https://www.bilibili.com/video/BV1kVoJBeE9h/
@@ -218,7 +220,7 @@ last_verified_at: 2026-08-08
 - [x] 检查匿名访问可见的平台字幕轨
 - [x] 获取并独立验证本地音轨、来源 sidecar、大小和 SHA-256
 - [x] 记录发布者 `rights.no_reprint=1` 的来源权利提示
-- [x] 使用 Qwen3-ASR 与 ForcedAligner 生成机器逐字稿及完整 lineage
+- [x] 使用 Qwen3-ASR 与 ForcedAligner 生成机器逐字稿及旧版产物哈希链
 - [ ] 校对主持人、嘉宾、专有名词、数字和断句
 - [x] 基于完整机器逐字稿生成总结草稿
 - [ ] 核听关键片段并完成必要事实核查

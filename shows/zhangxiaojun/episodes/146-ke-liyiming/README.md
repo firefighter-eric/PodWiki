@@ -15,7 +15,7 @@ title: "对Physical Intelligence柯丽一鸣4小时访谈：Pi的开源模型研
 navigation_title: "柯丽一鸣 · 通用机器人、Pi 模型与强化学习"
 catalog_keyword: "Pi"
 published_at: "2026-07-16T08:30:00+08:00"
-duration_ms: 13684000
+duration_ms: 13572224
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -35,11 +35,14 @@ participants:
           status: current
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/6a57a05da4972c496dfc67f1
     preferred: false
     identifiers:
+      eid: 6a57a05da4972c496dfc67f1
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/ljmazvdvAd7O5mD-Nuiompd6_1NV.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 6a57a05da4972c496dfc67f1
   - platform: apple-podcasts

@@ -16,7 +16,7 @@ title: "许乐：我还要干票大的！"
 navigation_title: "许乐 · 跟腱康复、全运会与再冲PB"
 catalog_keyword: "跟腱康复"
 published_at: "2026-06-23T10:18:26.676Z"
-duration_ms: 5962000
+duration_ms: 5962900
 language: zh-CN
 participants:
   - id: xu-le
@@ -27,7 +27,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "16 许乐：我还要干票大的！"
     url: https://www.xiaoyuzhoufm.com/episode/6a3a595e2e335a35a808142c
     preferred: true

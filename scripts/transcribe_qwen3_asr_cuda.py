@@ -18,6 +18,12 @@ from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from typing import Any, Iterator
 
+from asr_lineage import (
+    LINEAGE_SCHEMA_VERSION,
+    build_model_identity,
+    pinned_revision,
+    require_requested_identity,
+)
 from transcribe_qwen3_asr import (
     SAMPLE_RATE,
     finite_document_number,
@@ -143,11 +149,19 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument(
+        "--model-revision",
+        help="Pinned full Hugging Face model commit; defaults to the project pin",
+    )
+    parser.add_argument(
         "--model-path",
         type=Path,
         help="Optional local model directory; metadata still records --model",
     )
     parser.add_argument("--aligner", default=DEFAULT_ALIGNER)
+    parser.add_argument(
+        "--aligner-revision",
+        help="Pinned full Hugging Face aligner commit; defaults to the project pin",
+    )
     parser.add_argument(
         "--aligner-path",
         type=Path,
@@ -5281,8 +5295,9 @@ def load_cuda_runtime() -> tuple[Any, Any, Any, Any]:
         qwen_asr_version = version("qwen-asr")
     except (ImportError, PackageNotFoundError) as error:
         raise SystemExit(
-            "the CUDA Qwen backend is unavailable; run `uv sync --group "
-            "asr-cuda`, then use `uv run --no-sync` for this worker"
+            "the CUDA Qwen backend is unavailable; run `uv sync --locked "
+            "--extra media --extra asr-cuda`, then use `uv run --no-sync` "
+            "for this worker"
         ) from error
     if qwen_asr_version != QWEN_ASR_PACKAGE_VERSION:
         raise SystemExit(
@@ -5536,6 +5551,10 @@ def main() -> int:
     )
     audio_size_bytes = input_path.stat().st_size
     audio_sha256 = sha256_file(input_path)
+    model_revision = pinned_revision(args.model, getattr(args, "model_revision", None))
+    aligner_revision = pinned_revision(
+        args.aligner, getattr(args, "aligner_revision", None)
+    )
     raw_options = raw_backend_options(args)
     alignment_options = aligned_backend_options(args)
 
@@ -5547,6 +5566,17 @@ def main() -> int:
     if mode in {"align-only", "complete"}:
         raw_sha256_before_read = sha256_file(output_path)
         loaded_raw_document = read_json_strict(output_path)
+        loaded_lineage_version = loaded_raw_document.get("lineage_schema_version")
+        if loaded_lineage_version is not None and (
+            type(loaded_lineage_version) is not int
+            or loaded_lineage_version != LINEAGE_SCHEMA_VERSION
+        ):
+            raise ValueError("raw ASR has an unsupported lineage schema version")
+        if mode == "align-only" and loaded_lineage_version is None:
+            raise ValueError(
+                "markerless legacy raw ASR cannot be aligned or realigned; "
+                "pass --retranscribe to establish v2 model and aligner lineage"
+            )
         loaded_options = (
             loaded_raw_document.get("options")
             if isinstance(loaded_raw_document, dict)
@@ -5619,6 +5649,13 @@ def main() -> int:
             audio_sha256=audio_sha256,
             backend_options=raw_options,
         )
+        if raw_document.get("lineage_schema_version") == LINEAGE_SCHEMA_VERSION:
+            require_requested_identity(
+                raw_document.get("model_identity"),
+                repository=args.model,
+                requested_revision=model_revision,
+                label="raw ASR model",
+            )
         validate_cuda_raw_integrity(
             raw_document,
             args=args,
@@ -5633,7 +5670,14 @@ def main() -> int:
             and raw_document["boundary_reconciliation"]["status"] == "pending"
         ):
             mode = "align-only"
+        if mode == "align-only" and loaded_lineage_version is None:
+            raise ValueError(
+                "markerless legacy raw ASR cannot be aligned or realigned; "
+                "pass --retranscribe to establish v2 model and aligner lineage"
+            )
     if mode == "complete":
+        if raw_document is None:
+            raise AssertionError("complete ASR has no loaded raw document")
         raw_asr_sha256 = loaded_raw_asr_sha256
         if raw_asr_sha256 is None:
             raise AssertionError("complete ASR has no loaded raw identity")
@@ -5649,6 +5693,13 @@ def main() -> int:
             max_sentence_characters=args.max_sentence_characters,
             backend_options=alignment_options,
         )
+        if aligned_document.get("lineage_schema_version") == LINEAGE_SCHEMA_VERSION:
+            require_requested_identity(
+                aligned_document["source"].get("aligner_identity"),
+                repository=args.aligner,
+                requested_revision=aligner_revision,
+                label="aligned ASR aligner",
+            )
         validate_cuda_aligned_integrity(
             aligned_document,
             raw_output_path=output_path,
@@ -5680,6 +5731,14 @@ def main() -> int:
         )
         return 0
 
+    if mode == "fresh" and args.model_path is None:
+        raise ValueError("fresh ASR requires --model-path for pinned model verification")
+    if mode == "align-only" and args.model_path is None:
+        raise ValueError(
+            "v2 alignment requires --model-path to verify the original model identity"
+        )
+    if args.aligner_path is None:
+        raise ValueError("alignment requires --aligner-path for pinned model verification")
     model_load_target = (
         local_model_target(args.model_path, label="model", fallback=args.model)
         if mode == "fresh"
@@ -5690,6 +5749,23 @@ def main() -> int:
         label="aligner",
         fallback=args.aligner,
     )
+    model_identity = (
+        build_model_identity(
+            repository=args.model,
+            requested_revision=model_revision,
+            local_path=args.model_path,
+        )
+        if args.model_path is not None
+        else None
+    )
+    aligner_identity = build_model_identity(
+        repository=args.aligner,
+        requested_revision=aligner_revision,
+        local_path=args.aligner_path,
+    )
+    if raw_document is not None and raw_document.get("lineage_schema_version") == 2:
+        if raw_document.get("model_identity") != model_identity and model_identity is not None:
+            raise ValueError("raw ASR model identity does not match the local model files")
     if args.model_path is not None and args.aligner_path is not None:
         os.environ["HF_HUB_OFFLINE"] = "1"
         os.environ["TRANSFORMERS_OFFLINE"] = "1"
@@ -5802,9 +5878,11 @@ def main() -> int:
 
         raw_document = {
             "schema_version": 1,
+            "lineage_schema_version": LINEAGE_SCHEMA_VERSION,
             "kind": "raw-asr",
             "engine": ENGINE,
             "model": args.model,
+            "model_identity": model_identity,
             "language": args.language,
             "generated_at": utc_now(),
             "audio": {
@@ -5850,6 +5928,7 @@ def main() -> int:
             audio_size_bytes=audio_size_bytes,
             audio_sha256=audio_sha256,
             backend_options=raw_options,
+            model_identity=model_identity,
         )
         validate_cuda_raw_integrity(
             raw_document,
@@ -5974,7 +6053,6 @@ def main() -> int:
     ):
         chunk = candidate["chunk"]
         relative_alignment = candidate["relative_alignment"]
-        owned_relative_alignment = relative_alignment[start_item:stop_item]
         owned_text = text_for_alignment_slice(
             str(chunk["decoded_text"]),
             relative_alignment,
@@ -6062,6 +6140,7 @@ def main() -> int:
         audio_size_bytes=audio_size_bytes,
         audio_sha256=audio_sha256,
         backend_options=raw_options,
+        model_identity=model_identity,
     )
     validate_cuda_raw_integrity(
         reconciled_raw_document,
@@ -6190,6 +6269,10 @@ def main() -> int:
         "chunks": aligned_chunks,
         "segments": all_segments,
     }
+    if raw_document.get("lineage_schema_version") == LINEAGE_SCHEMA_VERSION:
+        aligned_document["lineage_schema_version"] = LINEAGE_SCHEMA_VERSION
+        aligned_document["source"]["model_identity"] = raw_document["model_identity"]
+        aligned_document["source"]["aligner_identity"] = aligner_identity
     validate_aligned_document(
         aligned_document,
         engine=ENGINE,
@@ -6201,6 +6284,8 @@ def main() -> int:
         raw_document=raw_document,
         max_sentence_characters=args.max_sentence_characters,
         backend_options=alignment_options,
+        model_identity=model_identity,
+        aligner_identity=aligner_identity,
     )
     validate_cuda_aligned_integrity(
         aligned_document,

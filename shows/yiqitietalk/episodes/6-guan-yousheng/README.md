@@ -16,7 +16,7 @@ title: "管油胜：这十年我都没有认真做过运动员"
 navigation_title: "管油胜 · 野蛮训练、体制外跑者与重启"
 catalog_keyword: "野蛮训练"
 published_at: "2026-02-07T12:55:29.555Z"
-duration_ms: 4428000
+duration_ms: 4428800
 language: zh-CN
 participants:
   - id: guan-yousheng
@@ -24,7 +24,7 @@ participants:
     role: participant
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "6 管油胜：这十年我都没有认真做过运动员"
     url: https://www.xiaoyuzhoufm.com/episode/6987349566e2c303774c39fc
     preferred: true

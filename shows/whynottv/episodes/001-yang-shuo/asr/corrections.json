@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode_id": "whynottv:001",
+  "version": "legacy-global-v1-migration",
+  "input_asr_sha256": "ec2c5cb4e7e32bce67ab6fa0d9e87faebaffdbc97cf402b6ee93bb40c3f6cfba",
+  "rules": [
+    {
+      "id": "deepseek-spaced",
+      "match": "Deep Seek",
+      "replacement": "DeepSeek",
+      "reason": "canonical DeepSeek brand spelling",
+      "case_sensitive": true,
+      "expected_hits": 1
+    }
+  ]
+}

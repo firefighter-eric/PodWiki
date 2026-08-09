@@ -21,6 +21,7 @@ sources:
   - platform: bilibili
     kind: channel
     url: https://space.bilibili.com/3546915742419882/
+    preferred: true
     identifiers:
       mid: "3546915742419882"
   - platform: website
@@ -48,15 +49,15 @@ last_verified_at: 2026-08-07
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
-| [对话田渊栋：AI 自进化如何到来【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1XnuH66EzS/) | 晚点聊 LateTalk #178 | 2026-08-07 | [总结](./episodes/178-tian-yuandong/summary.zh-CN.md) | [逐字稿](./episodes/178-tian-yuandong/transcript.zh-CN.md) |
-| [详解 Kimi K3：强到冲击 Anthropic 估值的模型什么样？【晚点聊LateTalk】](https://www.bilibili.com/video/BV1nWM26QEu5/) | 晚点聊 LateTalk #177 | 2026-08-06 | [总结](./episodes/177-zhao-chenyang-zeng-zhiyuan/summary.zh-CN.md) | [逐字稿](./episodes/177-zhao-chenyang-zeng-zhiyuan/transcript.zh-CN.md) |
-| [姚顺雨，来到腾讯 300 天【晚点聊LateTalk】](https://www.bilibili.com/video/BV1DDGu6VEzo/) | 晚点聊 LateTalk #176 | 2026-08-01 | [总结](./episodes/176-gao-honghao/summary.zh-CN.md) | [逐字稿](./episodes/176-gao-honghao/transcript.zh-CN.md) |
-| [对话 Liblib 陈冕：关于活下来，以及所有接近死亡的时刻【晚点聊LateTalk】](https://www.bilibili.com/video/BV1ZP3863E3E/) | 晚点聊 LateTalk #175 | 2026-07-30 | [总结](./episodes/175-chen-mian/summary.zh-CN.md) | [逐字稿](./episodes/175-chen-mian/transcript.zh-CN.md) |
-| [AI 冲击企业软件巨头？与SAP原欣聊大模型 to B 的颠覆与边界【晚点聊LateTalk】](https://www.bilibili.com/video/BV1zQ3i6YErP/) | 晚点聊 LateTalk #174 | 2026-07-28 | [总结](./episodes/174-yuan-xin/summary.zh-CN.md) | [逐字稿](./episodes/174-yuan-xin/transcript.zh-CN.md) |
-| [具身季报 26Q2：世界模型大风不停，和不想被贴标签的人【晚点聊LateTalk】](https://www.bilibili.com/video/BV1Eb3Y6QEMs/) | 晚点聊 LateTalk #170 | 2026-07-28 | [总结](./episodes/170-chen-zhe/summary.zh-CN.md) | [逐字稿](./episodes/170-chen-zhe/transcript.zh-CN.md) |
-| [Momenta IPO 后再访曹旭东：就是想做没有尽头的 AI【晚点聊LateTalk】](https://www.bilibili.com/video/BV1ASga6xEeZ/) | 晚点聊 LateTalk #172 | 2026-07-24 | [总结](./episodes/172-cao-xudong/summary.zh-CN.md) | [逐字稿](./episodes/172-cao-xudong/transcript.zh-CN.md) |
-| [对话深庭纪王弢：人形之外，具身还有另一种答案【晚点LatePost】](https://www.bilibili.com/video/BV1GsgD6sEnU/) | 晚点聊 LateTalk · 合作 | 2026-07-23 | [总结](./episodes/bili-bv1gsgd6senu-wang-tao/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1gsgd6senu-wang-tao/transcript.zh-CN.md) |
-| [26 岁 3 亿美元卖公司“开心只有两分钟”，不想 boring 就继续 suffering【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1tYgz6JEvm/) | 晚点聊 LateTalk #173 | 2026-07-22 | [总结](./episodes/173-yao-song/summary.zh-CN.md) | [逐字稿](./episodes/173-yao-song/transcript.zh-CN.md) |
-| [AI 季报 26Q2：从 coding 到 RSI，强者愈强的未来？【晚点聊LateTalk】](https://www.bilibili.com/video/BV1Mhgz6QEHA/) | 晚点聊 LateTalk #171 | 2026-07-22 | [总结](./episodes/171-henry-yin/summary.zh-CN.md) | [逐字稿](./episodes/171-henry-yin/transcript.zh-CN.md) |
-| [世界模型这半年：路线争议、数据来源与商业落地【晚点LatePost】](https://www.bilibili.com/video/BV1Z9KA6sE9Q/) | 晚点聊 LateTalk · 合作 | 2026-07-18 | [总结](./episodes/bili-bv1z9ka6se9q-wang-guangrun-pu-tao-zhong-liruo/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1z9ka6se9q-wang-guangrun-pu-tao-zhong-liruo/transcript.zh-CN.md) |
-| [AI 硬件大爆发，谁能抢占下一个“iPhone 时刻”【晚点LatePost】](https://www.bilibili.com/video/BV1bVNn6XERr/) | 晚点聊 LateTalk · 合作 | 2026-07-10 | [总结](./episodes/bili-bv1bvnn6xerr-li-hongwei/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1bvnn6xerr-li-hongwei/transcript.zh-CN.md) |
+| [对话田渊栋：AI 自进化如何到来【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1XnuH66EzS/) | 晚点聊 LateTalk | 2026-08-07 | [总结](./episodes/178-tian-yuandong/summary.zh-CN.md) | [逐字稿](./episodes/178-tian-yuandong/transcript.zh-CN.md) |
+| [详解 Kimi K3：强到冲击 Anthropic 估值的模型什么样？【晚点聊LateTalk】](https://www.bilibili.com/video/BV1nWM26QEu5/) | 晚点聊 LateTalk | 2026-08-06 | [总结](./episodes/177-zhao-chenyang-zeng-zhiyuan/summary.zh-CN.md) | [逐字稿](./episodes/177-zhao-chenyang-zeng-zhiyuan/transcript.zh-CN.md) |
+| [姚顺雨，来到腾讯 300 天【晚点聊LateTalk】](https://www.bilibili.com/video/BV1DDGu6VEzo/) | 晚点聊 LateTalk | 2026-08-01 | [总结](./episodes/176-gao-honghao/summary.zh-CN.md) | [逐字稿](./episodes/176-gao-honghao/transcript.zh-CN.md) |
+| [对话 Liblib 陈冕：关于活下来，以及所有接近死亡的时刻【晚点聊LateTalk】](https://www.bilibili.com/video/BV1ZP3863E3E/) | 晚点聊 LateTalk | 2026-07-30 | [总结](./episodes/175-chen-mian/summary.zh-CN.md) | [逐字稿](./episodes/175-chen-mian/transcript.zh-CN.md) |
+| [AI 冲击企业软件巨头？与SAP原欣聊大模型 to B 的颠覆与边界【晚点聊LateTalk】](https://www.bilibili.com/video/BV1zQ3i6YErP/) | 晚点聊 LateTalk | 2026-07-28 | [总结](./episodes/174-yuan-xin/summary.zh-CN.md) | [逐字稿](./episodes/174-yuan-xin/transcript.zh-CN.md) |
+| [具身季报 26Q2：世界模型大风不停，和不想被贴标签的人【晚点聊LateTalk】](https://www.bilibili.com/video/BV1Eb3Y6QEMs/) | 晚点聊 LateTalk | 2026-07-28 | [总结](./episodes/170-chen-zhe/summary.zh-CN.md) | [逐字稿](./episodes/170-chen-zhe/transcript.zh-CN.md) |
+| [Momenta IPO 后再访曹旭东：就是想做没有尽头的 AI【晚点聊LateTalk】](https://www.bilibili.com/video/BV1ASga6xEeZ/) | 晚点聊 LateTalk | 2026-07-24 | [总结](./episodes/172-cao-xudong/summary.zh-CN.md) | [逐字稿](./episodes/172-cao-xudong/transcript.zh-CN.md) |
+| [对话深庭纪王弢：人形之外，具身还有另一种答案【晚点LatePost】](https://www.bilibili.com/video/BV1GsgD6sEnU/) | 晚点聊 LateTalk | 2026-07-23 | [总结](./episodes/bili-bv1gsgd6senu-wang-tao/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1gsgd6senu-wang-tao/transcript.zh-CN.md) |
+| [26 岁 3 亿美元卖公司“开心只有两分钟”，不想 boring 就继续 suffering【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1tYgz6JEvm/) | 晚点聊 LateTalk | 2026-07-22 | [总结](./episodes/173-yao-song/summary.zh-CN.md) | [逐字稿](./episodes/173-yao-song/transcript.zh-CN.md) |
+| [AI 季报 26Q2：从 coding 到 RSI，强者愈强的未来？【晚点聊LateTalk】](https://www.bilibili.com/video/BV1Mhgz6QEHA/) | 晚点聊 LateTalk | 2026-07-22 | [总结](./episodes/171-henry-yin/summary.zh-CN.md) | [逐字稿](./episodes/171-henry-yin/transcript.zh-CN.md) |
+| [世界模型这半年：路线争议、数据来源与商业落地【晚点LatePost】](https://www.bilibili.com/video/BV1Z9KA6sE9Q/) | 晚点聊 LateTalk | 2026-07-18 | [总结](./episodes/bili-bv1z9ka6se9q-wang-guangrun-pu-tao-zhong-liruo/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1z9ka6se9q-wang-guangrun-pu-tao-zhong-liruo/transcript.zh-CN.md) |
+| [AI 硬件大爆发，谁能抢占下一个“iPhone 时刻”【晚点LatePost】](https://www.bilibili.com/video/BV1bVNn6XERr/) | 晚点聊 LateTalk | 2026-07-10 | [总结](./episodes/bili-bv1bvnn6xerr-li-hongwei/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1bvnn6xerr-li-hongwei/transcript.zh-CN.md) |

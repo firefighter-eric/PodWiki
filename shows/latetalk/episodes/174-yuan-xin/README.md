@@ -16,7 +16,7 @@ title: "AI 冲击企业软件巨头？与SAP原欣聊大模型 to B 的颠覆与
 navigation_title: "原欣 · 企业软件的 AI 颠覆与边界"
 catalog_keyword: "SAP"
 published_at: "2026-07-28T21:55:19+08:00"
-duration_ms: 5505000
+duration_ms: 5504107
 language: zh-CN
 participants:
   - id: cheng-manqi
@@ -182,6 +182,6 @@ last_verified_at: 2026-08-07
 - [x] 核对 BVID、aid、cid、page、正式期号与参与者
 - [x] 检查匿名访问可见的平台字幕轨并记录边界
 - [x] 获取公开音轨并完成编码、时长、大小和哈希校验
-- [x] 生成 Qwen3-ASR 机器逐字稿及完整 lineage
+- [x] 生成 Qwen3-ASR 机器逐字稿及旧版产物哈希链
 - [x] 基于完整机器稿形成独立总结草稿
 - [ ] 核听关键片段、校对专有名词并核查高影响事实

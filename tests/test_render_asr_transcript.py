@@ -16,11 +16,16 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from render_asr_transcript import (  # noqa: E402
+    load_correction_map,
     main,
+    read_json_strict,
+    recover_artifact_pair_transaction,
     refine_segments,
+    render_transaction_path,
     repository_path,
     sha256_text,
     write_artifact_pair_atomically,
+    validate_correction_hits,
 )
 
 
@@ -157,6 +162,100 @@ class RefineSegmentContentTests(unittest.TestCase):
                     [],
                 )
 
+    def test_applies_only_episode_scoped_audited_corrections_and_counts_hits(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            correction_path = Path(directory) / "corrections.json"
+            correction_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "episode_id": "show:001",
+                        "version": 3,
+                        "input_asr_sha256": "0" * 64,
+                        "rules": [
+                            {
+                                "id": "guest-name",
+                                "match": "翁嘉义",
+                                "replacement": "翁家翌",
+                                "reason": "publisher metadata and human review",
+                                "expected_hits": 2,
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            correction_map = load_correction_map(
+                correction_path,
+                episode_id="show:001",
+            )
+            hits = {"guest-name": 0}
+
+            refined = refine_segments(
+                [
+                    {
+                        "id": 1,
+                        "start": 0.0,
+                        "end": 1.0,
+                        "text": "翁嘉义采访翁嘉义。",
+                    }
+                ],
+                correction_rules=correction_map.rules,
+                correction_hits=hits,
+            )
+
+        self.assertEqual(refined[0]["text"], "翁家翌采访翁家翌。")
+        self.assertEqual(hits, {"guest-name": 2})
+        validate_correction_hits(correction_map, hits=hits)
+        self.assertEqual(
+            refine_segments(
+                [{"id": 1, "start": 0.0, "end": 1.0, "text": "翁嘉义。"}]
+            )[0]["text"],
+            "翁嘉义。",
+        )
+
+    def test_correction_map_is_bound_to_one_episode(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "corrections.json"
+            path.write_text(
+                '{"schema_version":1,"episode_id":"show:001",'
+                '"version":1,"input_asr_sha256":"' + "0" * 64 + '","rules":[]}',
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "episode_id"):
+                load_correction_map(path, episode_id="show:002")
+
+    def test_correction_map_rejects_unexpected_hit_count(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "corrections.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "episode_id": "show:001",
+                        "version": 1,
+                        "input_asr_sha256": "0" * 64,
+                        "rules": [
+                            {
+                                "id": "verified-name",
+                                "match": "误写",
+                                "replacement": "正名",
+                                "reason": "publisher metadata",
+                                "expected_hits": 2,
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            correction_map = load_correction_map(path, episode_id="show:001")
+
+        with self.assertRaisesRegex(ValueError, "expected=2, actual=1"):
+            validate_correction_hits(correction_map, hits={"verified-name": 1})
+
 
 class AtomicArtifactTests(unittest.TestCase):
     def test_writes_matching_refined_and_transcript_files(self) -> None:
@@ -187,6 +286,118 @@ class AtomicArtifactTests(unittest.TestCase):
                 hashlib.sha256(transcript.encode("utf-8")).hexdigest(),
             )
             self.assertEqual(list(root.rglob(".podwiki-*.tmp")), [])
+
+    def test_recovers_pair_after_failure_between_the_two_promotions(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            refined_path = root / "refined.json"
+            transcript_path = root / "transcript.md"
+            original_promote = __import__(
+                "render_asr_transcript"
+            ).promote_transaction_artifact
+            promotion_count = 0
+
+            def fail_second_promotion(temporary: Path, target: Path) -> None:
+                nonlocal promotion_count
+                promotion_count += 1
+                if promotion_count == 2:
+                    raise OSError("injected refined promotion failure")
+                original_promote(temporary, target)
+
+            with patch(
+                "render_asr_transcript.promote_transaction_artifact",
+                side_effect=fail_second_promotion,
+            ), self.assertRaisesRegex(OSError, "injected"):
+                write_artifact_pair_atomically(
+                    refined_path=refined_path,
+                    refined_text='{"kind":"refined-asr"}\n',
+                    transcript_path=transcript_path,
+                    transcript_text="# title\n",
+                )
+
+            journal = render_transaction_path(
+                refined_path=refined_path,
+                transcript_path=transcript_path,
+            )
+            self.assertTrue(journal.is_file())
+            self.assertTrue(
+                recover_artifact_pair_transaction(
+                    refined_path=refined_path,
+                    transcript_path=transcript_path,
+                )
+            )
+            self.assertEqual(
+                refined_path.read_text(encoding="utf-8"),
+                '{"kind":"refined-asr"}\n',
+            )
+            self.assertEqual(transcript_path.read_text(encoding="utf-8"), "# title\n")
+            self.assertFalse(journal.exists())
+            self.assertEqual(list(root.rglob(".podwiki-*.tmp")), [])
+
+    def test_recovery_rejects_target_or_external_temporary_without_mutation(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target_directory = root / "targets"
+            target_directory.mkdir()
+            refined_path = target_directory / "refined.json"
+            transcript_path = target_directory / "transcript.md"
+            refined_bytes = b'{"kind":"existing refined"}\n'
+            transcript_bytes = b"# existing transcript\n"
+            refined_path.write_bytes(refined_bytes)
+            transcript_path.write_bytes(transcript_bytes)
+            external = root / ".podwiki-transcript.md.external.tmp"
+            external_bytes = b"external file must survive"
+            external.write_bytes(external_bytes)
+            safe_refined_temporary = (
+                target_directory / ".podwiki-refined.json.safe.tmp"
+            )
+            journal = render_transaction_path(
+                refined_path=refined_path,
+                transcript_path=transcript_path,
+            )
+
+            for temporary, message in (
+                (transcript_path, "equals its target"),
+                (external, "outside the target directory"),
+            ):
+                with self.subTest(message=message):
+                    journal.write_text(
+                        json.dumps(
+                            {
+                                "schema_version": 1,
+                                "kind": "podwiki-render-transaction",
+                                "artifacts": {
+                                    "refined": {
+                                        "target": refined_path.resolve().as_posix(),
+                                        "temporary": (
+                                            safe_refined_temporary.resolve().as_posix()
+                                        ),
+                                        "sha256": hashlib.sha256(
+                                            refined_bytes
+                                        ).hexdigest(),
+                                    },
+                                    "transcript": {
+                                        "target": transcript_path.resolve().as_posix(),
+                                        "temporary": temporary.resolve().as_posix(),
+                                        "sha256": hashlib.sha256(
+                                            transcript_bytes
+                                        ).hexdigest(),
+                                    },
+                                },
+                            }
+                        ),
+                        encoding="utf-8",
+                    )
+                    with self.assertRaisesRegex(ValueError, message):
+                        recover_artifact_pair_transaction(
+                            refined_path=refined_path,
+                            transcript_path=transcript_path,
+                        )
+                    self.assertEqual(refined_path.read_bytes(), refined_bytes)
+                    self.assertEqual(transcript_path.read_bytes(), transcript_bytes)
+                    self.assertEqual(external.read_bytes(), external_bytes)
 
     def test_rejects_the_same_output_path(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -246,6 +457,240 @@ class AtomicArtifactTests(unittest.TestCase):
             self.assertIn("input_asr_path", source)
             self.assertIn("input_asr_sha256", source)
             self.assertNotIn("raw_asr_path", source)
+
+    def test_refined_v2_copies_model_and_aligner_identity_and_repository(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            input_path = root / "aligned.json"
+            refined_path = root / "refined.json"
+            transcript_path = root / "transcript.md"
+            model_identity = {
+                "schema_version": 1,
+                "repository": "example/model",
+                "requested_revision": "a" * 40,
+                "resolved_commit": "a" * 40,
+                "files_sha256": {
+                    "config.json": "1" * 64,
+                    "model.safetensors": "2" * 64,
+                },
+            }
+            aligner_identity = {
+                **model_identity,
+                "repository": "example/aligner",
+                "requested_revision": "b" * 40,
+                "resolved_commit": "b" * 40,
+            }
+            input_path.write_text(
+                json.dumps(
+                    {
+                        "lineage_schema_version": 2,
+                        "source": {
+                            "model": "example/model",
+                            "aligner": "example/aligner",
+                            "model_identity": model_identity,
+                            "aligner_identity": aligner_identity,
+                        },
+                        "segments": [
+                            {"id": 0, "start": 0.0, "end": 1.0, "text": "内容"}
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            arguments = [
+                "render_asr_transcript.py",
+                "--input",
+                str(input_path),
+                "--refined-output",
+                str(refined_path),
+                "--output",
+                str(transcript_path),
+                "--episode-id",
+                "show:001",
+                "--title",
+                "标题",
+                "--model",
+                "example/model",
+            ]
+
+            with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(
+                io.StringIO()
+            ):
+                self.assertEqual(main(), 0)
+
+            refined = json.loads(refined_path.read_text(encoding="utf-8"))
+            self.assertEqual(refined["lineage_schema_version"], 2)
+            self.assertEqual(refined["source"]["model_identity"], model_identity)
+            self.assertEqual(refined["source"]["aligner_identity"], aligner_identity)
+            self.assertEqual(refined["source"]["aligner"], "example/aligner")
+
+    def test_main_reuses_a_valid_pair_without_rewriting_it(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            input_path = root / "aligned.json"
+            refined_path = root / "refined.json"
+            transcript_path = root / "transcript.md"
+            input_path.write_text(
+                '{"segments":[{"id":0,"start":0,"end":1,"text":"内容"}]}',
+                encoding="utf-8",
+            )
+            arguments = [
+                "render_asr_transcript.py",
+                "--input",
+                str(input_path),
+                "--refined-output",
+                str(refined_path),
+                "--output",
+                str(transcript_path),
+                "--episode-id",
+                "show:001",
+                "--title",
+                "标题",
+                "--model",
+                "model",
+            ]
+            with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(
+                io.StringIO()
+            ):
+                self.assertEqual(main(), 0)
+            first_refined = refined_path.read_bytes()
+            first_transcript = transcript_path.read_bytes()
+            stdout = io.StringIO()
+            with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(stdout):
+                self.assertEqual(main(), 0)
+
+            self.assertEqual(refined_path.read_bytes(), first_refined)
+            self.assertEqual(transcript_path.read_bytes(), first_transcript)
+            self.assertEqual(json.loads(stdout.getvalue())["status"], "skipped-valid")
+
+    def test_main_reuses_legacy_pair_when_episode_map_exactly_reproduces_it(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            input_path = root / "aligned.json"
+            correction_path = root / "corrections.json"
+            refined_path = root / "refined.json"
+            transcript_path = root / "transcript.md"
+            input_path.write_text(
+                '{"segments":[{"id":0,"start":0,"end":1,"text":"Deep Seek"}]}',
+                encoding="utf-8",
+            )
+            correction_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "episode_id": "show:001",
+                        "version": "legacy-global-v1-migration",
+                        "input_asr_sha256": hashlib.sha256(
+                            input_path.read_bytes()
+                        ).hexdigest(),
+                        "rules": [
+                            {
+                                "id": "deepseek-spaced",
+                                "match": "Deep Seek",
+                                "replacement": "DeepSeek",
+                                "reason": "canonical DeepSeek brand spelling",
+                                "case_sensitive": True,
+                                "expected_hits": 1,
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            arguments = [
+                "render_asr_transcript.py",
+                "--input",
+                str(input_path),
+                "--refined-output",
+                str(refined_path),
+                "--output",
+                str(transcript_path),
+                "--episode-id",
+                "show:001",
+                "--title",
+                "标题",
+                "--model",
+                "model",
+                "--correction-map",
+                str(correction_path),
+            ]
+            with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(
+                io.StringIO()
+            ):
+                self.assertEqual(main(), 0)
+            legacy_refined = json.loads(refined_path.read_text(encoding="utf-8"))
+            del legacy_refined["corrections"]
+            refined_path.write_text(
+                json.dumps(legacy_refined, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            first_refined = refined_path.read_bytes()
+            first_transcript = transcript_path.read_bytes()
+            stdout = io.StringIO()
+
+            with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(stdout):
+                self.assertEqual(main(), 0)
+
+            self.assertEqual(refined_path.read_bytes(), first_refined)
+            self.assertEqual(transcript_path.read_bytes(), first_transcript)
+            self.assertEqual(json.loads(stdout.getvalue())["status"], "skipped-valid")
+
+    def test_strict_reader_rejects_duplicate_keys_and_non_finite_values(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "invalid.json"
+            path.write_text('{"segments":[],"segments":[]}', encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "duplicate JSON key"):
+                read_json_strict(path)
+            path.write_text('{"value":NaN}', encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "non-finite"):
+                read_json_strict(path)
+
+    def test_main_rejects_unknown_or_non_integer_lineage_marker(self) -> None:
+        for marker in (1, 3, "2", True):
+            with self.subTest(marker=marker), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                input_path = root / "aligned.json"
+                refined_path = root / "refined.json"
+                transcript_path = root / "transcript.md"
+                input_path.write_text(
+                    json.dumps(
+                        {
+                            "lineage_schema_version": marker,
+                            "segments": [
+                                {
+                                    "id": 0,
+                                    "start": 0.0,
+                                    "end": 1.0,
+                                    "text": "内容",
+                                }
+                            ],
+                        }
+                    ),
+                    encoding="utf-8",
+                )
+                arguments = [
+                    "render_asr_transcript.py",
+                    "--input",
+                    str(input_path),
+                    "--refined-output",
+                    str(refined_path),
+                    "--output",
+                    str(transcript_path),
+                    "--episode-id",
+                    "show:001",
+                    "--title",
+                    "标题",
+                    "--model",
+                    "model",
+                ]
+
+                with patch.object(sys, "argv", arguments), self.assertRaisesRegex(
+                    ValueError, "lineage_schema_version"
+                ):
+                    main()
+
+                self.assertFalse(refined_path.exists())
+                self.assertFalse(transcript_path.exists())
 
 
 if __name__ == "__main__":

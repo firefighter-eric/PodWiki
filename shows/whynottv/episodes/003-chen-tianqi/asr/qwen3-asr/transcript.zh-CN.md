@@ -1,4 +1,4 @@
-# 陈天奇：机器学习系统，长期主义，初心，XGBoost，MXNet，TVM，MLC LLM，OctoML｜WhynotTV Podcast #3
+# 陈天奇：机器学习系统，长期主义，初心，XGBoost，MXNet，TVM，MLC LLM，OctoML｜WhynotTV Podcast
 
 [00:00:00] 我们刚开始做MXNet的时候，完全不会担心TensorFlow能够对我们产生什么样的竞争。  
 [00:00:06] 你去做一件比较平庸的问题和一个重要的问题，花的时间几乎是一样的。  

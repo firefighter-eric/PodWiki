@@ -1,19 +1,20 @@
 import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { getEpisodeLabel } from "@/lib/episode-label";
+import { getExtendedSummaryTitle } from "@/lib/markdown";
 import type { Episode } from "@/lib/types";
 import { ReadingControls } from "@/components/reader-preferences";
 
-const summaryNavigation = [
-  ["#one-line", "一句话总结"],
-  ["#why-read", "为什么值得读"],
-  ["#core-points", "核心观点"],
-  ["#extended-reading", "5 分钟读完"],
-  ["#related-transcript", "相关逐字稿"],
-] as const;
-
 export function RightRail({ episode, view }: { episode: Episode; view: "summary" | "transcript" }) {
   const episodeLabel = getEpisodeLabel(episode.episodeNumber, episode.releaseType);
+  const extendedSummaryTitle = getExtendedSummaryTitle(episode.summaryRaw);
+  const summaryNavigation = [
+    ["#one-line", "一句话总结"],
+    ["#why-read", "为什么值得听"],
+    ["#core-points", "核心观点"],
+    ...(extendedSummaryTitle ? [["#extended-reading", extendedSummaryTitle] as const] : []),
+    ["#related-transcript", "相关逐字稿"],
+  ] as const;
 
   return (
     <aside className="right-rail" aria-label="阅读辅助信息">

@@ -16,7 +16,7 @@ title: "大阪之夜， 王颖（吴向东经纪人）、吴向东与孙瑞一 �
 navigation_title: "王颖 · 大阪赛后复盘与运动员经纪"
 catalog_keyword: "运动员经纪"
 published_at: "2026-03-02T10:48:43.272Z"
-duration_ms: 3938000
+duration_ms: 3938200
 language: zh-CN
 participants:
   - id: wang-ying
@@ -30,7 +30,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "8 大阪之夜， 王颖（吴向东经纪人）、吴向东与孙瑞一 聊天局"
     url: https://www.xiaoyuzhoufm.com/episode/69a5692ea22480add6aeca35
     preferred: true

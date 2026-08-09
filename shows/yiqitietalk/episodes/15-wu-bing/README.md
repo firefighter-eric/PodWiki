@@ -16,7 +16,7 @@ title: "吴冰：我要参加亚运会马拉松比赛啦！"
 navigation_title: "吴冰 · 亚运备战与职业成长"
 catalog_keyword: "亚运备战"
 published_at: "2026-06-17T09:59:37.539Z"
-duration_ms: 5974000
+duration_ms: 5974400
 language: zh-CN
 participants:
   - id: wu-bing
@@ -24,7 +24,7 @@ participants:
     role: guest
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "15 吴冰：我要参加亚运会马拉松比赛啦！"
     url: https://www.xiaoyuzhoufm.com/episode/6a3257ae4233e62bc54b5ec4
     preferred: true

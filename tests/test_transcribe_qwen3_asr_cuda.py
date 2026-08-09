@@ -119,15 +119,40 @@ class WorkerHarness:
         return object(), self.torch, self.asr_model, self.aligner
 
 
+def write_fake_model_snapshot(path: Path, *, repository: str) -> None:
+    path.mkdir(parents=True, exist_ok=True)
+    payloads = {
+        "config.json": b"{}\n",
+        "model.safetensors": b"test model weights",
+    }
+    for logical_name, payload in payloads.items():
+        (path / logical_name).write_bytes(payload)
+    metadata = path / ".cache" / "huggingface" / "download"
+    metadata.mkdir(parents=True, exist_ok=True)
+    for logical_name, payload in payloads.items():
+        (metadata / f"{logical_name}.metadata").write_text(
+            f"{cuda_worker.pinned_revision(repository, None)}\n"
+            f"{hashlib.sha256(payload).hexdigest()}\n0\n",
+            encoding="utf-8",
+        )
+
+
 def worker_args(directory: Path) -> argparse.Namespace:
+    model_path = directory / "model" if directory.is_dir() else None
+    aligner_path = directory / "aligner" if directory.is_dir() else None
+    if model_path is not None and aligner_path is not None:
+        write_fake_model_snapshot(model_path, repository=cuda_worker.DEFAULT_MODEL)
+        write_fake_model_snapshot(aligner_path, repository=cuda_worker.DEFAULT_ALIGNER)
     return argparse.Namespace(
         input=directory / "source.m4a",
         output=directory / "raw.json",
         aligned_output=directory / "aligned.json",
         model=cuda_worker.DEFAULT_MODEL,
-        model_path=None,
+        model_path=model_path,
+        model_revision=None,
         aligner=cuda_worker.DEFAULT_ALIGNER,
-        aligner_path=None,
+        aligner_path=aligner_path,
+        aligner_revision=None,
         language="English",
         temperature=0.0,
         max_tokens=2048,
@@ -4209,12 +4234,6 @@ class ResumableWorkerTests(unittest.TestCase):
             root = Path(directory)
             args = worker_args(root)
             args.input.write_bytes(b"fake-audio")
-            args.model_path = root / "model"
-            args.aligner_path = root / "aligner"
-            for model_path in (args.model_path, args.aligner_path):
-                model_path.mkdir()
-                (model_path / "config.json").write_text("{}", encoding="utf-8")
-                (model_path / "model.safetensors").write_bytes(b"weights")
             harness = WorkerHarness()
 
             with patch.dict(
@@ -4253,6 +4272,81 @@ class ResumableWorkerTests(unittest.TestCase):
             ):
                 self.assertEqual(cuda_worker.main(), 0)
 
+            self.assertEqual(args.output.read_bytes(), raw_bytes)
+            self.assertEqual(args.aligned_output.read_bytes(), aligned_bytes)
+
+    def test_markerless_legacy_align_only_requires_retranscription(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            args = worker_args(root)
+            args.input.write_bytes(b"fake-audio")
+            self.assertEqual(self.run_worker(args, WorkerHarness()), 0)
+            raw = read_json_strict(args.output)
+            raw.pop("lineage_schema_version")
+            raw.pop("model_identity")
+            write_json_atomically(args.output, raw)
+            aligned_bytes = args.aligned_output.read_bytes()
+
+            args.aligned_output.unlink()
+            raw_bytes = args.output.read_bytes()
+            with (
+                patch.object(cuda_worker, "parse_args", return_value=args),
+                patch.object(
+                    cuda_worker,
+                    "load_cuda_runtime",
+                    side_effect=AssertionError("CUDA must not load"),
+                ),
+                self.assertRaisesRegex(ValueError, "pass --retranscribe"),
+            ):
+                cuda_worker.main()
+            self.assertEqual(args.output.read_bytes(), raw_bytes)
+            self.assertFalse(args.aligned_output.exists())
+
+            args.aligned_output.write_bytes(aligned_bytes)
+            args.realign = True
+            with (
+                patch.object(cuda_worker, "parse_args", return_value=args),
+                patch.object(
+                    cuda_worker,
+                    "load_cuda_runtime",
+                    side_effect=AssertionError("CUDA must not load"),
+                ),
+                self.assertRaisesRegex(ValueError, "pass --retranscribe"),
+            ):
+                cuda_worker.main()
+            self.assertEqual(args.output.read_bytes(), raw_bytes)
+            self.assertEqual(args.aligned_output.read_bytes(), aligned_bytes)
+
+    def test_complete_markerless_legacy_chain_remains_read_only(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            args = worker_args(root)
+            args.input.write_bytes(b"fake-audio")
+            self.assertEqual(self.run_worker(args, WorkerHarness()), 0)
+
+            raw = read_json_strict(args.output)
+            raw.pop("lineage_schema_version")
+            raw.pop("model_identity")
+            write_json_atomically(args.output, raw)
+            aligned = read_json_strict(args.aligned_output)
+            aligned.pop("lineage_schema_version")
+            aligned["source"].pop("model_identity")
+            aligned["source"].pop("aligner_identity")
+            aligned["source"]["raw_asr_sha256"] = sha256_file(args.output)
+            write_json_atomically(args.aligned_output, aligned)
+            raw_bytes = args.output.read_bytes()
+            aligned_bytes = args.aligned_output.read_bytes()
+
+            with (
+                patch.object(cuda_worker, "parse_args", return_value=args),
+                patch.object(
+                    cuda_worker,
+                    "load_cuda_runtime",
+                    side_effect=AssertionError("CUDA must not load"),
+                ),
+                contextlib.redirect_stdout(io.StringIO()),
+            ):
+                self.assertEqual(cuda_worker.main(), 0)
             self.assertEqual(args.output.read_bytes(), raw_bytes)
             self.assertEqual(args.aligned_output.read_bytes(), aligned_bytes)
 

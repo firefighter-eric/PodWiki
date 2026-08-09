@@ -9,6 +9,7 @@ import {
   useMemo,
   useSyncExternalStore,
 } from "react";
+import { readLocalStorage, writeLocalStorage } from "@/lib/safe-storage";
 
 type FontSize = "small" | "medium" | "large";
 type Measure = "narrow" | "standard" | "wide";
@@ -55,7 +56,7 @@ export function ReaderPreferences({ children }: { children: React.ReactNode }) {
   const subscribe = useCallback((callback: () => void) => {
     const handleChange = () => {
       syncReaderDocumentSettings(
-        window.localStorage.getItem(settingsStorageKey) ?? defaultSnapshot,
+        readLocalStorage(settingsStorageKey, defaultSnapshot),
       );
       callback();
     };
@@ -68,19 +69,19 @@ export function ReaderPreferences({ children }: { children: React.ReactNode }) {
   }, []);
   const snapshot = useSyncExternalStore(
     subscribe,
-    () => window.localStorage.getItem(settingsStorageKey) ?? defaultSnapshot,
+    () => readLocalStorage(settingsStorageKey, defaultSnapshot),
     () => defaultSnapshot,
   );
   const { fontSize, measure } = useMemo(() => parseSettings(snapshot), [snapshot]);
 
   useLayoutEffect(() => {
     syncReaderDocumentSettings(
-      window.localStorage.getItem(settingsStorageKey) ?? defaultSnapshot,
+      readLocalStorage(settingsStorageKey, defaultSnapshot),
     );
   }, []);
 
   const persist = (nextFontSize: FontSize, nextMeasure: Measure) => {
-    window.localStorage.setItem(
+    writeLocalStorage(
       settingsStorageKey,
       JSON.stringify({ fontSize: nextFontSize, measure: nextMeasure }),
     );

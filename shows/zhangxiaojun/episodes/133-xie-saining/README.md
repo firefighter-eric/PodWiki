@@ -15,7 +15,7 @@ title: "对谢赛宁的7小时马拉松访谈：世界模型、逃出硅谷与 A
 navigation_title: "谢赛宁 · 表征学习、世界模型与 AMI Labs"
 catalog_keyword: "AMI Labs"
 published_at: "2026-03-16T12:01:08+08:00"
-duration_ms: 24329000
+duration_ms: 24277504
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -35,11 +35,14 @@ participants:
           status: current
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/69b77577f8b8079bfa8eb837
     preferred: false
     identifiers:
+      eid: 69b77577f8b8079bfa8eb837
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/lqXBPXddXfukbdlAP-NDrFNp-2wn.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 69b77577f8b8079bfa8eb837
   - platform: bilibili

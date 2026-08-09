@@ -31,6 +31,7 @@ import {
   getSidebarScopeShowId,
   retainSidebarScope,
 } from "@/lib/sidebar-episodes";
+import { readLocalStorage, writeLocalStorage } from "@/lib/safe-storage";
 
 const sidebarStorageKey = "podwiki.sidebar.v1";
 const SearchDialog = dynamic(() =>
@@ -44,7 +45,7 @@ type AppShellProps = {
 };
 
 function sidebarIsCollapsed(): boolean {
-  return window.localStorage.getItem(sidebarStorageKey) === "collapsed";
+  return readLocalStorage(sidebarStorageKey, "expanded") === "collapsed";
 }
 
 function syncSidebarDocumentState() {
@@ -178,7 +179,7 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
   }, [isMobile, mobileOpen]);
 
   const toggleCollapsed = () => {
-    window.localStorage.setItem(sidebarStorageKey, collapsed ? "expanded" : "collapsed");
+    writeLocalStorage(sidebarStorageKey, collapsed ? "expanded" : "collapsed");
     window.dispatchEvent(new Event("podwiki-sidebar-change"));
   };
 

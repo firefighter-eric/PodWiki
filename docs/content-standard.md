@@ -59,7 +59,9 @@ raw、aligned、refined ASR 和最终 Markdown 都提交到 Git：JSON 用于复
 `播客名称`、`日期`、`总结`、`逐字稿`。节目 `README.md` 的单集表格
 仍使用五列：`标题`、`播客名称`、`日期`、`总结链接`、`逐字稿链接`。
 
-- 标题链接到首选发布者来源的规范 URL，并且不包含期号。发布者原标题若以已核实
+- 标题单元格的可见文本必须精确等于单集 `title`，并链接到首选发布者来源的
+  规范 URL；文本中的 ASCII `|` 在 Markdown 表格里写为 `\|`。`title` 不包含期号。
+  发布者原标题若以已核实
   正式期号开头，只从 `title` 删除该期号与紧随空白，并把未改写原标题保存在
   `sources[].title`；其他原标题继续原样使用。
 - 仅根索引增加访谈人物列；内容来自单集 front matter 中 `role: guest` 的
@@ -67,6 +69,10 @@ raw、aligned、refined ASR 和最终 Markdown 都提交到 Git：JSON 用于复
   核实时，不根据标题自行猜测，也不把一般参与者或主播提升为嘉宾。
 - 根索引与对应节目索引必须在每次新增或更新单集后同时更新。
 - 总结与逐字稿列直接链接到各自的本地 Markdown 文件。
+- 根索引的“播客名称”必须使用节目 `title` 并链接对应本地节目 README；
+  节目索引的“播客名称”必须是同一个节目 `title`。
+- 两级单集索引均以日期倒序排列，单集集合必须与当前 Web 收录集合完全一致，
+  不得缺失、多出或重复同一 summary 链接。
 
 ### 参与者与嘉宾背景
 
@@ -277,6 +283,10 @@ identifiers:
   media_id: 6588196412e01d7ba13aad47/example-token.m4a
 ```
 
+小宇宙单集来源固定使用 `platform: xiaoyuzhou` 与 `kind: episode`；
+即使最初是通过 RSS 发现，也不得把已绑定规范小宇宙单集 URL 的条目声明为
+`platform: rss`。RSS feed URL 和 GUID 可作为补充 identifiers 保留。
+
 `media_id` 必须同时等于公开页面的 `mediaKey` 与 `media.id`，其首段必须等于
 该单集自己的 `pid`，且公开 CDN URL path 必须精确为 `/<media_id>`。不能用外层
 栏目列表的 PID 覆盖联播或串台单集自身已核实的 `episode.pid`。
@@ -284,7 +294,12 @@ identifiers:
 ## 4. 时间和日期
 
 - `published_at` 使用带时区的 RFC 3339 时间，并作为带引号的 YAML 字符串保存。
-- `duration_ms` 使用正整数毫秒。
+- `duration_ms` 使用正整数毫秒。对于 `acquisition_method: audio-asr` 的正式逐字稿，
+  它必须精确等于该 selected ASR 输入在 `local_audio_cache.duration_ms` 中记录的
+  实际媒体探测值，而不是发布者页面或 RSS 中经过整秒取整的展示时长。发布者时长
+  可以保留在来源说明中，但不得覆盖正式逐字稿所绑定的音频时长。非音频 ASR 来源
+  可以不登记 `local_audio_cache`，但必须在 selected run 中明确登记其来源
+  provenance，不能借用另一份媒体时长。
 - 正文时间码统一显示为 `[HH:MM:SS]`：小时固定为两位 `00`–`99`，分钟和秒
   必须为 `00`–`59`。当前内容超过 99 小时时，应先更新格式契约与两端校验器，
   不能直接写入三位小时。
@@ -376,6 +391,12 @@ summary:
 稿，并把 `selection_status` 记为 `superseded`，不能声称仍指向当前正式稿。
 涉及个人回忆、观点、预测和外部事实时，应明确区分嘉宾陈述、发布者材料、
 PodWiki 归纳和独立核查结果。
+
+达到 Web 收录状态时，`summary.source_transcript.path`、`engine`、`model`、
+`selection_status` 和 `sha256` 全部必填；路径必须留在单集目录内、文件必须存在且
+SHA-256 必须匹配。总结中每一个 `[HH:MM:SS]` 引用都必须在该来源逐字稿的时间戳
+集合中精确存在。`selected` 来源必须等于当前 `transcript.path`；`superseded`
+来源必须精确对应一条保留的 superseded ASR run 及其 transcript artifact。
 
 ## 6. 逐字稿格式
 
@@ -510,6 +531,11 @@ local_audio_cache:
   sha256: "<source-audio-sha256>"
 ```
 
+正常获取记录 `acquired_at`。若旧音频存在且 sidecar 缺失，只能通过显式的安全恢复
+流程，在调用者提供的预期 SHA-256、公开来源身份、实际文件哈希和 ffprobe 结果全部
+一致后补建 sidecar；这类记录使用 `recovered_at` 代替未知的 `acquired_at`，并同时
+记录本次 `verified_at`，不得伪造历史采集时间。
+
 未获取音频时模板中的 `local_audio_cache` 保持 `null`。所有值来自最终
 `source.metadata.json` 的真实媒体探测结果，路径仍使用仓库相对 POSIX 形式；
 不得把 intake sidecar 或另一集的值复制进来。
@@ -632,3 +658,13 @@ asr_runs:
 只有 raw、aligned、refined、run Markdown 及其哈希全部通过校验后，才能把 run
 Markdown 复制为根目录正式逐字稿并标记 `selected`。先前正式引擎改为
 `superseded` 并继续保留，以便追溯和比较。
+
+达到 Web 收录状态的 `machine`、`edited` 或 `reviewed` 逐字稿必须在 `asr_runs`
+中恰好绑定一条 `selected` run；缺少 `asr_runs`、零条或多条 selected 都是门禁
+错误。Qwen run 必须通过 raw、aligned、refined、run Markdown 与根正式稿的完整
+hash lineage；其他引擎或来源也必须在 selected run 中记录 engine、model 和完整
+tracked artifacts，不能仅凭根 Markdown 声称来源明确。
+
+根 README 的节目表、根单集索引和每个节目 README 的单集表都属于内容契约。
+校验器必须比对其列顺序、metadata 集合、preferred 来源链接、日期、总结/正式逐字稿
+链接和日期倒序；新增或改动内容时不允许任何一个索引滞后。

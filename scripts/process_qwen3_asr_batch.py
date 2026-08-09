@@ -15,6 +15,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from asr_lineage import pinned_revision
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MLX_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
@@ -91,8 +93,10 @@ def parse_args() -> argparse.Namespace:
         help="Episode directory; repeat as needed. Defaults to every cached episode.",
     )
     parser.add_argument("--model")
+    parser.add_argument("--model-revision")
     parser.add_argument("--model-path", type=Path)
     parser.add_argument("--aligner")
+    parser.add_argument("--aligner-revision")
     parser.add_argument("--aligner-path", type=Path)
     parser.add_argument("--language", default="Chinese")
     parser.add_argument(
@@ -129,6 +133,11 @@ def parse_args() -> argparse.Namespace:
         default="sdpa",
     )
     parser.add_argument("--skip-render", action="store_true")
+    parser.add_argument(
+        "--rerender",
+        action="store_true",
+        help="Replace refined/transcript pairs for explicitly selected episodes",
+    )
     replacement = parser.add_mutually_exclusive_group()
     replacement.add_argument("--retranscribe", action="store_true")
     replacement.add_argument("--realign", action="store_true")
@@ -140,10 +149,17 @@ def validate_replacement_scope(
     *,
     retranscribe: bool,
     realign: bool,
+    rerender: bool = False,
 ) -> None:
     """Require an explicit episode allowlist for destructive replacement modes."""
     replacement_flag = (
-        "--retranscribe" if retranscribe else "--realign" if realign else None
+        "--retranscribe"
+        if retranscribe
+        else "--realign"
+        if realign
+        else "--rerender"
+        if rerender
+        else None
     )
     if replacement_flag is not None and not explicit_episodes:
         raise SystemExit(
@@ -279,6 +295,7 @@ def main() -> int:
         args.episode,
         retranscribe=args.retranscribe,
         realign=args.realign,
+        rerender=bool(getattr(args, "rerender", False)),
     )
     if (
         not math.isfinite(args.final_outro_exemption_seconds)
@@ -300,6 +317,12 @@ def main() -> int:
         max_tokens=args.max_tokens,
         chunk_duration=args.chunk_duration,
         chunk_context=args.chunk_context,
+    )
+    model_revision = pinned_revision(
+        backend.model, getattr(args, "model_revision", None)
+    )
+    aligner_revision = pinned_revision(
+        backend.aligner, getattr(args, "aligner_revision", None)
     )
     rendered_transcript_name = transcript_filename(args.transcript_language)
     episodes = discover_episode_dirs(args.episode)
@@ -359,8 +382,12 @@ def main() -> int:
                 repository_argument(aligned_path),
                 "--model",
                 backend.model,
+                "--model-revision",
+                model_revision,
                 "--aligner",
                 backend.aligner,
+                "--aligner-revision",
+                aligner_revision,
                 "--language",
                 args.language,
                 "--max-tokens",
@@ -431,6 +458,20 @@ def main() -> int:
                     "--language",
                     args.transcript_language,
                 ]
+                correction_map_path = episode_dir / "asr" / "corrections.json"
+                if correction_map_path.is_file():
+                    render_command.extend(
+                        [
+                            "--correction-map",
+                            repository_argument(correction_map_path),
+                        ]
+                    )
+                if (
+                    bool(getattr(args, "rerender", False))
+                    or args.retranscribe
+                    or args.realign
+                ):
+                    render_command.append("--rerender")
                 rendered, render_output = run_logged(
                     command=render_command,
                     environment=environment,

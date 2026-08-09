@@ -16,7 +16,7 @@ title: "徐冰洁：给你带来的荣耀和光环，就得忍受它的枯燥"
 navigation_title: "徐冰洁 · 职业训练、生活与赛场目标"
 catalog_keyword: "河南女队"
 published_at: "2026-07-03T10:57:40.564Z"
-duration_ms: 5097000
+duration_ms: 5097400
 language: zh-CN
 participants:
   - id: xu-bingjie
@@ -24,7 +24,7 @@ participants:
     role: participant
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "17 徐冰洁：给你带来的荣耀和光环，就得忍受它的枯燥"
     url: https://www.xiaoyuzhoufm.com/episode/6a47910b3fb7233cbf433c35
     preferred: true

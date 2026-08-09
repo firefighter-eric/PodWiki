@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { createHash } from "node:crypto";
 import os from "node:os";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
@@ -64,8 +65,23 @@ function writeFixtureShow(repositoryRoot: string) {
   const showRoot = path.join(repositoryRoot, "shows", "example");
   fs.mkdirSync(path.join(showRoot, "episodes"), { recursive: true });
   fs.writeFileSync(path.join(showRoot, "README.md"), `---
+schema_version: 1
+kind: show
 id: example
 title: 示例播客
+aliases: []
+language: zh-CN
+status: active
+formats:
+  - interview
+topics:
+  - testing
+sources:
+  - platform: website
+    kind: show
+    url: https://example.com/show
+    preferred: true
+last_verified_at: 2026-08-08
 ---
 
 # 示例播客
@@ -107,12 +123,24 @@ function writeFixtureEpisode({
     url: https://example.com/${folder}/${index + 1}
     preferred: ${index < preferredSources ? "true" : "false"}`).join("");
   const profile = participantProfile ? `\n${renderParticipantProfile(participantProfile)}` : "";
+  const transcriptContent = `# 测试人物：测试主题
+
+[00:00:00] 这是一条测试逐字稿。${"  "}
+`;
+  const transcriptSha256 = createHash("sha256").update(transcriptContent).digest("hex");
   fs.writeFileSync(path.join(episodeRoot, "README.md"), `---
+schema_version: 1
+kind: episode
 id: "${id}"
 show_id: example
 episode_key: "${episodeKey}"
 episode_number: null
+slug: ${folder}
 release_type: regular
+numbering:
+  status: unknown
+  checked_at: 2026-08-08
+  source: test-fixture
 title: "测试人物：测试主题"
 navigation_title: "测试人物 · 测试主题"
 catalog_keyword: "测试"
@@ -120,7 +148,8 @@ published_at: "${publishedAt}"
 duration_ms: ${durationMs}
 language: zh-CN
 participants:
-  - name: 测试人物
+  - id: test-person
+    name: 测试人物
     role: guest${profile}
 sources:${sources}
 workflow:
@@ -129,14 +158,35 @@ workflow:
   transcript: ${workflow.transcript}
 summary:
   path: summary.zh-CN.md
-  source_transcript: null
+  source_transcript:
+    path: transcript.zh-CN.md
+    engine: test-engine
+    model: test-model
+    selection_status: selected
+    sha256: ${transcriptSha256}
 transcript:
   path: transcript.zh-CN.md
+  engine: test-engine
+  model: test-model
   translations: []
+asr_runs:
+  - id: test-run
+    selection_status: selected
+    engine: test-engine
+    model: test-model
+    artifacts:
+      raw: asr/test/raw.json
+      refined: asr/test/refined.json
+      transcript: asr/test/transcript.zh-CN.md
 ---
 
 # 测试人物：测试主题
 `);
+  const asrRoot = path.join(episodeRoot, "asr", "test");
+  fs.mkdirSync(asrRoot, { recursive: true });
+  fs.writeFileSync(path.join(asrRoot, "raw.json"), "{}\n");
+  fs.writeFileSync(path.join(asrRoot, "refined.json"), "{}\n");
+  fs.writeFileSync(path.join(asrRoot, "transcript.zh-CN.md"), transcriptContent);
   if (writeSummary) {
     fs.writeFileSync(path.join(episodeRoot, "summary.zh-CN.md"), `# 测试人物：测试主题
 
@@ -146,12 +196,19 @@ transcript:
 `);
   }
   if (writeTranscript) {
-    fs.writeFileSync(path.join(episodeRoot, "transcript.zh-CN.md"), `# 测试人物：测试主题
-
-[00:00:00] 这是一条测试逐字稿。${"  "}
-`);
+    fs.writeFileSync(path.join(episodeRoot, "transcript.zh-CN.md"), transcriptContent);
   }
   return episodeRoot;
+}
+
+function rewriteFixtureReadme(
+  filePath: string,
+  transform: (readme: string) => string,
+) {
+  const readme = fs.readFileSync(filePath, "utf8");
+  const updated = transform(readme);
+  if (updated === readme) throw new Error(`Fixture rewrite made no change: ${filePath}`);
+  fs.writeFileSync(filePath, updated);
 }
 
 async function withFixtureRepository(
@@ -222,6 +279,34 @@ describe("PodWiki content loader", () => {
     });
   });
 
+  it("allows documented candidate ASR runs on unfinished episodes", async () => {
+    await withFixtureRepository((repositoryRoot) => {
+      const episodeRoot = writeFixtureEpisode({
+        repositoryRoot,
+        folder: "001-candidate",
+        episodeKey: "001",
+        workflow: {
+          metadata: "draft",
+          summary: "empty",
+          transcript: "not-started",
+        },
+        writeSummary: false,
+        writeTranscript: false,
+      });
+      rewriteFixtureReadme(
+        path.join(episodeRoot, "README.md"),
+        (readme) => readme
+          .replace(/  source_transcript:\n(?:    .+\n){5}/u, "  source_transcript: null\n")
+          .replace(
+            "  - id: test-run\n    selection_status: selected",
+            "  - id: test-run\n    selection_status: candidate",
+          ),
+      );
+    }, async (content) => {
+      await expect(content.getEpisodeCards()).resolves.toEqual([]);
+    });
+  });
+
   it("fails when an episode marked for web publication is missing an asset", async () => {
     await withFixtureRepository((repositoryRoot) => {
       writeFixtureEpisode({
@@ -283,16 +368,254 @@ describe("PodWiki content loader", () => {
     }
   });
 
+  it("rejects publishable episodes that drift from the full metadata contract", async () => {
+    const invalidCases = [
+      {
+        label: "schema kind",
+        transform: (readme: string) => readme.replace("kind: episode", "kind: article"),
+      },
+      {
+        label: "directory slug",
+        transform: (readme: string) => readme.replace("slug: 001-contract", "slug: other-folder"),
+      },
+      {
+        label: "release type",
+        transform: (readme: string) => readme.replace("release_type: regular", "release_type: interview"),
+      },
+      {
+        label: "numbering relation",
+        transform: (readme: string) => readme.replace("  status: unknown", "  status: verified"),
+      },
+      {
+        label: "numbering source",
+        transform: (readme: string) => readme.replace("  source: test-fixture\n", ""),
+      },
+      {
+        label: "participant id",
+        transform: (readme: string) => readme.replace("  - id: test-person\n", "  - name: 测试人物\n")
+          .replace("    name: 测试人物\n    role: guest", "    role: guest"),
+      },
+      {
+        label: "participant role",
+        transform: (readme: string) => readme.replace("    role: guest", "    role: observer"),
+      },
+      {
+        label: "navigation title participant precedence",
+        transform: (readme: string) => readme.replace(
+          'navigation_title: "测试人物 · 测试主题"',
+          'navigation_title: "错误人物 · 测试主题"',
+        ),
+      },
+      {
+        label: "HTTPS source URL",
+        transform: (readme: string) => readme.replace(
+          "url: https://example.com/001-contract/1",
+          "url: http://example.com/001-contract/1",
+        ),
+      },
+      {
+        label: "summary source provenance",
+        transform: (readme: string) => readme.replace(
+          /  source_transcript:\n(?:    .+\n){5}/u,
+          "  source_transcript: null\n",
+        ),
+      },
+      {
+        label: "summary source hash",
+        transform: (readme: string) => readme.replace(
+          /    sha256: [0-9a-f]{64}/u,
+          "    sha256: invalid",
+        ),
+      },
+      {
+        label: "selected ASR run",
+        transform: (readme: string) => readme.replace(
+          /asr_runs:\n(?:  .+\n|    .+\n|      .+\n)+/u,
+          "asr_runs: []\n",
+        ),
+      },
+      {
+        label: "Qwen aligned artifact",
+        transform: (readme: string) => readme
+          .replaceAll("test-engine", "qwen-asr-transformers")
+          .replaceAll("test-model", "Qwen/Qwen3-ASR-1.7B"),
+      },
+      {
+        label: "Xiaoyuzhou identifiers",
+        transform: (readme: string) => readme.replace(
+          /sources:\n[\s\S]*?\nworkflow:/u,
+          `sources:
+  - platform: xiaoyuzhou
+    kind: episode
+    url: https://www.xiaoyuzhoufm.com/episode/6a5f4d33a3fec224d5a1136a
+    preferred: true
+    identifiers:
+      eid: 6a5f4d33a3fec224d5a1136a
+      pid: 6951e312febad13106eb017e
+workflow:`,
+        ),
+      },
+      {
+        label: "Xiaoyuzhou source kind",
+        transform: (readme: string) => readme.replace(
+          /sources:\n[\s\S]*?\nworkflow:/u,
+          `sources:
+  - platform: xiaoyuzhou
+    kind: audio
+    url: https://www.xiaoyuzhoufm.com/episode/6a5f4d33a3fec224d5a1136a
+    preferred: true
+    identifiers:
+      eid: 6a5f4d33a3fec224d5a1136a
+      pid: 6951e312febad13106eb017e
+      media_id: 6951e312febad13106eb017e/test.m4a
+workflow:`,
+        ),
+      },
+      {
+        label: "canonical Xiaoyuzhou URL",
+        transform: (readme: string) => readme.replace(
+          /sources:\n[\s\S]*?\nworkflow:/u,
+          `sources:
+  - platform: xiaoyuzhou
+    kind: episode
+    url: https://www.xiaoyuzhoufm.com/episode/6a5f4d33a3fec224d5a1136a?utm_source=test
+    preferred: true
+    identifiers:
+      eid: 6a5f4d33a3fec224d5a1136a
+      pid: 6951e312febad13106eb017e
+      media_id: 6951e312febad13106eb017e/test.m4a
+workflow:`,
+        ),
+      },
+      {
+        label: "Bilibili identifiers",
+        transform: (readme: string) => readme.replace(
+          /sources:\n[\s\S]*?\nworkflow:/u,
+          `sources:
+  - platform: bilibili
+    kind: video
+    url: https://www.bilibili.com/video/BV1darmBcE4A/
+    preferred: true
+    identifiers:
+      bvid: BV1darmBcE4A
+      aid: "115909138055436"
+      page: 1
+workflow:`,
+        ),
+      },
+    ];
+
+    for (const { label, transform } of invalidCases) {
+      await withFixtureRepository((repositoryRoot) => {
+        const episodeRoot = writeFixtureEpisode({
+          repositoryRoot,
+          folder: "001-contract",
+          episodeKey: "001",
+        });
+        rewriteFixtureReadme(path.join(episodeRoot, "README.md"), transform);
+      }, async (content) => {
+        await expect(content.getEpisodeCards(), label).rejects.toThrow();
+      });
+    }
+  });
+
+  it("requires every show to declare exactly one preferred source", async () => {
+    await withFixtureRepository((repositoryRoot) => {
+      writeFixtureEpisode({
+        repositoryRoot,
+        folder: "001-complete",
+        episodeKey: "001",
+      });
+      rewriteFixtureReadme(
+        path.join(repositoryRoot, "shows", "example", "README.md"),
+        (readme) => readme.replace("    preferred: true\n", ""),
+      );
+    }, async (content) => {
+      await expect(content.getShows()).rejects.toThrow("preferred source");
+    });
+  });
+
+  it("enforces the complete show metadata and source schema", async () => {
+    const invalidCases = [
+      (readme: string) => readme.replace("status: active", "status: unknown"),
+      (readme: string) => readme.replace("formats:\n  - interview", "formats: []"),
+      (readme: string) => readme.replace("topics:\n  - testing", "topics: []"),
+      (readme: string) => readme.replace("platform: website", "platform: publisher-platform"),
+      (readme: string) => readme.replace("https://example.com/show", "http://example.com/show"),
+      (readme: string) => readme.replace("    preferred: true", "    preferred: true\n    invented: value"),
+      (readme: string) => readme.replace("last_verified_at: 2026-08-08", "last_verified_at: someday"),
+    ];
+
+    for (const transform of invalidCases) {
+      await withFixtureRepository((repositoryRoot) => {
+        rewriteFixtureReadme(
+          path.join(repositoryRoot, "shows", "example", "README.md"),
+          transform,
+        );
+      }, async (content) => {
+        await expect(content.getShows()).rejects.toThrow();
+      });
+    }
+  });
+
+  it("rejects a summary source transcript whose bytes no longer match its SHA-256", async () => {
+    await withFixtureRepository((repositoryRoot) => {
+      const episodeRoot = writeFixtureEpisode({
+        repositoryRoot,
+        folder: "001-complete",
+        episodeKey: "001",
+      });
+      fs.appendFileSync(path.join(episodeRoot, "transcript.zh-CN.md"), "篡改内容\n");
+    }, async (content) => {
+      await expect(content.getEpisode("example", "001-complete")).rejects.toThrow(
+        "Summary source transcript SHA-256 mismatch",
+      );
+    });
+  });
+
+  it("rejects summary timestamps absent from the declared source transcript", async () => {
+    await withFixtureRepository((repositoryRoot) => {
+      const episodeRoot = writeFixtureEpisode({
+        repositoryRoot,
+        folder: "001-complete",
+        episodeKey: "001",
+      });
+      fs.appendFileSync(path.join(episodeRoot, "summary.zh-CN.md"), "\n证据见 [00:00:42]。\n");
+    }, async (content) => {
+      await expect(content.getEpisode("example", "001-complete")).rejects.toThrow(
+        "Summary timestamp 00:00:42",
+      );
+    });
+  });
+
+  it("requires the selected ASR transcript artifact to remain byte-identical", async () => {
+    await withFixtureRepository((repositoryRoot) => {
+      const episodeRoot = writeFixtureEpisode({
+        repositoryRoot,
+        folder: "001-complete",
+        episodeKey: "001",
+      });
+      fs.appendFileSync(
+        path.join(episodeRoot, "asr", "test", "transcript.zh-CN.md"),
+        "篡改内容\n",
+      );
+    }, async (content) => {
+      await expect(content.getEpisode("example", "001-complete")).rejects.toThrow(
+        "Selected ASR transcript artifact is not byte-identical",
+      );
+    });
+  });
+
   it("rejects duplicate stable episode ids across folders", async () => {
     await withFixtureRepository((repositoryRoot) => {
       writeFixtureEpisode({
         repositoryRoot,
-        folder: "first",
+        folder: "001-first",
         episodeKey: "001",
       });
       writeFixtureEpisode({
         repositoryRoot,
-        folder: "second",
+        folder: "001-second",
         episodeKey: "001",
       });
     }, async (content) => {
@@ -478,7 +801,7 @@ describe("PodWiki content loader", () => {
     }
   });
 
-  it("keeps fact-boundary copy out of web search results", async () => {
+  it("indexes reader-facing fact-boundary copy in web search results", async () => {
     await withFixtureRepository((repositoryRoot) => {
       const episodeRoot = writeFixtureEpisode({
         repositoryRoot,
@@ -499,7 +822,9 @@ describe("PodWiki content loader", () => {
       expect(await content.searchContent("公开总结关键词")).toContainEqual(
         expect.objectContaining({ section: "总结" }),
       );
-      expect(await content.searchContent("内部核验关键词")).toEqual([]);
+      expect(await content.searchContent("内部核验关键词")).toContainEqual(
+        expect.objectContaining({ section: "总结" }),
+      );
     });
   });
 

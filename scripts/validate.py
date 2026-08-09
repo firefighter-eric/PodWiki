@@ -10,6 +10,7 @@ import sys
 from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any
+from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,11 +21,17 @@ BILIBILI_URL_RE = re.compile(
 CANONICAL_BILIBILI_URL_RE = re.compile(
     r"https://www\.bilibili\.com/video/BV[A-Za-z0-9]+/"
 )
+CANONICAL_BILIBILI_VIDEO_RE = re.compile(
+    r"https://www\.bilibili\.com/video/(?P<bvid>BV[A-Za-z0-9]+)/"
+)
 XIAOYUZHOU_URL_RE = re.compile(
     r"https://www\.xiaoyuzhoufm\.com/(?:episode|podcast)/[^\s)\]\"']+"
 )
 CANONICAL_XIAOYUZHOU_URL_RE = re.compile(
     r"https://www\.xiaoyuzhoufm\.com/(?:episode|podcast)/[0-9a-f]{24}"
+)
+CANONICAL_XIAOYUZHOU_EPISODE_RE = re.compile(
+    r"https://www\.xiaoyuzhoufm\.com/episode/(?P<eid>[0-9a-f]{24})"
 )
 TRACKING_PARAMETERS = ("spm_id_from", "vd_source")
 QWEN_JSON_ARTIFACT_NAMES = (
@@ -58,6 +65,77 @@ WORKFLOW_TRANSCRIPT_STATUSES = {
 }
 WEB_SUMMARY_STATUSES = {"draft", "reviewed"}
 WEB_TRANSCRIPT_STATUSES = {"machine", "edited", "reviewed"}
+EPISODE_RELEASE_TYPES = {"regular", "special", "bonus", "trailer"}
+NUMBERING_STATUSES = {"verified", "not-in-publisher-feed", "unknown"}
+PARTICIPANT_ROLES = {"guest", "participant", "host"}
+PARTICIPANT_FIELDS = {"id", "name", "role", "aliases", "profile"}
+SHOW_STATUSES = {"active", "inactive", "archived"}
+SOURCE_PLATFORMS = {
+    "apple-podcasts",
+    "bilibili",
+    "rss",
+    "website",
+    "xiaoyuzhou",
+}
+SOURCE_KINDS = {
+    "audio",
+    "channel",
+    "episode",
+    "feed",
+    "feed-item",
+    "podcast",
+    "show",
+    "video",
+    "video-channel",
+}
+SOURCE_FIELDS = {
+    "platform",
+    "kind",
+    "title",
+    "external_id",
+    "url",
+    "preferred",
+    "identifiers",
+}
+SOURCE_IDENTIFIER_FIELDS = {
+    "aid",
+    "apple_podcasts_id",
+    "bvid",
+    "cid",
+    "eid",
+    "episode_id",
+    "episode_number",
+    "feed_url",
+    "guid",
+    "media_id",
+    "mid",
+    "page",
+    "page_id",
+    "pid",
+    "rss_guid",
+    "show_id",
+}
+SHOW_FIELDS = {
+    "schema_version",
+    "kind",
+    "id",
+    "title",
+    "aliases",
+    "language",
+    "status",
+    "formats",
+    "topics",
+    "sources",
+    "last_verified_at",
+}
+ASR_SELECTION_STATUSES = {"candidate", "selected", "superseded", "rejected"}
+SUMMARY_SELECTION_STATUSES = {"selected", "superseded"}
+SUMMARY_TIMESTAMP_RE = re.compile(r"\[(\d{2}:[0-5]\d:[0-5]\d)\]")
+XIAOYUZHOU_MEDIA_ID_RE = re.compile(
+    r"(?P<pid>[0-9a-f]{24})/[A-Za-z0-9_-]+\.m4a"
+)
+GIT_COMMIT_RE = re.compile(r"[0-9a-f]{40}")
+MODEL_IDENTITY_REQUIRED_FILES = {"config.json"}
 
 
 def relative(path: Path) -> str:
@@ -175,6 +253,182 @@ def top_level_front_matter_raw_scalar(lines: list[str], key: str) -> str | None:
         if indent == 0 and stripped.startswith(f"{key}:"):
             return stripped.split(":", 1)[1].strip()
     return None
+
+
+def decode_yaml_primitive(value: str) -> Any:
+    """Decode the conservative scalar/list subset used by PodWiki front matter."""
+
+    raw = value.strip()
+    if raw == "[]":
+        return []
+    if raw.lower() in {"null", "~"}:
+        return None
+    if raw == "true":
+        return True
+    if raw == "false":
+        return False
+    if re.fullmatch(r"-?\d+", raw):
+        return int(raw)
+    return decode_yaml_scalar(raw)
+
+
+def top_level_front_matter_value(lines: list[str], key: str) -> Any:
+    raw = top_level_front_matter_raw_scalar(lines, key)
+    return decode_yaml_primitive(raw) if raw is not None else None
+
+
+def top_level_front_matter_keys(lines: list[str]) -> list[str]:
+    return [
+        line.split(":", 1)[0].strip()
+        for line in lines
+        if line and not line.startswith(" ") and ":" in line
+    ]
+
+
+def parse_top_level_scalar_list(
+    lines: list[str], section: str
+) -> tuple[bool, list[Any]]:
+    """Parse the block or empty scalar-list subset used by show metadata."""
+
+    values: list[Any] = []
+    present = False
+    in_section = False
+    for line in lines:
+        stripped = line.strip()
+        indent = len(line) - len(line.lstrip(" "))
+        if not in_section:
+            if indent == 0 and stripped.startswith(f"{section}:"):
+                present = True
+                inline = stripped.split(":", 1)[1].strip()
+                if inline == "[]":
+                    return True, []
+                if inline:
+                    return True, [decode_yaml_primitive(inline)]
+                in_section = True
+            continue
+        if stripped and indent == 0:
+            break
+        if not stripped or stripped.startswith("#"):
+            continue
+        if indent == 2 and stripped.startswith("- "):
+            values.append(decode_yaml_primitive(stripped[2:]))
+    return present, values
+
+
+def nested_front_matter_mapping(
+    lines: list[str], section: str, nested: str | None = None
+) -> dict[str, Any]:
+    """Parse one small mapping at indent two, or a nested mapping at indent four."""
+
+    result: dict[str, Any] = {}
+    in_section = False
+    in_nested = nested is None
+    for line in lines:
+        stripped = line.strip()
+        indent = len(line) - len(line.lstrip(" "))
+        if not in_section:
+            if indent == 0 and stripped == f"{section}:":
+                in_section = True
+            continue
+        if stripped and indent == 0:
+            break
+        if not stripped or stripped.startswith("#"):
+            continue
+        if nested is not None and indent == 2:
+            in_nested = stripped == f"{nested}:"
+            continue
+        expected_indent = 4 if nested is not None else 2
+        if in_nested and indent == expected_indent and ":" in stripped:
+            key, value = stripped.split(":", 1)
+            result[key.strip()] = decode_yaml_primitive(value)
+    return result
+
+
+def parse_front_matter_list(
+    lines: list[str], section: str
+) -> tuple[bool, list[dict[str, Any]]]:
+    """Parse the list-of-mappings subset used by sources and participants."""
+
+    items: list[dict[str, Any]] = []
+    current: dict[str, Any] | None = None
+    nested_field: str | None = None
+    present = False
+    in_section = False
+
+    for line in lines:
+        stripped = line.strip()
+        indent = len(line) - len(line.lstrip(" "))
+        if not in_section:
+            if indent == 0 and stripped.startswith(f"{section}:"):
+                present = True
+                in_section = True
+                inline = stripped.split(":", 1)[1].strip()
+                if inline == "[]":
+                    return True, []
+            continue
+        if stripped and indent == 0:
+            break
+        if not stripped or stripped.startswith("#"):
+            continue
+
+        if indent == 2 and (stripped == "-" or stripped.startswith("- ")):
+            current = {}
+            items.append(current)
+            nested_field = None
+            inline = stripped[1:].strip()
+            if inline and ":" in inline:
+                key, value = inline.split(":", 1)
+                current[key.strip()] = decode_yaml_primitive(value)
+            continue
+        if current is None:
+            continue
+        if indent == 4 and ":" in stripped:
+            key, value = stripped.split(":", 1)
+            key = key.strip()
+            raw_value = value.strip()
+            if raw_value:
+                current[key] = decode_yaml_primitive(raw_value)
+                nested_field = None
+            else:
+                current[key] = {}
+                nested_field = key
+            continue
+        if indent == 6 and nested_field is not None:
+            nested_value = current.get(nested_field)
+            if stripped == "-" or stripped.startswith("- "):
+                if not isinstance(nested_value, list):
+                    nested_value = []
+                    current[nested_field] = nested_value
+                nested_value.append(decode_yaml_primitive(stripped[1:]))
+            elif ":" in stripped:
+                if not isinstance(nested_value, dict):
+                    continue
+                key, value = stripped.split(":", 1)
+                nested_value[key.strip()] = decode_yaml_primitive(value)
+
+    return present, items
+
+
+def is_calendar_date(value: Any) -> bool:
+    if not isinstance(value, str) or CALENDAR_DATE_RE.fullmatch(value) is None:
+        return False
+    try:
+        datetime.strptime(value, "%Y-%m-%d")
+    except ValueError:
+        return False
+    return True
+
+
+def is_absolute_url(value: Any, *, scheme: str | None = None) -> bool:
+    if not isinstance(value, str) or not value:
+        return False
+    try:
+        parsed = urlsplit(value)
+    except ValueError:
+        return False
+    return bool(parsed.scheme and parsed.netloc) and (
+        scheme is None or parsed.scheme == scheme
+    )
 
 
 def parse_transcript_translations(
@@ -413,6 +667,8 @@ def validate_participant_profiles(
                     errors.append(f"{base_field}.{key} must be a YAML list")
                 else:
                     current_list_name = key
+            else:
+                errors.append(f"{base_field} contains unsupported field {key!r}")
             continue
 
         if indent == 8 and current_list_name is not None:
@@ -486,6 +742,17 @@ def validate_participant_profiles(
                 errors.append(f"{base_field}.{list_name} must be a YAML list")
             for item_index, item in enumerate(state["items"]):
                 item_field = f"{base_field}.{list_name}[{item_index}]"
+                allowed = (
+                    {"organization", "title", "status"}
+                    if list_name == "affiliations"
+                    else {"institution", "credential", "field"}
+                )
+                unknown = set(item).difference(allowed)
+                if unknown:
+                    errors.append(
+                        f"{item_field} contains unsupported fields: "
+                        f"{', '.join(sorted(unknown))}"
+                    )
                 required = (
                     ("organization", "status")
                     if list_name == "affiliations"
@@ -599,6 +866,67 @@ def valid_sha256(value: Any, *, field: str, errors: list[str]) -> str | None:
     return value
 
 
+def validate_model_identity(
+    value: Any, *, field: str, errors: list[str]
+) -> dict[str, Any] | None:
+    if not isinstance(value, dict):
+        errors.append(f"{field} must be an object")
+        return None
+    expected_fields = {
+        "schema_version",
+        "repository",
+        "requested_revision",
+        "resolved_commit",
+        "files_sha256",
+    }
+    if set(value) != expected_fields:
+        errors.append(f"{field} fields must exactly match model identity schema version 1")
+    if type(value.get("schema_version")) is not int or value.get("schema_version") != 1:
+        errors.append(f"{field}.schema_version must be the strict integer 1")
+    for key in expected_fields:
+        if key not in value:
+            errors.append(f"{field}.{key} is missing")
+    for key in ("repository",):
+        if not isinstance(value.get(key), str) or not value.get(key):
+            errors.append(f"{field}.{key} must be non-empty")
+    requested = value.get("requested_revision")
+    resolved = value.get("resolved_commit")
+    if not isinstance(requested, str) or GIT_COMMIT_RE.fullmatch(requested) is None:
+        errors.append(f"{field}.requested_revision must be a 40-character commit")
+    if not isinstance(resolved, str) or GIT_COMMIT_RE.fullmatch(resolved) is None:
+        errors.append(f"{field}.resolved_commit must be a 40-character commit")
+    if requested != resolved:
+        errors.append(f"{field}.requested_revision must equal resolved_commit")
+    files = value.get("files_sha256")
+    if not isinstance(files, dict) or "config.json" not in files or not any(
+        isinstance(path, str) and path.endswith(".safetensors")
+        for path in files
+        if isinstance(files, dict)
+    ):
+        errors.append(f"{field}.files_sha256 must include config.json and safetensors")
+    elif isinstance(files, dict):
+        for path, digest in files.items():
+            valid_path = isinstance(path, str) and bool(path) and "\\" not in path
+            if valid_path:
+                pure = PurePosixPath(path)
+                valid_path = (
+                    not pure.is_absolute()
+                    and re.match(r"^[A-Za-z]:", path) is None
+                    and all(part not in {"", ".", ".."} for part in pure.parts)
+                )
+            if not valid_path:
+                errors.append(
+                    f"{field}.files_sha256 keys must be normalized relative POSIX paths"
+                )
+                break
+            if not isinstance(digest, str) or SHA256_RE.fullmatch(digest) is None:
+                errors.append(
+                    f"{field}.files_sha256 values must be lowercase SHA-256 digests"
+                )
+                break
+    return value
+
+
 def is_rfc3339_timestamp(value: Any) -> bool:
     if not isinstance(value, str) or RFC3339_RE.fullmatch(value) is None:
         return False
@@ -619,58 +947,461 @@ def is_episode_web_publishable(workflow: dict[str, str | None]) -> bool:
 
 def validate_source_preferences(
     lines: list[str], *, field_prefix: str, errors: list[str]
-) -> None:
-    in_sources = False
-    sources_present = False
-    source_count = 0
-    preferred_count = 0
-    current_has_preferred = False
-
-    def record_preferred(raw_value: str) -> None:
-        nonlocal preferred_count, current_has_preferred
-        if current_has_preferred:
-            errors.append(f"{field_prefix} source has duplicate preferred fields")
-            return
-        current_has_preferred = True
-        value = raw_value.strip()
-        if value not in {"true", "false"}:
-            errors.append(
-                f"{field_prefix} sources[].preferred must be a YAML boolean"
-            )
-        elif value == "true":
-            preferred_count += 1
-
-    for line in lines:
-        stripped = line.strip()
-        indent = len(line) - len(line.lstrip(" "))
-        if not in_sources:
-            if indent == 0 and stripped.startswith("sources:"):
-                in_sources = True
-                sources_present = True
-            continue
-        if stripped and indent == 0:
-            break
-        if not stripped or stripped.startswith("#"):
-            continue
-        if indent == 2 and (stripped == "-" or stripped.startswith("- ")):
-            source_count += 1
-            current_has_preferred = False
-            inline = stripped[1:].strip()
-            if inline.startswith("preferred:"):
-                record_preferred(inline.split(":", 1)[1])
-            continue
-        if indent == 4 and stripped.startswith("preferred:"):
-            if source_count == 0:
-                errors.append(f"{field_prefix} sources must be a YAML list")
-                continue
-            record_preferred(stripped.split(":", 1)[1])
-
-    if not sources_present or source_count == 0:
+) -> list[dict[str, Any]]:
+    sources_present, sources = parse_front_matter_list(lines, "sources")
+    if not sources_present or not sources:
         errors.append(f"{field_prefix} sources must contain at least one source")
+    preferred_count = 0
+    for index, source in enumerate(sources):
+        if "preferred" in source and not isinstance(source["preferred"], bool):
+            errors.append(
+                f"{field_prefix} sources[{index}].preferred must be a YAML boolean"
+            )
+        if source.get("preferred") is True:
+            preferred_count += 1
     if preferred_count != 1:
         errors.append(
             f"{field_prefix} sources must contain exactly one preferred source"
         )
+    return sources
+
+
+def validate_source_schema(
+    sources: list[dict[str, Any]], *, field_prefix: str, errors: list[str]
+) -> None:
+    """Mirror the Web source schema for fields shared by shows and episodes."""
+
+    positive_id_fields = {"aid", "cid", "mid"}
+    non_empty_string_fields = {
+        "apple_podcasts_id",
+        "episode_id",
+        "episode_number",
+        "guid",
+        "page_id",
+        "rss_guid",
+        "show_id",
+    }
+    for index, source in enumerate(sources):
+        field = f"{field_prefix} sources[{index}]"
+        unknown_fields = set(source).difference(SOURCE_FIELDS)
+        if unknown_fields:
+            errors.append(
+                f"{field} contains unsupported fields: {', '.join(sorted(unknown_fields))}"
+            )
+
+        platform = source.get("platform")
+        kind = source.get("kind")
+        url = source.get("url")
+        if platform not in SOURCE_PLATFORMS:
+            errors.append(
+                f"{field}.platform must be one of {', '.join(sorted(SOURCE_PLATFORMS))}"
+            )
+        if kind not in SOURCE_KINDS:
+            errors.append(
+                f"{field}.kind must be one of {', '.join(sorted(SOURCE_KINDS))}"
+            )
+        if not is_absolute_url(url, scheme="https"):
+            errors.append(f"{field}.url must be an HTTPS URL")
+        if "title" in source and (
+            not isinstance(source["title"], str) or not source["title"]
+        ):
+            errors.append(f"{field}.title must be a non-empty string")
+        external_id = source.get("external_id")
+        if "external_id" in source and (
+            isinstance(external_id, bool)
+            or not isinstance(external_id, (str, int))
+            or external_id == ""
+        ):
+            errors.append(f"{field}.external_id must be a non-empty string or number")
+        if "preferred" in source and not isinstance(source["preferred"], bool):
+            errors.append(f"{field}.preferred must be a YAML boolean")
+
+        identifiers_value = source.get("identifiers")
+        identifiers = identifiers_value if isinstance(identifiers_value, dict) else {}
+        if identifiers_value is not None and not isinstance(identifiers_value, dict):
+            errors.append(f"{field}.identifiers must be a mapping")
+        if isinstance(identifiers_value, dict):
+            unknown_identifiers = set(identifiers).difference(SOURCE_IDENTIFIER_FIELDS)
+            if unknown_identifiers:
+                errors.append(
+                    f"{field}.identifiers contains unsupported fields: "
+                    f"{', '.join(sorted(unknown_identifiers))}"
+                )
+            for key in positive_id_fields:
+                value = identifiers.get(key)
+                if key in identifiers and (
+                    not isinstance(value, str) or re.fullmatch(r"[1-9]\d*", value) is None
+                ):
+                    errors.append(f"{field}.identifiers.{key} must be a positive ID string")
+            for key in non_empty_string_fields:
+                value = identifiers.get(key)
+                if key in identifiers and (not isinstance(value, str) or not value):
+                    errors.append(f"{field}.identifiers.{key} must be a non-empty string")
+            bvid = identifiers.get("bvid")
+            if "bvid" in identifiers and (
+                not isinstance(bvid, str) or re.fullmatch(r"BV[0-9A-Za-z]+", bvid) is None
+            ):
+                errors.append(f"{field}.identifiers.bvid has an invalid BVID")
+            for key in ("eid", "pid"):
+                value = identifiers.get(key)
+                if key in identifiers and (
+                    not isinstance(value, str) or re.fullmatch(r"[0-9a-f]{24}", value) is None
+                ):
+                    errors.append(f"{field}.identifiers.{key} must be a lowercase 24-character ID")
+            media_id = identifiers.get("media_id")
+            if "media_id" in identifiers and (
+                not isinstance(media_id, str)
+                or re.fullmatch(r"[0-9a-f]{24}/[^/]+\.m4a", media_id) is None
+            ):
+                errors.append(f"{field}.identifiers.media_id has an invalid media identity")
+            page = identifiers.get("page")
+            if "page" in identifiers and (
+                isinstance(page, bool) or not isinstance(page, int) or page <= 0
+            ):
+                errors.append(f"{field}.identifiers.page must be a positive integer")
+            feed_url = identifiers.get("feed_url")
+            if "feed_url" in identifiers and not is_absolute_url(feed_url):
+                errors.append(f"{field}.identifiers.feed_url must be a URL")
+
+        bilibili_match = CANONICAL_BILIBILI_VIDEO_RE.fullmatch(url or "")
+        if platform == "bilibili" and kind == "video" and bilibili_match is None:
+            errors.append(f"{field}.url must be the canonical Bilibili video URL")
+        if bilibili_match is not None:
+            if platform != "bilibili" or kind != "video":
+                errors.append(
+                    f"{field} Bilibili video URL must use platform bilibili and kind video"
+                )
+            for key in ("bvid", "aid", "cid", "page"):
+                if key not in identifiers:
+                    errors.append(f"{field}.identifiers.{key} is required")
+            if identifiers.get("bvid") != bilibili_match.group("bvid"):
+                errors.append(f"{field}.identifiers.bvid must match the source URL")
+
+        xiaoyuzhou_match = CANONICAL_XIAOYUZHOU_EPISODE_RE.fullmatch(url or "")
+        if (
+            platform == "xiaoyuzhou"
+            and kind == "episode"
+            and xiaoyuzhou_match is None
+        ):
+            errors.append(f"{field}.url must be the canonical Xiaoyuzhou episode URL")
+        if xiaoyuzhou_match is not None:
+            if platform != "xiaoyuzhou" or kind != "episode":
+                errors.append(
+                    f"{field} Xiaoyuzhou episode URL must use platform xiaoyuzhou "
+                    "and kind episode"
+                )
+            for key in ("eid", "pid", "media_id"):
+                if key not in identifiers:
+                    errors.append(f"{field}.identifiers.{key} is required")
+            if identifiers.get("eid") != xiaoyuzhou_match.group("eid"):
+                errors.append(f"{field}.identifiers.eid must match the source URL")
+            media_id = identifiers.get("media_id")
+            pid = identifiers.get("pid")
+            if (
+                isinstance(media_id, str)
+                and isinstance(pid, str)
+                and not media_id.startswith(f"{pid}/")
+            ):
+                errors.append(f"{field}.identifiers.media_id must begin with its pid")
+
+
+def validate_episode_sources(
+    sources: list[dict[str, Any]], *, field_prefix: str, errors: list[str]
+) -> None:
+    validate_source_schema(sources, field_prefix=field_prefix, errors=errors)
+
+
+def validate_participants_contract(
+    lines: list[str], *, field_prefix: str, errors: list[str]
+) -> list[dict[str, Any]]:
+    present, participants = parse_front_matter_list(lines, "participants")
+    if not present or not participants:
+        errors.append(f"{field_prefix} participants must contain at least one person")
+        return participants
+
+    seen_ids: set[str] = set()
+    for index, participant in enumerate(participants):
+        field = f"{field_prefix} participants[{index}]"
+        unknown_fields = set(participant).difference(PARTICIPANT_FIELDS)
+        if unknown_fields:
+            errors.append(
+                f"{field} contains unsupported fields: "
+                f"{', '.join(sorted(unknown_fields))}"
+            )
+        participant_id = participant.get("id")
+        name = participant.get("name")
+        role = participant.get("role")
+        aliases = participant.get("aliases", [])
+        if (
+            not isinstance(participant_id, str)
+            or EPISODE_KEY_RE.fullmatch(participant_id) is None
+        ):
+            errors.append(f"{field}.id has an invalid stable ID format")
+        elif participant_id in seen_ids:
+            errors.append(f"{field}.id duplicates {participant_id!r}")
+        else:
+            seen_ids.add(participant_id)
+        if not isinstance(name, str) or not name.strip():
+            errors.append(f"{field}.name must be a non-empty string")
+        if role not in PARTICIPANT_ROLES:
+            errors.append(
+                f"{field}.role must be one of {', '.join(sorted(PARTICIPANT_ROLES))}"
+            )
+        if not isinstance(aliases, list) or any(
+            not isinstance(alias, str) or not alias.strip() for alias in aliases
+        ):
+            errors.append(f"{field}.aliases must be a list of non-empty strings")
+    return participants
+
+
+def expected_navigation_person(participants: list[dict[str, Any]]) -> str | None:
+    for role in ("guest", "participant", "host"):
+        names = [
+            participant.get("name")
+            for participant in participants
+            if participant.get("role") == role
+            and isinstance(participant.get("name"), str)
+            and participant.get("name")
+        ]
+        if names:
+            return "、".join(names)
+    return None
+
+
+def validate_local_audio_cache_contract(
+    lines: list[str],
+    *,
+    field_prefix: str,
+    duration_ms: int | None,
+    publishable: bool,
+    errors: list[str],
+) -> None:
+    raw_cache = top_level_front_matter_raw_scalar(lines, "local_audio_cache")
+    cache = nested_front_matter_mapping(lines, "local_audio_cache")
+    transcript = nested_front_matter_mapping(lines, "transcript")
+    audio_asr = transcript.get("acquisition_method") == "audio-asr"
+    if raw_cache is not None and decode_yaml_primitive(raw_cache) is None:
+        if publishable and audio_asr:
+            errors.append(
+                f"{field_prefix} audio-ASR transcript requires local_audio_cache provenance"
+            )
+        return
+    if not cache:
+        if publishable and audio_asr:
+            errors.append(
+                f"{field_prefix} audio-ASR transcript requires local_audio_cache provenance"
+            )
+        return
+
+    required = {
+        "path",
+        "metadata_path",
+        "git_ignored",
+        "verified_at",
+        "codec",
+        "sample_rate_hz",
+        "channels",
+        "size_bytes",
+        "duration_ms",
+        "sha256",
+    }
+    for key in sorted(required.difference(cache)):
+        errors.append(f"{field_prefix} local_audio_cache.{key} is missing")
+    if "acquired_at" not in cache and "recovered_at" not in cache:
+        errors.append(
+            f"{field_prefix} local_audio_cache requires acquired_at or recovered_at"
+        )
+    for key in ("path", "metadata_path", "codec"):
+        if key in cache and (not isinstance(cache[key], str) or not cache[key]):
+            errors.append(f"{field_prefix} local_audio_cache.{key} must be non-empty")
+    if cache.get("git_ignored") is not True:
+        errors.append(f"{field_prefix} local_audio_cache.git_ignored must be true")
+    for key in ("acquired_at", "recovered_at", "verified_at"):
+        if key in cache and not is_rfc3339_timestamp(cache[key]):
+            errors.append(f"{field_prefix} local_audio_cache.{key} must be RFC 3339")
+    for key in ("sample_rate_hz", "channels", "size_bytes", "duration_ms"):
+        value = cache.get(key)
+        if key in cache and (
+            isinstance(value, bool) or not isinstance(value, int) or value <= 0
+        ):
+            errors.append(f"{field_prefix} local_audio_cache.{key} must be positive")
+    if "sha256" in cache and (
+        not isinstance(cache["sha256"], str)
+        or SHA256_RE.fullmatch(cache["sha256"]) is None
+    ):
+        errors.append(f"{field_prefix} local_audio_cache.sha256 must be a lowercase SHA-256")
+    cached_duration = cache.get("duration_ms")
+    if (
+        audio_asr
+        and duration_ms is not None
+        and isinstance(cached_duration, int)
+        and duration_ms != cached_duration
+    ):
+        errors.append(
+            f"{field_prefix} duration_ms must equal local_audio_cache.duration_ms "
+            "for the selected ASR input"
+        )
+
+
+def validate_summary_provenance(
+    lines: list[str],
+    *,
+    episode_dir: Path,
+    repository_root: Path,
+    label: str,
+    summary_path: Path | None,
+    transcript_path_value: str | None,
+    errors: list[str],
+) -> None:
+    source = nested_front_matter_mapping(lines, "summary", "source_transcript")
+    required = {"path", "engine", "model", "selection_status", "sha256"}
+    for key in sorted(required.difference(source)):
+        errors.append(f"{label} summary.source_transcript.{key} is missing")
+    for key in ("path", "engine", "model"):
+        if key in source and (not isinstance(source[key], str) or not source[key]):
+            errors.append(f"{label} summary.source_transcript.{key} must be non-empty")
+    selection_status = source.get("selection_status")
+    if selection_status not in SUMMARY_SELECTION_STATUSES:
+        errors.append(
+            f"{label} summary.source_transcript.selection_status must be selected or superseded"
+        )
+    source_sha = source.get("sha256")
+    if not isinstance(source_sha, str) or SHA256_RE.fullmatch(source_sha) is None:
+        errors.append(
+            f"{label} summary.source_transcript.sha256 must be a lowercase SHA-256"
+        )
+
+    source_path = safe_recorded_path(
+        source.get("path"),
+        base=episode_dir,
+        repository_root=episode_dir,
+        field=f"{label} summary.source_transcript.path",
+        errors=errors,
+        containment_label="episode directory",
+    )
+    if source_path is None:
+        return
+    if not source_path.is_file():
+        errors.append(
+            f"{label} summary.source_transcript.path is missing: {source.get('path')!r}"
+        )
+        return
+    if isinstance(source_sha, str) and SHA256_RE.fullmatch(source_sha):
+        if sha256_file(source_path) != source_sha:
+            errors.append(f"{label} summary.source_transcript.sha256 does not match its file")
+    if selection_status == "selected" and source.get("path") != transcript_path_value:
+        errors.append(
+            f"{label} selected summary source must equal transcript.path"
+        )
+
+    runs = parse_asr_runs(lines)
+    matching_runs = [
+        run
+        for run in runs
+        if run.get("engine") == source.get("engine")
+        and run.get("model") == source.get("model")
+        and run.get("selection_status") == selection_status
+    ]
+    if len(matching_runs) != 1:
+        errors.append(
+            f"{label} summary.source_transcript must match exactly one ASR run"
+        )
+    elif selection_status == "superseded":
+        artifacts = matching_runs[0].get("artifacts")
+        if not isinstance(artifacts, dict) or artifacts.get("transcript") != source.get("path"):
+            errors.append(
+                f"{label} superseded summary source must match its ASR run transcript artifact"
+            )
+
+    if summary_path is None or not summary_path.is_file():
+        return
+    source_timestamps: set[str] = set()
+    try:
+        for line in source_path.read_text(encoding="utf-8").splitlines():
+            match = TRANSCRIPT_TIMESTAMP_RE.match(line)
+            if match is not None:
+                source_timestamps.add(match.group(1))
+        summary_lines = summary_path.read_text(encoding="utf-8").splitlines()
+    except (OSError, UnicodeError) as error:
+        errors.append(f"{label} summary provenance files cannot be read: {error}")
+        return
+    for line_number, line in enumerate(summary_lines, start=1):
+        for match in SUMMARY_TIMESTAMP_RE.finditer(line):
+            timestamp = f"[{match.group(1)}]"
+            if timestamp not in source_timestamps:
+                errors.append(
+                    f"{label} summary timestamp {timestamp} at line {line_number} "
+                    "does not exist in summary.source_transcript"
+                )
+
+
+def validate_show_metadata_contract(
+    readme_path: Path,
+    readme_text: str,
+    *,
+    repository_root: Path,
+    show_ids: dict[str, Path],
+    errors: list[str],
+) -> dict[str, Any]:
+    lines = extract_front_matter_lines(readme_text)
+    label = display_path(readme_path, repository_root)
+    schema_version = top_level_front_matter_value(lines, "schema_version")
+    kind = top_level_front_matter_scalar(lines, "kind")
+    show_id = top_level_front_matter_scalar(lines, "id")
+    title = top_level_front_matter_scalar(lines, "title")
+    language = top_level_front_matter_scalar(lines, "language")
+    status = top_level_front_matter_scalar(lines, "status")
+    last_verified_at = top_level_front_matter_value(lines, "last_verified_at")
+    top_level_keys = top_level_front_matter_keys(lines)
+    unknown_fields = set(top_level_keys).difference(SHOW_FIELDS)
+    if unknown_fields:
+        errors.append(
+            f"{label} contains unsupported show fields: {', '.join(sorted(unknown_fields))}"
+        )
+    duplicate_fields = sorted(
+        key for key in set(top_level_keys) if top_level_keys.count(key) > 1
+    )
+    if duplicate_fields:
+        errors.append(
+            f"{label} duplicates show fields: {', '.join(duplicate_fields)}"
+        )
+    if schema_version != 1:
+        errors.append(f"{label} schema_version must equal 1")
+    if kind != "show":
+        errors.append(f"{label} kind must equal 'show'")
+    if not show_id or SHOW_ID_RE.fullmatch(show_id) is None:
+        errors.append(f"{label} id must contain only lowercase letters and digits")
+    elif show_id != readme_path.parent.name:
+        errors.append(f"{label} id must match its show directory")
+    elif show_id in show_ids:
+        errors.append(f"{label} duplicates show id {show_id!r}")
+    else:
+        show_ids[show_id] = readme_path
+    if not title:
+        errors.append(f"{label} title must be a non-empty string")
+    aliases_present, aliases = parse_top_level_scalar_list(lines, "aliases")
+    if not aliases_present or any(
+        not isinstance(alias, str) or not alias for alias in aliases
+    ):
+        errors.append(f"{label} aliases must be a list of non-empty strings")
+    if not isinstance(language, str) or not language:
+        errors.append(f"{label} language must be a non-empty string")
+    if status not in SHOW_STATUSES:
+        errors.append(
+            f"{label} status must be one of {', '.join(sorted(SHOW_STATUSES))}"
+        )
+    for field in ("formats", "topics"):
+        present, values = parse_top_level_scalar_list(lines, field)
+        if not present or not values or any(
+            not isinstance(value, str) or not value for value in values
+        ):
+            errors.append(f"{label} {field} must be a non-empty list of strings")
+    sources = validate_source_preferences(lines, field_prefix=label, errors=errors)
+    validate_source_schema(sources, field_prefix=label, errors=errors)
+    if not is_calendar_date(last_verified_at):
+        errors.append(f"{label} last_verified_at must be a valid YYYY-MM-DD date")
+    preferred = next((source for source in sources if source.get("preferred") is True), None)
+    return {"id": show_id, "title": title, "preferred": preferred}
 
 
 def validate_episode_metadata_contract(
@@ -686,13 +1417,29 @@ def validate_episode_metadata_contract(
     front_matter = extract_front_matter_lines(readme_text)
     label = display_path(readme_path, repository_root)
     episode_dir = readme_path.parent
+    schema_version = top_level_front_matter_value(front_matter, "schema_version")
+    kind = top_level_front_matter_scalar(front_matter, "kind")
     episode_id = top_level_front_matter_scalar(front_matter, "id")
     show_id = top_level_front_matter_scalar(front_matter, "show_id")
     episode_key = top_level_front_matter_scalar(front_matter, "episode_key")
+    episode_number = top_level_front_matter_value(front_matter, "episode_number")
+    slug = top_level_front_matter_scalar(front_matter, "slug")
+    release_type = top_level_front_matter_scalar(front_matter, "release_type")
+    title = top_level_front_matter_scalar(front_matter, "title")
+    navigation_title = top_level_front_matter_scalar(
+        front_matter, "navigation_title"
+    )
     published_at = top_level_front_matter_scalar(front_matter, "published_at")
+    language = top_level_front_matter_scalar(front_matter, "language")
     episode_key_raw = top_level_front_matter_raw_scalar(front_matter, "episode_key")
     published_at_raw = top_level_front_matter_raw_scalar(front_matter, "published_at")
     duration_ms_raw = top_level_front_matter_raw_scalar(front_matter, "duration_ms")
+    duration_ms = top_level_front_matter_value(front_matter, "duration_ms")
+
+    if schema_version != 1:
+        errors.append(f"{label} schema_version must equal 1")
+    if kind != "episode":
+        errors.append(f"{label} kind must equal 'episode'")
 
     if not episode_id:
         errors.append(f"{label} is missing id")
@@ -724,6 +1471,45 @@ def validate_episode_metadata_contract(
         if episode_id != expected_id:
             errors.append(f"{label} id must equal {expected_id!r}")
 
+    if slug != episode_dir.name:
+        errors.append(f"{label} slug must equal its episode directory name")
+    if release_type not in EPISODE_RELEASE_TYPES:
+        errors.append(
+            f"{label} release_type must be one of {', '.join(sorted(EPISODE_RELEASE_TYPES))}"
+        )
+    if not isinstance(title, str) or not title.strip():
+        errors.append(f"{label} title must be a non-empty string")
+    elif re.search(r"(?:^|\s)#\d+\s*$", title):
+        errors.append(f"{label} title must not include an episode-number suffix")
+    numbering = nested_front_matter_mapping(front_matter, "numbering")
+    numbering_status = numbering.get("status")
+    if numbering_status not in NUMBERING_STATUSES:
+        errors.append(
+            f"{label} numbering.status must be one of {', '.join(sorted(NUMBERING_STATUSES))}"
+        )
+    if not is_calendar_date(numbering.get("checked_at")):
+        errors.append(f"{label} numbering.checked_at must be a valid YYYY-MM-DD date")
+    if not isinstance(numbering.get("source"), str) or not numbering.get("source"):
+        errors.append(f"{label} numbering.source must be a non-empty string")
+    numbering_url = numbering.get("url")
+    if "url" in numbering and not is_absolute_url(numbering_url):
+        errors.append(f"{label} numbering.url must be a URL")
+    if episode_number is None:
+        if numbering_status == "verified":
+            errors.append(
+                f"{label} numbering.status cannot be verified without episode_number"
+            )
+    elif (
+        isinstance(episode_number, bool)
+        or not isinstance(episode_number, int)
+        or episode_number <= 0
+    ):
+        errors.append(f"{label} episode_number must be null or a positive integer")
+    elif numbering_status != "verified":
+        errors.append(
+            f"{label} episode_number requires numbering.status verified"
+        )
+
     if (
         not is_rfc3339_timestamp(published_at)
         or published_at_raw is None
@@ -735,6 +1521,8 @@ def validate_episode_metadata_contract(
 
     if duration_ms_raw is None or re.fullmatch(r"[1-9]\d*", duration_ms_raw) is None:
         errors.append(f"{label} duration_ms must be a positive integer")
+    if not isinstance(language, str) or not language:
+        errors.append(f"{label} language must be a non-empty string")
 
     workflow = {
         "metadata": nested_front_matter_scalar(front_matter, "workflow", "metadata"),
@@ -754,10 +1542,71 @@ def validate_episode_metadata_contract(
                 f"{label} workflow.{field} must be one of {', '.join(sorted(allowed))}"
             )
 
-    validate_source_preferences(front_matter, field_prefix=label, errors=errors)
+    sources = validate_source_preferences(
+        front_matter, field_prefix=label, errors=errors
+    )
+    validate_episode_sources(sources, field_prefix=label, errors=errors)
+    participants = validate_participants_contract(
+        front_matter, field_prefix=label, errors=errors
+    )
     validate_participant_profiles(front_matter, field_prefix=label, errors=errors)
     publishable = is_episode_web_publishable(workflow)
 
+    expected_person = expected_navigation_person(participants)
+    if (
+        expected_person is not None
+        and isinstance(navigation_title, str)
+        and navigation_title.split(" · ", 1)[0] != expected_person
+    ):
+        errors.append(
+            f"{label} navigation_title person must equal {expected_person!r}"
+        )
+
+    runs = parse_asr_runs(front_matter)
+    for index, run in enumerate(runs):
+        if run.get("selection_status") not in ASR_SELECTION_STATUSES:
+            errors.append(
+                f"{label} asr_runs[{index}].selection_status has an invalid value"
+            )
+    selected_runs = [run for run in runs if run.get("selection_status") == "selected"]
+    if publishable and len(selected_runs) != 1:
+        errors.append(
+            f"{label} web-publishable transcript must bind exactly one selected ASR run"
+        )
+    if selected_runs:
+        selected_run = selected_runs[0]
+        for key in ("id", "engine", "model"):
+            if not isinstance(selected_run.get(key), str) or not selected_run.get(key):
+                errors.append(f"{label} selected ASR run {key} must be non-empty")
+        if not isinstance(selected_run.get("artifacts"), dict):
+            errors.append(f"{label} selected ASR run must contain an artifacts mapping")
+        transcript_metadata = nested_front_matter_mapping(front_matter, "transcript")
+        for key in ("engine", "model"):
+            if transcript_metadata.get(key) != selected_run.get(key):
+                errors.append(
+                    f"{label} transcript.{key} must equal the selected ASR run {key}"
+                )
+        acquisition_method = transcript_metadata.get("acquisition_method")
+        if publishable and (
+            not isinstance(acquisition_method, str) or not acquisition_method
+        ):
+            errors.append(
+                f"{label} publishable transcript.acquisition_method must be non-empty"
+            )
+        if is_qwen_run(selected_run) and acquisition_method != "audio-asr":
+            errors.append(
+                f"{label} selected Qwen run requires acquisition_method audio-asr"
+            )
+
+    validate_local_audio_cache_contract(
+        front_matter,
+        field_prefix=label,
+        duration_ms=duration_ms if isinstance(duration_ms, int) else None,
+        publishable=publishable,
+        errors=errors,
+    )
+
+    asset_paths: dict[str, Path | None] = {}
     for section in ("summary", "transcript"):
         value = nested_front_matter_scalar(front_matter, section, "path")
         asset_path = safe_recorded_path(
@@ -768,10 +1617,24 @@ def validate_episode_metadata_contract(
             errors=errors,
             containment_label="episode directory",
         )
+        asset_paths[section] = asset_path
         if publishable and asset_path is not None and not asset_path.is_file():
             errors.append(
                 f"{label} is web-publishable but {section}.path is missing: {value!r}"
             )
+
+    if publishable:
+        validate_summary_provenance(
+            front_matter,
+            episode_dir=episode_dir,
+            repository_root=repository_root,
+            label=label,
+            summary_path=asset_paths.get("summary"),
+            transcript_path_value=nested_front_matter_scalar(
+                front_matter, "transcript", "path"
+            ),
+            errors=errors,
+        )
 
     return publishable
 
@@ -1085,6 +1948,64 @@ def validate_qwen_chain(
     if raw is None or aligned is None or refined is None:
         return True
 
+    lineage_versions = [
+        document.get("lineage_schema_version") for document in (raw, aligned, refined)
+    ]
+    legacy_lineage = all(version is None for version in lineage_versions)
+    v2_lineage = all(
+        type(version) is int and version == 2 for version in lineage_versions
+    )
+    if not legacy_lineage and not v2_lineage:
+        errors.append(
+            "Qwen lineage_schema_version must be absent on all three legacy artifacts "
+            "or the strict integer 2 on raw, aligned, and refined"
+        )
+    if v2_lineage:
+        aligned_source = aligned.get("source") if isinstance(aligned.get("source"), dict) else {}
+        refined_source = refined.get("source") if isinstance(refined.get("source"), dict) else {}
+        raw_model = validate_model_identity(raw.get("model_identity"), field="raw.model_identity", errors=errors)
+        aligned_model = validate_model_identity(aligned_source.get("model_identity"), field="aligned.source.model_identity", errors=errors)
+        aligned_aligner = validate_model_identity(aligned_source.get("aligner_identity"), field="aligned.source.aligner_identity", errors=errors)
+        refined_model = validate_model_identity(refined_source.get("model_identity"), field="refined.source.model_identity", errors=errors)
+        refined_aligner = validate_model_identity(refined_source.get("aligner_identity"), field="refined.source.aligner_identity", errors=errors)
+        if raw_model != aligned_model or aligned_model != refined_model:
+            errors.append("Qwen model_identity must remain identical across the artifact chain")
+        if aligned_aligner != refined_aligner:
+            errors.append("Qwen aligner_identity must remain identical across the artifact chain")
+        model_repositories = (
+            raw.get("model"),
+            aligned_source.get("model"),
+            refined_source.get("model"),
+        )
+        if (
+            raw_model is None
+            or any(
+                not isinstance(repository, str)
+                or repository != raw_model.get("repository")
+                for repository in model_repositories
+            )
+        ):
+            errors.append(
+                "Qwen model_identity.repository must equal raw.model, "
+                "aligned.source.model, and refined.source.model"
+            )
+        aligner_repositories = (
+            aligned_source.get("aligner"),
+            refined_source.get("aligner"),
+        )
+        if (
+            aligned_aligner is None
+            or any(
+                not isinstance(repository, str)
+                or repository != aligned_aligner.get("repository")
+                for repository in aligner_repositories
+            )
+        ):
+            errors.append(
+                "Qwen aligner_identity.repository must equal aligned.source.aligner "
+                "and refined.source.aligner"
+            )
+
     transcript_language = transcript_name.removeprefix("transcript.").removesuffix(
         ".md"
     )
@@ -1337,6 +2258,72 @@ def validate_qwen_chain(
     return True
 
 
+def validate_selected_run_contract(
+    episode_dir: Path,
+    *,
+    repository_root: Path,
+    readme_text: str,
+    publishable: bool,
+    qwen_complete: bool,
+    errors: list[str],
+) -> None:
+    if not publishable:
+        return
+    lines = extract_front_matter_lines(readme_text)
+    selected = [
+        run for run in parse_asr_runs(lines) if run.get("selection_status") == "selected"
+    ]
+    if len(selected) != 1:
+        return
+    run = selected[0]
+    if is_qwen_run(run):
+        if not qwen_complete:
+            errors.append(
+                f"{display_path(episode_dir, repository_root)} selected Qwen run must have a complete artifact chain"
+            )
+        return
+    artifacts = run.get("artifacts")
+    if not isinstance(artifacts, dict):
+        return
+    required = {"raw", "refined", "transcript"}
+    for name in sorted(required):
+        path = safe_recorded_path(
+            artifacts.get(name),
+            base=episode_dir,
+            repository_root=episode_dir,
+            field=f"selected asr_runs.artifacts.{name}",
+            errors=errors,
+            containment_label="episode directory",
+        )
+        if path is not None and not path.is_file():
+            errors.append(f"selected asr_runs.artifacts.{name} is missing")
+    run_transcript = safe_recorded_path(
+        artifacts.get("transcript"),
+        base=episode_dir,
+        repository_root=episode_dir,
+        field="selected asr_runs.artifacts.transcript",
+        errors=[],
+        containment_label="episode directory",
+    )
+    root_value = nested_front_matter_scalar(lines, "transcript", "path")
+    root_transcript = safe_recorded_path(
+        root_value,
+        base=episode_dir,
+        repository_root=episode_dir,
+        field="transcript.path",
+        errors=[],
+        containment_label="episode directory",
+    )
+    if (
+        run_transcript is not None
+        and root_transcript is not None
+        and run_transcript.is_file()
+        and root_transcript.is_file()
+        and run_transcript.read_bytes() != root_transcript.read_bytes()
+    ):
+        errors.append("selected non-Qwen root transcript must be byte-identical to its run artifact")
+
+
 def check_front_matter(path: Path, text: str, errors: list[str]) -> None:
     if not text.startswith("---\n"):
         errors.append(f"{relative(path)} must begin with YAML front matter")
@@ -1400,7 +2387,183 @@ def parse_markdown_table_row(line: str) -> list[str]:
     stripped = line.strip()
     if not stripped.startswith("|") or not stripped.endswith("|"):
         return []
-    return [cell.strip() for cell in stripped[1:-1].split("|")]
+    return [
+        cell.strip() for cell in re.split(r"(?<!\\)\|", stripped[1:-1])
+    ]
+
+
+def markdown_link_targets(cell: str) -> list[str]:
+    return re.findall(r"\[[^\]]+\]\(([^)]+)\)", cell)
+
+
+def markdown_links(cell: str) -> list[tuple[str, str]]:
+    return [
+        (label.replace(r"\|", "|"), target)
+        for label, target in re.findall(r"\[([^\]]+)\]\(([^)]+)\)", cell)
+    ]
+
+
+def markdown_table_after_heading(
+    text: str, heading: str, *, label: str, errors: list[str]
+) -> tuple[list[str], list[list[str]]]:
+    lines = text.splitlines()
+    try:
+        start = lines.index(heading) + 1
+    except ValueError:
+        errors.append(f"{label} is missing {heading}")
+        return [], []
+    table_lines: list[str] = []
+    for line in lines[start:]:
+        if not table_lines and not line.strip():
+            continue
+        if not line.startswith("|"):
+            break
+        table_lines.append(line)
+    if len(table_lines) < 2:
+        errors.append(f"{label} {heading} must contain a Markdown table")
+        return [], []
+    return parse_markdown_table_row(table_lines[0]), [
+        parse_markdown_table_row(line) for line in table_lines[2:]
+    ]
+
+
+def validate_wiki_indexes(
+    *,
+    repository_root: Path,
+    shows: dict[str, dict[str, Any]],
+    episodes: list[dict[str, Any]],
+    errors: list[str],
+) -> None:
+    root_readme = repository_root / "README.md"
+    root_text = root_readme.read_text(encoding="utf-8")
+    show_columns, show_rows = markdown_table_after_heading(
+        root_text, "## 收录播客", label="README.md", errors=errors
+    )
+    if show_columns != ["播客", "简介", "节目页"]:
+        errors.append("README.md 收录播客 columns must be 播客、简介、节目页")
+    seen_shows: set[str] = set()
+    for row in show_rows:
+        if len(row) != 3:
+            errors.append("README.md 收录播客 row must contain 3 columns")
+            continue
+        local_targets = markdown_link_targets(row[2])
+        match = re.fullmatch(r"\./shows/([a-z0-9]+)/?", local_targets[0]) if local_targets else None
+        if match is None or match.group(1) not in shows:
+            errors.append("README.md 收录播客 row has an invalid local show link")
+            continue
+        show_id = match.group(1)
+        if show_id in seen_shows:
+            errors.append(f"README.md 收录播客 duplicates show {show_id}")
+            continue
+        seen_shows.add(show_id)
+        title_links = markdown_links(row[0])
+        preferred = shows[show_id].get("preferred")
+        preferred_url = preferred.get("url") if isinstance(preferred, dict) else None
+        if title_links != [(shows[show_id]["title"], preferred_url)]:
+            errors.append(f"README.md show {show_id} must link its preferred source")
+    if seen_shows != set(shows):
+        errors.append("README.md 收录播客 rows must exactly match show metadata")
+
+    episode_columns, root_rows = markdown_table_after_heading(
+        root_text, "## 单集索引", label="README.md", errors=errors
+    )
+    if episode_columns != ["标题", "访谈人物", "播客名称", "日期", "总结", "逐字稿"]:
+        errors.append("README.md 单集索引 columns must match the six-column contract")
+    expected_root = {episode["root_summary_link"]: episode for episode in episodes}
+    seen_root: set[str] = set()
+    root_dates: list[str] = []
+    for row in root_rows:
+        if len(row) != 6:
+            errors.append("README.md 单集索引 row must contain 6 columns")
+            continue
+        summary_targets = markdown_link_targets(row[4])
+        key = summary_targets[0] if summary_targets else ""
+        episode = expected_root.get(key)
+        if episode is None:
+            errors.append(f"README.md 单集索引 has an unknown summary link: {key!r}")
+            continue
+        if key in seen_root:
+            errors.append(f"README.md 单集索引 duplicates summary link: {key!r}")
+            continue
+        seen_root.add(key)
+        root_dates.append(row[3])
+        if markdown_links(row[0]) != [(episode["title"], episode["preferred_url"])]:
+            errors.append(
+                f"README.md row {key} title must equal metadata and link the preferred source"
+            )
+        if markdown_links(row[2]) != [
+            (episode["show_title"], episode["root_show_link"])
+        ]:
+            errors.append(
+                f"README.md row {key} podcast must equal and link its show"
+            )
+        if episode["root_transcript_link"] not in markdown_link_targets(row[5]):
+            errors.append(f"README.md row {key} must link the selected transcript")
+        if row[3] != episode["date"]:
+            errors.append(f"README.md row {key} has the wrong publication date")
+        if row[1] != episode["guests"]:
+            errors.append(f"README.md row {key} has the wrong verified guest list")
+    if seen_root != set(expected_root):
+        errors.append("README.md 单集索引 rows must exactly match publishable episodes")
+    if root_dates != sorted(root_dates, reverse=True):
+        errors.append("README.md 单集索引 must be sorted by date descending")
+
+    for show_id in shows:
+        show_readme = repository_root / "shows" / show_id / "README.md"
+        columns, rows = markdown_table_after_heading(
+            show_readme.read_text(encoding="utf-8"),
+            "## 单集",
+            label=display_path(show_readme, repository_root),
+            errors=errors,
+        )
+        if columns != ["标题", "播客名称", "日期", "总结链接", "逐字稿链接"]:
+            errors.append(f"shows/{show_id}/README.md 单集 columns must match the five-column contract")
+        show_episodes = [episode for episode in episodes if episode["show_id"] == show_id]
+        expected = {episode["show_summary_link"]: episode for episode in show_episodes}
+        seen: set[str] = set()
+        dates: list[str] = []
+        for row in rows:
+            if len(row) != 5:
+                errors.append(f"shows/{show_id}/README.md 单集 row must contain 5 columns")
+                continue
+            targets = markdown_link_targets(row[3])
+            key = targets[0] if targets else ""
+            episode = expected.get(key)
+            if episode is None:
+                errors.append(f"shows/{show_id}/README.md has an unknown summary link: {key!r}")
+                continue
+            if key in seen:
+                errors.append(
+                    f"shows/{show_id}/README.md duplicates summary link: {key!r}"
+                )
+                continue
+            seen.add(key)
+            dates.append(row[2])
+            if markdown_links(row[0]) != [
+                (episode["title"], episode["preferred_url"])
+            ]:
+                errors.append(
+                    f"shows/{show_id}/README.md row {key} title must equal metadata "
+                    "and link the preferred source"
+                )
+            if row[1] != episode["show_title"]:
+                errors.append(
+                    f"shows/{show_id}/README.md row {key} podcast name must equal show title"
+                )
+            if episode["show_transcript_link"] not in markdown_link_targets(row[4]):
+                errors.append(f"shows/{show_id}/README.md row {key} must link the selected transcript")
+            if row[2] != episode["date"]:
+                errors.append(f"shows/{show_id}/README.md row {key} has the wrong publication date")
+        if seen != set(expected):
+            errors.append(f"shows/{show_id}/README.md rows must exactly match publishable episodes")
+        if dates != sorted(dates, reverse=True):
+            errors.append(f"shows/{show_id}/README.md 单集 must be sorted by date descending")
+
+    for episode in episodes:
+        if episode["show_id"] not in shows:
+            errors.append(
+                f"episode index record references unknown show {episode['show_id']!r}"
+            )
 
 
 def validate_core_point_logic_table(
@@ -1488,10 +2651,24 @@ def main() -> int:
     xiaoyuzhou_url_count = 0
     qwen_chain_count = 0
     episode_ids: dict[str, Path] = {}
+    show_ids: dict[str, Path] = {}
+    show_records: dict[str, dict[str, Any]] = {}
+    episode_records: list[dict[str, Any]] = []
 
     if not SHOWS_ROOT.is_dir():
         print("PodWiki validation failed:\n\n- shows directory is missing", file=sys.stderr)
         return 1
+
+    for show_readme in sorted(SHOWS_ROOT.glob("*/README.md")):
+        record = validate_show_metadata_contract(
+            show_readme,
+            show_readme.read_text(encoding="utf-8"),
+            repository_root=ROOT,
+            show_ids=show_ids,
+            errors=errors,
+        )
+        if isinstance(record.get("id"), str):
+            show_records[record["id"]] = record
 
     for path in sorted(SHOWS_ROOT.rglob("*.md")):
         text = path.read_text(encoding="utf-8")
@@ -1519,6 +2696,38 @@ def main() -> int:
             episode_ids=episode_ids,
             errors=errors,
         )
+        if publishable:
+            front_matter = extract_front_matter_lines(readme_text)
+            sources = parse_front_matter_list(front_matter, "sources")[1]
+            preferred = next(
+                (source for source in sources if source.get("preferred") is True), {}
+            )
+            participants = parse_front_matter_list(front_matter, "participants")[1]
+            guests = "、".join(
+                str(person.get("name"))
+                for person in participants
+                if person.get("role") == "guest"
+            ) or "—"
+            show_id = top_level_front_matter_scalar(front_matter, "show_id") or ""
+            show = show_records.get(show_id, {})
+            summary_name = nested_front_matter_scalar(front_matter, "summary", "path") or ""
+            transcript_name = nested_front_matter_scalar(front_matter, "transcript", "path") or ""
+            relative_episode = episode_dir.relative_to(ROOT).as_posix()
+            episode_records.append(
+                {
+                    "show_id": show_id,
+                    "show_title": show.get("title"),
+                    "title": top_level_front_matter_scalar(front_matter, "title"),
+                    "date": (top_level_front_matter_scalar(front_matter, "published_at") or "")[:10],
+                    "guests": guests,
+                    "preferred_url": preferred.get("url"),
+                    "root_show_link": f"./shows/{show_id}/",
+                    "root_summary_link": f"./{relative_episode}/{summary_name}",
+                    "root_transcript_link": f"./{relative_episode}/{transcript_name}",
+                    "show_summary_link": f"./episodes/{episode_dir.name}/{summary_name}",
+                    "show_transcript_link": f"./episodes/{episode_dir.name}/{transcript_name}",
+                }
+            )
         validate_episode_catalog_keyword(readme, readme_text, errors)
         validate_episode_navigation_title(readme, readme_text, errors)
         validate_episode_translations(
@@ -1528,13 +2737,29 @@ def main() -> int:
             errors=errors,
             require_complete=publishable,
         )
-        if validate_qwen_chain(
+        qwen_complete = validate_qwen_chain(
             episode_dir,
             repository_root=ROOT,
             readme_text=readme_text,
             errors=errors,
-        ):
+        )
+        validate_selected_run_contract(
+            episode_dir,
+            repository_root=ROOT,
+            readme_text=readme_text,
+            publishable=publishable,
+            qwen_complete=qwen_complete,
+            errors=errors,
+        )
+        if qwen_complete:
             qwen_chain_count += 1
+
+    validate_wiki_indexes(
+        repository_root=ROOT,
+        shows=show_records,
+        episodes=episode_records,
+        errors=errors,
+    )
 
     if errors:
         print("PodWiki validation failed:\n", file=sys.stderr)

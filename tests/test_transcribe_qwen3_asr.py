@@ -1,14 +1,19 @@
 from __future__ import annotations
 
+import argparse
+import contextlib
+import io
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import transcribe_qwen3_asr as mlx_worker  # noqa: E402
 from transcribe_qwen3_asr import (  # noqa: E402
     alignment_units,
     finite_document_number,
@@ -16,6 +21,7 @@ from transcribe_qwen3_asr import (  # noqa: E402
     resume_mode,
     sentence_segments,
     sentence_texts,
+    sha256_file,
     validate_aligned_document,
     validate_raw_document,
     write_json_atomically,
@@ -24,10 +30,10 @@ from render_asr_transcript import clean_text  # noqa: E402
 
 
 class RefinementTests(unittest.TestCase):
-    def test_normalizes_qwen_proper_noun_variants(self) -> None:
+    def test_does_not_apply_cross_episode_proper_noun_replacements(self) -> None:
         self.assertEqual(
             clean_text("翁嘉译在 WhyNot TV 介绍天授。"),
-            "翁家翌在 WhynotTV 介绍Tianshou。",
+            "翁嘉译在 WhyNot TV 介绍天授。",
         )
 
 
@@ -210,6 +216,135 @@ class ResumeModeTests(unittest.TestCase):
             ),
             "align-only",
         )
+
+
+class MainLegacyLineageTests(unittest.TestCase):
+    def write_chain(
+        self, root: Path
+    ) -> tuple[argparse.Namespace, bytes, bytes]:
+        input_path = root / "source.m4a"
+        raw_path = root / "raw.json"
+        aligned_path = root / "aligned.json"
+        input_path.write_bytes(b"fake-audio")
+        audio_sha256 = sha256_file(input_path)
+        raw = {
+            "schema_version": 1,
+            "kind": "raw-asr",
+            "engine": "mlx-audio",
+            "model": mlx_worker.DEFAULT_MODEL,
+            "language": "Chinese",
+            "audio": {
+                "duration_seconds": 2.0,
+                "sample_rate_hz": 16000,
+                "size_bytes": input_path.stat().st_size,
+                "sha256": audio_sha256,
+            },
+            "options": {
+                "temperature": 0.0,
+                "max_tokens_per_chunk": 4096,
+                "chunk_duration_seconds": 240.0,
+            },
+            "text": "测试。",
+            "segments": [
+                {"id": 0, "start": 0.0, "end": 2.0, "text": "测试。"}
+            ],
+        }
+        write_json_atomically(raw_path, raw)
+        aligned = {
+            "schema_version": 1,
+            "kind": "aligned-asr",
+            "language": "Chinese",
+            "source": {
+                "engine": "mlx-audio",
+                "model": mlx_worker.DEFAULT_MODEL,
+                "aligner": mlx_worker.DEFAULT_ALIGNER,
+                "audio_sha256": audio_sha256,
+                "raw_asr_sha256": sha256_file(raw_path),
+            },
+            "options": {"max_sentence_characters": 160},
+            "statistics": {
+                "source_chunks": 1,
+                "aligned_chunks": 1,
+                "alignment_items": 2,
+                "sentence_segments": 1,
+            },
+            "text": "测试。",
+            "chunks": [
+                {
+                    "id": 0,
+                    "start": 0.0,
+                    "end": 2.0,
+                    "text": "测试。",
+                    "alignment": [
+                        {"text": "测", "start": 0.1, "end": 0.5},
+                        {"text": "试", "start": 0.5, "end": 1.0},
+                    ],
+                }
+            ],
+            "segments": [
+                {
+                    "id": 0,
+                    "start": 0.1,
+                    "end": 1.0,
+                    "text": "测试。",
+                    "source_chunk_id": 0,
+                }
+            ],
+        }
+        write_json_atomically(aligned_path, aligned)
+        args = argparse.Namespace(
+            input=input_path,
+            output=raw_path,
+            aligned_output=aligned_path,
+            model=mlx_worker.DEFAULT_MODEL,
+            model_revision=None,
+            model_path=None,
+            aligner=mlx_worker.DEFAULT_ALIGNER,
+            aligner_revision=None,
+            aligner_path=None,
+            language="Chinese",
+            temperature=0.0,
+            max_tokens=4096,
+            chunk_duration=240.0,
+            max_sentence_characters=160,
+            verbose=False,
+            retranscribe=False,
+            realign=False,
+        )
+        return args, raw_path.read_bytes(), aligned_path.read_bytes()
+
+    def test_markerless_align_only_requires_retranscription(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            args, raw_bytes, aligned_bytes = self.write_chain(Path(directory))
+            args.aligned_output.unlink()
+            with (
+                patch.object(mlx_worker, "parse_args", return_value=args),
+                self.assertRaisesRegex(ValueError, "pass --retranscribe"),
+            ):
+                mlx_worker.main()
+            self.assertEqual(args.output.read_bytes(), raw_bytes)
+            self.assertFalse(args.aligned_output.exists())
+
+            args.aligned_output.write_bytes(aligned_bytes)
+            args.realign = True
+            with (
+                patch.object(mlx_worker, "parse_args", return_value=args),
+                self.assertRaisesRegex(ValueError, "pass --retranscribe"),
+            ):
+                mlx_worker.main()
+            self.assertEqual(args.output.read_bytes(), raw_bytes)
+            self.assertEqual(args.aligned_output.read_bytes(), aligned_bytes)
+
+    def test_complete_markerless_chain_remains_read_only(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            args, raw_bytes, aligned_bytes = self.write_chain(Path(directory))
+            with (
+                patch.object(mlx_worker, "parse_args", return_value=args),
+                contextlib.redirect_stdout(io.StringIO()),
+            ):
+                self.assertEqual(mlx_worker.main(), 0)
+            self.assertEqual(args.output.read_bytes(), raw_bytes)
+            self.assertEqual(args.aligned_output.read_bytes(), aligned_bytes)
 
 
 class ArtifactValidationTests(unittest.TestCase):

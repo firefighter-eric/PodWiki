@@ -300,4 +300,55 @@ describe("reader navigation", () => {
       expect(html).not.toContain('class="core-points-summary"><h2>核心观点</h2><ul>');
     }
   });
+
+  it("preserves the complete authored summary and discloses its draft status", async () => {
+    const episodes = await getEpisodes();
+    const episode = episodes.find((candidate) => candidate.id === "latetalk:178");
+    expect(episode).toBeDefined();
+
+    const html = renderToStaticMarkup(await SummaryView({ episode: episode! }));
+    expect(html).toContain('class="summary-status-note"');
+    expect(html).toContain('<h2>为什么值得听</h2>');
+    expect(html).toContain("本页总结基于机器逐字稿整理，当前为草稿");
+    expect(html).toContain("适合关注 AI 研究方法");
+    expect(html).toContain("RSI 变得可做，关键不是概念新");
+    expect(html).toContain("嘉宾主张");
+    expect(html).toContain("原文定位");
+    expect(html).toContain("事实边界与待核实");
+    expect(html).toContain("一百五十人临界点");
+
+    const railHtml = renderWithPreferences(createElement(RightRail, {
+      episode: episode!,
+      view: "summary",
+    }));
+    expect(railHtml).toContain('href="#why-read">为什么值得听</a>');
+    expect(railHtml).toContain('href="#extended-reading">5 分钟读完</a>');
+  });
+
+  it("preserves legacy overall-summary sections and every following fact boundary", async () => {
+    const legacyEpisodes = [
+      ["luoyonghao", "002-he-xiaopeng"],
+      ["luoyonghao", "005-zhou-hongyi"],
+      ["whynottv", "002-hu-yuanming"],
+      ["whynottv", "003-chen-tianqi"],
+    ] as const;
+
+    for (const [showId, folder] of legacyEpisodes) {
+      const episode = await getEpisode(showId, folder);
+      expect(episode, `${showId}/${folder}`).toBeDefined();
+
+      const html = renderToStaticMarkup(await SummaryView({ episode: episode! }));
+      expect(html, `${showId}/${folder}`).toContain("整体总结");
+      expect(html, `${showId}/${folder}`).toContain("主题导航");
+      expect(html, `${showId}/${folder}`).toContain("事实边界与待核实事项");
+
+      const railHtml = renderWithPreferences(createElement(RightRail, {
+        episode: episode!,
+        view: "summary",
+      }));
+      expect(railHtml, `${showId}/${folder}`).toContain('href="#why-read">为什么值得听</a>');
+      expect(railHtml, `${showId}/${folder}`).toContain('href="#extended-reading">整体总结</a>');
+      expect(railHtml, `${showId}/${folder}`).not.toContain('href="#extended-reading">5 分钟读完</a>');
+    }
+  });
 });

@@ -16,7 +16,7 @@ title: "对话 Liblib 陈冕：关于活下来，以及所有接近死亡的时�
 navigation_title: "陈冕 · AI 应用公司的生存策略"
 catalog_keyword: "Liblib"
 published_at: "2026-07-30T20:53:06+08:00"
-duration_ms: 7714000
+duration_ms: 7713088
 language: zh-CN
 participants:
   - id: latepost-reporters
@@ -180,6 +180,6 @@ last_verified_at: 2026-08-07
 - [x] 核对 BVID、aid、cid、page、正式期号与嘉宾
 - [x] 检查匿名访问可见的平台字幕轨并记录边界
 - [x] 获取公开音轨并完成编码、时长、大小和哈希校验
-- [x] 生成 Qwen3-ASR 机器逐字稿及完整 lineage
+- [x] 生成 Qwen3-ASR 机器逐字稿及旧版产物哈希链
 - [x] 基于完整机器稿形成独立总结草稿
 - [ ] 核听关键片段、校对专有名词并核查高影响事实

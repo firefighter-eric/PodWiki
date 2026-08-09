@@ -11,7 +11,7 @@ numbering:
   status: verified
   checked_at: 2026-08-07
   source: publisher-rss
-title: "胡渊鸣：Meshy AI，太极，MIT，清华姚班，图形学，物理仿真模拟，开源，商业化，勇气 ，智慧 ｜ WhynotTV Podcast #2"
+title: "胡渊鸣：Meshy AI，太极，MIT，清华姚班，图形学，物理仿真模拟，开源，商业化，勇气 ，智慧 ｜ WhynotTV Podcast"
 navigation_title: "胡渊鸣 · Meshy AI、太极与图形学创业"
 catalog_keyword: "Meshy AI"
 published_at: "2025-08-08T08:28:28+08:00"
@@ -31,6 +31,7 @@ participants:
 sources:
   - platform: bilibili
     kind: video
+    title: "胡渊鸣：Meshy AI，太极，MIT，清华姚班，图形学，物理仿真模拟，开源，商业化，勇气 ，智慧 ｜ WhynotTV Podcast #2"
     url: https://www.bilibili.com/video/BV1XmtyzKEzQ/
     preferred: true
     identifiers:
@@ -53,7 +54,7 @@ summary:
     engine: mlx-audio
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     selection_status: selected
-    sha256: 0a5cf7a6da19aeab5d32a8751b2a4d6fdc80ac9c46cfa3b182adb99573b6d495
+    sha256: 67ea3d4c2669105e0ec570641925a28ce2291968732e7d850c61737b08dd3fa8
 transcript:
   path: transcript.zh-CN.md
   platform_subtitle_access: no-anonymous-track-login-indicated

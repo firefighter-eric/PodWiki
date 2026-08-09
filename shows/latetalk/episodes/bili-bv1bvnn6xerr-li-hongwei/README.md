@@ -16,7 +16,7 @@ title: "AI 硬件大爆发，谁能抢占下一个“iPhone 时刻”【晚点La
 navigation_title: "李宏伟 · AI 眼镜与下一代智能终端入口"
 catalog_keyword: "雷鸟创新"
 published_at: "2026-07-10T18:00:01+08:00"
-duration_ms: 4973000
+duration_ms: 4972736
 language: zh-CN
 participants:
   - id: guo-haiwei
@@ -175,6 +175,6 @@ Bilibili 匿名元数据未提供平台章节；最终总结将以完整正式�
 - [x] 核对 BVID、aid、cid、page、无正式期号状态与参与者
 - [x] 检查匿名访问可见的平台字幕轨并记录边界
 - [x] 获取公开音轨并完成编码、时长、大小和哈希校验
-- [x] 生成 Qwen3-ASR 机器逐字稿及完整 lineage
+- [x] 生成 Qwen3-ASR 机器逐字稿及旧版产物哈希链
 - [x] 基于完整机器稿形成独立总结草稿
 - [ ] 核听关键片段、校对专有名词并核查高影响事实

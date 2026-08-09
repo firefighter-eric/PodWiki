@@ -10,6 +10,7 @@ release_type: regular
 numbering:
   status: unknown
   checked_at: YYYY-MM-DD
+  source: publisher-page
 title: 单集标题
 navigation_title: "人物 · 精简题目"
 catalog_keyword: "代表性关键词"

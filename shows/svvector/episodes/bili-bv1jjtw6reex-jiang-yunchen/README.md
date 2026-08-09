@@ -17,7 +17,7 @@ title: "【视频播客】硅谷坐标 x Tensormesh 江鋆晨：AI 的记忆-KvC
 navigation_title: "江鋆晨 · KV Cache 三层理解与 AI 记忆"
 catalog_keyword: "KV Cache"
 published_at: "2026-06-30T21:37:01+08:00"
-duration_ms: 2742378
+duration_ms: 2742379
 language: zh-CN
 participants:
   - id: cao-qingyun

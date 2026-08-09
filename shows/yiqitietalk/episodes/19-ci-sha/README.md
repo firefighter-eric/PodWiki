@@ -16,7 +16,7 @@ title: "此沙与吴向东的首次越野赛"
 navigation_title: "此沙 · 演艺工作与首次越野"
 catalog_keyword: "云顶30"
 published_at: "2026-07-20T00:00:00.000Z"
-duration_ms: 1901000
+duration_ms: 1901200
 language: zh-CN
 participants:
   - id: ci-sha
@@ -27,7 +27,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "19 此沙与吴向东的首次越野赛"
     url: https://www.xiaoyuzhoufm.com/episode/6a5cd2586356eb2d9be50430
     preferred: true

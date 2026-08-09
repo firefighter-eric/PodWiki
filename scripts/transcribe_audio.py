@@ -5,12 +5,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import tempfile
 from pathlib import Path
 from typing import Any
 
 
 DEFAULT_MODEL = "mlx-community/whisper-large-v3-turbo-q4"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+BENCHMARK_ROOT = PROJECT_ROOT / ".cache" / "benchmarks"
 
 
 def parse_args() -> argparse.Namespace:
@@ -52,15 +55,17 @@ def write_json_atomically(path: Path, document: dict[str, Any]) -> None:
             suffix=".tmp",
             delete=False,
         ) as stream:
+            temporary_path = Path(stream.name)
             json.dump(
                 document,
                 stream,
                 ensure_ascii=False,
                 indent=2,
-                allow_nan=True,
+                allow_nan=False,
             )
             stream.write("\n")
-            temporary_path = Path(stream.name)
+            stream.flush()
+            os.fsync(stream.fileno())
         temporary_path.replace(path)
         temporary_path = None
     finally:
@@ -68,18 +73,33 @@ def write_json_atomically(path: Path, document: dict[str, Any]) -> None:
             temporary_path.unlink(missing_ok=True)
 
 
+def validate_benchmark_output(path: Path) -> Path:
+    resolved = path.resolve()
+    try:
+        relative = resolved.relative_to(BENCHMARK_ROOT.resolve())
+    except ValueError as error:
+        raise ValueError(
+            "new MLX Whisper output must stay under .cache/benchmarks"
+        ) from error
+    if not relative.parts or resolved.suffix != ".json":
+        raise ValueError("MLX Whisper output must be a JSON file under .cache/benchmarks")
+    return resolved
+
+
 def main() -> int:
     args = parse_args()
     input_path = args.input.resolve()
-    output_path = args.output.resolve()
+    output_path = validate_benchmark_output(args.output)
     if not input_path.is_file():
         raise FileNotFoundError(f"audio file does not exist: {input_path}")
+    if input_path == output_path:
+        raise ValueError("input audio and Whisper output paths must be distinct")
 
     try:
         import mlx_whisper
     except ImportError as error:
         raise SystemExit(
-            "mlx-whisper is unavailable; run this script with `uv run --group asr`"
+            "mlx-whisper is unavailable; install the project with `uv sync --extra asr`"
         ) from error
 
     result = mlx_whisper.transcribe(
@@ -93,6 +113,10 @@ def main() -> int:
     )
     if not isinstance(result, dict) or not isinstance(result.get("segments"), list):
         raise ValueError("mlx-whisper returned an unexpected result")
+    try:
+        json.dumps(result, allow_nan=False)
+    except (TypeError, ValueError) as error:
+        raise ValueError("mlx-whisper returned non-strict JSON data") from error
 
     write_json_atomically(output_path, result)
     print(

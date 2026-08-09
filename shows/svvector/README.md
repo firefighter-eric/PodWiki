@@ -20,6 +20,7 @@ sources:
   - platform: bilibili
     kind: channel
     url: https://space.bilibili.com/3706937879300857/
+    preferred: true
     identifiers:
       mid: "3706937879300857"
   - platform: website

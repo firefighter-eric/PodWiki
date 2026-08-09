@@ -16,7 +16,7 @@ title: "路颖：中国女子路跑运动员"
 navigation_title: "路颖 · 东京马拉松、训练与职业规划"
 catalog_keyword: "东京马拉松"
 published_at: "2026-03-14T08:40:47.194Z"
-duration_ms: 5374000
+duration_ms: 5374900
 language: zh-CN
 participants:
   - id: lu-ying
@@ -24,7 +24,7 @@ participants:
     role: participant
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "9 路颖：中国女子路跑运动员"
     url: https://www.xiaoyuzhoufm.com/episode/69b51ccdcaaea1fb3b32ba7c
     preferred: true

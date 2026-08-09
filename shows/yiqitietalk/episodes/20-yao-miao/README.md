@@ -16,7 +16,7 @@ title: "姚妙“教”吴向东越野？不不不，让我们一起撒开脚丫
 navigation_title: "姚妙 · 崇礼首野与少儿跑现场"
 catalog_keyword: "崇礼168"
 published_at: "2026-07-21T10:47:00.892Z"
-duration_ms: 3598000
+duration_ms: 3598100
 language: zh-CN
 participants:
   - id: yao-miao
@@ -27,7 +27,7 @@ participants:
     role: host
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "20 姚妙“教”吴向东越野？不不不，让我们一起撒开脚丫"
     url: https://www.xiaoyuzhoufm.com/episode/6a5f4d33a3fec224d5a1136a
     preferred: true

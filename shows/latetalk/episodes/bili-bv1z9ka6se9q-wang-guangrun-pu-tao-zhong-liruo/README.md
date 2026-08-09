@@ -16,7 +16,7 @@ title: "世界模型这半年：路线争议、数据来源与商业落地【晚
 navigation_title: "王广润、蒲韬、仲黎若 · 世界动作模型的路线与落地"
 catalog_keyword: "X-Era Lab"
 published_at: "2026-07-18T19:53:36+08:00"
-duration_ms: 1845000
+duration_ms: 1844885
 language: zh-CN
 participants:
   - id: shen-yuan
@@ -187,6 +187,6 @@ Bilibili 匿名元数据未提供平台章节；最终总结将以完整正式�
 - [x] 核对 BVID、aid、cid、page、无正式期号状态与参与者
 - [x] 检查匿名访问可见的平台字幕轨并记录边界
 - [x] 获取公开音轨并完成编码、时长、大小和哈希校验
-- [x] 生成 Qwen3-ASR 机器逐字稿及完整 lineage
+- [x] 生成 Qwen3-ASR 机器逐字稿及旧版产物哈希链
 - [x] 基于完整机器稿形成独立总结草稿
 - [ ] 核听关键片段、校对专有名词并核查高影响事实

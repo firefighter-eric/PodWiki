@@ -15,7 +15,7 @@ title: "Manus 决定出售前最后的访谈：啊，这奇幻的 2025 年漂流
 navigation_title: "季逸超 · Manus 与产品驱动的通用 Agent"
 catalog_keyword: "Manus"
 published_at: "2025-12-30T10:41:23+08:00"
-duration_ms: 12677000
+duration_ms: 12660425
 language: zh-CN
 participants:
   - id: zhang-xiaojun
@@ -32,11 +32,14 @@ participants:
           status: current
       checked_at: "2026-08-06"
 sources:
-  - platform: rss
-    kind: feed-item
+  - platform: xiaoyuzhou
+    kind: episode
     url: https://www.xiaoyuzhoufm.com/episode/695331cb2db086f897b50ea9
     preferred: false
     identifiers:
+      eid: 695331cb2db086f897b50ea9
+      pid: 626b46ea9cbbf0451cf5a962
+      media_id: 626b46ea9cbbf0451cf5a962/lhO_DypJQFbhkcdm1FPQRo2wY9aP.m4a
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
       guid: 695331cb2db086f897b50ea9
   - platform: bilibili

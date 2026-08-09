@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode_id": "whynottv:003",
+  "version": "legacy-global-v1-migration",
+  "input_asr_sha256": "004678dc144f888854ace3f0b68d988cf295ef5a4da117fbca58835d7b44fb74",
+  "rules": [
+    {
+      "id": "phd-lowercase",
+      "match": "phd",
+      "replacement": "PhD",
+      "reason": "canonical PhD degree abbreviation",
+      "case_sensitive": true,
+      "expected_hits": 5
+    }
+  ]
+}

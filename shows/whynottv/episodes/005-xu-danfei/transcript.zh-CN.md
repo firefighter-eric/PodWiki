@@ -1,4 +1,4 @@
-# Danfei Xu：人类数据，行为克隆，机器人GPT-3，全栈，EgoMimic，遥操作，UMI，斯坦福 | WhynotTV Podcast #5
+# Danfei Xu：人类数据，行为克隆，机器人GPT-3，全栈，EgoMimic，遥操作，UMI，斯坦福 | WhynotTV Podcast
 
 [00:00:00] 我现在就是在感觉，就是一辆高速前行的火车，有几个love在前面疯狂打铁轨，然后后面就是所有的资本就开始车里面加油加加柴。  
 [00:00:09] 就是如果你在人人身上挂足够多的sensor，其实你可以把一个人变成一个机器人。  

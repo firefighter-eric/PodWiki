@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode_id": "svvector:bili-bv1fzphzsext",
+  "version": "legacy-global-v1-migration",
+  "input_asr_sha256": "84b224b703a8907406ffc4d470be4915121d70a551df2a502e6c457c8a153e97",
+  "rules": [
+    {
+      "id": "deepseek-lowercase",
+      "match": "deepseek",
+      "replacement": "DeepSeek",
+      "reason": "canonical DeepSeek brand spelling",
+      "case_sensitive": true,
+      "expected_hits": 1
+    }
+  ]
+}

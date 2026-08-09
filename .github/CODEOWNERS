@@ -1,0 +1,12 @@
+# Repository contracts and release gates require maintainer review.
+* @firefighter-eric
+
+# Changes here can alter every episode's provenance or public rendering.
+/pyproject.toml @firefighter-eric
+/uv.lock @firefighter-eric
+/scripts/ @firefighter-eric
+/tests/ @firefighter-eric
+/docs/ @firefighter-eric
+/.github/ @firefighter-eric
+/apps/web/ @firefighter-eric
+/shows/ @firefighter-eric

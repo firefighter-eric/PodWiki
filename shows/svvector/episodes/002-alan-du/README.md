@@ -50,7 +50,9 @@ sources:
     url: https://www.xiaoyuzhoufm.com/episode/69b7befacaaea1fb3b8bbe45
     preferred: false
     identifiers:
-      episode_id: 69b7befacaaea1fb3b8bbe45
+      eid: 69b7befacaaea1fb3b8bbe45
+      pid: 69a4b82b27e15c06061cfc2d
+      media_id: 69a4b82b27e15c06061cfc2d/li4QY2AuhBmh2qcWkS8xY4xyURvQ.m4a
 workflow:
   metadata: verified
   summary: draft
@@ -210,7 +212,7 @@ last_verified_at: 2026-08-08
 - [x] 检查匿名访问可见的平台字幕轨
 - [x] 获取并独立验证本地音轨、sidecar、大小和 SHA-256
 - [x] 记录发布者 `rights.no_reprint=1` 的来源权利边界
-- [x] 生成并校验 Qwen3-ASR 机器逐字稿及完整 lineage
+- [x] 生成并校验 Qwen3-ASR 机器逐字稿及旧版产物哈希链
 - [x] 基于完整机器逐字稿撰写独立总结草稿
 - [ ] 校对 M12、支付、合规与软件行业专有名词
 - [ ] 核听关键片段并核查高影响外部事实

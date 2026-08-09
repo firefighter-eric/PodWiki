@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "episode_id": "whynottv:004",
+  "version": "legacy-global-v1-migration",
+  "input_asr_sha256": "047743e985104cd370e08d2281dc999f8fa14b6878c88f49e255a3be58b8b9e1",
+  "rules": [
+    {
+      "id": "guest-name-weng-mistranscription",
+      "match": "翁嘉译",
+      "replacement": "翁家翌",
+      "reason": "publisher-confirmed guest name",
+      "case_sensitive": true,
+      "expected_hits": 4
+    },
+    {
+      "id": "guest-name-wen-mistranscription",
+      "match": "温嘉义",
+      "replacement": "翁家翌",
+      "reason": "publisher-confirmed guest name",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "rl-mistranscription",
+      "match": "RO infer",
+      "replacement": "RL infer",
+      "reason": "reinforcement-learning context in the selected transcript",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "deepseek-spaced",
+      "match": "Deep Seek",
+      "replacement": "DeepSeek",
+      "reason": "canonical DeepSeek brand spelling",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "whynottv-spaced",
+      "match": "WhyNot TV",
+      "replacement": "WhynotTV",
+      "reason": "publisher brand spelling",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "tianshou-chinese",
+      "match": "天授",
+      "replacement": "Tianshou",
+      "reason": "project name used by the guest and publisher materials",
+      "case_sensitive": true,
+      "expected_hits": 21
+    }
+  ]
+}

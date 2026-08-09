@@ -16,7 +16,7 @@ title: "贾俄仁加：运动员、贾老板、父亲，多重身份加身，仍
 navigation_title: "贾俄仁加 · 路野双栖、俱乐部与多重身份"
 catalog_keyword: "东羚俱乐部"
 published_at: "2026-01-25T13:00:00.000Z"
-duration_ms: 4755000
+duration_ms: 4755200
 language: zh-CN
 participants:
   - id: jia-e-ren-jia
@@ -24,7 +24,7 @@ participants:
     role: guest
 sources:
   - platform: xiaoyuzhou
-    kind: audio
+    kind: episode
     title: "4 贾俄仁加：运动员、贾老板、父亲，多重身份加身，仍要奋力一搏"
     url: https://www.xiaoyuzhoufm.com/episode/6975d6bfef1cf272a75432b6
     preferred: true
