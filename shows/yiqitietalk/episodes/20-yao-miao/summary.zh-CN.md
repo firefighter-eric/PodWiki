@@ -1,6 +1,6 @@
 # 姚妙“教”吴向东越野？不不不，让我们一起撒开脚丫
 
-> 状态：`draft`。本总结依据 Windows 本机 `qwen-asr-transformers` 生成并选中的完整机器逐字稿 `transcript.zh-CN.md`（SHA-256：`53af521906a06aa142b1139c4ce9462ba88b4d52577b123d4f352c992607d7d2`）整理；时间码来自该正式稿，尚未人工核听、说话人标注或独立事实核查。姚妙在元数据中保持 `participant`，吴向东保持 `host`，本文不将二人提升为嘉宾。
+> 状态：`draft`。本总结依据 Windows 本机 `qwen-asr-transformers` 生成并选中的完整机器逐字稿 `transcript.zh-CN.md`（SHA-256：`587ec5321a9c4e4d9a0dc1181afe2e0e9c0c578e89b2e448b28876cae604bde8`）整理；时间码来自该正式稿，尚未人工核听、说话人标注或独立事实核查。姚妙在元数据中保持 `participant`，吴向东保持 `host`，本文不将二人提升为嘉宾。
 
 ## 一句话总结
 

@@ -5,15 +5,15 @@
   "language": "zh-CN",
   "source": {
     "input_asr_path": "shows/yiqitietalk/episodes/20-yao-miao/asr/qwen3-asr/aligned.json",
-    "input_asr_sha256": "b6777844b0171b6c85c8a87e4f6d332b5e9ae40ef30c54f07a9b99d0e50267da",
+    "input_asr_sha256": "3ef6b1d6b734003cd2e0b3bcbd165d6522c7584140be49a906229c3f32ed2d0f",
     "engine": "qwen-asr-transformers",
     "model": "Qwen/Qwen3-ASR-1.7B"
   },
   "rendered_transcript": {
     "path": "shows/yiqitietalk/episodes/20-yao-miao/asr/qwen3-asr/transcript.zh-CN.md",
-    "sha256": "53af521906a06aa142b1139c4ce9462ba88b4d52577b123d4f352c992607d7d2"
+    "sha256": "587ec5321a9c4e4d9a0dc1181afe2e0e9c0c578e89b2e448b28876cae604bde8"
   },
-  "generated_at": "2026-08-08T08:18:31.800565Z",
+  "generated_at": "2026-08-08T23:14:01.300521Z",
   "statistics": {
     "source_segments": 847,
     "refined_segments": 838,
@@ -3176,7 +3176,7 @@
     {
       "start": 1259.44,
       "end": 1271.28,
-      "text": "虽然我我这几天一直在遇到很多人问我跑多少公里，我说三十公里，但是我会补一句，不要瞧不起我们三十公里，我们也是有这个完赛服，也是有完赛装备的。",
+      "text": "虽然我我我这几天一直在遇到很多人问我跑多少公里，我说三十公里，但是我会补一句，不要瞧不起我们三十公里，我们也是有这个完赛服，也是有完赛装备的。",
       "source_segment_indexes": [
         289
       ],
@@ -9817,7 +9817,7 @@
     {
       "start": 1245.44,
       "end": 1274.88,
-      "text": "哎，现场的大观众都应该应该都是能拿到这个完赛的呃外套，我觉得很帅。等一下，再做三个，只有你和我们两个都没有。我俩没有。那是我太光太荣幸了，真的是。虽然我我这几天一直在遇到很多人问我跑多少公里，我说三十公里，但是我会补一句，不要瞧不起我们三十公里，我们也是有这个完赛服，也是有完赛装备的。嗯。杨亮这个完赛装备就很多了。",
+      "text": "哎，现场的大观众都应该应该都是能拿到这个完赛的呃外套，我觉得很帅。等一下，再做三个，只有你和我们两个都没有。我俩没有。那是我太光太荣幸了，真的是。虽然我我我这几天一直在遇到很多人问我跑多少公里，我说三十公里，但是我会补一句，不要瞧不起我们三十公里，我们也是有这个完赛服，也是有完赛装备的。嗯。杨亮这个完赛装备就很多了。",
       "refined_segment_indexes": [
         282,
         283,

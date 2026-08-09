@@ -5,7 +5,7 @@
   "language": "zh-CN",
   "source": {
     "input_asr_path": "shows/yiqitietalk/episodes/19-ci-sha/asr/qwen3-asr/aligned.json",
-    "input_asr_sha256": "582362b0a20c5102a1ec59fb85d36d2631ac33ccf01aceca080d814ec5613965",
+    "input_asr_sha256": "ce0b9c1f26a6bfd047db3381bc227c8333975b794159e95f4b2c0e1500548b94",
     "engine": "qwen-asr-transformers",
     "model": "Qwen/Qwen3-ASR-1.7B"
   },
@@ -13,7 +13,7 @@
     "path": "shows/yiqitietalk/episodes/19-ci-sha/asr/qwen3-asr/transcript.zh-CN.md",
     "sha256": "011b1e0e5781063ec6faeecdef9b64235af73cfe48447b5031b3319f67ce3946"
   },
-  "generated_at": "2026-08-08T12:34:40.565361Z",
+  "generated_at": "2026-08-09T01:02:17.272946Z",
   "statistics": {
     "source_segments": 334,
     "refined_segments": 333,

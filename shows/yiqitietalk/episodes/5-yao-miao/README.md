@@ -64,7 +64,7 @@ transcript:
     max_tokens_per_chunk: 2048
     chunk_duration_seconds: 120.0
     chunk_context_seconds: 5.0
-    boundary_reconciliation: forced-alignment-time-crossover-v2
+    boundary_reconciliation: forced-alignment-time-crossover-v3
     alignment_coverage_guard: active-audio-coverage-v1
     aligned_gap_guard: low-energy-gap-v1
     max_sentence_characters: 160
@@ -75,7 +75,8 @@ transcript:
     dtype: bfloat16
     attention_implementation: sdpa
     max_inference_batch_size: 1
-  generated_at: "2026-08-08T14:01:37.341323Z"
+    final_outro_exemption_seconds: 0.0
+  generated_at: "2026-08-09T02:50:59.365265Z"
   quality:
     source_chunks: 44
     aligned_chunks: 44
@@ -87,12 +88,12 @@ transcript:
   performance:
     model_load_seconds: 6.389
     transcription_seconds: 1199.285
-    aligner_load_seconds: 3.296
-    alignment_seconds: 156.202
+    aligner_load_seconds: 1.567
+    alignment_seconds: 155.157
     cuda_device_name: NVIDIA RTX A2000 8GB Laptop GPU
     cuda_total_memory_bytes: 8589475840
     asr_cuda_peak_memory_bytes: 5108148224
-    aligner_cuda_peak_memory_bytes: 4549166080
+    aligner_cuda_peak_memory_bytes: 4549374976
 asr_artifacts:
   raw:
     path: asr/qwen3-asr/raw.json
@@ -117,7 +118,7 @@ asr_runs:
     engine: qwen-asr-transformers
     model: Qwen/Qwen3-ASR-1.7B
     aligner: Qwen/Qwen3-ForcedAligner-0.6B
-    generated_at: "2026-08-08T14:01:37.341323Z"
+    generated_at: "2026-08-09T02:50:59.365265Z"
     artifacts:
       raw: asr/qwen3-asr/raw.json
       aligned: asr/qwen3-asr/aligned.json

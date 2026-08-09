@@ -5,7 +5,7 @@
   "language": "zh-CN",
   "source": {
     "input_asr_path": "shows/yiqitietalk/episodes/3-zhang-deshun/asr/qwen3-asr/aligned.json",
-    "input_asr_sha256": "e60d088012fd35f2a1136d618bc91cb5e667249e290b17e855a2bd5a937d03e3",
+    "input_asr_sha256": "3fb77e7ddd6706c140f168bb9a84cc19f3cd16e7cb8370345fd1e9306c2aaf8c",
     "engine": "qwen-asr-transformers",
     "model": "Qwen/Qwen3-ASR-1.7B"
   },
@@ -13,7 +13,7 @@
     "path": "shows/yiqitietalk/episodes/3-zhang-deshun/asr/qwen3-asr/transcript.zh-CN.md",
     "sha256": "b15fb41b93e4d48467128cd0e87e5e021ab6e13c5f12f7a9daaf95a237af2937"
   },
-  "generated_at": "2026-08-08T13:18:26.051250Z",
+  "generated_at": "2026-08-09T01:04:46.284300Z",
   "statistics": {
     "source_segments": 776,
     "refined_segments": 776,

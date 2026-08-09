@@ -5,7 +5,7 @@
   "language": "zh-CN",
   "source": {
     "input_asr_path": "shows/yiqitietalk/episodes/8-wang-ying/asr/qwen3-asr/aligned.json",
-    "input_asr_sha256": "dac723a65cf024227e9a25fa33adb1e02a3f4d8e27896475609ee7d88ebf5248",
+    "input_asr_sha256": "1595929267b0b69b290e23e69aa8a24f48944ba0ec43f55bbcb8e961d84e99c7",
     "engine": "qwen-asr-transformers",
     "model": "Qwen/Qwen3-ASR-1.7B"
   },
@@ -13,7 +13,7 @@
     "path": "shows/yiqitietalk/episodes/8-wang-ying/asr/qwen3-asr/transcript.zh-CN.md",
     "sha256": "58ad9124cd233fe789345e5a0c9e9b0dd301a1964ea9cecb933740ef0bf9e3cf"
   },
-  "generated_at": "2026-08-08T15:08:34.175580Z",
+  "generated_at": "2026-08-09T01:17:49.943198Z",
   "statistics": {
     "source_segments": 750,
     "refined_segments": 749,

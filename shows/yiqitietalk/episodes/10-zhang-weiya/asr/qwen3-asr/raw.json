@@ -16,7 +16,7 @@
     "max_tokens_per_chunk": 2048,
     "chunk_duration_seconds": 120.0,
     "chunk_context_seconds": 5.0,
-    "boundary_reconciliation": "forced-alignment-time-crossover-v2",
+    "boundary_reconciliation": "forced-alignment-time-crossover-v3",
     "alignment_coverage_guard": "active-audio-coverage-v1",
     "aligned_gap_guard": "low-energy-gap-v1",
     "backend": "transformers",
@@ -25,7 +25,8 @@
     "device": "cuda:0",
     "dtype": "bfloat16",
     "attention_implementation": "sdpa",
-    "max_inference_batch_size": 1
+    "max_inference_batch_size": 1,
+    "final_outro_exemption_seconds": 0.0
   },
   "performance": {
     "model_load_seconds": 6.613,
@@ -35,7 +36,7 @@
     "cuda_peak_memory_bytes": 5108148224
   },
   "boundary_reconciliation": {
-    "method": "forced-alignment-time-crossover-v2",
+    "method": "forced-alignment-time-crossover-v3",
     "status": "complete",
     "chunk_context_seconds": 5.0,
     "seams": [
@@ -47,9 +48,9 @@
         "anchor_text": "于",
         "anchor_midpoint_seconds": 120.26,
         "anchor_owner": "right",
-        "matched_characters": 50,
-        "anchor_run_characters": 34,
-        "anchor_run_max_pair_delta_seconds": 0.08
+        "matched_characters": 31,
+        "anchor_run_characters": 25,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 1,
@@ -59,8 +60,8 @@
         "anchor_text": "赛",
         "anchor_midpoint_seconds": 239.76,
         "anchor_owner": "left",
-        "matched_characters": 48,
-        "anchor_run_characters": 48,
+        "matched_characters": 30,
+        "anchor_run_characters": 30,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -71,7 +72,7 @@
         "anchor_text": "直",
         "anchor_midpoint_seconds": 360.04,
         "anchor_owner": "right",
-        "matched_characters": 41,
+        "matched_characters": 31,
         "anchor_run_characters": 29,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
@@ -83,9 +84,9 @@
         "anchor_text": "此",
         "anchor_midpoint_seconds": 479.96,
         "anchor_owner": "left",
-        "matched_characters": 39,
-        "anchor_run_characters": 21,
-        "anchor_run_max_pair_delta_seconds": 0.12
+        "matched_characters": 25,
+        "anchor_run_characters": 14,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 4,
@@ -95,8 +96,8 @@
         "anchor_text": "个",
         "anchor_midpoint_seconds": 599.92,
         "anchor_owner": "left",
-        "matched_characters": 54,
-        "anchor_run_characters": 23,
+        "matched_characters": 36,
+        "anchor_run_characters": 19,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -107,8 +108,8 @@
         "anchor_text": "我",
         "anchor_midpoint_seconds": 719.94,
         "anchor_owner": "left",
-        "matched_characters": 50,
-        "anchor_run_characters": 29,
+        "matched_characters": 32,
+        "anchor_run_characters": 21,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -119,9 +120,9 @@
         "anchor_text": "话",
         "anchor_midpoint_seconds": 839.96,
         "anchor_owner": "left",
-        "matched_characters": 49,
-        "anchor_run_characters": 29,
-        "anchor_run_max_pair_delta_seconds": 0.08
+        "matched_characters": 34,
+        "anchor_run_characters": 19,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 7,
@@ -131,8 +132,8 @@
         "anchor_text": "白",
         "anchor_midpoint_seconds": 960.08,
         "anchor_owner": "right",
-        "matched_characters": 50,
-        "anchor_run_characters": 27,
+        "matched_characters": 37,
+        "anchor_run_characters": 25,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -143,8 +144,8 @@
         "anchor_text": "之",
         "anchor_midpoint_seconds": 1080.02,
         "anchor_owner": "right",
-        "matched_characters": 41,
-        "anchor_run_characters": 41,
+        "matched_characters": 28,
+        "anchor_run_characters": 28,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -155,8 +156,8 @@
         "anchor_text": "用",
         "anchor_midpoint_seconds": 1200.06,
         "anchor_owner": "right",
-        "matched_characters": 51,
-        "anchor_run_characters": 50,
+        "matched_characters": 27,
+        "anchor_run_characters": 27,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -167,8 +168,8 @@
         "anchor_text": "太",
         "anchor_midpoint_seconds": 1320.48,
         "anchor_owner": "right",
-        "matched_characters": 36,
-        "anchor_run_characters": 32,
+        "matched_characters": 25,
+        "anchor_run_characters": 25,
         "anchor_run_max_pair_delta_seconds": 0.64
       },
       {
@@ -179,8 +180,8 @@
         "anchor_text": "这",
         "anchor_midpoint_seconds": 1440.36,
         "anchor_owner": "right",
-        "matched_characters": 42,
-        "anchor_run_characters": 38,
+        "matched_characters": 29,
+        "anchor_run_characters": 29,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -191,8 +192,8 @@
         "anchor_text": "的",
         "anchor_midpoint_seconds": 1559.94,
         "anchor_owner": "left",
-        "matched_characters": 46,
-        "anchor_run_characters": 46,
+        "matched_characters": 28,
+        "anchor_run_characters": 28,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -203,7 +204,7 @@
         "anchor_text": "长",
         "anchor_midpoint_seconds": 1679.8,
         "anchor_owner": "left",
-        "matched_characters": 52,
+        "matched_characters": 31,
         "anchor_run_characters": 20,
         "anchor_run_max_pair_delta_seconds": 0.12
       },
@@ -215,9 +216,9 @@
         "anchor_text": "实",
         "anchor_midpoint_seconds": 1800.12,
         "anchor_owner": "right",
-        "matched_characters": 35,
-        "anchor_run_characters": 14,
-        "anchor_run_max_pair_delta_seconds": 0.0
+        "matched_characters": 22,
+        "anchor_run_characters": 16,
+        "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
         "left_chunk_id": 15,
@@ -227,9 +228,9 @@
         "anchor_text": "松",
         "anchor_midpoint_seconds": 1919.96,
         "anchor_owner": "left",
-        "matched_characters": 44,
-        "anchor_run_characters": 36,
-        "anchor_run_max_pair_delta_seconds": 0.12
+        "matched_characters": 19,
+        "anchor_run_characters": 19,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 16,
@@ -239,8 +240,8 @@
         "anchor_text": "概",
         "anchor_midpoint_seconds": 2040.04,
         "anchor_owner": "right",
-        "matched_characters": 46,
-        "anchor_run_characters": 46,
+        "matched_characters": 27,
+        "anchor_run_characters": 27,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -251,8 +252,8 @@
         "anchor_text": "就",
         "anchor_midpoint_seconds": 2160.04,
         "anchor_owner": "right",
-        "matched_characters": 42,
-        "anchor_run_characters": 25,
+        "matched_characters": 26,
+        "anchor_run_characters": 15,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -263,8 +264,8 @@
         "anchor_text": "能",
         "anchor_midpoint_seconds": 2280.04,
         "anchor_owner": "right",
-        "matched_characters": 34,
-        "anchor_run_characters": 28,
+        "matched_characters": 19,
+        "anchor_run_characters": 19,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -275,7 +276,7 @@
         "anchor_text": "样",
         "anchor_midpoint_seconds": 2400.0,
         "anchor_owner": "left",
-        "matched_characters": 36,
+        "matched_characters": 26,
         "anchor_run_characters": 5,
         "anchor_run_max_pair_delta_seconds": 0.0
       },
@@ -287,8 +288,8 @@
         "anchor_text": "配",
         "anchor_midpoint_seconds": 2520.04,
         "anchor_owner": "right",
-        "matched_characters": 43,
-        "anchor_run_characters": 29,
+        "matched_characters": 27,
+        "anchor_run_characters": 20,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -299,8 +300,8 @@
         "anchor_text": "说",
         "anchor_midpoint_seconds": 2639.98,
         "anchor_owner": "left",
-        "matched_characters": 41,
-        "anchor_run_characters": 23,
+        "matched_characters": 22,
+        "anchor_run_characters": 14,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -311,8 +312,8 @@
         "anchor_text": "然",
         "anchor_midpoint_seconds": 2760.04,
         "anchor_owner": "right",
-        "matched_characters": 56,
-        "anchor_run_characters": 56,
+        "matched_characters": 33,
+        "anchor_run_characters": 33,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -323,8 +324,8 @@
         "anchor_text": "动",
         "anchor_midpoint_seconds": 2880.04,
         "anchor_owner": "right",
-        "matched_characters": 40,
-        "anchor_run_characters": 40,
+        "matched_characters": 27,
+        "anchor_run_characters": 27,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -335,9 +336,9 @@
         "anchor_text": "对",
         "anchor_midpoint_seconds": 3000.16,
         "anchor_owner": "right",
-        "matched_characters": 57,
-        "anchor_run_characters": 53,
-        "anchor_run_max_pair_delta_seconds": 0.08
+        "matched_characters": 37,
+        "anchor_run_characters": 37,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 25,
@@ -347,8 +348,8 @@
         "anchor_text": "成",
         "anchor_midpoint_seconds": 3119.88,
         "anchor_owner": "left",
-        "matched_characters": 48,
-        "anchor_run_characters": 47,
+        "matched_characters": 31,
+        "anchor_run_characters": 31,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -359,8 +360,8 @@
         "anchor_text": "啊",
         "anchor_midpoint_seconds": 3239.88,
         "anchor_owner": "left",
-        "matched_characters": 39,
-        "anchor_run_characters": 34,
+        "matched_characters": 29,
+        "anchor_run_characters": 29,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -371,9 +372,9 @@
         "anchor_text": "是",
         "anchor_midpoint_seconds": 3359.96,
         "anchor_owner": "left",
-        "matched_characters": 50,
-        "anchor_run_characters": 45,
-        "anchor_run_max_pair_delta_seconds": 0.08
+        "matched_characters": 28,
+        "anchor_run_characters": 28,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 28,
@@ -383,8 +384,8 @@
         "anchor_text": "比",
         "anchor_midpoint_seconds": 3479.96,
         "anchor_owner": "left",
-        "matched_characters": 34,
-        "anchor_run_characters": 24,
+        "matched_characters": 20,
+        "anchor_run_characters": 20,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -395,8 +396,8 @@
         "anchor_text": "以",
         "anchor_midpoint_seconds": 3600.04,
         "anchor_owner": "right",
-        "matched_characters": 45,
-        "anchor_run_characters": 38,
+        "matched_characters": 25,
+        "anchor_run_characters": 25,
         "anchor_run_max_pair_delta_seconds": 0.32
       },
       {
@@ -407,8 +408,8 @@
         "anchor_text": "了",
         "anchor_midpoint_seconds": 3719.78,
         "anchor_owner": "left",
-        "matched_characters": 47,
-        "anchor_run_characters": 47,
+        "matched_characters": 29,
+        "anchor_run_characters": 29,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -419,8 +420,8 @@
         "anchor_text": "我",
         "anchor_midpoint_seconds": 3840.04,
         "anchor_owner": "right",
-        "matched_characters": 45,
-        "anchor_run_characters": 45,
+        "matched_characters": 31,
+        "anchor_run_characters": 31,
         "anchor_run_max_pair_delta_seconds": 0.28
       },
       {
@@ -431,8 +432,8 @@
         "anchor_text": "我",
         "anchor_midpoint_seconds": 3960.04,
         "anchor_owner": "right",
-        "matched_characters": 49,
-        "anchor_run_characters": 45,
+        "matched_characters": 33,
+        "anchor_run_characters": 33,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -443,7 +444,7 @@
         "anchor_text": "可",
         "anchor_midpoint_seconds": 4079.96,
         "anchor_owner": "left",
-        "matched_characters": 49,
+        "matched_characters": 29,
         "anchor_run_characters": 14,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
@@ -455,8 +456,8 @@
         "anchor_text": "道",
         "anchor_midpoint_seconds": 4200.08,
         "anchor_owner": "right",
-        "matched_characters": 48,
-        "anchor_run_characters": 31,
+        "matched_characters": 29,
+        "anchor_run_characters": 22,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -467,8 +468,8 @@
         "anchor_text": "就",
         "anchor_midpoint_seconds": 4319.88,
         "anchor_owner": "left",
-        "matched_characters": 36,
-        "anchor_run_characters": 27,
+        "matched_characters": 21,
+        "anchor_run_characters": 20,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -479,8 +480,8 @@
         "anchor_text": "可",
         "anchor_midpoint_seconds": 4439.98,
         "anchor_owner": "left",
-        "matched_characters": 46,
-        "anchor_run_characters": 40,
+        "matched_characters": 29,
+        "anchor_run_characters": 29,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -491,7 +492,7 @@
         "anchor_text": "三",
         "anchor_midpoint_seconds": 4518.885,
         "anchor_owner": "right",
-        "matched_characters": 50,
+        "matched_characters": 25,
         "anchor_run_characters": 21,
         "anchor_run_max_pair_delta_seconds": 0.05
       }

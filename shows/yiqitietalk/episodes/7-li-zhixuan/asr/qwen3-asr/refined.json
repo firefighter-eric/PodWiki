@@ -5,7 +5,7 @@
   "language": "zh-CN",
   "source": {
     "input_asr_path": "shows/yiqitietalk/episodes/7-li-zhixuan/asr/qwen3-asr/aligned.json",
-    "input_asr_sha256": "4aa86e75ac51f02ef53e6ba48023906da9cefe54e9f21be88e15c1b6b6846422",
+    "input_asr_sha256": "2b61cf45ba68c64651157e7506a90d831097002f15b73ad60fcfda4a0e1585a8",
     "engine": "qwen-asr-transformers",
     "model": "Qwen/Qwen3-ASR-1.7B"
   },
@@ -13,7 +13,7 @@
     "path": "shows/yiqitietalk/episodes/7-li-zhixuan/asr/qwen3-asr/transcript.zh-CN.md",
     "sha256": "97520e9d491f3b8d3d5d46f6d06112dfb12651067deabe25e18a03f7dd967e11"
   },
-  "generated_at": "2026-08-08T14:49:43.666505Z",
+  "generated_at": "2026-08-09T01:15:39.962305Z",
   "statistics": {
     "source_segments": 1282,
     "refined_segments": 1270,

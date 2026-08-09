@@ -16,7 +16,7 @@
     "max_tokens_per_chunk": 2048,
     "chunk_duration_seconds": 120.0,
     "chunk_context_seconds": 5.0,
-    "boundary_reconciliation": "forced-alignment-time-crossover-v2",
+    "boundary_reconciliation": "forced-alignment-time-crossover-v3",
     "alignment_coverage_guard": "active-audio-coverage-v1",
     "aligned_gap_guard": "low-energy-gap-v1",
     "backend": "transformers",
@@ -25,7 +25,8 @@
     "device": "cuda:0",
     "dtype": "bfloat16",
     "attention_implementation": "sdpa",
-    "max_inference_batch_size": 1
+    "max_inference_batch_size": 1,
+    "final_outro_exemption_seconds": 0.0
   },
   "performance": {
     "model_load_seconds": 6.389,
@@ -35,7 +36,7 @@
     "cuda_peak_memory_bytes": 5108148224
   },
   "boundary_reconciliation": {
-    "method": "forced-alignment-time-crossover-v2",
+    "method": "forced-alignment-time-crossover-v3",
     "status": "complete",
     "chunk_context_seconds": 5.0,
     "seams": [
@@ -47,8 +48,8 @@
         "anchor_text": "嘛",
         "anchor_midpoint_seconds": 119.88,
         "anchor_owner": "left",
-        "matched_characters": 49,
-        "anchor_run_characters": 35,
+        "matched_characters": 28,
+        "anchor_run_characters": 25,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -59,7 +60,7 @@
         "anchor_text": "那",
         "anchor_midpoint_seconds": 240.08,
         "anchor_owner": "right",
-        "matched_characters": 59,
+        "matched_characters": 38,
         "anchor_run_characters": 19,
         "anchor_run_max_pair_delta_seconds": 0.16
       },
@@ -71,7 +72,7 @@
         "anchor_text": "你",
         "anchor_midpoint_seconds": 359.96,
         "anchor_owner": "left",
-        "matched_characters": 49,
+        "matched_characters": 25,
         "anchor_run_characters": 16,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
@@ -83,9 +84,9 @@
         "anchor_text": "之",
         "anchor_midpoint_seconds": 479.6,
         "anchor_owner": "left",
-        "matched_characters": 35,
-        "anchor_run_characters": 35,
-        "anchor_run_max_pair_delta_seconds": 0.08
+        "matched_characters": 21,
+        "anchor_run_characters": 21,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 4,
@@ -95,8 +96,8 @@
         "anchor_text": "列",
         "anchor_midpoint_seconds": 599.88,
         "anchor_owner": "left",
-        "matched_characters": 42,
-        "anchor_run_characters": 42,
+        "matched_characters": 25,
+        "anchor_run_characters": 25,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -107,7 +108,7 @@
         "anchor_text": "了",
         "anchor_midpoint_seconds": 719.76,
         "anchor_owner": "left",
-        "matched_characters": 39,
+        "matched_characters": 20,
         "anchor_run_characters": 15,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
@@ -119,8 +120,8 @@
         "anchor_text": "说",
         "anchor_midpoint_seconds": 839.92,
         "anchor_owner": "left",
-        "matched_characters": 55,
-        "anchor_run_characters": 55,
+        "matched_characters": 34,
+        "anchor_run_characters": 34,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -131,8 +132,8 @@
         "anchor_text": "成",
         "anchor_midpoint_seconds": 960.06,
         "anchor_owner": "right",
-        "matched_characters": 54,
-        "anchor_run_characters": 40,
+        "matched_characters": 39,
+        "anchor_run_characters": 32,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -143,9 +144,9 @@
         "anchor_text": "合",
         "anchor_midpoint_seconds": 1079.92,
         "anchor_owner": "left",
-        "matched_characters": 42,
-        "anchor_run_characters": 41,
-        "anchor_run_max_pair_delta_seconds": 0.08
+        "matched_characters": 22,
+        "anchor_run_characters": 22,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 9,
@@ -155,8 +156,8 @@
         "anchor_text": "的",
         "anchor_midpoint_seconds": 1199.92,
         "anchor_owner": "left",
-        "matched_characters": 54,
-        "anchor_run_characters": 54,
+        "matched_characters": 33,
+        "anchor_run_characters": 33,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -167,8 +168,8 @@
         "anchor_text": "加",
         "anchor_midpoint_seconds": 1320.0,
         "anchor_owner": "left",
-        "matched_characters": 54,
-        "anchor_run_characters": 54,
+        "matched_characters": 32,
+        "anchor_run_characters": 32,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -179,9 +180,9 @@
         "anchor_text": "品",
         "anchor_midpoint_seconds": 1440.18,
         "anchor_owner": "right",
-        "matched_characters": 41,
-        "anchor_run_characters": 41,
-        "anchor_run_max_pair_delta_seconds": 0.08
+        "matched_characters": 21,
+        "anchor_run_characters": 21,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 12,
@@ -191,9 +192,936 @@
         "anchor_text": "的",
         "anchor_midpoint_seconds": 1560.04,
         "anchor_owner": "right",
-        "matched_characters": 63,
+        "matched_characters": 37,
         "anchor_run_characters": 6,
-        "anchor_run_max_pair_delta_seconds": 0.24
+        "anchor_run_max_pair_delta_seconds": 0.24,
+        "ambiguity_resolution": "single-axis-dominated-weak-runs-v1",
+        "ambiguity_checked_run_count": 3,
+        "ambiguity_checked_pair_count": 36,
+        "match_run_repair": {
+          "method": "single-axis-dominated-weak-runs-v1",
+          "selected_anchor_source": "nearest-tight-backbone-run",
+          "candidate_proof": {
+            "window_seconds": [
+              1557.0,
+              1563.0
+            ],
+            "left_items": [
+              {
+                "side": "left",
+                "global_index": 626,
+                "decoded_character_span": [
+                  646,
+                  647
+                ],
+                "cleaned_text": "那",
+                "start_seconds": 1556.92,
+                "end_seconds": 1557.0
+              },
+              {
+                "side": "left",
+                "global_index": 627,
+                "decoded_character_span": [
+                  647,
+                  648
+                ],
+                "cleaned_text": "里",
+                "start_seconds": 1557.0,
+                "end_seconds": 1557.08
+              },
+              {
+                "side": "left",
+                "global_index": 628,
+                "decoded_character_span": [
+                  648,
+                  649
+                ],
+                "cleaned_text": "算",
+                "start_seconds": 1557.08,
+                "end_seconds": 1557.24
+              },
+              {
+                "side": "left",
+                "global_index": 629,
+                "decoded_character_span": [
+                  649,
+                  650
+                ],
+                "cleaned_text": "不",
+                "start_seconds": 1557.24,
+                "end_seconds": 1557.32
+              },
+              {
+                "side": "left",
+                "global_index": 630,
+                "decoded_character_span": [
+                  650,
+                  651
+                ],
+                "cleaned_text": "算",
+                "start_seconds": 1557.32,
+                "end_seconds": 1557.4
+              },
+              {
+                "side": "left",
+                "global_index": 631,
+                "decoded_character_span": [
+                  651,
+                  652
+                ],
+                "cleaned_text": "敏",
+                "start_seconds": 1557.4,
+                "end_seconds": 1557.56
+              },
+              {
+                "side": "left",
+                "global_index": 632,
+                "decoded_character_span": [
+                  652,
+                  653
+                ],
+                "cleaned_text": "感",
+                "start_seconds": 1557.56,
+                "end_seconds": 1557.72
+              },
+              {
+                "side": "left",
+                "global_index": 633,
+                "decoded_character_span": [
+                  653,
+                  654
+                ],
+                "cleaned_text": "但",
+                "start_seconds": 1557.72,
+                "end_seconds": 1557.88
+              },
+              {
+                "side": "left",
+                "global_index": 634,
+                "decoded_character_span": [
+                  654,
+                  655
+                ],
+                "cleaned_text": "对",
+                "start_seconds": 1557.88,
+                "end_seconds": 1558.04
+              },
+              {
+                "side": "left",
+                "global_index": 635,
+                "decoded_character_span": [
+                  655,
+                  656
+                ],
+                "cleaned_text": "我",
+                "start_seconds": 1558.04,
+                "end_seconds": 1558.12
+              },
+              {
+                "side": "left",
+                "global_index": 636,
+                "decoded_character_span": [
+                  656,
+                  657
+                ],
+                "cleaned_text": "来",
+                "start_seconds": 1558.12,
+                "end_seconds": 1558.2
+              },
+              {
+                "side": "left",
+                "global_index": 637,
+                "decoded_character_span": [
+                  657,
+                  658
+                ],
+                "cleaned_text": "说",
+                "start_seconds": 1558.2,
+                "end_seconds": 1558.36
+              },
+              {
+                "side": "left",
+                "global_index": 638,
+                "decoded_character_span": [
+                  658,
+                  659
+                ],
+                "cleaned_text": "不",
+                "start_seconds": 1558.36,
+                "end_seconds": 1558.44
+              },
+              {
+                "side": "left",
+                "global_index": 639,
+                "decoded_character_span": [
+                  659,
+                  660
+                ],
+                "cleaned_text": "算",
+                "start_seconds": 1558.44,
+                "end_seconds": 1558.6
+              },
+              {
+                "side": "left",
+                "global_index": 640,
+                "decoded_character_span": [
+                  660,
+                  661
+                ],
+                "cleaned_text": "敏",
+                "start_seconds": 1558.6,
+                "end_seconds": 1558.68
+              },
+              {
+                "side": "left",
+                "global_index": 641,
+                "decoded_character_span": [
+                  661,
+                  662
+                ],
+                "cleaned_text": "感",
+                "start_seconds": 1558.68,
+                "end_seconds": 1558.84
+              },
+              {
+                "side": "left",
+                "global_index": 642,
+                "decoded_character_span": [
+                  662,
+                  663
+                ],
+                "cleaned_text": "我",
+                "start_seconds": 1559.16,
+                "end_seconds": 1559.16
+              },
+              {
+                "side": "left",
+                "global_index": 643,
+                "decoded_character_span": [
+                  663,
+                  664
+                ],
+                "cleaned_text": "是",
+                "start_seconds": 1559.16,
+                "end_seconds": 1559.24
+              },
+              {
+                "side": "left",
+                "global_index": 644,
+                "decoded_character_span": [
+                  664,
+                  665
+                ],
+                "cleaned_text": "八",
+                "start_seconds": 1559.24,
+                "end_seconds": 1559.4
+              },
+              {
+                "side": "left",
+                "global_index": 645,
+                "decoded_character_span": [
+                  665,
+                  666
+                ],
+                "cleaned_text": "月",
+                "start_seconds": 1559.4,
+                "end_seconds": 1559.56
+              },
+              {
+                "side": "left",
+                "global_index": 646,
+                "decoded_character_span": [
+                  666,
+                  667
+                ],
+                "cleaned_text": "底",
+                "start_seconds": 1559.56,
+                "end_seconds": 1559.72
+              },
+              {
+                "side": "left",
+                "global_index": 647,
+                "decoded_character_span": [
+                  667,
+                  668
+                ],
+                "cleaned_text": "到",
+                "start_seconds": 1559.72,
+                "end_seconds": 1559.88
+              },
+              {
+                "side": "left",
+                "global_index": 648,
+                "decoded_character_span": [
+                  668,
+                  669
+                ],
+                "cleaned_text": "期",
+                "start_seconds": 1559.88,
+                "end_seconds": 1560.12
+              },
+              {
+                "side": "left",
+                "global_index": 649,
+                "decoded_character_span": [
+                  669,
+                  670
+                ],
+                "cleaned_text": "的",
+                "start_seconds": 1560.12,
+                "end_seconds": 1560.2
+              },
+              {
+                "side": "left",
+                "global_index": 650,
+                "decoded_character_span": [
+                  670,
+                  671
+                ],
+                "cleaned_text": "嘛",
+                "start_seconds": 1560.2,
+                "end_seconds": 1560.28
+              },
+              {
+                "side": "left",
+                "global_index": 651,
+                "decoded_character_span": [
+                  671,
+                  672
+                ],
+                "cleaned_text": "八",
+                "start_seconds": 1560.36,
+                "end_seconds": 1560.52
+              },
+              {
+                "side": "left",
+                "global_index": 652,
+                "decoded_character_span": [
+                  672,
+                  673
+                ],
+                "cleaned_text": "月",
+                "start_seconds": 1560.52,
+                "end_seconds": 1560.52
+              },
+              {
+                "side": "left",
+                "global_index": 653,
+                "decoded_character_span": [
+                  673,
+                  674
+                ],
+                "cleaned_text": "底",
+                "start_seconds": 1560.52,
+                "end_seconds": 1560.52
+              },
+              {
+                "side": "left",
+                "global_index": 654,
+                "decoded_character_span": [
+                  674,
+                  675
+                ],
+                "cleaned_text": "到",
+                "start_seconds": 1560.76,
+                "end_seconds": 1560.78
+              },
+              {
+                "side": "left",
+                "global_index": 655,
+                "decoded_character_span": [
+                  675,
+                  676
+                ],
+                "cleaned_text": "期",
+                "start_seconds": 1560.8,
+                "end_seconds": 1560.82
+              },
+              {
+                "side": "left",
+                "global_index": 656,
+                "decoded_character_span": [
+                  676,
+                  677
+                ],
+                "cleaned_text": "然",
+                "start_seconds": 1560.84,
+                "end_seconds": 1560.92
+              },
+              {
+                "side": "left",
+                "global_index": 657,
+                "decoded_character_span": [
+                  677,
+                  678
+                ],
+                "cleaned_text": "后",
+                "start_seconds": 1560.92,
+                "end_seconds": 1561.0
+              },
+              {
+                "side": "left",
+                "global_index": 658,
+                "decoded_character_span": [
+                  678,
+                  679
+                ],
+                "cleaned_text": "他",
+                "start_seconds": 1561.0,
+                "end_seconds": 1561.08
+              },
+              {
+                "side": "left",
+                "global_index": 659,
+                "decoded_character_span": [
+                  679,
+                  680
+                ],
+                "cleaned_text": "有",
+                "start_seconds": 1561.08,
+                "end_seconds": 1561.16
+              },
+              {
+                "side": "left",
+                "global_index": 660,
+                "decoded_character_span": [
+                  680,
+                  681
+                ],
+                "cleaned_text": "三",
+                "start_seconds": 1561.16,
+                "end_seconds": 1561.4
+              },
+              {
+                "side": "left",
+                "global_index": 661,
+                "decoded_character_span": [
+                  681,
+                  682
+                ],
+                "cleaned_text": "个",
+                "start_seconds": 1561.4,
+                "end_seconds": 1561.56
+              },
+              {
+                "side": "left",
+                "global_index": 662,
+                "decoded_character_span": [
+                  682,
+                  683
+                ],
+                "cleaned_text": "月",
+                "start_seconds": 1561.56,
+                "end_seconds": 1561.72
+              },
+              {
+                "side": "left",
+                "global_index": 663,
+                "decoded_character_span": [
+                  683,
+                  684
+                ],
+                "cleaned_text": "的",
+                "start_seconds": 1561.72,
+                "end_seconds": 1561.88
+              },
+              {
+                "side": "left",
+                "global_index": 664,
+                "decoded_character_span": [
+                  684,
+                  685
+                ],
+                "cleaned_text": "你",
+                "start_seconds": 1562.28,
+                "end_seconds": 1562.44
+              },
+              {
+                "side": "left",
+                "global_index": 665,
+                "decoded_character_span": [
+                  685,
+                  686
+                ],
+                "cleaned_text": "不",
+                "start_seconds": 1562.44,
+                "end_seconds": 1562.68
+              },
+              {
+                "side": "left",
+                "global_index": 666,
+                "decoded_character_span": [
+                  686,
+                  687
+                ],
+                "cleaned_text": "能",
+                "start_seconds": 1562.68,
+                "end_seconds": 1562.92
+              },
+              {
+                "side": "left",
+                "global_index": 667,
+                "decoded_character_span": [
+                  687,
+                  688
+                ],
+                "cleaned_text": "签",
+                "start_seconds": 1563.0,
+                "end_seconds": 1563.16
+              }
+            ],
+            "right_items": [
+              {
+                "side": "right",
+                "global_index": 14,
+                "decoded_character_span": [
+                  14,
+                  15
+                ],
+                "cleaned_text": "那",
+                "start_seconds": 1556.92,
+                "end_seconds": 1557.0
+              },
+              {
+                "side": "right",
+                "global_index": 15,
+                "decoded_character_span": [
+                  15,
+                  16
+                ],
+                "cleaned_text": "里",
+                "start_seconds": 1557.0,
+                "end_seconds": 1557.08
+              },
+              {
+                "side": "right",
+                "global_index": 16,
+                "decoded_character_span": [
+                  16,
+                  17
+                ],
+                "cleaned_text": "算",
+                "start_seconds": 1557.08,
+                "end_seconds": 1557.24
+              },
+              {
+                "side": "right",
+                "global_index": 17,
+                "decoded_character_span": [
+                  17,
+                  18
+                ],
+                "cleaned_text": "不",
+                "start_seconds": 1557.24,
+                "end_seconds": 1557.32
+              },
+              {
+                "side": "right",
+                "global_index": 18,
+                "decoded_character_span": [
+                  18,
+                  19
+                ],
+                "cleaned_text": "算",
+                "start_seconds": 1557.32,
+                "end_seconds": 1557.4
+              },
+              {
+                "side": "right",
+                "global_index": 19,
+                "decoded_character_span": [
+                  19,
+                  20
+                ],
+                "cleaned_text": "敏",
+                "start_seconds": 1557.4,
+                "end_seconds": 1557.56
+              },
+              {
+                "side": "right",
+                "global_index": 20,
+                "decoded_character_span": [
+                  20,
+                  21
+                ],
+                "cleaned_text": "感",
+                "start_seconds": 1557.56,
+                "end_seconds": 1557.72
+              },
+              {
+                "side": "right",
+                "global_index": 21,
+                "decoded_character_span": [
+                  21,
+                  22
+                ],
+                "cleaned_text": "但",
+                "start_seconds": 1557.72,
+                "end_seconds": 1557.88
+              },
+              {
+                "side": "right",
+                "global_index": 22,
+                "decoded_character_span": [
+                  22,
+                  23
+                ],
+                "cleaned_text": "对",
+                "start_seconds": 1557.88,
+                "end_seconds": 1558.04
+              },
+              {
+                "side": "right",
+                "global_index": 23,
+                "decoded_character_span": [
+                  23,
+                  24
+                ],
+                "cleaned_text": "我",
+                "start_seconds": 1558.04,
+                "end_seconds": 1558.12
+              },
+              {
+                "side": "right",
+                "global_index": 24,
+                "decoded_character_span": [
+                  24,
+                  25
+                ],
+                "cleaned_text": "来",
+                "start_seconds": 1558.12,
+                "end_seconds": 1558.2
+              },
+              {
+                "side": "right",
+                "global_index": 25,
+                "decoded_character_span": [
+                  25,
+                  26
+                ],
+                "cleaned_text": "说",
+                "start_seconds": 1558.2,
+                "end_seconds": 1558.36
+              },
+              {
+                "side": "right",
+                "global_index": 26,
+                "decoded_character_span": [
+                  26,
+                  27
+                ],
+                "cleaned_text": "不",
+                "start_seconds": 1558.36,
+                "end_seconds": 1558.44
+              },
+              {
+                "side": "right",
+                "global_index": 27,
+                "decoded_character_span": [
+                  27,
+                  28
+                ],
+                "cleaned_text": "算",
+                "start_seconds": 1558.44,
+                "end_seconds": 1558.52
+              },
+              {
+                "side": "right",
+                "global_index": 28,
+                "decoded_character_span": [
+                  28,
+                  29
+                ],
+                "cleaned_text": "敏",
+                "start_seconds": 1558.6,
+                "end_seconds": 1558.68
+              },
+              {
+                "side": "right",
+                "global_index": 29,
+                "decoded_character_span": [
+                  29,
+                  30
+                ],
+                "cleaned_text": "感",
+                "start_seconds": 1558.68,
+                "end_seconds": 1558.84
+              },
+              {
+                "side": "right",
+                "global_index": 30,
+                "decoded_character_span": [
+                  30,
+                  31
+                ],
+                "cleaned_text": "我",
+                "start_seconds": 1559.08,
+                "end_seconds": 1559.16
+              },
+              {
+                "side": "right",
+                "global_index": 31,
+                "decoded_character_span": [
+                  31,
+                  32
+                ],
+                "cleaned_text": "是",
+                "start_seconds": 1559.16,
+                "end_seconds": 1559.24
+              },
+              {
+                "side": "right",
+                "global_index": 32,
+                "decoded_character_span": [
+                  32,
+                  33
+                ],
+                "cleaned_text": "八",
+                "start_seconds": 1559.24,
+                "end_seconds": 1559.4
+              },
+              {
+                "side": "right",
+                "global_index": 33,
+                "decoded_character_span": [
+                  33,
+                  34
+                ],
+                "cleaned_text": "月",
+                "start_seconds": 1559.4,
+                "end_seconds": 1559.56
+              },
+              {
+                "side": "right",
+                "global_index": 34,
+                "decoded_character_span": [
+                  34,
+                  35
+                ],
+                "cleaned_text": "底",
+                "start_seconds": 1559.56,
+                "end_seconds": 1559.72
+              },
+              {
+                "side": "right",
+                "global_index": 35,
+                "decoded_character_span": [
+                  35,
+                  36
+                ],
+                "cleaned_text": "到",
+                "start_seconds": 1559.72,
+                "end_seconds": 1559.88
+              },
+              {
+                "side": "right",
+                "global_index": 36,
+                "decoded_character_span": [
+                  36,
+                  37
+                ],
+                "cleaned_text": "的",
+                "start_seconds": 1559.88,
+                "end_seconds": 1559.96
+              },
+              {
+                "side": "right",
+                "global_index": 37,
+                "decoded_character_span": [
+                  37,
+                  38
+                ],
+                "cleaned_text": "嘛",
+                "start_seconds": 1560.12,
+                "end_seconds": 1560.28
+              },
+              {
+                "side": "right",
+                "global_index": 38,
+                "decoded_character_span": [
+                  38,
+                  39
+                ],
+                "cleaned_text": "八",
+                "start_seconds": 1560.28,
+                "end_seconds": 1560.44
+              },
+              {
+                "side": "right",
+                "global_index": 39,
+                "decoded_character_span": [
+                  39,
+                  40
+                ],
+                "cleaned_text": "月",
+                "start_seconds": 1560.44,
+                "end_seconds": 1560.52
+              },
+              {
+                "side": "right",
+                "global_index": 40,
+                "decoded_character_span": [
+                  40,
+                  41
+                ],
+                "cleaned_text": "底",
+                "start_seconds": 1560.52,
+                "end_seconds": 1560.6
+              },
+              {
+                "side": "right",
+                "global_index": 41,
+                "decoded_character_span": [
+                  41,
+                  42
+                ],
+                "cleaned_text": "到",
+                "start_seconds": 1560.6,
+                "end_seconds": 1560.68
+              },
+              {
+                "side": "right",
+                "global_index": 42,
+                "decoded_character_span": [
+                  42,
+                  43
+                ],
+                "cleaned_text": "既",
+                "start_seconds": 1560.68,
+                "end_seconds": 1560.84
+              },
+              {
+                "side": "right",
+                "global_index": 43,
+                "decoded_character_span": [
+                  43,
+                  44
+                ],
+                "cleaned_text": "然",
+                "start_seconds": 1560.84,
+                "end_seconds": 1561.0
+              },
+              {
+                "side": "right",
+                "global_index": 44,
+                "decoded_character_span": [
+                  44,
+                  45
+                ],
+                "cleaned_text": "他",
+                "start_seconds": 1561.0,
+                "end_seconds": 1561.08
+              },
+              {
+                "side": "right",
+                "global_index": 45,
+                "decoded_character_span": [
+                  45,
+                  46
+                ],
+                "cleaned_text": "有",
+                "start_seconds": 1561.08,
+                "end_seconds": 1561.16
+              },
+              {
+                "side": "right",
+                "global_index": 46,
+                "decoded_character_span": [
+                  46,
+                  47
+                ],
+                "cleaned_text": "三",
+                "start_seconds": 1561.16,
+                "end_seconds": 1561.4
+              },
+              {
+                "side": "right",
+                "global_index": 47,
+                "decoded_character_span": [
+                  47,
+                  48
+                ],
+                "cleaned_text": "个",
+                "start_seconds": 1561.4,
+                "end_seconds": 1561.56
+              },
+              {
+                "side": "right",
+                "global_index": 48,
+                "decoded_character_span": [
+                  48,
+                  49
+                ],
+                "cleaned_text": "月",
+                "start_seconds": 1561.56,
+                "end_seconds": 1561.72
+              },
+              {
+                "side": "right",
+                "global_index": 49,
+                "decoded_character_span": [
+                  49,
+                  50
+                ],
+                "cleaned_text": "的",
+                "start_seconds": 1561.72,
+                "end_seconds": 1561.88
+              },
+              {
+                "side": "right",
+                "global_index": 50,
+                "decoded_character_span": [
+                  50,
+                  51
+                ],
+                "cleaned_text": "你",
+                "start_seconds": 1562.28,
+                "end_seconds": 1562.44
+              },
+              {
+                "side": "right",
+                "global_index": 51,
+                "decoded_character_span": [
+                  51,
+                  52
+                ],
+                "cleaned_text": "不",
+                "start_seconds": 1562.44,
+                "end_seconds": 1562.68
+              },
+              {
+                "side": "right",
+                "global_index": 52,
+                "decoded_character_span": [
+                  52,
+                  53
+                ],
+                "cleaned_text": "能",
+                "start_seconds": 1562.68,
+                "end_seconds": 1562.92
+              },
+              {
+                "side": "right",
+                "global_index": 53,
+                "decoded_character_span": [
+                  53,
+                  54
+                ],
+                "cleaned_text": "签",
+                "start_seconds": 1563.0,
+                "end_seconds": 1563.16
+              }
+            ]
+          },
+          "selected_anchor_pair": [
+            649,
+            36
+          ],
+          "resulting_cut": {
+            "left_stop": 649,
+            "right_start": 36
+          }
+        }
       },
       {
         "left_chunk_id": 13,
@@ -203,7 +1131,7 @@
         "anchor_text": "对",
         "anchor_midpoint_seconds": 1679.44,
         "anchor_owner": "left",
-        "matched_characters": 42,
+        "matched_characters": 25,
         "anchor_run_characters": 8,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
@@ -215,8 +1143,8 @@
         "anchor_text": "礼",
         "anchor_midpoint_seconds": 1800.0,
         "anchor_owner": "left",
-        "matched_characters": 41,
-        "anchor_run_characters": 24,
+        "matched_characters": 27,
+        "anchor_run_characters": 18,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -227,7 +1155,7 @@
         "anchor_text": "蛮",
         "anchor_midpoint_seconds": 1919.96,
         "anchor_owner": "left",
-        "matched_characters": 42,
+        "matched_characters": 27,
         "anchor_run_characters": 17,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
@@ -239,8 +1167,8 @@
         "anchor_text": "越",
         "anchor_midpoint_seconds": 2040.04,
         "anchor_owner": "right",
-        "matched_characters": 53,
-        "anchor_run_characters": 39,
+        "matched_characters": 32,
+        "anchor_run_characters": 23,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -251,8 +1179,8 @@
         "anchor_text": "百",
         "anchor_midpoint_seconds": 2160.0,
         "anchor_owner": "left",
-        "matched_characters": 44,
-        "anchor_run_characters": 22,
+        "matched_characters": 30,
+        "anchor_run_characters": 14,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -263,9 +1191,9 @@
         "anchor_text": "赛",
         "anchor_midpoint_seconds": 2280.04,
         "anchor_owner": "right",
-        "matched_characters": 47,
-        "anchor_run_characters": 47,
-        "anchor_run_max_pair_delta_seconds": 0.08
+        "matched_characters": 33,
+        "anchor_run_characters": 33,
+        "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
         "left_chunk_id": 19,
@@ -275,8 +1203,8 @@
         "anchor_text": "呀",
         "anchor_midpoint_seconds": 2400.06,
         "anchor_owner": "right",
-        "matched_characters": 39,
-        "anchor_run_characters": 33,
+        "matched_characters": 27,
+        "anchor_run_characters": 27,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -287,8 +1215,8 @@
         "anchor_text": "如",
         "anchor_midpoint_seconds": 2520.4,
         "anchor_owner": "right",
-        "matched_characters": 51,
-        "anchor_run_characters": 30,
+        "matched_characters": 31,
+        "anchor_run_characters": 18,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -299,8 +1227,8 @@
         "anchor_text": "觉",
         "anchor_midpoint_seconds": 2640.0,
         "anchor_owner": "left",
-        "matched_characters": 45,
-        "anchor_run_characters": 24,
+        "matched_characters": 24,
+        "anchor_run_characters": 14,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -311,8 +1239,8 @@
         "anchor_text": "至",
         "anchor_midpoint_seconds": 2760.1,
         "anchor_owner": "right",
-        "matched_characters": 40,
-        "anchor_run_characters": 20,
+        "matched_characters": 19,
+        "anchor_run_characters": 11,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -323,8 +1251,8 @@
         "anchor_text": "为",
         "anchor_midpoint_seconds": 2880.06,
         "anchor_owner": "right",
-        "matched_characters": 46,
-        "anchor_run_characters": 38,
+        "matched_characters": 31,
+        "anchor_run_characters": 31,
         "anchor_run_max_pair_delta_seconds": 0.2
       },
       {
@@ -335,8 +1263,8 @@
         "anchor_text": "种",
         "anchor_midpoint_seconds": 2999.88,
         "anchor_owner": "left",
-        "matched_characters": 49,
-        "anchor_run_characters": 30,
+        "matched_characters": 24,
+        "anchor_run_characters": 15,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -347,9 +1275,9 @@
         "anchor_text": "前",
         "anchor_midpoint_seconds": 3119.82,
         "anchor_owner": "left",
-        "matched_characters": 39,
-        "anchor_run_characters": 39,
-        "anchor_run_max_pair_delta_seconds": 0.12
+        "matched_characters": 22,
+        "anchor_run_characters": 22,
+        "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
         "left_chunk_id": 26,
@@ -359,8 +1287,8 @@
         "anchor_text": "AI",
         "anchor_midpoint_seconds": 3240.02,
         "anchor_owner": "right",
-        "matched_characters": 43,
-        "anchor_run_characters": 32,
+        "matched_characters": 29,
+        "anchor_run_characters": 29,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -371,8 +1299,8 @@
         "anchor_text": "就",
         "anchor_midpoint_seconds": 3359.98,
         "anchor_owner": "left",
-        "matched_characters": 53,
-        "anchor_run_characters": 30,
+        "matched_characters": 36,
+        "anchor_run_characters": 27,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -383,8 +1311,8 @@
         "anchor_text": "个",
         "anchor_midpoint_seconds": 3480.04,
         "anchor_owner": "right",
-        "matched_characters": 52,
-        "anchor_run_characters": 30,
+        "matched_characters": 33,
+        "anchor_run_characters": 21,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -395,8 +1323,8 @@
         "anchor_text": "记",
         "anchor_midpoint_seconds": 3600.12,
         "anchor_owner": "right",
-        "matched_characters": 33,
-        "anchor_run_characters": 23,
+        "matched_characters": 23,
+        "anchor_run_characters": 20,
         "anchor_run_max_pair_delta_seconds": 0.2
       },
       {
@@ -407,7 +1335,7 @@
         "anchor_text": "帅",
         "anchor_midpoint_seconds": 3721.64,
         "anchor_owner": "right",
-        "matched_characters": 28,
+        "matched_characters": 9,
         "anchor_run_characters": 3,
         "anchor_run_max_pair_delta_seconds": 0.0
       },
@@ -419,7 +1347,7 @@
         "anchor_text": "继",
         "anchor_midpoint_seconds": 3840.04,
         "anchor_owner": "right",
-        "matched_characters": 52,
+        "matched_characters": 35,
         "anchor_run_characters": 26,
         "anchor_run_max_pair_delta_seconds": 0.12
       },
@@ -431,7 +1359,7 @@
         "anchor_text": "还",
         "anchor_midpoint_seconds": 3960.0,
         "anchor_owner": "left",
-        "matched_characters": 44,
+        "matched_characters": 20,
         "anchor_run_characters": 6,
         "anchor_run_max_pair_delta_seconds": 0.0
       },
@@ -443,7 +1371,7 @@
         "anchor_text": "好",
         "anchor_midpoint_seconds": 4080.22,
         "anchor_owner": "right",
-        "matched_characters": 32,
+        "matched_characters": 20,
         "anchor_run_characters": 13,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
@@ -455,8 +1383,8 @@
         "anchor_text": "么",
         "anchor_midpoint_seconds": 4200.0,
         "anchor_owner": "left",
-        "matched_characters": 47,
-        "anchor_run_characters": 32,
+        "matched_characters": 26,
+        "anchor_run_characters": 21,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -467,8 +1395,8 @@
         "anchor_text": "但",
         "anchor_midpoint_seconds": 4320.02,
         "anchor_owner": "right",
-        "matched_characters": 46,
-        "anchor_run_characters": 46,
+        "matched_characters": 25,
+        "anchor_run_characters": 25,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -479,8 +1407,8 @@
         "anchor_text": "体",
         "anchor_midpoint_seconds": 4440.12,
         "anchor_owner": "right",
-        "matched_characters": 31,
-        "anchor_run_characters": 31,
+        "matched_characters": 22,
+        "anchor_run_characters": 22,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -491,8 +1419,8 @@
         "anchor_text": "自",
         "anchor_midpoint_seconds": 4560.04,
         "anchor_owner": "right",
-        "matched_characters": 46,
-        "anchor_run_characters": 46,
+        "matched_characters": 27,
+        "anchor_run_characters": 27,
         "anchor_run_max_pair_delta_seconds": 0.2
       },
       {
@@ -503,8 +1431,8 @@
         "anchor_text": "路",
         "anchor_midpoint_seconds": 4679.92,
         "anchor_owner": "left",
-        "matched_characters": 51,
-        "anchor_run_characters": 44,
+        "matched_characters": 32,
+        "anchor_run_characters": 32,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -515,8 +1443,8 @@
         "anchor_text": "他",
         "anchor_midpoint_seconds": 4799.92,
         "anchor_owner": "left",
-        "matched_characters": 42,
-        "anchor_run_characters": 36,
+        "matched_characters": 26,
+        "anchor_run_characters": 26,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -527,8 +1455,8 @@
         "anchor_text": "有",
         "anchor_midpoint_seconds": 4919.92,
         "anchor_owner": "left",
-        "matched_characters": 50,
-        "anchor_run_characters": 50,
+        "matched_characters": 31,
+        "anchor_run_characters": 31,
         "anchor_run_max_pair_delta_seconds": 0.04
       },
       {
@@ -539,8 +1467,8 @@
         "anchor_text": "呃",
         "anchor_midpoint_seconds": 5039.84,
         "anchor_owner": "left",
-        "matched_characters": 38,
-        "anchor_run_characters": 38,
+        "matched_characters": 23,
+        "anchor_run_characters": 23,
         "anchor_run_max_pair_delta_seconds": 0.08
       },
       {
@@ -551,8 +1479,8 @@
         "anchor_text": "包",
         "anchor_midpoint_seconds": 5110.76,
         "anchor_owner": "left",
-        "matched_characters": 41,
-        "anchor_run_characters": 41,
+        "matched_characters": 23,
+        "anchor_run_characters": 23,
         "anchor_run_max_pair_delta_seconds": 0.12
       }
     ]

@@ -5,7 +5,7 @@
   "language": "zh-CN",
   "source": {
     "input_asr_path": "shows/yiqitietalk/episodes/13-yang-chunlong/asr/qwen3-asr/aligned.json",
-    "input_asr_sha256": "4c77a41ca9c46d3b75c8ae48f10b1e5c38edbaf52b91da776e14e337af144aca",
+    "input_asr_sha256": "6a2ef77b5fda40e7a7e6758ed4f8cb84b93aa088fca2340cada067381a697beb",
     "engine": "qwen-asr-transformers",
     "model": "Qwen/Qwen3-ASR-1.7B"
   },
@@ -13,7 +13,7 @@
     "path": "shows/yiqitietalk/episodes/13-yang-chunlong/asr/qwen3-asr/transcript.zh-CN.md",
     "sha256": "c344ad67b220d414bb5efe3b7e066310c48c85cba787520979cbb0f03d0ee27a"
   },
-  "generated_at": "2026-08-08T10:34:35.745754Z",
+  "generated_at": "2026-08-09T02:43:59.049475Z",
   "statistics": {
     "source_segments": 1091,
     "refined_segments": 1089,
