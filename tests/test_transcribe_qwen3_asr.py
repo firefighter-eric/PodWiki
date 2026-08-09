@@ -18,6 +18,7 @@ from transcribe_qwen3_asr import (  # noqa: E402
     sentence_texts,
     validate_aligned_document,
     validate_raw_document,
+    write_json_atomically,
 )
 from render_asr_transcript import clean_text  # noqa: E402
 
@@ -28,6 +29,15 @@ class RefinementTests(unittest.TestCase):
             clean_text("翁嘉译在 WhyNot TV 介绍天授。"),
             "翁家翌在 WhynotTV 介绍Tianshou。",
         )
+
+
+class ArtifactWriterTests(unittest.TestCase):
+    def test_json_artifacts_use_lf_bytes_on_every_platform(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "raw.json"
+            write_json_atomically(output, {"kind": "raw-asr", "segments": []})
+
+            self.assertNotIn(b"\r\n", output.read_bytes())
 
 
 class AlignmentUnitsTests(unittest.TestCase):

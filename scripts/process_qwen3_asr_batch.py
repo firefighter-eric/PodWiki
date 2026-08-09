@@ -5,19 +5,73 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import re
 import subprocess
 import sys
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
-DEFAULT_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
+DEFAULT_MLX_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
+DEFAULT_MLX_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
+DEFAULT_CUDA_MODEL = "Qwen/Qwen3-ASR-1.7B"
+DEFAULT_CUDA_ALIGNER = "Qwen/Qwen3-ForcedAligner-0.6B"
+MAX_FINAL_OUTRO_EXEMPTION_SECONDS = 30.0
 TRANSCRIPT_LANGUAGE_RE = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
+
+
+@dataclass(frozen=True)
+class BackendSettings:
+    worker_name: str
+    engine: str
+    model: str
+    aligner: str
+    max_tokens: int
+    chunk_duration: float
+    chunk_context: float | None
+
+
+def resolve_backend_settings(
+    backend: str,
+    *,
+    model: str | None,
+    aligner: str | None,
+    max_tokens: int | None,
+    chunk_duration: float | None,
+    chunk_context: float | None,
+) -> BackendSettings:
+    if backend == "mlx":
+        if chunk_context is not None:
+            raise ValueError("--chunk-context is supported by the CUDA backend only")
+        return BackendSettings(
+            worker_name="transcribe_qwen3_asr.py",
+            engine="mlx-audio",
+            model=model or DEFAULT_MLX_MODEL,
+            aligner=aligner or DEFAULT_MLX_ALIGNER,
+            max_tokens=max_tokens if max_tokens is not None else 4096,
+            chunk_duration=(
+                chunk_duration if chunk_duration is not None else 240.0
+            ),
+            chunk_context=None,
+        )
+    if backend == "cuda":
+        return BackendSettings(
+            worker_name="transcribe_qwen3_asr_cuda.py",
+            engine="qwen-asr-transformers",
+            model=model or DEFAULT_CUDA_MODEL,
+            aligner=aligner or DEFAULT_CUDA_ALIGNER,
+            max_tokens=max_tokens if max_tokens is not None else 2048,
+            chunk_duration=(
+                chunk_duration if chunk_duration is not None else 120.0
+            ),
+            chunk_context=(chunk_context if chunk_context is not None else 5.0),
+        )
+    raise ValueError(f"unsupported ASR backend: {backend}")
 
 
 def parse_args() -> argparse.Namespace:
@@ -25,14 +79,20 @@ def parse_args() -> argparse.Namespace:
         description="Run resumable Qwen3-ASR processing for cached PodWiki episodes."
     )
     parser.add_argument(
+        "--backend",
+        choices=("mlx", "cuda"),
+        default="mlx",
+        help="Local inference backend; mlx remains the default",
+    )
+    parser.add_argument(
         "--episode",
         action="append",
         type=Path,
         help="Episode directory; repeat as needed. Defaults to every cached episode.",
     )
-    parser.add_argument("--model", default=DEFAULT_MODEL)
+    parser.add_argument("--model")
     parser.add_argument("--model-path", type=Path)
-    parser.add_argument("--aligner", default=DEFAULT_ALIGNER)
+    parser.add_argument("--aligner")
     parser.add_argument("--aligner-path", type=Path)
     parser.add_argument("--language", default="Chinese")
     parser.add_argument(
@@ -40,14 +100,56 @@ def parse_args() -> argparse.Namespace:
         default="zh-CN",
         help="BCP 47 language tag used in the rendered transcript filename",
     )
-    parser.add_argument("--max-tokens", type=int, default=4096)
-    parser.add_argument("--chunk-duration", type=float, default=240.0)
+    parser.add_argument("--max-tokens", type=int)
+    parser.add_argument("--chunk-duration", type=float)
+    parser.add_argument(
+        "--chunk-context",
+        type=float,
+        help="CUDA-only context added to each side before aligned reconciliation",
+    )
+    parser.add_argument(
+        "--final-outro-exemption-seconds",
+        type=float,
+        default=0.0,
+        help=(
+            "CUDA-only, provenance-recorded allowance for a verified final outro; "
+            "must be between 0 and 30 seconds"
+        ),
+    )
     parser.add_argument("--max-sentence-characters", type=int, default=160)
+    parser.add_argument("--device", default="cuda:0")
+    parser.add_argument(
+        "--dtype",
+        choices=("float16", "bfloat16"),
+        default="bfloat16",
+    )
+    parser.add_argument(
+        "--attention-implementation",
+        choices=("sdpa", "eager"),
+        default="sdpa",
+    )
     parser.add_argument("--skip-render", action="store_true")
     replacement = parser.add_mutually_exclusive_group()
     replacement.add_argument("--retranscribe", action="store_true")
     replacement.add_argument("--realign", action="store_true")
     return parser.parse_args()
+
+
+def validate_replacement_scope(
+    explicit_episodes: list[Path] | None,
+    *,
+    retranscribe: bool,
+    realign: bool,
+) -> None:
+    """Require an explicit episode allowlist for destructive replacement modes."""
+    replacement_flag = (
+        "--retranscribe" if retranscribe else "--realign" if realign else None
+    )
+    if replacement_flag is not None and not explicit_episodes:
+        raise SystemExit(
+            f"{replacement_flag} requires at least one explicit --episode; "
+            "automatic discovery is not allowed for replacement modes"
+        )
 
 
 def utc_now() -> str:
@@ -111,7 +213,7 @@ def transcript_filename(language: str) -> str:
     return f"transcript.{language}.md"
 
 
-def validate_local_model_path(path: Path, *, label: str) -> None:
+def validate_local_model_path(path: Path, *, label: str) -> Path:
     resolved = path if path.is_absolute() else ROOT / path
     resolved = resolved.resolve()
     if not resolved.is_dir():
@@ -120,6 +222,7 @@ def validate_local_model_path(path: Path, *, label: str) -> None:
         raise FileNotFoundError(f"local {label} has no config.json: {resolved}")
     if not any(resolved.glob("*.safetensors")):
         raise FileNotFoundError(f"local {label} has no safetensors weights: {resolved}")
+    return resolved
 
 
 def discover_episode_dirs(explicit: list[Path] | None) -> list[Path]:
@@ -152,7 +255,7 @@ def run_logged(
         env=environment,
         text=True,
         stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
+        stderr=subprocess.PIPE,
         check=False,
     )
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -161,27 +264,66 @@ def run_logged(
         stream.write(completed.stdout)
         if completed.stdout and not completed.stdout.endswith("\n"):
             stream.write("\n")
+        if completed.stderr:
+            stream.write("[stderr]\n")
+            stream.write(completed.stderr)
+            if not completed.stderr.endswith("\n"):
+                stream.write("\n")
         stream.write(f"exit_code={completed.returncode}\n")
     return completed, parse_json_output(completed.stdout)
 
 
 def main() -> int:
     args = parse_args()
+    validate_replacement_scope(
+        args.episode,
+        retranscribe=args.retranscribe,
+        realign=args.realign,
+    )
+    if (
+        not math.isfinite(args.final_outro_exemption_seconds)
+        or args.final_outro_exemption_seconds < 0.0
+        or args.final_outro_exemption_seconds
+        > MAX_FINAL_OUTRO_EXEMPTION_SECONDS
+    ):
+        raise ValueError(
+            "final outro exemption must be between 0 and 30 seconds"
+        )
+    if args.backend != "cuda" and args.final_outro_exemption_seconds != 0.0:
+        raise ValueError(
+            "--final-outro-exemption-seconds is supported by the CUDA backend only"
+        )
+    backend = resolve_backend_settings(
+        args.backend,
+        model=args.model,
+        aligner=args.aligner,
+        max_tokens=args.max_tokens,
+        chunk_duration=args.chunk_duration,
+        chunk_context=args.chunk_context,
+    )
     rendered_transcript_name = transcript_filename(args.transcript_language)
     episodes = discover_episode_dirs(args.episode)
     if not episodes:
         raise SystemExit("no cached episodes were found")
 
     environment = os.environ.copy()
-    environment.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
+    if args.backend == "mlx":
+        environment.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
     if args.model_path is not None and args.aligner_path is not None:
-        environment.setdefault("HF_HUB_OFFLINE", "1")
+        environment["HF_HUB_OFFLINE"] = "1"
+        environment["TRANSFORMERS_OFFLINE"] = "1"
     environment.setdefault("UV_CACHE_DIR", str(ROOT / ".cache" / "uv"))
 
-    if args.model_path is not None:
+    model_path = (
         validate_local_model_path(args.model_path, label="model")
-    if args.aligner_path is not None:
+        if args.model_path is not None
+        else None
+    )
+    aligner_path = (
         validate_local_model_path(args.aligner_path, label="aligner")
+        if args.aligner_path is not None
+        else None
+    )
 
     results: list[dict[str, Any]] = []
     for index, episode_dir in enumerate(episodes, start=1):
@@ -208,7 +350,7 @@ def main() -> int:
 
             transcribe_command = [
                 sys.executable,
-                str(ROOT / "scripts" / "transcribe_qwen3_asr.py"),
+                str(ROOT / "scripts" / backend.worker_name),
                 "--input",
                 repository_argument(audio_path),
                 "--output",
@@ -216,26 +358,41 @@ def main() -> int:
                 "--aligned-output",
                 repository_argument(aligned_path),
                 "--model",
-                args.model,
+                backend.model,
                 "--aligner",
-                args.aligner,
+                backend.aligner,
                 "--language",
                 args.language,
                 "--max-tokens",
-                str(args.max_tokens),
+                str(backend.max_tokens),
                 "--chunk-duration",
-                str(args.chunk_duration),
+                str(backend.chunk_duration),
                 "--max-sentence-characters",
                 str(args.max_sentence_characters),
                 "--no-verbose",
             ]
-            if args.model_path is not None:
+            if args.backend == "cuda":
                 transcribe_command.extend(
-                    ["--model-path", repository_argument(args.model_path)]
+                    [
+                        "--chunk-context",
+                        str(backend.chunk_context),
+                        "--final-outro-exemption-seconds",
+                        str(args.final_outro_exemption_seconds),
+                        "--device",
+                        args.device,
+                        "--dtype",
+                        args.dtype,
+                        "--attention-implementation",
+                        args.attention_implementation,
+                    ]
                 )
-            if args.aligner_path is not None:
+            if model_path is not None:
                 transcribe_command.extend(
-                    ["--aligner-path", repository_argument(args.aligner_path)]
+                    ["--model-path", repository_argument(model_path)]
+                )
+            if aligner_path is not None:
+                transcribe_command.extend(
+                    ["--aligner-path", repository_argument(aligner_path)]
                 )
             if args.retranscribe:
                 transcribe_command.append("--retranscribe")
@@ -268,9 +425,9 @@ def main() -> int:
                     "--title",
                     title,
                     "--engine",
-                    "mlx-audio",
+                    backend.engine,
                     "--model",
-                    args.model,
+                    backend.model,
                     "--language",
                     args.transcript_language,
                 ]
@@ -304,7 +461,7 @@ def main() -> int:
             )
             print(f"[{index}/{len(episodes)}] FAILED {label}: {error}", flush=True)
 
-    print(json.dumps({"episodes": results}, ensure_ascii=False, indent=2))
+    print(json.dumps({"episodes": results}, ensure_ascii=True, indent=2))
     return 1 if any(result["status"] == "failed" for result in results) else 0
 
 

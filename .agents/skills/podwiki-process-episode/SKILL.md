@@ -1,6 +1,6 @@
 ---
 name: podwiki-process-episode
-description: Fully process PodWiki episodes from public Bilibili sources, acquire public YouTube media, or resume existing local-media artifacts. Use when adding, downloading, resuming, retranscribing, regenerating, or validating an episode through source acquisition, ASR, transcript rendering, metadata updates, and repository checks.
+description: Fully process PodWiki episodes from public Bilibili or Xiaoyuzhou sources, acquire public YouTube media, or resume existing local-media artifacts. Use when adding, downloading, resuming, retranscribing, regenerating, or validating an episode through source acquisition, ASR, transcript rendering, metadata updates, and repository checks.
 ---
 
 # Process a PodWiki episode
@@ -20,7 +20,7 @@ preserving source provenance, resumability, and the repository content standard.
    - Process, add, or ingest: continue through rendered machine transcript and validation.
 4. Never treat list order as an official episode number. Use a verified publisher number;
    otherwise use the documented source-ID key (for example, a lower-cased BVID key for
-   Bilibili).
+   Bilibili or the canonical `eid` key for Xiaoyuzhou).
 5. Preserve existing artifacts. Reuse only when identity metadata and hashes match; require
    an explicit overwrite request to replace an existing source or raw ASR result.
 
@@ -30,7 +30,8 @@ preserving source provenance, resumability, and the repository content standard.
    campaign URL carries `bvid=<BVID>`, extract that identifier and form
    `https://www.bilibili.com/video/<BVID>/`; never pass the festival page to the acquisition
    script.
-2. Read `references/bilibili.md` for Bilibili or `references/youtube.md` for YouTube.
+2. Read the matching source guide: `references/bilibili.md`, `references/youtube.md`, or
+   `references/xiaoyuzhou.md`.
 3. Run the metadata-only intake and check for a public subtitle track before downloading
    media. The repository does not yet provide a subtitle importer. If a public subtitle is
    present, stop and report that unsupported branch instead of silently falling through to
@@ -41,13 +42,27 @@ preserving source provenance, resumability, and the repository content standard.
 5. Do not bypass login, membership, payment, region, or other access controls. This workflow
    never uses browser cookies; even an authorized request requires a separate, explicitly
    documented source-handling workflow.
-6. Acquire only one video, never an account or playlist, with:
+6. By default acquire only one video or podcast episode, never an account, channel,
+   playlist, or entire podcast. A bounded whole-podcast exception is allowed only when the
+   user explicitly authorizes one verified Xiaoyuzhou podcast. Before downloading, freeze a
+   manifest containing that podcast PID and every canonical episode URL/eid in scope. Admit
+   only anonymous `NORMAL`, `FREE`, non-private, explicitly `PUBLIC` episodes whose podcast
+   identity matches; reject and report every other item. Process the frozen manifest
+   sequentially with rate limiting and repeat the full identity validation for each episode.
+   Never expand the manifest during the run or extend the authorization to another podcast.
+   Whether invoked once or from such an authorized manifest, each acquisition command still
+   receives exactly one canonical episode URL:
 
    ```bash
    env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
      --url <canonical-url> \
      --output .cache/media/<show-id>/<episode-folder>/source.m4a
    ```
+
+   On PowerShell, set `$env:UV_CACHE_DIR = ".cache/uv"` once, omit the leading POSIX
+   `env UV_CACHE_DIR=...`, and either run each command on one line or replace `\` with the
+   PowerShell backtick. Use `$env:HF_ENDPOINT = "https://hf-mirror.com"` instead of
+   `export` below. These equivalents apply to every command in this skill.
 
 7. Require the sidecar `source.metadata.json` and verify codec, duration, size, sample rate,
    channels, and SHA-256 before marking the source acquired.
@@ -57,19 +72,22 @@ preserving source provenance, resumability, and the repository content standard.
 
 Read `references/asr-backends.md` before choosing an engine.
 
-Confirm the prerequisites and platform boundary in `docs/episode-processing.md`. The current
-official local ASR path requires Apple Silicon and MLX; do not silently substitute a remote
-service on another platform.
+Confirm the prerequisites and platform boundary in `docs/episode-processing.md`. The official
+local Qwen paths are Apple Silicon/MLX and Windows x86-64/NVIDIA CUDA. Select the matching
+backend explicitly; do not silently substitute a remote service on another platform.
 
-Before starting workers, run `uv sync --all-groups` once. Every worker must then use
-`env UV_CACHE_DIR=.cache/uv uv run --no-sync` so dependency groups do not mutate the
-shared `.venv`. Before any `hf download`, export the configured mirror:
+The `asr` and `asr-cuda` dependency groups are mutually exclusive; never run
+`uv sync --all-groups`. On Apple Silicon, run `uv sync --group asr` once and then use
+`env UV_CACHE_DIR=.cache/uv uv run --no-sync` for every MLX worker. On Windows, prepare the
+ignored `.cache/venvs/qwen-cuda` environment with `uv sync --active --group asr-cuda --locked`
+and invoke its `Scripts/python.exe` directly. Never sync dependencies while workers are
+running. Before an MLX `hf download`, export the configured mirror:
 
 ```bash
 export HF_ENDPOINT=https://hf-mirror.com
 ```
 
-For a cold local cache, download only after that export and use stable ignored paths:
+For a cold Apple Silicon/MLX cache, download only after that export and use stable ignored paths:
 
 ```bash
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
@@ -80,22 +98,43 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
   --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
+For a cold Windows/CUDA cache, download the official models to their ignored local paths:
+
+```powershell
+$env:HF_ENDPOINT = "https://huggingface.co"
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B `
+  --local-dir .cache/models/Qwen3-ASR-1.7B
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B `
+  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B
+```
+
 1. Use an explicitly requested engine and model when compatible.
 2. Otherwise reuse the episode's recorded engine and model for reproducibility.
 3. For Chinese episodes on Apple Silicon, use the project-selected Qwen3-ASR 1.7B 8-bit
-   model with Qwen3 ForcedAligner. Keep MLX Whisper only as a retained baseline when it
-   already exists or when the user explicitly requests it.
+   MLX model with its 8-bit ForcedAligner. On Windows/NVIDIA CUDA, use the official
+   `Qwen/Qwen3-ASR-1.7B` and `Qwen/Qwen3-ForcedAligner-0.6B` models through the Transformers
+   backend. Keep MLX Whisper only as a retained baseline when it already exists or when the
+   user explicitly requests it.
 4. Never silently switch to a paid or remote ASR service. Report credentials, data transfer,
    and cost implications before using one.
 5. Preserve Qwen engine-native output under `asr/qwen3-asr/`: `raw.json`, `aligned.json`,
    `refined.json`, and `transcript.<language>.md` (`zh-CN` for Chinese, `en` for English).
    Copy the selected Markdown to the episode root only after all four artifacts validate.
 6. Run long local ASR jobs serially, one episode per subprocess. The process boundary is the
-   reliable Metal/unified-memory cleanup boundary; do not call the worker `main()` repeatedly
-   in one Python process.
+   reliable Metal/unified-memory or CUDA-VRAM cleanup boundary; do not call either worker
+   `main()` repeatedly in one Python process.
 7. Treat raw as the stage checkpoint. A valid raw with no aligned artifact resumes at
    alignment; two valid artifacts are a no-op. Existing invalid or mismatched artifacts fail
    closed. Only `--retranscribe` or `--realign` may replace a corresponding artifact.
+8. On Windows/CUDA, use 120-second nominal ownership chunks with five seconds of decode
+   context on each side of every internal boundary. Reconcile overlaps only through the
+   ForcedAligner's exact text-and-time crossover, retain every boundary phrase exactly once,
+   and require the active-audio coverage guard to pass before raw and aligned artifacts become
+   complete. An exact crossover normally belongs to a contiguous match of at least three
+   characters. A unique two-character run is accepted only when both forced alignments agree
+   within 250 ms for the entire run and record that stricter confidence evidence; an
+   alignment-gap fallback additionally requires the whole gap to pass the recorded acoustic
+   silence guard. A pending CUDA raw is a resume checkpoint, never a downstream source.
 
 For the MLX Whisper baseline:
 
@@ -111,7 +150,7 @@ The current Whisper worker may emit non-strict JSON `NaN` values. Keep new compa
 under `.cache/benchmarks/`; do not select, promote, or commit it until the worker satisfies the
 repository strict-JSON contract. Preserve already tracked historical baselines.
 
-For one Qwen episode with already cached local models:
+For one Qwen episode on Apple Silicon/MLX with already cached local models:
 
 ```bash
 env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
@@ -125,6 +164,26 @@ env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit \
   --language Chinese --no-verbose
 ```
+
+For one or more Windows/CUDA episodes, use the batch entry point even for a one-item run:
+
+```powershell
+& .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
+  --backend cuda `
+  --episode shows/<show-id>/episodes/<episode-folder> `
+  --model-path .cache/models/Qwen3-ASR-1.7B `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B `
+  --chunk-context 5
+```
+
+Providing both local paths forces `HF_HUB_OFFLINE=1` and `TRANSFORMERS_OFFLINE=1`; the worker
+must not retrieve either model from the network. CUDA defaults are `cuda:0`, `bfloat16`, SDPA,
+120-second nominal ownership chunks, five seconds of context on both sides of internal
+boundaries, and batch size 1. The context, exact-time ForcedAligner crossover, active-audio
+coverage guard, and aligned-gap acoustic guard are part of the recorded reproducibility
+contract. The RTX A2000 8GB Laptop GPU has been verified with these defaults because the
+worker releases the ASR model before loading the aligner. Use `--dtype float16` only when the
+selected CUDA device does not support bf16.
 
 For multiple episodes, use `scripts/process_qwen3_asr_batch.py`. It discovers cached audio
 or accepts repeated `--episode` paths, launches one worker subprocess at a time, writes a
@@ -156,6 +215,10 @@ validator so the renderer does not create unnecessary artifact churn.
    - engine, model, options, generation timestamp, and artifact paths;
    - source/refined/rendered segment counts;
    - the exact workflow state reached.
+   For `navigation_title`, use verified guests first, otherwise verified `participant`
+   records, otherwise the hosts who actually appear. Never relabel a participant or host as
+   a guest merely to satisfy navigation. The root `访谈人物` index column remains guest-only
+   and uses `—` when the episode has no verified guest.
 5. Base an outline summary only on publisher material until the complete transcript exists.
    Do not mark summary or transcript as reviewed without the corresponding review work.
 6. When selecting Qwen as the official transcript, preserve any existing Whisper raw,
@@ -203,7 +266,7 @@ entire file without preserving a resumable segment mapping.
 ## Keep Wiki indexes and usage docs current
 
 1. The root `README.md` contains a `收录播客` table with columns `播客`、`简介`、`节目页`.
-   Link each podcast name to the verified Bilibili channel/space URL from show metadata, and
+   Link each podcast name to its verified preferred publisher URL from show metadata, and
    link `节目页` to its local show README. Add or update this row whenever a show is added or
    its identity, source, or description changes.
 2. The root `README.md` contains the canonical `单集索引` table. Its columns must remain,
@@ -212,7 +275,8 @@ entire file without preserving a resumable segment mapping.
    `总结链接`、`逐字稿链接`.
 3. After every episode addition or update, update its row in both the root `README.md` and
    `shows/<show-id>/README.md`. Link the episode title to the canonical URL of its preferred
-   publisher source, such as Bilibili or YouTube. In the root table only, populate `访谈人物`
+   publisher source, such as Bilibili, YouTube, or Xiaoyuzhou. In the root table only,
+   populate `访谈人物`
    from front-matter participants whose role is `guest`; join multiple guests with `、` and
    never infer an unverified guest. Keep the verified episode number in `episode_number`; do
    not prefix the displayed title with `#<number>`. Link the summary and transcript columns
@@ -226,7 +290,8 @@ entire file without preserving a resumable segment mapping.
 ## Validate completion
 
 1. Run the relevant unit tests.
-2. Run `env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py`.
+2. Run `env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py` (PowerShell:
+   after setting `$env:UV_CACHE_DIR`, run `uv run --no-sync python scripts/validate.py`).
 3. Run `npm run check` from `apps/web` so the strict content loader, tests, and production
    build all consume the final repository content.
 4. Run `git diff --check` and inspect `git status --short`.
@@ -234,7 +299,7 @@ entire file without preserving a resumable segment mapping.
    English selected transcript, also confirm the required root Chinese translation and its
    `transcript.translations` hashes and segment alignment.
 6. Confirm the root show table has three columns and links every podcast name to its verified
-   Bilibili space and every `节目页` to its local README. Confirm the root episode table uses
+   preferred publisher page and every `节目页` to its local README. Confirm the root episode table uses
    the required six columns, the relevant show table keeps the required five columns, and both
    match the final metadata and paths.
 7. Report each episode separately with its reached state, artifact paths, engine/model,

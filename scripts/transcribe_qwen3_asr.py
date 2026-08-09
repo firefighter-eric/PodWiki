@@ -157,6 +157,7 @@ def finite_document_number(value: Any, *, field: str) -> float:
 def validate_raw_document(
     document: Any,
     *,
+    engine: str = "mlx-audio",
     model: str,
     language: str,
     temperature: float,
@@ -164,12 +165,13 @@ def validate_raw_document(
     chunk_duration: float,
     audio_size_bytes: int,
     audio_sha256: str,
+    backend_options: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     if not isinstance(document, dict) or document.get("schema_version") != 1:
         raise ValueError("raw ASR artifact must contain a JSON object")
     expected_values = {
         "kind": "raw-asr",
-        "engine": "mlx-audio",
+        "engine": engine,
         "model": model,
         "language": language,
     }
@@ -199,6 +201,8 @@ def validate_raw_document(
         "max_tokens_per_chunk": max_tokens,
         "chunk_duration_seconds": chunk_duration,
     }
+    if backend_options is not None:
+        expected_options.update(backend_options)
     for field, expected in expected_options.items():
         if options.get(field) != expected:
             raise ValueError(
@@ -229,6 +233,7 @@ def validate_raw_document(
 def validate_aligned_document(
     document: Any,
     *,
+    engine: str = "mlx-audio",
     model: str,
     aligner: str,
     language: str,
@@ -236,6 +241,7 @@ def validate_aligned_document(
     raw_asr_sha256: str,
     raw_document: dict[str, Any],
     max_sentence_characters: int,
+    backend_options: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     if (
         not isinstance(document, dict)
@@ -249,7 +255,7 @@ def validate_aligned_document(
     if not isinstance(source, dict):
         raise ValueError("aligned ASR has no source identity")
     expected_source = {
-        "engine": "mlx-audio",
+        "engine": engine,
         "model": model,
         "aligner": aligner,
         "audio_sha256": audio_sha256,
@@ -258,9 +264,10 @@ def validate_aligned_document(
     for field, expected in expected_source.items():
         if source.get(field) != expected:
             raise ValueError(f"aligned ASR source {field} does not match")
-    if document.get("options") != {
-        "max_sentence_characters": max_sentence_characters
-    }:
+    expected_options = {"max_sentence_characters": max_sentence_characters}
+    if backend_options is not None:
+        expected_options.update(backend_options)
+    if document.get("options") != expected_options:
         raise ValueError("aligned ASR sentence-splitting options do not match")
     if document.get("text") != raw_document.get("text"):
         raise ValueError("aligned ASR text does not match the raw artifact")
@@ -323,6 +330,7 @@ def write_json_atomically(path: Path, document: dict[str, Any]) -> None:
         with tempfile.NamedTemporaryFile(
             mode="w",
             encoding="utf-8",
+            newline="\n",
             dir=path.parent,
             prefix=f".podwiki-{path.name}.",
             suffix=".tmp",
@@ -652,7 +660,7 @@ def main() -> int:
         from mlx_audio.stt.utils import load_audio
     except ImportError as error:
         raise SystemExit(
-            "MLX Audio is unavailable; run `uv sync --all-groups`, then use "
+            "MLX Audio is unavailable; run `uv sync --group asr`, then use "
             "`uv run --no-sync` for this worker"
         ) from error
 

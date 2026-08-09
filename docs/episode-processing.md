@@ -7,10 +7,13 @@
 
 ## 1. 适用范围与停止条件
 
-当前完整 happy path 是：单个公开 Bilibili 视频，没有可直接使用的公开字幕，在
-Apple Silicon 上以 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿。YouTube 当前支持
-规范化、metadata intake 和公开媒体获取，但 tracked episode 的 source identifiers
-与无正式期号 key 尚未形成内容契约，因此不能自动完成入库。
+当前完整 happy path 是：单个公开 Bilibili 视频或小宇宙单集，没有可直接使用的
+公开字幕，在 Apple Silicon/MLX 或 Windows/NVIDIA CUDA 上以 Qwen3-ASR 和
+ForcedAligner 生成机器逐字稿。
+用户明确授权时，也可以把一个已核实的小宇宙栏目的公开免费单集作为冻结后的有界
+批次处理；批次中的每一集仍执行同一套单集流程和停止条件。
+YouTube 当前支持规范化、metadata intake 和公开媒体获取，但 tracked episode 的
+source identifiers 与无正式期号 key 尚未形成内容契约，因此不能自动完成入库。
 
 先根据请求确定停止点：
 
@@ -27,10 +30,13 @@ Apple Silicon 上以 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿。YouTube
 - 登录、会员、付费、地区、年龄或其他访问控制；
 - 找到公开字幕：仓库目前只有字幕发现能力，尚无下载、转换和 lineage 导入工具；
 - 只有本地媒体但没有可核实的来源与授权记录；
-- 非 Apple Silicon 环境需要新跑正式 ASR；
+- 当前机器既不满足 Apple Silicon/MLX，也不满足 Windows x86-64/NVIDIA CUDA
+  本地路径，却需要新跑正式 ASR；
 - YouTube 单集需要完整入库：当前尚未定义 tracked source identifiers，且无正式
   期号时也没有稳定 episode key；
-- 新节目没有可核实的 Bilibili 频道或空间：当前根节目索引契约无法登记；
+- 新节目没有可核实的首选发布者页面：当前根节目索引契约无法登记；
+- 单集没有任何可核实的实际出场人物：无法按内容标准形成导航标题；不得从标题
+  猜测人物，也不得把一般参与者或主播伪标为嘉宾；
 - 需要远端或付费 ASR，但用户没有明确授权数据传输、凭据和费用。
 
 不要把停止条件改写为成功。每集分别报告已到达阶段、已有产物、可恢复点和下一步。
@@ -48,7 +54,9 @@ git branch --show-current
 
 - Python 3.12+、`uv`；
 - `ffmpeg`、`ffprobe`；
-- macOS Apple Silicon 和 MLX，用于当前正式本地 ASR；
+- macOS Apple Silicon/MLX，或 Windows x86-64/NVIDIA CUDA，用于正式本地 ASR；
+  Windows CUDA 路径已在支持 `bfloat16` 的 NVIDIA RTX A2000 8GB Laptop GPU
+  上验证可用；
 - Deno 或 Node.js，用于 YouTube 获取；
 - Node.js 和 npm，用于最终 Web 门禁。
 
@@ -61,12 +69,28 @@ node --version
 npm --version
 ```
 
-先同步一次依赖。多个 worker 之后都使用 `--no-sync`，不能并发修改共享 `.venv`：
+MLX 与 CUDA 依赖组互斥，按本机平台只同步其中一个；不要使用
+`uv sync --all-groups`。Apple Silicon/MLX 使用：
 
 ```bash
-uv sync --all-groups
+uv sync --group asr
 env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
 ```
+
+Windows/CUDA 建议使用被 Git 忽略的独立环境，避免改写项目 `.venv`。首次创建时：
+
+```powershell
+$env:UV_CACHE_DIR = ".cache/uv"
+uv venv --python 3.12 .cache/venvs/qwen-cuda
+. .\.cache\venvs\qwen-cuda\Scripts\Activate.ps1
+uv sync --active --group asr-cuda --locked
+```
+
+之后的 CUDA 命令直接调用
+`.cache/venvs/qwen-cuda/Scripts/python.exe`，不在 worker 运行期间同步依赖。
+
+PowerShell 先设置 `$env:UV_CACHE_DIR = ".cache/uv"`，再省略命令前的 POSIX `env`
+写法；`export` 与反斜杠续行的替换规则见[脚本用法](./python-scripts.md#环境准备)。
 
 首次 checkout 或 `apps/web/package-lock.json` 变化后安装锁定的前端依赖：
 
@@ -74,7 +98,7 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
 npm --prefix apps/web ci
 ```
 
-首次准备 Qwen 模型时：
+首次准备 Apple Silicon/MLX 模型时：
 
 ```bash
 export HF_ENDPOINT=https://hf-mirror.com
@@ -86,15 +110,27 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
   --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
+Windows/CUDA 使用官方非量化模型，并继续只写入 `.cache/models/`：
+
+```powershell
+$env:HF_ENDPOINT = "https://huggingface.co"
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B `
+  --local-dir .cache/models/Qwen3-ASR-1.7B
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B `
+  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B
+```
+
 模型、媒体、sidecar、日志和翻译检查点全部放在 `.cache/`，不得提交 Git。
 
 ## 3. 规范化来源并做 metadata intake
 
-先把用户输入转换为单视频规范 URL：
+先把用户输入转换为单视频或单集规范 URL：
 
 - Bilibili：`https://www.bilibili.com/video/<BVID>/`；
 - Bilibili 活动页 `/festival/...?...bvid=<BVID>`：提取 `bvid` 后改写为上述视频地址；
 - YouTube：`https://www.youtube.com/watch?v=<video-id>`；
+- 小宇宙：`https://www.xiaoyuzhoufm.com/episode/<episode-id>`；栏目页用于登记节目
+  身份，也可在明确授权的单栏目批次中发现单集，但不能作为媒体获取输入；
 - 删除 `spm_id_from`、`vd_source`、播放列表和其他追踪参数。
 
 不要把活动页直接传给脚本。先用来源 ID 做临时 intake，只读取元数据而不下载：
@@ -111,18 +147,38 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 1. `source.canonical_url` 与输入的规范 URL 一致；
 2. Bilibili 的 `source.bvid`、`source.aid`、`source.cid`、`source.page` 完整且
    身份一致；
-3. `source.title`、发布者、发布时间和时长合理；
-4. `source.availability`、`source.live_status` 和平台字段表明来源公开、非直播、
+3. 小宇宙的 `source.eid`、`source.pid`、`source.media_id` 完整，页面中的
+   episode/podcast/media 身份一致，并明确为 `NORMAL`、`FREE`、非私密、`PUBLIC`；
+4. `source.title`、发布者、发布时间和时长合理；
+5. `source.availability`、`source.live_status` 和平台字段表明来源公开、非直播、
    非受限；
-5. `source.subtitle_languages`、`source.automatic_caption_languages` 和
+6. `source.subtitle_languages`、`source.automatic_caption_languages` 和
    `source.platform_metadata.subtitle.tracks` 均无可用公开字幕。
 
 存在公开字幕时在这里停止。不要因为当前没有 importer 就忽略字幕改跑音频 ASR。
 
+### 明确授权的单栏目批次
+
+未获授权时仍只处理用户指定的单集，不枚举整栏。只有用户明确点名并授权一个已
+核实的小宇宙栏目后，才可以发现其匿名可见的单集列表；不得把授权扩大到其他栏目、
+账号或平台列表。下载任何媒体前先把本次范围冻结到
+`.cache/intake/<show-id>/manifest.json`，至少记录：
+
+- 栏目规范 URL、栏目 PID、发现时间和发现总数；
+- 每集的规范 URL 与 `eid`；后续校验结果写入各集 intake sidecar，不改写清单范围；
+- 稳定顺序仅用于执行和复核，不作为正式期号。
+
+冻结后不因栏目新增单集而自动扩展本次批次。先逐集执行 metadata-only intake，只有
+栏目身份一致且明确为 `NORMAL`、`FREE`、非私密、`PUBLIC` 的条目才能进入下载清单；
+跨栏目、未知状态、付费、私密或需登录的条目必须拒绝并记录原因。随后严格按 manifest
+串行、限速调用单集采集命令，每次仍只把一个规范 episode URL 传给脚本，并在进入
+下一集前完成该集的身份、sidecar、字节数、时长与 SHA-256 校验。中断后从冻结的
+manifest 和已验证 sidecar 恢复，不重新发现或静默替换批次范围。
+
 ## 4. 确定身份并创建目录
 
-先确认节目是否已经存在于 `shows/<show-id>/`。新节目必须有可核实的 Bilibili
-频道或空间，使用 `templates/show/README.md`，节目 ID 只使用稳定的小写 ASCII
+先确认节目是否已经存在于 `shows/<show-id>/`。新节目必须有可核实的首选发布者
+页面，使用 `templates/show/README.md`，节目 ID 只使用稳定的小写 ASCII
 字母和数字。
 
 只有确认节目尚不存在时才创建节目目录：
@@ -137,8 +193,9 @@ cp -n templates/show/README.md shows/<show-id>/README.md
 1. 只有发布者明确给出的正式期号才能写入 `episode_number`；
 2. 有正式期号时，`episode_key` 使用保留前导零的正式编号；
 3. 无正式期号的 Bilibili 视频使用 `bili-<lowercase-bvid>`；
-4. 不根据输入顺序、发布日期、合集位置或抓取顺序猜期号；
-5. YouTube 单集当前只完成 intake/acquire；完整入库前请求维护者补充 source
+4. 无正式期号的小宇宙单集使用 `xiaoyuzhou-<eid>`；
+5. 不根据输入顺序、发布日期、合集位置或抓取顺序猜期号；
+6. YouTube 单集当前只完成 intake/acquire；完整入库前请求维护者补充 source
    identifiers 和稳定 episode key 契约。
 
 目录名为 `<episode-key>-<short-slug>`，但 front matter 中的
@@ -157,12 +214,13 @@ cp -n templates/episode/README.md shows/<show-id>/episodes/<episode-folder>/READ
 | --- | --- |
 | `source.canonical_url` | `sources[].url` |
 | `source.bvid`、`source.aid`、`source.cid`、`source.page` | `sources[].identifiers` |
+| `source.eid`、`source.pid`、`source.media_id` | 小宇宙 `sources[].identifiers` |
 | 发布者原标题 | `title` |
 | 发布时间 | 带时区 RFC 3339 `published_at` |
 | `source.duration_seconds` | 换算为整数毫秒 `duration_ms` |
 | `source.language` 或核实后的实际口语 | BCP 47 `language`；不能沿用模板默认值猜测 |
-| 已核实嘉宾 | `participants`，嘉宾使用 `role: guest` |
-| 嘉宾与精简主题 | `navigation_title`，格式为“人物 · 题目” |
+| 已核实出场人物 | `participants`；区分 `guest`、一般 `participant` 与 `host` |
+| 证据化人物与精简主题 | `navigation_title`；guest 优先，其次 participant、host |
 | 独特主题词 | `catalog_keyword` |
 
 元数据只在完成来源核验后标为 `verified`。尚未取得音频时保持
@@ -191,21 +249,23 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 `--episode` 扫描全部缓存，也不要把全库扫描与 `--retranscribe` 或 `--realign`
 组合。
 
-中文组：
+Apple Silicon/MLX 中文组：
 
 ```bash
 env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --model-path .cache/models/qwen3-asr-1.7b-8bit \
   --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
-英文组：
+Apple Silicon/MLX 英文组：
 
 ```bash
 env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --language English \
   --transcript-language en \
@@ -213,7 +273,86 @@ env HF_ENDPOINT=https://hf-mirror.com HF_HUB_OFFLINE=1 \
   --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit
 ```
 
-脚本内部逐集、逐子进程串行运行，不再并发启动额外 Metal worker。每集产物为：
+Windows/CUDA 中文组使用官方模型和独立解释器：
+
+```powershell
+& .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
+  --backend cuda `
+  --episode shows/<show-id>/episodes/<episode-folder> `
+  --model-path .cache/models/Qwen3-ASR-1.7B `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B `
+  --chunk-context 5
+```
+
+同时提供两个本地模型路径时，批处理会设置 `HF_HUB_OFFLINE=1` 和
+`TRANSFORMERS_OFFLINE=1`，因此 worker 不会联网补取模型。CUDA backend 记录的
+engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B` 和
+`Qwen/Qwen3-ForcedAligner-0.6B`。默认参数为 `cuda:0`、`bfloat16`、SDPA、
+120 秒名义归属 chunk、5 秒上下文和 batch size 1；每个内部边界向两侧各多解码
+5 秒，再使用 ForcedAligner 的精确文字与时间对齐选择唯一交叉点。即使显式使用更宽 context，
+`forced-alignment-time-crossover-v3` 也只在 seam 前后各 3 秒内枚举 crossover anchor；宽 context 的其余部分仅用于完整强制对齐和 coverage，
+避免远离 seam 的重复口语制造假多解。精确锚点必须来自至少
+3 个连续字符的匹配链；只有松散到超过 400 ms、比冲突长链至少再松 250 ms，且左右索引范围都被该长链完整包住的短候选，才可被至少两倍长且全部配对均在 400 ms 内的冲突链淘汰。
+若一条完全位于 seam 单侧的可靠链与跨 seam 长链仅复用长链相邻边缘 1–2 字，worker 会保留单侧链并裁掉长链的重复前缀或后缀；
+裁后长链仍须至少两倍长、seam 两侧各有至少 3 字且全部配对在 250 ms 内。其余达到门限的最大连续候选链
+在两份对齐中必须形成不重叠、不交叉的唯一单调映射，
+等长、时间更紧或无法比较的重复短语多解通常仍失败关闭。唯一例外是先按既有排序选出的最终 ownership cut 能证明所有可靠 exact pair
+都完整落在 cut 同一侧：此时多解只存在于最终完全取自同一个 decode 的内部，不会造成正文双留或双删；产物必须记录
+`ownership-cut-consistent-v1`、核对的 run 数和 pair 数。任何一对被 cut 分到不同 ownership 侧（包括只有一端恰好落在边界）仍立即失败，不得另找一个较宽松的 cut。
+重复单字造成相邻 diagonal 分叉时，只允许
+`adjacent-diagonal-repeated-token-indel-bubble-v1` 这一种窄修复：右侧必须恰好多一个相同单字，tight chain 与 shifted chain 的 offset 恰差 1，
+冲突只能位于前链尾部与后链开头的 1–2 个 pair。替代 pair 的时间差不得优于 tight chain，平均劣势至少 250 ms；裁去 shifted chain 的冲突前缀后，
+剩余 chain 必须至少两倍长、全部 pair 在 250 ms 内，并与其他 chain 形成严格唯一映射。最终按原排序选出的 anchor 仍必须来自 tight chain，
+所有 pair 对 resulting cut 一致。产物必须逐项记录 diagonal offset、裁前/裁后范围、时间差统计、anchor pair 和 cut；不能用模糊字符串去重或一般编辑距离扩大该例外。
+
+另一个独立、同样失败关闭的例外是
+`zero-duration-right-indel-weak-bridge-v1`，仅用于实证中的右侧零时长单字插入：候选必须恰好形成 3 条 run；两条主链各至少 17 字、全部 pair 在 250 ms 内且严格有序，
+左索引在 junction 处相邻，右索引只跳过 1 个清洗后恰为 1 字的 item。该 item 的时长最多 1 ms，而且其 start/end、两条主链左右两份对齐在 junction 的相邻 end/start
+必须全部在 1 ms 内重合。第三条弱链必须恰为 3 字，左范围只能由前主链最后 1 字加后主链最初 2 字组成，右范围必须完整位于前主链内，且每个 pair 都松散到超过 400 ms；
+弱链每个 left index 与每个 right index 还必须分别已被主链中的不同 tight pair 覆盖，
+逐 pair 相比两侧主映射的最小时间劣势都至少 250 ms。删除弱链后必须只剩唯一单调映射，原排序选出的 anchor 必须来自主链；两条主链对 resulting cut 全部一致，而弱链在该 cut 下确实冲突。
+产物不持久化可独立伪造的派生 delta 或 run 摘要，而是保存 seam 搜索窗及其两侧各一个邻项组成的 bounded `candidate_proof`；每个 item 记录 side、全局 item index、
+清洗后单字、在 `decoded_text` 清洗字符序列中的 span、start 和 end。raw validator 先逐项绑定字符与 decode，再只从 proof 重建三条 run、所有 delta/优势、junction、anchor 和 cut；
+aligned validator 还把 proof 中最终 owned 的每个 index/text/time 逐项绑定正式 alignment。非零时长、左侧或多 item indel、4 字弱链、部分覆盖、额外 run、proof 缺项或任何无法唯一分解的近邻形状一律不适用。
+
+其后的统一例外 `single-axis-dominated-weak-runs-v1` 只在 repeated-token、上述 zero-duration repair 和原有 ownership-cut guard 都不能解决歧义时尝试，并复用同一 bounded `candidate_proof`，不信任持久化的 run 或 delta 摘要。dominance 与 edge repair 后必须有至少两条互不交叉、严格有序且全部 pair 在 250 ms 内的 tight backbone；每条待删除弱链至少 3 字且每个 pair 都松散到超过 400 ms，必须由同一条至少两倍长的 tight chain 在一侧逐 item 完整覆盖，每项时间优势至少 250 ms。弱链另一侧未被所有 tight chains 覆盖的 index 最多连续 2 项，并须严格夹在相邻 backbone 范围之间。所有在原始快照中合格的弱链必须原子删除，禁止级联或挑选子集；删除后映射必须唯一单调，正常最近 anchor 必须来自 tight backbone，且只有一个 ownership-consistent cut。raw validator 从 proof 重算完整 dominance/edge/atomic-drop/anchor/cut 流程；aligned validator继续逐项绑定最终 owned proof。任一 proof 篡改、覆盖缺口、边缘 gap、tie、残留冲突或更早 repair 可适用时均失败关闭。
+
+标准 3 字 anchor、严格 2 字 anchor 和 aligned-gap 全部无解时，worker 还可识别
+`exhausted-side-context-anchor`，但当前只允许左候选在 seam 前至少 15 秒、且至少占该 ownership core 的 15%（上限 27 秒）时明确耗尽；右候选还必须在默认 seam±3 秒窗口两侧各至少覆盖 3 字且有 item 跨 seam。
+左侧末端附近 ±3 秒必须只有一条至少 3 字、全部 pair 在 250 ms 内的原始 exact chain；完整 shared context 只用来收集反证，所有可靠 pair 都必须与该 handoff cut 一致，
+不得把全局 anchor 搜索半径扩大到 30 秒。接管最多丢弃左候选 1 个 item、1 个字、3 秒，最后保留的左 item 到首个右 item 的音频空隙不得超过 750 ms；
+survivor 在 exhausted frontier 到 seam 的桥段中不得留下超过 3 秒的未核实 alignment 空洞；每个更长空洞都必须单独解码并通过严格静音探测，活跃语音立即拒绝。产物记录窗口、frontier、shortfall、跨缝证据、原始完整 context 的全部可靠 run/pair、桥段最大空洞与逐段声学结果、弃尾和 handoff；随后仍执行全局 active-audio coverage。
+
+只有全局唯一的连续 2 字符匹配链，且两组对齐时间差均不超过
+250 ms 并记录严格置信证据时，才允许短链回退。aligned-gap 回退还必须证明整个空隙在声学上接近静音。短尾块会
+重新均分到最后两个归属区间，使边界语句只归属一个 chunk。对齐结果还会执行 active-audio coverage guard：worker 先汇总所有 chunk 的
+owned alignment，再把这份全局并集分别裁剪到每个归属区间；覆盖区间和文字密度都使用全局相交 items，不能因 item 由相邻 chunk 拥有而制造假空洞。
+如果全局并集在归属区间的首部、相邻 item 之间或尾部留下长空洞，worker 必须实际探测对应音频；只有安静区域可以继续，
+持续活跃时失败关闭。首块、末块和句末标点都不构成默认豁免，不得将截断结果标记为完成。
+
+唯一的活跃音频例外是显式 `--final-outro-exemption-seconds <seconds>`：默认值为 `0`、硬上限为 30 秒，且只适用于最后一个归属区间中
+最后一个全局 aligned item 之后、不超过所给额度的 trailing gap。首部、内部和非末块空洞仍必须通过声学门禁。使用该选项前必须取得并保留
+人工完整试听记录，或发布者章节、节目说明等能够证明该段只是告别后的片尾而非漏转写语音的证据；在单集处理记录或 PR 说明中写明证据和实际秒数。
+该数值会同时进入 raw/aligned options，并由 aligned 的 raw SHA-256 lineage 绑定。旧 raw 缺少该字段时，普通 resume 必须失败关闭；只有显式
+`--realign` 才可在完整校验其他 options、音频身份和 raw 内容后迁移并原子替换，例如：
+
+```powershell
+& .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
+  --backend cuda `
+  --episode shows/<show-id>/episodes/<episode-folder> `
+  --realign `
+  --final-outro-exemption-seconds <verified-seconds> `
+  --model-path .cache/models/Qwen3-ASR-1.7B `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B
+```
+
+本机 RTX A2000 8GB 已验证可容纳
+该路径，且 worker 会先完成并释放 ASR 模型，再加载 aligner。只有设备确实不支持
+`bfloat16` 时才显式传入 `--dtype float16`。英文组在同一命令追加
+`--language English` 和 `--transcript-language en`。
+
+脚本内部逐集、逐子进程串行运行，不再并发启动额外加速器 worker；子进程退出同时
+作为 Metal 统一内存或 CUDA 显存的回收边界。每集产物为：
 
 ```text
 asr/qwen3-asr/raw.json
@@ -324,13 +463,14 @@ SHA-256。完整机器稿可以支持 `workflow.summary: draft`；没有回听�
 每次新增或更新单集都同时修改：
 
 1. 新节目还要更新根 `README.md` 的三列“收录播客”表，节目名链接已核实的
-   Bilibili 频道或空间，节目页链接本地 README；
+   首选发布者页面，节目页链接本地 README；
 2. 根 `README.md` 的六列表：标题、访谈人物、播客名称、日期、总结、逐字稿；
 3. `shows/<show-id>/README.md` 的五列表：标题、播客名称、日期、总结链接、逐字稿链接。
 
-标题链接规范发布者 URL，访谈人物只来自 `role: guest` 的已核实参与者。英文单集
-同时提供“英文逐字稿”和“中文机器翻译”链接。当前 validator 不检查根 README，
-因此两个表的排序、列数、人物和相对路径必须人工复核。
+标题链接规范发布者 URL，访谈人物只来自 `role: guest` 的已核实参与者；没有嘉宾
+时写 `—`，不得用 participant 或 host 冒充。英文单集同时提供“英文逐字稿”和
+“中文机器翻译”链接。当前 validator 不检查根 README，因此两个表的排序、列数、
+人物和相对路径必须人工复核。
 
 ## 11. 统一完成门禁
 

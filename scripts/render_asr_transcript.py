@@ -336,6 +336,7 @@ def write_artifact_pair_atomically(
             with tempfile.NamedTemporaryFile(
                 mode="w",
                 encoding="utf-8",
+                newline="\n",
                 dir=path.parent,
                 prefix=f".podwiki-{path.name}.",
                 suffix=".tmp",

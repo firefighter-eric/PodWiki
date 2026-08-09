@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate import (  # noqa: E402
     check_bilibili_urls,
     check_front_matter,
+    check_xiaoyuzhou_urls,
     transcript_structure,
     validate_core_point_logic_table,
     validate_episode_catalog_keyword,
@@ -887,7 +888,12 @@ class EpisodeMetadataContractTests(unittest.TestCase):
             )
             outside = root / "outside-summary.md"
             outside.write_text("# Outside\n", encoding="utf-8")
-            (readme.parent / "summary.zh-CN.md").symlink_to(outside)
+            try:
+                (readme.parent / "summary.zh-CN.md").symlink_to(outside)
+            except OSError as error:
+                if getattr(error, "winerror", None) == 1314:
+                    self.skipTest("Windows symlink creation requires extra privileges")
+                raise
 
             _, errors = self.validate(root, readme)
 
@@ -1073,6 +1079,22 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
         self.assertEqual(count, 1)
         self.assertTrue(any("tracking parameter vd_source" in error for error in errors))
         self.assertTrue(any("non-canonical Bilibili URL" in error for error in errors))
+
+    def test_xiaoyuzhou_urls_require_canonical_public_pages(self) -> None:
+        path = ROOT / "shows" / "example" / "README.md"
+        errors: list[str] = []
+
+        count = check_xiaoyuzhou_urls(
+            path,
+            "https://www.xiaoyuzhoufm.com/podcast/6697cbecf103d7b06d18488b/"
+            "?utm_source=test",
+            errors,
+        )
+
+        self.assertEqual(count, 1)
+        self.assertTrue(
+            any("non-canonical Xiaoyuzhou URL" in error for error in errors)
+        )
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ numbering:
   status: unknown
   checked_at: YYYY-MM-DD
 title: 单集标题
-navigation_title: "访谈人物 · 精简题目"
+navigation_title: "人物 · 精简题目"
 catalog_keyword: "代表性关键词"
 published_at: "YYYY-MM-DDTHH:MM:SS+08:00"
 duration_ms: 0

@@ -148,6 +148,7 @@ const showOrder = [
   "latetalk",
   "luoyonghao",
   "whynottv",
+  "yiqitietalk",
 ];
 const showOrderIndex = new Map(showOrder.map((id, index) => [id, index]));
 
@@ -651,7 +652,9 @@ function episodeCardFromMetadata({
       subtitle: normalizedTitle.subtitle,
       summaryIntro: extractSummaryIntro(summaryRaw),
       publishedDate: publishedAt.slice(0, 10),
+      participants: metadata.participants,
       guests: metadata.participants.filter((participant) => participant.role === "guest"),
+      hosts: metadata.participants.filter((participant) => participant.role === "host"),
       workflow: metadata.workflow,
       href: `/shows/${metadata.show_id}/episodes/${folder}`,
     },

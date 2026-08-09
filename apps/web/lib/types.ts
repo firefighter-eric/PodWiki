@@ -126,7 +126,9 @@ export type EpisodeCard = Pick<
   | "subtitle"
   | "summaryIntro"
   | "publishedDate"
+  | "participants"
   | "guests"
+  | "hosts"
   | "workflow"
   | "href"
 >;

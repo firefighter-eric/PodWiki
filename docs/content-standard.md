@@ -51,17 +51,20 @@ raw、aligned、refined ASR 和最终 Markdown 都提交到 Git：JSON 用于复
 ### Wiki 索引表
 
 根 `README.md` 先使用节目介绍表展示当前收录范围，顺序固定为：`播客`、
-`简介`、`节目页`。播客名称链接到节目 front matter 中已核实的 Bilibili
-频道或空间 URL，节目页链接到本地节目 README。新增节目或节目简介、来源
+`简介`、`节目页`。播客名称链接到节目 front matter 中已核实的首选发布者
+页面，节目页链接到本地节目 README。新增节目或节目简介、来源
 发生变化时必须同步更新该表。
 
 根 `README.md` 的单集表格使用六列，顺序固定为：`标题`、`访谈人物`、
 `播客名称`、`日期`、`总结`、`逐字稿`。节目 `README.md` 的单集表格
 仍使用五列：`标题`、`播客名称`、`日期`、`总结链接`、`逐字稿链接`。
 
-- 标题链接到首选发布者来源的规范 URL，并且不包含期号。
+- 标题链接到首选发布者来源的规范 URL，并且不包含期号。发布者原标题若以已核实
+  正式期号开头，只从 `title` 删除该期号与紧随空白，并把未改写原标题保存在
+  `sources[].title`；其他原标题继续原样使用。
 - 仅根索引增加访谈人物列；内容来自单集 front matter 中 `role: guest` 的
-  参与者，多位嘉宾使用 `、` 分隔。嘉宾身份尚未核实时，不根据标题自行猜测。
+  参与者，多位嘉宾使用 `、` 分隔。没有已核实嘉宾时显示 `—`；嘉宾身份尚未
+  核实时，不根据标题自行猜测，也不把一般参与者或主播提升为嘉宾。
 - 根索引与对应节目索引必须在每次新增或更新单集后同时更新。
 - 总结与逐字稿列直接链接到各自的本地 Markdown 文件。
 
@@ -81,6 +84,7 @@ zhangxiaojun
 sv101
 luoyonghao
 latetalk
+yiqitietalk
 ```
 
 ### 单集 ID
@@ -122,22 +126,35 @@ bili-bv1nb3u6teru-liao-heng
 `sources[].identifiers` 契约也尚未定义，因此当前仅支持 intake 与公开媒体获取，
 不自动创建正式单集。
 
+无正式期号的小宇宙单集使用稳定键 `xiaoyuzhou-<eid>`；`eid` 是规范单集 URL
+中的 24 位小写十六进制标识。例如：
+
+```text
+xiaoyuzhou-6a58ef45016dcc7e05434f8e-wang-wei-wuwa
+```
+
+小宇宙页面标题中的 `EP98`、`S6E1` 或 `vol:152` 不能单独作为正式期号证据；
+只有发布者明确确认其编号语义后才能写入 `episode_number`。否则保持 `null`，
+并使用上述来源键。
+
 `episode_number` 与标题分开保存。单集 `title`、Markdown 一级标题和 Wiki
 索引展示标题均不得拼接 `#<number>`、`<number>.` 等期号前缀或后缀。
 
-侧栏和搜索结果使用单独维护的 `navigation_title`，
-统一写成“访谈人物 · 精简题目”。人物必须来自 `participants` 中 `role: guest`
-的记录，多位嘉宾按记录顺序用 `、` 连接；人物和题目之间使用两侧各有一个
-空格的 ` · `。题目保留最有辨识度的主题，避免平台栏目名、访谈时长、期号和
-内部 `episode_key`，完整标题不超过 40 个字符。发布者原标题继续原样保存在
-`title`，不要为了导航展示而覆盖它。
+侧栏和搜索结果使用单独维护的 `navigation_title`，统一写成
+“人物 · 精简题目”。人物只可来自已核实的 `participants`，并按以下顺序选择：
+存在 `role: guest` 时使用全部嘉宾；否则使用明确的 `role: participant`；仍没有时
+使用本期实际出场的 `role: host`。同级多位人物按记录顺序用 `、` 连接。不得从标题
+猜测人物，也不得为了导航把 `participant` 或 `host` 改成 `guest`。人物和题目之间
+使用两侧各有一个空格的 ` · `。题目保留最有辨识度的主题，避免平台栏目名、访谈
+时长、期号和内部 `episode_key`，完整标题不超过 40 个字符。发布者未改写原标题
+保存在 `sources[].title`；规范展示标题保存在 `title`，不要为了导航展示而覆盖它。
 这些导航和发现列表不得在标题前增加 `#<期号>`、`第 <期号> 期`、`特访`、
 `特别` 等徽标；期号与发布类型只在单集详情、来源和元数据语境中展示。
 
 单集详情页同样以 `navigation_title` 作为读者看到的标题契约：页面主标题显示
-访谈人物，副标题显示精简题目，浏览器与分享元数据使用完整“人物 · 精简题目”。
-发布者原标题继续保存在 `title`，只用于来源溯源、内容核验和原始标题检索，
-不得替代详情页的规范标题。
+上述证据化人物，副标题显示精简题目，浏览器与分享元数据使用完整
+“人物 · 精简题目”。发布者原标题继续保存在 `sources[].title`，只用于来源溯源、
+内容核验和原始标题检索，不得替代详情页的规范标题。
 
 首页最近更新目录另行维护 `catalog_keyword`，用于左侧红色索引词。
 它必须是 1–20 个字符的单个编辑关键词，优先选择最有辨识度的品牌、模型或
@@ -146,7 +163,7 @@ bili-bv1nb3u6teru-liao-heng
 `navigation_title` 和 `participants` 渲染黑色人物名与灰色精简题目。
 
 单个播客的节目页不展示 `catalog_keyword`。其单集列表采用三层结构：首行使用
-红色嘉宾名和小字“播客名 · 发布日期”，第二行放大精简题目，第三行单独展示
+红色导航人物和小字“播客名 · 发布日期”，第二行放大精简题目，第三行单独展示
 从总结的“一句话总结”自动提取的两行简介。简介是已有总结的展示层摘要，不新增
 或手工维护重复元数据。
 
@@ -196,6 +213,28 @@ https://www.bilibili.com/video/<BVID>/
 ```
 
 `sources[].identifiers` 同时记录 `bvid`、`aid`、`cid` 和 `page`，避免只依赖可能变化的网页路径。
+
+小宇宙栏目和单集地址分别固定为：
+
+```text
+https://www.xiaoyuzhoufm.com/podcast/<podcast-id>
+https://www.xiaoyuzhoufm.com/episode/<episode-id>
+```
+
+`podcast-id` 和 `episode-id` 均为 24 位小写十六进制标识。保存时删除查询参数、
+片段和末尾斜杠。栏目 README 使用 podcast URL；单集来源使用 episode URL。
+单集 `sources[].identifiers` 固定记录以下三个字段：
+
+```yaml
+identifiers:
+  eid: 6a58ef45016dcc7e05434f8e
+  pid: 6588196412e01d7ba13aad47
+  media_id: 6588196412e01d7ba13aad47/example-token.m4a
+```
+
+`media_id` 必须同时等于公开页面的 `mediaKey` 与 `media.id`，其首段必须等于
+该单集自己的 `pid`，且公开 CDN URL path 必须精确为 `/<media_id>`。不能用外层
+栏目列表的 PID 覆盖联播或串台单集自身已核实的 `episode.pid`。
 
 ## 4. 时间和日期
 
@@ -354,7 +393,7 @@ selected 英文稿和中文译稿，英文原稿发生变化后必须重新生�
 也不得替代 selected 英文稿。中文总结与这份逐行译稿是不同内容层：总结负责
 提炼，译稿负责忠实保持原稿的逐段结构。
 
-## 7. Bilibili 获取顺序
+## 7. 公开来源获取顺序
 
 1. 检查平台人工字幕或自动字幕。
 2. 当前仓库尚未提供公开字幕的下载、转换和 lineage 导入工具；发现公开字幕时
@@ -365,7 +404,13 @@ selected 英文稿和中文译稿，英文原稿发生变化后必须重新生�
 6. 人工审核后把状态改为 `reviewed`。
 7. 画面硬字幕 OCR 仅作为最后手段。
 
-首版不处理会员、付费、地区限制或其他访问控制，不批量抓取整个账号。
+首版不处理会员、付费、私密、地区限制或其他访问控制。默认不批量抓取整个账号、
+频道、播放列表或播客栏目；只有用户明确授权一个已核实的单一栏目时，才允许对该
+栏目执行有界批量导入。开始下载前必须冻结包含栏目 PID、每集规范 URL 与 `eid` 的
+manifest，之后逐集、限速处理，不在运行中自动扩展范围。每一集仍须独立通过
+`NORMAL`、`FREE`、非私密、`PUBLIC`、栏目身份、enclosure/媒体 URL、公开 M4A
+字节数与时长校验；任何不符合条件的单集必须拒绝并单独报告。该例外不允许跨栏目、
+使用登录态，或枚举和获取付费/私密内容。
 
 ## 8. 机器转写
 
@@ -485,7 +530,21 @@ local_audio_cache:
 路径。SHA-256 使用 64 位小写十六进制；JSON 必须是严格 JSON，不能包含重复
 key、`NaN` 或 `Infinity`。
 
-`scripts/transcribe_qwen3_asr.py` 使用 Qwen3-ASR 生成 raw JSON，再用 Qwen3-ForcedAligner 生成 aligned JSON。有效 raw 存在而 aligned 缺失时只重跑对齐；两者完整且身份、参数和 SHA-256 均匹配时直接跳过。长音频必须逐集、逐子进程串行运行，以子进程退出作为 Metal/unified memory 的回收边界。
+Apple Silicon 的 `scripts/transcribe_qwen3_asr.py` 与 Windows/NVIDIA CUDA 的
+`scripts/transcribe_qwen3_asr_cuda.py` 都先使用 Qwen3-ASR 生成 raw JSON，再用
+Qwen3-ForcedAligner 生成 aligned JSON。有效 raw 存在而 aligned 缺失时只重跑
+对齐；两者完整且身份、参数和 SHA-256 均匹配时直接跳过。长音频必须逐集、
+逐子进程串行运行，以子进程退出作为 Metal unified memory 或 CUDA VRAM 的回收边界。
+
+Windows/NVIDIA CUDA 的分块契约是 120 秒名义归属区间，每个内部边界向两侧各带
+5 秒解码上下文。ForcedAligner 必须以精确文字和时间对齐选出唯一交叉点，且精确锚点必须
+通常属于至少 3 个连续字符的匹配链；只有唯一的连续 2 字符匹配链，且两组对齐时间差均不超过
+250 ms 并记录严格置信证据时，才可作为短链回退。aligned-gap 回退只有在整个空隙通过声学静音门禁时才可用。
+短尾块必须重新分摊到最后两个归属区间。重叠文字只归属一次，不得直接拼接相邻解码窗口。在 boundary reconciliation 完成前，raw 只是
+`pending` 检查点，不能成为下游输入；只有边界全部可重现地完成，且 active-audio
+coverage guard 确认每个归属区间未在活跃语音中过早截断后，才可写入 `complete` raw
+和 aligned 产物。`chunk_duration_seconds`、`chunk_context_seconds`、boundary reconciliation
+方法、alignment coverage guard 和 aligned-gap guard 方法都是可重现参数；任一项不匹配都不得复用旧产物。
 
 `scripts/render_asr_transcript.py` 必须在同一次运行中生成 refined JSON 和 Markdown，使用临时文件和哈希关联两份产物，避免结果使用不同的清洗逻辑。
 

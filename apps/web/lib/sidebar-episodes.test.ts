@@ -104,7 +104,9 @@ describe("sidebar episode order", () => {
       displayTitle: "编辑标题",
       subtitle: "",
       summaryIntro: "不应进入客户端壳层的长简介",
+      participants: [],
       guests: [],
+      hosts: [],
       workflow: {},
     })).toEqual({
       id: "show-a-001",

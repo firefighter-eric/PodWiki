@@ -155,7 +155,7 @@ describe("PodWiki content loader", () => {
         typeof file === "string" && file.endsWith(".md") ? [path.resolve(file)] : []
       ));
 
-      expect(cards).toHaveLength(53);
+      expect(cards).toHaveLength(73);
       expect(markdownReads.some((file) => path.basename(file).startsWith("summary."))).toBe(true);
       expect(markdownReads.filter((file) => path.basename(file).startsWith("transcript."))).toEqual([]);
     } finally {
@@ -268,7 +268,7 @@ describe("PodWiki content loader", () => {
     });
   });
 
-  it("rejects an episode asset symlink that resolves outside its episode", async () => {
+  it("rejects an episode asset symlink that resolves outside its episode", async (context) => {
     await withFixtureRepository((repositoryRoot) => {
       const episodeRoot = writeFixtureEpisode({
         repositoryRoot,
@@ -278,7 +278,15 @@ describe("PodWiki content loader", () => {
       });
       const outsideSummary = path.join(repositoryRoot, "outside-summary.md");
       fs.writeFileSync(outsideSummary, "# Outside\n");
-      fs.symlinkSync(outsideSummary, path.join(episodeRoot, "summary.zh-CN.md"));
+      try {
+        fs.symlinkSync(outsideSummary, path.join(episodeRoot, "summary.zh-CN.md"));
+      } catch (error) {
+        const code = (error as NodeJS.ErrnoException).code;
+        if (code === "EPERM" || code === "EACCES") {
+          context.skip("This environment cannot create symbolic links");
+        }
+        throw error;
+      }
     }, async (content) => {
       await expect(content.getEpisodeCards()).rejects.toThrow(
         "summary path must resolve inside the episode directory",
@@ -326,8 +334,19 @@ describe("PodWiki content loader", () => {
       "latetalk",
       "luoyonghao",
       "whynottv",
+      "yiqitietalk",
     ]);
-    expect(episodes).toHaveLength(53);
+    expect(episodes).toHaveLength(73);
+    expect(Object.fromEntries(shows.map((show) => [show.id, show.episodeCount]))).toEqual({
+      zhangxiaojun: 12,
+      sv101: 8,
+      svvector: 10,
+      latetalk: 12,
+      luoyonghao: 6,
+      whynottv: 5,
+      yiqitietalk: 20,
+    });
+    expect(shows.every((show) => show.episodeCount > 0)).toBe(true);
     expect(episodes.every((episode) => episode.summaryRaw && episode.transcriptSegments.length > 0)).toBe(true);
     const publishedTimes = episodes.map((episode) => Date.parse(episode.publishedAt));
     expect(publishedTimes).toEqual(publishedTimes.toSorted((a, b) => b - a));
@@ -389,9 +408,15 @@ describe("PodWiki content loader", () => {
 
     for (const episode of episodes) {
       const guestNames = episode.guests.map((guest) => guest.name).join("、");
-      expect(guestNames).not.toBe("");
+      const participantNames = episode.participants
+        .filter((participant) => participant.role === "participant")
+        .map((participant) => participant.name)
+        .join("、");
+      const hostNames = episode.hosts.map((host) => host.name).join("、");
+      const navigationNames = guestNames || participantNames || hostNames;
+      expect(navigationNames).not.toBe("");
       expect(episode.navigationTitle).toMatch(/^.+ · .+$/u);
-      expect(episode.navigationTitle.startsWith(`${guestNames} · `)).toBe(true);
+      expect(episode.navigationTitle.startsWith(`${navigationNames} · `)).toBe(true);
       expect(episode.navigationTitle.length).toBeLessThanOrEqual(40);
       expect(episode.summaryIntro.length).toBeGreaterThan(0);
       expect(episode.summaryIntro).not.toContain("##");

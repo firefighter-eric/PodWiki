@@ -1,0 +1,1806 @@
+{
+  "schema_version": 1,
+  "kind": "raw-asr",
+  "engine": "qwen-asr-transformers",
+  "model": "Qwen/Qwen3-ASR-1.7B",
+  "language": "Chinese",
+  "generated_at": "2026-08-08T10:31:47.066092Z",
+  "audio": {
+    "duration_seconds": 5298.2,
+    "sample_rate_hz": 16000,
+    "size_bytes": 85766754,
+    "sha256": "3985fc643a50350cd9555f1e04ae0fdb079c41b5c72c75d564ba1442663e768b"
+  },
+  "options": {
+    "temperature": 0.0,
+    "max_tokens_per_chunk": 2048,
+    "chunk_duration_seconds": 120.0,
+    "chunk_context_seconds": 5.0,
+    "boundary_reconciliation": "forced-alignment-time-crossover-v3",
+    "alignment_coverage_guard": "active-audio-coverage-v1",
+    "aligned_gap_guard": "low-energy-gap-v1",
+    "backend": "transformers",
+    "qwen_asr_version": "0.0.6",
+    "torch_version": "2.11.0",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "attention_implementation": "sdpa",
+    "max_inference_batch_size": 1,
+    "final_outro_exemption_seconds": 0.0
+  },
+  "performance": {
+    "model_load_seconds": 6.454,
+    "transcription_seconds": 1344.553,
+    "cuda_device_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+    "cuda_total_memory_bytes": 8589475840,
+    "cuda_peak_memory_bytes": 5108148224
+  },
+  "boundary_reconciliation": {
+    "method": "forced-alignment-time-crossover-v3",
+    "status": "complete",
+    "chunk_context_seconds": 5.0,
+    "seams": [
+      {
+        "left_chunk_id": 0,
+        "right_chunk_id": 1,
+        "seam_seconds": 120.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "洛",
+        "anchor_midpoint_seconds": 120.04,
+        "anchor_owner": "right",
+        "matched_characters": 29,
+        "anchor_run_characters": 17,
+        "anchor_run_max_pair_delta_seconds": 0.08
+      },
+      {
+        "left_chunk_id": 1,
+        "right_chunk_id": 2,
+        "seam_seconds": 240.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "主",
+        "anchor_midpoint_seconds": 240.16,
+        "anchor_owner": "right",
+        "matched_characters": 21,
+        "anchor_run_characters": 21,
+        "anchor_run_max_pair_delta_seconds": 0.88
+      },
+      {
+        "left_chunk_id": 2,
+        "right_chunk_id": 3,
+        "seam_seconds": 360.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "怎",
+        "anchor_midpoint_seconds": 360.0,
+        "anchor_owner": "left",
+        "matched_characters": 33,
+        "anchor_run_characters": 18,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 3,
+        "right_chunk_id": 4,
+        "seam_seconds": 480.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "话",
+        "anchor_midpoint_seconds": 480.04,
+        "anchor_owner": "right",
+        "matched_characters": 29,
+        "anchor_run_characters": 29,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 4,
+        "right_chunk_id": 5,
+        "seam_seconds": 600.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "以",
+        "anchor_midpoint_seconds": 600.02,
+        "anchor_owner": "right",
+        "matched_characters": 27,
+        "anchor_run_characters": 19,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 5,
+        "right_chunk_id": 6,
+        "seam_seconds": 720.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "嗯",
+        "anchor_midpoint_seconds": 720.24,
+        "anchor_owner": "right",
+        "matched_characters": 33,
+        "anchor_run_characters": 33,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 6,
+        "right_chunk_id": 7,
+        "seam_seconds": 840.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "健",
+        "anchor_midpoint_seconds": 840.0,
+        "anchor_owner": "left",
+        "matched_characters": 24,
+        "anchor_run_characters": 18,
+        "anchor_run_max_pair_delta_seconds": 0.08
+      },
+      {
+        "left_chunk_id": 7,
+        "right_chunk_id": 8,
+        "seam_seconds": 960.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "就",
+        "anchor_midpoint_seconds": 960.04,
+        "anchor_owner": "right",
+        "matched_characters": 25,
+        "anchor_run_characters": 21,
+        "anchor_run_max_pair_delta_seconds": 0.08
+      },
+      {
+        "left_chunk_id": 8,
+        "right_chunk_id": 9,
+        "seam_seconds": 1080.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "给",
+        "anchor_midpoint_seconds": 1080.0,
+        "anchor_owner": "left",
+        "matched_characters": 24,
+        "anchor_run_characters": 20,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 9,
+        "right_chunk_id": 10,
+        "seam_seconds": 1200.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "看",
+        "anchor_midpoint_seconds": 1200.08,
+        "anchor_owner": "right",
+        "matched_characters": 31,
+        "anchor_run_characters": 12,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 10,
+        "right_chunk_id": 11,
+        "seam_seconds": 1320.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "要",
+        "anchor_midpoint_seconds": 1319.96,
+        "anchor_owner": "left",
+        "matched_characters": 30,
+        "anchor_run_characters": 23,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 11,
+        "right_chunk_id": 12,
+        "seam_seconds": 1440.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "拉",
+        "anchor_midpoint_seconds": 1440.08,
+        "anchor_owner": "right",
+        "matched_characters": 32,
+        "anchor_run_characters": 27,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 12,
+        "right_chunk_id": 13,
+        "seam_seconds": 1560.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "这",
+        "anchor_midpoint_seconds": 1560.36,
+        "anchor_owner": "right",
+        "matched_characters": 16,
+        "anchor_run_characters": 8,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 13,
+        "right_chunk_id": 14,
+        "seam_seconds": 1680.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "因",
+        "anchor_midpoint_seconds": 1680.04,
+        "anchor_owner": "right",
+        "matched_characters": 28,
+        "anchor_run_characters": 26,
+        "anchor_run_max_pair_delta_seconds": 0.16
+      },
+      {
+        "left_chunk_id": 14,
+        "right_chunk_id": 15,
+        "seam_seconds": 1800.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "了",
+        "anchor_midpoint_seconds": 1799.38,
+        "anchor_owner": "left",
+        "matched_characters": 20,
+        "anchor_run_characters": 10,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 15,
+        "right_chunk_id": 16,
+        "seam_seconds": 1920.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "就",
+        "anchor_midpoint_seconds": 1919.88,
+        "anchor_owner": "left",
+        "matched_characters": 32,
+        "anchor_run_characters": 20,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 16,
+        "right_chunk_id": 17,
+        "seam_seconds": 2040.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "面",
+        "anchor_midpoint_seconds": 2040.06,
+        "anchor_owner": "right",
+        "matched_characters": 32,
+        "anchor_run_characters": 23,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 17,
+        "right_chunk_id": 18,
+        "seam_seconds": 2160.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "没",
+        "anchor_midpoint_seconds": 2160.12,
+        "anchor_owner": "right",
+        "matched_characters": 29,
+        "anchor_run_characters": 12,
+        "anchor_run_max_pair_delta_seconds": 0.04,
+        "ambiguity_resolution": "single-axis-dominated-weak-runs-v1",
+        "ambiguity_checked_run_count": 3,
+        "ambiguity_checked_pair_count": 29,
+        "match_run_repair": {
+          "method": "single-axis-dominated-weak-runs-v1",
+          "selected_anchor_source": "nearest-tight-backbone-run",
+          "candidate_proof": {
+            "window_seconds": [
+              2157.0,
+              2163.0
+            ],
+            "left_items": [
+              {
+                "side": "left",
+                "global_index": 551,
+                "decoded_character_span": [
+                  551,
+                  552
+                ],
+                "cleaned_text": "吧",
+                "start_seconds": 2156.68,
+                "end_seconds": 2156.92
+              },
+              {
+                "side": "left",
+                "global_index": 552,
+                "decoded_character_span": [
+                  552,
+                  553
+                ],
+                "cleaned_text": "嗯",
+                "start_seconds": 2157.24,
+                "end_seconds": 2157.4
+              },
+              {
+                "side": "left",
+                "global_index": 553,
+                "decoded_character_span": [
+                  553,
+                  554
+                ],
+                "cleaned_text": "前",
+                "start_seconds": 2157.64,
+                "end_seconds": 2157.8
+              },
+              {
+                "side": "left",
+                "global_index": 554,
+                "decoded_character_span": [
+                  554,
+                  555
+                ],
+                "cleaned_text": "两",
+                "start_seconds": 2157.8,
+                "end_seconds": 2157.88
+              },
+              {
+                "side": "left",
+                "global_index": 555,
+                "decoded_character_span": [
+                  555,
+                  556
+                ],
+                "cleaned_text": "年",
+                "start_seconds": 2157.88,
+                "end_seconds": 2158.04
+              },
+              {
+                "side": "left",
+                "global_index": 556,
+                "decoded_character_span": [
+                  556,
+                  557
+                ],
+                "cleaned_text": "年",
+                "start_seconds": 2158.2,
+                "end_seconds": 2158.6
+              },
+              {
+                "side": "left",
+                "global_index": 557,
+                "decoded_character_span": [
+                  557,
+                  558
+                ],
+                "cleaned_text": "赞",
+                "start_seconds": 2159.0,
+                "end_seconds": 2159.08
+              },
+              {
+                "side": "left",
+                "global_index": 558,
+                "decoded_character_span": [
+                  558,
+                  559
+                ],
+                "cleaned_text": "助",
+                "start_seconds": 2159.08,
+                "end_seconds": 2159.16
+              },
+              {
+                "side": "left",
+                "global_index": 559,
+                "decoded_character_span": [
+                  559,
+                  560
+                ],
+                "cleaned_text": "费",
+                "start_seconds": 2159.16,
+                "end_seconds": 2159.24
+              },
+              {
+                "side": "left",
+                "global_index": 560,
+                "decoded_character_span": [
+                  560,
+                  561
+                ],
+                "cleaned_text": "没",
+                "start_seconds": 2159.24,
+                "end_seconds": 2159.4
+              },
+              {
+                "side": "left",
+                "global_index": 561,
+                "decoded_character_span": [
+                  561,
+                  562
+                ],
+                "cleaned_text": "那",
+                "start_seconds": 2159.4,
+                "end_seconds": 2159.48
+              },
+              {
+                "side": "left",
+                "global_index": 562,
+                "decoded_character_span": [
+                  562,
+                  563
+                ],
+                "cleaned_text": "么",
+                "start_seconds": 2159.48,
+                "end_seconds": 2159.48
+              },
+              {
+                "side": "left",
+                "global_index": 563,
+                "decoded_character_span": [
+                  563,
+                  564
+                ],
+                "cleaned_text": "多",
+                "start_seconds": 2159.56,
+                "end_seconds": 2159.72
+              },
+              {
+                "side": "left",
+                "global_index": 564,
+                "decoded_character_span": [
+                  564,
+                  565
+                ],
+                "cleaned_text": "是",
+                "start_seconds": 2159.72,
+                "end_seconds": 2159.8
+              },
+              {
+                "side": "left",
+                "global_index": 565,
+                "decoded_character_span": [
+                  565,
+                  566
+                ],
+                "cleaned_text": "吧",
+                "start_seconds": 2159.8,
+                "end_seconds": 2159.88
+              },
+              {
+                "side": "left",
+                "global_index": 566,
+                "decoded_character_span": [
+                  566,
+                  567
+                ],
+                "cleaned_text": "没",
+                "start_seconds": 2159.96,
+                "end_seconds": 2160.28
+              },
+              {
+                "side": "left",
+                "global_index": 567,
+                "decoded_character_span": [
+                  567,
+                  568
+                ],
+                "cleaned_text": "那",
+                "start_seconds": 2160.28,
+                "end_seconds": 2160.36
+              },
+              {
+                "side": "left",
+                "global_index": 568,
+                "decoded_character_span": [
+                  568,
+                  569
+                ],
+                "cleaned_text": "么",
+                "start_seconds": 2160.36,
+                "end_seconds": 2160.44
+              },
+              {
+                "side": "left",
+                "global_index": 569,
+                "decoded_character_span": [
+                  569,
+                  570
+                ],
+                "cleaned_text": "那",
+                "start_seconds": 2160.44,
+                "end_seconds": 2161.0
+              },
+              {
+                "side": "left",
+                "global_index": 570,
+                "decoded_character_span": [
+                  570,
+                  571
+                ],
+                "cleaned_text": "退",
+                "start_seconds": 2161.08,
+                "end_seconds": 2161.32
+              },
+              {
+                "side": "left",
+                "global_index": 571,
+                "decoded_character_span": [
+                  571,
+                  572
+                ],
+                "cleaned_text": "费",
+                "start_seconds": 2161.32,
+                "end_seconds": 2161.48
+              },
+              {
+                "side": "left",
+                "global_index": 572,
+                "decoded_character_span": [
+                  572,
+                  573
+                ],
+                "cleaned_text": "呢",
+                "start_seconds": 2161.48,
+                "end_seconds": 2161.56
+              },
+              {
+                "side": "left",
+                "global_index": 573,
+                "decoded_character_span": [
+                  573,
+                  574
+                ],
+                "cleaned_text": "退",
+                "start_seconds": 2161.56,
+                "end_seconds": 2161.72
+              },
+              {
+                "side": "left",
+                "global_index": 574,
+                "decoded_character_span": [
+                  574,
+                  575
+                ],
+                "cleaned_text": "费",
+                "start_seconds": 2161.8,
+                "end_seconds": 2161.88
+              },
+              {
+                "side": "left",
+                "global_index": 575,
+                "decoded_character_span": [
+                  575,
+                  576
+                ],
+                "cleaned_text": "拿",
+                "start_seconds": 2161.88,
+                "end_seconds": 2162.04
+              },
+              {
+                "side": "left",
+                "global_index": 576,
+                "decoded_character_span": [
+                  576,
+                  577
+                ],
+                "cleaned_text": "到",
+                "start_seconds": 2162.04,
+                "end_seconds": 2162.12
+              },
+              {
+                "side": "left",
+                "global_index": 577,
+                "decoded_character_span": [
+                  577,
+                  578
+                ],
+                "cleaned_text": "了",
+                "start_seconds": 2162.12,
+                "end_seconds": 2162.12
+              },
+              {
+                "side": "left",
+                "global_index": 578,
+                "decoded_character_span": [
+                  578,
+                  579
+                ],
+                "cleaned_text": "吗",
+                "start_seconds": 2162.12,
+                "end_seconds": 2162.36
+              },
+              {
+                "side": "left",
+                "global_index": 579,
+                "decoded_character_span": [
+                  579,
+                  580
+                ],
+                "cleaned_text": "没",
+                "start_seconds": 2162.44,
+                "end_seconds": 2162.68
+              },
+              {
+                "side": "left",
+                "global_index": 580,
+                "decoded_character_span": [
+                  580,
+                  581
+                ],
+                "cleaned_text": "有",
+                "start_seconds": 2162.68,
+                "end_seconds": 2162.76
+              },
+              {
+                "side": "left",
+                "global_index": 581,
+                "decoded_character_span": [
+                  581,
+                  582
+                ],
+                "cleaned_text": "啊",
+                "start_seconds": 2162.76,
+                "end_seconds": 2162.84
+              },
+              {
+                "side": "left",
+                "global_index": 582,
+                "decoded_character_span": [
+                  582,
+                  583
+                ],
+                "cleaned_text": "退",
+                "start_seconds": 2163.32,
+                "end_seconds": 2163.56
+              }
+            ],
+            "right_items": [
+              {
+                "side": "right",
+                "global_index": 8,
+                "decoded_character_span": [
+                  8,
+                  9
+                ],
+                "cleaned_text": "吧",
+                "start_seconds": 2156.68,
+                "end_seconds": 2156.92
+              },
+              {
+                "side": "right",
+                "global_index": 9,
+                "decoded_character_span": [
+                  9,
+                  10
+                ],
+                "cleaned_text": "嗯",
+                "start_seconds": 2157.24,
+                "end_seconds": 2157.48
+              },
+              {
+                "side": "right",
+                "global_index": 10,
+                "decoded_character_span": [
+                  10,
+                  11
+                ],
+                "cleaned_text": "前",
+                "start_seconds": 2157.64,
+                "end_seconds": 2157.8
+              },
+              {
+                "side": "right",
+                "global_index": 11,
+                "decoded_character_span": [
+                  11,
+                  12
+                ],
+                "cleaned_text": "两",
+                "start_seconds": 2157.8,
+                "end_seconds": 2157.88
+              },
+              {
+                "side": "right",
+                "global_index": 12,
+                "decoded_character_span": [
+                  12,
+                  13
+                ],
+                "cleaned_text": "年",
+                "start_seconds": 2157.88,
+                "end_seconds": 2158.04
+              },
+              {
+                "side": "right",
+                "global_index": 13,
+                "decoded_character_span": [
+                  13,
+                  14
+                ],
+                "cleaned_text": "赞",
+                "start_seconds": 2159.0,
+                "end_seconds": 2159.08
+              },
+              {
+                "side": "right",
+                "global_index": 14,
+                "decoded_character_span": [
+                  14,
+                  15
+                ],
+                "cleaned_text": "助",
+                "start_seconds": 2159.08,
+                "end_seconds": 2159.16
+              },
+              {
+                "side": "right",
+                "global_index": 15,
+                "decoded_character_span": [
+                  15,
+                  16
+                ],
+                "cleaned_text": "费",
+                "start_seconds": 2159.16,
+                "end_seconds": 2159.24
+              },
+              {
+                "side": "right",
+                "global_index": 16,
+                "decoded_character_span": [
+                  16,
+                  17
+                ],
+                "cleaned_text": "没",
+                "start_seconds": 2159.24,
+                "end_seconds": 2159.4
+              },
+              {
+                "side": "right",
+                "global_index": 17,
+                "decoded_character_span": [
+                  17,
+                  18
+                ],
+                "cleaned_text": "那",
+                "start_seconds": 2159.4,
+                "end_seconds": 2159.48
+              },
+              {
+                "side": "right",
+                "global_index": 18,
+                "decoded_character_span": [
+                  18,
+                  19
+                ],
+                "cleaned_text": "么",
+                "start_seconds": 2159.48,
+                "end_seconds": 2159.56
+              },
+              {
+                "side": "right",
+                "global_index": 19,
+                "decoded_character_span": [
+                  19,
+                  20
+                ],
+                "cleaned_text": "多",
+                "start_seconds": 2159.56,
+                "end_seconds": 2159.72
+              },
+              {
+                "side": "right",
+                "global_index": 20,
+                "decoded_character_span": [
+                  20,
+                  21
+                ],
+                "cleaned_text": "是",
+                "start_seconds": 2159.72,
+                "end_seconds": 2159.8
+              },
+              {
+                "side": "right",
+                "global_index": 21,
+                "decoded_character_span": [
+                  21,
+                  22
+                ],
+                "cleaned_text": "吧",
+                "start_seconds": 2159.8,
+                "end_seconds": 2159.88
+              },
+              {
+                "side": "right",
+                "global_index": 22,
+                "decoded_character_span": [
+                  22,
+                  23
+                ],
+                "cleaned_text": "没",
+                "start_seconds": 2159.96,
+                "end_seconds": 2160.28
+              },
+              {
+                "side": "right",
+                "global_index": 23,
+                "decoded_character_span": [
+                  23,
+                  24
+                ],
+                "cleaned_text": "那",
+                "start_seconds": 2160.28,
+                "end_seconds": 2160.36
+              },
+              {
+                "side": "right",
+                "global_index": 24,
+                "decoded_character_span": [
+                  24,
+                  25
+                ],
+                "cleaned_text": "么",
+                "start_seconds": 2160.36,
+                "end_seconds": 2160.44
+              },
+              {
+                "side": "right",
+                "global_index": 25,
+                "decoded_character_span": [
+                  25,
+                  26
+                ],
+                "cleaned_text": "多",
+                "start_seconds": 2160.44,
+                "end_seconds": 2160.52
+              },
+              {
+                "side": "right",
+                "global_index": 26,
+                "decoded_character_span": [
+                  26,
+                  27
+                ],
+                "cleaned_text": "那",
+                "start_seconds": 2160.52,
+                "end_seconds": 2161.0
+              },
+              {
+                "side": "right",
+                "global_index": 27,
+                "decoded_character_span": [
+                  27,
+                  28
+                ],
+                "cleaned_text": "退",
+                "start_seconds": 2161.08,
+                "end_seconds": 2161.32
+              },
+              {
+                "side": "right",
+                "global_index": 28,
+                "decoded_character_span": [
+                  28,
+                  29
+                ],
+                "cleaned_text": "费",
+                "start_seconds": 2161.32,
+                "end_seconds": 2161.4
+              },
+              {
+                "side": "right",
+                "global_index": 29,
+                "decoded_character_span": [
+                  29,
+                  30
+                ],
+                "cleaned_text": "呢",
+                "start_seconds": 2161.4,
+                "end_seconds": 2161.56
+              },
+              {
+                "side": "right",
+                "global_index": 30,
+                "decoded_character_span": [
+                  30,
+                  31
+                ],
+                "cleaned_text": "退",
+                "start_seconds": 2161.56,
+                "end_seconds": 2161.72
+              },
+              {
+                "side": "right",
+                "global_index": 31,
+                "decoded_character_span": [
+                  31,
+                  32
+                ],
+                "cleaned_text": "费",
+                "start_seconds": 2161.72,
+                "end_seconds": 2161.88
+              },
+              {
+                "side": "right",
+                "global_index": 32,
+                "decoded_character_span": [
+                  32,
+                  33
+                ],
+                "cleaned_text": "拿",
+                "start_seconds": 2161.88,
+                "end_seconds": 2162.04
+              },
+              {
+                "side": "right",
+                "global_index": 33,
+                "decoded_character_span": [
+                  33,
+                  34
+                ],
+                "cleaned_text": "到",
+                "start_seconds": 2162.04,
+                "end_seconds": 2162.12
+              },
+              {
+                "side": "right",
+                "global_index": 34,
+                "decoded_character_span": [
+                  34,
+                  35
+                ],
+                "cleaned_text": "了",
+                "start_seconds": 2162.12,
+                "end_seconds": 2162.2
+              },
+              {
+                "side": "right",
+                "global_index": 35,
+                "decoded_character_span": [
+                  35,
+                  36
+                ],
+                "cleaned_text": "吗",
+                "start_seconds": 2162.2,
+                "end_seconds": 2162.28
+              },
+              {
+                "side": "right",
+                "global_index": 36,
+                "decoded_character_span": [
+                  36,
+                  37
+                ],
+                "cleaned_text": "没",
+                "start_seconds": 2162.44,
+                "end_seconds": 2162.68
+              },
+              {
+                "side": "right",
+                "global_index": 37,
+                "decoded_character_span": [
+                  37,
+                  38
+                ],
+                "cleaned_text": "有",
+                "start_seconds": 2162.68,
+                "end_seconds": 2162.76
+              },
+              {
+                "side": "right",
+                "global_index": 38,
+                "decoded_character_span": [
+                  38,
+                  39
+                ],
+                "cleaned_text": "啊",
+                "start_seconds": 2162.76,
+                "end_seconds": 2162.84
+              },
+              {
+                "side": "right",
+                "global_index": 39,
+                "decoded_character_span": [
+                  39,
+                  40
+                ],
+                "cleaned_text": "退",
+                "start_seconds": 2163.24,
+                "end_seconds": 2163.48
+              }
+            ]
+          },
+          "selected_anchor_pair": [
+            566,
+            22
+          ],
+          "resulting_cut": {
+            "left_stop": 566,
+            "right_start": 22
+          }
+        }
+      },
+      {
+        "left_chunk_id": 18,
+        "right_chunk_id": 19,
+        "seam_seconds": 2280.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "不",
+        "anchor_midpoint_seconds": 2279.96,
+        "anchor_owner": "left",
+        "matched_characters": 36,
+        "anchor_run_characters": 23,
+        "anchor_run_max_pair_delta_seconds": 0.08
+      },
+      {
+        "left_chunk_id": 19,
+        "right_chunk_id": 20,
+        "seam_seconds": 2400.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "我",
+        "anchor_midpoint_seconds": 2400.6,
+        "anchor_owner": "right",
+        "matched_characters": 16,
+        "anchor_run_characters": 7,
+        "anchor_run_max_pair_delta_seconds": 0.44
+      },
+      {
+        "left_chunk_id": 20,
+        "right_chunk_id": 21,
+        "seam_seconds": 2520.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "次",
+        "anchor_midpoint_seconds": 2519.92,
+        "anchor_owner": "left",
+        "matched_characters": 28,
+        "anchor_run_characters": 19,
+        "anchor_run_max_pair_delta_seconds": 0.08
+      },
+      {
+        "left_chunk_id": 21,
+        "right_chunk_id": 22,
+        "seam_seconds": 2640.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "教",
+        "anchor_midpoint_seconds": 2640.04,
+        "anchor_owner": "right",
+        "matched_characters": 31,
+        "anchor_run_characters": 24,
+        "anchor_run_max_pair_delta_seconds": 0.44,
+        "ambiguity_resolution": "ownership-cut-consistent-v1",
+        "ambiguity_checked_run_count": 3,
+        "ambiguity_checked_pair_count": 37
+      },
+      {
+        "left_chunk_id": 22,
+        "right_chunk_id": 23,
+        "seam_seconds": 2760.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "后",
+        "anchor_midpoint_seconds": 2759.68,
+        "anchor_owner": "left",
+        "matched_characters": 32,
+        "anchor_run_characters": 31,
+        "anchor_run_max_pair_delta_seconds": 0.04,
+        "ambiguity_resolution": "ownership-cut-consistent-v1",
+        "ambiguity_checked_run_count": 2,
+        "ambiguity_checked_pair_count": 34
+      },
+      {
+        "left_chunk_id": 23,
+        "right_chunk_id": 24,
+        "seam_seconds": 2880.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "现",
+        "anchor_midpoint_seconds": 2879.94,
+        "anchor_owner": "left",
+        "matched_characters": 30,
+        "anchor_run_characters": 28,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 24,
+        "right_chunk_id": 25,
+        "seam_seconds": 3000.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "越",
+        "anchor_midpoint_seconds": 3000.0,
+        "anchor_owner": "left",
+        "matched_characters": 25,
+        "anchor_run_characters": 25,
+        "anchor_run_max_pair_delta_seconds": 0.08
+      },
+      {
+        "left_chunk_id": 25,
+        "right_chunk_id": 26,
+        "seam_seconds": 3120.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "个",
+        "anchor_midpoint_seconds": 3120.04,
+        "anchor_owner": "right",
+        "matched_characters": 26,
+        "anchor_run_characters": 26,
+        "anchor_run_max_pair_delta_seconds": 0.12
+      },
+      {
+        "left_chunk_id": 26,
+        "right_chunk_id": 27,
+        "seam_seconds": 3240.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "等",
+        "anchor_midpoint_seconds": 3239.88,
+        "anchor_owner": "left",
+        "matched_characters": 30,
+        "anchor_run_characters": 27,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 27,
+        "right_chunk_id": 28,
+        "seam_seconds": 3360.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "赛",
+        "anchor_midpoint_seconds": 3360.1,
+        "anchor_owner": "right",
+        "matched_characters": 29,
+        "anchor_run_characters": 20,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 28,
+        "right_chunk_id": 29,
+        "seam_seconds": 3480.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "明",
+        "anchor_midpoint_seconds": 3480.34,
+        "anchor_owner": "right",
+        "matched_characters": 27,
+        "anchor_run_characters": 14,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 29,
+        "right_chunk_id": 30,
+        "seam_seconds": 3600.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "是",
+        "anchor_midpoint_seconds": 3599.96,
+        "anchor_owner": "left",
+        "matched_characters": 28,
+        "anchor_run_characters": 15,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 30,
+        "right_chunk_id": 31,
+        "seam_seconds": 3720.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "休",
+        "anchor_midpoint_seconds": 3720.36,
+        "anchor_owner": "right",
+        "matched_characters": 29,
+        "anchor_run_characters": 25,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 31,
+        "right_chunk_id": 32,
+        "seam_seconds": 3840.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "的",
+        "anchor_midpoint_seconds": 3840.0,
+        "anchor_owner": "left",
+        "matched_characters": 26,
+        "anchor_run_characters": 10,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 32,
+        "right_chunk_id": 33,
+        "seam_seconds": 3960.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "年",
+        "anchor_midpoint_seconds": 3960.1,
+        "anchor_owner": "right",
+        "matched_characters": 26,
+        "anchor_run_characters": 19,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 33,
+        "right_chunk_id": 34,
+        "seam_seconds": 4080.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "嘛",
+        "anchor_midpoint_seconds": 4080.06,
+        "anchor_owner": "right",
+        "matched_characters": 27,
+        "anchor_run_characters": 13,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 34,
+        "right_chunk_id": 35,
+        "seam_seconds": 4200.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "啊",
+        "anchor_midpoint_seconds": 4199.7,
+        "anchor_owner": "left",
+        "matched_characters": 22,
+        "anchor_run_characters": 22,
+        "anchor_run_max_pair_delta_seconds": 0.08
+      },
+      {
+        "left_chunk_id": 35,
+        "right_chunk_id": 36,
+        "seam_seconds": 4320.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "没",
+        "anchor_midpoint_seconds": 4320.0,
+        "anchor_owner": "left",
+        "matched_characters": 38,
+        "anchor_run_characters": 38,
+        "anchor_run_max_pair_delta_seconds": 0.36
+      },
+      {
+        "left_chunk_id": 36,
+        "right_chunk_id": 37,
+        "seam_seconds": 4440.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "的",
+        "anchor_midpoint_seconds": 4440.08,
+        "anchor_owner": "right",
+        "matched_characters": 31,
+        "anchor_run_characters": 31,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 37,
+        "right_chunk_id": 38,
+        "seam_seconds": 4560.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "名",
+        "anchor_midpoint_seconds": 4560.02,
+        "anchor_owner": "right",
+        "matched_characters": 32,
+        "anchor_run_characters": 32,
+        "anchor_run_max_pair_delta_seconds": 0.08
+      },
+      {
+        "left_chunk_id": 38,
+        "right_chunk_id": 39,
+        "seam_seconds": 4680.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "还",
+        "anchor_midpoint_seconds": 4680.22,
+        "anchor_owner": "right",
+        "matched_characters": 23,
+        "anchor_run_characters": 18,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 39,
+        "right_chunk_id": 40,
+        "seam_seconds": 4800.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "价",
+        "anchor_midpoint_seconds": 4800.04,
+        "anchor_owner": "right",
+        "matched_characters": 34,
+        "anchor_run_characters": 34,
+        "anchor_run_max_pair_delta_seconds": 0.12
+      },
+      {
+        "left_chunk_id": 40,
+        "right_chunk_id": 41,
+        "seam_seconds": 4920.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "这",
+        "anchor_midpoint_seconds": 4920.0,
+        "anchor_owner": "left",
+        "matched_characters": 27,
+        "anchor_run_characters": 27,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 41,
+        "right_chunk_id": 42,
+        "seam_seconds": 5040.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "他",
+        "anchor_midpoint_seconds": 5040.04,
+        "anchor_owner": "right",
+        "matched_characters": 38,
+        "anchor_run_characters": 38,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 42,
+        "right_chunk_id": 43,
+        "seam_seconds": 5160.0,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "两",
+        "anchor_midpoint_seconds": 5160.12,
+        "anchor_owner": "right",
+        "matched_characters": 26,
+        "anchor_run_characters": 4,
+        "anchor_run_max_pair_delta_seconds": 0.04
+      },
+      {
+        "left_chunk_id": 43,
+        "right_chunk_id": 44,
+        "seam_seconds": 5229.1,
+        "strategy": "exact-time-anchor",
+        "anchor_text": "啊",
+        "anchor_midpoint_seconds": 5229.01,
+        "anchor_owner": "left",
+        "matched_characters": 29,
+        "anchor_run_characters": 27,
+        "anchor_run_max_pair_delta_seconds": 0.06
+      }
+    ]
+  },
+  "text": "好了，大家好，欢迎来到新一期播更很久的一期铁道子。今天的嘉宾是谁？请他自己跟大家打个招呼。好的，大家好，我是杨吹牛啊。你是杨春龙啊？那杨春龙最近有什么新外号？杨吹牛是新外号吗？他自己给自己起的吧？杨吹牛就是给自己起的外号嘛，就是爱吹牛啊。你最近也没吹什么牛嘛？我觉得你一直都还好吧？我去丽江吹牛嘛，天天。春龙，大家都非常的想念你啊！不过还好，你最近出来跑了几场比赛，理解了大家这个相思之苦啊。嗯，感谢大家的支持吧。如果没有这么多人支持的话，我现在可能还在种地啊。有没有感觉你现在出来之后，大家对你的关注变多了？肯定嘛，因为自己出来了，然后现在感谢吧，感谢感谢这么多人支持，这么多人关注自己吧。然后上一场比赛吧，就是我跑着跑着说的，别人都看不上我，偏偏我最不争气，就是这句话搞了我。哎呀，这几天跑了上场比赛，感觉挺烦恼的，因为上场比赛不好，对自己自信心造成了一定的挫折，直接是挫折了。因为我这两年多吧，两年三年接近三年，我所有国内比赛几乎都是前三嘛。所以你看前面那那一场跑了前二十都没进，给我跑跑自闭了。我本来说退赛了，然后后面想着不是这个比赛要比嘛，三场才能参加总决赛嘛，不能连门票都没买到啊！一直坚持走走又跑跑，走走又跑跑，坚持完了那天跑了两公里，都是个嘴皮子都已经跑白了，我都不知道怎么回事那天。所以你觉得本来那天状态就很差？那也不能归咎于状态吧，不行就不行啊！等下次行了，我再说我状态差就急了。所以跟大家补充一下，杨春龙刚刚在上周跑了一场萨洛蒙的这个黄金联赛，叫黄岩九峰。那这个是一个中国现在上半年二零二零年竞争最激烈的越野比赛，可能甚至都没有之一。就全国基本上所有的中短距离的好手，除了几个长距离要比赛一百公里以上级别的运动员之外，都去了。然后赛前呢，春龙被非常的看好，因为大家都觉得他这个能力很强，而且两三周之前这个咳嗽发烧、高领功的比赛越野比赛跑了一个第一，而且呢，他那场比赛单场的这个世界越野跑协会给他的这个评分打了九百十几分，大家就觉得哇靠，那杨春龙这场比赛应该是表现非常好，非常的强。结果呢，他在比赛仅仅领先了三分钟还不知道五分钟，然后就一路掉掉掉掉掉掉。我那天因为没有在现场，我看直播讲，春龙今天这么猛呢，出去就干的那么凶，结果好像没了。结果整个比赛下来，他比了二十二十多名，而且他更惨的是，比赛之后人家采访别的越野运动员，别的越野运动员跟他说：“这个嗯，跑马拉松的过来跑越野，还得再练的呀。我们这么多年越野跑，这个不是白跑的，不是白练。”所以说，杨春龙这个也很有意思啊！你上半年到现在都已经四月份了，其实你也没跑什么马拉松，基本上都在跑越野比赛。究竟是个什么情况？转行了吗？打算准备跑跑越野吧？不是，我前段时间说先把越野跑起来，然后把肌肉转换之类的练起来，再去跑这个马拉松。我下半年马拉松的话，可能会去跑北京马拉松吧，因为北京马拉松也是锦标赛。然后主要在现在锦标赛跟你有关系啊？没有，那那我去跟着大家跑，希望我能跑个好名次啊！不是好名次啊，你是因为因为锦标赛这个国内的好手很多，嗯啊，能够一起一起一起跑。你现在记得你到底是哪一天离队的吗？我啊，我现在仔细想想是二月八号跑的路啊，应该是二月八号。所以这件事情现在能展开讲了吗？这个事情还不能讲哦。主要是年纪也起来了，可能训练的话，现在我们云南这边小队员的冲击很大，因为前几天女的，特别是女的，我感觉我们云南零四年以内的已经没必要训练了，我直接说没必要训练了，因为零八年的直接已经甩开他们一个档次了，他们练个锤子哟。你这段是能最后要减掉的，还是不能减的啊？这个不用减，没啥。我感觉女孩的话，零四年以内在云南，除非像罗霞还有其他很厉害的几个，其他的就名不见传这种已经可以下队了。因为零八年这这次你前两天没看见成绩啊？三千米上了十分二十秒。零八年的，是啊，我们安徽有一个我启蒙教练带的，一零年的八百米已经跑到了两分零八了。嗯，一零年才十六岁，哇，谁要说两分零八，好快啊！因为我们云南这届全运会比以往那几届都强，以往那几届的话，只是说你提前一两年你就锁定冠军了。但是这真的是你退役的主因吗？肯定嘛，我都快跑不过小的了，我不退干嘛？但你是跑马拉松，真的小的超过你的还是没几个的呀？那有啊，到时候什么罗天凡呀，什么赵朝传呀，他们这几个不是一起来就把我干的？赵朝传，我到现在也没见他起来。嗯，说不定万一一下子他们起来了，全运会我就不能比了，那我不是白白耽误四年青春吗？已经耽误耽误四年了，这个已经也不能算耽误吧，只是说自己没本事。所以呢，现在出来了之后什么样的感觉？出来了之后才发现我又想回去了啊！我又说实话，出出来了之后，我还想按时间训练，按时间吃饭，很难是不是？三点一线，然后出来的话就感觉每天都浑浑噩噩的，在干什么也不知道，什么十一一两点吃饭的时候都有，有些时候中午一两点。嗯，不不知道自己在干嘛，反正你现在吃饭主要怎么吃呢？就叫外卖，打游击嘛，到处混吃嘛。早点的话，以前在基地是很好的，你起床就能吃早点。然后现在的话，你有些时候七点，有些丽江那边早点铺他没开门。你们在丽江是到外面吃，他不是你们住的。没没有我我自己在外面。啊，你没跟杨克武他们住到一起是吧？嗯，我我自己应该是囊中有点羞涩，然后就没和他们住在一起了。那我真的觉得你要出来训练，你对自己吃住这方面还是要，呃，舍得去投入的。舍得投的是，啊，囊中羞涩。其实你有钱，你只是不舍得花。哎，对。自己去附近那个牛肉店里面吃嘛，然后感觉一个肉一个素菜一个汤，然后八十块一顿，八十块一顿，啊，也就可以了，不便宜了吧？八十。你说的是中午餐、早饭嘛？早饭吃八十，他的早饭就是中午饭的饭，中午饭就他们早餐叫早点，他们说的早饭就是我们说的午饭。对对。嗯，吃完了，然后晚晚饭就混吃了嘛。晚饭就是我杨克武啊、杨小华呀他们，我彭建华呀、蒋仁佳呀，还有三级啊，他们就轮轮换着请客是吧？我轮换着混他们吃，不是？对，他们轮换着请你嘛。这真是我，你这个面子很大，我听到就老吃老子还是吃得开的，到哪都吃得开，请吃饭的。脸大嘛，脸大就混吃嘛，还有这些兄弟朋友的支持与照顾，他们吃饭就一叫我，我就去了嘛。然后吃完我就说，那我拍拍屁股我走了。没事，这几个老表也不差多少钱，肯定差嘛。谁的钱都是钱呀！啊，早不能这种混吃啊。所以我现在好好努力了。我现在差不多一个月在外面要花个，连上吃住的话，差不多要花个八千多左右。那我想问你啊，你前面说杨克武他们，你们跟他们住一起吃一起，那我想帮我们的这个听众分享一下，那他们这样的话一天大概要花多少钱？你说跟他们在一起啊，贵贵，他们一天大概要花多少钱？虽然他们这个钱可能是省里出的。省里出的话，一个人头差不多应该是吃住的话，应该是两百五六吧，我觉得应该是。那两百五六，这存起来七千五百块钱，你这个一一个月要八千多，不也差不多吗？啊，那那没有这种不能比。在里面吃的话，就是人家给你吃的那些；在外面吃的话，就自由搭配，而且想吃的很丰富。啊，想吃点小炒黄牛肉，小炒黄牛肉，水煮肉片，就水煮肉片。如果在在里面的话，钱是开了，但是很单一，就就那么几种。我是就想可能后期还是要做点改变吧。现在就是，但是运动员的饮食就是就是应该规律化，越来越好。就像我，我感觉我前段时间就有点不自律了，早点不怎么吃，然后可能这次比赛大多数都是因为不吃早点，然后那天比赛前的话，我是九点多才就吃了，吃了两个馒头，喝了一碗粥，然后十二点跑，才跑了一下子，鼻子就跑白了，跑懵了，还没起跑呢，那个孙老师那个精神状态、精神面貌就已经完全和以往比赛不一样。这场比赛没比好，我认其实。你这个也是有点离谱啊。那那你觉得你现在出来了？我们现在出来也两个多月了。那你觉得你这个离队之后最大的挑战是什么？最大的挑战，我觉得最大的挑战可能就是就是不自律。最大的挑战就是自己，自己的不自律，自己假装很努力。那你在训练刚刚讲的不都是在日常的作息啊、饮食上面？就是晚上睡觉有没有出现熬夜的情况呢？晚上睡不着，早上起不来这个样子。事情一搞就晚上就十二点多才睡觉，然后一睡觉的话就睡了之后七点多会醒，我六点五十我会按时醒的，因为以前在我们基地里面生物钟已经。哎，你这样你睡眠是不够的呀，你只只能睡到六个多小时，肯肯定不够，肯定不够，这个肯定要改，要要不改的话，以后只能完喽，以后完球喽。那训练方面呢？能做到就是系系统的一天两练吗？可以可以，这个训练就是，尽管说再累的话，因为像有些教练说的，跟着狼是找肉吃，跟着狗是找粮吃，那肯定是。现在我跟着杨克谷他们嘛，跟着杨克谷他们，我这两个高高山男孩，老自立了，他两个老猛了。孙老师在丽江那里跑那个十二公里，可以跑三十七分十几秒，连着干就一个星期干一次这种。他们是干一堂强做，慢跑一天，然后干一天混压，慢慢跑一天，又干一天练这种。嗯。太猛了，跟跟着他们训练，我感觉我学到了很多东西，就是啊，把自己的性子给熬一下，因为我们云南这边以前训练的话，就是差不多八点四十训练，差不多十十练五十以前是肯定下训练了。嗯。然后在那边跟他们练的话是九点开始练，有些时候练到十一点半了，都练了地下堂了，我都我都口袋里面揣能量胶了。有些时候他们时间那么长，长老长了。嗯。练的多，像你刚刚不是说他跑一趟十二公里，他其他的还有什么课加进去，能够把一堂训练时间那么长？那你准备活动十五分钟，十二公里混压，然后再一分四十秒、一分五十秒跑五圈，跑完接着三公里九分以内，九分以内跑完之后，然后再慢跑五分钟，慢跑五分钟，再来一个一公里两分五十秒左右。嗯。然后再来个四百米，就是四百米、三百米、二百米、一百米，这是高教练的计划吗？啊，他们自己练的，然后我我老佩服了这些这几个才是自立身体啊！我感觉全国有好多人，除了吴哥了，我们辉哥他们有几个董哥，他们说他们自立，我是觉得我真佩服你们真自立。像我老混压这几个，他们说他们自立，我都是不相信。老坤是谁？蒋八坤啊？蒋八？蒋八坤吗？什么老坤啊？老高啊？老雨啊？这几个我们对这几个是除了真的不自立。我觉得你们主要是有这个助教练看着比较严。嗯，是，我们助教练真的看着比较严，如果看的不严的话，我们都不可能有这么高水平。那你现在没人看了，怎么办？你过年也胖了，不少对不对？还发照片给我看，肚子上一块肉。那我在丽江那边，杨克古监督啊，他喊我训练了，我告诉他，老表老表，可不可以你帮我练了？我不练了。然后他就骑着共享单车来喊我，老表，赶紧下来了，赶紧下来了。然后我就有跟着，有些时候真的不想骑啊，有时候真的不想骑，我就说，反正又没人管我，我我起来凑凑。其实人每个人都都有个多心，但我们这种的多心是感觉是太那种了。其实体育孙老师就是这种，你跑步只要你成功了，你说什么都对，你说你几点起床啊，几点按时睡觉啊，别人都相信嘛，是不是嘛？其实别人又不知道他，他半夜两三点呀，两三点跑出去吃烧烤啊，什么熬夜啊，熬夜去唱歌啊，开ktv啊，什么到处玩这种。其实他又不会说出来，他别人采访他就会说，我做到了，我做到了，我真是做到了，我证明自己了。那是他成功了呢，那好多人没成功的，他还不是好好练了，还不是好好努力了？奈何社会就就这种嘛？你说练体育的人有这么多人，每个人都努力了，每个人都成功了，那还得了？那就没失败的人了，这。那你觉得天赋和努力哪个更重要？我感觉现在我摸爬滚打这么多年，我感觉天赋最重要啊。努力的话可以说可以占个，像我们长距离马拉松的话，占个百分之六十左右。嗯，在马拉松这个项目里面，努力占比会大一点，我觉得。嗯，努力会占一点，但有的项目确实是像你所说的，我天天抽烟喝酒，该玩的玩了，什么都对，什么都玩，然后照样可以拿冠军。就是就是天赋的占比特别的重。你看嘛，现在就可以做个比喻，就我们云南队的，有个他们队有个叫兰荣健的，嗯，比我小两岁吧，应该他他是每天每天早上九点吃完饭一回去，然后看书，看完书，然后泡脚泡一个小时的脚，然后到九点左右写训练日记，写完了训练日记就每天晚上吧，九点半啊，每天他都三点一线，很那种，就九点半就准时睡觉，对他训练很认真，然后训练也很认真，很努力，很刻苦，就是比赛比不出来，那就是什么？这这就词语是，你是看起来很努力了，还是竞技体育？竞技体育是这样的，天赋可以决定很大的，就是比重。你看嘛，像前段时间比全运会的时候，前年嘛，前年有段时间我直接六天，我每个星期只练六天，我一个月都可以跑到一千二百公里。后后面我跑了嘛，主要是我没成功。要是我成功了，我也可以说一千二百公里，你们跑过吗？我跑了。问题我没成功，我不能说这个词语嘛啊？谁不努力？我们所有练体育的，走体育这条路的人，都走了这么多年，十几年了，八九年这些都懂的，懂的都懂，都努力了，奈何只是说没收获嘛啊？嗯，那你现在，你现在离队了，自己出来做一个职业运动员了嘛？你现在主要就是比赛训练，对吧？那嗯，你以前可能定义的成功是我要跑全运会，我要站上全运会的赛场是一个成功。那你现在离开了之后，你怎么定义你的目标是什么？或者你怎么觉得你走出来之后你成功了呢？现在我的目标就是二幺零，二幺零是肯定要跑的，因为二幺零这个就像，就跟我们好多跑者说他要跑三十一样的，我这个二幺零我一是要跑了看看到底能不能跑，因为前段时间无锡马拉松一个杨克哥，一个索朗才仁这几个跑这个成绩我都懵了，因为很多比赛这两个都是在你后面，都是我带着跑他们哦，不是在我后面，都是我带着跑他们。那天我问索朗才仁说，你是搞什么？我一走你就跑个八分出来，我不走我天天带着你跑喊你带一下，你说你肚子疼，然后他怎么回答你的？他是说真的疼呀！我说你真的疼个锤子了，你真的疼，你到最后一公里你又跑去我前面去了。他就是装的。我有好多比赛，孙老师，好多人记着点疼。他前面前面我带着带着，我都带了三十多公里了。马拉松我带三十多公里是不得了的。怎么感觉你在说我？我我好像没怎么跟你说过。你你水平比我高，你肯定在我前面吧？你肯定是跟别人去了吧？然后跟了三十公里，我告诉他兄弟兄弟，有点酸，赶紧上来带一下。我这个汉子，他直接捏着肚子说啊，兄弟，我肚子疼，我不行了。然后然后我说好吧，兄弟。然后我就带，我就带了他八公里，然后三十八公里我开始掉速了，掉到三他二十秒了。他再后面缓了一下，他三分十秒他走了。后面后面他又他又跑在我前面二三十秒吧，然后下来他还来说谢谢你啊，兄弟。我说你谢个锤子！我喊你带一下你不带。上年十月份，北广州广州马拉松，我看我就一直带着他，我喊他来带他不带，然后我就也没有说别阻塞他，然后我也带，然后跑到三十二公里的时候，我告诉他啊，兄弟，我肚子疼，你走吧。然后我就告诉他我肚子疼，你走吧，他就真走了。然后一下走把我拉开了五十多米，那五十多米我是故意放的。然后我我一直在他后面跑着，后面他也跑的挺快，跑了个五六公里，我看见他动作变形了，在后面看见动作变形了，我就从后面冲，后面把他冲了嘛。这个策略是对的，因为如果我我一直带着他跑的话，我我很累。然后他再后面跟着，他很舒适嘛，舒适还舒适都挺好。然后这就是你的战术，就是啊。然后我我也就走他的路，让他无路可走。我也说兄弟，我肚子疼，你走吧，我可能要退赛了。你把他的战术用了。嗯，然后他他走了，他老开心了。后后面我就把他给超了，就在广州马拉松获得，虽然说成绩不怎么好，但是获得了一名宝贵的第二名。那是那天我在我在现场，那从你现在上半年月跑为主对吧？月也跑为主吧，可能这段时间再好好的磨合一下吧，不然的话不行啊，我就不信这个邪了。其实我说的，别人都看不上我，偏偏我最不珍惜这个，是我在调侃自己啊。其实很多人都很看得上我，很注重我，因为那天我一下来，他们说有人在看直播，我们跑野这边开直播，有人在那里骂架，不是有个有两个一千多个人那个粉丝群，我就告诉他们你们不要这种，然后他们说不好意思啊，实在没憋住就在那里骂了，下面的有些人都在那里骂他嘛，你们肯定是听脑残文，我都说我的粉丝很支持我，正如我支持他们一样，都一样相互支持嘛。然后他们太支持我，这次是我我不珍惜啊，只能怪自己。然后后面的话就好好的干，因为我还是觉得我上坡是有很大优势的，因为孙老师你是觉得我前两天比赛是前面跑出去是太快了，其实我觉得我跑上坡那天跑的已经是很放着了已经，因为我那天好好的分析了一下我的技术动作是，才跑出去动作就变形了，哪哪有人跑步是这种，对对，两个腿弯了，我还撇呢，我在想吹到这个什么上坡技术啊，就是我我一万跑是真正的这种真的，怎么那天冷了这个技术动作是，巴着腿跟那个潘长江鸭子走路是一样跑上去了，然后才跑了一下就不行了不行了，跑了怪球的了，现在就想着好好的搞搞，再去追上这个国内前三名的这些积分呀。那你训练月跑吗？训练，你说两两户，他们在一起的话，你应该不不跑这些山吧？跑，我也要做做爬楼梯吧。我一个星期去一趟，其实的话，孙老师你不用说刻意的去训练呀什么，其实多比两场比赛就比出来了。那天是本来没进，本来我还那个镜头一来，我还说给大家看看我的仰视下坡了。这我猜这种一百的，那个腿前侧这里感觉有个地方没进，然后应该是抬不起来，腿抬不起来就勾到那个树枝，差点摔倒了。然后另一只腿那种磕到，差点摔倒了。然后另一只踩到石头，差点差点崴脚了。后面我就不敢跑了。你现在出门比赛，肯定粉你这个两个一千多万的粉丝群里面，也肯定有要找你吃饭的。那你怎么处理啊？以前在队里谨言慎行，对吧？比赛之后接受采访，比赛前就算想出来溜达吃饭，肯定不行。你上次去跑宁波，后来看到晚上，我看你比完那天晚上还喝了酒，还喝了白酒。那你现在这个事情怎么办？你有想过吗？你还会长在旁边笑？问了一个经费的问题。不行啊，这种人就那种嘛，失败了就找借口。那天比赛，因为我本身那几天比赛，我本身没怎么练嘛，然后可能比赛那天也有点消耗，然后喝了点高度酒吧。其实，怎么来了？控制不住自己，这种就是其实就是自己的问题。这种东西，人教人的话，你是你是教不了的。事教事，你才能一次你就懂了。所以你确定以后还喝吗？不不喝了。茅台，茅台香不香？比完赛是不敢喝了，香倒是啊什么香啊？那种喝了之后倒是很很开心很快乐。第二天倒是难受死了。第二天直接又在那里拿方言说哪个汉子在带我喝酒，我锤死他这种一个那里酒。粉丝的话，我没每次去每个地方比赛，有好多人都来找我聊天，说在哪里啊吃个饭呀，咱们一起。然后都被我婉拒了，因为哎，虽然我喜欢混吃混喝，但是你这种就混去粉丝家里，这种行为是不行的吧？人家没有说要在家里请你吃饭，人家就是外面餐馆吃个饭，餐馆也不不行啊。以后这种还是因为上次高立共就宁波一跑完就跑高立共，刚发烧跑顶了，然后跑到三十公里，我在想到底为了什么呀？搞了这么累，现在还要这种啊？如果说不去喝那台酒的话，自己也不至于说跑的这么狼狈，这么难受啊。但是你看，你那个酒其实直接影响到现在。你到今天我们在录音的时候，你都还在咳嗽啊？那都还在咳一个月之前的事情了，一个多月之前，一个多月可能这个咳嗽要延迟到差不多五月中旬嘛，应该起码还有一个月。现在的话，这个病，所以大家一定要注意好身体啊！一定不要不要生病。生病了现在。比赛喝茅台是不是？嗯，也不是说比赛喝喝茅台，好好多跑友他一跑下来他就喜欢庆祝呀什么，他一定要注意好身体，是自己的。然后你可以说休息两天再喝，不要立马喝。孙老师，我直接劝后，我不能比我自己，我其实我认的，我我也是吃亏吃在这个酒身上。你看我无锡马拉松拿了第三，然后我很开心那晚上，我的这些好朋友也替我开心，我就畅饮了，随便畅饮了一箱五百七十毫升的一箱十二瓶畅饮了一箱，然后星期天晚上畅饮了嘛，星期天比赛，然后星期一回来，然后我们这里的老友啊，亲朋好友又给我庆祝了一下，然后我又不知不觉的干了一公斤啊。后面那个那个身体就消耗完了嘛，已经被酒酒是酒这种东西是消耗稀释你这个酒精血氧。那你是无锡回来也喝了，连着喝了好几天？啊，开心嘛，开心嘛，庆祝嘛。然后后面比赛比场地就感觉训练倒是不影响，因为训练的强度你是达不到比赛的强度的。嗯。然后一去比就被关门了嘛，关了两次门。后面真没办法了，去陕西那边跑了个分区赛，然后跑了三十一分多，然后后面就拉太远了嘛。高鹏跑了二十九分三十多秒嘛，然后我跑了三十一分的话，你这个积分是随随便便就拉五十多分了。嗯。我前面还拉他三十多分呢。其实你外面，我觉得好好去准备的话，跑进三十万也是问题不大。可以的，三十分也是可以，但是你现在怎么准备出都出来了。就是我发现你在酒质上面吃了好多次亏啊，但是你现在还在吃这个亏，还在吃这个亏啊。你作为一个性情中人，可能大家很喜欢你的性格，但是你你在这个东西后面对你将来会有更大的影响的。这个我们不想就反复的拿别的运动员出来讲，但是你作为我们作为都有很熟悉的运动员，都在这上面吃了很多的亏，对吧？要么是酒的，要么是色。嗯，现在只听说了你酒上是酒上吃的亏，还没有听说你在色上吃的亏，这是另外一个故事了。但是，嗯，大家其实都还蛮担心你的，因为在外面的这个花花世界里面，这个面临的诱惑那么多，肯定刚才我在丽江这么多朋友了，这个今天吃一点，明天他刚刚我说在丽江还好，反而在成都的诱惑要更多一些。成都的朋友更多，是吧？对，主要成都的朋友太多了。其实我觉得有的时候，你老板这些归咎于你的老友的原因，但有没有可能，是是我自己的原因？是我自对想喝你喊你的人很多，但是你自己禁不住这个诱惑是最大的，你就主因啊。他他喊我，其实我可以说我身体有点不华爽，我可以喝。我今天吃了土包啊，今天但是你是真的想喝，我我我可以喝点饮料，喝点开水。但是孙老师，我不一样，我我感觉一上那个桌，他开了那那个味道，我会念，我就感觉我好香，可不可以给我来一瓶？上次在上海是我没有把你招待好，没有这上次去上海，我以为，因为孙老师你说我身身体不好，我一直在可我也没没喝了。后面我还说不，让拿两瓶嘛，孙老师，咱俩喝，喝两一瓶，畅饮。后面后面还是还是忍住了，还还好忍住了。这酒喝多了就不太好。没有没有，我是人是干不过酒的，但这个酒是什么酒都会闹人，就是喝了几瓶之后，人的话就会多。酒就是打开话匣子的那个，那个叫什么？你不需要，你你不要酒都都都能打开话匣子。那你现在出去比赛，你要去算这个成本嘛？因为比以前在队里，比如说去比赛，那正常范你也不用管机票、酒店都队里买单了。如果是有一些你能够请出假的邀请的比赛，那可能也是赞助商或者组委会去请你。那比如说你现在跑越野比赛，你或者甚至跑下年下半下半年的这种，你想跑北京，那不都对，在一定程度上不都得自掏腰包了吗？你要去算，你先会去算这笔账嘛？掏的不倒是不多，品牌方帮出的大头吧，因为想着比比赛嘛，至少我们品牌方是想着我杨春龙去比赛，也是又不是说没穿他们衣服，没穿他们裤子，然后他们那边都很支很支持我在外面比赛的。就这这方面还是不需要太操心，毕竟也是。所以就是现在就是说，呃，训练几乎所有的马拉松还有越野，包括越野比赛，安踏都会帮你，嗯，包含去帮你负责是吧？是，安挺好，挺挺好的。就是自己训练的钱、住的钱、吃的日常吃的钱的自己自己。那你像就是在外面训练啊，这笔费用你也可以去尝试着跟他们申请，他们给我出呀，然后然后我我不好意思呀。为什么不好意思？为什么不好意思？有什么不好意思？这是非常合理的支出呀！你给他们，比如一些票据啊，正常的票据就可以了呀。嗯。后面嘛，先把成绩跑出来吧。现在还不要跟品牌方不好意思，对吧？我觉得你带给他们的流量，完全他们值得的这笔呃支出，而且他们也觉得呃，你这个跑出成绩了，他们也在你帮助你跑出成绩，也是觉得他们献出了一份力量。嗯，对，是。因因为前面我们安踏那边的工作人员他就和我沟通了，然后后面叫我去曲靖那边练，他们那边曲靖那边可以说训练营可以给我找。然后我说我最近现在练练训练吧。然后他们说后期后期看，因为他们一一直想来跟我说吃住这些啊，衣食住行都给我买单的。但是我还是我害羞放不下这个面子，不是总不能到时候到时候混吃混喝。你说你说，对，我觉得这个是比给你签约费还更加基础的一个事情，负责你的吃住训练的费用，这比签约费，你签约费拿的理所应当，你在训练的这个方面的支出拿的应该更理理所应当。因因为你你想训练，就是为了去给他们参赛为一种啊比赛。对，而且从另外一个角度来说，你现在离开了体职之后，你参加比赛的机会和可能性是会比以前多的，对不对？你的你的甚甚至你的曝光也是会更多的。那在这个这个情况下，我觉得你去不好意思是没有没有任何的必要的，就是应该理所应当的一部分的一个支出嘛。以前的话一年比四场，现在一个星期四场就比完了啊！我一个意思，什么时间比四场啊？一个一个一个说错了。对啊，一一个月就比完了，现在一个月就把一年的练给比了。对啊，那在这种情况下，那这些其实都是比较正常的、正常的支出嘛。哎，那你下半年北京锦标赛怎么办？你现在不注册，没有队，你瓶子也放不了。没事嘛，强者从来不抱怨环境，但我是弱者，环境就是被他们这些强者给搞坏的啊！到时候我和杨克国啊他们跑在一起，我混喝就行了嘛。不行，你不能引起引起这个举报的啊！你只能注册在宜居跑野马总局的部了。你这可以，那我去，可以放那那那我去捡了喝就行了我不讲究。怎么捡？对，因为你现在不是注册运动员，你后面你有很多的问题的，特别像这种锦标赛这样的比赛，对不对？你的瓶子都没地方放。没事，到到时候多拿几个能量胶就行了，别在身上。哦，会啊！我跟你说，你都不知道群众有多花。他上次不是来上海跑那个黄浦半马的比赛吗？他从兜里掏出两只胶，三只胶都还不是一个牌子的。哈哈哈！是不是马博会的时候到处薅的，到到处嫖的嘛？什么什么机油啊，S E S 啊，什么科比克到处嫖啊！我都到地方我就我就嫖，还有还有你们卖肾，我天天嫖你们卖肾，每次录视频都冠名卖肾。好，我马上回去打扰我，然后我叫他把你的这个样品都给包了。你要不要嫖一点？那天他口袋里掏出几个胶，我惊呆了。我说啊，一一场比赛的胶牌子都还不一样，然后也不是那种故意的精心搭配，你知道，就是随便拿了两支来。我还在看，我还在帮他看，这胶已经过期了啊！还好还有两三个月才过期。这真的是有点多。我我回去就让卖肾把你的样品给包了，以后只吃我们卖肾的胶可以吧？哈，你看孙老师，我不是每次录那个视频、拆包视频，不是好多比赛都是你们卖肾赞助的吗？嗯，卖肾一赞助，我不就是里面的所有东西我都要吃一遍，然后我就拿，还有一支卖肾吃了，卖肾让我们卖肾胜利啊！你看，哎呀，广广告打的多好啊啊！他们他们懂事了，我马上回去交代一下。这太不懂事了。哎，你这个，那你以后这个上半年、上半年还有几场越野比赛，然后就收工了，差不多。来崇礼幺六八，你去吗？幺六八，嗯，什么时候是？你知也不知道是吧？七月份，七七月份我我回家玩一个。我我本身想，孙老师想象是很丰富的，现实是很骨感的。本身是想把这几场比赛给拿下来，然后把这个登塔计划的奖金给拿下来，然后我回家再休息一个月，恢复半半个月就参加这个马拉松嘛。我是这种想的，奈何上一场这么一比，给我搞了计划打乱了，计划打乱了，我都不知道我我该干嘛了，我都不然我都想着六五月底比完黄金联赛四姑娘山这一站我就回家休息个十五六天再沉淀沉淀。你这个休息是纯休息嘛？就是一点不跑嘛？还是随便随便跑吧？还是你这个休息其实就是又吃又喝，加上不跑。主要是喝，没不不喝不喝，我真的我感觉不能喝了不能喝了。过年的时候，孙老师，你不知道我是怎么喝的，我只看到那个肚子。我们少数民族傈僳族，他们拜年是一个村的来你家拜，你猜人家进来我家门的条那个是门条是什么？我我在外面喊我侄子抬来一箱啤酒，自己口袋里面装了两瓶白酒。进来一个人问要喝什么随便哦，然后那些人就呃那些人就在想，哦杨成龙呢？我大名人村里面的大名人呢，还来给我喝酒，开心了，然后我和他们喝，他们和我喝。后面我喝了半天，可能干了一个多小时吧，连着干完了。等一下醒来是睡在那个沟里面啊，不不是我们家里面是那种拆迁嘛，以前是回迁那种，也不也不是说拆迁户啊，那个因为现在越来越好了嘛，以前我们是分散的住啊，后面被我们镇上给集拢了，很现代化的。我菜都不用自己种了，都要自己买来吃。但是现在好多人都因因为以前家里面有地，都可以自己种，吃的东西都可以种。后面哦，征收掉了，征收了七八万十来万，全部用完了。后面就没办法了，买菜的钱都没有了。以前我们村的人是不可能去外村打工的，打工都不可能，他们这辈子都不可能去打工。后面经过这些年一弄弄了之后，就全部去打工去了，因为你不打工，你连菜钱饭钱都没有了。嗯。好多人都出去打工了，然后等我醒来时，我睡在那个沟里面，有好几次感觉不能这么喝，真的。然后现在是不敢喝了。然后我在家里面就爬爬山呀，摸摸鱼啊，快乐吗？你觉得那样的日子快乐吗？我我感觉孙老师现在我真的是囊中太羞涩了，奈何我囊中有好几个馒头，我就不出来了。哦，好就好几百个馒头的话，我就不出来了。我我以后就在家里面住着了。我们村我都舍不得出，太好玩了。我感觉在山里面才叫生活吧。那讨老婆怎么办？这好几个，好几百个馒头，不愁了吗？好几个，好几百个馒头还差老婆哦。我有天看不，说看见就连美国都有栗子子哦，我都服了，人才啊！怎么跑过去了？很正常。那打算去美国找？所以你本你是想你是想好了要去缅甸老挝找个老婆吗？没没有啊？有条件的话肯定是找我们国内的嘛。如果条件不好再去考虑我们有国的吧。我现在担心你这个话说出来，我可能要被骂了。哎，那我想问一下，你现在有积蓄吗？我啊，有点啊，但是不多啊。借出去了，不借钱？我我第一次加了我这个微信，加上的名字叫做不借钱。你是借借给了亲戚朋友借了很多钱出去？亲戚朋友借的多，借出去大概多少万？五六十嘛？你要想五六十，我在基地，我在一年基地我才收入才六万块钱，省吃俭用省的都拿了借人了，自己的生活水平都是较低的喽。哎，你自己年取暖费啊没有存下来吗？喝酒喝了也没你借出去这么多，应该钱也不多吧？前前几年啊，这你要想这六万一年的工资是从哦哦年后面才中的六万嘛，五千块钱嘛。嗯，那赞助费的话，只有说这两年才可观了一点吧。嗯，前两年年赞助费没那么多是吧？没那么多。那退费呢？退费拿到了吗？没有啊，退退费拿到了，我就准备给全部给我老父亲了，不然又被我拿了几人了。给我老父亲给他个保障吧。你退费算的工龄是几年？差不多八九十应该会有。八九十万？嗯，好，那还可以啊。你们云南的退费比我们安徽要高很多。那八十多万的话，我自己再现在凑才在努努力努力再凑点给存到我我爸卡上，然后反正他他现在喝不了酒了。孙老师，你不知道他以前以前喝酒的话是怎么喝？五百五十毫升的一瓶酒起床就是当水喝了。我我小时候啊，我小时候我就在他旁边睡觉，然后他一起床我就听见这个喝水的声音，就就这种，就这么声音，就咕咕咕咕的声音。我说这人是在喝水还是干嘛？然后就听见水瓶子的声音一摔，就看他他老猛了。一两年的时候他就喝酒喝了差不多，喝了一斤，脑子就不清醒，去医院医院告诉我妈他们这是神经病。你神经病送去神经医院，他那个已经不能正常交流了，已经不不会讲话了，跟个憨跟憨的一样了，跟憨人一样。现在呢？正常。现在呢？这两年经过我一番大饼之后，他们还好了点了。我给他们画饼。我给他们画大饼，我说现在日子越来越好了。你看我这么努力，这么努力的去扣钱，就是为了你们一个日子能好过一点。你这种喝喝了喝挂掉了，我赚的这么多钱给谁用啊？他们想想，哦，也对啊。所以你爸现在不喝了，不喝了，他不不喝不喝好几年了。只是说前两年，前年吧，前年两个人都生病，然后有点严重，然后也是花了十来万嘛。反正都都不容易，都不容易啊。换你喝？嗯，不不是，花了十我说换换你喝了治病嘛治病花了十来万，后面就换我喝了。我感觉我真不是个真是个人才啊！我都都喝成这种了，我应该是引以为戒。我为什么还要走他的路啊？对我爸很爱喝酒，所以我一点都不爱喝酒。要像孙老师你这么说的，我爸爱喝酒，我就不喝酒。要像你这种想，不然现在这种怪球喽。但我爸是好这个人，也是个人才。他以前喝酒喝到二零年、二一年嘛，后面一医生把他胆给割了，胆啊啊胆胆割了就不能消耗酒这种东西了吗？嗯。然后他不喝酒，他就喝可乐，他就喝可乐，喝喝牛奶，一一天喝两瓶可乐，一瓶雪碧吧。后面后面搞了痛风了哟。后后这种东西喝多了不是痛风骨质疏松嘛？后面又喝不了了。医生告诉他，你中风了，后面嘴都张不了，吃饭都漏饭了，后面不敢吃了。后后后面搞了之后，好吧，不喝了。后面你猜他又去喝什么了？不知道。他他又去喝牛奶了。他喝牛奶的话，一天喝十瓶吧，应该是差不多。后后面那个脚以前那个脚二零年那个脚，他才穿三十九的鞋子。胆大了。一一直以前我三十九的鞋子是跟按他这边也不用我穿，我就可以穿多少他穿多少。啊，我穿多大就我爸穿多大。后面我为了给我爸要鞋子，就四十四一四，现在穿到四三了哦，老铁。以前我觉得他就一米六五，我应该是到他耳朵下面一点吧。我现在感觉我只到他脖子那里了，长高了哟。那那你不学他多喝点牛奶？对啊，可以啊，还可以学习三次发育。喝牛奶补充蛋白是很重要，如果实在不行的话，你也可以喝一点这个麦式的一体蛋白粉。可以可以啊！没有我我我经常喝的这个的是，但是这个是我买了喝啊。上次你送了我三箱，我喝完了，那三箱才十五，不是十五瓶，十二瓶一呃六瓶一箱。你是不是呼吸有点？我们能量胶这个饮料啊，然后呃一点点买，我都那么弄。对呀，那那简直就太赶上了。万一我长到一米六的话，到时候我直接在头上头上贴一个麦穗啊！哈哈哈哈哈。哎，所以你们两个都在社交媒体上创作很多东西，但是风格完全的不一样，对吧？嗯，那不一样。说到你这个社交媒体创作的时候，有什么灵感吗？还是想拍什么就拍什么，想玩什么就玩什么？想拍什么就拍什么，但是我感觉我想拍的这些，我有延迟症，我不像像吴哥一样，要要拍什么的话就立马拍。我这种的话有点那种拖延症嘛。我也很拖延。拖的太严重了。我也很拖延。我其实。我我本来说想了一个很板扎，跑着不练着练着想了一个很板扎的视频，我说下完训练我一定要去拍。后面拍着拍着又隔了两三天了，拖延症太严重了，不行。就灵感很多。灵感很多，灵感太多了，直接你说做广告，你说是能量胶的话，你说这个广告很好做吧？你跑着跑着跑着说我好累啊，好累啊，累死我了。然后拿个甩个能量胶给你，有劲了，你就吃了能量胶两三块，哇，有劲了。然后为什么有劲？就是吃了这个能量胶，这个不就是灵感吗？嗯，对，其实做内容还蛮有意思的。你喜欢跟粉丝们这种粉丝这么喜欢你，先是是一种什么样的感受啊？我肯定很开心啊！我不是昨天发了条视频嘛？我不是蹭一百帧的流量嘛？昨天，然后那个视频视频一发出去，评论的话起码两个多小时的话，差不多六六百多条是来了。然后我认真的去回复了啊，回复了三百多个人。倒是很喜欢别人一评论，我喜欢去回复。像我们吴哥的话，可能是有点忙了，要忙要忙着睡觉。我的爱好就是玩抖音，像上次我们就播过一次，我每每次刷抖音的流量，每一个月差不多可以刷个三四百兆吧，应该是。三百G啊！三百G啊！三百G差不多。你你到处都没有WiFi吗，大哥？我每天以前打王者的话，一天打个十个小时是可以的，但是达到十二个小时就要有一点累了，就不打了。现在刷抖音的话，这东西总是刷不完，越刷越要越好是吧？越刷越有劲，越刷越有劲。现在不能这种了。你你上次也是几年前，你也是跟我这么说的。多这么说啊！你说抖音不能再。现在刷的更厉害了，老何。真的，国语音的小姐姐太漂亮了。怪羞了，怪羞了！才刷了十分钟就刷爱上了，一百个女人嘛，直接。你这个，你这个诱惑太多了。又是抖音，又是王者荣耀，还要再加上喝酒，你说哪有还有时间训练？还是天赋好。没有王者的话是以前玩，现在不玩了。以前没抖音的时候玩玩王者，后面有抖音的话，谁玩王者呀？谁有时间？哈哈哈哈哈！小姐姐了是吧？还是小姐姐。不是说刷小姐姐，我是看很正能量的东西的啊。我讲打开它抖音首页，随便看一下，都是三秒钟就是蹦出来一个美女了。正能量差不多十条视频的话，十条视频的话，我看一下。现场检查。这第一个是女女士，第十条，然后呃，这个是。你看，又一个女士。还有跑步的，哎，又一个美女。十个的话，差不多有五个、六个，还有还有几个快啊！还看到美女搞笑视频，然后跑步视频差哪一点？跑步视频，然后跑步视频差哪一点？像像你的话，你是肯定是刷到一些别人教什么教英语啊什么的，没没没没没有那么正能量。其实我刷的时间很少。啊，那你晚上在干嘛？学习。我玩游戏会多一点啊。哎，所以，崔老师，你有想过你的未来吗？也是问题来了。我先问一下你，你觉得现在你你出来了之后，会有觉得更开心一些吗？肯定是肯定开心了呀，肯定是很很开心的生活中啊。然后我不是今年，别人都说什么时候结婚啊，什么时候结婚啊。然后我我说的家里面也一直在催吧。我说你说家里面房子都没盖呢，我怎么敢敢结啊？然后现在不是这两天起房子嘛，房子已经起的差不多，然后等着装修完就要去找婆娘了，找完婆娘。上次前年、去年不是遇到了那个女朋友？你那个女朋友现在分了是吗？没有啊，那还在谈吗？我我我那你还找什么婆娘？我我一个恋，嗯，婆娘就是结婚了嘛。啊。我一个头发型都是恋爱脑的，其实你看，像崔老师也是个恋爱脑的，你没有看，其实没有其实好多女生，好多女生谈恋爱，其实可以标标准准的喊这个男的结个寸头好的，看一下他的发型是不是恋爱脑。你看像我这种发型和恋爱脑的关系，你展开给我说一说。那那就是发际线高嘛，就是责任在家里面的责任很很那种。那句话叫什么了？不不，都是你的思路。我根本不懂，所以就是个就就是发际线头发际线掉是因为压力压力太大了，很充实，就是太够家了，头发才会掉嘛。不就很很紧张，很很想为这个家里面付出很多，是这么个因果关系吧？付出这么多很多，先那那我想问一下你啊，就是比如说，呃，你现在不是在马拉松也跑也跑也跑？那刚刚宋老师也问了，你以后打算做什么？那你现在是觉得，如果到什么样的程度，你才会选择不跑了？起码按我这个现在出来的话，起码还可以再跑十年，我觉得。再跑十年，嗯呃，马拉松和越野双栖，像那个关永胜那样。我感觉马拉松速度不能丢，如果丢了越野，肯定你专门跑越野的话，速度会掉嘛？因为你跑配速都是五六分、六七分这种跑，这种配速掉了，跑步的最终王者还是速度呀，其实。所以呢，再跑十年，就跑到一个什么样的程度才会选择不跑？然后不跑了之后，打算去干什么？有想过？只能说跑步，跑步的话是，因为只会跑步嘛，也不会说什么。宋伟迈跑步就是能加家里这些生活给过得很好，所以跑步对于你来说最主要的就是工作赚钱，生活赚点生活来源之一。嗯，所以也就是代表着说，未来哪一年你在跑步上面已经没有了收入了，你可能就就不跑了，差不多，差不多。现在的现在的话，干十年吧，干完十年之后，看看什么样子。干完十年也可能好几个馒头应该有了吧？到时候有了就可以在山上。我到时候我就不出来了，我就隐居山林了。其实每个人出来的孩子，像像吴哥，你倒是以前你就是合肥市区里面的嘛。像我们辉哥他们，其实他最后你看像张导他们，他其实最终工作结束了，他退休，他还是会回农村。我们每个每个农村的孩子都是想着出来之后出人头地之后，回家盖个房子，就在家里面好好的慢慢的在这吧。其实我们教练是每次是告诉我，你出来了你还想回去？那我举个例子啊，因为你已经有女朋友了嘛，你可能也肯考虑跟他以后一起结婚，但你有考虑过孩子的教育问题吗？因为你在城市的话，其教育来说肯定是比你们那边要好的。其实，我觉得你现在怎么想的？就你现在，你现在可能没有孩子，你还没有感觉。如果等你有孩子了，你可能就会想着我要给他更好的教育，更好的。那那到到时候不行就来昆明这边租房子啊，不是买房子啊。租房子也太贵了。租房子你又没有解决不了户口的学区问题啊。那就在我们我们城中城里面读吧。而且你们城中城里面，我记得好像房价也不便宜，很高。那那不然好像比成都高。差不多牛的很这些八线小城是房价都会干到七八千，太牛了！我都服了，现在没办法，没办法，大事所在吧，只能说，只能说，我我们不够努力，没把这个钱投到，起码后面好好的努力，然后把自己这种成绩给提高，一是成绩提高，然后知名度像五个你们多学习学学习点哈，真的像你们学习的真的有很多很多，但我这个人我就是不爱学习。然然然后整了这些，然后争取以以后的话，签约安踏，我们安踏这个合同啊，合同弄大弄大一点嘛，就是不然的话，努力的方向倒是对的，现在就这种好好的好好的干吧，然后收入提高一点，就以后就越来越好。然后好个十年的话，你说一年苦个啊，就跟我那个孙老师一出来那个视频说的，希望大家年前肯定是想出去苦个一百万呐，但是一一回来，其实我们每每个中国人的意识都是这种啊，包括了百百分之八九十了，一过完年就想着去苦个一百万回来，不苦个一百万回来是不出来了，不回家了。后面是一苦是才发现是要过年了，还要和家里面的亲戚借钱，啊借点钱嘛，没钱回来了，其实都很无奈的，现在太难了。我们都在努力的，努力的为自己后面的生活越来越好啊。然后后面结了婚之后，我女朋友她倒是说生小孩生不生小孩都可以，我也觉得可以。我两个我倒是对她挺好的。然后她说如果生了生了孩子之后我对她不好，我就光对孩子好。她说我会打他嘛。然后然后他告诉我我不可以打你，我我打孩子就行了。然后我女朋友跟我说，那你打了打了孩子就不能打我了，要死了。哎，你跟你女朋友谈了多少年了？三四年吧，四年四年差不多挺久了。你不是在这里锻炼嘛？我不是骑着电摩头他送我回去嘛？我出来我出来吃东西嘛？那还是挺久的嘛，但是也进入了谈婚论嫁的时候了我。可以谈了，前段时间过年都过年都去跑了他家两趟了。其实只要合适就行了，并不是说像像别别人说的有什么本事没什么本事。其实我我不在乎这么多，他都可以说跟我在一起的话，我我肯定会好好的努力嘛，争取给他过上他想要的生活。尽管说过不了，倒是多画点大饼就行了嘛，没事。你这画大饼，你你女朋友画饼。口才呀，你你这口才可以说，你们俩怎么谈上的？我是三句话就让你们怎么认识的？首先你怎么认识的？朋友介绍嘛，就是张张龙介绍的嘛。啊，你朋友介绍的。介绍了。就张张龙嘛，他他他介绍给你就是以男女朋友的，本着男谈男谈恋爱去介绍的是吗？就是张龙，我们一我们三年前四年前吧，他那个是他同学嘛。所以啊，他在介绍你给他认识之前，他知不知道你？他不知道，咱他一说成龙杨成龙，我知道这个人。他他不知道，他只知道我我们是个跑步的。啊，他他都不知道马拉松是什么。前几天我还骂他了，他他来问我直播去什么地方看，那我问他，你不是天天在那里逗播逗播的吗？你去跟逗播过，你去问逗播吧。我告诉他，他问我几点比赛，我说十二点，还问哪里可以直播，我说你不会问逗播啊，哎，你一刷抖音不是刷了跑野可以直播什么这些吗？那憨贼直接憨的很。然后结婚的话，你直播？嗯，结婚的话可能就这么一两年了，孙老师到时候抓紧时间，抓紧时间，我好来追份子啊。到时候再再不结的话，年纪年纪浅了，人家他跟你差不多大，你大他他零零三年的嘛，还是零，那比你小好几岁啊，好多。他讲讲了，零一年的，零一年的啊，那也比你小几岁啊，那又是小好几岁了。你是九七啊，对吧？九八吧，九八。你急着要结婚，所以就找个借口，对不对？说赶紧人家小姑娘说赶紧结婚了。没有，主要是家里面也催，主要前前两年的话，我我奶奶，我奶奶告诉我，你赶紧找媳妇了，赶紧找媳妇了。她要等喝了喜酒，后面哎呀，奈何是造化弄人啊！天天为了搞事业，搞了搞了。我奶奶年纪也很大了，也前年不不在了嘛人，然后就越来越愧疚，越来越愧疚，我才一下子下定了。真的愧疚我奶，我爹的话我还觉得我愧疚的他不怎么多，因为他从小的话，他就天天我一出生我就感觉他在我印象里面就不是很好。现在的话，他把我生了，他他起码他把我生出来了，然后给我也也没有也也没有让我说像其他家庭一样那么那种，也起码把我养这么大，我肯定还要孝顺之类的嘛。我小时候是我奶奶带起来的，我奶奶我上小学的话，每天都要给我一块钱，每天早上进我我很贪玩的，我每次放完学我就去抓鱼摸虾到处跑，然后十一晚上十二点我都不回家，他就等着一直等到我一直等到我晚上十二点不回家，你是不是从脚就把这个黑眼圈从脚到就搞，从脚到好惨，到处玩玩了十二点才回家，然后我奶奶也还等着，然后把一块钱交给我，他才去睡觉，真的，然后后面还想着带带着他去北京那边逛一下嘛，后面嘛一直带一直带个锤子，真的前面囊中有点羞涩带不起，现在是囊中起来一点，是人是不在点了，那就是人生总有好多遗憾了，这个是没办法了，人这一生就是在遗憾中度过的，但是起码你遗憾不要太多，如果太多的话，等真到自己七八十岁差不多的时候，你想起这个遗憾，你又默默的流出了悔恨的泪水啊。那我想问，我听你过去从两月八号一直到现在，你有遗憾吗？现在两个多月的时间，很快了哇。遗憾是肯定有，遗憾就是不能说参加个全运会为我们云南这边拿个不拿个铜牌也拿个银牌嘛，哎，就是前八名都没拿到过，真的干了这么在我们云南省队干了这么多年，好的名次都没给我们云南这边拿，挺愧疚的。现在去年无锡不才第三嘛，那个第三又又不算分分工。你现在就是分工到地方也没达到吗？没达到嘛，人家还以为我达到了，其实是我没本事啊，我没办法。没达到什么？就是分到比如说县里面，他们云南有两个分工标准，一个是全运会前三还是冠军能分到这个前三就是全国体育类基地或者昆明这些，对能分到昆明锦标赛冠军也可以，嗯，冠军赛冠军也可以，可以分到昆明，然后在差一点，比如说锦标赛的前三就可以分到市里面啊市里面，再比如说像他是腾冲的就可以分到市里面。我之前以为他已经达到了分工地方的标准，那还是自己，但是去年他们的锦标赛，他不是第三名嘛？就无锡他是第三名，但是他们基地不是这么算的，他们基地需要你对要总冠军两两场比赛叠加在一起的成绩是前三名才行。然后后面那一站不是不是诶，衡水湖嘛？衡水湖就为了准备全运会就没去比了吗？然后后面衡水湖才比完五六天就公布出来了嘛？对，衡水湖你去还是机会蛮大的，机机会挺大的，那段时间练的挺好。但没办法，你这个有的时候选择比努力重要，就是就是在这个点上。哎，但是你说这个会到一个很多运动员都会思考的一个问题的，你会考虑为了全运会再次注册吗？再次注册？不是说不是不是云南别的对对，因为如果按照你的水平的话，注册到别的大省省份的话，你的进全运会的可能性很大的。嗯，因为有的省是竞争没那么大嘛。像上海的话，直接去了就可以比了嘛？应该。嗯，对，没什么人。上海、广东很多啊，福建嗯，对吧？对，有的江西，对有的省是它也挺开放的，它就是叫人。先看看吧，如果说能去代表自己省的参加不了，代表其他省的也可以。但是总得有个时间嘛，总不能现在就说我要去。不，今年还好，今年只有百分之五的积分，但是你如果真的要决定的话，最好从明年开始就要开始积上了。对对。对这个事情也拖不了的。嗯，像去年上一届贾伟跟老管，他到最后一年才开始积分，难度很大的，就这样。他两个就没积上嘛？对。对啊，难度大都没积上。就我记得那年，去年一月份的时候，我碰到老管，老管还说：“反正就试一把，结果后来积分也没积上，贾伟也是的，对吧？”对。你只考最后一年的话，难度太大了，难度太高了。起码要最后两年半啊，三年也可以。嗯，最最好最后三年。我不知道他现在后面三年的积分标准。到时候看吧，就要很早很早就要计划，最好今年年底、明年出就要把这个事情。因为现在都跑到体制外了，体制外的，就是出来比赛这些方便嘛，就是如果说你在体制内的话，要有些比赛你要报备啊，有些。今年你才不还不想去？呃，贾俄之这样老管这种，嗯，他的合作的省份对他的管理还是比较松嘛。嗯，每个省份管理不是不一样的，这个到时候看嘛。他们因为有的省没有太多要求，你只要能够打完，对你只要能帮我打全没问题。我对你平常训练的地方，或者是你要参加什么比赛，我不管。嗯，对，甚至还给一些彩礼啊、营养啊各对啊，那可能你日常工工资还是给。这个到时候打两份工。嗯，等下年看嘛，因为我现在还注册着呢。我现在还是我们云南的一名，不也不算优秀吧，因为比我优秀的人太多。你注册吗？注册没没解除吗？还还在还在吗？你这个解解除注册的话，要是省级，那你解除注册了，我现在不是还在过渡期吗？没有过渡期了，现在没早就没有了。我还在过渡呀，基地里面没有是，我我等退役费我又不是现在就下了，你又我下了，退役费我们等到下年中旬了。但是你注册已经解除掉了。这个退役费没都是晚一年才能拿到的，这跟这没关系。解除注册跟你拿不拿退役费还要给你继续发一年工资，对不对？嗯啊，他这个两码事，已经不影响了。你从填写的运动员注册的角度来说，已经跟云南没关系，可以去注销了。你看，对这么牛啊！是的，看来还是要得多看看书。你这你好像是在上次的名单清单里面，我记得我还看了，我还问了你一句，你记得吧，陈老？嗯，你给我发了嘛？注册到二零三零年嘛？对。对，现在为什么？因为呃，有一个很重要的问题，就是县级的问题。他之前有的单位，你跟他解除关系之后，他单位老不拖着跟你解除注册的关系，是因为那以前我担心你跑到别的省份去注册，但是现在有一个问题就是，他担心你兴奋剂的问题。那你如果如果你退役，你不在我基地里面，你不受我的管控，那你如果出了兴奋剂的问题，那你还要我这个省份为你负责。所以现在大家都是，只要你你跟我解除关系，我马上就是去申请解除跟你的注册关系。这样你如果日后出了兴奋剂的问题，跟我就没关系了。所以现在省份的方面也是很积极的去跟运动员解除关系。对，因为这个一罚就罚很久，一罚就是罚几年不能比赛。对啊，你可能如果你在外面，我们解除了，你签了退役，然后你在外面吃饭或者是怎么样，或者你就是故意的去使用，那你会导致我们俩的注册关系还在，会导致我这个省份受处罚，又变成个人，或者甚至说像内蒙那样直接就是禁止参赛了。是啊。对，禁止参赛比赛都办不了。对，嗯。对，所以说现在，就看各各时间看吧，还还是要，像今年倒不着急，今年今年不办就办着我，今年不着急，明年可以年底可以考虑。而且我现在觉得你现在需要一个全马的好的成绩，这样你去跟别的省份去谈啊，或者怎么样，就是也有好处的。可能到时候看北京嘛，北京我感觉问题不大，因为感觉跟杨科他们那种训练方法，我感觉很充实啊，他们这这这这几个高山男孩。对啊，但是你要非常系统的跟他们练才可以啊，对不对？这个我这么想，你至少是两个月的时间。就几堂课跑的好没有用啊！你要连续两两个月、三个月能够很完整的一个周期吃下来才用啊，否则你跑几堂课比他们跑的好都可能，因为他们在整个训练周期里面状态有起有伏，对吧？这个怎么耐得住寂寞是个很大的挑战。嗯，就像我刚才说说的一个比赛，比也比到六六七月份，然后回家休息个休息也不是说休息啊，也不是你比赛比到六七月份哪还有时间休息啊？有啊，十到北京就十月份啊。十月底啊，那十月中旬还是十月底啊？那两个多月就够了嘛？准备场比赛，我觉得我准备一场马拉松四十五天就行了，系统训练四十五天。我现在觉得需要至少两三个月的时间。你你你年纪起来了，你不能像你以前年轻的时候一样啊！我老了，我老了。你你少准备一下，你可能准备的太长了。还能说你说会啊？这礼拜要跑比赛的。对我这个星期天比赛，就是你好好干啊！二二幺三等着你啊！就是会啊，都不想看你对啊，会啊，这礼拜跑大连的比赛。对大连那边挺难跑的，对风大啊，有点跑吧。我去年跑。对大连会啊，跑大连都错过了来上海参加活动的机会。是的。现在你年年纪起来恢复肯定是跟不上以前了。嗯，以前年轻你可以。但你在家，比如说你六月份，你说回家休息一个月，你觉得你休息还跑吗？还是说天天玩？天天喝酒跑？不不是啊，我我我在家里面我玩的有很多的啊，我我专门打一摸下呀，又是老好玩了，一点不跑。我一天一天在家里面走路都六万步、五万步，我走走再走走路和跑步不一样。对，你走五万步、六万步，你的心肺得不到锻炼。没事嘛，慢慢恢复嘛。我就好好我走了，我干得到到了，就是就是在家会休息一月，一步不练，哪不跑？我懂了，一步不跑，睡到自然醒，出门随便搞点吃的，然后随便玩，玩到晚上十二点，天就黑，眼前回去。哎，你开直播就去年好多这种就套马步，我可以可以到到时候很高，到时候马步我也到，也也到到时候就直接开直播，直接了可以这个是。我懂了，就是回去就一步不练，你这个真的是有点厉害的。孙老师，因为现在的话，你你要看训练周期的话，其实运动是有个年限的。你说你我们都个为什么可以坚持这么多年？他小时候底子打的，以后现在是教练兼运动员，他跑得动的话可以跑跑，跑不动的话可以在后面换。这种他的运运动年限才拉长了嘛。你天天干那种是受不了的，是谁？你又不是说加点油、加点喝点水就好了。这种你身体的体能，你说像几步桥哥的话，你没见什么柏林马拉松比完了直接回家休息一个月嘛？他是？他还不是就挖点地？是是，我也准备这个大连跑。你就这种，你就听我的。我们现在当时还年轻啊，你是已经不年轻了。你现在起码还要再跑个六年吧？嗯，六七年你要跑完，你跑想跑六七年的话，你必须这你不能天天顶着大强度吧？是是，我也觉得我从去年这个准备世锦赛开始，五六月份准备世锦赛开始，一直到今年现在，一直就没怎么好好休息过，我就休息还是蛮重要的。然后跑着跑着比赛，有些比赛力不从心了嘛，想上去，奈何就是腿上不去，又不像以前一样缓一下，然后他就可以上。现在你缓一下，他也就杨克古说他这两年年限太大了。他以前不光说怎么玩、怎么比赛、怎么训练、怎么练，他说十公里在力间跑三十八分以内，他随便抬腿都不用做准备活动，随便跑。前段时间三十九分嘛，还不我甩嘛直接，他下来就感慨啊，这那老表老表老表，他说现在真的是你年纪起来的了，不能像以前以前是他是又吃得你你不记得我们在北京吃十十五个还是十二个黄桃，边吃黄桃边喝牛奶哦，还能吃了鸡蛋，怕是要干七八个，又又能吃又能练，然后去非洲就练不动了嘛？人其实是真的，你还是要调着点练，调着点练还是可以的。我刚才也是说我要练十年，这种是在在我想法之内，就是过完年出来比赛，训练比赛，比到六月份、七月份回家休息一个月再比赛，然后比到过年前，然后回家过年，过年又开始调整，那不就是很好了吗？这种先调整，把身体的体能、机能给养起来。但是我觉得你这种休息模式，你比如说你比到七月份你才回家休息，那你等于休息完了都八九月份了。其实我是觉得可以挑一场更后面一点的比赛，比如十一二月份。但是你又想跑跑北京那一场，就跑北京了。跑北京五，我五月底我就比完越野赛了呀。啊，那你六七月份是要比什么？六七月份休息了嘛？刚才不是你说你那个？我刚才你一说，我就有点心动了。那个崇礼，你一说我就有点心动了。为了北京马拉松还是不比了？我一说你有点心动，我等下今晚喊你去喝酒，你又心动了。心动了。对，崇礼是七月十号吧？七月十二号。那不然就不去了。到到时候如果去也是随便跑跑了，就跟前段时间去跑宁波马拉松一样嘛，只练了七八天，吃点底子嘛。像我们中国，你吃点底子都能吃。他前年的时候跑了五六场十分啊，直接嗯，练都不用怎么练，就吃底子嘛，不影响。练了这么多年，底子是打的好的，只要扛后期嘛。所以你更喜欢越野跑还是马拉松？我肯定是喜欢越野跑嘛，只是说这这场比赛到底是哪里出了问题，我也不知道。让我自信心大挫。你让杨春龙下来拒绝采访？啊！当时这么不开心？那你你觉得这场比赛难度比高力贡高很多吗？高倒是高很多，但是我感觉我这次比赛一点状态都没有。出去脸脸色之类，和父亲可我照了个相出发前，那个那个眼神都不对劲，那个眼神迷迷的，双眼皮。赛前干什么？眼但是塌了，没有我我我感觉应该是在丽江训练丽江的嘛，然后那天一下子热了，那两天比赛那两天跟孙老师说前面有点下雨有点冷，那个天气是老牛了，光比赛那天热啊，这两天又冷下来了。那你这周的比赛还是很多，鸡鸡龙鼎是广东的，那比赛更远，你怎么办？嗯，跑就跑了看嘛。上一场是没没经验没状态，这次的话我要被越野爆了。哈哈。所以你比下来之后，为什么回昆明带陈光啊？带几天再去再下去比赛？因为这个你不觉得舟车劳顿的很厉害吗？今天是星期三，你星期一回来的，然后星期四星期星期四又要走了，就回来带两三天，你不觉得这种调整很累吗？因为他们很多运动员都是在宁波比完之后直接就去广东了，都这两天已经在那里适适应赛道了。可可能是每每个人不一样，因为我我们这种高原人，你下那个地方热的地方，你不练你都会出汗。我就想着，如果我直接去那里的话，本身消耗就大，然后那里的按摩呀、放松这些，我在昆明这边是哪个地方盲人按摩按的好、有效果，我都知道的。如果我去那个地方的话，又不知道，然后一去放松，别人按些什么也不知道。我来这里，我直接一按就按两个小时，所以我才选择来这里放松、按摩加调整呀。但三天其实还挺奔波的，我真的很还挺奔波。三天之后你你就待三天就走了。没有孙老师，我我感觉我只要比赛前前一晚上不不坐车就行了，就比赛前前面一天不要，只要不坐车坐上两个小时以上就行了。如果坐上两个小时，第二天比赛我腰会疼，你会不会疼？我一般前天不会坐到两个小时，我以前吃了好几次亏。然后有有些时候比赛的时候我不能睡太软的床，像前两天我去黄埔，那个床太好了，我就把铺盖拉到地板上铺着睡觉，睡地上啊。床太软了，我也不行。床太软不行，这个床太好了，太太软了，不行，不舒服。出出来久了，什么都没学，就学会了一身毛病啊。然后这个也不是毛病啊，就每个人习惯不一样，我觉得也也很正常。对啊，你之前我们去比赛，那个谁李子轩跟李顺杰把还带着枕头去，他们外面枕头睡不习惯。他们出去比赛都是带自己枕头，对啊对啊。下次我也试试看啊。你不总不能把床垫带着吧？他们有些人这床床单被套带着是吧？床垫被套我可以理解，床垫怎么带啊？床垫，你们是睡软床不行吗？我床垫也能带，有点东西啊。你就你要不下次睡地上直接睡地上解决吧。没有我我直接睡地下是搞搞一块浴巾铺在地上，就搞那个反正人小嘛，那个铺盖折折成两折，就一边拿了当床单，一边拿了当铺盖嘛。你现在也没有这么苦了，好吗？对不对？没有，我这个是没苦硬吃。没苦硬，我发现你非常有这种没苦硬吃，一定要给自己创造一些艰难的条件，然后再想要去跑一个好成绩的这种心态。所以你这周末的比赛，你也不不打算参赛，打上去就跑了？上去就跑了，不用看，不用看。他们，好多人跟我聊天说，后面前十七公里有爬山嘛，就是十七公里海拔上升一千六吧，应该是。后面几乎说没爬山，然后我感觉，哎呀，我感觉每每场比赛都是为我准备的。比跑前这跑前的时候，我就觉得一看这赛道就是每场比赛都是为我准备的。然后一下来才发现，每个点都是难点啊，太难了。你这个还是有点东西的，必须说。对啊，人家去比赛，我觉得你你你和别人比赛有个最大的差别，别人就像比如说去打仗，全副武装去了，你就拿着把刀就过去了，这个差别就是如此之大。哎，最近所以你现在碰到这么多粉丝，有有没有什么特别热情的或者特别有意思的，可以给我们分享一下？有嘛，我感觉多的很。我还能遇到，我看我们吴哥的粉丝是大。你别转移话题。以体没有说粉粉丝的话，也体考要体考，然后后面那些要上大学这些为主，然后就二十来岁啊，十八九岁、十七八岁这种多。我我的粉丝这种是小小到五六岁，大到六七十岁，我感觉都。等一下，五六岁你怎么知道他们五六岁？的那五五六岁的话，我前几天在丽江跑步啊，丽江跑着那有有几个五六岁的小孩追着我。真多。来追来追我嘛，老牛了！来说盐城龙哥哥，盐城龙哥哥，你好厉害呀！这种也是人才了。那时候心里开心吗？心里面肯定开心啊！哦，能。其实我有些时候发抖音的话，其实可以用我们民族话这种发一点，然后带动我们这些少数民族练体育嘛。那你觉得少数民族练体育是个好出路吗？在你的同龄人里面有多少人像你一样去练体育的？练出头的多吗？哎，那你那那，你总比不出头好啊！因为我看我一批的话是有三十多个人嘛，然后现在练着的人就我一个人了。嗯。像我们农村那个地方，只能说练体育。你说你读书的话是出不了头的，你只能说出卖点自己的劳动力，哈的练练这种，还应该还可以。不然的话，你我们那边的人是读不过沿海城市这边的人。那你的同龄人如果没有去练体育，像你这样，他们现在都在干嘛呢？现在我同龄人的话，差不多哦，吃免费饭的也有，然后在广东那边打工的也有，然后其他的就在村里面当守村人嘛，媳妇都没找到那种，三四个有三四个男的媳妇都找不到那种，跟我一起小学同学长大那种。其实相对来说，你这条路还算已经是走的，算是比较顺利的，比较好的，很完美，很完美。对，还好是我遇见了体育，然后也遇到了一路走来遇到了这么多顺顺心心，都是顺顺心心的。真的不然的话，我现在也可能是守村人一名啊。就像你说的，其实对于很多像你老家的这些小孩来说，可能练体育真的还是一条出路。那现在这些小孩都在练些什么呢？都在做些什么？我前面不是有两个侄子嘛？我姐家儿子，我让他们练，他们有有些人能吃这个苦，有些人吃不了。他他们的话，以为是好玩。然后小朋友，你要说想练的话，要正儿八经的，真正的喜欢这个项目才能练出来的。你才一几分钟热度那种是练不起来的。所以你们同村的也没有太多的孩子。现在小孩子在练体育，就这个村就你一个人。虽然他们看到了你这条路是一条可能是比别的路来的要更更好的一个选择。嗯，他他们后面也肯定会练的人肯定会更越来越多，因为现在起码说招到我们县里面的有五六个嘛，一个村里面也可以了。现在你们县是有体校是吧？嗯，腾冲县少体校嘛，我们那里是。哦，所以你们少体校主要是出长距离的，还是中中中距离的运动员？八百、五千嘛，就是的。其实我觉得观察到现在，他们云南云南省对这个中长跑的发展还是很多元化的。有这个像他们省运会，我观察到，我举例子对比我们安徽的省运会，我们安徽省运会中长跑一般也就是三千，然后有个五千不到不了。他们有现在有没有一万米？有啊，有一万米。呃，省运会有一万米的项目，省运会都是青少年的嘛。然后还有这个五千的团体，比如说一个省出四个人，呃，三个人，四个人，然后这个成绩相加取前三名，每个省呃每个市的前三名代表市，然后取前三名的成绩相加，然后最后去算。所以他们对于中长跑加了很多，针对于这中长跑的项目，虽然他们比如一百米、二百米这些短跑、跳高，他们项目都有，但是对于中长跑的扶持还是很大的，这样都让他们有更多的青少年的苗子，然后供这个省里面来挑选。我觉得还是对中长跑的选拔、青少年的培养还是促进很大的。像你们那边的话是，只是说一百米到四百米这些速度跑嘛？你们沿海城市这些是速度跑，像我们这边的话只能发展耐力项目啊，速度一去去比的话简直一是吊打呀。嗯，其实我是觉得我们那边为什么发展一些这些会更好一点？像广东，它像这些项目四百、二百、一百还是挺注重下面地级市或者是甚至是学校老师的这些技术理念的培养。那我觉得在云南这方面还是挺挺难有这些深厚扎实的这个理论知识啊，或者是一些技术性的教学还是挺难的。那相对于中长跑来讲，不是那么的吃技术，那可能它本身在高原上面，然后呃能跑，然后慢慢就能够被发掘，然后向省里面、市里面去输送。那沿海这方面肯定是要好很多了。它这个呃老师的，甚至于一些老师的基础的技术都已经很好了。嗯，对，因为中长跑的或者特别马说你快几秒钟和百米、两百这种快零点零几秒，其实差别还是蛮大的。对技术上的雕琢，其实还是蛮大的差别。我觉得。对的，没错，没错。应该说中短跑还是一个非常吃技术。对，短跑吃技术，当然天赋都吃。这个是不管是短跑还是中长跑都吃天赋，但是短跑可能还是蛮注重基层的技术，取而且发掘，我觉得还是我们那边像我们那边发掘的可能机会更多一些吧。像云南，我觉得很多还是因为学习不好，然后再来去练体育。大多数都是学习不好，你学习好的，他父母是不可能给他练体育的。我们云南这边，这个但是现在体育对很多人来说，我不知道，至少在上海这样的城市，其实体育是很多人的一个新的选择了。发达边是是是，你像沿沿海城市、发达城市不那么吃，像他跟你学习好不好没关系。那我可以作为一个兴趣爱好培养，然后如果有这方面的天赋，也可以继续的去培养。那可能他原本的学习还是可以的。对，因为现在体育明星甚至就和在一定程度上和演艺明星是是很像的。对，我们也看到非常多的体育明星最后真正的成为了一个名人。嗯，对，我觉得尤其是经济发达地区，他培养体育的方式是：第一个是作为兴趣来培养；，第二个是，我反正家庭能给你兜底。嗯。你喜欢这个项目，那你就我就支持你去干。那跟云南这种这边的大部分，我不能说百分之百，大部分的家庭选择体育的方式还是很大有很大的不同的。对，那些而且像网球啊，一些有些特别的呃，培养经费很高的项目，那可能就是有家里面兜底，我可能砸了几百万，最后没有出来，那你就没有出山。对，我家里面可以继续为你兜底。我们云南这边的话，是是打网球啊，你说有几百万，还可以打网球，对啊，而且几十万就不可以打了。对，而且中长跑是一个不需要什么特别投入的，我有双鞋，有有件衣服就可以去跑。你像甚至我们在肯亚，你见到很多黑人的光脚跑，是不是？他没什么投入，你不像，所以你像非洲那些国家，他游泳他根本就发展不了，网球根本就发展不了，没有泳池，没有网球场。所以马拉松是一个，这也是我觉得它在国内现在发展很快，然后能够普及化这么大的一个很重要的原因，就是它没有什么成本。我有双鞋，买一双跑很很不错的跑鞋，现在国产的跑鞋的性价比也很高了，也够你能够跑很多的距离。甚至我觉得国内的报名费也很便宜。我出去出国比比赛就感觉国外国外的报名费好高，还什么都没有。然后国内的报名费也很便宜，成本也很低，所以我觉得国内的马拉松普及很快，发展很快，也是一个很很重要的原因。问题，你看国内报名费这么低，还有人在那里说呀？前段时间不是有有人在那里说乱丢垃圾，建议拿着一次性杯子那种。你说如果国内像国外拿着一次性杯子跑的话，人不把你喷死啊？什么吃的都没有，对国外的餐餐包啊、晚餐包啊，跟国内真的差很远。国国内现在卷到就已经很离谱的程度，像无锡的卷成那个样子。对，那个是无锡是非常的丰盛和丰富吧？对，还有很多吐槽，像这个住房的问题，这个确实是没有办法，就是供需的问题。这全世界都贵啊，也不是无锡贵，上海贵，全世界都贵啊。只要你呃，如果这个城市没有地铁，然后你又非要住到起点边上，那自然是肯定居没有办法平衡那个东西。对啊，就是我们同事这上周末博士的出差，一个人单间离起点也离终点也有一段距离的，就两千块，而且是住的是不怎么样的房间。对啊，就是这样，对供需的问题，稍微贵点三四千块一个晚上非常正常，在在那个时间节点，就是很贵。那个时间节点就没有便宜的，就没有便宜的东西。是的，因为就是一个城市突然就是超载了，超载意味着你去吃饭也要等，你去干什么都要等。是的，还有一个特别明显的，可能有的地铁有地铁的，我可以住的原因早上过来还好。那像像眉山这样的，像仁寿这样的，那你在一个县城办一个这么多人数的赛事，那你就是整个城市的酒店都不够用。嗯，那就是面临涨价，那谁价高就得嘛。你一下子来这么多人，像仁寿那个，你是不是它主要城市的载运载力太小？嗯啊，它跟这种上海啊，跟跟一些沿海城市本身的运载力还比较大，还好，还差的很，还很不一样。没错，但是城市呢，就是希望通过办马拉松这件事情，希望能够获得更多的关注和这个重视，但是这个中间就会成起一个很大的矛盾，就是，当来了这么多人，你你承载不了，接待不好，又会造成很多的怨言，这个怨言又会被社交媒体上无数的放大，那就会面临更多的问题的出现，就大家这个舆情，舆情，舆情就这么来了。嗯，聊远了，聊远了，我们还是来聊云春龙跟云南吧。哎，春龙，所以春龙，你这么职业生涯也这么久，你记记忆最深刻的一场比赛是什么？比赛，我感觉我每一场比赛我都深刻呀。让你讲到刚刚宋老师这个问题，然后你脑海里面蹦出来第一场是第第一场是什么？第一场的话就是跑十马嘛，就是昆明。哦，我不是问的是你自己第一场比赛啊，问的是刚刚宋老师问最深刻的一场，你脑海里面第一个蹦出来的比赛，第一个蹦出来的比赛，就让你印象觉得很深。我印象很深的比赛就是一九年北京马拉松嘛，因为我们云南的把前八名都拿了嘛。啊，那场我记得你回哥是刚刚跑完成都，成都过去的对吧？然后输给了他，输给了那个韩日龙，韩日龙。嗯啊，你当时跑的跑了十七分嘛？因为为什么你对这场印象那么深啊？如果那场不跑十七分的话，我就下队了。啊，你跟那个那二零年的南京很像，他那场不跑到十九分，他就是进不了队。我我那场如果跑不到十七分的，你是那场第一次进二零是吗？嗯，因为前面都是在跑二十五六分，我都不想练了，都想着这次再跑不出成绩的话，可以回家种地了。然后刚好那天是堵了，不是我们队有个队友陈国俊嘛，跑二十五六分都是我两个一起跑，他叫前面跑慢点，然后我两个就跑慢点，然后后面也跑不到。后面那天他叫我北京马拉松，他说一起跑了跑慢点，我说我不行，我自己要赌一把看看，不然就完了。后面他跑之前他还告诉我，那你等一下不要让我追到你。我的意思就是我跑崩了，前面自己跑跑崩了，跑二十七八分，他跑二十四五分把我给追了那种。然后我告诉他，是了是了。然后我跑着，那天没崩，我刚好还拿了个第七名，下来开心，下来开心嘛，又又不用喝了没，又不用走了，没喝嘛？北京那天晚上没喝，没喝嘛？没喝。嗯，那个时候还不怎么爱喝酒，我爱喝酒是从二一年开始，一个为什么？是因为二一年谈了恋爱就喜欢喝酒，没没有没有时间，没有不知道不知道是为什么。然后一闻到酒的味道就感觉闻闻到那种。我记得之前住在基地里面，然后不是还有那些菲律宾还是哪国的啊？菲律宾嘛，他们跟他们菲律宾的那些一起喝，不是菲律宾是柬埔寨的啊？柬埔寨柬埔寨全全程全程手势沟通，不过他们俩他们交流不了，然后就一起喝。我服了我，怎么喝就干杯就就碰个杯子喝了就就结束就吹牛啊？他们俩练什么的？可可以喝两三瓶酒吗？你你都动不了就碰杯了，那没没有那喝酒吃东西就光了光了用手势啊，也然后就唱歌呀，唱点歌就不是唐唐明说会弹吉他嘛，有一个柬埔寨的也会弹，然后就刚好了，然后唱点音乐有酒有人就够了啊。他们那里的歌随便柬埔寨的歌随便哼着点，然后他们我们这里的歌他们也哼着点，那我们就开始玩起来了。我记得好像这次来了呃国外的运动员，你们都还能搭上线啊，能一起喝到酒。我我们队的都能搭上线，其他队的就不知道。我我们队始终保持着以国际接轨嘛啊，以国际接轨。你们就是嘛搭上线，就过去聊聊天，给人家耍两眼神啊，甩两个眼神。后面有几次直接在翻译呢，直接英文就在翻译，就旁边翻译我自己。然后还加了抖音也相互关注了，他们那边也玩抖音嘛？他们玩的是国内版抖音还是？嗯，国内版的啊。真心可以的，真心春荣，你你真的是有点有点东西的。但我说实话，我还挺担心你这下面，现在是四月份，下面这八个月怎么怎么搞的？什么打法？就我还蛮担心的，看你这个样子，看你吴哥看你这个眼神也是有点担心你。这个个性过于活泼，这个后面这个训练怎么动？比赛怎么跑？对吧？你现在跑在场上跑出来的好的，还是在吃以前的老本？嗯。但现在竞争又这么激烈。就是啊，还还是要好好的正常系统训练这些，然后但做多难，你也说，嗯，知道要好好做。对，都要人家杨杨克古骑自行车来叫你，叫你下去赶紧去训练了。这个是不是也挺让人操心的？没事啊，后面应该不会了吧？应该不会了吧？不会了，不会了，不会了。每天都要鞭策自己啊！你明天去比赛吗？还是明天？明天去了。好，我也是明天走。嗯。这个拭目以待了，看你这个后面究竟会怎么样。可以可以啊，你你们就拭目以待吧。好，那我们期待一下。今天这期就这样，差不多不，崔总儿？差不多，差不多。嗯，好。差不多。期待一下。有什么想跟粉丝说的吗，崔总？我只想跟粉丝朋友们说，感谢大家支持我们啊！我们会在以后在跑步的道路上越来越好，也希望你们在今后的生活中越来越好。你这个太官方了，官方不行。场面化。没有这个不是场面，场面化这个是呃，有些人连场面话都没有，人有些人说的话就是啊，我好好努力，好好干，日子过好了，那你那你也不助人家呀，人人家听你视频听这么久啊，呃，听你语音听这么久。好，好。嗯。有点东西。好了，谢谢大家。好，好，谢谢大家。好，谢谢大家。嗯，好，嗯，好的，嗯，拜拜，拜拜。",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.0,
+      "end": 120.0,
+      "decode_start": 0.0,
+      "decode_end": 125.0,
+      "decoded_text": "好了，大家好，欢迎来到新一期播更很久的一期铁道子。今天的嘉宾是谁？请他自己跟大家打个招呼。好的，大家好，我是杨吹牛啊。你是杨春龙啊？那杨春龙最近有什么新外号？杨吹牛是新外号吗？他自己给自己起的吧？杨吹牛就是给自己起的外号嘛，就是爱吹牛啊。你最近也没吹什么牛嘛？我觉得你一直都还好吧？我去丽江吹牛嘛，天天。春龙，大家都非常的想念你啊！不过还好，你最近出来跑了几场比赛，理解了大家这个相思之苦啊。嗯，感谢大家的支持吧。如果没有这么多人支持的话，我现在可能还在种地啊。有没有感觉你现在出来之后，大家对你的关注变多了？肯定嘛，因为自己出来了，然后现在感谢吧，感谢感谢这么多人支持，这么多人关注自己吧。然后上一场比赛吧，就是我跑着跑着说的，别人都看不上我，偏偏我最不争气，就是这句话搞了我。哎呀，这几天跑了上场比赛，感觉挺烦恼的，因为上场比赛不好，对自己自信心造成了一定的挫折，直接是挫折了。因为我这两年多吧，两年三年接近三年，我所有国内比赛几乎都是前三嘛。所以你看前面那那一场跑了前二十都没进，给我跑跑自闭了。我本来说退赛了，然后后面想着不是这个比赛要比嘛，三场才能参加总决赛嘛，不能连门票都没买到啊！一直坚持走走又跑跑，走走又跑跑，坚持完了那天跑了两公里，都是个嘴皮子都已经跑白了，我都不知道怎么回事那天。所以你觉得本来那天状态就很差？那也不能归咎于状态吧，不行就不行啊！等下次行了，我再说我状态差就急了。所以跟大家补充一下，杨春龙刚刚在上周跑了一场萨洛门的这个黄金联赛，叫“黄银九峰”。那这个是一个中国现在。",
+      "text": "好了，大家好，欢迎来到新一期播更很久的一期铁道子。今天的嘉宾是谁？请他自己跟大家打个招呼。好的，大家好，我是杨吹牛啊。你是杨春龙啊？那杨春龙最近有什么新外号？杨吹牛是新外号吗？他自己给自己起的吧？杨吹牛就是给自己起的外号嘛，就是爱吹牛啊。你最近也没吹什么牛嘛？我觉得你一直都还好吧？我去丽江吹牛嘛，天天。春龙，大家都非常的想念你啊！不过还好，你最近出来跑了几场比赛，理解了大家这个相思之苦啊。嗯，感谢大家的支持吧。如果没有这么多人支持的话，我现在可能还在种地啊。有没有感觉你现在出来之后，大家对你的关注变多了？肯定嘛，因为自己出来了，然后现在感谢吧，感谢感谢这么多人支持，这么多人关注自己吧。然后上一场比赛吧，就是我跑着跑着说的，别人都看不上我，偏偏我最不争气，就是这句话搞了我。哎呀，这几天跑了上场比赛，感觉挺烦恼的，因为上场比赛不好，对自己自信心造成了一定的挫折，直接是挫折了。因为我这两年多吧，两年三年接近三年，我所有国内比赛几乎都是前三嘛。所以你看前面那那一场跑了前二十都没进，给我跑跑自闭了。我本来说退赛了，然后后面想着不是这个比赛要比嘛，三场才能参加总决赛嘛，不能连门票都没买到啊！一直坚持走走又跑跑，走走又跑跑，坚持完了那天跑了两公里，都是个嘴皮子都已经跑白了，我都不知道怎么回事那天。所以你觉得本来那天状态就很差？那也不能归咎于状态吧，不行就不行啊！等下次行了，我再说我状态差就急了。所以跟大家补充一下，杨春龙刚刚在上周跑了一场萨",
+      "owned_item_start": 0,
+      "owned_item_stop": 558
+    },
+    {
+      "id": 1,
+      "start": 120.0,
+      "end": 240.0,
+      "decode_start": 115.0,
+      "decode_end": 245.0,
+      "decoded_text": "所以跟大家补充一下，杨春龙刚刚在上周跑了一场萨洛蒙的这个黄金联赛，叫黄岩九峰。那这个是一个中国现在上半年二零二零年竞争最激烈的越野比赛，可能甚至都没有之一。就全国基本上所有的中短距离的好手，除了几个长距离要比赛一百公里以上级别的运动员之外，都去了。然后赛前呢，春龙被非常的看好，因为大家都觉得他这个能力很强，而且两三周之前这个咳嗽发烧、高领功的比赛越野比赛跑了一个第一，而且呢，他那场比赛单场的这个世界越野跑协会给他的这个评分打了九百十几分，大家就觉得哇靠，那杨春龙这场比赛应该是表现非常好，非常的强。结果呢，他在比赛仅仅领先了三分钟还不知道五分钟，然后就一路掉掉掉掉掉掉。我那天因为没有在现场，我看直播讲，春龙今天这么猛呢，出去就干的那么凶，结果好像没了。结果整个比赛下来，他比了二十二十多名，而且他更惨的是，比赛之后人家采访别的越野运动员，别的越野运动员跟他说：“这个嗯，跑马拉松的过来跑越野，还得再练的呀。我们这么多年越野跑，这个不是白跑的，不是白练。”所以说，杨春龙这个也很有意思啊！你上半年到现在都已经四月份了，其实你也没跑什么马拉松，基本上都在跑越野比赛。究竟是个什么情况？转行了吗？打算准备跑跑越野吧？不是，我前段时间说先把越野跑起来，然后把肌肉转换之类的练起来，再去跑这个马拉松。我下半年马拉松的话，可能会去跑北京马拉松吧，因为北京马拉松也是锦标赛。然后主要在现在锦标赛跟你有关系啊？没有，那那我去跟着大家跑，希望我能跑个好名次啊！不是好名次啊，你是因为因为锦标赛这个国内的好手很多，嗯啊，能够一起一起一起跑。你现在记得你到底是哪一天离队的吗？我啊，我现在仔细想想是二月八号跑的路啊，应该是二月八号。所以这件事情现在能展开讲了吗？这个事情还不能讲哦。主要是年纪也起来了，可能训练的话，现在我们云南这边。",
+      "text": "洛蒙的这个黄金联赛，叫黄岩九峰。那这个是一个中国现在上半年二零二零年竞争最激烈的越野比赛，可能甚至都没有之一。就全国基本上所有的中短距离的好手，除了几个长距离要比赛一百公里以上级别的运动员之外，都去了。然后赛前呢，春龙被非常的看好，因为大家都觉得他这个能力很强，而且两三周之前这个咳嗽发烧、高领功的比赛越野比赛跑了一个第一，而且呢，他那场比赛单场的这个世界越野跑协会给他的这个评分打了九百十几分，大家就觉得哇靠，那杨春龙这场比赛应该是表现非常好，非常的强。结果呢，他在比赛仅仅领先了三分钟还不知道五分钟，然后就一路掉掉掉掉掉掉。我那天因为没有在现场，我看直播讲，春龙今天这么猛呢，出去就干的那么凶，结果好像没了。结果整个比赛下来，他比了二十二十多名，而且他更惨的是，比赛之后人家采访别的越野运动员，别的越野运动员跟他说：“这个嗯，跑马拉松的过来跑越野，还得再练的呀。我们这么多年越野跑，这个不是白跑的，不是白练。”所以说，杨春龙这个也很有意思啊！你上半年到现在都已经四月份了，其实你也没跑什么马拉松，基本上都在跑越野比赛。究竟是个什么情况？转行了吗？打算准备跑跑越野吧？不是，我前段时间说先把越野跑起来，然后把肌肉转换之类的练起来，再去跑这个马拉松。我下半年马拉松的话，可能会去跑北京马拉松吧，因为北京马拉松也是锦标赛。然后主要在现在锦标赛跟你有关系啊？没有，那那我去跟着大家跑，希望我能跑个好名次啊！不是好名次啊，你是因为因为锦标赛这个国内的好手很多，嗯啊，能够一起一起一起跑。你现在记得你到底是哪一天离队的吗？我啊，我现在仔细想想是二月八号跑的路啊，应该是二月八号。所以这件事情现在能展开讲了吗？这个事情还不能讲哦。",
+      "owned_item_start": 22,
+      "owned_item_stop": 665
+    },
+    {
+      "id": 2,
+      "start": 240.0,
+      "end": 360.0,
+      "decode_start": 235.0,
+      "decode_end": 365.0,
+      "decoded_text": "云南能展开讲了吗？这个事情还不能讲哦，主要是年纪也起来了，可能训练的话，现在我们云南这边小队员的冲击很大，因为前几天女的，特别是女的，我感觉我们云南零四年以内的已经没必要训练了，我直接说没必要训练了，因为零八年的直接已经甩开他们一个档次了，他们练个锤子哟。你这段是能最后要减掉的，还是不能减的啊？这个不用减，没啥。我感觉女孩的话，零四年以内在云南，除非像罗霞还有其他很厉害的几个，其他的就名不见传这种已经可以下队了。因为零八年这这次你前两天没看见成绩啊？三千米上了十分二十秒。零八年的，是啊，我们安徽有一个我启蒙教练带的，一零年的八百米已经跑到了两分零八了。嗯，一零年才十六岁，哇，谁要说两分零八，好快啊！因为我们云南这届全运会比以往那几届都强，以往那几届的话，只是说你提前一两年你就锁定冠军了。但是这真的是你退役的主因吗？肯定嘛，我都快跑不过小的了，我不退干嘛？但你是跑马拉松，真的小的超过你的还是没几个的呀？那有啊，到时候什么罗天凡呀，什么赵朝传呀，他们这几个不是一起来就把我干的？赵朝传，我到现在也没见他起来。嗯，说不定万一一下子他们起来了，全运会我就不能比了，那我不是白白耽误四年青春吗？已经耽误耽误四年了，这个已经也不能算耽误吧，只是说自己没本事。所以呢，现在出来了之后什么样的感觉？出来了之后才发现我又想回去了啊！我又说实话，出出来了之后，我还想按时间训练，按时间吃饭，很难是不是？三点一线，然后出来的话就感觉每天都浑浑噩噩的，在干什么也不知道，什么十一一两点吃饭的时候都有，有些时候中午一两点。嗯，不不知道自己在干嘛，反正你现在吃饭主要怎么吃呢？就叫外卖，打游击吧，到处混吃嘛。早点的话，以前在基地是。",
+      "text": "主要是年纪也起来了，可能训练的话，现在我们云南这边小队员的冲击很大，因为前几天女的，特别是女的，我感觉我们云南零四年以内的已经没必要训练了，我直接说没必要训练了，因为零八年的直接已经甩开他们一个档次了，他们练个锤子哟。你这段是能最后要减掉的，还是不能减的啊？这个不用减，没啥。我感觉女孩的话，零四年以内在云南，除非像罗霞还有其他很厉害的几个，其他的就名不见传这种已经可以下队了。因为零八年这这次你前两天没看见成绩啊？三千米上了十分二十秒。零八年的，是啊，我们安徽有一个我启蒙教练带的，一零年的八百米已经跑到了两分零八了。嗯，一零年才十六岁，哇，谁要说两分零八，好快啊！因为我们云南这届全运会比以往那几届都强，以往那几届的话，只是说你提前一两年你就锁定冠军了。但是这真的是你退役的主因吗？肯定嘛，我都快跑不过小的了，我不退干嘛？但你是跑马拉松，真的小的超过你的还是没几个的呀？那有啊，到时候什么罗天凡呀，什么赵朝传呀，他们这几个不是一起来就把我干的？赵朝传，我到现在也没见他起来。嗯，说不定万一一下子他们起来了，全运会我就不能比了，那我不是白白耽误四年青春吗？已经耽误耽误四年了，这个已经也不能算耽误吧，只是说自己没本事。所以呢，现在出来了之后什么样的感觉？出来了之后才发现我又想回去了啊！我又说实话，出出来了之后，我还想按时间训练，按时间吃饭，很难是不是？三点一线，然后出来的话就感觉每天都浑浑噩噩的，在干什么也不知道，什么十一一两点吃饭的时候都有，有些时候中午一两点。嗯，不不知道自己在干嘛，反正你现在吃饭主要怎",
+      "owned_item_start": 17,
+      "owned_item_stop": 609
+    },
+    {
+      "id": 3,
+      "start": 360.0,
+      "end": 480.0,
+      "decode_start": 355.0,
+      "decode_end": 485.0,
+      "decoded_text": "有有些时候中午一两点，嗯，不不知道自己在干嘛。那你现在吃饭主要怎么吃呢？就叫外卖，打游击嘛，到处混吃嘛。早点的话，以前在基地是很好的，你起床就能吃早点。然后现在的话，你有些时候七点，有些丽江那边早点铺他没开门。你们在丽江是到外面吃，他不是你们住的。没没有我我自己在外面。啊，你没跟杨克武他们住到一起是吧？嗯，我我自己应该是囊中有点羞涩，然后就没和他们住在一起了。那我真的觉得你要出来训练，你对自己吃住这方面还是要，呃，舍得去投入的。舍得投的是，啊，囊中羞涩。其实你有钱，你只是不舍得花。哎，对。自己去附近那个牛肉店里面吃嘛，然后感觉一个肉一个素菜一个汤，然后八十块一顿，八十块一顿，啊，也就可以了，不便宜了吧？八十。你说的是中午餐、早饭嘛？早饭吃八十，他的早饭就是中午饭的饭，中午饭就他们早餐叫早点，他们说的早饭就是我们说的午饭。对对。嗯，吃完了，然后晚晚饭就混吃了嘛。晚饭就是我杨克武啊、杨小华呀他们，我彭建华呀、蒋仁佳呀，还有三级啊，他们就轮轮换着请客是吧？我轮换着混他们吃，不是？对，他们轮换着请你嘛。这真是我，你这个面子很大，我听到就老吃老子还是吃得开的，到哪都吃得开，请吃饭的。脸大嘛，脸大就混吃嘛，还有这些兄弟朋友的支持与照顾，他们吃饭就一叫我，我就去了嘛。然后吃完我就说，那我拍拍屁股我走了。没事，这几个老表也不差多少钱，肯定差嘛。谁的钱都是钱呀！啊，早不能这种混吃啊。所以我现在好好努力了。我现在差不多一个月在外面要花个，连上吃住的话，差不多要花个八千多左右。那我想问你啊，你前面说杨克武他们，你们跟他们住一起吃一起，那我想帮我们的这个听众分享一下，那他们这样的话一天大概要花多少钱？你说跟他们在一起啊，贵贵，他们一天大概要花多少钱？虽然他们这个钱可能是省里出的。省里出的话，一个人头差不多应该是吃住的话，应该是两百五六吧，我觉得应该是。",
+      "text": "么吃呢？就叫外卖，打游击嘛，到处混吃嘛。早点的话，以前在基地是很好的，你起床就能吃早点。然后现在的话，你有些时候七点，有些丽江那边早点铺他没开门。你们在丽江是到外面吃，他不是你们住的。没没有我我自己在外面。啊，你没跟杨克武他们住到一起是吧？嗯，我我自己应该是囊中有点羞涩，然后就没和他们住在一起了。那我真的觉得你要出来训练，你对自己吃住这方面还是要，呃，舍得去投入的。舍得投的是，啊，囊中羞涩。其实你有钱，你只是不舍得花。哎，对。自己去附近那个牛肉店里面吃嘛，然后感觉一个肉一个素菜一个汤，然后八十块一顿，八十块一顿，啊，也就可以了，不便宜了吧？八十。你说的是中午餐、早饭嘛？早饭吃八十，他的早饭就是中午饭的饭，中午饭就他们早餐叫早点，他们说的早饭就是我们说的午饭。对对。嗯，吃完了，然后晚晚饭就混吃了嘛。晚饭就是我杨克武啊、杨小华呀他们，我彭建华呀、蒋仁佳呀，还有三级啊，他们就轮轮换着请客是吧？我轮换着混他们吃，不是？对，他们轮换着请你嘛。这真是我，你这个面子很大，我听到就老吃老子还是吃得开的，到哪都吃得开，请吃饭的。脸大嘛，脸大就混吃嘛，还有这些兄弟朋友的支持与照顾，他们吃饭就一叫我，我就去了嘛。然后吃完我就说，那我拍拍屁股我走了。没事，这几个老表也不差多少钱，肯定差嘛。谁的钱都是钱呀！啊，早不能这种混吃啊。所以我现在好好努力了。我现在差不多一个月在外面要花个，连上吃住的话，差不多要花个八千多左右。那我想问你啊，你前面说杨克武他们，你们跟他们住一起吃一起，那我想帮我们的这个听众分享一下，那他们这样的话一天大概要花多少钱？你说跟他们在一起啊，贵贵，他们一天大概要花多少钱？虽然他们这个钱可能是省里出的。省里出的",
+      "owned_item_start": 29,
+      "owned_item_stop": 653
+    },
+    {
+      "id": 4,
+      "start": 480.0,
+      "end": 600.0,
+      "decode_start": 475.0,
+      "decode_end": 605.0,
+      "decoded_text": "贵，他们一天大概要花多少钱？虽然他们这个钱可能是省里出的，省里出的话，一个人头差不多应该是吃住的话，应该是两百五六吧，我觉得应该是。那两百五六，这存起来七千五百块钱，你这个一一个月要八千多，不也差不多吗？啊，那那没有这种不能比。在里面吃的话，就是人家给你吃的那些；在外面吃的话，就自由搭配，而且想吃的很丰富。啊，想吃点小炒黄牛肉，小炒黄牛肉，水煮肉片，就水煮肉片。如果在在里面的话，钱是开了，但是很单一，就就那么几种。我是就想可能后期还是要做点改变吧。现在就是，但是运动员的饮食就是就是应该规律化，越来越好。就像我，我感觉我前段时间就有点不自律了，早点不怎么吃，然后可能这次比赛大多数都是因为不吃早点，然后那天比赛前的话，我是九点多才就吃了，吃了两个馒头，喝了一碗粥，然后十二点跑，才跑了一下子，鼻子就跑白了，跑懵了，还没起跑呢，那个孙老师那个精神状态、精神面貌就已经完全和以往比赛不一样。这场比赛没比好，我认其实。你这个也是有点离谱啊。那那你觉得你现在出来了？我们现在出来也两个多月了。那你觉得你这个离队之后最大的挑战是什么？最大的挑战，我觉得最大的挑战可能就是就是不自律。最大的挑战就是自己，自己的不自律，自己假装很努力。那你在训练刚刚讲的不都是在日常的作息啊、饮食上面？就是晚上睡觉有没有出现熬夜的情况呢？晚上睡不着，早上起不来这个样子。事情一搞就晚上就十二点多才睡觉，然后一睡觉的话就睡了之后七点多会醒，我六点五十我会按时醒的，因为以前在我们基地里面生物钟已经。哎，你这样你睡眠是不够的呀，你只只能睡到六个多小时，肯肯定不够，肯定不够，这个肯定要改，要要不改的话，以后只能完喽，以后完球喽。那训练方面呢？能做到就是系系统的一天两练吗？可以可以，这个训练就是尽管说再累的话，因为像有些教练说的。",
+      "text": "话，一个人头差不多应该是吃住的话，应该是两百五六吧，我觉得应该是。那两百五六，这存起来七千五百块钱，你这个一一个月要八千多，不也差不多吗？啊，那那没有这种不能比。在里面吃的话，就是人家给你吃的那些；在外面吃的话，就自由搭配，而且想吃的很丰富。啊，想吃点小炒黄牛肉，小炒黄牛肉，水煮肉片，就水煮肉片。如果在在里面的话，钱是开了，但是很单一，就就那么几种。我是就想可能后期还是要做点改变吧。现在就是，但是运动员的饮食就是就是应该规律化，越来越好。就像我，我感觉我前段时间就有点不自律了，早点不怎么吃，然后可能这次比赛大多数都是因为不吃早点，然后那天比赛前的话，我是九点多才就吃了，吃了两个馒头，喝了一碗粥，然后十二点跑，才跑了一下子，鼻子就跑白了，跑懵了，还没起跑呢，那个孙老师那个精神状态、精神面貌就已经完全和以往比赛不一样。这场比赛没比好，我认其实。你这个也是有点离谱啊。那那你觉得你现在出来了？我们现在出来也两个多月了。那你觉得你这个离队之后最大的挑战是什么？最大的挑战，我觉得最大的挑战可能就是就是不自律。最大的挑战就是自己，自己的不自律，自己假装很努力。那你在训练刚刚讲的不都是在日常的作息啊、饮食上面？就是晚上睡觉有没有出现熬夜的情况呢？晚上睡不着，早上起不来这个样子。事情一搞就晚上就十二点多才睡觉，然后一睡觉的话就睡了之后七点多会醒，我六点五十我会按时醒的，因为以前在我们基地里面生物钟已经。哎，你这样你睡眠是不够的呀，你只只能睡到六个多小时，肯肯定不够，肯定不够，这个肯定要改，要要不改的话，以后只能完喽，以后完球喽。那训练方面呢？能做到就是系系统的一天两练吗？可以可",
+      "owned_item_start": 30,
+      "owned_item_stop": 647
+    },
+    {
+      "id": 5,
+      "start": 600.0,
+      "end": 720.0,
+      "decode_start": 595.0,
+      "decode_end": 725.0,
+      "decoded_text": "呃，训练方面呢，能做到就是系系统的一天两练嘛？可以可以，这个训练就是，尽管说再累的话，因为像有些教练说的，跟着狼是找肉吃，跟着狗是找粮吃，那肯定是。现在我跟着杨克谷他们嘛，跟着杨克谷他们，我这两个高高山男孩，老自立了，他两个老猛了。孙老师在丽江那里跑那个十二公里，可以跑三十七分十几秒，连着干就一个星期干一次这种。他们是干一堂强做，慢跑一天，然后干一天混压，慢慢跑一天，又干一天练这种。嗯。太猛了，跟跟着他们训练，我感觉我学到了很多东西，就是啊，把自己的性子给熬一下，因为我们云南这边以前训练的话，就是差不多八点四十训练，差不多十十练五十以前是肯定下训练了。嗯。然后在那边跟他们练的话是九点开始练，有些时候练到十一点半了，都练了地下堂了，我都我都口袋里面揣能量胶了。有些时候他们时间那么长，长老长了。嗯。练的多，像你刚刚不是说他跑一趟十二公里，他其他的还有什么课加进去，能够把一堂训练时间那么长？那你准备活动十五分钟，十二公里混压，然后再一分四十秒、一分五十秒跑五圈，跑完接着三公里九分以内，九分以内跑完之后，然后再慢跑五分钟，慢跑五分钟，再来一个一公里两分五十秒左右。嗯。然后再来个四百米，就是四百米、三百米、二百米、一百米，这是高教练的计划吗？啊，他们自己练的，然后我我老佩服了这些这几个才是自立身体啊！我感觉全国有好多人，除了吴哥了，我们辉哥他们有几个董哥，他们说他们自立，我是觉得我真佩服你们真自立。像我老混压这几个，他们说他们自立，我都是不相信。老坤是谁？蒋八坤啊？蒋八？蒋八坤吗？什么老坤啊？老高啊？老雨啊？这几个我们对这几个是除了真的不自立。我觉得你们主要是有这个助教练看着比较严。嗯。是，我们助教练真的看着比较严，如果看的不严的话，我们。",
+      "text": "以，这个训练就是，尽管说再累的话，因为像有些教练说的，跟着狼是找肉吃，跟着狗是找粮吃，那肯定是。现在我跟着杨克谷他们嘛，跟着杨克谷他们，我这两个高高山男孩，老自立了，他两个老猛了。孙老师在丽江那里跑那个十二公里，可以跑三十七分十几秒，连着干就一个星期干一次这种。他们是干一堂强做，慢跑一天，然后干一天混压，慢慢跑一天，又干一天练这种。嗯。太猛了，跟跟着他们训练，我感觉我学到了很多东西，就是啊，把自己的性子给熬一下，因为我们云南这边以前训练的话，就是差不多八点四十训练，差不多十十练五十以前是肯定下训练了。嗯。然后在那边跟他们练的话是九点开始练，有些时候练到十一点半了，都练了地下堂了，我都我都口袋里面揣能量胶了。有些时候他们时间那么长，长老长了。嗯。练的多，像你刚刚不是说他跑一趟十二公里，他其他的还有什么课加进去，能够把一堂训练时间那么长？那你准备活动十五分钟，十二公里混压，然后再一分四十秒、一分五十秒跑五圈，跑完接着三公里九分以内，九分以内跑完之后，然后再慢跑五分钟，慢跑五分钟，再来一个一公里两分五十秒左右。嗯。然后再来个四百米，就是四百米、三百米、二百米、一百米，这是高教练的计划吗？啊，他们自己练的，然后我我老佩服了这些这几个才是自立身体啊！我感觉全国有好多人，除了吴哥了，我们辉哥他们有几个董哥，他们说他们自立，我是觉得我真佩服你们真自立。像我老混压这几个，他们说他们自立，我都是不相信。老坤是谁？蒋八坤啊？蒋八？蒋八坤吗？什么老坤啊？老高啊？老雨啊？这几个我们对这几个是除了真的不自立。我觉得你们主要是有这个助教练看着比较严。",
+      "owned_item_start": 23,
+      "owned_item_stop": 618
+    },
+    {
+      "id": 6,
+      "start": 720.0,
+      "end": 840.0,
+      "decode_start": 715.0,
+      "decode_end": 845.0,
+      "decoded_text": "除了你的不自律，我觉得你们主要是有这个助教练看着比较严。嗯，是，我们助教练真的看着比较严，如果看的不严的话，我们都不可能有这么高水平。那你现在没人看了，怎么办？你过年也胖了，不少对不对？还发照片给我看，肚子上一块肉。那我在丽江那边，杨克古监督啊，他喊我训练了，我告诉他，老表老表，可不可以你帮我练了？我不练了。然后他就骑着共享单车来喊我，老表，赶紧下来了，赶紧下来了。然后我就有跟着，有些时候真的不想骑啊，有时候真的不想骑，我就说，反正又没人管我，我我起来凑凑。其实人每个人都都有个多心，但我们这种的多心是感觉是太那种了。其实体育孙老师就是这种，你跑步只要你成功了，你说什么都对，你说你几点起床啊，几点按时睡觉啊，别人都相信嘛，是不是嘛？其实别人又不知道他，他半夜两三点呀，两三点跑出去吃烧烤啊，什么熬夜啊，熬夜去唱歌啊，开ktv啊，什么到处玩这种。其实他又不会说出来，他别人采访他就会说，我做到了，我做到了，我真是做到了，我证明自己了。那是他成功了呢，那好多人没成功的，他还不是好好练了，还不是好好努力了？奈何社会就就这种嘛？你说练体育的人有这么多人，每个人都努力了，每个人都成功了，那还得了？那就没失败的人了，这。那你觉得天赋和努力哪个更重要？我感觉现在我摸爬滚打这么多年，我感觉天赋最重要啊。努力的话可以说可以占个，像我们长距离马拉松的话，占个百分之六十左右。嗯，在马拉松这个项目里面，努力占比会大一点，我觉得。嗯，努力会占一点，但有的项目确实是像你所说的，我天天抽烟喝酒，该玩的玩了，什么都对，什么都玩，然后照样可以拿冠军。就是就是天赋的占比特别的重。你看嘛，现在就可以做个比喻，就我们云南队的，有个他们队有个叫兰荣健的，嗯，比我小两岁吧，应该他他是每天每天早上。",
+      "text": "嗯，是，我们助教练真的看着比较严，如果看的不严的话，我们都不可能有这么高水平。那你现在没人看了，怎么办？你过年也胖了，不少对不对？还发照片给我看，肚子上一块肉。那我在丽江那边，杨克古监督啊，他喊我训练了，我告诉他，老表老表，可不可以你帮我练了？我不练了。然后他就骑着共享单车来喊我，老表，赶紧下来了，赶紧下来了。然后我就有跟着，有些时候真的不想骑啊，有时候真的不想骑，我就说，反正又没人管我，我我起来凑凑。其实人每个人都都有个多心，但我们这种的多心是感觉是太那种了。其实体育孙老师就是这种，你跑步只要你成功了，你说什么都对，你说你几点起床啊，几点按时睡觉啊，别人都相信嘛，是不是嘛？其实别人又不知道他，他半夜两三点呀，两三点跑出去吃烧烤啊，什么熬夜啊，熬夜去唱歌啊，开ktv啊，什么到处玩这种。其实他又不会说出来，他别人采访他就会说，我做到了，我做到了，我真是做到了，我证明自己了。那是他成功了呢，那好多人没成功的，他还不是好好练了，还不是好好努力了？奈何社会就就这种嘛？你说练体育的人有这么多人，每个人都努力了，每个人都成功了，那还得了？那就没失败的人了，这。那你觉得天赋和努力哪个更重要？我感觉现在我摸爬滚打这么多年，我感觉天赋最重要啊。努力的话可以说可以占个，像我们长距离马拉松的话，占个百分之六十左右。嗯，在马拉松这个项目里面，努力占比会大一点，我觉得。嗯，努力会占一点，但有的项目确实是像你所说的，我天天抽烟喝酒，该玩的玩了，什么都对，什么都玩，然后照样可以拿冠军。就是就是天赋的占比特别的重。你看嘛，现在就可以做个比喻，就我们云南队的，有个他们队有个叫兰荣健",
+      "owned_item_start": 26,
+      "owned_item_stop": 626
+    },
+    {
+      "id": 7,
+      "start": 840.0,
+      "end": 960.0,
+      "decode_start": 835.0,
+      "decode_end": 965.0,
+      "decoded_text": "现在就可以做个比喻，就我们云南队的，或者他们都有个叫兰荣健的，嗯，比我小两岁吧，应该他他是每天每天早上九点吃完饭一回去，然后看书，看完书，然后泡脚泡一个小时的脚，然后到九点左右写训练日记，写完了训练日记就每天晚上吧，九点半啊，每天他都三点一线，很那种，就九点半就准时睡觉，对他训练很认真，然后训练也很认真，很努力，很刻苦，就是比赛比不出来，那就是什么？这这就词语是，你是看起来很努力了，还是竞技体育？竞技体育是这样的，天赋可以决定很大的，就是比重。你看嘛，像前段时间比全运会的时候，前年嘛，前年有段时间我直接六天，我每个星期只练六天，我一个月都可以跑到一千二百公里。后后面我跑了嘛，主要是我没成功。要是我成功了，我也可以说一千二百公里，你们跑过吗？我跑了。问题我没成功，我不能说这个词语嘛啊？谁不努力？我们所有练体育的，走体育这条路的人，都走了这么多年，十几年了，八九年这些都懂的，懂的都懂，都努力了，奈何只是说没收获嘛啊？嗯，那你现在，你现在离队了，自己出来做一个职业运动员了嘛？你现在主要就是比赛训练，对吧？那嗯，你以前可能定义的成功是我要跑全运会，我要站上全运会的赛场是一个成功。那你现在离开了之后，你怎么定义你的目标是什么？或者你怎么觉得你走出来之后你成功了呢？现在我的目标就是二幺零，二幺零是肯定要跑的，因为二幺零这个就像，就跟我们好多跑者说他要跑三十一样的，我这个二幺零我一是要跑了看看到底能不能跑，因为前段时间无锡马拉松一个杨克哥，一个索朗才仁这几个跑这个成绩我都懵了，因为很多比赛这两个都是在你后面，都是我带着跑他们哦，不是在我后面，都是我带着跑他们。那天我问索朗才仁说，你是搞什么？我一走你就跑个八分出来，我不走，我天天带着你跑，喊你带一下，你说你肚子疼。",
+      "text": "的，嗯，比我小两岁吧，应该他他是每天每天早上九点吃完饭一回去，然后看书，看完书，然后泡脚泡一个小时的脚，然后到九点左右写训练日记，写完了训练日记就每天晚上吧，九点半啊，每天他都三点一线，很那种，就九点半就准时睡觉，对他训练很认真，然后训练也很认真，很努力，很刻苦，就是比赛比不出来，那就是什么？这这就词语是，你是看起来很努力了，还是竞技体育？竞技体育是这样的，天赋可以决定很大的，就是比重。你看嘛，像前段时间比全运会的时候，前年嘛，前年有段时间我直接六天，我每个星期只练六天，我一个月都可以跑到一千二百公里。后后面我跑了嘛，主要是我没成功。要是我成功了，我也可以说一千二百公里，你们跑过吗？我跑了。问题我没成功，我不能说这个词语嘛啊？谁不努力？我们所有练体育的，走体育这条路的人，都走了这么多年，十几年了，八九年这些都懂的，懂的都懂，都努力了，奈何只是说没收获嘛啊？嗯，那你现在，你现在离队了，自己出来做一个职业运动员了嘛？你现在主要就是比赛训练，对吧？那嗯，你以前可能定义的成功是我要跑全运会，我要站上全运会的赛场是一个成功。那你现在离开了之后，你怎么定义你的目标是什么？或者你怎么觉得你走出来之后你成功了呢？现在我的目标就是二幺零，二幺零是肯定要跑的，因为二幺零这个就像，就跟我们好多跑者说他要跑三十一样的，我这个二幺零我一是要跑了看看到底能不能跑，因为前段时间无锡马拉松一个杨克哥，一个索朗才仁这几个跑这个成绩我都懵了，因为很多比赛这两个都是在你后面，都是我带着跑他们哦，不是在我后面，都是我带着跑他们。那天我问索朗才仁说，你是搞什么？我一走你",
+      "owned_item_start": 27,
+      "owned_item_stop": 629
+    },
+    {
+      "id": 8,
+      "start": 960.0,
+      "end": 1080.0,
+      "decode_start": 955.0,
+      "decode_end": 1085.0,
+      "decoded_text": "我带着跑他们那天我问索拉才人说你是高手吗？我一走你就跑个八分出来，我不走我天天带着你跑喊你带一下，你说你肚子疼，然后他怎么回答你的？他是说真的疼呀！我说你真的疼个锤子了，你真的疼，你到最后一公里你又跑去我前面去了。他就是装的。我有好多比赛，孙老师，好多人记着点疼。他前面前面我带着带着，我都带了三十多公里了。马拉松我带三十多公里是不得了的。怎么感觉你在说我？我我好像没怎么跟你说过。你你水平比我高，你肯定在我前面吧？你肯定是跟别人去了吧？然后跟了三十公里，我告诉他兄弟兄弟，有点酸，赶紧上来带一下。我这个汉子，他直接捏着肚子说啊，兄弟，我肚子疼，我不行了。然后然后我说好吧，兄弟。然后我就带，我就带了他八公里，然后三十八公里我开始掉速了，掉到三他二十秒了。他再后面缓了一下，他三分十秒他走了。后面后面他又他又跑在我前面二三十秒吧，然后下来他还来说谢谢你啊，兄弟。我说你谢个锤子！我喊你带一下你不带。上年十月份，北广州广州马拉松，我看我就一直带着他，我喊他来带他不带，然后我就也没有说别阻塞他，然后我也带，然后跑到三十二公里的时候，我告诉他啊，兄弟，我肚子疼，你走吧。然后我就告诉他我肚子疼，你走吧，他就真走了。然后一下走把我拉开了五十多米，那五十多米我是故意放的。然后我我一直在他后面跑着，后面他也跑的挺快，跑了个五六公里，我看见他动作变形了，在后面看见动作变形了，我就从后面冲，后面把他冲了嘛。这个策略是对的，因为如果我我一直带着他跑的话，我我很累。然后他再后面跟着，他很舒适嘛，舒适还舒适都挺好。然后这就是你的战术，就是啊。然后我我也就走他的路，让他无路可走。我也说兄弟，我肚子疼，你走吧，我可能要退赛了。你把他的战术用了。嗯，然后他他走了，他老开心了。后后面我就把他给超了。就在广州马拉松获得，虽然说成绩不怎么好，但是获得了一名。",
+      "text": "就跑个八分出来，我不走我天天带着你跑喊你带一下，你说你肚子疼，然后他怎么回答你的？他是说真的疼呀！我说你真的疼个锤子了，你真的疼，你到最后一公里你又跑去我前面去了。他就是装的。我有好多比赛，孙老师，好多人记着点疼。他前面前面我带着带着，我都带了三十多公里了。马拉松我带三十多公里是不得了的。怎么感觉你在说我？我我好像没怎么跟你说过。你你水平比我高，你肯定在我前面吧？你肯定是跟别人去了吧？然后跟了三十公里，我告诉他兄弟兄弟，有点酸，赶紧上来带一下。我这个汉子，他直接捏着肚子说啊，兄弟，我肚子疼，我不行了。然后然后我说好吧，兄弟。然后我就带，我就带了他八公里，然后三十八公里我开始掉速了，掉到三他二十秒了。他再后面缓了一下，他三分十秒他走了。后面后面他又他又跑在我前面二三十秒吧，然后下来他还来说谢谢你啊，兄弟。我说你谢个锤子！我喊你带一下你不带。上年十月份，北广州广州马拉松，我看我就一直带着他，我喊他来带他不带，然后我就也没有说别阻塞他，然后我也带，然后跑到三十二公里的时候，我告诉他啊，兄弟，我肚子疼，你走吧。然后我就告诉他我肚子疼，你走吧，他就真走了。然后一下走把我拉开了五十多米，那五十多米我是故意放的。然后我我一直在他后面跑着，后面他也跑的挺快，跑了个五六公里，我看见他动作变形了，在后面看见动作变形了，我就从后面冲，后面把他冲了嘛。这个策略是对的，因为如果我我一直带着他跑的话，我我很累。然后他再后面跟着，他很舒适嘛，舒适还舒适都挺好。然后这就是你的战术，就是啊。然后我我也就走他的路，让他无路可走。我也说兄弟，我肚子疼，你走吧，我可能要退赛了。你把他的战术用了。嗯，然后他他走了，他老开心了。后后面我就把他给",
+      "owned_item_start": 24,
+      "owned_item_stop": 653
+    },
+    {
+      "id": 9,
+      "start": 1080.0,
+      "end": 1200.0,
+      "decode_start": 1075.0,
+      "decode_end": 1205.0,
+      "decoded_text": "哎，然后他他走了，他老开心了，后后来我就把他给超了，就在广州马拉松获得，虽然说成绩不怎么好，但是获得了一名宝贵的第二名。那是那天我在我在现场，那从你现在上半年月跑为主对吧？月也跑为主吧，可能这段时间再好好的磨合一下吧，不然的话不行啊，我就不信这个邪了。其实我说的，别人都看不上我，偏偏我最不珍惜这个，是我在调侃自己啊。其实很多人都很看得上我，很注重我，因为那天我一下来，他们说有人在看直播，我们跑野这边开直播，有人在那里骂架，不是有个有两个一千多个人那个粉丝群，我就告诉他们你们不要这种，然后他们说不好意思啊，实在没憋住就在那里骂了，下面的有些人都在那里骂他嘛，你们肯定是听脑残文，我都说我的粉丝很支持我，正如我支持他们一样，都一样相互支持嘛。然后他们太支持我，这次是我我不珍惜啊，只能怪自己。然后后面的话就好好的干，因为我还是觉得我上坡是有很大优势的，因为孙老师你是觉得我前两天比赛是前面跑出去是太快了，其实我觉得我跑上坡那天跑的已经是很放着了已经，因为我那天好好的分析了一下我的技术动作是，才跑出去动作就变形了，哪哪有人跑步是这种，对对，两个腿弯了，我还撇呢，我在想吹到这个什么上坡技术啊，就是我我一万跑是真正的这种真的，怎么那天冷了这个技术动作是，巴着腿跟那个潘长江鸭子走路是一样跑上去了，然后才跑了一下就不行了不行了，跑了怪球的了，现在就想着好好的搞搞，再去追上这个国内前三名的这些积分呀。那你训练月跑吗？训练，你说两两户，他们在一起的话，你应该不不跑这些山吧？跑，我也要做做爬楼梯吧。我一个星期去一趟，其实的话，孙老师你不用说刻意的去训练呀什么，其实多比两场比赛就比出来了。那天是本来没进，本来我还那个镜头一来，我还说给大家看看我的仰视下坡了，我我才是这种一般的，那个腿前侧这里感觉有。",
+      "text": "超了，就在广州马拉松获得，虽然说成绩不怎么好，但是获得了一名宝贵的第二名。那是那天我在我在现场，那从你现在上半年月跑为主对吧？月也跑为主吧，可能这段时间再好好的磨合一下吧，不然的话不行啊，我就不信这个邪了。其实我说的，别人都看不上我，偏偏我最不珍惜这个，是我在调侃自己啊。其实很多人都很看得上我，很注重我，因为那天我一下来，他们说有人在看直播，我们跑野这边开直播，有人在那里骂架，不是有个有两个一千多个人那个粉丝群，我就告诉他们你们不要这种，然后他们说不好意思啊，实在没憋住就在那里骂了，下面的有些人都在那里骂他嘛，你们肯定是听脑残文，我都说我的粉丝很支持我，正如我支持他们一样，都一样相互支持嘛。然后他们太支持我，这次是我我不珍惜啊，只能怪自己。然后后面的话就好好的干，因为我还是觉得我上坡是有很大优势的，因为孙老师你是觉得我前两天比赛是前面跑出去是太快了，其实我觉得我跑上坡那天跑的已经是很放着了已经，因为我那天好好的分析了一下我的技术动作是，才跑出去动作就变形了，哪哪有人跑步是这种，对对，两个腿弯了，我还撇呢，我在想吹到这个什么上坡技术啊，就是我我一万跑是真正的这种真的，怎么那天冷了这个技术动作是，巴着腿跟那个潘长江鸭子走路是一样跑上去了，然后才跑了一下就不行了不行了，跑了怪球的了，现在就想着好好的搞搞，再去追上这个国内前三名的这些积分呀。那你训练月跑吗？训练，你说两两户，他们在一起的话，你应该不不跑这些山吧？跑，我也要做做爬楼梯吧。我一个星期去一趟，其实的话，孙老师你不用说刻意的去训练呀什么，其实多比两场比赛就比出来了。那天是本来没进，本来我还那个镜头一来，我还说给大家",
+      "owned_item_start": 20,
+      "owned_item_stop": 651
+    },
+    {
+      "id": 10,
+      "start": 1200.0,
+      "end": 1320.0,
+      "decode_start": 1195.0,
+      "decode_end": 1325.0,
+      "decoded_text": "赛就比赛了。那天是本来没进，本来我还那个镜头一来，我还是给大家看看我的仰视下坡了。这我猜这种一百的，那个腿前侧这里感觉有个地方没进，然后应该是抬不起来，腿抬不起来就勾到那个树枝，差点摔倒了。然后另一只腿那种磕到，差点摔倒了。然后另一只踩到石头，差点差点崴脚了。后面我就不敢跑了。你现在出门比赛，肯定粉你这个两个一千多万的粉丝群里面，也肯定有要找你吃饭的。那你怎么处理啊？以前在队里谨言慎行，对吧？比赛之后接受采访，比赛前就算想出来溜达吃饭，肯定不行。你上次去跑宁波，后来看到晚上，我看你比完那天晚上还喝了酒，还喝了白酒。那你现在这个事情怎么办？你有想过吗？你还会长在旁边笑？问了一个经费的问题。不行啊，这种人就那种嘛，失败了就找借口。那天比赛，因为我本身那几天比赛，我本身没怎么练嘛，然后可能比赛那天也有点消耗，然后喝了点高度酒吧。其实，怎么来了？控制不住自己，这种就是其实就是自己的问题。这种东西，人教人的话，你是你是教不了的。事教事，你才能一次你就懂了。所以你确定以后还喝吗？不不喝了。茅台，茅台香不香？比完赛是不敢喝了，香倒是啊什么香啊？那种喝了之后倒是很很开心很快乐。第二天倒是难受死了。第二天直接又在那里拿方言说哪个汉子在带我喝酒，我锤死他这种一个那里酒。粉丝的话，我没每次去每个地方比赛，有好多人都来找我聊天，说在哪里啊吃个饭呀，咱们一起。然后都被我婉拒了，因为哎，虽然我喜欢混吃混喝，但是你这种就混去粉丝家里，这种行为是不行的吧？人家没有说要在家里请你吃饭，人家就是外面餐馆吃个饭，餐馆也不不行啊。以后这种还是因为上次高立共就宁波一跑完就跑高立共，刚发烧跑顶了，然后跑到三十公里，我在想到底为了什么呀？搞了这么累，现在还要这种啊？如果说不就喝那台酒的话，自己也不至于说跑的这么狼狈。",
+      "text": "看看我的仰视下坡了。这我猜这种一百的，那个腿前侧这里感觉有个地方没进，然后应该是抬不起来，腿抬不起来就勾到那个树枝，差点摔倒了。然后另一只腿那种磕到，差点摔倒了。然后另一只踩到石头，差点差点崴脚了。后面我就不敢跑了。你现在出门比赛，肯定粉你这个两个一千多万的粉丝群里面，也肯定有要找你吃饭的。那你怎么处理啊？以前在队里谨言慎行，对吧？比赛之后接受采访，比赛前就算想出来溜达吃饭，肯定不行。你上次去跑宁波，后来看到晚上，我看你比完那天晚上还喝了酒，还喝了白酒。那你现在这个事情怎么办？你有想过吗？你还会长在旁边笑？问了一个经费的问题。不行啊，这种人就那种嘛，失败了就找借口。那天比赛，因为我本身那几天比赛，我本身没怎么练嘛，然后可能比赛那天也有点消耗，然后喝了点高度酒吧。其实，怎么来了？控制不住自己，这种就是其实就是自己的问题。这种东西，人教人的话，你是你是教不了的。事教事，你才能一次你就懂了。所以你确定以后还喝吗？不不喝了。茅台，茅台香不香？比完赛是不敢喝了，香倒是啊什么香啊？那种喝了之后倒是很很开心很快乐。第二天倒是难受死了。第二天直接又在那里拿方言说哪个汉子在带我喝酒，我锤死他这种一个那里酒。粉丝的话，我没每次去每个地方比赛，有好多人都来找我聊天，说在哪里啊吃个饭呀，咱们一起。然后都被我婉拒了，因为哎，虽然我喜欢混吃混喝，但是你这种就混去粉丝家里，这种行为是不行的吧？人家没有说要在家里请你吃饭，人家就是外面餐馆吃个饭，餐馆也不不行啊。以后这种还是因为上次高立共就宁波一跑完就跑高立共，刚发烧跑顶了，然后跑到三十公里，我在想到底为了什么呀？搞了这么累，现在还要",
+      "owned_item_start": 28,
+      "owned_item_stop": 642
+    },
+    {
+      "id": 11,
+      "start": 1320.0,
+      "end": 1440.0,
+      "decode_start": 1315.0,
+      "decode_end": 1445.0,
+      "decoded_text": "跑到三十公里，我在想到底为了什么呀？搞了这么累，现在还要这种啊？如果说不去喝那台酒的话，自己也不至于说跑的这么狼狈，这么难受啊。但是你看，你那个酒其实直接影响到现在。你到今天我们在录音的时候，你都还在咳嗽啊？那都还在咳一个月之前的事情了，一个多月之前，一个多月可能这个咳嗽要延迟到差不多五月中旬嘛，应该起码还有一个月。现在的话，这个病，所以大家一定要注意好身体啊！一定不要不要生病。生病了现在。比赛喝茅台是不是？嗯，也不是说比赛喝喝茅台，好好多跑友他一跑下来他就喜欢庆祝呀什么，他一定要注意好身体，是自己的。然后你可以说休息两天再喝，不要立马喝。孙老师，我直接劝后，我不能比我自己，我其实我认的，我我也是吃亏吃在这个酒身上。你看我无锡马拉松拿了第三，然后我很开心那晚上，我的这些好朋友也替我开心，我就畅饮了，随便畅饮了一箱五百七十毫升的一箱十二瓶畅饮了一箱，然后星期天晚上畅饮了嘛，星期天比赛，然后星期一回来，然后我们这里的老友啊，亲朋好友又给我庆祝了一下，然后我又不知不觉的干了一公斤啊。后面那个那个身体就消耗完了嘛，已经被酒酒是酒这种东西是消耗稀释你这个酒精血氧。那你是无锡回来也喝了，连着喝了好几天？啊，开心嘛，开心嘛，庆祝嘛。然后后面比赛比场地就感觉训练倒是不影响，因为训练的强度你是达不到比赛的强度的。嗯。然后一去比就被关门了嘛，关了两次门。后面真没办法了，去陕西那边跑了个分区赛，然后跑了三十一分多，然后后面就拉太远了嘛。高鹏跑了二十九分三十多秒嘛，然后我跑了三十一分的话，你这个积分是随随便便就拉五十多分了。嗯。我前面还拉他三十多分呢。其实你万米，我觉得好好去准备的话，跑进三十万。",
+      "text": "这种啊？如果说不去喝那台酒的话，自己也不至于说跑的这么狼狈，这么难受啊。但是你看，你那个酒其实直接影响到现在。你到今天我们在录音的时候，你都还在咳嗽啊？那都还在咳一个月之前的事情了，一个多月之前，一个多月可能这个咳嗽要延迟到差不多五月中旬嘛，应该起码还有一个月。现在的话，这个病，所以大家一定要注意好身体啊！一定不要不要生病。生病了现在。比赛喝茅台是不是？嗯，也不是说比赛喝喝茅台，好好多跑友他一跑下来他就喜欢庆祝呀什么，他一定要注意好身体，是自己的。然后你可以说休息两天再喝，不要立马喝。孙老师，我直接劝后，我不能比我自己，我其实我认的，我我也是吃亏吃在这个酒身上。你看我无锡马拉松拿了第三，然后我很开心那晚上，我的这些好朋友也替我开心，我就畅饮了，随便畅饮了一箱五百七十毫升的一箱十二瓶畅饮了一箱，然后星期天晚上畅饮了嘛，星期天比赛，然后星期一回来，然后我们这里的老友啊，亲朋好友又给我庆祝了一下，然后我又不知不觉的干了一公斤啊。后面那个那个身体就消耗完了嘛，已经被酒酒是酒这种东西是消耗稀释你这个酒精血氧。那你是无锡回来也喝了，连着喝了好几天？啊，开心嘛，开心嘛，庆祝嘛。然后后面比赛比场地就感觉训练倒是不影响，因为训练的强度你是达不到比赛的强度的。嗯。然后一去比就被关门了嘛，关了两次门。后面真没办法了，去陕西那边跑了个分区赛，然后跑了三十一分多，然后后面就拉太远了嘛。高鹏跑了二十九分三十多秒嘛，然后我跑了三十一分的话，你这个积分是随随便便就拉五十多分了。嗯。我前面还",
+      "owned_item_start": 25,
+      "owned_item_stop": 602
+    },
+    {
+      "id": 12,
+      "start": 1440.0,
+      "end": 1560.0,
+      "decode_start": 1435.0,
+      "decode_end": 1565.0,
+      "decoded_text": "三十一分的话，你这个积分是随随便便就拉五十多分了。嗯，我前面还拉他三十多分呢。其实你外面，我觉得好好去准备的话，跑进三十万也是问题不大。可以的，三十分也是可以，但是你现在怎么准备出都出来了。就是我发现你在酒质上面吃了好多次亏啊，但是你现在还在吃这个亏，还在吃这个亏啊。你作为一个性情中人，可能大家很喜欢你的性格，但是你你在这个东西后面对你将来会有更大的影响的。这个我们不想就反复的拿别的运动员出来讲，但是你作为我们作为都有很熟悉的运动员，都在这上面吃了很多的亏，对吧？要么是酒的，要么是色。嗯，现在只听说了你酒上是酒上吃的亏，还没有听说你在色上吃的亏，这是另外一个故事了。但是，嗯，大家其实都还蛮担心你的，因为在外面的这个花花世界里面，这个面临的诱惑那么多，肯定刚才我在丽江这么多朋友了，这个今天吃一点，明天他刚刚我说在丽江还好，反而在成都的诱惑要更多一些。成都的朋友更多，是吧？对，主要成都的朋友太多了。其实我觉得有的时候，你老板这些归咎于你的老友的原因，但有没有可能，是是我自己的原因？是我自对想喝你喊你的人很多，但是你自己禁不住这个诱惑是最大的，你就主因啊。他他喊我，其实我可以说我身体有点不华爽，我可以喝。我今天吃了土包啊，今天但是你是真的想喝，我我我可以喝点饮料，喝点开水。但是孙老师，我不一样，我我感觉一上那个桌，他开了那那个味道，我会念，我就感觉我好香，可不可以给我来一瓶？上次在上海是我没有把你招待好，没有这上次去上海，我以为，因为孙老师你说我身身体不好，我一直在可我也没没喝了。后面我还说不，让拿两瓶嘛，孙老师，咱俩喝，喝两一瓶，畅饮。后面后面还是还是忍住了，还还好忍住了。这酒我喝了，酒不太好。没有没有，我是人是干不过酒。",
+      "text": "拉他三十多分呢。其实你外面，我觉得好好去准备的话，跑进三十万也是问题不大。可以的，三十分也是可以，但是你现在怎么准备出都出来了。就是我发现你在酒质上面吃了好多次亏啊，但是你现在还在吃这个亏，还在吃这个亏啊。你作为一个性情中人，可能大家很喜欢你的性格，但是你你在这个东西后面对你将来会有更大的影响的。这个我们不想就反复的拿别的运动员出来讲，但是你作为我们作为都有很熟悉的运动员，都在这上面吃了很多的亏，对吧？要么是酒的，要么是色。嗯，现在只听说了你酒上是酒上吃的亏，还没有听说你在色上吃的亏，这是另外一个故事了。但是，嗯，大家其实都还蛮担心你的，因为在外面的这个花花世界里面，这个面临的诱惑那么多，肯定刚才我在丽江这么多朋友了，这个今天吃一点，明天他刚刚我说在丽江还好，反而在成都的诱惑要更多一些。成都的朋友更多，是吧？对，主要成都的朋友太多了。其实我觉得有的时候，你老板这些归咎于你的老友的原因，但有没有可能，是是我自己的原因？是我自对想喝你喊你的人很多，但是你自己禁不住这个诱惑是最大的，你就主因啊。他他喊我，其实我可以说我身体有点不华爽，我可以喝。我今天吃了土包啊，今天但是你是真的想喝，我我我可以喝点饮料，喝点开水。但是孙老师，我不一样，我我感觉一上那个桌，他开了那那个味道，我会念，我就感觉我好香，可不可以给我来一瓶？上次在上海是我没有把你招待好，没有这上次去上海，我以为，因为孙老师你说我身身体不好，我一直在可我也没没喝了。后面我还说不，让拿两瓶嘛，孙老师，咱俩喝，喝两一瓶，畅饮。后面后面还是还是忍住了，还还好忍住了。",
+      "owned_item_start": 28,
+      "owned_item_stop": 623
+    },
+    {
+      "id": 13,
+      "start": 1560.0,
+      "end": 1680.0,
+      "decode_start": 1555.0,
+      "decode_end": 1685.0,
+      "decoded_text": "因为后面还是还是忍住了，还还好忍住了。这酒喝多了就不太好。没有没有，我是人是干不过酒的，但这个酒是什么酒都会闹人，就是喝了几瓶之后，人的话就会多。酒就是打开话匣子的那个，那个叫什么？你不需要，你你不要酒都都都能打开话匣子。那你现在出去比赛，你要去算这个成本嘛？因为比以前在队里，比如说去比赛，那正常范你也不用管机票、酒店都队里买单了。如果是有一些你能够请出假的邀请的比赛，那可能也是赞助商或者组委会去请你。那比如说你现在跑越野比赛，你或者甚至跑下年下半下半年的这种，你想跑北京，那不都对，在一定程度上不都得自掏腰包了吗？你要去算，你先会去算这笔账嘛？掏的不倒是不多，品牌方帮出的大头吧，因为想着比比赛嘛，至少我们品牌方是想着我杨春龙去比赛，也是又不是说没穿他们衣服，没穿他们裤子，然后他们那边都很支很支持我在外面比赛的。就这这方面还是不需要太操心，毕竟也是。所以就是现在就是说，呃，训练几乎所有的马拉松还有越野，包括越野比赛，安踏都会帮你，嗯，包含去帮你负责是吧？是，安挺好，挺挺好的。就是自己训练的钱、住的钱、吃的日常吃的钱的自己自己。那你像就是在外面训练啊，这笔费用你也可以去尝试着跟他们申请，他们给我出呀，然后然后我我不好意思呀。为什么不好意思？为什么不好意思？有什么不好意思？这是非常合理的支出呀！你给他们，比如一些票据啊，正常的票据就可以了呀。嗯。后面嘛，先把成绩跑出来吧。现在还不要跟品牌方不好意思，对吧？我觉得你带给他们的流量，完全他们值得的这笔呃支出，而且他们也觉得呃，你这个跑出成绩了，他们也在你帮助你跑出成绩，也是觉得他们献出了一份力量。嗯，对，是。因因为前面我们安踏那边的工作人也他就和我沟通了，然后后面。",
+      "text": "这酒喝多了就不太好。没有没有，我是人是干不过酒的，但这个酒是什么酒都会闹人，就是喝了几瓶之后，人的话就会多。酒就是打开话匣子的那个，那个叫什么？你不需要，你你不要酒都都都能打开话匣子。那你现在出去比赛，你要去算这个成本嘛？因为比以前在队里，比如说去比赛，那正常范你也不用管机票、酒店都队里买单了。如果是有一些你能够请出假的邀请的比赛，那可能也是赞助商或者组委会去请你。那比如说你现在跑越野比赛，你或者甚至跑下年下半下半年的这种，你想跑北京，那不都对，在一定程度上不都得自掏腰包了吗？你要去算，你先会去算这笔账嘛？掏的不倒是不多，品牌方帮出的大头吧，因为想着比比赛嘛，至少我们品牌方是想着我杨春龙去比赛，也是又不是说没穿他们衣服，没穿他们裤子，然后他们那边都很支很支持我在外面比赛的。就这这方面还是不需要太操心，毕竟也是。所以就是现在就是说，呃，训练几乎所有的马拉松还有越野，包括越野比赛，安踏都会帮你，嗯，包含去帮你负责是吧？是，安挺好，挺挺好的。就是自己训练的钱、住的钱、吃的日常吃的钱的自己自己。那你像就是在外面训练啊，这笔费用你也可以去尝试着跟他们申请，他们给我出呀，然后然后我我不好意思呀。为什么不好意思？为什么不好意思？有什么不好意思？这是非常合理的支出呀！你给他们，比如一些票据啊，正常的票据就可以了呀。嗯。后面嘛，先把成绩跑出来吧。现在还不要跟品牌方不好意思，对吧？我觉得你带给他们的流量，完全他们值得的这笔呃支出，而且他们也觉得呃，你这个跑出成绩了，他们也在你帮助你跑出成绩，也是觉得他们献出了一份力量。嗯，对，是。因",
+      "owned_item_start": 17,
+      "owned_item_stop": 612
+    },
+    {
+      "id": 14,
+      "start": 1680.0,
+      "end": 1800.0,
+      "decode_start": 1675.0,
+      "decode_end": 1805.0,
+      "decoded_text": "帮助你跑出成绩，也是觉得他们献出了一份力量。嗯，对，是。因因为前面我们安踏那边的工作人员他就和我沟通了，然后后面叫我去曲靖那边练，他们那边曲靖那边可以说训练营可以给我找。然后我说我最近现在练练训练吧。然后他们说后期后期看，因为他们一一直想来跟我说吃住这些啊，衣食住行都给我买单的。但是我还是我害羞放不下这个面子，不是总不能到时候到时候混吃混喝。你说你说，对，我觉得这个是比给你签约费还更加基础的一个事情，负责你的吃住训练的费用，这比签约费，你签约费拿的理所应当，你在训练的这个方面的支出拿的应该更理理所应当。因因为你你想训练，就是为了去给他们参赛为一种啊比赛。对，而且从另外一个角度来说，你现在离开了体职之后，你参加比赛的机会和可能性是会比以前多的，对不对？你的你的甚甚至你的曝光也是会更多的。那在这个这个情况下，我觉得你去不好意思是没有没有任何的必要的，就是应该理所应当的一部分的一个支出嘛。以前的话一年比四场，现在一个星期四场就比完了啊！我一个意思，什么时间比四场啊？一个一个一个说错了。对啊，一一个月就比完了，现在一个月就把一年的练给比了。对啊，那在这种情况下，那这些其实都是比较正常的、正常的支出嘛。哎，那你下半年北京锦标赛怎么办？你现在不注册，没有队，你瓶子也放不了。没事嘛，强者从来不抱怨环境，但我是弱者，环境就是被他们这些强者给搞坏的啊！到时候我和杨克国啊他们跑在一起，我混喝就行了嘛。不行，你不能引起引起这个举报的啊！你只能注册在宜居跑野马总局的部了。你这可以，那我去，可以放那那那我去捡了喝就行了嘛？不然就。怎么捡？对啊，因为你现在不是注册运动员，你后面领导。",
+      "text": "因为前面我们安踏那边的工作人员他就和我沟通了，然后后面叫我去曲靖那边练，他们那边曲靖那边可以说训练营可以给我找。然后我说我最近现在练练训练吧。然后他们说后期后期看，因为他们一一直想来跟我说吃住这些啊，衣食住行都给我买单的。但是我还是我害羞放不下这个面子，不是总不能到时候到时候混吃混喝。你说你说，对，我觉得这个是比给你签约费还更加基础的一个事情，负责你的吃住训练的费用，这比签约费，你签约费拿的理所应当，你在训练的这个方面的支出拿的应该更理理所应当。因因为你你想训练，就是为了去给他们参赛为一种啊比赛。对，而且从另外一个角度来说，你现在离开了体职之后，你参加比赛的机会和可能性是会比以前多的，对不对？你的你的甚甚至你的曝光也是会更多的。那在这个这个情况下，我觉得你去不好意思是没有没有任何的必要的，就是应该理所应当的一部分的一个支出嘛。以前的话一年比四场，现在一个星期四场就比完了啊！我一个意思，什么时间比四场啊？一个一个一个说错了。对啊，一一个月就比完了，现在一个月就把一年的练给比了。对啊，那在这种情况下，那这些其实都是比较正常的、正常的支出嘛。哎，那你下半年北京锦标赛怎么办？你现在不注册，没有队，你瓶子也放不了。没事嘛，强者从来不抱怨环境，但我是弱者，环境就是被他们这些强者给搞坏的啊！到时候我和杨克国啊他们跑在一起，我混喝就行了嘛。不行，你不能引起引起这个举报的啊！你只能注册在宜居跑野马总局的部了。你这可以，那我去，可以放那那那我去捡了喝就行了",
+      "owned_item_start": 24,
+      "owned_item_stop": 597
+    },
+    {
+      "id": 15,
+      "start": 1800.0,
+      "end": 1920.0,
+      "decode_start": 1795.0,
+      "decode_end": 1925.0,
+      "decoded_text": "可以放我去，我们那那我去捡了喝就行了，我不讲究。怎么捡？对，因为你现在不是注册运动员，你后面你有很多的问题的，特别像这种锦标赛这样的比赛，对不对？你的瓶子都没地方放。没事，到到时候多拿几个能量胶就行了，别在身上。哦，会啊！我跟你说，你都不知道群众有多花。他上次不是来上海跑那个黄浦半马的比赛吗？他从兜里掏出两只胶，三只胶都还不是一个牌子的。哈哈哈！是不是马博会的时候到处薅的，到到处嫖的嘛？什么什么机油啊，S E S 啊，什么科比克到处嫖啊！我都到地方我就我就嫖，还有还有你们卖肾，我天天嫖你们卖肾，每次录视频都冠名卖肾。好，我马上回去打扰我，然后我叫他把你的这个样品都给包了。你要不要嫖一点？那天他口袋里掏出几个胶，我惊呆了。我说啊，一一场比赛的胶牌子都还不一样，然后也不是那种故意的精心搭配，你知道，就是随便拿了两支来。我还在看，我还在帮他看，这胶已经过期了啊！还好还有两三个月才过期。这真的是有点多。我我回去就让卖肾把你的样品给包了，以后只吃我们卖肾的胶可以吧？哈，你看孙老师，我不是每次录那个视频、拆包视频，不是好多比赛都是你们卖肾赞助的吗？嗯，卖肾一赞助，我不就是里面的所有东西我都要吃一遍，然后我就拿，还有一支卖肾吃了，卖肾让我们卖肾胜利啊！你看，哎呀，广广告打的多好啊啊！他们他们懂事了，我马上回去交代一下。这太不懂事了。哎，你这个，那你以后这个上半年、上半年还有几场越野比赛，然后就收工了，差不多。来崇礼幺六八，你去吗？幺六八，嗯，什么时候是？你知也不知道是吧？七月份，七七月份我我回家玩一个。我我本身想，孙老师想象是很丰富的，现实是很骨感的。本身是想把这几场比赛给拿下来，然后把这个登塔计划的奖金给拿下来，然后我回家再休息一个月，恢复半半个月就参加这个马拉松嘛。我是这种想的。奈何上一场这么一比，给我搞了。",
+      "text": "我不讲究。怎么捡？对，因为你现在不是注册运动员，你后面你有很多的问题的，特别像这种锦标赛这样的比赛，对不对？你的瓶子都没地方放。没事，到到时候多拿几个能量胶就行了，别在身上。哦，会啊！我跟你说，你都不知道群众有多花。他上次不是来上海跑那个黄浦半马的比赛吗？他从兜里掏出两只胶，三只胶都还不是一个牌子的。哈哈哈！是不是马博会的时候到处薅的，到到处嫖的嘛？什么什么机油啊，S E S 啊，什么科比克到处嫖啊！我都到地方我就我就嫖，还有还有你们卖肾，我天天嫖你们卖肾，每次录视频都冠名卖肾。好，我马上回去打扰我，然后我叫他把你的这个样品都给包了。你要不要嫖一点？那天他口袋里掏出几个胶，我惊呆了。我说啊，一一场比赛的胶牌子都还不一样，然后也不是那种故意的精心搭配，你知道，就是随便拿了两支来。我还在看，我还在帮他看，这胶已经过期了啊！还好还有两三个月才过期。这真的是有点多。我我回去就让卖肾把你的样品给包了，以后只吃我们卖肾的胶可以吧？哈，你看孙老师，我不是每次录那个视频、拆包视频，不是好多比赛都是你们卖肾赞助的吗？嗯，卖肾一赞助，我不就是里面的所有东西我都要吃一遍，然后我就拿，还有一支卖肾吃了，卖肾让我们卖肾胜利啊！你看，哎呀，广广告打的多好啊啊！他们他们懂事了，我马上回去交代一下。这太不懂事了。哎，你这个，那你以后这个上半年、上半年还有几场越野比赛，然后就收工了，差不多。来崇礼幺六八，你去吗？幺六八，嗯，什么时候是？你知也不知道是吧？七月份，七七月份我我回家玩一个。我我本身想，孙老师想象是很丰富的，现实是很骨感的。本身是想把这几场比赛给拿下来，然后把这个登塔计划的奖金给拿下来，然后我回家再休息一个月，恢复半半个月就",
+      "owned_item_start": 17,
+      "owned_item_stop": 643
+    },
+    {
+      "id": 16,
+      "start": 1920.0,
+      "end": 2040.0,
+      "decode_start": 1915.0,
+      "decode_end": 2045.0,
+      "decoded_text": "的奖金给拿下来，然后我回家再休息一个月，恢复半把个月就参加这个马拉松嘛。我是这种想的，奈何上一场这么一比，给我搞了计划打乱了，计划打乱了，我都不知道我我该干嘛了，我都不然我都想着六五月底比完黄金联赛四姑娘山这一站我就回家休息个十五六天再沉淀沉淀。你这个休息是纯休息嘛？就是一点不跑嘛？还是随便随便跑吧？还是你这个休息其实就是又吃又喝，加上不跑。主要是喝，没不不喝不喝，我真的我感觉不能喝了不能喝了。过年的时候，孙老师，你不知道我是怎么喝的，我只看到那个肚子。我们少数民族傈僳族，他们拜年是一个村的来你家拜，你猜人家进来我家门的条那个是门条是什么？我我在外面喊我侄子抬来一箱啤酒，自己口袋里面装了两瓶白酒。进来一个人问要喝什么随便哦，然后那些人就呃那些人就在想，哦杨成龙呢？我大名人村里面的大名人呢，还来给我喝酒，开心了，然后我和他们喝，他们和我喝。后面我喝了半天，可能干了一个多小时吧，连着干完了。等一下醒来是睡在那个沟里面啊，不不是我们家里面是那种拆迁嘛，以前是回迁那种，也不也不是说拆迁户啊，那个因为现在越来越好了嘛，以前我们是分散的住啊，后面被我们镇上给集拢了，很现代化的。我菜都不用自己种了，都要自己买来吃。但是现在好多人都因因为以前家里面有地，都可以自己种，吃的东西都可以种。后面哦，征收掉了，征收了七八万十来万，全部用完了。后面就没办法了，买菜的钱都没有了。以前我们村的人是不可能去外村打工的，打工都不可能，他们这辈子都不可能去打工。后面经过这些年一弄弄了之后，就全部去打工去了，因为你不打工，你连菜钱饭钱都没有了。嗯。好多人都出去打工了，然后等我醒来时，我睡在那个沟里面，有好几次干就不能这么喝，真的，然后现在是不敢喝酒了。然后我在。",
+      "text": "参加这个马拉松嘛。我是这种想的，奈何上一场这么一比，给我搞了计划打乱了，计划打乱了，我都不知道我我该干嘛了，我都不然我都想着六五月底比完黄金联赛四姑娘山这一站我就回家休息个十五六天再沉淀沉淀。你这个休息是纯休息嘛？就是一点不跑嘛？还是随便随便跑吧？还是你这个休息其实就是又吃又喝，加上不跑。主要是喝，没不不喝不喝，我真的我感觉不能喝了不能喝了。过年的时候，孙老师，你不知道我是怎么喝的，我只看到那个肚子。我们少数民族傈僳族，他们拜年是一个村的来你家拜，你猜人家进来我家门的条那个是门条是什么？我我在外面喊我侄子抬来一箱啤酒，自己口袋里面装了两瓶白酒。进来一个人问要喝什么随便哦，然后那些人就呃那些人就在想，哦杨成龙呢？我大名人村里面的大名人呢，还来给我喝酒，开心了，然后我和他们喝，他们和我喝。后面我喝了半天，可能干了一个多小时吧，连着干完了。等一下醒来是睡在那个沟里面啊，不不是我们家里面是那种拆迁嘛，以前是回迁那种，也不也不是说拆迁户啊，那个因为现在越来越好了嘛，以前我们是分散的住啊，后面被我们镇上给集拢了，很现代化的。我菜都不用自己种了，都要自己买来吃。但是现在好多人都因因为以前家里面有地，都可以自己种，吃的东西都可以种。后面哦，征收掉了，征收了七八万十来万，全部用完了。后面就没办法了，买菜的钱都没有了。以前我们村的人是不可能去外村打工的，打工都不可能，他们这辈子都不可能去打工。后面经过这些年一弄弄了之后，就全部去打工去了，因为你不打工，你连菜钱饭钱都没有了。嗯。好多人都出去打工了，然后等我醒来时，我睡在那个沟里",
+      "owned_item_start": 25,
+      "owned_item_stop": 625
+    },
+    {
+      "id": 17,
+      "start": 2040.0,
+      "end": 2160.0,
+      "decode_start": 2035.0,
+      "decode_end": 2165.0,
+      "decoded_text": "没有了，嗯，好多人都出去打工了。然后等我醒来时，我睡在那个沟里面，有好几次感觉不能这么喝，真的。然后现在是不敢喝了。然后我在家里面就爬爬山呀，摸摸鱼啊，快乐吗？你觉得那样的日子快乐吗？我我感觉孙老师现在我真的是囊中太羞涩了，奈何我囊中有好几个馒头，我就不出来了。哦，好就好几百个馒头的话，我就不出来了。我我以后就在家里面住着了。我们村我都舍不得出，太好玩了。我感觉在山里面才叫生活吧。那讨老婆怎么办？这好几个，好几百个馒头，不愁了吗？好几个，好几百个馒头还差老婆哦。我有天看不，说看见就连美国都有栗子子哦，我都服了，人才啊！怎么跑过去了？很正常。那打算去美国找？所以你本你是想你是想好了要去缅甸老挝找个老婆吗？没没有啊？有条件的话肯定是找我们国内的嘛。如果条件不好再去考虑我们有国的吧。我现在担心你这个话说出来，我可能要被骂了。哎，那我想问一下，你现在有积蓄吗？我啊，有点啊，但是不多啊。借出去了，不借钱？我我第一次加了我这个微信，加上的名字叫做不借钱。你是借借给了亲戚朋友借了很多钱出去？亲戚朋友借的多，借出去大概多少万？五六十嘛？你要想五六十，我在基地，我在一年基地我才收入才六万块钱，省吃俭用省的都拿了借人了，自己的生活水平都是较低的喽。哎，你自己年取暖费啊没有存下来吗？喝酒喝了也没你借出去这么多，应该钱也不多吧？前前几年啊，这你要想这六万一年的工资是从哦哦年后面才中的六万嘛，五千块钱嘛。嗯，那赞助费的话，只有说这两年才可观了一点吧。嗯，前两年年赞助费没那么多是吧？没那么那退费呢？退费拿到了吗？没有啊，退退费拿到了，我就准备。",
+      "text": "面，有好几次感觉不能这么喝，真的。然后现在是不敢喝了。然后我在家里面就爬爬山呀，摸摸鱼啊，快乐吗？你觉得那样的日子快乐吗？我我感觉孙老师现在我真的是囊中太羞涩了，奈何我囊中有好几个馒头，我就不出来了。哦，好就好几百个馒头的话，我就不出来了。我我以后就在家里面住着了。我们村我都舍不得出，太好玩了。我感觉在山里面才叫生活吧。那讨老婆怎么办？这好几个，好几百个馒头，不愁了吗？好几个，好几百个馒头还差老婆哦。我有天看不，说看见就连美国都有栗子子哦，我都服了，人才啊！怎么跑过去了？很正常。那打算去美国找？所以你本你是想你是想好了要去缅甸老挝找个老婆吗？没没有啊？有条件的话肯定是找我们国内的嘛。如果条件不好再去考虑我们有国的吧。我现在担心你这个话说出来，我可能要被骂了。哎，那我想问一下，你现在有积蓄吗？我啊，有点啊，但是不多啊。借出去了，不借钱？我我第一次加了我这个微信，加上的名字叫做不借钱。你是借借给了亲戚朋友借了很多钱出去？亲戚朋友借的多，借出去大概多少万？五六十嘛？你要想五六十，我在基地，我在一年基地我才收入才六万块钱，省吃俭用省的都拿了借人了，自己的生活水平都是较低的喽。哎，你自己年取暖费啊没有存下来吗？喝酒喝了也没你借出去这么多，应该钱也不多吧？前前几年啊，这你要想这六万一年的工资是从哦哦年后面才中的六万嘛，五千块钱嘛。嗯，那赞助费的话，只有说这两年才可观了一点吧。嗯，前两年年赞助费没那么多是吧？",
+      "owned_item_start": 27,
+      "owned_item_stop": 566
+    },
+    {
+      "id": 18,
+      "start": 2160.0,
+      "end": 2280.0,
+      "decode_start": 2155.0,
+      "decode_end": 2285.0,
+      "decoded_text": "两年才可观了一点吧。嗯，前两年赞助费没那么多是吧？没那么多。那退费呢？退费拿到了吗？没有啊，退退费拿到了，我就准备给全部给我老父亲了，不然又被我拿了几人了。给我老父亲给他个保障吧。你退费算的工龄是几年？差不多八九十应该会有。八九十万？嗯，好，那还可以啊。你们云南的退费比我们安徽要高很多。那八十多万的话，我自己再现在凑才在努努力努力再凑点给存到我我爸卡上，然后反正他他现在喝不了酒了。孙老师，你不知道他以前以前喝酒的话是怎么喝？五百五十毫升的一瓶酒起床就是当水喝了。我我小时候啊，我小时候我就在他旁边睡觉，然后他一起床我就听见这个喝水的声音，就就这种，就这么声音，就咕咕咕咕的声音。我说这人是在喝水还是干嘛？然后就听见水瓶子的声音一摔，就看他他老猛了。一两年的时候他就喝酒喝了差不多，喝了一斤，脑子就不清醒，去医院医院告诉我妈他们这是神经病。你神经病送去神经医院，他那个已经不能正常交流了，已经不不会讲话了，跟个憨跟憨的一样了，跟憨人一样。现在呢？正常。现在呢？这两年经过我一番大饼之后，他们还好了点了。我给他们画饼。我给他们画大饼，我说现在日子越来越好了。你看我这么努力，这么努力的去扣钱，就是为了你们一个日子能好过一点。你这种喝喝了喝挂掉了，我赚的这么多钱给谁用啊？他们想想，哦，也对啊。所以你爸现在不喝了，不喝了，他不不喝不喝好几年了。只是说前两年，前年吧，前年两个人都生病，然后有点严重，然后也是花了十来万嘛。反正都都不容易，都不容易啊。换你喝？嗯，不不是，花了十我说换换你喝了治病嘛治病花了十来万，后面就换我喝了。我感觉我真不是个真是个人才啊！我爹都喝成这种了，我应该是引以为戒。我为",
+      "text": "没那么多。那退费呢？退费拿到了吗？没有啊，退退费拿到了，我就准备给全部给我老父亲了，不然又被我拿了几人了。给我老父亲给他个保障吧。你退费算的工龄是几年？差不多八九十应该会有。八九十万？嗯，好，那还可以啊。你们云南的退费比我们安徽要高很多。那八十多万的话，我自己再现在凑才在努努力努力再凑点给存到我我爸卡上，然后反正他他现在喝不了酒了。孙老师，你不知道他以前以前喝酒的话是怎么喝？五百五十毫升的一瓶酒起床就是当水喝了。我我小时候啊，我小时候我就在他旁边睡觉，然后他一起床我就听见这个喝水的声音，就就这种，就这么声音，就咕咕咕咕的声音。我说这人是在喝水还是干嘛？然后就听见水瓶子的声音一摔，就看他他老猛了。一两年的时候他就喝酒喝了差不多，喝了一斤，脑子就不清醒，去医院医院告诉我妈他们这是神经病。你神经病送去神经医院，他那个已经不能正常交流了，已经不不会讲话了，跟个憨跟憨的一样了，跟憨人一样。现在呢？正常。现在呢？这两年经过我一番大饼之后，他们还好了点了。我给他们画饼。我给他们画大饼，我说现在日子越来越好了。你看我这么努力，这么努力的去扣钱，就是为了你们一个日子能好过一点。你这种喝喝了喝挂掉了，我赚的这么多钱给谁用啊？他们想想，哦，也对啊。所以你爸现在不喝了，不喝了，他不不喝不喝好几年了。只是说前两年，前年吧，前年两个人都生病，然后有点严重，然后也是花了十来万嘛。反正都都不容易，都不容易啊。换你喝？嗯，不不是，花了十我说换换你喝了治病嘛治病花了十来万，后面就换我喝了。我感觉我真不",
+      "owned_item_start": 22,
+      "owned_item_stop": 595
+    },
+    {
+      "id": 19,
+      "start": 2280.0,
+      "end": 2400.0,
+      "decode_start": 2275.0,
+      "decode_end": 2405.0,
+      "decoded_text": "换换你喝了治病嘛治病花了十万，后面就换我喝了。我感觉我真不是个真是个人才啊！我都都喝成这种了，我应该是引以为戒。我为什么还要走他的路啊？对我爸很爱喝酒，所以我一点都不爱喝酒。要像孙老师你这么说的，我爸爱喝酒，我就不喝酒。要像你这种想，不然现在这种怪球喽。但我爸是好这个人，也是个人才。他以前喝酒喝到二零年、二一年嘛，后面一医生把他胆给割了，胆啊啊胆胆割了就不能消耗酒这种东西了吗？嗯。然后他不喝酒，他就喝可乐，他就喝可乐，喝喝牛奶，一一天喝两瓶可乐，一瓶雪碧吧。后面后面搞了痛风了哟。后后这种东西喝多了不是痛风骨质疏松嘛？后面又喝不了了。医生告诉他，你中风了，后面嘴都张不了，吃饭都漏饭了，后面不敢吃了。后后后面搞了之后，好吧，不喝了。后面你猜他又去喝什么了？不知道。他他又去喝牛奶了。他喝牛奶的话，一天喝十瓶吧，应该是差不多。后后面那个脚以前那个脚二零年那个脚，他才穿三十九的鞋子。胆大了。一一直以前我三十九的鞋子是跟按他这边也不用我穿，我就可以穿多少他穿多少。啊，我穿多大就我爸穿多大。后面我为了给我爸要鞋子，就四十四一四，现在穿到四三了哦，老铁。以前我觉得他就一米六五，我应该是到他耳朵下面一点吧。我现在感觉我只到他脖子那里了，长高了哟。那那你不学他多喝点牛奶？对啊，可以啊，还可以学习三次发育。喝牛奶补充蛋白是很重要，如果实在不行的话，你也可以喝一点这个麦式的一体蛋白粉。可以可以啊！没有我我我经常喝的这个的是，但是这个是我买了喝啊。上次你送了我三箱，我喝完了，那三箱才十五，不是十五瓶，十二瓶一呃六瓶一箱。你是不是呼吸有点？我们能量胶这个饮料啊，然后呃，液体蛋白。",
+      "text": "是个真是个人才啊！我都都喝成这种了，我应该是引以为戒。我为什么还要走他的路啊？对我爸很爱喝酒，所以我一点都不爱喝酒。要像孙老师你这么说的，我爸爱喝酒，我就不喝酒。要像你这种想，不然现在这种怪球喽。但我爸是好这个人，也是个人才。他以前喝酒喝到二零年、二一年嘛，后面一医生把他胆给割了，胆啊啊胆胆割了就不能消耗酒这种东西了吗？嗯。然后他不喝酒，他就喝可乐，他就喝可乐，喝喝牛奶，一一天喝两瓶可乐，一瓶雪碧吧。后面后面搞了痛风了哟。后后这种东西喝多了不是痛风骨质疏松嘛？后面又喝不了了。医生告诉他，你中风了，后面嘴都张不了，吃饭都漏饭了，后面不敢吃了。后后后面搞了之后，好吧，不喝了。后面你猜他又去喝什么了？不知道。他他又去喝牛奶了。他喝牛奶的话，一天喝十瓶吧，应该是差不多。后后面那个脚以前那个脚二零年那个脚，他才穿三十九的鞋子。胆大了。一一直以前我三十九的鞋子是跟按他这边也不用我穿，我就可以穿多少他穿多少。啊，我穿多大就我爸穿多大。后面我为了给我爸要鞋子，就四十四一四，现在穿到四三了哦，老铁。以前我觉得他就一米六五，我应该是到他耳朵下面一点吧。我现在感觉我只到他脖子那里了，长高了哟。那那你不学他多喝点牛奶？对啊，可以啊，还可以学习三次发育。喝牛奶补充蛋白是很重要，如果实在不行的话，你也可以喝一点这个麦式的一体蛋白粉。可以可以啊！没有我我我经常喝的这个的是，但是这个是我买了喝啊。上次你送了我三箱，我喝完了，那三箱才十五，不是十五瓶，十二瓶一呃六瓶一箱。你是不是呼吸有点？",
+      "owned_item_start": 27,
+      "owned_item_stop": 593
+    },
+    {
+      "id": 20,
+      "start": 2400.0,
+      "end": 2520.0,
+      "decode_start": 2395.0,
+      "decode_end": 2525.0,
+      "decoded_text": "现在十五，不是十五瓶啊，十二瓶一呃六瓶一箱啊。没什么人喝，我需要的。我们能量胶这个饮料啊，然后呃一点点买，我都那么弄。对呀，那那简直就太赶上了。万一我长到一米六的话，到时候我直接在头上头上贴一个麦穗啊！哈哈哈哈哈。哎，所以你们两个都在社交媒体上创作很多东西，但是风格完全的不一样，对吧？嗯，那不一样。说到你这个社交媒体创作的时候，有什么灵感吗？还是想拍什么就拍什么，想玩什么就玩什么？想拍什么就拍什么，但是我感觉我想拍的这些，我有延迟症，我不像像吴哥一样，要要拍什么的话就立马拍。我这种的话有点那种拖延症嘛。我也很拖延。拖的太严重了。我也很拖延。我其实。我我本来说想了一个很板扎，跑着不练着练着想了一个很板扎的视频，我说下完训练我一定要去拍。后面拍着拍着又隔了两三天了，拖延症太严重了，不行。就灵感很多。灵感很多，灵感太多了，直接你说做广告，你说是能量胶的话，你说这个广告很好做吧？你跑着跑着跑着说我好累啊，好累啊，累死我了。然后拿个甩个能量胶给你，有劲了，你就吃了能量胶两三块，哇，有劲了。然后为什么有劲？就是吃了这个能量胶，这个不就是灵感吗？嗯，对，其实做内容还蛮有意思的。你喜欢跟粉丝们这种粉丝这么喜欢你，先是是一种什么样的感受啊？我肯定很开心啊！我不是昨天发了条视频嘛？我不是蹭一百帧的流量嘛？昨天，然后那个视频视频一发出去，评论的话起码两个多小时的话，差不多六六百多条是来了。然后我认真的去回复了啊，回复了三百多个人。倒是很喜欢别人一评论，我喜欢去回复。像我们吴哥的话，可能是有点忙了，要忙要忙着睡觉。我的爱好就是玩抖音，像上次我们就播过一次，我每每次刷抖音的流量，一个月差不多可以刷个三四百兆吧，应该是。",
+      "text": "我们能量胶这个饮料啊，然后呃一点点买，我都那么弄。对呀，那那简直就太赶上了。万一我长到一米六的话，到时候我直接在头上头上贴一个麦穗啊！哈哈哈哈哈。哎，所以你们两个都在社交媒体上创作很多东西，但是风格完全的不一样，对吧？嗯，那不一样。说到你这个社交媒体创作的时候，有什么灵感吗？还是想拍什么就拍什么，想玩什么就玩什么？想拍什么就拍什么，但是我感觉我想拍的这些，我有延迟症，我不像像吴哥一样，要要拍什么的话就立马拍。我这种的话有点那种拖延症嘛。我也很拖延。拖的太严重了。我也很拖延。我其实。我我本来说想了一个很板扎，跑着不练着练着想了一个很板扎的视频，我说下完训练我一定要去拍。后面拍着拍着又隔了两三天了，拖延症太严重了，不行。就灵感很多。灵感很多，灵感太多了，直接你说做广告，你说是能量胶的话，你说这个广告很好做吧？你跑着跑着跑着说我好累啊，好累啊，累死我了。然后拿个甩个能量胶给你，有劲了，你就吃了能量胶两三块，哇，有劲了。然后为什么有劲？就是吃了这个能量胶，这个不就是灵感吗？嗯，对，其实做内容还蛮有意思的。你喜欢跟粉丝们这种粉丝这么喜欢你，先是是一种什么样的感受啊？我肯定很开心啊！我不是昨天发了条视频嘛？我不是蹭一百帧的流量嘛？昨天，然后那个视频视频一发出去，评论的话起码两个多小时的话，差不多六六百多条是来了。然后我认真的去回复了啊，回复了三百多个人。倒是很喜欢别人一评论，我喜欢去回复。像我们吴哥的话，可能是有点忙了，要忙要忙着睡觉。我的爱好就是玩抖音，像上次我们就播过一次，我每每次",
+      "owned_item_start": 29,
+      "owned_item_stop": 604
+    },
+    {
+      "id": 21,
+      "start": 2520.0,
+      "end": 2640.0,
+      "decode_start": 2515.0,
+      "decode_end": 2645.0,
+      "decoded_text": "我的爱好就是玩抖音，像上次我们就播过一次。我每每次刷抖音的流量，每一个月差不多可以刷个三四百兆吧，应该是。三百G啊！三百G啊！三百G差不多。你你到处都没有WiFi吗，大哥？我每天以前打王者的话，一天打个十个小时是可以的，但是达到十二个小时就要有一点累了，就不打了。现在刷抖音的话，这东西总是刷不完，越刷越要越好是吧？越刷越有劲，越刷越有劲。现在不能这种了。你你上次也是几年前，你也是跟我这么说的。多这么说啊！你说抖音不能再。现在刷的更厉害了，老何。真的，国语音的小姐姐太漂亮了。怪羞了，怪羞了！才刷了十分钟就刷爱上了，一百个女人嘛，直接。你这个，你这个诱惑太多了。又是抖音，又是王者荣耀，还要再加上喝酒，你说哪有还有时间训练？还是天赋好。没有王者的话是以前玩，现在不玩了。以前没抖音的时候玩玩王者，后面有抖音的话，谁玩王者呀？谁有时间？哈哈哈哈哈！小姐姐了是吧？还是小姐姐。不是说刷小姐姐，我是看很正能量的东西的啊。我讲打开它抖音首页，随便看一下，都是三秒钟就是蹦出来一个美女了。正能量差不多十条视频的话，十条视频的话，我看一下。现场检查。这第一个是女女士，第十条，然后呃，这个是。你看，又一个女士。还有跑步的，哎，又一个美女。十个的话，差不多有五个、六个，还有还有几个快啊！还看到美女搞笑视频，然后跑步视频差哪一点？跑步视频，然后跑步视频差哪一点？像像你的话，你是肯定是刷到一些别人教什么教英语啊什么的，没没没有那么正能量。其实我刷的时间很少。啊。",
+      "text": "刷抖音的流量，每一个月差不多可以刷个三四百兆吧，应该是。三百G啊！三百G啊！三百G差不多。你你到处都没有WiFi吗，大哥？我每天以前打王者的话，一天打个十个小时是可以的，但是达到十二个小时就要有一点累了，就不打了。现在刷抖音的话，这东西总是刷不完，越刷越要越好是吧？越刷越有劲，越刷越有劲。现在不能这种了。你你上次也是几年前，你也是跟我这么说的。多这么说啊！你说抖音不能再。现在刷的更厉害了，老何。真的，国语音的小姐姐太漂亮了。怪羞了，怪羞了！才刷了十分钟就刷爱上了，一百个女人嘛，直接。你这个，你这个诱惑太多了。又是抖音，又是王者荣耀，还要再加上喝酒，你说哪有还有时间训练？还是天赋好。没有王者的话是以前玩，现在不玩了。以前没抖音的时候玩玩王者，后面有抖音的话，谁玩王者呀？谁有时间？哈哈哈哈哈！小姐姐了是吧？还是小姐姐。不是说刷小姐姐，我是看很正能量的东西的啊。我讲打开它抖音首页，随便看一下，都是三秒钟就是蹦出来一个美女了。正能量差不多十条视频的话，十条视频的话，我看一下。现场检查。这第一个是女女士，第十条，然后呃，这个是。你看，又一个女士。还有跑步的，哎，又一个美女。十个的话，差不多有五个、六个，还有还有几个快啊！还看到美女搞笑视频，然后跑步视频差哪一点？跑步视频，然后跑步视频差哪一点？像像你的话，你是肯定是刷到一些别人教什么",
+      "owned_item_start": 23,
+      "owned_item_stop": 516
+    },
+    {
+      "id": 22,
+      "start": 2640.0,
+      "end": 2760.0,
+      "decode_start": 2635.0,
+      "decode_end": 2765.0,
+      "decoded_text": "是，像你的话，你是肯定是刷到一些别人教什么教英语啊什么的，没没没没没有那么正能量。其实我刷的时间很少。啊，那你晚上在干嘛？学习。我玩游戏会多一点啊。哎，所以，崔老师，你有想过你的未来吗？也是问题来了。我先问一下你，你觉得现在你你出来了之后，会有觉得更开心一些吗？肯定是肯定开心了呀，肯定是很很开心的生活中啊。然后我不是今年，别人都说什么时候结婚啊，什么时候结婚啊。然后我我说的家里面也一直在催吧。我说你说家里面房子都没盖呢，我怎么敢敢结啊？然后现在不是这两天起房子嘛，房子已经起的差不多，然后等着装修完就要去找婆娘了，找完婆娘。上次前年、去年不是遇到了那个女朋友？你那个女朋友现在分了是吗？没有啊，那还在谈吗？我我我那你还找什么婆娘？我我一个恋，嗯，婆娘就是结婚了嘛。啊。我一个头发型都是恋爱脑的，其实你看，像崔老师也是个恋爱脑的，你没有看，其实没有其实好多女生，好多女生谈恋爱，其实可以标标准准的喊这个男的结个寸头好的，看一下他的发型是不是恋爱脑。你看像我这种发型和恋爱脑的关系，你展开给我说一说。那那就是发际线高嘛，就是责任在家里面的责任很很那种。那句话叫什么了？不不，都是你的思路。我根本不懂，所以就是个就就是发际线头发际线掉是因为压力压力太大了，很充实，就是太够家了，头发才会掉嘛。不就很很紧张，很很想为这个家里面付出很多，是这么个因果关系吧？付出这么多很多，先那那我想问一下你啊，就是比如说，呃，你现在不是在马拉松也跑也跑也跑？那刚刚宋老师也问了，你以后打算做什么？那你现在是觉得，如果到什么样的程度，你才会选择不跑？",
+      "text": "教英语啊什么的，没没没没没有那么正能量。其实我刷的时间很少。啊，那你晚上在干嘛？学习。我玩游戏会多一点啊。哎，所以，崔老师，你有想过你的未来吗？也是问题来了。我先问一下你，你觉得现在你你出来了之后，会有觉得更开心一些吗？肯定是肯定开心了呀，肯定是很很开心的生活中啊。然后我不是今年，别人都说什么时候结婚啊，什么时候结婚啊。然后我我说的家里面也一直在催吧。我说你说家里面房子都没盖呢，我怎么敢敢结啊？然后现在不是这两天起房子嘛，房子已经起的差不多，然后等着装修完就要去找婆娘了，找完婆娘。上次前年、去年不是遇到了那个女朋友？你那个女朋友现在分了是吗？没有啊，那还在谈吗？我我我那你还找什么婆娘？我我一个恋，嗯，婆娘就是结婚了嘛。啊。我一个头发型都是恋爱脑的，其实你看，像崔老师也是个恋爱脑的，你没有看，其实没有其实好多女生，好多女生谈恋爱，其实可以标标准准的喊这个男的结个寸头好的，看一下他的发型是不是恋爱脑。你看像我这种发型和恋爱脑的关系，你展开给我说一说。那那就是发际线高嘛，就是责任在家里面的责任很很那种。那句话叫什么了？不不，都是你的思路。我根本不懂，所以就是个就就是发际线头发际线掉是因为压力压力太大了，很充实，就是太够家了，头发才会掉嘛。不就很很紧张，很很想为这个家里面付出很多，是这么个因果关系吧？付出这么多很多，先那那我想问一下你啊，就是比如说，呃，你现在不是在马拉松也跑也跑也跑？那刚刚宋老师也问了，你以后",
+      "owned_item_start": 19,
+      "owned_item_stop": 564
+    },
+    {
+      "id": 23,
+      "start": 2760.0,
+      "end": 2880.0,
+      "decode_start": 2755.0,
+      "decode_end": 2885.0,
+      "decoded_text": "呃，你现在不是在马拉松也跑，越野跑也跑？那刚刚宋老师也问了，你以后打算做什么？那你现在是觉得，如果到什么样的程度，你才会选择不跑了？起码按我这个现在出来的话，起码还可以再跑十年，我觉得。再跑十年，嗯呃，马拉松和越野双栖，像那个关永胜那样。我感觉马拉松速度不能丢，如果丢了越野，肯定你专门跑越野的话，速度会掉嘛？因为你跑配速都是五六分、六七分这种跑，这种配速掉了，跑步的最终王者还是速度呀，其实。所以呢，再跑十年，就跑到一个什么样的程度才会选择不跑？然后不跑了之后，打算去干什么？有想过？只能说跑步，跑步的话是，因为只会跑步嘛，也不会说什么。宋伟迈跑步就是能加家里这些生活给过得很好，所以跑步对于你来说最主要的就是工作赚钱，生活赚点生活来源之一。嗯，所以也就是代表着说，未来哪一年你在跑步上面已经没有了收入了，你可能就就不跑了，差不多，差不多。现在的现在的话，干十年吧，干完十年之后，看看什么样子。干完十年也可能好几个馒头应该有了吧？到时候有了就可以在山上。我到时候我就不出来了，我就隐居山林了。其实每个人出来的孩子，像像吴哥，你倒是以前你就是合肥市区里面的嘛。像我们辉哥他们，其实他最后你看像张导他们，他其实最终工作结束了，他退休，他还是会回农村。我们每个每个农村的孩子都是想着出来之后出人头地之后，回家盖个房子，就在家里面好好的慢慢的在这吧。其实我们教练是每次是告诉我，你出来了你还想回去？那我举个例子啊，因为你已经有女朋友了嘛，你可能也肯考虑跟他以后一起结婚，但你有考虑过孩子的教育问题吗？因为你在城市的话，其教育来说肯定是比你们那边要好的。其实，我觉得你现在怎么想的？就你现在，你现在可能没有孩子，你还没有感觉。如果哎，你有孩子了，你可能就会想着我要给他。",
+      "text": "打算做什么？那你现在是觉得，如果到什么样的程度，你才会选择不跑了？起码按我这个现在出来的话，起码还可以再跑十年，我觉得。再跑十年，嗯呃，马拉松和越野双栖，像那个关永胜那样。我感觉马拉松速度不能丢，如果丢了越野，肯定你专门跑越野的话，速度会掉嘛？因为你跑配速都是五六分、六七分这种跑，这种配速掉了，跑步的最终王者还是速度呀，其实。所以呢，再跑十年，就跑到一个什么样的程度才会选择不跑？然后不跑了之后，打算去干什么？有想过？只能说跑步，跑步的话是，因为只会跑步嘛，也不会说什么。宋伟迈跑步就是能加家里这些生活给过得很好，所以跑步对于你来说最主要的就是工作赚钱，生活赚点生活来源之一。嗯，所以也就是代表着说，未来哪一年你在跑步上面已经没有了收入了，你可能就就不跑了，差不多，差不多。现在的现在的话，干十年吧，干完十年之后，看看什么样子。干完十年也可能好几个馒头应该有了吧？到时候有了就可以在山上。我到时候我就不出来了，我就隐居山林了。其实每个人出来的孩子，像像吴哥，你倒是以前你就是合肥市区里面的嘛。像我们辉哥他们，其实他最后你看像张导他们，他其实最终工作结束了，他退休，他还是会回农村。我们每个每个农村的孩子都是想着出来之后出人头地之后，回家盖个房子，就在家里面好好的慢慢的在这吧。其实我们教练是每次是告诉我，你出来了你还想回去？那我举个例子啊，因为你已经有女朋友了嘛，你可能也肯考虑跟他以后一起结婚，但你有考虑过孩子的教育问题吗？因为你在城市的话，其教育来说肯定是比你们那边要好的。其实，我觉得你现在怎么想的？就你现在，你现",
+      "owned_item_start": 29,
+      "owned_item_stop": 621
+    },
+    {
+      "id": 24,
+      "start": 2880.0,
+      "end": 3000.0,
+      "decode_start": 2875.0,
+      "decode_end": 3005.0,
+      "decoded_text": "是比你们那边好的了。其实现在你现在怎么想的？就你现在，你现在可能没有孩子，你还没有感觉。如果等你有孩子了，你可能就会想着我要给他更好的教育，更好的。那那到到时候不行就来昆明这边租房子啊，不是买房子啊。租房子也太贵了。租房子你又没有解决不了户口的学区问题啊。那就在我们我们城中城里面读吧。而且你们城中城里面，我记得好像房价也不便宜，很高。那那不然好像比成都高。差不多牛的很这些八线小城是房价都会干到七八千，太牛了！我都服了，现在没办法，没办法，大事所在吧，只能说，只能说，我我们不够努力，没把这个钱投到，起码后面好好的努力，然后把自己这种成绩给提高，一是成绩提高，然后知名度像五个你们多学习学学习点哈，真的像你们学习的真的有很多很多，但我这个人我就是不爱学习。然然然后整了这些，然后争取以以后的话，签约安踏，我们安踏这个合同啊，合同弄大弄大一点嘛，就是不然的话，努力的方向倒是对的，现在就这种好好的好好的干吧，然后收入提高一点，就以后就越来越好。然后好个十年的话，你说一年苦个啊，就跟我那个孙老师一出来那个视频说的，希望大家年前肯定是想出去苦个一百万呐，但是一一回来，其实我们每每个中国人的意识都是这种啊，包括了百百分之八九十了，一过完年就想着去苦个一百万回来，不苦个一百万回来是不出来了，不回家了。后面是一苦是才发现是要过年了，还要和家里面的亲戚借钱，啊借点钱嘛，没钱回来了，其实都很无奈的，现在太难了。我们都在努力的，努力的为自己后面的生活越来越好啊。然后后面结了婚之后，我女朋友她倒是说。",
+      "text": "在可能没有孩子，你还没有感觉。如果等你有孩子了，你可能就会想着我要给他更好的教育，更好的。那那到到时候不行就来昆明这边租房子啊，不是买房子啊。租房子也太贵了。租房子你又没有解决不了户口的学区问题啊。那就在我们我们城中城里面读吧。而且你们城中城里面，我记得好像房价也不便宜，很高。那那不然好像比成都高。差不多牛的很这些八线小城是房价都会干到七八千，太牛了！我都服了，现在没办法，没办法，大事所在吧，只能说，只能说，我我们不够努力，没把这个钱投到，起码后面好好的努力，然后把自己这种成绩给提高，一是成绩提高，然后知名度像五个你们多学习学学习点哈，真的像你们学习的真的有很多很多，但我这个人我就是不爱学习。然然然后整了这些，然后争取以以后的话，签约安踏，我们安踏这个合同啊，合同弄大弄大一点嘛，就是不然的话，努力的方向倒是对的，现在就这种好好的好好的干吧，然后收入提高一点，就以后就越来越好。然后好个十年的话，你说一年苦个啊，就跟我那个孙老师一出来那个视频说的，希望大家年前肯定是想出去苦个一百万呐，但是一一回来，其实我们每每个中国人的意识都是这种啊，包括了百百分之八九十了，一过完年就想着去苦个一百万回来，不苦个一百万回来是不出来了，不回家了。后面是一苦是才发现是要过年了，还要和家里面的亲戚借钱，啊借点钱嘛，没钱回来了，其实都很无奈的，现在太难了。我们都在努力的，努力的为自己后面的生活越",
+      "owned_item_start": 26,
+      "owned_item_stop": 562
+    },
+    {
+      "id": 25,
+      "start": 3000.0,
+      "end": 3120.0,
+      "decode_start": 2995.0,
+      "decode_end": 3125.0,
+      "decoded_text": "我们都在努力的，努力的为自己后面的生活越来越好啊。然后后面结了婚之后，我女朋友她倒是说生小孩生不生小孩都可以，我也觉得可以。我两个我倒是对她挺好的。然后她说如果生了生了孩子之后我对她不好，我就光对孩子好。她说我会打他嘛。然后然后他告诉我我不可以打你，我我打孩子就行了。然后我女朋友跟我说，那你打了打了孩子就不能打我了，要死了。哎，你跟你女朋友谈了多少年了？三四年吧，四年四年差不多挺久了。你不是在这里锻炼嘛？我不是骑着电摩头他送我回去嘛？我出来我出来吃东西嘛？那还是挺久的嘛，但是也进入了谈婚论嫁的时候了我。可以谈了，前段时间过年都过年都去跑了他家两趟了。其实只要合适就行了，并不是说像像别别人说的有什么本事没什么本事。其实我我不在乎这么多，他都可以说跟我在一起的话，我我肯定会好好的努力嘛，争取给他过上他想要的生活。尽管说过不了，倒是多画点大饼就行了嘛，没事。你这画大饼，你你女朋友画饼。口才呀，你你这口才可以说，你们俩怎么谈上的？我是三句话就让你们怎么认识的？首先你怎么认识的？朋友介绍嘛，就是张张龙介绍的嘛。啊，你朋友介绍的。介绍了。就张张龙嘛，他他他介绍给你就是以男女朋友的，本着男谈男谈恋爱去介绍的是吗？就是张龙，我们一我们三年前四年前吧，他那个是他同学嘛。所以啊，他在介绍你给他认识之前，他知不知道你？他不知道，咱他一说成龙杨成龙，我知道这个人。他他不知道，他只知道我我们是个跑步的。啊。他他都不知道嘛？",
+      "text": "来越好啊。然后后面结了婚之后，我女朋友她倒是说生小孩生不生小孩都可以，我也觉得可以。我两个我倒是对她挺好的。然后她说如果生了生了孩子之后我对她不好，我就光对孩子好。她说我会打他嘛。然后然后他告诉我我不可以打你，我我打孩子就行了。然后我女朋友跟我说，那你打了打了孩子就不能打我了，要死了。哎，你跟你女朋友谈了多少年了？三四年吧，四年四年差不多挺久了。你不是在这里锻炼嘛？我不是骑着电摩头他送我回去嘛？我出来我出来吃东西嘛？那还是挺久的嘛，但是也进入了谈婚论嫁的时候了我。可以谈了，前段时间过年都过年都去跑了他家两趟了。其实只要合适就行了，并不是说像像别别人说的有什么本事没什么本事。其实我我不在乎这么多，他都可以说跟我在一起的话，我我肯定会好好的努力嘛，争取给他过上他想要的生活。尽管说过不了，倒是多画点大饼就行了嘛，没事。你这画大饼，你你女朋友画饼。口才呀，你你这口才可以说，你们俩怎么谈上的？我是三句话就让你们怎么认识的？首先你怎么认识的？朋友介绍嘛，就是张张龙介绍的嘛。啊，你朋友介绍的。介绍了。就张张龙嘛，他他他介绍给你就是以男女朋友的，本着男谈男谈恋爱去介绍的是吗？就是张龙，我们一我们三年前四年前吧，他那个是他同学嘛。所以啊，他在介绍你给他认识之前，他知不知道你？他不知道，咱他一说成龙杨成龙，我知道这个人。他他不知道，他只知道我我们是",
+      "owned_item_start": 19,
+      "owned_item_stop": 534
+    },
+    {
+      "id": 26,
+      "start": 3120.0,
+      "end": 3240.0,
+      "decode_start": 3115.0,
+      "decode_end": 3245.0,
+      "decoded_text": "不知道，讲他一说成龙，杨成龙，我知道这个人。他他不知道，他只知道我我们是个跑步的。啊，他他都不知道马拉松是什么。前几天我还骂他了，他他来问我直播去什么地方看，那我问他，你不是天天在那里逗播逗播的吗？你去跟逗播过，你去问逗播吧。我告诉他，他问我几点比赛，我说十二点，还问哪里可以直播，我说你不会问逗播啊，哎，你一刷抖音不是刷了跑野可以直播什么这些吗？那憨贼直接憨的很。然后结婚的话，你直播？嗯，结婚的话可能就这么一两年了，孙老师到时候抓紧时间，抓紧时间，我好来追份子啊。到时候再再不结的话，年纪年纪浅了，人家他跟你差不多大，你大他他零零三年的嘛，还是零，那比你小好几岁啊，好多。他讲讲了，零一年的，零一年的啊，那也比你小几岁啊，那又是小好几岁了。你是九七啊，对吧？九八吧，九八。你急着要结婚，所以就找个借口，对不对？说赶紧人家小姑娘说赶紧结婚了。没有，主要是家里面也催，主要前前两年的话，我我奶奶，我奶奶告诉我，你赶紧找媳妇了，赶紧找媳妇了。她要等喝了喜酒，后面哎呀，奈何是造化弄人啊！天天为了搞事业，搞了搞了。我奶奶年纪也很大了，也前年不不在了嘛人，然后就越来越愧疚，越来越愧疚，我才一下子下定了。真的愧疚我奶，我爹的话我还觉得我愧疚的他不怎么多，因为他从小的话，他就天天我一出生我就感觉他在我印象里面就不是很好。现在的话，他把我生了，他他起码他把我生出来了，然后给我也也没有也也没有让我说像其他家庭一样那么那种，也起码把我养这么大，我肯定还要孝顺之类的嘛。我小时候是我奶奶带起来的，我奶奶我上小学的话，每天都要给我一块钱，每天早上进我我很贪玩的，我每次放完学我就去抓鱼摸虾到处跑，然后十一晚上十二点我都不回家，他就等着一直等到我一直等到我晚上十一二点不回家，你是不是有点多？",
+      "text": "个跑步的。啊，他他都不知道马拉松是什么。前几天我还骂他了，他他来问我直播去什么地方看，那我问他，你不是天天在那里逗播逗播的吗？你去跟逗播过，你去问逗播吧。我告诉他，他问我几点比赛，我说十二点，还问哪里可以直播，我说你不会问逗播啊，哎，你一刷抖音不是刷了跑野可以直播什么这些吗？那憨贼直接憨的很。然后结婚的话，你直播？嗯，结婚的话可能就这么一两年了，孙老师到时候抓紧时间，抓紧时间，我好来追份子啊。到时候再再不结的话，年纪年纪浅了，人家他跟你差不多大，你大他他零零三年的嘛，还是零，那比你小好几岁啊，好多。他讲讲了，零一年的，零一年的啊，那也比你小几岁啊，那又是小好几岁了。你是九七啊，对吧？九八吧，九八。你急着要结婚，所以就找个借口，对不对？说赶紧人家小姑娘说赶紧结婚了。没有，主要是家里面也催，主要前前两年的话，我我奶奶，我奶奶告诉我，你赶紧找媳妇了，赶紧找媳妇了。她要等喝了喜酒，后面哎呀，奈何是造化弄人啊！天天为了搞事业，搞了搞了。我奶奶年纪也很大了，也前年不不在了嘛人，然后就越来越愧疚，越来越愧疚，我才一下子下定了。真的愧疚我奶，我爹的话我还觉得我愧疚的他不怎么多，因为他从小的话，他就天天我一出生我就感觉他在我印象里面就不是很好。现在的话，他把我生了，他他起码他把我生出来了，然后给我也也没有也也没有让我说像其他家庭一样那么那种，也起码把我养这么大，我肯定还要孝顺之类的嘛。我小时候是我奶奶带起来的，我奶奶我上小学的话，每天都要给我一块钱，每天早上进我我很贪玩的，我每次放完学我就去抓鱼摸虾到处跑，然后十一晚上十二点我都不回家，他就等着一直等",
+      "owned_item_start": 31,
+      "owned_item_stop": 631
+    },
+    {
+      "id": 27,
+      "start": 3240.0,
+      "end": 3360.0,
+      "decode_start": 3235.0,
+      "decode_end": 3365.0,
+      "decoded_text": "抓鸡摸虾到处跑，然后十晚上十二点我都不回家，他就等着一直等到我一直等到我晚上十二点不回家，你是不是从脚就把这个黑眼圈从脚到就搞，从脚到好惨，到处玩玩了十二点才回家，然后我奶奶也还等着，然后把一块钱交给我，他才去睡觉，真的，然后后面还想着带带着他去北京那边逛一下嘛，后面嘛一直带一直带个锤子，真的前面囊中有点羞涩带不起，现在是囊中起来一点，是人是不在点了，那就是人生总有好多遗憾了，这个是没办法了，人这一生就是在遗憾中度过的，但是起码你遗憾不要太多，如果太多的话，等真到自己七八十岁差不多的时候，你想起这个遗憾，你又默默的流出了悔恨的泪水啊。那我想问，我听你过去从两月八号一直到现在，你有遗憾吗？现在两个多月的时间，很快了哇。遗憾是肯定有，遗憾就是不能说参加个全运会为我们云南这边拿个不拿个铜牌也拿个银牌嘛，哎，就是前八名都没拿到过，真的干了这么在我们云南省队干了这么多年，好的名次都没给我们云南这边拿，挺愧疚的。现在去年无锡不才第三嘛，那个第三又又不算分分工。你现在就是分工到地方也没达到吗？没达到嘛，人家还以为我达到了，其实是我没本事啊，我没办法。没达到什么？就是分到比如说县里面，他们云南有两个分工标准，一个是全运会前三还是冠军能分到这个前三就是全国体育类基地或者昆明这些，对能分到昆明锦标赛冠军也可以，嗯，冠军赛冠军也可以，可以分到昆明，然后在差一点，比如说锦标赛的前三就可以分到市里面啊市里面，再比如说像他是腾冲的就可以分到市里面。我之前以为他已经达到了分工地方的标准，那还是自己，但是去年他们的锦标赛他不是第三名嘛，无锡他是第三名，但是他们基地不是这么算的，他们。",
+      "text": "到我一直等到我晚上十二点不回家，你是不是从脚就把这个黑眼圈从脚到就搞，从脚到好惨，到处玩玩了十二点才回家，然后我奶奶也还等着，然后把一块钱交给我，他才去睡觉，真的，然后后面还想着带带着他去北京那边逛一下嘛，后面嘛一直带一直带个锤子，真的前面囊中有点羞涩带不起，现在是囊中起来一点，是人是不在点了，那就是人生总有好多遗憾了，这个是没办法了，人这一生就是在遗憾中度过的，但是起码你遗憾不要太多，如果太多的话，等真到自己七八十岁差不多的时候，你想起这个遗憾，你又默默的流出了悔恨的泪水啊。那我想问，我听你过去从两月八号一直到现在，你有遗憾吗？现在两个多月的时间，很快了哇。遗憾是肯定有，遗憾就是不能说参加个全运会为我们云南这边拿个不拿个铜牌也拿个银牌嘛，哎，就是前八名都没拿到过，真的干了这么在我们云南省队干了这么多年，好的名次都没给我们云南这边拿，挺愧疚的。现在去年无锡不才第三嘛，那个第三又又不算分分工。你现在就是分工到地方也没达到吗？没达到嘛，人家还以为我达到了，其实是我没本事啊，我没办法。没达到什么？就是分到比如说县里面，他们云南有两个分工标准，一个是全运会前三还是冠军能分到这个前三就是全国体育类基地或者昆明这些，对能分到昆明锦标赛冠军也可以，嗯，冠军赛冠军也可以，可以分到昆明，然后在差一点，比如说锦标赛的前三就可以分到市里面啊市里面，再比如说像他是腾冲的就可以分到市里面。我之前以为他已经达到了分工地方的标准，那还是自己，但是去年他们的锦标",
+      "owned_item_start": 27,
+      "owned_item_stop": 599
+    },
+    {
+      "id": 28,
+      "start": 3360.0,
+      "end": 3480.0,
+      "decode_start": 3355.0,
+      "decode_end": 3485.0,
+      "decoded_text": "到了，分工地方的标准，奈何是自己，但是去年他们的锦标赛，他不是第三名嘛？就无锡他是第三名，但是他们基地不是这么算的，他们基地需要你对要总冠军两两场比赛叠加在一起的成绩是前三名才行。然后后面那一站不是不是诶，衡水湖嘛？衡水湖就为了准备全运会就没去比了吗？然后后面衡水湖才比完五六天就公布出来了嘛？对，衡水湖你去还是机会蛮大的，机机会挺大的，那段时间练的挺好。但没办法，你这个有的时候选择比努力重要，就是就是在这个点上。哎，但是你说这个会到一个很多运动员都会思考的一个问题的，你会考虑为了全运会再次注册吗？再次注册？不是说不是不是云南别的对对，因为如果按照你的水平的话，注册到别的大省省份的话，你的进全运会的可能性很大的。嗯，因为有的省是竞争没那么大嘛。像上海的话，直接去了就可以比了嘛？应该。嗯，对，没什么人。上海、广东很多啊，福建嗯，对吧？对，有的江西，对有的省是它也挺开放的，它就是叫人。先看看吧，如果说能去代表自己省的参加不了，代表其他省的也可以。但是总得有个时间嘛，总不能现在就说我要去。不，今年还好，今年只有百分之五的积分，但是你如果真的要决定的话，最好从明年开始就要开始积上了。对对。对这个事情也拖不了的。嗯，像去年上一届贾伟跟老管，他到最后一年才开始积分，难度很大的，就这样。他两个就没积上嘛？对。对啊，难度大都没积上。就我记得那年，去年一月份的时候，我碰到老管，老管还说：“反正就试一把，结果后来积分也没积上，贾伟也是的，对吧？”对。你只考最后一年的话，难度太大了，难度太高了。起码要最后两年半啊，三年也可以。嗯，最最好最后三年。我不知道他现在后面三年的积分标准。到时候看吧，就要很早很早就要计划，最好今年年底、明年年初就要把这个事情。因为现在都跑到体制外了，体制外的就是。",
+      "text": "赛，他不是第三名嘛？就无锡他是第三名，但是他们基地不是这么算的，他们基地需要你对要总冠军两两场比赛叠加在一起的成绩是前三名才行。然后后面那一站不是不是诶，衡水湖嘛？衡水湖就为了准备全运会就没去比了吗？然后后面衡水湖才比完五六天就公布出来了嘛？对，衡水湖你去还是机会蛮大的，机机会挺大的，那段时间练的挺好。但没办法，你这个有的时候选择比努力重要，就是就是在这个点上。哎，但是你说这个会到一个很多运动员都会思考的一个问题的，你会考虑为了全运会再次注册吗？再次注册？不是说不是不是云南别的对对，因为如果按照你的水平的话，注册到别的大省省份的话，你的进全运会的可能性很大的。嗯，因为有的省是竞争没那么大嘛。像上海的话，直接去了就可以比了嘛？应该。嗯，对，没什么人。上海、广东很多啊，福建嗯，对吧？对，有的江西，对有的省是它也挺开放的，它就是叫人。先看看吧，如果说能去代表自己省的参加不了，代表其他省的也可以。但是总得有个时间嘛，总不能现在就说我要去。不，今年还好，今年只有百分之五的积分，但是你如果真的要决定的话，最好从明年开始就要开始积上了。对对。对这个事情也拖不了的。嗯，像去年上一届贾伟跟老管，他到最后一年才开始积分，难度很大的，就这样。他两个就没积上嘛？对。对啊，难度大都没积上。就我记得那年，去年一月份的时候，我碰到老管，老管还说：“反正就试一把，结果后来积分也没积上，贾伟也是的，对吧？”对。你只考最后一年的话，难度太大了，难度太高了。起码要最后两年半啊，三年也可以。嗯，最最好最后三年。我不知道他现在后面三年的积分标准。到时候看吧，就要很早很早就要计划，最好今年年底、",
+      "owned_item_start": 23,
+      "owned_item_stop": 627
+    },
+    {
+      "id": 29,
+      "start": 3480.0,
+      "end": 3600.0,
+      "decode_start": 3475.0,
+      "decode_end": 3605.0,
+      "decoded_text": "到时候看嘛，就要很早很早就要计划。最好今年年底，明年出就要把这个事情。因为现在都跑到体制外了，体制外的，就是出来比赛这些方便嘛，就是如果说你在体制内的话，要有些比赛你要报备啊，有些。今年你才不还不想去？呃，贾俄之这样老管这种，嗯，他的合作的省份对他的管理还是比较松嘛。嗯，每个省份管理不是不一样的，这个到时候看嘛。他们因为有的省没有太多要求，你只要能够打完，对你只要能帮我打全没问题。我对你平常训练的地方，或者是你要参加什么比赛，我不管。嗯，对，甚至还给一些彩礼啊、营养啊各对啊，那可能你日常工工资还是给。这个到时候打两份工。嗯，等下年看嘛，因为我现在还注册着呢。我现在还是我们云南的一名，不也不算优秀吧，因为比我优秀的人太多。你注册吗？注册没没解除吗？还还在还在吗？你这个解解除注册的话，要是省级，那你解除注册了，我现在不是还在过渡期吗？没有过渡期了，现在没早就没有了。我还在过渡呀，基地里面没有是，我我等退役费我又不是现在就下了，你又我下了，退役费我们等到下年中旬了。但是你注册已经解除掉了。这个退役费没都是晚一年才能拿到的，这跟这没关系。解除注册跟你拿不拿退役费还要给你继续发一年工资，对不对？嗯啊，他这个两码事，已经不影响了。你从填写的运动员注册的角度来说，已经跟云南没关系，可以去注销了。你看，对这么牛啊！是的，看来还是要得多看看书。你这你好像是在上次的名单清单里面，我记得我还看了，我还问了你一句，你记得吧，陈老？嗯，你给我发了嘛？注册到二零三零年嘛？对。对，现在为什么？因为呃，有一个很重要的问题，就是县级的问题。他之前有的单位，你跟他解除关系之后，他单位老不拖着跟你解除注册的关系，是因为那以前我担心你跑到别的省份去注册，但是现在有一个问题，就",
+      "text": "明年出就要把这个事情。因为现在都跑到体制外了，体制外的，就是出来比赛这些方便嘛，就是如果说你在体制内的话，要有些比赛你要报备啊，有些。今年你才不还不想去？呃，贾俄之这样老管这种，嗯，他的合作的省份对他的管理还是比较松嘛。嗯，每个省份管理不是不一样的，这个到时候看嘛。他们因为有的省没有太多要求，你只要能够打完，对你只要能帮我打全没问题。我对你平常训练的地方，或者是你要参加什么比赛，我不管。嗯，对，甚至还给一些彩礼啊、营养啊各对啊，那可能你日常工工资还是给。这个到时候打两份工。嗯，等下年看嘛，因为我现在还注册着呢。我现在还是我们云南的一名，不也不算优秀吧，因为比我优秀的人太多。你注册吗？注册没没解除吗？还还在还在吗？你这个解解除注册的话，要是省级，那你解除注册了，我现在不是还在过渡期吗？没有过渡期了，现在没早就没有了。我还在过渡呀，基地里面没有是，我我等退役费我又不是现在就下了，你又我下了，退役费我们等到下年中旬了。但是你注册已经解除掉了。这个退役费没都是晚一年才能拿到的，这跟这没关系。解除注册跟你拿不拿退役费还要给你继续发一年工资，对不对？嗯啊，他这个两码事，已经不影响了。你从填写的运动员注册的角度来说，已经跟云南没关系，可以去注销了。你看，对这么牛啊！是的，看来还是要得多看看书。你这你好像是在上次的名单清单里面，我记得我还看了，我还问了你一句，你记得吧，陈老？嗯，你给我发了嘛？注册到二零三零年嘛？对。对，现在为什么？因为呃，有一个很重要的问题，就是县级的问题。他之前有的单位，你跟他解除关系之后，他单位老不拖着跟你解除注册的关系，是",
+      "owned_item_start": 21,
+      "owned_item_stop": 618
+    },
+    {
+      "id": 30,
+      "start": 3600.0,
+      "end": 3720.0,
+      "decode_start": 3595.0,
+      "decode_end": 3725.0,
+      "decoded_text": "的单位，你跟他解除关系之后，他单位老不拖着跟你解除注册关系，是因为那以前我担心你跑到别的省份去注册，但是现在有一个问题就是，他担心你兴奋剂的问题。那你如果如果你退役，你不在我基地里面，你不受我的管控，那你如果出了兴奋剂的问题，那你还要我这个省份为你负责。所以现在大家都是，只要你你跟我解除关系，我马上就是去申请解除跟你的注册关系。这样你如果日后出了兴奋剂的问题，跟我就没关系了。所以现在省份的方面也是很积极的去跟运动员解除关系。对，因为这个一罚就罚很久，一罚就是罚几年不能比赛。对啊，你可能如果你在外面，我们解除了，你签了退役，然后你在外面吃饭或者是怎么样，或者你就是故意的去使用，那你会导致我们俩的注册关系还在，会导致我这个省份受处罚，又变成个人，或者甚至说像内蒙那样直接就是禁止参赛了。是啊。对，禁止参赛比赛都办不了。对，嗯。对，所以说现在，就看各各时间看吧，还还是要，像今年倒不着急，今年今年不办就办着我，今年不着急，明年可以年底可以考虑。而且我现在觉得你现在需要一个全马的好的成绩，这样你去跟别的省份去谈啊，或者怎么样，就是也有好处的。可能到时候看北京嘛，北京我感觉问题不大，因为感觉跟杨科他们那种训练方法，我感觉很充实啊，他们这这这这几个高山男孩。对啊，但是你要非常系统的跟他们练才可以啊，对不对？这个我这么想，你至少是两个月的时间。就几堂课跑的好没有用啊！你要连续两两个月、三个月能够很完整的一个周期吃下来才用啊，否则你跑几堂课比他们跑的好都可能，因为他们在整个训练周期里面状态有起有伏，对吧？这个怎么耐得住寂寞是个很大的挑战。嗯，就像我刚才说说的一个比赛，比也比到六六七月份，然后回家休息个休息，也不是说休息啊，也不是你比赛比到六七月份，哪还有时间休息啊？",
+      "text": "因为那以前我担心你跑到别的省份去注册，但是现在有一个问题就是，他担心你兴奋剂的问题。那你如果如果你退役，你不在我基地里面，你不受我的管控，那你如果出了兴奋剂的问题，那你还要我这个省份为你负责。所以现在大家都是，只要你你跟我解除关系，我马上就是去申请解除跟你的注册关系。这样你如果日后出了兴奋剂的问题，跟我就没关系了。所以现在省份的方面也是很积极的去跟运动员解除关系。对，因为这个一罚就罚很久，一罚就是罚几年不能比赛。对啊，你可能如果你在外面，我们解除了，你签了退役，然后你在外面吃饭或者是怎么样，或者你就是故意的去使用，那你会导致我们俩的注册关系还在，会导致我这个省份受处罚，又变成个人，或者甚至说像内蒙那样直接就是禁止参赛了。是啊。对，禁止参赛比赛都办不了。对，嗯。对，所以说现在，就看各各时间看吧，还还是要，像今年倒不着急，今年今年不办就办着我，今年不着急，明年可以年底可以考虑。而且我现在觉得你现在需要一个全马的好的成绩，这样你去跟别的省份去谈啊，或者怎么样，就是也有好处的。可能到时候看北京嘛，北京我感觉问题不大，因为感觉跟杨科他们那种训练方法，我感觉很充实啊，他们这这这这几个高山男孩。对啊，但是你要非常系统的跟他们练才可以啊，对不对？这个我这么想，你至少是两个月的时间。就几堂课跑的好没有用啊！你要连续两两个月、三个月能够很完整的一个周期吃下来才用啊，否则你跑几堂课比他们跑的好都可能，因为他们在整个训练周期里面状态有起有伏，对吧？这个怎么耐得住寂寞是个很大的挑战。嗯，就像我刚才说说的一个比赛，比也比到六六七月份，然后回家休息个",
+      "owned_item_start": 28,
+      "owned_item_stop": 635
+    },
+    {
+      "id": 31,
+      "start": 3720.0,
+      "end": 3840.0,
+      "decode_start": 3715.0,
+      "decode_end": 3845.0,
+      "decoded_text": "比赛比运也比到六六七月份嘛，然后回家休息个休息也不是说休息啊，也不是你比赛比到六七月份哪还有时间休息啊？有啊，十到北京就十月份啊。十月底啊，那十月中旬还是十月底啊？那两个多月就够了嘛？准备场比赛，我觉得我准备一场马拉松四十五天就行了，系统训练四十五天。我现在觉得需要至少两三个月的时间。你你你年纪起来了，你不能像你以前年轻的时候一样啊！我老了，我老了。你你少准备一下，你可能准备的太长了。还能说你说会啊？这礼拜要跑比赛的。对我这个星期天比赛，就是你好好干啊！二二幺三等着你啊！就是会啊，都不想看你对啊，会啊，这礼拜跑大连的比赛。对大连那边挺难跑的，对风大啊，有点跑吧。我去年跑。对大连会啊，跑大连都错过了来上海参加活动的机会。是的。现在你年年纪起来恢复肯定是跟不上以前了。嗯，以前年轻你可以。但你在家，比如说你六月份，你说回家休息一个月，你觉得你休息还跑吗？还是说天天玩？天天喝酒跑？不不是啊，我我我在家里面我玩的有很多的啊，我我专门打一摸下呀，又是老好玩了，一点不跑。我一天一天在家里面走路都六万步、五万步，我走走再走走路和跑步不一样。对，你走五万步、六万步，你的心肺得不到锻炼。没事嘛，慢慢恢复嘛。我就好好我走了，我干得到到了，就是就是在家会休息一月，一步不练，哪不跑？我懂了，一步不跑，睡到自然醒，出门随便搞点吃的，然后随便玩，玩到晚上十二点，天就黑，眼前回去。哎，你开直播就去年好多这种就套马步，我可以可以到到时候很高，到时候马步我也到，也也到到时候就直接开直播，直接了可以这个是。我懂了，就是回去就一步不练，你这个真的是有点厉害了。孙老师，因为现在的话，你你要看训。",
+      "text": "休息也不是说休息啊，也不是你比赛比到六七月份哪还有时间休息啊？有啊，十到北京就十月份啊。十月底啊，那十月中旬还是十月底啊？那两个多月就够了嘛？准备场比赛，我觉得我准备一场马拉松四十五天就行了，系统训练四十五天。我现在觉得需要至少两三个月的时间。你你你年纪起来了，你不能像你以前年轻的时候一样啊！我老了，我老了。你你少准备一下，你可能准备的太长了。还能说你说会啊？这礼拜要跑比赛的。对我这个星期天比赛，就是你好好干啊！二二幺三等着你啊！就是会啊，都不想看你对啊，会啊，这礼拜跑大连的比赛。对大连那边挺难跑的，对风大啊，有点跑吧。我去年跑。对大连会啊，跑大连都错过了来上海参加活动的机会。是的。现在你年年纪起来恢复肯定是跟不上以前了。嗯，以前年轻你可以。但你在家，比如说你六月份，你说回家休息一个月，你觉得你休息还跑吗？还是说天天玩？天天喝酒跑？不不是啊，我我我在家里面我玩的有很多的啊，我我专门打一摸下呀，又是老好玩了，一点不跑。我一天一天在家里面走路都六万步、五万步，我走走再走走路和跑步不一样。对，你走五万步、六万步，你的心肺得不到锻炼。没事嘛，慢慢恢复嘛。我就好好我走了，我干得到到了，就是就是在家会休息一月，一步不练，哪不跑？我懂了，一步不跑，睡到自然醒，出门随便搞点吃的，然后随便玩，玩到晚上十二点，天就黑，眼前回去。哎，你开直播就去年好多这种就套马步，我可以可以到到时候很高，到时候马步我也到，也也到到时候就直接开直播，直接了可以这个是。我懂了，就是回去就一步不练，你这个真的",
+      "owned_item_start": 20,
+      "owned_item_stop": 586
+    },
+    {
+      "id": 32,
+      "start": 3840.0,
+      "end": 3960.0,
+      "decode_start": 3835.0,
+      "decode_end": 3965.0,
+      "decoded_text": "直播直接了，可以这个倒是，我懂了，就是回去教一副不厉害，你这个真的是有点厉害的。孙老师，因为现在的话，你你要看训练周期的话，其实运动是有个年限的。你说你我们都个为什么可以坚持这么多年？他小时候底子打的，以后现在是教练兼运动员，他跑得动的话可以跑跑，跑不动的话可以在后面换。这种他的运运动年限才拉长了嘛。你天天干那种是受不了的，是谁？你又不是说加点油、加点喝点水就好了。这种你身体的体能，你说像几步桥哥的话，你没见什么柏林马拉松比完了直接回家休息一个月嘛？他是？他还不是就挖点地？是是，我也准备这个大连跑。你就这种，你就听我的。我们现在当时还年轻啊，你是已经不年轻了。你现在起码还要再跑个六年吧？嗯，六七年你要跑完，你跑想跑六七年的话，你必须这你不能天天顶着大强度吧？是是，我也觉得我从去年这个准备世锦赛开始，五六月份准备世锦赛开始，一直到今年现在，一直就没怎么好好休息过，我就休息还是蛮重要的。然后跑着跑着比赛，有些比赛力不从心了嘛，想上去，奈何就是腿上不去，又不像以前一样缓一下，然后他就可以上。现在你缓一下，他也就杨克古说他这两年年限太大了。他以前不光说怎么玩、怎么比赛、怎么训练、怎么练，他说十公里在力间跑三十八分以内，他随便抬腿都不用做准备活动，随便跑。前段时间三十九分嘛，还不我甩嘛直接，他下来就感慨啊，这那老表老表老表，他说现在真的是你年纪起来的了，不能像以前以前是他是又吃得你你不记得我们在北京吃十十五个还是十二个黄桃，边吃黄桃边喝牛奶哦，还能吃了鸡蛋，怕是要干七八个，又又能吃又能练，然后去非洲就练不动了嘛？人其实是真的，你还是要调着点练，调着点练还是可以的。我刚才也是说我要练十年，这种是在在我想法之内，就是过完年出来比赛训练。",
+      "text": "是有点厉害的。孙老师，因为现在的话，你你要看训练周期的话，其实运动是有个年限的。你说你我们都个为什么可以坚持这么多年？他小时候底子打的，以后现在是教练兼运动员，他跑得动的话可以跑跑，跑不动的话可以在后面换。这种他的运运动年限才拉长了嘛。你天天干那种是受不了的，是谁？你又不是说加点油、加点喝点水就好了。这种你身体的体能，你说像几步桥哥的话，你没见什么柏林马拉松比完了直接回家休息一个月嘛？他是？他还不是就挖点地？是是，我也准备这个大连跑。你就这种，你就听我的。我们现在当时还年轻啊，你是已经不年轻了。你现在起码还要再跑个六年吧？嗯，六七年你要跑完，你跑想跑六七年的话，你必须这你不能天天顶着大强度吧？是是，我也觉得我从去年这个准备世锦赛开始，五六月份准备世锦赛开始，一直到今年现在，一直就没怎么好好休息过，我就休息还是蛮重要的。然后跑着跑着比赛，有些比赛力不从心了嘛，想上去，奈何就是腿上不去，又不像以前一样缓一下，然后他就可以上。现在你缓一下，他也就杨克古说他这两年年限太大了。他以前不光说怎么玩、怎么比赛、怎么训练、怎么练，他说十公里在力间跑三十八分以内，他随便抬腿都不用做准备活动，随便跑。前段时间三十九分嘛，还不我甩嘛直接，他下来就感慨啊，这那老表老表老表，他说现在真的是你年纪起来的了，不能像以前以前是他是又吃得你你不记得我们在北京吃十十五个还是十二个黄桃，边吃黄桃边喝牛奶哦，还能吃了鸡蛋，怕是要干七八个，又又能吃又能练，然后去非洲就练不动了嘛？人其实是真的，你还是要调着点练，调着点练还是可以的。我刚才也是说我要练十",
+      "owned_item_start": 29,
+      "owned_item_stop": 628
+    },
+    {
+      "id": 33,
+      "start": 3960.0,
+      "end": 4080.0,
+      "decode_start": 3955.0,
+      "decode_end": 4085.0,
+      "decoded_text": "要调整点练，调整点练还是可以的。我刚才是说我要练十年，这种是在在我想法之内，就是过完年出来比赛，训练比赛，比到六月份、七月份回家休息一个月再比赛，然后比到过年前，然后回家过年，过年又开始调整，那不就是很好了吗？这种先调整，把身体的体能、机能给养起来。但是我觉得你这种休息模式，你比如说你比到七月份你才回家休息，那你等于休息完了都八九月份了。其实我是觉得可以挑一场更后面一点的比赛，比如十一二月份。但是你又想跑跑北京那一场，就跑北京了。跑北京五，我五月底我就比完越野赛了呀。啊，那你六七月份是要比什么？六七月份休息了嘛？刚才不是你说你那个？我刚才你一说，我就有点心动了。那个崇礼，你一说我就有点心动了。为了北京马拉松还是不比了？我一说你有点心动，我等下今晚喊你去喝酒，你又心动了。心动了。对，崇礼是七月十号吧？七月十二号。那不然就不去了。到到时候如果去也是随便跑跑了，就跟前段时间去跑宁波马拉松一样嘛，只练了七八天，吃点底子嘛。像我们中国，你吃点底子都能吃。他前年的时候跑了五六场十分啊，直接嗯，练都不用怎么练，就吃底子嘛，不影响。练了这么多年，底子是打的好的，只要扛后期嘛。所以你更喜欢越野跑还是马拉松？我肯定是喜欢越野跑嘛，只是说这这场比赛到底是哪里出了问题，我也不知道。让我自信心大挫。你让杨春龙下来拒绝采访？啊！当时这么不开心？那你你觉得这场比赛难度比高力贡高很多吗？高倒是高很多，但是我感觉我这次比赛一点状态都没有。出去脸脸色之类，和父亲可我照了个相出发前，那个那个眼神都不对劲，那个眼神迷迷的，双眼皮。赛前干什么？眼但是塌了，没有我我我感觉应该是在丽江训练丽江的嘛。然后那天一下子热了，那两天比赛那两天跟孙老师说前面。",
+      "text": "年，这种是在在我想法之内，就是过完年出来比赛，训练比赛，比到六月份、七月份回家休息一个月再比赛，然后比到过年前，然后回家过年，过年又开始调整，那不就是很好了吗？这种先调整，把身体的体能、机能给养起来。但是我觉得你这种休息模式，你比如说你比到七月份你才回家休息，那你等于休息完了都八九月份了。其实我是觉得可以挑一场更后面一点的比赛，比如十一二月份。但是你又想跑跑北京那一场，就跑北京了。跑北京五，我五月底我就比完越野赛了呀。啊，那你六七月份是要比什么？六七月份休息了嘛？刚才不是你说你那个？我刚才你一说，我就有点心动了。那个崇礼，你一说我就有点心动了。为了北京马拉松还是不比了？我一说你有点心动，我等下今晚喊你去喝酒，你又心动了。心动了。对，崇礼是七月十号吧？七月十二号。那不然就不去了。到到时候如果去也是随便跑跑了，就跟前段时间去跑宁波马拉松一样嘛，只练了七八天，吃点底子嘛。像我们中国，你吃点底子都能吃。他前年的时候跑了五六场十分啊，直接嗯，练都不用怎么练，就吃底子嘛，不影响。练了这么多年，底子是打的好的，只要扛后期嘛。所以你更喜欢越野跑还是马拉松？我肯定是喜欢越野跑嘛，只是说这这场比赛到底是哪里出了问题，我也不知道。让我自信心大挫。你让杨春龙下来拒绝采访？啊！当时这么不开心？那你你觉得这场比赛难度比高力贡高很多吗？高倒是高很多，但是我感觉我这次比赛一点状态都没有。出去脸脸色之类，和父亲可我照了个相出发前，那个那个眼神都不对劲，那个眼神迷迷的，双眼皮。赛前干什么？眼但是塌了，没有我我我感觉应该是在丽江训练丽江的",
+      "owned_item_start": 23,
+      "owned_item_stop": 613
+    },
+    {
+      "id": 34,
+      "start": 4080.0,
+      "end": 4200.0,
+      "decode_start": 4075.0,
+      "decode_end": 4205.0,
+      "decoded_text": "眼袋是塌了，没有我我我感觉应该是在丽江训练，丽江冷嘛，然后那天一下子热了，那两天比赛那两天跟孙老师说前面有点下雨有点冷，那个天气是老牛了，光比赛那天热啊，这两天又冷下来了。那你这周的比赛还是很多，鸡鸡龙鼎是广东的，那比赛更远，你怎么办？嗯，跑就跑了看嘛。上一场是没没经验没状态，这次的话我要被越野爆了。哈哈。所以你比下来之后，为什么回昆明带陈光啊？带几天再去再下去比赛？因为这个你不觉得舟车劳顿的很厉害吗？今天是星期三，你星期一回来的，然后星期四星期星期四又要走了，就回来带两三天，你不觉得这种调整很累吗？因为他们很多运动员都是在宁波比完之后直接就去广东了，都这两天已经在那里适适应赛道了。可可能是每每个人不一样，因为我我们这种高原人，你下那个地方热的地方，你不练你都会出汗。我就想着，如果我直接去那里的话，本身消耗就大，然后那里的按摩呀、放松这些，我在昆明这边是哪个地方盲人按摩按的好、有效果，我都知道的。如果我去那个地方的话，又不知道，然后一去放松，别人按些什么也不知道。我来这里，我直接一按就按两个小时，所以我才选择来这里放松、按摩加调整呀。但三天其实还挺奔波的，我真的很还挺奔波。三天之后你你就待三天就走了。没有孙老师，我我感觉我只要比赛前前一晚上不不坐车就行了，就比赛前前面一天不要，只要不坐车坐上两个小时以上就行了。如果坐上两个小时，第二天比赛我腰会疼，你会不会疼？我一般前天不会坐到两个小时，我以前吃了好几次亏。然后有有些时候比赛的时候我不能睡太软的床，像前两天我去黄埔，那个床太好了，我就把铺盖拉到地板上铺着睡觉，睡地上啊。床太软了，我也不行。招待的太好不行，这个床太好了。",
+      "text": "嘛，然后那天一下子热了，那两天比赛那两天跟孙老师说前面有点下雨有点冷，那个天气是老牛了，光比赛那天热啊，这两天又冷下来了。那你这周的比赛还是很多，鸡鸡龙鼎是广东的，那比赛更远，你怎么办？嗯，跑就跑了看嘛。上一场是没没经验没状态，这次的话我要被越野爆了。哈哈。所以你比下来之后，为什么回昆明带陈光啊？带几天再去再下去比赛？因为这个你不觉得舟车劳顿的很厉害吗？今天是星期三，你星期一回来的，然后星期四星期星期四又要走了，就回来带两三天，你不觉得这种调整很累吗？因为他们很多运动员都是在宁波比完之后直接就去广东了，都这两天已经在那里适适应赛道了。可可能是每每个人不一样，因为我我们这种高原人，你下那个地方热的地方，你不练你都会出汗。我就想着，如果我直接去那里的话，本身消耗就大，然后那里的按摩呀、放松这些，我在昆明这边是哪个地方盲人按摩按的好、有效果，我都知道的。如果我去那个地方的话，又不知道，然后一去放松，别人按些什么也不知道。我来这里，我直接一按就按两个小时，所以我才选择来这里放松、按摩加调整呀。但三天其实还挺奔波的，我真的很还挺奔波。三天之后你你就待三天就走了。没有孙老师，我我感觉我只要比赛前前一晚上不不坐车就行了，就比赛前前面一天不要，只要不坐车坐上两个小时以上就行了。如果坐上两个小时，第二天比赛我腰会疼，你会不会疼？我一般前天不会坐到两个小时，我以前吃了好几次亏。然后有有些时候比赛的时候我不能睡太软的床，像前两天我去黄埔，那个床太好了，我就把铺盖拉到地板上铺着睡觉，睡地上啊。",
+      "owned_item_start": 23,
+      "owned_item_stop": 605
+    },
+    {
+      "id": 35,
+      "start": 4200.0,
+      "end": 4320.0,
+      "decode_start": 4195.0,
+      "decode_end": 4325.0,
+      "decoded_text": "那个床太好了，我就把铺盖拉到地板上铺着睡觉，睡地上啊。床太软了，我也不行。床太软不行，这个床太好了，太太软了，不行，不舒服。出出来久了，什么都没学，就学会了一身毛病啊。然后这个也不是毛病啊，就每个人习惯不一样，我觉得也也很正常。对啊，你之前我们去比赛，那个谁李子轩跟李顺杰把还带着枕头去，他们外面枕头睡不习惯。他们出去比赛都是带自己枕头，对啊对啊。下次我也试试看啊。你不总不能把床垫带着吧？他们有些人这床床单被套带着是吧？床垫被套我可以理解，床垫怎么带啊？床垫，你们是睡软床不行吗？我床垫也能带，有点东西啊。你就你要不下次睡地上直接睡地上解决吧。没有我我直接睡地下是搞搞一块浴巾铺在地上，就搞那个反正人小嘛，那个铺盖折折成两折，就一边拿了当床单，一边拿了当铺盖嘛。你现在也没有这么苦了，好吗？对不对？没有，我这个是没苦硬吃。没苦硬，我发现你非常有这种没苦硬吃，一定要给自己创造一些艰难的条件，然后再想要去跑一个好成绩的这种心态。所以你这周末的比赛，你也不不打算参赛，打上去就跑了？上去就跑了，不用看，不用看。他们，好多人跟我聊天说，后面前十七公里有爬山嘛，就是十七公里海拔上升一千六吧，应该是。后面几乎说没爬山，然后我感觉，哎呀，我感觉每每场比赛都是为我准备的。比跑前这跑前的时候，我就觉得一看这赛道就是每场比赛都是为我准备的。然后一下来才发现，每个点都是难点啊，太难了。你这个还是有点东西的，必须说。对啊，人家去比赛，我觉得你你你和别人比赛有个最大的差别，别人就像比如说去打仗，全副武装去了，你就拿着把刀就过去了，这个差别就是如此之大。哎，最近所以你现在碰到这么多粉丝，有有没有什么特别热情的或者特别有意思的，可以给我们分享一下？有嘛，我感觉。",
+      "text": "床太软了，我也不行。床太软不行，这个床太好了，太太软了，不行，不舒服。出出来久了，什么都没学，就学会了一身毛病啊。然后这个也不是毛病啊，就每个人习惯不一样，我觉得也也很正常。对啊，你之前我们去比赛，那个谁李子轩跟李顺杰把还带着枕头去，他们外面枕头睡不习惯。他们出去比赛都是带自己枕头，对啊对啊。下次我也试试看啊。你不总不能把床垫带着吧？他们有些人这床床单被套带着是吧？床垫被套我可以理解，床垫怎么带啊？床垫，你们是睡软床不行吗？我床垫也能带，有点东西啊。你就你要不下次睡地上直接睡地上解决吧。没有我我直接睡地下是搞搞一块浴巾铺在地上，就搞那个反正人小嘛，那个铺盖折折成两折，就一边拿了当床单，一边拿了当铺盖嘛。你现在也没有这么苦了，好吗？对不对？没有，我这个是没苦硬吃。没苦硬，我发现你非常有这种没苦硬吃，一定要给自己创造一些艰难的条件，然后再想要去跑一个好成绩的这种心态。所以你这周末的比赛，你也不不打算参赛，打上去就跑了？上去就跑了，不用看，不用看。他们，好多人跟我聊天说，后面前十七公里有爬山嘛，就是十七公里海拔上升一千六吧，应该是。后面几乎说没爬山，然后我感觉，哎呀，我感觉每每场比赛都是为我准备的。比跑前这跑前的时候，我就觉得一看这赛道就是每场比赛都是为我准备的。然后一下来才发现，每个点都是难点啊，太难了。你这个还是有点东西的，必须说。对啊，人家去比赛，我觉得你你你和别人比赛有个最大的差别，别人就像比如说去打仗，全副武装去了，你就拿着把刀就过去了，这个差别就是如此之大。哎，最近所以你现在碰到这么多粉丝，有有没",
+      "owned_item_start": 24,
+      "owned_item_stop": 612
+    },
+    {
+      "id": 36,
+      "start": 4320.0,
+      "end": 4440.0,
+      "decode_start": 4315.0,
+      "decode_end": 4445.0,
+      "decoded_text": "差别就是如此之大。哎，所以你现在碰到这么多粉丝，有有没有什么特别热情的或者特别有意思的，可以给我们分享一下？有嘛，我感觉多的很。我还能遇到，我看我们吴哥的粉丝是大。你别转移话题。以体没有说粉粉丝的话，也体考要体考，然后后面那些要上大学这些为主，然后就二十来岁啊，十八九岁、十七八岁这种多。我我的粉丝这种是小小到五六岁，大到六七十岁，我感觉都。等一下，五六岁你怎么知道他们五六岁？的那五五六岁的话，我前几天在丽江跑步啊，丽江跑着那有有几个五六岁的小孩追着我。真多。来追来追我嘛，老牛了！来说盐城龙哥哥，盐城龙哥哥，你好厉害呀！这种也是人才了。那时候心里开心吗？心里面肯定开心啊！哦，能。其实我有些时候发抖音的话，其实可以用我们民族话这种发一点，然后带动我们这些少数民族练体育嘛。那你觉得少数民族练体育是个好出路吗？在你的同龄人里面有多少人像你一样去练体育的？练出头的多吗？哎，那你那那，你总比不出头好啊！因为我看我一批的话是有三十多个人嘛，然后现在练着的人就我一个人了。嗯。像我们农村那个地方，只能说练体育。你说你读书的话是出不了头的，你只能说出卖点自己的劳动力，哈的练练这种，还应该还可以。不然的话，你我们那边的人是读不过沿海城市这边的人。那你的同龄人如果没有去练体育，像你这样，他们现在都在干嘛呢？现在我同龄人的话，差不多哦，吃免费饭的也有，然后在广东那边打工的也有，然后其他的就在村里面当守村人嘛，媳妇都没找到那种，三四个有三四个男的媳妇都找不到那种，跟我一起小学同学长大那种。其实相对来说，你这条路还算已经是走的算是比较顺利的，比较好的。很完美，很完美，在。",
+      "text": "有什么特别热情的或者特别有意思的，可以给我们分享一下？有嘛，我感觉多的很。我还能遇到，我看我们吴哥的粉丝是大。你别转移话题。以体没有说粉粉丝的话，也体考要体考，然后后面那些要上大学这些为主，然后就二十来岁啊，十八九岁、十七八岁这种多。我我的粉丝这种是小小到五六岁，大到六七十岁，我感觉都。等一下，五六岁你怎么知道他们五六岁？的那五五六岁的话，我前几天在丽江跑步啊，丽江跑着那有有几个五六岁的小孩追着我。真多。来追来追我嘛，老牛了！来说盐城龙哥哥，盐城龙哥哥，你好厉害呀！这种也是人才了。那时候心里开心吗？心里面肯定开心啊！哦，能。其实我有些时候发抖音的话，其实可以用我们民族话这种发一点，然后带动我们这些少数民族练体育嘛。那你觉得少数民族练体育是个好出路吗？在你的同龄人里面有多少人像你一样去练体育的？练出头的多吗？哎，那你那那，你总比不出头好啊！因为我看我一批的话是有三十多个人嘛，然后现在练着的人就我一个人了。嗯。像我们农村那个地方，只能说练体育。你说你读书的话是出不了头的，你只能说出卖点自己的劳动力，哈的练练这种，还应该还可以。不然的话，你我们那边的人是读不过沿海城市这边的人。那你的同龄人如果没有去练体育，像你这样，他们现在都在干嘛呢？现在我同龄人的话，差不多哦，吃免费饭的也有，然后在广东那边打工的也有，然后其他的就在村里面当守村人嘛，媳妇都没找到那种，三四个有三四个男的媳妇都找不到那种，跟我一起小学同学长大那种。其实相对来说，你这条路还算已经是走",
+      "owned_item_start": 24,
+      "owned_item_stop": 591
+    },
+    {
+      "id": 37,
+      "start": 4440.0,
+      "end": 4560.0,
+      "decode_start": 4435.0,
+      "decode_end": 4565.0,
+      "decoded_text": "不是那种跟我一起小学同学长大那种。其实相对来说，你这条路还算已经是走的，算是比较顺利的，比较好的，很完美，很完美。对，还好是我遇见了体育，然后也遇到了一路走来遇到了这么多顺顺心心，都是顺顺心心的。真的不然的话，我现在也可能是守村人一名啊。就像你说的，其实对于很多像你老家的这些小孩来说，可能练体育真的还是一条出路。那现在这些小孩都在练些什么呢？都在做些什么？我前面不是有两个侄子嘛？我姐家儿子，我让他们练，他们有有些人能吃这个苦，有些人吃不了。他他们的话，以为是好玩。然后小朋友，你要说想练的话，要正儿八经的，真正的喜欢这个项目才能练出来的。你才一几分钟热度那种是练不起来的。所以你们同村的也没有太多的孩子。现在小孩子在练体育，就这个村就你一个人。虽然他们看到了你这条路是一条可能是比别的路来的要更更好的一个选择。嗯，他他们后面也肯定会练的人肯定会更越来越多，因为现在起码说招到我们县里面的有五六个嘛，一个村里面也可以了。现在你们县是有体校是吧？嗯，腾冲县少体校嘛，我们那里是。哦，所以你们少体校主要是出长距离的，还是中中中距离的运动员？八百、五千嘛，就是的。其实我觉得观察到现在，他们云南云南省对这个中长跑的发展还是很多元化的。有这个像他们省运会，我观察到，我举例子对比我们安徽的省运会，我们安徽省运会中长跑一般也就是三千，然后有个五千不到不了。他们有现在有没有一万米？有啊，有一万米。呃，省运会有一万米的项目，省运会都是青少年的嘛。然后还有这个五千的团体，比如说一个省出四个人，呃，三个人，四个人，然后这个成绩相加取前三名，每个省呃每个市的前三名代表市，然后取前三名的成绩相加，然后。",
+      "text": "的，算是比较顺利的，比较好的，很完美，很完美。对，还好是我遇见了体育，然后也遇到了一路走来遇到了这么多顺顺心心，都是顺顺心心的。真的不然的话，我现在也可能是守村人一名啊。就像你说的，其实对于很多像你老家的这些小孩来说，可能练体育真的还是一条出路。那现在这些小孩都在练些什么呢？都在做些什么？我前面不是有两个侄子嘛？我姐家儿子，我让他们练，他们有有些人能吃这个苦，有些人吃不了。他他们的话，以为是好玩。然后小朋友，你要说想练的话，要正儿八经的，真正的喜欢这个项目才能练出来的。你才一几分钟热度那种是练不起来的。所以你们同村的也没有太多的孩子。现在小孩子在练体育，就这个村就你一个人。虽然他们看到了你这条路是一条可能是比别的路来的要更更好的一个选择。嗯，他他们后面也肯定会练的人肯定会更越来越多，因为现在起码说招到我们县里面的有五六个嘛，一个村里面也可以了。现在你们县是有体校是吧？嗯，腾冲县少体校嘛，我们那里是。哦，所以你们少体校主要是出长距离的，还是中中中距离的运动员？八百、五千嘛，就是的。其实我觉得观察到现在，他们云南云南省对这个中长跑的发展还是很多元化的。有这个像他们省运会，我观察到，我举例子对比我们安徽的省运会，我们安徽省运会中长跑一般也就是三千，然后有个五千不到不了。他们有现在有没有一万米？有啊，有一万米。呃，省运会有一万米的项目，省运会都是青少年的嘛。然后还有这个五千的团体，比如说一个省出四个人，呃，三个人，四个人，然后这个成绩相加取前三",
+      "owned_item_start": 32,
+      "owned_item_stop": 596
+    },
+    {
+      "id": 38,
+      "start": 4560.0,
+      "end": 4680.0,
+      "decode_start": 4555.0,
+      "decode_end": 4685.0,
+      "decoded_text": "出四个人，呃，三个人，四个人，然后这个成绩相加取前三名，每个省呃每个市的前三名代表市，然后取前三名的成绩相加，然后最后去算。所以他们对于中长跑加了很多，针对于这中长跑的项目，虽然他们比如一百米、二百米这些短跑、跳高，他们项目都有，但是对于中长跑的扶持还是很大的，这样都让他们有更多的青少年的苗子，然后供这个省里面来挑选。我觉得还是对中长跑的选拔、青少年的培养还是促进很大的。像你们那边的话是，只是说一百米到四百米这些速度跑嘛？你们沿海城市这些是速度跑，像我们这边的话只能发展耐力项目啊，速度一去去比的话简直一是吊打呀。嗯，其实我是觉得我们那边为什么发展一些这些会更好一点？像广东，它像这些项目四百、二百、一百还是挺注重下面地级市或者是甚至是学校老师的这些技术理念的培养。那我觉得在云南这方面还是挺挺难有这些深厚扎实的这个理论知识啊，或者是一些技术性的教学还是挺难的。那相对于中长跑来讲，不是那么的吃技术，那可能它本身在高原上面，然后呃能跑，然后慢慢就能够被发掘，然后向省里面、市里面去输送。那沿海这方面肯定是要好很多了。它这个呃老师的，甚至于一些老师的基础的技术都已经很好了。嗯，对，因为中长跑的或者特别马说你快几秒钟和百米、两百这种快零点零几秒，其实差别还是蛮大的。对技术上的雕琢，其实还是蛮大的差别。我觉得。对的，没错，没错。应该说中短跑还是一个非常吃技术。对，短跑吃技术，当然天赋都吃。这个是不管是短跑还是中长跑都吃天赋，但是短跑可能还是蛮注重基层的技术，取而且发掘，我觉得还是我们那边像我们那边发掘的可能机会更多一些吧。像云南，我觉得很多还是因为天气不好，然后再来去那边体育，大多数的。",
+      "text": "名，每个省呃每个市的前三名代表市，然后取前三名的成绩相加，然后最后去算。所以他们对于中长跑加了很多，针对于这中长跑的项目，虽然他们比如一百米、二百米这些短跑、跳高，他们项目都有，但是对于中长跑的扶持还是很大的，这样都让他们有更多的青少年的苗子，然后供这个省里面来挑选。我觉得还是对中长跑的选拔、青少年的培养还是促进很大的。像你们那边的话是，只是说一百米到四百米这些速度跑嘛？你们沿海城市这些是速度跑，像我们这边的话只能发展耐力项目啊，速度一去去比的话简直一是吊打呀。嗯，其实我是觉得我们那边为什么发展一些这些会更好一点？像广东，它像这些项目四百、二百、一百还是挺注重下面地级市或者是甚至是学校老师的这些技术理念的培养。那我觉得在云南这方面还是挺挺难有这些深厚扎实的这个理论知识啊，或者是一些技术性的教学还是挺难的。那相对于中长跑来讲，不是那么的吃技术，那可能它本身在高原上面，然后呃能跑，然后慢慢就能够被发掘，然后向省里面、市里面去输送。那沿海这方面肯定是要好很多了。它这个呃老师的，甚至于一些老师的基础的技术都已经很好了。嗯，对，因为中长跑的或者特别马说你快几秒钟和百米、两百这种快零点零几秒，其实差别还是蛮大的。对技术上的雕琢，其实还是蛮大的差别。我觉得。对的，没错，没错。应该说中短跑还是一个非常吃技术。对，短跑吃技术，当然天赋都吃。这个是不管是短跑还是中长跑都吃天赋，但是短跑可能还是蛮注重基层的技术，取而且发掘，我觉得还是我们那边像我们那边发掘的可能机会更多一些吧。像云南，我觉得很多",
+      "owned_item_start": 22,
+      "owned_item_stop": 611
+    },
+    {
+      "id": 39,
+      "start": 4680.0,
+      "end": 4800.0,
+      "decode_start": 4675.0,
+      "decode_end": 4805.0,
+      "decoded_text": "我们那边像我们那边发掘的可能性会更多一些吧。像云南，我觉得很多还是因为学习不好，然后再来去练体育。大多数都是学习不好，你学习好的，他父母是不可能给他练体育的。我们云南这边，这个但是现在体育对很多人来说，我不知道，至少在上海这样的城市，其实体育是很多人的一个新的选择了。发达边是是是，你像沿沿海城市、发达城市不那么吃，像他跟你学习好不好没关系。那我可以作为一个兴趣爱好培养，然后如果有这方面的天赋，也可以继续的去培养。那可能他原本的学习还是可以的。对，因为现在体育明星甚至就和在一定程度上和演艺明星是是很像的。对，我们也看到非常多的体育明星最后真正的成为了一个名人。嗯，对，我觉得尤其是经济发达地区，他培养体育的方式是：第一个是作为兴趣来培养；，第二个是，我反正家庭能给你兜底。嗯。你喜欢这个项目，那你就我就支持你去干。那跟云南这种这边的大部分，我不能说百分之百，大部分的家庭选择体育的方式还是很大有很大的不同的。对，那些而且像网球啊，一些有些特别的呃，培养经费很高的项目，那可能就是有家里面兜底，我可能砸了几百万，最后没有出来，那你就没有出山。对，我家里面可以继续为你兜底。我们云南这边的话，是是打网球啊，你说有几百万，还可以打网球，对啊，而且几十万就不可以打了。对，而且中长跑是一个不需要什么特别投入的，我有双鞋，有有件衣服就可以去跑。你像甚至我们在肯亚，你见到很多黑人的光脚跑，是不是？他没什么投入，你不像，所以你像非洲那些国家，他游泳他根本就发展不了，网球根本就发展不了，没有泳池，没有网球场。所以马拉松是一个，这也是我觉得它在国内现在发展很快，然后能够普及化这么大的一个很重要的原因，就是它没有什么成本。我有双鞋，买一双跑很很不错的跑鞋，现在国产的跑鞋的性价比也很高了，也够你能够跑很多的距离。甚至我觉得国内的报名费也很。",
+      "text": "还是因为学习不好，然后再来去练体育。大多数都是学习不好，你学习好的，他父母是不可能给他练体育的。我们云南这边，这个但是现在体育对很多人来说，我不知道，至少在上海这样的城市，其实体育是很多人的一个新的选择了。发达边是是是，你像沿沿海城市、发达城市不那么吃，像他跟你学习好不好没关系。那我可以作为一个兴趣爱好培养，然后如果有这方面的天赋，也可以继续的去培养。那可能他原本的学习还是可以的。对，因为现在体育明星甚至就和在一定程度上和演艺明星是是很像的。对，我们也看到非常多的体育明星最后真正的成为了一个名人。嗯，对，我觉得尤其是经济发达地区，他培养体育的方式是：第一个是作为兴趣来培养；，第二个是，我反正家庭能给你兜底。嗯。你喜欢这个项目，那你就我就支持你去干。那跟云南这种这边的大部分，我不能说百分之百，大部分的家庭选择体育的方式还是很大有很大的不同的。对，那些而且像网球啊，一些有些特别的呃，培养经费很高的项目，那可能就是有家里面兜底，我可能砸了几百万，最后没有出来，那你就没有出山。对，我家里面可以继续为你兜底。我们云南这边的话，是是打网球啊，你说有几百万，还可以打网球，对啊，而且几十万就不可以打了。对，而且中长跑是一个不需要什么特别投入的，我有双鞋，有有件衣服就可以去跑。你像甚至我们在肯亚，你见到很多黑人的光脚跑，是不是？他没什么投入，你不像，所以你像非洲那些国家，他游泳他根本就发展不了，网球根本就发展不了，没有泳池，没有网球场。所以马拉松是一个，这也是我觉得它在国内现在发展很快，然后能够普及化这么大的一个很重要的原因，就是它没有什么成本。我有双鞋，买一双跑很很不错的跑鞋，现在国产的跑鞋的性",
+      "owned_item_start": 29,
+      "owned_item_stop": 658
+    },
+    {
+      "id": 40,
+      "start": 4800.0,
+      "end": 4920.0,
+      "decode_start": 4795.0,
+      "decode_end": 4925.0,
+      "decoded_text": "么成本啊！我有双鞋，买一双跑很很不错的跑鞋。现在国产的跑鞋的性价比也很高了，也够你能够跑很多的距离。甚至我觉得国内的报名费也很便宜。我出去出国比比赛就感觉国外国外的报名费好高，还什么都没有。然后国内的报名费也很便宜，成本也很低，所以我觉得国内的马拉松普及很快，发展很快，也是一个很很重要的原因。问题，你看国内报名费这么低，还有人在那里说呀？前段时间不是有有人在那里说乱丢垃圾，建议拿着一次性杯子那种。你说如果国内像国外拿着一次性杯子跑的话，人不把你喷死啊？什么吃的都没有，对国外的餐餐包啊、晚餐包啊，跟国内真的差很远。国国内现在卷到就已经很离谱的程度，像无锡的卷成那个样子。对，那个是无锡是非常的丰盛和丰富吧？对，还有很多吐槽，像这个住房的问题，这个确实是没有办法，就是供需的问题。这全世界都贵啊，也不是无锡贵，上海贵，全世界都贵啊。只要你呃，如果这个城市没有地铁，然后你又非要住到起点边上，那自然是肯定居没有办法平衡那个东西。对啊，就是我们同事这上周末博士的出差，一个人单间离起点也离终点也有一段距离的，就两千块，而且是住的是不怎么样的房间。对啊，就是这样，对供需的问题，稍微贵点三四千块一个晚上非常正常，在在那个时间节点，就是很贵。那个时间节点就没有便宜的，就没有便宜的东西。是的，因为就是一个城市突然就是超载了，超载意味着你去吃饭也要等，你去干什么都要等。是的，还有一个特别明显的，可能有的地铁有地铁的，我可以住的原因早上过来还好。那像像眉山这样的，像仁寿这样的，那你在一个县城办一个这么多人数的赛事，那你就是整个城市的酒店都不够用。嗯，那就是面临涨价，那谁价高就得嘛。你一下子来这么多人，像仁寿那个，你是不是它主要城市的载运载力太小？嗯啊，它跟这种上海啊，跟跟一些沿海城市本身的运载力还比较大，还。",
+      "text": "价比也很高了，也够你能够跑很多的距离。甚至我觉得国内的报名费也很便宜。我出去出国比比赛就感觉国外国外的报名费好高，还什么都没有。然后国内的报名费也很便宜，成本也很低，所以我觉得国内的马拉松普及很快，发展很快，也是一个很很重要的原因。问题，你看国内报名费这么低，还有人在那里说呀？前段时间不是有有人在那里说乱丢垃圾，建议拿着一次性杯子那种。你说如果国内像国外拿着一次性杯子跑的话，人不把你喷死啊？什么吃的都没有，对国外的餐餐包啊、晚餐包啊，跟国内真的差很远。国国内现在卷到就已经很离谱的程度，像无锡的卷成那个样子。对，那个是无锡是非常的丰盛和丰富吧？对，还有很多吐槽，像这个住房的问题，这个确实是没有办法，就是供需的问题。这全世界都贵啊，也不是无锡贵，上海贵，全世界都贵啊。只要你呃，如果这个城市没有地铁，然后你又非要住到起点边上，那自然是肯定居没有办法平衡那个东西。对啊，就是我们同事这上周末博士的出差，一个人单间离起点也离终点也有一段距离的，就两千块，而且是住的是不怎么样的房间。对啊，就是这样，对供需的问题，稍微贵点三四千块一个晚上非常正常，在在那个时间节点，就是很贵。那个时间节点就没有便宜的，就没有便宜的东西。是的，因为就是一个城市突然就是超载了，超载意味着你去吃饭也要等，你去干什么都要等。是的，还有一个特别明显的，可能有的地铁有地铁的，我可以住的原因早上过来还好。那像像眉山这样的，像仁寿这样的，那你在一个县城办一个这么多人数的赛事，那你就是整个城市的酒店都不够用。嗯，那就是面临涨价，那谁价高就得嘛。你一下子来这么多人，像仁寿那个，你是不是它主要城市的载运载力太小？嗯啊，它跟这",
+      "owned_item_start": 28,
+      "owned_item_stop": 654
+    },
+    {
+      "id": 41,
+      "start": 4920.0,
+      "end": 5040.0,
+      "decode_start": 4915.0,
+      "decode_end": 5045.0,
+      "decoded_text": "像人设那个，你是不是？它主要城市的载运载力太小，嗯啊，它跟这种上海啊，跟跟一些沿海城市本身的运载力还比较大，还好，还差的很，还很不一样。没错，但是城市呢，就是希望通过办马拉松这件事情，希望能够获得更多的关注和这个重视，但是这个中间就会成起一个很大的矛盾，就是，当来了这么多人，你你承载不了，接待不好，又会造成很多的怨言，这个怨言又会被社交媒体上无数的放大，那就会面临更多的问题的出现，就大家这个舆情，舆情，舆情就这么来了。嗯，聊远了，聊远了，我们还是来聊云春龙跟云南吧。哎，春龙，所以春龙，你这么职业生涯也这么久，你记记忆最深刻的一场比赛是什么？比赛，我感觉我每一场比赛我都深刻呀。让你讲到刚刚宋老师这个问题，然后你脑海里面蹦出来第一场是第第一场是什么？第一场的话就是跑十马嘛，就是昆明。哦，我不是问的是你自己第一场比赛啊，问的是刚刚宋老师问最深刻的一场，你脑海里面第一个蹦出来的比赛，第一个蹦出来的比赛，就让你印象觉得很深。我印象很深的比赛就是一九年北京马拉松嘛，因为我们云南的把前八名都拿了嘛。啊，那场我记得你回哥是刚刚跑完成都，成都过去的对吧？然后输给了他，输给了那个韩日龙，韩日龙。嗯啊，你当时跑的跑了十七分嘛？因为为什么你对这场印象那么深啊？如果那场不跑十七分的话，我就下队了。啊，你跟那个那二零年的南京很像，他那场不跑到十九分，他就是进不了队。我我那场如果跑不到十七分的，你是那场第一次进二零是吗？嗯，因为前面都是在跑二十五六分，我都不想练了，都想着这次再跑不出成绩的话，可以回家种地了。然后刚好那天是堵了，不是我们队有个队友陈国俊嘛，跑二十五六分都是我两个一起跑，他叫前面跑慢点，然后我两个就跑慢点，然后后面也跑不到。后面那天他叫我北京马拉松，他说一起跑了，跑慢点。我说我不行，我自己要赌一把，看。",
+      "text": "种上海啊，跟跟一些沿海城市本身的运载力还比较大，还好，还差的很，还很不一样。没错，但是城市呢，就是希望通过办马拉松这件事情，希望能够获得更多的关注和这个重视，但是这个中间就会成起一个很大的矛盾，就是，当来了这么多人，你你承载不了，接待不好，又会造成很多的怨言，这个怨言又会被社交媒体上无数的放大，那就会面临更多的问题的出现，就大家这个舆情，舆情，舆情就这么来了。嗯，聊远了，聊远了，我们还是来聊云春龙跟云南吧。哎，春龙，所以春龙，你这么职业生涯也这么久，你记记忆最深刻的一场比赛是什么？比赛，我感觉我每一场比赛我都深刻呀。让你讲到刚刚宋老师这个问题，然后你脑海里面蹦出来第一场是第第一场是什么？第一场的话就是跑十马嘛，就是昆明。哦，我不是问的是你自己第一场比赛啊，问的是刚刚宋老师问最深刻的一场，你脑海里面第一个蹦出来的比赛，第一个蹦出来的比赛，就让你印象觉得很深。我印象很深的比赛就是一九年北京马拉松嘛，因为我们云南的把前八名都拿了嘛。啊，那场我记得你回哥是刚刚跑完成都，成都过去的对吧？然后输给了他，输给了那个韩日龙，韩日龙。嗯啊，你当时跑的跑了十七分嘛？因为为什么你对这场印象那么深啊？如果那场不跑十七分的话，我就下队了。啊，你跟那个那二零年的南京很像，他那场不跑到十九分，他就是进不了队。我我那场如果跑不到十七分的，你是那场第一次进二零是吗？嗯，因为前面都是在跑二十五六分，我都不想练了，都想着这次再跑不出成绩的话，可以回家种地了。然后刚好那天是堵了，不是我们队有个队友陈国俊嘛，跑二十五六分都是我两个一起跑，他叫前面跑慢点，然后我两个就跑慢点，然后后面也跑不到。后面那天",
+      "owned_item_start": 26,
+      "owned_item_stop": 645
+    },
+    {
+      "id": 42,
+      "start": 5040.0,
+      "end": 5160.0,
+      "decode_start": 5035.0,
+      "decode_end": 5165.0,
+      "decoded_text": "一起跑，他叫前面跑慢点，然后我两个就跑慢点，然后后面也跑不到。后面那天他叫我北京马拉松，他说一起跑了跑慢点，我说我不行，我自己要赌一把看看，不然就完了。后面他跑之前他还告诉我，那你等一下不要让我追到你。我的意思就是我跑崩了，前面自己跑跑崩了，跑二十七八分，他跑二十四五分把我给追了那种。然后我告诉他，是了是了。然后我跑着，那天没崩，我刚好还拿了个第七名，下来开心，下来开心嘛，又又不用喝了没，又不用走了，没喝嘛？北京那天晚上没喝，没喝嘛？没喝。嗯，那个时候还不怎么爱喝酒，我爱喝酒是从二一年开始，一个为什么？是因为二一年谈了恋爱就喜欢喝酒，没没有没有时间，没有不知道不知道是为什么。然后一闻到酒的味道就感觉闻闻到那种。我记得之前住在基地里面，然后不是还有那些菲律宾还是哪国的啊？菲律宾嘛，他们跟他们菲律宾的那些一起喝，不是菲律宾是柬埔寨的啊？柬埔寨柬埔寨全全程全程手势沟通，不过他们俩他们交流不了，然后就一起喝。我服了我，怎么喝就干杯就就碰个杯子喝了就就结束就吹牛啊？他们俩练什么的？可可以喝两三瓶酒吗？你你都动不了就碰杯了，那没没有那喝酒吃东西就光了光了用手势啊，也然后就唱歌呀，唱点歌就不是唐唐明说会弹吉他嘛，有一个柬埔寨的也会弹，然后就刚好了，然后唱点音乐有酒有人就够了啊。他们那里的歌随便柬埔寨的歌随便哼着点，然后他们我们这里的歌他们也哼着点，那我们就开始玩起来了。我记得好像这次来了呃国外的运动员，你们都还能搭上线啊，能一起喝到酒。我我们队的都能搭上线，其他队的就不知道。我我们队始终保持着以国际接轨嘛啊，以国际接轨。你们就是嘛搭上线，就过去聊聊天，给人家耍两眼神啊，耍两个眼神。后面有几次直接带翻译呢，人家因为我们在。",
+      "text": "他叫我北京马拉松，他说一起跑了跑慢点，我说我不行，我自己要赌一把看看，不然就完了。后面他跑之前他还告诉我，那你等一下不要让我追到你。我的意思就是我跑崩了，前面自己跑跑崩了，跑二十七八分，他跑二十四五分把我给追了那种。然后我告诉他，是了是了。然后我跑着，那天没崩，我刚好还拿了个第七名，下来开心，下来开心嘛，又又不用喝了没，又不用走了，没喝嘛？北京那天晚上没喝，没喝嘛？没喝。嗯，那个时候还不怎么爱喝酒，我爱喝酒是从二一年开始，一个为什么？是因为二一年谈了恋爱就喜欢喝酒，没没有没有时间，没有不知道不知道是为什么。然后一闻到酒的味道就感觉闻闻到那种。我记得之前住在基地里面，然后不是还有那些菲律宾还是哪国的啊？菲律宾嘛，他们跟他们菲律宾的那些一起喝，不是菲律宾是柬埔寨的啊？柬埔寨柬埔寨全全程全程手势沟通，不过他们俩他们交流不了，然后就一起喝。我服了我，怎么喝就干杯就就碰个杯子喝了就就结束就吹牛啊？他们俩练什么的？可可以喝两三瓶酒吗？你你都动不了就碰杯了，那没没有那喝酒吃东西就光了光了用手势啊，也然后就唱歌呀，唱点歌就不是唐唐明说会弹吉他嘛，有一个柬埔寨的也会弹，然后就刚好了，然后唱点音乐有酒有人就够了啊。他们那里的歌随便柬埔寨的歌随便哼着点，然后他们我们这里的歌他们也哼着点，那我们就开始玩起来了。我记得好像这次来了呃国外的运动员，你们都还能搭上线啊，能一起喝到酒。我我们队的都能搭上线，其他队的就不知道。我我们队始终保持着以国际接轨嘛啊，以国际接轨。你们就是嘛搭上线，就过去聊聊天，给人家耍",
+      "owned_item_start": 31,
+      "owned_item_stop": 617
+    },
+    {
+      "id": 43,
+      "start": 5160.0,
+      "end": 5229.1,
+      "decode_start": 5155.0,
+      "decode_end": 5234.1,
+      "decoded_text": "几回就几回，你们这个怎么搭上线了？就过去聊聊天，给人家甩两眼神啊，甩两个眼神。后面有几次直接在翻译呢，直接英文就在翻译，就旁边翻译我自己。然后还加了抖音也相互关注了，他们那边也玩抖音嘛？他们玩的是国内版抖音还是？嗯，国内版的啊。真心可以的，真心春荣，你你真的是有点有点东西的。但我说实话，我还挺担心你这下面，现在是四月份，下面这八个月怎么怎么搞的？什么打法？就我还蛮担心的，看你这个样子，看你吴哥看你这个眼神也是有点担心你。这个个性过于活泼，这个后面这个训练怎么动？比赛怎么跑？对吧？你现在跑在场上跑出来的好的，还是在吃以前的老本？嗯。但现在竞争又这么激烈。就是啊，还还是要好好的正常系统训练这些，然后但做多难，你也说，嗯，知道要好好做。对，都要人家杨杨克古骑自行车来叫你，叫你下去赶紧去训练了。这个是不是也挺让人操心的？没事啊，后面应该不会了吧？应该不会了吧？不会了，不会了，不会了。每天都要鞭策自己啊！你明天去比赛吗？还是明天？明天去了。好，我也是明天走。嗯。这个是。",
+      "text": "两眼神啊，甩两个眼神。后面有几次直接在翻译呢，直接英文就在翻译，就旁边翻译我自己。然后还加了抖音也相互关注了，他们那边也玩抖音嘛？他们玩的是国内版抖音还是？嗯，国内版的啊。真心可以的，真心春荣，你你真的是有点有点东西的。但我说实话，我还挺担心你这下面，现在是四月份，下面这八个月怎么怎么搞的？什么打法？就我还蛮担心的，看你这个样子，看你吴哥看你这个眼神也是有点担心你。这个个性过于活泼，这个后面这个训练怎么动？比赛怎么跑？对吧？你现在跑在场上跑出来的好的，还是在吃以前的老本？嗯。但现在竞争又这么激烈。就是啊，还还是要好好的正常系统训练这些，然后但做多难，你也说，嗯，知道要好好做。对，都要人家杨杨克古骑自行车来叫你，叫你下去赶紧去训练了。这个是不是也挺让人操心的？没事啊，后面应该不会了吧？应该不会了吧？不会了，不会了，不会了。每天都要鞭策自己啊！",
+      "owned_item_start": 25,
+      "owned_item_stop": 354
+    },
+    {
+      "id": 44,
+      "start": 5229.1,
+      "end": 5298.2,
+      "decode_start": 5224.1,
+      "decode_end": 5298.173,
+      "decoded_text": "应该不会了吧？不喝了，不喝了，不喝。每天都要鞭策自己啊！你明天去比赛吗？还是明天？明天去了。好，我也是明天走。嗯。这个拭目以待了，看你这个后面究竟会怎么样。可以可以啊，你你们就拭目以待吧。好，那我们期待一下。今天这期就这样，差不多不，崔总儿？差不多，差不多。嗯，好。差不多。期待一下。有什么想跟粉丝说的吗，崔总？我只想跟粉丝朋友们说，感谢大家支持我们啊！我们会在以后在跑步的道路上越来越好，也希望你们在今后的生活中越来越好。你这个太官方了，官方不行。场面化。没有这个不是场面，场面化这个是呃，有些人连场面话都没有，人有些人说的话就是啊，我好好努力，好好干，日子过好了，那你那你也不助人家呀，人人家听你视频听这么久啊，呃，听你语音听这么久。好，好。嗯。有点东西。好了，谢谢大家。好，好，谢谢大家。好，谢谢大家。嗯，好，嗯，好的，嗯，拜拜，拜拜。",
+      "text": "你明天去比赛吗？还是明天？明天去了。好，我也是明天走。嗯。这个拭目以待了，看你这个后面究竟会怎么样。可以可以啊，你你们就拭目以待吧。好，那我们期待一下。今天这期就这样，差不多不，崔总儿？差不多，差不多。嗯，好。差不多。期待一下。有什么想跟粉丝说的吗，崔总？我只想跟粉丝朋友们说，感谢大家支持我们啊！我们会在以后在跑步的道路上越来越好，也希望你们在今后的生活中越来越好。你这个太官方了，官方不行。场面化。没有这个不是场面，场面化这个是呃，有些人连场面话都没有，人有些人说的话就是啊，我好好努力，好好干，日子过好了，那你那你也不助人家呀，人人家听你视频听这么久啊，呃，听你语音听这么久。好，好。嗯。有点东西。好了，谢谢大家。好，好，谢谢大家。好，谢谢大家。嗯，好，嗯，好的，嗯，拜拜，拜拜。",
+      "owned_item_start": 23,
+      "owned_item_stop": 307
+    }
+  ]
+}

@@ -20,6 +20,12 @@ BILIBILI_URL_RE = re.compile(
 CANONICAL_BILIBILI_URL_RE = re.compile(
     r"https://www\.bilibili\.com/video/BV[A-Za-z0-9]+/"
 )
+XIAOYUZHOU_URL_RE = re.compile(
+    r"https://www\.xiaoyuzhoufm\.com/(?:episode|podcast)/[^\s)\]\"']+"
+)
+CANONICAL_XIAOYUZHOU_URL_RE = re.compile(
+    r"https://www\.xiaoyuzhoufm\.com/(?:episode|podcast)/[0-9a-f]{24}"
+)
 TRACKING_PARAMETERS = ("spm_id_from", "vd_source")
 QWEN_JSON_ARTIFACT_NAMES = (
     "raw.json",
@@ -1240,10 +1246,23 @@ def check_bilibili_urls(path: Path, text: str, errors: list[str]) -> int:
     return count
 
 
+def check_xiaoyuzhou_urls(path: Path, text: str, errors: list[str]) -> int:
+    count = 0
+    for match in XIAOYUZHOU_URL_RE.finditer(text):
+        count += 1
+        url = match.group(0)
+        if CANONICAL_XIAOYUZHOU_URL_RE.fullmatch(url) is None:
+            errors.append(
+                f"{relative(path)} contains non-canonical Xiaoyuzhou URL: {url}"
+            )
+    return count
+
+
 def main() -> int:
     errors: list[str] = []
     markdown_count = 0
     bilibili_url_count = 0
+    xiaoyuzhou_url_count = 0
     qwen_chain_count = 0
     episode_ids: dict[str, Path] = {}
 
@@ -1263,6 +1282,7 @@ def main() -> int:
         elif path.name.startswith("summary."):
             validate_core_point_logic_table(path, text, errors)
         bilibili_url_count += check_bilibili_urls(path, text, errors)
+        xiaoyuzhou_url_count += check_xiaoyuzhou_urls(path, text, errors)
 
     for episode_dir in sorted(SHOWS_ROOT.glob("*/episodes/*")):
         if not episode_dir.is_dir():
@@ -1303,6 +1323,7 @@ def main() -> int:
         "PodWiki validation passed: "
         f"{markdown_count} Markdown files, "
         f"{bilibili_url_count} Bilibili URLs, "
+        f"{xiaoyuzhou_url_count} Xiaoyuzhou URLs, "
         f"{qwen_chain_count} complete Qwen ASR chains."
     )
     return 0
