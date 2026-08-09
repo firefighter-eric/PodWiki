@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { searchContent } from "@/lib/content";
+import { searchContent } from "@/lib/search";
 
 export const runtime = "nodejs";
 
