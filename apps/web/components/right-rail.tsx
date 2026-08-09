@@ -2,12 +2,15 @@ import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { getEpisodeLabel } from "@/lib/episode-label";
 import { getExtendedSummaryTitle } from "@/lib/markdown";
+import { getReaderFacingSummary } from "@/lib/reader-copy";
 import type { Episode } from "@/lib/types";
 import { ReadingControls } from "@/components/reader-preferences";
 
 export function RightRail({ episode, view }: { episode: Episode; view: "summary" | "transcript" }) {
   const episodeLabel = getEpisodeLabel(episode.episodeNumber, episode.releaseType);
-  const extendedSummaryTitle = getExtendedSummaryTitle(episode.summaryRaw);
+  const extendedSummaryTitle = getExtendedSummaryTitle(
+    getReaderFacingSummary(episode.summaryRaw),
+  );
   const summaryNavigation = [
     ["#one-line", "一句话总结"],
     ["#why-read", "为什么值得听"],

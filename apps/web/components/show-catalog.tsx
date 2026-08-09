@@ -14,7 +14,7 @@ export function ShowCatalog({
 }) {
   const title = selectedShow?.title ?? "全部节目";
   const description = selectedShow?.description
-    ?? "浏览 PodWiki 已收录的节目，进入任意一期阅读结构化总结与完整机器逐字稿。";
+    ?? "浏览 PodWiki 已收录的节目，进入任意一期阅读结构化总结与完整逐字稿。";
   const collectionLabel = selectedShow
     ? `${episodes.length} 期内容`
     : `${episodes.length} 期内容，来自 ${shows.length} 档播客`;

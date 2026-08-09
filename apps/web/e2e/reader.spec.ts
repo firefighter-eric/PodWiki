@@ -24,7 +24,7 @@ async function openSearch(page: Page) {
   await expect(page.getByRole("dialog", { name: "搜索全文" })).toBeVisible();
 }
 
-test("renders the complete summary, disclosure, and searchable fact boundary", async ({
+test("renders the complete reader summary without editorial workflow copy", async ({
   page,
   request,
 }) => {
@@ -34,13 +34,17 @@ test("renders the complete summary, disclosure, and searchable fact boundary", a
 
   await page.goto(episodePath);
   await expect(page).toHaveTitle(/田渊栋 · RSI 与 AI 自进化路径/u);
-  await expect(page.getByLabel("内容状态")).toContainText("基于机器逐字稿整理，当前为草稿");
+  await expect(page.getByText("内容状态", { exact: true })).toHaveCount(0);
+  await expect(page.getByText(/当前为草稿/u)).toHaveCount(0);
   await expect(page.locator("#why-read li")).toHaveCount(4);
   await expect(page.getByRole("heading", {
     name: /RSI 变得可做，关键不是概念新/u,
   })).toBeVisible();
   await expect(page.getByText("嘉宾主张", { exact: true }).first()).toBeVisible();
-  await expect(page.getByRole("heading", { name: "事实边界与待核实" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "阅读边界" })).toBeVisible();
+  await expect(page.getByText(/不代表公司的正式路线/u)).toBeVisible();
+  await expect(page.getByRole("heading", { name: "事实边界与待核实" })).toHaveCount(0);
+  await expect(page.getByText(/人工审核时应重点回听/u)).toHaveCount(0);
   await expect(page.getByText(/一百五十人临界点/u).first()).toBeVisible();
 
   const searchResponse = await request.get(
@@ -115,14 +119,15 @@ test("traps and restores focus for the 390px navigation drawer", async ({ page }
   assertConsoleIsClean();
 });
 
-test("wraps long inline provenance hashes at 390px", async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== "chromium-mobile-390", "mobile-only overflow regression");
+test("hides repository provenance at 390px without introducing overflow", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "chromium-mobile-390", "mobile-only reader regression");
   const assertConsoleIsClean = watchConsole(page);
   await page.goto(legacyEpisodePath);
 
   await expect(page.locator("code").filter({
     hasText: "fd05b043c445188b206259145dfba480fc8cd1c3cc308f99052220ecd83d0e0d",
-  })).toBeVisible();
+  })).toHaveCount(0);
+  await expect(page.getByText(/SHA-256|selected|机器初稿/u)).toHaveCount(0);
   const hasHorizontalOverflow = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
   );

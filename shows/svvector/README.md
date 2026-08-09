@@ -45,7 +45,7 @@ last_verified_at: 2026-08-08
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
-| [硅谷坐标 × Lam Research 创始人林杰屏：AI超级周期和四十年半导体周期感悟](https://www.bilibili.com/video/BV1JZGc6iEjv/) | 硅谷坐标 SV-Vector | 2026-07-31 | [总结](./episodes/bili-bv1jzgc6iejv-lin-jieping/summary.zh-CN.md) | [英文逐字稿](./episodes/bili-bv1jzgc6iejv-lin-jieping/transcript.en.md) · [中文机器翻译](./episodes/bili-bv1jzgc6iejv-lin-jieping/transcript.zh-CN.md) |
+| [硅谷坐标 × Lam Research 创始人林杰屏：AI超级周期和四十年半导体周期感悟](https://www.bilibili.com/video/BV1JZGc6iEjv/) | 硅谷坐标 SV-Vector | 2026-07-31 | [总结](./episodes/bili-bv1jzgc6iejv-lin-jieping/summary.zh-CN.md) | [英文逐字稿](./episodes/bili-bv1jzgc6iejv-lin-jieping/transcript.en.md) · [中文译稿](./episodes/bili-bv1jzgc6iejv-lin-jieping/transcript.zh-CN.md) |
 | [【视频播客】硅谷坐标 x Tensormesh 江鋆晨：AI 的记忆-KvCache的三层理解](https://www.bilibili.com/video/BV1JjTw6REEX/) | 硅谷坐标 SV-Vector | 2026-06-30 | [总结](./episodes/bili-bv1jjtw6reex-jiang-yunchen/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1jjtw6reex-jiang-yunchen/transcript.zh-CN.md) |
 | [硅谷坐标 x 喜马拉雅资本常劲：AI时代的价值投资](https://www.bilibili.com/video/BV1np7P6REFg/) | 硅谷坐标 SV-Vector | 2026-06-22 | [总结](./episodes/bili-bv1np7p6refg-chang-jin/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1np7p6refg-chang-jin/transcript.zh-CN.md) |
 | [硅谷坐标x璞林资本Kenny Zhang：Neocloud崛起背后的供需博弈与AI基建重构](https://www.bilibili.com/video/BV14JEN66EkC/) | 硅谷坐标 SV-Vector | 2026-06-05 | [总结](./episodes/bili-bv14jen66ekc-kenny-zhang/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv14jen66ekc-kenny-zhang/transcript.zh-CN.md) |

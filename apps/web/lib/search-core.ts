@@ -1,3 +1,4 @@
+import { assertReaderFacingSummary } from "@/lib/reader-copy";
 import { getTranscriptHref } from "@/lib/reader-routes";
 import type { SearchResult } from "@/lib/types";
 
@@ -98,18 +99,22 @@ export function hydrateSearchIndex(index: GeneratedSearchIndex): SearchEpisodeDo
     throw new Error("Generated search index has an invalid content digest");
   }
 
-  return index.documents.map((document) => ({
-    id: document.id,
-    title: document.title,
-    titleNormalized: document.titleSource.toLocaleLowerCase("zh-CN"),
-    showTitle: document.showTitle,
-    href: document.href,
-    episodeHaystack: indexSearchText(document.episodeHaystack),
-    summaryNormalized: document.summaryRaw.toLocaleLowerCase("zh-CN"),
-    summarySnippet: indexSearchText(document.summaryRaw.replace(/[#*`>\[\]]/gu, "")),
-    transcriptSegments: hydrateSegments(document.transcriptSegments),
-    translationSegments: hydrateSegments(document.translationSegments),
-  }));
+  return index.documents.map((document) => {
+    const readerSummary = document.summaryRaw;
+    assertReaderFacingSummary(readerSummary);
+    return {
+      id: document.id,
+      title: document.title,
+      titleNormalized: document.titleSource.toLocaleLowerCase("zh-CN"),
+      showTitle: document.showTitle,
+      href: document.href,
+      episodeHaystack: indexSearchText(document.episodeHaystack),
+      summaryNormalized: readerSummary.toLocaleLowerCase("zh-CN"),
+      summarySnippet: indexSearchText(readerSummary.replace(/[#*`>\[\]]/gu, "")),
+      transcriptSegments: hydrateSegments(document.transcriptSegments),
+      translationSegments: hydrateSegments(document.translationSegments),
+    };
+  });
 }
 
 function snippetAround(

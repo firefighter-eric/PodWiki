@@ -10,6 +10,53 @@ const repositoryRoot = path.resolve(webRoot, "../..");
 const showsRoot = path.join(repositoryRoot, "shows");
 const outputDirectory = path.join(webRoot, ".generated");
 const outputPath = path.join(outputDirectory, "search-index.json");
+const summaryH2 = /^##\s+(.+?)\s*$/gmu;
+const expectedSummaryHeadings = [
+  "一句话总结",
+  "为什么值得听",
+  "核心观点",
+  ["5 分钟读完", "整体总结"],
+  "主题导航",
+  "阅读边界",
+  "编辑记录（不对读者展示）",
+];
+const editorCopy = [
+  /(?:状态\s*(?:为|：)|当前为|仍是).{0,12}(?:draft|reviewed|machine|草稿|未审核|待审核)/iu,
+  /(?:\b(?:source_transcript|selection_status|lineage)\b|SHA-256|[a-f\d]{64})/iu,
+  /(?:qwen-asr-transformers|mlx-audio|transcript\.(?:zh-CN|en)\.md|README(?:\.md)?)/iu,
+  /(?:PodWiki|本稿|逐字稿|正式稿|\bASR\b)/iu,
+  /机器(?:逐字稿|稿|初稿|转写|识别|翻译)/u,
+  /(?:草稿|未审核|待审核|待校对|待回听|待核听|人工(?:审核|复核)|正式(?:审核|复核)|回听|核听|校对)/u,
+  /`(?:draft|reviewed|machine|selected)`/iu,
+  /frozen publisher metadata/iu,
+];
+
+function matchesExpectedHeading(actual, expected) {
+  return typeof expected === "string" ? actual === expected : expected.includes(actual);
+}
+
+function getReaderFacingSummary(markdown) {
+  const headings = [...markdown.matchAll(summaryH2)];
+  const structureIsValid = headings.length === expectedSummaryHeadings.length
+    && headings.every((heading, index) => (
+      matchesExpectedHeading(heading[1].trim(), expectedSummaryHeadings[index])
+    ));
+  if (!structureIsValid) {
+    const actual = headings.map((heading) => heading[1].trim()).join(" → ") || "无二级标题";
+    throw new Error(`Summary reader sections are missing or out of order: ${actual}`);
+  }
+
+  const readerSummary = markdown.slice(headings[0].index, headings.at(-1).index).trim();
+  const copyForAudit = readerSummary.replaceAll("ASR—LLM—TTS", "");
+  const internalMatch = editorCopy
+    .map((pattern) => pattern.exec(copyForAudit))
+    .find((match) => match !== null);
+  if (internalMatch) {
+    throw new Error(`Summary reader content contains editor-only copy: ${internalMatch[0]}`);
+  }
+
+  return readerSummary;
+}
 
 function readMarkdown(filePath) {
   const bytes = fs.readFileSync(filePath);
@@ -168,7 +215,9 @@ function buildSearchIndex() {
         metadata.transcript?.path,
         `${episodeId} transcript path`,
       );
-      const summary = readMarkdown(summaryPath).content;
+      // Keep the generated production artifact reader-facing too. The full parity test
+      // against lib/reader-copy.ts guards this small build-time projection from drifting.
+      const summary = getReaderFacingSummary(readMarkdown(summaryPath).content);
       const transcript = readMarkdown(transcriptPath);
       const transcriptSegments = parseTranscript(transcript.content, `${episodeId} transcript`);
       const language = requireString(metadata.language, `${episodeId} language`);

@@ -2775,6 +2775,75 @@ def validate_wiki_indexes(
             )
 
 
+SUMMARY_HEADINGS = (
+    "一句话总结",
+    "为什么值得听",
+    "核心观点",
+    ("5 分钟读完", "整体总结"),
+    "主题导航",
+    "阅读边界",
+    "编辑记录（不对读者展示）",
+)
+SUMMARY_EDITOR_COPY = (
+    re.compile(
+        r"(?:状态\s*(?:为|：)|当前为|仍是).{0,12}"
+        r"(?:draft|reviewed|machine|草稿|未审核|待审核)",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"(?:\b(?:source_transcript|selection_status|lineage)\b|"
+        r"SHA-256|[a-f\d]{64})",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"(?:qwen-asr-transformers|mlx-audio|transcript\.(?:zh-CN|en)\.md|"
+        r"README(?:\.md)?)",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(r"(?:PodWiki|本稿|逐字稿|正式稿|\bASR\b)", flags=re.IGNORECASE),
+    re.compile(r"机器(?:逐字稿|稿|初稿|转写|识别|翻译)"),
+    re.compile(
+        r"(?:草稿|未审核|待审核|待校对|待回听|待核听|人工(?:审核|复核)|"
+        r"正式(?:审核|复核)|回听|核听|校对)"
+    ),
+    re.compile(r"`(?:draft|reviewed|machine|selected)`", flags=re.IGNORECASE),
+    re.compile(r"frozen publisher metadata", flags=re.IGNORECASE),
+)
+
+
+def validate_summary_reader_contract(
+    path: Path,
+    text: str,
+    errors: list[str],
+) -> None:
+    headings = re.findall(r"^##[ \t]+(.+?)[ \t]*$", text, flags=re.MULTILINE)
+    structure_is_valid = len(headings) == len(SUMMARY_HEADINGS) and all(
+        actual == expected
+        if isinstance(expected, str)
+        else actual in expected
+        for actual, expected in zip(headings, SUMMARY_HEADINGS, strict=True)
+    )
+    if not structure_is_valid:
+        actual = " → ".join(headings) or "无二级标题"
+        errors.append(
+            f"{relative(path)} summary reader sections are missing or out of order: "
+            f"{actual}"
+        )
+        return
+
+    reader_start = text.index("## 一句话总结")
+    editor_start = text.index("## 编辑记录（不对读者展示）")
+    reader_text = text[reader_start:editor_start].replace("ASR—LLM—TTS", "")
+    for pattern in SUMMARY_EDITOR_COPY:
+        match = pattern.search(reader_text)
+        if match is not None:
+            errors.append(
+                f"{relative(path)} reader content contains editor-only copy: "
+                f"{match.group(0)!r}"
+            )
+            break
+
+
 def validate_core_point_logic_table(
     path: Path,
     text: str,
@@ -2889,6 +2958,7 @@ def main() -> int:
                 f"{relative(path)} must keep metadata in its episode README"
             )
         elif path.name.startswith("summary."):
+            validate_summary_reader_contract(path, text, errors)
             validate_core_point_logic_table(path, text, errors)
         bilibili_url_count += check_bilibili_urls(path, text, errors)
         xiaoyuzhou_url_count += check_xiaoyuzhou_urls(path, text, errors)

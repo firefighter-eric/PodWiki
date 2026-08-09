@@ -71,9 +71,9 @@ describe("GuestProfiles", () => {
     expect(html).toContain("现任");
     expect(html).toContain("MIT");
     expect(html).toContain("博士 · 化学工程");
-    expect(html).toContain("资料核验于");
-    expect(html).toContain('<time dateTime="2026-08-09">2026-08-09</time>');
-    expect(html).toContain("“现任”均指截至该日");
+    expect(html).not.toContain("资料截至");
+    expect(html).not.toContain('<time dateTime="2026-08-09">2026-08-09</time>');
+    expect(html).not.toContain("截至该日");
     expect(html).toContain("AI 产业研究者");
     expect(html.indexOf("林杰屏")).toBeLessThan(html.indexOf("周默"));
   });

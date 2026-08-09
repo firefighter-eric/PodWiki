@@ -25,6 +25,7 @@ from validate import (  # noqa: E402
     validate_episode_translations,
     validate_participant_profiles,
     validate_qwen_chain,
+    validate_summary_reader_contract,
     validate_show_metadata_contract,
     validate_wiki_indexes,
 )
@@ -1847,6 +1848,70 @@ class ParticipantProfileValidationTests(unittest.TestCase):
 
 
 class ExistingMarkdownValidationTests(unittest.TestCase):
+    def test_summary_reader_contract_requires_explicit_order_and_hides_editor_copy(
+        self,
+    ) -> None:
+        path = (
+            ROOT
+            / "shows"
+            / "example"
+            / "episodes"
+            / "001"
+            / "summary.zh-CN.md"
+        )
+        valid = """# 测试
+
+## 一句话总结
+
+摘要。
+
+## 为什么值得听
+
+- 理由。
+
+## 核心观点
+
+| 主题 | 判断 |
+| --- | --- |
+| 示例 | 内容 |
+
+## 5 分钟读完
+
+内容。
+
+## 主题导航
+
+- [00:00:00] 开场
+
+## 阅读边界
+
+- ASR—LLM—TTS 是节目讨论的真实主题。
+
+## 编辑记录（不对读者展示）
+
+- 本稿仍需回听校对。
+"""
+
+        valid_errors: list[str] = []
+        validate_summary_reader_contract(path, valid, valid_errors)
+        self.assertEqual(valid_errors, [])
+
+        order_errors: list[str] = []
+        validate_summary_reader_contract(
+            path,
+            valid.replace("## 阅读边界", "## 事实边界与待核实"),
+            order_errors,
+        )
+        self.assertTrue(any("missing or out of order" in error for error in order_errors))
+
+        copy_errors: list[str] = []
+        validate_summary_reader_contract(
+            path,
+            valid.replace("- ASR—LLM—TTS 是节目讨论的真实主题。", "- 状态为 draft，仍是草稿，待审核。"),
+            copy_errors,
+        )
+        self.assertTrue(any("editor-only copy" in error for error in copy_errors))
+
     def test_core_point_logic_table_requires_semantic_columns_and_rows(self) -> None:
         path = (
             ROOT
