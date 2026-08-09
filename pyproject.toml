@@ -11,13 +11,19 @@ media = [
   "yt-dlp[default]==2026.7.4",
 ]
 asr = [
-  "mlx-audio==0.3.1; sys_platform == 'darwin' and platform_machine == 'arm64'",
+  "mlx-audio==0.4.7; sys_platform == 'darwin' and platform_machine == 'arm64'",
   "mlx-whisper==0.4.3; sys_platform == 'darwin' and platform_machine == 'arm64'",
-  "torch==2.11.0; sys_platform == 'darwin' and platform_machine == 'arm64'",
+  "setuptools==84.0.0; sys_platform == 'darwin' and platform_machine == 'arm64'",
+  "torch==2.13.0; sys_platform == 'darwin' and platform_machine == 'arm64'",
+  "transformers==5.14.1; sys_platform == 'darwin' and platform_machine == 'arm64'",
 ]
 asr-cuda = [
-  "qwen-asr==0.0.6; sys_platform == 'win32' and platform_machine == 'AMD64' or sys_platform == 'win32' and platform_machine == 'x86_64'",
-  "torch==2.11.0; sys_platform == 'win32' and platform_machine == 'AMD64' or sys_platform == 'win32' and platform_machine == 'x86_64'",
+  "accelerate==1.12.0; sys_platform == 'win32' and platform_machine == 'AMD64' or sys_platform == 'win32' and platform_machine == 'x86_64'",
+  "nagisa==0.2.11; sys_platform == 'win32' and platform_machine == 'AMD64' or sys_platform == 'win32' and platform_machine == 'x86_64'",
+  "setuptools==84.0.0; sys_platform == 'win32' and platform_machine == 'AMD64' or sys_platform == 'win32' and platform_machine == 'x86_64'",
+  "soynlp==0.0.493; sys_platform == 'win32' and platform_machine == 'AMD64' or sys_platform == 'win32' and platform_machine == 'x86_64'",
+  "torch==2.13.0; sys_platform == 'win32' and platform_machine == 'AMD64' or sys_platform == 'win32' and platform_machine == 'x86_64'",
+  "transformers==5.14.1; sys_platform == 'win32' and platform_machine == 'AMD64' or sys_platform == 'win32' and platform_machine == 'x86_64'",
 ]
 
 [dependency-groups]
@@ -41,7 +47,7 @@ conflicts = [
 [tool.uv.sources]
 torch = [
   { index = "pypi", extra = "asr" },
-  { index = "pytorch-cu128", extra = "asr-cuda" },
+  { index = "pytorch-cu126", extra = "asr-cuda" },
 ]
 
 [[tool.uv.index]]
@@ -50,8 +56,8 @@ url = "https://pypi.org/simple"
 explicit = true
 
 [[tool.uv.index]]
-name = "pytorch-cu128"
-url = "https://download.pytorch.org/whl/cu128"
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
 explicit = true
 
 [tool.ruff]

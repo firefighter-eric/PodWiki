@@ -98,26 +98,27 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
 For a cold Windows/CUDA cache, download the official models to their ignored local paths:
 
 ```powershell
-& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B `
-  --revision 7278e1e70fe206f11671096ffdd38061171dd6e5 `
-  --local-dir .cache/models/Qwen3-ASR-1.7B-pinned-v2
-& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B `
-  --revision c7cbfc2048c462b0d63a45797104fc9db3ad62b7 `
-  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B-hf `
+  --revision bcd2b5b7f32b480ab5790554cfa8347f246a14f3 `
+  --local-dir .cache/models/Qwen3-ASR-1.7B-hf-pinned-v3
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B-hf `
+  --revision c07281df297b9905d24a508279258cccf987a064 `
+  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B-hf-pinned-v3
 ```
 
 Only when the official endpoint is unreachable on the current network may `HF_ENDPOINT` be
 temporarily pointed at a mirror. A mirror is transport, not evidence of upstream authenticity.
 The full commit pin, per-payload download metadata/ETag, and freshly computed SHA-256 values make
 the acquired local snapshot reproducible; upstream trust still comes from the official Hugging
-Face Hub. Keep the new `*-pinned-v2` directories separate from legacy snapshot/symlink caches that
-do not contain download metadata for every payload file.
+Face Hub. Keep the CUDA native `*-pinned-v3` directories separate from legacy snapshot/symlink
+caches that do not contain download metadata for every payload file; MLX retains its independent
+`*-pinned-v2` directories.
 
 1. Use an explicitly requested engine and model when compatible.
 2. Otherwise reuse the episode's recorded engine and model for reproducibility.
 3. For Chinese episodes on Apple Silicon, use the project-selected Qwen3-ASR 1.7B 8-bit
    MLX model with its 8-bit ForcedAligner. On Windows/NVIDIA CUDA, use the official
-   `Qwen/Qwen3-ASR-1.7B` and `Qwen/Qwen3-ForcedAligner-0.6B` models through the Transformers
+   `Qwen/Qwen3-ASR-1.7B-hf` and `Qwen/Qwen3-ForcedAligner-0.6B-hf` models through native Transformers
    backend. Keep MLX Whisper only as a retained baseline when it already exists or when the
    user explicitly requests it.
 4. Never silently switch to a paid or remote ASR service. Report credentials, data transfer,
@@ -180,8 +181,8 @@ For one or more Windows/CUDA episodes, use the batch entry point even for a one-
 & .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
   --backend cuda `
   --episode shows/<show-id>/episodes/<episode-folder> `
-  --model-path .cache/models/Qwen3-ASR-1.7B-pinned-v2 `
-  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2 `
+  --model-path .cache/models/Qwen3-ASR-1.7B-hf-pinned-v3 `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-hf-pinned-v3 `
   --chunk-context 5
 ```
 
@@ -190,9 +191,11 @@ must not retrieve either model from the network. CUDA defaults are `cuda:0`, `bf
 120-second nominal ownership chunks, five seconds of context on both sides of internal
 boundaries, and batch size 1. The context, exact-time ForcedAligner crossover, active-audio
 coverage guard, and aligned-gap acoustic guard are part of the recorded reproducibility
-contract. The RTX A2000 8GB Laptop GPU has been verified with these defaults because the
-worker releases the ASR model before loading the aligner. Use `--dtype float16` only when the
-selected CUDA device does not support bf16.
+contract. The worker releases the ASR model before loading the aligner. The native adapter has
+mocked API and contract coverage, but has not completed the repository's Windows RTX A2000
+golden-output, peak-VRAM, and long-audio qualification. Do not claim hardware proof or promote
+new native CUDA transcripts until that qualification passes. Use `--dtype float16` only when
+the selected CUDA device does not support bf16.
 
 For multiple episodes, use `scripts/process_qwen3_asr_batch.py`. It discovers cached audio
 or accepts repeated `--episode` paths, launches one worker subprocess at a time, writes a

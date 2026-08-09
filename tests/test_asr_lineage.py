@@ -17,6 +17,7 @@ if str(SCRIPTS) not in sys.path:
 
 from asr_lineage import (  # noqa: E402
     IDENTITY_CACHE_NAME,
+    PINNED_MODEL_REVISIONS,
     build_model_identity,
     pinned_revision,
     validate_model_identity,
@@ -297,12 +298,29 @@ class ModelIdentityTests(unittest.TestCase):
                     local_path=model,
                 )
 
-    def test_requires_full_commit_for_unknown_model(self) -> None:
-        with self.assertRaisesRegex(ValueError, "no pinned revision"):
-            pinned_revision("example/private-model", None)
-        with self.assertRaisesRegex(ValueError, "full 40-character"):
-            pinned_revision("example/private-model", "main")
-        self.assertEqual(pinned_revision("example/private-model", "c" * 40), "c" * 40)
+    def test_resolves_only_the_four_reviewed_model_revisions(self) -> None:
+        expected_revisions = {
+            "mlx-community/Qwen3-ASR-1.7B-8bit": (
+                "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+            ),
+            "mlx-community/Qwen3-ForcedAligner-0.6B-8bit": (
+                "0e1a68e91d815300c7c9754b2a7639378b23db15"
+            ),
+            "Qwen/Qwen3-ASR-1.7B-hf": "bcd2b5b7f32b480ab5790554cfa8347f246a14f3",
+            "Qwen/Qwen3-ForcedAligner-0.6B-hf": (
+                "c07281df297b9905d24a508279258cccf987a064"
+            ),
+        }
+        self.assertEqual(PINNED_MODEL_REVISIONS, expected_revisions)
+        for repository, revision in expected_revisions.items():
+            with self.subTest(repository=repository):
+                self.assertEqual(pinned_revision(repository, None), revision)
+                self.assertEqual(pinned_revision(repository, revision), revision)
+
+        with self.assertRaisesRegex(ValueError, "unsupported model repository"):
+            pinned_revision("example/private-model", "c" * 40)
+        with self.assertRaisesRegex(ValueError, "must match the reviewed commit"):
+            pinned_revision(REPOSITORY, "c" * 40)
 
     def test_identity_json_is_strict(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

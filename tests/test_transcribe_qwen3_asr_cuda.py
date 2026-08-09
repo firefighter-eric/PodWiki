@@ -115,8 +115,38 @@ class WorkerHarness:
         self.asr_model = FakeASRModel
         self.aligner = FakeAligner
 
-    def runtime(self) -> tuple[object, FakeTorch, type[object], type[object]]:
-        return object(), self.torch, self.asr_model, self.aligner
+    def runtime(self) -> object:
+        harness = self
+
+        class Runtime:
+            numpy = object()
+            torch = harness.torch
+
+            def load_asr(self, target: str, **kwargs: object) -> object:
+                model = harness.asr_model.from_pretrained(target, **kwargs)
+
+                class ASRProxy:
+                    def transcribe(self, **transcribe_kwargs: object) -> str:
+                        result = model.transcribe(**transcribe_kwargs)
+                        if isinstance(result, str):
+                            return result
+                        return str(result[0].text)
+
+                return ASRProxy()
+
+            def load_aligner(self, target: str, **kwargs: object) -> object:
+                model = harness.aligner.from_pretrained(target, **kwargs)
+
+                class AlignerProxy:
+                    def align(self, **align_kwargs: object) -> list[object]:
+                        result = model.align(**align_kwargs)
+                        if result and isinstance(result[0], list):
+                            return result[0]
+                        return result
+
+                return AlignerProxy()
+
+        return Runtime()
 
 
 def write_fake_model_snapshot(path: Path, *, repository: str) -> None:
@@ -131,7 +161,7 @@ def write_fake_model_snapshot(path: Path, *, repository: str) -> None:
     metadata.mkdir(parents=True, exist_ok=True)
     for logical_name, payload in payloads.items():
         (metadata / f"{logical_name}.metadata").write_text(
-            f"{cuda_worker.pinned_revision(repository, None)}\n"
+            f"{cuda_worker.pinned_native_revision(repository, None)}\n"
             f"{hashlib.sha256(payload).hexdigest()}\n0\n",
             encoding="utf-8",
         )
@@ -167,6 +197,41 @@ def worker_args(directory: Path) -> argparse.Namespace:
         retranscribe=False,
         realign=False,
     )
+
+
+def convert_to_markerless_legacy(
+    raw_path: Path,
+    aligned_path: Path | None = None,
+) -> None:
+    raw = read_json_strict(raw_path)
+    raw.pop("lineage_schema_version")
+    raw.pop("model_identity")
+    raw["model"] = cuda_worker.LEGACY_MODEL
+    raw["options"]["backend"] = cuda_worker.LEGACY_BACKEND
+    raw["options"]["qwen_asr_version"] = (
+        cuda_worker.LEGACY_QWEN_ASR_PACKAGE_VERSION
+    )
+    raw["options"]["torch_version"] = cuda_worker.LEGACY_TORCH_PUBLIC_VERSION
+    raw["options"].pop("transformers_version")
+    write_json_atomically(raw_path, raw)
+    if aligned_path is None:
+        return
+    aligned = read_json_strict(aligned_path)
+    aligned.pop("lineage_schema_version")
+    aligned["source"].pop("model_identity")
+    aligned["source"].pop("aligner_identity")
+    aligned["source"]["model"] = cuda_worker.LEGACY_MODEL
+    aligned["source"]["aligner"] = cuda_worker.LEGACY_ALIGNER
+    aligned["source"]["raw_asr_sha256"] = sha256_file(raw_path)
+    aligned["options"]["backend"] = cuda_worker.LEGACY_BACKEND
+    aligned["options"]["qwen_asr_version"] = (
+        cuda_worker.LEGACY_QWEN_ASR_PACKAGE_VERSION
+    )
+    aligned["options"]["torch_version"] = (
+        cuda_worker.LEGACY_TORCH_PUBLIC_VERSION
+    )
+    aligned["options"].pop("transformers_version")
+    write_json_atomically(aligned_path, aligned)
 
 
 def alignment_items_at_midpoints(
@@ -4124,9 +4189,11 @@ class ResumableWorkerTests(unittest.TestCase):
             aligned = read_json_strict(args.aligned_output)
             self.assertEqual(raw["engine"], "qwen-asr-transformers")
             self.assertEqual(raw["model"], cuda_worker.DEFAULT_MODEL)
-            self.assertEqual(raw["options"]["backend"], "transformers")
-            self.assertEqual(raw["options"]["qwen_asr_version"], "0.0.6")
-            self.assertEqual(raw["options"]["torch_version"], "2.11.0")
+            self.assertEqual(raw["options"]["backend"], "transformers-native")
+            self.assertEqual(raw["options"]["transformers_version"], "5.14.1")
+            self.assertNotIn("qwen_asr_version", raw["options"])
+            self.assertEqual(raw["options"]["torch_version"], "2.13.0")
+            self.assertEqual(aligned["options"]["torch_version"], "2.13.0")
             self.assertEqual(raw["options"]["max_inference_batch_size"], 1)
             self.assertEqual(
                 raw["options"]["final_outro_exemption_seconds"], 0.0
@@ -4144,10 +4211,16 @@ class ResumableWorkerTests(unittest.TestCase):
             load_aligner = next(
                 value for event, value in harness.events if event == "load-aligner"
             )
-            self.assertEqual(load_asr[1]["max_inference_batch_size"], 1)
+            self.assertNotIn("max_inference_batch_size", load_asr[1])
+            self.assertNotIn("max_new_tokens", load_asr[1])
             self.assertEqual(load_asr[1]["device_map"], "cuda:0")
             self.assertEqual(load_asr[1]["attn_implementation"], "sdpa")
             self.assertNotIn("max_inference_batch_size", load_aligner[1])
+            transcribe = next(
+                value for event, value in harness.events if event == "transcribe"
+            )
+            self.assertEqual(transcribe["max_new_tokens"], 2048)
+            self.assertIsInstance(transcribe["audio"], FakeAudio)
             self.assertEqual(harness.torch.cuda.current_device, 0)
             self.assertLess(
                 next(i for i, event in enumerate(harness.events) if event[0] == "transcribe"),
@@ -4281,10 +4354,7 @@ class ResumableWorkerTests(unittest.TestCase):
             args = worker_args(root)
             args.input.write_bytes(b"fake-audio")
             self.assertEqual(self.run_worker(args, WorkerHarness()), 0)
-            raw = read_json_strict(args.output)
-            raw.pop("lineage_schema_version")
-            raw.pop("model_identity")
-            write_json_atomically(args.output, raw)
+            convert_to_markerless_legacy(args.output)
             aligned_bytes = args.aligned_output.read_bytes()
 
             args.aligned_output.unlink()
@@ -4317,7 +4387,7 @@ class ResumableWorkerTests(unittest.TestCase):
             self.assertEqual(args.output.read_bytes(), raw_bytes)
             self.assertEqual(args.aligned_output.read_bytes(), aligned_bytes)
 
-    def test_complete_markerless_legacy_chain_remains_read_only(self) -> None:
+    def test_qwen_asr_v2_partial_chain_requires_retranscription_before_runtime(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             args = worker_args(root)
@@ -4325,15 +4395,41 @@ class ResumableWorkerTests(unittest.TestCase):
             self.assertEqual(self.run_worker(args, WorkerHarness()), 0)
 
             raw = read_json_strict(args.output)
-            raw.pop("lineage_schema_version")
-            raw.pop("model_identity")
+            raw["model"] = cuda_worker.LEGACY_MODEL
+            raw["options"]["backend"] = cuda_worker.LEGACY_BACKEND
+            raw["options"]["qwen_asr_version"] = (
+                cuda_worker.LEGACY_QWEN_ASR_PACKAGE_VERSION
+            )
+            raw["options"].pop("transformers_version")
             write_json_atomically(args.output, raw)
-            aligned = read_json_strict(args.aligned_output)
-            aligned.pop("lineage_schema_version")
-            aligned["source"].pop("model_identity")
-            aligned["source"].pop("aligner_identity")
-            aligned["source"]["raw_asr_sha256"] = sha256_file(args.output)
-            write_json_atomically(args.aligned_output, aligned)
+            args.aligned_output.unlink()
+            raw_bytes = args.output.read_bytes()
+
+            with (
+                patch.object(cuda_worker, "parse_args", return_value=args),
+                patch.object(
+                    cuda_worker,
+                    "load_cuda_runtime",
+                    side_effect=AssertionError("CUDA must not load"),
+                ),
+                self.assertRaisesRegex(
+                    ValueError,
+                    r"qwen-asr 0\.0\.6 v2 raw ASR.*--retranscribe",
+                ),
+            ):
+                cuda_worker.main()
+
+            self.assertEqual(args.output.read_bytes(), raw_bytes)
+            self.assertFalse(args.aligned_output.exists())
+
+    def test_complete_markerless_legacy_chain_remains_read_only(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            args = worker_args(root)
+            args.input.write_bytes(b"fake-audio")
+            self.assertEqual(self.run_worker(args, WorkerHarness()), 0)
+
+            convert_to_markerless_legacy(args.output, args.aligned_output)
             raw_bytes = args.output.read_bytes()
             aligned_bytes = args.aligned_output.read_bytes()
 
@@ -4347,6 +4443,98 @@ class ResumableWorkerTests(unittest.TestCase):
                 contextlib.redirect_stdout(io.StringIO()),
             ):
                 self.assertEqual(cuda_worker.main(), 0)
+            self.assertEqual(args.output.read_bytes(), raw_bytes)
+            self.assertEqual(args.aligned_output.read_bytes(), aligned_bytes)
+
+    def test_tracked_markerless_cuda_chain_skips_byte_identically_with_native_defaults(
+        self,
+    ) -> None:
+        episode = (
+            ROOT
+            / "shows"
+            / "yiqitietalk"
+            / "episodes"
+            / "20-yao-miao"
+            / "asr"
+            / "qwen3-asr"
+        )
+        raw_path = episode / "raw.json"
+        aligned_path = episode / "aligned.json"
+        raw = read_json_strict(raw_path)
+        aligned = read_json_strict(aligned_path)
+        self.assertNotIn("lineage_schema_version", raw)
+        self.assertEqual(raw["options"]["torch_version"], "2.11.0")
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            args = worker_args(root)
+            self.assertEqual(
+                cuda_worker.raw_backend_options(args)["torch_version"],
+                "2.13.0",
+            )
+            self.assertEqual(
+                cuda_worker.legacy_raw_backend_options(args)["torch_version"],
+                "2.11.0",
+            )
+            raw_bytes = raw_path.read_bytes()
+            aligned_bytes = aligned_path.read_bytes()
+            args.output.write_bytes(raw_bytes)
+            args.aligned_output.write_bytes(aligned_bytes)
+            args.model_path = None
+            args.aligner_path = None
+            args.language = raw["language"]
+            args.max_tokens = raw["options"]["max_tokens_per_chunk"]
+            args.chunk_duration = raw["options"]["chunk_duration_seconds"]
+            args.chunk_context = raw["options"]["chunk_context_seconds"]
+            args.final_outro_exemption_seconds = raw["options"][
+                "final_outro_exemption_seconds"
+            ]
+            args.dtype = raw["options"]["dtype"]
+            args.attention_implementation = raw["options"][
+                "attention_implementation"
+            ]
+            args.max_sentence_characters = aligned["options"][
+                "max_sentence_characters"
+            ]
+            audio = raw["audio"]
+            with args.input.open("wb") as stream:
+                stream.seek(audio["size_bytes"] - 1)
+                stream.write(b"\0")
+
+            original_sha256_file = cuda_worker.sha256_file
+            original_repository_path = cuda_worker.repository_path
+
+            def recorded_input_sha256(path: Path) -> str:
+                if path.resolve() == args.input.resolve():
+                    return str(audio["sha256"])
+                return original_sha256_file(path)
+
+            def recorded_artifact_path(path: Path) -> str:
+                if path.resolve() == args.output.resolve():
+                    return str(aligned["source"]["raw_asr_path"])
+                return original_repository_path(path)
+
+            with (
+                patch.object(cuda_worker, "parse_args", return_value=args),
+                patch.object(
+                    cuda_worker,
+                    "sha256_file",
+                    side_effect=recorded_input_sha256,
+                ),
+                patch.object(
+                    cuda_worker,
+                    "repository_path",
+                    side_effect=recorded_artifact_path,
+                ),
+                patch.object(
+                    cuda_worker,
+                    "load_cuda_runtime",
+                    side_effect=AssertionError("CUDA must not load"),
+                ),
+                contextlib.redirect_stdout(io.StringIO()),
+            ):
+                self.assertEqual(cuda_worker.main(), 0)
+
             self.assertEqual(args.output.read_bytes(), raw_bytes)
             self.assertEqual(args.aligned_output.read_bytes(), aligned_bytes)
 

@@ -65,8 +65,9 @@ uv sync --active --locked --extra media --extra asr-cuda
 设置的 `$env:UV_CACHE_DIR`。模型下载默认使用 Hugging Face 官方入口；仅当官方入口在
 当前网络不可达时，才临时设置 `HF_ENDPOINT` 镜像。镜像只是传输入口，不是上游真实性
 证明；完整 commit pin、每个下载 payload 的 metadata/ETag 与重新计算的 SHA-256
-只负责锁定和复现取得的本地 snapshot，来源信任仍以官方 Hub 为准。新的
-`*-pinned-v2` 目录不得与缺少逐文件 metadata 的旧 snapshot/symlink cache 混用。
+只负责锁定和复现取得的本地 snapshot，来源信任仍以官方 Hub 为准。MLX 的
+`*-pinned-v2` 与 CUDA native 的 `*-pinned-v3` 目录都不得与缺少逐文件 metadata
+的旧 snapshot/symlink cache 混用。
 
 下载 Apple Silicon/MLX 使用的 Qwen3-ASR 和 ForcedAligner：
 
@@ -85,12 +86,12 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
 Windows/CUDA 使用官方模型：
 
 ```powershell
-& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B `
-  --revision 7278e1e70fe206f11671096ffdd38061171dd6e5 `
-  --local-dir .cache/models/Qwen3-ASR-1.7B-pinned-v2
-& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B `
-  --revision c7cbfc2048c462b0d63a45797104fc9db3ad62b7 `
-  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B-hf `
+  --revision bcd2b5b7f32b480ab5790554cfa8347f246a14f3 `
+  --local-dir .cache/models/Qwen3-ASR-1.7B-hf-pinned-v3
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B-hf `
+  --revision c07281df297b9905d24a508279258cccf987a064 `
+  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B-hf-pinned-v3
 ```
 
 ## 脚本一览
@@ -224,15 +225,18 @@ env HF_HUB_OFFLINE=1 \
 
 Windows/CUDA 正式流程优先使用下文的批处理入口。它会调用
 `transcribe_qwen3_asr_cuda.py`，并在 tracked metadata 中保留官方 Hub ID：
-`Qwen/Qwen3-ASR-1.7B`、`Qwen/Qwen3-ForcedAligner-0.6B`，engine 为
-`qwen-asr-transformers`。直接调用 worker 只用于单集诊断；同样必须提供本地
+`Qwen/Qwen3-ASR-1.7B-hf`、`Qwen/Qwen3-ForcedAligner-0.6B-hf`，engine 为
+`qwen-asr-transformers`，backend options 为 `transformers-native` 并记录精确
+Transformers 版本。直接调用 worker 只用于单集诊断；同样必须提供本地
 输入、raw 与 aligned 输出，并遵守恢复/覆盖语义。
 
 有效的 v2 `raw.json` 是转写检查点：缺少对齐产物时会从对齐阶段恢复；有效且身份匹配的
 raw/aligned 会直接跳过。markerless legacy 只允许完整链被校验并只读跳过；markerless
 raw 缺 aligned、CUDA pending raw 需要 reconciliation，或请求 `--realign` 时都会在加载
 运行时前失败，并提示 `--retranscribe`。不能用当前模型缓存给历史 raw 回填身份；只有
-已有 v2 raw 才可 align-only/`--realign`，且必须同时验证 pinned model/aligner 本地路径。
+已有 native v2 raw 才可 align-only/`--realign`，且必须同时验证 pinned model/aligner
+本地路径。旧 qwen-asr v2 raw 需要新对齐时同样失败关闭并要求 `--retranscribe`，不能
+把旧 ASR raw 与 native aligner 混合。
 
 ## 渲染逐字稿
 
@@ -251,7 +255,7 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/render_asr_transcript
 ```
 
 手工渲染 CUDA 产物时，把 `--engine` 与 `--model` 分别改为
-`qwen-asr-transformers` 和 `Qwen/Qwen3-ASR-1.7B`。正常批处理会自动传入正确值。
+`qwen-asr-transformers` 和 `Qwen/Qwen3-ASR-1.7B-hf`。正常批处理会自动传入正确值。
 
 不带替换参数时，输入 hash、engine/model 和 transcript hash 全部匹配的现有 pair 会
 直接 no-op；不匹配则失败关闭。只有已明确限定单集时才使用 `--rerender`。如需术语
@@ -311,8 +315,8 @@ Windows/CUDA 示例：
 & .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
   --backend cuda `
   --episode shows/<show-id>/episodes/<episode-folder> `
-  --model-path .cache/models/Qwen3-ASR-1.7B-pinned-v2 `
-  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2 `
+  --model-path .cache/models/Qwen3-ASR-1.7B-hf-pinned-v3 `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-hf-pinned-v3 `
   --chunk-context 5
 ```
 
@@ -335,9 +339,10 @@ coverage guard 会先汇总全部 chunk 的 owned alignment，再把全局并集
 安全升级该字段。markerless legacy raw 不适用该迁移，必须 `--retranscribe`。
 
 `--backend cuda` 默认使用 `cuda:0`、`bfloat16`、SDPA、120 秒 chunk、batch size 1，
-并按“ASR 模型完成并释放，再加载 ForcedAligner”的顺序控制显存。本机 NVIDIA RTX
-A2000 8GB Laptop GPU 已验证适配这些默认值；只有目标 GPU 确实不支持 bf16 时才加
-`--dtype float16`。同时提供 `--model-path` 与 `--aligner-path` 会强制设置
+并按“ASR 模型完成并释放，再加载 ForcedAligner”的顺序控制显存。native adapter
+已有 mocked API 与恢复契约测试，但 NVIDIA RTX A2000 的 golden-output、峰值显存和
+长音频实机资格仍待完成；通过前不能声称硬件验证或提升新产物。只有目标 GPU 确实
+不支持 bf16 时才加 `--dtype float16`。同时提供 `--model-path` 与 `--aligner-path` 会强制设置
 `HF_HUB_OFFLINE=1` 和 `TRANSFORMERS_OFFLINE=1`，禁止 worker 联网补取模型。
 
 仓库同时包含中文和英文单集。批处理的 `--language` 与

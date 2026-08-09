@@ -617,6 +617,12 @@ coverage guard 确认每个归属区间未在活跃语音中过早截断后，�
 和 aligned 产物。`chunk_duration_seconds`、`chunk_context_seconds`、boundary reconciliation
 方法、alignment coverage guard 和 aligned-gap guard 方法都是可重现参数；任一项不匹配都不得复用旧产物。
 
+新 CUDA v2 产物使用官方 Transformers-native `*-hf` 模型，并在 options 中记录
+`backend: transformers-native` 与精确 Transformers 版本。历史 markerless CUDA 完整链
+保留 `qwen-asr==0.0.6` 的原始 model/options，只允许只读校验与跳过；markerless partial、
+pending、realign，以及需要新对齐的旧 qwen-asr v2 raw 都必须 `--retranscribe`，不得把旧
+raw 与 native aligner 混合或给历史产物回填当前身份。
+
 `scripts/render_asr_transcript.py` 必须在同一次运行中生成 refined JSON 和 Markdown，使用临时文件和哈希关联两份产物，避免结果使用不同的清洗逻辑。
 
 ### 多模型运行记录

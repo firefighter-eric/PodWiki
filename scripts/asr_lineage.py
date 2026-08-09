@@ -19,8 +19,8 @@ SHA256_RE = re.compile(r"[0-9a-f]{64}")
 PINNED_MODEL_REVISIONS = {
     "mlx-community/Qwen3-ASR-1.7B-8bit": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
     "mlx-community/Qwen3-ForcedAligner-0.6B-8bit": "0e1a68e91d815300c7c9754b2a7639378b23db15",
-    "Qwen/Qwen3-ASR-1.7B": "7278e1e70fe206f11671096ffdd38061171dd6e5",
-    "Qwen/Qwen3-ForcedAligner-0.6B": "c7cbfc2048c462b0d63a45797104fc9db3ad62b7",
+    "Qwen/Qwen3-ASR-1.7B-hf": "bcd2b5b7f32b480ab5790554cfa8347f246a14f3",
+    "Qwen/Qwen3-ForcedAligner-0.6B-hf": "c07281df297b9905d24a508279258cccf987a064",
 }
 IDENTITY_CACHE_NAME = ".podwiki-model-identity-v1.json"
 def sha256_file(path: Path) -> str:
@@ -32,17 +32,25 @@ def sha256_file(path: Path) -> str:
 
 
 def pinned_revision(repository: str, requested_revision: str | None) -> str:
-    revision = requested_revision or PINNED_MODEL_REVISIONS.get(repository)
-    if revision is None:
+    reviewed_revision = PINNED_MODEL_REVISIONS.get(repository)
+    if reviewed_revision is None:
         raise ValueError(
-            f"model {repository!r} has no pinned revision; pass a full 40-character commit"
+            f"unsupported model repository: {repository!r}; expected one of "
+            f"{sorted(PINNED_MODEL_REVISIONS)}"
         )
-    revision = revision.lower()
+    if requested_revision is None:
+        return reviewed_revision
+    revision = requested_revision.lower()
     if FULL_COMMIT_RE.fullmatch(revision) is None:
         raise ValueError(
             f"model revision for {repository!r} must be a full 40-character commit"
         )
-    return revision
+    if revision != reviewed_revision:
+        raise ValueError(
+            f"model revision for {repository!r} must match the reviewed commit "
+            f"{reviewed_revision}"
+        )
+    return reviewed_revision
 
 
 def _read_huggingface_metadata(
