@@ -12,6 +12,15 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 from urllib.parse import urlsplit
 
+from qwen3_asr_transformers_adapter import (
+    DEFAULT_ALIGNER as CUDA_QWEN_ALIGNER,
+    DEFAULT_ALIGNER_REVISION as CUDA_QWEN_ALIGNER_REVISION,
+    DEFAULT_MODEL as CUDA_QWEN_MODEL,
+    DEFAULT_MODEL_REVISION as CUDA_QWEN_MODEL_REVISION,
+    TORCH_PUBLIC_VERSION as CUDA_TORCH_VERSION,
+    TRANSFORMERS_PACKAGE_VERSION as CUDA_TRANSFORMERS_VERSION,
+)
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SHOWS_ROOT = ROOT / "shows"
@@ -136,6 +145,16 @@ XIAOYUZHOU_MEDIA_ID_RE = re.compile(
 )
 GIT_COMMIT_RE = re.compile(r"[0-9a-f]{40}")
 MODEL_IDENTITY_REQUIRED_FILES = {"config.json"}
+MLX_QWEN_ENGINE = "mlx-audio"
+MLX_QWEN_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
+MLX_QWEN_MODEL_REVISION = "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+MLX_QWEN_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
+MLX_QWEN_ALIGNER_REVISION = "0e1a68e91d815300c7c9754b2a7639378b23db15"
+CUDA_QWEN_ENGINE = "qwen-asr-transformers"
+CUDA_QWEN_BACKEND = "transformers-native"
+LEGACY_CUDA_QWEN_MODEL = "Qwen/Qwen3-ASR-1.7B"
+LEGACY_CUDA_QWEN_ALIGNER = "Qwen/Qwen3-ForcedAligner-0.6B"
+LEGACY_CUDA_QWEN_BACKEND = "qwen-asr"
 
 
 def relative(path: Path) -> str:
@@ -925,6 +944,162 @@ def validate_model_identity(
                 )
                 break
     return value
+
+
+def validate_pinned_qwen_identity(
+    identity: dict[str, Any] | None,
+    *,
+    field: str,
+    repository: str,
+    revision: str,
+    errors: list[str],
+) -> None:
+    if identity is None:
+        return
+    if identity.get("repository") != repository:
+        errors.append(f"{field}.repository must equal {repository!r}")
+    if identity.get("requested_revision") != revision:
+        errors.append(f"{field}.requested_revision must equal {revision!r}")
+    if identity.get("resolved_commit") != revision:
+        errors.append(f"{field}.resolved_commit must equal {revision!r}")
+
+
+def validate_qwen_v2_backend_contract(
+    raw: dict[str, Any],
+    aligned: dict[str, Any],
+    refined: dict[str, Any],
+    *,
+    raw_model_identity: dict[str, Any] | None,
+    aligned_aligner_identity: dict[str, Any] | None,
+    errors: list[str],
+) -> None:
+    """Require one of the two supported, pinned Qwen v2 backends."""
+
+    aligned_source = (
+        aligned.get("source") if isinstance(aligned.get("source"), dict) else {}
+    )
+    refined_source = (
+        refined.get("source") if isinstance(refined.get("source"), dict) else {}
+    )
+    raw_engine = raw.get("engine")
+    raw_model = raw.get("model")
+    raw_options = raw.get("options")
+    aligned_options = aligned.get("options")
+
+    if raw_engine == MLX_QWEN_ENGINE and raw_model == MLX_QWEN_MODEL:
+        expected_values = (
+            ("raw.engine", raw_engine, MLX_QWEN_ENGINE),
+            ("raw.model", raw_model, MLX_QWEN_MODEL),
+            ("aligned.source.engine", aligned_source.get("engine"), MLX_QWEN_ENGINE),
+            ("aligned.source.model", aligned_source.get("model"), MLX_QWEN_MODEL),
+            (
+                "aligned.source.aligner",
+                aligned_source.get("aligner"),
+                MLX_QWEN_ALIGNER,
+            ),
+            ("refined.source.engine", refined_source.get("engine"), MLX_QWEN_ENGINE),
+            ("refined.source.model", refined_source.get("model"), MLX_QWEN_MODEL),
+            (
+                "refined.source.aligner",
+                refined_source.get("aligner"),
+                MLX_QWEN_ALIGNER,
+            ),
+        )
+        for field, actual, expected in expected_values:
+            if actual != expected:
+                errors.append(f"Qwen MLX v2 {field} must equal {expected!r}")
+        validate_pinned_qwen_identity(
+            raw_model_identity,
+            field="Qwen MLX v2 raw.model_identity",
+            repository=MLX_QWEN_MODEL,
+            revision=MLX_QWEN_MODEL_REVISION,
+            errors=errors,
+        )
+        validate_pinned_qwen_identity(
+            aligned_aligner_identity,
+            field="Qwen MLX v2 aligned.source.aligner_identity",
+            repository=MLX_QWEN_ALIGNER,
+            revision=MLX_QWEN_ALIGNER_REVISION,
+            errors=errors,
+        )
+        return
+
+    raw_backend = (
+        raw_options.get("backend") if isinstance(raw_options, dict) else None
+    )
+    aligned_backend = (
+        aligned_options.get("backend")
+        if isinstance(aligned_options, dict)
+        else None
+    )
+    cuda_indicators = (
+        raw_engine == CUDA_QWEN_ENGINE
+        or aligned_source.get("engine") == CUDA_QWEN_ENGINE
+        or refined_source.get("engine") == CUDA_QWEN_ENGINE
+        or raw_model in {CUDA_QWEN_MODEL, LEGACY_CUDA_QWEN_MODEL}
+        or aligned_source.get("model") in {CUDA_QWEN_MODEL, LEGACY_CUDA_QWEN_MODEL}
+        or raw_backend in {CUDA_QWEN_BACKEND, LEGACY_CUDA_QWEN_BACKEND}
+        or aligned_backend in {CUDA_QWEN_BACKEND, LEGACY_CUDA_QWEN_BACKEND}
+    )
+    if not cuda_indicators:
+        errors.append(
+            "Qwen v2 lineage must use the supported pinned MLX or CUDA backend"
+        )
+        return
+
+    expected_values = (
+        ("raw.engine", raw_engine, CUDA_QWEN_ENGINE),
+        ("raw.model", raw_model, CUDA_QWEN_MODEL),
+        ("aligned.source.engine", aligned_source.get("engine"), CUDA_QWEN_ENGINE),
+        ("aligned.source.model", aligned_source.get("model"), CUDA_QWEN_MODEL),
+        (
+            "aligned.source.aligner",
+            aligned_source.get("aligner"),
+            CUDA_QWEN_ALIGNER,
+        ),
+        ("refined.source.engine", refined_source.get("engine"), CUDA_QWEN_ENGINE),
+        ("refined.source.model", refined_source.get("model"), CUDA_QWEN_MODEL),
+        (
+            "refined.source.aligner",
+            refined_source.get("aligner"),
+            CUDA_QWEN_ALIGNER,
+        ),
+    )
+    for field, actual, expected in expected_values:
+        if actual != expected:
+            errors.append(f"Qwen CUDA v2 {field} must equal {expected!r}")
+
+    validate_pinned_qwen_identity(
+        raw_model_identity,
+        field="Qwen CUDA v2 raw.model_identity",
+        repository=CUDA_QWEN_MODEL,
+        revision=CUDA_QWEN_MODEL_REVISION,
+        errors=errors,
+    )
+    validate_pinned_qwen_identity(
+        aligned_aligner_identity,
+        field="Qwen CUDA v2 aligned.source.aligner_identity",
+        repository=CUDA_QWEN_ALIGNER,
+        revision=CUDA_QWEN_ALIGNER_REVISION,
+        errors=errors,
+    )
+
+    for stage, options in (("raw", raw_options), ("aligned", aligned_options)):
+        if not isinstance(options, dict):
+            errors.append(f"Qwen CUDA v2 {stage}.options must be an object")
+            continue
+        required_options = {
+            "backend": CUDA_QWEN_BACKEND,
+            "transformers_version": CUDA_TRANSFORMERS_VERSION,
+            "torch_version": CUDA_TORCH_VERSION,
+        }
+        for key, expected in required_options.items():
+            if options.get(key) != expected:
+                errors.append(
+                    f"Qwen CUDA v2 {stage}.options.{key} must equal {expected!r}"
+                )
+        if "qwen_asr_version" in options:
+            errors.append(f"Qwen CUDA v2 {stage}.options must not record qwen_asr_version")
 
 
 def is_rfc3339_timestamp(value: Any) -> bool:
@@ -1961,13 +2136,39 @@ def validate_qwen_chain(
             "or the strict integer 2 on raw, aligned, and refined"
         )
     if v2_lineage:
-        aligned_source = aligned.get("source") if isinstance(aligned.get("source"), dict) else {}
-        refined_source = refined.get("source") if isinstance(refined.get("source"), dict) else {}
-        raw_model = validate_model_identity(raw.get("model_identity"), field="raw.model_identity", errors=errors)
-        aligned_model = validate_model_identity(aligned_source.get("model_identity"), field="aligned.source.model_identity", errors=errors)
-        aligned_aligner = validate_model_identity(aligned_source.get("aligner_identity"), field="aligned.source.aligner_identity", errors=errors)
-        refined_model = validate_model_identity(refined_source.get("model_identity"), field="refined.source.model_identity", errors=errors)
-        refined_aligner = validate_model_identity(refined_source.get("aligner_identity"), field="refined.source.aligner_identity", errors=errors)
+        aligned_source = (
+            aligned.get("source")
+            if isinstance(aligned.get("source"), dict)
+            else {}
+        )
+        refined_source = (
+            refined.get("source")
+            if isinstance(refined.get("source"), dict)
+            else {}
+        )
+        raw_model = validate_model_identity(
+            raw.get("model_identity"), field="raw.model_identity", errors=errors
+        )
+        aligned_model = validate_model_identity(
+            aligned_source.get("model_identity"),
+            field="aligned.source.model_identity",
+            errors=errors,
+        )
+        aligned_aligner = validate_model_identity(
+            aligned_source.get("aligner_identity"),
+            field="aligned.source.aligner_identity",
+            errors=errors,
+        )
+        refined_model = validate_model_identity(
+            refined_source.get("model_identity"),
+            field="refined.source.model_identity",
+            errors=errors,
+        )
+        refined_aligner = validate_model_identity(
+            refined_source.get("aligner_identity"),
+            field="refined.source.aligner_identity",
+            errors=errors,
+        )
         if raw_model != aligned_model or aligned_model != refined_model:
             errors.append("Qwen model_identity must remain identical across the artifact chain")
         if aligned_aligner != refined_aligner:
@@ -2005,6 +2206,14 @@ def validate_qwen_chain(
                 "Qwen aligner_identity.repository must equal aligned.source.aligner "
                 "and refined.source.aligner"
             )
+        validate_qwen_v2_backend_contract(
+            raw,
+            aligned,
+            refined,
+            raw_model_identity=raw_model,
+            aligned_aligner_identity=aligned_aligner,
+            errors=errors,
+        )
 
     transcript_language = transcript_name.removeprefix("transcript.").removesuffix(
         ".md"

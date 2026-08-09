@@ -14,15 +14,21 @@ import subprocess
 import sys
 import time
 from dataclasses import dataclass
-from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from typing import Any, Iterator
 
 from asr_lineage import (
     LINEAGE_SCHEMA_VERSION,
     build_model_identity,
-    pinned_revision,
     require_requested_identity,
+)
+from qwen3_asr_transformers_adapter import (
+    DEFAULT_ALIGNER,
+    DEFAULT_MODEL,
+    TORCH_PUBLIC_VERSION,
+    TRANSFORMERS_PACKAGE_VERSION,
+    load_transformers_native_runtime,
+    pinned_native_revision,
 )
 from transcribe_qwen3_asr import (
     SAMPLE_RATE,
@@ -42,12 +48,13 @@ from transcribe_qwen3_asr import (
 )
 
 
-DEFAULT_MODEL = "Qwen/Qwen3-ASR-1.7B"
-DEFAULT_ALIGNER = "Qwen/Qwen3-ForcedAligner-0.6B"
 ENGINE = "qwen-asr-transformers"
-BACKEND = "transformers"
-QWEN_ASR_PACKAGE_VERSION = "0.0.6"
-TORCH_PUBLIC_VERSION = "2.11.0"
+BACKEND = "transformers-native"
+LEGACY_MODEL = "Qwen/Qwen3-ASR-1.7B"
+LEGACY_ALIGNER = "Qwen/Qwen3-ForcedAligner-0.6B"
+LEGACY_BACKEND = "transformers"
+LEGACY_QWEN_ASR_PACKAGE_VERSION = "0.0.6"
+LEGACY_TORCH_PUBLIC_VERSION = "2.11.0"
 MAX_INFERENCE_BATCH_SIZE = 1
 MAX_ALIGNMENT_CHUNK_SECONDS = 180.0
 ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS = 1.0
@@ -227,7 +234,7 @@ def parse_args() -> argparse.Namespace:
 def raw_backend_options(args: argparse.Namespace) -> dict[str, Any]:
     return {
         "backend": BACKEND,
-        "qwen_asr_version": QWEN_ASR_PACKAGE_VERSION,
+        "transformers_version": TRANSFORMERS_PACKAGE_VERSION,
         "torch_version": TORCH_PUBLIC_VERSION,
         "device": args.device,
         "dtype": args.dtype,
@@ -240,7 +247,7 @@ def raw_backend_options(args: argparse.Namespace) -> dict[str, Any]:
 def aligned_backend_options(args: argparse.Namespace) -> dict[str, Any]:
     return {
         "backend": BACKEND,
-        "qwen_asr_version": QWEN_ASR_PACKAGE_VERSION,
+        "transformers_version": TRANSFORMERS_PACKAGE_VERSION,
         "torch_version": TORCH_PUBLIC_VERSION,
         "device": args.device,
         "dtype": args.dtype,
@@ -251,6 +258,29 @@ def aligned_backend_options(args: argparse.Namespace) -> dict[str, Any]:
         "alignment_coverage_guard": ALIGNMENT_COVERAGE_GUARD,
         "aligned_gap_guard": ALIGNED_GAP_GUARD,
         "final_outro_exemption_seconds": args.final_outro_exemption_seconds,
+    }
+
+
+def legacy_raw_backend_options(args: argparse.Namespace) -> dict[str, Any]:
+    return {
+        "backend": LEGACY_BACKEND,
+        "qwen_asr_version": LEGACY_QWEN_ASR_PACKAGE_VERSION,
+        "torch_version": LEGACY_TORCH_PUBLIC_VERSION,
+        "device": args.device,
+        "dtype": args.dtype,
+        "attention_implementation": args.attention_implementation,
+        "max_inference_batch_size": MAX_INFERENCE_BATCH_SIZE,
+        "final_outro_exemption_seconds": args.final_outro_exemption_seconds,
+    }
+
+
+def legacy_aligned_backend_options(args: argparse.Namespace) -> dict[str, Any]:
+    return {
+        **legacy_raw_backend_options(args),
+        "chunk_context_seconds": args.chunk_context,
+        "boundary_reconciliation": BOUNDARY_RECONCILIATION_METHOD,
+        "alignment_coverage_guard": ALIGNMENT_COVERAGE_GUARD,
+        "aligned_gap_guard": ALIGNED_GAP_GUARD,
     }
 
 
@@ -5287,30 +5317,8 @@ def decode_audio_chunk(
     return audio
 
 
-def load_cuda_runtime() -> tuple[Any, Any, Any, Any]:
-    try:
-        import numpy as np
-        import torch
-        from qwen_asr import Qwen3ASRModel, Qwen3ForcedAligner
-        qwen_asr_version = version("qwen-asr")
-    except (ImportError, PackageNotFoundError) as error:
-        raise SystemExit(
-            "the CUDA Qwen backend is unavailable; run `uv sync --locked "
-            "--extra media --extra asr-cuda`, then use `uv run --no-sync` "
-            "for this worker"
-        ) from error
-    if qwen_asr_version != QWEN_ASR_PACKAGE_VERSION:
-        raise SystemExit(
-            "unsupported qwen-asr package version: "
-            f"expected={QWEN_ASR_PACKAGE_VERSION}, actual={qwen_asr_version}"
-        )
-    torch_version = str(torch.__version__).partition("+")[0]
-    if torch_version != TORCH_PUBLIC_VERSION:
-        raise SystemExit(
-            "unsupported PyTorch package version: "
-            f"expected={TORCH_PUBLIC_VERSION}, actual={torch.__version__}"
-        )
-    return np, torch, Qwen3ASRModel, Qwen3ForcedAligner
+def load_cuda_runtime() -> Any:
+    return load_transformers_native_runtime()
 
 
 def validate_cuda_device(
@@ -5355,14 +5363,20 @@ def validate_alignment_items(items: Any, *, chunk_duration: float) -> list[dict[
     serialized: list[dict[str, Any]] = []
     previous_start = -1.0
     for index, item in enumerate(values):
-        text = getattr(item, "text", None)
+        text = item.get("text") if isinstance(item, dict) else getattr(item, "text", None)
         if not isinstance(text, str) or not text:
             raise ValueError(f"forced-alignment item {index} has no text")
         start = finite_document_number(
-            getattr(item, "start_time", None), field=f"alignment item {index} start"
+            item.get("start_time")
+            if isinstance(item, dict)
+            else getattr(item, "start_time", None),
+            field=f"alignment item {index} start",
         )
         end = finite_document_number(
-            getattr(item, "end_time", None), field=f"alignment item {index} end"
+            item.get("end_time")
+            if isinstance(item, dict)
+            else getattr(item, "end_time", None),
+            field=f"alignment item {index} end",
         )
         if start < previous_start or start < 0 or end < start:
             raise ValueError(f"forced-alignment item {index} has invalid timestamps")
@@ -5402,12 +5416,13 @@ def transformers_sentence_segments(
     max_characters: int,
     item_source_chunk_ids: list[int] | None = None,
 ) -> list[dict[str, Any]]:
-    """Map sentences to official qwen-asr alignment items without splitting an item.
+    """Map sentences to official native alignment items without splitting an item.
 
-    qwen-asr 0.0.6 removes punctuation from each whitespace-delimited token before
-    it splits CJK characters. Consequently, text such as ``AI、ASR`` is one
-    alignment item. Sentence boundaries that fall inside such an item are safely
-    coalesced so timestamps never invent a subdivision the aligner did not return.
+    The official processor removes punctuation from each whitespace-delimited
+    token before it splits CJK characters. Consequently, text such as ``AI、ASR``
+    is one alignment item. Sentence boundaries that fall inside such an item are
+    safely coalesced so timestamps never invent a subdivision the aligner did not
+    return.
     """
     expected_text = cleaned_alignment_text(text)
     item_texts = [cleaned_alignment_text(str(item["text"])) for item in aligned_items]
@@ -5551,8 +5566,10 @@ def main() -> int:
     )
     audio_size_bytes = input_path.stat().st_size
     audio_sha256 = sha256_file(input_path)
-    model_revision = pinned_revision(args.model, getattr(args, "model_revision", None))
-    aligner_revision = pinned_revision(
+    model_revision = pinned_native_revision(
+        args.model, getattr(args, "model_revision", None)
+    )
+    aligner_revision = pinned_native_revision(
         args.aligner, getattr(args, "aligner_revision", None)
     )
     raw_options = raw_backend_options(args)
@@ -5582,6 +5599,18 @@ def main() -> int:
             if isinstance(loaded_raw_document, dict)
             else None
         )
+        if loaded_lineage_version == LINEAGE_SCHEMA_VERSION and (
+            loaded_raw_document.get("model") == LEGACY_MODEL
+            or (
+                isinstance(loaded_options, dict)
+                and loaded_options.get("qwen_asr_version")
+                == LEGACY_QWEN_ASR_PACKAGE_VERSION
+            )
+        ):
+            raise ValueError(
+                "qwen-asr 0.0.6 v2 raw ASR is not compatible with the "
+                "Transformers-native backend; pass --retranscribe"
+            )
         if args.realign and isinstance(loaded_options, dict):
             loaded_reconciliation = loaded_raw_document.get(
                 "boundary_reconciliation"
@@ -5637,17 +5666,22 @@ def main() -> int:
                     },
                 }
                 replace_final_outro_option = True
+        markerless_legacy = loaded_lineage_version is None
+        validation_model = LEGACY_MODEL if markerless_legacy else args.model
+        validation_raw_options = (
+            legacy_raw_backend_options(args) if markerless_legacy else raw_options
+        )
         raw_document = validate_raw_document(
             loaded_raw_document,
             engine=ENGINE,
-            model=args.model,
+            model=validation_model,
             language=args.language,
             temperature=args.temperature,
             max_tokens=args.max_tokens,
             chunk_duration=args.chunk_duration,
             audio_size_bytes=audio_size_bytes,
             audio_sha256=audio_sha256,
-            backend_options=raw_options,
+            backend_options=validation_raw_options,
         )
         if raw_document.get("lineage_schema_version") == LINEAGE_SCHEMA_VERSION:
             require_requested_identity(
@@ -5659,7 +5693,7 @@ def main() -> int:
         validate_cuda_raw_integrity(
             raw_document,
             args=args,
-            backend_options=raw_options,
+            backend_options=validation_raw_options,
             allow_reconciliation_evidence_refresh=args.realign,
         )
         loaded_raw_asr_sha256 = sha256_file(output_path)
@@ -5681,17 +5715,22 @@ def main() -> int:
         raw_asr_sha256 = loaded_raw_asr_sha256
         if raw_asr_sha256 is None:
             raise AssertionError("complete ASR has no loaded raw identity")
+        markerless_legacy = raw_document.get("lineage_schema_version") is None
         aligned_document = validate_aligned_document(
             read_json_strict(aligned_output_path),
             engine=ENGINE,
-            model=args.model,
-            aligner=args.aligner,
+            model=LEGACY_MODEL if markerless_legacy else args.model,
+            aligner=LEGACY_ALIGNER if markerless_legacy else args.aligner,
             language=args.language,
             audio_sha256=audio_sha256,
             raw_asr_sha256=raw_asr_sha256,
             raw_document=raw_document,
             max_sentence_characters=args.max_sentence_characters,
-            backend_options=alignment_options,
+            backend_options=(
+                legacy_aligned_backend_options(args)
+                if markerless_legacy
+                else alignment_options
+            ),
         )
         if aligned_document.get("lineage_schema_version") == LINEAGE_SCHEMA_VERSION:
             require_requested_identity(
@@ -5774,7 +5813,9 @@ def main() -> int:
     if ffmpeg is None or ffprobe is None:
         raise SystemExit("ffmpeg and ffprobe are required for bounded CUDA audio chunks")
 
-    np, torch, Qwen3ASRModel, Qwen3ForcedAligner = load_cuda_runtime()
+    runtime = load_cuda_runtime()
+    np = runtime.numpy
+    torch = runtime.torch
     dtype, device_index, device_name, total_memory_bytes = validate_cuda_device(
         torch, device=args.device, dtype_name=args.dtype
     )
@@ -5791,10 +5832,8 @@ def main() -> int:
     if raw_document is None:
         torch.cuda.reset_peak_memory_stats(device_index)
         model_load_started = time.perf_counter()
-        model = Qwen3ASRModel.from_pretrained(
+        model = runtime.load_asr(
             model_load_target,
-            max_inference_batch_size=MAX_INFERENCE_BATCH_SIZE,
-            max_new_tokens=args.max_tokens,
             **load_kwargs,
         )
         cuda_synchronize(torch, device_index)
@@ -5841,16 +5880,11 @@ def main() -> int:
                     f"requested_end={window.decode_end:.3f}, "
                     f"actual_end={actual_end:.3f}"
                 )
-            results = model.transcribe(
-                audio=(chunk_audio, SAMPLE_RATE),
+            text = model.transcribe(
+                audio=chunk_audio,
                 language=args.language,
-                return_time_stamps=False,
+                max_new_tokens=args.max_tokens,
             )
-            if not isinstance(results, list) or len(results) != 1:
-                raise ValueError("Qwen3-ASR returned an unexpected result count")
-            text = getattr(results[0], "text", None)
-            if not isinstance(text, str):
-                raise ValueError("Qwen3-ASR returned no transcript text")
             text = text.strip()
             raw_chunks.append(
                 {
@@ -5864,7 +5898,7 @@ def main() -> int:
                 }
             )
             text_parts.append(text)
-            del results, chunk_audio
+            del chunk_audio
             clear_cuda(torch)
         cuda_synchronize(torch, device_index)
         transcription_seconds = time.perf_counter() - transcription_started
@@ -5957,7 +5991,7 @@ def main() -> int:
     raw_chunks = raw_document["segments"]
     torch.cuda.reset_peak_memory_stats(device_index)
     aligner_load_started = time.perf_counter()
-    aligner = Qwen3ForcedAligner.from_pretrained(
+    aligner = runtime.load_aligner(
         aligner_load_target,
         **load_kwargs,
     )
@@ -5998,15 +6032,13 @@ def main() -> int:
             numpy_module=np,
         )
         chunk_alignment_started = time.perf_counter()
-        alignment_results = aligner.align(
-            audio=(chunk_audio, SAMPLE_RATE),
-            text=decoded_text,
-            language=args.language,
-        )
-        if not isinstance(alignment_results, list) or len(alignment_results) != 1:
-            raise ValueError("Qwen3-ForcedAligner returned an unexpected result count")
         aligned_items = validate_alignment_items(
-            alignment_results[0], chunk_duration=decode_end - decode_start
+            aligner.align(
+                audio=chunk_audio,
+                text=decoded_text,
+                language=args.language,
+            ),
+            chunk_duration=decode_end - decode_start,
         )
         chunk_alignment_seconds = time.perf_counter() - chunk_alignment_started
         absolute_alignment = [
@@ -6031,7 +6063,7 @@ def main() -> int:
                 "alignment": absolute_alignment,
             }
         )
-        del alignment_results, aligned_items, absolute_alignment, chunk_audio
+        del aligned_items, absolute_alignment, chunk_audio
         clear_cuda(torch)
     cuda_synchronize(torch, device_index)
     alignment_seconds = time.perf_counter() - alignment_started

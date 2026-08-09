@@ -30,6 +30,24 @@ from validate import (  # noqa: E402
 )
 
 
+MLX_QWEN_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
+MLX_QWEN_MODEL_REVISION = "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+MLX_QWEN_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
+MLX_QWEN_ALIGNER_REVISION = "0e1a68e91d815300c7c9754b2a7639378b23db15"
+CUDA_QWEN_MODEL = "Qwen/Qwen3-ASR-1.7B-hf"
+CUDA_QWEN_MODEL_REVISION = "bcd2b5b7f32b480ab5790554cfa8347f246a14f3"
+CUDA_QWEN_ALIGNER = "Qwen/Qwen3-ForcedAligner-0.6B-hf"
+CUDA_QWEN_ALIGNER_REVISION = "c07281df297b9905d24a508279258cccf987a064"
+
+
+def cuda_native_options() -> dict[str, str]:
+    return {
+        "backend": "transformers-native",
+        "transformers_version": "5.14.1",
+        "torch_version": "2.13.0",
+    }
+
+
 def sha256_bytes(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
 
@@ -255,12 +273,22 @@ local_audio_cache:
         )
         write_json(self.refined_path, refined)
 
-    def upgrade_to_v2(self) -> None:
+    def upgrade_to_v2(
+        self,
+        *,
+        engine: str = "mlx-audio",
+        model: str = MLX_QWEN_MODEL,
+        model_revision: str = MLX_QWEN_MODEL_REVISION,
+        aligner: str = MLX_QWEN_ALIGNER,
+        aligner_revision: str = MLX_QWEN_ALIGNER_REVISION,
+        raw_options: dict[str, Any] | None = None,
+        aligned_options: dict[str, Any] | None = None,
+    ) -> None:
         model_identity = {
             "schema_version": 1,
-            "repository": "example/model",
-            "requested_revision": "a" * 40,
-            "resolved_commit": "a" * 40,
+            "repository": model,
+            "requested_revision": model_revision,
+            "resolved_commit": model_revision,
             "files_sha256": {
                 "config.json": "1" * 64,
                 "model.safetensors": "2" * 64,
@@ -268,9 +296,9 @@ local_audio_cache:
         }
         aligner_identity = {
             "schema_version": 1,
-            "repository": "example/aligner",
-            "requested_revision": "b" * 40,
-            "resolved_commit": "b" * 40,
+            "repository": aligner,
+            "requested_revision": aligner_revision,
+            "resolved_commit": aligner_revision,
             "files_sha256": {
                 "config.json": "3" * 64,
                 "model.safetensors": "4" * 64,
@@ -280,35 +308,48 @@ local_audio_cache:
         raw.update(
             {
                 "lineage_schema_version": 2,
-                "model": "example/model",
+                "engine": engine,
+                "model": model,
                 "model_identity": copy.deepcopy(model_identity),
             }
         )
+        if raw_options is not None:
+            raw["options"] = copy.deepcopy(raw_options)
         write_json(self.raw_path, raw)
         aligned = json.loads(self.aligned_path.read_text(encoding="utf-8"))
         aligned["lineage_schema_version"] = 2
         aligned["source"].update(
             {
                 "raw_asr_sha256": sha256_bytes(self.raw_path.read_bytes()),
-                "model": "example/model",
-                "aligner": "example/aligner",
+                "engine": engine,
+                "model": model,
+                "aligner": aligner,
                 "model_identity": copy.deepcopy(model_identity),
                 "aligner_identity": copy.deepcopy(aligner_identity),
             }
         )
+        if aligned_options is not None:
+            aligned["options"] = copy.deepcopy(aligned_options)
         write_json(self.aligned_path, aligned)
         refined = json.loads(self.refined_path.read_text(encoding="utf-8"))
         refined["lineage_schema_version"] = 2
         refined["source"].update(
             {
                 "input_asr_sha256": sha256_bytes(self.aligned_path.read_bytes()),
-                "model": "example/model",
-                "aligner": "example/aligner",
+                "engine": engine,
+                "model": model,
+                "aligner": aligner,
                 "model_identity": copy.deepcopy(model_identity),
                 "aligner_identity": copy.deepcopy(aligner_identity),
             }
         )
         write_json(self.refined_path, refined)
+        readme = self.readme_path.read_text(encoding="utf-8")
+        readme = readme.replace(
+            "    model: mlx-community/Qwen3-ASR-1.7B-8bit\n",
+            f"    engine: {engine}\n    model: {model}\n    aligner: {aligner}\n",
+        )
+        self.readme_path.write_text(readme, encoding="utf-8")
 
     def validate(self) -> tuple[bool, list[str]]:
         errors: list[str] = []
@@ -398,12 +439,127 @@ transcript:
 
 
 class QwenArtifactChainTests(unittest.TestCase):
-    def test_accepts_strict_v2_model_identity_chain(self) -> None:
+    def test_accepts_strict_v2_mlx_model_identity_chain(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = QwenChainFixture(Path(directory))
             fixture.upgrade_to_v2()
 
             self.assertEqual(fixture.validate(), (True, []))
+
+    def test_accepts_strict_v2_cuda_native_chain(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            fixture.upgrade_to_v2(
+                engine="qwen-asr-transformers",
+                model=CUDA_QWEN_MODEL,
+                model_revision=CUDA_QWEN_MODEL_REVISION,
+                aligner=CUDA_QWEN_ALIGNER,
+                aligner_revision=CUDA_QWEN_ALIGNER_REVISION,
+                raw_options=cuda_native_options(),
+                aligned_options=cuda_native_options(),
+            )
+
+            self.assertEqual(fixture.validate(), (True, []))
+
+    def test_rejects_legacy_qwen_asr_cuda_v2_chain(self) -> None:
+        legacy_options = {
+            "backend": "qwen-asr",
+            "qwen_asr_version": "0.0.6",
+            "torch_version": "2.11.0",
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            fixture.upgrade_to_v2(
+                engine="qwen-asr-transformers",
+                model="Qwen/Qwen3-ASR-1.7B",
+                model_revision="7278e1e70fe206f11671096ffdd38061171dd6e5",
+                aligner="Qwen/Qwen3-ForcedAligner-0.6B",
+                aligner_revision="c7cbfc2048c462b0d63a45797104fc9db3ad62b7",
+                raw_options=legacy_options,
+                aligned_options=legacy_options,
+            )
+
+            complete, errors = fixture.validate()
+
+            self.assertTrue(complete)
+            self.assertTrue(any("Qwen CUDA v2 raw.model must equal" in e for e in errors))
+            self.assertTrue(any("must not record qwen_asr_version" in e for e in errors))
+
+    def test_rejects_cuda_v2_wrong_model_aligner_and_revisions(self) -> None:
+        cases = (
+            (
+                "model",
+                {"model": "Qwen/Qwen3-ASR-1.7B"},
+                "Qwen CUDA v2 raw.model must equal",
+            ),
+            (
+                "aligner",
+                {"aligner": "Qwen/Qwen3-ForcedAligner-0.6B"},
+                "Qwen CUDA v2 aligned.source.aligner must equal",
+            ),
+            (
+                "model revision",
+                {"model_revision": "a" * 40},
+                "Qwen CUDA v2 raw.model_identity.requested_revision must equal",
+            ),
+            (
+                "aligner revision",
+                {"aligner_revision": "b" * 40},
+                "Qwen CUDA v2 aligned.source.aligner_identity.requested_revision must equal",
+            ),
+        )
+        for label, overrides, expected in cases:
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
+                fixture = QwenChainFixture(Path(directory))
+                values = {
+                    "engine": "qwen-asr-transformers",
+                    "model": CUDA_QWEN_MODEL,
+                    "model_revision": CUDA_QWEN_MODEL_REVISION,
+                    "aligner": CUDA_QWEN_ALIGNER,
+                    "aligner_revision": CUDA_QWEN_ALIGNER_REVISION,
+                    "raw_options": cuda_native_options(),
+                    "aligned_options": cuda_native_options(),
+                    **overrides,
+                }
+                fixture.upgrade_to_v2(**values)
+
+                _, errors = fixture.validate()
+
+                self.assertTrue(any(expected in error for error in errors), errors)
+
+    def test_rejects_cuda_v2_wrong_backend_package_versions_on_both_stages(
+        self,
+    ) -> None:
+        cases = (
+            ("backend", "qwen-asr"),
+            ("transformers_version", "5.13.0"),
+            ("torch_version", "2.12.0"),
+        )
+        for stage in ("raw", "aligned"):
+            for key, value in cases:
+                with (
+                    self.subTest(stage=stage, key=key),
+                    tempfile.TemporaryDirectory() as directory,
+                ):
+                    raw_options = cuda_native_options()
+                    aligned_options = cuda_native_options()
+                    selected_options = raw_options if stage == "raw" else aligned_options
+                    selected_options[key] = value
+                    fixture = QwenChainFixture(Path(directory))
+                    fixture.upgrade_to_v2(
+                        engine="qwen-asr-transformers",
+                        model=CUDA_QWEN_MODEL,
+                        model_revision=CUDA_QWEN_MODEL_REVISION,
+                        aligner=CUDA_QWEN_ALIGNER,
+                        aligner_revision=CUDA_QWEN_ALIGNER_REVISION,
+                        raw_options=raw_options,
+                        aligned_options=aligned_options,
+                    )
+
+                    _, errors = fixture.validate()
+
+                    expected = f"Qwen CUDA v2 {stage}.options.{key} must equal"
+                    self.assertTrue(any(expected in error for error in errors), errors)
 
     def test_rejects_missing_unknown_and_string_identity_schema_versions(self) -> None:
         for schema_version in (None, 2, "1"):

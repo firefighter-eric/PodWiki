@@ -55,8 +55,8 @@ git branch --show-current
 - Python 3.12、`uv 0.9.16`；
 - `ffmpeg`、`ffprobe`；
 - macOS 14+ Apple Silicon/MLX，或 Windows x86-64/NVIDIA CUDA，用于正式本地 ASR；
-  Windows CUDA 路径已在支持 `bfloat16` 的 NVIDIA RTX A2000 8GB Laptop GPU
-  上验证可用；
+  新的 Transformers-native Windows CUDA adapter 尚未完成 RTX A2000 的 golden-output、
+  峰值显存和长音频实机资格验证，完成前不能声称已通过硬件证明或提升其新产物；
 - Deno 或 Node.js，用于 YouTube 获取；
 - Node.js 和 npm，用于最终 Web 门禁。
 
@@ -116,19 +116,20 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
 Windows/CUDA 使用官方非量化模型，并继续只写入 `.cache/models/`：
 
 ```powershell
-& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B `
-  --revision 7278e1e70fe206f11671096ffdd38061171dd6e5 `
-  --local-dir .cache/models/Qwen3-ASR-1.7B-pinned-v2
-& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B `
-  --revision c7cbfc2048c462b0d63a45797104fc9db3ad62b7 `
-  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ASR-1.7B-hf `
+  --revision bcd2b5b7f32b480ab5790554cfa8347f246a14f3 `
+  --local-dir .cache/models/Qwen3-ASR-1.7B-hf-pinned-v3
+& .cache/venvs/qwen-cuda/Scripts/hf.exe download Qwen/Qwen3-ForcedAligner-0.6B-hf `
+  --revision c07281df297b9905d24a508279258cccf987a064 `
+  --local-dir .cache/models/Qwen3-ForcedAligner-0.6B-hf-pinned-v3
 ```
 
 只有官方入口在当前网络不可达时，才可临时把 `HF_ENDPOINT` 指向镜像；镜像仅是下载
 传输层，不是上游真实性证明。完整 commit pin、每个下载 payload 对应的 metadata/ETag
 与重新计算的 SHA-256 用于锁定和复现已取得的本地 snapshot，来源信任仍以官方 Hub
-为准。`*-pinned-v2` 使用新目录，避免把旧的 snapshot symlink cache 误当作已有 v2
-identity；不得复用或覆盖没有逐文件 download metadata 的旧模型目录。
+为准。CUDA native 的 `*-pinned-v3` 使用新目录，避免把旧的 qwen-asr snapshot 或
+symlink cache 误当作 native v2 identity；不得复用或覆盖没有逐文件 download
+metadata 的旧模型目录。MLX 继续使用其独立的 `*-pinned-v2` 目录。
 
 模型、媒体、sidecar、日志和翻译检查点全部放在 `.cache/`，不得提交 Git。
 
@@ -320,15 +321,16 @@ Windows/CUDA 中文组使用官方模型和独立解释器：
 & .cache/venvs/qwen-cuda/Scripts/python.exe scripts/process_qwen3_asr_batch.py `
   --backend cuda `
   --episode shows/<show-id>/episodes/<episode-folder> `
-  --model-path .cache/models/Qwen3-ASR-1.7B-pinned-v2 `
-  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2 `
+  --model-path .cache/models/Qwen3-ASR-1.7B-hf-pinned-v3 `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-hf-pinned-v3 `
   --chunk-context 5
 ```
 
 同时提供两个本地模型路径时，批处理会设置 `HF_HUB_OFFLINE=1` 和
 `TRANSFORMERS_OFFLINE=1`，因此 worker 不会联网补取模型。CUDA backend 记录的
-engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B` 和
-`Qwen/Qwen3-ForcedAligner-0.6B`。默认参数为 `cuda:0`、`bfloat16`、SDPA、
+engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B-hf` 和
+`Qwen/Qwen3-ForcedAligner-0.6B-hf`。backend options 记录
+`backend: transformers-native` 与精确 Transformers 版本。默认参数为 `cuda:0`、`bfloat16`、SDPA、
 120 秒名义归属 chunk、5 秒上下文和 batch size 1；每个内部边界向两侧各多解码
 5 秒，再使用 ForcedAligner 的精确文字与时间对齐选择唯一交叉点。即使显式使用更宽 context，
 `forced-alignment-time-crossover-v3` 也只在 seam 前后各 3 秒内枚举 crossover anchor；宽 context 的其余部分仅用于完整强制对齐和 coverage，
@@ -385,13 +387,13 @@ raw 不得使用这条迁移路径，必须显式 `--retranscribe` 建立真实�
   --episode shows/<show-id>/episodes/<episode-folder> `
   --realign `
   --final-outro-exemption-seconds <verified-seconds> `
-  --model-path .cache/models/Qwen3-ASR-1.7B-pinned-v2 `
-  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2
+  --model-path .cache/models/Qwen3-ASR-1.7B-hf-pinned-v3 `
+  --aligner-path .cache/models/Qwen3-ForcedAligner-0.6B-hf-pinned-v3
 ```
 
-本机 RTX A2000 8GB 已验证可容纳
-该路径，且 worker 会先完成并释放 ASR 模型，再加载 aligner。只有设备确实不支持
-`bfloat16` 时才显式传入 `--dtype float16`。英文组在同一命令追加
+worker 会先完成并释放 ASR 模型，再加载 aligner；但 native 路径的 RTX A2000
+golden-output、峰值显存和长音频验证仍待完成。通过这些实机门禁前不能提升新产物。
+只有设备确实不支持 `bfloat16` 时才显式传入 `--dtype float16`。英文组在同一命令追加
 `--language English` 和 `--transcript-language en`。
 
 脚本内部逐集、逐子进程串行运行，不再并发启动额外加速器 worker；子进程退出同时
@@ -422,6 +424,9 @@ pinned 本地 snapshot。markerless raw 需要任何新对齐时必须改用 `--
 revision 或 local snapshot，当前机器也没有 CUDA 模型缓存，因此不能把现在可见的 MLX
 cache 无证据回填到历史运行。它们只声明 audio/raw/aligned/refined/transcript 哈希链；
 fresh/`--retranscribe` 会建立 v2 model identity，而 markerless `--realign` 被拒绝。
+其中 20 条 CUDA 链继续按 `qwen-asr==0.0.6` 的历史 model/options 只读校验；任何
+markerless partial/pending/realign，或需要新对齐的旧 qwen-asr v2 raw，都必须显式
+`--retranscribe` 生成 Transformers-native 的新 model/aligner identity，禁止混合两代产物。
 
 需要暂停时用正常的中断信号结束当前 worker，不删除已经完成的原子产物。每集日志在
 `.cache/logs/qwen3-asr/<show-id>--<episode-folder>.log`。批处理失败后先读对应日志和

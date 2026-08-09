@@ -53,6 +53,7 @@ jobs:
           scripts/audit_correction_migration.py
           scripts/asr_lineage.py
           scripts/process_qwen3_asr_batch.py
+          scripts/qwen3_asr_transformers_adapter.py
           scripts/render_asr_transcript.py
           scripts/transcribe_audio.py
           scripts/transcribe_qwen3_asr.py
@@ -95,12 +96,18 @@ jobs:
         run: uv python install 3.12
 
       - name: Install locked MLX and media dependencies
-        run: uv sync --locked --extra media --extra asr
+        run: uv sync --locked --group dev --extra media --extra asr
 
       - name: Import MLX runtime dependencies
         run: >-
           uv run --no-sync python -c
-          "import mlx, mlx_audio, mlx_whisper, torch, yt_dlp"
+          "import mlx, mlx_audio, mlx_whisper, torch, transformers, yt_dlp;
+          from mlx_audio.stt import load;
+          from mlx_audio.stt.utils import load_audio;
+          print(torch.__version__, transformers.__version__, callable(load), callable(load_audio))"
+
+      - name: Audit installed MLX dependencies
+        run: uv run --no-sync pip-audit --local --strict --progress-spinner off
 
   windows-cuda-install:
     name: Windows x64 CUDA install and imports
@@ -119,12 +126,25 @@ jobs:
         run: uv python install 3.12
 
       - name: Install locked CUDA and media dependencies
-        run: uv sync --locked --extra media --extra asr-cuda
+        run: uv sync --locked --group dev --extra media --extra asr-cuda
 
-      - name: Import CUDA runtime dependencies without GPU inference
+      - name: Import native Transformers CUDA runtime without GPU inference
+        env:
+          HF_HUB_OFFLINE: "1"
+          TRANSFORMERS_OFFLINE: "1"
         run: >-
           uv run --no-sync python -c
-          "import qwen_asr, torch, yt_dlp; print(torch.__version__)"
+          "import accelerate, nagisa, soynlp, sys, yt_dlp;
+          sys.path.insert(0, 'scripts');
+          from transcribe_qwen3_asr_cuda import load_cuda_runtime;
+          runtime = load_cuda_runtime();
+          assert runtime.torch.__version__ == '2.13.0+cu126', runtime.torch.__version__;
+          print(runtime.torch.__version__)"
+
+      - name: Audit installed CUDA dependencies with local-version support
+        run: >-
+          uv run --no-sync pip-audit --local --strict --progress-spinner off
+          --vulnerability-service osv
 
   web:
     name: Web

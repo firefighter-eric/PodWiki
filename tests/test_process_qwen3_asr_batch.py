@@ -139,6 +139,30 @@ class ReplacementScopeTests(unittest.TestCase):
 
 
 class BackendTests(unittest.TestCase):
+    def test_worker_environment_uses_official_hub_unless_operator_sets_endpoint(
+        self,
+    ) -> None:
+        with patch.dict(batch.os.environ, {}, clear=True):
+            default_environment = batch.build_worker_environment(
+                model_path=None,
+                aligner_path=None,
+            )
+        self.assertNotIn("HF_ENDPOINT", default_environment)
+
+        explicit_endpoint = "https://explicit.example.invalid"
+        with patch.dict(
+            batch.os.environ,
+            {"HF_ENDPOINT": explicit_endpoint},
+            clear=True,
+        ):
+            explicit_environment = batch.build_worker_environment(
+                model_path=Path("model"),
+                aligner_path=Path("aligner"),
+            )
+        self.assertEqual(explicit_environment["HF_ENDPOINT"], explicit_endpoint)
+        self.assertEqual(explicit_environment["HF_HUB_OFFLINE"], "1")
+        self.assertEqual(explicit_environment["TRANSFORMERS_OFFLINE"], "1")
+
     def test_preserves_mlx_defaults_and_selects_official_cuda_models(self) -> None:
         mlx = resolve_backend_settings(
             "mlx",
@@ -163,8 +187,8 @@ class BackendTests(unittest.TestCase):
         self.assertEqual(mlx.chunk_duration, 240.0)
         self.assertEqual(cuda.worker_name, "transcribe_qwen3_asr_cuda.py")
         self.assertEqual(cuda.engine, "qwen-asr-transformers")
-        self.assertEqual(cuda.model, "Qwen/Qwen3-ASR-1.7B")
-        self.assertEqual(cuda.aligner, "Qwen/Qwen3-ForcedAligner-0.6B")
+        self.assertEqual(cuda.model, "Qwen/Qwen3-ASR-1.7B-hf")
+        self.assertEqual(cuda.aligner, "Qwen/Qwen3-ForcedAligner-0.6B-hf")
         self.assertEqual(cuda.max_tokens, 2048)
         self.assertEqual(cuda.chunk_duration, 120.0)
         self.assertEqual(cuda.chunk_context, 5.0)
@@ -237,7 +261,15 @@ class BackendTests(unittest.TestCase):
         )
         self.assertEqual(
             transcribe[transcribe.index("--model") + 1],
-            "Qwen/Qwen3-ASR-1.7B",
+            "Qwen/Qwen3-ASR-1.7B-hf",
+        )
+        self.assertEqual(
+            transcribe[transcribe.index("--model-revision") + 1],
+            "bcd2b5b7f32b480ab5790554cfa8347f246a14f3",
+        )
+        self.assertEqual(
+            transcribe[transcribe.index("--aligner-revision") + 1],
+            "c07281df297b9905d24a508279258cccf987a064",
         )
         self.assertEqual(
             render[render.index("--engine") + 1],

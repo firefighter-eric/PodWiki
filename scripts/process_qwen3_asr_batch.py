@@ -16,13 +16,16 @@ from pathlib import Path
 from typing import Any
 
 from asr_lineage import pinned_revision
+from qwen3_asr_transformers_adapter import (
+    DEFAULT_ALIGNER as DEFAULT_CUDA_ALIGNER,
+    DEFAULT_MODEL as DEFAULT_CUDA_MODEL,
+    pinned_native_revision,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MLX_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
 DEFAULT_MLX_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
-DEFAULT_CUDA_MODEL = "Qwen/Qwen3-ASR-1.7B"
-DEFAULT_CUDA_ALIGNER = "Qwen/Qwen3-ForcedAligner-0.6B"
 MAX_FINAL_OUTRO_EXEMPTION_SECONDS = 30.0
 TRANSCRIPT_LANGUAGE_RE = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
 
@@ -289,6 +292,18 @@ def run_logged(
     return completed, parse_json_output(completed.stdout)
 
 
+def build_worker_environment(
+    *, model_path: Path | None, aligner_path: Path | None
+) -> dict[str, str]:
+    """Preserve operator-selected network routing and add only worker safety defaults."""
+    environment = os.environ.copy()
+    if model_path is not None and aligner_path is not None:
+        environment["HF_HUB_OFFLINE"] = "1"
+        environment["TRANSFORMERS_OFFLINE"] = "1"
+    environment.setdefault("UV_CACHE_DIR", str(ROOT / ".cache" / "uv"))
+    return environment
+
+
 def main() -> int:
     args = parse_args()
     validate_replacement_scope(
@@ -318,10 +333,13 @@ def main() -> int:
         chunk_duration=args.chunk_duration,
         chunk_context=args.chunk_context,
     )
-    model_revision = pinned_revision(
+    revision_resolver = (
+        pinned_native_revision if args.backend == "cuda" else pinned_revision
+    )
+    model_revision = revision_resolver(
         backend.model, getattr(args, "model_revision", None)
     )
-    aligner_revision = pinned_revision(
+    aligner_revision = revision_resolver(
         backend.aligner, getattr(args, "aligner_revision", None)
     )
     rendered_transcript_name = transcript_filename(args.transcript_language)
@@ -329,13 +347,10 @@ def main() -> int:
     if not episodes:
         raise SystemExit("no cached episodes were found")
 
-    environment = os.environ.copy()
-    if args.backend == "mlx":
-        environment.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
-    if args.model_path is not None and args.aligner_path is not None:
-        environment["HF_HUB_OFFLINE"] = "1"
-        environment["TRANSFORMERS_OFFLINE"] = "1"
-    environment.setdefault("UV_CACHE_DIR", str(ROOT / ".cache" / "uv"))
+    environment = build_worker_environment(
+        model_path=args.model_path,
+        aligner_path=args.aligner_path,
+    )
 
     model_path = (
         validate_local_model_path(args.model_path, label="model")

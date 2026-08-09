@@ -18,13 +18,14 @@
   `scripts/process_qwen3_asr_batch.py --backend cuda`.
 - The batch default remains `mlx`, so Windows runs must pass `--backend cuda` explicitly.
 - Engine value: `qwen-asr-transformers`.
-- Canonical official models: `Qwen/Qwen3-ASR-1.7B` and
-  `Qwen/Qwen3-ForcedAligner-0.6B`. Keep these Hub IDs in tracked provenance even when local
+- Canonical official native models: `Qwen/Qwen3-ASR-1.7B-hf` and
+  `Qwen/Qwen3-ForcedAligner-0.6B-hf`. Keep these Hub IDs in tracked provenance even when local
   paths are used.
-- The `asr-cuda` dependency group locks `qwen-asr==0.0.6` and the CUDA 12.8 build of
-  PyTorch 2.11.0 on Windows AMD64; the worker rejects incompatible runtime versions.
-- Stable ignored v2 paths are `.cache/models/Qwen3-ASR-1.7B-pinned-v2` and
-  `.cache/models/Qwen3-ForcedAligner-0.6B-pinned-v2`. Supplying both `--model-path` and
+- The `asr-cuda` dependency group locks Transformers 5.14.1 and the CUDA 12.6 build of
+  PyTorch 2.13.0 on Windows AMD64; the worker rejects incompatible runtime versions and never
+  imports the retired `qwen-asr` wrapper for a new run.
+- Stable ignored paths are `.cache/models/Qwen3-ASR-1.7B-hf-pinned-v3` and
+  `.cache/models/Qwen3-ForcedAligner-0.6B-hf-pinned-v3`. Supplying both `--model-path` and
   `--aligner-path` forces both Hugging Face and Transformers offline modes; do not omit one
   path and claim a fully local run.
 - Defaults are `cuda:0`, `bfloat16`, SDPA, 120-second ownership chunks, 5 seconds of
@@ -44,9 +45,10 @@
   as a complete long chunk.
 - Short final remainders are redistributed across the final two ownership chunks instead of
   creating a tiny outro chunk whose boundary cannot be reconciled reliably.
-- The local RTX A2000 8GB Laptop GPU has been smoke-tested successfully with the official
-  1.7B model and 0.6B aligner. The worker runs them in sequence and releases the ASR model
-  before loading the aligner so both are never resident together.
+- The worker runs ASR and aligner in sequence and releases the ASR model before loading the
+  aligner so both are never resident together. The native adapter has mocked API and recovery
+  coverage, but its RTX A2000 golden-output, peak-VRAM, and long-audio qualification is still
+  pending; do not claim hardware proof or promote its newly generated transcripts before it passes.
 
 ### Shared Qwen artifact and recovery contract
 
@@ -61,7 +63,9 @@
   at alignment/reconciliation or use `--realign`, and both pinned local identities are required.
   A complete markerless raw/aligned pair remains a read-only no-op; markerless raw that needs any
   new alignment fails closed and requires `--retranscribe` rather than fabricated identity
-  backfill.
+  backfill. The 20 historical CUDA chains retain their `qwen-asr==0.0.6` / PyTorch 2.11.0
+  model/options identity only for this read-only validation. Old qwen-asr v2 raw may not be
+  aligned by the native backend; it also requires `--retranscribe` so generations are never mixed.
 - Use local model paths for workers while retaining canonical Hub IDs in tracked metadata.
 
 ## MLX Whisper
