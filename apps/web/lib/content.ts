@@ -6,13 +6,18 @@ import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
 import { getTranscriptHref } from "@/lib/reader-routes";
+import {
+  createSearchContent,
+  indexSearchText,
+  toSearchSegment,
+  type SearchEpisodeDocument,
+} from "@/lib/search-core";
 import type {
   BilingualTranscript,
   BilingualTranscriptSegment,
   Chapter,
   Episode,
   EpisodeCard,
-  SearchResult,
   ShowSummary,
   TranscriptSegment,
   TranscriptTranslationMetadata,
@@ -1356,53 +1361,7 @@ export async function getEpisodeCards(showId?: string): Promise<EpisodeCard[]> {
   return showId ? cards.filter((episode) => episode.showId === showId) : cards;
 }
 
-type IndexedSearchText = {
-  text: string;
-  normalized: string;
-};
-
-type SearchSegmentDocument = {
-  id: string;
-  timestamp: string;
-  content: IndexedSearchText;
-};
-
-type SearchEpisodeDocument = {
-  id: string;
-  title: string;
-  titleNormalized: string;
-  showTitle: string;
-  href: string;
-  episodeHaystack: IndexedSearchText;
-  summaryNormalized: string;
-  summarySnippet: IndexedSearchText;
-  transcriptSegments: SearchSegmentDocument[];
-  translationSegments: SearchSegmentDocument[];
-};
-
-const searchResultCacheLimit = 64;
-const searchResultCache = new Map<string, SearchResult[]>();
 let searchDocumentsPromise: Promise<SearchEpisodeDocument[]> | undefined;
-
-function compactSearchText(text: string): string {
-  return text.replace(/\s+/gu, " ").trim();
-}
-
-function indexSearchText(text: string): IndexedSearchText {
-  const compact = compactSearchText(text);
-  return {
-    text: compact,
-    normalized: compact.toLocaleLowerCase("zh-CN"),
-  };
-}
-
-function toSearchSegment(segment: TranscriptSegment): SearchSegmentDocument {
-  return {
-    id: segment.id,
-    timestamp: segment.timestamp,
-    content: indexSearchText(segment.text),
-  };
-}
 
 function getParticipantSearchTerms(
   participant: z.infer<typeof participantSchema>,
@@ -1471,6 +1430,8 @@ async function buildSearchDocuments(): Promise<SearchEpisodeDocument[]> {
   });
 }
 
+export const buildSearchDocumentsForTesting = buildSearchDocuments;
+
 function getSearchDocuments(): Promise<SearchEpisodeDocument[]> {
   if (!searchDocumentsPromise) {
     searchDocumentsPromise = buildSearchDocuments().catch((error: unknown) => {
@@ -1481,116 +1442,7 @@ function getSearchDocuments(): Promise<SearchEpisodeDocument[]> {
   return searchDocumentsPromise;
 }
 
-function getCachedSearchResults(query: string): SearchResult[] | undefined {
-  const cached = searchResultCache.get(query);
-  if (!cached) return undefined;
-  searchResultCache.delete(query);
-  searchResultCache.set(query, cached);
-  return cached;
-}
-
-function cacheSearchResults(query: string, results: SearchResult[]): SearchResult[] {
-  searchResultCache.set(query, results);
-  if (searchResultCache.size > searchResultCacheLimit) {
-    const oldestQuery = searchResultCache.keys().next().value;
-    if (oldestQuery !== undefined) searchResultCache.delete(oldestQuery);
-  }
-  return results;
-}
-
-function snippetAround(
-  indexedText: IndexedSearchText,
-  normalizedQuery: string,
-  queryLength: number,
-  radius = 58,
-): string {
-  const index = indexedText.normalized.indexOf(normalizedQuery);
-  if (index < 0) return indexedText.text.slice(0, radius * 2);
-  const start = Math.max(0, index - radius);
-  const end = Math.min(indexedText.text.length, index + queryLength + radius);
-  return `${start > 0 ? "…" : ""}${indexedText.text.slice(start, end)}${end < indexedText.text.length ? "…" : ""}`;
-}
-
-function findFirstSegmentMatches(
-  segments: SearchSegmentDocument[],
-  normalizedQuery: string,
-  limit = 3,
-): SearchSegmentDocument[] {
-  const matches: SearchSegmentDocument[] = [];
-  for (const segment of segments) {
-    if (!segment.content.normalized.includes(normalizedQuery)) continue;
-    matches.push(segment);
-    if (matches.length === limit) break;
-  }
-  return matches;
-}
-
-export async function searchContent(rawQuery: string): Promise<SearchResult[]> {
-  const query = rawQuery.trim();
-  if (!query) return [];
-  const lowerQuery = query.toLocaleLowerCase("zh-CN");
-  const cached = getCachedSearchResults(lowerQuery);
-  if (cached) return cached;
-  const results: SearchResult[] = [];
-
-  for (const episode of await getSearchDocuments()) {
-    if (episode.episodeHaystack.normalized.includes(lowerQuery)) {
-      results.push({
-        id: `${episode.id}:episode`,
-        title: episode.title,
-        showTitle: episode.showTitle,
-        section: "单集",
-        snippet: snippetAround(episode.episodeHaystack, lowerQuery, query.length),
-        href: episode.href,
-        score: episode.titleNormalized.includes(lowerQuery) ? 90 : 70,
-      });
-    }
-
-    if (episode.summaryNormalized.includes(lowerQuery)) {
-      results.push({
-        id: `${episode.id}:summary`,
-        title: episode.title,
-        showTitle: episode.showTitle,
-        section: "总结",
-        snippet: snippetAround(episode.summarySnippet, lowerQuery, query.length),
-        href: episode.href,
-        score: 60,
-      });
-    }
-
-    const transcriptMatches = findFirstSegmentMatches(episode.transcriptSegments, lowerQuery);
-    for (const segment of transcriptMatches) {
-      results.push({
-        id: `${episode.id}:${segment.id}`,
-        title: episode.title,
-        showTitle: episode.showTitle,
-        section: "逐字稿",
-        snippet: snippetAround(segment.content, lowerQuery, query.length),
-        href: getTranscriptHref(episode.href, segment.id),
-        timestamp: segment.timestamp,
-        score: 50,
-      });
-    }
-
-    const translationMatches = findFirstSegmentMatches(episode.translationSegments, lowerQuery);
-    for (const segment of translationMatches) {
-      results.push({
-        id: `${episode.id}:translation:${segment.id}`,
-        title: episode.title,
-        showTitle: episode.showTitle,
-        section: "译稿",
-        snippet: snippetAround(segment.content, lowerQuery, query.length),
-        href: getTranscriptHref(episode.href, segment.id),
-        timestamp: segment.timestamp,
-        score: 49,
-      });
-    }
-  }
-
-  return cacheSearchResults(lowerQuery, results
-    .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title, "zh-CN"))
-    .slice(0, 24));
-}
+export const searchContent = createSearchContent(getSearchDocuments);
 
 export function findRelatedSegments(episode: Episode, targetTimestamp?: string): TranscriptSegment[] {
   const requestedSeconds = targetTimestamp

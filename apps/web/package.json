@@ -9,13 +9,21 @@
     "npm": ">=11 <12"
   },
   "scripts": {
+    "generate:search-index": "node scripts/generate-search-index.mjs",
+    "predev": "npm run generate:search-index",
     "dev": "next dev",
+    "prebuild": "npm run generate:search-index",
     "build": "next build",
+    "postbuild": "npm run check:search-trace",
     "start": "next start",
+    "prelint": "npm run generate:search-index",
     "lint": "eslint .",
+    "pretypecheck": "npm run generate:search-index",
     "typecheck": "tsc --noEmit",
+    "pretest": "npm run generate:search-index",
     "test": "vitest run",
     "test:e2e": "playwright test",
+    "check:search-trace": "node scripts/check-search-trace.mjs",
     "check": "npm run lint && npm run typecheck && npm run test && npm run build && npm run test:e2e"
   },
   "dependencies": {
