@@ -27,6 +27,7 @@ import {
   getSidebarCatalogScope,
   getSidebarEpisodeAriaLabel,
   getSidebarEpisodes,
+  getSidebarShowTagLabel,
   getSidebarScopeShowId,
   retainSidebarScope,
 } from "@/lib/sidebar-episodes";
@@ -315,23 +316,27 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                 <p>播客来源</p>
                 <span>{shows.length} 档</span>
               </div>
-              <div className="show-filter-list">
+              <div
+                className="show-filter-list"
+                role="group"
+                aria-label="选择播客来源"
+              >
                 <Link
-                  className={`show-row all-shows-row selectable-content-link${sidebarScope === "all" ? " active" : ""}`}
+                  className={`show-tag selectable-content-link${sidebarScope === "all" ? " active" : ""}`}
                   href="/shows"
                   draggable={false}
-                  aria-label="全部播客来源"
+                  aria-label={`全部节目，${totalEpisodes} 期内容`}
                   aria-current={pathname === "/shows" ? "page" : sidebarScope === "all" ? "location" : undefined}
                   onClick={(event) => {
                     if (!event.defaultPrevented) setMobileOpen(false);
                   }}
                 >
-                  <span className="all-shows-icon" aria-hidden="true">
+                  <span className="show-tag-collapsed-icon all-shows-icon" aria-hidden="true">
                     <SquaresFour size={22} />
                   </span>
-                  <span className="show-copy sidebar-label">
-                    <strong>全部节目</strong>
-                    <small>{totalEpisodes} 期内容</small>
+                  <span className="show-tag-copy sidebar-label">
+                    <span className="show-tag-name">全部</span>
+                    <span className="show-tag-count">{totalEpisodes}</span>
                   </span>
                 </Link>
                 {shows.map((show) => {
@@ -339,19 +344,25 @@ export function AppShell({ shows, episodes, children }: AppShellProps) {
                   return (
                     <Link
                       key={show.id}
-                      className={`show-row source-show-row selectable-content-link${active ? " active" : ""}`}
+                      className={`show-tag selectable-content-link${active ? " active" : ""}`}
                       href={show.href}
                       draggable={false}
+                      title={show.title}
                       aria-label={`${show.title}，${show.episodeCount} 期内容`}
                       aria-current={pathname === show.href ? "page" : active ? "location" : undefined}
                       onClick={(event) => {
                         if (!event.defaultPrevented) setMobileOpen(false);
                       }}
                     >
-                      <span className="source-show-mark" aria-hidden="true" />
-                      <span className="show-copy sidebar-label">
-                        <strong>{show.shortTitle}</strong>
-                        <small>{show.episodeCount} 期内容</small>
+                      <span
+                        className="show-tag-collapsed-icon source-show-mark"
+                        aria-hidden="true"
+                      />
+                      <span className="show-tag-copy sidebar-label">
+                        <span className="show-tag-name">
+                          {getSidebarShowTagLabel(show)}
+                        </span>
+                        <span className="show-tag-count">{show.episodeCount}</span>
                       </span>
                     </Link>
                   );

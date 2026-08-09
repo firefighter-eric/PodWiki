@@ -24,6 +24,13 @@ participants:
   - id: zhou-hongyi
     name: 周鸿祎
     role: guest
+    profile:
+      headline: "360 集团创始人"
+      affiliations:
+        - organization: "360 集团"
+          title: "创始人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

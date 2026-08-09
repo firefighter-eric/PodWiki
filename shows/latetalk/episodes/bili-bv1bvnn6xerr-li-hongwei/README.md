@@ -25,6 +25,13 @@ participants:
   - id: li-hongwei
     name: 李宏伟
     role: guest
+    profile:
+      headline: "雷鸟创新创始人兼 CEO"
+      affiliations:
+        - organization: "雷鸟创新"
+          title: "创始人兼 CEO"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

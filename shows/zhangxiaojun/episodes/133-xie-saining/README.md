@@ -24,6 +24,16 @@ participants:
   - id: xie-saining
     name: 谢赛宁
     role: guest
+    profile:
+      headline: "AMI Labs 联合创始人兼首席科学官、纽约大学教授"
+      affiliations:
+        - organization: "AMI Labs"
+          title: "联合创始人兼首席科学官"
+          status: current
+        - organization: "纽约大学"
+          title: "教授"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

@@ -1,5 +1,6 @@
 import { ChapterRail } from "@/components/chapter-rail";
 import { EpisodeHeroTitle } from "@/components/episode-navigation-title";
+import { GuestProfiles } from "@/components/guest-profiles";
 import { MobileReaderTools } from "@/components/mobile-reader-tools";
 import { ReaderPreferences } from "@/components/reader-preferences";
 import { ReaderTabs } from "@/components/reader-tabs";
@@ -53,6 +54,8 @@ export function EpisodeReader({ episode, view }: { episode: Episode; view: Reade
               <time dateTime={episode.publishedAt}>{episode.publishedDate}</time>
             </p>
           </header>
+
+          <GuestProfiles guests={episode.guests} />
 
           {view === "summary" ? (
             <SummaryView episode={episode} />

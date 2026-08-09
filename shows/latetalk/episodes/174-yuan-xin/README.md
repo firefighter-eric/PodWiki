@@ -27,6 +27,13 @@ participants:
   - id: yuan-xin
     name: 原欣
     role: guest
+    profile:
+      headline: "SAP 大中华地区总裁"
+      affiliations:
+        - organization: "SAP"
+          title: "大中华地区总裁"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

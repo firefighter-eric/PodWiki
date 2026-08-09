@@ -27,6 +27,13 @@ participants:
   - id: gao-honghao
     name: 高洪浩
     role: guest
+    profile:
+      headline: "《晚点 LatePost》主笔"
+      affiliations:
+        - organization: "晚点 LatePost"
+          title: "主笔"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

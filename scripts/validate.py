@@ -42,6 +42,7 @@ EPISODE_KEY_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 RFC3339_RE = re.compile(
     r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})"
 )
+CALENDAR_DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 TRANSCRIPT_LINE_RE = re.compile(r"^\[\d{2}:[0-5]\d:[0-5]\d\] \S.*  $")
 TRANSCRIPT_TIMESTAMP_RE = re.compile(r"^(\[\d{2}:[0-5]\d:[0-5]\d\]) ")
 TRANSLATION_STATUSES = {"machine", "edited", "reviewed"}
@@ -290,6 +291,227 @@ def parse_asr_runs(lines: list[str]) -> list[dict[str, Any]]:
     return runs
 
 
+def decode_non_empty_yaml_scalar(value: str) -> str | None:
+    """Decode the small scalar subset used by profile front matter."""
+
+    raw = value.strip()
+    if not raw:
+        return None
+    quoted = len(raw) >= 2 and raw[0] in {'"', "'"} and raw[-1] == raw[0]
+    if not quoted and (raw == "~" or raw.lower() == "null"):
+        return None
+    decoded = decode_yaml_scalar(raw)
+    return decoded if decoded.strip() else None
+
+
+def validate_participant_profiles(
+    lines: list[str], *, field_prefix: str, errors: list[str]
+) -> None:
+    """Validate optional profiles nested directly in ``participants[]``."""
+
+    profiles: list[dict[str, Any]] = []
+    in_participants = False
+    participant_index = -1
+    profile_seen = False
+    current_profile: dict[str, Any] | None = None
+    current_list_name: str | None = None
+    current_list_item: dict[str, str | None] | None = None
+    scalar_fields = {"headline", "bio", "checked_at"}
+    list_fields = {"affiliations", "education"}
+
+    def profile_field(index: int) -> str:
+        return f"{field_prefix} participants[{index}].profile"
+
+    def start_profile(raw_value: str) -> None:
+        nonlocal current_profile, current_list_name, current_list_item, profile_seen
+        if participant_index < 0:
+            errors.append(
+                f"{field_prefix} profile must be attached to a participants list item"
+            )
+            return
+        if profile_seen:
+            errors.append(
+                f"{profile_field(participant_index)} has a duplicate profile field"
+            )
+            return
+        profile_seen = True
+        current_list_name = None
+        current_list_item = None
+        if raw_value.strip():
+            errors.append(f"{profile_field(participant_index)} must be a YAML mapping")
+            current_profile = None
+            return
+        current_profile = {
+            "participant_index": participant_index,
+            "fields": {},
+            "seen_fields": set(),
+            "lists": {},
+        }
+        profiles.append(current_profile)
+
+    for line in lines:
+        stripped = line.strip()
+        indent = len(line) - len(line.lstrip(" "))
+        if not in_participants:
+            if indent == 0 and stripped == "participants:":
+                in_participants = True
+            continue
+        if stripped and indent == 0:
+            break
+        if not stripped or stripped.startswith("#"):
+            continue
+
+        if indent == 2 and (stripped == "-" or stripped.startswith("- ")):
+            participant_index += 1
+            profile_seen = False
+            current_profile = None
+            current_list_name = None
+            current_list_item = None
+            item = stripped[1:].strip()
+            if item.startswith("profile:"):
+                start_profile(item.split(":", 1)[1])
+            continue
+
+        if indent == 4:
+            current_profile = None
+            current_list_name = None
+            current_list_item = None
+            if stripped.startswith("profile:"):
+                start_profile(stripped.split(":", 1)[1])
+            continue
+
+        if current_profile is None:
+            continue
+        index = current_profile["participant_index"]
+        fields = current_profile["fields"]
+        seen_fields = current_profile["seen_fields"]
+        lists = current_profile["lists"]
+        base_field = profile_field(index)
+
+        if indent == 6:
+            current_list_name = None
+            current_list_item = None
+            if ":" not in stripped:
+                errors.append(f"{base_field} must be a YAML mapping")
+                continue
+            key, raw_value = stripped.split(":", 1)
+            key = key.strip()
+            raw_value = raw_value.strip()
+            if key in seen_fields:
+                errors.append(f"{base_field} has duplicate field {key!r}")
+                continue
+            seen_fields.add(key)
+            if key in scalar_fields:
+                fields[key] = decode_non_empty_yaml_scalar(raw_value)
+            elif key in list_fields:
+                state = {"mode": "block", "items": []}
+                lists[key] = state
+                if raw_value == "[]":
+                    state["mode"] = "empty"
+                elif raw_value:
+                    state["mode"] = "invalid"
+                    errors.append(f"{base_field}.{key} must be a YAML list")
+                else:
+                    current_list_name = key
+            continue
+
+        if indent == 8 and current_list_name is not None:
+            state = lists[current_list_name]
+            if not (stripped == "-" or stripped.startswith("- ")):
+                state["mode"] = "invalid"
+                errors.append(
+                    f"{base_field}.{current_list_name} must be a YAML list"
+                )
+                current_list_item = None
+                continue
+            item: dict[str, str | None] = {}
+            state["items"].append(item)
+            current_list_item = item
+            inline = stripped[1:].strip()
+            if not inline:
+                continue
+            if ":" not in inline:
+                errors.append(
+                    f"{base_field}.{current_list_name} items must be YAML mappings"
+                )
+                continue
+            key, raw_value = inline.split(":", 1)
+            item[key.strip()] = decode_non_empty_yaml_scalar(raw_value)
+            continue
+
+        if (
+            indent == 10
+            and current_list_name is not None
+            and current_list_item is not None
+        ):
+            if ":" not in stripped:
+                errors.append(
+                    f"{base_field}.{current_list_name} items must be YAML mappings"
+                )
+                continue
+            key, raw_value = stripped.split(":", 1)
+            key = key.strip()
+            if key in current_list_item:
+                errors.append(
+                    f"{base_field}.{current_list_name} item has duplicate field "
+                    f"{key!r}"
+                )
+                continue
+            current_list_item[key] = decode_non_empty_yaml_scalar(raw_value)
+
+    for profile in profiles:
+        index = profile["participant_index"]
+        base_field = profile_field(index)
+        fields = profile["fields"]
+        if fields.get("headline") is None:
+            errors.append(f"{base_field}.headline must be a non-empty string")
+        if "bio" in fields and fields["bio"] is None:
+            errors.append(f"{base_field}.bio must be a non-empty string when present")
+
+        checked_at = fields.get("checked_at")
+        valid_checked_at = (
+            isinstance(checked_at, str)
+            and CALENDAR_DATE_RE.fullmatch(checked_at) is not None
+        )
+        if valid_checked_at:
+            try:
+                datetime.strptime(checked_at, "%Y-%m-%d")
+            except ValueError:
+                valid_checked_at = False
+        if not valid_checked_at:
+            errors.append(f"{base_field}.checked_at must be a valid YYYY-MM-DD date")
+
+        for list_name, state in profile["lists"].items():
+            if state["mode"] == "block" and not state["items"]:
+                errors.append(f"{base_field}.{list_name} must be a YAML list")
+            for item_index, item in enumerate(state["items"]):
+                item_field = f"{base_field}.{list_name}[{item_index}]"
+                required = (
+                    ("organization", "status")
+                    if list_name == "affiliations"
+                    else ("institution",)
+                )
+                for key in required:
+                    if item.get(key) is None:
+                        errors.append(f"{item_field}.{key} must be a non-empty string")
+                optional = (
+                    ("title",) if list_name == "affiliations" else ("credential", "field")
+                )
+                for key in optional:
+                    if key in item and item[key] is None:
+                        errors.append(
+                            f"{item_field}.{key} must be a non-empty string when present"
+                        )
+                if list_name == "affiliations" and item.get("status") not in {
+                    "current",
+                    "former",
+                    None,
+                }:
+                    errors.append(
+                        f"{item_field}.status must be one of current, former"
+                    )
+
+
 def is_qwen_run(run: dict[str, Any]) -> bool:
     values: list[str] = []
     for key in ("id", "engine", "model", "aligner"):
@@ -533,6 +755,7 @@ def validate_episode_metadata_contract(
             )
 
     validate_source_preferences(front_matter, field_prefix=label, errors=errors)
+    validate_participant_profiles(front_matter, field_prefix=label, errors=errors)
     publishable = is_episode_web_publishable(workflow)
 
     for section in ("summary", "transcript"):

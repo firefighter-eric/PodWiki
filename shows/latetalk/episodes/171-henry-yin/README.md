@@ -27,6 +27,13 @@ participants:
   - id: henry-yin
     name: Henry Yin
     role: guest
+    profile:
+      headline: "MoE Capital 创始合伙人"
+      affiliations:
+        - organization: "MoE Capital"
+          title: "创始合伙人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

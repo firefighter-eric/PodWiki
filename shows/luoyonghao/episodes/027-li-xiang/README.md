@@ -25,6 +25,13 @@ participants:
   - id: li-xiang
     name: 李想
     role: guest
+    profile:
+      headline: "理想汽车创始人"
+      affiliations:
+        - organization: "理想汽车"
+          title: "创始人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

@@ -25,11 +25,40 @@ type FixtureWorkflow = {
   transcript: "not-started" | "source-acquired" | "machine" | "edited" | "reviewed" | "blocked";
 };
 
+type FixtureParticipantProfile = {
+  headline: string;
+  bio?: string;
+  organization: string;
+  title?: string;
+  status: "current" | "former";
+  institution: string;
+  credential?: string;
+  field?: string;
+  checkedAt: string;
+};
+
 const publishedWorkflow: FixtureWorkflow = {
   metadata: "verified",
   summary: "draft",
   transcript: "machine",
 };
+
+function renderParticipantProfile(profile: FixtureParticipantProfile): string {
+  return [
+    "    profile:",
+    `      headline: ${JSON.stringify(profile.headline)}`,
+    ...(profile.bio ? [`      bio: ${JSON.stringify(profile.bio)}`] : []),
+    "      affiliations:",
+    `        - organization: ${JSON.stringify(profile.organization)}`,
+    ...(profile.title ? [`          title: ${JSON.stringify(profile.title)}`] : []),
+    `          status: ${profile.status}`,
+    "      education:",
+    `        - institution: ${JSON.stringify(profile.institution)}`,
+    ...(profile.credential ? [`          credential: ${JSON.stringify(profile.credential)}`] : []),
+    ...(profile.field ? [`          field: ${JSON.stringify(profile.field)}`] : []),
+    `      checked_at: ${profile.checkedAt}`,
+  ].join("\n");
+}
 
 function writeFixtureShow(repositoryRoot: string) {
   const showRoot = path.join(repositoryRoot, "shows", "example");
@@ -56,6 +85,7 @@ function writeFixtureEpisode({
   preferredSources = 1,
   writeSummary = true,
   writeTranscript = true,
+  participantProfile,
 }: {
   repositoryRoot: string;
   folder: string;
@@ -67,6 +97,7 @@ function writeFixtureEpisode({
   preferredSources?: number;
   writeSummary?: boolean;
   writeTranscript?: boolean;
+  participantProfile?: FixtureParticipantProfile;
 }) {
   const episodeRoot = path.join(repositoryRoot, "shows", "example", "episodes", folder);
   fs.mkdirSync(episodeRoot, { recursive: true });
@@ -75,6 +106,7 @@ function writeFixtureEpisode({
     kind: episode
     url: https://example.com/${folder}/${index + 1}
     preferred: ${index < preferredSources ? "true" : "false"}`).join("");
+  const profile = participantProfile ? `\n${renderParticipantProfile(participantProfile)}` : "";
   fs.writeFileSync(path.join(episodeRoot, "README.md"), `---
 id: "${id}"
 show_id: example
@@ -89,7 +121,7 @@ duration_ms: ${durationMs}
 language: zh-CN
 participants:
   - name: 测试人物
-    role: guest
+    role: guest${profile}
 sources:${sources}
 workflow:
   metadata: ${workflow.metadata}
@@ -446,6 +478,31 @@ describe("PodWiki content loader", () => {
     }
   });
 
+  it("keeps fact-boundary copy out of web search results", async () => {
+    await withFixtureRepository((repositoryRoot) => {
+      const episodeRoot = writeFixtureEpisode({
+        repositoryRoot,
+        folder: "001-hidden-facts",
+        episodeKey: "001",
+      });
+      fs.writeFileSync(path.join(episodeRoot, "summary.zh-CN.md"), `# 测试人物：测试主题
+
+## 一句话总结
+
+公开总结关键词。
+
+## 事实边界与待核实
+
+- 内部核验关键词。
+`);
+    }, async (content) => {
+      expect(await content.searchContent("公开总结关键词")).toContainEqual(
+        expect.objectContaining({ section: "总结" }),
+      );
+      expect(await content.searchContent("内部核验关键词")).toEqual([]);
+    });
+  });
+
   it("builds search documents from formal content without reading ASR intermediates", async () => {
     vi.resetModules();
     const content = await import("@/lib/content");
@@ -472,6 +529,53 @@ describe("PodWiki content loader", () => {
       title: "姚顺宇 · 模型进展、Coding 与研究方法",
     }));
     expect(await searchContent("openai")).toBe(results);
+  });
+
+  it("loads and indexes guest profile companies and schools", async () => {
+    await withFixtureRepository((repositoryRoot) => {
+      writeFixtureEpisode({
+        repositoryRoot,
+        folder: "001-profile",
+        episodeKey: "001",
+        participantProfile: {
+          headline: "人工智能产业研究者",
+          bio: "长期研究技术产品与组织。",
+          organization: "星河科技",
+          title: "首席研究员",
+          status: "current",
+          institution: "远山大学",
+          credential: "博士",
+          field: "计算机科学",
+          checkedAt: "2026-08-09",
+        },
+      });
+    }, async (content) => {
+      const episode = await content.getEpisode("example", "001-profile");
+      expect(episode?.guests[0]?.profile).toEqual({
+        headline: "人工智能产业研究者",
+        bio: "长期研究技术产品与组织。",
+        affiliations: [{
+          organization: "星河科技",
+          title: "首席研究员",
+          status: "current",
+        }],
+        education: [{
+          institution: "远山大学",
+          credential: "博士",
+          field: "计算机科学",
+        }],
+        checkedAt: "2026-08-09",
+      });
+
+      for (const query of ["星河科技", "远山大学"]) {
+        const results = await content.searchContent(query);
+        expect(results).toContainEqual(expect.objectContaining({
+          id: "example:001:episode",
+          section: "单集",
+          snippet: expect.stringContaining(query),
+        }));
+      }
+    });
   });
 
   it("caps broad search queries at 24 ranked results", async () => {

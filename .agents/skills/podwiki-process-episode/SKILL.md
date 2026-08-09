@@ -209,6 +209,7 @@ validator so the renderer does not create unnecessary artifact churn.
 3. Pass the actual engine and model; never leave a misleading default provenance value.
 4. Update the episode README with:
    - canonical source URL and verified identifiers;
+   - verified participants and any optional `participants[].profile` metadata;
    - `navigation_title` and `catalog_keyword` set and validated against
      `docs/content-standard.md`;
    - local media metadata from the acquisition sidecar;
@@ -219,9 +220,18 @@ validator so the renderer does not create unnecessary artifact churn.
    records, otherwise the hosts who actually appear. Never relabel a participant or host as
    a guest merely to satisfy navigation. The root `访谈人物` index column remains guest-only
    and uses `—` when the episode has no verified guest.
-5. Base an outline summary only on publisher material until the complete transcript exists.
+5. When adding `participants[].profile`, require `headline` and `checked_at: YYYY-MM-DD`.
+   `bio` is optional. In `affiliations`, require `organization`, allow optional `title`, and use
+   only `current` or `former` for `status`; in `education`, require `institution` and allow
+   optional `credential` and `field`. Lists may be omitted or empty when facts are unavailable.
+   Every profile fact must come from a source registered in the episode's `sources` or from an
+   explicit guest self-statement verified against the audio or a human-checked transcript.
+   Never infer profile facts from a publisher title or machine ASR. Treat `status: current` as
+   current only as of `checked_at`; omit the entire profile instead of keeping placeholders or
+   guessing missing facts.
+6. Base an outline summary only on publisher material until the complete transcript exists.
    Do not mark summary or transcript as reviewed without the corresponding review work.
-6. When selecting Qwen as the official transcript, preserve any existing Whisper raw,
+7. When selecting Qwen as the official transcript, preserve any existing Whisper raw,
    refined, and Markdown artifacts under `asr/whisper/`; never delete the previous baseline.
    Then copy the validated Qwen Markdown to the episode root and update the `transcript` and
    `asr_artifacts` metadata to point at Qwen.

@@ -25,6 +25,13 @@ participants:
   - id: wang-tao
     name: 王弢
     role: guest
+    profile:
+      headline: "深庭纪创始人兼 CEO"
+      affiliations:
+        - organization: "深庭纪"
+          title: "创始人兼 CEO"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

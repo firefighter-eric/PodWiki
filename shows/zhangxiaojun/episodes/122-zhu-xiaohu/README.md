@@ -24,6 +24,13 @@ participants:
   - id: zhu-xiaohu
     name: 朱啸虎
     role: guest
+    profile:
+      headline: "金沙江创投主管合伙人"
+      affiliations:
+        - organization: "金沙江创投"
+          title: "主管合伙人"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

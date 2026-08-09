@@ -26,6 +26,13 @@ participants:
   - id: zhou-mo
     name: 周默
     role: guest
+    profile:
+      headline: "FundaAI 创始人"
+      affiliations:
+        - organization: "FundaAI"
+          title: "创始人"
+          status: current
+      checked_at: "2026-08-08"
 sources:
   - platform: xiaoyuzhou
     kind: feed-item

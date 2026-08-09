@@ -1,8 +1,29 @@
+export type ParticipantAffiliation = {
+  organization: string;
+  title?: string;
+  status: "current" | "former";
+};
+
+export type ParticipantEducation = {
+  institution: string;
+  credential?: string;
+  field?: string;
+};
+
+export type ParticipantProfile = {
+  headline: string;
+  bio?: string;
+  affiliations: ParticipantAffiliation[];
+  education: ParticipantEducation[];
+  checkedAt: string;
+};
+
 export type Participant = {
   id?: string;
   name: string;
   role?: string;
   aliases?: string[];
+  profile?: ParticipantProfile;
 };
 
 export type SourceLink = {

@@ -21,6 +21,10 @@ participants:
   - id: xu-danfei
     name: 徐丹飞
     role: guest
+    profile:
+      headline: "机器人学者"
+      bio: "研究关注人类动作数据、行为克隆与机器人学习。"
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

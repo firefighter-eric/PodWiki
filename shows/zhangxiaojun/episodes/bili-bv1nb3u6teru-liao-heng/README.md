@@ -25,6 +25,13 @@ participants:
   - id: liao-heng
     name: 廖恒
     role: guest
+    profile:
+      headline: "华为 Fellow、半导体首席科学家"
+      affiliations:
+        - organization: "华为"
+          title: "Fellow、半导体首席科学家"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: bilibili
     kind: video

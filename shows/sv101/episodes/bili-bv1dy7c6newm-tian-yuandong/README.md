@@ -22,6 +22,16 @@ participants:
   - id: tian-yuandong
     name: 田渊栋
     role: guest
+    profile:
+      headline: "Recursive Superintelligence 联合创始人、前 Meta FAIR 研究总监"
+      affiliations:
+        - organization: "Recursive Superintelligence"
+          title: "联合创始人"
+          status: current
+        - organization: "Meta FAIR"
+          title: "研究总监"
+          status: former
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

@@ -25,6 +25,13 @@ participants:
   - id: chen-mian
     name: 陈冕
     role: guest
+    profile:
+      headline: "演语科技 Evoken 创始人"
+      affiliations:
+        - organization: "演语科技 Evoken"
+          title: "创始人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

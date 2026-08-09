@@ -1,11 +1,27 @@
-import type { EpisodeCard, SidebarEpisode } from "@/lib/types";
+import type { EpisodeCard, ShowSummary, SidebarEpisode } from "@/lib/types";
 
 export type SidebarScope = "all" | `show:${string}`;
+
+const sidebarShowTagLabels: Readonly<Record<string, string>> = {
+  zhangxiaojun: "张小珺",
+  sv101: "硅谷101",
+  svvector: "SV-Vector",
+  latetalk: "LateTalk",
+  luoyonghao: "十字路口",
+  whynottv: "WhynotTV",
+  yiqitietalk: "一起铁TALK",
+};
 
 type SidebarShowRoute = {
   id: string;
   href: string;
 };
+
+export function getSidebarShowTagLabel(
+  show: Pick<ShowSummary, "id" | "shortTitle">,
+): string {
+  return sidebarShowTagLabels[show.id] ?? show.shortTitle;
+}
 
 export function getSidebarCatalogScope(
   pathname: string,

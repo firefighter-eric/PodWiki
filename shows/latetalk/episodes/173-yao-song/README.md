@@ -27,6 +27,13 @@ participants:
   - id: yao-song
     name: 姚颂
     role: guest
+    profile:
+      headline: "正行创新创始人兼 CEO"
+      affiliations:
+        - organization: "正行创新"
+          title: "创始人兼 CEO"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

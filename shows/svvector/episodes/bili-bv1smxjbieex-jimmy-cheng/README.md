@@ -27,6 +27,16 @@ participants:
     role: guest
     aliases:
       - Jimmy Cheng
+    profile:
+      headline: "华美半导体协会副会长、新思科技技术战略中心负责人"
+      affiliations:
+        - organization: "华美半导体协会"
+          title: "副会长"
+          status: current
+        - organization: "Synopsys 新思科技"
+          title: "企业战略部技术战略中心负责人"
+          status: current
+      checked_at: "2026-08-08"
 sources:
   - platform: bilibili
     kind: video

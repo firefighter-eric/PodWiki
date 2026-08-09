@@ -9,22 +9,24 @@ import {
   markdownToHtml,
 } from "@/lib/markdown";
 import { getTranscriptHref } from "@/lib/reader-routes";
+import { getWebVisibleSummaryMarkdown } from "@/lib/summary-visibility";
 import type { Episode } from "@/lib/types";
 
 export async function SummaryView({ episode }: { episode: Episode }) {
-  const oneLine = getMarkdownSection(episode.summaryRaw, "一句话总结");
-  const whyRead = getMarkdownSection(episode.summaryRaw, "为什么值得听");
+  const visibleSummary = getWebVisibleSummaryMarkdown(episode.summaryRaw);
+  const oneLine = getMarkdownSection(visibleSummary, "一句话总结");
+  const whyRead = getMarkdownSection(visibleSummary, "为什么值得听");
   const whyReadItems = whyRead.split("\n").filter((line) => /^-\s+/u.test(line));
   const whyReadPreview = whyReadItems.length > 2 ? whyReadItems.slice(0, 2).join("\n") : whyRead;
-  const corePoints = getCorePoints(episode.summaryRaw);
-  const corePointTable = getCorePointTable(episode.summaryRaw);
+  const corePoints = getCorePoints(visibleSummary);
+  const corePointTable = getCorePointTable(visibleSummary);
   const highlightedPoint = corePoints.find((point) => point.title.includes("第一性原理")) ?? corePoints[0];
-  const targetTimestamp = getFirstTimestamp(highlightedPoint?.body ?? episode.summaryRaw);
+  const targetTimestamp = getFirstTimestamp(highlightedPoint?.body ?? visibleSummary);
   const targetSegment = targetTimestamp
     ? findNearestTranscriptSegment(episode.transcriptSegments, targetTimestamp)
     : undefined;
   const relatedSegments = findRelatedSegments(episode, targetTimestamp);
-  const extended = getExtendedSummary(episode.summaryRaw);
+  const extended = getExtendedSummary(visibleSummary);
   const [oneLineHtml, whyReadHtml, extendedHtml] = await Promise.all([
     markdownToHtml(oneLine, episode.href, episode.transcriptSegments),
     markdownToHtml(whyReadPreview, episode.href, episode.transcriptSegments),

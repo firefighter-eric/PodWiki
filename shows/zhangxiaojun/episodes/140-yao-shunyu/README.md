@@ -26,6 +26,20 @@ participants:
     aliases:
       - Shunyu Yao
     role: guest
+    profile:
+      headline: "Anthropic、Google DeepMind 前研究科学家"
+      bio: "早期研究理论物理，后来转向人工智能与模型研发。"
+      affiliations:
+        - organization: "Anthropic"
+          title: "研究科学家"
+          status: former
+        - organization: "Google DeepMind"
+          title: "研究科学家"
+          status: former
+      education:
+        - institution: "清华大学"
+        - institution: "斯坦福大学"
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

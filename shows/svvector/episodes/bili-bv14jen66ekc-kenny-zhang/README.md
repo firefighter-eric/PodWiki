@@ -26,6 +26,14 @@ participants:
   - id: kenny-zhang
     name: Kenny Zhang
     role: guest
+    profile:
+      headline: "Valliance 璞林资本首席投资官"
+      bio: "长期跟踪全球算力基建与云计算产业演进。"
+      affiliations:
+        - organization: "Valliance 璞林资本"
+          title: "首席投资官"
+          status: current
+      checked_at: "2026-08-08"
 sources:
   - platform: bilibili
     kind: video

@@ -25,6 +25,16 @@ participants:
   - id: sheng-ying
     name: 盛颖
     role: guest
+    profile:
+      headline: "RadixArk 联合创始人兼 CEO、SGLang 发起人"
+      affiliations:
+        - organization: "RadixArk"
+          title: "联合创始人兼 CEO、SGLang 发起人"
+          status: current
+        - organization: "xAI"
+          title: "推理团队负责人"
+          status: former
+      checked_at: "2026-08-07"
 sources:
   - platform: website
     kind: episode

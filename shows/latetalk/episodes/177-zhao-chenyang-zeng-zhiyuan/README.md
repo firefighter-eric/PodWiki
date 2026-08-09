@@ -27,9 +27,22 @@ participants:
   - id: zhao-chenyang
     name: 赵晨阳
     role: guest
+    profile:
+      headline: "RadixArk 创始成员、SGLang 核心开发者"
+      affiliations:
+        - organization: "RadixArk"
+          title: "创始成员、SGLang 核心开发者"
+          status: current
+      checked_at: "2026-08-07"
   - id: zeng-zhiyuan
     name: 曾致远
     role: guest
+    profile:
+      headline: "华盛顿大学博士生"
+      education:
+        - institution: "华盛顿大学"
+          credential: "博士在读"
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

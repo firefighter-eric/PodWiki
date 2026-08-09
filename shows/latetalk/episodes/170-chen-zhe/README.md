@@ -27,6 +27,13 @@ participants:
   - id: chen-zhe
     name: 陈哲
     role: guest
+    profile:
+      headline: "Alphaist Partners 创始合伙人"
+      affiliations:
+        - organization: "Alphaist Partners"
+          title: "创始合伙人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

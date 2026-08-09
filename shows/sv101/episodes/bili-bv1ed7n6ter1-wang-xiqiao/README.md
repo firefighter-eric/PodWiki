@@ -22,6 +22,13 @@ participants:
   - id: wang-xiqiao
     name: 王熙乔
     role: guest
+    profile:
+      headline: "探月学校创始人、校长"
+      affiliations:
+        - organization: "探月学校"
+          title: "创始人、校长"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

@@ -24,6 +24,13 @@ participants:
   - id: yan-junjie
     name: 闫俊杰
     role: guest
+    profile:
+      headline: "MiniMax 创始人"
+      affiliations:
+        - organization: "MiniMax"
+          title: "创始人"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: bilibili
     kind: video

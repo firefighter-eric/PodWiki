@@ -27,6 +27,13 @@ participants:
   - id: tian-yuandong
     name: 田渊栋
     role: guest
+    profile:
+      headline: "Recursive SuperIntelligence 联合创始人"
+      affiliations:
+        - organization: "Recursive SuperIntelligence"
+          title: "联合创始人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

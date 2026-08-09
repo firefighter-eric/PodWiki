@@ -22,6 +22,16 @@ participants:
   - id: li-mu
     name: 李沐
     role: guest
+    profile:
+      headline: "Boson AI 联合创始人、前亚马逊高级首席科学家"
+      affiliations:
+        - organization: "Boson AI"
+          title: "联合创始人"
+          status: current
+        - organization: "亚马逊"
+          title: "高级首席科学家"
+          status: former
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

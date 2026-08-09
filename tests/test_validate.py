@@ -22,6 +22,7 @@ from validate import (  # noqa: E402
     validate_episode_metadata_contract,
     validate_episode_navigation_title,
     validate_episode_translations,
+    validate_participant_profiles,
     validate_qwen_chain,
 )
 
@@ -760,6 +761,32 @@ class EpisodeMetadataContractTests(unittest.TestCase):
             self.assertTrue(publishable)
             self.assertTrue(any("summary.path is missing" in error for error in errors))
 
+    def test_participant_profile_validation_is_part_of_metadata_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(
+                root,
+                folder="001-profile",
+                episode_key="001-profile",
+            )
+            text = readme.read_text(encoding="utf-8").replace(
+                "sources:\n",
+                "participants:\n"
+                "  - id: guest\n"
+                "    profile:\n"
+                "      headline: \"\"\n"
+                "      checked_at: 2026-08-09\n"
+                "sources:\n",
+                1,
+            )
+            readme.write_text(text, encoding="utf-8")
+
+            _, errors = self.validate(root, readme)
+
+            self.assertTrue(
+                any("profile.headline must be a non-empty string" in e for e in errors)
+            )
+
     def test_unfinished_english_episode_may_lack_transcript_and_translation(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -936,6 +963,146 @@ class EpisodeMetadataContractTests(unittest.TestCase):
                     self.assertTrue(
                         any("one timestamped sentence" in error for error in invalid_errors)
                     )
+
+
+class ParticipantProfileValidationTests(unittest.TestCase):
+    @staticmethod
+    def validate(front_matter: str) -> list[str]:
+        errors: list[str] = []
+        validate_participant_profiles(
+            front_matter.splitlines(),
+            field_prefix="episode",
+            errors=errors,
+        )
+        return errors
+
+    def test_accepts_absent_minimal_full_and_empty_list_profiles(self) -> None:
+        errors = self.validate(
+            """participants:
+  - id: host
+    name: Host
+  - id: minimal-guest
+    profile:
+      headline: Researcher
+      checked_at: 2026-08-09
+  - id: full-guest
+    profile:
+      headline: Robotics researcher
+      bio: Works on general-purpose robots.
+      affiliations:
+        - organization: Physical Intelligence
+          title: Researcher
+          status: current
+        - organization: Example Lab
+          status: former
+      education:
+        - institution: Example University
+          credential: PhD
+          field: Computer Science
+      checked_at: 2024-02-29
+  - id: empty-lists
+    profile:
+      headline: Founder
+      affiliations: []
+      education: []
+      checked_at: 2026-08-09
+"""
+        )
+
+        self.assertEqual(errors, [])
+
+    def test_rejects_missing_and_empty_profile_scalars(self) -> None:
+        errors = self.validate(
+            """participants:
+  - id: guest
+    profile:
+      headline: ""
+      bio: null
+      checked_at: 2026-02-30
+"""
+        )
+
+        self.assertIn(
+            "episode participants[0].profile.headline must be a non-empty string",
+            errors,
+        )
+        self.assertIn(
+            "episode participants[0].profile.bio must be a non-empty string when present",
+            errors,
+        )
+        self.assertIn(
+            "episode participants[0].profile.checked_at must be a valid YYYY-MM-DD date",
+            errors,
+        )
+
+    def test_requires_profile_headline_and_checked_date(self) -> None:
+        errors = self.validate(
+            """participants:
+  - id: guest
+    profile:
+      affiliations: []
+"""
+        )
+
+        self.assertTrue(any("profile.headline" in error for error in errors))
+        self.assertTrue(any("profile.checked_at" in error for error in errors))
+
+    def test_rejects_non_list_profile_collections(self) -> None:
+        errors = self.validate(
+            """participants:
+  - id: guest
+    profile:
+      headline: Researcher
+      affiliations:
+        organization: Example Lab
+      education: {}
+      checked_at: 2026-08-09
+"""
+        )
+
+        self.assertEqual(
+            sum("profile.affiliations must be a YAML list" in e for e in errors),
+            1,
+        )
+        self.assertTrue(any("profile.education must be a YAML list" in e for e in errors))
+
+    def test_rejects_invalid_affiliation_and_education_items(self) -> None:
+        errors = self.validate(
+            """participants:
+  - id: guest
+    profile:
+      headline: Researcher
+      affiliations:
+        - organization: ""
+          status: active
+        - organization: Former Company
+      education:
+        - credential: PhD
+        - institution: Example University
+          field: ""
+      checked_at: 2026-08-09
+"""
+        )
+
+        self.assertTrue(any("affiliations[0].organization" in e for e in errors))
+        self.assertTrue(any("affiliations[0].status must be one of" in e for e in errors))
+        self.assertTrue(any("affiliations[1].status" in e for e in errors))
+        self.assertTrue(any("education[0].institution" in e for e in errors))
+        self.assertTrue(any("education[1].field" in e for e in errors))
+
+    def test_rejects_profile_not_attached_to_participant_item(self) -> None:
+        errors = self.validate(
+            """participants:
+    profile:
+      headline: Researcher
+      checked_at: 2026-08-09
+"""
+        )
+
+        self.assertEqual(
+            errors,
+            ["episode profile must be attached to a participants list item"],
+        )
 
 
 class ExistingMarkdownValidationTests(unittest.TestCase):

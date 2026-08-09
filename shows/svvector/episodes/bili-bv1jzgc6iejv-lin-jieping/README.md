@@ -26,6 +26,20 @@ participants:
   - id: lin-jieping
     name: 林杰屏
     role: guest
+    profile:
+      headline: "Lam Research 创始人、MultiBeam 创始人和董事长"
+      affiliations:
+        - organization: "Lam Research"
+          title: "创始人"
+          status: former
+        - organization: "MultiBeam"
+          title: "创始人和董事长"
+          status: current
+      education:
+        - institution: "麻省理工学院（MIT）"
+          credential: "博士"
+          field: "化学工程"
+      checked_at: "2026-08-08"
 sources:
   - platform: bilibili
     kind: video
