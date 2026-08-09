@@ -25,6 +25,16 @@ participants:
   - id: alan-du
     name: Alan Du
     role: guest
+    profile:
+      headline: "M12 投资合伙人、前 PayPal Ventures Partner"
+      affiliations:
+        - organization: "M12"
+          title: "投资合伙人"
+          status: current
+        - organization: "PayPal Ventures"
+          title: "Partner"
+          status: former
+      checked_at: "2026-08-08"
 sources:
   - platform: bilibili
     kind: video

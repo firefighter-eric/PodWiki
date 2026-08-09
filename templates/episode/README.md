@@ -16,7 +16,23 @@ catalog_keyword: "代表性关键词"
 published_at: "YYYY-MM-DDTHH:MM:SS+08:00"
 duration_ms: 0
 language: zh-CN
-participants: []
+participants:
+  - id: guest-id
+    name: 嘉宾姓名
+    aliases: []
+    role: guest
+    profile:
+      headline: "一句话背景"
+      bio: "可选的简短人物介绍。"
+      affiliations:
+        - organization: 机构名称
+          title: 职位
+          status: current
+      education:
+        - institution: 学校名称
+          credential: 学位
+          field: 专业或研究方向
+      checked_at: YYYY-MM-DD
 sources:
   - platform: bilibili
     kind: video

@@ -26,6 +26,14 @@ participants:
     aliases:
       - Kay Ke
     role: guest
+    profile:
+      headline: "Physical Intelligence 研究员"
+      bio: "从事强化学习研究，也是 Physical Intelligence 核心论文作者之一；科研之外从事小说写作。"
+      affiliations:
+        - organization: "Physical Intelligence"
+          title: "研究员"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

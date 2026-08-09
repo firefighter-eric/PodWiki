@@ -26,16 +26,12 @@ export function TranscriptView({ episode }: { episode: Episode }) {
         </div>
         <Link href={episode.href}>返回总结</Link>
       </div>
-      <p className="transcript-notice">
-        {bilingualTranscript ? (
-          <>
-            <strong>{translationStatus}</strong>
-            英文原稿由语音识别生成，中文译文按相同时间码逐行对齐；原稿与译稿均请结合音频复核。
-          </>
-        ) : (
-          <>当前文本由语音识别生成，尚未完成说话人标注与逐句人工校对。时间码仅用于阅读定位。</>
-        )}
-      </p>
+      {bilingualTranscript ? (
+        <p className="transcript-notice">
+          <strong>{translationStatus}</strong>
+          英文原稿由语音识别生成，中文译文按相同时间码逐行对齐；原稿与译稿均请结合音频复核。
+        </p>
+      ) : null}
       <div className={`transcript-lines${bilingualTranscript ? " bilingual-transcript-lines" : ""}`}>
         {bilingualTranscript ? bilingualTranscript.segments.map((segment) => (
           <p key={segment.id} id={segment.id} className="transcript-line bilingual-transcript-line">

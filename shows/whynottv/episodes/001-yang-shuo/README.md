@@ -21,6 +21,20 @@ participants:
   - id: yang-shuo
     name: 杨硕
     role: guest
+    profile:
+      headline: "妙动科技创始人、前特斯拉 Optimus 团队成员"
+      affiliations:
+        - organization: "妙动科技"
+          title: "创始人"
+          status: current
+        - organization: "特斯拉 Optimus 团队"
+          title: "机器人研发"
+          status: former
+      education:
+        - institution: "卡内基梅隆大学（CMU）"
+          credential: "博士"
+          field: "机器人学"
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

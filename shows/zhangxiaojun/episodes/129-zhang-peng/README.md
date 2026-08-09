@@ -24,6 +24,13 @@ participants:
   - id: zhang-peng
     name: 张鹏
     role: guest
+    profile:
+      headline: "智谱 CEO"
+      affiliations:
+        - organization: "智谱"
+          title: "CEO"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

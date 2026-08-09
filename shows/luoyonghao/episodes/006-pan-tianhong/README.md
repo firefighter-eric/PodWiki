@@ -28,6 +28,13 @@ participants:
       - Tim
       - 影视飓风TIM
     role: guest
+    profile:
+      headline: "影视飓风创始人"
+      affiliations:
+        - organization: "影视飓风"
+          title: "创始人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

@@ -4,6 +4,7 @@ import {
   getSidebarCatalogScope,
   getSidebarEpisodeAriaLabel,
   getSidebarEpisodes,
+  getSidebarShowTagLabel,
   getSidebarScopeShowId,
   retainSidebarScope,
   toSidebarEpisode,
@@ -22,6 +23,27 @@ const shows = [
 ] as const;
 
 describe("sidebar episode order", () => {
+  it("uses compact show tag labels while keeping an automatic fallback", () => {
+    const knownShows = [
+      ["zhangxiaojun", "张小珺商业访谈录", "张小珺"],
+      ["sv101", "硅谷101", "硅谷101"],
+      ["svvector", "硅谷坐标 SV-Vector", "SV-Vector"],
+      ["latetalk", "晚点聊 LateTalk", "LateTalk"],
+      ["luoyonghao", "罗永浩的十字路口", "十字路口"],
+      ["whynottv", "WhynotTV Podcast", "WhynotTV"],
+      ["yiqitietalk", "一起铁TALK", "一起铁TALK"],
+    ] as const;
+
+    for (const [id, shortTitle, expected] of knownShows) {
+      expect(getSidebarShowTagLabel({ id, shortTitle })).toBe(expected);
+    }
+
+    expect(getSidebarShowTagLabel({
+      id: "new-show",
+      shortTitle: "新播客",
+    })).toBe("新播客");
+  });
+
   it("keeps the global publication order instead of regrouping by show", () => {
     expect(getSidebarEpisodes(episodes).map((episode) => episode.id)).toEqual([
       "show-b-new",

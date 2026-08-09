@@ -6,6 +6,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
 import { getTranscriptHref } from "@/lib/reader-routes";
+import { getWebVisibleSummaryMarkdown } from "@/lib/summary-visibility";
 import type {
   BilingualTranscript,
   BilingualTranscriptSegment,
@@ -18,12 +19,49 @@ import type {
   TranscriptTranslationMetadata,
 } from "@/lib/types";
 
+const profileCheckedAtSchema = z.preprocess((value) => {
+  if (!(value instanceof Date)) return value;
+  const isoValue = value.toISOString();
+  return isoValue.endsWith("T00:00:00.000Z") ? isoValue.slice(0, 10) : value;
+}, z.iso.date());
+
+const participantAffiliationSchema = z
+  .object({
+    organization: z.string().min(1),
+    title: z.string().min(1).optional(),
+    status: z.enum(["current", "former"]),
+  })
+  .passthrough();
+
+const participantEducationSchema = z
+  .object({
+    institution: z.string().min(1),
+    credential: z.string().min(1).optional(),
+    field: z.string().min(1).optional(),
+  })
+  .passthrough();
+
+const participantProfileSchema = z
+  .object({
+    headline: z.string().min(1),
+    bio: z.string().min(1).optional(),
+    affiliations: z.array(participantAffiliationSchema).optional().default([]),
+    education: z.array(participantEducationSchema).optional().default([]),
+    checked_at: profileCheckedAtSchema,
+  })
+  .passthrough()
+  .transform(({ checked_at, ...profile }) => ({
+    ...profile,
+    checkedAt: checked_at,
+  }));
+
 const participantSchema = z
   .object({
     id: z.string().optional(),
     name: z.string(),
     role: z.string().optional(),
     aliases: z.array(z.string()).optional(),
+    profile: participantProfileSchema.optional(),
   })
   .passthrough();
 
@@ -947,6 +985,29 @@ function toSearchSegment(segment: TranscriptSegment): SearchSegmentDocument {
   };
 }
 
+function getParticipantSearchTerms(
+  participant: z.infer<typeof participantSchema>,
+): string[] {
+  const profile = participant.profile;
+  return [
+    participant.name,
+    ...(participant.aliases ?? []),
+    ...(profile ? [
+      profile.headline,
+      ...(profile.bio ? [profile.bio] : []),
+      ...profile.affiliations.flatMap((affiliation) => [
+        affiliation.organization,
+        ...(affiliation.title ? [affiliation.title] : []),
+      ]),
+      ...profile.education.flatMap((education) => [
+        education.institution,
+        ...(education.credential ? [education.credential] : []),
+        ...(education.field ? [education.field] : []),
+      ]),
+    ] : []),
+  ];
+}
+
 async function buildSearchDocuments(): Promise<SearchEpisodeDocument[]> {
   const { episodeEntries } = await loadCatalog();
 
@@ -968,12 +1029,10 @@ async function buildSearchDocuments(): Promise<SearchEpisodeDocument[]> {
       card.navigationTitle,
       card.catalogKeyword,
       card.showTitle,
-      ...searchAssets.participants.flatMap((participant) => [
-        participant.name,
-        ...(participant.aliases ?? []),
-      ]),
+      ...searchAssets.participants.flatMap(getParticipantSearchTerms),
     ].join(" ");
-    const summarySnippet = searchAssets.summaryRaw.replace(/[#*`>\[\]]/gu, "");
+    const visibleSummary = getWebVisibleSummaryMarkdown(searchAssets.summaryRaw);
+    const summarySnippet = visibleSummary.replace(/[#*`>\[\]]/gu, "");
 
     return {
       id: card.id,
@@ -982,7 +1041,7 @@ async function buildSearchDocuments(): Promise<SearchEpisodeDocument[]> {
       showTitle: card.showTitle,
       href: card.href,
       episodeHaystack: indexSearchText(episodeHaystack),
-      summaryNormalized: searchAssets.summaryRaw.toLocaleLowerCase("zh-CN"),
+      summaryNormalized: visibleSummary.toLocaleLowerCase("zh-CN"),
       summarySnippet: indexSearchText(summarySnippet),
       transcriptSegments: transcriptSegments.map(toSearchSegment),
       translationSegments: bilingualTranscript?.segments.map((segment) => ({

@@ -26,6 +26,19 @@ participants:
   - id: jiang-yunchen
     name: 江鋆晨
     role: guest
+    profile:
+      headline: "TensorMesh、LMCache 联合创始人，芝加哥大学计算机系副教授"
+      affiliations:
+        - organization: "TensorMesh"
+          title: "联合创始人兼 CEO"
+          status: current
+        - organization: "LMCache"
+          title: "联合创始人"
+          status: current
+        - organization: "芝加哥大学"
+          title: "计算机系副教授"
+          status: current
+      checked_at: "2026-08-08"
 sources:
   - platform: bilibili
     kind: video

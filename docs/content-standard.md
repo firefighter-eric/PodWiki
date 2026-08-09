@@ -68,6 +68,51 @@ raw、aligned、refined ASR 和最终 Markdown 都提交到 Git：JSON 用于复
 - 根索引与对应节目索引必须在每次新增或更新单集后同时更新。
 - 总结与逐字稿列直接链接到各自的本地 Markdown 文件。
 
+### 参与者与嘉宾背景
+
+`participants` 保存参与者在本集中的稳定身份、姓名、别名和角色。嘉宾使用
+`role: guest`；需要展示学历、公司、职位或简历时，在对应参与者下增加可选的
+`profile`，不要把这些背景拼进 `name`、`role` 或 `navigation_title`。没有足够
+依据时省略 `profile`，不得用空占位或推测内容补齐。
+
+```yaml
+participants:
+  - id: guest-id
+    name: 嘉宾姓名
+    aliases: []
+    role: guest
+    profile:
+      headline: "一句话背景"
+      bio: "可选的简短人物介绍。"
+      affiliations:
+        - organization: 机构名称
+          title: 职位
+          status: current
+      education:
+        - institution: 学校名称
+          credential: 学位
+          field: 专业或研究方向
+      checked_at: YYYY-MM-DD
+```
+
+`profile` 存在时，`headline` 和 `checked_at` 必填。`headline` 是面向读者的一行
+背景摘要，只能概括同一份 profile 中已有依据的事实；`bio` 是可选短介绍。
+`affiliations` 和 `education` 是可选列表，也可以为空：
+
+- `affiliations[].organization` 必填，`title` 可选，`status` 只能是 `current`
+  或 `former`；`current` 只表示截至 `profile.checked_at` 仍为当前关系，不表示
+  读者访问页面时仍然有效。
+- `education[].institution` 必填，`credential` 和 `field` 可选；不确定学位或
+  专业时省略对应字段，不能用相近概念代填。
+- `checked_at` 使用 `YYYY-MM-DD`，表示整份 profile 最近一次完成来源核对的日期。
+  背景变化后应更新字段和日期，不能只刷新日期而不重新核实内容。
+
+profile 中每项事实必须来自本集 `sources` 已登记的来源，或来自嘉宾明确自述。
+使用额外的发布者人物介绍、机构主页等材料时，先把其规范 URL 登记到 `sources`；
+使用嘉宾自述时，必须回听音频或使用已经人工核对的逐字稿确认原意。发布者标题和
+机器 ASR 只能作为检索线索，不能单独证明学历、任职、公司关系或 `current` 状态，
+也不得根据行业常识、姓名或上下文猜测。
+
 ## 2. 标识符与路径
 
 ### 节目 ID

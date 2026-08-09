@@ -24,6 +24,13 @@ participants:
   - id: ji-yichao
     name: 季逸超
     role: guest
+    profile:
+      headline: "Manus 联合创始人兼首席科学家"
+      affiliations:
+        - organization: "Manus"
+          title: "联合创始人兼首席科学家"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

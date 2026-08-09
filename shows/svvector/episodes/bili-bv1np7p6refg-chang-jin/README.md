@@ -26,6 +26,16 @@ participants:
   - id: chang-jin
     name: 常劲
     role: guest
+    profile:
+      headline: "喜马拉雅资本副董事长兼 COO、UCACF 创始人兼董事会主席"
+      affiliations:
+        - organization: "喜马拉雅资本"
+          title: "副董事长兼 COO"
+          status: current
+        - organization: "UCACF"
+          title: "创始人兼董事会主席"
+          status: current
+      checked_at: "2026-08-08"
 sources:
   - platform: bilibili
     kind: video

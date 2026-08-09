@@ -27,6 +27,13 @@ participants:
   - id: cao-xudong
     name: 曹旭东
     role: guest
+    profile:
+      headline: "Momenta 创始人"
+      affiliations:
+        - organization: "Momenta"
+          title: "创始人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

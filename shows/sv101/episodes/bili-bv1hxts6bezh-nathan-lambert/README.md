@@ -23,6 +23,13 @@ participants:
   - id: nathan-lambert
     name: Nathan Lambert
     role: guest
+    profile:
+      headline: "艾伦人工智能研究所（Ai2）后训练负责人"
+      affiliations:
+        - organization: "艾伦人工智能研究所（Ai2）"
+          title: "后训练负责人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

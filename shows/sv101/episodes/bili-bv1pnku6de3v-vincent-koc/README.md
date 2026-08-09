@@ -23,6 +23,13 @@ participants:
   - id: vincent-koc
     name: Vincent Koc
     role: guest
+    profile:
+      headline: "OpenClaw 基金会首席架构师"
+      affiliations:
+        - organization: "OpenClaw 基金会"
+          title: "首席架构师"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

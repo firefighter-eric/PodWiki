@@ -26,6 +26,13 @@ participants:
     aliases:
       - Lewis Hong
     role: guest
+    profile:
+      headline: "SpaceX 前火箭首席制造工程师"
+      affiliations:
+        - organization: "SpaceX"
+          title: "火箭首席制造工程师"
+          status: former
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

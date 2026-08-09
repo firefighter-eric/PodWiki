@@ -22,6 +22,16 @@ participants:
   - id: andrew-dai
     name: Andrew Dai
     role: guest
+    profile:
+      headline: "Elorian AI 联合创始人兼 CEO、前 Google DeepMind 研究总监"
+      affiliations:
+        - organization: "Elorian AI"
+          title: "联合创始人兼 CEO"
+          status: current
+        - organization: "Google DeepMind"
+          title: "研究总监"
+          status: former
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

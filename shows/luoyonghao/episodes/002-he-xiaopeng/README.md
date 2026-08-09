@@ -25,6 +25,16 @@ participants:
   - id: he-xiaopeng
     name: 何小鹏
     role: guest
+    profile:
+      headline: "小鹏汽车董事长、UC 优视联合创始人"
+      affiliations:
+        - organization: "小鹏汽车"
+          title: "董事长"
+          status: current
+        - organization: "UC 优视"
+          title: "联合创始人"
+          status: former
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

@@ -26,6 +26,13 @@ participants:
   - id: huang-dongxu
     name: 黄东旭
     role: guest
+    profile:
+      headline: "PingCAP 联合创始人兼 CTO、数据库专家"
+      affiliations:
+        - organization: "PingCAP"
+          title: "联合创始人兼 CTO"
+          status: current
+      checked_at: "2026-08-08"
 sources:
   - platform: xiaoyuzhou
     kind: feed-item

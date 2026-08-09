@@ -24,6 +24,13 @@ participants:
   - id: luo-fuli
     name: 罗福莉
     role: guest
+    profile:
+      headline: "小米大模型团队负责人"
+      affiliations:
+        - organization: "小米"
+          title: "大模型团队负责人"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

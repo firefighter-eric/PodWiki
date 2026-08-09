@@ -24,6 +24,13 @@ participants:
   - id: yang-zhilin
     name: 杨植麟
     role: guest
+    profile:
+      headline: "月之暗面创始人"
+      affiliations:
+        - organization: "月之暗面"
+          title: "创始人"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

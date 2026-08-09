@@ -24,6 +24,13 @@ participants:
     aliases:
       - Kiwi
     role: guest
+    profile:
+      headline: "Ailoha! 创始人"
+      affiliations:
+        - organization: "Ailoha!"
+          title: "创始人"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

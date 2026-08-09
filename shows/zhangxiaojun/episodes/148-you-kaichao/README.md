@@ -24,6 +24,13 @@ participants:
   - id: you-kaichao
     name: 游凯超
     role: guest
+    profile:
+      headline: "Inferact 联合创始人兼首席科学家"
+      affiliations:
+        - organization: "Inferact"
+          title: "联合创始人兼首席科学家"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

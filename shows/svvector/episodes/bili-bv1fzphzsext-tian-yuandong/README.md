@@ -25,6 +25,18 @@ participants:
   - id: tian-yuandong
     name: 田渊栋
     role: guest
+    profile:
+      headline: "前 Meta FAIR 研究总监、人工智能研究者"
+      bio: "发布者材料称其近期以联合创始人身份开始创业，但未给出公司名称。"
+      affiliations:
+        - organization: "Meta FAIR"
+          title: "研究总监"
+          status: former
+      education:
+        - institution: "卡内基梅隆大学（CMU）"
+          credential: "博士"
+          field: "机器人学"
+      checked_at: "2026-08-08"
 sources:
   - platform: bilibili
     kind: video

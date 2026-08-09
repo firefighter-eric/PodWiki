@@ -25,12 +25,25 @@ participants:
   - id: wang-guangrun
     name: 王广润
     role: guest
+    profile:
+      headline: "X-Era Lab 首席科学家"
+      affiliations:
+        - organization: "X-Era Lab"
+          title: "首席科学家"
+          status: current
+      checked_at: "2026-08-07"
   - id: pu-tao
     name: 蒲韬
     role: guest
+    profile:
+      headline: "研发总监"
+      checked_at: "2026-08-07"
   - id: zhong-liruo
     name: 仲黎若
     role: guest
+    profile:
+      headline: "总裁"
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

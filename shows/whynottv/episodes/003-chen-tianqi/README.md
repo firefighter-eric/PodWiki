@@ -24,6 +24,18 @@ participants:
   - id: chen-tianqi
     name: 陈天奇
     role: guest
+    profile:
+      headline: "机器学习系统研究者、卡内基梅隆大学助理教授"
+      affiliations:
+        - organization: "卡内基梅隆大学"
+          title: "助理教授"
+          status: current
+      education:
+        - institution: "上海交通大学"
+          field: "ACM 班"
+        - institution: "华盛顿大学"
+          credential: "博士"
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

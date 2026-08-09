@@ -28,6 +28,17 @@ participants:
     role: guest
     aliases:
       - Ryan Yu
+    profile:
+      headline: "TeraHop 营销副总裁、中华光电学会前主席"
+      bio: "发布者介绍其拥有北京大学与宾夕法尼亚大学固体物理博士背景。"
+      affiliations:
+        - organization: "TeraHop"
+          title: "营销副总裁"
+          status: current
+        - organization: "中华光电学会"
+          title: "主席"
+          status: former
+      checked_at: "2026-08-08"
 sources:
   - platform: xiaoyuzhou
     kind: feed-item

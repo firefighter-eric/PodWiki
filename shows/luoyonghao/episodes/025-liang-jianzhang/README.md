@@ -24,6 +24,13 @@ participants:
   - id: liang-jianzhang
     name: 梁建章
     role: guest
+    profile:
+      headline: "携程联合创始人、人口经济学研究者"
+      affiliations:
+        - organization: "携程"
+          title: "联合创始人"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: bilibili
     kind: video

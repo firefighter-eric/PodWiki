@@ -21,6 +21,12 @@ participants:
   - id: weng-jiayi
     name: 翁家翌
     role: guest
+    profile:
+      headline: "Tianshou 开源实践、CMU 求学与 OpenAI 工作经历"
+      bio: "发布者材料围绕其强化学习、后训练基础设施和开源实践经历展开。"
+      education:
+        - institution: "卡内基梅隆大学（CMU）"
+      checked_at: "2026-08-06"
 sources:
   - platform: bilibili
     kind: video

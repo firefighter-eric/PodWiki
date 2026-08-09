@@ -24,6 +24,16 @@ participants:
   - id: yin-qi
     name: 印奇
     role: guest
+    profile:
+      headline: "阶跃星辰董事长、千里科技董事长"
+      affiliations:
+        - organization: "阶跃星辰"
+          title: "董事长"
+          status: current
+        - organization: "千里科技"
+          title: "董事长"
+          status: current
+      checked_at: "2026-08-06"
 sources:
   - platform: rss
     kind: feed-item

@@ -21,6 +21,13 @@ participants:
   - id: hu-yuanming
     name: 胡渊鸣
     role: guest
+    profile:
+      headline: "Meshy AI 创始人兼 CEO"
+      affiliations:
+        - organization: "Meshy AI"
+          title: "创始人兼 CEO"
+          status: current
+      checked_at: "2026-08-07"
 sources:
   - platform: bilibili
     kind: video

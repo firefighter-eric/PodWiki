@@ -80,6 +80,19 @@ export function EpisodeRouteLoading() {
                 <Skeleton />
               </div>
             </header>
+            <section className="route-loading-guest-profile">
+              <div className="route-loading-guest-row">
+                <div className="route-loading-guest-identity">
+                  <Skeleton className="route-skeleton-guest-name" />
+                  <Skeleton className="route-skeleton-copy route-skeleton-copy-medium" />
+                </div>
+                <div className="route-loading-guest-details">
+                  <Skeleton className="route-skeleton-copy route-skeleton-copy-long" />
+                  <Skeleton className="route-skeleton-copy route-skeleton-copy-medium" />
+                  <Skeleton className="route-skeleton-copy route-skeleton-copy-short" />
+                </div>
+              </div>
+            </section>
             <section className="route-loading-article">
               {articleRows.map((length, index) => (
                 <div className="route-loading-paragraph" key={`${length}-${index}`}>
