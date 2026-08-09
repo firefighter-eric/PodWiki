@@ -305,6 +305,18 @@ engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B` �
 剩余 chain 必须至少两倍长、全部 pair 在 250 ms 内，并与其他 chain 形成严格唯一映射。最终按原排序选出的 anchor 仍必须来自 tight chain，
 所有 pair 对 resulting cut 一致。产物必须逐项记录 diagonal offset、裁前/裁后范围、时间差统计、anchor pair 和 cut；不能用模糊字符串去重或一般编辑距离扩大该例外。
 
+另一个独立、同样失败关闭的例外是
+`zero-duration-right-indel-weak-bridge-v1`，仅用于实证中的右侧零时长单字插入：候选必须恰好形成 3 条 run；两条主链各至少 17 字、全部 pair 在 250 ms 内且严格有序，
+左索引在 junction 处相邻，右索引只跳过 1 个清洗后恰为 1 字的 item。该 item 的时长最多 1 ms，而且其 start/end、两条主链左右两份对齐在 junction 的相邻 end/start
+必须全部在 1 ms 内重合。第三条弱链必须恰为 3 字，左范围只能由前主链最后 1 字加后主链最初 2 字组成，右范围必须完整位于前主链内，且每个 pair 都松散到超过 400 ms；
+弱链每个 left index 与每个 right index 还必须分别已被主链中的不同 tight pair 覆盖，
+逐 pair 相比两侧主映射的最小时间劣势都至少 250 ms。删除弱链后必须只剩唯一单调映射，原排序选出的 anchor 必须来自主链；两条主链对 resulting cut 全部一致，而弱链在该 cut 下确实冲突。
+产物不持久化可独立伪造的派生 delta 或 run 摘要，而是保存 seam 搜索窗及其两侧各一个邻项组成的 bounded `candidate_proof`；每个 item 记录 side、全局 item index、
+清洗后单字、在 `decoded_text` 清洗字符序列中的 span、start 和 end。raw validator 先逐项绑定字符与 decode，再只从 proof 重建三条 run、所有 delta/优势、junction、anchor 和 cut；
+aligned validator 还把 proof 中最终 owned 的每个 index/text/time 逐项绑定正式 alignment。非零时长、左侧或多 item indel、4 字弱链、部分覆盖、额外 run、proof 缺项或任何无法唯一分解的近邻形状一律不适用。
+
+其后的统一例外 `single-axis-dominated-weak-runs-v1` 只在 repeated-token、上述 zero-duration repair 和原有 ownership-cut guard 都不能解决歧义时尝试，并复用同一 bounded `candidate_proof`，不信任持久化的 run 或 delta 摘要。dominance 与 edge repair 后必须有至少两条互不交叉、严格有序且全部 pair 在 250 ms 内的 tight backbone；每条待删除弱链至少 3 字且每个 pair 都松散到超过 400 ms，必须由同一条至少两倍长的 tight chain 在一侧逐 item 完整覆盖，每项时间优势至少 250 ms。弱链另一侧未被所有 tight chains 覆盖的 index 最多连续 2 项，并须严格夹在相邻 backbone 范围之间。所有在原始快照中合格的弱链必须原子删除，禁止级联或挑选子集；删除后映射必须唯一单调，正常最近 anchor 必须来自 tight backbone，且只有一个 ownership-consistent cut。raw validator 从 proof 重算完整 dominance/edge/atomic-drop/anchor/cut 流程；aligned validator继续逐项绑定最终 owned proof。任一 proof 篡改、覆盖缺口、边缘 gap、tie、残留冲突或更早 repair 可适用时均失败关闭。
+
 标准 3 字 anchor、严格 2 字 anchor 和 aligned-gap 全部无解时，worker 还可识别
 `exhausted-side-context-anchor`，但当前只允许左候选在 seam 前至少 15 秒、且至少占该 ownership core 的 15%（上限 27 秒）时明确耗尽；右候选还必须在默认 seam±3 秒窗口两侧各至少覆盖 3 字且有 item 跨 seam。
 左侧末端附近 ±3 秒必须只有一条至少 3 字、全部 pair 在 250 ms 内的原始 exact chain；完整 shared context 只用来收集反证，所有可靠 pair 都必须与该 handoff cut 一致，

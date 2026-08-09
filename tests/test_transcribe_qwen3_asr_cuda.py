@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import copy
 import contextlib
+import hashlib
 import io
 import sys
 import tempfile
@@ -225,6 +226,208 @@ def observed_right_extra_indel_runs(
         )
         for run in runs
     ]
+
+
+def observed_zero_duration_right_indel_bridge_items(
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    """Return the real episode-18 seam-480 candidate shape and indices."""
+
+    earlier_text = "因为刚才会长也问了一个问题说他很也说"
+    later_text = "他很喜欢就是我很好奇啊这个从我认识"
+    left_midpoints = [
+        477.16,
+        477.24,
+        477.40,
+        477.52,
+        477.64,
+        477.80,
+        477.92,
+        478.04,
+        478.20,
+        478.28,
+        478.40,
+        478.48,
+        478.60,
+        478.80,
+        479.24,
+        479.36,
+        479.56,
+        479.76,
+        479.92,
+        480.04,
+        480.20,
+        480.36,
+        480.56,
+        480.64,
+        480.80,
+        481.00,
+        481.20,
+        481.40,
+        481.52,
+        481.60,
+        481.68,
+        482.12,
+        482.32,
+        482.48,
+        482.76,
+    ]
+    right_midpoints = [
+        477.16,
+        477.28,
+        477.40,
+        477.52,
+        477.64,
+        477.80,
+        477.92,
+        478.04,
+        478.20,
+        478.28,
+        478.40,
+        478.48,
+        478.60,
+        478.80,
+        479.24,
+        479.36,
+        479.56,
+        479.76,
+        479.88,
+        479.92,
+        480.04,
+        480.20,
+        480.36,
+        480.56,
+        480.64,
+        480.80,
+        481.00,
+        481.20,
+        481.40,
+        481.52,
+        481.60,
+        481.68,
+        482.12,
+        482.32,
+        482.48,
+        482.80,
+    ]
+    left_core = alignment_items_at_midpoints(
+        earlier_text + later_text,
+        left_midpoints,
+    )
+    right_core = alignment_items_at_midpoints(
+        earlier_text + "了" + later_text,
+        right_midpoints,
+    )
+    left_core[17] = {"text": "说", "start": 479.64, "end": 479.88}
+    left_core[18] = {"text": "他", "start": 479.88, "end": 479.96}
+    right_core[17] = {"text": "说", "start": 479.64, "end": 479.88}
+    right_core[18] = {"text": "了", "start": 479.88, "end": 479.88}
+    right_core[19] = {"text": "他", "start": 479.88, "end": 479.96}
+    left_prefix = [
+            {"text": "左", "start": 470.0, "end": 470.001}
+            for _ in range(319)
+        ]
+    left_prefix[-2] = {"text": "么", "start": 476.76, "end": 476.84}
+    left_prefix[-1] = {"text": "快", "start": 476.92, "end": 477.08}
+    right_prefix = [
+            {"text": "右", "start": 470.0, "end": 470.001}
+            for _ in range(12)
+        ]
+    right_prefix[-1] = {"text": "快", "start": 476.84, "end": 477.08}
+    suffix = {"text": "知", "start": 483.16, "end": 483.32}
+    return (
+        left_prefix + left_core + [copy.deepcopy(suffix)],
+        right_prefix + right_core + [copy.deepcopy(suffix)],
+    )
+
+
+def observed_single_axis_weak_run_items(
+    case: str,
+) -> tuple[
+    list[dict[str, object]],
+    list[dict[str, object]],
+    float,
+    tuple[int, int],
+]:
+    """Return compact midpoint-exact fixtures for the four observed seams."""
+
+    fixtures = {
+        "5": (
+            1560.0,
+            627,
+            "里算不算敏感但对我来说不算敏感我是八月底到期的嘛八月底到期然后他有三个月的你不能",
+            [-2.96, -2.84, -2.72, -2.64, -2.52, -2.36, -2.2, -2.04, -1.92, -1.84, -1.72, -1.6, -1.48, -1.36, -1.24, -0.84, -0.8, -0.68, -0.52, -0.36, -0.2, 0.0, 0.16, 0.24, 0.44, 0.52, 0.52, 0.77, 0.81, 0.88, 0.96, 1.04, 1.12, 1.28, 1.48, 1.64, 1.8, 2.36, 2.56, 2.8],
+            15,
+            "里算不算敏感但对我来说不算敏感我是八月底到的嘛八月底到既然他有三个月的你不能",
+            [-2.96, -2.84, -2.72, -2.64, -2.52, -2.36, -2.2, -2.04, -1.92, -1.84, -1.72, -1.6, -1.52, -1.36, -1.24, -0.88, -0.8, -0.68, -0.52, -0.36, -0.2, -0.08, 0.2, 0.36, 0.48, 0.56, 0.64, 0.76, 0.92, 1.04, 1.12, 1.28, 1.48, 1.64, 1.8, 2.36, 2.56, 2.8],
+            (649, 36),
+        ),
+        "12": (
+            6000.0,
+            648,
+            "你还要在在后面你要把一些该拿的成就你还成绩你还要拿下来我觉得同样吧这件事情同",
+            [-2.92, -2.76, -2.64, -2.4, -1.96, -1.8, -1.64, -1.52, -1.4, -1.24, -1.12, -1.04, -0.88, -0.72, -0.64, -0.52, -0.36, -0.24, -0.16, 0.0, 0.16, 0.24, 0.36, 0.48, 0.64, 0.76, 0.96, 1.24, 1.4, 1.64, 1.96, 2.12, 2.24, 2.32, 2.44, 2.6, 2.76, 2.92],
+            11,
+            "你还要在在后面你要把一些该拿的成绩你成绩你还要拿下来我觉得同样吧这件事情同样",
+            [-2.92, -2.76, -2.64, -2.48, -1.96, -1.8, -1.68, -1.52, -1.4, -1.24, -1.16, -1.08, -0.92, -0.72, -0.64, -0.52, -0.4, -0.24, 0.0, 0.12, 0.24, 0.36, 0.48, 0.64, 0.76, 0.96, 1.24, 1.4, 1.52, 1.96, 2.12, 2.24, 2.32, 2.44, 2.6, 2.72, 2.88, 3.0],
+            (668, 30),
+        ),
+        "13": (
+            2160.0,
+            552,
+            "嗯前两年年赞助费没那么多是吧没那么那退费呢退费拿到了吗没有啊",
+            [-2.68, -2.28, -2.16, -2.04, -1.6, -0.96, -0.88, -0.8, -0.68, -0.56, -0.52, -0.36, -0.24, -0.16, 0.12, 0.32, 0.4, 0.72, 1.2, 1.4, 1.52, 1.64, 1.84, 1.96, 2.08, 2.12, 2.24, 2.56, 2.72, 2.8],
+            9,
+            "嗯前两年赞助费没那么多是吧没那么多那退费呢退费拿到了吗没有啊",
+            [-2.64, -2.28, -2.16, -2.04, -0.96, -0.88, -0.8, -0.68, -0.56, -0.48, -0.36, -0.24, -0.16, 0.12, 0.32, 0.4, 0.48, 0.76, 1.2, 1.36, 1.48, 1.64, 1.8, 1.96, 2.08, 2.16, 2.24, 2.56, 2.72, 2.8],
+            (566, 22),
+        ),
+        "14": (
+            5400.0,
+            513,
+            "比如说情绪比较低落的低落的时候他会安慰我然后呢在我身",
+            [-2.44, -2.32, -2.04, -1.6, -1.4, -1.28, -1.16, -0.92, -0.76, -0.64, -0.12, 0.04, 0.16, 0.36, 0.64, 0.92, 1.04, 1.24, 1.44, 1.6, 2.16, 2.36, 2.52, 2.68, 2.84, 3.0],
+            6,
+            "比如说情绪比较低落的时低落的时候他会安慰我然后呢在我身",
+            [-2.48, -2.36, -2.12, -1.6, -1.4, -1.28, -1.16, -0.92, -0.76, -0.64, -0.52, -0.12, 0.04, 0.16, 0.36, 0.64, 0.92, 1.04, 1.24, 1.4, 1.68, 2.16, 2.36, 2.52, 2.68, 2.84, 3.0],
+            (524, 18),
+        ),
+    }
+    (
+        seam,
+        left_start,
+        left_text,
+        left_offsets,
+        right_start,
+        right_text,
+        right_offsets,
+        cut,
+    ) = fixtures[case]
+
+    def side_items(
+        start_index: int, text: str, offsets: list[float]
+    ) -> list[dict[str, object]]:
+        prefix = [
+            {"text": "前", "start": seam - 5.0, "end": seam - 4.999}
+            for _ in range(start_index)
+        ]
+        prefix[-1] = {
+            "text": "界",
+            "start": seam - 3.22,
+            "end": seam - 3.18,
+        }
+        candidate = alignment_items_at_midpoints(
+            text, [seam + offset for offset in offsets]
+        )
+        return prefix + candidate + [
+            {"text": "界", "start": seam + 3.18, "end": seam + 3.22}
+        ]
+
+    return (
+        side_items(left_start, left_text, left_offsets),
+        side_items(right_start, right_text, right_offsets),
+        seam,
+        cut,
+    )
 
 
 def left_exhausted_seam_items(
@@ -957,6 +1160,677 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
                     )
                 )
 
+    def test_repairs_observed_zero_duration_right_indel_weak_bridge(
+        self,
+    ) -> None:
+        left, right = observed_zero_duration_right_indel_bridge_items()
+
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=480.0,
+            shared_start=475.0,
+            shared_end=485.0,
+        )
+
+        self.assertEqual((left_stop, right_start), (338, 32))
+        self.assertEqual(
+            "".join(str(item["text"]) for item in left[319:left_stop])
+            + "".join(str(item["text"]) for item in right[right_start:48]),
+            "因为刚才会长也问了一个问题说他很也说"
+            "他很喜欢就是我很好奇啊这个从我认识",
+        )
+        self.assertEqual(record["anchor_text"], "很")
+        self.assertEqual(record["anchor_midpoint_seconds"], 480.04)
+        self.assertEqual(record["anchor_run_characters"], 17)
+        self.assertEqual(
+            record["ambiguity_resolution"],
+            cuda_worker.ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION,
+        )
+        repair = record["match_run_repair"]
+        self.assertEqual(
+            set(repair),
+            {
+                "method",
+                "indel_side",
+                "candidate_proof",
+                "selected_anchor_source",
+                "selected_anchor_pair",
+                "resulting_cut",
+            },
+        )
+        self.assertEqual(
+            repair["resulting_cut"],
+            {"left_stop": 338, "right_start": 32},
+        )
+        proof = repair["candidate_proof"]
+        self.assertEqual(proof["window_seconds"], [477.0, 483.0])
+        inserted = next(
+            item
+            for item in proof["right_items"]
+            if item["global_index"] == 30
+        )
+        self.assertEqual(
+            inserted,
+            {
+                "side": "right",
+                "global_index": 30,
+                "decoded_character_span": [30, 31],
+                "cleaned_text": "了",
+                "start_seconds": 479.88,
+                "end_seconds": 479.88,
+            },
+        )
+        cuda_worker._validate_zero_duration_right_indel_candidate_proof(
+            record,
+            index=7,
+            left_segment={
+                "decode_start": 475.0,
+                "decode_end": 485.0,
+                "decoded_text": "".join(str(item["text"]) for item in left),
+            },
+            right_segment={
+                "decode_start": 475.0,
+                "decode_end": 485.0,
+                "decoded_text": "".join(str(item["text"]) for item in right),
+            },
+        )
+
+    def test_zero_duration_right_indel_bridge_rejects_nearby_shapes(
+        self,
+    ) -> None:
+        def reliable_shape(
+            left: list[dict[str, object]],
+            right: list[dict[str, object]],
+        ) -> tuple[
+            list[tuple[int, dict[str, object]]],
+            list[tuple[int, dict[str, object]]],
+            list[tuple[list[tuple[int, int]], int, float]],
+        ]:
+            left_overlap = [
+                (item_index, item)
+                for item_index, item in enumerate(left)
+                if 477.0
+                <= cuda_worker.alignment_item_midpoint(item)
+                <= 483.0
+            ]
+            right_overlap = [
+                (item_index, item)
+                for item_index, item in enumerate(right)
+                if 477.0
+                <= cuda_worker.alignment_item_midpoint(item)
+                <= 483.0
+            ]
+            runs = []
+            for run in cuda_worker._maximal_exact_match_runs(
+                left_overlap,
+                right_overlap,
+                tolerance_seconds=cuda_worker.SEAM_MATCH_TOLERANCE_SECONDS,
+            ):
+                characters = cuda_worker._match_run_characters(run, left_overlap)
+                if characters < cuda_worker.MIN_SEAM_ANCHOR_RUN_CHARACTERS:
+                    continue
+                runs.append(
+                    (
+                        run,
+                        characters,
+                        cuda_worker._match_run_max_pair_delta(
+                            run,
+                            left_overlap,
+                            right_overlap,
+                        ),
+                    )
+                )
+            return left_overlap, right_overlap, runs
+
+        baseline_left, baseline_right = (
+            observed_zero_duration_right_indel_bridge_items()
+        )
+        left_overlap, right_overlap, baseline_runs = reliable_shape(
+            baseline_left,
+            baseline_right,
+        )
+        self.assertIsNotNone(
+            cuda_worker._repair_zero_duration_right_indel_weak_bridge(
+                baseline_runs,
+                left_overlap,
+                right_overlap,
+            )
+        )
+
+        nonzero_left = copy.deepcopy(baseline_left)
+        nonzero_right = copy.deepcopy(baseline_right)
+        nonzero_right[30]["end"] = 479.89
+        nonzero_shape = reliable_shape(nonzero_left, nonzero_right)
+
+        detached_left = copy.deepcopy(baseline_left)
+        detached_right = copy.deepcopy(baseline_right)
+        detached_right[30]["start"] = 479.90
+        detached_right[30]["end"] = 479.90
+        detached_shape = reliable_shape(detached_left, detached_right)
+
+        low_margin_left = copy.deepcopy(baseline_left)
+        low_margin_right = copy.deepcopy(baseline_right)
+        for items, item_index in (
+            (low_margin_left, 338),
+            (low_margin_right, 32),
+        ):
+            items[item_index] = {
+                **items[item_index],
+                "start": 479.54,
+                "end": 479.58,
+            }
+        low_margin_shape = reliable_shape(low_margin_left, low_margin_right)
+
+        weak_index = next(
+            run_index
+            for run_index, (_, characters, _) in enumerate(baseline_runs)
+            if characters == 3
+        )
+        weak_run, _, weak_delta = baseline_runs[weak_index]
+        four_character_runs = copy.deepcopy(baseline_runs)
+        four_character_runs[weak_index] = (
+            [*weak_run, (weak_run[-1][0] + 1, weak_run[-1][1] + 1)],
+            4,
+            weak_delta,
+        )
+
+        uncovered_left_overlap = copy.deepcopy(left_overlap)
+        uncovered_start = len(uncovered_left_overlap)
+        for offset, (text, midpoint) in enumerate(
+            zip("说他很", [480.72, 480.84, 480.96], strict=True)
+        ):
+            uncovered_left_overlap.append(
+                (
+                    354 + offset,
+                    {
+                        "text": text,
+                        "start": midpoint - 0.02,
+                        "end": midpoint + 0.02,
+                    },
+                )
+            )
+        uncovered_runs = copy.deepcopy(baseline_runs)
+        uncovered_runs[weak_index] = (
+            [
+                (uncovered_start + offset, weak_run[offset][1])
+                for offset in range(3)
+            ],
+            3,
+            1.92,
+        )
+
+        extra_runs = [*copy.deepcopy(baseline_runs), baseline_runs[0]]
+        cases = [
+            ("nonzero inserted item", *nonzero_shape),
+            ("zero-duration item is detached from the junction", *detached_shape),
+            ("one weak pair lacks timing advantage", *low_margin_shape),
+            (
+                "four-character weak run",
+                left_overlap,
+                right_overlap,
+                four_character_runs,
+            ),
+            (
+                "weak left indices are not covered",
+                uncovered_left_overlap,
+                right_overlap,
+                uncovered_runs,
+            ),
+            ("an extra run remains", left_overlap, right_overlap, extra_runs),
+        ]
+        for label, selected_left, selected_right, selected_runs in cases:
+            with self.subTest(label=label):
+                self.assertIsNone(
+                    cuda_worker._repair_zero_duration_right_indel_weak_bridge(
+                        selected_runs,
+                        selected_left,
+                        selected_right,
+                    )
+                )
+        with self.assertRaisesRegex(ValueError, "ambiguous exact alignment"):
+            cuda_worker.seam_crossover(
+                nonzero_left,
+                nonzero_right,
+                seam_seconds=480.0,
+                shared_start=475.0,
+                shared_end=485.0,
+            )
+
+    def test_repairs_four_observed_single_axis_weak_run_seams(self) -> None:
+        expected = {
+            "5": ((649, 36), (3, 36), "a927048f1961c77d671e0cb4e5514b6b59547abbf4c8f80e7293702ccd4a0ac4"),
+            "12": ((668, 30), (2, 35), "cf3f7f77db47ebcd78b250872df15a7c1bea6ee4c0a92fc3907c50707ee591fa"),
+            "13": ((566, 22), (3, 29), "722932efb5b3cb4c615cbd27b7d44e03bd6175e1a14abd6522f9745213b5626b"),
+            "14": ((524, 18), (2, 26), "0c545ef850683700add235b36e04fccb368fd943f86da3c78a45f9b908638ca4"),
+        }
+        for case, (cut, counts, text_sha256) in expected.items():
+            with self.subTest(case=case):
+                left, right, seam, observed_cut = (
+                    observed_single_axis_weak_run_items(case)
+                )
+                left_stop, right_start, record = cuda_worker.seam_crossover(
+                    left,
+                    right,
+                    seam_seconds=seam,
+                    shared_start=seam - 5.0,
+                    shared_end=seam + 5.0,
+                )
+                self.assertEqual(observed_cut, cut)
+                self.assertEqual((left_stop, right_start), cut)
+                self.assertEqual(
+                    record["ambiguity_resolution"],
+                    cuda_worker.SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION,
+                )
+                self.assertEqual(
+                    (
+                        record["ambiguity_checked_run_count"],
+                        record["ambiguity_checked_pair_count"],
+                    ),
+                    counts,
+                )
+                repair = record["match_run_repair"]
+                self.assertEqual(
+                    set(repair),
+                    {
+                        "method",
+                        "candidate_proof",
+                        "selected_anchor_source",
+                        "selected_anchor_pair",
+                        "resulting_cut",
+                    },
+                )
+                self.assertEqual(
+                    hashlib.sha256(
+                        (
+                            "".join(str(item["text"]) for item in left[:left_stop])
+                            + "".join(
+                                str(item["text"])
+                                for item in right[right_start:]
+                            )
+                        ).encode("utf-8")
+                    ).hexdigest(),
+                    text_sha256,
+                )
+                cuda_worker._validate_single_axis_weak_run_candidate_proof(
+                    record,
+                    index=int(case),
+                    left_segment={
+                        "decode_start": seam - 5.0,
+                        "decode_end": seam + 5.0,
+                        "decoded_text": "".join(
+                            str(item["text"]) for item in left
+                        ),
+                    },
+                    right_segment={
+                        "decode_start": seam - 5.0,
+                        "decode_end": seam + 5.0,
+                        "decoded_text": "".join(
+                            str(item["text"]) for item in right
+                        ),
+                    },
+                )
+
+    def test_single_axis_weak_run_repair_rejects_nearby_shapes(self) -> None:
+        left, right, seam, _ = observed_single_axis_weak_run_items("12")
+        left_overlap = [
+            (item_index, item)
+            for item_index, item in enumerate(left)
+            if seam - 3.0
+            <= cuda_worker.alignment_item_midpoint(item)
+            <= seam + 3.0
+        ]
+        right_overlap = [
+            (item_index, item)
+            for item_index, item in enumerate(right)
+            if seam - 3.0
+            <= cuda_worker.alignment_item_midpoint(item)
+            <= seam + 3.0
+        ]
+        _, _, runs = cuda_worker._reliable_match_run_stages(
+            left_overlap,
+            right_overlap,
+            seam_seconds=seam,
+        )
+        weak_index = next(
+            run_index
+            for run_index, (_, characters, maximum_delta) in enumerate(runs)
+            if characters == 3 and maximum_delta > 0.4
+        )
+        tight_indices = [
+            run_index
+            for run_index, (_, _, maximum_delta) in enumerate(runs)
+            if maximum_delta <= 0.25
+        ]
+        self.assertIsNotNone(
+            cuda_worker._repair_single_axis_dominated_weak_runs(
+                runs,
+                left_overlap,
+                right_overlap,
+                seam_seconds=seam,
+            )
+        )
+
+        only_one_tight = [runs[weak_index], runs[tight_indices[-1]]]
+        short_dominator = copy.deepcopy(runs)
+        tight_run, _, tight_delta = short_dominator[tight_indices[-1]]
+        short_dominator[tight_indices[-1]] = (tight_run, 5, tight_delta)
+
+        missing_axis_index = copy.deepcopy(runs)
+        weak_run, weak_characters, weak_delta = missing_axis_index[weak_index]
+        left_local_by_global = {
+            global_index: local_index
+            for local_index, (global_index, _) in enumerate(left_overlap)
+        }
+        missing_axis_index[weak_index] = (
+            [
+                *weak_run[:-1],
+                (left_local_by_global[666], weak_run[-1][1]),
+            ],
+            weak_characters,
+            weak_delta,
+        )
+
+        union_only = copy.deepcopy(runs)
+        union_only[weak_index] = (
+            [
+                (left_local_by_global[663], weak_run[0][1]),
+                *weak_run[1:],
+            ],
+            weak_characters,
+            weak_delta,
+        )
+
+        weak_pair_not_loose_left = copy.deepcopy(left_overlap)
+        weak_left_local = weak_run[0][0]
+        weak_right_item = right_overlap[weak_run[0][1]][1]
+        weak_midpoint = cuda_worker.alignment_item_midpoint(weak_right_item) + 0.4
+        weak_pair_not_loose_left[weak_left_local] = (
+            weak_pair_not_loose_left[weak_left_local][0],
+            {
+                **weak_pair_not_loose_left[weak_left_local][1],
+                "start": weak_midpoint - 0.02,
+                "end": weak_midpoint + 0.02,
+            },
+        )
+
+        insufficient_margin_right = copy.deepcopy(right_overlap)
+        right_local_by_global = {
+            global_index: local_index
+            for local_index, (global_index, _) in enumerate(right_overlap)
+        }
+        strong_right_local = right_local_by_global[31]
+        insufficient_margin_right[strong_right_local] = (
+            31,
+            {
+                **insufficient_margin_right[strong_right_local][1],
+                "start": seam - 0.02,
+                "end": seam + 0.02,
+            },
+        )
+
+        uncovered_three = copy.deepcopy(runs)
+        first_tight_run, first_tight_characters, first_tight_delta = (
+            uncovered_three[tight_indices[0]]
+        )
+        uncovered_three[tight_indices[0]] = (
+            first_tight_run[:-1],
+            first_tight_characters - 1,
+            first_tight_delta,
+        )
+
+        noncontiguous_gap = copy.deepcopy(runs)
+        noncontiguous_gap[weak_index] = (
+            [
+                (weak_run[0][0], right_local_by_global[27]),
+                (weak_run[1][0], right_local_by_global[29]),
+                (weak_run[2][0], right_local_by_global[48]),
+            ],
+            weak_characters,
+            weak_delta,
+        )
+        outside_gap = copy.deepcopy(runs)
+        outside_gap[weak_index] = (
+            [
+                (weak_run[offset][0], right_local_by_global[46 + offset])
+                for offset in range(3)
+            ],
+            weak_characters,
+            weak_delta,
+        )
+
+        crossing_tight = [*copy.deepcopy(runs), copy.deepcopy(runs[tight_indices[0]])]
+        retained_conflict = copy.deepcopy(runs)
+        retained_conflict.append(
+            (
+                [runs[tight_indices[-1]][0][0], *weak_run[1:]],
+                3,
+                0.8,
+            )
+        )
+        cases = [
+            ("only one tight run", only_one_tight, left_overlap, right_overlap),
+            ("strong run below two-times weak", short_dominator, left_overlap, right_overlap),
+            ("dominator axis misses one index", missing_axis_index, left_overlap, right_overlap),
+            ("only the tight union covers the axis", union_only, left_overlap, right_overlap),
+            ("one weak pair is not loose", runs, weak_pair_not_loose_left, right_overlap),
+            ("one pair lacks margin", runs, left_overlap, insufficient_margin_right),
+            ("three other-axis indices are uncovered", uncovered_three, left_overlap, right_overlap),
+            ("other-axis gap is not contiguous", noncontiguous_gap, left_overlap, right_overlap),
+            ("other-axis gap is outside the backbone", outside_gap, left_overlap, right_overlap),
+            ("tight backbone crosses", crossing_tight, left_overlap, right_overlap),
+            ("atomic drop leaves a conflict", retained_conflict, left_overlap, right_overlap),
+        ]
+        for label, selected_runs, selected_left, selected_right in cases:
+            with self.subTest(label=label):
+                self.assertIsNone(
+                    cuda_worker._repair_single_axis_dominated_weak_runs(
+                        selected_runs,
+                        selected_left,
+                        selected_right,
+                        seam_seconds=seam,
+                    )
+                )
+
+        original_anchor = cuda_worker._selected_match_run_anchor(
+            runs,
+            left_overlap,
+            right_overlap,
+            seam_seconds=seam - 3.0,
+        )
+        self.assertIsNotNone(original_anchor)
+        original_consistent, _, _ = cuda_worker._ownership_cut_consistency(
+            runs,
+            left_overlap,
+            right_overlap,
+            left_stop=original_anchor["cut"][0],
+            right_start=original_anchor["cut"][1],
+        )
+        self.assertTrue(original_consistent)
+        self.assertIsNone(
+            cuda_worker._repair_single_axis_dominated_weak_runs(
+                runs,
+                left_overlap,
+                right_overlap,
+                seam_seconds=seam - 3.0,
+            )
+        )
+
+        tied_left = copy.deepcopy(left_overlap)
+        tied_right = copy.deepcopy(right_overlap)
+        tied_run = []
+        for offset, text in enumerate("XYZ"):
+            tied_left.append(
+                (
+                    687 + offset,
+                    {"text": text, "start": seam - 0.02, "end": seam + 0.02},
+                )
+            )
+            tied_right.append(
+                (
+                    49 + offset,
+                    {"text": text, "start": seam - 0.02, "end": seam + 0.02},
+                )
+            )
+            tied_run.append((len(tied_left) - 1, len(tied_right) - 1))
+        self.assertIsNone(
+            cuda_worker._repair_single_axis_dominated_weak_runs(
+                [*runs, (tied_run, 3, 0.0)],
+                tied_left,
+                tied_right,
+                seam_seconds=seam,
+            )
+        )
+
+    def test_single_axis_weak_run_proof_rejects_tampering(self) -> None:
+        left, right, seam, _ = observed_single_axis_weak_run_items("14")
+        _, _, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=seam,
+            shared_start=seam - 5.0,
+            shared_end=seam + 5.0,
+        )
+        segments = (
+            {
+                "decode_start": seam - 5.0,
+                "decode_end": seam + 5.0,
+                "decoded_text": "".join(str(item["text"]) for item in left),
+            },
+            {
+                "decode_start": seam - 5.0,
+                "decode_end": seam + 5.0,
+                "decoded_text": "".join(str(item["text"]) for item in right),
+            },
+        )
+        cuda_worker._validate_single_axis_weak_run_candidate_proof(
+            record,
+            index=14,
+            left_segment=segments[0],
+            right_segment=segments[1],
+        )
+
+        cases: list[tuple[str, dict[str, object]]] = []
+        window = copy.deepcopy(record)
+        window["match_run_repair"]["candidate_proof"]["window_seconds"][0] += 0.1
+        cases.append(("window", window))
+
+        proof_index = copy.deepcopy(record)
+        proof_index["match_run_repair"]["candidate_proof"]["left_items"][4][
+            "global_index"
+        ] += 1
+        cases.append(("item index", proof_index))
+
+        proof_span = copy.deepcopy(record)
+        span = proof_span["match_run_repair"]["candidate_proof"]["left_items"][4][
+            "decoded_character_span"
+        ]
+        span[0] += 1
+        span[1] += 1
+        cases.append(("item span", proof_span))
+
+        proof_text = copy.deepcopy(record)
+        proof_text["match_run_repair"]["candidate_proof"]["right_items"][4][
+            "cleaned_text"
+        ] = "X"
+        cases.append(("item text", proof_text))
+
+        proof_time = copy.deepcopy(record)
+        proof_time["match_run_repair"]["candidate_proof"]["right_items"][4][
+            "start_seconds"
+        ] += 0.3
+        cases.append(("item time", proof_time))
+
+        sentinel = copy.deepcopy(record)
+        sentinel["match_run_repair"]["candidate_proof"]["left_items"].pop(0)
+        cases.append(("sentinel", sentinel))
+
+        gap = copy.deepcopy(record)
+        gap_item = next(
+            item
+            for item in gap["match_run_repair"]["candidate_proof"]["right_items"]
+            if item["global_index"] == 16
+        )
+        gap_item["start_seconds"] += 0.5
+        gap_item["end_seconds"] += 0.5
+        cases.append(("weak gap", gap))
+
+        selected = copy.deepcopy(record)
+        selected["match_run_repair"]["selected_anchor_pair"][0] += 1
+        cases.append(("selected pair", selected))
+
+        cut = copy.deepcopy(record)
+        cut["match_run_repair"]["resulting_cut"]["right_start"] += 1
+        cases.append(("cut", cut))
+
+        counts = copy.deepcopy(record)
+        counts["ambiguity_checked_pair_count"] += 1
+        cases.append(("post counts", counts))
+
+        for label, tampered in cases:
+            with self.subTest(label=label), self.assertRaises(ValueError):
+                cuda_worker._validate_single_axis_weak_run_candidate_proof(
+                    tampered,
+                    index=14,
+                    left_segment=segments[0],
+                    right_segment=segments[1],
+                )
+
+    def test_single_axis_proof_binds_raw_cut_and_owned_alignment(self) -> None:
+        left, right, seam, _ = observed_single_axis_weak_run_items("14")
+        left = shifted_alignment_items(left, 120.0 - seam)
+        right = shifted_alignment_items(right, 120.0 - seam)
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=120.0,
+            shared_start=115.0,
+            shared_end=125.0,
+        )
+        args, backend_options, document = completed_two_chunk_raw_fixture(
+            chunk_context=5.0,
+            left_items=left,
+            right_items=right,
+            left_stop=left_stop,
+            right_start=right_start,
+            seam_record=record,
+        )
+        cuda_worker.validate_cuda_raw_integrity(
+            document,
+            args=args,
+            backend_options=backend_options,
+        )
+
+        cut = copy.deepcopy(document)
+        cut["segments"][0]["owned_item_stop"] += 1
+        with self.assertRaisesRegex(ValueError, "cut does not match its chunks"):
+            cuda_worker.validate_cuda_raw_integrity(
+                cut,
+                args=args,
+                backend_options=backend_options,
+            )
+
+        raw_output_path = ROOT / "single-axis-proof-raw.json"
+        aligned = aligned_document_for_two_chunk_fixture(
+            document,
+            left_items=left,
+            right_items=right,
+            raw_output_path=raw_output_path,
+        )
+        cuda_worker.validate_cuda_aligned_integrity(
+            aligned,
+            raw_output_path=raw_output_path,
+            raw_document=document,
+        )
+        tampered = copy.deepcopy(aligned)
+        tampered["chunks"][0]["alignment"][513]["end"] += 0.01
+        with self.assertRaisesRegex(ValueError, "proof does not match owned items"):
+            cuda_worker.validate_cuda_aligned_integrity(
+                tampered,
+                raw_output_path=raw_output_path,
+                raw_document=document,
+            )
+
     def test_uses_a_unique_tight_anchor_at_an_exhausted_left_frontier(
         self,
     ) -> None:
@@ -1444,6 +2318,230 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
                 cuda_worker._validate_repeated_token_indel_evidence(
                     tampered,
                     index=0,
+                )
+
+    def test_zero_duration_indel_validator_rejects_tampering(self) -> None:
+        left, right = observed_zero_duration_right_indel_bridge_items()
+        _, _, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=480.0,
+            shared_start=475.0,
+            shared_end=485.0,
+        )
+        segments = (
+            {
+                "decode_start": 475.0,
+                "decode_end": 485.0,
+                "decoded_text": "".join(str(item["text"]) for item in left),
+            },
+            {
+                "decode_start": 475.0,
+                "decode_end": 485.0,
+                "decoded_text": "".join(str(item["text"]) for item in right),
+            },
+        )
+        cuda_worker._validate_zero_duration_right_indel_candidate_proof(
+            record,
+            index=7,
+            left_segment=segments[0],
+            right_segment=segments[1],
+        )
+
+        cases: list[tuple[str, dict[str, object]]] = []
+
+        inserted_text = copy.deepcopy(record)
+        inserted_proof = inserted_text["match_run_repair"]["candidate_proof"]
+        next(
+            item
+            for item in inserted_proof["right_items"]
+            if item["global_index"] == 30
+        )["cleaned_text"] = "X"
+        cases.append(("coherently forged inserted text", inserted_text))
+
+        shifted_junction = copy.deepcopy(record)
+        shifted_proof = shifted_junction["match_run_repair"]["candidate_proof"]
+        for side, global_index, field in (
+            ("left", 336, "end_seconds"),
+            ("left", 337, "start_seconds"),
+            ("right", 29, "end_seconds"),
+            ("right", 30, "start_seconds"),
+            ("right", 30, "end_seconds"),
+            ("right", 31, "start_seconds"),
+        ):
+            item = next(
+                item
+                for item in shifted_proof[f"{side}_items"]
+                if item["global_index"] == global_index
+            )
+            item[field] += 0.2
+        cases.append(("coherently shifted junction axis", shifted_junction))
+
+        forged_deltas = copy.deepcopy(record)
+        forged_deltas["anchor_run_max_pair_delta_seconds"] = 0.2
+        cases.append(("coherently forged timing deltas", forged_deltas))
+
+        crossing_cut = copy.deepcopy(record)
+        crossing_repair = crossing_cut["match_run_repair"]
+        crossing_repair["selected_anchor_pair"] = [337, 31]
+        crossing_repair["resulting_cut"] = {
+            "left_stop": 337,
+            "right_start": 31,
+        }
+        crossing_cut["anchor_text"] = "他"
+        crossing_cut["anchor_midpoint_seconds"] = 480.001
+        crossing_cut["anchor_run_max_pair_delta_seconds"] = 0.2
+        cases.append(("coherently forged anchor and cut", crossing_cut))
+
+        proof_index = copy.deepcopy(record)
+        proof_index_items = proof_index["match_run_repair"]["candidate_proof"][
+            "right_items"
+        ]
+        proof_index_items[5]["global_index"] += 1
+        cases.append(("proof global index", proof_index))
+
+        proof_time = copy.deepcopy(record)
+        proof_time_items = proof_time["match_run_repair"]["candidate_proof"][
+            "right_items"
+        ]
+        next(
+            item for item in proof_time_items if item["global_index"] == 30
+        )["end_seconds"] = 479.89
+        cases.append(("proof inserted duration", proof_time))
+
+        proof_span = copy.deepcopy(record)
+        proof_span_items = proof_span["match_run_repair"]["candidate_proof"][
+            "right_items"
+        ]
+        proof_span_items[5]["decoded_character_span"][0] += 1
+        proof_span_items[5]["decoded_character_span"][1] += 1
+        cases.append(("proof decoded span", proof_span))
+
+        dropped = copy.deepcopy(record)
+        dropped["match_run_repair"]["candidate_proof"]["left_items"].pop(4)
+        cases.append(("dropped proof item", dropped))
+
+        unknown_field = copy.deepcopy(record)
+        unknown_field["match_run_repair"]["unverified"] = True
+        cases.append(("unknown evidence field", unknown_field))
+
+        for label, tampered in cases:
+            with self.subTest(label=label), self.assertRaises(ValueError):
+                cuda_worker._validate_zero_duration_right_indel_candidate_proof(
+                    tampered,
+                    index=7,
+                    left_segment=segments[0],
+                    right_segment=segments[1],
+                )
+
+    def test_zero_duration_indel_raw_cut_is_bound_to_adjacent_chunks(self) -> None:
+        left, right = observed_zero_duration_right_indel_bridge_items()
+        left = shifted_alignment_items(left, -360.0)
+        right = shifted_alignment_items(right, -360.0)
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left,
+            right,
+            seam_seconds=120.0,
+            shared_start=115.0,
+            shared_end=125.0,
+        )
+        args, backend_options, document = completed_two_chunk_raw_fixture(
+            chunk_context=5.0,
+            left_items=left,
+            right_items=right,
+            left_stop=left_stop,
+            right_start=right_start,
+            seam_record=record,
+        )
+        cuda_worker.validate_cuda_raw_integrity(
+            document,
+            args=args,
+            backend_options=backend_options,
+        )
+
+        for chunk_index, field in (
+            (0, "owned_item_stop"),
+            (1, "owned_item_start"),
+        ):
+            tampered = copy.deepcopy(document)
+            tampered["segments"][chunk_index][field] += 1
+            with self.subTest(field=field), self.assertRaisesRegex(
+                ValueError,
+                "cut does not match its chunks",
+            ):
+                cuda_worker.validate_cuda_raw_integrity(
+                    tampered,
+                    args=args,
+                    backend_options=backend_options,
+                )
+
+        forged_cut = copy.deepcopy(document)
+        forged_seam = forged_cut["boundary_reconciliation"]["seams"][0]
+        forged_repair = forged_seam["match_run_repair"]
+        forged_repair["selected_anchor_pair"] = [337, 31]
+        forged_repair["resulting_cut"] = {
+            "left_stop": 337,
+            "right_start": 31,
+        }
+        forged_seam["anchor_text"] = "他"
+        forged_seam["anchor_owner"] = "right"
+        forged_seam["anchor_midpoint_seconds"] = 120.001
+        forged_seam["anchor_run_max_pair_delta_seconds"] = 0.2
+        forged_cut["segments"][0]["owned_item_stop"] = 337
+        forged_cut["segments"][1]["owned_item_start"] = 31
+        forged_cut["segments"][0]["text"] = "".join(
+            str(item["text"]) for item in left[:337]
+        )
+        forged_cut["segments"][1]["text"] = "".join(
+            str(item["text"]) for item in right[31:]
+        )
+        forged_cut["text"] = cuda_worker.join_transcript_chunks(
+            [
+                forged_cut["segments"][0]["text"],
+                forged_cut["segments"][1]["text"],
+            ],
+            language=args.language,
+        )
+        with self.assertRaisesRegex(ValueError, "anchor.*not proof-derived"):
+            cuda_worker.validate_cuda_raw_integrity(
+                forged_cut,
+                args=args,
+                backend_options=backend_options,
+            )
+
+        raw_output_path = ROOT / "zero-duration-proof-raw.json"
+        aligned = aligned_document_for_two_chunk_fixture(
+            document,
+            left_items=left,
+            right_items=right,
+            raw_output_path=raw_output_path,
+        )
+        cuda_worker.validate_cuda_aligned_integrity(
+            aligned,
+            raw_output_path=raw_output_path,
+            raw_document=document,
+        )
+
+        aligned_text = copy.deepcopy(aligned)
+        aligned_text["chunks"][0]["alignment"][319]["text"] = "X"
+        aligned_text["chunks"][0]["text"] = "".join(
+            str(item["text"])
+            for item in aligned_text["chunks"][0]["alignment"]
+        )
+        aligned_time = copy.deepcopy(aligned)
+        aligned_time["chunks"][1]["alignment"][0]["end"] += 0.01
+        for label, tampered_aligned in (
+            ("owned proof text", aligned_text),
+            ("owned proof time", aligned_time),
+        ):
+            with self.subTest(label=label), self.assertRaisesRegex(
+                ValueError,
+                "proof does not match owned items",
+            ):
+                cuda_worker.validate_cuda_aligned_integrity(
+                    tampered_aligned,
+                    raw_output_path=raw_output_path,
+                    raw_document=document,
                 )
 
     def test_specialized_raw_cuts_are_bound_to_their_adjacent_chunks(self) -> None:

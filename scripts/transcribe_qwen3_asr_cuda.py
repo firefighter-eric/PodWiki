@@ -65,6 +65,15 @@ OWNERSHIP_CUT_AMBIGUITY_RESOLUTION = "ownership-cut-consistent-v1"
 REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION = (
     "adjacent-diagonal-repeated-token-indel-bubble-v1"
 )
+ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION = (
+    "zero-duration-right-indel-weak-bridge-v1"
+)
+SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION = (
+    "single-axis-dominated-weak-runs-v1"
+)
+ZERO_DURATION_INDEL_MIN_MAIN_RUN_CHARACTERS = 17
+ZERO_DURATION_INDEL_WEAK_RUN_CHARACTERS = 3
+ZERO_DURATION_INDEL_MAX_ITEM_SECONDS = 0.001
 EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY = "exhausted-side-context-anchor"
 EXHAUSTED_SIDE_CONTEXT_ANCHOR_METHOD = (
     "prefer-non-exhausted-after-last-common-anchor-v1"
@@ -536,6 +545,455 @@ def _validate_repeated_token_indel_evidence(
         raise ValueError(
             f"raw ASR boundary seam {index} indel counts do not match"
         )
+
+
+def _validated_bounded_candidate_proof(
+    seam: dict[str, Any],
+    *,
+    index: int,
+    left_segment: dict[str, Any],
+    right_segment: dict[str, Any],
+) -> dict[str, Any]:
+    """Bind one bounded candidate window to both decoded character streams."""
+
+    repair = seam.get("match_run_repair")
+    proof = repair.get("candidate_proof") if isinstance(repair, dict) else None
+    if not isinstance(proof, dict) or set(proof) != {
+        "window_seconds",
+        "left_items",
+        "right_items",
+    }:
+        raise ValueError(f"raw ASR boundary seam {index} has invalid candidate proof")
+    seam_seconds = _validated_boundary_number(
+        seam.get("seam_seconds"), field=f"boundary seam {index} time"
+    )
+    window = proof["window_seconds"]
+    if not isinstance(window, list) or len(window) != 2:
+        raise ValueError(f"raw ASR boundary seam {index} has invalid candidate window")
+    window_start, window_end = (
+        _validated_boundary_number(
+            value, field=f"boundary seam {index} candidate window"
+        )
+        for value in window
+    )
+    expected_window = (
+        max(
+            float(left_segment["decode_start"]),
+            float(right_segment["decode_start"]),
+            seam_seconds - SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+        ),
+        min(
+            float(left_segment["decode_end"]),
+            float(right_segment["decode_end"]),
+            seam_seconds + SEAM_ANCHOR_SEARCH_RADIUS_SECONDS,
+        ),
+    )
+    if (
+        not window_start < window_end
+        or abs(window_start - expected_window[0]) > 0.001
+        or abs(window_end - expected_window[1]) > 0.001
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} candidate window is not reproducible"
+        )
+
+    def validated_side(
+        value: Any, *, side: str, segment: dict[str, Any]
+    ) -> tuple[list[dict[str, Any]], list[tuple[int, dict[str, Any]]]]:
+        if not isinstance(value, list) or not 3 <= len(value) <= 128:
+            raise ValueError(
+                f"raw ASR boundary seam {index} has invalid {side} candidate items"
+            )
+        decoded = cleaned_alignment_text(str(segment.get("decoded_text", "")))
+        records: list[dict[str, Any]] = []
+        for proof_index, item in enumerate(value):
+            expected_keys = {
+                "side",
+                "global_index",
+                "decoded_character_span",
+                "cleaned_text",
+                "start_seconds",
+                "end_seconds",
+            }
+            if not isinstance(item, dict) or set(item) != expected_keys:
+                raise ValueError(
+                    f"raw ASR boundary seam {index} has invalid {side} proof item"
+                )
+            global_index = item["global_index"]
+            span = item["decoded_character_span"]
+            text = item["cleaned_text"]
+            if (
+                item["side"] != side
+                or not isinstance(global_index, int)
+                or isinstance(global_index, bool)
+                or global_index < 0
+                or not isinstance(span, list)
+                or len(span) != 2
+                or any(
+                    not isinstance(offset, int) or isinstance(offset, bool)
+                    for offset in span
+                )
+                or span[0] < 0
+                or span[1] != span[0] + 1
+                or span[1] > len(decoded)
+                or not isinstance(text, str)
+                or cleaned_alignment_text(text) != text
+                or len(text) != 1
+                or decoded[span[0] : span[1]] != text
+            ):
+                raise ValueError(
+                    f"raw ASR boundary seam {index} {side} proof item is not decode-bound"
+                )
+            start = _validated_boundary_number(
+                item["start_seconds"],
+                field=f"boundary seam {index} {side} proof start",
+            )
+            end = _validated_boundary_number(
+                item["end_seconds"],
+                field=f"boundary seam {index} {side} proof end",
+            )
+            if (
+                end < start
+                or start + ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS
+                < float(segment["decode_start"])
+                or end
+                > float(segment["decode_end"])
+                + ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS
+                or (
+                    proof_index
+                    and (
+                        global_index != records[-1]["global_index"] + 1
+                        or span[0] != records[-1]["decoded_character_span"][1]
+                        or start + ALIGNMENT_TIMESTAMP_TOLERANCE_SECONDS
+                        < records[-1]["start_seconds"]
+                    )
+                )
+            ):
+                raise ValueError(
+                    f"raw ASR boundary seam {index} has discontinuous {side} proof"
+                )
+            records.append({**item, "start_seconds": start, "end_seconds": end})
+        candidate_positions = [
+            proof_index
+            for proof_index, item in enumerate(records)
+            if window_start
+            <= (item["start_seconds"] + item["end_seconds"]) / 2.0
+            <= window_end
+        ]
+        if candidate_positions != list(range(1, len(records) - 1)):
+            raise ValueError(
+                f"raw ASR boundary seam {index} {side} candidate proof is not bounded"
+            )
+        return records, [
+            (
+                item["global_index"],
+                {
+                    "text": item["cleaned_text"],
+                    "start": item["start_seconds"],
+                    "end": item["end_seconds"],
+                },
+            )
+            for item in records[1:-1]
+        ]
+
+    left_records, left_candidates = validated_side(
+        proof["left_items"], side="left", segment=left_segment
+    )
+    right_records, right_candidates = validated_side(
+        proof["right_items"], side="right", segment=right_segment
+    )
+    return {
+        "seam_seconds": seam_seconds,
+        "left_items": left_records,
+        "right_items": right_records,
+        "left_candidates": left_candidates,
+        "right_candidates": right_candidates,
+    }
+
+
+def _validated_proof_selected_anchor(
+    seam: dict[str, Any],
+    *,
+    index: int,
+    repaired_runs: list[tuple[list[tuple[int, int]], int, float]],
+    allowed_anchor_runs: list[list[tuple[int, int]]],
+    left_candidates: list[tuple[int, dict[str, Any]]],
+    right_candidates: list[tuple[int, dict[str, Any]]],
+    matched_characters: int,
+    reject_cut_ties: bool = False,
+) -> dict[str, Any]:
+    """Bind proof-derived anchor, cut and retained-run counts to the seam."""
+
+    repair = seam["match_run_repair"]
+    selected = _selected_match_run_anchor(
+        repaired_runs,
+        left_candidates,
+        right_candidates,
+        seam_seconds=float(seam["seam_seconds"]),
+        reject_cut_ties=reject_cut_ties,
+    )
+    allowed_pairs = {
+        (
+            left_candidates[left_local][0],
+            right_candidates[right_local][0],
+        )
+        for run in allowed_anchor_runs
+        for left_local, right_local in run
+    }
+    if selected is None:
+        raise ValueError(
+            f"raw ASR boundary seam {index} candidate proof has no unique anchor cut"
+        )
+    left_stop, right_start = selected["cut"]
+    consistent, checked_runs, checked_pairs = _ownership_cut_consistency(
+        repaired_runs,
+        left_candidates,
+        right_candidates,
+        left_stop=left_stop,
+        right_start=right_start,
+    )
+    if (
+        selected["pair"] not in allowed_pairs
+        or repair.get("selected_anchor_pair") != list(selected["pair"])
+        or repair.get("resulting_cut")
+        != {"left_stop": left_stop, "right_start": right_start}
+        or seam.get("anchor_text") != selected["text"]
+        or seam.get("anchor_owner") != selected["owner"]
+        or seam.get("anchor_run_characters") != selected["characters"]
+        or abs(
+            _validated_boundary_number(
+                seam.get("anchor_midpoint_seconds"),
+                field=f"boundary seam {index} anchor midpoint",
+            )
+            - selected["midpoint"]
+        )
+        > 0.001
+        or abs(
+            _validated_boundary_number(
+                seam.get("anchor_run_max_pair_delta_seconds"),
+                field=f"boundary seam {index} anchor delta",
+            )
+            - selected["maximum_delta"]
+        )
+        > 0.001
+        or seam.get("matched_characters") != matched_characters
+        or seam.get("ambiguity_checked_run_count") != checked_runs
+        or seam.get("ambiguity_checked_pair_count") != checked_pairs
+        or not consistent
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} anchor or cut is not proof-derived"
+        )
+    return {
+        "left_stop": left_stop,
+        "right_start": right_start,
+        "checked_runs": checked_runs,
+        "checked_pairs": checked_pairs,
+    }
+
+
+def _validate_zero_duration_right_indel_candidate_proof(
+    seam: dict[str, Any],
+    *,
+    index: int,
+    left_segment: dict[str, Any],
+    right_segment: dict[str, Any],
+) -> dict[str, Any]:
+    """Recompute the narrow repair only from decoded-text-bound item proof."""
+
+    repair = seam.get("match_run_repair")
+    if not isinstance(repair, dict) or set(repair) != {
+        "method",
+        "indel_side",
+        "candidate_proof",
+        "selected_anchor_source",
+        "selected_anchor_pair",
+        "resulting_cut",
+    }:
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid zero-duration indel proof"
+        )
+    if (
+        repair["method"] != ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION
+        or repair["indel_side"] != "right"
+        or repair["selected_anchor_source"] != "nearest-tight-main-run"
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid zero-duration indel proof"
+        )
+
+    validated_proof = _validated_bounded_candidate_proof(
+        seam,
+        index=index,
+        left_segment=left_segment,
+        right_segment=right_segment,
+    )
+    seam_seconds = validated_proof["seam_seconds"]
+    left_records = validated_proof["left_items"]
+    right_records = validated_proof["right_items"]
+    left_candidates = validated_proof["left_candidates"]
+    right_candidates = validated_proof["right_candidates"]
+
+    matched_characters, reliable_runs, edge_runs = _reliable_match_run_stages(
+        left_candidates,
+        right_candidates,
+        seam_seconds=seam_seconds,
+    )
+    if (
+        edge_runs != reliable_runs
+        or _repair_right_extra_repeated_token_indel_bubble(
+            reliable_runs, left_candidates, right_candidates
+        )
+        is not None
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} proof follows another repair path"
+        )
+    recomputed = _repair_zero_duration_right_indel_weak_bridge(
+        reliable_runs,
+        left_candidates,
+        right_candidates,
+    )
+    if recomputed is None:
+        raise ValueError(
+            f"raw ASR boundary seam {index} candidate proof does not prove the repair"
+        )
+    repaired_runs, main_runs, _ = recomputed
+
+    validated_anchor = _validated_proof_selected_anchor(
+        seam,
+        index=index,
+        repaired_runs=repaired_runs,
+        allowed_anchor_runs=main_runs,
+        left_candidates=left_candidates,
+        right_candidates=right_candidates,
+        matched_characters=matched_characters,
+    )
+    left_stop = validated_anchor["left_stop"]
+    right_start = validated_anchor["right_start"]
+
+    original_consistent, _, _ = _ownership_cut_consistency(
+        reliable_runs,
+        left_candidates,
+        right_candidates,
+        left_stop=left_stop,
+        right_start=right_start,
+    )
+    before_characters = sum(
+        _match_run_characters([pair], left_candidates)
+        for run, _, _ in repaired_runs
+        for pair in run
+        if _match_run_pair_side(
+            [pair],
+            left_candidates,
+            right_candidates,
+            seam_seconds=seam_seconds,
+        )
+        == "before"
+    )
+    after_characters = sum(
+        _match_run_characters([pair], left_candidates)
+        for run, _, _ in repaired_runs
+        for pair in run
+        if _match_run_pair_side(
+            [pair],
+            left_candidates,
+            right_candidates,
+            seam_seconds=seam_seconds,
+        )
+        == "after"
+    )
+    if (
+        original_consistent
+        or before_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+        or after_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} cut is not proof-derived"
+        )
+    return {
+        "left_items": left_records,
+        "right_items": right_records,
+        "left_stop": left_stop,
+        "right_start": right_start,
+    }
+
+
+def _validate_single_axis_weak_run_candidate_proof(
+    seam: dict[str, Any],
+    *,
+    index: int,
+    left_segment: dict[str, Any],
+    right_segment: dict[str, Any],
+) -> dict[str, Any]:
+    """Recompute the atomic weak-run repair from the common bounded proof."""
+
+    repair = seam.get("match_run_repair")
+    if not isinstance(repair, dict) or set(repair) != {
+        "method",
+        "candidate_proof",
+        "selected_anchor_source",
+        "selected_anchor_pair",
+        "resulting_cut",
+    } or (
+        repair["method"] != SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION
+        or repair["selected_anchor_source"] != "nearest-tight-backbone-run"
+    ):
+        raise ValueError(
+            f"raw ASR boundary seam {index} has invalid single-axis repair proof"
+        )
+    proof = _validated_bounded_candidate_proof(
+        seam,
+        index=index,
+        left_segment=left_segment,
+        right_segment=right_segment,
+    )
+    matched, dominated, edge_runs = _reliable_match_run_stages(
+        proof["left_candidates"],
+        proof["right_candidates"],
+        seam_seconds=proof["seam_seconds"],
+    )
+    if dominated == edge_runs:
+        repeated = _repair_right_extra_repeated_token_indel_bubble(
+            edge_runs,
+            proof["left_candidates"],
+            proof["right_candidates"],
+        )
+        if repeated is not None or _repair_zero_duration_right_indel_weak_bridge(
+            edge_runs,
+            proof["left_candidates"],
+            proof["right_candidates"],
+        ) is not None:
+            raise ValueError(
+                f"raw ASR boundary seam {index} proof belongs to an earlier repair"
+            )
+    recomputed = _repair_single_axis_dominated_weak_runs(
+        edge_runs,
+        proof["left_candidates"],
+        proof["right_candidates"],
+        seam_seconds=proof["seam_seconds"],
+    )
+    if recomputed is None:
+        raise ValueError(
+            f"raw ASR boundary seam {index} proof does not prove atomic weak-run removal"
+        )
+    repaired, tight_runs, _ = recomputed
+    cut = _validated_proof_selected_anchor(
+        seam,
+        index=index,
+        repaired_runs=repaired,
+        allowed_anchor_runs=tight_runs,
+        left_candidates=proof["left_candidates"],
+        right_candidates=proof["right_candidates"],
+        matched_characters=matched,
+        reject_cut_ties=True,
+    )
+    return {
+        "left_items": proof["left_items"],
+        "right_items": proof["right_items"],
+        "left_stop": cut["left_stop"],
+        "right_start": cut["right_start"],
+    }
 
 
 def _validate_exhausted_side_context_anchor(
@@ -1180,7 +1638,11 @@ def validate_cuda_raw_integrity(
                     and anchor_run_characters
                     != MIN_STRICT_SEAM_ANCHOR_RUN_CHARACTERS
                     and seam.get("ambiguity_resolution")
-                    != REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION
+                    not in {
+                        REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION,
+                        ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION,
+                        SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION,
+                    }
                 )
                 invalid_anchor_delta = not missing_refreshable_anchor_delta and (
                     not isinstance(anchor_run_max_delta, (int, float))
@@ -1331,6 +1793,47 @@ def validate_cuda_raw_integrity(
                     ):
                         raise ValueError(
                             f"raw ASR boundary seam {index} indel cut does not match its chunks"
+                        )
+                elif (
+                    ambiguity_resolution
+                    in {
+                        ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION,
+                        SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION,
+                    }
+                ):
+                    if strict_short_anchor:
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} has invalid proof repair anchor"
+                        )
+                    if (
+                        ambiguity_resolution
+                        == ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION
+                    ):
+                        validated_proof = (
+                            _validate_zero_duration_right_indel_candidate_proof(
+                                seam,
+                                index=index,
+                                left_segment=left_segment,
+                                right_segment=right_segment,
+                            )
+                        )
+                    else:
+                        validated_proof = (
+                            _validate_single_axis_weak_run_candidate_proof(
+                                seam,
+                                index=index,
+                                left_segment=left_segment,
+                                right_segment=right_segment,
+                            )
+                        )
+                    if (
+                        validated_proof["left_stop"]
+                        != left_segment.get("owned_item_stop")
+                        or validated_proof["right_start"]
+                        != right_segment.get("owned_item_start")
+                    ):
+                        raise ValueError(
+                            f"raw ASR boundary seam {index} proof repair cut does not match its chunks"
                         )
                 else:
                     raise ValueError(
@@ -1503,6 +2006,70 @@ def validate_cuda_aligned_integrity(
             raise ValueError(
                 f"aligned ASR exhausted boundary seam {index} has no alignment"
             )
+        if (
+            seam.get("ambiguity_resolution")
+            in {
+                ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION,
+                SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION,
+            }
+        ):
+            left_raw_chunk = raw_chunks[index]
+            right_raw_chunk = raw_chunks[index + 1]
+            if not isinstance(left_raw_chunk, dict) or not isinstance(
+                right_raw_chunk, dict
+            ):
+                raise ValueError(
+                    f"aligned ASR boundary seam {index} has invalid raw proof chunks"
+                )
+            if (
+                seam.get("ambiguity_resolution")
+                == ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION
+            ):
+                validated_proof = (
+                    _validate_zero_duration_right_indel_candidate_proof(
+                        seam,
+                        index=index,
+                        left_segment=left_raw_chunk,
+                        right_segment=right_raw_chunk,
+                    )
+                )
+            else:
+                validated_proof = (
+                    _validate_single_axis_weak_run_candidate_proof(
+                        seam,
+                        index=index,
+                        left_segment=left_raw_chunk,
+                        right_segment=right_raw_chunk,
+                    )
+                )
+            for side, records, chunk, alignment in (
+                ("left", validated_proof["left_items"], left_chunk, left_alignment),
+                (
+                    "right",
+                    validated_proof["right_items"],
+                    right_chunk,
+                    right_alignment,
+                ),
+            ):
+                owned_start = int(chunk["owned_item_start"])
+                owned_stop = int(chunk["owned_item_stop"])
+                for item in records:
+                    global_index = item["global_index"]
+                    if not owned_start <= global_index < owned_stop:
+                        continue
+                    actual = alignment[global_index - owned_start]
+                    if (
+                        not isinstance(actual, dict)
+                        or cleaned_alignment_text(str(actual.get("text", "")))
+                        != item["cleaned_text"]
+                        or abs(float(actual.get("start", -1.0)) - item["start_seconds"])
+                        > 0.001
+                        or abs(float(actual.get("end", -1.0)) - item["end_seconds"])
+                        > 0.001
+                    ):
+                        raise ValueError(
+                            f"aligned ASR boundary seam {index} {side} proof does not match owned items"
+                        )
         if seam.get("strategy") in {
             "exact-time-anchor",
             EXHAUSTED_SIDE_CONTEXT_ANCHOR_STRATEGY,
@@ -2088,6 +2655,122 @@ def _repair_edge_reuse_match_runs(
     ]
 
 
+def _reliable_match_run_stages(
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+    *,
+    seam_seconds: float,
+) -> tuple[
+    int,
+    list[tuple[list[tuple[int, int]], int, float]],
+    list[tuple[list[tuple[int, int]], int, float]],
+]:
+    """Rebuild the reliable post-dominance and post-edge run snapshots."""
+
+    _, matched_characters = _monotonic_exact_match_chain(
+        left_items,
+        right_items,
+        tolerance_seconds=SEAM_MATCH_TOLERANCE_SECONDS,
+    )
+    reliable: list[tuple[list[tuple[int, int]], int, float]] = []
+    for run in _maximal_exact_match_runs(
+        left_items,
+        right_items,
+        tolerance_seconds=SEAM_MATCH_TOLERANCE_SECONDS,
+    ):
+        characters = _match_run_characters(run, left_items)
+        if characters >= MIN_SEAM_ANCHOR_RUN_CHARACTERS:
+            reliable.append(
+                (
+                    run,
+                    characters,
+                    _match_run_max_pair_delta(run, left_items, right_items),
+                )
+            )
+    dominated = _drop_strictly_dominated_match_runs(reliable)
+    return (
+        matched_characters,
+        dominated,
+        _repair_edge_reuse_match_runs(
+            dominated,
+            left_items,
+            right_items,
+            seam_seconds=seam_seconds,
+        ),
+    )
+
+
+def _selected_match_run_anchor(
+    runs: list[tuple[list[tuple[int, int]], int, float]],
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+    *,
+    seam_seconds: float,
+    reject_cut_ties: bool = False,
+) -> dict[str, Any] | None:
+    """Select the existing nearest run anchor and derive its ownership cut."""
+
+    anchors: list[tuple[float, float, int, int, str, int, float]] = []
+    item_pairs: dict[tuple[int, int], tuple[dict[str, Any], dict[str, Any]]] = {}
+    for run, characters, maximum_delta in runs:
+        for left_local, right_local in run:
+            left_global, left_item = left_items[left_local]
+            right_global, right_item = right_items[right_local]
+            left_midpoint = alignment_item_midpoint(left_item)
+            right_midpoint = alignment_item_midpoint(right_item)
+            midpoint = (left_midpoint + right_midpoint) / 2.0
+            anchors.append(
+                (
+                    abs(midpoint - seam_seconds),
+                    abs(left_midpoint - right_midpoint),
+                    left_global,
+                    right_global,
+                    cleaned_alignment_text(str(left_item["text"])),
+                    characters,
+                    maximum_delta,
+                )
+            )
+            item_pairs[(left_global, right_global)] = (left_item, right_item)
+    if not anchors:
+        return None
+
+    selected = min(anchors)
+
+    def cut_for(anchor: tuple[float, float, int, int, str, int, float]) -> tuple[int, int]:
+        left_item, right_item = item_pairs[(anchor[2], anchor[3])]
+        midpoint = (
+            alignment_item_midpoint(left_item) + alignment_item_midpoint(right_item)
+        ) / 2.0
+        return (
+            (anchor[2] + 1, anchor[3] + 1)
+            if midpoint <= seam_seconds
+            else (anchor[2], anchor[3])
+        )
+
+    equivalent = [
+        anchor
+        for anchor in anchors
+        if abs(anchor[0] - selected[0]) <= 0.001
+        and abs(anchor[1] - selected[1]) <= 0.001
+    ]
+    if reject_cut_ties and len({cut_for(anchor) for anchor in equivalent}) != 1:
+        return None
+    left_item, right_item = item_pairs[(selected[2], selected[3])]
+    midpoint = (
+        alignment_item_midpoint(left_item) + alignment_item_midpoint(right_item)
+    ) / 2.0
+    owner = "left" if midpoint <= seam_seconds else "right"
+    return {
+        "pair": (selected[2], selected[3]),
+        "text": selected[4],
+        "characters": selected[5],
+        "maximum_delta": selected[6],
+        "midpoint": midpoint,
+        "owner": owner,
+        "cut": cut_for(selected),
+    }
+
+
 def _repair_right_extra_repeated_token_indel_bubble(
     runs: list[tuple[list[tuple[int, int]], int, float]],
     left_items: list[tuple[int, dict[str, Any]]],
@@ -2374,6 +3057,471 @@ def _repair_right_extra_repeated_token_indel_bubble(
     if len(repairs) != 1:
         return None
     return repairs[0]
+
+
+def _repair_zero_duration_right_indel_weak_bridge(
+    runs: list[tuple[list[tuple[int, int]], int, float]],
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+) -> tuple[
+    list[tuple[list[tuple[int, int]], int, float]],
+    list[list[tuple[int, int]]],
+    dict[str, Any],
+] | None:
+    """Drop one fully dominated repeat across a zero-duration right indel.
+
+    This recognizes only the observed three-run shape.  Two long, tight,
+    ordered diagonals are adjacent on the left and separated by exactly one
+    zero-duration character on the right.  A three-character loose diagonal
+    reuses an earlier phrase across that junction, but every index at both ends
+    of each weak pair already has a materially tighter mapping on a main run.
+    Anything wider, symmetric, partially covered, or not uniquely decomposable
+    remains ambiguous.
+    """
+
+    if len(runs) != 3:
+        return None
+
+    def global_pairs(run: list[tuple[int, int]]) -> list[tuple[int, int]]:
+        return [
+            (left_items[left_local][0], right_items[right_local][0])
+            for left_local, right_local in run
+        ]
+
+    def is_contiguous_diagonal(run: list[tuple[int, int]]) -> bool:
+        pairs = global_pairs(run)
+        return bool(pairs) and pairs == [
+            (pairs[0][0] + offset, pairs[0][1] + offset)
+            for offset in range(len(pairs))
+        ]
+
+    def item_characters(
+        run: list[tuple[int, int]],
+    ) -> tuple[list[str], list[str]]:
+        return (
+            [
+                cleaned_alignment_text(str(left_items[left_local][1]["text"]))
+                for left_local, _ in run
+            ],
+            [
+                cleaned_alignment_text(str(right_items[right_local][1]["text"]))
+                for _, right_local in run
+            ],
+        )
+
+    weak_candidates: list[int] = []
+    main_candidates: list[int] = []
+    for run_index, (run, characters, maximum_delta) in enumerate(runs):
+        if not is_contiguous_diagonal(run):
+            return None
+        left_characters, right_characters = item_characters(run)
+        if (
+            left_characters != right_characters
+            or any(len(character) != 1 for character in left_characters)
+            or characters != len(run)
+            or abs(
+                maximum_delta
+                - _match_run_max_pair_delta(run, left_items, right_items)
+            )
+            > 0.001
+        ):
+            return None
+        if (
+            characters == ZERO_DURATION_INDEL_WEAK_RUN_CHARACTERS
+            and maximum_delta > CONTAINED_DOMINANT_RUN_MAX_DELTA_SECONDS
+        ):
+            weak_candidates.append(run_index)
+        elif (
+            characters >= ZERO_DURATION_INDEL_MIN_MAIN_RUN_CHARACTERS
+            and maximum_delta <= STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+        ):
+            main_candidates.append(run_index)
+        else:
+            return None
+    if len(weak_candidates) != 1 or len(main_candidates) != 2:
+        return None
+
+    weak_index = weak_candidates[0]
+    weak_run = runs[weak_index][0]
+    ordered_main_indices = sorted(
+        main_candidates,
+        key=lambda run_index: global_pairs(runs[run_index][0])[0],
+    )
+    earlier_index, later_index = ordered_main_indices
+    earlier_run = runs[earlier_index][0]
+    later_run = runs[later_index][0]
+    earlier_pairs = global_pairs(earlier_run)
+    later_pairs = global_pairs(later_run)
+    weak_pairs = global_pairs(weak_run)
+
+    if (
+        not _match_runs_are_disjoint_and_ordered(earlier_run, later_run)
+        or _match_runs_are_disjoint_and_ordered(weak_run, earlier_run)
+        or _match_runs_are_disjoint_and_ordered(weak_run, later_run)
+        or later_pairs[0][0] != earlier_pairs[-1][0] + 1
+        or later_pairs[0][1] != earlier_pairs[-1][1] + 2
+        or weak_pairs[0][0] != earlier_pairs[-1][0]
+        or weak_pairs[-1][0] != later_pairs[0][0] + 1
+        or not all(
+            earlier_pairs[0][1] <= right_index <= earlier_pairs[-1][1]
+            for _, right_index in weak_pairs
+        )
+    ):
+        return None
+
+    right_by_index = {global_index: item for global_index, item in right_items}
+    inserted_index = earlier_pairs[-1][1] + 1
+    inserted_item = right_by_index.get(inserted_index)
+    if inserted_item is None:
+        return None
+    inserted_text = cleaned_alignment_text(str(inserted_item["text"]))
+    inserted_start = float(inserted_item["start"])
+    inserted_end = float(inserted_item["end"])
+    if (
+        len(inserted_text) != 1
+        or inserted_text
+        in {
+            cleaned_alignment_text(
+                str(right_items[earlier_run[-1][1]][1]["text"])
+            ),
+            cleaned_alignment_text(
+                str(right_items[later_run[0][1]][1]["text"])
+            ),
+        }
+        or inserted_end < inserted_start
+        or inserted_end - inserted_start > ZERO_DURATION_INDEL_MAX_ITEM_SECONDS
+    ):
+        return None
+
+    junction_values = [
+        float(left_items[earlier_run[-1][0]][1]["end"]),
+        float(left_items[later_run[0][0]][1]["start"]),
+        float(right_items[earlier_run[-1][1]][1]["end"]),
+        inserted_start,
+        inserted_end,
+        float(right_items[later_run[0][1]][1]["start"]),
+    ]
+    if max(junction_values) - min(junction_values) > (
+        ZERO_DURATION_INDEL_MAX_ITEM_SECONDS
+    ):
+        return None
+    main_left_pairs: dict[int, tuple[int, float]] = {}
+    main_right_pairs: dict[int, tuple[int, float]] = {}
+    for main_run in (earlier_run, later_run):
+        for left_local, right_local in main_run:
+            left_global = left_items[left_local][0]
+            right_global = right_items[right_local][0]
+            if left_global in main_left_pairs or right_global in main_right_pairs:
+                return None
+            pair_delta = abs(
+                alignment_item_midpoint(left_items[left_local][1])
+                - alignment_item_midpoint(right_items[right_local][1])
+            )
+            main_left_pairs[left_global] = (right_global, pair_delta)
+            main_right_pairs[right_global] = (left_global, pair_delta)
+
+    for (left_local, right_local), (left_global, right_global) in zip(
+        weak_run,
+        weak_pairs,
+        strict=True,
+    ):
+        left_alternative = main_left_pairs.get(left_global)
+        right_alternative = main_right_pairs.get(right_global)
+        if left_alternative is None or right_alternative is None:
+            return None
+        if (
+            left_alternative[0] == right_global
+            or right_alternative[0] == left_global
+        ):
+            return None
+        weak_delta = abs(
+            alignment_item_midpoint(left_items[left_local][1])
+            - alignment_item_midpoint(right_items[right_local][1])
+        )
+        minimum_margin = weak_delta - max(
+            left_alternative[1], right_alternative[1]
+        )
+        if (
+            weak_delta <= CONTAINED_DOMINANT_RUN_MAX_DELTA_SECONDS
+            or left_alternative[1] > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+            or right_alternative[1] > STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+            or minimum_margin < CONTAINED_DOMINANCE_MIN_DELTA_MARGIN_SECONDS
+        ):
+            return None
+
+    repaired_runs = [runs[earlier_index], runs[later_index]]
+    try:
+        _validate_unique_monotonic_match_runs(
+            [run for run, _, _ in repaired_runs]
+        )
+    except ValueError:
+        return None
+
+    return (
+        repaired_runs,
+        [earlier_run, later_run],
+        {
+            "method": ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION,
+            "indel_side": "right",
+        },
+    )
+
+
+def _repair_single_axis_dominated_weak_runs(
+    runs: list[tuple[list[tuple[int, int]], int, float]],
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+    *,
+    seam_seconds: float,
+) -> tuple[
+    list[tuple[list[tuple[int, int]], int, float]],
+    list[list[tuple[int, int]]],
+    dict[str, Any],
+] | None:
+    """Atomically drop weak runs dominated on one complete item axis."""
+
+    def global_pair(pair: tuple[int, int]) -> tuple[int, int]:
+        return left_items[pair[0]][0], right_items[pair[1]][0]
+
+    def pair_delta(pair: tuple[int, int]) -> float:
+        return abs(
+            alignment_item_midpoint(left_items[pair[0]][1])
+            - alignment_item_midpoint(right_items[pair[1]][1])
+        )
+
+    tight_indices = [
+        run_index
+        for run_index, (_, _, maximum_delta) in enumerate(runs)
+        if maximum_delta <= STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+    ]
+    if len(tight_indices) < 2:
+        return None
+    ordered_tight = sorted(
+        tight_indices,
+        key=lambda run_index: global_pair(runs[run_index][0][0]),
+    )
+    if any(
+        not _match_runs_are_disjoint_and_ordered(
+            runs[earlier][0], runs[later][0]
+        )
+        for earlier, later in zip(
+            ordered_tight[:-1], ordered_tight[1:], strict=True
+        )
+    ):
+        return None
+    loose_indices = [
+        run_index for run_index in range(len(runs)) if run_index not in tight_indices
+    ]
+    if len(runs) == 3 and len(ordered_tight) == 2 and len(loose_indices) == 1:
+        earlier_pairs = [global_pair(pair) for pair in runs[ordered_tight[0]][0]]
+        later_pairs = [global_pair(pair) for pair in runs[ordered_tight[1]][0]]
+        loose_pairs = [global_pair(pair) for pair in runs[loose_indices[0]][0]]
+        if (
+            runs[ordered_tight[0]][1] >= ZERO_DURATION_INDEL_MIN_MAIN_RUN_CHARACTERS
+            and runs[ordered_tight[1]][1]
+            >= ZERO_DURATION_INDEL_MIN_MAIN_RUN_CHARACTERS
+            and runs[loose_indices[0]][1] == ZERO_DURATION_INDEL_WEAK_RUN_CHARACTERS
+            and later_pairs[0][0] == earlier_pairs[-1][0] + 1
+            and later_pairs[0][1] == earlier_pairs[-1][1] + 2
+            and loose_pairs[0][0] == earlier_pairs[-1][0]
+            and loose_pairs[-1][0] == later_pairs[0][0] + 1
+            and all(
+                earlier_pairs[0][1] <= pair[1] <= earlier_pairs[-1][1]
+                for pair in loose_pairs
+            )
+        ):
+            return None
+
+    axis_maps: dict[tuple[int, int], dict[int, tuple[tuple[int, int], float]]] = {}
+    axis_unions = [set[int](), set[int]()]
+    axis_ranges: list[list[tuple[int, int]]] = [[], []]
+    for run_index in ordered_tight:
+        run = runs[run_index][0]
+        global_pairs = [global_pair(pair) for pair in run]
+        for axis in (0, 1):
+            mapping = {
+                pair[axis]: (run_pair, pair_delta(run_pair))
+                for run_pair, pair in zip(run, global_pairs, strict=True)
+            }
+            axis_maps[(run_index, axis)] = mapping
+            axis_unions[axis].update(mapping)
+            axis_ranges[axis].append(
+                (global_pairs[0][axis], global_pairs[-1][axis])
+            )
+
+    def bounded_other_axis_gap(weak_pairs: list[tuple[int, int]], axis: int) -> bool:
+        other_axis = 1 - axis
+        uncovered = sorted(
+            {
+                pair[other_axis]
+                for pair in weak_pairs
+                if pair[other_axis] not in axis_unions[other_axis]
+            }
+        )
+        if not uncovered:
+            return True
+        if len(uncovered) > 2 or uncovered != list(
+            range(uncovered[0], uncovered[-1] + 1)
+        ):
+            return False
+        return any(
+            earlier[1] < uncovered[0] <= uncovered[-1] < later[0]
+            for earlier, later in zip(
+                axis_ranges[other_axis][:-1],
+                axis_ranges[other_axis][1:],
+                strict=True,
+            )
+        )
+
+    eligible: set[int] = set()
+    for weak_index, (weak_run, weak_characters, _) in enumerate(runs):
+        if weak_index in tight_indices or weak_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS:
+            continue
+        weak_pairs = [global_pair(pair) for pair in weak_run]
+        weak_deltas = [pair_delta(pair) for pair in weak_run]
+        if any(
+            delta <= CONTAINED_DOMINANT_RUN_MAX_DELTA_SECONDS
+            for delta in weak_deltas
+        ):
+            continue
+        for tight_index in ordered_tight:
+            if runs[tight_index][1] < 2 * weak_characters:
+                continue
+            for axis in (0, 1):
+                mapping = axis_maps[(tight_index, axis)]
+                if (
+                    all(pair[axis] in mapping for pair in weak_pairs)
+                    and all(
+                        weak_delta - mapping[pair[axis]][1]
+                        >= CONTAINED_DOMINANCE_MIN_DELTA_MARGIN_SECONDS
+                        for pair, weak_delta in zip(
+                            weak_pairs, weak_deltas, strict=True
+                        )
+                    )
+                    and bounded_other_axis_gap(weak_pairs, axis)
+                ):
+                    eligible.add(weak_index)
+                    break
+            if weak_index in eligible:
+                break
+    if not eligible:
+        return None
+
+    original_anchor = _selected_match_run_anchor(
+        runs,
+        left_items,
+        right_items,
+        seam_seconds=seam_seconds,
+    )
+    if original_anchor is None:
+        return None
+    try:
+        _validate_unique_monotonic_match_runs([run for run, _, _ in runs])
+        return None
+    except ValueError:
+        original_consistent, _, _ = _ownership_cut_consistency(
+            runs,
+            left_items,
+            right_items,
+            left_stop=original_anchor["cut"][0],
+            right_start=original_anchor["cut"][1],
+        )
+        if original_consistent:
+            return None
+
+    repaired = [
+        candidate
+        for run_index, candidate in enumerate(runs)
+        if run_index not in eligible
+    ]
+    try:
+        _validate_unique_monotonic_match_runs([run for run, _, _ in repaired])
+    except ValueError:
+        return None
+    selected = _selected_match_run_anchor(
+        repaired,
+        left_items,
+        right_items,
+        seam_seconds=seam_seconds,
+        reject_cut_ties=True,
+    )
+    tight_pairs = {
+        global_pair(pair)
+        for run_index in tight_indices
+        for pair in runs[run_index][0]
+    }
+    if selected is None or selected["pair"] not in tight_pairs:
+        return None
+    consistent, _, _ = _ownership_cut_consistency(
+        repaired,
+        left_items,
+        right_items,
+        left_stop=selected["cut"][0],
+        right_start=selected["cut"][1],
+    )
+    if not consistent:
+        return None
+    return (
+        repaired,
+        [runs[run_index][0] for run_index in ordered_tight],
+        {
+            "method": SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION,
+            "selected_anchor_source": "nearest-tight-backbone-run",
+        },
+    )
+
+
+def _bounded_match_candidate_proof(
+    all_items: list[dict[str, Any]],
+    candidate_items: list[tuple[int, dict[str, Any]]],
+    *,
+    side: str,
+) -> list[dict[str, Any]]:
+    """Persist the complete, bounded candidate window with decode offsets."""
+
+    offsets = [0]
+    for item in all_items:
+        text = cleaned_alignment_text(str(item["text"]))
+        if not text:
+            raise ValueError("forced alignment returned an empty normalized item")
+        offsets.append(offsets[-1] + len(text))
+    if not candidate_items:
+        raise ValueError("zero-duration indel proof has no candidate items")
+    first_index = candidate_items[0][0]
+    last_index = candidate_items[-1][0]
+    if first_index == 0 or last_index + 1 >= len(all_items):
+        raise ValueError("zero-duration indel proof has no bounded context")
+    proof_items = [
+        (global_index, all_items[global_index])
+        for global_index in range(first_index - 1, last_index + 2)
+    ]
+    records: list[dict[str, Any]] = []
+    for global_index, item in proof_items:
+        text = cleaned_alignment_text(str(item["text"]))
+        if len(text) != 1 or not 0 <= global_index < len(all_items):
+            raise ValueError(
+                "zero-duration indel proof requires contiguous single-character items"
+            )
+        records.append(
+            {
+                "side": side,
+                "global_index": global_index,
+                "decoded_character_span": [
+                    offsets[global_index],
+                    offsets[global_index + 1],
+                ],
+                "cleaned_text": text,
+                "start_seconds": rounded_seconds(float(item["start"])),
+                "end_seconds": rounded_seconds(float(item["end"])),
+            }
+        )
+    if not records or [record["global_index"] for record in records] != list(
+        range(records[0]["global_index"], records[-1]["global_index"] + 1)
+    ):
+        raise ValueError(
+            "zero-duration indel proof requires one contiguous candidate window"
+        )
+    return records
 
 
 def _validate_unique_monotonic_match_runs(
@@ -2979,6 +4127,15 @@ def seam_crossover(
     )
     indel_anchor_run: list[tuple[int, int]] | None = None
     indel_repair_evidence: dict[str, Any] | None = None
+    zero_duration_indel_main_runs: list[list[tuple[int, int]]] | None = None
+    zero_duration_indel_original_runs: list[
+        tuple[list[tuple[int, int]], int, float]
+    ] | None = None
+    zero_duration_indel_repair_evidence: dict[str, Any] | None = None
+    zero_duration_indel_checked_counts: tuple[int, int] | None = None
+    single_axis_tight_runs: list[list[tuple[int, int]]] | None = None
+    single_axis_repair_evidence: dict[str, Any] | None = None
+    single_axis_checked_counts: tuple[int, int] | None = None
     if reliable_match_runs == runs_before_edge_repair:
         indel_repair = _repair_right_extra_repeated_token_indel_bubble(
             reliable_match_runs,
@@ -2991,6 +4148,72 @@ def seam_crossover(
                 indel_anchor_run,
                 indel_repair_evidence,
             ) = indel_repair
+    if (
+        reliable_match_runs == runs_before_edge_repair
+        and indel_repair_evidence is None
+    ):
+        zero_duration_indel_repair = (
+            _repair_zero_duration_right_indel_weak_bridge(
+                reliable_match_runs,
+                left_overlap,
+                right_overlap,
+            )
+        )
+        if zero_duration_indel_repair is not None:
+            zero_duration_indel_original_runs = reliable_match_runs
+            (
+                reliable_match_runs,
+                zero_duration_indel_main_runs,
+                zero_duration_indel_repair_evidence,
+            ) = zero_duration_indel_repair
+            zero_duration_indel_repair_evidence["candidate_proof"] = {
+                "window_seconds": [
+                    rounded_seconds(anchor_start),
+                    rounded_seconds(anchor_end),
+                ],
+                "left_items": _bounded_match_candidate_proof(
+                    left_items,
+                    left_overlap,
+                    side="left",
+                ),
+                "right_items": _bounded_match_candidate_proof(
+                    right_items,
+                    right_overlap,
+                    side="right",
+                ),
+            }
+    if (
+        indel_repair_evidence is None
+        and zero_duration_indel_repair_evidence is None
+    ):
+        single_axis_repair = _repair_single_axis_dominated_weak_runs(
+            reliable_match_runs,
+            left_overlap,
+            right_overlap,
+            seam_seconds=seam_seconds,
+        )
+        if single_axis_repair is not None:
+            (
+                reliable_match_runs,
+                single_axis_tight_runs,
+                single_axis_repair_evidence,
+            ) = single_axis_repair
+            single_axis_repair_evidence["candidate_proof"] = {
+                "window_seconds": [
+                    rounded_seconds(anchor_start),
+                    rounded_seconds(anchor_end),
+                ],
+                "left_items": _bounded_match_candidate_proof(
+                    left_items,
+                    left_overlap,
+                    side="left",
+                ),
+                "right_items": _bounded_match_candidate_proof(
+                    right_items,
+                    right_overlap,
+                    side="right",
+                ),
+            }
     for run, run_characters, run_max_pair_delta in reliable_match_runs:
         run_anchors: list[tuple[float, float, int, int, str, int, float]] = []
         for left_local, right_local in run:
@@ -3216,6 +4439,123 @@ def seam_crossover(
                 "post_repair_pair_count": checked_pairs,
                 "ownership_cut_consistent": True,
             }
+        if zero_duration_indel_repair_evidence is not None:
+            if (
+                zero_duration_indel_main_runs is None
+                or zero_duration_indel_original_runs is None
+            ):
+                raise ValueError(
+                    "zero-duration indel repair lost its main-run evidence"
+                )
+            main_anchor_pairs = {
+                (
+                    left_overlap[left_local][0],
+                    right_overlap[right_local][0],
+                )
+                for run in zero_duration_indel_main_runs
+                for left_local, right_local in run
+            }
+            if (left_index, right_index) not in main_anchor_pairs:
+                raise ValueError(
+                    "zero-duration indel repair did not select a tight main anchor"
+                )
+            consistent, checked_runs, checked_pairs = _ownership_cut_consistency(
+                reliable_match_runs,
+                left_overlap,
+                right_overlap,
+                left_stop=left_stop,
+                right_start=right_start,
+            )
+            original_consistent, _, _ = _ownership_cut_consistency(
+                zero_duration_indel_original_runs,
+                left_overlap,
+                right_overlap,
+                left_stop=left_stop,
+                right_start=right_start,
+            )
+            before_characters = 0
+            after_characters = 0
+            for run, _, _ in reliable_match_runs:
+                for pair in run:
+                    pair_characters = _match_run_characters(
+                        [pair], left_overlap
+                    )
+                    pair_side = _match_run_pair_side(
+                        [pair],
+                        left_overlap,
+                        right_overlap,
+                        seam_seconds=seam_seconds,
+                    )
+                    if pair_side == "before":
+                        before_characters += pair_characters
+                    elif pair_side == "after":
+                        after_characters += pair_characters
+            if (
+                not consistent
+                or original_consistent
+                or before_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+                or after_characters < MIN_SEAM_ANCHOR_RUN_CHARACTERS
+            ):
+                raise ValueError(
+                    "zero-duration indel repair does not prove one ownership cut"
+                )
+            zero_duration_indel_repair_evidence = {
+                **zero_duration_indel_repair_evidence,
+                "selected_anchor_source": "nearest-tight-main-run",
+                "selected_anchor_pair": [left_index, right_index],
+                "resulting_cut": {
+                    "left_stop": left_stop,
+                    "right_start": right_start,
+                },
+            }
+            zero_duration_indel_checked_counts = (
+                checked_runs,
+                checked_pairs,
+            )
+        if single_axis_repair_evidence is not None:
+            if single_axis_tight_runs is None:
+                raise ValueError("single-axis repair lost its tight backbone")
+            tight_pairs = {
+                (
+                    left_overlap[left_local][0],
+                    right_overlap[right_local][0],
+                )
+                for run in single_axis_tight_runs
+                for left_local, right_local in run
+            }
+            selected = _selected_match_run_anchor(
+                reliable_match_runs,
+                left_overlap,
+                right_overlap,
+                seam_seconds=seam_seconds,
+                reject_cut_ties=True,
+            )
+            consistent, checked_runs, checked_pairs = _ownership_cut_consistency(
+                reliable_match_runs,
+                left_overlap,
+                right_overlap,
+                left_stop=left_stop,
+                right_start=right_start,
+            )
+            if (
+                selected is None
+                or selected["pair"] != (left_index, right_index)
+                or selected["cut"] != (left_stop, right_start)
+                or (left_index, right_index) not in tight_pairs
+                or not consistent
+            ):
+                raise ValueError(
+                    "single-axis repair does not prove one tight ownership cut"
+                )
+            single_axis_repair_evidence = {
+                **single_axis_repair_evidence,
+                "selected_anchor_pair": [left_index, right_index],
+                "resulting_cut": {
+                    "left_stop": left_stop,
+                    "right_start": right_start,
+                },
+            }
+            single_axis_checked_counts = checked_runs, checked_pairs
         record = {
             "seam_seconds": rounded_seconds(seam_seconds),
             "strategy": "exact-time-anchor",
@@ -3253,6 +4593,38 @@ def seam_crossover(
                         "post_repair_pair_count"
                     ],
                     "match_run_repair": indel_repair_evidence,
+                }
+            )
+        if zero_duration_indel_repair_evidence is not None:
+            if zero_duration_indel_checked_counts is None:
+                raise ValueError("zero-duration indel repair lost its counts")
+            record.update(
+                {
+                    "ambiguity_resolution": (
+                        ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION
+                    ),
+                    "ambiguity_checked_run_count": (
+                        zero_duration_indel_checked_counts[0]
+                    ),
+                    "ambiguity_checked_pair_count": (
+                        zero_duration_indel_checked_counts[1]
+                    ),
+                    "match_run_repair": (
+                        zero_duration_indel_repair_evidence
+                    ),
+                }
+            )
+        if single_axis_repair_evidence is not None:
+            if single_axis_checked_counts is None:
+                raise ValueError("single-axis repair lost its counts")
+            record.update(
+                {
+                    "ambiguity_resolution": (
+                        SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION
+                    ),
+                    "ambiguity_checked_run_count": single_axis_checked_counts[0],
+                    "ambiguity_checked_pair_count": single_axis_checked_counts[1],
+                    "match_run_repair": single_axis_repair_evidence,
                 }
             )
         return (
