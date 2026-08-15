@@ -71,7 +71,7 @@ transcript:
     max_tokens_per_chunk: 4096
     chunk_duration_seconds: 240
     max_sentence_characters: 160
-  generated_at: "2026-08-06T08:32:38.969175Z"
+  generated_at: "2026-08-06T08:34:39.351176Z"
   quality:
     source_chunks: 58
     aligned_chunks: 58
@@ -113,7 +113,7 @@ asr_runs:
     engine: mlx-audio
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
-    generated_at: "2026-08-06T08:32:38.969175Z"
+    generated_at: "2026-08-06T08:34:39.351176Z"
     artifacts:
       raw: asr/qwen3-asr/raw.json
       aligned: asr/qwen3-asr/aligned.json

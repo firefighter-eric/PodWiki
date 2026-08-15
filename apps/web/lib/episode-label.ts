@@ -9,7 +9,6 @@ export function getEpisodeLabel(
     regular: null,
     special: "特别访谈",
     bonus: "加更",
-    trailer: "预告",
   }[releaseType];
 }
 

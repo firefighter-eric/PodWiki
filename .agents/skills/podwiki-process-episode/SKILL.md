@@ -42,16 +42,35 @@ preserving source provenance, resumability, and the repository content standard.
 5. Do not bypass login, membership, payment, region, or other access controls. This workflow
    never uses browser cookies; even an authorized request requires a separate, explicitly
    documented source-handling workflow.
-6. By default acquire only one video or podcast episode, never an account, channel,
+6. Every source, including a single BVID or video URL, must pass the podcast-only scope in
+   `docs/content-standard.md` before media download or tracked episode creation. Require
+   affirmative publisher evidence that identifies both a verified podcast and the exact item
+   as one of its complete official episodes; public availability, duration, interview format,
+   or a title containing `EP` is not evidence. If that proof is absent or ambiguous, stop after
+   metadata-only intake and do not download or create tracked episode files.
+
+   By default acquire only one such verified podcast episode, never an account, channel,
    playlist, or entire podcast. A bounded whole-podcast exception is allowed only when the
-   user explicitly authorizes one verified Xiaoyuzhou podcast. Before downloading, freeze a
-   manifest containing that podcast PID and every canonical episode URL/eid in scope. Admit
-   only anonymous `NORMAL`, `FREE`, non-private, explicitly `PUBLIC` episodes whose podcast
-   identity matches; reject and report every other item. Process the frozen manifest
-   sequentially with rate limiting and repeat the full identity validation for each episode.
-   Never expand the manifest during the run or extend the authorization to another podcast.
-   Whether invoked once or from such an authorized manifest, each acquisition command still
-   receives exactly one canonical episode URL:
+   user explicitly authorizes one verified podcast and every item independently passes the
+   same gate. Before downloading, freeze the exact allowlist in
+   `.cache/intake/<show-id>/manifest.json` and never expand it during the run:
+
+   - For Bilibili, require an official publisher season explicitly identified as full podcast
+     episodes, or exact per-episode matches to a public RSS/Apple Podcasts/Xiaoyuzhou show.
+     Record the canonical channel URL and `mid`, podcast `season_id` when present, collection
+     title, frozen time, allowlist count, and canonical BVID URLs. Feed-matched manifests also
+     record the canonical feed URL and each BVID's GUID and episode-URL mapping. A mixed channel
+     is not a podcast allowlist. Exclude clips, previews, livestreams, events, courses, talks,
+     product videos, and ordinary uploads unless the publisher also releases the same complete
+     item as an episode of the verified podcast.
+   - For Xiaoyuzhou, record the podcast PID and every canonical episode URL/eid. Admit only
+     anonymous `NORMAL`, `FREE`, non-private, explicitly `PUBLIC` episodes whose podcast
+     identity matches.
+
+   Reject and report every other item. Process the frozen manifest sequentially with rate
+   limiting and repeat the full source and access validation for each episode. Never extend
+   authorization to another show. Whether invoked once or from such an authorized manifest,
+   each acquisition command still receives exactly one canonical episode URL:
 
    ```bash
    env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
@@ -295,15 +314,19 @@ entire file without preserving a resumable segment mapping.
    in this order: `标题`、`访谈人物`、`播客名称`、`日期`、`总结`、`逐字稿`.
    Show-level tables keep five columns in this order: `标题`、`播客名称`、`日期`、
    `总结链接`、`逐字稿链接`.
-3. After every episode addition or update, update its row in both the root `README.md` and
-   `shows/<show-id>/README.md`. Link the episode title to the canonical URL of its preferred
-   publisher source, such as Bilibili, YouTube, or Xiaoyuzhou. In the root table only,
+3. Add an episode to both the root `README.md` and `shows/<show-id>/README.md` only after it
+   reaches the Web-publishable workflow state defined by the content standard. Never add an
+   in-progress metadata, outline, or source-acquired record to either index. When an already
+   indexed episode changes, refresh both rows together. Link the episode title to the canonical
+   URL of its preferred publisher source, such as Bilibili, YouTube, or Xiaoyuzhou. In the root table only,
    populate `访谈人物`
    from front-matter participants whose role is `guest`; join multiple guests with `、` and
    never infer an unverified guest. Keep the verified episode number in `episode_number`; do
    not prefix the displayed title with `#<number>`. Link the summary and transcript columns
-   directly to their local Markdown files. Completing episode work while either table is stale
-   is incomplete.
+   directly to their local Markdown files. When the selected transcript is English, the
+   transcript cell in both indexes must contain links to the selected English transcript and
+   its required `zh-CN` translation; the English file remains selected. Completing episode
+   work while either table is stale is incomplete.
 4. Keep the root `README.md` focused on introducing PodWiki and navigating the podcast Wiki.
    Do not add Python command blocks or operational runbooks there.
 5. Record Python script usage in `docs/python-scripts.md`. Whenever a script's CLI or the

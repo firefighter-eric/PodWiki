@@ -1,7 +1,22 @@
 # Bilibili source handling
 
-- Accept one `https://www.bilibili.com/video/<BVID>/` source and reject multi-page inputs
-  other than page 1 until page-specific storage is implemented.
+- Accept one `https://www.bilibili.com/video/<BVID>/` source as the technical input and reject
+  multi-page inputs other than page 1 until page-specific storage is implemented. A canonical
+  BVID identifies a source; it does not prove that the source is a podcast episode.
+- Before media acquisition or tracked episode creation, require affirmative publisher evidence
+  that the exact video is a complete official episode of a verified podcast. Public availability,
+  duration, interview format, or a title containing `EP` is insufficient. If the proof is absent
+  or ambiguous, stop after metadata-only intake and reject the video from PodWiki ingestion.
+- Treat a Bilibili account as a mixed publishing surface, not as a podcast. For an explicitly
+  authorized bounded podcast import, first freeze only an official publisher season identified
+  as full podcast episodes, or videos exactly matched to a public podcast feed. Under
+  `.cache/intake/<show-id>/manifest.json`, record the canonical channel URL and `mid`,
+  `season_id` when present, collection title, frozen time, allowlist count, and canonical BVID
+  URLs. Feed-matched entries also record the canonical feed URL and each BVID's GUID and episode
+  URL mapping. Never admit the channel's other uploads merely because they are long or
+  conversational; exclude clips, livestreams, events, courses, talks, product videos, and
+  ordinary commentary unless the same complete item is officially published as an episode of
+  the verified podcast.
 - Remove queries and fragments from the stored canonical URL.
 - Use `scripts/acquire_media.py` so yt-dlp and Bilibili's public view/player metadata are
   captured together. Do not persist temporary DASH URLs.

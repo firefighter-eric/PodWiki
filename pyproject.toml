@@ -29,6 +29,7 @@ asr-cuda = [
 [dependency-groups]
 dev = [
   "mypy==1.18.2",
+  "numpy==2.4.6",
   "pip-audit==2.9.0",
   "ruff==0.12.12",
 ]

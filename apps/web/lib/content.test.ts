@@ -237,6 +237,30 @@ function rewriteFixtureReadme(
   fs.writeFileSync(filePath, updated);
 }
 
+function convertFixtureEpisodeToEnglish(episodeRoot: string) {
+  const sourceContent = fs.readFileSync(path.join(episodeRoot, "transcript.zh-CN.md"), "utf8");
+  const sourceSha256 = createHash("sha256").update(sourceContent).digest("hex");
+  const translationSha256 = createHash("sha256").update(sourceContent).digest("hex");
+  fs.writeFileSync(path.join(episodeRoot, "transcript.en.md"), sourceContent);
+  fs.writeFileSync(path.join(episodeRoot, "asr", "test", "transcript.en.md"), sourceContent);
+  rewriteFixtureReadme(path.join(episodeRoot, "README.md"), (readme) => readme
+    .replace("language: zh-CN", "language: en")
+    .replaceAll("transcript.zh-CN.md", "transcript.en.md")
+    .replace(
+      "  translations: []",
+      `  translations:
+    - language: zh-CN
+      path: transcript.zh-CN.md
+      source_language: en
+      source_path: transcript.en.md
+      alignment: segment
+      status: machine
+      generated_at: "2026-08-08T12:00:00Z"
+      source_sha256: ${sourceSha256}
+      sha256: ${translationSha256}`,
+    ));
+}
+
 async function withFixtureRepository(
   setup: (repositoryRoot: string) => void,
   assertion: (content: ContentModule, repositoryRoot: string) => Promise<void>,
@@ -270,7 +294,7 @@ describe("PodWiki content loader", () => {
         typeof file === "string" && file.endsWith(".md") ? [path.resolve(file)] : []
       ));
 
-      expect(cards).toHaveLength(73);
+      expect(cards).toHaveLength(124);
       expect(markdownReads.some((file) => path.basename(file).startsWith("summary."))).toBe(true);
       expect(markdownReads.filter((file) => path.basename(file).startsWith("transcript."))).toEqual([]);
     } finally {
@@ -407,6 +431,10 @@ describe("PodWiki content loader", () => {
       {
         label: "release type",
         transform: (readme: string) => readme.replace("release_type: regular", "release_type: interview"),
+      },
+      {
+        label: "trailer exclusion",
+        transform: (readme: string) => readme.replace("release_type: regular", "release_type: trailer"),
       },
       {
         label: "numbering relation",
@@ -675,6 +703,53 @@ workflow:`,
     });
   });
 
+  it("accepts the exact English source and zh-CN translation contract", async () => {
+    await withFixtureRepository((repositoryRoot) => {
+      const episodeRoot = writeFixtureEpisode({
+        repositoryRoot,
+        folder: "001-english",
+        episodeKey: "001",
+      });
+      convertFixtureEpisodeToEnglish(episodeRoot);
+    }, async (content) => {
+      await expect(content.getEpisode("example", "001-english")).resolves.toMatchObject({
+        language: "en",
+        transcriptTranslations: [{
+          language: "zh-CN",
+          path: "transcript.zh-CN.md",
+          sourceLanguage: "en",
+          sourcePath: "transcript.en.md",
+        }],
+      });
+    });
+  });
+
+  it("rejects translation metadata outside the fixed zh-CN contract", async () => {
+    const invalidCases = [
+      ["translation language", "    - language: zh-CN", "    - language: zh-Hans"],
+      ["translation path", "      path: transcript.zh-CN.md", "      path: translation.zh-CN.md"],
+      ["source language", "      source_language: en", "      source_language: en-US"],
+      ["source path", "      source_path: transcript.en.md", "      source_path: source.en.md"],
+    ] as const;
+
+    for (const [label, current, replacement] of invalidCases) {
+      await withFixtureRepository((repositoryRoot) => {
+        const episodeRoot = writeFixtureEpisode({
+          repositoryRoot,
+          folder: "001-english",
+          episodeKey: "001",
+        });
+        convertFixtureEpisodeToEnglish(episodeRoot);
+        rewriteFixtureReadme(
+          path.join(episodeRoot, "README.md"),
+          (readme) => readme.replace(current, replacement),
+        );
+      }, async (content) => {
+        await expect(content.getEpisodeCards(), label).rejects.toThrow();
+      });
+    }
+  });
+
   it("loads only the requested episode body and its translation assets", async () => {
     vi.resetModules();
     const content = await import("@/lib/content");
@@ -714,16 +789,18 @@ workflow:`,
       "svvector",
       "latetalk",
       "luoyonghao",
+      "moonuncle",
       "whynottv",
       "yiqitietalk",
     ]);
-    expect(episodes).toHaveLength(73);
+    expect(episodes).toHaveLength(124);
     expect(Object.fromEntries(shows.map((show) => [show.id, show.episodeCount]))).toEqual({
-      zhangxiaojun: 12,
+      zhangxiaojun: 29,
       sv101: 8,
       svvector: 10,
       latetalk: 12,
-      luoyonghao: 6,
+      luoyonghao: 36,
+      moonuncle: 4,
       whynottv: 5,
       yiqitietalk: 20,
     });

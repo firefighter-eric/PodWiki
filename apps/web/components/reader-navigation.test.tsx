@@ -157,7 +157,6 @@ describe("reader navigation", () => {
     expect(html).not.toContain("特别访谈");
     expect(html).toContain("2026-07-28");
     expect(getEpisodeLabel(null, "bonus")).toBe("加更");
-    expect(getEpisodeLabel(null, "trailer")).toBe("预告");
   });
 
   it("uses person-topic titles without episode badges in discovery lists", async () => {
@@ -174,8 +173,8 @@ describe("reader navigation", () => {
     }));
     expect(catalogHtml).toContain('<span class="episode-keyword">SGLang</span>');
     expect(catalogHtml).toContain('<span class="episode-keyword">Kimi</span>');
-    expect(shows).toHaveLength(7);
-    expect(catalogHtml).toContain('class="catalog-tally" aria-label="2 期内容，来自 7 档播客"');
+    expect(shows).toHaveLength(8);
+    expect(catalogHtml).toContain('class="catalog-tally" aria-label="2 期内容，来自 8 档播客"');
     expect(catalogHtml).not.toContain('class="show-grid"');
     expect(catalogHtml).toContain('<strong>盛颖</strong><span>SGLang、Infra 产品观与开源</span>');
     expect(catalogHtml).toContain('<strong>叶奇意</strong><span>AI 人才迁徙、Kimi 投资与 AGI</span>');
@@ -248,19 +247,21 @@ describe("reader navigation", () => {
     const [shows, episodes] = await Promise.all([getShows(), getEpisodes()]);
     const homeHtml = renderToStaticMarkup(createElement(ShowCatalog, { shows, episodes }));
 
-    expect(shows).toHaveLength(7);
-    expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(7);
-    expect(homeHtml.match(/class="podcast-preview-episode selectable-content-link"/g)).toHaveLength(21);
+    expect(shows).toHaveLength(8);
+    expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(8);
+    expect(homeHtml.match(/class="podcast-preview-episode selectable-content-link"/g)).toHaveLength(24);
     expect(homeHtml).not.toContain("查看全部 0 期");
     expect(homeHtml).toContain("按播客浏览");
     expect(homeHtml).toContain('href="/shows/yiqitietalk"');
     expect(homeHtml).not.toContain('href="/shows/dagaizhishi"');
     expect(homeHtml).not.toContain('href="/shows/xinkoukaihe"');
     expect(homeHtml).not.toContain('href="/shows/erdesancifang"');
-    expect(homeHtml.match(/查看全部 12 期/g)).toHaveLength(2);
+    expect(homeHtml.match(/查看全部 12 期/g)).toHaveLength(1);
+    expect(homeHtml).toContain("查看全部 29 期");
     expect(homeHtml).toContain("查看全部 10 期");
     expect(homeHtml).toContain("查看全部 8 期");
-    expect(homeHtml).toContain("查看全部 6 期");
+    expect(homeHtml).toContain("查看全部 36 期");
+    expect(homeHtml).toContain("查看全部 4 期");
     expect(homeHtml).toContain("查看全部 5 期");
     expect(homeHtml).toContain("查看全部 20 期");
 
@@ -273,18 +274,9 @@ describe("reader navigation", () => {
   });
 
   it("renders episode-authored core-point logic tables for every podcast", async () => {
-    const episodes = await getEpisodes();
-    const showIds = [
-      "zhangxiaojun",
-      "sv101",
-      "svvector",
-      "latetalk",
-      "luoyonghao",
-      "whynottv",
-      "yiqitietalk",
-    ];
+    const [shows, episodes] = await Promise.all([getShows(), getEpisodes()]);
 
-    for (const showId of showIds) {
+    for (const { id: showId } of shows) {
       const episode = episodes.find((candidate) => candidate.showId === showId);
       expect(episode).toBeDefined();
 

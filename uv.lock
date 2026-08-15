@@ -1043,6 +1043,7 @@ media = [
 [package.dev-dependencies]
 dev = [
     { name = "mypy" },
+    { name = "numpy" },
     { name = "pip-audit" },
     { name = "ruff" },
 ]
@@ -1067,6 +1068,7 @@ provides-extras = ["media", "asr", "asr-cuda"]
 [package.metadata.requires-dev]
 dev = [
     { name = "mypy", specifier = "==1.18.2" },
+    { name = "numpy", specifier = "==2.4.6" },
     { name = "pip-audit", specifier = "==2.9.0" },
     { name = "ruff", specifier = "==0.12.12" },
 ]

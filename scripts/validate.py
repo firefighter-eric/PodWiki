@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import re
 import sys
 from datetime import datetime
@@ -24,18 +25,12 @@ from qwen3_asr_transformers_adapter import (
 
 ROOT = Path(__file__).resolve().parents[1]
 SHOWS_ROOT = ROOT / "shows"
-BILIBILI_URL_RE = re.compile(
-    r"https://www\.bilibili\.com/video/[^\s)\]\"']+"
-)
-CANONICAL_BILIBILI_URL_RE = re.compile(
-    r"https://www\.bilibili\.com/video/BV[A-Za-z0-9]+/"
-)
+BILIBILI_URL_RE = re.compile(r"https://www\.bilibili\.com/video/[^\s)\]\"']+")
+CANONICAL_BILIBILI_URL_RE = re.compile(r"https://www\.bilibili\.com/video/BV[A-Za-z0-9]+/")
 CANONICAL_BILIBILI_VIDEO_RE = re.compile(
     r"https://www\.bilibili\.com/video/(?P<bvid>BV[A-Za-z0-9]+)/"
 )
-XIAOYUZHOU_URL_RE = re.compile(
-    r"https://www\.xiaoyuzhoufm\.com/(?:episode|podcast)/[^\s)\]\"']+"
-)
+XIAOYUZHOU_URL_RE = re.compile(r"https://www\.xiaoyuzhoufm\.com/(?:episode|podcast)/[^\s)\]\"']+")
 CANONICAL_XIAOYUZHOU_URL_RE = re.compile(
     r"https://www\.xiaoyuzhoufm\.com/(?:episode|podcast)/[0-9a-f]{24}"
 )
@@ -49,15 +44,11 @@ QWEN_JSON_ARTIFACT_NAMES = (
     "refined.json",
 )
 DEFAULT_QWEN_TRANSCRIPT_NAME = "transcript.zh-CN.md"
-QWEN_TRANSCRIPT_NAME_RE = re.compile(
-    r"transcript\.[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*\.md"
-)
+QWEN_TRANSCRIPT_NAME_RE = re.compile(r"transcript\.[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*\.md")
 SHA256_RE = re.compile(r"[0-9a-f]{64}")
 SHOW_ID_RE = re.compile(r"[a-z0-9]+")
 EPISODE_KEY_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
-RFC3339_RE = re.compile(
-    r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})"
-)
+RFC3339_RE = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})")
 CALENDAR_DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 TRANSCRIPT_LINE_RE = re.compile(r"^\[\d{2}:[0-5]\d:[0-5]\d\] \S.*  $")
 TRANSCRIPT_TIMESTAMP_RE = re.compile(r"^(\[\d{2}:[0-5]\d:[0-5]\d\]) ")
@@ -74,7 +65,7 @@ WORKFLOW_TRANSCRIPT_STATUSES = {
 }
 WEB_SUMMARY_STATUSES = {"draft", "reviewed"}
 WEB_TRANSCRIPT_STATUSES = {"machine", "edited", "reviewed"}
-EPISODE_RELEASE_TYPES = {"regular", "special", "bonus", "trailer"}
+EPISODE_RELEASE_TYPES = {"regular", "special", "bonus"}
 NUMBERING_STATUSES = {"verified", "not-in-publisher-feed", "unknown"}
 PARTICIPANT_ROLES = {"guest", "participant", "host"}
 PARTICIPANT_FIELDS = {"id", "name", "role", "aliases", "profile"}
@@ -140,9 +131,7 @@ SHOW_FIELDS = {
 ASR_SELECTION_STATUSES = {"candidate", "selected", "superseded", "rejected"}
 SUMMARY_SELECTION_STATUSES = {"selected", "superseded"}
 SUMMARY_TIMESTAMP_RE = re.compile(r"\[(\d{2}:[0-5]\d:[0-5]\d)\]")
-XIAOYUZHOU_MEDIA_ID_RE = re.compile(
-    r"(?P<pid>[0-9a-f]{24})/[A-Za-z0-9_-]+\.m4a"
-)
+XIAOYUZHOU_MEDIA_ID_RE = re.compile(r"(?P<pid>[0-9a-f]{24})/[A-Za-z0-9_-]+\.m4a")
 GIT_COMMIT_RE = re.compile(r"[0-9a-f]{40}")
 MODEL_IDENTITY_REQUIRED_FILES = {"config.json"}
 MLX_QWEN_ENGINE = "mlx-audio"
@@ -150,11 +139,93 @@ MLX_QWEN_MODEL = "mlx-community/Qwen3-ASR-1.7B-8bit"
 MLX_QWEN_MODEL_REVISION = "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
 MLX_QWEN_ALIGNER = "mlx-community/Qwen3-ForcedAligner-0.6B-8bit"
 MLX_QWEN_ALIGNER_REVISION = "0e1a68e91d815300c7c9754b2a7639378b23db15"
+MLX_SAMPLE_RATE_HZ = 16_000
+MAX_SAFE_JSON_INTEGER = (1 << 53) - 1
+MLX_MIN_AUDIO_DURATION_SECONDS = 0.001
+MLX_MAX_AUDIO_DURATION_SECONDS = 359_999.999
+MLX_MIN_CHUNK_DURATION_SECONDS = 1.0
+MLX_MAX_CHUNK_DURATION_SECONDS = 300.0
+MLX_MIN_AUDIO_SAMPLE_COUNT = math.ceil(MLX_MIN_AUDIO_DURATION_SECONDS * MLX_SAMPLE_RATE_HZ)
+MLX_MAX_AUDIO_SAMPLE_COUNT = int(MLX_MAX_AUDIO_DURATION_SECONDS * MLX_SAMPLE_RATE_HZ)
+MLX_MAX_PLANNED_CHUNK_COUNT = math.ceil(
+    MLX_MAX_AUDIO_DURATION_SECONDS / MLX_MIN_CHUNK_DURATION_SECONDS
+)
+MLX_RAW_TIMESTAMP_ROUNDING_SECONDS = 0.001
+MLX_RAW_FLOAT_COMPARISON_EPSILON_SECONDS = 1e-9
+MLX_RAW_BOUNDARY_TOLERANCE_SECONDS = (
+    MLX_RAW_TIMESTAMP_ROUNDING_SECONDS + MLX_RAW_FLOAT_COMPARISON_EPSILON_SECONDS
+)
+MLX_RAW_CUMULATIVE_BOUNDARY_TOLERANCE_SECONDS = (
+    2 * MLX_RAW_TIMESTAMP_ROUNDING_SECONDS + MLX_RAW_FLOAT_COMPARISON_EPSILON_SECONDS
+)
+MLX_PER_CHUNK_TOKEN_BUDGET_SCOPE = "per-planned-chunk-v1"
+MLX_LEGACY_ADAPTIVE_TOKEN_BUDGET_SCOPE = "adaptive-bisect-per-leaf-v1"
+MLX_ADAPTIVE_TOKEN_BUDGET_SCOPE = "adaptive-bisect-per-leaf-v2"
+MLX_ADAPTIVE_SPLIT_ALGORITHM = "adaptive-low-energy-bisect-v1"
+MLX_ADAPTIVE_MIN_LEAF_SAMPLES = 20 * MLX_SAMPLE_RATE_HZ
+MLX_LEGACY_ADAPTIVE_MAX_DEPTH = 3
+MLX_ADAPTIVE_MAX_DEPTH = 4
+MLX_ADAPTIVE_DEPTH_BY_SCOPE = {
+    MLX_LEGACY_ADAPTIVE_TOKEN_BUDGET_SCOPE: MLX_LEGACY_ADAPTIVE_MAX_DEPTH,
+    MLX_ADAPTIVE_TOKEN_BUDGET_SCOPE: MLX_ADAPTIVE_MAX_DEPTH,
+}
+MLX_ADAPTIVE_MAX_SPLIT_COUNT = 64
+MLX_ADAPTIVE_ENERGY_WINDOW_SAMPLES = MLX_SAMPLE_RATE_HZ // 10
+MLX_ADAPTIVE_QUANTIZATION = "pcm-s16-round-half-away-v1"
+MLX_ADAPTIVE_TIE_BREAK = "energy-center-left-v1"
 CUDA_QWEN_ENGINE = "qwen-asr-transformers"
 CUDA_QWEN_BACKEND = "transformers-native"
 LEGACY_CUDA_QWEN_MODEL = "Qwen/Qwen3-ASR-1.7B"
 LEGACY_CUDA_QWEN_ALIGNER = "Qwen/Qwen3-ForcedAligner-0.6B"
 LEGACY_CUDA_QWEN_BACKEND = "qwen-asr"
+
+
+def bounded_json_number(
+    value: Any,
+    *,
+    field: str,
+    minimum: float,
+    maximum: float,
+    errors: list[str],
+    maximum_exclusive: bool = False,
+) -> float | None:
+    """Validate an untrusted JSON number without leaking conversion errors."""
+
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        errors.append(f"{field} must be a finite number in the supported range")
+        return None
+    try:
+        number = float(value)
+    except (OverflowError, TypeError, ValueError):
+        errors.append(f"{field} must be a finite number in the supported range")
+        return None
+    if (
+        not math.isfinite(number)
+        or number < minimum
+        or (number >= maximum if maximum_exclusive else number > maximum)
+    ):
+        upper_comparison = "<" if maximum_exclusive else "<="
+        errors.append(
+            f"{field} must be a finite number with {minimum} <= value {upper_comparison} {maximum}"
+        )
+        return None
+    return number
+
+
+def bounded_json_integer(
+    value: Any,
+    *,
+    field: str,
+    minimum: int,
+    maximum: int,
+    errors: list[str],
+) -> int | None:
+    """Validate an untrusted JSON integer, rejecting bool and arbitrary bignums."""
+
+    if type(value) is not int or not minimum <= value <= maximum:
+        errors.append(f"{field} must be an integer in [{minimum}, {maximum}]")
+        return None
+    return value
 
 
 def relative(path: Path) -> str:
@@ -203,15 +274,11 @@ def read_json_strict(
             parse_constant=reject_non_finite_number,
         )
     except (OSError, UnicodeError, json.JSONDecodeError, ValueError) as error:
-        errors.append(
-            f"{display_path(path, repository_root)} is not strict JSON: {error}"
-        )
+        errors.append(f"{display_path(path, repository_root)} is not strict JSON: {error}")
         return None
 
     if not isinstance(document, dict):
-        errors.append(
-            f"{display_path(path, repository_root)} JSON root must be an object"
-        )
+        errors.append(f"{display_path(path, repository_root)} JSON root must be an object")
         return None
     return document
 
@@ -238,9 +305,7 @@ def decode_yaml_scalar(value: str) -> str:
     return value
 
 
-def nested_front_matter_scalar(
-    lines: list[str], section: str, key: str
-) -> str | None:
+def nested_front_matter_scalar(lines: list[str], section: str, key: str) -> str | None:
     in_section = False
     for line in lines:
         stripped = line.strip()
@@ -304,9 +369,7 @@ def top_level_front_matter_keys(lines: list[str]) -> list[str]:
     ]
 
 
-def parse_top_level_scalar_list(
-    lines: list[str], section: str
-) -> tuple[bool, list[Any]]:
+def parse_top_level_scalar_list(lines: list[str], section: str) -> tuple[bool, list[Any]]:
     """Parse the block or empty scalar-list subset used by show metadata."""
 
     values: list[Any] = []
@@ -363,9 +426,7 @@ def nested_front_matter_mapping(
     return result
 
 
-def parse_front_matter_list(
-    lines: list[str], section: str
-) -> tuple[bool, list[dict[str, Any]]]:
+def parse_front_matter_list(lines: list[str], section: str) -> tuple[bool, list[dict[str, Any]]]:
     """Parse the list-of-mappings subset used by sources and participants."""
 
     items: list[dict[str, Any]] = []
@@ -445,9 +506,7 @@ def is_absolute_url(value: Any, *, scheme: str | None = None) -> bool:
         parsed = urlsplit(value)
     except ValueError:
         return False
-    return bool(parsed.scheme and parsed.netloc) and (
-        scheme is None or parsed.scheme == scheme
-    )
+    return bool(parsed.scheme and parsed.netloc) and (scheme is None or parsed.scheme == scheme)
 
 
 def parse_transcript_translations(
@@ -494,9 +553,7 @@ def parse_transcript_translations(
             item = stripped[1:].strip()
             if item:
                 if ":" not in item:
-                    errors.append(
-                        "transcript.translations items must be YAML mappings"
-                    )
+                    errors.append("transcript.translations items must be YAML mappings")
                     continue
                 key, value = item.split(":", 1)
                 current[key.strip()] = decode_yaml_scalar(value)
@@ -505,9 +562,7 @@ def parse_transcript_translations(
             key, value = stripped.split(":", 1)
             key = key.strip()
             if key in current:
-                errors.append(
-                    f"transcript.translations item has duplicate field {key!r}"
-                )
+                errors.append(f"transcript.translations item has duplicate field {key!r}")
             current[key] = decode_yaml_scalar(value)
             continue
         errors.append("transcript.translations items must be YAML mappings")
@@ -598,14 +653,10 @@ def validate_participant_profiles(
     def start_profile(raw_value: str) -> None:
         nonlocal current_profile, current_list_name, current_list_item, profile_seen
         if participant_index < 0:
-            errors.append(
-                f"{field_prefix} profile must be attached to a participants list item"
-            )
+            errors.append(f"{field_prefix} profile must be attached to a participants list item")
             return
         if profile_seen:
-            errors.append(
-                f"{profile_field(participant_index)} has a duplicate profile field"
-            )
+            errors.append(f"{profile_field(participant_index)} has a duplicate profile field")
             return
         profile_seen = True
         current_list_name = None
@@ -694,9 +745,7 @@ def validate_participant_profiles(
             state = lists[current_list_name]
             if not (stripped == "-" or stripped.startswith("- ")):
                 state["mode"] = "invalid"
-                errors.append(
-                    f"{base_field}.{current_list_name} must be a YAML list"
-                )
+                errors.append(f"{base_field}.{current_list_name} must be a YAML list")
                 current_list_item = None
                 continue
             item: dict[str, str | None] = {}
@@ -706,31 +755,20 @@ def validate_participant_profiles(
             if not inline:
                 continue
             if ":" not in inline:
-                errors.append(
-                    f"{base_field}.{current_list_name} items must be YAML mappings"
-                )
+                errors.append(f"{base_field}.{current_list_name} items must be YAML mappings")
                 continue
             key, raw_value = inline.split(":", 1)
             item[key.strip()] = decode_non_empty_yaml_scalar(raw_value)
             continue
 
-        if (
-            indent == 10
-            and current_list_name is not None
-            and current_list_item is not None
-        ):
+        if indent == 10 and current_list_name is not None and current_list_item is not None:
             if ":" not in stripped:
-                errors.append(
-                    f"{base_field}.{current_list_name} items must be YAML mappings"
-                )
+                errors.append(f"{base_field}.{current_list_name} items must be YAML mappings")
                 continue
             key, raw_value = stripped.split(":", 1)
             key = key.strip()
             if key in current_list_item:
-                errors.append(
-                    f"{base_field}.{current_list_name} item has duplicate field "
-                    f"{key!r}"
-                )
+                errors.append(f"{base_field}.{current_list_name} item has duplicate field {key!r}")
                 continue
             current_list_item[key] = decode_non_empty_yaml_scalar(raw_value)
 
@@ -745,8 +783,7 @@ def validate_participant_profiles(
 
         checked_at = fields.get("checked_at")
         valid_checked_at = (
-            isinstance(checked_at, str)
-            and CALENDAR_DATE_RE.fullmatch(checked_at) is not None
+            isinstance(checked_at, str) and CALENDAR_DATE_RE.fullmatch(checked_at) is not None
         )
         if valid_checked_at:
             try:
@@ -769,33 +806,24 @@ def validate_participant_profiles(
                 unknown = set(item).difference(allowed)
                 if unknown:
                     errors.append(
-                        f"{item_field} contains unsupported fields: "
-                        f"{', '.join(sorted(unknown))}"
+                        f"{item_field} contains unsupported fields: {', '.join(sorted(unknown))}"
                     )
                 required = (
-                    ("organization", "status")
-                    if list_name == "affiliations"
-                    else ("institution",)
+                    ("organization", "status") if list_name == "affiliations" else ("institution",)
                 )
                 for key in required:
                     if item.get(key) is None:
                         errors.append(f"{item_field}.{key} must be a non-empty string")
-                optional = (
-                    ("title",) if list_name == "affiliations" else ("credential", "field")
-                )
+                optional = ("title",) if list_name == "affiliations" else ("credential", "field")
                 for key in optional:
                     if key in item and item[key] is None:
-                        errors.append(
-                            f"{item_field}.{key} must be a non-empty string when present"
-                        )
+                        errors.append(f"{item_field}.{key} must be a non-empty string when present")
                 if list_name == "affiliations" and item.get("status") not in {
                     "current",
                     "former",
                     None,
                 }:
-                    errors.append(
-                        f"{item_field}.status must be one of current, former"
-                    )
+                    errors.append(f"{item_field}.status must be one of current, former")
 
 
 def is_qwen_run(run: dict[str, Any]) -> bool:
@@ -859,8 +887,7 @@ def check_recorded_path(
     )
     if path is not None and path != expected:
         errors.append(
-            f"{field} must point to {display_path(expected, repository_root)}, "
-            f"not {value!r}"
+            f"{field} must point to {display_path(expected, repository_root)}, not {value!r}"
         )
     return path
 
@@ -885,9 +912,7 @@ def valid_sha256(value: Any, *, field: str, errors: list[str]) -> str | None:
     return value
 
 
-def validate_model_identity(
-    value: Any, *, field: str, errors: list[str]
-) -> dict[str, Any] | None:
+def validate_model_identity(value: Any, *, field: str, errors: list[str]) -> dict[str, Any] | None:
     if not isinstance(value, dict):
         errors.append(f"{field} must be an object")
         return None
@@ -917,10 +942,14 @@ def validate_model_identity(
     if requested != resolved:
         errors.append(f"{field}.requested_revision must equal resolved_commit")
     files = value.get("files_sha256")
-    if not isinstance(files, dict) or "config.json" not in files or not any(
-        isinstance(path, str) and path.endswith(".safetensors")
-        for path in files
-        if isinstance(files, dict)
+    if (
+        not isinstance(files, dict)
+        or "config.json" not in files
+        or not any(
+            isinstance(path, str) and path.endswith(".safetensors")
+            for path in files
+            if isinstance(files, dict)
+        )
     ):
         errors.append(f"{field}.files_sha256 must include config.json and safetensors")
     elif isinstance(files, dict):
@@ -934,14 +963,10 @@ def validate_model_identity(
                     and all(part not in {"", ".", ".."} for part in pure.parts)
                 )
             if not valid_path:
-                errors.append(
-                    f"{field}.files_sha256 keys must be normalized relative POSIX paths"
-                )
+                errors.append(f"{field}.files_sha256 keys must be normalized relative POSIX paths")
                 break
             if not isinstance(digest, str) or SHA256_RE.fullmatch(digest) is None:
-                errors.append(
-                    f"{field}.files_sha256 values must be lowercase SHA-256 digests"
-                )
+                errors.append(f"{field}.files_sha256 values must be lowercase SHA-256 digests")
                 break
     return value
 
@@ -964,6 +989,702 @@ def validate_pinned_qwen_identity(
         errors.append(f"{field}.resolved_commit must equal {revision!r}")
 
 
+def validate_mlx_adaptive_generation_plan(
+    raw: dict[str, Any],
+    *,
+    segments: list[Any],
+    sample_count: int,
+    max_tokens_per_chunk: int,
+    initial_chunk_count: int,
+    generation_tokens: int,
+    errors: list[str],
+) -> int | None:
+    """Replay adaptive split geometry and validate its leaf/cost evidence."""
+
+    options = raw.get("options")
+    performance = raw.get("performance")
+    if not isinstance(options, dict) or not isinstance(performance, dict):
+        return None
+    adaptive_scope = options.get("token_budget_scope")
+    adaptive_max_depth = MLX_ADAPTIVE_DEPTH_BY_SCOPE.get(adaptive_scope)
+    if adaptive_max_depth is None:
+        errors.append("Qwen MLX adaptive raw has an unsupported token budget scope")
+        return None
+    expected_options = {
+        "adaptive_split_algorithm": MLX_ADAPTIVE_SPLIT_ALGORITHM,
+        "adaptive_min_leaf_samples": MLX_ADAPTIVE_MIN_LEAF_SAMPLES,
+        "adaptive_max_depth": adaptive_max_depth,
+        "adaptive_max_split_count": MLX_ADAPTIVE_MAX_SPLIT_COUNT,
+        "adaptive_energy_window_samples": MLX_ADAPTIVE_ENERGY_WINDOW_SAMPLES,
+        "adaptive_quantization": MLX_ADAPTIVE_QUANTIZATION,
+        "adaptive_tie_break": MLX_ADAPTIVE_TIE_BREAK,
+    }
+    for field, expected in expected_options.items():
+        actual = options.get(field)
+        if actual != expected or type(actual) is not type(expected):
+            errors.append(f"Qwen MLX adaptive raw.options.{field} must equal {expected!r}")
+
+    final_leaf_count = bounded_json_integer(
+        options.get("final_leaf_chunk_count"),
+        field="Qwen MLX adaptive raw.options.final_leaf_chunk_count",
+        minimum=1,
+        maximum=MLX_MAX_PLANNED_CHUNK_COUNT + MLX_ADAPTIVE_MAX_SPLIT_COUNT,
+        errors=errors,
+    )
+    split_count = bounded_json_integer(
+        options.get("adaptive_split_count"),
+        field="Qwen MLX adaptive raw.options.adaptive_split_count",
+        minimum=0,
+        maximum=MLX_ADAPTIVE_MAX_SPLIT_COUNT,
+        errors=errors,
+    )
+    if final_leaf_count is not None and final_leaf_count != len(segments):
+        errors.append("Qwen MLX adaptive final_leaf_chunk_count must equal the raw segment count")
+    if (
+        final_leaf_count is not None
+        and split_count is not None
+        and final_leaf_count != initial_chunk_count + split_count
+    ):
+        errors.append(
+            "Qwen MLX adaptive final leaf count must equal planned_chunk_count + "
+            "adaptive_split_count"
+        )
+
+    prompt_tokens = bounded_json_integer(
+        performance.get("prompt_tokens"),
+        field="Qwen MLX adaptive raw.performance.prompt_tokens",
+        minimum=0,
+        maximum=MAX_SAFE_JSON_INTEGER,
+        errors=errors,
+    )
+    attempt_prompt_tokens = bounded_json_integer(
+        performance.get("attempt_prompt_tokens"),
+        field="Qwen MLX adaptive raw.performance.attempt_prompt_tokens",
+        minimum=0,
+        maximum=MAX_SAFE_JSON_INTEGER,
+        errors=errors,
+    )
+    attempt_generation_tokens = bounded_json_integer(
+        performance.get("attempt_generation_tokens"),
+        field="Qwen MLX adaptive raw.performance.attempt_generation_tokens",
+        minimum=0,
+        maximum=MAX_SAFE_JSON_INTEGER,
+        errors=errors,
+    )
+    if split_count is not None and attempt_generation_tokens is not None:
+        expected_attempt_tokens = generation_tokens + split_count * max_tokens_per_chunk
+        if attempt_generation_tokens != expected_attempt_tokens:
+            errors.append(
+                "Qwen MLX adaptive attempt_generation_tokens must include every "
+                "discarded exhausted parent"
+            )
+    generation_call_count = bounded_json_integer(
+        performance.get("generation_call_count"),
+        field="Qwen MLX adaptive raw.performance.generation_call_count",
+        minimum=1,
+        maximum=MLX_MAX_PLANNED_CHUNK_COUNT + 2 * MLX_ADAPTIVE_MAX_SPLIT_COUNT,
+        errors=errors,
+    )
+    if (
+        split_count is not None
+        and generation_call_count is not None
+        and generation_call_count != initial_chunk_count + 2 * split_count
+    ):
+        errors.append(
+            "Qwen MLX adaptive generation_call_count must equal planned chunks + 2 * splits"
+        )
+
+    plan = raw.get("generation_plan")
+    expected_plan_fields = {
+        "schema_version",
+        "pcm_s16le_sha256",
+        "initial_chunk_boundaries_samples",
+        "split_events",
+    }
+    if not isinstance(plan, dict) or set(plan) != expected_plan_fields:
+        errors.append("Qwen MLX adaptive raw.generation_plan has invalid fields")
+        return final_leaf_count
+    if type(plan.get("schema_version")) is not int or plan.get("schema_version") != 1:
+        errors.append("Qwen MLX adaptive raw.generation_plan.schema_version must equal 1")
+    valid_sha256(
+        plan.get("pcm_s16le_sha256"),
+        field="Qwen MLX adaptive raw.generation_plan.pcm_s16le_sha256",
+        errors=errors,
+    )
+
+    boundaries = plan.get("initial_chunk_boundaries_samples")
+    if not isinstance(boundaries, list) or len(boundaries) != initial_chunk_count + 1:
+        errors.append(
+            "Qwen MLX adaptive initial_chunk_boundaries_samples must match planned chunks"
+        )
+        return final_leaf_count
+    validated_boundaries: list[int] = []
+    for index, boundary in enumerate(boundaries):
+        value = bounded_json_integer(
+            boundary,
+            field=(
+                f"Qwen MLX adaptive raw.generation_plan.initial_chunk_boundaries_samples[{index}]"
+            ),
+            minimum=0,
+            maximum=sample_count,
+            errors=errors,
+        )
+        if value is None:
+            return final_leaf_count
+        validated_boundaries.append(value)
+    if (
+        validated_boundaries[0] != 0
+        or validated_boundaries[-1] != sample_count
+        or any(right <= left for left, right in zip(validated_boundaries, validated_boundaries[1:]))
+    ):
+        errors.append("Qwen MLX adaptive initial boundaries must continuously cover the audio")
+        return final_leaf_count
+
+    split_events = plan.get("split_events")
+    if not isinstance(split_events, list):
+        errors.append("Qwen MLX adaptive raw.generation_plan.split_events must be a list")
+        return final_leaf_count
+    if split_count is None or len(split_events) != split_count:
+        errors.append("Qwen MLX adaptive split_events must match adaptive_split_count")
+        return final_leaf_count
+
+    active_nodes: dict[tuple[int, str], tuple[int, int]] = {
+        (index, ""): (validated_boundaries[index], validated_boundaries[index + 1])
+        for index in range(initial_chunk_count)
+    }
+    event_fields = {
+        "initial_chunk_id",
+        "split_path",
+        "depth",
+        "parent_start_sample",
+        "parent_end_sample",
+        "legal_start_sample",
+        "legal_end_sample",
+        "split_sample",
+        "cut_energy_sum_squares",
+        "parent_prompt_tokens",
+        "parent_generation_tokens",
+    }
+    maximum_window_energy = MLX_ADAPTIVE_ENERGY_WINDOW_SAMPLES * 32768**2
+    discarded_prompt_tokens = 0
+    for index, event in enumerate(split_events):
+        field_prefix = f"Qwen MLX adaptive raw.generation_plan.split_events[{index}]"
+        if not isinstance(event, dict) or set(event) != event_fields:
+            errors.append(f"{field_prefix} has invalid fields")
+            return final_leaf_count
+        initial_chunk_id = bounded_json_integer(
+            event.get("initial_chunk_id"),
+            field=f"{field_prefix}.initial_chunk_id",
+            minimum=0,
+            maximum=initial_chunk_count - 1,
+            errors=errors,
+        )
+        split_path = event.get("split_path")
+        if (
+            not isinstance(split_path, str)
+            or len(split_path) >= adaptive_max_depth
+            or any(step not in "LR" for step in split_path)
+        ):
+            errors.append(f"{field_prefix}.split_path is invalid")
+            return final_leaf_count
+        depth = bounded_json_integer(
+            event.get("depth"),
+            field=f"{field_prefix}.depth",
+            minimum=0,
+            maximum=adaptive_max_depth - 1,
+            errors=errors,
+        )
+        if initial_chunk_id is None or depth is None:
+            return final_leaf_count
+        if depth != len(split_path):
+            errors.append(f"{field_prefix}.depth must equal the split path length")
+            return final_leaf_count
+        key = (initial_chunk_id, split_path)
+        if key not in active_nodes:
+            errors.append(f"{field_prefix} must name a currently active tree node")
+            return final_leaf_count
+        parent_start, parent_end = active_nodes[key]
+        legal_start = parent_start + MLX_ADAPTIVE_MIN_LEAF_SAMPLES
+        legal_end = parent_end - MLX_ADAPTIVE_MIN_LEAF_SAMPLES
+        if legal_start > legal_end:
+            errors.append(f"{field_prefix} cannot preserve the adaptive leaf minimum")
+            return final_leaf_count
+        expected_event_values = {
+            "parent_start_sample": parent_start,
+            "parent_end_sample": parent_end,
+            "legal_start_sample": legal_start,
+            "legal_end_sample": legal_end,
+            "parent_generation_tokens": max_tokens_per_chunk,
+        }
+        for field, expected in expected_event_values.items():
+            actual = event.get(field)
+            if type(actual) is not int or actual != expected:
+                errors.append(f"{field_prefix}.{field} must equal {expected}")
+                return final_leaf_count
+        split_sample = bounded_json_integer(
+            event.get("split_sample"),
+            field=f"{field_prefix}.split_sample",
+            minimum=legal_start,
+            maximum=legal_end,
+            errors=errors,
+        )
+        bounded_json_integer(
+            event.get("cut_energy_sum_squares"),
+            field=f"{field_prefix}.cut_energy_sum_squares",
+            minimum=0,
+            maximum=maximum_window_energy,
+            errors=errors,
+        )
+        parent_prompt_tokens = bounded_json_integer(
+            event.get("parent_prompt_tokens"),
+            field=f"{field_prefix}.parent_prompt_tokens",
+            minimum=0,
+            maximum=MAX_SAFE_JSON_INTEGER,
+            errors=errors,
+        )
+        if parent_prompt_tokens is None:
+            return final_leaf_count
+        if discarded_prompt_tokens > MAX_SAFE_JSON_INTEGER - parent_prompt_tokens:
+            errors.append(
+                "Qwen MLX adaptive discarded parent prompt-token sum exceeds the "
+                "JSON safe-integer limit"
+            )
+            return final_leaf_count
+        discarded_prompt_tokens += parent_prompt_tokens
+        if split_sample is None:
+            return final_leaf_count
+        del active_nodes[key]
+        active_nodes[(initial_chunk_id, f"{split_path}L")] = (parent_start, split_sample)
+        active_nodes[(initial_chunk_id, f"{split_path}R")] = (split_sample, parent_end)
+
+    if (
+        prompt_tokens is not None
+        and attempt_prompt_tokens is not None
+        and attempt_prompt_tokens != prompt_tokens + discarded_prompt_tokens
+    ):
+        errors.append("Qwen MLX adaptive attempt_prompt_tokens must include every discarded parent")
+
+    ordered_leaves = sorted(
+        (
+            (start, end, initial_chunk_id, split_path)
+            for (initial_chunk_id, split_path), (start, end) in active_nodes.items()
+        ),
+        key=lambda leaf: (leaf[0], leaf[1]),
+    )
+    if final_leaf_count is not None and len(ordered_leaves) != final_leaf_count:
+        errors.append("Qwen MLX adaptive split tree does not yield final_leaf_chunk_count")
+        return final_leaf_count
+    segment_fields = {
+        "id",
+        "initial_chunk_id",
+        "split_path",
+        "start_sample",
+        "end_sample",
+        "start",
+        "end",
+        "text",
+        "generation_tokens",
+    }
+    for index, (segment, leaf) in enumerate(zip(segments, ordered_leaves)):
+        field_prefix = f"Qwen MLX adaptive raw.segments[{index}]"
+        if not isinstance(segment, dict) or set(segment) != segment_fields:
+            errors.append(f"{field_prefix} has invalid adaptive leaf fields")
+            continue
+        start, end, initial_chunk_id, split_path = leaf
+        expected_values = {
+            "initial_chunk_id": initial_chunk_id,
+            "split_path": split_path,
+            "start_sample": start,
+            "end_sample": end,
+        }
+        for field, expected in expected_values.items():
+            actual = segment.get(field)
+            if actual != expected or type(actual) is not type(expected):
+                errors.append(f"{field_prefix}.{field} must equal {expected!r}")
+        start_seconds = bounded_json_number(
+            segment.get("start"),
+            field=f"{field_prefix}.start",
+            minimum=0.0,
+            maximum=MLX_MAX_AUDIO_DURATION_SECONDS,
+            errors=errors,
+        )
+        end_seconds = bounded_json_number(
+            segment.get("end"),
+            field=f"{field_prefix}.end",
+            minimum=0.0,
+            maximum=MLX_MAX_AUDIO_DURATION_SECONDS,
+            errors=errors,
+        )
+        if start_seconds is not None and not math.isclose(
+            start_seconds,
+            start / MLX_SAMPLE_RATE_HZ,
+            rel_tol=0.0,
+            abs_tol=MLX_RAW_FLOAT_COMPARISON_EPSILON_SECONDS,
+        ):
+            errors.append(f"{field_prefix}.start must exactly match start_sample")
+        if end_seconds is not None and not math.isclose(
+            end_seconds,
+            end / MLX_SAMPLE_RATE_HZ,
+            rel_tol=0.0,
+            abs_tol=MLX_RAW_FLOAT_COMPARISON_EPSILON_SECONDS,
+        ):
+            errors.append(f"{field_prefix}.end must exactly match end_sample")
+    return final_leaf_count
+
+
+def validate_mlx_qwen_v2_raw_coverage(raw: dict[str, Any], *, errors: list[str]) -> None:
+    """Fail closed when a strict MLX v2 raw artifact does not cover its audio."""
+
+    audio = raw.get("audio")
+    duration_seconds: float | None = None
+    sample_count: Any = None
+    sample_count_recorded = False
+    if not isinstance(audio, dict):
+        errors.append("Qwen MLX v2 raw.audio must be an object")
+    else:
+        sample_count_recorded = "sample_count" in audio
+        sample_count = audio.get("sample_count")
+        duration_seconds = bounded_json_number(
+            audio.get("duration_seconds"),
+            field="Qwen MLX v2 raw.audio.duration_seconds",
+            minimum=MLX_MIN_AUDIO_DURATION_SECONDS,
+            maximum=MLX_MAX_AUDIO_DURATION_SECONDS,
+            errors=errors,
+        )
+
+    options = raw.get("options")
+    max_tokens_per_chunk: int | None = None
+    chunk_duration_seconds: float | None = None
+    planned_chunk_count: Any = None
+    effective_total_token_budget: Any = None
+    planned_chunk_count_recorded = False
+    effective_total_token_budget_recorded = False
+    per_chunk_token_budget = False
+    adaptive_token_budget = False
+    if not isinstance(options, dict):
+        errors.append("Qwen MLX v2 raw.options must be an object")
+    else:
+        planned_chunk_count_recorded = "planned_chunk_count" in options
+        planned_chunk_count = options.get("planned_chunk_count")
+        effective_total_token_budget_recorded = "effective_total_token_budget" in options
+        effective_total_token_budget = options.get("effective_total_token_budget")
+        if "token_budget_scope" in options:
+            token_budget_scope = options.get("token_budget_scope")
+            if token_budget_scope not in {
+                MLX_PER_CHUNK_TOKEN_BUDGET_SCOPE,
+                MLX_LEGACY_ADAPTIVE_TOKEN_BUDGET_SCOPE,
+                MLX_ADAPTIVE_TOKEN_BUDGET_SCOPE,
+            }:
+                errors.append("Qwen MLX v2 raw.options.token_budget_scope has an unsupported value")
+            else:
+                per_chunk_token_budget = True
+                adaptive_token_budget = token_budget_scope in MLX_ADAPTIVE_DEPTH_BY_SCOPE
+                if raw.get("lineage_schema_version") != 2:
+                    errors.append("Qwen MLX per-chunk token budget scope requires v2 lineage")
+                if adaptive_token_budget and (
+                    isinstance(options.get("temperature"), bool)
+                    or not isinstance(options.get("temperature"), (int, float))
+                    or options.get("temperature") != 0.0
+                ):
+                    errors.append("Qwen MLX adaptive token budget scope requires temperature=0.0")
+        max_tokens_per_chunk = bounded_json_integer(
+            options.get("max_tokens_per_chunk"),
+            field="Qwen MLX v2 raw.options.max_tokens_per_chunk",
+            minimum=1,
+            maximum=MAX_SAFE_JSON_INTEGER,
+            errors=errors,
+        )
+        chunk_duration_seconds = bounded_json_number(
+            options.get("chunk_duration_seconds"),
+            field="Qwen MLX v2 raw.options.chunk_duration_seconds",
+            minimum=MLX_MIN_CHUNK_DURATION_SECONDS,
+            maximum=MLX_MAX_CHUNK_DURATION_SECONDS,
+            maximum_exclusive=True,
+            errors=errors,
+        )
+
+    performance = raw.get("performance")
+    generation_tokens: int | None = None
+    if not isinstance(performance, dict):
+        errors.append("Qwen MLX v2 raw.performance must be an object")
+    else:
+        generation_tokens = bounded_json_integer(
+            performance.get("generation_tokens"),
+            field="Qwen MLX v2 raw.performance.generation_tokens",
+            minimum=0,
+            maximum=MAX_SAFE_JSON_INTEGER,
+            errors=errors,
+        )
+
+    segments = raw.get("segments")
+    if not isinstance(segments, list) or not segments:
+        errors.append("Qwen MLX v2 raw.segments must be a non-empty list")
+        return
+
+    previous_start = -1.0
+    previous_end = 0.0
+    cumulative_gap_seconds = 0.0
+    cumulative_overlap_seconds = 0.0
+    segment_generation_tokens = 0
+    segment_generation_tokens_valid = True
+    for index, segment in enumerate(segments):
+        if not isinstance(segment, dict):
+            errors.append(f"Qwen MLX v2 raw.segments[{index}] must be an object")
+            continue
+        if type(segment.get("id")) is not int or segment.get("id") != index:
+            errors.append(f"Qwen MLX v2 raw.segments[{index}].id must equal {index}")
+        if per_chunk_token_budget:
+            chunk_generation_tokens = bounded_json_integer(
+                segment.get("generation_tokens"),
+                field=(f"Qwen MLX v2 raw.segments[{index}].generation_tokens"),
+                minimum=0,
+                maximum=(
+                    max_tokens_per_chunk - 1
+                    if max_tokens_per_chunk is not None
+                    else MAX_SAFE_JSON_INTEGER
+                ),
+                errors=errors,
+            )
+            if chunk_generation_tokens is None:
+                segment_generation_tokens_valid = False
+            elif segment_generation_tokens > MAX_SAFE_JSON_INTEGER - chunk_generation_tokens:
+                errors.append(
+                    "Qwen MLX v2 raw segment generation-token sum exceeds "
+                    "the JSON safe-integer limit"
+                )
+                segment_generation_tokens_valid = False
+            else:
+                segment_generation_tokens += chunk_generation_tokens
+        start_seconds = bounded_json_number(
+            segment.get("start"),
+            field=f"Qwen MLX v2 raw.segments[{index}].start",
+            minimum=-MLX_RAW_BOUNDARY_TOLERANCE_SECONDS,
+            maximum=(MLX_MAX_AUDIO_DURATION_SECONDS + MLX_RAW_BOUNDARY_TOLERANCE_SECONDS),
+            errors=errors,
+        )
+        end_seconds = bounded_json_number(
+            segment.get("end"),
+            field=f"Qwen MLX v2 raw.segments[{index}].end",
+            minimum=-MLX_RAW_BOUNDARY_TOLERANCE_SECONDS,
+            maximum=(MLX_MAX_AUDIO_DURATION_SECONDS + MLX_RAW_BOUNDARY_TOLERANCE_SECONDS),
+            errors=errors,
+        )
+        if start_seconds is None or end_seconds is None:
+            continue
+        if (
+            start_seconds < previous_start
+            or start_seconds < -MLX_RAW_BOUNDARY_TOLERANCE_SECONDS
+            or end_seconds <= start_seconds
+            or (
+                duration_seconds is not None
+                and end_seconds > duration_seconds + MLX_RAW_BOUNDARY_TOLERANCE_SECONDS
+            )
+        ):
+            errors.append(f"Qwen MLX v2 raw.segments[{index}] has invalid timestamp bounds")
+        boundary_delta = start_seconds - previous_end
+        if not math.isclose(
+            start_seconds,
+            previous_end,
+            rel_tol=0.0,
+            abs_tol=MLX_RAW_BOUNDARY_TOLERANCE_SECONDS,
+        ):
+            errors.append(
+                "Qwen MLX v2 raw.segments must continuously cover the audio "
+                f"from zero; gap before segment {index}"
+            )
+        if boundary_delta > 0:
+            cumulative_gap_seconds += boundary_delta
+        else:
+            cumulative_overlap_seconds -= boundary_delta
+        previous_start = start_seconds
+        previous_end = end_seconds
+
+    if duration_seconds is not None:
+        tail_delta = duration_seconds - previous_end
+        if not math.isclose(
+            previous_end,
+            duration_seconds,
+            rel_tol=0.0,
+            abs_tol=MLX_RAW_BOUNDARY_TOLERANCE_SECONDS,
+        ):
+            errors.append(
+                "Qwen MLX v2 raw.segments must cover the audio through its end: "
+                f"last_end={previous_end} duration={duration_seconds}"
+            )
+        if tail_delta > 0:
+            cumulative_gap_seconds += tail_delta
+        else:
+            cumulative_overlap_seconds -= tail_delta
+    if cumulative_gap_seconds > MLX_RAW_CUMULATIVE_BOUNDARY_TOLERANCE_SECONDS:
+        errors.append("Qwen MLX v2 raw.segments have excessive cumulative chunk-boundary gaps")
+    if cumulative_overlap_seconds > MLX_RAW_CUMULATIVE_BOUNDARY_TOLERANCE_SECONDS:
+        errors.append("Qwen MLX v2 raw.segments have excessive cumulative chunk-boundary overlaps")
+    if per_chunk_token_budget:
+        raw_text = raw.get("text")
+        segment_texts = [segment.get("text") for segment in segments if isinstance(segment, dict)]
+        if (
+            not isinstance(raw_text, str)
+            or len(segment_texts) != len(segments)
+            or any(not isinstance(text, str) for text in segment_texts)
+            or raw_text != " ".join(segment_texts)
+        ):
+            errors.append("Qwen MLX v2 raw.text must equal the ordered per-chunk segment text")
+
+    precise_budget_markers = (
+        sample_count_recorded,
+        planned_chunk_count_recorded,
+        effective_total_token_budget_recorded,
+    )
+    effective_budget: int | None = None
+    if per_chunk_token_budget and not all(precise_budget_markers):
+        errors.append(
+            "Qwen MLX v2 raw per-chunk token budget scope requires precise token budget metadata"
+        )
+    if any(precise_budget_markers):
+        if not all(precise_budget_markers):
+            errors.append(
+                "Qwen MLX v2 raw precise token budget metadata must include "
+                "audio.sample_count, options.planned_chunk_count, and "
+                "options.effective_total_token_budget"
+            )
+        else:
+            sample_rate_hz = audio.get("sample_rate_hz") if isinstance(audio, dict) else None
+            precise_metadata_valid = True
+            validated_sample_count = bounded_json_integer(
+                sample_count,
+                field="Qwen MLX v2 raw.audio.sample_count",
+                minimum=MLX_MIN_AUDIO_SAMPLE_COUNT,
+                maximum=MLX_MAX_AUDIO_SAMPLE_COUNT,
+                errors=errors,
+            )
+            if validated_sample_count is None:
+                precise_metadata_valid = False
+            if type(sample_rate_hz) is not int or sample_rate_hz != MLX_SAMPLE_RATE_HZ:
+                errors.append(
+                    f"Qwen MLX v2 raw.audio.sample_rate_hz must equal {MLX_SAMPLE_RATE_HZ}"
+                )
+                precise_metadata_valid = False
+            validated_planned_chunk_count = bounded_json_integer(
+                planned_chunk_count,
+                field="Qwen MLX v2 raw.options.planned_chunk_count",
+                minimum=1,
+                maximum=MLX_MAX_PLANNED_CHUNK_COUNT,
+                errors=errors,
+            )
+            if validated_planned_chunk_count is None:
+                precise_metadata_valid = False
+            elif not adaptive_token_budget and validated_planned_chunk_count != len(segments):
+                errors.append(
+                    "Qwen MLX v2 raw.options.planned_chunk_count must equal the raw segment count"
+                )
+                precise_metadata_valid = False
+            validated_total_token_budget = bounded_json_integer(
+                effective_total_token_budget,
+                field=("Qwen MLX v2 raw.options.effective_total_token_budget"),
+                minimum=1,
+                maximum=MAX_SAFE_JSON_INTEGER,
+                errors=errors,
+            )
+            if validated_total_token_budget is None:
+                precise_metadata_valid = False
+            if (
+                validated_sample_count is not None
+                and sample_rate_hz == MLX_SAMPLE_RATE_HZ
+                and duration_seconds is not None
+                and not math.isclose(
+                    duration_seconds,
+                    round(validated_sample_count / MLX_SAMPLE_RATE_HZ, 3),
+                    rel_tol=0.0,
+                    abs_tol=1e-9,
+                )
+            ):
+                errors.append(
+                    "Qwen MLX v2 raw.audio.duration_seconds must match its "
+                    "sample_count and sample_rate_hz"
+                )
+                precise_metadata_valid = False
+            budget_chunk_count = validated_planned_chunk_count
+            if (
+                adaptive_token_budget
+                and validated_sample_count is not None
+                and max_tokens_per_chunk is not None
+                and validated_planned_chunk_count is not None
+                and generation_tokens is not None
+            ):
+                adaptive_error_count = len(errors)
+                budget_chunk_count = validate_mlx_adaptive_generation_plan(
+                    raw,
+                    segments=segments,
+                    sample_count=validated_sample_count,
+                    max_tokens_per_chunk=max_tokens_per_chunk,
+                    initial_chunk_count=validated_planned_chunk_count,
+                    generation_tokens=generation_tokens,
+                    errors=errors,
+                )
+                if budget_chunk_count is None or len(errors) != adaptive_error_count:
+                    precise_metadata_valid = False
+            elif adaptive_token_budget:
+                precise_metadata_valid = False
+            if max_tokens_per_chunk is not None and budget_chunk_count is not None:
+                expected_budget: int | None = None
+                if max_tokens_per_chunk > MAX_SAFE_JSON_INTEGER // budget_chunk_count:
+                    errors.append(
+                        "Qwen MLX v2 raw effective token budget product exceeds "
+                        "the JSON safe-integer limit"
+                    )
+                    precise_metadata_valid = False
+                else:
+                    expected_budget = max_tokens_per_chunk * budget_chunk_count
+                if expected_budget is not None and validated_total_token_budget != expected_budget:
+                    budget_count_field = (
+                        "final_leaf_chunk_count" if adaptive_token_budget else "planned_chunk_count"
+                    )
+                    errors.append(
+                        "Qwen MLX v2 raw.options.effective_total_token_budget "
+                        f"must equal max_tokens_per_chunk * {budget_count_field}"
+                    )
+                    precise_metadata_valid = False
+            else:
+                precise_metadata_valid = False
+            if precise_metadata_valid:
+                effective_budget = validated_total_token_budget
+    elif (
+        duration_seconds is not None
+        and max_tokens_per_chunk is not None
+        and chunk_duration_seconds is not None
+    ):
+        # Old MLX v2 artifacts did not record the exact silence-aware split
+        # plan. Keep their nominal-duration reconstruction fail-closed.
+        nominal_chunk_count = math.ceil(duration_seconds / chunk_duration_seconds)
+        if max_tokens_per_chunk > MAX_SAFE_JSON_INTEGER // nominal_chunk_count:
+            errors.append(
+                "Qwen MLX v2 raw reconstructed token budget exceeds the JSON safe-integer limit"
+            )
+        else:
+            effective_budget = max_tokens_per_chunk * nominal_chunk_count
+
+    if (
+        generation_tokens is not None
+        and effective_budget is not None
+        and generation_tokens >= effective_budget
+    ):
+        errors.append(
+            "Qwen MLX v2 raw.performance.generation_tokens exhausted its "
+            f"effective full-audio token budget ({generation_tokens} >= "
+            f"{effective_budget})"
+        )
+    if (
+        per_chunk_token_budget
+        and generation_tokens is not None
+        and segment_generation_tokens_valid
+        and generation_tokens != segment_generation_tokens
+    ):
+        errors.append(
+            "Qwen MLX v2 raw segment generation_tokens must sum to "
+            "raw.performance.generation_tokens"
+        )
+
+
 def validate_qwen_v2_backend_contract(
     raw: dict[str, Any],
     aligned: dict[str, Any],
@@ -975,16 +1696,15 @@ def validate_qwen_v2_backend_contract(
 ) -> None:
     """Require one of the two supported, pinned Qwen v2 backends."""
 
-    aligned_source = (
-        aligned.get("source") if isinstance(aligned.get("source"), dict) else {}
-    )
-    refined_source = (
-        refined.get("source") if isinstance(refined.get("source"), dict) else {}
-    )
+    aligned_source = aligned.get("source") if isinstance(aligned.get("source"), dict) else {}
+    refined_source = refined.get("source") if isinstance(refined.get("source"), dict) else {}
     raw_engine = raw.get("engine")
     raw_model = raw.get("model")
     raw_options = raw.get("options")
     aligned_options = aligned.get("options")
+
+    if raw_engine == MLX_QWEN_ENGINE:
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
 
     if raw_engine == MLX_QWEN_ENGINE and raw_model == MLX_QWEN_MODEL:
         expected_values = (
@@ -1024,14 +1744,8 @@ def validate_qwen_v2_backend_contract(
         )
         return
 
-    raw_backend = (
-        raw_options.get("backend") if isinstance(raw_options, dict) else None
-    )
-    aligned_backend = (
-        aligned_options.get("backend")
-        if isinstance(aligned_options, dict)
-        else None
-    )
+    raw_backend = raw_options.get("backend") if isinstance(raw_options, dict) else None
+    aligned_backend = aligned_options.get("backend") if isinstance(aligned_options, dict) else None
     cuda_indicators = (
         raw_engine == CUDA_QWEN_ENGINE
         or aligned_source.get("engine") == CUDA_QWEN_ENGINE
@@ -1042,9 +1756,7 @@ def validate_qwen_v2_backend_contract(
         or aligned_backend in {CUDA_QWEN_BACKEND, LEGACY_CUDA_QWEN_BACKEND}
     )
     if not cuda_indicators:
-        errors.append(
-            "Qwen v2 lineage must use the supported pinned MLX or CUDA backend"
-        )
+        errors.append("Qwen v2 lineage must use the supported pinned MLX or CUDA backend")
         return
 
     expected_values = (
@@ -1095,9 +1807,7 @@ def validate_qwen_v2_backend_contract(
         }
         for key, expected in required_options.items():
             if options.get(key) != expected:
-                errors.append(
-                    f"Qwen CUDA v2 {stage}.options.{key} must equal {expected!r}"
-                )
+                errors.append(f"Qwen CUDA v2 {stage}.options.{key} must equal {expected!r}")
         if "qwen_asr_version" in options:
             errors.append(f"Qwen CUDA v2 {stage}.options must not record qwen_asr_version")
 
@@ -1120,6 +1830,65 @@ def is_episode_web_publishable(workflow: dict[str, str | None]) -> bool:
     )
 
 
+def validate_selected_qwen_readme_provenance(
+    front_matter: list[str],
+    *,
+    selected_run: dict[str, Any],
+    raw: dict[str, Any],
+    refined: dict[str, Any],
+    errors: list[str],
+) -> None:
+    """Bind publishable selected-Qwen metadata to the rendered artifact."""
+
+    canonical_generated_at = refined.get("generated_at")
+    if not is_rfc3339_timestamp(canonical_generated_at):
+        errors.append(
+            "refined.generated_at must be an RFC 3339 timestamp for a "
+            "web-publishable selected Qwen run"
+        )
+    else:
+        transcript_generated_at = nested_front_matter_scalar(
+            front_matter, "transcript", "generated_at"
+        )
+        if transcript_generated_at != canonical_generated_at:
+            errors.append(
+                "transcript.generated_at must equal selected "
+                "refined.generated_at: "
+                f"expected={canonical_generated_at!r} "
+                f"actual={transcript_generated_at!r}"
+            )
+        run_generated_at = selected_run.get("generated_at")
+        if run_generated_at != canonical_generated_at:
+            errors.append(
+                "selected Qwen asr_runs.generated_at must equal selected "
+                "refined.generated_at: "
+                f"expected={canonical_generated_at!r} actual={run_generated_at!r}"
+            )
+
+    raw_audio = raw.get("audio")
+    raw_options = raw.get("options")
+    if not isinstance(raw_audio, dict) or not isinstance(raw_options, dict):
+        return
+    precise_markers = (
+        "sample_count" in raw_audio,
+        "planned_chunk_count" in raw_options,
+        "effective_total_token_budget" in raw_options,
+    )
+    if not all(precise_markers):
+        # Markerless artifacts retain the legacy nominal-budget contract.
+        return
+
+    readme_options = nested_front_matter_mapping(front_matter, "transcript", "options")
+    for field in ("planned_chunk_count", "effective_total_token_budget"):
+        expected = raw_options.get(field)
+        actual = readme_options.get(field)
+        if actual != expected:
+            errors.append(
+                f"transcript.options.{field} must equal selected "
+                f"raw.options.{field}: expected={expected!r} actual={actual!r}"
+            )
+
+
 def validate_source_preferences(
     lines: list[str], *, field_prefix: str, errors: list[str]
 ) -> list[dict[str, Any]]:
@@ -1129,15 +1898,11 @@ def validate_source_preferences(
     preferred_count = 0
     for index, source in enumerate(sources):
         if "preferred" in source and not isinstance(source["preferred"], bool):
-            errors.append(
-                f"{field_prefix} sources[{index}].preferred must be a YAML boolean"
-            )
+            errors.append(f"{field_prefix} sources[{index}].preferred must be a YAML boolean")
         if source.get("preferred") is True:
             preferred_count += 1
     if preferred_count != 1:
-        errors.append(
-            f"{field_prefix} sources must contain exactly one preferred source"
-        )
+        errors.append(f"{field_prefix} sources must contain exactly one preferred source")
     return sources
 
 
@@ -1168,18 +1933,12 @@ def validate_source_schema(
         kind = source.get("kind")
         url = source.get("url")
         if platform not in SOURCE_PLATFORMS:
-            errors.append(
-                f"{field}.platform must be one of {', '.join(sorted(SOURCE_PLATFORMS))}"
-            )
+            errors.append(f"{field}.platform must be one of {', '.join(sorted(SOURCE_PLATFORMS))}")
         if kind not in SOURCE_KINDS:
-            errors.append(
-                f"{field}.kind must be one of {', '.join(sorted(SOURCE_KINDS))}"
-            )
+            errors.append(f"{field}.kind must be one of {', '.join(sorted(SOURCE_KINDS))}")
         if not is_absolute_url(url, scheme="https"):
             errors.append(f"{field}.url must be an HTTPS URL")
-        if "title" in source and (
-            not isinstance(source["title"], str) or not source["title"]
-        ):
+        if "title" in source and (not isinstance(source["title"], str) or not source["title"]):
             errors.append(f"{field}.title must be a non-empty string")
         external_id = source.get("external_id")
         if "external_id" in source and (
@@ -1253,17 +2012,12 @@ def validate_source_schema(
                 errors.append(f"{field}.identifiers.bvid must match the source URL")
 
         xiaoyuzhou_match = CANONICAL_XIAOYUZHOU_EPISODE_RE.fullmatch(url or "")
-        if (
-            platform == "xiaoyuzhou"
-            and kind == "episode"
-            and xiaoyuzhou_match is None
-        ):
+        if platform == "xiaoyuzhou" and kind == "episode" and xiaoyuzhou_match is None:
             errors.append(f"{field}.url must be the canonical Xiaoyuzhou episode URL")
         if xiaoyuzhou_match is not None:
             if platform != "xiaoyuzhou" or kind != "episode":
                 errors.append(
-                    f"{field} Xiaoyuzhou episode URL must use platform xiaoyuzhou "
-                    "and kind episode"
+                    f"{field} Xiaoyuzhou episode URL must use platform xiaoyuzhou and kind episode"
                 )
             for key in ("eid", "pid", "media_id"):
                 if key not in identifiers:
@@ -1300,17 +2054,13 @@ def validate_participants_contract(
         unknown_fields = set(participant).difference(PARTICIPANT_FIELDS)
         if unknown_fields:
             errors.append(
-                f"{field} contains unsupported fields: "
-                f"{', '.join(sorted(unknown_fields))}"
+                f"{field} contains unsupported fields: {', '.join(sorted(unknown_fields))}"
             )
         participant_id = participant.get("id")
         name = participant.get("name")
         role = participant.get("role")
         aliases = participant.get("aliases", [])
-        if (
-            not isinstance(participant_id, str)
-            or EPISODE_KEY_RE.fullmatch(participant_id) is None
-        ):
+        if not isinstance(participant_id, str) or EPISODE_KEY_RE.fullmatch(participant_id) is None:
             errors.append(f"{field}.id has an invalid stable ID format")
         elif participant_id in seen_ids:
             errors.append(f"{field}.id duplicates {participant_id!r}")
@@ -1319,9 +2069,7 @@ def validate_participants_contract(
         if not isinstance(name, str) or not name.strip():
             errors.append(f"{field}.name must be a non-empty string")
         if role not in PARTICIPANT_ROLES:
-            errors.append(
-                f"{field}.role must be one of {', '.join(sorted(PARTICIPANT_ROLES))}"
-            )
+            errors.append(f"{field}.role must be one of {', '.join(sorted(PARTICIPANT_ROLES))}")
         if not isinstance(aliases, list) or any(
             not isinstance(alias, str) or not alias.strip() for alias in aliases
         ):
@@ -1383,9 +2131,7 @@ def validate_local_audio_cache_contract(
     for key in sorted(required.difference(cache)):
         errors.append(f"{field_prefix} local_audio_cache.{key} is missing")
     if "acquired_at" not in cache and "recovered_at" not in cache:
-        errors.append(
-            f"{field_prefix} local_audio_cache requires acquired_at or recovered_at"
-        )
+        errors.append(f"{field_prefix} local_audio_cache requires acquired_at or recovered_at")
     for key in ("path", "metadata_path", "codec"):
         if key in cache and (not isinstance(cache[key], str) or not cache[key]):
             errors.append(f"{field_prefix} local_audio_cache.{key} must be non-empty")
@@ -1396,13 +2142,10 @@ def validate_local_audio_cache_contract(
             errors.append(f"{field_prefix} local_audio_cache.{key} must be RFC 3339")
     for key in ("sample_rate_hz", "channels", "size_bytes", "duration_ms"):
         value = cache.get(key)
-        if key in cache and (
-            isinstance(value, bool) or not isinstance(value, int) or value <= 0
-        ):
+        if key in cache and (isinstance(value, bool) or not isinstance(value, int) or value <= 0):
             errors.append(f"{field_prefix} local_audio_cache.{key} must be positive")
     if "sha256" in cache and (
-        not isinstance(cache["sha256"], str)
-        or SHA256_RE.fullmatch(cache["sha256"]) is None
+        not isinstance(cache["sha256"], str) or SHA256_RE.fullmatch(cache["sha256"]) is None
     ):
         errors.append(f"{field_prefix} local_audio_cache.sha256 must be a lowercase SHA-256")
     cached_duration = cache.get("duration_ms")
@@ -1442,9 +2185,7 @@ def validate_summary_provenance(
         )
     source_sha = source.get("sha256")
     if not isinstance(source_sha, str) or SHA256_RE.fullmatch(source_sha) is None:
-        errors.append(
-            f"{label} summary.source_transcript.sha256 must be a lowercase SHA-256"
-        )
+        errors.append(f"{label} summary.source_transcript.sha256 must be a lowercase SHA-256")
 
     source_path = safe_recorded_path(
         source.get("path"),
@@ -1457,17 +2198,13 @@ def validate_summary_provenance(
     if source_path is None:
         return
     if not source_path.is_file():
-        errors.append(
-            f"{label} summary.source_transcript.path is missing: {source.get('path')!r}"
-        )
+        errors.append(f"{label} summary.source_transcript.path is missing: {source.get('path')!r}")
         return
     if isinstance(source_sha, str) and SHA256_RE.fullmatch(source_sha):
         if sha256_file(source_path) != source_sha:
             errors.append(f"{label} summary.source_transcript.sha256 does not match its file")
     if selection_status == "selected" and source.get("path") != transcript_path_value:
-        errors.append(
-            f"{label} selected summary source must equal transcript.path"
-        )
+        errors.append(f"{label} selected summary source must equal transcript.path")
 
     runs = parse_asr_runs(lines)
     matching_runs = [
@@ -1478,9 +2215,7 @@ def validate_summary_provenance(
         and run.get("selection_status") == selection_status
     ]
     if len(matching_runs) != 1:
-        errors.append(
-            f"{label} summary.source_transcript must match exactly one ASR run"
-        )
+        errors.append(f"{label} summary.source_transcript must match exactly one ASR run")
     elif selection_status == "superseded":
         artifacts = matching_runs[0].get("artifacts")
         if not isinstance(artifacts, dict) or artifacts.get("transcript") != source.get("path"):
@@ -1533,13 +2268,9 @@ def validate_show_metadata_contract(
         errors.append(
             f"{label} contains unsupported show fields: {', '.join(sorted(unknown_fields))}"
         )
-    duplicate_fields = sorted(
-        key for key in set(top_level_keys) if top_level_keys.count(key) > 1
-    )
+    duplicate_fields = sorted(key for key in set(top_level_keys) if top_level_keys.count(key) > 1)
     if duplicate_fields:
-        errors.append(
-            f"{label} duplicates show fields: {', '.join(duplicate_fields)}"
-        )
+        errors.append(f"{label} duplicates show fields: {', '.join(duplicate_fields)}")
     if schema_version != 1:
         errors.append(f"{label} schema_version must equal 1")
     if kind != "show":
@@ -1555,20 +2286,18 @@ def validate_show_metadata_contract(
     if not title:
         errors.append(f"{label} title must be a non-empty string")
     aliases_present, aliases = parse_top_level_scalar_list(lines, "aliases")
-    if not aliases_present or any(
-        not isinstance(alias, str) or not alias for alias in aliases
-    ):
+    if not aliases_present or any(not isinstance(alias, str) or not alias for alias in aliases):
         errors.append(f"{label} aliases must be a list of non-empty strings")
     if not isinstance(language, str) or not language:
         errors.append(f"{label} language must be a non-empty string")
     if status not in SHOW_STATUSES:
-        errors.append(
-            f"{label} status must be one of {', '.join(sorted(SHOW_STATUSES))}"
-        )
+        errors.append(f"{label} status must be one of {', '.join(sorted(SHOW_STATUSES))}")
     for field in ("formats", "topics"):
         present, values = parse_top_level_scalar_list(lines, field)
-        if not present or not values or any(
-            not isinstance(value, str) or not value for value in values
+        if (
+            not present
+            or not values
+            or any(not isinstance(value, str) or not value for value in values)
         ):
             errors.append(f"{label} {field} must be a non-empty list of strings")
     sources = validate_source_preferences(lines, field_prefix=label, errors=errors)
@@ -1601,9 +2330,7 @@ def validate_episode_metadata_contract(
     slug = top_level_front_matter_scalar(front_matter, "slug")
     release_type = top_level_front_matter_scalar(front_matter, "release_type")
     title = top_level_front_matter_scalar(front_matter, "title")
-    navigation_title = top_level_front_matter_scalar(
-        front_matter, "navigation_title"
-    )
+    navigation_title = top_level_front_matter_scalar(front_matter, "navigation_title")
     published_at = top_level_front_matter_scalar(front_matter, "published_at")
     language = top_level_front_matter_scalar(front_matter, "language")
     episode_key_raw = top_level_front_matter_raw_scalar(front_matter, "episode_key")
@@ -1671,9 +2398,7 @@ def validate_episode_metadata_contract(
         errors.append(f"{label} numbering.url must be a URL")
     if episode_number is None:
         if numbering_status == "verified":
-            errors.append(
-                f"{label} numbering.status cannot be verified without episode_number"
-            )
+            errors.append(f"{label} numbering.status cannot be verified without episode_number")
     elif (
         isinstance(episode_number, bool)
         or not isinstance(episode_number, int)
@@ -1681,9 +2406,7 @@ def validate_episode_metadata_contract(
     ):
         errors.append(f"{label} episode_number must be null or a positive integer")
     elif numbering_status != "verified":
-        errors.append(
-            f"{label} episode_number requires numbering.status verified"
-        )
+        errors.append(f"{label} episode_number requires numbering.status verified")
 
     if (
         not is_rfc3339_timestamp(published_at)
@@ -1702,9 +2425,7 @@ def validate_episode_metadata_contract(
     workflow = {
         "metadata": nested_front_matter_scalar(front_matter, "workflow", "metadata"),
         "summary": nested_front_matter_scalar(front_matter, "workflow", "summary"),
-        "transcript": nested_front_matter_scalar(
-            front_matter, "workflow", "transcript"
-        ),
+        "transcript": nested_front_matter_scalar(front_matter, "workflow", "transcript"),
     }
     workflow_contracts = {
         "metadata": WORKFLOW_METADATA_STATUSES,
@@ -1713,17 +2434,11 @@ def validate_episode_metadata_contract(
     }
     for field, allowed in workflow_contracts.items():
         if workflow[field] not in allowed:
-            errors.append(
-                f"{label} workflow.{field} must be one of {', '.join(sorted(allowed))}"
-            )
+            errors.append(f"{label} workflow.{field} must be one of {', '.join(sorted(allowed))}")
 
-    sources = validate_source_preferences(
-        front_matter, field_prefix=label, errors=errors
-    )
+    sources = validate_source_preferences(front_matter, field_prefix=label, errors=errors)
     validate_episode_sources(sources, field_prefix=label, errors=errors)
-    participants = validate_participants_contract(
-        front_matter, field_prefix=label, errors=errors
-    )
+    participants = validate_participants_contract(front_matter, field_prefix=label, errors=errors)
     validate_participant_profiles(front_matter, field_prefix=label, errors=errors)
     publishable = is_episode_web_publishable(workflow)
 
@@ -1733,21 +2448,15 @@ def validate_episode_metadata_contract(
         and isinstance(navigation_title, str)
         and navigation_title.split(" · ", 1)[0] != expected_person
     ):
-        errors.append(
-            f"{label} navigation_title person must equal {expected_person!r}"
-        )
+        errors.append(f"{label} navigation_title person must equal {expected_person!r}")
 
     runs = parse_asr_runs(front_matter)
     for index, run in enumerate(runs):
         if run.get("selection_status") not in ASR_SELECTION_STATUSES:
-            errors.append(
-                f"{label} asr_runs[{index}].selection_status has an invalid value"
-            )
+            errors.append(f"{label} asr_runs[{index}].selection_status has an invalid value")
     selected_runs = [run for run in runs if run.get("selection_status") == "selected"]
     if publishable and len(selected_runs) != 1:
-        errors.append(
-            f"{label} web-publishable transcript must bind exactly one selected ASR run"
-        )
+        errors.append(f"{label} web-publishable transcript must bind exactly one selected ASR run")
     if selected_runs:
         selected_run = selected_runs[0]
         for key in ("id", "engine", "model"):
@@ -1758,20 +2467,12 @@ def validate_episode_metadata_contract(
         transcript_metadata = nested_front_matter_mapping(front_matter, "transcript")
         for key in ("engine", "model"):
             if transcript_metadata.get(key) != selected_run.get(key):
-                errors.append(
-                    f"{label} transcript.{key} must equal the selected ASR run {key}"
-                )
+                errors.append(f"{label} transcript.{key} must equal the selected ASR run {key}")
         acquisition_method = transcript_metadata.get("acquisition_method")
-        if publishable and (
-            not isinstance(acquisition_method, str) or not acquisition_method
-        ):
-            errors.append(
-                f"{label} publishable transcript.acquisition_method must be non-empty"
-            )
+        if publishable and (not isinstance(acquisition_method, str) or not acquisition_method):
+            errors.append(f"{label} publishable transcript.acquisition_method must be non-empty")
         if is_qwen_run(selected_run) and acquisition_method != "audio-asr":
-            errors.append(
-                f"{label} selected Qwen run requires acquisition_method audio-asr"
-            )
+            errors.append(f"{label} selected Qwen run requires acquisition_method audio-asr")
 
     validate_local_audio_cache_contract(
         front_matter,
@@ -1794,9 +2495,7 @@ def validate_episode_metadata_contract(
         )
         asset_paths[section] = asset_path
         if publishable and asset_path is not None and not asset_path.is_file():
-            errors.append(
-                f"{label} is web-publishable but {section}.path is missing: {value!r}"
-            )
+            errors.append(f"{label} is web-publishable but {section}.path is missing: {value!r}")
 
     if publishable:
         validate_summary_provenance(
@@ -1805,9 +2504,7 @@ def validate_episode_metadata_contract(
             repository_root=repository_root,
             label=label,
             summary_path=asset_paths.get("summary"),
-            transcript_path_value=nested_front_matter_scalar(
-                front_matter, "transcript", "path"
-            ),
+            transcript_path_value=nested_front_matter_scalar(front_matter, "transcript", "path"),
             errors=errors,
         )
 
@@ -1824,16 +2521,12 @@ def transcript_structure(
     try:
         lines = path.read_text(encoding="utf-8").splitlines()
     except (OSError, UnicodeError) as error:
-        errors.append(
-            f"{field} cannot be read at "
-            f"{display_path(path, repository_root)}: {error}"
-        )
+        errors.append(f"{field} cannot be read at {display_path(path, repository_root)}: {error}")
         return None
 
     if len(lines) < 3 or not lines[0].startswith("# ") or lines[1] != "":
         errors.append(
-            f"{field} must start with a level-one title, a blank line, "
-            "and at least one segment"
+            f"{field} must start with a level-one title, a blank line, and at least one segment"
         )
         return None
 
@@ -1842,8 +2535,7 @@ def transcript_structure(
     for index, line in enumerate(body, start=3):
         if TRANSCRIPT_LINE_RE.fullmatch(line) is None:
             errors.append(
-                f"{field} line {index} must be one timestamped sentence "
-                "with a Markdown hard break"
+                f"{field} line {index} must be one timestamped sentence with a Markdown hard break"
             )
             timestamps.append(None)
             continue
@@ -1865,19 +2557,14 @@ def validate_episode_translations(
     front_matter = extract_front_matter_lines(readme_text)
     episode_language = top_level_front_matter_scalar(front_matter, "language")
     selected_value = nested_front_matter_scalar(front_matter, "transcript", "path")
-    selected_is_english = isinstance(selected_value, str) and selected_value.endswith(
-        ".en.md"
-    )
+    selected_is_english = isinstance(selected_value, str) and selected_value.endswith(".en.md")
     required = episode_language == "en" or selected_is_english
-    translations_present, translations = parse_transcript_translations(
-        front_matter, errors=errors
-    )
+    translations_present, translations = parse_transcript_translations(front_matter, errors=errors)
 
     if not required:
         if translations:
             errors.append(
-                "transcript.translations is only valid when the selected transcript "
-                "is English"
+                "transcript.translations is only valid when the selected transcript is English"
             )
         return
 
@@ -1897,19 +2584,15 @@ def validate_episode_translations(
         and not source_path.is_file()
     ):
         errors.append(
-            "selected English transcript is missing: "
-            f"{display_path(source_path, repository_root)}"
+            f"selected English transcript is missing: {display_path(source_path, repository_root)}"
         )
 
-    chinese_items = [
-        item for item in translations if item.get("language") == "zh-CN"
-    ]
+    chinese_items = [item for item in translations if item.get("language") == "zh-CN"]
     if (require_complete or translation_claimed) and (
         not translations_present or len(chinese_items) != 1
     ):
         errors.append(
-            "English selected transcript requires exactly one zh-CN item in "
-            "transcript.translations"
+            "English selected transcript requires exactly one zh-CN item in transcript.translations"
         )
 
     source_structure = (
@@ -1934,9 +2617,7 @@ def validate_episode_translations(
             errors.append(f"{field}.alignment must be 'segment'")
         status = translation.get("status")
         if status not in TRANSLATION_STATUSES:
-            errors.append(
-                f"{field}.status must be one of machine, edited, reviewed"
-            )
+            errors.append(f"{field}.status must be one of machine, edited, reviewed")
         generated_at = translation.get("generated_at")
         if not is_rfc3339_timestamp(generated_at):
             errors.append(f"{field}.generated_at must be an RFC 3339 timestamp")
@@ -1970,9 +2651,7 @@ def validate_episode_translations(
         )
         if source_path is not None and source_path.is_file() and source_sha is not None:
             if source_sha != sha256_file(source_path):
-                errors.append(
-                    f"{field}.source_sha256 does not match transcript.en.md"
-                )
+                errors.append(f"{field}.source_sha256 does not match transcript.en.md")
         if (
             translation_source_path is not None
             and source_path is not None
@@ -1988,9 +2667,7 @@ def validate_episode_translations(
                 f"{display_path(translation_path, repository_root)}"
             )
             continue
-        if translation_sha is not None and translation_sha != sha256_file(
-            translation_path
-        ):
+        if translation_sha is not None and translation_sha != sha256_file(translation_path):
             errors.append(f"{field}.sha256 does not match transcript.zh-CN.md")
 
         translation_structure = transcript_structure(
@@ -2002,13 +2679,9 @@ def validate_episode_translations(
         if source_structure is None or translation_structure is None:
             continue
         source_title, source_body, source_timestamps = source_structure
-        translation_title, translation_body, translation_timestamps = (
-            translation_structure
-        )
+        translation_title, translation_body, translation_timestamps = translation_structure
         if translation_title != source_title:
-            errors.append(
-                "transcript.en.md and transcript.zh-CN.md must have the same title"
-            )
+            errors.append("transcript.en.md and transcript.zh-CN.md must have the same title")
         if len(translation_body) != len(source_body):
             errors.append(
                 "transcript.en.md and transcript.zh-CN.md must have the same "
@@ -2045,32 +2718,24 @@ def qwen_transcript_name(
         if isinstance(value, str):
             names.add(PurePosixPath(value).name)
 
-    root_transcript = nested_front_matter_scalar(
-        front_matter, "transcript", "path"
-    )
+    root_transcript = nested_front_matter_scalar(front_matter, "transcript", "path")
     if isinstance(root_transcript, str) and root_transcript:
         names.add(PurePosixPath(root_transcript).name)
 
     if qwen_dir.is_dir():
-        names.update(
-            path.name
-            for path in qwen_dir.glob("transcript.*.md")
-            if path.is_file()
-        )
+        names.update(path.name for path in qwen_dir.glob("transcript.*.md") if path.is_file())
 
     invalid_names = sorted(
         name for name in names if QWEN_TRANSCRIPT_NAME_RE.fullmatch(name) is None
     )
     for name in invalid_names:
         errors.append(
-            "Qwen transcript artifact must use transcript.<language>.md naming: "
-            f"{name!r}"
+            f"Qwen transcript artifact must use transcript.<language>.md naming: {name!r}"
         )
     valid_names = sorted(names.difference(invalid_names))
     if len(valid_names) > 1:
         errors.append(
-            "episode records multiple Qwen transcript languages: "
-            + ", ".join(valid_names)
+            "episode records multiple Qwen transcript languages: " + ", ".join(valid_names)
         )
     return valid_names[0] if valid_names else DEFAULT_QWEN_TRANSCRIPT_NAME
 
@@ -2087,9 +2752,7 @@ def validate_qwen_chain(
     front_matter = extract_front_matter_lines(readme_text)
     qwen_runs = [run for run in parse_asr_runs(front_matter) if is_qwen_run(run)]
     selected_runs = [
-        run
-        for run in qwen_runs
-        if str(run.get("selection_status", "")).lower() == "selected"
+        run for run in qwen_runs if str(run.get("selection_status", "")).lower() == "selected"
     ]
     qwen_dir = episode_dir / "asr" / "qwen3-asr"
     transcript_name = qwen_transcript_name(
@@ -2114,12 +2777,8 @@ def validate_qwen_chain(
     refined_path = paths["refined.json"]
     transcript_path = paths[transcript_name]
     raw = read_json_strict(raw_path, repository_root=repository_root, errors=errors)
-    aligned = read_json_strict(
-        aligned_path, repository_root=repository_root, errors=errors
-    )
-    refined = read_json_strict(
-        refined_path, repository_root=repository_root, errors=errors
-    )
+    aligned = read_json_strict(aligned_path, repository_root=repository_root, errors=errors)
+    refined = read_json_strict(refined_path, repository_root=repository_root, errors=errors)
     if raw is None or aligned is None or refined is None:
         return True
 
@@ -2127,25 +2786,15 @@ def validate_qwen_chain(
         document.get("lineage_schema_version") for document in (raw, aligned, refined)
     ]
     legacy_lineage = all(version is None for version in lineage_versions)
-    v2_lineage = all(
-        type(version) is int and version == 2 for version in lineage_versions
-    )
+    v2_lineage = all(type(version) is int and version == 2 for version in lineage_versions)
     if not legacy_lineage and not v2_lineage:
         errors.append(
             "Qwen lineage_schema_version must be absent on all three legacy artifacts "
             "or the strict integer 2 on raw, aligned, and refined"
         )
     if v2_lineage:
-        aligned_source = (
-            aligned.get("source")
-            if isinstance(aligned.get("source"), dict)
-            else {}
-        )
-        refined_source = (
-            refined.get("source")
-            if isinstance(refined.get("source"), dict)
-            else {}
-        )
+        aligned_source = aligned.get("source") if isinstance(aligned.get("source"), dict) else {}
+        refined_source = refined.get("source") if isinstance(refined.get("source"), dict) else {}
         raw_model = validate_model_identity(
             raw.get("model_identity"), field="raw.model_identity", errors=errors
         )
@@ -2178,13 +2827,9 @@ def validate_qwen_chain(
             aligned_source.get("model"),
             refined_source.get("model"),
         )
-        if (
-            raw_model is None
-            or any(
-                not isinstance(repository, str)
-                or repository != raw_model.get("repository")
-                for repository in model_repositories
-            )
+        if raw_model is None or any(
+            not isinstance(repository, str) or repository != raw_model.get("repository")
+            for repository in model_repositories
         ):
             errors.append(
                 "Qwen model_identity.repository must equal raw.model, "
@@ -2194,13 +2839,9 @@ def validate_qwen_chain(
             aligned_source.get("aligner"),
             refined_source.get("aligner"),
         )
-        if (
-            aligned_aligner is None
-            or any(
-                not isinstance(repository, str)
-                or repository != aligned_aligner.get("repository")
-                for repository in aligner_repositories
-            )
+        if aligned_aligner is None or any(
+            not isinstance(repository, str) or repository != aligned_aligner.get("repository")
+            for repository in aligner_repositories
         ):
             errors.append(
                 "Qwen aligner_identity.repository must equal aligned.source.aligner "
@@ -2215,9 +2856,21 @@ def validate_qwen_chain(
             errors=errors,
         )
 
-    transcript_language = transcript_name.removeprefix("transcript.").removesuffix(
-        ".md"
-    )
+    workflow = {
+        "metadata": nested_front_matter_scalar(front_matter, "workflow", "metadata"),
+        "summary": nested_front_matter_scalar(front_matter, "workflow", "summary"),
+        "transcript": nested_front_matter_scalar(front_matter, "workflow", "transcript"),
+    }
+    if len(selected_runs) == 1 and is_episode_web_publishable(workflow):
+        validate_selected_qwen_readme_provenance(
+            front_matter,
+            selected_run=selected_runs[0],
+            raw=raw,
+            refined=refined,
+            errors=errors,
+        )
+
+    transcript_language = transcript_name.removeprefix("transcript.").removesuffix(".md")
     if refined.get("language") != transcript_language:
         errors.append(
             "refined.language must match the Qwen transcript filename: "
@@ -2248,15 +2901,12 @@ def validate_qwen_chain(
         errors.append("refined.statistics must be an object")
     else:
         recorded_rendered_lines = statistics.get("rendered_lines")
-        if (
-            isinstance(recorded_rendered_lines, bool)
-            or not isinstance(recorded_rendered_lines, int)
+        if isinstance(recorded_rendered_lines, bool) or not isinstance(
+            recorded_rendered_lines, int
         ):
             errors.append("refined.statistics.rendered_lines must be an integer")
         elif recorded_rendered_lines != len(rendered_lines):
-            errors.append(
-                "refined.statistics.rendered_lines does not match Qwen transcript"
-            )
+            errors.append("refined.statistics.rendered_lines does not match Qwen transcript")
 
     raw_recorded_path = mapping_value(
         aligned,
@@ -2343,9 +2993,7 @@ def validate_qwen_chain(
         errors=errors,
     )
     if rendered_sha is not None and rendered_sha != transcript_sha:
-        errors.append(
-            f"refined.rendered_transcript.sha256 does not match {transcript_name}"
-        )
+        errors.append(f"refined.rendered_transcript.sha256 does not match {transcript_name}")
 
     raw_audio_sha = valid_sha256(
         mapping_value(
@@ -2376,9 +3024,7 @@ def validate_qwen_chain(
     ):
         errors.append("aligned.source.audio_sha256 does not match raw.audio.sha256")
 
-    cache_value = nested_front_matter_scalar(
-        front_matter, "local_audio_cache", "path"
-    )
+    cache_value = nested_front_matter_scalar(front_matter, "local_audio_cache", "path")
     cache_path: Path | None = None
     if cache_value is not None:
         cache_path = safe_recorded_path(
@@ -2391,12 +3037,7 @@ def validate_qwen_chain(
     if cache_path is None:
         show_id = episode_dir.parent.parent.name
         cache_path = (
-            repository_root
-            / ".cache"
-            / "media"
-            / show_id
-            / episode_dir.name
-            / "source.m4a"
+            repository_root / ".cache" / "media" / show_id / episode_dir.name / "source.m4a"
         )
 
     if cache_path.is_file():
@@ -2479,9 +3120,7 @@ def validate_selected_run_contract(
     if not publishable:
         return
     lines = extract_front_matter_lines(readme_text)
-    selected = [
-        run for run in parse_asr_runs(lines) if run.get("selection_status") == "selected"
-    ]
+    selected = [run for run in parse_asr_runs(lines) if run.get("selection_status") == "selected"]
     if len(selected) != 1:
         return
     run = selected[0]
@@ -2530,7 +3169,9 @@ def validate_selected_run_contract(
         and root_transcript.is_file()
         and run_transcript.read_bytes() != root_transcript.read_bytes()
     ):
-        errors.append("selected non-Qwen root transcript must be byte-identical to its run artifact")
+        errors.append(
+            "selected non-Qwen root transcript must be byte-identical to its run artifact"
+        )
 
 
 def check_front_matter(path: Path, text: str, errors: list[str]) -> None:
@@ -2581,9 +3222,7 @@ def validate_episode_navigation_title(
         return
     parts = value.split(" · ")
     if len(parts) != 2 or not all(parts):
-        errors.append(
-            f"{relative(path)} navigation_title must use 'person · topic' format"
-        )
+        errors.append(f"{relative(path)} navigation_title must use 'person · topic' format")
     if len(value) > 40:
         errors.append(f"{relative(path)} navigation_title must be at most 40 characters")
     if re.match(r"^(?:#|第\s*\d+|特访|特别)", value):
@@ -2596,9 +3235,7 @@ def parse_markdown_table_row(line: str) -> list[str]:
     stripped = line.strip()
     if not stripped.startswith("|") or not stripped.endswith("|"):
         return []
-    return [
-        cell.strip() for cell in re.split(r"(?<!\\)\|", stripped[1:-1])
-    ]
+    return [cell.strip() for cell in re.split(r"(?<!\\)\|", stripped[1:-1])]
 
 
 def markdown_link_targets(cell: str) -> list[str]:
@@ -2700,14 +3337,17 @@ def validate_wiki_indexes(
             errors.append(
                 f"README.md row {key} title must equal metadata and link the preferred source"
             )
-        if markdown_links(row[2]) != [
-            (episode["show_title"], episode["root_show_link"])
-        ]:
-            errors.append(
-                f"README.md row {key} podcast must equal and link its show"
-            )
-        if episode["root_transcript_link"] not in markdown_link_targets(row[5]):
+        if markdown_links(row[2]) != [(episode["show_title"], episode["root_show_link"])]:
+            errors.append(f"README.md row {key} podcast must equal and link its show")
+        root_transcript_targets = markdown_link_targets(row[5])
+        if episode["root_transcript_link"] not in root_transcript_targets:
             errors.append(f"README.md row {key} must link the selected transcript")
+        root_translation_link = episode.get("root_translation_link")
+        if (
+            isinstance(root_translation_link, str)
+            and root_translation_link not in root_transcript_targets
+        ):
+            errors.append(f"README.md row {key} must link the zh-CN transcript translation")
         if row[3] != episode["date"]:
             errors.append(f"README.md row {key} has the wrong publication date")
         if row[1] != episode["guests"]:
@@ -2726,7 +3366,9 @@ def validate_wiki_indexes(
             errors=errors,
         )
         if columns != ["标题", "播客名称", "日期", "总结链接", "逐字稿链接"]:
-            errors.append(f"shows/{show_id}/README.md 单集 columns must match the five-column contract")
+            errors.append(
+                f"shows/{show_id}/README.md 单集 columns must match the five-column contract"
+            )
         show_episodes = [episode for episode in episodes if episode["show_id"] == show_id]
         expected = {episode["show_summary_link"]: episode for episode in show_episodes}
         seen: set[str] = set()
@@ -2742,15 +3384,11 @@ def validate_wiki_indexes(
                 errors.append(f"shows/{show_id}/README.md has an unknown summary link: {key!r}")
                 continue
             if key in seen:
-                errors.append(
-                    f"shows/{show_id}/README.md duplicates summary link: {key!r}"
-                )
+                errors.append(f"shows/{show_id}/README.md duplicates summary link: {key!r}")
                 continue
             seen.add(key)
             dates.append(row[2])
-            if markdown_links(row[0]) != [
-                (episode["title"], episode["preferred_url"])
-            ]:
+            if markdown_links(row[0]) != [(episode["title"], episode["preferred_url"])]:
                 errors.append(
                     f"shows/{show_id}/README.md row {key} title must equal metadata "
                     "and link the preferred source"
@@ -2759,8 +3397,20 @@ def validate_wiki_indexes(
                 errors.append(
                     f"shows/{show_id}/README.md row {key} podcast name must equal show title"
                 )
-            if episode["show_transcript_link"] not in markdown_link_targets(row[4]):
-                errors.append(f"shows/{show_id}/README.md row {key} must link the selected transcript")
+            show_transcript_targets = markdown_link_targets(row[4])
+            if episode["show_transcript_link"] not in show_transcript_targets:
+                errors.append(
+                    f"shows/{show_id}/README.md row {key} must link the selected transcript"
+                )
+            show_translation_link = episode.get("show_translation_link")
+            if (
+                isinstance(show_translation_link, str)
+                and show_translation_link not in show_transcript_targets
+            ):
+                errors.append(
+                    f"shows/{show_id}/README.md row {key} must link the zh-CN "
+                    "transcript translation"
+                )
             if row[2] != episode["date"]:
                 errors.append(f"shows/{show_id}/README.md row {key} has the wrong publication date")
         if seen != set(expected):
@@ -2770,9 +3420,7 @@ def validate_wiki_indexes(
 
     for episode in episodes:
         if episode["show_id"] not in shows:
-            errors.append(
-                f"episode index record references unknown show {episode['show_id']!r}"
-            )
+            errors.append(f"episode index record references unknown show {episode['show_id']!r}")
 
 
 SUMMARY_HEADINGS = (
@@ -2818,16 +3466,13 @@ def validate_summary_reader_contract(
 ) -> None:
     headings = re.findall(r"^##[ \t]+(.+?)[ \t]*$", text, flags=re.MULTILINE)
     structure_is_valid = len(headings) == len(SUMMARY_HEADINGS) and all(
-        actual == expected
-        if isinstance(expected, str)
-        else actual in expected
+        actual == expected if isinstance(expected, str) else actual in expected
         for actual, expected in zip(headings, SUMMARY_HEADINGS, strict=True)
     )
     if not structure_is_valid:
         actual = " → ".join(headings) or "无二级标题"
         errors.append(
-            f"{relative(path)} summary reader sections are missing or out of order: "
-            f"{actual}"
+            f"{relative(path)} summary reader sections are missing or out of order: {actual}"
         )
         return
 
@@ -2838,8 +3483,7 @@ def validate_summary_reader_contract(
         match = pattern.search(reader_text)
         if match is not None:
             errors.append(
-                f"{relative(path)} reader content contains editor-only copy: "
-                f"{match.group(0)!r}"
+                f"{relative(path)} reader content contains editor-only copy: {match.group(0)!r}"
             )
             break
 
@@ -2867,9 +3511,7 @@ def validate_core_point_logic_table(
     separator = parse_markdown_table_row(lines[1])
     rows = [parse_markdown_table_row(line) for line in lines[2:]]
     if not 2 <= len(columns) <= 4 or any(not column for column in columns):
-        errors.append(
-            f"{relative(path)} 核心观点 logic table must have 2-4 named columns"
-        )
+        errors.append(f"{relative(path)} 核心观点 logic table must have 2-4 named columns")
         return
     if len(separator) != len(columns) or any(
         re.fullmatch(r":?-{3,}:?", cell) is None for cell in separator
@@ -2879,34 +3521,26 @@ def validate_core_point_logic_table(
     if len(rows) < 3:
         errors.append(f"{relative(path)} 核心观点 logic table must have at least 3 rows")
     if any(len(row) != len(columns) or any(not cell for cell in row) for row in rows):
-        errors.append(
-            f"{relative(path)} 核心观点 logic table rows must match its named columns"
-        )
+        errors.append(f"{relative(path)} 核心观点 logic table rows must match its named columns")
 
     decorative_number = re.compile(r"^(?:0?\d+|第\s*\d+)$")
     if any(decorative_number.fullmatch(column) for column in columns) or any(
         decorative_number.fullmatch(cell) for row in rows for cell in row
     ):
-        errors.append(
-            f"{relative(path)} 核心观点 logic table must not use decorative numbering"
-        )
+        errors.append(f"{relative(path)} 核心观点 logic table must not use decorative numbering")
 
 
 def check_bilibili_urls(path: Path, text: str, errors: list[str]) -> int:
     for parameter in TRACKING_PARAMETERS:
         if parameter in text:
-            errors.append(
-                f"{relative(path)} contains tracking parameter {parameter}"
-            )
+            errors.append(f"{relative(path)} contains tracking parameter {parameter}")
 
     count = 0
     for match in BILIBILI_URL_RE.finditer(text):
         count += 1
         url = match.group(0)
         if CANONICAL_BILIBILI_URL_RE.fullmatch(url) is None:
-            errors.append(
-                f"{relative(path)} contains non-canonical Bilibili URL: {url}"
-            )
+            errors.append(f"{relative(path)} contains non-canonical Bilibili URL: {url}")
     return count
 
 
@@ -2916,9 +3550,7 @@ def check_xiaoyuzhou_urls(path: Path, text: str, errors: list[str]) -> int:
         count += 1
         url = match.group(0)
         if CANONICAL_XIAOYUZHOU_URL_RE.fullmatch(url) is None:
-            errors.append(
-                f"{relative(path)} contains non-canonical Xiaoyuzhou URL: {url}"
-            )
+            errors.append(f"{relative(path)} contains non-canonical Xiaoyuzhou URL: {url}")
     return count
 
 
@@ -2954,9 +3586,7 @@ def main() -> int:
         if path.name == "README.md":
             check_front_matter(path, text, errors)
         elif path.name.startswith("transcript.") and text.startswith("---\n"):
-            errors.append(
-                f"{relative(path)} must keep metadata in its episode README"
-            )
+            errors.append(f"{relative(path)} must keep metadata in its episode README")
         elif path.name.startswith("summary."):
             validate_summary_reader_contract(path, text, errors)
             validate_core_point_logic_table(path, text, errors)
@@ -2978,35 +3608,56 @@ def main() -> int:
         if publishable:
             front_matter = extract_front_matter_lines(readme_text)
             sources = parse_front_matter_list(front_matter, "sources")[1]
-            preferred = next(
-                (source for source in sources if source.get("preferred") is True), {}
-            )
+            preferred = next((source for source in sources if source.get("preferred") is True), {})
             participants = parse_front_matter_list(front_matter, "participants")[1]
-            guests = "、".join(
-                str(person.get("name"))
-                for person in participants
-                if person.get("role") == "guest"
-            ) or "—"
+            guests = (
+                "、".join(
+                    str(person.get("name"))
+                    for person in participants
+                    if person.get("role") == "guest"
+                )
+                or "—"
+            )
             show_id = top_level_front_matter_scalar(front_matter, "show_id") or ""
             show = show_records.get(show_id, {})
             summary_name = nested_front_matter_scalar(front_matter, "summary", "path") or ""
             transcript_name = nested_front_matter_scalar(front_matter, "transcript", "path") or ""
+            episode_language = top_level_front_matter_scalar(front_matter, "language")
+            translation_name: str | None = None
+            if episode_language == "en" or transcript_name.endswith(".en.md"):
+                translation_parse_errors: list[str] = []
+                translations = parse_transcript_translations(
+                    front_matter, errors=translation_parse_errors
+                )[1]
+                for translation in translations:
+                    path = translation.get("path")
+                    if translation.get("language") == "zh-CN" and isinstance(path, str) and path:
+                        translation_name = path
+                        break
             relative_episode = episode_dir.relative_to(ROOT).as_posix()
-            episode_records.append(
-                {
-                    "show_id": show_id,
-                    "show_title": show.get("title"),
-                    "title": top_level_front_matter_scalar(front_matter, "title"),
-                    "date": (top_level_front_matter_scalar(front_matter, "published_at") or "")[:10],
-                    "guests": guests,
-                    "preferred_url": preferred.get("url"),
-                    "root_show_link": f"./shows/{show_id}/",
-                    "root_summary_link": f"./{relative_episode}/{summary_name}",
-                    "root_transcript_link": f"./{relative_episode}/{transcript_name}",
-                    "show_summary_link": f"./episodes/{episode_dir.name}/{summary_name}",
-                    "show_transcript_link": f"./episodes/{episode_dir.name}/{transcript_name}",
-                }
-            )
+            episode_record = {
+                "show_id": show_id,
+                "show_title": show.get("title"),
+                "title": top_level_front_matter_scalar(front_matter, "title"),
+                "date": (top_level_front_matter_scalar(front_matter, "published_at") or "")[:10],
+                "guests": guests,
+                "preferred_url": preferred.get("url"),
+                "root_show_link": f"./shows/{show_id}/",
+                "root_summary_link": f"./{relative_episode}/{summary_name}",
+                "root_transcript_link": f"./{relative_episode}/{transcript_name}",
+                "show_summary_link": f"./episodes/{episode_dir.name}/{summary_name}",
+                "show_transcript_link": f"./episodes/{episode_dir.name}/{transcript_name}",
+            }
+            if translation_name is not None:
+                episode_record.update(
+                    {
+                        "root_translation_link": (f"./{relative_episode}/{translation_name}"),
+                        "show_translation_link": (
+                            f"./episodes/{episode_dir.name}/{translation_name}"
+                        ),
+                    }
+                )
+            episode_records.append(episode_record)
         validate_episode_catalog_keyword(readme, readme_text, errors)
         validate_episode_navigation_title(readme, readme_text, errors)
         validate_episode_translations(

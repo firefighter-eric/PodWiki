@@ -8,6 +8,7 @@ const sidebarShowTagLabels: Readonly<Record<string, string>> = {
   svvector: "SV-Vector",
   latetalk: "LateTalk",
   luoyonghao: "十字路口",
+  moonuncle: "月球大叔",
   whynottv: "WhynotTV",
   yiqitietalk: "一起铁TALK",
 };

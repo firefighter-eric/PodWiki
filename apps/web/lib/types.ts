@@ -33,7 +33,7 @@ export type SourceLink = {
   preferred?: boolean;
 };
 
-export type EpisodeReleaseType = "regular" | "special" | "bonus" | "trailer";
+export type EpisodeReleaseType = "regular" | "special" | "bonus";
 
 export type TranscriptProvenance = {
   path: string;
