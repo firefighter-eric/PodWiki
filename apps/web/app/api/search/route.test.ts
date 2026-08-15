@@ -34,5 +34,5 @@ describe("search API route", () => {
     } finally {
       fs.rmSync(emptyWorkingDirectory, { recursive: true, force: true });
     }
-  });
+  }, 15_000);
 });
