@@ -47,6 +47,7 @@ npm run check
 
 | 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |
 | --- | --- | --- | --- | --- | --- |
+| [对话前DeepMind曹原：AI for Science爆发，一个新时代到来了【101视频播客】](https://www.bilibili.com/video/BV1GQgg6yEy5/) | 曹原 | [硅谷101](./shows/sv101/) | 2026-08-15 | [总结](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/transcript.zh-CN.md) |
 | [李正韬：YC，明星初创，语音AI，客服，执行力，创2代，OpenAI，996](https://www.bilibili.com/video/BV1S9u16KETq/) | 李正韬 | [月球大叔的硅谷播客](./shows/moonuncle/) | 2026-08-09 | [总结](./shows/moonuncle/episodes/bili-bv1s9u16ketq-li-zhengtao/summary.zh-CN.md) | [逐字稿](./shows/moonuncle/episodes/bili-bv1s9u16ketq-li-zhengtao/transcript.zh-CN.md) |
 | [对话田渊栋：AI 自进化如何到来【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1XnuH66EzS/) | 田渊栋 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-08-07 | [总结](./shows/latetalk/episodes/178-tian-yuandong/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/178-tian-yuandong/transcript.zh-CN.md) |
 | [【正片】罗永浩的X字路口！我们能活到今天，多亏了祖传的势利眼](https://www.bilibili.com/video/BV1ukM26zESF/) | 呼兰、小块、王继业、小镟 | [罗永浩的十字路口](./shows/luoyonghao/) | 2026-08-06 | [总结](./shows/luoyonghao/episodes/bili-bv1ukm26zesf-x-shiliyan/summary.zh-CN.md) | [逐字稿](./shows/luoyonghao/episodes/bili-bv1ukm26zesf-x-shiliyan/transcript.zh-CN.md) |

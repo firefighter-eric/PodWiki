@@ -259,7 +259,7 @@ describe("reader navigation", () => {
     expect(homeHtml.match(/查看全部 12 期/g)).toHaveLength(1);
     expect(homeHtml).toContain("查看全部 29 期");
     expect(homeHtml).toContain("查看全部 10 期");
-    expect(homeHtml).toContain("查看全部 8 期");
+    expect(homeHtml).toContain("查看全部 9 期");
     expect(homeHtml).toContain("查看全部 36 期");
     expect(homeHtml).toContain("查看全部 4 期");
     expect(homeHtml).toContain("查看全部 5 期");
