@@ -263,11 +263,14 @@ validator so the renderer does not create unnecessary artifact churn.
    `bio` is optional. In `affiliations`, require `organization`, allow optional `title`, and use
    only `current` or `former` for `status`; in `education`, require `institution` and allow
    optional `credential` and `field`. Lists may be omitted or empty when facts are unavailable.
-   Every profile fact must come from a source registered in the episode's `sources` or from an
-   explicit guest self-statement verified against the audio or a human-checked transcript.
-   Never infer profile facts from a publisher title or machine ASR. Treat `status: current` as
-   current only as of `checked_at`; omit the entire profile instead of keeping placeholders or
-   guessing missing facts.
+   Profile facts may come from a source registered in the episode's `sources` or be synthesized
+   from clear, internally consistent guest self-statements in the selected complete transcript.
+   A machine transcript may support a concise biography and structured chronology without a
+   separate listening pass, but its `bio` must use wording such as “据本期自述” so the result is
+   not presented as independently verified. Never fill unclear transliterations, unstated
+   credentials or fields, or company relationships supplied only by general knowledge. Treat
+   `status: current` as current only when the episode clearly says the relationship continued at
+   recording time and only as of `checked_at`; omit unsupported fields instead of guessing them.
 6. Base an outline summary only on publisher material until the complete transcript exists.
    Do not mark summary or transcript as reviewed without the corresponding review work.
 7. When selecting Qwen as the official transcript, preserve any existing Whisper raw,
