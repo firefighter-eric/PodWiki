@@ -7,9 +7,10 @@
 
 ## 1. 适用范围与停止条件
 
-当前完整 happy path 是：单个已通过播客边界核实的公开 Bilibili 视频版单集或
-小宇宙单集，没有可直接使用的公开字幕，在 Apple Silicon/MLX 或
-Windows/NVIDIA CUDA 上以 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿。
+当前完整 happy path 是：单个已通过播客边界核实、可匿名访问或经用户明确授权
+登录态访问的公开免费 Bilibili 视频版单集或小宇宙单集，没有可直接使用的字幕，
+在 Apple Silicon/MLX 或 Windows/NVIDIA CUDA 上以 Qwen3-ASR 和 ForcedAligner
+生成机器逐字稿。
 PodWiki 只收录符合[内容标准第 0 节](./content-standard.md#0-收录边界只收录播客)的
 播客完整单集；长视频、访谈或频道投稿本身不构成收录依据。
 用户明确授权时，也可以把一个已核实播客的公开免费单集作为冻结后的有界批次处理：
@@ -30,8 +31,11 @@ source identifiers 与无正式期号 key 尚未形成内容契约，因此不�
 
 遇到以下情况时停止自动流程并报告，不自行寻找绕过方式：
 
-- 登录、会员、付费、地区、年龄或其他访问控制；
-- 找到公开字幕：仓库目前只有字幕发现能力，尚无下载、转换和 lineage 导入工具；
+- 需要登录态，但用户没有明确授权具体平台、登录身份与来源范围，或当前采集路径
+  无法在不泄露凭据并保留完整来源 sidecar 的前提下使用该登录态；
+- 会员专属、付费、私密、地区、年龄或其他受限内容；
+- 找到当前授权访问上下文可用的字幕：仓库目前只有字幕发现能力，尚无下载、转换和
+  lineage 导入工具；
 - 只有本地媒体但没有可核实的来源与授权记录；
 - 当前机器既不满足 Apple Silicon/MLX，也不满足 Windows x86-64/NVIDIA CUDA
   本地路径，却需要新跑正式 ASR；
@@ -134,7 +138,10 @@ Windows/CUDA 使用官方非量化模型，并继续只写入 `.cache/models/`�
 symlink cache 误当作 native v2 identity；不得复用或覆盖没有逐文件 download
 metadata 的旧模型目录。MLX 继续使用其独立的 `*-pinned-v2` 目录。
 
-模型、媒体、sidecar、日志和翻译检查点全部放在 `.cache/`，不得提交 Git。
+模型、媒体、sidecar、日志和翻译检查点全部放在 `.cache/`，不得提交 Git。用户明确
+授权登录态下载时，优先直接使用现有浏览器会话；确需导出 cookie、token 或浏览器
+配置时，只能临时写入 `.cache/credentials/`，不得打印、写入 sidecar 或日志，并在
+本次采集结束后清理临时副本。
 
 ## 3. 规范化来源并做 metadata intake
 
@@ -148,6 +155,12 @@ metadata 的旧模型目录。MLX 继续使用其独立的 `*-pinned-v2` 目录�
 - 小宇宙：`https://www.xiaoyuzhoufm.com/episode/<episode-id>`；栏目页用于登记节目
   身份，也可在明确授权的单栏目批次中发现单集，但不能作为媒体获取输入；
 - 删除 `spm_id_from`、`vd_source`、播放列表和其他追踪参数。
+
+登录本身不再构成停止条件。需要登录态时，必须先记录用户明确授权的平台、登录身份
+别名和本次规范来源或冻结 manifest 范围，再以同一访问上下文完成字幕检查与媒体获取；
+只记录 `anonymous` 或 `authenticated` 等非敏感访问方式，不记录 cookie、token、账号
+标识或浏览器配置路径。登录态不得用于扩大节目范围，也不得纳入会员专属、付费、私密、
+地区或其他受限内容。
 
 不要把活动页直接传给脚本。先用来源 ID 做临时 intake，只读取元数据而不下载：
 
@@ -166,17 +179,18 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 3. 小宇宙的 `source.eid`、`source.pid`、`source.media_id` 完整，页面中的
    episode/podcast/media 身份一致，并明确为 `NORMAL`、`FREE`、非私密、`PUBLIC`；
 4. `source.title`、发布者、发布时间和时长合理；
-5. `source.availability`、`source.live_status` 和平台字段表明来源公开、非直播、
-   非受限；
+5. `source.availability`、`source.live_status` 和平台字段表明来源公开免费、非直播、
+   非会员专属、非付费、非私密且不受地区或其他访问限制；登录态只影响传输上下文；
 6. `source.subtitle_languages`、`source.automatic_caption_languages` 和
-   `source.platform_metadata.subtitle.tracks` 均无可用公开字幕。
+   `source.platform_metadata.subtitle.tracks` 均无当前授权访问上下文可用的字幕。
 
-存在公开字幕时在这里停止。不要因为当前没有 importer 就忽略字幕改跑音频 ASR。
+存在可用字幕时在这里停止。不要因为当前没有 importer 就忽略字幕改跑音频 ASR。
 
 ### 明确授权的单播客批次
 
 未获授权时仍只处理用户指定的单集，不枚举整栏。只有用户明确点名并授权一个已
-核实的播客后，才可以发现它匿名可见的完整单集；不得把授权扩大到其他节目、账号
+核实的播客后，才可以发现它匿名或经授权登录态可见的公开免费完整单集；不得把授权
+扩大到其他节目、账号
 投稿或平台列表。下载任何媒体前先把本次范围冻结到
 `.cache/intake/<show-id>/manifest.json`，至少记录：
 
@@ -189,9 +203,10 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 - 稳定顺序仅用于执行和复核，不作为正式期号。
 
 冻结后不因节目新增单集而自动扩展本次批次。Bilibili 混合频道只允许白名单中的完整
-播客正片，片段、直播、活动、课程和其他投稿保持排除；每集还要独立通过匿名访问、
-单 P、来源身份和字幕检查。小宇宙只有栏目身份一致且明确为 `NORMAL`、`FREE`、
-非私密、`PUBLIC` 的条目才能进入下载清单。跨节目、未知状态、付费、私密、需登录或
+播客正片，片段、直播、活动、课程和其他投稿保持排除；每集还要在实际授权访问上下文中
+独立通过访问状态、单 P、来源身份和字幕检查。小宇宙只有栏目身份一致且明确为
+`NORMAL`、`FREE`、非私密、`PUBLIC` 的条目才能进入下载清单。跨节目、未知状态、
+会员专属、付费、私密、地区限制，或虽需登录但未获本次明确授权的条目，以及其他
 不满足播客边界的条目必须拒绝并记录原因。随后严格按 manifest 串行、限速调用单集
 采集命令，每次仍只传入一个规范单集 URL，并在进入下一集前完成该集的身份、sidecar、
 字节数、时长与 SHA-256 校验。中断后从冻结的 manifest 和已验证 sidecar 恢复，不
