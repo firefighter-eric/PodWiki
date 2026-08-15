@@ -257,7 +257,7 @@ cp -n templates/episode/README.md shows/<show-id>/episodes/<episode-folder>/READ
 | `source.duration_seconds` | 换算为整数毫秒 `duration_ms` |
 | `source.language` 或核实后的实际口语 | BCP 47 `language`；不能沿用模板默认值猜测 |
 | 已核实出场人物 | `participants`；区分 `guest`、一般 `participant` 与 `host` |
-| 已登记人物来源或经回听确认的嘉宾自述 | `participants[].profile` |
+| 已登记人物来源或 selected 完整逐字稿中的嘉宾自述 | `participants[].profile` |
 | 证据化人物与精简主题 | `navigation_title`；guest 优先，其次 participant、host |
 | 独特主题词 | `catalog_keyword` |
 
@@ -265,14 +265,15 @@ cp -n templates/episode/README.md shows/<show-id>/episodes/<episode-folder>/READ
 `profile`，不能保留占位内容。填写时必须遵守以下顺序：
 
 1. 先把发布者人物介绍、机构主页等依据的规范 URL 登记到本集 `sources`；嘉宾在
-   本集中的明确自述可以使用已登记的节目来源作为依据；
-2. 机器 ASR 和发布者标题只能帮助定位，不能据此猜测学历、公司、职位或在职状态；
-   使用嘉宾自述时回听对应音频，或确认所用逐字稿已经人工核对；
-3. 填写必需的 `headline` 和 `checked_at: YYYY-MM-DD`；`bio` 可省略；
-4. `affiliations` 条目的 `organization` 必填，`title` 可省略，`status` 只能是
+   本集 selected 完整逐字稿中的明确自述可以使用已登记的节目来源作为依据；
+2. 可以把完整逐字稿中分散但上下文一致的成长、教育、任职和研究经历归纳成背景；
+   使用尚未人工核对的机器逐字稿时，在 `bio` 中以“据本期自述”等措辞标明边界；
+3. 不得补全模糊音译、未明确说出的学位或专业，也不得只凭行业常识推断公司关系；
+4. 填写必需的 `headline` 和 `checked_at: YYYY-MM-DD`；`bio` 可省略；
+5. `affiliations` 条目的 `organization` 必填，`title` 可省略，`status` 只能是
    `current` 或 `former`；`education` 条目的 `institution` 必填，`credential`
    和 `field` 可省略；未知列表可以省略或写为空列表，不得补猜；
-5. `status: current` 只表示截至 `checked_at` 仍属当前关系。更新背景时重新核实
+6. `status: current` 只表示截至 `checked_at` 仍属当前关系。更新背景时重新核实
    全部当前关系并同步日期，不能把旧资料描述成当前状态。
 
 元数据只在完成来源核验后标为 `verified`。尚未取得音频时保持

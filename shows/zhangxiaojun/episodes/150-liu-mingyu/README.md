@@ -24,6 +24,23 @@ participants:
   - id: liu-mingyu
     name: 刘洺堉
     role: guest
+    profile:
+      headline: "英伟达研究副总裁、Cosmos Lab 副总裁"
+      bio: "据本期自述，刘洺堉成长于台北，先在台湾交通大学学习无线通讯，后赴马里兰大学攻读博士并转向计算机视觉；博士后期进入三菱电机研究院，2016 年加入英伟达，长期从事生成式视觉与 Physical AI 研究并带领 Cosmos 项目。"
+      affiliations:
+        - organization: "英伟达"
+          title: "研究副总裁、Cosmos Lab 副总裁"
+          status: current
+        - organization: "三菱电机研究院"
+          title: "研究员"
+          status: former
+      education:
+        - institution: "台湾交通大学"
+          field: "无线通讯"
+        - institution: "马里兰大学"
+          credential: "博士"
+          field: "计算机视觉"
+      checked_at: "2026-08-15"
 sources:
   - platform: xiaoyuzhou
     kind: episode
