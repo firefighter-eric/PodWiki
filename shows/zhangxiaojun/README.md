@@ -29,7 +29,7 @@ sources:
     url: https://feed.xyzfm.space/dk4yh3pkpjp3
     identifiers:
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
-last_verified_at: 2026-08-09
+last_verified_at: 2026-08-15
 ---
 
 # 张小珺商业访谈录
@@ -40,15 +40,16 @@ last_verified_at: 2026-08-09
 
 - 节目身份由官方 Apple Podcasts 页面与官方 RSS `https://feed.xyzfm.space/dk4yh3pkpjp3` 共同核实。
 - 发布者 Bilibili 是混合内容频道，只收录与官方 RSS 在期号、标题、嘉宾和完整节目主体上可逐集对应的播客正片；频道内其他访谈、活动、片段或普通视频不因账号身份而自动收录。平台片头、片尾或剪辑节奏造成的时长差必须逐集留证，不能只凭“长视频”判定完整。
-- 2026-08-09 核验的 33 条 Bilibili 播客相关投稿中，29 集完整正片均已列入下方主索引；本次新增的 17 集当前为 `metadata: verified`、`summary: draft`、`transcript: machine`，仍需人工核听、专名校对和高影响事实核查，完成前不得标记为 `reviewed`。
+- 截至 2026-08-15 核验的 34 条 Bilibili 播客相关投稿中，30 集完整正片均已列入下方主索引；批量补录的 17 集与本次新增的第 150 期当前为 `metadata: verified`、`summary: draft`、`transcript: machine`，仍需人工核听、专名校对和高影响事实核查，完成前不得标记为 `reviewed`。
 - 第 87、95、100 期为剪辑版，排除；第 108 期比官方 RSS 音频短 23 分 20 秒，且删减边界不明，暂不收录。
 - 第 101 期 Bilibili 版比 RSS 短约 4 分 28 秒；发布者明确称其为“三小时访谈”，本地音频抽样又从 RSS 开头、连续正文采样点匹配到结尾，支持其为删去停顿或压缩节奏的完整官方视频播客版，而非高光短版。核验方法与边界保存在冻结 intake 证据中。
-- 第 149 期目前仅见于官方 RSS，尚无可核实 BVID；保留为 RSS-only 待核实项，不猜测或补造 Bilibili 来源。
+- 第 149 期截至 2026-08-15 仍仅见于官方 RSS，尚无可核实 BVID；保留为 RSS-only 待核实项，不猜测或补造 Bilibili 来源。第 150 期已通过官方 RSS 的期号、嘉宾、纲要与时长匹配到发布者 Bilibili 正片。
 
 ## 单集
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [对英伟达研究副总裁刘洺堉的4小时访谈：Cosmos 3、世界模型、武术、黄仁勋影响我的，和你不需要击败所有对手](https://www.bilibili.com/video/BV1fmgj66EtD/) | 张小珺商业访谈录 | 2026-08-13 | [总结](./episodes/150-liu-mingyu/summary.zh-CN.md) | [逐字稿](./episodes/150-liu-mingyu/transcript.zh-CN.md) |
 | [对游凯超3小时访谈：开源Infra、和模型Co-design 、“如果vLLM失败，我们会后悔一辈子”](https://www.bilibili.com/video/BV18Qg96YE1W/) | 张小珺商业访谈录 | 2026-07-28 | [总结](./episodes/148-you-kaichao/summary.zh-CN.md) | [逐字稿](./episodes/148-you-kaichao/transcript.zh-CN.md) |
 | [对华为半导体首席科学家廖恒的5小时访谈：一部昇腾史、18层宝塔与全球芯片恢弘30年史诗\| B站 x WAIC AI会客厅](https://www.bilibili.com/video/BV1nB3u6tERu/) | 张小珺商业访谈录 | 2026-07-25 | [总结](./episodes/bili-bv1nb3u6teru-liao-heng/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1nb3u6teru-liao-heng/transcript.zh-CN.md) |
 | [和蚂蚁灵波沈宇军聊：机器人原生基础模型、大脑和本体的关系、预训练与数据scale up、老师汤晓鸥](https://www.bilibili.com/video/BV1cRK86zEpQ/) | 张小珺商业访谈录 | 2026-07-22 | [总结](./episodes/147-shen-yujun/summary.zh-CN.md) | [逐字稿](./episodes/147-shen-yujun/transcript.zh-CN.md) |
