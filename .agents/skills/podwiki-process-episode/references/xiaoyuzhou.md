@@ -20,9 +20,10 @@
 - Fail closed unless the episode is `NORMAL` and `FREE`, `isPrivateMedia` is false, and
   the media source is explicitly `PUBLIC`.
 - Accept only an HTTPS M4A enclosure on `media.xyzcdn.net`; require the media URL and
-  enclosure URL to match and its path to equal `/<media-id>`. Reject redirects, credentials,
-  query strings, fragments, missing fields, paid, private, login-gated, or unknown access
-  states instead of attempting a fallback.
+  enclosure URL to match and its path to equal `/<media-id>`. Reject redirects, URL-embedded
+  credentials, query strings, fragments, missing fields, paid, private, regional, or unknown
+  restricted states instead of attempting a fallback. An explicitly authorized authenticated
+  access context is not itself a restricted state.
 - Hold deadlock-ordered locks for both the final audio and metadata sidecar until the audio
   is verified, promoted, and the sidecar is atomically written. Stream under an additional
   staging-output lock to a URL-bound partial file and require the final byte count to equal
@@ -33,12 +34,13 @@
   for identity content encoding and reject encoded responses. Do not retry permanent 4xx or
   local filesystem errors.
 - Download only the requested public episode by default. A bounded whole-podcast import is
-  allowed only after the user explicitly authorizes one verified podcast. Anonymous discovery
-  must be limited to that podcast, and its PID plus every canonical episode URL/eid must be
-  frozen in a manifest before any media download. Do not add newly discovered episodes during
-  the run. Validate each item independently as `NORMAL`, `FREE`, non-private, explicitly
-  `PUBLIC`, and bound to the authorized podcast; reject and report mismatches or unknown
-  states. Process the manifest sequentially with rate limiting, passing one episode URL to
+  allowed only after the user explicitly authorizes one verified podcast. Discovery in either
+  the anonymous or explicitly authorized authenticated context must be limited to that podcast,
+  and its PID plus every canonical episode URL/eid must be frozen in a manifest before any media
+  download. Do not add newly discovered episodes during the run. Validate each item independently
+  as `NORMAL`, `FREE`, non-private, explicitly `PUBLIC`, and bound to the authorized podcast;
+  reject and report mismatches or unknown states. Process the manifest sequentially with rate
+  limiting, passing one episode URL to
   each acquisition command. The current anonymous adapter never uses cookies or tokens. A future
   authenticated adapter must keep exported credentials under ignored `.cache/credentials/` and
   out of output and artifacts. Never cross into another podcast or enumerate/acquire paid,
