@@ -4,9 +4,14 @@
   acquisition command. Podcast pages identify shows but are not media-acquisition inputs.
   By default, do not enumerate them.
 - Remove queries, fragments, and a trailing slash from the stored episode URL.
-- Fetch only the anonymous public HTML page. Parse its `__NEXT_DATA__` document without
-  executing JavaScript, sending cookies, or using login/session tokens. Reject redirects,
-  non-HTML responses, invalid UTF-8, and pages over the configured size limit.
+- The current adapter fetches only the anonymous public HTML page. It parses the `__NEXT_DATA__`
+  document without executing JavaScript, sending cookies, or using login/session tokens, and
+  rejects redirects, non-HTML responses, invalid UTF-8, and pages over the configured size limit.
+  Repository policy permits a stateful path after the user explicitly authorizes the Xiaoyuzhou
+  login identity and exact source or frozen-manifest scope, but that path must preserve every
+  identity, access-state, enclosure, byte-count, duration, hash, and sidecar check below. Until
+  such an adapter exists, report a technical blocker instead of treating login as forbidden or
+  injecting credentials into the anonymous path.
 - Require the requested `eid`, episode `eid`, episode `pid`, nested podcast `pid`,
   `mediaKey`, and media `id` to be present and mutually consistent.
 - Require the media identity to have the form `<episode-pid>/<token>.m4a`, with a non-empty
@@ -34,8 +39,10 @@
   the run. Validate each item independently as `NORMAL`, `FREE`, non-private, explicitly
   `PUBLIC`, and bound to the authorized podcast; reject and report mismatches or unknown
   states. Process the manifest sequentially with rate limiting, passing one episode URL to
-  each acquisition command. Never use cookies or tokens, cross into another podcast, or
-  enumerate/acquire paid or private episodes.
+  each acquisition command. The current anonymous adapter never uses cookies or tokens. A future
+  authenticated adapter must keep exported credentials under ignored `.cache/credentials/` and
+  out of output and artifacts. Never cross into another podcast or enumerate/acquire paid,
+  membership-only, private, regional, or other restricted episodes.
 - Verify the downloaded enclosure against its published byte size and duration, then
   record `eid`, `pid`, media identity, probe data, and SHA-256 in the source sidecar.
 - Before reusing cached audio, verify its canonical URL and SHA-256 locally, then compare

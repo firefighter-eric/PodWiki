@@ -20,6 +20,12 @@
 - Remove queries and fragments from the stored canonical URL.
 - Use `scripts/acquire_media.py` so yt-dlp and Bilibili's public view/player metadata are
   captured together. Do not persist temporary DASH URLs.
+- The repository permits an existing browser session or cookies when the user explicitly
+  authorizes the Bilibili login identity and exact source or frozen-manifest scope. The current
+  `scripts/acquire_media.py` path remains anonymous; an authenticated acquisition path must
+  preserve the same identity, subtitle, access-state, media-probe, hash, and sidecar contract.
+  Keep any exported credential material only under ignored `.cache/credentials/` and never
+  print or persist its contents in logs, sidecars, Markdown, or Git.
 - If yt-dlp hits the known public-page `Unable to extract initial state` compatibility
   failure, the acquisition script may fall back to the official anonymous playurl API.
   Other extractor and transport failures must remain errors.
@@ -29,14 +35,14 @@
   reject missing fields. `no_reprint` is a provenance boundary to record, not an access
   denial, and `download` is not authorization. Never persist the signed DASH URL.
 - Record BVID, aid, cid, and page from verified metadata.
-- Treat an empty anonymous subtitle list as "no public subtitle found", not proof that a
-  login-visible or hard-burned subtitle does not exist.
-- The repository does not yet provide a public-subtitle importer. When an anonymous subtitle
-  track exists, stop and report that unsupported branch; do not silently ignore it and start
-  audio ASR.
-- If no public subtitle exists and the source is publicly accessible, acquire only the audio
-  needed for local processing.
+- Treat an empty anonymous subtitle list as "no anonymous subtitle found", not proof that a
+  subtitle visible in the authorized login context or hard-burned subtitle does not exist.
+- The repository does not yet provide a subtitle importer. When a subtitle track is available in
+  the actual authorized access context, stop and report that unsupported branch; do not silently
+  ignore it and start audio ASR.
+- If no subtitle is available in the actual authorized access context and the source is an
+  otherwise eligible public free episode, acquire only the audio needed for local processing.
 - Do not infer processing authorization from technical download availability; stay within
   the user's authorized scope.
-- Do not process paid, membership-only, charging-only, regional, or login-gated media without
-  a separately authorized workflow.
+- Login alone is not a policy blocker after scoped user authorization. Continue to reject paid,
+  membership-only, charging-only, private, regional, or other restricted media.

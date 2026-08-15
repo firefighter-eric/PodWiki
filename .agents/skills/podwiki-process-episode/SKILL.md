@@ -32,16 +32,23 @@ preserving source provenance, resumability, and the repository content standard.
    script.
 2. Read the matching source guide: `references/bilibili.md`, `references/youtube.md`, or
    `references/xiaoyuzhou.md`.
-3. Run the metadata-only intake and check for a public subtitle track before downloading
-   media. The repository does not yet provide a subtitle importer. If a public subtitle is
-   present, stop and report that unsupported branch instead of silently falling through to
-   audio ASR.
+3. Run the metadata-only intake in the same authorized access context intended for acquisition
+   and check for an available subtitle track before downloading media. The repository does not
+   yet provide a subtitle importer. If a subtitle is present, stop and report that unsupported
+   branch instead of silently falling through to audio ASR.
 4. YouTube currently supports canonicalization, metadata intake, and public media acquisition
    only. Stop before tracked episode ingestion because the repository has not defined its
    source-identifiers contract or a stable key for unnumbered videos.
-5. Do not bypass login, membership, payment, region, or other access controls. This workflow
-   never uses browser cookies; even an authorized request requires a separate, explicitly
-   documented source-handling workflow.
+5. Stateful login is allowed when the user explicitly authorizes the platform, login identity,
+   and exact source or frozen-manifest scope. Prefer an existing browser session; if credentials
+   must be exported, keep cookie, token, and browser-profile material only under ignored
+   `.cache/credentials/`, never print it or record it in logs, sidecars, Markdown, or Git, and
+   remove the temporary copy after acquisition. Authentication is only an access and transport
+   context: it does not expand podcast, batch, or content authorization. Do not bypass or ingest
+   membership-only, paid, private, regional, or other restricted content. If the current source
+   adapter cannot safely consume the authorized state while preserving the full acquisition
+   sidecar contract, report a technical blocker rather than treating login as forbidden or
+   fabricating provenance.
 6. Every source, including a single BVID or video URL, must pass the podcast-only scope in
    `docs/content-standard.md` before media download or tracked episode creation. Require
    affirmative publisher evidence that identifies both a verified podcast and the exact item
@@ -84,7 +91,8 @@ preserving source provenance, resumability, and the repository content standard.
 
 7. Require the sidecar `source.metadata.json` and verify codec, duration, size, sample rate,
    channels, and SHA-256 before marking the source acquired.
-8. Keep downloaded media and temporary files under `.cache/`; never add them to Git.
+8. Keep downloaded media, credential exports, and temporary files under `.cache/`; never add
+   them to Git.
 
 ## Select and run ASR
 

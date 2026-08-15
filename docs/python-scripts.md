@@ -109,6 +109,14 @@ Windows/CUDA 使用官方模型：
 
 ## 获取公开音轨
 
+仓库规则允许在用户明确授权的平台、登录身份与来源范围内使用现有浏览器会话或
+cookies 下载公开免费完整单集。当前 `scripts/acquire_media.py` 仍是匿名采集适配器，
+不接收登录态；如果来源需要登录，必须改用能够安全使用现有会话、同时保留下述来源
+身份、字幕、访问状态、媒体探测和 sidecar 契约的采集路径。当前没有满足契约的适配器
+时，应报告技术阻塞，不能把登录态误报为政策禁止，也不能手工伪造 sidecar。cookie、
+token 和浏览器配置不得作为命令文本输出，也不得写入日志、sidecar、Markdown 或 Git；
+确需导出的临时副本只能放在 `.cache/credentials/`。
+
 `acquire_media.py` 的每次调用只处理一个公开 Bilibili/YouTube 视频 URL 或小宇宙
 单集 URL，不直接接收账号、播放列表、多 P、播客栏目页或受访问控制的内容。这个
 技术输入契约不等于 PodWiki 收录资格：包括单个 BVID/视频在内，每个来源都必须先有
@@ -148,8 +156,8 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 extractor 或传输错误不会触发这条回退。回退要求 `state == 0`，并要求付费、
 试看、充电专属和 upower 等关键访问字段全部显式为 `0`/`false`；字段缺失时
 按拒绝处理。`no_reprint` 会作为来源边界记录但不等同于访问限制，`download`
-字段也不构成处理授权。脚本不会使用 cookies，也不会把临时签名媒体 URL 写入
-sidecar。
+字段也不构成处理授权。这个匿名适配器不会使用 cookies，也不会把临时签名媒体 URL
+写入 sidecar。
 
 只检查来源而不下载：
 
@@ -195,7 +203,8 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 path。`media.id` 必须是 `<episode-pid>/<token>.m4a`，不能用外层栏目列表的 PID 覆盖
 联播单集自己的身份。只有 `NORMAL`、`FREE`、`isPrivateMedia: false`、`PUBLIC` 四项均
 明确成立，且 `media.xyzcdn.net` 的 M4A URL 与 enclosure 完全一致时才继续；付费、私密、
-登录态或字段缺失一律拒绝，也不会使用 cookie 或 token。即使处于已授权的单栏目
+需要登录或字段缺失时，这个匿名适配器一律拒绝，也不会使用 cookie 或 token；这属于
+当前脚本的技术边界，不是仓库对已明确授权登录态的政策禁止。即使处于已授权的单栏目
 批量导入，每次调用也仍只下载 frozen manifest 中的一个规范单集 URL，并逐集执行
 相同的公开状态和媒体身份校验。
 
