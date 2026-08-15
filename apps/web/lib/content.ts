@@ -235,10 +235,10 @@ const summarySourceTranscriptSchema = z
 
 const transcriptTranslationSchema = z
   .object({
-    language: z.string().min(1),
-    path: z.string().min(1),
-    source_language: z.string().min(1),
-    source_path: z.string().min(1),
+    language: z.literal("zh-CN"),
+    path: z.literal("transcript.zh-CN.md"),
+    source_language: z.literal("en"),
+    source_path: z.literal("transcript.en.md"),
     alignment: z.literal("segment"),
     status: z.enum(["machine", "edited", "reviewed"]),
     generated_at: z.union([z.string().datetime({ offset: true }), z.date()]),
@@ -335,7 +335,7 @@ const episodeSchema = z
     show_id: z.string().regex(/^[a-z0-9]+$/u),
     episode_key: stableSlugSchema,
     episode_number: z.number().int().positive().nullable(),
-    release_type: z.enum(["regular", "special", "bonus", "trailer"]),
+    release_type: z.enum(["regular", "special", "bonus"]),
     slug: stableSlugSchema,
     numbering: z.object({
       status: z.enum(["verified", "not-in-publisher-feed", "unknown"]),
@@ -510,6 +510,7 @@ const showOrder = [
   "svvector",
   "latetalk",
   "luoyonghao",
+  "moonuncle",
   "whynottv",
   "yiqitietalk",
 ];

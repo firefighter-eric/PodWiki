@@ -98,7 +98,7 @@ Windows/CUDA 使用官方模型：
 
 | 脚本 | 用途 | 主要产物 |
 | --- | --- | --- |
-| `scripts/acquire_media.py` | 获取一个公开 Bilibili/YouTube 视频或小宇宙单集的音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
+| `scripts/acquire_media.py` | 获取一个已通过播客边界核实的公开 Bilibili/YouTube 视频版单集或小宇宙单集音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
 | `scripts/transcribe_qwen3_asr.py` | 使用 Qwen3-ASR 转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/transcribe_qwen3_asr_cuda.py` | 在 Windows/NVIDIA CUDA 上使用官方 Qwen 模型转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/render_asr_transcript.py` | 清理对齐结果并渲染逐字稿 | `refined.json`、`transcript.<language>.md` |
@@ -109,11 +109,25 @@ Windows/CUDA 使用官方模型：
 
 ## 获取公开音轨
 
-`acquire_media.py` 的每次调用只处理一个公开 Bilibili/YouTube 视频或小宇宙单集，
-不直接接收账号、播放列表、多 P、播客栏目页或受访问控制的内容。用户明确授权的
-单一已核实栏目批量导入，必须先按[单集处理流程](./episode-processing.md)冻结 PID、
-规范单集 URL 与 `eid` manifest，再由外层任务逐集串行调用本脚本；脚本本身不会
-枚举栏目或在运行中扩展范围。
+`acquire_media.py` 的每次调用只处理一个公开 Bilibili/YouTube 视频 URL 或小宇宙
+单集 URL，不直接接收账号、播放列表、多 P、播客栏目页或受访问控制的内容。这个
+技术输入契约不等于 PodWiki 收录资格：包括单个 BVID/视频在内，每个来源都必须先有
+发布者的正面证据，证明它属于一个已核实播客且是该播客的完整正式单集。仅公开可见、
+时长较长、多人访谈或标题含 `EP` 均不充分；证据缺失或有歧义时停在 metadata-only
+intake，不下载媒体、不创建 tracked 单集。
+
+用户明确授权的单一已核实播客批量导入，必须先按[单集处理流程](./episode-processing.md)
+冻结 `.cache/intake/<show-id>/manifest.json`，再由外层任务逐集串行调用本脚本；脚本
+本身不会枚举栏目或在运行中扩展范围。Bilibili manifest 至少记录：
+
+- 频道规范 URL 与 `mid`；
+- 官方播客正片 `season_id`（存在时）与合集标题；
+- 每集 BVID 和规范视频 URL；
+- 使用公开 RSS 交叉核实时的 feed 规范 URL，以及每个 BVID 对应的 RSS GUID 和单集 URL；
+- 冻结时间与白名单 `count`。
+
+小宇宙 manifest 继续记录栏目规范 URL、PID、每集规范 URL 与 `eid`、冻结时间和
+白名单总数。两种 manifest 都只能包含已逐集通过播客身份与完整正片门禁的条目。
 
 传给脚本的 Bilibili 地址必须已经是
 `https://www.bilibili.com/video/<BVID>/`。如果收到
@@ -222,6 +236,53 @@ env HF_HUB_OFFLINE=1 \
   --aligner-path .cache/models/qwen3-forced-aligner-0.6b-8bit-pinned-v2 \
   --language Chinese --no-verbose
 ```
+
+MLX 的 `--max-tokens` 表示每个实际静音择点块或最终自适应叶片的独立生成预算。worker
+只解码整集一次，复用固定依赖 `mlx-audio 0.4.7` 的分块器得到精确初始计划，不再用
+简单的 `ceil(audio_duration / chunk_duration)` 推算；静音择点可能提前边界，因此实际
+初始块数可能更多。worker 随后在同一 model 上逐块调用 public
+`generate(max_tokens=4096)`，并把嵌套 `chunk_duration` 设为实际块长加一个采样点，要求
+每次调用恰好返回一个 segment。初始块未触顶时原样保留；只有结构、覆盖和 token
+统计均合法但恰好达到 4096 的块，才丢弃该次文本并递归二分重试，不影响其他初始块。
+
+自适应切点只使用未 padding 的 16 kHz mono PCM ownership；两侧都必须保留至少 20 秒。
+worker 把有限浮点 PCM 按固定的 half-away-from-zero 规则量化为 PCM-s16，在所有合法
+sample 切点上比较 100 ms 窗口的整数平方和能量；平局时依次选择更接近父区间中心、
+再选择更靠左的 sample。根节点深度为 0；新 worker 最多在深度 3 的父节点执行第四次
+split，因此最终叶片路径最长为 4。整集仍最多 64 次 adaptive split；不足 40 秒的
+触顶叶片没有能同时保留两侧 20 秒的合法切点，或深度 4 叶片仍触顶时，都会整集失败且
+不写 raw，不用更短片段继续碰运气。
+
+新生成的 v2 raw 使用
+`options.token_budget_scope: adaptive-bisect-per-leaf-v2`，并固定记录
+`adaptive_max_depth: 4`。此前 `adaptive-bisect-per-leaf-v1` 固定为 depth 3；worker 和
+中央 validator 继续按其已记录的 depth 3 只读验证，不改写旧 raw 或后续哈希链。
+两代 scope 的 `generation_plan` 字段形状相同。其中
+`planned_chunk_count` 是初始 silence plan 数 N，`final_leaf_chunk_count` 是最终叶片数 L，
+`adaptive_split_count` 是 S，并要求 `L = N + S`；
+`effective_total_token_budget = max_tokens_per_chunk * L`。固定的最小叶片、深度、次数、
+能量窗口、量化和 tie-break 版本也写入 options。`generation_plan` 保存初始 sample 边界和
+按初始顺序拼接的真实（不含 padding）ownership 经同一 half-away 量化后的
+`pcm_s16le_sha256`，以及每次触顶父节点的路径、合法区间、切点、能量与 4096-token
+证据；每个最终 segment 保存 root/path、精确 sample ownership 和小于 4096 的
+`generation_tokens`。最终叶片 token 总和必须精确等于 `performance.generation_tokens`；
+`attempt_generation_tokens` 另计被
+丢弃父节点的 4096 token，`attempt_prompt_tokens` 也必须等于最终叶片与触顶父节点的
+prompt token 总和，调用次数必须等于 `N + 2*S`。worker 和中央 validator 都会重放树
+几何、核对文本拼接、预算、统计以及从 0 到真实音频末端的无缝覆盖。
+
+中央 validator 会要求 lowercase SHA-256 commitment 和固定算法版本，但 CI 没有对应的
+解码 PCM bytes，不能重算 commitment 或独立证明记录切点确为全候选最低能量；最低能量
+选择由上述固定 worker 算法保证。正式提升前仍应在有媒体的环境核对 commitment，并抽查
+adaptive seam 和 ForcedAligner 结果。旧
+`per-planned-chunk-v1` precise v2 raw 保持原语义只读兼容；没有 scope marker 的旧
+precise/markerless v2 raw 继续走既有整集预算门禁，CUDA raw 不使用 MLX 专用字段。
+
+worker 和中央 validator 会在任何浮点换算前拒绝布尔值、非有限数、超出当前
+`[0.001, 359999.999]` 秒时长、小于 1 秒或不小于 300 秒的 chunk，以及超出
+JSON safe-integer 范围的采样数或 token 预算。MLX v2 的首段、相邻段和末端覆盖只容许
+历史三位小数序列化造成的 1 ms 单边界误差；新 scope 直接保留 sample-derived 边界，
+避免不足 1 ms 的合法末块被舍入为零长度。累计 gap 与 overlap 分别计算，不得相互抵消。
 
 Windows/CUDA 正式流程优先使用下文的批处理入口。它会调用
 `transcribe_qwen3_asr_cuda.py`，并在 tracked metadata 中保留官方 Hub ID：
@@ -416,7 +477,13 @@ npm --prefix apps/web run check
 npm --prefix apps/web audit --audit-level=high
 ```
 
-最后还应运行 `git diff --check`，检查 `git status --short`，并确认根 README 的三列节目介绍表中，播客名称链接已核实的首选发布者页面，节目页链接本地节目 README。根 README 的单集表格采用“标题、访谈人物、播客名称、日期、总结、逐字稿”六列，节目 README 的单集表格仍采用“标题、播客名称、日期、总结链接、逐字稿链接”五列，且两处内容已经同步。根表的访谈人物来自单集 front matter 中 `role: guest` 的参与者；多位嘉宾使用顿号分隔。
+最后还应运行 `git diff --check`，检查 `git status --short`，并确认根 README 的三列
+节目介绍表中，播客名称链接已核实的首选发布者页面，节目页链接本地节目 README。
+根 README 的单集表格采用“标题、访谈人物、播客名称、日期、总结、逐字稿”六列，
+节目 README 的单集表格仍采用“标题、播客名称、日期、总结链接、逐字稿链接”五列，
+且两处内容已经同步。根表的访谈人物来自单集 front matter 中 `role: guest` 的参与者；
+多位嘉宾使用顿号分隔。selected 为英文时，两级索引的逐字稿单元格都必须同时链接
+selected 英文稿与对应中文译稿。
 
 完整编排顺序见[单集端到端处理流程](./episode-processing.md)，恢复语义和来源限制见
 [PodWiki episode 处理 skill](../.agents/skills/podwiki-process-episode/SKILL.md)，

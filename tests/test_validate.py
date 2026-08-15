@@ -23,6 +23,7 @@ from validate import (  # noqa: E402
     validate_episode_metadata_contract,
     validate_episode_navigation_title,
     validate_episode_translations,
+    validate_mlx_qwen_v2_raw_coverage,
     validate_participant_profiles,
     validate_qwen_chain,
     validate_summary_reader_contract,
@@ -103,7 +104,7 @@ def write_episode_contract_fixture(
         f"""---
 schema_version: 1
 kind: episode
-id: "{episode_id or f'example:{episode_key}'}"
+id: "{episode_id or f"example:{episode_key}"}"
 show_id: example
 episode_key: {episode_key_scalar or json.dumps(episode_key)}
 episode_number: null
@@ -125,9 +126,9 @@ participants:
     role: guest
 sources:
 {sources}workflow:
-  metadata: {resolved_workflow['metadata']}
-  summary: {resolved_workflow['summary']}
-  transcript: {resolved_workflow['transcript']}
+  metadata: {resolved_workflow["metadata"]}
+  summary: {resolved_workflow["summary"]}
+  transcript: {resolved_workflow["transcript"]}
 summary:
   path: summary.zh-CN.md
   source_transcript:
@@ -162,7 +163,7 @@ local_audio_cache:
   channels: 2
   size_bytes: 100
   duration_ms: {duration_ms}
-  sha256: "{'0' * 64}"
+  sha256: "{"0" * 64}"
 ---
 
 # 测试单集
@@ -269,10 +270,18 @@ local_audio_cache:
         mutate(aligned)
         write_json(self.aligned_path, aligned)
         refined = json.loads(self.refined_path.read_text(encoding="utf-8"))
-        refined["source"]["input_asr_sha256"] = sha256_bytes(
-            self.aligned_path.read_bytes()
-        )
+        refined["source"]["input_asr_sha256"] = sha256_bytes(self.aligned_path.read_bytes())
         write_json(self.refined_path, refined)
+
+    def rewrite_raw(self, mutate: Callable[[dict[str, Any]], None]) -> None:
+        raw = json.loads(self.raw_path.read_text(encoding="utf-8"))
+        mutate(raw)
+        write_json(self.raw_path, raw)
+        self.rewrite_aligned(
+            lambda document: document["source"].__setitem__(
+                "raw_asr_sha256", sha256_bytes(self.raw_path.read_bytes())
+            )
+        )
 
     def upgrade_to_v2(
         self,
@@ -314,6 +323,19 @@ local_audio_cache:
                 "model_identity": copy.deepcopy(model_identity),
             }
         )
+        if engine == "mlx-audio":
+            raw["audio"]["duration_seconds"] = 480.0
+            raw["options"] = {
+                "temperature": 0.0,
+                "max_tokens_per_chunk": 4096,
+                "chunk_duration_seconds": 240.0,
+            }
+            raw["performance"] = {"generation_tokens": 4096}
+            raw["text"] = "第一段。第二段。"
+            raw["segments"] = [
+                {"id": 0, "start": 0.0, "end": 240.0, "text": "第一段。"},
+                {"id": 1, "start": 240.0, "end": 480.0, "text": "第二段。"},
+            ]
         if raw_options is not None:
             raw["options"] = copy.deepcopy(raw_options)
         write_json(self.raw_path, raw)
@@ -352,6 +374,61 @@ local_audio_cache:
         )
         self.readme_path.write_text(readme, encoding="utf-8")
 
+    def configure_web_ready_qwen_provenance(self, *, precise_budget: bool) -> None:
+        canonical_generated_at = "2026-08-09T12:02:00Z"
+
+        def update_raw(document: dict[str, Any]) -> None:
+            document["generated_at"] = "2026-08-09T12:00:00Z"
+            if precise_budget:
+                document["audio"].update(
+                    {
+                        "sample_count": 480 * 16000,
+                        "sample_rate_hz": 16000,
+                    }
+                )
+                document["options"].update(
+                    {
+                        "planned_chunk_count": 2,
+                        "effective_total_token_budget": 8192,
+                    }
+                )
+
+        self.rewrite_raw(update_raw)
+        refined = json.loads(self.refined_path.read_text(encoding="utf-8"))
+        refined["generated_at"] = canonical_generated_at
+        write_json(self.refined_path, refined)
+
+        readme = self.readme_path.read_text(encoding="utf-8")
+        options = ""
+        if precise_budget:
+            options = (
+                "  options:\n    planned_chunk_count: 2\n    effective_total_token_budget: 8192\n"
+            )
+        readme = readme.replace(
+            f"transcript:\n  path: {self.transcript_name}\n",
+            "workflow:\n"
+            "  metadata: verified\n"
+            "  summary: draft\n"
+            "  transcript: machine\n"
+            "transcript:\n"
+            f"  path: {self.transcript_name}\n"
+            f'  generated_at: "{canonical_generated_at}"\n'
+            f"{options}",
+        )
+        aligner = "    aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit\n"
+        if aligner in readme:
+            readme = readme.replace(
+                aligner,
+                aligner + f'    generated_at: "{canonical_generated_at}"\n',
+            )
+        else:
+            model = "    model: mlx-community/Qwen3-ASR-1.7B-8bit\n"
+            readme = readme.replace(
+                model,
+                model + f'    generated_at: "{canonical_generated_at}"\n',
+            )
+        self.readme_path.write_text(readme, encoding="utf-8")
+
     def validate(self) -> tuple[bool, list[str]]:
         errors: list[str] = []
         complete = validate_qwen_chain(
@@ -372,15 +449,11 @@ class EnglishTranslationFixture:
         self.translation_path = self.episode / "transcript.zh-CN.md"
         self.readme_path = self.episode / "README.md"
         self.source_path.write_text(
-            "# Shared title\n\n"
-            "[00:00:00] Hello.  \n"
-            "[00:00:04] World.  \n",
+            "# Shared title\n\n[00:00:00] Hello.  \n[00:00:04] World.  \n",
             encoding="utf-8",
         )
         self.translation_path.write_text(
-            "# Shared title\n\n"
-            "[00:00:00] 你好。  \n"
-            "[00:00:04] 世界。  \n",
+            "# Shared title\n\n[00:00:00] 你好。  \n[00:00:04] 世界。  \n",
             encoding="utf-8",
         )
         self.write_readme()
@@ -410,9 +483,7 @@ class EnglishTranslationFixture:
             fields = list(metadata.items())
             first_key, first_value = fields[0]
             translations = f"  translations:\n    - {first_key}: {first_value}\n"
-            translations += "".join(
-                f"      {key}: {value}\n" for key, value in fields[1:]
-            )
+            translations += "".join(f"      {key}: {value}\n" for key, value in fields[1:])
         self.readme_path.write_text(
             f"""---
 schema_version: 1
@@ -440,12 +511,954 @@ transcript:
 
 
 class QwenArtifactChainTests(unittest.TestCase):
+    @staticmethod
+    def precise_boundary_raw(*, generation_tokens: int = 4096) -> dict[str, Any]:
+        return {
+            "audio": {
+                "duration_seconds": 240.0,
+                "sample_count": 240 * 16000 + 7,
+                "sample_rate_hz": 16000,
+            },
+            "options": {
+                "max_tokens_per_chunk": 4096,
+                "chunk_duration_seconds": 240.0,
+                "planned_chunk_count": 2,
+                "effective_total_token_budget": 8192,
+            },
+            "performance": {"generation_tokens": generation_tokens},
+            "segments": [
+                {"id": 0, "start": 0.0, "end": 235.0, "text": "第一段。"},
+                {"id": 1, "start": 235.0, "end": 240.0, "text": "第二段。"},
+            ],
+        }
+
+    @classmethod
+    def per_chunk_boundary_raw(cls) -> dict[str, Any]:
+        raw = cls.precise_boundary_raw(generation_tokens=170)
+        raw["lineage_schema_version"] = 2
+        raw["options"]["token_budget_scope"] = "per-planned-chunk-v1"
+        raw["segments"][0]["generation_tokens"] = 80
+        raw["segments"][1]["generation_tokens"] = 90
+        raw["text"] = "第一段。 第二段。"
+        return raw
+
+    @staticmethod
+    def adaptive_boundary_raw(*, split: bool) -> dict[str, Any]:
+        sample_count = 60 * 16_000
+        split_sample = 30 * 16_000
+        generation_tokens = 170 if split else 80
+        split_count = 1 if split else 0
+        segments = (
+            [
+                {
+                    "id": 0,
+                    "initial_chunk_id": 0,
+                    "split_path": "L",
+                    "start_sample": 0,
+                    "end_sample": split_sample,
+                    "start": 0.0,
+                    "end": 30.0,
+                    "text": "左叶。",
+                    "generation_tokens": 80,
+                },
+                {
+                    "id": 1,
+                    "initial_chunk_id": 0,
+                    "split_path": "R",
+                    "start_sample": split_sample,
+                    "end_sample": sample_count,
+                    "start": 30.0,
+                    "end": 60.0,
+                    "text": "右叶。",
+                    "generation_tokens": 90,
+                },
+            ]
+            if split
+            else [
+                {
+                    "id": 0,
+                    "initial_chunk_id": 0,
+                    "split_path": "",
+                    "start_sample": 0,
+                    "end_sample": sample_count,
+                    "start": 0.0,
+                    "end": 60.0,
+                    "text": "完整叶。",
+                    "generation_tokens": 80,
+                }
+            ]
+        )
+        split_events = (
+            [
+                {
+                    "initial_chunk_id": 0,
+                    "split_path": "",
+                    "depth": 0,
+                    "parent_start_sample": 0,
+                    "parent_end_sample": sample_count,
+                    "legal_start_sample": 20 * 16_000,
+                    "legal_end_sample": 40 * 16_000,
+                    "split_sample": split_sample,
+                    "cut_energy_sum_squares": 123,
+                    "parent_prompt_tokens": 20,
+                    "parent_generation_tokens": 4096,
+                }
+            ]
+            if split
+            else []
+        )
+        final_leaf_count = len(segments)
+        return {
+            "lineage_schema_version": 2,
+            "audio": {
+                "duration_seconds": 60.0,
+                "sample_count": sample_count,
+                "sample_rate_hz": 16_000,
+            },
+            "options": {
+                "max_tokens_per_chunk": 4096,
+                "chunk_duration_seconds": 60.0,
+                "planned_chunk_count": 1,
+                "effective_total_token_budget": 4096 * final_leaf_count,
+                "token_budget_scope": "adaptive-bisect-per-leaf-v1",
+                "temperature": 0.0,
+                "adaptive_split_algorithm": "adaptive-low-energy-bisect-v1",
+                "adaptive_min_leaf_samples": 20 * 16_000,
+                "adaptive_max_depth": 3,
+                "adaptive_max_split_count": 64,
+                "adaptive_energy_window_samples": 1600,
+                "adaptive_quantization": "pcm-s16-round-half-away-v1",
+                "adaptive_tie_break": "energy-center-left-v1",
+                "final_leaf_chunk_count": final_leaf_count,
+                "adaptive_split_count": split_count,
+            },
+            "performance": {
+                "prompt_tokens": 20,
+                "generation_tokens": generation_tokens,
+                "attempt_prompt_tokens": 40 if split else 20,
+                "attempt_generation_tokens": generation_tokens + split_count * 4096,
+                "generation_call_count": 1 + 2 * split_count,
+            },
+            "generation_plan": {
+                "schema_version": 1,
+                "pcm_s16le_sha256": "0" * 64,
+                "initial_chunk_boundaries_samples": [0, sample_count],
+                "split_events": split_events,
+            },
+            "segments": segments,
+            "text": " ".join(segment["text"] for segment in segments),
+        }
+
+    @staticmethod
+    def adaptive_depth_four_raw() -> dict[str, Any]:
+        sample_rate = 16_000
+        sample_count = 160 * sample_rate
+        target_parent_end = 45 * sample_rate + 2670
+        cuts = (120 * sample_rate, 80 * sample_rate, target_parent_end, 20 * sample_rate)
+        leaves = (
+            ("LLLL", 0, cuts[3], "左叶。", 10),
+            ("LLLR", cuts[3], cuts[2], "右叶。", 11),
+            ("LLR", cuts[2], cuts[1], "三。", 12),
+            ("LR", cuts[1], cuts[0], "四。", 13),
+            ("R", cuts[0], sample_count, "五。", 14),
+        )
+        segments = [
+            {
+                "id": index,
+                "initial_chunk_id": 0,
+                "split_path": path,
+                "start_sample": start,
+                "end_sample": end,
+                "start": start / sample_rate,
+                "end": end / sample_rate,
+                "text": text,
+                "generation_tokens": tokens,
+            }
+            for index, (path, start, end, text, tokens) in enumerate(leaves)
+        ]
+        parent_ends = (sample_count, cuts[0], cuts[1], cuts[2])
+        split_paths = ("", "L", "LL", "LLL")
+        split_events = [
+            {
+                "initial_chunk_id": 0,
+                "split_path": path,
+                "depth": depth,
+                "parent_start_sample": 0,
+                "parent_end_sample": parent_end,
+                "legal_start_sample": 20 * sample_rate,
+                "legal_end_sample": parent_end - 20 * sample_rate,
+                "split_sample": cuts[depth],
+                "cut_energy_sum_squares": 0,
+                "parent_prompt_tokens": 20,
+                "parent_generation_tokens": 4096,
+            }
+            for depth, (path, parent_end) in enumerate(zip(split_paths, parent_ends))
+        ]
+        generation_tokens = sum(segment["generation_tokens"] for segment in segments)
+        prompt_tokens = 20 * len(segments)
+        split_count = len(split_events)
+        return {
+            "lineage_schema_version": 2,
+            "audio": {
+                "duration_seconds": 160.0,
+                "sample_count": sample_count,
+                "sample_rate_hz": sample_rate,
+            },
+            "options": {
+                "max_tokens_per_chunk": 4096,
+                "chunk_duration_seconds": 240.0,
+                "planned_chunk_count": 1,
+                "effective_total_token_budget": 4096 * len(segments),
+                "token_budget_scope": "adaptive-bisect-per-leaf-v2",
+                "temperature": 0.0,
+                "adaptive_split_algorithm": "adaptive-low-energy-bisect-v1",
+                "adaptive_min_leaf_samples": 20 * sample_rate,
+                "adaptive_max_depth": 4,
+                "adaptive_max_split_count": 64,
+                "adaptive_energy_window_samples": 1600,
+                "adaptive_quantization": "pcm-s16-round-half-away-v1",
+                "adaptive_tie_break": "energy-center-left-v1",
+                "final_leaf_chunk_count": len(segments),
+                "adaptive_split_count": split_count,
+            },
+            "performance": {
+                "prompt_tokens": prompt_tokens,
+                "generation_tokens": generation_tokens,
+                "attempt_prompt_tokens": prompt_tokens + 20 * split_count,
+                "attempt_generation_tokens": generation_tokens + 4096 * split_count,
+                "generation_call_count": 1 + 2 * split_count,
+            },
+            "generation_plan": {
+                "schema_version": 1,
+                "pcm_s16le_sha256": "0" * 64,
+                "initial_chunk_boundaries_samples": [0, sample_count],
+                "split_events": split_events,
+            },
+            "segments": segments,
+            "text": " ".join(segment["text"] for segment in segments),
+        }
+
+    def test_central_validator_accepts_precise_rounded_boundary_budget(self) -> None:
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(self.precise_boundary_raw(), errors=errors)
+
+        self.assertEqual(errors, [])
+
+    def test_central_validator_accepts_per_chunk_token_accounting(self) -> None:
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(self.per_chunk_boundary_raw(), errors=errors)
+
+        self.assertEqual(errors, [])
+
+    def test_central_validator_accepts_adaptive_no_split(self) -> None:
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(self.adaptive_boundary_raw(split=False), errors=errors)
+
+        self.assertEqual(errors, [])
+
+    def test_central_validator_accepts_adaptive_single_split(self) -> None:
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(self.adaptive_boundary_raw(split=True), errors=errors)
+
+        self.assertEqual(errors, [])
+
+    def test_central_validator_accepts_depth_four_adaptive_tree(self) -> None:
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(self.adaptive_depth_four_raw(), errors=errors)
+
+        self.assertEqual(errors, [])
+
+    def test_central_validator_preserves_legacy_depth_three_scope(self) -> None:
+        raw = self.adaptive_boundary_raw(split=True)
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertEqual(errors, [])
+
+    def test_central_validator_rejects_adaptive_scope_depth_crossovers(self) -> None:
+        cases = (
+            (self.adaptive_depth_four_raw(), 3),
+            (self.adaptive_boundary_raw(split=True), 4),
+        )
+        for raw, wrong_depth in cases:
+            with self.subTest(scope=raw["options"]["token_budget_scope"]):
+                raw["options"]["adaptive_max_depth"] = wrong_depth
+                errors: list[str] = []
+
+                validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+                self.assertTrue(any("adaptive_max_depth" in error for error in errors), errors)
+
+    def test_central_validator_rejects_a_depth_four_split_event(self) -> None:
+        raw = self.adaptive_depth_four_raw()
+        raw["generation_plan"]["split_events"][-1].update({"split_path": "LLLL", "depth": 4})
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(any("split_path is invalid" in error for error in errors), errors)
+
+    def test_central_validator_rejects_adaptive_exhausted_leaf(self) -> None:
+        raw = self.adaptive_boundary_raw(split=True)
+        raw["segments"][1]["generation_tokens"] = 4096
+        raw["performance"]["generation_tokens"] = 4176
+        raw["performance"]["attempt_generation_tokens"] = 8272
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(
+            any("segments[1].generation_tokens" in error for error in errors),
+            errors,
+        )
+
+    def test_central_validator_rejects_adaptive_accounting_tampering(self) -> None:
+        cases: tuple[tuple[str, Callable[[dict[str, Any]], None], str], ...] = (
+            (
+                "accepted-token sum",
+                lambda raw: (
+                    raw["performance"].__setitem__("generation_tokens", 169),
+                    raw["performance"].__setitem__("attempt_generation_tokens", 4265),
+                ),
+                "must sum to raw.performance.generation_tokens",
+            ),
+            (
+                "attempt generation tokens",
+                lambda raw: raw["performance"].__setitem__("attempt_generation_tokens", 4265),
+                "attempt_generation_tokens must include every discarded exhausted parent",
+            ),
+            (
+                "attempt prompt tokens",
+                lambda raw: raw["performance"].__setitem__("attempt_prompt_tokens", 19),
+                "attempt_prompt_tokens must include every discarded parent",
+            ),
+            (
+                "generation call count",
+                lambda raw: raw["performance"].__setitem__("generation_call_count", 2),
+                "generation_call_count must equal planned chunks + 2 * splits",
+            ),
+        )
+        for label, mutate, expected in cases:
+            with self.subTest(label=label):
+                raw = self.adaptive_boundary_raw(split=True)
+                mutate(raw)
+                errors: list[str] = []
+
+                validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+                self.assertTrue(any(expected in error for error in errors), errors)
+
+    def test_central_validator_rejects_adaptive_plan_tampering(self) -> None:
+        maximum_window_energy = 1600 * 32768**2
+        cases: tuple[tuple[str, Callable[[dict[str, Any]], None], str], ...] = (
+            (
+                "PCM commitment",
+                lambda raw: raw["generation_plan"].__setitem__("pcm_s16le_sha256", "G" * 64),
+                "pcm_s16le_sha256",
+            ),
+            (
+                "boolean temperature",
+                lambda raw: raw["options"].__setitem__("temperature", False),
+                "requires temperature=0.0",
+            ),
+            (
+                "parent prompt count",
+                lambda raw: raw["generation_plan"]["split_events"][0].__setitem__(
+                    "parent_prompt_tokens", True
+                ),
+                "parent_prompt_tokens",
+            ),
+            (
+                "parent token count",
+                lambda raw: raw["generation_plan"]["split_events"][0].__setitem__(
+                    "parent_generation_tokens", 4095
+                ),
+                "parent_generation_tokens",
+            ),
+            (
+                "split path",
+                lambda raw: raw["generation_plan"]["split_events"][0].__setitem__(
+                    "split_path", "X"
+                ),
+                "split_path is invalid",
+            ),
+            (
+                "cut sample",
+                lambda raw: raw["generation_plan"]["split_events"][0].__setitem__(
+                    "split_sample", 20 * 16_000 - 1
+                ),
+                "split_sample",
+            ),
+            (
+                "parent boundary",
+                lambda raw: raw["generation_plan"]["split_events"][0].__setitem__(
+                    "parent_end_sample", 60 * 16_000 - 1
+                ),
+                "parent_end_sample",
+            ),
+            (
+                "legal boundary",
+                lambda raw: raw["generation_plan"]["split_events"][0].__setitem__(
+                    "legal_start_sample", 20 * 16_000 + 1
+                ),
+                "legal_start_sample",
+            ),
+            (
+                "cut energy",
+                lambda raw: raw["generation_plan"]["split_events"][0].__setitem__(
+                    "cut_energy_sum_squares", maximum_window_energy + 1
+                ),
+                "cut_energy_sum_squares",
+            ),
+            (
+                "event count",
+                lambda raw: raw["generation_plan"]["split_events"].append(
+                    copy.deepcopy(raw["generation_plan"]["split_events"][0])
+                ),
+                "split_events must match adaptive_split_count",
+            ),
+            (
+                "final leaf count",
+                lambda raw: raw["options"].__setitem__("final_leaf_chunk_count", 3),
+                "final_leaf_chunk_count must equal the raw segment count",
+            ),
+            (
+                "split count",
+                lambda raw: raw["options"].__setitem__("adaptive_split_count", 0),
+                "split_events must match adaptive_split_count",
+            ),
+            (
+                "effective budget",
+                lambda raw: raw["options"].__setitem__("effective_total_token_budget", 4096),
+                "effective_total_token_budget must equal max_tokens_per_chunk",
+            ),
+        )
+        for label, mutate, expected in cases:
+            with self.subTest(label=label):
+                raw = self.adaptive_boundary_raw(split=True)
+                mutate(raw)
+                errors: list[str] = []
+
+                validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+                self.assertTrue(any(expected in error for error in errors), errors)
+
+    def test_central_validator_accepts_exact_one_sample_final_ownership(
+        self,
+    ) -> None:
+        raw = self.per_chunk_boundary_raw()
+        raw["audio"].update({"duration_seconds": 1.0, "sample_count": 16_001})
+        raw["segments"][0]["end"] = 1.0
+        raw["segments"][1].update({"start": 1.0, "end": 16_001 / 16_000})
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertEqual(errors, [])
+
+    def test_central_validator_rejects_per_chunk_budget_exhaustion(self) -> None:
+        raw = self.per_chunk_boundary_raw()
+        raw["segments"][1]["generation_tokens"] = 4096
+        raw["performance"]["generation_tokens"] = 4176
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(
+            any("segments[1].generation_tokens" in error for error in errors),
+            errors,
+        )
+
+    def test_central_validator_rejects_per_chunk_token_sum_mismatch(self) -> None:
+        raw = self.per_chunk_boundary_raw()
+        raw["performance"]["generation_tokens"] = 169
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(any("must sum to raw.performance" in error for error in errors), errors)
+
+    def test_central_validator_rejects_invalid_chunk_tokens(self) -> None:
+        for label, value in (
+            ("missing", None),
+            ("boolean", True),
+            ("negative", -1),
+            ("float", 1.0),
+        ):
+            with self.subTest(label=label):
+                raw = self.per_chunk_boundary_raw()
+                if value is None:
+                    del raw["segments"][1]["generation_tokens"]
+                else:
+                    raw["segments"][1]["generation_tokens"] = value
+                errors: list[str] = []
+
+                validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+                self.assertTrue(
+                    any("segments[1].generation_tokens" in error for error in errors),
+                    errors,
+                )
+
+    def test_central_validator_rejects_unknown_token_budget_scope(self) -> None:
+        raw = self.per_chunk_boundary_raw()
+        raw["options"]["token_budget_scope"] = "future-scope"
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(any("token_budget_scope" in error for error in errors), errors)
+
+    def test_central_validator_rejects_per_chunk_text_merge_mismatch(self) -> None:
+        raw = self.per_chunk_boundary_raw()
+        raw["text"] = "被篡改的整集文本。"
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(
+            any("ordered per-chunk segment text" in error for error in errors),
+            errors,
+        )
+
+    def test_central_validator_rejects_precise_budget_exhaustion(self) -> None:
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(
+            self.precise_boundary_raw(generation_tokens=8192), errors=errors
+        )
+
+        self.assertTrue(
+            any("effective full-audio token budget" in error for error in errors),
+            errors,
+        )
+
+    def test_central_validator_rejects_inconsistent_precise_budget(self) -> None:
+        raw = self.precise_boundary_raw()
+        raw["options"]["planned_chunk_count"] = 1
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(
+            any("planned_chunk_count" in error for error in errors),
+            errors,
+        )
+
+    def test_central_validator_rejects_mismatched_effective_budget(self) -> None:
+        raw = self.precise_boundary_raw()
+        raw["options"]["effective_total_token_budget"] = 4096
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(
+            any("max_tokens_per_chunk * planned_chunk_count" in error for error in errors),
+            errors,
+        )
+
+    def test_central_validator_rejects_unbounded_numbers_without_crashing(
+        self,
+    ) -> None:
+        cases = {
+            "duration": (
+                "audio",
+                "duration_seconds",
+                10**1000,
+                "raw.audio.duration_seconds",
+            ),
+            "tiny-duration": (
+                "audio",
+                "duration_seconds",
+                5e-324,
+                "raw.audio.duration_seconds",
+            ),
+            "sample-count": (
+                "audio",
+                "sample_count",
+                10**1000,
+                "raw.audio.sample_count",
+            ),
+            "max-tokens": (
+                "options",
+                "max_tokens_per_chunk",
+                10**1000,
+                "raw.options.max_tokens_per_chunk",
+            ),
+            "planned-count": (
+                "options",
+                "planned_chunk_count",
+                10**1000,
+                "raw.options.planned_chunk_count",
+            ),
+            "effective-budget": (
+                "options",
+                "effective_total_token_budget",
+                10**1000,
+                "raw.options.effective_total_token_budget",
+            ),
+            "generation-tokens": (
+                "performance",
+                "generation_tokens",
+                10**1000,
+                "raw.performance.generation_tokens",
+            ),
+            "boolean-budget": (
+                "options",
+                "max_tokens_per_chunk",
+                True,
+                "raw.options.max_tokens_per_chunk",
+            ),
+        }
+        for label, (container, key, value, expected_field) in cases.items():
+            with self.subTest(label=label):
+                raw = self.precise_boundary_raw()
+                raw[container][key] = value
+                errors: list[str] = []
+
+                validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+                self.assertTrue(
+                    any(
+                        expected_field in error
+                        and (
+                            "supported range" in error
+                            or "finite number with" in error
+                            or "integer in" in error
+                        )
+                        for error in errors
+                    ),
+                    errors,
+                )
+
+    def test_central_validator_rejects_each_incomplete_precise_marker_set(
+        self,
+    ) -> None:
+        fields = (
+            ("audio", "sample_count"),
+            ("options", "planned_chunk_count"),
+            ("options", "effective_total_token_budget"),
+        )
+        for container, key in fields:
+            with self.subTest(field=f"{container}.{key}"):
+                raw = self.precise_boundary_raw()
+                del raw[container][key]
+                errors: list[str] = []
+
+                validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+                self.assertTrue(
+                    any("precise token budget metadata must include" in error for error in errors),
+                    errors,
+                )
+
+    def test_central_validator_rejects_unbounded_segment_boundary(self) -> None:
+        raw = self.precise_boundary_raw()
+        raw["segments"][0]["start"] = 10**1000
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(any("segments[0].start" in error for error in errors), errors)
+
+    def test_central_validator_rejects_boolean_segment_id(self) -> None:
+        raw = self.precise_boundary_raw()
+        raw["segments"][0]["id"] = False
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(any("segments[0].id" in error for error in errors), errors)
+
+    def test_central_validator_rejects_subnormal_legacy_chunk_duration(
+        self,
+    ) -> None:
+        raw = self.precise_boundary_raw()
+        del raw["audio"]["sample_count"]
+        del raw["options"]["planned_chunk_count"]
+        del raw["options"]["effective_total_token_budget"]
+        raw["options"]["chunk_duration_seconds"] = 5e-324
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(any("chunk_duration_seconds" in error for error in errors), errors)
+
+    def test_central_validator_rejects_99ms_start_and_gap(self) -> None:
+        cases = {"start": (0, 0.099), "gap": (1, 235.099)}
+        for label, (segment_index, start) in cases.items():
+            with self.subTest(label=label):
+                raw = self.precise_boundary_raw()
+                raw["segments"][segment_index]["start"] = start
+                errors: list[str] = []
+
+                validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+                self.assertTrue(
+                    any("must continuously cover the audio" in error for error in errors),
+                    errors,
+                )
+
+    def test_central_validator_accepts_one_millisecond_boundary_rounding(
+        self,
+    ) -> None:
+        raw = self.precise_boundary_raw()
+        raw["segments"][1]["start"] = 235.001
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertEqual(errors, [])
+
+    def test_central_validator_rejects_cumulative_gaps_despite_overlap(
+        self,
+    ) -> None:
+        raw = self.precise_boundary_raw()
+        raw["audio"].update({"duration_seconds": 5.0, "sample_count": 5 * 16000})
+        raw["options"].update({"planned_chunk_count": 5, "effective_total_token_budget": 20480})
+        raw["segments"] = [
+            {"id": 0, "start": 0.0, "end": 1.0, "text": "一。"},
+            {"id": 1, "start": 1.001, "end": 2.0, "text": "二。"},
+            {"id": 2, "start": 1.999, "end": 3.0, "text": "三。"},
+            {"id": 3, "start": 3.001, "end": 4.0, "text": "四。"},
+            {"id": 4, "start": 4.001, "end": 5.0, "text": "五。"},
+        ]
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(
+            any("cumulative chunk-boundary gaps" in error for error in errors),
+            errors,
+        )
+
+    def test_central_validator_rejects_cumulative_overlaps_despite_gap(
+        self,
+    ) -> None:
+        raw = self.precise_boundary_raw()
+        raw["audio"].update({"duration_seconds": 5.0, "sample_count": 5 * 16000})
+        raw["options"].update({"planned_chunk_count": 5, "effective_total_token_budget": 20480})
+        raw["segments"] = [
+            {"id": 0, "start": 0.0, "end": 1.0, "text": "一。"},
+            {"id": 1, "start": 0.999, "end": 2.0, "text": "二。"},
+            {"id": 2, "start": 2.001, "end": 3.0, "text": "三。"},
+            {"id": 3, "start": 2.999, "end": 4.0, "text": "四。"},
+            {"id": 4, "start": 3.999, "end": 5.0, "text": "五。"},
+        ]
+        errors: list[str] = []
+
+        validate_mlx_qwen_v2_raw_coverage(raw, errors=errors)
+
+        self.assertTrue(
+            any("cumulative chunk-boundary overlaps" in error for error in errors),
+            errors,
+        )
+
     def test_accepts_strict_v2_mlx_model_identity_chain(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = QwenChainFixture(Path(directory))
             fixture.upgrade_to_v2()
 
             self.assertEqual(fixture.validate(), (True, []))
+
+    def test_selected_web_qwen_v2_accepts_canonical_provenance(self) -> None:
+        for precise_budget in (False, True):
+            with (
+                self.subTest(precise_budget=precise_budget),
+                tempfile.TemporaryDirectory() as directory,
+            ):
+                fixture = QwenChainFixture(Path(directory))
+                fixture.upgrade_to_v2()
+                fixture.configure_web_ready_qwen_provenance(precise_budget=precise_budget)
+
+                self.assertEqual(fixture.validate(), (True, []))
+
+    def test_selected_web_legacy_qwen_binds_time_without_budget_markers(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            fixture.configure_web_ready_qwen_provenance(precise_budget=False)
+
+            self.assertEqual(fixture.validate(), (True, []))
+
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            fixture.configure_web_ready_qwen_provenance(precise_budget=False)
+            readme = fixture.readme_path.read_text(encoding="utf-8")
+            fixture.readme_path.write_text(
+                readme.replace(
+                    '    generated_at: "2026-08-09T12:02:00Z"\n',
+                    '    generated_at: "2026-08-09T12:01:00Z"\n',
+                    1,
+                ),
+                encoding="utf-8",
+            )
+
+            _, errors = fixture.validate()
+
+            self.assertTrue(any("asr_runs.generated_at" in error for error in errors), errors)
+
+    def test_selected_web_qwen_v2_rejects_missing_or_wrong_generated_at(
+        self,
+    ) -> None:
+        canonical = "2026-08-09T12:02:00Z"
+        cases = (
+            (
+                "missing transcript timestamp",
+                f'  generated_at: "{canonical}"\n',
+                "",
+                "transcript.generated_at",
+            ),
+            (
+                "wrong transcript timestamp",
+                f'  generated_at: "{canonical}"\n',
+                '  generated_at: "2026-08-09T12:01:00Z"\n',
+                "transcript.generated_at",
+            ),
+            (
+                "missing run timestamp",
+                f'    generated_at: "{canonical}"\n',
+                "",
+                "asr_runs.generated_at",
+            ),
+            (
+                "wrong run timestamp",
+                f'    generated_at: "{canonical}"\n',
+                '    generated_at: "2026-08-09T12:01:00Z"\n',
+                "asr_runs.generated_at",
+            ),
+        )
+        for label, old, new, expected in cases:
+            with (
+                self.subTest(label=label),
+                tempfile.TemporaryDirectory() as directory,
+            ):
+                fixture = QwenChainFixture(Path(directory))
+                fixture.upgrade_to_v2()
+                fixture.configure_web_ready_qwen_provenance(precise_budget=False)
+                readme = fixture.readme_path.read_text(encoding="utf-8")
+                self.assertIn(old, readme)
+                fixture.readme_path.write_text(readme.replace(old, new, 1), encoding="utf-8")
+
+                _, errors = fixture.validate()
+
+                self.assertTrue(any(expected in error for error in errors), errors)
+
+    def test_selected_web_qwen_v2_rejects_missing_or_wrong_precise_budget(
+        self,
+    ) -> None:
+        cases = (
+            (
+                "missing planned count",
+                "    planned_chunk_count: 2\n",
+                "",
+                "transcript.options.planned_chunk_count",
+            ),
+            (
+                "wrong planned count",
+                "    planned_chunk_count: 2\n",
+                "    planned_chunk_count: 1\n",
+                "transcript.options.planned_chunk_count",
+            ),
+            (
+                "missing effective budget",
+                "    effective_total_token_budget: 8192\n",
+                "",
+                "transcript.options.effective_total_token_budget",
+            ),
+            (
+                "wrong effective budget",
+                "    effective_total_token_budget: 8192\n",
+                "    effective_total_token_budget: 4096\n",
+                "transcript.options.effective_total_token_budget",
+            ),
+        )
+        for label, old, new, expected in cases:
+            with (
+                self.subTest(label=label),
+                tempfile.TemporaryDirectory() as directory,
+            ):
+                fixture = QwenChainFixture(Path(directory))
+                fixture.upgrade_to_v2()
+                fixture.configure_web_ready_qwen_provenance(precise_budget=True)
+                readme = fixture.readme_path.read_text(encoding="utf-8")
+                self.assertIn(old, readme)
+                fixture.readme_path.write_text(readme.replace(old, new, 1), encoding="utf-8")
+
+                _, errors = fixture.validate()
+
+                self.assertTrue(any(expected in error for error in errors), errors)
+
+    def test_chain_reports_unbounded_mlx_duration_instead_of_crashing(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            fixture.upgrade_to_v2()
+            fixture.rewrite_raw(
+                lambda document: document["audio"].__setitem__("duration_seconds", 10**1000)
+            )
+
+            complete, errors = fixture.validate()
+
+            self.assertTrue(complete)
+            self.assertTrue(
+                any("raw.audio.duration_seconds" in error for error in errors),
+                errors,
+            )
+
+    def test_rejects_mlx_v2_raw_that_stops_before_audio_end(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            fixture.upgrade_to_v2()
+            fixture.rewrite_raw(lambda document: document["segments"].pop())
+
+            _, errors = fixture.validate()
+
+            self.assertTrue(
+                any("must cover the audio through its end" in error for error in errors),
+                errors,
+            )
+
+    def test_rejects_mlx_v2_raw_gap_and_nonzero_start(self) -> None:
+        cases = ((0, 0.2), (1, 241.0))
+        for segment_index, start in cases:
+            with (
+                self.subTest(segment_index=segment_index),
+                tempfile.TemporaryDirectory() as directory,
+            ):
+                fixture = QwenChainFixture(Path(directory))
+                fixture.upgrade_to_v2()
+                fixture.rewrite_raw(
+                    lambda document: document["segments"][segment_index].__setitem__("start", start)
+                )
+
+                _, errors = fixture.validate()
+
+                self.assertTrue(
+                    any("must continuously cover the audio" in error for error in errors),
+                    errors,
+                )
+
+    def test_rejects_mlx_v2_raw_that_exhausts_effective_token_budget(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            fixture.upgrade_to_v2()
+            fixture.rewrite_raw(
+                lambda document: document["performance"].__setitem__("generation_tokens", 8192)
+            )
+
+            _, errors = fixture.validate()
+
+            self.assertTrue(
+                any("effective full-audio token budget" in error for error in errors),
+                errors,
+            )
 
     def test_accepts_strict_v2_cuda_native_chain(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -564,7 +1577,10 @@ class QwenArtifactChainTests(unittest.TestCase):
 
     def test_rejects_missing_unknown_and_string_identity_schema_versions(self) -> None:
         for schema_version in (None, 2, "1"):
-            with self.subTest(schema_version=schema_version), tempfile.TemporaryDirectory() as directory:
+            with (
+                self.subTest(schema_version=schema_version),
+                tempfile.TemporaryDirectory() as directory,
+            ):
                 fixture = QwenChainFixture(Path(directory))
                 fixture.upgrade_to_v2()
                 raw = json.loads(fixture.raw_path.read_text(encoding="utf-8"))
@@ -628,27 +1644,21 @@ class QwenArtifactChainTests(unittest.TestCase):
             raw["model_identity"]["repository"] = "other/model"
             write_json(fixture.raw_path, raw)
             aligned = json.loads(fixture.aligned_path.read_text(encoding="utf-8"))
-            aligned["source"]["raw_asr_sha256"] = sha256_bytes(
-                fixture.raw_path.read_bytes()
-            )
+            aligned["source"]["raw_asr_sha256"] = sha256_bytes(fixture.raw_path.read_bytes())
             aligned["source"]["model_identity"]["repository"] = "other/model"
             write_json(fixture.aligned_path, aligned)
             refined = json.loads(fixture.refined_path.read_text(encoding="utf-8"))
-            refined["source"]["input_asr_sha256"] = sha256_bytes(
-                fixture.aligned_path.read_bytes()
-            )
+            refined["source"]["input_asr_sha256"] = sha256_bytes(fixture.aligned_path.read_bytes())
             refined["source"]["model_identity"]["repository"] = "other/model"
             write_json(fixture.refined_path, refined)
 
             _, errors = fixture.validate()
 
             self.assertTrue(
-                any(
-                    "model_identity.repository must equal raw.model" in error
-                    for error in errors
-                ),
+                any("model_identity.repository must equal raw.model" in error for error in errors),
                 errors,
             )
+
     def test_accepts_complete_selected_chain_with_matching_cached_audio(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = QwenChainFixture(Path(directory))
@@ -695,8 +1705,7 @@ asr_runs: []
         with tempfile.TemporaryDirectory() as directory:
             fixture = QwenChainFixture(Path(directory))
             fixture.raw_path.write_text(
-                '{"audio":{"sha256":"%s"},"audio":{}}\n'
-                % ("0" * 64),
+                '{"audio":{"sha256":"%s"},"audio":{}}\n' % ("0" * 64),
                 encoding="utf-8",
             )
 
@@ -735,9 +1744,7 @@ asr_runs: []
                 aligned = json.loads(fixture.aligned_path.read_text(encoding="utf-8"))
                 if markers[1] is not None:
                     aligned["lineage_schema_version"] = markers[1]
-                aligned["source"]["raw_asr_sha256"] = sha256_bytes(
-                    fixture.raw_path.read_bytes()
-                )
+                aligned["source"]["raw_asr_sha256"] = sha256_bytes(fixture.raw_path.read_bytes())
                 write_json(fixture.aligned_path, aligned)
                 refined = json.loads(fixture.refined_path.read_text(encoding="utf-8"))
                 refined["lineage_schema_version"] = markers[2]
@@ -757,17 +1764,14 @@ asr_runs: []
         with tempfile.TemporaryDirectory() as directory:
             fixture = QwenChainFixture(Path(directory))
             fixture.rewrite_aligned(
-                lambda document: document["source"].__setitem__(
-                    "raw_asr_path", "../raw.json"
-                )
+                lambda document: document["source"].__setitem__("raw_asr_path", "../raw.json")
             )
 
             _, errors = fixture.validate()
 
             self.assertTrue(
                 any(
-                    "aligned.source.raw_asr_path must use a repository-relative"
-                    in error
+                    "aligned.source.raw_asr_path must use a repository-relative" in error
                     for error in errors
                 )
             )
@@ -776,9 +1780,7 @@ asr_runs: []
         with tempfile.TemporaryDirectory() as directory:
             fixture = QwenChainFixture(Path(directory))
             fixture.rewrite_aligned(
-                lambda document: document["source"].__setitem__(
-                    "raw_asr_sha256", "0" * 64
-                )
+                lambda document: document["source"].__setitem__("raw_asr_sha256", "0" * 64)
             )
             refined = json.loads(fixture.refined_path.read_text(encoding="utf-8"))
             refined["source"]["input_asr_sha256"] = "1" * 64
@@ -786,12 +1788,8 @@ asr_runs: []
 
             _, errors = fixture.validate()
 
-            self.assertIn(
-                "aligned.source.raw_asr_sha256 does not match raw.json", errors
-            )
-            self.assertIn(
-                "refined.source.input_asr_sha256 does not match aligned.json", errors
-            )
+            self.assertIn("aligned.source.raw_asr_sha256 does not match raw.json", errors)
+            self.assertIn("refined.source.input_asr_sha256 does not match aligned.json", errors)
 
     def test_rejects_rendered_transcript_hash_mismatch(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -803,8 +1801,7 @@ asr_runs: []
             _, errors = fixture.validate()
 
             self.assertIn(
-                "refined.rendered_transcript.sha256 does not match "
-                "transcript.zh-CN.md",
+                "refined.rendered_transcript.sha256 does not match transcript.zh-CN.md",
                 errors,
             )
 
@@ -849,9 +1846,7 @@ asr_runs: []
             _, errors = fixture.validate()
             self.assertIn("raw.audio.size_bytes does not match cached audio", errors)
             self.assertIn("raw.audio.sha256 does not match cached audio", errors)
-            self.assertIn(
-                "aligned.source.audio_sha256 does not match cached audio", errors
-            )
+            self.assertIn("aligned.source.audio_sha256 does not match cached audio", errors)
 
     def test_skips_intentional_incomplete_checkpoint(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -948,9 +1943,7 @@ class EnglishTranscriptTranslationTests(unittest.TestCase):
 
             errors = fixture.validate()
 
-            self.assertTrue(
-                any("requires exactly one zh-CN item" in error for error in errors)
-            )
+            self.assertTrue(any("requires exactly one zh-CN item" in error for error in errors))
 
     def test_rejects_translation_title_and_segment_count_mismatches(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -977,9 +1970,7 @@ class EnglishTranscriptTranslationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             fixture = EnglishTranslationFixture(Path(directory))
             fixture.translation_path.write_text(
-                "# Shared title\n\n"
-                "[00:00:00] 你好。  \n"
-                "[00:00:05] 世界。  \n",
+                "# Shared title\n\n[00:00:00] 你好。  \n[00:00:05] 世界。  \n",
                 encoding="utf-8",
             )
             fixture.write_readme()
@@ -1007,13 +1998,11 @@ class EnglishTranscriptTranslationTests(unittest.TestCase):
             errors = fixture.validate()
 
             self.assertIn(
-                "transcript.translations[0].source_sha256 does not match "
-                "transcript.en.md",
+                "transcript.translations[0].source_sha256 does not match transcript.en.md",
                 errors,
             )
             self.assertIn(
-                "transcript.translations[0].sha256 does not match "
-                "transcript.zh-CN.md",
+                "transcript.translations[0].sha256 does not match transcript.zh-CN.md",
                 errors,
             )
 
@@ -1034,35 +2023,24 @@ class EnglishTranscriptTranslationTests(unittest.TestCase):
 
             errors = fixture.validate()
 
-            self.assertIn(
-                "transcript.translations[0].language must be 'zh-CN'", errors
-            )
+            self.assertIn("transcript.translations[0].language must be 'zh-CN'", errors)
             self.assertTrue(
-                any(
-                    "transcript.translations[0].path must point to" in error
-                    for error in errors
-                )
+                any("transcript.translations[0].path must point to" in error for error in errors)
             )
-            self.assertIn(
-                "transcript.translations[0].source_language must be 'en'", errors
-            )
+            self.assertIn("transcript.translations[0].source_language must be 'en'", errors)
             self.assertTrue(
                 any(
                     "transcript.translations[0].source_path must point to" in error
                     for error in errors
                 )
             )
+            self.assertIn("transcript.translations[0].alignment must be 'segment'", errors)
             self.assertIn(
-                "transcript.translations[0].alignment must be 'segment'", errors
-            )
-            self.assertIn(
-                "transcript.translations[0].status must be one of machine, "
-                "edited, reviewed",
+                "transcript.translations[0].status must be one of machine, edited, reviewed",
                 errors,
             )
             self.assertIn(
-                "transcript.translations[0].generated_at must be an RFC 3339 "
-                "timestamp",
+                "transcript.translations[0].generated_at must be an RFC 3339 timestamp",
                 errors,
             )
 
@@ -1104,19 +2082,21 @@ class ShowMetadataContractTests(unittest.TestCase):
         return errors
 
     def test_show_template_is_valid_after_filling_its_date_placeholder(self) -> None:
-        template = (ROOT / "templates" / "show" / "README.md").read_text(
-            encoding="utf-8"
-        ).replace("id: showid", "id: example").replace(
-            "YYYY-MM-DD", "2026-08-09"
+        template = (
+            (ROOT / "templates" / "show" / "README.md")
+            .read_text(encoding="utf-8")
+            .replace("id: showid", "id: example")
+            .replace("YYYY-MM-DD", "2026-08-09")
         )
         with tempfile.TemporaryDirectory() as directory:
             self.assertEqual(self.validate(Path(directory), template), [])
 
     def test_rejects_fields_that_the_web_show_schema_rejects(self) -> None:
-        template = (ROOT / "templates" / "show" / "README.md").read_text(
-            encoding="utf-8"
-        ).replace("id: showid", "id: example").replace(
-            "YYYY-MM-DD", "2026-08-09"
+        template = (
+            (ROOT / "templates" / "show" / "README.md")
+            .read_text(encoding="utf-8")
+            .replace("id: showid", "id: example")
+            .replace("YYYY-MM-DD", "2026-08-09")
         )
         cases = {
             "status": template.replace("status: active", "status: unknown"),
@@ -1126,9 +2106,7 @@ class ShowMetadataContractTests(unittest.TestCase):
             "source URL": template.replace(
                 "https://publisher.example/show", "http://publisher.example/show"
             ),
-            "malformed source URL": template.replace(
-                "https://publisher.example/show", "https://"
-            ),
+            "malformed source URL": template.replace("https://publisher.example/show", "https://"),
             "source field": template.replace(
                 "    preferred: true", "    preferred: true\n    invented: value"
             ),
@@ -1204,6 +2182,21 @@ class EpisodeMetadataContractTests(unittest.TestCase):
             self.assertTrue(publishable)
             self.assertTrue(any("summary.path is missing" in error for error in errors))
 
+    def test_rejects_trailer_as_an_episode_release_type(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = write_episode_contract_fixture(root, folder="001-trailer", episode_key="001")
+            readme.write_text(
+                readme.read_text(encoding="utf-8").replace(
+                    "release_type: regular", "release_type: trailer"
+                ),
+                encoding="utf-8",
+            )
+
+            _, errors = self.validate(root, readme)
+
+            self.assertTrue(any("release_type must be one of" in error for error in errors))
+
     def test_publishable_episode_requires_one_selected_run(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -1226,9 +2219,7 @@ class EpisodeMetadataContractTests(unittest.TestCase):
                 root, folder="001-numbering-source", episode_key="001"
             )
             readme.write_text(
-                readme.read_text(encoding="utf-8").replace(
-                    "  source: test-fixture\n", ""
-                ),
+                readme.read_text(encoding="utf-8").replace("  source: test-fixture\n", ""),
                 encoding="utf-8",
             )
             _, errors = self.validate(root, readme)
@@ -1246,14 +2237,14 @@ class EpisodeMetadataContractTests(unittest.TestCase):
                 "# 测试总结\n\n错误引用 [00:59:59]\n", encoding="utf-8"
             )
             _, errors = self.validate(root, readme)
-            self.assertTrue(any("does not exist in summary.source_transcript" in error for error in errors))
+            self.assertTrue(
+                any("does not exist in summary.source_transcript" in error for error in errors)
+            )
 
     def test_xiaoyuzhou_source_requires_complete_identity(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            readme = write_episode_contract_fixture(
-                root, folder="001-xiaoyu", episode_key="001"
-            )
+            readme = write_episode_contract_fixture(root, folder="001-xiaoyu", episode_key="001")
             text = readme.read_text(encoding="utf-8").replace(
                 "platform: website\n    kind: episode\n    url: https://example.com/001-xiaoyu/1",
                 "platform: xiaoyuzhou\n    kind: episode\n    url: https://www.xiaoyuzhoufm.com/episode/0123456789abcdef01234567",
@@ -1296,9 +2287,7 @@ class EpisodeMetadataContractTests(unittest.TestCase):
     def test_episode_may_register_a_bilibili_channel_as_a_secondary_source(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            readme = write_episode_contract_fixture(
-                root, folder="001-channel", episode_key="001"
-            )
+            readme = write_episode_contract_fixture(root, folder="001-channel", episode_key="001")
             readme.write_text(
                 readme.read_text(encoding="utf-8").replace(
                     "platform: website\n"
@@ -1318,9 +2307,7 @@ class EpisodeMetadataContractTests(unittest.TestCase):
     def test_audio_asr_duration_must_equal_local_cache(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            readme = write_episode_contract_fixture(
-                root, folder="001-duration", episode_key="001"
-            )
+            readme = write_episode_contract_fixture(root, folder="001-duration", episode_key="001")
             readme.write_text(
                 readme.read_text(encoding="utf-8").replace(
                     "  duration_ms: 60000", "  duration_ms: 59999", 1
@@ -1364,11 +2351,10 @@ class EpisodeMetadataContractTests(unittest.TestCase):
                 episode_key="001-profile",
             )
             text = readme.read_text(encoding="utf-8").replace(
-                "    role: guest\n"
-                "sources:\n",
+                "    role: guest\nsources:\n",
                 "    role: guest\n"
                 "    profile:\n"
-                "      headline: \"\"\n"
+                '      headline: ""\n'
                 "      checked_at: 2026-08-09\n"
                 "sources:\n",
                 1,
@@ -1377,9 +2363,7 @@ class EpisodeMetadataContractTests(unittest.TestCase):
 
             _, errors = self.validate(root, readme)
 
-            self.assertTrue(
-                any("profile.headline must be a non-empty string" in e for e in errors)
-            )
+            self.assertTrue(any("profile.headline must be a non-empty string" in e for e in errors))
 
     def test_unfinished_english_episode_may_lack_transcript_and_translation(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -1518,7 +2502,9 @@ class EpisodeMetadataContractTests(unittest.TestCase):
 
             _, errors = self.validate(root, readme)
 
-            self.assertTrue(any("summary.path escapes the episode directory" in error for error in errors))
+            self.assertTrue(
+                any("summary.path escapes the episode directory" in error for error in errors)
+            )
 
     def test_timestamp_contract_keeps_two_digit_hours_and_bounded_clock_fields(
         self,
@@ -1560,6 +2546,8 @@ class EpisodeMetadataContractTests(unittest.TestCase):
 
 
 class WikiIndexContractTests(unittest.TestCase):
+    ROOT_TRANSLATION_LINK = "[中文译稿](./shows/example/episodes/001-test/transcript.zh-CN.md)"
+    SHOW_TRANSLATION_LINK = "[中文译稿](./episodes/001-test/transcript.zh-CN.md)"
     ROOT_EPISODE_ROW = (
         "| [Canonical \\| Title](https://publisher.example/episode) | Test Guest | "
         "[Example Show](./shows/example/) | 2026-08-08 | "
@@ -1571,6 +2559,19 @@ class WikiIndexContractTests(unittest.TestCase):
         "2026-08-08 | [总结](./episodes/001-test/summary.zh-CN.md) | "
         "[逐字稿](./episodes/001-test/transcript.zh-CN.md) |"
     )
+    ROOT_BILINGUAL_EPISODE_ROW = (
+        "| [Canonical \\| Title](https://publisher.example/episode) | Test Guest | "
+        "[Example Show](./shows/example/) | 2026-08-08 | "
+        "[总结](./shows/example/episodes/001-test/summary.zh-CN.md) | "
+        "[英文逐字稿](./shows/example/episodes/001-test/transcript.en.md) · "
+        f"{ROOT_TRANSLATION_LINK} |"
+    )
+    SHOW_BILINGUAL_EPISODE_ROW = (
+        "| [Canonical \\| Title](https://publisher.example/episode) | Example Show | "
+        "2026-08-08 | [总结](./episodes/001-test/summary.zh-CN.md) | "
+        "[英文逐字稿](./episodes/001-test/transcript.en.md) · "
+        f"{SHOW_TRANSLATION_LINK} |"
+    )
 
     @classmethod
     def write_fixture(
@@ -1579,9 +2580,12 @@ class WikiIndexContractTests(unittest.TestCase):
         *,
         root_episode_rows: list[str] | None = None,
         show_episode_rows: list[str] | None = None,
+        bilingual: bool = False,
     ) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]]]:
-        root_rows = root_episode_rows or [cls.ROOT_EPISODE_ROW]
-        show_rows = show_episode_rows or [cls.SHOW_EPISODE_ROW]
+        default_root_row = cls.ROOT_BILINGUAL_EPISODE_ROW if bilingual else cls.ROOT_EPISODE_ROW
+        default_show_row = cls.SHOW_BILINGUAL_EPISODE_ROW if bilingual else cls.SHOW_EPISODE_ROW
+        root_rows = root_episode_rows or [default_root_row]
+        show_rows = show_episode_rows or [default_show_row]
         (root / "README.md").write_text(
             "# Test\n\n"
             "## 收录播客\n\n"
@@ -1591,9 +2595,7 @@ class WikiIndexContractTests(unittest.TestCase):
             "[README](./shows/example/) |\n\n"
             "## 单集索引\n\n"
             "| 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |\n"
-            "| --- | --- | --- | --- | --- | --- |\n"
-            + "\n".join(root_rows)
-            + "\n",
+            "| --- | --- | --- | --- | --- | --- |\n" + "\n".join(root_rows) + "\n",
             encoding="utf-8",
         )
         show_dir = root / "shows" / "example"
@@ -1602,9 +2604,7 @@ class WikiIndexContractTests(unittest.TestCase):
             "# Example Show\n\n"
             "## 单集\n\n"
             "| 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |\n"
-            "| --- | --- | --- | --- | --- |\n"
-            + "\n".join(show_rows)
-            + "\n",
+            "| --- | --- | --- | --- | --- |\n" + "\n".join(show_rows) + "\n",
             encoding="utf-8",
         )
         shows = {
@@ -1629,6 +2629,17 @@ class WikiIndexContractTests(unittest.TestCase):
                 "show_transcript_link": "./episodes/001-test/transcript.zh-CN.md",
             }
         ]
+        if bilingual:
+            episodes[0].update(
+                {
+                    "root_transcript_link": ("./shows/example/episodes/001-test/transcript.en.md"),
+                    "root_translation_link": (
+                        "./shows/example/episodes/001-test/transcript.zh-CN.md"
+                    ),
+                    "show_transcript_link": "./episodes/001-test/transcript.en.md",
+                    "show_translation_link": ("./episodes/001-test/transcript.zh-CN.md"),
+                }
+            )
         return shows, episodes
 
     def validate(
@@ -1637,11 +2648,13 @@ class WikiIndexContractTests(unittest.TestCase):
         *,
         root_episode_rows: list[str] | None = None,
         show_episode_rows: list[str] | None = None,
+        bilingual: bool = False,
     ) -> list[str]:
         shows, episodes = self.write_fixture(
             root,
             root_episode_rows=root_episode_rows,
             show_episode_rows=show_episode_rows,
+            bilingual=bilingual,
         )
         errors: list[str] = []
         validate_wiki_indexes(
@@ -1656,14 +2669,35 @@ class WikiIndexContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             self.assertEqual(self.validate(Path(directory)), [])
 
-    def test_rejects_duplicate_summary_rows(self) -> None:
+    def test_accepts_bilingual_transcript_links(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertEqual(self.validate(Path(directory), bilingual=True), [])
+
+    def test_rejects_missing_zh_cn_translation_link(self) -> None:
         cases = {
             "root": {
-                "root_episode_rows": [self.ROOT_EPISODE_ROW, self.ROOT_EPISODE_ROW]
+                "root_episode_rows": [
+                    self.ROOT_BILINGUAL_EPISODE_ROW.replace(f" · {self.ROOT_TRANSLATION_LINK}", "")
+                ]
             },
             "show": {
-                "show_episode_rows": [self.SHOW_EPISODE_ROW, self.SHOW_EPISODE_ROW]
+                "show_episode_rows": [
+                    self.SHOW_BILINGUAL_EPISODE_ROW.replace(f" · {self.SHOW_TRANSLATION_LINK}", "")
+                ]
             },
+        }
+        for label, values in cases.items():
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
+                errors = self.validate(Path(directory), bilingual=True, **values)
+                self.assertTrue(
+                    any("must link the zh-CN transcript translation" in error for error in errors),
+                    errors,
+                )
+
+    def test_rejects_duplicate_summary_rows(self) -> None:
+        cases = {
+            "root": {"root_episode_rows": [self.ROOT_EPISODE_ROW, self.ROOT_EPISODE_ROW]},
+            "show": {"show_episode_rows": [self.SHOW_EPISODE_ROW, self.SHOW_EPISODE_ROW]},
         }
         for label, values in cases.items():
             with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
@@ -1851,14 +2885,7 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
     def test_summary_reader_contract_requires_explicit_order_and_hides_editor_copy(
         self,
     ) -> None:
-        path = (
-            ROOT
-            / "shows"
-            / "example"
-            / "episodes"
-            / "001"
-            / "summary.zh-CN.md"
-        )
+        path = ROOT / "shows" / "example" / "episodes" / "001" / "summary.zh-CN.md"
         valid = """# 测试
 
 ## 一句话总结
@@ -1907,20 +2934,15 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
         copy_errors: list[str] = []
         validate_summary_reader_contract(
             path,
-            valid.replace("- ASR—LLM—TTS 是节目讨论的真实主题。", "- 状态为 draft，仍是草稿，待审核。"),
+            valid.replace(
+                "- ASR—LLM—TTS 是节目讨论的真实主题。", "- 状态为 draft，仍是草稿，待审核。"
+            ),
             copy_errors,
         )
         self.assertTrue(any("editor-only copy" in error for error in copy_errors))
 
     def test_core_point_logic_table_requires_semantic_columns_and_rows(self) -> None:
-        path = (
-            ROOT
-            / "shows"
-            / "example"
-            / "episodes"
-            / "001"
-            / "summary.zh-CN.md"
-        )
+        path = ROOT / "shows" / "example" / "episodes" / "001" / "summary.zh-CN.md"
 
         valid_errors: list[str] = []
         validate_core_point_logic_table(
@@ -1982,7 +3004,7 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
         valid_errors: list[str] = []
         validate_episode_catalog_keyword(
             path,
-            "---\ncatalog_keyword: \"SGLang\"\n---\n",
+            '---\ncatalog_keyword: "SGLang"\n---\n',
             valid_errors,
         )
         self.assertEqual(valid_errors, [])
@@ -1990,7 +3012,7 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
         invalid_errors: list[str] = []
         validate_episode_catalog_keyword(
             path,
-            "---\ncatalog_keyword: \"特别\"\n---\n",
+            '---\ncatalog_keyword: "特别"\n---\n',
             invalid_errors,
         )
         self.assertTrue(any("release labels" in error for error in invalid_errors))
@@ -2002,8 +3024,7 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
         duplicate_errors: list[str] = []
         validate_episode_catalog_keyword(
             path,
-            "---\nnavigation_title: \"盛颖 · SGLang 与开源\"\n"
-            "catalog_keyword: \"盛颖\"\n---\n",
+            '---\nnavigation_title: "盛颖 · SGLang 与开源"\ncatalog_keyword: "盛颖"\n---\n',
             duplicate_errors,
         )
         self.assertTrue(any("must not duplicate" in error for error in duplicate_errors))
@@ -2014,7 +3035,7 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
         valid_errors: list[str] = []
         validate_episode_navigation_title(
             path,
-            "---\nnavigation_title: \"盛颖 · SGLang 与开源\"\n---\n",
+            '---\nnavigation_title: "盛颖 · SGLang 与开源"\n---\n',
             valid_errors,
         )
         self.assertEqual(valid_errors, [])
@@ -2022,7 +3043,7 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
         invalid_errors: list[str] = []
         validate_episode_navigation_title(
             path,
-            "---\nnavigation_title: \"#247 盛颖 - SGLang\"\n---\n",
+            '---\nnavigation_title: "#247 盛颖 - SGLang"\n---\n',
             invalid_errors,
         )
         self.assertTrue(any("person · topic" in error for error in invalid_errors))
@@ -2059,15 +3080,12 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
 
         count = check_xiaoyuzhou_urls(
             path,
-            "https://www.xiaoyuzhoufm.com/podcast/6697cbecf103d7b06d18488b/"
-            "?utm_source=test",
+            "https://www.xiaoyuzhoufm.com/podcast/6697cbecf103d7b06d18488b/?utm_source=test",
             errors,
         )
 
         self.assertEqual(count, 1)
-        self.assertTrue(
-            any("non-canonical Xiaoyuzhou URL" in error for error in errors)
-        )
+        self.assertTrue(any("non-canonical Xiaoyuzhou URL" in error for error in errors))
 
 
 if __name__ == "__main__":

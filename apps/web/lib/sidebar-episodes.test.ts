@@ -30,6 +30,7 @@ describe("sidebar episode order", () => {
       ["svvector", "硅谷坐标 SV-Vector", "SV-Vector"],
       ["latetalk", "晚点聊 LateTalk", "LateTalk"],
       ["luoyonghao", "罗永浩的十字路口", "十字路口"],
+      ["moonuncle", "月球大叔的硅谷播客", "月球大叔"],
       ["whynottv", "WhynotTV Podcast", "WhynotTV"],
       ["yiqitietalk", "一起铁TALK", "一起铁TALK"],
     ] as const;

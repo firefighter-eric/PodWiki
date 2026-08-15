@@ -7,11 +7,14 @@
 
 ## 1. 适用范围与停止条件
 
-当前完整 happy path 是：单个公开 Bilibili 视频或小宇宙单集，没有可直接使用的
-公开字幕，在 Apple Silicon/MLX 或 Windows/NVIDIA CUDA 上以 Qwen3-ASR 和
-ForcedAligner 生成机器逐字稿。
-用户明确授权时，也可以把一个已核实的小宇宙栏目的公开免费单集作为冻结后的有界
-批次处理；批次中的每一集仍执行同一套单集流程和停止条件。
+当前完整 happy path 是：单个已通过播客边界核实的公开 Bilibili 视频版单集或
+小宇宙单集，没有可直接使用的公开字幕，在 Apple Silicon/MLX 或
+Windows/NVIDIA CUDA 上以 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿。
+PodWiki 只收录符合[内容标准第 0 节](./content-standard.md#0-收录边界只收录播客)的
+播客完整单集；长视频、访谈或频道投稿本身不构成收录依据。
+用户明确授权时，也可以把一个已核实播客的公开免费单集作为冻结后的有界批次处理：
+Bilibili 只允许官方播客正片合集或与公开播客 feed 逐集对应的白名单，小宇宙只允许
+同一已核实栏目；批次中的每一集仍执行同一套单集流程和停止条件。
 YouTube 当前支持规范化、metadata intake 和公开媒体获取，但 tracked episode 的
 source identifiers 与无正式期号 key 尚未形成内容契约，因此不能自动完成入库。
 
@@ -135,7 +138,9 @@ metadata 的旧模型目录。MLX 继续使用其独立的 `*-pinned-v2` 目录�
 
 ## 3. 规范化来源并做 metadata intake
 
-先把用户输入转换为单视频或单集规范 URL：
+先把用户输入转换为单视频或单集规范 URL。规范化只确认来源身份，不代表获得收录
+资格；包括单个 BVID/视频在内，下载或建档前仍须正面证明它属于已核实播客且是完整
+正式单集：
 
 - Bilibili：`https://www.bilibili.com/video/<BVID>/`；
 - Bilibili 活动页 `/festival/...?...bvid=<BVID>`：提取 `bvid` 后改写为上述视频地址；
@@ -168,23 +173,29 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 
 存在公开字幕时在这里停止。不要因为当前没有 importer 就忽略字幕改跑音频 ASR。
 
-### 明确授权的单栏目批次
+### 明确授权的单播客批次
 
 未获授权时仍只处理用户指定的单集，不枚举整栏。只有用户明确点名并授权一个已
-核实的小宇宙栏目后，才可以发现其匿名可见的单集列表；不得把授权扩大到其他栏目、
-账号或平台列表。下载任何媒体前先把本次范围冻结到
+核实的播客后，才可以发现它匿名可见的完整单集；不得把授权扩大到其他节目、账号
+投稿或平台列表。下载任何媒体前先把本次范围冻结到
 `.cache/intake/<show-id>/manifest.json`，至少记录：
 
-- 栏目规范 URL、栏目 PID、发现时间和发现总数；
-- 每集的规范 URL 与 `eid`；后续校验结果写入各集 intake sidecar，不改写清单范围；
+- Bilibili：频道规范 URL 与 `mid`、明确标为播客正片的官方 `season_id` 与合集标题，
+  或用于逐集交叉对应的公开播客 feed 规范 URL；每集规范 URL 与 BVID，使用 feed
+  交叉核实时还要记录对应 GUID 和单集 URL；
+- 小宇宙：栏目规范 URL、栏目 PID，以及每集规范 URL 与 `eid`；
+- 冻结时间、白名单总数和播客身份/完整单集证据；后续校验结果写入各集 intake
+  sidecar，不改写清单范围；
 - 稳定顺序仅用于执行和复核，不作为正式期号。
 
-冻结后不因栏目新增单集而自动扩展本次批次。先逐集执行 metadata-only intake，只有
-栏目身份一致且明确为 `NORMAL`、`FREE`、非私密、`PUBLIC` 的条目才能进入下载清单；
-跨栏目、未知状态、付费、私密或需登录的条目必须拒绝并记录原因。随后严格按 manifest
-串行、限速调用单集采集命令，每次仍只把一个规范 episode URL 传给脚本，并在进入
-下一集前完成该集的身份、sidecar、字节数、时长与 SHA-256 校验。中断后从冻结的
-manifest 和已验证 sidecar 恢复，不重新发现或静默替换批次范围。
+冻结后不因节目新增单集而自动扩展本次批次。Bilibili 混合频道只允许白名单中的完整
+播客正片，片段、直播、活动、课程和其他投稿保持排除；每集还要独立通过匿名访问、
+单 P、来源身份和字幕检查。小宇宙只有栏目身份一致且明确为 `NORMAL`、`FREE`、
+非私密、`PUBLIC` 的条目才能进入下载清单。跨节目、未知状态、付费、私密、需登录或
+不满足播客边界的条目必须拒绝并记录原因。随后严格按 manifest 串行、限速调用单集
+采集命令，每次仍只传入一个规范单集 URL，并在进入下一集前完成该集的身份、sidecar、
+字节数、时长与 SHA-256 校验。中断后从冻结的 manifest 和已验证 sidecar 恢复，不
+重新发现或静默替换批次范围。
 
 ## 4. 确定身份并创建目录
 
@@ -420,7 +431,7 @@ validator，避免 renderer 产生无意义变更。
 既有完整产物继续按 legacy hash 链只读，不要求批量改写；只有已有 v2 raw 才能做
 align-only/`--realign`，且必须使用带逐文件 Hugging Face download metadata 的上述
 pinned 本地 snapshot。markerless raw 需要任何新对齐时必须改用 `--retranscribe`。
-当前 73 条 selected 链（53 MLX、20 CUDA）均为 markerless legacy：产物没有记录
+当前保留的 73 条历史 selected 链（53 MLX、20 CUDA）均为 markerless legacy：产物没有记录
 revision 或 local snapshot，当前机器也没有 CUDA 模型缓存，因此不能把现在可见的 MLX
 cache 无证据回填到历史运行。它们只声明 audio/raw/aligned/refined/transcript 哈希链；
 fresh/`--retranscribe` 会建立 v2 model identity，而 markerless `--realign` 被拒绝。
@@ -535,7 +546,9 @@ SHA-256。完整机器稿可以支持 `workflow.summary: draft`；没有回听�
 
 ## 10. 同步两个 Wiki 索引
 
-每次新增或更新单集都同时修改：
+单集达到 Web 收录状态后才同时加入两个单集索引；`outline`、`not-started`、
+`source-acquired` 等处理中记录不得提前进入。已经进入索引的单集发生更新时，两个
+索引必须同步刷新：
 
 1. 新节目还要更新根 `README.md` 的三列“收录播客”表，节目名链接已核实的
    首选发布者页面，节目页链接本地 README；
@@ -544,8 +557,9 @@ SHA-256。完整机器稿可以支持 `workflow.summary: draft`；没有回听�
 
 标题链接规范发布者 URL，访谈人物只来自 `role: guest` 的已核实参与者；没有嘉宾
 时写 `—`，不得用 participant 或 host 冒充。英文单集同时提供“英文逐字稿”和
-“中文译稿”链接；译稿审核状态仍只保存在单集元数据。当前 validator 不检查根 README，因此两个表的排序、列数、
-人物和相对路径必须人工复核。
+“中文译稿”链接；译稿审核状态仍只保存在单集元数据。当前 validator 会严格检查根
+节目表、根单集表和各节目表的集合、链接、嘉宾、日期及倒序；仍须人工复核标题可读性
+与页面呈现，不能把校验通过当作编辑审核。
 
 ## 11. 统一完成门禁
 
