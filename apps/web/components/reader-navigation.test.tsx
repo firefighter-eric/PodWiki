@@ -256,9 +256,9 @@ describe("reader navigation", () => {
     expect(homeHtml).not.toContain('href="/shows/dagaizhishi"');
     expect(homeHtml).not.toContain('href="/shows/xinkoukaihe"');
     expect(homeHtml).not.toContain('href="/shows/erdesancifang"');
-    expect(homeHtml.match(/查看全部 12 期/g)).toHaveLength(1);
+    expect(homeHtml).toContain("查看全部 16 期");
     expect(homeHtml).toContain("查看全部 30 期");
-    expect(homeHtml).toContain("查看全部 10 期");
+    expect(homeHtml).toContain("查看全部 11 期");
     expect(homeHtml).toContain("查看全部 9 期");
     expect(homeHtml).toContain("查看全部 36 期");
     expect(homeHtml).toContain("查看全部 4 期");

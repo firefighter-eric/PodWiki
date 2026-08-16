@@ -2,13 +2,27 @@
 
 本文件适用于整个仓库；子目录存在更具体的 `AGENTS.md` 时，同时遵守其规则。
 
+## 扫描剧集更新
+
+扫描节目、频道或 feed 是否有新剧集时，依次完整阅读：
+
+1. [内容标准](./docs/content-standard.md)：播客与完整单集的收录边界；
+2. 对应节目 `shows/<show-id>/README.md`：已核实来源与节目级例外；
+3. [PodWiki 扫描剧集 skill](./.agents/skills/podwiki-scan-episodes/SKILL.md)：扫描范围、
+   完整性、去重、结果状态和候选清单契约。
+
+扫描只生成被 Git 忽略的证据和候选清单，不下载媒体、不创建单集目录、不运行 ASR、
+不更新索引。必需来源无法完整覆盖时只能报告 `partial` 或 `blocked`，不得报告
+“没有更新”。
+
 ## 新增或处理单集
 
 开始修改前，依次完整阅读：
 
 1. [单集处理流程](./docs/episode-processing.md)：端到端步骤、输入输出和停止点；
 2. [内容标准](./docs/content-standard.md)：目录、元数据、状态、逐字稿、译稿与索引契约；
-3. [PodWiki episode 处理 skill](./.agents/skills/podwiki-process-episode/SKILL.md)：来源限制、ASR 恢复语义和完成检查。
+3. [PodWiki 添加剧集 skill](./.agents/skills/podwiki-add-episodes/SKILL.md)：精确输入、
+   来源限制、ASR 恢复语义和完成检查。
 
 按流程选择相关模板和脚本，不要从已有单集反向猜测未核实的元数据。
 

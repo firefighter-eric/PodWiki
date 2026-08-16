@@ -1,0 +1,5350 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "svvector:bili-bv1mjbu6rets",
+  "language": "zh-CN",
+  "source": {
+    "input_asr_path": "shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "f15a4c0ac650d0f09add4e92f1ac1e4b7e367c70af1d9d941dbe33c647d0b3fb",
+    "engine": "mlx-audio",
+    "model": "mlx-community/Qwen3-ASR-1.7B-8bit",
+    "aligner": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit",
+    "model_identity": {
+      "schema_version": 1,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "requested_revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "resolved_commit": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "files_sha256": {
+        ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "README.md": "b356d4bdfbe7287b06b9b5ad084d9557a24ca98ca277a839beb2e682037b08f6",
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "config.json": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "model.safetensors": "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c",
+        "model.safetensors.index.json": "0a5d0ec11188602242ff81a9969883d0fdeb98cd5d85cd1413089d897c201af5",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "aligner_identity": {
+      "schema_version": 1,
+      "repository": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit",
+      "requested_revision": "0e1a68e91d815300c7c9754b2a7639378b23db15",
+      "resolved_commit": "0e1a68e91d815300c7c9754b2a7639378b23db15",
+      "files_sha256": {
+        ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "README.md": "28c8a32f6bb223a4082f6bc38062890abbc1c702b13957388e52465dfdc06a56",
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "config.json": "8dc126e1a4ac001acb02f3a9ca6277c8a20a25485fde293bc99eeab3aedc604d",
+        "generation_config.json": "948d089b23bca1d214e768d59c4438365665f52ec6d33678f4062206b3fbbb8c",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "model.safetensors": "be19ef8ac4326d032e7673342930b14c2df30bd68c1632493b0f563e30829f91",
+        "model.safetensors.index.json": "766eb50873855eeb4d95ab92def358cfd173bfc8c7aabd8635ababa1edf6db79",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "tokenizer_config.json": "3ab80063f8511deb9566e6ad438d17b7a6277fcffd52d92854112f19d36bd81c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    }
+  },
+  "rendered_transcript": {
+    "path": "shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "fba7e981b326039511e3741da09f29c74d8d6e94d833a001c1af2a1bc501cb0b"
+  },
+  "generated_at": "2026-08-16T04:43:45.167349Z",
+  "corrections": {
+    "status": "none",
+    "rules": [],
+    "total_hits": 0
+  },
+  "statistics": {
+    "source_segments": 385,
+    "refined_segments": 385,
+    "rendered_blocks": 94,
+    "rendered_lines": 385
+  },
+  "segments": [
+    {
+      "start": 1.76,
+      "end": 7.28,
+      "text": "你把一个 vertical specific agent 做好，跟解决黎曼猜想可能是完全两种不同的工作。",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 7.84,
+      "end": 11.68,
+      "text": "但是 Frontier Lab 可能现在更在意的是能不能解决黎曼猜想。",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 11.68,
+      "end": 18.08,
+      "text": "我们看到越来越多 vertical specific agent，他们的 eval 做的越来越细，他们洗数据的流程越来越细。",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 18.24,
+      "end": 23.68,
+      "text": "这类工作确实我觉得还是对于开源模型的 customization 来说，是很有意义的。",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 24.08,
+      "end": 27.84,
+      "text": "长期来说蒸馏的话，并不是一个特别可靠的路径吧。",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 28.32,
+      "end": 33.28,
+      "text": "就是它可能短期内确实可以帮助大家达到一个比较好的水平。",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 33.68,
+      "end": 40.08,
+      "text": "有没有一个哪个方向，就是它可能现在的 token 消耗量没有那么多，但是实际上你们看到 token 的增长其实非常快的。",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 40.48,
+      "end": 42.08,
+      "text": "Homework 肯定是一个大的方向。",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 42.24,
+      "end": 48.64,
+      "text": "就是我觉得大家现在绝大部分时间都花在照顾理科生上面，但其实这个是个非常反直觉的东西。",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 48.64,
+      "end": 54.64,
+      "text": "就我反而觉得，就是现在我们看到很多例子都是照顾文科生的需求会越来越大。",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 54.96,
+      "end": 60.88,
+      "text": "比如说各种 slide 呀，word 呀，什么，以及就是最近还有 video gen 这种东西都起来了。",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 60.96,
+      "end": 62.96,
+      "text": "很多 engineer 还担心自己会失业。",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 63.04,
+      "end": 65.92,
+      "text": "我觉得就是能做 eval 的人真的少之又少。",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 66.0,
+      "end": 69.84,
+      "text": "这样大家如果有兴趣的话，可以多转一下怎么做 eval。",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 69.84,
+      "end": 72.56,
+      "text": "教你老板到底能不能采购开源闭源的。",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 72.64,
+      "end": 78.48,
+      "text": "你可能把这个写，把 eval 写好，把这个开源切到闭源的，就把你工资三五倍都省出来了。",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 83.68,
+      "end": 85.36,
+      "text": "Hello Benny，欢迎来到硅谷坐标。",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 85.68,
+      "end": 94.32,
+      "text": "今天我们想跟你先聊一下你对一些整个大局势的判断，再跟你聊一聊 Fireworks 的两门生意，一个是推理优化，一个是定制模型。",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 94.56,
+      "end": 97.36,
+      "text": "同时也想跟你去聊一聊 Fireworks 的核心竞争力。",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 97.52,
+      "end": 103.84,
+      "text": "首先我们先去看一看整个最大的一个核心问题，就是开源模型 versus 闭源模型。",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 104.32,
+      "end": 114.32,
+      "text": "我们知道过去的一年里，最重要的产业变量就是开源模型在以非常快的速度逼近闭源模型的能力，并且价格只有闭源模型的几十分之一。",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 114.72,
+      "end": 120.08,
+      "text": "展望未来，你觉得开源模型和闭源模型它们之间的这个版图和格局会是什么样的？",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 120.48,
+      "end": 128.64,
+      "text": "我们团队很多都是做开源软件出身的，绝大部分人是 PyTorch，以及用 PyTorch 的人，但是在 Meta，然后出来创业。",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 129.12,
+      "end": 134.72,
+      "text": "我们是非常相信在非常有价值的软件这一层，开源的东西 eventually 都会 catch up。",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 134.96,
+      "end": 144.08,
+      "text": "不管是就是之前的哪些 vertical，比如说 operating system 最后开源也 catch up 了，还是比如说各种各样的 database 最后开源也 catch up。",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 144.24,
+      "end": 148.64,
+      "text": "所以这个开源能不能 catch up 这件事情，我们还是很相信，就开源会慢慢 catch up。",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 148.88,
+      "end": 151.44,
+      "text": "不过今年确实发展比我想象的要快吧。",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 151.44,
+      "end": 154.72,
+      "text": "就首先就是闭源模型的 ARR 确实涨得也非常非常快。",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 155.12,
+      "end": 158.0,
+      "text": "然后其实开源模型 capability catch up 上来也非常快。",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 158.48,
+      "end": 164.4,
+      "text": "像比如我们最近看到的 K3 或者 DSP4 Flash，还有最新的 Muse 对吧？",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 164.4,
+      "end": 168.08,
+      "text": "Meta 也说要开源，开源 Spark，这个还是让我挺意外的。",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 168.08,
+      "end": 174.72,
+      "text": "就是说开源这边竞争如此激烈，且模型的性价比这么的高，这个确实是实让我非常意外的事情。",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 174.72,
+      "end": 178.88,
+      "text": "我们 team 是坚信这个东西 eventually 会 catch up，只是没有想到它 catch up 的这么快。",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 179.52,
+      "end": 183.92,
+      "text": "我们知道一部分的开源模型是通过蒸馏的方式去保持自己的领先优势。",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 184.16,
+      "end": 188.96,
+      "text": "你觉得这种靠蒸馏保持领先优势的这些开源模型是可持续的吗？",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 189.28,
+      "end": 192.0,
+      "text": "闭源模型有没有什么办法去避免这件事情？",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 192.48,
+      "end": 196.48,
+      "text": "首先就是闭源模型基本上那几个 API 肯定都会修好了。",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 196.56,
+      "end": 210.64,
+      "text": "它确实之前有各种各样的问题，很多时候是说，比如说一个大的模型它出来几个结果之后，你把它重新喂给一个小的模型，然后那个小的模型可能再怎么弄一下，你就可以把它的 thinking token 给弄出来。",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 210.72,
+      "end": 214.64,
+      "text": "这个确实是他们之前做的不够 secure 的一个地方嘛。",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 214.64,
+      "end": 219.12,
+      "text": "这闭源模型准本身 security 做的有 gap，但这个东西我觉得修起来都很快。",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 219.28,
+      "end": 222.8,
+      "text": "这东西没有理由说闭源模型厂商没有办法把它做好。",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 222.96,
+      "end": 227.12,
+      "text": "所以长期来说蒸馏的话，并不是一个特别可靠的路径吧。",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 227.68,
+      "end": 232.64,
+      "text": "就是它可能短期内确实可以帮助大家达到一个比较好的水平。",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 233.12,
+      "end": 238.72,
+      "text": "不过就是说以我的了解，比如说像美国这边很多厂，像比如 Meta，它可能蒸的少。",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 238.72,
+      "end": 240.96,
+      "text": "之前 Nimo 厂可能蒸的也不是很多。",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 241.44,
+      "end": 243.04,
+      "text": "所以就是说开源模型",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 243.56,
+      "end": 244.92,
+      "text": "的success是不是contingent呢？",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 245.16,
+      "end": 246.6,
+      "text": "蒸馏，我觉得这个不一定。",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 246.76,
+      "end": 255.0,
+      "text": "其实只要开源相关的evol，呃，量大清晰，以及慢慢数据价钱下来，我觉得不一定需要蒸馏。",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 255.08,
+      "end": 257.0,
+      "text": "很多人也能用到非常好的开源模型。",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 257.16,
+      "end": 262.04,
+      "text": "所以我觉得就说开源的厂商确实有很多事情可以做，让它保持竞争优势。",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 262.12,
+      "end": 263.32,
+      "text": "闭源厂商也有很多手段。",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 263.32,
+      "end": 269.96,
+      "text": "不过我现在越来越觉得，其实开源的厂商它不一定需要永远做到跟闭源有优势。",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 270.36,
+      "end": 271.88,
+      "text": "我我也是买苹果手机的人。",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 272.52,
+      "end": 277.72,
+      "text": "我觉得其实你要问我之前用安卓，我觉得Google那些手机比苹果手机好用多了。",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 277.88,
+      "end": 279.96,
+      "text": "但是还是有各种各样小的问题。",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 280.04,
+      "end": 282.84,
+      "text": "可能我如果价格没有那么sensitive，我可能还是买苹果。",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 283.0,
+      "end": 286.2,
+      "text": "最后可能利润大头也是被一直领先的那个人给拿走。",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 286.68,
+      "end": 289.88,
+      "text": "跟开源能做的很大，可能完全不冲突。",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 290.36,
+      "end": 299.88,
+      "text": "就是run rate可能最多最后大头在开源，然后闭源可能它永远能够claim一些优势，然后很多价格没有那么sensitive的人就claim闭源。",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 299.88,
+      "end": 303.08,
+      "text": "所以可能你问我的话，我觉得它长期优势在哪里？",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 303.08,
+      "end": 305.56,
+      "text": "我觉得这用户心智可能更重要吧。",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 306.12,
+      "end": 313.8,
+      "text": "就比如说我作为一个企业端去采购的时候，我们以前开玩笑讲就是就no one get fired for buying IBM，对吧？",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 313.88,
+      "end": 316.6,
+      "text": "IBM是不是一直能够维持这个优势？",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 316.6,
+      "end": 317.16,
+      "text": "我不知道。",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 317.72,
+      "end": 321.08,
+      "text": "但确实很长一段时间大家都偏向于保守，都想要买IBM。",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 321.8,
+      "end": 325.0,
+      "text": "那么这个我觉得这个人可能变得没有那么快。",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 325.24,
+      "end": 333.0,
+      "text": "人如果相信继续采购cloud都能采购到更好的，或者采购open能够采购到更好的，那这个变化可能会稍微慢一点。",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 333.08,
+      "end": 335.8,
+      "text": "这个可能是他们接下来两三年的优势吧。",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 336.2,
+      "end": 339.08,
+      "text": "然后你问我五年十年之后的，确实我都看不清了。",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 339.08,
+      "end": 348.44,
+      "text": "所以你觉得如果是靠蒸馏来保持领先的这些开源模型，他们是无法长期靠蒸馏这个方式去保持跟闭源模型的这个差距缩小的。",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 348.76,
+      "end": 353.16,
+      "text": "就是这件事情eventually通过自己内部团队security的加强，然后把这个事情避免掉。",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 353.56,
+      "end": 360.52,
+      "text": "但是比如说像Meta或者是像Neural这样的非蒸馏的这种品类，你觉得他们会能catch up快吗？",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 360.52,
+      "end": 363.8,
+      "text": "还是说这个gap还是会保持这个？",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 363.8,
+      "end": 366.44,
+      "text": "对，其实我觉得Meta的gap相对来说没那么大了吧？",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 366.52,
+      "end": 373.16,
+      "text": "它能继续scale up，它有足够的talent，有足够的GPU，我觉得这个理由就是这个gap不会特别大。",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 373.32,
+      "end": 378.12,
+      "text": "Neural可能甚至Reflection或者Thinking Machine嘛，都有各种各样的东西可以catch up的。",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 378.28,
+      "end": 380.44,
+      "text": "我觉得没有理由会一直有gap。",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 380.68,
+      "end": 386.36,
+      "text": "就是它可能我觉得也不是说永远都不会有gap，我觉得gap会越来越小。",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 387.32,
+      "end": 391.32,
+      "text": "就跟我前面开玩笑讲苹果手机跟安卓手机是不是有gap？",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 391.32,
+      "end": 393.08,
+      "text": "我觉得可能就是各种各样小的gap。",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 393.72,
+      "end": 395.72,
+      "text": "但是你说真给我一个安卓不能用吗？",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 395.72,
+      "end": 396.44,
+      "text": "我觉得也可以用。",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 397.24,
+      "end": 398.76,
+      "text": "这个我觉得没有本质差别。",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 398.92,
+      "end": 400.36,
+      "text": "我觉得大家最后还是看效果。",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 401.0,
+      "end": 405.88,
+      "text": "就比如说这个最后效果好不好，可能远大于就是这个东西价钱的高低。",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 406.36,
+      "end": 419.16,
+      "text": "那效果好与坏确实是Frontier大的模型做的比较好的地方，因为它模型毕竟大，它做的比较早，就是比较细，所以很多事情确实是open source需要花更多精力去做的。",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 419.56,
+      "end": 425.56,
+      "text": "那你觉得长期的话，OpenAI和Anthropic闭源模型SOTA模型他们的这个ARR的增速，你觉得未来会怎么样发展？",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 425.8,
+      "end": 428.28,
+      "text": "我觉得ARR肯定会继续涨。",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 429.0,
+      "end": 437.24,
+      "text": "它现在有一个我不是很确定的东西，就是说它这个ARR的accounting以及跟它下游分成这些东西怎么弄。",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 437.4,
+      "end": 444.44,
+      "text": "比如说因为像比如说Anthropic可能很多revenue是百分之百都算进去了，但是可能其实有一部分是分给云厂商的。",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 445.0,
+      "end": 447.0,
+      "text": "那么它这个分成的比例可能会越来越大。",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 447.08,
+      "end": 450.28,
+      "text": "那么就是它ARR可能往上涨，但它的gap revenue可能不一定会一直涨。",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 450.92,
+      "end": 451.96,
+      "text": "这个我就不清楚。",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    },
+    {
+      "start": 452.68,
+      "end": 456.44,
+      "text": "呃，到底就是它上市了之后，大家会怎么分析这个故事？",
+      "source_segment_indexes": [
+        94
+      ],
+      "source_segment_ids": [
+        94
+      ]
+    },
+    {
+      "start": 456.44,
+      "end": 462.68,
+      "text": "所以你觉得就未来这个分成比例，其实是SOTA的模型他们会拿更小的一个分成，话语权会更弱？",
+      "source_segment_indexes": [
+        95
+      ],
+      "source_segment_ids": [
+        95
+      ]
+    },
+    {
+      "start": 462.84,
+      "end": 464.12,
+      "text": "我觉得这个会弱一点。",
+      "source_segment_indexes": [
+        96
+      ],
+      "source_segment_ids": [
+        96
+      ]
+    },
+    {
+      "start": 464.6,
+      "end": 469.0,
+      "text": "所以就我们很多时候看ARR，但是可能没有看具体他们分成比例啊什么之类的。",
+      "source_segment_indexes": [
+        97
+      ],
+      "source_segment_ids": [
+        97
+      ]
+    },
+    {
+      "start": 469.48,
+      "end": 472.44,
+      "text": "这个东西他们上市了之后，可能大家visibility还会好一点。",
+      "source_segment_indexes": [
+        98
+      ],
+      "source_segment_ids": [
+        98
+      ]
+    },
+    {
+      "start": 472.6,
+      "end": 480.52,
+      "text": "那还有一个就是想问你，比如说Harvey现在也是你们非常重要的一个标杆性的一个客户，到底是未来像Harvey这样的一个。",
+      "source_segment_indexes": [
+        99
+      ],
+      "source_segment_ids": [
+        99
+      ]
+    },
+    {
+      "start": 480.721,
+      "end": 487.361,
+      "text": "垂直类的应用模型会跑出来，还是说像这种SOTA模型，他们的这个法律模型会更好？",
+      "source_segment_indexes": [
+        100
+      ],
+      "source_segment_ids": [
+        100
+      ]
+    },
+    {
+      "start": 487.441,
+      "end": 488.561,
+      "text": "你会站哪一边？",
+      "source_segment_indexes": [
+        101
+      ],
+      "source_segment_ids": [
+        101
+      ]
+    },
+    {
+      "start": 488.881,
+      "end": 497.281,
+      "text": "啊，我们当然是站那个vertical specific这一边，就是我们还是很相信，就是要把一个vertical做好，其实需要很大的精力的。",
+      "source_segment_indexes": [
+        102
+      ],
+      "source_segment_ids": [
+        102
+      ]
+    },
+    {
+      "start": 497.521,
+      "end": 506.161,
+      "text": "就我们自己是个infrastructure provider嘛，然后大家经常会开玩笑就讲说，要不明年大家就一起完蛋，AGI直接把我们code都外不出来。",
+      "source_segment_indexes": [
+        103
+      ],
+      "source_segment_ids": [
+        103
+      ]
+    },
+    {
+      "start": 506.161,
+      "end": 518.961,
+      "text": "但这个肯定是开玩笑的话，就把一个vertical做好，可能有需要大量的测试，要知道用户的需求，然后这些需求具体怎么表达在我们的这个产品上面，这个其实很大的一部分工作。",
+      "source_segment_indexes": [
+        104
+      ],
+      "source_segment_ids": [
+        104
+      ]
+    },
+    {
+      "start": 519.281,
+      "end": 526.881,
+      "text": "我们很多customer也都是vertical specific的agent，比如说Harvey还是一个特别出名的vertical specific的law agent，对吧？",
+      "source_segment_indexes": [
+        105
+      ],
+      "source_segment_ids": [
+        105
+      ]
+    },
+    {
+      "start": 527.201,
+      "end": 535.841,
+      "text": "它有各种各样的vertical，然后各种各样vertical都要通过evaluation来表达出来，就是说来评判这个工作的好坏，这个其实是非常非常大的一个工作量。",
+      "source_segment_indexes": [
+        106
+      ],
+      "source_segment_ids": [
+        106
+      ]
+    },
+    {
+      "start": 536.001,
+      "end": 544.481,
+      "text": "然后比如说我们最近还有几个，一个是Docsimly，他们在我们平台上面train了一个medical agent，就等于是做ChatGPT的竞品吧。",
+      "source_segment_indexes": [
+        107
+      ],
+      "source_segment_ids": [
+        107
+      ]
+    },
+    {
+      "start": 544.721,
+      "end": 560.881,
+      "text": "Docsimly是北美最大的一个等于医生用的ChatGPT的app，然后它更偏向于就deep research，确保就是医生可以看到正确的reference，这样的话就医生在给病人下判断的时候不会出现reference有问题。",
+      "source_segment_indexes": [
+        108
+      ],
+      "source_segment_ids": [
+        108
+      ]
+    },
+    {
+      "start": 561.041,
+      "end": 576.321,
+      "text": "然后比如说我们还有呃在北美以外，我们最大合作一个客户叫Hedy，Hedy是北美以外最大的就是这种medical scribe啊，medical search company，他们也做了很多就是在平台上面做各种fine tuning啊，来达到更好的效果。",
+      "source_segment_indexes": [
+        109
+      ],
+      "source_segment_ids": [
+        109
+      ]
+    },
+    {
+      "start": 576.561,
+      "end": 584.801,
+      "text": "就是每个vertical确实它evaluation criteria都不是特别一样，然后对于我们来说，我们当然是希望就是a thousand flowers bloom，对吧？",
+      "source_segment_indexes": [
+        110
+      ],
+      "source_segment_ids": [
+        110
+      ]
+    },
+    {
+      "start": 584.801,
+      "end": 600.081,
+      "text": "我们希望各种各样行业的这种vertical size agent都能成功，因为我们相信就是说每个vertical它有很多那种特别细的工作，其实很多细致的工作呢，你想用一个特别大全的模型来做好，还是很困难的一件事情。",
+      "source_segment_indexes": [
+        111
+      ],
+      "source_segment_ids": [
+        111
+      ]
+    },
+    {
+      "start": 600.321,
+      "end": 608.561,
+      "text": "像我们合作的各种coding啊，legal啊，medical啊这些东西，它每个vertical都有各种各样特别细致的东西，这就是这些size company的alpha。",
+      "source_segment_indexes": [
+        112
+      ],
+      "source_segment_ids": [
+        112
+      ]
+    },
+    {
+      "start": 608.961,
+      "end": 614.321,
+      "text": "我们是认为一个foundation lab要把所有这些东西都做了，这怎么说呢？",
+      "source_segment_indexes": [
+        113
+      ],
+      "source_segment_ids": [
+        113
+      ]
+    },
+    {
+      "start": 614.321,
+      "end": 617.281,
+      "text": "就是它的cost应该会特别特别的高，它ROI可能就特别低。",
+      "source_segment_indexes": [
+        114
+      ],
+      "source_segment_ids": [
+        114
+      ]
+    },
+    {
+      "start": 617.601,
+      "end": 622.721,
+      "text": "今年这么多优秀的开源模型，质量很好的开源模型，你们看到的这个token增长量是什么样的？",
+      "source_segment_indexes": [
+        115
+      ],
+      "source_segment_ids": [
+        115
+      ]
+    },
+    {
+      "start": 623.201,
+      "end": 646.001,
+      "text": "对我们量增长呢还是挺好的，我们最近有公开消息，因为我们融资了嘛，我记得好像公开的是四五十个T token一天，然后这个数字来说应该是比Gemini还有OpenAI公开的数字都要大，所以呃您可以认为就是说我们平台上面走的open source model的量已经超过了Gemini跟OpenAI的B to B API的量，",
+      "source_segment_indexes": [
+        116
+      ],
+      "source_segment_ids": [
+        116
+      ]
+    },
+    {
+      "start": 646.241,
+      "end": 649.601,
+      "text": "这个对于我觉得开源模型来说还是非常好的一件事情。",
+      "source_segment_indexes": [
+        117
+      ],
+      "source_segment_ids": [
+        117
+      ]
+    },
+    {
+      "start": 650.081,
+      "end": 655.841,
+      "text": "那整个在你们的这个token消耗中间，占到头部的几个比较主要的应用是哪一些？",
+      "source_segment_indexes": [
+        118
+      ],
+      "source_segment_ids": [
+        118
+      ]
+    },
+    {
+      "start": 656.401,
+      "end": 665.281,
+      "text": "确实是coding，然后是像我前面讲的，可能medical，可能co work，很多工作以我们的观察都重新被frame成了coding问题。",
+      "source_segment_indexes": [
+        119
+      ],
+      "source_segment_ids": [
+        119
+      ]
+    },
+    {
+      "start": 665.361,
+      "end": 682.561,
+      "text": "你们如果能找到某个行业有这个行业的vertical specific size application，就这个工具可能是解决vertical的某些特定的问题，那么这些工具会被转换成RL的靶子，然后他们会训练这些模型，熟悉的运用这些工具来解决这个vertical的问题。",
+      "source_segment_indexes": [
+        120
+      ],
+      "source_segment_ids": [
+        120
+      ]
+    },
+    {
+      "start": 682.721,
+      "end": 698.961,
+      "text": "原先我们确实没有想到，就是PowerPoint跟Excel其实它也是coding问题，因为你只要能把怎么用PowerPoint跟怎么用Excel转换成一个coding问题之后，所有现在已有的这些解决coding问题的工具都可以立刻被用上，然后也可以立刻tune一个比较好的vertical specific application。",
+      "source_segment_indexes": [
+        121
+      ],
+      "source_segment_ids": [
+        121
+      ]
+    },
+    {
+      "start": 699.361,
+      "end": 717.521,
+      "text": "所以确实我们看到绝大部分问题都被重新定义成了coding，啊如果不是coding的话，可能是deep research，就deep research跟coding可能是两个特别大的类别，然后各种各样小的类别会尝试找到就是我到底是deep research还是是coding还是两者兼有，然后尝试去把他们的vertical specific",
+      "source_segment_indexes": [
+        122
+      ],
+      "source_segment_ids": [
+        122
+      ]
+    },
+    {
+      "start": 717.727,
+      "end": 727.967,
+      "text": "SaaS agent跟他们tuned model编排到这个分类里面，有没有一个哪个方向，就是它可能现在的token消耗量没有那么多，但是实际上你们看到token的增长其实非常快的。",
+      "source_segment_indexes": [
+        123
+      ],
+      "source_segment_ids": [
+        123
+      ]
+    },
+    {
+      "start": 728.367,
+      "end": 749.087,
+      "text": "Co-work肯定是一个大的方向，就是我觉得大家现在绝大部分时间都花在照顾理科生上面，但其实这个是个非常反直觉的东西，就我反而觉得，就是现在我们看到很多例子都是照顾文科生的需求会越来越大，比如说各种slide呀、word呀什么，以及就是最近还有video gen这种东西都起来了，对吧？",
+      "source_segment_indexes": [
+        124
+      ],
+      "source_segment_ids": [
+        124
+      ]
+    },
+    {
+      "start": 749.567,
+      "end": 773.487,
+      "text": "就是其实绝大部分的工作最后可能还是偏服务于人，而很多这种coding啊，或者现在OpenAI很喜欢把数学的榜刷的很高，但是这个东西我不是很确定，就是它的意义在哪里，但是可能后面服务文科生co-work这个东西我们会做的很多，我们自己也做了，像我前面讲Filework Nexus，希望就是说可以把各个公司co-work给服务好。",
+      "source_segment_indexes": [
+        125
+      ],
+      "source_segment_ids": [
+        125
+      ]
+    },
+    {
+      "start": 773.647,
+      "end": 793.167,
+      "text": "然后我觉得就是之前我觉得确实一年半以前吧，就是当时Computer Use Agent出来的时候，我觉得当时惊为天人，就是我觉得哦所有人当当时那个那个词叫unhobbling，就是这个模型以后再也不需要搞各种各样乱七八糟的API调用了，它就可以直接用一个电脑，然后电脑里面什么活都干了，对吧？",
+      "source_segment_indexes": [
+        126
+      ],
+      "source_segment_ids": [
+        126
+      ]
+    },
+    {
+      "start": 793.487,
+      "end": 811.167,
+      "text": "但现在我觉得反过来了，就是一年半之后反过来，就Computer Use Agent相对来说可能是个偏小的vertical，然后绝大部分vertical都从文字那边走，所以其实你可以看到就是绝大部分成功的Chinese Open Source Model吧，可以这么说，就是Muse确实是一个multi-model，但是Chinese Open Source Model它可以做到很高的AR，",
+      "source_segment_indexes": [
+        127
+      ],
+      "source_segment_ids": [
+        127
+      ]
+    },
+    {
+      "start": 811.167,
+      "end": 821.327,
+      "text": "但它其实是纯文本的模型，确实因为绝大部分工作反而回到了纯文本，因为文本模型便宜，大家为了cut cost就把自己的工作流往文本那边靠。",
+      "source_segment_indexes": [
+        128
+      ],
+      "source_segment_ids": [
+        128
+      ]
+    },
+    {
+      "start": 821.647,
+      "end": 832.527,
+      "text": "但随着就是VM的价钱越来越便宜，大家把VM做的越来越好，我相信就Computer Use Agent还是很有前途的，只是说怎么把这条路径优化好，这个可能现在还是还在探索，对。",
+      "source_segment_indexes": [
+        129
+      ],
+      "source_segment_ids": [
+        129
+      ]
+    },
+    {
+      "start": 832.927,
+      "end": 837.327,
+      "text": "能否帮我们估算一下整个北美的客户在开源模型上的支出？",
+      "source_segment_indexes": [
+        130
+      ],
+      "source_segment_ids": [
+        130
+      ]
+    },
+    {
+      "start": 838.447,
+      "end": 845.407,
+      "text": "哇，这个有点难，这个我觉得你问analyst可能问我比较好一点，但我觉得就是说token比例我觉得可能容易一点。",
+      "source_segment_indexes": [
+        131
+      ],
+      "source_segment_ids": [
+        131
+      ]
+    },
+    {
+      "start": 845.967,
+      "end": 865.807,
+      "text": "我觉得看现在已经公开的那些router的榜啊，可能会有一些会影响判断，就是因为绝大部分他们那些公开的榜上面是被呃free traffic所影响的，比如说某些公司会做一些incentive，然后让大家免费的去用这个model在OpenRouter上面，会影响它那个看出来的比例。",
+      "source_segment_indexes": [
+        132
+      ],
+      "source_segment_ids": [
+        132
+      ]
+    },
+    {
+      "start": 866.127,
+      "end": 876.367,
+      "text": "呃，我其实经常也会跟我们公司沟通，就是我们确实做的还可以，比如说我们去年从一百个me做到一个b，但是其实Anthropic的增长是比我们快得多的，对吧？",
+      "source_segment_indexes": [
+        133
+      ],
+      "source_segment_ids": [
+        133
+      ]
+    },
+    {
+      "start": 876.527,
+      "end": 899.407,
+      "text": "他们已经可能七十七十个b了，所以就是说看token消耗量没有那么honest，因为Fable的消耗量跟呃DSE for Flash的消耗量是一样的，如果只看token数量，但是我觉得看revenue是最真实的，就是大家付费意愿还是往最好的方向去移动，就大家可能没有那么price sensitive，没有那么price sensitive的话，",
+      "source_segment_indexes": [
+        134
+      ],
+      "source_segment_ids": [
+        134
+      ]
+    },
+    {
+      "start": 899.407,
+      "end": 902.047,
+      "text": "就会永远付费给最好的那个model。",
+      "source_segment_indexes": [
+        135
+      ],
+      "source_segment_ids": [
+        135
+      ]
+    },
+    {
+      "start": 902.447,
+      "end": 916.447,
+      "text": "所以我们其实跟我们customer一起合作的时候，做这些specialized intelligence，绝大部分时候看的不一定是性价比，而就是绝对的最好，能不能这个task超过opus超过Fable是我们最重要的工作。",
+      "source_segment_indexes": [
+        136
+      ],
+      "source_segment_ids": [
+        136
+      ]
+    },
+    {
+      "start": 916.847,
+      "end": 928.447,
+      "text": "像比如我们跟DeepFirst合作的时候也是看最后效果能不能超opus，以foundation model为benchmark，以他们的revenue为benchmark，我觉得比较honest一点，呃，光看token消耗量我觉得有一点deceptive。",
+      "source_segment_indexes": [
+        137
+      ],
+      "source_segment_ids": [
+        137
+      ]
+    },
+    {
+      "start": 928.607,
+      "end": 936.127,
+      "text": "你觉得未来六个月这个数字，就是整个北美客户在开源模型上的这种支出或者token消耗量，它未来会有一些什么样的趋势？",
+      "source_segment_indexes": [
+        138
+      ],
+      "source_segment_ids": [
+        138
+      ]
+    },
+    {
+      "start": 936.367,
+      "end": 945.567,
+      "text": "我们坚信就开源消耗量会继续往上涨，然后我也相信我我对Filework是非常不委实，我觉得就是说我们肯定能把这个事情做好。",
+      "source_segment_indexes": [
+        139
+      ],
+      "source_segment_ids": [
+        139
+      ]
+    },
+    {
+      "start": 945.727,
+      "end": 952.767,
+      "text": "然后我觉得这个东西发生的同时呢，就是大家的付费意愿对于最好的模型可能也不会有太多的改变。",
+      "source_segment_indexes": [
+        140
+      ],
+      "source_segment_ids": [
+        140
+      ]
+    },
+    {
+      "start": 953.359,
+      "end": 965.199,
+      "text": "肯定会来越来越多人想要做最好的模型，所以我们会越来越努力跟更多人把 open source 的 customize model 做效果做的非常非常好，然后来 drive 更多的付费意愿。",
+      "source_segment_indexes": [
+        141
+      ],
+      "source_segment_ids": [
+        141
+      ]
+    },
+    {
+      "start": 965.439,
+      "end": 982.639,
+      "text": "然后具体这个比例，我觉得更取决于就是说有多少人有那个 conviction 去 customize open source model，因为很多人还是比较害怕，就是 customize 一个 model 可能 cost 很高，可能成功率没有那么高，这个我觉得就是很多人会担心的一件事情。",
+      "source_segment_indexes": [
+        142
+      ],
+      "source_segment_ids": [
+        142
+      ]
+    },
+    {
+      "start": 983.039,
+      "end": 990.959,
+      "text": "但我觉得就是说，如果越来越多人在 quality 上面跟 open AI 飞去竞争，那么开源模型的 traffic 会越来越大。",
+      "source_segment_indexes": [
+        143
+      ],
+      "source_segment_ids": [
+        143
+      ]
+    },
+    {
+      "start": 991.119,
+      "end": 994.959,
+      "text": "反之的话，可能就是闭源模型的 traffic 或者 AR 就越来越大。",
+      "source_segment_indexes": [
+        144
+      ],
+      "source_segment_ids": [
+        144
+      ]
+    },
+    {
+      "start": 995.119,
+      "end": 1000.399,
+      "text": "你们看到的北美客户，他们比如说在比较不同的开源模型，他们更会喜欢哪些开源模型呢？",
+      "source_segment_indexes": [
+        145
+      ],
+      "source_segment_ids": [
+        145
+      ]
+    },
+    {
+      "start": 1000.799,
+      "end": 1012.959,
+      "text": "国内四家我觉得都差不多，Kimi、GLM、MiniMax 跟 DeepSeek 这四家我觉得都很多，就是他们是轮轮着来的，因为就是看哪个人哪个公司 launch 了，然后他们 traffic 可能大一点。",
+      "source_segment_indexes": [
+        146
+      ],
+      "source_segment_ids": [
+        146
+      ]
+    },
+    {
+      "start": 1013.199,
+      "end": 1033.519,
+      "text": "然后前面其实我我忘讲了，前面忘讲了千问，对千问其实也很大，所以可能国内五家就是 Kimi、Glm、Qwen、MiniMax 跟 DeepSeek，然后这边可能是 NimoTron、Gemma，然后就是以前拉嘛，现在 Muse 这个可能比较多。",
+      "source_segment_indexes": [
+        147
+      ],
+      "source_segment_ids": [
+        147
+      ]
+    },
+    {
+      "start": 1033.919,
+      "end": 1035.039,
+      "text": "排名分不分先后的？",
+      "source_segment_indexes": [
+        148
+      ],
+      "source_segment_ids": [
+        148
+      ]
+    },
+    {
+      "start": 1035.519,
+      "end": 1047.439,
+      "text": "我觉得它排名很难讲，是因为其实说白了，现在就是谁有更新的，谁刚 launch，谁的 traffic 就上去，然后有一个新的 launch 之后，可能旧的 model traffic 就会下来，这个很难分。",
+      "source_segment_indexes": [
+        149
+      ],
+      "source_segment_ids": [
+        149
+      ]
+    },
+    {
+      "start": 1047.999,
+      "end": 1054.639,
+      "text": "然后但是就今天就比如说 August 2026，呃，肯定是 Kimi 的 traffic 是最大的。",
+      "source_segment_indexes": [
+        150
+      ],
+      "source_segment_ids": [
+        150
+      ]
+    },
+    {
+      "start": 1054.879,
+      "end": 1057.679,
+      "text": "从你们角度看，这个 coding 现在的渗透率怎么样？",
+      "source_segment_indexes": [
+        151
+      ],
+      "source_segment_ids": [
+        151
+      ]
+    },
+    {
+      "start": 1057.919,
+      "end": 1060.799,
+      "text": "特别开源模型的渗透率，我觉得最近还是偏低吧。",
+      "source_segment_indexes": [
+        152
+      ],
+      "source_segment_ids": [
+        152
+      ]
+    },
+    {
+      "start": 1060.879,
+      "end": 1067.839,
+      "text": "可能 Twitter 上面大家都觉得怎么说来着，就什么 open code 用 DSP4 永远用不完，什么这种笑话很多，对吧？",
+      "source_segment_indexes": [
+        153
+      ],
+      "source_segment_ids": [
+        153
+      ]
+    },
+    {
+      "start": 1067.919,
+      "end": 1074.399,
+      "text": "但是以我们的观察，就是说 closed code AR 或者 Codex AR 还是远远高过呃 closed source model AR 的。",
+      "source_segment_indexes": [
+        154
+      ],
+      "source_segment_ids": [
+        154
+      ]
+    },
+    {
+      "start": 1075.199,
+      "end": 1081.439,
+      "text": "所以我们公司最近在推 Fireworks Nexus，我们也希望就是能够把开源模型带到更多的公司里面。",
+      "source_segment_indexes": [
+        155
+      ],
+      "source_segment_ids": [
+        155
+      ]
+    },
+    {
+      "start": 1081.519,
+      "end": 1086.079,
+      "text": "确实这个工作很多时候本质上是 go to market，而不是一个 technical 的工作。",
+      "source_segment_indexes": [
+        156
+      ],
+      "source_segment_ids": [
+        156
+      ]
+    },
+    {
+      "start": 1086.239,
+      "end": 1089.999,
+      "text": "你怎么看 coding 市场的 total addressable market 的 time 有多大？",
+      "source_segment_indexes": [
+        157
+      ],
+      "source_segment_ids": [
+        157
+      ]
+    },
+    {
+      "start": 1090.079,
+      "end": 1091.039,
+      "text": "它的上限在哪里？",
+      "source_segment_indexes": [
+        158
+      ],
+      "source_segment_ids": [
+        158
+      ]
+    },
+    {
+      "start": 1091.119,
+      "end": 1093.279,
+      "text": "你觉得我们现在还是处在一个比较早期的一个阶段吗？",
+      "source_segment_indexes": [
+        159
+      ],
+      "source_segment_ids": [
+        159
+      ]
+    },
+    {
+      "start": 1093.519,
+      "end": 1102.399,
+      "text": "我觉得 time 这个问题可能得分钱跟 token 的消耗量，token 的数字肯定会一直一直往上涨，这个我非常坚信。",
+      "source_segment_indexes": [
+        160
+      ],
+      "source_segment_ids": [
+        160
+      ]
+    },
+    {
+      "start": 1102.559,
+      "end": 1106.879,
+      "text": "但是可能大家讲 time 的时候讲的都是 revenue，对吧？",
+      "source_segment_indexes": [
+        161
+      ],
+      "source_segment_ids": [
+        161
+      ]
+    },
+    {
+      "start": 1107.039,
+      "end": 1122.559,
+      "text": "Revenue 我觉得如果看到的观察到的方向是，比如说 Luna 要降价，Frontier 要降价，这些大家就是每天用的模型都在降价的话，它肯定会 drive 更多 consumption，但是它的 revenue 是往哪个方向走，现在不是很确定。",
+      "source_segment_indexes": [
+        162
+      ],
+      "source_segment_ids": [
+        162
+      ]
+    },
+    {
+      "start": 1122.799,
+      "end": 1126.159,
+      "text": "像比如说当年可能最值钱的公司是 General Electric，对吧？",
+      "source_segment_indexes": [
+        163
+      ],
+      "source_segment_ids": [
+        163
+      ]
+    },
+    {
+      "start": 1126.639,
+      "end": 1133.519,
+      "text": "但是可能大家都用上了电，最后最挣钱的公司也不一定是 General Electric，这个我觉得是比较难判断的一件事情。",
+      "source_segment_indexes": [
+        164
+      ],
+      "source_segment_ids": [
+        164
+      ]
+    },
+    {
+      "start": 1134.239,
+      "end": 1142.079,
+      "text": "每次一个比较强大的闭源模型上线之后，你们有没有看到平台上有一些客户自己做的 fine tuning 的模型就被洗出去了？",
+      "source_segment_indexes": [
+        165
+      ],
+      "source_segment_ids": [
+        165
+      ]
+    },
+    {
+      "start": 1142.319,
+      "end": 1144.319,
+      "text": "有一些可能是留下来，有一些洗出去了。",
+      "source_segment_indexes": [
+        166
+      ],
+      "source_segment_ids": [
+        166
+      ]
+    },
+    {
+      "start": 1144.319,
+      "end": 1147.199,
+      "text": "你觉得这两类 customer 他们之间最大区别是什么？",
+      "source_segment_indexes": [
+        167
+      ],
+      "source_segment_ids": [
+        167
+      ]
+    },
+    {
+      "start": 1147.439,
+      "end": 1155.519,
+      "text": "这个我觉得这样，就是去年确实洗出去的很多，呃，今年我觉得洗出去的很少，这个我觉得也是一个非常 positive 的 signal。",
+      "source_segment_indexes": [
+        168
+      ],
+      "source_segment_ids": [
+        168
+      ]
+    },
+    {
+      "start": 1155.579,
+      "end": 1160.319,
+      "text": "其实说实话，如果这些模型一直被洗出去的话，我们 AR 也不会呃增长这么快。",
+      "source_segment_indexes": [
+        169
+      ],
+      "source_segment_ids": [
+        169
+      ]
+    },
+    {
+      "start": 1160.639,
+      "end": 1168.399,
+      "text": "我们现在发现就是说，确实很多 vertical 它的前进的方向可能跟 Frontier Lab 前进的方向呃有点不一样了。",
+      "source_segment_indexes": [
+        170
+      ],
+      "source_segment_ids": [
+        170
+      ]
+    },
+    {
+      "start": 1169.199,
+      "end": 1175.519,
+      "text": "就是你把一个 vertical specific agent 做好，跟解决黎曼猜想可能是完全两种不同的工作。",
+      "source_segment_indexes": [
+        171
+      ],
+      "source_segment_ids": [
+        171
+      ]
+    },
+    {
+      "start": 1175.999,
+      "end": 1181.919,
+      "text": "但是 Frontier Lab 可能现在更在意的是能不能解决黎曼猜想，能不能制造出新的药，对吧？",
+      "source_segment_indexes": [
+        172
+      ],
+      "source_segment_ids": [
+        172
+      ]
+    },
+    {
+      "start": 1182.479,
+      "end": 1184.639,
+      "text": "这个是他们需要证明的事情。",
+      "source_segment_indexes": [
+        173
+      ],
+      "source_segment_ids": [
+        173
+      ]
+    },
+    {
+      "start": 1184.639,
+      "end": 1188.479,
+      "text": "然后我们看到越来越多 vertical size agent 他们的医疗做的越来越细。",
+      "source_segment_indexes": [
+        174
+      ],
+      "source_segment_ids": [
+        174
+      ]
+    },
+    {
+      "start": 1188.995,
+      "end": 1197.075,
+      "text": "他们洗数据的流程越来越细，这类工作确实我觉得还是对于开源模型的customization来说是很有意义的。",
+      "source_segment_indexes": [
+        175
+      ],
+      "source_segment_ids": [
+        175
+      ]
+    },
+    {
+      "start": 1197.475,
+      "end": 1208.595,
+      "text": "所以说，比如说像Harvey或者是Even Up这样的公司，如果说今天闭源模型的两家，如果说我要把资源全部都怼到法律应用这个vertical来，有没有可能去打败现在的Harvey跟Even Up？",
+      "source_segment_indexes": [
+        176
+      ],
+      "source_segment_ids": [
+        176
+      ]
+    },
+    {
+      "start": 1208.995,
+      "end": 1216.355,
+      "text": "肯定是可以的，但是这样的话就支撑不了他们一个T的估值了，这对他们来说肯定不是一个聪明的行为吧？",
+      "source_segment_indexes": [
+        177
+      ],
+      "source_segment_ids": [
+        177
+      ]
+    },
+    {
+      "start": 1216.515,
+      "end": 1226.755,
+      "text": "我坚信就是说这些vertical SaaS agent，他们evaluation做的很细，他们数据洗的很好，他们能够确保在他们认为正确的路径上前进。",
+      "source_segment_indexes": [
+        178
+      ],
+      "source_segment_ids": [
+        178
+      ]
+    },
+    {
+      "start": 1226.915,
+      "end": 1239.635,
+      "text": "然后我们经常开玩笑就讲这个就是jagged intelligence，就是他们在某一个方向上面做的很好，但是比如说他们train出来的model能不能解决黎曼猜想，我觉得是绝对不可能的。",
+      "source_segment_indexes": [
+        179
+      ],
+      "source_segment_ids": [
+        179
+      ]
+    },
+    {
+      "start": 1239.715,
+      "end": 1251.715,
+      "text": "但是对于一个AGI公司来说，他们如果做的一个model是一个jagged intelligence，那么他们可能就只能服务这个客户，而没有办法做到把一个模型可以做到服务很多很多人。",
+      "source_segment_indexes": [
+        180
+      ],
+      "source_segment_ids": [
+        180
+      ]
+    },
+    {
+      "start": 1252.035,
+      "end": 1265.715,
+      "text": "他们是需要有一个合理的分布，就是说我不能天天纠结于是不是跟Even Up或者Harvey的竞争关系是怎么样，我需要确保我把盘子里面所有的customer都照顾好。",
+      "source_segment_indexes": [
+        181
+      ],
+      "source_segment_ids": [
+        181
+      ]
+    },
+    {
+      "start": 1265.875,
+      "end": 1271.875,
+      "text": "就是他不能说我只做好川菜，或者我只做好粤菜，虽然很多师傅都是只做好一道菜，对吧？",
+      "source_segment_indexes": [
+        182
+      ],
+      "source_segment_ids": [
+        182
+      ]
+    },
+    {
+      "start": 1272.115,
+      "end": 1274.755,
+      "text": "然后只能做好那道菜的才会才敢收很多钱，对不对？",
+      "source_segment_indexes": [
+        183
+      ],
+      "source_segment_ids": [
+        183
+      ]
+    },
+    {
+      "start": 1275.075,
+      "end": 1280.755,
+      "text": "但是AGI公司要做的事情，我得把呃麦当劳做好，我得把所有人的口味给调好。",
+      "source_segment_indexes": [
+        184
+      ],
+      "source_segment_ids": [
+        184
+      ]
+    },
+    {
+      "start": 1281.075,
+      "end": 1294.755,
+      "text": "那么顶多是比如说我进中国的时候我把中国人的口味调好，我在美国的时候把美国人口味照顾好，但是我不可能说加州的口味跟Kentucky的口味我都改，那都改的话，其实我觉得它跟Innalo也没有什么本质差别。",
+      "source_segment_indexes": [
+        185
+      ],
+      "source_segment_ids": [
+        185
+      ]
+    },
+    {
+      "start": 1294.835,
+      "end": 1297.155,
+      "text": "对不起，我这个例子可能走的有点远了。",
+      "source_segment_indexes": [
+        186
+      ],
+      "source_segment_ids": [
+        186
+      ]
+    },
+    {
+      "start": 1297.475,
+      "end": 1308.755,
+      "text": "但就比如说Innalo，它是每天跟McDonald竞争没有问题，但它就是能把加州的跟Nevada这几个照顾好，它就能把大家口味照顾好，它就把这些牛肉都做好。",
+      "source_segment_indexes": [
+        187
+      ],
+      "source_segment_ids": [
+        187
+      ]
+    },
+    {
+      "start": 1309.235,
+      "end": 1318.755,
+      "text": "可能这个东西跟LM不是那么comparable，但就是说确实你要把所有人的口味照顾好，跟我把一个vertical的口味照顾好，那可能是两个不同的工作。",
+      "source_segment_indexes": [
+        188
+      ],
+      "source_segment_ids": [
+        188
+      ]
+    },
+    {
+      "start": 1318.995,
+      "end": 1327.075,
+      "text": "如果真的有个AGI公司能够把所有人的口味都照顾的很好，那么我相信它肯定能挣很多很多钱，只是现在我们还没有观察到这一点。",
+      "source_segment_indexes": [
+        189
+      ],
+      "source_segment_ids": [
+        189
+      ]
+    },
+    {
+      "start": 1327.555,
+      "end": 1331.635,
+      "text": "企业它在考虑闭源模型还是开源模型的时候，他们都权衡哪一些因素呢？",
+      "source_segment_indexes": [
+        190
+      ],
+      "source_segment_ids": [
+        190
+      ]
+    },
+    {
+      "start": 1331.875,
+      "end": 1353.635,
+      "text": "其实很很大的一个点是信任，就是说我们跟很多这些，因为我们既做Fireworks Nexus就是偏holding plan这种co work的工作，也做customized model，其实很大一部分信任就信任这个ecosystem能能够继续support呃接下来一两年需要做的事情，因为我们签合同的时候是要签一两年的合同，",
+      "source_segment_indexes": [
+        191
+      ],
+      "source_segment_ids": [
+        191
+      ]
+    },
+    {
+      "start": 1353.795,
+      "end": 1363.875,
+      "text": "所以他们想的时候是我跟Fireworks签合同，他不会在意就是说我们到底是不是个二道贩子，而是我们平台上面serve的model接下来一两年能不能fulfill它的requirement。",
+      "source_segment_indexes": [
+        192
+      ],
+      "source_segment_ids": [
+        192
+      ]
+    },
+    {
+      "start": 1364.595,
+      "end": 1381.555,
+      "text": "那这个信任的建立，我觉得是一个比较长期的过程，就是我们得跟更多的customer去沟通我们的success case，跟更多的customer去沟通我们到底哪里做的好，哪里做的不好，开源的好处不好是什么，就我们都非常transparent的去聊这件事情。",
+      "source_segment_indexes": [
+        193
+      ],
+      "source_segment_ids": [
+        193
+      ]
+    },
+    {
+      "start": 1381.715,
+      "end": 1394.115,
+      "text": "然后这个信任我觉得闭源模型建立的更好，因为他们每天可以在推特上面发我们又hack了某个公司的system，或者我们又把什么黎曼猜想给解出来了，对吧？",
+      "source_segment_indexes": [
+        194
+      ],
+      "source_segment_ids": [
+        194
+      ]
+    },
+    {
+      "start": 1394.115,
+      "end": 1409.155,
+      "text": "这个东西是他们做的更好的地方，所以我觉得其实就go to market的capability是最大的差别，就是开源模型以及开源模型公司的go to market capability是远弱于闭源模型的，大家的mindset绝大部分还是在闭源模型上面。",
+      "source_segment_indexes": [
+        195
+      ],
+      "source_segment_ids": [
+        195
+      ]
+    },
+    {
+      "start": 1409.955,
+      "end": 1414.355,
+      "text": "你觉得这些企业他们会考虑是在本地部署还是在云端上部署？",
+      "source_segment_indexes": [
+        196
+      ],
+      "source_segment_ids": [
+        196
+      ]
+    },
+    {
+      "start": 1414.835,
+      "end": 1429.635,
+      "text": "我们之前看到很多本地部署的例子，然后现在越来越多是云端部署，就是这个我觉得也是一个信任问题，就是说呃能不能把security做好，呃能不能在各种各样就是VPC上面就是把这一轮做好，这个是。",
+      "source_segment_indexes": [
+        197
+      ],
+      "source_segment_ids": [
+        197
+      ]
+    },
+    {
+      "start": 1430.042,
+      "end": 1431.082,
+      "text": "呃，本质是信任问题。",
+      "source_segment_indexes": [
+        198
+      ],
+      "source_segment_ids": [
+        198
+      ]
+    },
+    {
+      "start": 1431.322,
+      "end": 1441.722,
+      "text": "但是云端部署有个最好的点就在于 multi tenancy，就很多企业本身不一定能够 saturate 它自己的自己想要，比如想要租这么多 GPU，它可能 saturate 不了。",
+      "source_segment_indexes": [
+        199
+      ],
+      "source_segment_ids": [
+        199
+      ]
+    },
+    {
+      "start": 1441.962,
+      "end": 1447.082,
+      "text": "但是如果我们能够 aggregate 足够的 demand，那 saturate 这些 workload 是很容易的一件事情。",
+      "source_segment_indexes": [
+        200
+      ],
+      "source_segment_ids": [
+        200
+      ]
+    },
+    {
+      "start": 1447.562,
+      "end": 1456.602,
+      "text": "那么如果这个东西它的 cost 在大家的企业运行中占比的消耗越来越大，那么 multi tenancy 其实就是一个更好的行为。",
+      "source_segment_indexes": [
+        201
+      ],
+      "source_segment_ids": [
+        201
+      ]
+    },
+    {
+      "start": 1457.002,
+      "end": 1464.042,
+      "text": "大家就会希望就是说我可以走一个 multi tenent 的 setup 在 cloud 上面，然后我跟人一起 share 这个 cost，双方的 ROI 都会更好。",
+      "source_segment_indexes": [
+        202
+      ],
+      "source_segment_ids": [
+        202
+      ]
+    },
+    {
+      "start": 1464.442,
+      "end": 1470.522,
+      "text": "未来这个企业端的 AI 从现在比如说 POC 到真正的生产，它以后这个 adoption 的节奏会是什么样的？",
+      "source_segment_indexes": [
+        203
+      ],
+      "source_segment_ids": [
+        203
+      ]
+    },
+    {
+      "start": 1470.522,
+      "end": 1471.882,
+      "text": "关键的一些变量是什么？",
+      "source_segment_indexes": [
+        204
+      ],
+      "source_segment_ids": [
+        204
+      ]
+    },
+    {
+      "start": 1472.842,
+      "end": 1477.962,
+      "text": "我觉得可以多看就是这些 data company 的 AI 跟他们的 adoption。",
+      "source_segment_indexes": [
+        205
+      ],
+      "source_segment_ids": [
+        205
+      ]
+    },
+    {
+      "start": 1478.122,
+      "end": 1487.962,
+      "text": "我相信就是越来越多公司会采购 open source model，但是他们会需要 evaluation，他们会需要能够说服自己就是这个采购是合理的。",
+      "source_segment_indexes": [
+        206
+      ],
+      "source_segment_ids": [
+        206
+      ]
+    },
+    {
+      "start": 1488.442,
+      "end": 1500.602,
+      "text": "那么很多人其实没有那个 capability 去做这些 in house evaluation，那么就需要 third party，呃 data company 来进来帮他们把这些呃 evaluation 做好，他们还可以拿来做 fine tuning。",
+      "source_segment_indexes": [
+        207
+      ],
+      "source_segment_ids": [
+        207
+      ]
+    },
+    {
+      "start": 1500.762,
+      "end": 1507.322,
+      "text": "所以我觉得 data company 的呃 revenue diversification 跟 run rate 是一个呃我觉得很有意思的指标。",
+      "source_segment_indexes": [
+        208
+      ],
+      "source_segment_ids": [
+        208
+      ]
+    },
+    {
+      "start": 1507.482,
+      "end": 1517.562,
+      "text": "你会发现如果继续是这种大客户，就是这几个大的 lab，然后占他们大头的话，那可能反之就是 customer 能够做的事情的选择就越少。",
+      "source_segment_indexes": [
+        209
+      ],
+      "source_segment_ids": [
+        209
+      ]
+    },
+    {
+      "start": 1517.962,
+      "end": 1524.762,
+      "text": "那比如说你们看到企业从 POC 到生产这个过程中做失败的主要是你看到有哪些原因呢？",
+      "source_segment_indexes": [
+        210
+      ],
+      "source_segment_ids": [
+        210
+      ]
+    },
+    {
+      "start": 1525.002,
+      "end": 1529.322,
+      "text": "对，就是 eval 不清晰，特别容易就是呃 POC 做的不好。",
+      "source_segment_indexes": [
+        211
+      ],
+      "source_segment_ids": [
+        211
+      ]
+    },
+    {
+      "start": 1529.482,
+      "end": 1543.002,
+      "text": "我们之前聊的好几个就是说，其实我们都会大概问一下，就是说你们内部有什么样的 eval，然后虽然已经二零二六年，但是其实还是有不少人是 vibe 的，就是试一下效果好不好就 OK。",
+      "source_segment_indexes": [
+        212
+      ],
+      "source_segment_ids": [
+        212
+      ]
+    },
+    {
+      "start": 1543.162,
+      "end": 1550.122,
+      "text": "虽然这个东西可能它已经占到了它公司运营 cost center 就是很大的一个比例了，但它可能还是没有特别 rigorous 的 eval。",
+      "source_segment_indexes": [
+        213
+      ],
+      "source_segment_ids": [
+        213
+      ]
+    },
+    {
+      "start": 1550.362,
+      "end": 1555.482,
+      "text": "所以我觉得就是其实现在很多我经常跟人开玩笑，很多 engineer 还担心自己会失业。",
+      "source_segment_indexes": [
+        214
+      ],
+      "source_segment_ids": [
+        214
+      ]
+    },
+    {
+      "start": 1555.482,
+      "end": 1558.442,
+      "text": "我觉得就是能做 eval 的人真的少之又少。",
+      "source_segment_indexes": [
+        215
+      ],
+      "source_segment_ids": [
+        215
+      ]
+    },
+    {
+      "start": 1558.442,
+      "end": 1565.082,
+      "text": "这样大家如果有兴趣的话，可以多转一下怎么做 eval，教你老板到底能不能采购开源闭源的。",
+      "source_segment_indexes": [
+        216
+      ],
+      "source_segment_ids": [
+        216
+      ]
+    },
+    {
+      "start": 1565.162,
+      "end": 1570.842,
+      "text": "你可能把这个写把 eval 写好，把这个开源切到闭源的，就把你工资三五倍都省出来了。",
+      "source_segment_indexes": [
+        217
+      ],
+      "source_segment_ids": [
+        217
+      ]
+    },
+    {
+      "start": 1571.002,
+      "end": 1576.282,
+      "text": "这个是我觉得很多公司缺少的 muscle 吧，以及就是可能影响 POC 最大的一个最大的一个点。",
+      "source_segment_indexes": [
+        218
+      ],
+      "source_segment_ids": [
+        218
+      ]
+    },
+    {
+      "start": 1576.762,
+      "end": 1580.362,
+      "text": "所以你觉得这个 eval 的这个啊还有很多的这个 job 还没有被 fulfill？",
+      "source_segment_indexes": [
+        219
+      ],
+      "source_segment_ids": [
+        219
+      ]
+    },
+    {
+      "start": 1580.522,
+      "end": 1585.242,
+      "text": "我觉得就是新的 SaaS 公司跟旧的 SaaS 公司，我觉得差别甚至都不是特别大。",
+      "source_segment_indexes": [
+        220
+      ],
+      "source_segment_ids": [
+        220
+      ]
+    },
+    {
+      "start": 1585.242,
+      "end": 1605.162,
+      "text": "这可能是个暴论啊，但就是说以前的 SaaS 公司可能内部有一套 unit test，就是比如说我把一个 SQL 呃 engine 跑起来需要满足什么样的测试，现在可能是我作为一个 vertical SaaS company，我有一堆 eval，我把 agent deliver 出去之前它要满足什么样的 eval，就这个东西都是需要积累需要沉淀的，",
+      "source_segment_indexes": [
+        221
+      ],
+      "source_segment_ids": [
+        221
+      ]
+    },
+    {
+      "start": 1605.562,
+      "end": 1609.562,
+      "text": "然后需要大量的时间跟钱去把这个分布做好。",
+      "source_segment_indexes": [
+        222
+      ],
+      "source_segment_ids": [
+        222
+      ]
+    },
+    {
+      "start": 1609.642,
+      "end": 1620.362,
+      "text": "所以我觉得甚至我觉得差别都没有特别大吧，我觉得只是大家的工作可能慢慢从写测试转到写 eval，然后只是大家就多少人能多快的适应 transition 而已。",
+      "source_segment_indexes": [
+        223
+      ],
+      "source_segment_ids": [
+        223
+      ]
+    },
+    {
+      "start": 1620.762,
+      "end": 1624.442,
+      "text": "Fireworks 的两门生意，一个是推理优化，一个是定制模型。",
+      "source_segment_indexes": [
+        224
+      ],
+      "source_segment_ids": [
+        224
+      ]
+    },
+    {
+      "start": 1624.842,
+      "end": 1630.122,
+      "text": "那首先我们先看看第一门生意推理优化，想问问你们的推理优化的未来的空间有多大？",
+      "source_segment_indexes": [
+        225
+      ],
+      "source_segment_ids": [
+        225
+      ]
+    },
+    {
+      "start": 1630.922,
+      "end": 1634.122,
+      "text": "对我觉得推理优化还是有很很远的路要走的。",
+      "source_segment_indexes": [
+        226
+      ],
+      "source_segment_ids": [
+        226
+      ]
+    },
+    {
+      "start": 1634.122,
+      "end": 1646.362,
+      "text": "推理优化这个工作有很多特别细致的东西，比如说每次这个新的模型上线了之后，它一开始上线跟它最后的效果，大家优化了一年之后极致的效果差别很大。",
+      "source_segment_indexes": [
+        227
+      ],
+      "source_segment_ids": [
+        227
+      ]
+    },
+    {
+      "start": 1646.762,
+      "end": 1654.042,
+      "text": "对于我们来说，怎么缩短那个时间，确保就是一上线的时候它都能做到最好，这个是我们花了很多时间努力的地方。",
+      "source_segment_indexes": [
+        228
+      ],
+      "source_segment_ids": [
+        228
+      ]
+    },
+    {
+      "start": 1654.522,
+      "end": 1667.082,
+      "text": "然后还有比如说推理优化非常重要的一部分是怎么把缓存做好，就是缓存做好这个事情，其实本质上不一定在 serving runtime 本身，而是在你的 supporting infrastructure 能不能把它做好。",
+      "source_segment_indexes": [
+        229
+      ],
+      "source_segment_ids": [
+        229
+      ]
+    },
+    {
+      "start": 1667.482,
+      "end": 1669.242,
+      "text": "那这个缓存的事情，我们也。",
+      "source_segment_indexes": [
+        230
+      ],
+      "source_segment_ids": [
+        230
+      ]
+    },
+    {
+      "start": 1669.746,
+      "end": 1672.226,
+      "text": "会继续花越来越多的精力去做。",
+      "source_segment_indexes": [
+        231
+      ],
+      "source_segment_ids": [
+        231
+      ]
+    },
+    {
+      "start": 1672.386,
+      "end": 1678.946,
+      "text": "我觉得推理优化本质上还是一个非常怎么说呢，labor intensive 的工作吧，就是有很多可以做的事情。",
+      "source_segment_indexes": [
+        232
+      ],
+      "source_segment_ids": [
+        232
+      ]
+    },
+    {
+      "start": 1679.266,
+      "end": 1682.626,
+      "text": "相比模型提供的 API，你们的优化有什么优势呢？",
+      "source_segment_indexes": [
+        233
+      ],
+      "source_segment_ids": [
+        233
+      ]
+    },
+    {
+      "start": 1682.866,
+      "end": 1687.746,
+      "text": "很多时候就是我们因为优化的模型多，所以做的工作可能更细致一点。",
+      "source_segment_indexes": [
+        234
+      ],
+      "source_segment_ids": [
+        234
+      ]
+    },
+    {
+      "start": 1687.826,
+      "end": 1699.266,
+      "text": "比如说很多 OneP 的 API，它能做的事情是把它这个模型本身 serve 好，但是很多的非类 pattern 可能是我们从通过其他 serve 其他模型看到的东西。",
+      "source_segment_indexes": [
+        235
+      ],
+      "source_segment_ids": [
+        235
+      ]
+    },
+    {
+      "start": 1699.266,
+      "end": 1713.106,
+      "text": "就比如说我们可能跟很多开源模型厂商聊的时候，是会帮他们指出来，就是说有些东西他们没有测到，或者说有些 workload pattern 他们可能看的不多，然后是我们看的比较多的 workload pattern。",
+      "source_segment_indexes": [
+        236
+      ],
+      "source_segment_ids": [
+        236
+      ]
+    },
+    {
+      "start": 1713.346,
+      "end": 1719.826,
+      "text": "所以就是呃分布不一样吧，就他们可能要做一个比较大、比较全的一个 API。",
+      "source_segment_indexes": [
+        237
+      ],
+      "source_segment_ids": [
+        237
+      ]
+    },
+    {
+      "start": 1720.226,
+      "end": 1727.266,
+      "text": "但是比如说我们因为很多时候 serve 的是 customized model，那 customized model 上面 workload 的 traffic pattern 啊，可能都会不一样。",
+      "source_segment_indexes": [
+        238
+      ],
+      "source_segment_ids": [
+        238
+      ]
+    },
+    {
+      "start": 1727.826,
+      "end": 1731.106,
+      "text": "那么这时候需要做的优化的工作也会没有那么一样。",
+      "source_segment_indexes": [
+        239
+      ],
+      "source_segment_ids": [
+        239
+      ]
+    },
+    {
+      "start": 1731.586,
+      "end": 1741.106,
+      "text": "你们做的这个模型的路由，比如说是用这个闭源的 SOTA 模型，然后加开源模型的这样的一个组合，你们有讲到这个不仅是一个省成本的事情，而且是一个提高性能的事情。",
+      "source_segment_indexes": [
+        240
+      ],
+      "source_segment_ids": [
+        240
+      ]
+    },
+    {
+      "start": 1741.426,
+      "end": 1741.506,
+      "text": "对。",
+      "source_segment_indexes": [
+        241
+      ],
+      "source_segment_ids": [
+        241
+      ]
+    },
+    {
+      "start": 1741.586,
+      "end": 1746.546,
+      "text": "呃，特别是你们跟那个 Harvey 的联合的一个研究，我看在你们官网的 blog 上面，对对。",
+      "source_segment_indexes": [
+        242
+      ],
+      "source_segment_ids": [
+        242
+      ]
+    },
+    {
+      "start": 1746.546,
+      "end": 1753.906,
+      "text": "其中就讲到前沿模型平均每次任务只被请教 0.83 次，但是质量反超单独用最强的模型。",
+      "source_segment_indexes": [
+        243
+      ],
+      "source_segment_ids": [
+        243
+      ]
+    },
+    {
+      "start": 1754.386,
+      "end": 1757.666,
+      "text": "就是为什么多模型分工连任务的完成率都会更好呢？",
+      "source_segment_indexes": [
+        244
+      ],
+      "source_segment_ids": [
+        244
+      ]
+    },
+    {
+      "start": 1757.666,
+      "end": 1759.026,
+      "text": "这件事儿是怎么做到的？",
+      "source_segment_indexes": [
+        245
+      ],
+      "source_segment_ids": [
+        245
+      ]
+    },
+    {
+      "start": 1759.586,
+      "end": 1767.426,
+      "text": "因为就是工作的场景会影响 harness，而 harness 会影响什么时候应该调用什么样的模型。",
+      "source_segment_indexes": [
+        246
+      ],
+      "source_segment_ids": [
+        246
+      ]
+    },
+    {
+      "start": 1767.586,
+      "end": 1783.106,
+      "text": "具体 Harvey 那个例子，我记得是 Opus 作为 executor，然后 GLM 作为 advisor，然后这样的话可以把这个上下文特别长的工作拆解成一些上下文稍微短一点的工作。",
+      "source_segment_indexes": [
+        247
+      ],
+      "source_segment_ids": [
+        247
+      ]
+    },
+    {
+      "start": 1783.266,
+      "end": 1788.706,
+      "text": "这个本质上是因为大语言模型 context 长了之后，它的效果还是会降低。",
+      "source_segment_indexes": [
+        248
+      ],
+      "source_segment_ids": [
+        248
+      ]
+    },
+    {
+      "start": 1788.866,
+      "end": 1798.226,
+      "text": "所以如果有这个特性，已知有这个特性，然后已知就是说这个工作就是长文本，那么可能我们就可以在 harness 上面做一些改进。",
+      "source_segment_indexes": [
+        249
+      ],
+      "source_segment_ids": [
+        249
+      ]
+    },
+    {
+      "start": 1798.546,
+      "end": 1803.506,
+      "text": "harness 改进完了之后，就可以改进就是这个 harness，呃，具体的调度的模型的问题。",
+      "source_segment_indexes": [
+        250
+      ],
+      "source_segment_ids": [
+        250
+      ]
+    },
+    {
+      "start": 1803.666,
+      "end": 1809.826,
+      "text": "所以我觉得就每一个工作它用这个模型的时候用法都会不一样，都会有一些差别。",
+      "source_segment_indexes": [
+        251
+      ],
+      "source_segment_ids": [
+        251
+      ]
+    },
+    {
+      "start": 1810.226,
+      "end": 1812.786,
+      "text": "然后这些差别会导致我们怎么去做这个优化。",
+      "source_segment_indexes": [
+        252
+      ],
+      "source_segment_ids": [
+        252
+      ]
+    },
+    {
+      "start": 1812.946,
+      "end": 1817.826,
+      "text": "这个工作其实有的时候有点像以前大家在 CPU 上面做各种各样 performance optimization。",
+      "source_segment_indexes": [
+        253
+      ],
+      "source_segment_ids": [
+        253
+      ]
+    },
+    {
+      "start": 1817.826,
+      "end": 1831.506,
+      "text": "虽然大家的 code 看起来可能没有优化之前都长得差不多，但是为了熟悉这个 CPU 的特性，可能你需要去做各种各样拆解的工作，把它拆解成就是这个 CPU 喜欢的 workload。",
+      "source_segment_indexes": [
+        254
+      ],
+      "source_segment_ids": [
+        254
+      ]
+    },
+    {
+      "start": 1831.666,
+      "end": 1841.026,
+      "text": "那么这时候就是我们需要跟我们 customer 一起去 explore 的地方，就是说这个底下的模型，我们把它把它当成一个文本的 processor，它这个 processor 特性是什么？",
+      "source_segment_indexes": [
+        255
+      ],
+      "source_segment_ids": [
+        255
+      ]
+    },
+    {
+      "start": 1841.586,
+      "end": 1850.386,
+      "text": "然后根据它们特性，我们拆解一个 harness 出来，然后根据这个 harness 拆解完的效果，我们把放到最适合的模型到最适合的位置上面去。",
+      "source_segment_indexes": [
+        256
+      ],
+      "source_segment_ids": [
+        256
+      ]
+    },
+    {
+      "start": 1850.706,
+      "end": 1855.826,
+      "text": "从优化单 token 成本的角度，你觉得硬件的哪些配置还有优化的空间？",
+      "source_segment_indexes": [
+        257
+      ],
+      "source_segment_ids": [
+        257
+      ]
+    },
+    {
+      "start": 1856.786,
+      "end": 1865.026,
+      "text": "就比如 GPU 跟这个 HBM 的容量比，然后包括 CPU 跟 DRAM 的配比，然后 DRAM 和 NAND 的配比，HBM 的带宽，Scale Up 带宽。",
+      "source_segment_indexes": [
+        258
+      ],
+      "source_segment_ids": [
+        258
+      ]
+    },
+    {
+      "start": 1865.266,
+      "end": 1869.026,
+      "text": "这个问题特别的 specific 啊，我想想怎么回答这个问题。",
+      "source_segment_indexes": [
+        259
+      ],
+      "source_segment_ids": [
+        259
+      ]
+    },
+    {
+      "start": 1869.746,
+      "end": 1882.866,
+      "text": "就是我觉得对这个问题感兴趣的人可以看一下，应该是两三个月前就 Darch Patel 他有一个黑板教课的视频，那个视频里面他请了一个人来讲解，就是 GPU 构造啊什么之类。",
+      "source_segment_indexes": [
+        260
+      ],
+      "source_segment_ids": [
+        260
+      ]
+    },
+    {
+      "start": 1882.866,
+      "end": 1892.466,
+      "text": "但其实它里面有个更很重要的数字，就它那个数字是没有 dimension 的，但是本质上就是 compute 跟 memory 的比例 ratio 本身是没有 dimension 的嘛？",
+      "source_segment_indexes": [
+        261
+      ],
+      "source_segment_ids": [
+        261
+      ]
+    },
+    {
+      "start": 1892.466,
+      "end": 1903.506,
+      "text": "但就是说每个硬件它有不同的比例，会影响每个模型设计的时候，它 train 这个模型之前，它就会想我这个模型在什么样硬件上面 serve。",
+      "source_segment_indexes": [
+        262
+      ],
+      "source_segment_ids": [
+        262
+      ]
+    },
+    {
+      "start": 1903.586,
+      "end": 1908.306,
+      "text": "我确定了我大概在什么样硬件上面 serve 之后，我会改我的 model architecture。",
+      "source_segment_indexes": [
+        263
+      ],
+      "source_segment_ids": [
+        263
+      ]
+    },
+    {
+      "start": 1908.711,
+      "end": 1919.991,
+      "text": "所以绝大部分时候，我们问就是说硬件能怎么改的时候，忽略了就是绝大部分模型train的时候就是为了serve在现有的NVIDIA硬件上面的或者AMD硬件上面的。",
+      "source_segment_indexes": [
+        264
+      ],
+      "source_segment_ids": [
+        264
+      ]
+    },
+    {
+      "start": 1920.471,
+      "end": 1934.151,
+      "text": "然后AMD、NVIDIA他们的比例差不多嘛，所以导致了你可能很快的可以把一个NVIDIA serve的model放到AMD上面，但是你可能放到ASIC上面就要花很大很大的力气，因为它那个比例就是不一样的，它的硬件特性就是不一样的。",
+      "source_segment_indexes": [
+        265
+      ],
+      "source_segment_ids": [
+        265
+      ]
+    },
+    {
+      "start": 1934.951,
+      "end": 1958.471,
+      "text": "但是就是说反过来，如果某一些人可以找到就是特别特别便宜的hardware，然后这个hardware它可能能提供类似的比例，但是可能比例也不一样也OK，但比较类似的flops，然后incentivize这些做模型的人去overfit到他这个卡上面的话，那么其实这个问题就反过来的，就是说我怎么样能够提供足够好的incentive让大家来overfit到我的硬件上面？",
+      "source_segment_indexes": [
+        266
+      ],
+      "source_segment_ids": [
+        266
+      ]
+    },
+    {
+      "start": 1958.871,
+      "end": 1962.871,
+      "text": "那首先可能这个卡的量要大，其次这个卡的ecosystem要好。",
+      "source_segment_indexes": [
+        267
+      ],
+      "source_segment_ids": [
+        267
+      ]
+    },
+    {
+      "start": 1963.511,
+      "end": 1969.751,
+      "text": "所以就是我可能没有直接回答你这个问题，就是说这个硬件应该怎么改，还有什么空间来优化？",
+      "source_segment_indexes": [
+        268
+      ],
+      "source_segment_ids": [
+        268
+      ]
+    },
+    {
+      "start": 1970.071,
+      "end": 1971.831,
+      "text": "我觉得老黄之前讲的特别好的一个点是什么？",
+      "source_segment_indexes": [
+        269
+      ],
+      "source_segment_ids": [
+        269
+      ]
+    },
+    {
+      "start": 1971.831,
+      "end": 1977.351,
+      "text": "就是说他开玩笑讲，你现在只要有电，你不买我的卡，你甚至会亏的底儿掉。",
+      "source_segment_indexes": [
+        270
+      ],
+      "source_segment_ids": [
+        270
+      ]
+    },
+    {
+      "start": 1978.231,
+      "end": 1983.111,
+      "text": "就他的点在于就是说买这个卡甚至是cost neutral的，因为它很快能把这个钱挣回来。",
+      "source_segment_indexes": [
+        271
+      ],
+      "source_segment_ids": [
+        271
+      ]
+    },
+    {
+      "start": 1983.671,
+      "end": 1989.751,
+      "text": "其他卡可能没有这个特性，导致了就是说我去overfit其他的卡，可能我没有办法把这个钱挣回来。",
+      "source_segment_indexes": [
+        272
+      ],
+      "source_segment_ids": [
+        272
+      ]
+    },
+    {
+      "start": 1990.151,
+      "end": 1997.671,
+      "text": "那么这时候可能问的问题不是我这个scale up ratio应该是多少，我这个要不要用HBM还是不用HBM，对吧？",
+      "source_segment_indexes": [
+        273
+      ],
+      "source_segment_ids": [
+        273
+      ]
+    },
+    {
+      "start": 1997.671,
+      "end": 1999.991,
+      "text": "甚至NVIDIA可能自己都不用HBM。",
+      "source_segment_indexes": [
+        274
+      ],
+      "source_segment_ids": [
+        274
+      ]
+    },
+    {
+      "start": 1999.991,
+      "end": 2022.631,
+      "text": "那可能要问的问题是我能不能找到一个卡，它能把绝大部分上游价钱合理的东西都整合到一起，然后通过各种各样的incentive program以及把各种各样呃软件的ecosystem都搭好，来incentivize大家overfit到我这个卡上面，特别serve的时候overfit到这个卡上面，能够做这个incentive的人，",
+      "source_segment_indexes": [
+        275
+      ],
+      "source_segment_ids": [
+        275
+      ]
+    },
+    {
+      "start": 2023.111,
+      "end": 2027.351,
+      "text": "我觉得不管他最后这个ratio有多么的奇怪，他最后都能成功。",
+      "source_segment_indexes": [
+        276
+      ],
+      "source_segment_ids": [
+        276
+      ]
+    },
+    {
+      "start": 2027.831,
+      "end": 2033.111,
+      "text": "但是如果做不到这个incentive的人，可能他ratio跟NVIDIA长得一模一样，他最后也不能成功。",
+      "source_segment_indexes": [
+        277
+      ],
+      "source_segment_ids": [
+        277
+      ]
+    },
+    {
+      "start": 2033.671,
+      "end": 2039.111,
+      "text": "另外一个我们讲讲一下这个定制化的模型，什么样的企业它需要定制，什么样的不需要？",
+      "source_segment_indexes": [
+        278
+      ],
+      "source_segment_ids": [
+        278
+      ]
+    },
+    {
+      "start": 2039.111,
+      "end": 2041.431,
+      "text": "就是这条标准线是怎么决定的？",
+      "source_segment_indexes": [
+        279
+      ],
+      "source_segment_ids": [
+        279
+      ]
+    },
+    {
+      "start": 2041.751,
+      "end": 2048.791,
+      "text": "我觉得vertical SaaS company可能定制会好一些，具体的end consumer我们不建议去定制。",
+      "source_segment_indexes": [
+        280
+      ],
+      "source_segment_ids": [
+        280
+      ]
+    },
+    {
+      "start": 2049.191,
+      "end": 2065.031,
+      "text": "比如说我们前面讲的Documely，Haley，他们跟医院去接触，他们知道比如说有十万个医院，他们的需求是什么，那么他就能把这个医疗做好，能够确保这个医疗能够cover各种各样的不同的case，他们就有能力去做一个fine tune。",
+      "source_segment_indexes": [
+        281
+      ],
+      "source_segment_ids": [
+        281
+      ]
+    },
+    {
+      "start": 2065.271,
+      "end": 2072.391,
+      "text": "或者说Harvey可能support各种各样的律所，那各种各样的律所都能cover到，它的医疗就会比较全，它就可以fine tune一个model。",
+      "source_segment_indexes": [
+        282
+      ],
+      "source_segment_ids": [
+        282
+      ]
+    },
+    {
+      "start": 2072.711,
+      "end": 2078.871,
+      "text": "而具体到每个医院或者每个legal practice本身的话，我觉得要去做一些customized model还是特别特别难的。",
+      "source_segment_indexes": [
+        283
+      ],
+      "source_segment_ids": [
+        283
+      ]
+    },
+    {
+      "start": 2079.271,
+      "end": 2087.031,
+      "text": "他们可能更适合就是把工作流固化到一个skill上面啊，或者说写一些内部的工具啊，这个agent啊，这个可能更适合一点。",
+      "source_segment_indexes": [
+        284
+      ],
+      "source_segment_ids": [
+        284
+      ]
+    },
+    {
+      "start": 2087.831,
+      "end": 2092.951,
+      "text": "在这种企业化定制RL的这种项目里面，最花时间、最花钱的是哪一部分？",
+      "source_segment_indexes": [
+        285
+      ],
+      "source_segment_ids": [
+        285
+      ]
+    },
+    {
+      "start": 2093.511,
+      "end": 2097.431,
+      "text": "呃，GPU肯定是消耗大头，然后还有一部分就是data。",
+      "source_segment_indexes": [
+        286
+      ],
+      "source_segment_ids": [
+        286
+      ]
+    },
+    {
+      "start": 2098.151,
+      "end": 2112.391,
+      "text": "然后跟train的时候，我们也需要跟我们customer一起去做，就是看这个data有没有reward hacking behavior啊，看着data它的就environment stability啊，然后怎么样去scale up这个environment，呃，这些东西我们都会跟我们customer一起去看。",
+      "source_segment_indexes": [
+        287
+      ],
+      "source_segment_ids": [
+        287
+      ]
+    },
+    {
+      "start": 2112.551,
+      "end": 2115.591,
+      "text": "那在整个做定制化RL的话，它需要什么样的数据量？",
+      "source_segment_indexes": [
+        288
+      ],
+      "source_segment_ids": [
+        288
+      ]
+    },
+    {
+      "start": 2115.991,
+      "end": 2117.751,
+      "text": "可能上千个environment就可以了。",
+      "source_segment_indexes": [
+        289
+      ],
+      "source_segment_ids": [
+        289
+      ]
+    },
+    {
+      "start": 2117.911,
+      "end": 2119.031,
+      "text": "所以只要上千条，不用。",
+      "source_segment_indexes": [
+        290
+      ],
+      "source_segment_ids": [
+        290
+      ]
+    },
+    {
+      "start": 2119.031,
+      "end": 2119.431,
+      "text": "对对对。",
+      "source_segment_indexes": [
+        291
+      ],
+      "source_segment_ids": [
+        291
+      ]
+    },
+    {
+      "start": 2119.511,
+      "end": 2120.151,
+      "text": "这是为什么呢？",
+      "source_segment_indexes": [
+        292
+      ],
+      "source_segment_ids": [
+        292
+      ]
+    },
+    {
+      "start": 2120.151,
+      "end": 2121.671,
+      "text": "为什么数据量不用那么多？",
+      "source_segment_indexes": [
+        293
+      ],
+      "source_segment_ids": [
+        293
+      ]
+    },
+    {
+      "start": 2121.911,
+      "end": 2128.551,
+      "text": "啊，因为RL整个过程中这个模型会一直去探索，所以它生成的量会远大于这几千个。",
+      "source_segment_indexes": [
+        294
+      ],
+      "source_segment_ids": [
+        294
+      ]
+    },
+    {
+      "start": 2129.031,
+      "end": 2137.031,
+      "text": "比如说我可能每一个step它reward假设比如说一百二十八，那么可能一千条数据会生成一百二十八K的数据，对吧？",
+      "source_segment_indexes": [
+        295
+      ],
+      "source_segment_ids": [
+        295
+      ]
+    },
+    {
+      "start": 2137.591,
+      "end": 2143.671,
+      "text": "那这个量其实会随着environment的，就它可能不需要那么多environment，它也会有很大的量的数据去。",
+      "source_segment_indexes": [
+        296
+      ],
+      "source_segment_ids": [
+        296
+      ]
+    },
+    {
+      "start": 2144.036,
+      "end": 2146.676,
+      "text": "教这个模型，就是说哪个是对的，哪个是错的。",
+      "source_segment_indexes": [
+        297
+      ],
+      "source_segment_ids": [
+        297
+      ]
+    },
+    {
+      "start": 2146.916,
+      "end": 2150.276,
+      "text": "那比如说一个客户的模型上线之后，他未来需不需要回炉？",
+      "source_segment_indexes": [
+        298
+      ],
+      "source_segment_ids": [
+        298
+      ]
+    },
+    {
+      "start": 2150.596,
+      "end": 2160.756,
+      "text": "回炉是需要，就比如说有新的模型launch了之后，我们都会帮他rebase，然后这个rebase的过程可能没有那么长了，就是只要他这个eval固固定下来就没有那么长。",
+      "source_segment_indexes": [
+        299
+      ],
+      "source_segment_ids": [
+        299
+      ]
+    },
+    {
+      "start": 2160.756,
+      "end": 2167.396,
+      "text": "但是the customer都会想要加一些新的eval进来啊，他有新的workload进来，他想要push for harder task，对吧？",
+      "source_segment_indexes": [
+        300
+      ],
+      "source_segment_ids": [
+        300
+      ]
+    },
+    {
+      "start": 2167.716,
+      "end": 2174.116,
+      "text": "那这时候可能就会还是会需要一些customization work，但是就只要这个eval固化了，rebase是很快的一件事情。",
+      "source_segment_indexes": [
+        301
+      ],
+      "source_segment_ids": [
+        301
+      ]
+    },
+    {
+      "start": 2174.516,
+      "end": 2176.676,
+      "text": "那这个回炉的节奏大概是怎么怎么样的？",
+      "source_segment_indexes": [
+        302
+      ],
+      "source_segment_ids": [
+        302
+      ]
+    },
+    {
+      "start": 2176.916,
+      "end": 2179.316,
+      "text": "depend on open source model release cycle，对。",
+      "source_segment_indexes": [
+        303
+      ],
+      "source_segment_ids": [
+        303
+      ]
+    },
+    {
+      "start": 2179.476,
+      "end": 2183.396,
+      "text": "下面想跟你探讨一下，就是Fireworks的核心竞争力的问题。",
+      "source_segment_indexes": [
+        304
+      ],
+      "source_segment_ids": [
+        304
+      ]
+    },
+    {
+      "start": 2183.556,
+      "end": 2196.036,
+      "text": "帮企业进行开源模型的部署需要三块能力，一个是硬件算力，比如说像NVIDIA、Scaleway这样的公司；另外一块就是像你们这样做软件优化的公司；第三个是Palantir这样有客户关系的公司。",
+      "source_segment_indexes": [
+        305
+      ],
+      "source_segment_ids": [
+        305
+      ]
+    },
+    {
+      "start": 2196.356,
+      "end": 2206.116,
+      "text": "那我们现在看到的是一些硬件算力的公司，他们现在在并购一些软件能力，比如说RLS Service这样的公司以及做推理优化的公司。",
+      "source_segment_indexes": [
+        306
+      ],
+      "source_segment_ids": [
+        306
+      ]
+    },
+    {
+      "start": 2206.356,
+      "end": 2208.036,
+      "text": "你们如何保持自己的护城河？",
+      "source_segment_indexes": [
+        307
+      ],
+      "source_segment_ids": [
+        307
+      ]
+    },
+    {
+      "start": 2208.116,
+      "end": 2210.596,
+      "text": "你们会去拥有重资产去买GPU吗？",
+      "source_segment_indexes": [
+        308
+      ],
+      "source_segment_ids": [
+        308
+      ]
+    },
+    {
+      "start": 2210.996,
+      "end": 2215.156,
+      "text": "我觉得就是说前面有几个，第一个就是说Fireworks会不会自己做硬件？",
+      "source_segment_indexes": [
+        309
+      ],
+      "source_segment_ids": [
+        309
+      ]
+    },
+    {
+      "start": 2215.156,
+      "end": 2224.836,
+      "text": "这个现在肯定是没有这个想法的，就是我们可能更偏二房东的这种set up，所以就是还是想把就软件这一层做好。",
+      "source_segment_indexes": [
+        310
+      ],
+      "source_segment_ids": [
+        310
+      ]
+    },
+    {
+      "start": 2225.396,
+      "end": 2240.676,
+      "text": "就我们还是相信就是呃把compute layer做好是有价值的，以及就是说我们跟各个公司可能差别在于，就是我们真的是相信specialized intelligence，然后我们真的是往customized model那边去移动的。",
+      "source_segment_indexes": [
+        311
+      ],
+      "source_segment_ids": [
+        311
+      ]
+    },
+    {
+      "start": 2240.996,
+      "end": 2246.916,
+      "text": "我们绝大部分traffic也都不是vanilla base model，都是customized model，这个可能跟其他公司就不一样。",
+      "source_segment_indexes": [
+        312
+      ],
+      "source_segment_ids": [
+        312
+      ]
+    },
+    {
+      "start": 2247.316,
+      "end": 2252.356,
+      "text": "比如说NVIDIA或者什么其他云公司，它可能绝大部分traffic还是base model。",
+      "source_segment_indexes": [
+        313
+      ],
+      "source_segment_ids": [
+        313
+      ]
+    },
+    {
+      "start": 2252.836,
+      "end": 2262.276,
+      "text": "那base model我觉得这个呃生意竞争还是挺激烈的，但是我们是坚信就是说绝大部分的profit是在效果好的model上面。",
+      "source_segment_indexes": [
+        314
+      ],
+      "source_segment_ids": [
+        314
+      ]
+    },
+    {
+      "start": 2262.836,
+      "end": 2270.836,
+      "text": "那么效果好的model，我们的customer才有能力去charge更多的钱，因为他们能deliver这些result，那么我们intern才能分到更多的钱。",
+      "source_segment_indexes": [
+        315
+      ],
+      "source_segment_ids": [
+        315
+      ]
+    },
+    {
+      "start": 2270.996,
+      "end": 2277.636,
+      "text": "所以我们是坚信customized intelligence，我们是坚信把training做好，这个客户inference才能有钱赚。",
+      "source_segment_indexes": [
+        316
+      ],
+      "source_segment_ids": [
+        316
+      ]
+    },
+    {
+      "start": 2278.036,
+      "end": 2295.156,
+      "text": "然后我们跟其他就是RLS Service的company可能不一样点在于，就是很多RLS Service company要么只做training，要么只做consulting，他们的incentive跟customer没有那么aligned的点在于，就是说我们可能training要的只是他们效果好，可能不需要挣那么多，",
+      "source_segment_indexes": [
+        317
+      ],
+      "source_segment_ids": [
+        317
+      ]
+    },
+    {
+      "start": 2295.636,
+      "end": 2298.516,
+      "text": "但是我们希望他inference的traffic能够一直能上来。",
+      "source_segment_indexes": [
+        318
+      ],
+      "source_segment_ids": [
+        318
+      ]
+    },
+    {
+      "start": 2298.996,
+      "end": 2304.916,
+      "text": "所以我们incentive跟它aligned在于，他们通过inference能挣钱，我们通过他们挣的钱能分一点回来。",
+      "source_segment_indexes": [
+        319
+      ],
+      "source_segment_ids": [
+        319
+      ]
+    },
+    {
+      "start": 2304.996,
+      "end": 2309.396,
+      "text": "如果是个consulting company或者是一个pure呃training infrastructure company呢？",
+      "source_segment_indexes": [
+        320
+      ],
+      "source_segment_ids": [
+        320
+      ]
+    },
+    {
+      "start": 2309.556,
+      "end": 2319.307,
+      "text": "我觉得他们能做的有限，因为他们incentive跟customer success没有那么aligned，因为我们是aligned towards他们inference traffic，而他们aligned towards他们training traffic。",
+      "source_segment_indexes": [
+        321
+      ],
+      "source_segment_ids": [
+        321
+      ]
+    },
+    {
+      "start": 2319.476,
+      "end": 2326.516,
+      "text": "所以我觉得就是真正的竞争对手可能不在于New Cloud跟现在的这些provider，而是在于CSP。",
+      "source_segment_indexes": [
+        322
+      ],
+      "source_segment_ids": [
+        322
+      ]
+    },
+    {
+      "start": 2326.836,
+      "end": 2334.836,
+      "text": "就CSP是有能力，像我前面讲把整个链条都做起来的，他们既能做RLS Service活，又可以把inference做好。",
+      "source_segment_indexes": [
+        323
+      ],
+      "source_segment_ids": [
+        323
+      ]
+    },
+    {
+      "start": 2335.156,
+      "end": 2340.596,
+      "text": "所以其实我们更多时候可能看的是CSP的能力，以及就是跟CSP怎么去partner。",
+      "source_segment_indexes": [
+        324
+      ],
+      "source_segment_ids": [
+        324
+      ]
+    },
+    {
+      "start": 2340.756,
+      "end": 2343.876,
+      "text": "这个我觉得他们才是怎么说通关的大boss吧？",
+      "source_segment_indexes": [
+        325
+      ],
+      "source_segment_ids": [
+        325
+      ]
+    },
+    {
+      "start": 2344.196,
+      "end": 2352.836,
+      "text": "就是可能我们不是就具体跟NVIDIA或者什么New Cloud这个可能，他因为他们人人力有限，他们想要把整个链条做起来，我觉得是个很困难的事情。",
+      "source_segment_indexes": [
+        326
+      ],
+      "source_segment_ids": [
+        326
+      ]
+    },
+    {
+      "start": 2353.236,
+      "end": 2358.516,
+      "text": "你们跟CSP的话，这个又是竞争又是合作，竞合关系，那你们怎么保持你们的护城河呢？",
+      "source_segment_indexes": [
+        327
+      ],
+      "source_segment_ids": [
+        327
+      ]
+    },
+    {
+      "start": 2358.916,
+      "end": 2360.436,
+      "text": "这个问题可能有点难回答啊。",
+      "source_segment_indexes": [
+        328
+      ],
+      "source_segment_ids": [
+        328
+      ]
+    },
+    {
+      "start": 2360.836,
+      "end": 2370.516,
+      "text": "就是说呃确实我们跟Azure是合作的最紧密的，我们在Azure上面是One P，就是说可以直接买Azure的credit，买Microsoft Azure的credit，然后就可以得到Fireworks的服务。",
+      "source_segment_indexes": [
+        329
+      ],
+      "source_segment_ids": [
+        329
+      ]
+    },
+    {
+      "start": 2370.996,
+      "end": 2376.756,
+      "text": "所以我们跟Azure确实合作比较紧密，然后我们也跟呃AWS跟GCP都有合作。",
+      "source_segment_indexes": [
+        330
+      ],
+      "source_segment_ids": [
+        330
+      ]
+    },
+    {
+      "start": 2377.076,
+      "end": 2380.996,
+      "text": "所以说你们的就是推理优化是会比他们CSP自己的团队里要做的更好？",
+      "source_segment_indexes": [
+        331
+      ],
+      "source_segment_ids": [
+        331
+      ]
+    },
+    {
+      "start": 2380.996,
+      "end": 2382.116,
+      "text": "至少目前是的，对。",
+      "source_segment_indexes": [
+        332
+      ],
+      "source_segment_ids": [
+        332
+      ]
+    },
+    {
+      "start": 2382.676,
+      "end": 2386.916,
+      "text": "但我觉得就是说具体推理优化做的好与坏，呃我没有那么。",
+      "source_segment_indexes": [
+        333
+      ],
+      "source_segment_ids": [
+        333
+      ]
+    },
+    {
+      "start": 2387.9,
+      "end": 2395.82,
+      "text": "担心您问我的话，就是说，其实 CSP 整个链条做下来，他们这个能力很强，因为他们也做过这些事情。",
+      "source_segment_indexes": [
+        334
+      ],
+      "source_segment_ids": [
+        334
+      ]
+    },
+    {
+      "start": 2396.3,
+      "end": 2405.02,
+      "text": "然后我们可能更在意的就是把整个呃 ML ops 这个这个 cycle 给走完，这个 developer lifecycle 我们希望体验比较好。",
+      "source_segment_indexes": [
+        335
+      ],
+      "source_segment_ids": [
+        335
+      ]
+    },
+    {
+      "start": 2405.42,
+      "end": 2411.18,
+      "text": "这个我觉得是 CSP 更能做到的事情，versus 现在有的这些 new cloud 可能做的没那么全。",
+      "source_segment_indexes": [
+        336
+      ],
+      "source_segment_ids": [
+        336
+      ]
+    },
+    {
+      "start": 2411.74,
+      "end": 2413.18,
+      "text": "所以你们的核心竞争力是？",
+      "source_segment_indexes": [
+        337
+      ],
+      "source_segment_ids": [
+        337
+      ]
+    },
+    {
+      "start": 2413.5,
+      "end": 2420.3,
+      "text": "对，可能就是比 CSP 做的更好的点在于，整个 developer lifecycle 做的比较好。",
+      "source_segment_indexes": [
+        338
+      ],
+      "source_segment_ids": [
+        338
+      ]
+    },
+    {
+      "start": 2420.78,
+      "end": 2428.06,
+      "text": "然后跟 new cloud 的竞争可能相对于就是说我们能做的链条更长，他们可能 serve 更多是 base model。",
+      "source_segment_indexes": [
+        339
+      ],
+      "source_segment_ids": [
+        339
+      ]
+    },
+    {
+      "start": 2428.46,
+      "end": 2440.06,
+      "text": "比如说我们现在都聊的这个 recursive super intelligence，如果说 RSI 实现了 kernel 的优化呀、推理的优化以及这个训练 post training 都可以全都自动化了，那你们的核心竞争力在哪里？",
+      "source_segment_indexes": [
+        340
+      ],
+      "source_segment_ids": [
+        340
+      ]
+    },
+    {
+      "start": 2441.1,
+      "end": 2443.74,
+      "text": "AGI 是一个特别难预测的事情。",
+      "source_segment_indexes": [
+        341
+      ],
+      "source_segment_ids": [
+        341
+      ]
+    },
+    {
+      "start": 2444.14,
+      "end": 2449.34,
+      "text": "要是真的有个 AGI 能把上面所有的活都干好，我觉得确实没什么核心竞争力。",
+      "source_segment_indexes": [
+        342
+      ],
+      "source_segment_ids": [
+        342
+      ]
+    },
+    {
+      "start": 2449.74,
+      "end": 2460.62,
+      "text": "我觉得难点的在于就是，就算是 AGI 之后也需要跟客户聊需求吧，就是他在一个 lab 里面能不能把客户的需求都想出来，这个是很困难的事情。",
+      "source_segment_indexes": [
+        343
+      ],
+      "source_segment_ids": [
+        343
+      ]
+    },
+    {
+      "start": 2460.94,
+      "end": 2468.46,
+      "text": "那客户需求这个东西如果没有办法通过 RSI 来获得的话，我觉得 RSI 可能成长的呃也有限。",
+      "source_segment_indexes": [
+        344
+      ],
+      "source_segment_ids": [
+        344
+      ]
+    },
+    {
+      "start": 2468.94,
+      "end": 2473.42,
+      "text": "就他确实可能能解决黎曼猜想，但是我不确定他能不能解决客户需求。",
+      "source_segment_indexes": [
+        345
+      ],
+      "source_segment_ids": [
+        345
+      ]
+    },
+    {
+      "start": 2473.9,
+      "end": 2478.38,
+      "text": "你们 Fireworks 从现在可能到未来一两年，你觉得你们现在最大的挑战是什么？",
+      "source_segment_indexes": [
+        346
+      ],
+      "source_segment_ids": [
+        346
+      ]
+    },
+    {
+      "start": 2478.7,
+      "end": 2488.38,
+      "text": "未来一两年还是 compute 吧，我觉得就是说能不能在市场上用合理的价钱获得足够多的计算，因为现在确实 compute 的价钱非常非常高。",
+      "source_segment_indexes": [
+        347
+      ],
+      "source_segment_ids": [
+        347
+      ]
+    },
+    {
+      "start": 2488.54,
+      "end": 2495.74,
+      "text": "然后我们公司最后肯定 revenue 还是 compute bound，所以如何获取足够多的 compute，肯定是一个比较困难的事情。",
+      "source_segment_indexes": [
+        348
+      ],
+      "source_segment_ids": [
+        348
+      ]
+    },
+    {
+      "start": 2496.38,
+      "end": 2505.66,
+      "text": "进入到今年夏天以来，资本市场的一个很大的争论就是开源模型的质量开始 catch up，使得闭源模型的收入端会有承压。",
+      "source_segment_indexes": [
+        349
+      ],
+      "source_segment_ids": [
+        349
+      ]
+    },
+    {
+      "start": 2506.06,
+      "end": 2511.26,
+      "text": "以前的那个趋势不一定会去持续，这样也会使得他们的 AI 未来的投入也继续承压。",
+      "source_segment_indexes": [
+        350
+      ],
+      "source_segment_ids": [
+        350
+      ]
+    },
+    {
+      "start": 2511.42,
+      "end": 2516.94,
+      "text": "所以我们看到整个硬件的这些股票，整个的半导体行业的一个比较大的一个回调。",
+      "source_segment_indexes": [
+        351
+      ],
+      "source_segment_ids": [
+        351
+      ]
+    },
+    {
+      "start": 2517.1,
+      "end": 2521.5,
+      "text": "开源模型持续的 catch up，你是怎么看待这一轮资本市场的趋势的？",
+      "source_segment_indexes": [
+        352
+      ],
+      "source_segment_ids": [
+        352
+      ]
+    },
+    {
+      "start": 2521.9,
+      "end": 2537.58,
+      "text": "我觉得就是 ROI 高不高的点，我觉得得反过来这么想，就是说假设这几个大的 player 他错过这一波了，假设 ROI 很高，但他错过了，那么他可能就再也回不到这个牌桌上了。",
+      "source_segment_indexes": [
+        353
+      ],
+      "source_segment_ids": [
+        353
+      ]
+    },
+    {
+      "start": 2537.82,
+      "end": 2545.74,
+      "text": "所以他们的点在于就是说，就算我 overspend，我也不会有特别多的 downside，对吧？",
+      "source_segment_indexes": [
+        354
+      ],
+      "source_segment_ids": [
+        354
+      ]
+    },
+    {
+      "start": 2545.74,
+      "end": 2552.22,
+      "text": "我顶多这两年呃账本难看一点，以及我最后可能 depreciation 需要花个五年十年去消化这个东西。",
+      "source_segment_indexes": [
+        355
+      ],
+      "source_segment_ids": [
+        355
+      ]
+    },
+    {
+      "start": 2552.7,
+      "end": 2554.78,
+      "text": "但这不是 existential risk，对吧？",
+      "source_segment_indexes": [
+        356
+      ],
+      "source_segment_ids": [
+        356
+      ]
+    },
+    {
+      "start": 2555.02,
+      "end": 2558.3,
+      "text": "他们接下来还有二十年、三十年去消化这个东西，这个不是问题。",
+      "source_segment_indexes": [
+        357
+      ],
+      "source_segment_ids": [
+        357
+      ]
+    },
+    {
+      "start": 2558.3,
+      "end": 2572.86,
+      "text": "但反过来就是说，他如果错过这一波，他们没有办法解决，所以他们有时候算这个账，比如说可能 Google、Meta 算这个账不是说我呃 LIC 多少，而是万一这个东西 LIC 特别高，而我错过了，我没有做这个投入，那我可能就完蛋。",
+      "source_segment_indexes": [
+        358
+      ],
+      "source_segment_ids": [
+        358
+      ]
+    },
+    {
+      "start": 2573.02,
+      "end": 2578.38,
+      "text": "New cloud 的话，我可能觉得他们就得更 honest 一点，就是说这个东西到底投入有多高之类的。",
+      "source_segment_indexes": [
+        359
+      ],
+      "source_segment_ids": [
+        359
+      ]
+    },
+    {
+      "start": 2578.86,
+      "end": 2586.54,
+      "text": "不过我觉得就是说以我们的观察，就是呃绝大部分的场景下还是 compute constraint，Fireworks 肯定也是 compute constraint。",
+      "source_segment_indexes": [
+        360
+      ],
+      "source_segment_ids": [
+        360
+      ]
+    },
+    {
+      "start": 2586.86,
+      "end": 2589.42,
+      "text": "我们也当然希望去市场上能找到更多的 compute。",
+      "source_segment_indexes": [
+        361
+      ],
+      "source_segment_ids": [
+        361
+      ]
+    },
+    {
+      "start": 2589.9,
+      "end": 2594.3,
+      "text": "然后我觉得就是至少接下来一年我能看到都是 compute constraint setup。",
+      "source_segment_indexes": [
+        362
+      ],
+      "source_segment_ids": [
+        362
+      ]
+    },
+    {
+      "start": 2594.7,
+      "end": 2597.58,
+      "text": "呃，一年之后你确实要 predict 国军也非常非常困难。",
+      "source_segment_indexes": [
+        363
+      ],
+      "source_segment_ids": [
+        363
+      ]
+    },
+    {
+      "start": 2597.74,
+      "end": 2602.06,
+      "text": "但是他们确实 capex 一旦投下去要三三年可能才能回本，对吧？",
+      "source_segment_indexes": [
+        364
+      ],
+      "source_segment_ids": [
+        364
+      ]
+    },
+    {
+      "start": 2602.06,
+      "end": 2606.22,
+      "text": "所以这个问题确实确实我觉得是个 open end question，我觉得回答不了。",
+      "source_segment_indexes": [
+        365
+      ],
+      "source_segment_ids": [
+        365
+      ]
+    },
+    {
+      "start": 2606.78,
+      "end": 2608.54,
+      "text": "但我觉得就是可以看的一个点是什么？",
+      "source_segment_indexes": [
+        366
+      ],
+      "source_segment_ids": [
+        366
+      ]
+    },
+    {
+      "start": 2608.54,
+      "end": 2615.02,
+      "text": "就是可以看各个公司的债券，就是他们的那些债券的评级是非常 transparent 的，对吧？",
+      "source_segment_indexes": [
+        367
+      ],
+      "source_segment_ids": [
+        367
+      ]
+    },
+    {
+      "start": 2615.42,
+      "end": 2620.3,
+      "text": "然后某些公司可能它项目做的有底类啊之类的，会导致它债券评级会下降。",
+      "source_segment_indexes": [
+        368
+      ],
+      "source_segment_ids": [
+        368
+      ]
+    },
+    {
+      "start": 2620.86,
+      "end": 2623.98,
+      "text": "那么我觉得这时候可以测试这个市场的点在于什么？",
+      "source_segment_indexes": [
+        369
+      ],
+      "source_segment_ids": [
+        369
+      ]
+    },
+    {
+      "start": 2623.98,
+      "end": 2627.34,
+      "text": "就是假设有一些 player 接下来三到六个月。",
+      "source_segment_indexes": [
+        370
+      ],
+      "source_segment_ids": [
+        370
+      ]
+    },
+    {
+      "start": 2627.843,
+      "end": 2639.923,
+      "text": "因为债券出现问题而没有办法 borrow 更多的钱，需要去做一些 restructuring，然后这个市场上到底有几个人有钱可以把这个人给捞上来，这个我觉得是一个 watershed moment。",
+      "source_segment_indexes": [
+        371
+      ],
+      "source_segment_ids": [
+        371
+      ]
+    },
+    {
+      "start": 2640.243,
+      "end": 2646.803,
+      "text": "在这 watershed moment 之前，我觉得要去测这东西有点难，因为现在都不确定大家兜里还有多少钱可以去捞这个人。",
+      "source_segment_indexes": [
+        372
+      ],
+      "source_segment_ids": [
+        372
+      ]
+    },
+    {
+      "start": 2646.963,
+      "end": 2651.843,
+      "text": "只要这个人能捞上来，我觉得其实问题都不大，大家都可以继续去 build 这个没有问题。",
+      "source_segment_indexes": [
+        373
+      ],
+      "source_segment_ids": [
+        373
+      ]
+    },
+    {
+      "start": 2651.843,
+      "end": 2654.723,
+      "text": "这个人万一捞不上来，呃，那我觉得确实挺困难的。",
+      "source_segment_indexes": [
+        374
+      ],
+      "source_segment_ids": [
+        374
+      ]
+    },
+    {
+      "start": 2655.203,
+      "end": 2661.523,
+      "text": "开源模型追上来导致硬件价钱下跌，这个我实在捋不清楚这个关系。",
+      "source_segment_indexes": [
+        375
+      ],
+      "source_segment_ids": [
+        375
+      ]
+    },
+    {
+      "start": 2661.923,
+      "end": 2671.363,
+      "text": "但你问我的话，我觉得开源模型追上来绝对是 favor infrastructure provider，因为它导致了 model 这一层的溢价能力变弱，对吧？",
+      "source_segment_indexes": [
+        376
+      ],
+      "source_segment_ids": [
+        376
+      ]
+    },
+    {
+      "start": 2671.603,
+      "end": 2677.843,
+      "text": "那么反过来，如果这个东西钱不变的话，它肯定是 favor provide infrastructure 这层的人嘛，对吧？",
+      "source_segment_indexes": [
+        377
+      ],
+      "source_segment_ids": [
+        377
+      ]
+    },
+    {
+      "start": 2678.083,
+      "end": 2681.443,
+      "text": "那么更接近 infrastructure 这些人应该股价要涨才对，而不是跌。",
+      "source_segment_indexes": [
+        378
+      ],
+      "source_segment_ids": [
+        378
+      ]
+    },
+    {
+      "start": 2681.763,
+      "end": 2687.203,
+      "text": "就比如去年 DeepSeek 当刚出来的时候，因为的股价也是跌，我当时也是不懂，就是这些人怎么想的。",
+      "source_segment_indexes": [
+        379
+      ],
+      "source_segment_ids": [
+        379
+      ]
+    },
+    {
+      "start": 2687.603,
+      "end": 2692.723,
+      "text": "但是你可以反过来看，就是说其实 open source 肯定是 favor 这些硬件 provider。",
+      "source_segment_indexes": [
+        380
+      ],
+      "source_segment_ids": [
+        380
+      ]
+    },
+    {
+      "start": 2692.963,
+      "end": 2696.723,
+      "text": "所以你其实说实话，不适合炒股，就是我理不清这个中间的逻辑的。",
+      "source_segment_indexes": [
+        381
+      ],
+      "source_segment_ids": [
+        381
+      ]
+    },
+    {
+      "start": 2697.123,
+      "end": 2699.923,
+      "text": "但是你问我的话，我觉得肯定是 favor infrastructure provider。",
+      "source_segment_indexes": [
+        382
+      ],
+      "source_segment_ids": [
+        382
+      ]
+    },
+    {
+      "start": 2700.163,
+      "end": 2703.283,
+      "text": "非常感谢今天 Beni 给我们的分享，非常非常有启发。",
+      "source_segment_indexes": [
+        383
+      ],
+      "source_segment_ids": [
+        383
+      ]
+    },
+    {
+      "start": 2703.603,
+      "end": 2704.083,
+      "text": "啊，谢谢谢谢。",
+      "source_segment_indexes": [
+        384
+      ],
+      "source_segment_ids": [
+        384
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 1.76,
+      "end": 33.28,
+      "text": "你把一个 vertical specific agent 做好，跟解决黎曼猜想可能是完全两种不同的工作。但是 Frontier Lab 可能现在更在意的是能不能解决黎曼猜想。我们看到越来越多 vertical specific agent，他们的 eval 做的越来越细，他们洗数据的流程越来越细。这类工作确实我觉得还是对于开源模型的 customization 来说，是很有意义的。长期来说蒸馏的话，并不是一个特别可靠的路径吧。就是它可能短期内确实可以帮助大家达到一个比较好的水平。",
+      "refined_segment_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "start": 33.68,
+      "end": 65.92,
+      "text": "有没有一个哪个方向，就是它可能现在的 token 消耗量没有那么多，但是实际上你们看到 token 的增长其实非常快的。Homework 肯定是一个大的方向。就是我觉得大家现在绝大部分时间都花在照顾理科生上面，但其实这个是个非常反直觉的东西。就我反而觉得，就是现在我们看到很多例子都是照顾文科生的需求会越来越大。比如说各种 slide 呀，word 呀，什么，以及就是最近还有 video gen 这种东西都起来了。很多 engineer 还担心自己会失业。我觉得就是能做 eval 的人真的少之又少。",
+      "refined_segment_indexes": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "start": 66.0,
+      "end": 78.48,
+      "text": "这样大家如果有兴趣的话，可以多转一下怎么做 eval。教你老板到底能不能采购开源闭源的。你可能把这个写，把 eval 写好，把这个开源切到闭源的，就把你工资三五倍都省出来了。",
+      "refined_segment_indexes": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "start": 83.68,
+      "end": 114.32,
+      "text": "Hello Benny，欢迎来到硅谷坐标。今天我们想跟你先聊一下你对一些整个大局势的判断，再跟你聊一聊 Fireworks 的两门生意，一个是推理优化，一个是定制模型。同时也想跟你去聊一聊 Fireworks 的核心竞争力。首先我们先去看一看整个最大的一个核心问题，就是开源模型 versus 闭源模型。我们知道过去的一年里，最重要的产业变量就是开源模型在以非常快的速度逼近闭源模型的能力，并且价格只有闭源模型的几十分之一。",
+      "refined_segment_indexes": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "start": 114.72,
+      "end": 144.08,
+      "text": "展望未来，你觉得开源模型和闭源模型它们之间的这个版图和格局会是什么样的？我们团队很多都是做开源软件出身的，绝大部分人是 PyTorch，以及用 PyTorch 的人，但是在 Meta，然后出来创业。我们是非常相信在非常有价值的软件这一层，开源的东西 eventually 都会 catch up。不管是就是之前的哪些 vertical，比如说 operating system 最后开源也 catch up 了，还是比如说各种各样的 database 最后开源也 catch up。",
+      "refined_segment_indexes": [
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "start": 144.24,
+      "end": 174.72,
+      "text": "所以这个开源能不能 catch up 这件事情，我们还是很相信，就开源会慢慢 catch up。不过今年确实发展比我想象的要快吧。就首先就是闭源模型的 ARR 确实涨得也非常非常快。然后其实开源模型 capability catch up 上来也非常快。像比如我们最近看到的 K3 或者 DSP4 Flash，还有最新的 Muse 对吧？Meta 也说要开源，开源 Spark，这个还是让我挺意外的。就是说开源这边竞争如此激烈，且模型的性价比这么的高，这个确实是实让我非常意外的事情。",
+      "refined_segment_indexes": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "start": 174.72,
+      "end": 196.48,
+      "text": "我们 team 是坚信这个东西 eventually 会 catch up，只是没有想到它 catch up 的这么快。我们知道一部分的开源模型是通过蒸馏的方式去保持自己的领先优势。你觉得这种靠蒸馏保持领先优势的这些开源模型是可持续的吗？闭源模型有没有什么办法去避免这件事情？首先就是闭源模型基本上那几个 API 肯定都会修好了。",
+      "refined_segment_indexes": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "start": 196.56,
+      "end": 227.12,
+      "text": "它确实之前有各种各样的问题，很多时候是说，比如说一个大的模型它出来几个结果之后，你把它重新喂给一个小的模型，然后那个小的模型可能再怎么弄一下，你就可以把它的 thinking token 给弄出来。这个确实是他们之前做的不够 secure 的一个地方嘛。这闭源模型准本身 security 做的有 gap，但这个东西我觉得修起来都很快。这东西没有理由说闭源模型厂商没有办法把它做好。所以长期来说蒸馏的话，并不是一个特别可靠的路径吧。",
+      "refined_segment_indexes": [
+        37,
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "start": 227.68,
+      "end": 262.04,
+      "text": "就是它可能短期内确实可以帮助大家达到一个比较好的水平。不过就是说以我的了解，比如说像美国这边很多厂，像比如 Meta，它可能蒸的少。之前 Nimo 厂可能蒸的也不是很多。所以就是说开源模型的success是不是contingent呢？蒸馏，我觉得这个不一定。其实只要开源相关的evol，呃，量大清晰，以及慢慢数据价钱下来，我觉得不一定需要蒸馏。很多人也能用到非常好的开源模型。所以我觉得就说开源的厂商确实有很多事情可以做，让它保持竞争优势。",
+      "refined_segment_indexes": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "start": 262.12,
+      "end": 289.88,
+      "text": "闭源厂商也有很多手段。不过我现在越来越觉得，其实开源的厂商它不一定需要永远做到跟闭源有优势。我我也是买苹果手机的人。我觉得其实你要问我之前用安卓，我觉得Google那些手机比苹果手机好用多了。但是还是有各种各样小的问题。可能我如果价格没有那么sensitive，我可能还是买苹果。最后可能利润大头也是被一直领先的那个人给拿走。跟开源能做的很大，可能完全不冲突。",
+      "refined_segment_indexes": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ]
+    },
+    {
+      "start": 290.36,
+      "end": 325.0,
+      "text": "就是run rate可能最多最后大头在开源，然后闭源可能它永远能够claim一些优势，然后很多价格没有那么sensitive的人就claim闭源。所以可能你问我的话，我觉得它长期优势在哪里？我觉得这用户心智可能更重要吧。就比如说我作为一个企业端去采购的时候，我们以前开玩笑讲就是就no one get fired for buying IBM，对吧？IBM是不是一直能够维持这个优势？我不知道。但确实很长一段时间大家都偏向于保守，都想要买IBM。那么这个我觉得这个人可能变得没有那么快。",
+      "refined_segment_indexes": [
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ]
+    },
+    {
+      "start": 325.24,
+      "end": 353.16,
+      "text": "人如果相信继续采购cloud都能采购到更好的，或者采购open能够采购到更好的，那这个变化可能会稍微慢一点。这个可能是他们接下来两三年的优势吧。然后你问我五年十年之后的，确实我都看不清了。所以你觉得如果是靠蒸馏来保持领先的这些开源模型，他们是无法长期靠蒸馏这个方式去保持跟闭源模型的这个差距缩小的。就是这件事情eventually通过自己内部团队security的加强，然后把这个事情避免掉。",
+      "refined_segment_indexes": [
+        67,
+        68,
+        69,
+        70,
+        71
+      ]
+    },
+    {
+      "start": 353.56,
+      "end": 386.36,
+      "text": "但是比如说像Meta或者是像Neural这样的非蒸馏的这种品类，你觉得他们会能catch up快吗？还是说这个gap还是会保持这个？对，其实我觉得Meta的gap相对来说没那么大了吧？它能继续scale up，它有足够的talent，有足够的GPU，我觉得这个理由就是这个gap不会特别大。Neural可能甚至Reflection或者Thinking Machine嘛，都有各种各样的东西可以catch up的。我觉得没有理由会一直有gap。就是它可能我觉得也不是说永远都不会有gap，我觉得gap会越来越小。",
+      "refined_segment_indexes": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    {
+      "start": 387.32,
+      "end": 419.16,
+      "text": "就跟我前面开玩笑讲苹果手机跟安卓手机是不是有gap？我觉得可能就是各种各样小的gap。但是你说真给我一个安卓不能用吗？我觉得也可以用。这个我觉得没有本质差别。我觉得大家最后还是看效果。就比如说这个最后效果好不好，可能远大于就是这个东西价钱的高低。那效果好与坏确实是Frontier大的模型做的比较好的地方，因为它模型毕竟大，它做的比较早，就是比较细，所以很多事情确实是open source需要花更多精力去做的。",
+      "refined_segment_indexes": [
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86
+      ]
+    },
+    {
+      "start": 419.56,
+      "end": 451.96,
+      "text": "那你觉得长期的话，OpenAI和Anthropic闭源模型SOTA模型他们的这个ARR的增速，你觉得未来会怎么样发展？我觉得ARR肯定会继续涨。它现在有一个我不是很确定的东西，就是说它这个ARR的accounting以及跟它下游分成这些东西怎么弄。比如说因为像比如说Anthropic可能很多revenue是百分之百都算进去了，但是可能其实有一部分是分给云厂商的。那么它这个分成的比例可能会越来越大。那么就是它ARR可能往上涨，但它的gap revenue可能不一定会一直涨。这个我就不清楚。",
+      "refined_segment_indexes": [
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93
+      ]
+    },
+    {
+      "start": 452.68,
+      "end": 487.361,
+      "text": "呃，到底就是它上市了之后，大家会怎么分析这个故事？所以你觉得就未来这个分成比例，其实是SOTA的模型他们会拿更小的一个分成，话语权会更弱？我觉得这个会弱一点。所以就我们很多时候看ARR，但是可能没有看具体他们分成比例啊什么之类的。这个东西他们上市了之后，可能大家visibility还会好一点。那还有一个就是想问你，比如说Harvey现在也是你们非常重要的一个标杆性的一个客户，到底是未来像Harvey这样的一个。垂直类的应用模型会跑出来，还是说像这种SOTA模型，他们的这个法律模型会更好？",
+      "refined_segment_indexes": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ]
+    },
+    {
+      "start": 487.441,
+      "end": 518.961,
+      "text": "你会站哪一边？啊，我们当然是站那个vertical specific这一边，就是我们还是很相信，就是要把一个vertical做好，其实需要很大的精力的。就我们自己是个infrastructure provider嘛，然后大家经常会开玩笑就讲说，要不明年大家就一起完蛋，AGI直接把我们code都外不出来。但这个肯定是开玩笑的话，就把一个vertical做好，可能有需要大量的测试，要知道用户的需求，然后这些需求具体怎么表达在我们的这个产品上面，这个其实很大的一部分工作。",
+      "refined_segment_indexes": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "start": 519.281,
+      "end": 544.481,
+      "text": "我们很多customer也都是vertical specific的agent，比如说Harvey还是一个特别出名的vertical specific的law agent，对吧？它有各种各样的vertical，然后各种各样vertical都要通过evaluation来表达出来，就是说来评判这个工作的好坏，这个其实是非常非常大的一个工作量。然后比如说我们最近还有几个，一个是Docsimly，他们在我们平台上面train了一个medical agent，就等于是做ChatGPT的竞品吧。",
+      "refined_segment_indexes": [
+        105,
+        106,
+        107
+      ]
+    },
+    {
+      "start": 544.721,
+      "end": 576.321,
+      "text": "Docsimly是北美最大的一个等于医生用的ChatGPT的app，然后它更偏向于就deep research，确保就是医生可以看到正确的reference，这样的话就医生在给病人下判断的时候不会出现reference有问题。然后比如说我们还有呃在北美以外，我们最大合作一个客户叫Hedy，Hedy是北美以外最大的就是这种medical scribe啊，medical search company，他们也做了很多就是在平台上面做各种fine tuning啊，来达到更好的效果。",
+      "refined_segment_indexes": [
+        108,
+        109
+      ]
+    },
+    {
+      "start": 576.561,
+      "end": 600.081,
+      "text": "就是每个vertical确实它evaluation criteria都不是特别一样，然后对于我们来说，我们当然是希望就是a thousand flowers bloom，对吧？我们希望各种各样行业的这种vertical size agent都能成功，因为我们相信就是说每个vertical它有很多那种特别细的工作，其实很多细致的工作呢，你想用一个特别大全的模型来做好，还是很困难的一件事情。",
+      "refined_segment_indexes": [
+        110,
+        111
+      ]
+    },
+    {
+      "start": 600.321,
+      "end": 622.721,
+      "text": "像我们合作的各种coding啊，legal啊，medical啊这些东西，它每个vertical都有各种各样特别细致的东西，这就是这些size company的alpha。我们是认为一个foundation lab要把所有这些东西都做了，这怎么说呢？就是它的cost应该会特别特别的高，它ROI可能就特别低。今年这么多优秀的开源模型，质量很好的开源模型，你们看到的这个token增长量是什么样的？",
+      "refined_segment_indexes": [
+        112,
+        113,
+        114,
+        115
+      ]
+    },
+    {
+      "start": 623.201,
+      "end": 655.841,
+      "text": "对我们量增长呢还是挺好的，我们最近有公开消息，因为我们融资了嘛，我记得好像公开的是四五十个T token一天，然后这个数字来说应该是比Gemini还有OpenAI公开的数字都要大，所以呃您可以认为就是说我们平台上面走的open source model的量已经超过了Gemini跟OpenAI的B to B API的量，这个对于我觉得开源模型来说还是非常好的一件事情。那整个在你们的这个token消耗中间，占到头部的几个比较主要的应用是哪一些？",
+      "refined_segment_indexes": [
+        116,
+        117,
+        118
+      ]
+    },
+    {
+      "start": 656.401,
+      "end": 682.561,
+      "text": "确实是coding，然后是像我前面讲的，可能medical，可能co work，很多工作以我们的观察都重新被frame成了coding问题。你们如果能找到某个行业有这个行业的vertical specific size application，就这个工具可能是解决vertical的某些特定的问题，那么这些工具会被转换成RL的靶子，然后他们会训练这些模型，熟悉的运用这些工具来解决这个vertical的问题。",
+      "refined_segment_indexes": [
+        119,
+        120
+      ]
+    },
+    {
+      "start": 682.721,
+      "end": 698.961,
+      "text": "原先我们确实没有想到，就是PowerPoint跟Excel其实它也是coding问题，因为你只要能把怎么用PowerPoint跟怎么用Excel转换成一个coding问题之后，所有现在已有的这些解决coding问题的工具都可以立刻被用上，然后也可以立刻tune一个比较好的vertical specific application。",
+      "refined_segment_indexes": [
+        121
+      ]
+    },
+    {
+      "start": 699.361,
+      "end": 727.967,
+      "text": "所以确实我们看到绝大部分问题都被重新定义成了coding，啊如果不是coding的话，可能是deep research，就deep research跟coding可能是两个特别大的类别，然后各种各样小的类别会尝试找到就是我到底是deep research还是是coding还是两者兼有，然后尝试去把他们的vertical specific SaaS agent跟他们tuned model编排到这个分类里面，有没有一个哪个方向，就是它可能现在的token消耗量没有那么多，但是实际上你们看到token的增长其实非常快的。",
+      "refined_segment_indexes": [
+        122,
+        123
+      ]
+    },
+    {
+      "start": 728.367,
+      "end": 749.087,
+      "text": "Co-work肯定是一个大的方向，就是我觉得大家现在绝大部分时间都花在照顾理科生上面，但其实这个是个非常反直觉的东西，就我反而觉得，就是现在我们看到很多例子都是照顾文科生的需求会越来越大，比如说各种slide呀、word呀什么，以及就是最近还有video gen这种东西都起来了，对吧？",
+      "refined_segment_indexes": [
+        124
+      ]
+    },
+    {
+      "start": 749.567,
+      "end": 773.487,
+      "text": "就是其实绝大部分的工作最后可能还是偏服务于人，而很多这种coding啊，或者现在OpenAI很喜欢把数学的榜刷的很高，但是这个东西我不是很确定，就是它的意义在哪里，但是可能后面服务文科生co-work这个东西我们会做的很多，我们自己也做了，像我前面讲Filework Nexus，希望就是说可以把各个公司co-work给服务好。",
+      "refined_segment_indexes": [
+        125
+      ]
+    },
+    {
+      "start": 773.647,
+      "end": 793.167,
+      "text": "然后我觉得就是之前我觉得确实一年半以前吧，就是当时Computer Use Agent出来的时候，我觉得当时惊为天人，就是我觉得哦所有人当当时那个那个词叫unhobbling，就是这个模型以后再也不需要搞各种各样乱七八糟的API调用了，它就可以直接用一个电脑，然后电脑里面什么活都干了，对吧？",
+      "refined_segment_indexes": [
+        126
+      ]
+    },
+    {
+      "start": 793.487,
+      "end": 811.167,
+      "text": "但现在我觉得反过来了，就是一年半之后反过来，就Computer Use Agent相对来说可能是个偏小的vertical，然后绝大部分vertical都从文字那边走，所以其实你可以看到就是绝大部分成功的Chinese Open Source Model吧，可以这么说，就是Muse确实是一个multi-model，但是Chinese Open Source Model它可以做到很高的AR，",
+      "refined_segment_indexes": [
+        127
+      ]
+    },
+    {
+      "start": 811.167,
+      "end": 845.407,
+      "text": "但它其实是纯文本的模型，确实因为绝大部分工作反而回到了纯文本，因为文本模型便宜，大家为了cut cost就把自己的工作流往文本那边靠。但随着就是VM的价钱越来越便宜，大家把VM做的越来越好，我相信就Computer Use Agent还是很有前途的，只是说怎么把这条路径优化好，这个可能现在还是还在探索，对。能否帮我们估算一下整个北美的客户在开源模型上的支出？哇，这个有点难，这个我觉得你问analyst可能问我比较好一点，但我觉得就是说token比例我觉得可能容易一点。",
+      "refined_segment_indexes": [
+        128,
+        129,
+        130,
+        131
+      ]
+    },
+    {
+      "start": 845.967,
+      "end": 876.367,
+      "text": "我觉得看现在已经公开的那些router的榜啊，可能会有一些会影响判断，就是因为绝大部分他们那些公开的榜上面是被呃free traffic所影响的，比如说某些公司会做一些incentive，然后让大家免费的去用这个model在OpenRouter上面，会影响它那个看出来的比例。呃，我其实经常也会跟我们公司沟通，就是我们确实做的还可以，比如说我们去年从一百个me做到一个b，但是其实Anthropic的增长是比我们快得多的，对吧？",
+      "refined_segment_indexes": [
+        132,
+        133
+      ]
+    },
+    {
+      "start": 876.527,
+      "end": 902.047,
+      "text": "他们已经可能七十七十个b了，所以就是说看token消耗量没有那么honest，因为Fable的消耗量跟呃DSE for Flash的消耗量是一样的，如果只看token数量，但是我觉得看revenue是最真实的，就是大家付费意愿还是往最好的方向去移动，就大家可能没有那么price sensitive，没有那么price sensitive的话，就会永远付费给最好的那个model。",
+      "refined_segment_indexes": [
+        134,
+        135
+      ]
+    },
+    {
+      "start": 902.447,
+      "end": 928.447,
+      "text": "所以我们其实跟我们customer一起合作的时候，做这些specialized intelligence，绝大部分时候看的不一定是性价比，而就是绝对的最好，能不能这个task超过opus超过Fable是我们最重要的工作。像比如我们跟DeepFirst合作的时候也是看最后效果能不能超opus，以foundation model为benchmark，以他们的revenue为benchmark，我觉得比较honest一点，呃，光看token消耗量我觉得有一点deceptive。",
+      "refined_segment_indexes": [
+        136,
+        137
+      ]
+    },
+    {
+      "start": 928.607,
+      "end": 952.767,
+      "text": "你觉得未来六个月这个数字，就是整个北美客户在开源模型上的这种支出或者token消耗量，它未来会有一些什么样的趋势？我们坚信就开源消耗量会继续往上涨，然后我也相信我我对Filework是非常不委实，我觉得就是说我们肯定能把这个事情做好。然后我觉得这个东西发生的同时呢，就是大家的付费意愿对于最好的模型可能也不会有太多的改变。",
+      "refined_segment_indexes": [
+        138,
+        139,
+        140
+      ]
+    },
+    {
+      "start": 953.359,
+      "end": 982.639,
+      "text": "肯定会来越来越多人想要做最好的模型，所以我们会越来越努力跟更多人把 open source 的 customize model 做效果做的非常非常好，然后来 drive 更多的付费意愿。然后具体这个比例，我觉得更取决于就是说有多少人有那个 conviction 去 customize open source model，因为很多人还是比较害怕，就是 customize 一个 model 可能 cost 很高，可能成功率没有那么高，这个我觉得就是很多人会担心的一件事情。",
+      "refined_segment_indexes": [
+        141,
+        142
+      ]
+    },
+    {
+      "start": 983.039,
+      "end": 1012.959,
+      "text": "但我觉得就是说，如果越来越多人在 quality 上面跟 open AI 飞去竞争，那么开源模型的 traffic 会越来越大。反之的话，可能就是闭源模型的 traffic 或者 AR 就越来越大。你们看到的北美客户，他们比如说在比较不同的开源模型，他们更会喜欢哪些开源模型呢？国内四家我觉得都差不多，Kimi、GLM、MiniMax 跟 DeepSeek 这四家我觉得都很多，就是他们是轮轮着来的，因为就是看哪个人哪个公司 launch 了，然后他们 traffic 可能大一点。",
+      "refined_segment_indexes": [
+        143,
+        144,
+        145,
+        146
+      ]
+    },
+    {
+      "start": 1013.199,
+      "end": 1047.439,
+      "text": "然后前面其实我我忘讲了，前面忘讲了千问，对千问其实也很大，所以可能国内五家就是 Kimi、Glm、Qwen、MiniMax 跟 DeepSeek，然后这边可能是 NimoTron、Gemma，然后就是以前拉嘛，现在 Muse 这个可能比较多。排名分不分先后的？我觉得它排名很难讲，是因为其实说白了，现在就是谁有更新的，谁刚 launch，谁的 traffic 就上去，然后有一个新的 launch 之后，可能旧的 model traffic 就会下来，这个很难分。",
+      "refined_segment_indexes": [
+        147,
+        148,
+        149
+      ]
+    },
+    {
+      "start": 1047.999,
+      "end": 1074.399,
+      "text": "然后但是就今天就比如说 August 2026，呃，肯定是 Kimi 的 traffic 是最大的。从你们角度看，这个 coding 现在的渗透率怎么样？特别开源模型的渗透率，我觉得最近还是偏低吧。可能 Twitter 上面大家都觉得怎么说来着，就什么 open code 用 DSP4 永远用不完，什么这种笑话很多，对吧？但是以我们的观察，就是说 closed code AR 或者 Codex AR 还是远远高过呃 closed source model AR 的。",
+      "refined_segment_indexes": [
+        150,
+        151,
+        152,
+        153,
+        154
+      ]
+    },
+    {
+      "start": 1075.199,
+      "end": 1102.399,
+      "text": "所以我们公司最近在推 Fireworks Nexus，我们也希望就是能够把开源模型带到更多的公司里面。确实这个工作很多时候本质上是 go to market，而不是一个 technical 的工作。你怎么看 coding 市场的 total addressable market 的 time 有多大？它的上限在哪里？你觉得我们现在还是处在一个比较早期的一个阶段吗？我觉得 time 这个问题可能得分钱跟 token 的消耗量，token 的数字肯定会一直一直往上涨，这个我非常坚信。",
+      "refined_segment_indexes": [
+        155,
+        156,
+        157,
+        158,
+        159,
+        160
+      ]
+    },
+    {
+      "start": 1102.559,
+      "end": 1133.519,
+      "text": "但是可能大家讲 time 的时候讲的都是 revenue，对吧？Revenue 我觉得如果看到的观察到的方向是，比如说 Luna 要降价，Frontier 要降价，这些大家就是每天用的模型都在降价的话，它肯定会 drive 更多 consumption，但是它的 revenue 是往哪个方向走，现在不是很确定。像比如说当年可能最值钱的公司是 General Electric，对吧？但是可能大家都用上了电，最后最挣钱的公司也不一定是 General Electric，这个我觉得是比较难判断的一件事情。",
+      "refined_segment_indexes": [
+        161,
+        162,
+        163,
+        164
+      ]
+    },
+    {
+      "start": 1134.239,
+      "end": 1160.319,
+      "text": "每次一个比较强大的闭源模型上线之后，你们有没有看到平台上有一些客户自己做的 fine tuning 的模型就被洗出去了？有一些可能是留下来，有一些洗出去了。你觉得这两类 customer 他们之间最大区别是什么？这个我觉得这样，就是去年确实洗出去的很多，呃，今年我觉得洗出去的很少，这个我觉得也是一个非常 positive 的 signal。其实说实话，如果这些模型一直被洗出去的话，我们 AR 也不会呃增长这么快。",
+      "refined_segment_indexes": [
+        165,
+        166,
+        167,
+        168,
+        169
+      ]
+    },
+    {
+      "start": 1160.639,
+      "end": 1188.479,
+      "text": "我们现在发现就是说，确实很多 vertical 它的前进的方向可能跟 Frontier Lab 前进的方向呃有点不一样了。就是你把一个 vertical specific agent 做好，跟解决黎曼猜想可能是完全两种不同的工作。但是 Frontier Lab 可能现在更在意的是能不能解决黎曼猜想，能不能制造出新的药，对吧？这个是他们需要证明的事情。然后我们看到越来越多 vertical size agent 他们的医疗做的越来越细。",
+      "refined_segment_indexes": [
+        170,
+        171,
+        172,
+        173,
+        174
+      ]
+    },
+    {
+      "start": 1188.995,
+      "end": 1216.355,
+      "text": "他们洗数据的流程越来越细，这类工作确实我觉得还是对于开源模型的customization来说是很有意义的。所以说，比如说像Harvey或者是Even Up这样的公司，如果说今天闭源模型的两家，如果说我要把资源全部都怼到法律应用这个vertical来，有没有可能去打败现在的Harvey跟Even Up？肯定是可以的，但是这样的话就支撑不了他们一个T的估值了，这对他们来说肯定不是一个聪明的行为吧？",
+      "refined_segment_indexes": [
+        175,
+        176,
+        177
+      ]
+    },
+    {
+      "start": 1216.515,
+      "end": 1239.635,
+      "text": "我坚信就是说这些vertical SaaS agent，他们evaluation做的很细，他们数据洗的很好，他们能够确保在他们认为正确的路径上前进。然后我们经常开玩笑就讲这个就是jagged intelligence，就是他们在某一个方向上面做的很好，但是比如说他们train出来的model能不能解决黎曼猜想，我觉得是绝对不可能的。",
+      "refined_segment_indexes": [
+        178,
+        179
+      ]
+    },
+    {
+      "start": 1239.715,
+      "end": 1271.875,
+      "text": "但是对于一个AGI公司来说，他们如果做的一个model是一个jagged intelligence，那么他们可能就只能服务这个客户，而没有办法做到把一个模型可以做到服务很多很多人。他们是需要有一个合理的分布，就是说我不能天天纠结于是不是跟Even Up或者Harvey的竞争关系是怎么样，我需要确保我把盘子里面所有的customer都照顾好。就是他不能说我只做好川菜，或者我只做好粤菜，虽然很多师傅都是只做好一道菜，对吧？",
+      "refined_segment_indexes": [
+        180,
+        181,
+        182
+      ]
+    },
+    {
+      "start": 1272.115,
+      "end": 1297.155,
+      "text": "然后只能做好那道菜的才会才敢收很多钱，对不对？但是AGI公司要做的事情，我得把呃麦当劳做好，我得把所有人的口味给调好。那么顶多是比如说我进中国的时候我把中国人的口味调好，我在美国的时候把美国人口味照顾好，但是我不可能说加州的口味跟Kentucky的口味我都改，那都改的话，其实我觉得它跟Innalo也没有什么本质差别。对不起，我这个例子可能走的有点远了。",
+      "refined_segment_indexes": [
+        183,
+        184,
+        185,
+        186
+      ]
+    },
+    {
+      "start": 1297.475,
+      "end": 1331.635,
+      "text": "但就比如说Innalo，它是每天跟McDonald竞争没有问题，但它就是能把加州的跟Nevada这几个照顾好，它就能把大家口味照顾好，它就把这些牛肉都做好。可能这个东西跟LM不是那么comparable，但就是说确实你要把所有人的口味照顾好，跟我把一个vertical的口味照顾好，那可能是两个不同的工作。如果真的有个AGI公司能够把所有人的口味都照顾的很好，那么我相信它肯定能挣很多很多钱，只是现在我们还没有观察到这一点。企业它在考虑闭源模型还是开源模型的时候，他们都权衡哪一些因素呢？",
+      "refined_segment_indexes": [
+        187,
+        188,
+        189,
+        190
+      ]
+    },
+    {
+      "start": 1331.875,
+      "end": 1363.875,
+      "text": "其实很很大的一个点是信任，就是说我们跟很多这些，因为我们既做Fireworks Nexus就是偏holding plan这种co work的工作，也做customized model，其实很大一部分信任就信任这个ecosystem能能够继续support呃接下来一两年需要做的事情，因为我们签合同的时候是要签一两年的合同，所以他们想的时候是我跟Fireworks签合同，他不会在意就是说我们到底是不是个二道贩子，而是我们平台上面serve的model接下来一两年能不能fulfill它的requirement。",
+      "refined_segment_indexes": [
+        191,
+        192
+      ]
+    },
+    {
+      "start": 1364.595,
+      "end": 1394.115,
+      "text": "那这个信任的建立，我觉得是一个比较长期的过程，就是我们得跟更多的customer去沟通我们的success case，跟更多的customer去沟通我们到底哪里做的好，哪里做的不好，开源的好处不好是什么，就我们都非常transparent的去聊这件事情。然后这个信任我觉得闭源模型建立的更好，因为他们每天可以在推特上面发我们又hack了某个公司的system，或者我们又把什么黎曼猜想给解出来了，对吧？",
+      "refined_segment_indexes": [
+        193,
+        194
+      ]
+    },
+    {
+      "start": 1394.115,
+      "end": 1414.355,
+      "text": "这个东西是他们做的更好的地方，所以我觉得其实就go to market的capability是最大的差别，就是开源模型以及开源模型公司的go to market capability是远弱于闭源模型的，大家的mindset绝大部分还是在闭源模型上面。你觉得这些企业他们会考虑是在本地部署还是在云端上部署？",
+      "refined_segment_indexes": [
+        195,
+        196
+      ]
+    },
+    {
+      "start": 1414.835,
+      "end": 1447.082,
+      "text": "我们之前看到很多本地部署的例子，然后现在越来越多是云端部署，就是这个我觉得也是一个信任问题，就是说呃能不能把security做好，呃能不能在各种各样就是VPC上面就是把这一轮做好，这个是。呃，本质是信任问题。但是云端部署有个最好的点就在于 multi tenancy，就很多企业本身不一定能够 saturate 它自己的自己想要，比如想要租这么多 GPU，它可能 saturate 不了。但是如果我们能够 aggregate 足够的 demand，那 saturate 这些 workload 是很容易的一件事情。",
+      "refined_segment_indexes": [
+        197,
+        198,
+        199,
+        200
+      ]
+    },
+    {
+      "start": 1447.562,
+      "end": 1477.962,
+      "text": "那么如果这个东西它的 cost 在大家的企业运行中占比的消耗越来越大，那么 multi tenancy 其实就是一个更好的行为。大家就会希望就是说我可以走一个 multi tenent 的 setup 在 cloud 上面，然后我跟人一起 share 这个 cost，双方的 ROI 都会更好。未来这个企业端的 AI 从现在比如说 POC 到真正的生产，它以后这个 adoption 的节奏会是什么样的？关键的一些变量是什么？我觉得可以多看就是这些 data company 的 AI 跟他们的 adoption。",
+      "refined_segment_indexes": [
+        201,
+        202,
+        203,
+        204,
+        205
+      ]
+    },
+    {
+      "start": 1478.122,
+      "end": 1500.602,
+      "text": "我相信就是越来越多公司会采购 open source model，但是他们会需要 evaluation，他们会需要能够说服自己就是这个采购是合理的。那么很多人其实没有那个 capability 去做这些 in house evaluation，那么就需要 third party，呃 data company 来进来帮他们把这些呃 evaluation 做好，他们还可以拿来做 fine tuning。",
+      "refined_segment_indexes": [
+        206,
+        207
+      ]
+    },
+    {
+      "start": 1500.762,
+      "end": 1529.322,
+      "text": "所以我觉得 data company 的呃 revenue diversification 跟 run rate 是一个呃我觉得很有意思的指标。你会发现如果继续是这种大客户，就是这几个大的 lab，然后占他们大头的话，那可能反之就是 customer 能够做的事情的选择就越少。那比如说你们看到企业从 POC 到生产这个过程中做失败的主要是你看到有哪些原因呢？对，就是 eval 不清晰，特别容易就是呃 POC 做的不好。",
+      "refined_segment_indexes": [
+        208,
+        209,
+        210,
+        211
+      ]
+    },
+    {
+      "start": 1529.482,
+      "end": 1558.442,
+      "text": "我们之前聊的好几个就是说，其实我们都会大概问一下，就是说你们内部有什么样的 eval，然后虽然已经二零二六年，但是其实还是有不少人是 vibe 的，就是试一下效果好不好就 OK。虽然这个东西可能它已经占到了它公司运营 cost center 就是很大的一个比例了，但它可能还是没有特别 rigorous 的 eval。所以我觉得就是其实现在很多我经常跟人开玩笑，很多 engineer 还担心自己会失业。我觉得就是能做 eval 的人真的少之又少。",
+      "refined_segment_indexes": [
+        212,
+        213,
+        214,
+        215
+      ]
+    },
+    {
+      "start": 1558.442,
+      "end": 1585.242,
+      "text": "这样大家如果有兴趣的话，可以多转一下怎么做 eval，教你老板到底能不能采购开源闭源的。你可能把这个写把 eval 写好，把这个开源切到闭源的，就把你工资三五倍都省出来了。这个是我觉得很多公司缺少的 muscle 吧，以及就是可能影响 POC 最大的一个最大的一个点。所以你觉得这个 eval 的这个啊还有很多的这个 job 还没有被 fulfill？我觉得就是新的 SaaS 公司跟旧的 SaaS 公司，我觉得差别甚至都不是特别大。",
+      "refined_segment_indexes": [
+        216,
+        217,
+        218,
+        219,
+        220
+      ]
+    },
+    {
+      "start": 1585.242,
+      "end": 1609.562,
+      "text": "这可能是个暴论啊，但就是说以前的 SaaS 公司可能内部有一套 unit test，就是比如说我把一个 SQL 呃 engine 跑起来需要满足什么样的测试，现在可能是我作为一个 vertical SaaS company，我有一堆 eval，我把 agent deliver 出去之前它要满足什么样的 eval，就这个东西都是需要积累需要沉淀的，然后需要大量的时间跟钱去把这个分布做好。",
+      "refined_segment_indexes": [
+        221,
+        222
+      ]
+    },
+    {
+      "start": 1609.642,
+      "end": 1634.122,
+      "text": "所以我觉得甚至我觉得差别都没有特别大吧，我觉得只是大家的工作可能慢慢从写测试转到写 eval，然后只是大家就多少人能多快的适应 transition 而已。Fireworks 的两门生意，一个是推理优化，一个是定制模型。那首先我们先看看第一门生意推理优化，想问问你们的推理优化的未来的空间有多大？对我觉得推理优化还是有很很远的路要走的。",
+      "refined_segment_indexes": [
+        223,
+        224,
+        225,
+        226
+      ]
+    },
+    {
+      "start": 1634.122,
+      "end": 1667.082,
+      "text": "推理优化这个工作有很多特别细致的东西，比如说每次这个新的模型上线了之后，它一开始上线跟它最后的效果，大家优化了一年之后极致的效果差别很大。对于我们来说，怎么缩短那个时间，确保就是一上线的时候它都能做到最好，这个是我们花了很多时间努力的地方。然后还有比如说推理优化非常重要的一部分是怎么把缓存做好，就是缓存做好这个事情，其实本质上不一定在 serving runtime 本身，而是在你的 supporting infrastructure 能不能把它做好。",
+      "refined_segment_indexes": [
+        227,
+        228,
+        229
+      ]
+    },
+    {
+      "start": 1667.482,
+      "end": 1699.266,
+      "text": "那这个缓存的事情，我们也。会继续花越来越多的精力去做。我觉得推理优化本质上还是一个非常怎么说呢，labor intensive 的工作吧，就是有很多可以做的事情。相比模型提供的 API，你们的优化有什么优势呢？很多时候就是我们因为优化的模型多，所以做的工作可能更细致一点。比如说很多 OneP 的 API，它能做的事情是把它这个模型本身 serve 好，但是很多的非类 pattern 可能是我们从通过其他 serve 其他模型看到的东西。",
+      "refined_segment_indexes": [
+        230,
+        231,
+        232,
+        233,
+        234,
+        235
+      ]
+    },
+    {
+      "start": 1699.266,
+      "end": 1727.266,
+      "text": "就比如说我们可能跟很多开源模型厂商聊的时候，是会帮他们指出来，就是说有些东西他们没有测到，或者说有些 workload pattern 他们可能看的不多，然后是我们看的比较多的 workload pattern。所以就是呃分布不一样吧，就他们可能要做一个比较大、比较全的一个 API。但是比如说我们因为很多时候 serve 的是 customized model，那 customized model 上面 workload 的 traffic pattern 啊，可能都会不一样。",
+      "refined_segment_indexes": [
+        236,
+        237,
+        238
+      ]
+    },
+    {
+      "start": 1727.826,
+      "end": 1759.026,
+      "text": "那么这时候需要做的优化的工作也会没有那么一样。你们做的这个模型的路由，比如说是用这个闭源的 SOTA 模型，然后加开源模型的这样的一个组合，你们有讲到这个不仅是一个省成本的事情，而且是一个提高性能的事情。对。呃，特别是你们跟那个 Harvey 的联合的一个研究，我看在你们官网的 blog 上面，对对。其中就讲到前沿模型平均每次任务只被请教 0.83 次，但是质量反超单独用最强的模型。就是为什么多模型分工连任务的完成率都会更好呢？这件事儿是怎么做到的？",
+      "refined_segment_indexes": [
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245
+      ]
+    },
+    {
+      "start": 1759.586,
+      "end": 1788.706,
+      "text": "因为就是工作的场景会影响 harness，而 harness 会影响什么时候应该调用什么样的模型。具体 Harvey 那个例子，我记得是 Opus 作为 executor，然后 GLM 作为 advisor，然后这样的话可以把这个上下文特别长的工作拆解成一些上下文稍微短一点的工作。这个本质上是因为大语言模型 context 长了之后，它的效果还是会降低。",
+      "refined_segment_indexes": [
+        246,
+        247,
+        248
+      ]
+    },
+    {
+      "start": 1788.866,
+      "end": 1817.826,
+      "text": "所以如果有这个特性，已知有这个特性，然后已知就是说这个工作就是长文本，那么可能我们就可以在 harness 上面做一些改进。harness 改进完了之后，就可以改进就是这个 harness，呃，具体的调度的模型的问题。所以我觉得就每一个工作它用这个模型的时候用法都会不一样，都会有一些差别。然后这些差别会导致我们怎么去做这个优化。这个工作其实有的时候有点像以前大家在 CPU 上面做各种各样 performance optimization。",
+      "refined_segment_indexes": [
+        249,
+        250,
+        251,
+        252,
+        253
+      ]
+    },
+    {
+      "start": 1817.826,
+      "end": 1850.386,
+      "text": "虽然大家的 code 看起来可能没有优化之前都长得差不多，但是为了熟悉这个 CPU 的特性，可能你需要去做各种各样拆解的工作，把它拆解成就是这个 CPU 喜欢的 workload。那么这时候就是我们需要跟我们 customer 一起去 explore 的地方，就是说这个底下的模型，我们把它把它当成一个文本的 processor，它这个 processor 特性是什么？然后根据它们特性，我们拆解一个 harness 出来，然后根据这个 harness 拆解完的效果，我们把放到最适合的模型到最适合的位置上面去。",
+      "refined_segment_indexes": [
+        254,
+        255,
+        256
+      ]
+    },
+    {
+      "start": 1850.706,
+      "end": 1882.866,
+      "text": "从优化单 token 成本的角度，你觉得硬件的哪些配置还有优化的空间？就比如 GPU 跟这个 HBM 的容量比，然后包括 CPU 跟 DRAM 的配比，然后 DRAM 和 NAND 的配比，HBM 的带宽，Scale Up 带宽。这个问题特别的 specific 啊，我想想怎么回答这个问题。就是我觉得对这个问题感兴趣的人可以看一下，应该是两三个月前就 Darch Patel 他有一个黑板教课的视频，那个视频里面他请了一个人来讲解，就是 GPU 构造啊什么之类。",
+      "refined_segment_indexes": [
+        257,
+        258,
+        259,
+        260
+      ]
+    },
+    {
+      "start": 1882.866,
+      "end": 1908.306,
+      "text": "但其实它里面有个更很重要的数字，就它那个数字是没有 dimension 的，但是本质上就是 compute 跟 memory 的比例 ratio 本身是没有 dimension 的嘛？但就是说每个硬件它有不同的比例，会影响每个模型设计的时候，它 train 这个模型之前，它就会想我这个模型在什么样硬件上面 serve。我确定了我大概在什么样硬件上面 serve 之后，我会改我的 model architecture。",
+      "refined_segment_indexes": [
+        261,
+        262,
+        263
+      ]
+    },
+    {
+      "start": 1908.711,
+      "end": 1934.151,
+      "text": "所以绝大部分时候，我们问就是说硬件能怎么改的时候，忽略了就是绝大部分模型train的时候就是为了serve在现有的NVIDIA硬件上面的或者AMD硬件上面的。然后AMD、NVIDIA他们的比例差不多嘛，所以导致了你可能很快的可以把一个NVIDIA serve的model放到AMD上面，但是你可能放到ASIC上面就要花很大很大的力气，因为它那个比例就是不一样的，它的硬件特性就是不一样的。",
+      "refined_segment_indexes": [
+        264,
+        265
+      ]
+    },
+    {
+      "start": 1934.951,
+      "end": 1969.751,
+      "text": "但是就是说反过来，如果某一些人可以找到就是特别特别便宜的hardware，然后这个hardware它可能能提供类似的比例，但是可能比例也不一样也OK，但比较类似的flops，然后incentivize这些做模型的人去overfit到他这个卡上面的话，那么其实这个问题就反过来的，就是说我怎么样能够提供足够好的incentive让大家来overfit到我的硬件上面？那首先可能这个卡的量要大，其次这个卡的ecosystem要好。所以就是我可能没有直接回答你这个问题，就是说这个硬件应该怎么改，还有什么空间来优化？",
+      "refined_segment_indexes": [
+        266,
+        267,
+        268
+      ]
+    },
+    {
+      "start": 1970.071,
+      "end": 1999.991,
+      "text": "我觉得老黄之前讲的特别好的一个点是什么？就是说他开玩笑讲，你现在只要有电，你不买我的卡，你甚至会亏的底儿掉。就他的点在于就是说买这个卡甚至是cost neutral的，因为它很快能把这个钱挣回来。其他卡可能没有这个特性，导致了就是说我去overfit其他的卡，可能我没有办法把这个钱挣回来。那么这时候可能问的问题不是我这个scale up ratio应该是多少，我这个要不要用HBM还是不用HBM，对吧？甚至NVIDIA可能自己都不用HBM。",
+      "refined_segment_indexes": [
+        269,
+        270,
+        271,
+        272,
+        273,
+        274
+      ]
+    },
+    {
+      "start": 1999.991,
+      "end": 2033.111,
+      "text": "那可能要问的问题是我能不能找到一个卡，它能把绝大部分上游价钱合理的东西都整合到一起，然后通过各种各样的incentive program以及把各种各样呃软件的ecosystem都搭好，来incentivize大家overfit到我这个卡上面，特别serve的时候overfit到这个卡上面，能够做这个incentive的人，我觉得不管他最后这个ratio有多么的奇怪，他最后都能成功。但是如果做不到这个incentive的人，可能他ratio跟NVIDIA长得一模一样，他最后也不能成功。",
+      "refined_segment_indexes": [
+        275,
+        276,
+        277
+      ]
+    },
+    {
+      "start": 2033.671,
+      "end": 2065.031,
+      "text": "另外一个我们讲讲一下这个定制化的模型，什么样的企业它需要定制，什么样的不需要？就是这条标准线是怎么决定的？我觉得vertical SaaS company可能定制会好一些，具体的end consumer我们不建议去定制。比如说我们前面讲的Documely，Haley，他们跟医院去接触，他们知道比如说有十万个医院，他们的需求是什么，那么他就能把这个医疗做好，能够确保这个医疗能够cover各种各样的不同的case，他们就有能力去做一个fine tune。",
+      "refined_segment_indexes": [
+        278,
+        279,
+        280,
+        281
+      ]
+    },
+    {
+      "start": 2065.271,
+      "end": 2097.431,
+      "text": "或者说Harvey可能support各种各样的律所，那各种各样的律所都能cover到，它的医疗就会比较全，它就可以fine tune一个model。而具体到每个医院或者每个legal practice本身的话，我觉得要去做一些customized model还是特别特别难的。他们可能更适合就是把工作流固化到一个skill上面啊，或者说写一些内部的工具啊，这个agent啊，这个可能更适合一点。在这种企业化定制RL的这种项目里面，最花时间、最花钱的是哪一部分？呃，GPU肯定是消耗大头，然后还有一部分就是data。",
+      "refined_segment_indexes": [
+        282,
+        283,
+        284,
+        285,
+        286
+      ]
+    },
+    {
+      "start": 2098.151,
+      "end": 2121.671,
+      "text": "然后跟train的时候，我们也需要跟我们customer一起去做，就是看这个data有没有reward hacking behavior啊，看着data它的就environment stability啊，然后怎么样去scale up这个environment，呃，这些东西我们都会跟我们customer一起去看。那在整个做定制化RL的话，它需要什么样的数据量？可能上千个environment就可以了。所以只要上千条，不用。对对对。这是为什么呢？为什么数据量不用那么多？",
+      "refined_segment_indexes": [
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293
+      ]
+    },
+    {
+      "start": 2121.911,
+      "end": 2150.276,
+      "text": "啊，因为RL整个过程中这个模型会一直去探索，所以它生成的量会远大于这几千个。比如说我可能每一个step它reward假设比如说一百二十八，那么可能一千条数据会生成一百二十八K的数据，对吧？那这个量其实会随着environment的，就它可能不需要那么多environment，它也会有很大的量的数据去。教这个模型，就是说哪个是对的，哪个是错的。那比如说一个客户的模型上线之后，他未来需不需要回炉？",
+      "refined_segment_indexes": [
+        294,
+        295,
+        296,
+        297,
+        298
+      ]
+    },
+    {
+      "start": 2150.596,
+      "end": 2176.676,
+      "text": "回炉是需要，就比如说有新的模型launch了之后，我们都会帮他rebase，然后这个rebase的过程可能没有那么长了，就是只要他这个eval固固定下来就没有那么长。但是the customer都会想要加一些新的eval进来啊，他有新的workload进来，他想要push for harder task，对吧？那这时候可能就会还是会需要一些customization work，但是就只要这个eval固化了，rebase是很快的一件事情。那这个回炉的节奏大概是怎么怎么样的？",
+      "refined_segment_indexes": [
+        299,
+        300,
+        301,
+        302
+      ]
+    },
+    {
+      "start": 2176.916,
+      "end": 2208.036,
+      "text": "depend on open source model release cycle，对。下面想跟你探讨一下，就是Fireworks的核心竞争力的问题。帮企业进行开源模型的部署需要三块能力，一个是硬件算力，比如说像NVIDIA、Scaleway这样的公司；另外一块就是像你们这样做软件优化的公司；第三个是Palantir这样有客户关系的公司。那我们现在看到的是一些硬件算力的公司，他们现在在并购一些软件能力，比如说RLS Service这样的公司以及做推理优化的公司。你们如何保持自己的护城河？",
+      "refined_segment_indexes": [
+        303,
+        304,
+        305,
+        306,
+        307
+      ]
+    },
+    {
+      "start": 2208.116,
+      "end": 2240.676,
+      "text": "你们会去拥有重资产去买GPU吗？我觉得就是说前面有几个，第一个就是说Fireworks会不会自己做硬件？这个现在肯定是没有这个想法的，就是我们可能更偏二房东的这种set up，所以就是还是想把就软件这一层做好。就我们还是相信就是呃把compute layer做好是有价值的，以及就是说我们跟各个公司可能差别在于，就是我们真的是相信specialized intelligence，然后我们真的是往customized model那边去移动的。",
+      "refined_segment_indexes": [
+        308,
+        309,
+        310,
+        311
+      ]
+    },
+    {
+      "start": 2240.996,
+      "end": 2270.836,
+      "text": "我们绝大部分traffic也都不是vanilla base model，都是customized model，这个可能跟其他公司就不一样。比如说NVIDIA或者什么其他云公司，它可能绝大部分traffic还是base model。那base model我觉得这个呃生意竞争还是挺激烈的，但是我们是坚信就是说绝大部分的profit是在效果好的model上面。那么效果好的model，我们的customer才有能力去charge更多的钱，因为他们能deliver这些result，那么我们intern才能分到更多的钱。",
+      "refined_segment_indexes": [
+        312,
+        313,
+        314,
+        315
+      ]
+    },
+    {
+      "start": 2270.996,
+      "end": 2298.516,
+      "text": "所以我们是坚信customized intelligence，我们是坚信把training做好，这个客户inference才能有钱赚。然后我们跟其他就是RLS Service的company可能不一样点在于，就是很多RLS Service company要么只做training，要么只做consulting，他们的incentive跟customer没有那么aligned的点在于，就是说我们可能training要的只是他们效果好，可能不需要挣那么多，但是我们希望他inference的traffic能够一直能上来。",
+      "refined_segment_indexes": [
+        316,
+        317,
+        318
+      ]
+    },
+    {
+      "start": 2298.996,
+      "end": 2319.307,
+      "text": "所以我们incentive跟它aligned在于，他们通过inference能挣钱，我们通过他们挣的钱能分一点回来。如果是个consulting company或者是一个pure呃training infrastructure company呢？我觉得他们能做的有限，因为他们incentive跟customer success没有那么aligned，因为我们是aligned towards他们inference traffic，而他们aligned towards他们training traffic。",
+      "refined_segment_indexes": [
+        319,
+        320,
+        321
+      ]
+    },
+    {
+      "start": 2319.476,
+      "end": 2352.836,
+      "text": "所以我觉得就是真正的竞争对手可能不在于New Cloud跟现在的这些provider，而是在于CSP。就CSP是有能力，像我前面讲把整个链条都做起来的，他们既能做RLS Service活，又可以把inference做好。所以其实我们更多时候可能看的是CSP的能力，以及就是跟CSP怎么去partner。这个我觉得他们才是怎么说通关的大boss吧？就是可能我们不是就具体跟NVIDIA或者什么New Cloud这个可能，他因为他们人人力有限，他们想要把整个链条做起来，我觉得是个很困难的事情。",
+      "refined_segment_indexes": [
+        322,
+        323,
+        324,
+        325,
+        326
+      ]
+    },
+    {
+      "start": 2353.236,
+      "end": 2382.116,
+      "text": "你们跟CSP的话，这个又是竞争又是合作，竞合关系，那你们怎么保持你们的护城河呢？这个问题可能有点难回答啊。就是说呃确实我们跟Azure是合作的最紧密的，我们在Azure上面是One P，就是说可以直接买Azure的credit，买Microsoft Azure的credit，然后就可以得到Fireworks的服务。所以我们跟Azure确实合作比较紧密，然后我们也跟呃AWS跟GCP都有合作。所以说你们的就是推理优化是会比他们CSP自己的团队里要做的更好？至少目前是的，对。",
+      "refined_segment_indexes": [
+        327,
+        328,
+        329,
+        330,
+        331,
+        332
+      ]
+    },
+    {
+      "start": 2382.676,
+      "end": 2413.18,
+      "text": "但我觉得就是说具体推理优化做的好与坏，呃我没有那么。担心您问我的话，就是说，其实 CSP 整个链条做下来，他们这个能力很强，因为他们也做过这些事情。然后我们可能更在意的就是把整个呃 ML ops 这个这个 cycle 给走完，这个 developer lifecycle 我们希望体验比较好。这个我觉得是 CSP 更能做到的事情，versus 现在有的这些 new cloud 可能做的没那么全。所以你们的核心竞争力是？",
+      "refined_segment_indexes": [
+        333,
+        334,
+        335,
+        336,
+        337
+      ]
+    },
+    {
+      "start": 2413.5,
+      "end": 2443.74,
+      "text": "对，可能就是比 CSP 做的更好的点在于，整个 developer lifecycle 做的比较好。然后跟 new cloud 的竞争可能相对于就是说我们能做的链条更长，他们可能 serve 更多是 base model。比如说我们现在都聊的这个 recursive super intelligence，如果说 RSI 实现了 kernel 的优化呀、推理的优化以及这个训练 post training 都可以全都自动化了，那你们的核心竞争力在哪里？AGI 是一个特别难预测的事情。",
+      "refined_segment_indexes": [
+        338,
+        339,
+        340,
+        341
+      ]
+    },
+    {
+      "start": 2444.14,
+      "end": 2478.38,
+      "text": "要是真的有个 AGI 能把上面所有的活都干好，我觉得确实没什么核心竞争力。我觉得难点的在于就是，就算是 AGI 之后也需要跟客户聊需求吧，就是他在一个 lab 里面能不能把客户的需求都想出来，这个是很困难的事情。那客户需求这个东西如果没有办法通过 RSI 来获得的话，我觉得 RSI 可能成长的呃也有限。就他确实可能能解决黎曼猜想，但是我不确定他能不能解决客户需求。你们 Fireworks 从现在可能到未来一两年，你觉得你们现在最大的挑战是什么？",
+      "refined_segment_indexes": [
+        342,
+        343,
+        344,
+        345,
+        346
+      ]
+    },
+    {
+      "start": 2478.7,
+      "end": 2511.26,
+      "text": "未来一两年还是 compute 吧，我觉得就是说能不能在市场上用合理的价钱获得足够多的计算，因为现在确实 compute 的价钱非常非常高。然后我们公司最后肯定 revenue 还是 compute bound，所以如何获取足够多的 compute，肯定是一个比较困难的事情。进入到今年夏天以来，资本市场的一个很大的争论就是开源模型的质量开始 catch up，使得闭源模型的收入端会有承压。以前的那个趋势不一定会去持续，这样也会使得他们的 AI 未来的投入也继续承压。",
+      "refined_segment_indexes": [
+        347,
+        348,
+        349,
+        350
+      ]
+    },
+    {
+      "start": 2511.42,
+      "end": 2545.74,
+      "text": "所以我们看到整个硬件的这些股票，整个的半导体行业的一个比较大的一个回调。开源模型持续的 catch up，你是怎么看待这一轮资本市场的趋势的？我觉得就是 ROI 高不高的点，我觉得得反过来这么想，就是说假设这几个大的 player 他错过这一波了，假设 ROI 很高，但他错过了，那么他可能就再也回不到这个牌桌上了。所以他们的点在于就是说，就算我 overspend，我也不会有特别多的 downside，对吧？",
+      "refined_segment_indexes": [
+        351,
+        352,
+        353,
+        354
+      ]
+    },
+    {
+      "start": 2545.74,
+      "end": 2572.86,
+      "text": "我顶多这两年呃账本难看一点，以及我最后可能 depreciation 需要花个五年十年去消化这个东西。但这不是 existential risk，对吧？他们接下来还有二十年、三十年去消化这个东西，这个不是问题。但反过来就是说，他如果错过这一波，他们没有办法解决，所以他们有时候算这个账，比如说可能 Google、Meta 算这个账不是说我呃 LIC 多少，而是万一这个东西 LIC 特别高，而我错过了，我没有做这个投入，那我可能就完蛋。",
+      "refined_segment_indexes": [
+        355,
+        356,
+        357,
+        358
+      ]
+    },
+    {
+      "start": 2573.02,
+      "end": 2597.58,
+      "text": "New cloud 的话，我可能觉得他们就得更 honest 一点，就是说这个东西到底投入有多高之类的。不过我觉得就是说以我们的观察，就是呃绝大部分的场景下还是 compute constraint，Fireworks 肯定也是 compute constraint。我们也当然希望去市场上能找到更多的 compute。然后我觉得就是至少接下来一年我能看到都是 compute constraint setup。呃，一年之后你确实要 predict 国军也非常非常困难。",
+      "refined_segment_indexes": [
+        359,
+        360,
+        361,
+        362,
+        363
+      ]
+    },
+    {
+      "start": 2597.74,
+      "end": 2627.34,
+      "text": "但是他们确实 capex 一旦投下去要三三年可能才能回本，对吧？所以这个问题确实确实我觉得是个 open end question，我觉得回答不了。但我觉得就是可以看的一个点是什么？就是可以看各个公司的债券，就是他们的那些债券的评级是非常 transparent 的，对吧？然后某些公司可能它项目做的有底类啊之类的，会导致它债券评级会下降。那么我觉得这时候可以测试这个市场的点在于什么？就是假设有一些 player 接下来三到六个月。",
+      "refined_segment_indexes": [
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370
+      ]
+    },
+    {
+      "start": 2627.843,
+      "end": 2661.523,
+      "text": "因为债券出现问题而没有办法 borrow 更多的钱，需要去做一些 restructuring，然后这个市场上到底有几个人有钱可以把这个人给捞上来，这个我觉得是一个 watershed moment。在这 watershed moment 之前，我觉得要去测这东西有点难，因为现在都不确定大家兜里还有多少钱可以去捞这个人。只要这个人能捞上来，我觉得其实问题都不大，大家都可以继续去 build 这个没有问题。这个人万一捞不上来，呃，那我觉得确实挺困难的。开源模型追上来导致硬件价钱下跌，这个我实在捋不清楚这个关系。",
+      "refined_segment_indexes": [
+        371,
+        372,
+        373,
+        374,
+        375
+      ]
+    },
+    {
+      "start": 2661.923,
+      "end": 2687.203,
+      "text": "但你问我的话，我觉得开源模型追上来绝对是 favor infrastructure provider，因为它导致了 model 这一层的溢价能力变弱，对吧？那么反过来，如果这个东西钱不变的话，它肯定是 favor provide infrastructure 这层的人嘛，对吧？那么更接近 infrastructure 这些人应该股价要涨才对，而不是跌。就比如去年 DeepSeek 当刚出来的时候，因为的股价也是跌，我当时也是不懂，就是这些人怎么想的。",
+      "refined_segment_indexes": [
+        376,
+        377,
+        378,
+        379
+      ]
+    },
+    {
+      "start": 2687.603,
+      "end": 2704.083,
+      "text": "但是你可以反过来看，就是说其实 open source 肯定是 favor 这些硬件 provider。所以你其实说实话，不适合炒股，就是我理不清这个中间的逻辑的。但是你问我的话，我觉得肯定是 favor infrastructure provider。非常感谢今天 Beni 给我们的分享，非常非常有启发。啊，谢谢谢谢。",
+      "refined_segment_indexes": [
+        380,
+        381,
+        382,
+        383,
+        384
+      ]
+    }
+  ],
+  "lineage_schema_version": 2
+}

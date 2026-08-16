@@ -34,7 +34,7 @@ sources:
     url: https://podcasts.apple.com/us/podcast/%E7%A1%85%E8%B0%B7%E5%9D%90%E6%A0%87-sv-vector/id1882518109
     identifiers:
       apple_podcasts_id: "1882518109"
-last_verified_at: 2026-08-08
+last_verified_at: 2026-08-16
 ---
 
 # 硅谷坐标 SV-Vector
@@ -45,6 +45,7 @@ last_verified_at: 2026-08-08
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [【视频播客】硅谷坐标 x Fireworks 联创Benny Chen：开源模型、token增速、推理优化和模型定制](https://www.bilibili.com/video/BV1mJbU6REts/) | 硅谷坐标 SV-Vector | 2026-08-16 | [总结](./episodes/bili-bv1mjbu6rets-benny-chen/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1mjbu6rets-benny-chen/transcript.zh-CN.md) |
 | [硅谷坐标 × Lam Research 创始人林杰屏：AI超级周期和四十年半导体周期感悟](https://www.bilibili.com/video/BV1JZGc6iEjv/) | 硅谷坐标 SV-Vector | 2026-07-31 | [总结](./episodes/bili-bv1jzgc6iejv-lin-jieping/summary.zh-CN.md) | [英文逐字稿](./episodes/bili-bv1jzgc6iejv-lin-jieping/transcript.en.md) · [中文译稿](./episodes/bili-bv1jzgc6iejv-lin-jieping/transcript.zh-CN.md) |
 | [【视频播客】硅谷坐标 x Tensormesh 江鋆晨：AI 的记忆-KvCache的三层理解](https://www.bilibili.com/video/BV1JjTw6REEX/) | 硅谷坐标 SV-Vector | 2026-06-30 | [总结](./episodes/bili-bv1jjtw6reex-jiang-yunchen/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1jjtw6reex-jiang-yunchen/transcript.zh-CN.md) |
 | [硅谷坐标 x 喜马拉雅资本常劲：AI时代的价值投资](https://www.bilibili.com/video/BV1np7P6REFg/) | 硅谷坐标 SV-Vector | 2026-06-22 | [总结](./episodes/bili-bv1np7p6refg-chang-jin/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1np7p6refg-chang-jin/transcript.zh-CN.md) |

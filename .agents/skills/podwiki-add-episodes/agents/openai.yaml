@@ -1,0 +1,4 @@
+interface:
+  display_name: "PodWiki Add Episodes"
+  short_description: "Acquire, transcribe, and publish approved episodes"
+  default_prompt: "Use $podwiki-add-episodes to add these approved podcast episodes through the requested processing stage."

@@ -38,7 +38,7 @@ sources:
     url: https://podcasts.apple.com/sg/podcast/id1564877433
     identifiers:
       apple_podcasts_id: "1564877433"
-last_verified_at: 2026-08-07
+last_verified_at: 2026-08-16
 ---
 
 # 晚点聊 LateTalk
@@ -61,3 +61,7 @@ last_verified_at: 2026-08-07
 | [AI 季报 26Q2：从 coding 到 RSI，强者愈强的未来？【晚点聊LateTalk】](https://www.bilibili.com/video/BV1Mhgz6QEHA/) | 晚点聊 LateTalk | 2026-07-22 | [总结](./episodes/171-henry-yin/summary.zh-CN.md) | [逐字稿](./episodes/171-henry-yin/transcript.zh-CN.md) |
 | [世界模型这半年：路线争议、数据来源与商业落地【晚点LatePost】](https://www.bilibili.com/video/BV1Z9KA6sE9Q/) | 晚点聊 LateTalk | 2026-07-18 | [总结](./episodes/bili-bv1z9ka6se9q-wang-guangrun-pu-tao-zhong-liruo/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1z9ka6se9q-wang-guangrun-pu-tao-zhong-liruo/transcript.zh-CN.md) |
 | [AI 硬件大爆发，谁能抢占下一个“iPhone 时刻”【晚点LatePost】](https://www.bilibili.com/video/BV1bVNn6XERr/) | 晚点聊 LateTalk | 2026-07-10 | [总结](./episodes/bili-bv1bvnn6xerr-li-hongwei/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1bvnn6xerr-li-hongwei/transcript.zh-CN.md) |
+| [英伟达挑战者？Cerebras 投资故事【晚点聊LateTalk】](https://www.bilibili.com/video/BV18g7M6JEkw/) | 晚点聊 LateTalk | 2026-06-22 | [总结](./episodes/169-zhou-nan/summary.zh-CN.md) | [逐字稿](./episodes/169-zhou-nan/transcript.zh-CN.md) |
+| [对话王新宇：美团龙珠怎么投科技【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1vZEo6vEx1/) | 晚点聊 LateTalk | 2026-06-11 | [总结](./episodes/168-wang-xinyu/summary.zh-CN.md) | [逐字稿](./episodes/168-wang-xinyu/transcript.zh-CN.md) |
+| [许华哲再次具身创业：不想错过最大的西瓜【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1PVVF6rER7/) | 晚点聊 LateTalk | 2026-05-26 | [总结](./episodes/166-xu-huazhe/summary.zh-CN.md) | [逐字稿](./episodes/166-xu-huazhe/transcript.zh-CN.md) |
+| [当AI杀死SaaS，明略吴明辉聊多Agent网络、软件转型、AI新组织](https://www.bilibili.com/video/BV1ma5X6wEwb/) | 晚点聊 LateTalk | 2026-05-14 | [总结](./episodes/164-wu-minghui/summary.zh-CN.md) | [逐字稿](./episodes/164-wu-minghui/transcript.zh-CN.md) |
