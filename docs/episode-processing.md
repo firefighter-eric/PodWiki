@@ -3,7 +3,12 @@
 本文是新人和通用 AI 新增或继续处理单集时的统一入口。它规定执行顺序、停止点、
 产物和完成门禁；字段契约以[内容标准](./content-standard.md)为准，具体 CLI 参数以
 [脚本用法](./python-scripts.md)为准，来源限制与恢复策略同时遵守
-[项目处理 skill](../.agents/skills/podwiki-process-episode/SKILL.md)。
+[项目添加剧集 skill](../.agents/skills/podwiki-add-episodes/SKILL.md)。
+
+本流程只消费用户给出的精确单集或已经验证的扫描清单，不负责枚举频道、合集、
+feed 或栏目。发现更新、证明扫描覆盖范围和生成候选清单时使用
+[项目扫描剧集 skill](../.agents/skills/podwiki-scan-episodes/SKILL.md)；扫描本身不下载
+媒体、不建单集目录、不运行 ASR、不更新索引。
 
 ## 1. 适用范围与停止条件
 
@@ -152,8 +157,8 @@ metadata 的旧模型目录。MLX 继续使用其独立的 `*-pinned-v2` 目录�
 - Bilibili：`https://www.bilibili.com/video/<BVID>/`；
 - Bilibili 活动页 `/festival/...?...bvid=<BVID>`：提取 `bvid` 后改写为上述视频地址；
 - YouTube：`https://www.youtube.com/watch?v=<video-id>`；
-- 小宇宙：`https://www.xiaoyuzhoufm.com/episode/<episode-id>`；栏目页用于登记节目
-  身份，也可在明确授权的单栏目批次中发现单集，但不能作为媒体获取输入；
+- 小宇宙：`https://www.xiaoyuzhoufm.com/episode/<episode-id>`；栏目页只用于节目
+  身份和扫描阶段发现，不能作为媒体获取输入；
 - 删除 `spm_id_from`、`vd_source`、播放列表和其他追踪参数。
 
 登录本身不再构成停止条件。需要登录态时，必须先记录用户明确授权的平台、登录身份
@@ -186,23 +191,24 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 
 存在可用字幕时在这里停止。不要因为当前没有 importer 就忽略字幕改跑音频 ASR。
 
-### 明确授权的单播客批次
+### 消费扫描清单的有界批次
 
-未获授权时仍只处理用户指定的单集，不枚举整栏。只有用户明确点名并授权一个已
-核实的播客后，才可以发现它匿名或经授权登录态可见的公开免费完整单集；不得把授权
-扩大到其他节目、账号
-投稿或平台列表。下载任何媒体前先把本次范围冻结到
-`.cache/intake/<show-id>/manifest.json`，至少记录：
+添加流程始终只处理用户指定的精确单集，不枚举整栏。频道、feed、合集或栏目发现
+必须先由扫描剧集 skill 完成，并把每集判定、来源覆盖和证据保存为
+`.cache/scans/<scan-id>/scan.json`。用户确认添加其中的精确 `eligible-new` 子集后，
+下载任何媒体前把该子集冻结到 `.cache/intake/<show-id>/manifest.json`，至少记录：
 
 - Bilibili：频道规范 URL 与 `mid`、明确标为播客正片的官方 `season_id` 与合集标题，
   或用于逐集交叉对应的公开播客 feed 规范 URL；每集规范 URL 与 BVID，使用 feed
   交叉核实时还要记录对应 GUID 和单集 URL；
 - 小宇宙：栏目规范 URL、栏目 PID，以及每集规范 URL 与 `eid`；
-- 冻结时间、白名单总数和播客身份/完整单集证据；后续校验结果写入各集 intake
-  sidecar，不改写清单范围；
+- 来源 scan 路径与 SHA-256、冻结时间、白名单总数和播客身份/完整单集证据；后续
+  校验结果写入各集 intake sidecar，不改写清单范围；
 - 稳定顺序仅用于执行和复核，不作为正式期号。
 
-冻结后不因节目新增单集而自动扩展本次批次。Bilibili 混合频道只允许白名单中的完整
+扫描清单为 `partial` 或 `blocked` 时，不得把它解释为“全部更新”；只有用户明确
+批准的、逐集证据完整的精确候选才可继续。冻结后不因节目新增单集而自动扩展本次批次。
+Bilibili 混合频道只允许白名单中的完整
 播客正片，片段、直播、活动、课程和其他投稿保持排除；每集还要在实际授权访问上下文中
 独立通过访问状态、单 P、来源身份和字幕检查。小宇宙只有栏目身份一致且明确为
 `NORMAL`、`FREE`、非私密、`PUBLIC` 的条目才能进入下载清单。跨节目、未知状态、

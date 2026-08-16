@@ -98,6 +98,8 @@ Windows/CUDA 使用官方模型：
 
 | 脚本 | 用途 | 主要产物 |
 | --- | --- | --- |
+| `.agents/skills/podwiki-scan-episodes/scripts/build_episode_inventory.py` | 冻结扫描开始时的仓库单集身份和来源键 | `.cache/scans/.../inventory.json` |
+| `.agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py` | 校验扫描覆盖、候选状态、计数和仓库去重 | 终端校验结果 |
 | `scripts/acquire_media.py` | 获取一个已通过播客边界核实的公开 Bilibili/YouTube 视频版单集或小宇宙单集音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
 | `scripts/transcribe_qwen3_asr.py` | 使用 Qwen3-ASR 转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/transcribe_qwen3_asr_cuda.py` | 在 Windows/NVIDIA CUDA 上使用官方 Qwen 模型转写并强制对齐 | `raw.json`、`aligned.json` |
@@ -106,6 +108,33 @@ Windows/CUDA 使用官方模型：
 | `scripts/transcribe_audio.py` | 生成 MLX Whisper 对比基线 | Whisper `raw.json` |
 | `scripts/validate.py` | 校验内容、来源和 ASR 产物链 | 终端校验结果 |
 | `scripts/audit_correction_migration.py` | 重放按集修正规则并校验旧产物等价性 | JSON 审计报告 |
+
+## 准备并校验扫描清单
+
+扫描开始前，为每个节目生成一次仓库身份快照；它从节目和单集 front matter 提取
+规范 URL、BVID/eid/GUID 等稳定来源键，用于精确去重，不把标题相似度当作身份：
+
+```bash
+env UV_CACHE_DIR=.cache/uv uv run --no-sync python \
+  .agents/skills/podwiki-scan-episodes/scripts/build_episode_inventory.py \
+  --repository-root . \
+  --show <show-id> \
+  --output .cache/scans/<scan-id>/inventory.json
+```
+
+按扫描 skill 完成来源覆盖和逐项判定后，校验每个节目的 strict JSON 清单：
+
+```bash
+env UV_CACHE_DIR=.cache/uv uv run --no-sync python \
+  .agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py \
+  .cache/scans/<scan-id>/scan.json \
+  --repository-root .
+```
+
+校验器会拒绝重复 JSON key、非有限数字、错误汇总、仓库中已存在却声明为
+`eligible-new` 的来源、缺少完整单集证据的候选，以及必需来源未完成却声明为
+`complete` 的扫描；它还会拒绝比仓库 inventory 建议值更窄的增量窗口，以及未进入
+四分类的发现面 URL。清单和 inventory 都留在被 Git 忽略的 `.cache/scans/`。
 
 ## 获取公开音轨
 
@@ -124,15 +153,18 @@ token 和浏览器配置不得作为命令文本输出，也不得写入日志�
 时长较长、多人访谈或标题含 `EP` 均不充分；证据缺失或有歧义时停在 metadata-only
 intake，不下载媒体、不创建 tracked 单集。
 
-用户明确授权的单一已核实播客批量导入，必须先按[单集处理流程](./episode-processing.md)
-冻结 `.cache/intake/<show-id>/manifest.json`，再由外层任务逐集串行调用本脚本；脚本
-本身不会枚举栏目或在运行中扩展范围。Bilibili manifest 至少记录：
+用户明确授权扫描单一已核实播客后，先由
+[扫描剧集 skill](../.agents/skills/podwiki-scan-episodes/SKILL.md) 在
+`.cache/scans/<scan-id>/scan.json` 记录覆盖范围、候选与排除项。用户确认添加精确
+候选后，再按[单集处理流程](./episode-processing.md)把批准子集冻结到
+`.cache/intake/<show-id>/manifest.json`，由外层任务逐集串行调用本脚本；脚本本身
+不会枚举栏目或在运行中扩展范围。Bilibili intake manifest 至少记录：
 
 - 频道规范 URL 与 `mid`；
 - 官方播客正片 `season_id`（存在时）与合集标题；
 - 每集 BVID 和规范视频 URL；
 - 使用公开 RSS 交叉核实时的 feed 规范 URL，以及每个 BVID 对应的 RSS GUID 和单集 URL；
-- 冻结时间与白名单 `count`。
+- 来源 scan 路径与 SHA-256、冻结时间与白名单 `count`。
 
 小宇宙 manifest 继续记录栏目规范 URL、PID、每集规范 URL 与 `eid`、冻结时间和
 白名单总数。两种 manifest 都只能包含已逐集通过播客身份与完整正片门禁的条目。
@@ -494,6 +526,8 @@ npm --prefix apps/web audit --audit-level=high
 多位嘉宾使用顿号分隔。selected 为英文时，两级索引的逐字稿单元格都必须同时链接
 selected 英文稿与对应中文译稿。
 
-完整编排顺序见[单集端到端处理流程](./episode-processing.md)，恢复语义和来源限制见
-[PodWiki episode 处理 skill](../.agents/skills/podwiki-process-episode/SKILL.md)，
-内容字段和状态定义见[内容标准](./content-standard.md)。
+完整编排顺序见[单集端到端处理流程](./episode-processing.md)，更新发现与候选清单见
+[PodWiki 扫描剧集 skill](../.agents/skills/podwiki-scan-episodes/SKILL.md)，精确单集的
+恢复语义和来源限制见
+[PodWiki 添加剧集 skill](../.agents/skills/podwiki-add-episodes/SKILL.md)，内容字段和
+状态定义见[内容标准](./content-standard.md)。

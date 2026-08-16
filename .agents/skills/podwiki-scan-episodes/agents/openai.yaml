@@ -1,0 +1,4 @@
+interface:
+  display_name: "PodWiki Scan Episodes"
+  short_description: "Discover and verify podcast episode updates"
+  default_prompt: "Use $podwiki-scan-episodes to scan the selected PodWiki shows for verified new episode candidates."

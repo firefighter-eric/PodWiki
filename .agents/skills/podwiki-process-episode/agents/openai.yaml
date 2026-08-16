@@ -1,4 +1,0 @@
-interface:
-  display_name: "PodWiki Process Episode"
-  short_description: "Acquire, transcribe, render, and validate podcast episodes"
-  default_prompt: "Use $podwiki-process-episode to process this podcast episode through the requested stage."

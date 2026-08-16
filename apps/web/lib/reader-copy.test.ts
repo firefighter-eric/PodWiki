@@ -94,7 +94,7 @@ describe("getReaderFacingSummary", () => {
     const episodes = await getEpisodes();
     const readerSummaries = episodes.map((episode) => getReaderFacingSummary(episode.summaryRaw));
 
-    expect(readerSummaries).toHaveLength(126);
+    expect(readerSummaries).toHaveLength(131);
     expect(readerSummaries.every((summary) => summary.includes("## 阅读边界"))).toBe(true);
     expect(readerSummaries.every((summary) => !summary.includes("## 编辑记录"))).toBe(true);
   });

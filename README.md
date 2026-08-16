@@ -4,9 +4,13 @@ PodWiki 是一个使用 Markdown 构建的播客 Wiki，只收录可核实播客
 
 项目优先服务播客内容的发现与阅读：节目页提供单集索引，单集页记录来源与处理状态，独立的总结和逐字稿用于快速理解与深入检索。
 
-## 新增单集 / AI 处理
+## 扫描与新增单集
 
-新增、下载、转写、翻译或更新单集时，从[单集处理流程](./docs/episode-processing.md)开始，并同时遵守[内容标准](./docs/content-standard.md)与项目的 [PodWiki episode 处理 skill](./.agents/skills/podwiki-process-episode/SKILL.md)。
+检查节目更新时使用项目的 [PodWiki 扫描剧集 skill](./.agents/skills/podwiki-scan-episodes/SKILL.md)，
+只生成可验证的候选清单。新增、下载、转写、翻译或继续处理精确单集时，从
+[单集处理流程](./docs/episode-processing.md)开始，并同时遵守
+[内容标准](./docs/content-standard.md)与
+[PodWiki 添加剧集 skill](./.agents/skills/podwiki-add-episodes/SKILL.md)。
 
 ## Web 阅读器
 
@@ -47,6 +51,7 @@ npm run check
 
 | 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |
 | --- | --- | --- | --- | --- | --- |
+| [【视频播客】硅谷坐标 x Fireworks 联创Benny Chen：开源模型、token增速、推理优化和模型定制](https://www.bilibili.com/video/BV1mJbU6REts/) | Benny Chen | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-08-16 | [总结](./shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/transcript.zh-CN.md) |
 | [对话前DeepMind曹原：AI for Science爆发，一个新时代到来了【101视频播客】](https://www.bilibili.com/video/BV1GQgg6yEy5/) | 曹原 | [硅谷101](./shows/sv101/) | 2026-08-15 | [总结](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/transcript.zh-CN.md) |
 | [对英伟达研究副总裁刘洺堉的4小时访谈：Cosmos 3、世界模型、武术、黄仁勋影响我的，和你不需要击败所有对手](https://www.bilibili.com/video/BV1fmgj66EtD/) | 刘洺堉 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-08-13 | [总结](./shows/zhangxiaojun/episodes/150-liu-mingyu/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/150-liu-mingyu/transcript.zh-CN.md) |
 | [李正韬：YC，明星初创，语音AI，客服，执行力，创2代，OpenAI，996](https://www.bilibili.com/video/BV1S9u16KETq/) | 李正韬 | [月球大叔的硅谷播客](./shows/moonuncle/) | 2026-08-09 | [总结](./shows/moonuncle/episodes/bili-bv1s9u16ketq-li-zhengtao/summary.zh-CN.md) | [逐字稿](./shows/moonuncle/episodes/bili-bv1s9u16ketq-li-zhengtao/transcript.zh-CN.md) |
@@ -85,10 +90,12 @@ npm run check
 | [对话王熙乔：AI时代的教育者、十年沉浮，与人类文明的下一步【101视频播客】](https://www.bilibili.com/video/BV1Ed7n6TEr1/) | 王熙乔 | [硅谷101](./shows/sv101/) | 2026-06-27 | [总结](./shows/sv101/episodes/bili-bv1ed7n6ter1-wang-xiqiao/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/bili-bv1ed7n6ter1-wang-xiqiao/transcript.zh-CN.md) |
 | [【正片】罗永浩的X字路口！不借钱给朋友，就会失去朋友失去钱！](https://www.bilibili.com/video/BV1h67B63EyE/) | 小镟、贤鱼、王继业、小四爷 | [罗永浩的十字路口](./shows/luoyonghao/) | 2026-06-26 | [总结](./shows/luoyonghao/episodes/bili-bv1h67b63eye-x-jieqian/summary.zh-CN.md) | [逐字稿](./shows/luoyonghao/episodes/bili-bv1h67b63eye-x-jieqian/transcript.zh-CN.md) |
 | [许乐：我还要干票大的！](https://www.xiaoyuzhoufm.com/episode/6a3a595e2e335a35a808142c) | — | [一起铁TALK](./shows/yiqitietalk/) | 2026-06-23 | [总结](./shows/yiqitietalk/episodes/16-xu-le/summary.zh-CN.md) | [逐字稿](./shows/yiqitietalk/episodes/16-xu-le/transcript.zh-CN.md) |
+| [英伟达挑战者？Cerebras 投资故事【晚点聊LateTalk】](https://www.bilibili.com/video/BV18g7M6JEkw/) | 周楠 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-06-22 | [总结](./shows/latetalk/episodes/169-zhou-nan/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/169-zhou-nan/transcript.zh-CN.md) |
 | [硅谷坐标 x 喜马拉雅资本常劲：AI时代的价值投资](https://www.bilibili.com/video/BV1np7P6REFg/) | 常劲 | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-06-22 | [总结](./shows/svvector/episodes/bili-bv1np7p6refg-chang-jin/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv1np7p6refg-chang-jin/transcript.zh-CN.md) |
 | [吴冰：我要参加亚运会马拉松比赛啦！](https://www.xiaoyuzhoufm.com/episode/6a3257ae4233e62bc54b5ec4) | 吴冰 | [一起铁TALK](./shows/yiqitietalk/) | 2026-06-17 | [总结](./shows/yiqitietalk/episodes/15-wu-bing/summary.zh-CN.md) | [逐字稿](./shows/yiqitietalk/episodes/15-wu-bing/transcript.zh-CN.md) |
 | [口述SpaceX开发史：和前高管洪力德聊，马斯克用人观、最大IPO、太空与AI、人类文明扩张前奏？](https://www.bilibili.com/video/BV1HfEy6jEUx/) | 洪力德 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-06-12 | [总结](./shows/zhangxiaojun/episodes/145-hong-lide/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/145-hong-lide/transcript.zh-CN.md) |
 | [【正片】王晶×罗永浩！谁还记得大导演张彻楚原？我死了什么都不需要留下](https://www.bilibili.com/video/BV19vEd6hEpn/) | 王晶 | [罗永浩的十字路口](./shows/luoyonghao/) | 2026-06-11 | [总结](./shows/luoyonghao/episodes/bili-bv19ved6hepn-wang-jing/summary.zh-CN.md) | [逐字稿](./shows/luoyonghao/episodes/bili-bv19ved6hepn-wang-jing/transcript.zh-CN.md) |
+| [对话王新宇：美团龙珠怎么投科技【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1vZEo6vEx1/) | 王新宇 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-06-11 | [总结](./shows/latetalk/episodes/168-wang-xinyu/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/168-wang-xinyu/transcript.zh-CN.md) |
 | [江鋆晨: 大模型记忆，KV Cache，清华姚班，CMU，教授，开源，视频流媒体](https://www.bilibili.com/video/BV1x2EQ6BE1g/) | 江鋆晨 | [月球大叔的硅谷播客](./shows/moonuncle/) | 2026-06-10 | [总结](./shows/moonuncle/episodes/bili-bv1x2eq6be1g-jiang-junchen/summary.zh-CN.md) | [逐字稿](./shows/moonuncle/episodes/bili-bv1x2eq6be1g-jiang-junchen/transcript.zh-CN.md) |
 | [对阳萌的4小时访谈：消费电子死与生、第三类公司、端侧模型、产品方法、游戏模式](https://www.bilibili.com/video/BV1dyE86bENz/) | 阳萌 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-06-08 | [总结](./shows/zhangxiaojun/episodes/144-yang-meng/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/144-yang-meng/transcript.zh-CN.md) |
 | [李美珍：我是你们的马拉松运动员李美珍](https://www.xiaoyuzhoufm.com/episode/6a25611c7444b5722234d445) | 李美珍 | [一起铁TALK](./shows/yiqitietalk/) | 2026-06-07 | [总结](./shows/yiqitietalk/episodes/14-li-meizhen/summary.zh-CN.md) | [逐字稿](./shows/yiqitietalk/episodes/14-li-meizhen/transcript.zh-CN.md) |
@@ -96,9 +103,11 @@ npm run check
 | [硅谷坐标x璞林资本Kenny Zhang：Neocloud崛起背后的供需博弈与AI基建重构](https://www.bilibili.com/video/BV14JEN66EkC/) | Kenny Zhang | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-06-05 | [总结](./shows/svvector/episodes/bili-bv14jen66ekc-kenny-zhang/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv14jen66ekc-kenny-zhang/transcript.zh-CN.md) |
 | [【正片】罗永浩的X字路口！当一群情绪不稳定的杠精讨论起情绪稳定](https://www.bilibili.com/video/BV1gUV46aEJG/) | 高寒、小块、孙书恒、王继业 | [罗永浩的十字路口](./shows/luoyonghao/) | 2026-05-29 | [总结](./shows/luoyonghao/episodes/bili-bv1guv46aejg-x-qingxu-wending/summary.zh-CN.md) | [逐字稿](./shows/luoyonghao/episodes/bili-bv1guv46aejg-x-qingxu-wending/transcript.zh-CN.md) |
 | [对何小鹏的第二次访谈：更大赌注、人形机器人Iron诞生、那场意外、技术剧变下CEO、GX和缝合怪](https://www.bilibili.com/video/BV1d4GU6wEDo/) | 何小鹏 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-05-28 | [总结](./shows/zhangxiaojun/episodes/143-he-xiaopeng/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/143-he-xiaopeng/transcript.zh-CN.md) |
+| [许华哲再次具身创业：不想错过最大的西瓜【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1PVVF6rER7/) | 许华哲 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-05-26 | [总结](./shows/latetalk/episodes/166-xu-huazhe/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/166-xu-huazhe/transcript.zh-CN.md) |
 | [【正片】郑执×罗永浩！总是赶末班车的人，可以改进时间管理......也可以拥有一辆属于自己的车](https://www.bilibili.com/video/BV1wqLm67EY6/) | 郑执 | [罗永浩的十字路口](./shows/luoyonghao/) | 2026-05-21 | [总结](./shows/luoyonghao/episodes/028-zheng-zhi/summary.zh-CN.md) | [逐字稿](./shows/luoyonghao/episodes/028-zheng-zhi/transcript.zh-CN.md) |
 | [“谷歌太慢了”：与Andrew Dai聊Gemini的翻身之战，出走与视觉理解模型【硅谷101视频播客】](https://www.bilibili.com/video/BV1JCLw61E2d/) | Andrew Dai | [硅谷101](./shows/sv101/) | 2026-05-19 | [总结](./shows/sv101/episodes/bili-bv1jclw61e2d-andrew-dai/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/bili-bv1jclw61e2d-andrew-dai/transcript.zh-CN.md) |
 | [朱邦华: SGLang，强化学习，英伟达收购，二次创业，清华，伯克利，LMSYS，Chatbot Arena，勇于放弃](https://www.bilibili.com/video/BV1TTLc6HEKT/) | 朱邦华 | [月球大叔的硅谷播客](./shows/moonuncle/) | 2026-05-18 | [总结](./shows/moonuncle/episodes/bili-bv1ttlc6hekt-zhu-banghua/summary.zh-CN.md) | [逐字稿](./shows/moonuncle/episodes/bili-bv1ttlc6hekt-zhu-banghua/transcript.zh-CN.md) |
+| [当AI杀死SaaS，明略吴明辉聊多Agent网络、软件转型、AI新组织](https://www.bilibili.com/video/BV1ma5X6wEwb/) | 吴明辉 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-05-14 | [总结](./shows/latetalk/episodes/164-wu-minghui/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/164-wu-minghui/transcript.zh-CN.md) |
 | [【正片】李想×罗永浩！李想的理想：通过 AI 技术，让普通人也过上富豪的生活](https://www.bilibili.com/video/BV1LD5T6pEp4/) | 李想 | [罗永浩的十字路口](./shows/luoyonghao/) | 2026-05-13 | [总结](./shows/luoyonghao/episodes/027-li-xiang/summary.zh-CN.md) | [逐字稿](./shows/luoyonghao/episodes/027-li-xiang/transcript.zh-CN.md) |
 | [对姚顺宇的4小时访谈：请允许我小疯一下！在Anthropic和Gemini训模型、技术预测、英雄主义已过去](https://www.bilibili.com/video/BV1YR5E6EE9o/) | 姚顺宇 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-05-11 | [总结](./shows/zhangxiaojun/episodes/140-yao-shunyu/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/140-yao-shunyu/transcript.zh-CN.md) |
 | [硅谷坐标 x FundaAI创始人周默：四大科技公司财报后的AI产业深度观察](https://www.bilibili.com/video/BV11QRrBcEz3/) | 周默 | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-05-05 | [总结](./shows/svvector/episodes/bili-bv11qrrbcez3-zhou-mo/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv11qrrbcez3-zhou-mo/transcript.zh-CN.md) |
