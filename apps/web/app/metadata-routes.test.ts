@@ -9,8 +9,8 @@ import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { getEpisodeCards, getShows } from "@/lib/content";
 
-vi.mock("next/font/google", () => ({
-  Noto_Serif_SC: () => ({ variable: "podwiki-noto-serif-sc" }),
+vi.mock("next/font/local", () => ({
+  default: () => ({ variable: "podwiki-local-font" }),
 }));
 
 const productionUrl = "https://podwiki.vercel.app";

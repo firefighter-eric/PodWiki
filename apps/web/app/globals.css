@@ -10,10 +10,9 @@
   --accent: #e83a2a;
   --accent-dark: #c82d20;
   --sidebar-width: 280px;
-  --serif: Georgia, "Songti SC", "STSong", var(--font-noto-serif-sc),
-    "Noto Serif CJK SC", serif;
-  --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --serif: var(--font-georgia), var(--font-songti-sc), serif;
+  --sans: var(--font-sf-pro), var(--font-pingfang-sc), sans-serif;
+  --mono: var(--font-sf-mono), var(--font-pingfang-sc), monospace;
 }
 
 * {
@@ -1230,7 +1229,7 @@ button {
   padding: 0.12em 0.35em;
   border-radius: 3px;
   background: #efebe4;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--mono);
   font-size: 0.88em;
   overflow-wrap: anywhere;
 }
