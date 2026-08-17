@@ -11,6 +11,7 @@
 *.mp4 binary
 *.opus binary
 *.wav binary
+*.woff2 binary
 
 shows/**/asr/**/*.json text eol=lf
 shows/**/transcript.*.md text eol=lf whitespace=-blank-at-eol
