@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AppShell } from "@/components/app-shell";
+import { notoSerifSC } from "@/app/fonts";
 import { getEpisodeCards, getShows } from "@/lib/content";
 import { toSidebarEpisode } from "@/lib/sidebar-episodes";
 import "./globals.css";
@@ -37,6 +38,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html
       lang="zh-CN"
+      className={notoSerifSC.variable}
       data-scroll-behavior="smooth"
       data-sidebar-state="expanded"
       data-reader-font-size="medium"
