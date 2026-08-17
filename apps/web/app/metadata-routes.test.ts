@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { metadata as layoutMetadata } from "@/app/layout";
 import { metadata as showsMetadata } from "@/app/shows/page";
 import { generateMetadata as generateShowMetadata } from "@/app/shows/[showId]/page";
@@ -8,6 +8,10 @@ import { generateMetadata as generateTranscriptMetadata } from "@/app/shows/[sho
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { getEpisodeCards, getShows } from "@/lib/content";
+
+vi.mock("next/font/google", () => ({
+  Noto_Serif_SC: () => ({ variable: "podwiki-noto-serif-sc" }),
+}));
 
 const productionUrl = "https://podwiki.vercel.app";
 
