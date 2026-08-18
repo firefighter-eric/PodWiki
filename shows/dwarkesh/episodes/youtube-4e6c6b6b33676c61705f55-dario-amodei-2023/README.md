@@ -23,6 +23,17 @@ participants:
   - id: dario-amodei
     name: Dario Amodei
     role: guest
+    profile:
+      headline: "Anthropic 联合创始人兼首席执行官"
+      bio: "AI 研究者，曾在 OpenAI 参与 GPT-2、GPT-3 并共同领导研究方向；随后联合创办 Anthropic，聚焦可靠、可解释和可控的前沿 AI 系统。"
+      affiliations:
+        - organization: Anthropic
+          title: "联合创始人兼首席执行官"
+          status: current
+        - organization: OpenAI
+          title: "研究副总裁"
+          status: former
+      checked_at: 2026-08-18
   - id: dwarkesh-patel
     name: Dwarkesh Patel
     role: host
@@ -40,6 +51,14 @@ sources:
     identifiers:
       guid: "substack:post:135814349"
       feed_url: https://api.substack.com/feed/podcast/69345.rss
+  - platform: website
+    kind: profile
+    title: "Anthropic：Dario Amodei 官方职务资料"
+    url: https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships
+  - platform: website
+    kind: profile
+    title: "OpenAI：Dario Amodei 任职资料"
+    url: https://openai.com/index/organizational-update/
 workflow:
   metadata: verified
   summary: draft

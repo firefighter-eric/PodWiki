@@ -23,6 +23,23 @@ participants:
   - id: satya-nadella
     name: Satya Nadella
     role: guest
+    profile:
+      headline: "Microsoft 董事长兼首席执行官"
+      bio: "1992 年加入 Microsoft，曾领导云与企业事业群；2014 年起任首席执行官，目前兼任董事长。"
+      affiliations:
+        - organization: Microsoft
+          title: "董事长兼首席执行官"
+          status: current
+      education:
+        - institution: Mangalore University
+          credential: "学士"
+          field: "电气工程"
+        - institution: "University of Wisconsin–Milwaukee"
+          credential: "硕士"
+          field: "计算机科学"
+        - institution: University of Chicago
+          credential: MBA
+      checked_at: 2026-08-18
   - id: dwarkesh-patel
     name: Dwarkesh Patel
     role: host
@@ -40,6 +57,10 @@ sources:
     identifiers:
       guid: "substack:post:157454089"
       feed_url: https://api.substack.com/feed/podcast/69345.rss
+  - platform: website
+    kind: profile
+    title: "Microsoft：Satya Nadella 官方人物介绍"
+    url: https://news.microsoft.com/source/exec/satya-nadella/
 workflow:
   metadata: verified
   summary: draft

@@ -116,6 +116,7 @@ const sourceSchema = z
       "feed-item",
       "podcast",
       "playlist",
+      "profile",
       "show",
       "video",
       "video-channel",

@@ -23,6 +23,18 @@ participants:
   - id: marc-andreessen
     name: Marc Andreessen
     role: guest
+    profile:
+      headline: "Andreessen Horowitz（a16z）联合创始人兼普通合伙人"
+      bio: "软件创业者与风险投资人，曾共同开发 Mosaic 浏览器并联合创办 Netscape、Loudcloud；2009 年与 Ben Horowitz 创办 a16z。"
+      affiliations:
+        - organization: Andreessen Horowitz
+          title: "联合创始人兼普通合伙人"
+          status: current
+      education:
+        - institution: University of Illinois Urbana-Champaign
+          credential: BS
+          field: "计算机科学"
+      checked_at: 2026-08-18
   - id: dwarkesh-patel
     name: Dwarkesh Patel
     role: host
@@ -40,6 +52,10 @@ sources:
     identifiers:
       guid: "substack:post:99489876"
       feed_url: https://api.substack.com/feed/podcast/69345.rss
+  - platform: website
+    kind: profile
+    title: "a16z：Marc Andreessen 官方人物介绍"
+    url: https://a16z.com/author/marc-andreessen/
 workflow:
   metadata: verified
   summary: draft

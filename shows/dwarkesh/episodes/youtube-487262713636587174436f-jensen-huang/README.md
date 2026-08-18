@@ -23,6 +23,21 @@ participants:
   - id: jensen-huang
     name: Jensen Huang
     role: guest
+    profile:
+      headline: "NVIDIA 联合创始人、总裁兼首席执行官"
+      bio: "1993 年创办 NVIDIA 并持续领导公司；此前曾在 LSI Logic 与 AMD 任职，职业重点横跨芯片、加速计算与 AI 平台。"
+      affiliations:
+        - organization: NVIDIA
+          title: "联合创始人、总裁兼首席执行官"
+          status: current
+      education:
+        - institution: Oregon State University
+          credential: BSEE
+          field: "电气工程"
+        - institution: Stanford University
+          credential: MSEE
+          field: "电气工程"
+      checked_at: 2026-08-18
   - id: dwarkesh-patel
     name: Dwarkesh Patel
     role: host
@@ -40,6 +55,10 @@ sources:
     identifiers:
       guid: "substack:post:194289889"
       feed_url: https://api.substack.com/feed/podcast/69345.rss
+  - platform: website
+    kind: profile
+    title: "NVIDIA：Jensen Huang 官方人物介绍"
+    url: https://www.nvidia.com/en-us/about-nvidia/board-of-directors/jensen-huang/
 workflow:
   metadata: verified
   summary: draft

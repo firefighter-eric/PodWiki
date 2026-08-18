@@ -294,6 +294,8 @@ numbering:
 所有内容来源只保存规范链接，不保存用户提供的原始追踪链接。
 每集必须至少登记一个 `sources` 条目，并且恰好一个条目使用 YAML 布尔值
 `preferred: true` 作为 Web 首选来源；其余条目可以写 `preferred: false` 或省略。
+人物介绍或机构主页等背景证据使用 `platform: website` 与 `kind: profile`，并保留
+对应人物或机构发布的规范 HTTPS URL；这类补充证据不得设为首选单集来源。
 
 Bilibili 视频地址固定为：
 
