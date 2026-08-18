@@ -47,6 +47,7 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync mypy \
   .agents/skills/podwiki-scan-episodes/scripts/build_episode_inventory.py \
   .agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py \
   scripts/acquire_media.py scripts/audit_correction_migration.py scripts/asr_lineage.py \
+  scripts/import_youtube_captions.py \
   scripts/process_qwen3_asr_batch.py scripts/qwen3_asr_transformers_adapter.py \
   scripts/render_asr_transcript.py \
   scripts/transcribe_audio.py scripts/transcribe_qwen3_asr.py \

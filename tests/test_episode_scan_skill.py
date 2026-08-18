@@ -20,6 +20,9 @@ VALIDATOR_SCRIPT = (
 )
 KNOWN_BVID = "BV1Know00000"
 NEW_BVID = "BV1New000000"
+YOUTUBE_VIDEO_ID = "-RXD4bTuFTo"
+YOUTUBE_CHANNEL_ID = "UCXl4i9dYBrFOabk0xGmbkRA"
+YOUTUBE_PLAYLIST_ID = "PLd7-bHaQwnthaNDpZ32TtYONGVk95-fhF"
 
 
 class EpisodeScanSkillTests(unittest.TestCase):
@@ -169,6 +172,107 @@ sources:
             text=True,
         )
 
+    def make_youtube_repository(self, root: Path) -> None:
+        show = root / "shows/dwarkesh"
+        show.mkdir(parents=True)
+        (show / "README.md").write_text(
+            f"""---
+schema_version: 1
+kind: show
+id: dwarkesh
+title: Dwarkesh Podcast
+status: active
+sources:
+  - platform: youtube
+    kind: playlist
+    url: https://www.youtube.com/playlist?list={YOUTUBE_PLAYLIST_ID}
+    preferred: true
+    identifiers:
+      channel_id: {YOUTUBE_CHANNEL_ID}
+      playlist_id: {YOUTUBE_PLAYLIST_ID}
+---
+
+# Dwarkesh Podcast
+""",
+            encoding="utf-8",
+        )
+
+    def youtube_manifest(self) -> dict[str, Any]:
+        video_url = f"https://www.youtube.com/watch?v={YOUTUBE_VIDEO_ID}"
+        return {
+            "schema_version": 1,
+            "kind": "podwiki-episode-scan",
+            "scan_id": "20260818T000000Z-dwarkesh-test",
+            "show_id": "dwarkesh",
+            "show_title": "Dwarkesh Podcast",
+            "started_at": "2026-08-18T00:00:00Z",
+            "completed_at": "2026-08-18T00:10:00Z",
+            "status": "complete",
+            "scope": {
+                "mode": "full",
+                "coverage_start": "2020-01-01T00:00:00Z",
+                "coverage_end": "2026-08-18T00:10:00Z",
+                "repository_commit": None,
+                "required_platforms": ["youtube"],
+                "access_context": "anonymous",
+            },
+            "sources": [
+                {
+                    "platform": "youtube",
+                    "url": (
+                        "https://www.youtube.com/playlist?list=" f"{YOUTUBE_PLAYLIST_ID}"
+                    ),
+                    "role": "discovery",
+                    "required": True,
+                    "status": "verified",
+                    "checked_at": "2026-08-18T00:09:00Z",
+                    "coverage_complete": True,
+                    "observed_item_urls": [video_url],
+                    "evidence": "Official podcast playlist was fully enumerated.",
+                }
+            ],
+            "candidates": [
+                {
+                    "decision": "eligible-new",
+                    "platform": "youtube",
+                    "canonical_url": video_url,
+                    "identifiers": {
+                        "video_id": YOUTUBE_VIDEO_ID,
+                        "channel_id": YOUTUBE_CHANNEL_ID,
+                        "playlist_id": YOUTUBE_PLAYLIST_ID,
+                    },
+                    "title": "Ryan Greenblatt",
+                    "published_at": "2026-08-11T16:45:37Z",
+                    "duration_seconds": 7952,
+                    "decision_reason": "Official complete episode absent from the repository.",
+                    "evidence": [
+                        {
+                            "type": "show-identity",
+                            "url": (
+                                "https://www.youtube.com/playlist?list="
+                                f"{YOUTUBE_PLAYLIST_ID}"
+                            ),
+                            "checked_at": "2026-08-18T00:05:00Z",
+                            "note": "Official publisher podcast playlist.",
+                        },
+                        {
+                            "type": "complete-episode",
+                            "url": video_url,
+                            "checked_at": "2026-08-18T00:06:00Z",
+                            "note": "Exact item appears in the complete-episodes playlist.",
+                        },
+                    ],
+                    "matched_episode_id": None,
+                }
+            ],
+            "summary": {
+                "eligible_new": 1,
+                "already_present": 0,
+                "excluded": 0,
+                "needs_review": 0,
+            },
+        }
+
     def test_inventory_extracts_stable_repository_identity(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -254,6 +358,13 @@ sources:
             result = self.run_validator(root, self.manifest(self.candidate(platform="rss")))
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("eligible-new must be on official Bilibili", result.stderr)
+
+    def test_validator_accepts_youtube_playlist_and_case_sensitive_video_identity(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_youtube_repository(root)
+            result = self.run_validator(root, self.youtube_manifest())
+            self.assertEqual(result.returncode, 0, result.stderr)
 
 
 if __name__ == "__main__":

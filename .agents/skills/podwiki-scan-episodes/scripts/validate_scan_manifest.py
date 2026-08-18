@@ -24,6 +24,15 @@ SOURCE_ROLES = {"discovery", "identity", "cross-check"}
 STRICT_DIALOGUE_SHOWS = {"zhangxiaojun", "sv101"}
 BVID_RE = re.compile(r"BV[0-9A-Za-z]{10}")
 EID_RE = re.compile(r"[0-9a-f]{24}")
+YOUTUBE_VIDEO_ID_RE = re.compile(r"[A-Za-z0-9_-]{11}")
+YOUTUBE_CHANNEL_ID_RE = re.compile(r"UC[A-Za-z0-9_-]{22}")
+YOUTUBE_PLAYLIST_ID_RE = re.compile(r"[A-Za-z0-9_-]{10,64}")
+CANONICAL_YOUTUBE_VIDEO_RE = re.compile(
+    r"https://www\.youtube\.com/watch\?v=(?P<video_id>[A-Za-z0-9_-]{11})"
+)
+CANONICAL_YOUTUBE_PLAYLIST_RE = re.compile(
+    r"https://www\.youtube\.com/playlist\?list=(?P<playlist_id>[A-Za-z0-9_-]{10,64})"
+)
 GIT_SHA_RE = re.compile(r"[0-9a-f]{40}")
 
 
@@ -74,15 +83,22 @@ def validate_https_url(value: Any, field: str, errors: list[str]) -> str | None:
     except ValueError:
         errors.append(f"{field} must be a valid HTTPS URL")
         return None
+    canonical_youtube = (
+        CANONICAL_YOUTUBE_VIDEO_RE.fullmatch(str(value)) is not None
+        or CANONICAL_YOUTUBE_PLAYLIST_RE.fullmatch(str(value)) is not None
+    )
     if (
         parsed.scheme != "https"
         or not parsed.netloc
         or parsed.username is not None
         or parsed.password is not None
-        or parsed.query
         or parsed.fragment
+        or (parsed.query and not canonical_youtube)
     ):
-        errors.append(f"{field} must be canonical HTTPS without credentials, query, or fragment")
+        errors.append(
+            f"{field} must be canonical HTTPS without credentials or fragments; "
+            "only canonical YouTube v/list queries are allowed"
+        )
         return None
     return str(value)
 
@@ -131,6 +147,25 @@ def validate_candidate_identity(
             errors.append(f"{field}.identifiers.eid must be 24 lowercase hex characters")
         expected = f"https://www.xiaoyuzhoufm.com/episode/{eid}"
         if isinstance(eid, str) and url != expected:
+            errors.append(f"{field}.canonical_url must equal {expected}")
+    elif platform == "youtube":
+        video_id = identifiers.get("video_id")
+        channel_id = identifiers.get("channel_id")
+        playlist_id = identifiers.get("playlist_id")
+        if not isinstance(video_id, str) or YOUTUBE_VIDEO_ID_RE.fullmatch(video_id) is None:
+            errors.append(f"{field}.identifiers.video_id must be an exact YouTube video ID")
+        if (
+            not isinstance(channel_id, str)
+            or YOUTUBE_CHANNEL_ID_RE.fullmatch(channel_id) is None
+        ):
+            errors.append(f"{field}.identifiers.channel_id must be a YouTube channel ID")
+        if (
+            not isinstance(playlist_id, str)
+            or YOUTUBE_PLAYLIST_ID_RE.fullmatch(playlist_id) is None
+        ):
+            errors.append(f"{field}.identifiers.playlist_id must be a YouTube playlist ID")
+        expected = f"https://www.youtube.com/watch?v={video_id}"
+        if isinstance(video_id, str) and url != expected:
             errors.append(f"{field}.canonical_url must equal {expected}")
     elif platform == "rss" and not any(
         is_non_empty_string(identifiers.get(key)) for key in ("guid", "rss_guid", "episode_guid")

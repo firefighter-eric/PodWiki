@@ -46,6 +46,7 @@ npm run check
 | [月球大叔的硅谷播客](https://space.bilibili.com/15452596/) | 从硅谷与科技创业实践出发，访谈 AI、系统、学术和创业领域的研究者与创始人。 | [README](./shows/moonuncle/) |
 | [WhynotTV Podcast](https://space.bilibili.com/14145636/) | 聚焦 AI 技术、工程实践、商业逻辑与个人成长的长篇对谈。 | [README](./shows/whynottv/) |
 | [一起铁TALK](https://www.xiaoyuzhoufm.com/podcast/6951e312febad13106eb017e) | 以跑步为入口，聊训练、生活经验和真实处境。 | [README](./shows/yiqitietalk/) |
+| [Dwarkesh Podcast](https://www.dwarkesh.com/) | Dwarkesh Patel 主持的英文长篇访谈播客，以深入准备的对谈讨论人工智能、科学、历史及其长期影响。 | [README](./shows/dwarkesh/) |
 
 ## 单集索引
 
@@ -55,6 +56,7 @@ npm run check
 | [【视频播客】硅谷坐标 x Fireworks 联创Benny Chen：开源模型、token增速、推理优化和模型定制](https://www.bilibili.com/video/BV1mJbU6REts/) | Benny Chen | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-08-16 | [总结](./shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/transcript.zh-CN.md) |
 | [对话前DeepMind曹原：AI for Science爆发，一个新时代到来了【101视频播客】](https://www.bilibili.com/video/BV1GQgg6yEy5/) | 曹原 | [硅谷101](./shows/sv101/) | 2026-08-15 | [总结](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/transcript.zh-CN.md) |
 | [对英伟达研究副总裁刘洺堉的4小时访谈：Cosmos 3、世界模型、武术、黄仁勋影响我的，和你不需要击败所有对手](https://www.bilibili.com/video/BV1fmgj66EtD/) | 刘洺堉 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-08-13 | [总结](./shows/zhangxiaojun/episodes/150-liu-mingyu/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/150-liu-mingyu/transcript.zh-CN.md) |
+| [Ryan Greenblatt – What happens once AI can automate AI research?](https://www.youtube.com/watch?v=-RXD4bTuFTo) | Ryan Greenblatt | [Dwarkesh Podcast](./shows/dwarkesh/) | 2026-08-11 | [总结](./shows/dwarkesh/episodes/youtube-2d5258443462547546546f-ryan-greenblatt/summary.zh-CN.md) | [英文逐字稿](./shows/dwarkesh/episodes/youtube-2d5258443462547546546f-ryan-greenblatt/transcript.en.md) · [中文译稿](./shows/dwarkesh/episodes/youtube-2d5258443462547546546f-ryan-greenblatt/transcript.zh-CN.md) |
 | [李正韬：YC，明星初创，语音AI，客服，执行力，创2代，OpenAI，996](https://www.bilibili.com/video/BV1S9u16KETq/) | 李正韬 | [月球大叔的硅谷播客](./shows/moonuncle/) | 2026-08-09 | [总结](./shows/moonuncle/episodes/bili-bv1s9u16ketq-li-zhengtao/summary.zh-CN.md) | [逐字稿](./shows/moonuncle/episodes/bili-bv1s9u16ketq-li-zhengtao/transcript.zh-CN.md) |
 | [对话田渊栋：AI 自进化如何到来【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1XnuH66EzS/) | 田渊栋 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-08-07 | [总结](./shows/latetalk/episodes/178-tian-yuandong/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/178-tian-yuandong/transcript.zh-CN.md) |
 | [【正片】罗永浩的X字路口！我们能活到今天，多亏了祖传的势利眼](https://www.bilibili.com/video/BV1ukM26zESF/) | 呼兰、小块、王继业、小镟 | [罗永浩的十字路口](./shows/luoyonghao/) | 2026-08-06 | [总结](./shows/luoyonghao/episodes/bili-bv1ukm26zesf-x-shiliyan/summary.zh-CN.md) | [逐字稿](./shows/luoyonghao/episodes/bili-bv1ukm26zesf-x-shiliyan/transcript.zh-CN.md) |
