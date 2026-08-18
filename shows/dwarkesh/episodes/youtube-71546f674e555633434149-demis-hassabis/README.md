@@ -23,6 +23,14 @@ participants:
   - id: demis-hassabis
     name: Demis Hassabis
     role: guest
+    profile:
+      headline: "Google DeepMind 联合创始人兼首席执行官"
+      bio: "AI 研究者与科学创业者，领导 Google DeepMind 研发通用 AI，并推动 AI 在科学发现等领域的应用。"
+      affiliations:
+        - organization: Google DeepMind
+          title: "联合创始人兼首席执行官"
+          status: current
+      checked_at: 2026-08-18
   - id: dwarkesh-patel
     name: Dwarkesh Patel
     role: host
@@ -40,6 +48,10 @@ sources:
     identifiers:
       guid: "substack:post:142112869"
       feed_url: https://api.substack.com/feed/podcast/69345.rss
+  - platform: website
+    kind: profile
+    title: "Google DeepMind：Demis Hassabis 官方人物介绍"
+    url: https://deepmind.google/about/
 workflow:
   metadata: verified
   summary: draft

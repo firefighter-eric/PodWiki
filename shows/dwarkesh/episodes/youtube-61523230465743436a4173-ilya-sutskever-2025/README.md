@@ -23,6 +23,17 @@ participants:
   - id: ilya-sutskever
     name: Ilya Sutskever
     role: guest
+    profile:
+      headline: "Safe Superintelligence Inc. 首席执行官、OpenAI 联合创始人兼前首席科学家"
+      bio: "AI 研究者，曾在 OpenAI 领导超级智能对齐研究；离开 OpenAI 后转向以安全超级智能为唯一目标的 SSI。"
+      affiliations:
+        - organization: "Safe Superintelligence Inc. (SSI)"
+          title: "首席执行官"
+          status: current
+        - organization: OpenAI
+          title: "联合创始人、首席科学家"
+          status: former
+      checked_at: 2026-08-18
   - id: dwarkesh-patel
     name: Dwarkesh Patel
     role: host
@@ -40,6 +51,18 @@ sources:
     identifiers:
       guid: "substack:post:179924094"
       feed_url: https://api.substack.com/feed/podcast/69345.rss
+  - platform: website
+    kind: profile
+    title: "SSI：Ilya Sutskever 官方职务更新"
+    url: https://ssi.inc/updates
+  - platform: website
+    kind: profile
+    title: "OpenAI：Ilya Sutskever 联合创始人与首席科学家资料"
+    url: https://openai.com/index/introducing-superalignment/
+  - platform: website
+    kind: profile
+    title: "OpenAI：Ilya Sutskever 离任公告"
+    url: https://openai.com/index/jakub-pachocki-announced-as-chief-scientist/
 workflow:
   metadata: verified
   summary: draft

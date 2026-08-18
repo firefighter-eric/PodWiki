@@ -23,6 +23,17 @@ participants:
   - id: mark-zuckerberg
     name: Mark Zuckerberg
     role: guest
+    profile:
+      headline: "Meta 创始人、董事长兼首席执行官"
+      bio: "2004 年创办 Facebook（后更名为 Meta），负责公司的整体方向、产品战略、核心技术与基础设施。"
+      affiliations:
+        - organization: Meta
+          title: "创始人、董事长兼首席执行官"
+          status: current
+      education:
+        - institution: Harvard University
+          field: "计算机科学"
+      checked_at: 2026-08-18
   - id: dwarkesh-patel
     name: Dwarkesh Patel
     role: host
@@ -40,6 +51,10 @@ sources:
     identifiers:
       guid: "substack:post:162392947"
       feed_url: https://api.substack.com/feed/podcast/69345.rss
+  - platform: website
+    kind: profile
+    title: "Meta：Mark Zuckerberg 官方人物介绍"
+    url: https://investor.atmeta.com/leadership-and-governance/person-details/default.aspx
 workflow:
   metadata: verified
   summary: draft

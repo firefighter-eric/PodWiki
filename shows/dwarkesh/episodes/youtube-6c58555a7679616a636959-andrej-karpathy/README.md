@@ -23,6 +23,21 @@ participants:
   - id: andrej-karpathy
     name: Andrej Karpathy
     role: guest
+    profile:
+      headline: "AI 研究者与教育者，OpenAI 创始团队成员、前 Tesla AI 总监"
+      bio: "曾在 OpenAI 从事研究，并于 Tesla 领导 Autopilot 计算机视觉团队；其后持续面向公众讲解神经网络、LLM 与 AI 工程。"
+      affiliations:
+        - organization: OpenAI
+          title: "研究科学家、创始团队成员"
+          status: former
+        - organization: Tesla
+          title: "AI 总监"
+          status: former
+      education:
+        - institution: Stanford University
+          credential: PhD
+          field: "神经网络、计算机视觉与自然语言处理"
+      checked_at: 2026-08-18
   - id: dwarkesh-patel
     name: Dwarkesh Patel
     role: host
@@ -40,6 +55,10 @@ sources:
     identifiers:
       guid: "substack:post:176425744"
       feed_url: https://api.substack.com/feed/podcast/69345.rss
+  - platform: website
+    kind: profile
+    title: "Andrej Karpathy 官方个人简介"
+    url: https://karpathy.ai/
 workflow:
   metadata: verified
   summary: draft

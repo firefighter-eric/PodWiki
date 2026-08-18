@@ -2255,6 +2255,23 @@ class EpisodeMetadataContractTests(unittest.TestCase):
             _, errors = self.validate(root, readme)
             self.assertTrue(any("identifiers.eid is required" in error for error in errors))
 
+    def test_website_profile_source_is_supported(self) -> None:
+        errors: list[str] = []
+
+        validate_source_schema(
+            [
+                {
+                    "platform": "website",
+                    "kind": "profile",
+                    "url": "https://example.com/people/test-person",
+                }
+            ],
+            field_prefix="episode test",
+            errors=errors,
+        )
+
+        self.assertEqual([], errors)
+
     def test_xiaoyuzhou_source_requires_episode_platform_and_kind(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
