@@ -12,17 +12,17 @@ feed 或栏目。发现更新、证明扫描覆盖范围和生成候选清单时
 
 ## 1. 适用范围与停止条件
 
-当前完整 happy path 是：单个已通过播客边界核实、可匿名访问或经用户明确授权
-登录态访问的公开免费 Bilibili 视频版单集或小宇宙单集，没有可直接使用的字幕，
-在 Apple Silicon/MLX 或 Windows/NVIDIA CUDA 上以 Qwen3-ASR 和 ForcedAligner
-生成机器逐字稿。
+当前完整 happy path 包括：公开免费 Bilibili 视频版单集或小宇宙单集在没有可直接
+使用字幕时以本地 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿；以及官方 YouTube
+完整播客正片使用发布者英文 `json3` 字幕和逐事件对齐的 `zh-Hans-en` 平台机器译轨
+生成中英机器稿。两条路径都要求先通过节目与完整单集边界。
 PodWiki 只收录符合[内容标准第 0 节](./content-standard.md#0-收录边界只收录播客)的
 播客完整单集；长视频、访谈或频道投稿本身不构成收录依据。
 用户明确授权时，也可以把一个已核实播客的公开免费单集作为冻结后的有界批次处理：
 Bilibili 只允许官方播客正片合集或与公开播客 feed 逐集对应的白名单，小宇宙只允许
 同一已核实栏目；批次中的每一集仍执行同一套单集流程和停止条件。
-YouTube 当前支持规范化、metadata intake 和公开媒体获取，但 tracked episode 的
-source identifiers 与无正式期号 key 尚未形成内容契约，因此不能自动完成入库。
+YouTube tracked episode 使用大小写敏感的 `video_id`、官方 `channel_id`，以及扫描
+证据中的 `playlist_id`；无正式期号时使用 video ID ASCII 字节的小写十六进制稳定键。
 
 先根据请求确定停止点：
 
@@ -39,13 +39,11 @@ source identifiers 与无正式期号 key 尚未形成内容契约，因此不�
 - 需要登录态，但用户没有明确授权具体平台、登录身份与来源范围，或当前采集路径
   无法在不泄露凭据并保留完整来源 sidecar 的前提下使用该登录态；
 - 会员专属、付费、私密、地区、年龄或其他受限内容；
-- 找到当前授权访问上下文可用的字幕：仓库目前只有字幕发现能力，尚无下载、转换和
-  lineage 导入工具；
+- 找到当前授权访问上下文可用、但没有对应安全 importer 的字幕；YouTube 只有发布者
+  英文 `json3` 与逐事件时间轴完全一致的 `zh-Hans-en` 译轨属于当前支持路径；
 - 只有本地媒体但没有可核实的来源与授权记录；
 - 当前机器既不满足 Apple Silicon/MLX，也不满足 Windows x86-64/NVIDIA CUDA
   本地路径，却需要新跑正式 ASR；
-- YouTube 单集需要完整入库：当前尚未定义 tracked source identifiers，且无正式
-  期号时也没有稳定 episode key；
 - 新节目没有可核实的首选发布者页面：当前根节目索引契约无法登记；
 - 单集没有任何可核实的实际出场人物：无法按内容标准形成导航标题；不得从标题
   猜测人物，也不得把一般参与者或主播伪标为嘉宾；
@@ -181,15 +179,18 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 1. `source.canonical_url` 与输入的规范 URL 一致；
 2. Bilibili 的 `source.bvid`、`source.aid`、`source.cid`、`source.page` 完整且
    身份一致；
-3. 小宇宙的 `source.eid`、`source.pid`、`source.media_id` 完整，页面中的
+3. YouTube 的 `source.id`/`source.video_id` 与大小写敏感的 `v` 参数一致，且
+   `source.channel_id` 与节目 README/扫描清单中的官方频道一致；
+4. 小宇宙的 `source.eid`、`source.pid`、`source.media_id` 完整，页面中的
    episode/podcast/media 身份一致，并明确为 `NORMAL`、`FREE`、非私密、`PUBLIC`；
-4. `source.title`、发布者、发布时间和时长合理；
-5. `source.availability`、`source.live_status` 和平台字段表明来源公开免费、非直播、
+5. `source.title`、发布者、发布时间和时长合理；
+6. `source.availability`、`source.live_status` 和平台字段表明来源公开免费、非直播、
    非会员专属、非付费、非私密且不受地区或其他访问限制；登录态只影响传输上下文；
-6. `source.subtitle_languages`、`source.automatic_caption_languages` 和
-   `source.platform_metadata.subtitle.tracks` 均无当前授权访问上下文可用的字幕。
+7. 对 YouTube，`source.subtitle_languages` 中的发布者英文轨和
+   `source.automatic_caption_languages` 中的 `zh-Hans-en` 进入受支持的字幕导入路径；
+   其他平台仍要求这些字段没有当前授权访问上下文可用字幕。
 
-存在可用字幕时在这里停止。不要因为当前没有 importer 就忽略字幕改跑音频 ASR。
+存在不受支持的可用字幕时在这里停止。不要忽略字幕改跑音频 ASR。
 
 ### 消费扫描清单的有界批次
 
@@ -202,6 +203,8 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
   或用于逐集交叉对应的公开播客 feed 规范 URL；每集规范 URL 与 BVID，使用 feed
   交叉核实时还要记录对应 GUID 和单集 URL；
 - 小宇宙：栏目规范 URL、栏目 PID，以及每集规范 URL 与 `eid`；
+- YouTube：官方完整正片播放列表规范 URL、`playlist_id`、官方 `channel_id`，以及每集
+  规范 watch URL 与大小写敏感的 `video_id`；不可用槽位与覆盖状态继续留在来源 scan；
 - 来源 scan 路径与 SHA-256、冻结时间、白名单总数和播客身份/完整单集证据；后续
   校验结果写入各集 intake sidecar，不改写清单范围；
 - 稳定顺序仅用于执行和复核，不作为正式期号。
@@ -237,9 +240,9 @@ cp -n templates/show/README.md shows/<show-id>/README.md
 2. 有正式期号时，`episode_key` 使用保留前导零的正式编号；
 3. 无正式期号的 Bilibili 视频使用 `bili-<lowercase-bvid>`；
 4. 无正式期号的小宇宙单集使用 `xiaoyuzhou-<eid>`；
-5. 不根据输入顺序、发布日期、合集位置或抓取顺序猜期号；
-6. YouTube 单集当前只完成 intake/acquire；完整入库前请求维护者补充 source
-   identifiers 和稳定 episode key 契约。
+5. 无正式期号的 YouTube 视频使用 `youtube-<video-id-ascii-hex>`：对原始 11 字符
+   video ID 的 ASCII 字节做完整小写 hex 编码，不能先改变大小写；
+6. 不根据输入顺序、发布日期、合集位置或抓取顺序猜期号。
 
 目录名为 `<episode-key>-<short-slug>`，但 front matter 中的
 `<show-id>:<episode-key>` 才是稳定主键。如果目录已经存在，检查并续跑，不再复制
@@ -257,6 +260,7 @@ cp -n templates/episode/README.md shows/<show-id>/episodes/<episode-folder>/READ
 | --- | --- |
 | `source.canonical_url` | `sources[].url` |
 | `source.bvid`、`source.aid`、`source.cid`、`source.page` | `sources[].identifiers` |
+| `source.video_id`（旧 sidecar 为 `source.id`）、`source.channel_id` | YouTube `sources[].identifiers` |
 | `source.eid`、`source.pid`、`source.media_id` | 小宇宙 `sources[].identifiers` |
 | 发布者原标题 | `title` |
 | 发布时间 | 带时区 RFC 3339 `published_at` |
@@ -317,7 +321,31 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 `recovery.acquired_at_status: unknown-legacy`。正常下载则以事务 journal 绑定音频与
 sidecar；若进程在两次提升之间中断，下一次相同目标调用会先完成该事务。
 
-## 6. 按语言串行运行 Qwen ASR
+## 6. 导入字幕或按语言串行运行 Qwen ASR
+
+### YouTube 发布者字幕
+
+YouTube metadata intake 同时发现发布者英文轨与 `zh-Hans-en` 自动译轨时，先使用
+字幕 importer，不加载 ASR 模型：
+
+```bash
+env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/import_youtube_captions.py \
+  --url <canonical-youtube-video-url> \
+  --episode-dir shows/<show-id>/episodes/<episode-folder>
+```
+
+importer 固定下载 `json3`，把发布者英文原始载荷保存在
+`asr/youtube-subtitles/raw.json`，并生成 `refined.json`、run `transcript.en.md`、
+字节一致的根英文稿和根 `transcript.zh-CN.md`。英文与中文轨必须拥有完全相同的事件
+数量、开始时间与结束时间；任一空事件、时间漂移、video/channel 身份错误都失败关闭。
+中文稿来自 YouTube 平台机器翻译，状态保持 `machine`；未经逐段人工核对不得升级。
+
+README 中 selected run 使用非 Qwen provenance：engine 为 `youtube-subtitles`，model
+记录发布者字幕语言；artifacts 至少绑定 raw、refined 和 run transcript。英文 selected
+仍指向 `transcript.en.md`，中文稿只登记在 `transcript.translations`。若发布者字幕存在
+但 importer 无法满足该契约，停止并报告；不能改跑音频 ASR。
+
+### 无受支持字幕时使用 Qwen
 
 批处理的语言参数作用于整次运行，而且默认是 `Chinese` / `zh-CN`。仓库包含中英文
 单集，所以必须按语言分组，并用重复的 `--episode` 显式列出本次范围。不要省略
@@ -536,6 +564,10 @@ shasum -a 256 shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/refined.js
 6. 对开头、中段、结尾、姓名、公司、模型和关键数字做语义抽样；
 7. 计算最终中译稿 SHA-256，填写 `source_sha256`、`sha256`、RFC 3339
    `generated_at` 和真实审核状态。
+
+YouTube 字幕 importer 可以把时间轴完全一致的 `zh-Hans-en` 平台机器译轨作为上述
+分块翻译的替代来源；它仍须逐事件检查一对一结构，并在 refined provenance 中绑定
+译轨原始载荷 SHA-256。该译稿只可标为 `machine`，平台能返回中文不代表已经人工审核。
 
 结构完成后由 `scripts/validate.py` 检查标题、行数、逐行时间戳、顺序和哈希。自动
 校验不能证明翻译语义正确；未经人工逐段审核保持 `status: machine`。

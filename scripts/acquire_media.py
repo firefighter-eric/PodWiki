@@ -1755,6 +1755,7 @@ def source_metadata(
         "platform": platform,
         "canonical_url": canonical_url,
         "id": info.get("id"),
+        "video_id": info.get("id") if platform == "youtube" else None,
         "display_id": info.get("display_id"),
         "bvid": platform_metadata.get("bvid") or info.get("bvid") or (
             info.get("id") if platform == "bilibili" else None

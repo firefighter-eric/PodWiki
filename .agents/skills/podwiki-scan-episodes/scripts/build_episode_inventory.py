@@ -13,7 +13,7 @@ import tempfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlsplit, urlunsplit
+from urllib.parse import parse_qs, urlencode, urlsplit, urlunsplit
 
 
 STABLE_IDENTIFIER_FIELDS = {
@@ -126,6 +126,28 @@ def canonical_url(value: Any) -> str | None:
     except ValueError:
         return None
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        return None
+    host = parsed.netloc.lower()
+    if host in {"youtube.com", "www.youtube.com", "m.youtube.com"}:
+        query = parse_qs(parsed.query)
+        if parsed.path == "/watch" and len(query.get("v", [])) == 1:
+            video_id = query["v"][0]
+            if re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id):
+                return urlunsplit(
+                    ("https", "www.youtube.com", "/watch", urlencode({"v": video_id}), "")
+                )
+        if parsed.path == "/playlist" and len(query.get("list", [])) == 1:
+            playlist_id = query["list"][0]
+            if re.fullmatch(r"[A-Za-z0-9_-]{10,64}", playlist_id):
+                return urlunsplit(
+                    (
+                        "https",
+                        "www.youtube.com",
+                        "/playlist",
+                        urlencode({"list": playlist_id}),
+                        "",
+                    )
+                )
         return None
     return urlunsplit((parsed.scheme.lower(), parsed.netloc.lower(), parsed.path, "", ""))
 

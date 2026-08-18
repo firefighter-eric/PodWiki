@@ -544,6 +544,17 @@ class XiaoyuzhouAccessTests(unittest.TestCase):
 
 
 class SourceMetadataTests(unittest.TestCase):
+    def test_records_case_sensitive_youtube_video_id(self) -> None:
+        metadata = source_metadata(
+            {
+                "id": "-RXD4bTuFTo",
+                "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA",
+            },
+            platform="youtube",
+            canonical_url="https://www.youtube.com/watch?v=-RXD4bTuFTo",
+        )
+        self.assertEqual(metadata["video_id"], "-RXD4bTuFTo")
+
     def test_does_not_treat_danmaku_as_a_subtitle_track(self) -> None:
         metadata = source_metadata(
             {

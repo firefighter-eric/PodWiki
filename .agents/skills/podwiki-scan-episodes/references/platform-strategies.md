@@ -51,6 +51,34 @@ Use only the sections needed for the selected show's sources.
   the listing end or total is verifiable.
 - Do not cross into a syndicated episode's owning podcast merely because it appears in a list.
 
+## YouTube
+
+- Use only an official publisher playlist that is affirmatively titled or described as the
+  podcast's full episodes. A channel `/videos` page is a mixed publishing surface unless the show
+  README explicitly proves otherwise.
+- Canonicalize the discovery URL to
+  `https://www.youtube.com/playlist?list=<playlist-id>` and every item to
+  `https://www.youtube.com/watch?v=<video-id>`. Preserve video ID case and remove `index`, `t`,
+  `si`, and every other parameter.
+- Enumerate metadata without media bytes. A supported local command is:
+
+  ```bash
+  env UV_CACHE_DIR=.cache/uv uv run --no-sync yt-dlp \
+    --flat-playlist --dump-single-json <canonical-playlist-url>
+  ```
+
+- Bind the playlist to its official `channel_id`, retain the `playlist_id`, and record each exact
+  item's case-sensitive `video_id`. A candidate requires the same uploader/channel identity plus
+  publisher evidence that it is a complete episode.
+- Count unavailable/private/deleted slots separately. Their missing identity or metadata means a
+  full-history scan is `partial`; do not omit them and call the playlist exhausted. An incremental
+  window may be `complete` only when every slot in that closed window is observable and classified.
+- Playlist order and `index` are not episode numbers. Deduplicate by exact video ID first, then the
+  canonical watch URL; never lowercase video IDs or use fuzzy titles.
+- RSS and the publisher website are identity and cross-check sources. They can corroborate dates,
+  titles, transcripts, and completeness, but cannot add a YouTube candidate outside a
+  YouTube-required playlist policy.
+
 ## Apple Podcasts and publisher websites
 
 - Use these pages to prove podcast identity, locate the canonical publisher feed, and corroborate

@@ -66,6 +66,22 @@ or could not be observed; the source status and evidence distinguish those cases
 Do not store cookies, tokens, account identifiers, browser profile paths, signed media URLs, or raw
 credential material.
 
+Canonical YouTube watch and playlist URLs are the only query-bearing exceptions: they retain
+exactly one `v=<video-id>` or `list=<playlist-id>` parameter. A YouTube candidate records all three
+identifiers without altering case:
+
+```json
+{
+  "platform": "youtube",
+  "canonical_url": "https://www.youtube.com/watch?v=-RXD4bTuFTo",
+  "identifiers": {
+    "video_id": "-RXD4bTuFTo",
+    "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA",
+    "playlist_id": "PLd7-bHaQwnthaNDpZ32TtYONGVk95-fhF"
+  }
+}
+```
+
 ## Candidate record
 
 ```json

@@ -72,10 +72,10 @@ Stop without downloading or creating tracked files when:
 
 - podcast or complete-episode evidence is absent, ambiguous, or conflicts with fresh metadata;
 - the item is paid, membership-only, private, regional, or otherwise restricted;
-- the authorized access context exposes a usable subtitle, because subtitle import is not yet
-  implemented;
-- the platform's tracked source/key contract is unsupported; YouTube currently stops at verified
-  metadata or public media acquisition;
+- the authorized access context exposes a subtitle that the matching platform guide cannot import;
+- a YouTube publisher caption lacks the exact event-aligned Chinese machine-translation track
+  required for an English Web-publishable episode, unless the user approves stopping before Web
+  publication;
 - source identity cannot be preserved without leaking credentials.
 
 User-authorized login is an access context only. Keep cookies, tokens, and browser material under
@@ -88,7 +88,8 @@ ignored .cache/credentials/; never print or record secrets in logs, sidecars, Ma
 2. Without a formal number, use the documented source key:
    - Bilibili: bili-<lowercase-bvid>;
    - Xiaoyuzhou: xiaoyuzhou-<eid>;
-   - YouTube: stop before tracked ingestion.
+   - YouTube: youtube-<22 lowercase hex characters produced from the exact 11-character video ID's
+     ASCII bytes>; never lowercase the video ID itself.
 3. Reuse an existing directory only after its show/episode/source identity matches. Do not copy a
    template over an existing episode.
 4. For a new episode, copy templates/episode/README.md and fill only verified values. Do not leave
@@ -131,6 +132,12 @@ Read [asr-backends.md](references/asr-backends.md) before selecting a backend.
 
 The batch script stops at run-directory artifacts. It does not promote the root transcript, update
 metadata, translate English, write the summary, or update indexes.
+
+For YouTube, follow [youtube.md](references/youtube.md) first. A publisher `json3` subtitle is a
+supported non-Qwen selected run and takes precedence over audio ASR. The importer must preserve the
+raw caption payload, prove exact source/translation event timing, and keep its run transcript
+byte-identical to the selected root transcript. Use local Qwen only when the authorized context has
+no supported publisher subtitle.
 
 ## Promote, translate, and summarize
 

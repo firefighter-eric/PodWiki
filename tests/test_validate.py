@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate import (  # noqa: E402
     check_bilibili_urls,
     check_front_matter,
+    check_youtube_urls,
     check_xiaoyuzhou_urls,
     transcript_structure,
     validate_core_point_logic_table,
@@ -28,6 +29,7 @@ from validate import (  # noqa: E402
     validate_qwen_chain,
     validate_summary_reader_contract,
     validate_show_metadata_contract,
+    validate_source_schema,
     validate_wiki_indexes,
 )
 
@@ -2283,6 +2285,64 @@ class EpisodeMetadataContractTests(unittest.TestCase):
             self.assertTrue(
                 any("must use platform xiaoyuzhou and kind episode" in error for error in errors)
             )
+
+    def test_youtube_video_source_requires_exact_identity(self) -> None:
+        errors: list[str] = []
+        validate_source_schema(
+            [
+                {
+                    "platform": "youtube",
+                    "kind": "video",
+                    "url": "https://www.youtube.com/watch?v=-RXD4bTuFTo",
+                    "preferred": True,
+                    "identifiers": {
+                        "video_id": "-RXD4bTuFTo",
+                        "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA",
+                    },
+                }
+            ],
+            field_prefix="episode",
+            errors=errors,
+        )
+        self.assertEqual(errors, [])
+
+    def test_youtube_video_source_rejects_case_drift(self) -> None:
+        errors: list[str] = []
+        validate_source_schema(
+            [
+                {
+                    "platform": "youtube",
+                    "kind": "video",
+                    "url": "https://www.youtube.com/watch?v=-RXD4bTuFTo",
+                    "preferred": True,
+                    "identifiers": {
+                        "video_id": "-rxd4btufTo",
+                        "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA",
+                    },
+                }
+            ],
+            field_prefix="episode",
+            errors=errors,
+        )
+        self.assertTrue(any("video_id must match" in error for error in errors))
+
+    def test_youtube_url_checker_accepts_only_canonical_video_and_playlist(self) -> None:
+        errors: list[str] = []
+        count = check_youtube_urls(
+            Path("shows/example/README.md"),
+            "\n".join(
+                [
+                    "https://www.youtube.com/watch?v=-RXD4bTuFTo",
+                    (
+                        "https://www.youtube.com/playlist?list="
+                        "PLd7-bHaQwnthaNDpZ32TtYONGVk95-fhF"
+                    ),
+                ]
+            ),
+            errors,
+        )
+        self.assertEqual(count, 2)
+        self.assertEqual(errors, [])
 
     def test_episode_may_register_a_bilibili_channel_as_a_secondary_source(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

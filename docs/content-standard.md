@@ -217,10 +217,17 @@ slug，例如：
 bili-bv1nb3u6teru-liao-heng
 ```
 
-无正式期号的 YouTube 单集尚未定义稳定 key；在规范补充前停止建档并请求维护者
-确认，不得直接小写或改写大小写敏感的 YouTube video ID。YouTube 的 tracked
-`sources[].identifiers` 契约也尚未定义，因此当前仅支持 intake 与公开媒体获取，
-不自动创建正式单集。
+无正式期号的 YouTube 单集使用 `youtube-<video-id-ascii-hex>`：把大小写敏感、固定
+11 字符的 video ID 按 ASCII 字节完整编码为 22 位小写十六进制，不得先转小写、截断
+或哈希。例如 `-RXD4bTuFTo` 对应：
+
+```text
+youtube-2d5258443462547546546f
+```
+
+tracked `sources[].identifiers.video_id` 继续保存原始大小写，`channel_id` 绑定官方
+发布频道；来自官方完整正片播放列表的扫描证据另外保留 `playlist_id`。稳定 key 的
+十六进制编码只解决路径字符集与大小写碰撞问题，不把视频 ID 变成正式期号。
 
 无正式期号的小宇宙单集使用稳定键 `xiaoyuzhou-<eid>`；`eid` 是规范单集 URL
 中的 24 位小写十六进制标识。例如：
@@ -336,6 +343,19 @@ identifiers:
 `media_id` 必须同时等于公开页面的 `mediaKey` 与 `media.id`，其首段必须等于
 该单集自己的 `pid`，且公开 CDN URL path 必须精确为 `/<media_id>`。不能用外层
 栏目列表的 PID 覆盖联播或串台单集自身已核实的 `episode.pid`。
+
+YouTube 视频与播放列表地址分别固定为：
+
+```text
+https://www.youtube.com/watch?v=<video-id>
+https://www.youtube.com/playlist?list=<playlist-id>
+```
+
+视频来源使用 `platform: youtube`、`kind: video`，并同时记录大小写敏感的
+`identifiers.video_id` 与官方 `identifiers.channel_id`；video ID 必须与 `v` 参数
+逐字一致。节目发现来源使用 `platform: youtube`、`kind: playlist`，并记录
+`identifiers.playlist_id` 与同一个官方 `channel_id`。除规范 `v` 或 `list` 参数外，
+删除 `index`、`t`、`si`、`utm_*` 等全部参数和片段。播放列表位置不构成正式期号。
 
 ## 4. 时间和日期
 
@@ -521,13 +541,17 @@ selected 英文稿和中文译稿，英文原稿发生变化后必须重新生�
 ## 7. 来源获取顺序
 
 1. 检查平台人工字幕或自动字幕。
-2. 当前仓库尚未提供字幕的下载、转换和 lineage 导入工具；发现当前授权访问上下文
-   可用的字幕时，停止自动流程并报告该分支尚未实现，不得直接忽略字幕改跑音频 ASR。
-3. 有权处理且没有当前授权访问上下文可用的字幕时，再从媒体生成 ASR。
-4. 校验并渲染根目录机器初稿，状态标记为 `machine`。
-5. 说话人识别与专有名词校对。
-6. 人工审核后把状态改为 `reviewed`。
-7. 画面硬字幕 OCR 仅作为最后手段。
+2. YouTube 存在发布者英文字幕时，优先导入 `json3` 原始载荷，并用同一事件时间轴
+   生成 selected 英文稿；存在逐事件对齐的 `zh-Hans-en` 平台机器翻译时，可同时生成
+   `status: machine` 的中文逐段译稿，并记录两份载荷哈希。字幕事件数或时间轴不一致
+   时失败关闭，不得自行合并或猜测对齐。
+3. 其他平台字幕或 YouTube 不受支持的字幕格式仍停在发现阶段；不得静默忽略可用字幕
+   改跑音频 ASR。
+4. 有权处理且没有当前授权访问上下文可用的字幕时，再从媒体生成 ASR。
+5. 校验并渲染根目录机器初稿，状态标记为 `machine`。
+6. 说话人识别与专有名词校对。
+7. 人工审核后把状态改为 `reviewed`。
+8. 画面硬字幕 OCR 仅作为最后手段。
 
 登录本身不再是停止条件。用户明确授权具体平台、登录身份和来源范围后，可以使用
 现有浏览器会话或 cookies 获取原本符合收录边界的公开免费完整单集；登录态只作为
@@ -536,10 +560,13 @@ selected 英文稿和中文译稿，英文原稿发生变化后必须重新生�
 
 首版仍不处理会员专属、付费、私密、地区限制或其他受限内容。默认不批量抓取整个账号、
 频道、播放列表或播客栏目；只有用户明确授权一个已核实的单一播客后，扫描 skill 才能
-在该范围内生成有界候选清单。Bilibili 混合账号必须先按本标准第 0 节锁定官方播客
+在该范围内生成有界候选清单。YouTube 必须锁定由官方频道维护、明确标识完整播客
+正片的播放列表，并逐条保留 video ID、channel ID 与 playlist ID；不可用、私密或已
+删除的槽位使全历史覆盖至少为 `partial`。Bilibili 混合账号必须先按本标准第 0 节锁定官方播客
 正片合集，或用公开播客 feed 逐集交叉对应；不得把频道其他投稿扩进候选。小宇宙扫描
 固定绑定栏目 PID 与每集规范 URL/`eid`。用户批准后，添加 skill 再冻结包含
-`mid`、`season_id`、规范 BVID、来源 scan 哈希和筛选证据的 intake manifest，
+`mid`、`season_id`、规范 BVID，或 YouTube 的 `video_id`、`channel_id`、`playlist_id`，
+以及来源 scan 哈希和筛选证据的 intake manifest，
 随后逐集、限速处理，不在运行中自动扩展范围。
 
 Bilibili 每集仍须在实际授权访问上下文中独立通过来源身份、访问状态、单 P 和字幕

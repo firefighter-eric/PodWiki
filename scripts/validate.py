@@ -37,6 +37,13 @@ CANONICAL_XIAOYUZHOU_URL_RE = re.compile(
 CANONICAL_XIAOYUZHOU_EPISODE_RE = re.compile(
     r"https://www\.xiaoyuzhoufm\.com/episode/(?P<eid>[0-9a-f]{24})"
 )
+YOUTUBE_URL_RE = re.compile(r"https://www\.youtube\.com/(?:watch\?v=|playlist\?list=)[^\s)\]\"']+")
+CANONICAL_YOUTUBE_VIDEO_RE = re.compile(
+    r"https://www\.youtube\.com/watch\?v=(?P<video_id>[A-Za-z0-9_-]{11})"
+)
+CANONICAL_YOUTUBE_PLAYLIST_RE = re.compile(
+    r"https://www\.youtube\.com/playlist\?list=(?P<playlist_id>[A-Za-z0-9_-]{10,64})"
+)
 TRACKING_PARAMETERS = ("spm_id_from", "vd_source")
 QWEN_JSON_ARTIFACT_NAMES = (
     "raw.json",
@@ -76,6 +83,7 @@ SOURCE_PLATFORMS = {
     "rss",
     "website",
     "xiaoyuzhou",
+    "youtube",
 }
 SOURCE_KINDS = {
     "audio",
@@ -84,6 +92,7 @@ SOURCE_KINDS = {
     "feed",
     "feed-item",
     "podcast",
+    "playlist",
     "show",
     "video",
     "video-channel",
@@ -102,6 +111,7 @@ SOURCE_IDENTIFIER_FIELDS = {
     "apple_podcasts_id",
     "bvid",
     "cid",
+    "channel_id",
     "eid",
     "episode_id",
     "episode_number",
@@ -112,8 +122,10 @@ SOURCE_IDENTIFIER_FIELDS = {
     "page",
     "page_id",
     "pid",
+    "playlist_id",
     "rss_guid",
     "show_id",
+    "video_id",
 }
 SHOW_FIELDS = {
     "schema_version",
@@ -1914,12 +1926,15 @@ def validate_source_schema(
     positive_id_fields = {"aid", "cid", "mid"}
     non_empty_string_fields = {
         "apple_podcasts_id",
+        "channel_id",
         "episode_id",
         "episode_number",
         "guid",
         "page_id",
+        "playlist_id",
         "rss_guid",
         "show_id",
+        "video_id",
     }
     for index, source in enumerate(sources):
         field = f"{field_prefix} sources[{index}]"
@@ -1996,6 +2011,24 @@ def validate_source_schema(
             feed_url = identifiers.get("feed_url")
             if "feed_url" in identifiers and not is_absolute_url(feed_url):
                 errors.append(f"{field}.identifiers.feed_url must be a URL")
+            video_id = identifiers.get("video_id")
+            if "video_id" in identifiers and (
+                not isinstance(video_id, str)
+                or re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id) is None
+            ):
+                errors.append(f"{field}.identifiers.video_id has an invalid YouTube video ID")
+            channel_id = identifiers.get("channel_id")
+            if "channel_id" in identifiers and (
+                not isinstance(channel_id, str)
+                or re.fullmatch(r"UC[A-Za-z0-9_-]{22}", channel_id) is None
+            ):
+                errors.append(f"{field}.identifiers.channel_id has an invalid YouTube channel ID")
+            playlist_id = identifiers.get("playlist_id")
+            if "playlist_id" in identifiers and (
+                not isinstance(playlist_id, str)
+                or re.fullmatch(r"[A-Za-z0-9_-]{10,64}", playlist_id) is None
+            ):
+                errors.append(f"{field}.identifiers.playlist_id has an invalid YouTube playlist ID")
 
         bilibili_match = CANONICAL_BILIBILI_VIDEO_RE.fullmatch(url or "")
         if platform == "bilibili" and kind == "video" and bilibili_match is None:
@@ -2032,6 +2065,34 @@ def validate_source_schema(
                 and not media_id.startswith(f"{pid}/")
             ):
                 errors.append(f"{field}.identifiers.media_id must begin with its pid")
+
+        youtube_video_match = CANONICAL_YOUTUBE_VIDEO_RE.fullmatch(url or "")
+        if platform == "youtube" and kind == "video" and youtube_video_match is None:
+            errors.append(f"{field}.url must be the canonical YouTube video URL")
+        if youtube_video_match is not None:
+            if platform != "youtube" or kind != "video":
+                errors.append(
+                    f"{field} YouTube video URL must use platform youtube and kind video"
+                )
+            for key in ("video_id", "channel_id"):
+                if key not in identifiers:
+                    errors.append(f"{field}.identifiers.{key} is required")
+            if identifiers.get("video_id") != youtube_video_match.group("video_id"):
+                errors.append(f"{field}.identifiers.video_id must match the source URL")
+
+        youtube_playlist_match = CANONICAL_YOUTUBE_PLAYLIST_RE.fullmatch(url or "")
+        if platform == "youtube" and kind == "playlist" and youtube_playlist_match is None:
+            errors.append(f"{field}.url must be the canonical YouTube playlist URL")
+        if youtube_playlist_match is not None:
+            if platform != "youtube" or kind != "playlist":
+                errors.append(
+                    f"{field} YouTube playlist URL must use platform youtube and kind playlist"
+                )
+            for key in ("playlist_id", "channel_id"):
+                if key not in identifiers:
+                    errors.append(f"{field}.identifiers.{key} is required")
+            if identifiers.get("playlist_id") != youtube_playlist_match.group("playlist_id"):
+                errors.append(f"{field}.identifiers.playlist_id must match the source URL")
 
 
 def validate_episode_sources(
@@ -2438,6 +2499,26 @@ def validate_episode_metadata_contract(
 
     sources = validate_source_preferences(front_matter, field_prefix=label, errors=errors)
     validate_episode_sources(sources, field_prefix=label, errors=errors)
+    youtube_video_sources = [
+        source
+        for source in sources
+        if source.get("platform") == "youtube" and source.get("kind") == "video"
+    ]
+    if episode_number is None and youtube_video_sources:
+        youtube_identifiers = youtube_video_sources[0].get("identifiers")
+        video_id = (
+            youtube_identifiers.get("video_id")
+            if isinstance(youtube_identifiers, dict)
+            else None
+        )
+        if isinstance(video_id, str) and re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id):
+            expected_key = f"youtube-{video_id.encode('ascii').hex()}"
+            if episode_key != expected_key:
+                errors.append(
+                    f"{label} unnumbered YouTube episode_key must equal {expected_key!r}"
+                )
+    elif isinstance(episode_key, str) and episode_key.startswith("youtube-"):
+        errors.append(f"{label} YouTube episode_key requires a YouTube video source")
     participants = validate_participants_contract(front_matter, field_prefix=label, errors=errors)
     validate_participant_profiles(front_matter, field_prefix=label, errors=errors)
     publishable = is_episode_web_publishable(workflow)
@@ -3554,11 +3635,25 @@ def check_xiaoyuzhou_urls(path: Path, text: str, errors: list[str]) -> int:
     return count
 
 
+def check_youtube_urls(path: Path, text: str, errors: list[str]) -> int:
+    count = 0
+    for match in YOUTUBE_URL_RE.finditer(text):
+        count += 1
+        url = match.group(0)
+        if (
+            CANONICAL_YOUTUBE_VIDEO_RE.fullmatch(url) is None
+            and CANONICAL_YOUTUBE_PLAYLIST_RE.fullmatch(url) is None
+        ):
+            errors.append(f"{relative(path)} contains non-canonical YouTube URL: {url}")
+    return count
+
+
 def main() -> int:
     errors: list[str] = []
     markdown_count = 0
     bilibili_url_count = 0
     xiaoyuzhou_url_count = 0
+    youtube_url_count = 0
     qwen_chain_count = 0
     episode_ids: dict[str, Path] = {}
     show_ids: dict[str, Path] = {}
@@ -3592,6 +3687,7 @@ def main() -> int:
             validate_core_point_logic_table(path, text, errors)
         bilibili_url_count += check_bilibili_urls(path, text, errors)
         xiaoyuzhou_url_count += check_xiaoyuzhou_urls(path, text, errors)
+        youtube_url_count += check_youtube_urls(path, text, errors)
 
     for episode_dir in sorted(SHOWS_ROOT.glob("*/episodes/*")):
         if not episode_dir.is_dir():
@@ -3702,6 +3798,7 @@ def main() -> int:
         f"{markdown_count} Markdown files, "
         f"{bilibili_url_count} Bilibili URLs, "
         f"{xiaoyuzhou_url_count} Xiaoyuzhou URLs, "
+        f"{youtube_url_count} YouTube URLs, "
         f"{qwen_chain_count} complete Qwen ASR chains."
     )
     return 0

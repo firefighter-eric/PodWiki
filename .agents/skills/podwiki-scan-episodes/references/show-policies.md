@@ -35,4 +35,7 @@ only episodes bound to that podcast that are publicly visible and later pass the
 `NORMAL`, `FREE`, non-private, `PUBLIC` checks.
 
 For any future show, stop with `needs-review` until its README provides affirmative podcast identity
-and a preferred publisher source. Do not invent a policy by copying a superficially similar show.
+and a preferred publisher source. A YouTube-backed show additionally needs the official channel ID
+and a publisher-maintained playlist explicitly scoped to complete podcast episodes; once recorded,
+that playlist is the required discovery surface and the publisher website/RSS are identity or
+cross-check sources. Do not invent a policy by copying a superficially similar show.

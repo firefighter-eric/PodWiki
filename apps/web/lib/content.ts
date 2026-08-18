@@ -80,6 +80,7 @@ const sourceIdentifiersSchema = z
     apple_podcasts_id: z.string().min(1).optional(),
     bvid: z.string().regex(/^BV[0-9A-Za-z]+$/u).optional(),
     cid: z.string().regex(/^[1-9]\d*$/u).optional(),
+    channel_id: z.string().regex(/^UC[A-Za-z0-9_-]{22}$/u).optional(),
     eid: xiaoyuzhouIdSchema.optional(),
     episode_id: z.string().min(1).optional(),
     episode_number: z.string().min(1).optional(),
@@ -90,14 +91,23 @@ const sourceIdentifiersSchema = z
     page: z.number().int().positive().optional(),
     page_id: z.string().min(1).optional(),
     pid: xiaoyuzhouIdSchema.optional(),
+    playlist_id: z.string().regex(/^[A-Za-z0-9_-]{10,64}$/u).optional(),
     rss_guid: z.string().min(1).optional(),
     show_id: z.string().min(1).optional(),
+    video_id: z.string().regex(/^[A-Za-z0-9_-]{11}$/u).optional(),
   })
   .strict();
 
 const sourceSchema = z
   .object({
-    platform: z.enum(["apple-podcasts", "bilibili", "rss", "website", "xiaoyuzhou"]),
+    platform: z.enum([
+      "apple-podcasts",
+      "bilibili",
+      "rss",
+      "website",
+      "xiaoyuzhou",
+      "youtube",
+    ]),
     kind: z.enum([
       "audio",
       "channel",
@@ -105,6 +115,7 @@ const sourceSchema = z
       "feed",
       "feed-item",
       "podcast",
+      "playlist",
       "show",
       "video",
       "video-channel",
@@ -210,6 +221,76 @@ const sourceSchema = z
             message: "Xiaoyuzhou identifiers.media_id must start with identifiers.pid",
           });
         }
+      }
+    }
+
+    const youtubeVideo = /^https:\/\/www\.youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})$/u
+      .exec(source.url);
+    if (source.platform === "youtube" && source.kind === "video" && !youtubeVideo) {
+      context.addIssue({
+        code: "custom",
+        path: ["url"],
+        message: "YouTube video URL must be canonical",
+      });
+    }
+    if (youtubeVideo) {
+      if (source.platform !== "youtube" || source.kind !== "video") {
+        context.addIssue({
+          code: "custom",
+          path: ["url"],
+          message: "YouTube video URL must use platform youtube and kind video",
+        });
+      }
+      for (const field of ["video_id", "channel_id"] as const) {
+        if (source.identifiers?.[field] === undefined) {
+          context.addIssue({
+            code: "custom",
+            path: ["identifiers", field],
+            message: `YouTube video source requires identifiers.${field}`,
+          });
+        }
+      }
+      if (youtubeVideo[1] !== source.identifiers?.video_id) {
+        context.addIssue({
+          code: "custom",
+          path: ["url"],
+          message: "YouTube video URL must match identifiers.video_id",
+        });
+      }
+    }
+
+    const youtubePlaylist = /^https:\/\/www\.youtube\.com\/playlist\?list=([A-Za-z0-9_-]{10,64})$/u
+      .exec(source.url);
+    if (source.platform === "youtube" && source.kind === "playlist" && !youtubePlaylist) {
+      context.addIssue({
+        code: "custom",
+        path: ["url"],
+        message: "YouTube playlist URL must be canonical",
+      });
+    }
+    if (youtubePlaylist) {
+      if (source.platform !== "youtube" || source.kind !== "playlist") {
+        context.addIssue({
+          code: "custom",
+          path: ["url"],
+          message: "YouTube playlist URL must use platform youtube and kind playlist",
+        });
+      }
+      for (const field of ["playlist_id", "channel_id"] as const) {
+        if (source.identifiers?.[field] === undefined) {
+          context.addIssue({
+            code: "custom",
+            path: ["identifiers", field],
+            message: `YouTube playlist source requires identifiers.${field}`,
+          });
+        }
+      }
+      if (youtubePlaylist[1] !== source.identifiers?.playlist_id) {
+        context.addIssue({
+          code: "custom",
+          path: ["url"],
+          message: "YouTube playlist URL must match identifiers.playlist_id",
+        });
       }
     }
   });
@@ -410,6 +491,28 @@ const episodeSchema = z
         code: "custom",
         path: ["numbering", "status"],
         message: "numbering.status must be verified when episode_number is present",
+      });
+    }
+    const youtubeVideoSource = value.sources.find(
+      (source) => source.platform === "youtube" && source.kind === "video",
+    );
+    if (value.episode_number === null && youtubeVideoSource?.identifiers?.video_id) {
+      const encodedVideoId = Array.from(youtubeVideoSource.identifiers.video_id)
+        .map((character) => character.charCodeAt(0).toString(16).padStart(2, "0"))
+        .join("");
+      const expectedKey = `youtube-${encodedVideoId}`;
+      if (value.episode_key !== expectedKey) {
+        context.addIssue({
+          code: "custom",
+          path: ["episode_key"],
+          message: `unnumbered YouTube episode_key must equal ${expectedKey}`,
+        });
+      }
+    } else if (value.episode_key.startsWith("youtube-")) {
+      context.addIssue({
+        code: "custom",
+        path: ["episode_key"],
+        message: "YouTube episode_key requires a YouTube video source",
       });
     }
     if (isEpisodeWebPublishable(value.workflow) && !value.summary.source_transcript) {

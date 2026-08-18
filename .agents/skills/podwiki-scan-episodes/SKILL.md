@@ -88,7 +88,10 @@ regenerate the inventory before final classification and record the new commit.
 6. When Bilibili returns a CAPTCHA, HTTP 412/352, an empty application shell, or an extractor block,
    record the source as blocked. Do not bypass access controls, reuse credentials without explicit
    authorization, or substitute RSS/another platform for a Bilibili-required update policy.
-7. For each plausible exact episode URL, run metadata-only intake when supported. Keep its output
+7. For a YouTube-backed show, enumerate only the official full-episodes playlist recorded in the
+   show README. Preserve exact `video_id`, `channel_id`, and `playlist_id`; any unavailable slot in
+   the claimed coverage makes the scan partial rather than silently disappearing.
+8. For each plausible exact episode URL, run metadata-only intake when supported. Keep its output
    inside the scan directory; do not use the media cache and do not download bytes.
 
 ```bash
