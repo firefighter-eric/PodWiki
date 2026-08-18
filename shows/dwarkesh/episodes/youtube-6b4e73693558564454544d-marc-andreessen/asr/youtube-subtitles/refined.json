@@ -1,0 +1,5347 @@
+{
+  "generated_at": "2026-08-18T08:33:35.526548Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-6b4e73693558564454544d-marc-andreessen/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "a60dd2cae3d74c629ee1dce6a1b7e801778c79f80462d62d353f55d29cc21166"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 54000,
+      "source_event_index": 0,
+      "start_ms": 48960,
+      "text": "Today, I have the great pleasure of speaking with Marc Andreessen, which means for the first time"
+    },
+    {
+      "end_ms": 58740,
+      "source_event_index": 1,
+      "start_ms": 54000,
+      "text": "on the podcast, the guest’s and the host’s playback speed will actually match. Marc,"
+    },
+    {
+      "end_ms": 62280,
+      "source_event_index": 2,
+      "start_ms": 58740,
+      "text": "welcome to The Lunar Society. Good morning. And thank you for"
+    },
+    {
+      "end_ms": 66840,
+      "source_event_index": 3,
+      "start_ms": 62280,
+      "text": "having me. It's great to be here. My pleasure. Have you been tempted"
+    },
+    {
+      "end_ms": 70920,
+      "source_event_index": 4,
+      "start_ms": 66840,
+      "text": "anytime in the last 14 years to start a company? Not a16z, but another company?"
+    },
+    {
+      "end_ms": 81360,
+      "source_event_index": 5,
+      "start_ms": 71640,
+      "text": "No. The short answer is we did. We started our venture firm in 2009 and it's given my partner,"
+    },
+    {
+      "end_ms": 86160,
+      "source_event_index": 6,
+      "start_ms": 81360,
+      "text": "Ben and I, a chance to fully exercise our entrepreneurial ambitions and energies to"
+    },
+    {
+      "end_ms": 91320,
+      "source_event_index": 7,
+      "start_ms": 86160,
+      "text": "build this firm. We're over 500 people now at the firm which is small for a tech company,"
+    },
+    {
+      "end_ms": 97680,
+      "source_event_index": 8,
+      "start_ms": 91320,
+      "text": "but it's big for a venture capital firm. And it has let us get all those urges out."
+    },
+    {
+      "end_ms": 100800,
+      "source_event_index": 9,
+      "start_ms": 97680,
+      "text": "But there's no product where you think — “Oh God, this needs to exist,"
+    },
+    {
+      "end_ms": 104880,
+      "source_event_index": 10,
+      "start_ms": 100800,
+      "text": "and I should be the one to make it happen”? I think of this a lot. We look at this through"
+    },
+    {
+      "end_ms": 109740,
+      "source_event_index": 11,
+      "start_ms": 104880,
+      "text": "the lens of — “What would I do if I were 23 again?” And I always have those ideas."
+    },
+    {
+      "end_ms": 118620,
+      "source_event_index": 12,
+      "start_ms": 109740,
+      "text": "But starting a company is a real commitment, it really changes your life. My favorite all time"
+    },
+    {
+      "end_ms": 123120,
+      "source_event_index": 13,
+      "start_ms": 118620,
+      "text": "quote on being a startup founder is from Sean Parker, who says —“Starting a company is like"
+    },
+    {
+      "end_ms": 131760,
+      "source_event_index": 14,
+      "start_ms": 123120,
+      "text": "chewing glass. Eventually, you start to like the taste of your own blood.” I always get this queasy"
+    },
+    {
+      "end_ms": 137220,
+      "source_event_index": 15,
+      "start_ms": 131760,
+      "text": "look on the face of people I’m talking to when I roll that quote out. But it is really intense."
+    },
+    {
+      "end_ms": 141720,
+      "source_event_index": 16,
+      "start_ms": 139200,
+      "text": "Whenever anybody asks me if they should start a company, the answer is always no."
+    },
+    {
+      "end_ms": 149940,
+      "source_event_index": 17,
+      "start_ms": 142980,
+      "text": "Because it's such a gigantic, emotional, irrational thing to do. The implications of that"
+    },
+    {
+      "end_ms": 155640,
+      "source_event_index": 18,
+      "start_ms": 149940,
+      "text": "decision are so profound in terms of how you live your life. Look, there are plenty of great ideas,"
+    },
+    {
+      "end_ms": 159120,
+      "source_event_index": 19,
+      "start_ms": 155640,
+      "text": "and plenty of interesting things to do but the actual process is so difficult."
+    },
+    {
+      "end_ms": 164460,
+      "source_event_index": 20,
+      "start_ms": 160080,
+      "text": "It gets romanticized a lot and it's not romantic. It's a very difficult thing to do."
+    },
+    {
+      "end_ms": 171000,
+      "source_event_index": 21,
+      "start_ms": 165240,
+      "text": "And I did it multiple times before, so at least for now, I don't revisit that."
+    },
+    {
+      "end_ms": 174720,
+      "source_event_index": 22,
+      "start_ms": 171000,
+      "text": "But being a venture capitalist is not like that? When you're in the 38th pitch of the"
+    },
+    {
+      "end_ms": 177420,
+      "source_event_index": 23,
+      "start_ms": 174720,
+      "text": "day, you're not wondering if chewing glass might not be more comfortable?"
+    },
+    {
+      "end_ms": 182040,
+      "source_event_index": 24,
+      "start_ms": 177960,
+      "text": "No, it's different. I'll tell you how I experienced it. People are"
+    },
+    {
+      "end_ms": 186240,
+      "source_event_index": 25,
+      "start_ms": 182820,
+      "text": "wired to respond to stress in different ways. And I think there are people who are wired to"
+    },
+    {
+      "end_ms": 194100,
+      "source_event_index": 26,
+      "start_ms": 186240,
+      "text": "be extremely productive and get very happy under extreme levels of stress. I have a different… I'm"
+    },
+    {
+      "end_ms": 199080,
+      "source_event_index": 27,
+      "start_ms": 194100,
+      "text": "fine with stress. In fact, I incline towards it and if I don't have any, I seek it out. But"
+    },
+    {
+      "end_ms": 205440,
+      "source_event_index": 28,
+      "start_ms": 199680,
+      "text": "past a certain level, I don't really enjoy it. It degrades the quality of my life, not improves it."
+    },
+    {
+      "end_ms": 215640,
+      "source_event_index": 29,
+      "start_ms": 205440,
+      "text": "Maybe you have an affinity for self torture. Look, there's stress in every profession and"
+    },
+    {
+      "end_ms": 218640,
+      "source_event_index": 30,
+      "start_ms": 215640,
+      "text": "there's certainly stress in being an investor, but it's a completely different kind of stress."
+    },
+    {
+      "end_ms": 225540,
+      "source_event_index": 31,
+      "start_ms": 219840,
+      "text": "Because when you're a startup founder, it's all on you. Everything that happens is on you,"
+    },
+    {
+      "end_ms": 230460,
+      "source_event_index": 32,
+      "start_ms": 225540,
+      "text": "everything that goes wrong is on you. When there's an issue in the company, a crisis in the company,"
+    },
+    {
+      "end_ms": 235140,
+      "source_event_index": 33,
+      "start_ms": 230460,
+      "text": "it's on you to fix it. You're up at four in the morning all the time worrying about things."
+    },
+    {
+      "end_ms": 241860,
+      "source_event_index": 34,
+      "start_ms": 236400,
+      "text": "With investors, there's just a layer of buffer. We have no end of problems"
+    },
+    {
+      "end_ms": 245940,
+      "source_event_index": 35,
+      "start_ms": 241860,
+      "text": "and we help our portfolio companies as best we can with all kinds of issues,"
+    },
+    {
+      "end_ms": 251700,
+      "source_event_index": 36,
+      "start_ms": 245940,
+      "text": "like some crisis inside a company. But it's not my company, not everything is"
+    },
+    {
+      "end_ms": 260040,
+      "source_event_index": 37,
+      "start_ms": 251700,
+      "text": "my fault. So it’s a more diffused kind of stress, and honestly easier to deal with."
+    },
+    {
+      "end_ms": 263940,
+      "source_event_index": 38,
+      "start_ms": 260040,
+      "text": "Got it, that makes sense. Why did you stop your blog? Would you ever start it again?"
+    },
+    {
+      "end_ms": 271920,
+      "source_event_index": 39,
+      "start_ms": 265800,
+      "text": "I write intermittently. The original blog was from 2007 to 2009."
+    },
+    {
+      "end_ms": 278520,
+      "source_event_index": 40,
+      "start_ms": 273540,
+      "text": "And then we started the firm, and that was like having a new baby and that soaked up all my time."
+    },
+    {
+      "end_ms": 287040,
+      "source_event_index": 41,
+      "start_ms": 280020,
+      "text": "I write intermittently, and then I do social media intermittently. Part of it is — I have a"
+    },
+    {
+      "end_ms": 291780,
+      "source_event_index": 42,
+      "start_ms": 287040,
+      "text": "lot to say, and a lot that I'm interested in, but also I like to experiment with the new formats."
+    },
+    {
+      "end_ms": 298920,
+      "source_event_index": 43,
+      "start_ms": 295020,
+      "text": "We do live in a fundamentally different world as a result of social media, the internet, blogging,"
+    },
+    {
+      "end_ms": 302280,
+      "source_event_index": 44,
+      "start_ms": 298920,
+      "text": "Twitter, and all the rest of it. So I try to keep my hand in it and experiment. But"
+    },
+    {
+      "end_ms": 306780,
+      "source_event_index": 45,
+      "start_ms": 303480,
+      "text": "I rotate both how I spend my time and rotate what I think makes sense."
+    },
+    {
+      "end_ms": 313200,
+      "source_event_index": 46,
+      "start_ms": 308580,
+      "text": "Before AWS, deploying applications was probably the bottleneck on new software."
+    },
+    {
+      "end_ms": 317040,
+      "source_event_index": 47,
+      "start_ms": 313200,
+      "text": "What is the biggest bottleneck today? At what layer of abstraction do we need new tools?"
+    },
+    {
+      "end_ms": 325020,
+      "source_event_index": 48,
+      "start_ms": 318600,
+      "text": "Literally sitting here today, overwhelmingly it's the impact AI is having on coding. I"
+    },
+    {
+      "end_ms": 331500,
+      "source_event_index": 49,
+      "start_ms": 325020,
+      "text": "think there's a real possibility that basically every application category gets upended in the"
+    },
+    {
+      "end_ms": 337020,
+      "source_event_index": 50,
+      "start_ms": 331500,
+      "text": "next five years. I think the whole model of how applications get built across every domain might"
+    },
+    {
+      "end_ms": 342480,
+      "source_event_index": 51,
+      "start_ms": 337020,
+      "text": "just completely change. In the old model without AI, you typically have some sort of database,"
+    },
+    {
+      "end_ms": 348180,
+      "source_event_index": 52,
+      "start_ms": 342480,
+      "text": "you have some sort of front end for the database, you had forms, you had these known user"
+    },
+    {
+      "end_ms": 354720,
+      "source_event_index": 53,
+      "start_ms": 348180,
+      "text": "interaction models, mobile apps and so forth. We got to a pretty good shared understanding of how"
+    },
+    {
+      "end_ms": 360180,
+      "source_event_index": 54,
+      "start_ms": 354720,
+      "text": "humans and machines communicate, in the windowing era, and then in the mobile era, in the web era."
+    },
+    {
+      "end_ms": 366660,
+      "source_event_index": 55,
+      "start_ms": 362160,
+      "text": "AI might just upend all that. The future apps might just be much more of a dialogue between"
+    },
+    {
+      "end_ms": 371700,
+      "source_event_index": 56,
+      "start_ms": 366660,
+      "text": "computer and machine. Either a written-text dialogue, or a spoken dialogue or some other form"
+    },
+    {
+      "end_ms": 376920,
+      "source_event_index": 57,
+      "start_ms": 371700,
+      "text": "of dialogue. And the human is guiding the machine on what to do, and receiving real time feedback."
+    },
+    {
+      "end_ms": 380340,
+      "source_event_index": 58,
+      "start_ms": 376920,
+      "text": "And there's a loop, and then the machine just does what it does, and it gives you the results."
+    },
+    {
+      "end_ms": 384360,
+      "source_event_index": 59,
+      "start_ms": 380940,
+      "text": "I think we're potentially on the front end of that, that all might change."
+    },
+    {
+      "end_ms": 389880,
+      "source_event_index": 60,
+      "start_ms": 385680,
+      "text": "The very fundamental assumptions about how software gets built might just"
+    },
+    {
+      "end_ms": 396420,
+      "source_event_index": 61,
+      "start_ms": 391680,
+      "text": "completely change. The tools on that are at the very front end. There's an entirely"
+    },
+    {
+      "end_ms": 401340,
+      "source_event_index": 62,
+      "start_ms": 396420,
+      "text": "new stack that needs to get built to do that. So that's probably the big thing."
+    },
+    {
+      "end_ms": 405660,
+      "source_event_index": 63,
+      "start_ms": 401340,
+      "text": "Is there a reason though that AI is not one of your focus areas? As far as I know,"
+    },
+    {
+      "end_ms": 408780,
+      "source_event_index": 64,
+      "start_ms": 405660,
+      "text": "you guys don't have an AI fund dedicated to that technology specifically?"
+    },
+    {
+      "end_ms": 414900,
+      "source_event_index": 65,
+      "start_ms": 409740,
+      "text": "Basically we look at it all as software. We look at it like it is the core business. Software is"
+    },
+    {
+      "end_ms": 420720,
+      "source_event_index": 66,
+      "start_ms": 414900,
+      "text": "the core of the firm, we've been public on that for a long time. The core venture"
+    },
+    {
+      "end_ms": 426240,
+      "source_event_index": 67,
+      "start_ms": 420720,
+      "text": "fund is the core software fund. And then AI basically is the next turn on software. And"
+    },
+    {
+      "end_ms": 430860,
+      "source_event_index": 68,
+      "start_ms": 426240,
+      "text": "so I view it as the opposite of what you said, it is the most integral thing that we're doing."
+    },
+    {
+      "end_ms": 436500,
+      "source_event_index": 69,
+      "start_ms": 431400,
+      "text": "The separate funds get created for the new areas that are structurally different"
+    },
+    {
+      "end_ms": 444600,
+      "source_event_index": 70,
+      "start_ms": 437040,
+      "text": "in terms of how industries work. AI is basically the future of software. And"
+    },
+    {
+      "end_ms": 449640,
+      "source_event_index": 71,
+      "start_ms": 444600,
+      "text": "so it's the future of the core of the firm. Got it. Now, let's talk a little about your"
+    },
+    {
+      "end_ms": 454200,
+      "source_event_index": 72,
+      "start_ms": 449640,
+      "text": "past. So you sold Netscape for $10 billion. But today, Chrome has what,"
+    },
+    {
+      "end_ms": 458880,
+      "source_event_index": 73,
+      "start_ms": 454200,
+      "text": "like 2.7 billion users or something. And then Opsware was sold for like $1.7 billion."
+    },
+    {
+      "end_ms": 465600,
+      "source_event_index": 74,
+      "start_ms": 459960,
+      "text": "AWS is gonna probably make close to $100 billion in revenue yearly. In retrospect, do you think if"
+    },
+    {
+      "end_ms": 469740,
+      "source_event_index": 75,
+      "start_ms": 465600,
+      "text": "these companies had remained startups, they would have ended up dominating these large markets?"
+    },
+    {
+      "end_ms": 476400,
+      "source_event_index": 76,
+      "start_ms": 470400,
+      "text": "So I spend virtually no time on the past. The one thing I know about the past is I can't change it."
+    },
+    {
+      "end_ms": 484140,
+      "source_event_index": 77,
+      "start_ms": 477600,
+      "text": "So I spend virtually no time revisiting old decisions. People I know who spend a lot of"
+    },
+    {
+      "end_ms": 488220,
+      "source_event_index": 78,
+      "start_ms": 484140,
+      "text": "time revisiting old decisions are less effective because they mire themselves in what ifs and"
+    },
+    {
+      "end_ms": 494640,
+      "source_event_index": 79,
+      "start_ms": 488220,
+      "text": "counterfactuals. So I really don't spend time on it. I really don't even have theories on it."
+    },
+    {
+      "end_ms": 500520,
+      "source_event_index": 80,
+      "start_ms": 495300,
+      "text": "The big thing I would just say is that reality plays out in really complicated ways."
+    },
+    {
+      "end_ms": 504840,
+      "source_event_index": 81,
+      "start_ms": 500520,
+      "text": "Everything on paper is straightforward. Reality is very complicated and messy. The technical way"
+    },
+    {
+      "end_ms": 510060,
+      "source_event_index": 82,
+      "start_ms": 504840,
+      "text": "that I think about it is basically every startup is charting a path dependent course through a"
+    },
+    {
+      "end_ms": 519300,
+      "source_event_index": 83,
+      "start_ms": 510060,
+      "text": "complex adaptive system. And because of that, if you’ve read about this, people had this obsession"
+    },
+    {
+      "end_ms": 523860,
+      "source_event_index": 84,
+      "start_ms": 519300,
+      "text": "a while back with what's called Chaos Theory. It's sort of this thing where we're used"
+    },
+    {
+      "end_ms": 527460,
+      "source_event_index": 85,
+      "start_ms": 523860,
+      "text": "to thinking about systems as if they're deterministic. So you start at point A, you"
+    },
+    {
+      "end_ms": 531000,
+      "source_event_index": 86,
+      "start_ms": 527460,
+      "text": "end up at point B, and you can do that over and over again. You know what happens when you drop"
+    },
+    {
+      "end_ms": 538080,
+      "source_event_index": 87,
+      "start_ms": 531000,
+      "text": "an apple out of a tree, or whatever. In the real world of humans and 8 billion people interacting,"
+    },
+    {
+      "end_ms": 541260,
+      "source_event_index": 88,
+      "start_ms": 538080,
+      "text": "and trying to start companies that intersect in these markets and do all these complicated"
+    },
+    {
+      "end_ms": 546300,
+      "source_event_index": 89,
+      "start_ms": 541260,
+      "text": "things and have all these employees, there's random elements all over the place. There's"
+    },
+    {
+      "end_ms": 550260,
+      "source_event_index": 90,
+      "start_ms": 546300,
+      "text": "path dependence as a consequence. You run the same scenario, start with point A, one time"
+    },
+    {
+      "end_ms": 558180,
+      "source_event_index": 91,
+      "start_ms": 550260,
+      "text": "you end up point B, one time you end up point Z. There's a million reasons why the branches fork."
+    },
+    {
+      "end_ms": 565500,
+      "source_event_index": 92,
+      "start_ms": 563100,
+      "text": "This is my advice to every founder who wants to revisit all decisions."
+    },
+    {
+      "end_ms": 571440,
+      "source_event_index": 93,
+      "start_ms": 567540,
+      "text": "It's not a useful and productive thing to do. The world is too complicated and messy."
+    },
+    {
+      "end_ms": 575460,
+      "source_event_index": 94,
+      "start_ms": 571440,
+      "text": "So you take whatever skills you think you have and you just do something new."
+    },
+    {
+      "end_ms": 581700,
+      "source_event_index": 95,
+      "start_ms": 576480,
+      "text": "Make sense. Are venture capitalists part of the managerial elite? Burnham says that “the"
+    },
+    {
+      "end_ms": 586080,
+      "source_event_index": 96,
+      "start_ms": 581700,
+      "text": "rise of the finance capitalist is the decisive phase in the managerial revolution.” What would"
+    },
+    {
+      "end_ms": 591780,
+      "source_event_index": 97,
+      "start_ms": 586080,
+      "text": "he think about venture capitalists? I actually think about this a lot."
+    },
+    {
+      "end_ms": 597660,
+      "source_event_index": 98,
+      "start_ms": 592680,
+      "text": "And I know you said everybody can Google it, but I'll just provide this just so this makes sense."
+    },
+    {
+      "end_ms": 602220,
+      "source_event_index": 99,
+      "start_ms": 598260,
+      "text": "James Burnham famously said — there's basically two kinds of capitalism and we call them both"
+    },
+    {
+      "end_ms": 605940,
+      "source_event_index": 100,
+      "start_ms": 602220,
+      "text": "capitalism, but they're actually very different in how they operate. There's the old model of"
+    },
+    {
+      "end_ms": 610080,
+      "source_event_index": 101,
+      "start_ms": 605940,
+      "text": "capitalism, which is bourgeois capitalism and bourgeois capitalism was the classic model where"
+    },
+    {
+      "end_ms": 615900,
+      "source_event_index": 102,
+      "start_ms": 610080,
+      "text": "the owner of the business was a person who, by the way, often put their name on the door. Ford"
+    },
+    {
+      "end_ms": 621060,
+      "source_event_index": 103,
+      "start_ms": 615900,
+      "text": "Motor Company, right? Andreessen Horowitz"
+    },
+    {
+      "end_ms": 626220,
+      "source_event_index": 104,
+      "start_ms": 622020,
+      "text": "Andreessen Horowitz, right. And then that person owned the business, often 100% of the business,"
+    },
+    {
+      "end_ms": 632940,
+      "source_event_index": 105,
+      "start_ms": 626760,
+      "text": "and then that person ran the business. These are the people that communists hated. This is"
+    },
+    {
+      "end_ms": 641580,
+      "source_event_index": 106,
+      "start_ms": 633480,
+      "text": "the bourgeois capitalist — Company owner, builder, CEO, as one person with a direct"
+    },
+    {
+      "end_ms": 645300,
+      "source_event_index": 107,
+      "start_ms": 641580,
+      "text": "link between ownership and control. The person who owns it controls it,"
+    },
+    {
+      "end_ms": 649740,
+      "source_event_index": 108,
+      "start_ms": 645300,
+      "text": "the person who controls it runs it. It's just a thing. There's a proprietor of the business."
+    },
+    {
+      "end_ms": 655500,
+      "source_event_index": 109,
+      "start_ms": 649740,
+      "text": "So that's the old model. And then what he said basically, as of the middle of the 20th century,"
+    },
+    {
+      "end_ms": 659640,
+      "source_event_index": 110,
+      "start_ms": 655500,
+      "text": "most of the economy was transitioning, and I think that transition has happened and is"
+    },
+    {
+      "end_ms": 664080,
+      "source_event_index": 111,
+      "start_ms": 659640,
+      "text": "basically now complete. Most of the economy transitions to a different mode of operating,"
+    },
+    {
+      "end_ms": 669420,
+      "source_event_index": 112,
+      "start_ms": 664080,
+      "text": "a different kind of capitalism called managerial capitalism. In managerial capitalism, you have a"
+    },
+    {
+      "end_ms": 675720,
+      "source_event_index": 113,
+      "start_ms": 669420,
+      "text": "separation of ownership and management. Think of a public company, you have one set of owners who are"
+    },
+    {
+      "end_ms": 678780,
+      "source_event_index": 114,
+      "start_ms": 675720,
+      "text": "dispersed shareholders, and there's like a million of them for a big company, and who knows where"
+    },
+    {
+      "end_ms": 681180,
+      "source_event_index": 115,
+      "start_ms": 678780,
+      "text": "they are, and they're not paying any attention to the company, and they have no ability to run"
+    },
+    {
+      "end_ms": 687180,
+      "source_event_index": 116,
+      "start_ms": 681180,
+      "text": "the company. And then you've got a professional managerial class, and they step in and they run"
+    },
+    {
+      "end_ms": 691680,
+      "source_event_index": 117,
+      "start_ms": 687180,
+      "text": "the company. What he said is — as a consequence of that the managers end up in control. Even"
+    },
+    {
+      "end_ms": 696840,
+      "source_event_index": 118,
+      "start_ms": 691680,
+      "text": "though the managers don't own the company. In a lot of public companies, the managers might own"
+    },
+    {
+      "end_ms": 700620,
+      "source_event_index": 119,
+      "start_ms": 696840,
+      "text": "like 1% of the company, but they end up in total control, and then they can do whatever they want."
+    },
+    {
+      "end_ms": 705660,
+      "source_event_index": 120,
+      "start_ms": 702360,
+      "text": "And he actually said — Look, it doesn't even matter if you think this is good or bad, it's"
+    },
+    {
+      "end_ms": 711000,
+      "source_event_index": 121,
+      "start_ms": 705660,
+      "text": "just inevitable. And it's inevitable because of scale and complexity. And so the modern industrial"
+    },
+    {
+      "end_ms": 715080,
+      "source_event_index": 122,
+      "start_ms": 711000,
+      "text": "and post industrial organizations are going to end up being so big and so complex and so technical,"
+    },
+    {
+      "end_ms": 718380,
+      "source_event_index": 123,
+      "start_ms": 715080,
+      "text": "that you're going to need this professional managerial class to run them. And it's just an"
+    },
+    {
+      "end_ms": 723060,
+      "source_event_index": 124,
+      "start_ms": 718380,
+      "text": "inevitability that this is how it's gonna go. So I really think this is exactly what's played out."
+    },
+    {
+      "end_ms": 729960,
+      "source_event_index": 125,
+      "start_ms": 724020,
+      "text": "A consequence of that, that I think is pretty obvious, is that managerial capitalism has a"
+    },
+    {
+      "end_ms": 733140,
+      "source_event_index": 126,
+      "start_ms": 729960,
+      "text": "big advantage that Burnham identified, which is that the managers are often very good at running"
+    },
+    {
+      "end_ms": 737640,
+      "source_event_index": 127,
+      "start_ms": 733140,
+      "text": "things at scale. And we have these giant industries and sectors of the economy and"
+    },
+    {
+      "end_ms": 741420,
+      "source_event_index": 128,
+      "start_ms": 737640,
+      "text": "health care and education, all these things that are running at giant levels of scale,"
+    },
+    {
+      "end_ms": 748500,
+      "source_event_index": 129,
+      "start_ms": 742560,
+      "text": "which was new in the 20th century. But there's sort of a consequence of that, which"
+    },
+    {
+      "end_ms": 753480,
+      "source_event_index": 130,
+      "start_ms": 748500,
+      "text": "is managers don't build new things. They're not trained to do it, they don't have the background"
+    },
+    {
+      "end_ms": 756240,
+      "source_event_index": 131,
+      "start_ms": 753480,
+      "text": "to do it, they don't have the personality to do it, they don't have the temperament to do it, and"
+    },
+    {
+      "end_ms": 760980,
+      "source_event_index": 132,
+      "start_ms": 756240,
+      "text": "they don't have the incentives to do it. Because the number one job, if you're a manager, is not to"
+    },
+    {
+      "end_ms": 765840,
+      "source_event_index": 133,
+      "start_ms": 760980,
+      "text": "upset the applecart. You want to stay in that job for as long as possible, you want to get paid your"
+    },
+    {
+      "end_ms": 769020,
+      "source_event_index": 134,
+      "start_ms": 765840,
+      "text": "annual comp for as long as possible, and you don't want to do anything that would introduce risk."
+    },
+    {
+      "end_ms": 776520,
+      "source_event_index": 135,
+      "start_ms": 769020,
+      "text": "And so managers can't and won't build new things. And so specifically, to your question, the role of"
+    },
+    {
+      "end_ms": 783120,
+      "source_event_index": 136,
+      "start_ms": 777180,
+      "text": "startups, the role of entrepreneurial capitalism, is to basically bring back the old bourgeois"
+    },
+    {
+      "end_ms": 789060,
+      "source_event_index": 137,
+      "start_ms": 783120,
+      "text": "capitalist model enough. It's a rump effort, because it's not most of the economy today,"
+    },
+    {
+      "end_ms": 792840,
+      "source_event_index": 138,
+      "start_ms": 789060,
+      "text": "but bring back the older model of bourgeois capitalism, or what we call entrepreneurial"
+    },
+    {
+      "end_ms": 795660,
+      "source_event_index": 139,
+      "start_ms": 792840,
+      "text": "capitalism, bring it back enough to at least be able to build the new things."
+    },
+    {
+      "end_ms": 803100,
+      "source_event_index": 140,
+      "start_ms": 797340,
+      "text": "So basically what we do is we fund the new bourgeois capitalists, who we call tech founders."
+    },
+    {
+      "end_ms": 810000,
+      "source_event_index": 141,
+      "start_ms": 803100,
+      "text": "And then there's two layers of finance that enable bourgeois capitalism to at least resurface a"
+    },
+    {
+      "end_ms": 813780,
+      "source_event_index": 142,
+      "start_ms": 810000,
+      "text": "little bit within this managerial system. Venture capital does that at the point of inception,"
+    },
+    {
+      "end_ms": 816660,
+      "source_event_index": 143,
+      "start_ms": 813780,
+      "text": "and then private equity does that at a point when a company needs to actually transform."
+    },
+    {
+      "end_ms": 822300,
+      "source_event_index": 144,
+      "start_ms": 818520,
+      "text": "I view it as — we're an enabling agent for at least enough of a resumption of"
+    },
+    {
+      "end_ms": 826020,
+      "source_event_index": 145,
+      "start_ms": 822300,
+      "text": "bourgeois capitalism to be able to get new things built, even if most of the companies"
+    },
+    {
+      "end_ms": 830220,
+      "source_event_index": 146,
+      "start_ms": 826020,
+      "text": "that we built ultimately themselves end up being run in the managerial model. And"
+    },
+    {
+      "end_ms": 834900,
+      "source_event_index": 147,
+      "start_ms": 831420,
+      "text": "Burnham would say that's just the way of the modern world, that's just how it's gonna work."
+    },
+    {
+      "end_ms": 839700,
+      "source_event_index": 148,
+      "start_ms": 834900,
+      "text": "But you guys get preferred shares and board seats, and rightfully so, but wouldn't Burnham look at"
+    },
+    {
+      "end_ms": 844620,
+      "source_event_index": 149,
+      "start_ms": 839700,
+      "text": "this and say — “You're not the owners and you do have some amount of control over your companies.”"
+    },
+    {
+      "end_ms": 850380,
+      "source_event_index": 150,
+      "start_ms": 846180,
+      "text": "I think he would say that we're a hybrid, we're a managerial entity that is in the business of"
+    },
+    {
+      "end_ms": 857040,
+      "source_event_index": 151,
+      "start_ms": 850380,
+      "text": "catalyzing and supporting bourgeois capitalist companies. He would clearly identify the startups"
+    },
+    {
+      "end_ms": 861360,
+      "source_event_index": 152,
+      "start_ms": 857040,
+      "text": "that we fund. He would be like, “Oh yeah, that's the old model. That's the old model of Thomas"
+    },
+    {
+      "end_ms": 866220,
+      "source_event_index": 153,
+      "start_ms": 861360,
+      "text": "Edison, or Henry Ford, or one of these guys.” You can just draw a straight line from Thomas Edison,"
+    },
+    {
+      "end_ms": 872760,
+      "source_event_index": 154,
+      "start_ms": 866220,
+      "text": "Henry Ford to Steve Jobs, Larry Page, and Mark Zuckerberg. That's that model, it's a founder,"
+    },
+    {
+      "end_ms": 877980,
+      "source_event_index": 155,
+      "start_ms": 872760,
+      "text": "it’s a CEO, at least when they started out owning 100%. They do have to raise money most"
+    },
+    {
+      "end_ms": 883500,
+      "source_event_index": 156,
+      "start_ms": 877980,
+      "text": "of the time, but they're throwbacks. The modern tech founders are a throwback to this older model"
+    },
+    {
+      "end_ms": 889260,
+      "source_event_index": 157,
+      "start_ms": 883500,
+      "text": "of bourgeois capitalism. So you're right in that he would view us as a managerial entity, but he"
+    },
+    {
+      "end_ms": 893280,
+      "source_event_index": 158,
+      "start_ms": 889260,
+      "text": "would view us as a managerial entity that is in the business of causing new bourgeois capitalist"
+    },
+    {
+      "end_ms": 898860,
+      "source_event_index": 159,
+      "start_ms": 893280,
+      "text": "institutions to at least be created. And I think he would credit us with that. And then he would"
+    },
+    {
+      "end_ms": 905100,
+      "source_event_index": 160,
+      "start_ms": 898860,
+      "text": "also say — however, our fate is that most of the companies that we fund and most of the founders"
+    },
+    {
+      "end_ms": 910560,
+      "source_event_index": 161,
+      "start_ms": 905100,
+      "text": "that we back end up over time, handing off control of their companies to a managerial class."
+    },
+    {
+      "end_ms": 919020,
+      "source_event_index": 162,
+      "start_ms": 910560,
+      "text": "When the companies we fund get to scale, they tend to get pulled into the managerial orbits,"
+    },
+    {
+      "end_ms": 923340,
+      "source_event_index": 163,
+      "start_ms": 919020,
+      "text": "they tend to get pulled into the managerial matrix, which by the way, is when they stop being"
+    },
+    {
+      "end_ms": 928440,
+      "source_event_index": 164,
+      "start_ms": 923340,
+      "text": "able to build new things, which is what causes the smart and aggressive people at those companies to"
+    },
+    {
+      "end_ms": 932520,
+      "source_event_index": 165,
+      "start_ms": 928440,
+      "text": "leave and then come back to us and raise money and start a new bourgeois capitalist company."
+    },
+    {
+      "end_ms": 939360,
+      "source_event_index": 166,
+      "start_ms": 934500,
+      "text": "I view it as — the economy is like 99% managerial, and if we can just keep the 1% of the old model"
+    },
+    {
+      "end_ms": 945060,
+      "source_event_index": 167,
+      "start_ms": 939360,
+      "text": "alive, we'll keep getting new things. By the way if venture capital ever gets snuffed,"
+    },
+    {
+      "end_ms": 950580,
+      "source_event_index": 168,
+      "start_ms": 945060,
+      "text": "it's outlawed or whatever, it just fails and there is no more venture capital, there's no"
+    },
+    {
+      "end_ms": 955260,
+      "source_event_index": 169,
+      "start_ms": 950580,
+      "text": "more tech startups or whatever then at that point the economy is going to be 100% managerial. And at"
+    },
+    {
+      "end_ms": 959640,
+      "source_event_index": 170,
+      "start_ms": 955260,
+      "text": "that point, there will be no innovation forever. People might think they want that. I don't"
+    },
+    {
+      "end_ms": 962640,
+      "source_event_index": 171,
+      "start_ms": 959640,
+      "text": "think they actually want that. I don't think we want to live in that world."
+    },
+    {
+      "end_ms": 968580,
+      "source_event_index": 172,
+      "start_ms": 963540,
+      "text": "Will this trend towards managerialism also happen to a16z as it scales? Or will it be"
+    },
+    {
+      "end_ms": 974820,
+      "source_event_index": 173,
+      "start_ms": 968580,
+      "text": "immune? What happens to a16z in five decades? At a certain point this becomes the succession"
+    },
+    {
+      "end_ms": 979320,
+      "source_event_index": 174,
+      "start_ms": 974820,
+      "text": "problem. As long as Ben and I are running it our determination is to keep it as much"
+    },
+    {
+      "end_ms": 982860,
+      "source_event_index": 175,
+      "start_ms": 979320,
+      "text": "in the bourgeois model as possible. And as you pointed out, literally it’s our names on"
+    },
+    {
+      "end_ms": 989700,
+      "source_event_index": 176,
+      "start_ms": 982860,
+      "text": "the door. Ben and I control the firm. The firm doesn't have a board of directors,"
+    },
+    {
+      "end_ms": 994020,
+      "source_event_index": 177,
+      "start_ms": 989700,
+      "text": "it's just Ben and me running it. It's a private entity there’s no outside shareholders."
+    },
+    {
+      "end_ms": 997560,
+      "source_event_index": 178,
+      "start_ms": 995040,
+      "text": "And so as long as Ben and I are running it, and we're running it in the way that"
+    },
+    {
+      "end_ms": 1004640,
+      "source_event_index": 179,
+      "start_ms": 997560,
+      "text": "we're running it, it will be as bourgeois model as any investment firm could be."
+    },
+    {
+      "end_ms": 1012860,
+      "source_event_index": 180,
+      "start_ms": 1006320,
+      "text": "Some day there's the succession challenge, and I bring that up, because the succession"
+    },
+    {
+      "end_ms": 1019580,
+      "source_event_index": 181,
+      "start_ms": 1012860,
+      "text": "challenge for tech companies is usually sort of when that transformation happens."
+    },
+    {
+      "end_ms": 1023180,
+      "source_event_index": 182,
+      "start_ms": 1020180,
+      "text": "When it goes from being in the bourgeois model to being in the managerial model."
+    },
+    {
+      "end_ms": 1028820,
+      "source_event_index": 183,
+      "start_ms": 1024260,
+      "text": "And then this gets to sort of the philosophy of succession in tech companies. And the general"
+    },
+    {
+      "end_ms": 1033860,
+      "source_event_index": 184,
+      "start_ms": 1028820,
+      "text": "thing that happens there is that, you see this over and over again with the great founder CEOs,"
+    },
+    {
+      "end_ms": 1036980,
+      "source_event_index": 185,
+      "start_ms": 1033860,
+      "text": "when it comes time to hand it off, there's basically two kinds of people that they"
+    },
+    {
+      "end_ms": 1042380,
+      "source_event_index": 186,
+      "start_ms": 1036980,
+      "text": "can hand it off to. They can hand it off to somebody like them who's a mercurial,"
+    },
+    {
+      "end_ms": 1049640,
+      "source_event_index": 187,
+      "start_ms": 1042380,
+      "text": "idiosyncratic, high disagreeableness, ornery, sort of entrepreneurial kind of personality,"
+    },
+    {
+      "end_ms": 1055100,
+      "source_event_index": 188,
+      "start_ms": 1051080,
+      "text": "somebody in their mold. Or they can hand it off to somebody who knows how to run things at scale."
+    },
+    {
+      "end_ms": 1059840,
+      "source_event_index": 189,
+      "start_ms": 1055100,
+      "text": "Almost always, what they do is they hand it off to somebody who can run it at scale. The"
+    },
+    {
+      "end_ms": 1063380,
+      "source_event_index": 190,
+      "start_ms": 1059840,
+      "text": "reason they do that is, there’s actually two reasons. There's the theoretical reason they"
+    },
+    {
+      "end_ms": 1067100,
+      "source_event_index": 191,
+      "start_ms": 1063380,
+      "text": "do that which is — it is at scale at that point, and somebody does need to run it at"
+    },
+    {
+      "end_ms": 1074900,
+      "source_event_index": 192,
+      "start_ms": 1067100,
+      "text": "scale. And then the other is, they often have what I call the long suffering number two. You've had"
+    },
+    {
+      "end_ms": 1081740,
+      "source_event_index": 193,
+      "start_ms": 1076820,
+      "text": "this high octane founder CEO who breaks a lot of glass and then there's often the number two, like"
+    },
+    {
+      "end_ms": 1085100,
+      "source_event_index": 194,
+      "start_ms": 1081740,
+      "text": "the chief operating officer or something who's the person who fundamentally keeps the trains running"
+    },
+    {
+      "end_ms": 1089420,
+      "source_event_index": 195,
+      "start_ms": 1085100,
+      "text": "on time, and keeps everybody from quitting. And that long suffering number two has often"
+    },
+    {
+      "end_ms": 1093620,
+      "source_event_index": 196,
+      "start_ms": 1089420,
+      "text": "been in that job for 10 or 15 years at that point, and is literally the longest suffering."
+    },
+    {
+      "end_ms": 1097760,
+      "source_event_index": 197,
+      "start_ms": 1093620,
+      "text": "They've always been the underling, and then it's like — Okay they now “deserve” the chance to run"
+    },
+    {
+      "end_ms": 1101900,
+      "source_event_index": 198,
+      "start_ms": 1097760,
+      "text": "the company themselves. And that's the handover. Now, those founders often end up regretting that"
+    },
+    {
+      "end_ms": 1105380,
+      "source_event_index": 199,
+      "start_ms": 1101900,
+      "text": "decision. And in later years, they will tell you — Boy, I wish I had handed it off to this other"
+    },
+    {
+      "end_ms": 1109580,
+      "source_event_index": 200,
+      "start_ms": 1105380,
+      "text": "person who was maybe deeper in the organization who was maybe younger, who was more like I am,"
+    },
+    {
+      "end_ms": 1113660,
+      "source_event_index": 201,
+      "start_ms": 1109580,
+      "text": "and maybe would have built more products and maybe that was a mistake. But the fact that they do this"
+    },
+    {
+      "end_ms": 1118160,
+      "source_event_index": 202,
+      "start_ms": 1113660,
+      "text": "over and over again, to me illustrates why the Burnham theory is correct, which is — large,"
+    },
+    {
+      "end_ms": 1121700,
+      "source_event_index": 203,
+      "start_ms": 1118160,
+      "text": "complex organizations ultimately do end up getting run by managers in almost all cases."
+    },
+    {
+      "end_ms": 1132320,
+      "source_event_index": 204,
+      "start_ms": 1127100,
+      "text": "The only optimistic view on that is that it's the transition from these companies"
+    },
+    {
+      "end_ms": 1136940,
+      "source_event_index": 205,
+      "start_ms": 1132320,
+      "text": "being in the bourgeois capitalist model to the managerial model that creates the opportunity"
+    },
+    {
+      "end_ms": 1142340,
+      "source_event_index": 206,
+      "start_ms": 1136940,
+      "text": "for the new generation of startups. Because then the counterfactual, if these companies remained"
+    },
+    {
+      "end_ms": 1146060,
+      "source_event_index": 207,
+      "start_ms": 1142340,
+      "text": "bourgeois capitalist companies for 100 years, then they would be the companies to create all the new"
+    },
+    {
+      "end_ms": 1150860,
+      "source_event_index": 208,
+      "start_ms": 1146060,
+      "text": "products, and then we wouldn't necessarily need to exist because those companies would just do what"
+    },
+    {
+      "end_ms": 1156260,
+      "source_event_index": 209,
+      "start_ms": 1150860,
+      "text": "startups do. They just build all the new stuff. But because in that model, they won't do that"
+    },
+    {
+      "end_ms": 1160640,
+      "source_event_index": 210,
+      "start_ms": 1156260,
+      "text": "and they don't do that, almost without exception. Therefore there's always the opportunity for the"
+    },
+    {
+      "end_ms": 1167000,
+      "source_event_index": 211,
+      "start_ms": 1160640,
+      "text": "next new startup. And I think that's good. That keeps the economy vital, even in the face of this"
+    },
+    {
+      "end_ms": 1173300,
+      "source_event_index": 212,
+      "start_ms": 1167000,
+      "text": "overwhelming trend towards managerialism. If you had a fund with a 100 year lock-in"
+    },
+    {
+      "end_ms": 1176180,
+      "source_event_index": 213,
+      "start_ms": 1173300,
+      "text": "what would you be able to invest in that you can’t invest in right now?"
+    },
+    {
+      "end_ms": 1184700,
+      "source_event_index": 214,
+      "start_ms": 1180980,
+      "text": "The base lockup for venture is like 10 years, and then we have the ability to push that out,"
+    },
+    {
+      "end_ms": 1189500,
+      "source_event_index": 215,
+      "start_ms": 1184700,
+      "text": "we can kind of push that to 15. And for really high quality companies, we can push that to 20."
+    },
+    {
+      "end_ms": 1195380,
+      "source_event_index": 216,
+      "start_ms": 1191480,
+      "text": "We haven't been in business long enough to try to push it beyond that. So, we'll see."
+    },
+    {
+      "end_ms": 1204980,
+      "source_event_index": 217,
+      "start_ms": 1197900,
+      "text": "If you could push it to 100 years, the question is — is it really time that's the bottleneck? The"
+    },
+    {
+      "end_ms": 1208460,
+      "source_event_index": 218,
+      "start_ms": 1204980,
+      "text": "implication of the question would be — are there more ambitious projects that would take longer,"
+    },
+    {
+      "end_ms": 1211940,
+      "source_event_index": 219,
+      "start_ms": 1209120,
+      "text": "that you would fund that you're not funding because the time frames are too short. And"
+    },
+    {
+      "end_ms": 1217160,
+      "source_event_index": 220,
+      "start_ms": 1211940,
+      "text": "the problem with a 100 year timeframe, or even a 50 year time frame, or even a 20 year timeframe"
+    },
+    {
+      "end_ms": 1224600,
+      "source_event_index": 221,
+      "start_ms": 1217160,
+      "text": "is that new things don't tend to go through a 20 year incubation phase in business and then"
+    },
+    {
+      "end_ms": 1230240,
+      "source_event_index": 222,
+      "start_ms": 1224600,
+      "text": "come out the other end and be good. What seems to happen is they need milestones,"
+    },
+    {
+      "end_ms": 1235820,
+      "source_event_index": 223,
+      "start_ms": 1230960,
+      "text": "they need points of contact with reality. Every once in a while there will be a company,"
+    },
+    {
+      "end_ms": 1239060,
+      "source_event_index": 224,
+      "start_ms": 1235820,
+      "text": "a very special company will get funded with a founder who's like — look, I'm gonna do the long"
+    },
+    {
+      "end_ms": 1243320,
+      "source_event_index": 225,
+      "start_ms": 1239060,
+      "text": "term thing, and then they go into a tunnel for 10 or 15 years where they're building something and"
+    },
+    {
+      "end_ms": 1247280,
+      "source_event_index": 226,
+      "start_ms": 1243320,
+      "text": "the theory is they're going to come out the other side. These have existed and these do get funded."
+    },
+    {
+      "end_ms": 1255380,
+      "source_event_index": 227,
+      "start_ms": 1248360,
+      "text": "Generally they never come up with anything. They end up in their own Private Idaho, they end up in"
+    },
+    {
+      "end_ms": 1259880,
+      "source_event_index": 228,
+      "start_ms": 1255380,
+      "text": "their own internal worlds, they don't have contact with reality, they're not ever in the market,"
+    },
+    {
+      "end_ms": 1266480,
+      "source_event_index": 229,
+      "start_ms": 1259880,
+      "text": "they're not working with customers. They just start to become bubbles of their own reality."
+    },
+    {
+      "end_ms": 1275600,
+      "source_event_index": 230,
+      "start_ms": 1271340,
+      "text": "Contact with the real world is difficult every single time. The real world is a pain in the butt."
+    },
+    {
+      "end_ms": 1283160,
+      "source_event_index": 231,
+      "start_ms": 1276500,
+      "text": "And mark to market your views of what you're doing with the reality of what anybody's actually going"
+    },
+    {
+      "end_ms": 1287660,
+      "source_event_index": 232,
+      "start_ms": 1283160,
+      "text": "to want to pay for, requires you to go expose yourself to that. It's really hard to do that"
+    },
+    {
+      "end_ms": 1292460,
+      "source_event_index": 233,
+      "start_ms": 1287660,
+      "text": "in the abstract, or to build a product that anybody's going to want to use. And so this"
+    },
+    {
+      "end_ms": 1296780,
+      "source_event_index": 234,
+      "start_ms": 1292460,
+      "text": "thing where people go in a tunnel for 10, or 15, or 20 years, it doesn't go well. I think"
+    },
+    {
+      "end_ms": 1304520,
+      "source_event_index": 235,
+      "start_ms": 1296780,
+      "text": "100 years would be an even more degenerate version of that. Best case is this unbounded research lab"
+    },
+    {
+      "end_ms": 1309380,
+      "source_event_index": 236,
+      "start_ms": 1304520,
+      "text": "that maybe would write papers and something maybe comes out the other end of the far future in the"
+    },
+    {
+      "end_ms": 1313160,
+      "source_event_index": 237,
+      "start_ms": 1309380,
+      "text": "form of some open source thing or something, but they're not going to build an enterprise that way."
+    },
+    {
+      "end_ms": 1319100,
+      "source_event_index": 238,
+      "start_ms": 1314300,
+      "text": "And so I think having some level of contact with reality over the course of the first"
+    },
+    {
+      "end_ms": 1327200,
+      "source_event_index": 239,
+      "start_ms": 1319100,
+      "text": "five to seven years is pretty important. The other way to get to the underlying question"
+    },
+    {
+      "end_ms": 1332120,
+      "source_event_index": 240,
+      "start_ms": 1327920,
+      "text": "would be — what if you just had more zeros on the amount of money? What if instead of funding"
+    },
+    {
+      "end_ms": 1337340,
+      "source_event_index": 241,
+      "start_ms": 1332120,
+      "text": "companies for $20 million, you could fund them for $2 billion, or $20 billion? In other words,"
+    },
+    {
+      "end_ms": 1341780,
+      "source_event_index": 242,
+      "start_ms": 1337340,
+      "text": "maybe they would operate on the timeframe of today's companies, on a five or 10 year timeframe,"
+    },
+    {
+      "end_ms": 1345860,
+      "source_event_index": 243,
+      "start_ms": 1341780,
+      "text": "but you can fund them with 20 billion of venture financing, instead of $20 million."
+    },
+    {
+      "end_ms": 1353420,
+      "source_event_index": 244,
+      "start_ms": 1346880,
+      "text": "I think that's a more interesting question. It's possible that there are pretty big fundamental"
+    },
+    {
+      "end_ms": 1360140,
+      "source_event_index": 245,
+      "start_ms": 1353420,
+      "text": "things that could be built with larger amounts of money in this kind of entrepreneurial model. Every"
+    },
+    {
+      "end_ms": 1366934,
+      "source_event_index": 246,
+      "start_ms": 1360140,
+      "text": "once in a while you do see these giants. Tesla and SpaceX are two obvious examples of these world"
+    },
+    {
+      "end_ms": 1372380,
+      "source_event_index": 247,
+      "start_ms": 1366934,
+      "text": "changing things that just took a lot of money and then had a really big impact. So maybe there's"
+    },
+    {
+      "end_ms": 1375920,
+      "source_event_index": 248,
+      "start_ms": 1372380,
+      "text": "something there, and maybe that's something that the venture ecosystem should experiment with"
+    },
+    {
+      "end_ms": 1381080,
+      "source_event_index": 249,
+      "start_ms": 1375920,
+      "text": "in the years ahead. I would be more focused on that as opposed to elongating the time."
+    },
+    {
+      "end_ms": 1387140,
+      "source_event_index": 250,
+      "start_ms": 1381080,
+      "text": "But what about basic research? You've spoken about the dysfunctions of the"
+    },
+    {
+      "end_ms": 1391520,
+      "source_event_index": 251,
+      "start_ms": 1387140,
+      "text": "academic-government-research complex. But within the next internet, the next"
+    },
+    {
+      "end_ms": 1397760,
+      "source_event_index": 252,
+      "start_ms": 1391520,
+      "text": "thing that the Andreessen firm 10 years from now is building on top of, if the government"
+    },
+    {
+      "end_ms": 1401000,
+      "source_event_index": 253,
+      "start_ms": 1397760,
+      "text": "effort is broken maybe you need to bootstrap something yourself. Have you considered that?"
+    },
+    {
+      "end_ms": 1405980,
+      "source_event_index": 254,
+      "start_ms": 1402260,
+      "text": "The strong version of this argument is from a guy named Bill Janeway,"
+    },
+    {
+      "end_ms": 1411560,
+      "source_event_index": 255,
+      "start_ms": 1407360,
+      "text": "a legendary VC. Janeway is a great, wonderful guy. If people haven't heard of him,"
+    },
+    {
+      "end_ms": 1419120,
+      "source_event_index": 256,
+      "start_ms": 1411560,
+      "text": "he is a PhD in economics. I think he’s a student of a student of John Maynard Keynes."
+    },
+    {
+      "end_ms": 1424700,
+      "source_event_index": 257,
+      "start_ms": 1420080,
+      "text": "He comes from a high pedigree in economic theory background. And himself was a legendary"
+    },
+    {
+      "end_ms": 1428240,
+      "source_event_index": 258,
+      "start_ms": 1424700,
+      "text": "venture capitalist in his career. He became a hands-on investor at the firm Warburg Pincus"
+    },
+    {
+      "end_ms": 1432920,
+      "source_event_index": 259,
+      "start_ms": 1428960,
+      "text": "and funded some really interesting companies. And so he's one of these rare people who's"
+    },
+    {
+      "end_ms": 1437600,
+      "source_event_index": 260,
+      "start_ms": 1432920,
+      "text": "both theoretical and practical on this kind of question. He wrote this book,"
+    },
+    {
+      "end_ms": 1444140,
+      "source_event_index": 261,
+      "start_ms": 1438740,
+      "text": "which I really recommend, it's called Doing Capitalism where he goes through this question."
+    },
+    {
+      "end_ms": 1452060,
+      "source_event_index": 262,
+      "start_ms": 1445640,
+      "text": "The argument that he makes, along the lines of what you're saying, it’s a little bit of a"
+    },
+    {
+      "end_ms": 1457160,
+      "source_event_index": 263,
+      "start_ms": 1452060,
+      "text": "pessimistic argument. The argument he makes is — if you look at the entire history of"
+    },
+    {
+      "end_ms": 1462620,
+      "source_event_index": 264,
+      "start_ms": 1457160,
+      "text": "professional venture capital, which is now a 60 year journey, basically, or maybe even 50 years,"
+    },
+    {
+      "end_ms": 1470480,
+      "source_event_index": 265,
+      "start_ms": 1463160,
+      "text": "from the late 60s, early 70s, in kind of modern form. He said the big category that's worked is"
+    },
+    {
+      "end_ms": 1476060,
+      "source_event_index": 266,
+      "start_ms": 1470480,
+      "text": "computing or computer science. And then he said, the second category that's worked is biotech."
+    },
+    {
+      "end_ms": 1479960,
+      "source_event_index": 267,
+      "start_ms": 1477020,
+      "text": "And then he said, at least at the time of writing, everything else didn't work."
+    },
+    {
+      "end_ms": 1486320,
+      "source_event_index": 268,
+      "start_ms": 1481040,
+      "text": "And all the money that people poured into cleantech and da-da-da, all these other areas"
+    },
+    {
+      "end_ms": 1492440,
+      "source_event_index": 269,
+      "start_ms": 1487100,
+      "text": "the venture capitalists tried to fund, they just didn't work from a return"
+    },
+    {
+      "end_ms": 1499400,
+      "source_event_index": 270,
+      "start_ms": 1492440,
+      "text": "standpoint. You just burned the capital. When he wrote the book,"
+    },
+    {
+      "end_ms": 1502940,
+      "source_event_index": 271,
+      "start_ms": 1499400,
+      "text": "he ran the numbers and computer sciences work twice as well as biotech or something like that."
+    },
+    {
+      "end_ms": 1509720,
+      "source_event_index": 272,
+      "start_ms": 1504380,
+      "text": "And then what he said is this is a direct result of federal research funding over the previous 50"
+    },
+    {
+      "end_ms": 1518360,
+      "source_event_index": 273,
+      "start_ms": 1509720,
+      "text": "years. Computer science based venture capital was able to productize 50 prior years of basic"
+    },
+    {
+      "end_ms": 1522800,
+      "source_event_index": 274,
+      "start_ms": 1518360,
+      "text": "research in computer science, information science, information theory, communications theory,"
+    },
+    {
+      "end_ms": 1530840,
+      "source_event_index": 275,
+      "start_ms": 1523940,
+      "text": "algorithms, all the stuff that was done in engineering schools from 1940 through like 1990."
+    },
+    {
+      "end_ms": 1541460,
+      "source_event_index": 276,
+      "start_ms": 1532160,
+      "text": "And so he said — we are productizing that, that's been the big thing. In Biotech we are productizing"
+    },
+    {
+      "end_ms": 1547820,
+      "source_event_index": 277,
+      "start_ms": 1542120,
+      "text": "the work that NIH and others put into basic research in the biological sciences and that"
+    },
+    {
+      "end_ms": 1553460,
+      "source_event_index": 278,
+      "start_ms": 1547820,
+      "text": "was about half as much money, and maybe half as much time. That work really started kicking"
+    },
+    {
+      "end_ms": 1558260,
+      "source_event_index": 279,
+      "start_ms": 1553460,
+      "text": "in in the 60s and 70s, a little bit later. And then he said — Look, the problem is there"
+    },
+    {
+      "end_ms": 1564860,
+      "source_event_index": 280,
+      "start_ms": 1558260,
+      "text": "aren't other sectors that have had these huge investments in basic research. There's just not"
+    },
+    {
+      "end_ms": 1570980,
+      "source_event_index": 281,
+      "start_ms": 1564860,
+      "text": "this huge backlog of basic research into climate science or take your pick of online content,"
+    },
+    {
+      "end_ms": 1574100,
+      "source_event_index": 282,
+      "start_ms": 1570980,
+      "text": "or whatever the other sectors are where people burn a lot of money."
+    },
+    {
+      "end_ms": 1579620,
+      "source_event_index": 283,
+      "start_ms": 1575240,
+      "text": "And so he says, if you want to predict the future venture capital, you basically just look at where"
+    },
+    {
+      "end_ms": 1584720,
+      "source_event_index": 284,
+      "start_ms": 1579620,
+      "text": "the previous 50 years of basic research, R&D has happened, federal research funding has happened."
+    },
+    {
+      "end_ms": 1591740,
+      "source_event_index": 285,
+      "start_ms": 1585920,
+      "text": "He has a strong form of it, there's no shortcuts on this. And so if you're"
+    },
+    {
+      "end_ms": 1596120,
+      "source_event_index": 286,
+      "start_ms": 1591740,
+      "text": "trying to do venture capital in a sector that doesn't have this big kind of install"
+    },
+    {
+      "end_ms": 1599900,
+      "source_event_index": 287,
+      "start_ms": 1596120,
+      "text": "base of basic research has already happened, you're basically just tilting at windmills."
+    },
+    {
+      "end_ms": 1603920,
+      "source_event_index": 288,
+      "start_ms": 1599900,
+      "text": "I think there's a lot to his argument. I'm a little more optimistic about a broader spread of"
+    },
+    {
+      "end_ms": 1608900,
+      "source_event_index": 289,
+      "start_ms": 1603920,
+      "text": "categories. A big reason I'm more optimistic about a broader set of categories is because computer"
+    },
+    {
+      "end_ms": 1615200,
+      "source_event_index": 290,
+      "start_ms": 1608900,
+      "text": "science in particular, now applies across more categories. This was sort of the underlying point"
+    },
+    {
+      "end_ms": 1620960,
+      "source_event_index": 291,
+      "start_ms": 1615200,
+      "text": "of the software eats the world thesis, which is that computers used to be just an industry where"
+    },
+    {
+      "end_ms": 1626060,
+      "source_event_index": 292,
+      "start_ms": 1620960,
+      "text": "people made and sold computers. But now you can apply computer science into many other markets,"
+    },
+    {
+      "end_ms": 1630500,
+      "source_event_index": 293,
+      "start_ms": 1626060,
+      "text": "financial services, and healthcare, and many, many others, where it can be a disruptive force."
+    },
+    {
+      "end_ms": 1635360,
+      "source_event_index": 294,
+      "start_ms": 1630500,
+      "text": "And so I think there's a payoff to computer science and software for sure, that can apply"
+    },
+    {
+      "end_ms": 1640460,
+      "source_event_index": 295,
+      "start_ms": 1635360,
+      "text": "in these sectors. Maybe some of the biological sciences can be stretched into other sectors."
+    },
+    {
+      "end_ms": 1645380,
+      "source_event_index": 296,
+      "start_ms": 1641900,
+      "text": "There's a lot of smart people in the world, there's niche research efforts all over the"
+    },
+    {
+      "end_ms": 1650720,
+      "source_event_index": 297,
+      "start_ms": 1645380,
+      "text": "place in many fields that are doing interesting work. Maybe you don't get a giant industry out"
+    },
+    {
+      "end_ms": 1655820,
+      "source_event_index": 298,
+      "start_ms": 1650720,
+      "text": "the other end in some new sector, but maybe you get some very special companies. SpaceX"
+    },
+    {
+      "end_ms": 1660860,
+      "source_event_index": 299,
+      "start_ms": 1656780,
+      "text": "is a massive advance in aeronautics, it took advantage of a lot of aeronautics R&D."
+    },
+    {
+      "end_ms": 1665660,
+      "source_event_index": 300,
+      "start_ms": 1661400,
+      "text": "It’s not like there's some huge aeronautics venture industry. But there is a big winner,"
+    },
+    {
+      "end_ms": 1671120,
+      "source_event_index": 301,
+      "start_ms": 1666800,
+      "text": "at least one, and I think more to come. And so I'm a little bit more optimistic and open minded."
+    },
+    {
+      "end_ms": 1676880,
+      "source_event_index": 302,
+      "start_ms": 1672080,
+      "text": "Bill would probably say that I'm naive. You mentioned earlier about being able to"
+    },
+    {
+      "end_ms": 1680300,
+      "source_event_index": 303,
+      "start_ms": 1676880,
+      "text": "potentially write 9 or 10 figure checks to companies like SpaceX or Tesla,"
+    },
+    {
+      "end_ms": 1685580,
+      "source_event_index": 304,
+      "start_ms": 1681080,
+      "text": "who might require the capital to do something grand. Last I checked, you guys have $35 billion"
+    },
+    {
+      "end_ms": 1688640,
+      "source_event_index": 305,
+      "start_ms": 1685580,
+      "text": "or something under management. Do we need to add a few more zeros to that as well?"
+    },
+    {
+      "end_ms": 1693620,
+      "source_event_index": 306,
+      "start_ms": 1689780,
+      "text": "Will a16z’s assets under management just keep growing? Or will you cap it at some point."
+    },
+    {
+      "end_ms": 1705320,
+      "source_event_index": 307,
+      "start_ms": 1695540,
+      "text": "We cap it as best we can. We basically cap it to the opportunity set. And it may be obvious,"
+    },
+    {
+      "end_ms": 1708200,
+      "source_event_index": 308,
+      "start_ms": 1705320,
+      "text": "but it's not a single chunk of money. It's broken into various strategies,"
+    },
+    {
+      "end_ms": 1712160,
+      "source_event_index": 309,
+      "start_ms": 1708200,
+      "text": "and we apply different strategies to different sectors at different stages. So it's decomposed."
+    },
+    {
+      "end_ms": 1715400,
+      "source_event_index": 310,
+      "start_ms": 1712160,
+      "text": "And we have six primary investment groups internally in different stages,"
+    },
+    {
+      "end_ms": 1722780,
+      "source_event_index": 311,
+      "start_ms": 1715400,
+      "text": "and so that money's broken out in different ways. We cap it as best we can to the opportunity"
+    },
+    {
+      "end_ms": 1727040,
+      "source_event_index": 312,
+      "start_ms": 1722780,
+      "text": "set. We always tell LPs the same thing, which is we're not trying to grow assets under management,"
+    },
+    {
+      "end_ms": 1731420,
+      "source_event_index": 313,
+      "start_ms": 1727040,
+      "text": "that's not a goal. To the best of our ability, we're trying to maintain whatever return level"
+    },
+    {
+      "end_ms": 1735320,
+      "source_event_index": 314,
+      "start_ms": 1731420,
+      "text": "we're maintaining. We are trying to eat market share, we'd like to eat as much"
+    },
+    {
+      "end_ms": 1738860,
+      "source_event_index": 315,
+      "start_ms": 1735320,
+      "text": "market share as possible. And then we would like to fully exploit the available opportunities,"
+    },
+    {
+      "end_ms": 1743840,
+      "source_event_index": 316,
+      "start_ms": 1740180,
+      "text": "we'd like to fund all the really good founders, we'd like to back all the interesting new spaces."
+    },
+    {
+      "end_ms": 1748100,
+      "source_event_index": 317,
+      "start_ms": 1745100,
+      "text": "But what we wouldn't want to do is double assets under management"
+    },
+    {
+      "end_ms": 1753080,
+      "source_event_index": 318,
+      "start_ms": 1748100,
+      "text": "in return for 5% lower returns or something like that. That would be a bad trade for us."
+    },
+    {
+      "end_ms": 1761540,
+      "source_event_index": 319,
+      "start_ms": 1754460,
+      "text": "So to put another zero on that, as I said, we would need a theory on a different kind"
+    },
+    {
+      "end_ms": 1766220,
+      "source_event_index": 320,
+      "start_ms": 1761540,
+      "text": "of venture capital model, which would be trying to back much larger scale projects."
+    },
+    {
+      "end_ms": 1771260,
+      "source_event_index": 321,
+      "start_ms": 1767300,
+      "text": "And again, there's a really big argument you could make that that’s precisely what firms like"
+    },
+    {
+      "end_ms": 1774500,
+      "source_event_index": 322,
+      "start_ms": 1771260,
+      "text": "ours should be doing. There are these really big problems in the world and maybe we just need to"
+    },
+    {
+      "end_ms": 1779240,
+      "source_event_index": 323,
+      "start_ms": 1774500,
+      "text": "be much more aggressive about how we go at it. And we need founders who are more aggressive,"
+    },
+    {
+      "end_ms": 1784340,
+      "source_event_index": 324,
+      "start_ms": 1779240,
+      "text": "and then we need to back them with more money. You can also argue either that wouldn't work,"
+    },
+    {
+      "end_ms": 1788480,
+      "source_event_index": 325,
+      "start_ms": 1784340,
+      "text": "or we don't need it. The counter argument on the Tesla and SpaceX examples that I gave is"
+    },
+    {
+      "end_ms": 1794060,
+      "source_event_index": 326,
+      "start_ms": 1788480,
+      "text": "that they didn't need it, right? They raised money the old fashioned way. They raised money round by"
+    },
+    {
+      "end_ms": 1799280,
+      "source_event_index": 327,
+      "start_ms": 1794060,
+      "text": "round in the existing venture ecosystem. And so for whatever limitations you think the existing"
+    },
+    {
+      "end_ms": 1803960,
+      "source_event_index": 328,
+      "start_ms": 1799280,
+      "text": "ecosystem has, and maybe it's not ambitious enough or whatever, it did fund Tesla and SpaceX."
+    },
+    {
+      "end_ms": 1812120,
+      "source_event_index": 329,
+      "start_ms": 1805280,
+      "text": "And so maybe it works. So the underlying question underneath all this is not the"
+    },
+    {
+      "end_ms": 1816380,
+      "source_event_index": 330,
+      "start_ms": 1812120,
+      "text": "money part. The underlying question is how many great entrepreneurs are there? And then how many"
+    },
+    {
+      "end_ms": 1821840,
+      "source_event_index": 331,
+      "start_ms": 1816380,
+      "text": "really big ideas are there for those entrepreneurs to go after? And then that goes one level deeper,"
+    },
+    {
+      "end_ms": 1829160,
+      "source_event_index": 332,
+      "start_ms": 1821840,
+      "text": "which is — What makes a great entrepreneur? Are they born? Are they trained? What made Elon, Elon?"
+    },
+    {
+      "end_ms": 1833660,
+      "source_event_index": 333,
+      "start_ms": 1829160,
+      "text": "What would you need to do to get ten more Elons? What would you need to do to get 100 more Elons?"
+    },
+    {
+      "end_ms": 1837800,
+      "source_event_index": 334,
+      "start_ms": 1833660,
+      "text": "What would you need to do to make 1000 more Elons? Are they already out there and we just haven't"
+    },
+    {
+      "end_ms": 1844760,
+      "source_event_index": 335,
+      "start_ms": 1837800,
+      "text": "found them yet? Could we grow them in tanks? Or just add testosterone to the water supply?"
+    },
+    {
+      "end_ms": 1848660,
+      "source_event_index": 336,
+      "start_ms": 1846920,
+      "text": "Yeah or do we need"
+    },
+    {
+      "end_ms": 1853580,
+      "source_event_index": 337,
+      "start_ms": 1852920,
+      "text": "a different kind of training program? Does there need to be a new kind of entrepreneurial"
+    },
+    {
+      "end_ms": 1858380,
+      "source_event_index": 338,
+      "start_ms": 1853580,
+      "text": "university that trains entrepreneurs? It's just a totally different thing. Those are"
+    },
+    {
+      "end_ms": 1862640,
+      "source_event_index": 339,
+      "start_ms": 1858380,
+      "text": "the underlying questions. I think if you show me ten more Elons, I'll figure out how to fund"
+    },
+    {
+      "end_ms": 1869600,
+      "source_event_index": 340,
+      "start_ms": 1862640,
+      "text": "their companies. We work with a lot of great founders and we also work with Elon and he's"
+    },
+    {
+      "end_ms": 1876620,
+      "source_event_index": 341,
+      "start_ms": 1869600,
+      "text": "still special. He's still highly unusual even relative to the other great entrepreneurs."
+    },
+    {
+      "end_ms": 1882800,
+      "source_event_index": 342,
+      "start_ms": 1878060,
+      "text": "Yeah. Let's talk about crypto for a second. When you're investing in crypto projects,"
+    },
+    {
+      "end_ms": 1887060,
+      "source_event_index": 343,
+      "start_ms": 1882800,
+      "text": "how do you distinguish between cases where there is some real new good or service"
+    },
+    {
+      "end_ms": 1891680,
+      "source_event_index": 344,
+      "start_ms": 1887060,
+      "text": "that new technology is enabling and cases where it's just speculation of some kind?"
+    },
+    {
+      "end_ms": 1897920,
+      "source_event_index": 345,
+      "start_ms": 1893060,
+      "text": "What we definitely don't do is the speculation side, we just don't do that. And I mean that"
+    },
+    {
+      "end_ms": 1903680,
+      "source_event_index": 346,
+      "start_ms": 1897920,
+      "text": "very specifically, we're not running a hedge fund. What we do is we apply the classic venture"
+    },
+    {
+      "end_ms": 1907820,
+      "source_event_index": 347,
+      "start_ms": 1903680,
+      "text": "capital 101 playbook to crypto. And we do that the exact same way that we do with every other"
+    },
+    {
+      "end_ms": 1914540,
+      "source_event_index": 348,
+      "start_ms": 1907820,
+      "text": "venture sector that we invest in, which is to say we're trying to back new ventures. In crypto that"
+    },
+    {
+      "end_ms": 1918740,
+      "source_event_index": 349,
+      "start_ms": 1914540,
+      "text": "venture might be a new company, or it might be a new network, or it might be a hybrid of the"
+    },
+    {
+      "end_ms": 1924200,
+      "source_event_index": 350,
+      "start_ms": 1918740,
+      "text": "two and we're completely agnostic as to which way that goes. When we write our crypto term sheets,"
+    },
+    {
+      "end_ms": 1928400,
+      "source_event_index": 351,
+      "start_ms": 1924200,
+      "text": "even when we're backing a crypto C Corp, we always write in the term sheet that they can flip it into"
+    },
+    {
+      "end_ms": 1934940,
+      "source_event_index": 352,
+      "start_ms": 1928400,
+      "text": "being a tokenized network anytime they want to. We don't distinguish between companies and networks."
+    },
+    {
+      "end_ms": 1939560,
+      "source_event_index": 353,
+      "start_ms": 1935900,
+      "text": "But we approach it with a Venture Capital 101 playbook, which is — we're looking for"
+    },
+    {
+      "end_ms": 1946400,
+      "source_event_index": 354,
+      "start_ms": 1940100,
+      "text": "really sharp founders who have a vision and the determination to go after it. Where there's some"
+    },
+    {
+      "end_ms": 1950000,
+      "source_event_index": 355,
+      "start_ms": 1946400,
+      "text": "reason to believe that there's some sort of deep level of technological economic change happening,"
+    },
+    {
+      "end_ms": 1956600,
+      "source_event_index": 356,
+      "start_ms": 1950000,
+      "text": "which is what you need for a new startup to wedge into a market. And that there's a reason for it to"
+    },
+    {
+      "end_ms": 1959780,
+      "source_event_index": 357,
+      "start_ms": 1956600,
+      "text": "exist, that there's a market for what they're building and they're gonna build a product,"
+    },
+    {
+      "end_ms": 1962660,
+      "source_event_index": 358,
+      "start_ms": 1959780,
+      "text": "and there's gonna be an intersection between product and market, and there's gonna be a way"
+    },
+    {
+      "end_ms": 1969020,
+      "source_event_index": 359,
+      "start_ms": 1962660,
+      "text": "to make money and you know, the core playbook. We go into every crypto investment with the same"
+    },
+    {
+      "end_ms": 1972800,
+      "source_event_index": 360,
+      "start_ms": 1969020,
+      "text": "timeframe as we go into venture investing. So we go in with at least a five to 10 year timeframe,"
+    },
+    {
+      "end_ms": 1978500,
+      "source_event_index": 361,
+      "start_ms": 1972800,
+      "text": "if not a 15 to 20 year timeframe. That's what we do, the reason that's not necessarily the"
+    },
+    {
+      "end_ms": 1985280,
+      "source_event_index": 362,
+      "start_ms": 1978500,
+      "text": "norm in crypto is an artifact of the fact that — especially anything with crypto tokens, there is"
+    },
+    {
+      "end_ms": 1991760,
+      "source_event_index": 363,
+      "start_ms": 1985280,
+      "text": "this thing where they tend to publicly float a lot sooner than startup equity floats. Let's say we're"
+    },
+    {
+      "end_ms": 1995900,
+      "source_event_index": 364,
+      "start_ms": 1991760,
+      "text": "backing a new crypto network, it goes ahead and floats a token as sort of one of the first steps"
+    },
+    {
+      "end_ms": 2002380,
+      "source_event_index": 365,
+      "start_ms": 1995900,
+      "text": "of what it does. It has a liquid thing years in advance of when a corresponding normal C Corp"
+    },
+    {
+      "end_ms": 2006160,
+      "source_event_index": 366,
+      "start_ms": 2002380,
+      "text": "would. There’s one thing in behavioral economics where when something has a daily price signal and"
+    },
+    {
+      "end_ms": 2010060,
+      "source_event_index": 367,
+      "start_ms": 2006160,
+      "text": "where you can trade it, people tend to obsess on the daily price signal and they tend to trade it"
+    },
+    {
+      "end_ms": 2015760,
+      "source_event_index": 368,
+      "start_ms": 2010060,
+      "text": "too much. There's all this literature on this that kind of shows how this happens. It's part of the"
+    },
+    {
+      "end_ms": 2019720,
+      "source_event_index": 369,
+      "start_ms": 2015760,
+      "text": "human experience, we can't help ourselves, it's like moths to a flame. If I can trade the stock"
+    },
+    {
+      "end_ms": 2023500,
+      "source_event_index": 370,
+      "start_ms": 2019720,
+      "text": "every day, I trade the stock every day. Almost every investor in almost every"
+    },
+    {
+      "end_ms": 2026620,
+      "source_event_index": 371,
+      "start_ms": 2023500,
+      "text": "asset class trades too often in a way that damages their returns."
+    },
+    {
+      "end_ms": 2032800,
+      "source_event_index": 372,
+      "start_ms": 2028000,
+      "text": "And then as a consequence of that, what's happened is a lot of the investment firms that invest"
+    },
+    {
+      "end_ms": 2038560,
+      "source_event_index": 373,
+      "start_ms": 2032800,
+      "text": "in crypto startups are actually hedge funds. They're structured as hedge funds, they have"
+    },
+    {
+      "end_ms": 2043180,
+      "source_event_index": 374,
+      "start_ms": 2038560,
+      "text": "trading desks, they trade frequently, they have the equivalent of what's called a public book in"
+    },
+    {
+      "end_ms": 2047080,
+      "source_event_index": 375,
+      "start_ms": 2043180,
+      "text": "hedge fund land. They've got these crypto assets they're trading frequently, and then they'll back"
+    },
+    {
+      "end_ms": 2050680,
+      "source_event_index": 376,
+      "start_ms": 2047080,
+      "text": "a startup and then they'll trade that startup's token just like they trade Bitcoin or Ethereum."
+    },
+    {
+      "end_ms": 2056980,
+      "source_event_index": 377,
+      "start_ms": 2051700,
+      "text": "But in our view that's the wrong way. And by the way there's an incentive issue, which is they"
+    },
+    {
+      "end_ms": 2061120,
+      "source_event_index": 378,
+      "start_ms": 2056980,
+      "text": "pay themselves on a hedge fund model, they pay themselves annually. So they're paying themselves"
+    },
+    {
+      "end_ms": 2065080,
+      "source_event_index": 379,
+      "start_ms": 2061120,
+      "text": "annually based on the market for projects that might still be years away from realization of"
+    },
+    {
+      "end_ms": 2070240,
+      "source_event_index": 380,
+      "start_ms": 2065080,
+      "text": "ultimate underlying value. And then there's this big issue of misalignment between them and their"
+    },
+    {
+      "end_ms": 2077920,
+      "source_event_index": 381,
+      "start_ms": 2070240,
+      "text": "LPs. And so that's all led to this thing where the tokens for these crypto projects are traded"
+    },
+    {
+      "end_ms": 2083860,
+      "source_event_index": 382,
+      "start_ms": 2077920,
+      "text": "too aggressively. In our model they just shouldn't be, they're just not ready for that yet. And so"
+    },
+    {
+      "end_ms": 2087640,
+      "source_event_index": 383,
+      "start_ms": 2083860,
+      "text": "we anchor hard on the venture capital model, we treat these investments the exact same way as if"
+    },
+    {
+      "end_ms": 2091840,
+      "source_event_index": 384,
+      "start_ms": 2087640,
+      "text": "we're investing in venture capital equity, we basically buy and hold for as long as we can."
+    },
+    {
+      "end_ms": 2099160,
+      "source_event_index": 385,
+      "start_ms": 2092980,
+      "text": "And have a real focus on the underlying intrinsic value of the product and technology that's being"
+    },
+    {
+      "end_ms": 2107260,
+      "source_event_index": 386,
+      "start_ms": 2099160,
+      "text": "developed. If by speculation you mean daily trading and trying to look at prices and charts"
+    },
+    {
+      "end_ms": 2111520,
+      "source_event_index": 387,
+      "start_ms": 2107260,
+      "text": "and all that stuff, we don’t do that. Or separately, another category would be"
+    },
+    {
+      "end_ms": 2116800,
+      "source_event_index": 388,
+      "start_ms": 2111520,
+      "text": "things that are basically the equivalent of baseball cards, where there's no real"
+    },
+    {
+      "end_ms": 2121000,
+      "source_event_index": 389,
+      "start_ms": 2116800,
+      "text": "good or service that's being created. It is something that you think might be valuable in"
+    },
+    {
+      "end_ms": 2126100,
+      "source_event_index": 390,
+      "start_ms": 2121000,
+      "text": "the future but not because the GDP has gone up. Oh. Baseball cards are a totally valid good and"
+    },
+    {
+      "end_ms": 2133480,
+      "source_event_index": 391,
+      "start_ms": 2126100,
+      "text": "service. That's a misnomer. I would entirely disagree with the premise of that question."
+    },
+    {
+      "end_ms": 2137020,
+      "source_event_index": 392,
+      "start_ms": 2133480,
+      "text": "But are they gonna raise median incomes even slightly?"
+    },
+    {
+      "end_ms": 2140440,
+      "source_event_index": 393,
+      "start_ms": 2138700,
+      "text": "Yeah, there are people who make their living on baseball cards."
+    },
+    {
+      "end_ms": 2149320,
+      "source_event_index": 394,
+      "start_ms": 2142720,
+      "text": "Look, art has been a part of the economy for thousands of years. Art is one of the"
+    },
+    {
+      "end_ms": 2156880,
+      "source_event_index": 395,
+      "start_ms": 2149320,
+      "text": "original things that people bought and sold. Art is fundamental to any economy. Would you"
+    },
+    {
+      "end_ms": 2161620,
+      "source_event_index": 396,
+      "start_ms": 2156880,
+      "text": "really want to be part of an economy where they didn't value art? That would be depressing."
+    },
+    {
+      "end_ms": 2166480,
+      "source_event_index": 397,
+      "start_ms": 2162220,
+      "text": "Yeah but there's the question of — Do they value art versus are they speculating on art?"
+    },
+    {
+      "end_ms": 2171640,
+      "source_event_index": 398,
+      "start_ms": 2166480,
+      "text": "And then how much of the effort is being spent on speculating on the art versus creating the art?"
+    },
+    {
+      "end_ms": 2177700,
+      "source_event_index": 399,
+      "start_ms": 2171640,
+      "text": "Well, this gets into this old kind of cultural taboo. This depends on what you mean by"
+    },
+    {
+      "end_ms": 2183400,
+      "source_event_index": 400,
+      "start_ms": 2177700,
+      "text": "speculation. If what you mean by speculation is obsessing on daily price signals and buying and"
+    },
+    {
+      "end_ms": 2189640,
+      "source_event_index": 401,
+      "start_ms": 2183400,
+      "text": "selling and turning a portfolio, like being a day trader kind of speculation. That's what I think"
+    },
+    {
+      "end_ms": 2194440,
+      "source_event_index": 402,
+      "start_ms": 2189640,
+      "text": "of speculation. Let's say that's the bad form of speculation, that's the non productive form."
+    },
+    {
+      "end_ms": 2200380,
+      "source_event_index": 403,
+      "start_ms": 2194440,
+      "text": "If by speculation, on the other hand, you mean — look, there are different kinds of things in"
+    },
+    {
+      "end_ms": 2204640,
+      "source_event_index": 404,
+      "start_ms": 2200380,
+      "text": "the world that have different possible future values. And people are trying to estimate those"
+    },
+    {
+      "end_ms": 2207820,
+      "source_event_index": 405,
+      "start_ms": 2204640,
+      "text": "future values, and people are trying to figure out utility, and they're trying to figure out"
+    },
+    {
+      "end_ms": 2213340,
+      "source_event_index": 406,
+      "start_ms": 2207820,
+      "text": "aesthetic value. Look at how the traditional art market works, is somebody supporting a new"
+    },
+    {
+      "end_ms": 2219520,
+      "source_event_index": 407,
+      "start_ms": 2213340,
+      "text": "contemporary artist speculating or not? Yes, maybe from one lens they are. Maybe they're buying and"
+    },
+    {
+      "end_ms": 2223900,
+      "source_event_index": 408,
+      "start_ms": 2219520,
+      "text": "selling paintings, and maybe they buy in and if it doesn't start going up in price, they flip it"
+    },
+    {
+      "end_ms": 2228820,
+      "source_event_index": 409,
+      "start_ms": 2223900,
+      "text": "and buy something else. But also, maybe they're supporting a new young artist. And maybe they"
+    },
+    {
+      "end_ms": 2236200,
+      "source_event_index": 410,
+      "start_ms": 2228820,
+      "text": "build a speculative portfolio of new young artists and as a consequence those artists can get paid,"
+    },
+    {
+      "end_ms": 2240160,
+      "source_event_index": 411,
+      "start_ms": 2236200,
+      "text": "and they can afford to be full time artists. And then it turns out they're the next Picasso."
+    },
+    {
+      "end_ms": 2248560,
+      "source_event_index": 412,
+      "start_ms": 2241300,
+      "text": "And so I think that kind of speculation is good and healthy. And it's core to everything. I'd"
+    },
+    {
+      "end_ms": 2252820,
+      "source_event_index": 413,
+      "start_ms": 2248560,
+      "text": "also say this — I don't know that there's actually a dividing line between that form"
+    },
+    {
+      "end_ms": 2256660,
+      "source_event_index": 414,
+      "start_ms": 2252820,
+      "text": "of speculation, and speculation on what people call investments. Because even when people make"
+    },
+    {
+      "end_ms": 2263800,
+      "source_event_index": 415,
+      "start_ms": 2256660,
+      "text": "investments, even just the institutional bond market. Look at US government debt, people are"
+    },
+    {
+      "end_ms": 2267580,
+      "source_event_index": 416,
+      "start_ms": 2263800,
+      "text": "today in the bond market trying to figure out what that's worth. Because is the debt ceiling"
+    },
+    {
+      "end_ms": 2275020,
+      "source_event_index": 417,
+      "start_ms": 2267580,
+      "text": "gonna get raised? Even that's up for grabs. To me, that’s not speculation in the bad sense,"
+    },
+    {
+      "end_ms": 2279580,
+      "source_event_index": 418,
+      "start_ms": 2275020,
+      "text": "that's a market working properly. People are trying to estimate. Ben Graham said"
+    },
+    {
+      "end_ms": 2283420,
+      "source_event_index": 419,
+      "start_ms": 2280120,
+      "text": "“financial markets are both a voting machine and a weighing machine. And in the short term,"
+    },
+    {
+      "end_ms": 2285700,
+      "source_event_index": 420,
+      "start_ms": 2283420,
+      "text": "they tend to be a voting machine in the long run, they tend to be a weighing machine.”"
+    },
+    {
+      "end_ms": 2290500,
+      "source_event_index": 421,
+      "start_ms": 2286960,
+      "text": "What's the difference between a voting machine and a weighing machine? I don't know, some people"
+    },
+    {
+      "end_ms": 2294880,
+      "source_event_index": 422,
+      "start_ms": 2290500,
+      "text": "would say they're very different. Maybe it's actually the same thing. Why did prices go up?"
+    },
+    {
+      "end_ms": 2297940,
+      "source_event_index": 423,
+      "start_ms": 2294880,
+      "text": "Because there are more buyers and sellers. Why do the prices go down? There were more sellers"
+    },
+    {
+      "end_ms": 2303280,
+      "source_event_index": 424,
+      "start_ms": 2297940,
+      "text": "than buyers. The way markets work is you get individuals trying to make these estimations"
+    },
+    {
+      "end_ms": 2309100,
+      "source_event_index": 425,
+      "start_ms": 2303280,
+      "text": "and then you get the collective effect. There's this dirty interpretation of any kind of trading"
+    },
+    {
+      "end_ms": 2315160,
+      "source_event_index": 426,
+      "start_ms": 2309100,
+      "text": "or any kind of people trying to do the voting and weighing process. I just think it's this"
+    },
+    {
+      "end_ms": 2320680,
+      "source_event_index": 427,
+      "start_ms": 2315160,
+      "text": "historical, ancient taboo against money. It's like in the Bible, Jesus kicking the money changers"
+    },
+    {
+      "end_ms": 2328960,
+      "source_event_index": 428,
+      "start_ms": 2320680,
+      "text": "out of the temple. It's this old taboo against charging interest on debt. Different religions and"
+    },
+    {
+      "end_ms": 2334480,
+      "source_event_index": 429,
+      "start_ms": 2328960,
+      "text": "cultures tend to have some underlying unease with the concept of money, the concept of trade, the"
+    },
+    {
+      "end_ms": 2340720,
+      "source_event_index": 430,
+      "start_ms": 2334480,
+      "text": "concept of interest. And I just think it's like superstition, it's like resentment, it's fear of"
+    },
+    {
+      "end_ms": 2346540,
+      "source_event_index": 431,
+      "start_ms": 2340720,
+      "text": "the unknown. But those things are the things that make economies work. And so I'm all in favor."
+    },
+    {
+      "end_ms": 2350500,
+      "source_event_index": 432,
+      "start_ms": 2347320,
+      "text": "I don't mean to get hung up on this — but if you think of something like the stock market or the"
+    },
+    {
+      "end_ms": 2356740,
+      "source_event_index": 433,
+      "start_ms": 2350500,
+      "text": "bond market, fundamentally you can tell a story there. Where the reason what these stockbrokers or"
+    },
+    {
+      "end_ms": 2360340,
+      "source_event_index": 434,
+      "start_ms": 2356740,
+      "text": "these hedge fund managers are doing is valuable, they're basically deciding where capital should"
+    },
+    {
+      "end_ms": 2364300,
+      "source_event_index": 435,
+      "start_ms": 2360340,
+      "text": "go? Should we build a factory in Milwaukee? Should we build it in Toronto? Fundamentally,"
+    },
+    {
+      "end_ms": 2368380,
+      "source_event_index": 436,
+      "start_ms": 2364300,
+      "text": "where should capital go? Whereas what is the story there? What is the NFT helping"
+    },
+    {
+      "end_ms": 2373000,
+      "source_event_index": 437,
+      "start_ms": 2369040,
+      "text": "allocate the capital towards? Why does it matter if the price is efficient there?"
+    },
+    {
+      "end_ms": 2380860,
+      "source_event_index": 438,
+      "start_ms": 2373720,
+      "text": "Because it's art. NFT is a very general concept. NFT is basically just a form of digital ownership."
+    },
+    {
+      "end_ms": 2385720,
+      "source_event_index": 439,
+      "start_ms": 2382300,
+      "text": "There will be many kinds of NFTs in the future, many of them, for example, will represent claims"
+    },
+    {
+      "end_ms": 2389740,
+      "source_event_index": 440,
+      "start_ms": 2385720,
+      "text": "on real underlying property. I think a lot of real assets are gonna be wrapped in NFTs. And"
+    },
+    {
+      "end_ms": 2395200,
+      "source_event_index": 441,
+      "start_ms": 2389740,
+      "text": "so NFTs are a very broad technological mechanism. But let's specifically take the form of NFT that"
+    },
+    {
+      "end_ms": 2401380,
+      "source_event_index": 442,
+      "start_ms": 2395200,
+      "text": "everybody likes to criticize, which is NFT as a creative project or an image or a character"
+    },
+    {
+      "end_ms": 2405460,
+      "source_event_index": 443,
+      "start_ms": 2401380,
+      "text": "in a fictional universe or something like that, the part that people like to beat on."
+    },
+    {
+      "end_ms": 2410680,
+      "source_event_index": 444,
+      "start_ms": 2406000,
+      "text": "And I'm just saying — they're just art. That's just digital art, right? And so every criticism"
+    },
+    {
+      "end_ms": 2413860,
+      "source_event_index": 445,
+      "start_ms": 2410680,
+      "text": "people make of that is the same criticism you would make of buying and selling paintings,"
+    },
+    {
+      "end_ms": 2418240,
+      "source_event_index": 446,
+      "start_ms": 2413860,
+      "text": "it would be the same buying and selling photographs, of buying and selling sculpture."
+    },
+    {
+      "end_ms": 2427420,
+      "source_event_index": 447,
+      "start_ms": 2421180,
+      "text": "I always like to really push this, what's the Mona Lisa worth? I don't want to spoil the movie. But"
+    },
+    {
+      "end_ms": 2432580,
+      "source_event_index": 448,
+      "start_ms": 2427420,
+      "text": "the new Knives Out movie, let's just say the Mona Lisa plays a role in the movie. What's the Mona"
+    },
+    {
+      "end_ms": 2439240,
+      "source_event_index": 449,
+      "start_ms": 2432580,
+      "text": "Lisa worth? One way of looking at the Mona Lisa is that it's worth the cost of producing it. It's"
+    },
+    {
+      "end_ms": 2444580,
+      "source_event_index": 450,
+      "start_ms": 2439240,
+      "text": "worth the canvas and the paint. And you could create a completely identical reproduction of"
+    },
+    {
+      "end_ms": 2449560,
+      "source_event_index": 451,
+      "start_ms": 2444580,
+      "text": "the Mona Lisa with like 25 bucks of canvas and paint. So the Mona Lisa is worth 25 bucks. Or"
+    },
+    {
+      "end_ms": 2454060,
+      "source_event_index": 452,
+      "start_ms": 2449560,
+      "text": "you could say the Mona Lisa is a cultural artifact and as a cultural artifact that's worth probably a"
+    },
+    {
+      "end_ms": 2461620,
+      "source_event_index": 453,
+      "start_ms": 2454060,
+      "text": "billion dollars or $10 billion. Specifically on your question, what explains the spread between"
+    },
+    {
+      "end_ms": 2468340,
+      "source_event_index": 454,
+      "start_ms": 2461620,
+      "text": "$25 and the $10 billion that it would go out if it ever hit the market. It’s because people care."
+    },
+    {
+      "end_ms": 2473500,
+      "source_event_index": 455,
+      "start_ms": 2468340,
+      "text": "Because it's art, because it's aesthetic, because it's cultural. Because it's part of what we've"
+    },
+    {
+      "end_ms": 2477760,
+      "source_event_index": 456,
+      "start_ms": 2473500,
+      "text": "decided is the cultural heritage of humanity. The thing that makes life worth living is that it's"
+    },
+    {
+      "end_ms": 2482920,
+      "source_event_index": 457,
+      "start_ms": 2477760,
+      "text": "not just about subsistence, that we are gonna have higher values and we're gonna value aesthetics."
+    },
+    {
+      "end_ms": 2488440,
+      "source_event_index": 458,
+      "start_ms": 2482920,
+      "text": "Do you see a difference between the funding the flying cars and the SpaceXs and Teslas"
+    },
+    {
+      "end_ms": 2493420,
+      "source_event_index": 459,
+      "start_ms": 2488440,
+      "text": "versus something that improves the aesthetic heritage of humanity? But does one of them"
+    },
+    {
+      "end_ms": 2497800,
+      "source_event_index": 460,
+      "start_ms": 2493420,
+      "text": "seem like a different category than the other to you? Or is that all included in the"
+    },
+    {
+      "end_ms": 2501460,
+      "source_event_index": 461,
+      "start_ms": 2497800,
+      "text": "venture stuff you're interested in? It's a little bit like saying — should we fund"
+    },
+    {
+      "end_ms": 2506860,
+      "source_event_index": 462,
+      "start_ms": 2501460,
+      "text": "Thomas Edison or Beethoven? If push comes to shove and we can only fund one of them, we probably"
+    },
+    {
+      "end_ms": 2510880,
+      "source_event_index": 463,
+      "start_ms": 2506860,
+      "text": "should fund Edison and not Beethoven. Indoor lighting is probably more important than music."
+    },
+    {
+      "end_ms": 2524800,
+      "source_event_index": 464,
+      "start_ms": 2511720,
+      "text": "But I don't want to live without Beethoven. I think this is a very important point. People"
+    },
+    {
+      "end_ms": 2527740,
+      "source_event_index": 465,
+      "start_ms": 2524800,
+      "text": "have lots and lots of views on human existence. There's lots and lots of people trying to figure"
+    },
+    {
+      "end_ms": 2531940,
+      "source_event_index": 466,
+      "start_ms": 2527740,
+      "text": "out the point of human existence, religions and philosophies and so forth. But kind of what they"
+    },
+    {
+      "end_ms": 2536740,
+      "source_event_index": 467,
+      "start_ms": 2531940,
+      "text": "all have in common, other than maybe Marxism, what they all have in common is — we're not just here"
+    },
+    {
+      "end_ms": 2541720,
+      "source_event_index": 468,
+      "start_ms": 2536740,
+      "text": "to get up in the morning, work in a factory all day, go home at night, be depressed and sad, go to"
+    },
+    {
+      "end_ms": 2548680,
+      "source_event_index": 469,
+      "start_ms": 2541720,
+      "text": "bed. We're not just material, right? Whatever this is all about, it's not just about materiality."
+    },
+    {
+      "end_ms": 2552760,
+      "source_event_index": 470,
+      "start_ms": 2548680,
+      "text": "There are higher aspirations and higher goals. And we create art, we create literature,"
+    },
+    {
+      "end_ms": 2556960,
+      "source_event_index": 471,
+      "start_ms": 2552760,
+      "text": "we create paintings, we create sculptures, we create aesthetics, we create fashion, right,"
+    },
+    {
+      "end_ms": 2563920,
+      "source_event_index": 472,
+      "start_ms": 2556960,
+      "text": "we create music, we create all of these things. And fiction. Why does fiction exist? Why is a"
+    },
+    {
+      "end_ms": 2569380,
+      "source_event_index": 473,
+      "start_ms": 2563920,
+      "text": "fake story worth anything? Because it enhances your life to get wrapped up in a fake story. It"
+    },
+    {
+      "end_ms": 2573340,
+      "source_event_index": 474,
+      "start_ms": 2569380,
+      "text": "makes your life better that these things exist. Imagine living in a world where"
+    },
+    {
+      "end_ms": 2577840,
+      "source_event_index": 475,
+      "start_ms": 2573340,
+      "text": "there's no fiction, because everybody's like — “Oh, fiction is not useful. It's not real.”"
+    },
+    {
+      "end_ms": 2584080,
+      "source_event_index": 476,
+      "start_ms": 2579520,
+      "text": "No, it's great. I want to live in a world where there's fiction. I like nothing more at the end"
+    },
+    {
+      "end_ms": 2586720,
+      "source_event_index": 477,
+      "start_ms": 2584080,
+      "text": "of the day than having a couple hours to be able to get outside of my own head and"
+    },
+    {
+      "end_ms": 2589120,
+      "source_event_index": 478,
+      "start_ms": 2586720,
+      "text": "watch a really good movie. And I don't want to live in a world where that doesn't happen."
+    },
+    {
+      "end_ms": 2592840,
+      "source_event_index": 479,
+      "start_ms": 2589120,
+      "text": "As a consequence, funding movies as another example of what you're talking about,"
+    },
+    {
+      "end_ms": 2599260,
+      "source_event_index": 480,
+      "start_ms": 2592840,
+      "text": "is a thing that really makes the world better. And here's the other thing. The world we live"
+    },
+    {
+      "end_ms": 2603880,
+      "source_event_index": 481,
+      "start_ms": 2599260,
+      "text": "in actually is the opposite of the world you're alluding to. The world we live in is not a world"
+    },
+    {
+      "end_ms": 2608260,
+      "source_event_index": 482,
+      "start_ms": 2603880,
+      "text": "in which we have to choose between funding flying cars and funding NFTs or like in my example,"
+    },
+    {
+      "end_ms": 2611380,
+      "source_event_index": 483,
+      "start_ms": 2608260,
+      "text": "funding Edison versus funding Beethoven. The world we live in is actually the opposite of"
+    },
+    {
+      "end_ms": 2614920,
+      "source_event_index": 484,
+      "start_ms": 2611380,
+      "text": "that, where we have a massive oversupply of capital and not nearly enough things to fund."
+    },
+    {
+      "end_ms": 2622660,
+      "source_event_index": 485,
+      "start_ms": 2618040,
+      "text": "The nature of the modern economy is we have what Ben Bernanke called the global savings glut. We've"
+    },
+    {
+      "end_ms": 2626620,
+      "source_event_index": 486,
+      "start_ms": 2622660,
+      "text": "just got this massive oversupply of capital that was generated by the last few 100 years"
+    },
+    {
+      "end_ms": 2633820,
+      "source_event_index": 487,
+      "start_ms": 2626620,
+      "text": "of economic activity, and there's only one Elon. There's just this massive supply demand imbalance"
+    },
+    {
+      "end_ms": 2638200,
+      "source_event_index": 488,
+      "start_ms": 2633820,
+      "text": "between the amount of capital that needs to generate a return and the actual number of"
+    },
+    {
+      "end_ms": 2646180,
+      "source_event_index": 489,
+      "start_ms": 2638200,
+      "text": "viable investable projects and great entrepreneurs to actually create those projects. We certainly"
+    },
+    {
+      "end_ms": 2650020,
+      "source_event_index": 490,
+      "start_ms": 2646180,
+      "text": "don’t have enough flying car startups, we also don't have enough art startups. We need more"
+    },
+    {
+      "end_ms": 2655180,
+      "source_event_index": 491,
+      "start_ms": 2650020,
+      "text": "of all of this. I don't think there's a trade off, we need more of all of it."
+    },
+    {
+      "end_ms": 2662260,
+      "source_event_index": 492,
+      "start_ms": 2655720,
+      "text": "Have we reached the end of history when it comes to how venture capital works? For decades you get"
+    },
+    {
+      "end_ms": 2665860,
+      "source_event_index": 493,
+      "start_ms": 2662260,
+      "text": "equity in these early stage companies, you invest more rounds, it's a 2-20 structure."
+    },
+    {
+      "end_ms": 2669220,
+      "source_event_index": 494,
+      "start_ms": 2665860,
+      "text": "Is that what venture is going to look like in 50 years, or what's going to change?"
+    },
+    {
+      "end_ms": 2674200,
+      "source_event_index": 495,
+      "start_ms": 2670360,
+      "text": "I think the details will change, and the details have changed a lot, and the details"
+    },
+    {
+      "end_ms": 2678340,
+      "source_event_index": 496,
+      "start_ms": 2674200,
+      "text": "will change a lot. If you go back to the late 60s, early 70s, the details were different then"
+    },
+    {
+      "end_ms": 2683680,
+      "source_event_index": 497,
+      "start_ms": 2679360,
+      "text": "and the details were different 20 years ago. By the way, they're changing again right now in a"
+    },
+    {
+      "end_ms": 2694720,
+      "source_event_index": 498,
+      "start_ms": 2683680,
+      "text": "bunch of ways, and so the details will change. Having said that, there’s a core activity that"
+    },
+    {
+      "end_ms": 2700480,
+      "source_event_index": 499,
+      "start_ms": 2694720,
+      "text": "seems very fundamental. And the term I use I borrowed from Tyler Cowen who has talked"
+    },
+    {
+      "end_ms": 2707440,
+      "source_event_index": 500,
+      "start_ms": 2700480,
+      "text": "about this, he calls it Project Picking. When you're doing new things, new tech startups,"
+    },
+    {
+      "end_ms": 2715240,
+      "source_event_index": 501,
+      "start_ms": 2707440,
+      "text": "making new movies, publishing new books, creating new art, when you're doing something new. There's"
+    },
+    {
+      "end_ms": 2718360,
+      "source_event_index": 502,
+      "start_ms": 2715240,
+      "text": "this pattern that just repeats over and over again. If you look back in history,"
+    },
+    {
+      "end_ms": 2722260,
+      "source_event_index": 503,
+      "start_ms": 2718360,
+      "text": "it's basically been the pattern for hundreds or 1000s of years, and it seems like it's still the"
+    },
+    {
+      "end_ms": 2725980,
+      "source_event_index": 504,
+      "start_ms": 2722260,
+      "text": "pattern. Which is, you're going to do something new, it's going to be very risky, it's going"
+    },
+    {
+      "end_ms": 2731980,
+      "source_event_index": 505,
+      "start_ms": 2725980,
+      "text": "to be a very complex undertaking, it's going to be some very complicated effort that's going to"
+    },
+    {
+      "end_ms": 2736300,
+      "source_event_index": 506,
+      "start_ms": 2731980,
+      "text": "involve a path dependent kind of journey through a complex adaptive system, reality is going to be"
+    },
+    {
+      "end_ms": 2743500,
+      "source_event_index": 507,
+      "start_ms": 2736300,
+      "text": "very fuzzy and messy. And you're going to have a very idiosyncratic set of people who start"
+    },
+    {
+      "end_ms": 2749020,
+      "source_event_index": 508,
+      "start_ms": 2743500,
+      "text": "and run that project. They're going to be highly disagreeable, ornery people because that's the"
+    },
+    {
+      "end_ms": 2753880,
+      "source_event_index": 509,
+      "start_ms": 2749020,
+      "text": "kind of people who do new things. They're going to need to build something bigger than themselves,"
+    },
+    {
+      "end_ms": 2757300,
+      "source_event_index": 510,
+      "start_ms": 2753880,
+      "text": "they're going to need to assemble a team and a whole effort. They're going to run into"
+    },
+    {
+      "end_ms": 2764620,
+      "source_event_index": 511,
+      "start_ms": 2757300,
+      "text": "all kinds of problems and issues along the way. Every time you see that pattern there's this role,"
+    },
+    {
+      "end_ms": 2768640,
+      "source_event_index": 512,
+      "start_ms": 2764620,
+      "text": "where there's somebody in the background who's like — Okay, this one, not that one."
+    },
+    {
+      "end_ms": 2774460,
+      "source_event_index": 513,
+      "start_ms": 2769600,
+      "text": "This founder, not that founder. This expedition, not that expedition. This movie, not that movie."
+    },
+    {
+      "end_ms": 2781780,
+      "source_event_index": 514,
+      "start_ms": 2775900,
+      "text": "And those people play a judgment and taste role, they play an endorsement, branding and marketing"
+    },
+    {
+      "end_ms": 2787600,
+      "source_event_index": 515,
+      "start_ms": 2781780,
+      "text": "role. And then they often play a financing role. And they often are very hands-on, and they try"
+    },
+    {
+      "end_ms": 2792400,
+      "source_event_index": 516,
+      "start_ms": 2787600,
+      "text": "to contribute to the success of the project. A historical example of this I always use is that"
+    },
+    {
+      "end_ms": 2796120,
+      "source_event_index": 517,
+      "start_ms": 2792400,
+      "text": "the current model of venture capital is actually very similar to how whaling expeditions got funded"
+    },
+    {
+      "end_ms": 2802180,
+      "source_event_index": 518,
+      "start_ms": 2796120,
+      "text": "400 years ago. To the point that the term that we actually have, which is carried interest or carry,"
+    },
+    {
+      "end_ms": 2807040,
+      "source_event_index": 519,
+      "start_ms": 2802180,
+      "text": "which is the profit sharing that the VCs get on a successful startup, that term actually"
+    },
+    {
+      "end_ms": 2812620,
+      "source_event_index": 520,
+      "start_ms": 2807040,
+      "text": "goes back to the whaling industry 400 years ago, where the financiers of whaling journeys — like"
+    },
+    {
+      "end_ms": 2818620,
+      "source_event_index": 521,
+      "start_ms": 2812620,
+      "text": "literally out of Moby Dick, to go hunt a whale and bring its carcass back to land."
+    },
+    {
+      "end_ms": 2824620,
+      "source_event_index": 522,
+      "start_ms": 2820540,
+      "text": "The carry was literally the percentage of the carried amount of whale that the investor’s got."
+    },
+    {
+      "end_ms": 2828400,
+      "source_event_index": 523,
+      "start_ms": 2824620,
+      "text": "It was called carry because it was literally the amount of whale that the ship could carry back."
+    },
+    {
+      "end_ms": 2833260,
+      "source_event_index": 524,
+      "start_ms": 2829360,
+      "text": "And so if you go back to how the whaling journeys off, like the coast of Maine and the 1600s,"
+    },
+    {
+      "end_ms": 2835960,
+      "source_event_index": 525,
+      "start_ms": 2833260,
+      "text": "were funded, there were a group of what we — they didn't call themselves venture"
+    },
+    {
+      "end_ms": 2839080,
+      "source_event_index": 526,
+      "start_ms": 2835960,
+      "text": "capitalist at that time, but there were a group of basically capitalists."
+    },
+    {
+      "end_ms": 2844900,
+      "source_event_index": 527,
+      "start_ms": 2840100,
+      "text": "And they would sit in a tavern or something, and they would get pitches by whaling captains."
+    },
+    {
+      "end_ms": 2852100,
+      "source_event_index": 528,
+      "start_ms": 2845800,
+      "text": "And you can imagine the whaling captains. A third of the whaling journeys never"
+    },
+    {
+      "end_ms": 2857440,
+      "source_event_index": 529,
+      "start_ms": 2852100,
+      "text": "came back. A third of the time the boats got destroyed and everybody drowned. And so it's"
+    },
+    {
+      "end_ms": 2861520,
+      "source_event_index": 530,
+      "start_ms": 2857440,
+      "text": "like — I'm the captain who's going to be able to not only go get the whale, but I'm gonna be"
+    },
+    {
+      "end_ms": 2865420,
+      "source_event_index": 531,
+      "start_ms": 2861520,
+      "text": "able to keep my crew alive. By the way, I have a strategy and a theory for where the whale is."
+    },
+    {
+      "end_ms": 2868780,
+      "source_event_index": 532,
+      "start_ms": 2866080,
+      "text": "And maybe one guy is like — look, I'm gonna go where everybody knows"
+    },
+    {
+      "end_ms": 2871300,
+      "source_event_index": 533,
+      "start_ms": 2868780,
+      "text": "there are whales and other guy’s gonna be like — no, that place is overfished,"
+    },
+    {
+      "end_ms": 2874000,
+      "source_event_index": 534,
+      "start_ms": 2871300,
+      "text": "I'm gonna go to some other place where nobody thinks there's a whale, but I think there is."
+    },
+    {
+      "end_ms": 2877960,
+      "source_event_index": 535,
+      "start_ms": 2874960,
+      "text": "And then one guy is gonna say — I'm better at assembling a crew than the other. And the"
+    },
+    {
+      "end_ms": 2881860,
+      "source_event_index": 536,
+      "start_ms": 2877960,
+      "text": "other one's like — Well, no, I don't even need a crew. I just need a bunch of grunts and I'm"
+    },
+    {
+      "end_ms": 2886360,
+      "source_event_index": 537,
+      "start_ms": 2881860,
+      "text": "going to do all the work. And then another guy might say — I want a small fast boat. And other"
+    },
+    {
+      "end_ms": 2892000,
+      "source_event_index": 538,
+      "start_ms": 2886360,
+      "text": "guy might say — I want a big slow boat. And so there's a set of people, imagine in the"
+    },
+    {
+      "end_ms": 2896020,
+      "source_event_index": 539,
+      "start_ms": 2892000,
+      "text": "tavern under candlelight at night, debating all this back and forth — Okay, this captain on this"
+    },
+    {
+      "end_ms": 2900340,
+      "source_event_index": 540,
+      "start_ms": 2896020,
+      "text": "journey, not that captain on that journey and then putting the money behind it to finance the thing."
+    },
+    {
+      "end_ms": 2906640,
+      "source_event_index": 541,
+      "start_ms": 2901420,
+      "text": "That's what they did then and that's still what we do. So what I'm pretty confident"
+    },
+    {
+      "end_ms": 2911140,
+      "source_event_index": 542,
+      "start_ms": 2906640,
+      "text": "about is there will be somebody like us who is doing that in 50 years, 100 years,"
+    },
+    {
+      "end_ms": 2916000,
+      "source_event_index": 543,
+      "start_ms": 2911140,
+      "text": "200 years. It will be something like that. Will it be called venture capital? That I don't know."
+    },
+    {
+      "end_ms": 2922600,
+      "source_event_index": 544,
+      "start_ms": 2918700,
+      "text": "Where will it be happening? I don't know. But that seems like a very fundamental role."
+    },
+    {
+      "end_ms": 2926980,
+      "source_event_index": 545,
+      "start_ms": 2923740,
+      "text": "Will the public private distinction that exists now, will that exist in 50 years?"
+    },
+    {
+      "end_ms": 2934720,
+      "source_event_index": 546,
+      "start_ms": 2931180,
+      "text": "You mean like companies going public? Yeah and just the fact that there's"
+    },
+    {
+      "end_ms": 2939520,
+      "source_event_index": 547,
+      "start_ms": 2934720,
+      "text": "different rules for investing in both and just a separate category? Is that gonna exist?"
+    },
+    {
+      "end_ms": 2946240,
+      "source_event_index": 548,
+      "start_ms": 2941080,
+      "text": "There's already shades of gray. I would say that's already dissolving. There's very"
+    },
+    {
+      "end_ms": 2954040,
+      "source_event_index": 549,
+      "start_ms": 2946240,
+      "text": "formal rules here. But there's already shading that is taking place. In the last 20 years,"
+    },
+    {
+      "end_ms": 2957400,
+      "source_event_index": 550,
+      "start_ms": 2954040,
+      "text": "it's become much more common for especially later stage private companies to have their"
+    },
+    {
+      "end_ms": 2963100,
+      "source_event_index": 551,
+      "start_ms": 2957400,
+      "text": "stocks actually trade. Actually be semi liquid and trade either through secondary exchanges or"
+    },
+    {
+      "end_ms": 2968800,
+      "source_event_index": 552,
+      "start_ms": 2963640,
+      "text": "tender offers or whatever. That didn't used to happen, that didn't really happen in the 1990s."
+    },
+    {
+      "end_ms": 2972880,
+      "source_event_index": 553,
+      "start_ms": 2968800,
+      "text": "And then it started happening in the late 2000s. And then you've got lots of people with different"
+    },
+    {
+      "end_ms": 2975640,
+      "source_event_index": 554,
+      "start_ms": 2972880,
+      "text": "kinds of approaches to have different kinds of private markets and new kinds of private"
+    },
+    {
+      "end_ms": 2979540,
+      "source_event_index": 555,
+      "start_ms": 2975640,
+      "text": "liquidity. And look, you've got these new mechanisms, you've got crypto tokens."
+    },
+    {
+      "end_ms": 2983980,
+      "source_event_index": 556,
+      "start_ms": 2979540,
+      "text": "You've got entirely new mechanisms as well popping up representing underlying value."
+    },
+    {
+      "end_ms": 2990100,
+      "source_event_index": 557,
+      "start_ms": 2985420,
+      "text": "And then arguments, debates all the time in public and with regulators and in the newspapers about"
+    },
+    {
+      "end_ms": 2996460,
+      "source_event_index": 558,
+      "start_ms": 2990100,
+      "text": "what counts — Who can invest in? This whole accredited investor thing. A lot of this is"
+    },
+    {
+      "end_ms": 3000600,
+      "source_event_index": 559,
+      "start_ms": 2996460,
+      "text": "around “protecting investors”. And then there's this concept of high net worth investors should"
+    },
+    {
+      "end_ms": 3004980,
+      "source_event_index": 560,
+      "start_ms": 3000600,
+      "text": "be allowed to take more risk, because they can bear the losses. Whereas normal investors should"
+    },
+    {
+      "end_ms": 3008700,
+      "source_event_index": 561,
+      "start_ms": 3004980,
+      "text": "not be allowed to invest in private companies, but then there's a counter argument that says,"
+    },
+    {
+      "end_ms": 3012360,
+      "source_event_index": 562,
+      "start_ms": 3008700,
+      "text": "then you're cutting off growth investing as an opportunity for normal investors,"
+    },
+    {
+      "end_ms": 3017040,
+      "source_event_index": 563,
+      "start_ms": 3012360,
+      "text": "and you're making wealth inequality worse. That debate will keep playing out."
+    },
+    {
+      "end_ms": 3022620,
+      "source_event_index": 564,
+      "start_ms": 3018180,
+      "text": "It'll kind of fuzz a bit. I'd expect both sides will moderate a little bit."
+    },
+    {
+      "end_ms": 3025920,
+      "source_event_index": 565,
+      "start_ms": 3023580,
+      "text": "So in other words, public companies will get to be a little bit more"
+    },
+    {
+      "end_ms": 3035640,
+      "source_event_index": 566,
+      "start_ms": 3028440,
+      "text": "liquid over time. The definition of what it means to be public will probably broaden out. I'll give"
+    },
+    {
+      "end_ms": 3039960,
+      "source_event_index": 567,
+      "start_ms": 3035640,
+      "text": "you an example. Here's an interesting thing. So you can have this interesting case where"
+    },
+    {
+      "end_ms": 3044580,
+      "source_event_index": 568,
+      "start_ms": 3039960,
+      "text": "you can take a company private, but it's still effectively public because it has publicly traded"
+    },
+    {
+      "end_ms": 3050160,
+      "source_event_index": 569,
+      "start_ms": 3046140,
+      "text": "bonds. And then it ends up with publicly filed financials on the bond side, even though its"
+    },
+    {
+      "end_ms": 3056040,
+      "source_event_index": 570,
+      "start_ms": 3050160,
+      "text": "stock is private. And so it's effectively still public because of information disclosure. And then"
+    },
+    {
+      "end_ms": 3059760,
+      "source_event_index": 571,
+      "start_ms": 3056040,
+      "text": "the argument is — well, if I already have full information disclosure, as a result of the bonds"
+    },
+    {
+      "end_ms": 3065580,
+      "source_event_index": 572,
+      "start_ms": 3059760,
+      "text": "trading, you might as well take the stock public again. Anyway it'll fuzz out somewhere in there."
+    },
+    {
+      "end_ms": 3071040,
+      "source_event_index": 573,
+      "start_ms": 3065580,
+      "text": "Okay, so there's a clear pipeline of successful founders, who then become venture capitalists"
+    },
+    {
+      "end_ms": 3076260,
+      "source_event_index": 574,
+      "start_ms": 3071040,
+      "text": "like yourself, obviously. But I'm curious why the opposite is not more true? So if you're a venture"
+    },
+    {
+      "end_ms": 3080340,
+      "source_event_index": 575,
+      "start_ms": 3076260,
+      "text": "capitalist, you've seen dozens of companies go through hundreds of different problems. And"
+    },
+    {
+      "end_ms": 3085800,
+      "source_event_index": 576,
+      "start_ms": 3080340,
+      "text": "you would think that this puts you in a perfect position to be a great entrepreneur. So why don't"
+    },
+    {
+      "end_ms": 3093240,
+      "source_event_index": 577,
+      "start_ms": 3085800,
+      "text": "more venture capitalists become entrepreneurs? One reason is it's just harder to build a company,"
+    },
+    {
+      "end_ms": 3098220,
+      "source_event_index": 578,
+      "start_ms": 3093240,
+      "text": "it just flat out is. It's not easy to be a VC, but it's harder to build a company. And it requires a"
+    },
+    {
+      "end_ms": 3104280,
+      "source_event_index": 579,
+      "start_ms": 3098220,
+      "text": "level of personal commitment. Successful venture capitalists do get to a point in life where they"
+    },
+    {
+      "end_ms": 3110700,
+      "source_event_index": 580,
+      "start_ms": 3104280,
+      "text": "start to become pretty comfortable. They make money and they start to settle into that sort of"
+    },
+    {
+      "end_ms": 3115620,
+      "source_event_index": 581,
+      "start_ms": 3110700,
+      "text": "fairly nice way of living at some point in a lot of cases. And going back to the 2 AM chewing glass"
+    },
+    {
+      "end_ms": 3120600,
+      "source_event_index": 582,
+      "start_ms": 3116700,
+      "text": "kind of thing is maybe a little bit of a stretch for how they want to spend their time."
+    },
+    {
+      "end_ms": 3125100,
+      "source_event_index": 583,
+      "start_ms": 3121680,
+      "text": "So that's part of it. The other part of it is — the activities are pretty different."
+    },
+    {
+      "end_ms": 3131820,
+      "source_event_index": 584,
+      "start_ms": 3127200,
+      "text": "The way I describe it is — actually starting and running a company is a full on contact sport,"
+    },
+    {
+      "end_ms": 3138660,
+      "source_event_index": 585,
+      "start_ms": 3132660,
+      "text": "it's a hundred decisions a day. I’ll give an example: bias to action. Anybody who's running"
+    },
+    {
+      "end_ms": 3143160,
+      "source_event_index": 586,
+      "start_ms": 3138660,
+      "text": "a company, you have to have a bias to action. You're faced with a hundred decisions a day,"
+    },
+    {
+      "end_ms": 3146820,
+      "source_event_index": 587,
+      "start_ms": 3143160,
+      "text": "you don't have definitive answers on any of them. And you have to actually act"
+    },
+    {
+      "end_ms": 3151620,
+      "source_event_index": 588,
+      "start_ms": 3146820,
+      "text": "anyway. Because if you sit and analyze the world will pass you by. And it's like — a"
+    },
+    {
+      "end_ms": 3154680,
+      "source_event_index": 589,
+      "start_ms": 3151620,
+      "text": "good plan executed violently is much better than a great plan executed later."
+    },
+    {
+      "end_ms": 3161760,
+      "source_event_index": 590,
+      "start_ms": 3155640,
+      "text": "So it's a mode of operating that rewards aggression, contact with reality,"
+    },
+    {
+      "end_ms": 3168060,
+      "source_event_index": 591,
+      "start_ms": 3161760,
+      "text": "constantly testing hypotheses, screwing up a lot, changing your mind a lot, revisiting things."
+    },
+    {
+      "end_ms": 3175140,
+      "source_event_index": 592,
+      "start_ms": 3170640,
+      "text": "It’s thousands and thousands of crazy real world variables all intersecting."
+    },
+    {
+      "end_ms": 3184320,
+      "source_event_index": 593,
+      "start_ms": 3176880,
+      "text": "Being an investor is different. It's much more analytical, clinical, outside-in. The decision"
+    },
+    {
+      "end_ms": 3188700,
+      "source_event_index": 594,
+      "start_ms": 3184320,
+      "text": "cycles are much longer, you get a much longer period of time to think about what you should"
+    },
+    {
+      "end_ms": 3193440,
+      "source_event_index": 595,
+      "start_ms": 3188700,
+      "text": "invest in, you get a much longer period of time to figure out when you should sell. Like I said, you"
+    },
+    {
+      "end_ms": 3197220,
+      "source_event_index": 596,
+      "start_ms": 3193440,
+      "text": "generally don't want to trade frequently if you're doing your job right. You actually want to take a"
+    },
+    {
+      "end_ms": 3201060,
+      "source_event_index": 597,
+      "start_ms": 3197220,
+      "text": "long time to really make the investment decisions, and then make the ultimate sale decisions."
+    },
+    {
+      "end_ms": 3208860,
+      "source_event_index": 598,
+      "start_ms": 3204300,
+      "text": "VCs, we help along the way, when companies have issues that they're in the middle of."
+    },
+    {
+      "end_ms": 3215160,
+      "source_event_index": 599,
+      "start_ms": 3208860,
+      "text": "But fundamentally, it's a much bigger level of watching, observing, learning, thinking, arguing,"
+    },
+    {
+      "end_ms": 3220500,
+      "source_event_index": 600,
+      "start_ms": 3216300,
+      "text": "in the abstract, as opposed to day to day bloody combat."
+    },
+    {
+      "end_ms": 3228060,
+      "source_event_index": 601,
+      "start_ms": 3225720,
+      "text": "Honestly, it's a little bit like — Why don't the great football"
+    },
+    {
+      "end_ms": 3235140,
+      "source_event_index": 602,
+      "start_ms": 3228060,
+      "text": "broadcasters go get on the field? Try being the running back for a season?"
+    },
+    {
+      "end_ms": 3244380,
+      "source_event_index": 603,
+      "start_ms": 3239100,
+      "text": "Got it. How soon can you tell whether somebody will make for a good CEO of a"
+    },
+    {
+      "end_ms": 3248520,
+      "source_event_index": 604,
+      "start_ms": 3244380,
+      "text": "large company specifically? So can you tell as soon as they've got a new startup that they're"
+    },
+    {
+      "end_ms": 3252120,
+      "source_event_index": 605,
+      "start_ms": 3248520,
+      "text": "pitching you? Or does it become more clear over time as they get more and more employees?"
+    },
+    {
+      "end_ms": 3260340,
+      "source_event_index": 606,
+      "start_ms": 3256860,
+      "text": "The big thing with being able to run things at scale, there's actually a very big breakthrough"
+    },
+    {
+      "end_ms": 3264180,
+      "source_event_index": 607,
+      "start_ms": 3260340,
+      "text": "that people either make or they don't make. And the very big breakthrough is whether they know"
+    },
+    {
+      "end_ms": 3271800,
+      "source_event_index": 608,
+      "start_ms": 3264180,
+      "text": "how to manage managers. Say you're running a company with a hundred thousand employees,"
+    },
+    {
+      "end_ms": 3276180,
+      "source_event_index": 609,
+      "start_ms": 3271800,
+      "text": "you don't have a hundred thousand direct reports. You still only have like eight or ten direct"
+    },
+    {
+      "end_ms": 3280080,
+      "source_event_index": 610,
+      "start_ms": 3276180,
+      "text": "reports. And then each of them have eight or ten direct reports and each of them have eight or ten"
+    },
+    {
+      "end_ms": 3283740,
+      "source_event_index": 611,
+      "start_ms": 3280080,
+      "text": "direct reports. And so even the CEOs of really big companies, they're only really dealing with"
+    },
+    {
+      "end_ms": 3291240,
+      "source_event_index": 612,
+      "start_ms": 3283740,
+      "text": "eight or ten or twelve people on a daily basis. And then how do you become trained as a manager?"
+    },
+    {
+      "end_ms": 3294540,
+      "source_event_index": 613,
+      "start_ms": 3291240,
+      "text": "The way you become trained as a manager initially is you manage a team of individual"
+    },
+    {
+      "end_ms": 3299820,
+      "source_event_index": 614,
+      "start_ms": 3294540,
+      "text": "contributors. I'm an engineering manager, I have eight or ten coders working for me."
+    },
+    {
+      "end_ms": 3304260,
+      "source_event_index": 615,
+      "start_ms": 3299820,
+      "text": "And then the breakthrough is — am I trained in how to become a manager of managers?"
+    },
+    {
+      "end_ms": 3309060,
+      "source_event_index": 616,
+      "start_ms": 3306060,
+      "text": "If I'm early in my career, the way I think about that is I start out as an individual contributor,"
+    },
+    {
+      "end_ms": 3313380,
+      "source_event_index": 617,
+      "start_ms": 3309060,
+      "text": "let's say an engineer. I get trained on how to be a manager of individual contributors, and that"
+    },
+    {
+      "end_ms": 3317280,
+      "source_event_index": 618,
+      "start_ms": 3313380,
+      "text": "makes me an engineering manager. And then if I get promoted to what they call engineering director,"
+    },
+    {
+      "end_ms": 3322260,
+      "source_event_index": 619,
+      "start_ms": 3317280,
+      "text": "which is one level up, now I'm a director and now I'm managing a team of managers. Anybody"
+    },
+    {
+      "end_ms": 3327180,
+      "source_event_index": 620,
+      "start_ms": 3322260,
+      "text": "who can make that jump now has a generalizable skill of being able to manage managers, and then"
+    },
+    {
+      "end_ms": 3332640,
+      "source_event_index": 621,
+      "start_ms": 3327780,
+      "text": "what makes that skill so great is that skill can scale. Because then you can get promoted to the VP"
+    },
+    {
+      "end_ms": 3336360,
+      "source_event_index": 622,
+      "start_ms": 3332640,
+      "text": "of engineering, now you have a team of directors who have teams of managers who have teams of ICs"
+    },
+    {
+      "end_ms": 3340020,
+      "source_event_index": 623,
+      "start_ms": 3336960,
+      "text": "and so forth. And then at some point, if you keep climbing that ladder, at some point you"
+    },
+    {
+      "end_ms": 3344100,
+      "source_event_index": 624,
+      "start_ms": 3340020,
+      "text": "get promoted to CEO. And then you have a team of managers who are the executives of the company,"
+    },
+    {
+      "end_ms": 3348660,
+      "source_event_index": 625,
+      "start_ms": 3344100,
+      "text": "and then everything spans out from there. And so if you can manage managers, at least in"
+    },
+    {
+      "end_ms": 3352620,
+      "source_event_index": 626,
+      "start_ms": 3348660,
+      "text": "theory, you have the basic skill and temperament required to be able to scale all the way up."
+    },
+    {
+      "end_ms": 3357720,
+      "source_event_index": 627,
+      "start_ms": 3353760,
+      "text": "Then it becomes a question of how much complexity can you deal with? Can you"
+    },
+    {
+      "end_ms": 3361740,
+      "source_event_index": 628,
+      "start_ms": 3357720,
+      "text": "learn enough about all the different domains of what it means to run a business? Are you"
+    },
+    {
+      "end_ms": 3366120,
+      "source_event_index": 629,
+      "start_ms": 3361740,
+      "text": "going to enjoy being in the job and being on the hot seat? All those kinds of questions."
+    },
+    {
+      "end_ms": 3372420,
+      "source_event_index": 630,
+      "start_ms": 3367500,
+      "text": "I think 100% of the people we back have the intelligence to do it,"
+    },
+    {
+      "end_ms": 3376680,
+      "source_event_index": 631,
+      "start_ms": 3373920,
+      "text": "maybe half of them have the temperament to do it,"
+    },
+    {
+      "end_ms": 3380940,
+      "source_event_index": 632,
+      "start_ms": 3376680,
+      "text": "and then maybe half of those have the intelligence and the temperament and they really want to do it."
+    },
+    {
+      "end_ms": 3385020,
+      "source_event_index": 633,
+      "start_ms": 3381480,
+      "text": "And by “might want to do it” I mean, 20 years from now, they still want to be running their company."
+    },
+    {
+      "end_ms": 3392400,
+      "source_event_index": 634,
+      "start_ms": 3387600,
+      "text": "And enough of them where we get the success cases. But having said that as an entrepreneur,"
+    },
+    {
+      "end_ms": 3395820,
+      "source_event_index": 635,
+      "start_ms": 3392400,
+      "text": "you have to really want that. You have to be smart enough and you have to have the temperament and"
+    },
+    {
+      "end_ms": 3399840,
+      "source_event_index": 636,
+      "start_ms": 3395820,
+      "text": "you have to actually want to learn the skills. And not everybody is able to line those up."
+    },
+    {
+      "end_ms": 3402360,
+      "source_event_index": 637,
+      "start_ms": 3399840,
+      "text": "Got it, got it. Managing the managerial revolution."
+    },
+    {
+      "end_ms": 3411120,
+      "source_event_index": 638,
+      "start_ms": 3406020,
+      "text": "Actually, that's exactly right. The best case scenario is a bourgeois capitalist,"
+    },
+    {
+      "end_ms": 3416400,
+      "source_event_index": 639,
+      "start_ms": 3411120,
+      "text": "entrepreneurial CEO, managing a team of managers who are doing all the managerial stuff required"
+    },
+    {
+      "end_ms": 3422640,
+      "source_event_index": 640,
+      "start_ms": 3416400,
+      "text": "at scale. That's the best case scenario for a large modern organization. Best of both worlds,"
+    },
+    {
+      "end_ms": 3426180,
+      "source_event_index": 641,
+      "start_ms": 3422640,
+      "text": "they're able to harness the benefits of scale, and they're able to still build new things."
+    },
+    {
+      "end_ms": 3436620,
+      "source_event_index": 642,
+      "start_ms": 3427500,
+      "text": "The degenerate version of that is a manager running a company of people who in theory can"
+    },
+    {
+      "end_ms": 3442500,
+      "source_event_index": 643,
+      "start_ms": 3436620,
+      "text": "build your products. But in the Burnham sense, if the CEO is the manager who is running a team"
+    },
+    {
+      "end_ms": 3445500,
+      "source_event_index": 644,
+      "start_ms": 3442500,
+      "text": "of people who want to build their products, that company probably will not actually build"
+    },
+    {
+      "end_ms": 3448140,
+      "source_event_index": 645,
+      "start_ms": 3445500,
+      "text": "their products. Those people will probably all leave and start their own companies."
+    },
+    {
+      "end_ms": 3455700,
+      "source_event_index": 646,
+      "start_ms": 3449220,
+      "text": "Yep, yep. Now, as unlikely as this may be, just humor the hypothetical. Let's say a16z"
+    },
+    {
+      "end_ms": 3460740,
+      "source_event_index": 647,
+      "start_ms": 3455700,
+      "text": "for the next 10 to 20 years has mediocre returns. If you had to guess looking back,"
+    },
+    {
+      "end_ms": 3463980,
+      "source_event_index": 648,
+      "start_ms": 3460740,
+      "text": "what would be the most likely reason this might happen? Would it have to be some sort of macro"
+    },
+    {
+      "end_ms": 3467520,
+      "source_event_index": 649,
+      "start_ms": 3463980,
+      "text": "headwind, would it have to be betting on the wrong tech sectors, what would it have to be?"
+    },
+    {
+      "end_ms": 3473220,
+      "source_event_index": 650,
+      "start_ms": 3469020,
+      "text": "20 years is a long enough time where it's probably not just a macroeconomic thing."
+    },
+    {
+      "end_ms": 3480120,
+      "source_event_index": 651,
+      "start_ms": 3476400,
+      "text": "The big macro cycles seem to play out over 7 to 10 year periods. And so over 20 years,"
+    },
+    {
+      "end_ms": 3482340,
+      "source_event_index": 652,
+      "start_ms": 3480120,
+      "text": "you'd expect to kind of get two or three big cycles through that."
+    },
+    {
+      "end_ms": 3487800,
+      "source_event_index": 653,
+      "start_ms": 3483300,
+      "text": "And so you'd expect to get at least some chance to make money and harvest profits."
+    },
+    {
+      "end_ms": 3498000,
+      "source_event_index": 654,
+      "start_ms": 3488940,
+      "text": "Probably it wouldn't be a macro problem. Look, you can imagine it, if a real pandemic happens. By the"
+    },
+    {
+      "end_ms": 3501180,
+      "source_event_index": 655,
+      "start_ms": 3498000,
+      "text": "way, I’m now gonna get you demonetized on Google because I'm going to reference pandemics but.."
+    },
+    {
+      "end_ms": 3503820,
+      "source_event_index": 656,
+      "start_ms": 3501180,
+      "text": "Don’t worry, I didn't have enough views to be monetized anyway."
+    },
+    {
+      "end_ms": 3513780,
+      "source_event_index": 657,
+      "start_ms": 3508320,
+      "text": "If something horrible happens then you could be in a ditch for 20 years. But if things"
+    },
+    {
+      "end_ms": 3518220,
+      "source_event_index": 658,
+      "start_ms": 3513780,
+      "text": "continue the way that they have, for the last 50 years or 80 years. There'll be multiple cycles,"
+    },
+    {
+      "end_ms": 3521400,
+      "source_event_index": 659,
+      "start_ms": 3518220,
+      "text": "and there'll be a chance to make money for people who make good investments."
+    },
+    {
+      "end_ms": 3528120,
+      "source_event_index": 660,
+      "start_ms": 3522240,
+      "text": "So it's probably not that, and then there'll be the micro explanation, which is we just make bad"
+    },
+    {
+      "end_ms": 3532860,
+      "source_event_index": 661,
+      "start_ms": 3528120,
+      "text": "investments. We invest the money, but we just invest in the wrong companies and we screw up."
+    },
+    {
+      "end_ms": 3538860,
+      "source_event_index": 662,
+      "start_ms": 3533700,
+      "text": "And that's of course always a possibility. And probably the most likely downside case."
+    },
+    {
+      "end_ms": 3544020,
+      "source_event_index": 663,
+      "start_ms": 3538860,
+      "text": "The other downside case is — I would build on what I was mentioning earlier, from Bill Janeway. The"
+    },
+    {
+      "end_ms": 3549480,
+      "source_event_index": 664,
+      "start_ms": 3544020,
+      "text": "other downside case would just be that there's just not enough technological change happening."
+    },
+    {
+      "end_ms": 3556200,
+      "source_event_index": 665,
+      "start_ms": 3552420,
+      "text": "There wasn't enough investment in basic research in the preceding 50 years in"
+    },
+    {
+      "end_ms": 3560880,
+      "source_event_index": 666,
+      "start_ms": 3556200,
+      "text": "areas that actually paid off. There wasn't enough underlying technological"
+    },
+    {
+      "end_ms": 3564660,
+      "source_event_index": 667,
+      "start_ms": 3560880,
+      "text": "change that provided an opportunity for new entrepreneurial innovation."
+    },
+    {
+      "end_ms": 3569580,
+      "source_event_index": 668,
+      "start_ms": 3565260,
+      "text": "And the entrepreneurs started the companies and they tried to build products and we funded them"
+    },
+    {
+      "end_ms": 3573960,
+      "source_event_index": 669,
+      "start_ms": 3569580,
+      "text": "and for whatever reason, the sectors in which everybody was operating just didn't pay off."
+    },
+    {
+      "end_ms": 3579600,
+      "source_event_index": 670,
+      "start_ms": 3575520,
+      "text": "If we hit five clean-tech sectors in a row or something like that, the whole thing just doesn't"
+    },
+    {
+      "end_ms": 3586980,
+      "source_event_index": 671,
+      "start_ms": 3579600,
+      "text": "work. In a sense, that's the scariest one because that's the one that's most out of our control."
+    },
+    {
+      "end_ms": 3595980,
+      "source_event_index": 672,
+      "start_ms": 3588000,
+      "text": "That's purely exogenous. We can't wish new science into existence. And so that would be a scary one."
+    },
+    {
+      "end_ms": 3599640,
+      "source_event_index": 673,
+      "start_ms": 3595980,
+      "text": "I don't think that's the case. And in fact, I think quite possibly the opposite is happening."
+    },
+    {
+      "end_ms": 3605820,
+      "source_event_index": 674,
+      "start_ms": 3599640,
+      "text": "But that would be the downside scenario. How vulnerable is a16z to any given single"
+    },
+    {
+      "end_ms": 3610920,
+      "source_event_index": 675,
+      "start_ms": 3605820,
+      "text": "tech sector not working out? Whether it's because of technical immaturity, or by their regulation or"
+    },
+    {
+      "end_ms": 3615180,
+      "source_event_index": 676,
+      "start_ms": 3610920,
+      "text": "anything else? But if your top sector doesn't work out, how vulnerable is the whole firm?"
+    },
+    {
+      "end_ms": 3620700,
+      "source_event_index": 677,
+      "start_ms": 3615180,
+      "text": "Innovation could just be outlawed. And that's a real risk, because innovation is outlawed in"
+    },
+    {
+      "end_ms": 3626820,
+      "source_event_index": 678,
+      "start_ms": 3620700,
+      "text": "big and important areas like Nuclear. I always love meeting with new nuclear entrepreneurs,"
+    },
+    {
+      "end_ms": 3631320,
+      "source_event_index": 679,
+      "start_ms": 3626820,
+      "text": "because it's just so obvious that we should have this big investment in nuclear energy and there's"
+    },
+    {
+      "end_ms": 3635040,
+      "source_event_index": 680,
+      "start_ms": 3631320,
+      "text": "all these new designs. But the Nuclear Regulatory Commission has not authorized a new nuclear design"
+    },
+    {
+      "end_ms": 3641340,
+      "source_event_index": 681,
+      "start_ms": 3635040,
+      "text": "since its inception nearly 50 years ago. So it's just illegal to build new nuclear in the US. By"
+    },
+    {
+      "end_ms": 3644640,
+      "source_event_index": 682,
+      "start_ms": 3641340,
+      "text": "the way, there's all these fusion entrepreneurs that are super geniuses, the products are great,"
+    },
+    {
+      "end_ms": 3648240,
+      "source_event_index": 683,
+      "start_ms": 3644640,
+      "text": "it looks fantastic. I just don't think there's any prospect of nuclear fusion being legal"
+    },
+    {
+      "end_ms": 3655800,
+      "source_event_index": 684,
+      "start_ms": 3648240,
+      "text": "in the US. I think it's just impossible and can't be done. Maybe it's just all outlawed,"
+    },
+    {
+      "end_ms": 3661380,
+      "source_event_index": 685,
+      "start_ms": 3656940,
+      "text": "in which case, at a societal level we will deserve the result. But that would be a bummer for us."
+    },
+    {
+      "end_ms": 3665940,
+      "source_event_index": 686,
+      "start_ms": 3661380,
+      "text": "And then I don't know, let's say crypto gets regulated or it's just not ready yet."
+    },
+    {
+      "end_ms": 3670860,
+      "source_event_index": 687,
+      "start_ms": 3667320,
+      "text": "It doesn't have to be crypto specifically. But what happens to a16z as a whole? I mean,"
+    },
+    {
+      "end_ms": 3676800,
+      "source_event_index": 688,
+      "start_ms": 3670860,
+      "text": "does a whole firm carry on? Or? Look, it's up to our LPs. We raise"
+    },
+    {
+      "end_ms": 3683700,
+      "source_event_index": 689,
+      "start_ms": 3676800,
+      "text": "money on a cycle. So our LPs have an option every cycle to not continue to invest. Just logically"
+    },
+    {
+      "end_ms": 3691320,
+      "source_event_index": 690,
+      "start_ms": 3684600,
+      "text": "the firm is somewhat diversified now. We have six primary investment domains. So at least in theory,"
+    },
+    {
+      "end_ms": 3697860,
+      "source_event_index": 691,
+      "start_ms": 3691320,
+      "text": "we have some diversification across categories. At least in theory, we could lose a category or two"
+    },
+    {
+      "end_ms": 3703920,
+      "source_event_index": 692,
+      "start_ms": 3697860,
+      "text": "and the investment returns could still be good, and the investors will still fund us. The downside"
+    },
+    {
+      "end_ms": 3710100,
+      "source_event_index": 693,
+      "start_ms": 3703920,
+      "text": "case from there would be that those categories are actually more correlated than we would want them"
+    },
+    {
+      "end_ms": 3714900,
+      "source_event_index": 694,
+      "start_ms": 3710100,
+      "text": "to be. As a firm, we have a big focus on software, we think software is a wedge across each of"
+    },
+    {
+      "end_ms": 3720540,
+      "source_event_index": 695,
+      "start_ms": 3714900,
+      "text": "those verticals. Maybe AI turns out for whatever reason not to work, or gets outlawed or something"
+    },
+    {
+      "end_ms": 3726840,
+      "source_event_index": 696,
+      "start_ms": 3722160,
+      "text": "or just fundamentally makes economics worse or something. Then you can imagine that hitting"
+    },
+    {
+      "end_ms": 3730920,
+      "source_event_index": 697,
+      "start_ms": 3726840,
+      "text": "multiple sectors. Again, I don't think that's going to happen, but I guess it's a possibility."
+    },
+    {
+      "end_ms": 3735600,
+      "source_event_index": 698,
+      "start_ms": 3730920,
+      "text": "Yeah. What did the old management of Twitter fail to see about the potential of the platform?"
+    },
+    {
+      "end_ms": 3740520,
+      "source_event_index": 699,
+      "start_ms": 3736440,
+      "text": "So first I'd say that I have a very hard time second guessing management teams,"
+    },
+    {
+      "end_ms": 3746220,
+      "source_event_index": 700,
+      "start_ms": 3740520,
+      "text": "because like I said, my belief is that it's so easy to criticize companies and teams in the"
+    },
+    {
+      "end_ms": 3751080,
+      "source_event_index": 701,
+      "start_ms": 3746220,
+      "text": "outside, it's so hard to run these companies, there are always a thousand factors that are"
+    },
+    {
+      "end_ms": 3755520,
+      "source_event_index": 702,
+      "start_ms": 3751080,
+      "text": "invisible from the outside that make it really hard to make decisions internally."
+    },
+    {
+      "end_ms": 3759780,
+      "source_event_index": 703,
+      "start_ms": 3755520,
+      "text": "By the way, the histories on all this stuff are really always screwed up. Because what you"
+    },
+    {
+      "end_ms": 3764400,
+      "source_event_index": 704,
+      "start_ms": 3759780,
+      "text": "almost always find in the history of the great companies is that there were moments early on"
+    },
+    {
+      "end_ms": 3768420,
+      "source_event_index": 705,
+      "start_ms": 3764400,
+      "text": "where it was really tenuous, and it could have easily gone the other way. Netflix could have"
+    },
+    {
+      "end_ms": 3771480,
+      "source_event_index": 706,
+      "start_ms": 3768420,
+      "text": "sold out to Blockbuster early on, and Google could have sold out to Yahoo. And we never"
+    },
+    {
+      "end_ms": 3777360,
+      "source_event_index": 707,
+      "start_ms": 3771480,
+      "text": "would have even heard of those companies. And so it's really, really hard to second guess."
+    },
+    {
+      "end_ms": 3783240,
+      "source_event_index": 708,
+      "start_ms": 3778020,
+      "text": "I guess I will just put it this way — I've always believed and I was an angel investor in Twitter"
+    },
+    {
+      "end_ms": 3788880,
+      "source_event_index": 709,
+      "start_ms": 3783240,
+      "text": "back when it first got started. I've always believed that the public graph is something that"
+    },
+    {
+      "end_ms": 3796200,
+      "source_event_index": 710,
+      "start_ms": 3788880,
+      "text": "should just be titanically valuable in the world. The public-follow graph. In computer science"
+    },
+    {
+      "end_ms": 3801240,
+      "source_event_index": 711,
+      "start_ms": 3796200,
+      "text": "terms, Twitter is what's called publish subscribe to the idea of a one way public follow graph."
+    },
+    {
+      "end_ms": 3806520,
+      "source_event_index": 712,
+      "start_ms": 3802560,
+      "text": "That ought to be just absolutely titanically valuable, that ought to be the most valuable"
+    },
+    {
+      "end_ms": 3811260,
+      "source_event_index": 713,
+      "start_ms": 3806520,
+      "text": "content, loyalty brand signal in the world. That ought to be the most complete expression of what"
+    },
+    {
+      "end_ms": 3814500,
+      "source_event_index": 714,
+      "start_ms": 3811260,
+      "text": "people care about in the world, that ought to be the primary way that every creator of"
+    },
+    {
+      "end_ms": 3819540,
+      "source_event_index": 715,
+      "start_ms": 3814500,
+      "text": "everything interacts with their customers and their audience. This ought to be where all the"
+    },
+    {
+      "end_ms": 3821280,
+      "source_event_index": 716,
+      "start_ms": 3819540,
+      "text": "politics operates, this ought to be where every creative profession operates, this ought to be"
+    },
+    {
+      "end_ms": 3830520,
+      "source_event_index": 717,
+      "start_ms": 3821280,
+      "text": "where a huge amount of the economy operates. They were always on to such a big idea."
+    },
+    {
+      "end_ms": 3836700,
+      "source_event_index": 718,
+      "start_ms": 3832740,
+      "text": "Like with everything, it's a question of — What does that mean in terms of what kind"
+    },
+    {
+      "end_ms": 3842160,
+      "source_event_index": 719,
+      "start_ms": 3836700,
+      "text": "of product you can build around that? And then how can you get people to pay for it? But yeah,"
+    },
+    {
+      "end_ms": 3846240,
+      "source_event_index": 720,
+      "start_ms": 3842160,
+      "text": "I've always viewed that the economic opportunity around that core innovation that they had is just"
+    },
+    {
+      "end_ms": 3850260,
+      "source_event_index": 721,
+      "start_ms": 3846240,
+      "text": "much, much larger than anybody has seen so far. But how specifically do you monetize that graph?"
+    },
+    {
+      "end_ms": 3856260,
+      "source_event_index": 722,
+      "start_ms": 3850260,
+      "text": "Oh, there's a gazillion ways. There's tons and tons of ways. Elon has talked about this publicly"
+    },
+    {
+      "end_ms": 3862860,
+      "source_event_index": 723,
+      "start_ms": 3856260,
+      "text": "so it’s not spoiling anything, but Twitter is a promotional vehicle for a lot of people who"
+    },
+    {
+      "end_ms": 3867480,
+      "source_event_index": 724,
+      "start_ms": 3862860,
+      "text": "will then provide you stuff on another platform. I'm just taking an obvious example. He has talked"
+    },
+    {
+      "end_ms": 3872880,
+      "source_event_index": 725,
+      "start_ms": 3867480,
+      "text": "about video. People create video, they market it on Twitter, and then they monetize it on YouTube."
+    },
+    {
+      "end_ms": 3879840,
+      "source_event_index": 726,
+      "start_ms": 3875760,
+      "text": "Like, why? Why is that not happening (on Twitter)? Musicians will have followings"
+    },
+    {
+      "end_ms": 3882540,
+      "source_event_index": 727,
+      "start_ms": 3879840,
+      "text": "of 5-10 million people on Twitter, they aren't selling concert tickets."
+    },
+    {
+      "end_ms": 3891120,
+      "source_event_index": 728,
+      "start_ms": 3886680,
+      "text": "I'm sure this was happening before but where it first came to mind was, if you remember Conan"
+    },
+    {
+      "end_ms": 3896640,
+      "source_event_index": 729,
+      "start_ms": 3891120,
+      "text": "O'Brien when he got famously fired from the Tonight Show, he did this tour. And I was a"
+    },
+    {
+      "end_ms": 3904560,
+      "source_event_index": 730,
+      "start_ms": 3896640,
+      "text": "fan of his so I was following him at the time. He did his first live comedy music tour. And he sold"
+    },
+    {
+      "end_ms": 3910620,
+      "source_event_index": 731,
+      "start_ms": 3904560,
+      "text": "out the tour across 40 cities in like two hours. How did he do it? Well, he just put up on his"
+    },
+    {
+      "end_ms": 3914520,
+      "source_event_index": 732,
+      "start_ms": 3910620,
+      "text": "Twitter account. He said — I'm going on the road, here are the dates, click here to buy tickets."
+    },
+    {
+      "end_ms": 3918480,
+      "source_event_index": 733,
+      "start_ms": 3915120,
+      "text": "Boom, they all sold out. “Now click here to buy tickets” was not “click here to buy"
+    },
+    {
+      "end_ms": 3922860,
+      "source_event_index": 734,
+      "start_ms": 3918480,
+      "text": "tickets on Twitter.” It was “click here to buy tickets somewhere else”. But why"
+    },
+    {
+      "end_ms": 3925920,
+      "source_event_index": 735,
+      "start_ms": 3922860,
+      "text": "isn't every concert in the world, why isn't every live event getting booked on Twitter?"
+    },
+    {
+      "end_ms": 3933060,
+      "source_event_index": 736,
+      "start_ms": 3928980,
+      "text": "There's a lot of this kind of thing. As Elon is fond of saying,"
+    },
+    {
+      "end_ms": 3935940,
+      "source_event_index": 737,
+      "start_ms": 3933060,
+      "text": "it's not rocket science. Yeah. It's funny that a"
+    },
+    {
+      "end_ms": 3939360,
+      "source_event_index": 738,
+      "start_ms": 3935940,
+      "text": "few revolutions in the Middle East were organized in the same way that Conan O'Brien"
+    },
+    {
+      "end_ms": 3944700,
+      "source_event_index": 739,
+      "start_ms": 3939360,
+      "text": "organizes tour, just by posting it on Twitter. So this is the thing that got me so convinced"
+    },
+    {
+      "end_ms": 3949920,
+      "source_event_index": 740,
+      "start_ms": 3944700,
+      "text": "on social media relatively early. Even before the Arab Spring, I don’t know if you remember,"
+    },
+    {
+      "end_ms": 3955440,
+      "source_event_index": 741,
+      "start_ms": 3949920,
+      "text": "you might be too young, but there was this overwhelming critique of social media between"
+    },
+    {
+      "end_ms": 3961080,
+      "source_event_index": 742,
+      "start_ms": 3955440,
+      "text": "inception in like 2001 to basically mainstreaming in like, 2011-2012. There was a decade where there"
+    },
+    {
+      "end_ms": 3965100,
+      "source_event_index": 743,
+      "start_ms": 3961080,
+      "text": "was just this overwhelming critique from all the smart people, as I like to say."
+    },
+    {
+      "end_ms": 3972060,
+      "source_event_index": 744,
+      "start_ms": 3965640,
+      "text": "That was basically — this thing is useless. This is narcissism. This is just pointless"
+    },
+    {
+      "end_ms": 3976920,
+      "source_event_index": 745,
+      "start_ms": 3972060,
+      "text": "self ego stroking, like narcissism. Nobody cares. The cliche always was Twitter is where"
+    },
+    {
+      "end_ms": 3980400,
+      "source_event_index": 746,
+      "start_ms": 3976920,
+      "text": "you go to learn what somebody's cat had for breakfast. Who cares what your cat had for"
+    },
+    {
+      "end_ms": 3986340,
+      "source_event_index": 747,
+      "start_ms": 3980400,
+      "text": "breakfast? Nothing will ever come from any of this. And then I remember, you could pick"
+    },
+    {
+      "end_ms": 3989940,
+      "source_event_index": 748,
+      "start_ms": 3986340,
+      "text": "up any newspaper on any given day through that period and you could read something like this."
+    },
+    {
+      "end_ms": 3996960,
+      "source_event_index": 749,
+      "start_ms": 3989940,
+      "text": "And then I remember when Erdoğan was consolidating control of Turkey. Erdoğan came out and he said,"
+    },
+    {
+      "end_ms": 4003080,
+      "source_event_index": 750,
+      "start_ms": 3996960,
+      "text": "“I think Twitter is the primary challenge to the survival of any political regime in the modern"
+    },
+    {
+      "end_ms": 4008180,
+      "source_event_index": 751,
+      "start_ms": 4003080,
+      "text": "world,” And I was like — Okay, all the smart analysts all think this is worthless and then"
+    },
+    {
+      "end_ms": 4012980,
+      "source_event_index": 752,
+      "start_ms": 4008180,
+      "text": "a guy who's actually trying to keep control of a country is like, this is my number one threat."
+    },
+    {
+      "end_ms": 4021380,
+      "source_event_index": 753,
+      "start_ms": 4015980,
+      "text": "The spread of what that meant, of what the outcomes meant. I was just like — “Oh my god.”"
+    },
+    {
+      "end_ms": 4031040,
+      "source_event_index": 754,
+      "start_ms": 4022940,
+      "text": "My conclusion was Erdoğan is right and all the smart westerners are wrong. And quite honestly,"
+    },
+    {
+      "end_ms": 4035540,
+      "source_event_index": 755,
+      "start_ms": 4031040,
+      "text": "I think it’s still quite early on. We’re still pretty early in the long arc of social media."
+    },
+    {
+      "end_ms": 4046580,
+      "source_event_index": 756,
+      "start_ms": 4038900,
+      "text": "The high level thing here would be — the world in which 5 billion people are on the internet is"
+    },
+    {
+      "end_ms": 4053180,
+      "source_event_index": 757,
+      "start_ms": 4046580,
+      "text": "still only a decade or so old. That’s still really early. The world in which 5 billion"
+    },
+    {
+      "end_ms": 4060080,
+      "source_event_index": 758,
+      "start_ms": 4053180,
+      "text": "people are on social networks is like five years old. It’s still super early. If you just look at"
+    },
+    {
+      "end_ms": 4065000,
+      "source_event_index": 759,
+      "start_ms": 4060080,
+      "text": "the history of these transitions in the past, just look at the printing press as a prescient"
+    },
+    {
+      "end_ms": 4071600,
+      "source_event_index": 760,
+      "start_ms": 4065000,
+      "text": "example. It took 200 years to fully play out the consequences of the printing press. We’re still"
+    },
+    {
+      "end_ms": 4076760,
+      "source_event_index": 761,
+      "start_ms": 4071600,
+      "text": "in the very early stages with these things. I was like ten in 2011 so I don’t know if I"
+    },
+    {
+      "end_ms": 4080900,
+      "source_event_index": 762,
+      "start_ms": 4076760,
+      "text": "would’ve personally. I would’ve liked to think I would’ve caught on if I was older but maybe not."
+    },
+    {
+      "end_ms": 4087500,
+      "source_event_index": 763,
+      "start_ms": 4080900,
+      "text": "It’s hard to know. But it is kind of interesting. You are personally invested in every single major"
+    },
+    {
+      "end_ms": 4091100,
+      "source_event_index": 764,
+      "start_ms": 4087500,
+      "text": "social media company. So it’s interesting to get your thoughts on where that sector"
+    },
+    {
+      "end_ms": 4095600,
+      "source_event_index": 765,
+      "start_ms": 4091100,
+      "text": "might go. Do you think the next ten years will look like the last ten years when it comes to"
+    },
+    {
+      "end_ms": 4100460,
+      "source_event_index": 766,
+      "start_ms": 4095600,
+      "text": "Big Tech? Is it just going to keep becoming a bigger fraction of GDP? Will that ever stop?"
+    },
+    {
+      "end_ms": 4110600,
+      "source_event_index": 767,
+      "start_ms": 4101780,
+      "text": "As a fraction of GDP, it’s only gonna go up. It is the process of tech infusing itself in every"
+    },
+    {
+      "end_ms": 4116420,
+      "source_event_index": 768,
+      "start_ms": 4110600,
+      "text": "sector. And I think that’s just an overwhelming trend. Because there are better ways to do things."
+    },
+    {
+      "end_ms": 4120560,
+      "source_event_index": 769,
+      "start_ms": 4116420,
+      "text": "There are things that are possible today that were not possible ten years ago. There are things that"
+    },
+    {
+      "end_ms": 4125300,
+      "source_event_index": 770,
+      "start_ms": 4120560,
+      "text": "will be possible five years from now that aren’t possible today. So from a sector standpoint,"
+    },
+    {
+      "end_ms": 4133100,
+      "source_event_index": 771,
+      "start_ms": 4125300,
+      "text": "the sector will certainly rise as a percent. I’m putting my money where my mouth is in the"
+    },
+    {
+      "end_ms": 4138560,
+      "source_event_index": 772,
+      "start_ms": 4133100,
+      "text": "following statement — Entrepreneurial capitalism will deliver most of that. A lot of that gain will"
+    },
+    {
+      "end_ms": 4143540,
+      "source_event_index": 773,
+      "start_ms": 4138560,
+      "text": "be in companies that were funded in the venture capital, silicon valley kind of model. For the"
+    },
+    {
+      "end_ms": 4149540,
+      "source_event_index": 774,
+      "start_ms": 4143540,
+      "text": "basic reason we discussed which is you do need to have that throwback to the bourgeois capitalist"
+    },
+    {
+      "end_ms": 4155960,
+      "source_event_index": 775,
+      "start_ms": 4149540,
+      "text": "model to do new things. Incumbents are generally still very poor at changing themselves in response"
+    },
+    {
+      "end_ms": 4160760,
+      "source_event_index": 776,
+      "start_ms": 4155960,
+      "text": "to new technology for reasons we’ve discussed. So that process will continue to play out."
+    },
+    {
+      "end_ms": 4167600,
+      "source_event_index": 777,
+      "start_ms": 4161660,
+      "text": "Another thing that I would just highlight is — The opportunity set for tech is changing over time"
+    },
+    {
+      "end_ms": 4175460,
+      "source_event_index": 778,
+      "start_ms": 4167600,
+      "text": "in another interesting way. We’ve been good at going over the dynamic but small slices of GDP"
+    },
+    {
+      "end_ms": 4178940,
+      "source_event_index": 779,
+      "start_ms": 4175460,
+      "text": "in the last fifty years. And more and more now, we’re going to be going after the less"
+    },
+    {
+      "end_ms": 4187760,
+      "source_event_index": 780,
+      "start_ms": 4178940,
+      "text": "dynamic but much larger sectors of GDP. Education, healthcare, real estate, finance, law, government"
+    },
+    {
+      "end_ms": 4192500,
+      "source_event_index": 781,
+      "start_ms": 4188360,
+      "text": "are really starting to come up for grabs. They are very complicated markets and they’re hard"
+    },
+    {
+      "end_ms": 4196580,
+      "source_event_index": 782,
+      "start_ms": 4192500,
+      "text": "to function in. As startups, it’s harder to build the companies but the payoff is potentially much"
+    },
+    {
+      "end_ms": 4202220,
+      "source_event_index": 783,
+      "start_ms": 4196580,
+      "text": "bigger. Because those are such huge slices of GDP. So the shape of the industry will change a bit"
+    },
+    {
+      "end_ms": 4212300,
+      "source_event_index": 784,
+      "start_ms": 4203300,
+      "text": "over time. What is technology? Technology is a better way of doing things. At some point,"
+    },
+    {
+      "end_ms": 4216260,
+      "source_event_index": 785,
+      "start_ms": 4212300,
+      "text": "the better way of doing things is the way that people do things. At some point that"
+    },
+    {
+      "end_ms": 4219380,
+      "source_event_index": 786,
+      "start_ms": 4216260,
+      "text": "does shift market share from people doing things the old to the people doing things the new way."
+    },
+    {
+      "end_ms": 4226100,
+      "source_event_index": 787,
+      "start_ms": 4220580,
+      "text": "But let's say you build a better education system somehow. The government is still going"
+    },
+    {
+      "end_ms": 4229280,
+      "source_event_index": 788,
+      "start_ms": 4226100,
+      "text": "to be dumping trillions of dollars into the old education system or the old healthcare system."
+    },
+    {
+      "end_ms": 4234200,
+      "source_event_index": 789,
+      "start_ms": 4229280,
+      "text": "Do you just accept this as a lost cause that basically 50% of the GDP will just be wasted"
+    },
+    {
+      "end_ms": 4240260,
+      "source_event_index": 790,
+      "start_ms": 4234200,
+      "text": "but we’ll make the other 50% really good? When you're building alternatives, do you just"
+    },
+    {
+      "end_ms": 4246680,
+      "source_event_index": 791,
+      "start_ms": 4240260,
+      "text": "accept the loss of the existing system? Education is a great example. I think"
+    },
+    {
+      "end_ms": 4253280,
+      "source_event_index": 792,
+      "start_ms": 4246680,
+      "text": "the incumbent education system is trying to destroy itself. It and the people running it,"
+    },
+    {
+      "end_ms": 4257540,
+      "source_event_index": 793,
+      "start_ms": 4253280,
+      "text": "and the people funding it are trying to kill it. And they’re doing it every possible way they"
+    },
+    {
+      "end_ms": 4262520,
+      "source_event_index": 794,
+      "start_ms": 4257540,
+      "text": "can. For K-12 they are trying to prioritize the teachers over the students which is the"
+    },
+    {
+      "end_ms": 4270620,
+      "source_event_index": 795,
+      "start_ms": 4262520,
+      "text": "opposite of what any properly run company would do. At the university level, the problems in"
+    },
+    {
+      "end_ms": 4274400,
+      "source_event_index": 796,
+      "start_ms": 4270620,
+      "text": "the modern university have been well covered by other people. They have become a cartel."
+    },
+    {
+      "end_ms": 4287300,
+      "source_event_index": 797,
+      "start_ms": 4280820,
+      "text": "Stanford now has more administrators than they have students. No company would run that way."
+    },
+    {
+      "end_ms": 4291380,
+      "source_event_index": 798,
+      "start_ms": 4288080,
+      "text": "There’s a positive vision where you could turn that into the Bloom two-sigma,"
+    },
+    {
+      "end_ms": 4294500,
+      "source_event_index": 799,
+      "start_ms": 4291980,
+      "text": "single student for single administrator but I don’t think that’s what's happening."
+    },
+    {
+      "end_ms": 4302780,
+      "source_event_index": 800,
+      "start_ms": 4295280,
+      "text": "Yes, yes. That’s correct. You could and they’re not. That’s exactly right. And then you see the"
+    },
+    {
+      "end_ms": 4306860,
+      "source_event_index": 801,
+      "start_ms": 4302780,
+      "text": "federal student loan kind of crazy thing. By the way, the universities are voluntarily shutting"
+    },
+    {
+      "end_ms": 4311600,
+      "source_event_index": 802,
+      "start_ms": 4306860,
+      "text": "down use of admissions testing. They’re shutting down SAT, ACT, GRE. They’re very deliberately"
+    },
+    {
+      "end_ms": 4316040,
+      "source_event_index": 803,
+      "start_ms": 4311600,
+      "text": "eliminating the intelligence signal which is a big part of the signal employers piggyback on top of."
+    },
+    {
+      "end_ms": 4323240,
+      "source_event_index": 804,
+      "start_ms": 4318740,
+      "text": "They become intensely politicized. We now know through the replication crisis that most of the"
+    },
+    {
+      "end_ms": 4327620,
+      "source_event_index": 805,
+      "start_ms": 4323240,
+      "text": "research that happens in these universities is fake. Most of it is not generating real research"
+    },
+    {
+      "end_ms": 4335660,
+      "source_event_index": 806,
+      "start_ms": 4327620,
+      "text": "results. We know that because it won’t replicate. You’ve just got these increasingly disconnected"
+    },
+    {
+      "end_ms": 4340040,
+      "source_event_index": 807,
+      "start_ms": 4336320,
+      "text": "mentalities and there’s some set of people who are obviously going to keep going to these schools."
+    },
+    {
+      "end_ms": 4351320,
+      "source_event_index": 808,
+      "start_ms": 4344000,
+      "text": "And then you just look at cost. A degree from a mainstream university that costs, in ten years,"
+    },
+    {
+      "end_ms": 4357620,
+      "source_event_index": 809,
+      "start_ms": 4351320,
+      "text": "a half-million or a million dollars that has no intelligence signal attached to it anymore. Where"
+    },
+    {
+      "end_ms": 4362360,
+      "source_event_index": 810,
+      "start_ms": 4357620,
+      "text": "most of the classes are fake, where most of the degrees are fake, most of the research is fake,"
+    },
+    {
+      "end_ms": 4371000,
+      "source_event_index": 811,
+      "start_ms": 4363800,
+      "text": "where they are wrapped up in these political obsessions. That’s probably not the future"
+    },
+    {
+      "end_ms": 4375440,
+      "source_event_index": 812,
+      "start_ms": 4371000,
+      "text": "of how employers are going to staff. That’s probably not where people are actually going"
+    },
+    {
+      "end_ms": 4380000,
+      "source_event_index": 813,
+      "start_ms": 4375440,
+      "text": "to learn valuable marketable skills. The last thing they want is to actually teach"
+    },
+    {
+      "end_ms": 4384260,
+      "source_event_index": 814,
+      "start_ms": 4380000,
+      "text": "somebody a marketable skill. Teaching somebody a marketable skill is just so"
+    },
+    {
+      "end_ms": 4387800,
+      "source_event_index": 815,
+      "start_ms": 4384260,
+      "text": "far down in the list of priorities of a university now it’s not even in the top 20."
+    },
+    {
+      "end_ms": 4394100,
+      "source_event_index": 816,
+      "start_ms": 4390860,
+      "text": "Lot of it is just they’re a cartel. They operate as a cartel, they run as a cartel,"
+    },
+    {
+      "end_ms": 4399500,
+      "source_event_index": 817,
+      "start_ms": 4394100,
+      "text": "it is a literal cartel. And the cartel is administered through the agencies,"
+    },
+    {
+      "end_ms": 4404060,
+      "source_event_index": 818,
+      "start_ms": 4399500,
+      "text": "the quasi-governmental bodies that determine who gets access to federal student loan funding. And"
+    },
+    {
+      "end_ms": 4408740,
+      "source_event_index": 819,
+      "start_ms": 4404060,
+      "text": "those bodies are staffed by the current university administrators. So it’s a self-governing"
+    },
+    {
+      "end_ms": 4416600,
+      "source_event_index": 820,
+      "start_ms": 4408740,
+      "text": "cartel. It does exactly what cartels do, it’s stagnating and going crazy in spectacular ways."
+    },
+    {
+      "end_ms": 4422840,
+      "source_event_index": 821,
+      "start_ms": 4416600,
+      "text": "There’s clearly going to be an educational revolution. Does that happen today or five"
+    },
+    {
+      "end_ms": 4425840,
+      "source_event_index": 822,
+      "start_ms": 4422840,
+      "text": "years or ten years, I don’t know. Does it happen in the form of new in-person"
+    },
+    {
+      "end_ms": 4432500,
+      "source_event_index": 823,
+      "start_ms": 4425840,
+      "text": "tuitions versus internet-based? I don’t know. Is it driven by us or is it driven by employers"
+    },
+    {
+      "end_ms": 4436040,
+      "source_event_index": 824,
+      "start_ms": 4432500,
+      "text": "who just get fed-up and they’re like — “Screw it. We’re not gonna live like this anymore and"
+    },
+    {
+      "end_ms": 4439460,
+      "source_event_index": 825,
+      "start_ms": 4436040,
+      "text": "we’re gonna hire people in a totally different way.” That, I don’t know. There’s lots and lots"
+    },
+    {
+      "end_ms": 4443480,
+      "source_event_index": 826,
+      "start_ms": 4439460,
+      "text": "of questions about what’s gonna happen from here. But the system is breaking in"
+    },
+    {
+      "end_ms": 4447380,
+      "source_event_index": 827,
+      "start_ms": 4444020,
+      "text": "fundamental and obvious ways. Healthcare, same thing."
+    },
+    {
+      "end_ms": 4464660,
+      "source_event_index": 828,
+      "start_ms": 4458360,
+      "text": "It’s extraordinarily difficult to find positive outcomes in healthcare. In other words,"
+    },
+    {
+      "end_ms": 4469520,
+      "source_event_index": 829,
+      "start_ms": 4464660,
+      "text": "there’s lots of activity in healthcare. It’s very hard to find anything that causes people to live"
+    },
+    {
+      "end_ms": 4474860,
+      "source_event_index": 830,
+      "start_ms": 4469520,
+      "text": "longer. Or to be healthier longer. Every once in a while there’s a successful new cancer treatment or"
+    },
+    {
+      "end_ms": 4479000,
+      "source_event_index": 831,
+      "start_ms": 4474860,
+      "text": "something but there are all these analyses that show that massive investment and public support"
+    },
+    {
+      "end_ms": 4482300,
+      "source_event_index": 832,
+      "start_ms": 4479000,
+      "text": "for health insurance and all these things. And the health outcomes basically don’t move."
+    },
+    {
+      "end_ms": 4489140,
+      "source_event_index": 833,
+      "start_ms": 4485600,
+      "text": "To the extent that people care at all about the reality of their health,"
+    },
+    {
+      "end_ms": 4492920,
+      "source_event_index": 834,
+      "start_ms": 4489860,
+      "text": "there are going to have to be new ways of doing things and tech is going to be the way through"
+    },
+    {
+      "end_ms": 4496700,
+      "source_event_index": 835,
+      "start_ms": 4492920,
+      "text": "the market for people who have those ideas. Hopefully these revolutions in education and"
+    },
+    {
+      "end_ms": 4500480,
+      "source_event_index": 836,
+      "start_ms": 4496700,
+      "text": "healthcare are not like healthcare itself where we are always twenty years away from a cure"
+    },
+    {
+      "end_ms": 4504920,
+      "source_event_index": 837,
+      "start_ms": 4500480,
+      "text": "to cancer and we’re always twenty years away from making education technological."
+    },
+    {
+      "end_ms": 4510620,
+      "source_event_index": 838,
+      "start_ms": 4504920,
+      "text": "You’ve talked about how big tech is 2 to 4x overstaffed in the best case. I’m curious"
+    },
+    {
+      "end_ms": 4515000,
+      "source_event_index": 839,
+      "start_ms": 4510620,
+      "text": "how overstaffed do you think venture capital is? How many partners and associates could we let go"
+    },
+    {
+      "end_ms": 4517520,
+      "source_event_index": 840,
+      "start_ms": 4515000,
+      "text": "and there really wouldn’t be a difference in the performance of venture capital."
+    },
+    {
+      "end_ms": 4522200,
+      "source_event_index": 841,
+      "start_ms": 4519260,
+      "text": "My friend Andy Rachleff, who is the founder of Benchmark and teaches venture capital"
+    },
+    {
+      "end_ms": 4527780,
+      "source_event_index": 842,
+      "start_ms": 4522980,
+      "text": "at Stanford. I think his description of this is correct. He says — Venture capital is always"
+    },
+    {
+      "end_ms": 4537860,
+      "source_event_index": 843,
+      "start_ms": 4527780,
+      "text": "over staffed and over funded. His estimate is that it is overfunded by a factor of 5."
+    },
+    {
+      "end_ms": 4543560,
+      "source_event_index": 844,
+      "start_ms": 4538880,
+      "text": "It should probably be 20% of the size that it is. It should be 20% of the number of people,"
+    },
+    {
+      "end_ms": 4549860,
+      "source_event_index": 845,
+      "start_ms": 4543560,
+      "text": "it should be 20% of the number of funds, it should be 20% of the amount of money. And his conclusion"
+    },
+    {
+      "end_ms": 4554180,
+      "source_event_index": 846,
+      "start_ms": 4549860,
+      "text": "after watching this for a long time and analyzing it was it’s basically a permanent 5x overfunding,"
+    },
+    {
+      "end_ms": 4559640,
+      "source_event_index": 847,
+      "start_ms": 4554180,
+      "text": "overstaffing. It goes to what I referenced earlier which is, the world we live in just has a massive"
+    },
+    {
+      "end_ms": 4564260,
+      "source_event_index": 848,
+      "start_ms": 4559640,
+      "text": "imbalance of too much money chasing too few opportunities to invest the money productively."
+    },
+    {
+      "end_ms": 4569960,
+      "source_event_index": 849,
+      "start_ms": 4565580,
+      "text": "There’s just too much money that needs long run returns that looks to venture as"
+    },
+    {
+      "end_ms": 4573500,
+      "source_event_index": 850,
+      "start_ms": 4569960,
+      "text": "part of their asset allocation. In the way that modern investors do asset allocation."
+    },
+    {
+      "end_ms": 4580220,
+      "source_event_index": 851,
+      "start_ms": 4576080,
+      "text": "The full version of it he describes is that — there’s only ever been two models of"
+    },
+    {
+      "end_ms": 4584180,
+      "source_event_index": 852,
+      "start_ms": 4580220,
+      "text": "institutional investment. There’s the old model of institutional investment which is 60-40 stocks and"
+    },
+    {
+      "end_ms": 4587960,
+      "source_event_index": 853,
+      "start_ms": 4584180,
+      "text": "bonds that kind of dominated the 20th century up until the 1970s. And there’s what’s called"
+    },
+    {
+      "end_ms": 4593120,
+      "source_event_index": 854,
+      "start_ms": 4587960,
+      "text": "the Swensen model. Swensen who created the Yale endowment in its modern form and that’s the model"
+    },
+    {
+      "end_ms": 4596540,
+      "source_event_index": 855,
+      "start_ms": 4593120,
+      "text": "that all the endowments and foundations have today and increasingly sovereign wealth funds,"
+    },
+    {
+      "end_ms": 4601100,
+      "source_event_index": 856,
+      "start_ms": 4596540,
+      "text": "where they invest in alternative assets. Which means hedge funds, venture capital, real estate"
+    },
+    {
+      "end_ms": 4607100,
+      "source_event_index": 857,
+      "start_ms": 4602480,
+      "text": "and things that aren't stocks and bonds. So anybody following the Swensen model"
+    },
+    {
+      "end_ms": 4610940,
+      "source_event_index": 858,
+      "start_ms": 4607100,
+      "text": "has an allocation to venture capital, on average that’s maybe 4% of their"
+    },
+    {
+      "end_ms": 4615320,
+      "source_event_index": 859,
+      "start_ms": 4610940,
+      "text": "assets. But 4% of the entire global asset base is just a gigantic number."
+    },
+    {
+      "end_ms": 4622760,
+      "source_event_index": 860,
+      "start_ms": 4615320,
+      "text": "It’s like someone once said — It’s like having a 6th marriage, hope triumphing over experience."
+    },
+    {
+      "end_ms": 4628220,
+      "source_event_index": 861,
+      "start_ms": 4624980,
+      "text": "The thing you will hear from LPs is every LP says they only invest in the top ten venture capital"
+    },
+    {
+      "end_ms": 4637160,
+      "source_event_index": 862,
+      "start_ms": 4628220,
+      "text": "funds and every LP has a different list for who that is. They all kind of know that the whole"
+    },
+    {
+      "end_ms": 4643280,
+      "source_event_index": 863,
+      "start_ms": 4637160,
+      "text": "sector is overfunded, but they all kind of know that they suffer from a real lack of... where else"
+    },
+    {
+      "end_ms": 4651920,
+      "source_event_index": 864,
+      "start_ms": 4643280,
+      "text": "is the money going to go? And then, it’s always possible that you’ll have some great new fund,"
+    },
+    {
+      "end_ms": 4657140,
+      "source_event_index": 865,
+      "start_ms": 4651920,
+      "text": "there’s some great new sector that will open up. A huge advantage that venture capital"
+    },
+    {
+      "end_ms": 4662900,
+      "source_event_index": 866,
+      "start_ms": 4657140,
+      "text": "has is the long dated part of it. It means you don’t suffer the consequences of a bad venture"
+    },
+    {
+      "end_ms": 4668540,
+      "source_event_index": 867,
+      "start_ms": 4662900,
+      "text": "capital investment upfront. You get a ten year lease on life when you make a venture capital"
+    },
+    {
+      "end_ms": 4673520,
+      "source_event_index": 868,
+      "start_ms": 4668540,
+      "text": "investment. You’re not gonna get judged for a long time. And so I think that causes people"
+    },
+    {
+      "end_ms": 4677360,
+      "source_event_index": 869,
+      "start_ms": 4673520,
+      "text": "to invest more in this sector than they should. Is the winner's curse also a big component here"
+    },
+    {
+      "end_ms": 4679820,
+      "source_event_index": 870,
+      "start_ms": 4677360,
+      "text": "where the guy who bids the most is the one who sets the price?"
+    },
+    {
+      "end_ms": 4687320,
+      "source_event_index": 871,
+      "start_ms": 4679820,
+      "text": "That can happen. At the early stages the best companies tend to raise at less than the optimal"
+    },
+    {
+      "end_ms": 4693860,
+      "source_event_index": 872,
+      "start_ms": 4687320,
+      "text": "price because the signal of who invests is more important than the absolute price. And so almost"
+    },
+    {
+      "end_ms": 4699440,
+      "source_event_index": 873,
+      "start_ms": 4693860,
+      "text": "every investment that we fund at the Series A stage, they could raise money at 2-4 times"
+    },
+    {
+      "end_ms": 4704660,
+      "source_event_index": 874,
+      "start_ms": 4699440,
+      "text": "the price they raised from us. But they value the signal. And I think that’s also true of the seed"
+    },
+    {
+      "end_ms": 4709520,
+      "source_event_index": 875,
+      "start_ms": 4704660,
+      "text": "landscape and it’s also still true in a lot of cases at the series B level. Series C and beyond"
+    },
+    {
+      "end_ms": 4713180,
+      "source_event_index": 876,
+      "start_ms": 4709520,
+      "text": "it becomes much more of an efficient market. Again it’s not a full auction. It’s a little"
+    },
+    {
+      "end_ms": 4722240,
+      "source_event_index": 877,
+      "start_ms": 4713180,
+      "text": "bit like your earlier question. At least here’s the theory — it’s not just money, it’s not just a"
+    },
+    {
+      "end_ms": 4728900,
+      "source_event_index": 878,
+      "start_ms": 4722240,
+      "text": "straight up liquid financial market. These are whaling journeys. By the way, there’s a much"
+    },
+    {
+      "end_ms": 4733940,
+      "source_event_index": 879,
+      "start_ms": 4728900,
+      "text": "blunter answer to this question which is — people who raise seed money and series A money from the"
+    },
+    {
+      "end_ms": 4737720,
+      "source_event_index": 880,
+      "start_ms": 4733940,
+      "text": "high bidder often end up really regretting it because they end up raising money from people who"
+    },
+    {
+      "end_ms": 4742460,
+      "source_event_index": 881,
+      "start_ms": 4737720,
+      "text": "don’t actually understand the nature of a whaling journey, or a tech startup. And then they panic"
+    },
+    {
+      "end_ms": 4747620,
+      "source_event_index": 882,
+      "start_ms": 4743060,
+      "text": "at the wrong times and they freak out. And the wrong investors can really screw up a company."
+    },
+    {
+      "end_ms": 4752480,
+      "source_event_index": 883,
+      "start_ms": 4748520,
+      "text": "At least historically, there’s a self-correcting equilibrium that comes out of that. Where the"
+    },
+    {
+      "end_ms": 4755060,
+      "source_event_index": 884,
+      "start_ms": 4752480,
+      "text": "best entrepreneurs understand that they want someone on their team who really know what"
+    },
+    {
+      "end_ms": 4757340,
+      "source_event_index": 885,
+      "start_ms": 4755060,
+      "text": "they’re doing and they don’t want to take chances with someone that’s gonna freak"
+    },
+    {
+      "end_ms": 4761540,
+      "source_event_index": 886,
+      "start_ms": 4757340,
+      "text": "out and try to shut the company down the first time that something goes wrong. But we’ll see."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-6b4e73693558564454544d-marc-andreessen/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "40fe1eb6a20f5bd32ffbd813debed2ea0bd8c8d812417f6524d46a575ed33c66"
+  },
+  "translation": {
+    "event_count": 887,
+    "language": "zh-CN",
+    "payload_sha256": "302890e54ba6c9e02ef9ed575b2b29fc9b6774fbd95f3e90f299d19abeb5403a",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-6b4e73693558564454544d-marc-andreessen/transcript.zh-CN.md",
+    "rendered_sha256": "85e6c372220746e0dd5d1b9d78e639b2f718d7682cad8460ae50df82a552fcb4",
+    "source_track": "zh-Hans-en",
+    "track_type": "youtube-auto-translate"
+  }
+}

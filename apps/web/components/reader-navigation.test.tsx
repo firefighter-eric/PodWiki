@@ -249,7 +249,7 @@ describe("reader navigation", () => {
 
     expect(shows).toHaveLength(9);
     expect(homeHtml.match(/class="podcast-preview-card"/g)).toHaveLength(9);
-    expect(homeHtml.match(/class="podcast-preview-episode selectable-content-link"/g)).toHaveLength(25);
+    expect(homeHtml.match(/class="podcast-preview-episode selectable-content-link"/g)).toHaveLength(27);
     expect(homeHtml).not.toContain("查看全部 0 期");
     expect(homeHtml).toContain("按播客浏览");
     expect(homeHtml).toContain('href="/shows/yiqitietalk"');
@@ -265,7 +265,7 @@ describe("reader navigation", () => {
     expect(homeHtml).toContain("查看全部 4 期");
     expect(homeHtml).toContain("查看全部 5 期");
     expect(homeHtml).toContain("查看全部 20 期");
-    expect(homeHtml).toContain("查看全部 1 期");
+    expect(homeHtml).toContain("查看全部 13 期");
 
     const showHtml = renderToStaticMarkup(createElement(ShowCatalog, {
       shows,

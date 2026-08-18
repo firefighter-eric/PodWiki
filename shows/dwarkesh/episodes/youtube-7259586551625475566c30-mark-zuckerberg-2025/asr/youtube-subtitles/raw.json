@@ -1,0 +1,6105 @@
+{
+  "generated_at": "2026-08-18T08:26:16.211240Z",
+  "kind": "podwiki-youtube-subtitle-raw",
+  "payload": {
+    "events": [
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "Mark, thanks for coming on the podcast again.\nYeah, happy to do it. Good to see you. "
+          }
+        ],
+        "tStartMs": 47280
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "You too. Last time you were here, you had \nlaunched Llama 3. Now you've launched Llama 4. "
+          }
+        ],
+        "tStartMs": 50880
+      },
+      {
+        "dDurationMs": 1760,
+        "segs": [
+          {
+            "utf8": "Well, the first version.\nThat's right. What's  "
+          }
+        ],
+        "tStartMs": 56240
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "new? What's exciting? What's changed?\nThe whole field is so dynamic. I feel like a ton  "
+          }
+        ],
+        "tStartMs": 58000
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "has changed since the last time we talked. Meta AI \nhas almost a billion people using it monthly now,  "
+          }
+        ],
+        "tStartMs": 64560
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "which is pretty wild. I think this is going to be \na really big year for all of this, especially once  "
+          }
+        ],
+        "tStartMs": 70800
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "you get the personalization loop going, which \nwe’re just starting to build in now really,  "
+          }
+        ],
+        "tStartMs": 78720
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "from both the context that all the algorithms \nhave about what you’re interested in — feed, your  "
+          }
+        ],
+        "tStartMs": 85200
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "profile information, your social graph information \n— but also what you're interacting with the  "
+          }
+        ],
+        "tStartMs": 90640
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "AI about. That’s going to be the next thing \nthat's super exciting. I'm really big on that. "
+          }
+        ],
+        "tStartMs": 94160
+      },
+      {
+        "dDurationMs": 9520,
+        "segs": [
+          {
+            "utf8": "The modeling stuff continues to make really \nimpressive advances too. I'm pretty happy  "
+          }
+        ],
+        "tStartMs": 101120
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "with the first set of Llama 4 releases. \nWe announced four models and released the  "
+          }
+        ],
+        "tStartMs": 110640
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "first two — the Scout and Maverick ones \n— which are mid-size to small models. "
+          }
+        ],
+        "tStartMs": 116720
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "The most popular Llama 3 model was the 8 \nbillion parameter one. So we’ve got one of  "
+          }
+        ],
+        "tStartMs": 124480
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "those coming in the Llama 4 series too. Our \ninternal code name for it is “Little Llama.”  "
+          }
+        ],
+        "tStartMs": 132400
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "That’s coming probably over the next few months.\nScout and Maverick are good. They have some of  "
+          }
+        ],
+        "tStartMs": 139920
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "the highest intelligence per cost you can get of \nany model out there. They’re natively multimodal,  "
+          }
+        ],
+        "tStartMs": 148800
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "very efficient, run on one host. They’re designed \nto be very efficient and low latency, for a lot  "
+          }
+        ],
+        "tStartMs": 157200
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "of the use cases we’re building for internally. \nThat’s our whole thing. We build what we want,  "
+          }
+        ],
+        "tStartMs": 164160
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "and then we open-source it so other people \ncan use it too. I'm excited about that. "
+          }
+        ],
+        "tStartMs": 170640
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "I'm also excited about the Behemoth model, which \nis coming up. It's going to be our first model  "
+          }
+        ],
+        "tStartMs": 175200
+      },
+      {
+        "dDurationMs": 11200,
+        "segs": [
+          {
+            "utf8": "that's sort of at the frontier — more than \n2 trillion parameters. As the name says,  "
+          }
+        ],
+        "tStartMs": 182000
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "it's quite big. We’re trying to figure out how \nto make that useful for people. It’s so big that  "
+          }
+        ],
+        "tStartMs": 193200
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "we've had to build a bunch of infrastructure \njust to be able to post-train it ourselves. "
+          }
+        ],
+        "tStartMs": 198960
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "Now we're trying to wrap our heads around, how \ndoes the average developer out there actually  "
+          }
+        ],
+        "tStartMs": 203600
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "use something like this? How do we make it \nuseful — maybe by distilling it into models  "
+          }
+        ],
+        "tStartMs": 208400
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "that are a reasonable size to run? Because \nyou're obviously not going to want to run  "
+          }
+        ],
+        "tStartMs": 212880
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "something like that in a consumer model.\nAs you saw with the Llama 3 stuff last year,  "
+          }
+        ],
+        "tStartMs": 217200
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "the initial launch was exciting and then we \njust built on that over the year. 3.1 released  "
+          }
+        ],
+        "tStartMs": 225360
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "the 405 billion model, 3.2 is when we got all the \nmultimodal stuff in. We basically have a roadmap  "
+          }
+        ],
+        "tStartMs": 232480
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "like that for this year too. So a lot going on.\nI'm interested to hear more about it. There's  "
+          }
+        ],
+        "tStartMs": 239120
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "this impression that the gap between the best \nclosed-source and the best open-source models  "
+          }
+        ],
+        "tStartMs": 243360
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "has increased over the last year. I know the \nfull family of Llama 4 models isn't out yet,  "
+          }
+        ],
+        "tStartMs": 249040
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "but Llama 4 Maverick is at #35 on Chatbot \nArena. On a bunch of major benchmarks,  "
+          }
+        ],
+        "tStartMs": 253520
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "it seems like o4-mini or Gemini 2.5 Flash \nare beating Maverick, which is in the same  "
+          }
+        ],
+        "tStartMs": 259520
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "class. What do you make of that impression?\nThere are a few things. First, I actually  "
+          }
+        ],
+        "tStartMs": 266000
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "think this has been a very good year for \nopen source overall. If you go back to  "
+          }
+        ],
+        "tStartMs": 270400
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "where we were last year, Llama was the only \nreal, super-innovative open-source model.  "
+          }
+        ],
+        "tStartMs": 275200
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "Now you have a bunch of them in the field.\nIn general, the prediction that this would  "
+          }
+        ],
+        "tStartMs": 283360
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "be the year open source generally overtakes \nclosed source as the most used models out there,  "
+          }
+        ],
+        "tStartMs": 287760
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "I think that's generally on track to be true.\nOne interesting surprise — positive in some ways,  "
+          }
+        ],
+        "tStartMs": 294240
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "negative in others, but overall good — is that \nit’s not just Llama. There are a lot of good  "
+          }
+        ],
+        "tStartMs": 302160
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "ones out there. I think that's quite good.\nThen there's the reasoning phenomenon,  "
+          }
+        ],
+        "tStartMs": 307120
+      },
+      {
+        "dDurationMs": 12080,
+        "segs": [
+          {
+            "utf8": "which you're alluding to talking about o3, o4, and \nother models. There's a specialization happening.  "
+          }
+        ],
+        "tStartMs": 313920
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "If you want a model that’s the best at \nmath problems, coding, or different things  "
+          }
+        ],
+        "tStartMs": 326000
+      },
+      {
+        "dDurationMs": 11040,
+        "segs": [
+          {
+            "utf8": "like those tasks, then reasoning models that \nconsume more test-time or inference-time compute  "
+          }
+        ],
+        "tStartMs": 332080
+      },
+      {
+        "dDurationMs": 3789,
+        "segs": [
+          {
+            "utf8": "in order to provide more intelligence are a really \ncompelling paradigm. And we're building a Llama 4  "
+          }
+        ],
+        "tStartMs": 343120
+      },
+      {
+        "dDurationMs": 12371,
+        "segs": [
+          {
+            "utf8": "reasoning model too. It'll come out at some point.\nBut for a lot of the applications we care about,  "
+          }
+        ],
+        "tStartMs": 346909
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "latency and good intelligence per cost are much \nmore important product attributes. If you're  "
+          }
+        ],
+        "tStartMs": 361120
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "primarily designing for a consumer product, people \ndon't want to wait half a minute to get an answer.  "
+          }
+        ],
+        "tStartMs": 370000
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "If you can give them a generally good answer \nin half a second, that's a great tradeoff. "
+          }
+        ],
+        "tStartMs": 379120
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "I think both of these are going to end up \nbeing important directions. I’m optimistic  "
+          }
+        ],
+        "tStartMs": 385600
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "about integrating reasoning models with the core \nlanguage models over time. That's the direction  "
+          }
+        ],
+        "tStartMs": 391600
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "Google has gone in with some of the more recent \nGemini models. I think that's really promising.  "
+          }
+        ],
+        "tStartMs": 398720
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "But I think there’s just going to be a \nbunch of different stuff that goes on. "
+          }
+        ],
+        "tStartMs": 405280
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "You also mentioned the whole Chatbot Arena thing, \nwhich I think is interesting and points to the  "
+          }
+        ],
+        "tStartMs": 409040
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "challenge around how you do benchmarking. How do \nyou know what models are good for which things? "
+          }
+        ],
+        "tStartMs": 415440
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "One of the things we've generally tried to do \nover the last year is anchor more of our models in  "
+          }
+        ],
+        "tStartMs": 423520
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "our Meta AI product north star use cases. \nThe issue with open source benchmarks,  "
+          }
+        ],
+        "tStartMs": 430480
+      },
+      {
+        "dDurationMs": 9440,
+        "segs": [
+          {
+            "utf8": "and any given thing like the LM Arena stuff, is \nthat they’re often skewed toward a very specific  "
+          }
+        ],
+        "tStartMs": 437760
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "set of uses cases, which are often not actually \n what any normal person does in your product.  "
+          }
+        ],
+        "tStartMs": 448080
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "The portfolio of things they’re trying \nto measure is often different from what  "
+          }
+        ],
+        "tStartMs": 457120
+      },
+      {
+        "dDurationMs": 8800,
+        "segs": [
+          {
+            "utf8": "people care about in any given product.\nBecause of that, we’ve found that trying  "
+          }
+        ],
+        "tStartMs": 460800
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "to optimize too much for that kind of stuff has \nled us astray. It’s actually not led towards the  "
+          }
+        ],
+        "tStartMs": 469600
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "highest quality product, the most usage, and best \nfeedback within Meta AI as people use our stuff. "
+          }
+        ],
+        "tStartMs": 476320
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "So we're trying to anchor our north star on \nthe product value that people report to us,  "
+          }
+        ],
+        "tStartMs": 483200
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "what they say that they want, and what \ntheir revealed preferences are, and using  "
+          }
+        ],
+        "tStartMs": 492480
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "the experiences that we have. Sometimes \nthese benchmarks just don't quite line up.  "
+          }
+        ],
+        "tStartMs": 496560
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "I think a lot of them are quite easily gameable.\nOn the Arena you'll see stuff like Sonnet 3.7,  "
+          }
+        ],
+        "tStartMs": 503760
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "which is a great model, and it's not near the \ntop. It was relatively easy for our team to  "
+          }
+        ],
+        "tStartMs": 512880
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "tune a version of Llama 4 Maverick that could \nbe way at the top. But the version we released,  "
+          }
+        ],
+        "tStartMs": 519200
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "the pure model, actually has no tuning for that \nat all, so it's further down. So you just need  "
+          }
+        ],
+        "tStartMs": 527120
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "to be careful with some of these benchmarks. \nWe're going to index primarily on the products. "
+          }
+        ],
+        "tStartMs": 532400
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "Do you feel like there is some benchmark which \ncaptures what you see as a north star of value  "
+          }
+        ],
+        "tStartMs": 537440
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "to the user which can be be objectively measured \nbetween different models and where you'd say,  "
+          }
+        ],
+        "tStartMs": 543120
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "\"I need Llama 4 to come out on top on this”?\nOur benchmark is basically user value in Meta AI. "
+          }
+        ],
+        "tStartMs": 548800
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "But you can't compare that to other models.\nWe might be able to, because we might be able  "
+          }
+        ],
+        "tStartMs": 557040
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "to run other models and be able to tell. That's \none of the advantages of open source. You have  "
+          }
+        ],
+        "tStartMs": 560640
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "a good community of folks who can poke holes \nin your stuff and point out, \"Okay, where is  "
+          }
+        ],
+        "tStartMs": 565920
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "your model not good, and where is it good?\"\nThe reality at this point is that all these  "
+          }
+        ],
+        "tStartMs": 570160
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "models are optimized for slightly different \nmixes of things. Everyone is trying to go  "
+          }
+        ],
+        "tStartMs": 576320
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "towards the same end in that all the leading \nlabs are trying to create general intelligence,  "
+          }
+        ],
+        "tStartMs": 582000
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "superintelligence, whatever you call it. AI \nthat can lead toward a world of abundance  "
+          }
+        ],
+        "tStartMs": 588160
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "where everyone has these superhuman tools \nto create whatever they want. That leads  "
+          }
+        ],
+        "tStartMs": 593600
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "to dramatically empowering people and \ncreating all these economic benefits. "
+          }
+        ],
+        "tStartMs": 598640
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "However you define it, that's what \na lot of the labs are going for.  "
+          }
+        ],
+        "tStartMs": 602960
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "But there's no doubt that different folks have \noptimized toward different things. I think the  "
+          }
+        ],
+        "tStartMs": 609440
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "Anthropic folks have really focused on coding and \nagents around that. The OpenAI folks, I think,  "
+          }
+        ],
+        "tStartMs": 613520
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "have gone a little more toward reasoning recently.\nThere’s a space which, if I had to guess,  "
+          }
+        ],
+        "tStartMs": 620160
+      },
+      {
+        "dDurationMs": 10240,
+        "segs": [
+          {
+            "utf8": "I think will end up being the most used \none: quick, very natural to interact with,  "
+          }
+        ],
+        "tStartMs": 629440
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "natively multimodal, fitting throughout your \nday in the ways you want to interact with it. "
+          }
+        ],
+        "tStartMs": 640720
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "I think you got a chance to play around with \nthe new Meta AI app that we're releasing.  "
+          }
+        ],
+        "tStartMs": 647600
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "One of the fun things we put in there is the \ndemo for the full-duplex voice. It's early.  "
+          }
+        ],
+        "tStartMs": 654000
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "There’s a reason why we haven't made that the \ndefault voice model in the app yet. But there's  "
+          }
+        ],
+        "tStartMs": 661840
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "something about how naturally conversational \nit is that's really fun and compelling. "
+          }
+        ],
+        "tStartMs": 665600
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "Being able to mix that in with the right \npersonalization is going to lead toward a  "
+          }
+        ],
+        "tStartMs": 672320
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "product experience where… If you fast-forward \na few years, I think we're just going to be  "
+          }
+        ],
+        "tStartMs": 679520
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "talking to AI throughout the day about \ndifferent things we're wondering about. "
+          }
+        ],
+        "tStartMs": 685440
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "You'll have your phone. You'll talk to it \nwhile browsing your feed apps. It'll give you  "
+          }
+        ],
+        "tStartMs": 691760
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "context about different stuff. It'll answer your \nquestions. It'll help you as you're interacting  "
+          }
+        ],
+        "tStartMs": 696240
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "with people in messaging apps. Eventually, I \nthink we'll walk through our daily lives and  "
+          }
+        ],
+        "tStartMs": 700080
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "have glasses or other kinds of AI devices and \njust seamlessly interact with it all day long. "
+          }
+        ],
+        "tStartMs": 706800
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "That’s the north star. Whatever the benchmarks \nare that lead toward people feeling like the  "
+          }
+        ],
+        "tStartMs": 716560
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "quality is where they want to interact with it, \nthat's what will ultimately matter the most to us. "
+          }
+        ],
+        "tStartMs": 723680
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "I got a chance to play around with both Orion \nand also the Meta AI app, and the voice mode  "
+          }
+        ],
+        "tStartMs": 731280
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "was super smooth. It was quite impressive.\nOn the point of what the different labs are  "
+          }
+        ],
+        "tStartMs": 736240
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "optimizing for — to steelman their view — I think \na lot of them believe that once you fully automate  "
+          }
+        ],
+        "tStartMs": 741440
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "software engineering and AI research, then you can \nkick off an intelligence explosion. You would have  "
+          }
+        ],
+        "tStartMs": 746880
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "millions of copies of these software engineers \nreplicating the research that happened between  "
+          }
+        ],
+        "tStartMs": 753280
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "Llama 1 and Llama 4 — that scale of improvement \nagain — but in a matter of weeks or months rather  "
+          }
+        ],
+        "tStartMs": 757120
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "than years. So it really matters to just close the \nloop on the software engineer, and then you can be  "
+          }
+        ],
+        "tStartMs": 762320
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "the first to ASI. What do you make of that?\nI personally think that's pretty compelling.  "
+          }
+        ],
+        "tStartMs": 768560
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "That's why we have a big coding \neffort too. We're working on  "
+          }
+        ],
+        "tStartMs": 774000
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "a number of coding agents inside Meta. Because \nwe're not really an enterprise software company,  "
+          }
+        ],
+        "tStartMs": 777920
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "we're primarily building it for ourselves.\nAgain, we go for a specific goal. We're not trying  "
+          }
+        ],
+        "tStartMs": 786320
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "to build a general developer tool. We're trying to \nbuild a coding agent and an AI research agent that  "
+          }
+        ],
+        "tStartMs": 793360
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "advances Llama research specifically. And it's \nfully plugged into our toolchain and all that. "
+          }
+        ],
+        "tStartMs": 802880
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "That's important and is going to end up being \nan important part of how this stuff gets done.  "
+          }
+        ],
+        "tStartMs": 812160
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "I would guess that sometime in the next 12 to \n18 months, we'll reach the point where most of  "
+          }
+        ],
+        "tStartMs": 818400
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "the code that's going toward these efforts is \nwritten by AI. And I don't mean autocomplete. "
+          }
+        ],
+        "tStartMs": 825280
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "Today you have good autocomplete. You start \nwriting something and it can complete a section  "
+          }
+        ],
+        "tStartMs": 830560
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "of code. I'm talking more like: you give it a \ngoal, it can run tests, it can improve things,  "
+          }
+        ],
+        "tStartMs": 837440
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "it can find issues, it writes higher quality \ncode than the average very good person on the  "
+          }
+        ],
+        "tStartMs": 845600
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "team already. I think that's going to be \na really important part of this for sure. "
+          }
+        ],
+        "tStartMs": 853200
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "But I don't know if that's the whole game. That's \ngoing to be a big industry, and it's going to be  "
+          }
+        ],
+        "tStartMs": 861200
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "an important part of how AI gets developed. But I \nthink there are still… One way to think about it  "
+          }
+        ],
+        "tStartMs": 868880
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "is that this is a massive space. I don't think \nthere's just going to be one company with one  "
+          }
+        ],
+        "tStartMs": 876400
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "optimization function that serves everyone as \nbest as possible. There are going to be a bunch  "
+          }
+        ],
+        "tStartMs": 882320
+      },
+      {
+        "dDurationMs": 1280,
+        "segs": [
+          {
+            "utf8": "of different labs doing leading work in different \ndomains. Some will be more enterprise-focused or  "
+          }
+        ],
+        "tStartMs": 891600
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "coding-focused. Some will be more \nproductivity-focused. Some will be  "
+          }
+        ],
+        "tStartMs": 892880
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "more social or entertainment-focused.\nWithin the assistant space, there will  "
+          }
+        ],
+        "tStartMs": 896800
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "be some that are more informational and \nproductivity-focused, and some that are  "
+          }
+        ],
+        "tStartMs": 901600
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "more companion-focused. It’s going to \nbe a lot of stuff that’s just fun and  "
+          }
+        ],
+        "tStartMs": 905920
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "entertaining and shows up in your feed.\nThere's just a huge amount of space. Part  "
+          }
+        ],
+        "tStartMs": 910240
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "of what's fun about going toward this AGI future \nis that there are a bunch of common threads for  "
+          }
+        ],
+        "tStartMs": 916400
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "what needs to get invented, but also a lot of \nthings that still need to be created. I think  "
+          }
+        ],
+        "tStartMs": 924480
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "you're going to start seeing more specialization \nbetween different groups, if I had to guess. "
+          }
+        ],
+        "tStartMs": 931600
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "It’s really interesting to me that you \nbasically agree with the premise that  "
+          }
+        ],
+        "tStartMs": 935200
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "there will be an intelligence explosion and \nwe’ll get something like superintelligence on  "
+          }
+        ],
+        "tStartMs": 939680
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "the other end. Tell me if I'm misunderstanding \nyou. If that’s the case, why even bother with  "
+          }
+        ],
+        "tStartMs": 943040
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "personal assistants and whatever else? Why not \njust get to superhuman intelligence first and  "
+          }
+        ],
+        "tStartMs": 948080
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "then deal with everything else later?\nI think that's just one aspect of the  "
+          }
+        ],
+        "tStartMs": 951840
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "flywheel. Part of what I generally disagree \nwith on the fast-takeoff view is that it takes  "
+          }
+        ],
+        "tStartMs": 955040
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "time to build out physical infrastructure.\nIf you want to build a gigawatt cluster of  "
+          }
+        ],
+        "tStartMs": 962000
+      },
+      {
+        "dDurationMs": 11440,
+        "segs": [
+          {
+            "utf8": "compute, that just takes time. NVIDIA needs time \nto stabilize their new generation of systems. Then  "
+          }
+        ],
+        "tStartMs": 968720
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "you need to figure out the networking around \nit. Then you need to build the building. You  "
+          }
+        ],
+        "tStartMs": 980160
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "need to get permitting. You need to get the \nenergy. Maybe that means gas turbines or  "
+          }
+        ],
+        "tStartMs": 984720
+      },
+      {
+        "dDurationMs": 2800,
+        "segs": [
+          {
+            "utf8": "green energy, either way, there’s \na whole supply chain of that stuff. "
+          }
+        ],
+        "tStartMs": 993280
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "We talked about this a bunch the last time \nI was on the podcast with you. I think some  "
+          }
+        ],
+        "tStartMs": 997440
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "of these are just physical-world, human-time \nthings. As you start getting more intelligence  "
+          }
+        ],
+        "tStartMs": 1002480
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "in one part of the stack, you’re just going \nto run into a different set of bottlenecks.  "
+          }
+        ],
+        "tStartMs": 1008160
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "That’s how engineering always works: solve \none bottleneck, you get another bottleneck. "
+          }
+        ],
+        "tStartMs": 1014720
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "Another bottleneck in the system or ingredient \nthat’s going to make this work well, is people  "
+          }
+        ],
+        "tStartMs": 1020320
+      },
+      {
+        "dDurationMs": 12400,
+        "segs": [
+          {
+            "utf8": "getting used to learning and having a feedback \nloop with using the system. These systems don’t  "
+          }
+        ],
+        "tStartMs": 1028320
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "just show up fully formed with people magically \nknowing how to use them. There's a co-evolution  "
+          }
+        ],
+        "tStartMs": 1045600
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "that happens where people are learning how to best \nuse these AI assistants. At the same time, the AI  "
+          }
+        ],
+        "tStartMs": 1054000
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "assistants are learning what people care about. \nDevelopers are making the AI assistants better. "
+          }
+        ],
+        "tStartMs": 1062160
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "You're building up a base of context too. \nYou wake up a year or two into it and the  "
+          }
+        ],
+        "tStartMs": 1071280
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "assistant can reference things you talked \nabout two years ago and that’s pretty cool.  "
+          }
+        ],
+        "tStartMs": 1077360
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "You couldn’t do that even if you launched the \nperfect thing on day one. There’s no way it  "
+          }
+        ],
+        "tStartMs": 1081680
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "could reference what you talked about two \nyears ago if it didn’t exist two years ago. "
+          }
+        ],
+        "tStartMs": 1085120
+      },
+      {
+        "dDurationMs": 9520,
+        "segs": [
+          {
+            "utf8": "So I guess my view is that there's this huge \nintelligence growth. There’s a very rapid curve  "
+          }
+        ],
+        "tStartMs": 1087840
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "on the uptake of people interacting with the \nAI assistants, and the learning feedback and  "
+          }
+        ],
+        "tStartMs": 1097360
+      },
+      {
+        "dDurationMs": 11040,
+        "segs": [
+          {
+            "utf8": "data flywheel around that. And then there is \nalso the buildout of the supply chains and  "
+          }
+        ],
+        "tStartMs": 1103760
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "infrastructure and regulatory frameworks to \nenable the scaling of a lot of the physical  "
+          }
+        ],
+        "tStartMs": 1114800
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "infrastructure. At some level, all of those are \ngoing to be necessary, not just the coding piece. "
+          }
+        ],
+        "tStartMs": 1118960
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "One specific example of this that I think is \ninteresting. Even if you go back a few years ago,  "
+          }
+        ],
+        "tStartMs": 1127360
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "we had a project, I think it was on our ads team, \nto automate ranking experiments. That's a pretty  "
+          }
+        ],
+        "tStartMs": 1132320
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "constrained environment. It's not open-ended code. \nIt’s basically, look at the whole history of the  "
+          }
+        ],
+        "tStartMs": 1140800
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "company — every experiment that any engineer has \never done in the ad system — and look at what  "
+          }
+        ],
+        "tStartMs": 1146480
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "worked, what didn't, and what the results of those \nwere. Then basically formulate new hypotheses for  "
+          }
+        ],
+        "tStartMs": 1153120
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "different tests that we should run that could \nimprove the performance of the ad system. "
+          }
+        ],
+        "tStartMs": 1159280
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "What we basically found was that we were \nbottlenecked on compute to run tests,  "
+          }
+        ],
+        "tStartMs": 1165360
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "based on the number of hypotheses. It turns \nout, even with just the humans we have right now  "
+          }
+        ],
+        "tStartMs": 1171920
+      },
+      {
+        "dDurationMs": 9440,
+        "segs": [
+          {
+            "utf8": "on the ads team, we already have more good ideas \nto test than we actually have either compute or,  "
+          }
+        ],
+        "tStartMs": 1177120
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "really, cohorts of people to test them with.\nEven if you have three and a half billion people  "
+          }
+        ],
+        "tStartMs": 1186560
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "using your products, you still want each test to \nbe statistically significant. It needs to have  "
+          }
+        ],
+        "tStartMs": 1192640
+      },
+      {
+        "dDurationMs": 9520,
+        "segs": [
+          {
+            "utf8": "hundreds of thousands or millions of people. \nThere's only so much throughput you can get on  "
+          }
+        ],
+        "tStartMs": 1200000
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "testing through that. So we're already at the \npoint, even with just the people we have, that  "
+          }
+        ],
+        "tStartMs": 1209520
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "we can't really test everything that we want.\nNow just being able to test more things is not  "
+          }
+        ],
+        "tStartMs": 1218000
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "necessarily going to be additive to that. We need \nto get to the point where the average quality of  "
+          }
+        ],
+        "tStartMs": 1223600
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "the hypotheses that the AI is generating \nis better than all the things above the  "
+          }
+        ],
+        "tStartMs": 1227520
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "line that we’re actually able to test that the \nbest humans on the team have been able to do,  "
+          }
+        ],
+        "tStartMs": 1233520
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "before it will even be marginally useful for it.\nWe'll get there I think pretty quickly. But  "
+          }
+        ],
+        "tStartMs": 1237840
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "it's not just, “Okay, cool, the thing \ncan write code, and now all of a sudden  "
+          }
+        ],
+        "tStartMs": 1247040
+      },
+      {
+        "dDurationMs": 10240,
+        "segs": [
+          {
+            "utf8": "everything is just improving massively.” There are \nreal-world constraints that need to be overcome. "
+          }
+        ],
+        "tStartMs": 1249760
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": " Then you need to have the compute and \nthe people to test. Then over time,  "
+          }
+        ],
+        "tStartMs": 1260000
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "as the quality creeps up, are we here in \nfive or 10 years where no set of people  "
+          }
+        ],
+        "tStartMs": 1265760
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "can generate a hypothesis as good as the AI \nsystem? I don't know, maybe. In that world,  "
+          }
+        ],
+        "tStartMs": 1271040
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "obviously that's going to be how all the value \nis created. But that's not the first step."
+          }
+        ],
+        "tStartMs": 1277360
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "So if you buy this view, that this \nis where intelligence is headed,  "
+          }
+        ],
+        "tStartMs": 1350000
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "the reason to be bullish on Meta is obviously \nthat you have all this distribution. You can  "
+          }
+        ],
+        "tStartMs": 1355360
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "also use that to learn more things that can \nbe useful for training. You mentioned the  "
+          }
+        ],
+        "tStartMs": 1360240
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "Meta AI app now has a billion active users.\nNot the app. The app is a standalone thing  "
+          }
+        ],
+        "tStartMs": 1364560
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "that we're just launching now. It’ll be fun \nfor people who want to use it. It's a cool  "
+          }
+        ],
+        "tStartMs": 1371360
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "experience. We can talk about that too because \nwe’re experimenting with some new ideas in there  "
+          }
+        ],
+        "tStartMs": 1375440
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "that I think are novel and worth talking through.\nBut I’m mostly talking about our apps. Meta AI  "
+          }
+        ],
+        "tStartMs": 1379680
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "is actually most used in WhatsApp. WhatsApp is \nmostly used outside of the U.S. We just passed  "
+          }
+        ],
+        "tStartMs": 1384800
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "like a hundred million people in the US, but \nit's not the primary messaging system in the US,  "
+          }
+        ],
+        "tStartMs": 1392080
+      },
+      {
+        "dDurationMs": 9680,
+        "segs": [
+          {
+            "utf8": "iMessage is. So people in the U.S. probably \ntend to underestimate Meta AI usage somewhat.  "
+          }
+        ],
+        "tStartMs": 1395440
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "But part of the reason the standalone app is \ngoing to be so important is because the US,  "
+          }
+        ],
+        "tStartMs": 1405120
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "for a lot of reasons, is one of the most important \ncountries. And the fact that WhatsApp is the main  "
+          }
+        ],
+        "tStartMs": 1409520
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "way people are using Meta AI and that's not \nthe main messaging system in the US means  "
+          }
+        ],
+        "tStartMs": 1415280
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "we need another way to build a first-class \nexperience that's really in front of people. "
+          }
+        ],
+        "tStartMs": 1419280
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "And I guess, to finish the question, the bearish \ncase would be that if the future of AI is less  "
+          }
+        ],
+        "tStartMs": 1425040
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "about just answering your questions and more \nabout being a virtual coworker, then it's not  "
+          }
+        ],
+        "tStartMs": 1431760
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "clear how Meta AI inside of WhatsApp gives \nyou the relevant training data to make a  "
+          }
+        ],
+        "tStartMs": 1436560
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "fully autonomous programmer or remote worker. \nIn that case, does it not matter that much who  "
+          }
+        ],
+        "tStartMs": 1443760
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "has more distribution right now with LLMs?\nAgain, I just think there are going to be  "
+          }
+        ],
+        "tStartMs": 1452240
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "different things. Imagine you were sitting \nat the beginning of the development of the  "
+          }
+        ],
+        "tStartMs": 1455520
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "internet and you asked, \"What's going to \nbe the main internet thing? Is it going  "
+          }
+        ],
+        "tStartMs": 1460960
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "to be knowledge work or massive consumer apps?\"\nYou got both. You don’t have to choose one. The  "
+          }
+        ],
+        "tStartMs": 1464720
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "world is big and complicated. Does one company \nbuild all of that stuff? Normally the answer is  "
+          }
+        ],
+        "tStartMs": 1473200
+      },
+      {
+        "dDurationMs": 9680,
+        "segs": [
+          {
+            "utf8": "no. But to your question, people do not code in \nWhatsApp for the most part. And I don't foresee  "
+          }
+        ],
+        "tStartMs": 1478160
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "that people starting to write code in WhatsApp \nis going to be a major use case. Although I do  "
+          }
+        ],
+        "tStartMs": 1487840
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "think people are going to ask AI to do a lot of \nthings that result in the AI coding without them  "
+          }
+        ],
+        "tStartMs": 1494480
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "necessarily knowing it. That's a separate thing.\nWe do have a lot of people who are writing code  "
+          }
+        ],
+        "tStartMs": 1498240
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "at Meta and they use Meta AI. We have \nthis internal thing called MetaMate,  "
+          }
+        ],
+        "tStartMs": 1505360
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "and a number of different coding and AI research \nagents that we're building around that. That has  "
+          }
+        ],
+        "tStartMs": 1511520
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "its own feedback loop and I think it can get \nquite good for accelerating those efforts. "
+          }
+        ],
+        "tStartMs": 1519760
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "But again, there are going to be a lot of things. \nAI is almost certainly going to unlock a massive  "
+          }
+        ],
+        "tStartMs": 1523440
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "revolution in knowledge work and code. I also \nthink it’s going to be the next generation of  "
+          }
+        ],
+        "tStartMs": 1531520
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "search and how people get information, \nand do more complex information tasks. "
+          }
+        ],
+        "tStartMs": 1538080
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "I also think it's going to be fun. People are \ngoing to use it to be entertained. A lot of the  "
+          }
+        ],
+        "tStartMs": 1544400
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "internet today is memes and humor. We have this \namazing technology at our fingertips. It’s amazing  "
+          }
+        ],
+        "tStartMs": 1552800
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "and funny when you think about how much of human \nenergy just goes toward entertaining ourselves,  "
+          }
+        ],
+        "tStartMs": 1559840
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "designing, pushing culture forward, and \nfinding humorous ways to explain cultural  "
+          }
+        ],
+        "tStartMs": 1564320
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "phenomena that we observe. I think that's almost \ncertainly going to be the case in the future. "
+          }
+        ],
+        "tStartMs": 1569760
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "Look at the evolution of things like Instagram \nand Facebook. If you go back 10, 15, 20 years ago,  "
+          }
+        ],
+        "tStartMs": 1575840
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "it was text. Then we all got phones with cameras, \nand most of the content became photos. Then the  "
+          }
+        ],
+        "tStartMs": 1582800
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "mobile networks got good enough that if you \nwanted to watch a video on your phone, it wasn't  "
+          }
+        ],
+        "tStartMs": 1590560
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "just buffering the whole time. So that got good.\nOver the last 10 years, most of the content has  "
+          }
+        ],
+        "tStartMs": 1594400
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "moved toward video at this point. Today, most \nof the time spent on Facebook and Instagram  "
+          }
+        ],
+        "tStartMs": 1599600
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "is on video. But do you think in five years we’re \njust going to be sitting in our feed and consuming  "
+          }
+        ],
+        "tStartMs": 1603680
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "media that's just video? No, it's going to be \ninteractive. You'll be scrolling through your  "
+          }
+        ],
+        "tStartMs": 1610480
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "feed. There will be content that maybe looks \nlike a Reel to start. But you can talk to it,  "
+          }
+        ],
+        "tStartMs": 1614240
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "or interact with it, and it talks back, \nor it changes what it's doing. Or you can  "
+          }
+        ],
+        "tStartMs": 1622240
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "jump into it like a game and interact \nwith it. That's all going to be AI. "
+          }
+        ],
+        "tStartMs": 1625360
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "My point is that there are going to be all \nthese different things. We're ambitious,  "
+          }
+        ],
+        "tStartMs": 1631920
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "so we're working on a bunch of them. But I don't \nthink any one company is going to do all of it. "
+          }
+        ],
+        "tStartMs": 1637040
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "On this point about AI-generated content \nand AI interactions, already people have  "
+          }
+        ],
+        "tStartMs": 1642320
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "meaningful relationships with AI therapists, \nAI friends, maybe more. This is just going to  "
+          }
+        ],
+        "tStartMs": 1648240
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "get more intense as these AIs become more \nunique, more personable, more intelligent,  "
+          }
+        ],
+        "tStartMs": 1654800
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "more spontaneous, more funny, and so forth.\nPeople are going to have relationships with  "
+          }
+        ],
+        "tStartMs": 1660080
+      },
+      {
+        "dDurationMs": 2400,
+        "segs": [
+          {
+            "utf8": "AI. How do we make sure these \nare healthy relationships? "
+          }
+        ],
+        "tStartMs": 1664320
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "There are a lot of questions that you only can \nreally answer as you start seeing the behaviors.  "
+          }
+        ],
+        "tStartMs": 1668320
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "Probably the most important upfront thing is \njust to ask that question and care about it at  "
+          }
+        ],
+        "tStartMs": 1674480
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "each step along the way. But I also think being \ntoo prescriptive upfront and saying, \"We think  "
+          }
+        ],
+        "tStartMs": 1678880
+      },
+      {
+        "dDurationMs": 8720,
+        "segs": [
+          {
+            "utf8": "these things are not good\" often cuts off value.\nPeople use stuff that's valuable for them. One  "
+          }
+        ],
+        "tStartMs": 1683680
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "of my core guiding principles in designing \nproducts is that people are smart. They know  "
+          }
+        ],
+        "tStartMs": 1692400
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "what's valuable in their lives. Every \nonce in a while, something bad happens  "
+          }
+        ],
+        "tStartMs": 1698160
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "in a product and you want to make sure you \ndesign your product well to minimize that. "
+          }
+        ],
+        "tStartMs": 1704000
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "But if you think something someone is doing \nis bad and they think it's really valuable,  "
+          }
+        ],
+        "tStartMs": 1709760
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "most of the time in my experience, they're right \nand you're wrong. You just haven't come up with  "
+          }
+        ],
+        "tStartMs": 1716320
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "the framework yet for understanding why the thing \nthey're doing is valuable and helpful in their  "
+          }
+        ],
+        "tStartMs": 1721280
+      },
+      {
+        "dDurationMs": 9520,
+        "segs": [
+          {
+            "utf8": "life. That's the main way I think about it.\nI do think people are going to use AI for a  "
+          }
+        ],
+        "tStartMs": 1725520
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "lot of these social tasks. Already, one of the \nmain things we see people using Meta AI for is  "
+          }
+        ],
+        "tStartMs": 1735040
+      },
+      {
+        "dDurationMs": 8800,
+        "segs": [
+          {
+            "utf8": "talking through difficult conversations they \nneed to have with people in their lives. \"I'm  "
+          }
+        ],
+        "tStartMs": 1740400
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "having this issue with my girlfriend. Help me \nhave this conversation.” Or, \"I need to have a  "
+          }
+        ],
+        "tStartMs": 1749200
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "hard conversation with my boss at work. How do I \nhave that conversation?\" That's pretty helpful.  "
+          }
+        ],
+        "tStartMs": 1753680
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "As the personalization loop kicks in and the \nAI starts to get to know you better and better,  "
+          }
+        ],
+        "tStartMs": 1760320
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "that will just be really compelling.\nHere’s one stat from working on social media  "
+          }
+        ],
+        "tStartMs": 1768240
+      },
+      {
+        "dDurationMs": 10720,
+        "segs": [
+          {
+            "utf8": "for a long time that I always think is crazy. The \naverage American has fewer than three friends,  "
+          }
+        ],
+        "tStartMs": 1775440
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "fewer than three people they would consider \nfriends. And the average person has demand for  "
+          }
+        ],
+        "tStartMs": 1786160
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "meaningfully more. I think it's something like 15 \nfriends or something. At some point you're like,  "
+          }
+        ],
+        "tStartMs": 1791520
+      },
+      {
+        "dDurationMs": 2640,
+        "segs": [
+          {
+            "utf8": "\"All right, I'm just too busy, \nI can't deal with more people.\" "
+          }
+        ],
+        "tStartMs": 1796000
+      },
+      {
+        "dDurationMs": 8800,
+        "segs": [
+          {
+            "utf8": "But the average person wants more connection \nthan they have. There's a lot of concern people  "
+          }
+        ],
+        "tStartMs": 1798640
+      },
+      {
+        "dDurationMs": 10880,
+        "segs": [
+          {
+            "utf8": "raise like, \"Is this going to replace real-world, in-person connections?\" And my default  "
+          }
+        ],
+        "tStartMs": 1807440
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "is that the answer to that is probably not. \nThere are all these things that are better  "
+          }
+        ],
+        "tStartMs": 1818320
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "about physical connections when you can have \nthem. But the reality is that people just don't  "
+          }
+        ],
+        "tStartMs": 1824320
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "have as much connection as they want. They feel \nmore alone a lot of the time than they would like. "
+          }
+        ],
+        "tStartMs": 1830080
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "So I think a lot of these things — things that \ntoday might have a little bit of stigma around  "
+          }
+        ],
+        "tStartMs": 1835680
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "them — over time, we'll find the vocabulary as \na society to articulate why they are valuable,  "
+          }
+        ],
+        "tStartMs": 1843920
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "why the people who are doing them are rational for \ndoing it, and how it is actually adding value to  "
+          }
+        ],
+        "tStartMs": 1851680
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "their lives. But also the field is very early. \nThere are a handful of companies doing virtual  "
+          }
+        ],
+        "tStartMs": 1858480
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "therapists, virtual girlfriend-type stuff. But \nit's very early. The embodiment in those things  "
+          }
+        ],
+        "tStartMs": 1866960
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "is still pretty weak. You open it up and it's \njust an image of the therapist or the person  "
+          }
+        ],
+        "tStartMs": 1875280
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "you're talking to. Sometimes there's some very \nrough animation, but it's not an embodiment. "
+          }
+        ],
+        "tStartMs": 1882560
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "You've seen the stuff we're working on in Reality \nLabs, where you have the Codec Avatars and it  "
+          }
+        ],
+        "tStartMs": 1888560
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "actually feels like a real person. That's \nwhere it's going. You'll be able to have an  "
+          }
+        ],
+        "tStartMs": 1892880
+      },
+      {
+        "dDurationMs": 10960,
+        "segs": [
+          {
+            "utf8": "always-on video chat with the AI. The gestures are \nimportant too. More than half of communication,  "
+          }
+        ],
+        "tStartMs": 1898880
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "when you're actually having a conversation, is not \nthe words you speak. It's all the nonverbal stuff. "
+          }
+        ],
+        "tStartMs": 1909840
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "I did get a chance to check out Orion the other \nday, and I thought it was super impressive. I'm  "
+          }
+        ],
+        "tStartMs": 1914400
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "mostly optimistic about the technology. Generally, \nlike you mentioned, I'm pretty libertarian  "
+          }
+        ],
+        "tStartMs": 1919280
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "about this. If people are doing something, they \nprobably think it's good for them. Although,  "
+          }
+        ],
+        "tStartMs": 1924080
+      },
+      {
+        "dDurationMs": 2320,
+        "segs": [
+          {
+            "utf8": "I actually don't know if it's the \ncase that if somebody is using TikTok,  "
+          }
+        ],
+        "tStartMs": 1927600
+      },
+      {
+        "dDurationMs": 2800,
+        "segs": [
+          {
+            "utf8": "they would say that they're happy with how much \ntime they're spending on TikTok or something. "
+          }
+        ],
+        "tStartMs": 1929920
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "I'm mostly optimistic about it in the sense that \nif we're going to be living in this future world  "
+          }
+        ],
+        "tStartMs": 1932720
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "of AGI, we need to be upgrading our capabilities \ntoo, with tools like this. And just generally,  "
+          }
+        ],
+        "tStartMs": 1936640
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "there can be more beauty in the world if you \ncan see Studio Ghibli everywhere or something. "
+          }
+        ],
+        "tStartMs": 1943440
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "I was worried about one of the flagship use \ncases that your team showed me. I'm sitting  "
+          }
+        ],
+        "tStartMs": 1946960
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "at the breakfast table and on the periphery of my \nvision is just a bunch of Reels that are scrolling  "
+          }
+        ],
+        "tStartMs": 1953200
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "by. Maybe in the future, my AI girlfriend is on \nthe other side of the screen or something. So  "
+          }
+        ],
+        "tStartMs": 1957280
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "I am worried that we're just removing all the \nfriction between getting totally reward-hacked  "
+          }
+        ],
+        "tStartMs": 1963280
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "by our technology. How do we make sure this \nis not what ends up happening in five years? "
+          }
+        ],
+        "tStartMs": 1969520
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "Again, I think people have a good sense of what \nthey want. That experience you saw was just a  "
+          }
+        ],
+        "tStartMs": 1977040
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "demo to show multitasking and holograms. I agree, \nI don't think the future is one where you have  "
+          }
+        ],
+        "tStartMs": 1982720
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "stuff that's trying to compete for your attention \nin the corner of your vision all the time. I don't  "
+          }
+        ],
+        "tStartMs": 1991840
+      },
+      {
+        "dDurationMs": 7008,
+        "segs": [
+          {
+            "utf8": "think people would like that too much.\nAs we're designing these glasses,  "
+          }
+        ],
+        "tStartMs": 1995440
+      },
+      {
+        "dDurationMs": 6352,
+        "segs": [
+          {
+            "utf8": "it's actually one of the things that we're really \nmindful of. Probably the number one thing the  "
+          }
+        ],
+        "tStartMs": 2002448
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "glasses need to do is get out of the way and be \ngood glasses. As an aside, I think that's part  "
+          }
+        ],
+        "tStartMs": 2008800
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "of the reason why the Ray-Ban Meta product has \ndone so well. It's great for listening to music,  "
+          }
+        ],
+        "tStartMs": 2016880
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "taking phone calls, taking photos and videos. The \nAI is there when you want it. But when you don't,  "
+          }
+        ],
+        "tStartMs": 2024720
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "it's just a good-looking pair of glasses that \npeople like. It gets out of the way well. "
+          }
+        ],
+        "tStartMs": 2031760
+      },
+      {
+        "dDurationMs": 10080,
+        "segs": [
+          {
+            "utf8": "I would guess that's going to be a very important \ndesign principle for the augmented reality future.  "
+          }
+        ],
+        "tStartMs": 2040240
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "The main thing that I see here is this. It's kind \nof crazy that, for how important the digital world  "
+          }
+        ],
+        "tStartMs": 2050880
+      },
+      {
+        "dDurationMs": 10640,
+        "segs": [
+          {
+            "utf8": "is in all of our lives, the only way we access it \nis through these physical, digital screens. You  "
+          }
+        ],
+        "tStartMs": 2059040
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "have your phone, your computer. You can put a big \nTV on your wall. It's this huge physical thing. "
+          }
+        ],
+        "tStartMs": 2069680
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "It just seems like we're at the point with \ntechnology where the physical and digital  "
+          }
+        ],
+        "tStartMs": 2076720
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "world should really be fully blended. That's \nwhat holographic overlays allow you to do. But  "
+          }
+        ],
+        "tStartMs": 2083760
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "I agree. I think a big part of the design \nprinciples around that will be around how  "
+          }
+        ],
+        "tStartMs": 2090960
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "you'll be interacting with people. You'll be able \nto bring digital artifacts into those interactions  "
+          }
+        ],
+        "tStartMs": 2096000
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "and do cool things very seamlessly.\nIf I want to show you something,  "
+          }
+        ],
+        "tStartMs": 2101120
+      },
+      {
+        "dDurationMs": 8800,
+        "segs": [
+          {
+            "utf8": "here’s a screen. We can interact with it. It \ncan be 3D. We can play with it. You want to  "
+          }
+        ],
+        "tStartMs": 2106400
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "play a card game? All right, here’s a deck of \ncards. We can play with it. If two of us are  "
+          }
+        ],
+        "tStartMs": 2115200
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "physically together and we have a third friend \nwho’s hologramming in, they can participate too. "
+          }
+        ],
+        "tStartMs": 2120720
+      },
+      {
+        "dDurationMs": 10720,
+        "segs": [
+          {
+            "utf8": "But in that world too — just as you don't want \nyour physical space to be cluttered because it  "
+          }
+        ],
+        "tStartMs": 2129120
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "wears on you psychologically — I don't think \npeople are going to want their digital-physical  "
+          }
+        ],
+        "tStartMs": 2139840
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "space to feel that way either.  That's more of an \naesthetic norm that will have to get worked out,  "
+          }
+        ],
+        "tStartMs": 2144080
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "but I think we’ll figure that out.\nGoing back to the AI conversation,  "
+          }
+        ],
+        "tStartMs": 2150880
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "you were mentioning how big of a bottleneck \nthe physical infrastructure can be. Related  "
+          }
+        ],
+        "tStartMs": 2158080
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "to other open-source models, like DeepSeek and \nso forth, DeepSeek right now has less compute  "
+          }
+        ],
+        "tStartMs": 2163360
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "than a lab like Meta and you could argue \nthat it's competitive with the Llama models. "
+          }
+        ],
+        "tStartMs": 2168960
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "If China is better at physical \ninfrastructure, industrial scale-ups,  "
+          }
+        ],
+        "tStartMs": 2173040
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "getting more power and more data centers online, \nhow worried are you that they might beat us here? "
+          }
+        ],
+        "tStartMs": 2178560
+      },
+      {
+        "dDurationMs": 11200,
+        "segs": [
+          {
+            "utf8": "It's a real competition. You're seeing industrial \npolicies really play out. China is bringing online  "
+          }
+        ],
+        "tStartMs": 2185200
+      },
+      {
+        "dDurationMs": 8720,
+        "segs": [
+          {
+            "utf8": "more power. Because of that, the US really needs \nto focus on streamlining the ability to build  "
+          }
+        ],
+        "tStartMs": 2196400
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "data centers and produce energy. Otherwise, I \nthink we’ll be at a significant disadvantage. "
+          }
+        ],
+        "tStartMs": 2205120
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "At the same time, some of the export controls \non things like chips, I think you can see how  "
+          }
+        ],
+        "tStartMs": 2213440
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "they’re clearly working in a way. There was \nall the conversation with DeepSeek about, \"Oh,  "
+          }
+        ],
+        "tStartMs": 2217840
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "they did all these very impressive \nlow-level optimizations.\" And the  "
+          }
+        ],
+        "tStartMs": 2224560
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "reality is, they did and that is impressive.\nBut then you ask, \"Why did they have to do that,  "
+          }
+        ],
+        "tStartMs": 2230880
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "when none of the American labs did it?\" It’s \nbecause they’re using partially nerfed chips  "
+          }
+        ],
+        "tStartMs": 2236160
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "that are the only ones NVIDIA is allowed \nto sell in China because of the export  "
+          }
+        ],
+        "tStartMs": 2241600
+      },
+      {
+        "dDurationMs": 8240,
+        "segs": [
+          {
+            "utf8": "controls. DeepSeek basically had to spend \na bunch of their calories and time doing  "
+          }
+        ],
+        "tStartMs": 2246080
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "low-level infrastructure optimizations \nthat the American labs didn’t have to do. "
+          }
+        ],
+        "tStartMs": 2254320
+      },
+      {
+        "dDurationMs": 8800,
+        "segs": [
+          {
+            "utf8": "Now, they produced a good result on text. DeepSeek \nis text-only. The infrastructure is impressive.  "
+          }
+        ],
+        "tStartMs": 2260240
+      },
+      {
+        "dDurationMs": 9200,
+        "segs": [
+          {
+            "utf8": "The text result is impressive. But every new \nmajor model that comes out now is multimodal.  "
+          }
+        ],
+        "tStartMs": 2269040
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "It's image, it's voice. Theirs isn't.\nNow the question is, why is that the  "
+          }
+        ],
+        "tStartMs": 2278240
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "case? I don’t think it’s because they’re \nnot capable of doing it. It's because they  "
+          }
+        ],
+        "tStartMs": 2285760
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "had to spend their calories on doing these \ninfrastructure optimizations to overcome the  "
+          }
+        ],
+        "tStartMs": 2289760
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "fact that there were these export controls.\nBut when you compare Llama 4 with DeepSeek —I  "
+          }
+        ],
+        "tStartMs": 2293440
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "mean our reasoning model isn’t out yet, so the R1 \ncomparison isn’t clear yet— but we’re basically  "
+          }
+        ],
+        "tStartMs": 2299920
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "in the same ballpark on all the text stuff that \nDeepSeek is doing but with a smaller model. So  "
+          }
+        ],
+        "tStartMs": 2307600
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "the cost-per-intelligence is lower with \nwhat we’re doing for Llama on text. On  "
+          }
+        ],
+        "tStartMs": 2318240
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "the multimodal side we’re effectively leading \nat and it just doesn’t exist in their models. "
+          }
+        ],
+        "tStartMs": 2322960
+      },
+      {
+        "dDurationMs": 9600,
+        "segs": [
+          {
+            "utf8": "So the Llama 4 models, when you compare them \nto what DeepSeek is doing, are good. I think  "
+          }
+        ],
+        "tStartMs": 2327440
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "people will generally prefer to use the Llama \n4 models. But there’s this interesting contour  "
+          }
+        ],
+        "tStartMs": 2337040
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "where it’s clearly a good team doing stuff \nover there. And you're right to ask about the  "
+          }
+        ],
+        "tStartMs": 2343280
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "accessibility of power, the accessibility of \ncompute and chips, because the work that you're  "
+          }
+        ],
+        "tStartMs": 2350000
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "seeing different labs do and the way it's \nplaying out is somewhat downstream of that."
+          }
+        ],
+        "tStartMs": 2356560
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "So Sam Altman recently tweeted that OpenAI is \ngoing to release an open-source SOTA reasoning  "
+          }
+        ],
+        "tStartMs": 2434880
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "model. I think part of the tweet was that they \nwon’t do anything silly, like say you can only  "
+          }
+        ],
+        "tStartMs": 2441120
+      },
+      {
+        "dDurationMs": 8560,
+        "segs": [
+          {
+            "utf8": "use it if you have less than 700 million users.\nDeepSeek has the MIT license, whereas I think  "
+          }
+        ],
+        "tStartMs": 2446560
+      },
+      {
+        "dDurationMs": 2960,
+        "segs": [
+          {
+            "utf8": "a couple of the contingencies in the Llama \nlicense require you to say \"built with Llama\"  "
+          }
+        ],
+        "tStartMs": 2455120
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "on applications using it or any model that you \ntrain using Llama has to begin with the word  "
+          }
+        ],
+        "tStartMs": 2458080
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "\"Llama.\" What do you think about the license? \nShould it be less onerous for developers? "
+          }
+        ],
+        "tStartMs": 2462160
+      },
+      {
+        "dDurationMs": 9520,
+        "segs": [
+          {
+            "utf8": "Look, we basically pioneered the open-source \nLLM thing. So I don't consider the license to  "
+          }
+        ],
+        "tStartMs": 2467600
+      },
+      {
+        "dDurationMs": 9920,
+        "segs": [
+          {
+            "utf8": "be onerous. When we were starting to push on open \nsource, there was this big debate in the industry.  "
+          }
+        ],
+        "tStartMs": 2477120
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "Is this even a reasonable thing to do? Can you \ndo something that is safe and trustworthy with  "
+          }
+        ],
+        "tStartMs": 2488640
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "open source? Will open source ever be able to be \ncompetitive enough that anyone will even care? "
+          }
+        ],
+        "tStartMs": 2494560
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "Basically, when we were answering those \nquestions a lot of the hard work was  "
+          }
+        ],
+        "tStartMs": 2502800
+      },
+      {
+        "dDurationMs": 2960,
+        "segs": [
+          {
+            "utf8": "done by the teams at Meta. There were \nother folks in the industry but really,  "
+          }
+        ],
+        "tStartMs": 2507120
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "the Llama models were the ones that broke open \nthis whole open-source AI thing in a huge way. "
+          }
+        ],
+        "tStartMs": 2510080
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "If we’re going to put all this energy into it, \nthen at a minimum, if you're going to have these  "
+          }
+        ],
+        "tStartMs": 2520320
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "large cloud companies — like Microsoft and Amazon \nand Google — turn around and sell our model,  "
+          }
+        ],
+        "tStartMs": 2527040
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "then we should at least be able to have a \nconversation with them before they do that around  "
+          }
+        ],
+        "tStartMs": 2532720
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "what kind of business arrangement we should have.\nOur goal with the license, we're generally not  "
+          }
+        ],
+        "tStartMs": 2540800
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "trying to stop people from using the model. We \njust think that if you're one of those companies,  "
+          }
+        ],
+        "tStartMs": 2547040
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "or if you're Apple, just come talk to \nus about what you want to do. Let's find  "
+          }
+        ],
+        "tStartMs": 2551920
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "a productive way to do it together. \nI think that’s generally been fine. "
+          }
+        ],
+        "tStartMs": 2558400
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "Now, if the whole open-source part of the \nindustry evolves in a direction where there  "
+          }
+        ],
+        "tStartMs": 2562000
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "are a lot of other great options and the license \nends up being a reason why people don’t want to  "
+          }
+        ],
+        "tStartMs": 2569120
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "use Llama, then we’ll have to reevaluate \nthe strategy. What it makes sense to do  "
+          }
+        ],
+        "tStartMs": 2576240
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "at that point. But I don’t think we’re there.\nThat’s not, in practice, something we’ve seen,  "
+          }
+        ],
+        "tStartMs": 2581920
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "companies coming to us and saying, “We don’t want \nto use this because your license says if you reach  "
+          }
+        ],
+        "tStartMs": 2588240
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "700 million people, you have to come talk to us.” \nSo far, that’s been more something we’ve heard  "
+          }
+        ],
+        "tStartMs": 2595280
+      },
+      {
+        "dDurationMs": 9760,
+        "segs": [
+          {
+            "utf8": "from open-source purists like, “Is this as clean \nof an open-source model as you’d like it to be?” "
+          }
+        ],
+        "tStartMs": 2601680
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "That debate has existed since the beginning \nof open source. All the GPL license stuff  "
+          }
+        ],
+        "tStartMs": 2612800
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "versus other things, do you need to make it \nso that anything that touches open source has  "
+          }
+        ],
+        "tStartMs": 2621680
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "to be open source too? Or can people take \nit and use it in different ways? I'm sure  "
+          }
+        ],
+        "tStartMs": 2627440
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "there will continue to be debates around this.\nBut if you’re spending many billions of dollars  "
+          }
+        ],
+        "tStartMs": 2631040
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "training these models, I think asking the other \ncompanies — the huge ones that are similar in size  "
+          }
+        ],
+        "tStartMs": 2636560
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "and can easily afford to have a relationship \nwith us — to talk to us before they use  "
+          }
+        ],
+        "tStartMs": 2643040
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "it seems like a pretty reasonable thing.\nIf it turns out that other models are also  "
+          }
+        ],
+        "tStartMs": 2648240
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "really good. There’s a bunch of good open-source \nmodels. So that part of your mission is fulfilled,  "
+          }
+        ],
+        "tStartMs": 2655120
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "and maybe other models are better at coding.\nIs there a world where you just say, \"Look, the  "
+          }
+        ],
+        "tStartMs": 2659280
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "open-source ecosystem is healthy. There’s plenty \nof competition. We're happy to just use some  "
+          }
+        ],
+        "tStartMs": 2664960
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "other model, whether it's for internal software \nengineering at Meta or deploying to our apps.  "
+          }
+        ],
+        "tStartMs": 2669200
+      },
+      {
+        "dDurationMs": 9840,
+        "segs": [
+          {
+            "utf8": "We don't necessarily need to build with Llama\"?\nAgain, we do a lot of things. Let's take a step  "
+          }
+        ],
+        "tStartMs": 2674720
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "back. The reason why we're building our own \nbig models is because we want to be able to  "
+          }
+        ],
+        "tStartMs": 2684560
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "build exactly what we want. None of the other \nmodels in the world are exactly what we want. "
+          }
+        ],
+        "tStartMs": 2691120
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "If they're open source, you can take them and \nfine-tune them in different ways. But you still  "
+          }
+        ],
+        "tStartMs": 2697200
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "have to deal with the model architectures. \nAnd they make different size tradeoffs that  "
+          }
+        ],
+        "tStartMs": 2701600
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "affect latency and inference cost. At the scale \nthat we operate at, that stuff really matters. "
+          }
+        ],
+        "tStartMs": 2708720
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "We made the Llama Scout and Maverick models \ncertain sizes for a specific reason. They  "
+          }
+        ],
+        "tStartMs": 2715840
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "fit on a host and we wanted certain latency \n— especially for the voice models that we’re  "
+          }
+        ],
+        "tStartMs": 2722080
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "working on — that we want to pervade everything \nwe're doing from the glasses to all of our apps  "
+          }
+        ],
+        "tStartMs": 2727200
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "to the Meta AI app and all that stuff.\nThere's a level of control of your own  "
+          }
+        ],
+        "tStartMs": 2733680
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "destiny that you only get when you build the stuff \nyourself. That said, AI is going to be used in  "
+          }
+        ],
+        "tStartMs": 2740240
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "every single thing that every company does. When \nwe build a big model, we also have to choose which  "
+          }
+        ],
+        "tStartMs": 2747280
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "internal use cases we're going to optimize for.\nSo does that mean for certain things we might say,  "
+          }
+        ],
+        "tStartMs": 2752560
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "\"Okay, maybe Claude is better for building this \nspecific development tool that this team is  "
+          }
+        ],
+        "tStartMs": 2759200
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "using”? All right, cool then use that. Great. We \ndon’t want to fight with one hand tied behind our  "
+          }
+        ],
+        "tStartMs": 2764000
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "back. We’re doing a lot of different stuff.\nYou also asked, would it not be  "
+          }
+        ],
+        "tStartMs": 2769840
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "important anymore because other people are doing \nopen source? On this, I'm a little more worried.  "
+          }
+        ],
+        "tStartMs": 2776160
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "You have to ask yourself this. For anyone who \nshows up now and is doing open source — now  "
+          }
+        ],
+        "tStartMs": 2784240
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "that we have done it — would they still be \ndoing open source if we weren’t doing it? "
+          }
+        ],
+        "tStartMs": 2789360
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "I think there are a handful of folks who see \nthe trend that more and more development is  "
+          }
+        ],
+        "tStartMs": 2797280
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "going toward open source, and they're like, \"Oh \ncrap, we need to be on this train or else we’re  "
+          }
+        ],
+        "tStartMs": 2801360
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "going to lose.\" If you have a closed-model API and \nincreasingly a lot of developers don't want that. "
+          }
+        ],
+        "tStartMs": 2807520
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "So you’re seeing a bunch of other players start \nto do some work in open source. But it's unclear  "
+          }
+        ],
+        "tStartMs": 2815040
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "if it's dabbling, or fundamental for them the \nway that it has been for us. A good example is  "
+          }
+        ],
+        "tStartMs": 2822320
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "what's going on with Android. Android started \noff as the open-source thing. There's not  "
+          }
+        ],
+        "tStartMs": 2828800
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "really any open-source alternative. Over time, \nAndroid has just gotten more and more closed. "
+          }
+        ],
+        "tStartMs": 2834880
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "So if you're us, you need to worry that if we \nstop pushing the industry in this direction,  "
+          }
+        ],
+        "tStartMs": 2841840
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "all these other people… Maybe they’re only really \ndoing it because they're trying to compete with  "
+          }
+        ],
+        "tStartMs": 2851120
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "us and the direction we’re pushing things. They \nalready showed their revealed preference for what  "
+          }
+        ],
+        "tStartMs": 2856880
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "they would do if open source didn’t exist. \nAnd it wasn’t open source. We just need to  "
+          }
+        ],
+        "tStartMs": 2863680
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "be careful about relying on that continued \nbehavior for the future of the technology  "
+          }
+        ],
+        "tStartMs": 2870800
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "that we're going to build at the company.\nAnother thing I've heard you mention is that  "
+          }
+        ],
+        "tStartMs": 2877040
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "it's important that the standard gets built around \nAmerican models like Llama. I wanted to understand  "
+          }
+        ],
+        "tStartMs": 2880640
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "your logic there. With certain kinds of networks, \nit is the case that the Apple App Store just has  "
+          }
+        ],
+        "tStartMs": 2887840
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "a big contingency around what it's built around.\nBut it doesn't seem like if you built some sort  "
+          }
+        ],
+        "tStartMs": 2893920
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "of scaffold for DeepSeek, you couldn't have \neasily just switched it over to Llama 4,  "
+          }
+        ],
+        "tStartMs": 2899600
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "especially since between generations. Llama \n3 wasn't MoE and Llama 4 is. So things are  "
+          }
+        ],
+        "tStartMs": 2904160
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "changing between generations of models as well.\nWhat’s the reason for thinking things will get  "
+          }
+        ],
+        "tStartMs": 2908400
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "built out in this contingent \nway on a specific standard? "
+          }
+        ],
+        "tStartMs": 2911760
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "I'm not sure, what do you mean by contingent?\nAs in, it's important that people are building  "
+          }
+        ],
+        "tStartMs": 2914480
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "for Llama rather than for LLMs in \ngeneral, because that will determine  "
+          }
+        ],
+        "tStartMs": 2918880
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "what the standard is in the future.\nLook, I think these models encode  "
+          }
+        ],
+        "tStartMs": 2922400
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "values and ways of thinking about the world.\nWe had this interesting experience early on, where  "
+          }
+        ],
+        "tStartMs": 2927200
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "we took an early version of Llama and translated \nit. I think it was French, or some other language. "
+          }
+        ],
+        "tStartMs": 2935040
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "The feedback we got from French people \nwas, \"This sounds like an American who  "
+          }
+        ],
+        "tStartMs": 2944160
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "learned to speak French. It doesn’t sound \nlike a French person.\" And we were like,  "
+          }
+        ],
+        "tStartMs": 2952160
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "“what do you mean, does it not speak French \nwell?” No, it speaks French fine. It was just  "
+          }
+        ],
+        "tStartMs": 2955920
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "that the way it thought about the world seemed \nslightly American. So I think there are these  "
+          }
+        ],
+        "tStartMs": 2959840
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "subtle things that get built into the models.\nOver time, as models get more sophisticated,  "
+          }
+        ],
+        "tStartMs": 2967040
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "they should be able to embody different \nvalue sets across the world. So maybe that's  "
+          }
+        ],
+        "tStartMs": 2973200
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "not a particularly sophisticated example, \nbut I think it illustrates the point. "
+          }
+        ],
+        "tStartMs": 2980960
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "Some of the stuff we've seen in testing some \nof the models, especially coming out of China,  "
+          }
+        ],
+        "tStartMs": 2988240
+      },
+      {
+        "dDurationMs": 9200,
+        "segs": [
+          {
+            "utf8": "have certain values encoded in them. And it’s \nnot just a light fine-tune to change that. Now,  "
+          }
+        ],
+        "tStartMs": 2995680
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "language models — or something that has a kind \nof world model embedded in it — have more values. "
+          }
+        ],
+        "tStartMs": 3006880
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "Reasoning, I guess, you could say has values too. \nBut one of the nice things about reasoning models  "
+          }
+        ],
+        "tStartMs": 3014080
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "is they're trained on verifiable problems. Do you \nneed to be worried about cultural bias if your  "
+          }
+        ],
+        "tStartMs": 3023200
+      },
+      {
+        "dDurationMs": 9440,
+        "segs": [
+          {
+            "utf8": "model is doing math? Probably not. I think \nthe chance that some reasoning model built  "
+          }
+        ],
+        "tStartMs": 3029120
+      },
+      {
+        "dDurationMs": 10800,
+        "segs": [
+          {
+            "utf8": "elsewhere is going to incept you by solving \na math problem in a devious way seems low. "
+          }
+        ],
+        "tStartMs": 3038560
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "But there's a whole different set of issues \naround coding, which is the other verifiable  "
+          }
+        ],
+        "tStartMs": 3049360
+      },
+      {
+        "dDurationMs": 9680,
+        "segs": [
+          {
+            "utf8": "domain. You need to worry about waking up one day \nand if you're using a model that has some tie to  "
+          }
+        ],
+        "tStartMs": 3053920
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "another government, can it embed vulnerabilities \nin code that their intelligence organizations  "
+          }
+        ],
+        "tStartMs": 3063600
+      },
+      {
+        "dDurationMs": 14400,
+        "segs": [
+          {
+            "utf8": "could exploit later? In some future version you're \nusing a model that came from another country  "
+          }
+        ],
+        "tStartMs": 3071120
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "and it's securing your systems. Then you wake \nup and everything is just vulnerable in a way  "
+          }
+        ],
+        "tStartMs": 3085520
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "that that country knows about and you don’t. \nOr it turns on a vulnerability at some point. "
+          }
+        ],
+        "tStartMs": 3089840
+      },
+      {
+        "dDurationMs": 10640,
+        "segs": [
+          {
+            "utf8": "Those are real issues. I'm very interested in \nstudying this because I think one of the main  "
+          }
+        ],
+        "tStartMs": 3095520
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "things that's interesting about open source is \nthe ability to distill models. For most people,  "
+          }
+        ],
+        "tStartMs": 3106160
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "the primary value isn't just taking a model \noff the shelf and saying, \"Okay, Meta built  "
+          }
+        ],
+        "tStartMs": 3112640
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "this version of Llama. I'm going to take it and \nI'm going to run it exactly in my application.\" "
+          }
+        ],
+        "tStartMs": 3117760
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "No, your application isn't doing anything \ndifferent if you're just running our thing.  "
+          }
+        ],
+        "tStartMs": 3121040
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "You're at least going to fine-tune it, or try to \ndistill it into a different model. When we get to  "
+          }
+        ],
+        "tStartMs": 3124240
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "stuff like the Behemoth model, the whole value \nis being able to take this very high amount of  "
+          }
+        ],
+        "tStartMs": 3129120
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "intelligence and distill it down into a smaller \nmodel that you're actually going to want to run. "
+          }
+        ],
+        "tStartMs": 3135840
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "This is the beauty of distillation. It's one of \nthe things that I think has really emerged as a  "
+          }
+        ],
+        "tStartMs": 3140400
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "very powerful technique over the last year, since \nthe last time we sat down. I think it’s worked  "
+          }
+        ],
+        "tStartMs": 3144480
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "better than most people would have predicted. You \ncan basically take a model that's much bigger, and  "
+          }
+        ],
+        "tStartMs": 3150640
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "capture probably 90 or 95% of its intelligence, \nand run it in something that's 10% of the size.  "
+          }
+        ],
+        "tStartMs": 3156800
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "Now, do you get 100% of the intelligence? \nNo. But 95% of the intelligence at 10% of  "
+          }
+        ],
+        "tStartMs": 3161920
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "the cost is pretty good for a lot of things.\nThe other thing that's interesting is that now,  "
+          }
+        ],
+        "tStartMs": 3167680
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "with this more varied open-source community, it's \nnot just Llama. You have other models too. You  "
+          }
+        ],
+        "tStartMs": 3173840
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "have the ability to distill from multiple sources. \nSo now you can basically say, \"Okay, Llama’s  "
+          }
+        ],
+        "tStartMs": 3179920
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "really good at this. Maybe its architecture is \nreally good because it's fundamentally multimodal,  "
+          }
+        ],
+        "tStartMs": 3185840
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "more inference-friendly, more efficient. But let’s \nsay this other model is better at coding.\" Okay,  "
+          }
+        ],
+        "tStartMs": 3190960
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "great. You can distill from both of them and \nbuild something that's better than either  "
+          }
+        ],
+        "tStartMs": 3197600
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "individually, for your own use case. That's cool.\nBut you do need to solve the security problem of  "
+          }
+        ],
+        "tStartMs": 3201040
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "knowing that you can distill it in a way that's \nsafe and secure. This is something that we've  "
+          }
+        ],
+        "tStartMs": 3208160
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "been researching and have put a lot of time into. \nWhat we've basically found is that anything that's  "
+          }
+        ],
+        "tStartMs": 3213840
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "language is quite fraught. There's just a lot of \nvalues embedded into it. Unless you don't care  "
+          }
+        ],
+        "tStartMs": 3220480
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "about taking on the values from whatever model \nyou're distilling from, you probably don't want  "
+          }
+        ],
+        "tStartMs": 3226640
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "to just distill a straight language world model.\nOn reasoning, though, you can get a lot of the way  "
+          }
+        ],
+        "tStartMs": 3230560
+      },
+      {
+        "dDurationMs": 9520,
+        "segs": [
+          {
+            "utf8": "there by limiting it to verifiable domains, and \nrunning code cleanliness and security filters.  "
+          }
+        ],
+        "tStartMs": 3239040
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "Whether it's using Llama Guard open source, \nor the Code Shield open source tools that  "
+          }
+        ],
+        "tStartMs": 3249280
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "we've done, things that allow you to incorporate \ndifferent input into your models and make sure  "
+          }
+        ],
+        "tStartMs": 3252720
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "that both the input and the output are secure.\nThen it’s just a lot of red teaming. It’s  "
+          }
+        ],
+        "tStartMs": 3259520
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "having experts who are looking at the model \nand asking, \"Alright, is this model doing  "
+          }
+        ],
+        "tStartMs": 3267600
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "anything after distillation that we don't want?\" \nI think with the combination of those techniques,  "
+          }
+        ],
+        "tStartMs": 3270320
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "you can probably distill on the reasoning \nside for verifiable domains quite securely.  "
+          }
+        ],
+        "tStartMs": 3277680
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "That's something I'm pretty confident about and \nsomething we've done a lot of research around. "
+          }
+        ],
+        "tStartMs": 3284560
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "But I think this is a very big question. How \ndo you do good distillation? Because there’s  "
+          }
+        ],
+        "tStartMs": 3288800
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "so much value to be unlocked. But at the same \ntime, I do think there is some fundamental  "
+          }
+        ],
+        "tStartMs": 3294160
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "bias embedded in different models.\nSpeaking of value to be unlocked,  "
+          }
+        ],
+        "tStartMs": 3298400
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "what do you think the right way to monetize \nAI will be? Obviously digital ads are quite  "
+          }
+        ],
+        "tStartMs": 3301760
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "lucrative. But as a fraction of total GDP, \nit's small compared to all remote work.  "
+          }
+        ],
+        "tStartMs": 3307120
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "Even if you can increase productivity without \nreplacing work, that's still worth tens of  "
+          }
+        ],
+        "tStartMs": 3314480
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "trillions of dollars. Is it possible that ads \nmight not be it? How do you think about this? "
+          }
+        ],
+        "tStartMs": 3318640
+      },
+      {
+        "dDurationMs": 2560,
+        "segs": [
+          {
+            "utf8": "Like we were talking about before, there's \ngoing to be all these different applications,  "
+          }
+        ],
+        "tStartMs": 3323920
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "and different applications \ntend toward different things. "
+          }
+        ],
+        "tStartMs": 3326480
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "Ads are great when you want to offer \npeople a free service. Because it's free,  "
+          }
+        ],
+        "tStartMs": 3329520
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "you need to cover it somehow. Ads solve this \nproblem where a person does not need to pay for  "
+          }
+        ],
+        "tStartMs": 3334320
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "something. They can get something that is amazing \nfor free. Also by the way, with modern ad systems,  "
+          }
+        ],
+        "tStartMs": 3340960
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "a lot of the time people think the ads \nadd value to the thing if you do it well. "
+          }
+        ],
+        "tStartMs": 3348480
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "You need to be good at ranking and you need to \nhave enough liquidity of advertising inventory.  "
+          }
+        ],
+        "tStartMs": 3355280
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "If you only have five advertisers in the \nsystem, no matter how good you are at ranking,  "
+          }
+        ],
+        "tStartMs": 3361200
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "you may not be able to show something to \nsomeone that they're interested in. But if  "
+          }
+        ],
+        "tStartMs": 3364240
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "you have a million advertisers in the system, \nthen you're probably going to be able to find  "
+          }
+        ],
+        "tStartMs": 3367280
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "something pretty compelling, if you're good at \npicking out the different needles in the haystack  "
+          }
+        ],
+        "tStartMs": 3371840
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "that that person is going to be interested in.\nSo that definitely has its place. But there are  "
+          }
+        ],
+        "tStartMs": 3376240
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "also clearly going to be other business \nmodels as well, including ones that  "
+          }
+        ],
+        "tStartMs": 3383200
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "just have higher costs so it doesn't even \nmake sense to offer them for free. By the way,  "
+          }
+        ],
+        "tStartMs": 3390800
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "there have always been business models like this.\nThere's a reason why social media is free and  "
+          }
+        ],
+        "tStartMs": 3395760
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "ad-supported, but then if you want to \nwatch Netflix or ESPN or something,  "
+          }
+        ],
+        "tStartMs": 3399760
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "you need to pay for that. The content that's going \ninto that, they need to produce it, and that's  "
+          }
+        ],
+        "tStartMs": 3406640
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "very expensive for them to produce. They probably \ncould not have enough ads in the service in order  "
+          }
+        ],
+        "tStartMs": 3410880
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "to make up for the cost of producing the content. \nBasically, you just need to pay to access it. "
+          }
+        ],
+        "tStartMs": 3415520
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "The trade-off is fewer people do it. Instead \nof billions, you're talking about hundreds of  "
+          }
+        ],
+        "tStartMs": 3422720
+      },
+      {
+        "dDurationMs": 8800,
+        "segs": [
+          {
+            "utf8": "millions of people using those services. There's a \nvalue switch there. I think it's similar here. Not  "
+          }
+        ],
+        "tStartMs": 3425440
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "everyone is going to want a software engineer, \nor a thousand software engineering agents,  "
+          }
+        ],
+        "tStartMs": 3434240
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "or whatever it is. But if you do, that's \nsomething you're probably going to be willing  "
+          }
+        ],
+        "tStartMs": 3439280
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "to pay thousands, or tens of thousands, \nor hundreds of thousands of dollars for. "
+          }
+        ],
+        "tStartMs": 3443840
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "That just speaks to the diversity of \ndifferent things that need to get created.  "
+          }
+        ],
+        "tStartMs": 3450960
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "There are going to be business models at \neach point along the spectrum. At Meta,  "
+          }
+        ],
+        "tStartMs": 3455440
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "for the consumer piece we definitely want to \nhave a free thing. I'm sure that will end up  "
+          }
+        ],
+        "tStartMs": 3462400
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "being ad-supported. But I also think we're going \nto want to have a business model that supports  "
+          }
+        ],
+        "tStartMs": 3466480
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "people using arbitrary amounts of compute to do \neven more amazing things than what it would make  "
+          }
+        ],
+        "tStartMs": 3471040
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "sense to offer in the free service. For that, I'm \nsure we'll end up having a premium service. But  "
+          }
+        ],
+        "tStartMs": 3478960
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "I think our basic values on this are that we want \nto serve as many people in the world as possible."
+          }
+        ],
+        "tStartMs": 3485040
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "How do you keep track of all these different \nprojects, some of which we've talked about  "
+          }
+        ],
+        "tStartMs": 3558880
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "today. I'm sure there are many I don't even \nknow about. As the CEO overseeing everything,  "
+          }
+        ],
+        "tStartMs": 3563520
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "there's a big spectrum between going to \nthe Llama team and saying, \"Here are the  "
+          }
+        ],
+        "tStartMs": 3570080
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "hyperparameters you should use,\" versus just \ngiving a mandate like, \"Go make the AI better.\" "
+          }
+        ],
+        "tStartMs": 3572800
+      },
+      {
+        "dDurationMs": 2080,
+        "segs": [
+          {
+            "utf8": "And there are so many different \nprojects. How do you think about  "
+          }
+        ],
+        "tStartMs": 3576960
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "the way in which you can best deliver your \nvalue-add and oversee all these things? "
+          }
+        ],
+        "tStartMs": 3579040
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "A lot of what I spend my time on is trying to \nget awesome people onto the teams. There's that,  "
+          }
+        ],
+        "tStartMs": 3585200
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "and then there's stuff that cuts across \nteams. You build Meta AI, and you want to  "
+          }
+        ],
+        "tStartMs": 3591760
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "get it into WhatsApp or Instagram. Okay, now \nI need to get those teams to talk together.  "
+          }
+        ],
+        "tStartMs": 3597520
+      },
+      {
+        "dDurationMs": 10000,
+        "segs": [
+          {
+            "utf8": "Then there are a bunch of questions like, “do \nyou want the thread for Meta AI in WhatsApp  "
+          }
+        ],
+        "tStartMs": 3603680
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "to feel like other WhatsApp threads, or do you \nwant it to feel like other AI chat experiences?”  "
+          }
+        ],
+        "tStartMs": 3613680
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "There are different idioms for those. So there \nare all these interesting questions that need  "
+          }
+        ],
+        "tStartMs": 3619920
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "to get answered around how does this stuff \nbasically fit into everything we're doing? "
+          }
+        ],
+        "tStartMs": 3624880
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "Then there's a whole other part of what we're \ndoing, which is pushing on the infrastructure.  "
+          }
+        ],
+        "tStartMs": 3629760
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "If you want to stand up a gigawatt cluster, \nfirst of all, that has a lot of implications for  "
+          }
+        ],
+        "tStartMs": 3633600
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "the way we're doing infrastructure buildouts. \nIt has political implications for how you engage  "
+          }
+        ],
+        "tStartMs": 3641920
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "with the different states where you're building \nthat stuff. It has financial implications for  "
+          }
+        ],
+        "tStartMs": 3647040
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "the company in terms of: \"All right, there's a \nlot of economic uncertainty in the world. Do we  "
+          }
+        ],
+        "tStartMs": 3652160
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "double down on infrastructure right now? If so, \nwhat other trade-offs do we want to make around  "
+          }
+        ],
+        "tStartMs": 3657760
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "the company?\" Those are the kinds of decisions \nthat are tough for other people to really make. "
+          }
+        ],
+        "tStartMs": 3663600
+      },
+      {
+        "dDurationMs": 8560,
+        "segs": [
+          {
+            "utf8": "Then there's this question around taste and \nquality. When is something good enough that  "
+          }
+        ],
+        "tStartMs": 3671040
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "we want to ship it? In general, I'm the steward \nof that for the company. Although we have a lot  "
+          }
+        ],
+        "tStartMs": 3679600
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "of other people who I think have good taste as \nwell and are also filters for different things. "
+          }
+        ],
+        "tStartMs": 3688000
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "Those are basically the areas. AI is interesting \nbecause, more than some of the other stuff that we  "
+          }
+        ],
+        "tStartMs": 3695440
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "do, it is more research and model-led than really \nproduct-led. You can't just design the product  "
+          }
+        ],
+        "tStartMs": 3702160
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "that you want and then try to build the model to \nfit into it. You really need to design the model  "
+          }
+        ],
+        "tStartMs": 3708880
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "first and the capabilities that you want, and \nthen you get some emergent properties. Then it's,  "
+          }
+        ],
+        "tStartMs": 3715120
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "\"Oh, you can build some different stuff because \nthis turned out in a certain way.\" At the end  "
+          }
+        ],
+        "tStartMs": 3719440
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "of the day, people want to use the best model.\nThat's partially why, when we're talking about  "
+          }
+        ],
+        "tStartMs": 3724320
+      },
+      {
+        "dDurationMs": 10160,
+        "segs": [
+          {
+            "utf8": "building the most personal AI, the best voice, \nthe best personalization — and also a very smart  "
+          }
+        ],
+        "tStartMs": 3730480
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "experience with very low latency — those are \nthe things that we need to design the whole  "
+          }
+        ],
+        "tStartMs": 3740640
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "system to build. That's why we're working on \nfull-duplex voice. That's why we're working  "
+          }
+        ],
+        "tStartMs": 3745440
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "on personalization to both have good memory \nextraction from your interactions with AI,  "
+          }
+        ],
+        "tStartMs": 3748720
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "but also to be able to plug into all the \nother Meta systems. That's why we design the  "
+          }
+        ],
+        "tStartMs": 3755200
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "specific models that we design, to have the kind \nof size and latency parameters that they do. "
+          }
+        ],
+        "tStartMs": 3761040
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "Speaking of politics, there's been this \nperception that some tech leaders have been  "
+          }
+        ],
+        "tStartMs": 3766480
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "aligning with Trump. You and others donated \nto his inaugural event and were on stage  "
+          }
+        ],
+        "tStartMs": 3773200
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "with him and I think you settled a lawsuit \nthat resulted in them getting $25 million. "
+          }
+        ],
+        "tStartMs": 3777760
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "I wonder what's going on here? Does it feel like \nthe cost of doing business with an administration?  "
+          }
+        ],
+        "tStartMs": 3782720
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "What's the best way to think about this?\nMy view on this is that he's the President  "
+          }
+        ],
+        "tStartMs": 3789920
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "of the United States. Our default, as an American \ncompany, should be to try to have a productive  "
+          }
+        ],
+        "tStartMs": 3794480
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "relationship with whoever is running the \ngovernment. We've tried to offer support  "
+          }
+        ],
+        "tStartMs": 3799360
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "to previous administrations as well. I've been \npretty public with some of my frustrations  "
+          }
+        ],
+        "tStartMs": 3806720
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "with the previous administration, \nhow they basically did not engage  "
+          }
+        ],
+        "tStartMs": 3811920
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "with us or the business community more broadly.\nFrankly, that’s going to be necessary to make  "
+          }
+        ],
+        "tStartMs": 3815760
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "progress on some of these things. We're not going \nto be able to build the level of energy that we  "
+          }
+        ],
+        "tStartMs": 3821680
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "need if you don't have a dialogue, and if they're \nnot prioritizing trying to do those things. "
+          }
+        ],
+        "tStartMs": 3827280
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "A lot of people want to write this story about \nwhat direction people are going. We're trying  "
+          }
+        ],
+        "tStartMs": 3834880
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "to build great stuff, and we want to have a \nproductive relationship with people. That's how I  "
+          }
+        ],
+        "tStartMs": 3843280
+      },
+      {
+        "dDurationMs": 9040,
+        "segs": [
+          {
+            "utf8": "see it. It is also how I would guess most others \nsee it, but obviously, I can't speak for them. "
+          }
+        ],
+        "tStartMs": 3850320
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "You've spoken out about how you've \nrethought some of the ways in which you  "
+          }
+        ],
+        "tStartMs": 3860720
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "engage and defer to the government, in \nterms of moderation stuff in the past. "
+          }
+        ],
+        "tStartMs": 3865680
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "How are you thinking about AI governance? Because \nif AI is as powerful as we think it might be,  "
+          }
+        ],
+        "tStartMs": 3869200
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "the government will want to get involved. What \nis the most productive approach to take there,  "
+          }
+        ],
+        "tStartMs": 3874000
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "and what should the government be thinking about?\nI guess in the past, most of the comments that I  "
+          }
+        ],
+        "tStartMs": 3878160
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "made were in the context of content moderation. \nIt's been an interesting journey over the  "
+          }
+        ],
+        "tStartMs": 3885840
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "last 10 years on this. It's obviously been an \ninteresting time in history. There have been novel  "
+          }
+        ],
+        "tStartMs": 3891200
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "questions raised about online content moderation.\nSome of those have led to productive new systems  "
+          }
+        ],
+        "tStartMs": 3897280
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "getting built, like our AI systems to detect \nnation-states trying to interfere in each other's  "
+          }
+        ],
+        "tStartMs": 3904880
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "elections. I think we will continue building \nthat stuff out, and that has been net positive. "
+          }
+        ],
+        "tStartMs": 3911360
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "With some other stuff, we went down some \nbad paths. I just think the fact-checking  "
+          }
+        ],
+        "tStartMs": 3916720
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "thing was not as effective as Community Notes \nbecause it's not an internet-scale solution.  "
+          }
+        ],
+        "tStartMs": 3921440
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "There weren't enough fact-checkers, and people \ndidn't trust the specific fact-checkers. You  "
+          }
+        ],
+        "tStartMs": 3926400
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "want a more robust system. So I think what we got \nwith Community Notes is the right one on that. "
+          }
+        ],
+        "tStartMs": 3930880
+      },
+      {
+        "dDurationMs": 11600,
+        "segs": [
+          {
+            "utf8": "But my point on this was more that historically, \nI probably deferred a little too much to  "
+          }
+        ],
+        "tStartMs": 3935680
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "either the media and their critiques, or to the \ngovernment, on things that they did not really  "
+          }
+        ],
+        "tStartMs": 3948240
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "have authority over. But just as like a central \nfigure, I think we tried to build systems where  "
+          }
+        ],
+        "tStartMs": 3956320
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "maybe we wouldn't have to make all of the content \nmoderation decisions ourselves or something. "
+          }
+        ],
+        "tStartMs": 3965600
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "I guess part of the growth process over the last \n10 years is realizing, “Okay, we're a meaningful  "
+          }
+        ],
+        "tStartMs": 3972320
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "company. We need to own the decisions that we need \nto make. We should listen to feedback from people,  "
+          }
+        ],
+        "tStartMs": 3979840
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "but we shouldn't defer too much to people who do \nnot actually have authority over this. Because  "
+          }
+        ],
+        "tStartMs": 3984160
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "at the end of the day, we're in the seat, and \nwe need to own the decisions that we make.” "
+          }
+        ],
+        "tStartMs": 3989760
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "It's been a maturation process, and in \nsome ways painful, but I think we're  "
+          }
+        ],
+        "tStartMs": 3997760
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "probably a better company for it.\nWill tariffs increase the cost of  "
+          }
+        ],
+        "tStartMs": 4003440
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "building data centers in the US and \nshift buildouts to Europe and Asia? "
+          }
+        ],
+        "tStartMs": 4007200
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "It is really hard to know how that plays \nout. I think we're probably in the early  "
+          }
+        ],
+        "tStartMs": 4010320
+      },
+      {
+        "dDurationMs": 8720,
+        "segs": [
+          {
+            "utf8": "innings on that, and it's very hard to know.\nWhat is your single highest-leverage hour in  "
+          }
+        ],
+        "tStartMs": 4015520
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "a week? What are you doing in that hour?\nI don't know. Every week is a little bit  "
+          }
+        ],
+        "tStartMs": 4024240
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "different. It's probably got to be the case \nthat the most leveraged thing you do in a  "
+          }
+        ],
+        "tStartMs": 4028000
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "week is not the same thing each week. Or else, \nby definition, you should probably spend more  "
+          }
+        ],
+        "tStartMs": 4033520
+      },
+      {
+        "dDurationMs": 9840,
+        "segs": [
+          {
+            "utf8": "than one hour doing that thing every week.\nI don't know. Part of the fun of this job,  "
+          }
+        ],
+        "tStartMs": 4037680
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "and also of the industry being so dynamic, is \nthat things really move around. The world is  "
+          }
+        ],
+        "tStartMs": 4047520
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "very different now than it was at the beginning \nof the year, or even six months ago, or in the  "
+          }
+        ],
+        "tStartMs": 4055520
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "middle of last year. I think a lot has advanced \nmeaningfully. A lot of cards have been turned  "
+          }
+        ],
+        "tStartMs": 4060000
+      },
+      {
+        "dDurationMs": 2800,
+        "segs": [
+          {
+            "utf8": "over since the last time that we sat down. \nI think that was about a year ago, right? "
+          }
+        ],
+        "tStartMs": 4066000
+      },
+      {
+        "dDurationMs": 2960,
+        "segs": [
+          {
+            "utf8": "Yeah. I guess what you were saying \nearlier that recruiting people is a  "
+          }
+        ],
+        "tStartMs": 4068800
+      },
+      {
+        "dDurationMs": 2560,
+        "segs": [
+          {
+            "utf8": "super high-leverage thing you do.\nIt's very high-leverage, yeah. "
+          }
+        ],
+        "tStartMs": 4071760
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "You talked about these models being mid-level \nsoftware engineers by the end of the year.  "
+          }
+        ],
+        "tStartMs": 4076640
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "What would be possible if, say, software \nproductivity increased like 100x in two  "
+          }
+        ],
+        "tStartMs": 4081360
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "years? What kinds of things could be \nbuilt that can't be built right now? "
+          }
+        ],
+        "tStartMs": 4086240
+      },
+      {
+        "dDurationMs": 8720,
+        "segs": [
+          {
+            "utf8": "What kinds of things? That's an interesting \nquestion. One theme of this conversation is  "
+          }
+        ],
+        "tStartMs": 4089440
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "that the amount of creativity that's going \nto be unlocked is going to be massive. "
+          }
+        ],
+        "tStartMs": 4098160
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "If you look at the overall arc of human \nsociety and the economy over 100 or 150 years,  "
+          }
+        ],
+        "tStartMs": 4105920
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "it's basically people going from being primarily \nagrarian — with most human energy going toward  "
+          }
+        ],
+        "tStartMs": 4115040
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "just feeding ourselves — to that becoming a \nsmaller and smaller percent. And the things that  "
+          }
+        ],
+        "tStartMs": 4121600
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "take care of our basic physical needs have become \na smaller and smaller percent of human energy. "
+          }
+        ],
+        "tStartMs": 4129360
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "That shift has led to two impacts: one is that \nmore people are doing creative and cultural  "
+          }
+        ],
+        "tStartMs": 4134440
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "pursuits. The second is that more people, in \ngeneral, spend less time working and more time on  "
+          }
+        ],
+        "tStartMs": 4140880
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "entertainment and culture. I think that is almost \ncertainly going to continue as this goes on. "
+          }
+        ],
+        "tStartMs": 4148000
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "This isn't the 1-2 year thing of what happens when \nyou have a super powerful software engineer. But  "
+          }
+        ],
+        "tStartMs": 4155520
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "over time, if everyone has these superhuman \ntools to create a ton of different stuff,  "
+          }
+        ],
+        "tStartMs": 4162560
+      },
+      {
+        "dDurationMs": 9920,
+        "segs": [
+          {
+            "utf8": "you're going to get incredible diversity. Part \nof it is going to be solving hard problems:  "
+          }
+        ],
+        "tStartMs": 4168960
+      },
+      {
+        "dDurationMs": 9760,
+        "segs": [
+          {
+            "utf8": "solving diseases, advancing science, developing \nnew technology that makes our lives better. "
+          }
+        ],
+        "tStartMs": 4178880
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "But I would guess that a lot of it is going \nto end up being cultural and social pursuits  "
+          }
+        ],
+        "tStartMs": 4188640
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "and entertainment. I would guess the \nworld is going to get a lot funnier,  "
+          }
+        ],
+        "tStartMs": 4194720
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "weirder, and quirkier, the way that memes on \nthe internet have gotten over the last 10 years.  "
+          }
+        ],
+        "tStartMs": 4202080
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "I think that adds a certain richness and \ndepth. In funny ways, it actually helps you  "
+          }
+        ],
+        "tStartMs": 4210480
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "connect better with people. Now all day long, \nI just find interesting stuff on the internet  "
+          }
+        ],
+        "tStartMs": 4217920
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "and send it in group chats to the people I care \nabout, who I think are going to find it funny. "
+          }
+        ],
+        "tStartMs": 4224240
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "The media that people can produce \ntoday to express very nuanced,  "
+          }
+        ],
+        "tStartMs": 4229680
+      },
+      {
+        "dDurationMs": 9520,
+        "segs": [
+          {
+            "utf8": "specific cultural ideas is really cool. \nThat'll continue to get built out. It does  "
+          }
+        ],
+        "tStartMs": 4234640
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "advance society in a bunch of ways, even if it's \nnot the \"hard science\" way of curing a disease. "
+          }
+        ],
+        "tStartMs": 4244160
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "If you think about it, the Meta social \nmedia view of the world is that yeah,  "
+          }
+        ],
+        "tStartMs": 4252560
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "people are going to spend a lot more time doing \nthat stuff in the future. It's going to be a lot  "
+          }
+        ],
+        "tStartMs": 4256960
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "better, and it's going to help you connect, \nbecause it'll help express different ideas. "
+          }
+        ],
+        "tStartMs": 4261600
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "The world is going to get more complicated, \nbut our technology, our cultural technology, to  "
+          }
+        ],
+        "tStartMs": 4266400
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "express these very complicated things — in a very \nkind of funny little clip or whatever — is going  "
+          }
+        ],
+        "tStartMs": 4270720
+      },
+      {
+        "dDurationMs": 12480,
+        "segs": [
+          {
+            "utf8": "to get so much better. I think that's all great.\nI don't know about next year. One other thought  "
+          }
+        ],
+        "tStartMs": 4277120
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "that I think is interesting to cover is \nthat I tend to think that, for at least  "
+          }
+        ],
+        "tStartMs": 4289600
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "the foreseeable future, this is going to \nlead to more demand for people doing work,  "
+          }
+        ],
+        "tStartMs": 4295520
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "not less. Now, people have a choice of \nhow much time they want to spend working. "
+          }
+        ],
+        "tStartMs": 4302960
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "I'll give you one interesting example we were \ntalking about recently. We have almost three  "
+          }
+        ],
+        "tStartMs": 4308800
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "and a half billion people using our services \nevery day. One question we've struggled with  "
+          }
+        ],
+        "tStartMs": 4315920
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "forever is how do we provide customer support?\nToday, you can write an email, but we've never  "
+          }
+        ],
+        "tStartMs": 4319360
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "seriously been able to contemplate having \nvoice support where someone can just call in.  "
+          }
+        ],
+        "tStartMs": 4326960
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "I guess that's maybe one of the artifacts \nof having a free service. The revenue  "
+          }
+        ],
+        "tStartMs": 4334240
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "per person isn't high enough to have an \neconomic model where people can call in. "
+          }
+        ],
+        "tStartMs": 4338240
+      },
+      {
+        "dDurationMs": 2560,
+        "segs": [
+          {
+            "utf8": "But also, with three and a half billion \npeople using your service every day,  "
+          }
+        ],
+        "tStartMs": 4343440
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "the number of calls would be massive. It’d be like \nthe biggest call center in the world. It would be  "
+          }
+        ],
+        "tStartMs": 4346000
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "like $10 or $20 billion a year to staff that. \nSo we've never thought too seriously about it,  "
+          }
+        ],
+        "tStartMs": 4353680
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "because it always seemed like there was \nno way that could make sense. But now,  "
+          }
+        ],
+        "tStartMs": 4362160
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "as AI gets better, you're going to get to a place \nwhere AI can handle a bunch of people's issues. "
+          }
+        ],
+        "tStartMs": 4368480
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "Not all of them — maybe 10 years from now it can \nhandle all of them — but thinking about a 3-5 year  "
+          }
+        ],
+        "tStartMs": 4375920
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "time horizon, it will be able to handle a bunch. \nIt's kind of like a self-driving car. They can  "
+          }
+        ],
+        "tStartMs": 4383280
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "handle a bunch of terrain, but they're not \ndoing the whole route by themselves yet in  "
+          }
+        ],
+        "tStartMs": 4388720
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "most cases. People thought truck-driving jobs \nwere going to go away, but there's actually more  "
+          }
+        ],
+        "tStartMs": 4394720
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "truck-driving jobs now than when we first started \ntalking about self-driving cars 20 years ago. "
+          }
+        ],
+        "tStartMs": 4399280
+      },
+      {
+        "dDurationMs": 9200,
+        "segs": [
+          {
+            "utf8": "Going back to the customer support thing, it \nwouldn't make sense to staff out calling for  "
+          }
+        ],
+        "tStartMs": 4411040
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "everyone. But let's say AI can handle 90% of that. \nThen if it can't, it kicks it off to a person.  "
+          }
+        ],
+        "tStartMs": 4420240
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "If you get the cost of providing that service down \nto one-tenth of what it would've otherwise been,  "
+          }
+        ],
+        "tStartMs": 4429200
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "then maybe now it actually makes sense \nto do it. That would be cool. So the net  "
+          }
+        ],
+        "tStartMs": 4435360
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "result is that I actually think we're probably \ngoing to hire more customer support people. "
+          }
+        ],
+        "tStartMs": 4441680
+      },
+      {
+        "dDurationMs": 10880,
+        "segs": [
+          {
+            "utf8": "The common belief is that AI will automate \njobs away. But that hasn't really been how  "
+          }
+        ],
+        "tStartMs": 4446000
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "the history of technology has worked. Usually, \nyou create things that take away 90% of the work,  "
+          }
+        ],
+        "tStartMs": 4456880
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "Final question: Who is the one person in the \nworld today who you most seek out for advice? "
+          }
+        ],
+        "tStartMs": 4467402
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "Oh, man. I feel like part of my style \nis that I like having a breadth of  "
+          }
+        ],
+        "tStartMs": 4472682
+      },
+      {
+        "dDurationMs": 12000,
+        "segs": [
+          {
+            "utf8": "advisors. It's not just one person.\nWe've got a great team. There are people  "
+          }
+        ],
+        "tStartMs": 4478042
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "at the company, people on our board. There \nare a lot of people in the industry who are  "
+          }
+        ],
+        "tStartMs": 4490042
+      },
+      {
+        "dDurationMs": 10400,
+        "segs": [
+          {
+            "utf8": "doing new stuff. There's not a single person. \nBut it's fun. Also, when the world is dynamic,  "
+          }
+        ],
+        "tStartMs": 4497962
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "just having a reason to work with people you like \non cool stuff… To me, that's what life is about. "
+          }
+        ],
+        "tStartMs": 4508362
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "Great note to close on. Thanks for doing this.\nYeah, thank you."
+          }
+        ],
+        "tStartMs": 4516042
+      }
+    ],
+    "pens": [
+      {}
+    ],
+    "wireMagic": "pb3",
+    "wpWinPositions": [
+      {}
+    ],
+    "wsWinStyles": [
+      {}
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "canonical_url": "https://www.youtube.com/watch?v=rYXeQbTuVl0",
+    "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA",
+    "format": "json3",
+    "language": "en",
+    "payload_sha256": "51c510114d29651c07f0813758a973530b1499275c3040f1acffb1985bade814",
+    "platform": "youtube",
+    "track_type": "publisher-subtitle",
+    "uploader": "Dwarkesh Patel",
+    "video_id": "rYXeQbTuVl0"
+  }
+}

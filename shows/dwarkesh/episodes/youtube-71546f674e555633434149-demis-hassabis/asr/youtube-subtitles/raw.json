@@ -1,0 +1,5790 @@
+{
+  "generated_at": "2026-08-18T08:26:16.354504Z",
+  "kind": "podwiki-youtube-subtitle-raw",
+  "payload": {
+    "events": [
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "Today it is a true honor to speak with Demis \nHassabis, who is the CEO of DeepMind. Demis,  "
+          }
+        ],
+        "tStartMs": 44840
+      },
+      {
+        "dDurationMs": 2240,
+        "segs": [
+          {
+            "utf8": "welcome to the podcast.\nThanks for having me. "
+          }
+        ],
+        "tStartMs": 50480
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "First question, given your neuroscience \nbackground, how do you think about intelligence?  "
+          }
+        ],
+        "tStartMs": 52720
+      },
+      {
+        "dDurationMs": 4760,
+        "segs": [
+          {
+            "utf8": "Specifically, do you think it’s one higher-level \ngeneral reasoning circuit, or do you think it’s  "
+          }
+        ],
+        "tStartMs": 56880
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "thousands of independent subskills and heuristics?\nIt’s interesting because intelligence is so  "
+          }
+        ],
+        "tStartMs": 61640
+      },
+      {
+        "dDurationMs": 7800,
+        "segs": [
+          {
+            "utf8": "broad and what we use it for is so generally \napplicable. I think that suggests there must  "
+          }
+        ],
+        "tStartMs": 69200
+      },
+      {
+        "dDurationMs": 9320,
+        "segs": [
+          {
+            "utf8": "be high-level common algorithmic themes \naround how the brain processes the world  "
+          }
+        ],
+        "tStartMs": 77000
+      },
+      {
+        "dDurationMs": 7720,
+        "segs": [
+          {
+            "utf8": "around us. Of course, there are specialized \nparts of the brain that do specific things,  "
+          }
+        ],
+        "tStartMs": 86320
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "but I think there are probably some underlying \nprinciples that underpin all of that. "
+          }
+        ],
+        "tStartMs": 94040
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "How do you make sense of the fact that \nin these LLMs, when you give them a lot  "
+          }
+        ],
+        "tStartMs": 98160
+      },
+      {
+        "dDurationMs": 3560,
+        "segs": [
+          {
+            "utf8": "of data in any specific domain, they \ntend to get asymmetrically better in  "
+          }
+        ],
+        "tStartMs": 102240
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "that domain. Wouldn’t we expect a general \nimprovement across all the different areas? "
+          }
+        ],
+        "tStartMs": 105800
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "First of all, I think you do sometimes get \nsurprising improvement in other domains when  "
+          }
+        ],
+        "tStartMs": 111960
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "you improve in a specific domain. For example, \nwhen these large models improve at coding,  "
+          }
+        ],
+        "tStartMs": 116440
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "that can actually improve their general reasoning. \nSo there is evidence of some transfer although we  "
+          }
+        ],
+        "tStartMs": 122520
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "would like a lot more evidence of that. But \nthat’s how the human brain learns too. If  "
+          }
+        ],
+        "tStartMs": 128560
+      },
+      {
+        "dDurationMs": 5400,
+        "segs": [
+          {
+            "utf8": "we experience and practice a lot of things \nlike chess, creative writing, or whatever,  "
+          }
+        ],
+        "tStartMs": 134600
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "we also tend to specialize and get better at \nthat specific thing even though we’re using  "
+          }
+        ],
+        "tStartMs": 140000
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "general learning techniques and general learning \nsystems in order to get good at that domain. "
+          }
+        ],
+        "tStartMs": 145280
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "What’s been the most surprising example \nof this kind of transfer for you? Will you  "
+          }
+        ],
+        "tStartMs": 151480
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "see language and code, or images and text?\nI’m hoping we’re going to see a lot more of  "
+          }
+        ],
+        "tStartMs": 155280
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "this kind of transfer, but I think things \nlike getting better at coding and math,  "
+          }
+        ],
+        "tStartMs": 161440
+      },
+      {
+        "dDurationMs": 5000,
+        "segs": [
+          {
+            "utf8": "and then generally improving your reasoning. \nThat is how it works with us as human learners.  "
+          }
+        ],
+        "tStartMs": 166480
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "But I think it’s interesting seeing \nthat in these artificial systems. "
+          }
+        ],
+        "tStartMs": 171480
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "And can you see the sort of mechanistic \nway, in the language and code example,  "
+          }
+        ],
+        "tStartMs": 175800
+      },
+      {
+        "dDurationMs": 2160,
+        "segs": [
+          {
+            "utf8": "in which you’ve found the place in a \nneural network that’s getting better  "
+          }
+        ],
+        "tStartMs": 181240
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "with both the language and the code? \nOr is that too far down the weeds? "
+          }
+        ],
+        "tStartMs": 183400
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "I don’t think our analysis techniques are quite \nsophisticated enough to be able to hone in on  "
+          }
+        ],
+        "tStartMs": 187400
+      },
+      {
+        "dDurationMs": 4760,
+        "segs": [
+          {
+            "utf8": "that. I think that’s actually one of the areas \nwhere a lot more research needs to be done,  "
+          }
+        ],
+        "tStartMs": 192680
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "the kind of mechanistic analysis of the \nrepresentations that these systems build  "
+          }
+        ],
+        "tStartMs": 197440
+      },
+      {
+        "dDurationMs": 6520,
+        "segs": [
+          {
+            "utf8": "up. I sometimes like to call it virtual brain \nanalytics. In a way, it’s a bit like doing fMRI,  "
+          }
+        ],
+        "tStartMs": 201520
+      },
+      {
+        "dDurationMs": 6920,
+        "segs": [
+          {
+            "utf8": "or single-cell recording from a real brain. What \nare the analogous analysis techniques for these  "
+          }
+        ],
+        "tStartMs": 208040
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "artificial minds? There’s a lot of great work \ngoing on in this sort of stuff. People like  "
+          }
+        ],
+        "tStartMs": 214960
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "Chris Olah, I really like his work. I think a lot \nof computational neuroscience techniques can be  "
+          }
+        ],
+        "tStartMs": 219480
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "brought to bear on analyzing the current \nsystems we’re building. In fact, I try to  "
+          }
+        ],
+        "tStartMs": 224520
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "encourage a lot of my computational neuroscience \nfriends to start thinking in that direction and  "
+          }
+        ],
+        "tStartMs": 229360
+      },
+      {
+        "dDurationMs": 7480,
+        "segs": [
+          {
+            "utf8": "applying their know-how to the large models.\nWhat do other AI researchers not understand  "
+          }
+        ],
+        "tStartMs": 234040
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "about human intelligence that you have some sort \nof insight on, given your neuroscience background? "
+          }
+        ],
+        "tStartMs": 241520
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "I think neuroscience has added a lot, if you look \nat the last 10-20 years that we’ve been at it.  "
+          }
+        ],
+        "tStartMs": 246680
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "I’ve been thinking about this for 30+ years. \nIn the earlier days of the new wave of AI,  "
+          }
+        ],
+        "tStartMs": 254760
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "neuroscience was providing a lot \nof interesting directional clues,  "
+          }
+        ],
+        "tStartMs": 261920
+      },
+      {
+        "dDurationMs": 3960,
+        "segs": [
+          {
+            "utf8": "things like reinforcement learning and combining \nthat with deep learning. Some of our pioneering  "
+          }
+        ],
+        "tStartMs": 266520
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "work we did there were things like experience \nreplay and even the notion of attention,  "
+          }
+        ],
+        "tStartMs": 270480
+      },
+      {
+        "dDurationMs": 7640,
+        "segs": [
+          {
+            "utf8": "which has become super important. A lot of those \noriginal inspirations came from some understanding  "
+          }
+        ],
+        "tStartMs": 275280
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "about how the brain works, although not the \nexact specifics of course. One is an engineered  "
+          }
+        ],
+        "tStartMs": 282920
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "system and the other one’s a natural system. \nIt’s not so much about a one-to-one mapping  "
+          }
+        ],
+        "tStartMs": 286840
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "of a specific algorithm, but more so inspirational \ndirection. Maybe it’s some ideas for architecture,  "
+          }
+        ],
+        "tStartMs": 290640
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "or algorithmic ideas, or representational \nideas. The brain is an existence proof that  "
+          }
+        ],
+        "tStartMs": 295920
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "general intelligence is possible at all. I think \nthe history of human endeavors has been such that  "
+          }
+        ],
+        "tStartMs": 301960
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "once you know something’s possible it’s easier to \npush hard in that direction, because you know it’s  "
+          }
+        ],
+        "tStartMs": 307880
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "a question of effort, a question of when and not \nif. That allows you to make progress a lot more  "
+          }
+        ],
+        "tStartMs": 312240
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "quickly. So I think neuroscience has inspired \na lot of the thinking, at least in a soft way,  "
+          }
+        ],
+        "tStartMs": 319680
+      },
+      {
+        "dDurationMs": 8200,
+        "segs": [
+          {
+            "utf8": "behind where we are today. As for going forward, \nI think there’s still a lot of interesting things  "
+          }
+        ],
+        "tStartMs": 328560
+      },
+      {
+        "dDurationMs": 6920,
+        "segs": [
+          {
+            "utf8": "to be resolved around planning. How does the \nbrain construct the right world models? I  "
+          }
+        ],
+        "tStartMs": 336760
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "studied how the brain does imagination, or you \ncan think of it as mental simulation. How do we  "
+          }
+        ],
+        "tStartMs": 343680
+      },
+      {
+        "dDurationMs": 5400,
+        "segs": [
+          {
+            "utf8": "create very rich visual spatial simulations \nof the world in order for us to plan better? "
+          }
+        ],
+        "tStartMs": 350960
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "Actually, I’m curious how you think that will \ninterface with LLMs. Obviously, DeepMind is  "
+          }
+        ],
+        "tStartMs": 356360
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "at the frontier and has been for many years with \nsystems like AlphaZero and so forth, having these  "
+          }
+        ],
+        "tStartMs": 360720
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "agents which can think through different steps \nto get to an end outcome. Is there a path for  "
+          }
+        ],
+        "tStartMs": 365600
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "LLMs to have this tree search kind of thing \non top of them? How do you think about this? "
+          }
+        ],
+        "tStartMs": 371240
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "I think that’s a super promising direction. We’ve \ngot to carry on improving the large models. We’ve  "
+          }
+        ],
+        "tStartMs": 375720
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "got to carry on making them more and more accurate \npredictors of the world, making them more and  "
+          }
+        ],
+        "tStartMs": 382880
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "more reliable world models. That’s clearly a \nnecessary, but probably insufficient component  "
+          }
+        ],
+        "tStartMs": 389640
+      },
+      {
+        "dDurationMs": 7640,
+        "segs": [
+          {
+            "utf8": "of an AGI system. On top of that, we’re working \non things like AlphaZero-like planning mechanisms  "
+          }
+        ],
+        "tStartMs": 394680
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "on top that make use of that model in order to \nmake concrete plans to achieve certain goals  "
+          }
+        ],
+        "tStartMs": 402320
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "in the world. Perhaps chaining thought, lines of \nreasoning, together and using search to explore  "
+          }
+        ],
+        "tStartMs": 407560
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "massive spaces of possibility. I think that’s \nkind of missing from our current large models. "
+          }
+        ],
+        "tStartMs": 416680
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "How do you get past the immense amount \nof compute that these approaches tend to  "
+          }
+        ],
+        "tStartMs": 421960
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "require? Even the AlphaGo system was a pretty \nexpensive system because you sort of had to run  "
+          }
+        ],
+        "tStartMs": 426760
+      },
+      {
+        "dDurationMs": 5960,
+        "segs": [
+          {
+            "utf8": "an LLM on each node of the tree. How do you \nanticipate that’ll get made more efficient? "
+          }
+        ],
+        "tStartMs": 432800
+      },
+      {
+        "dDurationMs": 10160,
+        "segs": [
+          {
+            "utf8": "One thing is Moore’s law tends to help. Over every \nyear more computation comes in. But we focus a lot  "
+          }
+        ],
+        "tStartMs": 438760
+      },
+      {
+        "dDurationMs": 8280,
+        "segs": [
+          {
+            "utf8": "on sample-efficient methods and reusing existing \ndata, things like experience replay and also just  "
+          }
+        ],
+        "tStartMs": 448920
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "looking at more efficient ways. The better your \nworld model is, the more efficient your search  "
+          }
+        ],
+        "tStartMs": 457200
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "can be. One example I always give is AlphaZero, \nour system to play Go and chess and any game.  "
+          }
+        ],
+        "tStartMs": 462000
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "It’s stronger than human world champion level in \nall these games and it uses a lot less search than  "
+          }
+        ],
+        "tStartMs": 468960
+      },
+      {
+        "dDurationMs": 6280,
+        "segs": [
+          {
+            "utf8": "a brute force method like Deep Blue to play \nchess. One of these traditional Stockfish or  "
+          }
+        ],
+        "tStartMs": 476160
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "Deep Blue systems would maybe look at millions \nof possible moves for every decision it’s going  "
+          }
+        ],
+        "tStartMs": 482440
+      },
+      {
+        "dDurationMs": 8120,
+        "segs": [
+          {
+            "utf8": "to make. AlphaZero and AlphaGo may look at around \ntens of thousands of possible positions in order  "
+          }
+        ],
+        "tStartMs": 487960
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "to make a decision about what to move next. A \nhuman grandmaster or world champion probably  "
+          }
+        ],
+        "tStartMs": 496080
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "only looks at a few hundred moves, even the top \nones, in order to make their very good decision  "
+          }
+        ],
+        "tStartMs": 501800
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "about what to play next. So that suggests \nthat the brute force systems don’t have any  "
+          }
+        ],
+        "tStartMs": 507920
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "real model other than the heuristics about the \ngame. AlphaGo has quite a decent model but the  "
+          }
+        ],
+        "tStartMs": 512960
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "top human players have a much richer, much more \naccurate model of Go or chess. That allows them  "
+          }
+        ],
+        "tStartMs": 521760
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "to make world-class decisions on a very small \namount of search. So I think there’s a sort of  "
+          }
+        ],
+        "tStartMs": 527560
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "trade-off there. If you improve the models, then \nI think your search can be more efficient and  "
+          }
+        ],
+        "tStartMs": 533360
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "therefore you can get further with your search.\nI have two questions based on that. With AlphaGo,  "
+          }
+        ],
+        "tStartMs": 538480
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "you had a very concrete win condition: at the end \nof the day, do I win this game of Go or not? You  "
+          }
+        ],
+        "tStartMs": 544120
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "can reinforce on that. When you’re thinking of \nan LLM putting out thought, do you think there  "
+          }
+        ],
+        "tStartMs": 548680
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "will be this ability to discriminate in the end, \nwhether that was a good thing to reward or not? "
+          }
+        ],
+        "tStartMs": 554560
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "Of course that’s why we pioneered, and \nwhat DeepMind is sort of famous for,  "
+          }
+        ],
+        "tStartMs": 560080
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "using games as a proving ground. That’s partly \nbecause it’s efficient to research in that domain.  "
+          }
+        ],
+        "tStartMs": 564280
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "The other reason is, obviously, it’s extremely \neasy to specify a reward function. Winning the  "
+          }
+        ],
+        "tStartMs": 570120
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "game or improving the score, something like that \nis built into most games. So that is one of the  "
+          }
+        ],
+        "tStartMs": 574400
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "challenges of real-world systems. How does one \ndefine the right objective function, the right  "
+          }
+        ],
+        "tStartMs": 580120
+      },
+      {
+        "dDurationMs": 7640,
+        "segs": [
+          {
+            "utf8": "reward function, and the right goals? How does one \nspecify them in a general way, but specific enough  "
+          }
+        ],
+        "tStartMs": 584960
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "that one actually points the system in the right \ndirection? For real-world problems, that can be a  "
+          }
+        ],
+        "tStartMs": 592600
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "lot harder. But actually, if you think about it in \neven scientific problems, there are usually ways  "
+          }
+        ],
+        "tStartMs": 598040
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "that you can specify the goal that you’re after.\nWhen you think about human intelligence,  "
+          }
+        ],
+        "tStartMs": 604400
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "you were just saying that humans thinking about \nthese thoughts are just super sample-efficient.  "
+          }
+        ],
+        "tStartMs": 608520
+      },
+      {
+        "dDurationMs": 3240,
+        "segs": [
+          {
+            "utf8": "Einstein coming up with relativity, right? \nThere’s thousands of possible permutations  "
+          }
+        ],
+        "tStartMs": 613480
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "of the equations. Do you think it’s also \nthis sense of different heuristics like,  "
+          }
+        ],
+        "tStartMs": 616720
+      },
+      {
+        "dDurationMs": 3640,
+        "segs": [
+          {
+            "utf8": "“I’m going to try out this approach instead \nof this”? Or is it a totally different way of  "
+          }
+        ],
+        "tStartMs": 620840
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "approaching and coming up with that solution \nthan what AlphaGo does to plan the next move? "
+          }
+        ],
+        "tStartMs": 624480
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "I think it’s different because our brains are \nnot built for doing Monte Carlo tree search. It’s  "
+          }
+        ],
+        "tStartMs": 629920
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "just not the way our organic brains work. I think \nthat people like Einstein, in order to compensate  "
+          }
+        ],
+        "tStartMs": 635800
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "for that, have used their intuition—and maybe we \ncan come to what intuition is—and their knowledge  "
+          }
+        ],
+        "tStartMs": 642200
+      },
+      {
+        "dDurationMs": 7480,
+        "segs": [
+          {
+            "utf8": "and their experience to build in Einstein’s case, \nextremely accurate models of physics that include  "
+          }
+        ],
+        "tStartMs": 651320
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "mental simulations. If you read about Einstein and \nhow he came up with things, he used to visualize  "
+          }
+        ],
+        "tStartMs": 658800
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "and really feel what these physical systems \nshould be like, not just the mathematics of  "
+          }
+        ],
+        "tStartMs": 663520
+      },
+      {
+        "dDurationMs": 4440,
+        "segs": [
+          {
+            "utf8": "it. He had a really intuitive feel for what they \nwould be like in reality. That allowed him to  "
+          }
+        ],
+        "tStartMs": 670720
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "think these thoughts that were very outlandish \nat the time. So I think that that gets to the  "
+          }
+        ],
+        "tStartMs": 675160
+      },
+      {
+        "dDurationMs": 5400,
+        "segs": [
+          {
+            "utf8": "sophistication of the world models that we’re \nbuilding. Imagine your world model can get you  "
+          }
+        ],
+        "tStartMs": 680880
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "to a certain node in a tree that you’re searching, \nand then you just do a little bit of search around  "
+          }
+        ],
+        "tStartMs": 686280
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "that leaf node and that gets you to these original \nplaces. Obviously, if your model and your judgment  "
+          }
+        ],
+        "tStartMs": 691640
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "on that model is very, very good, then you \ncan pick which leaf nodes you should expand  "
+          }
+        ],
+        "tStartMs": 698680
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "with search much more accurately. So overall, you \ntherefore do a lot less search. I mean, there’s  "
+          }
+        ],
+        "tStartMs": 703840
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "no way that any human could do a kind of brute \nforce search over any kind of significant space. "
+          }
+        ],
+        "tStartMs": 708400
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "A big open question right now is whether RL \nwill allow these models to use the self-play  "
+          }
+        ],
+        "tStartMs": 716120
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "synthetic data to get over data bottlenecks. \nIt sounds like you’re optimistic about this? "
+          }
+        ],
+        "tStartMs": 720360
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "I’m very optimistic about that. First of all, \nthere’s still a lot more data that can be used,  "
+          }
+        ],
+        "tStartMs": 724360
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "especially if one views multimodal and \nvideo and these kinds of things. Obviously,  "
+          }
+        ],
+        "tStartMs": 729640
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "society is adding more data all the time to \nthe Internet and things like that. I think that  "
+          }
+        ],
+        "tStartMs": 735280
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "there’s a lot of scope for creating synthetic \ndata. We’re looking at that in different ways,  "
+          }
+        ],
+        "tStartMs": 742960
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "partly through simulation, using very \nrealistic game environments, for example,  "
+          }
+        ],
+        "tStartMs": 748040
+      },
+      {
+        "dDurationMs": 8760,
+        "segs": [
+          {
+            "utf8": "to generate realistic data, but also self-play. \nThat’s where systems interact with each other  "
+          }
+        ],
+        "tStartMs": 752520
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "or converse with each other. It worked very well \nfor us with AlphaGo and AlphaZero where we got the  "
+          }
+        ],
+        "tStartMs": 761280
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "systems to play against each other and actually \nlearn from each other’s mistakes and build up a  "
+          }
+        ],
+        "tStartMs": 767360
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "knowledge base that way. I think there are some \ngood analogies for that. It’s a little bit more  "
+          }
+        ],
+        "tStartMs": 771640
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "complicated to build a general kind of world data.\nHow do you get to the point with these  "
+          }
+        ],
+        "tStartMs": 775320
+      },
+      {
+        "dDurationMs": 3720,
+        "segs": [
+          {
+            "utf8": "models where the synthetic data they’re \noutputting on the self-play they’re doing  "
+          }
+        ],
+        "tStartMs": 781320
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "is not just more of what’s already in their \ndata set, but something they haven’t seen  "
+          }
+        ],
+        "tStartMs": 785600
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "before? To actually improve the abilities.\nI think there’s a whole science needed there.  "
+          }
+        ],
+        "tStartMs": 789480
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "I think we’re still in the nascent stage of \nthis, of data curation and data analysis and  "
+          }
+        ],
+        "tStartMs": 796200
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "actually analyzing the holes that you have in \nyour data distribution. This is important for  "
+          }
+        ],
+        "tStartMs": 800120
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "things like fairness and bias and other stuff. \nTo remove that from the system is to really make  "
+          }
+        ],
+        "tStartMs": 805280
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "sure that your data set is representative \nof the distribution you’re trying to learn.  "
+          }
+        ],
+        "tStartMs": 810200
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "There are many tricks there one can use, like \noverweighting or replaying certain parts of the  "
+          }
+        ],
+        "tStartMs": 815480
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "data. Or if you identify some gap in your data \nset, you could imagine that’s where you put your  "
+          }
+        ],
+        "tStartMs": 819320
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "synthetic generation capabilities to work on.\nNowadays, people are paying attention to the RL  "
+          }
+        ],
+        "tStartMs": 825040
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "stuff that DeepMind did many years before. What \nare the early research directions, or something  "
+          }
+        ],
+        "tStartMs": 832480
+      },
+      {
+        "dDurationMs": 4673,
+        "segs": [
+          {
+            "utf8": "that was done way back in the past, that you think \nwill be a big deal but people just haven’t been  "
+          }
+        ],
+        "tStartMs": 838280
+      },
+      {
+        "dDurationMs": 2687,
+        "segs": [
+          {
+            "utf8": "paying attention to it? There was a time where \npeople weren’t paying attention to scaling. What’s  "
+          }
+        ],
+        "tStartMs": 842953
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "the thing now that is totally underrated?\nWell, I think that the history of the last  "
+          }
+        ],
+        "tStartMs": 845640
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "couple of decades has been things coming \nin and out of fashion, right? A while ago,  "
+          }
+        ],
+        "tStartMs": 850280
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "maybe five-plus years ago, we were pioneering \nwith AlphaGo and before that DQN. It was the  "
+          }
+        ],
+        "tStartMs": 856280
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "first system that worked on Atari, our first \nbig system really more than ten years ago now,  "
+          }
+        ],
+        "tStartMs": 861440
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "that scaled up Q-learning and reinforcement \nlearning techniques and combined that with deep  "
+          }
+        ],
+        "tStartMs": 866800
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "learning to create deep reinforcement learning. \nWe used that to scale up to master some pretty  "
+          }
+        ],
+        "tStartMs": 871080
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "complex tasks like playing Atari games just from \nthe pixels. I do actually think a lot of those  "
+          }
+        ],
+        "tStartMs": 878440
+      },
+      {
+        "dDurationMs": 6280,
+        "segs": [
+          {
+            "utf8": "ideas need to come back in again and, as we talked \nabout earlier, combine them with the new advances  "
+          }
+        ],
+        "tStartMs": 884240
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "in large models and large multimodal models, which \nare obviously very exciting as well. So I do think  "
+          }
+        ],
+        "tStartMs": 890520
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "there’s a lot of potential for combining some of \nthose older ideas together with the newer ones. "
+          }
+        ],
+        "tStartMs": 894920
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "Is there any potential for the AGI to eventually \ncome from a pure RL approach? The way we’re  "
+          }
+        ],
+        "tStartMs": 900440
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "talking about it, it sounds like the LLM will form \nthe right prior and then this sort of tree search  "
+          }
+        ],
+        "tStartMs": 907240
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "will go on top of that. Or is it a possibility \nthat it comes completely out of the dark? "
+          }
+        ],
+        "tStartMs": 913080
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "Theoretically, I think there’s no reason why you \ncouldn’t go full AlphaZero-like on it. There are  "
+          }
+        ],
+        "tStartMs": 917480
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "some people here at Google DeepMind and in the \nRL community who work on that, fully assuming no  "
+          }
+        ],
+        "tStartMs": 921840
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "priors, no data, and just building all knowledge \nfrom scratch. I think that’s valuable because  "
+          }
+        ],
+        "tStartMs": 930240
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "those ideas and those algorithms should also \nwork when you have some knowledge too. Having  "
+          }
+        ],
+        "tStartMs": 939120
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "said that, I think by far the quickest way \nto get to AGI, and the most plausible way,  "
+          }
+        ],
+        "tStartMs": 943760
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "is to use all the knowledge that’s existing in the \nworld right now that we’ve collected from things  "
+          }
+        ],
+        "tStartMs": 949840
+      },
+      {
+        "dDurationMs": 8120,
+        "segs": [
+          {
+            "utf8": "like the Web. We have these scalable algorithms, \nlike transformers, that are capable of ingesting  "
+          }
+        ],
+        "tStartMs": 953440
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "all of that information. So I don’t see why you \nwouldn’t start with a model as a kind of prior,  "
+          }
+        ],
+        "tStartMs": 961560
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "or to build on it and to make predictions that \nhelp bootstrap your learning. I just think it  "
+          }
+        ],
+        "tStartMs": 967600
+      },
+      {
+        "dDurationMs": 7560,
+        "segs": [
+          {
+            "utf8": "doesn’t make sense not to make use of that. So my \nbetting would be that the final AGI system will  "
+          }
+        ],
+        "tStartMs": 973120
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "have these large multimodal models as part \nof the overall solution, but they probably  "
+          }
+        ],
+        "tStartMs": 980680
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "won’t be enough on their own. You’ll need \nthis additional planning search on top. "
+          }
+        ],
+        "tStartMs": 987400
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "This sounds like the answer to the question \nI’m about to ask. As somebody who’s been in  "
+          }
+        ],
+        "tStartMs": 991800
+      },
+      {
+        "dDurationMs": 3960,
+        "segs": [
+          {
+            "utf8": "this field for a long time and seen different \ntrends come and go, what do you think the  "
+          }
+        ],
+        "tStartMs": 996880
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "strong version of the scaling hypothesis gets \nright and what does it get wrong? The idea that  "
+          }
+        ],
+        "tStartMs": 1000840
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "you just throw enough compute at a wide enough \ndistribution of data and you get intelligence. "
+          }
+        ],
+        "tStartMs": 1004040
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "My view is that this is kind of an empirical \nquestion right now. I think it was pretty  "
+          }
+        ],
+        "tStartMs": 1007960
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "surprising to almost everyone, including the \npeople who first worked on the scaling hypotheses,  "
+          }
+        ],
+        "tStartMs": 1011480
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "how far it’s gone. In a way, I look at the \nlarge models today and I think they’re almost  "
+          }
+        ],
+        "tStartMs": 1016760
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "unreasonably effective for what they are. I think \nit’s pretty surprising some of the properties that  "
+          }
+        ],
+        "tStartMs": 1022640
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "emerge. In my opinion, they’ve clearly got some \nform of concepts and abstractions and things  "
+          }
+        ],
+        "tStartMs": 1027840
+      },
+      {
+        "dDurationMs": 3640,
+        "segs": [
+          {
+            "utf8": "like that. I think if we were talking five-plus \nyears ago, I would have said to you that maybe  "
+          }
+        ],
+        "tStartMs": 1034560
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "we need an additional algorithmic breakthrough \nin order to do that, maybe more like how the  "
+          }
+        ],
+        "tStartMs": 1038200
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "brain works. I think that’s still true if we \nwant explicit abstract concepts, neat concepts,  "
+          }
+        ],
+        "tStartMs": 1044000
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "but it seems that these systems can implicitly \nlearn that. Another really interesting, unexpected  "
+          }
+        ],
+        "tStartMs": 1049480
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "thing was that these systems have some sort of \ngrounding even though they don’t experience the  "
+          }
+        ],
+        "tStartMs": 1054800
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "world multimodally, at least until more recently \nwhen we have the multimodal models. The amount of  "
+          }
+        ],
+        "tStartMs": 1059920
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "information and models that can be built up just \nfrom language is surprising. I think that I’d  "
+          }
+        ],
+        "tStartMs": 1066080
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "have some hypotheses about why that is. I think \nwe get some grounding through the RLHF feedback  "
+          }
+        ],
+        "tStartMs": 1071240
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "systems because obviously the human raters are \nby definition, grounded people. We’re grounded in  "
+          }
+        ],
+        "tStartMs": 1076560
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "reality, so our feedback is also grounded. Perhaps \nthere’s some grounding coming in through there.  "
+          }
+        ],
+        "tStartMs": 1083560
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "Also if you’re able to ingest all of it, maybe \nlanguage contains more grounding than linguists  "
+          }
+        ],
+        "tStartMs": 1088680
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "thought before. So it actually raises some very \ninteresting philosophical questions that people  "
+          }
+        ],
+        "tStartMs": 1096200
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "haven’t even really scratched the surface of \nyet. Looking at the advances that have been made,  "
+          }
+        ],
+        "tStartMs": 1100680
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "it’s quite interesting to think about where it’s \ngoing to go next. In terms of your question of  "
+          }
+        ],
+        "tStartMs": 1107000
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "large models, I think we’ve got to push scaling as \nhard as we can and that’s what we’re doing here.  "
+          }
+        ],
+        "tStartMs": 1111640
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "It’s an empirical question, whether that will \nhit an asymptote or a brick wall, and there are  "
+          }
+        ],
+        "tStartMs": 1118160
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "different people who argue about that. I think \nwe should just test it. I think no one knows.  "
+          }
+        ],
+        "tStartMs": 1122520
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "In the meantime, we should also double down on \ninnovation and invention. This is something where  "
+          }
+        ],
+        "tStartMs": 1127760
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "Google Research and DeepMind and Google Brain have \npioneered many, many things over the last decade.  "
+          }
+        ],
+        "tStartMs": 1134760
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "That’s our bread and butter. You can think of \nhalf our effort as having to do with scaling and  "
+          }
+        ],
+        "tStartMs": 1140840
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "half our efforts having to do with inventing the \nnext architectures and the next algorithms that  "
+          }
+        ],
+        "tStartMs": 1146360
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "will be needed, knowing that larger and larger \nscaled models are coming down the line. So my  "
+          }
+        ],
+        "tStartMs": 1150680
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "betting right now, but it’s a loose betting, is \nthat you need both. I think you’ve got to push  "
+          }
+        ],
+        "tStartMs": 1157840
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "both of them as hard as possible and we’re \nin a lucky position that we can do that. "
+          }
+        ],
+        "tStartMs": 1164280
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "I want to ask more about the grounding. You can \nimagine two things that might change which would  "
+          }
+        ],
+        "tStartMs": 1167400
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "make the grounding more difficult. One is that \nas these models get smarter, they are going to  "
+          }
+        ],
+        "tStartMs": 1171080
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "be able to operate in domains where we just can’t \ngenerate enough human labels, just because we’re  "
+          }
+        ],
+        "tStartMs": 1175080
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "not smart enough. If it does a million-line \npull request, how do we tell it, for example,  "
+          }
+        ],
+        "tStartMs": 1179920
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "this is within the constraints of our morality \nand the end goal we wanted and this isn’t? The  "
+          }
+        ],
+        "tStartMs": 1184640
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "other thing has to do with what you were saying \nabout compute. So far we’ve been doing next token  "
+          }
+        ],
+        "tStartMs": 1189280
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "prediction and in some sense it’s a guardrail, \nbecause you have to talk as a human would talk  "
+          }
+        ],
+        "tStartMs": 1193560
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "and think as a human would think. Now, additional \ncompute is maybe going to come in the form of  "
+          }
+        ],
+        "tStartMs": 1197320
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "reinforcement learning where it’s just getting \nto the objective and we can’t really trace how  "
+          }
+        ],
+        "tStartMs": 1203000
+      },
+      {
+        "dDurationMs": 6280,
+        "segs": [
+          {
+            "utf8": "you got there. When you combine those two, how \nworried are you that the grounding goes away? "
+          }
+        ],
+        "tStartMs": 1206800
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "I think if it’s not properly grounded, the system \nwon’t be able to achieve those goals properly. In  "
+          }
+        ],
+        "tStartMs": 1213680
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "a sense, you have to have some grounding for \na system to actually achieve goals in the real  "
+          }
+        ],
+        "tStartMs": 1222000
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "world. I do actually think that these systems, and \nthings like Gemini, are becoming more multimodal.  "
+          }
+        ],
+        "tStartMs": 1227920
+      },
+      {
+        "dDurationMs": 7480,
+        "segs": [
+          {
+            "utf8": "As we start ingesting things like video and \naudiovisual data as well as text data, then the  "
+          }
+        ],
+        "tStartMs": 1234920
+      },
+      {
+        "dDurationMs": 8360,
+        "segs": [
+          {
+            "utf8": "system starts correlating those things together. \nI think that is a form of proper grounding. So  "
+          }
+        ],
+        "tStartMs": 1242400
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "I do think our systems are going to start to \nunderstand the physics of the real world better. "
+          }
+        ],
+        "tStartMs": 1250760
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "Then one could imagine the active version \nof that as a very realistic simulation or  "
+          }
+        ],
+        "tStartMs": 1256560
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "game environment where you’re starting to learn \nabout what your actions do in the world and how  "
+          }
+        ],
+        "tStartMs": 1260840
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "that affects the world itself. The world stays \nitself, but it also affects what next learning  "
+          }
+        ],
+        "tStartMs": 1267240
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "episode you’re getting. So these RL agents \nwe’ve always been working on and pioneered,  "
+          }
+        ],
+        "tStartMs": 1272920
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "like AlphaZero and AlphaGo, actually are \nactive learners. What they decide to do  "
+          }
+        ],
+        "tStartMs": 1277160
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "next affects what next learning piece of data \nor experience they’re going to get. So there’s  "
+          }
+        ],
+        "tStartMs": 1282200
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "this very interesting sort of feedback loop.\nAnd of course, if we ever want to be good at  "
+          }
+        ],
+        "tStartMs": 1287760
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "things like robotics, we’re going to have \nto understand how to act in the real world. "
+          }
+        ],
+        "tStartMs": 1290640
+      },
+      {
+        "dDurationMs": 3320,
+        "segs": [
+          {
+            "utf8": "So there’s grounding in terms of whether \nthe capabilities will be able to proceed,  "
+          }
+        ],
+        "tStartMs": 1295760
+      },
+      {
+        "dDurationMs": 3960,
+        "segs": [
+          {
+            "utf8": "whether they will be enough in touch with \nreality to do the things we want. There’s  "
+          }
+        ],
+        "tStartMs": 1299080
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "another sense of grounding in that we’ve gotten \nlucky that since they’re trained on human thought,  "
+          }
+        ],
+        "tStartMs": 1303040
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "they maybe think like a human. To what extent \ndoes that stay true when more of the compute for  "
+          }
+        ],
+        "tStartMs": 1307880
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "training comes from just “did you get the right \noutcome” and it’s not guardrailed by “are you  "
+          }
+        ],
+        "tStartMs": 1312480
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "proceeding on the next token as a human would?” \nMaybe the broader question I’ll pose to you is,  "
+          }
+        ],
+        "tStartMs": 1317440
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "and this is what I asked Shane as well, what \nwould it take to align a system that’s smarter  "
+          }
+        ],
+        "tStartMs": 1321840
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "than a human? Maybe it thinks in alien concepts \nand you can’t really monitor the million-line pull  "
+          }
+        ],
+        "tStartMs": 1324960
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "request because you can’t really understand \nthe whole thing and you can’t give labels. "
+          }
+        ],
+        "tStartMs": 1329880
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "This is something Shane and I, and many others \nhere, have had at the forefront of our minds since  "
+          }
+        ],
+        "tStartMs": 1333400
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "before we started DeepMind because we planned for \nsuccess. In 2010, no one was thinking about AI let  "
+          }
+        ],
+        "tStartMs": 1337920
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "alone AGI. But we already knew that if we could \nmake progress with these systems and these ideas,  "
+          }
+        ],
+        "tStartMs": 1343720
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "the technology created would be unbelievably \ntransformative. So we were already thinking  "
+          }
+        ],
+        "tStartMs": 1350320
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "20 years ago about what the consequences of that \nwould be, both positive and negative. Of course,  "
+          }
+        ],
+        "tStartMs": 1355360
+      },
+      {
+        "dDurationMs": 3400,
+        "segs": [
+          {
+            "utf8": "the positive direction is amazing \nscience, things like AlphaFold,  "
+          }
+        ],
+        "tStartMs": 1360680
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "incredible breakthroughs in health and science, \nand mathematical and scientific discovery. But we  "
+          }
+        ],
+        "tStartMs": 1364080
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "also have to make sure these systems are \nsort of understandable and controllable. "
+          }
+        ],
+        "tStartMs": 1370880
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "This will be a whole discussion in itself, but \nthere are many, many ideas that people have  "
+          }
+        ],
+        "tStartMs": 1376080
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "such as more stringent eval systems. I think we \ndon’t have good enough evaluations and benchmarks  "
+          }
+        ],
+        "tStartMs": 1381520
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "for things like if the system can deceive you. Can \nit exfiltrate its own code or do other undesirable  "
+          }
+        ],
+        "tStartMs": 1386240
+      },
+      {
+        "dDurationMs": 10480,
+        "segs": [
+          {
+            "utf8": "behaviors? There are also ideas of using AI, not \ngeneral learning ones but maybe narrow AIs that  "
+          }
+        ],
+        "tStartMs": 1391520
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "are specialized for a domain, to help us as the \nhuman scientists to analyze and summarize what the  "
+          }
+        ],
+        "tStartMs": 1402000
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "more general system is doing. So there’s narrow \nAI tools. I think that there’s a lot of promise  "
+          }
+        ],
+        "tStartMs": 1409000
+      },
+      {
+        "dDurationMs": 8680,
+        "segs": [
+          {
+            "utf8": "in creating hardened sandboxes or simulations \nthat are hardened with cybersecurity arrangements  "
+          }
+        ],
+        "tStartMs": 1415320
+      },
+      {
+        "dDurationMs": 8280,
+        "segs": [
+          {
+            "utf8": "around the simulation, both to keep the AI in \nand to keep hackers out. You could experiment  "
+          }
+        ],
+        "tStartMs": 1424000
+      },
+      {
+        "dDurationMs": 8040,
+        "segs": [
+          {
+            "utf8": "a lot more freely within that sandbox domain. \nThere’s many, many other ideas, including the  "
+          }
+        ],
+        "tStartMs": 1432280
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "analysis stuff we talked about earlier, where \nwe can analyze and understand what the concepts  "
+          }
+        ],
+        "tStartMs": 1440320
+      },
+      {
+        "dDurationMs": 3480,
+        "segs": [
+          {
+            "utf8": "are that this system is building and what the \nrepresentations are. So maybe then they’re not  "
+          }
+        ],
+        "tStartMs": 1445160
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "so alien to us and we can actually keep track \nof the kind of knowledge that it’s building. "
+          }
+        ],
+        "tStartMs": 1448640
+      },
+      {
+        "dDurationMs": 2520,
+        "segs": [
+          {
+            "utf8": "Stepping back a bit, I’m curious \nwhat your timelines are. So Shane  "
+          }
+        ],
+        "tStartMs": 1454640
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "said his modal outcome is 2028. I think \nthat’s maybe his median. What is yours? "
+          }
+        ],
+        "tStartMs": 1457160
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "I don’t have prescribed specific numbers to \nit because I think there’s so many unknowns  "
+          }
+        ],
+        "tStartMs": 1463680
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "and uncertainties. Human ingenuity and endeavor \ncomes up with surprises all the time. So that  "
+          }
+        ],
+        "tStartMs": 1468000
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "could meaningfully move the timelines. I will \nsay that when we started DeepMind back in 2010,  "
+          }
+        ],
+        "tStartMs": 1475000
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "we thought of it as a 20-year project. And I \nthink we’re on track actually, which is kind  "
+          }
+        ],
+        "tStartMs": 1481440
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "of amazing for 20-year projects because usually \nthey’re always 20 years away. That’s the joke  "
+          }
+        ],
+        "tStartMs": 1486400
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "about whatever, quantum, AI, take your pick. But \nI think we’re on track. So I wouldn’t be surprised  "
+          }
+        ],
+        "tStartMs": 1490600
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "if we had AGI-like systems within the next decade.\nDo you buy the model that once you have an AGI,  "
+          }
+        ],
+        "tStartMs": 1498120
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "you have a system that basically speeds up further \nAI research? Maybe not in an overnight sense,  "
+          }
+        ],
+        "tStartMs": 1504760
+      },
+      {
+        "dDurationMs": 2360,
+        "segs": [
+          {
+            "utf8": "but over the course of months and \nyears you would have much faster  "
+          }
+        ],
+        "tStartMs": 1509080
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "progress than you would have otherwise had?\nI think that’s potentially possible. I think  "
+          }
+        ],
+        "tStartMs": 1511440
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "it partly depends on what we, as a society, \ndecide to use the first nascent AGI systems or  "
+          }
+        ],
+        "tStartMs": 1515640
+      },
+      {
+        "dDurationMs": 9360,
+        "segs": [
+          {
+            "utf8": "proto-AGI systems for. Even the current LLMs seem \nto be pretty good at coding and we have systems  "
+          }
+        ],
+        "tStartMs": 1522120
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "like AlphaCode. We also have theorem proving \nsystems. So one could imagine combining these  "
+          }
+        ],
+        "tStartMs": 1531480
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "ideas together and making them a lot better. I \ncould imagine these systems being quite good at  "
+          }
+        ],
+        "tStartMs": 1537000
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "designing and helping us build future versions \nof themselves, but we also have to think about  "
+          }
+        ],
+        "tStartMs": 1544200
+      },
+      {
+        "dDurationMs": 4040,
+        "segs": [
+          {
+            "utf8": "the safety implications of that of course.\nI’m curious what you think about that. I’m  "
+          }
+        ],
+        "tStartMs": 1549120
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "not saying this is happening this year, but \neventually you’ll be developing a model where  "
+          }
+        ],
+        "tStartMs": 1553160
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "you think there’s some chance that it’ll be \ncapable of an intelligence explosion-like  "
+          }
+        ],
+        "tStartMs": 1558160
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "dynamic once it’s fully developed. What would \nhave to be true of that model at that point where  "
+          }
+        ],
+        "tStartMs": 1563320
+      },
+      {
+        "dDurationMs": 2320,
+        "segs": [
+          {
+            "utf8": "you’re comfortable continuing the development \nof the system? Something like, “I’ve seen these  "
+          }
+        ],
+        "tStartMs": 1567720
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "specific evals, I’ve understood its internal \nthinking and its future thinking enough.” "
+          }
+        ],
+        "tStartMs": 1570040
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "We need a lot more understanding of the systems \nthan we do today before I would even be confident  "
+          }
+        ],
+        "tStartMs": 1578440
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "of explaining to you what we’d need to tick box \nthere. I think what we’ve got to do in the next  "
+          }
+        ],
+        "tStartMs": 1583080
+      },
+      {
+        "dDurationMs": 6520,
+        "segs": [
+          {
+            "utf8": "few years, in the time before those systems start \narriving, is come up with the right evaluations  "
+          }
+        ],
+        "tStartMs": 1588920
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "and metrics. Ideally formal proofs, but it’s going \nto be hard for these types of systems, so at least  "
+          }
+        ],
+        "tStartMs": 1595440
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "empirical bounds around what these systems can do. \nThat’s why I think about things like deception as  "
+          }
+        ],
+        "tStartMs": 1601440
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "being quite root node traits that you don’t want. \nIf you’re confident that your system is exposing  "
+          }
+        ],
+        "tStartMs": 1609840
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "what it actually thinks, then that opens up \npossibilities of using the system itself to  "
+          }
+        ],
+        "tStartMs": 1617360
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "explain aspects of itself to you. The way I think \nabout that is like this. If I were to play a game  "
+          }
+        ],
+        "tStartMs": 1623120
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "of chess against Garry Kasparov, which I’ve played \nin the past, Magnus Carlsen, or the amazing chess  "
+          }
+        ],
+        "tStartMs": 1629360
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "players of all time, I wouldn’t be able to come \nup with a move that they could. But they could  "
+          }
+        ],
+        "tStartMs": 1634040
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "explain to me why they came up with that move and \nI could understand it post hoc, right? That’s the  "
+          }
+        ],
+        "tStartMs": 1639800
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "sort of thing one could imagine. One of the \ncapabilities that we could make use of these  "
+          }
+        ],
+        "tStartMs": 1647560
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "systems is for them to explain it to us and even \nmaybe get the proofs behind why they’re thinking  "
+          }
+        ],
+        "tStartMs": 1654840
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "something, certainly in a mathematical problem.\nGot it. Do you have a sense of what the converse  "
+          }
+        ],
+        "tStartMs": 1659720
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "answer would be? So what would have to be \ntrue where tomorrow morning you’re like “oh,  "
+          }
+        ],
+        "tStartMs": 1665640
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "man, I didn’t anticipate this.” You see some \nspecific observation tomorrow morning that  "
+          }
+        ],
+        "tStartMs": 1669080
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "makes you say “we got to stop Gemini 2 training.”\nI could imagine that. This is where things like  "
+          }
+        ],
+        "tStartMs": 1672360
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "the sandbox simulations are important. I \nwould hope we’re experimenting in a safe,  "
+          }
+        ],
+        "tStartMs": 1679320
+      },
+      {
+        "dDurationMs": 9200,
+        "segs": [
+          {
+            "utf8": "secure environment when something very unexpected \nhappens. There’s a new unexpected capability or  "
+          }
+        ],
+        "tStartMs": 1684000
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "something that we didn’t want. We explicitly \ntold the system we didn’t want it but then it  "
+          }
+        ],
+        "tStartMs": 1693200
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "did and it lied about it. These are the kinds \nof things where one would want to then dig in  "
+          }
+        ],
+        "tStartMs": 1696640
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "carefully. The systems that are around today are \nnot dangerous, in my opinion, but in a few years  "
+          }
+        ],
+        "tStartMs": 1702840
+      },
+      {
+        "dDurationMs": 10400,
+        "segs": [
+          {
+            "utf8": "they might have potential. Then you would ideally \npause and really get to the bottom of why it was  "
+          }
+        ],
+        "tStartMs": 1709880
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "doing those things before one continued.\nGoing back to Gemini, I’m curious what the  "
+          }
+        ],
+        "tStartMs": 1720280
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "bottlenecks were in the development. \nWhy not immediately make it one order  "
+          }
+        ],
+        "tStartMs": 1725120
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "of magnitude bigger if scaling works?\nFirst of all, there are practical limits.  "
+          }
+        ],
+        "tStartMs": 1728960
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "How much compute can you actually fit in one \ndata center? You’re also bumping up against  "
+          }
+        ],
+        "tStartMs": 1734560
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "very interesting distributed computing kind \nof challenges. Fortunately, we have some of  "
+          }
+        ],
+        "tStartMs": 1740440
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "the best people in the world working on those \nchallenges and cross data center training,  "
+          }
+        ],
+        "tStartMs": 1747640
+      },
+      {
+        "dDurationMs": 3640,
+        "segs": [
+          {
+            "utf8": "all of these kinds of things. There are very \ninteresting hardware challenges and we have our  "
+          }
+        ],
+        "tStartMs": 1751840
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "TPUs that we’re building and designing all the \ntime as well as using GPUs. So there’s all of  "
+          }
+        ],
+        "tStartMs": 1755480
+      },
+      {
+        "dDurationMs": 7640,
+        "segs": [
+          {
+            "utf8": "that. Scaling laws also don’t just work by magic. \nYou still need to scale up the hyperparameters,  "
+          }
+        ],
+        "tStartMs": 1762360
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "and various innovations are going in all the time \nwith each new scale. It’s not just about repeating  "
+          }
+        ],
+        "tStartMs": 1770000
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "the same recipe at each new scale. You have to \nadjust the recipe and that’s a bit of an art  "
+          }
+        ],
+        "tStartMs": 1774920
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "form. You have to sort of get new data points. If \nyou try to extend your predictions and extrapolate  "
+          }
+        ],
+        "tStartMs": 1779840
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "them several orders of magnitude out, sometimes \nthey don’t hold anymore. There can be step  "
+          }
+        ],
+        "tStartMs": 1785960
+      },
+      {
+        "dDurationMs": 7720,
+        "segs": [
+          {
+            "utf8": "functions in terms of new capabilities and some \nthings hold, other things don’t. Often you do need  "
+          }
+        ],
+        "tStartMs": 1793160
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "those intermediate data points to correct some of \nyour hyperparameter optimization and other things,  "
+          }
+        ],
+        "tStartMs": 1800880
+      },
+      {
+        "dDurationMs": 8240,
+        "segs": [
+          {
+            "utf8": "so that the scaling law continues to be true. So \nthere are various practical limitations to that.  "
+          }
+        ],
+        "tStartMs": 1806880
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "One order of magnitude is probably about the \nmaximum that you want to do between each era. "
+          }
+        ],
+        "tStartMs": 1816880
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "That’s so fascinating. In the GPT-4 \ntechnical report, they say that they  "
+          }
+        ],
+        "tStartMs": 1824160
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "were able to predict the training loss with \na model with tens of thousands of times less  "
+          }
+        ],
+        "tStartMs": 1827520
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "compute than GPT-4. They could see the curve. \nBut the point you’re making is that the actual  "
+          }
+        ],
+        "tStartMs": 1832440
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "capabilities that loss implies may not be so.\nYeah, the downstream capabilities sometimes  "
+          }
+        ],
+        "tStartMs": 1836200
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "don’t follow. You can often predict the core \nmetrics like training loss or something like that,  "
+          }
+        ],
+        "tStartMs": 1840520
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "but then it doesn’t actually translate into MMLU, \nor math, or some other actual capability that you  "
+          }
+        ],
+        "tStartMs": 1845640
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "care about. They’re not necessarily linear all \nthe time. There are non-linear effects there. "
+          }
+        ],
+        "tStartMs": 1852640
+      },
+      {
+        "dDurationMs": 1720,
+        "segs": [
+          {
+            "utf8": "What was the biggest surprise \nto you during the development of  "
+          }
+        ],
+        "tStartMs": 1857560
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "Gemini in terms of something like this happening?\nI wouldn’t say there was one big surprise. It was  "
+          }
+        ],
+        "tStartMs": 1859280
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "very interesting trying to train things at \nthat size and learning about all sorts of  "
+          }
+        ],
+        "tStartMs": 1866040
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "things from an organizational standpoint, \nlike how to babysit such a system and to  "
+          }
+        ],
+        "tStartMs": 1872760
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "track it. There’s also things like getting \na better understanding of the metrics you’re  "
+          }
+        ],
+        "tStartMs": 1876120
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "optimizing versus the final capabilities that you \nwant. I would say that’s still not a perfectly  "
+          }
+        ],
+        "tStartMs": 1882480
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "understood mapping, but it’s an interesting \none that we’re getting better and better at. "
+          }
+        ],
+        "tStartMs": 1888120
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "There’s a perception that maybe other \nlabs are more compute-efficient than  "
+          }
+        ],
+        "tStartMs": 1893520
+      },
+      {
+        "dDurationMs": 2480,
+        "segs": [
+          {
+            "utf8": "DeepMind has been with Gemini. I don’t \nknow what you make of that perception. "
+          }
+        ],
+        "tStartMs": 1898080
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "I don’t think that’s the case. I think that \nactually Gemini 1 used roughly the same amount  "
+          }
+        ],
+        "tStartMs": 1900560
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "of compute, maybe slightly more, than what was \nrumored for GPT-4. I don’t know exactly what was  "
+          }
+        ],
+        "tStartMs": 1907720
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "used but I think it was in the same ballpark. \nI think we’re very efficient with our compute  "
+          }
+        ],
+        "tStartMs": 1911600
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "and we use our compute for many things. One is not \njust the scaling but, going back to earlier, more  "
+          }
+        ],
+        "tStartMs": 1917160
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "innovations and ideas. A new innovation, a new \ninvention, is only useful if it can also scale.  "
+          }
+        ],
+        "tStartMs": 1922120
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "So you need quite a lot of compute to do new \ninvention because you’ve got to test many things,  "
+          }
+        ],
+        "tStartMs": 1930440
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "at least some reasonable scale, and make \nsure that they work at that scale. Also,  "
+          }
+        ],
+        "tStartMs": 1937160
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "some new ideas may not work at a toy scale \nbut do work at a larger scale. In fact,  "
+          }
+        ],
+        "tStartMs": 1941160
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "those are the more valuable ones. So if \nyou think about that exploration process,  "
+          }
+        ],
+        "tStartMs": 1946320
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "you need quite a lot of compute to be able to \ndo that. The good news is we’re pretty lucky  "
+          }
+        ],
+        "tStartMs": 1950200
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "at Google. I think this year we’re going to have \nthe most compute by far of any sort of research  "
+          }
+        ],
+        "tStartMs": 1957000
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "lab. We hope to make very efficient and good \nuse of that in terms of both scaling and the  "
+          }
+        ],
+        "tStartMs": 1962480
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "capability of our systems and also new inventions.\nWhat’s been the biggest surprise to you, if you go  "
+          }
+        ],
+        "tStartMs": 1967920
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "back to yourself in 2010 when you were starting \nDeepMind, in terms of what AI progress has looked  "
+          }
+        ],
+        "tStartMs": 1973480
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "like? Did you anticipate back then that it would, \nin some large sense, amount to spending billions  "
+          }
+        ],
+        "tStartMs": 1978160
+      },
+      {
+        "dDurationMs": 2440,
+        "segs": [
+          {
+            "utf8": "of dollars into these models? Or did you have \na different sense of what it would look like? "
+          }
+        ],
+        "tStartMs": 1983480
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "We thought that actually, and I know you’ve \ninterviewed my colleague Shane. He always  "
+          }
+        ],
+        "tStartMs": 1985920
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "thought in terms of compute curves \nand comparing it roughly to the brain,  "
+          }
+        ],
+        "tStartMs": 1991080
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "how many neurons and synapses there are very \nloosely. Interestingly, we’re actually in that  "
+          }
+        ],
+        "tStartMs": 1997480
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "kind of regime now with roughly the right order \nof magnitude of number of synapses in the brain  "
+          }
+        ],
+        "tStartMs": 2001640
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "and the sort of compute that we have. But I think \nmore fundamentally, we always thought that we bet  "
+          }
+        ],
+        "tStartMs": 2006160
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "on generality and learning. So those were always \nat the core of any technique we would use. That’s  "
+          }
+        ],
+        "tStartMs": 2013320
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "why we triangulated on reinforcement learning, \nand search, and deep learning as three types of  "
+          }
+        ],
+        "tStartMs": 2019920
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "algorithms that would scale, be very general, and \nnot require a lot of handcrafted human priors. We  "
+          }
+        ],
+        "tStartMs": 2026360
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "thought that was the sort of failure mode of the \nefforts to build AI in the 90s in places like  "
+          }
+        ],
+        "tStartMs": 2035640
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "MIT. There were very logic-based systems, \nexpert systems, and masses of hand-coded,  "
+          }
+        ],
+        "tStartMs": 2041360
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "handcrafted human information going into them \nthat turned out to be wrong or too rigid. So we  "
+          }
+        ],
+        "tStartMs": 2047680
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "wanted to move away from that and I think we \nspotted that trend early. Obviously, we used  "
+          }
+        ],
+        "tStartMs": 2052640
+      },
+      {
+        "dDurationMs": 4760,
+        "segs": [
+          {
+            "utf8": "games as our proving ground and we did very well \nwith that. I think all of that was very successful  "
+          }
+        ],
+        "tStartMs": 2058400
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "and maybe inspired others. AlphaGo, I think, was a \nbig moment for inspiring many others to think “oh,  "
+          }
+        ],
+        "tStartMs": 2063160
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "actually, these systems are ready to scale.” Of \ncourse then, with the advent of transformers,  "
+          }
+        ],
+        "tStartMs": 2070120
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "invented by our colleagues at Google Research \nand Brain, that was the type of deep learning  "
+          }
+        ],
+        "tStartMs": 2074520
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "that allowed us to ingest masses of amounts of \ninformation. That has really turbocharged where  "
+          }
+        ],
+        "tStartMs": 2080760
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "we are today. So I think that’s all part of the \nsame lineage. We couldn’t have predicted every  "
+          }
+        ],
+        "tStartMs": 2087000
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "twist and turn there, but I think the general \ndirection we were going in was the right one. "
+          }
+        ],
+        "tStartMs": 2091840
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "It’s fascinating if you read your old papers or \nShane’s old papers. In Shane’s thesis in 2009,  "
+          }
+        ],
+        "tStartMs": 2098240
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "he said “well, the way we would test for AI is, \ncan you compress Wikipedia?” And that’s literally,  "
+          }
+        ],
+        "tStartMs": 2103480
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "the loss function for LLMs. Or in your \nown paper in 2016 before transformers,  "
+          }
+        ],
+        "tStartMs": 2107560
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "you were comparing neuroscience and AI \nand you said attention is what is needed. "
+          }
+        ],
+        "tStartMs": 2112320
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "Exactly. So we had these things called out \nand we had some early attention papers,  "
+          }
+        ],
+        "tStartMs": 2117200
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "but they weren’t as elegant as transformers \nin the end, neural Turing machines and things  "
+          }
+        ],
+        "tStartMs": 2122320
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "like this. Transformers were the nicer \nand more general architecture of that. "
+          }
+        ],
+        "tStartMs": 2125920
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "When you extrapolate all this out forward \nand you think about superhuman intelligence,  "
+          }
+        ],
+        "tStartMs": 2132440
+      },
+      {
+        "dDurationMs": 4440,
+        "segs": [
+          {
+            "utf8": "what does that landscape look like to you? Is it \nstill controlled by a private company? What should  "
+          }
+        ],
+        "tStartMs": 2138400
+      },
+      {
+        "dDurationMs": 8560,
+        "segs": [
+          {
+            "utf8": "the governance of that look like concretely?\nI think that this is so consequential,  "
+          }
+        ],
+        "tStartMs": 2142840
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "this technology. I think it’s much bigger than \nany one company or even industry in general.  "
+          }
+        ],
+        "tStartMs": 2151400
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "I think it has to be a big collaboration with \nmany stakeholders from civil society, academia,  "
+          }
+        ],
+        "tStartMs": 2157400
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "government, etc. The good news is that with the \npopularity of the recent chatbot systems, I think  "
+          }
+        ],
+        "tStartMs": 2163840
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "that has woken up many of these other parts of \nsociety to the fact that this is coming and what  "
+          }
+        ],
+        "tStartMs": 2169120
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "it will be like to interact with these systems. \nAnd that’s great. It’s opened up lots of doors for  "
+          }
+        ],
+        "tStartMs": 2173920
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "very good conversations. An example of that was \nthe safety summit the UK hosted a few months ago,  "
+          }
+        ],
+        "tStartMs": 2178600
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "which I thought was a big success in getting this \ninternational dialogue going. I think the whole of  "
+          }
+        ],
+        "tStartMs": 2184600
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "society needs to be involved in deciding what \nwe want to deploy these models for? How do we  "
+          }
+        ],
+        "tStartMs": 2190480
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "want to use them and what do we not want to use \nthem for? I think we’ve got to try and get some  "
+          }
+        ],
+        "tStartMs": 2195000
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "international consensus around that and also make \nsure that these systems benefit everyone, for the  "
+          }
+        ],
+        "tStartMs": 2198680
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "good of society in general. That’s why I push so \nhard for things like AI for science. I hope that  "
+          }
+        ],
+        "tStartMs": 2206520
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "with things like our spin-out, Isomorphic, we’re \ngoing to start curing terrible diseases with AI,  "
+          }
+        ],
+        "tStartMs": 2213320
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "accelerate drug discovery, tackle climate change, \nand do other amazing things. There are big  "
+          }
+        ],
+        "tStartMs": 2218360
+      },
+      {
+        "dDurationMs": 7560,
+        "segs": [
+          {
+            "utf8": "challenges that face humanity, massive challenges. \nI’m actually optimistic we can solve them because  "
+          }
+        ],
+        "tStartMs": 2222360
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "we’ve got this incredibly powerful tool of \nAI coming down the line that we can apply to  "
+          }
+        ],
+        "tStartMs": 2229920
+      },
+      {
+        "dDurationMs": 8200,
+        "segs": [
+          {
+            "utf8": "help us solve many of these problems. Ideally, we \nwould have a big consensus around that and a big  "
+          }
+        ],
+        "tStartMs": 2235240
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "discussion at sort of the UN level if possible.\nOne interesting thing is if you look at these  "
+          }
+        ],
+        "tStartMs": 2243440
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "systems and chat with them, they’re immensely \npowerful and intelligent. But it’s interesting  "
+          }
+        ],
+        "tStartMs": 2249080
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "the extent to which they haven’t automated large \nsections of the economy yet. Whereas if five years  "
+          }
+        ],
+        "tStartMs": 2255000
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "ago I showed you Gemini, you’d be like “wow, \nthis is totally coming for a lot of things.”  "
+          }
+        ],
+        "tStartMs": 2259200
+      },
+      {
+        "dDurationMs": 4440,
+        "segs": [
+          {
+            "utf8": "So how do you account for that? What’s going \non that it hasn’t had the broader impact yet? "
+          }
+        ],
+        "tStartMs": 2263680
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "I think that just shows we’re still at the \nbeginning of this new era. I think there are  "
+          }
+        ],
+        "tStartMs": 2269360
+      },
+      {
+        "dDurationMs": 9400,
+        "segs": [
+          {
+            "utf8": "some interesting use cases where you can use these \nchatbot systems to summarize stuff for you and do  "
+          }
+        ],
+        "tStartMs": 2275600
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "some simple writing, maybe more boilerplate-type \nwriting. But that’s only a small part of what we  "
+          }
+        ],
+        "tStartMs": 2285000
+      },
+      {
+        "dDurationMs": 6680,
+        "segs": [
+          {
+            "utf8": "all do every day. I think for more general \nuse cases we still need new capabilities,  "
+          }
+        ],
+        "tStartMs": 2292680
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "things like planning and search but also things \nlike personalization and episodic memory. That’s  "
+          }
+        ],
+        "tStartMs": 2299360
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "not just long context windows, but actually \nremembering what we spoke about 100 conversations  "
+          }
+        ],
+        "tStartMs": 2306120
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "ago. I’m really looking forward to things like \nrecommendation systems that help me find better,  "
+          }
+        ],
+        "tStartMs": 2311000
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "more enriching material, whether that’s books or \nfilms or music and so on. I would use that type of  "
+          }
+        ],
+        "tStartMs": 2319480
+      },
+      {
+        "dDurationMs": 6840,
+        "segs": [
+          {
+            "utf8": "system every day. So I think we’re just scratching \nthe surface of what these AI assistants could  "
+          }
+        ],
+        "tStartMs": 2324560
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "actually do for us in our general, everyday lives \nand also in our work context as well. I think  "
+          }
+        ],
+        "tStartMs": 2331400
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "they’re not reliable yet enough to do things \nlike science with them. But I think one day,  "
+          }
+        ],
+        "tStartMs": 2337080
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "once we fix factuality and grounding and \nother things, I think they could end up  "
+          }
+        ],
+        "tStartMs": 2341440
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "becoming the world’s best research assistant \nfor you as a scientist or as a clinician. "
+          }
+        ],
+        "tStartMs": 2345440
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "I want to ask about memory. You had this \nfascinating paper in 2007 where you talked  "
+          }
+        ],
+        "tStartMs": 2353600
+      },
+      {
+        "dDurationMs": 5960,
+        "segs": [
+          {
+            "utf8": "about the links between memory and imagination and \nhow they, in some sense, are very similar. People  "
+          }
+        ],
+        "tStartMs": 2358120
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "often claim that these models are just memorizing. \nHow do you think about that claim? Is memorization  "
+          }
+        ],
+        "tStartMs": 2364080
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "all you need because in some deep sense, \nthat’s compression? What’s your intuition here? "
+          }
+        ],
+        "tStartMs": 2370240
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "At the limit, one maybe could try and memorize \neverything but it wouldn’t generalize out of your  "
+          }
+        ],
+        "tStartMs": 2375120
+      },
+      {
+        "dDurationMs": 9320,
+        "segs": [
+          {
+            "utf8": "distribution. The early criticisms of these early \nsystems were that they were just regurgitating  "
+          }
+        ],
+        "tStartMs": 2379520
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "and memorizing. I think clearly in the Gemini, \nGPT-4 type era, they are definitely generalizing  "
+          }
+        ],
+        "tStartMs": 2388840
+      },
+      {
+        "dDurationMs": 7400,
+        "segs": [
+          {
+            "utf8": "to new constructs. Actually my thesis, and \nthat paper particularly that started that  "
+          }
+        ],
+        "tStartMs": 2394840
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "area of imagination in neuroscience, was showing \nthat first of all memory, at least human memory,  "
+          }
+        ],
+        "tStartMs": 2402240
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "is a reconstructive process. It’s not a videotape. \nWe sort of put it together back from components  "
+          }
+        ],
+        "tStartMs": 2407840
+      },
+      {
+        "dDurationMs": 4760,
+        "segs": [
+          {
+            "utf8": "that seem familiar to us, the ensemble. That’s \nwhat made me think that imagination might be the  "
+          }
+        ],
+        "tStartMs": 2412480
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "same thing. Except in this case you’re using the \nsame semantic components, but now you’re putting  "
+          }
+        ],
+        "tStartMs": 2417240
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "it together in a way that your brain thinks is \nnovel, for a particular purpose like planning. I  "
+          }
+        ],
+        "tStartMs": 2421840
+      },
+      {
+        "dDurationMs": 6680,
+        "segs": [
+          {
+            "utf8": "do think that that kind of idea is still probably \nmissing from our current systems, pulling together  "
+          }
+        ],
+        "tStartMs": 2427840
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "different parts of your world model to simulate \nsomething new that then helps with your planning,  "
+          }
+        ],
+        "tStartMs": 2434520
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "which is what I would call imagination.\nFor sure. Now you guys have the best models  "
+          }
+        ],
+        "tStartMs": 2441000
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "in the world with the Gemini models. Do you \nplan on putting out some sort of framework  "
+          }
+        ],
+        "tStartMs": 2445960
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "like the other two major AI labs have? Something \nlike “once we see these specific capabilities,  "
+          }
+        ],
+        "tStartMs": 2452560
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "unless we have these specific safeguards, \nwe’re not going to continue development  "
+          }
+        ],
+        "tStartMs": 2456880
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "or we’re not going to ship the product out.”\nYes, we already have lots of internal checks  "
+          }
+        ],
+        "tStartMs": 2460400
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "and balances but we’re going to start publishing. \nActually, watch this space. We’re working on a  "
+          }
+        ],
+        "tStartMs": 2465920
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "whole bunch of blog posts and technical papers \nthat we’ll be putting out in the next few months  "
+          }
+        ],
+        "tStartMs": 2470760
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "along similar lines of things like responsible \nscaling laws and so on. We have those implicitly  "
+          }
+        ],
+        "tStartMs": 2477320
+      },
+      {
+        "dDurationMs": 6840,
+        "segs": [
+          {
+            "utf8": "internally in various safety councils that people \nlike Shane chair and so on. But it’s time for us  "
+          }
+        ],
+        "tStartMs": 2482560
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "to talk about that more publicly I think. So we’ll \nbe doing that throughout the course of the year. "
+          }
+        ],
+        "tStartMs": 2489400
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "That’s great to hear. Another thing I’m \ncurious about is, there’s not only the risk  "
+          }
+        ],
+        "tStartMs": 2493080
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "of the deployed model being something \nthat people can use to do bad things,  "
+          }
+        ],
+        "tStartMs": 2497320
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "but there’s also rogue actors, foreign agents, \nand so forth, being able to steal the weights  "
+          }
+        ],
+        "tStartMs": 2501680
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "and then fine-tune them to do crazy things. How do \nyou think about securing the weights to make sure  "
+          }
+        ],
+        "tStartMs": 2506600
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "something like this doesn’t happen, making sure \na very key group of people has access to them? "
+          }
+        ],
+        "tStartMs": 2512040
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "It’s interesting. First of all, there’s two parts. \nOne is security, one is open source, which maybe  "
+          }
+        ],
+        "tStartMs": 2517360
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "we can discuss. The security is super key just \nas normal cybersecurity type things. I think  "
+          }
+        ],
+        "tStartMs": 2521480
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "we’re lucky at Google DeepMind. We’re behind \nGoogle’s firewall and cloud protection which I  "
+          }
+        ],
+        "tStartMs": 2528640
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "think is best in class in the world corporately. \nSo we already have that protection. Behind that,  "
+          }
+        ],
+        "tStartMs": 2534360
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "we have specific DeepMind protections within \nour code base. It’s sort of a double layer  "
+          }
+        ],
+        "tStartMs": 2540000
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "of protection. So I feel pretty good about \nthat. You can never be complacent on that  "
+          }
+        ],
+        "tStartMs": 2546200
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "but I feel it’s already the best in the world \nin terms of cyber defenses. We’ve got to carry  "
+          }
+        ],
+        "tStartMs": 2551760
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "on improving that and again, things like the \nhardened sandboxes could be a way of doing that  "
+          }
+        ],
+        "tStartMs": 2558320
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "as well. Maybe there are even specifically \nsecure data centers or hardware solutions  "
+          }
+        ],
+        "tStartMs": 2563240
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "to this too that we’re thinking about. I think \nthat maybe in the next three, four, five years,  "
+          }
+        ],
+        "tStartMs": 2569640
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "we would also want air gaps and various other \nthings that are known in the security community.  "
+          }
+        ],
+        "tStartMs": 2573520
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "So I think that’s key and I think all frontier \nlabs should be doing that because otherwise for  "
+          }
+        ],
+        "tStartMs": 2578960
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "rogue nation-states and other dangerous actors, \nthere would obviously be a lot of incentive for  "
+          }
+        ],
+        "tStartMs": 2582840
+      },
+      {
+        "dDurationMs": 6680,
+        "segs": [
+          {
+            "utf8": "them to steal things like the weights. Of course, \nopen source is another interesting question. We’re  "
+          }
+        ],
+        "tStartMs": 2590040
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "huge proponents of open source and open science. \nWe’ve published thousands of papers, things like  "
+          }
+        ],
+        "tStartMs": 2596720
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "AlphaFold and transformers and AlphaGo. All of \nthese things we put out there into the world,  "
+          }
+        ],
+        "tStartMs": 2602960
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "published and open source, most recently \nGraphCast, our weather prediction system. But  "
+          }
+        ],
+        "tStartMs": 2608560
+      },
+      {
+        "dDurationMs": 10920,
+        "segs": [
+          {
+            "utf8": "when it comes to the general-purpose foundational \ntechnology, I think the question I would have for  "
+          }
+        ],
+        "tStartMs": 2613840
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "open source proponents is, how does one stop \nbad actors, individuals or up to rogue states,  "
+          }
+        ],
+        "tStartMs": 2624760
+      },
+      {
+        "dDurationMs": 7400,
+        "segs": [
+          {
+            "utf8": "taking those same open source systems and \nrepurposing them for harmful ends? We have to  "
+          }
+        ],
+        "tStartMs": 2633240
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "answer that question. I don’t know what the answer \nis to that, but I haven’t heard a compelling,  "
+          }
+        ],
+        "tStartMs": 2640640
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "clear answer to that from proponents of just \nopen sourcing everything. So I think there  "
+          }
+        ],
+        "tStartMs": 2647640
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "has to be some balance there. Obviously, \nit’s a complex question of what that is. "
+          }
+        ],
+        "tStartMs": 2653440
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "I feel like tech doesn’t get the credit it \ndeserves for funding hundreds of billions of  "
+          }
+        ],
+        "tStartMs": 2658760
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "dollars’ worth of R&D, obviously you have DeepMind \nwith systems like AlphaFold and so on. When we  "
+          }
+        ],
+        "tStartMs": 2662520
+      },
+      {
+        "dDurationMs": 5400,
+        "segs": [
+          {
+            "utf8": "talk about securing the weights, as we said maybe \nright now it’s not something that is going to  "
+          }
+        ],
+        "tStartMs": 2668120
+      },
+      {
+        "dDurationMs": 2560,
+        "segs": [
+          {
+            "utf8": "cause the end of the world or anything, but as \nthese systems get better and better, there’s the  "
+          }
+        ],
+        "tStartMs": 2673520
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "worry that a foreign agent or something gets \naccess to them. Presumably right now there’s  "
+          }
+        ],
+        "tStartMs": 2676080
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "dozens to hundreds of researchers who have access \nto the weights. What’s a plan for getting the  "
+          }
+        ],
+        "tStartMs": 2680680
+      },
+      {
+        "dDurationMs": 5400,
+        "segs": [
+          {
+            "utf8": "weights in a situation room where if you need to \naccess them it’s some extremely strenuous process  "
+          }
+        ],
+        "tStartMs": 2686800
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "and no individual can really take them out?\nOne has to balance that with allowing for  "
+          }
+        ],
+        "tStartMs": 2692200
+      },
+      {
+        "dDurationMs": 4440,
+        "segs": [
+          {
+            "utf8": "collaboration and speed of progress. Another \ninteresting thing is that of course you want  "
+          }
+        ],
+        "tStartMs": 2697720
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "brilliant independent researchers from academia or \nthings like the UK AI Safety Institute and the US  "
+          }
+        ],
+        "tStartMs": 2703120
+      },
+      {
+        "dDurationMs": 8040,
+        "segs": [
+          {
+            "utf8": "one to be able to red team these systems. So \none has to expose them to a certain extent,  "
+          }
+        ],
+        "tStartMs": 2708800
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "although that’s not necessarily the weights. We \nhave a lot of processes in place about making  "
+          }
+        ],
+        "tStartMs": 2716840
+      },
+      {
+        "dDurationMs": 9440,
+        "segs": [
+          {
+            "utf8": "sure that only if you need them, those people \nwho need access have access. Right now, I think  "
+          }
+        ],
+        "tStartMs": 2722480
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "we’re still in the early days of those kinds of \nsystems being at risk. As these systems become  "
+          }
+        ],
+        "tStartMs": 2731920
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "more powerful and more general and more capable, \nI think one has to look at the access question. "
+          }
+        ],
+        "tStartMs": 2737040
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "Some of these other labs have specialized \nin different things relative to safety,  "
+          }
+        ],
+        "tStartMs": 2742960
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "Anthropic for example with interpretability. \nDo you have some sense of where you guys might  "
+          }
+        ],
+        "tStartMs": 2746760
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "have an edge? Now that you have the frontier \nmodel, where are you guys going to be able to  "
+          }
+        ],
+        "tStartMs": 2751600
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "put out the best frontier research on safety?\nI think we helped pioneer RLHF and other things  "
+          }
+        ],
+        "tStartMs": 2757280
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "like that which can obviously be used for \nperformance but also for safety. I think that  "
+          }
+        ],
+        "tStartMs": 2762160
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "a lot of the self-play ideas and these kinds \nof things could also be used to auto-test a  "
+          }
+        ],
+        "tStartMs": 2768840
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "lot of the boundary conditions that you have \nwith the new systems. Part of the issue is  "
+          }
+        ],
+        "tStartMs": 2775600
+      },
+      {
+        "dDurationMs": 6520,
+        "segs": [
+          {
+            "utf8": "that with these very general systems, there’s \nso much surface area to cover about how these  "
+          }
+        ],
+        "tStartMs": 2780760
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "systems behave. So I think we are going \nto need some automated testing. Again,  "
+          }
+        ],
+        "tStartMs": 2787280
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "with things like simulations and games, very \nrealistic virtual environments, I think we  "
+          }
+        ],
+        "tStartMs": 2793000
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "have a long history of using those kinds of \nsystems and making use of them for building  "
+          }
+        ],
+        "tStartMs": 2799160
+      },
+      {
+        "dDurationMs": 6840,
+        "segs": [
+          {
+            "utf8": "AI algorithms. I think we can leverage all of that \nhistory. And then around Google, we’re very lucky  "
+          }
+        ],
+        "tStartMs": 2805000
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "to have some of the world’s best cybersecurity \nexperts, hardware designers. I think we can bring  "
+          }
+        ],
+        "tStartMs": 2811840
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "that to bear for security and safety as well.\nLet’s talk about Gemini. So now you guys have  "
+          }
+        ],
+        "tStartMs": 2817160
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "the best model in the world. I’m curious. The \ndefault way to interact with these systems has  "
+          }
+        ],
+        "tStartMs": 2824040
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "been through chat so far. Now that we have \nmultimodal and all these new capabilities,  "
+          }
+        ],
+        "tStartMs": 2829880
+      },
+      {
+        "dDurationMs": 3240,
+        "segs": [
+          {
+            "utf8": "how do you anticipate that changing? \nDo you think that’ll still be the case? "
+          }
+        ],
+        "tStartMs": 2834480
+      },
+      {
+        "dDurationMs": 7320,
+        "segs": [
+          {
+            "utf8": "I think we’re just at the beginning of actually \nunderstanding how exciting that might be to  "
+          }
+        ],
+        "tStartMs": 2837720
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "interact with a full multimodal model system. \nIt’ll be quite different from what we’re used  "
+          }
+        ],
+        "tStartMs": 2845040
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "to today with the chatbots. I think the next \nversions of this over the next year, 18 months,  "
+          }
+        ],
+        "tStartMs": 2848840
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "we’ll maybe have some contextual understanding \nof the environment around you through a camera  "
+          }
+        ],
+        "tStartMs": 2855400
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "or a phone or some glasses. I could imagine \nthat as the next step. And then I think we’ll  "
+          }
+        ],
+        "tStartMs": 2859480
+      },
+      {
+        "dDurationMs": 8840,
+        "segs": [
+          {
+            "utf8": "start becoming more fluid in understanding “let’s \nsample from a video, let’s use voice.” Maybe even  "
+          }
+        ],
+        "tStartMs": 2867400
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "eventually things like touch and if you think \nabout robotics, other types of sensors. So I  "
+          }
+        ],
+        "tStartMs": 2876240
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "think the world’s about to become very exciting \nin the next few years as we start getting used  "
+          }
+        ],
+        "tStartMs": 2883040
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "to the idea of what true multimodality means.\nOn the robotics subject, when he was on the  "
+          }
+        ],
+        "tStartMs": 2887640
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "podcast Ilya said that the reason OpenAI gave up \non robotics was because they didn’t have enough  "
+          }
+        ],
+        "tStartMs": 2894640
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "data in that domain, at least at the time \nthey were pursuing it. You guys have put out  "
+          }
+        ],
+        "tStartMs": 2898080
+      },
+      {
+        "dDurationMs": 4040,
+        "segs": [
+          {
+            "utf8": "different things like Robo-Transformer and other \nthings. Do you think that’s still a bottleneck  "
+          }
+        ],
+        "tStartMs": 2902440
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "for robotics progress, or will we see progress in \nthe world of atoms as well as the world of bits? "
+          }
+        ],
+        "tStartMs": 2906480
+      },
+      {
+        "dDurationMs": 9400,
+        "segs": [
+          {
+            "utf8": "We’re very excited about our progress with things \nlike Gato and RT-2. We’ve always liked robotics  "
+          }
+        ],
+        "tStartMs": 2910680
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "and we’ve had amazing research in that. We still \nhave that going now because we like the fact that  "
+          }
+        ],
+        "tStartMs": 2920080
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "it’s a data-poor regime. That pushes us in very \ninteresting research directions that we think  "
+          }
+        ],
+        "tStartMs": 2925880
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "are going to be useful anyway: sampling efficiency \nand data efficiency in general, transfer learning,  "
+          }
+        ],
+        "tStartMs": 2931600
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "learning from simulation and transferring that \nto reality, sim-to-real. All of these are very  "
+          }
+        ],
+        "tStartMs": 2937040
+      },
+      {
+        "dDurationMs": 7880,
+        "segs": [
+          {
+            "utf8": "interesting general challenges that we would like \nto solve. The control problem. So, we’ve always  "
+          }
+        ],
+        "tStartMs": 2942640
+      },
+      {
+        "dDurationMs": 7320,
+        "segs": [
+          {
+            "utf8": "pushed hard on that. I think Ilya is right. It is \nmore challenging because of the data problem. But  "
+          }
+        ],
+        "tStartMs": 2950520
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "I think we’re starting to see the beginnings \nof these large models being transferable to  "
+          }
+        ],
+        "tStartMs": 2958600
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "the robotics regime. They can learn in the general \ndomain, language domain and other things, and then  "
+          }
+        ],
+        "tStartMs": 2964200
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "just treat tokens like Gato as any type of token. \nThe token could be an action, it could be a word,  "
+          }
+        ],
+        "tStartMs": 2968800
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "it could be part of an image, a pixel, or whatever \nit is. That’s what I think true multimodality is.  "
+          }
+        ],
+        "tStartMs": 2974240
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "To begin with, it’s harder to train a system \nlike that than a straightforward language  "
+          }
+        ],
+        "tStartMs": 2979960
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "system. But going back to our early conversation \non transfer learning, you start seeing that with a  "
+          }
+        ],
+        "tStartMs": 2985200
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "true multimodal system, the other modalities \nbenefit some different modalities. You get  "
+          }
+        ],
+        "tStartMs": 2992720
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "better at language because you now understand \na little bit about video. So I do think it’s  "
+          }
+        ],
+        "tStartMs": 2998600
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "harder to get going, but ultimately we’ll have \na more general, more capable system like that. "
+          }
+        ],
+        "tStartMs": 3004160
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "What ever happened to Gato? That was \nsuper fascinating that you could have it  "
+          }
+        ],
+        "tStartMs": 3010400
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "play games and also do video and also do text.\nWe’re still working on those kinds of systems,  "
+          }
+        ],
+        "tStartMs": 3013120
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "but you can imagine we’re trying to build \nthose ideas into our future generations of  "
+          }
+        ],
+        "tStartMs": 3018400
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "Gemini to be able to do all of those things. \nRobotics, transformers, and things like that,  "
+          }
+        ],
+        "tStartMs": 3024480
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "you can think of them as follow-ups to that.\nWill we see asymmetric progress in the domains in  "
+          }
+        ],
+        "tStartMs": 3030920
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "which the self-play kinds of things you’re talking \nabout will be especially powerful? So math and  "
+          }
+        ],
+        "tStartMs": 3036120
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "code. Recently, you have these papers out about \nthis. You can use these things to do really cool,  "
+          }
+        ],
+        "tStartMs": 3040280
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "novel things. Will they be superhuman coders, \nbut in other ways they might still be worse  "
+          }
+        ],
+        "tStartMs": 3047000
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "than humans? How do you think about that?\nI think that we’re making great progress  "
+          }
+        ],
+        "tStartMs": 3051640
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "with math and things like theorem proving and \ncoding. But it’s still interesting if one looks  "
+          }
+        ],
+        "tStartMs": 3057000
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "at creativity in general, and scientific endeavor \nin general. I think we’re getting to the stage  "
+          }
+        ],
+        "tStartMs": 3064440
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "where our systems could help the best human \nscientists make their breakthroughs quicker,  "
+          }
+        ],
+        "tStartMs": 3069880
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "almost triage the search space in some ways. \nPerhaps find a solution like AlphaFold does  "
+          }
+        ],
+        "tStartMs": 3074600
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "with a protein structure. They’re not at the level \nwhere they can create the hypothesis themselves or  "
+          }
+        ],
+        "tStartMs": 3079520
+      },
+      {
+        "dDurationMs": 5960,
+        "segs": [
+          {
+            "utf8": "ask the right question. As any top scientist will \ntell you, the hardest part of science is actually  "
+          }
+        ],
+        "tStartMs": 3087040
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "asking the right question. It’s boiling down \nthat space to the critical question we should  "
+          }
+        ],
+        "tStartMs": 3093000
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "go after and then formulating the problem in the \nright way to attack it. That’s not something our  "
+          }
+        ],
+        "tStartMs": 3097800
+      },
+      {
+        "dDurationMs": 8920,
+        "segs": [
+          {
+            "utf8": "systems really have any idea how to do, but they \nare suitable for searching large combinatorial  "
+          }
+        ],
+        "tStartMs": 3104200
+      },
+      {
+        "dDurationMs": 6520,
+        "segs": [
+          {
+            "utf8": "spaces if one can specify the problem with a clear \nobjective function. So that’s very useful already  "
+          }
+        ],
+        "tStartMs": 3113120
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "for many of the problems we deal with today, \nbut not the most high-level creative problems. "
+          }
+        ],
+        "tStartMs": 3119640
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "DeepMind has published all kinds \nof interesting stuff in speeding  "
+          }
+        ],
+        "tStartMs": 3126600
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "up science in different areas. If you think AGI \nis going to happen in the next 10 to 20 years,  "
+          }
+        ],
+        "tStartMs": 3130280
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "why not just wait for the AGI to do it for \nyou? Why build these domain-specific solutions? "
+          }
+        ],
+        "tStartMs": 3137040
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "I think we don’t know how long AGI is going \nto be. We always used to say, back even when  "
+          }
+        ],
+        "tStartMs": 3141760
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "we started DeepMind, that we don’t have to wait \nfor AGI in order to bring incredible benefits to  "
+          }
+        ],
+        "tStartMs": 3148560
+      },
+      {
+        "dDurationMs": 9360,
+        "segs": [
+          {
+            "utf8": "the world. My personal passion especially has \nbeen AI for science and health. You can see  "
+          }
+        ],
+        "tStartMs": 3156000
+      },
+      {
+        "dDurationMs": 3960,
+        "segs": [
+          {
+            "utf8": "that with things like AlphaFold and all of our \nvarious Nature papers on different domains and  "
+          }
+        ],
+        "tStartMs": 3165360
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "material science work and so on. I think there’s \nlots of exciting directions and also impact in  "
+          }
+        ],
+        "tStartMs": 3169320
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "the world through products too. I think it’s \nvery exciting and a huge unique opportunity we  "
+          }
+        ],
+        "tStartMs": 3174000
+      },
+      {
+        "dDurationMs": 8600,
+        "segs": [
+          {
+            "utf8": "have as part of Google. They’ve got dozens of \nbillion-user products that we can immediately  "
+          }
+        ],
+        "tStartMs": 3178840
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "ship our advances into and then billions \nof people can improve, enrich, and enhance  "
+          }
+        ],
+        "tStartMs": 3187440
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "their daily lives. I think it’s a fantastic \nopportunity for impact on all those fronts. "
+          }
+        ],
+        "tStartMs": 3196560
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "I think the other reason from the point of view \nof AGI specifically is that it battle tests  "
+          }
+        ],
+        "tStartMs": 3201840
+      },
+      {
+        "dDurationMs": 6840,
+        "segs": [
+          {
+            "utf8": "your ideas. You don’t want to be in a research \nbunker where you theoretically are pushing things  "
+          }
+        ],
+        "tStartMs": 3208080
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "forward, but then actually your internal metrics \nstart deviating from real-world things that people  "
+          }
+        ],
+        "tStartMs": 3215440
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "would care about, or real-world impact. So you \nget a lot of direct feedback from these real-world  "
+          }
+        ],
+        "tStartMs": 3222440
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "applications that then tells you whether your \nsystems really are scaling or if we need to be  "
+          }
+        ],
+        "tStartMs": 3228360
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "more data efficient or sample efficient. Because \nmost real-world challenges require that. So it  "
+          }
+        ],
+        "tStartMs": 3234960
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "kind of keeps you honest and pushes you to keep \nnudging and steering your research directions  "
+          }
+        ],
+        "tStartMs": 3241520
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "to make sure they’re on the right path. So \nI think it’s fantastic. Of course, the world  "
+          }
+        ],
+        "tStartMs": 3247680
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "benefits from that. Society benefits from that \non the way, maybe many years before AGI arrives. "
+          }
+        ],
+        "tStartMs": 3251840
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "The development of Gemini is super interesting \nbecause it comes right at the heels of merging  "
+          }
+        ],
+        "tStartMs": 3259680
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "these different organizations, Brain and DeepMind. \nI’m curious, what have been the challenges  "
+          }
+        ],
+        "tStartMs": 3263120
+      },
+      {
+        "dDurationMs": 3640,
+        "segs": [
+          {
+            "utf8": "there? What have been the synergies? It’s been \nsuccessful in the sense that you have the best  "
+          }
+        ],
+        "tStartMs": 3268280
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "model in the world now. What’s that been like?\nIt’s been fantastic actually, over the last year.  "
+          }
+        ],
+        "tStartMs": 3271920
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "Of course it’s been challenging to do, like any \nbig integration coming together. You’re talking  "
+          }
+        ],
+        "tStartMs": 3276040
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "about two world-class organizations with \nlong, storied histories of inventing many  "
+          }
+        ],
+        "tStartMs": 3281000
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "important things from deep reinforcement learning \nto transformers. So it’s very exciting to actually  "
+          }
+        ],
+        "tStartMs": 3287120
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "pool all of that together and collaborate much \nmore closely. We always used to be collaborating,  "
+          }
+        ],
+        "tStartMs": 3292800
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "but more on a project-by-project basis versus \na much deeper, broader collaboration like we  "
+          }
+        ],
+        "tStartMs": 3297480
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "have now. Gemini is the first fruit of that \ncollaboration, including the name Gemini  "
+          }
+        ],
+        "tStartMs": 3305400
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "implying twins. Of course, a lot of other things \nare made more efficient like pooling compute  "
+          }
+        ],
+        "tStartMs": 3312160
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "resources together and ideas and engineering. I \nthink at the stage we’re at now, there are huge  "
+          }
+        ],
+        "tStartMs": 3317320
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "amounts of world-class engineering that have \nto go into building the frontier systems. I  "
+          }
+        ],
+        "tStartMs": 3323160
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "think it makes sense to coordinate that more.\nYou and Shane started DeepMind partly because  "
+          }
+        ],
+        "tStartMs": 3327880
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "you were concerned about safety. You saw AGI \ncoming as a live possibility. Do you think  "
+          }
+        ],
+        "tStartMs": 3334200
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "the people who were formerly part of Brain, \nthat half of Google DeepMind now, approach  "
+          }
+        ],
+        "tStartMs": 3340200
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "it in the same way? Have there been cultural \ndifferences there in terms of that question? "
+          }
+        ],
+        "tStartMs": 3344400
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "This is one of the reasons we joined forces with \nGoogle back in 2014. I think the entirety of  "
+          }
+        ],
+        "tStartMs": 3348720
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "Google and Alphabet, not just Brain and DeepMind, \ntakes these questions of responsibility very  "
+          }
+        ],
+        "tStartMs": 3355120
+      },
+      {
+        "dDurationMs": 8280,
+        "segs": [
+          {
+            "utf8": "seriously. Our kind of mantra is to try and be \nbold and responsible with these systems. I’m  "
+          }
+        ],
+        "tStartMs": 3358560
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "obviously a huge techno-optimist but I want us \nto be cautious given the transformative power of  "
+          }
+        ],
+        "tStartMs": 3366840
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "what we’re bringing into the world collectively. \nI think it’s important. It’s going to be one of  "
+          }
+        ],
+        "tStartMs": 3372640
+      },
+      {
+        "dDurationMs": 5400,
+        "segs": [
+          {
+            "utf8": "the most important technologies humanity will ever \ninvent. So we’ve got to put all our efforts into  "
+          }
+        ],
+        "tStartMs": 3379680
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "getting this right and be thoughtful and \nalso humble about what we know and don’t  "
+          }
+        ],
+        "tStartMs": 3385080
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "know about the systems that are coming and \nthe uncertainties around that. In my view,  "
+          }
+        ],
+        "tStartMs": 3390120
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "the only sensible approach when you have huge \nuncertainty is to be cautiously optimistic and  "
+          }
+        ],
+        "tStartMs": 3395600
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "use the scientific method to try and have as much \nforesight and understanding about what’s coming  "
+          }
+        ],
+        "tStartMs": 3400960
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "down the line and the consequences of that before \nit happens. You don’t want to be live A/B testing  "
+          }
+        ],
+        "tStartMs": 3405440
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "out in the world with these very consequential \nsystems because unintended consequences may be  "
+          }
+        ],
+        "tStartMs": 3410280
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "quite severe. So I want us to move away, as a \nfield, from a sort of “move fast and break things  "
+          }
+        ],
+        "tStartMs": 3415600
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "attitude” which has maybe served the Valley very \nwell in the past and obviously created important  "
+          }
+        ],
+        "tStartMs": 3422320
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "innovations. I think in this case we want to \nbe bold with the positive things that it can do  "
+          }
+        ],
+        "tStartMs": 3427760
+      },
+      {
+        "dDurationMs": 7480,
+        "segs": [
+          {
+            "utf8": "and make sure we advance things like medicine \nand science whilst being as responsible and  "
+          }
+        ],
+        "tStartMs": 3435600
+      },
+      {
+        "dDurationMs": 7880,
+        "segs": [
+          {
+            "utf8": "thoughtful as possible with mitigating the risks.\nThat’s why it seems like the responsible scaling  "
+          }
+        ],
+        "tStartMs": 3443080
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "policies are something that are a very \ngood empirical way to pre-commit to these  "
+          }
+        ],
+        "tStartMs": 3450960
+      },
+      {
+        "dDurationMs": 1200,
+        "segs": [
+          {
+            "utf8": "kinds of things.\nYes, exactly. "
+          }
+        ],
+        "tStartMs": 3454400
+      },
+      {
+        "dDurationMs": 3320,
+        "segs": [
+          {
+            "utf8": "When you’re doing these evaluations and for \nexample it turns out your next model could  "
+          }
+        ],
+        "tStartMs": 3458000
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "help a layperson build a pandemic-class bioweapon \nor something, how would you think first of all  "
+          }
+        ],
+        "tStartMs": 3461320
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "about making sure those weights are secure \nso that they don't get out? And second, what  "
+          }
+        ],
+        "tStartMs": 3466560
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "would have to be true for you to be comfortable \ndeploying that system? How would you make sure  "
+          }
+        ],
+        "tStartMs": 3471480
+      },
+      {
+        "dDurationMs": 6280,
+        "segs": [
+          {
+            "utf8": "that this latent capability isn’t exposed?\nThe secure model part I think we’ve covered  "
+          }
+        ],
+        "tStartMs": 3475560
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "with the cybersecurity and making sure that’s \nworld-class and you’re monitoring all those  "
+          }
+        ],
+        "tStartMs": 3481840
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "things. I think if a capability like that was \ndiscovered through red teaming or external  "
+          }
+        ],
+        "tStartMs": 3485680
+      },
+      {
+        "dDurationMs": 7320,
+        "segs": [
+          {
+            "utf8": "testing, independent testers like government \ninstitutes or academia or whatever, then we  "
+          }
+        ],
+        "tStartMs": 3492000
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "would have to fix that loophole. Depending on what \nit was, that might require a different kind of  "
+          }
+        ],
+        "tStartMs": 3499320
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "constitution perhaps, or different guardrails, or \nmore RLHF to avoid that. Or you could remove some  "
+          }
+        ],
+        "tStartMs": 3507800
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "training data, depending on what the problem is. I \nthink there could be a number of mitigations. The  "
+          }
+        ],
+        "tStartMs": 3513000
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "first part is making sure you detect it ahead \nof time. So that’s about the right evaluations  "
+          }
+        ],
+        "tStartMs": 3520040
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "and right benchmarking and right testing. Then \nthe question is how one would fix that before  "
+          }
+        ],
+        "tStartMs": 3525080
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "you deployed it. But I think it would need \nto be fixed before it was deployed generally,  "
+          }
+        ],
+        "tStartMs": 3530640
+      },
+      {
+        "dDurationMs": 7400,
+        "segs": [
+          {
+            "utf8": "for sure, if that was an exposure surface.\nFinal question. You’ve been thinking in terms  "
+          }
+        ],
+        "tStartMs": 3534720
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "of the end goal of AGI at a time when other \npeople thought it was ridiculous in 2010. Now  "
+          }
+        ],
+        "tStartMs": 3542120
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "that we’re seeing this slow takeoff where we’re \nactually seeing generalization and intelligence,  "
+          }
+        ],
+        "tStartMs": 3546120
+      },
+      {
+        "dDurationMs": 3480,
+        "segs": [
+          {
+            "utf8": "what is like psychologically seeing this? \nWhat has that been like? Has it just been  "
+          }
+        ],
+        "tStartMs": 3552320
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "sort of priced into your world model so \nit’s not new news for you? Or actually just  "
+          }
+        ],
+        "tStartMs": 3555800
+      },
+      {
+        "dDurationMs": 4760,
+        "segs": [
+          {
+            "utf8": "seeing it live, are you like “wow, something’s \nreally changed”? What does it feel like? "
+          }
+        ],
+        "tStartMs": 3559680
+      },
+      {
+        "dDurationMs": 4440,
+        "segs": [
+          {
+            "utf8": "For me, yes, it’s already priced into my \nworld model of how things were going to go,  "
+          }
+        ],
+        "tStartMs": 3564440
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "at least from the technology side. But obviously, \nwe didn’t necessarily anticipate that the general  "
+          }
+        ],
+        "tStartMs": 3568880
+      },
+      {
+        "dDurationMs": 11440,
+        "segs": [
+          {
+            "utf8": "public would be so interested this early in the \nsequence. If ChatGPT and chatbots hadn’t gotten  "
+          }
+        ],
+        "tStartMs": 3575120
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "the interest they ended up getting—which \nI think was quite surprising to everyone  "
+          }
+        ],
+        "tStartMs": 3587240
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "that people were ready to use these things even \nthough they were lacking in certain directions,  "
+          }
+        ],
+        "tStartMs": 3590360
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "impressive though they are—then we would have \nproduced more specialized systems built off  "
+          }
+        ],
+        "tStartMs": 3595280
+      },
+      {
+        "dDurationMs": 9080,
+        "segs": [
+          {
+            "utf8": "of the main track, like AlphaFold and AlphaGo, \nour scientific work. I think then the general  "
+          }
+        ],
+        "tStartMs": 3600560
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "public maybe would have only paid attention \nlater down the road when in a few years’ time,  "
+          }
+        ],
+        "tStartMs": 3609640
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "we have more generally useful assistant-type \nsystems. So that’s been interesting. That’s  "
+          }
+        ],
+        "tStartMs": 3614480
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "created a different type of environment \nthat we’re now all operating in as a field.  "
+          }
+        ],
+        "tStartMs": 3619360
+      },
+      {
+        "dDurationMs": 3160,
+        "segs": [
+          {
+            "utf8": "It’s a little bit more chaotic because \nthere’s so many more things going on,  "
+          }
+        ],
+        "tStartMs": 3626400
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "and there’s so much VC money going into it, and \neveryone’s sort of almost losing their minds over  "
+          }
+        ],
+        "tStartMs": 3629560
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "it. The only thing I worry about is that I want \nto make sure that, as a field, we act responsibly  "
+          }
+        ],
+        "tStartMs": 3634800
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "and thoughtfully and scientifically about this \nand use the scientific method to approach this  "
+          }
+        ],
+        "tStartMs": 3641800
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "in an optimistic but careful way. I think \nI’ve always believed that that’s the right  "
+          }
+        ],
+        "tStartMs": 3646720
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "approach for something like AI, and I just \nhope that doesn’t get lost in this huge rush. "
+          }
+        ],
+        "tStartMs": 3652960
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "Well, I think that’s a great place to \nclose. Demis, thank you so much for your  "
+          }
+        ],
+        "tStartMs": 3660160
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "time and for coming on the podcast.\nThanks. It’s been a real pleasure."
+          }
+        ],
+        "tStartMs": 3663040
+      }
+    ],
+    "pens": [
+      {}
+    ],
+    "wireMagic": "pb3",
+    "wpWinPositions": [
+      {}
+    ],
+    "wsWinStyles": [
+      {}
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "canonical_url": "https://www.youtube.com/watch?v=qTogNUV3CAI",
+    "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA",
+    "format": "json3",
+    "language": "en",
+    "payload_sha256": "139886fa995ff228fc118cc702e990e218c5fc8659da05f8d44fe1989b5be68b",
+    "platform": "youtube",
+    "track_type": "publisher-subtitle",
+    "uploader": "Dwarkesh Patel",
+    "video_id": "qTogNUV3CAI"
+  }
+}

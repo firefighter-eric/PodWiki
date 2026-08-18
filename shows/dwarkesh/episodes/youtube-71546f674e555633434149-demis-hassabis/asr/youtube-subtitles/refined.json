@@ -1,0 +1,3865 @@
+{
+  "generated_at": "2026-08-18T08:26:16.354504Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-71546f674e555633434149-demis-hassabis/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "ec2a3bd500772122ee0d71f49988ad0b6d53599e57898d7d2168ac7b25ade4fc"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 50480,
+      "source_event_index": 0,
+      "start_ms": 44840,
+      "text": "Today it is a true honor to speak with Demis Hassabis, who is the CEO of DeepMind. Demis,"
+    },
+    {
+      "end_ms": 52720,
+      "source_event_index": 1,
+      "start_ms": 50480,
+      "text": "welcome to the podcast. Thanks for having me."
+    },
+    {
+      "end_ms": 56880,
+      "source_event_index": 2,
+      "start_ms": 52720,
+      "text": "First question, given your neuroscience background, how do you think about intelligence?"
+    },
+    {
+      "end_ms": 61640,
+      "source_event_index": 3,
+      "start_ms": 56880,
+      "text": "Specifically, do you think it’s one higher-level general reasoning circuit, or do you think it’s"
+    },
+    {
+      "end_ms": 68400,
+      "source_event_index": 4,
+      "start_ms": 61640,
+      "text": "thousands of independent subskills and heuristics? It’s interesting because intelligence is so"
+    },
+    {
+      "end_ms": 77000,
+      "source_event_index": 5,
+      "start_ms": 69200,
+      "text": "broad and what we use it for is so generally applicable. I think that suggests there must"
+    },
+    {
+      "end_ms": 86320,
+      "source_event_index": 6,
+      "start_ms": 77000,
+      "text": "be high-level common algorithmic themes around how the brain processes the world"
+    },
+    {
+      "end_ms": 94040,
+      "source_event_index": 7,
+      "start_ms": 86320,
+      "text": "around us. Of course, there are specialized parts of the brain that do specific things,"
+    },
+    {
+      "end_ms": 98160,
+      "source_event_index": 8,
+      "start_ms": 94040,
+      "text": "but I think there are probably some underlying principles that underpin all of that."
+    },
+    {
+      "end_ms": 102240,
+      "source_event_index": 9,
+      "start_ms": 98160,
+      "text": "How do you make sense of the fact that in these LLMs, when you give them a lot"
+    },
+    {
+      "end_ms": 105800,
+      "source_event_index": 10,
+      "start_ms": 102240,
+      "text": "of data in any specific domain, they tend to get asymmetrically better in"
+    },
+    {
+      "end_ms": 111960,
+      "source_event_index": 11,
+      "start_ms": 105800,
+      "text": "that domain. Wouldn’t we expect a general improvement across all the different areas?"
+    },
+    {
+      "end_ms": 116440,
+      "source_event_index": 12,
+      "start_ms": 111960,
+      "text": "First of all, I think you do sometimes get surprising improvement in other domains when"
+    },
+    {
+      "end_ms": 122520,
+      "source_event_index": 13,
+      "start_ms": 116440,
+      "text": "you improve in a specific domain. For example, when these large models improve at coding,"
+    },
+    {
+      "end_ms": 128560,
+      "source_event_index": 14,
+      "start_ms": 122520,
+      "text": "that can actually improve their general reasoning. So there is evidence of some transfer although we"
+    },
+    {
+      "end_ms": 134600,
+      "source_event_index": 15,
+      "start_ms": 128560,
+      "text": "would like a lot more evidence of that. But that’s how the human brain learns too. If"
+    },
+    {
+      "end_ms": 140000,
+      "source_event_index": 16,
+      "start_ms": 134600,
+      "text": "we experience and practice a lot of things like chess, creative writing, or whatever,"
+    },
+    {
+      "end_ms": 145280,
+      "source_event_index": 17,
+      "start_ms": 140000,
+      "text": "we also tend to specialize and get better at that specific thing even though we’re using"
+    },
+    {
+      "end_ms": 151480,
+      "source_event_index": 18,
+      "start_ms": 145280,
+      "text": "general learning techniques and general learning systems in order to get good at that domain."
+    },
+    {
+      "end_ms": 155280,
+      "source_event_index": 19,
+      "start_ms": 151480,
+      "text": "What’s been the most surprising example of this kind of transfer for you? Will you"
+    },
+    {
+      "end_ms": 161440,
+      "source_event_index": 20,
+      "start_ms": 155280,
+      "text": "see language and code, or images and text? I’m hoping we’re going to see a lot more of"
+    },
+    {
+      "end_ms": 166480,
+      "source_event_index": 21,
+      "start_ms": 161440,
+      "text": "this kind of transfer, but I think things like getting better at coding and math,"
+    },
+    {
+      "end_ms": 171480,
+      "source_event_index": 22,
+      "start_ms": 166480,
+      "text": "and then generally improving your reasoning. That is how it works with us as human learners."
+    },
+    {
+      "end_ms": 175800,
+      "source_event_index": 23,
+      "start_ms": 171480,
+      "text": "But I think it’s interesting seeing that in these artificial systems."
+    },
+    {
+      "end_ms": 180640,
+      "source_event_index": 24,
+      "start_ms": 175800,
+      "text": "And can you see the sort of mechanistic way, in the language and code example,"
+    },
+    {
+      "end_ms": 183400,
+      "source_event_index": 25,
+      "start_ms": 181240,
+      "text": "in which you’ve found the place in a neural network that’s getting better"
+    },
+    {
+      "end_ms": 187400,
+      "source_event_index": 26,
+      "start_ms": 183400,
+      "text": "with both the language and the code? Or is that too far down the weeds?"
+    },
+    {
+      "end_ms": 192680,
+      "source_event_index": 27,
+      "start_ms": 187400,
+      "text": "I don’t think our analysis techniques are quite sophisticated enough to be able to hone in on"
+    },
+    {
+      "end_ms": 197440,
+      "source_event_index": 28,
+      "start_ms": 192680,
+      "text": "that. I think that’s actually one of the areas where a lot more research needs to be done,"
+    },
+    {
+      "end_ms": 201520,
+      "source_event_index": 29,
+      "start_ms": 197440,
+      "text": "the kind of mechanistic analysis of the representations that these systems build"
+    },
+    {
+      "end_ms": 208040,
+      "source_event_index": 30,
+      "start_ms": 201520,
+      "text": "up. I sometimes like to call it virtual brain analytics. In a way, it’s a bit like doing fMRI,"
+    },
+    {
+      "end_ms": 214960,
+      "source_event_index": 31,
+      "start_ms": 208040,
+      "text": "or single-cell recording from a real brain. What are the analogous analysis techniques for these"
+    },
+    {
+      "end_ms": 219480,
+      "source_event_index": 32,
+      "start_ms": 214960,
+      "text": "artificial minds? There’s a lot of great work going on in this sort of stuff. People like"
+    },
+    {
+      "end_ms": 224520,
+      "source_event_index": 33,
+      "start_ms": 219480,
+      "text": "Chris Olah, I really like his work. I think a lot of computational neuroscience techniques can be"
+    },
+    {
+      "end_ms": 229360,
+      "source_event_index": 34,
+      "start_ms": 224520,
+      "text": "brought to bear on analyzing the current systems we’re building. In fact, I try to"
+    },
+    {
+      "end_ms": 234040,
+      "source_event_index": 35,
+      "start_ms": 229360,
+      "text": "encourage a lot of my computational neuroscience friends to start thinking in that direction and"
+    },
+    {
+      "end_ms": 241520,
+      "source_event_index": 36,
+      "start_ms": 234040,
+      "text": "applying their know-how to the large models. What do other AI researchers not understand"
+    },
+    {
+      "end_ms": 246680,
+      "source_event_index": 37,
+      "start_ms": 241520,
+      "text": "about human intelligence that you have some sort of insight on, given your neuroscience background?"
+    },
+    {
+      "end_ms": 253960,
+      "source_event_index": 38,
+      "start_ms": 246680,
+      "text": "I think neuroscience has added a lot, if you look at the last 10-20 years that we’ve been at it."
+    },
+    {
+      "end_ms": 261920,
+      "source_event_index": 39,
+      "start_ms": 254760,
+      "text": "I’ve been thinking about this for 30+ years. In the earlier days of the new wave of AI,"
+    },
+    {
+      "end_ms": 266520,
+      "source_event_index": 40,
+      "start_ms": 261920,
+      "text": "neuroscience was providing a lot of interesting directional clues,"
+    },
+    {
+      "end_ms": 270480,
+      "source_event_index": 41,
+      "start_ms": 266520,
+      "text": "things like reinforcement learning and combining that with deep learning. Some of our pioneering"
+    },
+    {
+      "end_ms": 275280,
+      "source_event_index": 42,
+      "start_ms": 270480,
+      "text": "work we did there were things like experience replay and even the notion of attention,"
+    },
+    {
+      "end_ms": 282920,
+      "source_event_index": 43,
+      "start_ms": 275280,
+      "text": "which has become super important. A lot of those original inspirations came from some understanding"
+    },
+    {
+      "end_ms": 286840,
+      "source_event_index": 44,
+      "start_ms": 282920,
+      "text": "about how the brain works, although not the exact specifics of course. One is an engineered"
+    },
+    {
+      "end_ms": 290640,
+      "source_event_index": 45,
+      "start_ms": 286840,
+      "text": "system and the other one’s a natural system. It’s not so much about a one-to-one mapping"
+    },
+    {
+      "end_ms": 295920,
+      "source_event_index": 46,
+      "start_ms": 290640,
+      "text": "of a specific algorithm, but more so inspirational direction. Maybe it’s some ideas for architecture,"
+    },
+    {
+      "end_ms": 301960,
+      "source_event_index": 47,
+      "start_ms": 295920,
+      "text": "or algorithmic ideas, or representational ideas. The brain is an existence proof that"
+    },
+    {
+      "end_ms": 307880,
+      "source_event_index": 48,
+      "start_ms": 301960,
+      "text": "general intelligence is possible at all. I think the history of human endeavors has been such that"
+    },
+    {
+      "end_ms": 312240,
+      "source_event_index": 49,
+      "start_ms": 307880,
+      "text": "once you know something’s possible it’s easier to push hard in that direction, because you know it’s"
+    },
+    {
+      "end_ms": 319680,
+      "source_event_index": 50,
+      "start_ms": 312240,
+      "text": "a question of effort, a question of when and not if. That allows you to make progress a lot more"
+    },
+    {
+      "end_ms": 328560,
+      "source_event_index": 51,
+      "start_ms": 319680,
+      "text": "quickly. So I think neuroscience has inspired a lot of the thinking, at least in a soft way,"
+    },
+    {
+      "end_ms": 336760,
+      "source_event_index": 52,
+      "start_ms": 328560,
+      "text": "behind where we are today. As for going forward, I think there’s still a lot of interesting things"
+    },
+    {
+      "end_ms": 343680,
+      "source_event_index": 53,
+      "start_ms": 336760,
+      "text": "to be resolved around planning. How does the brain construct the right world models? I"
+    },
+    {
+      "end_ms": 350960,
+      "source_event_index": 54,
+      "start_ms": 343680,
+      "text": "studied how the brain does imagination, or you can think of it as mental simulation. How do we"
+    },
+    {
+      "end_ms": 356360,
+      "source_event_index": 55,
+      "start_ms": 350960,
+      "text": "create very rich visual spatial simulations of the world in order for us to plan better?"
+    },
+    {
+      "end_ms": 360720,
+      "source_event_index": 56,
+      "start_ms": 356360,
+      "text": "Actually, I’m curious how you think that will interface with LLMs. Obviously, DeepMind is"
+    },
+    {
+      "end_ms": 365600,
+      "source_event_index": 57,
+      "start_ms": 360720,
+      "text": "at the frontier and has been for many years with systems like AlphaZero and so forth, having these"
+    },
+    {
+      "end_ms": 371240,
+      "source_event_index": 58,
+      "start_ms": 365600,
+      "text": "agents which can think through different steps to get to an end outcome. Is there a path for"
+    },
+    {
+      "end_ms": 375720,
+      "source_event_index": 59,
+      "start_ms": 371240,
+      "text": "LLMs to have this tree search kind of thing on top of them? How do you think about this?"
+    },
+    {
+      "end_ms": 382880,
+      "source_event_index": 60,
+      "start_ms": 375720,
+      "text": "I think that’s a super promising direction. We’ve got to carry on improving the large models. We’ve"
+    },
+    {
+      "end_ms": 389640,
+      "source_event_index": 61,
+      "start_ms": 382880,
+      "text": "got to carry on making them more and more accurate predictors of the world, making them more and"
+    },
+    {
+      "end_ms": 394680,
+      "source_event_index": 62,
+      "start_ms": 389640,
+      "text": "more reliable world models. That’s clearly a necessary, but probably insufficient component"
+    },
+    {
+      "end_ms": 402320,
+      "source_event_index": 63,
+      "start_ms": 394680,
+      "text": "of an AGI system. On top of that, we’re working on things like AlphaZero-like planning mechanisms"
+    },
+    {
+      "end_ms": 407560,
+      "source_event_index": 64,
+      "start_ms": 402320,
+      "text": "on top that make use of that model in order to make concrete plans to achieve certain goals"
+    },
+    {
+      "end_ms": 416680,
+      "source_event_index": 65,
+      "start_ms": 407560,
+      "text": "in the world. Perhaps chaining thought, lines of reasoning, together and using search to explore"
+    },
+    {
+      "end_ms": 421960,
+      "source_event_index": 66,
+      "start_ms": 416680,
+      "text": "massive spaces of possibility. I think that’s kind of missing from our current large models."
+    },
+    {
+      "end_ms": 426760,
+      "source_event_index": 67,
+      "start_ms": 421960,
+      "text": "How do you get past the immense amount of compute that these approaches tend to"
+    },
+    {
+      "end_ms": 432800,
+      "source_event_index": 68,
+      "start_ms": 426760,
+      "text": "require? Even the AlphaGo system was a pretty expensive system because you sort of had to run"
+    },
+    {
+      "end_ms": 438760,
+      "source_event_index": 69,
+      "start_ms": 432800,
+      "text": "an LLM on each node of the tree. How do you anticipate that’ll get made more efficient?"
+    },
+    {
+      "end_ms": 448920,
+      "source_event_index": 70,
+      "start_ms": 438760,
+      "text": "One thing is Moore’s law tends to help. Over every year more computation comes in. But we focus a lot"
+    },
+    {
+      "end_ms": 457200,
+      "source_event_index": 71,
+      "start_ms": 448920,
+      "text": "on sample-efficient methods and reusing existing data, things like experience replay and also just"
+    },
+    {
+      "end_ms": 462000,
+      "source_event_index": 72,
+      "start_ms": 457200,
+      "text": "looking at more efficient ways. The better your world model is, the more efficient your search"
+    },
+    {
+      "end_ms": 467640,
+      "source_event_index": 73,
+      "start_ms": 462000,
+      "text": "can be. One example I always give is AlphaZero, our system to play Go and chess and any game."
+    },
+    {
+      "end_ms": 476160,
+      "source_event_index": 74,
+      "start_ms": 468960,
+      "text": "It’s stronger than human world champion level in all these games and it uses a lot less search than"
+    },
+    {
+      "end_ms": 482440,
+      "source_event_index": 75,
+      "start_ms": 476160,
+      "text": "a brute force method like Deep Blue to play chess. One of these traditional Stockfish or"
+    },
+    {
+      "end_ms": 487960,
+      "source_event_index": 76,
+      "start_ms": 482440,
+      "text": "Deep Blue systems would maybe look at millions of possible moves for every decision it’s going"
+    },
+    {
+      "end_ms": 496080,
+      "source_event_index": 77,
+      "start_ms": 487960,
+      "text": "to make. AlphaZero and AlphaGo may look at around tens of thousands of possible positions in order"
+    },
+    {
+      "end_ms": 501800,
+      "source_event_index": 78,
+      "start_ms": 496080,
+      "text": "to make a decision about what to move next. A human grandmaster or world champion probably"
+    },
+    {
+      "end_ms": 507920,
+      "source_event_index": 79,
+      "start_ms": 501800,
+      "text": "only looks at a few hundred moves, even the top ones, in order to make their very good decision"
+    },
+    {
+      "end_ms": 512960,
+      "source_event_index": 80,
+      "start_ms": 507920,
+      "text": "about what to play next. So that suggests that the brute force systems don’t have any"
+    },
+    {
+      "end_ms": 520000,
+      "source_event_index": 81,
+      "start_ms": 512960,
+      "text": "real model other than the heuristics about the game. AlphaGo has quite a decent model but the"
+    },
+    {
+      "end_ms": 527560,
+      "source_event_index": 82,
+      "start_ms": 521760,
+      "text": "top human players have a much richer, much more accurate model of Go or chess. That allows them"
+    },
+    {
+      "end_ms": 533360,
+      "source_event_index": 83,
+      "start_ms": 527560,
+      "text": "to make world-class decisions on a very small amount of search. So I think there’s a sort of"
+    },
+    {
+      "end_ms": 538480,
+      "source_event_index": 84,
+      "start_ms": 533360,
+      "text": "trade-off there. If you improve the models, then I think your search can be more efficient and"
+    },
+    {
+      "end_ms": 544120,
+      "source_event_index": 85,
+      "start_ms": 538480,
+      "text": "therefore you can get further with your search. I have two questions based on that. With AlphaGo,"
+    },
+    {
+      "end_ms": 548680,
+      "source_event_index": 86,
+      "start_ms": 544120,
+      "text": "you had a very concrete win condition: at the end of the day, do I win this game of Go or not? You"
+    },
+    {
+      "end_ms": 554560,
+      "source_event_index": 87,
+      "start_ms": 548680,
+      "text": "can reinforce on that. When you’re thinking of an LLM putting out thought, do you think there"
+    },
+    {
+      "end_ms": 560080,
+      "source_event_index": 88,
+      "start_ms": 554560,
+      "text": "will be this ability to discriminate in the end, whether that was a good thing to reward or not?"
+    },
+    {
+      "end_ms": 564280,
+      "source_event_index": 89,
+      "start_ms": 560080,
+      "text": "Of course that’s why we pioneered, and what DeepMind is sort of famous for,"
+    },
+    {
+      "end_ms": 570120,
+      "source_event_index": 90,
+      "start_ms": 564280,
+      "text": "using games as a proving ground. That’s partly because it’s efficient to research in that domain."
+    },
+    {
+      "end_ms": 574400,
+      "source_event_index": 91,
+      "start_ms": 570120,
+      "text": "The other reason is, obviously, it’s extremely easy to specify a reward function. Winning the"
+    },
+    {
+      "end_ms": 580120,
+      "source_event_index": 92,
+      "start_ms": 574400,
+      "text": "game or improving the score, something like that is built into most games. So that is one of the"
+    },
+    {
+      "end_ms": 584960,
+      "source_event_index": 93,
+      "start_ms": 580120,
+      "text": "challenges of real-world systems. How does one define the right objective function, the right"
+    },
+    {
+      "end_ms": 592600,
+      "source_event_index": 94,
+      "start_ms": 584960,
+      "text": "reward function, and the right goals? How does one specify them in a general way, but specific enough"
+    },
+    {
+      "end_ms": 598040,
+      "source_event_index": 95,
+      "start_ms": 592600,
+      "text": "that one actually points the system in the right direction? For real-world problems, that can be a"
+    },
+    {
+      "end_ms": 604400,
+      "source_event_index": 96,
+      "start_ms": 598040,
+      "text": "lot harder. But actually, if you think about it in even scientific problems, there are usually ways"
+    },
+    {
+      "end_ms": 608520,
+      "source_event_index": 97,
+      "start_ms": 604400,
+      "text": "that you can specify the goal that you’re after. When you think about human intelligence,"
+    },
+    {
+      "end_ms": 612400,
+      "source_event_index": 98,
+      "start_ms": 608520,
+      "text": "you were just saying that humans thinking about these thoughts are just super sample-efficient."
+    },
+    {
+      "end_ms": 616720,
+      "source_event_index": 99,
+      "start_ms": 613480,
+      "text": "Einstein coming up with relativity, right? There’s thousands of possible permutations"
+    },
+    {
+      "end_ms": 620840,
+      "source_event_index": 100,
+      "start_ms": 616720,
+      "text": "of the equations. Do you think it’s also this sense of different heuristics like,"
+    },
+    {
+      "end_ms": 624480,
+      "source_event_index": 101,
+      "start_ms": 620840,
+      "text": "“I’m going to try out this approach instead of this”? Or is it a totally different way of"
+    },
+    {
+      "end_ms": 629920,
+      "source_event_index": 102,
+      "start_ms": 624480,
+      "text": "approaching and coming up with that solution than what AlphaGo does to plan the next move?"
+    },
+    {
+      "end_ms": 635800,
+      "source_event_index": 103,
+      "start_ms": 629920,
+      "text": "I think it’s different because our brains are not built for doing Monte Carlo tree search. It’s"
+    },
+    {
+      "end_ms": 642200,
+      "source_event_index": 104,
+      "start_ms": 635800,
+      "text": "just not the way our organic brains work. I think that people like Einstein, in order to compensate"
+    },
+    {
+      "end_ms": 651320,
+      "source_event_index": 105,
+      "start_ms": 642200,
+      "text": "for that, have used their intuition—and maybe we can come to what intuition is—and their knowledge"
+    },
+    {
+      "end_ms": 658800,
+      "source_event_index": 106,
+      "start_ms": 651320,
+      "text": "and their experience to build in Einstein’s case, extremely accurate models of physics that include"
+    },
+    {
+      "end_ms": 663520,
+      "source_event_index": 107,
+      "start_ms": 658800,
+      "text": "mental simulations. If you read about Einstein and how he came up with things, he used to visualize"
+    },
+    {
+      "end_ms": 670720,
+      "source_event_index": 108,
+      "start_ms": 663520,
+      "text": "and really feel what these physical systems should be like, not just the mathematics of"
+    },
+    {
+      "end_ms": 675160,
+      "source_event_index": 109,
+      "start_ms": 670720,
+      "text": "it. He had a really intuitive feel for what they would be like in reality. That allowed him to"
+    },
+    {
+      "end_ms": 680880,
+      "source_event_index": 110,
+      "start_ms": 675160,
+      "text": "think these thoughts that were very outlandish at the time. So I think that that gets to the"
+    },
+    {
+      "end_ms": 686280,
+      "source_event_index": 111,
+      "start_ms": 680880,
+      "text": "sophistication of the world models that we’re building. Imagine your world model can get you"
+    },
+    {
+      "end_ms": 691640,
+      "source_event_index": 112,
+      "start_ms": 686280,
+      "text": "to a certain node in a tree that you’re searching, and then you just do a little bit of search around"
+    },
+    {
+      "end_ms": 698680,
+      "source_event_index": 113,
+      "start_ms": 691640,
+      "text": "that leaf node and that gets you to these original places. Obviously, if your model and your judgment"
+    },
+    {
+      "end_ms": 703840,
+      "source_event_index": 114,
+      "start_ms": 698680,
+      "text": "on that model is very, very good, then you can pick which leaf nodes you should expand"
+    },
+    {
+      "end_ms": 708400,
+      "source_event_index": 115,
+      "start_ms": 703840,
+      "text": "with search much more accurately. So overall, you therefore do a lot less search. I mean, there’s"
+    },
+    {
+      "end_ms": 714640,
+      "source_event_index": 116,
+      "start_ms": 708400,
+      "text": "no way that any human could do a kind of brute force search over any kind of significant space."
+    },
+    {
+      "end_ms": 720360,
+      "source_event_index": 117,
+      "start_ms": 716120,
+      "text": "A big open question right now is whether RL will allow these models to use the self-play"
+    },
+    {
+      "end_ms": 724360,
+      "source_event_index": 118,
+      "start_ms": 720360,
+      "text": "synthetic data to get over data bottlenecks. It sounds like you’re optimistic about this?"
+    },
+    {
+      "end_ms": 729640,
+      "source_event_index": 119,
+      "start_ms": 724360,
+      "text": "I’m very optimistic about that. First of all, there’s still a lot more data that can be used,"
+    },
+    {
+      "end_ms": 734760,
+      "source_event_index": 120,
+      "start_ms": 729640,
+      "text": "especially if one views multimodal and video and these kinds of things. Obviously,"
+    },
+    {
+      "end_ms": 742960,
+      "source_event_index": 121,
+      "start_ms": 735280,
+      "text": "society is adding more data all the time to the Internet and things like that. I think that"
+    },
+    {
+      "end_ms": 748040,
+      "source_event_index": 122,
+      "start_ms": 742960,
+      "text": "there’s a lot of scope for creating synthetic data. We’re looking at that in different ways,"
+    },
+    {
+      "end_ms": 752520,
+      "source_event_index": 123,
+      "start_ms": 748040,
+      "text": "partly through simulation, using very realistic game environments, for example,"
+    },
+    {
+      "end_ms": 761280,
+      "source_event_index": 124,
+      "start_ms": 752520,
+      "text": "to generate realistic data, but also self-play. That’s where systems interact with each other"
+    },
+    {
+      "end_ms": 767360,
+      "source_event_index": 125,
+      "start_ms": 761280,
+      "text": "or converse with each other. It worked very well for us with AlphaGo and AlphaZero where we got the"
+    },
+    {
+      "end_ms": 771640,
+      "source_event_index": 126,
+      "start_ms": 767360,
+      "text": "systems to play against each other and actually learn from each other’s mistakes and build up a"
+    },
+    {
+      "end_ms": 775320,
+      "source_event_index": 127,
+      "start_ms": 771640,
+      "text": "knowledge base that way. I think there are some good analogies for that. It’s a little bit more"
+    },
+    {
+      "end_ms": 781320,
+      "source_event_index": 128,
+      "start_ms": 775320,
+      "text": "complicated to build a general kind of world data. How do you get to the point with these"
+    },
+    {
+      "end_ms": 785040,
+      "source_event_index": 129,
+      "start_ms": 781320,
+      "text": "models where the synthetic data they’re outputting on the self-play they’re doing"
+    },
+    {
+      "end_ms": 789480,
+      "source_event_index": 130,
+      "start_ms": 785600,
+      "text": "is not just more of what’s already in their data set, but something they haven’t seen"
+    },
+    {
+      "end_ms": 796200,
+      "source_event_index": 131,
+      "start_ms": 789480,
+      "text": "before? To actually improve the abilities. I think there’s a whole science needed there."
+    },
+    {
+      "end_ms": 800120,
+      "source_event_index": 132,
+      "start_ms": 796200,
+      "text": "I think we’re still in the nascent stage of this, of data curation and data analysis and"
+    },
+    {
+      "end_ms": 805280,
+      "source_event_index": 133,
+      "start_ms": 800120,
+      "text": "actually analyzing the holes that you have in your data distribution. This is important for"
+    },
+    {
+      "end_ms": 810200,
+      "source_event_index": 134,
+      "start_ms": 805280,
+      "text": "things like fairness and bias and other stuff. To remove that from the system is to really make"
+    },
+    {
+      "end_ms": 814320,
+      "source_event_index": 135,
+      "start_ms": 810200,
+      "text": "sure that your data set is representative of the distribution you’re trying to learn."
+    },
+    {
+      "end_ms": 819320,
+      "source_event_index": 136,
+      "start_ms": 815480,
+      "text": "There are many tricks there one can use, like overweighting or replaying certain parts of the"
+    },
+    {
+      "end_ms": 825040,
+      "source_event_index": 137,
+      "start_ms": 819320,
+      "text": "data. Or if you identify some gap in your data set, you could imagine that’s where you put your"
+    },
+    {
+      "end_ms": 832480,
+      "source_event_index": 138,
+      "start_ms": 825040,
+      "text": "synthetic generation capabilities to work on. Nowadays, people are paying attention to the RL"
+    },
+    {
+      "end_ms": 838280,
+      "source_event_index": 139,
+      "start_ms": 832480,
+      "text": "stuff that DeepMind did many years before. What are the early research directions, or something"
+    },
+    {
+      "end_ms": 842953,
+      "source_event_index": 140,
+      "start_ms": 838280,
+      "text": "that was done way back in the past, that you think will be a big deal but people just haven’t been"
+    },
+    {
+      "end_ms": 845640,
+      "source_event_index": 141,
+      "start_ms": 842953,
+      "text": "paying attention to it? There was a time where people weren’t paying attention to scaling. What’s"
+    },
+    {
+      "end_ms": 850280,
+      "source_event_index": 142,
+      "start_ms": 845640,
+      "text": "the thing now that is totally underrated? Well, I think that the history of the last"
+    },
+    {
+      "end_ms": 856280,
+      "source_event_index": 143,
+      "start_ms": 850280,
+      "text": "couple of decades has been things coming in and out of fashion, right? A while ago,"
+    },
+    {
+      "end_ms": 861440,
+      "source_event_index": 144,
+      "start_ms": 856280,
+      "text": "maybe five-plus years ago, we were pioneering with AlphaGo and before that DQN. It was the"
+    },
+    {
+      "end_ms": 866800,
+      "source_event_index": 145,
+      "start_ms": 861440,
+      "text": "first system that worked on Atari, our first big system really more than ten years ago now,"
+    },
+    {
+      "end_ms": 871080,
+      "source_event_index": 146,
+      "start_ms": 866800,
+      "text": "that scaled up Q-learning and reinforcement learning techniques and combined that with deep"
+    },
+    {
+      "end_ms": 878440,
+      "source_event_index": 147,
+      "start_ms": 871080,
+      "text": "learning to create deep reinforcement learning. We used that to scale up to master some pretty"
+    },
+    {
+      "end_ms": 884240,
+      "source_event_index": 148,
+      "start_ms": 878440,
+      "text": "complex tasks like playing Atari games just from the pixels. I do actually think a lot of those"
+    },
+    {
+      "end_ms": 890520,
+      "source_event_index": 149,
+      "start_ms": 884240,
+      "text": "ideas need to come back in again and, as we talked about earlier, combine them with the new advances"
+    },
+    {
+      "end_ms": 894920,
+      "source_event_index": 150,
+      "start_ms": 890520,
+      "text": "in large models and large multimodal models, which are obviously very exciting as well. So I do think"
+    },
+    {
+      "end_ms": 900440,
+      "source_event_index": 151,
+      "start_ms": 894920,
+      "text": "there’s a lot of potential for combining some of those older ideas together with the newer ones."
+    },
+    {
+      "end_ms": 907240,
+      "source_event_index": 152,
+      "start_ms": 900440,
+      "text": "Is there any potential for the AGI to eventually come from a pure RL approach? The way we’re"
+    },
+    {
+      "end_ms": 913080,
+      "source_event_index": 153,
+      "start_ms": 907240,
+      "text": "talking about it, it sounds like the LLM will form the right prior and then this sort of tree search"
+    },
+    {
+      "end_ms": 917480,
+      "source_event_index": 154,
+      "start_ms": 913080,
+      "text": "will go on top of that. Or is it a possibility that it comes completely out of the dark?"
+    },
+    {
+      "end_ms": 921840,
+      "source_event_index": 155,
+      "start_ms": 917480,
+      "text": "Theoretically, I think there’s no reason why you couldn’t go full AlphaZero-like on it. There are"
+    },
+    {
+      "end_ms": 930240,
+      "source_event_index": 156,
+      "start_ms": 921840,
+      "text": "some people here at Google DeepMind and in the RL community who work on that, fully assuming no"
+    },
+    {
+      "end_ms": 937240,
+      "source_event_index": 157,
+      "start_ms": 930240,
+      "text": "priors, no data, and just building all knowledge from scratch. I think that’s valuable because"
+    },
+    {
+      "end_ms": 943760,
+      "source_event_index": 158,
+      "start_ms": 939120,
+      "text": "those ideas and those algorithms should also work when you have some knowledge too. Having"
+    },
+    {
+      "end_ms": 949840,
+      "source_event_index": 159,
+      "start_ms": 943760,
+      "text": "said that, I think by far the quickest way to get to AGI, and the most plausible way,"
+    },
+    {
+      "end_ms": 953440,
+      "source_event_index": 160,
+      "start_ms": 949840,
+      "text": "is to use all the knowledge that’s existing in the world right now that we’ve collected from things"
+    },
+    {
+      "end_ms": 961560,
+      "source_event_index": 161,
+      "start_ms": 953440,
+      "text": "like the Web. We have these scalable algorithms, like transformers, that are capable of ingesting"
+    },
+    {
+      "end_ms": 967600,
+      "source_event_index": 162,
+      "start_ms": 961560,
+      "text": "all of that information. So I don’t see why you wouldn’t start with a model as a kind of prior,"
+    },
+    {
+      "end_ms": 973120,
+      "source_event_index": 163,
+      "start_ms": 967600,
+      "text": "or to build on it and to make predictions that help bootstrap your learning. I just think it"
+    },
+    {
+      "end_ms": 980680,
+      "source_event_index": 164,
+      "start_ms": 973120,
+      "text": "doesn’t make sense not to make use of that. So my betting would be that the final AGI system will"
+    },
+    {
+      "end_ms": 987400,
+      "source_event_index": 165,
+      "start_ms": 980680,
+      "text": "have these large multimodal models as part of the overall solution, but they probably"
+    },
+    {
+      "end_ms": 991280,
+      "source_event_index": 166,
+      "start_ms": 987400,
+      "text": "won’t be enough on their own. You’ll need this additional planning search on top."
+    },
+    {
+      "end_ms": 996880,
+      "source_event_index": 167,
+      "start_ms": 991800,
+      "text": "This sounds like the answer to the question I’m about to ask. As somebody who’s been in"
+    },
+    {
+      "end_ms": 1000840,
+      "source_event_index": 168,
+      "start_ms": 996880,
+      "text": "this field for a long time and seen different trends come and go, what do you think the"
+    },
+    {
+      "end_ms": 1004040,
+      "source_event_index": 169,
+      "start_ms": 1000840,
+      "text": "strong version of the scaling hypothesis gets right and what does it get wrong? The idea that"
+    },
+    {
+      "end_ms": 1007240,
+      "source_event_index": 170,
+      "start_ms": 1004040,
+      "text": "you just throw enough compute at a wide enough distribution of data and you get intelligence."
+    },
+    {
+      "end_ms": 1011480,
+      "source_event_index": 171,
+      "start_ms": 1007960,
+      "text": "My view is that this is kind of an empirical question right now. I think it was pretty"
+    },
+    {
+      "end_ms": 1016760,
+      "source_event_index": 172,
+      "start_ms": 1011480,
+      "text": "surprising to almost everyone, including the people who first worked on the scaling hypotheses,"
+    },
+    {
+      "end_ms": 1022640,
+      "source_event_index": 173,
+      "start_ms": 1016760,
+      "text": "how far it’s gone. In a way, I look at the large models today and I think they’re almost"
+    },
+    {
+      "end_ms": 1027840,
+      "source_event_index": 174,
+      "start_ms": 1022640,
+      "text": "unreasonably effective for what they are. I think it’s pretty surprising some of the properties that"
+    },
+    {
+      "end_ms": 1034560,
+      "source_event_index": 175,
+      "start_ms": 1027840,
+      "text": "emerge. In my opinion, they’ve clearly got some form of concepts and abstractions and things"
+    },
+    {
+      "end_ms": 1038200,
+      "source_event_index": 176,
+      "start_ms": 1034560,
+      "text": "like that. I think if we were talking five-plus years ago, I would have said to you that maybe"
+    },
+    {
+      "end_ms": 1044000,
+      "source_event_index": 177,
+      "start_ms": 1038200,
+      "text": "we need an additional algorithmic breakthrough in order to do that, maybe more like how the"
+    },
+    {
+      "end_ms": 1049480,
+      "source_event_index": 178,
+      "start_ms": 1044000,
+      "text": "brain works. I think that’s still true if we want explicit abstract concepts, neat concepts,"
+    },
+    {
+      "end_ms": 1054800,
+      "source_event_index": 179,
+      "start_ms": 1049480,
+      "text": "but it seems that these systems can implicitly learn that. Another really interesting, unexpected"
+    },
+    {
+      "end_ms": 1059920,
+      "source_event_index": 180,
+      "start_ms": 1054800,
+      "text": "thing was that these systems have some sort of grounding even though they don’t experience the"
+    },
+    {
+      "end_ms": 1066080,
+      "source_event_index": 181,
+      "start_ms": 1059920,
+      "text": "world multimodally, at least until more recently when we have the multimodal models. The amount of"
+    },
+    {
+      "end_ms": 1071240,
+      "source_event_index": 182,
+      "start_ms": 1066080,
+      "text": "information and models that can be built up just from language is surprising. I think that I’d"
+    },
+    {
+      "end_ms": 1076560,
+      "source_event_index": 183,
+      "start_ms": 1071240,
+      "text": "have some hypotheses about why that is. I think we get some grounding through the RLHF feedback"
+    },
+    {
+      "end_ms": 1083560,
+      "source_event_index": 184,
+      "start_ms": 1076560,
+      "text": "systems because obviously the human raters are by definition, grounded people. We’re grounded in"
+    },
+    {
+      "end_ms": 1088680,
+      "source_event_index": 185,
+      "start_ms": 1083560,
+      "text": "reality, so our feedback is also grounded. Perhaps there’s some grounding coming in through there."
+    },
+    {
+      "end_ms": 1096200,
+      "source_event_index": 186,
+      "start_ms": 1088680,
+      "text": "Also if you’re able to ingest all of it, maybe language contains more grounding than linguists"
+    },
+    {
+      "end_ms": 1100680,
+      "source_event_index": 187,
+      "start_ms": 1096200,
+      "text": "thought before. So it actually raises some very interesting philosophical questions that people"
+    },
+    {
+      "end_ms": 1106360,
+      "source_event_index": 188,
+      "start_ms": 1100680,
+      "text": "haven’t even really scratched the surface of yet. Looking at the advances that have been made,"
+    },
+    {
+      "end_ms": 1111080,
+      "source_event_index": 189,
+      "start_ms": 1107000,
+      "text": "it’s quite interesting to think about where it’s going to go next. In terms of your question of"
+    },
+    {
+      "end_ms": 1117520,
+      "source_event_index": 190,
+      "start_ms": 1111640,
+      "text": "large models, I think we’ve got to push scaling as hard as we can and that’s what we’re doing here."
+    },
+    {
+      "end_ms": 1122520,
+      "source_event_index": 191,
+      "start_ms": 1118160,
+      "text": "It’s an empirical question, whether that will hit an asymptote or a brick wall, and there are"
+    },
+    {
+      "end_ms": 1127200,
+      "source_event_index": 192,
+      "start_ms": 1122520,
+      "text": "different people who argue about that. I think we should just test it. I think no one knows."
+    },
+    {
+      "end_ms": 1133760,
+      "source_event_index": 193,
+      "start_ms": 1127760,
+      "text": "In the meantime, we should also double down on innovation and invention. This is something where"
+    },
+    {
+      "end_ms": 1140840,
+      "source_event_index": 194,
+      "start_ms": 1134760,
+      "text": "Google Research and DeepMind and Google Brain have pioneered many, many things over the last decade."
+    },
+    {
+      "end_ms": 1146360,
+      "source_event_index": 195,
+      "start_ms": 1140840,
+      "text": "That’s our bread and butter. You can think of half our effort as having to do with scaling and"
+    },
+    {
+      "end_ms": 1150680,
+      "source_event_index": 196,
+      "start_ms": 1146360,
+      "text": "half our efforts having to do with inventing the next architectures and the next algorithms that"
+    },
+    {
+      "end_ms": 1157840,
+      "source_event_index": 197,
+      "start_ms": 1150680,
+      "text": "will be needed, knowing that larger and larger scaled models are coming down the line. So my"
+    },
+    {
+      "end_ms": 1164280,
+      "source_event_index": 198,
+      "start_ms": 1157840,
+      "text": "betting right now, but it’s a loose betting, is that you need both. I think you’ve got to push"
+    },
+    {
+      "end_ms": 1167400,
+      "source_event_index": 199,
+      "start_ms": 1164280,
+      "text": "both of them as hard as possible and we’re in a lucky position that we can do that."
+    },
+    {
+      "end_ms": 1171080,
+      "source_event_index": 200,
+      "start_ms": 1167400,
+      "text": "I want to ask more about the grounding. You can imagine two things that might change which would"
+    },
+    {
+      "end_ms": 1175080,
+      "source_event_index": 201,
+      "start_ms": 1171080,
+      "text": "make the grounding more difficult. One is that as these models get smarter, they are going to"
+    },
+    {
+      "end_ms": 1179920,
+      "source_event_index": 202,
+      "start_ms": 1175080,
+      "text": "be able to operate in domains where we just can’t generate enough human labels, just because we’re"
+    },
+    {
+      "end_ms": 1184640,
+      "source_event_index": 203,
+      "start_ms": 1179920,
+      "text": "not smart enough. If it does a million-line pull request, how do we tell it, for example,"
+    },
+    {
+      "end_ms": 1189280,
+      "source_event_index": 204,
+      "start_ms": 1184640,
+      "text": "this is within the constraints of our morality and the end goal we wanted and this isn’t? The"
+    },
+    {
+      "end_ms": 1193560,
+      "source_event_index": 205,
+      "start_ms": 1189280,
+      "text": "other thing has to do with what you were saying about compute. So far we’ve been doing next token"
+    },
+    {
+      "end_ms": 1197320,
+      "source_event_index": 206,
+      "start_ms": 1193560,
+      "text": "prediction and in some sense it’s a guardrail, because you have to talk as a human would talk"
+    },
+    {
+      "end_ms": 1203000,
+      "source_event_index": 207,
+      "start_ms": 1197320,
+      "text": "and think as a human would think. Now, additional compute is maybe going to come in the form of"
+    },
+    {
+      "end_ms": 1206800,
+      "source_event_index": 208,
+      "start_ms": 1203000,
+      "text": "reinforcement learning where it’s just getting to the objective and we can’t really trace how"
+    },
+    {
+      "end_ms": 1213080,
+      "source_event_index": 209,
+      "start_ms": 1206800,
+      "text": "you got there. When you combine those two, how worried are you that the grounding goes away?"
+    },
+    {
+      "end_ms": 1222000,
+      "source_event_index": 210,
+      "start_ms": 1213680,
+      "text": "I think if it’s not properly grounded, the system won’t be able to achieve those goals properly. In"
+    },
+    {
+      "end_ms": 1227920,
+      "source_event_index": 211,
+      "start_ms": 1222000,
+      "text": "a sense, you have to have some grounding for a system to actually achieve goals in the real"
+    },
+    {
+      "end_ms": 1234920,
+      "source_event_index": 212,
+      "start_ms": 1227920,
+      "text": "world. I do actually think that these systems, and things like Gemini, are becoming more multimodal."
+    },
+    {
+      "end_ms": 1242400,
+      "source_event_index": 213,
+      "start_ms": 1234920,
+      "text": "As we start ingesting things like video and audiovisual data as well as text data, then the"
+    },
+    {
+      "end_ms": 1250760,
+      "source_event_index": 214,
+      "start_ms": 1242400,
+      "text": "system starts correlating those things together. I think that is a form of proper grounding. So"
+    },
+    {
+      "end_ms": 1256560,
+      "source_event_index": 215,
+      "start_ms": 1250760,
+      "text": "I do think our systems are going to start to understand the physics of the real world better."
+    },
+    {
+      "end_ms": 1260840,
+      "source_event_index": 216,
+      "start_ms": 1256560,
+      "text": "Then one could imagine the active version of that as a very realistic simulation or"
+    },
+    {
+      "end_ms": 1267240,
+      "source_event_index": 217,
+      "start_ms": 1260840,
+      "text": "game environment where you’re starting to learn about what your actions do in the world and how"
+    },
+    {
+      "end_ms": 1272920,
+      "source_event_index": 218,
+      "start_ms": 1267240,
+      "text": "that affects the world itself. The world stays itself, but it also affects what next learning"
+    },
+    {
+      "end_ms": 1277160,
+      "source_event_index": 219,
+      "start_ms": 1272920,
+      "text": "episode you’re getting. So these RL agents we’ve always been working on and pioneered,"
+    },
+    {
+      "end_ms": 1282200,
+      "source_event_index": 220,
+      "start_ms": 1277160,
+      "text": "like AlphaZero and AlphaGo, actually are active learners. What they decide to do"
+    },
+    {
+      "end_ms": 1287760,
+      "source_event_index": 221,
+      "start_ms": 1282200,
+      "text": "next affects what next learning piece of data or experience they’re going to get. So there’s"
+    },
+    {
+      "end_ms": 1290640,
+      "source_event_index": 222,
+      "start_ms": 1287760,
+      "text": "this very interesting sort of feedback loop. And of course, if we ever want to be good at"
+    },
+    {
+      "end_ms": 1295760,
+      "source_event_index": 223,
+      "start_ms": 1290640,
+      "text": "things like robotics, we’re going to have to understand how to act in the real world."
+    },
+    {
+      "end_ms": 1299080,
+      "source_event_index": 224,
+      "start_ms": 1295760,
+      "text": "So there’s grounding in terms of whether the capabilities will be able to proceed,"
+    },
+    {
+      "end_ms": 1303040,
+      "source_event_index": 225,
+      "start_ms": 1299080,
+      "text": "whether they will be enough in touch with reality to do the things we want. There’s"
+    },
+    {
+      "end_ms": 1307880,
+      "source_event_index": 226,
+      "start_ms": 1303040,
+      "text": "another sense of grounding in that we’ve gotten lucky that since they’re trained on human thought,"
+    },
+    {
+      "end_ms": 1312480,
+      "source_event_index": 227,
+      "start_ms": 1307880,
+      "text": "they maybe think like a human. To what extent does that stay true when more of the compute for"
+    },
+    {
+      "end_ms": 1317440,
+      "source_event_index": 228,
+      "start_ms": 1312480,
+      "text": "training comes from just “did you get the right outcome” and it’s not guardrailed by “are you"
+    },
+    {
+      "end_ms": 1321280,
+      "source_event_index": 229,
+      "start_ms": 1317440,
+      "text": "proceeding on the next token as a human would?” Maybe the broader question I’ll pose to you is,"
+    },
+    {
+      "end_ms": 1324960,
+      "source_event_index": 230,
+      "start_ms": 1321840,
+      "text": "and this is what I asked Shane as well, what would it take to align a system that’s smarter"
+    },
+    {
+      "end_ms": 1329880,
+      "source_event_index": 231,
+      "start_ms": 1324960,
+      "text": "than a human? Maybe it thinks in alien concepts and you can’t really monitor the million-line pull"
+    },
+    {
+      "end_ms": 1333400,
+      "source_event_index": 232,
+      "start_ms": 1329880,
+      "text": "request because you can’t really understand the whole thing and you can’t give labels."
+    },
+    {
+      "end_ms": 1337920,
+      "source_event_index": 233,
+      "start_ms": 1333400,
+      "text": "This is something Shane and I, and many others here, have had at the forefront of our minds since"
+    },
+    {
+      "end_ms": 1343720,
+      "source_event_index": 234,
+      "start_ms": 1337920,
+      "text": "before we started DeepMind because we planned for success. In 2010, no one was thinking about AI let"
+    },
+    {
+      "end_ms": 1349480,
+      "source_event_index": 235,
+      "start_ms": 1343720,
+      "text": "alone AGI. But we already knew that if we could make progress with these systems and these ideas,"
+    },
+    {
+      "end_ms": 1355360,
+      "source_event_index": 236,
+      "start_ms": 1350320,
+      "text": "the technology created would be unbelievably transformative. So we were already thinking"
+    },
+    {
+      "end_ms": 1360680,
+      "source_event_index": 237,
+      "start_ms": 1355360,
+      "text": "20 years ago about what the consequences of that would be, both positive and negative. Of course,"
+    },
+    {
+      "end_ms": 1364080,
+      "source_event_index": 238,
+      "start_ms": 1360680,
+      "text": "the positive direction is amazing science, things like AlphaFold,"
+    },
+    {
+      "end_ms": 1370880,
+      "source_event_index": 239,
+      "start_ms": 1364080,
+      "text": "incredible breakthroughs in health and science, and mathematical and scientific discovery. But we"
+    },
+    {
+      "end_ms": 1374080,
+      "source_event_index": 240,
+      "start_ms": 1370880,
+      "text": "also have to make sure these systems are sort of understandable and controllable."
+    },
+    {
+      "end_ms": 1380960,
+      "source_event_index": 241,
+      "start_ms": 1376080,
+      "text": "This will be a whole discussion in itself, but there are many, many ideas that people have"
+    },
+    {
+      "end_ms": 1386240,
+      "source_event_index": 242,
+      "start_ms": 1381520,
+      "text": "such as more stringent eval systems. I think we don’t have good enough evaluations and benchmarks"
+    },
+    {
+      "end_ms": 1391520,
+      "source_event_index": 243,
+      "start_ms": 1386240,
+      "text": "for things like if the system can deceive you. Can it exfiltrate its own code or do other undesirable"
+    },
+    {
+      "end_ms": 1402000,
+      "source_event_index": 244,
+      "start_ms": 1391520,
+      "text": "behaviors? There are also ideas of using AI, not general learning ones but maybe narrow AIs that"
+    },
+    {
+      "end_ms": 1409000,
+      "source_event_index": 245,
+      "start_ms": 1402000,
+      "text": "are specialized for a domain, to help us as the human scientists to analyze and summarize what the"
+    },
+    {
+      "end_ms": 1415320,
+      "source_event_index": 246,
+      "start_ms": 1409000,
+      "text": "more general system is doing. So there’s narrow AI tools. I think that there’s a lot of promise"
+    },
+    {
+      "end_ms": 1424000,
+      "source_event_index": 247,
+      "start_ms": 1415320,
+      "text": "in creating hardened sandboxes or simulations that are hardened with cybersecurity arrangements"
+    },
+    {
+      "end_ms": 1432280,
+      "source_event_index": 248,
+      "start_ms": 1424000,
+      "text": "around the simulation, both to keep the AI in and to keep hackers out. You could experiment"
+    },
+    {
+      "end_ms": 1440320,
+      "source_event_index": 249,
+      "start_ms": 1432280,
+      "text": "a lot more freely within that sandbox domain. There’s many, many other ideas, including the"
+    },
+    {
+      "end_ms": 1445160,
+      "source_event_index": 250,
+      "start_ms": 1440320,
+      "text": "analysis stuff we talked about earlier, where we can analyze and understand what the concepts"
+    },
+    {
+      "end_ms": 1448640,
+      "source_event_index": 251,
+      "start_ms": 1445160,
+      "text": "are that this system is building and what the representations are. So maybe then they’re not"
+    },
+    {
+      "end_ms": 1453920,
+      "source_event_index": 252,
+      "start_ms": 1448640,
+      "text": "so alien to us and we can actually keep track of the kind of knowledge that it’s building."
+    },
+    {
+      "end_ms": 1457160,
+      "source_event_index": 253,
+      "start_ms": 1454640,
+      "text": "Stepping back a bit, I’m curious what your timelines are. So Shane"
+    },
+    {
+      "end_ms": 1461840,
+      "source_event_index": 254,
+      "start_ms": 1457160,
+      "text": "said his modal outcome is 2028. I think that’s maybe his median. What is yours?"
+    },
+    {
+      "end_ms": 1468000,
+      "source_event_index": 255,
+      "start_ms": 1463680,
+      "text": "I don’t have prescribed specific numbers to it because I think there’s so many unknowns"
+    },
+    {
+      "end_ms": 1475000,
+      "source_event_index": 256,
+      "start_ms": 1468000,
+      "text": "and uncertainties. Human ingenuity and endeavor comes up with surprises all the time. So that"
+    },
+    {
+      "end_ms": 1481440,
+      "source_event_index": 257,
+      "start_ms": 1475000,
+      "text": "could meaningfully move the timelines. I will say that when we started DeepMind back in 2010,"
+    },
+    {
+      "end_ms": 1486400,
+      "source_event_index": 258,
+      "start_ms": 1481440,
+      "text": "we thought of it as a 20-year project. And I think we’re on track actually, which is kind"
+    },
+    {
+      "end_ms": 1490600,
+      "source_event_index": 259,
+      "start_ms": 1486400,
+      "text": "of amazing for 20-year projects because usually they’re always 20 years away. That’s the joke"
+    },
+    {
+      "end_ms": 1498120,
+      "source_event_index": 260,
+      "start_ms": 1490600,
+      "text": "about whatever, quantum, AI, take your pick. But I think we’re on track. So I wouldn’t be surprised"
+    },
+    {
+      "end_ms": 1504760,
+      "source_event_index": 261,
+      "start_ms": 1498120,
+      "text": "if we had AGI-like systems within the next decade. Do you buy the model that once you have an AGI,"
+    },
+    {
+      "end_ms": 1509080,
+      "source_event_index": 262,
+      "start_ms": 1504760,
+      "text": "you have a system that basically speeds up further AI research? Maybe not in an overnight sense,"
+    },
+    {
+      "end_ms": 1511440,
+      "source_event_index": 263,
+      "start_ms": 1509080,
+      "text": "but over the course of months and years you would have much faster"
+    },
+    {
+      "end_ms": 1515640,
+      "source_event_index": 264,
+      "start_ms": 1511440,
+      "text": "progress than you would have otherwise had? I think that’s potentially possible. I think"
+    },
+    {
+      "end_ms": 1522120,
+      "source_event_index": 265,
+      "start_ms": 1515640,
+      "text": "it partly depends on what we, as a society, decide to use the first nascent AGI systems or"
+    },
+    {
+      "end_ms": 1531480,
+      "source_event_index": 266,
+      "start_ms": 1522120,
+      "text": "proto-AGI systems for. Even the current LLMs seem to be pretty good at coding and we have systems"
+    },
+    {
+      "end_ms": 1537000,
+      "source_event_index": 267,
+      "start_ms": 1531480,
+      "text": "like AlphaCode. We also have theorem proving systems. So one could imagine combining these"
+    },
+    {
+      "end_ms": 1543400,
+      "source_event_index": 268,
+      "start_ms": 1537000,
+      "text": "ideas together and making them a lot better. I could imagine these systems being quite good at"
+    },
+    {
+      "end_ms": 1549120,
+      "source_event_index": 269,
+      "start_ms": 1544200,
+      "text": "designing and helping us build future versions of themselves, but we also have to think about"
+    },
+    {
+      "end_ms": 1553160,
+      "source_event_index": 270,
+      "start_ms": 1549120,
+      "text": "the safety implications of that of course. I’m curious what you think about that. I’m"
+    },
+    {
+      "end_ms": 1556920,
+      "source_event_index": 271,
+      "start_ms": 1553160,
+      "text": "not saying this is happening this year, but eventually you’ll be developing a model where"
+    },
+    {
+      "end_ms": 1563320,
+      "source_event_index": 272,
+      "start_ms": 1558160,
+      "text": "you think there’s some chance that it’ll be capable of an intelligence explosion-like"
+    },
+    {
+      "end_ms": 1567720,
+      "source_event_index": 273,
+      "start_ms": 1563320,
+      "text": "dynamic once it’s fully developed. What would have to be true of that model at that point where"
+    },
+    {
+      "end_ms": 1570040,
+      "source_event_index": 274,
+      "start_ms": 1567720,
+      "text": "you’re comfortable continuing the development of the system? Something like, “I’ve seen these"
+    },
+    {
+      "end_ms": 1575960,
+      "source_event_index": 275,
+      "start_ms": 1570040,
+      "text": "specific evals, I’ve understood its internal thinking and its future thinking enough.”"
+    },
+    {
+      "end_ms": 1583080,
+      "source_event_index": 276,
+      "start_ms": 1578440,
+      "text": "We need a lot more understanding of the systems than we do today before I would even be confident"
+    },
+    {
+      "end_ms": 1588920,
+      "source_event_index": 277,
+      "start_ms": 1583080,
+      "text": "of explaining to you what we’d need to tick box there. I think what we’ve got to do in the next"
+    },
+    {
+      "end_ms": 1595440,
+      "source_event_index": 278,
+      "start_ms": 1588920,
+      "text": "few years, in the time before those systems start arriving, is come up with the right evaluations"
+    },
+    {
+      "end_ms": 1601440,
+      "source_event_index": 279,
+      "start_ms": 1595440,
+      "text": "and metrics. Ideally formal proofs, but it’s going to be hard for these types of systems, so at least"
+    },
+    {
+      "end_ms": 1609840,
+      "source_event_index": 280,
+      "start_ms": 1601440,
+      "text": "empirical bounds around what these systems can do. That’s why I think about things like deception as"
+    },
+    {
+      "end_ms": 1617360,
+      "source_event_index": 281,
+      "start_ms": 1609840,
+      "text": "being quite root node traits that you don’t want. If you’re confident that your system is exposing"
+    },
+    {
+      "end_ms": 1623120,
+      "source_event_index": 282,
+      "start_ms": 1617360,
+      "text": "what it actually thinks, then that opens up possibilities of using the system itself to"
+    },
+    {
+      "end_ms": 1629360,
+      "source_event_index": 283,
+      "start_ms": 1623120,
+      "text": "explain aspects of itself to you. The way I think about that is like this. If I were to play a game"
+    },
+    {
+      "end_ms": 1634040,
+      "source_event_index": 284,
+      "start_ms": 1629360,
+      "text": "of chess against Garry Kasparov, which I’ve played in the past, Magnus Carlsen, or the amazing chess"
+    },
+    {
+      "end_ms": 1639800,
+      "source_event_index": 285,
+      "start_ms": 1634040,
+      "text": "players of all time, I wouldn’t be able to come up with a move that they could. But they could"
+    },
+    {
+      "end_ms": 1647560,
+      "source_event_index": 286,
+      "start_ms": 1639800,
+      "text": "explain to me why they came up with that move and I could understand it post hoc, right? That’s the"
+    },
+    {
+      "end_ms": 1654840,
+      "source_event_index": 287,
+      "start_ms": 1647560,
+      "text": "sort of thing one could imagine. One of the capabilities that we could make use of these"
+    },
+    {
+      "end_ms": 1659720,
+      "source_event_index": 288,
+      "start_ms": 1654840,
+      "text": "systems is for them to explain it to us and even maybe get the proofs behind why they’re thinking"
+    },
+    {
+      "end_ms": 1665640,
+      "source_event_index": 289,
+      "start_ms": 1659720,
+      "text": "something, certainly in a mathematical problem. Got it. Do you have a sense of what the converse"
+    },
+    {
+      "end_ms": 1669080,
+      "source_event_index": 290,
+      "start_ms": 1665640,
+      "text": "answer would be? So what would have to be true where tomorrow morning you’re like “oh,"
+    },
+    {
+      "end_ms": 1672360,
+      "source_event_index": 291,
+      "start_ms": 1669080,
+      "text": "man, I didn’t anticipate this.” You see some specific observation tomorrow morning that"
+    },
+    {
+      "end_ms": 1679320,
+      "source_event_index": 292,
+      "start_ms": 1672360,
+      "text": "makes you say “we got to stop Gemini 2 training.” I could imagine that. This is where things like"
+    },
+    {
+      "end_ms": 1684000,
+      "source_event_index": 293,
+      "start_ms": 1679320,
+      "text": "the sandbox simulations are important. I would hope we’re experimenting in a safe,"
+    },
+    {
+      "end_ms": 1693200,
+      "source_event_index": 294,
+      "start_ms": 1684000,
+      "text": "secure environment when something very unexpected happens. There’s a new unexpected capability or"
+    },
+    {
+      "end_ms": 1696640,
+      "source_event_index": 295,
+      "start_ms": 1693200,
+      "text": "something that we didn’t want. We explicitly told the system we didn’t want it but then it"
+    },
+    {
+      "end_ms": 1702840,
+      "source_event_index": 296,
+      "start_ms": 1696640,
+      "text": "did and it lied about it. These are the kinds of things where one would want to then dig in"
+    },
+    {
+      "end_ms": 1709880,
+      "source_event_index": 297,
+      "start_ms": 1702840,
+      "text": "carefully. The systems that are around today are not dangerous, in my opinion, but in a few years"
+    },
+    {
+      "end_ms": 1720280,
+      "source_event_index": 298,
+      "start_ms": 1709880,
+      "text": "they might have potential. Then you would ideally pause and really get to the bottom of why it was"
+    },
+    {
+      "end_ms": 1725120,
+      "source_event_index": 299,
+      "start_ms": 1720280,
+      "text": "doing those things before one continued. Going back to Gemini, I’m curious what the"
+    },
+    {
+      "end_ms": 1728960,
+      "source_event_index": 300,
+      "start_ms": 1725120,
+      "text": "bottlenecks were in the development. Why not immediately make it one order"
+    },
+    {
+      "end_ms": 1734560,
+      "source_event_index": 301,
+      "start_ms": 1728960,
+      "text": "of magnitude bigger if scaling works? First of all, there are practical limits."
+    },
+    {
+      "end_ms": 1740440,
+      "source_event_index": 302,
+      "start_ms": 1734560,
+      "text": "How much compute can you actually fit in one data center? You’re also bumping up against"
+    },
+    {
+      "end_ms": 1747640,
+      "source_event_index": 303,
+      "start_ms": 1740440,
+      "text": "very interesting distributed computing kind of challenges. Fortunately, we have some of"
+    },
+    {
+      "end_ms": 1751840,
+      "source_event_index": 304,
+      "start_ms": 1747640,
+      "text": "the best people in the world working on those challenges and cross data center training,"
+    },
+    {
+      "end_ms": 1755480,
+      "source_event_index": 305,
+      "start_ms": 1751840,
+      "text": "all of these kinds of things. There are very interesting hardware challenges and we have our"
+    },
+    {
+      "end_ms": 1762360,
+      "source_event_index": 306,
+      "start_ms": 1755480,
+      "text": "TPUs that we’re building and designing all the time as well as using GPUs. So there’s all of"
+    },
+    {
+      "end_ms": 1770000,
+      "source_event_index": 307,
+      "start_ms": 1762360,
+      "text": "that. Scaling laws also don’t just work by magic. You still need to scale up the hyperparameters,"
+    },
+    {
+      "end_ms": 1774920,
+      "source_event_index": 308,
+      "start_ms": 1770000,
+      "text": "and various innovations are going in all the time with each new scale. It’s not just about repeating"
+    },
+    {
+      "end_ms": 1779840,
+      "source_event_index": 309,
+      "start_ms": 1774920,
+      "text": "the same recipe at each new scale. You have to adjust the recipe and that’s a bit of an art"
+    },
+    {
+      "end_ms": 1785960,
+      "source_event_index": 310,
+      "start_ms": 1779840,
+      "text": "form. You have to sort of get new data points. If you try to extend your predictions and extrapolate"
+    },
+    {
+      "end_ms": 1793160,
+      "source_event_index": 311,
+      "start_ms": 1785960,
+      "text": "them several orders of magnitude out, sometimes they don’t hold anymore. There can be step"
+    },
+    {
+      "end_ms": 1800880,
+      "source_event_index": 312,
+      "start_ms": 1793160,
+      "text": "functions in terms of new capabilities and some things hold, other things don’t. Often you do need"
+    },
+    {
+      "end_ms": 1806880,
+      "source_event_index": 313,
+      "start_ms": 1800880,
+      "text": "those intermediate data points to correct some of your hyperparameter optimization and other things,"
+    },
+    {
+      "end_ms": 1815120,
+      "source_event_index": 314,
+      "start_ms": 1806880,
+      "text": "so that the scaling law continues to be true. So there are various practical limitations to that."
+    },
+    {
+      "end_ms": 1824160,
+      "source_event_index": 315,
+      "start_ms": 1816880,
+      "text": "One order of magnitude is probably about the maximum that you want to do between each era."
+    },
+    {
+      "end_ms": 1827520,
+      "source_event_index": 316,
+      "start_ms": 1824160,
+      "text": "That’s so fascinating. In the GPT-4 technical report, they say that they"
+    },
+    {
+      "end_ms": 1832440,
+      "source_event_index": 317,
+      "start_ms": 1827520,
+      "text": "were able to predict the training loss with a model with tens of thousands of times less"
+    },
+    {
+      "end_ms": 1836200,
+      "source_event_index": 318,
+      "start_ms": 1832440,
+      "text": "compute than GPT-4. They could see the curve. But the point you’re making is that the actual"
+    },
+    {
+      "end_ms": 1840520,
+      "source_event_index": 319,
+      "start_ms": 1836200,
+      "text": "capabilities that loss implies may not be so. Yeah, the downstream capabilities sometimes"
+    },
+    {
+      "end_ms": 1845640,
+      "source_event_index": 320,
+      "start_ms": 1840520,
+      "text": "don’t follow. You can often predict the core metrics like training loss or something like that,"
+    },
+    {
+      "end_ms": 1852640,
+      "source_event_index": 321,
+      "start_ms": 1845640,
+      "text": "but then it doesn’t actually translate into MMLU, or math, or some other actual capability that you"
+    },
+    {
+      "end_ms": 1857560,
+      "source_event_index": 322,
+      "start_ms": 1852640,
+      "text": "care about. They’re not necessarily linear all the time. There are non-linear effects there."
+    },
+    {
+      "end_ms": 1859280,
+      "source_event_index": 323,
+      "start_ms": 1857560,
+      "text": "What was the biggest surprise to you during the development of"
+    },
+    {
+      "end_ms": 1866040,
+      "source_event_index": 324,
+      "start_ms": 1859280,
+      "text": "Gemini in terms of something like this happening? I wouldn’t say there was one big surprise. It was"
+    },
+    {
+      "end_ms": 1872760,
+      "source_event_index": 325,
+      "start_ms": 1866040,
+      "text": "very interesting trying to train things at that size and learning about all sorts of"
+    },
+    {
+      "end_ms": 1876120,
+      "source_event_index": 326,
+      "start_ms": 1872760,
+      "text": "things from an organizational standpoint, like how to babysit such a system and to"
+    },
+    {
+      "end_ms": 1882480,
+      "source_event_index": 327,
+      "start_ms": 1876120,
+      "text": "track it. There’s also things like getting a better understanding of the metrics you’re"
+    },
+    {
+      "end_ms": 1888120,
+      "source_event_index": 328,
+      "start_ms": 1882480,
+      "text": "optimizing versus the final capabilities that you want. I would say that’s still not a perfectly"
+    },
+    {
+      "end_ms": 1892920,
+      "source_event_index": 329,
+      "start_ms": 1888120,
+      "text": "understood mapping, but it’s an interesting one that we’re getting better and better at."
+    },
+    {
+      "end_ms": 1898080,
+      "source_event_index": 330,
+      "start_ms": 1893520,
+      "text": "There’s a perception that maybe other labs are more compute-efficient than"
+    },
+    {
+      "end_ms": 1900560,
+      "source_event_index": 331,
+      "start_ms": 1898080,
+      "text": "DeepMind has been with Gemini. I don’t know what you make of that perception."
+    },
+    {
+      "end_ms": 1907720,
+      "source_event_index": 332,
+      "start_ms": 1900560,
+      "text": "I don’t think that’s the case. I think that actually Gemini 1 used roughly the same amount"
+    },
+    {
+      "end_ms": 1911600,
+      "source_event_index": 333,
+      "start_ms": 1907720,
+      "text": "of compute, maybe slightly more, than what was rumored for GPT-4. I don’t know exactly what was"
+    },
+    {
+      "end_ms": 1917160,
+      "source_event_index": 334,
+      "start_ms": 1911600,
+      "text": "used but I think it was in the same ballpark. I think we’re very efficient with our compute"
+    },
+    {
+      "end_ms": 1922120,
+      "source_event_index": 335,
+      "start_ms": 1917160,
+      "text": "and we use our compute for many things. One is not just the scaling but, going back to earlier, more"
+    },
+    {
+      "end_ms": 1930440,
+      "source_event_index": 336,
+      "start_ms": 1922120,
+      "text": "innovations and ideas. A new innovation, a new invention, is only useful if it can also scale."
+    },
+    {
+      "end_ms": 1937160,
+      "source_event_index": 337,
+      "start_ms": 1930440,
+      "text": "So you need quite a lot of compute to do new invention because you’ve got to test many things,"
+    },
+    {
+      "end_ms": 1941160,
+      "source_event_index": 338,
+      "start_ms": 1937160,
+      "text": "at least some reasonable scale, and make sure that they work at that scale. Also,"
+    },
+    {
+      "end_ms": 1946320,
+      "source_event_index": 339,
+      "start_ms": 1941160,
+      "text": "some new ideas may not work at a toy scale but do work at a larger scale. In fact,"
+    },
+    {
+      "end_ms": 1950200,
+      "source_event_index": 340,
+      "start_ms": 1946320,
+      "text": "those are the more valuable ones. So if you think about that exploration process,"
+    },
+    {
+      "end_ms": 1957000,
+      "source_event_index": 341,
+      "start_ms": 1950200,
+      "text": "you need quite a lot of compute to be able to do that. The good news is we’re pretty lucky"
+    },
+    {
+      "end_ms": 1962480,
+      "source_event_index": 342,
+      "start_ms": 1957000,
+      "text": "at Google. I think this year we’re going to have the most compute by far of any sort of research"
+    },
+    {
+      "end_ms": 1967920,
+      "source_event_index": 343,
+      "start_ms": 1962480,
+      "text": "lab. We hope to make very efficient and good use of that in terms of both scaling and the"
+    },
+    {
+      "end_ms": 1973480,
+      "source_event_index": 344,
+      "start_ms": 1967920,
+      "text": "capability of our systems and also new inventions. What’s been the biggest surprise to you, if you go"
+    },
+    {
+      "end_ms": 1978160,
+      "source_event_index": 345,
+      "start_ms": 1973480,
+      "text": "back to yourself in 2010 when you were starting DeepMind, in terms of what AI progress has looked"
+    },
+    {
+      "end_ms": 1983480,
+      "source_event_index": 346,
+      "start_ms": 1978160,
+      "text": "like? Did you anticipate back then that it would, in some large sense, amount to spending billions"
+    },
+    {
+      "end_ms": 1985920,
+      "source_event_index": 347,
+      "start_ms": 1983480,
+      "text": "of dollars into these models? Or did you have a different sense of what it would look like?"
+    },
+    {
+      "end_ms": 1991080,
+      "source_event_index": 348,
+      "start_ms": 1985920,
+      "text": "We thought that actually, and I know you’ve interviewed my colleague Shane. He always"
+    },
+    {
+      "end_ms": 1997480,
+      "source_event_index": 349,
+      "start_ms": 1991080,
+      "text": "thought in terms of compute curves and comparing it roughly to the brain,"
+    },
+    {
+      "end_ms": 2001640,
+      "source_event_index": 350,
+      "start_ms": 1997480,
+      "text": "how many neurons and synapses there are very loosely. Interestingly, we’re actually in that"
+    },
+    {
+      "end_ms": 2006160,
+      "source_event_index": 351,
+      "start_ms": 2001640,
+      "text": "kind of regime now with roughly the right order of magnitude of number of synapses in the brain"
+    },
+    {
+      "end_ms": 2013320,
+      "source_event_index": 352,
+      "start_ms": 2006160,
+      "text": "and the sort of compute that we have. But I think more fundamentally, we always thought that we bet"
+    },
+    {
+      "end_ms": 2019920,
+      "source_event_index": 353,
+      "start_ms": 2013320,
+      "text": "on generality and learning. So those were always at the core of any technique we would use. That’s"
+    },
+    {
+      "end_ms": 2026360,
+      "source_event_index": 354,
+      "start_ms": 2019920,
+      "text": "why we triangulated on reinforcement learning, and search, and deep learning as three types of"
+    },
+    {
+      "end_ms": 2035640,
+      "source_event_index": 355,
+      "start_ms": 2026360,
+      "text": "algorithms that would scale, be very general, and not require a lot of handcrafted human priors. We"
+    },
+    {
+      "end_ms": 2041360,
+      "source_event_index": 356,
+      "start_ms": 2035640,
+      "text": "thought that was the sort of failure mode of the efforts to build AI in the 90s in places like"
+    },
+    {
+      "end_ms": 2047680,
+      "source_event_index": 357,
+      "start_ms": 2041360,
+      "text": "MIT. There were very logic-based systems, expert systems, and masses of hand-coded,"
+    },
+    {
+      "end_ms": 2052640,
+      "source_event_index": 358,
+      "start_ms": 2047680,
+      "text": "handcrafted human information going into them that turned out to be wrong or too rigid. So we"
+    },
+    {
+      "end_ms": 2058400,
+      "source_event_index": 359,
+      "start_ms": 2052640,
+      "text": "wanted to move away from that and I think we spotted that trend early. Obviously, we used"
+    },
+    {
+      "end_ms": 2063160,
+      "source_event_index": 360,
+      "start_ms": 2058400,
+      "text": "games as our proving ground and we did very well with that. I think all of that was very successful"
+    },
+    {
+      "end_ms": 2070120,
+      "source_event_index": 361,
+      "start_ms": 2063160,
+      "text": "and maybe inspired others. AlphaGo, I think, was a big moment for inspiring many others to think “oh,"
+    },
+    {
+      "end_ms": 2074520,
+      "source_event_index": 362,
+      "start_ms": 2070120,
+      "text": "actually, these systems are ready to scale.” Of course then, with the advent of transformers,"
+    },
+    {
+      "end_ms": 2080760,
+      "source_event_index": 363,
+      "start_ms": 2074520,
+      "text": "invented by our colleagues at Google Research and Brain, that was the type of deep learning"
+    },
+    {
+      "end_ms": 2087000,
+      "source_event_index": 364,
+      "start_ms": 2080760,
+      "text": "that allowed us to ingest masses of amounts of information. That has really turbocharged where"
+    },
+    {
+      "end_ms": 2091840,
+      "source_event_index": 365,
+      "start_ms": 2087000,
+      "text": "we are today. So I think that’s all part of the same lineage. We couldn’t have predicted every"
+    },
+    {
+      "end_ms": 2096880,
+      "source_event_index": 366,
+      "start_ms": 2091840,
+      "text": "twist and turn there, but I think the general direction we were going in was the right one."
+    },
+    {
+      "end_ms": 2103480,
+      "source_event_index": 367,
+      "start_ms": 2098240,
+      "text": "It’s fascinating if you read your old papers or Shane’s old papers. In Shane’s thesis in 2009,"
+    },
+    {
+      "end_ms": 2107560,
+      "source_event_index": 368,
+      "start_ms": 2103480,
+      "text": "he said “well, the way we would test for AI is, can you compress Wikipedia?” And that’s literally,"
+    },
+    {
+      "end_ms": 2111480,
+      "source_event_index": 369,
+      "start_ms": 2107560,
+      "text": "the loss function for LLMs. Or in your own paper in 2016 before transformers,"
+    },
+    {
+      "end_ms": 2116160,
+      "source_event_index": 370,
+      "start_ms": 2112320,
+      "text": "you were comparing neuroscience and AI and you said attention is what is needed."
+    },
+    {
+      "end_ms": 2122320,
+      "source_event_index": 371,
+      "start_ms": 2117200,
+      "text": "Exactly. So we had these things called out and we had some early attention papers,"
+    },
+    {
+      "end_ms": 2125920,
+      "source_event_index": 372,
+      "start_ms": 2122320,
+      "text": "but they weren’t as elegant as transformers in the end, neural Turing machines and things"
+    },
+    {
+      "end_ms": 2130880,
+      "source_event_index": 373,
+      "start_ms": 2125920,
+      "text": "like this. Transformers were the nicer and more general architecture of that."
+    },
+    {
+      "end_ms": 2135880,
+      "source_event_index": 374,
+      "start_ms": 2132440,
+      "text": "When you extrapolate all this out forward and you think about superhuman intelligence,"
+    },
+    {
+      "end_ms": 2142840,
+      "source_event_index": 375,
+      "start_ms": 2138400,
+      "text": "what does that landscape look like to you? Is it still controlled by a private company? What should"
+    },
+    {
+      "end_ms": 2151400,
+      "source_event_index": 376,
+      "start_ms": 2142840,
+      "text": "the governance of that look like concretely? I think that this is so consequential,"
+    },
+    {
+      "end_ms": 2157400,
+      "source_event_index": 377,
+      "start_ms": 2151400,
+      "text": "this technology. I think it’s much bigger than any one company or even industry in general."
+    },
+    {
+      "end_ms": 2163840,
+      "source_event_index": 378,
+      "start_ms": 2157400,
+      "text": "I think it has to be a big collaboration with many stakeholders from civil society, academia,"
+    },
+    {
+      "end_ms": 2169120,
+      "source_event_index": 379,
+      "start_ms": 2163840,
+      "text": "government, etc. The good news is that with the popularity of the recent chatbot systems, I think"
+    },
+    {
+      "end_ms": 2173920,
+      "source_event_index": 380,
+      "start_ms": 2169120,
+      "text": "that has woken up many of these other parts of society to the fact that this is coming and what"
+    },
+    {
+      "end_ms": 2178600,
+      "source_event_index": 381,
+      "start_ms": 2173920,
+      "text": "it will be like to interact with these systems. And that’s great. It’s opened up lots of doors for"
+    },
+    {
+      "end_ms": 2184600,
+      "source_event_index": 382,
+      "start_ms": 2178600,
+      "text": "very good conversations. An example of that was the safety summit the UK hosted a few months ago,"
+    },
+    {
+      "end_ms": 2190480,
+      "source_event_index": 383,
+      "start_ms": 2184600,
+      "text": "which I thought was a big success in getting this international dialogue going. I think the whole of"
+    },
+    {
+      "end_ms": 2195000,
+      "source_event_index": 384,
+      "start_ms": 2190480,
+      "text": "society needs to be involved in deciding what we want to deploy these models for? How do we"
+    },
+    {
+      "end_ms": 2198680,
+      "source_event_index": 385,
+      "start_ms": 2195000,
+      "text": "want to use them and what do we not want to use them for? I think we’ve got to try and get some"
+    },
+    {
+      "end_ms": 2206520,
+      "source_event_index": 386,
+      "start_ms": 2198680,
+      "text": "international consensus around that and also make sure that these systems benefit everyone, for the"
+    },
+    {
+      "end_ms": 2212760,
+      "source_event_index": 387,
+      "start_ms": 2206520,
+      "text": "good of society in general. That’s why I push so hard for things like AI for science. I hope that"
+    },
+    {
+      "end_ms": 2218360,
+      "source_event_index": 388,
+      "start_ms": 2213320,
+      "text": "with things like our spin-out, Isomorphic, we’re going to start curing terrible diseases with AI,"
+    },
+    {
+      "end_ms": 2222360,
+      "source_event_index": 389,
+      "start_ms": 2218360,
+      "text": "accelerate drug discovery, tackle climate change, and do other amazing things. There are big"
+    },
+    {
+      "end_ms": 2229920,
+      "source_event_index": 390,
+      "start_ms": 2222360,
+      "text": "challenges that face humanity, massive challenges. I’m actually optimistic we can solve them because"
+    },
+    {
+      "end_ms": 2235240,
+      "source_event_index": 391,
+      "start_ms": 2229920,
+      "text": "we’ve got this incredibly powerful tool of AI coming down the line that we can apply to"
+    },
+    {
+      "end_ms": 2243440,
+      "source_event_index": 392,
+      "start_ms": 2235240,
+      "text": "help us solve many of these problems. Ideally, we would have a big consensus around that and a big"
+    },
+    {
+      "end_ms": 2249080,
+      "source_event_index": 393,
+      "start_ms": 2243440,
+      "text": "discussion at sort of the UN level if possible. One interesting thing is if you look at these"
+    },
+    {
+      "end_ms": 2255000,
+      "source_event_index": 394,
+      "start_ms": 2249080,
+      "text": "systems and chat with them, they’re immensely powerful and intelligent. But it’s interesting"
+    },
+    {
+      "end_ms": 2259200,
+      "source_event_index": 395,
+      "start_ms": 2255000,
+      "text": "the extent to which they haven’t automated large sections of the economy yet. Whereas if five years"
+    },
+    {
+      "end_ms": 2263680,
+      "source_event_index": 396,
+      "start_ms": 2259200,
+      "text": "ago I showed you Gemini, you’d be like “wow, this is totally coming for a lot of things.”"
+    },
+    {
+      "end_ms": 2268120,
+      "source_event_index": 397,
+      "start_ms": 2263680,
+      "text": "So how do you account for that? What’s going on that it hasn’t had the broader impact yet?"
+    },
+    {
+      "end_ms": 2275600,
+      "source_event_index": 398,
+      "start_ms": 2269360,
+      "text": "I think that just shows we’re still at the beginning of this new era. I think there are"
+    },
+    {
+      "end_ms": 2285000,
+      "source_event_index": 399,
+      "start_ms": 2275600,
+      "text": "some interesting use cases where you can use these chatbot systems to summarize stuff for you and do"
+    },
+    {
+      "end_ms": 2292680,
+      "source_event_index": 400,
+      "start_ms": 2285000,
+      "text": "some simple writing, maybe more boilerplate-type writing. But that’s only a small part of what we"
+    },
+    {
+      "end_ms": 2299360,
+      "source_event_index": 401,
+      "start_ms": 2292680,
+      "text": "all do every day. I think for more general use cases we still need new capabilities,"
+    },
+    {
+      "end_ms": 2306120,
+      "source_event_index": 402,
+      "start_ms": 2299360,
+      "text": "things like planning and search but also things like personalization and episodic memory. That’s"
+    },
+    {
+      "end_ms": 2311000,
+      "source_event_index": 403,
+      "start_ms": 2306120,
+      "text": "not just long context windows, but actually remembering what we spoke about 100 conversations"
+    },
+    {
+      "end_ms": 2319480,
+      "source_event_index": 404,
+      "start_ms": 2311000,
+      "text": "ago. I’m really looking forward to things like recommendation systems that help me find better,"
+    },
+    {
+      "end_ms": 2324560,
+      "source_event_index": 405,
+      "start_ms": 2319480,
+      "text": "more enriching material, whether that’s books or films or music and so on. I would use that type of"
+    },
+    {
+      "end_ms": 2331400,
+      "source_event_index": 406,
+      "start_ms": 2324560,
+      "text": "system every day. So I think we’re just scratching the surface of what these AI assistants could"
+    },
+    {
+      "end_ms": 2337080,
+      "source_event_index": 407,
+      "start_ms": 2331400,
+      "text": "actually do for us in our general, everyday lives and also in our work context as well. I think"
+    },
+    {
+      "end_ms": 2341440,
+      "source_event_index": 408,
+      "start_ms": 2337080,
+      "text": "they’re not reliable yet enough to do things like science with them. But I think one day,"
+    },
+    {
+      "end_ms": 2345440,
+      "source_event_index": 409,
+      "start_ms": 2341440,
+      "text": "once we fix factuality and grounding and other things, I think they could end up"
+    },
+    {
+      "end_ms": 2353600,
+      "source_event_index": 410,
+      "start_ms": 2345440,
+      "text": "becoming the world’s best research assistant for you as a scientist or as a clinician."
+    },
+    {
+      "end_ms": 2358120,
+      "source_event_index": 411,
+      "start_ms": 2353600,
+      "text": "I want to ask about memory. You had this fascinating paper in 2007 where you talked"
+    },
+    {
+      "end_ms": 2364080,
+      "source_event_index": 412,
+      "start_ms": 2358120,
+      "text": "about the links between memory and imagination and how they, in some sense, are very similar. People"
+    },
+    {
+      "end_ms": 2370240,
+      "source_event_index": 413,
+      "start_ms": 2364080,
+      "text": "often claim that these models are just memorizing. How do you think about that claim? Is memorization"
+    },
+    {
+      "end_ms": 2374440,
+      "source_event_index": 414,
+      "start_ms": 2370240,
+      "text": "all you need because in some deep sense, that’s compression? What’s your intuition here?"
+    },
+    {
+      "end_ms": 2379520,
+      "source_event_index": 415,
+      "start_ms": 2375120,
+      "text": "At the limit, one maybe could try and memorize everything but it wouldn’t generalize out of your"
+    },
+    {
+      "end_ms": 2388840,
+      "source_event_index": 416,
+      "start_ms": 2379520,
+      "text": "distribution. The early criticisms of these early systems were that they were just regurgitating"
+    },
+    {
+      "end_ms": 2394840,
+      "source_event_index": 417,
+      "start_ms": 2388840,
+      "text": "and memorizing. I think clearly in the Gemini, GPT-4 type era, they are definitely generalizing"
+    },
+    {
+      "end_ms": 2402240,
+      "source_event_index": 418,
+      "start_ms": 2394840,
+      "text": "to new constructs. Actually my thesis, and that paper particularly that started that"
+    },
+    {
+      "end_ms": 2407840,
+      "source_event_index": 419,
+      "start_ms": 2402240,
+      "text": "area of imagination in neuroscience, was showing that first of all memory, at least human memory,"
+    },
+    {
+      "end_ms": 2412480,
+      "source_event_index": 420,
+      "start_ms": 2407840,
+      "text": "is a reconstructive process. It’s not a videotape. We sort of put it together back from components"
+    },
+    {
+      "end_ms": 2417240,
+      "source_event_index": 421,
+      "start_ms": 2412480,
+      "text": "that seem familiar to us, the ensemble. That’s what made me think that imagination might be the"
+    },
+    {
+      "end_ms": 2421840,
+      "source_event_index": 422,
+      "start_ms": 2417240,
+      "text": "same thing. Except in this case you’re using the same semantic components, but now you’re putting"
+    },
+    {
+      "end_ms": 2427840,
+      "source_event_index": 423,
+      "start_ms": 2421840,
+      "text": "it together in a way that your brain thinks is novel, for a particular purpose like planning. I"
+    },
+    {
+      "end_ms": 2434520,
+      "source_event_index": 424,
+      "start_ms": 2427840,
+      "text": "do think that that kind of idea is still probably missing from our current systems, pulling together"
+    },
+    {
+      "end_ms": 2441000,
+      "source_event_index": 425,
+      "start_ms": 2434520,
+      "text": "different parts of your world model to simulate something new that then helps with your planning,"
+    },
+    {
+      "end_ms": 2445960,
+      "source_event_index": 426,
+      "start_ms": 2441000,
+      "text": "which is what I would call imagination. For sure. Now you guys have the best models"
+    },
+    {
+      "end_ms": 2452560,
+      "source_event_index": 427,
+      "start_ms": 2445960,
+      "text": "in the world with the Gemini models. Do you plan on putting out some sort of framework"
+    },
+    {
+      "end_ms": 2456320,
+      "source_event_index": 428,
+      "start_ms": 2452560,
+      "text": "like the other two major AI labs have? Something like “once we see these specific capabilities,"
+    },
+    {
+      "end_ms": 2460400,
+      "source_event_index": 429,
+      "start_ms": 2456880,
+      "text": "unless we have these specific safeguards, we’re not going to continue development"
+    },
+    {
+      "end_ms": 2465920,
+      "source_event_index": 430,
+      "start_ms": 2460400,
+      "text": "or we’re not going to ship the product out.” Yes, we already have lots of internal checks"
+    },
+    {
+      "end_ms": 2470760,
+      "source_event_index": 431,
+      "start_ms": 2465920,
+      "text": "and balances but we’re going to start publishing. Actually, watch this space. We’re working on a"
+    },
+    {
+      "end_ms": 2476080,
+      "source_event_index": 432,
+      "start_ms": 2470760,
+      "text": "whole bunch of blog posts and technical papers that we’ll be putting out in the next few months"
+    },
+    {
+      "end_ms": 2482560,
+      "source_event_index": 433,
+      "start_ms": 2477320,
+      "text": "along similar lines of things like responsible scaling laws and so on. We have those implicitly"
+    },
+    {
+      "end_ms": 2489400,
+      "source_event_index": 434,
+      "start_ms": 2482560,
+      "text": "internally in various safety councils that people like Shane chair and so on. But it’s time for us"
+    },
+    {
+      "end_ms": 2493080,
+      "source_event_index": 435,
+      "start_ms": 2489400,
+      "text": "to talk about that more publicly I think. So we’ll be doing that throughout the course of the year."
+    },
+    {
+      "end_ms": 2497320,
+      "source_event_index": 436,
+      "start_ms": 2493080,
+      "text": "That’s great to hear. Another thing I’m curious about is, there’s not only the risk"
+    },
+    {
+      "end_ms": 2501680,
+      "source_event_index": 437,
+      "start_ms": 2497320,
+      "text": "of the deployed model being something that people can use to do bad things,"
+    },
+    {
+      "end_ms": 2506600,
+      "source_event_index": 438,
+      "start_ms": 2501680,
+      "text": "but there’s also rogue actors, foreign agents, and so forth, being able to steal the weights"
+    },
+    {
+      "end_ms": 2512040,
+      "source_event_index": 439,
+      "start_ms": 2506600,
+      "text": "and then fine-tune them to do crazy things. How do you think about securing the weights to make sure"
+    },
+    {
+      "end_ms": 2516640,
+      "source_event_index": 440,
+      "start_ms": 2512040,
+      "text": "something like this doesn’t happen, making sure a very key group of people has access to them?"
+    },
+    {
+      "end_ms": 2521480,
+      "source_event_index": 441,
+      "start_ms": 2517360,
+      "text": "It’s interesting. First of all, there’s two parts. One is security, one is open source, which maybe"
+    },
+    {
+      "end_ms": 2528640,
+      "source_event_index": 442,
+      "start_ms": 2521480,
+      "text": "we can discuss. The security is super key just as normal cybersecurity type things. I think"
+    },
+    {
+      "end_ms": 2534360,
+      "source_event_index": 443,
+      "start_ms": 2528640,
+      "text": "we’re lucky at Google DeepMind. We’re behind Google’s firewall and cloud protection which I"
+    },
+    {
+      "end_ms": 2540000,
+      "source_event_index": 444,
+      "start_ms": 2534360,
+      "text": "think is best in class in the world corporately. So we already have that protection. Behind that,"
+    },
+    {
+      "end_ms": 2546200,
+      "source_event_index": 445,
+      "start_ms": 2540000,
+      "text": "we have specific DeepMind protections within our code base. It’s sort of a double layer"
+    },
+    {
+      "end_ms": 2551760,
+      "source_event_index": 446,
+      "start_ms": 2546200,
+      "text": "of protection. So I feel pretty good about that. You can never be complacent on that"
+    },
+    {
+      "end_ms": 2558320,
+      "source_event_index": 447,
+      "start_ms": 2551760,
+      "text": "but I feel it’s already the best in the world in terms of cyber defenses. We’ve got to carry"
+    },
+    {
+      "end_ms": 2563240,
+      "source_event_index": 448,
+      "start_ms": 2558320,
+      "text": "on improving that and again, things like the hardened sandboxes could be a way of doing that"
+    },
+    {
+      "end_ms": 2569640,
+      "source_event_index": 449,
+      "start_ms": 2563240,
+      "text": "as well. Maybe there are even specifically secure data centers or hardware solutions"
+    },
+    {
+      "end_ms": 2573520,
+      "source_event_index": 450,
+      "start_ms": 2569640,
+      "text": "to this too that we’re thinking about. I think that maybe in the next three, four, five years,"
+    },
+    {
+      "end_ms": 2578960,
+      "source_event_index": 451,
+      "start_ms": 2573520,
+      "text": "we would also want air gaps and various other things that are known in the security community."
+    },
+    {
+      "end_ms": 2582840,
+      "source_event_index": 452,
+      "start_ms": 2578960,
+      "text": "So I think that’s key and I think all frontier labs should be doing that because otherwise for"
+    },
+    {
+      "end_ms": 2590040,
+      "source_event_index": 453,
+      "start_ms": 2582840,
+      "text": "rogue nation-states and other dangerous actors, there would obviously be a lot of incentive for"
+    },
+    {
+      "end_ms": 2596720,
+      "source_event_index": 454,
+      "start_ms": 2590040,
+      "text": "them to steal things like the weights. Of course, open source is another interesting question. We’re"
+    },
+    {
+      "end_ms": 2602960,
+      "source_event_index": 455,
+      "start_ms": 2596720,
+      "text": "huge proponents of open source and open science. We’ve published thousands of papers, things like"
+    },
+    {
+      "end_ms": 2608560,
+      "source_event_index": 456,
+      "start_ms": 2602960,
+      "text": "AlphaFold and transformers and AlphaGo. All of these things we put out there into the world,"
+    },
+    {
+      "end_ms": 2613840,
+      "source_event_index": 457,
+      "start_ms": 2608560,
+      "text": "published and open source, most recently GraphCast, our weather prediction system. But"
+    },
+    {
+      "end_ms": 2624760,
+      "source_event_index": 458,
+      "start_ms": 2613840,
+      "text": "when it comes to the general-purpose foundational technology, I think the question I would have for"
+    },
+    {
+      "end_ms": 2633240,
+      "source_event_index": 459,
+      "start_ms": 2624760,
+      "text": "open source proponents is, how does one stop bad actors, individuals or up to rogue states,"
+    },
+    {
+      "end_ms": 2640640,
+      "source_event_index": 460,
+      "start_ms": 2633240,
+      "text": "taking those same open source systems and repurposing them for harmful ends? We have to"
+    },
+    {
+      "end_ms": 2647640,
+      "source_event_index": 461,
+      "start_ms": 2640640,
+      "text": "answer that question. I don’t know what the answer is to that, but I haven’t heard a compelling,"
+    },
+    {
+      "end_ms": 2653440,
+      "source_event_index": 462,
+      "start_ms": 2647640,
+      "text": "clear answer to that from proponents of just open sourcing everything. So I think there"
+    },
+    {
+      "end_ms": 2658760,
+      "source_event_index": 463,
+      "start_ms": 2653440,
+      "text": "has to be some balance there. Obviously, it’s a complex question of what that is."
+    },
+    {
+      "end_ms": 2662520,
+      "source_event_index": 464,
+      "start_ms": 2658760,
+      "text": "I feel like tech doesn’t get the credit it deserves for funding hundreds of billions of"
+    },
+    {
+      "end_ms": 2668120,
+      "source_event_index": 465,
+      "start_ms": 2662520,
+      "text": "dollars’ worth of R&D, obviously you have DeepMind with systems like AlphaFold and so on. When we"
+    },
+    {
+      "end_ms": 2673520,
+      "source_event_index": 466,
+      "start_ms": 2668120,
+      "text": "talk about securing the weights, as we said maybe right now it’s not something that is going to"
+    },
+    {
+      "end_ms": 2676080,
+      "source_event_index": 467,
+      "start_ms": 2673520,
+      "text": "cause the end of the world or anything, but as these systems get better and better, there’s the"
+    },
+    {
+      "end_ms": 2680680,
+      "source_event_index": 468,
+      "start_ms": 2676080,
+      "text": "worry that a foreign agent or something gets access to them. Presumably right now there’s"
+    },
+    {
+      "end_ms": 2686800,
+      "source_event_index": 469,
+      "start_ms": 2680680,
+      "text": "dozens to hundreds of researchers who have access to the weights. What’s a plan for getting the"
+    },
+    {
+      "end_ms": 2692200,
+      "source_event_index": 470,
+      "start_ms": 2686800,
+      "text": "weights in a situation room where if you need to access them it’s some extremely strenuous process"
+    },
+    {
+      "end_ms": 2697720,
+      "source_event_index": 471,
+      "start_ms": 2692200,
+      "text": "and no individual can really take them out? One has to balance that with allowing for"
+    },
+    {
+      "end_ms": 2702160,
+      "source_event_index": 472,
+      "start_ms": 2697720,
+      "text": "collaboration and speed of progress. Another interesting thing is that of course you want"
+    },
+    {
+      "end_ms": 2708800,
+      "source_event_index": 473,
+      "start_ms": 2703120,
+      "text": "brilliant independent researchers from academia or things like the UK AI Safety Institute and the US"
+    },
+    {
+      "end_ms": 2716840,
+      "source_event_index": 474,
+      "start_ms": 2708800,
+      "text": "one to be able to red team these systems. So one has to expose them to a certain extent,"
+    },
+    {
+      "end_ms": 2722480,
+      "source_event_index": 475,
+      "start_ms": 2716840,
+      "text": "although that’s not necessarily the weights. We have a lot of processes in place about making"
+    },
+    {
+      "end_ms": 2731920,
+      "source_event_index": 476,
+      "start_ms": 2722480,
+      "text": "sure that only if you need them, those people who need access have access. Right now, I think"
+    },
+    {
+      "end_ms": 2737040,
+      "source_event_index": 477,
+      "start_ms": 2731920,
+      "text": "we’re still in the early days of those kinds of systems being at risk. As these systems become"
+    },
+    {
+      "end_ms": 2742960,
+      "source_event_index": 478,
+      "start_ms": 2737040,
+      "text": "more powerful and more general and more capable, I think one has to look at the access question."
+    },
+    {
+      "end_ms": 2746760,
+      "source_event_index": 479,
+      "start_ms": 2742960,
+      "text": "Some of these other labs have specialized in different things relative to safety,"
+    },
+    {
+      "end_ms": 2751600,
+      "source_event_index": 480,
+      "start_ms": 2746760,
+      "text": "Anthropic for example with interpretability. Do you have some sense of where you guys might"
+    },
+    {
+      "end_ms": 2757280,
+      "source_event_index": 481,
+      "start_ms": 2751600,
+      "text": "have an edge? Now that you have the frontier model, where are you guys going to be able to"
+    },
+    {
+      "end_ms": 2762160,
+      "source_event_index": 482,
+      "start_ms": 2757280,
+      "text": "put out the best frontier research on safety? I think we helped pioneer RLHF and other things"
+    },
+    {
+      "end_ms": 2767400,
+      "source_event_index": 483,
+      "start_ms": 2762160,
+      "text": "like that which can obviously be used for performance but also for safety. I think that"
+    },
+    {
+      "end_ms": 2775600,
+      "source_event_index": 484,
+      "start_ms": 2768840,
+      "text": "a lot of the self-play ideas and these kinds of things could also be used to auto-test a"
+    },
+    {
+      "end_ms": 2780760,
+      "source_event_index": 485,
+      "start_ms": 2775600,
+      "text": "lot of the boundary conditions that you have with the new systems. Part of the issue is"
+    },
+    {
+      "end_ms": 2787280,
+      "source_event_index": 486,
+      "start_ms": 2780760,
+      "text": "that with these very general systems, there’s so much surface area to cover about how these"
+    },
+    {
+      "end_ms": 2793000,
+      "source_event_index": 487,
+      "start_ms": 2787280,
+      "text": "systems behave. So I think we are going to need some automated testing. Again,"
+    },
+    {
+      "end_ms": 2799160,
+      "source_event_index": 488,
+      "start_ms": 2793000,
+      "text": "with things like simulations and games, very realistic virtual environments, I think we"
+    },
+    {
+      "end_ms": 2805000,
+      "source_event_index": 489,
+      "start_ms": 2799160,
+      "text": "have a long history of using those kinds of systems and making use of them for building"
+    },
+    {
+      "end_ms": 2811840,
+      "source_event_index": 490,
+      "start_ms": 2805000,
+      "text": "AI algorithms. I think we can leverage all of that history. And then around Google, we’re very lucky"
+    },
+    {
+      "end_ms": 2817160,
+      "source_event_index": 491,
+      "start_ms": 2811840,
+      "text": "to have some of the world’s best cybersecurity experts, hardware designers. I think we can bring"
+    },
+    {
+      "end_ms": 2824040,
+      "source_event_index": 492,
+      "start_ms": 2817160,
+      "text": "that to bear for security and safety as well. Let’s talk about Gemini. So now you guys have"
+    },
+    {
+      "end_ms": 2829880,
+      "source_event_index": 493,
+      "start_ms": 2824040,
+      "text": "the best model in the world. I’m curious. The default way to interact with these systems has"
+    },
+    {
+      "end_ms": 2834480,
+      "source_event_index": 494,
+      "start_ms": 2829880,
+      "text": "been through chat so far. Now that we have multimodal and all these new capabilities,"
+    },
+    {
+      "end_ms": 2837720,
+      "source_event_index": 495,
+      "start_ms": 2834480,
+      "text": "how do you anticipate that changing? Do you think that’ll still be the case?"
+    },
+    {
+      "end_ms": 2845040,
+      "source_event_index": 496,
+      "start_ms": 2837720,
+      "text": "I think we’re just at the beginning of actually understanding how exciting that might be to"
+    },
+    {
+      "end_ms": 2848840,
+      "source_event_index": 497,
+      "start_ms": 2845040,
+      "text": "interact with a full multimodal model system. It’ll be quite different from what we’re used"
+    },
+    {
+      "end_ms": 2854640,
+      "source_event_index": 498,
+      "start_ms": 2848840,
+      "text": "to today with the chatbots. I think the next versions of this over the next year, 18 months,"
+    },
+    {
+      "end_ms": 2859480,
+      "source_event_index": 499,
+      "start_ms": 2855400,
+      "text": "we’ll maybe have some contextual understanding of the environment around you through a camera"
+    },
+    {
+      "end_ms": 2867400,
+      "source_event_index": 500,
+      "start_ms": 2859480,
+      "text": "or a phone or some glasses. I could imagine that as the next step. And then I think we’ll"
+    },
+    {
+      "end_ms": 2876240,
+      "source_event_index": 501,
+      "start_ms": 2867400,
+      "text": "start becoming more fluid in understanding “let’s sample from a video, let’s use voice.” Maybe even"
+    },
+    {
+      "end_ms": 2883040,
+      "source_event_index": 502,
+      "start_ms": 2876240,
+      "text": "eventually things like touch and if you think about robotics, other types of sensors. So I"
+    },
+    {
+      "end_ms": 2887640,
+      "source_event_index": 503,
+      "start_ms": 2883040,
+      "text": "think the world’s about to become very exciting in the next few years as we start getting used"
+    },
+    {
+      "end_ms": 2894640,
+      "source_event_index": 504,
+      "start_ms": 2887640,
+      "text": "to the idea of what true multimodality means. On the robotics subject, when he was on the"
+    },
+    {
+      "end_ms": 2898080,
+      "source_event_index": 505,
+      "start_ms": 2894640,
+      "text": "podcast Ilya said that the reason OpenAI gave up on robotics was because they didn’t have enough"
+    },
+    {
+      "end_ms": 2902440,
+      "source_event_index": 506,
+      "start_ms": 2898080,
+      "text": "data in that domain, at least at the time they were pursuing it. You guys have put out"
+    },
+    {
+      "end_ms": 2906480,
+      "source_event_index": 507,
+      "start_ms": 2902440,
+      "text": "different things like Robo-Transformer and other things. Do you think that’s still a bottleneck"
+    },
+    {
+      "end_ms": 2910680,
+      "source_event_index": 508,
+      "start_ms": 2906480,
+      "text": "for robotics progress, or will we see progress in the world of atoms as well as the world of bits?"
+    },
+    {
+      "end_ms": 2920080,
+      "source_event_index": 509,
+      "start_ms": 2910680,
+      "text": "We’re very excited about our progress with things like Gato and RT-2. We’ve always liked robotics"
+    },
+    {
+      "end_ms": 2925880,
+      "source_event_index": 510,
+      "start_ms": 2920080,
+      "text": "and we’ve had amazing research in that. We still have that going now because we like the fact that"
+    },
+    {
+      "end_ms": 2931600,
+      "source_event_index": 511,
+      "start_ms": 2925880,
+      "text": "it’s a data-poor regime. That pushes us in very interesting research directions that we think"
+    },
+    {
+      "end_ms": 2937040,
+      "source_event_index": 512,
+      "start_ms": 2931600,
+      "text": "are going to be useful anyway: sampling efficiency and data efficiency in general, transfer learning,"
+    },
+    {
+      "end_ms": 2942640,
+      "source_event_index": 513,
+      "start_ms": 2937040,
+      "text": "learning from simulation and transferring that to reality, sim-to-real. All of these are very"
+    },
+    {
+      "end_ms": 2950520,
+      "source_event_index": 514,
+      "start_ms": 2942640,
+      "text": "interesting general challenges that we would like to solve. The control problem. So, we’ve always"
+    },
+    {
+      "end_ms": 2957840,
+      "source_event_index": 515,
+      "start_ms": 2950520,
+      "text": "pushed hard on that. I think Ilya is right. It is more challenging because of the data problem. But"
+    },
+    {
+      "end_ms": 2964200,
+      "source_event_index": 516,
+      "start_ms": 2958600,
+      "text": "I think we’re starting to see the beginnings of these large models being transferable to"
+    },
+    {
+      "end_ms": 2968800,
+      "source_event_index": 517,
+      "start_ms": 2964200,
+      "text": "the robotics regime. They can learn in the general domain, language domain and other things, and then"
+    },
+    {
+      "end_ms": 2974240,
+      "source_event_index": 518,
+      "start_ms": 2968800,
+      "text": "just treat tokens like Gato as any type of token. The token could be an action, it could be a word,"
+    },
+    {
+      "end_ms": 2979960,
+      "source_event_index": 519,
+      "start_ms": 2974240,
+      "text": "it could be part of an image, a pixel, or whatever it is. That’s what I think true multimodality is."
+    },
+    {
+      "end_ms": 2985200,
+      "source_event_index": 520,
+      "start_ms": 2979960,
+      "text": "To begin with, it’s harder to train a system like that than a straightforward language"
+    },
+    {
+      "end_ms": 2992720,
+      "source_event_index": 521,
+      "start_ms": 2985200,
+      "text": "system. But going back to our early conversation on transfer learning, you start seeing that with a"
+    },
+    {
+      "end_ms": 2998600,
+      "source_event_index": 522,
+      "start_ms": 2992720,
+      "text": "true multimodal system, the other modalities benefit some different modalities. You get"
+    },
+    {
+      "end_ms": 3004160,
+      "source_event_index": 523,
+      "start_ms": 2998600,
+      "text": "better at language because you now understand a little bit about video. So I do think it’s"
+    },
+    {
+      "end_ms": 3010400,
+      "source_event_index": 524,
+      "start_ms": 3004160,
+      "text": "harder to get going, but ultimately we’ll have a more general, more capable system like that."
+    },
+    {
+      "end_ms": 3013120,
+      "source_event_index": 525,
+      "start_ms": 3010400,
+      "text": "What ever happened to Gato? That was super fascinating that you could have it"
+    },
+    {
+      "end_ms": 3018400,
+      "source_event_index": 526,
+      "start_ms": 3013120,
+      "text": "play games and also do video and also do text. We’re still working on those kinds of systems,"
+    },
+    {
+      "end_ms": 3024480,
+      "source_event_index": 527,
+      "start_ms": 3018400,
+      "text": "but you can imagine we’re trying to build those ideas into our future generations of"
+    },
+    {
+      "end_ms": 3030360,
+      "source_event_index": 528,
+      "start_ms": 3024480,
+      "text": "Gemini to be able to do all of those things. Robotics, transformers, and things like that,"
+    },
+    {
+      "end_ms": 3036120,
+      "source_event_index": 529,
+      "start_ms": 3030920,
+      "text": "you can think of them as follow-ups to that. Will we see asymmetric progress in the domains in"
+    },
+    {
+      "end_ms": 3040280,
+      "source_event_index": 530,
+      "start_ms": 3036120,
+      "text": "which the self-play kinds of things you’re talking about will be especially powerful? So math and"
+    },
+    {
+      "end_ms": 3047000,
+      "source_event_index": 531,
+      "start_ms": 3040280,
+      "text": "code. Recently, you have these papers out about this. You can use these things to do really cool,"
+    },
+    {
+      "end_ms": 3051640,
+      "source_event_index": 532,
+      "start_ms": 3047000,
+      "text": "novel things. Will they be superhuman coders, but in other ways they might still be worse"
+    },
+    {
+      "end_ms": 3057000,
+      "source_event_index": 533,
+      "start_ms": 3051640,
+      "text": "than humans? How do you think about that? I think that we’re making great progress"
+    },
+    {
+      "end_ms": 3064440,
+      "source_event_index": 534,
+      "start_ms": 3057000,
+      "text": "with math and things like theorem proving and coding. But it’s still interesting if one looks"
+    },
+    {
+      "end_ms": 3069880,
+      "source_event_index": 535,
+      "start_ms": 3064440,
+      "text": "at creativity in general, and scientific endeavor in general. I think we’re getting to the stage"
+    },
+    {
+      "end_ms": 3074600,
+      "source_event_index": 536,
+      "start_ms": 3069880,
+      "text": "where our systems could help the best human scientists make their breakthroughs quicker,"
+    },
+    {
+      "end_ms": 3079520,
+      "source_event_index": 537,
+      "start_ms": 3074600,
+      "text": "almost triage the search space in some ways. Perhaps find a solution like AlphaFold does"
+    },
+    {
+      "end_ms": 3087040,
+      "source_event_index": 538,
+      "start_ms": 3079520,
+      "text": "with a protein structure. They’re not at the level where they can create the hypothesis themselves or"
+    },
+    {
+      "end_ms": 3093000,
+      "source_event_index": 539,
+      "start_ms": 3087040,
+      "text": "ask the right question. As any top scientist will tell you, the hardest part of science is actually"
+    },
+    {
+      "end_ms": 3097800,
+      "source_event_index": 540,
+      "start_ms": 3093000,
+      "text": "asking the right question. It’s boiling down that space to the critical question we should"
+    },
+    {
+      "end_ms": 3104200,
+      "source_event_index": 541,
+      "start_ms": 3097800,
+      "text": "go after and then formulating the problem in the right way to attack it. That’s not something our"
+    },
+    {
+      "end_ms": 3113120,
+      "source_event_index": 542,
+      "start_ms": 3104200,
+      "text": "systems really have any idea how to do, but they are suitable for searching large combinatorial"
+    },
+    {
+      "end_ms": 3119640,
+      "source_event_index": 543,
+      "start_ms": 3113120,
+      "text": "spaces if one can specify the problem with a clear objective function. So that’s very useful already"
+    },
+    {
+      "end_ms": 3124800,
+      "source_event_index": 544,
+      "start_ms": 3119640,
+      "text": "for many of the problems we deal with today, but not the most high-level creative problems."
+    },
+    {
+      "end_ms": 3130280,
+      "source_event_index": 545,
+      "start_ms": 3126600,
+      "text": "DeepMind has published all kinds of interesting stuff in speeding"
+    },
+    {
+      "end_ms": 3137040,
+      "source_event_index": 546,
+      "start_ms": 3130280,
+      "text": "up science in different areas. If you think AGI is going to happen in the next 10 to 20 years,"
+    },
+    {
+      "end_ms": 3141760,
+      "source_event_index": 547,
+      "start_ms": 3137040,
+      "text": "why not just wait for the AGI to do it for you? Why build these domain-specific solutions?"
+    },
+    {
+      "end_ms": 3148560,
+      "source_event_index": 548,
+      "start_ms": 3141760,
+      "text": "I think we don’t know how long AGI is going to be. We always used to say, back even when"
+    },
+    {
+      "end_ms": 3156000,
+      "source_event_index": 549,
+      "start_ms": 3148560,
+      "text": "we started DeepMind, that we don’t have to wait for AGI in order to bring incredible benefits to"
+    },
+    {
+      "end_ms": 3165360,
+      "source_event_index": 550,
+      "start_ms": 3156000,
+      "text": "the world. My personal passion especially has been AI for science and health. You can see"
+    },
+    {
+      "end_ms": 3169320,
+      "source_event_index": 551,
+      "start_ms": 3165360,
+      "text": "that with things like AlphaFold and all of our various Nature papers on different domains and"
+    },
+    {
+      "end_ms": 3174000,
+      "source_event_index": 552,
+      "start_ms": 3169320,
+      "text": "material science work and so on. I think there’s lots of exciting directions and also impact in"
+    },
+    {
+      "end_ms": 3178840,
+      "source_event_index": 553,
+      "start_ms": 3174000,
+      "text": "the world through products too. I think it’s very exciting and a huge unique opportunity we"
+    },
+    {
+      "end_ms": 3187440,
+      "source_event_index": 554,
+      "start_ms": 3178840,
+      "text": "have as part of Google. They’ve got dozens of billion-user products that we can immediately"
+    },
+    {
+      "end_ms": 3196560,
+      "source_event_index": 555,
+      "start_ms": 3187440,
+      "text": "ship our advances into and then billions of people can improve, enrich, and enhance"
+    },
+    {
+      "end_ms": 3201840,
+      "source_event_index": 556,
+      "start_ms": 3196560,
+      "text": "their daily lives. I think it’s a fantastic opportunity for impact on all those fronts."
+    },
+    {
+      "end_ms": 3208080,
+      "source_event_index": 557,
+      "start_ms": 3201840,
+      "text": "I think the other reason from the point of view of AGI specifically is that it battle tests"
+    },
+    {
+      "end_ms": 3214920,
+      "source_event_index": 558,
+      "start_ms": 3208080,
+      "text": "your ideas. You don’t want to be in a research bunker where you theoretically are pushing things"
+    },
+    {
+      "end_ms": 3222440,
+      "source_event_index": 559,
+      "start_ms": 3215440,
+      "text": "forward, but then actually your internal metrics start deviating from real-world things that people"
+    },
+    {
+      "end_ms": 3228360,
+      "source_event_index": 560,
+      "start_ms": 3222440,
+      "text": "would care about, or real-world impact. So you get a lot of direct feedback from these real-world"
+    },
+    {
+      "end_ms": 3234960,
+      "source_event_index": 561,
+      "start_ms": 3228360,
+      "text": "applications that then tells you whether your systems really are scaling or if we need to be"
+    },
+    {
+      "end_ms": 3241520,
+      "source_event_index": 562,
+      "start_ms": 3234960,
+      "text": "more data efficient or sample efficient. Because most real-world challenges require that. So it"
+    },
+    {
+      "end_ms": 3247680,
+      "source_event_index": 563,
+      "start_ms": 3241520,
+      "text": "kind of keeps you honest and pushes you to keep nudging and steering your research directions"
+    },
+    {
+      "end_ms": 3251840,
+      "source_event_index": 564,
+      "start_ms": 3247680,
+      "text": "to make sure they’re on the right path. So I think it’s fantastic. Of course, the world"
+    },
+    {
+      "end_ms": 3258280,
+      "source_event_index": 565,
+      "start_ms": 3251840,
+      "text": "benefits from that. Society benefits from that on the way, maybe many years before AGI arrives."
+    },
+    {
+      "end_ms": 3263120,
+      "source_event_index": 566,
+      "start_ms": 3259680,
+      "text": "The development of Gemini is super interesting because it comes right at the heels of merging"
+    },
+    {
+      "end_ms": 3268280,
+      "source_event_index": 567,
+      "start_ms": 3263120,
+      "text": "these different organizations, Brain and DeepMind. I’m curious, what have been the challenges"
+    },
+    {
+      "end_ms": 3271920,
+      "source_event_index": 568,
+      "start_ms": 3268280,
+      "text": "there? What have been the synergies? It’s been successful in the sense that you have the best"
+    },
+    {
+      "end_ms": 3276040,
+      "source_event_index": 569,
+      "start_ms": 3271920,
+      "text": "model in the world now. What’s that been like? It’s been fantastic actually, over the last year."
+    },
+    {
+      "end_ms": 3281000,
+      "source_event_index": 570,
+      "start_ms": 3276040,
+      "text": "Of course it’s been challenging to do, like any big integration coming together. You’re talking"
+    },
+    {
+      "end_ms": 3287120,
+      "source_event_index": 571,
+      "start_ms": 3281000,
+      "text": "about two world-class organizations with long, storied histories of inventing many"
+    },
+    {
+      "end_ms": 3292800,
+      "source_event_index": 572,
+      "start_ms": 3287120,
+      "text": "important things from deep reinforcement learning to transformers. So it’s very exciting to actually"
+    },
+    {
+      "end_ms": 3297480,
+      "source_event_index": 573,
+      "start_ms": 3292800,
+      "text": "pool all of that together and collaborate much more closely. We always used to be collaborating,"
+    },
+    {
+      "end_ms": 3305400,
+      "source_event_index": 574,
+      "start_ms": 3297480,
+      "text": "but more on a project-by-project basis versus a much deeper, broader collaboration like we"
+    },
+    {
+      "end_ms": 3311040,
+      "source_event_index": 575,
+      "start_ms": 3305400,
+      "text": "have now. Gemini is the first fruit of that collaboration, including the name Gemini"
+    },
+    {
+      "end_ms": 3317320,
+      "source_event_index": 576,
+      "start_ms": 3312160,
+      "text": "implying twins. Of course, a lot of other things are made more efficient like pooling compute"
+    },
+    {
+      "end_ms": 3323160,
+      "source_event_index": 577,
+      "start_ms": 3317320,
+      "text": "resources together and ideas and engineering. I think at the stage we’re at now, there are huge"
+    },
+    {
+      "end_ms": 3327880,
+      "source_event_index": 578,
+      "start_ms": 3323160,
+      "text": "amounts of world-class engineering that have to go into building the frontier systems. I"
+    },
+    {
+      "end_ms": 3334200,
+      "source_event_index": 579,
+      "start_ms": 3327880,
+      "text": "think it makes sense to coordinate that more. You and Shane started DeepMind partly because"
+    },
+    {
+      "end_ms": 3340200,
+      "source_event_index": 580,
+      "start_ms": 3334200,
+      "text": "you were concerned about safety. You saw AGI coming as a live possibility. Do you think"
+    },
+    {
+      "end_ms": 3344400,
+      "source_event_index": 581,
+      "start_ms": 3340200,
+      "text": "the people who were formerly part of Brain, that half of Google DeepMind now, approach"
+    },
+    {
+      "end_ms": 3347440,
+      "source_event_index": 582,
+      "start_ms": 3344400,
+      "text": "it in the same way? Have there been cultural differences there in terms of that question?"
+    },
+    {
+      "end_ms": 3355120,
+      "source_event_index": 583,
+      "start_ms": 3348720,
+      "text": "This is one of the reasons we joined forces with Google back in 2014. I think the entirety of"
+    },
+    {
+      "end_ms": 3358560,
+      "source_event_index": 584,
+      "start_ms": 3355120,
+      "text": "Google and Alphabet, not just Brain and DeepMind, takes these questions of responsibility very"
+    },
+    {
+      "end_ms": 3366840,
+      "source_event_index": 585,
+      "start_ms": 3358560,
+      "text": "seriously. Our kind of mantra is to try and be bold and responsible with these systems. I’m"
+    },
+    {
+      "end_ms": 3372640,
+      "source_event_index": 586,
+      "start_ms": 3366840,
+      "text": "obviously a huge techno-optimist but I want us to be cautious given the transformative power of"
+    },
+    {
+      "end_ms": 3379680,
+      "source_event_index": 587,
+      "start_ms": 3372640,
+      "text": "what we’re bringing into the world collectively. I think it’s important. It’s going to be one of"
+    },
+    {
+      "end_ms": 3385080,
+      "source_event_index": 588,
+      "start_ms": 3379680,
+      "text": "the most important technologies humanity will ever invent. So we’ve got to put all our efforts into"
+    },
+    {
+      "end_ms": 3390120,
+      "source_event_index": 589,
+      "start_ms": 3385080,
+      "text": "getting this right and be thoughtful and also humble about what we know and don’t"
+    },
+    {
+      "end_ms": 3395600,
+      "source_event_index": 590,
+      "start_ms": 3390120,
+      "text": "know about the systems that are coming and the uncertainties around that. In my view,"
+    },
+    {
+      "end_ms": 3400960,
+      "source_event_index": 591,
+      "start_ms": 3395600,
+      "text": "the only sensible approach when you have huge uncertainty is to be cautiously optimistic and"
+    },
+    {
+      "end_ms": 3405440,
+      "source_event_index": 592,
+      "start_ms": 3400960,
+      "text": "use the scientific method to try and have as much foresight and understanding about what’s coming"
+    },
+    {
+      "end_ms": 3410280,
+      "source_event_index": 593,
+      "start_ms": 3405440,
+      "text": "down the line and the consequences of that before it happens. You don’t want to be live A/B testing"
+    },
+    {
+      "end_ms": 3415600,
+      "source_event_index": 594,
+      "start_ms": 3410280,
+      "text": "out in the world with these very consequential systems because unintended consequences may be"
+    },
+    {
+      "end_ms": 3422320,
+      "source_event_index": 595,
+      "start_ms": 3415600,
+      "text": "quite severe. So I want us to move away, as a field, from a sort of “move fast and break things"
+    },
+    {
+      "end_ms": 3427760,
+      "source_event_index": 596,
+      "start_ms": 3422320,
+      "text": "attitude” which has maybe served the Valley very well in the past and obviously created important"
+    },
+    {
+      "end_ms": 3435600,
+      "source_event_index": 597,
+      "start_ms": 3427760,
+      "text": "innovations. I think in this case we want to be bold with the positive things that it can do"
+    },
+    {
+      "end_ms": 3443080,
+      "source_event_index": 598,
+      "start_ms": 3435600,
+      "text": "and make sure we advance things like medicine and science whilst being as responsible and"
+    },
+    {
+      "end_ms": 3450960,
+      "source_event_index": 599,
+      "start_ms": 3443080,
+      "text": "thoughtful as possible with mitigating the risks. That’s why it seems like the responsible scaling"
+    },
+    {
+      "end_ms": 3454400,
+      "source_event_index": 600,
+      "start_ms": 3450960,
+      "text": "policies are something that are a very good empirical way to pre-commit to these"
+    },
+    {
+      "end_ms": 3455600,
+      "source_event_index": 601,
+      "start_ms": 3454400,
+      "text": "kinds of things. Yes, exactly."
+    },
+    {
+      "end_ms": 3461320,
+      "source_event_index": 602,
+      "start_ms": 3458000,
+      "text": "When you’re doing these evaluations and for example it turns out your next model could"
+    },
+    {
+      "end_ms": 3466560,
+      "source_event_index": 603,
+      "start_ms": 3461320,
+      "text": "help a layperson build a pandemic-class bioweapon or something, how would you think first of all"
+    },
+    {
+      "end_ms": 3471480,
+      "source_event_index": 604,
+      "start_ms": 3466560,
+      "text": "about making sure those weights are secure so that they don't get out? And second, what"
+    },
+    {
+      "end_ms": 3475560,
+      "source_event_index": 605,
+      "start_ms": 3471480,
+      "text": "would have to be true for you to be comfortable deploying that system? How would you make sure"
+    },
+    {
+      "end_ms": 3481840,
+      "source_event_index": 606,
+      "start_ms": 3475560,
+      "text": "that this latent capability isn’t exposed? The secure model part I think we’ve covered"
+    },
+    {
+      "end_ms": 3485680,
+      "source_event_index": 607,
+      "start_ms": 3481840,
+      "text": "with the cybersecurity and making sure that’s world-class and you’re monitoring all those"
+    },
+    {
+      "end_ms": 3492000,
+      "source_event_index": 608,
+      "start_ms": 3485680,
+      "text": "things. I think if a capability like that was discovered through red teaming or external"
+    },
+    {
+      "end_ms": 3499320,
+      "source_event_index": 609,
+      "start_ms": 3492000,
+      "text": "testing, independent testers like government institutes or academia or whatever, then we"
+    },
+    {
+      "end_ms": 3507800,
+      "source_event_index": 610,
+      "start_ms": 3499320,
+      "text": "would have to fix that loophole. Depending on what it was, that might require a different kind of"
+    },
+    {
+      "end_ms": 3513000,
+      "source_event_index": 611,
+      "start_ms": 3507800,
+      "text": "constitution perhaps, or different guardrails, or more RLHF to avoid that. Or you could remove some"
+    },
+    {
+      "end_ms": 3520040,
+      "source_event_index": 612,
+      "start_ms": 3513000,
+      "text": "training data, depending on what the problem is. I think there could be a number of mitigations. The"
+    },
+    {
+      "end_ms": 3525080,
+      "source_event_index": 613,
+      "start_ms": 3520040,
+      "text": "first part is making sure you detect it ahead of time. So that’s about the right evaluations"
+    },
+    {
+      "end_ms": 3530640,
+      "source_event_index": 614,
+      "start_ms": 3525080,
+      "text": "and right benchmarking and right testing. Then the question is how one would fix that before"
+    },
+    {
+      "end_ms": 3534720,
+      "source_event_index": 615,
+      "start_ms": 3530640,
+      "text": "you deployed it. But I think it would need to be fixed before it was deployed generally,"
+    },
+    {
+      "end_ms": 3542120,
+      "source_event_index": 616,
+      "start_ms": 3534720,
+      "text": "for sure, if that was an exposure surface. Final question. You’ve been thinking in terms"
+    },
+    {
+      "end_ms": 3546120,
+      "source_event_index": 617,
+      "start_ms": 3542120,
+      "text": "of the end goal of AGI at a time when other people thought it was ridiculous in 2010. Now"
+    },
+    {
+      "end_ms": 3551480,
+      "source_event_index": 618,
+      "start_ms": 3546120,
+      "text": "that we’re seeing this slow takeoff where we’re actually seeing generalization and intelligence,"
+    },
+    {
+      "end_ms": 3555800,
+      "source_event_index": 619,
+      "start_ms": 3552320,
+      "text": "what is like psychologically seeing this? What has that been like? Has it just been"
+    },
+    {
+      "end_ms": 3559680,
+      "source_event_index": 620,
+      "start_ms": 3555800,
+      "text": "sort of priced into your world model so it’s not new news for you? Or actually just"
+    },
+    {
+      "end_ms": 3564440,
+      "source_event_index": 621,
+      "start_ms": 3559680,
+      "text": "seeing it live, are you like “wow, something’s really changed”? What does it feel like?"
+    },
+    {
+      "end_ms": 3568880,
+      "source_event_index": 622,
+      "start_ms": 3564440,
+      "text": "For me, yes, it’s already priced into my world model of how things were going to go,"
+    },
+    {
+      "end_ms": 3575120,
+      "source_event_index": 623,
+      "start_ms": 3568880,
+      "text": "at least from the technology side. But obviously, we didn’t necessarily anticipate that the general"
+    },
+    {
+      "end_ms": 3586560,
+      "source_event_index": 624,
+      "start_ms": 3575120,
+      "text": "public would be so interested this early in the sequence. If ChatGPT and chatbots hadn’t gotten"
+    },
+    {
+      "end_ms": 3590360,
+      "source_event_index": 625,
+      "start_ms": 3587240,
+      "text": "the interest they ended up getting—which I think was quite surprising to everyone"
+    },
+    {
+      "end_ms": 3594640,
+      "source_event_index": 626,
+      "start_ms": 3590360,
+      "text": "that people were ready to use these things even though they were lacking in certain directions,"
+    },
+    {
+      "end_ms": 3600560,
+      "source_event_index": 627,
+      "start_ms": 3595280,
+      "text": "impressive though they are—then we would have produced more specialized systems built off"
+    },
+    {
+      "end_ms": 3609640,
+      "source_event_index": 628,
+      "start_ms": 3600560,
+      "text": "of the main track, like AlphaFold and AlphaGo, our scientific work. I think then the general"
+    },
+    {
+      "end_ms": 3614480,
+      "source_event_index": 629,
+      "start_ms": 3609640,
+      "text": "public maybe would have only paid attention later down the road when in a few years’ time,"
+    },
+    {
+      "end_ms": 3619360,
+      "source_event_index": 630,
+      "start_ms": 3614480,
+      "text": "we have more generally useful assistant-type systems. So that’s been interesting. That’s"
+    },
+    {
+      "end_ms": 3625600,
+      "source_event_index": 631,
+      "start_ms": 3619360,
+      "text": "created a different type of environment that we’re now all operating in as a field."
+    },
+    {
+      "end_ms": 3629560,
+      "source_event_index": 632,
+      "start_ms": 3626400,
+      "text": "It’s a little bit more chaotic because there’s so many more things going on,"
+    },
+    {
+      "end_ms": 3634800,
+      "source_event_index": 633,
+      "start_ms": 3629560,
+      "text": "and there’s so much VC money going into it, and everyone’s sort of almost losing their minds over"
+    },
+    {
+      "end_ms": 3641800,
+      "source_event_index": 634,
+      "start_ms": 3634800,
+      "text": "it. The only thing I worry about is that I want to make sure that, as a field, we act responsibly"
+    },
+    {
+      "end_ms": 3646720,
+      "source_event_index": 635,
+      "start_ms": 3641800,
+      "text": "and thoughtfully and scientifically about this and use the scientific method to approach this"
+    },
+    {
+      "end_ms": 3652960,
+      "source_event_index": 636,
+      "start_ms": 3646720,
+      "text": "in an optimistic but careful way. I think I’ve always believed that that’s the right"
+    },
+    {
+      "end_ms": 3659400,
+      "source_event_index": 637,
+      "start_ms": 3652960,
+      "text": "approach for something like AI, and I just hope that doesn’t get lost in this huge rush."
+    },
+    {
+      "end_ms": 3663040,
+      "source_event_index": 638,
+      "start_ms": 3660160,
+      "text": "Well, I think that’s a great place to close. Demis, thank you so much for your"
+    },
+    {
+      "end_ms": 3667400,
+      "source_event_index": 639,
+      "start_ms": 3663040,
+      "text": "time and for coming on the podcast. Thanks. It’s been a real pleasure."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-71546f674e555633434149-demis-hassabis/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "cd9a7bc032ee53b020ead513d67d84d87d7db5889666552ab11c27b2d207d15a"
+  },
+  "translation": {
+    "event_count": 640,
+    "language": "zh-CN",
+    "payload_sha256": "b13ed120c3c14b6702dbdd6e9b14463ac44fb79abca834c8a41dcf62275d1378",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-71546f674e555633434149-demis-hassabis/transcript.zh-CN.md",
+    "rendered_sha256": "c58ed123319aadb8ef11dbcda94bb0e0d894a1f4ba11cac9f134936886e25550",
+    "source_track": "zh-Hans-en",
+    "track_type": "youtube-auto-translate"
+  }
+}

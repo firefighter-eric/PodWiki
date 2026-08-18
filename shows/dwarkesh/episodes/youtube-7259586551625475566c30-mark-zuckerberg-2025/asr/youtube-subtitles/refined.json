@@ -1,0 +1,4075 @@
+{
+  "generated_at": "2026-08-18T08:26:16.211240Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-7259586551625475566c30-mark-zuckerberg-2025/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "b9c5e92c98b6ede6f262799e685b146bbbe242a3deba20575b9b391fe9525e29"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 50880,
+      "source_event_index": 0,
+      "start_ms": 47280,
+      "text": "Mark, thanks for coming on the podcast again. Yeah, happy to do it. Good to see you."
+    },
+    {
+      "end_ms": 56240,
+      "source_event_index": 1,
+      "start_ms": 50880,
+      "text": "You too. Last time you were here, you had launched Llama 3. Now you've launched Llama 4."
+    },
+    {
+      "end_ms": 58000,
+      "source_event_index": 2,
+      "start_ms": 56240,
+      "text": "Well, the first version. That's right. What's"
+    },
+    {
+      "end_ms": 64560,
+      "source_event_index": 3,
+      "start_ms": 58000,
+      "text": "new? What's exciting? What's changed? The whole field is so dynamic. I feel like a ton"
+    },
+    {
+      "end_ms": 70800,
+      "source_event_index": 4,
+      "start_ms": 64560,
+      "text": "has changed since the last time we talked. Meta AI has almost a billion people using it monthly now,"
+    },
+    {
+      "end_ms": 78720,
+      "source_event_index": 5,
+      "start_ms": 70800,
+      "text": "which is pretty wild. I think this is going to be a really big year for all of this, especially once"
+    },
+    {
+      "end_ms": 84480,
+      "source_event_index": 6,
+      "start_ms": 78720,
+      "text": "you get the personalization loop going, which we’re just starting to build in now really,"
+    },
+    {
+      "end_ms": 90640,
+      "source_event_index": 7,
+      "start_ms": 85200,
+      "text": "from both the context that all the algorithms have about what you’re interested in — feed, your"
+    },
+    {
+      "end_ms": 94160,
+      "source_event_index": 8,
+      "start_ms": 90640,
+      "text": "profile information, your social graph information — but also what you're interacting with the"
+    },
+    {
+      "end_ms": 101120,
+      "source_event_index": 9,
+      "start_ms": 94160,
+      "text": "AI about. That’s going to be the next thing that's super exciting. I'm really big on that."
+    },
+    {
+      "end_ms": 110640,
+      "source_event_index": 10,
+      "start_ms": 101120,
+      "text": "The modeling stuff continues to make really impressive advances too. I'm pretty happy"
+    },
+    {
+      "end_ms": 116720,
+      "source_event_index": 11,
+      "start_ms": 110640,
+      "text": "with the first set of Llama 4 releases. We announced four models and released the"
+    },
+    {
+      "end_ms": 123360,
+      "source_event_index": 12,
+      "start_ms": 116720,
+      "text": "first two — the Scout and Maverick ones — which are mid-size to small models."
+    },
+    {
+      "end_ms": 132400,
+      "source_event_index": 13,
+      "start_ms": 124480,
+      "text": "The most popular Llama 3 model was the 8 billion parameter one. So we’ve got one of"
+    },
+    {
+      "end_ms": 138000,
+      "source_event_index": 14,
+      "start_ms": 132400,
+      "text": "those coming in the Llama 4 series too. Our internal code name for it is “Little Llama.”"
+    },
+    {
+      "end_ms": 148800,
+      "source_event_index": 15,
+      "start_ms": 139920,
+      "text": "That’s coming probably over the next few months. Scout and Maverick are good. They have some of"
+    },
+    {
+      "end_ms": 157200,
+      "source_event_index": 16,
+      "start_ms": 148800,
+      "text": "the highest intelligence per cost you can get of any model out there. They’re natively multimodal,"
+    },
+    {
+      "end_ms": 164160,
+      "source_event_index": 17,
+      "start_ms": 157200,
+      "text": "very efficient, run on one host. They’re designed to be very efficient and low latency, for a lot"
+    },
+    {
+      "end_ms": 170640,
+      "source_event_index": 18,
+      "start_ms": 164160,
+      "text": "of the use cases we’re building for internally. That’s our whole thing. We build what we want,"
+    },
+    {
+      "end_ms": 174080,
+      "source_event_index": 19,
+      "start_ms": 170640,
+      "text": "and then we open-source it so other people can use it too. I'm excited about that."
+    },
+    {
+      "end_ms": 182000,
+      "source_event_index": 20,
+      "start_ms": 175200,
+      "text": "I'm also excited about the Behemoth model, which is coming up. It's going to be our first model"
+    },
+    {
+      "end_ms": 193200,
+      "source_event_index": 21,
+      "start_ms": 182000,
+      "text": "that's sort of at the frontier — more than 2 trillion parameters. As the name says,"
+    },
+    {
+      "end_ms": 198960,
+      "source_event_index": 22,
+      "start_ms": 193200,
+      "text": "it's quite big. We’re trying to figure out how to make that useful for people. It’s so big that"
+    },
+    {
+      "end_ms": 203600,
+      "source_event_index": 23,
+      "start_ms": 198960,
+      "text": "we've had to build a bunch of infrastructure just to be able to post-train it ourselves."
+    },
+    {
+      "end_ms": 208400,
+      "source_event_index": 24,
+      "start_ms": 203600,
+      "text": "Now we're trying to wrap our heads around, how does the average developer out there actually"
+    },
+    {
+      "end_ms": 212880,
+      "source_event_index": 25,
+      "start_ms": 208400,
+      "text": "use something like this? How do we make it useful — maybe by distilling it into models"
+    },
+    {
+      "end_ms": 216400,
+      "source_event_index": 26,
+      "start_ms": 212880,
+      "text": "that are a reasonable size to run? Because you're obviously not going to want to run"
+    },
+    {
+      "end_ms": 225360,
+      "source_event_index": 27,
+      "start_ms": 217200,
+      "text": "something like that in a consumer model. As you saw with the Llama 3 stuff last year,"
+    },
+    {
+      "end_ms": 232480,
+      "source_event_index": 28,
+      "start_ms": 225360,
+      "text": "the initial launch was exciting and then we just built on that over the year. 3.1 released"
+    },
+    {
+      "end_ms": 239120,
+      "source_event_index": 29,
+      "start_ms": 232480,
+      "text": "the 405 billion model, 3.2 is when we got all the multimodal stuff in. We basically have a roadmap"
+    },
+    {
+      "end_ms": 243360,
+      "source_event_index": 30,
+      "start_ms": 239120,
+      "text": "like that for this year too. So a lot going on. I'm interested to hear more about it. There's"
+    },
+    {
+      "end_ms": 249040,
+      "source_event_index": 31,
+      "start_ms": 243360,
+      "text": "this impression that the gap between the best closed-source and the best open-source models"
+    },
+    {
+      "end_ms": 253520,
+      "source_event_index": 32,
+      "start_ms": 249040,
+      "text": "has increased over the last year. I know the full family of Llama 4 models isn't out yet,"
+    },
+    {
+      "end_ms": 259520,
+      "source_event_index": 33,
+      "start_ms": 253520,
+      "text": "but Llama 4 Maverick is at #35 on Chatbot Arena. On a bunch of major benchmarks,"
+    },
+    {
+      "end_ms": 266000,
+      "source_event_index": 34,
+      "start_ms": 259520,
+      "text": "it seems like o4-mini or Gemini 2.5 Flash are beating Maverick, which is in the same"
+    },
+    {
+      "end_ms": 270400,
+      "source_event_index": 35,
+      "start_ms": 266000,
+      "text": "class. What do you make of that impression? There are a few things. First, I actually"
+    },
+    {
+      "end_ms": 274480,
+      "source_event_index": 36,
+      "start_ms": 270400,
+      "text": "think this has been a very good year for open source overall. If you go back to"
+    },
+    {
+      "end_ms": 283360,
+      "source_event_index": 37,
+      "start_ms": 275200,
+      "text": "where we were last year, Llama was the only real, super-innovative open-source model."
+    },
+    {
+      "end_ms": 287760,
+      "source_event_index": 38,
+      "start_ms": 283360,
+      "text": "Now you have a bunch of them in the field. In general, the prediction that this would"
+    },
+    {
+      "end_ms": 294240,
+      "source_event_index": 39,
+      "start_ms": 287760,
+      "text": "be the year open source generally overtakes closed source as the most used models out there,"
+    },
+    {
+      "end_ms": 302160,
+      "source_event_index": 40,
+      "start_ms": 294240,
+      "text": "I think that's generally on track to be true. One interesting surprise — positive in some ways,"
+    },
+    {
+      "end_ms": 307120,
+      "source_event_index": 41,
+      "start_ms": 302160,
+      "text": "negative in others, but overall good — is that it’s not just Llama. There are a lot of good"
+    },
+    {
+      "end_ms": 313920,
+      "source_event_index": 42,
+      "start_ms": 307120,
+      "text": "ones out there. I think that's quite good. Then there's the reasoning phenomenon,"
+    },
+    {
+      "end_ms": 326000,
+      "source_event_index": 43,
+      "start_ms": 313920,
+      "text": "which you're alluding to talking about o3, o4, and other models. There's a specialization happening."
+    },
+    {
+      "end_ms": 332080,
+      "source_event_index": 44,
+      "start_ms": 326000,
+      "text": "If you want a model that’s the best at math problems, coding, or different things"
+    },
+    {
+      "end_ms": 343120,
+      "source_event_index": 45,
+      "start_ms": 332080,
+      "text": "like those tasks, then reasoning models that consume more test-time or inference-time compute"
+    },
+    {
+      "end_ms": 346909,
+      "source_event_index": 46,
+      "start_ms": 343120,
+      "text": "in order to provide more intelligence are a really compelling paradigm. And we're building a Llama 4"
+    },
+    {
+      "end_ms": 359280,
+      "source_event_index": 47,
+      "start_ms": 346909,
+      "text": "reasoning model too. It'll come out at some point. But for a lot of the applications we care about,"
+    },
+    {
+      "end_ms": 370000,
+      "source_event_index": 48,
+      "start_ms": 361120,
+      "text": "latency and good intelligence per cost are much more important product attributes. If you're"
+    },
+    {
+      "end_ms": 379120,
+      "source_event_index": 49,
+      "start_ms": 370000,
+      "text": "primarily designing for a consumer product, people don't want to wait half a minute to get an answer."
+    },
+    {
+      "end_ms": 385600,
+      "source_event_index": 50,
+      "start_ms": 379120,
+      "text": "If you can give them a generally good answer in half a second, that's a great tradeoff."
+    },
+    {
+      "end_ms": 391600,
+      "source_event_index": 51,
+      "start_ms": 385600,
+      "text": "I think both of these are going to end up being important directions. I’m optimistic"
+    },
+    {
+      "end_ms": 397680,
+      "source_event_index": 52,
+      "start_ms": 391600,
+      "text": "about integrating reasoning models with the core language models over time. That's the direction"
+    },
+    {
+      "end_ms": 405280,
+      "source_event_index": 53,
+      "start_ms": 398720,
+      "text": "Google has gone in with some of the more recent Gemini models. I think that's really promising."
+    },
+    {
+      "end_ms": 409040,
+      "source_event_index": 54,
+      "start_ms": 405280,
+      "text": "But I think there’s just going to be a bunch of different stuff that goes on."
+    },
+    {
+      "end_ms": 415440,
+      "source_event_index": 55,
+      "start_ms": 409040,
+      "text": "You also mentioned the whole Chatbot Arena thing, which I think is interesting and points to the"
+    },
+    {
+      "end_ms": 422960,
+      "source_event_index": 56,
+      "start_ms": 415440,
+      "text": "challenge around how you do benchmarking. How do you know what models are good for which things?"
+    },
+    {
+      "end_ms": 429760,
+      "source_event_index": 57,
+      "start_ms": 423520,
+      "text": "One of the things we've generally tried to do over the last year is anchor more of our models in"
+    },
+    {
+      "end_ms": 437760,
+      "source_event_index": 58,
+      "start_ms": 430480,
+      "text": "our Meta AI product north star use cases. The issue with open source benchmarks,"
+    },
+    {
+      "end_ms": 447200,
+      "source_event_index": 59,
+      "start_ms": 437760,
+      "text": "and any given thing like the LM Arena stuff, is that they’re often skewed toward a very specific"
+    },
+    {
+      "end_ms": 453760,
+      "source_event_index": 60,
+      "start_ms": 448080,
+      "text": "set of uses cases, which are often not actually what any normal person does in your product."
+    },
+    {
+      "end_ms": 460800,
+      "source_event_index": 61,
+      "start_ms": 457120,
+      "text": "The portfolio of things they’re trying to measure is often different from what"
+    },
+    {
+      "end_ms": 469600,
+      "source_event_index": 62,
+      "start_ms": 460800,
+      "text": "people care about in any given product. Because of that, we’ve found that trying"
+    },
+    {
+      "end_ms": 476320,
+      "source_event_index": 63,
+      "start_ms": 469600,
+      "text": "to optimize too much for that kind of stuff has led us astray. It’s actually not led towards the"
+    },
+    {
+      "end_ms": 483200,
+      "source_event_index": 64,
+      "start_ms": 476320,
+      "text": "highest quality product, the most usage, and best feedback within Meta AI as people use our stuff."
+    },
+    {
+      "end_ms": 492480,
+      "source_event_index": 65,
+      "start_ms": 483200,
+      "text": "So we're trying to anchor our north star on the product value that people report to us,"
+    },
+    {
+      "end_ms": 496560,
+      "source_event_index": 66,
+      "start_ms": 492480,
+      "text": "what they say that they want, and what their revealed preferences are, and using"
+    },
+    {
+      "end_ms": 503760,
+      "source_event_index": 67,
+      "start_ms": 496560,
+      "text": "the experiences that we have. Sometimes these benchmarks just don't quite line up."
+    },
+    {
+      "end_ms": 512880,
+      "source_event_index": 68,
+      "start_ms": 503760,
+      "text": "I think a lot of them are quite easily gameable. On the Arena you'll see stuff like Sonnet 3.7,"
+    },
+    {
+      "end_ms": 519200,
+      "source_event_index": 69,
+      "start_ms": 512880,
+      "text": "which is a great model, and it's not near the top. It was relatively easy for our team to"
+    },
+    {
+      "end_ms": 526240,
+      "source_event_index": 70,
+      "start_ms": 519200,
+      "text": "tune a version of Llama 4 Maverick that could be way at the top. But the version we released,"
+    },
+    {
+      "end_ms": 532400,
+      "source_event_index": 71,
+      "start_ms": 527120,
+      "text": "the pure model, actually has no tuning for that at all, so it's further down. So you just need"
+    },
+    {
+      "end_ms": 537440,
+      "source_event_index": 72,
+      "start_ms": 532400,
+      "text": "to be careful with some of these benchmarks. We're going to index primarily on the products."
+    },
+    {
+      "end_ms": 543120,
+      "source_event_index": 73,
+      "start_ms": 537440,
+      "text": "Do you feel like there is some benchmark which captures what you see as a north star of value"
+    },
+    {
+      "end_ms": 548800,
+      "source_event_index": 74,
+      "start_ms": 543120,
+      "text": "to the user which can be be objectively measured between different models and where you'd say,"
+    },
+    {
+      "end_ms": 556400,
+      "source_event_index": 75,
+      "start_ms": 548800,
+      "text": "\"I need Llama 4 to come out on top on this”? Our benchmark is basically user value in Meta AI."
+    },
+    {
+      "end_ms": 560640,
+      "source_event_index": 76,
+      "start_ms": 557040,
+      "text": "But you can't compare that to other models. We might be able to, because we might be able"
+    },
+    {
+      "end_ms": 565920,
+      "source_event_index": 77,
+      "start_ms": 560640,
+      "text": "to run other models and be able to tell. That's one of the advantages of open source. You have"
+    },
+    {
+      "end_ms": 570160,
+      "source_event_index": 78,
+      "start_ms": 565920,
+      "text": "a good community of folks who can poke holes in your stuff and point out, \"Okay, where is"
+    },
+    {
+      "end_ms": 576320,
+      "source_event_index": 79,
+      "start_ms": 570160,
+      "text": "your model not good, and where is it good?\" The reality at this point is that all these"
+    },
+    {
+      "end_ms": 582000,
+      "source_event_index": 80,
+      "start_ms": 576320,
+      "text": "models are optimized for slightly different mixes of things. Everyone is trying to go"
+    },
+    {
+      "end_ms": 586800,
+      "source_event_index": 81,
+      "start_ms": 582000,
+      "text": "towards the same end in that all the leading labs are trying to create general intelligence,"
+    },
+    {
+      "end_ms": 593600,
+      "source_event_index": 82,
+      "start_ms": 588160,
+      "text": "superintelligence, whatever you call it. AI that can lead toward a world of abundance"
+    },
+    {
+      "end_ms": 598640,
+      "source_event_index": 83,
+      "start_ms": 593600,
+      "text": "where everyone has these superhuman tools to create whatever they want. That leads"
+    },
+    {
+      "end_ms": 601920,
+      "source_event_index": 84,
+      "start_ms": 598640,
+      "text": "to dramatically empowering people and creating all these economic benefits."
+    },
+    {
+      "end_ms": 607840,
+      "source_event_index": 85,
+      "start_ms": 602960,
+      "text": "However you define it, that's what a lot of the labs are going for."
+    },
+    {
+      "end_ms": 613520,
+      "source_event_index": 86,
+      "start_ms": 609440,
+      "text": "But there's no doubt that different folks have optimized toward different things. I think the"
+    },
+    {
+      "end_ms": 620160,
+      "source_event_index": 87,
+      "start_ms": 613520,
+      "text": "Anthropic folks have really focused on coding and agents around that. The OpenAI folks, I think,"
+    },
+    {
+      "end_ms": 629440,
+      "source_event_index": 88,
+      "start_ms": 620160,
+      "text": "have gone a little more toward reasoning recently. There’s a space which, if I had to guess,"
+    },
+    {
+      "end_ms": 639680,
+      "source_event_index": 89,
+      "start_ms": 629440,
+      "text": "I think will end up being the most used one: quick, very natural to interact with,"
+    },
+    {
+      "end_ms": 646480,
+      "source_event_index": 90,
+      "start_ms": 640720,
+      "text": "natively multimodal, fitting throughout your day in the ways you want to interact with it."
+    },
+    {
+      "end_ms": 653440,
+      "source_event_index": 91,
+      "start_ms": 647600,
+      "text": "I think you got a chance to play around with the new Meta AI app that we're releasing."
+    },
+    {
+      "end_ms": 660160,
+      "source_event_index": 92,
+      "start_ms": 654000,
+      "text": "One of the fun things we put in there is the demo for the full-duplex voice. It's early."
+    },
+    {
+      "end_ms": 665600,
+      "source_event_index": 93,
+      "start_ms": 661840,
+      "text": "There’s a reason why we haven't made that the default voice model in the app yet. But there's"
+    },
+    {
+      "end_ms": 670960,
+      "source_event_index": 94,
+      "start_ms": 665600,
+      "text": "something about how naturally conversational it is that's really fun and compelling."
+    },
+    {
+      "end_ms": 679520,
+      "source_event_index": 95,
+      "start_ms": 672320,
+      "text": "Being able to mix that in with the right personalization is going to lead toward a"
+    },
+    {
+      "end_ms": 685440,
+      "source_event_index": 96,
+      "start_ms": 679520,
+      "text": "product experience where… If you fast-forward a few years, I think we're just going to be"
+    },
+    {
+      "end_ms": 690000,
+      "source_event_index": 97,
+      "start_ms": 685440,
+      "text": "talking to AI throughout the day about different things we're wondering about."
+    },
+    {
+      "end_ms": 696240,
+      "source_event_index": 98,
+      "start_ms": 691760,
+      "text": "You'll have your phone. You'll talk to it while browsing your feed apps. It'll give you"
+    },
+    {
+      "end_ms": 700080,
+      "source_event_index": 99,
+      "start_ms": 696240,
+      "text": "context about different stuff. It'll answer your questions. It'll help you as you're interacting"
+    },
+    {
+      "end_ms": 705840,
+      "source_event_index": 100,
+      "start_ms": 700080,
+      "text": "with people in messaging apps. Eventually, I think we'll walk through our daily lives and"
+    },
+    {
+      "end_ms": 713680,
+      "source_event_index": 101,
+      "start_ms": 706800,
+      "text": "have glasses or other kinds of AI devices and just seamlessly interact with it all day long."
+    },
+    {
+      "end_ms": 723680,
+      "source_event_index": 102,
+      "start_ms": 716560,
+      "text": "That’s the north star. Whatever the benchmarks are that lead toward people feeling like the"
+    },
+    {
+      "end_ms": 731280,
+      "source_event_index": 103,
+      "start_ms": 723680,
+      "text": "quality is where they want to interact with it, that's what will ultimately matter the most to us."
+    },
+    {
+      "end_ms": 736240,
+      "source_event_index": 104,
+      "start_ms": 731280,
+      "text": "I got a chance to play around with both Orion and also the Meta AI app, and the voice mode"
+    },
+    {
+      "end_ms": 741440,
+      "source_event_index": 105,
+      "start_ms": 736240,
+      "text": "was super smooth. It was quite impressive. On the point of what the different labs are"
+    },
+    {
+      "end_ms": 746880,
+      "source_event_index": 106,
+      "start_ms": 741440,
+      "text": "optimizing for — to steelman their view — I think a lot of them believe that once you fully automate"
+    },
+    {
+      "end_ms": 753280,
+      "source_event_index": 107,
+      "start_ms": 746880,
+      "text": "software engineering and AI research, then you can kick off an intelligence explosion. You would have"
+    },
+    {
+      "end_ms": 757120,
+      "source_event_index": 108,
+      "start_ms": 753280,
+      "text": "millions of copies of these software engineers replicating the research that happened between"
+    },
+    {
+      "end_ms": 762320,
+      "source_event_index": 109,
+      "start_ms": 757120,
+      "text": "Llama 1 and Llama 4 — that scale of improvement again — but in a matter of weeks or months rather"
+    },
+    {
+      "end_ms": 768560,
+      "source_event_index": 110,
+      "start_ms": 762320,
+      "text": "than years. So it really matters to just close the loop on the software engineer, and then you can be"
+    },
+    {
+      "end_ms": 773280,
+      "source_event_index": 111,
+      "start_ms": 768560,
+      "text": "the first to ASI. What do you make of that? I personally think that's pretty compelling."
+    },
+    {
+      "end_ms": 777920,
+      "source_event_index": 112,
+      "start_ms": 774000,
+      "text": "That's why we have a big coding effort too. We're working on"
+    },
+    {
+      "end_ms": 786320,
+      "source_event_index": 113,
+      "start_ms": 777920,
+      "text": "a number of coding agents inside Meta. Because we're not really an enterprise software company,"
+    },
+    {
+      "end_ms": 793360,
+      "source_event_index": 114,
+      "start_ms": 786320,
+      "text": "we're primarily building it for ourselves. Again, we go for a specific goal. We're not trying"
+    },
+    {
+      "end_ms": 800800,
+      "source_event_index": 115,
+      "start_ms": 793360,
+      "text": "to build a general developer tool. We're trying to build a coding agent and an AI research agent that"
+    },
+    {
+      "end_ms": 812160,
+      "source_event_index": 116,
+      "start_ms": 802880,
+      "text": "advances Llama research specifically. And it's fully plugged into our toolchain and all that."
+    },
+    {
+      "end_ms": 818400,
+      "source_event_index": 117,
+      "start_ms": 812160,
+      "text": "That's important and is going to end up being an important part of how this stuff gets done."
+    },
+    {
+      "end_ms": 825280,
+      "source_event_index": 118,
+      "start_ms": 818400,
+      "text": "I would guess that sometime in the next 12 to 18 months, we'll reach the point where most of"
+    },
+    {
+      "end_ms": 830000,
+      "source_event_index": 119,
+      "start_ms": 825280,
+      "text": "the code that's going toward these efforts is written by AI. And I don't mean autocomplete."
+    },
+    {
+      "end_ms": 837440,
+      "source_event_index": 120,
+      "start_ms": 830560,
+      "text": "Today you have good autocomplete. You start writing something and it can complete a section"
+    },
+    {
+      "end_ms": 844560,
+      "source_event_index": 121,
+      "start_ms": 837440,
+      "text": "of code. I'm talking more like: you give it a goal, it can run tests, it can improve things,"
+    },
+    {
+      "end_ms": 853200,
+      "source_event_index": 122,
+      "start_ms": 845600,
+      "text": "it can find issues, it writes higher quality code than the average very good person on the"
+    },
+    {
+      "end_ms": 861200,
+      "source_event_index": 123,
+      "start_ms": 853200,
+      "text": "team already. I think that's going to be a really important part of this for sure."
+    },
+    {
+      "end_ms": 868880,
+      "source_event_index": 124,
+      "start_ms": 861200,
+      "text": "But I don't know if that's the whole game. That's going to be a big industry, and it's going to be"
+    },
+    {
+      "end_ms": 876400,
+      "source_event_index": 125,
+      "start_ms": 868880,
+      "text": "an important part of how AI gets developed. But I think there are still… One way to think about it"
+    },
+    {
+      "end_ms": 882320,
+      "source_event_index": 126,
+      "start_ms": 876400,
+      "text": "is that this is a massive space. I don't think there's just going to be one company with one"
+    },
+    {
+      "end_ms": 891600,
+      "source_event_index": 127,
+      "start_ms": 882320,
+      "text": "optimization function that serves everyone as best as possible. There are going to be a bunch"
+    },
+    {
+      "end_ms": 892880,
+      "source_event_index": 128,
+      "start_ms": 891600,
+      "text": "of different labs doing leading work in different domains. Some will be more enterprise-focused or"
+    },
+    {
+      "end_ms": 896800,
+      "source_event_index": 129,
+      "start_ms": 892880,
+      "text": "coding-focused. Some will be more productivity-focused. Some will be"
+    },
+    {
+      "end_ms": 901600,
+      "source_event_index": 130,
+      "start_ms": 896800,
+      "text": "more social or entertainment-focused. Within the assistant space, there will"
+    },
+    {
+      "end_ms": 905920,
+      "source_event_index": 131,
+      "start_ms": 901600,
+      "text": "be some that are more informational and productivity-focused, and some that are"
+    },
+    {
+      "end_ms": 910240,
+      "source_event_index": 132,
+      "start_ms": 905920,
+      "text": "more companion-focused. It’s going to be a lot of stuff that’s just fun and"
+    },
+    {
+      "end_ms": 916400,
+      "source_event_index": 133,
+      "start_ms": 910240,
+      "text": "entertaining and shows up in your feed. There's just a huge amount of space. Part"
+    },
+    {
+      "end_ms": 924480,
+      "source_event_index": 134,
+      "start_ms": 916400,
+      "text": "of what's fun about going toward this AGI future is that there are a bunch of common threads for"
+    },
+    {
+      "end_ms": 931600,
+      "source_event_index": 135,
+      "start_ms": 924480,
+      "text": "what needs to get invented, but also a lot of things that still need to be created. I think"
+    },
+    {
+      "end_ms": 935200,
+      "source_event_index": 136,
+      "start_ms": 931600,
+      "text": "you're going to start seeing more specialization between different groups, if I had to guess."
+    },
+    {
+      "end_ms": 939680,
+      "source_event_index": 137,
+      "start_ms": 935200,
+      "text": "It’s really interesting to me that you basically agree with the premise that"
+    },
+    {
+      "end_ms": 943040,
+      "source_event_index": 138,
+      "start_ms": 939680,
+      "text": "there will be an intelligence explosion and we’ll get something like superintelligence on"
+    },
+    {
+      "end_ms": 948080,
+      "source_event_index": 139,
+      "start_ms": 943040,
+      "text": "the other end. Tell me if I'm misunderstanding you. If that’s the case, why even bother with"
+    },
+    {
+      "end_ms": 951840,
+      "source_event_index": 140,
+      "start_ms": 948080,
+      "text": "personal assistants and whatever else? Why not just get to superhuman intelligence first and"
+    },
+    {
+      "end_ms": 955040,
+      "source_event_index": 141,
+      "start_ms": 951840,
+      "text": "then deal with everything else later? I think that's just one aspect of the"
+    },
+    {
+      "end_ms": 962000,
+      "source_event_index": 142,
+      "start_ms": 955040,
+      "text": "flywheel. Part of what I generally disagree with on the fast-takeoff view is that it takes"
+    },
+    {
+      "end_ms": 968720,
+      "source_event_index": 143,
+      "start_ms": 962000,
+      "text": "time to build out physical infrastructure. If you want to build a gigawatt cluster of"
+    },
+    {
+      "end_ms": 980160,
+      "source_event_index": 144,
+      "start_ms": 968720,
+      "text": "compute, that just takes time. NVIDIA needs time to stabilize their new generation of systems. Then"
+    },
+    {
+      "end_ms": 984720,
+      "source_event_index": 145,
+      "start_ms": 980160,
+      "text": "you need to figure out the networking around it. Then you need to build the building. You"
+    },
+    {
+      "end_ms": 992560,
+      "source_event_index": 146,
+      "start_ms": 984720,
+      "text": "need to get permitting. You need to get the energy. Maybe that means gas turbines or"
+    },
+    {
+      "end_ms": 996080,
+      "source_event_index": 147,
+      "start_ms": 993280,
+      "text": "green energy, either way, there’s a whole supply chain of that stuff."
+    },
+    {
+      "end_ms": 1002480,
+      "source_event_index": 148,
+      "start_ms": 997440,
+      "text": "We talked about this a bunch the last time I was on the podcast with you. I think some"
+    },
+    {
+      "end_ms": 1008160,
+      "source_event_index": 149,
+      "start_ms": 1002480,
+      "text": "of these are just physical-world, human-time things. As you start getting more intelligence"
+    },
+    {
+      "end_ms": 1014720,
+      "source_event_index": 150,
+      "start_ms": 1008160,
+      "text": "in one part of the stack, you’re just going to run into a different set of bottlenecks."
+    },
+    {
+      "end_ms": 1018720,
+      "source_event_index": 151,
+      "start_ms": 1014720,
+      "text": "That’s how engineering always works: solve one bottleneck, you get another bottleneck."
+    },
+    {
+      "end_ms": 1028320,
+      "source_event_index": 152,
+      "start_ms": 1020320,
+      "text": "Another bottleneck in the system or ingredient that’s going to make this work well, is people"
+    },
+    {
+      "end_ms": 1040720,
+      "source_event_index": 153,
+      "start_ms": 1028320,
+      "text": "getting used to learning and having a feedback loop with using the system. These systems don’t"
+    },
+    {
+      "end_ms": 1054000,
+      "source_event_index": 154,
+      "start_ms": 1045600,
+      "text": "just show up fully formed with people magically knowing how to use them. There's a co-evolution"
+    },
+    {
+      "end_ms": 1062160,
+      "source_event_index": 155,
+      "start_ms": 1054000,
+      "text": "that happens where people are learning how to best use these AI assistants. At the same time, the AI"
+    },
+    {
+      "end_ms": 1070560,
+      "source_event_index": 156,
+      "start_ms": 1062160,
+      "text": "assistants are learning what people care about. Developers are making the AI assistants better."
+    },
+    {
+      "end_ms": 1077360,
+      "source_event_index": 157,
+      "start_ms": 1071280,
+      "text": "You're building up a base of context too. You wake up a year or two into it and the"
+    },
+    {
+      "end_ms": 1081680,
+      "source_event_index": 158,
+      "start_ms": 1077360,
+      "text": "assistant can reference things you talked about two years ago and that’s pretty cool."
+    },
+    {
+      "end_ms": 1085120,
+      "source_event_index": 159,
+      "start_ms": 1081680,
+      "text": "You couldn’t do that even if you launched the perfect thing on day one. There’s no way it"
+    },
+    {
+      "end_ms": 1087840,
+      "source_event_index": 160,
+      "start_ms": 1085120,
+      "text": "could reference what you talked about two years ago if it didn’t exist two years ago."
+    },
+    {
+      "end_ms": 1097360,
+      "source_event_index": 161,
+      "start_ms": 1087840,
+      "text": "So I guess my view is that there's this huge intelligence growth. There’s a very rapid curve"
+    },
+    {
+      "end_ms": 1103200,
+      "source_event_index": 162,
+      "start_ms": 1097360,
+      "text": "on the uptake of people interacting with the AI assistants, and the learning feedback and"
+    },
+    {
+      "end_ms": 1114800,
+      "source_event_index": 163,
+      "start_ms": 1103760,
+      "text": "data flywheel around that. And then there is also the buildout of the supply chains and"
+    },
+    {
+      "end_ms": 1118960,
+      "source_event_index": 164,
+      "start_ms": 1114800,
+      "text": "infrastructure and regulatory frameworks to enable the scaling of a lot of the physical"
+    },
+    {
+      "end_ms": 1125680,
+      "source_event_index": 165,
+      "start_ms": 1118960,
+      "text": "infrastructure. At some level, all of those are going to be necessary, not just the coding piece."
+    },
+    {
+      "end_ms": 1132320,
+      "source_event_index": 166,
+      "start_ms": 1127360,
+      "text": "One specific example of this that I think is interesting. Even if you go back a few years ago,"
+    },
+    {
+      "end_ms": 1140800,
+      "source_event_index": 167,
+      "start_ms": 1132320,
+      "text": "we had a project, I think it was on our ads team, to automate ranking experiments. That's a pretty"
+    },
+    {
+      "end_ms": 1146480,
+      "source_event_index": 168,
+      "start_ms": 1140800,
+      "text": "constrained environment. It's not open-ended code. It’s basically, look at the whole history of the"
+    },
+    {
+      "end_ms": 1153120,
+      "source_event_index": 169,
+      "start_ms": 1146480,
+      "text": "company — every experiment that any engineer has ever done in the ad system — and look at what"
+    },
+    {
+      "end_ms": 1159280,
+      "source_event_index": 170,
+      "start_ms": 1153120,
+      "text": "worked, what didn't, and what the results of those were. Then basically formulate new hypotheses for"
+    },
+    {
+      "end_ms": 1164160,
+      "source_event_index": 171,
+      "start_ms": 1159280,
+      "text": "different tests that we should run that could improve the performance of the ad system."
+    },
+    {
+      "end_ms": 1171920,
+      "source_event_index": 172,
+      "start_ms": 1165360,
+      "text": "What we basically found was that we were bottlenecked on compute to run tests,"
+    },
+    {
+      "end_ms": 1177120,
+      "source_event_index": 173,
+      "start_ms": 1171920,
+      "text": "based on the number of hypotheses. It turns out, even with just the humans we have right now"
+    },
+    {
+      "end_ms": 1186560,
+      "source_event_index": 174,
+      "start_ms": 1177120,
+      "text": "on the ads team, we already have more good ideas to test than we actually have either compute or,"
+    },
+    {
+      "end_ms": 1192640,
+      "source_event_index": 175,
+      "start_ms": 1186560,
+      "text": "really, cohorts of people to test them with. Even if you have three and a half billion people"
+    },
+    {
+      "end_ms": 1198640,
+      "source_event_index": 176,
+      "start_ms": 1192640,
+      "text": "using your products, you still want each test to be statistically significant. It needs to have"
+    },
+    {
+      "end_ms": 1209520,
+      "source_event_index": 177,
+      "start_ms": 1200000,
+      "text": "hundreds of thousands or millions of people. There's only so much throughput you can get on"
+    },
+    {
+      "end_ms": 1216160,
+      "source_event_index": 178,
+      "start_ms": 1209520,
+      "text": "testing through that. So we're already at the point, even with just the people we have, that"
+    },
+    {
+      "end_ms": 1223600,
+      "source_event_index": 179,
+      "start_ms": 1218000,
+      "text": "we can't really test everything that we want. Now just being able to test more things is not"
+    },
+    {
+      "end_ms": 1227520,
+      "source_event_index": 180,
+      "start_ms": 1223600,
+      "text": "necessarily going to be additive to that. We need to get to the point where the average quality of"
+    },
+    {
+      "end_ms": 1233520,
+      "source_event_index": 181,
+      "start_ms": 1227520,
+      "text": "the hypotheses that the AI is generating is better than all the things above the"
+    },
+    {
+      "end_ms": 1237840,
+      "source_event_index": 182,
+      "start_ms": 1233520,
+      "text": "line that we’re actually able to test that the best humans on the team have been able to do,"
+    },
+    {
+      "end_ms": 1245840,
+      "source_event_index": 183,
+      "start_ms": 1237840,
+      "text": "before it will even be marginally useful for it. We'll get there I think pretty quickly. But"
+    },
+    {
+      "end_ms": 1249760,
+      "source_event_index": 184,
+      "start_ms": 1247040,
+      "text": "it's not just, “Okay, cool, the thing can write code, and now all of a sudden"
+    },
+    {
+      "end_ms": 1260000,
+      "source_event_index": 185,
+      "start_ms": 1249760,
+      "text": "everything is just improving massively.” There are real-world constraints that need to be overcome."
+    },
+    {
+      "end_ms": 1265760,
+      "source_event_index": 186,
+      "start_ms": 1260000,
+      "text": "Then you need to have the compute and the people to test. Then over time,"
+    },
+    {
+      "end_ms": 1271040,
+      "source_event_index": 187,
+      "start_ms": 1265760,
+      "text": "as the quality creeps up, are we here in five or 10 years where no set of people"
+    },
+    {
+      "end_ms": 1277360,
+      "source_event_index": 188,
+      "start_ms": 1271040,
+      "text": "can generate a hypothesis as good as the AI system? I don't know, maybe. In that world,"
+    },
+    {
+      "end_ms": 1282160,
+      "source_event_index": 189,
+      "start_ms": 1277360,
+      "text": "obviously that's going to be how all the value is created. But that's not the first step."
+    },
+    {
+      "end_ms": 1355360,
+      "source_event_index": 190,
+      "start_ms": 1350000,
+      "text": "So if you buy this view, that this is where intelligence is headed,"
+    },
+    {
+      "end_ms": 1360240,
+      "source_event_index": 191,
+      "start_ms": 1355360,
+      "text": "the reason to be bullish on Meta is obviously that you have all this distribution. You can"
+    },
+    {
+      "end_ms": 1364560,
+      "source_event_index": 192,
+      "start_ms": 1360240,
+      "text": "also use that to learn more things that can be useful for training. You mentioned the"
+    },
+    {
+      "end_ms": 1371360,
+      "source_event_index": 193,
+      "start_ms": 1364560,
+      "text": "Meta AI app now has a billion active users. Not the app. The app is a standalone thing"
+    },
+    {
+      "end_ms": 1375440,
+      "source_event_index": 194,
+      "start_ms": 1371360,
+      "text": "that we're just launching now. It’ll be fun for people who want to use it. It's a cool"
+    },
+    {
+      "end_ms": 1379680,
+      "source_event_index": 195,
+      "start_ms": 1375440,
+      "text": "experience. We can talk about that too because we’re experimenting with some new ideas in there"
+    },
+    {
+      "end_ms": 1384800,
+      "source_event_index": 196,
+      "start_ms": 1379680,
+      "text": "that I think are novel and worth talking through. But I’m mostly talking about our apps. Meta AI"
+    },
+    {
+      "end_ms": 1392080,
+      "source_event_index": 197,
+      "start_ms": 1384800,
+      "text": "is actually most used in WhatsApp. WhatsApp is mostly used outside of the U.S. We just passed"
+    },
+    {
+      "end_ms": 1395440,
+      "source_event_index": 198,
+      "start_ms": 1392080,
+      "text": "like a hundred million people in the US, but it's not the primary messaging system in the US,"
+    },
+    {
+      "end_ms": 1405120,
+      "source_event_index": 199,
+      "start_ms": 1395440,
+      "text": "iMessage is. So people in the U.S. probably tend to underestimate Meta AI usage somewhat."
+    },
+    {
+      "end_ms": 1408800,
+      "source_event_index": 200,
+      "start_ms": 1405120,
+      "text": "But part of the reason the standalone app is going to be so important is because the US,"
+    },
+    {
+      "end_ms": 1415280,
+      "source_event_index": 201,
+      "start_ms": 1409520,
+      "text": "for a lot of reasons, is one of the most important countries. And the fact that WhatsApp is the main"
+    },
+    {
+      "end_ms": 1419280,
+      "source_event_index": 202,
+      "start_ms": 1415280,
+      "text": "way people are using Meta AI and that's not the main messaging system in the US means"
+    },
+    {
+      "end_ms": 1425040,
+      "source_event_index": 203,
+      "start_ms": 1419280,
+      "text": "we need another way to build a first-class experience that's really in front of people."
+    },
+    {
+      "end_ms": 1431760,
+      "source_event_index": 204,
+      "start_ms": 1425040,
+      "text": "And I guess, to finish the question, the bearish case would be that if the future of AI is less"
+    },
+    {
+      "end_ms": 1436560,
+      "source_event_index": 205,
+      "start_ms": 1431760,
+      "text": "about just answering your questions and more about being a virtual coworker, then it's not"
+    },
+    {
+      "end_ms": 1443760,
+      "source_event_index": 206,
+      "start_ms": 1436560,
+      "text": "clear how Meta AI inside of WhatsApp gives you the relevant training data to make a"
+    },
+    {
+      "end_ms": 1452240,
+      "source_event_index": 207,
+      "start_ms": 1443760,
+      "text": "fully autonomous programmer or remote worker. In that case, does it not matter that much who"
+    },
+    {
+      "end_ms": 1455520,
+      "source_event_index": 208,
+      "start_ms": 1452240,
+      "text": "has more distribution right now with LLMs? Again, I just think there are going to be"
+    },
+    {
+      "end_ms": 1460960,
+      "source_event_index": 209,
+      "start_ms": 1455520,
+      "text": "different things. Imagine you were sitting at the beginning of the development of the"
+    },
+    {
+      "end_ms": 1464720,
+      "source_event_index": 210,
+      "start_ms": 1460960,
+      "text": "internet and you asked, \"What's going to be the main internet thing? Is it going"
+    },
+    {
+      "end_ms": 1473200,
+      "source_event_index": 211,
+      "start_ms": 1464720,
+      "text": "to be knowledge work or massive consumer apps?\" You got both. You don’t have to choose one. The"
+    },
+    {
+      "end_ms": 1478160,
+      "source_event_index": 212,
+      "start_ms": 1473200,
+      "text": "world is big and complicated. Does one company build all of that stuff? Normally the answer is"
+    },
+    {
+      "end_ms": 1487840,
+      "source_event_index": 213,
+      "start_ms": 1478160,
+      "text": "no. But to your question, people do not code in WhatsApp for the most part. And I don't foresee"
+    },
+    {
+      "end_ms": 1494480,
+      "source_event_index": 214,
+      "start_ms": 1487840,
+      "text": "that people starting to write code in WhatsApp is going to be a major use case. Although I do"
+    },
+    {
+      "end_ms": 1498240,
+      "source_event_index": 215,
+      "start_ms": 1494480,
+      "text": "think people are going to ask AI to do a lot of things that result in the AI coding without them"
+    },
+    {
+      "end_ms": 1505360,
+      "source_event_index": 216,
+      "start_ms": 1498240,
+      "text": "necessarily knowing it. That's a separate thing. We do have a lot of people who are writing code"
+    },
+    {
+      "end_ms": 1510240,
+      "source_event_index": 217,
+      "start_ms": 1505360,
+      "text": "at Meta and they use Meta AI. We have this internal thing called MetaMate,"
+    },
+    {
+      "end_ms": 1518800,
+      "source_event_index": 218,
+      "start_ms": 1511520,
+      "text": "and a number of different coding and AI research agents that we're building around that. That has"
+    },
+    {
+      "end_ms": 1523440,
+      "source_event_index": 219,
+      "start_ms": 1519760,
+      "text": "its own feedback loop and I think it can get quite good for accelerating those efforts."
+    },
+    {
+      "end_ms": 1530320,
+      "source_event_index": 220,
+      "start_ms": 1523440,
+      "text": "But again, there are going to be a lot of things. AI is almost certainly going to unlock a massive"
+    },
+    {
+      "end_ms": 1538080,
+      "source_event_index": 221,
+      "start_ms": 1531520,
+      "text": "revolution in knowledge work and code. I also think it’s going to be the next generation of"
+    },
+    {
+      "end_ms": 1543120,
+      "source_event_index": 222,
+      "start_ms": 1538080,
+      "text": "search and how people get information, and do more complex information tasks."
+    },
+    {
+      "end_ms": 1552800,
+      "source_event_index": 223,
+      "start_ms": 1544400,
+      "text": "I also think it's going to be fun. People are going to use it to be entertained. A lot of the"
+    },
+    {
+      "end_ms": 1559840,
+      "source_event_index": 224,
+      "start_ms": 1552800,
+      "text": "internet today is memes and humor. We have this amazing technology at our fingertips. It’s amazing"
+    },
+    {
+      "end_ms": 1564320,
+      "source_event_index": 225,
+      "start_ms": 1559840,
+      "text": "and funny when you think about how much of human energy just goes toward entertaining ourselves,"
+    },
+    {
+      "end_ms": 1569760,
+      "source_event_index": 226,
+      "start_ms": 1564320,
+      "text": "designing, pushing culture forward, and finding humorous ways to explain cultural"
+    },
+    {
+      "end_ms": 1575840,
+      "source_event_index": 227,
+      "start_ms": 1569760,
+      "text": "phenomena that we observe. I think that's almost certainly going to be the case in the future."
+    },
+    {
+      "end_ms": 1582800,
+      "source_event_index": 228,
+      "start_ms": 1575840,
+      "text": "Look at the evolution of things like Instagram and Facebook. If you go back 10, 15, 20 years ago,"
+    },
+    {
+      "end_ms": 1590560,
+      "source_event_index": 229,
+      "start_ms": 1582800,
+      "text": "it was text. Then we all got phones with cameras, and most of the content became photos. Then the"
+    },
+    {
+      "end_ms": 1594400,
+      "source_event_index": 230,
+      "start_ms": 1590560,
+      "text": "mobile networks got good enough that if you wanted to watch a video on your phone, it wasn't"
+    },
+    {
+      "end_ms": 1599600,
+      "source_event_index": 231,
+      "start_ms": 1594400,
+      "text": "just buffering the whole time. So that got good. Over the last 10 years, most of the content has"
+    },
+    {
+      "end_ms": 1603680,
+      "source_event_index": 232,
+      "start_ms": 1599600,
+      "text": "moved toward video at this point. Today, most of the time spent on Facebook and Instagram"
+    },
+    {
+      "end_ms": 1610480,
+      "source_event_index": 233,
+      "start_ms": 1603680,
+      "text": "is on video. But do you think in five years we’re just going to be sitting in our feed and consuming"
+    },
+    {
+      "end_ms": 1614240,
+      "source_event_index": 234,
+      "start_ms": 1610480,
+      "text": "media that's just video? No, it's going to be interactive. You'll be scrolling through your"
+    },
+    {
+      "end_ms": 1622240,
+      "source_event_index": 235,
+      "start_ms": 1614240,
+      "text": "feed. There will be content that maybe looks like a Reel to start. But you can talk to it,"
+    },
+    {
+      "end_ms": 1625360,
+      "source_event_index": 236,
+      "start_ms": 1622240,
+      "text": "or interact with it, and it talks back, or it changes what it's doing. Or you can"
+    },
+    {
+      "end_ms": 1629920,
+      "source_event_index": 237,
+      "start_ms": 1625360,
+      "text": "jump into it like a game and interact with it. That's all going to be AI."
+    },
+    {
+      "end_ms": 1637040,
+      "source_event_index": 238,
+      "start_ms": 1631920,
+      "text": "My point is that there are going to be all these different things. We're ambitious,"
+    },
+    {
+      "end_ms": 1641760,
+      "source_event_index": 239,
+      "start_ms": 1637040,
+      "text": "so we're working on a bunch of them. But I don't think any one company is going to do all of it."
+    },
+    {
+      "end_ms": 1648240,
+      "source_event_index": 240,
+      "start_ms": 1642320,
+      "text": "On this point about AI-generated content and AI interactions, already people have"
+    },
+    {
+      "end_ms": 1654800,
+      "source_event_index": 241,
+      "start_ms": 1648240,
+      "text": "meaningful relationships with AI therapists, AI friends, maybe more. This is just going to"
+    },
+    {
+      "end_ms": 1660080,
+      "source_event_index": 242,
+      "start_ms": 1654800,
+      "text": "get more intense as these AIs become more unique, more personable, more intelligent,"
+    },
+    {
+      "end_ms": 1664320,
+      "source_event_index": 243,
+      "start_ms": 1660080,
+      "text": "more spontaneous, more funny, and so forth. People are going to have relationships with"
+    },
+    {
+      "end_ms": 1666720,
+      "source_event_index": 244,
+      "start_ms": 1664320,
+      "text": "AI. How do we make sure these are healthy relationships?"
+    },
+    {
+      "end_ms": 1674480,
+      "source_event_index": 245,
+      "start_ms": 1668320,
+      "text": "There are a lot of questions that you only can really answer as you start seeing the behaviors."
+    },
+    {
+      "end_ms": 1678880,
+      "source_event_index": 246,
+      "start_ms": 1674480,
+      "text": "Probably the most important upfront thing is just to ask that question and care about it at"
+    },
+    {
+      "end_ms": 1683680,
+      "source_event_index": 247,
+      "start_ms": 1678880,
+      "text": "each step along the way. But I also think being too prescriptive upfront and saying, \"We think"
+    },
+    {
+      "end_ms": 1692400,
+      "source_event_index": 248,
+      "start_ms": 1683680,
+      "text": "these things are not good\" often cuts off value. People use stuff that's valuable for them. One"
+    },
+    {
+      "end_ms": 1698160,
+      "source_event_index": 249,
+      "start_ms": 1692400,
+      "text": "of my core guiding principles in designing products is that people are smart. They know"
+    },
+    {
+      "end_ms": 1704000,
+      "source_event_index": 250,
+      "start_ms": 1698160,
+      "text": "what's valuable in their lives. Every once in a while, something bad happens"
+    },
+    {
+      "end_ms": 1709760,
+      "source_event_index": 251,
+      "start_ms": 1704000,
+      "text": "in a product and you want to make sure you design your product well to minimize that."
+    },
+    {
+      "end_ms": 1716320,
+      "source_event_index": 252,
+      "start_ms": 1709760,
+      "text": "But if you think something someone is doing is bad and they think it's really valuable,"
+    },
+    {
+      "end_ms": 1721280,
+      "source_event_index": 253,
+      "start_ms": 1716320,
+      "text": "most of the time in my experience, they're right and you're wrong. You just haven't come up with"
+    },
+    {
+      "end_ms": 1725520,
+      "source_event_index": 254,
+      "start_ms": 1721280,
+      "text": "the framework yet for understanding why the thing they're doing is valuable and helpful in their"
+    },
+    {
+      "end_ms": 1735040,
+      "source_event_index": 255,
+      "start_ms": 1725520,
+      "text": "life. That's the main way I think about it. I do think people are going to use AI for a"
+    },
+    {
+      "end_ms": 1739600,
+      "source_event_index": 256,
+      "start_ms": 1735040,
+      "text": "lot of these social tasks. Already, one of the main things we see people using Meta AI for is"
+    },
+    {
+      "end_ms": 1749200,
+      "source_event_index": 257,
+      "start_ms": 1740400,
+      "text": "talking through difficult conversations they need to have with people in their lives. \"I'm"
+    },
+    {
+      "end_ms": 1753680,
+      "source_event_index": 258,
+      "start_ms": 1749200,
+      "text": "having this issue with my girlfriend. Help me have this conversation.” Or, \"I need to have a"
+    },
+    {
+      "end_ms": 1759520,
+      "source_event_index": 259,
+      "start_ms": 1753680,
+      "text": "hard conversation with my boss at work. How do I have that conversation?\" That's pretty helpful."
+    },
+    {
+      "end_ms": 1766560,
+      "source_event_index": 260,
+      "start_ms": 1760320,
+      "text": "As the personalization loop kicks in and the AI starts to get to know you better and better,"
+    },
+    {
+      "end_ms": 1775440,
+      "source_event_index": 261,
+      "start_ms": 1768240,
+      "text": "that will just be really compelling. Here’s one stat from working on social media"
+    },
+    {
+      "end_ms": 1786160,
+      "source_event_index": 262,
+      "start_ms": 1775440,
+      "text": "for a long time that I always think is crazy. The average American has fewer than three friends,"
+    },
+    {
+      "end_ms": 1791520,
+      "source_event_index": 263,
+      "start_ms": 1786160,
+      "text": "fewer than three people they would consider friends. And the average person has demand for"
+    },
+    {
+      "end_ms": 1796000,
+      "source_event_index": 264,
+      "start_ms": 1791520,
+      "text": "meaningfully more. I think it's something like 15 friends or something. At some point you're like,"
+    },
+    {
+      "end_ms": 1798640,
+      "source_event_index": 265,
+      "start_ms": 1796000,
+      "text": "\"All right, I'm just too busy, I can't deal with more people.\""
+    },
+    {
+      "end_ms": 1807440,
+      "source_event_index": 266,
+      "start_ms": 1798640,
+      "text": "But the average person wants more connection than they have. There's a lot of concern people"
+    },
+    {
+      "end_ms": 1818320,
+      "source_event_index": 267,
+      "start_ms": 1807440,
+      "text": "raise like, \"Is this going to replace real-world, in-person connections?\" And my default"
+    },
+    {
+      "end_ms": 1824320,
+      "source_event_index": 268,
+      "start_ms": 1818320,
+      "text": "is that the answer to that is probably not. There are all these things that are better"
+    },
+    {
+      "end_ms": 1830080,
+      "source_event_index": 269,
+      "start_ms": 1824320,
+      "text": "about physical connections when you can have them. But the reality is that people just don't"
+    },
+    {
+      "end_ms": 1835680,
+      "source_event_index": 270,
+      "start_ms": 1830080,
+      "text": "have as much connection as they want. They feel more alone a lot of the time than they would like."
+    },
+    {
+      "end_ms": 1841680,
+      "source_event_index": 271,
+      "start_ms": 1835680,
+      "text": "So I think a lot of these things — things that today might have a little bit of stigma around"
+    },
+    {
+      "end_ms": 1851680,
+      "source_event_index": 272,
+      "start_ms": 1843920,
+      "text": "them — over time, we'll find the vocabulary as a society to articulate why they are valuable,"
+    },
+    {
+      "end_ms": 1858480,
+      "source_event_index": 273,
+      "start_ms": 1851680,
+      "text": "why the people who are doing them are rational for doing it, and how it is actually adding value to"
+    },
+    {
+      "end_ms": 1866960,
+      "source_event_index": 274,
+      "start_ms": 1858480,
+      "text": "their lives. But also the field is very early. There are a handful of companies doing virtual"
+    },
+    {
+      "end_ms": 1875280,
+      "source_event_index": 275,
+      "start_ms": 1866960,
+      "text": "therapists, virtual girlfriend-type stuff. But it's very early. The embodiment in those things"
+    },
+    {
+      "end_ms": 1882560,
+      "source_event_index": 276,
+      "start_ms": 1875280,
+      "text": "is still pretty weak. You open it up and it's just an image of the therapist or the person"
+    },
+    {
+      "end_ms": 1888000,
+      "source_event_index": 277,
+      "start_ms": 1882560,
+      "text": "you're talking to. Sometimes there's some very rough animation, but it's not an embodiment."
+    },
+    {
+      "end_ms": 1892880,
+      "source_event_index": 278,
+      "start_ms": 1888560,
+      "text": "You've seen the stuff we're working on in Reality Labs, where you have the Codec Avatars and it"
+    },
+    {
+      "end_ms": 1898880,
+      "source_event_index": 279,
+      "start_ms": 1892880,
+      "text": "actually feels like a real person. That's where it's going. You'll be able to have an"
+    },
+    {
+      "end_ms": 1909840,
+      "source_event_index": 280,
+      "start_ms": 1898880,
+      "text": "always-on video chat with the AI. The gestures are important too. More than half of communication,"
+    },
+    {
+      "end_ms": 1913680,
+      "source_event_index": 281,
+      "start_ms": 1909840,
+      "text": "when you're actually having a conversation, is not the words you speak. It's all the nonverbal stuff."
+    },
+    {
+      "end_ms": 1919280,
+      "source_event_index": 282,
+      "start_ms": 1914400,
+      "text": "I did get a chance to check out Orion the other day, and I thought it was super impressive. I'm"
+    },
+    {
+      "end_ms": 1924080,
+      "source_event_index": 283,
+      "start_ms": 1919280,
+      "text": "mostly optimistic about the technology. Generally, like you mentioned, I'm pretty libertarian"
+    },
+    {
+      "end_ms": 1927600,
+      "source_event_index": 284,
+      "start_ms": 1924080,
+      "text": "about this. If people are doing something, they probably think it's good for them. Although,"
+    },
+    {
+      "end_ms": 1929920,
+      "source_event_index": 285,
+      "start_ms": 1927600,
+      "text": "I actually don't know if it's the case that if somebody is using TikTok,"
+    },
+    {
+      "end_ms": 1932720,
+      "source_event_index": 286,
+      "start_ms": 1929920,
+      "text": "they would say that they're happy with how much time they're spending on TikTok or something."
+    },
+    {
+      "end_ms": 1936640,
+      "source_event_index": 287,
+      "start_ms": 1932720,
+      "text": "I'm mostly optimistic about it in the sense that if we're going to be living in this future world"
+    },
+    {
+      "end_ms": 1943440,
+      "source_event_index": 288,
+      "start_ms": 1936640,
+      "text": "of AGI, we need to be upgrading our capabilities too, with tools like this. And just generally,"
+    },
+    {
+      "end_ms": 1946960,
+      "source_event_index": 289,
+      "start_ms": 1943440,
+      "text": "there can be more beauty in the world if you can see Studio Ghibli everywhere or something."
+    },
+    {
+      "end_ms": 1953200,
+      "source_event_index": 290,
+      "start_ms": 1946960,
+      "text": "I was worried about one of the flagship use cases that your team showed me. I'm sitting"
+    },
+    {
+      "end_ms": 1957280,
+      "source_event_index": 291,
+      "start_ms": 1953200,
+      "text": "at the breakfast table and on the periphery of my vision is just a bunch of Reels that are scrolling"
+    },
+    {
+      "end_ms": 1963280,
+      "source_event_index": 292,
+      "start_ms": 1957280,
+      "text": "by. Maybe in the future, my AI girlfriend is on the other side of the screen or something. So"
+    },
+    {
+      "end_ms": 1969520,
+      "source_event_index": 293,
+      "start_ms": 1963280,
+      "text": "I am worried that we're just removing all the friction between getting totally reward-hacked"
+    },
+    {
+      "end_ms": 1977040,
+      "source_event_index": 294,
+      "start_ms": 1969520,
+      "text": "by our technology. How do we make sure this is not what ends up happening in five years?"
+    },
+    {
+      "end_ms": 1982720,
+      "source_event_index": 295,
+      "start_ms": 1977040,
+      "text": "Again, I think people have a good sense of what they want. That experience you saw was just a"
+    },
+    {
+      "end_ms": 1991840,
+      "source_event_index": 296,
+      "start_ms": 1982720,
+      "text": "demo to show multitasking and holograms. I agree, I don't think the future is one where you have"
+    },
+    {
+      "end_ms": 1995440,
+      "source_event_index": 297,
+      "start_ms": 1991840,
+      "text": "stuff that's trying to compete for your attention in the corner of your vision all the time. I don't"
+    },
+    {
+      "end_ms": 2002448,
+      "source_event_index": 298,
+      "start_ms": 1995440,
+      "text": "think people would like that too much. As we're designing these glasses,"
+    },
+    {
+      "end_ms": 2008800,
+      "source_event_index": 299,
+      "start_ms": 2002448,
+      "text": "it's actually one of the things that we're really mindful of. Probably the number one thing the"
+    },
+    {
+      "end_ms": 2016880,
+      "source_event_index": 300,
+      "start_ms": 2008800,
+      "text": "glasses need to do is get out of the way and be good glasses. As an aside, I think that's part"
+    },
+    {
+      "end_ms": 2024720,
+      "source_event_index": 301,
+      "start_ms": 2016880,
+      "text": "of the reason why the Ray-Ban Meta product has done so well. It's great for listening to music,"
+    },
+    {
+      "end_ms": 2031760,
+      "source_event_index": 302,
+      "start_ms": 2024720,
+      "text": "taking phone calls, taking photos and videos. The AI is there when you want it. But when you don't,"
+    },
+    {
+      "end_ms": 2039040,
+      "source_event_index": 303,
+      "start_ms": 2031760,
+      "text": "it's just a good-looking pair of glasses that people like. It gets out of the way well."
+    },
+    {
+      "end_ms": 2050320,
+      "source_event_index": 304,
+      "start_ms": 2040240,
+      "text": "I would guess that's going to be a very important design principle for the augmented reality future."
+    },
+    {
+      "end_ms": 2059040,
+      "source_event_index": 305,
+      "start_ms": 2050880,
+      "text": "The main thing that I see here is this. It's kind of crazy that, for how important the digital world"
+    },
+    {
+      "end_ms": 2069680,
+      "source_event_index": 306,
+      "start_ms": 2059040,
+      "text": "is in all of our lives, the only way we access it is through these physical, digital screens. You"
+    },
+    {
+      "end_ms": 2075280,
+      "source_event_index": 307,
+      "start_ms": 2069680,
+      "text": "have your phone, your computer. You can put a big TV on your wall. It's this huge physical thing."
+    },
+    {
+      "end_ms": 2083760,
+      "source_event_index": 308,
+      "start_ms": 2076720,
+      "text": "It just seems like we're at the point with technology where the physical and digital"
+    },
+    {
+      "end_ms": 2090960,
+      "source_event_index": 309,
+      "start_ms": 2083760,
+      "text": "world should really be fully blended. That's what holographic overlays allow you to do. But"
+    },
+    {
+      "end_ms": 2096000,
+      "source_event_index": 310,
+      "start_ms": 2090960,
+      "text": "I agree. I think a big part of the design principles around that will be around how"
+    },
+    {
+      "end_ms": 2101120,
+      "source_event_index": 311,
+      "start_ms": 2096000,
+      "text": "you'll be interacting with people. You'll be able to bring digital artifacts into those interactions"
+    },
+    {
+      "end_ms": 2106400,
+      "source_event_index": 312,
+      "start_ms": 2101120,
+      "text": "and do cool things very seamlessly. If I want to show you something,"
+    },
+    {
+      "end_ms": 2115200,
+      "source_event_index": 313,
+      "start_ms": 2106400,
+      "text": "here’s a screen. We can interact with it. It can be 3D. We can play with it. You want to"
+    },
+    {
+      "end_ms": 2120720,
+      "source_event_index": 314,
+      "start_ms": 2115200,
+      "text": "play a card game? All right, here’s a deck of cards. We can play with it. If two of us are"
+    },
+    {
+      "end_ms": 2127920,
+      "source_event_index": 315,
+      "start_ms": 2120720,
+      "text": "physically together and we have a third friend who’s hologramming in, they can participate too."
+    },
+    {
+      "end_ms": 2139840,
+      "source_event_index": 316,
+      "start_ms": 2129120,
+      "text": "But in that world too — just as you don't want your physical space to be cluttered because it"
+    },
+    {
+      "end_ms": 2144080,
+      "source_event_index": 317,
+      "start_ms": 2139840,
+      "text": "wears on you psychologically — I don't think people are going to want their digital-physical"
+    },
+    {
+      "end_ms": 2150880,
+      "source_event_index": 318,
+      "start_ms": 2144080,
+      "text": "space to feel that way either. That's more of an aesthetic norm that will have to get worked out,"
+    },
+    {
+      "end_ms": 2158080,
+      "source_event_index": 319,
+      "start_ms": 2150880,
+      "text": "but I think we’ll figure that out. Going back to the AI conversation,"
+    },
+    {
+      "end_ms": 2163360,
+      "source_event_index": 320,
+      "start_ms": 2158080,
+      "text": "you were mentioning how big of a bottleneck the physical infrastructure can be. Related"
+    },
+    {
+      "end_ms": 2168960,
+      "source_event_index": 321,
+      "start_ms": 2163360,
+      "text": "to other open-source models, like DeepSeek and so forth, DeepSeek right now has less compute"
+    },
+    {
+      "end_ms": 2172320,
+      "source_event_index": 322,
+      "start_ms": 2168960,
+      "text": "than a lab like Meta and you could argue that it's competitive with the Llama models."
+    },
+    {
+      "end_ms": 2178560,
+      "source_event_index": 323,
+      "start_ms": 2173040,
+      "text": "If China is better at physical infrastructure, industrial scale-ups,"
+    },
+    {
+      "end_ms": 2184160,
+      "source_event_index": 324,
+      "start_ms": 2178560,
+      "text": "getting more power and more data centers online, how worried are you that they might beat us here?"
+    },
+    {
+      "end_ms": 2196400,
+      "source_event_index": 325,
+      "start_ms": 2185200,
+      "text": "It's a real competition. You're seeing industrial policies really play out. China is bringing online"
+    },
+    {
+      "end_ms": 2205120,
+      "source_event_index": 326,
+      "start_ms": 2196400,
+      "text": "more power. Because of that, the US really needs to focus on streamlining the ability to build"
+    },
+    {
+      "end_ms": 2211360,
+      "source_event_index": 327,
+      "start_ms": 2205120,
+      "text": "data centers and produce energy. Otherwise, I think we’ll be at a significant disadvantage."
+    },
+    {
+      "end_ms": 2217840,
+      "source_event_index": 328,
+      "start_ms": 2213440,
+      "text": "At the same time, some of the export controls on things like chips, I think you can see how"
+    },
+    {
+      "end_ms": 2224560,
+      "source_event_index": 329,
+      "start_ms": 2217840,
+      "text": "they’re clearly working in a way. There was all the conversation with DeepSeek about, \"Oh,"
+    },
+    {
+      "end_ms": 2230880,
+      "source_event_index": 330,
+      "start_ms": 2224560,
+      "text": "they did all these very impressive low-level optimizations.\" And the"
+    },
+    {
+      "end_ms": 2236160,
+      "source_event_index": 331,
+      "start_ms": 2230880,
+      "text": "reality is, they did and that is impressive. But then you ask, \"Why did they have to do that,"
+    },
+    {
+      "end_ms": 2241600,
+      "source_event_index": 332,
+      "start_ms": 2236160,
+      "text": "when none of the American labs did it?\" It’s because they’re using partially nerfed chips"
+    },
+    {
+      "end_ms": 2246080,
+      "source_event_index": 333,
+      "start_ms": 2241600,
+      "text": "that are the only ones NVIDIA is allowed to sell in China because of the export"
+    },
+    {
+      "end_ms": 2254320,
+      "source_event_index": 334,
+      "start_ms": 2246080,
+      "text": "controls. DeepSeek basically had to spend a bunch of their calories and time doing"
+    },
+    {
+      "end_ms": 2260240,
+      "source_event_index": 335,
+      "start_ms": 2254320,
+      "text": "low-level infrastructure optimizations that the American labs didn’t have to do."
+    },
+    {
+      "end_ms": 2269040,
+      "source_event_index": 336,
+      "start_ms": 2260240,
+      "text": "Now, they produced a good result on text. DeepSeek is text-only. The infrastructure is impressive."
+    },
+    {
+      "end_ms": 2278240,
+      "source_event_index": 337,
+      "start_ms": 2269040,
+      "text": "The text result is impressive. But every new major model that comes out now is multimodal."
+    },
+    {
+      "end_ms": 2285760,
+      "source_event_index": 338,
+      "start_ms": 2278240,
+      "text": "It's image, it's voice. Theirs isn't. Now the question is, why is that the"
+    },
+    {
+      "end_ms": 2289760,
+      "source_event_index": 339,
+      "start_ms": 2285760,
+      "text": "case? I don’t think it’s because they’re not capable of doing it. It's because they"
+    },
+    {
+      "end_ms": 2293440,
+      "source_event_index": 340,
+      "start_ms": 2289760,
+      "text": "had to spend their calories on doing these infrastructure optimizations to overcome the"
+    },
+    {
+      "end_ms": 2299920,
+      "source_event_index": 341,
+      "start_ms": 2293440,
+      "text": "fact that there were these export controls. But when you compare Llama 4 with DeepSeek —I"
+    },
+    {
+      "end_ms": 2307600,
+      "source_event_index": 342,
+      "start_ms": 2299920,
+      "text": "mean our reasoning model isn’t out yet, so the R1 comparison isn’t clear yet— but we’re basically"
+    },
+    {
+      "end_ms": 2315040,
+      "source_event_index": 343,
+      "start_ms": 2307600,
+      "text": "in the same ballpark on all the text stuff that DeepSeek is doing but with a smaller model. So"
+    },
+    {
+      "end_ms": 2322960,
+      "source_event_index": 344,
+      "start_ms": 2318240,
+      "text": "the cost-per-intelligence is lower with what we’re doing for Llama on text. On"
+    },
+    {
+      "end_ms": 2327440,
+      "source_event_index": 345,
+      "start_ms": 2322960,
+      "text": "the multimodal side we’re effectively leading at and it just doesn’t exist in their models."
+    },
+    {
+      "end_ms": 2337040,
+      "source_event_index": 346,
+      "start_ms": 2327440,
+      "text": "So the Llama 4 models, when you compare them to what DeepSeek is doing, are good. I think"
+    },
+    {
+      "end_ms": 2343280,
+      "source_event_index": 347,
+      "start_ms": 2337040,
+      "text": "people will generally prefer to use the Llama 4 models. But there’s this interesting contour"
+    },
+    {
+      "end_ms": 2350000,
+      "source_event_index": 348,
+      "start_ms": 2343280,
+      "text": "where it’s clearly a good team doing stuff over there. And you're right to ask about the"
+    },
+    {
+      "end_ms": 2356560,
+      "source_event_index": 349,
+      "start_ms": 2350000,
+      "text": "accessibility of power, the accessibility of compute and chips, because the work that you're"
+    },
+    {
+      "end_ms": 2361120,
+      "source_event_index": 350,
+      "start_ms": 2356560,
+      "text": "seeing different labs do and the way it's playing out is somewhat downstream of that."
+    },
+    {
+      "end_ms": 2441120,
+      "source_event_index": 351,
+      "start_ms": 2434880,
+      "text": "So Sam Altman recently tweeted that OpenAI is going to release an open-source SOTA reasoning"
+    },
+    {
+      "end_ms": 2446560,
+      "source_event_index": 352,
+      "start_ms": 2441120,
+      "text": "model. I think part of the tweet was that they won’t do anything silly, like say you can only"
+    },
+    {
+      "end_ms": 2455120,
+      "source_event_index": 353,
+      "start_ms": 2446560,
+      "text": "use it if you have less than 700 million users. DeepSeek has the MIT license, whereas I think"
+    },
+    {
+      "end_ms": 2458080,
+      "source_event_index": 354,
+      "start_ms": 2455120,
+      "text": "a couple of the contingencies in the Llama license require you to say \"built with Llama\""
+    },
+    {
+      "end_ms": 2462160,
+      "source_event_index": 355,
+      "start_ms": 2458080,
+      "text": "on applications using it or any model that you train using Llama has to begin with the word"
+    },
+    {
+      "end_ms": 2467600,
+      "source_event_index": 356,
+      "start_ms": 2462160,
+      "text": "\"Llama.\" What do you think about the license? Should it be less onerous for developers?"
+    },
+    {
+      "end_ms": 2477120,
+      "source_event_index": 357,
+      "start_ms": 2467600,
+      "text": "Look, we basically pioneered the open-source LLM thing. So I don't consider the license to"
+    },
+    {
+      "end_ms": 2487040,
+      "source_event_index": 358,
+      "start_ms": 2477120,
+      "text": "be onerous. When we were starting to push on open source, there was this big debate in the industry."
+    },
+    {
+      "end_ms": 2494560,
+      "source_event_index": 359,
+      "start_ms": 2488640,
+      "text": "Is this even a reasonable thing to do? Can you do something that is safe and trustworthy with"
+    },
+    {
+      "end_ms": 2501360,
+      "source_event_index": 360,
+      "start_ms": 2494560,
+      "text": "open source? Will open source ever be able to be competitive enough that anyone will even care?"
+    },
+    {
+      "end_ms": 2507120,
+      "source_event_index": 361,
+      "start_ms": 2502800,
+      "text": "Basically, when we were answering those questions a lot of the hard work was"
+    },
+    {
+      "end_ms": 2510080,
+      "source_event_index": 362,
+      "start_ms": 2507120,
+      "text": "done by the teams at Meta. There were other folks in the industry but really,"
+    },
+    {
+      "end_ms": 2517200,
+      "source_event_index": 363,
+      "start_ms": 2510080,
+      "text": "the Llama models were the ones that broke open this whole open-source AI thing in a huge way."
+    },
+    {
+      "end_ms": 2527040,
+      "source_event_index": 364,
+      "start_ms": 2520320,
+      "text": "If we’re going to put all this energy into it, then at a minimum, if you're going to have these"
+    },
+    {
+      "end_ms": 2532720,
+      "source_event_index": 365,
+      "start_ms": 2527040,
+      "text": "large cloud companies — like Microsoft and Amazon and Google — turn around and sell our model,"
+    },
+    {
+      "end_ms": 2538480,
+      "source_event_index": 366,
+      "start_ms": 2532720,
+      "text": "then we should at least be able to have a conversation with them before they do that around"
+    },
+    {
+      "end_ms": 2547040,
+      "source_event_index": 367,
+      "start_ms": 2540800,
+      "text": "what kind of business arrangement we should have. Our goal with the license, we're generally not"
+    },
+    {
+      "end_ms": 2551920,
+      "source_event_index": 368,
+      "start_ms": 2547040,
+      "text": "trying to stop people from using the model. We just think that if you're one of those companies,"
+    },
+    {
+      "end_ms": 2558400,
+      "source_event_index": 369,
+      "start_ms": 2551920,
+      "text": "or if you're Apple, just come talk to us about what you want to do. Let's find"
+    },
+    {
+      "end_ms": 2562000,
+      "source_event_index": 370,
+      "start_ms": 2558400,
+      "text": "a productive way to do it together. I think that’s generally been fine."
+    },
+    {
+      "end_ms": 2569120,
+      "source_event_index": 371,
+      "start_ms": 2562000,
+      "text": "Now, if the whole open-source part of the industry evolves in a direction where there"
+    },
+    {
+      "end_ms": 2576240,
+      "source_event_index": 372,
+      "start_ms": 2569120,
+      "text": "are a lot of other great options and the license ends up being a reason why people don’t want to"
+    },
+    {
+      "end_ms": 2581920,
+      "source_event_index": 373,
+      "start_ms": 2576240,
+      "text": "use Llama, then we’ll have to reevaluate the strategy. What it makes sense to do"
+    },
+    {
+      "end_ms": 2588240,
+      "source_event_index": 374,
+      "start_ms": 2581920,
+      "text": "at that point. But I don’t think we’re there. That’s not, in practice, something we’ve seen,"
+    },
+    {
+      "end_ms": 2595280,
+      "source_event_index": 375,
+      "start_ms": 2588240,
+      "text": "companies coming to us and saying, “We don’t want to use this because your license says if you reach"
+    },
+    {
+      "end_ms": 2601680,
+      "source_event_index": 376,
+      "start_ms": 2595280,
+      "text": "700 million people, you have to come talk to us.” So far, that’s been more something we’ve heard"
+    },
+    {
+      "end_ms": 2611440,
+      "source_event_index": 377,
+      "start_ms": 2601680,
+      "text": "from open-source purists like, “Is this as clean of an open-source model as you’d like it to be?”"
+    },
+    {
+      "end_ms": 2621680,
+      "source_event_index": 378,
+      "start_ms": 2612800,
+      "text": "That debate has existed since the beginning of open source. All the GPL license stuff"
+    },
+    {
+      "end_ms": 2627440,
+      "source_event_index": 379,
+      "start_ms": 2621680,
+      "text": "versus other things, do you need to make it so that anything that touches open source has"
+    },
+    {
+      "end_ms": 2631040,
+      "source_event_index": 380,
+      "start_ms": 2627440,
+      "text": "to be open source too? Or can people take it and use it in different ways? I'm sure"
+    },
+    {
+      "end_ms": 2636560,
+      "source_event_index": 381,
+      "start_ms": 2631040,
+      "text": "there will continue to be debates around this. But if you’re spending many billions of dollars"
+    },
+    {
+      "end_ms": 2643040,
+      "source_event_index": 382,
+      "start_ms": 2636560,
+      "text": "training these models, I think asking the other companies — the huge ones that are similar in size"
+    },
+    {
+      "end_ms": 2648240,
+      "source_event_index": 383,
+      "start_ms": 2643040,
+      "text": "and can easily afford to have a relationship with us — to talk to us before they use"
+    },
+    {
+      "end_ms": 2655120,
+      "source_event_index": 384,
+      "start_ms": 2648240,
+      "text": "it seems like a pretty reasonable thing. If it turns out that other models are also"
+    },
+    {
+      "end_ms": 2659280,
+      "source_event_index": 385,
+      "start_ms": 2655120,
+      "text": "really good. There’s a bunch of good open-source models. So that part of your mission is fulfilled,"
+    },
+    {
+      "end_ms": 2664960,
+      "source_event_index": 386,
+      "start_ms": 2659280,
+      "text": "and maybe other models are better at coding. Is there a world where you just say, \"Look, the"
+    },
+    {
+      "end_ms": 2669200,
+      "source_event_index": 387,
+      "start_ms": 2664960,
+      "text": "open-source ecosystem is healthy. There’s plenty of competition. We're happy to just use some"
+    },
+    {
+      "end_ms": 2674720,
+      "source_event_index": 388,
+      "start_ms": 2669200,
+      "text": "other model, whether it's for internal software engineering at Meta or deploying to our apps."
+    },
+    {
+      "end_ms": 2684560,
+      "source_event_index": 389,
+      "start_ms": 2674720,
+      "text": "We don't necessarily need to build with Llama\"? Again, we do a lot of things. Let's take a step"
+    },
+    {
+      "end_ms": 2690320,
+      "source_event_index": 390,
+      "start_ms": 2684560,
+      "text": "back. The reason why we're building our own big models is because we want to be able to"
+    },
+    {
+      "end_ms": 2697200,
+      "source_event_index": 391,
+      "start_ms": 2691120,
+      "text": "build exactly what we want. None of the other models in the world are exactly what we want."
+    },
+    {
+      "end_ms": 2701600,
+      "source_event_index": 392,
+      "start_ms": 2697200,
+      "text": "If they're open source, you can take them and fine-tune them in different ways. But you still"
+    },
+    {
+      "end_ms": 2708720,
+      "source_event_index": 393,
+      "start_ms": 2701600,
+      "text": "have to deal with the model architectures. And they make different size tradeoffs that"
+    },
+    {
+      "end_ms": 2715840,
+      "source_event_index": 394,
+      "start_ms": 2708720,
+      "text": "affect latency and inference cost. At the scale that we operate at, that stuff really matters."
+    },
+    {
+      "end_ms": 2722080,
+      "source_event_index": 395,
+      "start_ms": 2715840,
+      "text": "We made the Llama Scout and Maverick models certain sizes for a specific reason. They"
+    },
+    {
+      "end_ms": 2727200,
+      "source_event_index": 396,
+      "start_ms": 2722080,
+      "text": "fit on a host and we wanted certain latency — especially for the voice models that we’re"
+    },
+    {
+      "end_ms": 2733680,
+      "source_event_index": 397,
+      "start_ms": 2727200,
+      "text": "working on — that we want to pervade everything we're doing from the glasses to all of our apps"
+    },
+    {
+      "end_ms": 2740240,
+      "source_event_index": 398,
+      "start_ms": 2733680,
+      "text": "to the Meta AI app and all that stuff. There's a level of control of your own"
+    },
+    {
+      "end_ms": 2747280,
+      "source_event_index": 399,
+      "start_ms": 2740240,
+      "text": "destiny that you only get when you build the stuff yourself. That said, AI is going to be used in"
+    },
+    {
+      "end_ms": 2752560,
+      "source_event_index": 400,
+      "start_ms": 2747280,
+      "text": "every single thing that every company does. When we build a big model, we also have to choose which"
+    },
+    {
+      "end_ms": 2758560,
+      "source_event_index": 401,
+      "start_ms": 2752560,
+      "text": "internal use cases we're going to optimize for. So does that mean for certain things we might say,"
+    },
+    {
+      "end_ms": 2764000,
+      "source_event_index": 402,
+      "start_ms": 2759200,
+      "text": "\"Okay, maybe Claude is better for building this specific development tool that this team is"
+    },
+    {
+      "end_ms": 2769840,
+      "source_event_index": 403,
+      "start_ms": 2764000,
+      "text": "using”? All right, cool then use that. Great. We don’t want to fight with one hand tied behind our"
+    },
+    {
+      "end_ms": 2776160,
+      "source_event_index": 404,
+      "start_ms": 2769840,
+      "text": "back. We’re doing a lot of different stuff. You also asked, would it not be"
+    },
+    {
+      "end_ms": 2783680,
+      "source_event_index": 405,
+      "start_ms": 2776160,
+      "text": "important anymore because other people are doing open source? On this, I'm a little more worried."
+    },
+    {
+      "end_ms": 2789360,
+      "source_event_index": 406,
+      "start_ms": 2784240,
+      "text": "You have to ask yourself this. For anyone who shows up now and is doing open source — now"
+    },
+    {
+      "end_ms": 2796000,
+      "source_event_index": 407,
+      "start_ms": 2789360,
+      "text": "that we have done it — would they still be doing open source if we weren’t doing it?"
+    },
+    {
+      "end_ms": 2801360,
+      "source_event_index": 408,
+      "start_ms": 2797280,
+      "text": "I think there are a handful of folks who see the trend that more and more development is"
+    },
+    {
+      "end_ms": 2807520,
+      "source_event_index": 409,
+      "start_ms": 2801360,
+      "text": "going toward open source, and they're like, \"Oh crap, we need to be on this train or else we’re"
+    },
+    {
+      "end_ms": 2815040,
+      "source_event_index": 410,
+      "start_ms": 2807520,
+      "text": "going to lose.\" If you have a closed-model API and increasingly a lot of developers don't want that."
+    },
+    {
+      "end_ms": 2822320,
+      "source_event_index": 411,
+      "start_ms": 2815040,
+      "text": "So you’re seeing a bunch of other players start to do some work in open source. But it's unclear"
+    },
+    {
+      "end_ms": 2828800,
+      "source_event_index": 412,
+      "start_ms": 2822320,
+      "text": "if it's dabbling, or fundamental for them the way that it has been for us. A good example is"
+    },
+    {
+      "end_ms": 2834880,
+      "source_event_index": 413,
+      "start_ms": 2828800,
+      "text": "what's going on with Android. Android started off as the open-source thing. There's not"
+    },
+    {
+      "end_ms": 2840640,
+      "source_event_index": 414,
+      "start_ms": 2834880,
+      "text": "really any open-source alternative. Over time, Android has just gotten more and more closed."
+    },
+    {
+      "end_ms": 2851120,
+      "source_event_index": 415,
+      "start_ms": 2841840,
+      "text": "So if you're us, you need to worry that if we stop pushing the industry in this direction,"
+    },
+    {
+      "end_ms": 2856880,
+      "source_event_index": 416,
+      "start_ms": 2851120,
+      "text": "all these other people… Maybe they’re only really doing it because they're trying to compete with"
+    },
+    {
+      "end_ms": 2863680,
+      "source_event_index": 417,
+      "start_ms": 2856880,
+      "text": "us and the direction we’re pushing things. They already showed their revealed preference for what"
+    },
+    {
+      "end_ms": 2870800,
+      "source_event_index": 418,
+      "start_ms": 2863680,
+      "text": "they would do if open source didn’t exist. And it wasn’t open source. We just need to"
+    },
+    {
+      "end_ms": 2877040,
+      "source_event_index": 419,
+      "start_ms": 2870800,
+      "text": "be careful about relying on that continued behavior for the future of the technology"
+    },
+    {
+      "end_ms": 2880640,
+      "source_event_index": 420,
+      "start_ms": 2877040,
+      "text": "that we're going to build at the company. Another thing I've heard you mention is that"
+    },
+    {
+      "end_ms": 2887840,
+      "source_event_index": 421,
+      "start_ms": 2880640,
+      "text": "it's important that the standard gets built around American models like Llama. I wanted to understand"
+    },
+    {
+      "end_ms": 2893920,
+      "source_event_index": 422,
+      "start_ms": 2887840,
+      "text": "your logic there. With certain kinds of networks, it is the case that the Apple App Store just has"
+    },
+    {
+      "end_ms": 2899600,
+      "source_event_index": 423,
+      "start_ms": 2893920,
+      "text": "a big contingency around what it's built around. But it doesn't seem like if you built some sort"
+    },
+    {
+      "end_ms": 2904160,
+      "source_event_index": 424,
+      "start_ms": 2899600,
+      "text": "of scaffold for DeepSeek, you couldn't have easily just switched it over to Llama 4,"
+    },
+    {
+      "end_ms": 2908400,
+      "source_event_index": 425,
+      "start_ms": 2904160,
+      "text": "especially since between generations. Llama 3 wasn't MoE and Llama 4 is. So things are"
+    },
+    {
+      "end_ms": 2911760,
+      "source_event_index": 426,
+      "start_ms": 2908400,
+      "text": "changing between generations of models as well. What’s the reason for thinking things will get"
+    },
+    {
+      "end_ms": 2914480,
+      "source_event_index": 427,
+      "start_ms": 2911760,
+      "text": "built out in this contingent way on a specific standard?"
+    },
+    {
+      "end_ms": 2918880,
+      "source_event_index": 428,
+      "start_ms": 2914480,
+      "text": "I'm not sure, what do you mean by contingent? As in, it's important that people are building"
+    },
+    {
+      "end_ms": 2922400,
+      "source_event_index": 429,
+      "start_ms": 2918880,
+      "text": "for Llama rather than for LLMs in general, because that will determine"
+    },
+    {
+      "end_ms": 2927200,
+      "source_event_index": 430,
+      "start_ms": 2922400,
+      "text": "what the standard is in the future. Look, I think these models encode"
+    },
+    {
+      "end_ms": 2935040,
+      "source_event_index": 431,
+      "start_ms": 2927200,
+      "text": "values and ways of thinking about the world. We had this interesting experience early on, where"
+    },
+    {
+      "end_ms": 2944160,
+      "source_event_index": 432,
+      "start_ms": 2935040,
+      "text": "we took an early version of Llama and translated it. I think it was French, or some other language."
+    },
+    {
+      "end_ms": 2952160,
+      "source_event_index": 433,
+      "start_ms": 2944160,
+      "text": "The feedback we got from French people was, \"This sounds like an American who"
+    },
+    {
+      "end_ms": 2955920,
+      "source_event_index": 434,
+      "start_ms": 2952160,
+      "text": "learned to speak French. It doesn’t sound like a French person.\" And we were like,"
+    },
+    {
+      "end_ms": 2959840,
+      "source_event_index": 435,
+      "start_ms": 2955920,
+      "text": "“what do you mean, does it not speak French well?” No, it speaks French fine. It was just"
+    },
+    {
+      "end_ms": 2967040,
+      "source_event_index": 436,
+      "start_ms": 2959840,
+      "text": "that the way it thought about the world seemed slightly American. So I think there are these"
+    },
+    {
+      "end_ms": 2973200,
+      "source_event_index": 437,
+      "start_ms": 2967040,
+      "text": "subtle things that get built into the models. Over time, as models get more sophisticated,"
+    },
+    {
+      "end_ms": 2977440,
+      "source_event_index": 438,
+      "start_ms": 2973200,
+      "text": "they should be able to embody different value sets across the world. So maybe that's"
+    },
+    {
+      "end_ms": 2985280,
+      "source_event_index": 439,
+      "start_ms": 2980960,
+      "text": "not a particularly sophisticated example, but I think it illustrates the point."
+    },
+    {
+      "end_ms": 2994160,
+      "source_event_index": 440,
+      "start_ms": 2988240,
+      "text": "Some of the stuff we've seen in testing some of the models, especially coming out of China,"
+    },
+    {
+      "end_ms": 3004880,
+      "source_event_index": 441,
+      "start_ms": 2995680,
+      "text": "have certain values encoded in them. And it’s not just a light fine-tune to change that. Now,"
+    },
+    {
+      "end_ms": 3014080,
+      "source_event_index": 442,
+      "start_ms": 3006880,
+      "text": "language models — or something that has a kind of world model embedded in it — have more values."
+    },
+    {
+      "end_ms": 3023200,
+      "source_event_index": 443,
+      "start_ms": 3014080,
+      "text": "Reasoning, I guess, you could say has values too. But one of the nice things about reasoning models"
+    },
+    {
+      "end_ms": 3029120,
+      "source_event_index": 444,
+      "start_ms": 3023200,
+      "text": "is they're trained on verifiable problems. Do you need to be worried about cultural bias if your"
+    },
+    {
+      "end_ms": 3038560,
+      "source_event_index": 445,
+      "start_ms": 3029120,
+      "text": "model is doing math? Probably not. I think the chance that some reasoning model built"
+    },
+    {
+      "end_ms": 3049360,
+      "source_event_index": 446,
+      "start_ms": 3038560,
+      "text": "elsewhere is going to incept you by solving a math problem in a devious way seems low."
+    },
+    {
+      "end_ms": 3053920,
+      "source_event_index": 447,
+      "start_ms": 3049360,
+      "text": "But there's a whole different set of issues around coding, which is the other verifiable"
+    },
+    {
+      "end_ms": 3063600,
+      "source_event_index": 448,
+      "start_ms": 3053920,
+      "text": "domain. You need to worry about waking up one day and if you're using a model that has some tie to"
+    },
+    {
+      "end_ms": 3071120,
+      "source_event_index": 449,
+      "start_ms": 3063600,
+      "text": "another government, can it embed vulnerabilities in code that their intelligence organizations"
+    },
+    {
+      "end_ms": 3085520,
+      "source_event_index": 450,
+      "start_ms": 3071120,
+      "text": "could exploit later? In some future version you're using a model that came from another country"
+    },
+    {
+      "end_ms": 3089840,
+      "source_event_index": 451,
+      "start_ms": 3085520,
+      "text": "and it's securing your systems. Then you wake up and everything is just vulnerable in a way"
+    },
+    {
+      "end_ms": 3095520,
+      "source_event_index": 452,
+      "start_ms": 3089840,
+      "text": "that that country knows about and you don’t. Or it turns on a vulnerability at some point."
+    },
+    {
+      "end_ms": 3106160,
+      "source_event_index": 453,
+      "start_ms": 3095520,
+      "text": "Those are real issues. I'm very interested in studying this because I think one of the main"
+    },
+    {
+      "end_ms": 3112640,
+      "source_event_index": 454,
+      "start_ms": 3106160,
+      "text": "things that's interesting about open source is the ability to distill models. For most people,"
+    },
+    {
+      "end_ms": 3117760,
+      "source_event_index": 455,
+      "start_ms": 3112640,
+      "text": "the primary value isn't just taking a model off the shelf and saying, \"Okay, Meta built"
+    },
+    {
+      "end_ms": 3121040,
+      "source_event_index": 456,
+      "start_ms": 3117760,
+      "text": "this version of Llama. I'm going to take it and I'm going to run it exactly in my application.\""
+    },
+    {
+      "end_ms": 3124240,
+      "source_event_index": 457,
+      "start_ms": 3121040,
+      "text": "No, your application isn't doing anything different if you're just running our thing."
+    },
+    {
+      "end_ms": 3129120,
+      "source_event_index": 458,
+      "start_ms": 3124240,
+      "text": "You're at least going to fine-tune it, or try to distill it into a different model. When we get to"
+    },
+    {
+      "end_ms": 3135840,
+      "source_event_index": 459,
+      "start_ms": 3129120,
+      "text": "stuff like the Behemoth model, the whole value is being able to take this very high amount of"
+    },
+    {
+      "end_ms": 3140400,
+      "source_event_index": 460,
+      "start_ms": 3135840,
+      "text": "intelligence and distill it down into a smaller model that you're actually going to want to run."
+    },
+    {
+      "end_ms": 3144480,
+      "source_event_index": 461,
+      "start_ms": 3140400,
+      "text": "This is the beauty of distillation. It's one of the things that I think has really emerged as a"
+    },
+    {
+      "end_ms": 3150640,
+      "source_event_index": 462,
+      "start_ms": 3144480,
+      "text": "very powerful technique over the last year, since the last time we sat down. I think it’s worked"
+    },
+    {
+      "end_ms": 3156800,
+      "source_event_index": 463,
+      "start_ms": 3150640,
+      "text": "better than most people would have predicted. You can basically take a model that's much bigger, and"
+    },
+    {
+      "end_ms": 3161920,
+      "source_event_index": 464,
+      "start_ms": 3156800,
+      "text": "capture probably 90 or 95% of its intelligence, and run it in something that's 10% of the size."
+    },
+    {
+      "end_ms": 3167680,
+      "source_event_index": 465,
+      "start_ms": 3161920,
+      "text": "Now, do you get 100% of the intelligence? No. But 95% of the intelligence at 10% of"
+    },
+    {
+      "end_ms": 3173840,
+      "source_event_index": 466,
+      "start_ms": 3167680,
+      "text": "the cost is pretty good for a lot of things. The other thing that's interesting is that now,"
+    },
+    {
+      "end_ms": 3179920,
+      "source_event_index": 467,
+      "start_ms": 3173840,
+      "text": "with this more varied open-source community, it's not just Llama. You have other models too. You"
+    },
+    {
+      "end_ms": 3185840,
+      "source_event_index": 468,
+      "start_ms": 3179920,
+      "text": "have the ability to distill from multiple sources. So now you can basically say, \"Okay, Llama’s"
+    },
+    {
+      "end_ms": 3190160,
+      "source_event_index": 469,
+      "start_ms": 3185840,
+      "text": "really good at this. Maybe its architecture is really good because it's fundamentally multimodal,"
+    },
+    {
+      "end_ms": 3197600,
+      "source_event_index": 470,
+      "start_ms": 3190960,
+      "text": "more inference-friendly, more efficient. But let’s say this other model is better at coding.\" Okay,"
+    },
+    {
+      "end_ms": 3201040,
+      "source_event_index": 471,
+      "start_ms": 3197600,
+      "text": "great. You can distill from both of them and build something that's better than either"
+    },
+    {
+      "end_ms": 3208160,
+      "source_event_index": 472,
+      "start_ms": 3201040,
+      "text": "individually, for your own use case. That's cool. But you do need to solve the security problem of"
+    },
+    {
+      "end_ms": 3213840,
+      "source_event_index": 473,
+      "start_ms": 3208160,
+      "text": "knowing that you can distill it in a way that's safe and secure. This is something that we've"
+    },
+    {
+      "end_ms": 3220480,
+      "source_event_index": 474,
+      "start_ms": 3213840,
+      "text": "been researching and have put a lot of time into. What we've basically found is that anything that's"
+    },
+    {
+      "end_ms": 3226640,
+      "source_event_index": 475,
+      "start_ms": 3220480,
+      "text": "language is quite fraught. There's just a lot of values embedded into it. Unless you don't care"
+    },
+    {
+      "end_ms": 3230560,
+      "source_event_index": 476,
+      "start_ms": 3226640,
+      "text": "about taking on the values from whatever model you're distilling from, you probably don't want"
+    },
+    {
+      "end_ms": 3239040,
+      "source_event_index": 477,
+      "start_ms": 3230560,
+      "text": "to just distill a straight language world model. On reasoning, though, you can get a lot of the way"
+    },
+    {
+      "end_ms": 3248560,
+      "source_event_index": 478,
+      "start_ms": 3239040,
+      "text": "there by limiting it to verifiable domains, and running code cleanliness and security filters."
+    },
+    {
+      "end_ms": 3252720,
+      "source_event_index": 479,
+      "start_ms": 3249280,
+      "text": "Whether it's using Llama Guard open source, or the Code Shield open source tools that"
+    },
+    {
+      "end_ms": 3259520,
+      "source_event_index": 480,
+      "start_ms": 3252720,
+      "text": "we've done, things that allow you to incorporate different input into your models and make sure"
+    },
+    {
+      "end_ms": 3264640,
+      "source_event_index": 481,
+      "start_ms": 3259520,
+      "text": "that both the input and the output are secure. Then it’s just a lot of red teaming. It’s"
+    },
+    {
+      "end_ms": 3270320,
+      "source_event_index": 482,
+      "start_ms": 3267600,
+      "text": "having experts who are looking at the model and asking, \"Alright, is this model doing"
+    },
+    {
+      "end_ms": 3277680,
+      "source_event_index": 483,
+      "start_ms": 3270320,
+      "text": "anything after distillation that we don't want?\" I think with the combination of those techniques,"
+    },
+    {
+      "end_ms": 3284560,
+      "source_event_index": 484,
+      "start_ms": 3277680,
+      "text": "you can probably distill on the reasoning side for verifiable domains quite securely."
+    },
+    {
+      "end_ms": 3288800,
+      "source_event_index": 485,
+      "start_ms": 3284560,
+      "text": "That's something I'm pretty confident about and something we've done a lot of research around."
+    },
+    {
+      "end_ms": 3294160,
+      "source_event_index": 486,
+      "start_ms": 3288800,
+      "text": "But I think this is a very big question. How do you do good distillation? Because there’s"
+    },
+    {
+      "end_ms": 3298400,
+      "source_event_index": 487,
+      "start_ms": 3294160,
+      "text": "so much value to be unlocked. But at the same time, I do think there is some fundamental"
+    },
+    {
+      "end_ms": 3301760,
+      "source_event_index": 488,
+      "start_ms": 3298400,
+      "text": "bias embedded in different models. Speaking of value to be unlocked,"
+    },
+    {
+      "end_ms": 3307120,
+      "source_event_index": 489,
+      "start_ms": 3301760,
+      "text": "what do you think the right way to monetize AI will be? Obviously digital ads are quite"
+    },
+    {
+      "end_ms": 3312960,
+      "source_event_index": 490,
+      "start_ms": 3307120,
+      "text": "lucrative. But as a fraction of total GDP, it's small compared to all remote work."
+    },
+    {
+      "end_ms": 3318640,
+      "source_event_index": 491,
+      "start_ms": 3314480,
+      "text": "Even if you can increase productivity without replacing work, that's still worth tens of"
+    },
+    {
+      "end_ms": 3322960,
+      "source_event_index": 492,
+      "start_ms": 3318640,
+      "text": "trillions of dollars. Is it possible that ads might not be it? How do you think about this?"
+    },
+    {
+      "end_ms": 3326480,
+      "source_event_index": 493,
+      "start_ms": 3323920,
+      "text": "Like we were talking about before, there's going to be all these different applications,"
+    },
+    {
+      "end_ms": 3329520,
+      "source_event_index": 494,
+      "start_ms": 3326480,
+      "text": "and different applications tend toward different things."
+    },
+    {
+      "end_ms": 3334320,
+      "source_event_index": 495,
+      "start_ms": 3329520,
+      "text": "Ads are great when you want to offer people a free service. Because it's free,"
+    },
+    {
+      "end_ms": 3340960,
+      "source_event_index": 496,
+      "start_ms": 3334320,
+      "text": "you need to cover it somehow. Ads solve this problem where a person does not need to pay for"
+    },
+    {
+      "end_ms": 3348480,
+      "source_event_index": 497,
+      "start_ms": 3340960,
+      "text": "something. They can get something that is amazing for free. Also by the way, with modern ad systems,"
+    },
+    {
+      "end_ms": 3351680,
+      "source_event_index": 498,
+      "start_ms": 3348480,
+      "text": "a lot of the time people think the ads add value to the thing if you do it well."
+    },
+    {
+      "end_ms": 3359520,
+      "source_event_index": 499,
+      "start_ms": 3355280,
+      "text": "You need to be good at ranking and you need to have enough liquidity of advertising inventory."
+    },
+    {
+      "end_ms": 3364240,
+      "source_event_index": 500,
+      "start_ms": 3361200,
+      "text": "If you only have five advertisers in the system, no matter how good you are at ranking,"
+    },
+    {
+      "end_ms": 3367280,
+      "source_event_index": 501,
+      "start_ms": 3364240,
+      "text": "you may not be able to show something to someone that they're interested in. But if"
+    },
+    {
+      "end_ms": 3371840,
+      "source_event_index": 502,
+      "start_ms": 3367280,
+      "text": "you have a million advertisers in the system, then you're probably going to be able to find"
+    },
+    {
+      "end_ms": 3376240,
+      "source_event_index": 503,
+      "start_ms": 3371840,
+      "text": "something pretty compelling, if you're good at picking out the different needles in the haystack"
+    },
+    {
+      "end_ms": 3383200,
+      "source_event_index": 504,
+      "start_ms": 3376240,
+      "text": "that that person is going to be interested in. So that definitely has its place. But there are"
+    },
+    {
+      "end_ms": 3389120,
+      "source_event_index": 505,
+      "start_ms": 3383200,
+      "text": "also clearly going to be other business models as well, including ones that"
+    },
+    {
+      "end_ms": 3395760,
+      "source_event_index": 506,
+      "start_ms": 3390800,
+      "text": "just have higher costs so it doesn't even make sense to offer them for free. By the way,"
+    },
+    {
+      "end_ms": 3399760,
+      "source_event_index": 507,
+      "start_ms": 3395760,
+      "text": "there have always been business models like this. There's a reason why social media is free and"
+    },
+    {
+      "end_ms": 3406640,
+      "source_event_index": 508,
+      "start_ms": 3399760,
+      "text": "ad-supported, but then if you want to watch Netflix or ESPN or something,"
+    },
+    {
+      "end_ms": 3410880,
+      "source_event_index": 509,
+      "start_ms": 3406640,
+      "text": "you need to pay for that. The content that's going into that, they need to produce it, and that's"
+    },
+    {
+      "end_ms": 3415520,
+      "source_event_index": 510,
+      "start_ms": 3410880,
+      "text": "very expensive for them to produce. They probably could not have enough ads in the service in order"
+    },
+    {
+      "end_ms": 3421360,
+      "source_event_index": 511,
+      "start_ms": 3415520,
+      "text": "to make up for the cost of producing the content. Basically, you just need to pay to access it."
+    },
+    {
+      "end_ms": 3425440,
+      "source_event_index": 512,
+      "start_ms": 3422720,
+      "text": "The trade-off is fewer people do it. Instead of billions, you're talking about hundreds of"
+    },
+    {
+      "end_ms": 3434240,
+      "source_event_index": 513,
+      "start_ms": 3425440,
+      "text": "millions of people using those services. There's a value switch there. I think it's similar here. Not"
+    },
+    {
+      "end_ms": 3439280,
+      "source_event_index": 514,
+      "start_ms": 3434240,
+      "text": "everyone is going to want a software engineer, or a thousand software engineering agents,"
+    },
+    {
+      "end_ms": 3443840,
+      "source_event_index": 515,
+      "start_ms": 3439280,
+      "text": "or whatever it is. But if you do, that's something you're probably going to be willing"
+    },
+    {
+      "end_ms": 3448400,
+      "source_event_index": 516,
+      "start_ms": 3443840,
+      "text": "to pay thousands, or tens of thousands, or hundreds of thousands of dollars for."
+    },
+    {
+      "end_ms": 3454720,
+      "source_event_index": 517,
+      "start_ms": 3450960,
+      "text": "That just speaks to the diversity of different things that need to get created."
+    },
+    {
+      "end_ms": 3460240,
+      "source_event_index": 518,
+      "start_ms": 3455440,
+      "text": "There are going to be business models at each point along the spectrum. At Meta,"
+    },
+    {
+      "end_ms": 3466480,
+      "source_event_index": 519,
+      "start_ms": 3462400,
+      "text": "for the consumer piece we definitely want to have a free thing. I'm sure that will end up"
+    },
+    {
+      "end_ms": 3471040,
+      "source_event_index": 520,
+      "start_ms": 3466480,
+      "text": "being ad-supported. But I also think we're going to want to have a business model that supports"
+    },
+    {
+      "end_ms": 3478960,
+      "source_event_index": 521,
+      "start_ms": 3471040,
+      "text": "people using arbitrary amounts of compute to do even more amazing things than what it would make"
+    },
+    {
+      "end_ms": 3485040,
+      "source_event_index": 522,
+      "start_ms": 3478960,
+      "text": "sense to offer in the free service. For that, I'm sure we'll end up having a premium service. But"
+    },
+    {
+      "end_ms": 3490240,
+      "source_event_index": 523,
+      "start_ms": 3485040,
+      "text": "I think our basic values on this are that we want to serve as many people in the world as possible."
+    },
+    {
+      "end_ms": 3563520,
+      "source_event_index": 524,
+      "start_ms": 3558880,
+      "text": "How do you keep track of all these different projects, some of which we've talked about"
+    },
+    {
+      "end_ms": 3570080,
+      "source_event_index": 525,
+      "start_ms": 3563520,
+      "text": "today. I'm sure there are many I don't even know about. As the CEO overseeing everything,"
+    },
+    {
+      "end_ms": 3572800,
+      "source_event_index": 526,
+      "start_ms": 3570080,
+      "text": "there's a big spectrum between going to the Llama team and saying, \"Here are the"
+    },
+    {
+      "end_ms": 3576960,
+      "source_event_index": 527,
+      "start_ms": 3572800,
+      "text": "hyperparameters you should use,\" versus just giving a mandate like, \"Go make the AI better.\""
+    },
+    {
+      "end_ms": 3579040,
+      "source_event_index": 528,
+      "start_ms": 3576960,
+      "text": "And there are so many different projects. How do you think about"
+    },
+    {
+      "end_ms": 3584560,
+      "source_event_index": 529,
+      "start_ms": 3579040,
+      "text": "the way in which you can best deliver your value-add and oversee all these things?"
+    },
+    {
+      "end_ms": 3591760,
+      "source_event_index": 530,
+      "start_ms": 3585200,
+      "text": "A lot of what I spend my time on is trying to get awesome people onto the teams. There's that,"
+    },
+    {
+      "end_ms": 3597520,
+      "source_event_index": 531,
+      "start_ms": 3591760,
+      "text": "and then there's stuff that cuts across teams. You build Meta AI, and you want to"
+    },
+    {
+      "end_ms": 3603680,
+      "source_event_index": 532,
+      "start_ms": 3597520,
+      "text": "get it into WhatsApp or Instagram. Okay, now I need to get those teams to talk together."
+    },
+    {
+      "end_ms": 3613680,
+      "source_event_index": 533,
+      "start_ms": 3603680,
+      "text": "Then there are a bunch of questions like, “do you want the thread for Meta AI in WhatsApp"
+    },
+    {
+      "end_ms": 3619920,
+      "source_event_index": 534,
+      "start_ms": 3613680,
+      "text": "to feel like other WhatsApp threads, or do you want it to feel like other AI chat experiences?”"
+    },
+    {
+      "end_ms": 3624880,
+      "source_event_index": 535,
+      "start_ms": 3619920,
+      "text": "There are different idioms for those. So there are all these interesting questions that need"
+    },
+    {
+      "end_ms": 3629760,
+      "source_event_index": 536,
+      "start_ms": 3624880,
+      "text": "to get answered around how does this stuff basically fit into everything we're doing?"
+    },
+    {
+      "end_ms": 3632880,
+      "source_event_index": 537,
+      "start_ms": 3629760,
+      "text": "Then there's a whole other part of what we're doing, which is pushing on the infrastructure."
+    },
+    {
+      "end_ms": 3640480,
+      "source_event_index": 538,
+      "start_ms": 3633600,
+      "text": "If you want to stand up a gigawatt cluster, first of all, that has a lot of implications for"
+    },
+    {
+      "end_ms": 3647040,
+      "source_event_index": 539,
+      "start_ms": 3641920,
+      "text": "the way we're doing infrastructure buildouts. It has political implications for how you engage"
+    },
+    {
+      "end_ms": 3652160,
+      "source_event_index": 540,
+      "start_ms": 3647040,
+      "text": "with the different states where you're building that stuff. It has financial implications for"
+    },
+    {
+      "end_ms": 3656880,
+      "source_event_index": 541,
+      "start_ms": 3652160,
+      "text": "the company in terms of: \"All right, there's a lot of economic uncertainty in the world. Do we"
+    },
+    {
+      "end_ms": 3663600,
+      "source_event_index": 542,
+      "start_ms": 3657760,
+      "text": "double down on infrastructure right now? If so, what other trade-offs do we want to make around"
+    },
+    {
+      "end_ms": 3668080,
+      "source_event_index": 543,
+      "start_ms": 3663600,
+      "text": "the company?\" Those are the kinds of decisions that are tough for other people to really make."
+    },
+    {
+      "end_ms": 3679600,
+      "source_event_index": 544,
+      "start_ms": 3671040,
+      "text": "Then there's this question around taste and quality. When is something good enough that"
+    },
+    {
+      "end_ms": 3688000,
+      "source_event_index": 545,
+      "start_ms": 3679600,
+      "text": "we want to ship it? In general, I'm the steward of that for the company. Although we have a lot"
+    },
+    {
+      "end_ms": 3692000,
+      "source_event_index": 546,
+      "start_ms": 3688000,
+      "text": "of other people who I think have good taste as well and are also filters for different things."
+    },
+    {
+      "end_ms": 3702160,
+      "source_event_index": 547,
+      "start_ms": 3695440,
+      "text": "Those are basically the areas. AI is interesting because, more than some of the other stuff that we"
+    },
+    {
+      "end_ms": 3708880,
+      "source_event_index": 548,
+      "start_ms": 3702160,
+      "text": "do, it is more research and model-led than really product-led. You can't just design the product"
+    },
+    {
+      "end_ms": 3715120,
+      "source_event_index": 549,
+      "start_ms": 3708880,
+      "text": "that you want and then try to build the model to fit into it. You really need to design the model"
+    },
+    {
+      "end_ms": 3719440,
+      "source_event_index": 550,
+      "start_ms": 3715120,
+      "text": "first and the capabilities that you want, and then you get some emergent properties. Then it's,"
+    },
+    {
+      "end_ms": 3724320,
+      "source_event_index": 551,
+      "start_ms": 3719440,
+      "text": "\"Oh, you can build some different stuff because this turned out in a certain way.\" At the end"
+    },
+    {
+      "end_ms": 3730480,
+      "source_event_index": 552,
+      "start_ms": 3724320,
+      "text": "of the day, people want to use the best model. That's partially why, when we're talking about"
+    },
+    {
+      "end_ms": 3740640,
+      "source_event_index": 553,
+      "start_ms": 3730480,
+      "text": "building the most personal AI, the best voice, the best personalization — and also a very smart"
+    },
+    {
+      "end_ms": 3745440,
+      "source_event_index": 554,
+      "start_ms": 3740640,
+      "text": "experience with very low latency — those are the things that we need to design the whole"
+    },
+    {
+      "end_ms": 3748720,
+      "source_event_index": 555,
+      "start_ms": 3745440,
+      "text": "system to build. That's why we're working on full-duplex voice. That's why we're working"
+    },
+    {
+      "end_ms": 3755200,
+      "source_event_index": 556,
+      "start_ms": 3748720,
+      "text": "on personalization to both have good memory extraction from your interactions with AI,"
+    },
+    {
+      "end_ms": 3760080,
+      "source_event_index": 557,
+      "start_ms": 3755200,
+      "text": "but also to be able to plug into all the other Meta systems. That's why we design the"
+    },
+    {
+      "end_ms": 3765200,
+      "source_event_index": 558,
+      "start_ms": 3761040,
+      "text": "specific models that we design, to have the kind of size and latency parameters that they do."
+    },
+    {
+      "end_ms": 3773200,
+      "source_event_index": 559,
+      "start_ms": 3766480,
+      "text": "Speaking of politics, there's been this perception that some tech leaders have been"
+    },
+    {
+      "end_ms": 3777760,
+      "source_event_index": 560,
+      "start_ms": 3773200,
+      "text": "aligning with Trump. You and others donated to his inaugural event and were on stage"
+    },
+    {
+      "end_ms": 3782720,
+      "source_event_index": 561,
+      "start_ms": 3777760,
+      "text": "with him and I think you settled a lawsuit that resulted in them getting $25 million."
+    },
+    {
+      "end_ms": 3788560,
+      "source_event_index": 562,
+      "start_ms": 3782720,
+      "text": "I wonder what's going on here? Does it feel like the cost of doing business with an administration?"
+    },
+    {
+      "end_ms": 3794480,
+      "source_event_index": 563,
+      "start_ms": 3789920,
+      "text": "What's the best way to think about this? My view on this is that he's the President"
+    },
+    {
+      "end_ms": 3799360,
+      "source_event_index": 564,
+      "start_ms": 3794480,
+      "text": "of the United States. Our default, as an American company, should be to try to have a productive"
+    },
+    {
+      "end_ms": 3806720,
+      "source_event_index": 565,
+      "start_ms": 3799360,
+      "text": "relationship with whoever is running the government. We've tried to offer support"
+    },
+    {
+      "end_ms": 3811920,
+      "source_event_index": 566,
+      "start_ms": 3806720,
+      "text": "to previous administrations as well. I've been pretty public with some of my frustrations"
+    },
+    {
+      "end_ms": 3815760,
+      "source_event_index": 567,
+      "start_ms": 3811920,
+      "text": "with the previous administration, how they basically did not engage"
+    },
+    {
+      "end_ms": 3821680,
+      "source_event_index": 568,
+      "start_ms": 3815760,
+      "text": "with us or the business community more broadly. Frankly, that’s going to be necessary to make"
+    },
+    {
+      "end_ms": 3827280,
+      "source_event_index": 569,
+      "start_ms": 3821680,
+      "text": "progress on some of these things. We're not going to be able to build the level of energy that we"
+    },
+    {
+      "end_ms": 3831200,
+      "source_event_index": 570,
+      "start_ms": 3827280,
+      "text": "need if you don't have a dialogue, and if they're not prioritizing trying to do those things."
+    },
+    {
+      "end_ms": 3843280,
+      "source_event_index": 571,
+      "start_ms": 3834880,
+      "text": "A lot of people want to write this story about what direction people are going. We're trying"
+    },
+    {
+      "end_ms": 3850320,
+      "source_event_index": 572,
+      "start_ms": 3843280,
+      "text": "to build great stuff, and we want to have a productive relationship with people. That's how I"
+    },
+    {
+      "end_ms": 3859360,
+      "source_event_index": 573,
+      "start_ms": 3850320,
+      "text": "see it. It is also how I would guess most others see it, but obviously, I can't speak for them."
+    },
+    {
+      "end_ms": 3865040,
+      "source_event_index": 574,
+      "start_ms": 3860720,
+      "text": "You've spoken out about how you've rethought some of the ways in which you"
+    },
+    {
+      "end_ms": 3869200,
+      "source_event_index": 575,
+      "start_ms": 3865680,
+      "text": "engage and defer to the government, in terms of moderation stuff in the past."
+    },
+    {
+      "end_ms": 3874000,
+      "source_event_index": 576,
+      "start_ms": 3869200,
+      "text": "How are you thinking about AI governance? Because if AI is as powerful as we think it might be,"
+    },
+    {
+      "end_ms": 3878160,
+      "source_event_index": 577,
+      "start_ms": 3874000,
+      "text": "the government will want to get involved. What is the most productive approach to take there,"
+    },
+    {
+      "end_ms": 3885840,
+      "source_event_index": 578,
+      "start_ms": 3878160,
+      "text": "and what should the government be thinking about? I guess in the past, most of the comments that I"
+    },
+    {
+      "end_ms": 3891200,
+      "source_event_index": 579,
+      "start_ms": 3885840,
+      "text": "made were in the context of content moderation. It's been an interesting journey over the"
+    },
+    {
+      "end_ms": 3897280,
+      "source_event_index": 580,
+      "start_ms": 3891200,
+      "text": "last 10 years on this. It's obviously been an interesting time in history. There have been novel"
+    },
+    {
+      "end_ms": 3904880,
+      "source_event_index": 581,
+      "start_ms": 3897280,
+      "text": "questions raised about online content moderation. Some of those have led to productive new systems"
+    },
+    {
+      "end_ms": 3911360,
+      "source_event_index": 582,
+      "start_ms": 3904880,
+      "text": "getting built, like our AI systems to detect nation-states trying to interfere in each other's"
+    },
+    {
+      "end_ms": 3916720,
+      "source_event_index": 583,
+      "start_ms": 3911360,
+      "text": "elections. I think we will continue building that stuff out, and that has been net positive."
+    },
+    {
+      "end_ms": 3921440,
+      "source_event_index": 584,
+      "start_ms": 3916720,
+      "text": "With some other stuff, we went down some bad paths. I just think the fact-checking"
+    },
+    {
+      "end_ms": 3926400,
+      "source_event_index": 585,
+      "start_ms": 3921440,
+      "text": "thing was not as effective as Community Notes because it's not an internet-scale solution."
+    },
+    {
+      "end_ms": 3930880,
+      "source_event_index": 586,
+      "start_ms": 3926400,
+      "text": "There weren't enough fact-checkers, and people didn't trust the specific fact-checkers. You"
+    },
+    {
+      "end_ms": 3935680,
+      "source_event_index": 587,
+      "start_ms": 3930880,
+      "text": "want a more robust system. So I think what we got with Community Notes is the right one on that."
+    },
+    {
+      "end_ms": 3947280,
+      "source_event_index": 588,
+      "start_ms": 3935680,
+      "text": "But my point on this was more that historically, I probably deferred a little too much to"
+    },
+    {
+      "end_ms": 3956320,
+      "source_event_index": 589,
+      "start_ms": 3948240,
+      "text": "either the media and their critiques, or to the government, on things that they did not really"
+    },
+    {
+      "end_ms": 3965600,
+      "source_event_index": 590,
+      "start_ms": 3956320,
+      "text": "have authority over. But just as like a central figure, I think we tried to build systems where"
+    },
+    {
+      "end_ms": 3971600,
+      "source_event_index": 591,
+      "start_ms": 3965600,
+      "text": "maybe we wouldn't have to make all of the content moderation decisions ourselves or something."
+    },
+    {
+      "end_ms": 3979840,
+      "source_event_index": 592,
+      "start_ms": 3972320,
+      "text": "I guess part of the growth process over the last 10 years is realizing, “Okay, we're a meaningful"
+    },
+    {
+      "end_ms": 3984160,
+      "source_event_index": 593,
+      "start_ms": 3979840,
+      "text": "company. We need to own the decisions that we need to make. We should listen to feedback from people,"
+    },
+    {
+      "end_ms": 3989760,
+      "source_event_index": 594,
+      "start_ms": 3984160,
+      "text": "but we shouldn't defer too much to people who do not actually have authority over this. Because"
+    },
+    {
+      "end_ms": 3994720,
+      "source_event_index": 595,
+      "start_ms": 3989760,
+      "text": "at the end of the day, we're in the seat, and we need to own the decisions that we make.”"
+    },
+    {
+      "end_ms": 4003440,
+      "source_event_index": 596,
+      "start_ms": 3997760,
+      "text": "It's been a maturation process, and in some ways painful, but I think we're"
+    },
+    {
+      "end_ms": 4007200,
+      "source_event_index": 597,
+      "start_ms": 4003440,
+      "text": "probably a better company for it. Will tariffs increase the cost of"
+    },
+    {
+      "end_ms": 4010320,
+      "source_event_index": 598,
+      "start_ms": 4007200,
+      "text": "building data centers in the US and shift buildouts to Europe and Asia?"
+    },
+    {
+      "end_ms": 4015520,
+      "source_event_index": 599,
+      "start_ms": 4010320,
+      "text": "It is really hard to know how that plays out. I think we're probably in the early"
+    },
+    {
+      "end_ms": 4024240,
+      "source_event_index": 600,
+      "start_ms": 4015520,
+      "text": "innings on that, and it's very hard to know. What is your single highest-leverage hour in"
+    },
+    {
+      "end_ms": 4028000,
+      "source_event_index": 601,
+      "start_ms": 4024240,
+      "text": "a week? What are you doing in that hour? I don't know. Every week is a little bit"
+    },
+    {
+      "end_ms": 4033520,
+      "source_event_index": 602,
+      "start_ms": 4028000,
+      "text": "different. It's probably got to be the case that the most leveraged thing you do in a"
+    },
+    {
+      "end_ms": 4037680,
+      "source_event_index": 603,
+      "start_ms": 4033520,
+      "text": "week is not the same thing each week. Or else, by definition, you should probably spend more"
+    },
+    {
+      "end_ms": 4047520,
+      "source_event_index": 604,
+      "start_ms": 4037680,
+      "text": "than one hour doing that thing every week. I don't know. Part of the fun of this job,"
+    },
+    {
+      "end_ms": 4055520,
+      "source_event_index": 605,
+      "start_ms": 4047520,
+      "text": "and also of the industry being so dynamic, is that things really move around. The world is"
+    },
+    {
+      "end_ms": 4060000,
+      "source_event_index": 606,
+      "start_ms": 4055520,
+      "text": "very different now than it was at the beginning of the year, or even six months ago, or in the"
+    },
+    {
+      "end_ms": 4066000,
+      "source_event_index": 607,
+      "start_ms": 4060000,
+      "text": "middle of last year. I think a lot has advanced meaningfully. A lot of cards have been turned"
+    },
+    {
+      "end_ms": 4068800,
+      "source_event_index": 608,
+      "start_ms": 4066000,
+      "text": "over since the last time that we sat down. I think that was about a year ago, right?"
+    },
+    {
+      "end_ms": 4071760,
+      "source_event_index": 609,
+      "start_ms": 4068800,
+      "text": "Yeah. I guess what you were saying earlier that recruiting people is a"
+    },
+    {
+      "end_ms": 4074320,
+      "source_event_index": 610,
+      "start_ms": 4071760,
+      "text": "super high-leverage thing you do. It's very high-leverage, yeah."
+    },
+    {
+      "end_ms": 4080320,
+      "source_event_index": 611,
+      "start_ms": 4076640,
+      "text": "You talked about these models being mid-level software engineers by the end of the year."
+    },
+    {
+      "end_ms": 4086240,
+      "source_event_index": 612,
+      "start_ms": 4081360,
+      "text": "What would be possible if, say, software productivity increased like 100x in two"
+    },
+    {
+      "end_ms": 4089440,
+      "source_event_index": 613,
+      "start_ms": 4086240,
+      "text": "years? What kinds of things could be built that can't be built right now?"
+    },
+    {
+      "end_ms": 4098160,
+      "source_event_index": 614,
+      "start_ms": 4089440,
+      "text": "What kinds of things? That's an interesting question. One theme of this conversation is"
+    },
+    {
+      "end_ms": 4103680,
+      "source_event_index": 615,
+      "start_ms": 4098160,
+      "text": "that the amount of creativity that's going to be unlocked is going to be massive."
+    },
+    {
+      "end_ms": 4115040,
+      "source_event_index": 616,
+      "start_ms": 4105920,
+      "text": "If you look at the overall arc of human society and the economy over 100 or 150 years,"
+    },
+    {
+      "end_ms": 4121600,
+      "source_event_index": 617,
+      "start_ms": 4115040,
+      "text": "it's basically people going from being primarily agrarian — with most human energy going toward"
+    },
+    {
+      "end_ms": 4129360,
+      "source_event_index": 618,
+      "start_ms": 4121600,
+      "text": "just feeding ourselves — to that becoming a smaller and smaller percent. And the things that"
+    },
+    {
+      "end_ms": 4134440,
+      "source_event_index": 619,
+      "start_ms": 4129360,
+      "text": "take care of our basic physical needs have become a smaller and smaller percent of human energy."
+    },
+    {
+      "end_ms": 4140880,
+      "source_event_index": 620,
+      "start_ms": 4134440,
+      "text": "That shift has led to two impacts: one is that more people are doing creative and cultural"
+    },
+    {
+      "end_ms": 4148000,
+      "source_event_index": 621,
+      "start_ms": 4140880,
+      "text": "pursuits. The second is that more people, in general, spend less time working and more time on"
+    },
+    {
+      "end_ms": 4155520,
+      "source_event_index": 622,
+      "start_ms": 4148000,
+      "text": "entertainment and culture. I think that is almost certainly going to continue as this goes on."
+    },
+    {
+      "end_ms": 4162560,
+      "source_event_index": 623,
+      "start_ms": 4155520,
+      "text": "This isn't the 1-2 year thing of what happens when you have a super powerful software engineer. But"
+    },
+    {
+      "end_ms": 4168960,
+      "source_event_index": 624,
+      "start_ms": 4162560,
+      "text": "over time, if everyone has these superhuman tools to create a ton of different stuff,"
+    },
+    {
+      "end_ms": 4178880,
+      "source_event_index": 625,
+      "start_ms": 4168960,
+      "text": "you're going to get incredible diversity. Part of it is going to be solving hard problems:"
+    },
+    {
+      "end_ms": 4188640,
+      "source_event_index": 626,
+      "start_ms": 4178880,
+      "text": "solving diseases, advancing science, developing new technology that makes our lives better."
+    },
+    {
+      "end_ms": 4194720,
+      "source_event_index": 627,
+      "start_ms": 4188640,
+      "text": "But I would guess that a lot of it is going to end up being cultural and social pursuits"
+    },
+    {
+      "end_ms": 4201280,
+      "source_event_index": 628,
+      "start_ms": 4194720,
+      "text": "and entertainment. I would guess the world is going to get a lot funnier,"
+    },
+    {
+      "end_ms": 4208640,
+      "source_event_index": 629,
+      "start_ms": 4202080,
+      "text": "weirder, and quirkier, the way that memes on the internet have gotten over the last 10 years."
+    },
+    {
+      "end_ms": 4217920,
+      "source_event_index": 630,
+      "start_ms": 4210480,
+      "text": "I think that adds a certain richness and depth. In funny ways, it actually helps you"
+    },
+    {
+      "end_ms": 4224240,
+      "source_event_index": 631,
+      "start_ms": 4217920,
+      "text": "connect better with people. Now all day long, I just find interesting stuff on the internet"
+    },
+    {
+      "end_ms": 4227760,
+      "source_event_index": 632,
+      "start_ms": 4224240,
+      "text": "and send it in group chats to the people I care about, who I think are going to find it funny."
+    },
+    {
+      "end_ms": 4234640,
+      "source_event_index": 633,
+      "start_ms": 4229680,
+      "text": "The media that people can produce today to express very nuanced,"
+    },
+    {
+      "end_ms": 4244160,
+      "source_event_index": 634,
+      "start_ms": 4234640,
+      "text": "specific cultural ideas is really cool. That'll continue to get built out. It does"
+    },
+    {
+      "end_ms": 4250400,
+      "source_event_index": 635,
+      "start_ms": 4244160,
+      "text": "advance society in a bunch of ways, even if it's not the \"hard science\" way of curing a disease."
+    },
+    {
+      "end_ms": 4256960,
+      "source_event_index": 636,
+      "start_ms": 4252560,
+      "text": "If you think about it, the Meta social media view of the world is that yeah,"
+    },
+    {
+      "end_ms": 4261600,
+      "source_event_index": 637,
+      "start_ms": 4256960,
+      "text": "people are going to spend a lot more time doing that stuff in the future. It's going to be a lot"
+    },
+    {
+      "end_ms": 4265600,
+      "source_event_index": 638,
+      "start_ms": 4261600,
+      "text": "better, and it's going to help you connect, because it'll help express different ideas."
+    },
+    {
+      "end_ms": 4270720,
+      "source_event_index": 639,
+      "start_ms": 4266400,
+      "text": "The world is going to get more complicated, but our technology, our cultural technology, to"
+    },
+    {
+      "end_ms": 4277120,
+      "source_event_index": 640,
+      "start_ms": 4270720,
+      "text": "express these very complicated things — in a very kind of funny little clip or whatever — is going"
+    },
+    {
+      "end_ms": 4289600,
+      "source_event_index": 641,
+      "start_ms": 4277120,
+      "text": "to get so much better. I think that's all great. I don't know about next year. One other thought"
+    },
+    {
+      "end_ms": 4295520,
+      "source_event_index": 642,
+      "start_ms": 4289600,
+      "text": "that I think is interesting to cover is that I tend to think that, for at least"
+    },
+    {
+      "end_ms": 4302960,
+      "source_event_index": 643,
+      "start_ms": 4295520,
+      "text": "the foreseeable future, this is going to lead to more demand for people doing work,"
+    },
+    {
+      "end_ms": 4306480,
+      "source_event_index": 644,
+      "start_ms": 4302960,
+      "text": "not less. Now, people have a choice of how much time they want to spend working."
+    },
+    {
+      "end_ms": 4315920,
+      "source_event_index": 645,
+      "start_ms": 4308800,
+      "text": "I'll give you one interesting example we were talking about recently. We have almost three"
+    },
+    {
+      "end_ms": 4319360,
+      "source_event_index": 646,
+      "start_ms": 4315920,
+      "text": "and a half billion people using our services every day. One question we've struggled with"
+    },
+    {
+      "end_ms": 4326960,
+      "source_event_index": 647,
+      "start_ms": 4319360,
+      "text": "forever is how do we provide customer support? Today, you can write an email, but we've never"
+    },
+    {
+      "end_ms": 4334240,
+      "source_event_index": 648,
+      "start_ms": 4326960,
+      "text": "seriously been able to contemplate having voice support where someone can just call in."
+    },
+    {
+      "end_ms": 4338240,
+      "source_event_index": 649,
+      "start_ms": 4334240,
+      "text": "I guess that's maybe one of the artifacts of having a free service. The revenue"
+    },
+    {
+      "end_ms": 4343440,
+      "source_event_index": 650,
+      "start_ms": 4338240,
+      "text": "per person isn't high enough to have an economic model where people can call in."
+    },
+    {
+      "end_ms": 4346000,
+      "source_event_index": 651,
+      "start_ms": 4343440,
+      "text": "But also, with three and a half billion people using your service every day,"
+    },
+    {
+      "end_ms": 4353680,
+      "source_event_index": 652,
+      "start_ms": 4346000,
+      "text": "the number of calls would be massive. It’d be like the biggest call center in the world. It would be"
+    },
+    {
+      "end_ms": 4362160,
+      "source_event_index": 653,
+      "start_ms": 4353680,
+      "text": "like $10 or $20 billion a year to staff that. So we've never thought too seriously about it,"
+    },
+    {
+      "end_ms": 4368480,
+      "source_event_index": 654,
+      "start_ms": 4362160,
+      "text": "because it always seemed like there was no way that could make sense. But now,"
+    },
+    {
+      "end_ms": 4375920,
+      "source_event_index": 655,
+      "start_ms": 4368480,
+      "text": "as AI gets better, you're going to get to a place where AI can handle a bunch of people's issues."
+    },
+    {
+      "end_ms": 4383280,
+      "source_event_index": 656,
+      "start_ms": 4375920,
+      "text": "Not all of them — maybe 10 years from now it can handle all of them — but thinking about a 3-5 year"
+    },
+    {
+      "end_ms": 4388720,
+      "source_event_index": 657,
+      "start_ms": 4383280,
+      "text": "time horizon, it will be able to handle a bunch. It's kind of like a self-driving car. They can"
+    },
+    {
+      "end_ms": 4394160,
+      "source_event_index": 658,
+      "start_ms": 4388720,
+      "text": "handle a bunch of terrain, but they're not doing the whole route by themselves yet in"
+    },
+    {
+      "end_ms": 4399280,
+      "source_event_index": 659,
+      "start_ms": 4394720,
+      "text": "most cases. People thought truck-driving jobs were going to go away, but there's actually more"
+    },
+    {
+      "end_ms": 4406560,
+      "source_event_index": 660,
+      "start_ms": 4399280,
+      "text": "truck-driving jobs now than when we first started talking about self-driving cars 20 years ago."
+    },
+    {
+      "end_ms": 4420240,
+      "source_event_index": 661,
+      "start_ms": 4411040,
+      "text": "Going back to the customer support thing, it wouldn't make sense to staff out calling for"
+    },
+    {
+      "end_ms": 4428400,
+      "source_event_index": 662,
+      "start_ms": 4420240,
+      "text": "everyone. But let's say AI can handle 90% of that. Then if it can't, it kicks it off to a person."
+    },
+    {
+      "end_ms": 4435360,
+      "source_event_index": 663,
+      "start_ms": 4429200,
+      "text": "If you get the cost of providing that service down to one-tenth of what it would've otherwise been,"
+    },
+    {
+      "end_ms": 4441680,
+      "source_event_index": 664,
+      "start_ms": 4435360,
+      "text": "then maybe now it actually makes sense to do it. That would be cool. So the net"
+    },
+    {
+      "end_ms": 4445200,
+      "source_event_index": 665,
+      "start_ms": 4441680,
+      "text": "result is that I actually think we're probably going to hire more customer support people."
+    },
+    {
+      "end_ms": 4456880,
+      "source_event_index": 666,
+      "start_ms": 4446000,
+      "text": "The common belief is that AI will automate jobs away. But that hasn't really been how"
+    },
+    {
+      "end_ms": 4464800,
+      "source_event_index": 667,
+      "start_ms": 4456880,
+      "text": "the history of technology has worked. Usually, you create things that take away 90% of the work,"
+    },
+    {
+      "end_ms": 4472682,
+      "source_event_index": 668,
+      "start_ms": 4467402,
+      "text": "Final question: Who is the one person in the world today who you most seek out for advice?"
+    },
+    {
+      "end_ms": 4478042,
+      "source_event_index": 669,
+      "start_ms": 4472682,
+      "text": "Oh, man. I feel like part of my style is that I like having a breadth of"
+    },
+    {
+      "end_ms": 4490042,
+      "source_event_index": 670,
+      "start_ms": 4478042,
+      "text": "advisors. It's not just one person. We've got a great team. There are people"
+    },
+    {
+      "end_ms": 4497962,
+      "source_event_index": 671,
+      "start_ms": 4490042,
+      "text": "at the company, people on our board. There are a lot of people in the industry who are"
+    },
+    {
+      "end_ms": 4508362,
+      "source_event_index": 672,
+      "start_ms": 4497962,
+      "text": "doing new stuff. There's not a single person. But it's fun. Also, when the world is dynamic,"
+    },
+    {
+      "end_ms": 4515242,
+      "source_event_index": 673,
+      "start_ms": 4508362,
+      "text": "just having a reason to work with people you like on cool stuff… To me, that's what life is about."
+    },
+    {
+      "end_ms": 4518762,
+      "source_event_index": 674,
+      "start_ms": 4516042,
+      "text": "Great note to close on. Thanks for doing this. Yeah, thank you."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-7259586551625475566c30-mark-zuckerberg-2025/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "8cdae97b5b3cbe45165dcaf36f229d98f3d539ad78e90a7aeaf37ce1024fb9a8"
+  },
+  "translation": {
+    "event_count": 675,
+    "language": "zh-CN",
+    "payload_sha256": "9640a8fee0dacb0b6bbe61877e77020b3483d1ddc0f1b3e4632348a8d71a592f",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-7259586551625475566c30-mark-zuckerberg-2025/transcript.zh-CN.md",
+    "rendered_sha256": "b7fd7c481177d8249f475496f4a720a69ccc61e8fd82601b5b25a2664b83e161",
+    "source_track": "zh-Hans-en",
+    "track_type": "youtube-auto-translate"
+  }
+}
