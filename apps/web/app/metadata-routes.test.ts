@@ -13,6 +13,10 @@ vi.mock("next/font/local", () => ({
   default: () => ({ variable: "podwiki-local-font" }),
 }));
 
+vi.mock("next/font/google", () => ({
+  Noto_Sans_SC: () => ({ variable: "podwiki-noto-sans-sc" }),
+}));
+
 const productionUrl = "https://podwiki.vercel.app";
 
 function expectShareMetadata(metadata: Metadata, title: string, canonical: string) {

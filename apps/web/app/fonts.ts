@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Noto_Sans_SC } from "next/font/google";
 
 const sfPro = localFont({
   src: "./font-assets/sf-pro-variable.woff2",
@@ -9,17 +10,11 @@ const sfPro = localFont({
   weight: "1 1000",
 });
 
-const pingFangSC = localFont({
-  src: [
-    { path: "./font-assets/pingfang-sc-400.woff2", weight: "400", style: "normal" },
-    { path: "./font-assets/pingfang-sc-500.woff2", weight: "500", style: "normal" },
-    { path: "./font-assets/pingfang-sc-600.woff2", weight: "600", style: "normal" },
-    { path: "./font-assets/pingfang-sc-700.woff2", weight: "700", style: "normal" },
-  ],
+const notoSansSC = Noto_Sans_SC({
+  weight: "variable",
   display: "swap",
-  adjustFontFallback: false,
   preload: false,
-  variable: "--font-pingfang-sc",
+  variable: "--font-noto-sans-sc",
 });
 
 const georgia = localFont({
@@ -55,7 +50,7 @@ const sfMono = localFont({
 
 export const fontVariables = [
   sfPro.variable,
-  pingFangSC.variable,
+  notoSansSC.variable,
   georgia.variable,
   songtiSC.variable,
   sfMono.variable,

@@ -11,8 +11,10 @@
   --accent-dark: #c82d20;
   --sidebar-width: 280px;
   --serif: var(--font-georgia), var(--font-songti-sc), serif;
-  --sans: var(--font-sf-pro), var(--font-pingfang-sc), sans-serif;
-  --mono: var(--font-sf-mono), var(--font-pingfang-sc), monospace;
+  --sans: var(--font-sf-pro), "PingFang SC", "Hiragino Sans GB", var(--font-noto-sans-sc),
+    "Microsoft YaHei UI", sans-serif;
+  --mono: var(--font-sf-mono), "PingFang SC", "Hiragino Sans GB", var(--font-noto-sans-sc),
+    "Microsoft YaHei UI", monospace;
 }
 
 * {
