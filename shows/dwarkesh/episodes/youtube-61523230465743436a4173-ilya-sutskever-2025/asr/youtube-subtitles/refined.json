@@ -1,0 +1,5443 @@
+{
+  "generated_at": "2026-08-18T08:11:33.273995Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-61523230465743436a4173-ilya-sutskever-2025/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "dfdad2adcb94aecad3ecd9bf4c5d67093832fb61b28382f57b99f94bb970c19c"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 5200,
+      "source_event_index": 0,
+      "start_ms": 240,
+      "text": "You know what's crazy? That all of this is real. Meaning what?"
+    },
+    {
+      "end_ms": 10320,
+      "source_event_index": 1,
+      "start_ms": 5200,
+      "text": "Don't you think so? All this AI stuff and all this Bay Area… that it's happening."
+    },
+    {
+      "end_ms": 16240,
+      "source_event_index": 2,
+      "start_ms": 11440,
+      "text": "Isn't it straight out of science fiction? Another thing that's crazy is how"
+    },
+    {
+      "end_ms": 21520,
+      "source_event_index": 3,
+      "start_ms": 16240,
+      "text": "normal the slow takeoff feels. The idea that we'd be investing 1%"
+    },
+    {
+      "end_ms": 26880,
+      "source_event_index": 4,
+      "start_ms": 21520,
+      "text": "of GDP in AI, I feel like it would have felt like a bigger deal, whereas right now it just feels..."
+    },
+    {
+      "end_ms": 32640,
+      "source_event_index": 5,
+      "start_ms": 26880,
+      "text": "We get used to things pretty fast, it turns out. But also it's kind of abstract. What does it"
+    },
+    {
+      "end_ms": 37920,
+      "source_event_index": 6,
+      "start_ms": 32640,
+      "text": "mean? It means that you see it in the news, that such and such company announced such"
+    },
+    {
+      "end_ms": 45840,
+      "source_event_index": 7,
+      "start_ms": 37920,
+      "text": "and such dollar amount. That's all you see. It's not really felt in any other way so far."
+    },
+    {
+      "end_ms": 48000,
+      "source_event_index": 8,
+      "start_ms": 45840,
+      "text": "Should we actually begin here? I think this is an interesting discussion."
+    },
+    {
+      "end_ms": 49920,
+      "source_event_index": 9,
+      "start_ms": 48000,
+      "text": "Sure. I think your point,"
+    },
+    {
+      "end_ms": 55440,
+      "source_event_index": 10,
+      "start_ms": 49920,
+      "text": "about how from the average person's point of view nothing is that different, will continue being"
+    },
+    {
+      "end_ms": 58880,
+      "source_event_index": 11,
+      "start_ms": 55440,
+      "text": "true even into the singularity. No, I don't think so."
+    },
+    {
+      "end_ms": 61920,
+      "source_event_index": 12,
+      "start_ms": 58880,
+      "text": "Okay, interesting. The thing which I was referring"
+    },
+    {
+      "end_ms": 70880,
+      "source_event_index": 13,
+      "start_ms": 61920,
+      "text": "to not feeling different is, okay, such and such company announced some difficult-to-comprehend"
+    },
+    {
+      "end_ms": 75040,
+      "source_event_index": 14,
+      "start_ms": 70880,
+      "text": "dollar amount of investment. I don't think anyone knows what to do with that."
+    },
+    {
+      "end_ms": 84160,
+      "source_event_index": 15,
+      "start_ms": 75920,
+      "text": "But I think the impact of AI is going to be felt. AI is going to be diffused through the economy."
+    },
+    {
+      "end_ms": 88560,
+      "source_event_index": 16,
+      "start_ms": 84160,
+      "text": "There'll be very strong economic forces for this, and I think the impact is"
+    },
+    {
+      "end_ms": 92640,
+      "source_event_index": 17,
+      "start_ms": 88560,
+      "text": "going to be felt very strongly. When do you expect that impact?"
+    },
+    {
+      "end_ms": 98480,
+      "source_event_index": 18,
+      "start_ms": 92640,
+      "text": "I think the models seem smarter than their economic impact would imply."
+    },
+    {
+      "end_ms": 104720,
+      "source_event_index": 19,
+      "start_ms": 98480,
+      "text": "Yeah. This is one of the very confusing things about the models right now."
+    },
+    {
+      "end_ms": 112400,
+      "source_event_index": 20,
+      "start_ms": 104720,
+      "text": "How to reconcile the fact that they are doing so well on evals?"
+    },
+    {
+      "end_ms": 117680,
+      "source_event_index": 21,
+      "start_ms": 113040,
+      "text": "You look at the evals and you go, \"Those are pretty hard evals.\" They are doing"
+    },
+    {
+      "end_ms": 124080,
+      "source_event_index": 22,
+      "start_ms": 117680,
+      "text": "so well. But the economic impact seems to be dramatically behind."
+    },
+    {
+      "end_ms": 132240,
+      "source_event_index": 23,
+      "start_ms": 127920,
+      "text": "It's very difficult to make sense of, how can the model, on the one hand,"
+    },
+    {
+      "end_ms": 138880,
+      "source_event_index": 24,
+      "start_ms": 132240,
+      "text": "do these amazing things, and then on the other hand, repeat itself twice in some situation?"
+    },
+    {
+      "end_ms": 144560,
+      "source_event_index": 25,
+      "start_ms": 140560,
+      "text": "An example would be, let's say you use vibe coding to do something."
+    },
+    {
+      "end_ms": 148240,
+      "source_event_index": 26,
+      "start_ms": 144560,
+      "text": "You go to some place and then you get a bug. Then you tell the model,"
+    },
+    {
+      "end_ms": 152000,
+      "source_event_index": 27,
+      "start_ms": 148240,
+      "text": "\"Can you please fix the bug?\" And the model says, \"Oh my God,"
+    },
+    {
+      "end_ms": 155760,
+      "source_event_index": 28,
+      "start_ms": 152000,
+      "text": "you're so right. I have a bug. Let me go fix that.\" And it introduces a second bug."
+    },
+    {
+      "end_ms": 160080,
+      "source_event_index": 29,
+      "start_ms": 156960,
+      "text": "Then you tell it, \"You have this new second bug,\" and it tells you,"
+    },
+    {
+      "end_ms": 163520,
+      "source_event_index": 30,
+      "start_ms": 160080,
+      "text": "\"Oh my God, how could I have done it? You're so right again,\" and brings back"
+    },
+    {
+      "end_ms": 172000,
+      "source_event_index": 31,
+      "start_ms": 163520,
+      "text": "the first bug, and you can alternate between those. How is that possible? I'm not sure, but it"
+    },
+    {
+      "end_ms": 182080,
+      "source_event_index": 32,
+      "start_ms": 172000,
+      "text": "does suggest that something strange is going on. I have two possible explanations. The more whimsical"
+    },
+    {
+      "end_ms": 187760,
+      "source_event_index": 33,
+      "start_ms": 182080,
+      "text": "explanation is that maybe RL training makes the models a little too single-minded and narrowly"
+    },
+    {
+      "end_ms": 197680,
+      "source_event_index": 34,
+      "start_ms": 187760,
+      "text": "focused, a little bit too unaware, even though it also makes them aware in some other ways."
+    },
+    {
+      "end_ms": 205040,
+      "source_event_index": 35,
+      "start_ms": 197680,
+      "text": "Because of this, they can't do basic things. But there is another explanation. Back when"
+    },
+    {
+      "end_ms": 211440,
+      "source_event_index": 36,
+      "start_ms": 205040,
+      "text": "people were doing pre-training, the question of what data to train on was"
+    },
+    {
+      "end_ms": 221040,
+      "source_event_index": 37,
+      "start_ms": 211440,
+      "text": "answered, because that answer was everything. When you do pre-training, you need all the data."
+    },
+    {
+      "end_ms": 224960,
+      "source_event_index": 38,
+      "start_ms": 221040,
+      "text": "So you don't have to think if it's going to be this data or that data."
+    },
+    {
+      "end_ms": 228560,
+      "source_event_index": 39,
+      "start_ms": 224960,
+      "text": "But when people do RL training, they do need to think."
+    },
+    {
+      "end_ms": 232080,
+      "source_event_index": 40,
+      "start_ms": 228560,
+      "text": "They say, \"Okay, we want to have this kind of RL training for this thing"
+    },
+    {
+      "end_ms": 238160,
+      "source_event_index": 41,
+      "start_ms": 232080,
+      "text": "and that kind of RL training for that thing.\" From what I hear, all the companies have teams"
+    },
+    {
+      "end_ms": 242800,
+      "source_event_index": 42,
+      "start_ms": 238160,
+      "text": "that just produce new RL environments and just add it to the training mix."
+    },
+    {
+      "end_ms": 246080,
+      "source_event_index": 43,
+      "start_ms": 242800,
+      "text": "The question is, well, what are those? There are so many degrees of freedom."
+    },
+    {
+      "end_ms": 250080,
+      "source_event_index": 44,
+      "start_ms": 246080,
+      "text": "There is such a huge variety of RL environments you could produce."
+    },
+    {
+      "end_ms": 257360,
+      "source_event_index": 45,
+      "start_ms": 252720,
+      "text": "One thing you could do, and I think this is something that is done inadvertently,"
+    },
+    {
+      "end_ms": 264880,
+      "source_event_index": 46,
+      "start_ms": 257360,
+      "text": "is that people take inspiration from the evals. You say, \"Hey, I would love our model to do"
+    },
+    {
+      "end_ms": 268720,
+      "source_event_index": 47,
+      "start_ms": 264880,
+      "text": "really well when we release it. I want the evals to look great."
+    },
+    {
+      "end_ms": 272640,
+      "source_event_index": 48,
+      "start_ms": 268720,
+      "text": "What would be RL training that could help on this task?\""
+    },
+    {
+      "end_ms": 279040,
+      "source_event_index": 49,
+      "start_ms": 273840,
+      "text": "I think that is something that happens, and it could explain a lot of what's going on."
+    },
+    {
+      "end_ms": 284720,
+      "source_event_index": 50,
+      "start_ms": 279040,
+      "text": "If you combine this with generalization of the models actually being inadequate,"
+    },
+    {
+      "end_ms": 288640,
+      "source_event_index": 51,
+      "start_ms": 284720,
+      "text": "that has the potential to explain a lot of what we are seeing, this disconnect"
+    },
+    {
+      "end_ms": 296320,
+      "source_event_index": 52,
+      "start_ms": 288640,
+      "text": "between eval performance and actual real-world performance, which is something that we don't"
+    },
+    {
+      "end_ms": 303680,
+      "source_event_index": 53,
+      "start_ms": 296320,
+      "text": "today even understand, what we mean by that. I like this idea that the real reward hacking"
+    },
+    {
+      "end_ms": 307920,
+      "source_event_index": 54,
+      "start_ms": 303680,
+      "text": "is the human researchers who are too focused on the evals."
+    },
+    {
+      "end_ms": 312960,
+      "source_event_index": 55,
+      "start_ms": 309040,
+      "text": "I think there are two ways to understand, or to try to think about,"
+    },
+    {
+      "end_ms": 318880,
+      "source_event_index": 56,
+      "start_ms": 312960,
+      "text": "what you have just pointed out. One is that if it's the case that"
+    },
+    {
+      "end_ms": 323600,
+      "source_event_index": 57,
+      "start_ms": 318880,
+      "text": "simply by becoming superhuman at a coding competition, a model will not automatically"
+    },
+    {
+      "end_ms": 330080,
+      "source_event_index": 58,
+      "start_ms": 323600,
+      "text": "become more tasteful and exercise better judgment about how to improve your codebase, well then you"
+    },
+    {
+      "end_ms": 335120,
+      "source_event_index": 59,
+      "start_ms": 330080,
+      "text": "should expand the suite of environments such that you're not just testing it on having"
+    },
+    {
+      "end_ms": 338560,
+      "source_event_index": 60,
+      "start_ms": 335120,
+      "text": "the best performance in coding competition. It should also be able to make the best kind"
+    },
+    {
+      "end_ms": 344400,
+      "source_event_index": 61,
+      "start_ms": 338560,
+      "text": "of application for X thing or Y thing or Z thing. Another, maybe this is what you're hinting at,"
+    },
+    {
+      "end_ms": 350320,
+      "source_event_index": 62,
+      "start_ms": 344400,
+      "text": "is to say, \"Why should it be the case in the first place that becoming superhuman"
+    },
+    {
+      "end_ms": 354400,
+      "source_event_index": 63,
+      "start_ms": 350320,
+      "text": "at coding competitions doesn't make you a more tasteful programmer more generally?\""
+    },
+    {
+      "end_ms": 359280,
+      "source_event_index": 64,
+      "start_ms": 354400,
+      "text": "Maybe the thing to do is not to keep stacking up the amount and diversity"
+    },
+    {
+      "end_ms": 365200,
+      "source_event_index": 65,
+      "start_ms": 359280,
+      "text": "of environments, but to figure out an approach which lets you learn from one environment and"
+    },
+    {
+      "end_ms": 372560,
+      "source_event_index": 66,
+      "start_ms": 365200,
+      "text": "improve your performance on something else. I have a human analogy which might be helpful."
+    },
+    {
+      "end_ms": 378160,
+      "source_event_index": 67,
+      "start_ms": 374160,
+      "text": "Let's take the case of competitive programming, since you mentioned that. Suppose you have two"
+    },
+    {
+      "end_ms": 384240,
+      "source_event_index": 68,
+      "start_ms": 378160,
+      "text": "students. One of them decided they want to be the best competitive programmer, so"
+    },
+    {
+      "end_ms": 391200,
+      "source_event_index": 69,
+      "start_ms": 384240,
+      "text": "they will practice 10,000 hours for that domain. They will solve all the problems, memorize all the"
+    },
+    {
+      "end_ms": 399920,
+      "source_event_index": 70,
+      "start_ms": 391200,
+      "text": "proof techniques, and be very skilled at quickly and correctly implementing all the algorithms."
+    },
+    {
+      "end_ms": 406240,
+      "source_event_index": 71,
+      "start_ms": 400640,
+      "text": "By doing so, they became one of the best. Student number two thought, \"Oh,"
+    },
+    {
+      "end_ms": 410400,
+      "source_event_index": 72,
+      "start_ms": 406240,
+      "text": "competitive programming is cool.\" Maybe they practiced for 100 hours,"
+    },
+    {
+      "end_ms": 414640,
+      "source_event_index": 73,
+      "start_ms": 410400,
+      "text": "much less, and they also did really well. Which one do you think is going to do better"
+    },
+    {
+      "end_ms": 416800,
+      "source_event_index": 74,
+      "start_ms": 414640,
+      "text": "in their career later on? The second."
+    },
+    {
+      "end_ms": 420560,
+      "source_event_index": 75,
+      "start_ms": 416800,
+      "text": "Right. I think that's basically what's going on. The models are much more like the"
+    },
+    {
+      "end_ms": 424400,
+      "source_event_index": 76,
+      "start_ms": 420560,
+      "text": "first student, but even more. Because then we say, the model should"
+    },
+    {
+      "end_ms": 430080,
+      "source_event_index": 77,
+      "start_ms": 424400,
+      "text": "be good at competitive programming so let's get every single competitive programming problem ever."
+    },
+    {
+      "end_ms": 433120,
+      "source_event_index": 78,
+      "start_ms": 430080,
+      "text": "And then let's do some data augmentation so we have even more competitive"
+    },
+    {
+      "end_ms": 438480,
+      "source_event_index": 79,
+      "start_ms": 433120,
+      "text": "programming problems, and we train on that. Now you've got this great competitive programmer."
+    },
+    {
+      "end_ms": 447120,
+      "source_event_index": 80,
+      "start_ms": 438480,
+      "text": "With this analogy, I think it's more intuitive. Yeah, okay, if it's so well trained, all the"
+    },
+    {
+      "end_ms": 452480,
+      "source_event_index": 81,
+      "start_ms": 447120,
+      "text": "different algorithms and all the different proof techniques are right at its fingertips."
+    },
+    {
+      "end_ms": 456320,
+      "source_event_index": 82,
+      "start_ms": 452480,
+      "text": "And it's more intuitive that with this level of preparation, it would not"
+    },
+    {
+      "end_ms": 462160,
+      "source_event_index": 83,
+      "start_ms": 456320,
+      "text": "necessarily generalize to other things. But then what is the analogy for what"
+    },
+    {
+      "end_ms": 468160,
+      "source_event_index": 84,
+      "start_ms": 462160,
+      "text": "the second student is doing before they do the 100 hours of fine-tuning?"
+    },
+    {
+      "end_ms": 476480,
+      "source_event_index": 85,
+      "start_ms": 468160,
+      "text": "I think they have \"it.\" The \"it\" factor. When I was an undergrad,"
+    },
+    {
+      "end_ms": 481280,
+      "source_event_index": 86,
+      "start_ms": 476480,
+      "text": "I remember there was a student like this that studied with me, so I know it exists."
+    },
+    {
+      "end_ms": 486160,
+      "source_event_index": 87,
+      "start_ms": 481840,
+      "text": "I think it's interesting to distinguish \"it\" from whatever pre-training does."
+    },
+    {
+      "end_ms": 490240,
+      "source_event_index": 88,
+      "start_ms": 486160,
+      "text": "One way to understand what you just said about not having to choose the data in"
+    },
+    {
+      "end_ms": 495040,
+      "source_event_index": 89,
+      "start_ms": 490240,
+      "text": "pre-training is to say it's actually not dissimilar to the 10,000 hours of practice."
+    },
+    {
+      "end_ms": 500320,
+      "source_event_index": 90,
+      "start_ms": 495040,
+      "text": "It's just that you get that 10,000 hours of practice for free because it's already"
+    },
+    {
+      "end_ms": 505120,
+      "source_event_index": 91,
+      "start_ms": 500320,
+      "text": "somewhere in the pre-training distribution. But maybe you're suggesting there's actually"
+    },
+    {
+      "end_ms": 508800,
+      "source_event_index": 92,
+      "start_ms": 505120,
+      "text": "not that much generalization from pre-training. There's just so much data in pre-training, but"
+    },
+    {
+      "end_ms": 513360,
+      "source_event_index": 93,
+      "start_ms": 508800,
+      "text": "it's not necessarily generalizing better than RL. The main strength of pre-training is"
+    },
+    {
+      "end_ms": 520160,
+      "source_event_index": 94,
+      "start_ms": 513360,
+      "text": "that: A, there is so much of it, and B, you don't have to think hard about what"
+    },
+    {
+      "end_ms": 525680,
+      "source_event_index": 95,
+      "start_ms": 520160,
+      "text": "data to put into pre-training. It's very natural data, and it"
+    },
+    {
+      "end_ms": 534800,
+      "source_event_index": 96,
+      "start_ms": 525680,
+      "text": "does include in it a lot of what people do: people's thoughts and a lot of the features."
+    },
+    {
+      "end_ms": 541120,
+      "source_event_index": 97,
+      "start_ms": 534800,
+      "text": "It's like the whole world as projected by people onto text, and pre-training tries"
+    },
+    {
+      "end_ms": 548960,
+      "source_event_index": 98,
+      "start_ms": 541120,
+      "text": "to capture that using a huge amount of data. Pre-training is very difficult to reason about"
+    },
+    {
+      "end_ms": 557760,
+      "source_event_index": 99,
+      "start_ms": 548960,
+      "text": "because it's so hard to understand the manner in which the model relies on pre-training data."
+    },
+    {
+      "end_ms": 563600,
+      "source_event_index": 100,
+      "start_ms": 557760,
+      "text": "Whenever the model makes a mistake, could it be because something by chance is not as supported"
+    },
+    {
+      "end_ms": 570720,
+      "source_event_index": 101,
+      "start_ms": 563600,
+      "text": "by the pre-training data? \"Support by pre-training\" is maybe a loose term."
+    },
+    {
+      "end_ms": 573680,
+      "source_event_index": 102,
+      "start_ms": 570720,
+      "text": "I don't know if I can add anything more useful on this."
+    },
+    {
+      "end_ms": 578400,
+      "source_event_index": 103,
+      "start_ms": 576000,
+      "text": "I don't think there is a human analog to pre-training."
+    },
+    {
+      "end_ms": 583600,
+      "source_event_index": 104,
+      "start_ms": 579440,
+      "text": "Here are analogies that people have proposed for what the human analogy to pre-training is."
+    },
+    {
+      "end_ms": 587920,
+      "source_event_index": 105,
+      "start_ms": 583600,
+      "text": "I'm curious to get your thoughts on why they're potentially wrong."
+    },
+    {
+      "end_ms": 594160,
+      "source_event_index": 106,
+      "start_ms": 587920,
+      "text": "One is to think about the first 18, or 15, or 13 years of a person's life when they"
+    },
+    {
+      "end_ms": 600320,
+      "source_event_index": 107,
+      "start_ms": 594160,
+      "text": "aren't necessarily economically productive, but they are doing something that is making"
+    },
+    {
+      "end_ms": 607200,
+      "source_event_index": 108,
+      "start_ms": 600320,
+      "text": "them understand the world better and so forth. The other is to think about evolution as doing"
+    },
+    {
+      "end_ms": 614480,
+      "source_event_index": 109,
+      "start_ms": 607200,
+      "text": "some kind of search for 3 billion years, which then results in a human lifetime instance."
+    },
+    {
+      "end_ms": 617360,
+      "source_event_index": 110,
+      "start_ms": 614480,
+      "text": "I'm curious if you think either of these are analogous to pre-training."
+    },
+    {
+      "end_ms": 622800,
+      "source_event_index": 111,
+      "start_ms": 618000,
+      "text": "How would you think about what lifetime human learning is like, if not pre-training?"
+    },
+    {
+      "end_ms": 628800,
+      "source_event_index": 112,
+      "start_ms": 622800,
+      "text": "I think there are some similarities between both of these and pre-training, and pre-training tries"
+    },
+    {
+      "end_ms": 632000,
+      "source_event_index": 113,
+      "start_ms": 628800,
+      "text": "to play the role of both of these. But I think there are some"
+    },
+    {
+      "end_ms": 638240,
+      "source_event_index": 114,
+      "start_ms": 632000,
+      "text": "big differences as well. The amount of pre-training data is very,"
+    },
+    {
+      "end_ms": 641520,
+      "source_event_index": 115,
+      "start_ms": 638240,
+      "text": "very staggering. Yes."
+    },
+    {
+      "end_ms": 647600,
+      "source_event_index": 116,
+      "start_ms": 641520,
+      "text": "Somehow a human being, after even 15 years with a tiny fraction of the pre-training"
+    },
+    {
+      "end_ms": 650800,
+      "source_event_index": 117,
+      "start_ms": 647600,
+      "text": "data, they know much less. But whatever they do know,"
+    },
+    {
+      "end_ms": 657120,
+      "source_event_index": 118,
+      "start_ms": 650800,
+      "text": "they know much more deeply somehow. Already at that age, you would not"
+    },
+    {
+      "end_ms": 662240,
+      "source_event_index": 119,
+      "start_ms": 657120,
+      "text": "make mistakes that our AIs make. There is another thing. You might say, could it be something like"
+    },
+    {
+      "end_ms": 667600,
+      "source_event_index": 120,
+      "start_ms": 662240,
+      "text": "evolution? The answer is maybe. But in this case, I think evolution might actually have an edge."
+    },
+    {
+      "end_ms": 679680,
+      "source_event_index": 121,
+      "start_ms": 668880,
+      "text": "I remember reading about this case. One way in which neuroscientists can"
+    },
+    {
+      "end_ms": 685920,
+      "source_event_index": 122,
+      "start_ms": 679680,
+      "text": "learn about the brain is by studying people with brain damage to different parts of the brain."
+    },
+    {
+      "end_ms": 690640,
+      "source_event_index": 123,
+      "start_ms": 686960,
+      "text": "Some people have the most strange symptoms you could imagine. It's actually really,"
+    },
+    {
+      "end_ms": 695680,
+      "source_event_index": 124,
+      "start_ms": 690640,
+      "text": "really interesting. One case that comes to mind that's relevant."
+    },
+    {
+      "end_ms": 704000,
+      "source_event_index": 125,
+      "start_ms": 695680,
+      "text": "I read about this person who had some kind of brain damage, a stroke or an accident,"
+    },
+    {
+      "end_ms": 711520,
+      "source_event_index": 126,
+      "start_ms": 704000,
+      "text": "that took out his emotional processing. So he stopped feeling any emotion."
+    },
+    {
+      "end_ms": 718240,
+      "source_event_index": 127,
+      "start_ms": 714800,
+      "text": "He still remained very articulate and he could solve little puzzles,"
+    },
+    {
+      "end_ms": 723520,
+      "source_event_index": 128,
+      "start_ms": 718240,
+      "text": "and on tests he seemed to be just fine. But he felt no emotion. He didn't feel sad,"
+    },
+    {
+      "end_ms": 730000,
+      "source_event_index": 129,
+      "start_ms": 723520,
+      "text": "he didn't feel anger, he didn't feel animated. He became somehow extremely bad at making any"
+    },
+    {
+      "end_ms": 732240,
+      "source_event_index": 130,
+      "start_ms": 730000,
+      "text": "decisions at all. It would take him"
+    },
+    {
+      "end_ms": 737120,
+      "source_event_index": 131,
+      "start_ms": 732240,
+      "text": "hours to decide on which socks to wear. He would make very bad financial decisions."
+    },
+    {
+      "end_ms": 754240,
+      "source_event_index": 132,
+      "start_ms": 743120,
+      "text": "What does it say about the role of our built-in emotions in making us a viable agent, essentially?"
+    },
+    {
+      "end_ms": 761680,
+      "source_event_index": 133,
+      "start_ms": 754240,
+      "text": "To connect to your question about pre-training, maybe if you are good enough at getting everything"
+    },
+    {
+      "end_ms": 766480,
+      "source_event_index": 134,
+      "start_ms": 761680,
+      "text": "out of pre-training, you could get that as well. But that's the kind of thing which seems..."
+    },
+    {
+      "end_ms": 776160,
+      "source_event_index": 135,
+      "start_ms": 770960,
+      "text": "Well, it may or may not be possible to get that from pre-training."
+    },
+    {
+      "end_ms": 784800,
+      "source_event_index": 136,
+      "start_ms": 776160,
+      "text": "What is \"that\"? Clearly not just directly emotion. It seems like some almost value"
+    },
+    {
+      "end_ms": 792080,
+      "source_event_index": 137,
+      "start_ms": 784800,
+      "text": "function-like thing which is telling you what the end reward for any decision should be."
+    },
+    {
+      "end_ms": 795200,
+      "source_event_index": 138,
+      "start_ms": 792080,
+      "text": "You think that doesn't sort of implicitly come from pre-training?"
+    },
+    {
+      "end_ms": 799440,
+      "source_event_index": 139,
+      "start_ms": 795200,
+      "text": "I think it could. I'm just saying it's not 100% obvious."
+    },
+    {
+      "end_ms": 806320,
+      "source_event_index": 140,
+      "start_ms": 800400,
+      "text": "But what is that? How do you think about emotions? What is the ML analogy for emotions?"
+    },
+    {
+      "end_ms": 811440,
+      "source_event_index": 141,
+      "start_ms": 806320,
+      "text": "It should be some kind of a value function thing. But I don’t think there is a great ML analogy"
+    },
+    {
+      "end_ms": 816480,
+      "source_event_index": 142,
+      "start_ms": 811440,
+      "text": "because right now, value functions don't play a very prominent role in the things people do."
+    },
+    {
+      "end_ms": 820000,
+      "source_event_index": 143,
+      "start_ms": 816480,
+      "text": "It might be worth defining for the audience what a value function is, if you want to do that."
+    },
+    {
+      "end_ms": 830880,
+      "source_event_index": 144,
+      "start_ms": 820560,
+      "text": "Certainly, I'll be very happy to do that. When people do reinforcement learning,"
+    },
+    {
+      "end_ms": 836560,
+      "source_event_index": 145,
+      "start_ms": 830880,
+      "text": "the way reinforcement learning is done right now, how do people train those agents?"
+    },
+    {
+      "end_ms": 840160,
+      "source_event_index": 146,
+      "start_ms": 836560,
+      "text": "You have your neural net and you give it a problem, and then you"
+    },
+    {
+      "end_ms": 843440,
+      "source_event_index": 147,
+      "start_ms": 840160,
+      "text": "tell the model, \"Go solve it.\" The model takes maybe thousands,"
+    },
+    {
+      "end_ms": 849040,
+      "source_event_index": 148,
+      "start_ms": 843440,
+      "text": "hundreds of thousands of actions or thoughts or something, and then it produces a solution. The"
+    },
+    {
+      "end_ms": 854960,
+      "source_event_index": 149,
+      "start_ms": 849040,
+      "text": "solution is graded. And then the score is used to provide a training signal"
+    },
+    {
+      "end_ms": 863200,
+      "source_event_index": 150,
+      "start_ms": 854960,
+      "text": "for every single action in your trajectory. That means that if you are doing something"
+    },
+    {
+      "end_ms": 869120,
+      "source_event_index": 151,
+      "start_ms": 863200,
+      "text": "that goes for a long time—if you're training a task that takes a long time to solve—it"
+    },
+    {
+      "end_ms": 873440,
+      "source_event_index": 152,
+      "start_ms": 869120,
+      "text": "will do no learning at all until you come up with the proposed solution."
+    },
+    {
+      "end_ms": 879760,
+      "source_event_index": 153,
+      "start_ms": 873440,
+      "text": "That's how reinforcement learning is done naively. That's how o1, R1 ostensibly are done."
+    },
+    {
+      "end_ms": 888240,
+      "source_event_index": 154,
+      "start_ms": 880800,
+      "text": "The value function says something like, \"Maybe I could sometimes, not always,"
+    },
+    {
+      "end_ms": 892400,
+      "source_event_index": 155,
+      "start_ms": 888240,
+      "text": "tell you if you are doing well or badly.\" The notion of a value function is more"
+    },
+    {
+      "end_ms": 896960,
+      "source_event_index": 156,
+      "start_ms": 892400,
+      "text": "useful in some domains than others. For example, when you play chess and"
+    },
+    {
+      "end_ms": 901440,
+      "source_event_index": 157,
+      "start_ms": 896960,
+      "text": "you lose a piece, I messed up. You don't need to play the whole"
+    },
+    {
+      "end_ms": 908400,
+      "source_event_index": 158,
+      "start_ms": 901440,
+      "text": "game to know that what I just did was bad, and therefore whatever preceded it was also bad."
+    },
+    {
+      "end_ms": 914800,
+      "source_event_index": 159,
+      "start_ms": 908960,
+      "text": "The value function lets you short-circuit the wait until the very end."
+    },
+    {
+      "end_ms": 923040,
+      "source_event_index": 160,
+      "start_ms": 919040,
+      "text": "Let's suppose that you are doing some kind of a math thing or a programming thing,"
+    },
+    {
+      "end_ms": 926800,
+      "source_event_index": 161,
+      "start_ms": 923040,
+      "text": "and you're trying to explore a particular solution or direction."
+    },
+    {
+      "end_ms": 934320,
+      "source_event_index": 162,
+      "start_ms": 926800,
+      "text": "After, let's say, a thousand steps of thinking, you concluded that this direction is unpromising."
+    },
+    {
+      "end_ms": 939760,
+      "source_event_index": 163,
+      "start_ms": 934320,
+      "text": "As soon as you conclude this, you could already get a reward signal"
+    },
+    {
+      "end_ms": 943520,
+      "source_event_index": 164,
+      "start_ms": 939760,
+      "text": "a thousand timesteps previously, when you decided to pursue down this path."
+    },
+    {
+      "end_ms": 949600,
+      "source_event_index": 165,
+      "start_ms": 943520,
+      "text": "You say, \"Next time I shouldn't pursue this path in a similar situation,\" long before you"
+    },
+    {
+      "end_ms": 956480,
+      "source_event_index": 166,
+      "start_ms": 949600,
+      "text": "actually came up with the proposed solution. This was in the DeepSeek R1 paper— that the"
+    },
+    {
+      "end_ms": 962640,
+      "source_event_index": 167,
+      "start_ms": 956480,
+      "text": "space of trajectories is so wide that maybe it's hard to learn a mapping"
+    },
+    {
+      "end_ms": 968800,
+      "source_event_index": 168,
+      "start_ms": 962640,
+      "text": "from an intermediate trajectory and value. And also given that, in coding for example"
+    },
+    {
+      "end_ms": 972720,
+      "source_event_index": 169,
+      "start_ms": 968800,
+      "text": "you'll have the wrong idea, then you'll go back, then you'll change something."
+    },
+    {
+      "end_ms": 975840,
+      "source_event_index": 170,
+      "start_ms": 972720,
+      "text": "This sounds like such lack of faith in deep learning."
+    },
+    {
+      "end_ms": 983520,
+      "source_event_index": 171,
+      "start_ms": 976800,
+      "text": "Sure it might be difficult, but nothing deep learning can't do."
+    },
+    {
+      "end_ms": 992640,
+      "source_event_index": 172,
+      "start_ms": 983520,
+      "text": "My expectation is that a value function should be useful, and I fully expect that they will"
+    },
+    {
+      "end_ms": 997040,
+      "source_event_index": 173,
+      "start_ms": 992640,
+      "text": "be used in the future, if not already. What I was alluding to with the person"
+    },
+    {
+      "end_ms": 1007680,
+      "source_event_index": 174,
+      "start_ms": 997040,
+      "text": "whose emotional center got damaged, it’s more that maybe what it suggests is that the value"
+    },
+    {
+      "end_ms": 1015360,
+      "source_event_index": 175,
+      "start_ms": 1007680,
+      "text": "function of humans is modulated by emotions in some important way that's hardcoded by evolution."
+    },
+    {
+      "end_ms": 1020400,
+      "source_event_index": 176,
+      "start_ms": 1015360,
+      "text": "And maybe that is important for people to be effective in the world."
+    },
+    {
+      "end_ms": 1022640,
+      "source_event_index": 177,
+      "start_ms": 1020400,
+      "text": "That's the thing I was planning on asking you."
+    },
+    {
+      "end_ms": 1026160,
+      "source_event_index": 178,
+      "start_ms": 1022640,
+      "text": "There's something really interesting about emotions of the value function, which is that"
+    },
+    {
+      "end_ms": 1036160,
+      "source_event_index": 179,
+      "start_ms": 1026160,
+      "text": "it's impressive that they have this much utility while still being rather simple to understand."
+    },
+    {
+      "end_ms": 1045600,
+      "source_event_index": 180,
+      "start_ms": 1036160,
+      "text": "I have two responses. I do agree that compared to the kind of things that we learn and the things"
+    },
+    {
+      "end_ms": 1050240,
+      "source_event_index": 181,
+      "start_ms": 1045600,
+      "text": "we are talking about, the kind of AI we are talking about, emotions are relatively simple."
+    },
+    {
+      "end_ms": 1055680,
+      "source_event_index": 182,
+      "start_ms": 1051120,
+      "text": "They might even be so simple that maybe you could map them out in a human-understandable way."
+    },
+    {
+      "end_ms": 1060960,
+      "source_event_index": 183,
+      "start_ms": 1055680,
+      "text": "I think it would be cool to do. In terms of utility though,"
+    },
+    {
+      "end_ms": 1069360,
+      "source_event_index": 184,
+      "start_ms": 1060960,
+      "text": "I think there is a thing where there is this complexity-robustness tradeoff, where complex"
+    },
+    {
+      "end_ms": 1078960,
+      "source_event_index": 185,
+      "start_ms": 1069360,
+      "text": "things can be very useful, but simple things are very useful in a very broad range of situations."
+    },
+    {
+      "end_ms": 1086720,
+      "source_event_index": 186,
+      "start_ms": 1080240,
+      "text": "One way to interpret what we are seeing is that we've got these emotions that evolved mostly"
+    },
+    {
+      "end_ms": 1093200,
+      "source_event_index": 187,
+      "start_ms": 1086720,
+      "text": "from our mammal ancestors and then fine-tuned a little bit while we were hominids, just a bit."
+    },
+    {
+      "end_ms": 1099760,
+      "source_event_index": 188,
+      "start_ms": 1093200,
+      "text": "We do have a decent amount of social emotions though which mammals may lack. But they're"
+    },
+    {
+      "end_ms": 1104720,
+      "source_event_index": 189,
+      "start_ms": 1099760,
+      "text": "not very sophisticated. And because they're not sophisticated, they serve us so well in"
+    },
+    {
+      "end_ms": 1108480,
+      "source_event_index": 190,
+      "start_ms": 1104720,
+      "text": "this very different world compared to the one that we've been living in. Actually,"
+    },
+    {
+      "end_ms": 1112800,
+      "source_event_index": 191,
+      "start_ms": 1108480,
+      "text": "they also make mistakes. For example, our emotions… Well actually, I don’t know."
+    },
+    {
+      "end_ms": 1119760,
+      "source_event_index": 192,
+      "start_ms": 1112800,
+      "text": "Does hunger count as an emotion? It's debatable. But I think, for example, our intuitive feeling"
+    },
+    {
+      "end_ms": 1129120,
+      "source_event_index": 193,
+      "start_ms": 1119760,
+      "text": "of hunger is not succeeding in guiding us correctly in this world with an abundance of food."
+    },
+    {
+      "end_ms": 1136240,
+      "source_event_index": 194,
+      "start_ms": 1130000,
+      "text": "People have been talking about scaling data, scaling parameters, scaling compute."
+    },
+    {
+      "end_ms": 1138000,
+      "source_event_index": 195,
+      "start_ms": 1136240,
+      "text": "Is there a more general way to think about scaling?"
+    },
+    {
+      "end_ms": 1150480,
+      "source_event_index": 196,
+      "start_ms": 1138000,
+      "text": "What are the other scaling axes? Here's a perspective that I think might be true."
+    },
+    {
+      "end_ms": 1156320,
+      "source_event_index": 197,
+      "start_ms": 1152160,
+      "text": "The way ML used to work is that people would just tinker with"
+    },
+    {
+      "end_ms": 1168240,
+      "source_event_index": 198,
+      "start_ms": 1156320,
+      "text": "stuff and try to get interesting results. That's what's been going on in the past. Then"
+    },
+    {
+      "end_ms": 1179120,
+      "source_event_index": 199,
+      "start_ms": 1168240,
+      "text": "the scaling insight arrived. Scaling laws, GPT-3, and suddenly everyone realized we should scale."
+    },
+    {
+      "end_ms": 1187120,
+      "source_event_index": 200,
+      "start_ms": 1180400,
+      "text": "This is an example of how language affects thought. \"Scaling\" is just"
+    },
+    {
+      "end_ms": 1191120,
+      "source_event_index": 201,
+      "start_ms": 1187120,
+      "text": "one word, but it's such a powerful word because it informs people what to do."
+    },
+    {
+      "end_ms": 1197280,
+      "source_event_index": 202,
+      "start_ms": 1191120,
+      "text": "They say, \"Let's try to scale things.\" So you say, what are we scaling?"
+    },
+    {
+      "end_ms": 1202240,
+      "source_event_index": 203,
+      "start_ms": 1197280,
+      "text": "Pre-training was the thing to scale. It was a particular scaling recipe."
+    },
+    {
+      "end_ms": 1208000,
+      "source_event_index": 204,
+      "start_ms": 1202240,
+      "text": "The big breakthrough of pre-training is the realization that this recipe is good."
+    },
+    {
+      "end_ms": 1214400,
+      "source_event_index": 205,
+      "start_ms": 1208000,
+      "text": "You say, \"Hey, if you mix some compute with some data into a neural net of"
+    },
+    {
+      "end_ms": 1219600,
+      "source_event_index": 206,
+      "start_ms": 1214400,
+      "text": "a certain size, you will get results. You will know that you'll be better if you"
+    },
+    {
+      "end_ms": 1226560,
+      "source_event_index": 207,
+      "start_ms": 1219600,
+      "text": "just scale the recipe up.\" This is also great. Companies love this because it gives you a very"
+    },
+    {
+      "end_ms": 1234800,
+      "source_event_index": 208,
+      "start_ms": 1226560,
+      "text": "low-risk way of investing your resources. It's much harder to invest your resources"
+    },
+    {
+      "end_ms": 1239760,
+      "source_event_index": 209,
+      "start_ms": 1234800,
+      "text": "in research. Compare that. If you research, you need to be like, \"Go forth researchers"
+    },
+    {
+      "end_ms": 1245440,
+      "source_event_index": 210,
+      "start_ms": 1239760,
+      "text": "and research and come up with something\", versus get more data, get more compute."
+    },
+    {
+      "end_ms": 1252400,
+      "source_event_index": 211,
+      "start_ms": 1245440,
+      "text": "You know you'll get something from pre-training. Indeed, it looks like, based on various"
+    },
+    {
+      "end_ms": 1260160,
+      "source_event_index": 212,
+      "start_ms": 1254640,
+      "text": "things some people say on Twitter, maybe it appears that Gemini have found a way to get"
+    },
+    {
+      "end_ms": 1262560,
+      "source_event_index": 213,
+      "start_ms": 1260160,
+      "text": "more out of pre-training. At some point though,"
+    },
+    {
+      "end_ms": 1266480,
+      "source_event_index": 214,
+      "start_ms": 1262560,
+      "text": "pre-training will run out of data. The data is very clearly finite. What"
+    },
+    {
+      "end_ms": 1271280,
+      "source_event_index": 215,
+      "start_ms": 1266480,
+      "text": "do you do next? Either you do some kind of souped-up pre-training, a different"
+    },
+    {
+      "end_ms": 1275920,
+      "source_event_index": 216,
+      "start_ms": 1271280,
+      "text": "recipe from the one you've done before, or you're doing RL, or maybe something else."
+    },
+    {
+      "end_ms": 1280320,
+      "source_event_index": 217,
+      "start_ms": 1275920,
+      "text": "But now that compute is big, compute is now very big, in some sense we"
+    },
+    {
+      "end_ms": 1284160,
+      "source_event_index": 218,
+      "start_ms": 1280320,
+      "text": "are back to the age of research. Maybe here's another way to put it."
+    },
+    {
+      "end_ms": 1291280,
+      "source_event_index": 219,
+      "start_ms": 1284160,
+      "text": "Up until 2020, from 2012 to 2020, it was the age of research."
+    },
+    {
+      "end_ms": 1295920,
+      "source_event_index": 220,
+      "start_ms": 1291280,
+      "text": "Now, from 2020 to 2025, it was the age of scaling—maybe plus or minus,"
+    },
+    {
+      "end_ms": 1299440,
+      "source_event_index": 221,
+      "start_ms": 1295920,
+      "text": "let's add error bars to those years—because people say, \"This is amazing. You've got to"
+    },
+    {
+      "end_ms": 1305280,
+      "source_event_index": 222,
+      "start_ms": 1299440,
+      "text": "scale more. Keep scaling.\" The one word: scaling. But now the scale is so big."
+    },
+    {
+      "end_ms": 1313440,
+      "source_event_index": 223,
+      "start_ms": 1306320,
+      "text": "Is the belief really, \"Oh, it's so big, but if you had 100x more, everything would be so different?\""
+    },
+    {
+      "end_ms": 1318000,
+      "source_event_index": 224,
+      "start_ms": 1313440,
+      "text": "It would be different, for sure. But is the belief that if you just"
+    },
+    {
+      "end_ms": 1324560,
+      "source_event_index": 225,
+      "start_ms": 1318000,
+      "text": "100x the scale, everything would be transformed? I don't think that's true. So it's back to the age"
+    },
+    {
+      "end_ms": 1330400,
+      "source_event_index": 226,
+      "start_ms": 1324560,
+      "text": "of research again, just with big computers. That's a very interesting way to put it."
+    },
+    {
+      "end_ms": 1332560,
+      "source_event_index": 227,
+      "start_ms": 1330400,
+      "text": "But let me ask you the question you just posed then."
+    },
+    {
+      "end_ms": 1336560,
+      "source_event_index": 228,
+      "start_ms": 1332560,
+      "text": "What are we scaling, and what would it mean to have a recipe?"
+    },
+    {
+      "end_ms": 1343680,
+      "source_event_index": 229,
+      "start_ms": 1337440,
+      "text": "I guess I'm not aware of a very clean relationship that almost looks like a law"
+    },
+    {
+      "end_ms": 1347920,
+      "source_event_index": 230,
+      "start_ms": 1343680,
+      "text": "of physics which existed in pre-training. There was a power law between data or"
+    },
+    {
+      "end_ms": 1353920,
+      "source_event_index": 231,
+      "start_ms": 1347920,
+      "text": "compute or parameters and loss. What is the kind of relationship"
+    },
+    {
+      "end_ms": 1358640,
+      "source_event_index": 232,
+      "start_ms": 1353920,
+      "text": "we should be seeking, and how should we think about what this new recipe might look like?"
+    },
+    {
+      "end_ms": 1368000,
+      "source_event_index": 233,
+      "start_ms": 1360240,
+      "text": "We've already witnessed a transition from one type of scaling to a different type of scaling,"
+    },
+    {
+      "end_ms": 1376800,
+      "source_event_index": 234,
+      "start_ms": 1368000,
+      "text": "from pre-training to RL. Now people are scaling RL. Now based on what people say on Twitter,"
+    },
+    {
+      "end_ms": 1381280,
+      "source_event_index": 235,
+      "start_ms": 1376800,
+      "text": "they spend more compute on RL than on pre-training at this point, because RL"
+    },
+    {
+      "end_ms": 1387840,
+      "source_event_index": 236,
+      "start_ms": 1381280,
+      "text": "can actually consume quite a bit of compute. You do very long rollouts, so it takes a lot"
+    },
+    {
+      "end_ms": 1391360,
+      "source_event_index": 237,
+      "start_ms": 1387840,
+      "text": "of compute to produce those rollouts. Then you get a relatively small amount"
+    },
+    {
+      "end_ms": 1395760,
+      "source_event_index": 238,
+      "start_ms": 1391360,
+      "text": "of learning per rollout, so you really can spend a lot of compute."
+    },
+    {
+      "end_ms": 1407280,
+      "source_event_index": 239,
+      "start_ms": 1401680,
+      "text": "I wouldn't even call it scaling. I would say, \"Hey, what are you doing?"
+    },
+    {
+      "end_ms": 1411840,
+      "source_event_index": 240,
+      "start_ms": 1407280,
+      "text": "Is the thing you are doing the most productive thing you could be doing?"
+    },
+    {
+      "end_ms": 1416000,
+      "source_event_index": 241,
+      "start_ms": 1411840,
+      "text": "Can you find a more productive way of using your compute?\""
+    },
+    {
+      "end_ms": 1419520,
+      "source_event_index": 242,
+      "start_ms": 1416000,
+      "text": "We've discussed the value function business earlier."
+    },
+    {
+      "end_ms": 1423920,
+      "source_event_index": 243,
+      "start_ms": 1419520,
+      "text": "Maybe once people get good at value functions, they will be using their"
+    },
+    {
+      "end_ms": 1430320,
+      "source_event_index": 244,
+      "start_ms": 1424720,
+      "text": "resources more productively. If you find a whole other way"
+    },
+    {
+      "end_ms": 1436240,
+      "source_event_index": 245,
+      "start_ms": 1430320,
+      "text": "of training models, you could say, \"Is this scaling or is it just using your resources?\""
+    },
+    {
+      "end_ms": 1439680,
+      "source_event_index": 246,
+      "start_ms": 1436240,
+      "text": "I think it becomes a little bit ambiguous. In the sense that, when people were in the"
+    },
+    {
+      "end_ms": 1443600,
+      "source_event_index": 247,
+      "start_ms": 1439680,
+      "text": "age of research back then, it was, \"Let's try this and this and this."
+    },
+    {
+      "end_ms": 1447680,
+      "source_event_index": 248,
+      "start_ms": 1443600,
+      "text": "Let's try that and that and that. Oh, look, something interesting is happening.\""
+    },
+    {
+      "end_ms": 1452480,
+      "source_event_index": 249,
+      "start_ms": 1447680,
+      "text": "I think there will be a return to that. If we're back in the era of research,"
+    },
+    {
+      "end_ms": 1457040,
+      "source_event_index": 250,
+      "start_ms": 1452480,
+      "text": "stepping back, what is the part of the recipe that we need to think most about?"
+    },
+    {
+      "end_ms": 1461200,
+      "source_event_index": 251,
+      "start_ms": 1457040,
+      "text": "When you say value function, people are already trying the current recipe,"
+    },
+    {
+      "end_ms": 1464720,
+      "source_event_index": 252,
+      "start_ms": 1461200,
+      "text": "but then having LLM-as-a-Judge and so forth. You could say that's a value function,"
+    },
+    {
+      "end_ms": 1466880,
+      "source_event_index": 253,
+      "start_ms": 1464720,
+      "text": "but it sounds like you have something much more fundamental in mind."
+    },
+    {
+      "end_ms": 1475920,
+      "source_event_index": 254,
+      "start_ms": 1469920,
+      "text": "Should we even rethink pre-training at all and not just add more steps to the end of that process?"
+    },
+    {
+      "end_ms": 1481600,
+      "source_event_index": 255,
+      "start_ms": 1478240,
+      "text": "The discussion about value function, I think it was interesting."
+    },
+    {
+      "end_ms": 1488320,
+      "source_event_index": 256,
+      "start_ms": 1481600,
+      "text": "I want to emphasize that I think the value function is something that's going to make RL more"
+    },
+    {
+      "end_ms": 1495440,
+      "source_event_index": 257,
+      "start_ms": 1488320,
+      "text": "efficient, and I think that makes a difference. But I think anything you can do with a value"
+    },
+    {
+      "end_ms": 1502080,
+      "source_event_index": 258,
+      "start_ms": 1495440,
+      "text": "function, you can do without, just more slowly. The thing which I think is the most fundamental"
+    },
+    {
+      "end_ms": 1508560,
+      "source_event_index": 259,
+      "start_ms": 1502080,
+      "text": "is that these models somehow just generalize dramatically worse than people. It's super"
+    },
+    {
+      "end_ms": 1518480,
+      "source_event_index": 260,
+      "start_ms": 1508560,
+      "text": "obvious. That seems like a very fundamental thing. So this is the crux: generalization. There are two"
+    },
+    {
+      "end_ms": 1524160,
+      "source_event_index": 261,
+      "start_ms": 1518480,
+      "text": "sub-questions. There's one which is about sample efficiency: why should it take so much more data"
+    },
+    {
+      "end_ms": 1529520,
+      "source_event_index": 262,
+      "start_ms": 1524160,
+      "text": "for these models to learn than humans? There's a second question. Even separate from the amount"
+    },
+    {
+      "end_ms": 1535840,
+      "source_event_index": 263,
+      "start_ms": 1529520,
+      "text": "of data it takes, why is it so hard to teach the thing we want to a model than to a human?"
+    },
+    {
+      "end_ms": 1543920,
+      "source_event_index": 264,
+      "start_ms": 1537360,
+      "text": "For a human, we don't necessarily need a verifiable reward to be able to… You're probably"
+    },
+    {
+      "end_ms": 1548560,
+      "source_event_index": 265,
+      "start_ms": 1543920,
+      "text": "mentoring a bunch of researchers right now, and you're talking with them, you're showing them your"
+    },
+    {
+      "end_ms": 1552560,
+      "source_event_index": 266,
+      "start_ms": 1548560,
+      "text": "code, and you're showing them how you think. From that, they're picking up your way of"
+    },
+    {
+      "end_ms": 1556800,
+      "source_event_index": 267,
+      "start_ms": 1552560,
+      "text": "thinking and how they should do research. You don’t have to set a verifiable reward for"
+    },
+    {
+      "end_ms": 1559680,
+      "source_event_index": 268,
+      "start_ms": 1556800,
+      "text": "them that's like, \"Okay, this is the next part of the curriculum, and now this is the next part of"
+    },
+    {
+      "end_ms": 1566080,
+      "source_event_index": 269,
+      "start_ms": 1559680,
+      "text": "your curriculum. Oh, this training was unstable.\" There's not this schleppy, bespoke process."
+    },
+    {
+      "end_ms": 1570160,
+      "source_event_index": 270,
+      "start_ms": 1566640,
+      "text": "Perhaps these two issues are actually related in some way, but I'd be curious"
+    },
+    {
+      "end_ms": 1575520,
+      "source_event_index": 271,
+      "start_ms": 1570160,
+      "text": "to explore this second thing, which is more like continual learning, and this first thing,"
+    },
+    {
+      "end_ms": 1582720,
+      "source_event_index": 272,
+      "start_ms": 1575520,
+      "text": "which feels just like sample efficiency. You could actually wonder that one possible"
+    },
+    {
+      "end_ms": 1590720,
+      "source_event_index": 273,
+      "start_ms": 1582720,
+      "text": "explanation for the human sample efficiency that needs to be considered is evolution."
+    },
+    {
+      "end_ms": 1598880,
+      "source_event_index": 274,
+      "start_ms": 1591760,
+      "text": "Evolution has given us a small amount of the most useful information possible."
+    },
+    {
+      "end_ms": 1605040,
+      "source_event_index": 275,
+      "start_ms": 1598880,
+      "text": "For things like vision, hearing, and locomotion, I think there's a pretty"
+    },
+    {
+      "end_ms": 1615120,
+      "source_event_index": 276,
+      "start_ms": 1605040,
+      "text": "strong case that evolution has given us a lot. For example, human dexterity far exceeds… I mean"
+    },
+    {
+      "end_ms": 1620480,
+      "source_event_index": 277,
+      "start_ms": 1615120,
+      "text": "robots can become dexterous too if you subject them to a huge amount of training in simulation."
+    },
+    {
+      "end_ms": 1624560,
+      "source_event_index": 278,
+      "start_ms": 1620480,
+      "text": "But to train a robot in the real world to quickly pick up a new skill like"
+    },
+    {
+      "end_ms": 1630560,
+      "source_event_index": 279,
+      "start_ms": 1624560,
+      "text": "a person does seems very out of reach. Here you could say, \"Oh yeah, locomotion."
+    },
+    {
+      "end_ms": 1634640,
+      "source_event_index": 280,
+      "start_ms": 1630560,
+      "text": "All our ancestors needed great locomotion, squirrels."
+    },
+    {
+      "end_ms": 1639760,
+      "source_event_index": 281,
+      "start_ms": 1635920,
+      "text": "So with locomotion, maybe we've got some unbelievable prior.\""
+    },
+    {
+      "end_ms": 1644400,
+      "source_event_index": 282,
+      "start_ms": 1639760,
+      "text": "You could make the same case for vision. I believe Yann LeCun made the point that"
+    },
+    {
+      "end_ms": 1650800,
+      "source_event_index": 283,
+      "start_ms": 1645440,
+      "text": "children learn to drive after 10 hours of practice, which is true."
+    },
+    {
+      "end_ms": 1655280,
+      "source_event_index": 284,
+      "start_ms": 1650800,
+      "text": "But our vision is so good. At least for me,"
+    },
+    {
+      "end_ms": 1661120,
+      "source_event_index": 285,
+      "start_ms": 1655280,
+      "text": "I remember myself being a five-year-old. I was very excited about cars back then."
+    },
+    {
+      "end_ms": 1667200,
+      "source_event_index": 286,
+      "start_ms": 1661120,
+      "text": "I'm pretty sure my car recognition was more than adequate for driving already as a five-year-old."
+    },
+    {
+      "end_ms": 1669040,
+      "source_event_index": 287,
+      "start_ms": 1667200,
+      "text": "You don't get to see that much data as a five-year-old."
+    },
+    {
+      "end_ms": 1673200,
+      "source_event_index": 288,
+      "start_ms": 1669040,
+      "text": "You spend most of your time in your parents' house, so you have very low data diversity."
+    },
+    {
+      "end_ms": 1680400,
+      "source_event_index": 289,
+      "start_ms": 1673200,
+      "text": "But you could say maybe that's evolution too. But in language and math and coding, probably not."
+    },
+    {
+      "end_ms": 1684720,
+      "source_event_index": 290,
+      "start_ms": 1680400,
+      "text": "It still seems better than models. Obviously, models are better than the average"
+    },
+    {
+      "end_ms": 1687760,
+      "source_event_index": 291,
+      "start_ms": 1684720,
+      "text": "human at language, math, and coding. But are they better than"
+    },
+    {
+      "end_ms": 1692160,
+      "source_event_index": 292,
+      "start_ms": 1687760,
+      "text": "the average human at learning? Oh yeah. Oh yeah, absolutely. What I meant"
+    },
+    {
+      "end_ms": 1698320,
+      "source_event_index": 293,
+      "start_ms": 1692160,
+      "text": "to say is that language, math, and coding—and especially math and coding—suggests that whatever"
+    },
+    {
+      "end_ms": 1705920,
+      "source_event_index": 294,
+      "start_ms": 1698320,
+      "text": "it is that makes people good at learning is probably not so much a complicated prior,"
+    },
+    {
+      "end_ms": 1710880,
+      "source_event_index": 295,
+      "start_ms": 1705920,
+      "text": "but something more, some fundamental thing. I'm not sure I understood. Why"
+    },
+    {
+      "end_ms": 1715120,
+      "source_event_index": 296,
+      "start_ms": 1710880,
+      "text": "should that be the case? So consider a skill in which"
+    },
+    {
+      "end_ms": 1725120,
+      "source_event_index": 297,
+      "start_ms": 1715120,
+      "text": "people exhibit some kind of great reliability. If the skill is one that was very useful to our"
+    },
+    {
+      "end_ms": 1732240,
+      "source_event_index": 298,
+      "start_ms": 1725120,
+      "text": "ancestors for many millions of years, hundreds of millions of years, you could argue that maybe"
+    },
+    {
+      "end_ms": 1740720,
+      "source_event_index": 299,
+      "start_ms": 1732240,
+      "text": "humans are good at it because of evolution, because we have a prior, an evolutionary prior"
+    },
+    {
+      "end_ms": 1746400,
+      "source_event_index": 300,
+      "start_ms": 1740720,
+      "text": "that's encoded in some very non-obvious way that somehow makes us so good at it."
+    },
+    {
+      "end_ms": 1756560,
+      "source_event_index": 301,
+      "start_ms": 1747200,
+      "text": "But if people exhibit great ability, reliability, robustness, and ability to learn in a domain that"
+    },
+    {
+      "end_ms": 1763760,
+      "source_event_index": 302,
+      "start_ms": 1756560,
+      "text": "really did not exist until recently, then this is more an indication that people"
+    },
+    {
+      "end_ms": 1774800,
+      "source_event_index": 303,
+      "start_ms": 1763760,
+      "text": "might have just better machine learning, period. How should we think about what that is? What is"
+    },
+    {
+      "end_ms": 1781200,
+      "source_event_index": 304,
+      "start_ms": 1774800,
+      "text": "the ML analogy? There are a couple of interesting things about it. It takes fewer samples. It's"
+    },
+    {
+      "end_ms": 1787200,
+      "source_event_index": 305,
+      "start_ms": 1781200,
+      "text": "more unsupervised. A child learning to drive a car… Children are not learning to drive a car."
+    },
+    {
+      "end_ms": 1795600,
+      "source_event_index": 306,
+      "start_ms": 1787200,
+      "text": "A teenager learning how to drive a car is not exactly getting some prebuilt, verifiable reward."
+    },
+    {
+      "end_ms": 1801760,
+      "source_event_index": 307,
+      "start_ms": 1796400,
+      "text": "It comes from their interaction with the machine and with the environment."
+    },
+    {
+      "end_ms": 1807440,
+      "source_event_index": 308,
+      "start_ms": 1802720,
+      "text": "It takes much fewer samples. It seems more unsupervised. It seems more robust?"
+    },
+    {
+      "end_ms": 1812400,
+      "source_event_index": 309,
+      "start_ms": 1807440,
+      "text": "Much more robust. The robustness of people is really staggering."
+    },
+    {
+      "end_ms": 1818320,
+      "source_event_index": 310,
+      "start_ms": 1814160,
+      "text": "Do you have a unified way of thinking about why all these things are happening at once?"
+    },
+    {
+      "end_ms": 1823920,
+      "source_event_index": 311,
+      "start_ms": 1818320,
+      "text": "What is the ML analogy that could realize something like this?"
+    },
+    {
+      "end_ms": 1833680,
+      "source_event_index": 312,
+      "start_ms": 1826320,
+      "text": "One of the things that you've been asking about is how can the teenage driver self-correct and learn"
+    },
+    {
+      "end_ms": 1841600,
+      "source_event_index": 313,
+      "start_ms": 1833680,
+      "text": "from their experience without an external teacher? The answer is that they have their value function."
+    },
+    {
+      "end_ms": 1846800,
+      "source_event_index": 314,
+      "start_ms": 1841600,
+      "text": "They have a general sense which is also, by the way, extremely robust in people."
+    },
+    {
+      "end_ms": 1856080,
+      "source_event_index": 315,
+      "start_ms": 1850480,
+      "text": "Whatever the human value function is, with a few exceptions around addiction,"
+    },
+    {
+      "end_ms": 1860800,
+      "source_event_index": 316,
+      "start_ms": 1856080,
+      "text": "it's actually very, very robust. So for something like a teenager"
+    },
+    {
+      "end_ms": 1867520,
+      "source_event_index": 317,
+      "start_ms": 1860800,
+      "text": "that's learning to drive, they start to drive, and they already have a sense of how they're driving"
+    },
+    {
+      "end_ms": 1873200,
+      "source_event_index": 318,
+      "start_ms": 1867520,
+      "text": "immediately, how badly they are, how unconfident. And then they see, \"Okay.\" And then, of course,"
+    },
+    {
+      "end_ms": 1877520,
+      "source_event_index": 319,
+      "start_ms": 1873200,
+      "text": "the learning speed of any teenager is so fast. After 10 hours, you're good to go."
+    },
+    {
+      "end_ms": 1879760,
+      "source_event_index": 320,
+      "start_ms": 1877520,
+      "text": "It seems like humans have some solution, but I'm curious about"
+    },
+    {
+      "end_ms": 1884960,
+      "source_event_index": 321,
+      "start_ms": 1880800,
+      "text": "how they are doing it and why is it so hard? How do we need to reconceptualize the way"
+    },
+    {
+      "end_ms": 1887520,
+      "source_event_index": 322,
+      "start_ms": 1884960,
+      "text": "we're training models to make something like this possible?"
+    },
+    {
+      "end_ms": 1897200,
+      "source_event_index": 323,
+      "start_ms": 1888720,
+      "text": "That is a great question to ask, and it's a question I have a lot of opinions about."
+    },
+    {
+      "end_ms": 1903200,
+      "source_event_index": 324,
+      "start_ms": 1897200,
+      "text": "But unfortunately, we live in a world where not all machine learning ideas are discussed"
+    },
+    {
+      "end_ms": 1909360,
+      "source_event_index": 325,
+      "start_ms": 1903200,
+      "text": "freely, and this is one of them. There's probably a way to do it."
+    },
+    {
+      "end_ms": 1914240,
+      "source_event_index": 326,
+      "start_ms": 1909360,
+      "text": "I think it can be done. The fact that people are like that,"
+    },
+    {
+      "end_ms": 1917840,
+      "source_event_index": 327,
+      "start_ms": 1914240,
+      "text": "I think it's a proof that it can be done. There may be another blocker though,"
+    },
+    {
+      "end_ms": 1927760,
+      "source_event_index": 328,
+      "start_ms": 1917840,
+      "text": "which is that there is a possibility that the human neurons do more compute than we think."
+    },
+    {
+      "end_ms": 1933760,
+      "source_event_index": 329,
+      "start_ms": 1927760,
+      "text": "If that is true, and if that plays an important role, then things might be more difficult."
+    },
+    {
+      "end_ms": 1940080,
+      "source_event_index": 330,
+      "start_ms": 1933760,
+      "text": "But regardless, I do think it points to the existence of some machine learning"
+    },
+    {
+      "end_ms": 1945840,
+      "source_event_index": 331,
+      "start_ms": 1940080,
+      "text": "principle that I have opinions on. But unfortunately, circumstances"
+    },
+    {
+      "end_ms": 1951680,
+      "source_event_index": 332,
+      "start_ms": 1945840,
+      "text": "make it hard to discuss in detail. Nobody listens to this podcast, Ilya."
+    },
+    {
+      "end_ms": 2153360,
+      "source_event_index": 333,
+      "start_ms": 1952560,
+      "text": "I'm curious. If you say we are back in an era of research, you were there from 2012 to 2020."
+    },
+    {
+      "end_ms": 2160640,
+      "source_event_index": 334,
+      "start_ms": 2155840,
+      "text": "What is the vibe now going to be if we go back to the era of research?"
+    },
+    {
+      "end_ms": 2165920,
+      "source_event_index": 335,
+      "start_ms": 2160640,
+      "text": "For example, even after AlexNet, the amount of compute that was used to"
+    },
+    {
+      "end_ms": 2172240,
+      "source_event_index": 336,
+      "start_ms": 2165920,
+      "text": "run experiments kept increasing, and the size of frontier systems kept increasing."
+    },
+    {
+      "end_ms": 2178640,
+      "source_event_index": 337,
+      "start_ms": 2173440,
+      "text": "Do you think now that this era of research will still require tremendous amounts of compute?"
+    },
+    {
+      "end_ms": 2184400,
+      "source_event_index": 338,
+      "start_ms": 2179760,
+      "text": "Do you think it will require going back into the archives and reading old papers?"
+    },
+    {
+      "end_ms": 2194960,
+      "source_event_index": 339,
+      "start_ms": 2188000,
+      "text": "You were at Google and OpenAI and Stanford, these places, when there was more of a vibe of research?"
+    },
+    {
+      "end_ms": 2198720,
+      "source_event_index": 340,
+      "start_ms": 2194960,
+      "text": "What kind of things should we be expecting in the community?"
+    },
+    {
+      "end_ms": 2209600,
+      "source_event_index": 341,
+      "start_ms": 2200160,
+      "text": "One consequence of the age of scaling is that scaling sucked out all the air in the room."
+    },
+    {
+      "end_ms": 2219680,
+      "source_event_index": 342,
+      "start_ms": 2213120,
+      "text": "Because scaling sucked out all the air in the room, everyone started to do the same thing."
+    },
+    {
+      "end_ms": 2225840,
+      "source_event_index": 343,
+      "start_ms": 2219680,
+      "text": "We got to the point where we are in a world where there are more"
+    },
+    {
+      "end_ms": 2231440,
+      "source_event_index": 344,
+      "start_ms": 2225840,
+      "text": "companies than ideas by quite a bit. Actually on that, there is this Silicon"
+    },
+    {
+      "end_ms": 2238480,
+      "source_event_index": 345,
+      "start_ms": 2231440,
+      "text": "Valley saying that says that ideas are cheap, execution is everything."
+    },
+    {
+      "end_ms": 2245280,
+      "source_event_index": 346,
+      "start_ms": 2238480,
+      "text": "People say that a lot, and there is truth to that. But then I saw someone say on Twitter"
+    },
+    {
+      "end_ms": 2250880,
+      "source_event_index": 347,
+      "start_ms": 2245280,
+      "text": "something like, \"If ideas are so cheap, how come no one's having any ideas?\""
+    },
+    {
+      "end_ms": 2257840,
+      "source_event_index": 348,
+      "start_ms": 2250880,
+      "text": "And I think it's true too. If you think about research progress in terms"
+    },
+    {
+      "end_ms": 2267200,
+      "source_event_index": 349,
+      "start_ms": 2257840,
+      "text": "of bottlenecks, there are several bottlenecks. One of them is ideas, and one of them is your"
+    },
+    {
+      "end_ms": 2272240,
+      "source_event_index": 350,
+      "start_ms": 2267200,
+      "text": "ability to bring them to life, which might be compute but also engineering."
+    },
+    {
+      "end_ms": 2276880,
+      "source_event_index": 351,
+      "start_ms": 2272240,
+      "text": "If you go back to the '90s, let's say, you had people who had pretty good ideas,"
+    },
+    {
+      "end_ms": 2281120,
+      "source_event_index": 352,
+      "start_ms": 2276880,
+      "text": "and if they had much larger computers, maybe they could demonstrate that their ideas were viable."
+    },
+    {
+      "end_ms": 2285200,
+      "source_event_index": 353,
+      "start_ms": 2281120,
+      "text": "But they could not, so they could only have a very, very small demonstration"
+    },
+    {
+      "end_ms": 2290480,
+      "source_event_index": 354,
+      "start_ms": 2285200,
+      "text": "that did not convince anyone. So the bottleneck was compute. Then in the"
+    },
+    {
+      "end_ms": 2297120,
+      "source_event_index": 355,
+      "start_ms": 2290480,
+      "text": "age of scaling, compute has increased a lot. Of course, there is a question of how much"
+    },
+    {
+      "end_ms": 2306640,
+      "source_event_index": 356,
+      "start_ms": 2297120,
+      "text": "compute is needed, but compute is large. Compute is large enough such that it's not"
+    },
+    {
+      "end_ms": 2313520,
+      "source_event_index": 357,
+      "start_ms": 2306640,
+      "text": "obvious that you need that much more compute to prove some idea. I'll give"
+    },
+    {
+      "end_ms": 2320640,
+      "source_event_index": 358,
+      "start_ms": 2313520,
+      "text": "you an analogy. AlexNet was built on two GPUs. That was the total amount of compute used for it."
+    },
+    {
+      "end_ms": 2328720,
+      "source_event_index": 359,
+      "start_ms": 2320640,
+      "text": "The transformer was built on 8 to 64 GPUs. No single transformer paper experiment used"
+    },
+    {
+      "end_ms": 2337200,
+      "source_event_index": 360,
+      "start_ms": 2328720,
+      "text": "more than 64 GPUs of 2017, which would be like, what, two GPUs of today? The ResNet,"
+    },
+    {
+      "end_ms": 2348000,
+      "source_event_index": 361,
+      "start_ms": 2337200,
+      "text": "right? You could argue that the o1 reasoning was not the most compute-heavy thing in the world."
+    },
+    {
+      "end_ms": 2357200,
+      "source_event_index": 362,
+      "start_ms": 2348000,
+      "text": "So for research, you definitely need some amount of compute, but it's far"
+    },
+    {
+      "end_ms": 2362160,
+      "source_event_index": 363,
+      "start_ms": 2357200,
+      "text": "from obvious that you need the absolutely largest amount of compute ever for research."
+    },
+    {
+      "end_ms": 2368800,
+      "source_event_index": 364,
+      "start_ms": 2362160,
+      "text": "You might argue, and I think it is true, that if you want to build the absolutely best system"
+    },
+    {
+      "end_ms": 2375360,
+      "source_event_index": 365,
+      "start_ms": 2371360,
+      "text": "then it helps to have much more compute. Especially if everyone is within the same"
+    },
+    {
+      "end_ms": 2382000,
+      "source_event_index": 366,
+      "start_ms": 2375360,
+      "text": "paradigm, then compute becomes one of the big differentiators."
+    },
+    {
+      "end_ms": 2388400,
+      "source_event_index": 367,
+      "start_ms": 2386400,
+      "text": "I'm asking you for the history, because you were actually there."
+    },
+    {
+      "end_ms": 2391680,
+      "source_event_index": 368,
+      "start_ms": 2388400,
+      "text": "I'm not sure what actually happened. It sounds like it was possible to develop"
+    },
+    {
+      "end_ms": 2396480,
+      "source_event_index": 369,
+      "start_ms": 2391680,
+      "text": "these ideas using minimal amounts of compute. But the transformer didn't"
+    },
+    {
+      "end_ms": 2399840,
+      "source_event_index": 370,
+      "start_ms": 2396480,
+      "text": "immediately become famous. It became the thing everybody started"
+    },
+    {
+      "end_ms": 2404320,
+      "source_event_index": 371,
+      "start_ms": 2399840,
+      "text": "doing and then started experimenting on top of and building on top of because it was validated"
+    },
+    {
+      "end_ms": 2407360,
+      "source_event_index": 372,
+      "start_ms": 2404320,
+      "text": "at higher and higher levels of compute. Correct."
+    },
+    {
+      "end_ms": 2413840,
+      "source_event_index": 373,
+      "start_ms": 2407360,
+      "text": "And if you at SSI have 50 different ideas, how will you know which one is the next transformer"
+    },
+    {
+      "end_ms": 2421920,
+      "source_event_index": 374,
+      "start_ms": 2413840,
+      "text": "and which one is brittle, without having the kinds of compute that other frontier labs have?"
+    },
+    {
+      "end_ms": 2430320,
+      "source_event_index": 375,
+      "start_ms": 2422960,
+      "text": "I can comment on that. The short comment is that you mentioned SSI."
+    },
+    {
+      "end_ms": 2440640,
+      "source_event_index": 376,
+      "start_ms": 2430320,
+      "text": "Specifically for us, the amount of compute that SSI has for research is really not that"
+    },
+    {
+      "end_ms": 2445200,
+      "source_event_index": 377,
+      "start_ms": 2440640,
+      "text": "small. I want to explain why. Simple math can explain why the amount of compute that"
+    },
+    {
+      "end_ms": 2458880,
+      "source_event_index": 378,
+      "start_ms": 2445200,
+      "text": "we have is comparable for research than one might think. I'll explain. SSI has raised $3 billion,"
+    },
+    {
+      "end_ms": 2465440,
+      "source_event_index": 379,
+      "start_ms": 2458880,
+      "text": "which is a lot by any absolute sense. But you could say, \"Look at the"
+    },
+    {
+      "end_ms": 2473920,
+      "source_event_index": 380,
+      "start_ms": 2465440,
+      "text": "other companies raising much more.\" But a lot of their compute goes for inference."
+    },
+    {
+      "end_ms": 2480160,
+      "source_event_index": 381,
+      "start_ms": 2473920,
+      "text": "These big numbers, these big loans, it's earmarked for inference. That's number one."
+    },
+    {
+      "end_ms": 2485120,
+      "source_event_index": 382,
+      "start_ms": 2480160,
+      "text": "Number two, if you want to have a product on which you do inference, you need to"
+    },
+    {
+      "end_ms": 2491120,
+      "source_event_index": 383,
+      "start_ms": 2485120,
+      "text": "have a big staff of engineers, salespeople. A lot of the research needs to be dedicated to"
+    },
+    {
+      "end_ms": 2497440,
+      "source_event_index": 384,
+      "start_ms": 2491120,
+      "text": "producing all kinds of product-related features. So then when you look at what's actually left for"
+    },
+    {
+      "end_ms": 2505760,
+      "source_event_index": 385,
+      "start_ms": 2497440,
+      "text": "research, the difference becomes a lot smaller. The other thing is, if you are doing something"
+    },
+    {
+      "end_ms": 2511040,
+      "source_event_index": 386,
+      "start_ms": 2505760,
+      "text": "different, do you really need the absolute maximal scale to prove it?"
+    },
+    {
+      "end_ms": 2518080,
+      "source_event_index": 387,
+      "start_ms": 2511040,
+      "text": "I don't think that's true at all. I think that in our case, we have sufficient"
+    },
+    {
+      "end_ms": 2522320,
+      "source_event_index": 388,
+      "start_ms": 2518080,
+      "text": "compute to prove, to convince ourselves and anyone else, that what we are doing is correct."
+    },
+    {
+      "end_ms": 2528320,
+      "source_event_index": 389,
+      "start_ms": 2522880,
+      "text": "There have been public estimates that companies like OpenAI spend on the order of $5-6 billion"
+    },
+    {
+      "end_ms": 2533680,
+      "source_event_index": 390,
+      "start_ms": 2528320,
+      "text": "a year just so far, on experiments. This is separate from the amount of"
+    },
+    {
+      "end_ms": 2538720,
+      "source_event_index": 391,
+      "start_ms": 2533680,
+      "text": "money they're spending on inference and so forth. So it seems like they're spending more a year"
+    },
+    {
+      "end_ms": 2542960,
+      "source_event_index": 392,
+      "start_ms": 2538720,
+      "text": "running research experiments than you guys have in total funding."
+    },
+    {
+      "end_ms": 2546880,
+      "source_event_index": 393,
+      "start_ms": 2542960,
+      "text": "I think it's a question of what you do with it. It's a question of what you do with it."
+    },
+    {
+      "end_ms": 2555120,
+      "source_event_index": 394,
+      "start_ms": 2549840,
+      "text": "In their case, in the case of others, there is a lot more demand on the training compute."
+    },
+    {
+      "end_ms": 2561120,
+      "source_event_index": 395,
+      "start_ms": 2555120,
+      "text": "There’s a lot more different work streams, there are different modalities, there is just more"
+    },
+    {
+      "end_ms": 2566320,
+      "source_event_index": 396,
+      "start_ms": 2561120,
+      "text": "stuff. So it becomes fragmented. How will SSI make money?"
+    },
+    {
+      "end_ms": 2575680,
+      "source_event_index": 397,
+      "start_ms": 2568480,
+      "text": "My answer to this question is something like this. Right now, we just focus on the research, and then"
+    },
+    {
+      "end_ms": 2581360,
+      "source_event_index": 398,
+      "start_ms": 2575680,
+      "text": "the answer to that question will reveal itself. I think there will be lots of possible answers."
+    },
+    {
+      "end_ms": 2585040,
+      "source_event_index": 399,
+      "start_ms": 2581360,
+      "text": "Is SSI's plan still to straight shot superintelligence?"
+    },
+    {
+      "end_ms": 2591280,
+      "source_event_index": 400,
+      "start_ms": 2585040,
+      "text": "Maybe. I think that there is merit to it. I think there's a lot of merit because"
+    },
+    {
+      "end_ms": 2597840,
+      "source_event_index": 401,
+      "start_ms": 2591280,
+      "text": "it's very nice to not be affected by the day-to-day market competition."
+    },
+    {
+      "end_ms": 2605200,
+      "source_event_index": 402,
+      "start_ms": 2597840,
+      "text": "But I think there are two reasons that may cause us to change the plan."
+    },
+    {
+      "end_ms": 2611360,
+      "source_event_index": 403,
+      "start_ms": 2605200,
+      "text": "One is pragmatic, if timelines turned out to be long, which they might."
+    },
+    {
+      "end_ms": 2618400,
+      "source_event_index": 404,
+      "start_ms": 2611360,
+      "text": "Second, I think there is a lot of value in the best and most"
+    },
+    {
+      "end_ms": 2626480,
+      "source_event_index": 405,
+      "start_ms": 2618400,
+      "text": "powerful AI being out there impacting the world. I think this is a meaningfully valuable thing."
+    },
+    {
+      "end_ms": 2629440,
+      "source_event_index": 406,
+      "start_ms": 2626480,
+      "text": "So then why is your default plan to straight shot superintelligence?"
+    },
+    {
+      "end_ms": 2634880,
+      "source_event_index": 407,
+      "start_ms": 2629440,
+      "text": "Because it sounds like OpenAI, Anthropic, all these other companies, their explicit thinking"
+    },
+    {
+      "end_ms": 2641040,
+      "source_event_index": 408,
+      "start_ms": 2634880,
+      "text": "is, \"Look, we have weaker and weaker intelligences that the public can get used to and prepare for.\""
+    },
+    {
+      "end_ms": 2646400,
+      "source_event_index": 409,
+      "start_ms": 2641040,
+      "text": "Why is it potentially better to build a superintelligence directly?"
+    },
+    {
+      "end_ms": 2654000,
+      "source_event_index": 410,
+      "start_ms": 2646400,
+      "text": "I'll make the case for and against. The case for is that one of the challenges"
+    },
+    {
+      "end_ms": 2660320,
+      "source_event_index": 411,
+      "start_ms": 2654000,
+      "text": "that people face when they're in the market is that they have to participate in the rat race."
+    },
+    {
+      "end_ms": 2664720,
+      "source_event_index": 412,
+      "start_ms": 2660320,
+      "text": "The rat race is quite difficult in that it exposes you to difficult"
+    },
+    {
+      "end_ms": 2672000,
+      "source_event_index": 413,
+      "start_ms": 2664720,
+      "text": "trade-offs which you need to make. It is nice to say, \"We'll insulate ourselves"
+    },
+    {
+      "end_ms": 2678160,
+      "source_event_index": 414,
+      "start_ms": 2672000,
+      "text": "from all this and just focus on the research and come out only when we are ready, and not before.\""
+    },
+    {
+      "end_ms": 2683600,
+      "source_event_index": 415,
+      "start_ms": 2678160,
+      "text": "But the counterpoint is valid too, and those are opposing forces."
+    },
+    {
+      "end_ms": 2690880,
+      "source_event_index": 416,
+      "start_ms": 2683600,
+      "text": "The counterpoint is, \"Hey, it is useful for the world to see powerful AI."
+    },
+    {
+      "end_ms": 2693600,
+      "source_event_index": 417,
+      "start_ms": 2690880,
+      "text": "It is useful for the world to see powerful AI because that's"
+    },
+    {
+      "end_ms": 2696800,
+      "source_event_index": 418,
+      "start_ms": 2693600,
+      "text": "the only way you can communicate it.\" Well, I guess not even just that you can"
+    },
+    {
+      "end_ms": 2699760,
+      "source_event_index": 419,
+      "start_ms": 2696800,
+      "text": "communicate the idea— Communicate the AI,"
+    },
+    {
+      "end_ms": 2704080,
+      "source_event_index": 420,
+      "start_ms": 2699760,
+      "text": "not the idea. Communicate the AI. What do you mean, \"communicate the AI\"?"
+    },
+    {
+      "end_ms": 2710080,
+      "source_event_index": 421,
+      "start_ms": 2704640,
+      "text": "Let's suppose you write an essay about AI, and the essay says, \"AI is going to be this, and AI is"
+    },
+    {
+      "end_ms": 2713760,
+      "source_event_index": 422,
+      "start_ms": 2710080,
+      "text": "going to be that, and it's going to be this.\" You read it and you say, \"Okay,"
+    },
+    {
+      "end_ms": 2718320,
+      "source_event_index": 423,
+      "start_ms": 2713760,
+      "text": "this is an interesting essay.\" Now suppose you see an AI doing this,"
+    },
+    {
+      "end_ms": 2727920,
+      "source_event_index": 424,
+      "start_ms": 2718320,
+      "text": "an AI doing that. It is incomparable. Basically I think that there is a big benefit from AI"
+    },
+    {
+      "end_ms": 2735600,
+      "source_event_index": 425,
+      "start_ms": 2727920,
+      "text": "being in the public, and that would be a reason for us to not be quite straight shot."
+    },
+    {
+      "end_ms": 2740320,
+      "source_event_index": 426,
+      "start_ms": 2736320,
+      "text": "I guess it's not even that, but I do think that is an important part of it."
+    },
+    {
+      "end_ms": 2745360,
+      "source_event_index": 427,
+      "start_ms": 2740320,
+      "text": "The other big thing is that I can't think of another discipline in human engineering and"
+    },
+    {
+      "end_ms": 2753280,
+      "source_event_index": 428,
+      "start_ms": 2745360,
+      "text": "research where the end artifact was made safer mostly through just thinking about"
+    },
+    {
+      "end_ms": 2758000,
+      "source_event_index": 429,
+      "start_ms": 2753280,
+      "text": "how to make it safe, as opposed to, why airplane crashes per mile are so"
+    },
+    {
+      "end_ms": 2762560,
+      "source_event_index": 430,
+      "start_ms": 2758000,
+      "text": "much lower today than they were decades ago. Why is it so much harder to find a bug in Linux"
+    },
+    {
+      "end_ms": 2766320,
+      "source_event_index": 431,
+      "start_ms": 2762560,
+      "text": "than it would have been decades ago? I think it's mostly because these"
+    },
+    {
+      "end_ms": 2771040,
+      "source_event_index": 432,
+      "start_ms": 2766320,
+      "text": "systems were deployed to the world. You noticed failures, those failures"
+    },
+    {
+      "end_ms": 2777280,
+      "source_event_index": 433,
+      "start_ms": 2771040,
+      "text": "were corrected and the systems became more robust. I'm not sure why AGI and superhuman intelligence"
+    },
+    {
+      "end_ms": 2783600,
+      "source_event_index": 434,
+      "start_ms": 2777280,
+      "text": "would be any different, especially given—and I hope we're going to get to this—it seems like"
+    },
+    {
+      "end_ms": 2789760,
+      "source_event_index": 435,
+      "start_ms": 2783600,
+      "text": "the harms of superintelligence are not just about having some malevolent paper clipper out there."
+    },
+    {
+      "end_ms": 2794640,
+      "source_event_index": 436,
+      "start_ms": 2789760,
+      "text": "But this is a really powerful thing and we don't even know how to conceptualize how people interact"
+    },
+    {
+      "end_ms": 2799760,
+      "source_event_index": 437,
+      "start_ms": 2794640,
+      "text": "with it, what people will do with it. Having gradual access to it seems like a"
+    },
+    {
+      "end_ms": 2805440,
+      "source_event_index": 438,
+      "start_ms": 2800880,
+      "text": "better way to maybe spread out the impact of it and to help people prepare for it."
+    },
+    {
+      "end_ms": 2812720,
+      "source_event_index": 439,
+      "start_ms": 2805440,
+      "text": "Well I think on this point, even in the straight shot scenario, you would still do a gradual"
+    },
+    {
+      "end_ms": 2821760,
+      "source_event_index": 440,
+      "start_ms": 2812720,
+      "text": "release of it, that’s how I would imagine it. Gradualism would be an inherent"
+    },
+    {
+      "end_ms": 2824560,
+      "source_event_index": 441,
+      "start_ms": 2821760,
+      "text": "component of any plan. It's just a question of what is the first"
+    },
+    {
+      "end_ms": 2831680,
+      "source_event_index": 442,
+      "start_ms": 2824560,
+      "text": "thing that you get out of the door. That's number one. Number two, I believe you have advocated"
+    },
+    {
+      "end_ms": 2837680,
+      "source_event_index": 443,
+      "start_ms": 2831680,
+      "text": "for continual learning more than other people, and I actually think that this is an important"
+    },
+    {
+      "end_ms": 2849600,
+      "source_event_index": 444,
+      "start_ms": 2837680,
+      "text": "and correct thing. Here is why. I'll give you another example of how language affects thinking."
+    },
+    {
+      "end_ms": 2855840,
+      "source_event_index": 445,
+      "start_ms": 2849600,
+      "text": "In this case, it will be two words that have shaped everyone's thinking, I maintain."
+    },
+    {
+      "end_ms": 2868400,
+      "source_event_index": 446,
+      "start_ms": 2857520,
+      "text": "First word: AGI. Second word: pre-training. Let me explain. The term AGI, why does this"
+    },
+    {
+      "end_ms": 2875120,
+      "source_event_index": 447,
+      "start_ms": 2868400,
+      "text": "term exist? It's a very particular term. Why does it exist? There's a reason. The reason"
+    },
+    {
+      "end_ms": 2882640,
+      "source_event_index": 448,
+      "start_ms": 2875120,
+      "text": "that the term AGI exists is, in my opinion, not so much because it's a very important, essential"
+    },
+    {
+      "end_ms": 2894160,
+      "source_event_index": 449,
+      "start_ms": 2882640,
+      "text": "descriptor of some end state of intelligence, but because it is a reaction to a different term that"
+    },
+    {
+      "end_ms": 2899360,
+      "source_event_index": 450,
+      "start_ms": 2894160,
+      "text": "existed, and the term is narrow AI. If you go back to ancient history"
+    },
+    {
+      "end_ms": 2905600,
+      "source_event_index": 451,
+      "start_ms": 2899360,
+      "text": "of gameplay and AI, of checkers AI, chess AI, computer games AI, everyone would say,"
+    },
+    {
+      "end_ms": 2909600,
+      "source_event_index": 452,
+      "start_ms": 2905600,
+      "text": "look at this narrow intelligence. Sure, the chess AI can beat Kasparov,"
+    },
+    {
+      "end_ms": 2914720,
+      "source_event_index": 453,
+      "start_ms": 2909600,
+      "text": "but it can't do anything else. It is so narrow, artificial narrow intelligence."
+    },
+    {
+      "end_ms": 2921280,
+      "source_event_index": 454,
+      "start_ms": 2914720,
+      "text": "So in response, as a reaction to this, some people said, this is not good. It"
+    },
+    {
+      "end_ms": 2930800,
+      "source_event_index": 455,
+      "start_ms": 2921280,
+      "text": "is so narrow. What we need is general AI, an AI that can just do all the things."
+    },
+    {
+      "end_ms": 2939360,
+      "source_event_index": 456,
+      "start_ms": 2933040,
+      "text": "That term just got a lot of traction. The second thing that got a lot of traction"
+    },
+    {
+      "end_ms": 2943120,
+      "source_event_index": 457,
+      "start_ms": 2939360,
+      "text": "is pre-training, specifically the recipe of pre-training."
+    },
+    {
+      "end_ms": 2952960,
+      "source_event_index": 458,
+      "start_ms": 2943120,
+      "text": "I think the way people do RL now is maybe undoing the conceptual imprint of pre-training."
+    },
+    {
+      "end_ms": 2957520,
+      "source_event_index": 459,
+      "start_ms": 2952960,
+      "text": "But pre-training had this property. You do more pre-training and the model gets"
+    },
+    {
+      "end_ms": 2969760,
+      "source_event_index": 460,
+      "start_ms": 2957520,
+      "text": "better at everything, more or less uniformly. General AI. Pre-training gives AGI. But the"
+    },
+    {
+      "end_ms": 2976400,
+      "source_event_index": 461,
+      "start_ms": 2969760,
+      "text": "thing that happened with AGI and pre-training is that in some sense they overshot the target."
+    },
+    {
+      "end_ms": 2983360,
+      "source_event_index": 462,
+      "start_ms": 2978160,
+      "text": "If you think about the term \"AGI\", especially in the context of pre-training,"
+    },
+    {
+      "end_ms": 2993760,
+      "source_event_index": 463,
+      "start_ms": 2983360,
+      "text": "you will realize that a human being is not an AGI. Yes, there is definitely a foundation of skills,"
+    },
+    {
+      "end_ms": 3000080,
+      "source_event_index": 464,
+      "start_ms": 2993760,
+      "text": "but a human being lacks a huge amount of knowledge."
+    },
+    {
+      "end_ms": 3006720,
+      "source_event_index": 465,
+      "start_ms": 3000080,
+      "text": "Instead, we rely on continual learning. So when you think about, \"Okay,"
+    },
+    {
+      "end_ms": 3012240,
+      "source_event_index": 466,
+      "start_ms": 3006720,
+      "text": "so let's suppose that we achieve success and we produce some kind of safe superintelligence.\""
+    },
+    {
+      "end_ms": 3016320,
+      "source_event_index": 467,
+      "start_ms": 3012240,
+      "text": "The question is, how do you define it? Where on the curve of continual"
+    },
+    {
+      "end_ms": 3020640,
+      "source_event_index": 468,
+      "start_ms": 3016320,
+      "text": "learning is it going to be? I produce a superintelligent"
+    },
+    {
+      "end_ms": 3025200,
+      "source_event_index": 469,
+      "start_ms": 3020640,
+      "text": "15-year-old that's very eager to go. They don't know very much at all,"
+    },
+    {
+      "end_ms": 3029280,
+      "source_event_index": 470,
+      "start_ms": 3025200,
+      "text": "a great student, very eager. You go and be a programmer,"
+    },
+    {
+      "end_ms": 3034720,
+      "source_event_index": 471,
+      "start_ms": 3029280,
+      "text": "you go and be a doctor, go and learn. So you could imagine that the deployment"
+    },
+    {
+      "end_ms": 3038880,
+      "source_event_index": 472,
+      "start_ms": 3034720,
+      "text": "itself will involve some kind of a learning trial-and-error period."
+    },
+    {
+      "end_ms": 3043520,
+      "source_event_index": 473,
+      "start_ms": 3038880,
+      "text": "It's a process, as opposed to you dropping the finished thing."
+    },
+    {
+      "end_ms": 3051120,
+      "source_event_index": 474,
+      "start_ms": 3044240,
+      "text": "I see. You're suggesting that the thing you're pointing out with superintelligence"
+    },
+    {
+      "end_ms": 3058560,
+      "source_event_index": 475,
+      "start_ms": 3051120,
+      "text": "is not some finished mind which knows how to do every single job in the economy."
+    },
+    {
+      "end_ms": 3065120,
+      "source_event_index": 476,
+      "start_ms": 3058560,
+      "text": "Because the way, say, the original OpenAI charter or whatever defines AGI is like, it can do every"
+    },
+    {
+      "end_ms": 3071680,
+      "source_event_index": 477,
+      "start_ms": 3065120,
+      "text": "single job, every single thing a human can do. You're proposing instead a mind which can"
+    },
+    {
+      "end_ms": 3075520,
+      "source_event_index": 478,
+      "start_ms": 3071680,
+      "text": "learn to do every single job, and that is superintelligence."
+    },
+    {
+      "end_ms": 3079840,
+      "source_event_index": 479,
+      "start_ms": 3075520,
+      "text": "Yes. But once you have the learning algorithm,"
+    },
+    {
+      "end_ms": 3085200,
+      "source_event_index": 480,
+      "start_ms": 3079840,
+      "text": "it gets deployed into the world the same way a human laborer might join an organization."
+    },
+    {
+      "end_ms": 3087360,
+      "source_event_index": 481,
+      "start_ms": 3085200,
+      "text": "Exactly. It seems like one of these two things"
+    },
+    {
+      "end_ms": 3095440,
+      "source_event_index": 482,
+      "start_ms": 3087360,
+      "text": "might happen, maybe neither of these happens. One, this super-efficient learning algorithm"
+    },
+    {
+      "end_ms": 3100400,
+      "source_event_index": 483,
+      "start_ms": 3095440,
+      "text": "becomes superhuman, becomes as good as you and potentially even better,"
+    },
+    {
+      "end_ms": 3105920,
+      "source_event_index": 484,
+      "start_ms": 3100400,
+      "text": "at the task of ML research. As a result the algorithm"
+    },
+    {
+      "end_ms": 3110560,
+      "source_event_index": 485,
+      "start_ms": 3105920,
+      "text": "itself becomes more and more superhuman. The other is, even if that doesn't happen,"
+    },
+    {
+      "end_ms": 3116800,
+      "source_event_index": 486,
+      "start_ms": 3110560,
+      "text": "if you have a single model—this is explicitly your vision—where instances of a model"
+    },
+    {
+      "end_ms": 3120800,
+      "source_event_index": 487,
+      "start_ms": 3116800,
+      "text": "which are deployed through the economy doing different jobs, learning how to do those jobs,"
+    },
+    {
+      "end_ms": 3125520,
+      "source_event_index": 488,
+      "start_ms": 3120800,
+      "text": "continually learning on the job, picking up all the skills that any human could pick up,"
+    },
+    {
+      "end_ms": 3130480,
+      "source_event_index": 489,
+      "start_ms": 3125520,
+      "text": "but picking them all up at the same time, and then amalgamating their learnings,"
+    },
+    {
+      "end_ms": 3135440,
+      "source_event_index": 490,
+      "start_ms": 3130480,
+      "text": "you basically have a model which functionally becomes superintelligent even without any sort"
+    },
+    {
+      "end_ms": 3140560,
+      "source_event_index": 491,
+      "start_ms": 3135440,
+      "text": "of recursive self-improvement in software. Because you now have one model that can do"
+    },
+    {
+      "end_ms": 3145040,
+      "source_event_index": 492,
+      "start_ms": 3140560,
+      "text": "every single job in the economy and humans can't merge our minds in the same way."
+    },
+    {
+      "end_ms": 3148640,
+      "source_event_index": 493,
+      "start_ms": 3145040,
+      "text": "So do you expect some sort of intelligence explosion from broad deployment?"
+    },
+    {
+      "end_ms": 3157280,
+      "source_event_index": 494,
+      "start_ms": 3148640,
+      "text": "I think that it is likely that we will have rapid economic growth."
+    },
+    {
+      "end_ms": 3166640,
+      "source_event_index": 495,
+      "start_ms": 3157280,
+      "text": "I think with broad deployment, there are two arguments you could make which are conflicting."
+    },
+    {
+      "end_ms": 3179120,
+      "source_event_index": 496,
+      "start_ms": 3166640,
+      "text": "One is that once indeed you get to a point where you have an AI that can learn to do things quickly"
+    },
+    {
+      "end_ms": 3187280,
+      "source_event_index": 497,
+      "start_ms": 3179120,
+      "text": "and you have many of them, then there will be a strong force to deploy them in the economy"
+    },
+    {
+      "end_ms": 3193360,
+      "source_event_index": 498,
+      "start_ms": 3187280,
+      "text": "unless there will be some kind of a regulation that stops it, which by the way there might be."
+    },
+    {
+      "end_ms": 3199120,
+      "source_event_index": 499,
+      "start_ms": 3193360,
+      "text": "But the idea of very rapid economic growth for some time,"
+    },
+    {
+      "end_ms": 3205440,
+      "source_event_index": 500,
+      "start_ms": 3199120,
+      "text": "I think it’s very possible from broad deployment. The question is how rapid it's going to be."
+    },
+    {
+      "end_ms": 3210720,
+      "source_event_index": 501,
+      "start_ms": 3205440,
+      "text": "I think this is hard to know because on the one hand you have this very efficient worker."
+    },
+    {
+      "end_ms": 3216160,
+      "source_event_index": 502,
+      "start_ms": 3210720,
+      "text": "On the other hand, the world is just really big and there's a lot of stuff,"
+    },
+    {
+      "end_ms": 3221600,
+      "source_event_index": 503,
+      "start_ms": 3216160,
+      "text": "and that stuff moves at a different speed. But then on the other hand, now the AI could…"
+    },
+    {
+      "end_ms": 3227920,
+      "source_event_index": 504,
+      "start_ms": 3221600,
+      "text": "So I think very rapid economic growth is possible. We will see all kinds of things like different"
+    },
+    {
+      "end_ms": 3231280,
+      "source_event_index": 505,
+      "start_ms": 3227920,
+      "text": "countries with different rules and the ones which have the friendlier rules, the"
+    },
+    {
+      "end_ms": 3310320,
+      "source_event_index": 506,
+      "start_ms": 3231280,
+      "text": "economic growth will be faster. Hard to predict. It seems to me that this is a very precarious"
+    },
+    {
+      "end_ms": 3314080,
+      "source_event_index": 507,
+      "start_ms": 3310320,
+      "text": "situation to be in. In the limit,"
+    },
+    {
+      "end_ms": 3317760,
+      "source_event_index": 508,
+      "start_ms": 3314080,
+      "text": "we know that this should be possible. If you have something that is as good"
+    },
+    {
+      "end_ms": 3324400,
+      "source_event_index": 509,
+      "start_ms": 3317760,
+      "text": "as a human at learning, but which can merge its brains—merge different instances in a way that"
+    },
+    {
+      "end_ms": 3328320,
+      "source_event_index": 510,
+      "start_ms": 3324400,
+      "text": "humans can't merge—already, this seems like a thing that should physically be possible."
+    },
+    {
+      "end_ms": 3330800,
+      "source_event_index": 511,
+      "start_ms": 3328320,
+      "text": "Humans are possible, digital computers are possible."
+    },
+    {
+      "end_ms": 3333440,
+      "source_event_index": 512,
+      "start_ms": 3330800,
+      "text": "You just need both of those combined to produce this thing."
+    },
+    {
+      "end_ms": 3340080,
+      "source_event_index": 513,
+      "start_ms": 3333440,
+      "text": "It also seems this kind of thing is extremely powerful."
+    },
+    {
+      "end_ms": 3345680,
+      "source_event_index": 514,
+      "start_ms": 3341440,
+      "text": "Economic growth is one way to put it. A Dyson sphere is a lot of economic growth."
+    },
+    {
+      "end_ms": 3350480,
+      "source_event_index": 515,
+      "start_ms": 3345680,
+      "text": "But another way to put it is that you will have, in potentially a very short period of time..."
+    },
+    {
+      "end_ms": 3355200,
+      "source_event_index": 516,
+      "start_ms": 3352080,
+      "text": "You hire people at SSI, and in six months, they're net productive, probably."
+    },
+    {
+      "end_ms": 3360640,
+      "source_event_index": 517,
+      "start_ms": 3356000,
+      "text": "A human learns really fast, and this thing is becoming smarter and smarter very fast."
+    },
+    {
+      "end_ms": 3365840,
+      "source_event_index": 518,
+      "start_ms": 3361200,
+      "text": "How do you think about making that go well? Why is SSI positioned to do that well?"
+    },
+    {
+      "end_ms": 3368160,
+      "source_event_index": 519,
+      "start_ms": 3365840,
+      "text": "What is SSI's plan there, is basically what I'm trying to ask."
+    },
+    {
+      "end_ms": 3382880,
+      "source_event_index": 520,
+      "start_ms": 3372160,
+      "text": "One of the ways in which my thinking has been changing is that I now place more importance on"
+    },
+    {
+      "end_ms": 3394960,
+      "source_event_index": 521,
+      "start_ms": 3382880,
+      "text": "AI being deployed incrementally and in advance. One very difficult thing about AI is that we are"
+    },
+    {
+      "end_ms": 3402480,
+      "source_event_index": 522,
+      "start_ms": 3394960,
+      "text": "talking about systems that don't yet exist and it's hard to imagine them."
+    },
+    {
+      "end_ms": 3412080,
+      "source_event_index": 523,
+      "start_ms": 3403600,
+      "text": "I think that one of the things that's happening is that in practice, it's very hard to feel the AGI."
+    },
+    {
+      "end_ms": 3421440,
+      "source_event_index": 524,
+      "start_ms": 3412080,
+      "text": "It's very hard to feel the AGI. We can talk about it, but imagine"
+    },
+    {
+      "end_ms": 3427840,
+      "source_event_index": 525,
+      "start_ms": 3421440,
+      "text": "having a conversation about how it is like to be old when you're old and frail."
+    },
+    {
+      "end_ms": 3432640,
+      "source_event_index": 526,
+      "start_ms": 3427840,
+      "text": "You can have a conversation, you can try to imagine it, but it's just hard, and you come"
+    },
+    {
+      "end_ms": 3442400,
+      "source_event_index": 527,
+      "start_ms": 3432640,
+      "text": "back to reality where that's not the case. I think that a lot of the issues around AGI"
+    },
+    {
+      "end_ms": 3450960,
+      "source_event_index": 528,
+      "start_ms": 3442400,
+      "text": "and its future power stem from the fact that it's very difficult to imagine."
+    },
+    {
+      "end_ms": 3457680,
+      "source_event_index": 529,
+      "start_ms": 3450960,
+      "text": "Future AI is going to be different. It's going to be powerful. Indeed, the whole problem,"
+    },
+    {
+      "end_ms": 3463360,
+      "source_event_index": 530,
+      "start_ms": 3457680,
+      "text": "what is the problem of AI and AGI? The whole problem is the power."
+    },
+    {
+      "end_ms": 3468320,
+      "source_event_index": 531,
+      "start_ms": 3463360,
+      "text": "The whole problem is the power. When the power is really big,"
+    },
+    {
+      "end_ms": 3473120,
+      "source_event_index": 532,
+      "start_ms": 3468320,
+      "text": "what's going to happen? One of the ways in which I've"
+    },
+    {
+      "end_ms": 3482320,
+      "source_event_index": 533,
+      "start_ms": 3473120,
+      "text": "changed my mind over the past year—and that change of mind, I'll hedge a little bit, may"
+    },
+    {
+      "end_ms": 3492960,
+      "source_event_index": 534,
+      "start_ms": 3482320,
+      "text": "back-propagate into the plans of our company—is that if it's hard to imagine, what do you do?"
+    },
+    {
+      "end_ms": 3496560,
+      "source_event_index": 535,
+      "start_ms": 3492960,
+      "text": "You’ve got to be showing the thing. You’ve got to be showing the thing."
+    },
+    {
+      "end_ms": 3504400,
+      "source_event_index": 536,
+      "start_ms": 3496560,
+      "text": "I maintain that most people who work on AI also can't imagine it because it's too different from"
+    },
+    {
+      "end_ms": 3511440,
+      "source_event_index": 537,
+      "start_ms": 3504400,
+      "text": "what people see on a day-to-day basis. I do maintain, here's something which"
+    },
+    {
+      "end_ms": 3520960,
+      "source_event_index": 538,
+      "start_ms": 3511440,
+      "text": "I predict will happen. This is a prediction. I maintain that as AI becomes more powerful,"
+    },
+    {
+      "end_ms": 3528320,
+      "source_event_index": 539,
+      "start_ms": 3520960,
+      "text": "people will change their behaviors. We will see all kinds of unprecedented"
+    },
+    {
+      "end_ms": 3536720,
+      "source_event_index": 540,
+      "start_ms": 3528320,
+      "text": "things which are not happening right now. I’ll give some examples. I think for better or worse,"
+    },
+    {
+      "end_ms": 3543120,
+      "source_event_index": 541,
+      "start_ms": 3537440,
+      "text": "the frontier companies will play a very important role in what happens, as will the government."
+    },
+    {
+      "end_ms": 3546800,
+      "source_event_index": 542,
+      "start_ms": 3543120,
+      "text": "The kind of things that I think you'll see, which you see the"
+    },
+    {
+      "end_ms": 3555920,
+      "source_event_index": 543,
+      "start_ms": 3546800,
+      "text": "beginnings of, are companies that are fierce competitors starting to collaborate on AI safety."
+    },
+    {
+      "end_ms": 3562880,
+      "source_event_index": 544,
+      "start_ms": 3555920,
+      "text": "You may have seen OpenAI and Anthropic doing a first small step, but that did not exist."
+    },
+    {
+      "end_ms": 3567360,
+      "source_event_index": 545,
+      "start_ms": 3562880,
+      "text": "That's something which I predicted in one of my talks about three years ago,"
+    },
+    {
+      "end_ms": 3570960,
+      "source_event_index": 546,
+      "start_ms": 3567360,
+      "text": "that such a thing will happen. I also maintain that as AI continues"
+    },
+    {
+      "end_ms": 3578320,
+      "source_event_index": 547,
+      "start_ms": 3570960,
+      "text": "to become more powerful, more visibly powerful, there will also be a desire from"
+    },
+    {
+      "end_ms": 3586160,
+      "source_event_index": 548,
+      "start_ms": 3578320,
+      "text": "governments and the public to do something. I think this is a very important force,"
+    },
+    {
+      "end_ms": 3591600,
+      "source_event_index": 549,
+      "start_ms": 3586160,
+      "text": "of showing the AI. That's number one. Number two, okay, so the AI is being"
+    },
+    {
+      "end_ms": 3599600,
+      "source_event_index": 550,
+      "start_ms": 3591600,
+      "text": "built. What needs to be done? One thing that I maintain that will happen is that right now,"
+    },
+    {
+      "end_ms": 3606560,
+      "source_event_index": 551,
+      "start_ms": 3599600,
+      "text": "people who are working on AI, I maintain that the AI doesn't feel powerful because of its mistakes."
+    },
+    {
+      "end_ms": 3610880,
+      "source_event_index": 552,
+      "start_ms": 3606560,
+      "text": "I do think that at some point the AI will start to feel powerful actually."
+    },
+    {
+      "end_ms": 3618160,
+      "source_event_index": 553,
+      "start_ms": 3610880,
+      "text": "I think when that happens, we will see a big change in the way all AI companies approach"
+    },
+    {
+      "end_ms": 3625680,
+      "source_event_index": 554,
+      "start_ms": 3618160,
+      "text": "safety. They'll become much more paranoid. I say this as a prediction that we will"
+    },
+    {
+      "end_ms": 3630320,
+      "source_event_index": 555,
+      "start_ms": 3625680,
+      "text": "see happen. We'll see if I'm right. But I think this is something that will happen because they"
+    },
+    {
+      "end_ms": 3634160,
+      "source_event_index": 556,
+      "start_ms": 3630320,
+      "text": "will see the AI becoming more powerful. Everything that's happening right now,"
+    },
+    {
+      "end_ms": 3642080,
+      "source_event_index": 557,
+      "start_ms": 3634160,
+      "text": "I maintain, is because people look at today's AI and it's hard to imagine the future AI."
+    },
+    {
+      "end_ms": 3649520,
+      "source_event_index": 558,
+      "start_ms": 3642640,
+      "text": "There is a third thing which needs to happen. I'm talking about it in broader terms,"
+    },
+    {
+      "end_ms": 3654640,
+      "source_event_index": 559,
+      "start_ms": 3649520,
+      "text": "not just from the perspective of SSI because you asked me about our company."
+    },
+    {
+      "end_ms": 3658400,
+      "source_event_index": 560,
+      "start_ms": 3654640,
+      "text": "The question is, what should the companies aspire to build?"
+    },
+    {
+      "end_ms": 3662160,
+      "source_event_index": 561,
+      "start_ms": 3658400,
+      "text": "What should they aspire to build? There has been one big idea that"
+    },
+    {
+      "end_ms": 3671120,
+      "source_event_index": 562,
+      "start_ms": 3664000,
+      "text": "everyone has been locked into, which is the self-improving AI. Why did it happen?"
+    },
+    {
+      "end_ms": 3677200,
+      "source_event_index": 563,
+      "start_ms": 3671120,
+      "text": "Because there are fewer ideas than companies. But I maintain that there is something that's"
+    },
+    {
+      "end_ms": 3681360,
+      "source_event_index": 564,
+      "start_ms": 3677200,
+      "text": "better to build, and I think that everyone will want that."
+    },
+    {
+      "end_ms": 3688880,
+      "source_event_index": 565,
+      "start_ms": 3681360,
+      "text": "It's the AI that's robustly aligned to care about sentient life specifically."
+    },
+    {
+      "end_ms": 3695280,
+      "source_event_index": 566,
+      "start_ms": 3689680,
+      "text": "I think in particular, there's a case to be made that it will be easier to build"
+    },
+    {
+      "end_ms": 3700640,
+      "source_event_index": 567,
+      "start_ms": 3695280,
+      "text": "an AI that cares about sentient life than an AI that cares about human life alone,"
+    },
+    {
+      "end_ms": 3706080,
+      "source_event_index": 568,
+      "start_ms": 3700640,
+      "text": "because the AI itself will be sentient. And if you think about things like mirror"
+    },
+    {
+      "end_ms": 3713200,
+      "source_event_index": 569,
+      "start_ms": 3706080,
+      "text": "neurons and human empathy for animals, which you might argue it's not big enough, but it exists."
+    },
+    {
+      "end_ms": 3718240,
+      "source_event_index": 570,
+      "start_ms": 3713200,
+      "text": "I think it's an emergent property from the fact that we model others with the"
+    },
+    {
+      "end_ms": 3723680,
+      "source_event_index": 571,
+      "start_ms": 3718240,
+      "text": "same circuit that we use to model ourselves, because that's the most efficient thing to do."
+    },
+    {
+      "end_ms": 3728880,
+      "source_event_index": 572,
+      "start_ms": 3723680,
+      "text": "So even if you got an AI to care about sentient beings—and it's not actually"
+    },
+    {
+      "end_ms": 3730720,
+      "source_event_index": 573,
+      "start_ms": 3728880,
+      "text": "clear to me that that's what you should try to do if you solved"
+    },
+    {
+      "end_ms": 3736480,
+      "source_event_index": 574,
+      "start_ms": 3730720,
+      "text": "alignment—it would still be the case that most sentient beings will be AIs."
+    },
+    {
+      "end_ms": 3739360,
+      "source_event_index": 575,
+      "start_ms": 3736480,
+      "text": "There will be trillions, eventually quadrillions, of AIs."
+    },
+    {
+      "end_ms": 3742400,
+      "source_event_index": 576,
+      "start_ms": 3739360,
+      "text": "Humans will be a very small fraction of sentient beings."
+    },
+    {
+      "end_ms": 3752480,
+      "source_event_index": 577,
+      "start_ms": 3743280,
+      "text": "So it's not clear to me if the goal is some kind of human control over this future civilization,"
+    },
+    {
+      "end_ms": 3759680,
+      "source_event_index": 578,
+      "start_ms": 3752480,
+      "text": "that this is the best criterion. It's true. It's possible it's not"
+    },
+    {
+      "end_ms": 3773120,
+      "source_event_index": 579,
+      "start_ms": 3759680,
+      "text": "the best criterion. I'll say two things. Number one, care for sentient life, I think there is"
+    },
+    {
+      "end_ms": 3781120,
+      "source_event_index": 580,
+      "start_ms": 3773120,
+      "text": "merit to it. It should be considered. I think it would be helpful if there was some kind of short"
+    },
+    {
+      "end_ms": 3790240,
+      "source_event_index": 581,
+      "start_ms": 3781120,
+      "text": "list of ideas that the companies, when they are in this situation, could use. That’s number two."
+    },
+    {
+      "end_ms": 3796480,
+      "source_event_index": 582,
+      "start_ms": 3790240,
+      "text": "Number three, I think it would be really materially helpful if the power of the"
+    },
+    {
+      "end_ms": 3803680,
+      "source_event_index": 583,
+      "start_ms": 3796480,
+      "text": "most powerful superintelligence was somehow capped because it would address a lot of these concerns."
+    },
+    {
+      "end_ms": 3809680,
+      "source_event_index": 584,
+      "start_ms": 3803680,
+      "text": "The question of how to do it, I'm not sure, but I think that would be materially helpful when you're"
+    },
+    {
+      "end_ms": 3815360,
+      "source_event_index": 585,
+      "start_ms": 3809680,
+      "text": "talking about really, really powerful systems. Before we continue the alignment discussion,"
+    },
+    {
+      "end_ms": 3818560,
+      "source_event_index": 586,
+      "start_ms": 3815360,
+      "text": "I want to double-click on that. How much room is there at the top?"
+    },
+    {
+      "end_ms": 3824400,
+      "source_event_index": 587,
+      "start_ms": 3818560,
+      "text": "How do you think about superintelligence? Do you think, using this learning efficiency idea,"
+    },
+    {
+      "end_ms": 3828880,
+      "source_event_index": 588,
+      "start_ms": 3824400,
+      "text": "maybe it is just extremely fast at learning new skills or new knowledge?"
+    },
+    {
+      "end_ms": 3834320,
+      "source_event_index": 589,
+      "start_ms": 3828880,
+      "text": "Does it just have a bigger pool of strategies? Is there a single cohesive \"it\" in the"
+    },
+    {
+      "end_ms": 3841600,
+      "source_event_index": 590,
+      "start_ms": 3834320,
+      "text": "center that's more powerful or bigger? If so, do you imagine that this will be"
+    },
+    {
+      "end_ms": 3845120,
+      "source_event_index": 591,
+      "start_ms": 3841600,
+      "text": "sort of godlike in comparison to the rest of human civilization, or does it just feel like another"
+    },
+    {
+      "end_ms": 3850000,
+      "source_event_index": 592,
+      "start_ms": 3845120,
+      "text": "agent, or another cluster of agents? This is an area where different"
+    },
+    {
+      "end_ms": 3854800,
+      "source_event_index": 593,
+      "start_ms": 3850000,
+      "text": "people have different intuitions. I think it will be very powerful, for sure."
+    },
+    {
+      "end_ms": 3863200,
+      "source_event_index": 594,
+      "start_ms": 3856240,
+      "text": "What I think is most likely to happen is that there will be multiple such"
+    },
+    {
+      "end_ms": 3873280,
+      "source_event_index": 595,
+      "start_ms": 3863200,
+      "text": "AIs being created roughly at the same time. I think that if the cluster is big enough—like"
+    },
+    {
+      "end_ms": 3879040,
+      "source_event_index": 596,
+      "start_ms": 3873280,
+      "text": "if the cluster is literally continent-sized—that thing could be really powerful, indeed."
+    },
+    {
+      "end_ms": 3884720,
+      "source_event_index": 597,
+      "start_ms": 3879040,
+      "text": "If you literally have a continent-sized cluster, those AIs can be very powerful."
+    },
+    {
+      "end_ms": 3891680,
+      "source_event_index": 598,
+      "start_ms": 3886640,
+      "text": "All I can tell you is that if you're talking about extremely powerful AIs,"
+    },
+    {
+      "end_ms": 3899760,
+      "source_event_index": 599,
+      "start_ms": 3891680,
+      "text": "truly dramatically powerful, it would be nice if they could be restrained in some ways or if there"
+    },
+    {
+      "end_ms": 3911200,
+      "source_event_index": 600,
+      "start_ms": 3899760,
+      "text": "were some kind of agreement or something. What is the concern of superintelligence?"
+    },
+    {
+      "end_ms": 3916800,
+      "source_event_index": 601,
+      "start_ms": 3911200,
+      "text": "What is one way to explain the concern? If you imagine a system that is sufficiently"
+    },
+    {
+      "end_ms": 3923440,
+      "source_event_index": 602,
+      "start_ms": 3916800,
+      "text": "powerful, really sufficiently powerful—and you could say you need to do something sensible like"
+    },
+    {
+      "end_ms": 3929440,
+      "source_event_index": 603,
+      "start_ms": 3923440,
+      "text": "care for sentient life in a very single-minded way—we might not like the results. That's really"
+    },
+    {
+      "end_ms": 3935840,
+      "source_event_index": 604,
+      "start_ms": 3929440,
+      "text": "what it is. Maybe, by the way, the answer is that you do not build an RL agent in the usual"
+    },
+    {
+      "end_ms": 3942800,
+      "source_event_index": 605,
+      "start_ms": 3935840,
+      "text": "sense. I'll point several things out. I think human beings are semi-RL agents."
+    },
+    {
+      "end_ms": 3948160,
+      "source_event_index": 606,
+      "start_ms": 3943600,
+      "text": "We pursue a reward, and then the emotions or whatever make us tire out of the"
+    },
+    {
+      "end_ms": 3955760,
+      "source_event_index": 607,
+      "start_ms": 3948160,
+      "text": "reward and we pursue a different reward. The market is a very short-sighted kind of"
+    },
+    {
+      "end_ms": 3959600,
+      "source_event_index": 608,
+      "start_ms": 3955760,
+      "text": "agent. Evolution is the same. Evolution is very intelligent in some ways,"
+    },
+    {
+      "end_ms": 3963040,
+      "source_event_index": 609,
+      "start_ms": 3959600,
+      "text": "but very dumb in other ways. The government has been designed"
+    },
+    {
+      "end_ms": 3968320,
+      "source_event_index": 610,
+      "start_ms": 3963040,
+      "text": "to be a never-ending fight between three parts, which has an effect."
+    },
+    {
+      "end_ms": 3973120,
+      "source_event_index": 611,
+      "start_ms": 3968320,
+      "text": "So I think things like this. Another thing that makes this discussion"
+    },
+    {
+      "end_ms": 3979600,
+      "source_event_index": 612,
+      "start_ms": 3973120,
+      "text": "difficult is that we are talking about systems that don't exist, that we don't know how to build."
+    },
+    {
+      "end_ms": 3981760,
+      "source_event_index": 613,
+      "start_ms": 3979600,
+      "text": "That’s the other thing and that’s actually my belief."
+    },
+    {
+      "end_ms": 3986560,
+      "source_event_index": 614,
+      "start_ms": 3981760,
+      "text": "I think what people are doing right now will go some distance and then peter out."
+    },
+    {
+      "end_ms": 3990080,
+      "source_event_index": 615,
+      "start_ms": 3986560,
+      "text": "It will continue to improve, but it will also not be \"it\"."
+    },
+    {
+      "end_ms": 3998960,
+      "source_event_index": 616,
+      "start_ms": 3990080,
+      "text": "The \"It\" we don't know how to build, and a lot hinges on understanding reliable"
+    },
+    {
+      "end_ms": 4007120,
+      "source_event_index": 617,
+      "start_ms": 3998960,
+      "text": "generalization. I’ll say another thing. One of the things that you could say about"
+    },
+    {
+      "end_ms": 4015760,
+      "source_event_index": 618,
+      "start_ms": 4007120,
+      "text": "what causes alignment to be difficult is that your ability to learn human values is fragile."
+    },
+    {
+      "end_ms": 4020080,
+      "source_event_index": 619,
+      "start_ms": 4015760,
+      "text": "Then your ability to optimize them is fragile. You actually learn to optimize them."
+    },
+    {
+      "end_ms": 4026640,
+      "source_event_index": 620,
+      "start_ms": 4020080,
+      "text": "And can't you say, \"Are these not all instances of unreliable generalization?\""
+    },
+    {
+      "end_ms": 4030080,
+      "source_event_index": 621,
+      "start_ms": 4026640,
+      "text": "Why is it that human beings appear to generalize so much better?"
+    },
+    {
+      "end_ms": 4033360,
+      "source_event_index": 622,
+      "start_ms": 4030080,
+      "text": "What if generalization was much better? What would happen in this case? What would"
+    },
+    {
+      "end_ms": 4038560,
+      "source_event_index": 623,
+      "start_ms": 4033360,
+      "text": "be the effect? But those questions are right now still unanswerable."
+    },
+    {
+      "end_ms": 4044640,
+      "source_event_index": 624,
+      "start_ms": 4039200,
+      "text": "How does one think about what AI going well looks like?"
+    },
+    {
+      "end_ms": 4048480,
+      "source_event_index": 625,
+      "start_ms": 4044640,
+      "text": "You've scoped out how AI might evolve. We'll have these sort of continual"
+    },
+    {
+      "end_ms": 4053600,
+      "source_event_index": 626,
+      "start_ms": 4048480,
+      "text": "learning agents. AI will be very powerful. Maybe there will be many different AIs."
+    },
+    {
+      "end_ms": 4060800,
+      "source_event_index": 627,
+      "start_ms": 4053600,
+      "text": "How do you think about lots of continent-sized compute intelligences going around? How dangerous"
+    },
+    {
+      "end_ms": 4069840,
+      "source_event_index": 628,
+      "start_ms": 4060800,
+      "text": "is that? How do we make that less dangerous? And how do we do that in a way that protects an"
+    },
+    {
+      "end_ms": 4076240,
+      "source_event_index": 629,
+      "start_ms": 4069840,
+      "text": "equilibrium where there might be misaligned AIs out there and bad actors out there?"
+    },
+    {
+      "end_ms": 4080960,
+      "source_event_index": 630,
+      "start_ms": 4076240,
+      "text": "Here’s one reason why I liked \"AI that cares for sentient life\"."
+    },
+    {
+      "end_ms": 4089520,
+      "source_event_index": 631,
+      "start_ms": 4080960,
+      "text": "We can debate on whether it's good or bad. But if the first N of these dramatic"
+    },
+    {
+      "end_ms": 4097520,
+      "source_event_index": 632,
+      "start_ms": 4089520,
+      "text": "systems do care for, love, humanity or something, care for sentient life,"
+    },
+    {
+      "end_ms": 4103840,
+      "source_event_index": 633,
+      "start_ms": 4097520,
+      "text": "obviously this also needs to be achieved. This needs to be achieved. So if this is achieved"
+    },
+    {
+      "end_ms": 4112960,
+      "source_event_index": 634,
+      "start_ms": 4103840,
+      "text": "by the first N of those systems, then I can see it go well, at least for quite some time."
+    },
+    {
+      "end_ms": 4116560,
+      "source_event_index": 635,
+      "start_ms": 4112960,
+      "text": "Then there is the question of what happens in the long run."
+    },
+    {
+      "end_ms": 4124960,
+      "source_event_index": 636,
+      "start_ms": 4116560,
+      "text": "How do you achieve a long-run equilibrium? I think that there, there is an answer as well."
+    },
+    {
+      "end_ms": 4129200,
+      "source_event_index": 637,
+      "start_ms": 4124960,
+      "text": "I don't like this answer, but it needs to be considered."
+    },
+    {
+      "end_ms": 4137120,
+      "source_event_index": 638,
+      "start_ms": 4131760,
+      "text": "In the long run, you might say, \"Okay, if you have a world where powerful AIs exist,"
+    },
+    {
+      "end_ms": 4141200,
+      "source_event_index": 639,
+      "start_ms": 4137120,
+      "text": "in the short term, you could say you have universal high income."
+    },
+    {
+      "end_ms": 4144880,
+      "source_event_index": 640,
+      "start_ms": 4141200,
+      "text": "You have universal high income and we're all doing well.\""
+    },
+    {
+      "end_ms": 4151440,
+      "source_event_index": 641,
+      "start_ms": 4144880,
+      "text": "But what do the Buddhists say? \"Change is the only constant.\" Things change. There is some"
+    },
+    {
+      "end_ms": 4158160,
+      "source_event_index": 642,
+      "start_ms": 4151440,
+      "text": "kind of government, political structure thing, and it changes because these things have a shelf life."
+    },
+    {
+      "end_ms": 4162560,
+      "source_event_index": 643,
+      "start_ms": 4158720,
+      "text": "Some new government thing comes up and it functions, and then after some time"
+    },
+    {
+      "end_ms": 4165600,
+      "source_event_index": 644,
+      "start_ms": 4162560,
+      "text": "it stops functioning. That's something that"
+    },
+    {
+      "end_ms": 4172240,
+      "source_event_index": 645,
+      "start_ms": 4165600,
+      "text": "we see happening all the time. So I think for the long-run equilibrium,"
+    },
+    {
+      "end_ms": 4178800,
+      "source_event_index": 646,
+      "start_ms": 4172240,
+      "text": "one approach is that you could say maybe every person will have an AI that will do their bidding,"
+    },
+    {
+      "end_ms": 4181040,
+      "source_event_index": 647,
+      "start_ms": 4178800,
+      "text": "and that's good. If that could be"
+    },
+    {
+      "end_ms": 4187040,
+      "source_event_index": 648,
+      "start_ms": 4181040,
+      "text": "maintained indefinitely, that's true. But the downside with that is then the AI"
+    },
+    {
+      "end_ms": 4195840,
+      "source_event_index": 649,
+      "start_ms": 4187040,
+      "text": "goes and earns money for the person and advocates for their needs in the political sphere, and maybe"
+    },
+    {
+      "end_ms": 4199520,
+      "source_event_index": 650,
+      "start_ms": 4195840,
+      "text": "then writes a little report saying, \"Okay, here's what I've done, here's the situation,\""
+    },
+    {
+      "end_ms": 4205760,
+      "source_event_index": 651,
+      "start_ms": 4199520,
+      "text": "and the person says, \"Great, keep it up.\" But the person is no longer a participant."
+    },
+    {
+      "end_ms": 4208720,
+      "source_event_index": 652,
+      "start_ms": 4205760,
+      "text": "Then you can say that's a precarious place to be in."
+    },
+    {
+      "end_ms": 4216880,
+      "source_event_index": 653,
+      "start_ms": 4210480,
+      "text": "I'm going to preface by saying I don't like this solution, but it is a solution."
+    },
+    {
+      "end_ms": 4223680,
+      "source_event_index": 654,
+      "start_ms": 4219040,
+      "text": "The solution is if people become part-AI with some kind of Neuralink++."
+    },
+    {
+      "end_ms": 4227920,
+      "source_event_index": 655,
+      "start_ms": 4223680,
+      "text": "Because what will happen as a result is that now the AI understands something,"
+    },
+    {
+      "end_ms": 4234160,
+      "source_event_index": 656,
+      "start_ms": 4227920,
+      "text": "and we understand it too, because now the understanding is transmitted wholesale."
+    },
+    {
+      "end_ms": 4241920,
+      "source_event_index": 657,
+      "start_ms": 4234160,
+      "text": "So now if the AI is in some situation, you are involved in that situation yourself fully."
+    },
+    {
+      "end_ms": 4249840,
+      "source_event_index": 658,
+      "start_ms": 4241920,
+      "text": "I think this is the answer to the equilibrium. I wonder if the fact that emotions which were"
+    },
+    {
+      "end_ms": 4256160,
+      "source_event_index": 659,
+      "start_ms": 4249840,
+      "text": "developed millions—or in many cases, billions—of years ago in a totally different environment are"
+    },
+    {
+      "end_ms": 4263520,
+      "source_event_index": 660,
+      "start_ms": 4256160,
+      "text": "still guiding our actions so strongly is an example of alignment success."
+    },
+    {
+      "end_ms": 4271520,
+      "source_event_index": 661,
+      "start_ms": 4263520,
+      "text": "To spell out what I mean—I don’t know whether it’s more accurate to call it"
+    },
+    {
+      "end_ms": 4275760,
+      "source_event_index": 662,
+      "start_ms": 4271520,
+      "text": "a value function or reward function—but the brainstem has a directive where it's saying,"
+    },
+    {
+      "end_ms": 4279600,
+      "source_event_index": 663,
+      "start_ms": 4275760,
+      "text": "\"Mate with somebody who's more successful.\" The cortex is the part that understands"
+    },
+    {
+      "end_ms": 4285200,
+      "source_event_index": 664,
+      "start_ms": 4279600,
+      "text": "what success means in the modern context. But the brainstem is able to align the cortex"
+    },
+    {
+      "end_ms": 4289840,
+      "source_event_index": 665,
+      "start_ms": 4285200,
+      "text": "and say, \"However you recognize success to be—and I’m not smart enough to understand what that is—"
+    },
+    {
+      "end_ms": 4296560,
+      "source_event_index": 666,
+      "start_ms": 4289840,
+      "text": "you're still going to pursue this directive.\" I think there's a more general point."
+    },
+    {
+      "end_ms": 4306960,
+      "source_event_index": 667,
+      "start_ms": 4296560,
+      "text": "I think it's actually really mysterious how evolution encodes high-level desires."
+    },
+    {
+      "end_ms": 4311920,
+      "source_event_index": 668,
+      "start_ms": 4306960,
+      "text": "It's pretty easy to understand how evolution would endow us with the"
+    },
+    {
+      "end_ms": 4318400,
+      "source_event_index": 669,
+      "start_ms": 4311920,
+      "text": "desire for food that smells good because smell is a chemical, so just pursue that chemical."
+    },
+    {
+      "end_ms": 4322800,
+      "source_event_index": 670,
+      "start_ms": 4318400,
+      "text": "It's very easy to imagine evolution doing that thing."
+    },
+    {
+      "end_ms": 4328880,
+      "source_event_index": 671,
+      "start_ms": 4322800,
+      "text": "But evolution also has endowed us with all these social desires."
+    },
+    {
+      "end_ms": 4332720,
+      "source_event_index": 672,
+      "start_ms": 4328880,
+      "text": "We really care about being seen positively by society."
+    },
+    {
+      "end_ms": 4339760,
+      "source_event_index": 673,
+      "start_ms": 4332720,
+      "text": "We care about being in good standing. All these social intuitions that we have,"
+    },
+    {
+      "end_ms": 4346240,
+      "source_event_index": 674,
+      "start_ms": 4339760,
+      "text": "I feel strongly that they're baked in. I don't know how evolution did it"
+    },
+    {
+      "end_ms": 4349840,
+      "source_event_index": 675,
+      "start_ms": 4346240,
+      "text": "because it's a high-level concept that's represented in the brain."
+    },
+    {
+      "end_ms": 4360880,
+      "source_event_index": 676,
+      "start_ms": 4351360,
+      "text": "Let’s say you care about some social thing, it's not a low-level signal like smell."
+    },
+    {
+      "end_ms": 4366320,
+      "source_event_index": 677,
+      "start_ms": 4360880,
+      "text": "It's not something for which there is a sensor. The brain needs to do a lot of processing to"
+    },
+    {
+      "end_ms": 4371440,
+      "source_event_index": 678,
+      "start_ms": 4366320,
+      "text": "piece together lots of bits of information to understand what's going on socially."
+    },
+    {
+      "end_ms": 4376640,
+      "source_event_index": 679,
+      "start_ms": 4371440,
+      "text": "Somehow evolution said, \"That's what you should care about.\" How did it do it? It did it quickly,"
+    },
+    {
+      "end_ms": 4384400,
+      "source_event_index": 680,
+      "start_ms": 4376640,
+      "text": "too. All these sophisticated social things that we care about, I think they evolved pretty recently."
+    },
+    {
+      "end_ms": 4388560,
+      "source_event_index": 681,
+      "start_ms": 4384400,
+      "text": "Evolution had an easy time hard-coding this high-level desire."
+    },
+    {
+      "end_ms": 4396000,
+      "source_event_index": 682,
+      "start_ms": 4392000,
+      "text": "I'm unaware of a good hypothesis for how it's done."
+    },
+    {
+      "end_ms": 4403920,
+      "source_event_index": 683,
+      "start_ms": 4396000,
+      "text": "I had some ideas I was kicking around, but none of them are satisfying."
+    },
+    {
+      "end_ms": 4409680,
+      "source_event_index": 684,
+      "start_ms": 4404560,
+      "text": "What's especially impressive is it was desire that you learned in your lifetime, it makes sense"
+    },
+    {
+      "end_ms": 4412560,
+      "source_event_index": 685,
+      "start_ms": 4409680,
+      "text": "because your brain is intelligent. It makes sense why you would"
+    },
+    {
+      "end_ms": 4418880,
+      "source_event_index": 686,
+      "start_ms": 4412560,
+      "text": "be able to learn intelligent desires. Maybe this is not your point, but one way"
+    },
+    {
+      "end_ms": 4424240,
+      "source_event_index": 687,
+      "start_ms": 4418880,
+      "text": "to understand it is that the desire is built into the genome, and the genome is not intelligent."
+    },
+    {
+      "end_ms": 4430160,
+      "source_event_index": 688,
+      "start_ms": 4424240,
+      "text": "But you're somehow able to describe this feature. It's not even clear how you define that feature,"
+    },
+    {
+      "end_ms": 4435520,
+      "source_event_index": 689,
+      "start_ms": 4430160,
+      "text": "and you can build it into the genes. Essentially, or maybe I'll put it differently."
+    },
+    {
+      "end_ms": 4441280,
+      "source_event_index": 690,
+      "start_ms": 4435520,
+      "text": "If you think about the tools that are available to the genome, it says,"
+    },
+    {
+      "end_ms": 4445760,
+      "source_event_index": 691,
+      "start_ms": 4441280,
+      "text": "\"Okay, here's a recipe for building a brain.\" You could say, \"Here is a recipe for connecting"
+    },
+    {
+      "end_ms": 4450560,
+      "source_event_index": 692,
+      "start_ms": 4445760,
+      "text": "the dopamine neurons to the smell sensor.\" And if the smell is a certain kind"
+    },
+    {
+      "end_ms": 4455680,
+      "source_event_index": 693,
+      "start_ms": 4450560,
+      "text": "of good smell, you want to eat that. I could imagine the genome doing that."
+    },
+    {
+      "end_ms": 4461120,
+      "source_event_index": 694,
+      "start_ms": 4455680,
+      "text": "I'm claiming that it is harder to imagine. It's harder to imagine the genome saying"
+    },
+    {
+      "end_ms": 4468080,
+      "source_event_index": 695,
+      "start_ms": 4461120,
+      "text": "you should care about some complicated computation that your entire brain, a big chunk of your brain,"
+    },
+    {
+      "end_ms": 4473760,
+      "source_event_index": 696,
+      "start_ms": 4468080,
+      "text": "does. That's all I'm claiming. I can tell you a speculation of how it could be done."
+    },
+    {
+      "end_ms": 4477760,
+      "source_event_index": 697,
+      "start_ms": 4473760,
+      "text": "Let me offer a speculation, and I'll explain why the speculation is probably false."
+    },
+    {
+      "end_ms": 4492080,
+      "source_event_index": 698,
+      "start_ms": 4477760,
+      "text": "So the brain has brain regions. We have our cortex. It has all those brain regions."
+    },
+    {
+      "end_ms": 4497040,
+      "source_event_index": 699,
+      "start_ms": 4492080,
+      "text": "The cortex is uniform, but the brain regions and the neurons in the cortex"
+    },
+    {
+      "end_ms": 4501120,
+      "source_event_index": 700,
+      "start_ms": 4497040,
+      "text": "kind of speak to their neighbors mostly. That explains why you get brain regions."
+    },
+    {
+      "end_ms": 4504640,
+      "source_event_index": 701,
+      "start_ms": 4501120,
+      "text": "Because if you want to do some kind of speech processing, all the neurons that"
+    },
+    {
+      "end_ms": 4508000,
+      "source_event_index": 702,
+      "start_ms": 4504640,
+      "text": "do speech need to talk to each other. And because neurons can only speak to"
+    },
+    {
+      "end_ms": 4511520,
+      "source_event_index": 703,
+      "start_ms": 4508000,
+      "text": "their nearby neighbors, for the most part, it has to be a region."
+    },
+    {
+      "end_ms": 4515280,
+      "source_event_index": 704,
+      "start_ms": 4511520,
+      "text": "All the regions are mostly located in the same place from person to person."
+    },
+    {
+      "end_ms": 4521360,
+      "source_event_index": 705,
+      "start_ms": 4515280,
+      "text": "So maybe evolution hard-coded literally a location on the brain."
+    },
+    {
+      "end_ms": 4527920,
+      "source_event_index": 706,
+      "start_ms": 4521360,
+      "text": "So it says, \"Oh, when the GPS coordinates of the brain such and such, when that fires,"
+    },
+    {
+      "end_ms": 4530720,
+      "source_event_index": 707,
+      "start_ms": 4527920,
+      "text": "that's what you should care about.\" Maybe that's what evolution did because"
+    },
+    {
+      "end_ms": 4536000,
+      "source_event_index": 708,
+      "start_ms": 4530720,
+      "text": "that would be within the toolkit of evolution. Yeah, although there are examples where,"
+    },
+    {
+      "end_ms": 4544160,
+      "source_event_index": 709,
+      "start_ms": 4536000,
+      "text": "for example, people who are born blind have that area of their cortex adopted by another sense."
+    },
+    {
+      "end_ms": 4553200,
+      "source_event_index": 710,
+      "start_ms": 4544960,
+      "text": "I have no idea, but I'd be surprised if the desires or the reward functions which require a"
+    },
+    {
+      "end_ms": 4558720,
+      "source_event_index": 711,
+      "start_ms": 4553200,
+      "text": "visual signal no longer worked for people who have their different areas of their cortex co-opted."
+    },
+    {
+      "end_ms": 4565680,
+      "source_event_index": 712,
+      "start_ms": 4558720,
+      "text": "For example, if you no longer have vision, can you still feel the sense that I want people"
+    },
+    {
+      "end_ms": 4570000,
+      "source_event_index": 713,
+      "start_ms": 4565680,
+      "text": "around me to like me and so forth, which usually there are also visual cues for."
+    },
+    {
+      "end_ms": 4574320,
+      "source_event_index": 714,
+      "start_ms": 4570000,
+      "text": "I fully agree with that. I think there's an even stronger counterargument to this theory."
+    },
+    {
+      "end_ms": 4582560,
+      "source_event_index": 715,
+      "start_ms": 4576880,
+      "text": "There are people who get half of their brains removed in childhood,"
+    },
+    {
+      "end_ms": 4587760,
+      "source_event_index": 716,
+      "start_ms": 4583360,
+      "text": "and they still have all their brain regions. But they all somehow move to just one hemisphere,"
+    },
+    {
+      "end_ms": 4592240,
+      "source_event_index": 717,
+      "start_ms": 4587760,
+      "text": "which suggests that the brain regions, their location is not fixed and so"
+    },
+    {
+      "end_ms": 4594240,
+      "source_event_index": 718,
+      "start_ms": 4592240,
+      "text": "that theory is not true. It would have been cool"
+    },
+    {
+      "end_ms": 4597680,
+      "source_event_index": 719,
+      "start_ms": 4594240,
+      "text": "if it was true, but it's not. So I think that's a mystery."
+    },
+    {
+      "end_ms": 4603600,
+      "source_event_index": 720,
+      "start_ms": 4597680,
+      "text": "But it's an interesting mystery. The fact is that somehow evolution was able to endow us"
+    },
+    {
+      "end_ms": 4609840,
+      "source_event_index": 721,
+      "start_ms": 4603600,
+      "text": "to care about social stuff very, very reliably. Even people who have all kinds of strange mental"
+    },
+    {
+      "end_ms": 4614240,
+      "source_event_index": 722,
+      "start_ms": 4609840,
+      "text": "conditions and deficiencies and emotional problems tend to care about this also."
+    },
+    {
+      "end_ms": 4698080,
+      "source_event_index": 723,
+      "start_ms": 4693360,
+      "text": "What is SSI planning on doing differently? Presumably your plan is to be one of the"
+    },
+    {
+      "end_ms": 4707120,
+      "source_event_index": 724,
+      "start_ms": 4698080,
+      "text": "frontier companies when this time arrives. Presumably you started SSI because you're like,"
+    },
+    {
+      "end_ms": 4710720,
+      "source_event_index": 725,
+      "start_ms": 4707120,
+      "text": "\"I think I have a way of approaching how to do this safely in a way that the other"
+    },
+    {
+      "end_ms": 4717760,
+      "source_event_index": 726,
+      "start_ms": 4710720,
+      "text": "companies don't.\" What is that difference? The way I would describe it is that there"
+    },
+    {
+      "end_ms": 4723040,
+      "source_event_index": 727,
+      "start_ms": 4717760,
+      "text": "are some ideas that I think are promising and I want to investigate them and see if they"
+    },
+    {
+      "end_ms": 4728960,
+      "source_event_index": 728,
+      "start_ms": 4723040,
+      "text": "are indeed promising or not. It's really that simple. It's an attempt. If the ideas turn out"
+    },
+    {
+      "end_ms": 4741040,
+      "source_event_index": 729,
+      "start_ms": 4728960,
+      "text": "to be correct—these ideas that we discussed around understanding generalization—then I"
+    },
+    {
+      "end_ms": 4745200,
+      "source_event_index": 730,
+      "start_ms": 4741040,
+      "text": "think we will have something worthy. Will they turn out to be correct? We"
+    },
+    {
+      "end_ms": 4750720,
+      "source_event_index": 731,
+      "start_ms": 4745200,
+      "text": "are doing research. We are squarely an \"age of research\" company. We are making progress. We've"
+    },
+    {
+      "end_ms": 4754720,
+      "source_event_index": 732,
+      "start_ms": 4750720,
+      "text": "actually made quite good progress over the past year, but we need to keep making more progress,"
+    },
+    {
+      "end_ms": 4765920,
+      "source_event_index": 733,
+      "start_ms": 4754720,
+      "text": "more research. That's how I see it. I see it as an attempt to be a voice and a participant."
+    },
+    {
+      "end_ms": 4777440,
+      "source_event_index": 734,
+      "start_ms": 4769840,
+      "text": "Your cofounder and previous CEO left to go to Meta recently, and people have asked, \"Well,"
+    },
+    {
+      "end_ms": 4780960,
+      "source_event_index": 735,
+      "start_ms": 4777440,
+      "text": "if there were a lot of breakthroughs being made, that seems like a thing that should"
+    },
+    {
+      "end_ms": 4789200,
+      "source_event_index": 736,
+      "start_ms": 4780960,
+      "text": "have been unlikely.\" I wonder how you respond. For this, I will simply remind a few facts that"
+    },
+    {
+      "end_ms": 4792640,
+      "source_event_index": 737,
+      "start_ms": 4789200,
+      "text": "may have been forgotten. I think these facts which"
+    },
+    {
+      "end_ms": 4799200,
+      "source_event_index": 738,
+      "start_ms": 4792640,
+      "text": "provide the context explain the situation. The context was that we were fundraising at"
+    },
+    {
+      "end_ms": 4810720,
+      "source_event_index": 739,
+      "start_ms": 4799200,
+      "text": "a $32 billion valuation, and then Meta came in and offered to acquire us, and I said no."
+    },
+    {
+      "end_ms": 4819920,
+      "source_event_index": 740,
+      "start_ms": 4810720,
+      "text": "But my former cofounder in some sense said yes. As a result, he also was able to enjoy a lot of"
+    },
+    {
+      "end_ms": 4824880,
+      "source_event_index": 741,
+      "start_ms": 4819920,
+      "text": "near-term liquidity, and he was the only person from SSI to join Meta."
+    },
+    {
+      "end_ms": 4831200,
+      "source_event_index": 742,
+      "start_ms": 4825440,
+      "text": "It sounds like SSI's plan is to be a company that is at the frontier when you get to this"
+    },
+    {
+      "end_ms": 4835600,
+      "source_event_index": 743,
+      "start_ms": 4831200,
+      "text": "very important period in human history where you have superhuman intelligence."
+    },
+    {
+      "end_ms": 4839360,
+      "source_event_index": 744,
+      "start_ms": 4835600,
+      "text": "You have these ideas about how to make superhuman intelligence go well."
+    },
+    {
+      "end_ms": 4842480,
+      "source_event_index": 745,
+      "start_ms": 4839360,
+      "text": "But other companies will be trying their own ideas."
+    },
+    {
+      "end_ms": 4848400,
+      "source_event_index": 746,
+      "start_ms": 4842480,
+      "text": "What distinguishes SSI's approach to making superintelligence go well?"
+    },
+    {
+      "end_ms": 4854080,
+      "source_event_index": 747,
+      "start_ms": 4848400,
+      "text": "The main thing that distinguishes SSI is its technical approach."
+    },
+    {
+      "end_ms": 4861520,
+      "source_event_index": 748,
+      "start_ms": 4854880,
+      "text": "We have a different technical approach that I think is worthy and we are pursuing it."
+    },
+    {
+      "end_ms": 4866160,
+      "source_event_index": 749,
+      "start_ms": 4861520,
+      "text": "I maintain that in the end there will be a convergence of strategies."
+    },
+    {
+      "end_ms": 4874960,
+      "source_event_index": 750,
+      "start_ms": 4866160,
+      "text": "I think there will be a convergence of strategies where at some point, as AI becomes more powerful,"
+    },
+    {
+      "end_ms": 4879520,
+      "source_event_index": 751,
+      "start_ms": 4874960,
+      "text": "it's going to become more or less clearer to everyone what the strategy should be."
+    },
+    {
+      "end_ms": 4884800,
+      "source_event_index": 752,
+      "start_ms": 4879520,
+      "text": "It should be something like, you need to find some way to talk to each other and you want"
+    },
+    {
+      "end_ms": 4897920,
+      "source_event_index": 753,
+      "start_ms": 4884800,
+      "text": "your first actual real superintelligent AI to be aligned and somehow care for sentient life,"
+    },
+    {
+      "end_ms": 4902560,
+      "source_event_index": 754,
+      "start_ms": 4897920,
+      "text": "care for people, democratic, one of those, some combination thereof."
+    },
+    {
+      "end_ms": 4910400,
+      "source_event_index": 755,
+      "start_ms": 4902560,
+      "text": "I think this is the condition that everyone should strive for."
+    },
+    {
+      "end_ms": 4917040,
+      "source_event_index": 756,
+      "start_ms": 4910400,
+      "text": "That's what SSI is striving for. I think that this time, if not already,"
+    },
+    {
+      "end_ms": 4920320,
+      "source_event_index": 757,
+      "start_ms": 4917040,
+      "text": "all the other companies will realize that they're striving towards the same thing."
+    },
+    {
+      "end_ms": 4923920,
+      "source_event_index": 758,
+      "start_ms": 4920320,
+      "text": "We'll see. I think that the world will truly change as AI becomes more powerful."
+    },
+    {
+      "end_ms": 4931680,
+      "source_event_index": 759,
+      "start_ms": 4927920,
+      "text": "I think things will be really different and people will be acting really differently."
+    },
+    {
+      "end_ms": 4936560,
+      "source_event_index": 760,
+      "start_ms": 4932480,
+      "text": "Speaking of forecasts, what are your forecasts to this system you're describing,"
+    },
+    {
+      "end_ms": 4943840,
+      "source_event_index": 761,
+      "start_ms": 4936560,
+      "text": "which can learn as well as a human and subsequently, as a result, become superhuman?"
+    },
+    {
+      "end_ms": 4947600,
+      "source_event_index": 762,
+      "start_ms": 4943840,
+      "text": "I think like 5 to 20. 5 to 20 years?"
+    },
+    {
+      "end_ms": 4949760,
+      "source_event_index": 763,
+      "start_ms": 4947600,
+      "text": "Mhm. I just want"
+    },
+    {
+      "end_ms": 4955680,
+      "source_event_index": 764,
+      "start_ms": 4949760,
+      "text": "to unroll how you might see the world coming. It's like, we have a couple more years where"
+    },
+    {
+      "end_ms": 4960000,
+      "source_event_index": 765,
+      "start_ms": 4955680,
+      "text": "these other companies are continuing the current approach and it stalls out."
+    },
+    {
+      "end_ms": 4964720,
+      "source_event_index": 766,
+      "start_ms": 4960000,
+      "text": "\"Stalls out\" here meaning they earn no more than low hundreds of billions in revenue?"
+    },
+    {
+      "end_ms": 4977200,
+      "source_event_index": 767,
+      "start_ms": 4964720,
+      "text": "How do you think about what stalling out means? I think stalling out will look like…it will"
+    },
+    {
+      "end_ms": 4980788,
+      "source_event_index": 768,
+      "start_ms": 4977200,
+      "text": "all look very similar among all the different companies."
+    },
+    {
+      "end_ms": 4982640,
+      "source_event_index": 769,
+      "start_ms": 4980788,
+      "text": "It could be something like this. I'm not sure because I think"
+    },
+    {
+      "end_ms": 4990320,
+      "source_event_index": 770,
+      "start_ms": 4985360,
+      "text": "even with stalling out, I think these companies could make a stupendous revenue."
+    },
+    {
+      "end_ms": 4995280,
+      "source_event_index": 771,
+      "start_ms": 4990320,
+      "text": "Maybe not profits because they will need to work hard to differentiate each other"
+    },
+    {
+      "end_ms": 5002880,
+      "source_event_index": 772,
+      "start_ms": 4995280,
+      "text": "from themselves, but revenue definitely. But something in your model implies that"
+    },
+    {
+      "end_ms": 5007920,
+      "source_event_index": 773,
+      "start_ms": 5003760,
+      "text": "when the correct solution does emerge, there will be convergence between all the companies."
+    },
+    {
+      "end_ms": 5011440,
+      "source_event_index": 774,
+      "start_ms": 5007920,
+      "text": "I'm curious why you think that's the case. I was talking more about convergence"
+    },
+    {
+      "end_ms": 5014720,
+      "source_event_index": 775,
+      "start_ms": 5011440,
+      "text": "on their alignment strategies. I think eventual convergence on"
+    },
+    {
+      "end_ms": 5018800,
+      "source_event_index": 776,
+      "start_ms": 5014720,
+      "text": "the technical approach is probably going to happen as well, but I was alluding"
+    },
+    {
+      "end_ms": 5023680,
+      "source_event_index": 777,
+      "start_ms": 5018800,
+      "text": "to convergence to the alignment strategies. What exactly is the thing that should be done?"
+    },
+    {
+      "end_ms": 5026880,
+      "source_event_index": 778,
+      "start_ms": 5023680,
+      "text": "I just want to better understand how you see the future unrolling."
+    },
+    {
+      "end_ms": 5030320,
+      "source_event_index": 779,
+      "start_ms": 5026880,
+      "text": "Currently, we have these different companies, and you expect their approach to continue generating"
+    },
+    {
+      "end_ms": 5036560,
+      "source_event_index": 780,
+      "start_ms": 5030320,
+      "text": "revenue but not get to this human-like learner. So now we have these different forks of companies."
+    },
+    {
+      "end_ms": 5039520,
+      "source_event_index": 781,
+      "start_ms": 5036560,
+      "text": "We have you, we have Thinking Machines, there's a bunch of other labs."
+    },
+    {
+      "end_ms": 5043120,
+      "source_event_index": 782,
+      "start_ms": 5040160,
+      "text": "Maybe one of them figures out the correct approach."
+    },
+    {
+      "end_ms": 5047600,
+      "source_event_index": 783,
+      "start_ms": 5043120,
+      "text": "But then the release of their product makes it clear to other people how to do this thing."
+    },
+    {
+      "end_ms": 5051920,
+      "source_event_index": 784,
+      "start_ms": 5047600,
+      "text": "I think it won't be clear how to do it, but it will be clear that something different is"
+    },
+    {
+      "end_ms": 5057600,
+      "source_event_index": 785,
+      "start_ms": 5051920,
+      "text": "possible, and that is information. People will then be trying"
+    },
+    {
+      "end_ms": 5066560,
+      "source_event_index": 786,
+      "start_ms": 5057600,
+      "text": "to figure out how that works. I do think though that one of the things not"
+    },
+    {
+      "end_ms": 5074320,
+      "source_event_index": 787,
+      "start_ms": 5066560,
+      "text": "addressed here, not discussed, is that with each increase in the AI's capabilities, I think there"
+    },
+    {
+      "end_ms": 5080960,
+      "source_event_index": 788,
+      "start_ms": 5074320,
+      "text": "will be some kind of changes, but I don't know exactly which ones, in how things are being done."
+    },
+    {
+      "end_ms": 5087280,
+      "source_event_index": 789,
+      "start_ms": 5082960,
+      "text": "I think it's going to be important, yet I can't spell out what that is exactly."
+    },
+    {
+      "end_ms": 5095360,
+      "source_event_index": 790,
+      "start_ms": 5090320,
+      "text": "By default, you would expect the company that has that model to be getting all these gains"
+    },
+    {
+      "end_ms": 5102480,
+      "source_event_index": 791,
+      "start_ms": 5095360,
+      "text": "because they have the model that has the skills and knowledge that it's building up in the world."
+    },
+    {
+      "end_ms": 5105760,
+      "source_event_index": 792,
+      "start_ms": 5102480,
+      "text": "What is the reason to think that the benefits of that would be widely distributed and not"
+    },
+    {
+      "end_ms": 5111200,
+      "source_event_index": 793,
+      "start_ms": 5105760,
+      "text": "just end up at whatever model company gets this continuous learning loop going first?"
+    },
+    {
+      "end_ms": 5125680,
+      "source_event_index": 794,
+      "start_ms": 5114880,
+      "text": "Here is what I think is going to happen. Number one, let's look at how things have"
+    },
+    {
+      "end_ms": 5132000,
+      "source_event_index": 795,
+      "start_ms": 5125680,
+      "text": "gone so far with the AIs of the past. One company produced an advance and the"
+    },
+    {
+      "end_ms": 5140400,
+      "source_event_index": 796,
+      "start_ms": 5132000,
+      "text": "other company scrambled and produced some similar things after some amount of time and they started"
+    },
+    {
+      "end_ms": 5148640,
+      "source_event_index": 797,
+      "start_ms": 5140400,
+      "text": "to compete in the market and push the prices down. So I think from the market perspective,"
+    },
+    {
+      "end_ms": 5154800,
+      "source_event_index": 798,
+      "start_ms": 5148640,
+      "text": "something similar will happen there as well. We are talking about the good world, by the way."
+    },
+    {
+      "end_ms": 5168000,
+      "source_event_index": 799,
+      "start_ms": 5156640,
+      "text": "What's the good world? It’s where we have these powerful human-like learners that are also… By"
+    },
+    {
+      "end_ms": 5173760,
+      "source_event_index": 800,
+      "start_ms": 5168000,
+      "text": "the way, maybe there's another thing we haven't discussed on the spec of the superintelligent"
+    },
+    {
+      "end_ms": 5180160,
+      "source_event_index": 801,
+      "start_ms": 5173760,
+      "text": "AI that I think is worth considering. It’s that you make it narrow, it can"
+    },
+    {
+      "end_ms": 5184320,
+      "source_event_index": 802,
+      "start_ms": 5180160,
+      "text": "be useful and narrow at the same time. You can have lots of narrow superintelligent AIs."
+    },
+    {
+      "end_ms": 5191600,
+      "source_event_index": 803,
+      "start_ms": 5184320,
+      "text": "But suppose you have many of them and you have some company that's producing a lot of"
+    },
+    {
+      "end_ms": 5195440,
+      "source_event_index": 804,
+      "start_ms": 5192720,
+      "text": "profits from it. Then you have another"
+    },
+    {
+      "end_ms": 5200240,
+      "source_event_index": 805,
+      "start_ms": 5195440,
+      "text": "company that comes in and starts to compete. The way the competition is going to work is"
+    },
+    {
+      "end_ms": 5212800,
+      "source_event_index": 806,
+      "start_ms": 5200240,
+      "text": "through specialization. Competition loves specialization. You see it in the market,"
+    },
+    {
+      "end_ms": 5215280,
+      "source_event_index": 807,
+      "start_ms": 5212800,
+      "text": "you see it in evolution as well. You're going to have lots of different"
+    },
+    {
+      "end_ms": 5219520,
+      "source_event_index": 808,
+      "start_ms": 5215280,
+      "text": "niches and you're going to have lots of different companies who are occupying different niches."
+    },
+    {
+      "end_ms": 5228640,
+      "source_event_index": 809,
+      "start_ms": 5219520,
+      "text": "In this world we might say one AI company is really quite a bit better at some area"
+    },
+    {
+      "end_ms": 5233360,
+      "source_event_index": 810,
+      "start_ms": 5228640,
+      "text": "of really complicated economic activity and a different company is better at another area."
+    },
+    {
+      "end_ms": 5235200,
+      "source_event_index": 811,
+      "start_ms": 5233360,
+      "text": "And the third company is really good at litigation."
+    },
+    {
+      "end_ms": 5239840,
+      "source_event_index": 812,
+      "start_ms": 5235200,
+      "text": "Isn't this contradicted by what human-like learning implies? It’s that it can learn…"
+    },
+    {
+      "end_ms": 5245120,
+      "source_event_index": 813,
+      "start_ms": 5239840,
+      "text": "It can, but you have accumulated learning. You have a big investment."
+    },
+    {
+      "end_ms": 5250960,
+      "source_event_index": 814,
+      "start_ms": 5245120,
+      "text": "You spent a lot of compute to become really, really good, really phenomenal at this thing."
+    },
+    {
+      "end_ms": 5254080,
+      "source_event_index": 815,
+      "start_ms": 5250960,
+      "text": "Someone else spent a huge amount of compute and a huge amount of"
+    },
+    {
+      "end_ms": 5258000,
+      "source_event_index": 816,
+      "start_ms": 5254080,
+      "text": "experience to get really good at some other thing. You apply a lot of human learning to get there,"
+    },
+    {
+      "end_ms": 5264160,
+      "source_event_index": 817,
+      "start_ms": 5258000,
+      "text": "but now you are at this high point where someone else would say, \"Look, I don't want"
+    },
+    {
+      "end_ms": 5267600,
+      "source_event_index": 818,
+      "start_ms": 5264160,
+      "text": "to start learning what you've learned.\" I guess that would require many different"
+    },
+    {
+      "end_ms": 5273360,
+      "source_event_index": 819,
+      "start_ms": 5267600,
+      "text": "companies to begin at the human-like continual learning agent at the same time so that they"
+    },
+    {
+      "end_ms": 5278000,
+      "source_event_index": 820,
+      "start_ms": 5273360,
+      "text": "can start their different tree search in different branches."
+    },
+    {
+      "end_ms": 5287280,
+      "source_event_index": 821,
+      "start_ms": 5278000,
+      "text": "But if one company gets that agent first, or gets that learner first, it does then seem like… Well,"
+    },
+    {
+      "end_ms": 5295760,
+      "source_event_index": 822,
+      "start_ms": 5289120,
+      "text": "if you just think about every single job in the economy, having an instance learning each"
+    },
+    {
+      "end_ms": 5301200,
+      "source_event_index": 823,
+      "start_ms": 5295760,
+      "text": "one seems tractable for a company. That's a valid argument. My strong"
+    },
+    {
+      "end_ms": 5308720,
+      "source_event_index": 824,
+      "start_ms": 5301200,
+      "text": "intuition is that it's not how it's going to go. The argument says it will go this way, but my"
+    },
+    {
+      "end_ms": 5316240,
+      "source_event_index": 825,
+      "start_ms": 5308720,
+      "text": "strong intuition is that it will not go this way. In theory, there is no difference between theory"
+    },
+    {
+      "end_ms": 5319440,
+      "source_event_index": 826,
+      "start_ms": 5316240,
+      "text": "and practice. In practice, there is. I think that's going to be one of those."
+    },
+    {
+      "end_ms": 5324000,
+      "source_event_index": 827,
+      "start_ms": 5319440,
+      "text": "A lot of people's models of recursive self-improvement literally, explicitly state"
+    },
+    {
+      "end_ms": 5329360,
+      "source_event_index": 828,
+      "start_ms": 5324000,
+      "text": "we will have a million Ilyas in a server that are coming up with different ideas, and this will lead"
+    },
+    {
+      "end_ms": 5332800,
+      "source_event_index": 829,
+      "start_ms": 5329360,
+      "text": "to a superintelligence emerging very fast. Do you have some intuition about how"
+    },
+    {
+      "end_ms": 5340800,
+      "source_event_index": 830,
+      "start_ms": 5332800,
+      "text": "parallelizable the thing you are doing is? What are the gains from making copies of Ilya?"
+    },
+    {
+      "end_ms": 5349440,
+      "source_event_index": 831,
+      "start_ms": 5340800,
+      "text": "I don’t know. I think there'll definitely be diminishing returns because you want people"
+    },
+    {
+      "end_ms": 5354320,
+      "source_event_index": 832,
+      "start_ms": 5349440,
+      "text": "who think differently rather than the same. If there were literal copies of me, I'm not sure"
+    },
+    {
+      "end_ms": 5361920,
+      "source_event_index": 833,
+      "start_ms": 5354320,
+      "text": "how much more incremental value you'd get. People who think differently,"
+    },
+    {
+      "end_ms": 5365360,
+      "source_event_index": 834,
+      "start_ms": 5361920,
+      "text": "that's what you want. Why is it that if you look"
+    },
+    {
+      "end_ms": 5370800,
+      "source_event_index": 835,
+      "start_ms": 5365360,
+      "text": "at different models, even released by totally different companies trained on potentially"
+    },
+    {
+      "end_ms": 5375920,
+      "source_event_index": 836,
+      "start_ms": 5370800,
+      "text": "non-overlapping datasets, it's actually crazy how similar LLMs are to each other?"
+    },
+    {
+      "end_ms": 5379520,
+      "source_event_index": 837,
+      "start_ms": 5375920,
+      "text": "Maybe the datasets are not as non-overlapping as it seems."
+    },
+    {
+      "end_ms": 5384080,
+      "source_event_index": 838,
+      "start_ms": 5379520,
+      "text": "But there’s some sense in which even if an individual human might be less"
+    },
+    {
+      "end_ms": 5386960,
+      "source_event_index": 839,
+      "start_ms": 5384080,
+      "text": "productive than the future AI, maybe there’s something to the fact that human teams have"
+    },
+    {
+      "end_ms": 5393600,
+      "source_event_index": 840,
+      "start_ms": 5386960,
+      "text": "more diversity than teams of AIs might have. How do we elicit meaningful diversity among AIs?"
+    },
+    {
+      "end_ms": 5396720,
+      "source_event_index": 841,
+      "start_ms": 5393600,
+      "text": "I think just raising the temperature just results in gibberish."
+    },
+    {
+      "end_ms": 5401360,
+      "source_event_index": 842,
+      "start_ms": 5396720,
+      "text": "You want something more like different scientists have different prejudices or different ideas."
+    },
+    {
+      "end_ms": 5404720,
+      "source_event_index": 843,
+      "start_ms": 5401360,
+      "text": "How do you get that kind of diversity among AI agents?"
+    },
+    {
+      "end_ms": 5410720,
+      "source_event_index": 844,
+      "start_ms": 5404720,
+      "text": "So the reason there has been no diversity, I believe, is because of pre-training."
+    },
+    {
+      "end_ms": 5416800,
+      "source_event_index": 845,
+      "start_ms": 5410720,
+      "text": "All the pre-trained models are pretty much the same because they pre-train on the same data."
+    },
+    {
+      "end_ms": 5420960,
+      "source_event_index": 846,
+      "start_ms": 5416800,
+      "text": "Now RL and post-training is where some differentiation starts to emerge"
+    },
+    {
+      "end_ms": 5424960,
+      "source_event_index": 847,
+      "start_ms": 5420960,
+      "text": "because different people come up with different RL training."
+    },
+    {
+      "end_ms": 5431520,
+      "source_event_index": 848,
+      "start_ms": 5426400,
+      "text": "I've heard you hint in the past about self-play as a way to either"
+    },
+    {
+      "end_ms": 5438000,
+      "source_event_index": 849,
+      "start_ms": 5431520,
+      "text": "get data or match agents to other agents of equivalent intelligence to kick off learning."
+    },
+    {
+      "end_ms": 5446800,
+      "source_event_index": 850,
+      "start_ms": 5438000,
+      "text": "How should we think about why there are no public proposals of this kind of thing working with LLMs?"
+    },
+    {
+      "end_ms": 5452320,
+      "source_event_index": 851,
+      "start_ms": 5446800,
+      "text": "I would say there are two things to say. The reason why I thought self-play was"
+    },
+    {
+      "end_ms": 5460800,
+      "source_event_index": 852,
+      "start_ms": 5452320,
+      "text": "interesting is because it offered a way to create models using compute only, without data."
+    },
+    {
+      "end_ms": 5466320,
+      "source_event_index": 853,
+      "start_ms": 5460800,
+      "text": "If you think that data is the ultimate bottleneck, then using compute only is very interesting."
+    },
+    {
+      "end_ms": 5475760,
+      "source_event_index": 854,
+      "start_ms": 5466320,
+      "text": "So that's what makes it interesting. The thing is that self-play, at least the"
+    },
+    {
+      "end_ms": 5481520,
+      "source_event_index": 855,
+      "start_ms": 5475760,
+      "text": "way it was done in the past—when you have agents which somehow compete with each other—it's only"
+    },
+    {
+      "end_ms": 5489040,
+      "source_event_index": 856,
+      "start_ms": 5481520,
+      "text": "good for developing a certain set of skills. It is too narrow. It's only good for negotiation,"
+    },
+    {
+      "end_ms": 5495040,
+      "source_event_index": 857,
+      "start_ms": 5489040,
+      "text": "conflict, certain social skills, strategizing, that kind of stuff."
+    },
+    {
+      "end_ms": 5498800,
+      "source_event_index": 858,
+      "start_ms": 5495040,
+      "text": "If you care about those skills, then self-play will be useful."
+    },
+    {
+      "end_ms": 5506880,
+      "source_event_index": 859,
+      "start_ms": 5499360,
+      "text": "Actually, I think that self-play did find a home, but just in a different form."
+    },
+    {
+      "end_ms": 5515680,
+      "source_event_index": 860,
+      "start_ms": 5508080,
+      "text": "So things like debate, prover-verifier, you have some kind of an LLM-as-a-Judge which is"
+    },
+    {
+      "end_ms": 5520080,
+      "source_event_index": 861,
+      "start_ms": 5515680,
+      "text": "also incentivized to find mistakes in your work. You could say this is not exactly self-play,"
+    },
+    {
+      "end_ms": 5524720,
+      "source_event_index": 862,
+      "start_ms": 5520080,
+      "text": "but this is a related adversarial setup that people are doing, I believe."
+    },
+    {
+      "end_ms": 5532800,
+      "source_event_index": 863,
+      "start_ms": 5524720,
+      "text": "Really self-play is a special case of more general competition between agents."
+    },
+    {
+      "end_ms": 5536560,
+      "source_event_index": 864,
+      "start_ms": 5533600,
+      "text": "The natural response to competition is to try to be different."
+    },
+    {
+      "end_ms": 5541360,
+      "source_event_index": 865,
+      "start_ms": 5536560,
+      "text": "So if you were to put multiple agents together and you tell them, \"You all need to work on some"
+    },
+    {
+      "end_ms": 5546560,
+      "source_event_index": 866,
+      "start_ms": 5541360,
+      "text": "problem and you are an agent and you're inspecting what everyone else is working,\" they’re going to"
+    },
+    {
+      "end_ms": 5551520,
+      "source_event_index": 867,
+      "start_ms": 5546560,
+      "text": "say, \"Well, if they're already taking this approach, it's not clear I should pursue it."
+    },
+    {
+      "end_ms": 5556000,
+      "source_event_index": 868,
+      "start_ms": 5551520,
+      "text": "I should pursue something differentiated.\" So I think something like this could also create an"
+    },
+    {
+      "end_ms": 5564400,
+      "source_event_index": 869,
+      "start_ms": 5556000,
+      "text": "incentive for a diversity of approaches. Final question: What is research taste?"
+    },
+    {
+      "end_ms": 5571040,
+      "source_event_index": 870,
+      "start_ms": 5564400,
+      "text": "You're obviously the person in the world who is considered to"
+    },
+    {
+      "end_ms": 5581280,
+      "source_event_index": 871,
+      "start_ms": 5571040,
+      "text": "have the best taste in doing research in AI. You were the co-author on the biggest things"
+    },
+    {
+      "end_ms": 5585040,
+      "source_event_index": 872,
+      "start_ms": 5581280,
+      "text": "that have happened in the history of deep learning, from AlexNet to GPT-3 to so on."
+    },
+    {
+      "end_ms": 5591120,
+      "source_event_index": 873,
+      "start_ms": 5585040,
+      "text": "What is it, how do you characterize how you come up with these ideas?"
+    },
+    {
+      "end_ms": 5598720,
+      "source_event_index": 874,
+      "start_ms": 5591120,
+      "text": "I can comment on this for myself. I think different people do it differently."
+    },
+    {
+      "end_ms": 5609680,
+      "source_event_index": 875,
+      "start_ms": 5598720,
+      "text": "One thing that guides me personally is an aesthetic of how AI should be, by thinking"
+    },
+    {
+      "end_ms": 5615520,
+      "source_event_index": 876,
+      "start_ms": 5609680,
+      "text": "about how people are, but thinking correctly. It's very easy to think about how people are"
+    },
+    {
+      "end_ms": 5620320,
+      "source_event_index": 877,
+      "start_ms": 5615520,
+      "text": "incorrectly, but what does it mean to think about people correctly? I'll give you some"
+    },
+    {
+      "end_ms": 5628080,
+      "source_event_index": 878,
+      "start_ms": 5620320,
+      "text": "examples. The idea of the artificial neuron is directly inspired by the brain, and it's a"
+    },
+    {
+      "end_ms": 5632720,
+      "source_event_index": 879,
+      "start_ms": 5628080,
+      "text": "great idea. Why? Because you say the brain has all these different organs, it has the folds,"
+    },
+    {
+      "end_ms": 5636400,
+      "source_event_index": 880,
+      "start_ms": 5632720,
+      "text": "but the folds probably don't matter. Why do we think that the neurons matter?"
+    },
+    {
+      "end_ms": 5641280,
+      "source_event_index": 881,
+      "start_ms": 5636400,
+      "text": "Because there are many of them. It kind of feels right, so you want the neuron."
+    },
+    {
+      "end_ms": 5649600,
+      "source_event_index": 882,
+      "start_ms": 5641280,
+      "text": "You want some local learning rule that will change the connections between the neurons."
+    },
+    {
+      "end_ms": 5655600,
+      "source_event_index": 883,
+      "start_ms": 5650240,
+      "text": "It feels plausible that the brain does it. The idea of the distributed representation."
+    },
+    {
+      "end_ms": 5659920,
+      "source_event_index": 884,
+      "start_ms": 5655600,
+      "text": "The idea that the brain responds to experience therefore our neural"
+    },
+    {
+      "end_ms": 5663200,
+      "source_event_index": 885,
+      "start_ms": 5659920,
+      "text": "net should learn from experience. The brain learns from experience,"
+    },
+    {
+      "end_ms": 5669280,
+      "source_event_index": 886,
+      "start_ms": 5664480,
+      "text": "the neural net should learn from experience. You kind of ask yourself, is something fundamental"
+    },
+    {
+      "end_ms": 5675600,
+      "source_event_index": 887,
+      "start_ms": 5669280,
+      "text": "or not fundamental? How things should be. I think that's been guiding me a fair bit,"
+    },
+    {
+      "end_ms": 5681440,
+      "source_event_index": 888,
+      "start_ms": 5675600,
+      "text": "thinking from multiple angles and looking for almost beauty, beauty and simplicity."
+    },
+    {
+      "end_ms": 5686400,
+      "source_event_index": 889,
+      "start_ms": 5681440,
+      "text": "Ugliness, there's no room for ugliness. It's beauty, simplicity, elegance,"
+    },
+    {
+      "end_ms": 5689360,
+      "source_event_index": 890,
+      "start_ms": 5686400,
+      "text": "correct inspiration from the brain. All of those things need to"
+    },
+    {
+      "end_ms": 5693120,
+      "source_event_index": 891,
+      "start_ms": 5689360,
+      "text": "be present at the same time. The more they are present, the"
+    },
+    {
+      "end_ms": 5698640,
+      "source_event_index": 892,
+      "start_ms": 5693120,
+      "text": "more confident you can be in a top-down belief. The top-down belief is the thing that sustains"
+    },
+    {
+      "end_ms": 5704560,
+      "source_event_index": 893,
+      "start_ms": 5698640,
+      "text": "you when the experiments contradict you. Because if you trust the data all the time,"
+    },
+    {
+      "end_ms": 5707520,
+      "source_event_index": 894,
+      "start_ms": 5704560,
+      "text": "well sometimes you can be doing the correct thing but there's a bug."
+    },
+    {
+      "end_ms": 5711040,
+      "source_event_index": 895,
+      "start_ms": 5707520,
+      "text": "But you don't know that there is a bug. How can you tell that there is a bug?"
+    },
+    {
+      "end_ms": 5714960,
+      "source_event_index": 896,
+      "start_ms": 5711040,
+      "text": "How do you know if you should keep debugging or you conclude it's the wrong direction? It's the"
+    },
+    {
+      "end_ms": 5720720,
+      "source_event_index": 897,
+      "start_ms": 5714960,
+      "text": "top-down. You can say things have to be this way. Something like this has to work,"
+    },
+    {
+      "end_ms": 5724880,
+      "source_event_index": 898,
+      "start_ms": 5720720,
+      "text": "therefore we’ve got to keep going. That's the top-down, and it's based on this"
+    },
+    {
+      "end_ms": 5731600,
+      "source_event_index": 899,
+      "start_ms": 5725520,
+      "text": "multifaceted beauty and inspiration by the brain. Alright, we'll leave it there."
+    },
+    {
+      "end_ms": 5734960,
+      "source_event_index": 900,
+      "start_ms": 5731600,
+      "text": "Thank you so much. Ilya, thank you so much."
+    },
+    {
+      "end_ms": 5736480,
+      "source_event_index": 901,
+      "start_ms": 5734960,
+      "text": "Alright. Appreciate it. That was great."
+    },
+    {
+      "end_ms": 5739040,
+      "source_event_index": 902,
+      "start_ms": 5736480,
+      "text": "Yeah, I enjoyed it. Yes, me too."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-61523230465743436a4173-ilya-sutskever-2025/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "d952b81ec7bbfc4f5671f8fa8a527a81755d50cff70a5f72853328e2fac42794"
+  },
+  "translation": {
+    "event_count": 903,
+    "language": "zh-CN",
+    "payload_sha256": "fe68ae63d5d26c56faf7b2ea390ec786726fcd90894b35a2b2830a256bfaf11e",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-61523230465743436a4173-ilya-sutskever-2025/transcript.zh-CN.md",
+    "rendered_sha256": "f7643ed016a2bdf5a61c2b29ba03f6f1f5e4b3b86147768bf4fd16586c5cd090",
+    "source_track": "zh-Hans-en",
+    "track_type": "youtube-auto-translate"
+  }
+}

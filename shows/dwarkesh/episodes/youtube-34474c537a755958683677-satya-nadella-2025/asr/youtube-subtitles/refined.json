@@ -1,0 +1,4321 @@
+{
+  "generated_at": "2026-08-18T08:26:16.259130Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-34474c537a755958683677-satya-nadella-2025/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "55a635c169dfe03b1d5f5df014d6f948dd7013a1a9ac6774817476f8acfb8d63"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 47400,
+      "source_event_index": 0,
+      "start_ms": 44800,
+      "text": "Satya, thank you so much for coming on the podcast."
+    },
+    {
+      "end_ms": 52840,
+      "source_event_index": 1,
+      "start_ms": 48920,
+      "text": "In a second, we're going to get to the two breakthroughs that Microsoft has just made,"
+    },
+    {
+      "end_ms": 58320,
+      "source_event_index": 2,
+      "start_ms": 52840,
+      "text": "and congratulations, same day in Nature: the Majorana zero chip, which we have in front"
+    },
+    {
+      "end_ms": 63800,
+      "source_event_index": 3,
+      "start_ms": 58320,
+      "text": "of us right here, and also the world human action models. But can we just continue the conversation"
+    },
+    {
+      "end_ms": 67360,
+      "source_event_index": 4,
+      "start_ms": 63800,
+      "text": "we were having a second ago? You're describing the ways in which the things you were seeing in"
+    },
+    {
+      "end_ms": 72920,
+      "source_event_index": 5,
+      "start_ms": 67360,
+      "text": "the 80s and 90s, you're seeing them happen again. The thing that is exciting for me... Dwarkesh,"
+    },
+    {
+      "end_ms": 76800,
+      "source_event_index": 6,
+      "start_ms": 72920,
+      "text": "first of all, it's fantastic to be on your podcast. I'm a big listener,"
+    },
+    {
+      "end_ms": 85489,
+      "source_event_index": 7,
+      "start_ms": 76800,
+      "text": "and I love the way that you do these interviews and the broad topics that you explore."
+    },
+    {
+      "end_ms": 91680,
+      "source_event_index": 8,
+      "start_ms": 85489,
+      "text": "The thing that is exciting for me… It reminds me a little bit of my, I'd say, first few years even"
+    },
+    {
+      "end_ms": 98280,
+      "source_event_index": 9,
+      "start_ms": 91680,
+      "text": "in the tech industry, starting in the 90s, where there was real debate about whether it's going"
+    },
+    {
+      "end_ms": 104880,
+      "source_event_index": 10,
+      "start_ms": 98280,
+      "text": "to be RISC or CISC, or, \"Hey, are we really going to be able to build servers using x86?\""
+    },
+    {
+      "end_ms": 111680,
+      "source_event_index": 11,
+      "start_ms": 106000,
+      "text": "When I joined Microsoft, that was the beginning of what was Windows NT. So,"
+    },
+    {
+      "end_ms": 119840,
+      "source_event_index": 12,
+      "start_ms": 111680,
+      "text": "everything from the core silicon platform to the operating system to the app tier- that full stack"
+    },
+    {
+      "end_ms": 129080,
+      "source_event_index": 13,
+      "start_ms": 120640,
+      "text": "approach- the entire thing is being litigated. You could say cloud did a bunch of that,"
+    },
+    {
+      "end_ms": 137360,
+      "source_event_index": 14,
+      "start_ms": 129080,
+      "text": "and obviously distributed computing and cloud did change client-server. The web changed"
+    },
+    {
+      "end_ms": 144320,
+      "source_event_index": 15,
+      "start_ms": 137360,
+      "text": "massively. But this does feel a little more like maybe more full-stack than even the past"
+    },
+    {
+      "end_ms": 150040,
+      "source_event_index": 16,
+      "start_ms": 144320,
+      "text": "that at least I've been involved in. When you think about which decisions"
+    },
+    {
+      "end_ms": 154240,
+      "source_event_index": 17,
+      "start_ms": 150040,
+      "text": "ended up being the long-term winners in the 80s and 90s, and which ones didn't, and"
+    },
+    {
+      "end_ms": 158640,
+      "source_event_index": 18,
+      "start_ms": 154240,
+      "text": "especially when you think about- you were at Sun Microsystems, they had an interesting experience"
+    },
+    {
+      "end_ms": 163120,
+      "source_event_index": 19,
+      "start_ms": 158640,
+      "text": "with the 90s dotcom bubble. People talk about this data center build-out as being a bubble,"
+    },
+    {
+      "end_ms": 166800,
+      "source_event_index": 20,
+      "start_ms": 163120,
+      "text": "but at the same time, we have the Internet today as a result of what was built out then."
+    },
+    {
+      "end_ms": 170960,
+      "source_event_index": 21,
+      "start_ms": 166800,
+      "text": "What are the lessons about what will stand the test of time? What is an inherent"
+    },
+    {
+      "end_ms": 182680,
+      "source_event_index": 22,
+      "start_ms": 170960,
+      "text": "secular trend? What is just ephemeral? If I go back, the four big transformations"
+    },
+    {
+      "end_ms": 191000,
+      "source_event_index": 23,
+      "start_ms": 182680,
+      "text": "that I've been part of, the client and the client-server. So that's the birth of the"
+    },
+    {
+      "end_ms": 198400,
+      "source_event_index": 24,
+      "start_ms": 191000,
+      "text": "graphical user interface and the x86 architecture, basically allowing us to build servers."
+    },
+    {
+      "end_ms": 205840,
+      "source_event_index": 25,
+      "start_ms": 199440,
+      "text": "It was very clear to me. I remember going to what is PDC in '91, in fact I was at Sun at"
+    },
+    {
+      "end_ms": 215440,
+      "source_event_index": 26,
+      "start_ms": 205840,
+      "text": "that time. In '91, I went to Moscone. That's when Microsoft first described the Win32 interface and"
+    },
+    {
+      "end_ms": 220440,
+      "source_event_index": 27,
+      "start_ms": 215440,
+      "text": "it was pretty clear to me what was going to happen, where the server was also going to be"
+    },
+    {
+      "end_ms": 231520,
+      "source_event_index": 28,
+      "start_ms": 220440,
+      "text": "an x86 thing. When you have the scale advantages accruing to something, that's the secular bet you"
+    },
+    {
+      "end_ms": 238360,
+      "source_event_index": 29,
+      "start_ms": 231520,
+      "text": "have to place. What happened in the client was going to happen on the server side, and then"
+    },
+    {
+      "end_ms": 244280,
+      "source_event_index": 30,
+      "start_ms": 238360,
+      "text": "you were able to actually build client-server applications. So, the app model became clear."
+    },
+    {
+      "end_ms": 249640,
+      "source_event_index": 31,
+      "start_ms": 244280,
+      "text": "Then the web was the big thing for us, which we had to deal with in starting,"
+    },
+    {
+      "end_ms": 256680,
+      "source_event_index": 32,
+      "start_ms": 249640,
+      "text": "in fact as soon as I joined Microsoft, the Netscape browser or the Mosaic browser came out"
+    },
+    {
+      "end_ms": 262640,
+      "source_event_index": 33,
+      "start_ms": 256680,
+      "text": "what, I think, December or November of '93, right? I think is when Andreessen and crew had that."
+    },
+    {
+      "end_ms": 267760,
+      "source_event_index": 34,
+      "start_ms": 262640,
+      "text": "So that was a big game-changer, in an interesting way, just as we were getting going on what was"
+    },
+    {
+      "end_ms": 273360,
+      "source_event_index": 35,
+      "start_ms": 267760,
+      "text": "the client-server wave, and it was clear that we were going to win it as well. We had the"
+    },
+    {
+      "end_ms": 278840,
+      "source_event_index": 36,
+      "start_ms": 273360,
+      "text": "browser moment, and so we had to adjust. And we did a pretty good job of adjusting"
+    },
+    {
+      "end_ms": 290840,
+      "source_event_index": 37,
+      "start_ms": 278840,
+      "text": "to it because the browser was a new app model. We were able to embrace it with everything we did,"
+    },
+    {
+      "end_ms": 296160,
+      "source_event_index": 38,
+      "start_ms": 290840,
+      "text": "whether it was HTML in Word or building a new thing called the browser ourselves and competing"
+    },
+    {
+      "end_ms": 302960,
+      "source_event_index": 39,
+      "start_ms": 296160,
+      "text": "for it, and then building a web server on our server stack and go after it. Except,"
+    },
+    {
+      "end_ms": 309840,
+      "source_event_index": 40,
+      "start_ms": 302960,
+      "text": "of course, we missed what turned out to be the biggest business model on the web,"
+    },
+    {
+      "end_ms": 315120,
+      "source_event_index": 41,
+      "start_ms": 309840,
+      "text": "because we all assumed the web is all about being distributed, who would have thought that search"
+    },
+    {
+      "end_ms": 323320,
+      "source_event_index": 42,
+      "start_ms": 315120,
+      "text": "would be the biggest winner in organizing the web? And so that's where we obviously didn't see it,"
+    },
+    {
+      "end_ms": 329880,
+      "source_event_index": 43,
+      "start_ms": 323320,
+      "text": "and Google saw it and executed super well. So that's one lesson learned for me: you have"
+    },
+    {
+      "end_ms": 339840,
+      "source_event_index": 44,
+      "start_ms": 329880,
+      "text": "to not only get the tech trend right, you also have to get where the value is going to be created"
+    },
+    {
+      "end_ms": 348720,
+      "source_event_index": 45,
+      "start_ms": 339840,
+      "text": "with that trend. These business model shifts are probably tougher than even the tech trend changes."
+    },
+    {
+      "end_ms": 358040,
+      "source_event_index": 46,
+      "start_ms": 348720,
+      "text": "Where is the value going to be created in AI? That's a great one. So I think there are two"
+    },
+    {
+      "end_ms": 362600,
+      "source_event_index": 47,
+      "start_ms": 358040,
+      "text": "places where I can say with some confidence. One is the hyperscalers that do well,"
+    },
+    {
+      "end_ms": 367200,
+      "source_event_index": 48,
+      "start_ms": 362600,
+      "text": "because the fundamental thing is if you sort of go back to even how Sam and others describe it,"
+    },
+    {
+      "end_ms": 374720,
+      "source_event_index": 49,
+      "start_ms": 367200,
+      "text": "if intelligence is log of compute, whoever can do lots of compute is a big winner."
+    },
+    {
+      "end_ms": 380360,
+      "source_event_index": 50,
+      "start_ms": 376640,
+      "text": "The other interesting thing is, if you look at underneath even any AI workload,"
+    },
+    {
+      "end_ms": 384600,
+      "source_event_index": 51,
+      "start_ms": 380360,
+      "text": "like take ChatGPT, it's not like everybody's excited about what's happening on the GPU side,"
+    },
+    {
+      "end_ms": 392600,
+      "source_event_index": 52,
+      "start_ms": 384600,
+      "text": "it's great. In fact, I think of my fleet even as a ratio of the AI accelerator to storage,"
+    },
+    {
+      "end_ms": 397480,
+      "source_event_index": 53,
+      "start_ms": 392600,
+      "text": "to compute. And at scale, you've got to grow it. Yeah."
+    },
+    {
+      "end_ms": 406040,
+      "source_event_index": 54,
+      "start_ms": 397480,
+      "text": "And so, that infrastructure need for the world is just going to be exponentially growing."
+    },
+    {
+      "end_ms": 407560,
+      "source_event_index": 55,
+      "start_ms": 406040,
+      "text": "Right. So in fact it's manna"
+    },
+    {
+      "end_ms": 414400,
+      "source_event_index": 56,
+      "start_ms": 407560,
+      "text": "from heaven to have these AI workloads because guess what? They're more hungry for more compute,"
+    },
+    {
+      "end_ms": 420680,
+      "source_event_index": 57,
+      "start_ms": 415040,
+      "text": "not just for training, but we now know, for test time. When you think of an AI agent, it"
+    },
+    {
+      "end_ms": 427040,
+      "source_event_index": 58,
+      "start_ms": 420680,
+      "text": "turns out the AI agent is going to exponentially increase compute usage because you're not even"
+    },
+    {
+      "end_ms": 434200,
+      "source_event_index": 59,
+      "start_ms": 427040,
+      "text": "bound by just one human invoking a program. It's one human invoking programs that invoke lots more"
+    },
+    {
+      "end_ms": 440040,
+      "source_event_index": 60,
+      "start_ms": 434200,
+      "text": "programs. That's going to create massive, massive demand and scale for compute infrastructure. So"
+    },
+    {
+      "end_ms": 445840,
+      "source_event_index": 61,
+      "start_ms": 440040,
+      "text": "our hyperscale business, Azure business, and other hyperscalers, I think that’s a big thing."
+    },
+    {
+      "end_ms": 455080,
+      "source_event_index": 62,
+      "start_ms": 446400,
+      "text": "Then after that, it becomes a little fuzzy. You could say, hey, there is a winner-take-all model-"
+    },
+    {
+      "end_ms": 461120,
+      "source_event_index": 63,
+      "start_ms": 455080,
+      "text": "I just don't see it. This, by the way, is the other thing I’ve learned: being very good at"
+    },
+    {
+      "end_ms": 465800,
+      "source_event_index": 64,
+      "start_ms": 461120,
+      "text": "understanding what are winner-take-all markets and what are not winner-take-all markets is,"
+    },
+    {
+      "end_ms": 471400,
+      "source_event_index": 65,
+      "start_ms": 465800,
+      "text": "in some sense, everything. I remember even in the early days when I was getting into Azure,"
+    },
+    {
+      "end_ms": 476080,
+      "source_event_index": 66,
+      "start_ms": 471400,
+      "text": "Amazon had a very significant lead and people would come to me, and investors would come to me,"
+    },
+    {
+      "end_ms": 481800,
+      "source_event_index": 67,
+      "start_ms": 476080,
+      "text": "and say, \"Oh, it's game over. You'll never make it. Amazon, it's winner-take-all.\""
+    },
+    {
+      "end_ms": 486840,
+      "source_event_index": 68,
+      "start_ms": 481800,
+      "text": "Having competed against Oracle and IBM in client-server, I knew that the buyers"
+    },
+    {
+      "end_ms": 492000,
+      "source_event_index": 69,
+      "start_ms": 486840,
+      "text": "will not tolerate winner-take-all. Structurally, hyperscale will never"
+    },
+    {
+      "end_ms": 500000,
+      "source_event_index": 70,
+      "start_ms": 492000,
+      "text": "be a winner-take-all because buyers are smart. Consumer markets sometimes can be winner-take-all,"
+    },
+    {
+      "end_ms": 506520,
+      "source_event_index": 71,
+      "start_ms": 500000,
+      "text": "but anything where the buyer is a corporation, an enterprise, an IT department,"
+    },
+    {
+      "end_ms": 511440,
+      "source_event_index": 72,
+      "start_ms": 506520,
+      "text": "they will want multiple suppliers. And so you got to be one of the multiple suppliers."
+    },
+    {
+      "end_ms": 518120,
+      "source_event_index": 73,
+      "start_ms": 512920,
+      "text": "That, I think, is what will happen even on the model side. There will be open-source. There"
+    },
+    {
+      "end_ms": 522160,
+      "source_event_index": 74,
+      "start_ms": 518120,
+      "text": "will be a governor. Just like on Windows, one of the big lessons learned for me was,"
+    },
+    {
+      "end_ms": 528520,
+      "source_event_index": 75,
+      "start_ms": 523240,
+      "text": "if you have a closed-source operating system, there will be a complement to it,"
+    },
+    {
+      "end_ms": 532120,
+      "source_event_index": 76,
+      "start_ms": 528520,
+      "text": "which will be open source. And so to some degree that's"
+    },
+    {
+      "end_ms": 539560,
+      "source_event_index": 77,
+      "start_ms": 532120,
+      "text": "a real check on what happens. I think in models there is one dimension of, maybe there will be"
+    },
+    {
+      "end_ms": 543720,
+      "source_event_index": 78,
+      "start_ms": 539560,
+      "text": "a few closed source, but there will definitely be an open source alternative, and the open-source"
+    },
+    {
+      "end_ms": 550360,
+      "source_event_index": 79,
+      "start_ms": 543720,
+      "text": "alternative will actually make sure that the closed-source, winner-take-all is mitigated."
+    },
+    {
+      "end_ms": 556240,
+      "source_event_index": 80,
+      "start_ms": 550360,
+      "text": "That's my feeling on the model side. And by the way, let's not discount if this thing is really"
+    },
+    {
+      "end_ms": 562960,
+      "source_event_index": 81,
+      "start_ms": 556240,
+      "text": "as powerful as people make it out to be, the state is not going to sit around and wait for"
+    },
+    {
+      "end_ms": 569560,
+      "source_event_index": 82,
+      "start_ms": 562960,
+      "text": "private companies to go around… and all over the world. So, I don't see it as a winner-take-all."
+    },
+    {
+      "end_ms": 574360,
+      "source_event_index": 83,
+      "start_ms": 569560,
+      "text": "Then above that, I think it's going to be the same old stuff, which is in consumer,"
+    },
+    {
+      "end_ms": 578600,
+      "source_event_index": 84,
+      "start_ms": 574360,
+      "text": "in some categories, there may be some winner-take-all network effect."
+    },
+    {
+      "end_ms": 585600,
+      "source_event_index": 85,
+      "start_ms": 578600,
+      "text": "After all, ChatGPT is a great example. It's an at-scale consumer property that"
+    },
+    {
+      "end_ms": 592800,
+      "source_event_index": 86,
+      "start_ms": 585600,
+      "text": "has already got real escape velocity. I go to the App Store, and I see it's always there in the top"
+    },
+    {
+      "end_ms": 600240,
+      "source_event_index": 87,
+      "start_ms": 592800,
+      "text": "five, and I say “wow, that's pretty unbelievable”. So they were able to use that early advantage and"
+    },
+    {
+      "end_ms": 606680,
+      "source_event_index": 88,
+      "start_ms": 600240,
+      "text": "parlay that into an app advantage. In consumer, that could happen. In the enterprise again,"
+    },
+    {
+      "end_ms": 611560,
+      "source_event_index": 89,
+      "start_ms": 606680,
+      "text": "I think there will be, by category, different winners. That's sort of at least how I analyze it."
+    },
+    {
+      "end_ms": 619120,
+      "source_event_index": 90,
+      "start_ms": 611560,
+      "text": "I have so many follow-up questions. We have to get to quantum in just a second, but on the idea"
+    },
+    {
+      "end_ms": 625320,
+      "source_event_index": 91,
+      "start_ms": 619120,
+      "text": "that maybe the models get commoditized: maybe somebody could have made a similar argument a"
+    },
+    {
+      "end_ms": 629320,
+      "source_event_index": 92,
+      "start_ms": 625320,
+      "text": "couple of decades ago about the cloud – that fundamentally, it's just a chip and a box."
+    },
+    {
+      "end_ms": 634680,
+      "source_event_index": 93,
+      "start_ms": 630000,
+      "text": "But in the end, of course, you and many others figured out how to get amazing profit margins in"
+    },
+    {
+      "end_ms": 641480,
+      "source_event_index": 94,
+      "start_ms": 634680,
+      "text": "the cloud. You figured out ways to get economies of scale and add other value. Fundamentally,"
+    },
+    {
+      "end_ms": 646800,
+      "source_event_index": 95,
+      "start_ms": 641480,
+      "text": "even forgetting the jargon, if you've got AGI and it's helping you make better AIs – right now,"
+    },
+    {
+      "end_ms": 650960,
+      "source_event_index": 96,
+      "start_ms": 646800,
+      "text": "it's synthetic data and RL; maybe in the future, it's an automated AI researcher – that seems like"
+    },
+    {
+      "end_ms": 655880,
+      "source_event_index": 97,
+      "start_ms": 650960,
+      "text": "a good way to entrench your advantage there. I'm curious what you make of that, just the idea that"
+    },
+    {
+      "end_ms": 659240,
+      "source_event_index": 98,
+      "start_ms": 655880,
+      "text": "it really matters to be ahead there. At scale, nothing is commodity."
+    },
+    {
+      "end_ms": 664000,
+      "source_event_index": 99,
+      "start_ms": 660000,
+      "text": "To your point about cloud, everybody would say, \"Oh, cloud's a commodity.\" Except,"
+    },
+    {
+      "end_ms": 668080,
+      "source_event_index": 100,
+      "start_ms": 664000,
+      "text": "when you scale... That's why the know-how of running a hyperscaler... You could say, \"Oh,"
+    },
+    {
+      "end_ms": 671040,
+      "source_event_index": 101,
+      "start_ms": 668080,
+      "text": "what the heck? I can just rack and stack servers.\" Right."
+    },
+    {
+      "end_ms": 676920,
+      "source_event_index": 102,
+      "start_ms": 671040,
+      "text": "In fact, in the early days of hyperscale, most people thought “there are all these hosters,"
+    },
+    {
+      "end_ms": 683640,
+      "source_event_index": 103,
+      "start_ms": 676920,
+      "text": "and those are not great businesses. Will there be anything? Is there a business even in hyperscale?”"
+    },
+    {
+      "end_ms": 689520,
+      "source_event_index": 104,
+      "start_ms": 683640,
+      "text": "And it turns out there is a real business, just because of the know-how of running, in"
+    },
+    {
+      "end_ms": 695360,
+      "source_event_index": 105,
+      "start_ms": 689520,
+      "text": "the case of Azure, the world's computing of 60-plus regions with all the compute. It's"
+    },
+    {
+      "end_ms": 700640,
+      "source_event_index": 106,
+      "start_ms": 695360,
+      "text": "just a tough thing to duplicate. So I was more making the point,"
+    },
+    {
+      "end_ms": 708520,
+      "source_event_index": 107,
+      "start_ms": 701440,
+      "text": "is it one winner? Is it a winner-take-all or not? Because that you've got to get right. I"
+    },
+    {
+      "end_ms": 715360,
+      "source_event_index": 108,
+      "start_ms": 708520,
+      "text": "like to enter categories which are big TAMs, where you don't have to have the risk of it"
+    },
+    {
+      "end_ms": 723760,
+      "source_event_index": 109,
+      "start_ms": 715360,
+      "text": "all being winner-take-all. The best news to be in is a big market that can accommodate"
+    },
+    {
+      "end_ms": 732120,
+      "source_event_index": 110,
+      "start_ms": 723760,
+      "text": "a couple of winners, and you're one of them. That's what I meant by the hyperscale layer."
+    },
+    {
+      "end_ms": 740720,
+      "source_event_index": 111,
+      "start_ms": 732120,
+      "text": "In the model layer, one is models need ultimately to run on some hyperscale compute. So that nexus,"
+    },
+    {
+      "end_ms": 747400,
+      "source_event_index": 112,
+      "start_ms": 740720,
+      "text": "I feel, is going to be there forever. It's not just the model; the model needs state, that means"
+    },
+    {
+      "end_ms": 753560,
+      "source_event_index": 113,
+      "start_ms": 747400,
+      "text": "it needs storage, and it needs regular compute for running these agents and the agent environments."
+    },
+    {
+      "end_ms": 759240,
+      "source_event_index": 114,
+      "start_ms": 753560,
+      "text": "And so that's how I think about why the limit of one person running away with"
+    },
+    {
+      "end_ms": 768040,
+      "source_event_index": 115,
+      "start_ms": 759240,
+      "text": "one model and building it all may not happen. On the hyperscaler side, and by the way, it's also"
+    },
+    {
+      "end_ms": 772720,
+      "source_event_index": 116,
+      "start_ms": 768040,
+      "text": "interesting the advantage you as a hyperscaler would have in the sense that, especially with"
+    },
+    {
+      "end_ms": 777520,
+      "source_event_index": 117,
+      "start_ms": 772720,
+      "text": "inference time scaling and if that's involved in training future models, you can amortize"
+    },
+    {
+      "end_ms": 782040,
+      "source_event_index": 118,
+      "start_ms": 777520,
+      "text": "your data centers and GPUs, not only for the training, but then use them again for inference."
+    },
+    {
+      "end_ms": 787160,
+      "source_event_index": 119,
+      "start_ms": 782040,
+      "text": "I'm curious what kind of hyperscaler you consider Microsoft and Azure to be. Is it on"
+    },
+    {
+      "end_ms": 791400,
+      "source_event_index": 120,
+      "start_ms": 787160,
+      "text": "the pre-training side? Is it on providing the O3-type inference? Or are you just,"
+    },
+    {
+      "end_ms": 795120,
+      "source_event_index": 121,
+      "start_ms": 791400,
+      "text": "we’re going to host and deploy any single model that's out there in the market,"
+    },
+    {
+      "end_ms": 803160,
+      "source_event_index": 122,
+      "start_ms": 795120,
+      "text": "and we are sort of agnostic about that? It’s a good point. The way we want to"
+    },
+    {
+      "end_ms": 812720,
+      "source_event_index": 123,
+      "start_ms": 803160,
+      "text": "build out the fleet is [to], in some sense ride Moore's law. I think this will be like"
+    },
+    {
+      "end_ms": 821840,
+      "source_event_index": 124,
+      "start_ms": 812720,
+      "text": "what we've done with everything else in the past: every year keep refreshing the fleet,"
+    },
+    {
+      "end_ms": 829160,
+      "source_event_index": 125,
+      "start_ms": 821840,
+      "text": "you depreciate it over whatever the lifetime value of these things are, and then get very very good"
+    },
+    {
+      "end_ms": 837320,
+      "source_event_index": 126,
+      "start_ms": 829160,
+      "text": "at the placement of the fleet such that you can run different jobs at it with high utilization."
+    },
+    {
+      "end_ms": 845240,
+      "source_event_index": 127,
+      "start_ms": 838040,
+      "text": "Sometimes there are very big training jobs that need to have highly concentrated peak"
+    },
+    {
+      "end_ms": 851680,
+      "source_event_index": 128,
+      "start_ms": 845800,
+      "text": "flops that are provisioned to it that also need to cohere. That's great. We should have enough"
+    },
+    {
+      "end_ms": 856960,
+      "source_event_index": 129,
+      "start_ms": 851680,
+      "text": "data center footprint to be able to give that. But at the end of the day, these are all becoming"
+    },
+    {
+      "end_ms": 862760,
+      "source_event_index": 130,
+      "start_ms": 856960,
+      "text": "so big, even in terms of if you take pre-training scale, if it needs to keep going, even"
+    },
+    {
+      "end_ms": 868480,
+      "source_event_index": 131,
+      "start_ms": 862760,
+      "text": "pre-training scale at some point has to cross data center boundaries. It's all more or less there."
+    },
+    {
+      "end_ms": 875560,
+      "source_event_index": 132,
+      "start_ms": 868480,
+      "text": "So, great, once you start crossing pre-training data center boundaries, is it that different than"
+    },
+    {
+      "end_ms": 881520,
+      "source_event_index": 133,
+      "start_ms": 875560,
+      "text": "anything else? The way I think about it is hey, distributed computing will remain distributed,"
+    },
+    {
+      "end_ms": 886720,
+      "source_event_index": 134,
+      "start_ms": 881520,
+      "text": "so go build out your fleet such that it's ready for large training jobs,"
+    },
+    {
+      "end_ms": 892920,
+      "source_event_index": 135,
+      "start_ms": 886720,
+      "text": "it's ready for test-time compute, it’s ready- in fact, if this RL thing that might happens,"
+    },
+    {
+      "end_ms": 899960,
+      "source_event_index": 136,
+      "start_ms": 892920,
+      "text": "you build one large model, and then after that, there’s tons of RL going on. To me,"
+    },
+    {
+      "end_ms": 904480,
+      "source_event_index": 137,
+      "start_ms": 899960,
+      "text": "it's kind of like more training flops, because you want to create these highly specialized,"
+    },
+    {
+      "end_ms": 909080,
+      "source_event_index": 138,
+      "start_ms": 904480,
+      "text": "distilled models for different tasks. So you want that fleet, and then the"
+    },
+    {
+      "end_ms": 911840,
+      "source_event_index": 139,
+      "start_ms": 909080,
+      "text": "serving needs. At the end of the day, speed of light is speed of light,"
+    },
+    {
+      "end_ms": 917320,
+      "source_event_index": 140,
+      "start_ms": 911840,
+      "text": "so you can't have one data center in Texas and say, \"I'm going to serve the world from there.\""
+    },
+    {
+      "end_ms": 922120,
+      "source_event_index": 141,
+      "start_ms": 917320,
+      "text": "You've got to serve the world based on having an inference fleet everywhere in"
+    },
+    {
+      "end_ms": 929320,
+      "source_event_index": 142,
+      "start_ms": 922120,
+      "text": "the world. That's how I think of our build-out of a true hyperscale fleet."
+    },
+    {
+      "end_ms": 936640,
+      "source_event_index": 143,
+      "start_ms": 929320,
+      "text": "Oh, and by the way, I want my storage and compute also close to all of these things,"
+    },
+    {
+      "end_ms": 946840,
+      "source_event_index": 144,
+      "start_ms": 936640,
+      "text": "because it's not just AI accelerators that are stateless. My training data itself needs storage,"
+    },
+    {
+      "end_ms": 950640,
+      "source_event_index": 145,
+      "start_ms": 946840,
+      "text": "and then I want to be able to multiplex multiple training jobs, I want to be able to"
+    },
+    {
+      "end_ms": 958920,
+      "source_event_index": 146,
+      "start_ms": 950640,
+      "text": "then have memory, I want to be able to have these environments in which these agents can go execute"
+    },
+    {
+      "end_ms": 965200,
+      "source_event_index": 147,
+      "start_ms": 959720,
+      "text": "programs. That's kind of how I think about it. You recently reported that your yearly revenue"
+    },
+    {
+      "end_ms": 970480,
+      "source_event_index": 148,
+      "start_ms": 965200,
+      "text": "from AI is $13 billion. But if you look at your year-on-year growth on that, in like four years,"
+    },
+    {
+      "end_ms": 975680,
+      "source_event_index": 149,
+      "start_ms": 970480,
+      "text": "it'll be 10x that. You'll have $130 billion in revenue from AI, if the trend continues. If it"
+    },
+    {
+      "end_ms": 981840,
+      "source_event_index": 150,
+      "start_ms": 975680,
+      "text": "does, what do you anticipate doing with all that intelligence, this industrial scale use?"
+    },
+    {
+      "end_ms": 985600,
+      "source_event_index": 151,
+      "start_ms": 981840,
+      "text": "Is it going to be through Office? Is it going to be you deploying it for others to host?"
+    },
+    {
+      "end_ms": 990800,
+      "source_event_index": 152,
+      "start_ms": 986960,
+      "text": "You've got to have the AGIs to have $130 billion in revenue? What does it look like?"
+    },
+    {
+      "end_ms": 995520,
+      "source_event_index": 153,
+      "start_ms": 990800,
+      "text": "The way I come at it, Dwarkesh, it's a great question because at some level,"
+    },
+    {
+      "end_ms": 1002680,
+      "source_event_index": 154,
+      "start_ms": 995520,
+      "text": "if you're going to have this explosion, abundance, whatever, commodity of intelligence available,"
+    },
+    {
+      "end_ms": 1009720,
+      "source_event_index": 155,
+      "start_ms": 1002680,
+      "text": "the first thing we have to observe is GDP growth. Before I get to what Microsoft's revenue will look"
+    },
+    {
+      "end_ms": 1013160,
+      "source_event_index": 156,
+      "start_ms": 1009720,
+      "text": "like, there's only one governor in all of this. This is where we get a little"
+    },
+    {
+      "end_ms": 1024320,
+      "source_event_index": 157,
+      "start_ms": 1013160,
+      "text": "bit ahead of ourselves with all this AGI hype. Remember the developed world, which is what? 2%"
+    },
+    {
+      "end_ms": 1034680,
+      "source_event_index": 158,
+      "start_ms": 1024320,
+      "text": "growth and if you adjust for inflation it’s zero? So in 2025, as we sit here, I'm not an economist,"
+    },
+    {
+      "end_ms": 1039520,
+      "source_event_index": 159,
+      "start_ms": 1034680,
+      "text": "at least I look at it and say we have a real growth challenge. So, the first thing that"
+    },
+    {
+      "end_ms": 1047280,
+      "source_event_index": 160,
+      "start_ms": 1039520,
+      "text": "we all have to do is, when we say this is like the Industrial Revolution, let's have"
+    },
+    {
+      "end_ms": 1054960,
+      "source_event_index": 161,
+      "start_ms": 1047280,
+      "text": "that Industrial Revolution type of growth. That means to me, 10%, 7%, developed world,"
+    },
+    {
+      "end_ms": 1063480,
+      "source_event_index": 162,
+      "start_ms": 1054960,
+      "text": "inflation-adjusted, growing at 5%. That's the real marker. It can't just be supply-side."
+    },
+    {
+      "end_ms": 1068760,
+      "source_event_index": 163,
+      "start_ms": 1064880,
+      "text": "In fact that’s the thing, a lot of people are writing about it, and I'm glad they are,"
+    },
+    {
+      "end_ms": 1074240,
+      "source_event_index": 164,
+      "start_ms": 1068760,
+      "text": "which is the big winners here are not going to be tech companies. The winners are going to be the"
+    },
+    {
+      "end_ms": 1082320,
+      "source_event_index": 165,
+      "start_ms": 1074240,
+      "text": "broader industry that uses this commodity that, by the way, is abundant. Suddenly productivity goes"
+    },
+    {
+      "end_ms": 1090400,
+      "source_event_index": 166,
+      "start_ms": 1082320,
+      "text": "up and the economy is growing at a faster rate. When that happens, we'll be fine as an industry."
+    },
+    {
+      "end_ms": 1095680,
+      "source_event_index": 167,
+      "start_ms": 1090400,
+      "text": "But that's to me the moment. Us self-claiming some AGI milestone,"
+    },
+    {
+      "end_ms": 1104680,
+      "source_event_index": 168,
+      "start_ms": 1095680,
+      "text": "that's just nonsensical benchmark hacking to me. The real benchmark is: the world growing at 10%."
+    },
+    {
+      "end_ms": 1107760,
+      "source_event_index": 169,
+      "start_ms": 1104680,
+      "text": "Okay, so if the world grew at 10%, the world economy is $100 trillion or something, if the"
+    },
+    {
+      "end_ms": 1114120,
+      "source_event_index": 170,
+      "start_ms": 1107760,
+      "text": "world grew at 10%, that's like an extra $10 trillion in value produced every single year."
+    },
+    {
+      "end_ms": 1120480,
+      "source_event_index": 171,
+      "start_ms": 1114120,
+      "text": "If that is the case, you as a hyperscaler... It seems like $80 billion is a lot of money."
+    },
+    {
+      "end_ms": 1124000,
+      "source_event_index": 172,
+      "start_ms": 1120480,
+      "text": "Shouldn't you be doing like $800 billion? If you really think in a couple of years,"
+    },
+    {
+      "end_ms": 1127680,
+      "source_event_index": 173,
+      "start_ms": 1124000,
+      "text": "we could be really growing the world economy at this rate, and the key bottleneck would be:"
+    },
+    {
+      "end_ms": 1133920,
+      "source_event_index": 174,
+      "start_ms": 1127680,
+      "text": "do you have the compute necessary to deploy these AIs to do all this work?"
+    },
+    {
+      "end_ms": 1143080,
+      "source_event_index": 175,
+      "start_ms": 1133920,
+      "text": "That is correct. But by the way, the classic supply side is, \"Hey, let me build it and they’ll"
+    },
+    {
+      "end_ms": 1149120,
+      "source_event_index": 176,
+      "start_ms": 1143080,
+      "text": "come.\" That's an argument, and after all we've done that, we've taken enough risk to go do it."
+    },
+    {
+      "end_ms": 1157800,
+      "source_event_index": 177,
+      "start_ms": 1149120,
+      "text": "But at some point, the supply and demand have to map. That's why I'm tracking both sides of"
+    },
+    {
+      "end_ms": 1165400,
+      "source_event_index": 178,
+      "start_ms": 1157800,
+      "text": "it. You can go off the rails completely when you are hyping yourself with the supply-side,"
+    },
+    {
+      "end_ms": 1170240,
+      "source_event_index": 179,
+      "start_ms": 1165400,
+      "text": "versus really understanding how to translate that into real value to customers."
+    },
+    {
+      "end_ms": 1176320,
+      "source_event_index": 180,
+      "start_ms": 1172040,
+      "text": "That's why I look at my inference revenue. That's one of the reasons why even the disclosure on the"
+    },
+    {
+      "end_ms": 1181400,
+      "source_event_index": 181,
+      "start_ms": 1176320,
+      "text": "inference revenue... It's interesting that not many people are talking about their real revenue,"
+    },
+    {
+      "end_ms": 1185920,
+      "source_event_index": 182,
+      "start_ms": 1181400,
+      "text": "but to me, that is important as a governor for how you think about it."
+    },
+    {
+      "end_ms": 1190840,
+      "source_event_index": 183,
+      "start_ms": 1185920,
+      "text": "You're not going to say they have to symmetrically meet at any given point in time, but you need to"
+    },
+    {
+      "end_ms": 1198960,
+      "source_event_index": 184,
+      "start_ms": 1190840,
+      "text": "have existence proof that you are able to parlay yesterday's, let’s call it capital, into today's"
+    },
+    {
+      "end_ms": 1205080,
+      "source_event_index": 185,
+      "start_ms": 1198960,
+      "text": "demand, so that then you can again invest, maybe exponentially even, knowing that you're"
+    },
+    {
+      "end_ms": 1209520,
+      "source_event_index": 186,
+      "start_ms": 1205080,
+      "text": "not going to be completely rate mismatched. I wonder if there's a contradiction in these"
+    },
+    {
+      "end_ms": 1213480,
+      "source_event_index": 187,
+      "start_ms": 1209520,
+      "text": "two different viewpoints, because one of the things you've done wonderfully is make these"
+    },
+    {
+      "end_ms": 1219400,
+      "source_event_index": 188,
+      "start_ms": 1213480,
+      "text": "early bets. You invested in OpenAI in 2019, even before there was Copilot and any applications."
+    },
+    {
+      "end_ms": 1225200,
+      "source_event_index": 189,
+      "start_ms": 1219400,
+      "text": "If you look at the Industrial Revolution, these 6%, 10% build-outs of railways and"
+    },
+    {
+      "end_ms": 1228400,
+      "source_event_index": 190,
+      "start_ms": 1225200,
+      "text": "whatever things, many of those were not like, \"We've got revenue from the tickets,"
+    },
+    {
+      "end_ms": 1230680,
+      "source_event_index": 191,
+      "start_ms": 1228400,
+      "text": "and now we're going to...\" There was a lot of money lost."
+    },
+    {
+      "end_ms": 1238200,
+      "source_event_index": 192,
+      "start_ms": 1230680,
+      "text": "That's true. So, if you really think there's some potential here to 10x or 5x the growth"
+    },
+    {
+      "end_ms": 1244280,
+      "source_event_index": 193,
+      "start_ms": 1238200,
+      "text": "rate of the world, and then you're like, \"Well, what is the revenue from GPT-4?\""
+    },
+    {
+      "end_ms": 1247440,
+      "source_event_index": 194,
+      "start_ms": 1244280,
+      "text": "If you really think that's the possibility from the next level up, shouldn't you just,"
+    },
+    {
+      "end_ms": 1251320,
+      "source_event_index": 195,
+      "start_ms": 1248080,
+      "text": "\"Let's go crazy, let's do the hundreds of billions of dollars of compute?\" I mean,"
+    },
+    {
+      "end_ms": 1256040,
+      "source_event_index": 196,
+      "start_ms": 1251320,
+      "text": "there's some chance, right? Here’s the interesting thing, right?"
+    },
+    {
+      "end_ms": 1267520,
+      "source_event_index": 197,
+      "start_ms": 1262360,
+      "text": "That's why even that balanced approach to the fleet, at least, is very important to me. It's"
+    },
+    {
+      "end_ms": 1272520,
+      "source_event_index": 198,
+      "start_ms": 1267520,
+      "text": "not about building compute. It's about building compute that can actually help me not only train"
+    },
+    {
+      "end_ms": 1278120,
+      "source_event_index": 199,
+      "start_ms": 1272520,
+      "text": "the next big model but also serve the next big model. Until you do those two things, you're not"
+    },
+    {
+      "end_ms": 1282400,
+      "source_event_index": 200,
+      "start_ms": 1278120,
+      "text": "going to be able to really be in a position to take advantage of even your investment."
+    },
+    {
+      "end_ms": 1287240,
+      "source_event_index": 201,
+      "start_ms": 1282400,
+      "text": "So, that's kind of where it's not a race to just building a model,"
+    },
+    {
+      "end_ms": 1292560,
+      "source_event_index": 202,
+      "start_ms": 1287240,
+      "text": "it's a race to creating a commodity that is getting used in the world to drive..."
+    },
+    {
+      "end_ms": 1297880,
+      "source_event_index": 203,
+      "start_ms": 1292560,
+      "text": "You have to have a complete thought, not just one thing that you’re thinking about."
+    },
+    {
+      "end_ms": 1304400,
+      "source_event_index": 204,
+      "start_ms": 1297880,
+      "text": "And by the way, one of the things is that there will be overbuild. To your"
+    },
+    {
+      "end_ms": 1310520,
+      "source_event_index": 205,
+      "start_ms": 1304400,
+      "text": "point about what happened in the dotcom era, the memo has gone out that, hey, you know,"
+    },
+    {
+      "end_ms": 1315040,
+      "source_event_index": 206,
+      "start_ms": 1310520,
+      "text": "you need more energy, and you need more compute. Thank God for it. So, everybody's going to race."
+    },
+    {
+      "end_ms": 1320240,
+      "source_event_index": 207,
+      "start_ms": 1315040,
+      "text": "In fact, it's not just companies deploying, countries are going to deploy capital,"
+    },
+    {
+      "end_ms": 1328160,
+      "source_event_index": 208,
+      "start_ms": 1320240,
+      "text": "and there will be clearly... I'm so excited to be a leaser, because, by the way; I build a lot,"
+    },
+    {
+      "end_ms": 1334160,
+      "source_event_index": 209,
+      "start_ms": 1328160,
+      "text": "I lease a lot. I am thrilled that I'm going to be leasing a lot of capacity in '27,"
+    },
+    {
+      "end_ms": 1338880,
+      "source_event_index": 210,
+      "start_ms": 1334160,
+      "text": "'28 because I look at the builds, and I'm saying, \"This is fantastic.\" The only thing"
+    },
+    {
+      "end_ms": 1343240,
+      "source_event_index": 211,
+      "start_ms": 1338880,
+      "text": "that's going to happen with all the compute builds is the prices are going to come down."
+    },
+    {
+      "end_ms": 1348080,
+      "source_event_index": 212,
+      "start_ms": 1344200,
+      "text": "Speaking of prices coming down, you recently tweeted after the DeepSeek model came out about"
+    },
+    {
+      "end_ms": 1354760,
+      "source_event_index": 213,
+      "start_ms": 1348080,
+      "text": "Jevons’ Paradox. I'm curious if you can flesh that out. Jevons’ Paradox occurs when the demand for"
+    },
+    {
+      "end_ms": 1363080,
+      "source_event_index": 214,
+      "start_ms": 1354760,
+      "text": "something is highly elastic. Is intelligence that bottlenecked on prices going down?"
+    },
+    {
+      "end_ms": 1367920,
+      "source_event_index": 215,
+      "start_ms": 1363080,
+      "text": "Because when I think about, at least my use cases as a consumer, intelligence is already so cheap."
+    },
+    {
+      "end_ms": 1372560,
+      "source_event_index": 216,
+      "start_ms": 1367920,
+      "text": "It's like two cents per million tokens. Do I really need it to go down to 0.02 cents? I'm just"
+    },
+    {
+      "end_ms": 1377360,
+      "source_event_index": 217,
+      "start_ms": 1372560,
+      "text": "really bottlenecked on it becoming smarter. If you need to charge me 100x, do a 100x bigger training"
+    },
+    {
+      "end_ms": 1381320,
+      "source_event_index": 218,
+      "start_ms": 1377360,
+      "text": "run. I'm happy for companies to take that. But maybe you're seeing something different"
+    },
+    {
+      "end_ms": 1385160,
+      "source_event_index": 219,
+      "start_ms": 1381320,
+      "text": "on the enterprise side or something. What is the key use case of intelligence that really requires"
+    },
+    {
+      "end_ms": 1390240,
+      "source_event_index": 220,
+      "start_ms": 1385160,
+      "text": "it to get to 0.002 cents per million tokens? I think the real thing is the utility of the"
+    },
+    {
+      "end_ms": 1400480,
+      "source_event_index": 221,
+      "start_ms": 1390240,
+      "text": "tokens. Both need to happen: One is intelligence needs to get better and cheaper. And anytime"
+    },
+    {
+      "end_ms": 1406360,
+      "source_event_index": 222,
+      "start_ms": 1400480,
+      "text": "there's a breakthrough, like even what DeepSeek did, with the efficient frontier of performance"
+    },
+    {
+      "end_ms": 1414200,
+      "source_event_index": 223,
+      "start_ms": 1406360,
+      "text": "per token changes, the curve gets bent, and the frontier moves. That just brings"
+    },
+    {
+      "end_ms": 1420840,
+      "source_event_index": 224,
+      "start_ms": 1414200,
+      "text": "more demand. That's what happened with cloud. Here’s an interesting thing: We used to think"
+    },
+    {
+      "end_ms": 1425880,
+      "source_event_index": 225,
+      "start_ms": 1420840,
+      "text": "“oh my God, we've sold all the servers in the client-server era”. Except once we started"
+    },
+    {
+      "end_ms": 1432960,
+      "source_event_index": 226,
+      "start_ms": 1425880,
+      "text": "putting servers in the cloud, suddenly people started consuming more because they could buy"
+    },
+    {
+      "end_ms": 1440280,
+      "source_event_index": 227,
+      "start_ms": 1432960,
+      "text": "it cheaper, and it was elastic, and they could buy it as a meter versus a license,"
+    },
+    {
+      "end_ms": 1443960,
+      "source_event_index": 228,
+      "start_ms": 1440280,
+      "text": "and it completely expanded. I remember going, let’s say,"
+    },
+    {
+      "end_ms": 1449040,
+      "source_event_index": 229,
+      "start_ms": 1443960,
+      "text": "to a country like India and talking about “here is SQL Server”. We sold a little,"
+    },
+    {
+      "end_ms": 1453880,
+      "source_event_index": 230,
+      "start_ms": 1449040,
+      "text": "but man, the cloud in India is so much bigger than anything that we were able to do in the"
+    },
+    {
+      "end_ms": 1459840,
+      "source_event_index": 231,
+      "start_ms": 1453880,
+      "text": "server era. I think that's going to be true. If you think about, if you want to really have,"
+    },
+    {
+      "end_ms": 1465960,
+      "source_event_index": 232,
+      "start_ms": 1459840,
+      "text": "in the Global South, in a developing country, if you had these tokens that were available"
+    },
+    {
+      "end_ms": 1472000,
+      "source_event_index": 233,
+      "start_ms": 1465960,
+      "text": "for healthcare that were really cheap, that would be the biggest change ever."
+    },
+    {
+      "end_ms": 1539840,
+      "source_event_index": 234,
+      "start_ms": 1536120,
+      "text": "I think it's quite reasonable for somebody to hear people like me in San Francisco and think"
+    },
+    {
+      "end_ms": 1543760,
+      "source_event_index": 235,
+      "start_ms": 1540360,
+      "text": "“they're kind of silly; they don't know what it's actually like to deploy things in the real world”."
+    },
+    {
+      "end_ms": 1548840,
+      "source_event_index": 236,
+      "start_ms": 1543760,
+      "text": "As somebody who works with these Fortune 500s and is working with them to deploy"
+    },
+    {
+      "end_ms": 1553600,
+      "source_event_index": 237,
+      "start_ms": 1548840,
+      "text": "things for hundreds of millions, billions of people, what's your sense on how fast"
+    },
+    {
+      "end_ms": 1557000,
+      "source_event_index": 238,
+      "start_ms": 1553600,
+      "text": "deployment of these capabilities will be? Even when you have working agents, even when"
+    },
+    {
+      "end_ms": 1562320,
+      "source_event_index": 239,
+      "start_ms": 1557000,
+      "text": "you have things that can do remote work for you, with all the compliance and with all the inherent"
+    },
+    {
+      "end_ms": 1567360,
+      "source_event_index": 240,
+      "start_ms": 1562320,
+      "text": "bottlenecks, is that going to be a big bottleneck, or is that going to move past pretty fast?"
+    },
+    {
+      "end_ms": 1576160,
+      "source_event_index": 241,
+      "start_ms": 1567360,
+      "text": "It is going to be a real challenge because the real issue is change management or process"
+    },
+    {
+      "end_ms": 1584720,
+      "source_event_index": 242,
+      "start_ms": 1576160,
+      "text": "change. Here's an interesting thing: one of the analogies I use is, just imagine how a"
+    },
+    {
+      "end_ms": 1594400,
+      "source_event_index": 243,
+      "start_ms": 1584720,
+      "text": "multinational corporation like us did forecasts pre-PC, and email, and spreadsheets. Faxes went"
+    },
+    {
+      "end_ms": 1602120,
+      "source_event_index": 244,
+      "start_ms": 1594400,
+      "text": "around. Somebody then got those faxes and did an interoffice memo that then went around, and people"
+    },
+    {
+      "end_ms": 1610520,
+      "source_event_index": 245,
+      "start_ms": 1602120,
+      "text": "entered numbers, and then ultimately a forecast came, maybe just in time for the next quarter."
+    },
+    {
+      "end_ms": 1615040,
+      "source_event_index": 246,
+      "start_ms": 1611200,
+      "text": "Then somebody said, \"Hey, I'm just going to take an Excel spreadsheet, put it in email,"
+    },
+    {
+      "end_ms": 1619520,
+      "source_event_index": 247,
+      "start_ms": 1615040,
+      "text": "send it around. People will go edit it, and I'll have a forecast.\" So, the entire"
+    },
+    {
+      "end_ms": 1627680,
+      "source_event_index": 248,
+      "start_ms": 1619520,
+      "text": "forecasting business process changed because the work artifact and the workflow changed."
+    },
+    {
+      "end_ms": 1636520,
+      "source_event_index": 249,
+      "start_ms": 1627680,
+      "text": "That is what needs to happen with AI being introduced into knowledge work. In fact, when we"
+    },
+    {
+      "end_ms": 1642440,
+      "source_event_index": 250,
+      "start_ms": 1636520,
+      "text": "think about all these agents, the fundamental thing is there's a new work and workflow."
+    },
+    {
+      "end_ms": 1648600,
+      "source_event_index": 251,
+      "start_ms": 1642440,
+      "text": "For example, even prepping for our podcast, I go to my copilot and I say, \"Hey, I'm going to talk"
+    },
+    {
+      "end_ms": 1656840,
+      "source_event_index": 252,
+      "start_ms": 1648600,
+      "text": "to Dwarkesh about our quantum announcement and this new model that we built for game generation."
+    },
+    {
+      "end_ms": 1664240,
+      "source_event_index": 253,
+      "start_ms": 1657680,
+      "text": "Give me a summary of all the stuff that I should read up on before going.\" It knew the two Nature"
+    },
+    {
+      "end_ms": 1670240,
+      "source_event_index": 254,
+      "start_ms": 1664240,
+      "text": "papers, it took that. I even said, \"Hey, go give it to me in a podcast format.\" And so, it even"
+    },
+    {
+      "end_ms": 1676240,
+      "source_event_index": 255,
+      "start_ms": 1670240,
+      "text": "did a nice job of two of us chatting about it. So that became—and in fact, then I shared it"
+    },
+    {
+      "end_ms": 1680960,
+      "source_event_index": 256,
+      "start_ms": 1676240,
+      "text": "with my team. I took it and put it into Pages, which is our artifact,"
+    },
+    {
+      "end_ms": 1687520,
+      "source_event_index": 257,
+      "start_ms": 1680960,
+      "text": "and then shared. So the new workflow for me is I think with AI and work with my colleagues."
+    },
+    {
+      "end_ms": 1695120,
+      "source_event_index": 258,
+      "start_ms": 1687520,
+      "text": "That's a fundamental change management of everyone who's doing knowledge work, suddenly figuring out"
+    },
+    {
+      "end_ms": 1701320,
+      "source_event_index": 259,
+      "start_ms": 1695120,
+      "text": "these new patterns of \"How am I going to get my knowledge work done in new ways?\" That is"
+    },
+    {
+      "end_ms": 1706680,
+      "source_event_index": 260,
+      "start_ms": 1701320,
+      "text": "going to take time. It's going to be something like in sales, and in finance, and supply chain."
+    },
+    {
+      "end_ms": 1711160,
+      "source_event_index": 261,
+      "start_ms": 1706680,
+      "text": "For an incumbent, I think that this is going to be one of those things where—you know,"
+    },
+    {
+      "end_ms": 1716600,
+      "source_event_index": 262,
+      "start_ms": 1711160,
+      "text": "let's take one of the analogies I like to use is what manufacturers did with Lean. I love"
+    },
+    {
+      "end_ms": 1721240,
+      "source_event_index": 263,
+      "start_ms": 1716600,
+      "text": "that because, in some sense, if you look at it, Lean became a methodology of how one could take"
+    },
+    {
+      "end_ms": 1726320,
+      "source_event_index": 264,
+      "start_ms": 1721240,
+      "text": "an end-to-end process in manufacturing and become more efficient. It's that continuous improvement,"
+    },
+    {
+      "end_ms": 1730520,
+      "source_event_index": 265,
+      "start_ms": 1726320,
+      "text": "which is reduce waste and increase value. That's what's going to come to knowledge."
+    },
+    {
+      "end_ms": 1735040,
+      "source_event_index": 266,
+      "start_ms": 1730520,
+      "text": "This is like Lean for knowledge work, in particular. And that's going to be the hard work"
+    },
+    {
+      "end_ms": 1740640,
+      "source_event_index": 267,
+      "start_ms": 1735040,
+      "text": "of management teams and individuals who are doing knowledge work, and that's going to take its time."
+    },
+    {
+      "end_ms": 1745480,
+      "source_event_index": 268,
+      "start_ms": 1740640,
+      "text": "Can I ask you just briefly about that analogy? One of the things Lean did"
+    },
+    {
+      "end_ms": 1750400,
+      "source_event_index": 269,
+      "start_ms": 1745480,
+      "text": "is physically transform what a factory floor looks like. It revealed bottlenecks that people"
+    },
+    {
+      "end_ms": 1755480,
+      "source_event_index": 270,
+      "start_ms": 1750400,
+      "text": "didn't realize until you're really paying attention to the processes and workflows."
+    },
+    {
+      "end_ms": 1758120,
+      "source_event_index": 271,
+      "start_ms": 1755480,
+      "text": "You mentioned briefly what your own workflow—how your own workflow has"
+    },
+    {
+      "end_ms": 1765200,
+      "source_event_index": 272,
+      "start_ms": 1758120,
+      "text": "changed as a result of AIs. I'm curious if we can add more color to what will it be like to"
+    },
+    {
+      "end_ms": 1768840,
+      "source_event_index": 273,
+      "start_ms": 1765200,
+      "text": "run a big company when you have these AI agents that are getting smarter and smarter over time?"
+    },
+    {
+      "end_ms": 1777240,
+      "source_event_index": 274,
+      "start_ms": 1769640,
+      "text": "It's interesting you ask that. I was thinking, for example, today if I look at it, we are very"
+    },
+    {
+      "end_ms": 1782480,
+      "source_event_index": 275,
+      "start_ms": 1777240,
+      "text": "email heavy. I get in in the morning, and I’m like, man my inbox is full, and I'm responding,"
+    },
+    {
+      "end_ms": 1788280,
+      "source_event_index": 276,
+      "start_ms": 1782480,
+      "text": "and so I can't wait for some of these Copilot agents to automatically populate my"
+    },
+    {
+      "end_ms": 1797920,
+      "source_event_index": 277,
+      "start_ms": 1788280,
+      "text": "drafts so that I can start reviewing and sending. But I already have in Copilot at least ten agents,"
+    },
+    {
+      "end_ms": 1806080,
+      "source_event_index": 278,
+      "start_ms": 1799080,
+      "text": "which I query them different things for different tasks. I feel like there's a new"
+    },
+    {
+      "end_ms": 1812160,
+      "source_event_index": 279,
+      "start_ms": 1806080,
+      "text": "inbox that's going to get created, which is my millions of agents that I'm working with"
+    },
+    {
+      "end_ms": 1818480,
+      "source_event_index": 280,
+      "start_ms": 1812160,
+      "text": "will have to invoke some exceptions to me, notifications to me, ask for instructions."
+    },
+    {
+      "end_ms": 1823800,
+      "source_event_index": 281,
+      "start_ms": 1818480,
+      "text": "So at least what I'm thinking is that there's a new scaffolding, which is the agent manager."
+    },
+    {
+      "end_ms": 1830680,
+      "source_event_index": 282,
+      "start_ms": 1824960,
+      "text": "It's not just a chat interface. I need a smarter thing than a chat interface to"
+    },
+    {
+      "end_ms": 1835000,
+      "source_event_index": 283,
+      "start_ms": 1830680,
+      "text": "manage all the agents and their dialogue. That's why I think of this Copilot,"
+    },
+    {
+      "end_ms": 1843480,
+      "source_event_index": 284,
+      "start_ms": 1835000,
+      "text": "as the UI for AI, is a big, big deal. Each of us is going to have it. So basically, think of it as:"
+    },
+    {
+      "end_ms": 1850600,
+      "source_event_index": 285,
+      "start_ms": 1843480,
+      "text": "there is knowledge work, and there's a knowledge worker. The knowledge work may be done by many,"
+    },
+    {
+      "end_ms": 1857920,
+      "source_event_index": 286,
+      "start_ms": 1850600,
+      "text": "many agents, but you still have a knowledge worker who is dealing with all the knowledge workers."
+    },
+    {
+      "end_ms": 1861840,
+      "source_event_index": 287,
+      "start_ms": 1858600,
+      "text": "And that, I think, is the interface that one has to build."
+    },
+    {
+      "end_ms": 1869360,
+      "source_event_index": 288,
+      "start_ms": 1864120,
+      "text": "You're one of the few people in the world who can say that you have access to 200,000… you"
+    },
+    {
+      "end_ms": 1873000,
+      "source_event_index": 289,
+      "start_ms": 1869360,
+      "text": "have this swarm of intelligence around you in the form of Microsoft the company and all its"
+    },
+    {
+      "end_ms": 1879480,
+      "source_event_index": 290,
+      "start_ms": 1873000,
+      "text": "employees. And you have to manage that, and you have to interface with that, how to make"
+    },
+    {
+      "end_ms": 1884160,
+      "source_event_index": 291,
+      "start_ms": 1879480,
+      "text": "best use of that. Hopefully, more of the world will get to have that experience in the future."
+    },
+    {
+      "end_ms": 1888160,
+      "source_event_index": 292,
+      "start_ms": 1884720,
+      "text": "I'd be curious about how your inbox, if that means everybody's inbox,"
+    },
+    {
+      "end_ms": 1890560,
+      "source_event_index": 293,
+      "start_ms": 1888160,
+      "text": "will look like yours in the morning. Okay, before we get to that,"
+    },
+    {
+      "end_ms": 1894720,
+      "source_event_index": 294,
+      "start_ms": 1890560,
+      "text": "I want to keep asking you more about AI, but I really want to ask you about the big"
+    },
+    {
+      "end_ms": 1899960,
+      "source_event_index": 295,
+      "start_ms": 1894720,
+      "text": "breakthrough in quantum that Microsoft Research has announced. So can you explain what's going on?"
+    },
+    {
+      "end_ms": 1908360,
+      "source_event_index": 296,
+      "start_ms": 1899960,
+      "text": "This has been another 30-year journey for us. It's unbelievable. I'm the third CEO"
+    },
+    {
+      "end_ms": 1918200,
+      "source_event_index": 297,
+      "start_ms": 1908360,
+      "text": "of Microsoft who's been excited about quantum. The fundamental breakthrough here, or the vision"
+    },
+    {
+      "end_ms": 1926720,
+      "source_event_index": 298,
+      "start_ms": 1918200,
+      "text": "that we've always had is, you need a physics breakthrough in order to build a utility-scale"
+    },
+    {
+      "end_ms": 1943080,
+      "source_event_index": 299,
+      "start_ms": 1926720,
+      "text": "quantum computer that works. We took the path of saying, the one way for having a less noisy"
+    },
+    {
+      "end_ms": 1952280,
+      "source_event_index": 300,
+      "start_ms": 1943080,
+      "text": "or more reliable qubit is to bet on a physical property that by definition is more reliable and"
+    },
+    {
+      "end_ms": 1962400,
+      "source_event_index": 301,
+      "start_ms": 1952280,
+      "text": "that's what led us to the Majorana zero modes, which was theorized in the 1930s. The question"
+    },
+    {
+      "end_ms": 1967680,
+      "source_event_index": 302,
+      "start_ms": 1962400,
+      "text": "was, can we actually physically fabricate these things? Can we actually build them?"
+    },
+    {
+      "end_ms": 1973880,
+      "source_event_index": 303,
+      "start_ms": 1967680,
+      "text": "So the big breakthrough effectively, and I know you talked to Chetan, was that we now finally"
+    },
+    {
+      "end_ms": 1984000,
+      "source_event_index": 304,
+      "start_ms": 1973880,
+      "text": "have existence proof and a physics breakthrough of Majorana zero modes in a new phase of matter"
+    },
+    {
+      "end_ms": 1989760,
+      "source_event_index": 305,
+      "start_ms": 1984000,
+      "text": "effectively. This is why we like the analogy of thinking of this as the transistor moment"
+    },
+    {
+      "end_ms": 2000920,
+      "source_event_index": 306,
+      "start_ms": 1989760,
+      "text": "of quantum computing, where we effectively have a new phase, which is the topological phase, which"
+    },
+    {
+      "end_ms": 2012240,
+      "source_event_index": 307,
+      "start_ms": 2000920,
+      "text": "means we can even now reliably hide the quantum information, measure it, and we can fabricate it."
+    },
+    {
+      "end_ms": 2020840,
+      "source_event_index": 308,
+      "start_ms": 2012240,
+      "text": "And so now that we have it, we feel like with that core foundational fabrication technique out of the"
+    },
+    {
+      "end_ms": 2026960,
+      "source_event_index": 309,
+      "start_ms": 2020840,
+      "text": "way, we can start building a Majorana chip. That Majorana One which I think is going to"
+    },
+    {
+      "end_ms": 2034440,
+      "source_event_index": 310,
+      "start_ms": 2026960,
+      "text": "basically be the first chip that will be capable of a million qubits, physical. And then on that,"
+    },
+    {
+      "end_ms": 2044040,
+      "source_event_index": 311,
+      "start_ms": 2034440,
+      "text": "thousands of logical qubits, error-corrected. And then it's game on. You suddenly have the"
+    },
+    {
+      "end_ms": 2050800,
+      "source_event_index": 312,
+      "start_ms": 2044040,
+      "text": "ability to build a real utility-scale quantum computer, and that to me is now so much more"
+    },
+    {
+      "end_ms": 2059440,
+      "source_event_index": 313,
+      "start_ms": 2050800,
+      "text": "feasible. Without something like this, you will still be able to achieve milestones,"
+    },
+    {
+      "end_ms": 2063320,
+      "source_event_index": 314,
+      "start_ms": 2059440,
+      "text": "but you'll never be able to build a utility-scale computer. That's why we're excited about it."
+    },
+    {
+      "end_ms": 2065520,
+      "source_event_index": 315,
+      "start_ms": 2063320,
+      "text": "Amazing. And by the way, I believe this is it right here."
+    },
+    {
+      "end_ms": 2067000,
+      "source_event_index": 316,
+      "start_ms": 2065520,
+      "text": "That is it. Yes."
+    },
+    {
+      "end_ms": 2069040,
+      "source_event_index": 317,
+      "start_ms": 2067000,
+      "text": "I forget now, are we calling it Majorana? Yes,"
+    },
+    {
+      "end_ms": 2072760,
+      "source_event_index": 318,
+      "start_ms": 2069040,
+      "text": "that's right. Majorana One. I'm glad we named it after that."
+    },
+    {
+      "end_ms": 2084960,
+      "source_event_index": 319,
+      "start_ms": 2074480,
+      "text": "To think that we are able to build something like a million-qubit quantum computer in a thing"
+    },
+    {
+      "end_ms": 2092200,
+      "source_event_index": 320,
+      "start_ms": 2084960,
+      "text": "of this size is just unbelievable. That's the crux of it: unless and until we could do that,"
+    },
+    {
+      "end_ms": 2095600,
+      "source_event_index": 321,
+      "start_ms": 2092200,
+      "text": "you can't dream of building a utility-scale quantum computer."
+    },
+    {
+      "end_ms": 2101200,
+      "source_event_index": 322,
+      "start_ms": 2095600,
+      "text": "And you're saying the eventual million qubits will go on a chip this size? Okay, amazing."
+    },
+    {
+      "end_ms": 2108240,
+      "source_event_index": 323,
+      "start_ms": 2101200,
+      "text": "Other companies have announced 100 physical qubits, Google's, IBM's, others. When you"
+    },
+    {
+      "end_ms": 2113520,
+      "source_event_index": 324,
+      "start_ms": 2108240,
+      "text": "say you've announced one, but you're saying that yours is way more scalable in the limit."
+    },
+    {
+      "end_ms": 2119680,
+      "source_event_index": 325,
+      "start_ms": 2113520,
+      "text": "Yeah. The one thing we’ve also done is we've taken an approach where we've separated our"
+    },
+    {
+      "end_ms": 2125880,
+      "source_event_index": 326,
+      "start_ms": 2119680,
+      "text": "software and our hardware. We're building out our software stack, and we now have,"
+    },
+    {
+      "end_ms": 2136160,
+      "source_event_index": 327,
+      "start_ms": 2128080,
+      "text": "with the neutral atom folks, the ion trap folks, we're also working with others who even have"
+    },
+    {
+      "end_ms": 2140560,
+      "source_event_index": 328,
+      "start_ms": 2136160,
+      "text": "pretty good approaches with photonics and what have you, that means there'll be different types"
+    },
+    {
+      "end_ms": 2145360,
+      "source_event_index": 329,
+      "start_ms": 2140560,
+      "text": "of quantum computers. In fact, we have what, I think that the last thing that we announced was 24"
+    },
+    {
+      "end_ms": 2152440,
+      "source_event_index": 330,
+      "start_ms": 2145360,
+      "text": "logical qubits. So we have also got some fantastic breakthroughs on error correction and that's what"
+    },
+    {
+      "end_ms": 2160400,
+      "source_event_index": 331,
+      "start_ms": 2152440,
+      "text": "is allowing us, even on neutral atom and ion trap quantum computers, to build these 20 plus,"
+    },
+    {
+      "end_ms": 2165240,
+      "source_event_index": 332,
+      "start_ms": 2160400,
+      "text": "and I think that'll keep going even throughout the year; you'll see us improve that yardstick."
+    },
+    {
+      "end_ms": 2174480,
+      "source_event_index": 333,
+      "start_ms": 2166280,
+      "text": "But we also then said, \"Let's go to the first principles and build our own quantum computer"
+    },
+    {
+      "end_ms": 2181360,
+      "source_event_index": 334,
+      "start_ms": 2174480,
+      "text": "that is betting on the topological qubit.\" And that's what this breakthrough is about."
+    },
+    {
+      "end_ms": 2188000,
+      "source_event_index": 335,
+      "start_ms": 2181360,
+      "text": "Amazing. The million topological qubits, thousands of logical qubits,"
+    },
+    {
+      "end_ms": 2192560,
+      "source_event_index": 336,
+      "start_ms": 2188000,
+      "text": "what is the estimated timeline to scale up to that level? What does the Moore's law here,"
+    },
+    {
+      "end_ms": 2195880,
+      "source_event_index": 337,
+      "start_ms": 2192560,
+      "text": "if you've got the first transistor, look like? We've obviously been working on this for"
+    },
+    {
+      "end_ms": 2203400,
+      "source_event_index": 338,
+      "start_ms": 2195880,
+      "text": "30 years. I'm glad we now have the physics breakthrough and the fabrication breakthrough."
+    },
+    {
+      "end_ms": 2207800,
+      "source_event_index": 339,
+      "start_ms": 2204440,
+      "text": "I wish we had a quantum computer because by the way, the first thing the quantum"
+    },
+    {
+      "end_ms": 2211600,
+      "source_event_index": 340,
+      "start_ms": 2207800,
+      "text": "computer will allow us to do is build quantum computers, because it's going to"
+    },
+    {
+      "end_ms": 2218360,
+      "source_event_index": 341,
+      "start_ms": 2211600,
+      "text": "be so much easier to simulate atom-by-atom construction of these new quantum gates."
+    },
+    {
+      "end_ms": 2224920,
+      "source_event_index": 342,
+      "start_ms": 2218360,
+      "text": "But in any case, the next real thing is, now that we have the fabrication technique,"
+    },
+    {
+      "end_ms": 2232560,
+      "source_event_index": 343,
+      "start_ms": 2224920,
+      "text": "let us go build that first fault-tolerant quantum computer. And that will be the logical thing."
+    },
+    {
+      "end_ms": 2239040,
+      "source_event_index": 344,
+      "start_ms": 2232560,
+      "text": "So, I would say now I can say, \"Oh, maybe '27, '28, '29, we will be able to actually"
+    },
+    {
+      "end_ms": 2245040,
+      "source_event_index": 345,
+      "start_ms": 2239040,
+      "text": "build this.\" Now that we have this one gate, can I put the thing into an integrated circuit and then"
+    },
+    {
+      "end_ms": 2251800,
+      "source_event_index": 346,
+      "start_ms": 2245040,
+      "text": "actually put these integrated circuits into a real computer? That is where the next logical step is."
+    },
+    {
+      "end_ms": 2258360,
+      "source_event_index": 347,
+      "start_ms": 2251800,
+      "text": "And what do you see as, in '27, '28, you've got it working? Is it a thing you access through"
+    },
+    {
+      "end_ms": 2263320,
+      "source_event_index": 348,
+      "start_ms": 2258360,
+      "text": "the API? Is it something you're using internally for your own research in materials and chemistry?"
+    },
+    {
+      "end_ms": 2267320,
+      "source_event_index": 349,
+      "start_ms": 2263320,
+      "text": "It’s a great question. One thing that I've been excited about is, even in today's world…"
+    },
+    {
+      "end_ms": 2276960,
+      "source_event_index": 350,
+      "start_ms": 2269440,
+      "text": "we had this quantum program, and we added some APIs to it. The breakthrough we had"
+    },
+    {
+      "end_ms": 2286240,
+      "source_event_index": 351,
+      "start_ms": 2276960,
+      "text": "maybe two years ago was to think of this HPC stack, and AI stack, and quantum together."
+    },
+    {
+      "end_ms": 2294520,
+      "source_event_index": 352,
+      "start_ms": 2286240,
+      "text": "In fact, if you think about it, AI is like an emulator of the simulator. Quantum is like a"
+    },
+    {
+      "end_ms": 2299880,
+      "source_event_index": 353,
+      "start_ms": 2294520,
+      "text": "simulator of nature. What is quantum going to do? By the way, quantum is not going to"
+    },
+    {
+      "end_ms": 2305480,
+      "source_event_index": 354,
+      "start_ms": 2299880,
+      "text": "replace classical. Quantum is great at what quantum can do, and classical will also..."
+    },
+    {
+      "end_ms": 2313800,
+      "source_event_index": 355,
+      "start_ms": 2307720,
+      "text": "Quantum is going to be fantastic for anything that is not data-heavy but is exploration-heavy"
+    },
+    {
+      "end_ms": 2319640,
+      "source_event_index": 356,
+      "start_ms": 2313800,
+      "text": "in terms of the state space. It should be data-light but exponential states that you"
+    },
+    {
+      "end_ms": 2328120,
+      "source_event_index": 357,
+      "start_ms": 2319640,
+      "text": "want to explore. Simulation is a great one: chemical physics, what have you, biology."
+    },
+    {
+      "end_ms": 2335440,
+      "source_event_index": 358,
+      "start_ms": 2328120,
+      "text": "One of the things that we've started doing is really using AI as the emulation engine."
+    },
+    {
+      "end_ms": 2342200,
+      "source_event_index": 359,
+      "start_ms": 2335440,
+      "text": "But you can then train. So the way I think of it is, if you have AI plus quantum, maybe you'll use"
+    },
+    {
+      "end_ms": 2348560,
+      "source_event_index": 360,
+      "start_ms": 2342200,
+      "text": "quantum to generate synthetic data that then gets used by AI to train better models that know how to"
+    },
+    {
+      "end_ms": 2353760,
+      "source_event_index": 361,
+      "start_ms": 2348560,
+      "text": "model something like chemistry or physics or what have you. These two things will get used together."
+    },
+    {
+      "end_ms": 2358840,
+      "source_event_index": 362,
+      "start_ms": 2353760,
+      "text": "So even today, that's effectively what we're doing with the combination of"
+    },
+    {
+      "end_ms": 2365400,
+      "source_event_index": 363,
+      "start_ms": 2358840,
+      "text": "HPC and AI. I hope to replace some of the HPC pieces with quantum computers."
+    },
+    {
+      "end_ms": 2431800,
+      "source_event_index": 364,
+      "start_ms": 2427800,
+      "text": "Can you tell me a little bit about how you make these research decisions which,"
+    },
+    {
+      "end_ms": 2435520,
+      "source_event_index": 365,
+      "start_ms": 2431800,
+      "text": "in 20 years time, 30 years time, will actually pay dividends, especially at"
+    },
+    {
+      "end_ms": 2442920,
+      "source_event_index": 366,
+      "start_ms": 2435520,
+      "text": "a company of Microsoft's scale? Obviously, you're in great touch with the technical details in this"
+    },
+    {
+      "end_ms": 2447960,
+      "source_event_index": 367,
+      "start_ms": 2443440,
+      "text": "project. Is it feasible for you to do that with all the things Microsoft Research does?"
+    },
+    {
+      "end_ms": 2452920,
+      "source_event_index": 368,
+      "start_ms": 2447960,
+      "text": "How do you know the current bet you're making will pay out in 20 years? Does it just have to"
+    },
+    {
+      "end_ms": 2456560,
+      "source_event_index": 369,
+      "start_ms": 2452920,
+      "text": "emerge organically through the org, or how are you keeping track of all this?"
+    },
+    {
+      "end_ms": 2470360,
+      "source_event_index": 370,
+      "start_ms": 2458280,
+      "text": "The thing that I feel was fantastic is when Bill, when he started MSR back in '95 I guess. I think"
+    },
+    {
+      "end_ms": 2477040,
+      "source_event_index": 371,
+      "start_ms": 2470360,
+      "text": "in the long history of these curiosity-driven research organizations, to just do a research"
+    },
+    {
+      "end_ms": 2484400,
+      "source_event_index": 372,
+      "start_ms": 2477040,
+      "text": "org that is about fundamental research and MSR, over the years, has built up that institutional"
+    },
+    {
+      "end_ms": 2492240,
+      "source_event_index": 373,
+      "start_ms": 2484400,
+      "text": "strength so when I think about capital allocation or budgets, we first put the chips in and say,"
+    },
+    {
+      "end_ms": 2501560,
+      "source_event_index": 374,
+      "start_ms": 2492880,
+      "text": "\"Here is MSR's budget.\" We gotta go at it each year knowing that most of these bets are not"
+    },
+    {
+      "end_ms": 2508680,
+      "source_event_index": 375,
+      "start_ms": 2501560,
+      "text": "going to pay off in any finite time frame. Maybe the sixth CEO of Microsoft will benefit from it."
+    },
+    {
+      "end_ms": 2516120,
+      "source_event_index": 376,
+      "start_ms": 2508680,
+      "text": "And in tech that is I think a given. The real thing that I think about is,"
+    },
+    {
+      "end_ms": 2524080,
+      "source_event_index": 377,
+      "start_ms": 2516120,
+      "text": "when the time has come for something like quantum or a new model or what have you, can"
+    },
+    {
+      "end_ms": 2531920,
+      "source_event_index": 378,
+      "start_ms": 2524080,
+      "text": "you capitalize? So as an incumbent, if you look at the history of tech, it's not that people didn't"
+    },
+    {
+      "end_ms": 2541880,
+      "source_event_index": 379,
+      "start_ms": 2531920,
+      "text": "invest. It's that you need to have a culture that knows how to take an innovation and scale it."
+    },
+    {
+      "end_ms": 2549760,
+      "source_event_index": 380,
+      "start_ms": 2541880,
+      "text": "That's the hard part, quite frankly, for CEOs and management teams. Which is kind of fascinating."
+    },
+    {
+      "end_ms": 2558840,
+      "source_event_index": 381,
+      "start_ms": 2551440,
+      "text": "It's as much about good judgment as it is about good culture. Sometimes we've gotten it right;"
+    },
+    {
+      "end_ms": 2565080,
+      "source_event_index": 382,
+      "start_ms": 2558840,
+      "text": "sometimes we've gotten it wrong; I can tell you the thousand projects from MSR that we should have"
+    },
+    {
+      "end_ms": 2573960,
+      "source_event_index": 383,
+      "start_ms": 2565080,
+      "text": "probably led with, but we didn't. And I always ask myself why. It's because we were not able to"
+    },
+    {
+      "end_ms": 2582920,
+      "source_event_index": 384,
+      "start_ms": 2573960,
+      "text": "get enough conviction and that complete thought of how to not only take the innovation but make"
+    },
+    {
+      "end_ms": 2587560,
+      "source_event_index": 385,
+      "start_ms": 2582920,
+      "text": "it into a useful product with a business model that we can then go to market with."
+    },
+    {
+      "end_ms": 2593720,
+      "source_event_index": 386,
+      "start_ms": 2587560,
+      "text": "That's the job of CEOs and management teams: not to just be excited about any one thing,"
+    },
+    {
+      "end_ms": 2599840,
+      "source_event_index": 387,
+      "start_ms": 2593720,
+      "text": "but to be able to actually execute on a complete thing. And that's easier said than done."
+    },
+    {
+      "end_ms": 2605080,
+      "source_event_index": 388,
+      "start_ms": 2599840,
+      "text": "When you mentioned the possibility of three subsequent CEOs of Microsoft, if each of them"
+    },
+    {
+      "end_ms": 2608440,
+      "source_event_index": 389,
+      "start_ms": 2605080,
+      "text": "increases the market cap by an order of magnitude, by the time you've got the next breakthrough,"
+    },
+    {
+      "end_ms": 2612320,
+      "source_event_index": 390,
+      "start_ms": 2608440,
+      "text": "you'll be like the world economy or something. Or remember, the world is going to be growing"
+    },
+    {
+      "end_ms": 2616320,
+      "source_event_index": 391,
+      "start_ms": 2612320,
+      "text": "at 10%, so we'll be fine. Let's dig into the other big"
+    },
+    {
+      "end_ms": 2619880,
+      "source_event_index": 392,
+      "start_ms": 2616320,
+      "text": "breakthrough you've just made. It's amazing that you have both of them coming out the same day,"
+    },
+    {
+      "end_ms": 2623120,
+      "source_event_index": 393,
+      "start_ms": 2619880,
+      "text": "in your gaming world models. I'd love if you can tell me a little bit about that."
+    },
+    {
+      "end_ms": 2632240,
+      "source_event_index": 394,
+      "start_ms": 2623120,
+      "text": "We're going to call it Muse. It's going to be the model of this world action, or human action model."
+    },
+    {
+      "end_ms": 2638440,
+      "source_event_index": 395,
+      "start_ms": 2633080,
+      "text": "This is very cool. One of the things is that obviously, Dall-E and Sora have been"
+    },
+    {
+      "end_ms": 2642480,
+      "source_event_index": 396,
+      "start_ms": 2638440,
+      "text": "unbelievable in what they've been able to do in terms of generative models. One"
+    },
+    {
+      "end_ms": 2650040,
+      "source_event_index": 397,
+      "start_ms": 2642480,
+      "text": "thing that we wanted to go after was using gameplay data. Can you actually"
+    },
+    {
+      "end_ms": 2656640,
+      "source_event_index": 398,
+      "start_ms": 2650040,
+      "text": "generate games that are both consistent and then have the ability to generate the"
+    },
+    {
+      "end_ms": 2660520,
+      "source_event_index": 399,
+      "start_ms": 2656640,
+      "text": "diversity of what that game represents, and then are persistent to user mods?"
+    },
+    {
+      "end_ms": 2667040,
+      "source_event_index": 400,
+      "start_ms": 2661880,
+      "text": "That's what this is. They were able to work with one of our game studios,"
+    },
+    {
+      "end_ms": 2673320,
+      "source_event_index": 401,
+      "start_ms": 2668320,
+      "text": "and this is the other publication in Nature. The cool thing is what I'm excited about is"
+    },
+    {
+      "end_ms": 2680520,
+      "source_event_index": 402,
+      "start_ms": 2673320,
+      "text": "bringing--we're going to have a catalog of games soon that we will start using these models,"
+    },
+    {
+      "end_ms": 2685520,
+      "source_event_index": 403,
+      "start_ms": 2680520,
+      "text": "or we're going to train these models to generate, and then start playing them."
+    },
+    {
+      "end_ms": 2692520,
+      "source_event_index": 404,
+      "start_ms": 2686320,
+      "text": "In fact, when Phil Spencer first showed it to me, he had an Xbox controller and this"
+    },
+    {
+      "end_ms": 2699320,
+      "source_event_index": 405,
+      "start_ms": 2692520,
+      "text": "model basically took the input and generated the output based on the input. And it was consistent"
+    },
+    {
+      "end_ms": 2708400,
+      "source_event_index": 406,
+      "start_ms": 2699320,
+      "text": "with the game. That to me is a massive moment of “wow”. It's kind of like the first time we"
+    },
+    {
+      "end_ms": 2715000,
+      "source_event_index": 407,
+      "start_ms": 2708400,
+      "text": "saw ChatGPT complete sentences, or Dall-E draw, or Sora. This is one such moment."
+    },
+    {
+      "end_ms": 2721880,
+      "source_event_index": 408,
+      "start_ms": 2717600,
+      "text": "I got a chance to see some of the videos in the real-time demo this morning with"
+    },
+    {
+      "end_ms": 2727000,
+      "source_event_index": 409,
+      "start_ms": 2721880,
+      "text": "your lead researcher Katja on this. Only once I talked to her did it really hit me"
+    },
+    {
+      "end_ms": 2731320,
+      "source_event_index": 410,
+      "start_ms": 2727000,
+      "text": "how incredible this is, in the sense that we've used AI in the past to model agents,"
+    },
+    {
+      "end_ms": 2736000,
+      "source_event_index": 411,
+      "start_ms": 2731320,
+      "text": "and just using that same technique to model the world around the agent gives consistent"
+    },
+    {
+      "end_ms": 2740280,
+      "source_event_index": 412,
+      "start_ms": 2736000,
+      "text": "real-time – we'll superimpose videos of what this looks like atop this podcast so people can get a"
+    },
+    {
+      "end_ms": 2743680,
+      "source_event_index": 413,
+      "start_ms": 2740280,
+      "text": "chance to see it for themselves. I guess it'll be out by then, so they can also watch it there."
+    },
+    {
+      "end_ms": 2749120,
+      "source_event_index": 414,
+      "start_ms": 2743680,
+      "text": "This in itself is incredible. You, through your span as CEO, have invested tens of hundreds of"
+    },
+    {
+      "end_ms": 2753920,
+      "source_event_index": 415,
+      "start_ms": 2749120,
+      "text": "billions of dollars in building up Microsoft Gaming and acquiring IP."
+    },
+    {
+      "end_ms": 2762840,
+      "source_event_index": 416,
+      "start_ms": 2756400,
+      "text": "In retrospect, if you can just merge all of this data into one big model that can give"
+    },
+    {
+      "end_ms": 2768400,
+      "source_event_index": 417,
+      "start_ms": 2762840,
+      "text": "you this experience of visiting and going through multiple worlds at the same time,"
+    },
+    {
+      "end_ms": 2773120,
+      "source_event_index": 418,
+      "start_ms": 2768400,
+      "text": "and if this is the direction gaming is headed, it seems like a pretty good investment to have"
+    },
+    {
+      "end_ms": 2781520,
+      "source_event_index": 419,
+      "start_ms": 2773120,
+      "text": "made. Did you have any premonition about this? I wouldn't say that we invested in gaming to"
+    },
+    {
+      "end_ms": 2787360,
+      "source_event_index": 420,
+      "start_ms": 2781520,
+      "text": "build models. We invested, quite frankly, because- here's an interesting thing about our history:"
+    },
+    {
+      "end_ms": 2793160,
+      "source_event_index": 421,
+      "start_ms": 2787360,
+      "text": "We built our first game before we built Windows. Flight Simulator was a Microsoft"
+    },
+    {
+      "end_ms": 2800000,
+      "source_event_index": 422,
+      "start_ms": 2793160,
+      "text": "product long before we even built Windows. So, gaming has got a long history at the company,"
+    },
+    {
+      "end_ms": 2805120,
+      "source_event_index": 423,
+      "start_ms": 2800000,
+      "text": "and we want to be in gaming for gaming's sake. I always start by saying I hate to"
+    },
+    {
+      "end_ms": 2810920,
+      "source_event_index": 424,
+      "start_ms": 2805120,
+      "text": "be in businesses where they're means to some other end. They have to be ends unto themselves."
+    },
+    {
+      "end_ms": 2814800,
+      "source_event_index": 425,
+      "start_ms": 2810920,
+      "text": "And then, yes, we're not a conglomerate. We are a company where we have to bring"
+    },
+    {
+      "end_ms": 2820920,
+      "source_event_index": 426,
+      "start_ms": 2814800,
+      "text": "all these assets together and be better owners by adding value. For example, cloud gaming is"
+    },
+    {
+      "end_ms": 2827240,
+      "source_event_index": 427,
+      "start_ms": 2820920,
+      "text": "a natural thing for us to invest in because that will just expand the TAM and expand the ability"
+    },
+    {
+      "end_ms": 2831040,
+      "source_event_index": 428,
+      "start_ms": 2827240,
+      "text": "for people to play games everywhere. The same thing with AI and gaming:"
+    },
+    {
+      "end_ms": 2836080,
+      "source_event_index": 429,
+      "start_ms": 2831040,
+      "text": "we definitely think that it can be helpful in maybe changing- it's kind of like the CGI moment,"
+    },
+    {
+      "end_ms": 2840240,
+      "source_event_index": 430,
+      "start_ms": 2836080,
+      "text": "even for gaming long-term. And it's great. As the biggest, world's largest publisher,"
+    },
+    {
+      "end_ms": 2844360,
+      "source_event_index": 431,
+      "start_ms": 2840240,
+      "text": "this will be helpful. But at the same time, we've got to produce great quality games. I mean,"
+    },
+    {
+      "end_ms": 2850720,
+      "source_event_index": 432,
+      "start_ms": 2844360,
+      "text": "you can't be a gaming publisher without, sort of, first and foremost being focused on that."
+    },
+    {
+      "end_ms": 2856360,
+      "source_event_index": 433,
+      "start_ms": 2850720,
+      "text": "But the fact that this data asset is going to be interesting, not just in a gaming context,"
+    },
+    {
+      "end_ms": 2862200,
+      "source_event_index": 434,
+      "start_ms": 2856360,
+      "text": "but it's going to be a general action model and a world model, it's fantastic. I mean like,"
+    },
+    {
+      "end_ms": 2867800,
+      "source_event_index": 435,
+      "start_ms": 2862200,
+      "text": "you know, I think about gaming data as perhaps, you know, what YouTube is perhaps to Google,"
+    },
+    {
+      "end_ms": 2872640,
+      "source_event_index": 436,
+      "start_ms": 2867800,
+      "text": "gaming data is to Microsoft. And so therefore I'm excited about that."
+    },
+    {
+      "end_ms": 2876320,
+      "source_event_index": 437,
+      "start_ms": 2872640,
+      "text": "Yeah, and that's what I meant, just in the sense of like, you can have one unified experience"
+    },
+    {
+      "end_ms": 2881040,
+      "source_event_index": 438,
+      "start_ms": 2876320,
+      "text": "across many different kinds of games. How does this fit into the other, separate from AI,"
+    },
+    {
+      "end_ms": 2886000,
+      "source_event_index": 439,
+      "start_ms": 2881040,
+      "text": "the other things that Microsoft has worked on in the past, like mixed reality? Maybe giving"
+    },
+    {
+      "end_ms": 2891600,
+      "source_event_index": 440,
+      "start_ms": 2886000,
+      "text": "smaller game studios a chance to build these AAA action games? Just like five, ten years from now,"
+    },
+    {
+      "end_ms": 2895240,
+      "source_event_index": 441,
+      "start_ms": 2891600,
+      "text": "what kinds of ways could you imagine? I've thought about these three things"
+    },
+    {
+      "end_ms": 2902680,
+      "source_event_index": 442,
+      "start_ms": 2895240,
+      "text": "as the cornerstones of, in an interesting way, even five, six, seven years ago is when I said"
+    },
+    {
+      "end_ms": 2908440,
+      "source_event_index": 443,
+      "start_ms": 2902680,
+      "text": "the three big bets that we want to place [are] AI, quantum, and mixed reality. And I still"
+    },
+    {
+      "end_ms": 2912800,
+      "source_event_index": 444,
+      "start_ms": 2908440,
+      "text": "believe in them, because in some sense, what are the big problems to be solved?"
+    },
+    {
+      "end_ms": 2922440,
+      "source_event_index": 445,
+      "start_ms": 2912800,
+      "text": "Presence. That's the dream of mixed reality. Can you create real presence?"
+    },
+    {
+      "end_ms": 2928480,
+      "source_event_index": 446,
+      "start_ms": 2922440,
+      "text": "Like you and I doing a podcast like this. I think it’s still proving to be the harder"
+    },
+    {
+      "end_ms": 2933800,
+      "source_event_index": 447,
+      "start_ms": 2928480,
+      "text": "one of those challenges, quite honestly. I thought it was going to be more solvable. It's tougher,"
+    },
+    {
+      "end_ms": 2940160,
+      "source_event_index": 448,
+      "start_ms": 2933800,
+      "text": "perhaps, just because of the social side of it: wearing things and so on."
+    },
+    {
+      "end_ms": 2943880,
+      "source_event_index": 449,
+      "start_ms": 2940160,
+      "text": "We're excited about, in fact, what we're going to do with Anduril and Palmer, now,"
+    },
+    {
+      "end_ms": 2949200,
+      "source_event_index": 450,
+      "start_ms": 2943880,
+      "text": "with even how they'll take forward the IVAS program, because that's a fantastic"
+    },
+    {
+      "end_ms": 2956600,
+      "source_event_index": 451,
+      "start_ms": 2949200,
+      "text": "use case. And so we'll continue on that front. But also, the 2D surfaces. It turns out things"
+    },
+    {
+      "end_ms": 2962920,
+      "source_event_index": 452,
+      "start_ms": 2956600,
+      "text": "like Teams, right, thanks to the pandemic, we've really gotten the ability to create"
+    },
+    {
+      "end_ms": 2969800,
+      "source_event_index": 453,
+      "start_ms": 2962920,
+      "text": "essentially presence through even 2D. And that I think will continue. That's one secular piece."
+    },
+    {
+      "end_ms": 2974680,
+      "source_event_index": 454,
+      "start_ms": 2969800,
+      "text": "Quantum we talked about, and AI is the other one. So these are the three things that I look at and"
+    },
+    {
+      "end_ms": 2980840,
+      "source_event_index": 455,
+      "start_ms": 2974680,
+      "text": "say, how do you bring these things together? Ultimately, not as tech for tech's sake,"
+    },
+    {
+      "end_ms": 2986760,
+      "source_event_index": 456,
+      "start_ms": 2980840,
+      "text": "but solving some of the fundamental things that we, as humans, want in our life, and more, we want"
+    },
+    {
+      "end_ms": 2991840,
+      "source_event_index": 457,
+      "start_ms": 2986760,
+      "text": "them in our economy, driving our productivity. And so if we can somehow get that right,"
+    },
+    {
+      "end_ms": 2995640,
+      "source_event_index": 458,
+      "start_ms": 2991840,
+      "text": "then I think we will have really made progress. When you write your next book, you've got to have"
+    },
+    {
+      "end_ms": 2998960,
+      "source_event_index": 459,
+      "start_ms": 2995640,
+      "text": "some explanation of why those three pieces all came together around the same time,"
+    },
+    {
+      "end_ms": 3002280,
+      "source_event_index": 460,
+      "start_ms": 2998960,
+      "text": "right? Like, there's no intrinsic reason you would think quantum and AI should happen in"
+    },
+    {
+      "end_ms": 3007040,
+      "source_event_index": 461,
+      "start_ms": 3002280,
+      "text": "2028 and 2025 and so forth. That's right. At some level,"
+    },
+    {
+      "end_ms": 3011600,
+      "source_event_index": 462,
+      "start_ms": 3007040,
+      "text": "I look at it and say: the simple model I have is, hey is there a systems breakthrough? To me,"
+    },
+    {
+      "end_ms": 3018120,
+      "source_event_index": 463,
+      "start_ms": 3011600,
+      "text": "the systems breakthrough is the quantum thing. Is there a business logic breakthrough? That's"
+    },
+    {
+      "end_ms": 3027120,
+      "source_event_index": 464,
+      "start_ms": 3018120,
+      "text": "AI to me, which is: can the logic tier be fundamentally reasoned differently? Instead of"
+    },
+    {
+      "end_ms": 3031840,
+      "source_event_index": 465,
+      "start_ms": 3027120,
+      "text": "imperatively writing code, can you have a learning system? That's the AI one."
+    },
+    {
+      "end_ms": 3038000,
+      "source_event_index": 466,
+      "start_ms": 3031840,
+      "text": "And then the UI side of it is presence. Going back to AI for a second, in your"
+    },
+    {
+      "end_ms": 3045200,
+      "source_event_index": 467,
+      "start_ms": 3038000,
+      "text": "2017 book… 2019 you invest in OpenAI, very early, 2017 is even earlier, you say in your book, \"One"
+    },
+    {
+      "end_ms": 3050320,
+      "source_event_index": 468,
+      "start_ms": 3045200,
+      "text": "might also say that we're birthing a new species, one whose intelligence may have no upper limits.\""
+    },
+    {
+      "end_ms": 3055120,
+      "source_event_index": 469,
+      "start_ms": 3050320,
+      "text": "Now, super-early, of course, to be talking about this in 2017. We've been talking in"
+    },
+    {
+      "end_ms": 3062760,
+      "source_event_index": 470,
+      "start_ms": 3055120,
+      "text": "a granular fashion about agents, Office Copilot, capex, and so forth. But if you"
+    },
+    {
+      "end_ms": 3069760,
+      "source_event_index": 471,
+      "start_ms": 3062760,
+      "text": "zoom out and consider this statement you've made, and you think about you as a hyperscaler,"
+    },
+    {
+      "end_ms": 3074600,
+      "source_event_index": 472,
+      "start_ms": 3069760,
+      "text": "as the person doing research in these models as well, providing training, inference, and research"
+    },
+    {
+      "end_ms": 3078000,
+      "source_event_index": 473,
+      "start_ms": 3074600,
+      "text": "for building a new species, how do you think about this in the grand scheme of things?"
+    },
+    {
+      "end_ms": 3082400,
+      "source_event_index": 474,
+      "start_ms": 3079520,
+      "text": "Do you think we're headed towards superhuman intelligence in your time as CEO?"
+    },
+    {
+      "end_ms": 3090200,
+      "source_event_index": 475,
+      "start_ms": 3082400,
+      "text": "I think even Mustafa uses that term. In fact he’s used that term more recently, this “new species”."
+    },
+    {
+      "end_ms": 3104120,
+      "source_event_index": 476,
+      "start_ms": 3092720,
+      "text": "The way I come at it is, you definitely need trust. Before we claim it is something as big"
+    },
+    {
+      "end_ms": 3111720,
+      "source_event_index": 477,
+      "start_ms": 3104120,
+      "text": "as a species, the fundamental thing that we've got to get right is that there is real trust,"
+    },
+    {
+      "end_ms": 3118080,
+      "source_event_index": 478,
+      "start_ms": 3111720,
+      "text": "whether it's personal or societal level trust, that's baked in. That's the hard problem."
+    },
+    {
+      "end_ms": 3126400,
+      "source_event_index": 479,
+      "start_ms": 3118080,
+      "text": "I think the one biggest rate limiter to the power here will be how does our legal… call"
+    },
+    {
+      "end_ms": 3129920,
+      "source_event_index": 480,
+      "start_ms": 3126400,
+      "text": "it infrastructure, we’re talking about all the compute infrastructure, well how does"
+    },
+    {
+      "end_ms": 3136360,
+      "source_event_index": 481,
+      "start_ms": 3129920,
+      "text": "the legal infrastructure evolve to deal with this? This entire world is"
+    },
+    {
+      "end_ms": 3146520,
+      "source_event_index": 482,
+      "start_ms": 3136360,
+      "text": "constructed with things like humans owning property, having rights, and being liable."
+    },
+    {
+      "end_ms": 3154880,
+      "source_event_index": 483,
+      "start_ms": 3148440,
+      "text": "That’s the fundamental thing that one has to first say, okay what does that mean for anything that"
+    },
+    {
+      "end_ms": 3161480,
+      "source_event_index": 484,
+      "start_ms": 3154880,
+      "text": "now humans are using as tools? And if humans are going to delegate more authority to these things,"
+    },
+    {
+      "end_ms": 3168080,
+      "source_event_index": 485,
+      "start_ms": 3161480,
+      "text": "then how does that structure evolve? Until that really gets resolved, I don't think just talking"
+    },
+    {
+      "end_ms": 3174240,
+      "source_event_index": 486,
+      "start_ms": 3168080,
+      "text": "about the tech capability is going to happen. As in, we won't be able to deploy these kinds"
+    },
+    {
+      "end_ms": 3177280,
+      "source_event_index": 487,
+      "start_ms": 3174240,
+      "text": "of intelligences until we figure out how to…? Absolutely. Because at the end of the day,"
+    },
+    {
+      "end_ms": 3181480,
+      "source_event_index": 488,
+      "start_ms": 3177280,
+      "text": "there is no way. Today, you cannot deploy these intelligences unless and"
+    },
+    {
+      "end_ms": 3187200,
+      "source_event_index": 489,
+      "start_ms": 3181480,
+      "text": "until there's someone indemnifying it as a human. To your point, I think that's one of the reasons"
+    },
+    {
+      "end_ms": 3192520,
+      "source_event_index": 490,
+      "start_ms": 3187200,
+      "text": "why I think about even the most powerful AI is essentially working with some delegated"
+    },
+    {
+      "end_ms": 3198680,
+      "source_event_index": 491,
+      "start_ms": 3192520,
+      "text": "authority from some human. You can say, oh, that's all alignment and this, that, and the other."
+    },
+    {
+      "end_ms": 3205240,
+      "source_event_index": 492,
+      "start_ms": 3198680,
+      "text": "That's why I think you have to really get these alignments to work and be verifiable in some way,"
+    },
+    {
+      "end_ms": 3209760,
+      "source_event_index": 493,
+      "start_ms": 3205240,
+      "text": "but I just don't think that you can deploy intelligences that are out of control. For"
+    },
+    {
+      "end_ms": 3215760,
+      "source_event_index": 494,
+      "start_ms": 3209760,
+      "text": "example, this AI takeoff problem may be a real problem, but before it is a real problem, the real"
+    },
+    {
+      "end_ms": 3224640,
+      "source_event_index": 495,
+      "start_ms": 3215760,
+      "text": "problem will be in the courts. No society is going to allow for some human to say, \"AI did that.\""
+    },
+    {
+      "end_ms": 3229040,
+      "source_event_index": 496,
+      "start_ms": 3224640,
+      "text": "Yes. Well, there's a lot of societies in the world, and I wonder if any one of them might"
+    },
+    {
+      "end_ms": 3232640,
+      "source_event_index": 497,
+      "start_ms": 3229040,
+      "text": "not have a legal system that might be more amenable. And if you can't have a takeoff,"
+    },
+    {
+      "end_ms": 3236000,
+      "source_event_index": 498,
+      "start_ms": 3232640,
+      "text": "then you might worry. It doesn't have to happen in America, right?"
+    },
+    {
+      "end_ms": 3248280,
+      "source_event_index": 499,
+      "start_ms": 3244280,
+      "text": "We think that no society cares about it, right? There can be rogue actors, I'm not saying there"
+    },
+    {
+      "end_ms": 3253320,
+      "source_event_index": 500,
+      "start_ms": 3248280,
+      "text": "won't be rogue actors; there are cyber criminals and rogue states; they're going to be there."
+    },
+    {
+      "end_ms": 3259240,
+      "source_event_index": 501,
+      "start_ms": 3253320,
+      "text": "But to think that human society at large doesn't care about it is also not going"
+    },
+    {
+      "end_ms": 3266400,
+      "source_event_index": 502,
+      "start_ms": 3259240,
+      "text": "to be true. I think we all will care. We know how to deal with rogue states and rogue actors"
+    },
+    {
+      "end_ms": 3274000,
+      "source_event_index": 503,
+      "start_ms": 3266400,
+      "text": "today. The world doesn't sit around and say “we’ll tolerate that”. That's why I'm glad"
+    },
+    {
+      "end_ms": 3281780,
+      "source_event_index": 504,
+      "start_ms": 3274000,
+      "text": "that we have a world order in which anyone who is a rogue actor in a rogue state has consequences."
+    },
+    {
+      "end_ms": 3285920,
+      "source_event_index": 505,
+      "start_ms": 3281780,
+      "text": "Right. But if you have this picture where you can have 10% economic growth, I think it really"
+    },
+    {
+      "end_ms": 3293720,
+      "source_event_index": 506,
+      "start_ms": 3286480,
+      "text": "depends on getting something like AGI working, because tens of trillions of dollars of value,"
+    },
+    {
+      "end_ms": 3299920,
+      "source_event_index": 507,
+      "start_ms": 3293720,
+      "text": "that sounds closer to the total of human wages, around $60 trillion of the economy. Getting that"
+    },
+    {
+      "end_ms": 3305560,
+      "source_event_index": 508,
+      "start_ms": 3299920,
+      "text": "magnitude, you kind of have to automate labor or supplement labor in a very significant way."
+    },
+    {
+      "end_ms": 3310480,
+      "source_event_index": 509,
+      "start_ms": 3306360,
+      "text": "If that is possible, and once we figure out the legal ramifications for it,"
+    },
+    {
+      "end_ms": 3316160,
+      "source_event_index": 510,
+      "start_ms": 3310480,
+      "text": "it seems quite plausible, even within your tenure that we figure that out. Are you"
+    },
+    {
+      "end_ms": 3319840,
+      "source_event_index": 511,
+      "start_ms": 3316160,
+      "text": "thinking about superhuman intelligence? Like, the biggest thing you do in your career is this?"
+    },
+    {
+      "end_ms": 3325280,
+      "source_event_index": 512,
+      "start_ms": 3321280,
+      "text": "You bring up another point. I know David Autor and others have talked a lot about this which is,"
+    },
+    {
+      "end_ms": 3329240,
+      "source_event_index": 513,
+      "start_ms": 3325280,
+      "text": "60% of labor- I think the other question that needs to happen, let’s at least talk"
+    },
+    {
+      "end_ms": 3335720,
+      "source_event_index": 514,
+      "start_ms": 3329240,
+      "text": "about our democratic societies. I think that in order to have a stable social structure,"
+    },
+    {
+      "end_ms": 3342600,
+      "source_event_index": 515,
+      "start_ms": 3335720,
+      "text": "and democracies function, you can’t just have a return on capital and no return on labor. We can"
+    },
+    {
+      "end_ms": 3353360,
+      "source_event_index": 516,
+      "start_ms": 3342600,
+      "text": "talk about it, but that 60% has to be revalued. In my own simple way, maybe you can call it naive,"
+    },
+    {
+      "end_ms": 3361000,
+      "source_event_index": 517,
+      "start_ms": 3354040,
+      "text": "we'll start valuing different types of human labor. What is today considered"
+    },
+    {
+      "end_ms": 3368000,
+      "source_event_index": 518,
+      "start_ms": 3361000,
+      "text": "high-value human labor may be a commodity. There may be new things that we will value."
+    },
+    {
+      "end_ms": 3375400,
+      "source_event_index": 519,
+      "start_ms": 3368000,
+      "text": "Including that person who comes to me and helps me with my physical therapy or whatever,"
+    },
+    {
+      "end_ms": 3382680,
+      "source_event_index": 520,
+      "start_ms": 3376880,
+      "text": "whatever is going to be the case that we value, but ultimately, if we don't have return on labor,"
+    },
+    {
+      "end_ms": 3388040,
+      "source_event_index": 521,
+      "start_ms": 3382680,
+      "text": "and there's meaning in work and dignity in work and all of that, that's another rate limiter"
+    },
+    {
+      "end_ms": 3392040,
+      "source_event_index": 522,
+      "start_ms": 3388040,
+      "text": "to any of these things being deployed. On the alignment side, two years ago,"
+    },
+    {
+      "end_ms": 3397080,
+      "source_event_index": 523,
+      "start_ms": 3392040,
+      "text": "you guys released Sydney Bing. Just to be clear, I think given the level of capabilities at the time,"
+    },
+    {
+      "end_ms": 3403560,
+      "source_event_index": 524,
+      "start_ms": 3397080,
+      "text": "it was a charming, endearing, kind of funny example of misalignment."
+    },
+    {
+      "end_ms": 3407840,
+      "source_event_index": 525,
+      "start_ms": 3403560,
+      "text": "But that was because, at the time, it was like chatbots. They can go think for 30 seconds and"
+    },
+    {
+      "end_ms": 3417080,
+      "source_event_index": 526,
+      "start_ms": 3407840,
+      "text": "give you some funny or inappropriate response. But if you think about that kind of system--that,"
+    },
+    {
+      "end_ms": 3422560,
+      "source_event_index": 527,
+      "start_ms": 3418520,
+      "text": "I think to a New York Times reporter, tried to get him to leave his wife or something--if"
+    },
+    {
+      "end_ms": 3427480,
+      "source_event_index": 528,
+      "start_ms": 3422560,
+      "text": "you think about that going forward, and you have these agents that are for hours, weeks,"
+    },
+    {
+      "end_ms": 3434560,
+      "source_event_index": 529,
+      "start_ms": 3427480,
+      "text": "months going forward, just like autonomous swarms of AGIs, who could be in similar ways misaligned"
+    },
+    {
+      "end_ms": 3443040,
+      "source_event_index": 530,
+      "start_ms": 3434560,
+      "text": "and screwing stuff up, maybe coordinating with each other, what's your plan going forward so"
+    },
+    {
+      "end_ms": 3449400,
+      "source_event_index": 531,
+      "start_ms": 3443040,
+      "text": "that when you get the big one, you get it right? That is correct. That's one of the reasons why"
+    },
+    {
+      "end_ms": 3457520,
+      "source_event_index": 532,
+      "start_ms": 3452320,
+      "text": "when we usually allocate compute, let's allocate compute for what is that alignment challenge?"
+    },
+    {
+      "end_ms": 3461560,
+      "source_event_index": 533,
+      "start_ms": 3457520,
+      "text": "And then more importantly, what is the runtime environment in which you are really going"
+    },
+    {
+      "end_ms": 3468160,
+      "source_event_index": 534,
+      "start_ms": 3461560,
+      "text": "to be able to monitor these things? The observability around it? We do deal with"
+    },
+    {
+      "end_ms": 3473520,
+      "source_event_index": 535,
+      "start_ms": 3468160,
+      "text": "a lot of these things today in the classical side of things as well, like cyber. We don't"
+    },
+    {
+      "end_ms": 3478320,
+      "source_event_index": 536,
+      "start_ms": 3473520,
+      "text": "just write software and then just let it go. You have software and then you monitor it."
+    },
+    {
+      "end_ms": 3485040,
+      "source_event_index": 537,
+      "start_ms": 3478320,
+      "text": "You monitor it for cyber attacks, you monitor it for fault injections, and what have you."
+    },
+    {
+      "end_ms": 3489600,
+      "source_event_index": 538,
+      "start_ms": 3485040,
+      "text": "Therefore, I think we will have to build enough software engineering around the"
+    },
+    {
+      "end_ms": 3495880,
+      "source_event_index": 539,
+      "start_ms": 3489600,
+      "text": "deployment side of these, and then inside the model itself, what's the alignment? These are all,"
+    },
+    {
+      "end_ms": 3499640,
+      "source_event_index": 540,
+      "start_ms": 3495880,
+      "text": "some of them are real science problems. Some of them are real engineering problems,"
+    },
+    {
+      "end_ms": 3506240,
+      "source_event_index": 541,
+      "start_ms": 3499640,
+      "text": "and then we will have to tackle it. That also means taking our own"
+    },
+    {
+      "end_ms": 3510520,
+      "source_event_index": 542,
+      "start_ms": 3506240,
+      "text": "liability in all of this. So that's why I'm more interested in deploying these things in"
+    },
+    {
+      "end_ms": 3516680,
+      "source_event_index": 543,
+      "start_ms": 3510520,
+      "text": "where you can actually govern what the scope of these things is, and the scale of these things"
+    },
+    {
+      "end_ms": 3523840,
+      "source_event_index": 544,
+      "start_ms": 3516680,
+      "text": "is. You just can't unleash something out there in the world that creates harm, because the social"
+    },
+    {
+      "end_ms": 3531040,
+      "source_event_index": 545,
+      "start_ms": 3523840,
+      "text": "permission for that is not going to be there. When you get the agents that can really just do"
+    },
+    {
+      "end_ms": 3536160,
+      "source_event_index": 546,
+      "start_ms": 3531040,
+      "text": "weeks worth of tasks for you, what is the minimum assurance you want"
+    },
+    {
+      "end_ms": 3541120,
+      "source_event_index": 547,
+      "start_ms": 3536160,
+      "text": "before you can let it run a random Fortune 500? I think when I use something like Deep Research,"
+    },
+    {
+      "end_ms": 3548240,
+      "source_event_index": 548,
+      "start_ms": 3541120,
+      "text": "even, the minimum assurance I think we want is before we especially have"
+    },
+    {
+      "end_ms": 3551960,
+      "source_event_index": 549,
+      "start_ms": 3548240,
+      "text": "physical embodiment of anything, that I think is kind of one of those thresholds,"
+    },
+    {
+      "end_ms": 3557920,
+      "source_event_index": 550,
+      "start_ms": 3551960,
+      "text": "when you cross. That might be one place. Then the other one is, for example,"
+    },
+    {
+      "end_ms": 3566040,
+      "source_event_index": 551,
+      "start_ms": 3557920,
+      "text": "the permissions of the runtime environment in which this is operating. You may want guarantees"
+    },
+    {
+      "end_ms": 3572600,
+      "source_event_index": 552,
+      "start_ms": 3567240,
+      "text": "that it's sandboxed, it is not going out of that sandbox."
+    },
+    {
+      "end_ms": 3577480,
+      "source_event_index": 553,
+      "start_ms": 3572600,
+      "text": "I mean, we already have web search and we already have it out of the sandbox."
+    },
+    {
+      "end_ms": 3585120,
+      "source_event_index": 554,
+      "start_ms": 3577480,
+      "text": "But even what it does with web search and what it writes -- for example to your point,"
+    },
+    {
+      "end_ms": 3589800,
+      "source_event_index": 555,
+      "start_ms": 3585120,
+      "text": "if it's just going to write a bunch of code in order to do some computation,"
+    },
+    {
+      "end_ms": 3597040,
+      "source_event_index": 556,
+      "start_ms": 3589800,
+      "text": "where is that code deployed? And is that code ephemeral for just creating that output,"
+    },
+    {
+      "end_ms": 3600240,
+      "source_event_index": 557,
+      "start_ms": 3597040,
+      "text": "versus just going and springing that code out into the world?"
+    },
+    {
+      "end_ms": 3606120,
+      "source_event_index": 558,
+      "start_ms": 3601760,
+      "text": "Those are things that you could, in the action space, actually go control."
+    },
+    {
+      "end_ms": 3610520,
+      "source_event_index": 559,
+      "start_ms": 3606120,
+      "text": "And separate from the safety issues, as you think about your own product suite, and you think about,"
+    },
+    {
+      "end_ms": 3618000,
+      "source_event_index": 560,
+      "start_ms": 3611480,
+      "text": "if you do have AIs this powerful, at some point, it's not just like Copilot- an example"
+    },
+    {
+      "end_ms": 3621280,
+      "source_event_index": 561,
+      "start_ms": 3618000,
+      "text": "you mentioned about how you were prepping for this podcast- it's more similar to how"
+    },
+    {
+      "end_ms": 3627960,
+      "source_event_index": 562,
+      "start_ms": 3621280,
+      "text": "you actually delegate work to your colleagues. What does it look like, given your current suite,"
+    },
+    {
+      "end_ms": 3634240,
+      "source_event_index": 563,
+      "start_ms": 3627960,
+      "text": "to add that in? I mean, there's one question about whether LLMs get commodified by other things."
+    },
+    {
+      "end_ms": 3641000,
+      "source_event_index": 564,
+      "start_ms": 3634240,
+      "text": "I wonder if these databases or canvases or Excel sheets or whatever -- if the LLM is your"
+    },
+    {
+      "end_ms": 3646600,
+      "source_event_index": 565,
+      "start_ms": 3641000,
+      "text": "main gate point into accessing all these things, is it possible that the LLMs commodify Office?"
+    },
+    {
+      "end_ms": 3655920,
+      "source_event_index": 566,
+      "start_ms": 3649880,
+      "text": "It's an interesting one. The way I think about the first phase, at least, would be:"
+    },
+    {
+      "end_ms": 3665400,
+      "source_event_index": 567,
+      "start_ms": 3656840,
+      "text": "Can the LLM help me do my knowledge work using all of these tools or canvases more effectively?"
+    },
+    {
+      "end_ms": 3675040,
+      "source_event_index": 568,
+      "start_ms": 3665400,
+      "text": "One of the best demos that I've seen is a doctor getting ready for a tumor board workflow. She's"
+    },
+    {
+      "end_ms": 3682360,
+      "source_event_index": 569,
+      "start_ms": 3675040,
+      "text": "going into a tumor board meeting, and the first thing she uses Copilot for is to create an agenda"
+    },
+    {
+      "end_ms": 3689360,
+      "source_event_index": 570,
+      "start_ms": 3682360,
+      "text": "for the meeting because the LLM helps reason about all the cases, which are in some SharePoint site."
+    },
+    {
+      "end_ms": 3694160,
+      "source_event_index": 571,
+      "start_ms": 3689360,
+      "text": "It says, \"Hey, these cases -- obviously, a tumor board meeting is a high-stakes meeting where you"
+    },
+    {
+      "end_ms": 3700040,
+      "source_event_index": 572,
+      "start_ms": 3694160,
+      "text": "want to be mindful of the differences in cases so that you can then allocate the right time.\""
+    },
+    {
+      "end_ms": 3706280,
+      "source_event_index": 573,
+      "start_ms": 3700040,
+      "text": "Even that reasoning task of creating an agenda that knows how to split time- super. So, I use"
+    },
+    {
+      "end_ms": 3713320,
+      "source_event_index": 574,
+      "start_ms": 3706280,
+      "text": "the LLM to do that. Then I go into the meeting, I'm in a Teams call with all my colleagues. I'm"
+    },
+    {
+      "end_ms": 3719880,
+      "source_event_index": 575,
+      "start_ms": 3713320,
+      "text": "focused on the actual case versus taking notes, because you now have this AI copilot doing a full"
+    },
+    {
+      "end_ms": 3728000,
+      "source_event_index": 576,
+      "start_ms": 3719880,
+      "text": "transcription of all of this. It's not just a transcript, but a database entry of what is in"
+    },
+    {
+      "end_ms": 3735120,
+      "source_event_index": 577,
+      "start_ms": 3728000,
+      "text": "the meeting that is recallable for all time. Then she comes out of the meeting, having"
+    },
+    {
+      "end_ms": 3740760,
+      "source_event_index": 578,
+      "start_ms": 3735120,
+      "text": "discussed the case and not been distracted by note-taking. She's a teaching doctor;"
+    },
+    {
+      "end_ms": 3747920,
+      "source_event_index": 579,
+      "start_ms": 3740760,
+      "text": "she wants to go and prep for her class. And so she goes into Copilot and says, \"Take my tumor board"
+    },
+    {
+      "end_ms": 3755160,
+      "source_event_index": 580,
+      "start_ms": 3747920,
+      "text": "meeting and create a PowerPoint slide deck out of it so that I can talk to my students about it.\""
+    },
+    {
+      "end_ms": 3762400,
+      "source_event_index": 581,
+      "start_ms": 3755160,
+      "text": "So that’s the type. The UI and the scaffolding that I have are canvases that are now getting"
+    },
+    {
+      "end_ms": 3771040,
+      "source_event_index": 582,
+      "start_ms": 3762400,
+      "text": "populated using LLMs. And the workflow itself is being reshaped; knowledge work is getting done."
+    },
+    {
+      "end_ms": 3778920,
+      "source_event_index": 583,
+      "start_ms": 3771040,
+      "text": "Here's an interesting thing: If someone came to me in the late '80s and said, \"You're going to have"
+    },
+    {
+      "end_ms": 3785480,
+      "source_event_index": 584,
+      "start_ms": 3778920,
+      "text": "a million documents on your desk,\" I would say, \"What the heck is that?\" I would have literally"
+    },
+    {
+      "end_ms": 3791880,
+      "source_event_index": 585,
+      "start_ms": 3785480,
+      "text": "thought there was going to be a million physical copies of things on my desk. Except, we do have a"
+    },
+    {
+      "end_ms": 3796160,
+      "source_event_index": 586,
+      "start_ms": 3791880,
+      "text": "million spreadsheets and a million documents. I don’t, you do."
+    },
+    {
+      "end_ms": 3800320,
+      "source_event_index": 587,
+      "start_ms": 3796160,
+      "text": "They're all there. And so, that's what's going to happen with even agents. There"
+    },
+    {
+      "end_ms": 3805080,
+      "source_event_index": 588,
+      "start_ms": 3800320,
+      "text": "will be a UI layer. To me, Office is not just about the office of today; it's the"
+    },
+    {
+      "end_ms": 3811800,
+      "source_event_index": 589,
+      "start_ms": 3805080,
+      "text": "UI layer for knowledge work. It'll evolve as the workflows evolve. That's what we want to build."
+    },
+    {
+      "end_ms": 3816920,
+      "source_event_index": 590,
+      "start_ms": 3811800,
+      "text": "I do think the SaaS applications that exist today, these CRUD applications,"
+    },
+    {
+      "end_ms": 3822560,
+      "source_event_index": 591,
+      "start_ms": 3816920,
+      "text": "are going to fundamentally be changed because the business logic will go more into this agentic"
+    },
+    {
+      "end_ms": 3827120,
+      "source_event_index": 592,
+      "start_ms": 3822560,
+      "text": "tier. In fact, one of the other cool things today in my Copilot experience is when I say,"
+    },
+    {
+      "end_ms": 3830680,
+      "source_event_index": 593,
+      "start_ms": 3827120,
+      "text": "\"Hey, I'm getting ready for a meeting with a customer,\" I just go and say,"
+    },
+    {
+      "end_ms": 3836080,
+      "source_event_index": 594,
+      "start_ms": 3830680,
+      "text": "\"Give me all the notes for it that I should know.\" It pulls from my CRM database, it pulls"
+    },
+    {
+      "end_ms": 3844720,
+      "source_event_index": 595,
+      "start_ms": 3836080,
+      "text": "from my Microsoft Graph, creates a composite, essentially artifact, and then it applies even"
+    },
+    {
+      "end_ms": 3850080,
+      "source_event_index": 596,
+      "start_ms": 3844720,
+      "text": "logic on it. That, to me, is going to transform the SaaS applications as we know of it today."
+    },
+    {
+      "end_ms": 3855520,
+      "source_event_index": 597,
+      "start_ms": 3851320,
+      "text": "SaaS as an industry might be worth hundreds of billions to trillions of dollars a year,"
+    },
+    {
+      "end_ms": 3862080,
+      "source_event_index": 598,
+      "start_ms": 3855520,
+      "text": "depending on how you count. If really that can just get collapsed by AI,"
+    },
+    {
+      "end_ms": 3867680,
+      "source_event_index": 599,
+      "start_ms": 3862600,
+      "text": "is the next step up in your next decade 10X-ing the market cap of Microsoft again? Because you're"
+    },
+    {
+      "end_ms": 3872760,
+      "source_event_index": 600,
+      "start_ms": 3868280,
+      "text": "talking about trillions of dollars... It would also create a lot of value in"
+    },
+    {
+      "end_ms": 3882360,
+      "source_event_index": 601,
+      "start_ms": 3872760,
+      "text": "the SaaS. One thing we don't pay as much attention to perhaps is the amount of IT"
+    },
+    {
+      "end_ms": 3890200,
+      "source_event_index": 602,
+      "start_ms": 3882360,
+      "text": "backlog there is in the world. These code gen things, plus the"
+    },
+    {
+      "end_ms": 3895640,
+      "source_event_index": 603,
+      "start_ms": 3890200,
+      "text": "fact that I can interrogate all of your SaaS applications using agents and get more utility"
+    },
+    {
+      "end_ms": 3905160,
+      "source_event_index": 604,
+      "start_ms": 3896160,
+      "text": "will be the greatest explosion of apps, they'll be called agents, so that for every vertical,"
+    },
+    {
+      "end_ms": 3912360,
+      "source_event_index": 605,
+      "start_ms": 3905160,
+      "text": "in every industry, in every category, we're suddenly going to have the ability to be serviced."
+    },
+    {
+      "end_ms": 3917600,
+      "source_event_index": 606,
+      "start_ms": 3912360,
+      "text": "So there's going to be a lot of value. You can't stay still. You can't just say the old thing of,"
+    },
+    {
+      "end_ms": 3921920,
+      "source_event_index": 607,
+      "start_ms": 3917600,
+      "text": "\"Oh, I schematized some narrow business process, and I have a UI in the browser,"
+    },
+    {
+      "end_ms": 3927680,
+      "source_event_index": 608,
+      "start_ms": 3921920,
+      "text": "and that's my thing.\" That's ain’t going to be the case. You have to go up-stack and say,"
+    },
+    {
+      "end_ms": 3933920,
+      "source_event_index": 609,
+      "start_ms": 3927680,
+      "text": "\"What's the task that I have to participate in?\" You will want to be able to take your SaaS"
+    },
+    {
+      "end_ms": 3939480,
+      "source_event_index": 610,
+      "start_ms": 3933920,
+      "text": "application and make it a fantastic agent that participates in a multi-agent world."
+    },
+    {
+      "end_ms": 3943800,
+      "source_event_index": 611,
+      "start_ms": 3939480,
+      "text": "As long as you can do that, then I think you can even increase the value."
+    },
+    {
+      "end_ms": 3946480,
+      "source_event_index": 612,
+      "start_ms": 3943800,
+      "text": "Can I ask you some questions about your time at Microsoft?"
+    },
+    {
+      "end_ms": 3948320,
+      "source_event_index": 613,
+      "start_ms": 3946480,
+      "text": "Yeah. Is being a company"
+    },
+    {
+      "end_ms": 3954240,
+      "source_event_index": 614,
+      "start_ms": 3948320,
+      "text": "man underrated? So you've spent most of your career at Microsoft, and you could say that one"
+    },
+    {
+      "end_ms": 3958000,
+      "source_event_index": 615,
+      "start_ms": 3954240,
+      "text": "of the reasons you've been able to add so much value is you've seen the culture, the history,"
+    },
+    {
+      "end_ms": 3962120,
+      "source_event_index": 616,
+      "start_ms": 3958000,
+      "text": "and the technology. You have all this context by rising up through the ranks. Should more companies"
+    },
+    {
+      "end_ms": 3965640,
+      "source_event_index": 617,
+      "start_ms": 3962120,
+      "text": "be run by people who have this level of context? That's a great question. I've"
+    },
+    {
+      "end_ms": 3976480,
+      "source_event_index": 618,
+      "start_ms": 3965640,
+      "text": "not thought about it that way. Through my 34 years now of Microsoft,"
+    },
+    {
+      "end_ms": 3984520,
+      "source_event_index": 619,
+      "start_ms": 3978880,
+      "text": "each year I felt more excited about being at Microsoft versus thinking that, oh, I'm a company"
+    },
+    {
+      "end_ms": 3994320,
+      "source_event_index": 620,
+      "start_ms": 3984520,
+      "text": "person or what have you. I take that seriously, even for anybody joining Microsoft. It's not like"
+    },
+    {
+      "end_ms": 3999400,
+      "source_event_index": 621,
+      "start_ms": 3994320,
+      "text": "they're joining Microsoft as long as they feel that they can use this as a platform for their"
+    },
+    {
+      "end_ms": 4006000,
+      "source_event_index": 622,
+      "start_ms": 3999400,
+      "text": "both economic return, but also a sense of purpose and a sense of mission that they can accomplish by"
+    },
+    {
+      "end_ms": 4013200,
+      "source_event_index": 623,
+      "start_ms": 4006000,
+      "text": "using us as a platform. That's the contract. So I think yes, companies have to create a"
+    },
+    {
+      "end_ms": 4020360,
+      "source_event_index": 624,
+      "start_ms": 4013200,
+      "text": "culture that allows people to come in and become company people like me. Microsoft"
+    },
+    {
+      "end_ms": 4026600,
+      "source_event_index": 625,
+      "start_ms": 4020360,
+      "text": "got it more right than wrong, at least in my case, and I hope that remains the case."
+    },
+    {
+      "end_ms": 4032360,
+      "source_event_index": 626,
+      "start_ms": 4027920,
+      "text": "The sixth CEO that you’re talking about, who’ll get to use the research you’re starting now,"
+    },
+    {
+      "end_ms": 4035400,
+      "source_event_index": 627,
+      "start_ms": 4032360,
+      "text": "what are you doing to retain the future Satya Nadellas so that they're"
+    },
+    {
+      "end_ms": 4039840,
+      "source_event_index": 628,
+      "start_ms": 4035400,
+      "text": "in a position to become future leaders? It's fascinating. This is our 50th year,"
+    },
+    {
+      "end_ms": 4051360,
+      "source_event_index": 629,
+      "start_ms": 4039840,
+      "text": "and I think a lot about it. The way to think about it is, longevity is not a goal; relevance is."
+    },
+    {
+      "end_ms": 4058960,
+      "source_event_index": 630,
+      "start_ms": 4052240,
+      "text": "The thing that I have to do and all 200,000 of us have to do every day is: Are we doing things"
+    },
+    {
+      "end_ms": 4065720,
+      "source_event_index": 631,
+      "start_ms": 4058960,
+      "text": "that are useful and relevant for the world as we see it evolving, not just today, but tomorrow?"
+    },
+    {
+      "end_ms": 4075120,
+      "source_event_index": 632,
+      "start_ms": 4068720,
+      "text": "We live in an industry where there's no franchise value, so that’s the other hard part. If you take"
+    },
+    {
+      "end_ms": 4082120,
+      "source_event_index": 633,
+      "start_ms": 4075120,
+      "text": "the R&D budget that we will spend this year, it’s all speculation on what's going to happen"
+    },
+    {
+      "end_ms": 4088120,
+      "source_event_index": 634,
+      "start_ms": 4082120,
+      "text": "five years from now. You have to basically go in with that attitude, saying, \"We are doing"
+    },
+    {
+      "end_ms": 4094360,
+      "source_event_index": 635,
+      "start_ms": 4088120,
+      "text": "things that we think are going to be relevant.\" So that's what you have to focus on. Then know"
+    },
+    {
+      "end_ms": 4097960,
+      "source_event_index": 636,
+      "start_ms": 4094360,
+      "text": "that there's a batting average, and you're not going to get- you have to have a high tolerance"
+    },
+    {
+      "end_ms": 4109800,
+      "source_event_index": 637,
+      "start_ms": 4097960,
+      "text": "for failure. You have to take enough shots on goal to be able to say, \"Okay,"
+    },
+    {
+      "end_ms": 4115680,
+      "source_event_index": 638,
+      "start_ms": 4109800,
+      "text": "we will make it to the other side as a company.\" That's what makes it tricky in this industry."
+    },
+    {
+      "end_ms": 4119080,
+      "source_event_index": 639,
+      "start_ms": 4115680,
+      "text": "Speaking of- you just mentioned that you're two months away from your 50th"
+    },
+    {
+      "end_ms": 4125800,
+      "source_event_index": 640,
+      "start_ms": 4119080,
+      "text": "anniversary of Microsoft’s founding. If you look at the top 10 companies by market cap,"
+    },
+    {
+      "end_ms": 4132680,
+      "source_event_index": 641,
+      "start_ms": 4125800,
+      "text": "or top 5, basically, everybody else but Microsoft is younger than Microsoft. It's"
+    },
+    {
+      "end_ms": 4136320,
+      "source_event_index": 642,
+      "start_ms": 4132680,
+      "text": "an interesting observation about why the most successful companies often"
+    },
+    {
+      "end_ms": 4142280,
+      "source_event_index": 643,
+      "start_ms": 4136320,
+      "text": "are quite young. The average Fortune 500 company will last 10 to 15 years."
+    },
+    {
+      "end_ms": 4149000,
+      "source_event_index": 644,
+      "start_ms": 4142280,
+      "text": "What has Microsoft done to remain relevant for this many years? How do you keep refounding?"
+    },
+    {
+      "end_ms": 4156680,
+      "source_event_index": 645,
+      "start_ms": 4151200,
+      "text": "I love that, Reed Hoffman uses that term, \"refounding.\" That's the mindset. People"
+    },
+    {
+      "end_ms": 4165200,
+      "source_event_index": 646,
+      "start_ms": 4156680,
+      "text": "talk about founder mode, but for us mere mortal CEOs, it's more like refounder mode."
+    },
+    {
+      "end_ms": 4180040,
+      "source_event_index": 647,
+      "start_ms": 4168080,
+      "text": "To be able to see things again in a fresh way is the key. To your question: can we culturally"
+    },
+    {
+      "end_ms": 4188920,
+      "source_event_index": 648,
+      "start_ms": 4180040,
+      "text": "create an environment where refounding becomes a habit thing? Every day we come in and say,"
+    },
+    {
+      "end_ms": 4194960,
+      "source_event_index": 649,
+      "start_ms": 4188920,
+      "text": "\"We feel we have a stake in this place to be able to change the core assumptions of what"
+    },
+    {
+      "end_ms": 4201400,
+      "source_event_index": 650,
+      "start_ms": 4195640,
+      "text": "we do and how we relate to the world around us. Do we give ourselves permission?” I think many times,"
+    },
+    {
+      "end_ms": 4206800,
+      "source_event_index": 651,
+      "start_ms": 4201400,
+      "text": "companies feel over-constrained by either business model or whatever. You just have"
+    },
+    {
+      "end_ms": 4209960,
+      "source_event_index": 652,
+      "start_ms": 4206800,
+      "text": "to unconstrain yourself. If you did leave Microsoft,"
+    },
+    {
+      "end_ms": 4215840,
+      "source_event_index": 653,
+      "start_ms": 4209960,
+      "text": "what company would you start? Company I would start? Man."
+    },
+    {
+      "end_ms": 4221440,
+      "source_event_index": 654,
+      "start_ms": 4215840,
+      "text": "That’s where the company man and me sort of says, “I'll never leave Microsoft.”"
+    },
+    {
+      "end_ms": 4232040,
+      "source_event_index": 655,
+      "start_ms": 4221440,
+      "text": "If I were thinking of doing something, I think picking a domain that has... When I look at the"
+    },
+    {
+      "end_ms": 4239600,
+      "source_event_index": 656,
+      "start_ms": 4232040,
+      "text": "dream of tech, we've always said technology is about the biggest, greatest democratizing force."
+    },
+    {
+      "end_ms": 4249200,
+      "source_event_index": 657,
+      "start_ms": 4239600,
+      "text": "I feel like finally, we have that ability. If you say those tokens per dollar per watt"
+    },
+    {
+      "end_ms": 4256400,
+      "source_event_index": 658,
+      "start_ms": 4249200,
+      "text": "is what we can generate, I would love to find some domain in which that can"
+    },
+    {
+      "end_ms": 4263280,
+      "source_event_index": 659,
+      "start_ms": 4256400,
+      "text": "be applied, where it is so underserved. That's where healthcare, education..."
+    },
+    {
+      "end_ms": 4273880,
+      "source_event_index": 660,
+      "start_ms": 4263280,
+      "text": "Public sector would be another place. If you take those domains, which are the underserved places,"
+    },
+    {
+      "end_ms": 4279040,
+      "source_event_index": 661,
+      "start_ms": 4273880,
+      "text": "where my life as a citizen of this country or a member of this society or anywhere, would I"
+    },
+    {
+      "end_ms": 4284120,
+      "source_event_index": 662,
+      "start_ms": 4279040,
+      "text": "be better off if somehow all this abundance translated into better healthcare, better"
+    },
+    {
+      "end_ms": 4290640,
+      "source_event_index": 663,
+      "start_ms": 4284120,
+      "text": "education, and better public sector institutions serving me as a citizen? That would be a place."
+    },
+    {
+      "end_ms": 4295560,
+      "source_event_index": 664,
+      "start_ms": 4292080,
+      "text": "One thing I'm not sure about, hearing your answers on different questions,"
+    },
+    {
+      "end_ms": 4304040,
+      "source_event_index": 665,
+      "start_ms": 4295560,
+      "text": "is whether you think AGI is a thing. Will there be a thing which automates all cognitive labor,"
+    },
+    {
+      "end_ms": 4308080,
+      "source_event_index": 666,
+      "start_ms": 4304040,
+      "text": "like anything anybody can do on a computer? This is where I have a problem with the"
+    },
+    {
+      "end_ms": 4315480,
+      "source_event_index": 667,
+      "start_ms": 4308080,
+      "text": "definitions of how people talk about it. Cognitive labor is not a static thing. There is cognitive"
+    },
+    {
+      "end_ms": 4325560,
+      "source_event_index": 668,
+      "start_ms": 4315480,
+      "text": "labor today. If I have an inbox that is managing all my agents, is that new cognitive labor?"
+    },
+    {
+      "end_ms": 4332640,
+      "source_event_index": 669,
+      "start_ms": 4327600,
+      "text": "Today's cognitive labor may be automated. What about the new cognitive labor that"
+    },
+    {
+      "end_ms": 4338440,
+      "source_event_index": 670,
+      "start_ms": 4332640,
+      "text": "gets created? Both of those things have to be thought of, which is the shifting…"
+    },
+    {
+      "end_ms": 4344840,
+      "source_event_index": 671,
+      "start_ms": 4338440,
+      "text": "That's why I make this distinction, at least in my head: Don't conflate knowledge worker"
+    },
+    {
+      "end_ms": 4352320,
+      "source_event_index": 672,
+      "start_ms": 4344840,
+      "text": "with knowledge work. The knowledge work of today could probably be automated."
+    },
+    {
+      "end_ms": 4360160,
+      "source_event_index": 673,
+      "start_ms": 4352320,
+      "text": "Who said my life's goal is to triage my email? Let an AI agent triage my email."
+    },
+    {
+      "end_ms": 4365040,
+      "source_event_index": 674,
+      "start_ms": 4360160,
+      "text": "But after having triaged my email, give me a higher-level cognitive labor task of, \"Hey,"
+    },
+    {
+      "end_ms": 4370080,
+      "source_event_index": 675,
+      "start_ms": 4365040,
+      "text": "these are the three drafts I really want you to review.\" That's a different abstraction."
+    },
+    {
+      "end_ms": 4374680,
+      "source_event_index": 676,
+      "start_ms": 4370080,
+      "text": "But will AI ever get to the second thing? It may, but as soon as it gets to that"
+    },
+    {
+      "end_ms": 4381240,
+      "source_event_index": 677,
+      "start_ms": 4374680,
+      "text": "second thing, there will be a third thing. Why are we thinking that somehow, when we"
+    },
+    {
+      "end_ms": 4387960,
+      "source_event_index": 678,
+      "start_ms": 4381240,
+      "text": "have dealt with tools that have changed what cognitive labor is in history, why are we"
+    },
+    {
+      "end_ms": 4395200,
+      "source_event_index": 679,
+      "start_ms": 4387960,
+      "text": "worried that all cognitive labor will go away? I'm sure you've heard these examples before, but"
+    },
+    {
+      "end_ms": 4399240,
+      "source_event_index": 680,
+      "start_ms": 4395200,
+      "text": "the idea that horses can still be good for certain things, there are certain terrains you can't take"
+    },
+    {
+      "end_ms": 4403360,
+      "source_event_index": 681,
+      "start_ms": 4399240,
+      "text": "a car on. But the idea that you're going to see horses around the street, they’re going to employ"
+    },
+    {
+      "end_ms": 4407240,
+      "source_event_index": 682,
+      "start_ms": 4403360,
+      "text": "millions of horses, it’s just not happening. And then the idea is, could a similar"
+    },
+    {
+      "end_ms": 4411040,
+      "source_event_index": 683,
+      "start_ms": 4407240,
+      "text": "thing happen with humans? But in one very narrow dimension?"
+    },
+    {
+      "end_ms": 4417360,
+      "source_event_index": 684,
+      "start_ms": 4411040,
+      "text": "It's only 200 years of history of humans where we have valued some narrow sort of things called"
+    },
+    {
+      "end_ms": 4423000,
+      "source_event_index": 685,
+      "start_ms": 4417360,
+      "text": "\"cognitive labor\" as we understand it. Let's take something like chemistry. If"
+    },
+    {
+      "end_ms": 4430960,
+      "source_event_index": 686,
+      "start_ms": 4423000,
+      "text": "this thing, quantum plus AI really helped us do a lot of novel material science and so on,"
+    },
+    {
+      "end_ms": 4437400,
+      "source_event_index": 687,
+      "start_ms": 4430960,
+      "text": "that's fantastic to have novel material science being done by it. Does that take away from"
+    },
+    {
+      "end_ms": 4445520,
+      "source_event_index": 688,
+      "start_ms": 4437920,
+      "text": "all the other things that humans can do? Why can't we exist in a world where there"
+    },
+    {
+      "end_ms": 4454520,
+      "source_event_index": 689,
+      "start_ms": 4445520,
+      "text": "are powerful cognitive machines, knowing that our cognitive agency has not been taken away?"
+    },
+    {
+      "end_ms": 4459240,
+      "source_event_index": 690,
+      "start_ms": 4455120,
+      "text": "I'll ask this question, not about you, but in a different scenario, so maybe you can answer it"
+    },
+    {
+      "end_ms": 4464760,
+      "source_event_index": 691,
+      "start_ms": 4460360,
+      "text": "without embarrassment. Suppose on the Microsoft board, could you ever see adding an AI to the"
+    },
+    {
+      "end_ms": 4473040,
+      "source_event_index": 692,
+      "start_ms": 4464760,
+      "text": "board? Could it ever have the judgment, context, and holistic understanding to be a useful advisor?"
+    },
+    {
+      "end_ms": 4480680,
+      "source_event_index": 693,
+      "start_ms": 4474520,
+      "text": "It's a great example. One of the things we added was a facilitator agent in Teams. The goal there,"
+    },
+    {
+      "end_ms": 4487920,
+      "source_event_index": 694,
+      "start_ms": 4480680,
+      "text": "it's in the early stages, is can that facilitator agent use long-term memory, not just on the"
+    },
+    {
+      "end_ms": 4493240,
+      "source_event_index": 695,
+      "start_ms": 4487920,
+      "text": "context of the meeting, but with the context of projects I'm working on, and the team,"
+    },
+    {
+      "end_ms": 4498800,
+      "source_event_index": 696,
+      "start_ms": 4493240,
+      "text": "and what have you, be a great facilitator? I would love it even in a board meeting,"
+    },
+    {
+      "end_ms": 4502680,
+      "source_event_index": 697,
+      "start_ms": 4498800,
+      "text": "where it's easy to get distracted. After all, board members come once a quarter, and they're"
+    },
+    {
+      "end_ms": 4511080,
+      "source_event_index": 698,
+      "start_ms": 4502680,
+      "text": "trying to digest what is happening with a complex company like Microsoft. A facilitator agent that"
+    },
+    {
+      "end_ms": 4520480,
+      "source_event_index": 699,
+      "start_ms": 4511080,
+      "text": "actually helped human beings all stay on topic and focus on the issues that matter, that's fantastic."
+    },
+    {
+      "end_ms": 4524560,
+      "source_event_index": 700,
+      "start_ms": 4520480,
+      "text": "That's kind of literally having, to your point about even going back to your previous question,"
+    },
+    {
+      "end_ms": 4530000,
+      "source_event_index": 701,
+      "start_ms": 4524560,
+      "text": "having something that has infinite memory that can even help us. You know, after all,"
+    },
+    {
+      "end_ms": 4537240,
+      "source_event_index": 702,
+      "start_ms": 4530000,
+      "text": "what is that Herbert Simon thing? We are all bounded rationality. So if the bounded rationality"
+    },
+    {
+      "end_ms": 4546600,
+      "source_event_index": 703,
+      "start_ms": 4537240,
+      "text": "of humans can actually be dealt with because there is a cognitive amplifier outside, that's great."
+    },
+    {
+      "end_ms": 4551080,
+      "source_event_index": 704,
+      "start_ms": 4546600,
+      "text": "Speaking of materials and chemistry stuff, I think you said recently that you want the"
+    },
+    {
+      "end_ms": 4557880,
+      "source_event_index": 705,
+      "start_ms": 4551080,
+      "text": "next 250 years of progress in those fields to happen in the next 25 years. Now, when I"
+    },
+    {
+      "end_ms": 4561880,
+      "source_event_index": 706,
+      "start_ms": 4557880,
+      "text": "think about what's going to be possible in the next 250 years, I'm thinking like space travel,"
+    },
+    {
+      "end_ms": 4568320,
+      "source_event_index": 707,
+      "start_ms": 4561880,
+      "text": "and space elevators, and immortality, and curing all diseases. Next 25 years, you think?"
+    },
+    {
+      "end_ms": 4575240,
+      "source_event_index": 708,
+      "start_ms": 4569400,
+      "text": "One of the reasons why I brought that up was, I love that thing of, the industrial revolution was"
+    },
+    {
+      "end_ms": 4583920,
+      "source_event_index": 709,
+      "start_ms": 4575240,
+      "text": "the 250 years. We have to take this entire change from a carbon-based system to something different."
+    },
+    {
+      "end_ms": 4589040,
+      "source_event_index": 710,
+      "start_ms": 4584920,
+      "text": "That means you have to fundamentally reinvent all of what has happened with chemistry over"
+    },
+    {
+      "end_ms": 4594080,
+      "source_event_index": 711,
+      "start_ms": 4589040,
+      "text": "the last 250 years. That's where I hope we have this quantum computer, this quantum computer"
+    },
+    {
+      "end_ms": 4599360,
+      "source_event_index": 712,
+      "start_ms": 4594080,
+      "text": "helps us get to new materials, and then we can fabricate those new materials that help us with"
+    },
+    {
+      "end_ms": 4605120,
+      "source_event_index": 713,
+      "start_ms": 4599360,
+      "text": "all of the challenges we have on this planet. And then I'm all for interplanetary travel."
+    },
+    {
+      "end_ms": 4608960,
+      "source_event_index": 714,
+      "start_ms": 4605120,
+      "text": "Amazing. Satya, thank you so much for your time. Thank you so much. It's wonderful. Thanks."
+    },
+    {
+      "end_ms": 4615031,
+      "source_event_index": 715,
+      "start_ms": 4608960,
+      "text": "Great, thank you."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-34474c537a755958683677-satya-nadella-2025/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "f8b96cfbaec26d4d3658ac7faead88f25f0178519f0b43e89df3c9fbb408890b"
+  },
+  "translation": {
+    "event_count": 716,
+    "language": "zh-CN",
+    "payload_sha256": "12f8bfd6d049a3db896e81b3bba97a88d2676665c41ed4db19f992f15cfcbfff",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-34474c537a755958683677-satya-nadella-2025/transcript.zh-CN.md",
+    "rendered_sha256": "059917c7e9ed3a95077ebbe848edb7dcfc8f365b4539dbbbdc3766dc3f51fbac",
+    "source_track": "zh-Hans-en",
+    "track_type": "youtube-auto-translate"
+  }
+}

@@ -1,0 +1,6474 @@
+{
+  "generated_at": "2026-08-18T08:26:16.259130Z",
+  "kind": "podwiki-youtube-subtitle-raw",
+  "payload": {
+    "events": [
+      {
+        "dDurationMs": 2600,
+        "segs": [
+          {
+            "utf8": "Satya, thank you so much \nfor coming on the podcast. "
+          }
+        ],
+        "tStartMs": 44800
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "In a second, we're going to get to the two \nbreakthroughs that Microsoft has just made,  "
+          }
+        ],
+        "tStartMs": 48920
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "and congratulations, same day in Nature: the \nMajorana zero chip, which we have in front  "
+          }
+        ],
+        "tStartMs": 52840
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "of us right here, and also the world human action \nmodels. But can we just continue the conversation  "
+          }
+        ],
+        "tStartMs": 58320
+      },
+      {
+        "dDurationMs": 3560,
+        "segs": [
+          {
+            "utf8": "we were having a second ago? You're describing \nthe ways in which the things you were seeing in  "
+          }
+        ],
+        "tStartMs": 63800
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "the 80s and 90s, you're seeing them happen again.\nThe thing that is exciting for me... Dwarkesh,  "
+          }
+        ],
+        "tStartMs": 67360
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "first of all, it's fantastic to be \non your podcast. I'm a big listener,  "
+          }
+        ],
+        "tStartMs": 72920
+      },
+      {
+        "dDurationMs": 8689,
+        "segs": [
+          {
+            "utf8": "and I love the way that you do these interviews \nand the broad topics that you explore. "
+          }
+        ],
+        "tStartMs": 76800
+      },
+      {
+        "dDurationMs": 6191,
+        "segs": [
+          {
+            "utf8": "The thing that is exciting for me… It reminds me \na little bit of my, I'd say, first few years even  "
+          }
+        ],
+        "tStartMs": 85489
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "in the tech industry, starting in the 90s, where \nthere was real debate about whether it's going  "
+          }
+        ],
+        "tStartMs": 91680
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "to be RISC or CISC, or, \"Hey, are we really \ngoing to be able to build servers using x86?\" "
+          }
+        ],
+        "tStartMs": 98280
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "When I joined Microsoft, that was the \nbeginning of what was Windows NT. So,  "
+          }
+        ],
+        "tStartMs": 106000
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "everything from the core silicon platform to the \noperating system to the app tier- that full stack  "
+          }
+        ],
+        "tStartMs": 111680
+      },
+      {
+        "dDurationMs": 8440,
+        "segs": [
+          {
+            "utf8": "approach- the entire thing is being litigated.\nYou could say cloud did a bunch of that,  "
+          }
+        ],
+        "tStartMs": 120640
+      },
+      {
+        "dDurationMs": 8280,
+        "segs": [
+          {
+            "utf8": "and obviously distributed computing and cloud \ndid change client-server. The web changed  "
+          }
+        ],
+        "tStartMs": 129080
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "massively. But this does feel a little more \nlike maybe more full-stack than even the past  "
+          }
+        ],
+        "tStartMs": 137360
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "that at least I've been involved in.\nWhen you think about which decisions  "
+          }
+        ],
+        "tStartMs": 144320
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "ended up being the long-term winners in \nthe 80s and 90s, and which ones didn't, and  "
+          }
+        ],
+        "tStartMs": 150040
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "especially when you think about- you were at Sun \nMicrosystems, they had an interesting experience  "
+          }
+        ],
+        "tStartMs": 154240
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "with the 90s dotcom bubble. People talk about \nthis data center build-out as being a bubble,  "
+          }
+        ],
+        "tStartMs": 158640
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "but at the same time, we have the Internet \ntoday as a result of what was built out then. "
+          }
+        ],
+        "tStartMs": 163120
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "What are the lessons about what will stand \nthe test of time? What is an inherent  "
+          }
+        ],
+        "tStartMs": 166800
+      },
+      {
+        "dDurationMs": 11720,
+        "segs": [
+          {
+            "utf8": "secular trend? What is just ephemeral?\nIf I go back, the four big transformations  "
+          }
+        ],
+        "tStartMs": 170960
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "that I've been part of, the client and the \nclient-server. So that's the birth of the  "
+          }
+        ],
+        "tStartMs": 182680
+      },
+      {
+        "dDurationMs": 7400,
+        "segs": [
+          {
+            "utf8": "graphical user interface and the x86 architecture, \nbasically allowing us to build servers. "
+          }
+        ],
+        "tStartMs": 191000
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "It was very clear to me. I remember going to \nwhat is PDC in '91, in fact I was at Sun at  "
+          }
+        ],
+        "tStartMs": 199440
+      },
+      {
+        "dDurationMs": 9600,
+        "segs": [
+          {
+            "utf8": "that time. In '91, I went to Moscone. That's when \nMicrosoft first described the Win32 interface and  "
+          }
+        ],
+        "tStartMs": 205840
+      },
+      {
+        "dDurationMs": 5000,
+        "segs": [
+          {
+            "utf8": "it was pretty clear to me what was going to \nhappen, where the server was also going to be  "
+          }
+        ],
+        "tStartMs": 215440
+      },
+      {
+        "dDurationMs": 11080,
+        "segs": [
+          {
+            "utf8": "an x86 thing. When you have the scale advantages \naccruing to something, that's the secular bet you  "
+          }
+        ],
+        "tStartMs": 220440
+      },
+      {
+        "dDurationMs": 6840,
+        "segs": [
+          {
+            "utf8": "have to place. What happened in the client was \ngoing to happen on the server side, and then  "
+          }
+        ],
+        "tStartMs": 231520
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "you were able to actually build client-server \napplications. So, the app model became clear. "
+          }
+        ],
+        "tStartMs": 238360
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "Then the web was the big thing for us, \nwhich we had to deal with in starting,  "
+          }
+        ],
+        "tStartMs": 244280
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "in fact as soon as I joined Microsoft, the \nNetscape browser or the Mosaic browser came out  "
+          }
+        ],
+        "tStartMs": 249640
+      },
+      {
+        "dDurationMs": 5960,
+        "segs": [
+          {
+            "utf8": "what, I think, December or November of '93, right? \nI think is when Andreessen and crew had that. "
+          }
+        ],
+        "tStartMs": 256680
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "So that was a big game-changer, in an interesting \nway, just as we were getting going on what was  "
+          }
+        ],
+        "tStartMs": 262640
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "the client-server wave, and it was clear that \nwe were going to win it as well. We had the  "
+          }
+        ],
+        "tStartMs": 267760
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "browser moment, and so we had to adjust. \nAnd we did a pretty good job of adjusting  "
+          }
+        ],
+        "tStartMs": 273360
+      },
+      {
+        "dDurationMs": 12000,
+        "segs": [
+          {
+            "utf8": "to it because the browser was a new app model.\nWe were able to embrace it with everything we did,  "
+          }
+        ],
+        "tStartMs": 278840
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "whether it was HTML in Word or building a new \nthing called the browser ourselves and competing  "
+          }
+        ],
+        "tStartMs": 290840
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "for it, and then building a web server on \nour server stack and go after it. Except,  "
+          }
+        ],
+        "tStartMs": 296160
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "of course, we missed what turned out to \nbe the biggest business model on the web,  "
+          }
+        ],
+        "tStartMs": 302960
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "because we all assumed the web is all about being \ndistributed, who would have thought that search  "
+          }
+        ],
+        "tStartMs": 309840
+      },
+      {
+        "dDurationMs": 8200,
+        "segs": [
+          {
+            "utf8": "would be the biggest winner in organizing the web? \nAnd so that's where we obviously didn't see it,  "
+          }
+        ],
+        "tStartMs": 315120
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "and Google saw it and executed super well.\nSo that's one lesson learned for me: you have  "
+          }
+        ],
+        "tStartMs": 323320
+      },
+      {
+        "dDurationMs": 9960,
+        "segs": [
+          {
+            "utf8": "to not only get the tech trend right, you also \nhave to get where the value is going to be created  "
+          }
+        ],
+        "tStartMs": 329880
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "with that trend. These business model shifts are \nprobably tougher than even the tech trend changes. "
+          }
+        ],
+        "tStartMs": 339840
+      },
+      {
+        "dDurationMs": 9320,
+        "segs": [
+          {
+            "utf8": "Where is the value going to be created in AI?\nThat's a great one. So I think there are two  "
+          }
+        ],
+        "tStartMs": 348720
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "places where I can say with some confidence. \nOne is the hyperscalers that do well,  "
+          }
+        ],
+        "tStartMs": 358040
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "because the fundamental thing is if you sort of \ngo back to even how Sam and others describe it,  "
+          }
+        ],
+        "tStartMs": 362600
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "if intelligence is log of compute, whoever \ncan do lots of compute is a big winner. "
+          }
+        ],
+        "tStartMs": 367200
+      },
+      {
+        "dDurationMs": 3720,
+        "segs": [
+          {
+            "utf8": "The other interesting thing is, if you \nlook at underneath even any AI workload,  "
+          }
+        ],
+        "tStartMs": 376640
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "like take ChatGPT, it's not like everybody's \nexcited about what's happening on the GPU side,  "
+          }
+        ],
+        "tStartMs": 380360
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "it's great. In fact, I think of my fleet even \nas a ratio of the AI accelerator to storage,  "
+          }
+        ],
+        "tStartMs": 384600
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "to compute. And at scale, you've got to grow it.\nYeah. "
+          }
+        ],
+        "tStartMs": 392600
+      },
+      {
+        "dDurationMs": 8560,
+        "segs": [
+          {
+            "utf8": "And so, that infrastructure need for the world \nis just going to be exponentially growing. "
+          }
+        ],
+        "tStartMs": 397480
+      },
+      {
+        "dDurationMs": 1520,
+        "segs": [
+          {
+            "utf8": "Right.\nSo in fact it's manna  "
+          }
+        ],
+        "tStartMs": 406040
+      },
+      {
+        "dDurationMs": 6840,
+        "segs": [
+          {
+            "utf8": "from heaven to have these AI workloads because \nguess what? They're more hungry for more compute,  "
+          }
+        ],
+        "tStartMs": 407560
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "not just for training, but we now know, for \ntest time. When you think of an AI agent, it  "
+          }
+        ],
+        "tStartMs": 415040
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "turns out the AI agent is going to exponentially \nincrease compute usage because you're not even  "
+          }
+        ],
+        "tStartMs": 420680
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "bound by just one human invoking a program. It's \none human invoking programs that invoke lots more  "
+          }
+        ],
+        "tStartMs": 427040
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "programs. That's going to create massive, massive \ndemand and scale for compute infrastructure. So  "
+          }
+        ],
+        "tStartMs": 434200
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "our hyperscale business, Azure business, and \nother hyperscalers, I think that’s a big thing. "
+          }
+        ],
+        "tStartMs": 440040
+      },
+      {
+        "dDurationMs": 8680,
+        "segs": [
+          {
+            "utf8": "Then after that, it becomes a little fuzzy. You \ncould say, hey, there is a winner-take-all model-  "
+          }
+        ],
+        "tStartMs": 446400
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "I just don't see it. This, by the way, is the \nother thing I’ve learned: being very good at  "
+          }
+        ],
+        "tStartMs": 455080
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "understanding what are winner-take-all markets \nand what are not winner-take-all markets is,  "
+          }
+        ],
+        "tStartMs": 461120
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "in some sense, everything. I remember even in \nthe early days when I was getting into Azure,  "
+          }
+        ],
+        "tStartMs": 465800
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "Amazon had a very significant lead and people \nwould come to me, and investors would come to me,  "
+          }
+        ],
+        "tStartMs": 471400
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "and say, \"Oh, it's game over. You'll never \nmake it. Amazon, it's winner-take-all.\" "
+          }
+        ],
+        "tStartMs": 476080
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "Having competed against Oracle and IBM \nin client-server, I knew that the buyers  "
+          }
+        ],
+        "tStartMs": 481800
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "will not tolerate winner-take-all. \nStructurally, hyperscale will never  "
+          }
+        ],
+        "tStartMs": 486840
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "be a winner-take-all because buyers are smart.\nConsumer markets sometimes can be winner-take-all,  "
+          }
+        ],
+        "tStartMs": 492000
+      },
+      {
+        "dDurationMs": 6520,
+        "segs": [
+          {
+            "utf8": "but anything where the buyer is a \ncorporation, an enterprise, an IT department,  "
+          }
+        ],
+        "tStartMs": 500000
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "they will want multiple suppliers. And so \nyou got to be one of the multiple suppliers. "
+          }
+        ],
+        "tStartMs": 506520
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "That, I think, is what will happen even on the \nmodel side. There will be open-source. There  "
+          }
+        ],
+        "tStartMs": 512920
+      },
+      {
+        "dDurationMs": 4040,
+        "segs": [
+          {
+            "utf8": "will be a governor. Just like on Windows, \none of the big lessons learned for me was,  "
+          }
+        ],
+        "tStartMs": 518120
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "if you have a closed-source operating \nsystem, there will be a complement to it,  "
+          }
+        ],
+        "tStartMs": 523240
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "which will be open source.\nAnd so to some degree that's  "
+          }
+        ],
+        "tStartMs": 528520
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "a real check on what happens. I think in models \nthere is one dimension of, maybe there will be  "
+          }
+        ],
+        "tStartMs": 532120
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "a few closed source, but there will definitely be \nan open source alternative, and the open-source  "
+          }
+        ],
+        "tStartMs": 539560
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "alternative will actually make sure that the \nclosed-source, winner-take-all is mitigated. "
+          }
+        ],
+        "tStartMs": 543720
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "That's my feeling on the model side. And by the \nway, let's not discount if this thing is really  "
+          }
+        ],
+        "tStartMs": 550360
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "as powerful as people make it out to be, the \nstate is not going to sit around and wait for  "
+          }
+        ],
+        "tStartMs": 556240
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "private companies to go around… and all over the \nworld. So, I don't see it as a winner-take-all. "
+          }
+        ],
+        "tStartMs": 562960
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "Then above that, I think it's going to be \nthe same old stuff, which is in consumer,  "
+          }
+        ],
+        "tStartMs": 569560
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "in some categories, there may be \nsome winner-take-all network effect.  "
+          }
+        ],
+        "tStartMs": 574360
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "After all, ChatGPT is a great example.\nIt's an at-scale consumer property that  "
+          }
+        ],
+        "tStartMs": 578600
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "has already got real escape velocity. I go to the \nApp Store, and I see it's always there in the top  "
+          }
+        ],
+        "tStartMs": 585600
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "five, and I say “wow, that's pretty unbelievable”.\nSo they were able to use that early advantage and  "
+          }
+        ],
+        "tStartMs": 592800
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "parlay that into an app advantage. In consumer, \nthat could happen. In the enterprise again,  "
+          }
+        ],
+        "tStartMs": 600240
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "I think there will be, by category, different \nwinners. That's sort of at least how I analyze it. "
+          }
+        ],
+        "tStartMs": 606680
+      },
+      {
+        "dDurationMs": 7560,
+        "segs": [
+          {
+            "utf8": "I have so many follow-up questions. We have to \nget to quantum in just a second, but on the idea  "
+          }
+        ],
+        "tStartMs": 611560
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "that maybe the models get commoditized: maybe \nsomebody could have made a similar argument a  "
+          }
+        ],
+        "tStartMs": 619120
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "couple of decades ago about the cloud – that \nfundamentally, it's just a chip and a box. "
+          }
+        ],
+        "tStartMs": 625320
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "But in the end, of course, you and many others \nfigured out how to get amazing profit margins in  "
+          }
+        ],
+        "tStartMs": 630000
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "the cloud. You figured out ways to get economies \nof scale and add other value. Fundamentally,  "
+          }
+        ],
+        "tStartMs": 634680
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "even forgetting the jargon, if you've got AGI \nand it's helping you make better AIs – right now,  "
+          }
+        ],
+        "tStartMs": 641480
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "it's synthetic data and RL; maybe in the future, \nit's an automated AI researcher – that seems like  "
+          }
+        ],
+        "tStartMs": 646800
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "a good way to entrench your advantage there. I'm \ncurious what you make of that, just the idea that  "
+          }
+        ],
+        "tStartMs": 650960
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "it really matters to be ahead there.\nAt scale, nothing is commodity.  "
+          }
+        ],
+        "tStartMs": 655880
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "To your point about cloud, everybody would \nsay, \"Oh, cloud's a commodity.\" Except,  "
+          }
+        ],
+        "tStartMs": 660000
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "when you scale... That's why the know-how of \nrunning a hyperscaler... You could say, \"Oh,  "
+          }
+        ],
+        "tStartMs": 664000
+      },
+      {
+        "dDurationMs": 2960,
+        "segs": [
+          {
+            "utf8": "what the heck? I can just rack and stack servers.\"\nRight. "
+          }
+        ],
+        "tStartMs": 668080
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "In fact, in the early days of hyperscale, most \npeople thought “there are all these hosters,  "
+          }
+        ],
+        "tStartMs": 671040
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "and those are not great businesses. Will there be \nanything? Is there a business even in hyperscale?”  "
+          }
+        ],
+        "tStartMs": 676920
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "And it turns out there is a real business, \njust because of the know-how of running, in  "
+          }
+        ],
+        "tStartMs": 683640
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "the case of Azure, the world's computing of \n60-plus regions with all the compute. It's  "
+          }
+        ],
+        "tStartMs": 689520
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "just a tough thing to duplicate.\nSo I was more making the point,  "
+          }
+        ],
+        "tStartMs": 695360
+      },
+      {
+        "dDurationMs": 7080,
+        "segs": [
+          {
+            "utf8": "is it one winner? Is it a winner-take-all or \nnot? Because that you've got to get right. I  "
+          }
+        ],
+        "tStartMs": 701440
+      },
+      {
+        "dDurationMs": 6840,
+        "segs": [
+          {
+            "utf8": "like to enter categories which are big TAMs, \nwhere you don't have to have the risk of it  "
+          }
+        ],
+        "tStartMs": 708520
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "all being winner-take-all. The best news to \nbe in is a big market that can accommodate  "
+          }
+        ],
+        "tStartMs": 715360
+      },
+      {
+        "dDurationMs": 8360,
+        "segs": [
+          {
+            "utf8": "a couple of winners, and you're one of them.\nThat's what I meant by the hyperscale layer.  "
+          }
+        ],
+        "tStartMs": 723760
+      },
+      {
+        "dDurationMs": 8600,
+        "segs": [
+          {
+            "utf8": "In the model layer, one is models need ultimately \nto run on some hyperscale compute. So that nexus,  "
+          }
+        ],
+        "tStartMs": 732120
+      },
+      {
+        "dDurationMs": 6680,
+        "segs": [
+          {
+            "utf8": "I feel, is going to be there forever. It's not \njust the model; the model needs state, that means  "
+          }
+        ],
+        "tStartMs": 740720
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "it needs storage, and it needs regular compute for \nrunning these agents and the agent environments. "
+          }
+        ],
+        "tStartMs": 747400
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "And so that's how I think about why the \nlimit of one person running away with  "
+          }
+        ],
+        "tStartMs": 753560
+      },
+      {
+        "dDurationMs": 8800,
+        "segs": [
+          {
+            "utf8": "one model and building it all may not happen.\nOn the hyperscaler side, and by the way, it's also  "
+          }
+        ],
+        "tStartMs": 759240
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "interesting the advantage you as a hyperscaler \nwould have in the sense that, especially with  "
+          }
+        ],
+        "tStartMs": 768040
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "inference time scaling and if that's involved \nin training future models, you can amortize  "
+          }
+        ],
+        "tStartMs": 772720
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "your data centers and GPUs, not only for the \ntraining, but then use them again for inference. "
+          }
+        ],
+        "tStartMs": 777520
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "I'm curious what kind of hyperscaler you \nconsider Microsoft and Azure to be. Is it on  "
+          }
+        ],
+        "tStartMs": 782040
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "the pre-training side? Is it on providing \nthe O3-type inference? Or are you just,  "
+          }
+        ],
+        "tStartMs": 787160
+      },
+      {
+        "dDurationMs": 3720,
+        "segs": [
+          {
+            "utf8": "we’re going to host and deploy any single \nmodel that's out there in the market,  "
+          }
+        ],
+        "tStartMs": 791400
+      },
+      {
+        "dDurationMs": 8040,
+        "segs": [
+          {
+            "utf8": "and we are sort of agnostic about that?\nIt’s a good point. The way we want to  "
+          }
+        ],
+        "tStartMs": 795120
+      },
+      {
+        "dDurationMs": 9560,
+        "segs": [
+          {
+            "utf8": "build out the fleet is [to], in some sense \nride Moore's law. I think this will be like  "
+          }
+        ],
+        "tStartMs": 803160
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "what we've done with everything else in the \npast: every year keep refreshing the fleet,  "
+          }
+        ],
+        "tStartMs": 812720
+      },
+      {
+        "dDurationMs": 7320,
+        "segs": [
+          {
+            "utf8": "you depreciate it over whatever the lifetime value \nof these things are, and then get very very good  "
+          }
+        ],
+        "tStartMs": 821840
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "at the placement of the fleet such that you can \nrun different jobs at it with high utilization.  "
+          }
+        ],
+        "tStartMs": 829160
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "Sometimes there are very big training jobs \nthat need to have highly concentrated peak  "
+          }
+        ],
+        "tStartMs": 838040
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "flops that are provisioned to it that also need \nto cohere. That's great. We should have enough  "
+          }
+        ],
+        "tStartMs": 845800
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "data center footprint to be able to give that.\nBut at the end of the day, these are all becoming  "
+          }
+        ],
+        "tStartMs": 851680
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "so big, even in terms of if you take pre-training \nscale, if it needs to keep going, even  "
+          }
+        ],
+        "tStartMs": 856960
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "pre-training scale at some point has to cross data \ncenter boundaries. It's all more or less there. "
+          }
+        ],
+        "tStartMs": 862760
+      },
+      {
+        "dDurationMs": 7080,
+        "segs": [
+          {
+            "utf8": "So, great, once you start crossing pre-training \ndata center boundaries, is it that different than  "
+          }
+        ],
+        "tStartMs": 868480
+      },
+      {
+        "dDurationMs": 5960,
+        "segs": [
+          {
+            "utf8": "anything else? The way I think about it is hey, \ndistributed computing will remain distributed,  "
+          }
+        ],
+        "tStartMs": 875560
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "so go build out your fleet such that \nit's ready for large training jobs,  "
+          }
+        ],
+        "tStartMs": 881520
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "it's ready for test-time compute, it’s ready- \nin fact, if this RL thing that might happens,  "
+          }
+        ],
+        "tStartMs": 886720
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "you build one large model, and then after \nthat, there’s tons of RL going on. To me,  "
+          }
+        ],
+        "tStartMs": 892920
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "it's kind of like more training flops, because \nyou want to create these highly specialized,  "
+          }
+        ],
+        "tStartMs": 899960
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "distilled models for different tasks.\nSo you want that fleet, and then the  "
+          }
+        ],
+        "tStartMs": 904480
+      },
+      {
+        "dDurationMs": 2760,
+        "segs": [
+          {
+            "utf8": "serving needs. At the end of the day, \nspeed of light is speed of light,  "
+          }
+        ],
+        "tStartMs": 909080
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "so you can't have one data center in Texas and \nsay, \"I'm going to serve the world from there.\" "
+          }
+        ],
+        "tStartMs": 911840
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "You've got to serve the world based on \nhaving an inference fleet everywhere in  "
+          }
+        ],
+        "tStartMs": 917320
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "the world. That's how I think of our \nbuild-out of a true hyperscale fleet. "
+          }
+        ],
+        "tStartMs": 922120
+      },
+      {
+        "dDurationMs": 7320,
+        "segs": [
+          {
+            "utf8": "Oh, and by the way, I want my storage and \ncompute also close to all of these things,  "
+          }
+        ],
+        "tStartMs": 929320
+      },
+      {
+        "dDurationMs": 10200,
+        "segs": [
+          {
+            "utf8": "because it's not just AI accelerators that are \nstateless. My training data itself needs storage,  "
+          }
+        ],
+        "tStartMs": 936640
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "and then I want to be able to multiplex \nmultiple training jobs, I want to be able to  "
+          }
+        ],
+        "tStartMs": 946840
+      },
+      {
+        "dDurationMs": 8280,
+        "segs": [
+          {
+            "utf8": "then have memory, I want to be able to have these \nenvironments in which these agents can go execute  "
+          }
+        ],
+        "tStartMs": 950640
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "programs. That's kind of how I think about it.\nYou recently reported that your yearly revenue  "
+          }
+        ],
+        "tStartMs": 959720
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "from AI is $13 billion. But if you look at your \nyear-on-year growth on that, in like four years,  "
+          }
+        ],
+        "tStartMs": 965200
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "it'll be 10x that. You'll have $130 billion in \nrevenue from AI, if the trend continues. If it  "
+          }
+        ],
+        "tStartMs": 970480
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "does, what do you anticipate doing with all \nthat intelligence, this industrial scale use? "
+          }
+        ],
+        "tStartMs": 975680
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "Is it going to be through Office? Is it going \nto be you deploying it for others to host?  "
+          }
+        ],
+        "tStartMs": 981840
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "You've got to have the AGIs to have $130 \nbillion in revenue? What does it look like? "
+          }
+        ],
+        "tStartMs": 986960
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "The way I come at it, Dwarkesh, it's a \ngreat question because at some level,  "
+          }
+        ],
+        "tStartMs": 990800
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "if you're going to have this explosion, abundance, \nwhatever, commodity of intelligence available,  "
+          }
+        ],
+        "tStartMs": 995520
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "the first thing we have to observe is GDP growth.\nBefore I get to what Microsoft's revenue will look  "
+          }
+        ],
+        "tStartMs": 1002680
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "like, there's only one governor in all \nof this. This is where we get a little  "
+          }
+        ],
+        "tStartMs": 1009720
+      },
+      {
+        "dDurationMs": 11160,
+        "segs": [
+          {
+            "utf8": "bit ahead of ourselves with all this AGI hype. \nRemember the developed world, which is what? 2%  "
+          }
+        ],
+        "tStartMs": 1013160
+      },
+      {
+        "dDurationMs": 10360,
+        "segs": [
+          {
+            "utf8": "growth and if you adjust for inflation it’s zero?\nSo in 2025, as we sit here, I'm not an economist,  "
+          }
+        ],
+        "tStartMs": 1024320
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "at least I look at it and say we have a real \ngrowth challenge. So, the first thing that  "
+          }
+        ],
+        "tStartMs": 1034680
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "we all have to do is, when we say this is \nlike the Industrial Revolution, let's have  "
+          }
+        ],
+        "tStartMs": 1039520
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "that Industrial Revolution type of growth.\nThat means to me, 10%, 7%, developed world,  "
+          }
+        ],
+        "tStartMs": 1047280
+      },
+      {
+        "dDurationMs": 8520,
+        "segs": [
+          {
+            "utf8": "inflation-adjusted, growing at 5%. That's the \nreal marker. It can't just be supply-side. "
+          }
+        ],
+        "tStartMs": 1054960
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "In fact that’s the thing, a lot of people \nare writing about it, and I'm glad they are,  "
+          }
+        ],
+        "tStartMs": 1064880
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "which is the big winners here are not going to be \ntech companies. The winners are going to be the  "
+          }
+        ],
+        "tStartMs": 1068760
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "broader industry that uses this commodity that, by \nthe way, is abundant. Suddenly productivity goes  "
+          }
+        ],
+        "tStartMs": 1074240
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "up and the economy is growing at a faster rate. \nWhen that happens, we'll be fine as an industry. "
+          }
+        ],
+        "tStartMs": 1082320
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "But that's to me the moment. Us \nself-claiming some AGI milestone,  "
+          }
+        ],
+        "tStartMs": 1090400
+      },
+      {
+        "dDurationMs": 9000,
+        "segs": [
+          {
+            "utf8": "that's just nonsensical benchmark hacking to me. \nThe real benchmark is: the world growing at 10%. "
+          }
+        ],
+        "tStartMs": 1095680
+      },
+      {
+        "dDurationMs": 3080,
+        "segs": [
+          {
+            "utf8": "Okay, so if the world grew at 10%, the world \neconomy is $100 trillion or something, if the  "
+          }
+        ],
+        "tStartMs": 1104680
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "world grew at 10%, that's like an extra $10 \ntrillion in value produced every single year.  "
+          }
+        ],
+        "tStartMs": 1107760
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "If that is the case, you as a hyperscaler... \nIt seems like $80 billion is a lot of money.  "
+          }
+        ],
+        "tStartMs": 1114120
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "Shouldn't you be doing like $800 billion?\nIf you really think in a couple of years,  "
+          }
+        ],
+        "tStartMs": 1120480
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "we could be really growing the world economy \nat this rate, and the key bottleneck would be:  "
+          }
+        ],
+        "tStartMs": 1124000
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "do you have the compute necessary to \ndeploy these AIs to do all this work? "
+          }
+        ],
+        "tStartMs": 1127680
+      },
+      {
+        "dDurationMs": 9160,
+        "segs": [
+          {
+            "utf8": "That is correct. But by the way, the classic \nsupply side is, \"Hey, let me build it and they’ll  "
+          }
+        ],
+        "tStartMs": 1133920
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "come.\" That's an argument, and after all we've \ndone that, we've taken enough risk to go do it. "
+          }
+        ],
+        "tStartMs": 1143080
+      },
+      {
+        "dDurationMs": 8680,
+        "segs": [
+          {
+            "utf8": "But at some point, the supply and demand have \nto map. That's why I'm tracking both sides of  "
+          }
+        ],
+        "tStartMs": 1149120
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "it. You can go off the rails completely when \nyou are hyping yourself with the supply-side,  "
+          }
+        ],
+        "tStartMs": 1157800
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "versus really understanding how to \ntranslate that into real value to customers. "
+          }
+        ],
+        "tStartMs": 1165400
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "That's why I look at my inference revenue. That's \none of the reasons why even the disclosure on the  "
+          }
+        ],
+        "tStartMs": 1172040
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "inference revenue... It's interesting that not \nmany people are talking about their real revenue,  "
+          }
+        ],
+        "tStartMs": 1176320
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "but to me, that is important as a \ngovernor for how you think about it. "
+          }
+        ],
+        "tStartMs": 1181400
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "You're not going to say they have to symmetrically \nmeet at any given point in time, but you need to  "
+          }
+        ],
+        "tStartMs": 1185920
+      },
+      {
+        "dDurationMs": 8120,
+        "segs": [
+          {
+            "utf8": "have existence proof that you are able to parlay \nyesterday's, let’s call it capital, into today's  "
+          }
+        ],
+        "tStartMs": 1190840
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "demand, so that then you can again invest, \nmaybe exponentially even, knowing that you're  "
+          }
+        ],
+        "tStartMs": 1198960
+      },
+      {
+        "dDurationMs": 4440,
+        "segs": [
+          {
+            "utf8": "not going to be completely rate mismatched.\nI wonder if there's a contradiction in these  "
+          }
+        ],
+        "tStartMs": 1205080
+      },
+      {
+        "dDurationMs": 3960,
+        "segs": [
+          {
+            "utf8": "two different viewpoints, because one of the \nthings you've done wonderfully is make these  "
+          }
+        ],
+        "tStartMs": 1209520
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "early bets. You invested in OpenAI in 2019, even \nbefore there was Copilot and any applications. "
+          }
+        ],
+        "tStartMs": 1213480
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "If you look at the Industrial Revolution, \nthese 6%, 10% build-outs of railways and  "
+          }
+        ],
+        "tStartMs": 1219400
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "whatever things, many of those were not \nlike, \"We've got revenue from the tickets,  "
+          }
+        ],
+        "tStartMs": 1225200
+      },
+      {
+        "dDurationMs": 2280,
+        "segs": [
+          {
+            "utf8": "and now we're going to...\"\nThere was a lot of money lost. "
+          }
+        ],
+        "tStartMs": 1228400
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "That's true. So, if you really think there's \nsome potential here to 10x or 5x the growth  "
+          }
+        ],
+        "tStartMs": 1230680
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "rate of the world, and then you're like, \n\"Well, what is the revenue from GPT-4?\" "
+          }
+        ],
+        "tStartMs": 1238200
+      },
+      {
+        "dDurationMs": 3160,
+        "segs": [
+          {
+            "utf8": "If you really think that's the possibility \nfrom the next level up, shouldn't you just,  "
+          }
+        ],
+        "tStartMs": 1244280
+      },
+      {
+        "dDurationMs": 3240,
+        "segs": [
+          {
+            "utf8": "\"Let's go crazy, let's do the hundreds of \nbillions of dollars of compute?\" I mean,  "
+          }
+        ],
+        "tStartMs": 1248080
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "there's some chance, right?\nHere’s the interesting thing, right?  "
+          }
+        ],
+        "tStartMs": 1251320
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "That's why even that balanced approach to the \nfleet, at least, is very important to me. It's  "
+          }
+        ],
+        "tStartMs": 1262360
+      },
+      {
+        "dDurationMs": 5000,
+        "segs": [
+          {
+            "utf8": "not about building compute. It's about building \ncompute that can actually help me not only train  "
+          }
+        ],
+        "tStartMs": 1267520
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "the next big model but also serve the next big \nmodel. Until you do those two things, you're not  "
+          }
+        ],
+        "tStartMs": 1272520
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "going to be able to really be in a position \nto take advantage of even your investment. "
+          }
+        ],
+        "tStartMs": 1278120
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "So, that's kind of where it's not \na race to just building a model,  "
+          }
+        ],
+        "tStartMs": 1282400
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "it's a race to creating a commodity that \nis getting used in the world to drive...  "
+          }
+        ],
+        "tStartMs": 1287240
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "You have to have a complete thought, not \njust one thing that you’re thinking about. "
+          }
+        ],
+        "tStartMs": 1292560
+      },
+      {
+        "dDurationMs": 6520,
+        "segs": [
+          {
+            "utf8": "And by the way, one of the things is \nthat there will be overbuild. To your  "
+          }
+        ],
+        "tStartMs": 1297880
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "point about what happened in the dotcom era, \nthe memo has gone out that, hey, you know,  "
+          }
+        ],
+        "tStartMs": 1304400
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "you need more energy, and you need more compute. \nThank God for it. So, everybody's going to race. "
+          }
+        ],
+        "tStartMs": 1310520
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "In fact, it's not just companies deploying, \ncountries are going to deploy capital,  "
+          }
+        ],
+        "tStartMs": 1315040
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "and there will be clearly... I'm so excited to \nbe a leaser, because, by the way; I build a lot,  "
+          }
+        ],
+        "tStartMs": 1320240
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "I lease a lot. I am thrilled that I'm going \nto be leasing a lot of capacity in '27,  "
+          }
+        ],
+        "tStartMs": 1328160
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "'28 because I look at the builds, and I'm \nsaying, \"This is fantastic.\" The only thing  "
+          }
+        ],
+        "tStartMs": 1334160
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "that's going to happen with all the compute \nbuilds is the prices are going to come down. "
+          }
+        ],
+        "tStartMs": 1338880
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "Speaking of prices coming down, you recently \ntweeted after the DeepSeek model came out about  "
+          }
+        ],
+        "tStartMs": 1344200
+      },
+      {
+        "dDurationMs": 6680,
+        "segs": [
+          {
+            "utf8": "Jevons’ Paradox. I'm curious if you can flesh that \nout. Jevons’ Paradox occurs when the demand for  "
+          }
+        ],
+        "tStartMs": 1348080
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "something is highly elastic. Is intelligence \nthat bottlenecked on prices going down? "
+          }
+        ],
+        "tStartMs": 1354760
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "Because when I think about, at least my use cases \nas a consumer, intelligence is already so cheap.  "
+          }
+        ],
+        "tStartMs": 1363080
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "It's like two cents per million tokens. Do I \nreally need it to go down to 0.02 cents? I'm just  "
+          }
+        ],
+        "tStartMs": 1367920
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "really bottlenecked on it becoming smarter. If you \nneed to charge me 100x, do a 100x bigger training  "
+          }
+        ],
+        "tStartMs": 1372560
+      },
+      {
+        "dDurationMs": 3960,
+        "segs": [
+          {
+            "utf8": "run. I'm happy for companies to take that.\nBut maybe you're seeing something different  "
+          }
+        ],
+        "tStartMs": 1377360
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "on the enterprise side or something. What is the \nkey use case of intelligence that really requires  "
+          }
+        ],
+        "tStartMs": 1381320
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "it to get to 0.002 cents per million tokens?\nI think the real thing is the utility of the  "
+          }
+        ],
+        "tStartMs": 1385160
+      },
+      {
+        "dDurationMs": 10240,
+        "segs": [
+          {
+            "utf8": "tokens. Both need to happen: One is intelligence \nneeds to get better and cheaper. And anytime  "
+          }
+        ],
+        "tStartMs": 1390240
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "there's a breakthrough, like even what DeepSeek \ndid, with the efficient frontier of performance  "
+          }
+        ],
+        "tStartMs": 1400480
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "per token changes, the curve gets bent, \nand the frontier moves. That just brings  "
+          }
+        ],
+        "tStartMs": 1406360
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "more demand. That's what happened with cloud.\nHere’s an interesting thing: We used to think  "
+          }
+        ],
+        "tStartMs": 1414200
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "“oh my God, we've sold all the servers in the \nclient-server era”. Except once we started  "
+          }
+        ],
+        "tStartMs": 1420840
+      },
+      {
+        "dDurationMs": 7080,
+        "segs": [
+          {
+            "utf8": "putting servers in the cloud, suddenly people \nstarted consuming more because they could buy  "
+          }
+        ],
+        "tStartMs": 1425880
+      },
+      {
+        "dDurationMs": 7320,
+        "segs": [
+          {
+            "utf8": "it cheaper, and it was elastic, and they \ncould buy it as a meter versus a license,  "
+          }
+        ],
+        "tStartMs": 1432960
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "and it completely expanded.\nI remember going, let’s say,  "
+          }
+        ],
+        "tStartMs": 1440280
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "to a country like India and talking about \n“here is SQL Server”. We sold a little,  "
+          }
+        ],
+        "tStartMs": 1443960
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "but man, the cloud in India is so much bigger \nthan anything that we were able to do in the  "
+          }
+        ],
+        "tStartMs": 1449040
+      },
+      {
+        "dDurationMs": 5960,
+        "segs": [
+          {
+            "utf8": "server era. I think that's going to be true.\nIf you think about, if you want to really have,  "
+          }
+        ],
+        "tStartMs": 1453880
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "in the Global South, in a developing country, \nif you had these tokens that were available  "
+          }
+        ],
+        "tStartMs": 1459840
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "for healthcare that were really cheap, \nthat would be the biggest change ever. "
+          }
+        ],
+        "tStartMs": 1465960
+      },
+      {
+        "dDurationMs": 3720,
+        "segs": [
+          {
+            "utf8": "I think it's quite reasonable for somebody to \nhear people like me in San Francisco and think  "
+          }
+        ],
+        "tStartMs": 1536120
+      },
+      {
+        "dDurationMs": 3400,
+        "segs": [
+          {
+            "utf8": "“they're kind of silly; they don't know what it's \nactually like to deploy things in the real world”. "
+          }
+        ],
+        "tStartMs": 1540360
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "As somebody who works with these Fortune \n500s and is working with them to deploy  "
+          }
+        ],
+        "tStartMs": 1543760
+      },
+      {
+        "dDurationMs": 4760,
+        "segs": [
+          {
+            "utf8": "things for hundreds of millions, billions \nof people, what's your sense on how fast  "
+          }
+        ],
+        "tStartMs": 1548840
+      },
+      {
+        "dDurationMs": 3400,
+        "segs": [
+          {
+            "utf8": "deployment of these capabilities will be?\nEven when you have working agents, even when  "
+          }
+        ],
+        "tStartMs": 1553600
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "you have things that can do remote work for you, \nwith all the compliance and with all the inherent  "
+          }
+        ],
+        "tStartMs": 1557000
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "bottlenecks, is that going to be a big bottleneck, \nor is that going to move past pretty fast? "
+          }
+        ],
+        "tStartMs": 1562320
+      },
+      {
+        "dDurationMs": 8800,
+        "segs": [
+          {
+            "utf8": "It is going to be a real challenge because \nthe real issue is change management or process  "
+          }
+        ],
+        "tStartMs": 1567360
+      },
+      {
+        "dDurationMs": 8560,
+        "segs": [
+          {
+            "utf8": "change. Here's an interesting thing: one of \nthe analogies I use is, just imagine how a  "
+          }
+        ],
+        "tStartMs": 1576160
+      },
+      {
+        "dDurationMs": 9680,
+        "segs": [
+          {
+            "utf8": "multinational corporation like us did forecasts \npre-PC, and email, and spreadsheets. Faxes went  "
+          }
+        ],
+        "tStartMs": 1584720
+      },
+      {
+        "dDurationMs": 7720,
+        "segs": [
+          {
+            "utf8": "around. Somebody then got those faxes and did an \ninteroffice memo that then went around, and people  "
+          }
+        ],
+        "tStartMs": 1594400
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "entered numbers, and then ultimately a forecast \ncame, maybe just in time for the next quarter. "
+          }
+        ],
+        "tStartMs": 1602120
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "Then somebody said, \"Hey, I'm just going to \ntake an Excel spreadsheet, put it in email,  "
+          }
+        ],
+        "tStartMs": 1611200
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "send it around. People will go edit it, \nand I'll have a forecast.\" So, the entire  "
+          }
+        ],
+        "tStartMs": 1615040
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "forecasting business process changed because \nthe work artifact and the workflow changed. "
+          }
+        ],
+        "tStartMs": 1619520
+      },
+      {
+        "dDurationMs": 8840,
+        "segs": [
+          {
+            "utf8": "That is what needs to happen with AI being \nintroduced into knowledge work. In fact, when we  "
+          }
+        ],
+        "tStartMs": 1627680
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "think about all these agents, the fundamental \nthing is there's a new work and workflow. "
+          }
+        ],
+        "tStartMs": 1636520
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "For example, even prepping for our podcast, I go \nto my copilot and I say, \"Hey, I'm going to talk  "
+          }
+        ],
+        "tStartMs": 1642440
+      },
+      {
+        "dDurationMs": 8240,
+        "segs": [
+          {
+            "utf8": "to Dwarkesh about our quantum announcement and \nthis new model that we built for game generation.  "
+          }
+        ],
+        "tStartMs": 1648600
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "Give me a summary of all the stuff that I should \nread up on before going.\" It knew the two Nature  "
+          }
+        ],
+        "tStartMs": 1657680
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "papers, it took that. I even said, \"Hey, go give \nit to me in a podcast format.\" And so, it even  "
+          }
+        ],
+        "tStartMs": 1664240
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "did a nice job of two of us chatting about it.\nSo that became—and in fact, then I shared it  "
+          }
+        ],
+        "tStartMs": 1670240
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "with my team. I took it and put it \ninto Pages, which is our artifact,  "
+          }
+        ],
+        "tStartMs": 1676240
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "and then shared. So the new workflow for me is \nI think with AI and work with my colleagues. "
+          }
+        ],
+        "tStartMs": 1680960
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "That's a fundamental change management of everyone \nwho's doing knowledge work, suddenly figuring out  "
+          }
+        ],
+        "tStartMs": 1687520
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "these new patterns of \"How am I going to get \nmy knowledge work done in new ways?\" That is  "
+          }
+        ],
+        "tStartMs": 1695120
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "going to take time. It's going to be something \nlike in sales, and in finance, and supply chain. "
+          }
+        ],
+        "tStartMs": 1701320
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "For an incumbent, I think that this is going \nto be one of those things where—you know,  "
+          }
+        ],
+        "tStartMs": 1706680
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "let's take one of the analogies I like to use \nis what manufacturers did with Lean. I love  "
+          }
+        ],
+        "tStartMs": 1711160
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "that because, in some sense, if you look at it, \nLean became a methodology of how one could take  "
+          }
+        ],
+        "tStartMs": 1716600
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "an end-to-end process in manufacturing and become \nmore efficient. It's that continuous improvement,  "
+          }
+        ],
+        "tStartMs": 1721240
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "which is reduce waste and increase value.\nThat's what's going to come to knowledge.  "
+          }
+        ],
+        "tStartMs": 1726320
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "This is like Lean for knowledge work, in \nparticular. And that's going to be the hard work  "
+          }
+        ],
+        "tStartMs": 1730520
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "of management teams and individuals who are doing \nknowledge work, and that's going to take its time. "
+          }
+        ],
+        "tStartMs": 1735040
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "Can I ask you just briefly about that \nanalogy? One of the things Lean did  "
+          }
+        ],
+        "tStartMs": 1740640
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "is physically transform what a factory floor \nlooks like. It revealed bottlenecks that people  "
+          }
+        ],
+        "tStartMs": 1745480
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "didn't realize until you're really paying \nattention to the processes and workflows. "
+          }
+        ],
+        "tStartMs": 1750400
+      },
+      {
+        "dDurationMs": 2640,
+        "segs": [
+          {
+            "utf8": "You mentioned briefly what your own \nworkflow—how your own workflow has  "
+          }
+        ],
+        "tStartMs": 1755480
+      },
+      {
+        "dDurationMs": 7080,
+        "segs": [
+          {
+            "utf8": "changed as a result of AIs. I'm curious if we \ncan add more color to what will it be like to  "
+          }
+        ],
+        "tStartMs": 1758120
+      },
+      {
+        "dDurationMs": 3640,
+        "segs": [
+          {
+            "utf8": "run a big company when you have these AI agents \nthat are getting smarter and smarter over time? "
+          }
+        ],
+        "tStartMs": 1765200
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "It's interesting you ask that. I was thinking, \nfor example, today if I look at it, we are very  "
+          }
+        ],
+        "tStartMs": 1769640
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "email heavy. I get in in the morning, and I’m \nlike, man my inbox is full, and I'm responding,  "
+          }
+        ],
+        "tStartMs": 1777240
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "and so I can't wait for some of these \nCopilot agents to automatically populate my  "
+          }
+        ],
+        "tStartMs": 1782480
+      },
+      {
+        "dDurationMs": 9640,
+        "segs": [
+          {
+            "utf8": "drafts so that I can start reviewing and sending.\nBut I already have in Copilot at least ten agents,  "
+          }
+        ],
+        "tStartMs": 1788280
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "which I query them different things for \ndifferent tasks. I feel like there's a new  "
+          }
+        ],
+        "tStartMs": 1799080
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "inbox that's going to get created, which is \nmy millions of agents that I'm working with  "
+          }
+        ],
+        "tStartMs": 1806080
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "will have to invoke some exceptions to me, \nnotifications to me, ask for instructions. "
+          }
+        ],
+        "tStartMs": 1812160
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "So at least what I'm thinking is that there's \na new scaffolding, which is the agent manager.  "
+          }
+        ],
+        "tStartMs": 1818480
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "It's not just a chat interface. I need \na smarter thing than a chat interface to  "
+          }
+        ],
+        "tStartMs": 1824960
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "manage all the agents and their dialogue.\nThat's why I think of this Copilot,  "
+          }
+        ],
+        "tStartMs": 1830680
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "as the UI for AI, is a big, big deal. Each of us \nis going to have it. So basically, think of it as:  "
+          }
+        ],
+        "tStartMs": 1835000
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "there is knowledge work, and there's a knowledge \nworker. The knowledge work may be done by many,  "
+          }
+        ],
+        "tStartMs": 1843480
+      },
+      {
+        "dDurationMs": 7320,
+        "segs": [
+          {
+            "utf8": "many agents, but you still have a knowledge worker \nwho is dealing with all the knowledge workers.  "
+          }
+        ],
+        "tStartMs": 1850600
+      },
+      {
+        "dDurationMs": 3240,
+        "segs": [
+          {
+            "utf8": "And that, I think, is the \ninterface that one has to build. "
+          }
+        ],
+        "tStartMs": 1858600
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "You're one of the few people in the world who \ncan say that you have access to 200,000… you  "
+          }
+        ],
+        "tStartMs": 1864120
+      },
+      {
+        "dDurationMs": 3640,
+        "segs": [
+          {
+            "utf8": "have this swarm of intelligence around you in \nthe form of Microsoft the company and all its  "
+          }
+        ],
+        "tStartMs": 1869360
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "employees. And you have to manage that, and \nyou have to interface with that, how to make  "
+          }
+        ],
+        "tStartMs": 1873000
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "best use of that. Hopefully, more of the world \nwill get to have that experience in the future. "
+          }
+        ],
+        "tStartMs": 1879480
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "I'd be curious about how your inbox, \nif that means everybody's inbox,  "
+          }
+        ],
+        "tStartMs": 1884720
+      },
+      {
+        "dDurationMs": 2400,
+        "segs": [
+          {
+            "utf8": "will look like yours in the morning.\nOkay, before we get to that,  "
+          }
+        ],
+        "tStartMs": 1888160
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "I want to keep asking you more about AI, \nbut I really want to ask you about the big  "
+          }
+        ],
+        "tStartMs": 1890560
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "breakthrough in quantum that Microsoft Research \nhas announced. So can you explain what's going on? "
+          }
+        ],
+        "tStartMs": 1894720
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "This has been another 30-year journey for \nus. It's unbelievable. I'm the third CEO  "
+          }
+        ],
+        "tStartMs": 1899960
+      },
+      {
+        "dDurationMs": 9840,
+        "segs": [
+          {
+            "utf8": "of Microsoft who's been excited about quantum.\nThe fundamental breakthrough here, or the vision  "
+          }
+        ],
+        "tStartMs": 1908360
+      },
+      {
+        "dDurationMs": 8520,
+        "segs": [
+          {
+            "utf8": "that we've always had is, you need a physics \nbreakthrough in order to build a utility-scale  "
+          }
+        ],
+        "tStartMs": 1918200
+      },
+      {
+        "dDurationMs": 16360,
+        "segs": [
+          {
+            "utf8": "quantum computer that works. We took the path \nof saying, the one way for having a less noisy  "
+          }
+        ],
+        "tStartMs": 1926720
+      },
+      {
+        "dDurationMs": 9200,
+        "segs": [
+          {
+            "utf8": "or more reliable qubit is to bet on a physical \nproperty that by definition is more reliable and  "
+          }
+        ],
+        "tStartMs": 1943080
+      },
+      {
+        "dDurationMs": 10120,
+        "segs": [
+          {
+            "utf8": "that's what led us to the Majorana zero modes, \nwhich was theorized in the 1930s. The question  "
+          }
+        ],
+        "tStartMs": 1952280
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "was, can we actually physically fabricate \nthese things? Can we actually build them? "
+          }
+        ],
+        "tStartMs": 1962400
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "So the big breakthrough effectively, and I know \nyou talked to Chetan, was that we now finally  "
+          }
+        ],
+        "tStartMs": 1967680
+      },
+      {
+        "dDurationMs": 10120,
+        "segs": [
+          {
+            "utf8": "have existence proof and a physics breakthrough \nof Majorana zero modes in a new phase of matter  "
+          }
+        ],
+        "tStartMs": 1973880
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "effectively. This is why we like the analogy \nof thinking of this as the transistor moment  "
+          }
+        ],
+        "tStartMs": 1984000
+      },
+      {
+        "dDurationMs": 11160,
+        "segs": [
+          {
+            "utf8": "of quantum computing, where we effectively have a \nnew phase, which is the topological phase, which  "
+          }
+        ],
+        "tStartMs": 1989760
+      },
+      {
+        "dDurationMs": 11320,
+        "segs": [
+          {
+            "utf8": "means we can even now reliably hide the quantum \ninformation, measure it, and we can fabricate it.  "
+          }
+        ],
+        "tStartMs": 2000920
+      },
+      {
+        "dDurationMs": 8600,
+        "segs": [
+          {
+            "utf8": "And so now that we have it, we feel like with that \ncore foundational fabrication technique out of the  "
+          }
+        ],
+        "tStartMs": 2012240
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "way, we can start building a Majorana chip.\nThat Majorana One which I think is going to  "
+          }
+        ],
+        "tStartMs": 2020840
+      },
+      {
+        "dDurationMs": 7480,
+        "segs": [
+          {
+            "utf8": "basically be the first chip that will be capable \nof a million qubits, physical. And then on that,  "
+          }
+        ],
+        "tStartMs": 2026960
+      },
+      {
+        "dDurationMs": 9600,
+        "segs": [
+          {
+            "utf8": "thousands of logical qubits, error-corrected. \nAnd then it's game on. You suddenly have the  "
+          }
+        ],
+        "tStartMs": 2034440
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "ability to build a real utility-scale quantum \ncomputer, and that to me is now so much more  "
+          }
+        ],
+        "tStartMs": 2044040
+      },
+      {
+        "dDurationMs": 8640,
+        "segs": [
+          {
+            "utf8": "feasible. Without something like this, you \nwill still be able to achieve milestones,  "
+          }
+        ],
+        "tStartMs": 2050800
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "but you'll never be able to build a utility-scale \ncomputer. That's why we're excited about it. "
+          }
+        ],
+        "tStartMs": 2059440
+      },
+      {
+        "dDurationMs": 2200,
+        "segs": [
+          {
+            "utf8": "Amazing. And by the way, I \nbelieve this is it right here. "
+          }
+        ],
+        "tStartMs": 2063320
+      },
+      {
+        "dDurationMs": 1480,
+        "segs": [
+          {
+            "utf8": "That is it.\nYes. "
+          }
+        ],
+        "tStartMs": 2065520
+      },
+      {
+        "dDurationMs": 2040,
+        "segs": [
+          {
+            "utf8": "I forget now, are we calling it Majorana? Yes,  "
+          }
+        ],
+        "tStartMs": 2067000
+      },
+      {
+        "dDurationMs": 3720,
+        "segs": [
+          {
+            "utf8": "that's right. Majorana One. I'm \nglad we named it after that. "
+          }
+        ],
+        "tStartMs": 2069040
+      },
+      {
+        "dDurationMs": 10480,
+        "segs": [
+          {
+            "utf8": "To think that we are able to build something \nlike a million-qubit quantum computer in a thing  "
+          }
+        ],
+        "tStartMs": 2074480
+      },
+      {
+        "dDurationMs": 7240,
+        "segs": [
+          {
+            "utf8": "of this size is just unbelievable. That's the \ncrux of it: unless and until we could do that,  "
+          }
+        ],
+        "tStartMs": 2084960
+      },
+      {
+        "dDurationMs": 3400,
+        "segs": [
+          {
+            "utf8": "you can't dream of building a \nutility-scale quantum computer. "
+          }
+        ],
+        "tStartMs": 2092200
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "And you're saying the eventual million qubits \nwill go on a chip this size? Okay, amazing. "
+          }
+        ],
+        "tStartMs": 2095600
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "Other companies have announced 100 physical \nqubits, Google's, IBM's, others. When you  "
+          }
+        ],
+        "tStartMs": 2101200
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "say you've announced one, but you're saying \nthat yours is way more scalable in the limit. "
+          }
+        ],
+        "tStartMs": 2108240
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "Yeah. The one thing we’ve also done is we've \ntaken an approach where we've separated our  "
+          }
+        ],
+        "tStartMs": 2113520
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "software and our hardware. We're building \nout our software stack, and we now have,  "
+          }
+        ],
+        "tStartMs": 2119680
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "with the neutral atom folks, the ion trap folks, \nwe're also working with others who even have  "
+          }
+        ],
+        "tStartMs": 2128080
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "pretty good approaches with photonics and what \nhave you, that means there'll be different types  "
+          }
+        ],
+        "tStartMs": 2136160
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "of quantum computers. In fact, we have what, I \nthink that the last thing that we announced was 24  "
+          }
+        ],
+        "tStartMs": 2140560
+      },
+      {
+        "dDurationMs": 7080,
+        "segs": [
+          {
+            "utf8": "logical qubits. So we have also got some fantastic \nbreakthroughs on error correction and that's what  "
+          }
+        ],
+        "tStartMs": 2145360
+      },
+      {
+        "dDurationMs": 7960,
+        "segs": [
+          {
+            "utf8": "is allowing us, even on neutral atom and ion \ntrap quantum computers, to build these 20 plus,  "
+          }
+        ],
+        "tStartMs": 2152440
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "and I think that'll keep going even throughout \nthe year; you'll see us improve that yardstick. "
+          }
+        ],
+        "tStartMs": 2160400
+      },
+      {
+        "dDurationMs": 8200,
+        "segs": [
+          {
+            "utf8": "But we also then said, \"Let's go to the first \nprinciples and build our own quantum computer  "
+          }
+        ],
+        "tStartMs": 2166280
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "that is betting on the topological qubit.\" \nAnd that's what this breakthrough is about. "
+          }
+        ],
+        "tStartMs": 2174480
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "Amazing. The million topological \nqubits, thousands of logical qubits,  "
+          }
+        ],
+        "tStartMs": 2181360
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "what is the estimated timeline to scale up to \nthat level? What does the Moore's law here,  "
+          }
+        ],
+        "tStartMs": 2188000
+      },
+      {
+        "dDurationMs": 3320,
+        "segs": [
+          {
+            "utf8": "if you've got the first transistor, look like?\nWe've obviously been working on this for  "
+          }
+        ],
+        "tStartMs": 2192560
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "30 years. I'm glad we now have the physics \nbreakthrough and the fabrication breakthrough. "
+          }
+        ],
+        "tStartMs": 2195880
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "I wish we had a quantum computer because \nby the way, the first thing the quantum  "
+          }
+        ],
+        "tStartMs": 2204440
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "computer will allow us to do is build \nquantum computers, because it's going to  "
+          }
+        ],
+        "tStartMs": 2207800
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "be so much easier to simulate atom-by-atom \nconstruction of these new quantum gates. "
+          }
+        ],
+        "tStartMs": 2211600
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "But in any case, the next real thing is, \nnow that we have the fabrication technique,  "
+          }
+        ],
+        "tStartMs": 2218360
+      },
+      {
+        "dDurationMs": 7640,
+        "segs": [
+          {
+            "utf8": "let us go build that first fault-tolerant quantum \ncomputer. And that will be the logical thing. "
+          }
+        ],
+        "tStartMs": 2224920
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "So, I would say now I can say, \"Oh, maybe \n'27, '28, '29, we will be able to actually  "
+          }
+        ],
+        "tStartMs": 2232560
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "build this.\" Now that we have this one gate, can I \nput the thing into an integrated circuit and then  "
+          }
+        ],
+        "tStartMs": 2239040
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "actually put these integrated circuits into a real \ncomputer? That is where the next logical step is. "
+          }
+        ],
+        "tStartMs": 2245040
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "And what do you see as, in '27, '28, you've got \nit working? Is it a thing you access through  "
+          }
+        ],
+        "tStartMs": 2251800
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "the API? Is it something you're using internally \nfor your own research in materials and chemistry?"
+          }
+        ],
+        "tStartMs": 2258360
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "It’s a great question. One thing that I've \nbeen excited about is, even in today's world…  "
+          }
+        ],
+        "tStartMs": 2263320
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "we had this quantum program, and we added \nsome APIs to it. The breakthrough we had  "
+          }
+        ],
+        "tStartMs": 2269440
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "maybe two years ago was to think of this HPC \nstack, and AI stack, and quantum together. "
+          }
+        ],
+        "tStartMs": 2276960
+      },
+      {
+        "dDurationMs": 8280,
+        "segs": [
+          {
+            "utf8": "In fact, if you think about it, AI is like an \nemulator of the simulator. Quantum is like a  "
+          }
+        ],
+        "tStartMs": 2286240
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "simulator of nature. What is quantum going \nto do? By the way, quantum is not going to  "
+          }
+        ],
+        "tStartMs": 2294520
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "replace classical. Quantum is great at what \nquantum can do, and classical will also... "
+          }
+        ],
+        "tStartMs": 2299880
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "Quantum is going to be fantastic for anything \nthat is not data-heavy but is exploration-heavy  "
+          }
+        ],
+        "tStartMs": 2307720
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "in terms of the state space. It should be \ndata-light but exponential states that you  "
+          }
+        ],
+        "tStartMs": 2313800
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "want to explore. Simulation is a great one: \nchemical physics, what have you, biology. "
+          }
+        ],
+        "tStartMs": 2319640
+      },
+      {
+        "dDurationMs": 7320,
+        "segs": [
+          {
+            "utf8": "One of the things that we've started doing \nis really using AI as the emulation engine.  "
+          }
+        ],
+        "tStartMs": 2328120
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "But you can then train. So the way I think of it \nis, if you have AI plus quantum, maybe you'll use  "
+          }
+        ],
+        "tStartMs": 2335440
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "quantum to generate synthetic data that then gets \nused by AI to train better models that know how to  "
+          }
+        ],
+        "tStartMs": 2342200
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "model something like chemistry or physics or what \nhave you. These two things will get used together. "
+          }
+        ],
+        "tStartMs": 2348560
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "So even today, that's effectively what \nwe're doing with the combination of  "
+          }
+        ],
+        "tStartMs": 2353760
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "HPC and AI. I hope to replace some of \nthe HPC pieces with quantum computers. "
+          }
+        ],
+        "tStartMs": 2358840
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "Can you tell me a little bit about how \nyou make these research decisions which,  "
+          }
+        ],
+        "tStartMs": 2427800
+      },
+      {
+        "dDurationMs": 3720,
+        "segs": [
+          {
+            "utf8": "in 20 years time, 30 years time, will \nactually pay dividends, especially at  "
+          }
+        ],
+        "tStartMs": 2431800
+      },
+      {
+        "dDurationMs": 7400,
+        "segs": [
+          {
+            "utf8": "a company of Microsoft's scale? Obviously, you're \nin great touch with the technical details in this  "
+          }
+        ],
+        "tStartMs": 2435520
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "project. Is it feasible for you to do that \nwith all the things Microsoft Research does? "
+          }
+        ],
+        "tStartMs": 2443440
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "How do you know the current bet you're making \nwill pay out in 20 years? Does it just have to  "
+          }
+        ],
+        "tStartMs": 2447960
+      },
+      {
+        "dDurationMs": 3640,
+        "segs": [
+          {
+            "utf8": "emerge organically through the org, or \nhow are you keeping track of all this? "
+          }
+        ],
+        "tStartMs": 2452920
+      },
+      {
+        "dDurationMs": 12080,
+        "segs": [
+          {
+            "utf8": "The thing that I feel was fantastic is when Bill, \nwhen he started MSR back in '95 I guess. I think  "
+          }
+        ],
+        "tStartMs": 2458280
+      },
+      {
+        "dDurationMs": 6680,
+        "segs": [
+          {
+            "utf8": "in the long history of these curiosity-driven \nresearch organizations, to just do a research  "
+          }
+        ],
+        "tStartMs": 2470360
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "org that is about fundamental research and MSR, \nover the years, has built up that institutional  "
+          }
+        ],
+        "tStartMs": 2477040
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "strength so when I think about capital allocation \nor budgets, we first put the chips in and say,  "
+          }
+        ],
+        "tStartMs": 2484400
+      },
+      {
+        "dDurationMs": 8680,
+        "segs": [
+          {
+            "utf8": "\"Here is MSR's budget.\" We gotta go at it each \nyear knowing that most of these bets are not  "
+          }
+        ],
+        "tStartMs": 2492880
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "going to pay off in any finite time frame. Maybe \nthe sixth CEO of Microsoft will benefit from it.  "
+          }
+        ],
+        "tStartMs": 2501560
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "And in tech that is I think a given.\nThe real thing that I think about is,  "
+          }
+        ],
+        "tStartMs": 2508680
+      },
+      {
+        "dDurationMs": 7960,
+        "segs": [
+          {
+            "utf8": "when the time has come for something like \nquantum or a new model or what have you, can  "
+          }
+        ],
+        "tStartMs": 2516120
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "you capitalize? So as an incumbent, if you look at \nthe history of tech, it's not that people didn't  "
+          }
+        ],
+        "tStartMs": 2524080
+      },
+      {
+        "dDurationMs": 9960,
+        "segs": [
+          {
+            "utf8": "invest. It's that you need to have a culture that \nknows how to take an innovation and scale it. "
+          }
+        ],
+        "tStartMs": 2531920
+      },
+      {
+        "dDurationMs": 7880,
+        "segs": [
+          {
+            "utf8": "That's the hard part, quite frankly, for CEOs and \nmanagement teams. Which is kind of fascinating.  "
+          }
+        ],
+        "tStartMs": 2541880
+      },
+      {
+        "dDurationMs": 7400,
+        "segs": [
+          {
+            "utf8": "It's as much about good judgment as it is about \ngood culture. Sometimes we've gotten it right;  "
+          }
+        ],
+        "tStartMs": 2551440
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "sometimes we've gotten it wrong; I can tell you \nthe thousand projects from MSR that we should have  "
+          }
+        ],
+        "tStartMs": 2558840
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "probably led with, but we didn't. And I always \nask myself why. It's because we were not able to  "
+          }
+        ],
+        "tStartMs": 2565080
+      },
+      {
+        "dDurationMs": 8960,
+        "segs": [
+          {
+            "utf8": "get enough conviction and that complete thought \nof how to not only take the innovation but make  "
+          }
+        ],
+        "tStartMs": 2573960
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "it into a useful product with a business \nmodel that we can then go to market with. "
+          }
+        ],
+        "tStartMs": 2582920
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "That's the job of CEOs and management teams: \nnot to just be excited about any one thing,  "
+          }
+        ],
+        "tStartMs": 2587560
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "but to be able to actually execute on a complete \nthing. And that's easier said than done. "
+          }
+        ],
+        "tStartMs": 2593720
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "When you mentioned the possibility of three \nsubsequent CEOs of Microsoft, if each of them  "
+          }
+        ],
+        "tStartMs": 2599840
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "increases the market cap by an order of magnitude, \nby the time you've got the next breakthrough,  "
+          }
+        ],
+        "tStartMs": 2605080
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "you'll be like the world economy or something.\nOr remember, the world is going to be growing  "
+          }
+        ],
+        "tStartMs": 2608440
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "at 10%, so we'll be fine.\nLet's dig into the other big  "
+          }
+        ],
+        "tStartMs": 2612320
+      },
+      {
+        "dDurationMs": 3560,
+        "segs": [
+          {
+            "utf8": "breakthrough you've just made. It's amazing that \nyou have both of them coming out the same day,  "
+          }
+        ],
+        "tStartMs": 2616320
+      },
+      {
+        "dDurationMs": 3240,
+        "segs": [
+          {
+            "utf8": "in your gaming world models. I'd love if \nyou can tell me a little bit about that. "
+          }
+        ],
+        "tStartMs": 2619880
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "We're going to call it Muse. It's going to be the \nmodel of this world action, or human action model. "
+          }
+        ],
+        "tStartMs": 2623120
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "This is very cool. One of the things is \nthat obviously, Dall-E and Sora have been  "
+          }
+        ],
+        "tStartMs": 2633080
+      },
+      {
+        "dDurationMs": 4040,
+        "segs": [
+          {
+            "utf8": "unbelievable in what they've been able \nto do in terms of generative models. One  "
+          }
+        ],
+        "tStartMs": 2638440
+      },
+      {
+        "dDurationMs": 7560,
+        "segs": [
+          {
+            "utf8": "thing that we wanted to go after was \nusing gameplay data. Can you actually  "
+          }
+        ],
+        "tStartMs": 2642480
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "generate games that are both consistent \nand then have the ability to generate the  "
+          }
+        ],
+        "tStartMs": 2650040
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "diversity of what that game represents, \nand then are persistent to user mods? "
+          }
+        ],
+        "tStartMs": 2656640
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "That's what this is. They were able \nto work with one of our game studios,  "
+          }
+        ],
+        "tStartMs": 2661880
+      },
+      {
+        "dDurationMs": 5000,
+        "segs": [
+          {
+            "utf8": "and this is the other publication in Nature.\nThe cool thing is what I'm excited about is  "
+          }
+        ],
+        "tStartMs": 2668320
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "bringing--we're going to have a catalog of games \nsoon that we will start using these models,  "
+          }
+        ],
+        "tStartMs": 2673320
+      },
+      {
+        "dDurationMs": 5000,
+        "segs": [
+          {
+            "utf8": "or we're going to train these models to \ngenerate, and then start playing them. "
+          }
+        ],
+        "tStartMs": 2680520
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "In fact, when Phil Spencer first showed it \nto me, he had an Xbox controller and this  "
+          }
+        ],
+        "tStartMs": 2686320
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "model basically took the input and generated the \noutput based on the input. And it was consistent  "
+          }
+        ],
+        "tStartMs": 2692520
+      },
+      {
+        "dDurationMs": 9080,
+        "segs": [
+          {
+            "utf8": "with the game. That to me is a massive moment \nof “wow”. It's kind of like the first time we  "
+          }
+        ],
+        "tStartMs": 2699320
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "saw ChatGPT complete sentences, or Dall-E \ndraw, or Sora. This is one such moment. "
+          }
+        ],
+        "tStartMs": 2708400
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "I got a chance to see some of the videos \nin the real-time demo this morning with  "
+          }
+        ],
+        "tStartMs": 2717600
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "your lead researcher Katja on this. Only \nonce I talked to her did it really hit me  "
+          }
+        ],
+        "tStartMs": 2721880
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "how incredible this is, in the sense that \nwe've used AI in the past to model agents,  "
+          }
+        ],
+        "tStartMs": 2727000
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "and just using that same technique to model \nthe world around the agent gives consistent  "
+          }
+        ],
+        "tStartMs": 2731320
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "real-time – we'll superimpose videos of what this \nlooks like atop this podcast so people can get a  "
+          }
+        ],
+        "tStartMs": 2736000
+      },
+      {
+        "dDurationMs": 3400,
+        "segs": [
+          {
+            "utf8": "chance to see it for themselves. I guess it'll \nbe out by then, so they can also watch it there. "
+          }
+        ],
+        "tStartMs": 2740280
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "This in itself is incredible. You, through your \nspan as CEO, have invested tens of hundreds of  "
+          }
+        ],
+        "tStartMs": 2743680
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "billions of dollars in building up \nMicrosoft Gaming and acquiring IP. "
+          }
+        ],
+        "tStartMs": 2749120
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "In retrospect, if you can just merge all of \nthis data into one big model that can give  "
+          }
+        ],
+        "tStartMs": 2756400
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "you this experience of visiting and going \nthrough multiple worlds at the same time,  "
+          }
+        ],
+        "tStartMs": 2762840
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "and if this is the direction gaming is headed, \nit seems like a pretty good investment to have  "
+          }
+        ],
+        "tStartMs": 2768400
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "made. Did you have any premonition about this?\nI wouldn't say that we invested in gaming to  "
+          }
+        ],
+        "tStartMs": 2773120
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "build models. We invested, quite frankly, because- \nhere's an interesting thing about our history:  "
+          }
+        ],
+        "tStartMs": 2781520
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "We built our first game before we built \nWindows. Flight Simulator was a Microsoft  "
+          }
+        ],
+        "tStartMs": 2787360
+      },
+      {
+        "dDurationMs": 6840,
+        "segs": [
+          {
+            "utf8": "product long before we even built Windows.\nSo, gaming has got a long history at the company,  "
+          }
+        ],
+        "tStartMs": 2793160
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "and we want to be in gaming for gaming's \nsake. I always start by saying I hate to  "
+          }
+        ],
+        "tStartMs": 2800000
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "be in businesses where they're means to some \nother end. They have to be ends unto themselves. "
+          }
+        ],
+        "tStartMs": 2805120
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "And then, yes, we're not a conglomerate. \nWe are a company where we have to bring  "
+          }
+        ],
+        "tStartMs": 2810920
+      },
+      {
+        "dDurationMs": 6120,
+        "segs": [
+          {
+            "utf8": "all these assets together and be better owners \nby adding value. For example, cloud gaming is  "
+          }
+        ],
+        "tStartMs": 2814800
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "a natural thing for us to invest in because that \nwill just expand the TAM and expand the ability  "
+          }
+        ],
+        "tStartMs": 2820920
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "for people to play games everywhere.\nThe same thing with AI and gaming:  "
+          }
+        ],
+        "tStartMs": 2827240
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "we definitely think that it can be helpful in \nmaybe changing- it's kind of like the CGI moment,  "
+          }
+        ],
+        "tStartMs": 2831040
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "even for gaming long-term. And it's great. \nAs the biggest, world's largest publisher,  "
+          }
+        ],
+        "tStartMs": 2836080
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "this will be helpful. But at the same time, \nwe've got to produce great quality games. I mean,  "
+          }
+        ],
+        "tStartMs": 2840240
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "you can't be a gaming publisher without, sort \nof, first and foremost being focused on that. "
+          }
+        ],
+        "tStartMs": 2844360
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "But the fact that this data asset is going to \nbe interesting, not just in a gaming context,  "
+          }
+        ],
+        "tStartMs": 2850720
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "but it's going to be a general action model \nand a world model, it's fantastic. I mean like,  "
+          }
+        ],
+        "tStartMs": 2856360
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "you know, I think about gaming data as perhaps, \nyou know, what YouTube is perhaps to Google,  "
+          }
+        ],
+        "tStartMs": 2862200
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "gaming data is to Microsoft. And so \ntherefore I'm excited about that. "
+          }
+        ],
+        "tStartMs": 2867800
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "Yeah, and that's what I meant, just in the sense \nof like, you can have one unified experience  "
+          }
+        ],
+        "tStartMs": 2872640
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "across many different kinds of games. How does \nthis fit into the other, separate from AI,  "
+          }
+        ],
+        "tStartMs": 2876320
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "the other things that Microsoft has worked on \nin the past, like mixed reality? Maybe giving  "
+          }
+        ],
+        "tStartMs": 2881040
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "smaller game studios a chance to build these AAA \naction games? Just like five, ten years from now,  "
+          }
+        ],
+        "tStartMs": 2886000
+      },
+      {
+        "dDurationMs": 3640,
+        "segs": [
+          {
+            "utf8": "what kinds of ways could you imagine?\nI've thought about these three things  "
+          }
+        ],
+        "tStartMs": 2891600
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "as the cornerstones of, in an interesting way, \neven five, six, seven years ago is when I said  "
+          }
+        ],
+        "tStartMs": 2895240
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "the three big bets that we want to place [are] \nAI, quantum, and mixed reality. And I still  "
+          }
+        ],
+        "tStartMs": 2902680
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "believe in them, because in some sense, \nwhat are the big problems to be solved? "
+          }
+        ],
+        "tStartMs": 2908440
+      },
+      {
+        "dDurationMs": 9640,
+        "segs": [
+          {
+            "utf8": "Presence. That's the dream of mixed \nreality. Can you create real presence?  "
+          }
+        ],
+        "tStartMs": 2912800
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "Like you and I doing a podcast like this.\nI think it’s still proving to be the harder  "
+          }
+        ],
+        "tStartMs": 2922440
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "one of those challenges, quite honestly. I thought \nit was going to be more solvable. It's tougher,  "
+          }
+        ],
+        "tStartMs": 2928480
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "perhaps, just because of the social \nside of it: wearing things and so on. "
+          }
+        ],
+        "tStartMs": 2933800
+      },
+      {
+        "dDurationMs": 3720,
+        "segs": [
+          {
+            "utf8": "We're excited about, in fact, what we're \ngoing to do with Anduril and Palmer, now,  "
+          }
+        ],
+        "tStartMs": 2940160
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "with even how they'll take forward the \nIVAS program, because that's a fantastic  "
+          }
+        ],
+        "tStartMs": 2943880
+      },
+      {
+        "dDurationMs": 7400,
+        "segs": [
+          {
+            "utf8": "use case. And so we'll continue on that front.\nBut also, the 2D surfaces. It turns out things  "
+          }
+        ],
+        "tStartMs": 2949200
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "like Teams, right, thanks to the pandemic, \nwe've really gotten the ability to create  "
+          }
+        ],
+        "tStartMs": 2956600
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "essentially presence through even 2D. And that \nI think will continue. That's one secular piece. "
+          }
+        ],
+        "tStartMs": 2962920
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "Quantum we talked about, and AI is the other one. \nSo these are the three things that I look at and  "
+          }
+        ],
+        "tStartMs": 2969800
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "say, how do you bring these things together? \nUltimately, not as tech for tech's sake,  "
+          }
+        ],
+        "tStartMs": 2974680
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "but solving some of the fundamental things that \nwe, as humans, want in our life, and more, we want  "
+          }
+        ],
+        "tStartMs": 2980840
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "them in our economy, driving our productivity. \nAnd so if we can somehow get that right,  "
+          }
+        ],
+        "tStartMs": 2986760
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "then I think we will have really made progress.\nWhen you write your next book, you've got to have  "
+          }
+        ],
+        "tStartMs": 2991840
+      },
+      {
+        "dDurationMs": 3320,
+        "segs": [
+          {
+            "utf8": "some explanation of why those three pieces \nall came together around the same time,  "
+          }
+        ],
+        "tStartMs": 2995640
+      },
+      {
+        "dDurationMs": 3320,
+        "segs": [
+          {
+            "utf8": "right? Like, there's no intrinsic reason you \nwould think quantum and AI should happen in  "
+          }
+        ],
+        "tStartMs": 2998960
+      },
+      {
+        "dDurationMs": 4760,
+        "segs": [
+          {
+            "utf8": "2028 and 2025 and so forth.\nThat's right. At some level,  "
+          }
+        ],
+        "tStartMs": 3002280
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "I look at it and say: the simple model I have \nis, hey is there a systems breakthrough? To me,  "
+          }
+        ],
+        "tStartMs": 3007040
+      },
+      {
+        "dDurationMs": 6520,
+        "segs": [
+          {
+            "utf8": "the systems breakthrough is the quantum thing.\nIs there a business logic breakthrough? That's  "
+          }
+        ],
+        "tStartMs": 3011600
+      },
+      {
+        "dDurationMs": 9000,
+        "segs": [
+          {
+            "utf8": "AI to me, which is: can the logic tier be \nfundamentally reasoned differently? Instead of  "
+          }
+        ],
+        "tStartMs": 3018120
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "imperatively writing code, can you have \na learning system? That's the AI one. "
+          }
+        ],
+        "tStartMs": 3027120
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "And then the UI side of it is presence.\nGoing back to AI for a second, in your  "
+          }
+        ],
+        "tStartMs": 3031840
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "2017 book… 2019 you invest in OpenAI, very early, \n2017 is even earlier, you say in your book, \"One  "
+          }
+        ],
+        "tStartMs": 3038000
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "might also say that we're birthing a new species, \none whose intelligence may have no upper limits.\" "
+          }
+        ],
+        "tStartMs": 3045200
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "Now, super-early, of course, to be talking \nabout this in 2017. We've been talking in  "
+          }
+        ],
+        "tStartMs": 3050320
+      },
+      {
+        "dDurationMs": 7640,
+        "segs": [
+          {
+            "utf8": "a granular fashion about agents, Office \nCopilot, capex, and so forth. But if you  "
+          }
+        ],
+        "tStartMs": 3055120
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "zoom out and consider this statement you've \nmade, and you think about you as a hyperscaler,  "
+          }
+        ],
+        "tStartMs": 3062760
+      },
+      {
+        "dDurationMs": 4840,
+        "segs": [
+          {
+            "utf8": "as the person doing research in these models as \nwell, providing training, inference, and research  "
+          }
+        ],
+        "tStartMs": 3069760
+      },
+      {
+        "dDurationMs": 3400,
+        "segs": [
+          {
+            "utf8": "for building a new species, how do you think \nabout this in the grand scheme of things? "
+          }
+        ],
+        "tStartMs": 3074600
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "Do you think we're headed towards \nsuperhuman intelligence in your time as CEO? "
+          }
+        ],
+        "tStartMs": 3079520
+      },
+      {
+        "dDurationMs": 7800,
+        "segs": [
+          {
+            "utf8": "I think even Mustafa uses that term. In fact he’s \nused that term more recently, this “new species”. "
+          }
+        ],
+        "tStartMs": 3082400
+      },
+      {
+        "dDurationMs": 11400,
+        "segs": [
+          {
+            "utf8": "The way I come at it is, you definitely need \ntrust. Before we claim it is something as big  "
+          }
+        ],
+        "tStartMs": 3092720
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "as a species, the fundamental thing that we've \ngot to get right is that there is real trust,  "
+          }
+        ],
+        "tStartMs": 3104120
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "whether it's personal or societal level trust, \nthat's baked in. That's the hard problem. "
+          }
+        ],
+        "tStartMs": 3111720
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "I think the one biggest rate limiter to the \npower here will be how does our legal… call  "
+          }
+        ],
+        "tStartMs": 3118080
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "it infrastructure, we’re talking about all \nthe compute infrastructure, well how does  "
+          }
+        ],
+        "tStartMs": 3126400
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "the legal infrastructure evolve to \ndeal with this? This entire world is  "
+          }
+        ],
+        "tStartMs": 3129920
+      },
+      {
+        "dDurationMs": 10160,
+        "segs": [
+          {
+            "utf8": "constructed with things like humans owning \nproperty, having rights, and being liable.  "
+          }
+        ],
+        "tStartMs": 3136360
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "That’s the fundamental thing that one has to first \nsay, okay what does that mean for anything that  "
+          }
+        ],
+        "tStartMs": 3148440
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "now humans are using as tools? And if humans are \ngoing to delegate more authority to these things,  "
+          }
+        ],
+        "tStartMs": 3154880
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "then how does that structure evolve? Until that \nreally gets resolved, I don't think just talking  "
+          }
+        ],
+        "tStartMs": 3161480
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "about the tech capability is going to happen.\nAs in, we won't be able to deploy these kinds  "
+          }
+        ],
+        "tStartMs": 3168080
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "of intelligences until we figure out how to…?\nAbsolutely. Because at the end of the day,  "
+          }
+        ],
+        "tStartMs": 3174240
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "there is no way. Today, you cannot \ndeploy these intelligences unless and  "
+          }
+        ],
+        "tStartMs": 3177280
+      },
+      {
+        "dDurationMs": 5720,
+        "segs": [
+          {
+            "utf8": "until there's someone indemnifying it as a human.\nTo your point, I think that's one of the reasons  "
+          }
+        ],
+        "tStartMs": 3181480
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "why I think about even the most powerful AI \nis essentially working with some delegated  "
+          }
+        ],
+        "tStartMs": 3187200
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "authority from some human. You can say, oh, that's \nall alignment and this, that, and the other.  "
+          }
+        ],
+        "tStartMs": 3192520
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "That's why I think you have to really get these \nalignments to work and be verifiable in some way,  "
+          }
+        ],
+        "tStartMs": 3198680
+      },
+      {
+        "dDurationMs": 4520,
+        "segs": [
+          {
+            "utf8": "but I just don't think that you can deploy \nintelligences that are out of control. For  "
+          }
+        ],
+        "tStartMs": 3205240
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "example, this AI takeoff problem may be a real \nproblem, but before it is a real problem, the real  "
+          }
+        ],
+        "tStartMs": 3209760
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "problem will be in the courts. No society is going \nto allow for some human to say, \"AI did that.\" "
+          }
+        ],
+        "tStartMs": 3215760
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "Yes. Well, there's a lot of societies in the \nworld, and I wonder if any one of them might  "
+          }
+        ],
+        "tStartMs": 3224640
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "not have a legal system that might be more \namenable. And if you can't have a takeoff,  "
+          }
+        ],
+        "tStartMs": 3229040
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "then you might worry. It doesn't \nhave to happen in America, right? "
+          }
+        ],
+        "tStartMs": 3232640
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "We think that no society cares about it, right? \nThere can be rogue actors, I'm not saying there  "
+          }
+        ],
+        "tStartMs": 3244280
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "won't be rogue actors; there are cyber criminals \nand rogue states; they're going to be there. "
+          }
+        ],
+        "tStartMs": 3248280
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "But to think that human society at large \ndoesn't care about it is also not going  "
+          }
+        ],
+        "tStartMs": 3253320
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "to be true. I think we all will care. We know \nhow to deal with rogue states and rogue actors  "
+          }
+        ],
+        "tStartMs": 3259240
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "today. The world doesn't sit around and say \n“we’ll tolerate that”. That's why I'm glad  "
+          }
+        ],
+        "tStartMs": 3266400
+      },
+      {
+        "dDurationMs": 7780,
+        "segs": [
+          {
+            "utf8": "that we have a world order in which anyone who is \na rogue actor in a rogue state has consequences. "
+          }
+        ],
+        "tStartMs": 3274000
+      },
+      {
+        "dDurationMs": 4140,
+        "segs": [
+          {
+            "utf8": "Right. But if you have this picture where you \ncan have 10% economic growth, I think it really  "
+          }
+        ],
+        "tStartMs": 3281780
+      },
+      {
+        "dDurationMs": 7240,
+        "segs": [
+          {
+            "utf8": "depends on getting something like AGI working, \nbecause tens of trillions of dollars of value,  "
+          }
+        ],
+        "tStartMs": 3286480
+      },
+      {
+        "dDurationMs": 6200,
+        "segs": [
+          {
+            "utf8": "that sounds closer to the total of human wages, \naround $60 trillion of the economy. Getting that  "
+          }
+        ],
+        "tStartMs": 3293720
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "magnitude, you kind of have to automate labor \nor supplement labor in a very significant way. "
+          }
+        ],
+        "tStartMs": 3299920
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "If that is possible, and once we figure \nout the legal ramifications for it,  "
+          }
+        ],
+        "tStartMs": 3306360
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "it seems quite plausible, even within your \ntenure that we figure that out. Are you  "
+          }
+        ],
+        "tStartMs": 3310480
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "thinking about superhuman intelligence? Like, \nthe biggest thing you do in your career is this?"
+          }
+        ],
+        "tStartMs": 3316160
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "You bring up another point. I know David Autor \nand others have talked a lot about this which is,  "
+          }
+        ],
+        "tStartMs": 3321280
+      },
+      {
+        "dDurationMs": 3960,
+        "segs": [
+          {
+            "utf8": "60% of labor- I think the other question \nthat needs to happen, let’s at least talk  "
+          }
+        ],
+        "tStartMs": 3325280
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "about our democratic societies. I think that \nin order to have a stable social structure,  "
+          }
+        ],
+        "tStartMs": 3329240
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "and democracies function, you can’t just have a \nreturn on capital and no return on labor. We can  "
+          }
+        ],
+        "tStartMs": 3335720
+      },
+      {
+        "dDurationMs": 10760,
+        "segs": [
+          {
+            "utf8": "talk about it, but that 60% has to be revalued.\nIn my own simple way, maybe you can call it naive,  "
+          }
+        ],
+        "tStartMs": 3342600
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "we'll start valuing different types of \nhuman labor. What is today considered  "
+          }
+        ],
+        "tStartMs": 3354040
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "high-value human labor may be a commodity. \nThere may be new things that we will value. "
+          }
+        ],
+        "tStartMs": 3361000
+      },
+      {
+        "dDurationMs": 7400,
+        "segs": [
+          {
+            "utf8": "Including that person who comes to me and \nhelps me with my physical therapy or whatever,  "
+          }
+        ],
+        "tStartMs": 3368000
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "whatever is going to be the case that we value, \nbut ultimately, if we don't have return on labor,  "
+          }
+        ],
+        "tStartMs": 3376880
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "and there's meaning in work and dignity in work \nand all of that, that's another rate limiter  "
+          }
+        ],
+        "tStartMs": 3382680
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "to any of these things being deployed.\nOn the alignment side, two years ago,  "
+          }
+        ],
+        "tStartMs": 3388040
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "you guys released Sydney Bing. Just to be clear, I \nthink given the level of capabilities at the time,  "
+          }
+        ],
+        "tStartMs": 3392040
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "it was a charming, endearing, kind \nof funny example of misalignment. "
+          }
+        ],
+        "tStartMs": 3397080
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "But that was because, at the time, it was like \nchatbots. They can go think for 30 seconds and  "
+          }
+        ],
+        "tStartMs": 3403560
+      },
+      {
+        "dDurationMs": 9240,
+        "segs": [
+          {
+            "utf8": "give you some funny or inappropriate response. \nBut if you think about that kind of system--that,  "
+          }
+        ],
+        "tStartMs": 3407840
+      },
+      {
+        "dDurationMs": 4040,
+        "segs": [
+          {
+            "utf8": "I think to a New York Times reporter, tried \nto get him to leave his wife or something--if  "
+          }
+        ],
+        "tStartMs": 3418520
+      },
+      {
+        "dDurationMs": 4920,
+        "segs": [
+          {
+            "utf8": "you think about that going forward, and you \nhave these agents that are for hours, weeks,  "
+          }
+        ],
+        "tStartMs": 3422560
+      },
+      {
+        "dDurationMs": 7080,
+        "segs": [
+          {
+            "utf8": "months going forward, just like autonomous swarms \nof AGIs, who could be in similar ways misaligned  "
+          }
+        ],
+        "tStartMs": 3427480
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "and screwing stuff up, maybe coordinating with \neach other, what's your plan going forward so  "
+          }
+        ],
+        "tStartMs": 3434560
+      },
+      {
+        "dDurationMs": 6360,
+        "segs": [
+          {
+            "utf8": "that when you get the big one, you get it right?\nThat is correct. That's one of the reasons why  "
+          }
+        ],
+        "tStartMs": 3443040
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "when we usually allocate compute, let's allocate \ncompute for what is that alignment challenge? "
+          }
+        ],
+        "tStartMs": 3452320
+      },
+      {
+        "dDurationMs": 4040,
+        "segs": [
+          {
+            "utf8": "And then more importantly, what is the runtime \nenvironment in which you are really going  "
+          }
+        ],
+        "tStartMs": 3457520
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "to be able to monitor these things? The \nobservability around it? We do deal with  "
+          }
+        ],
+        "tStartMs": 3461560
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "a lot of these things today in the classical \nside of things as well, like cyber. We don't  "
+          }
+        ],
+        "tStartMs": 3468160
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "just write software and then just let it go. \nYou have software and then you monitor it.  "
+          }
+        ],
+        "tStartMs": 3473520
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "You monitor it for cyber attacks, you monitor \nit for fault injections, and what have you. "
+          }
+        ],
+        "tStartMs": 3478320
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "Therefore, I think we will have to build \nenough software engineering around the  "
+          }
+        ],
+        "tStartMs": 3485040
+      },
+      {
+        "dDurationMs": 6280,
+        "segs": [
+          {
+            "utf8": "deployment side of these, and then inside the \nmodel itself, what's the alignment? These are all,  "
+          }
+        ],
+        "tStartMs": 3489600
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "some of them are real science problems. \nSome of them are real engineering problems,  "
+          }
+        ],
+        "tStartMs": 3495880
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "and then we will have to tackle it.\nThat also means taking our own  "
+          }
+        ],
+        "tStartMs": 3499640
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "liability in all of this. So that's why I'm \nmore interested in deploying these things in  "
+          }
+        ],
+        "tStartMs": 3506240
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "where you can actually govern what the scope of \nthese things is, and the scale of these things  "
+          }
+        ],
+        "tStartMs": 3510520
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "is. You just can't unleash something out there in \nthe world that creates harm, because the social  "
+          }
+        ],
+        "tStartMs": 3516680
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "permission for that is not going to be there.\nWhen you get the agents that can really just do  "
+          }
+        ],
+        "tStartMs": 3523840
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "weeks worth of tasks for you, what \nis the minimum assurance you want  "
+          }
+        ],
+        "tStartMs": 3531040
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "before you can let it run a random Fortune 500?\nI think when I use something like Deep Research,  "
+          }
+        ],
+        "tStartMs": 3536160
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "even, the minimum assurance I think \nwe want is before we especially have  "
+          }
+        ],
+        "tStartMs": 3541120
+      },
+      {
+        "dDurationMs": 3720,
+        "segs": [
+          {
+            "utf8": "physical embodiment of anything, that I \nthink is kind of one of those thresholds,  "
+          }
+        ],
+        "tStartMs": 3548240
+      },
+      {
+        "dDurationMs": 5960,
+        "segs": [
+          {
+            "utf8": "when you cross. That might be one place.\nThen the other one is, for example,  "
+          }
+        ],
+        "tStartMs": 3551960
+      },
+      {
+        "dDurationMs": 8120,
+        "segs": [
+          {
+            "utf8": "the permissions of the runtime environment in \nwhich this is operating. You may want guarantees  "
+          }
+        ],
+        "tStartMs": 3557920
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "that it's sandboxed, it is \nnot going out of that sandbox. "
+          }
+        ],
+        "tStartMs": 3567240
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "I mean, we already have web search and \nwe already have it out of the sandbox. "
+          }
+        ],
+        "tStartMs": 3572600
+      },
+      {
+        "dDurationMs": 7640,
+        "segs": [
+          {
+            "utf8": "But even what it does with web search and \nwhat it writes -- for example to your point,  "
+          }
+        ],
+        "tStartMs": 3577480
+      },
+      {
+        "dDurationMs": 4680,
+        "segs": [
+          {
+            "utf8": "if it's just going to write a bunch of \ncode in order to do some computation,  "
+          }
+        ],
+        "tStartMs": 3585120
+      },
+      {
+        "dDurationMs": 7240,
+        "segs": [
+          {
+            "utf8": "where is that code deployed? And is that \ncode ephemeral for just creating that output,  "
+          }
+        ],
+        "tStartMs": 3589800
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "versus just going and springing \nthat code out into the world? "
+          }
+        ],
+        "tStartMs": 3597040
+      },
+      {
+        "dDurationMs": 4360,
+        "segs": [
+          {
+            "utf8": "Those are things that you could, in \nthe action space, actually go control. "
+          }
+        ],
+        "tStartMs": 3601760
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "And separate from the safety issues, as you think \nabout your own product suite, and you think about,  "
+          }
+        ],
+        "tStartMs": 3606120
+      },
+      {
+        "dDurationMs": 6520,
+        "segs": [
+          {
+            "utf8": "if you do have AIs this powerful, at some \npoint, it's not just like Copilot- an example  "
+          }
+        ],
+        "tStartMs": 3611480
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "you mentioned about how you were prepping \nfor this podcast- it's more similar to how  "
+          }
+        ],
+        "tStartMs": 3618000
+      },
+      {
+        "dDurationMs": 6680,
+        "segs": [
+          {
+            "utf8": "you actually delegate work to your colleagues.\nWhat does it look like, given your current suite,  "
+          }
+        ],
+        "tStartMs": 3621280
+      },
+      {
+        "dDurationMs": 6280,
+        "segs": [
+          {
+            "utf8": "to add that in? I mean, there's one question about \nwhether LLMs get commodified by other things. "
+          }
+        ],
+        "tStartMs": 3627960
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "I wonder if these databases or canvases or \nExcel sheets or whatever -- if the LLM is your  "
+          }
+        ],
+        "tStartMs": 3634240
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "main gate point into accessing all these things, \nis it possible that the LLMs commodify Office? "
+          }
+        ],
+        "tStartMs": 3641000
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "It's an interesting one. The way I think \nabout the first phase, at least, would be:  "
+          }
+        ],
+        "tStartMs": 3649880
+      },
+      {
+        "dDurationMs": 8560,
+        "segs": [
+          {
+            "utf8": "Can the LLM help me do my knowledge work using \nall of these tools or canvases more effectively? "
+          }
+        ],
+        "tStartMs": 3656840
+      },
+      {
+        "dDurationMs": 9640,
+        "segs": [
+          {
+            "utf8": "One of the best demos that I've seen is a doctor \ngetting ready for a tumor board workflow. She's  "
+          }
+        ],
+        "tStartMs": 3665400
+      },
+      {
+        "dDurationMs": 7320,
+        "segs": [
+          {
+            "utf8": "going into a tumor board meeting, and the first \nthing she uses Copilot for is to create an agenda  "
+          }
+        ],
+        "tStartMs": 3675040
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "for the meeting because the LLM helps reason about \nall the cases, which are in some SharePoint site.  "
+          }
+        ],
+        "tStartMs": 3682360
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "It says, \"Hey, these cases -- obviously, a tumor \nboard meeting is a high-stakes meeting where you  "
+          }
+        ],
+        "tStartMs": 3689360
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "want to be mindful of the differences in cases \nso that you can then allocate the right time.\" "
+          }
+        ],
+        "tStartMs": 3694160
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "Even that reasoning task of creating an agenda \nthat knows how to split time- super. So, I use  "
+          }
+        ],
+        "tStartMs": 3700040
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "the LLM to do that. Then I go into the meeting, \nI'm in a Teams call with all my colleagues. I'm  "
+          }
+        ],
+        "tStartMs": 3706280
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "focused on the actual case versus taking notes, \nbecause you now have this AI copilot doing a full  "
+          }
+        ],
+        "tStartMs": 3713320
+      },
+      {
+        "dDurationMs": 8120,
+        "segs": [
+          {
+            "utf8": "transcription of all of this. It's not just a \ntranscript, but a database entry of what is in  "
+          }
+        ],
+        "tStartMs": 3719880
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "the meeting that is recallable for all time.\nThen she comes out of the meeting, having  "
+          }
+        ],
+        "tStartMs": 3728000
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "discussed the case and not been distracted \nby note-taking. She's a teaching doctor;  "
+          }
+        ],
+        "tStartMs": 3735120
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "she wants to go and prep for her class. And so she \ngoes into Copilot and says, \"Take my tumor board  "
+          }
+        ],
+        "tStartMs": 3740760
+      },
+      {
+        "dDurationMs": 7240,
+        "segs": [
+          {
+            "utf8": "meeting and create a PowerPoint slide deck out of \nit so that I can talk to my students about it.\" "
+          }
+        ],
+        "tStartMs": 3747920
+      },
+      {
+        "dDurationMs": 7240,
+        "segs": [
+          {
+            "utf8": "So that’s the type. The UI and the scaffolding \nthat I have are canvases that are now getting  "
+          }
+        ],
+        "tStartMs": 3755160
+      },
+      {
+        "dDurationMs": 8640,
+        "segs": [
+          {
+            "utf8": "populated using LLMs. And the workflow itself is \nbeing reshaped; knowledge work is getting done. "
+          }
+        ],
+        "tStartMs": 3762400
+      },
+      {
+        "dDurationMs": 7880,
+        "segs": [
+          {
+            "utf8": "Here's an interesting thing: If someone came to me \nin the late '80s and said, \"You're going to have  "
+          }
+        ],
+        "tStartMs": 3771040
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "a million documents on your desk,\" I would say, \n\"What the heck is that?\" I would have literally  "
+          }
+        ],
+        "tStartMs": 3778920
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "thought there was going to be a million physical \ncopies of things on my desk. Except, we do have a  "
+          }
+        ],
+        "tStartMs": 3785480
+      },
+      {
+        "dDurationMs": 4280,
+        "segs": [
+          {
+            "utf8": "million spreadsheets and a million documents.\nI don’t, you do. "
+          }
+        ],
+        "tStartMs": 3791880
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "They're all there. And so, that's what's \ngoing to happen with even agents. There  "
+          }
+        ],
+        "tStartMs": 3796160
+      },
+      {
+        "dDurationMs": 4760,
+        "segs": [
+          {
+            "utf8": "will be a UI layer. To me, Office is not \njust about the office of today; it's the  "
+          }
+        ],
+        "tStartMs": 3800320
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "UI layer for knowledge work. It'll evolve as the \nworkflows evolve. That's what we want to build. "
+          }
+        ],
+        "tStartMs": 3805080
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "I do think the SaaS applications that \nexist today, these CRUD applications,  "
+          }
+        ],
+        "tStartMs": 3811800
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "are going to fundamentally be changed because \nthe business logic will go more into this agentic  "
+          }
+        ],
+        "tStartMs": 3816920
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "tier. In fact, one of the other cool things \ntoday in my Copilot experience is when I say,  "
+          }
+        ],
+        "tStartMs": 3822560
+      },
+      {
+        "dDurationMs": 3560,
+        "segs": [
+          {
+            "utf8": "\"Hey, I'm getting ready for a meeting \nwith a customer,\" I just go and say,  "
+          }
+        ],
+        "tStartMs": 3827120
+      },
+      {
+        "dDurationMs": 5400,
+        "segs": [
+          {
+            "utf8": "\"Give me all the notes for it that I should \nknow.\" It pulls from my CRM database, it pulls  "
+          }
+        ],
+        "tStartMs": 3830680
+      },
+      {
+        "dDurationMs": 8640,
+        "segs": [
+          {
+            "utf8": "from my Microsoft Graph, creates a composite, \nessentially artifact, and then it applies even  "
+          }
+        ],
+        "tStartMs": 3836080
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "logic on it. That, to me, is going to transform \nthe SaaS applications as we know of it today. "
+          }
+        ],
+        "tStartMs": 3844720
+      },
+      {
+        "dDurationMs": 4200,
+        "segs": [
+          {
+            "utf8": "SaaS as an industry might be worth hundreds \nof billions to trillions of dollars a year,  "
+          }
+        ],
+        "tStartMs": 3851320
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "depending on how you count. If really \nthat can just get collapsed by AI,  "
+          }
+        ],
+        "tStartMs": 3855520
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "is the next step up in your next decade 10X-ing \nthe market cap of Microsoft again? Because you're  "
+          }
+        ],
+        "tStartMs": 3862600
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "talking about trillions of dollars...\nIt would also create a lot of value in  "
+          }
+        ],
+        "tStartMs": 3868280
+      },
+      {
+        "dDurationMs": 9600,
+        "segs": [
+          {
+            "utf8": "the SaaS. One thing we don't pay as much \nattention to perhaps is the amount of IT  "
+          }
+        ],
+        "tStartMs": 3872760
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "backlog there is in the world.\nThese code gen things, plus the  "
+          }
+        ],
+        "tStartMs": 3882360
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "fact that I can interrogate all of your SaaS \napplications using agents and get more utility  "
+          }
+        ],
+        "tStartMs": 3890200
+      },
+      {
+        "dDurationMs": 9000,
+        "segs": [
+          {
+            "utf8": "will be the greatest explosion of apps, they'll \nbe called agents, so that for every vertical,  "
+          }
+        ],
+        "tStartMs": 3896160
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "in every industry, in every category, we're \nsuddenly going to have the ability to be serviced. "
+          }
+        ],
+        "tStartMs": 3905160
+      },
+      {
+        "dDurationMs": 5240,
+        "segs": [
+          {
+            "utf8": "So there's going to be a lot of value. You can't \nstay still. You can't just say the old thing of,  "
+          }
+        ],
+        "tStartMs": 3912360
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "\"Oh, I schematized some narrow business \nprocess, and I have a UI in the browser,  "
+          }
+        ],
+        "tStartMs": 3917600
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "and that's my thing.\" That's ain’t going to \nbe the case. You have to go up-stack and say,  "
+          }
+        ],
+        "tStartMs": 3921920
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "\"What's the task that I have to participate in?\"\nYou will want to be able to take your SaaS  "
+          }
+        ],
+        "tStartMs": 3927680
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "application and make it a fantastic agent \nthat participates in a multi-agent world.  "
+          }
+        ],
+        "tStartMs": 3933920
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "As long as you can do that, then I \nthink you can even increase the value. "
+          }
+        ],
+        "tStartMs": 3939480
+      },
+      {
+        "dDurationMs": 2680,
+        "segs": [
+          {
+            "utf8": "Can I ask you some questions \nabout your time at Microsoft? "
+          }
+        ],
+        "tStartMs": 3943800
+      },
+      {
+        "dDurationMs": 1840,
+        "segs": [
+          {
+            "utf8": "Yeah.\nIs being a company  "
+          }
+        ],
+        "tStartMs": 3946480
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "man underrated? So you've spent most of your \ncareer at Microsoft, and you could say that one  "
+          }
+        ],
+        "tStartMs": 3948320
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "of the reasons you've been able to add so much \nvalue is you've seen the culture, the history,  "
+          }
+        ],
+        "tStartMs": 3954240
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "and the technology. You have all this context by \nrising up through the ranks. Should more companies  "
+          }
+        ],
+        "tStartMs": 3958000
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "be run by people who have this level of context?\nThat's a great question. I've  "
+          }
+        ],
+        "tStartMs": 3962120
+      },
+      {
+        "dDurationMs": 10840,
+        "segs": [
+          {
+            "utf8": "not thought about it that way.\nThrough my 34 years now of Microsoft,  "
+          }
+        ],
+        "tStartMs": 3965640
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "each year I felt more excited about being at \nMicrosoft versus thinking that, oh, I'm a company  "
+          }
+        ],
+        "tStartMs": 3978880
+      },
+      {
+        "dDurationMs": 9800,
+        "segs": [
+          {
+            "utf8": "person or what have you. I take that seriously, \neven for anybody joining Microsoft. It's not like  "
+          }
+        ],
+        "tStartMs": 3984520
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "they're joining Microsoft as long as they feel \nthat they can use this as a platform for their  "
+          }
+        ],
+        "tStartMs": 3994320
+      },
+      {
+        "dDurationMs": 6600,
+        "segs": [
+          {
+            "utf8": "both economic return, but also a sense of purpose \nand a sense of mission that they can accomplish by  "
+          }
+        ],
+        "tStartMs": 3999400
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "using us as a platform. That's the contract.\nSo I think yes, companies have to create a  "
+          }
+        ],
+        "tStartMs": 4006000
+      },
+      {
+        "dDurationMs": 7160,
+        "segs": [
+          {
+            "utf8": "culture that allows people to come in and \nbecome company people like me. Microsoft  "
+          }
+        ],
+        "tStartMs": 4013200
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "got it more right than wrong, at least in \nmy case, and I hope that remains the case. "
+          }
+        ],
+        "tStartMs": 4020360
+      },
+      {
+        "dDurationMs": 4440,
+        "segs": [
+          {
+            "utf8": "The sixth CEO that you’re talking about, who’ll \nget to use the research you’re starting now,  "
+          }
+        ],
+        "tStartMs": 4027920
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "what are you doing to retain the \nfuture Satya Nadellas so that they're  "
+          }
+        ],
+        "tStartMs": 4032360
+      },
+      {
+        "dDurationMs": 4440,
+        "segs": [
+          {
+            "utf8": "in a position to become future leaders?\nIt's fascinating. This is our 50th year,  "
+          }
+        ],
+        "tStartMs": 4035400
+      },
+      {
+        "dDurationMs": 11520,
+        "segs": [
+          {
+            "utf8": "and I think a lot about it. The way to think about \nit is, longevity is not a goal; relevance is. "
+          }
+        ],
+        "tStartMs": 4039840
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "The thing that I have to do and all 200,000 of \nus have to do every day is: Are we doing things  "
+          }
+        ],
+        "tStartMs": 4052240
+      },
+      {
+        "dDurationMs": 6760,
+        "segs": [
+          {
+            "utf8": "that are useful and relevant for the world as we \nsee it evolving, not just today, but tomorrow? "
+          }
+        ],
+        "tStartMs": 4058960
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "We live in an industry where there's no franchise \nvalue, so that’s the other hard part. If you take  "
+          }
+        ],
+        "tStartMs": 4068720
+      },
+      {
+        "dDurationMs": 7000,
+        "segs": [
+          {
+            "utf8": "the R&D budget that we will spend this year, \nit’s all speculation on what's going to happen  "
+          }
+        ],
+        "tStartMs": 4075120
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "five years from now. You have to basically go \nin with that attitude, saying, \"We are doing  "
+          }
+        ],
+        "tStartMs": 4082120
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "things that we think are going to be relevant.\"\nSo that's what you have to focus on. Then know  "
+          }
+        ],
+        "tStartMs": 4088120
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "that there's a batting average, and you're not \ngoing to get- you have to have a high tolerance  "
+          }
+        ],
+        "tStartMs": 4094360
+      },
+      {
+        "dDurationMs": 11840,
+        "segs": [
+          {
+            "utf8": "for failure. You have to take enough \nshots on goal to be able to say, \"Okay,  "
+          }
+        ],
+        "tStartMs": 4097960
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "we will make it to the other side as a company.\" \nThat's what makes it tricky in this industry."
+          }
+        ],
+        "tStartMs": 4109800
+      },
+      {
+        "dDurationMs": 3400,
+        "segs": [
+          {
+            "utf8": "Speaking of- you just mentioned that \nyou're two months away from your 50th  "
+          }
+        ],
+        "tStartMs": 4115680
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "anniversary of Microsoft’s founding. If you \nlook at the top 10 companies by market cap,  "
+          }
+        ],
+        "tStartMs": 4119080
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "or top 5, basically, everybody else but \nMicrosoft is younger than Microsoft. It's  "
+          }
+        ],
+        "tStartMs": 4125800
+      },
+      {
+        "dDurationMs": 3640,
+        "segs": [
+          {
+            "utf8": "an interesting observation about why \nthe most successful companies often  "
+          }
+        ],
+        "tStartMs": 4132680
+      },
+      {
+        "dDurationMs": 5960,
+        "segs": [
+          {
+            "utf8": "are quite young. The average Fortune \n500 company will last 10 to 15 years. "
+          }
+        ],
+        "tStartMs": 4136320
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "What has Microsoft done to remain relevant for \nthis many years? How do you keep refounding? "
+          }
+        ],
+        "tStartMs": 4142280
+      },
+      {
+        "dDurationMs": 5480,
+        "segs": [
+          {
+            "utf8": "I love that, Reed Hoffman uses that term, \n\"refounding.\" That's the mindset. People  "
+          }
+        ],
+        "tStartMs": 4151200
+      },
+      {
+        "dDurationMs": 8520,
+        "segs": [
+          {
+            "utf8": "talk about founder mode, but for us mere \nmortal CEOs, it's more like refounder mode. "
+          }
+        ],
+        "tStartMs": 4156680
+      },
+      {
+        "dDurationMs": 11960,
+        "segs": [
+          {
+            "utf8": "To be able to see things again in a fresh way \nis the key. To your question: can we culturally  "
+          }
+        ],
+        "tStartMs": 4168080
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "create an environment where refounding becomes \na habit thing? Every day we come in and say,  "
+          }
+        ],
+        "tStartMs": 4180040
+      },
+      {
+        "dDurationMs": 6040,
+        "segs": [
+          {
+            "utf8": "\"We feel we have a stake in this place to be \nable to change the core assumptions of what  "
+          }
+        ],
+        "tStartMs": 4188920
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "we do and how we relate to the world around us. Do \nwe give ourselves permission?” I think many times,  "
+          }
+        ],
+        "tStartMs": 4195640
+      },
+      {
+        "dDurationMs": 5400,
+        "segs": [
+          {
+            "utf8": "companies feel over-constrained by either \nbusiness model or whatever. You just have  "
+          }
+        ],
+        "tStartMs": 4201400
+      },
+      {
+        "dDurationMs": 3160,
+        "segs": [
+          {
+            "utf8": "to unconstrain yourself.\nIf you did leave Microsoft,  "
+          }
+        ],
+        "tStartMs": 4206800
+      },
+      {
+        "dDurationMs": 5880,
+        "segs": [
+          {
+            "utf8": "what company would you start?\nCompany I would start? Man.  "
+          }
+        ],
+        "tStartMs": 4209960
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "That’s where the company man and me sort \nof says, “I'll never leave Microsoft.” "
+          }
+        ],
+        "tStartMs": 4215840
+      },
+      {
+        "dDurationMs": 10600,
+        "segs": [
+          {
+            "utf8": "If I were thinking of doing something, I think \npicking a domain that has... When I look at the  "
+          }
+        ],
+        "tStartMs": 4221440
+      },
+      {
+        "dDurationMs": 7560,
+        "segs": [
+          {
+            "utf8": "dream of tech, we've always said technology is \nabout the biggest, greatest democratizing force. "
+          }
+        ],
+        "tStartMs": 4232040
+      },
+      {
+        "dDurationMs": 9600,
+        "segs": [
+          {
+            "utf8": "I feel like finally, we have that ability. \nIf you say those tokens per dollar per watt  "
+          }
+        ],
+        "tStartMs": 4239600
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "is what we can generate, I would love \nto find some domain in which that can  "
+          }
+        ],
+        "tStartMs": 4249200
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "be applied, where it is so underserved.\nThat's where healthcare, education...  "
+          }
+        ],
+        "tStartMs": 4256400
+      },
+      {
+        "dDurationMs": 10600,
+        "segs": [
+          {
+            "utf8": "Public sector would be another place. If you take \nthose domains, which are the underserved places,  "
+          }
+        ],
+        "tStartMs": 4263280
+      },
+      {
+        "dDurationMs": 5160,
+        "segs": [
+          {
+            "utf8": "where my life as a citizen of this country or \na member of this society or anywhere, would I  "
+          }
+        ],
+        "tStartMs": 4273880
+      },
+      {
+        "dDurationMs": 5080,
+        "segs": [
+          {
+            "utf8": "be better off if somehow all this abundance \ntranslated into better healthcare, better  "
+          }
+        ],
+        "tStartMs": 4279040
+      },
+      {
+        "dDurationMs": 6520,
+        "segs": [
+          {
+            "utf8": "education, and better public sector institutions \nserving me as a citizen? That would be a place. "
+          }
+        ],
+        "tStartMs": 4284120
+      },
+      {
+        "dDurationMs": 3480,
+        "segs": [
+          {
+            "utf8": "One thing I'm not sure about, hearing \nyour answers on different questions,  "
+          }
+        ],
+        "tStartMs": 4292080
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "is whether you think AGI is a thing. Will there \nbe a thing which automates all cognitive labor,  "
+          }
+        ],
+        "tStartMs": 4295560
+      },
+      {
+        "dDurationMs": 4040,
+        "segs": [
+          {
+            "utf8": "like anything anybody can do on a computer?\nThis is where I have a problem with the  "
+          }
+        ],
+        "tStartMs": 4304040
+      },
+      {
+        "dDurationMs": 7400,
+        "segs": [
+          {
+            "utf8": "definitions of how people talk about it. Cognitive \nlabor is not a static thing. There is cognitive  "
+          }
+        ],
+        "tStartMs": 4308080
+      },
+      {
+        "dDurationMs": 10080,
+        "segs": [
+          {
+            "utf8": "labor today. If I have an inbox that is managing \nall my agents, is that new cognitive labor? "
+          }
+        ],
+        "tStartMs": 4315480
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "Today's cognitive labor may be automated. \nWhat about the new cognitive labor that  "
+          }
+        ],
+        "tStartMs": 4327600
+      },
+      {
+        "dDurationMs": 5800,
+        "segs": [
+          {
+            "utf8": "gets created? Both of those things have \nto be thought of, which is the shifting… "
+          }
+        ],
+        "tStartMs": 4332640
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "That's why I make this distinction, at least \nin my head: Don't conflate knowledge worker  "
+          }
+        ],
+        "tStartMs": 4338440
+      },
+      {
+        "dDurationMs": 7480,
+        "segs": [
+          {
+            "utf8": "with knowledge work. The knowledge work \nof today could probably be automated.  "
+          }
+        ],
+        "tStartMs": 4344840
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "Who said my life's goal is to triage my \nemail? Let an AI agent triage my email. "
+          }
+        ],
+        "tStartMs": 4352320
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "But after having triaged my email, give me a \nhigher-level cognitive labor task of, \"Hey,  "
+          }
+        ],
+        "tStartMs": 4360160
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "these are the three drafts I really want you \nto review.\" That's a different abstraction. "
+          }
+        ],
+        "tStartMs": 4365040
+      },
+      {
+        "dDurationMs": 4600,
+        "segs": [
+          {
+            "utf8": "But will AI ever get to the second thing?\nIt may, but as soon as it gets to that  "
+          }
+        ],
+        "tStartMs": 4370080
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "second thing, there will be a third thing. \nWhy are we thinking that somehow, when we  "
+          }
+        ],
+        "tStartMs": 4374680
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "have dealt with tools that have changed what \ncognitive labor is in history, why are we  "
+          }
+        ],
+        "tStartMs": 4381240
+      },
+      {
+        "dDurationMs": 7240,
+        "segs": [
+          {
+            "utf8": "worried that all cognitive labor will go away?\nI'm sure you've heard these examples before, but  "
+          }
+        ],
+        "tStartMs": 4387960
+      },
+      {
+        "dDurationMs": 4040,
+        "segs": [
+          {
+            "utf8": "the idea that horses can still be good for certain \nthings, there are certain terrains you can't take  "
+          }
+        ],
+        "tStartMs": 4395200
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "a car on. But the idea that you're going to see \nhorses around the street, they’re going to employ  "
+          }
+        ],
+        "tStartMs": 4399240
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "millions of horses, it’s just not happening.\nAnd then the idea is, could a similar  "
+          }
+        ],
+        "tStartMs": 4403360
+      },
+      {
+        "dDurationMs": 3800,
+        "segs": [
+          {
+            "utf8": "thing happen with humans?\nBut in one very narrow dimension?  "
+          }
+        ],
+        "tStartMs": 4407240
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "It's only 200 years of history of humans where \nwe have valued some narrow sort of things called  "
+          }
+        ],
+        "tStartMs": 4411040
+      },
+      {
+        "dDurationMs": 5640,
+        "segs": [
+          {
+            "utf8": "\"cognitive labor\" as we understand it.\nLet's take something like chemistry. If  "
+          }
+        ],
+        "tStartMs": 4417360
+      },
+      {
+        "dDurationMs": 7960,
+        "segs": [
+          {
+            "utf8": "this thing, quantum plus AI really helped us \ndo a lot of novel material science and so on,  "
+          }
+        ],
+        "tStartMs": 4423000
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "that's fantastic to have novel material science \nbeing done by it. Does that take away from  "
+          }
+        ],
+        "tStartMs": 4430960
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "all the other things that humans can do?\nWhy can't we exist in a world where there  "
+          }
+        ],
+        "tStartMs": 4437920
+      },
+      {
+        "dDurationMs": 9000,
+        "segs": [
+          {
+            "utf8": "are powerful cognitive machines, knowing that \nour cognitive agency has not been taken away? "
+          }
+        ],
+        "tStartMs": 4445520
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "I'll ask this question, not about you, but in a \ndifferent scenario, so maybe you can answer it  "
+          }
+        ],
+        "tStartMs": 4455120
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "without embarrassment. Suppose on the Microsoft \nboard, could you ever see adding an AI to the  "
+          }
+        ],
+        "tStartMs": 4460360
+      },
+      {
+        "dDurationMs": 8280,
+        "segs": [
+          {
+            "utf8": "board? Could it ever have the judgment, context, \nand holistic understanding to be a useful advisor? "
+          }
+        ],
+        "tStartMs": 4464760
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "It's a great example. One of the things we added \nwas a facilitator agent in Teams. The goal there,  "
+          }
+        ],
+        "tStartMs": 4474520
+      },
+      {
+        "dDurationMs": 7240,
+        "segs": [
+          {
+            "utf8": "it's in the early stages, is can that facilitator \nagent use long-term memory, not just on the  "
+          }
+        ],
+        "tStartMs": 4480680
+      },
+      {
+        "dDurationMs": 5320,
+        "segs": [
+          {
+            "utf8": "context of the meeting, but with the context \nof projects I'm working on, and the team,  "
+          }
+        ],
+        "tStartMs": 4487920
+      },
+      {
+        "dDurationMs": 5560,
+        "segs": [
+          {
+            "utf8": "and what have you, be a great facilitator?\nI would love it even in a board meeting,  "
+          }
+        ],
+        "tStartMs": 4493240
+      },
+      {
+        "dDurationMs": 3880,
+        "segs": [
+          {
+            "utf8": "where it's easy to get distracted. After all, \nboard members come once a quarter, and they're  "
+          }
+        ],
+        "tStartMs": 4498800
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "trying to digest what is happening with a complex \ncompany like Microsoft. A facilitator agent that  "
+          }
+        ],
+        "tStartMs": 4502680
+      },
+      {
+        "dDurationMs": 9400,
+        "segs": [
+          {
+            "utf8": "actually helped human beings all stay on topic and \nfocus on the issues that matter, that's fantastic. "
+          }
+        ],
+        "tStartMs": 4511080
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "That's kind of literally having, to your point \nabout even going back to your previous question,  "
+          }
+        ],
+        "tStartMs": 4520480
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "having something that has infinite memory \nthat can even help us. You know, after all,  "
+          }
+        ],
+        "tStartMs": 4524560
+      },
+      {
+        "dDurationMs": 7240,
+        "segs": [
+          {
+            "utf8": "what is that Herbert Simon thing? We are all \nbounded rationality. So if the bounded rationality  "
+          }
+        ],
+        "tStartMs": 4530000
+      },
+      {
+        "dDurationMs": 9360,
+        "segs": [
+          {
+            "utf8": "of humans can actually be dealt with because there \nis a cognitive amplifier outside, that's great. "
+          }
+        ],
+        "tStartMs": 4537240
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "Speaking of materials and chemistry stuff, \nI think you said recently that you want the  "
+          }
+        ],
+        "tStartMs": 4546600
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "next 250 years of progress in those fields \nto happen in the next 25 years. Now, when I  "
+          }
+        ],
+        "tStartMs": 4551080
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "think about what's going to be possible in the \nnext 250 years, I'm thinking like space travel,  "
+          }
+        ],
+        "tStartMs": 4557880
+      },
+      {
+        "dDurationMs": 6440,
+        "segs": [
+          {
+            "utf8": "and space elevators, and immortality, and \ncuring all diseases. Next 25 years, you think? "
+          }
+        ],
+        "tStartMs": 4561880
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "One of the reasons why I brought that up was, I \nlove that thing of, the industrial revolution was  "
+          }
+        ],
+        "tStartMs": 4569400
+      },
+      {
+        "dDurationMs": 8680,
+        "segs": [
+          {
+            "utf8": "the 250 years. We have to take this entire change \nfrom a carbon-based system to something different. "
+          }
+        ],
+        "tStartMs": 4575240
+      },
+      {
+        "dDurationMs": 4120,
+        "segs": [
+          {
+            "utf8": "That means you have to fundamentally reinvent \nall of what has happened with chemistry over  "
+          }
+        ],
+        "tStartMs": 4584920
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "the last 250 years. That's where I hope we have \nthis quantum computer, this quantum computer  "
+          }
+        ],
+        "tStartMs": 4589040
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "helps us get to new materials, and then we can \nfabricate those new materials that help us with  "
+          }
+        ],
+        "tStartMs": 4594080
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "all of the challenges we have on this planet. \nAnd then I'm all for interplanetary travel. "
+          }
+        ],
+        "tStartMs": 4599360
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "Amazing. Satya, thank you so much for your time.\nThank you so much. It's wonderful. Thanks. "
+          }
+        ],
+        "tStartMs": 4605120
+      },
+      {
+        "dDurationMs": 6071,
+        "segs": [
+          {
+            "utf8": "Great, thank you."
+          }
+        ],
+        "tStartMs": 4608960
+      }
+    ],
+    "pens": [
+      {}
+    ],
+    "wireMagic": "pb3",
+    "wpWinPositions": [
+      {}
+    ],
+    "wsWinStyles": [
+      {}
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "canonical_url": "https://www.youtube.com/watch?v=4GLSzuYXh6w",
+    "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA",
+    "format": "json3",
+    "language": "en",
+    "payload_sha256": "6cf30846caa947a9cb4f2aa47e76a5fc46f1e5d8453fd077d1eab7dc4beaa195",
+    "platform": "youtube",
+    "track_type": "publisher-subtitle",
+    "uploader": "Dwarkesh Patel",
+    "video_id": "4GLSzuYXh6w"
+  }
+}
