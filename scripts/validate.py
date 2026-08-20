@@ -3256,6 +3256,130 @@ def validate_selected_run_contract(
         )
 
 
+def validate_bilibili_subtitle_chain(
+    episode_dir: Path,
+    *,
+    repository_root: Path,
+    readme_text: str,
+    errors: list[str],
+) -> bool:
+    lines = extract_front_matter_lines(readme_text)
+    runs = [run for run in parse_asr_runs(lines) if run.get("engine") == "bilibili-subtitles"]
+    if not runs:
+        return False
+
+    run_dir = episode_dir / "asr" / "bilibili-subtitles"
+    raw_path = run_dir / "raw.json"
+    refined_path = run_dir / "refined.json"
+    transcript_path = run_dir / "transcript.zh-CN.md"
+    paths = {
+        "raw": raw_path,
+        "refined": refined_path,
+        "transcript": transcript_path,
+    }
+    missing = [name for name, path in paths.items() if not path.is_file()]
+    if missing:
+        errors.append(
+            f"{display_path(episode_dir, repository_root)} Bilibili subtitle chain is incomplete: "
+            + ", ".join(missing)
+        )
+        return True
+
+    expected_artifacts = {
+        name: path.relative_to(episode_dir).as_posix() for name, path in paths.items()
+    }
+    for index, run in enumerate(runs):
+        artifacts = run.get("artifacts")
+        if not isinstance(artifacts, dict):
+            errors.append(f"Bilibili subtitle asr_runs[{index}] has no artifacts mapping")
+            continue
+        for name, expected in expected_artifacts.items():
+            if artifacts.get(name) != expected:
+                errors.append(
+                    f"Bilibili subtitle asr_runs[{index}].artifacts.{name} "
+                    f"must equal {expected!r}"
+                )
+
+    raw = read_json_strict(raw_path, repository_root=repository_root, errors=errors)
+    refined = read_json_strict(refined_path, repository_root=repository_root, errors=errors)
+    if raw is None or refined is None:
+        return True
+    if raw.get("kind") != "podwiki-bilibili-subtitle-raw":
+        errors.append("Bilibili subtitle raw.kind is invalid")
+    if refined.get("kind") != "podwiki-bilibili-subtitle-refined":
+        errors.append("Bilibili subtitle refined.kind is invalid")
+
+    raw_source = raw.get("source") if isinstance(raw.get("source"), dict) else {}
+    if raw_source.get("track_type") != "bilibili-ai-subtitle":
+        errors.append("Bilibili subtitle raw.source.track_type is invalid")
+    if raw_source.get("format") != "bilibili-ai-subtitle-json":
+        errors.append("Bilibili subtitle raw.source.format is invalid")
+    if raw_source.get("access_context") not in {"anonymous", "authenticated"}:
+        errors.append("Bilibili subtitle raw.source.access_context is invalid")
+
+    sources = parse_front_matter_list(lines, "sources")[1]
+    bilibili_sources = [
+        source
+        for source in sources
+        if source.get("platform") == "bilibili" and source.get("kind") == "video"
+    ]
+    if len(bilibili_sources) != 1:
+        errors.append("Bilibili subtitle episode must contain exactly one Bilibili video source")
+    else:
+        source = bilibili_sources[0]
+        if raw_source.get("canonical_url") != source.get("url"):
+            errors.append("Bilibili subtitle raw canonical URL does not match episode source")
+        identifiers = source.get("identifiers")
+        identifiers = identifiers if isinstance(identifiers, dict) else {}
+        for key in ("bvid", "aid", "cid", "page"):
+            if str(raw_source.get(key)) != str(identifiers.get(key)):
+                errors.append(f"Bilibili subtitle raw source {key} does not match episode source")
+
+    payload = raw.get("payload") if isinstance(raw.get("payload"), dict) else {}
+    body = payload.get("body")
+    if payload.get("type") != "AIsubtitle" or payload.get("lang") != "zh":
+        errors.append("Bilibili subtitle raw payload must be a Chinese AIsubtitle document")
+    if not isinstance(body, list) or not body:
+        errors.append("Bilibili subtitle raw payload body must be non-empty")
+
+    refined_source = (
+        refined.get("source") if isinstance(refined.get("source"), dict) else {}
+    )
+    expected_raw_path = raw_path.relative_to(repository_root).as_posix()
+    if refined_source.get("raw_path") != expected_raw_path:
+        errors.append("Bilibili subtitle refined.source.raw_path is invalid")
+    if refined_source.get("raw_sha256") != sha256_file(raw_path):
+        errors.append("Bilibili subtitle refined.source.raw_sha256 does not match raw.json")
+
+    segments = refined.get("segments")
+    if not isinstance(segments, list) or not segments:
+        errors.append("Bilibili subtitle refined.segments must be non-empty")
+        segment_count = None
+    else:
+        segment_count = len(segments)
+    if isinstance(body, list) and segment_count is not None and len(body) != segment_count:
+        errors.append("Bilibili subtitle raw and refined segment counts do not match")
+
+    rendered = (
+        refined.get("rendered_transcript")
+        if isinstance(refined.get("rendered_transcript"), dict)
+        else {}
+    )
+    expected_transcript_path = transcript_path.relative_to(repository_root).as_posix()
+    if rendered.get("path") != expected_transcript_path:
+        errors.append("Bilibili subtitle rendered_transcript.path is invalid")
+    if rendered.get("sha256") != sha256_file(transcript_path):
+        errors.append("Bilibili subtitle rendered transcript SHA-256 does not match")
+
+    quality = refined.get("quality") if isinstance(refined.get("quality"), dict) else {}
+    if segment_count is not None:
+        for field in ("source_segments", "rendered_lines"):
+            if quality.get(field) != segment_count:
+                errors.append(f"Bilibili subtitle quality.{field} does not match segments")
+
+    return True
+
+
 def check_front_matter(path: Path, text: str, errors: list[str]) -> None:
     if not text.startswith("---\n"):
         errors.append(f"{relative(path)} must begin with YAML front matter")
@@ -3765,6 +3889,12 @@ def main() -> int:
             require_complete=publishable,
         )
         qwen_complete = validate_qwen_chain(
+            episode_dir,
+            repository_root=ROOT,
+            readme_text=readme_text,
+            errors=errors,
+        )
+        validate_bilibili_subtitle_chain(
             episode_dir,
             repository_root=ROOT,
             readme_text=readme_text,

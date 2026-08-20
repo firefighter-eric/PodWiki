@@ -81,6 +81,14 @@ Stop without downloading or creating tracked files when:
 User-authorized login is an access context only. Keep cookies, tokens, and browser material under
 ignored .cache/credentials/; never print or record secrets in logs, sidecars, Markdown, or Git.
 
+For Bilibili, an authenticated `AIsubtitle` Chinese track is supported. Follow
+[bilibili.md](references/bilibili.md): use the existing browser session only to discover the exact
+subtitle response, save the response body under ignored `.cache/` without persisting its signed
+URL, then run `scripts/import_bilibili_subtitles.py`. The importer must bind BVID/aid/cid/page to
+the intake sidecar, re-check public-free access flags, validate monotonic segments and edge
+coverage, and create tracked raw/refined/run transcript artifacts. Record only `authenticated` or
+`anonymous`, never an account identifier.
+
 ## Create or resume the episode
 
 1. Use only a publisher-confirmed formal number. Never infer one from order, date, scan position, or
@@ -138,6 +146,11 @@ supported non-Qwen selected run and takes precedence over audio ASR. The importe
 raw caption payload, prove exact source/translation event timing, and keep its run transcript
 byte-identical to the selected root transcript. Use local Qwen only when the authorized context has
 no supported publisher subtitle.
+
+For Bilibili, a validated Chinese AI subtitle is also a supported non-Qwen selected run and takes
+precedence over audio ASR. Preserve its exact response payload in tracked raw lineage, keep
+`workflow.transcript: machine`, and use `acquisition_method: platform-ai-subtitle`. If the actual
+authorized context has no usable track, continue to public audio acquisition and local Qwen.
 
 ## Promote, translate, and summarize
 
