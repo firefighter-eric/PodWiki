@@ -52,6 +52,7 @@ npm run check
 
 | 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |
 | --- | --- | --- | --- | --- | --- |
+| [Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路【硅谷101播客】](https://www.bilibili.com/video/BV1yFbo66E4q/) | 张宏江、黄东旭 | [硅谷101](./shows/sv101/) | 2026-08-20 | [总结](./shows/sv101/episodes/249-zhang-hongjiang-huang-dongxu/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/249-zhang-hongjiang-huang-dongxu/transcript.zh-CN.md) |
 | [蒸馏风暴：一场大家不愿公开谈论的技术竞赛【晚点聊LateTalk】](https://www.bilibili.com/video/BV14fbv6DELm/) | 程曼祺 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-08-18 | [总结](./shows/latetalk/episodes/179-cheng-manqi/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/179-cheng-manqi/transcript.zh-CN.md) |
 | [【视频播客】硅谷坐标 x Fireworks 联创Benny Chen：开源模型、token增速、推理优化和模型定制](https://www.bilibili.com/video/BV1mJbU6REts/) | Benny Chen | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-08-16 | [总结](./shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/transcript.zh-CN.md) |
 | [对话前DeepMind曹原：AI for Science爆发，一个新时代到来了【101视频播客】](https://www.bilibili.com/video/BV1GQgg6yEy5/) | 曹原 | [硅谷101](./shows/sv101/) | 2026-08-15 | [总结](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/transcript.zh-CN.md) |

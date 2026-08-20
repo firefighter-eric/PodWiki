@@ -39,6 +39,9 @@
   访问与传输上下文，不扩大节目、批次或内容授权；不得绕过会员、付费、私密、地区
   或其他访问控制。cookie、token、浏览器配置和其他凭据只允许临时存在于被 Git
   忽略的 `.cache/`，不得写入命令输出、日志、sidecar、Markdown 或 Git。
+- Bilibili 登录态出现中文 AI 字幕时，优先按添加剧集 skill 保存原始字幕响应并使用
+  `scripts/import_bilibili_subtitles.py`；不得记录带 `auth_key` 的签名 URL，也不得忽略
+  已发现字幕改跑音频 ASR。
 - 保留已有来源和 ASR 产物；只有明确要求覆盖时才使用重转写或重对齐选项。
 - 下载媒体、模型、日志和临时文件只放在 `.cache/`，不得提交到 Git。
 - 正式本地 Qwen ASR 按平台选择 Apple Silicon/MLX 或 Windows/NVIDIA CUDA；不得因

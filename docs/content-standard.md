@@ -50,6 +50,10 @@ shows/<show_id>/
     ├── transcript.<language>.md       # 当前选中的正式原文逐字稿
     ├── transcript.zh-CN.md            # selected 为英文时必需的逐段中文译稿
     └── asr/
+        ├── bilibili-subtitles/       # 登录态可见的 Bilibili AI 字幕
+        │   ├── raw.json
+        │   ├── refined.json
+        │   └── transcript.zh-CN.md
         ├── qwen3-asr/
         │   ├── raw.json
         │   ├── aligned.json
@@ -543,17 +547,20 @@ selected 英文稿和中文译稿，英文原稿发生变化后必须重新生�
 ## 7. 来源获取顺序
 
 1. 检查平台人工字幕或自动字幕。
-2. YouTube 存在发布者英文字幕时，优先导入 `json3` 原始载荷，并用同一事件时间轴
+2. Bilibili 在用户授权登录态中存在中文 `AIsubtitle` 时，优先保存原始响应 body，
+   绑定 BVID/aid/cid/page 与公开免费 metadata sidecar，并导入 tracked raw/refined 与
+   字节一致的根中文稿；带 `auth_key` 的签名 URL、Cookie 和账号标识不得持久化。
+3. YouTube 存在发布者英文字幕时，优先导入 `json3` 原始载荷，并用同一事件时间轴
    生成 selected 英文稿；存在逐事件对齐的 `zh-Hans-en` 平台机器翻译时，可同时生成
    `status: machine` 的中文逐段译稿，并记录两份载荷哈希。字幕事件数或时间轴不一致
    时失败关闭，不得自行合并或猜测对齐。
-3. 其他平台字幕或 YouTube 不受支持的字幕格式仍停在发现阶段；不得静默忽略可用字幕
-   改跑音频 ASR。
-4. 有权处理且没有当前授权访问上下文可用的字幕时，再从媒体生成 ASR。
-5. 校验并渲染根目录机器初稿，状态标记为 `machine`。
-6. 说话人识别与专有名词校对。
-7. 人工审核后把状态改为 `reviewed`。
-8. 画面硬字幕 OCR 仅作为最后手段。
+4. 其他平台字幕、Bilibili 非 `AIsubtitle` 或 YouTube 不受支持的字幕格式仍停在
+   发现阶段；不得静默忽略可用字幕改跑音频 ASR。
+5. 有权处理且没有当前授权访问上下文可用的字幕时，再从媒体生成 ASR。
+6. 校验并渲染根目录机器初稿，状态标记为 `machine`。
+7. 说话人识别与专有名词校对。
+8. 人工审核后把状态改为 `reviewed`。
+9. 画面硬字幕 OCR 仅作为最后手段。
 
 登录本身不再是停止条件。用户明确授权具体平台、登录身份和来源范围后，可以使用
 现有浏览器会话或 cookies 获取原本符合收录边界的公开免费完整单集；登录态只作为

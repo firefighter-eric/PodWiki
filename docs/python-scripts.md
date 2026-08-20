@@ -101,6 +101,7 @@ Windows/CUDA 使用官方模型：
 | `.agents/skills/podwiki-scan-episodes/scripts/build_episode_inventory.py` | 冻结扫描开始时的仓库单集身份和来源键 | `.cache/scans/.../inventory.json` |
 | `.agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py` | 校验扫描覆盖、候选状态、计数和仓库去重 | 终端校验结果 |
 | `scripts/acquire_media.py` | 获取一个已通过播客边界核实的公开 Bilibili/YouTube 视频版单集或小宇宙单集音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
+| `scripts/import_bilibili_subtitles.py` | 从被 Git 忽略的登录态响应导入单个 Bilibili 中文 AI 字幕，并绑定公开免费来源身份 | tracked raw/refined 与中文逐段 Markdown |
 | `scripts/import_youtube_captions.py` | 导入单个公开 YouTube 发布者英文 `json3` 字幕及事件对齐的简中机器译轨 | tracked raw/refined、中英逐段 Markdown |
 | `scripts/transcribe_qwen3_asr.py` | 使用 Qwen3-ASR 转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/transcribe_qwen3_asr_cuda.py` | 在 Windows/NVIDIA CUDA 上使用官方 Qwen 模型转写并强制对齐 | `raw.json`、`aligned.json` |

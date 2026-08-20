@@ -12,10 +12,11 @@ feed 或栏目。发现更新、证明扫描覆盖范围和生成候选清单时
 
 ## 1. 适用范围与停止条件
 
-当前完整 happy path 包括：公开免费 Bilibili 视频版单集或小宇宙单集在没有可直接
-使用字幕时以本地 Qwen3-ASR 和 ForcedAligner 生成机器逐字稿；以及官方 YouTube
-完整播客正片使用发布者英文 `json3` 字幕和逐事件对齐的 `zh-Hans-en` 平台机器译轨
-生成中英机器稿。两条路径都要求先通过节目与完整单集边界。
+当前完整 happy path 包括：公开免费 Bilibili 视频版单集在用户授权登录态中使用中文
+`AIsubtitle`，或 Bilibili/小宇宙在没有可直接使用字幕时以本地 Qwen3-ASR 和
+ForcedAligner 生成机器逐字稿；以及官方 YouTube 完整播客正片使用发布者英文 `json3`
+字幕和逐事件对齐的 `zh-Hans-en` 平台机器译轨生成中英机器稿。所有路径都要求先通过
+节目与完整单集边界。
 PodWiki 只收录符合[内容标准第 0 节](./content-standard.md#0-收录边界只收录播客)的
 播客完整单集；长视频、访谈或频道投稿本身不构成收录依据。
 用户明确授权时，也可以把一个已核实播客的公开免费单集作为冻结后的有界批次处理：
@@ -39,8 +40,9 @@ YouTube tracked episode 使用大小写敏感的 `video_id`、官方 `channel_id
 - 需要登录态，但用户没有明确授权具体平台、登录身份与来源范围，或当前采集路径
   无法在不泄露凭据并保留完整来源 sidecar 的前提下使用该登录态；
 - 会员专属、付费、私密、地区、年龄或其他受限内容；
-- 找到当前授权访问上下文可用、但没有对应安全 importer 的字幕；YouTube 只有发布者
-  英文 `json3` 与逐事件时间轴完全一致的 `zh-Hans-en` 译轨属于当前支持路径；
+- 找到当前授权访问上下文可用、但没有对应安全 importer 的字幕；当前支持路径只有
+  Bilibili 中文 `AIsubtitle`，以及 YouTube 发布者英文 `json3` 与逐事件时间轴完全
+  一致的 `zh-Hans-en` 译轨；
 - 只有本地媒体但没有可核实的来源与授权记录；
 - 当前机器既不满足 Apple Silicon/MLX，也不满足 Windows x86-64/NVIDIA CUDA
   本地路径，却需要新跑正式 ASR；
@@ -186,9 +188,10 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 5. `source.title`、发布者、发布时间和时长合理；
 6. `source.availability`、`source.live_status` 和平台字段表明来源公开免费、非直播、
    非会员专属、非付费、非私密且不受地区或其他访问限制；登录态只影响传输上下文；
-7. 对 YouTube，`source.subtitle_languages` 中的发布者英文轨和
+7. 对 Bilibili，匿名列表为空但已授权登录态可见中文 `AIsubtitle` 时进入受支持的
+   登录态字幕导入路径；对 YouTube，`source.subtitle_languages` 中的发布者英文轨和
    `source.automatic_caption_languages` 中的 `zh-Hans-en` 进入受支持的字幕导入路径；
-   其他平台仍要求这些字段没有当前授权访问上下文可用字幕。
+   其他字幕格式与平台仍要求当前授权访问上下文没有可用字幕。
 
 存在不受支持的可用字幕时在这里停止。不要忽略字幕改跑音频 ASR。
 
@@ -322,6 +325,31 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 sidecar；若进程在两次提升之间中断，下一次相同目标调用会先完成该事务。
 
 ## 6. 导入字幕或按语言串行运行 Qwen ASR
+
+### Bilibili 登录态 AI 字幕
+
+用户明确授权具体 Bilibili 身份与单集后，使用现有浏览器会话确认当前 BVID 播放器的
+中文 AI 字幕。只读取该页已加载的 `aisubtitle.hdslb.com/bfs/ai_subtitle/` 响应，把
+响应 body 保存到 `.cache/intake/<BVID>/subtitle.zh-CN.ai.json`；不得导出 Cookie，
+不得打印或保存带 `auth_key` 的签名 URL、账号标识或浏览器配置路径。
+
+保留同一规范 URL 的 metadata intake sidecar，然后运行：
+
+```bash
+env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/import_bilibili_subtitles.py \
+  --url https://www.bilibili.com/video/<BVID>/ \
+  --episode-dir shows/<show-id>/episodes/<episode-folder> \
+  --metadata-json .cache/intake/<BVID>/source.metadata.json \
+  --subtitle-json .cache/intake/<BVID>/subtitle.zh-CN.ai.json \
+  --access-context authenticated
+```
+
+importer 绑定 BVID/aid/cid/page、发布者与公开免费状态，验证严格 JSON、`AIsubtitle`
+类型、中文轨、非空单调 segment 与前后各最多 30 秒的媒体边缘覆盖，并生成
+`asr/bilibili-subtitles/raw.json`、`refined.json`、run Markdown 和字节一致的根中文稿。
+selected run 使用 engine `bilibili-subtitles`、model `bilibili-ai-subtitle-zh`、
+`acquisition_method: platform-ai-subtitle`；状态保持 `machine`。登录态实际没有受支持
+字幕时才进入音频与 Qwen 路径；出现其他字幕格式时停止，不自行转换。
 
 ### YouTube 发布者字幕
 
