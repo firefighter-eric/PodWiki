@@ -38,7 +38,7 @@ sources:
     url: https://podcasts.apple.com/sg/podcast/id1564877433
     identifiers:
       apple_podcasts_id: "1564877433"
-last_verified_at: 2026-08-18
+last_verified_at: 2026-08-23
 ---
 
 # 晚点聊 LateTalk
@@ -49,6 +49,7 @@ last_verified_at: 2026-08-18
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [世界模型是具身的永动机？【晚点LatePost】](https://www.bilibili.com/video/BV1wQ8y63EyG/) | 晚点聊 LateTalk | 2026-08-22 | [总结](./episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/transcript.zh-CN.md) |
 | [蒸馏风暴：一场大家不愿公开谈论的技术竞赛【晚点聊LateTalk】](https://www.bilibili.com/video/BV14fbv6DELm/) | 晚点聊 LateTalk | 2026-08-18 | [总结](./episodes/179-cheng-manqi/summary.zh-CN.md) | [逐字稿](./episodes/179-cheng-manqi/transcript.zh-CN.md) |
 | [对话田渊栋：AI 自进化如何到来【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1XnuH66EzS/) | 晚点聊 LateTalk | 2026-08-07 | [总结](./episodes/178-tian-yuandong/summary.zh-CN.md) | [逐字稿](./episodes/178-tian-yuandong/transcript.zh-CN.md) |
 | [详解 Kimi K3：强到冲击 Anthropic 估值的模型什么样？【晚点聊LateTalk】](https://www.bilibili.com/video/BV1nWM26QEu5/) | 晚点聊 LateTalk | 2026-08-06 | [总结](./episodes/177-zhao-chenyang-zeng-zhiyuan/summary.zh-CN.md) | [逐字稿](./episodes/177-zhao-chenyang-zeng-zhiyuan/transcript.zh-CN.md) |
