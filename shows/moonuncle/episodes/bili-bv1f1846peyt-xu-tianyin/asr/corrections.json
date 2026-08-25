@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "episode_id": "moonuncle:bili-bv1f1846peyt",
+  "version": "publisher-confirmed-names-and-terms-v1",
+  "input_asr_sha256": "7043789e512dc4284dcd5364d557f998a5a82d088c79a1eadb4e3a4c71e78213",
+  "rules": [
+    {
+      "id": "guest-given-name",
+      "match": "天一",
+      "replacement": "天音",
+      "reason": "publisher-confirmed guest name",
+      "case_sensitive": true,
+      "expected_hits": 6
+    },
+    {
+      "id": "university-uiuc-compact",
+      "match": "UIC",
+      "replacement": "UIUC",
+      "reason": "publisher-confirmed university abbreviation",
+      "case_sensitive": true,
+      "expected_hits": 6
+    },
+    {
+      "id": "university-uiuc-spaced-full",
+      "match": "U I U C",
+      "replacement": "UIUC",
+      "reason": "publisher-confirmed university abbreviation",
+      "case_sensitive": true,
+      "expected_hits": 3
+    },
+    {
+      "id": "university-uiuc-spaced-short",
+      "match": "U I C",
+      "replacement": "UIUC",
+      "reason": "publisher-confirmed university abbreviation",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "podcast-medium",
+      "match": "月球大叔的博客",
+      "replacement": "月球大叔的播客",
+      "reason": "publisher-confirmed podcast identity",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "berkeley-sky-lab",
+      "match": "Skylab",
+      "replacement": "Sky Lab",
+      "reason": "publisher-confirmed lab name",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "system-pcheck",
+      "match": "P Check",
+      "replacement": "PCheck",
+      "reason": "publisher-confirmed paper and system name",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "benchmark-sregym",
+      "match": "S R E game",
+      "replacement": "SREGym",
+      "reason": "publisher-confirmed benchmark name",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "field-ai-sre",
+      "match": "A I S R E",
+      "replacement": "AI SRE",
+      "reason": "publisher-confirmed topic name",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "project-roc",
+      "match": "R O C",
+      "replacement": "ROC",
+      "reason": "publisher-confirmed project abbreviation",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "method-model-checking",
+      "match": "model checking",
+      "replacement": "Model Checking",
+      "reason": "publisher-confirmed formal method name",
+      "case_sensitive": true,
+      "expected_hits": 7
+    },
+    {
+      "id": "recovery-microreboot",
+      "match": "micro reboot",
+      "replacement": "Microreboot",
+      "reason": "publisher-confirmed recovery mechanism name",
+      "case_sensitive": true,
+      "expected_hits": 3
+    },
+    {
+      "id": "award-best-paper",
+      "match": "白paper",
+      "replacement": "Best Paper",
+      "reason": "publisher-confirmed opening topic and award name",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "ai-reward-hacking",
+      "match": "road hacking",
+      "replacement": "reward hacking",
+      "reason": "publisher-confirmed opening topic",
+      "case_sensitive": true,
+      "expected_hits": 3
+    }
+  ]
+}
