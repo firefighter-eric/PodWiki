@@ -40,7 +40,7 @@ sources:
     url: https://podcasts.apple.com/podcast/id1498541229
     identifiers:
       apple_podcasts_id: "1498541229"
-last_verified_at: 2026-08-20
+last_verified_at: 2026-08-25
 ---
 
 # 硅谷101
@@ -56,6 +56,8 @@ last_verified_at: 2026-08-20
 | [对话盛颖：xAI，Infra的浪漫，SGLang，开源，平权与“甄嬛传”【101视频播客】](https://www.bilibili.com/video/BV1GaM968E6T/) | 硅谷101 | 2026-08-05 | [总结](./episodes/247-sheng-ying/summary.zh-CN.md) | [逐字稿](./episodes/247-sheng-ying/transcript.zh-CN.md) |
 | [对话叶奇意：“寻找”月之暗面杨植麟、中国两代AI、十年人才迁徙，与AGI信仰【101视频播客】](https://www.bilibili.com/video/BV1wK3i6NEdQ/) | 硅谷101 | 2026-07-28 | [总结](./episodes/bili-bv1wk3i6nedq-ye-qiyi/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1wk3i6nedq-ye-qiyi/transcript.zh-CN.md) |
 | [对话Vincent Koc：OpenClaw的反思与进化，与Agent的下一步 \| B站 x WAIC AI会客厅【101视频播客】](https://www.bilibili.com/video/BV1pNKU6dE3V/) | 硅谷101 | 2026-07-20 | [总结](./episodes/bili-bv1pnku6de3v-vincent-koc/summary.zh-CN.md) | [英文逐字稿](./episodes/bili-bv1pnku6de3v-vincent-koc/transcript.en.md) · [中文译稿](./episodes/bili-bv1pnku6de3v-vincent-koc/transcript.zh-CN.md) |
+| [机器人走错路了？与苏度韩铮聊聊具身智能的3D数据、路径分野与硅谷竞赛【硅谷101播客】](https://www.bilibili.com/video/BV1PRNq6fEh4/) | 硅谷101 | 2026-07-16 | [总结](./episodes/244-han-zheng/summary.zh-CN.md) | [逐字稿](./episodes/244-han-zheng/transcript.zh-CN.md) |
+| [最快半年AI跑通自进化？与陈天桥首席科学家聊聊硅谷模型必争之地【硅谷101播客】](https://www.bilibili.com/video/BV1sAT16WEYg/) | 硅谷101 | 2026-07-06 | [总结](./episodes/242-du-shaolei-li-beibin/summary.zh-CN.md) | [逐字稿](./episodes/242-du-shaolei-li-beibin/transcript.zh-CN.md) |
 | [美国AI研究员的中国之旅：年轻人，追赶者，算力焦虑与“AGI展示厅” ｜专访Nathan Lambert【101视频播客】](https://www.bilibili.com/video/BV1HXTs6bEzH/) | 硅谷101 | 2026-07-03 | [总结](./episodes/bili-bv1hxts6bezh-nathan-lambert/summary.zh-CN.md) | [英文逐字稿](./episodes/bili-bv1hxts6bezh-nathan-lambert/transcript.en.md) · [中文译稿](./episodes/bili-bv1hxts6bezh-nathan-lambert/transcript.zh-CN.md) |
 | [对话王熙乔：AI时代的教育者、十年沉浮，与人类文明的下一步【101视频播客】](https://www.bilibili.com/video/BV1Ed7n6TEr1/) | 硅谷101 | 2026-06-27 | [总结](./episodes/bili-bv1ed7n6ter1-wang-xiqiao/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1ed7n6ter1-wang-xiqiao/transcript.zh-CN.md) |
 | [再访田渊栋：46.5亿美金估值的RSI，与AI自进化｜Neolabs特辑【101视频播客】](https://www.bilibili.com/video/BV1DY7C6nEWM/) | 硅谷101 | 2026-06-05 | [总结](./episodes/bili-bv1dy7c6newm-tian-yuandong/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1dy7c6newm-tian-yuandong/transcript.zh-CN.md) |

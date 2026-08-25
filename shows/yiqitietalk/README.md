@@ -20,7 +20,7 @@ sources:
     external_id: 6951e312febad13106eb017e
     url: https://www.xiaoyuzhoufm.com/podcast/6951e312febad13106eb017e
     preferred: true
-last_verified_at: 2026-08-07
+last_verified_at: 2026-08-25
 ---
 
 # 一起铁TALK
@@ -31,6 +31,7 @@ last_verified_at: 2026-08-07
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [郑小倩：首马 229，竟怀疑自己，场地冠军到到浙江纪录](https://www.xiaoyuzhoufm.com/episode/6a8675c1ef65145dfcc264f8) | 一起铁TALK | 2026-08-20 | [总结](./episodes/21-zheng-xiaoqian/summary.zh-CN.md) | [逐字稿](./episodes/21-zheng-xiaoqian/transcript.zh-CN.md) |
 | [姚妙“教”吴向东越野？不不不，让我们一起撒开脚丫](https://www.xiaoyuzhoufm.com/episode/6a5f4d33a3fec224d5a1136a) | 一起铁TALK | 2026-07-21 | [总结](./episodes/20-yao-miao/summary.zh-CN.md) | [逐字稿](./episodes/20-yao-miao/transcript.zh-CN.md) |
 | [此沙与吴向东的首次越野赛](https://www.xiaoyuzhoufm.com/episode/6a5cd2586356eb2d9be50430) | 一起铁TALK | 2026-07-20 | [总结](./episodes/19-ci-sha/summary.zh-CN.md) | [逐字稿](./episodes/19-ci-sha/transcript.zh-CN.md) |
 | [吴健：运动员与迈胜创始人](https://www.xiaoyuzhoufm.com/episode/6a58b864016dcc7e05433391) | 一起铁TALK | 2026-07-16 | [总结](./episodes/18-wu-jian/summary.zh-CN.md) | [逐字稿](./episodes/18-wu-jian/transcript.zh-CN.md) |

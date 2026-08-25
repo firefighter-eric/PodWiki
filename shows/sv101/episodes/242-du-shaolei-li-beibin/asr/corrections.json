@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "episode_id": "sv101:242",
+  "version": "publisher-confirmed-names-v1",
+  "input_asr_sha256": "bdb0deb0c3c6b513bebde368c4173c82b26b53f201e2676f86f4a60355da14e7",
+  "rules": [
+    {
+      "id": "host-name-hongjun",
+      "match": "红军",
+      "replacement": "泓君",
+      "reason": "publisher-confirmed host name",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "company-name-apodex",
+      "match": "AppleX",
+      "replacement": "Apodex",
+      "reason": "publisher-confirmed company spelling",
+      "case_sensitive": true,
+      "expected_hits": 8
+    },
+    {
+      "id": "guest-full-name-li-beibin",
+      "match": "李贝斌",
+      "replacement": "李辈滨",
+      "reason": "publisher-confirmed guest name",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "guest-given-name-beibin",
+      "match": "贝斌",
+      "replacement": "辈滨",
+      "reason": "publisher-confirmed guest given name",
+      "case_sensitive": true,
+      "expected_hits": 13
+    }
+  ]
+}

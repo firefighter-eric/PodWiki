@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "episode_id": "sv101:244",
+  "version": "publisher-confirmed-names-v1",
+  "input_asr_sha256": "966c58bb0fb19041714d9e5b018b227f4d01c2e6bebd6b12cbe8554dc517655a",
+  "rules": [
+    {
+      "id": "host-name-hongjun",
+      "match": "红军",
+      "replacement": "泓君",
+      "reason": "publisher-confirmed host name",
+      "case_sensitive": true,
+      "expected_hits": 3
+    },
+    {
+      "id": "company-name-sudo",
+      "match": "速度科技",
+      "replacement": "苏度科技",
+      "reason": "publisher-confirmed company name",
+      "case_sensitive": true,
+      "expected_hits": 3
+    },
+    {
+      "id": "guest-name-han-zheng",
+      "match": "韩征",
+      "replacement": "韩铮",
+      "reason": "publisher-confirmed guest name",
+      "case_sensitive": true,
+      "expected_hits": 3
+    },
+    {
+      "id": "founder-name-su-hao",
+      "match": "苏浩",
+      "replacement": "苏昊",
+      "reason": "publisher-confirmed founder name",
+      "case_sensitive": true,
+      "expected_hits": 13
+    }
+  ]
+}
