@@ -52,6 +52,7 @@ npm run check
 
 | 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |
 | --- | --- | --- | --- | --- | --- |
+| [硅谷坐标 x FundaAI周默：美股科技公司Q2财报深度拆解：资本开支增速重新超过AI收入](https://www.bilibili.com/video/BV1QuhL6gEtQ/) | 周默 | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-08-26 | [总结](./shows/svvector/episodes/bili-bv1quhl6getq-zhou-mo/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv1quhl6getq-zhou-mo/transcript.zh-CN.md) |
 | [徐天音：系统，UIUC，教授，最佳论文，Agent Infra，云计算，形式化验证，容错，纯粹](https://www.bilibili.com/video/BV1F1846pEYT/) | 徐天音 | [月球大叔的硅谷播客](./shows/moonuncle/) | 2026-08-23 | [总结](./shows/moonuncle/episodes/bili-bv1f1846peyt-xu-tianyin/summary.zh-CN.md) | [逐字稿](./shows/moonuncle/episodes/bili-bv1f1846peyt-xu-tianyin/transcript.zh-CN.md) |
 | [世界模型是具身的永动机？【晚点LatePost】](https://www.bilibili.com/video/BV1wQ8y63EyG/) | 戴勇、张怡、唐都玉 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-08-22 | [总结](./shows/latetalk/episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/transcript.zh-CN.md) |
 | [郑小倩：首马 229，竟怀疑自己，场地冠军到到浙江纪录](https://www.xiaoyuzhoufm.com/episode/6a8675c1ef65145dfcc264f8) | 郑小倩 | [一起铁TALK](./shows/yiqitietalk/) | 2026-08-20 | [总结](./shows/yiqitietalk/episodes/21-zheng-xiaoqian/summary.zh-CN.md) | [逐字稿](./shows/yiqitietalk/episodes/21-zheng-xiaoqian/transcript.zh-CN.md) |
