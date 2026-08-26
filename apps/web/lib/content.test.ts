@@ -294,7 +294,7 @@ describe("PodWiki content loader", () => {
         typeof file === "string" && file.endsWith(".md") ? [path.resolve(file)] : []
       ));
 
-      expect(cards).toHaveLength(152);
+      expect(cards).toHaveLength(153);
       expect(markdownReads.some((file) => path.basename(file).startsWith("summary."))).toBe(true);
       expect(markdownReads.filter((file) => path.basename(file).startsWith("transcript."))).toEqual([]);
     } finally {
@@ -794,9 +794,9 @@ workflow:`,
       "yiqitietalk",
       "dwarkesh",
     ]);
-    expect(episodes).toHaveLength(152);
+    expect(episodes).toHaveLength(153);
     expect(Object.fromEntries(shows.map((show) => [show.id, show.episodeCount]))).toEqual({
-      zhangxiaojun: 30,
+      zhangxiaojun: 31,
       sv101: 12,
       svvector: 12,
       latetalk: 18,
