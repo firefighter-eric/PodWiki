@@ -1,0 +1,7829 @@
+{
+  "generated_at": "2026-08-27T03:50:44.948982Z",
+  "kind": "podwiki-bilibili-subtitle-refined",
+  "quality": {
+    "first_start_ms": 40,
+    "last_end_ms": 2800200,
+    "max_edge_gap_seconds": 30,
+    "rendered_lines": 1115,
+    "source_duration_ms": 2806000,
+    "source_segments": 1115
+  },
+  "rendered_transcript": {
+    "path": "shows/xuhuazhe/episodes/bili-bv1rs8i66eng-jed-yang/asr/bilibili-subtitles/transcript.zh-CN.md",
+    "sha256": "eed53b708cb21a854f00dcb376da5263cb54745568ba26ee57526394adc8ead6"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 3200,
+      "sid": 1,
+      "source_segment_index": 0,
+      "start_ms": 40,
+      "text": "在聚生智能界有这样一家明星公司"
+    },
+    {
+      "end_ms": 6500,
+      "sid": 2,
+      "source_segment_index": 1,
+      "start_ms": 4800,
+      "text": "Figure"
+    },
+    {
+      "end_ms": 9940,
+      "sid": 3,
+      "source_segment_index": 2,
+      "start_ms": 8600,
+      "text": "他的每一次出现"
+    },
+    {
+      "end_ms": 12940,
+      "sid": 4,
+      "source_segment_index": 3,
+      "start_ms": 9940,
+      "text": "都拥有科幻电影般的质感和冲击"
+    },
+    {
+      "end_ms": 14360,
+      "sid": 5,
+      "source_segment_index": 4,
+      "start_ms": 12940,
+      "text": "成立不到4年"
+    },
+    {
+      "end_ms": 16540,
+      "sid": 6,
+      "source_segment_index": 5,
+      "start_ms": 14360,
+      "text": "估值已冲到390亿美元"
+    },
+    {
+      "end_ms": 18460,
+      "sid": 7,
+      "source_segment_index": 6,
+      "start_ms": 16540,
+      "text": "是目前全球估值最高的"
+    },
+    {
+      "end_ms": 20660,
+      "sid": 8,
+      "source_segment_index": 7,
+      "start_ms": 18460,
+      "text": "人形机器人创业公司之一"
+    },
+    {
+      "end_ms": 24520,
+      "sid": 9,
+      "source_segment_index": 8,
+      "start_ms": 20660,
+      "text": "但是却因嫌少在线下露面而充满神秘感"
+    },
+    {
+      "end_ms": 28590,
+      "sid": 10,
+      "source_segment_index": 9,
+      "start_ms": 24520,
+      "text": "今天我们有幸邀请到figure的研究员盖德阳"
+    },
+    {
+      "end_ms": 30430,
+      "sid": 11,
+      "source_segment_index": 10,
+      "start_ms": 28590,
+      "text": "就当你一进去手机啊"
+    },
+    {
+      "end_ms": 32170,
+      "sid": 12,
+      "source_segment_index": 11,
+      "start_ms": 30430,
+      "text": "电脑的摄像头就贴住了"
+    },
+    {
+      "end_ms": 32970,
+      "sid": 13,
+      "source_segment_index": 12,
+      "start_ms": 32170,
+      "text": "不能拍照"
+    },
+    {
+      "end_ms": 34720,
+      "sid": 14,
+      "source_segment_index": 13,
+      "start_ms": 32970,
+      "text": "我当时头脑里就两个字"
+    },
+    {
+      "end_ms": 36960,
+      "sid": 15,
+      "source_segment_index": 14,
+      "start_ms": 34720,
+      "text": "科幻figure为什么估值这么高呢"
+    },
+    {
+      "end_ms": 38020,
+      "sid": 16,
+      "source_segment_index": 15,
+      "start_ms": 36960,
+      "text": "确实是创始人"
+    },
+    {
+      "end_ms": 39540,
+      "sid": 17,
+      "source_segment_index": 16,
+      "start_ms": 38020,
+      "text": "他比较会搞钱"
+    },
+    {
+      "end_ms": 43030,
+      "sid": 18,
+      "source_segment_index": 17,
+      "start_ms": 39540,
+      "text": "当你机器人变得非常的丰富"
+    },
+    {
+      "end_ms": 44590,
+      "sid": 19,
+      "source_segment_index": 18,
+      "start_ms": 43030,
+      "text": "数量非常多的时候"
+    },
+    {
+      "end_ms": 46270,
+      "sid": 20,
+      "source_segment_index": 19,
+      "start_ms": 44590,
+      "text": "商品和服务的这种价格"
+    },
+    {
+      "end_ms": 48310,
+      "sid": 21,
+      "source_segment_index": 20,
+      "start_ms": 46270,
+      "text": "可能就会无限的趋近于零"
+    },
+    {
+      "end_ms": 49470,
+      "sid": 22,
+      "source_segment_index": 21,
+      "start_ms": 48310,
+      "text": "机器人的变化"
+    },
+    {
+      "end_ms": 51850,
+      "sid": 23,
+      "source_segment_index": 22,
+      "start_ms": 49470,
+      "text": "甚至是一种社会制度的变化"
+    },
+    {
+      "end_ms": 53630,
+      "sid": 24,
+      "source_segment_index": 23,
+      "start_ms": 51850,
+      "text": "这可能是中文互联网上"
+    },
+    {
+      "end_ms": 55980,
+      "sid": 25,
+      "source_segment_index": 24,
+      "start_ms": 53630,
+      "text": "第一个对figure员工的采访"
+    },
+    {
+      "end_ms": 60670,
+      "sid": 26,
+      "source_segment_index": 25,
+      "start_ms": 55980,
+      "text": "让我们一起揭秘这家神秘的机器人公司吧"
+    },
+    {
+      "end_ms": 61510,
+      "sid": 27,
+      "source_segment_index": 26,
+      "start_ms": 61070,
+      "text": "Hello"
+    },
+    {
+      "end_ms": 62310,
+      "sid": 28,
+      "source_segment_index": 27,
+      "start_ms": 61510,
+      "text": "大家好啊"
+    },
+    {
+      "end_ms": 62970,
+      "sid": 29,
+      "source_segment_index": 28,
+      "start_ms": 62310,
+      "text": "我是华哲"
+    },
+    {
+      "end_ms": 67629,
+      "sid": 30,
+      "source_segment_index": 29,
+      "start_ms": 62970,
+      "text": "今天我们的节目非常有幸邀请到了JZ杨啊"
+    },
+    {
+      "end_ms": 71569,
+      "sid": 31,
+      "source_segment_index": 30,
+      "start_ms": 69689,
+      "text": "因为我想在全网之前"
+    },
+    {
+      "end_ms": 74480,
+      "sid": 32,
+      "source_segment_index": 31,
+      "start_ms": 71569,
+      "text": "大家还没有听到过这个figure的同事"
+    },
+    {
+      "end_ms": 77520,
+      "sid": 33,
+      "source_segment_index": 32,
+      "start_ms": 74480,
+      "text": "跟我们分享心路历程和他的这个工作情况"
+    },
+    {
+      "end_ms": 79060,
+      "sid": 34,
+      "source_segment_index": 33,
+      "start_ms": 77520,
+      "text": "佳宁先跟大家打个招呼"
+    },
+    {
+      "end_ms": 79920,
+      "sid": 35,
+      "source_segment_index": 34,
+      "start_ms": 79060,
+      "text": "哈喽大家好"
+    },
+    {
+      "end_ms": 81160,
+      "sid": 36,
+      "source_segment_index": 35,
+      "start_ms": 79920,
+      "text": "感谢徐老师的邀请"
+    },
+    {
+      "end_ms": 83560,
+      "sid": 37,
+      "source_segment_index": 36,
+      "start_ms": 82400,
+      "text": "现在在figure工作"
+    },
+    {
+      "end_ms": 84820,
+      "sid": 38,
+      "source_segment_index": 37,
+      "start_ms": 83560,
+      "text": "大概有十个月"
+    },
+    {
+      "end_ms": 87450,
+      "sid": 39,
+      "source_segment_index": 38,
+      "start_ms": 84820,
+      "text": "之前在密西根读过博"
+    },
+    {
+      "end_ms": 90490,
+      "sid": 40,
+      "source_segment_index": 39,
+      "start_ms": 87450,
+      "text": "这个当然想从最好奇的这个事情问起了"
+    },
+    {
+      "end_ms": 92660,
+      "sid": 41,
+      "source_segment_index": 40,
+      "start_ms": 90490,
+      "text": "bi格展示出了非常多的这个能力"
+    },
+    {
+      "end_ms": 94500,
+      "sid": 42,
+      "source_segment_index": 41,
+      "start_ms": 92660,
+      "text": "也很好奇你是在里面啊"
+    },
+    {
+      "end_ms": 96880,
+      "sid": 43,
+      "source_segment_index": 42,
+      "start_ms": 94500,
+      "text": "主要完成哪部分的这个工作"
+    },
+    {
+      "end_ms": 102240,
+      "sid": 44,
+      "source_segment_index": 43,
+      "start_ms": 96880,
+      "text": "对我最近这半年可能主要focus就在如何用human data"
+    },
+    {
+      "end_ms": 103960,
+      "sid": 45,
+      "source_segment_index": 44,
+      "start_ms": 102240,
+      "text": "也就是人类数据啊"
+    },
+    {
+      "end_ms": 106640,
+      "sid": 46,
+      "source_segment_index": 45,
+      "start_ms": 103960,
+      "text": "来帮助机器人提升它的各种技能"
+    },
+    {
+      "end_ms": 109480,
+      "sid": 47,
+      "source_segment_index": 46,
+      "start_ms": 106640,
+      "text": "那在这个更仔细的聊这个figure之前"
+    },
+    {
+      "end_ms": 113020,
+      "sid": 48,
+      "source_segment_index": 47,
+      "start_ms": 109480,
+      "text": "可能还是呃先聊聊你过去做过一些事情"
+    },
+    {
+      "end_ms": 116530,
+      "sid": 49,
+      "source_segment_index": 48,
+      "start_ms": 113020,
+      "text": "就是因为看到你之前是在meta实习过啊"
+    },
+    {
+      "end_ms": 118370,
+      "sid": 50,
+      "source_segment_index": 49,
+      "start_ms": 116530,
+      "text": "然后也是在这个fair"
+    },
+    {
+      "end_ms": 122210,
+      "sid": 51,
+      "source_segment_index": 50,
+      "start_ms": 118370,
+      "text": "在当时你在fair的那段时间有过什么啊"
+    },
+    {
+      "end_ms": 123030,
+      "sid": 52,
+      "source_segment_index": 51,
+      "start_ms": 122210,
+      "text": "难忘的事情"
+    },
+    {
+      "end_ms": 125590,
+      "sid": 53,
+      "source_segment_index": 52,
+      "start_ms": 123030,
+      "text": "或者对fair有什么整体的这个感受吗"
+    },
+    {
+      "end_ms": 129080,
+      "sid": 54,
+      "source_segment_index": 53,
+      "start_ms": 125590,
+      "text": "对我其实之前是在meta fair实习了两次"
+    },
+    {
+      "end_ms": 130940,
+      "sid": 55,
+      "source_segment_index": 54,
+      "start_ms": 129080,
+      "text": "一次是24年的夏天"
+    },
+    {
+      "end_ms": 132800,
+      "sid": 56,
+      "source_segment_index": 55,
+      "start_ms": 130940,
+      "text": "另一次是25年的夏天"
+    },
+    {
+      "end_ms": 133620,
+      "sid": 57,
+      "source_segment_index": 56,
+      "start_ms": 132800,
+      "text": "24年的时候"
+    },
+    {
+      "end_ms": 136770,
+      "sid": 58,
+      "source_segment_index": 57,
+      "start_ms": 133620,
+      "text": "其实还像以前大家理解的这个fair"
+    },
+    {
+      "end_ms": 138490,
+      "sid": 59,
+      "source_segment_index": 58,
+      "start_ms": 136770,
+      "text": "大家基本上就是做research"
+    },
+    {
+      "end_ms": 141200,
+      "sid": 60,
+      "source_segment_index": 59,
+      "start_ms": 138490,
+      "text": "然后以publication为大目标"
+    },
+    {
+      "end_ms": 145740,
+      "sid": 61,
+      "source_segment_index": 60,
+      "start_ms": 141200,
+      "text": "25年的时候其实就已经能感觉到有一些变化"
+    },
+    {
+      "end_ms": 147300,
+      "sid": 62,
+      "source_segment_index": 61,
+      "start_ms": 145740,
+      "text": "组织上的风波呀"
+    },
+    {
+      "end_ms": 151070,
+      "sid": 63,
+      "source_segment_index": 62,
+      "start_ms": 147300,
+      "text": "然后包括各种相对小一点的这个project"
+    },
+    {
+      "end_ms": 152130,
+      "sid": 64,
+      "source_segment_index": 63,
+      "start_ms": 151070,
+      "text": "被D牌二台阶"
+    },
+    {
+      "end_ms": 154760,
+      "sid": 65,
+      "source_segment_index": 64,
+      "start_ms": 152130,
+      "text": "也就是说优先级没有那么高啊"
+    },
+    {
+      "end_ms": 157440,
+      "sid": 66,
+      "source_segment_index": 65,
+      "start_ms": 154760,
+      "text": "这些事情就慢慢就就能看到"
+    },
+    {
+      "end_ms": 162090,
+      "sid": 67,
+      "source_segment_index": 66,
+      "start_ms": 157440,
+      "text": "但总体来说我觉得还是非常感谢的两段经历吧"
+    },
+    {
+      "end_ms": 163820,
+      "sid": 68,
+      "source_segment_index": 67,
+      "start_ms": 162090,
+      "text": "因为24年的时候"
+    },
+    {
+      "end_ms": 166720,
+      "sid": 69,
+      "source_segment_index": 68,
+      "start_ms": 163820,
+      "text": "可能我以前也没有做过这种research的实习"
+    },
+    {
+      "end_ms": 169600,
+      "sid": 70,
+      "source_segment_index": 69,
+      "start_ms": 166720,
+      "text": "然后第一次去这种工业界做呃"
+    },
+    {
+      "end_ms": 173399,
+      "sid": 71,
+      "source_segment_index": 70,
+      "start_ms": 169600,
+      "text": "见识一下如何用更大的资源来做research"
+    },
+    {
+      "end_ms": 174939,
+      "sid": 72,
+      "source_segment_index": 71,
+      "start_ms": 173399,
+      "text": "其实收获还是很多的"
+    },
+    {
+      "end_ms": 177259,
+      "sid": 73,
+      "source_segment_index": 72,
+      "start_ms": 174939,
+      "text": "包括当时很多小伙伴也都是"
+    },
+    {
+      "end_ms": 180479,
+      "sid": 74,
+      "source_segment_index": 73,
+      "start_ms": 177259,
+      "text": "每年夏天就是从美国各地飞到湾区"
+    },
+    {
+      "end_ms": 183160,
+      "sid": 75,
+      "source_segment_index": 74,
+      "start_ms": 180479,
+      "text": "然后大家一起度过一个快乐的夏天"
+    },
+    {
+      "end_ms": 185380,
+      "sid": 76,
+      "source_segment_index": 75,
+      "start_ms": 183160,
+      "text": "所以个人经历上还是很美好的"
+    },
+    {
+      "end_ms": 188980,
+      "sid": 77,
+      "source_segment_index": 76,
+      "start_ms": 185380,
+      "text": "这说到这这个因为我当时也在菲尔实习了很久"
+    },
+    {
+      "end_ms": 190880,
+      "sid": 78,
+      "source_segment_index": 77,
+      "start_ms": 188980,
+      "text": "我有一个小伙伴也是经常实习"
+    },
+    {
+      "end_ms": 193699,
+      "sid": 79,
+      "source_segment_index": 78,
+      "start_ms": 190880,
+      "text": "中间会跑到顶楼去喝杯橙汁"
+    },
+    {
+      "end_ms": 195739,
+      "sid": 80,
+      "source_segment_index": 79,
+      "start_ms": 193699,
+      "text": "那个顶楼公花园很不错"
+    },
+    {
+      "end_ms": 197319,
+      "sid": 81,
+      "source_segment_index": 80,
+      "start_ms": 195739,
+      "text": "没错没错对"
+    },
+    {
+      "end_ms": 202470,
+      "sid": 82,
+      "source_segment_index": 81,
+      "start_ms": 197319,
+      "text": "当时呃偶尔有空会中午吃完饭在上面散个步啊"
+    },
+    {
+      "end_ms": 205190,
+      "sid": 83,
+      "source_segment_index": 82,
+      "start_ms": 202470,
+      "text": "不过弯曲夏天的太阳还是很毒辣的"
+    },
+    {
+      "end_ms": 206910,
+      "sid": 84,
+      "source_segment_index": 83,
+      "start_ms": 205190,
+      "text": "呵呵待一会就受不了了"
+    },
+    {
+      "end_ms": 208550,
+      "sid": 85,
+      "source_segment_index": 84,
+      "start_ms": 206910,
+      "text": "诶我再再追问一点"
+    },
+    {
+      "end_ms": 210830,
+      "sid": 86,
+      "source_segment_index": 85,
+      "start_ms": 208550,
+      "text": "就是呃如果我没记错的话"
+    },
+    {
+      "end_ms": 214410,
+      "sid": 87,
+      "source_segment_index": 86,
+      "start_ms": 210830,
+      "text": "费尔其实就是整个当时facebook meta呃"
+    },
+    {
+      "end_ms": 215970,
+      "sid": 88,
+      "source_segment_index": 87,
+      "start_ms": 214410,
+      "text": "有很多很好玩的东西"
+    },
+    {
+      "end_ms": 217830,
+      "sid": 89,
+      "source_segment_index": 88,
+      "start_ms": 215970,
+      "text": "就是它里面有自己的理发店"
+    },
+    {
+      "end_ms": 219530,
+      "sid": 90,
+      "source_segment_index": 89,
+      "start_ms": 217830,
+      "text": "然后里面有一个游戏厅"
+    },
+    {
+      "end_ms": 220290,
+      "sid": 91,
+      "source_segment_index": 90,
+      "start_ms": 219530,
+      "text": "有音乐室"
+    },
+    {
+      "end_ms": 221650,
+      "sid": 92,
+      "source_segment_index": 91,
+      "start_ms": 220290,
+      "text": "这些你当时有去玩吗"
+    },
+    {
+      "end_ms": 223840,
+      "sid": 93,
+      "source_segment_index": 92,
+      "start_ms": 221650,
+      "text": "这些好像在我在的时候"
+    },
+    {
+      "end_ms": 227200,
+      "sid": 94,
+      "source_segment_index": 93,
+      "start_ms": 223840,
+      "text": "有一些就相当于稍微当size了"
+    },
+    {
+      "end_ms": 230580,
+      "sid": 95,
+      "source_segment_index": 94,
+      "start_ms": 227200,
+      "text": "比如我听说之前是有这种奶茶店"
+    },
+    {
+      "end_ms": 234180,
+      "sid": 96,
+      "source_segment_index": 95,
+      "start_ms": 230580,
+      "text": "每天中午可能会过来送一些奶茶给大家喝"
+    },
+    {
+      "end_ms": 236780,
+      "sid": 97,
+      "source_segment_index": 96,
+      "start_ms": 234180,
+      "text": "后来可能疫情之后还是什么时候"
+    },
+    {
+      "end_ms": 239600,
+      "sid": 98,
+      "source_segment_index": 97,
+      "start_ms": 236780,
+      "text": "反正可能就没有这么好的福利了啊"
+    },
+    {
+      "end_ms": 242840,
+      "sid": 99,
+      "source_segment_index": 98,
+      "start_ms": 239600,
+      "text": "不过还是总体对于一个呃"
+    },
+    {
+      "end_ms": 245580,
+      "sid": 100,
+      "source_segment_index": 99,
+      "start_ms": 242840,
+      "text": "就平常待在实验室里的PHH来说"
+    },
+    {
+      "end_ms": 247440,
+      "sid": 101,
+      "source_segment_index": 100,
+      "start_ms": 245580,
+      "text": "我觉得还是福利非常好的"
+    },
+    {
+      "end_ms": 248480,
+      "sid": 102,
+      "source_segment_index": 101,
+      "start_ms": 247440,
+      "text": "非常有吸引力"
+    },
+    {
+      "end_ms": 250660,
+      "sid": 103,
+      "source_segment_index": 102,
+      "start_ms": 248480,
+      "text": "后来你就又去了这个figure"
+    },
+    {
+      "end_ms": 253429,
+      "sid": 104,
+      "source_segment_index": 103,
+      "start_ms": 250660,
+      "text": "然后呃你觉得就是从呃文化上吧"
+    },
+    {
+      "end_ms": 254349,
+      "sid": 105,
+      "source_segment_index": 104,
+      "start_ms": 253429,
+      "text": "就宏观的来讲"
+    },
+    {
+      "end_ms": 257589,
+      "sid": 106,
+      "source_segment_index": 105,
+      "start_ms": 254349,
+      "text": "你觉得figure跟meta的这个区别是怎么样的"
+    },
+    {
+      "end_ms": 259849,
+      "sid": 107,
+      "source_segment_index": 106,
+      "start_ms": 257589,
+      "text": "对你而言呃你的这个变化"
+    },
+    {
+      "end_ms": 261769,
+      "sid": 108,
+      "source_segment_index": 107,
+      "start_ms": 259849,
+      "text": "你的你的这个收获是什么呢"
+    },
+    {
+      "end_ms": 262749,
+      "sid": 109,
+      "source_segment_index": 108,
+      "start_ms": 261769,
+      "text": "对我觉得"
+    },
+    {
+      "end_ms": 267190,
+      "sid": 110,
+      "source_segment_index": 109,
+      "start_ms": 262749,
+      "text": "其实MATA菲尔还是一个research的超级平台吧"
+    },
+    {
+      "end_ms": 269510,
+      "sid": 111,
+      "source_segment_index": 110,
+      "start_ms": 267190,
+      "text": "相当于就是有很多啊"
+    },
+    {
+      "end_ms": 272789,
+      "sid": 112,
+      "source_segment_index": 111,
+      "start_ms": 269510,
+      "text": "明星的个人或者明星的团队"
+    },
+    {
+      "end_ms": 276429,
+      "sid": 113,
+      "source_segment_index": 112,
+      "start_ms": 272789,
+      "text": "在里面去追求他们的一些兴趣"
+    },
+    {
+      "end_ms": 277589,
+      "sid": 114,
+      "source_segment_index": 113,
+      "start_ms": 276429,
+      "text": "起码我走之前"
+    },
+    {
+      "end_ms": 281760,
+      "sid": 115,
+      "source_segment_index": 114,
+      "start_ms": 277589,
+      "text": "还是很多项目是得以大家的兴趣来啊为导向的"
+    },
+    {
+      "end_ms": 284720,
+      "sid": 116,
+      "source_segment_index": 115,
+      "start_ms": 281760,
+      "text": "嗯但是可能figure就毕竟是创业公司"
+    },
+    {
+      "end_ms": 287910,
+      "sid": 117,
+      "source_segment_index": 116,
+      "start_ms": 284720,
+      "text": "而且在机器人这个高度整合的领域"
+    },
+    {
+      "end_ms": 290430,
+      "sid": 118,
+      "source_segment_index": 117,
+      "start_ms": 287910,
+      "text": "所以我感觉更像是RND一点吧"
+    },
+    {
+      "end_ms": 292350,
+      "sid": 119,
+      "source_segment_index": 118,
+      "start_ms": 290430,
+      "text": "产品和research都有"
+    },
+    {
+      "end_ms": 293410,
+      "sid": 120,
+      "source_segment_index": 119,
+      "start_ms": 292350,
+      "text": "像在figure"
+    },
+    {
+      "end_ms": 296200,
+      "sid": 121,
+      "source_segment_index": 120,
+      "start_ms": 293410,
+      "text": "我们都是用一个mono repo"
+    },
+    {
+      "end_ms": 297720,
+      "sid": 122,
+      "source_segment_index": 121,
+      "start_ms": 296200,
+      "text": "就是所有大家的code"
+    },
+    {
+      "end_ms": 299760,
+      "sid": 123,
+      "source_segment_index": 122,
+      "start_ms": 297720,
+      "text": "不管是软件硬件"
+    },
+    {
+      "end_ms": 302380,
+      "sid": 124,
+      "source_segment_index": 123,
+      "start_ms": 299760,
+      "text": "最后都是服务于这么一个产品"
+    },
+    {
+      "end_ms": 305609,
+      "sid": 125,
+      "source_segment_index": 124,
+      "start_ms": 302380,
+      "text": "而不是说可能像之前在meta会"
+    },
+    {
+      "end_ms": 307149,
+      "sid": 126,
+      "source_segment_index": 125,
+      "start_ms": 305609,
+      "text": "甚至每个组有自己的"
+    },
+    {
+      "end_ms": 308869,
+      "sid": 127,
+      "source_segment_index": 126,
+      "start_ms": 307149,
+      "text": "比如infrared的一些code"
+    },
+    {
+      "end_ms": 310249,
+      "sid": 128,
+      "source_segment_index": 127,
+      "start_ms": 308869,
+      "text": "有一套data的code"
+    },
+    {
+      "end_ms": 312419,
+      "sid": 129,
+      "source_segment_index": 128,
+      "start_ms": 310249,
+      "text": "有一套呃模型训练的code"
+    },
+    {
+      "end_ms": 312899,
+      "sid": 130,
+      "source_segment_index": 129,
+      "start_ms": 312419,
+      "text": "Figure"
+    },
+    {
+      "end_ms": 316100,
+      "sid": 131,
+      "source_segment_index": 130,
+      "start_ms": 312899,
+      "text": "这种公司可能大家精力更集中一点吧"
+    },
+    {
+      "end_ms": 318740,
+      "sid": 132,
+      "source_segment_index": 131,
+      "start_ms": 316100,
+      "text": "这个地方其实也看到你选择figure"
+    },
+    {
+      "end_ms": 320500,
+      "sid": 133,
+      "source_segment_index": 132,
+      "start_ms": 318740,
+      "text": "也算是有一个小的转型对吧"
+    },
+    {
+      "end_ms": 322620,
+      "sid": 134,
+      "source_segment_index": 133,
+      "start_ms": 320500,
+      "text": "就是虽然都是在这个AI行业"
+    },
+    {
+      "end_ms": 325480,
+      "sid": 135,
+      "source_segment_index": 134,
+      "start_ms": 322620,
+      "text": "但是呃可能之前是做这个3D的"
+    },
+    {
+      "end_ms": 326700,
+      "sid": 136,
+      "source_segment_index": 135,
+      "start_ms": 325480,
+      "text": "视觉的会多一些"
+    },
+    {
+      "end_ms": 329700,
+      "sid": 137,
+      "source_segment_index": 136,
+      "start_ms": 326700,
+      "text": "然后现在可能就整个就是转到机器人"
+    },
+    {
+      "end_ms": 330420,
+      "sid": 138,
+      "source_segment_index": 137,
+      "start_ms": 329700,
+      "text": "这个行业了"
+    },
+    {
+      "end_ms": 332200,
+      "sid": 139,
+      "source_segment_index": 138,
+      "start_ms": 330420,
+      "text": "这个地方你有什么考量吗"
+    },
+    {
+      "end_ms": 334820,
+      "sid": 140,
+      "source_segment_index": 139,
+      "start_ms": 332200,
+      "text": "就因为3D其实也是蒸蒸日上的一个"
+    },
+    {
+      "end_ms": 335520,
+      "sid": 141,
+      "source_segment_index": 140,
+      "start_ms": 334820,
+      "text": "一个行业嘛"
+    },
+    {
+      "end_ms": 338080,
+      "sid": 142,
+      "source_segment_index": 141,
+      "start_ms": 335520,
+      "text": "嗯对其实对于我来说"
+    },
+    {
+      "end_ms": 341740,
+      "sid": 143,
+      "source_segment_index": 142,
+      "start_ms": 338080,
+      "text": "可能机器人一直就是我感兴趣的一个领域吧"
+    },
+    {
+      "end_ms": 344990,
+      "sid": 144,
+      "source_segment_index": 143,
+      "start_ms": 341740,
+      "text": "就其实我PHD读的博士"
+    },
+    {
+      "end_ms": 348130,
+      "sid": 145,
+      "source_segment_index": 144,
+      "start_ms": 344990,
+      "text": "在密西根是一个EMBODIAI的lap"
+    },
+    {
+      "end_ms": 349090,
+      "sid": 146,
+      "source_segment_index": 145,
+      "start_ms": 348130,
+      "text": "可能在21年"
+    },
+    {
+      "end_ms": 350170,
+      "sid": 147,
+      "source_segment_index": 146,
+      "start_ms": 349090,
+      "text": "在那个时候"
+    },
+    {
+      "end_ms": 352050,
+      "sid": 148,
+      "source_segment_index": 147,
+      "start_ms": 350170,
+      "text": "其实所谓的引BODIAI"
+    },
+    {
+      "end_ms": 355589,
+      "sid": 149,
+      "source_segment_index": 148,
+      "start_ms": 352050,
+      "text": "更多的就是呃做一些vision language navigation"
+    },
+    {
+      "end_ms": 357489,
+      "sid": 150,
+      "source_segment_index": 149,
+      "start_ms": 355589,
+      "text": "视觉语言导航这些啊"
+    },
+    {
+      "end_ms": 359590,
+      "sid": 151,
+      "source_segment_index": 150,
+      "start_ms": 357489,
+      "text": "然后他可能更多是在模拟器里面"
+    },
+    {
+      "end_ms": 362590,
+      "sid": 152,
+      "source_segment_index": 151,
+      "start_ms": 359590,
+      "text": "然后我其实后来PHD期间"
+    },
+    {
+      "end_ms": 364870,
+      "sid": 153,
+      "source_segment_index": 152,
+      "start_ms": 362590,
+      "text": "后期转到3D比较多"
+    },
+    {
+      "end_ms": 368630,
+      "sid": 154,
+      "source_segment_index": 153,
+      "start_ms": 364870,
+      "text": "也是因为当时做了很多这种vision language navigation"
+    },
+    {
+      "end_ms": 370070,
+      "sid": 155,
+      "source_segment_index": 154,
+      "start_ms": 368630,
+      "text": "哪怕是在模拟器里"
+    },
+    {
+      "end_ms": 373200,
+      "sid": 156,
+      "source_segment_index": 155,
+      "start_ms": 370070,
+      "text": "你也会发现就是最好的方法"
+    },
+    {
+      "end_ms": 376140,
+      "sid": 157,
+      "source_segment_index": 156,
+      "start_ms": 373200,
+      "text": "基本上都是有一个three d map"
+    },
+    {
+      "end_ms": 377700,
+      "sid": 158,
+      "source_segment_index": 157,
+      "start_ms": 376140,
+      "text": "就是一个3D地图的"
+    },
+    {
+      "end_ms": 378580,
+      "sid": 159,
+      "source_segment_index": 158,
+      "start_ms": 377700,
+      "text": "这种方法"
+    },
+    {
+      "end_ms": 381180,
+      "sid": 160,
+      "source_segment_index": 159,
+      "start_ms": 378580,
+      "text": "然后我就会觉得就3D方面的study"
+    },
+    {
+      "end_ms": 384839,
+      "sid": 161,
+      "source_segment_index": 160,
+      "start_ms": 381180,
+      "text": "会离所谓EMBODIAI更核心一点"
+    },
+    {
+      "end_ms": 385839,
+      "sid": 162,
+      "source_segment_index": 161,
+      "start_ms": 384839,
+      "text": "更接近一点"
+    },
+    {
+      "end_ms": 392020,
+      "sid": 163,
+      "source_segment_index": 162,
+      "start_ms": 388139,
+      "text": "更多是从NOP的角度来attack这个引爆的AI"
+    },
+    {
+      "end_ms": 394020,
+      "sid": 164,
+      "source_segment_index": 163,
+      "start_ms": 392020,
+      "text": "比如更多可能是给你一个task"
+    },
+    {
+      "end_ms": 395900,
+      "sid": 165,
+      "source_segment_index": 164,
+      "start_ms": 394020,
+      "text": "然后用language把它来break down"
+    },
+    {
+      "end_ms": 396580,
+      "sid": 166,
+      "source_segment_index": 165,
+      "start_ms": 395900,
+      "text": "这种对"
+    },
+    {
+      "end_ms": 399090,
+      "sid": 167,
+      "source_segment_index": 166,
+      "start_ms": 396580,
+      "text": "所以我当时就想更接近机器人一点"
+    },
+    {
+      "end_ms": 402370,
+      "sid": 168,
+      "source_segment_index": 167,
+      "start_ms": 399090,
+      "text": "PH毕业的时候可能有这种机器人的机会"
+    },
+    {
+      "end_ms": 406120,
+      "sid": 169,
+      "source_segment_index": 168,
+      "start_ms": 402370,
+      "text": "那我就果断做这个最本质的东西了"
+    },
+    {
+      "end_ms": 407520,
+      "sid": 170,
+      "source_segment_index": 169,
+      "start_ms": 406120,
+      "text": "就是机器人本身"
+    },
+    {
+      "end_ms": 409320,
+      "sid": 171,
+      "source_segment_index": 170,
+      "start_ms": 407520,
+      "text": "我们再再往深里聊一聊"
+    },
+    {
+      "end_ms": 411160,
+      "sid": 172,
+      "source_segment_index": 171,
+      "start_ms": 409320,
+      "text": "因为呃我觉得对于我来说"
+    },
+    {
+      "end_ms": 413520,
+      "sid": 173,
+      "source_segment_index": 172,
+      "start_ms": 411160,
+      "text": "对于所有的听这期播客的人来说"
+    },
+    {
+      "end_ms": 415050,
+      "sid": 174,
+      "source_segment_index": 173,
+      "start_ms": 413520,
+      "text": "应该都是非常难得的"
+    },
+    {
+      "end_ms": 417590,
+      "sid": 175,
+      "source_segment_index": 174,
+      "start_ms": 415050,
+      "text": "想了解了解figure里面到底是什么样的"
+    },
+    {
+      "end_ms": 420920,
+      "sid": 176,
+      "source_segment_index": 175,
+      "start_ms": 417590,
+      "text": "就是你觉得呃在加入figure的这一年里面"
+    },
+    {
+      "end_ms": 422580,
+      "sid": 177,
+      "source_segment_index": 176,
+      "start_ms": 420920,
+      "text": "你最有感触的事情是什么"
+    },
+    {
+      "end_ms": 425260,
+      "sid": 178,
+      "source_segment_index": 177,
+      "start_ms": 422580,
+      "text": "然后哪些事情是跟你在外部的时候"
+    },
+    {
+      "end_ms": 426180,
+      "sid": 179,
+      "source_segment_index": 178,
+      "start_ms": 425260,
+      "text": "感觉是一样的"
+    },
+    {
+      "end_ms": 427100,
+      "sid": 180,
+      "source_segment_index": 179,
+      "start_ms": 426180,
+      "text": "figure应该这样"
+    },
+    {
+      "end_ms": 430600,
+      "sid": 181,
+      "source_segment_index": 180,
+      "start_ms": 427100,
+      "text": "哪些事情是进去以后你发现哇原来是这样啊"
+    },
+    {
+      "end_ms": 432080,
+      "sid": 182,
+      "source_segment_index": 181,
+      "start_ms": 430600,
+      "text": "还可以这么不同对"
+    },
+    {
+      "end_ms": 435240,
+      "sid": 183,
+      "source_segment_index": 182,
+      "start_ms": 432080,
+      "text": "首先我记得figure第一次给我的震撼"
+    },
+    {
+      "end_ms": 438690,
+      "sid": 184,
+      "source_segment_index": 183,
+      "start_ms": 435240,
+      "text": "更多是在面试的时候呃"
+    },
+    {
+      "end_ms": 441550,
+      "sid": 185,
+      "source_segment_index": 184,
+      "start_ms": 438690,
+      "text": "当时figure面试也是要一轮on site"
+    },
+    {
+      "end_ms": 443900,
+      "sid": 186,
+      "source_segment_index": 185,
+      "start_ms": 441550,
+      "text": "大概在这个公司待一个下午"
+    },
+    {
+      "end_ms": 444460,
+      "sid": 187,
+      "source_segment_index": 186,
+      "start_ms": 443900,
+      "text": "也有可能"
+    },
+    {
+      "end_ms": 446900,
+      "sid": 188,
+      "source_segment_index": 187,
+      "start_ms": 444460,
+      "text": "因为我以前并不是做机器人的"
+    },
+    {
+      "end_ms": 449190,
+      "sid": 189,
+      "source_segment_index": 188,
+      "start_ms": 446900,
+      "text": "反正对于我来说就是非常震撼"
+    },
+    {
+      "end_ms": 450390,
+      "sid": 190,
+      "source_segment_index": 189,
+      "start_ms": 449190,
+      "text": "就当你一进去"
+    },
+    {
+      "end_ms": 452250,
+      "sid": 191,
+      "source_segment_index": 190,
+      "start_ms": 450390,
+      "text": "首先你就手机啊"
+    },
+    {
+      "end_ms": 454950,
+      "sid": 192,
+      "source_segment_index": 191,
+      "start_ms": 452250,
+      "text": "电脑的这些摄像头就就贴住了"
+    },
+    {
+      "end_ms": 456810,
+      "sid": 193,
+      "source_segment_index": 192,
+      "start_ms": 454950,
+      "text": "不能拍照比较保密"
+    },
+    {
+      "end_ms": 458450,
+      "sid": 194,
+      "source_segment_index": 193,
+      "start_ms": 456810,
+      "text": "就营造出一种神秘感"
+    },
+    {
+      "end_ms": 460370,
+      "sid": 195,
+      "source_segment_index": 194,
+      "start_ms": 458450,
+      "text": "呃然后当你进到这个公司里面的时候"
+    },
+    {
+      "end_ms": 463630,
+      "sid": 196,
+      "source_segment_index": 195,
+      "start_ms": 460370,
+      "text": "你就会感觉我当时呃头脑里就两个字"
+    },
+    {
+      "end_ms": 465310,
+      "sid": 197,
+      "source_segment_index": 196,
+      "start_ms": 463630,
+      "text": "我觉得就很科幻"
+    },
+    {
+      "end_ms": 469870,
+      "sid": 198,
+      "source_segment_index": 197,
+      "start_ms": 465310,
+      "text": "就可能你会看到有机器人在大堂里面啊走巡逻"
+    },
+    {
+      "end_ms": 472310,
+      "sid": 199,
+      "source_segment_index": 198,
+      "start_ms": 469870,
+      "text": "然后你可能再往左边看一下"
+    },
+    {
+      "end_ms": 475880,
+      "sid": 200,
+      "source_segment_index": 199,
+      "start_ms": 472310,
+      "text": "也许有很多这种啊数据收集的人"
+    },
+    {
+      "end_ms": 478380,
+      "sid": 201,
+      "source_segment_index": 200,
+      "start_ms": 475880,
+      "text": "他们可能戴着头衔穿着啊"
+    },
+    {
+      "end_ms": 480580,
+      "sid": 202,
+      "source_segment_index": 201,
+      "start_ms": 478380,
+      "text": "我还不太懂得这种fancy的衣服"
+    },
+    {
+      "end_ms": 483060,
+      "sid": 203,
+      "source_segment_index": 202,
+      "start_ms": 480580,
+      "text": "或者这种数据收集的设备也好"
+    },
+    {
+      "end_ms": 486340,
+      "sid": 204,
+      "source_segment_index": 203,
+      "start_ms": 483060,
+      "text": "然后边上可能就有机器人自主的在干一些活"
+    },
+    {
+      "end_ms": 487960,
+      "sid": 205,
+      "source_segment_index": 204,
+      "start_ms": 486340,
+      "text": "还有一些可能是收集数据"
+    },
+    {
+      "end_ms": 489760,
+      "sid": 206,
+      "source_segment_index": 205,
+      "start_ms": 487960,
+      "text": "就相当于呃摇操作"
+    },
+    {
+      "end_ms": 492840,
+      "sid": 207,
+      "source_segment_index": 206,
+      "start_ms": 489760,
+      "text": "这样可以看到机机器人被带领着干活"
+    },
+    {
+      "end_ms": 494300,
+      "sid": 208,
+      "source_segment_index": 207,
+      "start_ms": 492840,
+      "text": "而且它因为它是人形"
+    },
+    {
+      "end_ms": 496610,
+      "sid": 209,
+      "source_segment_index": 208,
+      "start_ms": 494300,
+      "text": "所以可能视觉冲击力还是比较大"
+    },
+    {
+      "end_ms": 499920,
+      "sid": 210,
+      "source_segment_index": 209,
+      "start_ms": 496610,
+      "text": "所以总体就会给你一种就挺震撼的感觉"
+    },
+    {
+      "end_ms": 503960,
+      "sid": 211,
+      "source_segment_index": 210,
+      "start_ms": 499920,
+      "text": "所以这可能是我当时对figure的初印象吧"
+    },
+    {
+      "end_ms": 508289,
+      "sid": 212,
+      "source_segment_index": 211,
+      "start_ms": 503960,
+      "text": "嗯嗯然后后面呃真正开始工作"
+    },
+    {
+      "end_ms": 511069,
+      "sid": 213,
+      "source_segment_index": 212,
+      "start_ms": 508289,
+      "text": "可能就是10月份左右的事情了"
+    },
+    {
+      "end_ms": 512009,
+      "sid": 214,
+      "source_segment_index": 213,
+      "start_ms": 511069,
+      "text": "然后进去以后"
+    },
+    {
+      "end_ms": 515630,
+      "sid": 215,
+      "source_segment_index": 214,
+      "start_ms": 512009,
+      "text": "肯定也是觉得大家也都可以会理解到"
+    },
+    {
+      "end_ms": 519970,
+      "sid": 216,
+      "source_segment_index": 215,
+      "start_ms": 515630,
+      "text": "就是外部demo呃出来的东西是一个水平"
+    },
+    {
+      "end_ms": 523710,
+      "sid": 217,
+      "source_segment_index": 216,
+      "start_ms": 519970,
+      "text": "然后内部的话你可能还会看到呃更多的问题吧"
+    },
+    {
+      "end_ms": 525530,
+      "sid": 218,
+      "source_segment_index": 217,
+      "start_ms": 523710,
+      "text": "就可能水平还是那个水平"
+    },
+    {
+      "end_ms": 528490,
+      "sid": 219,
+      "source_segment_index": 218,
+      "start_ms": 525530,
+      "text": "但是你会看到更多还没有被解决"
+    },
+    {
+      "end_ms": 531290,
+      "sid": 220,
+      "source_segment_index": 219,
+      "start_ms": 528490,
+      "text": "也没有被demo出来的一些问题"
+    },
+    {
+      "end_ms": 534340,
+      "sid": 221,
+      "source_segment_index": 220,
+      "start_ms": 531290,
+      "text": "可能更多外面看到的demo啊"
+    },
+    {
+      "end_ms": 536660,
+      "sid": 222,
+      "source_segment_index": 221,
+      "start_ms": 534340,
+      "text": "就是能看到他的一个controller"
+    },
+    {
+      "end_ms": 540240,
+      "sid": 223,
+      "source_segment_index": 222,
+      "start_ms": 536660,
+      "text": "和现在硬件这种丝滑程度的最高水平"
+    },
+    {
+      "end_ms": 542810,
+      "sid": 224,
+      "source_segment_index": 223,
+      "start_ms": 540240,
+      "text": "但是可能进去以后就能看到更多"
+    },
+    {
+      "end_ms": 545590,
+      "sid": 225,
+      "source_segment_index": 224,
+      "start_ms": 542810,
+      "text": "比如说这个reliability上的数值"
+    },
+    {
+      "end_ms": 548750,
+      "sid": 226,
+      "source_segment_index": 225,
+      "start_ms": 545590,
+      "text": "比如说可能之前也有一些整理洗碗机"
+    },
+    {
+      "end_ms": 549750,
+      "sid": 227,
+      "source_segment_index": 226,
+      "start_ms": 548750,
+      "text": "这样的task"
+    },
+    {
+      "end_ms": 552050,
+      "sid": 228,
+      "source_segment_index": 227,
+      "start_ms": 549750,
+      "text": "这个在我可能加入figure之前"
+    },
+    {
+      "end_ms": 555030,
+      "sid": 229,
+      "source_segment_index": 228,
+      "start_ms": 552050,
+      "text": "我就看到这样的demo也是挺惊艳的"
+    },
+    {
+      "end_ms": 556890,
+      "sid": 230,
+      "source_segment_index": 229,
+      "start_ms": 555030,
+      "text": "当时就能看到这个figure"
+    },
+    {
+      "end_ms": 559790,
+      "sid": 231,
+      "source_segment_index": 230,
+      "start_ms": 556890,
+      "text": "他的这个动作的丝滑程度"
+    },
+    {
+      "end_ms": 564090,
+      "sid": 232,
+      "source_segment_index": 231,
+      "start_ms": 559790,
+      "text": "以及他controller的这个high frequency的这种表现"
+    },
+    {
+      "end_ms": 565700,
+      "sid": 233,
+      "source_segment_index": 232,
+      "start_ms": 564090,
+      "text": "确实是比较领先的"
+    },
+    {
+      "end_ms": 567420,
+      "sid": 234,
+      "source_segment_index": 233,
+      "start_ms": 565700,
+      "text": "但是因为毕竟在外面嘛"
+    },
+    {
+      "end_ms": 569480,
+      "sid": 235,
+      "source_segment_index": 234,
+      "start_ms": 567420,
+      "text": "可能你也不知道这个洗碗机"
+    },
+    {
+      "end_ms": 572180,
+      "sid": 236,
+      "source_segment_index": 235,
+      "start_ms": 569480,
+      "text": "它可以比如说泛化到什么程度"
+    },
+    {
+      "end_ms": 574540,
+      "sid": 237,
+      "source_segment_index": 236,
+      "start_ms": 572180,
+      "text": "或者说reliable到什么程度"
+    },
+    {
+      "end_ms": 575540,
+      "sid": 238,
+      "source_segment_index": 237,
+      "start_ms": 574540,
+      "text": "才能干十次"
+    },
+    {
+      "end_ms": 577060,
+      "sid": 239,
+      "source_segment_index": 238,
+      "start_ms": 575540,
+      "text": "到底有多少能成功"
+    },
+    {
+      "end_ms": 579940,
+      "sid": 240,
+      "source_segment_index": 239,
+      "start_ms": 577060,
+      "text": "这些东西可能就是你只有进去了以后"
+    },
+    {
+      "end_ms": 581120,
+      "sid": 241,
+      "source_segment_index": 240,
+      "start_ms": 579940,
+      "text": "你才会发现哦"
+    },
+    {
+      "end_ms": 583560,
+      "sid": 242,
+      "source_segment_index": 241,
+      "start_ms": 581120,
+      "text": "可能还是有不小的挑战"
+    },
+    {
+      "end_ms": 586260,
+      "sid": 243,
+      "source_segment_index": 242,
+      "start_ms": 583560,
+      "text": "跟真正呃我们希望达到的数值"
+    },
+    {
+      "end_ms": 588120,
+      "sid": 244,
+      "source_segment_index": 243,
+      "start_ms": 586260,
+      "text": "还是有一定的差距的"
+    },
+    {
+      "end_ms": 589520,
+      "sid": 245,
+      "source_segment_index": 244,
+      "start_ms": 588120,
+      "text": "所以进去以后"
+    },
+    {
+      "end_ms": 593610,
+      "sid": 246,
+      "source_segment_index": 245,
+      "start_ms": 589520,
+      "text": "可能更多的就能看到机器人公司真正面临"
+    },
+    {
+      "end_ms": 594910,
+      "sid": 247,
+      "source_segment_index": 246,
+      "start_ms": 593610,
+      "text": "前沿的一些问题"
+    },
+    {
+      "end_ms": 595890,
+      "sid": 248,
+      "source_segment_index": 247,
+      "start_ms": 594910,
+      "text": "一些泛化"
+    },
+    {
+      "end_ms": 599190,
+      "sid": 249,
+      "source_segment_index": 248,
+      "start_ms": 595890,
+      "text": "然后让他如何更reliable的问题"
+    },
+    {
+      "end_ms": 601339,
+      "sid": 250,
+      "source_segment_index": 249,
+      "start_ms": 599190,
+      "text": "可能我觉得像figure更多"
+    },
+    {
+      "end_ms": 604959,
+      "sid": 251,
+      "source_segment_index": 250,
+      "start_ms": 601339,
+      "text": "前一两年的focus是在把硬件的水平"
+    },
+    {
+      "end_ms": 607579,
+      "sid": 252,
+      "source_segment_index": 251,
+      "start_ms": 604959,
+      "text": "还有他的这个可靠度提上来"
+    },
+    {
+      "end_ms": 608959,
+      "sid": 253,
+      "source_segment_index": 252,
+      "start_ms": 607579,
+      "text": "以及把controller"
+    },
+    {
+      "end_ms": 611960,
+      "sid": 254,
+      "source_segment_index": 253,
+      "start_ms": 608959,
+      "text": "从可能以前的这种MPC"
+    },
+    {
+      "end_ms": 614940,
+      "sid": 255,
+      "source_segment_index": 254,
+      "start_ms": 611960,
+      "text": "换成现在这种RL base的whole body control"
+    },
+    {
+      "end_ms": 617260,
+      "sid": 256,
+      "source_segment_index": 255,
+      "start_ms": 614940,
+      "text": "这些都是给整个公司"
+    },
+    {
+      "end_ms": 619400,
+      "sid": 257,
+      "source_segment_index": 256,
+      "start_ms": 617260,
+      "text": "还有他最后放出来的这种demo"
+    },
+    {
+      "end_ms": 622260,
+      "sid": 258,
+      "source_segment_index": 257,
+      "start_ms": 619400,
+      "text": "还有以及整体的能力带来一个质的飞跃"
+    },
+    {
+      "end_ms": 626540,
+      "sid": 259,
+      "source_segment_index": 258,
+      "start_ms": 622260,
+      "text": "然后那现在可能呃更多的就是control上来了"
+    },
+    {
+      "end_ms": 628740,
+      "sid": 260,
+      "source_segment_index": 259,
+      "start_ms": 626540,
+      "text": "数据的infrastructure也有了"
+    },
+    {
+      "end_ms": 631060,
+      "sid": 261,
+      "source_segment_index": 260,
+      "start_ms": 628740,
+      "text": "那如何通过这些基础设施"
+    },
+    {
+      "end_ms": 634320,
+      "sid": 262,
+      "source_segment_index": 261,
+      "start_ms": 631060,
+      "text": "能让机器人真正的干一些可以泛化"
+    },
+    {
+      "end_ms": 636320,
+      "sid": 263,
+      "source_segment_index": 262,
+      "start_ms": 634320,
+      "text": "然后特别可靠的任务"
+    },
+    {
+      "end_ms": 638240,
+      "sid": 264,
+      "source_segment_index": 263,
+      "start_ms": 636320,
+      "text": "然后能让他真正产生一些价值"
+    },
+    {
+      "end_ms": 640760,
+      "sid": 265,
+      "source_segment_index": 264,
+      "start_ms": 638240,
+      "text": "因为毕竟我是转到机器人的嘛"
+    },
+    {
+      "end_ms": 645850,
+      "sid": 266,
+      "source_segment_index": 265,
+      "start_ms": 640760,
+      "text": "所以多少就是之前会有一些跟实际现实不太"
+    },
+    {
+      "end_ms": 647590,
+      "sid": 267,
+      "source_segment_index": 266,
+      "start_ms": 645850,
+      "text": "align的这么一种认知"
+    },
+    {
+      "end_ms": 649450,
+      "sid": 268,
+      "source_segment_index": 267,
+      "start_ms": 647590,
+      "text": "就对齐的不太好的一些认知"
+    },
+    {
+      "end_ms": 651550,
+      "sid": 269,
+      "source_segment_index": 268,
+      "start_ms": 649450,
+      "text": "我觉得这个也是进公司以后"
+    },
+    {
+      "end_ms": 654240,
+      "sid": 270,
+      "source_segment_index": 269,
+      "start_ms": 651550,
+      "text": "比较独特的一些收获吧"
+    },
+    {
+      "end_ms": 656920,
+      "sid": 271,
+      "source_segment_index": 270,
+      "start_ms": 654240,
+      "text": "所以那个时候可能会慢慢的落地对吧"
+    },
+    {
+      "end_ms": 658140,
+      "sid": 272,
+      "source_segment_index": 271,
+      "start_ms": 656920,
+      "text": "慢慢的也会看到"
+    },
+    {
+      "end_ms": 659340,
+      "sid": 273,
+      "source_segment_index": 272,
+      "start_ms": 658140,
+      "text": "其实路还很长"
+    },
+    {
+      "end_ms": 663190,
+      "sid": 274,
+      "source_segment_index": 273,
+      "start_ms": 659340,
+      "text": "但是偶尔就是比如说干了一天"
+    },
+    {
+      "end_ms": 664410,
+      "sid": 275,
+      "source_segment_index": 274,
+      "start_ms": 663190,
+      "text": "走到这个大堂里面"
+    },
+    {
+      "end_ms": 666050,
+      "sid": 276,
+      "source_segment_index": 275,
+      "start_ms": 664410,
+      "text": "看到那么多机器人在走"
+    },
+    {
+      "end_ms": 668700,
+      "sid": 277,
+      "source_segment_index": 276,
+      "start_ms": 666050,
+      "text": "还是偶尔会有这种震撼的感觉"
+    },
+    {
+      "end_ms": 670660,
+      "sid": 278,
+      "source_segment_index": 277,
+      "start_ms": 668700,
+      "text": "突然又想到一个哈哈"
+    },
+    {
+      "end_ms": 674460,
+      "sid": 279,
+      "source_segment_index": 278,
+      "start_ms": 670660,
+      "text": "有点带带点这个攻击性的问题啊"
+    },
+    {
+      "end_ms": 676300,
+      "sid": 280,
+      "source_segment_index": 279,
+      "start_ms": 674460,
+      "text": "当然不是个不是对你个人啊"
+    },
+    {
+      "end_ms": 678280,
+      "sid": 281,
+      "source_segment_index": 280,
+      "start_ms": 676300,
+      "text": "figure为什么估值这么高呢"
+    },
+    {
+      "end_ms": 683210,
+      "sid": 282,
+      "source_segment_index": 281,
+      "start_ms": 678280,
+      "text": "就很好奇你觉得这个估值额比同行高这么多"
+    },
+    {
+      "end_ms": 684890,
+      "sid": 283,
+      "source_segment_index": 282,
+      "start_ms": 683210,
+      "text": "源源自于哪儿呢"
+    },
+    {
+      "end_ms": 687780,
+      "sid": 284,
+      "source_segment_index": 283,
+      "start_ms": 684890,
+      "text": "嗯我有时候也在思考这个问题"
+    },
+    {
+      "end_ms": 688980,
+      "sid": 285,
+      "source_segment_index": 284,
+      "start_ms": 687780,
+      "text": "我觉得有几方面吧"
+    },
+    {
+      "end_ms": 690820,
+      "sid": 286,
+      "source_segment_index": 285,
+      "start_ms": 688980,
+      "text": "一方面可能确实是创始人"
+    },
+    {
+      "end_ms": 693620,
+      "sid": 287,
+      "source_segment_index": 286,
+      "start_ms": 690820,
+      "text": "他比较会会搞钱啊"
+    },
+    {
+      "end_ms": 694660,
+      "sid": 288,
+      "source_segment_index": 287,
+      "start_ms": 693620,
+      "text": "这是一方面"
+    },
+    {
+      "end_ms": 698450,
+      "sid": 289,
+      "source_segment_index": 288,
+      "start_ms": 694660,
+      "text": "然后另一方面我也确实感觉到在这个公司"
+    },
+    {
+      "end_ms": 699630,
+      "sid": 290,
+      "source_segment_index": 289,
+      "start_ms": 698450,
+      "text": "以我观察到的"
+    },
+    {
+      "end_ms": 704560,
+      "sid": 291,
+      "source_segment_index": 290,
+      "start_ms": 699630,
+      "text": "其实他还是有一个挺强的这种商业团队"
+    },
+    {
+      "end_ms": 708240,
+      "sid": 292,
+      "source_segment_index": 291,
+      "start_ms": 704560,
+      "text": "就是说如何为机器人可能寻找到一些匹配的"
+    },
+    {
+      "end_ms": 709400,
+      "sid": 293,
+      "source_segment_index": 292,
+      "start_ms": 708240,
+      "text": "这种客户吧"
+    },
+    {
+      "end_ms": 713620,
+      "sid": 294,
+      "source_segment_index": 293,
+      "start_ms": 709400,
+      "text": "然后以及包括像可能平常如何present这个公司"
+    },
+    {
+      "end_ms": 716350,
+      "sid": 295,
+      "source_segment_index": 294,
+      "start_ms": 713620,
+      "text": "我觉得其实公司也是下了很多功夫"
+    },
+    {
+      "end_ms": 720030,
+      "sid": 296,
+      "source_segment_index": 295,
+      "start_ms": 716350,
+      "text": "包括可能它机器人外形的这种ID的design"
+    },
+    {
+      "end_ms": 721630,
+      "sid": 297,
+      "source_segment_index": 296,
+      "start_ms": 720030,
+      "text": "就这种工业设计"
+    },
+    {
+      "end_ms": 726060,
+      "sid": 298,
+      "source_segment_index": 297,
+      "start_ms": 721630,
+      "text": "还有包括可能给大家呈现出来的这种demo的调性"
+    },
+    {
+      "end_ms": 728620,
+      "sid": 299,
+      "source_segment_index": 298,
+      "start_ms": 726060,
+      "text": "甚至包括比如说你进到公司里面"
+    },
+    {
+      "end_ms": 731560,
+      "sid": 300,
+      "source_segment_index": 299,
+      "start_ms": 728620,
+      "text": "要贴这个手机和电脑的摄像头"
+    },
+    {
+      "end_ms": 734870,
+      "sid": 301,
+      "source_segment_index": 300,
+      "start_ms": 731560,
+      "text": "这些就反正各种细节你就能呃感觉出来"
+    },
+    {
+      "end_ms": 737750,
+      "sid": 302,
+      "source_segment_index": 301,
+      "start_ms": 734870,
+      "text": "就是公司还是比较在意自己的形象"
+    },
+    {
+      "end_ms": 739490,
+      "sid": 303,
+      "source_segment_index": 302,
+      "start_ms": 737750,
+      "text": "我觉得这方面也是呃"
+    },
+    {
+      "end_ms": 742310,
+      "sid": 304,
+      "source_segment_index": 303,
+      "start_ms": 739490,
+      "text": "起到了对这个估值一定的作用"
+    },
+    {
+      "end_ms": 745610,
+      "sid": 305,
+      "source_segment_index": 304,
+      "start_ms": 742310,
+      "text": "然后另外我觉得就是刚才也说这个商业"
+    },
+    {
+      "end_ms": 747850,
+      "sid": 306,
+      "source_segment_index": 305,
+      "start_ms": 745610,
+      "text": "他们拓展的这个能力"
+    },
+    {
+      "end_ms": 749710,
+      "sid": 307,
+      "source_segment_index": 306,
+      "start_ms": 747850,
+      "text": "我觉得也是啊很强"
+    },
+    {
+      "end_ms": 751350,
+      "sid": 308,
+      "source_segment_index": 307,
+      "start_ms": 749710,
+      "text": "就是其实呃"
+    },
+    {
+      "end_ms": 756319,
+      "sid": 309,
+      "source_segment_index": 308,
+      "start_ms": 751350,
+      "text": "我觉得figure可能是聊的客户应该是最多的呃"
+    },
+    {
+      "end_ms": 757599,
+      "sid": 310,
+      "source_segment_index": 309,
+      "start_ms": 756319,
+      "text": "几家公司之一吧"
+    },
+    {
+      "end_ms": 758359,
+      "sid": 311,
+      "source_segment_index": 310,
+      "start_ms": 757599,
+      "text": "另外一方面"
+    },
+    {
+      "end_ms": 761079,
+      "sid": 312,
+      "source_segment_index": 311,
+      "start_ms": 758359,
+      "text": "我觉得还有就是大家对这种人形"
+    },
+    {
+      "end_ms": 764699,
+      "sid": 313,
+      "source_segment_index": 312,
+      "start_ms": 761079,
+      "text": "可能自带有一种终局光环"
+    },
+    {
+      "end_ms": 768439,
+      "sid": 314,
+      "source_segment_index": 313,
+      "start_ms": 764699,
+      "text": "大家就觉得最终的形态可能就会是一个"
+    },
+    {
+      "end_ms": 769699,
+      "sid": 315,
+      "source_segment_index": 314,
+      "start_ms": 768439,
+      "text": "像人这样的"
+    },
+    {
+      "end_ms": 771730,
+      "sid": 316,
+      "source_segment_index": 315,
+      "start_ms": 769699,
+      "text": "所以如果有一家公司"
+    },
+    {
+      "end_ms": 774350,
+      "sid": 317,
+      "source_segment_index": 316,
+      "start_ms": 771730,
+      "text": "他说自己就要做这样的本体"
+    },
+    {
+      "end_ms": 776370,
+      "sid": 318,
+      "source_segment_index": 317,
+      "start_ms": 774350,
+      "text": "要做这种终局游戏"
+    },
+    {
+      "end_ms": 778150,
+      "sid": 319,
+      "source_segment_index": 318,
+      "start_ms": 776370,
+      "text": "然后他又开始的比较早"
+    },
+    {
+      "end_ms": 779770,
+      "sid": 320,
+      "source_segment_index": 319,
+      "start_ms": 778150,
+      "text": "然后又是在一个美国"
+    },
+    {
+      "end_ms": 781550,
+      "sid": 321,
+      "source_segment_index": 320,
+      "start_ms": 779770,
+      "text": "这样可能在当时那个时间"
+    },
+    {
+      "end_ms": 783780,
+      "sid": 322,
+      "source_segment_index": 321,
+      "start_ms": 781550,
+      "text": "机器人公司没有那么多的情况下"
+    },
+    {
+      "end_ms": 786530,
+      "sid": 323,
+      "source_segment_index": 322,
+      "start_ms": 783780,
+      "text": "那可能就会把这个饼做得很大"
+    },
+    {
+      "end_ms": 787290,
+      "sid": 324,
+      "source_segment_index": 323,
+      "start_ms": 786530,
+      "text": "下一个问题"
+    },
+    {
+      "end_ms": 790030,
+      "sid": 325,
+      "source_segment_index": 324,
+      "start_ms": 787290,
+      "text": "我觉得是一个非常非常尖锐的问题啊"
+    },
+    {
+      "end_ms": 794380,
+      "sid": 326,
+      "source_segment_index": 325,
+      "start_ms": 790030,
+      "text": "然后也是大家可能是最想问的一个问题"
+    },
+    {
+      "end_ms": 797610,
+      "sid": 327,
+      "source_segment_index": 326,
+      "start_ms": 794380,
+      "text": "就是有一群人每天都在说"
+    },
+    {
+      "end_ms": 799390,
+      "sid": 328,
+      "source_segment_index": 327,
+      "start_ms": 797610,
+      "text": "figure是个拍电影的公司"
+    },
+    {
+      "end_ms": 803770,
+      "sid": 329,
+      "source_segment_index": 328,
+      "start_ms": 799390,
+      "text": "哈哈因为因为那个视频实在拍的太好看了啊"
+    },
+    {
+      "end_ms": 806400,
+      "sid": 330,
+      "source_segment_index": 329,
+      "start_ms": 803770,
+      "text": "但是呢在各种展会上"
+    },
+    {
+      "end_ms": 809340,
+      "sid": 331,
+      "source_segment_index": 330,
+      "start_ms": 806400,
+      "text": "在各种这个开源的这个平台上"
+    },
+    {
+      "end_ms": 811700,
+      "sid": 332,
+      "source_segment_index": 331,
+      "start_ms": 809340,
+      "text": "在各种各样能看得到的这个地方呢"
+    },
+    {
+      "end_ms": 813360,
+      "sid": 333,
+      "source_segment_index": 332,
+      "start_ms": 811700,
+      "text": "你又你又看不到它对吧"
+    },
+    {
+      "end_ms": 815620,
+      "sid": 334,
+      "source_segment_index": 333,
+      "start_ms": 813360,
+      "text": "就是无论是CES呀"
+    },
+    {
+      "end_ms": 817570,
+      "sid": 335,
+      "source_segment_index": 334,
+      "start_ms": 815620,
+      "text": "还是呃RSS对吧"
+    },
+    {
+      "end_ms": 818790,
+      "sid": 336,
+      "source_segment_index": 335,
+      "start_ms": 817570,
+      "text": "还是WAIC"
+    },
+    {
+      "end_ms": 820960,
+      "sid": 337,
+      "source_segment_index": 336,
+      "start_ms": 818790,
+      "text": "从来没有见过figure尔机器人"
+    },
+    {
+      "end_ms": 823100,
+      "sid": 338,
+      "source_segment_index": 337,
+      "start_ms": 820960,
+      "text": "在现场做一些事情展示出来"
+    },
+    {
+      "end_ms": 825640,
+      "sid": 339,
+      "source_segment_index": 338,
+      "start_ms": 823100,
+      "text": "这一点上很好奇呃"
+    },
+    {
+      "end_ms": 827040,
+      "sid": 340,
+      "source_segment_index": 339,
+      "start_ms": 825640,
+      "text": "你如何评价啊"
+    },
+    {
+      "end_ms": 831120,
+      "sid": 341,
+      "source_segment_index": 340,
+      "start_ms": 827040,
+      "text": "就是对是是拍电影这种"
+    },
+    {
+      "end_ms": 833320,
+      "sid": 342,
+      "source_segment_index": 341,
+      "start_ms": 831120,
+      "text": "我觉得这个我当时入职之前"
+    },
+    {
+      "end_ms": 834640,
+      "sid": 343,
+      "source_segment_index": 342,
+      "start_ms": 833320,
+      "text": "我也是这么觉得的"
+    },
+    {
+      "end_ms": 835700,
+      "sid": 344,
+      "source_segment_index": 343,
+      "start_ms": 834640,
+      "text": "我也很好奇"
+    },
+    {
+      "end_ms": 839280,
+      "sid": 345,
+      "source_segment_index": 344,
+      "start_ms": 835700,
+      "text": "他为什么拍的视频跟别人调性如此不一样"
+    },
+    {
+      "end_ms": 841890,
+      "sid": 346,
+      "source_segment_index": 345,
+      "start_ms": 839280,
+      "text": "会不会有一些这种作假的嫌疑"
+    },
+    {
+      "end_ms": 842210,
+      "sid": 347,
+      "source_segment_index": 346,
+      "start_ms": 841890,
+      "text": "呃"
+    },
+    {
+      "end_ms": 843850,
+      "sid": 348,
+      "source_segment_index": 347,
+      "start_ms": 842210,
+      "text": "首先我觉得有一点是说"
+    },
+    {
+      "end_ms": 844250,
+      "sid": 349,
+      "source_segment_index": 348,
+      "start_ms": 843850,
+      "text": "静静荣"
+    },
+    {
+      "end_ms": 848110,
+      "sid": 350,
+      "source_segment_index": 349,
+      "start_ms": 844250,
+      "text": "发现他真的是在用电影团队来制作这个哈视频"
+    },
+    {
+      "end_ms": 850310,
+      "sid": 351,
+      "source_segment_index": 350,
+      "start_ms": 848110,
+      "text": "也就是说起码video production的quality"
+    },
+    {
+      "end_ms": 852740,
+      "sid": 352,
+      "source_segment_index": 351,
+      "start_ms": 850310,
+      "text": "就是你制作这个视频以及拍摄的设备"
+    },
+    {
+      "end_ms": 854740,
+      "sid": 353,
+      "source_segment_index": 352,
+      "start_ms": 852740,
+      "text": "这些确实是很专业的"
+    },
+    {
+      "end_ms": 856860,
+      "sid": 354,
+      "source_segment_index": 353,
+      "start_ms": 854740,
+      "text": "这可能是一定程度上给大家营造出来"
+    },
+    {
+      "end_ms": 859600,
+      "sid": 355,
+      "source_segment_index": 354,
+      "start_ms": 856860,
+      "text": "一种虚假感的这种原因吧"
+    },
+    {
+      "end_ms": 862480,
+      "sid": 356,
+      "source_segment_index": 355,
+      "start_ms": 859600,
+      "text": "我进去以后看到我觉得让我比较安心的一点"
+    },
+    {
+      "end_ms": 866430,
+      "sid": 357,
+      "source_segment_index": 356,
+      "start_ms": 862480,
+      "text": "还是其实所有的视频上面出来的东西"
+    },
+    {
+      "end_ms": 867930,
+      "sid": 358,
+      "source_segment_index": 357,
+      "start_ms": 866430,
+      "text": "确实都是自主的"
+    },
+    {
+      "end_ms": 871410,
+      "sid": 359,
+      "source_segment_index": 358,
+      "start_ms": 867930,
+      "text": "确实也没有像大家怀疑的就是摇操作"
+    },
+    {
+      "end_ms": 874289,
+      "sid": 360,
+      "source_segment_index": 359,
+      "start_ms": 871410,
+      "text": "这样干了一段这个行业以后"
+    },
+    {
+      "end_ms": 878580,
+      "sid": 361,
+      "source_segment_index": 360,
+      "start_ms": 874289,
+      "text": "你就会发现其实有的动作也并没有那么难"
+    },
+    {
+      "end_ms": 881360,
+      "sid": 362,
+      "source_segment_index": 361,
+      "start_ms": 878580,
+      "text": "不管是之前比如说快递的这种直播"
+    },
+    {
+      "end_ms": 883040,
+      "sid": 363,
+      "source_segment_index": 362,
+      "start_ms": 881360,
+      "text": "然后整理洗碗机"
+    },
+    {
+      "end_ms": 884340,
+      "sid": 364,
+      "source_segment_index": 363,
+      "start_ms": 883040,
+      "text": "还有一个比较啊"
+    },
+    {
+      "end_ms": 885020,
+      "sid": 365,
+      "source_segment_index": 364,
+      "start_ms": 884340,
+      "text": "有意思的是"
+    },
+    {
+      "end_ms": 887620,
+      "sid": 366,
+      "source_segment_index": 365,
+      "start_ms": 885020,
+      "text": "拿这个胯部顶一下这个抽屉"
+    },
+    {
+      "end_ms": 888540,
+      "sid": 367,
+      "source_segment_index": 366,
+      "start_ms": 887620,
+      "text": "包括整理床铺"
+    },
+    {
+      "end_ms": 889540,
+      "sid": 368,
+      "source_segment_index": 367,
+      "start_ms": 888540,
+      "text": "这些都是真的"
+    },
+    {
+      "end_ms": 891360,
+      "sid": 369,
+      "source_segment_index": 368,
+      "start_ms": 889540,
+      "text": "我觉得figure放出来的视频"
+    },
+    {
+      "end_ms": 894440,
+      "sid": 370,
+      "source_segment_index": 369,
+      "start_ms": 891360,
+      "text": "从来都是one x和autonomous"
+    },
+    {
+      "end_ms": 896480,
+      "sid": 371,
+      "source_segment_index": 370,
+      "start_ms": 894440,
+      "text": "这个其实不用太怀疑"
+    },
+    {
+      "end_ms": 900520,
+      "sid": 372,
+      "source_segment_index": 371,
+      "start_ms": 896480,
+      "text": "根本原因是我觉得figure的这个whole body control"
+    },
+    {
+      "end_ms": 902000,
+      "sid": 373,
+      "source_segment_index": 372,
+      "start_ms": 900520,
+      "text": "就这种全身控制"
+    },
+    {
+      "end_ms": 904600,
+      "sid": 374,
+      "source_segment_index": 373,
+      "start_ms": 902000,
+      "text": "然后以及它硬件的这种协调性"
+    },
+    {
+      "end_ms": 906720,
+      "sid": 375,
+      "source_segment_index": 374,
+      "start_ms": 904600,
+      "text": "然后以及它的这种反应迅速"
+    },
+    {
+      "end_ms": 910400,
+      "sid": 376,
+      "source_segment_index": 375,
+      "start_ms": 906720,
+      "text": "这方面是真正可能门槛比较高的"
+    },
+    {
+      "end_ms": 911860,
+      "sid": 377,
+      "source_segment_index": 376,
+      "start_ms": 910400,
+      "text": "然后不太好做到的"
+    },
+    {
+      "end_ms": 914600,
+      "sid": 378,
+      "source_segment_index": 377,
+      "start_ms": 911860,
+      "text": "一旦这些基础设施有了以后"
+    },
+    {
+      "end_ms": 919040,
+      "sid": 379,
+      "source_segment_index": 378,
+      "start_ms": 914600,
+      "text": "其实要学一些动作并不是特别的困难"
+    },
+    {
+      "end_ms": 922230,
+      "sid": 380,
+      "source_segment_index": 379,
+      "start_ms": 919040,
+      "text": "所以我觉得大家可能呃更应该琢磨的就是说"
+    },
+    {
+      "end_ms": 927470,
+      "sid": 381,
+      "source_segment_index": 380,
+      "start_ms": 922230,
+      "text": "figure是如何把动作和硬件做到如此的丝滑呢"
+    },
+    {
+      "end_ms": 931140,
+      "sid": 382,
+      "source_segment_index": 381,
+      "start_ms": 927470,
+      "text": "我觉得这方面可能是呃确实非常领先的"
+    },
+    {
+      "end_ms": 936130,
+      "sid": 383,
+      "source_segment_index": 382,
+      "start_ms": 931140,
+      "text": "然后至于说就是为什么呃没有在外面真正demo过"
+    },
+    {
+      "end_ms": 939800,
+      "sid": 384,
+      "source_segment_index": 383,
+      "start_ms": 936130,
+      "text": "我觉得一方面跟公司的这种想营造出来的调性"
+    },
+    {
+      "end_ms": 941120,
+      "sid": 385,
+      "source_segment_index": 384,
+      "start_ms": 939800,
+      "text": "还是有关系吧"
+    },
+    {
+      "end_ms": 944300,
+      "sid": 386,
+      "source_segment_index": 385,
+      "start_ms": 941120,
+      "text": "figure可能一直就是想营造出来一种比较酷"
+    },
+    {
+      "end_ms": 949190,
+      "sid": 387,
+      "source_segment_index": 386,
+      "start_ms": 944300,
+      "text": "包括他的各种设计可能也是比较精心雕琢过的"
+    },
+    {
+      "end_ms": 951670,
+      "sid": 388,
+      "source_segment_index": 387,
+      "start_ms": 949190,
+      "text": "这种公司给人的感觉嗯"
+    },
+    {
+      "end_ms": 952850,
+      "sid": 389,
+      "source_segment_index": 388,
+      "start_ms": 951670,
+      "text": "另一方面坦诚的说"
+    },
+    {
+      "end_ms": 956250,
+      "sid": 390,
+      "source_segment_index": 389,
+      "start_ms": 952850,
+      "text": "我觉得人形机器人过早的对外暴露"
+    },
+    {
+      "end_ms": 958410,
+      "sid": 391,
+      "source_segment_index": 390,
+      "start_ms": 956250,
+      "text": "其实确实会有一些风险"
+    },
+    {
+      "end_ms": 961099,
+      "sid": 392,
+      "source_segment_index": 391,
+      "start_ms": 958410,
+      "text": "可能还是需要时间更长一点"
+    },
+    {
+      "end_ms": 962819,
+      "sid": 393,
+      "source_segment_index": 392,
+      "start_ms": 961099,
+      "text": "然后包括他的要求也更高吧"
+    },
+    {
+      "end_ms": 966210,
+      "sid": 394,
+      "source_segment_index": 393,
+      "start_ms": 962819,
+      "text": "因为毕竟他是一个有腿的存在"
+    },
+    {
+      "end_ms": 969790,
+      "sid": 395,
+      "source_segment_index": 394,
+      "start_ms": 966210,
+      "text": "然后它的重量可能得有70多公斤左右"
+    },
+    {
+      "end_ms": 971410,
+      "sid": 396,
+      "source_segment_index": 395,
+      "start_ms": 969790,
+      "text": "那如果他摔倒了"
+    },
+    {
+      "end_ms": 973400,
+      "sid": 397,
+      "source_segment_index": 396,
+      "start_ms": 971410,
+      "text": "或者说做的一些动作不对"
+    },
+    {
+      "end_ms": 976160,
+      "sid": 398,
+      "source_segment_index": 397,
+      "start_ms": 973400,
+      "text": "我觉得网上可能也看到了一些这种机器人"
+    },
+    {
+      "end_ms": 978900,
+      "sid": 399,
+      "source_segment_index": 398,
+      "start_ms": 976160,
+      "text": "跳舞的时候可能啊不小心就是打到别人"
+    },
+    {
+      "end_ms": 979860,
+      "sid": 400,
+      "source_segment_index": 399,
+      "start_ms": 978900,
+      "text": "像这种铁家伙"
+    },
+    {
+      "end_ms": 981980,
+      "sid": 401,
+      "source_segment_index": 400,
+      "start_ms": 979860,
+      "text": "其实你看他动作丝滑的时候"
+    },
+    {
+      "end_ms": 983340,
+      "sid": 402,
+      "source_segment_index": 401,
+      "start_ms": 981980,
+      "text": "还是看着挺可靠"
+    },
+    {
+      "end_ms": 985730,
+      "sid": 403,
+      "source_segment_index": 402,
+      "start_ms": 983340,
+      "text": "但是其实当他不太对的时候"
+    },
+    {
+      "end_ms": 987430,
+      "sid": 404,
+      "source_segment_index": 403,
+      "start_ms": 985730,
+      "text": "他的这个力量是很大的"
+    },
+    {
+      "end_ms": 991770,
+      "sid": 405,
+      "source_segment_index": 404,
+      "start_ms": 987430,
+      "text": "所以这些确实会让我们有更高的这种"
+    },
+    {
+      "end_ms": 993090,
+      "sid": 406,
+      "source_segment_index": 405,
+      "start_ms": 991770,
+      "text": "比如平常测试"
+    },
+    {
+      "end_ms": 995650,
+      "sid": 407,
+      "source_segment_index": 406,
+      "start_ms": 993090,
+      "text": "然后以及对于这个能deploy的东西"
+    },
+    {
+      "end_ms": 996540,
+      "sid": 408,
+      "source_segment_index": 407,
+      "start_ms": 995650,
+      "text": "会有更高的要求"
+    },
+    {
+      "end_ms": 999500,
+      "sid": 409,
+      "source_segment_index": 408,
+      "start_ms": 996540,
+      "text": "所以我觉得可能公司在这方面还是比较谨慎吧"
+    },
+    {
+      "end_ms": 1003670,
+      "sid": 410,
+      "source_segment_index": 409,
+      "start_ms": 999500,
+      "text": "但是也欢迎大家就是虽然可能对外不太能呃"
+    },
+    {
+      "end_ms": 1004790,
+      "sid": 411,
+      "source_segment_index": 410,
+      "start_ms": 1003670,
+      "text": "就进公司参观"
+    },
+    {
+      "end_ms": 1006990,
+      "sid": 412,
+      "source_segment_index": 411,
+      "start_ms": 1004790,
+      "text": "但是可能有一些比如投资人也好"
+    },
+    {
+      "end_ms": 1008710,
+      "sid": 413,
+      "source_segment_index": 412,
+      "start_ms": 1006990,
+      "text": "或者客户也好"
+    },
+    {
+      "end_ms": 1009590,
+      "sid": 414,
+      "source_segment_index": 413,
+      "start_ms": 1008710,
+      "text": "他们看到以后"
+    },
+    {
+      "end_ms": 1012770,
+      "sid": 415,
+      "source_segment_index": 414,
+      "start_ms": 1009590,
+      "text": "我觉得呃那个感受还是很震撼"
+    },
+    {
+      "end_ms": 1013530,
+      "sid": 416,
+      "source_segment_index": 415,
+      "start_ms": 1012770,
+      "text": "很真实的"
+    },
+    {
+      "end_ms": 1016890,
+      "sid": 417,
+      "source_segment_index": 416,
+      "start_ms": 1013530,
+      "text": "呃那我们还是回到刚刚那个拍拍视频这件事"
+    },
+    {
+      "end_ms": 1020680,
+      "sid": 418,
+      "source_segment_index": 417,
+      "start_ms": 1016890,
+      "text": "你觉得这个现在是否还仍然"
+    },
+    {
+      "end_ms": 1022540,
+      "sid": 419,
+      "source_segment_index": 418,
+      "start_ms": 1020680,
+      "text": "是一件很重要的事情"
+    },
+    {
+      "end_ms": 1025340,
+      "sid": 420,
+      "source_segment_index": 419,
+      "start_ms": 1022540,
+      "text": "到底什么样的demo是一个好的demo"
+    },
+    {
+      "end_ms": 1026940,
+      "sid": 421,
+      "source_segment_index": 420,
+      "start_ms": 1025340,
+      "text": "最近你除了figure以外"
+    },
+    {
+      "end_ms": 1029280,
+      "sid": 422,
+      "source_segment_index": 421,
+      "start_ms": 1026940,
+      "text": "有很好的demo让你觉得很震撼"
+    },
+    {
+      "end_ms": 1032800,
+      "sid": 423,
+      "source_segment_index": 422,
+      "start_ms": 1029280,
+      "text": "或者是让你觉得真的产生了一些进展吗"
+    },
+    {
+      "end_ms": 1036160,
+      "sid": 424,
+      "source_segment_index": 423,
+      "start_ms": 1032800,
+      "text": "总体上我感觉进入到2026年以后"
+    },
+    {
+      "end_ms": 1039380,
+      "sid": 425,
+      "source_segment_index": 424,
+      "start_ms": 1036160,
+      "text": "好像demo的门槛确实在提高"
+    },
+    {
+      "end_ms": 1043120,
+      "sid": 426,
+      "source_segment_index": 425,
+      "start_ms": 1039380,
+      "text": "好像大家对于一般的就是说能干一个事儿"
+    },
+    {
+      "end_ms": 1044240,
+      "sid": 427,
+      "source_segment_index": 426,
+      "start_ms": 1043120,
+      "text": "已经有点麻木"
+    },
+    {
+      "end_ms": 1048190,
+      "sid": 428,
+      "source_segment_index": 427,
+      "start_ms": 1044240,
+      "text": "或者说就是能跳一个什么五已经有点麻木了"
+    },
+    {
+      "end_ms": 1049630,
+      "sid": 429,
+      "source_segment_index": 428,
+      "start_ms": 1048190,
+      "text": "demo我觉得还是有用的"
+    },
+    {
+      "end_ms": 1053080,
+      "sid": 430,
+      "source_segment_index": 429,
+      "start_ms": 1049630,
+      "text": "但是可能大家关注的点会更加的细致"
+    },
+    {
+      "end_ms": 1058380,
+      "sid": 431,
+      "source_segment_index": 430,
+      "start_ms": 1053080,
+      "text": "比如说像之前破壳展示这种超长城的这种操作"
+    },
+    {
+      "end_ms": 1062320,
+      "sid": 432,
+      "source_segment_index": 431,
+      "start_ms": 1058380,
+      "text": "我觉得像这种可能对没有见啊"
+    },
+    {
+      "end_ms": 1062860,
+      "sid": 433,
+      "source_segment_index": 432,
+      "start_ms": 1062320,
+      "text": "对对对"
+    },
+    {
+      "end_ms": 1065480,
+      "sid": 434,
+      "source_segment_index": 433,
+      "start_ms": 1062860,
+      "text": "就我觉得还是确实还是很impressive"
+    },
+    {
+      "end_ms": 1067870,
+      "sid": 435,
+      "source_segment_index": 434,
+      "start_ms": 1065480,
+      "text": "我也是呃仔细学习了一下"
+    },
+    {
+      "end_ms": 1069970,
+      "sid": 436,
+      "source_segment_index": 435,
+      "start_ms": 1067870,
+      "text": "因为我也知道就你拍的很长的话"
+    },
+    {
+      "end_ms": 1070350,
+      "sid": 437,
+      "source_segment_index": 436,
+      "start_ms": 1069970,
+      "text": "呃"
+    },
+    {
+      "end_ms": 1072530,
+      "sid": 438,
+      "source_segment_index": 437,
+      "start_ms": 1070350,
+      "text": "然后如果要保证中间没有错误"
+    },
+    {
+      "end_ms": 1074090,
+      "sid": 439,
+      "source_segment_index": 438,
+      "start_ms": 1072530,
+      "text": "还是还是比较难的"
+    },
+    {
+      "end_ms": 1076760,
+      "sid": 440,
+      "source_segment_index": 439,
+      "start_ms": 1074090,
+      "text": "因为他是指数级的难度嘛"
+    },
+    {
+      "end_ms": 1079980,
+      "sid": 441,
+      "source_segment_index": 440,
+      "start_ms": 1076760,
+      "text": "然后另外一种我觉得就是可能除了长城以外"
+    },
+    {
+      "end_ms": 1081930,
+      "sid": 442,
+      "source_segment_index": 441,
+      "start_ms": 1079980,
+      "text": "就是这种特别灵巧"
+    },
+    {
+      "end_ms": 1085370,
+      "sid": 443,
+      "source_segment_index": 442,
+      "start_ms": 1081930,
+      "text": "或者说带一点这种即兴发挥的这种视频"
+    },
+    {
+      "end_ms": 1087450,
+      "sid": 444,
+      "source_segment_index": 443,
+      "start_ms": 1085370,
+      "text": "我觉得还是看起来很有意思的"
+    },
+    {
+      "end_ms": 1091500,
+      "sid": 445,
+      "source_segment_index": 444,
+      "start_ms": 1087450,
+      "text": "比如说最近SUNDAY发的这种叠衣服的视频"
+    },
+    {
+      "end_ms": 1094180,
+      "sid": 446,
+      "source_segment_index": 445,
+      "start_ms": 1091500,
+      "text": "你可以看到里面有很多比较复杂的"
+    },
+    {
+      "end_ms": 1098970,
+      "sid": 447,
+      "source_segment_index": 446,
+      "start_ms": 1094180,
+      "text": "或者说这个状态是以前嗯不太不太见过的啊"
+    },
+    {
+      "end_ms": 1102350,
+      "sid": 448,
+      "source_segment_index": 447,
+      "start_ms": 1098970,
+      "text": "他都能cover这种视频还是挺有意义的"
+    },
+    {
+      "end_ms": 1102810,
+      "sid": 449,
+      "source_segment_index": 448,
+      "start_ms": 1102350,
+      "text": "对"
+    },
+    {
+      "end_ms": 1104580,
+      "sid": 450,
+      "source_segment_index": 449,
+      "start_ms": 1102810,
+      "text": "但是可能越来越多的"
+    },
+    {
+      "end_ms": 1107260,
+      "sid": 451,
+      "source_segment_index": 450,
+      "start_ms": 1104580,
+      "text": "就是一个相对简单一点的视频"
+    },
+    {
+      "end_ms": 1111360,
+      "sid": 452,
+      "source_segment_index": 451,
+      "start_ms": 1107260,
+      "text": "它的重要性在2026年以后就慢慢的下降了"
+    },
+    {
+      "end_ms": 1114080,
+      "sid": 453,
+      "source_segment_index": 452,
+      "start_ms": 1111360,
+      "text": "因为也是领域变得越来越好了吧"
+    },
+    {
+      "end_ms": 1116180,
+      "sid": 454,
+      "source_segment_index": 453,
+      "start_ms": 1114080,
+      "text": "还有一个figure最近做的一件事"
+    },
+    {
+      "end_ms": 1118500,
+      "sid": 455,
+      "source_segment_index": 454,
+      "start_ms": 1116180,
+      "text": "是进行了一场X24对吧"
+    },
+    {
+      "end_ms": 1122720,
+      "sid": 456,
+      "source_segment_index": 455,
+      "start_ms": 1118500,
+      "text": "就是这个连续的呃直播翻这个物流的包裹"
+    },
+    {
+      "end_ms": 1126249,
+      "sid": 457,
+      "source_segment_index": 456,
+      "start_ms": 1122720,
+      "text": "你觉得这里面的核心难点是什么"
+    },
+    {
+      "end_ms": 1128809,
+      "sid": 458,
+      "source_segment_index": 457,
+      "start_ms": 1126249,
+      "text": "以及在这个呃直播的过程中"
+    },
+    {
+      "end_ms": 1132349,
+      "sid": 459,
+      "source_segment_index": 458,
+      "start_ms": 1128809,
+      "text": "你觉得他是满足预期还是远超预期"
+    },
+    {
+      "end_ms": 1134310,
+      "sid": 460,
+      "source_segment_index": 459,
+      "start_ms": 1132349,
+      "text": "还是呃低于预期"
+    },
+    {
+      "end_ms": 1137370,
+      "sid": 461,
+      "source_segment_index": 460,
+      "start_ms": 1134310,
+      "text": "其实我觉得这个任务本身"
+    },
+    {
+      "end_ms": 1140229,
+      "sid": 462,
+      "source_segment_index": 461,
+      "start_ms": 1137370,
+      "text": "从它体现出来的智能来上来说"
+    },
+    {
+      "end_ms": 1143150,
+      "sid": 463,
+      "source_segment_index": 462,
+      "start_ms": 1140229,
+      "text": "我觉得并不是一个很难很难的任务"
+    },
+    {
+      "end_ms": 1146270,
+      "sid": 464,
+      "source_segment_index": 463,
+      "start_ms": 1143150,
+      "text": "我觉得这个视频对我来说最impressive的一点"
+    },
+    {
+      "end_ms": 1149840,
+      "sid": 465,
+      "source_segment_index": 464,
+      "start_ms": 1146270,
+      "text": "我觉得可能更多的是他这个动作的流畅程度"
+    },
+    {
+      "end_ms": 1152660,
+      "sid": 466,
+      "source_segment_index": 465,
+      "start_ms": 1149840,
+      "text": "以及他的这个系统的稳定性吧"
+    },
+    {
+      "end_ms": 1156439,
+      "sid": 467,
+      "source_segment_index": 466,
+      "start_ms": 1152660,
+      "text": "因为毕竟是一个很长时间的一个直播"
+    },
+    {
+      "end_ms": 1159699,
+      "sid": 468,
+      "source_segment_index": 467,
+      "start_ms": 1156439,
+      "text": "所以这样就会对你的系统的各个层面"
+    },
+    {
+      "end_ms": 1160559,
+      "sid": 469,
+      "source_segment_index": 468,
+      "start_ms": 1159699,
+      "text": "都要有要求"
+    },
+    {
+      "end_ms": 1162359,
+      "sid": 470,
+      "source_segment_index": 469,
+      "start_ms": 1160559,
+      "text": "比如说我们机器人的这个时长"
+    },
+    {
+      "end_ms": 1164980,
+      "sid": 471,
+      "source_segment_index": 470,
+      "start_ms": 1162359,
+      "text": "可能是差不多三个小时左右"
+    },
+    {
+      "end_ms": 1166760,
+      "sid": 472,
+      "source_segment_index": 471,
+      "start_ms": 1164980,
+      "text": "那么这个机器人它没电了"
+    },
+    {
+      "end_ms": 1168460,
+      "sid": 473,
+      "source_segment_index": 472,
+      "start_ms": 1166760,
+      "text": "它就要回去去充电"
+    },
+    {
+      "end_ms": 1169800,
+      "sid": 474,
+      "source_segment_index": 473,
+      "start_ms": 1168460,
+      "text": "其实这中间也有很多"
+    },
+    {
+      "end_ms": 1173710,
+      "sid": 475,
+      "source_segment_index": 474,
+      "start_ms": 1169800,
+      "text": "这种可能并不是所谓现在最火的这种狙神"
+    },
+    {
+      "end_ms": 1174450,
+      "sid": 476,
+      "source_segment_index": 475,
+      "start_ms": 1173710,
+      "text": "智能部分"
+    },
+    {
+      "end_ms": 1175470,
+      "sid": 477,
+      "source_segment_index": 476,
+      "start_ms": 1174450,
+      "text": "来handle模型"
+    },
+    {
+      "end_ms": 1176710,
+      "sid": 478,
+      "source_segment_index": 477,
+      "start_ms": 1175470,
+      "text": "来handle的部分"
+    },
+    {
+      "end_ms": 1178790,
+      "sid": 479,
+      "source_segment_index": 478,
+      "start_ms": 1176710,
+      "text": "但是这些部分整个要做好"
+    },
+    {
+      "end_ms": 1182270,
+      "sid": 480,
+      "source_segment_index": 479,
+      "start_ms": 1178790,
+      "text": "然后保证这个硬件也非常的reliable"
+    },
+    {
+      "end_ms": 1185150,
+      "sid": 481,
+      "source_segment_index": 480,
+      "start_ms": 1182270,
+      "text": "我觉得这个总体上还是比较impressive"
+    },
+    {
+      "end_ms": 1187990,
+      "sid": 482,
+      "source_segment_index": 481,
+      "start_ms": 1185150,
+      "text": "这个其实是我当时最震撼的一点"
+    },
+    {
+      "end_ms": 1192070,
+      "sid": 483,
+      "source_segment_index": 482,
+      "start_ms": 1187990,
+      "text": "然后可能直播中出现的比较有意思"
+    },
+    {
+      "end_ms": 1194750,
+      "sid": 484,
+      "source_segment_index": 483,
+      "start_ms": 1192070,
+      "text": "是可能因为本来是进行呃"
+    },
+    {
+      "end_ms": 1197400,
+      "sid": 485,
+      "source_segment_index": 484,
+      "start_ms": 1194750,
+      "text": "7×24呃小时的直播"
+    },
+    {
+      "end_ms": 1200090,
+      "sid": 486,
+      "source_segment_index": 485,
+      "start_ms": 1197400,
+      "text": "后来就是可能看好像也没什么问题"
+    },
+    {
+      "end_ms": 1201910,
+      "sid": 487,
+      "source_segment_index": 486,
+      "start_ms": 1200090,
+      "text": "最后继续延长了一下"
+    },
+    {
+      "end_ms": 1204550,
+      "sid": 488,
+      "source_segment_index": 487,
+      "start_ms": 1201910,
+      "text": "我当时看这个还是啊挺有意思的"
+    },
+    {
+      "end_ms": 1206900,
+      "sid": 489,
+      "source_segment_index": 488,
+      "start_ms": 1204550,
+      "text": "最后延长到这个200个小时呃"
+    },
+    {
+      "end_ms": 1209730,
+      "sid": 490,
+      "source_segment_index": 489,
+      "start_ms": 1206900,
+      "text": "其实我也不知道是公司本来就这样计划"
+    },
+    {
+      "end_ms": 1212210,
+      "sid": 491,
+      "source_segment_index": 490,
+      "start_ms": 1209730,
+      "text": "还是觉得没什么问题啊"
+    },
+    {
+      "end_ms": 1212990,
+      "sid": 492,
+      "source_segment_index": 491,
+      "start_ms": 1212210,
+      "text": "延长了一下"
+    },
+    {
+      "end_ms": 1214930,
+      "sid": 493,
+      "source_segment_index": 492,
+      "start_ms": 1212990,
+      "text": "但总之我觉得还是体现出来"
+    },
+    {
+      "end_ms": 1216720,
+      "sid": 494,
+      "source_segment_index": 493,
+      "start_ms": 1214930,
+      "text": "他的这个系统比较稳定"
+    },
+    {
+      "end_ms": 1218000,
+      "sid": 495,
+      "source_segment_index": 494,
+      "start_ms": 1216720,
+      "text": "总体还是挺成功"
+    },
+    {
+      "end_ms": 1220360,
+      "sid": 496,
+      "source_segment_index": 495,
+      "start_ms": 1218000,
+      "text": "我记得我也点开看过一段时间"
+    },
+    {
+      "end_ms": 1224610,
+      "sid": 497,
+      "source_segment_index": 496,
+      "start_ms": 1220360,
+      "text": "然后能看到评论区有网友给这个呃"
+    },
+    {
+      "end_ms": 1225970,
+      "sid": 498,
+      "source_segment_index": 497,
+      "start_ms": 1224610,
+      "text": "机器人起名字"
+    },
+    {
+      "end_ms": 1227750,
+      "sid": 499,
+      "source_segment_index": 498,
+      "start_ms": 1225970,
+      "text": "然后说这个是frank"
+    },
+    {
+      "end_ms": 1228790,
+      "sid": 500,
+      "source_segment_index": 499,
+      "start_ms": 1227750,
+      "text": "这个是GARY"
+    },
+    {
+      "end_ms": 1229510,
+      "sid": 501,
+      "source_segment_index": 500,
+      "start_ms": 1228790,
+      "text": "这个是rose"
+    },
+    {
+      "end_ms": 1233090,
+      "sid": 502,
+      "source_segment_index": 501,
+      "start_ms": 1229510,
+      "text": "然后说这个GARY总是干活不太行啊"
+    },
+    {
+      "end_ms": 1234930,
+      "sid": 503,
+      "source_segment_index": 502,
+      "start_ms": 1233090,
+      "text": "frank干的就比较好哈"
+    },
+    {
+      "end_ms": 1237410,
+      "sid": 504,
+      "source_segment_index": 503,
+      "start_ms": 1234930,
+      "text": "我觉得还还挺有网感的"
+    },
+    {
+      "end_ms": 1240250,
+      "sid": 505,
+      "source_segment_index": 504,
+      "start_ms": 1237410,
+      "text": "因为后来也是把这个名字真的贴到机器人上"
+    },
+    {
+      "end_ms": 1242070,
+      "sid": 506,
+      "source_segment_index": 505,
+      "start_ms": 1240250,
+      "text": "我觉得总体上嗯"
+    },
+    {
+      "end_ms": 1244970,
+      "sid": 507,
+      "source_segment_index": 506,
+      "start_ms": 1242070,
+      "text": "从宣传效果上来说还是挺成功的"
+    },
+    {
+      "end_ms": 1245970,
+      "sid": 508,
+      "source_segment_index": 507,
+      "start_ms": 1244970,
+      "text": "那很好奇"
+    },
+    {
+      "end_ms": 1250259,
+      "sid": 509,
+      "source_segment_index": 508,
+      "start_ms": 1245970,
+      "text": "就是说呃figure是一个很很大的一个公司了"
+    },
+    {
+      "end_ms": 1251539,
+      "sid": 510,
+      "source_segment_index": 509,
+      "start_ms": 1250259,
+      "text": "就是它呈现的"
+    },
+    {
+      "end_ms": 1254020,
+      "sid": 511,
+      "source_segment_index": 510,
+      "start_ms": 1251539,
+      "text": "比如说前面拍的视频很多都在家里面拍的"
+    },
+    {
+      "end_ms": 1257020,
+      "sid": 512,
+      "source_segment_index": 511,
+      "start_ms": 1254020,
+      "text": "但这个直播呢是在这个工厂物流产线上"
+    },
+    {
+      "end_ms": 1260100,
+      "sid": 513,
+      "source_segment_index": 512,
+      "start_ms": 1257020,
+      "text": "所以在figure的这个想要做的scope对吧"
+    },
+    {
+      "end_ms": 1261470,
+      "sid": 514,
+      "source_segment_index": 513,
+      "start_ms": 1260100,
+      "text": "这个这个范围里面"
+    },
+    {
+      "end_ms": 1264290,
+      "sid": 515,
+      "source_segment_index": 514,
+      "start_ms": 1261470,
+      "text": "所以他其实是在在家里面"
+    },
+    {
+      "end_ms": 1266490,
+      "sid": 516,
+      "source_segment_index": 515,
+      "start_ms": 1264290,
+      "text": "在呃工厂产线上"
+    },
+    {
+      "end_ms": 1269810,
+      "sid": 517,
+      "source_segment_index": 516,
+      "start_ms": 1266490,
+      "text": "包括在在之前好像有宝马工厂的这个汽车"
+    },
+    {
+      "end_ms": 1271179,
+      "sid": 518,
+      "source_segment_index": 517,
+      "start_ms": 1269810,
+      "text": "产线上等等"
+    },
+    {
+      "end_ms": 1274779,
+      "sid": 519,
+      "source_segment_index": 518,
+      "start_ms": 1271179,
+      "text": "所以这些都是这个figure想要做的事情是吧"
+    },
+    {
+      "end_ms": 1278530,
+      "sid": 520,
+      "source_segment_index": 519,
+      "start_ms": 1274779,
+      "text": "对我觉得figure scope应该就是既包括了家用"
+    },
+    {
+      "end_ms": 1281710,
+      "sid": 521,
+      "source_segment_index": 520,
+      "start_ms": 1278530,
+      "text": "也包括这种工厂的这种商业的应用"
+    },
+    {
+      "end_ms": 1284450,
+      "sid": 522,
+      "source_segment_index": 521,
+      "start_ms": 1281710,
+      "text": "所以我觉得他总体上就是想解决所有的physical"
+    },
+    {
+      "end_ms": 1285370,
+      "sid": 523,
+      "source_segment_index": 522,
+      "start_ms": 1284450,
+      "text": "Labor"
+    },
+    {
+      "end_ms": 1286150,
+      "sid": 524,
+      "source_segment_index": 523,
+      "start_ms": 1285370,
+      "text": "Figure"
+    },
+    {
+      "end_ms": 1288570,
+      "sid": 525,
+      "source_segment_index": 524,
+      "start_ms": 1286150,
+      "text": "既进工厂也进家庭啊"
+    },
+    {
+      "end_ms": 1290170,
+      "sid": 526,
+      "source_segment_index": 525,
+      "start_ms": 1288570,
+      "text": "你觉得这件事对你来说"
+    },
+    {
+      "end_ms": 1293510,
+      "sid": 527,
+      "source_segment_index": 526,
+      "start_ms": 1290170,
+      "text": "或者从一个研究者的角度去看"
+    },
+    {
+      "end_ms": 1297750,
+      "sid": 528,
+      "source_segment_index": 527,
+      "start_ms": 1293510,
+      "text": "这两件事是独立的两件事还是递进的两件事"
+    },
+    {
+      "end_ms": 1300330,
+      "sid": 529,
+      "source_segment_index": 528,
+      "start_ms": 1297750,
+      "text": "有一派或者叫有一拨人会认为"
+    },
+    {
+      "end_ms": 1302409,
+      "sid": 530,
+      "source_segment_index": 529,
+      "start_ms": 1300330,
+      "text": "我先在工业落地部署"
+    },
+    {
+      "end_ms": 1304229,
+      "sid": 531,
+      "source_segment_index": 530,
+      "start_ms": 1302409,
+      "text": "这个时候我积累了很多数据"
+    },
+    {
+      "end_ms": 1305349,
+      "sid": 532,
+      "source_segment_index": 531,
+      "start_ms": 1304229,
+      "text": "滚了很多雪球"
+    },
+    {
+      "end_ms": 1308049,
+      "sid": 533,
+      "source_segment_index": 532,
+      "start_ms": 1305349,
+      "text": "然后我可能就进家变得更容易啊"
+    },
+    {
+      "end_ms": 1309349,
+      "sid": 534,
+      "source_segment_index": 533,
+      "start_ms": 1308049,
+      "text": "还有的人可能会认为"
+    },
+    {
+      "end_ms": 1312060,
+      "sid": 535,
+      "source_segment_index": 534,
+      "start_ms": 1309349,
+      "text": "这两个事情可能是相对独立的"
+    },
+    {
+      "end_ms": 1313280,
+      "sid": 536,
+      "source_segment_index": 535,
+      "start_ms": 1312060,
+      "text": "可能用的同样的本体"
+    },
+    {
+      "end_ms": 1315460,
+      "sid": 537,
+      "source_segment_index": 536,
+      "start_ms": 1313280,
+      "text": "但是这个最终想要去做"
+    },
+    {
+      "end_ms": 1317060,
+      "sid": 538,
+      "source_segment_index": 537,
+      "start_ms": 1315460,
+      "text": "还是有很多单独要去优化的"
+    },
+    {
+      "end_ms": 1318320,
+      "sid": 539,
+      "source_segment_index": 538,
+      "start_ms": 1317060,
+      "text": "无论是数据层面"
+    },
+    {
+      "end_ms": 1320060,
+      "sid": 540,
+      "source_segment_index": 539,
+      "start_ms": 1318320,
+      "text": "模型层面还是本体层面"
+    },
+    {
+      "end_ms": 1321680,
+      "sid": 541,
+      "source_segment_index": 540,
+      "start_ms": 1320060,
+      "text": "我想听听你的看法啊"
+    },
+    {
+      "end_ms": 1325090,
+      "sid": 542,
+      "source_segment_index": 541,
+      "start_ms": 1321680,
+      "text": "关于这个to b to c啊这样的一个区别嗯"
+    },
+    {
+      "end_ms": 1329210,
+      "sid": 543,
+      "source_segment_index": 542,
+      "start_ms": 1325090,
+      "text": "我觉得有一些东西是可以共享的"
+    },
+    {
+      "end_ms": 1330870,
+      "sid": 544,
+      "source_segment_index": 543,
+      "start_ms": 1329210,
+      "text": "有一些东西是分开的吧"
+    },
+    {
+      "end_ms": 1333810,
+      "sid": 545,
+      "source_segment_index": 544,
+      "start_ms": 1330870,
+      "text": "比如说我觉得从就是模型上来说"
+    },
+    {
+      "end_ms": 1335790,
+      "sid": 546,
+      "source_segment_index": 545,
+      "start_ms": 1333810,
+      "text": "其实我觉得就比较明显"
+    },
+    {
+      "end_ms": 1338710,
+      "sid": 547,
+      "source_segment_index": 546,
+      "start_ms": 1335790,
+      "text": "可能现阶段追求商业的话"
+    },
+    {
+      "end_ms": 1342230,
+      "sid": 548,
+      "source_segment_index": 547,
+      "start_ms": 1338710,
+      "text": "那可能你会更focus在比如后训练"
+    },
+    {
+      "end_ms": 1344790,
+      "sid": 549,
+      "source_segment_index": 548,
+      "start_ms": 1342230,
+      "text": "不管是behavior cloning的SFT"
+    },
+    {
+      "end_ms": 1348590,
+      "sid": 550,
+      "source_segment_index": 549,
+      "start_ms": 1344790,
+      "text": "还是说你到后面的一些可能在真机上的RL"
+    },
+    {
+      "end_ms": 1350910,
+      "sid": 551,
+      "source_segment_index": 550,
+      "start_ms": 1348590,
+      "text": "或者说这种preference tuning也好"
+    },
+    {
+      "end_ms": 1353800,
+      "sid": 552,
+      "source_segment_index": 551,
+      "start_ms": 1350910,
+      "text": "这些可能是你现阶段的重点"
+    },
+    {
+      "end_ms": 1355580,
+      "sid": 553,
+      "source_segment_index": 552,
+      "start_ms": 1353800,
+      "text": "从模型这个角度上来说"
+    },
+    {
+      "end_ms": 1357160,
+      "sid": 554,
+      "source_segment_index": 553,
+      "start_ms": 1355580,
+      "text": "但如果你进家的话"
+    },
+    {
+      "end_ms": 1358840,
+      "sid": 555,
+      "source_segment_index": 554,
+      "start_ms": 1357160,
+      "text": "可能模型可能更多"
+    },
+    {
+      "end_ms": 1359679,
+      "sid": 556,
+      "source_segment_index": 555,
+      "start_ms": 1358840,
+      "text": "你会care"
+    },
+    {
+      "end_ms": 1362799,
+      "sid": 557,
+      "source_segment_index": 556,
+      "start_ms": 1359679,
+      "text": "比如说BLA或者现在的世界模型"
+    },
+    {
+      "end_ms": 1364899,
+      "sid": 558,
+      "source_segment_index": 557,
+      "start_ms": 1362799,
+      "text": "这些我们也都有在探索"
+    },
+    {
+      "end_ms": 1365639,
+      "sid": 559,
+      "source_segment_index": 558,
+      "start_ms": 1364899,
+      "text": "进家的话"
+    },
+    {
+      "end_ms": 1369260,
+      "sid": 560,
+      "source_segment_index": 559,
+      "start_ms": 1365639,
+      "text": "你也会更care这个如何更好的利用human data"
+    },
+    {
+      "end_ms": 1371380,
+      "sid": 561,
+      "source_segment_index": 560,
+      "start_ms": 1369260,
+      "text": "就这种要操作的数据啊"
+    },
+    {
+      "end_ms": 1374980,
+      "sid": 562,
+      "source_segment_index": 561,
+      "start_ms": 1371380,
+      "text": "所以在模型上我觉得会有一些分野机器人"
+    },
+    {
+      "end_ms": 1377749,
+      "sid": 563,
+      "source_segment_index": 562,
+      "start_ms": 1374980,
+      "text": "它其实不光是模型模型嗯"
+    },
+    {
+      "end_ms": 1378949,
+      "sid": 564,
+      "source_segment_index": 563,
+      "start_ms": 1377749,
+      "text": "只是一一部分"
+    },
+    {
+      "end_ms": 1380629,
+      "sid": 565,
+      "source_segment_index": 564,
+      "start_ms": 1378949,
+      "text": "甚至不是一个特别大的部分"
+    },
+    {
+      "end_ms": 1382069,
+      "sid": 566,
+      "source_segment_index": 565,
+      "start_ms": 1380629,
+      "text": "我觉得在很多其他部分"
+    },
+    {
+      "end_ms": 1385109,
+      "sid": 567,
+      "source_segment_index": 566,
+      "start_ms": 1382069,
+      "text": "他的各种迭代是共享的"
+    },
+    {
+      "end_ms": 1389470,
+      "sid": 568,
+      "source_segment_index": 567,
+      "start_ms": 1385109,
+      "text": "你比如说如何让机器人在一个环境"
+    },
+    {
+      "end_ms": 1391950,
+      "sid": 569,
+      "source_segment_index": 568,
+      "start_ms": 1389470,
+      "text": "或者任何环境中变得更reliable"
+    },
+    {
+      "end_ms": 1395409,
+      "sid": 570,
+      "source_segment_index": 569,
+      "start_ms": 1391950,
+      "text": "比如说可能通过我们的一些商业上的迭代"
+    },
+    {
+      "end_ms": 1397520,
+      "sid": 571,
+      "source_segment_index": 570,
+      "start_ms": 1395409,
+      "text": "我们会发现诶这个这个手"
+    },
+    {
+      "end_ms": 1400460,
+      "sid": 572,
+      "source_segment_index": 571,
+      "start_ms": 1397520,
+      "text": "会不会这个设计的有一些什么问题"
+    },
+    {
+      "end_ms": 1404960,
+      "sid": 573,
+      "source_segment_index": 572,
+      "start_ms": 1400460,
+      "text": "或者说下一代的camera可能如何更好的排布啊"
+    },
+    {
+      "end_ms": 1407340,
+      "sid": 574,
+      "source_segment_index": 573,
+      "start_ms": 1404960,
+      "text": "然后如何让充电变得更简单"
+    },
+    {
+      "end_ms": 1410580,
+      "sid": 575,
+      "source_segment_index": 574,
+      "start_ms": 1407340,
+      "text": "然后如何让这种多个机器人之间的调度"
+    },
+    {
+      "end_ms": 1412150,
+      "sid": 576,
+      "source_segment_index": 575,
+      "start_ms": 1410580,
+      "text": "变得更流畅啊"
+    },
+    {
+      "end_ms": 1414170,
+      "sid": 577,
+      "source_segment_index": 576,
+      "start_ms": 1412150,
+      "text": "以及它产生一些问题以后"
+    },
+    {
+      "end_ms": 1416470,
+      "sid": 578,
+      "source_segment_index": 577,
+      "start_ms": 1414170,
+      "text": "他应该是一种什么样的behavior"
+    },
+    {
+      "end_ms": 1419770,
+      "sid": 579,
+      "source_segment_index": 578,
+      "start_ms": 1416470,
+      "text": "尤其是人形这样比较庞大的躯体"
+    },
+    {
+      "end_ms": 1424230,
+      "sid": 580,
+      "source_segment_index": 579,
+      "start_ms": 1419770,
+      "text": "它如何保证在跟一个有人的环境交互的时候"
+    },
+    {
+      "end_ms": 1425909,
+      "sid": 581,
+      "source_segment_index": 580,
+      "start_ms": 1424230,
+      "text": "变得更安全对吧"
+    },
+    {
+      "end_ms": 1427569,
+      "sid": 582,
+      "source_segment_index": 581,
+      "start_ms": 1425909,
+      "text": "万一有一些情况发生"
+    },
+    {
+      "end_ms": 1429629,
+      "sid": 583,
+      "source_segment_index": 582,
+      "start_ms": 1427569,
+      "text": "我们如何保证worst case"
+    },
+    {
+      "end_ms": 1432149,
+      "sid": 584,
+      "source_segment_index": 583,
+      "start_ms": 1429629,
+      "text": "它也不会产生太大的这个damage"
+    },
+    {
+      "end_ms": 1436490,
+      "sid": 585,
+      "source_segment_index": 584,
+      "start_ms": 1432149,
+      "text": "我觉得这些部分的研究和进展都是共享的"
+    },
+    {
+      "end_ms": 1439770,
+      "sid": 586,
+      "source_segment_index": 585,
+      "start_ms": 1436490,
+      "text": "而且甚至我觉得在呃这些方面的研究"
+    },
+    {
+      "end_ms": 1442650,
+      "sid": 587,
+      "source_segment_index": 586,
+      "start_ms": 1439770,
+      "text": "在一个相对可控一点的环境"
+    },
+    {
+      "end_ms": 1445170,
+      "sid": 588,
+      "source_segment_index": 587,
+      "start_ms": 1442650,
+      "text": "也就是说商业环境比起家用来说"
+    },
+    {
+      "end_ms": 1447010,
+      "sid": 589,
+      "source_segment_index": 588,
+      "start_ms": 1445170,
+      "text": "可能会迭代的更快"
+    },
+    {
+      "end_ms": 1450389,
+      "sid": 590,
+      "source_segment_index": 589,
+      "start_ms": 1447010,
+      "text": "让团队成长的也更迅速吧"
+    },
+    {
+      "end_ms": 1455109,
+      "sid": 591,
+      "source_segment_index": 590,
+      "start_ms": 1450389,
+      "text": "嗯如果我们去往家庭这边去看啊"
+    },
+    {
+      "end_ms": 1456149,
+      "sid": 592,
+      "source_segment_index": 591,
+      "start_ms": 1455109,
+      "text": "我又很好奇"
+    },
+    {
+      "end_ms": 1459610,
+      "sid": 593,
+      "source_segment_index": 592,
+      "start_ms": 1456149,
+      "text": "比如说bigger展示出来的各种各样的呃"
+    },
+    {
+      "end_ms": 1460870,
+      "sid": 594,
+      "source_segment_index": 593,
+      "start_ms": 1459610,
+      "text": "收拾客厅啊"
+    },
+    {
+      "end_ms": 1461910,
+      "sid": 595,
+      "source_segment_index": 594,
+      "start_ms": 1460870,
+      "text": "铺床啊"
+    },
+    {
+      "end_ms": 1463970,
+      "sid": 596,
+      "source_segment_index": 595,
+      "start_ms": 1461910,
+      "text": "包括最早的这个整理盘子"
+    },
+    {
+      "end_ms": 1467850,
+      "sid": 597,
+      "source_segment_index": 596,
+      "start_ms": 1463970,
+      "text": "很好奇就是这些里面呃具体的性能是怎么样的"
+    },
+    {
+      "end_ms": 1470250,
+      "sid": 598,
+      "source_segment_index": 597,
+      "start_ms": 1467850,
+      "text": "就比如说成功率是是如何的"
+    },
+    {
+      "end_ms": 1471130,
+      "sid": 599,
+      "source_segment_index": 598,
+      "start_ms": 1470250,
+      "text": "泛化性是如何的"
+    },
+    {
+      "end_ms": 1473490,
+      "sid": 600,
+      "source_segment_index": 599,
+      "start_ms": 1471130,
+      "text": "这些是可以可以聊的吗"
+    },
+    {
+      "end_ms": 1478730,
+      "sid": 601,
+      "source_segment_index": 600,
+      "start_ms": 1473490,
+      "text": "对这些这些部分我我没有亲自参与这些啊"
+    },
+    {
+      "end_ms": 1480290,
+      "sid": 602,
+      "source_segment_index": 601,
+      "start_ms": 1478730,
+      "text": "demo的这部分的准备"
+    },
+    {
+      "end_ms": 1482540,
+      "sid": 603,
+      "source_segment_index": 602,
+      "start_ms": 1480290,
+      "text": "我们的同事可能做的比较多"
+    },
+    {
+      "end_ms": 1486790,
+      "sid": 604,
+      "source_segment_index": 603,
+      "start_ms": 1482540,
+      "text": "呃但是我觉得呃其实我觉得也可以理解"
+    },
+    {
+      "end_ms": 1492010,
+      "sid": 605,
+      "source_segment_index": 604,
+      "start_ms": 1486790,
+      "text": "就是说如果一个视频它没有太放出来数字的话"
+    },
+    {
+      "end_ms": 1494210,
+      "sid": 606,
+      "source_segment_index": 605,
+      "start_ms": 1492010,
+      "text": "肯定就是说还是多少"
+    },
+    {
+      "end_ms": 1497530,
+      "sid": 607,
+      "source_segment_index": 606,
+      "start_ms": 1494210,
+      "text": "就是说不会那么的reliable和能泛化"
+    },
+    {
+      "end_ms": 1500650,
+      "sid": 608,
+      "source_segment_index": 607,
+      "start_ms": 1497530,
+      "text": "我觉得这些大家就是可能做机器人的这方面"
+    },
+    {
+      "end_ms": 1502950,
+      "sid": 609,
+      "source_segment_index": 608,
+      "start_ms": 1500650,
+      "text": "但多多少少也能也能猜到"
+    },
+    {
+      "end_ms": 1506290,
+      "sid": 610,
+      "source_segment_index": 609,
+      "start_ms": 1502950,
+      "text": "但是我觉得可能也没有大家想的那么糟糕"
+    },
+    {
+      "end_ms": 1509339,
+      "sid": 611,
+      "source_segment_index": 610,
+      "start_ms": 1506290,
+      "text": "其实我看到的就是像这些demo"
+    },
+    {
+      "end_ms": 1511839,
+      "sid": 612,
+      "source_segment_index": 611,
+      "start_ms": 1509339,
+      "text": "比如说像整理卧室啊"
+    },
+    {
+      "end_ms": 1515739,
+      "sid": 613,
+      "source_segment_index": 612,
+      "start_ms": 1511839,
+      "text": "或者说呃弄洗碗机或者收拾客厅这些"
+    },
+    {
+      "end_ms": 1519110,
+      "sid": 614,
+      "source_segment_index": 613,
+      "start_ms": 1515739,
+      "text": "其实我看到的并不需要多少数据啊"
+    },
+    {
+      "end_ms": 1521630,
+      "sid": 615,
+      "source_segment_index": 614,
+      "start_ms": 1519110,
+      "text": "具体的数字我不能太透露"
+    },
+    {
+      "end_ms": 1523910,
+      "sid": 616,
+      "source_segment_index": 615,
+      "start_ms": 1521630,
+      "text": "但是我觉得大家可以就是想想"
+    },
+    {
+      "end_ms": 1527100,
+      "sid": 617,
+      "source_segment_index": 616,
+      "start_ms": 1523910,
+      "text": "就就是啊lower呃"
+    },
+    {
+      "end_ms": 1528280,
+      "sid": 618,
+      "source_segment_index": 617,
+      "start_ms": 1527100,
+      "text": "Double digit number"
+    },
+    {
+      "end_ms": 1531160,
+      "sid": 619,
+      "source_segment_index": 618,
+      "start_ms": 1528280,
+      "text": "对嗯嗯明白明白嗯"
+    },
+    {
+      "end_ms": 1535300,
+      "sid": 620,
+      "source_segment_index": 619,
+      "start_ms": 1531160,
+      "text": "那你觉得到现在这个阶段什么东西最重要呢"
+    },
+    {
+      "end_ms": 1536620,
+      "sid": 621,
+      "source_segment_index": 620,
+      "start_ms": 1535300,
+      "text": "人形已经造出来了"
+    },
+    {
+      "end_ms": 1538520,
+      "sid": 622,
+      "source_segment_index": 621,
+      "start_ms": 1536620,
+      "text": "然后也直播了200个小时"
+    },
+    {
+      "end_ms": 1540280,
+      "sid": 623,
+      "source_segment_index": 622,
+      "start_ms": 1538520,
+      "text": "我真正想要把机器人用起来"
+    },
+    {
+      "end_ms": 1541550,
+      "sid": 624,
+      "source_segment_index": 623,
+      "start_ms": 1540280,
+      "text": "部署落地啊"
+    },
+    {
+      "end_ms": 1543430,
+      "sid": 625,
+      "source_segment_index": 624,
+      "start_ms": 1541550,
+      "text": "你觉得现在最重要的事情是"
+    },
+    {
+      "end_ms": 1545230,
+      "sid": 626,
+      "source_segment_index": 625,
+      "start_ms": 1543430,
+      "text": "我觉得如果只选一个的话"
+    },
+    {
+      "end_ms": 1548660,
+      "sid": 627,
+      "source_segment_index": 626,
+      "start_ms": 1545230,
+      "text": "我在这阶段可能会选这个可靠性"
+    },
+    {
+      "end_ms": 1550480,
+      "sid": 628,
+      "source_segment_index": 627,
+      "start_ms": 1548660,
+      "text": "就是reliability这一块"
+    },
+    {
+      "end_ms": 1553309,
+      "sid": 629,
+      "source_segment_index": 628,
+      "start_ms": 1550480,
+      "text": "可能很多人对这个答案会是"
+    },
+    {
+      "end_ms": 1555629,
+      "sid": 630,
+      "source_segment_index": 629,
+      "start_ms": 1553309,
+      "text": "比如说这种泛化型对吧"
+    },
+    {
+      "end_ms": 1558389,
+      "sid": 631,
+      "source_segment_index": 630,
+      "start_ms": 1555629,
+      "text": "就是可能会能干很多的task"
+    },
+    {
+      "end_ms": 1559869,
+      "sid": 632,
+      "source_segment_index": 631,
+      "start_ms": 1558389,
+      "text": "但是我觉得在这个阶段"
+    },
+    {
+      "end_ms": 1564780,
+      "sid": 633,
+      "source_segment_index": 632,
+      "start_ms": 1559869,
+      "text": "不管是在research上还是你能获得的这种signal"
+    },
+    {
+      "end_ms": 1568770,
+      "sid": 634,
+      "source_segment_index": 633,
+      "start_ms": 1564780,
+      "text": "就你能平常科研迭代能获得的信号拿上来说"
+    },
+    {
+      "end_ms": 1569930,
+      "sid": 635,
+      "source_segment_index": 634,
+      "start_ms": 1568770,
+      "text": "追求泛化"
+    },
+    {
+      "end_ms": 1574280,
+      "sid": 636,
+      "source_segment_index": 635,
+      "start_ms": 1569930,
+      "text": "我觉得主要是要等数据的啊这么一个事情"
+    },
+    {
+      "end_ms": 1577920,
+      "sid": 637,
+      "source_segment_index": 636,
+      "start_ms": 1574280,
+      "text": "但是可能你追求一些reliability"
+    },
+    {
+      "end_ms": 1581640,
+      "sid": 638,
+      "source_segment_index": 637,
+      "start_ms": 1577920,
+      "text": "是对你后面长期也会有很多帮助的"
+    },
+    {
+      "end_ms": 1584560,
+      "sid": 639,
+      "source_segment_index": 638,
+      "start_ms": 1581640,
+      "text": "然后包括可能你在商用的一些场景上"
+    },
+    {
+      "end_ms": 1586740,
+      "sid": 640,
+      "source_segment_index": 639,
+      "start_ms": 1584560,
+      "text": "如果你能做到一定的reliability"
+    },
+    {
+      "end_ms": 1590100,
+      "sid": 641,
+      "source_segment_index": 640,
+      "start_ms": 1586740,
+      "text": "也是可以产生一些实际的效应"
+    },
+    {
+      "end_ms": 1592760,
+      "sid": 642,
+      "source_segment_index": 641,
+      "start_ms": 1590100,
+      "text": "所以我觉得不管是从这个科研"
+    },
+    {
+      "end_ms": 1595300,
+      "sid": 643,
+      "source_segment_index": 642,
+      "start_ms": 1592760,
+      "text": "还是说从这个落地上来说"
+    },
+    {
+      "end_ms": 1598830,
+      "sid": 644,
+      "source_segment_index": 643,
+      "start_ms": 1595300,
+      "text": "我觉得在这个阶段追求一些reliability"
+    },
+    {
+      "end_ms": 1602130,
+      "sid": 645,
+      "source_segment_index": 644,
+      "start_ms": 1598830,
+      "text": "可能是会获得进展比较快的方式"
+    },
+    {
+      "end_ms": 1604110,
+      "sid": 646,
+      "source_segment_index": 645,
+      "start_ms": 1602130,
+      "text": "当然肯定不能一直追求这个"
+    },
+    {
+      "end_ms": 1605629,
+      "sid": 647,
+      "source_segment_index": 646,
+      "start_ms": 1604110,
+      "text": "而且只追求这个啊"
+    },
+    {
+      "end_ms": 1606629,
+      "sid": 648,
+      "source_segment_index": 647,
+      "start_ms": 1605629,
+      "text": "刚刚你也提到了"
+    },
+    {
+      "end_ms": 1608749,
+      "sid": 649,
+      "source_segment_index": 648,
+      "start_ms": 1606629,
+      "text": "就是一个是reliability啊"
+    },
+    {
+      "end_ms": 1610189,
+      "sid": 650,
+      "source_segment_index": 649,
+      "start_ms": 1608749,
+      "text": "这件事我我非常认同"
+    },
+    {
+      "end_ms": 1611639,
+      "sid": 651,
+      "source_segment_index": 650,
+      "start_ms": 1610189,
+      "text": "就是现在的这个机器人"
+    },
+    {
+      "end_ms": 1614439,
+      "sid": 652,
+      "source_segment_index": 651,
+      "start_ms": 1611639,
+      "text": "坏的频率可能还是仍然非常高"
+    },
+    {
+      "end_ms": 1615799,
+      "sid": 653,
+      "source_segment_index": 652,
+      "start_ms": 1614439,
+      "text": "无论是任何加的对吧"
+    },
+    {
+      "end_ms": 1619030,
+      "sid": 654,
+      "source_segment_index": 653,
+      "start_ms": 1615799,
+      "text": "因为因为它不是一个很成熟的这个工业品"
+    },
+    {
+      "end_ms": 1621510,
+      "sid": 655,
+      "source_segment_index": 654,
+      "start_ms": 1619030,
+      "text": "然后刚刚你也提到另一个词就是泛化性"
+    },
+    {
+      "end_ms": 1624150,
+      "sid": 656,
+      "source_segment_index": 655,
+      "start_ms": 1621510,
+      "text": "泛化性也是这个很多做模型的人"
+    },
+    {
+      "end_ms": 1626730,
+      "sid": 657,
+      "source_segment_index": 656,
+      "start_ms": 1624150,
+      "text": "做AI的人很关心的一个点啊"
+    },
+    {
+      "end_ms": 1628930,
+      "sid": 658,
+      "source_segment_index": 657,
+      "start_ms": 1626730,
+      "text": "那这个地方我我还想这个呃"
+    },
+    {
+      "end_ms": 1633170,
+      "sid": 659,
+      "source_segment_index": 658,
+      "start_ms": 1628930,
+      "text": "尝试去挖掘一下这个figure里面"
+    },
+    {
+      "end_ms": 1635330,
+      "sid": 660,
+      "source_segment_index": 659,
+      "start_ms": 1633170,
+      "text": "对泛化性这件事情啊"
+    },
+    {
+      "end_ms": 1636250,
+      "sid": 661,
+      "source_segment_index": 660,
+      "start_ms": 1635330,
+      "text": "是怎么看待的"
+    },
+    {
+      "end_ms": 1639280,
+      "sid": 662,
+      "source_segment_index": 661,
+      "start_ms": 1636250,
+      "text": "因为呃我看figure的几乎所有的展示"
+    },
+    {
+      "end_ms": 1641800,
+      "sid": 663,
+      "source_segment_index": 662,
+      "start_ms": 1639280,
+      "text": "对泛化性的展示其实是非常非常少的"
+    },
+    {
+      "end_ms": 1644629,
+      "sid": 664,
+      "source_segment_index": 663,
+      "start_ms": 1641800,
+      "text": "一条很完美的这个轨迹啊"
+    },
+    {
+      "end_ms": 1647389,
+      "sid": 665,
+      "source_segment_index": 664,
+      "start_ms": 1644629,
+      "text": "但是中间是没有做干扰啊"
+    },
+    {
+      "end_ms": 1650920,
+      "sid": 666,
+      "source_segment_index": 665,
+      "start_ms": 1647389,
+      "text": "没有做这个没见过的情形的这种展示"
+    },
+    {
+      "end_ms": 1653560,
+      "sid": 667,
+      "source_segment_index": 666,
+      "start_ms": 1650920,
+      "text": "或者是换各种各样不同的环境啊"
+    },
+    {
+      "end_ms": 1654420,
+      "sid": 668,
+      "source_segment_index": 667,
+      "start_ms": 1653560,
+      "text": "这样子呃"
+    },
+    {
+      "end_ms": 1657240,
+      "sid": 669,
+      "source_segment_index": 668,
+      "start_ms": 1654420,
+      "text": "包括有一些公司可能还会展示跨本体等等"
+    },
+    {
+      "end_ms": 1660910,
+      "sid": 670,
+      "source_segment_index": 669,
+      "start_ms": 1657240,
+      "text": "这部分是相相当于在figure内部是呃"
+    },
+    {
+      "end_ms": 1662390,
+      "sid": 671,
+      "source_segment_index": 670,
+      "start_ms": 1660910,
+      "text": "是一个低的优先级吗"
+    },
+    {
+      "end_ms": 1665170,
+      "sid": 672,
+      "source_segment_index": 671,
+      "start_ms": 1662390,
+      "text": "还是啊只是没有对这个东西做做展示"
+    },
+    {
+      "end_ms": 1668850,
+      "sid": 673,
+      "source_segment_index": 672,
+      "start_ms": 1665170,
+      "text": "还是呃以什么样的态度去对面对这个泛化性"
+    },
+    {
+      "end_ms": 1671930,
+      "sid": 674,
+      "source_segment_index": 673,
+      "start_ms": 1668850,
+      "text": "其实泛化性在整个公司层面来说的"
+    },
+    {
+      "end_ms": 1674010,
+      "sid": 675,
+      "source_segment_index": 674,
+      "start_ms": 1671930,
+      "text": "优先级是非常高的"
+    },
+    {
+      "end_ms": 1677900,
+      "sid": 676,
+      "source_segment_index": 675,
+      "start_ms": 1674010,
+      "text": "我记得CEO之前在一个全员大会上也说"
+    },
+    {
+      "end_ms": 1680840,
+      "sid": 677,
+      "source_segment_index": 676,
+      "start_ms": 1677900,
+      "text": "他说今年的关键词就是generalization"
+    },
+    {
+      "end_ms": 1681980,
+      "sid": 678,
+      "source_segment_index": 677,
+      "start_ms": 1680840,
+      "text": "就是反抗性"
+    },
+    {
+      "end_ms": 1683930,
+      "sid": 679,
+      "source_segment_index": 678,
+      "start_ms": 1681980,
+      "text": "现在这个阶段可能呃"
+    },
+    {
+      "end_ms": 1686490,
+      "sid": 680,
+      "source_segment_index": 679,
+      "start_ms": 1683930,
+      "text": "一方面是我最近进行的一些工作"
+    },
+    {
+      "end_ms": 1687730,
+      "sid": 681,
+      "source_segment_index": 680,
+      "start_ms": 1686490,
+      "text": "推动generalization"
+    },
+    {
+      "end_ms": 1690950,
+      "sid": 682,
+      "source_segment_index": 681,
+      "start_ms": 1687730,
+      "text": "但是你能干的事其实也并没有那么多"
+    },
+    {
+      "end_ms": 1691890,
+      "sid": 683,
+      "source_segment_index": 682,
+      "start_ms": 1690950,
+      "text": "可能更多的"
+    },
+    {
+      "end_ms": 1695969,
+      "sid": 684,
+      "source_segment_index": 683,
+      "start_ms": 1691890,
+      "text": "我觉得figure的策略就是需要积累更多的数据"
+    },
+    {
+      "end_ms": 1698229,
+      "sid": 685,
+      "source_segment_index": 684,
+      "start_ms": 1695969,
+      "text": "然后去尝试更多的recipe"
+    },
+    {
+      "end_ms": 1701280,
+      "sid": 686,
+      "source_segment_index": 685,
+      "start_ms": 1698229,
+      "text": "让这个机器人来变得更general"
+    },
+    {
+      "end_ms": 1702920,
+      "sid": 687,
+      "source_segment_index": 686,
+      "start_ms": 1701280,
+      "text": "然后我我其实相信就是"
+    },
+    {
+      "end_ms": 1705520,
+      "sid": 688,
+      "source_segment_index": 687,
+      "start_ms": 1702920,
+      "text": "公司现在花的最大的钱啊"
+    },
+    {
+      "end_ms": 1706800,
+      "sid": 689,
+      "source_segment_index": 688,
+      "start_ms": 1705520,
+      "text": "不管是从数据上"
+    },
+    {
+      "end_ms": 1709880,
+      "sid": 690,
+      "source_segment_index": 689,
+      "start_ms": 1706800,
+      "text": "人才上还是比如说这个算力上"
+    },
+    {
+      "end_ms": 1712100,
+      "sid": 691,
+      "source_segment_index": 690,
+      "start_ms": 1709880,
+      "text": "都是花在generalization上的"
+    },
+    {
+      "end_ms": 1716650,
+      "sid": 692,
+      "source_segment_index": 691,
+      "start_ms": 1712100,
+      "text": "然后至于说为什么没有多的展现出来的东西"
+    },
+    {
+      "end_ms": 1720770,
+      "sid": 693,
+      "source_segment_index": 692,
+      "start_ms": 1716650,
+      "text": "呃其实我觉得一部分也是可能推动了很多research"
+    },
+    {
+      "end_ms": 1723270,
+      "sid": 694,
+      "source_segment_index": 693,
+      "start_ms": 1720770,
+      "text": "是在这个reliability这一块"
+    },
+    {
+      "end_ms": 1725410,
+      "sid": 695,
+      "source_segment_index": 694,
+      "start_ms": 1723270,
+      "text": "然后generalization的这个东西"
+    },
+    {
+      "end_ms": 1728730,
+      "sid": 696,
+      "source_segment_index": 695,
+      "start_ms": 1725410,
+      "text": "可能就包括像figure这种比较想完整的时候"
+    },
+    {
+      "end_ms": 1732530,
+      "sid": 697,
+      "source_segment_index": 696,
+      "start_ms": 1728730,
+      "text": "在展示的这种调性还需要更多的时间吧"
+    },
+    {
+      "end_ms": 1734410,
+      "sid": 698,
+      "source_segment_index": 697,
+      "start_ms": 1732530,
+      "text": "然后还有就是呃数据"
+    },
+    {
+      "end_ms": 1738190,
+      "sid": 699,
+      "source_segment_index": 698,
+      "start_ms": 1734410,
+      "text": "我觉得是每每一期我们都要聊的一个事情了"
+    },
+    {
+      "end_ms": 1739889,
+      "sid": 700,
+      "source_segment_index": 699,
+      "start_ms": 1738190,
+      "text": "你前面好像提到呃"
+    },
+    {
+      "end_ms": 1742469,
+      "sid": 701,
+      "source_segment_index": 700,
+      "start_ms": 1739889,
+      "text": "你自己是在human data这块啊"
+    },
+    {
+      "end_ms": 1744280,
+      "sid": 702,
+      "source_segment_index": 701,
+      "start_ms": 1742469,
+      "text": "去做一些这个发力"
+    },
+    {
+      "end_ms": 1746800,
+      "sid": 703,
+      "source_segment_index": 702,
+      "start_ms": 1744280,
+      "text": "然后现在这个也有也有很多派啊"
+    },
+    {
+      "end_ms": 1749560,
+      "sid": 704,
+      "source_segment_index": 703,
+      "start_ms": 1746800,
+      "text": "我我前两天正好刚跟戴安娜和physical"
+    },
+    {
+      "end_ms": 1751040,
+      "sid": 705,
+      "source_segment_index": 704,
+      "start_ms": 1749560,
+      "text": "intelligence的朋友在"
+    },
+    {
+      "end_ms": 1753110,
+      "sid": 706,
+      "source_segment_index": 705,
+      "start_ms": 1751040,
+      "text": "正好在上海线下有个活动"
+    },
+    {
+      "end_ms": 1753990,
+      "sid": 707,
+      "source_segment_index": 706,
+      "start_ms": 1753110,
+      "text": "然后跟他们聊"
+    },
+    {
+      "end_ms": 1757550,
+      "sid": 708,
+      "source_segment_index": 707,
+      "start_ms": 1753990,
+      "text": "他们好像都还是仍然很相信真机的数据"
+    },
+    {
+      "end_ms": 1759890,
+      "sid": 709,
+      "source_segment_index": 708,
+      "start_ms": 1757550,
+      "text": "当然也有像generalist"
+    },
+    {
+      "end_ms": 1761110,
+      "sid": 710,
+      "source_segment_index": 709,
+      "start_ms": 1759890,
+      "text": "像3D啊"
+    },
+    {
+      "end_ms": 1763030,
+      "sid": 711,
+      "source_segment_index": 710,
+      "start_ms": 1761110,
+      "text": "是更相信这个呃"
+    },
+    {
+      "end_ms": 1764030,
+      "sid": 712,
+      "source_segment_index": 711,
+      "start_ms": 1763030,
+      "text": "5米的数据对吧"
+    },
+    {
+      "end_ms": 1765010,
+      "sid": 713,
+      "source_segment_index": 712,
+      "start_ms": 1764030,
+      "text": "就无本体的"
+    },
+    {
+      "end_ms": 1768230,
+      "sid": 714,
+      "source_segment_index": 713,
+      "start_ms": 1765010,
+      "text": "也有一些公司可能会觉得human date更加重要"
+    },
+    {
+      "end_ms": 1771160,
+      "sid": 715,
+      "source_segment_index": 714,
+      "start_ms": 1768230,
+      "text": "然后想听一听你作为个人"
+    },
+    {
+      "end_ms": 1772980,
+      "sid": 716,
+      "source_segment_index": 715,
+      "start_ms": 1771160,
+      "text": "然后作为figure的researcher"
+    },
+    {
+      "end_ms": 1774000,
+      "sid": 717,
+      "source_segment_index": 716,
+      "start_ms": 1772980,
+      "text": "两种身份吧"
+    },
+    {
+      "end_ms": 1776960,
+      "sid": 718,
+      "source_segment_index": 717,
+      "start_ms": 1774000,
+      "text": "你觉得这个数据这块到底应该是怎么样的"
+    },
+    {
+      "end_ms": 1778400,
+      "sid": 719,
+      "source_segment_index": 718,
+      "start_ms": 1776960,
+      "text": "我觉得从我个人角度来说"
+    },
+    {
+      "end_ms": 1781699,
+      "sid": 720,
+      "source_segment_index": 719,
+      "start_ms": 1778400,
+      "text": "我觉得teddy up应该是还是很难scale"
+    },
+    {
+      "end_ms": 1785259,
+      "sid": 721,
+      "source_segment_index": 720,
+      "start_ms": 1781699,
+      "text": "尤其是可能当你的本体是一个人形机器人的话"
+    },
+    {
+      "end_ms": 1789110,
+      "sid": 722,
+      "source_segment_index": 721,
+      "start_ms": 1785259,
+      "text": "他的这个TEI的难度其实还是挺高的"
+    },
+    {
+      "end_ms": 1790830,
+      "sid": 723,
+      "source_segment_index": 722,
+      "start_ms": 1789110,
+      "text": "我们这边我能看到的"
+    },
+    {
+      "end_ms": 1793730,
+      "sid": 724,
+      "source_segment_index": 723,
+      "start_ms": 1790830,
+      "text": "我们这边招的这种摇操作的操作员"
+    },
+    {
+      "end_ms": 1796480,
+      "sid": 725,
+      "source_segment_index": 724,
+      "start_ms": 1793730,
+      "text": "其实他们都是呃非常skilled的"
+    },
+    {
+      "end_ms": 1798480,
+      "sid": 726,
+      "source_segment_index": 725,
+      "start_ms": 1796480,
+      "text": "就是他们非常的厉害"
+    },
+    {
+      "end_ms": 1801160,
+      "sid": 727,
+      "source_segment_index": 726,
+      "start_ms": 1798480,
+      "text": "他们能驱动整个本体干一些活儿"
+    },
+    {
+      "end_ms": 1804670,
+      "sid": 728,
+      "source_segment_index": 727,
+      "start_ms": 1801160,
+      "text": "这事情不是呃像大家想的那么容易的"
+    },
+    {
+      "end_ms": 1807910,
+      "sid": 729,
+      "source_segment_index": 728,
+      "start_ms": 1804670,
+      "text": "可能如果你是一个呃只有上半身"
+    },
+    {
+      "end_ms": 1809190,
+      "sid": 730,
+      "source_segment_index": 729,
+      "start_ms": 1807910,
+      "text": "下半身是一个base的话"
+    },
+    {
+      "end_ms": 1811230,
+      "sid": 731,
+      "source_segment_index": 730,
+      "start_ms": 1809190,
+      "text": "这个问题可能会稍微简单一些"
+    },
+    {
+      "end_ms": 1812270,
+      "sid": 732,
+      "source_segment_index": 731,
+      "start_ms": 1811230,
+      "text": "从我的角度来说"
+    },
+    {
+      "end_ms": 1815250,
+      "sid": 733,
+      "source_segment_index": 732,
+      "start_ms": 1812270,
+      "text": "我觉得teddy up有他的必要性"
+    },
+    {
+      "end_ms": 1819970,
+      "sid": 734,
+      "source_segment_index": 733,
+      "start_ms": 1815250,
+      "text": "因为我觉得所有好的市面上的所有的recipe"
+    },
+    {
+      "end_ms": 1823590,
+      "sid": 735,
+      "source_segment_index": 734,
+      "start_ms": 1819970,
+      "text": "可能最后一个stage都会逃不开泰迪奥"
+    },
+    {
+      "end_ms": 1826810,
+      "sid": 736,
+      "source_segment_index": 735,
+      "start_ms": 1823590,
+      "text": "所以我觉得他作为一个呃recipe的一部分"
+    },
+    {
+      "end_ms": 1829740,
+      "sid": 737,
+      "source_segment_index": 736,
+      "start_ms": 1826810,
+      "text": "已经呃充分证明它存在的必要性"
+    },
+    {
+      "end_ms": 1831480,
+      "sid": 738,
+      "source_segment_index": 737,
+      "start_ms": 1829740,
+      "text": "但是我觉得他的SCALABILITY"
+    },
+    {
+      "end_ms": 1835440,
+      "sid": 739,
+      "source_segment_index": 738,
+      "start_ms": 1831480,
+      "text": "起码我在人形上是觉得并不是很好的啊"
+    },
+    {
+      "end_ms": 1836860,
+      "sid": 740,
+      "source_segment_index": 739,
+      "start_ms": 1835440,
+      "text": "摇操作这种数据收集"
+    },
+    {
+      "end_ms": 1840960,
+      "sid": 741,
+      "source_segment_index": 740,
+      "start_ms": 1836860,
+      "text": "至少最少最少需要一个人和一个机器人"
+    },
+    {
+      "end_ms": 1844280,
+      "sid": 742,
+      "source_segment_index": 741,
+      "start_ms": 1840960,
+      "text": "然后同时还需要有一个空间能容纳"
+    },
+    {
+      "end_ms": 1847590,
+      "sid": 743,
+      "source_segment_index": 742,
+      "start_ms": 1844280,
+      "text": "所以就光这一个呃限制条件"
+    },
+    {
+      "end_ms": 1851850,
+      "sid": 744,
+      "source_segment_index": 743,
+      "start_ms": 1847590,
+      "text": "我觉得就可能非常限制他的这个最后的SCALABILITY"
+    },
+    {
+      "end_ms": 1855320,
+      "sid": 745,
+      "source_segment_index": 744,
+      "start_ms": 1851850,
+      "text": "就首先机器人起码在目前这状态还没有那么多"
+    },
+    {
+      "end_ms": 1857060,
+      "sid": 746,
+      "source_segment_index": 745,
+      "start_ms": 1855320,
+      "text": "又要把这个机器人送到"
+    },
+    {
+      "end_ms": 1859100,
+      "sid": 747,
+      "source_segment_index": 746,
+      "start_ms": 1857060,
+      "text": "比如说他要干活的那个空间"
+    },
+    {
+      "end_ms": 1862040,
+      "sid": 748,
+      "source_segment_index": 747,
+      "start_ms": 1859100,
+      "text": "然后这个中间过程的这个运输成本"
+    },
+    {
+      "end_ms": 1863620,
+      "sid": 749,
+      "source_segment_index": 748,
+      "start_ms": 1862040,
+      "text": "以及包括在场外"
+    },
+    {
+      "end_ms": 1866240,
+      "sid": 750,
+      "source_segment_index": 749,
+      "start_ms": 1863620,
+      "text": "你可能会有更高的安全性的要求"
+    },
+    {
+      "end_ms": 1868260,
+      "sid": 751,
+      "source_segment_index": 750,
+      "start_ms": 1866240,
+      "text": "所以你如果到人家家里收集"
+    },
+    {
+      "end_ms": 1869220,
+      "sid": 752,
+      "source_segment_index": 751,
+      "start_ms": 1868260,
+      "text": "你就是万一摔倒了"
+    },
+    {
+      "end_ms": 1872070,
+      "sid": 753,
+      "source_segment_index": 752,
+      "start_ms": 1869220,
+      "text": "你不能把别人家地板什么砸坏"
+    },
+    {
+      "end_ms": 1874990,
+      "sid": 754,
+      "source_segment_index": 753,
+      "start_ms": 1872070,
+      "text": "这样机器人中间如果你有一些损耗"
+    },
+    {
+      "end_ms": 1876590,
+      "sid": 755,
+      "source_segment_index": 754,
+      "start_ms": 1874990,
+      "text": "你如何维修对吧"
+    },
+    {
+      "end_ms": 1877430,
+      "sid": 756,
+      "source_segment_index": 755,
+      "start_ms": 1876590,
+      "text": "出了一些问题"
+    },
+    {
+      "end_ms": 1880850,
+      "sid": 757,
+      "source_segment_index": 756,
+      "start_ms": 1877430,
+      "text": "你如何in the field来保证它运行的稳定"
+    },
+    {
+      "end_ms": 1882830,
+      "sid": 758,
+      "source_segment_index": 757,
+      "start_ms": 1880850,
+      "text": "这些都是大大增加"
+    },
+    {
+      "end_ms": 1885910,
+      "sid": 759,
+      "source_segment_index": 758,
+      "start_ms": 1882830,
+      "text": "像要操作这种数据收集方式的操作成本"
+    },
+    {
+      "end_ms": 1888790,
+      "sid": 760,
+      "source_segment_index": 759,
+      "start_ms": 1885910,
+      "text": "哪怕你是在一个就是所谓的这种"
+    },
+    {
+      "end_ms": 1890190,
+      "sid": 761,
+      "source_segment_index": 760,
+      "start_ms": 1888790,
+      "text": "数据工厂里来收集"
+    },
+    {
+      "end_ms": 1894070,
+      "sid": 762,
+      "source_segment_index": 761,
+      "start_ms": 1890190,
+      "text": "那那你还需要买很多的这样的这个地对吧"
+    },
+    {
+      "end_ms": 1897099,
+      "sid": 763,
+      "source_segment_index": 762,
+      "start_ms": 1894070,
+      "text": "然后供电啊什么这些都得保证"
+    },
+    {
+      "end_ms": 1901130,
+      "sid": 764,
+      "source_segment_index": 763,
+      "start_ms": 1897099,
+      "text": "然后同时你还要给人来配备一些support"
+    },
+    {
+      "end_ms": 1903230,
+      "sid": 765,
+      "source_segment_index": 764,
+      "start_ms": 1901130,
+      "text": "比如说一个人在操控机器"
+    },
+    {
+      "end_ms": 1906540,
+      "sid": 766,
+      "source_segment_index": 765,
+      "start_ms": 1903230,
+      "text": "另一个客人可能在操控电脑管录制"
+    },
+    {
+      "end_ms": 1907760,
+      "sid": 767,
+      "source_segment_index": 766,
+      "start_ms": 1906540,
+      "text": "然后停止录制"
+    },
+    {
+      "end_ms": 1910000,
+      "sid": 768,
+      "source_segment_index": 767,
+      "start_ms": 1907760,
+      "text": "然后比如reset这些事情"
+    },
+    {
+      "end_ms": 1912440,
+      "sid": 769,
+      "source_segment_index": 768,
+      "start_ms": 1910000,
+      "text": "所以其实总的成本还是很高的"
+    },
+    {
+      "end_ms": 1913040,
+      "sid": 770,
+      "source_segment_index": 769,
+      "start_ms": 1912440,
+      "text": "这也是可能"
+    },
+    {
+      "end_ms": 1917190,
+      "sid": 771,
+      "source_segment_index": 770,
+      "start_ms": 1913040,
+      "text": "为什么我个人起码前半年推动这个human data"
+    },
+    {
+      "end_ms": 1919870,
+      "sid": 772,
+      "source_segment_index": 771,
+      "start_ms": 1917190,
+      "text": "这方面是effort比较多的"
+    },
+    {
+      "end_ms": 1924100,
+      "sid": 773,
+      "source_segment_index": 772,
+      "start_ms": 1919870,
+      "text": "就是你觉得最终通往一个进家的机器人吧"
+    },
+    {
+      "end_ms": 1926639,
+      "sid": 774,
+      "source_segment_index": 773,
+      "start_ms": 1924100,
+      "text": "啊或者是一个真正通用的机器人"
+    },
+    {
+      "end_ms": 1930319,
+      "sid": 775,
+      "source_segment_index": 774,
+      "start_ms": 1926639,
+      "text": "你觉得现在离那个这个大家都看到机器人"
+    },
+    {
+      "end_ms": 1933420,
+      "sid": 776,
+      "source_segment_index": 775,
+      "start_ms": 1930319,
+      "text": "每天给我服务的那个那个未来大概还有多远"
+    },
+    {
+      "end_ms": 1936020,
+      "sid": 777,
+      "source_segment_index": 776,
+      "start_ms": 1933420,
+      "text": "然后这条路径你觉得应该是怎样实现的"
+    },
+    {
+      "end_ms": 1937780,
+      "sid": 778,
+      "source_segment_index": 777,
+      "start_ms": 1936020,
+      "text": "你有思考过这个这个问题吗"
+    },
+    {
+      "end_ms": 1938820,
+      "sid": 779,
+      "source_segment_index": 778,
+      "start_ms": 1937780,
+      "text": "我有思考过"
+    },
+    {
+      "end_ms": 1941780,
+      "sid": 780,
+      "source_segment_index": 779,
+      "start_ms": 1938820,
+      "text": "但是我觉得这个每次说到这个多远"
+    },
+    {
+      "end_ms": 1944620,
+      "sid": 781,
+      "source_segment_index": 780,
+      "start_ms": 1941780,
+      "text": "我觉得总是很难回答我"
+    },
+    {
+      "end_ms": 1946720,
+      "sid": 782,
+      "source_segment_index": 781,
+      "start_ms": 1944620,
+      "text": "我想跟自己说的是"
+    },
+    {
+      "end_ms": 1949170,
+      "sid": 783,
+      "source_segment_index": 782,
+      "start_ms": 1946720,
+      "text": "可能5年左右"
+    },
+    {
+      "end_ms": 1950630,
+      "sid": 784,
+      "source_segment_index": 783,
+      "start_ms": 1949170,
+      "text": "但当你细想一下"
+    },
+    {
+      "end_ms": 1953570,
+      "sid": 785,
+      "source_segment_index": 784,
+      "start_ms": 1950630,
+      "text": "这中间还有多少问题要解决"
+    },
+    {
+      "end_ms": 1957160,
+      "sid": 786,
+      "source_segment_index": 785,
+      "start_ms": 1953570,
+      "text": "其实又发现觉得这时间好像有点不够用"
+    },
+    {
+      "end_ms": 1959260,
+      "sid": 787,
+      "source_segment_index": 786,
+      "start_ms": 1957160,
+      "text": "但同时可能你看到现在"
+    },
+    {
+      "end_ms": 1962380,
+      "sid": 788,
+      "source_segment_index": 787,
+      "start_ms": 1959260,
+      "text": "就是有一些各种coding agent也在起来"
+    },
+    {
+      "end_ms": 1965400,
+      "sid": 789,
+      "source_segment_index": 788,
+      "start_ms": 1962380,
+      "text": "包括这种各大数据公司"
+    },
+    {
+      "end_ms": 1970190,
+      "sid": 790,
+      "source_segment_index": 789,
+      "start_ms": 1965400,
+      "text": "也都在非常积极的收集数据以及卖数据"
+    },
+    {
+      "end_ms": 1973590,
+      "sid": 791,
+      "source_segment_index": 790,
+      "start_ms": 1970190,
+      "text": "以下数据的风度会突然的增多"
+    },
+    {
+      "end_ms": 1974970,
+      "sid": 792,
+      "source_segment_index": 791,
+      "start_ms": 1973590,
+      "text": "你考虑到这些因素"
+    },
+    {
+      "end_ms": 1976170,
+      "sid": 793,
+      "source_segment_index": 792,
+      "start_ms": 1974970,
+      "text": "又可能觉得诶"
+    },
+    {
+      "end_ms": 1980279,
+      "sid": 794,
+      "source_segment_index": 793,
+      "start_ms": 1976170,
+      "text": "可能会不会又有一些比你想象的快的这种事情"
+    },
+    {
+      "end_ms": 1983780,
+      "sid": 795,
+      "source_segment_index": 794,
+      "start_ms": 1980279,
+      "text": "所以我觉得就是很难预期具体的时间"
+    },
+    {
+      "end_ms": 1986060,
+      "sid": 796,
+      "source_segment_index": 795,
+      "start_ms": 1983780,
+      "text": "但是感觉我我们都能看到的是"
+    },
+    {
+      "end_ms": 1987740,
+      "sid": 797,
+      "source_segment_index": 796,
+      "start_ms": 1986060,
+      "text": "他肯定会做成"
+    },
+    {
+      "end_ms": 1989340,
+      "sid": 798,
+      "source_segment_index": 797,
+      "start_ms": 1987740,
+      "text": "可能也就五到10年"
+    },
+    {
+      "end_ms": 1991060,
+      "sid": 799,
+      "source_segment_index": 798,
+      "start_ms": 1989340,
+      "text": "你觉得模型层面重要吗"
+    },
+    {
+      "end_ms": 1993700,
+      "sid": 800,
+      "source_segment_index": 799,
+      "start_ms": 1991060,
+      "text": "就是去往这条路上走"
+    },
+    {
+      "end_ms": 1999010,
+      "sid": 801,
+      "source_segment_index": 800,
+      "start_ms": 1996550,
+      "text": "就是呃我是一个快慢系统"
+    },
+    {
+      "end_ms": 2000750,
+      "sid": 802,
+      "source_segment_index": 801,
+      "start_ms": 1999010,
+      "text": "还是一个完全端到端"
+    },
+    {
+      "end_ms": 2003170,
+      "sid": 803,
+      "source_segment_index": 802,
+      "start_ms": 2000750,
+      "text": "我是世界模型还是VRA啊"
+    },
+    {
+      "end_ms": 2004650,
+      "sid": 804,
+      "source_segment_index": 803,
+      "start_ms": 2003170,
+      "text": "我这个等等等等啊"
+    },
+    {
+      "end_ms": 2007050,
+      "sid": 805,
+      "source_segment_index": 804,
+      "start_ms": 2004650,
+      "text": "你觉得这块上上面您有什么判断吗"
+    },
+    {
+      "end_ms": 2009610,
+      "sid": 806,
+      "source_segment_index": 805,
+      "start_ms": 2007050,
+      "text": "我觉得其实不太重要"
+    },
+    {
+      "end_ms": 2011210,
+      "sid": 807,
+      "source_segment_index": 806,
+      "start_ms": 2009610,
+      "text": "呃简短的说我的观点"
+    },
+    {
+      "end_ms": 2014500,
+      "sid": 808,
+      "source_segment_index": 807,
+      "start_ms": 2011210,
+      "text": "我觉得像这种模型上的派系之争"
+    },
+    {
+      "end_ms": 2018580,
+      "sid": 809,
+      "source_segment_index": 808,
+      "start_ms": 2014500,
+      "text": "尤其是现在在coding agent如此发达的情况下"
+    },
+    {
+      "end_ms": 2021830,
+      "sid": 810,
+      "source_segment_index": 809,
+      "start_ms": 2018580,
+      "text": "我觉得其实换一套所谓模型的架构"
+    },
+    {
+      "end_ms": 2023390,
+      "sid": 811,
+      "source_segment_index": 810,
+      "start_ms": 2021830,
+      "text": "其实是非常容易的"
+    },
+    {
+      "end_ms": 2027170,
+      "sid": 812,
+      "source_segment_index": 811,
+      "start_ms": 2023390,
+      "text": "那我觉得更难的就是你整个数据的recipe"
+    },
+    {
+      "end_ms": 2029459,
+      "sid": 813,
+      "source_segment_index": 812,
+      "start_ms": 2027170,
+      "text": "可能这个是需要积累"
+    },
+    {
+      "end_ms": 2033600,
+      "sid": 814,
+      "source_segment_index": 813,
+      "start_ms": 2029459,
+      "text": "然后如果说你的数据会影响你的recipe"
+    },
+    {
+      "end_ms": 2036080,
+      "sid": 815,
+      "source_segment_index": 814,
+      "start_ms": 2033600,
+      "text": "那可能你的架构会重要一些"
+    },
+    {
+      "end_ms": 2038050,
+      "sid": 816,
+      "source_segment_index": 815,
+      "start_ms": 2036080,
+      "text": "但是我目前看到的是呃"
+    },
+    {
+      "end_ms": 2039910,
+      "sid": 817,
+      "source_segment_index": 816,
+      "start_ms": 2038050,
+      "text": "其实现在数据远远不够"
+    },
+    {
+      "end_ms": 2041810,
+      "sid": 818,
+      "source_segment_index": 817,
+      "start_ms": 2039910,
+      "text": "不管是哪方面的数据"
+    },
+    {
+      "end_ms": 2042830,
+      "sid": 819,
+      "source_segment_index": 818,
+      "start_ms": 2041810,
+      "text": "不管是human data"
+    },
+    {
+      "end_ms": 2043610,
+      "sid": 820,
+      "source_segment_index": 819,
+      "start_ms": 2042830,
+      "text": "Teleof data"
+    },
+    {
+      "end_ms": 2046649,
+      "sid": 821,
+      "source_segment_index": 820,
+      "start_ms": 2043610,
+      "text": "还是所谓这种egocentric video data"
+    },
+    {
+      "end_ms": 2048509,
+      "sid": 822,
+      "source_segment_index": 821,
+      "start_ms": 2046649,
+      "text": "其实都不是特别多"
+    },
+    {
+      "end_ms": 2049869,
+      "sid": 823,
+      "source_segment_index": 822,
+      "start_ms": 2048509,
+      "text": "那我觉得在这种情况下"
+    },
+    {
+      "end_ms": 2053890,
+      "sid": 824,
+      "source_segment_index": 823,
+      "start_ms": 2049869,
+      "text": "争论这些呃架构并不是特别的紧迫"
+    },
+    {
+      "end_ms": 2057190,
+      "sid": 825,
+      "source_segment_index": 824,
+      "start_ms": 2053890,
+      "text": "这个还有一个跟现现在这个机器人话题"
+    },
+    {
+      "end_ms": 2058530,
+      "sid": 826,
+      "source_segment_index": 825,
+      "start_ms": 2057190,
+      "text": "有一点不太一样"
+    },
+    {
+      "end_ms": 2061650,
+      "sid": 827,
+      "source_segment_index": 826,
+      "start_ms": 2058530,
+      "text": "就是3D这个领域本身也在快速的发展是吧"
+    },
+    {
+      "end_ms": 2063240,
+      "sid": 828,
+      "source_segment_index": 827,
+      "start_ms": 2061650,
+      "text": "这也是你的老本行呃"
+    },
+    {
+      "end_ms": 2065720,
+      "sid": 829,
+      "source_segment_index": 828,
+      "start_ms": 2063240,
+      "text": "你觉得3D这个这个领域是怎样的"
+    },
+    {
+      "end_ms": 2069030,
+      "sid": 830,
+      "source_segment_index": 829,
+      "start_ms": 2065720,
+      "text": "就是说比如3D啊去生成各种各样的资产"
+    },
+    {
+      "end_ms": 2070350,
+      "sid": 831,
+      "source_segment_index": 830,
+      "start_ms": 2069030,
+      "text": "对机器人会有帮助吗"
+    },
+    {
+      "end_ms": 2073870,
+      "sid": 832,
+      "source_segment_index": 831,
+      "start_ms": 2070350,
+      "text": "还是它应该作为一个独立的这个产业啊"
+    },
+    {
+      "end_ms": 2076170,
+      "sid": 833,
+      "source_segment_index": 832,
+      "start_ms": 2073870,
+      "text": "去服务到更多的电影行业啊"
+    },
+    {
+      "end_ms": 2077310,
+      "sid": 834,
+      "source_segment_index": 833,
+      "start_ms": 2076170,
+      "text": "动画行业啊等等"
+    },
+    {
+      "end_ms": 2078550,
+      "sid": 835,
+      "source_segment_index": 834,
+      "start_ms": 2077310,
+      "text": "还是说呃"
+    },
+    {
+      "end_ms": 2082590,
+      "sid": 836,
+      "source_segment_index": 835,
+      "start_ms": 2078550,
+      "text": "你觉得他最后会成为机器人行业的底层技术"
+    },
+    {
+      "end_ms": 2084190,
+      "sid": 837,
+      "source_segment_index": 836,
+      "start_ms": 2082590,
+      "text": "底层的一种架构"
+    },
+    {
+      "end_ms": 2086219,
+      "sid": 838,
+      "source_segment_index": 837,
+      "start_ms": 2084190,
+      "text": "融入到端到端模型里"
+    },
+    {
+      "end_ms": 2087279,
+      "sid": 839,
+      "source_segment_index": 838,
+      "start_ms": 2086219,
+      "text": "或者融入到这个"
+    },
+    {
+      "end_ms": 2089339,
+      "sid": 840,
+      "source_segment_index": 839,
+      "start_ms": 2087279,
+      "text": "刚刚我们聊到的训练的过程里面"
+    },
+    {
+      "end_ms": 2092639,
+      "sid": 841,
+      "source_segment_index": 840,
+      "start_ms": 2089339,
+      "text": "我觉得我觉得3D他作为自己一个领域"
+    },
+    {
+      "end_ms": 2094559,
+      "sid": 842,
+      "source_segment_index": 841,
+      "start_ms": 2092639,
+      "text": "肯定已经有一些市场"
+    },
+    {
+      "end_ms": 2095519,
+      "sid": 843,
+      "source_segment_index": 842,
+      "start_ms": 2094559,
+      "text": "然后机器人的话"
+    },
+    {
+      "end_ms": 2097999,
+      "sid": 844,
+      "source_segment_index": 843,
+      "start_ms": 2095519,
+      "text": "我觉得其他确实也能帮助到机器人"
+    },
+    {
+      "end_ms": 2099370,
+      "sid": 845,
+      "source_segment_index": 844,
+      "start_ms": 2097999,
+      "text": "因为我已经能看到"
+    },
+    {
+      "end_ms": 2102930,
+      "sid": 846,
+      "source_segment_index": 845,
+      "start_ms": 2099370,
+      "text": "不管是在公司内部还是一些其他的合作的"
+    },
+    {
+      "end_ms": 2104240,
+      "sid": 847,
+      "source_segment_index": 846,
+      "start_ms": 2102930,
+      "text": "这些朋友们"
+    },
+    {
+      "end_ms": 2105320,
+      "sid": 848,
+      "source_segment_index": 847,
+      "start_ms": 2104240,
+      "text": "你也有看到"
+    },
+    {
+      "end_ms": 2107400,
+      "sid": 849,
+      "source_segment_index": 848,
+      "start_ms": 2105320,
+      "text": "比如说用不管是开源的SAM"
+    },
+    {
+      "end_ms": 2110400,
+      "sid": 850,
+      "source_segment_index": 849,
+      "start_ms": 2107400,
+      "text": "3D模型来生成一些素材啊"
+    },
+    {
+      "end_ms": 2113320,
+      "sid": 851,
+      "source_segment_index": 850,
+      "start_ms": 2110400,
+      "text": "我已经能看到它在机器人领域里面"
+    },
+    {
+      "end_ms": 2116180,
+      "sid": 852,
+      "source_segment_index": 851,
+      "start_ms": 2113320,
+      "text": "起到这些3D生成模型的作用"
+    },
+    {
+      "end_ms": 2118750,
+      "sid": 853,
+      "source_segment_index": 852,
+      "start_ms": 2116180,
+      "text": "所以我觉得将来呃只会更多"
+    },
+    {
+      "end_ms": 2121190,
+      "sid": 854,
+      "source_segment_index": 853,
+      "start_ms": 2118750,
+      "text": "就其实我现在还不太确定的一条"
+    },
+    {
+      "end_ms": 2124630,
+      "sid": 855,
+      "source_segment_index": 854,
+      "start_ms": 2121190,
+      "text": "就是如何训练灵巧手"
+    },
+    {
+      "end_ms": 2128150,
+      "sid": 856,
+      "source_segment_index": 855,
+      "start_ms": 2124630,
+      "text": "我觉得这个还是一个非常大的一个open question"
+    },
+    {
+      "end_ms": 2133310,
+      "sid": 857,
+      "source_segment_index": 856,
+      "start_ms": 2128930,
+      "text": "我目前是看不太清楚如何用"
+    },
+    {
+      "end_ms": 2135170,
+      "sid": 858,
+      "source_segment_index": 857,
+      "start_ms": 2133310,
+      "text": "比如纯behavior cloning"
+    },
+    {
+      "end_ms": 2138990,
+      "sid": 859,
+      "source_segment_index": 858,
+      "start_ms": 2135170,
+      "text": "这一套来学到特别灵巧的操作"
+    },
+    {
+      "end_ms": 2141180,
+      "sid": 860,
+      "source_segment_index": 859,
+      "start_ms": 2138990,
+      "text": "所以我也很好奇"
+    },
+    {
+      "end_ms": 2143860,
+      "sid": 861,
+      "source_segment_index": 860,
+      "start_ms": 2141180,
+      "text": "就是说会不会将来更灵巧的操作"
+    },
+    {
+      "end_ms": 2147320,
+      "sid": 862,
+      "source_segment_index": 861,
+      "start_ms": 2143860,
+      "text": "会更多依赖于模拟器里面这种模拟"
+    },
+    {
+      "end_ms": 2148280,
+      "sid": 863,
+      "source_segment_index": 862,
+      "start_ms": 2147320,
+      "text": "那如果是这样的话"
+    },
+    {
+      "end_ms": 2151480,
+      "sid": 864,
+      "source_segment_index": 863,
+      "start_ms": 2148280,
+      "text": "那可能生成各种资产就变得非常重要"
+    },
+    {
+      "end_ms": 2154780,
+      "sid": 865,
+      "source_segment_index": 864,
+      "start_ms": 2151480,
+      "text": "正好聊到3D是不是近期你们也获了一个奖"
+    },
+    {
+      "end_ms": 2155160,
+      "sid": 866,
+      "source_segment_index": 865,
+      "start_ms": 2154780,
+      "text": "对吧"
+    },
+    {
+      "end_ms": 2157320,
+      "sid": 867,
+      "source_segment_index": 866,
+      "start_ms": 2155160,
+      "text": "就是哦是了一个最佳路线"
+    },
+    {
+      "end_ms": 2160640,
+      "sid": 868,
+      "source_segment_index": 867,
+      "start_ms": 2157320,
+      "text": "对我是呃最近的CVPR2026"
+    },
+    {
+      "end_ms": 2164579,
+      "sid": 869,
+      "source_segment_index": 868,
+      "start_ms": 2160640,
+      "text": "然后我去年实习参与的SAM3D这个项目"
+    },
+    {
+      "end_ms": 2166980,
+      "sid": 870,
+      "source_segment_index": 869,
+      "start_ms": 2164579,
+      "text": "得了一个best paper honorable mention"
+    },
+    {
+      "end_ms": 2170230,
+      "sid": 871,
+      "source_segment_index": 870,
+      "start_ms": 2166980,
+      "text": "所以所以就是那个算是你的纯3D的"
+    },
+    {
+      "end_ms": 2171530,
+      "sid": 872,
+      "source_segment_index": 871,
+      "start_ms": 2170230,
+      "text": "这个封山之作"
+    },
+    {
+      "end_ms": 2173070,
+      "sid": 873,
+      "source_segment_index": 872,
+      "start_ms": 2171530,
+      "text": "然后之后就算是对"
+    },
+    {
+      "end_ms": 2175910,
+      "sid": 874,
+      "source_segment_index": 873,
+      "start_ms": 2173070,
+      "text": "但是我我在里面只是贡献了一一小部分"
+    },
+    {
+      "end_ms": 2176710,
+      "sid": 875,
+      "source_segment_index": 874,
+      "start_ms": 2175910,
+      "text": "作为一个英特尔"
+    },
+    {
+      "end_ms": 2178640,
+      "sid": 876,
+      "source_segment_index": 875,
+      "start_ms": 2176710,
+      "text": "对我觉得这个这个effort"
+    },
+    {
+      "end_ms": 2182470,
+      "sid": 877,
+      "source_segment_index": 876,
+      "start_ms": 2178640,
+      "text": "整个还是大家团队做了很久的一个effort"
+    },
+    {
+      "end_ms": 2188460,
+      "sid": 878,
+      "source_segment_index": 877,
+      "start_ms": 2182470,
+      "text": "然后他这个项目大概意思就是说你给一张图片"
+    },
+    {
+      "end_ms": 2191940,
+      "sid": 879,
+      "source_segment_index": 878,
+      "start_ms": 2188460,
+      "text": "然后你想把里面一个物体"
+    },
+    {
+      "end_ms": 2196430,
+      "sid": 880,
+      "source_segment_index": 879,
+      "start_ms": 2191940,
+      "text": "或者说任何物体的3D的模型给它建出来"
+    },
+    {
+      "end_ms": 2198390,
+      "sid": 881,
+      "source_segment_index": 880,
+      "start_ms": 2196430,
+      "text": "所以具体的可能使用方式"
+    },
+    {
+      "end_ms": 2200770,
+      "sid": 882,
+      "source_segment_index": 881,
+      "start_ms": 2198390,
+      "text": "就是说你上传一张图片到一个网页"
+    },
+    {
+      "end_ms": 2203950,
+      "sid": 883,
+      "source_segment_index": 882,
+      "start_ms": 2200770,
+      "text": "然后你点一下这个图片里的一个物体"
+    },
+    {
+      "end_ms": 2206900,
+      "sid": 884,
+      "source_segment_index": 883,
+      "start_ms": 2203950,
+      "text": "然后这个物体可能会被2D的抠出来"
+    },
+    {
+      "end_ms": 2208480,
+      "sid": 885,
+      "source_segment_index": 884,
+      "start_ms": 2206900,
+      "text": "然后抠出来2D以后"
+    },
+    {
+      "end_ms": 2212180,
+      "sid": 886,
+      "source_segment_index": 885,
+      "start_ms": 2208480,
+      "text": "还能把这个物体的3D的一个mesh给到你"
+    },
+    {
+      "end_ms": 2214590,
+      "sid": 887,
+      "source_segment_index": 886,
+      "start_ms": 2212180,
+      "text": "或者高成SPT都可以给到"
+    },
+    {
+      "end_ms": 2216800,
+      "sid": 888,
+      "source_segment_index": 887,
+      "start_ms": 2214590,
+      "text": "然后他当时的愿景"
+    },
+    {
+      "end_ms": 2220140,
+      "sid": 889,
+      "source_segment_index": 888,
+      "start_ms": 2216800,
+      "text": "我觉得其实一方面也是想服务机器人吧"
+    },
+    {
+      "end_ms": 2223980,
+      "sid": 890,
+      "source_segment_index": 889,
+      "start_ms": 2220140,
+      "text": "如果你能把现实世界的这个东西"
+    },
+    {
+      "end_ms": 2226180,
+      "sid": 891,
+      "source_segment_index": 890,
+      "start_ms": 2223980,
+      "text": "全都变成一些3D资产"
+    },
+    {
+      "end_ms": 2229340,
+      "sid": 892,
+      "source_segment_index": 891,
+      "start_ms": 2226180,
+      "text": "那也许你就可以大大的丰富你的"
+    },
+    {
+      "end_ms": 2233090,
+      "sid": 893,
+      "source_segment_index": 892,
+      "start_ms": 2229340,
+      "text": "比如说在在这个模拟器里的这种资产的风度"
+    },
+    {
+      "end_ms": 2237440,
+      "sid": 894,
+      "source_segment_index": 893,
+      "start_ms": 2233090,
+      "text": "我觉得这个是当时这个项目的愿景吧"
+    },
+    {
+      "end_ms": 2242140,
+      "sid": 895,
+      "source_segment_index": 894,
+      "start_ms": 2237440,
+      "text": "可能他的挑战就是说这种data以前是没有的"
+    },
+    {
+      "end_ms": 2243300,
+      "sid": 896,
+      "source_segment_index": 895,
+      "start_ms": 2242140,
+      "text": "从数据上来说"
+    },
+    {
+      "end_ms": 2246860,
+      "sid": 897,
+      "source_segment_index": 896,
+      "start_ms": 2243300,
+      "text": "可能以前有很多这种3D资产的数据集"
+    },
+    {
+      "end_ms": 2248770,
+      "sid": 898,
+      "source_segment_index": 897,
+      "start_ms": 2246860,
+      "text": "比如说欧布扎威尔斯呀"
+    },
+    {
+      "end_ms": 2251750,
+      "sid": 899,
+      "source_segment_index": 898,
+      "start_ms": 2248770,
+      "text": "然后大的这种3D的数据库啊"
+    },
+    {
+      "end_ms": 2255420,
+      "sid": 900,
+      "source_segment_index": 899,
+      "start_ms": 2251750,
+      "text": "然后以前分割也有自己的数据库"
+    },
+    {
+      "end_ms": 2258870,
+      "sid": 901,
+      "source_segment_index": 900,
+      "start_ms": 2255420,
+      "text": "比如说叫segmentation的这些数据"
+    },
+    {
+      "end_ms": 2260230,
+      "sid": 902,
+      "source_segment_index": 901,
+      "start_ms": 2258870,
+      "text": "2D图片的数据"
+    },
+    {
+      "end_ms": 2264970,
+      "sid": 903,
+      "source_segment_index": 902,
+      "start_ms": 2260230,
+      "text": "但如何把这个2D跟3D给它桥接起来"
+    },
+    {
+      "end_ms": 2267210,
+      "sid": 904,
+      "source_segment_index": 903,
+      "start_ms": 2264970,
+      "text": "我觉得是当时这个项目"
+    },
+    {
+      "end_ms": 2270150,
+      "sid": 905,
+      "source_segment_index": 904,
+      "start_ms": 2267210,
+      "text": "需要从data上回答的一个挑战"
+    },
+    {
+      "end_ms": 2275000,
+      "sid": 906,
+      "source_segment_index": 905,
+      "start_ms": 2270150,
+      "text": "然后可能模型上也是用了一些比较前沿的啊"
+    },
+    {
+      "end_ms": 2275920,
+      "sid": 907,
+      "source_segment_index": 906,
+      "start_ms": 2275000,
+      "text": "方法吧"
+    },
+    {
+      "end_ms": 2279459,
+      "sid": 908,
+      "source_segment_index": 907,
+      "start_ms": 2275920,
+      "text": "他用到的比如说像啊MOT"
+    },
+    {
+      "end_ms": 2282539,
+      "sid": 909,
+      "source_segment_index": 908,
+      "start_ms": 2279459,
+      "text": "就mixture of transformer这样比较先进"
+    },
+    {
+      "end_ms": 2286100,
+      "sid": 910,
+      "source_segment_index": 909,
+      "start_ms": 2282539,
+      "text": "以前可能在3D里相对用的少的一些"
+    },
+    {
+      "end_ms": 2287580,
+      "sid": 911,
+      "source_segment_index": 910,
+      "start_ms": 2286100,
+      "text": "这种比较先进的模型"
+    },
+    {
+      "end_ms": 2288460,
+      "sid": 912,
+      "source_segment_index": 911,
+      "start_ms": 2287580,
+      "text": "比较有意思的是"
+    },
+    {
+      "end_ms": 2289980,
+      "sid": 913,
+      "source_segment_index": 912,
+      "start_ms": 2288460,
+      "text": "他的后训练的过程"
+    },
+    {
+      "end_ms": 2292980,
+      "sid": 914,
+      "source_segment_index": 913,
+      "start_ms": 2289980,
+      "text": "就他也加入了一个DPO这种preference"
+    },
+    {
+      "end_ms": 2294260,
+      "sid": 915,
+      "source_segment_index": 914,
+      "start_ms": 2292980,
+      "text": "optimization的过程"
+    },
+    {
+      "end_ms": 2297420,
+      "sid": 916,
+      "source_segment_index": 915,
+      "start_ms": 2294260,
+      "text": "能让这个模型生产出来的3D资产"
+    },
+    {
+      "end_ms": 2299080,
+      "sid": 917,
+      "source_segment_index": 916,
+      "start_ms": 2297420,
+      "text": "更符合人类的喜好"
+    },
+    {
+      "end_ms": 2302260,
+      "sid": 918,
+      "source_segment_index": 917,
+      "start_ms": 2299080,
+      "text": "就可能从模型和这种训练上"
+    },
+    {
+      "end_ms": 2304040,
+      "sid": 919,
+      "source_segment_index": 918,
+      "start_ms": 2302260,
+      "text": "也借鉴了一些相关领域"
+    },
+    {
+      "end_ms": 2306940,
+      "sid": 920,
+      "source_segment_index": 919,
+      "start_ms": 2304040,
+      "text": "比如LM领域的一些最新的方法"
+    },
+    {
+      "end_ms": 2310200,
+      "sid": 921,
+      "source_segment_index": 920,
+      "start_ms": 2306940,
+      "text": "当时参加这个项目还学到挺多的"
+    },
+    {
+      "end_ms": 2311440,
+      "sid": 922,
+      "source_segment_index": 921,
+      "start_ms": 2310200,
+      "text": "我觉得比较有意思的也是"
+    },
+    {
+      "end_ms": 2315169,
+      "sid": 923,
+      "source_segment_index": 922,
+      "start_ms": 2311440,
+      "text": "它不光是成为了我的所谓的封禅之作"
+    },
+    {
+      "end_ms": 2317329,
+      "sid": 924,
+      "source_segment_index": 923,
+      "start_ms": 2315169,
+      "text": "也成为了这个the meta"
+    },
+    {
+      "end_ms": 2321890,
+      "sid": 925,
+      "source_segment_index": 924,
+      "start_ms": 2317329,
+      "text": "曾经fair这一部分的一个封山之作了吧"
+    },
+    {
+      "end_ms": 2325730,
+      "sid": 926,
+      "source_segment_index": 925,
+      "start_ms": 2321890,
+      "text": "还以这种开源的形式呈现给community"
+    },
+    {
+      "end_ms": 2330710,
+      "sid": 927,
+      "source_segment_index": 926,
+      "start_ms": 2325730,
+      "text": "然后以一种这种就是research为最终导向"
+    },
+    {
+      "end_ms": 2332850,
+      "sid": 928,
+      "source_segment_index": 927,
+      "start_ms": 2330710,
+      "text": "来来来发展的"
+    },
+    {
+      "end_ms": 2335290,
+      "sid": 929,
+      "source_segment_index": 928,
+      "start_ms": 2332850,
+      "text": "我觉得也算是最后一舞了"
+    },
+    {
+      "end_ms": 2338710,
+      "sid": 930,
+      "source_segment_index": 929,
+      "start_ms": 2335290,
+      "text": "我觉得菲尔当时嗯确实是有非常多"
+    },
+    {
+      "end_ms": 2340630,
+      "sid": 931,
+      "source_segment_index": 930,
+      "start_ms": 2338710,
+      "text": "很很很强的人啊"
+    },
+    {
+      "end_ms": 2342830,
+      "sid": 932,
+      "source_segment_index": 931,
+      "start_ms": 2340630,
+      "text": "但是fair的自由度"
+    },
+    {
+      "end_ms": 2344020,
+      "sid": 933,
+      "source_segment_index": 932,
+      "start_ms": 2342830,
+      "text": "灵活度"
+    },
+    {
+      "end_ms": 2347580,
+      "sid": 934,
+      "source_segment_index": 933,
+      "start_ms": 2344020,
+      "text": "感觉上比学校里面还曾经有一段"
+    },
+    {
+      "end_ms": 2352560,
+      "sid": 935,
+      "source_segment_index": 934,
+      "start_ms": 2347580,
+      "text": "是确实是这样的嗯对但是可能我加入的时候"
+    },
+    {
+      "end_ms": 2355520,
+      "sid": 936,
+      "source_segment_index": 935,
+      "start_ms": 2352560,
+      "text": "其实就已经慢慢的发生这种转变了"
+    },
+    {
+      "end_ms": 2357500,
+      "sid": 937,
+      "source_segment_index": 936,
+      "start_ms": 2355520,
+      "text": "嗯可能也是不得已吧"
+    },
+    {
+      "end_ms": 2362010,
+      "sid": 938,
+      "source_segment_index": 937,
+      "start_ms": 2357500,
+      "text": "毕竟其他的工业界的公司还是非常的拼命的"
+    },
+    {
+      "end_ms": 2363090,
+      "sid": 939,
+      "source_segment_index": 938,
+      "start_ms": 2362010,
+      "text": "就看你的朋友圈哈"
+    },
+    {
+      "end_ms": 2365510,
+      "sid": 940,
+      "source_segment_index": 939,
+      "start_ms": 2363090,
+      "text": "里面有有你写过一句话啊"
+    },
+    {
+      "end_ms": 2367210,
+      "sid": 941,
+      "source_segment_index": 940,
+      "start_ms": 2365510,
+      "text": "我觉得还挺有趣的"
+    },
+    {
+      "end_ms": 2369130,
+      "sid": 942,
+      "source_segment_index": 941,
+      "start_ms": 2367210,
+      "text": "就是叫机器人的到来"
+    },
+    {
+      "end_ms": 2370850,
+      "sid": 943,
+      "source_segment_index": 942,
+      "start_ms": 2369130,
+      "text": "不是一种科技变化"
+    },
+    {
+      "end_ms": 2372660,
+      "sid": 944,
+      "source_segment_index": 943,
+      "start_ms": 2370850,
+      "text": "而是一种社会制度的变化"
+    },
+    {
+      "end_ms": 2375220,
+      "sid": 945,
+      "source_segment_index": 944,
+      "start_ms": 2372660,
+      "text": "这个是有什么触发点吗"
+    },
+    {
+      "end_ms": 2376740,
+      "sid": 946,
+      "source_segment_index": 945,
+      "start_ms": 2375220,
+      "text": "就是你为什么想到了这儿"
+    },
+    {
+      "end_ms": 2380420,
+      "sid": 947,
+      "source_segment_index": 946,
+      "start_ms": 2376740,
+      "text": "为什么你啊这个得得到这样的一个结论"
+    },
+    {
+      "end_ms": 2381720,
+      "sid": 948,
+      "source_segment_index": 947,
+      "start_ms": 2380420,
+      "text": "然后发在朋友圈里"
+    },
+    {
+      "end_ms": 2383920,
+      "sid": 949,
+      "source_segment_index": 948,
+      "start_ms": 2381720,
+      "text": "对这句话其实不是我说的"
+    },
+    {
+      "end_ms": 2386820,
+      "sid": 950,
+      "source_segment_index": 949,
+      "start_ms": 2383920,
+      "text": "是当时我刚入职figure的时候"
+    },
+    {
+      "end_ms": 2388560,
+      "sid": 951,
+      "source_segment_index": 950,
+      "start_ms": 2386820,
+      "text": "然后正好赶上呃"
+    },
+    {
+      "end_ms": 2390380,
+      "sid": 952,
+      "source_segment_index": 951,
+      "start_ms": 2388560,
+      "text": "当时figure03发布"
+    },
+    {
+      "end_ms": 2396660,
+      "sid": 953,
+      "source_segment_index": 952,
+      "start_ms": 2394160,
+      "text": "然后那个文章里有这么一句话"
+    },
+    {
+      "end_ms": 2398470,
+      "sid": 954,
+      "source_segment_index": 953,
+      "start_ms": 2396660,
+      "text": "说机器人的变化"
+    },
+    {
+      "end_ms": 2400930,
+      "sid": 955,
+      "source_segment_index": 954,
+      "start_ms": 2398470,
+      "text": "甚至是一种社会制度的变化"
+    },
+    {
+      "end_ms": 2402570,
+      "sid": 956,
+      "source_segment_index": 955,
+      "start_ms": 2400930,
+      "text": "然后我当时就挺有感触"
+    },
+    {
+      "end_ms": 2407030,
+      "sid": 957,
+      "source_segment_index": 956,
+      "start_ms": 2402570,
+      "text": "我觉得确实因为我觉得它背后的逻辑是说"
+    },
+    {
+      "end_ms": 2411620,
+      "sid": 958,
+      "source_segment_index": 957,
+      "start_ms": 2407030,
+      "text": "当你机器人啊变得非常的丰富"
+    },
+    {
+      "end_ms": 2413740,
+      "sid": 959,
+      "source_segment_index": 958,
+      "start_ms": 2411620,
+      "text": "数量非常多的时候呃"
+    },
+    {
+      "end_ms": 2415340,
+      "sid": 960,
+      "source_segment_index": 959,
+      "start_ms": 2413740,
+      "text": "商品和服务的这种价格"
+    },
+    {
+      "end_ms": 2417560,
+      "sid": 961,
+      "source_segment_index": 960,
+      "start_ms": 2415340,
+      "text": "可能就会无限的趋近于零"
+    },
+    {
+      "end_ms": 2421840,
+      "sid": 962,
+      "source_segment_index": 961,
+      "start_ms": 2417560,
+      "text": "然后这样很多人就可以获得他所有想要的"
+    },
+    {
+      "end_ms": 2423300,
+      "sid": 963,
+      "source_segment_index": 962,
+      "start_ms": 2421840,
+      "text": "不管是物品啊"
+    },
+    {
+      "end_ms": 2424680,
+      "sid": 964,
+      "source_segment_index": 963,
+      "start_ms": 2423300,
+      "text": "还是服务也好"
+    },
+    {
+      "end_ms": 2426280,
+      "sid": 965,
+      "source_segment_index": 964,
+      "start_ms": 2424680,
+      "text": "那在这样一种社会里面"
+    },
+    {
+      "end_ms": 2430030,
+      "sid": 966,
+      "source_segment_index": 965,
+      "start_ms": 2426280,
+      "text": "我觉得可能很多你的价值观以及你的优先级"
+    },
+    {
+      "end_ms": 2434890,
+      "sid": 967,
+      "source_segment_index": 966,
+      "start_ms": 2432290,
+      "text": "以及人和人之间相处的关系"
+    },
+    {
+      "end_ms": 2439410,
+      "sid": 968,
+      "source_segment_index": 967,
+      "start_ms": 2434890,
+      "text": "所以我觉得还是一个嗯非常有意思的时代"
+    },
+    {
+      "end_ms": 2441320,
+      "sid": 969,
+      "source_segment_index": 968,
+      "start_ms": 2439410,
+      "text": "我经常就在呃"
+    },
+    {
+      "end_ms": 2445360,
+      "sid": 970,
+      "source_segment_index": 969,
+      "start_ms": 2441320,
+      "text": "想象就是你看我们现在有了coding agent"
+    },
+    {
+      "end_ms": 2449410,
+      "sid": 971,
+      "source_segment_index": 970,
+      "start_ms": 2445360,
+      "text": "可能很多这个不管是中学生甚至小学生"
+    },
+    {
+      "end_ms": 2453420,
+      "sid": 972,
+      "source_segment_index": 971,
+      "start_ms": 2449410,
+      "text": "他们也可以用coding agent来做呃"
+    },
+    {
+      "end_ms": 2455340,
+      "sid": 973,
+      "source_segment_index": 972,
+      "start_ms": 2453420,
+      "text": "很多他们能想到"
+    },
+    {
+      "end_ms": 2458630,
+      "sid": 974,
+      "source_segment_index": 973,
+      "start_ms": 2455340,
+      "text": "但是他们可能没有这种技术能力来干到的事情"
+    },
+    {
+      "end_ms": 2460690,
+      "sid": 975,
+      "source_segment_index": 974,
+      "start_ms": 2458630,
+      "text": "现在一下就变得非常的普及"
+    },
+    {
+      "end_ms": 2461770,
+      "sid": 976,
+      "source_segment_index": 975,
+      "start_ms": 2460690,
+      "text": "那我就在想象"
+    },
+    {
+      "end_ms": 2465230,
+      "sid": 977,
+      "source_segment_index": 976,
+      "start_ms": 2461770,
+      "text": "等我们的机器人变得特别丰富的以后"
+    },
+    {
+      "end_ms": 2466510,
+      "sid": 978,
+      "source_segment_index": 977,
+      "start_ms": 2465230,
+      "text": "会不会存在一种景象"
+    },
+    {
+      "end_ms": 2469850,
+      "sid": 979,
+      "source_segment_index": 978,
+      "start_ms": 2466510,
+      "text": "就是说可能我是一个小学生"
+    },
+    {
+      "end_ms": 2472870,
+      "sid": 980,
+      "source_segment_index": 979,
+      "start_ms": 2469850,
+      "text": "然后我有一个什么想法"
+    },
+    {
+      "end_ms": 2477020,
+      "sid": 981,
+      "source_segment_index": 980,
+      "start_ms": 2472870,
+      "text": "这个想法是需要在物理世界中构建一些东西"
+    },
+    {
+      "end_ms": 2480050,
+      "sid": 982,
+      "source_segment_index": 981,
+      "start_ms": 2477020,
+      "text": "建也许他就喜欢生产玩具"
+    },
+    {
+      "end_ms": 2482130,
+      "sid": 983,
+      "source_segment_index": 982,
+      "start_ms": 2480050,
+      "text": "他以后就不只限于我"
+    },
+    {
+      "end_ms": 2483370,
+      "sid": 984,
+      "source_segment_index": 983,
+      "start_ms": 2482130,
+      "text": "我说我要买一个玩具"
+    },
+    {
+      "end_ms": 2484990,
+      "sid": 985,
+      "source_segment_index": 984,
+      "start_ms": 2483370,
+      "text": "我可以直接说一句话"
+    },
+    {
+      "end_ms": 2487210,
+      "sid": 986,
+      "source_segment_index": 985,
+      "start_ms": 2484990,
+      "text": "然后呢coding agent写一个程序"
+    },
+    {
+      "end_ms": 2489870,
+      "sid": 987,
+      "source_segment_index": 986,
+      "start_ms": 2487210,
+      "text": "然后就是说雇佣几个呃"
+    },
+    {
+      "end_ms": 2492270,
+      "sid": 988,
+      "source_segment_index": 987,
+      "start_ms": 2489870,
+      "text": "或者租用几个这种世界里面的"
+    },
+    {
+      "end_ms": 2494190,
+      "sid": 989,
+      "source_segment_index": 988,
+      "start_ms": 2492270,
+      "text": "这种物理世界里面的机器人"
+    },
+    {
+      "end_ms": 2496390,
+      "sid": 990,
+      "source_segment_index": 989,
+      "start_ms": 2494190,
+      "text": "让他真的搭一个小型的作坊"
+    },
+    {
+      "end_ms": 2497900,
+      "sid": 991,
+      "source_segment_index": 990,
+      "start_ms": 2496390,
+      "text": "或者说工厂也好"
+    },
+    {
+      "end_ms": 2501280,
+      "sid": 992,
+      "source_segment_index": 991,
+      "start_ms": 2497900,
+      "text": "来帮他实现他的一个呃什么一个梦想"
+    },
+    {
+      "end_ms": 2503440,
+      "sid": 993,
+      "source_segment_index": 992,
+      "start_ms": 2501280,
+      "text": "那我觉得在这样一种时代里面"
+    },
+    {
+      "end_ms": 2506100,
+      "sid": 994,
+      "source_segment_index": 993,
+      "start_ms": 2503440,
+      "text": "可能想象空间就会非常大吧"
+    },
+    {
+      "end_ms": 2508169,
+      "sid": 995,
+      "source_segment_index": 994,
+      "start_ms": 2506100,
+      "text": "所以我觉得也很期待"
+    },
+    {
+      "end_ms": 2511160,
+      "sid": 996,
+      "source_segment_index": 995,
+      "start_ms": 2508169,
+      "text": "将来会是一种什么样的未来"
+    },
+    {
+      "end_ms": 2513120,
+      "sid": 997,
+      "source_segment_index": 996,
+      "start_ms": 2511320,
+      "text": "在跟你的接触中"
+    },
+    {
+      "end_ms": 2517100,
+      "sid": 998,
+      "source_segment_index": 997,
+      "start_ms": 2513120,
+      "text": "感觉你你同时也是这个生活很丰富"
+    },
+    {
+      "end_ms": 2520000,
+      "sid": 999,
+      "source_segment_index": 998,
+      "start_ms": 2517100,
+      "text": "然后情感也相对比较细腻的一个人吧"
+    },
+    {
+      "end_ms": 2521860,
+      "sid": 1000,
+      "source_segment_index": 999,
+      "start_ms": 2520000,
+      "text": "因为我同时也在创业"
+    },
+    {
+      "end_ms": 2523140,
+      "sid": 1001,
+      "source_segment_index": 1000,
+      "start_ms": 2521860,
+      "text": "做这个家庭机器人嘛"
+    },
+    {
+      "end_ms": 2523940,
+      "sid": 1002,
+      "source_segment_index": 1001,
+      "start_ms": 2523140,
+      "text": "所以也很好奇"
+    },
+    {
+      "end_ms": 2526150,
+      "sid": 1003,
+      "source_segment_index": 1002,
+      "start_ms": 2523940,
+      "text": "比如说呃作为一个researcher"
+    },
+    {
+      "end_ms": 2527910,
+      "sid": 1004,
+      "source_segment_index": 1003,
+      "start_ms": 2526150,
+      "text": "但同时也有很多这个思考"
+    },
+    {
+      "end_ms": 2529350,
+      "sid": 1005,
+      "source_segment_index": 1004,
+      "start_ms": 2527910,
+      "text": "有很多这个情感"
+    },
+    {
+      "end_ms": 2532180,
+      "sid": 1006,
+      "source_segment_index": 1005,
+      "start_ms": 2529350,
+      "text": "这个时候你会认为未来的家庭"
+    },
+    {
+      "end_ms": 2534660,
+      "sid": 1007,
+      "source_segment_index": 1006,
+      "start_ms": 2532180,
+      "text": "机器人和人的关系应该是怎样的呢"
+    },
+    {
+      "end_ms": 2538870,
+      "sid": 1008,
+      "source_segment_index": 1007,
+      "start_ms": 2534660,
+      "text": "我觉得家庭机器人在我想象里面"
+    },
+    {
+      "end_ms": 2542170,
+      "sid": 1009,
+      "source_segment_index": 1008,
+      "start_ms": 2538870,
+      "text": "还更多像是一个全能的一个家电"
+    },
+    {
+      "end_ms": 2545609,
+      "sid": 1010,
+      "source_segment_index": 1009,
+      "start_ms": 2542170,
+      "text": "就是说你可以把家里所有能干的活儿"
+    },
+    {
+      "end_ms": 2548609,
+      "sid": 1011,
+      "source_segment_index": 1010,
+      "start_ms": 2545609,
+      "text": "或者你不想干的活都可以交给这个机器人"
+    },
+    {
+      "end_ms": 2551640,
+      "sid": 1012,
+      "source_segment_index": 1011,
+      "start_ms": 2548609,
+      "text": "然后他也不会啊去说什么"
+    },
+    {
+      "end_ms": 2553120,
+      "sid": 1013,
+      "source_segment_index": 1012,
+      "start_ms": 2551640,
+      "text": "我倒并没有想象"
+    },
+    {
+      "end_ms": 2558299,
+      "sid": 1014,
+      "source_segment_index": 1013,
+      "start_ms": 2553120,
+      "text": "他会太成为一个所谓情感的这种陪伴"
+    },
+    {
+      "end_ms": 2559159,
+      "sid": 1015,
+      "source_segment_index": 1014,
+      "start_ms": 2558299,
+      "text": "在我想象中"
+    },
+    {
+      "end_ms": 2563670,
+      "sid": 1016,
+      "source_segment_index": 1015,
+      "start_ms": 2559159,
+      "text": "我觉得机器人更多的是去干这个人不想干的"
+    },
+    {
+      "end_ms": 2565070,
+      "sid": 1017,
+      "source_segment_index": 1016,
+      "start_ms": 2563670,
+      "text": "这一部分事情"
+    },
+    {
+      "end_ms": 2567180,
+      "sid": 1018,
+      "source_segment_index": 1017,
+      "start_ms": 2565070,
+      "text": "而不是替代人"
+    },
+    {
+      "end_ms": 2569220,
+      "sid": 1019,
+      "source_segment_index": 1018,
+      "start_ms": 2567180,
+      "text": "他们想干的这部分事情"
+    },
+    {
+      "end_ms": 2572020,
+      "sid": 1020,
+      "source_segment_index": 1019,
+      "start_ms": 2569220,
+      "text": "比如说你需要跟家人有这种情感交流啊"
+    },
+    {
+      "end_ms": 2572780,
+      "sid": 1021,
+      "source_segment_index": 1020,
+      "start_ms": 2572020,
+      "text": "或者说话"
+    },
+    {
+      "end_ms": 2576300,
+      "sid": 1022,
+      "source_segment_index": 1021,
+      "start_ms": 2572780,
+      "text": "我觉得这部分其实才是更有人性的这一部分呃"
+    },
+    {
+      "end_ms": 2577040,
+      "sid": 1023,
+      "source_segment_index": 1022,
+      "start_ms": 2576300,
+      "text": "很好奇"
+    },
+    {
+      "end_ms": 2580780,
+      "sid": 1024,
+      "source_segment_index": 1023,
+      "start_ms": 2577040,
+      "text": "你在研发中会把你对机器人的一些设想"
+    },
+    {
+      "end_ms": 2582540,
+      "sid": 1025,
+      "source_segment_index": 1024,
+      "start_ms": 2580780,
+      "text": "放进你的研发里面吗"
+    },
+    {
+      "end_ms": 2585370,
+      "sid": 1026,
+      "source_segment_index": 1025,
+      "start_ms": 2582540,
+      "text": "就比如说你觉得这个机器人应该是怎样的"
+    },
+    {
+      "end_ms": 2587450,
+      "sid": 1027,
+      "source_segment_index": 1026,
+      "start_ms": 2585370,
+      "text": "那我的这个模型是不是采数据的时候"
+    },
+    {
+      "end_ms": 2589170,
+      "sid": 1028,
+      "source_segment_index": 1027,
+      "start_ms": 2587450,
+      "text": "多采一些这这些数据啊"
+    },
+    {
+      "end_ms": 2589930,
+      "sid": 1029,
+      "source_segment_index": 1028,
+      "start_ms": 2589170,
+      "text": "或者或者怎么样"
+    },
+    {
+      "end_ms": 2591900,
+      "sid": 1030,
+      "source_segment_index": 1029,
+      "start_ms": 2589930,
+      "text": "因为因为我觉得figure做做的事情"
+    },
+    {
+      "end_ms": 2593020,
+      "sid": 1031,
+      "source_segment_index": 1030,
+      "start_ms": 2591900,
+      "text": "一直都非常拟人对吧"
+    },
+    {
+      "end_ms": 2595260,
+      "sid": 1032,
+      "source_segment_index": 1031,
+      "start_ms": 2593020,
+      "text": "就是他那个放盘子以后"
+    },
+    {
+      "end_ms": 2596400,
+      "sid": 1033,
+      "source_segment_index": 1032,
+      "start_ms": 2595260,
+      "text": "俩人还对视一下"
+    },
+    {
+      "end_ms": 2599570,
+      "sid": 1034,
+      "source_segment_index": 1033,
+      "start_ms": 2596400,
+      "text": "然后那个拿屁股撞那个烤箱的门啊"
+    },
+    {
+      "end_ms": 2601290,
+      "sid": 1035,
+      "source_segment_index": 1034,
+      "start_ms": 2599570,
+      "text": "我觉得就是有很多巧劲儿"
+    },
+    {
+      "end_ms": 2604130,
+      "sid": 1036,
+      "source_segment_index": 1035,
+      "start_ms": 2601290,
+      "text": "很好奇你会有自己对机器人的一些设想"
+    },
+    {
+      "end_ms": 2606490,
+      "sid": 1037,
+      "source_segment_index": 1036,
+      "start_ms": 2604130,
+      "text": "然后把它这个偷偷搞点私货嘛"
+    },
+    {
+      "end_ms": 2607470,
+      "sid": 1038,
+      "source_segment_index": 1037,
+      "start_ms": 2606490,
+      "text": "哈哈呃"
+    },
+    {
+      "end_ms": 2611070,
+      "sid": 1039,
+      "source_segment_index": 1038,
+      "start_ms": 2607470,
+      "text": "我想说如果能达到那一天就就好"
+    },
+    {
+      "end_ms": 2611970,
+      "sid": 1040,
+      "source_segment_index": 1039,
+      "start_ms": 2611070,
+      "text": "所以坦白地说"
+    },
+    {
+      "end_ms": 2614280,
+      "sid": 1041,
+      "source_segment_index": 1040,
+      "start_ms": 2611970,
+      "text": "现在技术还没有到"
+    },
+    {
+      "end_ms": 2619540,
+      "sid": 1042,
+      "source_segment_index": 1041,
+      "start_ms": 2614280,
+      "text": "能给我们足够多的这个资源来进行这些探索"
+    },
+    {
+      "end_ms": 2620040,
+      "sid": 1043,
+      "source_segment_index": 1042,
+      "start_ms": 2619540,
+      "text": "说白了"
+    },
+    {
+      "end_ms": 2622680,
+      "sid": 1044,
+      "source_segment_index": 1043,
+      "start_ms": 2620040,
+      "text": "现在的很多的research上的数据"
+    },
+    {
+      "end_ms": 2625559,
+      "sid": 1045,
+      "source_segment_index": 1044,
+      "start_ms": 2622680,
+      "text": "收集的资源还是以实用为主呃"
+    },
+    {
+      "end_ms": 2628439,
+      "sid": 1046,
+      "source_segment_index": 1045,
+      "start_ms": 2625559,
+      "text": "但是就你刚才提到的这些呃"
+    },
+    {
+      "end_ms": 2630619,
+      "sid": 1047,
+      "source_segment_index": 1046,
+      "start_ms": 2628439,
+      "text": "比较有巧思的这些动作"
+    },
+    {
+      "end_ms": 2633260,
+      "sid": 1048,
+      "source_segment_index": 1047,
+      "start_ms": 2630619,
+      "text": "其实也是我们工业设计"
+    },
+    {
+      "end_ms": 2635100,
+      "sid": 1049,
+      "source_segment_index": 1048,
+      "start_ms": 2633260,
+      "text": "很大程度上来自于他们的努力"
+    },
+    {
+      "end_ms": 2638830,
+      "sid": 1050,
+      "source_segment_index": 1049,
+      "start_ms": 2635100,
+      "text": "他们其实对机器人的这个look and feel啊"
+    },
+    {
+      "end_ms": 2642350,
+      "sid": 1051,
+      "source_segment_index": 1050,
+      "start_ms": 2638830,
+      "text": "不管是从它的外观还是他的做的这些动作上"
+    },
+    {
+      "end_ms": 2644790,
+      "sid": 1052,
+      "source_segment_index": 1051,
+      "start_ms": 2642350,
+      "text": "都是有很强的把控的"
+    },
+    {
+      "end_ms": 2648470,
+      "sid": 1053,
+      "source_segment_index": 1052,
+      "start_ms": 2644790,
+      "text": "有的时候research也是需要花额外的精力"
+    },
+    {
+      "end_ms": 2649910,
+      "sid": 1054,
+      "source_segment_index": 1053,
+      "start_ms": 2648470,
+      "text": "来去满足这些"
+    },
+    {
+      "end_ms": 2652910,
+      "sid": 1055,
+      "source_segment_index": 1054,
+      "start_ms": 2649910,
+      "text": "所以我觉得这也是公司它整个呈现出来的"
+    },
+    {
+      "end_ms": 2654120,
+      "sid": 1056,
+      "source_segment_index": 1055,
+      "start_ms": 2652910,
+      "text": "调性的一部分吧"
+    },
+    {
+      "end_ms": 2657540,
+      "sid": 1057,
+      "source_segment_index": 1056,
+      "start_ms": 2654120,
+      "text": "最后我们还是我们这节目很重要的一个点"
+    },
+    {
+      "end_ms": 2659520,
+      "sid": 1058,
+      "source_segment_index": 1057,
+      "start_ms": 2657540,
+      "text": "就是一条建议啊"
+    },
+    {
+      "end_ms": 2662820,
+      "sid": 1059,
+      "source_segment_index": 1058,
+      "start_ms": 2659520,
+      "text": "能不能给现在所有在听我们节目的人啊"
+    },
+    {
+      "end_ms": 2664620,
+      "sid": 1060,
+      "source_segment_index": 1059,
+      "start_ms": 2662820,
+      "text": "你觉得呃一路走来"
+    },
+    {
+      "end_ms": 2666980,
+      "sid": 1061,
+      "source_segment_index": 1060,
+      "start_ms": 2664620,
+      "text": "对你来说最重要的一条人生建议是什么"
+    },
+    {
+      "end_ms": 2670340,
+      "sid": 1062,
+      "source_segment_index": 1061,
+      "start_ms": 2666980,
+      "text": "我最先想到的就是大家说的比较俗的"
+    },
+    {
+      "end_ms": 2671960,
+      "sid": 1063,
+      "source_segment_index": 1062,
+      "start_ms": 2670340,
+      "text": "就是做自己喜欢的事情"
+    },
+    {
+      "end_ms": 2675540,
+      "sid": 1064,
+      "source_segment_index": 1063,
+      "start_ms": 2671960,
+      "text": "这样说可能大家又觉得跟听了没有一样"
+    },
+    {
+      "end_ms": 2677020,
+      "sid": 1065,
+      "source_segment_index": 1064,
+      "start_ms": 2675540,
+      "text": "那我可能再加一条吧"
+    },
+    {
+      "end_ms": 2679790,
+      "sid": 1066,
+      "source_segment_index": 1065,
+      "start_ms": 2677020,
+      "text": "就是在你感兴趣的事情里面"
+    },
+    {
+      "end_ms": 2683820,
+      "sid": 1067,
+      "source_segment_index": 1066,
+      "start_ms": 2679790,
+      "text": "如果有好几件选一个最难的事情开始做"
+    },
+    {
+      "end_ms": 2687760,
+      "sid": 1068,
+      "source_segment_index": 1067,
+      "start_ms": 2683820,
+      "text": "我觉往往是会收获到一些意想不到的回报"
+    },
+    {
+      "end_ms": 2689140,
+      "sid": 1069,
+      "source_segment_index": 1068,
+      "start_ms": 2687760,
+      "text": "为什么选最难的呢"
+    },
+    {
+      "end_ms": 2692220,
+      "sid": 1070,
+      "source_segment_index": 1069,
+      "start_ms": 2689140,
+      "text": "我的这个反反驳的点在于诶"
+    },
+    {
+      "end_ms": 2693680,
+      "sid": 1071,
+      "source_segment_index": 1070,
+      "start_ms": 2692220,
+      "text": "我同时喜欢五件事"
+    },
+    {
+      "end_ms": 2696140,
+      "sid": 1072,
+      "source_segment_index": 1071,
+      "start_ms": 2693680,
+      "text": "那件简单的事我又喜欢他又简单"
+    },
+    {
+      "end_ms": 2697540,
+      "sid": 1073,
+      "source_segment_index": 1072,
+      "start_ms": 2696140,
+      "text": "我做起来不是更快乐吗"
+    },
+    {
+      "end_ms": 2699680,
+      "sid": 1074,
+      "source_segment_index": 1073,
+      "start_ms": 2697540,
+      "text": "所以你觉得选那件难的事情"
+    },
+    {
+      "end_ms": 2701180,
+      "sid": 1075,
+      "source_segment_index": 1074,
+      "start_ms": 2699680,
+      "text": "背后的这个逻辑"
+    },
+    {
+      "end_ms": 2703500,
+      "sid": 1076,
+      "source_segment_index": 1075,
+      "start_ms": 2701180,
+      "text": "或者背后的这个这个原理是什么呢"
+    },
+    {
+      "end_ms": 2703920,
+      "sid": 1077,
+      "source_segment_index": 1076,
+      "start_ms": 2703500,
+      "text": "对"
+    },
+    {
+      "end_ms": 2705620,
+      "sid": 1078,
+      "source_segment_index": 1077,
+      "start_ms": 2703920,
+      "text": "因为我觉得刚才说的命题"
+    },
+    {
+      "end_ms": 2707950,
+      "sid": 1079,
+      "source_segment_index": 1078,
+      "start_ms": 2705620,
+      "text": "是给年轻人的一条建议嘛"
+    },
+    {
+      "end_ms": 2710240,
+      "sid": 1080,
+      "source_segment_index": 1079,
+      "start_ms": 2707950,
+      "text": "我近些年一个观察"
+    },
+    {
+      "end_ms": 2712160,
+      "sid": 1081,
+      "source_segment_index": 1080,
+      "start_ms": 2710240,
+      "text": "就是说我发现年轻人没有什么资本"
+    },
+    {
+      "end_ms": 2714320,
+      "sid": 1082,
+      "source_segment_index": 1081,
+      "start_ms": 2712160,
+      "text": "呵呵现在尤其是在这个时代"
+    },
+    {
+      "end_ms": 2716200,
+      "sid": 1083,
+      "source_segment_index": 1082,
+      "start_ms": 2714320,
+      "text": "甚至他的所获得的资本"
+    },
+    {
+      "end_ms": 2720360,
+      "sid": 1084,
+      "source_segment_index": 1083,
+      "start_ms": 2716200,
+      "text": "跟比如一些已经年长一些的人差距就更大了"
+    },
+    {
+      "end_ms": 2723200,
+      "sid": 1085,
+      "source_segment_index": 1084,
+      "start_ms": 2720360,
+      "text": "那我觉得就当你没有任何资本的时候"
+    },
+    {
+      "end_ms": 2725440,
+      "sid": 1086,
+      "source_segment_index": 1085,
+      "start_ms": 2723200,
+      "text": "其实你的呃冒险精神"
+    },
+    {
+      "end_ms": 2728850,
+      "sid": 1087,
+      "source_segment_index": 1086,
+      "start_ms": 2725440,
+      "text": "还有你敢于这个挑战的这种精神"
+    },
+    {
+      "end_ms": 2730730,
+      "sid": 1088,
+      "source_segment_index": 1087,
+      "start_ms": 2728850,
+      "text": "其实就是你最大的资本"
+    },
+    {
+      "end_ms": 2732010,
+      "sid": 1089,
+      "source_segment_index": 1088,
+      "start_ms": 2730730,
+      "text": "因为你有时间嗯"
+    },
+    {
+      "end_ms": 2733690,
+      "sid": 1090,
+      "source_segment_index": 1089,
+      "start_ms": 2732010,
+      "text": "你可能会发现有一些年长的人"
+    },
+    {
+      "end_ms": 2735500,
+      "sid": 1091,
+      "source_segment_index": 1090,
+      "start_ms": 2733690,
+      "text": "当你作为一个年轻人"
+    },
+    {
+      "end_ms": 2738340,
+      "sid": 1092,
+      "source_segment_index": 1091,
+      "start_ms": 2735500,
+      "text": "选择干一个特别难的事的时候"
+    },
+    {
+      "end_ms": 2742820,
+      "sid": 1093,
+      "source_segment_index": 1092,
+      "start_ms": 2738340,
+      "text": "他们甚至会无条件的帮助你或者支持你"
+    },
+    {
+      "end_ms": 2745500,
+      "sid": 1094,
+      "source_segment_index": 1093,
+      "start_ms": 2742820,
+      "text": "可能他也能从这个事情上分一杯羹"
+    },
+    {
+      "end_ms": 2746800,
+      "sid": 1095,
+      "source_segment_index": 1094,
+      "start_ms": 2745500,
+      "text": "那这个背后的原理"
+    },
+    {
+      "end_ms": 2750610,
+      "sid": 1096,
+      "source_segment_index": 1095,
+      "start_ms": 2746800,
+      "text": "我觉得就是他可能冒不了这个险"
+    },
+    {
+      "end_ms": 2754030,
+      "sid": 1097,
+      "source_segment_index": 1096,
+      "start_ms": 2750610,
+      "text": "他可能由于他的家庭或者他的各种考量也好"
+    },
+    {
+      "end_ms": 2758240,
+      "sid": 1098,
+      "source_segment_index": 1097,
+      "start_ms": 2754030,
+      "text": "他没有这个时间资本来做这种冒险的选择"
+    },
+    {
+      "end_ms": 2759780,
+      "sid": 1099,
+      "source_segment_index": 1098,
+      "start_ms": 2758240,
+      "text": "那你作为一个年轻人"
+    },
+    {
+      "end_ms": 2762040,
+      "sid": 1100,
+      "source_segment_index": 1099,
+      "start_ms": 2759780,
+      "text": "可以有这种选择的话"
+    },
+    {
+      "end_ms": 2766190,
+      "sid": 1101,
+      "source_segment_index": 1100,
+      "start_ms": 2762040,
+      "text": "你就会成为对他很有吸引力的一种投资吧"
+    },
+    {
+      "end_ms": 2770850,
+      "sid": 1102,
+      "source_segment_index": 1101,
+      "start_ms": 2766190,
+      "text": "然后他可能也会愿意把自己的时间资源啊"
+    },
+    {
+      "end_ms": 2772290,
+      "sid": 1103,
+      "source_segment_index": 1102,
+      "start_ms": 2770850,
+      "text": "投进去来帮助你"
+    },
+    {
+      "end_ms": 2774370,
+      "sid": 1104,
+      "source_segment_index": 1103,
+      "start_ms": 2772290,
+      "text": "他也是期待自己的回放所啊"
+    },
+    {
+      "end_ms": 2776130,
+      "sid": 1105,
+      "source_segment_index": 1104,
+      "start_ms": 2774370,
+      "text": "当然这样说的可能会比较功利"
+    },
+    {
+      "end_ms": 2779340,
+      "sid": 1106,
+      "source_segment_index": 1105,
+      "start_ms": 2776130,
+      "text": "另一方面我觉得就是可能做一个难的事"
+    },
+    {
+      "end_ms": 2783760,
+      "sid": 1107,
+      "source_segment_index": 1106,
+      "start_ms": 2779340,
+      "text": "最后获得的这种成就感和给你增长自信"
+    },
+    {
+      "end_ms": 2787420,
+      "sid": 1108,
+      "source_segment_index": 1107,
+      "start_ms": 2783760,
+      "text": "我觉得在成长期来说也是挺有帮助的"
+    },
+    {
+      "end_ms": 2790300,
+      "sid": 1109,
+      "source_segment_index": 1108,
+      "start_ms": 2787420,
+      "text": "那这个我觉得今天聊得很开心啊"
+    },
+    {
+      "end_ms": 2793360,
+      "sid": 1110,
+      "source_segment_index": 1109,
+      "start_ms": 2790300,
+      "text": "也问了很多我们很关心的这个问题啊"
+    },
+    {
+      "end_ms": 2794760,
+      "sid": 1111,
+      "source_segment_index": 1110,
+      "start_ms": 2793360,
+      "text": "再次感谢嘉宁"
+    },
+    {
+      "end_ms": 2796640,
+      "sid": 1112,
+      "source_segment_index": 1111,
+      "start_ms": 2794760,
+      "text": "然后那要不我们今天就聊到这儿"
+    },
+    {
+      "end_ms": 2798800,
+      "sid": 1113,
+      "source_segment_index": 1112,
+      "start_ms": 2796640,
+      "text": "然后也跟大家打个招呼好的"
+    },
+    {
+      "end_ms": 2799640,
+      "sid": 1114,
+      "source_segment_index": 1113,
+      "start_ms": 2798800,
+      "text": "谢谢徐老师"
+    },
+    {
+      "end_ms": 2800200,
+      "sid": 1115,
+      "source_segment_index": 1114,
+      "start_ms": 2799640,
+      "text": "拜拜"
+    }
+  ],
+  "source": {
+    "normalization": "bilibili-ai-subtitle-body-v1",
+    "raw_path": "shows/xuhuazhe/episodes/bili-bv1rs8i66eng-jed-yang/asr/bilibili-subtitles/raw.json",
+    "raw_sha256": "2458a9217d5fcc8b581a1ba26b866fa7672c1917ebad9f9e2e9e77bdc062e10f"
+  }
+}
