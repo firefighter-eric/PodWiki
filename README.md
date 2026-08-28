@@ -46,14 +46,18 @@ npm run check
 | [月球大叔的硅谷播客](https://space.bilibili.com/15452596/) | 从硅谷与科技创业实践出发，访谈 AI、系统、学术和创业领域的研究者与创始人。 | [README](./shows/moonuncle/) |
 | [WhynotTV Podcast](https://space.bilibili.com/14145636/) | 聚焦 AI 技术、工程实践、商业逻辑与个人成长的长篇对谈。 | [README](./shows/whynottv/) |
 | [一起铁TALK](https://www.xiaoyuzhoufm.com/podcast/6951e312febad13106eb017e) | 以跑步为入口，聊训练、生活经验和真实处境。 | [README](./shows/yiqitietalk/) |
+| [许华哲的自定义地图](https://www.xiaoyuzhoufm.com/podcast/68e683b4152f6199cd806824) | 从 AI、机器人和技术职业出发，访谈研究者与创业者的经历和判断。 | [README](./shows/xuhuazhe/) |
 | [Dwarkesh Podcast](https://www.dwarkesh.com/) | Dwarkesh Patel 主持的英文长篇访谈播客，以深入准备的对谈讨论人工智能、科学、历史及其长期影响。 | [README](./shows/dwarkesh/) |
 
 ## 单集索引
 
 | 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |
 | --- | --- | --- | --- | --- | --- |
+| [对话艾博生物CEO英博：“一人一药”，Moderna，AI制药，癌症疫苗的边界与未来【101视频播客】](https://www.bilibili.com/video/BV1aZtc68EzJ/) | 英博 | [硅谷101](./shows/sv101/) | 2026-08-28 | [总结](./shows/sv101/episodes/250-ying-bo/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/250-ying-bo/transcript.zh-CN.md) |
+| [AI可解释性与对齐：J-Space，思维链，AI人格，幻觉，与金门大桥【101视频播客】](https://www.bilibili.com/video/BV1gyhF6wEDD/) | Aryaman Arora | [硅谷101](./shows/sv101/) | 2026-08-27 | [总结](./shows/sv101/episodes/bili-bv1gyhf6wedd-aryaman-arora/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/bili-bv1gyhf6wedd-aryaman-arora/transcript.zh-CN.md) |
 | [领读Kimi K3技术报告：从架构创新聊起，注意力美学、多教师蒸馏和开源MoE](https://www.bilibili.com/video/BV1KZ8X6uEPL/) | 孙宇涛 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-08-26 | [总结](./shows/zhangxiaojun/episodes/152-sun-yutao/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/152-sun-yutao/transcript.zh-CN.md) |
 | [硅谷坐标 x FundaAI周默：美股科技公司Q2财报深度拆解：资本开支增速重新超过AI收入](https://www.bilibili.com/video/BV1QuhL6gEtQ/) | 周默 | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-08-26 | [总结](./shows/svvector/episodes/bili-bv1quhl6getq-zhou-mo/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv1quhl6getq-zhou-mo/transcript.zh-CN.md) |
+| [对话研究员 Jed Yang｜在人形机器人公司 Figure 上班是种什么体验？](https://www.bilibili.com/video/BV1RS8i66Eng/) | 杨佳宁 | [许华哲的自定义地图](./shows/xuhuazhe/) | 2026-08-25 | [总结](./shows/xuhuazhe/episodes/bili-bv1rs8i66eng-jed-yang/summary.zh-CN.md) | [逐字稿](./shows/xuhuazhe/episodes/bili-bv1rs8i66eng-jed-yang/transcript.zh-CN.md) |
 | [徐天音：系统，UIUC，教授，最佳论文，Agent Infra，云计算，形式化验证，容错，纯粹](https://www.bilibili.com/video/BV1F1846pEYT/) | 徐天音 | [月球大叔的硅谷播客](./shows/moonuncle/) | 2026-08-23 | [总结](./shows/moonuncle/episodes/bili-bv1f1846peyt-xu-tianyin/summary.zh-CN.md) | [逐字稿](./shows/moonuncle/episodes/bili-bv1f1846peyt-xu-tianyin/transcript.zh-CN.md) |
 | [世界模型是具身的永动机？【晚点LatePost】](https://www.bilibili.com/video/BV1wQ8y63EyG/) | 戴勇、张怡、唐都玉 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-08-22 | [总结](./shows/latetalk/episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/transcript.zh-CN.md) |
 | [郑小倩：首马 229，竟怀疑自己，场地冠军到到浙江纪录](https://www.xiaoyuzhoufm.com/episode/6a8675c1ef65145dfcc264f8) | 郑小倩 | [一起铁TALK](./shows/yiqitietalk/) | 2026-08-20 | [总结](./shows/yiqitietalk/episodes/21-zheng-xiaoqian/summary.zh-CN.md) | [逐字稿](./shows/yiqitietalk/episodes/21-zheng-xiaoqian/transcript.zh-CN.md) |

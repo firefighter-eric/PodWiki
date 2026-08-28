@@ -40,7 +40,7 @@ sources:
     url: https://podcasts.apple.com/podcast/id1498541229
     identifiers:
       apple_podcasts_id: "1498541229"
-last_verified_at: 2026-08-25
+last_verified_at: 2026-08-28
 ---
 
 # 硅谷101
@@ -51,6 +51,8 @@ last_verified_at: 2026-08-25
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [对话艾博生物CEO英博：“一人一药”，Moderna，AI制药，癌症疫苗的边界与未来【101视频播客】](https://www.bilibili.com/video/BV1aZtc68EzJ/) | 硅谷101 | 2026-08-28 | [总结](./episodes/250-ying-bo/summary.zh-CN.md) | [逐字稿](./episodes/250-ying-bo/transcript.zh-CN.md) |
+| [AI可解释性与对齐：J-Space，思维链，AI人格，幻觉，与金门大桥【101视频播客】](https://www.bilibili.com/video/BV1gyhF6wEDD/) | 硅谷101 | 2026-08-27 | [总结](./episodes/bili-bv1gyhf6wedd-aryaman-arora/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1gyhf6wedd-aryaman-arora/transcript.zh-CN.md) |
 | [Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路【硅谷101播客】](https://www.bilibili.com/video/BV1yFbo66E4q/) | 硅谷101 | 2026-08-20 | [总结](./episodes/249-zhang-hongjiang-huang-dongxu/summary.zh-CN.md) | [逐字稿](./episodes/249-zhang-hongjiang-huang-dongxu/transcript.zh-CN.md) |
 | [对话前DeepMind曹原：AI for Science爆发，一个新时代到来了【101视频播客】](https://www.bilibili.com/video/BV1GQgg6yEy5/) | 硅谷101 | 2026-08-15 | [总结](./episodes/bili-bv1gqgg6yey5-cao-yuan/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1gqgg6yey5-cao-yuan/transcript.zh-CN.md) |
 | [对话盛颖：xAI，Infra的浪漫，SGLang，开源，平权与“甄嬛传”【101视频播客】](https://www.bilibili.com/video/BV1GaM968E6T/) | 硅谷101 | 2026-08-05 | [总结](./episodes/247-sheng-ying/summary.zh-CN.md) | [逐字稿](./episodes/247-sheng-ying/transcript.zh-CN.md) |
