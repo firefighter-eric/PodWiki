@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { gunzipSync } from "node:zlib";
 
 const searchIndexMarker = "podwiki-search-index-v1";
 const maximumTraceBytes = 30 * 1024 * 1024;
@@ -11,6 +12,7 @@ const tracePath = path.join(
   ".next/server/app/api/search/route.js.nft.json",
 );
 const generatedIndexPath = path.join(webRoot, ".generated/search-index.json");
+const bundlePath = path.join(webRoot, ".generated/search-index-bundle.json");
 
 if (!fs.existsSync(tracePath)) {
   throw new Error(`Search route trace is missing; run npm run build first: ${tracePath}`);
@@ -34,6 +36,14 @@ const actualContentDigest = createHash("sha256")
 if (actualContentDigest !== generatedIndex.contentDigest) {
   throw new Error("Generated search index content digest does not match its documents");
 }
+const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
+if (
+  bundle.format !== "podwiki-search-index-gzip-v1"
+  || bundle.contentDigest !== actualContentDigest
+  || !gunzipSync(Buffer.from(bundle.payload, "base64")).equals(fs.readFileSync(generatedIndexPath))
+) {
+  throw new Error("Compressed search bundle does not match the generated search index");
+}
 
 const traceDirectory = path.dirname(tracePath);
 const traceFiles = [...new Set(trace.files)];
@@ -55,7 +65,9 @@ for (const relativePath of traceFiles) {
   if (/\/shows\/.+\.md$/u.test(normalizedPath)) tracedMarkdown.push(absolutePath);
   if (relativePath.endsWith(".js") || relativePath.endsWith(".json")) {
     const source = fs.readFileSync(absolutePath, "utf8");
-    if (source.includes(generatedIndex.contentDigest)) containsGeneratedIndex = true;
+    if (source.includes(generatedIndex.contentDigest) && source.includes(bundle.payload)) {
+      containsGeneratedIndex = true;
+    }
   }
 }
 

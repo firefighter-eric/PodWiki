@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import generatedSearchIndex from "@/.generated/search-index.json";
+import generatedSearchBundle from "@/.generated/search-index-bundle.json";
+import { unpackSearchIndex } from "@/lib/search-bundle";
 import { searchContent as searchGeneratedIndex } from "@/lib/search";
 import {
   buildSearchDocumentsForTesting,
@@ -13,6 +15,24 @@ import {
 } from "@/lib/search-core";
 
 describe("generated search index", () => {
+  it("round-trips the entire deployment bundle without changing any document", () => {
+    expect(unpackSearchIndex(generatedSearchBundle)).toEqual(generatedSearchIndex);
+  });
+
+  it("rejects a deployment bundle bound to different content", () => {
+    expect(() => unpackSearchIndex({
+      ...generatedSearchBundle,
+      contentDigest: "0".repeat(64),
+    })).toThrow("content digest mismatch");
+  });
+
+  it("rejects a damaged deployment bundle", () => {
+    expect(() => unpackSearchIndex({
+      ...generatedSearchBundle,
+      payload: "corrupted",
+    })).toThrow();
+  });
+
   it("matches every document built by the formal content loader", async () => {
     expect(hydrateSearchIndex(generatedSearchIndex as GeneratedSearchIndex))
       .toEqual(await buildSearchDocumentsForTesting());

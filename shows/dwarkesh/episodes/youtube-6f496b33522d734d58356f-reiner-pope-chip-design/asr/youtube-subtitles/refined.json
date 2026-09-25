@@ -1,0 +1,4561 @@
+{
+  "generated_at": "2026-09-22T16:22:13.087885Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-6f496b33522d734d58356f-reiner-pope-chip-design/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "4ad8be7dae66d7941b66f58f06a7938a8a8a7708d3ccd79c0865db81276c5891"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 4880,
+      "source_event_index": 0,
+      "start_ms": 80,
+      "text": "I'm back with Reiner Pope, CEO of MatX, a new AI chip company."
+    },
+    {
+      "end_ms": 7440,
+      "source_event_index": 1,
+      "start_ms": 4880,
+      "text": "Last time we were talking about what happens inside a data center."
+    },
+    {
+      "end_ms": 10560,
+      "source_event_index": 2,
+      "start_ms": 7440,
+      "text": "Now I want to understand what happens inside an AI chip."
+    },
+    {
+      "end_ms": 13680,
+      "source_event_index": 3,
+      "start_ms": 10560,
+      "text": "How does a chip actually work? Full disclosure, by the way:"
+    },
+    {
+      "end_ms": 19440,
+      "source_event_index": 4,
+      "start_ms": 13680,
+      "text": "I am an angel investor in MatX. So hopefully you have designed a good chip."
+    },
+    {
+      "end_ms": 25840,
+      "source_event_index": 5,
+      "start_ms": 19440,
+      "text": "Hope so. I'll start with the smallest fundamental unit of chip design, and we'll"
+    },
+    {
+      "end_ms": 30880,
+      "source_event_index": 6,
+      "start_ms": 25840,
+      "text": "build up to what an actual production chip is and what its components are."
+    },
+    {
+      "end_ms": 36480,
+      "source_event_index": 7,
+      "start_ms": 30880,
+      "text": "At the very bottom level of a chip, the primitives we work with are logic gates,"
+    },
+    {
+      "end_ms": 42640,
+      "source_event_index": 8,
+      "start_ms": 37120,
+      "text": "very simple things like AND, OR, and NOT. These are connected together by wires that have to"
+    },
+    {
+      "end_ms": 50080,
+      "source_event_index": 9,
+      "start_ms": 42640,
+      "text": "be laid out physically as metal traces on a chip. The main function that AI chips want to compute"
+    },
+    {
+      "end_ms": 54720,
+      "source_event_index": 10,
+      "start_ms": 50080,
+      "text": "is the multiplication of matrices. Inside that, the fundamental primitive"
+    },
+    {
+      "end_ms": 61680,
+      "source_event_index": 11,
+      "start_ms": 54720,
+      "text": "is a multiply-accumulate of pairs of numbers. We're going to demonstrate what that calculation"
+    },
+    {
+      "end_ms": 67280,
+      "source_event_index": 12,
+      "start_ms": 61680,
+      "text": "looks like by hand, and then infer what a circuit would look like for that."
+    },
+    {
+      "end_ms": 77360,
+      "source_event_index": 13,
+      "start_ms": 68080,
+      "text": "It'll be easiest if I do a multiply-accumulate of a four-bit number with another four-bit number."
+    },
+    {
+      "end_ms": 84080,
+      "source_event_index": 14,
+      "start_ms": 80240,
+      "text": "The clearest primitive is actually multiply-accumulate."
+    },
+    {
+      "end_ms": 100000,
+      "source_event_index": 15,
+      "start_ms": 84080,
+      "text": "So there's a multiply of these two terms, and then we're going to add in an eight-bit number."
+    },
+    {
+      "end_ms": 107840,
+      "source_event_index": 16,
+      "start_ms": 100560,
+      "text": "Can I ask a clarifying question? Why is this the natural primitive for"
+    },
+    {
+      "end_ms": 113600,
+      "source_event_index": 17,
+      "start_ms": 109280,
+      "text": "whatever computation happens inside a computer? There are a few reasons."
+    },
+    {
+      "end_ms": 120960,
+      "source_event_index": 18,
+      "start_ms": 115280,
+      "text": "It's a little bit more efficient, but the reason it's natural for AI chips is that if"
+    },
+    {
+      "end_ms": 126400,
+      "source_event_index": 19,
+      "start_ms": 120960,
+      "text": "you look at what's happening during a matrix multiply… What is a matrix multiply in short?"
+    },
+    {
+      "end_ms": 141520,
+      "source_event_index": 20,
+      "start_ms": 129200,
+      "text": "There's a for-loop over i, over j, and over k, of output [i,"
+    },
+    {
+      "end_ms": 156080,
+      "source_event_index": 21,
+      "start_ms": 141520,
+      "text": "k] += input [i, j] x other input [j, k]. A multiply-accumulate happens at every"
+    },
+    {
+      "end_ms": 160640,
+      "source_event_index": 22,
+      "start_ms": 156080,
+      "text": "single step of a matrix multiply. The other observation is that the"
+    },
+    {
+      "end_ms": 165520,
+      "source_event_index": 23,
+      "start_ms": 160640,
+      "text": "precision will almost always be higher in the accumulation step than in the multiplication step."
+    },
+    {
+      "end_ms": 169840,
+      "source_event_index": 24,
+      "start_ms": 165520,
+      "text": "This is specific to AI chips. You're multiplying low-precision numbers,"
+    },
+    {
+      "end_ms": 174240,
+      "source_event_index": 25,
+      "start_ms": 169840,
+      "text": "and then when you accumulate, errors accumulate quickly, so you need more precision there."
+    },
+    {
+      "end_ms": 178240,
+      "source_event_index": 26,
+      "start_ms": 174240,
+      "text": "This is why we've chosen to do a four-bit multiplication and an eight-bit addition."
+    },
+    {
+      "end_ms": 181440,
+      "source_event_index": 27,
+      "start_ms": 178240,
+      "text": "Let me make sure I understood that. There are two ways to understand that."
+    },
+    {
+      "end_ms": 186000,
+      "source_event_index": 28,
+      "start_ms": 181440,
+      "text": "One is that the value will be larger than the inputs."
+    },
+    {
+      "end_ms": 190800,
+      "source_event_index": 29,
+      "start_ms": 186000,
+      "text": "The other is that if it was a floating-point number it would be…"
+    },
+    {
+      "end_ms": 194160,
+      "source_event_index": 30,
+      "start_ms": 190800,
+      "text": "Maybe that part is less intuitive to me. But maybe it's the same principle?"
+    },
+    {
+      "end_ms": 200400,
+      "source_event_index": 31,
+      "start_ms": 194160,
+      "text": "It really is the same principle. The separate principle is that as"
+    },
+    {
+      "end_ms": 203680,
+      "source_event_index": 32,
+      "start_ms": 200400,
+      "text": "you're summing up this number, you're summing up a whole bunch of numbers, so you've got a"
+    },
+    {
+      "end_ms": 208000,
+      "source_event_index": 33,
+      "start_ms": 203680,
+      "text": "lot of rounding errors accumulating. Whereas in this case, there's only"
+    },
+    {
+      "end_ms": 210560,
+      "source_event_index": 34,
+      "start_ms": 208000,
+      "text": "one multiplication in the chain, so there aren't a lot of rounding"
+    },
+    {
+      "end_ms": 213920,
+      "source_event_index": 35,
+      "start_ms": 210560,
+      "text": "errors accumulating in the multiplication. Why are you summing up a whole bunch of numbers?"
+    },
+    {
+      "end_ms": 219280,
+      "source_event_index": 36,
+      "start_ms": 213920,
+      "text": "There’s just two numbers there. This summation is repeated j many times."
+    },
+    {
+      "end_ms": 224480,
+      "source_event_index": 37,
+      "start_ms": 219280,
+      "text": "Any errors accumulate. I see. So how would we perform this calculation by hand?"
+    },
+    {
+      "end_ms": 228240,
+      "source_event_index": 38,
+      "start_ms": 225040,
+      "text": "As a human, we would probably separate it into two, but we can do"
+    },
+    {
+      "end_ms": 235760,
+      "source_event_index": 39,
+      "start_ms": 228240,
+      "text": "it all in one using long multiplication. For the multiplication term first, we're"
+    },
+    {
+      "end_ms": 243120,
+      "source_event_index": 40,
+      "start_ms": 235760,
+      "text": "going to multiply this four-bit number by every single bit position in the other four-bit number."
+    },
+    {
+      "end_ms": 248720,
+      "source_event_index": 41,
+      "start_ms": 243120,
+      "text": "We write that out. First, 1001 multiplied by this bit position."
+    },
+    {
+      "end_ms": 254800,
+      "source_event_index": 42,
+      "start_ms": 250240,
+      "text": "That is the number itself. Then shifted across by one,"
+    },
+    {
+      "end_ms": 260720,
+      "source_event_index": 43,
+      "start_ms": 254800,
+      "text": "we're multiplying by 0. That gives us an all-0 number."
+    },
+    {
+      "end_ms": 268800,
+      "source_event_index": 44,
+      "start_ms": 260720,
+      "text": "Shifted across one more to multiply by this one, we get 1001."
+    },
+    {
+      "end_ms": 273440,
+      "source_event_index": 45,
+      "start_ms": 268800,
+      "text": "Finally, for this last bit position, we get an all-0 number again."
+    },
+    {
+      "end_ms": 282960,
+      "source_event_index": 46,
+      "start_ms": 277120,
+      "text": "This gives us a bunch of terms that we have to add for the multiplication."
+    },
+    {
+      "end_ms": 290160,
+      "source_event_index": 47,
+      "start_ms": 283920,
+      "text": "While we're doing that summation, we might as well add in the actual accumulator term as well."
+    },
+    {
+      "end_ms": 300000,
+      "source_event_index": 48,
+      "start_ms": 290160,
+      "text": "So we just copy that directly across. So this is the sum."
+    },
+    {
+      "end_ms": 302720,
+      "source_event_index": 49,
+      "start_ms": 300000,
+      "text": "It's a five-way sum that we want to compute."
+    },
+    {
+      "end_ms": 312160,
+      "source_event_index": 50,
+      "start_ms": 307520,
+      "text": "What logic gates did it take us to get to this intermediate step?"
+    },
+    {
+      "end_ms": 316960,
+      "source_event_index": 51,
+      "start_ms": 312160,
+      "text": "We needed to produce all 16 of these partial products."
+    },
+    {
+      "end_ms": 323920,
+      "source_event_index": 52,
+      "start_ms": 317920,
+      "text": "How do I produce one of these partial products? Let's take this number 1, for example here."
+    },
+    {
+      "end_ms": 330720,
+      "source_event_index": 53,
+      "start_ms": 326080,
+      "text": "We produce it by multiplying this number by this one over here."
+    },
+    {
+      "end_ms": 335600,
+      "source_event_index": 54,
+      "start_ms": 331440,
+      "text": "We can produce that with an AND gate. This number is 1 if both this bit"
+    },
+    {
+      "end_ms": 337920,
+      "source_event_index": 55,
+      "start_ms": 335600,
+      "text": "is 1 and this bit is 1. If either of them is 0,"
+    },
+    {
+      "end_ms": 345600,
+      "source_event_index": 56,
+      "start_ms": 337920,
+      "text": "then the multiplication of 0 times anything is 0. To produce all of this, we ended up"
+    },
+    {
+      "end_ms": 350880,
+      "source_event_index": 57,
+      "start_ms": 345600,
+      "text": "consuming 16 AND gates. In the general case,"
+    },
+    {
+      "end_ms": 366560,
+      "source_event_index": 58,
+      "start_ms": 350880,
+      "text": "if I were doing a p bit multiply times a q bit multiply, this will be p times q many ANDs."
+    },
+    {
+      "end_ms": 375040,
+      "source_event_index": 59,
+      "start_ms": 370160,
+      "text": "Finally, I sum them. Most of the work is going to happen in the summing."
+    },
+    {
+      "end_ms": 380480,
+      "source_event_index": 60,
+      "start_ms": 375680,
+      "text": "Let me describe the other logic gate that we use here."
+    },
+    {
+      "end_ms": 383200,
+      "source_event_index": 61,
+      "start_ms": 380480,
+      "text": "AND is almost the simplest logic gate that exists on a chip."
+    },
+    {
+      "end_ms": 390480,
+      "source_event_index": 62,
+      "start_ms": 383200,
+      "text": "It's almost the smallest. At the other extreme, the very largest logic gate you'll typically use"
+    },
+    {
+      "end_ms": 399040,
+      "source_event_index": 63,
+      "start_ms": 390480,
+      "text": "is something called a full adder. Coming from software, you might think"
+    },
+    {
+      "end_ms": 403680,
+      "source_event_index": 64,
+      "start_ms": 399040,
+      "text": "that a full adder adds 32-bit numbers together. In this case, it just adds three single-bit"
+    },
+    {
+      "end_ms": 408320,
+      "source_event_index": 65,
+      "start_ms": 403680,
+      "text": "numbers together, so you can think of it as adding 0, 1, and 1 together."
+    },
+    {
+      "end_ms": 414320,
+      "source_event_index": 66,
+      "start_ms": 410400,
+      "text": "When I add these together, the result can be 0, 1, 2, or 3, so I can express that"
+    },
+    {
+      "end_ms": 418880,
+      "source_event_index": 67,
+      "start_ms": 414320,
+      "text": "in binary using just two bits. As input, it has three bits."
+    },
+    {
+      "end_ms": 424960,
+      "source_event_index": 68,
+      "start_ms": 418880,
+      "text": "As output, it has two bits. The number 2 in binary is 10."
+    },
+    {
+      "end_ms": 437600,
+      "source_event_index": 69,
+      "start_ms": 426880,
+      "text": "This is also known as a 3→2 compressor because it takes three bits of input"
+    },
+    {
+      "end_ms": 439520,
+      "source_event_index": 70,
+      "start_ms": 437600,
+      "text": "and produces two bits of output. Just to make sure I understood: the"
+    },
+    {
+      "end_ms": 445200,
+      "source_event_index": 71,
+      "start_ms": 439520,
+      "text": "two inputs are an X and a Y value and then some carry that came in…"
+    },
+    {
+      "end_ms": 454320,
+      "source_event_index": 72,
+      "start_ms": 447120,
+      "text": "The three inputs are all bits in the same bit position, like three bits in a column here."
+    },
+    {
+      "end_ms": 461360,
+      "source_event_index": 73,
+      "start_ms": 455120,
+      "text": "The two outputs, I've drawn them vertically here and horizontally here to match this"
+    },
+    {
+      "end_ms": 465920,
+      "source_event_index": 74,
+      "start_ms": 461360,
+      "text": "vertical versus horizontal layout. This expresses that things in the same"
+    },
+    {
+      "end_ms": 470160,
+      "source_event_index": 75,
+      "start_ms": 465920,
+      "text": "column are in the same bit position, whereas things in adjacent columns are different."
+    },
+    {
+      "end_ms": 476800,
+      "source_event_index": 76,
+      "start_ms": 470160,
+      "text": "This is a carry out, whereas this was the sum. So if the inputs in the full adder were, say,"
+    },
+    {
+      "end_ms": 479280,
+      "source_event_index": 77,
+      "start_ms": 476800,
+      "text": "101, then the output would be 10. If it were 111, it'd be 11."
+    },
+    {
+      "end_ms": 486800,
+      "source_event_index": 78,
+      "start_ms": 479280,
+      "text": "If it were 000, it'd be 00. If it were 010, it'd still be 01."
+    },
+    {
+      "end_ms": 489440,
+      "source_event_index": 79,
+      "start_ms": 486800,
+      "text": "Got it. Yeah. It's essentially just counting the"
+    },
+    {
+      "end_ms": 497120,
+      "source_event_index": 80,
+      "start_ms": 489440,
+      "text": "number of things and expressing that in binary. This circuit captures what we as humans naturally"
+    },
+    {
+      "end_ms": 504960,
+      "source_event_index": 81,
+      "start_ms": 497120,
+      "text": "do when we're summing along a column. I'll show one iteration of using"
+    },
+    {
+      "end_ms": 507840,
+      "source_event_index": 82,
+      "start_ms": 504960,
+      "text": "the full adder to sum. The way I sum here is going"
+    },
+    {
+      "end_ms": 511760,
+      "source_event_index": 83,
+      "start_ms": 507840,
+      "text": "to be a little unnatural for humans. We would sum along the column and then"
+    },
+    {
+      "end_ms": 518160,
+      "source_event_index": 84,
+      "start_ms": 511760,
+      "text": "remember the carry, but instead of remembering the carry, we'll explicitly write it out."
+    },
+    {
+      "end_ms": 522160,
+      "source_event_index": 85,
+      "start_ms": 519120,
+      "text": "We proceed from the rightmost column toward the left."
+    },
+    {
+      "end_ms": 531360,
+      "source_event_index": 86,
+      "start_ms": 522160,
+      "text": "On the rightmost column, we sum the 1 and the 1, and that produces a zero here and a carry of one."
+    },
+    {
+      "end_ms": 539200,
+      "source_event_index": 87,
+      "start_ms": 531360,
+      "text": "We've used this full adder circuit on this pair of bits and produced a pair of bits as output."
+    },
+    {
+      "end_ms": 544880,
+      "source_event_index": 88,
+      "start_ms": 539200,
+      "text": "Now we can do the same thing with this column. We have a column of four numbers, so we'll take"
+    },
+    {
+      "end_ms": 551520,
+      "source_event_index": 89,
+      "start_ms": 544880,
+      "text": "the first three of them, run a full adder on them, and that gives us a 0 and a 0 as output."
+    },
+    {
+      "end_ms": 558720,
+      "source_event_index": 90,
+      "start_ms": 552320,
+      "text": "The sum of these is 00. That's the full adder applied to all these bits."
+    },
+    {
+      "end_ms": 565840,
+      "source_event_index": 91,
+      "start_ms": 558720,
+      "text": "As I've used up bits, I'll cross them out to indicate that I've handled them."
+    },
+    {
+      "end_ms": 571200,
+      "source_event_index": 92,
+      "start_ms": 565840,
+      "text": "Let's keep going a little bit more. I take these three numbers, I add"
+    },
+    {
+      "end_ms": 576880,
+      "source_event_index": 93,
+      "start_ms": 571200,
+      "text": "them, and that gives me a 1 and a 0. I've dealt with these three numbers."
+    },
+    {
+      "end_ms": 584160,
+      "source_event_index": 94,
+      "start_ms": 576880,
+      "text": "Now I take these three numbers and add them, and that gives me a 1 and a 0,"
+    },
+    {
+      "end_ms": 591840,
+      "source_event_index": 95,
+      "start_ms": 584160,
+      "text": "and I've dealt with these numbers. The way to view this is that I have"
+    },
+    {
+      "end_ms": 597120,
+      "source_event_index": 96,
+      "start_ms": 591840,
+      "text": "this whole grid of numbers that need to be added. I'm going to keep applying full adders to all the"
+    },
+    {
+      "end_ms": 603600,
+      "source_event_index": 97,
+      "start_ms": 597120,
+      "text": "bits here, constantly removing three numbers from a column and writing out two numbers as output."
+    },
+    {
+      "end_ms": 609200,
+      "source_event_index": 98,
+      "start_ms": 603600,
+      "text": "Keep going over and over again until I eventually get just one single number coming out."
+    },
+    {
+      "end_ms": 630800,
+      "source_event_index": 99,
+      "start_ms": 616640,
+      "text": "This approach is called a Dadda multiplier. This is the standard for how you do"
+    },
+    {
+      "end_ms": 638400,
+      "source_event_index": 100,
+      "start_ms": 631520,
+      "text": "area-efficient multipliers using full adders. Let's try to quantify the circuit size of"
+    },
+    {
+      "end_ms": 643440,
+      "source_event_index": 101,
+      "start_ms": 638400,
+      "text": "this so we have a sense of how big things are and can compare them later."
+    },
+    {
+      "end_ms": 649360,
+      "source_event_index": 102,
+      "start_ms": 644720,
+      "text": "How many full adders did I use? How many numbers did I start with?"
+    },
+    {
+      "end_ms": 657200,
+      "source_event_index": 103,
+      "start_ms": 650080,
+      "text": "I have the 16 partial products, which is a product of all of these terms with all of these terms,"
+    },
+    {
+      "end_ms": 666480,
+      "source_event_index": 104,
+      "start_ms": 657200,
+      "text": "plus the eight terms that I'm adding here. I started off with 24 bits."
+    },
+    {
+      "end_ms": 674480,
+      "source_event_index": 105,
+      "start_ms": 666480,
+      "text": "Eventually I produced eight bits on the output. In every step, I was crossing off three numbers"
+    },
+    {
+      "end_ms": 680080,
+      "source_event_index": 106,
+      "start_ms": 674480,
+      "text": "and writing two numbers out as a result. Every single use of a full adder eliminates"
+    },
+    {
+      "end_ms": 683840,
+      "source_event_index": 107,
+      "start_ms": 680080,
+      "text": "one of the bits here. So how many full adders?"
+    },
+    {
+      "end_ms": 688800,
+      "source_event_index": 108,
+      "start_ms": 683840,
+      "text": "It must be 24 minus 8, so there were 16 full adders in this circuit."
+    },
+    {
+      "end_ms": 694000,
+      "source_event_index": 109,
+      "start_ms": 690000,
+      "text": "This is true in the general case as well. There will be p times q many"
+    },
+    {
+      "end_ms": 698400,
+      "source_event_index": 110,
+      "start_ms": 694000,
+      "text": "full adders in this circuit. Let me make sure I understand the logic of that."
+    },
+    {
+      "end_ms": 702407,
+      "source_event_index": 111,
+      "start_ms": 699520,
+      "text": "The input bits, 24, is p x q, plus p + q. The output bits are just p + q."
+    },
+    {
+      "end_ms": 720080,
+      "source_event_index": 112,
+      "start_ms": 702407,
+      "text": "So p x q plus p + q, minus p + q equals p x q. That's right. I think this explains,"
+    },
+    {
+      "end_ms": 726400,
+      "source_event_index": 113,
+      "start_ms": 720720,
+      "text": "or at least hints at, the second reason we chose to do a multiply-accumulate."
+    },
+    {
+      "end_ms": 730960,
+      "source_event_index": 114,
+      "start_ms": 726400,
+      "text": "The first reason is that it's what shows up in matrix multiplication."
+    },
+    {
+      "end_ms": 736080,
+      "source_event_index": 115,
+      "start_ms": 730960,
+      "text": "The second is that it gave us this very slick, simple p x q, very simple algebra."
+    },
+    {
+      "end_ms": 742480,
+      "source_event_index": 116,
+      "start_ms": 737600,
+      "text": "We've described this whole procedure. Every single atomic step that I took"
+    },
+    {
+      "end_ms": 746640,
+      "source_event_index": 117,
+      "start_ms": 742480,
+      "text": "here becomes a logic gate, and then the wires are connected together."
+    },
+    {
+      "end_ms": 751840,
+      "source_event_index": 118,
+      "start_ms": 746640,
+      "text": "When I had these three inputs that I used to produce these two outputs, if I think of mapping"
+    },
+    {
+      "end_ms": 758560,
+      "source_event_index": 119,
+      "start_ms": 751840,
+      "text": "this to a physical device, there would be a wire connecting all three of these things together"
+    },
+    {
+      "end_ms": 766720,
+      "source_event_index": 120,
+      "start_ms": 758560,
+      "text": "into a logic gate that produced this output. This is the main primitive, at different bit"
+    },
+    {
+      "end_ms": 774000,
+      "source_event_index": 121,
+      "start_ms": 766720,
+      "text": "widths, that's inside an AI chip. We're going to build up from here"
+    },
+    {
+      "end_ms": 778000,
+      "source_event_index": 122,
+      "start_ms": 774000,
+      "text": "to how you would use it to run all the other operations you might want."
+    },
+    {
+      "end_ms": 782800,
+      "source_event_index": 123,
+      "start_ms": 778000,
+      "text": "This might be the wrong time to ask, but whenever Nvidia reports that this chip"
+    },
+    {
+      "end_ms": 791120,
+      "source_event_index": 124,
+      "start_ms": 782800,
+      "text": "can do X many FP4 or half as many FP8, it seems to imply those circuits are fungible,"
+    },
+    {
+      "end_ms": 797760,
+      "source_event_index": 125,
+      "start_ms": 791680,
+      "text": "that there's not a dedicated FP4 versus FP8. But the way you're mapping it out here, it seems"
+    },
+    {
+      "end_ms": 807440,
+      "source_event_index": 126,
+      "start_ms": 797760,
+      "text": "like if it has to be mapped out in the logic, you would need a dedicated FP4 multiply-accumulate and"
+    },
+    {
+      "end_ms": 813040,
+      "source_event_index": 127,
+      "start_ms": 807440,
+      "text": "then a dedicated FP8 accumulate. Can you \"funge\" them?"
+    },
+    {
+      "end_ms": 817920,
+      "source_event_index": 128,
+      "start_ms": 813040,
+      "text": "As drawn, they're not particularly fungible. This is actually one of the main choices you"
+    },
+    {
+      "end_ms": 822560,
+      "source_event_index": 129,
+      "start_ms": 817920,
+      "text": "have to make when designing a chip: how much of FP4 and how much of FP8 do I have?"
+    },
+    {
+      "end_ms": 827760,
+      "source_event_index": 130,
+      "start_ms": 822560,
+      "text": "Sometimes I'll make that consideration from the point of view of the customer requirement."
+    },
+    {
+      "end_ms": 835280,
+      "source_event_index": 131,
+      "start_ms": 827760,
+      "text": "Another angle is to equalize the power budget between FP4 and FP8."
+    },
+    {
+      "end_ms": 842000,
+      "source_event_index": 132,
+      "start_ms": 835280,
+      "text": "When they report those numbers and it just happens to be the case that it does 2x as many FP4 as FP8,"
+    },
+    {
+      "end_ms": 848320,
+      "source_event_index": 133,
+      "start_ms": 842000,
+      "text": "they're just choosing to give equivalent die areas to all the floating points,"
+    },
+    {
+      "end_ms": 852160,
+      "source_event_index": 134,
+      "start_ms": 848320,
+      "text": "and as a result it ends up being…? Why is the ratio exactly 2x?"
+    },
+    {
+      "end_ms": 858480,
+      "source_event_index": 135,
+      "start_ms": 853680,
+      "text": "Part of it is that surely it won't be exactly equivalent to die area."
+    },
+    {
+      "end_ms": 863520,
+      "source_event_index": 136,
+      "start_ms": 860400,
+      "text": "There's a data movement reason. We'll maybe come back to this when we"
+    },
+    {
+      "end_ms": 868800,
+      "source_event_index": 137,
+      "start_ms": 864080,
+      "text": "look at how it goes into and out of memories. There's something really nice from a software"
+    },
+    {
+      "end_ms": 872080,
+      "source_event_index": 138,
+      "start_ms": 868800,
+      "text": "level about the fact that I can pack two four-bit numbers into the same"
+    },
+    {
+      "end_ms": 874640,
+      "source_event_index": 139,
+      "start_ms": 872080,
+      "text": "storage as an eight-bit number. When I store that to memory,"
+    },
+    {
+      "end_ms": 884960,
+      "source_event_index": 140,
+      "start_ms": 876960,
+      "text": "the sizing of the buses that I wire out within the chip makes that work out really nicely."
+    },
+    {
+      "end_ms": 892160,
+      "source_event_index": 141,
+      "start_ms": 884960,
+      "text": "Come to think of it, it's not just 2x. The amount of area it takes sounds like"
+    },
+    {
+      "end_ms": 900240,
+      "source_event_index": 142,
+      "start_ms": 894160,
+      "text": "it's quadratic with the bit length. That's why smaller precision is even"
+    },
+    {
+      "end_ms": 902960,
+      "source_event_index": 143,
+      "start_ms": 900240,
+      "text": "more favorable than you might think. This is a really big reason."
+    },
+    {
+      "end_ms": 910640,
+      "source_event_index": 144,
+      "start_ms": 904160,
+      "text": "In fact, Nvidia made a change. Historically, up until B100 or"
+    },
+    {
+      "end_ms": 916400,
+      "source_event_index": 145,
+      "start_ms": 910640,
+      "text": "B200, every time you halved the bit precision, you doubled the FLOP count."
+    },
+    {
+      "end_ms": 921680,
+      "source_event_index": 146,
+      "start_ms": 918160,
+      "text": "For the reason you said, because of this quadratic scaling, that ratio is actually slightly wrong."
+    },
+    {
+      "end_ms": 926480,
+      "source_event_index": 147,
+      "start_ms": 921680,
+      "text": "You should get an even bigger speedup than you might otherwise think."
+    },
+    {
+      "end_ms": 934960,
+      "source_event_index": 148,
+      "start_ms": 928080,
+      "text": "Nvidia’s product specs have started acknowledging that in B300 and beyond, where the FP4 is three"
+    },
+    {
+      "end_ms": 938560,
+      "source_event_index": 149,
+      "start_ms": 934960,
+      "text": "times faster than the FP8. Though it should be 4x."
+    },
+    {
+      "end_ms": 942160,
+      "source_event_index": 150,
+      "start_ms": 938560,
+      "text": "Yeah. What I've shown here is the simplest case of integer multiply."
+    },
+    {
+      "end_ms": 948480,
+      "source_event_index": 151,
+      "start_ms": 942880,
+      "text": "When you're dealing with floating point, as you do in FP4 and FP8, there's this other term,"
+    },
+    {
+      "end_ms": 954880,
+      "source_event_index": 152,
+      "start_ms": 949520,
+      "text": "the exponent, that complicates the calculation. What can we see already from this?"
+    },
+    {
+      "end_ms": 958560,
+      "source_event_index": 153,
+      "start_ms": 954880,
+      "text": "I think the big observation you've made is that there's this quadratic scaling with bit width,"
+    },
+    {
+      "end_ms": 964640,
+      "source_event_index": 154,
+      "start_ms": 960000,
+      "text": "which is very effective and is the single reason low-precision"
+    },
+    {
+      "end_ms": 971280,
+      "source_event_index": 155,
+      "start_ms": 964640,
+      "text": "arithmetic has worked so well for neural nets. The other thing we're going to do now is compare"
+    },
+    {
+      "end_ms": 977360,
+      "source_event_index": 156,
+      "start_ms": 971280,
+      "text": "the area spent on the multiplication itself with all the circuitry around it."
+    },
+    {
+      "end_ms": 987760,
+      "source_event_index": 157,
+      "start_ms": 980800,
+      "text": "We'll walk back in time a little bit and see how GPUs prior to Tensor Cores worked,"
+    },
+    {
+      "end_ms": 994560,
+      "source_event_index": 158,
+      "start_ms": 988320,
+      "text": "which is in fact the same way CPUs worked. Where do we stick this multiply-accumulate unit?"
+    },
+    {
+      "end_ms": 1007840,
+      "source_event_index": 159,
+      "start_ms": 997120,
+      "text": "Generically, I'll describe a CUDA core or a CPU. You'll have some register file which stores some"
+    },
+    {
+      "end_ms": 1018480,
+      "source_event_index": 160,
+      "start_ms": 1007840,
+      "text": "number of entries, maybe eight entries of, in this case, 4-bit numbers, but typically 32-bit numbers."
+    },
+    {
+      "end_ms": 1026800,
+      "source_event_index": 161,
+      "start_ms": 1023440,
+      "text": "Inside the CUDA core, I'll have some register file of some depth,"
+    },
+    {
+      "end_ms": 1038000,
+      "source_event_index": 162,
+      "start_ms": 1026800,
+      "text": "and then I'll have my multiply-accumulate circuit. What it's going to do is take three arbitrary"
+    },
+    {
+      "end_ms": 1041280,
+      "source_event_index": 163,
+      "start_ms": 1038000,
+      "text": "registers from this register file, perform the multiply-accumulate,"
+    },
+    {
+      "end_ms": 1045920,
+      "source_event_index": 164,
+      "start_ms": 1041280,
+      "text": "and then write back to the register file. It's going to write to this one,"
+    },
+    {
+      "end_ms": 1051440,
+      "source_event_index": 165,
+      "start_ms": 1045920,
+      "text": "but it was able to read from this one, this one, and another random one."
+    },
+    {
+      "end_ms": 1059920,
+      "source_event_index": 166,
+      "start_ms": 1051440,
+      "text": "It will take three inputs like this. This is the core data path of many processors."
+    },
+    {
+      "end_ms": 1062640,
+      "source_event_index": 167,
+      "start_ms": 1059920,
+      "text": "Most processors look like this. You've got some set of registers, and"
+    },
+    {
+      "end_ms": 1070800,
+      "source_event_index": 168,
+      "start_ms": 1062640,
+      "text": "then you've got some set of logic units, or ALUs. We want to analyze the cost of the data movement"
+    },
+    {
+      "end_ms": 1078320,
+      "source_event_index": 169,
+      "start_ms": 1070800,
+      "text": "from the register file to the ALU and back. Ultimately, there's going to be some"
+    },
+    {
+      "end_ms": 1081040,
+      "source_event_index": 170,
+      "start_ms": 1078320,
+      "text": "circuit that says, \"Well, I don't always have to select this guy."
+    },
+    {
+      "end_ms": 1084480,
+      "source_event_index": 171,
+      "start_ms": 1081040,
+      "text": "I might select any of the registers at any point in time.\""
+    },
+    {
+      "end_ms": 1091920,
+      "source_event_index": 172,
+      "start_ms": 1084480,
+      "text": "The first question is: how can I build a circuit? The circuit I'm going to look for is a mux."
+    },
+    {
+      "end_ms": 1097680,
+      "source_event_index": 173,
+      "start_ms": 1093040,
+      "text": "In this case, it's going to have eight inputs, one from each entry of the register file,"
+    },
+    {
+      "end_ms": 1105120,
+      "source_event_index": 174,
+      "start_ms": 1097680,
+      "text": "and it's going to have one output, which is actually producing this output."
+    },
+    {
+      "end_ms": 1112960,
+      "source_event_index": 175,
+      "start_ms": 1106080,
+      "text": "What is the cost of this thing? All we have to build it out of is AND and OR."
+    },
+    {
+      "end_ms": 1117680,
+      "source_event_index": 176,
+      "start_ms": 1112960,
+      "text": "How do we build it? We do the dumbest thing possible."
+    },
+    {
+      "end_ms": 1124640,
+      "source_event_index": 177,
+      "start_ms": 1117680,
+      "text": "We form a mask. When we want to read the third entry, we're going to AND every"
+    },
+    {
+      "end_ms": 1128000,
+      "source_event_index": 178,
+      "start_ms": 1124640,
+      "text": "single entry with either 1 or 0 based on whether that's what we want to read,"
+    },
+    {
+      "end_ms": 1132240,
+      "source_event_index": 179,
+      "start_ms": 1128000,
+      "text": "and then we're going to OR all of them together. Just to make sure I understand the basics."
+    },
+    {
+      "end_ms": 1139360,
+      "source_event_index": 180,
+      "start_ms": 1132240,
+      "text": "What the mux is doing is just selecting an input? Just selecting, invisible to software."
+    },
+    {
+      "end_ms": 1142240,
+      "source_event_index": 181,
+      "start_ms": 1139360,
+      "text": "You say \"I want input number three,\" and that means there's a mux here."
+    },
+    {
+      "end_ms": 1146080,
+      "source_event_index": 182,
+      "start_ms": 1142240,
+      "text": "So what is the cost of this mux? An n-input"
+    },
+    {
+      "end_ms": 1161120,
+      "source_event_index": 183,
+      "start_ms": 1150640,
+      "text": "mux operating on p bits. I have n rows. That's just eight"
+    },
+    {
+      "end_ms": 1165600,
+      "source_event_index": 184,
+      "start_ms": 1161120,
+      "text": "rows, and each row is p bits wide. I have to AND every single bit,"
+    },
+    {
+      "end_ms": 1172320,
+      "source_event_index": 185,
+      "start_ms": 1165600,
+      "text": "so I get n x p many AND gates. For every single input I have to decide"
+    },
+    {
+      "end_ms": 1177680,
+      "source_event_index": 186,
+      "start_ms": 1172320,
+      "text": "whether I'm going to mask it out or not. Then I'm going to OR them all together."
+    },
+    {
+      "end_ms": 1187040,
+      "source_event_index": 187,
+      "start_ms": 1178960,
+      "text": "There's going to be n – 1 times p many OR gates. I've got all of these different things,"
+    },
+    {
+      "end_ms": 1193600,
+      "source_event_index": 188,
+      "start_ms": 1187040,
+      "text": "almost all of them are 0s, but I need to collapse them from my eight options down into one option."
+    },
+    {
+      "end_ms": 1198560,
+      "source_event_index": 189,
+      "start_ms": 1194640,
+      "text": "Every step, I need to OR one row into an existing row."
+    },
+    {
+      "end_ms": 1204240,
+      "source_event_index": 190,
+      "start_ms": 1199440,
+      "text": "It's actually funny that you don't think at the level of hardware."
+    },
+    {
+      "end_ms": 1209760,
+      "source_event_index": 191,
+      "start_ms": 1204240,
+      "text": "You just think, \"Oh, I'll just select element three,\" and something as simple as that is"
+    },
+    {
+      "end_ms": 1215280,
+      "source_event_index": 192,
+      "start_ms": 1211440,
+      "text": "in and of itself quite a complicated circuit. This is the first step of all of the hidden"
+    },
+    {
+      "end_ms": 1222480,
+      "source_event_index": 193,
+      "start_ms": 1215280,
+      "text": "data movement costs that show up. We're just going to compare."
+    },
+    {
+      "end_ms": 1226080,
+      "source_event_index": 194,
+      "start_ms": 1223200,
+      "text": "I have to pay this cost. I've got one mux here, and in fact"
+    },
+    {
+      "end_ms": 1230960,
+      "source_event_index": 195,
+      "start_ms": 1226080,
+      "text": "I have two more copies of that for each of the three inputs to my multiply-accumulate operation."
+    },
+    {
+      "end_ms": 1242640,
+      "source_event_index": 196,
+      "start_ms": 1230960,
+      "text": "I have this cost, which is 3 x n x p AND gates over here, compared to p x q gates in the actual"
+    },
+    {
+      "end_ms": 1248640,
+      "source_event_index": 197,
+      "start_ms": 1242640,
+      "text": "circuit that is doing the thing I care about. If we plug in actual numbers, with n being"
+    },
+    {
+      "end_ms": 1260560,
+      "source_event_index": 198,
+      "start_ms": 1249760,
+      "text": "eight, I get 24 x p gates just in the data movement, compared to—if q is four—4 x p"
+    },
+    {
+      "end_ms": 1265520,
+      "source_event_index": 199,
+      "start_ms": 1260560,
+      "text": "gates just in the multiply-adder. Where is the three coming from?"
+    },
+    {
+      "end_ms": 1274720,
+      "source_event_index": 200,
+      "start_ms": 1265520,
+      "text": "Three different inputs here. What I'm hinting at is that all of this work,"
+    },
+    {
+      "end_ms": 1278640,
+      "source_event_index": 201,
+      "start_ms": 1274720,
+      "text": "which scales as the size of the register file—and this is a very small register"
+    },
+    {
+      "end_ms": 1286080,
+      "source_event_index": 202,
+      "start_ms": 1278640,
+      "text": "file—all of this work just moving the data from the register file to the logic unit is many,"
+    },
+    {
+      "end_ms": 1291040,
+      "source_event_index": 203,
+      "start_ms": 1286080,
+      "text": "many times more expensive than the logic unit. In the most recent ClusterMAX report, SemiAnalysis"
+    },
+    {
+      "end_ms": 1296480,
+      "source_event_index": 204,
+      "start_ms": 1291040,
+      "text": "ranked almost 100 different GPU clouds. Crusoe was one of only five that made the gold tier."
+    },
+    {
+      "end_ms": 1301120,
+      "source_event_index": 205,
+      "start_ms": 1296480,
+      "text": "SemiAnalysis found that gold-tier providers like Crusoe had a total cost of ownership that"
+    },
+    {
+      "end_ms": 1306160,
+      "source_event_index": 206,
+      "start_ms": 1301120,
+      "text": "was 5% to 15% lower than silver-tier ones, even when they had identical GPU pricing."
+    },
+    {
+      "end_ms": 1310480,
+      "source_event_index": 207,
+      "start_ms": 1306160,
+      "text": "This makes sense because total cost of ownership is downstream of a bunch of different things that"
+    },
+    {
+      "end_ms": 1314480,
+      "source_event_index": 208,
+      "start_ms": 1310480,
+      "text": "don't necessarily show up in the sticker price, but that Crusoe has optimized."
+    },
+    {
+      "end_ms": 1318400,
+      "source_event_index": 209,
+      "start_ms": 1314480,
+      "text": "Things like how well you detect faults and how quickly you replace failed nodes."
+    },
+    {
+      "end_ms": 1324080,
+      "source_event_index": 210,
+      "start_ms": 1318400,
+      "text": "For example, Crusoe was one of the first clouds to adopt NVSentinel, NVIDIA's own GPU monitoring"
+    },
+    {
+      "end_ms": 1329440,
+      "source_event_index": 211,
+      "start_ms": 1324080,
+      "text": "and self-healing software for enhanced GPU uptime, utilization, and reliability."
+    },
+    {
+      "end_ms": 1334240,
+      "source_event_index": 212,
+      "start_ms": 1329440,
+      "text": "This lets Crusoe make use of everything that NVIDIA has learned about why chips fail across all"
+    },
+    {
+      "end_ms": 1338880,
+      "source_event_index": 213,
+      "start_ms": 1334240,
+      "text": "their different fleets and deployments, so that Crusoe can catch faults earlier in the process."
+    },
+    {
+      "end_ms": 1343760,
+      "source_event_index": 214,
+      "start_ms": 1338880,
+      "text": "And once they identify a failure, Crusoe can swap in a healthy node in less than 10 minutes."
+    },
+    {
+      "end_ms": 1347200,
+      "source_event_index": 215,
+      "start_ms": 1343760,
+      "text": "Because they’re not running bare metal, Crusoe doesn't have to spend time installing an"
+    },
+    {
+      "end_ms": 1351120,
+      "source_event_index": 216,
+      "start_ms": 1347200,
+      "text": "operating system or configuring drivers. They can just spin up a new VM on an"
+    },
+    {
+      "end_ms": 1354800,
+      "source_event_index": 217,
+      "start_ms": 1351120,
+      "text": "already running and pre-qualified host. If you want to learn more about this or"
+    },
+    {
+      "end_ms": 1361840,
+      "source_event_index": 218,
+      "start_ms": 1354800,
+      "text": "the other reasons that Crusoe made gold tier, go to crusoe.ai/dwarkesh."
+    },
+    {
+      "end_ms": 1364480,
+      "source_event_index": 219,
+      "start_ms": 1361840,
+      "text": "It may be helpful to just see what a mux looks like,"
+    },
+    {
+      "end_ms": 1373600,
+      "source_event_index": 220,
+      "start_ms": 1364480,
+      "text": "maybe a two-bit or a four-bit mux. We’ll do a two-way mux."
+    },
+    {
+      "end_ms": 1380560,
+      "source_event_index": 221,
+      "start_ms": 1373600,
+      "text": "We've got two different numbers, we’ve got these two inputs."
+    },
+    {
+      "end_ms": 1396240,
+      "source_event_index": 222,
+      "start_ms": 1383120,
+      "text": "These are the inputs that are being selected between, and the selector can either be \"I want"
+    },
+    {
+      "end_ms": 1404080,
+      "source_event_index": 223,
+      "start_ms": 1396240,
+      "text": "this one\" or \"I want the other one.\" This is a one-hot encoding."
+    },
+    {
+      "end_ms": 1414160,
+      "source_event_index": 224,
+      "start_ms": 1404800,
+      "text": "This is what we start with. Let's focus on this case."
+    },
+    {
+      "end_ms": 1420480,
+      "source_event_index": 225,
+      "start_ms": 1414160,
+      "text": "This is the actual input we got, and we want to produce this guy as the result."
+    },
+    {
+      "end_ms": 1427840,
+      "source_event_index": 226,
+      "start_ms": 1422560,
+      "text": "Very laboriously, we AND this bit with all of these."
+    },
+    {
+      "end_ms": 1435200,
+      "source_event_index": 227,
+      "start_ms": 1430240,
+      "text": "That produces ANDing this bit with this row. Likewise, we AND this bit with this row."
+    },
+    {
+      "end_ms": 1447360,
+      "source_event_index": 228,
+      "start_ms": 1435200,
+      "text": "That produces all 0s. There are four ANDs here. Finally,"
+    },
+    {
+      "end_ms": 1449440,
+      "source_event_index": 229,
+      "start_ms": 1447360,
+      "text": "we OR these two together, and this gives a 1. We OR these two together, this gives a 1."
+    },
+    {
+      "end_ms": 1455120,
+      "source_event_index": 230,
+      "start_ms": 1449440,
+      "text": "We OR these two together, it gives a 0. We OR these two together and it gives a 1."
+    },
+    {
+      "end_ms": 1462560,
+      "source_event_index": 231,
+      "start_ms": 1455680,
+      "text": "Those are the four ORs. This actually ends up"
+    },
+    {
+      "end_ms": 1467280,
+      "source_event_index": 232,
+      "start_ms": 1462560,
+      "text": "looking a little bit like addition. We did exactly the same set of ANDs."
+    },
+    {
+      "end_ms": 1474080,
+      "source_event_index": 233,
+      "start_ms": 1468640,
+      "text": "We've ANDed all of these things together, but then instead of collapsing it by using"
+    },
+    {
+      "end_ms": 1478560,
+      "source_event_index": 234,
+      "start_ms": 1474080,
+      "text": "full adder circuits, we just get a very simple collapsing with OR gates."
+    },
+    {
+      "end_ms": 1486480,
+      "source_event_index": 235,
+      "start_ms": 1478560,
+      "text": "But that doesn't look like n times p. This was with n=2 inputs."
+    },
+    {
+      "end_ms": 1503920,
+      "source_event_index": 236,
+      "start_ms": 1488320,
+      "text": "In the general case, we will have n rows, and we'll have p bits per row."
+    },
+    {
+      "end_ms": 1511680,
+      "source_event_index": 237,
+      "start_ms": 1503920,
+      "text": "That gives us the n times p many AND gates. In this circuit I've described, almost all of"
+    },
+    {
+      "end_ms": 1519440,
+      "source_event_index": 238,
+      "start_ms": 1511680,
+      "text": "the cost, seven-eighths of the cost, is in reading and writing the register file, and only a tiny"
+    },
+    {
+      "end_ms": 1523280,
+      "source_event_index": 239,
+      "start_ms": 1519440,
+      "text": "fraction of the cost is in the logic unit itself. This is the problem to solve."
+    },
+    {
+      "end_ms": 1531760,
+      "source_event_index": 240,
+      "start_ms": 1524720,
+      "text": "This essentially was the state of play prior to the Volta generation of Nvidia GPUs."
+    },
+    {
+      "end_ms": 1536720,
+      "source_event_index": 241,
+      "start_ms": 1531760,
+      "text": "This kind of thing is what was inside the CUDA cores."
+    },
+    {
+      "end_ms": 1541760,
+      "source_event_index": 242,
+      "start_ms": 1537360,
+      "text": "This problem statement is what motivated the introduction of Tensor Cores,"
+    },
+    {
+      "end_ms": 1546240,
+      "source_event_index": 243,
+      "start_ms": 1541760,
+      "text": "which are more generically called systolic arrays. Think about how we're going to solve this problem."
+    },
+    {
+      "end_ms": 1548480,
+      "source_event_index": 244,
+      "start_ms": 1546240,
+      "text": "We're spending almost all of our circuit area on something that we"
+    },
+    {
+      "end_ms": 1552080,
+      "source_event_index": 245,
+      "start_ms": 1548480,
+      "text": "really don't care about and is hidden to the software programmer, and the thing that we"
+    },
+    {
+      "end_ms": 1557520,
+      "source_event_index": 246,
+      "start_ms": 1552080,
+      "text": "actually care about is not much of the area. Make this one bigger somehow while keeping"
+    },
+    {
+      "end_ms": 1559440,
+      "source_event_index": 247,
+      "start_ms": 1557520,
+      "text": "this at the same size. That's the goal."
+    },
+    {
+      "end_ms": 1566320,
+      "source_event_index": 248,
+      "start_ms": 1561360,
+      "text": "The evolution was that we had baked this much into hardware at this stage."
+    },
+    {
+      "end_ms": 1571280,
+      "source_event_index": 249,
+      "start_ms": 1566320,
+      "text": "This single line is a multiply-accumulate, and this single thing was baked into hardware."
+    },
+    {
+      "end_ms": 1577920,
+      "source_event_index": 250,
+      "start_ms": 1571840,
+      "text": "The idea of a systolic array is to go two levels of loops up and bake this"
+    },
+    {
+      "end_ms": 1582480,
+      "source_event_index": 251,
+      "start_ms": 1577920,
+      "text": "entire loop out here into hardware. The idea is that if we have a much"
+    },
+    {
+      "end_ms": 1587280,
+      "source_event_index": 252,
+      "start_ms": 1582480,
+      "text": "bigger granularity fixed-function piece of logic, maybe the taxes we"
+    },
+    {
+      "end_ms": 1590400,
+      "source_event_index": 253,
+      "start_ms": 1587280,
+      "text": "pay on the input and output are much smaller. Interesting. It sounds like you're suggesting"
+    },
+    {
+      "end_ms": 1601520,
+      "source_event_index": 254,
+      "start_ms": 1590400,
+      "text": "that if you go up one step in the matrix multiply loop, you can tilt the balance"
+    },
+    {
+      "end_ms": 1606080,
+      "source_event_index": 255,
+      "start_ms": 1601520,
+      "text": "more towards compute than communication. That's right. There are two effects we're"
+    },
+    {
+      "end_ms": 1609280,
+      "source_event_index": 256,
+      "start_ms": 1606080,
+      "text": "going to take advantage of here. One is that we can do more stuff"
+    },
+    {
+      "end_ms": 1618640,
+      "source_event_index": 257,
+      "start_ms": 1609840,
+      "text": "per every trip through our register file. The other is that in some of this loop, we can"
+    },
+    {
+      "end_ms": 1627040,
+      "source_event_index": 258,
+      "start_ms": 1618640,
+      "text": "take advantage of certain things staying fixed. Visually, we're going to look at this"
+    },
+    {
+      "end_ms": 1629840,
+      "source_event_index": 259,
+      "start_ms": 1627040,
+      "text": "matrix multiplication. This portion of the loop"
+    },
+    {
+      "end_ms": 1640240,
+      "source_event_index": 260,
+      "start_ms": 1629840,
+      "text": "corresponds to a matrix-vector multiplication. We'll take a matrix and multiply it by a vector."
+    },
+    {
+      "end_ms": 1643760,
+      "source_event_index": 261,
+      "start_ms": 1641600,
+      "text": "How do we do this? Every column gets"
+    },
+    {
+      "end_ms": 1647840,
+      "source_event_index": 262,
+      "start_ms": 1643760,
+      "text": "multiplied by the vector and then summed. We're going to sum along columns."
+    },
+    {
+      "end_ms": 1652960,
+      "source_event_index": 263,
+      "start_ms": 1648560,
+      "text": "This 0 and 3 gets multiplied by the 3 and 7 and gets summed, and then the 1 and 2"
+    },
+    {
+      "end_ms": 1658880,
+      "source_event_index": 264,
+      "start_ms": 1652960,
+      "text": "gets multiplied by the 3 and 7 and gets summed. There is a multiply-accumulate associated with"
+    },
+    {
+      "end_ms": 1667200,
+      "source_event_index": 265,
+      "start_ms": 1658880,
+      "text": "every single one of these entries in the matrix. We'll draw out these four multiply-accumulates."
+    },
+    {
+      "end_ms": 1681600,
+      "source_event_index": 266,
+      "start_ms": 1673840,
+      "text": "Just to make sure I understand why there are four multiply-accumulates: each entry in the"
+    },
+    {
+      "end_ms": 1689360,
+      "source_event_index": 267,
+      "start_ms": 1681600,
+      "text": "column that corresponds to the output vector is a dot product, and in this"
+    },
+    {
+      "end_ms": 1696240,
+      "source_event_index": 268,
+      "start_ms": 1689360,
+      "text": "case it will be two multiplications and then the addition of those two multiplications."
+    },
+    {
+      "end_ms": 1700240,
+      "source_event_index": 269,
+      "start_ms": 1696240,
+      "text": "You're accumulating... Really there's only one addition per"
+    },
+    {
+      "end_ms": 1703760,
+      "source_event_index": 270,
+      "start_ms": 1700240,
+      "text": "dot product, but we like to start with zero. But it includes the initialization of zero."
+    },
+    {
+      "end_ms": 1710240,
+      "source_event_index": 271,
+      "start_ms": 1703760,
+      "text": "Yeah. We want to have quadratically more compute."
+    },
+    {
+      "end_ms": 1719120,
+      "source_event_index": 272,
+      "start_ms": 1710240,
+      "text": "We have x times y as much compute as we had before."
+    },
+    {
+      "end_ms": 1730800,
+      "source_event_index": 273,
+      "start_ms": 1721360,
+      "text": "But we want to aim for having only x times as much communication."
+    },
+    {
+      "end_ms": 1737600,
+      "source_event_index": 274,
+      "start_ms": 1732000,
+      "text": "The intention is to get this advantage term going as y."
+    },
+    {
+      "end_ms": 1746080,
+      "source_event_index": 275,
+      "start_ms": 1737600,
+      "text": "We've laid down the multiplications. We want to bring in a vector of size two, and"
+    },
+    {
+      "end_ms": 1751920,
+      "source_event_index": 276,
+      "start_ms": 1746080,
+      "text": "that is already in line with our columns target. That's fine. However, we need to manage the"
+    },
+    {
+      "end_ms": 1756640,
+      "source_event_index": 277,
+      "start_ms": 1751920,
+      "text": "communication of this matrix, which exceeds our budget of x."
+    },
+    {
+      "end_ms": 1766080,
+      "source_event_index": 278,
+      "start_ms": 1758480,
+      "text": "The idea is that in an AI context, this matrix is going to stay fixed for a long period of time."
+    },
+    {
+      "end_ms": 1776480,
+      "source_event_index": 279,
+      "start_ms": 1769760,
+      "text": "We've got some register files sitting over here. The amount of stuff coming out of this register"
+    },
+    {
+      "end_ms": 1781920,
+      "source_event_index": 280,
+      "start_ms": 1776480,
+      "text": "file… this is the term that we want to go as x, in some sense."
+    },
+    {
+      "end_ms": 1787360,
+      "source_event_index": 281,
+      "start_ms": 1783920,
+      "text": "We don't want to bring this full matrix in from the register file every cycle,"
+    },
+    {
+      "end_ms": 1792320,
+      "source_event_index": 282,
+      "start_ms": 1787360,
+      "text": "because that would cost too much in terms of wiring from the register file."
+    },
+    {
+      "end_ms": 1800720,
+      "source_event_index": 283,
+      "start_ms": 1795200,
+      "text": "Our key trick is that this matrix can be stored locally to the systolic array."
+    },
+    {
+      "end_ms": 1815280,
+      "source_event_index": 284,
+      "start_ms": 1804080,
+      "text": "We'll store these numbers 0, 1, 2, and 3 in a gate called a register that physically"
+    },
+    {
+      "end_ms": 1819040,
+      "source_event_index": 285,
+      "start_ms": 1815280,
+      "text": "stores these numbers, and we're going to reuse these numbers over and over again"
+    },
+    {
+      "end_ms": 1823840,
+      "source_event_index": 286,
+      "start_ms": 1819040,
+      "text": "for a large number of different vectors. The optimization here is that the nature of"
+    },
+    {
+      "end_ms": 1835280,
+      "source_event_index": 287,
+      "start_ms": 1823840,
+      "text": "matrix multiplication is that you can store this square quadratic thing directly where the logic is"
+    },
+    {
+      "end_ms": 1845520,
+      "source_event_index": 288,
+      "start_ms": 1835280,
+      "text": "happening, which has an extra dimension compared to the inputs that you keep swapping in and out."
+    },
+    {
+      "end_ms": 1846800,
+      "source_event_index": 289,
+      "start_ms": 1845520,
+      "text": "That’s right. This is the nature of"
+    },
+    {
+      "end_ms": 1852080,
+      "source_event_index": 290,
+      "start_ms": 1846800,
+      "text": "what a matrix multiplication is. You do a lot of multiplication"
+    },
+    {
+      "end_ms": 1855280,
+      "source_event_index": 291,
+      "start_ms": 1852080,
+      "text": "to get one value out. A dot product is the"
+    },
+    {
+      "end_ms": 1859760,
+      "source_event_index": 292,
+      "start_ms": 1855280,
+      "text": "result of a lot of multiplications. So that optimization means you can"
+    },
+    {
+      "end_ms": 1863040,
+      "source_event_index": 293,
+      "start_ms": 1859760,
+      "text": "stuff a lot of multiplication in before you get some value out of it."
+    },
+    {
+      "end_ms": 1867280,
+      "source_event_index": 294,
+      "start_ms": 1863040,
+      "text": "That's right. Just to complete the picture of concretely how that looks:"
+    },
+    {
+      "end_ms": 1877440,
+      "source_event_index": 295,
+      "start_ms": 1869360,
+      "text": "I swapped the 3 and the 2 here. Just like this 0 and 3 is going"
+    },
+    {
+      "end_ms": 1885120,
+      "source_event_index": 296,
+      "start_ms": 1877440,
+      "text": "to multiply by the 3 and the 7, we're going to form a dot product along columns here."
+    },
+    {
+      "end_ms": 1895200,
+      "source_event_index": 297,
+      "start_ms": 1886480,
+      "text": "We're going to feed a 3 and a 7 in here. This feeds into this multiplication and also"
+    },
+    {
+      "end_ms": 1899360,
+      "source_event_index": 298,
+      "start_ms": 1895200,
+      "text": "feeds into this multiplication. Likewise, the 3 feeds"
+    },
+    {
+      "end_ms": 1908400,
+      "source_event_index": 299,
+      "start_ms": 1899360,
+      "text": "into here and also into here. Then we're going to sum along here."
+    },
+    {
+      "end_ms": 1913680,
+      "source_event_index": 300,
+      "start_ms": 1909120,
+      "text": "Starting at the top of a column, we feed in 0s, and then coming out the bottom we get results."
+    },
+    {
+      "end_ms": 1923120,
+      "source_event_index": 301,
+      "start_ms": 1915840,
+      "text": "Visually, there's a dot product performed along columns in a matrix, and that maps exactly to"
+    },
+    {
+      "end_ms": 1929040,
+      "source_event_index": 302,
+      "start_ms": 1923120,
+      "text": "what is done spatially in the systolic array. This is one dot product summed vertically,"
+    },
+    {
+      "end_ms": 1932560,
+      "source_event_index": 303,
+      "start_ms": 1929040,
+      "text": "and this is a second dot product also summed vertically."
+    },
+    {
+      "end_ms": 1937040,
+      "source_event_index": 304,
+      "start_ms": 1933600,
+      "text": "What is the data that needs to go into and out of the register file?"
+    },
+    {
+      "end_ms": 1943680,
+      "source_event_index": 305,
+      "start_ms": 1937040,
+      "text": "We have x amount of data coming out on the output, and we also"
+    },
+    {
+      "end_ms": 1953840,
+      "source_event_index": 306,
+      "start_ms": 1943680,
+      "text": "have x amount of data coming from the input. With respect to the input and output vectors"
+    },
+    {
+      "end_ms": 1964720,
+      "source_event_index": 307,
+      "start_ms": 1953840,
+      "text": "at least, we've met our goal of having only x as much data going in and out of the register file."
+    },
+    {
+      "end_ms": 1971120,
+      "source_event_index": 308,
+      "start_ms": 1964720,
+      "text": "This leaves open the question: I said the weight matrix is stored locally in the systolic"
+    },
+    {
+      "end_ms": 1976800,
+      "source_event_index": 309,
+      "start_ms": 1971120,
+      "text": "array, so how did it get there in the first place? At some point, you need to boot your chip and"
+    },
+    {
+      "end_ms": 1982240,
+      "source_event_index": 310,
+      "start_ms": 1976800,
+      "text": "populate this data, so where did that come from? The trick is that we just do it very slowly."
+    },
+    {
+      "end_ms": 1985760,
+      "source_event_index": 311,
+      "start_ms": 1982240,
+      "text": "We very slowly trickle-feed it into the systolic array."
+    },
+    {
+      "end_ms": 1993280,
+      "source_event_index": 312,
+      "start_ms": 1987200,
+      "text": "The simplest strategy is that we run this daisy chain: feed a number in here,"
+    },
+    {
+      "end_ms": 1998000,
+      "source_event_index": 313,
+      "start_ms": 1993280,
+      "text": "and on the next clock cycle it will move down to the next entry of the systolic array."
+    },
+    {
+      "end_ms": 2006320,
+      "source_event_index": 314,
+      "start_ms": 1998000,
+      "text": "We can do that in every column in parallel, this is also going to come from here,"
+    },
+    {
+      "end_ms": 2012160,
+      "source_event_index": 315,
+      "start_ms": 2006320,
+      "text": "and that gives us another factor of approximately x units of bandwidth coming in."
+    },
+    {
+      "end_ms": 2014960,
+      "source_event_index": 316,
+      "start_ms": 2012720,
+      "text": "Would you mind repeating that sentence one more time?"
+    },
+    {
+      "end_ms": 2020720,
+      "source_event_index": 317,
+      "start_ms": 2016960,
+      "text": "We know that we're going to be bringing numbers only rarely into the matrix."
+    },
+    {
+      "end_ms": 2027520,
+      "source_event_index": 318,
+      "start_ms": 2023200,
+      "text": "We just want to come up with any construction at all such that the amount of wiring that"
+    },
+    {
+      "end_ms": 2036720,
+      "source_event_index": 319,
+      "start_ms": 2028960,
+      "text": "crosses the boundary of the systolic array is bounded to x and not go as xy."
+    },
+    {
+      "end_ms": 2043440,
+      "source_event_index": 320,
+      "start_ms": 2036720,
+      "text": "A particularly simple strategy is that we bring a number into the top row of"
+    },
+    {
+      "end_ms": 2051840,
+      "source_event_index": 321,
+      "start_ms": 2043440,
+      "text": "the systolic array in one clock cycle. Then, for y consecutive clock cycles,"
+    },
+    {
+      "end_ms": 2056800,
+      "source_event_index": 322,
+      "start_ms": 2051840,
+      "text": "we bring in the top row every time and shift all the other rows down by one."
+    },
+    {
+      "end_ms": 2062080,
+      "source_event_index": 323,
+      "start_ms": 2056800,
+      "text": "This keeps the wiring that needs to come from this expensive register file"
+    },
+    {
+      "end_ms": 2067360,
+      "source_event_index": 324,
+      "start_ms": 2062080,
+      "text": "only down to a factor of x rather than xy. I see. There are two questions in terms"
+    },
+    {
+      "end_ms": 2073280,
+      "source_event_index": 325,
+      "start_ms": 2067360,
+      "text": "of communication: communication time and communication bandwidth."
+    },
+    {
+      "end_ms": 2079280,
+      "source_event_index": 326,
+      "start_ms": 2073840,
+      "text": "You're saying that since we're only going to be loading this in once, let's minimize bandwidth,"
+    },
+    {
+      "end_ms": 2085760,
+      "source_event_index": 327,
+      "start_ms": 2079280,
+      "text": "because bandwidth equals die area. We load it in slowly over smaller"
+    },
+    {
+      "end_ms": 2088640,
+      "source_event_index": 328,
+      "start_ms": 2085760,
+      "text": "lanes because we're just going to keep this value in there for a while."
+    },
+    {
+      "end_ms": 2092160,
+      "source_event_index": 329,
+      "start_ms": 2088640,
+      "text": "Exactly. It's interesting to me that when we were talking"
+    },
+    {
+      "end_ms": 2098240,
+      "source_event_index": 330,
+      "start_ms": 2092160,
+      "text": "last time about inference across many chips, the big high-level thing we're trying to optimize for"
+    },
+    {
+      "end_ms": 2103760,
+      "source_event_index": 331,
+      "start_ms": 2098240,
+      "text": "is increasing the amount of compute per memory bandwidth, that is to say, per communication."
+    },
+    {
+      "end_ms": 2108640,
+      "source_event_index": 332,
+      "start_ms": 2103760,
+      "text": "Here also, we're trying to increase the amount of actual multiplies"
+    },
+    {
+      "end_ms": 2116400,
+      "source_event_index": 333,
+      "start_ms": 2108640,
+      "text": "or additions relative to transporting information from registers to the logic."
+    },
+    {
+      "end_ms": 2119680,
+      "source_event_index": 334,
+      "start_ms": 2116400,
+      "text": "In both cases, you're trying to maximize compute relative to communication."
+    },
+    {
+      "end_ms": 2127840,
+      "source_event_index": 335,
+      "start_ms": 2120480,
+      "text": "This shows up all the way up and down the stack. This is close to the bottom, to the gates."
+    },
+    {
+      "end_ms": 2134640,
+      "source_event_index": 336,
+      "start_ms": 2128400,
+      "text": "There's a version that's maybe even closer to the gates in the precision of the number"
+    },
+    {
+      "end_ms": 2139040,
+      "source_event_index": 337,
+      "start_ms": 2134640,
+      "text": "format that you choose to use. We saw that same effect."
+    },
+    {
+      "end_ms": 2147280,
+      "source_event_index": 338,
+      "start_ms": 2139040,
+      "text": "There's a squared versus linear term going on both purely in the precision of the ALU,"
+    },
+    {
+      "end_ms": 2155440,
+      "source_event_index": 339,
+      "start_ms": 2147280,
+      "text": "but also in the size of the matrix. This unit is the next bigger unit."
+    },
+    {
+      "end_ms": 2161840,
+      "source_event_index": 340,
+      "start_ms": 2155440,
+      "text": "We had the multiplication circuit, and on top of that we have a pretty large systolic array."
+    },
+    {
+      "end_ms": 2171040,
+      "source_event_index": 341,
+      "start_ms": 2161840,
+      "text": "I drew it as 2x2, but older TPUs were described as 128x128 of this circuit shown here."
+    },
+    {
+      "end_ms": 2180400,
+      "source_event_index": 342,
+      "start_ms": 2172240,
+      "text": "This ends up being the most efficient known circuit for implementing a matrix multiply."
+    },
+    {
+      "end_ms": 2186080,
+      "source_event_index": 343,
+      "start_ms": 2181360,
+      "text": "We've talked about how it seems obvious that you should try to"
+    },
+    {
+      "end_ms": 2191120,
+      "source_event_index": 344,
+      "start_ms": 2186080,
+      "text": "maximize compute relative to communication. What are non-obvious trade-offs that"
+    },
+    {
+      "end_ms": 2199520,
+      "source_event_index": 345,
+      "start_ms": 2195040,
+      "text": "keep you up at night, about whether you should do X or Y and it's not obvious what the answer is?"
+    },
+    {
+      "end_ms": 2206800,
+      "source_event_index": 346,
+      "start_ms": 2201360,
+      "text": "Most of the decisions in chip design are sizing decisions."
+    },
+    {
+      "end_ms": 2216560,
+      "source_event_index": 347,
+      "start_ms": 2208640,
+      "text": "Already in what we've drawn so far… AI chips all have this circuit in them."
+    },
+    {
+      "end_ms": 2222240,
+      "source_event_index": 348,
+      "start_ms": 2216560,
+      "text": "They have a systolic array, and somewhere near it a register file providing inputs and outputs."
+    },
+    {
+      "end_ms": 2231120,
+      "source_event_index": 349,
+      "start_ms": 2226400,
+      "text": "Even within this scope, the sizing questions you have are: how big should I make my systolic array,"
+    },
+    {
+      "end_ms": 2243200,
+      "source_event_index": 350,
+      "start_ms": 2231120,
+      "text": "and how big should I make the register file? These two questions are coupled."
+    },
+    {
+      "end_ms": 2252800,
+      "source_event_index": 351,
+      "start_ms": 2245280,
+      "text": "One way to think of it is to set a budget for what percentage of chip"
+    },
+    {
+      "end_ms": 2256960,
+      "source_event_index": 352,
+      "start_ms": 2252800,
+      "text": "area you want to spend on data movement. Maybe I say that I want this to be 10%"
+    },
+    {
+      "end_ms": 2262640,
+      "source_event_index": 353,
+      "start_ms": 2256960,
+      "text": "and the systolic array to be 90%. Then I can size my register file."
+    },
+    {
+      "end_ms": 2267520,
+      "source_event_index": 354,
+      "start_ms": 2262640,
+      "text": "Bigger register files are more flexible. They allow me to get more application-level"
+    },
+    {
+      "end_ms": 2274160,
+      "source_event_index": 355,
+      "start_ms": 2267520,
+      "text": "performance out, but they take away from the area spent on the systolic array."
+    },
+    {
+      "end_ms": 2279520,
+      "source_event_index": 356,
+      "start_ms": 2275040,
+      "text": "I recently ran an essay contest where I asked people to write about what I consider to be some"
+    },
+    {
+      "end_ms": 2283040,
+      "source_event_index": 357,
+      "start_ms": 2279520,
+      "text": "of the biggest open questions about AI. The submission window closed last week,"
+    },
+    {
+      "end_ms": 2287680,
+      "source_event_index": 358,
+      "start_ms": 2283040,
+      "text": "so I used Cursor to create a couple of different interfaces to help me review the entries."
+    },
+    {
+      "end_ms": 2290800,
+      "source_event_index": 359,
+      "start_ms": 2287680,
+      "text": "One interface anonymizes submissions and hides the necessary information."
+    },
+    {
+      "end_ms": 2294640,
+      "source_event_index": 360,
+      "start_ms": 2290800,
+      "text": "It lets me group responses by question, add notes, and record my scores."
+    },
+    {
+      "end_ms": 2297760,
+      "source_event_index": 361,
+      "start_ms": 2294640,
+      "text": "The other interface helps me review entrants who also want to be considered"
+    },
+    {
+      "end_ms": 2301920,
+      "source_event_index": 362,
+      "start_ms": 2297760,
+      "text": "for the researcher role that I'm hiring for. The UI puts the applicant's essay right next"
+    },
+    {
+      "end_ms": 2305680,
+      "source_event_index": 363,
+      "start_ms": 2301920,
+      "text": "to their resume and their personal website so that I can see everything at once."
+    },
+    {
+      "end_ms": 2309600,
+      "source_event_index": 364,
+      "start_ms": 2305680,
+      "text": "Cursor's harness is really good at helping these models see and improve their UIs."
+    },
+    {
+      "end_ms": 2313840,
+      "source_event_index": 365,
+      "start_ms": 2309600,
+      "text": "I watched it render these interfaces in the built-in browser, take screenshots,"
+    },
+    {
+      "end_ms": 2316800,
+      "source_event_index": 366,
+      "start_ms": 2313840,
+      "text": "click through sections, and keep iterating. At this point,"
+    },
+    {
+      "end_ms": 2320320,
+      "source_event_index": 367,
+      "start_ms": 2316800,
+      "text": "Cursor is where I do most of my work. Whether I'm reading and visualizing a bunch"
+    },
+    {
+      "end_ms": 2325360,
+      "source_event_index": 368,
+      "start_ms": 2320320,
+      "text": "of research papers, or coding up an interface to review applications, or making flashcards for my"
+    },
+    {
+      "end_ms": 2330480,
+      "source_event_index": 369,
+      "start_ms": 2325360,
+      "text": "blackboard lectures, Cursor just makes it very easy for an AI to look at whatever I'm looking at"
+    },
+    {
+      "end_ms": 2334720,
+      "source_event_index": 370,
+      "start_ms": 2330480,
+      "text": "and help me understand it and work with me on it. So whatever you're working on,"
+    },
+    {
+      "end_ms": 2340720,
+      "source_event_index": 371,
+      "start_ms": 2334720,
+      "text": "you should do it in Cursor. Go to cursor.com/dwarkesh."
+    },
+    {
+      "end_ms": 2348000,
+      "source_event_index": 372,
+      "start_ms": 2340720,
+      "text": "Where does the clock cycle of a chip come in? What determines what that is?"
+    },
+    {
+      "end_ms": 2352480,
+      "source_event_index": 373,
+      "start_ms": 2348000,
+      "text": "And what is a clock cycle of a chip? At baseline, it's worth observing"
+    },
+    {
+      "end_ms": 2356880,
+      "source_event_index": 374,
+      "start_ms": 2352480,
+      "text": "that chips are incredibly parallel. You've got 100 billion transistors in a chip."
+    },
+    {
+      "end_ms": 2361200,
+      "source_event_index": 375,
+      "start_ms": 2356880,
+      "text": "A key thing you need to do whenever you have massive parallelism is synchronize"
+    },
+    {
+      "end_ms": 2367360,
+      "source_event_index": 376,
+      "start_ms": 2361200,
+      "text": "between the different parallel units. In software, typically you have these very"
+    },
+    {
+      "end_ms": 2371520,
+      "source_event_index": 377,
+      "start_ms": 2367360,
+      "text": "expensive synchronization methods like a mutex. One thread will finish what it's doing,"
+    },
+    {
+      "end_ms": 2378640,
+      "source_event_index": 378,
+      "start_ms": 2374560,
+      "text": "grab a lock stored somewhere in memory, and notify the other thread that it's done."
+    },
+    {
+      "end_ms": 2390080,
+      "source_event_index": 379,
+      "start_ms": 2379600,
+      "text": "On chips, we take a very different approach. Every nanosecond or so, all circuitry in the chip"
+    },
+    {
+      "end_ms": 2397360,
+      "source_event_index": 380,
+      "start_ms": 2390080,
+      "text": "will pause for a moment and synchronize. That is the clock cycle."
+    },
+    {
+      "end_ms": 2406000,
+      "source_event_index": 381,
+      "start_ms": 2398240,
+      "text": "The entire chip typically goes in lockstep to the next operation in one fell swoop."
+    },
+    {
+      "end_ms": 2417840,
+      "source_event_index": 382,
+      "start_ms": 2406000,
+      "text": "What this looks like in circuitry is that the clock is mediated by registers, which"
+    },
+    {
+      "end_ms": 2423840,
+      "source_event_index": 383,
+      "start_ms": 2417840,
+      "text": "are these storage devices we've drawn elsewhere. The way to think of it is: I have some storage"
+    },
+    {
+      "end_ms": 2429280,
+      "source_event_index": 384,
+      "start_ms": 2424400,
+      "text": "holding a bit, which might be 0 or 1. Then I have some cloud of logic,"
+    },
+    {
+      "end_ms": 2442480,
+      "source_event_index": 385,
+      "start_ms": 2429280,
+      "text": "which maybe is this systolic array or multiplier. I have a bunch of inputs feeding into this cloud"
+    },
+    {
+      "end_ms": 2448640,
+      "source_event_index": 386,
+      "start_ms": 2442480,
+      "text": "of logic, and eventually there's going to be some output register that it writes to."
+    },
+    {
+      "end_ms": 2455040,
+      "source_event_index": 387,
+      "start_ms": 2448640,
+      "text": "There is a global clock signal driving all these registers."
+    },
+    {
+      "end_ms": 2465120,
+      "source_event_index": 388,
+      "start_ms": 2457120,
+      "text": "At a certain instance in time, when the clock strikes, whatever value happens to be on that"
+    },
+    {
+      "end_ms": 2475280,
+      "source_event_index": 389,
+      "start_ms": 2465120,
+      "text": "wire at that instant is what gets stored. The challenge is that I would like to have"
+    },
+    {
+      "end_ms": 2479680,
+      "source_event_index": 390,
+      "start_ms": 2475280,
+      "text": "my clock speed run as fast as possible. If I run at two gigahertz, I get twice as"
+    },
+    {
+      "end_ms": 2483760,
+      "source_event_index": 391,
+      "start_ms": 2479680,
+      "text": "many operations done per second as if I run at one gigahertz."
+    },
+    {
+      "end_ms": 2490400,
+      "source_event_index": 392,
+      "start_ms": 2484960,
+      "text": "But what that ends up meaning is that I'm very sensitive to the delay through this cloud of"
+    },
+    {
+      "end_ms": 2497280,
+      "source_event_index": 393,
+      "start_ms": 2490400,
+      "text": "logic, because any computation happening in there needs to finish before the next clock cycle hits."
+    },
+    {
+      "end_ms": 2513200,
+      "source_event_index": 394,
+      "start_ms": 2500880,
+      "text": "A major point of optimization on any chip is to make this delay as short as possible."
+    },
+    {
+      "end_ms": 2522800,
+      "source_event_index": 395,
+      "start_ms": 2513200,
+      "text": "Interesting. The constraint here seems to be that if you add too much logic,"
+    },
+    {
+      "end_ms": 2527760,
+      "source_event_index": 396,
+      "start_ms": 2522800,
+      "text": "you might risk missing the clock cycle. But if you don't add enough, you're"
+    },
+    {
+      "end_ms": 2535840,
+      "source_event_index": 397,
+      "start_ms": 2527760,
+      "text": "leaving potential compute on the table. Is there ever a situation where you take"
+    },
+    {
+      "end_ms": 2543440,
+      "source_event_index": 398,
+      "start_ms": 2535840,
+      "text": "a probabilistic chance that a computation finishes, or is it strictly that it either"
+    },
+    {
+      "end_ms": 2548720,
+      "source_event_index": 399,
+      "start_ms": 2543440,
+      "text": "finishes by the clock cycle or it doesn't? In standard chip design, you margin it such"
+    },
+    {
+      "end_ms": 2554640,
+      "source_event_index": 400,
+      "start_ms": 2548720,
+      "text": "that there is a probability, but it's many standard deviations out."
+    },
+    {
+      "end_ms": 2558880,
+      "source_event_index": 401,
+      "start_ms": 2554640,
+      "text": "For all intents and purposes, it is a reliable part and will always meet the clock."
+    },
+    {
+      "end_ms": 2565760,
+      "source_event_index": 402,
+      "start_ms": 2560720,
+      "text": "There are some weird exceptions, like clock domain crossings where you go from one clock to another."
+    },
+    {
+      "end_ms": 2567600,
+      "source_event_index": 403,
+      "start_ms": 2565760,
+      "text": "Then you actually do have to reason about this probability."
+    },
+    {
+      "end_ms": 2575760,
+      "source_event_index": 404,
+      "start_ms": 2567600,
+      "text": "But in the main path, you margin it such that you'll get there 25% of the clock cycle in"
+    },
+    {
+      "end_ms": 2587520,
+      "source_event_index": 405,
+      "start_ms": 2575760,
+      "text": "advance, making it very unlikely that it misses. Where the clocks synchronize, where the"
+    },
+    {
+      "end_ms": 2591360,
+      "source_event_index": 406,
+      "start_ms": 2587520,
+      "text": "registers are, is this something you determine as a chip designer?"
+    },
+    {
+      "end_ms": 2598960,
+      "source_event_index": 407,
+      "start_ms": 2591360,
+      "text": "Or is it an artifact where you want a certain sequence of logic, and the software you use to"
+    },
+    {
+      "end_ms": 2605120,
+      "source_event_index": 408,
+      "start_ms": 2598960,
+      "text": "convert your Verilog into what you send to TSMC just determines that to make it work,"
+    },
+    {
+      "end_ms": 2613440,
+      "source_event_index": 409,
+      "start_ms": 2605120,
+      "text": "you have to put a register here, here, and here, making sure no single step makes the"
+    },
+    {
+      "end_ms": 2618240,
+      "source_event_index": 410,
+      "start_ms": 2613440,
+      "text": "whole chip's clock cycle longer than it has to be? Inserting them is actually a huge part of the"
+    },
+    {
+      "end_ms": 2622560,
+      "source_event_index": 411,
+      "start_ms": 2618240,
+      "text": "work of designing a chip. It's done by a combination"
+    },
+    {
+      "end_ms": 2628960,
+      "source_event_index": 412,
+      "start_ms": 2622560,
+      "text": "of manual and automatic methods. To show the very dumb version of"
+    },
+    {
+      "end_ms": 2632080,
+      "source_event_index": 413,
+      "start_ms": 2628960,
+      "text": "what you can do here, you can take this logic and split it in half."
+    },
+    {
+      "end_ms": 2642400,
+      "source_event_index": 414,
+      "start_ms": 2633680,
+      "text": "Instead of just one cloud of logic, I can have two smaller clouds of logic that do the same thing,"
+    },
+    {
+      "end_ms": 2653120,
+      "source_event_index": 415,
+      "start_ms": 2642400,
+      "text": "but split them up by a register. If you split it in the middle,"
+    },
+    {
+      "end_ms": 2657120,
+      "source_event_index": 416,
+      "start_ms": 2653120,
+      "text": "you can hit twice the clock frequency. That's great, you get twice the performance,"
+    },
+    {
+      "end_ms": 2662080,
+      "source_event_index": 417,
+      "start_ms": 2657120,
+      "text": "but at the cost of an extra register, which means more storage."
+    },
+    {
+      "end_ms": 2664560,
+      "source_event_index": 418,
+      "start_ms": 2662080,
+      "text": "Stepping back, why do we need to synchronize the whole chip?"
+    },
+    {
+      "end_ms": 2668949,
+      "source_event_index": 419,
+      "start_ms": 2665360,
+      "text": "If you imagine playing Factorio or something, there's no global clock cycle."
+    },
+    {
+      "end_ms": 2671760,
+      "source_event_index": 420,
+      "start_ms": 2668949,
+      "text": "Things are just done when they're done. There's iron on the plate, and you can"
+    },
+    {
+      "end_ms": 2676640,
+      "source_event_index": 421,
+      "start_ms": 2671760,
+      "text": "take it if you want. Taking that analogy,"
+    },
+    {
+      "end_ms": 2681840,
+      "source_event_index": 422,
+      "start_ms": 2676640,
+      "text": "the thing you need to be mindful of is if I have two different paths through some logic."
+    },
+    {
+      "end_ms": 2687520,
+      "source_event_index": 423,
+      "start_ms": 2681840,
+      "text": "Say I have to do computation f here and computation g here,"
+    },
+    {
+      "end_ms": 2698400,
+      "source_event_index": 424,
+      "start_ms": 2687520,
+      "text": "and they're going to meet for computation h. There's going to be manufacturing variance."
+    },
+    {
+      "end_ms": 2703920,
+      "source_event_index": 425,
+      "start_ms": 2699440,
+      "text": "In some chips f will take a little longer; in some chips g will take a little longer."
+    },
+    {
+      "end_ms": 2710640,
+      "source_event_index": 426,
+      "start_ms": 2703920,
+      "text": "If I have a signal propagating through, and the results from f and g have to meet up at h,"
+    },
+    {
+      "end_ms": 2716640,
+      "source_event_index": 427,
+      "start_ms": 2712400,
+      "text": "what can go wrong is that f gets there early and it meets the previous"
+    },
+    {
+      "end_ms": 2720640,
+      "source_event_index": 428,
+      "start_ms": 2716640,
+      "text": "value of g, or the next value of g. Ah. And h needs to know when to start,"
+    },
+    {
+      "end_ms": 2724320,
+      "source_event_index": 429,
+      "start_ms": 2721440,
+      "text": "when the next iteration has… Exactly."
+    },
+    {
+      "end_ms": 2730240,
+      "source_event_index": 430,
+      "start_ms": 2724320,
+      "text": "This explains why different chips made at the same process node, the same TSMC"
+    },
+    {
+      "end_ms": 2738480,
+      "source_event_index": 431,
+      "start_ms": 2732080,
+      "text": "technology, can have different clock cycles. Two chips made at 3 nm might have different clock"
+    },
+    {
+      "end_ms": 2747520,
+      "source_event_index": 432,
+      "start_ms": 2738480,
+      "text": "cycles based on whether they were able to optimize to ensure no single critical path is so long that"
+    },
+    {
+      "end_ms": 2753600,
+      "source_event_index": 433,
+      "start_ms": 2748800,
+      "text": "it slows down the whole chip's clock cycle. That's right. This optimization I showed here"
+    },
+    {
+      "end_ms": 2759040,
+      "source_event_index": 434,
+      "start_ms": 2753600,
+      "text": "is called pipeline register insertion. We've inserted a register in the"
+    },
+    {
+      "end_ms": 2762400,
+      "source_event_index": 435,
+      "start_ms": 2759040,
+      "text": "middle of the pipeline. This is a pure trade-off"
+    },
+    {
+      "end_ms": 2768000,
+      "source_event_index": 436,
+      "start_ms": 2762400,
+      "text": "between clock speed and area. That is the easy case."
+    },
+    {
+      "end_ms": 2774320,
+      "source_event_index": 437,
+      "start_ms": 2768000,
+      "text": "There is a harder case too. I drew out a pipeline of logic,"
+    },
+    {
+      "end_ms": 2781360,
+      "source_event_index": 438,
+      "start_ms": 2774320,
+      "text": "but in other cases you may have some calculation which actually feeds back in on itself."
+    },
+    {
+      "end_ms": 2786320,
+      "source_event_index": 439,
+      "start_ms": 2782240,
+      "text": "It runs some function f and then writes back to itself."
+    },
+    {
+      "end_ms": 2802400,
+      "source_event_index": 440,
+      "start_ms": 2787760,
+      "text": "For example, this might be an addition where you're adding a number every clock cycle."
+    },
+    {
+      "end_ms": 2809920,
+      "source_event_index": 441,
+      "start_ms": 2803200,
+      "text": "This little circuit essentially sums all the numbers presented on different clock cycles."
+    },
+    {
+      "end_ms": 2814320,
+      "source_event_index": 442,
+      "start_ms": 2809920,
+      "text": "The challenge is, if this plus takes too long, what can I do?"
+    },
+    {
+      "end_ms": 2822160,
+      "source_event_index": 443,
+      "start_ms": 2814320,
+      "text": "If I try to put a pipeline register right in the middle of it, it"
+    },
+    {
+      "end_ms": 2828800,
+      "source_event_index": 444,
+      "start_ms": 2825600,
+      "text": "changes the computation that's done. Instead of forming a running sum"
+    },
+    {
+      "end_ms": 2832880,
+      "source_event_index": 445,
+      "start_ms": 2828800,
+      "text": "of everything that comes in, I will actually have two different running sums."
+    },
+    {
+      "end_ms": 2837760,
+      "source_event_index": 446,
+      "start_ms": 2832880,
+      "text": "I'll end up with a running sum of the even numbers and a running sum of the odd numbers."
+    },
+    {
+      "end_ms": 2845760,
+      "source_event_index": 447,
+      "start_ms": 2838640,
+      "text": "This constraint—where I have a loop in my logic, which all chips have somewhere—is the hardest"
+    },
+    {
+      "end_ms": 2849280,
+      "source_event_index": 448,
+      "start_ms": 2845760,
+      "text": "thing to address and sets the clock cycle. I don't understand why it would be"
+    },
+    {
+      "end_ms": 2850960,
+      "source_event_index": 449,
+      "start_ms": 2849280,
+      "text": "a problem to have that. I'm not even sure what it"
+    },
+    {
+      "end_ms": 2856000,
+      "source_event_index": 450,
+      "start_ms": 2850960,
+      "text": "would mean to have a register there. Is it a sort of atomic operation?"
+    },
+    {
+      "end_ms": 2861040,
+      "source_event_index": 451,
+      "start_ms": 2856560,
+      "text": "Well, plus is not really atomic. As you just demonstrated."
+    },
+    {
+      "end_ms": 2865200,
+      "source_event_index": 452,
+      "start_ms": 2861040,
+      "text": "It took a whole lot of work to do a summation. You can take the early parts of that work,"
+    },
+    {
+      "end_ms": 2868320,
+      "source_event_index": 453,
+      "start_ms": 2865840,
+      "text": "stick a register in the middle, and then take the late parts of that work."
+    },
+    {
+      "end_ms": 2877040,
+      "source_event_index": 454,
+      "start_ms": 2868320,
+      "text": "Okay. TSMC offers a PDK which specifies the primitives of"
+    },
+    {
+      "end_ms": 2883920,
+      "source_event_index": 455,
+      "start_ms": 2878400,
+      "text": "logic they can grant you in the chip. It's up to them to determine that no"
+    },
+    {
+      "end_ms": 2890240,
+      "source_event_index": 456,
+      "start_ms": 2883920,
+      "text": "primitive is bigger than the clock cycle they're hoping a process node targets."
+    },
+    {
+      "end_ms": 2899280,
+      "source_event_index": 457,
+      "start_ms": 2890240,
+      "text": "But other than that, can't you just take all the primitives from TSMC and keep adding"
+    },
+    {
+      "end_ms": 2904160,
+      "source_event_index": 458,
+      "start_ms": 2899280,
+      "text": "registers between them as much as needed until you get to your desired clock cycle?"
+    },
+    {
+      "end_ms": 2907520,
+      "source_event_index": 459,
+      "start_ms": 2904160,
+      "text": "As a logic designer, the chip architect sets the clock cycle."
+    },
+    {
+      "end_ms": 2915600,
+      "source_event_index": 460,
+      "start_ms": 2908240,
+      "text": "For example, the primitives you get from TSMC are on the order of AND gates or full adders."
+    },
+    {
+      "end_ms": 2926720,
+      "source_event_index": 461,
+      "start_ms": 2916800,
+      "text": "It depends a lot on voltage and which library you choose, but generally you can have about 10, 20,"
+    },
+    {
+      "end_ms": 2931760,
+      "source_event_index": 462,
+      "start_ms": 2926720,
+      "text": "or 30 of these sequentially in a clock cycle. These primitives are very fast,"
+    },
+    {
+      "end_ms": 2937840,
+      "source_event_index": 463,
+      "start_ms": 2931760,
+      "text": "maybe 10 picoseconds. As a logic designer, in principle,"
+    },
+    {
+      "end_ms": 2947200,
+      "source_event_index": 464,
+      "start_ms": 2937840,
+      "text": "if you just had a register and an AND gate in a loop, you could get an insanely fast clock speed,"
+    },
+    {
+      "end_ms": 2956720,
+      "source_event_index": 465,
+      "start_ms": 2947200,
+      "text": "more than four, five, or six gigahertz. But if you take this really simple circuit"
+    },
+    {
+      "end_ms": 2963920,
+      "source_event_index": 466,
+      "start_ms": 2956720,
+      "text": "and look at the area you're spending here… This is called one gate equivalent"
+    },
+    {
+      "end_ms": 2968400,
+      "source_event_index": 467,
+      "start_ms": 2963920,
+      "text": "in size, so unit of one in area. This thing is maybe a unit of eight in area."
+    },
+    {
+      "end_ms": 2974400,
+      "source_event_index": 468,
+      "start_ms": 2971520,
+      "text": "Again, almost all your cost becomes synchronization or"
+    },
+    {
+      "end_ms": 2980800,
+      "source_event_index": 469,
+      "start_ms": 2974400,
+      "text": "communication cost compared to the actual logic. This would be a case where you've gone too far."
+    },
+    {
+      "end_ms": 2983840,
+      "source_event_index": 470,
+      "start_ms": 2980800,
+      "text": "You've made your clock speed really fast at the cost of spending almost"
+    },
+    {
+      "end_ms": 2990480,
+      "source_event_index": 471,
+      "start_ms": 2983840,
+      "text": "all of your area on pipeline registers. Interesting. So you're hinting at a dynamic"
+    },
+    {
+      "end_ms": 2994720,
+      "source_event_index": 472,
+      "start_ms": 2990480,
+      "text": "where you can have a really fast clock speed but you're not getting that much work done."
+    },
+    {
+      "end_ms": 3004560,
+      "source_event_index": 473,
+      "start_ms": 2996480,
+      "text": "You can have low latency but low throughput. It hurts your throughput, in fact, because"
+    },
+    {
+      "end_ms": 3011680,
+      "source_event_index": 474,
+      "start_ms": 3005760,
+      "text": "the throughput of your chip is the product of how much you get done per clock cycle—which"
+    },
+    {
+      "end_ms": 3015440,
+      "source_event_index": 475,
+      "start_ms": 3011680,
+      "text": "is based on area efficiency—times how many clocks you get per second."
+    },
+    {
+      "end_ms": 3020720,
+      "source_event_index": 476,
+      "start_ms": 3015440,
+      "text": "This is actually so similar to the thing we were discussing last time about batch size,"
+    },
+    {
+      "end_ms": 3028960,
+      "source_event_index": 477,
+      "start_ms": 3021680,
+      "text": "where if you have a low batch size, any one user can receive their next token really fast,"
+    },
+    {
+      "end_ms": 3034800,
+      "source_event_index": 478,
+      "start_ms": 3028960,
+      "text": "but the total number of tokens processed in, say, an hour will be lower than it could otherwise be."
+    },
+    {
+      "end_ms": 3039280,
+      "source_event_index": 479,
+      "start_ms": 3034800,
+      "text": "Exactly. You get less parallelism out if you drive your clock speed up really high."
+    },
+    {
+      "end_ms": 3042640,
+      "source_event_index": 480,
+      "start_ms": 3039280,
+      "text": "Language models are starting to compete against the best human forecasters."
+    },
+    {
+      "end_ms": 3048240,
+      "source_event_index": 481,
+      "start_ms": 3042640,
+      "text": "I sat down with two senior Jane Streeters, Ron Minsky and Dan Pontecorvo, and asked: at some"
+    },
+    {
+      "end_ms": 3052160,
+      "source_event_index": 482,
+      "start_ms": 3048240,
+      "text": "point, does AI just do what Jane Street does? There's a world that we should take seriously"
+    },
+    {
+      "end_ms": 3056720,
+      "source_event_index": 483,
+      "start_ms": 3052160,
+      "text": "where, you know, we're going to build large language models or some other AI systems that"
+    },
+    {
+      "end_ms": 3062240,
+      "source_event_index": 484,
+      "start_ms": 3056720,
+      "text": "are like strictly smarter than all humans on the planet and more capable at all cognitive tasks."
+    },
+    {
+      "end_ms": 3068160,
+      "source_event_index": 485,
+      "start_ms": 3062240,
+      "text": "Trading in particular feels to me as like kind of AGI complete, sort of like NP complete,"
+    },
+    {
+      "end_ms": 3075120,
+      "source_event_index": 486,
+      "start_ms": 3068160,
+      "text": "because at the end of the day trading involves figuring out what things are worth, which means"
+    },
+    {
+      "end_ms": 3078480,
+      "source_event_index": 487,
+      "start_ms": 3075120,
+      "text": "making predictions about the future. Jane Street isn't betting against AI."
+    },
+    {
+      "end_ms": 3080560,
+      "source_event_index": 488,
+      "start_ms": 3078480,
+      "text": "They just signed a six billion dollar compute deal."
+    },
+    {
+      "end_ms": 3085360,
+      "source_event_index": 489,
+      "start_ms": 3080560,
+      "text": "But Ron's view is that the edge keeps moving. I have never been more desperate to hire more"
+    },
+    {
+      "end_ms": 3089040,
+      "source_event_index": 490,
+      "start_ms": 3085360,
+      "text": "engineers and more traders than I am today. You know, you have the usual thing of like"
+    },
+    {
+      "end_ms": 3091440,
+      "source_event_index": 491,
+      "start_ms": 3089040,
+      "text": "the other hard parts that we don't yet know how to automate."
+    },
+    {
+      "end_ms": 3094160,
+      "source_event_index": 492,
+      "start_ms": 3091440,
+      "text": "Well, that ends up being where the competitive edge lies."
+    },
+    {
+      "end_ms": 3101360,
+      "source_event_index": 493,
+      "start_ms": 3094160,
+      "text": "You can find these open positions and watch the full interview at janestreet.com/dwarkesh."
+    },
+    {
+      "end_ms": 3108400,
+      "source_event_index": 494,
+      "start_ms": 3101360,
+      "text": "I remember talking to an FPGA engineer at Jane Street, Clark, who helped me prep for"
+    },
+    {
+      "end_ms": 3112640,
+      "source_event_index": 495,
+      "start_ms": 3108400,
+      "text": "the previous interview we did together. He was explaining why they use FPGAs."
+    },
+    {
+      "end_ms": 3121280,
+      "source_event_index": 496,
+      "start_ms": 3115200,
+      "text": "I imagine that for high-frequency trading, throughput is less important than latency,"
+    },
+    {
+      "end_ms": 3123360,
+      "source_event_index": 497,
+      "start_ms": 3121280,
+      "text": "so having very specific control over the clock"
+    },
+    {
+      "end_ms": 3126480,
+      "source_event_index": 498,
+      "start_ms": 3123360,
+      "text": "cycle in a deterministic way is the most important thing."
+    },
+    {
+      "end_ms": 3134240,
+      "source_event_index": 499,
+      "start_ms": 3128000,
+      "text": "Maybe it'd be interesting to talk about why you can't just achieve that with an ASIC,"
+    },
+    {
+      "end_ms": 3143680,
+      "source_event_index": 500,
+      "start_ms": 3134240,
+      "text": "or why you might use an FPGA to have deterministic clock cycles for high-frequency trading."
+    },
+    {
+      "end_ms": 3148960,
+      "source_event_index": 501,
+      "start_ms": 3145920,
+      "text": "Let's consider the business case for an FPGA versus an ASIC."
+    },
+    {
+      "end_ms": 3156960,
+      "source_event_index": 502,
+      "start_ms": 3151200,
+      "text": "FPGAs and ASICs use largely the same conceptual model."
+    },
+    {
+      "end_ms": 3168000,
+      "source_event_index": 503,
+      "start_ms": 3156960,
+      "text": "You have a series of gates built from small primitives—ANDs, ORs, XORs—connected together"
+    },
+    {
+      "end_ms": 3173120,
+      "source_event_index": 504,
+      "start_ms": 3168000,
+      "text": "with wires running in a fixed clock cycle. Anything you can express in an FPGA you"
+    },
+    {
+      "end_ms": 3175600,
+      "source_event_index": 505,
+      "start_ms": 3173120,
+      "text": "can express in an ASIC too. It will be about an order of"
+    },
+    {
+      "end_ms": 3181120,
+      "source_event_index": 506,
+      "start_ms": 3175600,
+      "text": "magnitude cheaper and have better energy efficiency on an ASIC than an FPGA."
+    },
+    {
+      "end_ms": 3188640,
+      "source_event_index": 507,
+      "start_ms": 3181760,
+      "text": "The trade-off is that the first FPGA costs you $10,000, whereas the first ASIC you make costs $30"
+    },
+    {
+      "end_ms": 3196240,
+      "source_event_index": 508,
+      "start_ms": 3188640,
+      "text": "million because it requires an entire tape-out. The business use case for an FPGA is when you want"
+    },
+    {
+      "end_ms": 3201760,
+      "source_event_index": 509,
+      "start_ms": 3196240,
+      "text": "something that has very deterministic latency, fast runtime, and high parallelism,"
+    },
+    {
+      "end_ms": 3209760,
+      "source_event_index": 510,
+      "start_ms": 3205680,
+      "text": "but you are going to change the workload frequently, maybe every month."
+    },
+    {
+      "end_ms": 3214240,
+      "source_event_index": 511,
+      "start_ms": 3209760,
+      "text": "You don't want to pay that tape-out cost every time."
+    },
+    {
+      "end_ms": 3222320,
+      "source_event_index": 512,
+      "start_ms": 3214240,
+      "text": "How does an FPGA actually emulate the ASIC programming model in a fixed piece of hardware?"
+    },
+    {
+      "end_ms": 3234480,
+      "source_event_index": 513,
+      "start_ms": 3222320,
+      "text": "At its core, it has the two components we just talked about."
+    },
+    {
+      "end_ms": 3243200,
+      "source_event_index": 514,
+      "start_ms": 3234480,
+      "text": "It has registers as storage devices, and it has lookup tables"
+    },
+    {
+      "end_ms": 3251200,
+      "source_event_index": 515,
+      "start_ms": 3243200,
+      "text": "(LUTs) which provide all of the gates. Then there's a third component."
+    },
+    {
+      "end_ms": 3270880,
+      "source_event_index": 516,
+      "start_ms": 3251200,
+      "text": "We have a swarm of these registers and LUTs, and they are connected by a big set of muxes."
+    },
+    {
+      "end_ms": 3279520,
+      "source_event_index": 517,
+      "start_ms": 3270880,
+      "text": "In front of every single one of these, we have a mux which selects an input from everywhere else."
+    },
+    {
+      "end_ms": 3291040,
+      "source_event_index": 518,
+      "start_ms": 3284240,
+      "text": "We have a whole bunch of different options feeding into all of these things."
+    },
+    {
+      "end_ms": 3301200,
+      "source_event_index": 519,
+      "start_ms": 3294320,
+      "text": "What this allows is essentially that when I program my FPGA, I can take all of these"
+    },
+    {
+      "end_ms": 3310080,
+      "source_event_index": 520,
+      "start_ms": 3301200,
+      "text": "components and superimpose a particular wiring which goes through this LUT, feed it into another"
+    },
+    {
+      "end_ms": 3314720,
+      "source_event_index": 521,
+      "start_ms": 3310080,
+      "text": "LUT, send it to this register, and then feed it into another LUT, or something like that."
+    },
+    {
+      "end_ms": 3322560,
+      "source_event_index": 522,
+      "start_ms": 3316080,
+      "text": "What I've drawn in orange is how you… FPGA means Field-Programmable Gate Array."
+    },
+    {
+      "end_ms": 3326080,
+      "source_event_index": 523,
+      "start_ms": 3322560,
+      "text": "The orange is what has been programmed in the field, whereas the white is all the"
+    },
+    {
+      "end_ms": 3330560,
+      "source_event_index": 524,
+      "start_ms": 3326080,
+      "text": "wires that must exist in the FPGA in order to actually make the device in the first place."
+    },
+    {
+      "end_ms": 3334800,
+      "source_event_index": 525,
+      "start_ms": 3330560,
+      "text": "What does it mean to be programmed in the field? Programmed in the field means the device is"
+    },
+    {
+      "end_ms": 3336560,
+      "source_event_index": 526,
+      "start_ms": 3334800,
+      "text": "being deployed in a data center. It's sitting out in the world,"
+    },
+    {
+      "end_ms": 3339680,
+      "source_event_index": 527,
+      "start_ms": 3336560,
+      "text": "and then you can come and program it. Ah, not field as in like electric field."
+    },
+    {
+      "end_ms": 3348800,
+      "source_event_index": 528,
+      "start_ms": 3339680,
+      "text": "Field as in like out there in the world, ok. If I look at how the field programming comes"
+    },
+    {
+      "end_ms": 3356960,
+      "source_event_index": 529,
+      "start_ms": 3348800,
+      "text": "out of the first lookup table and goes into a second one, how does that work?"
+    },
+    {
+      "end_ms": 3363040,
+      "source_event_index": 530,
+      "start_ms": 3357680,
+      "text": "Where are the wires that make that happen? I got a little bit lazy in drawing all of these."
+    },
+    {
+      "end_ms": 3371120,
+      "source_event_index": 531,
+      "start_ms": 3363040,
+      "text": "Every single device here has a mux sitting in front of it, which can select from all of the"
+    },
+    {
+      "end_ms": 3379760,
+      "source_event_index": 532,
+      "start_ms": 3371120,
+      "text": "nearby circuits that are available. The actual configuration of the"
+    },
+    {
+      "end_ms": 3388240,
+      "source_event_index": 533,
+      "start_ms": 3379760,
+      "text": "FPGA amounts to the mux control. In this mux, we have the data inputs,"
+    },
+    {
+      "end_ms": 3394320,
+      "source_event_index": 534,
+      "start_ms": 3388240,
+      "text": "and we have the control that selects. There's a little storage device sitting next"
+    },
+    {
+      "end_ms": 3402080,
+      "source_event_index": 535,
+      "start_ms": 3394320,
+      "text": "to every single one of these muxes saying, \"This is where you're going to source your input from.\""
+    },
+    {
+      "end_ms": 3407600,
+      "source_event_index": 536,
+      "start_ms": 3403920,
+      "text": "Programming it consists of configuring every single one of these muxes."
+    },
+    {
+      "end_ms": 3409840,
+      "source_event_index": 537,
+      "start_ms": 3407600,
+      "text": "That makes sense. What is happening inside of the lookup table?"
+    },
+    {
+      "end_ms": 3416160,
+      "source_event_index": 538,
+      "start_ms": 3411840,
+      "text": "The lookup table is also going to have a little bit of control telling it what to do."
+    },
+    {
+      "end_ms": 3423360,
+      "source_event_index": 539,
+      "start_ms": 3416160,
+      "text": "Its purpose is to configurably take the role of an AND gate,"
+    },
+    {
+      "end_ms": 3429520,
+      "source_event_index": 540,
+      "start_ms": 3423360,
+      "text": "OR gate, XOR, or any of those different things. There are many ways you could consider doing that."
+    },
+    {
+      "end_ms": 3445920,
+      "source_event_index": 541,
+      "start_ms": 3430880,
+      "text": "The way it's done in traditional FPGAs… A lookup table has four bits"
+    },
+    {
+      "end_ms": 3451440,
+      "source_event_index": 542,
+      "start_ms": 3445920,
+      "text": "of input and one bit of output. How many different functions are"
+    },
+    {
+      "end_ms": 3454880,
+      "source_event_index": 543,
+      "start_ms": 3451440,
+      "text": "there from four bits to one bit? There are 16 different functions."
+    },
+    {
+      "end_ms": 3469280,
+      "source_event_index": 544,
+      "start_ms": 3457200,
+      "text": "You can tabulate this as 16 different numbers. You've got a table of 0111001, 16 entries."
+    },
+    {
+      "end_ms": 3475520,
+      "source_event_index": 545,
+      "start_ms": 3472080,
+      "text": "This table is stored in this blue configuration bit."
+    },
+    {
+      "end_ms": 3488080,
+      "source_event_index": 546,
+      "start_ms": 3480000,
+      "text": "It views these four bits as binary, looks up the relevant row of the table, and emits that bit."
+    },
+    {
+      "end_ms": 3490640,
+      "source_event_index": 547,
+      "start_ms": 3488080,
+      "text": "This is essentially a truth-table view of lookup tables."
+    },
+    {
+      "end_ms": 3498640,
+      "source_event_index": 548,
+      "start_ms": 3491360,
+      "text": "Okay, so if you think about an AND gate, OR gate, NOR gate, XOR gate, these all take as input…"
+    },
+    {
+      "end_ms": 3505200,
+      "source_event_index": 549,
+      "start_ms": 3498640,
+      "text": "Those are two-input functions. Sometimes we have a three-input function, like a three-way XOR,"
+    },
+    {
+      "end_ms": 3507440,
+      "source_event_index": 550,
+      "start_ms": 3505200,
+      "text": "or a four-way XOR. In this case,"
+    },
+    {
+      "end_ms": 3512880,
+      "source_event_index": 551,
+      "start_ms": 3507440,
+      "text": "does it just depend on how big it is? The typical size for LUTs is four inputs."
+    },
+    {
+      "end_ms": 3517840,
+      "source_event_index": 552,
+      "start_ms": 3512880,
+      "text": "It's sort of just a sweet spot. There’s another compute vs. communication"
+    },
+    {
+      "end_ms": 3519840,
+      "source_event_index": 553,
+      "start_ms": 3517840,
+      "text": "trade-off here. If it has too"
+    },
+    {
+      "end_ms": 3525760,
+      "source_event_index": 554,
+      "start_ms": 3519840,
+      "text": "few inputs, you need to use more LUTs. Basically the lookup table is a truth table."
+    },
+    {
+      "end_ms": 3529520,
+      "source_event_index": 555,
+      "start_ms": 3527440,
+      "text": "With a truth table, you can program in any gate you want."
+    },
+    {
+      "end_ms": 3533920,
+      "source_event_index": 556,
+      "start_ms": 3530800,
+      "text": "So instead of a lookup table, you can just think of it as a programmable gate."
+    },
+    {
+      "end_ms": 3539520,
+      "source_event_index": 557,
+      "start_ms": 3533920,
+      "text": "That's right. One of the things you can do here is you can see where the rule of thumb"
+    },
+    {
+      "end_ms": 3544000,
+      "source_event_index": 558,
+      "start_ms": 3539520,
+      "text": "that an FPGA is an order of magnitude more expensive than an ASIC comes from."
+    },
+    {
+      "end_ms": 3547440,
+      "source_event_index": 559,
+      "start_ms": 3544000,
+      "text": "You count how many gates would be inside this lookup table."
+    },
+    {
+      "end_ms": 3553600,
+      "source_event_index": 560,
+      "start_ms": 3550240,
+      "text": "We can view this lookup table essentially as one of these muxes."
+    },
+    {
+      "end_ms": 3558800,
+      "source_event_index": 561,
+      "start_ms": 3554240,
+      "text": "It has to select between 16 different values,"
+    },
+    {
+      "end_ms": 3577600,
+      "source_event_index": 562,
+      "start_ms": 3559920,
+      "text": "so it's a mux with n=16 options and p=1 bits. As we saw earlier, this circuit"
+    },
+    {
+      "end_ms": 3585360,
+      "source_event_index": 563,
+      "start_ms": 3577600,
+      "text": "costs n times p many gates. So it costs np, which is 16,"
+    },
+    {
+      "end_ms": 3592080,
+      "source_event_index": 564,
+      "start_ms": 3585360,
+      "text": "AND gates, and also 16 ORs. This circuit being the mux?"
+    },
+    {
+      "end_ms": 3595520,
+      "source_event_index": 565,
+      "start_ms": 3592080,
+      "text": "Exactly, the mux. The mux that goes into the lookup table?"
+    },
+    {
+      "end_ms": 3602240,
+      "source_event_index": 566,
+      "start_ms": 3596240,
+      "text": "The lookup table itself you can think of as being a big mux that selects from all 16"
+    },
+    {
+      "end_ms": 3605520,
+      "source_event_index": 567,
+      "start_ms": 3602240,
+      "text": "rows down to one output. That's the lookup table."
+    },
+    {
+      "end_ms": 3608720,
+      "source_event_index": 568,
+      "start_ms": 3605520,
+      "text": "But the way you've drawn it here, there's a mux and then a lookup table."
+    },
+    {
+      "end_ms": 3612720,
+      "source_event_index": 569,
+      "start_ms": 3608720,
+      "text": "It's muxes all the way down. There is a second mux that is inside here."
+    },
+    {
+      "end_ms": 3618880,
+      "source_event_index": 570,
+      "start_ms": 3612720,
+      "text": "This mux is this mux. And the other mux is just saying…"
+    },
+    {
+      "end_ms": 3623600,
+      "source_event_index": 571,
+      "start_ms": 3618880,
+      "text": "where it came from in this mess of gates. Right, and the second mux is, \"Okay,"
+    },
+    {
+      "end_ms": 3629840,
+      "source_event_index": 572,
+      "start_ms": 3623600,
+      "text": "now you have one value, but that value is still a four-bit value.\""
+    },
+    {
+      "end_ms": 3635440,
+      "source_event_index": 573,
+      "start_ms": 3629840,
+      "text": "Yeah, I've selected four bits from the soup. Then I use those four bits to select which"
+    },
+    {
+      "end_ms": 3645200,
+      "source_event_index": 574,
+      "start_ms": 3635440,
+      "text": "entry in the lookup table I'm going to use. Suppose in the first mux you're pulling"
+    },
+    {
+      "end_ms": 3652080,
+      "source_event_index": 575,
+      "start_ms": 3645200,
+      "text": "from eight nearby registers as input. That's a total of 32 bits going in."
+    },
+    {
+      "end_ms": 3658640,
+      "source_event_index": 576,
+      "start_ms": 3653440,
+      "text": "Out of that, four bits come out. Those four bits go into the second mux,"
+    },
+    {
+      "end_ms": 3662720,
+      "source_event_index": 577,
+      "start_ms": 3658640,
+      "text": "which is inside the lookup table. In this case, these registers"
+    },
+    {
+      "end_ms": 3666400,
+      "source_event_index": 578,
+      "start_ms": 3662720,
+      "text": "are single-bit registers. If there are eight nearby"
+    },
+    {
+      "end_ms": 3671440,
+      "source_event_index": 579,
+      "start_ms": 3666400,
+      "text": "registers and lookup tables, then I have eight bits total coming in nearby."
+    },
+    {
+      "end_ms": 3681760,
+      "source_event_index": 580,
+      "start_ms": 3671440,
+      "text": "I select from eight down to four different values. There are actually four different muxes, a little"
+    },
+    {
+      "end_ms": 3686400,
+      "source_event_index": 581,
+      "start_ms": 3681760,
+      "text": "mux associated with each of these input bits. Each of them is selecting one out of eight."
+    },
+    {
+      "end_ms": 3690400,
+      "source_event_index": 582,
+      "start_ms": 3686400,
+      "text": "Where are those eight coming from? Nearby registers and other LUTs."
+    },
+    {
+      "end_ms": 3692320,
+      "source_event_index": 583,
+      "start_ms": 3690400,
+      "text": "Each register is one bit. Yes."
+    },
+    {
+      "end_ms": 3700720,
+      "source_event_index": 584,
+      "start_ms": 3693360,
+      "text": "I guess AMD or whoever makes these FPGAs still has to be opinionated about which"
+    },
+    {
+      "end_ms": 3707680,
+      "source_event_index": 585,
+      "start_ms": 3702000,
+      "text": "registers are connected to which registers. You can program in the actual gates,"
+    },
+    {
+      "end_ms": 3712080,
+      "source_event_index": 586,
+      "start_ms": 3707680,
+      "text": "but they add a wire in the connect… the communication topology, right?"
+    },
+    {
+      "end_ms": 3720000,
+      "source_event_index": 587,
+      "start_ms": 3713760,
+      "text": "You get flexibility at a local grain. There's a nearby neighborhood you can select from,"
+    },
+    {
+      "end_ms": 3726160,
+      "source_event_index": 588,
+      "start_ms": 3720000,
+      "text": "but for more coarse, long-distance connections, they form an opinion on that."
+    },
+    {
+      "end_ms": 3731360,
+      "source_event_index": 589,
+      "start_ms": 3726160,
+      "text": "And the reason it's 10x slower is why? If you look at the cost of building this"
+    },
+    {
+      "end_ms": 3737120,
+      "source_event_index": 590,
+      "start_ms": 3731360,
+      "text": "lookup table, it's 32 gates. It can give me the equivalent"
+    },
+    {
+      "end_ms": 3741280,
+      "source_event_index": 591,
+      "start_ms": 3737120,
+      "text": "of—what’s an interesting thing I can do here—a four-way AND gate."
+    },
+    {
+      "end_ms": 3755440,
+      "source_event_index": 592,
+      "start_ms": 3746960,
+      "text": "A four-way AND means AND, AND, and then an AND of an AND."
+    },
+    {
+      "end_ms": 3760720,
+      "source_event_index": 593,
+      "start_ms": 3756400,
+      "text": "This is a circuit I could implement in an ASIC directly using three AND gates."
+    },
+    {
+      "end_ms": 3766640,
+      "source_event_index": 594,
+      "start_ms": 3761520,
+      "text": "Using a LUT, I can also implement it, but it's going to take 32 gates instead of three."
+    },
+    {
+      "end_ms": 3778560,
+      "source_event_index": 595,
+      "start_ms": 3767200,
+      "text": "So the overhead is really coming from the fact that there's a more concise"
+    },
+    {
+      "end_ms": 3785440,
+      "source_event_index": 596,
+      "start_ms": 3778560,
+      "text": "way to describe a truth table than listing out every single possible combination of inputs,"
+    },
+    {
+      "end_ms": 3791360,
+      "source_event_index": 597,
+      "start_ms": 3786400,
+      "text": "which is just to write out the gate. Yes, to place down the polysilicon"
+    },
+    {
+      "end_ms": 3795120,
+      "source_event_index": 598,
+      "start_ms": 3791360,
+      "text": "and the wires and so on. Interesting. One important point you"
+    },
+    {
+      "end_ms": 3801600,
+      "source_event_index": 599,
+      "start_ms": 3795120,
+      "text": "made to me is that the reason they prefer FPGAs to CPUs is that they get deterministic clock cycles."
+    },
+    {
+      "end_ms": 3808720,
+      "source_event_index": 600,
+      "start_ms": 3801600,
+      "text": "They know when a packet will come in and go out. Why isn't that a guarantee in CPUs?"
+    },
+    {
+      "end_ms": 3812400,
+      "source_event_index": 601,
+      "start_ms": 3808720,
+      "text": "You can actually design a CPU that has deterministic latency as well."
+    },
+    {
+      "end_ms": 3820480,
+      "source_event_index": 602,
+      "start_ms": 3814640,
+      "text": "In fact, the processors inside a lot of AI chips also have deterministic latency."
+    },
+    {
+      "end_ms": 3823120,
+      "source_event_index": 603,
+      "start_ms": 3820480,
+      "text": "Groq has advertised this. TPUs have that in the core as well."
+    },
+    {
+      "end_ms": 3830400,
+      "source_event_index": 604,
+      "start_ms": 3826080,
+      "text": "The challenge is getting deterministic latency and high speed at the same time."
+    },
+    {
+      "end_ms": 3841520,
+      "source_event_index": 605,
+      "start_ms": 3833280,
+      "text": "Non-deterministic latency comes from specific design choices in a CPU."
+    },
+    {
+      "end_ms": 3848640,
+      "source_event_index": 606,
+      "start_ms": 3843520,
+      "text": "It's actually possible to remove those design choices and make a CPU with deterministic latency,"
+    },
+    {
+      "end_ms": 3853760,
+      "source_event_index": 607,
+      "start_ms": 3848640,
+      "text": "but those are not very attractive in the market, so people don't make those CPUs anymore."
+    },
+    {
+      "end_ms": 3864960,
+      "source_event_index": 608,
+      "start_ms": 3856960,
+      "text": "In some sense, deterministic latency is a simpler starting point, and some chip designers have"
+    },
+    {
+      "end_ms": 3873440,
+      "source_event_index": 609,
+      "start_ms": 3864960,
+      "text": "added things in to make it non-deterministic. To take a concrete example, probably the most"
+    },
+    {
+      "end_ms": 3879280,
+      "source_event_index": 610,
+      "start_ms": 3873440,
+      "text": "important source of non-determinism on a CPU is the CPU cache itself."
+    },
+    {
+      "end_ms": 3890640,
+      "source_event_index": 611,
+      "start_ms": 3883920,
+      "text": "In a CPU, you have the CPU die itself, and then DDR memory off on the side."
+    },
+    {
+      "end_ms": 3907120,
+      "source_event_index": 612,
+      "start_ms": 3894400,
+      "text": "You have a cache system inside that remembers recent accesses to DDR and stores them."
+    },
+    {
+      "end_ms": 3911600,
+      "source_event_index": 613,
+      "start_ms": 3909200,
+      "text": "When I'm running through my CPU instructions, every time"
+    },
+    {
+      "end_ms": 3917600,
+      "source_event_index": 614,
+      "start_ms": 3912240,
+      "text": "I have an instruction that accesses memory, it first checks if the data was stored in the cache."
+    },
+    {
+      "end_ms": 3923840,
+      "source_event_index": 615,
+      "start_ms": 3917600,
+      "text": "If not, it fetches it from DDR. This is a huge optimization."
+    },
+    {
+      "end_ms": 3927200,
+      "source_event_index": 616,
+      "start_ms": 3923840,
+      "text": "The cache is two orders of magnitude faster than the DDR."
+    },
+    {
+      "end_ms": 3933600,
+      "source_event_index": 617,
+      "start_ms": 3927200,
+      "text": "If you never used the cache, basically all programs would run a hundred times slower."
+    },
+    {
+      "end_ms": 3938240,
+      "source_event_index": 618,
+      "start_ms": 3934160,
+      "text": "The presence of a cache is absolutely necessary for a CPU to run at a reasonable speed."
+    },
+    {
+      "end_ms": 3945760,
+      "source_event_index": 619,
+      "start_ms": 3939360,
+      "text": "But whether or not you get a cache hit depends on the ambient environment of the CPU:"
+    },
+    {
+      "end_ms": 3948880,
+      "source_event_index": 620,
+      "start_ms": 3945760,
+      "text": "what other programs are running, what has run recently, and what the random number"
+    },
+    {
+      "end_ms": 3953200,
+      "source_event_index": 621,
+      "start_ms": 3948880,
+      "text": "generator inside the cache system is doing. That is a big source of non-determinism"
+    },
+    {
+      "end_ms": 3958800,
+      "source_event_index": 622,
+      "start_ms": 3953200,
+      "text": "in the runtime of a CPU. That is the memory system for a CPU."
+    },
+    {
+      "end_ms": 3966320,
+      "source_event_index": 623,
+      "start_ms": 3961600,
+      "text": "The big thing you can do differently is, instead of having the hardware say,"
+    },
+    {
+      "end_ms": 3970720,
+      "source_event_index": 624,
+      "start_ms": 3966320,
+      "text": "\"I’m going to read memory\" and then the hardware decides whether or not it comes"
+    },
+    {
+      "end_ms": 3978560,
+      "source_event_index": 625,
+      "start_ms": 3971280,
+      "text": "from the cache, you can bake this decision into software, a different design philosophy."
+    },
+    {
+      "end_ms": 3988640,
+      "source_event_index": 626,
+      "start_ms": 3982480,
+      "text": "You see this in TPUs, for example. I'll draw the same diagram,"
+    },
+    {
+      "end_ms": 3996240,
+      "source_event_index": 627,
+      "start_ms": 3988640,
+      "text": "but I'll call it a scratchpad. The main difference is… This would be a TPU,"
+    },
+    {
+      "end_ms": 4001680,
+      "source_event_index": 628,
+      "start_ms": 3996240,
+      "text": "and you have HBM in this case rather than DDR, but it's still an off-chip memory."
+    },
+    {
+      "end_ms": 4008480,
+      "source_event_index": 629,
+      "start_ms": 4003280,
+      "text": "Instead of the software saying \"first access memory\" and letting the hardware decide,"
+    },
+    {
+      "end_ms": 4013280,
+      "source_event_index": 630,
+      "start_ms": 4008480,
+      "text": "you have one kind of instruction that goes to the scratchpad and a totally different kind"
+    },
+    {
+      "end_ms": 4018160,
+      "source_event_index": 631,
+      "start_ms": 4013280,
+      "text": "of instruction that goes to HBM. This style is generically known"
+    },
+    {
+      "end_ms": 4024160,
+      "source_event_index": 632,
+      "start_ms": 4018160,
+      "text": "as scratchpad instead of cache. The key distinction is that you have"
+    },
+    {
+      "end_ms": 4028480,
+      "source_event_index": 633,
+      "start_ms": 4024160,
+      "text": "one kind of instruction that says \"read or write scratchpad,\" and a totally different instruction"
+    },
+    {
+      "end_ms": 4032880,
+      "source_event_index": 634,
+      "start_ms": 4028480,
+      "text": "that says \"read or write HBM.\" So scratchpad being the cache."
+    },
+    {
+      "end_ms": 4040000,
+      "source_event_index": 635,
+      "start_ms": 4032880,
+      "text": "Yeah, this thing here is the scratchpad. Stepping way back: people say computers have the"
+    },
+    {
+      "end_ms": 4048240,
+      "source_event_index": 636,
+      "start_ms": 4042320,
+      "text": "\"von Neumann architecture\", where there's this serial processing of information."
+    },
+    {
+      "end_ms": 4050400,
+      "source_event_index": 637,
+      "start_ms": 4048240,
+      "text": "Maybe it's just because we've been talking about parallel"
+    },
+    {
+      "end_ms": 4060720,
+      "source_event_index": 638,
+      "start_ms": 4050400,
+      "text": "accelerators, but the FPGA is super parallel. The AI accelerators, the TPUs, are super parallel."
+    },
+    {
+      "end_ms": 4064960,
+      "source_event_index": 639,
+      "start_ms": 4061280,
+      "text": "Even CPUs are super parallel if you think about all the cores they have."
+    },
+    {
+      "end_ms": 4070080,
+      "source_event_index": 640,
+      "start_ms": 4066800,
+      "text": "In what sense is modern hardware actually the von Neumann architecture?"
+    },
+    {
+      "end_ms": 4072560,
+      "source_event_index": 641,
+      "start_ms": 4070080,
+      "text": "Is that actually a fair way to describe modern hardware?"
+    },
+    {
+      "end_ms": 4078480,
+      "source_event_index": 642,
+      "start_ms": 4072560,
+      "text": "I think it's a fair way to describe CPUs. The amount of parallelism you get on a CPU is"
+    },
+    {
+      "end_ms": 4085680,
+      "source_event_index": 643,
+      "start_ms": 4078480,
+      "text": "about 100 cores times maybe 16-way vector units, so about 1,000-way parallelism on a CPU."
+    },
+    {
+      "end_ms": 4095280,
+      "source_event_index": 644,
+      "start_ms": 4086800,
+      "text": "One question: there is a die being used for the CPU, and if there are fewer threads,"
+    },
+    {
+      "end_ms": 4102400,
+      "source_event_index": 645,
+      "start_ms": 4095280,
+      "text": "just as a matter of transistor voltages switching on and off, is it that there's"
+    },
+    {
+      "end_ms": 4106240,
+      "source_event_index": 646,
+      "start_ms": 4102400,
+      "text": "literally one control flow—a small part of the die—where voltages are switching on and off?"
+    },
+    {
+      "end_ms": 4115600,
+      "source_event_index": 647,
+      "start_ms": 4108240,
+      "text": "How do you actually occupy the die area of a CPU… If there are so few cores, what are"
+    },
+    {
+      "end_ms": 4117360,
+      "source_event_index": 648,
+      "start_ms": 4115600,
+      "text": "you spending all of the die on? Yeah, what is happening there?"
+    },
+    {
+      "end_ms": 4119840,
+      "source_event_index": 649,
+      "start_ms": 4117360,
+      "text": "The cores are just much bigger and more complicated."
+    },
+    {
+      "end_ms": 4130640,
+      "source_event_index": 650,
+      "start_ms": 4124240,
+      "text": "We should compare a CPU core, which takes up one one-hundredth of the die, to a LUT."
+    },
+    {
+      "end_ms": 4134720,
+      "source_event_index": 651,
+      "start_ms": 4130640,
+      "text": "A LUT is only 16 gates. It's clear why there are so many"
+    },
+    {
+      "end_ms": 4144320,
+      "source_event_index": 652,
+      "start_ms": 4134720,
+      "text": "more LUTs in an FPGA than cores in a CPU. But why are there more CUDA cores,"
+    },
+    {
+      "end_ms": 4150000,
+      "source_event_index": 653,
+      "start_ms": 4144320,
+      "text": "for example, than CPU cores? What's the difference between a CPU and a GPU?"
+    },
+    {
+      "end_ms": 4162720,
+      "source_event_index": 654,
+      "start_ms": 4153600,
+      "text": "Inside the CPU, one big use of the area is the cache."
+    },
+    {
+      "end_ms": 4168240,
+      "source_event_index": 655,
+      "start_ms": 4163760,
+      "text": "Very little is actually the ALUs. Mostly it's these register"
+    },
+    {
+      "end_ms": 4176320,
+      "source_event_index": 656,
+      "start_ms": 4168240,
+      "text": "files rather than the logic units. Both of those have equivalents in a GPU,"
+    },
+    {
+      "end_ms": 4179040,
+      "source_event_index": 657,
+      "start_ms": 4176320,
+      "text": "so that's not a big difference. But the thing that does not have"
+    },
+    {
+      "end_ms": 4187200,
+      "source_event_index": 658,
+      "start_ms": 4179040,
+      "text": "an equivalent in a GPU is the branch predictor. There is a whole big area in the CPU which is"
+    },
+    {
+      "end_ms": 4198320,
+      "source_event_index": 659,
+      "start_ms": 4189120,
+      "text": "just a bunch of predictors saying when the next branch will be and where the branch target is."
+    },
+    {
+      "end_ms": 4203680,
+      "source_event_index": 660,
+      "start_ms": 4198320,
+      "text": "Stripping a lot of that out, as well as making these register files tighter,"
+    },
+    {
+      "end_ms": 4210160,
+      "source_event_index": 661,
+      "start_ms": 4206400,
+      "text": "drives a lot of the GPU gains over the CPU. What is the purpose of the branch predictor?"
+    },
+    {
+      "end_ms": 4213440,
+      "source_event_index": 662,
+      "start_ms": 4210160,
+      "text": "To execute both branches at once, or what does it do?"
+    },
+    {
+      "end_ms": 4222000,
+      "source_event_index": 663,
+      "start_ms": 4213440,
+      "text": "The issue is that when I've got a series of instructions, if I have a branch,"
+    },
+    {
+      "end_ms": 4232880,
+      "source_event_index": 664,
+      "start_ms": 4227920,
+      "text": "the actual step of processing an instruction takes a really long time."
+    },
+    {
+      "end_ms": 4239840,
+      "source_event_index": 665,
+      "start_ms": 4232880,
+      "text": "It takes maybe five nanoseconds. The time to notice that I've got a branch,"
+    },
+    {
+      "end_ms": 4249920,
+      "source_event_index": 666,
+      "start_ms": 4243760,
+      "text": "evaluate whether the Boolean is true, update the program counter to the new target,"
+    },
+    {
+      "end_ms": 4256960,
+      "source_event_index": 667,
+      "start_ms": 4249920,
+      "text": "and then read from the instruction memory could take five nanoseconds to finish."
+    },
+    {
+      "end_ms": 4259680,
+      "source_event_index": 668,
+      "start_ms": 4256960,
+      "text": "So in reality, this may finish somewhere down here."
+    },
+    {
+      "end_ms": 4267120,
+      "source_event_index": 669,
+      "start_ms": 4263600,
+      "text": "I want to run a clock speed that is much faster than what five nanoseconds allows."
+    },
+    {
+      "end_ms": 4272240,
+      "source_event_index": 670,
+      "start_ms": 4267920,
+      "text": "Five nanoseconds is a 200 MHz clock speed. I would like to run at one or two gigahertz."
+    },
+    {
+      "end_ms": 4280240,
+      "source_event_index": 671,
+      "start_ms": 4273200,
+      "text": "So I need to run other instructions while the branch is being evaluated."
+    },
+    {
+      "end_ms": 4286880,
+      "source_event_index": 672,
+      "start_ms": 4281360,
+      "text": "I just want to keep running the instructions that happen after me."
+    },
+    {
+      "end_ms": 4290480,
+      "source_event_index": 673,
+      "start_ms": 4287680,
+      "text": "But that might have been wrong. If the branch ended up being taken, then"
+    },
+    {
+      "end_ms": 4294560,
+      "source_event_index": 674,
+      "start_ms": 4290480,
+      "text": "I need to know that instead of evaluating these instructions, I actually need to jump to wherever"
+    },
+    {
+      "end_ms": 4302080,
+      "source_event_index": 675,
+      "start_ms": 4294560,
+      "text": "the target is and run those instructions instead. The purpose of the branch predictor is to predict,"
+    },
+    {
+      "end_ms": 4308720,
+      "source_event_index": 676,
+      "start_ms": 4302080,
+      "text": "five cycles earlier, that a branch is going to happen, before you even get to that instruction."
+    },
+    {
+      "end_ms": 4312480,
+      "source_event_index": 677,
+      "start_ms": 4309520,
+      "text": "If I think about how the brain works versus what you're describing here,"
+    },
+    {
+      "end_ms": 4319760,
+      "source_event_index": 678,
+      "start_ms": 4312480,
+      "text": "at a high level the differences might be that while you can do structured sparsity in these"
+    },
+    {
+      "end_ms": 4327840,
+      "source_event_index": 679,
+      "start_ms": 4319760,
+      "text": "accelerators and save yourself some area that you would have otherwise had to dedicate to gates,"
+    },
+    {
+      "end_ms": 4332800,
+      "source_event_index": 680,
+      "start_ms": 4327840,
+      "text": "in the brain there's unstructured sparsity. Any neuron can connect to any other neuron, and"
+    },
+    {
+      "end_ms": 4338800,
+      "source_event_index": 681,
+      "start_ms": 4332800,
+      "text": "not in ways where they have the column aligned. Then there's the fact that memory"
+    },
+    {
+      "end_ms": 4342000,
+      "source_event_index": 682,
+      "start_ms": 4338800,
+      "text": "and compute are co-located. Although I guess you could say in a way the memory"
+    },
+    {
+      "end_ms": 4345360,
+      "source_event_index": 683,
+      "start_ms": 4342000,
+      "text": "and compute are co-located on these dies too. This is exactly the co-location,"
+    },
+    {
+      "end_ms": 4350400,
+      "source_event_index": 684,
+      "start_ms": 4345360,
+      "text": "in some sense, of the memory and compute. So maybe that isn't a big difference."
+    },
+    {
+      "end_ms": 4360720,
+      "source_event_index": 685,
+      "start_ms": 4350400,
+      "text": "Another big difference is that the clock cycle on the brain is much slower than on computers."
+    },
+    {
+      "end_ms": 4367600,
+      "source_event_index": 686,
+      "start_ms": 4360720,
+      "text": "Partly that's to preserve energy, because the faster the clock cycle, the bigger the voltage"
+    },
+    {
+      "end_ms": 4374880,
+      "source_event_index": 687,
+      "start_ms": 4367600,
+      "text": "needs to be in order for the signal to settle and to identify what state a transistor is in."
+    },
+    {
+      "end_ms": 4376160,
+      "source_event_index": 688,
+      "start_ms": 4374880,
+      "text": "That’s right. I don't know if"
+    },
+    {
+      "end_ms": 4385440,
+      "source_event_index": 689,
+      "start_ms": 4376160,
+      "text": "you have any commentary on what the brain might be doing versus how these chips work."
+    },
+    {
+      "end_ms": 4396560,
+      "source_event_index": 690,
+      "start_ms": 4386720,
+      "text": "Let's take the clock speed one first. The clock speed is quite high on a"
+    },
+    {
+      "end_ms": 4406000,
+      "source_event_index": 691,
+      "start_ms": 4396560,
+      "text": "chip because that drives higher throughput. When we compare a GPU running some workload,"
+    },
+    {
+      "end_ms": 4409440,
+      "source_event_index": 692,
+      "start_ms": 4406000,
+      "text": "it's running batch size 1,000. Whereas the brain is not running"
+    },
+    {
+      "end_ms": 4415760,
+      "source_event_index": 693,
+      "start_ms": 4409440,
+      "text": "batch size 1,000, there's only one of me. You could imagine saying, \"Take a GPU and"
+    },
+    {
+      "end_ms": 4419360,
+      "source_event_index": 694,
+      "start_ms": 4415760,
+      "text": "instead of running at a gigahertz, run it at a megahertz,\" and that would start"
+    },
+    {
+      "end_ms": 4425600,
+      "source_event_index": 695,
+      "start_ms": 4419360,
+      "text": "to look a little more like the equivalent things you're talking about in the brain."
+    },
+    {
+      "end_ms": 4436720,
+      "source_event_index": 696,
+      "start_ms": 4425600,
+      "text": "But in the way silicon works, that does not give you a 1,000x advantage in energy efficiency."
+    },
+    {
+      "end_ms": 4447840,
+      "source_event_index": 697,
+      "start_ms": 4438480,
+      "text": "What it ends up looking like is you just run this circuit once to stabilization,"
+    },
+    {
+      "end_ms": 4450720,
+      "source_event_index": 698,
+      "start_ms": 4447840,
+      "text": "and then it will sit idle for a long period of time."
+    },
+    {
+      "end_ms": 4452720,
+      "source_event_index": 699,
+      "start_ms": 4450720,
+      "text": "It doesn't consume a lot of energy while it's sitting"
+    },
+    {
+      "end_ms": 4458720,
+      "source_event_index": 700,
+      "start_ms": 4452720,
+      "text": "idle because most of the energy is consumed in toggling bits from zero to one and back."
+    },
+    {
+      "end_ms": 4466560,
+      "source_event_index": 701,
+      "start_ms": 4462640,
+      "text": "Let's talk about the energy consumption of a circuit like this."
+    },
+    {
+      "end_ms": 4472560,
+      "source_event_index": 702,
+      "start_ms": 4466560,
+      "text": "The way to think of a bit being stored is that you've deposited some charge in a capacitor"
+    },
+    {
+      "end_ms": 4478640,
+      "source_event_index": 703,
+      "start_ms": 4472560,
+      "text": "sitting somewhere in the chip implicitly. It becomes charged when the bit becomes a one,"
+    },
+    {
+      "end_ms": 4481920,
+      "source_event_index": 704,
+      "start_ms": 4478640,
+      "text": "and then it becomes discharged when it next goes to a zero."
+    },
+    {
+      "end_ms": 4485120,
+      "source_event_index": 705,
+      "start_ms": 4481920,
+      "text": "That cycle of charging the capacitor and then dumping that charge out"
+    },
+    {
+      "end_ms": 4489920,
+      "source_event_index": 706,
+      "start_ms": 4485120,
+      "text": "to ground is where the energy is consumed. This is called the dynamic or switching power,"
+    },
+    {
+      "end_ms": 4494160,
+      "source_event_index": 707,
+      "start_ms": 4489920,
+      "text": "and it's most of the energy consumption of a chip. There is some other energy consumption just"
+    },
+    {
+      "end_ms": 4500880,
+      "source_event_index": 708,
+      "start_ms": 4494160,
+      "text": "coming from the fact that insulators aren't perfect, but we'll discard that."
+    },
+    {
+      "end_ms": 4507120,
+      "source_event_index": 709,
+      "start_ms": 4500880,
+      "text": "Most of the energy consumption comes from toggling from zero to one and back to zero."
+    },
+    {
+      "end_ms": 4512080,
+      "source_event_index": 710,
+      "start_ms": 4508640,
+      "text": "If you run a chip much slower and you only clock it once every thousand clock cycles,"
+    },
+    {
+      "end_ms": 4516240,
+      "source_event_index": 711,
+      "start_ms": 4512720,
+      "text": "you will have 1,000 times fewer transitions. It will be about 1,000 times"
+    },
+    {
+      "end_ms": 4520960,
+      "source_event_index": 712,
+      "start_ms": 4516240,
+      "text": "less energy consumption. But it's not a substantial"
+    },
+    {
+      "end_ms": 4525040,
+      "source_event_index": 713,
+      "start_ms": 4520960,
+      "text": "advantage in energy efficiency. Okay, so you described how a TPU"
+    },
+    {
+      "end_ms": 4529040,
+      "source_event_index": 714,
+      "start_ms": 4525040,
+      "text": "works at a high level. What is the difference"
+    },
+    {
+      "end_ms": 4537200,
+      "source_event_index": 715,
+      "start_ms": 4529040,
+      "text": "at a high level between how a GPU and a TPU work? There is a high-level organization principle that"
+    },
+    {
+      "end_ms": 4541920,
+      "source_event_index": 716,
+      "start_ms": 4537200,
+      "text": "is different, and then inside the cores things are different."
+    },
+    {
+      "end_ms": 4549680,
+      "source_event_index": 717,
+      "start_ms": 4541920,
+      "text": "Looking at the high level, we'll take a GPU and a TPU and see what"
+    },
+    {
+      "end_ms": 4555040,
+      "source_event_index": 718,
+      "start_ms": 4550320,
+      "text": "the top-level block structure looks like. If you think of this as the whole chip"
+    },
+    {
+      "end_ms": 4563200,
+      "source_event_index": 719,
+      "start_ms": 4555040,
+      "text": "in each case, the organization of the GPU is mostly a bunch of"
+    },
+    {
+      "end_ms": 4572080,
+      "source_event_index": 720,
+      "start_ms": 4563200,
+      "text": "almost-identical units, which are the SMs. They've got an L2 memory in the middle,"
+    },
+    {
+      "end_ms": 4581520,
+      "source_event_index": 721,
+      "start_ms": 4572080,
+      "text": "and then a bunch more of these SMs on the bottom. So there is a fairly regular grid of cores."
+    },
+    {
+      "end_ms": 4593600,
+      "source_event_index": 722,
+      "start_ms": 4584000,
+      "text": "If we look at a TPU in comparison, you end up with much coarser-grained units of logic."
+    },
+    {
+      "end_ms": 4608400,
+      "source_event_index": 723,
+      "start_ms": 4594160,
+      "text": "You end up with just a few matrix units, which are the big systolic arrays."
+    },
+    {
+      "end_ms": 4615920,
+      "source_event_index": 724,
+      "start_ms": 4608400,
+      "text": "In the middle you've got some vector unit, and then you've got your matrix units at the bottom."
+    },
+    {
+      "end_ms": 4626240,
+      "source_event_index": 725,
+      "start_ms": 4620640,
+      "text": "These matrix units with a vector unit in the middle make up the whole TPU chip."
+    },
+    {
+      "end_ms": 4630480,
+      "source_event_index": 726,
+      "start_ms": 4626240,
+      "text": "You can think of scaling this thing down into a really tiny unit with a"
+    },
+    {
+      "end_ms": 4635760,
+      "source_event_index": 727,
+      "start_ms": 4630480,
+      "text": "smaller matrix unit and a smaller vector unit, and that is sort of what an SM is."
+    },
+    {
+      "end_ms": 4644400,
+      "source_event_index": 728,
+      "start_ms": 4636400,
+      "text": "From a very high-level point of view, the GPU has a lot of tiny TPUs tiled across the whole chip."
+    },
+    {
+      "end_ms": 4651200,
+      "source_event_index": 729,
+      "start_ms": 4644400,
+      "text": "Oh, interesting. You're suggesting the tensor core within a streaming SM is analogous to an MXU?"
+    },
+    {
+      "end_ms": 4658480,
+      "source_event_index": 730,
+      "start_ms": 4651200,
+      "text": "Yeah, it's all very similar. I see. If you had more lack of structure,"
+    },
+    {
+      "end_ms": 4664080,
+      "source_event_index": 731,
+      "start_ms": 4658480,
+      "text": "having a bunch of tiny TPUs makes a lot of sense. Whereas if you just have huge matrix"
+    },
+    {
+      "end_ms": 4674400,
+      "source_event_index": 732,
+      "start_ms": 4664080,
+      "text": "multiplications, you might want to avoid the cost of having individual SMs with their own"
+    },
+    {
+      "end_ms": 4678400,
+      "source_event_index": 733,
+      "start_ms": 4674400,
+      "text": "registers and warp schedulers. Why not just make a huge thing"
+    },
+    {
+      "end_ms": 4684320,
+      "source_event_index": 734,
+      "start_ms": 4678400,
+      "text": "and amortize those costs across the whole thing? This shows up in how large you can grow things."
+    },
+    {
+      "end_ms": 4688240,
+      "source_event_index": 735,
+      "start_ms": 4684320,
+      "text": "We've seen this theme, especially with the systolic array, where a larger systolic"
+    },
+    {
+      "end_ms": 4694480,
+      "source_event_index": 736,
+      "start_ms": 4688240,
+      "text": "array amortizes the register file costs better. This design allows you to have larger systolic"
+    },
+    {
+      "end_ms": 4700400,
+      "source_event_index": 737,
+      "start_ms": 4694480,
+      "text": "arrays, whereas the GPU design constrains you to having small units of everything."
+    },
+    {
+      "end_ms": 4709520,
+      "source_event_index": 738,
+      "start_ms": 4701600,
+      "text": "There is a trade-off, however. Because of this coarse-grained"
+    },
+    {
+      "end_ms": 4714400,
+      "source_event_index": 739,
+      "start_ms": 4709520,
+      "text": "separation of things, you need to move a lot of data from the vector unit to the matrix units,"
+    },
+    {
+      "end_ms": 4726320,
+      "source_event_index": 740,
+      "start_ms": 4717200,
+      "text": "through just two lines of perimeter here. If you look at the equivalent thing"
+    },
+    {
+      "end_ms": 4730480,
+      "source_event_index": 741,
+      "start_ms": 4726320,
+      "text": "in a GPU, you've got vector units everywhere, and you can move data through many different lines."
+    },
+    {
+      "end_ms": 4740240,
+      "source_event_index": 742,
+      "start_ms": 4735520,
+      "text": "The amount of data you can move between a vector unit and a matrix unit is actually"
+    },
+    {
+      "end_ms": 4748960,
+      "source_event_index": 743,
+      "start_ms": 4740240,
+      "text": "much higher in a GPU than in a TPU. Instead of having to move all the data"
+    },
+    {
+      "end_ms": 4756720,
+      "source_event_index": 744,
+      "start_ms": 4748960,
+      "text": "through just two lines, you're moving it through 16 lines of wiring in a GPU."
+    },
+    {
+      "end_ms": 4761200,
+      "source_event_index": 745,
+      "start_ms": 4756720,
+      "text": "Right. But also you might have to move across less area."
+    },
+    {
+      "end_ms": 4767920,
+      "source_event_index": 746,
+      "start_ms": 4761200,
+      "text": "Which is an energy saving as well. So if you can operate entirely within"
+    },
+    {
+      "end_ms": 4773760,
+      "source_event_index": 747,
+      "start_ms": 4767920,
+      "text": "an SM, the data movement is much smaller. But the moment you want to operate across SMs,"
+    },
+    {
+      "end_ms": 4777760,
+      "source_event_index": 748,
+      "start_ms": 4773760,
+      "text": "it becomes more complicated and expensive. So you don’t have to comment, but one might"
+    },
+    {
+      "end_ms": 4785040,
+      "source_event_index": 749,
+      "start_ms": 4777760,
+      "text": "expect that a thing MatX might try to do is get the GPU-like smaller structure of"
+    },
+    {
+      "end_ms": 4795840,
+      "source_event_index": 750,
+      "start_ms": 4785760,
+      "text": "systolic arrays surrounded by SRAM, but at the same time make it so that the things you need in"
+    },
+    {
+      "end_ms": 4803200,
+      "source_event_index": 751,
+      "start_ms": 4795840,
+      "text": "an SM to support the CUDA architecture—which take a bunch of space—you might discard."
+    },
+    {
+      "end_ms": 4809440,
+      "source_event_index": 752,
+      "start_ms": 4805280,
+      "text": "We've talked publicly about something we call a splittable systolic array, which"
+    },
+    {
+      "end_ms": 4813600,
+      "source_event_index": 753,
+      "start_ms": 4809440,
+      "text": "in some sense you can think of as big systolic arrays that can be small systolic arrays too."
+    },
+    {
+      "end_ms": 4816640,
+      "source_event_index": 754,
+      "start_ms": 4813600,
+      "text": "Cool. Okay, I think that's a good note to close on."
+    },
+    {
+      "end_ms": 4818960,
+      "source_event_index": 755,
+      "start_ms": 4816640,
+      "text": "Reiner, thank you so much. Thanks, Dwarkesh."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-6f496b33522d734d58356f-reiner-pope-chip-design/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "9ca5f28b4fd5a65939ff6716dfa1acc9cc3e2190bcdd5fa84b2ae4875c47b240"
+  },
+  "translation": {
+    "event_count": 756,
+    "language": "zh-CN",
+    "payload_sha256": "5b73e1f0f4c6ad2fa88b24c16269ba59419a62888484b1e8c12bfe204c0c70e0",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-6f496b33522d734d58356f-reiner-pope-chip-design/transcript.zh-CN.md",
+    "rendered_sha256": "697b734216ddff577b2725ccfa6089381239c33d186d8fca3d0778013a121c5d",
+    "source_track": "zh-Hans-en",
+    "track_type": "youtube-auto-translate"
+  }
+}

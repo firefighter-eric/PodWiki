@@ -294,7 +294,7 @@ describe("PodWiki content loader", () => {
         typeof file === "string" && file.endsWith(".md") ? [path.resolve(file)] : []
       ));
 
-      expect(cards).toHaveLength(156);
+      expect(cards).toHaveLength(171);
       expect(markdownReads.some((file) => path.basename(file).startsWith("summary."))).toBe(true);
       expect(markdownReads.filter((file) => path.basename(file).startsWith("transcript."))).toEqual([]);
     } finally {
@@ -795,18 +795,18 @@ workflow:`,
       "xuhuazhe",
       "dwarkesh",
     ]);
-    expect(episodes).toHaveLength(156);
+    expect(episodes).toHaveLength(171);
     expect(Object.fromEntries(shows.map((show) => [show.id, show.episodeCount]))).toEqual({
       zhangxiaojun: 31,
       sv101: 14,
       svvector: 12,
-      latetalk: 18,
-      luoyonghao: 36,
-      moonuncle: 5,
+      latetalk: 20,
+      luoyonghao: 37,
+      moonuncle: 6,
       whynottv: 5,
       yiqitietalk: 21,
       xuhuazhe: 1,
-      dwarkesh: 13,
+      dwarkesh: 24,
     });
     expect(shows.every((show) => show.episodeCount > 0)).toBe(true);
     expect(episodes.every((episode) => episode.summaryRaw && episode.transcriptSegments.length > 0)).toBe(true);

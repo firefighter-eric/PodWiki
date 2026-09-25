@@ -55,6 +55,7 @@ last_verified_at: 2026-08-09
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [【正片】手工耿×罗永浩！“村口的五金店里，出现了一个达达主义艺术家”](https://www.bilibili.com/video/BV1QutM6jEKd/) | 罗永浩的十字路口 | 2026-09-01 | [总结](./episodes/036-shougong-geng/summary.zh-CN.md) | [逐字稿](./episodes/036-shougong-geng/transcript.zh-CN.md) |
 | [【正片】罗永浩的X字路口！我们能活到今天，多亏了祖传的势利眼](https://www.bilibili.com/video/BV1ukM26zESF/) | 罗永浩的十字路口 | 2026-08-06 | [总结](./episodes/bili-bv1ukm26zesf-x-shiliyan/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1ukm26zesf-x-shiliyan/transcript.zh-CN.md) |
 | [【正片】零跑汽车朱江明×罗永浩！零跑汽车十年：不会讲故事的人，如何卖成了第一](https://www.bilibili.com/video/BV1iQ3F6oENZ/) | 罗永浩的十字路口 | 2026-07-31 | [总结](./episodes/035-zhu-jiangming/summary.zh-CN.md) | [逐字稿](./episodes/035-zhu-jiangming/transcript.zh-CN.md) |
 | [【正片】罗永浩的X字路口！“精神病”失控大乱斗，强迫症、ADHD、攻击型人格障碍.......](https://www.bilibili.com/video/BV1Bagb6gEgN/) | 罗永浩的十字路口 | 2026-07-24 | [总结](./episodes/bili-bv1bagb6gegn-x-xinli-biaoqian/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1bagb6gegn-x-xinli-biaoqian/transcript.zh-CN.md) |

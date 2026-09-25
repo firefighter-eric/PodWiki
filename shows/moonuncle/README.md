@@ -50,6 +50,7 @@ last_verified_at: 2026-08-25
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [肖志斌：AI芯片，英伟达，全球供应链，3纳米，中美日韩，Groq，Cerebras，SambaNova，创业，AI原生](https://www.bilibili.com/video/BV1JcYp62E4N/) | 月球大叔的硅谷播客 | 2026-09-09 | [总结](./episodes/bili-bv1jcyp62e4n-xiao-zhibin/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1jcyp62e4n-xiao-zhibin/transcript.zh-CN.md) |
 | [徐天音：系统，UIUC，教授，最佳论文，Agent Infra，云计算，形式化验证，容错，纯粹](https://www.bilibili.com/video/BV1F1846pEYT/) | 月球大叔的硅谷播客 | 2026-08-23 | [总结](./episodes/bili-bv1f1846peyt-xu-tianyin/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1f1846peyt-xu-tianyin/transcript.zh-CN.md) |
 | [李正韬：YC，明星初创，语音AI，客服，执行力，创2代，OpenAI，996](https://www.bilibili.com/video/BV1S9u16KETq/) | 月球大叔的硅谷播客 | 2026-08-09 | [总结](./episodes/bili-bv1s9u16ketq-li-zhengtao/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1s9u16ketq-li-zhengtao/transcript.zh-CN.md) |
 | [孟子立: 15岁，清华，HKUST，教授，家庭计算中心，云游戏，WiCi，网络系统，创业](https://www.bilibili.com/video/BV1bm3Y6zEg9/) | 月球大叔的硅谷播客 | 2026-07-28 | [总结](./episodes/bili-bv1bm3y6zeg9-meng-zili/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1bm3y6zeg9-meng-zili/transcript.zh-CN.md) |
