@@ -1,7 +1,11 @@
 from __future__ import annotations
 
 import contextlib
+import gc
+import importlib.util
+import os
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -168,6 +172,9 @@ class NativeAdapterTests(unittest.TestCase):
                 return object()
 
         class FakeModel:
+            def to(self, device: str) -> None:
+                calls.append(("to", device))
+
             def eval(self) -> None:
                 calls.append(("eval", self))
 
@@ -192,8 +199,104 @@ class NativeAdapterTests(unittest.TestCase):
         for _target, kwargs in load_calls:
             self.assertIs(kwargs["local_files_only"], True)
         model_kwargs = [value[1] for name, value in calls if name == "model"]
-        self.assertTrue(all(kwargs["device_map"] == "cuda:0" for kwargs in model_kwargs))
+        self.assertTrue(all("device_map" not in kwargs for kwargs in model_kwargs))
+        self.assertTrue(all(kwargs["dtype"] == "bf16" for kwargs in model_kwargs))
+        self.assertEqual([value for name, value in calls if name == "to"], ["cuda:0"] * 2)
+        self.assertEqual([name for name, _ in calls], ["processor", "model", "to", "eval"] * 2)
         self.assertEqual(sum(name == "eval" for name, _ in calls), 2)
+
+    def test_device_transfer_failure_does_not_fall_back_to_cpu(self) -> None:
+        class Factory:
+            @staticmethod
+            def from_pretrained(*args: object, **kwargs: object) -> SimpleNamespace:
+                def fail_transfer(device: str) -> None:
+                    raise RuntimeError(f"cannot transfer to {device}")
+
+                return SimpleNamespace(to=fail_transfer)
+
+        runtime = adapter.TransformersNativeRuntime(
+            numpy=object(),
+            torch=FakeTorch(),
+            auto_processor=Factory,
+            auto_multimodal_model=Factory,
+            auto_token_classification_model=Factory,
+        )
+        for loader in (runtime.load_asr, runtime.load_aligner):
+            with self.subTest(loader=loader.__name__):
+                with self.assertRaisesRegex(RuntimeError, "cannot transfer to cuda:0"):
+                    loader("C:/model", device_map="cuda:0")
+
+    @unittest.skipUnless(
+        os.environ.get("PODWIKI_TEST_NATIVE_LOAD") == "1",
+        "requires the locked Transformers/PyTorch runtime",
+    )
+    def test_native_sharded_checkpoints_load_without_accelerate(self) -> None:
+        import torch
+        from transformers import (
+            AutoModelForMultimodalLM,
+            AutoModelForTokenClassification,
+            Qwen3ASRConfig,
+        )
+
+        self.assertIsNone(importlib.util.find_spec("accelerate"))
+        config = Qwen3ASRConfig(
+            audio_config={
+                "num_mel_bins": 16,
+                "encoder_layers": 1,
+                "encoder_attention_heads": 2,
+                "encoder_ffn_dim": 16,
+                "d_model": 8,
+                "output_dim": 8,
+                "downsample_hidden_size": 8,
+            },
+            text_config={
+                "vocab_size": 32,
+                "hidden_size": 8,
+                "intermediate_size": 16,
+                "num_hidden_layers": 1,
+                "num_attention_heads": 2,
+                "num_key_value_heads": 2,
+                "head_dim": 4,
+                "pad_token_id": 0,
+                "eos_token_id": 1,
+            },
+            audio_token_id=29,
+            timestamp_token_id=30,
+            pad_token_id=0,
+            eos_token_id=1,
+            num_labels=2,
+        )
+        runtime = adapter.TransformersNativeRuntime(
+            numpy=object(),
+            torch=torch,
+            auto_processor=SimpleNamespace(from_pretrained=lambda *args, **kwargs: object()),
+            auto_multimodal_model=AutoModelForMultimodalLM,
+            auto_token_classification_model=AutoModelForTokenClassification,
+        )
+        cache = ROOT / ".cache"
+        cache.mkdir(exist_ok=True)
+        # CPU exercises real checkpoint loading on GPU-less CI. The worker separately
+        # rejects CPU devices, and the unit test above verifies explicit CUDA transfer.
+        for factory, loader in (
+            (AutoModelForMultimodalLM, runtime.load_asr),
+            (AutoModelForTokenClassification, runtime.load_aligner),
+        ):
+            with (
+                self.subTest(factory=factory.__name__),
+                tempfile.TemporaryDirectory(dir=cache) as temp,
+            ):
+                original = factory.from_config(config)
+                original.save_pretrained(temp, max_shard_size="1KB")
+                self.assertTrue(list(Path(temp).glob("*.index.json")))
+                restored = loader(temp, device_map="cpu", dtype=torch.float32).model
+                self.assertEqual(restored.device.type, "cpu")
+                self.assertFalse(restored.training)
+                self.assertEqual(original.state_dict().keys(), restored.state_dict().keys())
+                for name, tensor in original.state_dict().items():
+                    torch.testing.assert_close(tensor, restored.state_dict()[name], rtol=0, atol=0)
+                # Release mapped weight tensors before Windows removes the checkpoint files.
+                del tensor, restored, original
+                gc.collect()
 
     def test_versions_and_native_pins_fail_closed(self) -> None:
         adapter.validate_runtime_versions(

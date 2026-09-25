@@ -151,7 +151,7 @@ class TransformersNativeRuntime:
     auto_multimodal_model: Any
     auto_token_classification_model: Any
 
-    def load_asr(self, target: str, **model_kwargs: Any) -> NativeASR:
+    def load_asr(self, target: str, *, device_map: str, **model_kwargs: Any) -> NativeASR:
         processor = self.auto_processor.from_pretrained(
             target,
             local_files_only=True,
@@ -161,10 +161,14 @@ class TransformersNativeRuntime:
             local_files_only=True,
             **model_kwargs,
         )
+        # The worker validates one explicit CUDA device; no dispatch/offload is needed.
+        model.to(device_map)
         model.eval()
         return NativeASR(processor=processor, model=model, torch=self.torch)
 
-    def load_aligner(self, target: str, **model_kwargs: Any) -> NativeForcedAligner:
+    def load_aligner(
+        self, target: str, *, device_map: str, **model_kwargs: Any
+    ) -> NativeForcedAligner:
         processor = self.auto_processor.from_pretrained(
             target,
             local_files_only=True,
@@ -174,6 +178,7 @@ class TransformersNativeRuntime:
             local_files_only=True,
             **model_kwargs,
         )
+        model.to(device_map)
         model.eval()
         return NativeForcedAligner(processor=processor, model=model, torch=self.torch)
 
