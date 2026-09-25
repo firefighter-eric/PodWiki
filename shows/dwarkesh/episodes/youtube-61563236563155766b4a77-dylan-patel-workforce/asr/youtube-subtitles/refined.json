@@ -1,0 +1,5773 @@
+{
+  "generated_at": "2026-09-22T16:16:04.498134Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-61563236563155766b4a77-dylan-patel-workforce/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "ca539b6db6b16692f8c4f2398f58a534fda092bb9d72fbb7b3878598588b8406"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 2720,
+      "source_event_index": 0,
+      "start_ms": 80,
+      "text": "Okay, I’m back with Dylan Patel, founder of SemiAnalysis."
+    },
+    {
+      "end_ms": 7200,
+      "source_event_index": 1,
+      "start_ms": 2720,
+      "text": "Our version of a family Thanksgiving dinner is a regular yearly podcast."
+    },
+    {
+      "end_ms": 10560,
+      "source_event_index": 2,
+      "start_ms": 7200,
+      "text": "But we're not actually related. Don’t tell the people this."
+    },
+    {
+      "end_ms": 15680,
+      "source_event_index": 3,
+      "start_ms": 10560,
+      "text": "It will destroy the myth. Basically where the world"
+    },
+    {
+      "end_ms": 20240,
+      "source_event_index": 4,
+      "start_ms": 15680,
+      "text": "economy is headed is more and more becoming a function of where lab economics are headed,"
+    },
+    {
+      "end_ms": 24880,
+      "source_event_index": 5,
+      "start_ms": 20240,
+      "text": "where the compute market is headed, et cetera. I want to understand where the crazy"
+    },
+    {
+      "end_ms": 30240,
+      "source_event_index": 6,
+      "start_ms": 24880,
+      "text": "future ends up within a few years. But let’s start with where we are today."
+    },
+    {
+      "end_ms": 37280,
+      "source_event_index": 7,
+      "start_ms": 30240,
+      "text": "Walk me through lab compute and lab revenue right now, and maybe project out a year or two."
+    },
+    {
+      "end_ms": 42640,
+      "source_event_index": 8,
+      "start_ms": 37280,
+      "text": "When we go back to last year, even at the end of the year, most of GDP growth in"
+    },
+    {
+      "end_ms": 46960,
+      "source_event_index": 9,
+      "start_ms": 42640,
+      "text": "America was just AI infrastructure. As we look towards this year,"
+    },
+    {
+      "end_ms": 52800,
+      "source_event_index": 10,
+      "start_ms": 46960,
+      "text": "about a third of the compute coming online is for the labs, for OpenAI and Anthropic."
+    },
+    {
+      "end_ms": 58400,
+      "source_event_index": 11,
+      "start_ms": 52800,
+      "text": "It may be built by others and then rented to them, but at the end customer, it’s them."
+    },
+    {
+      "end_ms": 63440,
+      "source_event_index": 12,
+      "start_ms": 58400,
+      "text": "As we go forward into the future, the numbers for compute are ballooning."
+    },
+    {
+      "end_ms": 67600,
+      "source_event_index": 13,
+      "start_ms": 63440,
+      "text": "We’re at a little bit over a trillion dollars of CapEx this year."
+    },
+    {
+      "end_ms": 70880,
+      "source_event_index": 14,
+      "start_ms": 67600,
+      "text": "As we go out into ’28, it’s going to be more than $2 trillion."
+    },
+    {
+      "end_ms": 75280,
+      "source_event_index": 15,
+      "start_ms": 72080,
+      "text": "The labs are also taking an increasing percentage of this."
+    },
+    {
+      "end_ms": 80160,
+      "source_event_index": 16,
+      "start_ms": 75280,
+      "text": "So ultimately, you’ve got a very interesting situation where the labs are going from"
+    },
+    {
+      "end_ms": 85200,
+      "source_event_index": 17,
+      "start_ms": 80160,
+      "text": "companies that spend tens of billions of dollars a year to hundreds of billions of dollars a year,"
+    },
+    {
+      "end_ms": 90320,
+      "source_event_index": 18,
+      "start_ms": 85200,
+      "text": "to forecasting to spend trillions of dollars a year even towards the end of the decade."
+    },
+    {
+      "end_ms": 93360,
+      "source_event_index": 19,
+      "start_ms": 90320,
+      "text": "This is at least some of the contracts they’ve begun signing with their partners."
+    },
+    {
+      "end_ms": 100400,
+      "source_event_index": 20,
+      "start_ms": 94160,
+      "text": "This requires a big reshaping of what happens with their economics."
+    },
+    {
+      "end_ms": 105360,
+      "source_event_index": 21,
+      "start_ms": 101360,
+      "text": "Up until now, they have been companies that mostly lost money."
+    },
+    {
+      "end_ms": 110400,
+      "source_event_index": 22,
+      "start_ms": 105360,
+      "text": "Anthropic started turning a profit in Q2. It’s believed at some point in Q3,"
+    },
+    {
+      "end_ms": 117840,
+      "source_event_index": 23,
+      "start_ms": 110400,
+      "text": "OpenAI could start turning a profit even, with the bigger rise of Codex and 5.6 and all this."
+    },
+    {
+      "end_ms": 123920,
+      "source_event_index": 24,
+      "start_ms": 117840,
+      "text": "But if we go back a year ago, all the money they had was venture-funded losses."
+    },
+    {
+      "end_ms": 127280,
+      "source_event_index": 25,
+      "start_ms": 123920,
+      "text": "If we go back to even the beginning of this year, it was venture-funded losses."
+    },
+    {
+      "end_ms": 131440,
+      "source_event_index": 26,
+      "start_ms": 128000,
+      "text": "They’ve now turned the corner and are actually starting to profit."
+    },
+    {
+      "end_ms": 133680,
+      "source_event_index": 27,
+      "start_ms": 131440,
+      "text": "That doesn’t mean they’re not taking in new capital."
+    },
+    {
+      "end_ms": 136400,
+      "source_event_index": 28,
+      "start_ms": 133680,
+      "text": "The new capital is still coming in to accelerate the growth further."
+    },
+    {
+      "end_ms": 141520,
+      "source_event_index": 29,
+      "start_ms": 136400,
+      "text": "But ultimately, more and more of their business is being funded off of their own revenue rather"
+    },
+    {
+      "end_ms": 146560,
+      "source_event_index": 30,
+      "start_ms": 141520,
+      "text": "than capital injections into them. Over the last year and a half,"
+    },
+    {
+      "end_ms": 152000,
+      "source_event_index": 31,
+      "start_ms": 146560,
+      "text": "their margins have really skyrocketed. The base cost of compute tends to be"
+    },
+    {
+      "end_ms": 158880,
+      "source_event_index": 32,
+      "start_ms": 152000,
+      "text": "around $10 or $13 or $15 million per megawatt. The most interesting aspect about what’s happening"
+    },
+    {
+      "end_ms": 167920,
+      "source_event_index": 33,
+      "start_ms": 158880,
+      "text": "now is this: Before, if they served a model — GPT-4 being served on Nvidia Hopper GPUs — it was"
+    },
+    {
+      "end_ms": 174560,
+      "source_event_index": 34,
+      "start_ms": 167920,
+      "text": "generating negative gross margin for OpenAI. But now, when OpenAI serves GPT-5.6"
+    },
+    {
+      "end_ms": 183120,
+      "source_event_index": 35,
+      "start_ms": 175200,
+      "text": "or Anthropic serves Opus 5 or Fable 5, their revenue generation has passed well beyond the"
+    },
+    {
+      "end_ms": 188480,
+      "source_event_index": 36,
+      "start_ms": 183120,
+      "text": "incremental $10-15 million per megawatt. In the case of Anthropic, the revenue has"
+    },
+    {
+      "end_ms": 195120,
+      "source_event_index": 37,
+      "start_ms": 188480,
+      "text": "gone as high as $50 million per megawatt. What that now enables them to do is: \"Hey,"
+    },
+    {
+      "end_ms": 199440,
+      "source_event_index": 38,
+      "start_ms": 195120,
+      "text": "if I spend 10 bucks on inference capacity, I actually generate 50 bucks of revenue,"
+    },
+    {
+      "end_ms": 204160,
+      "source_event_index": 39,
+      "start_ms": 199440,
+      "text": "and then I can turn around and incrementally spend all of that profit on training.\""
+    },
+    {
+      "end_ms": 208880,
+      "source_event_index": 40,
+      "start_ms": 204160,
+      "text": "One thing I’m very interested in understanding is how you see the centralization of compute"
+    },
+    {
+      "end_ms": 213920,
+      "source_event_index": 41,
+      "start_ms": 208880,
+      "text": "happening at the labs, or the relative ratio of compute that goes to the world versus the labs."
+    },
+    {
+      "end_ms": 220160,
+      "source_event_index": 42,
+      "start_ms": 214640,
+      "text": "If you say right now a third of marginal compute is going to the labs,"
+    },
+    {
+      "end_ms": 225440,
+      "source_event_index": 43,
+      "start_ms": 220160,
+      "text": "by when is over half of the incremental compute in the world going to the labs?"
+    },
+    {
+      "end_ms": 230880,
+      "source_event_index": 44,
+      "start_ms": 225440,
+      "text": "By what point do the labs have basically a vast majority of the world’s compute?"
+    },
+    {
+      "end_ms": 237360,
+      "source_event_index": 45,
+      "start_ms": 230880,
+      "text": "At the beginning of this year, OpenAI started at 2 gigawatts and Anthropic at less than 2."
+    },
+    {
+      "end_ms": 245440,
+      "source_event_index": 46,
+      "start_ms": 238800,
+      "text": "End of this year, they’re both above 5. So they’ve 3-4x’d compute as a whole."
+    },
+    {
+      "end_ms": 250640,
+      "source_event_index": 47,
+      "start_ms": 246000,
+      "text": "When you look at the incremental compute added, that’s about 30% of the compute added this year."
+    },
+    {
+      "end_ms": 255120,
+      "source_event_index": 48,
+      "start_ms": 250640,
+      "text": "As we step forward to next year, given what’s already been signed and penned and inked,"
+    },
+    {
+      "end_ms": 260560,
+      "source_event_index": 49,
+      "start_ms": 255120,
+      "text": "you’ve got something even more dramatic. Anthropic and OpenAI are taking as much as"
+    },
+    {
+      "end_ms": 266720,
+      "source_event_index": 50,
+      "start_ms": 260560,
+      "text": "40% to 50% of compute next year. This centralization doesn’t"
+    },
+    {
+      "end_ms": 271120,
+      "source_event_index": 51,
+      "start_ms": 266720,
+      "text": "look like it’s slowing down or stopping. In fact, it looks like it’s only accelerating."
+    },
+    {
+      "end_ms": 276480,
+      "source_event_index": 52,
+      "start_ms": 271120,
+      "text": "Who’s building that compute for them will change. Next year, a big new entrant is, for example,"
+    },
+    {
+      "end_ms": 281040,
+      "source_event_index": 53,
+      "start_ms": 276480,
+      "text": "SpaceX, which is building a ton of compute. They’re actively going to lease quite a bit"
+    },
+    {
+      "end_ms": 285120,
+      "source_event_index": 54,
+      "start_ms": 281040,
+      "text": "of it to Anthropic and OpenAI, most likely, because they’re the ones who have the marginal"
+    },
+    {
+      "end_ms": 288400,
+      "source_event_index": 55,
+      "start_ms": 285120,
+      "text": "capability to pay the highest price. In addition, OpenAI and Anthropic"
+    },
+    {
+      "end_ms": 291680,
+      "source_event_index": 56,
+      "start_ms": 288400,
+      "text": "are also starting to build their own compute — OpenAI with their own chips,"
+    },
+    {
+      "end_ms": 296640,
+      "source_event_index": 57,
+      "start_ms": 291680,
+      "text": "Anthropic with TPUs that they’re purchasing from Google and deploying with Fluidstack."
+    },
+    {
+      "end_ms": 300800,
+      "source_event_index": 58,
+      "start_ms": 296640,
+      "text": "So you ask, \"Hey, when does half of the world’s incremental new compute"
+    },
+    {
+      "end_ms": 306640,
+      "source_event_index": 59,
+      "start_ms": 300800,
+      "text": "go to just OpenAI and Anthropic?\" It’s really by the end of next year"
+    },
+    {
+      "end_ms": 309840,
+      "source_event_index": 60,
+      "start_ms": 306640,
+      "text": "when half of the incremental compute is already going to Anthropic and OpenAI."
+    },
+    {
+      "end_ms": 316000,
+      "source_event_index": 61,
+      "start_ms": 309840,
+      "text": "Because compute is growing so fast, incremental compute is going to be basically most of compute."
+    },
+    {
+      "end_ms": 319440,
+      "source_event_index": 62,
+      "start_ms": 316000,
+      "text": "So it’s very soon — you’re saying maybe within a year and a half or two years — that most of"
+    },
+    {
+      "end_ms": 323600,
+      "source_event_index": 63,
+      "start_ms": 319440,
+      "text": "the world’s compute is owned by two labs, or at least is serving the demand from two labs."
+    },
+    {
+      "end_ms": 330960,
+      "source_event_index": 64,
+      "start_ms": 326080,
+      "text": "There’s this trend where maybe world compute in gigawatts doubles every year, but the compute at"
+    },
+    {
+      "end_ms": 334480,
+      "source_event_index": 65,
+      "start_ms": 330960,
+      "text": "the frontier labs triples every single year. If you keep the current trend going,"
+    },
+    {
+      "end_ms": 338480,
+      "source_event_index": 66,
+      "start_ms": 334480,
+      "text": "it goes from 2 at the beginning of this year to close to 6 at the end of this year."
+    },
+    {
+      "end_ms": 344560,
+      "source_event_index": 67,
+      "start_ms": 338480,
+      "text": "Just multiplying out by 3. It’s 18 by the end of 2027, 54 by the end of 2028."
+    },
+    {
+      "end_ms": 347840,
+      "source_event_index": 68,
+      "start_ms": 344560,
+      "text": "Are you like, \"Okay, at that point, they simply can’t continue tripling given the"
+    },
+    {
+      "end_ms": 350480,
+      "source_event_index": 69,
+      "start_ms": 347840,
+      "text": "amount of world compute\"? How do you see the world"
+    },
+    {
+      "end_ms": 354320,
+      "source_event_index": 70,
+      "start_ms": 350480,
+      "text": "compute situation over the next few years? If the incremental compute this year adds 30"
+    },
+    {
+      "end_ms": 358640,
+      "source_event_index": 71,
+      "start_ms": 354320,
+      "text": "gigawatts, next year 50 gigawatts, and the year after that roughly 70, you end"
+    },
+    {
+      "end_ms": 364240,
+      "source_event_index": 72,
+      "start_ms": 358640,
+      "text": "up with this really interesting phenomenon. A new watt deployed this year is significantly"
+    },
+    {
+      "end_ms": 367040,
+      "source_event_index": 73,
+      "start_ms": 364240,
+      "text": "more efficient than the watts deployed two years ago."
+    },
+    {
+      "end_ms": 371600,
+      "source_event_index": 74,
+      "start_ms": 368400,
+      "text": "A humongous percentage of the world’s compute was deployed this year."
+    },
+    {
+      "end_ms": 376080,
+      "source_event_index": 75,
+      "start_ms": 371600,
+      "text": "Even though it didn’t double the number of watts deployed, I’m deploying GB300s"
+    },
+    {
+      "end_ms": 380800,
+      "source_event_index": 76,
+      "start_ms": 376080,
+      "text": "and TPUv7s and Trainium3s, which are way, way, way more efficient."
+    },
+    {
+      "end_ms": 386000,
+      "source_event_index": 77,
+      "start_ms": 380800,
+      "text": "They’re 3-5x more performance per watt than the prior-generation chips."
+    },
+    {
+      "end_ms": 393520,
+      "source_event_index": 78,
+      "start_ms": 386000,
+      "text": "So ultimately you’ve got a huge ladder here. If Anthropic and OpenAI take on 45% of compute"
+    },
+    {
+      "end_ms": 398720,
+      "source_event_index": 79,
+      "start_ms": 393520,
+      "text": "next year, you’ve got them in, let’s say, December ’27 having taken on half of the"
+    },
+    {
+      "end_ms": 401600,
+      "source_event_index": 80,
+      "start_ms": 398720,
+      "text": "world’s incremental new compute. But that half of the world’s new"
+    },
+    {
+      "end_ms": 405280,
+      "source_event_index": 81,
+      "start_ms": 401600,
+      "text": "incremental compute is actually at a higher performance than everything else before it."
+    },
+    {
+      "end_ms": 408880,
+      "source_event_index": 82,
+      "start_ms": 405280,
+      "text": "So you’ve got another multiplier on that. By the time you’re towards the end of"
+    },
+    {
+      "end_ms": 415600,
+      "source_event_index": 83,
+      "start_ms": 408880,
+      "text": "2028 — if this trend continues, and I see nothing that’s stopping it — you’ve"
+    },
+    {
+      "end_ms": 421200,
+      "source_event_index": 84,
+      "start_ms": 415600,
+      "text": "got them just controlling most of the usable flops in the world on their own."
+    },
+    {
+      "end_ms": 428000,
+      "source_event_index": 85,
+      "start_ms": 421200,
+      "text": "The thing I’m confused about is why you think we only add 80 gigawatts in 2028 if we enter a world"
+    },
+    {
+      "end_ms": 432160,
+      "source_event_index": 86,
+      "start_ms": 428000,
+      "text": "in which the value of compute increases so much. That’s the upper bound, by the way."
+    },
+    {
+      "end_ms": 438400,
+      "source_event_index": 87,
+      "start_ms": 432160,
+      "text": "That’s the like, \"I’m so fucking bullish.\" Okay, let’s do some chain of thought here."
+    },
+    {
+      "end_ms": 442720,
+      "source_event_index": 88,
+      "start_ms": 438400,
+      "text": "When I interviewed you a few months ago, you said that in order to make a gigawatt of,"
+    },
+    {
+      "end_ms": 453280,
+      "source_event_index": 89,
+      "start_ms": 442720,
+      "text": "I think, Vera Rubins, you need 55,000 N3 wafers, 6K N5 wafers, and 170K DRAM wafers."
+    },
+    {
+      "end_ms": 455280,
+      "source_event_index": 90,
+      "start_ms": 453280,
+      "text": "I know if those numbers might have changed. I’m going to troll you, but the way you said"
+    },
+    {
+      "end_ms": 459040,
+      "source_event_index": 91,
+      "start_ms": 455280,
+      "text": "wafers was so fucking Indian. Vafers."
+    },
+    {
+      "end_ms": 466480,
+      "source_event_index": 92,
+      "start_ms": 459040,
+      "text": "By the way, when we first moved to the US, I had the v/w thing pretty bad, and I was a vegetarian."
+    },
+    {
+      "end_ms": 470560,
+      "source_event_index": 93,
+      "start_ms": 466480,
+      "text": "I remember you told me about this. In North Dakota, I was in elementary"
+    },
+    {
+      "end_ms": 472800,
+      "source_event_index": 94,
+      "start_ms": 470560,
+      "text": "school, and I’d be like— Can I get a \"wedgie\"?"
+    },
+    {
+      "end_ms": 480720,
+      "source_event_index": 95,
+      "start_ms": 472800,
+      "text": "Can I get some \"wedgies\"? Anyways, so that’s for one gigawatt."
+    },
+    {
+      "end_ms": 487200,
+      "source_event_index": 96,
+      "start_ms": 481600,
+      "text": "I had an LLM run your wafer fab equipment model and figure out how much"
+    },
+    {
+      "end_ms": 493680,
+      "source_event_index": 97,
+      "start_ms": 489040,
+      "text": "the tooling costs to produce a gigawatt of compute basically every single year."
+    },
+    {
+      "end_ms": 499200,
+      "source_event_index": 98,
+      "start_ms": 493680,
+      "text": "It said $3-4 billion. Now suppose you add in cleanrooms and shell and"
+    },
+    {
+      "end_ms": 503840,
+      "source_event_index": 99,
+      "start_ms": 499200,
+      "text": "everything else at the fab. So $6 billion of fab CapEx"
+    },
+    {
+      "end_ms": 508320,
+      "source_event_index": 100,
+      "start_ms": 503840,
+      "text": "produces a gigawatt every single year. A gigawatt produces right"
+    },
+    {
+      "end_ms": 514960,
+      "source_event_index": 101,
+      "start_ms": 508320,
+      "text": "now $100 billion of revenue. But also that $6 billion in CapEx is producing"
+    },
+    {
+      "end_ms": 520080,
+      "source_event_index": 102,
+      "start_ms": 514960,
+      "text": "a gigawatt every single year, and that gigawatt is producing $100 billion every single year."
+    },
+    {
+      "end_ms": 528080,
+      "source_event_index": 103,
+      "start_ms": 520080,
+      "text": "So over the course of five years, the first gigawatt has generated five years of profits, the"
+    },
+    {
+      "end_ms": 534320,
+      "source_event_index": 104,
+      "start_ms": 528080,
+      "text": "second gigawatt the fab has produced has generated four years of profits, and so on. $6 billion of"
+    },
+    {
+      "end_ms": 541920,
+      "source_event_index": 105,
+      "start_ms": 534320,
+      "text": "CapEx at the fab level will have generated over a trillion dollars of end AI revenue."
+    },
+    {
+      "end_ms": 545520,
+      "source_event_index": 106,
+      "start_ms": 541920,
+      "text": "Yeah. There’s a lot of OpEx along the way. There’s a lot of other CapEx,"
+    },
+    {
+      "end_ms": 548480,
+      "source_event_index": 107,
+      "start_ms": 545520,
+      "text": "like the data center, the power. And you had to pay OpenAI for the R&D."
+    },
+    {
+      "end_ms": 551600,
+      "source_event_index": 108,
+      "start_ms": 548480,
+      "text": "Installation. There’s a lot of different people who need money here."
+    },
+    {
+      "end_ms": 559600,
+      "source_event_index": 109,
+      "start_ms": 552640,
+      "text": "Take away half of it for all these middlemen. That still means there’s a 100x discrepancy"
+    },
+    {
+      "end_ms": 565600,
+      "source_event_index": 110,
+      "start_ms": 559600,
+      "text": "between fab CapEx and end revenue generated. More than that, actually, but"
+    },
+    {
+      "end_ms": 570640,
+      "source_event_index": 111,
+      "start_ms": 565600,
+      "text": "we’re just being very conservative. As a result… This is capitalism."
+    },
+    {
+      "end_ms": 578080,
+      "source_event_index": 112,
+      "start_ms": 573840,
+      "text": "You have this huge discrepancy where you can turn $1 into $100."
+    },
+    {
+      "end_ms": 581600,
+      "source_event_index": 113,
+      "start_ms": 579120,
+      "text": "They’re not going to figure out a way to make more mirrors?"
+    },
+    {
+      "end_ms": 584240,
+      "source_event_index": 114,
+      "start_ms": 581600,
+      "text": "They are. It’s just that these mirrors take some time to make."
+    },
+    {
+      "end_ms": 588560,
+      "source_event_index": 115,
+      "start_ms": 584800,
+      "text": "But the emergency is so big where Anthropic and OpenAI are like, \"We could make a trillion"
+    },
+    {
+      "end_ms": 593200,
+      "source_event_index": 116,
+      "start_ms": 588560,
+      "text": "dollars right now, but we’re just bottlenecked on the mirrors that go into the ASML machines.\""
+    },
+    {
+      "end_ms": 596880,
+      "source_event_index": 117,
+      "start_ms": 594320,
+      "text": "How can we make more mirrors if we spend $100 billion on this?"
+    },
+    {
+      "end_ms": 598960,
+      "source_event_index": 118,
+      "start_ms": 596880,
+      "text": "That’s the situation we’re going to be in pretty soon."
+    },
+    {
+      "end_ms": 601760,
+      "source_event_index": 119,
+      "start_ms": 599840,
+      "text": "We’re not going to be able to solve that supply constraint?"
+    },
+    {
+      "end_ms": 609840,
+      "source_event_index": 120,
+      "start_ms": 601760,
+      "text": "That just seems quite hard to imagine. You’ve seen people do funny arbitrages here where"
+    },
+    {
+      "end_ms": 614560,
+      "source_event_index": 121,
+      "start_ms": 609840,
+      "text": "they buy turbines and then try and resell them, because the value of a turbine is way more since"
+    },
+    {
+      "end_ms": 619280,
+      "source_event_index": 122,
+      "start_ms": 614560,
+      "text": "it’s the thing bottlenecking your data center. I think if anyone had"
+    },
+    {
+      "end_ms": 626108,
+      "source_event_index": 123,
+      "start_ms": 619280,
+      "text": "$400 million and the ability to convince ASML to sell them an EUV tool,"
+    },
+    {
+      "end_ms": 628560,
+      "source_event_index": 124,
+      "start_ms": 626108,
+      "text": "they should totally just go buy one, wait, and then sell it for north of a billion dollars."
+    },
+    {
+      "end_ms": 633760,
+      "source_event_index": 125,
+      "start_ms": 629440,
+      "text": "But ultimately, yes, capitalism will cause these things to expand."
+    },
+    {
+      "end_ms": 640960,
+      "source_event_index": 126,
+      "start_ms": 633760,
+      "text": "But it’s a whip. It takes a long time for the whip signal to get to the tail end of that."
+    },
+    {
+      "end_ms": 646000,
+      "source_event_index": 127,
+      "start_ms": 640960,
+      "text": "The supply chain doesn’t react immediately. In fact, you go talk to someone at Carl Zeiss,"
+    },
+    {
+      "end_ms": 649440,
+      "source_event_index": 128,
+      "start_ms": 646000,
+      "text": "they’re like, \"Yeah, yeah, yeah, we need to make 100 EUV tools by the end of the decade.\""
+    },
+    {
+      "end_ms": 655440,
+      "source_event_index": 129,
+      "start_ms": 650400,
+      "text": "When we had our episode earlier this year, they didn’t even think they needed to make that many,"
+    },
+    {
+      "end_ms": 662080,
+      "source_event_index": 130,
+      "start_ms": 655440,
+      "text": "enough mirrors to make 100 EUV tools a year. Now they’re like, \"Okay, we need to do that.\""
+    },
+    {
+      "end_ms": 666080,
+      "source_event_index": 131,
+      "start_ms": 662080,
+      "text": "But in reality, because of all the economics of what’s going on,"
+    },
+    {
+      "end_ms": 671120,
+      "source_event_index": 132,
+      "start_ms": 666080,
+      "text": "it should be even more. It takes so long to pill."
+    },
+    {
+      "end_ms": 676000,
+      "source_event_index": 133,
+      "start_ms": 671120,
+      "text": "Suppose that every single company in the stack got private equitied."
+    },
+    {
+      "end_ms": 679120,
+      "source_event_index": 134,
+      "start_ms": 676000,
+      "text": "Somebody came in who was super AGI-pilled and was like, \"We’re going to maximize production.\""
+    },
+    {
+      "end_ms": 683760,
+      "source_event_index": 135,
+      "start_ms": 680400,
+      "text": "What do you think the physical constraints on making more things would be?"
+    },
+    {
+      "end_ms": 690080,
+      "source_event_index": 136,
+      "start_ms": 684480,
+      "text": "The reason I ask is we’re pretty soon going to be in a world where the lab revenue, or just AI"
+    },
+    {
+      "end_ms": 693600,
+      "source_event_index": 137,
+      "start_ms": 690080,
+      "text": "cash flows — because obviously the accelerators also have these huge cash flows — will be so"
+    },
+    {
+      "end_ms": 701120,
+      "source_event_index": 138,
+      "start_ms": 693600,
+      "text": "big that you can just fund extreme expansion of all this production from cash flows themselves."
+    },
+    {
+      "end_ms": 704880,
+      "source_event_index": 139,
+      "start_ms": 701120,
+      "text": "I do agree generally. There’s obviously some physical constraints."
+    },
+    {
+      "end_ms": 710320,
+      "source_event_index": 140,
+      "start_ms": 705520,
+      "text": "The way the supply chain is expanding currently, 100 is roughly still the right number."
+    },
+    {
+      "end_ms": 714080,
+      "source_event_index": 141,
+      "start_ms": 710320,
+      "text": "For 2030? 100 ASML tools for 2030."
+    },
+    {
+      "end_ms": 720560,
+      "source_event_index": 142,
+      "start_ms": 714080,
+      "text": "But if you said, \"Carl Zeiss, here’s $10 billion. Please fucking just expand production,\" that"
+    },
+    {
+      "end_ms": 722160,
+      "source_event_index": 143,
+      "start_ms": 720560,
+      "text": "would change things. You would have to do"
+    },
+    {
+      "end_ms": 723760,
+      "source_event_index": 144,
+      "start_ms": 722160,
+      "text": "this with every company in the supply chain. But you don't think that's gonna happen next year?"
+    },
+    {
+      "end_ms": 725520,
+      "source_event_index": 145,
+      "start_ms": 723760,
+      "text": "I don’t think it’ll happen this year. I don’t think it’ll happen next year."
+    },
+    {
+      "end_ms": 729360,
+      "source_event_index": 146,
+      "start_ms": 726080,
+      "text": "I don’t think it’ll happen the year after, because the world is capital constrained."
+    },
+    {
+      "end_ms": 734320,
+      "source_event_index": 147,
+      "start_ms": 729360,
+      "text": "But in a world where, say, the top labs are generating, even combined,"
+    },
+    {
+      "end_ms": 737440,
+      "source_event_index": 148,
+      "start_ms": 734320,
+      "text": "a trillion dollars in revenue next year, they’re not able to take $10B of that—"
+    },
+    {
+      "end_ms": 740880,
+      "source_event_index": 149,
+      "start_ms": 737440,
+      "text": "I don’t think they’re going to do that, but… Or hundreds of billions at least?"
+    },
+    {
+      "end_ms": 743600,
+      "source_event_index": 150,
+      "start_ms": 740880,
+      "text": "It just seems like they realize where the world is headed."
+    },
+    {
+      "end_ms": 749040,
+      "source_event_index": 151,
+      "start_ms": 743600,
+      "text": "I feel like they could just make… The thing is, the labs are going to generate"
+    },
+    {
+      "end_ms": 753200,
+      "source_event_index": 152,
+      "start_ms": 749040,
+      "text": "hundreds of billions of revenue next year. But ultimately, CapEx next"
+    },
+    {
+      "end_ms": 757200,
+      "source_event_index": 153,
+      "start_ms": 753200,
+      "text": "year is like $2 trillion. So you’ve got this big mismatch."
+    },
+    {
+      "end_ms": 764240,
+      "source_event_index": 154,
+      "start_ms": 758480,
+      "text": "The wafer fabrication equipment supply chain will do something on the order of $200 billion."
+    },
+    {
+      "end_ms": 766720,
+      "source_event_index": 155,
+      "start_ms": 764240,
+      "text": "The data center market supply chain will do even more."
+    },
+    {
+      "end_ms": 771040,
+      "source_event_index": 156,
+      "start_ms": 766720,
+      "text": "The accelerator supply chain will do even more. The energy supply chain will do a number."
+    },
+    {
+      "end_ms": 775600,
+      "source_event_index": 157,
+      "start_ms": 771040,
+      "text": "You sum all this up, it’s going to be well north of $2 trillion of CapEx."
+    },
+    {
+      "end_ms": 779440,
+      "source_event_index": 158,
+      "start_ms": 775600,
+      "text": "So the labs have not yet gotten to the point where their cash flows can fund this stuff."
+    },
+    {
+      "end_ms": 783120,
+      "source_event_index": 159,
+      "start_ms": 780720,
+      "text": "Obviously they will never get to that point, because you want to"
+    },
+    {
+      "end_ms": 791280,
+      "source_event_index": 160,
+      "start_ms": 783120,
+      "text": "keep your CapEx higher than your returns. Yeah, you reinvest."
+    },
+    {
+      "end_ms": 793040,
+      "source_event_index": 161,
+      "start_ms": 791280,
+      "text": "The key question I really want to understand is: if the current trend continues, it’d be north of"
+    },
+    {
+      "end_ms": 798400,
+      "source_event_index": 162,
+      "start_ms": 793040,
+      "text": "50 gigawatts per lab by the end of 2028. So between them they’d have 100 gigawatts."
+    },
+    {
+      "end_ms": 805440,
+      "source_event_index": 163,
+      "start_ms": 798960,
+      "text": "Those gigawatts, as you’re saying, drive many-fold more throughput or performance by 2028 than they"
+    },
+    {
+      "end_ms": 808880,
+      "source_event_index": 164,
+      "start_ms": 805440,
+      "text": "do now, because the hardware’s gotten better. Not only have flops per watt increased,"
+    },
+    {
+      "end_ms": 814960,
+      "source_event_index": 165,
+      "start_ms": 808880,
+      "text": "but also the hardware gets better at working with AI workloads."
+    },
+    {
+      "end_ms": 818080,
+      "source_event_index": 166,
+      "start_ms": 814960,
+      "text": "Okay, so 100 gigawatts for the labs by the end of 2028."
+    },
+    {
+      "end_ms": 821200,
+      "source_event_index": 167,
+      "start_ms": 818080,
+      "text": "How much is world compute? I think that may be a little"
+    },
+    {
+      "end_ms": 827440,
+      "source_event_index": 168,
+      "start_ms": 821200,
+      "text": "difficult, given that by 2028 they’ve taken 70-80% of incremental compute."
+    },
+    {
+      "end_ms": 833120,
+      "source_event_index": 169,
+      "start_ms": 827440,
+      "text": "And I’m not sure what happens to markets then. How much does the price of compute skyrocket for"
+    },
+    {
+      "end_ms": 840320,
+      "source_event_index": 170,
+      "start_ms": 833120,
+      "text": "them to actually be able to buy 70-80% of compute? Is Google or Meta or Amazon willing"
+    },
+    {
+      "end_ms": 844080,
+      "source_event_index": 171,
+      "start_ms": 840320,
+      "text": "to sell even that much? Also, there’s one caveat"
+    },
+    {
+      "end_ms": 848880,
+      "source_event_index": 172,
+      "start_ms": 844080,
+      "text": "when we’re talking about these gigawatt numbers. When Amazon is serving Bedrock Anthropic models,"
+    },
+    {
+      "end_ms": 854320,
+      "source_event_index": 173,
+      "start_ms": 849600,
+      "text": "that counts as Anthropic compute in our worldview, because it is effectively, at the end of the day,"
+    },
+    {
+      "end_ms": 859360,
+      "source_event_index": 174,
+      "start_ms": 854320,
+      "text": "counted as revenue for Anthropic even though there’s a revenue share and credit back all that."
+    },
+    {
+      "end_ms": 864880,
+      "source_event_index": 175,
+      "start_ms": 859360,
+      "text": "But ultimately in 2028, if they get to 100 gigawatts combined, they have"
+    },
+    {
+      "end_ms": 871680,
+      "source_event_index": 176,
+      "start_ms": 864880,
+      "text": "done really disruptive things to the market. Because anyone can make money off of $10-15"
+    },
+    {
+      "end_ms": 877040,
+      "source_event_index": 177,
+      "start_ms": 871680,
+      "text": "million per megawatt compute today. I kid you not, it’s not that hard."
+    },
+    {
+      "end_ms": 884480,
+      "source_event_index": 178,
+      "start_ms": 877040,
+      "text": "Go get a GB300 rack, go download the Kimi weights, go download vLLM or SGLang, set it up."
+    },
+    {
+      "end_ms": 890560,
+      "source_event_index": 179,
+      "start_ms": 884480,
+      "text": "Codex and Fable can actually help you do this. It’s pretty simple. It’s not trivial,"
+    },
+    {
+      "end_ms": 893200,
+      "source_event_index": 180,
+      "start_ms": 890560,
+      "text": "but it’s not rocket science. Go put it on OpenRouter."
+    },
+    {
+      "end_ms": 899120,
+      "source_event_index": 181,
+      "start_ms": 893200,
+      "text": "It’s very simple. You’ll start generating more revenue than you’re paying for the compute."
+    },
+    {
+      "end_ms": 903760,
+      "source_event_index": 182,
+      "start_ms": 900480,
+      "text": "This has already led to this compute pricing, $10-15"
+    },
+    {
+      "end_ms": 910480,
+      "source_event_index": 183,
+      "start_ms": 903760,
+      "text": "million per megawatt, starting to inflect up. To get to that 100 gigawatts in 2028, you have"
+    },
+    {
+      "end_ms": 916560,
+      "source_event_index": 184,
+      "start_ms": 910480,
+      "text": "to believe that the labs can outpay for compute, because anyone can make money at $10 to $15."
+    },
+    {
+      "end_ms": 921920,
+      "source_event_index": 185,
+      "start_ms": 917200,
+      "text": "Does compute now get to $25 million a megawatt? Does it get to $40 million a megawatt?"
+    },
+    {
+      "end_ms": 924800,
+      "source_event_index": 186,
+      "start_ms": 921920,
+      "text": "As you’re saying, it’s already the case that the labs are generating way"
+    },
+    {
+      "end_ms": 929360,
+      "source_event_index": 187,
+      "start_ms": 924800,
+      "text": "more revenue per megawatt than everybody else. If they stay as far ahead as they are currently,"
+    },
+    {
+      "end_ms": 932880,
+      "source_event_index": 188,
+      "start_ms": 929360,
+      "text": "you would expect that to continue being the case. If there’s some kind of recursive self-improvement"
+    },
+    {
+      "end_ms": 936480,
+      "source_event_index": 189,
+      "start_ms": 932880,
+      "text": "where the AI labs are relatively uplifted — or they have models internally they’re"
+    },
+    {
+      "end_ms": 939280,
+      "source_event_index": 190,
+      "start_ms": 936480,
+      "text": "not releasing externally that are helping them make their next model better — you’d"
+    },
+    {
+      "end_ms": 942640,
+      "source_event_index": 191,
+      "start_ms": 939280,
+      "text": "expect that to be even more the case. Aren’t you already seeing this, where SpaceX,"
+    },
+    {
+      "end_ms": 946000,
+      "source_event_index": 192,
+      "start_ms": 942640,
+      "text": "or whoever is slightly further behind, will just sell compute to the highest bidder if they can’t"
+    },
+    {
+      "end_ms": 952960,
+      "source_event_index": 193,
+      "start_ms": 946000,
+      "text": "internally monetize it as well as the labs? You’d expect them to keep bidding for larger"
+    },
+    {
+      "end_ms": 956080,
+      "source_event_index": 194,
+      "start_ms": 952960,
+      "text": "and larger shares of the compute market. I think that is my worldview."
+    },
+    {
+      "end_ms": 958320,
+      "source_event_index": 195,
+      "start_ms": 956080,
+      "text": "They will continue to gobble up more of the compute."
+    },
+    {
+      "end_ms": 962240,
+      "source_event_index": 196,
+      "start_ms": 958320,
+      "text": "But ultimately they can’t do it at current pricing or anywhere close to it."
+    },
+    {
+      "end_ms": 969760,
+      "source_event_index": 197,
+      "start_ms": 963440,
+      "text": "They do have to start paying $25, $30, $50 million a megawatt to really gobble up 70% of the world’s"
+    },
+    {
+      "end_ms": 975280,
+      "source_event_index": 198,
+      "start_ms": 969760,
+      "text": "compute in 2028, to get to 100 gigawatts by 2028, which is a very aggressive goal."
+    },
+    {
+      "end_ms": 977760,
+      "source_event_index": 199,
+      "start_ms": 975280,
+      "text": "The other aspect of this that’s really challenging is that we’ve"
+    },
+    {
+      "end_ms": 984720,
+      "source_event_index": 200,
+      "start_ms": 977760,
+      "text": "already seen a huge slowdown for the AI labs. This regulation that they advocate for is actually"
+    },
+    {
+      "end_ms": 989600,
+      "source_event_index": 201,
+      "start_ms": 984720,
+      "text": "slowing down the labs a lot more than it slows down the open-source Chinese language models."
+    },
+    {
+      "end_ms": 995680,
+      "source_event_index": 202,
+      "start_ms": 990640,
+      "text": "OpenAI not releasing Astra. OpenAI stopping training for two weeks."
+    },
+    {
+      "end_ms": 999840,
+      "source_event_index": 203,
+      "start_ms": 995680,
+      "text": "Anthropic not releasing what their safety assessment says is Model 2, which is widely"
+    },
+    {
+      "end_ms": 1004960,
+      "source_event_index": 204,
+      "start_ms": 999840,
+      "text": "believed to be the next version of Mythos. They’re clearly not releasing their best models,"
+    },
+    {
+      "end_ms": 1009360,
+      "source_event_index": 205,
+      "start_ms": 1004960,
+      "text": "in which case their revenue per megawatt stalls or can even start to decline again"
+    },
+    {
+      "end_ms": 1013120,
+      "source_event_index": 206,
+      "start_ms": 1009360,
+      "text": "because other models are competitive again. It’s not that they’re falling behind."
+    },
+    {
+      "end_ms": 1015680,
+      "source_event_index": 207,
+      "start_ms": 1013120,
+      "text": "It’s just that they’re not releasing their best stuff."
+    },
+    {
+      "end_ms": 1019760,
+      "source_event_index": 208,
+      "start_ms": 1015680,
+      "text": "What if there is some regulatory impact that prevents them from releasing their best models?"
+    },
+    {
+      "end_ms": 1022880,
+      "source_event_index": 209,
+      "start_ms": 1019760,
+      "text": "Now their revenue per megawatt does not climb as fast."
+    },
+    {
+      "end_ms": 1026240,
+      "source_event_index": 210,
+      "start_ms": 1022880,
+      "text": "Their ability to buy that incremental compute for a higher price than everyone"
+    },
+    {
+      "end_ms": 1030240,
+      "source_event_index": 211,
+      "start_ms": 1026240,
+      "text": "else starts to diminish, and then maybe they can’t get to that 100 gigawatts."
+    },
+    {
+      "end_ms": 1035520,
+      "source_event_index": 212,
+      "start_ms": 1030240,
+      "text": "But in a world where safety doesn’t matter, I do believe that’s exactly what happens."
+    },
+    {
+      "end_ms": 1038400,
+      "source_event_index": 213,
+      "start_ms": 1035520,
+      "text": "They can start generating $100 million per megawatt or more,"
+    },
+    {
+      "end_ms": 1042720,
+      "source_event_index": 214,
+      "start_ms": 1038400,
+      "text": "and they can pay $50 million a megawatt. No one else has any logical reason to"
+    },
+    {
+      "end_ms": 1047840,
+      "source_event_index": 215,
+      "start_ms": 1042720,
+      "text": "do anything with their compute besides say, \"Please, Dario, take everything off of my hands.\""
+    },
+    {
+      "end_ms": 1057760,
+      "source_event_index": 216,
+      "start_ms": 1048800,
+      "text": "But there are forces at play, which we cannot describe, that would potentially slow this down."
+    },
+    {
+      "end_ms": 1064160,
+      "source_event_index": 217,
+      "start_ms": 1058720,
+      "text": "I think a good intuition pump is: what if the AI models were literally as good as a"
+    },
+    {
+      "end_ms": 1067760,
+      "source_event_index": 218,
+      "start_ms": 1064160,
+      "text": "fully automated software engineer? They’re not currently there yet."
+    },
+    {
+      "end_ms": 1072320,
+      "source_event_index": 219,
+      "start_ms": 1067760,
+      "text": "I think they’re far from being able to fully automate the job of a full white-collar worker."
+    },
+    {
+      "end_ms": 1076160,
+      "source_event_index": 220,
+      "start_ms": 1072320,
+      "text": "But white-collar workers earn six figures or north of that a year."
+    },
+    {
+      "end_ms": 1080320,
+      "source_event_index": 221,
+      "start_ms": 1077280,
+      "text": "If you have a gigawatt that can sustain a population of,"
+    },
+    {
+      "end_ms": 1084320,
+      "source_event_index": 222,
+      "start_ms": 1081120,
+      "text": "say, roughly a million white-collar workers."
+    },
+    {
+      "end_ms": 1092960,
+      "source_event_index": 223,
+      "start_ms": 1088480,
+      "text": "Then off the back of that…That would be $100 billion."
+    },
+    {
+      "end_ms": 1097680,
+      "source_event_index": 224,
+      "start_ms": 1092960,
+      "text": "That’s actually surprisingly low. Yeah, $100K per person, million population."
+    },
+    {
+      "end_ms": 1100640,
+      "source_event_index": 225,
+      "start_ms": 1098960,
+      "text": "I don’t know. But it would be many hundreds of billions of"
+    },
+    {
+      "end_ms": 1105280,
+      "source_event_index": 226,
+      "start_ms": 1100640,
+      "text": "dollars per gigawatt if you get full AGI. The other aspect of this — and we’ve"
+    },
+    {
+      "end_ms": 1109920,
+      "source_event_index": 227,
+      "start_ms": 1105280,
+      "text": "continued to see this — is that most of the value capture is not happening."
+    },
+    {
+      "end_ms": 1114320,
+      "source_event_index": 228,
+      "start_ms": 1109920,
+      "text": "Most of the value that these models generate does not get given to OpenAI and Anthropic."
+    },
+    {
+      "end_ms": 1117440,
+      "source_event_index": 229,
+      "start_ms": 1114320,
+      "text": "Thankfully, so far it is mostly just being given to the users."
+    },
+    {
+      "end_ms": 1123040,
+      "source_event_index": 230,
+      "start_ms": 1118000,
+      "text": "Jane Street, with their exclusive contract with OpenAI for GPT-5.6 Ultrafast mode,"
+    },
+    {
+      "end_ms": 1128400,
+      "source_event_index": 231,
+      "start_ms": 1123040,
+      "text": "or Jane Street where they’re one of Anthropic’s biggest customers, is generating way, way, way"
+    },
+    {
+      "end_ms": 1135600,
+      "source_event_index": 232,
+      "start_ms": 1128400,
+      "text": "more value out of the tokens they’re paying for than Anthropic is generating in terms of profit,"
+    },
+    {
+      "end_ms": 1143440,
+      "source_event_index": 233,
+      "start_ms": 1135600,
+      "text": "because they get to make money off of the market. Or take Meta, who at one point was rumored to be"
+    },
+    {
+      "end_ms": 1148880,
+      "source_event_index": 234,
+      "start_ms": 1143440,
+      "text": "as much as 10% of Anthropic’s business. They’re generating way more efficiencies"
+    },
+    {
+      "end_ms": 1153840,
+      "source_event_index": 235,
+      "start_ms": 1148880,
+      "text": "by optimizing their ad algorithms or what have you, getting engagement"
+    },
+    {
+      "end_ms": 1157920,
+      "source_event_index": 236,
+      "start_ms": 1153840,
+      "text": "time 5% longer, all these things. They’re making way more money off"
+    },
+    {
+      "end_ms": 1165120,
+      "source_event_index": 237,
+      "start_ms": 1157920,
+      "text": "of using these models than Anthropic is. That’s what’s required. Sure, if you had"
+    },
+    {
+      "end_ms": 1169440,
+      "source_event_index": 238,
+      "start_ms": 1165120,
+      "text": "a million new software engineers, the cost for a software engineer would also fall."
+    },
+    {
+      "end_ms": 1172880,
+      "source_event_index": 239,
+      "start_ms": 1169440,
+      "text": "One thing I’m confused about is, does the market come into equilibrium?"
+    },
+    {
+      "end_ms": 1179040,
+      "source_event_index": 240,
+      "start_ms": 1172880,
+      "text": "If it comes into equilibrium, would you just expect the price of compute to equal"
+    },
+    {
+      "end_ms": 1184320,
+      "source_event_index": 241,
+      "start_ms": 1179040,
+      "text": "whatever Anthropic and OpenAI can generate from it, or be very close to it with a small"
+    },
+    {
+      "end_ms": 1188480,
+      "source_event_index": 242,
+      "start_ms": 1184320,
+      "text": "amount of markup for Anthropic and OpenAI? Right now it’s really weird that there is a"
+    },
+    {
+      "end_ms": 1194160,
+      "source_event_index": 243,
+      "start_ms": 1188480,
+      "text": "4x or more difference between what compute sells for and how much money Anthropic can make from it."
+    },
+    {
+      "end_ms": 1199200,
+      "source_event_index": 244,
+      "start_ms": 1194160,
+      "text": "In a world where the revenue per gigawatt continues to increase, if Anthropic’s ability"
+    },
+    {
+      "end_ms": 1205360,
+      "source_event_index": 245,
+      "start_ms": 1199200,
+      "text": "to monetize a gigawatt doubles or triples, it’d be weird if the gap continued to increase."
+    },
+    {
+      "end_ms": 1209760,
+      "source_event_index": 246,
+      "start_ms": 1205360,
+      "text": "Anthropic, just by having some weights, can take something that cost them"
+    },
+    {
+      "end_ms": 1216080,
+      "source_event_index": 247,
+      "start_ms": 1209760,
+      "text": "$10 and turn it into $100. This is always a fun question."
+    },
+    {
+      "end_ms": 1218880,
+      "source_event_index": 248,
+      "start_ms": 1216080,
+      "text": "Where does the value go in AI? AI’s generating all this value."
+    },
+    {
+      "end_ms": 1224240,
+      "source_event_index": 249,
+      "start_ms": 1218880,
+      "text": "You’ve got the end user, which I think we all agree is generating more value than anyone else,"
+    },
+    {
+      "end_ms": 1227920,
+      "source_event_index": 250,
+      "start_ms": 1224240,
+      "text": "hence they’re paying a lot for these models. Then you have the app layer."
+    },
+    {
+      "end_ms": 1230720,
+      "source_event_index": 251,
+      "start_ms": 1227920,
+      "text": "So far the app layer’s generated very little value."
+    },
+    {
+      "end_ms": 1236400,
+      "source_event_index": 252,
+      "start_ms": 1230720,
+      "text": "Then you’ve got the model layer, which up until a year ago was generating negative gross margins and"
+    },
+    {
+      "end_ms": 1240880,
+      "source_event_index": 253,
+      "start_ms": 1236400,
+      "text": "is now generating massive positive gross margins. It looks like it’s on the path to"
+    },
+    {
+      "end_ms": 1248160,
+      "source_event_index": 254,
+      "start_ms": 1240880,
+      "text": "generating $100 million per megawatt. So turning $10-15 into $100, as you said."
+    },
+    {
+      "end_ms": 1253840,
+      "source_event_index": 255,
+      "start_ms": 1248720,
+      "text": "But if we go back a year ago, the hardware supply chain was generating all this gross margin while"
+    },
+    {
+      "end_ms": 1258320,
+      "source_event_index": 256,
+      "start_ms": 1253840,
+      "text": "literally everyone else was losing money on it. OpenAI and Anthropic were just plowing VC"
+    },
+    {
+      "end_ms": 1263760,
+      "source_event_index": 257,
+      "start_ms": 1258320,
+      "text": "money in, as were many other startups. Many of these hyperscalers were building"
+    },
+    {
+      "end_ms": 1266800,
+      "source_event_index": 258,
+      "start_ms": 1263760,
+      "text": "infrastructure without knowing if there was going to be a payoff."
+    },
+    {
+      "end_ms": 1272800,
+      "source_event_index": 259,
+      "start_ms": 1266800,
+      "text": "So ultimately you had this negative value being created on the model layer, if you will,"
+    },
+    {
+      "end_ms": 1275840,
+      "source_event_index": 260,
+      "start_ms": 1272800,
+      "text": "because they were selling the tokens for less than it cost them on the infra side."
+    },
+    {
+      "end_ms": 1279120,
+      "source_event_index": 261,
+      "start_ms": 1275840,
+      "text": "All the value was being captured at the chip, the fab."
+    },
+    {
+      "end_ms": 1286160,
+      "source_event_index": 262,
+      "start_ms": 1279120,
+      "text": "Initially in 2023, the memory guys were making no money off of HBM or memory for AI,"
+    },
+    {
+      "end_ms": 1289600,
+      "source_event_index": 263,
+      "start_ms": 1286160,
+      "text": "even though theoretically the value they were delivering was humongous."
+    },
+    {
+      "end_ms": 1293440,
+      "source_event_index": 264,
+      "start_ms": 1289600,
+      "text": "Now you’ve got… Well, actually TSMC captures way less value than the memory guys."
+    },
+    {
+      "end_ms": 1301520,
+      "source_event_index": 265,
+      "start_ms": 1296800,
+      "text": "So the value capture’s shifted around a lot, which is very fun for"
+    },
+    {
+      "end_ms": 1306080,
+      "source_event_index": 266,
+      "start_ms": 1301520,
+      "text": "people tracking the market or participating in the market, like Jane Street as an example."
+    },
+    {
+      "end_ms": 1306745,
+      "source_event_index": 267,
+      "start_ms": 1306080,
+      "text": "This is not an ad. This is not an ad."
+    },
+    {
+      "end_ms": 1307520,
+      "source_event_index": 268,
+      "start_ms": 1306745,
+      "text": "This is not an ad. They’re a sponsor but"
+    },
+    {
+      "end_ms": 1316160,
+      "source_event_index": 269,
+      "start_ms": 1307520,
+      "text": "you don’t have to plug them that hard. So what happens going forward?"
+    },
+    {
+      "end_ms": 1320240,
+      "source_event_index": 270,
+      "start_ms": 1316160,
+      "text": "Anthropic and OpenAI have slowly started to balloon in value capture."
+    },
+    {
+      "end_ms": 1323760,
+      "source_event_index": 271,
+      "start_ms": 1320240,
+      "text": "Do they balloon and take all the value capture? Well, that was a thought,"
+    },
+    {
+      "end_ms": 1329680,
+      "source_event_index": 272,
+      "start_ms": 1323760,
+      "text": "and then Elon showed, \"Actually, no. I can sell my compute for $25 million a megawatt"
+    },
+    {
+      "end_ms": 1335520,
+      "source_event_index": 273,
+      "start_ms": 1329680,
+      "text": "or $40 million a megawatt to Anthropic and Google. Even if it’s a short-term thing, I’ve sold it for"
+    },
+    {
+      "end_ms": 1339200,
+      "source_event_index": 274,
+      "start_ms": 1335520,
+      "text": "this price, and I’ll recoup my entire CapEx in a year.\""
+    },
+    {
+      "end_ms": 1344000,
+      "source_event_index": 275,
+      "start_ms": 1339200,
+      "text": "What’s your prediction of how much the relevant tranche of compute — B300s or whatever"
+    },
+    {
+      "end_ms": 1351600,
+      "source_event_index": 276,
+      "start_ms": 1344000,
+      "text": "that SpaceX sold for $40B a gigawatt to Google — what does that sell for at the end of next year?"
+    },
+    {
+      "end_ms": 1355520,
+      "source_event_index": 277,
+      "start_ms": 1351600,
+      "text": "I think most compute will still continue to transact at sub-$20 billion a gigawatt."
+    },
+    {
+      "end_ms": 1358880,
+      "source_event_index": 278,
+      "start_ms": 1355520,
+      "text": "Even at the end of next year? Because all of it has to be financed."
+    },
+    {
+      "end_ms": 1367440,
+      "source_event_index": 279,
+      "start_ms": 1362080,
+      "text": "If Meta, Microsoft, Amazon, SpaceX can build compute without finding a customer,"
+    },
+    {
+      "end_ms": 1371040,
+      "source_event_index": 280,
+      "start_ms": 1367440,
+      "text": "just saying, \"Fuck it, I’m going to build this compute,\" and then turn around and wait till it’s"
+    },
+    {
+      "end_ms": 1378400,
+      "source_event_index": 281,
+      "start_ms": 1371040,
+      "text": "already built, they now control what’s going on. Most compute is contracted well before it’s built."
+    },
+    {
+      "end_ms": 1382880,
+      "source_event_index": 282,
+      "start_ms": 1379120,
+      "text": "This is what Elon took advantage of in the market. He actually had all this compute."
+    },
+    {
+      "end_ms": 1387920,
+      "source_event_index": 283,
+      "start_ms": 1382880,
+      "text": "He was like, \"Hey, Anthropic, I know you’re making $60-plus billion per gigawatt."
+    },
+    {
+      "end_ms": 1390480,
+      "source_event_index": 284,
+      "start_ms": 1387920,
+      "text": "Why don’t you just buy my stuff for a crazy amount of money?\""
+    },
+    {
+      "end_ms": 1393440,
+      "source_event_index": 285,
+      "start_ms": 1390480,
+      "text": "Obviously it’s not like Elon decided this or Anthropic decided this."
+    },
+    {
+      "end_ms": 1400480,
+      "source_event_index": 286,
+      "start_ms": 1393440,
+      "text": "The market figured itself out. Other people, you go to a random cloud,"
+    },
+    {
+      "end_ms": 1404880,
+      "source_event_index": 287,
+      "start_ms": 1400480,
+      "text": "they’re like, \"Okay, I’m going to build a gigawatt of compute or 100 megawatts of compute."
+    },
+    {
+      "end_ms": 1408000,
+      "source_event_index": 288,
+      "start_ms": 1404880,
+      "text": "I’m going to spend the CapEx. I need to turn around and find a customer."
+    },
+    {
+      "end_ms": 1411280,
+      "source_event_index": 289,
+      "start_ms": 1408000,
+      "text": "If I want to find a customer, I need to find the capital."
+    },
+    {
+      "end_ms": 1412880,
+      "source_event_index": 290,
+      "start_ms": 1411280,
+      "text": "Who’s going to give me the capital and the customer?"
+    },
+    {
+      "end_ms": 1415600,
+      "source_event_index": 291,
+      "start_ms": 1412880,
+      "text": "The customer has to sign a deal. Then I take the customer’s commitment to"
+    },
+    {
+      "end_ms": 1419920,
+      "source_event_index": 292,
+      "start_ms": 1415600,
+      "text": "the credit markets and I raise the capital.\" So there’s this completely different"
+    },
+    {
+      "end_ms": 1424880,
+      "source_event_index": 293,
+      "start_ms": 1419920,
+      "text": "power structure where Meta is effectively hoarding compute."
+    },
+    {
+      "end_ms": 1430160,
+      "source_event_index": 294,
+      "start_ms": 1424880,
+      "text": "Them and SpaceX are the only plausible #3, because they’re hoarding all this compute."
+    },
+    {
+      "end_ms": 1434960,
+      "source_event_index": 295,
+      "start_ms": 1430160,
+      "text": "They’re using their balance sheets and capabilities to build compute without an end"
+    },
+    {
+      "end_ms": 1438400,
+      "source_event_index": 296,
+      "start_ms": 1434960,
+      "text": "customer that’s monetizing at a huge degree. They have an actual balance sheet,"
+    },
+    {
+      "end_ms": 1445200,
+      "source_event_index": 297,
+      "start_ms": 1438400,
+      "text": "so they can go to the credit market. You build a gigawatt, you can make your margin,"
+    },
+    {
+      "end_ms": 1448560,
+      "source_event_index": 298,
+      "start_ms": 1445200,
+      "text": "not a crazy margin, but a good margin. Now I have all this compute."
+    },
+    {
+      "end_ms": 1452160,
+      "source_event_index": 299,
+      "start_ms": 1448560,
+      "text": "Now Meta and SpaceX have this optionality of looking around and being like, \"Is my"
+    },
+    {
+      "end_ms": 1455600,
+      "source_event_index": 300,
+      "start_ms": 1452160,
+      "text": "internal use case going to make me more money, or should I go out there and sell"
+    },
+    {
+      "end_ms": 1462080,
+      "source_event_index": 301,
+      "start_ms": 1455600,
+      "text": "it to Anthropic or OpenAI at crazy margins?\" So now we’ve entered a regime where SpaceX and"
+    },
+    {
+      "end_ms": 1468240,
+      "source_event_index": 302,
+      "start_ms": 1462080,
+      "text": "Meta are saying, \"Actually, I’m going to build the compute, and I can rent it out for not $13."
+    },
+    {
+      "end_ms": 1473280,
+      "source_event_index": 303,
+      "start_ms": 1468240,
+      "text": "I can sell it for $25, $50, and more.\" So as I've been doing video essays and"
+    },
+    {
+      "end_ms": 1476640,
+      "source_event_index": 304,
+      "start_ms": 1473280,
+      "text": "other formats, I've been looking to hire a new editor for the podcast."
+    },
+    {
+      "end_ms": 1479520,
+      "source_event_index": 305,
+      "start_ms": 1476640,
+      "text": "But actively searching for editors has been quite time-consuming because"
+    },
+    {
+      "end_ms": 1483360,
+      "source_event_index": 306,
+      "start_ms": 1479520,
+      "text": "the vast majority of candidates don't fit the profile that I'm looking for."
+    },
+    {
+      "end_ms": 1486640,
+      "source_event_index": 307,
+      "start_ms": 1483360,
+      "text": "So I created a recruiter in Grok Bot to see if it would help."
+    },
+    {
+      "end_ms": 1490400,
+      "source_event_index": 308,
+      "start_ms": 1486640,
+      "text": "I gave it a huge context dump where I monologued basically everything that I wanted,"
+    },
+    {
+      "end_ms": 1495200,
+      "source_event_index": 309,
+      "start_ms": 1490400,
+      "text": "and then it spun up four other bots to narrow in on different parts of the search."
+    },
+    {
+      "end_ms": 1498320,
+      "source_event_index": 310,
+      "start_ms": 1495200,
+      "text": "One went through the last year of my email for relevant inbound."
+    },
+    {
+      "end_ms": 1501280,
+      "source_event_index": 311,
+      "start_ms": 1498320,
+      "text": "One searched my X feed and DMs. One went through the end credits"
+    },
+    {
+      "end_ms": 1504000,
+      "source_event_index": 312,
+      "start_ms": 1501280,
+      "text": "on various documentaries I like. And the last one looked for editors"
+    },
+    {
+      "end_ms": 1508160,
+      "source_event_index": 313,
+      "start_ms": 1504000,
+      "text": "who work for some of the YouTubers that I follow. Grok Bot then took all these different candidates"
+    },
+    {
+      "end_ms": 1511680,
+      "source_event_index": 314,
+      "start_ms": 1508160,
+      "text": "that the subagents had found, filtered them against my criteria,"
+    },
+    {
+      "end_ms": 1516240,
+      "source_event_index": 315,
+      "start_ms": 1511680,
+      "text": "and delivered for a final shortlist to review. To be honest, the first batch had a few good"
+    },
+    {
+      "end_ms": 1519200,
+      "source_event_index": 316,
+      "start_ms": 1516240,
+      "text": "candidates I wanted to see, but mainly a bunch of duds."
+    },
+    {
+      "end_ms": 1522560,
+      "source_event_index": 317,
+      "start_ms": 1519200,
+      "text": "But after I gave Grok Bot some more feedback about what it was missing,"
+    },
+    {
+      "end_ms": 1525920,
+      "source_event_index": 318,
+      "start_ms": 1522560,
+      "text": "it came back with a new list of candidates that I'm actually extremely excited about."
+    },
+    {
+      "end_ms": 1528080,
+      "source_event_index": 319,
+      "start_ms": 1525920,
+      "text": "I ended up saving this whole workflow as a routine."
+    },
+    {
+      "end_ms": 1533680,
+      "source_event_index": 320,
+      "start_ms": 1528080,
+      "text": "So every week now Grok Bot checks my inbound email and X DMs for promising"
+    },
+    {
+      "end_ms": 1536800,
+      "source_event_index": 321,
+      "start_ms": 1533680,
+      "text": "new candidates to potentially interview. If you want to try Grok Bot yourself,"
+    },
+    {
+      "end_ms": 1540720,
+      "source_event_index": 322,
+      "start_ms": 1536800,
+      "text": "go to x.ai/bot. What do you think their"
+    },
+    {
+      "end_ms": 1545280,
+      "source_event_index": 323,
+      "start_ms": 1540720,
+      "text": "revenue per gigawatt is by the end of 2027? For Anthropic or OpenAI, by the end of ’27."
+    },
+    {
+      "end_ms": 1547520,
+      "source_event_index": 324,
+      "start_ms": 1545280,
+      "text": "I think it’s highly dependent on who has the best model, if they’re"
+    },
+    {
+      "end_ms": 1551440,
+      "source_event_index": 325,
+      "start_ms": 1547520,
+      "text": "allowed to keep releasing their best models. But I don’t see why it wouldn’t be $50-plus"
+    },
+    {
+      "end_ms": 1553600,
+      "source_event_index": 326,
+      "start_ms": 1551440,
+      "text": "million a megawatt. By the end of ’27."
+    },
+    {
+      "end_ms": 1556560,
+      "source_event_index": 327,
+      "start_ms": 1553600,
+      "text": "Oh, by the end of '27? That’s where it gets more challenging,"
+    },
+    {
+      "end_ms": 1561840,
+      "source_event_index": 328,
+      "start_ms": 1556560,
+      "text": "but I think it could get higher than that, to like $70, $80 million a megawatt, blended across the"
+    },
+    {
+      "end_ms": 1564480,
+      "source_event_index": 329,
+      "start_ms": 1561840,
+      "text": "company, if not higher. Seems low."
+    },
+    {
+      "end_ms": 1569840,
+      "source_event_index": 330,
+      "start_ms": 1564480,
+      "text": "So if that’s the case, then what happens to the price of compute?"
+    },
+    {
+      "end_ms": 1572320,
+      "source_event_index": 331,
+      "start_ms": 1569840,
+      "text": "Well, if I’m Anthropic, incremental compute is worth it."
+    },
+    {
+      "end_ms": 1575520,
+      "source_event_index": 332,
+      "start_ms": 1572320,
+      "text": "Maybe I spend $40 million a megawatt on SpaceX compute."
+    },
+    {
+      "end_ms": 1582080,
+      "source_event_index": 333,
+      "start_ms": 1576560,
+      "text": "If I’m SpaceX, I look to the supply chain and I’m like, \"Well, I’ve struck this deal with Jensen"
+    },
+    {
+      "end_ms": 1588960,
+      "source_event_index": 334,
+      "start_ms": 1582080,
+      "text": "(where he’s now all of a sudden using Twitter).\" And Elon’s saying they’re exclusive to Nvidia,"
+    },
+    {
+      "end_ms": 1594400,
+      "source_event_index": 335,
+      "start_ms": 1588960,
+      "text": "but why doesn’t Jensen raise his prices? Then SK Hynix and Micron and Samsung look"
+    },
+    {
+      "end_ms": 1596400,
+      "source_event_index": 336,
+      "start_ms": 1594400,
+      "text": "at it and they’re like, \"Well, why don’t we raise our prices?\""
+    },
+    {
+      "end_ms": 1599360,
+      "source_event_index": 337,
+      "start_ms": 1596400,
+      "text": "So with the value capture, I think there’s a bullwhip effect here."
+    },
+    {
+      "end_ms": 1603120,
+      "source_event_index": 338,
+      "start_ms": 1600400,
+      "text": "Just because someone has raised prices doesn’t mean"
+    },
+    {
+      "end_ms": 1608320,
+      "source_event_index": 339,
+      "start_ms": 1603120,
+      "text": "the entire supply chain rebalances immediately. But over time, the supply chain will rebalance"
+    },
+    {
+      "end_ms": 1612240,
+      "source_event_index": 340,
+      "start_ms": 1608320,
+      "text": "and things will cost more and more. To get that incremental capacity,"
+    },
+    {
+      "end_ms": 1615280,
+      "source_event_index": 341,
+      "start_ms": 1612240,
+      "text": "you sort of have to. So TSMC raising prices very slowly,"
+    },
+    {
+      "end_ms": 1620240,
+      "source_event_index": 342,
+      "start_ms": 1615280,
+      "text": "but memory companies raising prices very quickly. Substrate companies raising prices very quickly."
+    },
+    {
+      "end_ms": 1626480,
+      "source_event_index": 343,
+      "start_ms": 1622240,
+      "text": "Elon wouldn’t have sold if it was $15, but he’s selling because it’s $25+."
+    },
+    {
+      "end_ms": 1631360,
+      "source_event_index": 344,
+      "start_ms": 1626480,
+      "text": "So obviously he raised his prices really quickly. I’m surprised you think that revenue per gigawatt"
+    },
+    {
+      "end_ms": 1635840,
+      "source_event_index": 345,
+      "start_ms": 1631360,
+      "text": "doesn’t increase way more than even 100 per gigawatt by the end of next year."
+    },
+    {
+      "end_ms": 1639840,
+      "source_event_index": 346,
+      "start_ms": 1635840,
+      "text": "When does RSI happen? When does takeoff happen? Or even if RSI doesn’t happen, just say the"
+    },
+    {
+      "end_ms": 1642240,
+      "source_event_index": 347,
+      "start_ms": 1639840,
+      "text": "current rate of progress continues. Just look at how much progress we’ve"
+    },
+    {
+      "end_ms": 1646400,
+      "source_event_index": 348,
+      "start_ms": 1642240,
+      "text": "made in, let’s say, the last year and a half. What was the model from a year and a half ago?"
+    },
+    {
+      "end_ms": 1648560,
+      "source_event_index": 349,
+      "start_ms": 1646400,
+      "text": "Claude 3.5 or something? My problem with this is that the best model"
+    },
+    {
+      "end_ms": 1652240,
+      "source_event_index": 350,
+      "start_ms": 1648560,
+      "text": "that exists in the world was trained in February. So you’re saying maybe we just won’t be allowed"
+    },
+    {
+      "end_ms": 1654400,
+      "source_event_index": 351,
+      "start_ms": 1652240,
+      "text": "to release the labs’ best models. OpenAI says they’re not training models"
+    },
+    {
+      "end_ms": 1655760,
+      "source_event_index": 352,
+      "start_ms": 1654400,
+      "text": "for two weeks, man. What the hell?"
+    },
+    {
+      "end_ms": 1659680,
+      "source_event_index": 353,
+      "start_ms": 1657040,
+      "text": "There’s one thing where internally, are they getting enough use for it"
+    },
+    {
+      "end_ms": 1662960,
+      "source_event_index": 354,
+      "start_ms": 1659680,
+      "text": "that they’ll bid up the price of compute? Another is, does AI progress as a whole slow"
+    },
+    {
+      "end_ms": 1664720,
+      "source_event_index": 355,
+      "start_ms": 1662960,
+      "text": "down because of regulation? Yeah, but they’re not even"
+    },
+    {
+      "end_ms": 1668400,
+      "source_event_index": 356,
+      "start_ms": 1664720,
+      "text": "allowed to use this new model internally. Astra’s not even widely deployed internally."
+    },
+    {
+      "end_ms": 1677040,
+      "source_event_index": 357,
+      "start_ms": 1669200,
+      "text": "But still, if you have a model that is… What was the model released at the beginning of last year?"
+    },
+    {
+      "end_ms": 1680480,
+      "source_event_index": 358,
+      "start_ms": 1677040,
+      "text": "GPT… 4o? Was that 4o?"
+    },
+    {
+      "end_ms": 1686800,
+      "source_event_index": 359,
+      "start_ms": 1680480,
+      "text": "Yeah. You’re talking about a GPT-4o to Mythos 2-size leap by this point,"
+    },
+    {
+      "end_ms": 1689840,
+      "source_event_index": 360,
+      "start_ms": 1686800,
+      "text": "again, by the end of 2027. Yeah, but Mythos 2’s not out."
+    },
+    {
+      "end_ms": 1694320,
+      "source_event_index": 361,
+      "start_ms": 1689840,
+      "text": "Or even Mythos. That leap again. Even Mythos is not allowed to be out."
+    },
+    {
+      "end_ms": 1698320,
+      "source_event_index": 362,
+      "start_ms": 1694320,
+      "text": "They’ve neutered it. We can’t use it to optimize inference performance."
+    },
+    {
+      "end_ms": 1703120,
+      "source_event_index": 363,
+      "start_ms": 1698320,
+      "text": "We can’t use it to optimize all sorts of things. Yeah, maybe there’s some slowdown in AI progress"
+    },
+    {
+      "end_ms": 1706960,
+      "source_event_index": 364,
+      "start_ms": 1703120,
+      "text": "or the deployment of AI that means the revenue per gigawatt can be lower."
+    },
+    {
+      "end_ms": 1711760,
+      "source_event_index": 365,
+      "start_ms": 1706960,
+      "text": "But that’s the only way I could see it being only $100 million per megawatt by the end of next year."
+    },
+    {
+      "end_ms": 1715760,
+      "source_event_index": 366,
+      "start_ms": 1712400,
+      "text": "As long as the model gets better, the value generated out of it gets better."
+    },
+    {
+      "end_ms": 1719680,
+      "source_event_index": 367,
+      "start_ms": 1715760,
+      "text": "Obviously, who captures the value is still up for debate, but ultimately"
+    },
+    {
+      "end_ms": 1724080,
+      "source_event_index": 368,
+      "start_ms": 1719680,
+      "text": "everyone’s going to raise their prices. Because they can, and it’s super inflationary."
+    },
+    {
+      "end_ms": 1729280,
+      "source_event_index": 369,
+      "start_ms": 1724080,
+      "text": "Especially if the method of regulation is… Right now, so far, it’s just \"don’t release the models.\""
+    },
+    {
+      "end_ms": 1732320,
+      "source_event_index": 370,
+      "start_ms": 1729280,
+      "text": "But more and more, the method of regulation is New York’s banning data centers."
+    },
+    {
+      "end_ms": 1738320,
+      "source_event_index": 371,
+      "start_ms": 1732320,
+      "text": "Texas is holding moratoriums. Ohio’s saying, or at least trying to say, you have to pay everyone’s"
+    },
+    {
+      "end_ms": 1741200,
+      "source_event_index": 372,
+      "start_ms": 1738320,
+      "text": "property tax in a certain radius. These sorts of things are going"
+    },
+    {
+      "end_ms": 1744720,
+      "source_event_index": 373,
+      "start_ms": 1741200,
+      "text": "to decrease supply and increase cost. That’s going to get passed on as well."
+    },
+    {
+      "end_ms": 1750640,
+      "source_event_index": 374,
+      "start_ms": 1744720,
+      "text": "You start to end up in a spot where progress does slow, at least in the external sense,"
+    },
+    {
+      "end_ms": 1754240,
+      "source_event_index": 375,
+      "start_ms": 1751280,
+      "text": "even if the models internally keep getting better and better."
+    },
+    {
+      "end_ms": 1762400,
+      "source_event_index": 376,
+      "start_ms": 1756960,
+      "text": "In a takeoff scenario, why would Anthropic not have their best model six months ahead"
+    },
+    {
+      "end_ms": 1765600,
+      "source_event_index": 377,
+      "start_ms": 1762400,
+      "text": "of what is externally available? Because of safety and regulation,"
+    },
+    {
+      "end_ms": 1771120,
+      "source_event_index": 378,
+      "start_ms": 1765600,
+      "text": "but also the competitive advantage? That six-month difference, if progress"
+    },
+    {
+      "end_ms": 1776800,
+      "source_event_index": 379,
+      "start_ms": 1771120,
+      "text": "accelerates, is actually a bigger differential. So that’s the thing that would cap"
+    },
+    {
+      "end_ms": 1781520,
+      "source_event_index": 380,
+      "start_ms": 1776800,
+      "text": "revenue-per-megawatt gains to much lower growth than we’ve seen in the first half of this year."
+    },
+    {
+      "end_ms": 1784560,
+      "source_event_index": 381,
+      "start_ms": 1781520,
+      "text": "Here’s something I’m very interested in. As these companies go public and they’re"
+    },
+    {
+      "end_ms": 1791280,
+      "source_event_index": 382,
+      "start_ms": 1784560,
+      "text": "accountable to investors, let’s say by the end of next year they have close to 20 gigawatts."
+    },
+    {
+      "end_ms": 1798240,
+      "source_event_index": 383,
+      "start_ms": 1791280,
+      "text": "So 10% of compute is 2 gigawatts. Let’s say they want to go from 60% of compute to"
+    },
+    {
+      "end_ms": 1802160,
+      "source_event_index": 384,
+      "start_ms": 1798240,
+      "text": "training to 70% of compute to training. And their investors are like, \"Well,"
+    },
+    {
+      "end_ms": 1806080,
+      "source_event_index": 385,
+      "start_ms": 1802160,
+      "text": "if you’re going to be able to generate $100 billion per gigawatt, you’re basically saying"
+    },
+    {
+      "end_ms": 1811440,
+      "source_event_index": 386,
+      "start_ms": 1806080,
+      "text": "no to $200 billion of revenue in order to increase your training compute.\""
+    },
+    {
+      "end_ms": 1814720,
+      "source_event_index": 387,
+      "start_ms": 1811440,
+      "text": "So investors are like, \"What the fuck? You’re already spending so much on training."
+    },
+    {
+      "end_ms": 1819840,
+      "source_event_index": 388,
+      "start_ms": 1814720,
+      "text": "Why are you spending even more on training?\" As a public company, what do you think would"
+    },
+    {
+      "end_ms": 1824240,
+      "source_event_index": 389,
+      "start_ms": 1819840,
+      "text": "happen if they’re just like, \"No, we will keep increasing the share of compute we spend on"
+    },
+    {
+      "end_ms": 1830640,
+      "source_event_index": 390,
+      "start_ms": 1824240,
+      "text": "training to offset the increase in revenue that each gigawatt of compute is giving us\"?"
+    },
+    {
+      "end_ms": 1835440,
+      "source_event_index": 391,
+      "start_ms": 1831520,
+      "text": "This is what I personally believe. The labs are going to allocate less and"
+    },
+    {
+      "end_ms": 1838880,
+      "source_event_index": 392,
+      "start_ms": 1835440,
+      "text": "less compute to inference over time. I think that’s very non-consensus."
+    },
+    {
+      "end_ms": 1844240,
+      "source_event_index": 393,
+      "start_ms": 1840400,
+      "text": "The standard belief of most people is, \"Oh, most compute will go to inference.\""
+    },
+    {
+      "end_ms": 1850880,
+      "source_event_index": 394,
+      "start_ms": 1845040,
+      "text": "Most of it will go to forward passes for training, not necessarily revenue-generating inference."
+    },
+    {
+      "end_ms": 1858560,
+      "source_event_index": 395,
+      "start_ms": 1851440,
+      "text": "Ultimately, if they’re generating $30-40 million per megawatt today, you allocate 40% to inference."
+    },
+    {
+      "end_ms": 1864880,
+      "source_event_index": 396,
+      "start_ms": 1858560,
+      "text": "If you now get to generating $60-70 million per megawatt, do you still allocate 40% to"
+    },
+    {
+      "end_ms": 1870400,
+      "source_event_index": 397,
+      "start_ms": 1864880,
+      "text": "inference and generate all this profit and then do dividends and share buybacks?"
+    },
+    {
+      "end_ms": 1874560,
+      "source_event_index": 398,
+      "start_ms": 1870400,
+      "text": "Or do you go build AGI? I think the obvious answer"
+    },
+    {
+      "end_ms": 1880720,
+      "source_event_index": 399,
+      "start_ms": 1874560,
+      "text": "from Anthropic and OpenAI, not just at the executive level but also their board, is to go"
+    },
+    {
+      "end_ms": 1888240,
+      "source_event_index": 400,
+      "start_ms": 1880720,
+      "text": "build AGI, because it’s way more profitable. So ultimately you’re going to see them ratchet up"
+    },
+    {
+      "end_ms": 1893680,
+      "source_event_index": 401,
+      "start_ms": 1888240,
+      "text": "their percentage of compute dedicated to training— While each increment of compute is getting"
+    },
+    {
+      "end_ms": 1897280,
+      "source_event_index": 402,
+      "start_ms": 1893680,
+      "text": "more and more profit-generating if they had dedicated it to inference."
+    },
+    {
+      "end_ms": 1906240,
+      "source_event_index": 403,
+      "start_ms": 1897280,
+      "text": "Right. The whole point is, if I’m selling tokens… Is OpenAI releasing Ultrafast mode for just"
+    },
+    {
+      "end_ms": 1910560,
+      "source_event_index": 404,
+      "start_ms": 1906240,
+      "text": "external, or are they doing it internally too? It turns out, no. Actually, I’m going to allocate"
+    },
+    {
+      "end_ms": 1915600,
+      "source_event_index": 405,
+      "start_ms": 1910560,
+      "text": "it to internal and external, because the internal value I’m generating from"
+    },
+    {
+      "end_ms": 1921520,
+      "source_event_index": 406,
+      "start_ms": 1915600,
+      "text": "super-fast AI or the best AI model is way more than what someone external is."
+    },
+    {
+      "end_ms": 1925280,
+      "source_event_index": 407,
+      "start_ms": 1921520,
+      "text": "So ultimately, sure, I could generate $100 million per megawatt, but if I"
+    },
+    {
+      "end_ms": 1928640,
+      "source_event_index": 408,
+      "start_ms": 1925280,
+      "text": "turn that towards AI research, what is the incremental progress that I get?"
+    },
+    {
+      "end_ms": 1932960,
+      "source_event_index": 409,
+      "start_ms": 1929280,
+      "text": "What does that do towards my future earnings potential, the discounted"
+    },
+    {
+      "end_ms": 1937760,
+      "source_event_index": 410,
+      "start_ms": 1932960,
+      "text": "cash flows of whatever the hell I’ve done? They’re not going through that calculation,"
+    },
+    {
+      "end_ms": 1942640,
+      "source_event_index": 411,
+      "start_ms": 1937760,
+      "text": "but ultimately it makes more sense to dedicate more and more compute internally."
+    },
+    {
+      "end_ms": 1947600,
+      "source_event_index": 412,
+      "start_ms": 1942640,
+      "text": "The only reason to have inference compute be so large is so you can grow your training fleet."
+    },
+    {
+      "end_ms": 1951920,
+      "source_event_index": 413,
+      "start_ms": 1948400,
+      "text": "I think this is an interesting economics question that I feel we can have the models digest."
+    },
+    {
+      "end_ms": 1955760,
+      "source_event_index": 414,
+      "start_ms": 1953120,
+      "text": "What would have to be true about a world where they reduce the fraction"
+    },
+    {
+      "end_ms": 1958320,
+      "source_event_index": 415,
+      "start_ms": 1955760,
+      "text": "of compute spent on inference? I think they have been over"
+    },
+    {
+      "end_ms": 1963600,
+      "source_event_index": 416,
+      "start_ms": 1958320,
+      "text": "the last three months already. I think at parts of this year,"
+    },
+    {
+      "end_ms": 1968000,
+      "source_event_index": 417,
+      "start_ms": 1963600,
+      "text": "they were increasing the fraction of compute… Let’s just take it month by month."
+    },
+    {
+      "end_ms": 1971360,
+      "source_event_index": 418,
+      "start_ms": 1968000,
+      "text": "You would agree that every month, Anthropic has added more compute than the prior month."
+    },
+    {
+      "end_ms": 1974960,
+      "source_event_index": 419,
+      "start_ms": 1971360,
+      "text": "There might be some noise when they sign a SpaceX deal or whatever, but in general,"
+    },
+    {
+      "end_ms": 1979520,
+      "source_event_index": 420,
+      "start_ms": 1974960,
+      "text": "the amount of compute is a curve up. So in January, they added less compute than"
+    },
+    {
+      "end_ms": 1985360,
+      "source_event_index": 421,
+      "start_ms": 1979520,
+      "text": "December, and yet their revenue adds skyrocketed. Then they’ve sort of plateaued."
+    },
+    {
+      "end_ms": 1990080,
+      "source_event_index": 422,
+      "start_ms": 1986400,
+      "text": "They’re not adding $25 billion of ARR every month now."
+    },
+    {
+      "end_ms": 1994080,
+      "source_event_index": 423,
+      "start_ms": 1990800,
+      "text": "That means the marginal megawatt they’re getting is going as a higher percentage"
+    },
+    {
+      "end_ms": 1998000,
+      "source_event_index": 424,
+      "start_ms": 1994080,
+      "text": "to R&D than it is to inference. So they are factually increasing"
+    },
+    {
+      "end_ms": 2004320,
+      "source_event_index": 425,
+      "start_ms": 1998000,
+      "text": "their compute towards R&D today. I think this is self-evident"
+    },
+    {
+      "end_ms": 2009600,
+      "source_event_index": 426,
+      "start_ms": 2004320,
+      "text": "if you look enough at what they’re doing. If I look at the numbers you said for how"
+    },
+    {
+      "end_ms": 2012320,
+      "source_event_index": 427,
+      "start_ms": 2009600,
+      "text": "fast world compute grows, here are some things I want to understand."
+    },
+    {
+      "end_ms": 2016720,
+      "source_event_index": 428,
+      "start_ms": 2012320,
+      "text": "It seems like if I add up the numbers you just said, it would be over 200 gigawatts of world"
+    },
+    {
+      "end_ms": 2019680,
+      "source_event_index": 429,
+      "start_ms": 2016720,
+      "text": "compute by the end of 2028, right? Yeah, globally."
+    },
+    {
+      "end_ms": 2025920,
+      "source_event_index": 430,
+      "start_ms": 2019680,
+      "text": "Okay. How fast can that continue growing, global AI compute after 2028?"
+    },
+    {
+      "end_ms": 2033600,
+      "source_event_index": 431,
+      "start_ms": 2025920,
+      "text": "30 this year, 50 next year, 70 in ’28. ’29 should be on the order of 90-100."
+    },
+    {
+      "end_ms": 2038000,
+      "source_event_index": 432,
+      "start_ms": 2033600,
+      "text": "Then just 100 more every single year or something? I think the slope can continue to go upwards."
+    },
+    {
+      "end_ms": 2040560,
+      "source_event_index": 433,
+      "start_ms": 2038000,
+      "text": "It’s hard to predict anything more than four years out."
+    },
+    {
+      "end_ms": 2048960,
+      "source_event_index": 434,
+      "start_ms": 2042000,
+      "text": "Who knows whether we’re in an RSI regime, or when is the world economy growing at 10% a year?"
+    },
+    {
+      "end_ms": 2055520,
+      "source_event_index": 435,
+      "start_ms": 2048960,
+      "text": "Because if you’re at 100+ gigawatts a year, you’re at absurd GDP growth."
+    },
+    {
+      "end_ms": 2061920,
+      "source_event_index": 436,
+      "start_ms": 2055520,
+      "text": "If you think there’s 200 gigawatts globally in 2028, how much is in China by that point?"
+    },
+    {
+      "end_ms": 2066080,
+      "source_event_index": 437,
+      "start_ms": 2062960,
+      "text": "How does Chinese compute continue increasing through this whole trend?"
+    },
+    {
+      "end_ms": 2072080,
+      "source_event_index": 438,
+      "start_ms": 2066080,
+      "text": "Because if the RSI stuff kicks off in the West before China has a large"
+    },
+    {
+      "end_ms": 2074960,
+      "source_event_index": 439,
+      "start_ms": 2072080,
+      "text": "amount of compute, maybe we’re living in a different world than when it doesn’t."
+    },
+    {
+      "end_ms": 2085440,
+      "source_event_index": 440,
+      "start_ms": 2077600,
+      "text": "If we level-set back to 2022, the US was adding about 45-50% of the world’s compute."
+    },
+    {
+      "end_ms": 2088160,
+      "source_event_index": 441,
+      "start_ms": 2085440,
+      "text": "China was adding about 30-35%."
+    },
+    {
+      "end_ms": 2092000,
+      "source_event_index": 442,
+      "start_ms": 2089360,
+      "text": "The rest was being taken up by the rest of the world."
+    },
+    {
+      "end_ms": 2098400,
+      "source_event_index": 443,
+      "start_ms": 2092000,
+      "text": "Since 2022, we’ve had big regulations against China and a dramatic increase in America."
+    },
+    {
+      "end_ms": 2102080,
+      "source_event_index": 444,
+      "start_ms": 2098400,
+      "text": "So today, 70% of watts are being deployed in America."
+    },
+    {
+      "end_ms": 2109040,
+      "source_event_index": 445,
+      "start_ms": 2102960,
+      "text": "China is really a very small number. Sub-10% of watts being deployed for data"
+    },
+    {
+      "end_ms": 2113200,
+      "source_event_index": 446,
+      "start_ms": 2109040,
+      "text": "center AI compute is in China. As we step forward,"
+    },
+    {
+      "end_ms": 2118400,
+      "source_event_index": 447,
+      "start_ms": 2113200,
+      "text": "they’re still at a very small number. Their domestic production is quite small."
+    },
+    {
+      "end_ms": 2125280,
+      "source_event_index": 448,
+      "start_ms": 2118400,
+      "text": "Their purchasing from Nvidia is still quite small, and a lot of that ends up in"
+    },
+    {
+      "end_ms": 2131280,
+      "source_event_index": 449,
+      "start_ms": 2125920,
+      "text": "other places as well, Malaysia or what have you. So ultimately, China domestically still continues"
+    },
+    {
+      "end_ms": 2137200,
+      "source_event_index": 450,
+      "start_ms": 2131280,
+      "text": "to have sub-10% of incremental new compute. In 2028 it might start to inflect up, I think."
+    },
+    {
+      "end_ms": 2141680,
+      "source_event_index": 451,
+      "start_ms": 2137200,
+      "text": "But it’s pretty easy to say China will have 30 gigawatts of AI compute or less."
+    },
+    {
+      "end_ms": 2143520,
+      "source_event_index": 452,
+      "start_ms": 2141680,
+      "text": "By 2028? Yeah, in 2028."
+    },
+    {
+      "end_ms": 2146240,
+      "source_event_index": 453,
+      "start_ms": 2143520,
+      "text": "Okay. And then how fast does their hockey stick go up?"
+    },
+    {
+      "end_ms": 2151760,
+      "source_event_index": 454,
+      "start_ms": 2146240,
+      "text": "I do think in 2028, they have a big uplift in what compute they’re able to deploy."
+    },
+    {
+      "end_ms": 2159200,
+      "source_event_index": 455,
+      "start_ms": 2151760,
+      "text": "In 2026, they’re still mostly relying on a lot of the smuggled chips, a lot of the chips that"
+    },
+    {
+      "end_ms": 2164560,
+      "source_event_index": 456,
+      "start_ms": 2159200,
+      "text": "TSMC made for companies that they thought weren’t Huawei but ended up being Huawei,"
+    },
+    {
+      "end_ms": 2170080,
+      "source_event_index": 457,
+      "start_ms": 2164560,
+      "text": "or a lot of HBM that Samsung is shipping. But in ’27, fabs start to go up."
+    },
+    {
+      "end_ms": 2175760,
+      "source_event_index": 458,
+      "start_ms": 2170080,
+      "text": "In ’28 especially, fabs start to go up from SMIC and CXMT and such, where domestic production is"
+    },
+    {
+      "end_ms": 2181040,
+      "source_event_index": 459,
+      "start_ms": 2175760,
+      "text": "actually reaching many millions of units a year. Now they’re incrementally adding 5-10 gigawatts,"
+    },
+    {
+      "end_ms": 2187120,
+      "source_event_index": 460,
+      "start_ms": 2181040,
+      "text": "in just 2028, of domestically produced chips. Those chips are definitely worse than the"
+    },
+    {
+      "end_ms": 2192640,
+      "source_event_index": 461,
+      "start_ms": 2187120,
+      "text": "chips that Nvidia will have in ’28, or Google will have in ’28, or OpenAI will have in 2028."
+    },
+    {
+      "end_ms": 2196160,
+      "source_event_index": 462,
+      "start_ms": 2192640,
+      "text": "So even the gigawatt number overstates things, you’re saying."
+    },
+    {
+      "end_ms": 2199360,
+      "source_event_index": 463,
+      "start_ms": 2196160,
+      "text": "It’s 30 gigawatts, but it’s really much worse chips."
+    },
+    {
+      "end_ms": 2205120,
+      "source_event_index": 464,
+      "start_ms": 2199360,
+      "text": "But if you think the world is going to add 100 gigawatts the following year — I know"
+    },
+    {
+      "end_ms": 2210640,
+      "source_event_index": 465,
+      "start_ms": 2205120,
+      "text": "you said you can’t really say that far out — how much is China able to add the subsequent year?"
+    },
+    {
+      "end_ms": 2214400,
+      "source_event_index": 466,
+      "start_ms": 2210640,
+      "text": "Basically, I want to know: do they just hockey stick at the point at which they are able to"
+    },
+    {
+      "end_ms": 2221360,
+      "source_event_index": 467,
+      "start_ms": 2214400,
+      "text": "start shipping large amounts of compute, or is it still going to be less than US plus allies?"
+    },
+    {
+      "end_ms": 2228480,
+      "source_event_index": 468,
+      "start_ms": 2221360,
+      "text": "There’s a lot left to whether or not the US passes the MATCH Act, whether or not tools continue to"
+    },
+    {
+      "end_ms": 2233840,
+      "source_event_index": 469,
+      "start_ms": 2228480,
+      "text": "get export-controlled, how fast China can build their new equipment that they’re starting to be"
+    },
+    {
+      "end_ms": 2238720,
+      "source_event_index": 470,
+      "start_ms": 2233840,
+      "text": "able to produce domestically. But ultimately,"
+    },
+    {
+      "end_ms": 2243680,
+      "source_event_index": 471,
+      "start_ms": 2239360,
+      "text": "China is definitely going to hockey stick. If there’s anything China’s really good at,"
+    },
+    {
+      "end_ms": 2252320,
+      "source_event_index": 472,
+      "start_ms": 2243680,
+      "text": "it’s scaling manufacturing really, really quickly. I imagine China will start to be able to extract"
+    },
+    {
+      "end_ms": 2256560,
+      "source_event_index": 473,
+      "start_ms": 2252320,
+      "text": "more and more purchasing of even foreign chips into domestic China,"
+    },
+    {
+      "end_ms": 2262000,
+      "source_event_index": 474,
+      "start_ms": 2256560,
+      "text": "or at least close the gap in what the US is allowing Nvidia to sell them, or what have you."
+    },
+    {
+      "end_ms": 2268800,
+      "source_event_index": 475,
+      "start_ms": 2262000,
+      "text": "But do you think China could be adding 50 incremental gigawatts in 2029?"
+    },
+    {
+      "end_ms": 2274960,
+      "source_event_index": 476,
+      "start_ms": 2268800,
+      "text": "I think that’s completely reasonable. Part of that could also be purchased from foreign."
+    },
+    {
+      "end_ms": 2280080,
+      "source_event_index": 477,
+      "start_ms": 2276080,
+      "text": "But yeah, I think it’s completely reasonable that China in 2029 can do 50 gigs."
+    },
+    {
+      "end_ms": 2283200,
+      "source_event_index": 478,
+      "start_ms": 2280080,
+      "text": "But if most of those are domestic chips, there is some factor there"
+    },
+    {
+      "end_ms": 2290160,
+      "source_event_index": 479,
+      "start_ms": 2283200,
+      "text": "where that 50 gigawatts is really worth as much as 20 gigawatts from American chips."
+    },
+    {
+      "end_ms": 2296560,
+      "source_event_index": 480,
+      "start_ms": 2290160,
+      "text": "Right. So you’re actually projecting a world where maybe the leading lab in 2028 has more"
+    },
+    {
+      "end_ms": 2305040,
+      "source_event_index": 481,
+      "start_ms": 2296560,
+      "text": "compute than all of China will have in ’29 or even ’30, if you weighted gigawatts by their quality."
+    },
+    {
+      "end_ms": 2308080,
+      "source_event_index": 482,
+      "start_ms": 2305040,
+      "text": "Implying that there’s nothing done to slow down the US labs."
+    },
+    {
+      "end_ms": 2310400,
+      "source_event_index": 483,
+      "start_ms": 2308080,
+      "text": "That’s right. But clearly the government"
+    },
+    {
+      "end_ms": 2314560,
+      "source_event_index": 484,
+      "start_ms": 2310400,
+      "text": "and politicians are starting to do that. Whereas China’s not going to slow down AI."
+    },
+    {
+      "end_ms": 2316400,
+      "source_event_index": 485,
+      "start_ms": 2314560,
+      "text": "In fact, the only thing they’re going to do is accelerate it."
+    },
+    {
+      "end_ms": 2322160,
+      "source_event_index": 486,
+      "start_ms": 2317280,
+      "text": "Honestly, when I interviewed Jensen and asked about export controls — I am a"
+    },
+    {
+      "end_ms": 2326640,
+      "source_event_index": 487,
+      "start_ms": 2322160,
+      "text": "libertarian person — I wasn’t genuinely sure what I thought about this issue."
+    },
+    {
+      "end_ms": 2331360,
+      "source_event_index": 488,
+      "start_ms": 2326640,
+      "text": "I was steelmanning the opposite view from what he has, because I"
+    },
+    {
+      "end_ms": 2334960,
+      "source_event_index": 489,
+      "start_ms": 2331360,
+      "text": "think it’s important to hash out ideas. I'm like, \"Yeah, maybe there’s a world"
+    },
+    {
+      "end_ms": 2338320,
+      "source_event_index": 490,
+      "start_ms": 2334960,
+      "text": "where if we just cooperated with China, it would be better for us, especially since they control"
+    },
+    {
+      "end_ms": 2341840,
+      "source_event_index": 491,
+      "start_ms": 2338320,
+      "text": "so much of the supply chain and the other things that will be needed for robotics.\""
+    },
+    {
+      "end_ms": 2346720,
+      "source_event_index": 492,
+      "start_ms": 2343520,
+      "text": "But I didn’t realize the compute situation was as fucked as you’re saying."
+    },
+    {
+      "end_ms": 2350800,
+      "source_event_index": 493,
+      "start_ms": 2346720,
+      "text": "Actually, the export controls do seem to have really… If they ship the amount that you’re"
+    },
+    {
+      "end_ms": 2354320,
+      "source_event_index": 494,
+      "start_ms": 2350800,
+      "text": "saying, that’s a huge difference. By the time we have automated coder"
+    },
+    {
+      "end_ms": 2359200,
+      "source_event_index": 495,
+      "start_ms": 2354320,
+      "text": "and are getting into automated researcher, China is way far behind on the compute stock."
+    },
+    {
+      "end_ms": 2362480,
+      "source_event_index": 496,
+      "start_ms": 2360000,
+      "text": "If that ends up being the case, that would have worked."
+    },
+    {
+      "end_ms": 2370160,
+      "source_event_index": 497,
+      "start_ms": 2362480,
+      "text": "I think that’s actually a notable success. The only caveat there is that some of it is"
+    },
+    {
+      "end_ms": 2376320,
+      "source_event_index": 498,
+      "start_ms": 2370160,
+      "text": "export controls, but some of it is also just financial systems."
+    },
+    {
+      "end_ms": 2381280,
+      "source_event_index": 499,
+      "start_ms": 2376320,
+      "text": "American financial systems are more willing to YOLO into startups than Chinese financial systems."
+    },
+    {
+      "end_ms": 2384160,
+      "source_event_index": 500,
+      "start_ms": 2381280,
+      "text": "But once Chinese financial systems choose an industry to focus on,"
+    },
+    {
+      "end_ms": 2388480,
+      "source_event_index": 501,
+      "start_ms": 2384160,
+      "text": "they’ll subsidize it a hell of a lot more. So the Chinese semiconductor industry has"
+    },
+    {
+      "end_ms": 2392560,
+      "source_event_index": 502,
+      "start_ms": 2388480,
+      "text": "significantly more subsidies than the rest of the world’s semiconductor industries combined."
+    },
+    {
+      "end_ms": 2400320,
+      "source_event_index": 503,
+      "start_ms": 2394960,
+      "text": "If takeoff is not as fast as you’re implying but actually takes longer, then ultimately China will"
+    },
+    {
+      "end_ms": 2404880,
+      "source_event_index": 504,
+      "start_ms": 2400320,
+      "text": "catch up drastically on the semiconductor side, which then is compute at some point."
+    },
+    {
+      "end_ms": 2411920,
+      "source_event_index": 505,
+      "start_ms": 2404880,
+      "text": "The other noteworthy aspect of this is that Chinese companies today are not that far behind"
+    },
+    {
+      "end_ms": 2417680,
+      "source_event_index": 506,
+      "start_ms": 2411920,
+      "text": "in AI models, at least perceivably by the public, relative to the amount of compute they have."
+    },
+    {
+      "end_ms": 2422960,
+      "source_event_index": 507,
+      "start_ms": 2417680,
+      "text": "The leading Chinese labs have 100-200 megawatts total of compute at most,"
+    },
+    {
+      "end_ms": 2429680,
+      "source_event_index": 508,
+      "start_ms": 2423680,
+      "text": "ByteDance Seed being the one outlier where they have significantly more than that."
+    },
+    {
+      "end_ms": 2434080,
+      "source_event_index": 509,
+      "start_ms": 2429680,
+      "text": "But Kimi is not running a gigawatt or anywhere close to it."
+    },
+    {
+      "end_ms": 2438320,
+      "source_event_index": 510,
+      "start_ms": 2435200,
+      "text": "Whereas Anthropic is more than 5 gigawatts by the end of the year."
+    },
+    {
+      "end_ms": 2444000,
+      "source_event_index": 511,
+      "start_ms": 2440480,
+      "text": "So the question is, does it matter?"
+    },
+    {
+      "end_ms": 2447520,
+      "source_event_index": 512,
+      "start_ms": 2444000,
+      "text": "I think right now this difference in compute doesn’t matter that much."
+    },
+    {
+      "end_ms": 2454800,
+      "source_event_index": 513,
+      "start_ms": 2450720,
+      "text": "When we break down the compute ratio or budget of a lab,"
+    },
+    {
+      "end_ms": 2463120,
+      "source_event_index": 514,
+      "start_ms": 2458000,
+      "text": "so far it’s been 60% training, 40% inference. But that training gets broken down further."
+    },
+    {
+      "end_ms": 2468400,
+      "source_event_index": 515,
+      "start_ms": 2463760,
+      "text": "Actually 50% of the compute is research, 10% of the compute"
+    },
+    {
+      "end_ms": 2472880,
+      "source_event_index": 516,
+      "start_ms": 2468400,
+      "text": "is development, and then 40% is inference. What I mean by research and development is:"
+    },
+    {
+      "end_ms": 2478000,
+      "source_event_index": 517,
+      "start_ms": 2473440,
+      "text": "researchers are generating ideas, testing new architectures, testing new data mixes,"
+    },
+    {
+      "end_ms": 2482480,
+      "source_event_index": 518,
+      "start_ms": 2478000,
+      "text": "testing new hyperparameters, new attention techniques, blah, blah, blah."
+    },
+    {
+      "end_ms": 2489120,
+      "source_event_index": 519,
+      "start_ms": 2482480,
+      "text": "But ultimately when they do the training run, when Anthropic trains Mythos, it’s sub-200 megawatts."
+    },
+    {
+      "end_ms": 2492480,
+      "source_event_index": 520,
+      "start_ms": 2489120,
+      "text": "The pre-train or the whole thing? The pre-train. It’s sub-200 megawatts"
+    },
+    {
+      "end_ms": 2496720,
+      "source_event_index": 521,
+      "start_ms": 2492480,
+      "text": "for, call it, two months. Then the RL is even less."
+    },
+    {
+      "end_ms": 2499120,
+      "source_event_index": 522,
+      "start_ms": 2496720,
+      "text": "You think the RL was less compute than the pre-train?"
+    },
+    {
+      "end_ms": 2503520,
+      "source_event_index": 523,
+      "start_ms": 2499120,
+      "text": "At least in terms of single site of pre-training, yeah."
+    },
+    {
+      "end_ms": 2509680,
+      "source_event_index": 524,
+      "start_ms": 2503520,
+      "text": "But total compute was probably higher, right? But it’s sequential. At most, the most they ever"
+    },
+    {
+      "end_ms": 2515440,
+      "source_event_index": 525,
+      "start_ms": 2509680,
+      "text": "used at one point in time was maybe 200 megawatts. In reality they had multiple gigawatts,"
+    },
+    {
+      "end_ms": 2519520,
+      "source_event_index": 526,
+      "start_ms": 2515440,
+      "text": "so most of their compute was going to the research, not the development of a model."
+    },
+    {
+      "end_ms": 2523280,
+      "source_event_index": 527,
+      "start_ms": 2519520,
+      "text": "There’s reasons for this. It’s hard to coordinate all these clusters."
+    },
+    {
+      "end_ms": 2528000,
+      "source_event_index": 528,
+      "start_ms": 2523280,
+      "text": "It’s hard to co-locate all of them. It’s hard to do multi-site training."
+    },
+    {
+      "end_ms": 2531920,
+      "source_event_index": 529,
+      "start_ms": 2528000,
+      "text": "It’s hard to do RL. Generating even more rollouts"
+    },
+    {
+      "end_ms": 2536800,
+      "source_event_index": 530,
+      "start_ms": 2531920,
+      "text": "during RL does not necessarily make it better. There’s all sorts of reasons why you may not be"
+    },
+    {
+      "end_ms": 2543280,
+      "source_event_index": 531,
+      "start_ms": 2536800,
+      "text": "able to leverage all two gigawatts that you have onto training."
+    },
+    {
+      "end_ms": 2548640,
+      "source_event_index": 532,
+      "start_ms": 2543280,
+      "text": "Actually, I can only leverage 200 megawatts. As we get further and further down automated"
+    },
+    {
+      "end_ms": 2554160,
+      "source_event_index": 533,
+      "start_ms": 2548640,
+      "text": "coding and automated researcher, I actually expect the percentage of the compute budget"
+    },
+    {
+      "end_ms": 2562480,
+      "source_event_index": 534,
+      "start_ms": 2554160,
+      "text": "that goes to research versus training to become a lot more fuzzy, or even higher for training."
+    },
+    {
+      "end_ms": 2565840,
+      "source_event_index": 535,
+      "start_ms": 2562480,
+      "text": "Also things like continual learning. All of these things start to mean that more"
+    },
+    {
+      "end_ms": 2571040,
+      "source_event_index": 536,
+      "start_ms": 2565840,
+      "text": "and more is actually going to training the model. If you end up in a world where you’re doing 100"
+    },
+    {
+      "end_ms": 2577440,
+      "source_event_index": 537,
+      "start_ms": 2571040,
+      "text": "gigawatts a year, at current prices, that would be $5 trillion of CapEx every single year."
+    },
+    {
+      "end_ms": 2581280,
+      "source_event_index": 538,
+      "start_ms": 2577440,
+      "text": "Then stack on the fact that you have to build the power plants way before then."
+    },
+    {
+      "end_ms": 2583520,
+      "source_event_index": 539,
+      "start_ms": 2581280,
+      "text": "It’s also a 30-year asset. You stack on the fact that the"
+    },
+    {
+      "end_ms": 2587600,
+      "source_event_index": 540,
+      "start_ms": 2583520,
+      "text": "data centers are a 15-, 20-year asset, and you have to build that then too."
+    },
+    {
+      "end_ms": 2591440,
+      "source_event_index": 541,
+      "start_ms": 2587600,
+      "text": "So the $5 trillion, once you account for future years’ growth, is actually going"
+    },
+    {
+      "end_ms": 2599040,
+      "source_event_index": 542,
+      "start_ms": 2591440,
+      "text": "to be more like $7 or $10 trillion of CapEx. Wait, I didn’t understand. That doesn’t include"
+    },
+    {
+      "end_ms": 2604800,
+      "source_event_index": 543,
+      "start_ms": 2599040,
+      "text": "the fact that there’s not the infrastructure for the power generation in the data center itself."
+    },
+    {
+      "end_ms": 2614080,
+      "source_event_index": 544,
+      "start_ms": 2604800,
+      "text": "Right, exactly. When you talk about AI CapEx, people are saying $40, $50 billion."
+    },
+    {
+      "end_ms": 2618880,
+      "source_event_index": 545,
+      "start_ms": 2614080,
+      "text": "But that’s really just the critical IT: the servers, the networking,"
+    },
+    {
+      "end_ms": 2622800,
+      "source_event_index": 546,
+      "start_ms": 2618880,
+      "text": "the fiber, the transceivers, optical communications, all this sort of stuff."
+    },
+    {
+      "end_ms": 2627200,
+      "source_event_index": 547,
+      "start_ms": 2622800,
+      "text": "It doesn’t account for the data center itself or the power plants themselves,"
+    },
+    {
+      "end_ms": 2632160,
+      "source_event_index": 548,
+      "start_ms": 2627200,
+      "text": "which are being built ahead of time. If I’m building 100 gigawatts this"
+    },
+    {
+      "end_ms": 2636000,
+      "source_event_index": 549,
+      "start_ms": 2632160,
+      "text": "year and 150 gigawatts next year, then all of the buildings for that"
+    },
+    {
+      "end_ms": 2640800,
+      "source_event_index": 550,
+      "start_ms": 2636000,
+      "text": "150 gigawatts need to be built in CapEx this year. If I’m building 200 gigawatts the year after that,"
+    },
+    {
+      "end_ms": 2644640,
+      "source_event_index": 551,
+      "start_ms": 2640800,
+      "text": "all those power plants need to be spent… You have to buy the turbines this year."
+    },
+    {
+      "end_ms": 2650560,
+      "source_event_index": 552,
+      "start_ms": 2644640,
+      "text": "So actually, it’s much bigger than even $5 trillion if you’re building 100 gigawatts."
+    },
+    {
+      "end_ms": 2659600,
+      "source_event_index": 553,
+      "start_ms": 2650560,
+      "text": "Right. Very plausibly, incremental CapEx every year is getting close to $10 trillion"
+    },
+    {
+      "end_ms": 2665360,
+      "source_event_index": 554,
+      "start_ms": 2660160,
+      "text": "by the end of 2030, which is going to be close to a tenth of the world economy."
+    },
+    {
+      "end_ms": 2670320,
+      "source_event_index": 555,
+      "start_ms": 2666560,
+      "text": "If all of it’s going up in the US… The US economy will have grown as well."
+    },
+    {
+      "end_ms": 2672880,
+      "source_event_index": 556,
+      "start_ms": 2670320,
+      "text": "But still, at the current size of the US economy,"
+    },
+    {
+      "end_ms": 2677280,
+      "source_event_index": 557,
+      "start_ms": 2672880,
+      "text": "it’ll be like a third to a quarter of the US economy just going towards data centers."
+    },
+    {
+      "end_ms": 2680880,
+      "source_event_index": 558,
+      "start_ms": 2677280,
+      "text": "As I say that out loud, I’m like, \"Maybe you’re right and we just won’t allow it,"
+    },
+    {
+      "end_ms": 2684240,
+      "source_event_index": 559,
+      "start_ms": 2680880,
+      "text": "and that’s the reason this doesn’t happen.\" Because for this exponential to continue,"
+    },
+    {
+      "end_ms": 2689040,
+      "source_event_index": 560,
+      "start_ms": 2685360,
+      "text": "a quarter of America’s economy is just building data centers."
+    },
+    {
+      "end_ms": 2692880,
+      "source_event_index": 561,
+      "start_ms": 2689040,
+      "text": "I believe in capitalism and reallocation of resources towards the most profitable thing."
+    },
+    {
+      "end_ms": 2699520,
+      "source_event_index": 562,
+      "start_ms": 2692880,
+      "text": "But at the same time, politics exist, credit markets exist, and capital markets exist."
+    },
+    {
+      "end_ms": 2707440,
+      "source_event_index": 563,
+      "start_ms": 2699520,
+      "text": "So to enable, let’s say, that 100 gigawatts by 2030… Or let’s even pare it down to 2028, where"
+    },
+    {
+      "end_ms": 2715040,
+      "source_event_index": 564,
+      "start_ms": 2707440,
+      "text": "it’s like $3 or $4 trillion of CapEx across all of these items: over $2.5 trillion towards IT CapEx,"
+    },
+    {
+      "end_ms": 2719760,
+      "source_event_index": 565,
+      "start_ms": 2715040,
+      "text": "and then another $1 to $2 trillion on data center and energy, and all the supply chain downstream,"
+    },
+    {
+      "end_ms": 2724480,
+      "source_event_index": 566,
+      "start_ms": 2719760,
+      "text": "like semiconductors and all that stuff. If you’re at $3 or $4 trillion of CapEx,"
+    },
+    {
+      "end_ms": 2727600,
+      "source_event_index": 567,
+      "start_ms": 2724480,
+      "text": "where does all this cash come from? No one is generating that much cash"
+    },
+    {
+      "end_ms": 2732560,
+      "source_event_index": 568,
+      "start_ms": 2727600,
+      "text": "from the business yet. Hyperscalers funded all"
+    },
+    {
+      "end_ms": 2736320,
+      "source_event_index": 569,
+      "start_ms": 2732560,
+      "text": "of the growth up until now. Google, Microsoft, Amazon,"
+    },
+    {
+      "end_ms": 2740720,
+      "source_event_index": 570,
+      "start_ms": 2736320,
+      "text": "Meta. They funded a huge percentage of it. They were more than half of compute,"
+    },
+    {
+      "end_ms": 2746080,
+      "source_event_index": 571,
+      "start_ms": 2740720,
+      "text": "but they now don’t generate cash. They actually spend everything on CapEx."
+    },
+    {
+      "end_ms": 2748720,
+      "source_event_index": 572,
+      "start_ms": 2746080,
+      "text": "In addition, they raise debt and spend everything on CapEx."
+    },
+    {
+      "end_ms": 2755040,
+      "source_event_index": 573,
+      "start_ms": 2748720,
+      "text": "You’ve seen Meta do it, even Amazon, even Google. Microsoft will be there soon."
+    },
+    {
+      "end_ms": 2760880,
+      "source_event_index": 574,
+      "start_ms": 2755040,
+      "text": "Everyone is raising debt to pay for their CapEx. Now who is the incremental person to pay for this"
+    },
+    {
+      "end_ms": 2764240,
+      "source_event_index": 575,
+      "start_ms": 2760880,
+      "text": "that was not doing it before? In the case of Google, it was"
+    },
+    {
+      "end_ms": 2768080,
+      "source_event_index": 576,
+      "start_ms": 2764240,
+      "text": "pretty simple for them to stop doing buybacks, or Meta stop doing buybacks,"
+    },
+    {
+      "end_ms": 2772320,
+      "source_event_index": 577,
+      "start_ms": 2768080,
+      "text": "and turn around and buy computer infrastructure. That doesn’t have a huge effect on the market,"
+    },
+    {
+      "end_ms": 2777200,
+      "source_event_index": 578,
+      "start_ms": 2772320,
+      "text": "but it does have some effect. But as you step forward to 2028 — where"
+    },
+    {
+      "end_ms": 2781280,
+      "source_event_index": 579,
+      "start_ms": 2777200,
+      "text": "the hyperscalers are now raising hundreds of billions of dollars of debt, and then"
+    },
+    {
+      "end_ms": 2785360,
+      "source_event_index": 580,
+      "start_ms": 2781280,
+      "text": "all of their supply chain is raising hundreds of billions of dollars of debt — who pays for this?"
+    },
+    {
+      "end_ms": 2791360,
+      "source_event_index": 581,
+      "start_ms": 2785360,
+      "text": "So there’s a few different ways. There’s semiconductor companies like Nvidia"
+    },
+    {
+      "end_ms": 2796880,
+      "source_event_index": 582,
+      "start_ms": 2791360,
+      "text": "and Broadcom and the memory companies turning around and deciding to fund some of this CapEx."
+    },
+    {
+      "end_ms": 2802000,
+      "source_event_index": 583,
+      "start_ms": 2796880,
+      "text": "There’s the traditional infrastructure investors who are gathering capital"
+    },
+    {
+      "end_ms": 2805600,
+      "source_event_index": 584,
+      "start_ms": 2802000,
+      "text": "and investing in infrastructure. Instead of bridges, it’s data centers."
+    },
+    {
+      "end_ms": 2811760,
+      "source_event_index": 585,
+      "start_ms": 2806160,
+      "text": "Then lastly, there’s everyone in the economy who’s realizing, \"Maybe I shouldn’t buy a home,"
+    },
+    {
+      "end_ms": 2816000,
+      "source_event_index": 586,
+      "start_ms": 2811760,
+      "text": "or maybe I shouldn’t invest in credit that’s helping people buy homes,"
+    },
+    {
+      "end_ms": 2820400,
+      "source_event_index": 587,
+      "start_ms": 2816000,
+      "text": "or maybe I shouldn’t buy government debt. I should just buy hyperscaler debt,"
+    },
+    {
+      "end_ms": 2823760,
+      "source_event_index": 588,
+      "start_ms": 2820400,
+      "text": "or I should buy this data center’s debt, or I should buy Anthropic’s debt."
+    },
+    {
+      "end_ms": 2830640,
+      "source_event_index": 589,
+      "start_ms": 2823760,
+      "text": "Because Anthropic’s willing to pay 20% rates for the incremental"
+    },
+    {
+      "end_ms": 2833440,
+      "source_event_index": 590,
+      "start_ms": 2830640,
+      "text": "billion dollars to build their capacity. Because they know their revenue from it’s"
+    },
+    {
+      "end_ms": 2837200,
+      "source_event_index": 591,
+      "start_ms": 2833440,
+      "text": "going to be huge, and they’re going to pay 20% because it’s still better than renting it from"
+    },
+    {
+      "end_ms": 2841920,
+      "source_event_index": 592,
+      "start_ms": 2837200,
+      "text": "SpaceX for $50 billion a gigawatt.\" So you’ve got all of this contention."
+    },
+    {
+      "end_ms": 2846800,
+      "source_event_index": 593,
+      "start_ms": 2841920,
+      "text": "But if you now do this, the whole world economy is really shifted around."
+    },
+    {
+      "end_ms": 2853040,
+      "source_event_index": 594,
+      "start_ms": 2846800,
+      "text": "Antithesis is a deterministic software testing platform that enables perfect reproducibility."
+    },
+    {
+      "end_ms": 2856960,
+      "source_event_index": 595,
+      "start_ms": 2853040,
+      "text": "It also unlocks some pretty insane approaches to debugging."
+    },
+    {
+      "end_ms": 2862080,
+      "source_event_index": 596,
+      "start_ms": 2856960,
+      "text": "Like time travel. With Antithesis, you can jump to any point in a trajectory and start from there."
+    },
+    {
+      "end_ms": 2866480,
+      "source_event_index": 597,
+      "start_ms": 2862080,
+      "text": "So when there's a crash, you can rewind to the exact moment that something went wrong"
+    },
+    {
+      "end_ms": 2871680,
+      "source_event_index": 598,
+      "start_ms": 2866480,
+      "text": "and freeze the entire system: the application, the database, even the environment itself."
+    },
+    {
+      "end_ms": 2876560,
+      "source_event_index": 599,
+      "start_ms": 2871680,
+      "text": "This lets you do something that would otherwise be impossible, which is to observe every part of"
+    },
+    {
+      "end_ms": 2882480,
+      "source_event_index": 600,
+      "start_ms": 2876560,
+      "text": "a distributed system at the exact same instant. Time travel also allows you to add telemetry and"
+    },
+    {
+      "end_ms": 2886640,
+      "source_event_index": 601,
+      "start_ms": 2882480,
+      "text": "logging to an event that has already happened. For example, you can rewind to five seconds"
+    },
+    {
+      "end_ms": 2890000,
+      "source_event_index": 602,
+      "start_ms": 2886640,
+      "text": "before a crash and decide to capture all the network traffic."
+    },
+    {
+      "end_ms": 2893920,
+      "source_event_index": 603,
+      "start_ms": 2890000,
+      "text": "Most powerfully, Antithesis gives you a live terminal into your system that you"
+    },
+    {
+      "end_ms": 2897920,
+      "source_event_index": 604,
+      "start_ms": 2893920,
+      "text": "can use to perturb anything you wish. Kill a node or disable a feature,"
+    },
+    {
+      "end_ms": 2901520,
+      "source_event_index": 605,
+      "start_ms": 2897920,
+      "text": "then hit play and see what happens. Then go back and try something else."
+    },
+    {
+      "end_ms": 2906000,
+      "source_event_index": 606,
+      "start_ms": 2901520,
+      "text": "In production, you often only get one shot on goal with this sort of destructive analysis."
+    },
+    {
+      "end_ms": 2910960,
+      "source_event_index": 607,
+      "start_ms": 2906000,
+      "text": "If you restart a deadlocked service, for example, the exact deadlock you needed to study disappears."
+    },
+    {
+      "end_ms": 2915040,
+      "source_event_index": 608,
+      "start_ms": 2910960,
+      "text": "But with Antithesis, the original timeline is always reproducible,"
+    },
+    {
+      "end_ms": 2918640,
+      "source_event_index": 609,
+      "start_ms": 2915040,
+      "text": "so you can test as many hypotheses as you need. And if you don't want to do all this time"
+    },
+    {
+      "end_ms": 2922800,
+      "source_event_index": 610,
+      "start_ms": 2918640,
+      "text": "traveling yourself, you can just have your agents do it for you via the Antithesis API."
+    },
+    {
+      "end_ms": 2931440,
+      "source_event_index": 611,
+      "start_ms": 2922800,
+      "text": "Go to antithesis.com/dwarkesh to learn more. You and I have been debating off air for the"
+    },
+    {
+      "end_ms": 2936240,
+      "source_event_index": 612,
+      "start_ms": 2931440,
+      "text": "last few days whether there will be a sovereign debt crisis as a result of AI."
+    },
+    {
+      "end_ms": 2944480,
+      "source_event_index": 613,
+      "start_ms": 2936240,
+      "text": "The logic is this. As we were mentioning, you have a situation where very little investment"
+    },
+    {
+      "end_ms": 2947760,
+      "source_event_index": 614,
+      "start_ms": 2944480,
+      "text": "turns into a lot of money. So the rate of return—"
+    },
+    {
+      "end_ms": 2952480,
+      "source_event_index": 615,
+      "start_ms": 2947760,
+      "text": "What a fucking problem, dude. Oh my God. Can’t believe it."
+    },
+    {
+      "end_ms": 2957120,
+      "source_event_index": 616,
+      "start_ms": 2953280,
+      "text": "No, it is a huge problem for everybody else who can’t turn a little money into a lot of money."
+    },
+    {
+      "end_ms": 2963680,
+      "source_event_index": 617,
+      "start_ms": 2958880,
+      "text": "So the rate of return is incredibly high. Even at the data center level, if you"
+    },
+    {
+      "end_ms": 2969280,
+      "source_event_index": 618,
+      "start_ms": 2964640,
+      "text": "build a data center and you’re trying to get rented out to an Anthropic or an OpenAI for"
+    },
+    {
+      "end_ms": 2973920,
+      "source_event_index": 619,
+      "start_ms": 2969280,
+      "text": "10x what it costs you on a depreciated basis to build it, it’s fucking crazy."
+    },
+    {
+      "end_ms": 2978960,
+      "source_event_index": 620,
+      "start_ms": 2974800,
+      "text": "You turn $1 into $2 or $10 or something at the end of the year."
+    },
+    {
+      "end_ms": 2982720,
+      "source_event_index": 621,
+      "start_ms": 2978960,
+      "text": "That raises the rate of interest higher. Now, if the rate of interest goes higher,"
+    },
+    {
+      "end_ms": 2987440,
+      "source_event_index": 622,
+      "start_ms": 2982720,
+      "text": "and if it does that for the entire economy… People are borrowing more and more money."
+    },
+    {
+      "end_ms": 2991360,
+      "source_event_index": 623,
+      "start_ms": 2987440,
+      "text": "They’re competing against the other lending that the government would’ve done, or that"
+    },
+    {
+      "end_ms": 2995600,
+      "source_event_index": 624,
+      "start_ms": 2991360,
+      "text": "other companies would’ve done, or that you as a consumer or a mortgage buyer would’ve done."
+    },
+    {
+      "end_ms": 2999920,
+      "source_event_index": 625,
+      "start_ms": 2996240,
+      "text": "That’s making it more expensive for everybody else to borrow."
+    },
+    {
+      "end_ms": 3003200,
+      "source_event_index": 626,
+      "start_ms": 2999920,
+      "text": "This has huge implications for tons and tons of people."
+    },
+    {
+      "end_ms": 3009280,
+      "source_event_index": 627,
+      "start_ms": 3003200,
+      "text": "Sorry, I’m going to go on a bit of a monologue here, but we’ve been thinking about this together."
+    },
+    {
+      "end_ms": 3015120,
+      "source_event_index": 628,
+      "start_ms": 3010240,
+      "text": "I think the US will be fine at the end of the day. Because if the data centers are built in America,"
+    },
+    {
+      "end_ms": 3020240,
+      "source_event_index": 629,
+      "start_ms": 3015120,
+      "text": "you can fundamentally just tax the data centers. But the way the current tax system is set up,"
+    },
+    {
+      "end_ms": 3026160,
+      "source_event_index": 630,
+      "start_ms": 3020240,
+      "text": "corporate income is less than 10% of federal revenues. 80%-plus is payroll"
+    },
+    {
+      "end_ms": 3030960,
+      "source_event_index": 631,
+      "start_ms": 3026160,
+      "text": "taxes and income taxes, which, as more and more automation happens, will shrink."
+    },
+    {
+      "end_ms": 3041360,
+      "source_event_index": 632,
+      "start_ms": 3032320,
+      "text": "At the same time, on the spending side, currently 20% of tax revenue spending goes towards servicing"
+    },
+    {
+      "end_ms": 3046720,
+      "source_event_index": 633,
+      "start_ms": 3041360,
+      "text": "the debt, paying interest payments on the debt. Now, a lot of the debt is short duration,"
+    },
+    {
+      "end_ms": 3051120,
+      "source_event_index": 634,
+      "start_ms": 3046720,
+      "text": "so it rolls over every five years. Why are you fucking laughing?"
+    },
+    {
+      "end_ms": 3057520,
+      "source_event_index": 635,
+      "start_ms": 3051120,
+      "text": "Because it’s things you’ve learned in the last month."
+    },
+    {
+      "end_ms": 3060640,
+      "source_event_index": 636,
+      "start_ms": 3057520,
+      "text": "Like it’s any different for you. Like you got a degree in"
+    },
+    {
+      "end_ms": 3067440,
+      "source_event_index": 637,
+      "start_ms": 3060640,
+      "text": "fucking financial economics. I didn't. The internet thinks I’m a beekeeper."
+    },
+    {
+      "end_ms": 3073264,
+      "source_event_index": 638,
+      "start_ms": 3067440,
+      "text": "Few months, few months. This is our business, Dylan."
+    },
+    {
+      "end_ms": 3081440,
+      "source_event_index": 639,
+      "start_ms": 3073264,
+      "text": "I know, I know. Sorry, sorry. Now I’m self-conscious. Fuck."
+    },
+    {
+      "end_ms": 3084000,
+      "source_event_index": 640,
+      "start_ms": 3081440,
+      "text": "No, it’s good. You’re doing good. I just think it’s funny."
+    },
+    {
+      "end_ms": 3090000,
+      "source_event_index": 641,
+      "start_ms": 3084000,
+      "text": "A million people listen to this guy who just learned about debt this month."
+    },
+    {
+      "end_ms": 3101920,
+      "source_event_index": 642,
+      "start_ms": 3094160,
+      "text": "Suppose the interest rates rise 1%. Over a five-year basis, the fraction"
+    },
+    {
+      "end_ms": 3106800,
+      "source_event_index": 643,
+      "start_ms": 3101920,
+      "text": "of tax revenue that goes towards servicing the debt goes from 20% to 25%."
+    },
+    {
+      "end_ms": 3110720,
+      "source_event_index": 644,
+      "start_ms": 3106800,
+      "text": "If it rises 5 percentage points, that would go north of 40%."
+    },
+    {
+      "end_ms": 3114880,
+      "source_event_index": 645,
+      "start_ms": 3110720,
+      "text": "But if you take into account the fact that the government is borrowing $2 trillion every single"
+    },
+    {
+      "end_ms": 3121520,
+      "source_event_index": 646,
+      "start_ms": 3114880,
+      "text": "year, then that goes from 40% to north of 60%. So 60% of tax revenue just goes towards paying"
+    },
+    {
+      "end_ms": 3123440,
+      "source_event_index": 647,
+      "start_ms": 3121520,
+      "text": "interest payments on the debt. Now, I think the US is going to"
+    },
+    {
+      "end_ms": 3127680,
+      "source_event_index": 648,
+      "start_ms": 3123440,
+      "text": "be fine because the tax base will increase if we let data centers get built in America."
+    },
+    {
+      "end_ms": 3131040,
+      "source_event_index": 649,
+      "start_ms": 3128240,
+      "text": "Other countries are absolutely fucked, in my opinion."
+    },
+    {
+      "end_ms": 3136080,
+      "source_event_index": 650,
+      "start_ms": 3131040,
+      "text": "I was just looking at which countries have a lot of debt, have very little tax revenue, and also"
+    },
+    {
+      "end_ms": 3141120,
+      "source_event_index": 651,
+      "start_ms": 3136080,
+      "text": "a lot of their debt is serviced quite often. Those countries, like Pakistan or Nigeria,"
+    },
+    {
+      "end_ms": 3144800,
+      "source_event_index": 652,
+      "start_ms": 3142160,
+      "text": "I think are just going to be very fucked in this new interest-rate regime."
+    },
+    {
+      "end_ms": 3152400,
+      "source_event_index": 653,
+      "start_ms": 3145680,
+      "text": "This crowding-out effect is the reason it’s not YOLO 1 billion gigawatts."
+    },
+    {
+      "end_ms": 3158720,
+      "source_event_index": 654,
+      "start_ms": 3154640,
+      "text": "You’ve got all these industries and countries that use a lot of debt,"
+    },
+    {
+      "end_ms": 3163840,
+      "source_event_index": 655,
+      "start_ms": 3160160,
+      "text": "all these impoverished countries that you mentioned earlier that are just going to default."
+    },
+    {
+      "end_ms": 3168800,
+      "source_event_index": 656,
+      "start_ms": 3163840,
+      "text": "You’ve got consumer packaged goods, all of these companies that make things you see at"
+    },
+    {
+      "end_ms": 3172400,
+      "source_event_index": 657,
+      "start_ms": 3168800,
+      "text": "Trader Joe’s or wherever. They use a lot of debt."
+    },
+    {
+      "end_ms": 3177360,
+      "source_event_index": 658,
+      "start_ms": 3172400,
+      "text": "All these telecom companies use a lot of debt. Banks use a lot of debt."
+    },
+    {
+      "end_ms": 3182960,
+      "source_event_index": 659,
+      "start_ms": 3177360,
+      "text": "So if interest rates go up in the market — not necessarily the government-set interest rate,"
+    },
+    {
+      "end_ms": 3189600,
+      "source_event_index": 660,
+      "start_ms": 3182960,
+      "text": "but the spread between what the government says their federal rate is versus what everyone else"
+    },
+    {
+      "end_ms": 3193440,
+      "source_event_index": 661,
+      "start_ms": 3189600,
+      "text": "is charging, because Amazon wants to raise $100 billion of debt next year or whatever"
+    },
+    {
+      "end_ms": 3199040,
+      "source_event_index": 662,
+      "start_ms": 3193440,
+      "text": "the hell the number is, probably less — you end up with this really challenging"
+    },
+    {
+      "end_ms": 3203840,
+      "source_event_index": 663,
+      "start_ms": 3199040,
+      "text": "problem of, where does the cash come from? There is some level that is funded by cash"
+    },
+    {
+      "end_ms": 3207840,
+      "source_event_index": 664,
+      "start_ms": 3203840,
+      "text": "flows and the cash flows keep going up. But the logical thing to do is to invest"
+    },
+    {
+      "end_ms": 3211520,
+      "source_event_index": 665,
+      "start_ms": 3207840,
+      "text": "way more than your cash flows because then the returns in future years will be amazing."
+    },
+    {
+      "end_ms": 3214480,
+      "source_event_index": 666,
+      "start_ms": 3211520,
+      "text": "So you have this delta. Then what’s pushing down on the"
+    },
+    {
+      "end_ms": 3222080,
+      "source_event_index": 667,
+      "start_ms": 3214480,
+      "text": "delta is all of these other things: regulations against data centers, consumers getting mad,"
+    },
+    {
+      "end_ms": 3227600,
+      "source_event_index": 668,
+      "start_ms": 3222080,
+      "text": "politicians getting mad, regulations against AI, the AI labs not releasing their latest models"
+    },
+    {
+      "end_ms": 3232640,
+      "source_event_index": 669,
+      "start_ms": 3227600,
+      "text": "because of safety reasons. Interest rates going up"
+    },
+    {
+      "end_ms": 3237440,
+      "source_event_index": 670,
+      "start_ms": 3233280,
+      "text": "are an influence on all of these things. So all of these things bend the curve from"
+    },
+    {
+      "end_ms": 3243360,
+      "source_event_index": 671,
+      "start_ms": 3237440,
+      "text": "what capitalism wants in terms of pure, simple economics to what the complex system that we have"
+    },
+    {
+      "end_ms": 3249360,
+      "source_event_index": 672,
+      "start_ms": 3243360,
+      "text": "wants, and bend it lower and lower to where not as many gigawatts as should be built will be built."
+    },
+    {
+      "end_ms": 3251920,
+      "source_event_index": 673,
+      "start_ms": 3249360,
+      "text": "Well, the interest rate is part of capitalism, right?"
+    },
+    {
+      "end_ms": 3255920,
+      "source_event_index": 674,
+      "start_ms": 3251920,
+      "text": "Yeah, but in the simple economic model versus the more complex what we have."
+    },
+    {
+      "end_ms": 3260560,
+      "source_event_index": 675,
+      "start_ms": 3256720,
+      "text": "What is the rate at which you think Amazon or Anthropic or whatever will be issuing"
+    },
+    {
+      "end_ms": 3263920,
+      "source_event_index": 676,
+      "start_ms": 3260560,
+      "text": "bonds for debt next year? If they do hundreds of"
+    },
+    {
+      "end_ms": 3267200,
+      "source_event_index": 677,
+      "start_ms": 3263920,
+      "text": "billions of dollars of debt. What is the average rate?"
+    },
+    {
+      "end_ms": 3270320,
+      "source_event_index": 678,
+      "start_ms": 3267200,
+      "text": "I don’t think Amazon will do hundreds of billions of dollars of debt."
+    },
+    {
+      "end_ms": 3274320,
+      "source_event_index": 679,
+      "start_ms": 3270320,
+      "text": "In total. Let’s say the big tech guys. The hyperscalers in total, and all the"
+    },
+    {
+      "end_ms": 3282800,
+      "source_event_index": 680,
+      "start_ms": 3274320,
+      "text": "clouds… In the modeling that we do, we have about $11 trillion of CapEx from 2024 to 2029."
+    },
+    {
+      "end_ms": 3286400,
+      "source_event_index": 681,
+      "start_ms": 3282800,
+      "text": "Total? Total. If you fund a lot of this"
+    },
+    {
+      "end_ms": 3291680,
+      "source_event_index": 682,
+      "start_ms": 3286400,
+      "text": "with cash flows, as much as you can, you still end up with north of $5 trillion of credit that needs"
+    },
+    {
+      "end_ms": 3296320,
+      "source_event_index": 683,
+      "start_ms": 3291680,
+      "text": "to be issued for this $11 trillion-plus build out. So you don’t think the AI revenue continues even"
+    },
+    {
+      "end_ms": 3299760,
+      "source_event_index": 684,
+      "start_ms": 3296320,
+      "text": "3x-ing year over year? AI revenue does go up."
+    },
+    {
+      "end_ms": 3306080,
+      "source_event_index": 685,
+      "start_ms": 3299760,
+      "text": "I don’t think it can go up forever without certain constraints being hit."
+    },
+    {
+      "end_ms": 3310960,
+      "source_event_index": 686,
+      "start_ms": 3306080,
+      "text": "Labs will have certain incentives. Labs are not the ones building all"
+    },
+    {
+      "end_ms": 3313680,
+      "source_event_index": 687,
+      "start_ms": 3310960,
+      "text": "the compute in many cases, even though they’re increasingly trying to go that way."
+    },
+    {
+      "end_ms": 3319840,
+      "source_event_index": 688,
+      "start_ms": 3313680,
+      "text": "But they’ll have all this cash flow. How much did you say the revenue will be?"
+    },
+    {
+      "end_ms": 3324160,
+      "source_event_index": 689,
+      "start_ms": 3319840,
+      "text": "You think they’ll not have that much revenue? No, I’m just saying till 2029 there’s something"
+    },
+    {
+      "end_ms": 3328640,
+      "source_event_index": 690,
+      "start_ms": 3324160,
+      "text": "on the order of $11 trillion of CapEx. $6 trillion of that is funded with cash,"
+    },
+    {
+      "end_ms": 3334480,
+      "source_event_index": 691,
+      "start_ms": 3328640,
+      "text": "and $5 trillion of that is funded with debt. If that’s the case, $5 trillion of debt being"
+    },
+    {
+      "end_ms": 3338640,
+      "source_event_index": 692,
+      "start_ms": 3334480,
+      "text": "raised across the whole ecosystem does make interest rates go up."
+    },
+    {
+      "end_ms": 3344080,
+      "source_event_index": 693,
+      "start_ms": 3338640,
+      "text": "Then what prevents that? There’s a couple things. One, do labs increase their revenue per megawatt"
+    },
+    {
+      "end_ms": 3349840,
+      "source_event_index": 694,
+      "start_ms": 3344080,
+      "text": "more and keep inference allocations large? In which case, they’re accumulating all"
+    },
+    {
+      "end_ms": 3354720,
+      "source_event_index": 695,
+      "start_ms": 3349840,
+      "text": "the profit across the S&P 500 because everyone’s paying to reduce their costs."
+    },
+    {
+      "end_ms": 3358800,
+      "source_event_index": 696,
+      "start_ms": 3354720,
+      "text": "Of course, their profits will also go up, but cash has to come from somewhere."
+    },
+    {
+      "end_ms": 3361680,
+      "source_event_index": 697,
+      "start_ms": 3359440,
+      "text": "So there’s an upper limit on how fast their revenue can grow"
+    },
+    {
+      "end_ms": 3366240,
+      "source_event_index": 698,
+      "start_ms": 3361680,
+      "text": "versus the value they deliver into the world. And there’s a diffusion aspect of the technology."
+    },
+    {
+      "end_ms": 3370720,
+      "source_event_index": 699,
+      "start_ms": 3366240,
+      "text": "But ultimately labs’ revenues keep going up. They can’t cash-flow fund everything."
+    },
+    {
+      "end_ms": 3374640,
+      "source_event_index": 700,
+      "start_ms": 3370720,
+      "text": "The optimal scenario is you actually use credit as much as you can to fund,"
+    },
+    {
+      "end_ms": 3379040,
+      "source_event_index": 701,
+      "start_ms": 3374640,
+      "text": "because even if cash flows from the labs fund a lot of stuff, you want to build more than that."
+    },
+    {
+      "end_ms": 3384240,
+      "source_event_index": 702,
+      "start_ms": 3379600,
+      "text": "So there is some amount of credit that gets built. Our current modeling has $5 trillion of"
+    },
+    {
+      "end_ms": 3389200,
+      "source_event_index": 703,
+      "start_ms": 3384240,
+      "text": "credit and $6 trillion of cash-funded infrastructure investments through ’29."
+    },
+    {
+      "end_ms": 3396160,
+      "source_event_index": 704,
+      "start_ms": 3389200,
+      "text": "When you take that, this is not enough compute relative to what the"
+    },
+    {
+      "end_ms": 3400160,
+      "source_event_index": 705,
+      "start_ms": 3396160,
+      "text": "demand growth is from the AI models. So you’ve got the obvious answer,"
+    },
+    {
+      "end_ms": 3405680,
+      "source_event_index": 706,
+      "start_ms": 3400160,
+      "text": "which is revenue per megawatt keeps going up. That makes sense. How much do you think"
+    },
+    {
+      "end_ms": 3408640,
+      "source_event_index": 707,
+      "start_ms": 3405680,
+      "text": "interest rates will increase by 2029 as a result of all this?"
+    },
+    {
+      "end_ms": 3415120,
+      "source_event_index": 708,
+      "start_ms": 3408640,
+      "text": "Dude, this is vibing a number, but if you’re vibing a number out… Growth in the world economy"
+    },
+    {
+      "end_ms": 3423040,
+      "source_event_index": 709,
+      "start_ms": 3415120,
+      "text": "is going up a lot, so why wouldn’t interest rates for Amazon go up from where they are today?"
+    },
+    {
+      "end_ms": 3431680,
+      "source_event_index": 710,
+      "start_ms": 3426400,
+      "text": "This is going to be extremely vibed out, but recently Meta’s raised at 5 to 6%."
+    },
+    {
+      "end_ms": 3436080,
+      "source_event_index": 711,
+      "start_ms": 3431680,
+      "text": "I don’t see why they wouldn’t pay 8%. They would happily pay 8% because"
+    },
+    {
+      "end_ms": 3438640,
+      "source_event_index": 712,
+      "start_ms": 3436080,
+      "text": "the return from the compute that they’re going to build is humongous."
+    },
+    {
+      "end_ms": 3443120,
+      "source_event_index": 713,
+      "start_ms": 3439520,
+      "text": "The market won’t want them to, but they’ll want to pay 8%."
+    },
+    {
+      "end_ms": 3451120,
+      "source_event_index": 714,
+      "start_ms": 3443120,
+      "text": "The flip side is that if they pay 8% versus the 5%, 5.5%, 6% they do today — a 250 bps increase"
+    },
+    {
+      "end_ms": 3457680,
+      "source_event_index": 715,
+      "start_ms": 3451120,
+      "text": "— that makes everyone else in the economy also pay 250 bps more, which then causes a lot of things."
+    },
+    {
+      "end_ms": 3467120,
+      "source_event_index": 716,
+      "start_ms": 3457680,
+      "text": "Banks will scream, because if their credit spread goes up, their debt"
+    },
+    {
+      "end_ms": 3473280,
+      "source_event_index": 717,
+      "start_ms": 3467120,
+      "text": "reprices faster than their assets reprice. They ultimately end up losing tons of"
+    },
+    {
+      "end_ms": 3477760,
+      "source_event_index": 718,
+      "start_ms": 3473280,
+      "text": "money if their credit spread blows up. The other consequence of this — this is a"
+    },
+    {
+      "end_ms": 3483520,
+      "source_event_index": 719,
+      "start_ms": 3477760,
+      "text": "point you made — is that if interest rates rise, the discount rate increases, which means that the"
+    },
+    {
+      "end_ms": 3490400,
+      "source_event_index": 720,
+      "start_ms": 3483520,
+      "text": "discounted cash flows of all equities crater. Which means that even though the stock market"
+    },
+    {
+      "end_ms": 3495120,
+      "source_event_index": 721,
+      "start_ms": 3490400,
+      "text": "as a whole might be doing fine — the S&P 500 will be fine — any individual stock"
+    },
+    {
+      "end_ms": 3501600,
+      "source_event_index": 722,
+      "start_ms": 3495120,
+      "text": "will probably have just cratered in value, especially the Buffett, Berkshire type,"
+    },
+    {
+      "end_ms": 3505200,
+      "source_event_index": 723,
+      "start_ms": 3501600,
+      "text": "pay-good-cash-flows-for-30-years type stocks. Yeah. It’s like, \"Why would I pay"
+    },
+    {
+      "end_ms": 3513280,
+      "source_event_index": 724,
+      "start_ms": 3505200,
+      "text": "this much for Johnson & Johnson?\" They’re seen as a stable stock: good cash"
+    },
+    {
+      "end_ms": 3518160,
+      "source_event_index": 725,
+      "start_ms": 3513280,
+      "text": "flows, they’ll return their cash flows over time. Or a railway company. Why the fuck would I invest"
+    },
+    {
+      "end_ms": 3524720,
+      "source_event_index": 726,
+      "start_ms": 3518160,
+      "text": "that much if my discount rate isn’t 3% or 5%?\" It’s now 8% or 10%."
+    },
+    {
+      "end_ms": 3531600,
+      "source_event_index": 727,
+      "start_ms": 3525280,
+      "text": "For developing countries… Basil Halperin, who’s a good friend and an economist, made this point"
+    },
+    {
+      "end_ms": 3537280,
+      "source_event_index": 728,
+      "start_ms": 3531600,
+      "text": "that we’ll see a second Volcker shock. In the ’80s, to fight inflation,"
+    },
+    {
+      "end_ms": 3543600,
+      "source_event_index": 729,
+      "start_ms": 3537280,
+      "text": "Fed Chair Paul Volcker raised interest rates more than 5%, something like 8% real interest rate."
+    },
+    {
+      "end_ms": 3551360,
+      "source_event_index": 730,
+      "start_ms": 3544640,
+      "text": "That caused some 40 different countries, mostly in Latin America, to default in that decade."
+    },
+    {
+      "end_ms": 3555280,
+      "source_event_index": 731,
+      "start_ms": 3551360,
+      "text": "I think that will probably happen again. Okay, now we’re getting into singularity talk."
+    },
+    {
+      "end_ms": 3556560,
+      "source_event_index": 732,
+      "start_ms": 3555280,
+      "text": "We’ve been talking about what happens if interest rates rise—"
+    },
+    {
+      "end_ms": 3558000,
+      "source_event_index": 733,
+      "start_ms": 3556560,
+      "text": "I think this all happens before singularity, by the way."
+    },
+    {
+      "end_ms": 3560720,
+      "source_event_index": 734,
+      "start_ms": 3558000,
+      "text": "Yeah, that’s what I’m saying. We were talking about before"
+    },
+    {
+      "end_ms": 3567520,
+      "source_event_index": 735,
+      "start_ms": 3560720,
+      "text": "singularity, interest rates rise 2-3%, et cetera. At some point, I think it’s very likely that the"
+    },
+    {
+      "end_ms": 3574400,
+      "source_event_index": 736,
+      "start_ms": 3567520,
+      "text": "world economy will be doubling every single year. This is not happening in five years."
+    },
+    {
+      "end_ms": 3580480,
+      "source_event_index": 737,
+      "start_ms": 3574400,
+      "text": "But it’ll happen eventually. There’s this researcher, Damon Binder,"
+    },
+    {
+      "end_ms": 3583600,
+      "source_event_index": 738,
+      "start_ms": 3580480,
+      "text": "who’s done great work on this. If you look at input-output tables"
+    },
+    {
+      "end_ms": 3588640,
+      "source_event_index": 739,
+      "start_ms": 3583600,
+      "text": "in a fully automated economy… What would it take to double the entire stock of"
+    },
+    {
+      "end_ms": 3592800,
+      "source_event_index": 740,
+      "start_ms": 3588640,
+      "text": "things in the economy every single year? Yeah. If the economy grows at 3% a year,"
+    },
+    {
+      "end_ms": 3598080,
+      "source_event_index": 741,
+      "start_ms": 3592800,
+      "text": "then rule of 70, that’s 20-something years. Right. But he was like, \"Okay, right now we’re"
+    },
+    {
+      "end_ms": 3601120,
+      "source_event_index": 742,
+      "start_ms": 3598080,
+      "text": "bottlenecked by the fact that there’s people, and you can’t double people every single year.\""
+    },
+    {
+      "end_ms": 3603600,
+      "source_event_index": 743,
+      "start_ms": 3601120,
+      "text": "But in a world where you can also double the labor force every single"
+    },
+    {
+      "end_ms": 3607680,
+      "source_event_index": 744,
+      "start_ms": 3603600,
+      "text": "year, how fast can the economy grow? I think it could double every single year."
+    },
+    {
+      "end_ms": 3610080,
+      "source_event_index": 745,
+      "start_ms": 3607680,
+      "text": "At the very least it would be tens of percent every single year."
+    },
+    {
+      "end_ms": 3612880,
+      "source_event_index": 746,
+      "start_ms": 3610080,
+      "text": "Okay. The rate of interest should be pretty close to the growth rate."
+    },
+    {
+      "end_ms": 3616960,
+      "source_event_index": 747,
+      "start_ms": 3612880,
+      "text": "It won’t be exactly that because of consumption, but it should be pretty similar."
+    },
+    {
+      "end_ms": 3622560,
+      "source_event_index": 748,
+      "start_ms": 3616960,
+      "text": "Then we’ll go into a world, I think in the 2030s, where the rate of interest is tens of percent."
+    },
+    {
+      "end_ms": 3626240,
+      "source_event_index": 749,
+      "start_ms": 3624640,
+      "text": "Part of my brain is like, \"It might be hundreds of percent,\""
+    },
+    {
+      "end_ms": 3630480,
+      "source_event_index": 750,
+      "start_ms": 3626240,
+      "text": "but let’s say it’s at least tens of percent. I’m just like, okay. Every country that is"
+    },
+    {
+      "end_ms": 3636080,
+      "source_event_index": 751,
+      "start_ms": 3630480,
+      "text": "not involved in the production of AI defaults. Every stock that is not an AI stock is worth"
+    },
+    {
+      "end_ms": 3638800,
+      "source_event_index": 752,
+      "start_ms": 3636080,
+      "text": "basically zero because discounted cash flows are worth nothing."
+    },
+    {
+      "end_ms": 3644960,
+      "source_event_index": 753,
+      "start_ms": 3638800,
+      "text": "If the federal government can’t figure out a way to tax AI, servicing the debt"
+    },
+    {
+      "end_ms": 3649680,
+      "source_event_index": 754,
+      "start_ms": 3644960,
+      "text": "is more than the current tax revenue. And you have all these other effects"
+    },
+    {
+      "end_ms": 3653040,
+      "source_event_index": 755,
+      "start_ms": 3649680,
+      "text": "that I’m sure we’re not even pricing in: you can’t get a mortgage, et cetera, et cetera."
+    },
+    {
+      "end_ms": 3656080,
+      "source_event_index": 756,
+      "start_ms": 3653040,
+      "text": "Fundamentally, what is happening in this world? This is all nerd speak, right?"
+    },
+    {
+      "end_ms": 3660720,
+      "source_event_index": 757,
+      "start_ms": 3656080,
+      "text": "But let’s step back. What’s happening? Just now it started, the nerd speak?"
+    },
+    {
+      "end_ms": 3664320,
+      "source_event_index": 758,
+      "start_ms": 3660720,
+      "text": "We’d be entering a totally different growth regime."
+    },
+    {
+      "end_ms": 3670560,
+      "source_event_index": 759,
+      "start_ms": 3665280,
+      "text": "The economy’s basically saying, \"Hey, the opportunity cost of the government borrowing money"
+    },
+    {
+      "end_ms": 3676720,
+      "source_event_index": 760,
+      "start_ms": 3670560,
+      "text": "to pay people pensions is extremely high now. Because that money could be spent building"
+    },
+    {
+      "end_ms": 3680320,
+      "source_event_index": 761,
+      "start_ms": 3676720,
+      "text": "a robot factory that builds a robot factory that builds a robot factory.\""
+    },
+    {
+      "end_ms": 3684240,
+      "source_event_index": 762,
+      "start_ms": 3680320,
+      "text": "The opportunity cost of capital is going to increase a ton."
+    },
+    {
+      "end_ms": 3688800,
+      "source_event_index": 763,
+      "start_ms": 3685280,
+      "text": "That’s fundamentally the cause of all of these things we’re talking about."
+    },
+    {
+      "end_ms": 3692640,
+      "source_event_index": 764,
+      "start_ms": 3689600,
+      "text": "As interest rates go up, equity markets get pummeled."
+    },
+    {
+      "end_ms": 3698720,
+      "source_event_index": 765,
+      "start_ms": 3693520,
+      "text": "Even AI companies. Some people who really believe in AI are like, \"Why does Micron or"
+    },
+    {
+      "end_ms": 3705600,
+      "source_event_index": 766,
+      "start_ms": 3698720,
+      "text": "Hynix or Kioxia trade at 2 or 3 times earnings?\" It’s like, \"Well, if you’re really AI-pilled,"
+    },
+    {
+      "end_ms": 3709040,
+      "source_event_index": 767,
+      "start_ms": 3705600,
+      "text": "everything in the economy should trade at 2 or 3 times earnings.\""
+    },
+    {
+      "end_ms": 3713200,
+      "source_event_index": 768,
+      "start_ms": 3710000,
+      "text": "If you’re not AI-pilled, then sure, they’re over-earning."
+    },
+    {
+      "end_ms": 3718800,
+      "source_event_index": 769,
+      "start_ms": 3714000,
+      "text": "It’s an argument for why — I think memory is going to do great — memory"
+    },
+    {
+      "end_ms": 3725120,
+      "source_event_index": 770,
+      "start_ms": 3718800,
+      "text": "stocks shouldn’t 10x or whatever again. Because if we’re in the market where there’s"
+    },
+    {
+      "end_ms": 3730400,
+      "source_event_index": 771,
+      "start_ms": 3725120,
+      "text": "that much demand for memory — which means AI’s caused this drastic change in the economy — then"
+    },
+    {
+      "end_ms": 3734400,
+      "source_event_index": 772,
+      "start_ms": 3730400,
+      "text": "everything should trade at 2 or 3x multiples and the stock market should fucking crash."
+    },
+    {
+      "end_ms": 3740720,
+      "source_event_index": 773,
+      "start_ms": 3735520,
+      "text": "In a sense, Meta trading at… I think they’re like a $1.5 trillion company."
+    },
+    {
+      "end_ms": 3746160,
+      "source_event_index": 774,
+      "start_ms": 3740720,
+      "text": "It’s like, what? Silly. They’re worth way more than that, at least in a logical sense."
+    },
+    {
+      "end_ms": 3750080,
+      "source_event_index": 775,
+      "start_ms": 3746160,
+      "text": "You just look at their cash flows, all the infrastructure they’re hoarding,"
+    },
+    {
+      "end_ms": 3753440,
+      "source_event_index": 776,
+      "start_ms": 3750080,
+      "text": "and all the compute that they’re going to be able to sell for crazy amounts of"
+    },
+    {
+      "end_ms": 3757840,
+      "source_event_index": 777,
+      "start_ms": 3753440,
+      "text": "dollars per watt, either as tokens because their lab works, or just to Anthropic and OpenAI."
+    },
+    {
+      "end_ms": 3765200,
+      "source_event_index": 778,
+      "start_ms": 3757840,
+      "text": "It ultimately becomes a question of, you have to reallocate all the capital to the AGI."
+    },
+    {
+      "end_ms": 3771680,
+      "source_event_index": 779,
+      "start_ms": 3765200,
+      "text": "You do that by pricing everyone else out. So the limiter on AGI is not how fast"
+    },
+    {
+      "end_ms": 3776080,
+      "source_event_index": 780,
+      "start_ms": 3771680,
+      "text": "the research engineers, like our roommate Sholto, can crank the gears."
+    },
+    {
+      "end_ms": 3780720,
+      "source_event_index": 781,
+      "start_ms": 3776080,
+      "text": "It’s actually just how much does the rest of the world let that happen?"
+    },
+    {
+      "end_ms": 3781920,
+      "source_event_index": 782,
+      "start_ms": 3780720,
+      "text": "Because they’re going to regulate."
+    },
+    {
+      "end_ms": 3784160,
+      "source_event_index": 783,
+      "start_ms": 3781920,
+      "text": "They’re going to obviously increase interest rates."
+    },
+    {
+      "end_ms": 3787360,
+      "source_event_index": 784,
+      "start_ms": 3784160,
+      "text": "They’re going to say, \"No data centers.\" They’re going to say, \"Stop building fabs.\""
+    },
+    {
+      "end_ms": 3791600,
+      "source_event_index": 785,
+      "start_ms": 3787360,
+      "text": "They’re going to say, \"Oh shit, every company’s equity value is tanking, so how can I pay"
+    },
+    {
+      "end_ms": 3798000,
+      "source_event_index": 786,
+      "start_ms": 3791600,
+      "text": "for AI to increase my business?\" Well then, Anthropic and OpenAI"
+    },
+    {
+      "end_ms": 3802800,
+      "source_event_index": 787,
+      "start_ms": 3798000,
+      "text": "have to start building their own stuff. They’re building their own chips already,"
+    },
+    {
+      "end_ms": 3805520,
+      "source_event_index": 788,
+      "start_ms": 3802800,
+      "text": "or at least designing their own chips, and it’ll expand out."
+    },
+    {
+      "end_ms": 3811280,
+      "source_event_index": 789,
+      "start_ms": 3805520,
+      "text": "They’re contracting their own data centers and building their own infra in the next couple years."
+    },
+    {
+      "end_ms": 3816000,
+      "source_event_index": 790,
+      "start_ms": 3812560,
+      "text": "There’s the question of how this reallocation of the economy happens."
+    },
+    {
+      "end_ms": 3820640,
+      "source_event_index": 791,
+      "start_ms": 3816000,
+      "text": "There’s a lot of downward pressure on it not being just straight takeoff,"
+    },
+    {
+      "end_ms": 3825600,
+      "source_event_index": 792,
+      "start_ms": 3821200,
+      "text": "even if the models were capable of it. I think you and I believe we’re in a"
+    },
+    {
+      "end_ms": 3832000,
+      "source_event_index": 793,
+      "start_ms": 3825600,
+      "text": "world where models are capable of that. But slow takeoff is, at least my hope,"
+    },
+    {
+      "end_ms": 3835680,
+      "source_event_index": 794,
+      "start_ms": 3832000,
+      "text": "possible, because of everything in the economy and regulatory world."
+    },
+    {
+      "end_ms": 3838320,
+      "source_event_index": 795,
+      "start_ms": 3835680,
+      "text": "Government saying, \"Don’t release your models,\" the government saying, \"Actually,"
+    },
+    {
+      "end_ms": 3842640,
+      "source_event_index": 796,
+      "start_ms": 3838320,
+      "text": "you can’t even use your models internally that much,\" because that’s going to happen soon."
+    },
+    {
+      "end_ms": 3844480,
+      "source_event_index": 797,
+      "start_ms": 3842640,
+      "text": "They’re already saying you can’t release your models."
+    },
+    {
+      "end_ms": 3851520,
+      "source_event_index": 798,
+      "start_ms": 3845440,
+      "text": "The thing I’m most worried about is a singularity, which external deployment is actually helping."
+    },
+    {
+      "end_ms": 3854080,
+      "source_event_index": 799,
+      "start_ms": 3851520,
+      "text": "So the fact that we’re preventing external deployment is stupid."
+    },
+    {
+      "end_ms": 3856960,
+      "source_event_index": 800,
+      "start_ms": 3854080,
+      "text": "Does that prevent singularity? Right now it would lead to more revenue,"
+    },
+    {
+      "end_ms": 3860800,
+      "source_event_index": 801,
+      "start_ms": 3856960,
+      "text": "because the models are incapable of RSI. But I’m worried about a world where it’s"
+    },
+    {
+      "end_ms": 3864320,
+      "source_event_index": 802,
+      "start_ms": 3860800,
+      "text": "2030 and the government’s like, \"We’re going to wait six months before you can release"
+    },
+    {
+      "end_ms": 3868480,
+      "source_event_index": 803,
+      "start_ms": 3864320,
+      "text": "your newest model to the public.\" Six months, 100x. Let’s go."
+    },
+    {
+      "end_ms": 3872320,
+      "source_event_index": 804,
+      "start_ms": 3868480,
+      "text": "In that six months, they do recursive self-improvement internally."
+    },
+    {
+      "end_ms": 3874960,
+      "source_event_index": 805,
+      "start_ms": 3872320,
+      "text": "They just have all kinds of crazy shit happening in the company."
+    },
+    {
+      "end_ms": 3879280,
+      "source_event_index": 806,
+      "start_ms": 3874960,
+      "text": "Meanwhile, the rest of us are stuck with models that are, at current pace, years behind."
+    },
+    {
+      "end_ms": 3887600,
+      "source_event_index": 807,
+      "start_ms": 3880160,
+      "text": "Here’s my thought. Suppose that the whole world gets in on this conspiracy to try to slow down AI."
+    },
+    {
+      "end_ms": 3893680,
+      "source_event_index": 808,
+      "start_ms": 3887600,
+      "text": "I don’t think it’s a conspiracy. It’s outwardly written from every politician."
+    },
+    {
+      "end_ms": 3900480,
+      "source_event_index": 809,
+      "start_ms": 3893680,
+      "text": "Suppose they slow down AI by a year. If compute is increasing 2 to 3x every"
+    },
+    {
+      "end_ms": 3904400,
+      "source_event_index": 810,
+      "start_ms": 3900480,
+      "text": "single year, they prevent a whole year of AI deployment such that you’re a year"
+    },
+    {
+      "end_ms": 3911120,
+      "source_event_index": 811,
+      "start_ms": 3904400,
+      "text": "behind where you would otherwise have been. During RSI, you’re getting 3 to 6 years"
+    },
+    {
+      "end_ms": 3916400,
+      "source_event_index": 812,
+      "start_ms": 3911120,
+      "text": "of AI progress in a single year. But they don’t just limit compute."
+    },
+    {
+      "end_ms": 3919760,
+      "source_event_index": 813,
+      "start_ms": 3916400,
+      "text": "They also limit the lab’s ability to release the model internally."
+    },
+    {
+      "end_ms": 3920950,
+      "source_event_index": 814,
+      "start_ms": 3919760,
+      "text": "We saw that. If they did that, that would be ideal."
+    },
+    {
+      "end_ms": 3923920,
+      "source_event_index": 815,
+      "start_ms": 3920950,
+      "text": "Anthropic had to stop giving Mythos to foreign employees for a bit."
+    },
+    {
+      "end_ms": 3926960,
+      "source_event_index": 816,
+      "start_ms": 3923920,
+      "text": "I didn’t know that was true, internally as well? That’s what they claimed."
+    },
+    {
+      "end_ms": 3930480,
+      "source_event_index": 817,
+      "start_ms": 3927520,
+      "text": "I thought that was just a different checkpoint that was not Mythos, but it was basically Mythos."
+    },
+    {
+      "end_ms": 3933040,
+      "source_event_index": 818,
+      "start_ms": 3930480,
+      "text": "But stuff like that is not going to be allowed either."
+    },
+    {
+      "end_ms": 3938000,
+      "source_event_index": 819,
+      "start_ms": 3933040,
+      "text": "The government is dumb, but they’re not that dumb, I would hope, at least."
+    },
+    {
+      "end_ms": 3944000,
+      "source_event_index": 820,
+      "start_ms": 3939680,
+      "text": "Governments — at least the US government, which has the cards here — are not going"
+    },
+    {
+      "end_ms": 3949120,
+      "source_event_index": 821,
+      "start_ms": 3944000,
+      "text": "to want Anthropic to use Mythos 4 internally. They’re going to be like, \"Hold the fuck on."
+    },
+    {
+      "end_ms": 3953200,
+      "source_event_index": 822,
+      "start_ms": 3949120,
+      "text": "Slow down,\" because of all of these regulatory reasons."
+    },
+    {
+      "end_ms": 3958160,
+      "source_event_index": 823,
+      "start_ms": 3953200,
+      "text": "Everyone who’s elected is going to hate AI. Even the people who are elected already hate AI."
+    },
+    {
+      "end_ms": 3965520,
+      "source_event_index": 824,
+      "start_ms": 3959520,
+      "text": "All the constituents. I bet you at some point your parents are going to call you and be like,"
+    },
+    {
+      "end_ms": 3970240,
+      "source_event_index": 825,
+      "start_ms": 3965520,
+      "text": "\"Dwarkesh beta, you’re doing a terrible job. You’re making AI progress happen faster.\""
+    },
+    {
+      "end_ms": 3975760,
+      "source_event_index": 826,
+      "start_ms": 3970960,
+      "text": "Because of my podcast I’m accelerating AI progress?"
+    },
+    {
+      "end_ms": 3980640,
+      "source_event_index": 827,
+      "start_ms": 3975760,
+      "text": "Maybe. You educate people. Maybe if they’re smarter, they’re progressing AI faster."
+    },
+    {
+      "end_ms": 3984560,
+      "source_event_index": 828,
+      "start_ms": 3980640,
+      "text": "Anyway, you’re going to have real-world constraints on the"
+    },
+    {
+      "end_ms": 3991680,
+      "source_event_index": 829,
+      "start_ms": 3984560,
+      "text": "progress and development and deployment of AI. Even though it will happen eventually, we could"
+    },
+    {
+      "end_ms": 3996160,
+      "source_event_index": 830,
+      "start_ms": 3991680,
+      "text": "tear ourselves apart before we get there. Jane Street is hiring for two separate"
+    },
+    {
+      "end_ms": 4001280,
+      "source_event_index": 831,
+      "start_ms": 3996160,
+      "text": "ML internships right now: one focused on ML engineering and the other focused on ML research."
+    },
+    {
+      "end_ms": 4005600,
+      "source_event_index": 832,
+      "start_ms": 4001280,
+      "text": "I sat down with Alok, who helps run the research track, to learn more about that program."
+    },
+    {
+      "end_ms": 4011280,
+      "source_event_index": 833,
+      "start_ms": 4005600,
+      "text": "I think this domain is fundamentally understudied. Often we have unanswered questions within our deep"
+    },
+    {
+      "end_ms": 4017120,
+      "source_event_index": 834,
+      "start_ms": 4011280,
+      "text": "learning research team where we don't understand, say, some market participants' behaviors or"
+    },
+    {
+      "end_ms": 4021280,
+      "source_event_index": 835,
+      "start_ms": 4017120,
+      "text": "certain dynamics of how trading happens. These unanswered questions make for really"
+    },
+    {
+      "end_ms": 4024480,
+      "source_event_index": 836,
+      "start_ms": 4021280,
+      "text": "good intern projects because they are ultimately topics that we care about and"
+    },
+    {
+      "end_ms": 4028400,
+      "source_event_index": 837,
+      "start_ms": 4024480,
+      "text": "just haven't gotten around to figuring out yet. So even as an intern, you'll be contributing"
+    },
+    {
+      "end_ms": 4032080,
+      "source_event_index": 838,
+      "start_ms": 4028400,
+      "text": "to real research, not working on some sort of contrived exercise."
+    },
+    {
+      "end_ms": 4035440,
+      "source_event_index": 839,
+      "start_ms": 4032080,
+      "text": "The Jane Street team follows frontier LLM research closely."
+    },
+    {
+      "end_ms": 4040080,
+      "source_event_index": 840,
+      "start_ms": 4035440,
+      "text": "A relatively common intern project is adapting a recent paper to financial markets, which"
+    },
+    {
+      "end_ms": 4044080,
+      "source_event_index": 841,
+      "start_ms": 4040080,
+      "text": "come with their own set of gnarly problems. Ultimately, we're trying to model thousands"
+    },
+    {
+      "end_ms": 4048320,
+      "source_event_index": 842,
+      "start_ms": 4044080,
+      "text": "of interconnected irregular time series. The signal-to-noise ratios are extremely"
+    },
+    {
+      "end_ms": 4050800,
+      "source_event_index": 843,
+      "start_ms": 4048320,
+      "text": "low because we have a lot of competitors trying to do the same."
+    },
+    {
+      "end_ms": 4055120,
+      "source_event_index": 844,
+      "start_ms": 4050800,
+      "text": "So we have this adversarial, non-stationary, extremely high-dimensional"
+    },
+    {
+      "end_ms": 4058240,
+      "source_event_index": 845,
+      "start_ms": 4055120,
+      "text": "problem that we're trying to solve. To be clear, you don't need to know"
+    },
+    {
+      "end_ms": 4063040,
+      "source_event_index": 846,
+      "start_ms": 4058240,
+      "text": "anything about finance in order to be a good fit. As long as you have a background in ML research,"
+    },
+    {
+      "end_ms": 4067760,
+      "source_event_index": 847,
+      "start_ms": 4063040,
+      "text": "Jane Street can teach you the rest. Their 2027 internship applications are open now."
+    },
+    {
+      "end_ms": 4074560,
+      "source_event_index": 848,
+      "start_ms": 4067760,
+      "text": "Apply at janestreet.com/dwarkesh. One thing I find crazy about these scenarios"
+    },
+    {
+      "end_ms": 4086400,
+      "source_event_index": 849,
+      "start_ms": 4074560,
+      "text": "is just how much of the world’s future labor supply ends up in very few companies, and also"
+    },
+    {
+      "end_ms": 4092720,
+      "source_event_index": 850,
+      "start_ms": 4086400,
+      "text": "how fast that labor supply grows year over year. If compute at the frontier in FLOP terms is"
+    },
+    {
+      "end_ms": 4098000,
+      "source_event_index": 851,
+      "start_ms": 4092720,
+      "text": "growing 4-5x a year — and further the compute required to achieve a level of capabilities is"
+    },
+    {
+      "end_ms": 4106080,
+      "source_event_index": 852,
+      "start_ms": 4098000,
+      "text": "decreasing 3x a year — basically the effective AI population size at the"
+    },
+    {
+      "end_ms": 4110880,
+      "source_event_index": 853,
+      "start_ms": 4106080,
+      "text": "frontier labs is increasing 10x year over year. That doesn’t really matter that much right now,"
+    },
+    {
+      "end_ms": 4117200,
+      "source_event_index": 854,
+      "start_ms": 4110880,
+      "text": "because AIs are not good enough to do full jobs or be as autonomous as people in their capacity to do"
+    },
+    {
+      "end_ms": 4121600,
+      "source_event_index": 855,
+      "start_ms": 4117200,
+      "text": "work or pull off schemes or whatever. But if the current trend continues,"
+    },
+    {
+      "end_ms": 4126480,
+      "source_event_index": 856,
+      "start_ms": 4121600,
+      "text": "you have a world where OpenAI goes from having, say, basically 10 million AI"
+    },
+    {
+      "end_ms": 4131120,
+      "source_event_index": 857,
+      "start_ms": 4126480,
+      "text": "laborers this year to 100 million the next year, to a billion the year after that."
+    },
+    {
+      "end_ms": 4137200,
+      "source_event_index": 858,
+      "start_ms": 4132240,
+      "text": "Pretty soon, even if compute scaling slows down, it doesn’t take many more years before"
+    },
+    {
+      "end_ms": 4143760,
+      "source_event_index": 859,
+      "start_ms": 4137200,
+      "text": "each company individually has more labor equivalence than there are people on Earth."
+    },
+    {
+      "end_ms": 4151200,
+      "source_event_index": 860,
+      "start_ms": 4144960,
+      "text": "I think that’s very plausible by the end of this decade, that there’s more AI labor,"
+    },
+    {
+      "end_ms": 4156800,
+      "source_event_index": 861,
+      "start_ms": 4151200,
+      "text": "more effective population, within a single lab than there are people on Earth."
+    },
+    {
+      "end_ms": 4161040,
+      "source_event_index": 862,
+      "start_ms": 4157600,
+      "text": "We talk often about centralization of power because of nationalization or whatever."
+    },
+    {
+      "end_ms": 4164240,
+      "source_event_index": 863,
+      "start_ms": 4161040,
+      "text": "But we don’t think enough about the fact that we’re actually moving very fast into"
+    },
+    {
+      "end_ms": 4173680,
+      "source_event_index": 864,
+      "start_ms": 4164240,
+      "text": "a regime where most \"people\", in terms of work output, are concentrated within two labs who are"
+    },
+    {
+      "end_ms": 4179040,
+      "source_event_index": 865,
+      "start_ms": 4173680,
+      "text": "consuming more and more of the world’s compute. If these AIs are misaligned, then most of the"
+    },
+    {
+      "end_ms": 4182720,
+      "source_event_index": 866,
+      "start_ms": 4179040,
+      "text": "world is misaligned, basically, because most of the world’s minds are there."
+    },
+    {
+      "end_ms": 4188000,
+      "source_event_index": 867,
+      "start_ms": 4182720,
+      "text": "But even if they’re not, very few companies have a lot of influence or a lot of control."
+    },
+    {
+      "end_ms": 4193840,
+      "source_event_index": 868,
+      "start_ms": 4188000,
+      "text": "There was the whole spat recently where I think Gavin Baker was like, \"Dario believes that there’s"
+    },
+    {
+      "end_ms": 4197440,
+      "source_event_index": 869,
+      "start_ms": 4193840,
+      "text": "only going to be one company in the world.\" Then Sholto and Dario came out and were like,"
+    },
+    {
+      "end_ms": 4198480,
+      "source_event_index": 870,
+      "start_ms": 4197440,
+      "text": "\"No, no, no. We didn’t say"
+    },
+    {
+      "end_ms": 4205680,
+      "source_event_index": 871,
+      "start_ms": 4198480,
+      "text": "that.\" But ultimately, if you believe in RSI, if you believe the labs are the most effective"
+    },
+    {
+      "end_ms": 4211680,
+      "source_event_index": 872,
+      "start_ms": 4206240,
+      "text": "user of compute and can generate the most value from the compute, then the only thing that’s"
+    },
+    {
+      "end_ms": 4218400,
+      "source_event_index": 873,
+      "start_ms": 4211680,
+      "text": "going to happen is centralization of compute. If you believe in AI researchers, RSI, AGI,"
+    },
+    {
+      "end_ms": 4222240,
+      "source_event_index": 874,
+      "start_ms": 4218400,
+      "text": "then all of this exists, all of this is the base. This is even true if there’s no RSI."
+    },
+    {
+      "end_ms": 4226720,
+      "source_event_index": 875,
+      "start_ms": 4222240,
+      "text": "The effective population of the frontier is currently increasing 10x year over"
+    },
+    {
+      "end_ms": 4231040,
+      "source_event_index": 876,
+      "start_ms": 4226720,
+      "text": "year for a given level of capabilities. So if you get to the level of capabilities of"
+    },
+    {
+      "end_ms": 4239760,
+      "source_event_index": 877,
+      "start_ms": 4233840,
+      "text": "a very competent remote worker or a very competent software engineer or a very competent researcher,"
+    },
+    {
+      "end_ms": 4242880,
+      "source_event_index": 878,
+      "start_ms": 4239760,
+      "text": "the population of those is increasing 10x year over year at the current rate"
+    },
+    {
+      "end_ms": 4245360,
+      "source_event_index": 879,
+      "start_ms": 4242880,
+      "text": "of capabilities growth. I see, and without RSI."
+    },
+    {
+      "end_ms": 4248000,
+      "source_event_index": 880,
+      "start_ms": 4245360,
+      "text": "Then once you have RSI, it’s even crazier. Then it’s maybe growing 100x"
+    },
+    {
+      "end_ms": 4250560,
+      "source_event_index": 881,
+      "start_ms": 4248000,
+      "text": "a year or 1,000x a year. Or their intelligence is increasing"
+    },
+    {
+      "end_ms": 4253360,
+      "source_event_index": 882,
+      "start_ms": 4250560,
+      "text": "but the population isn’t increasing. Or some mixture of the two, right?"
+    },
+    {
+      "end_ms": 4259440,
+      "source_event_index": 883,
+      "start_ms": 4255440,
+      "text": "What world do you see, Dwarkesh, where everything is not centralized?"
+    },
+    {
+      "end_ms": 4265920,
+      "source_event_index": 884,
+      "start_ms": 4259440,
+      "text": "Because it seems to me that every force is screeching towards centralization."
+    },
+    {
+      "end_ms": 4270720,
+      "source_event_index": 885,
+      "start_ms": 4265920,
+      "text": "And that’s scary as hell. I would love for it not to"
+    },
+    {
+      "end_ms": 4273840,
+      "source_event_index": 886,
+      "start_ms": 4270720,
+      "text": "be centralized completely. But maybe that’s the whole"
+    },
+    {
+      "end_ms": 4280480,
+      "source_event_index": 887,
+      "start_ms": 4273840,
+      "text": "point of a machine that loves grace, right? It is everything and it makes our lives great."
+    },
+    {
+      "end_ms": 4282880,
+      "source_event_index": 888,
+      "start_ms": 4280480,
+      "text": "It’s so hard to think about the future. But I agree with you."
+    },
+    {
+      "end_ms": 4291120,
+      "source_event_index": 889,
+      "start_ms": 4284000,
+      "text": "I think the fundamental problem is that AI training has huge economies of scale,"
+    },
+    {
+      "end_ms": 4294880,
+      "source_event_index": 890,
+      "start_ms": 4291120,
+      "text": "because any effort you spend on training an AI for a specific skill or a specific"
+    },
+    {
+      "end_ms": 4299840,
+      "source_event_index": 891,
+      "start_ms": 4294880,
+      "text": "set of knowledge gets amortized across billions of sessions or billions of users."
+    },
+    {
+      "end_ms": 4305040,
+      "source_event_index": 892,
+      "start_ms": 4301520,
+      "text": "So that’s one effect. The other effect is that if you’re slightly ahead in the AI"
+    },
+    {
+      "end_ms": 4309760,
+      "source_event_index": 893,
+      "start_ms": 4305040,
+      "text": "race and compute is in shortage, you can charge a much higher markup because you"
+    },
+    {
+      "end_ms": 4314720,
+      "source_event_index": 894,
+      "start_ms": 4309760,
+      "text": "can better economize this scarce resource. So there are two effects which give more and"
+    },
+    {
+      "end_ms": 4320320,
+      "source_event_index": 895,
+      "start_ms": 4314720,
+      "text": "more to the person who’s ahead in the AI race. There may be more. If models are learning from"
+    },
+    {
+      "end_ms": 4324320,
+      "source_event_index": 896,
+      "start_ms": 4320320,
+      "text": "deployment, and one model is deployed much more widely than another one,"
+    },
+    {
+      "end_ms": 4329040,
+      "source_event_index": 897,
+      "start_ms": 4324320,
+      "text": "it’s getting much more real-world data. Your point is taken that whether it’s user"
+    },
+    {
+      "end_ms": 4335040,
+      "source_event_index": 898,
+      "start_ms": 4329040,
+      "text": "deployment and continual learning, whether it’s training and having these economies of scale,"
+    },
+    {
+      "end_ms": 4338080,
+      "source_event_index": 899,
+      "start_ms": 4335040,
+      "text": "whether it’s the incremental progress where the best AI model helps you to"
+    },
+    {
+      "end_ms": 4344800,
+      "source_event_index": 900,
+      "start_ms": 4338080,
+      "text": "make the next best AI model, RSI, all of these things point to centralization."
+    },
+    {
+      "end_ms": 4350480,
+      "source_event_index": 901,
+      "start_ms": 4344800,
+      "text": "I think one of the big intellectual projects, honestly, that we should spend some time thinking"
+    },
+    {
+      "end_ms": 4356480,
+      "source_event_index": 902,
+      "start_ms": 4350480,
+      "text": "about — or at least I’ll spend some time thinking about — is: what is a vision of a decentralized,"
+    },
+    {
+      "end_ms": 4361680,
+      "source_event_index": 903,
+      "start_ms": 4356480,
+      "text": "broadly empowered future after AGI that takes these economies of scale seriously?"
+    },
+    {
+      "end_ms": 4364640,
+      "source_event_index": 904,
+      "start_ms": 4361680,
+      "text": "The alternative vision is that the government controls it, and maybe"
+    },
+    {
+      "end_ms": 4367840,
+      "source_event_index": 905,
+      "start_ms": 4364640,
+      "text": "you think that you can trust the government more because it’s not a private corporation."
+    },
+    {
+      "end_ms": 4371040,
+      "source_event_index": 906,
+      "start_ms": 4367840,
+      "text": "I don’t trust the government, and I don’t trust Dario, and I don’t trust Sam."
+    },
+    {
+      "end_ms": 4378000,
+      "source_event_index": 907,
+      "start_ms": 4371600,
+      "text": "That’s a problem, right? Obviously it’s very easy to be wrong about the future."
+    },
+    {
+      "end_ms": 4380880,
+      "source_event_index": 908,
+      "start_ms": 4378000,
+      "text": "You don’t anticipate a key effect or something that changes everything."
+    },
+    {
+      "end_ms": 4387280,
+      "source_event_index": 909,
+      "start_ms": 4380880,
+      "text": "But ex ante, it’s very hard to see how we avoid a scenario where we have to"
+    },
+    {
+      "end_ms": 4389360,
+      "source_event_index": 910,
+      "start_ms": 4387280,
+      "text": "choose one source of centralization. It’s why capitalism worked, right?"
+    },
+    {
+      "end_ms": 4392480,
+      "source_event_index": 911,
+      "start_ms": 4389360,
+      "text": "It’s decentralized decision-making and decentralized power."
+    },
+    {
+      "end_ms": 4395360,
+      "source_event_index": 912,
+      "start_ms": 4392480,
+      "text": "And it’s why super-centralized capitalistic economies actually"
+    },
+    {
+      "end_ms": 4398880,
+      "source_event_index": 913,
+      "start_ms": 4395360,
+      "text": "grew slower than super-decentralized capitalist economies, to some extent."
+    },
+    {
+      "end_ms": 4402800,
+      "source_event_index": 914,
+      "start_ms": 4398880,
+      "text": "You have to have rule of law and all this. But then AI flips all this on its head."
+    },
+    {
+      "end_ms": 4408000,
+      "source_event_index": 915,
+      "start_ms": 4402800,
+      "text": "And ultimately you’re like, \"Actually, private ownership is probably not the most efficient"
+    },
+    {
+      "end_ms": 4412074,
+      "source_event_index": 916,
+      "start_ms": 4408000,
+      "text": "economy, and therefore it grows slower than an AI economy, which is centralized.\""
+    },
+    {
+      "end_ms": 4414640,
+      "source_event_index": 917,
+      "start_ms": 4412074,
+      "text": "Well, it’s still private ownership, but how many firms are really"
+    },
+    {
+      "end_ms": 4426800,
+      "source_event_index": 918,
+      "start_ms": 4414640,
+      "text": "involved in this share of the economy? It’s, what, maybe 2% of the economy right"
+    },
+    {
+      "end_ms": 4428960,
+      "source_event_index": 919,
+      "start_ms": 4426800,
+      "text": "now? $1 trillion divided by 30. Nvidia is a huge share of it,"
+    },
+    {
+      "end_ms": 4432640,
+      "source_event_index": 920,
+      "start_ms": 4428960,
+      "text": "and Anthropic and OpenAI and these hyperscalers. Obviously there are other firms involved,"
+    },
+    {
+      "end_ms": 4435200,
+      "source_event_index": 921,
+      "start_ms": 4432640,
+      "text": "but a large share of the AI stuff is just happening from very few companies."
+    },
+    {
+      "end_ms": 4438320,
+      "source_event_index": 922,
+      "start_ms": 4435200,
+      "text": "So it could be private property, but very few companies are involved."
+    },
+    {
+      "end_ms": 4440640,
+      "source_event_index": 923,
+      "start_ms": 4438320,
+      "text": "I mean, this is what the structure of the market is doing."
+    },
+    {
+      "end_ms": 4444640,
+      "source_event_index": 924,
+      "start_ms": 4440640,
+      "text": "So what can prevent it? I don’t know. Unless AI"
+    },
+    {
+      "end_ms": 4449520,
+      "source_event_index": 925,
+      "start_ms": 4444640,
+      "text": "progress slows down, unless governments regulate the fuck out of it, this is all that happens."
+    },
+    {
+      "end_ms": 4455040,
+      "source_event_index": 926,
+      "start_ms": 4449520,
+      "text": "In which case, we’re headed for a world where either we have super concentration of resources"
+    },
+    {
+      "end_ms": 4459680,
+      "source_event_index": 927,
+      "start_ms": 4455040,
+      "text": "and we pray that that one company gets everything right, or we have governments slow everything"
+    },
+    {
+      "end_ms": 4464800,
+      "source_event_index": 928,
+      "start_ms": 4459680,
+      "text": "down and people slow everything down, and you have a slowdown of progress somehow hopefully,"
+    },
+    {
+      "end_ms": 4470720,
+      "source_event_index": 929,
+      "start_ms": 4464800,
+      "text": "and there is more of a balance of power. Even as we go towards AGI, ASI, RSI,"
+    },
+    {
+      "end_ms": 4477280,
+      "source_event_index": 930,
+      "start_ms": 4472640,
+      "text": "everything along the way will still lead to someone capturing more resources."
+    },
+    {
+      "end_ms": 4481680,
+      "source_event_index": 931,
+      "start_ms": 4477280,
+      "text": "So it’s kind of hard to find a framework in which AI doesn’t lead to super concentration."
+    },
+    {
+      "end_ms": 4489200,
+      "source_event_index": 932,
+      "start_ms": 4482320,
+      "text": "Now, the one positive thing here is that today Anthropic does not capture most of the value."
+    },
+    {
+      "end_ms": 4493920,
+      "source_event_index": 933,
+      "start_ms": 4489200,
+      "text": "We can talk all we want about how they went from $20 million per megawatt to $100 million"
+    },
+    {
+      "end_ms": 4499360,
+      "source_event_index": 934,
+      "start_ms": 4493920,
+      "text": "per megawatt, but they’re still paying $13 million for a lot of the compute they’re buying."
+    },
+    {
+      "end_ms": 4504000,
+      "source_event_index": 935,
+      "start_ms": 4499920,
+      "text": "But at the end of the day, the reason they’ve gone to $100 million per megawatt is because"
+    },
+    {
+      "end_ms": 4509440,
+      "source_event_index": 936,
+      "start_ms": 4504000,
+      "text": "Jane Street is capturing $300 million per megawatt or $500 million per megawatt."
+    },
+    {
+      "end_ms": 4514240,
+      "source_event_index": 937,
+      "start_ms": 4509440,
+      "text": "Or Dwarkesh, from researching his podcast and learning about credit, is capturing how"
+    },
+    {
+      "end_ms": 4517680,
+      "source_event_index": 938,
+      "start_ms": 4514240,
+      "text": "many dollars per megawatt? Now how much can you use?"
+    },
+    {
+      "end_ms": 4524080,
+      "source_event_index": 939,
+      "start_ms": 4517680,
+      "text": "Tough. But I think that’s the one saving grace, that the rest of the economy maybe"
+    },
+    {
+      "end_ms": 4527920,
+      "source_event_index": 940,
+      "start_ms": 4524080,
+      "text": "profits so much more from Anthropic— No, but the whole logic you were laying"
+    },
+    {
+      "end_ms": 4533760,
+      "source_event_index": 941,
+      "start_ms": 4527920,
+      "text": "out earlier — them reallocating inference to AI R&D — the whole logic of that is"
+    },
+    {
+      "end_ms": 4541200,
+      "source_event_index": 942,
+      "start_ms": 4533760,
+      "text": "that the returns to labor inside AI labs are much higher than the returns outside."
+    },
+    {
+      "end_ms": 4546320,
+      "source_event_index": 943,
+      "start_ms": 4541200,
+      "text": "Yes. This is my cope. I agree. In all scenarios of the world… There’s 80,000 worlds and in only one"
+    },
+    {
+      "end_ms": 4552960,
+      "source_event_index": 944,
+      "start_ms": 4546320,
+      "text": "of them, Anthropic doesn’t own the whole world. Again, power concentrates because I don’t want"
+    },
+    {
+      "end_ms": 4554720,
+      "source_event_index": 945,
+      "start_ms": 4552960,
+      "text": "to send the tokens outside. They’re more valuable"
+    },
+    {
+      "end_ms": 4559440,
+      "source_event_index": 946,
+      "start_ms": 4554720,
+      "text": "inside. So it’s the same thing. Why would I let Jane Street make all this"
+    },
+    {
+      "end_ms": 4564880,
+      "source_event_index": 947,
+      "start_ms": 4559440,
+      "text": "money off of these degenerate options traders? Hey, they’re a sponsor, come on."
+    },
+    {
+      "end_ms": 4567200,
+      "source_event_index": 948,
+      "start_ms": 4564880,
+      "text": "Jesus Christ. No, I think it’s great."
+    },
+    {
+      "end_ms": 4569200,
+      "source_event_index": 949,
+      "start_ms": 4567200,
+      "text": "It’s a good value for the world to make it an efficient market."
+    },
+    {
+      "end_ms": 4575360,
+      "source_event_index": 950,
+      "start_ms": 4571520,
+      "text": "Jane Street making all this money off of getting the worldview correctly, making money off of"
+    },
+    {
+      "end_ms": 4580320,
+      "source_event_index": 951,
+      "start_ms": 4575360,
+      "text": "degenerate options traders, whatever it is, why would Anthropic allocate compute to that?"
+    },
+    {
+      "end_ms": 4586480,
+      "source_event_index": 952,
+      "start_ms": 4580320,
+      "text": "If the end monetization that Jane Street has per megawatt is $200 million, so"
+    },
+    {
+      "end_ms": 4589760,
+      "source_event_index": 953,
+      "start_ms": 4586480,
+      "text": "they’re willing to pay Anthropic $100 million… Well, what if Anthropic can"
+    },
+    {
+      "end_ms": 4595360,
+      "source_event_index": 954,
+      "start_ms": 4589760,
+      "text": "just generate hundreds of millions of dollars per megawatt by using that compute internally?"
+    },
+    {
+      "end_ms": 4601280,
+      "source_event_index": 955,
+      "start_ms": 4595360,
+      "text": "That’s what’s happening. On that somber note, I guess we’ll meet"
+    },
+    {
+      "end_ms": 4605520,
+      "source_event_index": 956,
+      "start_ms": 4601280,
+      "text": "again when the RSI is officially kicked off. You’re not going to have me on your podcast"
+    },
+    {
+      "end_ms": 4612400,
+      "source_event_index": 957,
+      "start_ms": 4605520,
+      "text": "again for like two months? Alright, cool. Thanks, dude."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-61563236563155766b4a77-dylan-patel-workforce/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "f8757686a63a18a65144915030f8995b6ea2aa2676d634d173f9797a5109ce5c"
+  },
+  "translation": {
+    "event_count": 958,
+    "language": "zh-CN",
+    "payload_sha256": "4f96f7678386caf8703332fa330b27d5f4f37fbd283bddfb1862fd1b2bcb4835",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-61563236563155766b4a77-dylan-patel-workforce/transcript.zh-CN.md",
+    "rendered_sha256": "a418445e20e58be62490b440480ae794fb0377c163120156c66e72953cba308e",
+    "source_track": "zh-Hans-en",
+    "track_type": "youtube-auto-translate"
+  }
+}

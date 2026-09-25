@@ -443,8 +443,11 @@ coverage guard 会先汇总全部 chunk 的 owned alignment，再把全局并集
 安全升级该字段。markerless legacy raw 不适用该迁移，必须 `--retranscribe`。
 
 `--backend cuda` 默认使用 `cuda:0`、`bfloat16`、SDPA、120 秒 chunk、batch size 1，
-并按“ASR 模型完成并释放，再加载 ForcedAligner”的顺序控制显存。native adapter
-已有 mocked API 与恢复契约测试，但 NVIDIA RTX A2000 的 golden-output、峰值显存和
+并按“ASR 模型完成并释放，再加载 ForcedAligner”的顺序控制显存。模型先从本地快照
+加载到 CPU，再显式转移到指定 CUDA 设备，因此加载阶段需要容纳该模型权重的主机内存；
+转移失败会终止，不回退到 CPU 推理。此单卡路径不再安装或调用 Accelerate。
+Windows CI 使用缩小的 Qwen ASR/ForcedAligner 分片权重验证无 Accelerate 的加载路径。
+native adapter 已有 mocked API 与恢复契约测试，但 NVIDIA RTX A2000 的 golden-output、峰值显存和
 长音频实机资格仍待完成；通过前不能声称硬件验证或提升新产物。只有目标 GPU 确实
 不支持 bf16 时才加 `--dtype float16`。同时提供 `--model-path` 与 `--aligner-path` 会强制设置
 `HF_HUB_OFFLINE=1` 和 `TRANSFORMERS_OFFLINE=1`，禁止 worker 联网补取模型。

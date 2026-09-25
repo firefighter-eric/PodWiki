@@ -145,12 +145,21 @@ jobs:
           TRANSFORMERS_OFFLINE: "1"
         run: >-
           uv run --no-sync python -c
-          "import accelerate, nagisa, soynlp, sys, yt_dlp;
+          "import nagisa, soynlp, sys, yt_dlp;
           sys.path.insert(0, 'scripts');
           from transcribe_qwen3_asr_cuda import load_cuda_runtime;
           runtime = load_cuda_runtime();
           assert runtime.torch.__version__ == '2.13.0+cu126', runtime.torch.__version__;
           print(runtime.torch.__version__)"
+
+      - name: Load local sharded Qwen checkpoints without Accelerate
+        env:
+          HF_HUB_OFFLINE: "1"
+          TRANSFORMERS_OFFLINE: "1"
+          PODWIKI_TEST_NATIVE_LOAD: "1"
+        run: >-
+          uv run --no-sync python -m unittest discover -s tests
+          -p test_qwen3_asr_transformers_adapter.py -v
 
       - name: Audit installed CUDA dependencies with local-version support
         run: >-

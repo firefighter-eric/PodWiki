@@ -1,0 +1,5383 @@
+{
+  "generated_at": "2026-09-22T16:29:57.256401Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-5138466b70693138515855-terence-tao/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "5ea7bd2af2e467b762a5d81bedae03db7bcb2efe4fbdecb0f52335f9762262bf"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 4320,
+      "source_event_index": 0,
+      "start_ms": 720,
+      "text": "Today, I'm chatting with Terence Tao, who needs no introduction."
+    },
+    {
+      "end_ms": 10400,
+      "source_event_index": 1,
+      "start_ms": 4320,
+      "text": "Terence, I want to begin by having you retell the story of how Kepler discovered the laws of"
+    },
+    {
+      "end_ms": 15280,
+      "source_event_index": 2,
+      "start_ms": 10400,
+      "text": "planetary motion because I think this will be a great jumping off point to talk about AI for math."
+    },
+    {
+      "end_ms": 17840,
+      "source_event_index": 3,
+      "start_ms": 16080,
+      "text": "I've always had an amateur interest in astronomy."
+    },
+    {
+      "end_ms": 22800,
+      "source_event_index": 4,
+      "start_ms": 18480,
+      "text": "I've loved stories of how the early astronomers worked out the nature of the universe."
+    },
+    {
+      "end_ms": 30080,
+      "source_event_index": 5,
+      "start_ms": 24720,
+      "text": "Kepler was building on the work of Copernicus, who was himself building on the work of Aristarchus."
+    },
+    {
+      "end_ms": 36160,
+      "source_event_index": 6,
+      "start_ms": 31040,
+      "text": "Copernicus very famously proposed the heliocentric model, that instead of the"
+    },
+    {
+      "end_ms": 40800,
+      "source_event_index": 7,
+      "start_ms": 36160,
+      "text": "planets and the Sun going around the Earth, the Sun was at the center of the solar system and the"
+    },
+    {
+      "end_ms": 45120,
+      "source_event_index": 8,
+      "start_ms": 40800,
+      "text": "other planets were going around the Sun. Copernicus proposed that the orbits of"
+    },
+    {
+      "end_ms": 50240,
+      "source_event_index": 9,
+      "start_ms": 45120,
+      "text": "the planets were perfect circles. His theory fit the observations"
+    },
+    {
+      "end_ms": 55360,
+      "source_event_index": 10,
+      "start_ms": 50240,
+      "text": "that the Greeks, the Arabs, and the Indians had worked out over centuries."
+    },
+    {
+      "end_ms": 64160,
+      "source_event_index": 11,
+      "start_ms": 57600,
+      "text": "Kepler learned about these theories in his studies, and he made this observation that the"
+    },
+    {
+      "end_ms": 69840,
+      "source_event_index": 12,
+      "start_ms": 64160,
+      "text": "ratios of the size of the orbits that Copernicus predicted seemed to have some geometric meaning."
+    },
+    {
+      "end_ms": 79520,
+      "source_event_index": 13,
+      "start_ms": 72160,
+      "text": "He started proposing that if you take the orbit of the Earth and you enclose it in a cube,"
+    },
+    {
+      "end_ms": 85440,
+      "source_event_index": 14,
+      "start_ms": 80400,
+      "text": "the outer sphere that encloses the cube almost perfectly matched the orbit of Mars, and so forth."
+    },
+    {
+      "end_ms": 90640,
+      "source_event_index": 15,
+      "start_ms": 86320,
+      "text": "There were six planets known at the time and five gaps between them, and there were five perfect"
+    },
+    {
+      "end_ms": 95760,
+      "source_event_index": 16,
+      "start_ms": 90640,
+      "text": "Platonic solids: the cube, the tetrahedron, icosahedron, octahedron, and dodecahedron."
+    },
+    {
+      "end_ms": 98880,
+      "source_event_index": 17,
+      "start_ms": 95760,
+      "text": "So he had this theory, which he thought was absolutely beautiful,"
+    },
+    {
+      "end_ms": 104960,
+      "source_event_index": 18,
+      "start_ms": 98880,
+      "text": "that you could inscribe these Platonic solids between the spheres of the planets."
+    },
+    {
+      "end_ms": 110320,
+      "source_event_index": 19,
+      "start_ms": 104960,
+      "text": "It seemed to fit, and it seemed to him that God's design of the planets was matching this"
+    },
+    {
+      "end_ms": 116880,
+      "source_event_index": 20,
+      "start_ms": 110320,
+      "text": "mathematical perfection of the Platonic solids. He needed data to confirm this theory."
+    },
+    {
+      "end_ms": 122160,
+      "source_event_index": 21,
+      "start_ms": 116880,
+      "text": "At the time, there was only one really high-quality dataset in existence."
+    },
+    {
+      "end_ms": 128160,
+      "source_event_index": 22,
+      "start_ms": 122160,
+      "text": "Tycho Brahe, this very wealthy, eccentric Danish astronomer,"
+    },
+    {
+      "end_ms": 132560,
+      "source_event_index": 23,
+      "start_ms": 128160,
+      "text": "had managed to convince the Danish government to fund this extremely expensive observatory."
+    },
+    {
+      "end_ms": 138240,
+      "source_event_index": 24,
+      "start_ms": 132560,
+      "text": "In fact, it was an entire island where he had taken decades of observations of all the planets,"
+    },
+    {
+      "end_ms": 143600,
+      "source_event_index": 25,
+      "start_ms": 138240,
+      "text": "like Mars and Jupiter, at least every night for which the weather was clear, with the naked eye."
+    },
+    {
+      "end_ms": 148560,
+      "source_event_index": 26,
+      "start_ms": 144480,
+      "text": "He was the last of the naked-eye astronomers. He had all this data which Kepler"
+    },
+    {
+      "end_ms": 152240,
+      "source_event_index": 27,
+      "start_ms": 148560,
+      "text": "could use to confirm his theory. Kepler started working with Tycho,"
+    },
+    {
+      "end_ms": 157280,
+      "source_event_index": 28,
+      "start_ms": 152240,
+      "text": "but Tycho was very jealous of the data. He only gave him little bits of it at a time."
+    },
+    {
+      "end_ms": 163600,
+      "source_event_index": 29,
+      "start_ms": 158960,
+      "text": "Kepler eventually just stole the data. He copied it and had to have a fight with"
+    },
+    {
+      "end_ms": 168640,
+      "source_event_index": 30,
+      "start_ms": 164480,
+      "text": "Brahe's descendants. He did get the data,"
+    },
+    {
+      "end_ms": 173040,
+      "source_event_index": 31,
+      "start_ms": 168640,
+      "text": "and then he worked out, to his disappointment, that his beautiful theory didn't quite work."
+    },
+    {
+      "end_ms": 177840,
+      "source_event_index": 32,
+      "start_ms": 173040,
+      "text": "The data was off from his Platonic solid theory by 10% or something."
+    },
+    {
+      "end_ms": 182800,
+      "source_event_index": 33,
+      "start_ms": 177840,
+      "text": "He tried all kinds of fudges, moving the circles around, and it didn't quite work."
+    },
+    {
+      "end_ms": 188320,
+      "source_event_index": 34,
+      "start_ms": 182800,
+      "text": "But he worked on this problem for years and years, and eventually, he figured out how to use the data"
+    },
+    {
+      "end_ms": 195840,
+      "source_event_index": 35,
+      "start_ms": 188320,
+      "text": "to work out the actual orbits of the planets. That was an incredibly clever,"
+    },
+    {
+      "end_ms": 200640,
+      "source_event_index": 36,
+      "start_ms": 195840,
+      "text": "genius amount of data analysis. And then he worked out that the"
+    },
+    {
+      "end_ms": 204800,
+      "source_event_index": 37,
+      "start_ms": 201680,
+      "text": "orbits were actually ellipses, not circles, which was shocking for him."
+    },
+    {
+      "end_ms": 210560,
+      "source_event_index": 38,
+      "start_ms": 206640,
+      "text": "So he worked out the two laws of planetary motion: the ellipses, and also that equal"
+    },
+    {
+      "end_ms": 217040,
+      "source_event_index": 39,
+      "start_ms": 210560,
+      "text": "areas sweep out equal times. Then ten years later, after"
+    },
+    {
+      "end_ms": 222320,
+      "source_event_index": 40,
+      "start_ms": 217040,
+      "text": "collecting a lot of data—the furthest planets like Saturn and Jupiter were the hardest for"
+    },
+    {
+      "end_ms": 230800,
+      "source_event_index": 41,
+      "start_ms": 222320,
+      "text": "him to work out—he finally worked out this third law, that the time it takes for a"
+    },
+    {
+      "end_ms": 235680,
+      "source_event_index": 42,
+      "start_ms": 230800,
+      "text": "planet to complete its orbit was proportional to some power of the distance to the Sun."
+    },
+    {
+      "end_ms": 238160,
+      "source_event_index": 43,
+      "start_ms": 235680,
+      "text": "These are the three famous Kepler's laws of motion."
+    },
+    {
+      "end_ms": 244080,
+      "source_event_index": 44,
+      "start_ms": 239360,
+      "text": "He had no explanation for them. It was all driven by experiment,"
+    },
+    {
+      "end_ms": 249520,
+      "source_event_index": 45,
+      "start_ms": 244080,
+      "text": "and it took Newton a century later to give a theory that explained all three laws at once."
+    },
+    {
+      "end_ms": 256400,
+      "source_event_index": 46,
+      "start_ms": 249520,
+      "text": "The take I want to try on you is that Kepler was a high-temperature LLM."
+    },
+    {
+      "end_ms": 262800,
+      "source_event_index": 47,
+      "start_ms": 257520,
+      "text": "Newton comes up with this explanation of why the three laws of planetary motion must be true."
+    },
+    {
+      "end_ms": 266400,
+      "source_event_index": 48,
+      "start_ms": 262800,
+      "text": "Of course, the way that Kepler discovers the laws of planetary motion, or figures"
+    },
+    {
+      "end_ms": 269760,
+      "source_event_index": 49,
+      "start_ms": 266400,
+      "text": "out the relative orbits of the different planets, is as you say a work of genius."
+    },
+    {
+      "end_ms": 273680,
+      "source_event_index": 50,
+      "start_ms": 269760,
+      "text": "But through his career, he's just trying random relationships."
+    },
+    {
+      "end_ms": 278000,
+      "source_event_index": 51,
+      "start_ms": 273680,
+      "text": "In fact, in the book in which he writes down the third law of planetary motion,"
+    },
+    {
+      "end_ms": 284080,
+      "source_event_index": 52,
+      "start_ms": 278000,
+      "text": "it's an aside on The Harmonics of the World, which is just a book about how all these different"
+    },
+    {
+      "end_ms": 286720,
+      "source_event_index": 53,
+      "start_ms": 284080,
+      "text": "planets have these different harmonies. And the reason there's so much famine"
+    },
+    {
+      "end_ms": 290320,
+      "source_event_index": 54,
+      "start_ms": 286720,
+      "text": "and misery on Earth is because the Earth is mi-fa-mi, that's the note of Earth."
+    },
+    {
+      "end_ms": 294240,
+      "source_event_index": 55,
+      "start_ms": 290320,
+      "text": "It's all this random astrology, but in there is the cube-square law,"
+    },
+    {
+      "end_ms": 300240,
+      "source_event_index": 56,
+      "start_ms": 294240,
+      "text": "which tells you what relationship the period has to a planet's distance from the Sun."
+    },
+    {
+      "end_ms": 308880,
+      "source_event_index": 57,
+      "start_ms": 300800,
+      "text": "As you were detailing, if you add that to Newton's F=ma and the equation for centripetal"
+    },
+    {
+      "end_ms": 312880,
+      "source_event_index": 58,
+      "start_ms": 308880,
+      "text": "acceleration, you get the inverse-square law. And so Newton works that out."
+    },
+    {
+      "end_ms": 318880,
+      "source_event_index": 59,
+      "start_ms": 312880,
+      "text": "But the reason I think this is an interesting story is that I feel LLMs can do the kind of"
+    },
+    {
+      "end_ms": 322480,
+      "source_event_index": 60,
+      "start_ms": 318880,
+      "text": "thing of trying random relationships for twenty years, some of which make no sense,"
+    },
+    {
+      "end_ms": 327600,
+      "source_event_index": 61,
+      "start_ms": 322480,
+      "text": "as long as there's a verifiable data bank like Brahe's dataset. \"Ok, I'm going to try out random"
+    },
+    {
+      "end_ms": 332800,
+      "source_event_index": 62,
+      "start_ms": 327600,
+      "text": "things about musical notes, Platonic objects, or different geometries, I have this bias that"
+    },
+    {
+      "end_ms": 336960,
+      "source_event_index": 63,
+      "start_ms": 332800,
+      "text": "there's some important thing about the geometry of these orbits.\" Then one thing works. As long"
+    },
+    {
+      "end_ms": 344240,
+      "source_event_index": 64,
+      "start_ms": 336960,
+      "text": "as you can verify it, these empirical regularities can then drive actual deep scientific progress."
+    },
+    {
+      "end_ms": 348080,
+      "source_event_index": 65,
+      "start_ms": 344240,
+      "text": "Traditionally, when we talk about the history of science, idea generation has"
+    },
+    {
+      "end_ms": 353520,
+      "source_event_index": 66,
+      "start_ms": 348080,
+      "text": "always been the prestige part of science. A scientific problem comes with many steps."
+    },
+    {
+      "end_ms": 357680,
+      "source_event_index": 67,
+      "start_ms": 353520,
+      "text": "You have to identify a problem, and then you have to identify a good, fruitful problem to work on."
+    },
+    {
+      "end_ms": 363120,
+      "source_event_index": 68,
+      "start_ms": 359440,
+      "text": "Then you need to collect data, figure out a strategy to analyze"
+    },
+    {
+      "end_ms": 367280,
+      "source_event_index": 69,
+      "start_ms": 363120,
+      "text": "the data, and make a hypothesis. At this point, you need to propose a"
+    },
+    {
+      "end_ms": 371360,
+      "source_event_index": 70,
+      "start_ms": 367280,
+      "text": "good hypothesis, and then you need to validate. Then you need to write things up and explain."
+    },
+    {
+      "end_ms": 377760,
+      "source_event_index": 71,
+      "start_ms": 371360,
+      "text": "There are a dozen different components. The ones we celebrate are these eureka"
+    },
+    {
+      "end_ms": 386800,
+      "source_event_index": 72,
+      "start_ms": 377760,
+      "text": "genius moments of idea generation. Kepler certainly had to cycle through"
+    },
+    {
+      "end_ms": 392080,
+      "source_event_index": 73,
+      "start_ms": 386800,
+      "text": "many ideas, several of which didn't work. I bet there were many that he didn't even"
+    },
+    {
+      "end_ms": 397760,
+      "source_event_index": 74,
+      "start_ms": 392080,
+      "text": "publish at all because they just didn't fit. That's an important part of the process,"
+    },
+    {
+      "end_ms": 400720,
+      "source_event_index": 75,
+      "start_ms": 397760,
+      "text": "trying all kinds of random things and seeing if they worked."
+    },
+    {
+      "end_ms": 408960,
+      "source_event_index": 76,
+      "start_ms": 401440,
+      "text": "But as you say, it has to be matched by an equal amount of verification, otherwise it's slop."
+    },
+    {
+      "end_ms": 415840,
+      "source_event_index": 77,
+      "start_ms": 410720,
+      "text": "We celebrate Kepler, but we should also celebrate Brahe for his assiduous data"
+    },
+    {
+      "end_ms": 420000,
+      "source_event_index": 78,
+      "start_ms": 415840,
+      "text": "collection, which was ten times more precise than any previous observation."
+    },
+    {
+      "end_ms": 427680,
+      "source_event_index": 79,
+      "start_ms": 420960,
+      "text": "That extra decimal point of accuracy was essential for Kepler to get his results."
+    },
+    {
+      "end_ms": 435360,
+      "source_event_index": 80,
+      "start_ms": 429120,
+      "text": "He was using Euclidean geometry and the most advanced mathematics he could use at"
+    },
+    {
+      "end_ms": 442960,
+      "source_event_index": 81,
+      "start_ms": 435360,
+      "text": "the time to match his models with the data. All aspects had to be in play: the data,"
+    },
+    {
+      "end_ms": 449440,
+      "source_event_index": 82,
+      "start_ms": 442960,
+      "text": "the theory, and the hypothesis generation. I'm not sure nowadays that hypothesis"
+    },
+    {
+      "end_ms": 456480,
+      "source_event_index": 83,
+      "start_ms": 449440,
+      "text": "generation is the bottleneck anymore. Science has changed in the century since."
+    },
+    {
+      "end_ms": 463600,
+      "source_event_index": 84,
+      "start_ms": 458400,
+      "text": "Classically, the two big paradigms for science were theory and experiment."
+    },
+    {
+      "end_ms": 469920,
+      "source_event_index": 85,
+      "start_ms": 464800,
+      "text": "Then in the 20th century, numerical simulation came along, so you can do"
+    },
+    {
+      "end_ms": 474720,
+      "source_event_index": 86,
+      "start_ms": 469920,
+      "text": "computer simulations to test theories. Finally, in the late 20th century,"
+    },
+    {
+      "end_ms": 478160,
+      "source_event_index": 87,
+      "start_ms": 474720,
+      "text": "we had big data. We had the era of data analysis."
+    },
+    {
+      "end_ms": 483760,
+      "source_event_index": 88,
+      "start_ms": 479200,
+      "text": "A lot of new progress is actually driven now by analyzing massive datasets first."
+    },
+    {
+      "end_ms": 489040,
+      "source_event_index": 89,
+      "start_ms": 483760,
+      "text": "You collect large datasets and then draw patterns from them to deduce thoughts."
+    },
+    {
+      "end_ms": 492160,
+      "source_event_index": 90,
+      "start_ms": 489040,
+      "text": "This is a little bit different from how science used to work, where you make a"
+    },
+    {
+      "end_ms": 497440,
+      "source_event_index": 91,
+      "start_ms": 492160,
+      "text": "few observations or have one out-of-the-blue idea, and then collect data to test your idea."
+    },
+    {
+      "end_ms": 501840,
+      "source_event_index": 92,
+      "start_ms": 497440,
+      "text": "That's the classic scientific method. Now it's almost reversed. You collect big data first,"
+    },
+    {
+      "end_ms": 507760,
+      "source_event_index": 93,
+      "start_ms": 501840,
+      "text": "and then you try to get hypotheses from it. Kepler was maybe one of the first early"
+    },
+    {
+      "end_ms": 515200,
+      "source_event_index": 94,
+      "start_ms": 507760,
+      "text": "data scientists, but even he didn't start with Tycho's dataset and then analyze it."
+    },
+    {
+      "end_ms": 520240,
+      "source_event_index": 95,
+      "start_ms": 515200,
+      "text": "He had some preconceived theories first. It seems like this is less and less the"
+    },
+    {
+      "end_ms": 528480,
+      "source_event_index": 96,
+      "start_ms": 520240,
+      "text": "way we make progress, just because the data is so much more massive and useful."
+    },
+    {
+      "end_ms": 534880,
+      "source_event_index": 97,
+      "start_ms": 528480,
+      "text": "Oh, interesting. I feel like the 20th-century science that you're describing actually very"
+    },
+    {
+      "end_ms": 541120,
+      "source_event_index": 98,
+      "start_ms": 534880,
+      "text": "well describes what happened with Kepler. He did have these ideas—1595 and '96 is where"
+    },
+    {
+      "end_ms": 546720,
+      "source_event_index": 99,
+      "start_ms": 541120,
+      "text": "he comes up with the polygons and then the Platonic objects theory—but they were wrong."
+    },
+    {
+      "end_ms": 552800,
+      "source_event_index": 100,
+      "start_ms": 546720,
+      "text": "Then a few years later, he gets Brahe's data, and it's only after twenty years of trying random"
+    },
+    {
+      "end_ms": 558160,
+      "source_event_index": 101,
+      "start_ms": 552800,
+      "text": "things that he gets this empirical regularity. It actually feels a bit closer to Brahe's data"
+    },
+    {
+      "end_ms": 565360,
+      "source_event_index": 102,
+      "start_ms": 558160,
+      "text": "being analogous to some massive data bank of simulations, and now that you've got the data,"
+    },
+    {
+      "end_ms": 568000,
+      "source_event_index": 103,
+      "start_ms": 565360,
+      "text": "you can keep trying random things. If it wasn't for that, Kepler would be"
+    },
+    {
+      "end_ms": 573520,
+      "source_event_index": 104,
+      "start_ms": 568000,
+      "text": "out there just writing books about harmonics and Platonic objects, and there would be"
+    },
+    {
+      "end_ms": 579600,
+      "source_event_index": 105,
+      "start_ms": 573520,
+      "text": "nothing to actually verify against. The data was extremely important. The"
+    },
+    {
+      "end_ms": 584720,
+      "source_event_index": 106,
+      "start_ms": 579600,
+      "text": "distinction I was trying to make was that traditionally, you make a hypothesis and"
+    },
+    {
+      "end_ms": 590240,
+      "source_event_index": 107,
+      "start_ms": 584720,
+      "text": "then you test it against data. But now with machine learning,"
+    },
+    {
+      "end_ms": 596720,
+      "source_event_index": 108,
+      "start_ms": 590240,
+      "text": "data analysis, and statistics, you can start with data and through statistics"
+    },
+    {
+      "end_ms": 603840,
+      "source_event_index": 109,
+      "start_ms": 596720,
+      "text": "work out laws that were not present before. Kepler's third law is a little bit like this,"
+    },
+    {
+      "end_ms": 609040,
+      "source_event_index": 110,
+      "start_ms": 603840,
+      "text": "except that instead of having the thousand data points that Brahe had, Kepler had six data points."
+    },
+    {
+      "end_ms": 613840,
+      "source_event_index": 111,
+      "start_ms": 609040,
+      "text": "For every planet, he knew the length of the orbit and the distance to the Sun."
+    },
+    {
+      "end_ms": 618640,
+      "source_event_index": 112,
+      "start_ms": 613840,
+      "text": "There were five or six data points, and he did what we would now call regression."
+    },
+    {
+      "end_ms": 624560,
+      "source_event_index": 113,
+      "start_ms": 619200,
+      "text": "He fit a curve to these six data points and got a square-cube law, which was amazing."
+    },
+    {
+      "end_ms": 629120,
+      "source_event_index": 114,
+      "start_ms": 624560,
+      "text": "But he was quite lucky that these six data points gave him the right conclusion."
+    },
+    {
+      "end_ms": 637200,
+      "source_event_index": 115,
+      "start_ms": 630960,
+      "text": "That's not enough data to be really reliable. There was a later astronomer, Johann Bode,"
+    },
+    {
+      "end_ms": 643440,
+      "source_event_index": 116,
+      "start_ms": 637200,
+      "text": "who took the same data—the distances to the planets—and inspired by Kepler,"
+    },
+    {
+      "end_ms": 648720,
+      "source_event_index": 117,
+      "start_ms": 643440,
+      "text": "he had a prediction that the distances to the planets formed a shifted geometric progression."
+    },
+    {
+      "end_ms": 652880,
+      "source_event_index": 118,
+      "start_ms": 648720,
+      "text": "He also fit a curve, except there was one point missing."
+    },
+    {
+      "end_ms": 657760,
+      "source_event_index": 119,
+      "start_ms": 652880,
+      "text": "There was a big gap between Mars and Jupiter. His law predicted that there was a missing planet."
+    },
+    {
+      "end_ms": 662800,
+      "source_event_index": 120,
+      "start_ms": 657760,
+      "text": "It was kind of a crank theory, except when Uranus was discovered by Herschel,"
+    },
+    {
+      "end_ms": 671040,
+      "source_event_index": 121,
+      "start_ms": 662800,
+      "text": "the distance to Uranus fit exactly this pattern. Then Ceres was discovered in the asteroid belt,"
+    },
+    {
+      "end_ms": 674560,
+      "source_event_index": 122,
+      "start_ms": 671040,
+      "text": "and it also fit the pattern. People got really excited that Bode had"
+    },
+    {
+      "end_ms": 680480,
+      "source_event_index": 123,
+      "start_ms": 674560,
+      "text": "discovered this amazing new law of nature. But then Neptune was discovered,"
+    },
+    {
+      "end_ms": 686880,
+      "source_event_index": 124,
+      "start_ms": 680480,
+      "text": "and it was way off. Basically it was just a numerical fluke."
+    },
+    {
+      "end_ms": 694320,
+      "source_event_index": 125,
+      "start_ms": 686880,
+      "text": "There were six data points. Maybe one reason why Kepler didn't highlight his third law as"
+    },
+    {
+      "end_ms": 698800,
+      "source_event_index": 126,
+      "start_ms": 694320,
+      "text": "much as the first two laws is that instinctively, even though he didn't have modern statistics,"
+    },
+    {
+      "end_ms": 704080,
+      "source_event_index": 127,
+      "start_ms": 698800,
+      "text": "he kind of knew that with six data points, he had to be somewhat tentative with the conclusions."
+    },
+    {
+      "end_ms": 712560,
+      "source_event_index": 128,
+      "start_ms": 705040,
+      "text": "To ask the question about the analogy more explicitly, does this analogy make sense if"
+    },
+    {
+      "end_ms": 718560,
+      "source_event_index": 129,
+      "start_ms": 713680,
+      "text": "in the future we have smarter and smarter AIs? We'll have millions of them, and they can go out"
+    },
+    {
+      "end_ms": 722400,
+      "source_event_index": 130,
+      "start_ms": 718560,
+      "text": "and hunt for all these empirical irregularities. It sounds like you don't think the bottleneck"
+    },
+    {
+      "end_ms": 728560,
+      "source_event_index": 131,
+      "start_ms": 722400,
+      "text": "in science is finding more things that are the equivalent of the third law of"
+    },
+    {
+      "end_ms": 731840,
+      "source_event_index": 132,
+      "start_ms": 728560,
+      "text": "planetary motion for each given field, so that later on somebody can say, \"Oh,"
+    },
+    {
+      "end_ms": 737200,
+      "source_event_index": 133,
+      "start_ms": 731840,
+      "text": "we need a way to explain this. Let's work out the math. Here's the inverse-square law of gravity.\""
+    },
+    {
+      "end_ms": 743200,
+      "source_event_index": 134,
+      "start_ms": 738240,
+      "text": "I think AI has driven the cost of idea generation down to almost zero,"
+    },
+    {
+      "end_ms": 747360,
+      "source_event_index": 135,
+      "start_ms": 743200,
+      "text": "in a very similar way to how the internet drove the cost of communication down to almost zero."
+    },
+    {
+      "end_ms": 755360,
+      "source_event_index": 136,
+      "start_ms": 747920,
+      "text": "It’s an amazing thing, but it doesn't create abundance by itself. Now the bottleneck is"
+    },
+    {
+      "end_ms": 759520,
+      "source_event_index": 137,
+      "start_ms": 755360,
+      "text": "different. We're now in a situation where suddenly people can generate thousands of"
+    },
+    {
+      "end_ms": 766320,
+      "source_event_index": 138,
+      "start_ms": 759520,
+      "text": "theories for a given scientific problem. Now we have to verify them, evaluate them."
+    },
+    {
+      "end_ms": 771840,
+      "source_event_index": 139,
+      "start_ms": 766320,
+      "text": "This is something which we have to change our structures of science to actually sort this"
+    },
+    {
+      "end_ms": 780000,
+      "source_event_index": 140,
+      "start_ms": 771840,
+      "text": "out. Traditionally, we build walls. In the past, before we had AI slop, we had amateur scientists"
+    },
+    {
+      "end_ms": 786480,
+      "source_event_index": 141,
+      "start_ms": 780880,
+      "text": "have their own theories of the universe, many of which were of very little value."
+    },
+    {
+      "end_ms": 793760,
+      "source_event_index": 142,
+      "start_ms": 787680,
+      "text": "We built these peer review publication systems to filter out and try to isolate"
+    },
+    {
+      "end_ms": 799840,
+      "source_event_index": 143,
+      "start_ms": 793760,
+      "text": "the high signal ideas to test. But now that we can generate these"
+    },
+    {
+      "end_ms": 806320,
+      "source_event_index": 144,
+      "start_ms": 801840,
+      "text": "possible explanations at massive scale, and some of them are good and a lot are terrible,"
+    },
+    {
+      "end_ms": 814560,
+      "source_event_index": 145,
+      "start_ms": 807920,
+      "text": "human reviewers are already being overwhelmed. Many journals are reporting that AI-generated"
+    },
+    {
+      "end_ms": 820080,
+      "source_event_index": 146,
+      "start_ms": 814560,
+      "text": "submissions are just flooding their submissions. It's great that we can generate all kinds of"
+    },
+    {
+      "end_ms": 825680,
+      "source_event_index": 147,
+      "start_ms": 820080,
+      "text": "things now with AI, but it means that the rest of the aspects of science have to catch up:"
+    },
+    {
+      "end_ms": 833840,
+      "source_event_index": 148,
+      "start_ms": 826480,
+      "text": "verification, validation, and assessing what ideas actually move the subject forward"
+    },
+    {
+      "end_ms": 841760,
+      "source_event_index": 149,
+      "start_ms": 833840,
+      "text": "and which ones are dead ends or red herrings. That's not something we know how to do at scale."
+    },
+    {
+      "end_ms": 846960,
+      "source_event_index": 150,
+      "start_ms": 842880,
+      "text": "For each individual paper, we can have a debate among scientists"
+    },
+    {
+      "end_ms": 850560,
+      "source_event_index": 151,
+      "start_ms": 846960,
+      "text": "and get to a consensus in a few years. But when we're generating a thousand of"
+    },
+    {
+      "end_ms": 855440,
+      "source_event_index": 152,
+      "start_ms": 850560,
+      "text": "these every day, this doesn't work. There's this incredibly interesting"
+    },
+    {
+      "end_ms": 859840,
+      "source_event_index": 153,
+      "start_ms": 855440,
+      "text": "question. If you have billions of AI scientists, not only how do you gauge"
+    },
+    {
+      "end_ms": 863040,
+      "source_event_index": 154,
+      "start_ms": 859840,
+      "text": "which ones are real progress, but how do you... This is actually a question that human science"
+    },
+    {
+      "end_ms": 866800,
+      "source_event_index": 155,
+      "start_ms": 863040,
+      "text": "has had to face and we've solved somehow, and I’m actually not sure how we solved this."
+    },
+    {
+      "end_ms": 877040,
+      "source_event_index": 156,
+      "start_ms": 869920,
+      "text": "Let's say in the 1940s, if you're at Bell Labs and there are these new technologies coming out."
+    },
+    {
+      "end_ms": 881200,
+      "source_event_index": 157,
+      "start_ms": 877040,
+      "text": "Pulse-code modulation, how do you transfer signals? How do you digitize signals?"
+    },
+    {
+      "end_ms": 885760,
+      "source_event_index": 158,
+      "start_ms": 881200,
+      "text": "How do you transfer them over analog wires? There are all these papers about the engineering"
+    },
+    {
+      "end_ms": 890800,
+      "source_event_index": 159,
+      "start_ms": 885760,
+      "text": "constraints and the details, and then there's one which comes up with the idea of the bit, which has"
+    },
+    {
+      "end_ms": 894320,
+      "source_event_index": 160,
+      "start_ms": 890800,
+      "text": "implications across many different fields. You need some system which can then look"
+    },
+    {
+      "end_ms": 896720,
+      "source_event_index": 161,
+      "start_ms": 894320,
+      "text": "at that and say, \"Okay, we need to apply this to probability."
+    },
+    {
+      "end_ms": 900560,
+      "source_event_index": 162,
+      "start_ms": 896720,
+      "text": "We need to apply this to computer science,\" et cetera."
+    },
+    {
+      "end_ms": 906400,
+      "source_event_index": 163,
+      "start_ms": 900560,
+      "text": "In the future, the AIs are coming up with the next version of this unifying concept."
+    },
+    {
+      "end_ms": 910960,
+      "source_event_index": 164,
+      "start_ms": 906400,
+      "text": "How would you identify it among millions of papers that might actually constitute progress, but which"
+    },
+    {
+      "end_ms": 915360,
+      "source_event_index": 165,
+      "start_ms": 910960,
+      "text": "have much less in terms of general unifying ideas? A lot of it's the test of time."
+    },
+    {
+      "end_ms": 921200,
+      "source_event_index": 166,
+      "start_ms": 916320,
+      "text": "Many great ideas didn't actually get a great reception at the time they were first proposed."
+    },
+    {
+      "end_ms": 925600,
+      "source_event_index": 167,
+      "start_ms": 921200,
+      "text": "It was only after some other scientists realized that they could take it further"
+    },
+    {
+      "end_ms": 929360,
+      "source_event_index": 168,
+      "start_ms": 925600,
+      "text": "and apply them to their own... Deep learning itself was a"
+    },
+    {
+      "end_ms": 934080,
+      "source_event_index": 169,
+      "start_ms": 929360,
+      "text": "niche area of AI for a long time. The idea of getting answers entirely"
+    },
+    {
+      "end_ms": 939440,
+      "source_event_index": 170,
+      "start_ms": 934080,
+      "text": "through training on data and not through first principles reasoning was very controversial,"
+    },
+    {
+      "end_ms": 946960,
+      "source_event_index": 171,
+      "start_ms": 939440,
+      "text": "and it just took a long time before it started bearing fruit. You mentioned the bit. There were"
+    },
+    {
+      "end_ms": 950400,
+      "source_event_index": 172,
+      "start_ms": 946960,
+      "text": "other proposals for computer architectures than the zero-one that is universal today."
+    },
+    {
+      "end_ms": 956640,
+      "source_event_index": 173,
+      "start_ms": 950400,
+      "text": "I think there were trits, three-valued logic. In an alternate universe,"
+    },
+    {
+      "end_ms": 963760,
+      "source_event_index": 174,
+      "start_ms": 956640,
+      "text": "maybe a different paradigm would have shown up. The transformer, for example, is the foundation of"
+    },
+    {
+      "end_ms": 969680,
+      "source_event_index": 175,
+      "start_ms": 963760,
+      "text": "all modern large language models, and it was the first deep learning architecture that really was"
+    },
+    {
+      "end_ms": 973200,
+      "source_event_index": 176,
+      "start_ms": 969680,
+      "text": "sophisticated enough to capture language. But it didn't have to be that way."
+    },
+    {
+      "end_ms": 980000,
+      "source_event_index": 177,
+      "start_ms": 973200,
+      "text": "There could've been some other architecture that was the first to do it and once that was adopted,"
+    },
+    {
+      "end_ms": 985600,
+      "source_event_index": 178,
+      "start_ms": 980000,
+      "text": "it would become the standard. One reason why it's hard to"
+    },
+    {
+      "end_ms": 989840,
+      "source_event_index": 179,
+      "start_ms": 985600,
+      "text": "assess whether a given idea is going to be fruitful is that it depends on the future."
+    },
+    {
+      "end_ms": 996720,
+      "source_event_index": 180,
+      "start_ms": 989840,
+      "text": "It depends also on the culture and society, which ones get adopted, which ones don't."
+    },
+    {
+      "end_ms": 1002880,
+      "source_event_index": 181,
+      "start_ms": 998240,
+      "text": "The base ten numeral system in mathematics is extremely useful, much better than"
+    },
+    {
+      "end_ms": 1008000,
+      "source_event_index": 182,
+      "start_ms": 1002880,
+      "text": "the Roman numeral system, for instance. But again, there's nothing special about ten."
+    },
+    {
+      "end_ms": 1012240,
+      "source_event_index": 183,
+      "start_ms": 1008000,
+      "text": "It's a system that is useful for us because everyone else uses it. We've"
+    },
+    {
+      "end_ms": 1017040,
+      "source_event_index": 184,
+      "start_ms": 1012240,
+      "text": "standardized it. We've built all our computers and our number representation"
+    },
+    {
+      "end_ms": 1022800,
+      "source_event_index": 185,
+      "start_ms": 1017040,
+      "text": "systems around it, so we're stuck with it now. Some people occasionally push for other systems"
+    },
+    {
+      "end_ms": 1032480,
+      "source_event_index": 186,
+      "start_ms": 1022800,
+      "text": "than decimal, but there's just too much inertia. It's not something where you can look at any given"
+    },
+    {
+      "end_ms": 1039040,
+      "source_event_index": 187,
+      "start_ms": 1032480,
+      "text": "scientific achievement purely in isolation and give it an objective grade without being aware"
+    },
+    {
+      "end_ms": 1045040,
+      "source_event_index": 188,
+      "start_ms": 1039040,
+      "text": "of the context both in the past and the future. So it may never be something that you can"
+    },
+    {
+      "end_ms": 1051840,
+      "source_event_index": 189,
+      "start_ms": 1045040,
+      "text": "just reinforcement learn the same way that you can for much more localized problems."
+    },
+    {
+      "end_ms": 1059840,
+      "source_event_index": 190,
+      "start_ms": 1053840,
+      "text": "Often in the history of science when a new theory comes up that in retrospect we realize is correct,"
+    },
+    {
+      "end_ms": 1065920,
+      "source_event_index": 191,
+      "start_ms": 1059840,
+      "text": "it seems to make implications that either make no sense because they're wrong, and we"
+    },
+    {
+      "end_ms": 1069760,
+      "source_event_index": 192,
+      "start_ms": 1065920,
+      "text": "realize later on why they're wrong, or they're correct but seem wildly implausible at the time."
+    },
+    {
+      "end_ms": 1076080,
+      "source_event_index": 193,
+      "start_ms": 1070560,
+      "text": "As you talked about, Aristarchus had heliocentrism in the third century BC."
+    },
+    {
+      "end_ms": 1083520,
+      "source_event_index": 194,
+      "start_ms": 1078480,
+      "text": "The ancient Athenians were like, \"This can't be because if the earth is going around the sun,"
+    },
+    {
+      "end_ms": 1088000,
+      "source_event_index": 195,
+      "start_ms": 1083520,
+      "text": "we should see the relative position of the stars change as we're going around the sun, and the only"
+    },
+    {
+      "end_ms": 1093440,
+      "source_event_index": 196,
+      "start_ms": 1088000,
+      "text": "way that wouldn't be the case is if they're so far away that you don't notice any parallax,\""
+    },
+    {
+      "end_ms": 1096320,
+      "source_event_index": 197,
+      "start_ms": 1093440,
+      "text": "which is actually the correct implication. But there's times when the implication is"
+    },
+    {
+      "end_ms": 1099360,
+      "source_event_index": 198,
+      "start_ms": 1096320,
+      "text": "incorrect and we just need to graduate to a better level of understanding."
+    },
+    {
+      "end_ms": 1105360,
+      "source_event_index": 199,
+      "start_ms": 1099360,
+      "text": "Leibniz would chide Newton and disagree with Newton's theory of gravity on the basis that"
+    },
+    {
+      "end_ms": 1111680,
+      "source_event_index": 200,
+      "start_ms": 1105360,
+      "text": "it implied action at a distance, and they didn't know the mechanism, and Newton himself"
+    },
+    {
+      "end_ms": 1114880,
+      "source_event_index": 201,
+      "start_ms": 1111680,
+      "text": "was sort of stunned that inertial mass and gravitational mass were the same quantity."
+    },
+    {
+      "end_ms": 1119360,
+      "source_event_index": 202,
+      "start_ms": 1114880,
+      "text": "All these things later were resolved by Einstein. But it was still progress. So"
+    },
+    {
+      "end_ms": 1125520,
+      "source_event_index": 203,
+      "start_ms": 1119360,
+      "text": "the question for a system of peer review for AI would be: even if you can falsify a theory,"
+    },
+    {
+      "end_ms": 1129040,
+      "source_event_index": 204,
+      "start_ms": 1125520,
+      "text": "how would you notice that it still constitutes progress relative to the thing before?"
+    },
+    {
+      "end_ms": 1134320,
+      "source_event_index": 205,
+      "start_ms": 1129920,
+      "text": "Often, the ultimately correct theory initially is worse in many ways."
+    },
+    {
+      "end_ms": 1140000,
+      "source_event_index": 206,
+      "start_ms": 1134960,
+      "text": "Copernicus's theory of the planets was less accurate than Ptolemy's theory."
+    },
+    {
+      "end_ms": 1146800,
+      "source_event_index": 207,
+      "start_ms": 1140640,
+      "text": "Geocentrism had been developed for a millennium by that point, and they had"
+    },
+    {
+      "end_ms": 1152960,
+      "source_event_index": 208,
+      "start_ms": 1146800,
+      "text": "made many tweaks and increasingly complicated ad hoc fixes to make it more and more accurate."
+    },
+    {
+      "end_ms": 1156880,
+      "source_event_index": 209,
+      "start_ms": 1153920,
+      "text": "Copernicus's theory was a lot simpler but much less accurate."
+    },
+    {
+      "end_ms": 1160640,
+      "source_event_index": 210,
+      "start_ms": 1156880,
+      "text": "It was only Kepler that made it more accurate than Ptolemy's theory."
+    },
+    {
+      "end_ms": 1166480,
+      "source_event_index": 211,
+      "start_ms": 1161200,
+      "text": "Science is always a work in progress. When you only get part of the solution,"
+    },
+    {
+      "end_ms": 1174000,
+      "source_event_index": 212,
+      "start_ms": 1167040,
+      "text": "it looks worse than a theory which is incorrect but somehow has been completed to the point"
+    },
+    {
+      "end_ms": 1182720,
+      "source_event_index": 213,
+      "start_ms": 1174000,
+      "text": "where it kind of answers all the questions. As you say, Newton's theory had big mysteries."
+    },
+    {
+      "end_ms": 1185760,
+      "source_event_index": 214,
+      "start_ms": 1182720,
+      "text": "They had the equivalence of mass and action at a distance, which"
+    },
+    {
+      "end_ms": 1193120,
+      "source_event_index": 215,
+      "start_ms": 1185760,
+      "text": "were only resolved with a very conceptually different approach centuries afterwards."
+    },
+    {
+      "end_ms": 1199040,
+      "source_event_index": 216,
+      "start_ms": 1194880,
+      "text": "Often progress has to be made not by adding more theories, but by deleting"
+    },
+    {
+      "end_ms": 1206080,
+      "source_event_index": 217,
+      "start_ms": 1199040,
+      "text": "some assumptions that you have in your mind. One reason why geocentrism held on for so long"
+    },
+    {
+      "end_ms": 1210720,
+      "source_event_index": 218,
+      "start_ms": 1206080,
+      "text": "is we had this idea that objects naturally want to stay at rest."
+    },
+    {
+      "end_ms": 1214240,
+      "source_event_index": 219,
+      "start_ms": 1210720,
+      "text": "This is the Aristotelian notion of physics, and so the idea that the Earth was moving…"
+    },
+    {
+      "end_ms": 1219200,
+      "source_event_index": 220,
+      "start_ms": 1214240,
+      "text": "How come we weren't all falling over? Once you have Newton's laws of motion—an"
+    },
+    {
+      "end_ms": 1223520,
+      "source_event_index": 221,
+      "start_ms": 1219200,
+      "text": "object in motion remains in motion and so forth—then it makes sense."
+    },
+    {
+      "end_ms": 1230480,
+      "source_event_index": 222,
+      "start_ms": 1225280,
+      "text": "Conceptually, it's a very big leap to realize that the Earth is in motion."
+    },
+    {
+      "end_ms": 1237040,
+      "source_event_index": 223,
+      "start_ms": 1230480,
+      "text": "It doesn't feel like it's in motion. The biggest advances, like Darwin's"
+    },
+    {
+      "end_ms": 1241840,
+      "source_event_index": 224,
+      "start_ms": 1237040,
+      "text": "theory of evolution, is the idea that species are not static."
+    },
+    {
+      "end_ms": 1247840,
+      "source_event_index": 225,
+      "start_ms": 1242880,
+      "text": "This is not obvious because you don't see evolution in your lifetime."
+    },
+    {
+      "end_ms": 1255360,
+      "source_event_index": 226,
+      "start_ms": 1247840,
+      "text": "Well, now we actually can, but it seems permanent and static."
+    },
+    {
+      "end_ms": 1263440,
+      "source_event_index": 227,
+      "start_ms": 1257680,
+      "text": "Right now we're going through a cognitive version of the Copernican revolution, where we used to"
+    },
+    {
+      "end_ms": 1267040,
+      "source_event_index": 228,
+      "start_ms": 1263440,
+      "text": "think that human intelligence is the center of the universe, and now we're seeing that there are"
+    },
+    {
+      "end_ms": 1272560,
+      "source_event_index": 229,
+      "start_ms": 1267040,
+      "text": "very different types of intelligence out there with very different strengths and weaknesses."
+    },
+    {
+      "end_ms": 1278240,
+      "source_event_index": 230,
+      "start_ms": 1274640,
+      "text": "Our assessment of which tasks require intelligence, which ones don't,"
+    },
+    {
+      "end_ms": 1285280,
+      "source_event_index": 231,
+      "start_ms": 1278960,
+      "text": "has to be reordered quite a bit. Trying to fit AI into our theories"
+    },
+    {
+      "end_ms": 1290160,
+      "source_event_index": 232,
+      "start_ms": 1285280,
+      "text": "of scientific progress and what is hard and what is easy, we're struggling quite a lot."
+    },
+    {
+      "end_ms": 1292880,
+      "source_event_index": 233,
+      "start_ms": 1290160,
+      "text": "We have to ask questions that we've never really had to ask before."
+    },
+    {
+      "end_ms": 1295920,
+      "source_event_index": 234,
+      "start_ms": 1292880,
+      "text": "Or maybe the philosophers had, but now we all have to deal with it."
+    },
+    {
+      "end_ms": 1299600,
+      "source_event_index": 235,
+      "start_ms": 1295920,
+      "text": "This brings up a topic I've been very curious about."
+    },
+    {
+      "end_ms": 1303600,
+      "source_event_index": 236,
+      "start_ms": 1299600,
+      "text": "You mentioned Darwin's theory of evolution. There's this book, The Clockwork Universe"
+    },
+    {
+      "end_ms": 1307360,
+      "source_event_index": 237,
+      "start_ms": 1303600,
+      "text": "by Edward Dolnick, which covers a lot of this era of history we're talking about."
+    },
+    {
+      "end_ms": 1312320,
+      "source_event_index": 238,
+      "start_ms": 1307360,
+      "text": "He has this interesting observation in there. The Origin of Species was published in 1859."
+    },
+    {
+      "end_ms": 1317680,
+      "source_event_index": 239,
+      "start_ms": 1312320,
+      "text": "Principia Mathematica was published in 1687. So The Origin of Species comes out two centuries"
+    },
+    {
+      "end_ms": 1319840,
+      "source_event_index": 240,
+      "start_ms": 1317680,
+      "text": "after Principia. Conceptually,"
+    },
+    {
+      "end_ms": 1324945,
+      "source_event_index": 241,
+      "start_ms": 1319840,
+      "text": "it seems like Darwin's theory is simpler. There's a contemporaneous biologist to Darwin,"
+    },
+    {
+      "end_ms": 1329440,
+      "source_event_index": 242,
+      "start_ms": 1324945,
+      "text": "Thomas Huxley, who reads The Origin of Species and he says, \"How stupid not to have thought of that.\""
+    },
+    {
+      "end_ms": 1332080,
+      "source_event_index": 243,
+      "start_ms": 1329440,
+      "text": "Nobody ever says that about Principia, chiding themselves"
+    },
+    {
+      "end_ms": 1337920,
+      "source_event_index": 244,
+      "start_ms": 1332080,
+      "text": "for not having beaten Newton to gravity. So there's a question of why did it take longer?"
+    },
+    {
+      "end_ms": 1340400,
+      "source_event_index": 245,
+      "start_ms": 1337920,
+      "text": "It seems like a big part of the reason is what you were saying."
+    },
+    {
+      "end_ms": 1343600,
+      "source_event_index": 246,
+      "start_ms": 1340400,
+      "text": "The evidence for natural selection is overwhelming in a certain sense, but it's cumulative and"
+    },
+    {
+      "end_ms": 1347520,
+      "source_event_index": 247,
+      "start_ms": 1343600,
+      "text": "retrospective, whereas Newton can just say, \"Here are my equations."
+    },
+    {
+      "end_ms": 1351440,
+      "source_event_index": 248,
+      "start_ms": 1347520,
+      "text": "Let me see the moon's orbital period and its distance,"
+    },
+    {
+      "end_ms": 1357040,
+      "source_event_index": 249,
+      "start_ms": 1351440,
+      "text": "and if it lines up, then we've made progress.\" Lucretius actually had this idea that species"
+    },
+    {
+      "end_ms": 1362880,
+      "source_event_index": 250,
+      "start_ms": 1357040,
+      "text": "adapted to their environment in the first century BC but nobody really talks about it"
+    },
+    {
+      "end_ms": 1368320,
+      "source_event_index": 251,
+      "start_ms": 1362880,
+      "text": "until Darwin because Lucretius couldn't run some experiment and force people to pay attention."
+    },
+    {
+      "end_ms": 1374560,
+      "source_event_index": 252,
+      "start_ms": 1368960,
+      "text": "I wonder if we'll in retrospect end up seeing much more progress in domains which have this"
+    },
+    {
+      "end_ms": 1380000,
+      "source_event_index": 253,
+      "start_ms": 1374560,
+      "text": "kind of tight data loop where you can verify them quite easily, even though"
+    },
+    {
+      "end_ms": 1384400,
+      "source_event_index": 254,
+      "start_ms": 1380000,
+      "text": "they're conceptually much more difficult. I think one aspect of science is that it's not"
+    },
+    {
+      "end_ms": 1388720,
+      "source_event_index": 255,
+      "start_ms": 1384400,
+      "text": "just creating a new theory and validating it, but communicating it to others."
+    },
+    {
+      "end_ms": 1395840,
+      "source_event_index": 256,
+      "start_ms": 1389360,
+      "text": "Darwin was an amazing science communicator. He wrote in English, in natural language. I'm"
+    },
+    {
+      "end_ms": 1400240,
+      "source_event_index": 257,
+      "start_ms": 1395840,
+      "text": "speaking like a— No Lean."
+    },
+    {
+      "end_ms": 1410000,
+      "source_event_index": 258,
+      "start_ms": 1402560,
+      "text": "I have to get out of my technical mindset. He spoke in plain English, didn't use equations,"
+    },
+    {
+      "end_ms": 1416960,
+      "source_event_index": 259,
+      "start_ms": 1410000,
+      "text": "and he synthesized a lot of disparate facts. Little pieces of evolution had been worked out in"
+    },
+    {
+      "end_ms": 1422960,
+      "source_event_index": 260,
+      "start_ms": 1416960,
+      "text": "the past, but he had this very compelling vision. Again, he was still missing things."
+    },
+    {
+      "end_ms": 1427920,
+      "source_event_index": 261,
+      "start_ms": 1422960,
+      "text": "He didn't know the mechanism for heredity, he didn't have DNA."
+    },
+    {
+      "end_ms": 1435920,
+      "source_event_index": 262,
+      "start_ms": 1429920,
+      "text": "But his writing style was persuasive, and that helped a lot. Newton wrote in Latin."
+    },
+    {
+      "end_ms": 1442720,
+      "source_event_index": 263,
+      "start_ms": 1437600,
+      "text": "He had invented entire new areas of mathematics just to explain what he was doing."
+    },
+    {
+      "end_ms": 1446960,
+      "source_event_index": 264,
+      "start_ms": 1442720,
+      "text": "He was also from an era where scientists were much more secretive and competitive."
+    },
+    {
+      "end_ms": 1450880,
+      "source_event_index": 265,
+      "start_ms": 1447600,
+      "text": "Academia is still competitive, but it was even worse back in Newton's day."
+    },
+    {
+      "end_ms": 1456560,
+      "source_event_index": 266,
+      "start_ms": 1451920,
+      "text": "He held back some of his best insights because he didn't want his rivals to get any advantage."
+    },
+    {
+      "end_ms": 1460800,
+      "source_event_index": 267,
+      "start_ms": 1457600,
+      "text": "He was also a somewhat unpleasant person from what I gather."
+    },
+    {
+      "end_ms": 1468480,
+      "source_event_index": 268,
+      "start_ms": 1463040,
+      "text": "It was only a couple of decades after Newton when other scientists explained his work in"
+    },
+    {
+      "end_ms": 1479120,
+      "source_event_index": 269,
+      "start_ms": 1468480,
+      "text": "much simpler terms that they became widespread. The art of exposition and making a case and"
+    },
+    {
+      "end_ms": 1483440,
+      "source_event_index": 270,
+      "start_ms": 1479120,
+      "text": "creating a narrative is also a very important part of science."
+    },
+    {
+      "end_ms": 1490320,
+      "source_event_index": 271,
+      "start_ms": 1485280,
+      "text": "If you have the data, it helps, but people need to be convinced, otherwise they will not push"
+    },
+    {
+      "end_ms": 1496560,
+      "source_event_index": 272,
+      "start_ms": 1490320,
+      "text": "it further or take the initial investment to learn your theory and really explore it."
+    },
+    {
+      "end_ms": 1500640,
+      "source_event_index": 273,
+      "start_ms": 1498000,
+      "text": "That's another thing which is really hard to reinforcement learn on."
+    },
+    {
+      "end_ms": 1505600,
+      "source_event_index": 274,
+      "start_ms": 1501440,
+      "text": "How can you score how persuasive you are? Well, there are entire marketing"
+    },
+    {
+      "end_ms": 1508720,
+      "source_event_index": 275,
+      "start_ms": 1505600,
+      "text": "departments trying to do this. Maybe it's good that AI is not"
+    },
+    {
+      "end_ms": 1516080,
+      "source_event_index": 276,
+      "start_ms": 1508720,
+      "text": "yet optimized to be persuasive. There's a social aspect to science."
+    },
+    {
+      "end_ms": 1523520,
+      "source_event_index": 277,
+      "start_ms": 1519120,
+      "text": "Even though we pride ourselves on having an objective side to it, where there's data and"
+    },
+    {
+      "end_ms": 1528480,
+      "source_event_index": 278,
+      "start_ms": 1523520,
+      "text": "experiment and validation, we still have to tell stories and convince our fellow"
+    },
+    {
+      "end_ms": 1541520,
+      "source_event_index": 279,
+      "start_ms": 1528480,
+      "text": "scientists. That's a soft, squishy thing. It's a combination of data and painting a narrative,"
+    },
+    {
+      "end_ms": 1546560,
+      "source_event_index": 280,
+      "start_ms": 1541520,
+      "text": "and it's a narrative of gaps. Even with Darwin, as I said, there"
+    },
+    {
+      "end_ms": 1551200,
+      "source_event_index": 281,
+      "start_ms": 1546560,
+      "text": "were pieces of his theory he could not explain. But he could still make a case that in the future,"
+    },
+    {
+      "end_ms": 1554960,
+      "source_event_index": 282,
+      "start_ms": 1551200,
+      "text": "people would find transitional forms, that they would find the"
+    },
+    {
+      "end_ms": 1561280,
+      "source_event_index": 283,
+      "start_ms": 1554960,
+      "text": "mechanism of inheritance, and they did. I don't know how you can quantify that"
+    },
+    {
+      "end_ms": 1564640,
+      "source_event_index": 284,
+      "start_ms": 1561280,
+      "text": "in such a precise way that you can start doing reinforcement learning."
+    },
+    {
+      "end_ms": 1570880,
+      "source_event_index": 285,
+      "start_ms": 1566320,
+      "text": "Maybe that will be forever the human side of science."
+    },
+    {
+      "end_ms": 1576880,
+      "source_event_index": 286,
+      "start_ms": 1570880,
+      "text": "One takeaway I had from reading and watching your stuff on the cosmic distance ladder… By the way,"
+    },
+    {
+      "end_ms": 1581600,
+      "source_event_index": 287,
+      "start_ms": 1576880,
+      "text": "I highly recommend people watch your series with 3Blue1Brown on the cosmic distance ladder."
+    },
+    {
+      "end_ms": 1590240,
+      "source_event_index": 288,
+      "start_ms": 1582560,
+      "text": "One takeaway was that the deductive overhang in many fields could be"
+    },
+    {
+      "end_ms": 1593600,
+      "source_event_index": 289,
+      "start_ms": 1590240,
+      "text": "so much bigger than people realize. If you just had the right insight about"
+    },
+    {
+      "end_ms": 1598800,
+      "source_event_index": 290,
+      "start_ms": 1593600,
+      "text": "how to study a problem, you might be surprised at how much more you could learn about the world."
+    },
+    {
+      "end_ms": 1603120,
+      "source_event_index": 291,
+      "start_ms": 1598800,
+      "text": "I wonder if you think that's a product of astronomy at the particular times"
+    },
+    {
+      "end_ms": 1606960,
+      "source_event_index": 292,
+      "start_ms": 1603120,
+      "text": "in history that you're studying. Or is it just that based on the data"
+    },
+    {
+      "end_ms": 1612560,
+      "source_event_index": 293,
+      "start_ms": 1606960,
+      "text": "that is incident on the Earth right now, we could actually divine a lot more than we happen to know?"
+    },
+    {
+      "end_ms": 1619280,
+      "source_event_index": 294,
+      "start_ms": 1612560,
+      "text": "Astronomy was one of the first sciences to really embrace data analysis and squeezing"
+    },
+    {
+      "end_ms": 1624400,
+      "source_event_index": 295,
+      "start_ms": 1619280,
+      "text": "every last possible drop of information out of the information they had because data was"
+    },
+    {
+      "end_ms": 1630160,
+      "source_event_index": 296,
+      "start_ms": 1624400,
+      "text": "the bottleneck. It still is the bottleneck. It's really hard to collect astronomical data."
+    },
+    {
+      "end_ms": 1640160,
+      "source_event_index": 297,
+      "start_ms": 1630160,
+      "text": "Astronomers are world-class in extracting all kinds of conclusions"
+    },
+    {
+      "end_ms": 1646400,
+      "source_event_index": 298,
+      "start_ms": 1640160,
+      "text": "from little traces of data, almost like Sherlock. I hear that for a lot of quant hedge funds, their"
+    },
+    {
+      "end_ms": 1651280,
+      "source_event_index": 299,
+      "start_ms": 1646400,
+      "text": "preferred hire is an astronomy PhD, actually. They are also very interested for other reasons"
+    },
+    {
+      "end_ms": 1655120,
+      "source_event_index": 300,
+      "start_ms": 1651280,
+      "text": "in extracting signals from various random bits of data."
+    },
+    {
+      "end_ms": 1659040,
+      "source_event_index": 301,
+      "start_ms": 1655120,
+      "text": "Okay, speaking of clever ideas, one of my listeners, Shawn,"
+    },
+    {
+      "end_ms": 1664160,
+      "source_event_index": 302,
+      "start_ms": 1659040,
+      "text": "solved the puzzle that Jane Street made for my audience and posted a great walkthrough on X."
+    },
+    {
+      "end_ms": 1670000,
+      "source_event_index": 303,
+      "start_ms": 1664160,
+      "text": "For context, Jane Street trained a ResNet, shuffled all 96 layers, and then challenged"
+    },
+    {
+      "end_ms": 1674640,
+      "source_event_index": 304,
+      "start_ms": 1670000,
+      "text": "people to put them back in the right order using only the model's outputs and training data."
+    },
+    {
+      "end_ms": 1678880,
+      "source_event_index": 305,
+      "start_ms": 1674640,
+      "text": "You can't brute force this – there's more possible orderings than atoms in the universe."
+    },
+    {
+      "end_ms": 1681440,
+      "source_event_index": 306,
+      "start_ms": 1678880,
+      "text": "So Shawn broke the problem into two different parts."
+    },
+    {
+      "end_ms": 1686880,
+      "source_event_index": 307,
+      "start_ms": 1681440,
+      "text": "First, pair the layers into 48 different blocks. And second, put those blocks in the right order."
+    },
+    {
+      "end_ms": 1691360,
+      "source_event_index": 308,
+      "start_ms": 1686880,
+      "text": "For pairing, Shawn realized that in a well-trained ResNet, the product of"
+    },
+    {
+      "end_ms": 1696640,
+      "source_event_index": 309,
+      "start_ms": 1691360,
+      "text": "two weight matrices in a residual block should have a distinctive negative diagonal pattern."
+    },
+    {
+      "end_ms": 1700400,
+      "source_event_index": 310,
+      "start_ms": 1696640,
+      "text": "This arises as a way for the model to keep the residual stream from growing out of control."
+    },
+    {
+      "end_ms": 1703440,
+      "source_event_index": 311,
+      "start_ms": 1700400,
+      "text": "From this insight, he was able to recover the right pairings."
+    },
+    {
+      "end_ms": 1708080,
+      "source_event_index": 312,
+      "start_ms": 1703440,
+      "text": "For ordering, Shawn noticed that the model seemed to improve if he sorted the blocks by"
+    },
+    {
+      "end_ms": 1711680,
+      "source_event_index": 313,
+      "start_ms": 1708080,
+      "text": "the size of their residual contributions. Starting with that rough approximation,"
+    },
+    {
+      "end_ms": 1716640,
+      "source_event_index": 314,
+      "start_ms": 1711680,
+      "text": "he combined a clever ranking heuristic with local swaps to recover the exact right order."
+    },
+    {
+      "end_ms": 1719120,
+      "source_event_index": 315,
+      "start_ms": 1716640,
+      "text": "His full walkthrough is linked in the description."
+    },
+    {
+      "end_ms": 1720960,
+      "source_event_index": 316,
+      "start_ms": 1719120,
+      "text": "Don't worry if you didn't get to this puzzle in time, though."
+    },
+    {
+      "end_ms": 1724960,
+      "source_event_index": 317,
+      "start_ms": 1720960,
+      "text": "There's still one up about backdoored LLMs that even Jane Street doesn't know how to solve."
+    },
+    {
+      "end_ms": 1731200,
+      "source_event_index": 318,
+      "start_ms": 1724960,
+      "text": "You can find it at janestreet.com/dwarkesh. Alright, back to Terence!"
+    },
+    {
+      "end_ms": 1737520,
+      "source_event_index": 319,
+      "start_ms": 1731200,
+      "text": "We do under-explore how to extract extra information from various signals."
+    },
+    {
+      "end_ms": 1746800,
+      "source_event_index": 320,
+      "start_ms": 1740640,
+      "text": "Just to pick one random study, I remember reading once that people were trying to measure how often"
+    },
+    {
+      "end_ms": 1752480,
+      "source_event_index": 321,
+      "start_ms": 1746800,
+      "text": "scientists actually read the papers that they cite. How do you measure"
+    },
+    {
+      "end_ms": 1759920,
+      "source_event_index": 322,
+      "start_ms": 1752480,
+      "text": "this? You could try to survey different scientists, but they had a clever trick."
+    },
+    {
+      "end_ms": 1767280,
+      "source_event_index": 323,
+      "start_ms": 1761280,
+      "text": "Many citations have little typos, like a number is wrong or punctuation is almost wrong."
+    },
+    {
+      "end_ms": 1773680,
+      "source_event_index": 324,
+      "start_ms": 1768000,
+      "text": "They measured how often a typo got copied from one reference to the next, and they"
+    },
+    {
+      "end_ms": 1779840,
+      "source_event_index": 325,
+      "start_ms": 1773680,
+      "text": "could infer whether an author was just copying and pasting a reference without actually checking it."
+    },
+    {
+      "end_ms": 1786960,
+      "source_event_index": 326,
+      "start_ms": 1780880,
+      "text": "From that, they were able to infer some measure of how much attention people were paying."
+    },
+    {
+      "end_ms": 1794160,
+      "source_event_index": 327,
+      "start_ms": 1786960,
+      "text": "So there are some clever tricks to extract… These questions you posed earlier of how"
+    },
+    {
+      "end_ms": 1800800,
+      "source_event_index": 328,
+      "start_ms": 1794160,
+      "text": "we can assess whether a scientific development is fruitful, interesting, or represents real"
+    },
+    {
+      "end_ms": 1811200,
+      "source_event_index": 329,
+      "start_ms": 1800800,
+      "text": "progress… Maybe there are really useful metrics or footprints of this phenomenon in data."
+    },
+    {
+      "end_ms": 1816960,
+      "source_event_index": 330,
+      "start_ms": 1812240,
+      "text": "We can examine citations and how often something is mentioned in a conference."
+    },
+    {
+      "end_ms": 1825440,
+      "source_event_index": 331,
+      "start_ms": 1817680,
+      "text": "Maybe there's a lot of sociology of science research to be done that could actually"
+    },
+    {
+      "end_ms": 1827840,
+      "source_event_index": 332,
+      "start_ms": 1825440,
+      "text": "detect these things. Maybe we should get"
+    },
+    {
+      "end_ms": 1836960,
+      "source_event_index": 333,
+      "start_ms": 1827840,
+      "text": "some astronomers on the case, actually. That brings us nicely to the progress that, from"
+    },
+    {
+      "end_ms": 1841360,
+      "source_event_index": 334,
+      "start_ms": 1836960,
+      "text": "the outside, it seems like AI for math is making. You had a post recently where you pointed out"
+    },
+    {
+      "end_ms": 1844800,
+      "source_event_index": 335,
+      "start_ms": 1841360,
+      "text": "that over the last few months, AI programs have solved fifty"
+    },
+    {
+      "end_ms": 1850800,
+      "source_event_index": 336,
+      "start_ms": 1844800,
+      "text": "out of the eleven hundred odd Erdős problems. I don’t know if it’s still correct, but as of"
+    },
+    {
+      "end_ms": 1855360,
+      "source_event_index": 337,
+      "start_ms": 1850800,
+      "text": "a month ago you said that there had been a pause because the low-hanging fruit had been picked."
+    },
+    {
+      "end_ms": 1859600,
+      "source_event_index": 338,
+      "start_ms": 1855360,
+      "text": "First of all, I'm curious if that is still the case, that we have picked the low-hanging fruit"
+    },
+    {
+      "end_ms": 1867360,
+      "source_event_index": 339,
+      "start_ms": 1859600,
+      "text": "and now we're at this plateau currently. It does seem so. Fifty-odd problems have"
+    },
+    {
+      "end_ms": 1871040,
+      "source_event_index": 340,
+      "start_ms": 1867360,
+      "text": "been solved with AI assistance, which is great, but there's like six hundred to go."
+    },
+    {
+      "end_ms": 1875360,
+      "source_event_index": 341,
+      "start_ms": 1872160,
+      "text": "People are still chipping away at one or two of these right now."
+    },
+    {
+      "end_ms": 1883760,
+      "source_event_index": 342,
+      "start_ms": 1877600,
+      "text": "We're seeing a lot fewer pure AI solutions now where the AI just one-shots the problem."
+    },
+    {
+      "end_ms": 1888400,
+      "source_event_index": 343,
+      "start_ms": 1884640,
+      "text": "There was a month where that happened and that has stopped, not for lack of trying."
+    },
+    {
+      "end_ms": 1893920,
+      "source_event_index": 344,
+      "start_ms": 1888400,
+      "text": "I know of three separate attempts to get frontier model AIs to just attack every"
+    },
+    {
+      "end_ms": 1898800,
+      "source_event_index": 345,
+      "start_ms": 1893920,
+      "text": "single one of the problems simultaneously. They pick out some minor observations,"
+    },
+    {
+      "end_ms": 1903040,
+      "source_event_index": 346,
+      "start_ms": 1898800,
+      "text": "or maybe they find that some problem was already solved in the literature, but there hasn't been"
+    },
+    {
+      "end_ms": 1910560,
+      "source_event_index": 347,
+      "start_ms": 1903040,
+      "text": "any further purely AI-powered solution yet. People are using AI a lot currently."
+    },
+    {
+      "end_ms": 1915600,
+      "source_event_index": 348,
+      "start_ms": 1910560,
+      "text": "Someone might use AI to generate a possible proof strategy, and then another person will"
+    },
+    {
+      "end_ms": 1921600,
+      "source_event_index": 349,
+      "start_ms": 1915600,
+      "text": "use a separate AI tool to critique it, rewrite it, generate some numerical data for it,"
+    },
+    {
+      "end_ms": 1926240,
+      "source_event_index": 350,
+      "start_ms": 1921600,
+      "text": "or do a literature survey. Some problems have been solved"
+    },
+    {
+      "end_ms": 1930720,
+      "source_event_index": 351,
+      "start_ms": 1926240,
+      "text": "by an ongoing conversation between lots of humans and lots of AI tools."
+    },
+    {
+      "end_ms": 1939920,
+      "source_event_index": 352,
+      "start_ms": 1931520,
+      "text": "But it does seem like it was this one-off thing. Maybe one analogy for these problems is"
+    },
+    {
+      "end_ms": 1946400,
+      "source_event_index": 353,
+      "start_ms": 1942880,
+      "text": "that you're in some sort of mountain range with all kinds of cliffs and walls."
+    },
+    {
+      "end_ms": 1953680,
+      "source_event_index": 354,
+      "start_ms": 1947120,
+      "text": "Maybe there's a little wall which is three feet high, and one that's six feet high,"
+    },
+    {
+      "end_ms": 1958080,
+      "source_event_index": 355,
+      "start_ms": 1953680,
+      "text": "and then there's fifteen feet high, and then there are some mile-high cliffs."
+    },
+    {
+      "end_ms": 1963040,
+      "source_event_index": 356,
+      "start_ms": 1959120,
+      "text": "You're trying to climb as many of these cliffs as possible, but it's in the dark."
+    },
+    {
+      "end_ms": 1966080,
+      "source_event_index": 357,
+      "start_ms": 1963040,
+      "text": "We don't know which ones are tall, which ones are short."
+    },
+    {
+      "end_ms": 1970720,
+      "source_event_index": 358,
+      "start_ms": 1966880,
+      "text": "So we try to light some candles and make some maps, and slowly we"
+    },
+    {
+      "end_ms": 1976080,
+      "source_event_index": 359,
+      "start_ms": 1970720,
+      "text": "figure out some of them are climbable. Some of them we can identify a partial"
+    },
+    {
+      "end_ms": 1982240,
+      "source_event_index": 360,
+      "start_ms": 1976960,
+      "text": "track in the wall that you can reach first. These AI tools, they're like jumping"
+    },
+    {
+      "end_ms": 1986960,
+      "source_event_index": 361,
+      "start_ms": 1982240,
+      "text": "machines that can jump two meters in the air, higher than any human."
+    },
+    {
+      "end_ms": 1989440,
+      "source_event_index": 362,
+      "start_ms": 1986960,
+      "text": "Sometimes they jump in the wrong direction, and sometimes they crash,"
+    },
+    {
+      "end_ms": 1998800,
+      "source_event_index": 363,
+      "start_ms": 1989440,
+      "text": "but sometimes they can reach the tops of the lowest walls that we couldn't reach before."
+    },
+    {
+      "end_ms": 2002000,
+      "source_event_index": 364,
+      "start_ms": 1998800,
+      "text": "We've just set them loose in this mountain range, hopping around."
+    },
+    {
+      "end_ms": 2008560,
+      "source_event_index": 365,
+      "start_ms": 2003120,
+      "text": "There was this exciting period where they could actually find all the low ones and reach them."
+    },
+    {
+      "end_ms": 2016960,
+      "source_event_index": 366,
+      "start_ms": 2012880,
+      "text": "Maybe the next time there's a big advance in the models, they will"
+    },
+    {
+      "end_ms": 2025760,
+      "source_event_index": 367,
+      "start_ms": 2016960,
+      "text": "try it again, and a few more will be breached. But it's a different style of doing mathematics."
+    },
+    {
+      "end_ms": 2034640,
+      "source_event_index": 368,
+      "start_ms": 2028320,
+      "text": "Normally we would hill climb, make little markers, and try to identify partial things."
+    },
+    {
+      "end_ms": 2042640,
+      "source_event_index": 369,
+      "start_ms": 2036560,
+      "text": "These tools either succeed or they fail. They've been really bad at creating partial"
+    },
+    {
+      "end_ms": 2048400,
+      "source_event_index": 370,
+      "start_ms": 2042640,
+      "text": "progress or identifying intermediate stages that you should focus on first."
+    },
+    {
+      "end_ms": 2054000,
+      "source_event_index": 371,
+      "start_ms": 2049600,
+      "text": "Going back to this previous discussion, we don't have a way of evaluating partial progress"
+    },
+    {
+      "end_ms": 2059520,
+      "source_event_index": 372,
+      "start_ms": 2054800,
+      "text": "the same way we can evaluate a one-shot success or failure of solving a problem."
+    },
+    {
+      "end_ms": 2063040,
+      "source_event_index": 373,
+      "start_ms": 2059520,
+      "text": "There's two different ways to think through what you've just said."
+    },
+    {
+      "end_ms": 2066080,
+      "source_event_index": 374,
+      "start_ms": 2063040,
+      "text": "One of them is more bearish on AI progress, and one of them is more bullish."
+    },
+    {
+      "end_ms": 2069920,
+      "source_event_index": 375,
+      "start_ms": 2066080,
+      "text": "The bearish one being, \"Oh, they're only getting to a certain height of wall,"
+    },
+    {
+      "end_ms": 2076560,
+      "source_event_index": 376,
+      "start_ms": 2069920,
+      "text": "which is not as high as humans are reaching.\" The second is that they have this powerful"
+    },
+    {
+      "end_ms": 2081840,
+      "source_event_index": 377,
+      "start_ms": 2076560,
+      "text": "property that once they achieve a certain waterline, they can fill every single problem"
+    },
+    {
+      "end_ms": 2085520,
+      "source_event_index": 378,
+      "start_ms": 2081840,
+      "text": "that is available at that waterline, which we simply can't do with humans."
+    },
+    {
+      "end_ms": 2089840,
+      "source_event_index": 379,
+      "start_ms": 2085520,
+      "text": "We can't make a million copies of you and give each of them a million dollars"
+    },
+    {
+      "end_ms": 2097280,
+      "source_event_index": 380,
+      "start_ms": 2089840,
+      "text": "of inference compute and have you do a hundred years of subjective time research on a million"
+    },
+    {
+      "end_ms": 2100640,
+      "source_event_index": 381,
+      "start_ms": 2097280,
+      "text": "different problems at the same time. But once AIs reach Terence Tao-level,"
+    },
+    {
+      "end_ms": 2103920,
+      "source_event_index": 382,
+      "start_ms": 2100640,
+      "text": "they could do that. Once they reach intermediate levels,"
+    },
+    {
+      "end_ms": 2109520,
+      "source_event_index": 383,
+      "start_ms": 2103920,
+      "text": "they could do the intermediate version of that. The same reason that we should be bearish now is"
+    },
+    {
+      "end_ms": 2112880,
+      "source_event_index": 384,
+      "start_ms": 2109520,
+      "text": "the reason we should be especially bullish. Not even when they achieve superhuman"
+    },
+    {
+      "end_ms": 2115040,
+      "source_event_index": 385,
+      "start_ms": 2112880,
+      "text": "intelligence, but just when they achieve human-level intelligence,"
+    },
+    {
+      "end_ms": 2119680,
+      "source_event_index": 386,
+      "start_ms": 2115040,
+      "text": "because their human-level intelligence is qualitatively wider and more powerful"
+    },
+    {
+      "end_ms": 2124320,
+      "source_event_index": 387,
+      "start_ms": 2119680,
+      "text": "than our human-level intelligence. I agree. They excel at breadth,"
+    },
+    {
+      "end_ms": 2129920,
+      "source_event_index": 388,
+      "start_ms": 2124320,
+      "text": "and humans excel at depth, human experts at least. I think they're very complementary."
+    },
+    {
+      "end_ms": 2137520,
+      "source_event_index": 389,
+      "start_ms": 2130880,
+      "text": "But our current way of doing math and science is focused on depth because that's where human"
+    },
+    {
+      "end_ms": 2145600,
+      "source_event_index": 390,
+      "start_ms": 2137520,
+      "text": "expertise is, because humans can't do breadth. We have to redesign the way we do science to take"
+    },
+    {
+      "end_ms": 2149360,
+      "source_event_index": 391,
+      "start_ms": 2145600,
+      "text": "full advantage of this breadth capability that we now have."
+    },
+    {
+      "end_ms": 2155280,
+      "source_event_index": 392,
+      "start_ms": 2151120,
+      "text": "We should have a lot more effort in creating very broad classes of problems to work on rather"
+    },
+    {
+      "end_ms": 2161440,
+      "source_event_index": 393,
+      "start_ms": 2155280,
+      "text": "than one or two really deep, important problems. We should still have the deep, important problems,"
+    },
+    {
+      "end_ms": 2168960,
+      "source_event_index": 394,
+      "start_ms": 2161440,
+      "text": "and humans should still be working on them. But now we have this other way of doing science."
+    },
+    {
+      "end_ms": 2175360,
+      "source_event_index": 395,
+      "start_ms": 2170160,
+      "text": "We can explore entirely new fields of science by first getting these broad,"
+    },
+    {
+      "end_ms": 2181520,
+      "source_event_index": 396,
+      "start_ms": 2176000,
+      "text": "moderately competent AIs to map it out and make all the easy observations."
+    },
+    {
+      "end_ms": 2188560,
+      "source_event_index": 397,
+      "start_ms": 2181520,
+      "text": "And then identify certain islands of difficulty, which human experts can then come and work on."
+    },
+    {
+      "end_ms": 2194720,
+      "source_event_index": 398,
+      "start_ms": 2189120,
+      "text": "I see very much a future of very complementary science."
+    },
+    {
+      "end_ms": 2201920,
+      "source_event_index": 399,
+      "start_ms": 2194720,
+      "text": "Eventually, you would hope to get both breadth and depth and somehow get the best of both worlds."
+    },
+    {
+      "end_ms": 2208880,
+      "source_event_index": 400,
+      "start_ms": 2201920,
+      "text": "But we need practice with the breadth side. It's too new. We don't even have the paradigms"
+    },
+    {
+      "end_ms": 2214000,
+      "source_event_index": 401,
+      "start_ms": 2208880,
+      "text": "to really take full advantage of it. But we will, and then science will be"
+    },
+    {
+      "end_ms": 2219600,
+      "source_event_index": 402,
+      "start_ms": 2214000,
+      "text": "unrecognizable after that, I think. To this point about complementarity,"
+    },
+    {
+      "end_ms": 2224800,
+      "source_event_index": 403,
+      "start_ms": 2220560,
+      "text": "programmers have noticed that they're way more productive as a result of these AI tools."
+    },
+    {
+      "end_ms": 2229520,
+      "source_event_index": 404,
+      "start_ms": 2225680,
+      "text": "I don't know if you as a mathematician feel the same way, but it does seem"
+    },
+    {
+      "end_ms": 2236320,
+      "source_event_index": 405,
+      "start_ms": 2229520,
+      "text": "like one big difference between vibe coding and vibe researching is that with software,"
+    },
+    {
+      "end_ms": 2241360,
+      "source_event_index": 406,
+      "start_ms": 2236320,
+      "text": "the whole point is to have some effect on the world through your work."
+    },
+    {
+      "end_ms": 2245040,
+      "source_event_index": 407,
+      "start_ms": 2241360,
+      "text": "If it leads to you better understanding a problem or coming up with some clean"
+    },
+    {
+      "end_ms": 2249120,
+      "source_event_index": 408,
+      "start_ms": 2245040,
+      "text": "abstraction to embody in your code, that is instrumental to the end goal."
+    },
+    {
+      "end_ms": 2254560,
+      "source_event_index": 409,
+      "start_ms": 2249120,
+      "text": "Whereas with research, the reason we care about solving the Millennium Prize Problems"
+    },
+    {
+      "end_ms": 2259600,
+      "source_event_index": 410,
+      "start_ms": 2254560,
+      "text": "is that presumably that in the process of solving them, we discover new mathematical"
+    },
+    {
+      "end_ms": 2265840,
+      "source_event_index": 411,
+      "start_ms": 2259600,
+      "text": "objects or new techniques that advance our civilization's understanding of mathematics."
+    },
+    {
+      "end_ms": 2270800,
+      "source_event_index": 412,
+      "start_ms": 2265840,
+      "text": "So the proof is instrumental to the intermediate work."
+    },
+    {
+      "end_ms": 2277040,
+      "source_event_index": 413,
+      "start_ms": 2270800,
+      "text": "I don't know if you agree with that dichotomy or if that in any way will explain the relative"
+    },
+    {
+      "end_ms": 2283200,
+      "source_event_index": 414,
+      "start_ms": 2277040,
+      "text": "uplift we'll see in software versus research. Certainly in math, the process is often more"
+    },
+    {
+      "end_ms": 2286320,
+      "source_event_index": 415,
+      "start_ms": 2283200,
+      "text": "important than the problem itself. The problem is kind of a proxy"
+    },
+    {
+      "end_ms": 2289360,
+      "source_event_index": 416,
+      "start_ms": 2286320,
+      "text": "for measuring progress. I think even in software,"
+    },
+    {
+      "end_ms": 2295120,
+      "source_event_index": 417,
+      "start_ms": 2289360,
+      "text": "there are different types of software tasks. If you just create a webpage that does the same"
+    },
+    {
+      "end_ms": 2299600,
+      "source_event_index": 418,
+      "start_ms": 2295120,
+      "text": "thing that a thousand other webpages do, there's no skill to be learned."
+    },
+    {
+      "end_ms": 2304000,
+      "source_event_index": 419,
+      "start_ms": 2299600,
+      "text": "Well, there is still some skill maybe that the individual programmer could pick up."
+    },
+    {
+      "end_ms": 2312480,
+      "source_event_index": 420,
+      "start_ms": 2304000,
+      "text": "But for boilerplate-type code, it's something that you should definitely offload to AI."
+    },
+    {
+      "end_ms": 2318000,
+      "source_event_index": 421,
+      "start_ms": 2315600,
+      "text": "Sometimes once you make the code, you still have to maintain it."
+    },
+    {
+      "end_ms": 2321920,
+      "source_event_index": 422,
+      "start_ms": 2319040,
+      "text": "There are issues with upgrading it and making it compatible with other things."
+    },
+    {
+      "end_ms": 2329520,
+      "source_event_index": 423,
+      "start_ms": 2324720,
+      "text": "I've heard programmers report that even if an AI can create the first prototype"
+    },
+    {
+      "end_ms": 2335280,
+      "source_event_index": 424,
+      "start_ms": 2330800,
+      "text": "of a tool, making it mesh with everything else and making it interact with the real"
+    },
+    {
+      "end_ms": 2341920,
+      "source_event_index": 425,
+      "start_ms": 2335280,
+      "text": "world in the way they want is an ongoing process. If you don't have the skills that you pick up from"
+    },
+    {
+      "end_ms": 2349440,
+      "source_event_index": 426,
+      "start_ms": 2343520,
+      "text": "writing the code, that may impact your ability to maintain it down the road."
+    },
+    {
+      "end_ms": 2359440,
+      "source_event_index": 427,
+      "start_ms": 2350640,
+      "text": "So yes, certainly mathematicians, we've used problems to build intuition and to train people"
+    },
+    {
+      "end_ms": 2365040,
+      "source_event_index": 428,
+      "start_ms": 2359440,
+      "text": "to have a good idea of what's true, what to expect, what is provable, and what is difficult."
+    },
+    {
+      "end_ms": 2370480,
+      "source_event_index": 429,
+      "start_ms": 2366480,
+      "text": "Just getting the answers right away may actually inhibit that process."
+    },
+    {
+      "end_ms": 2377520,
+      "source_event_index": 430,
+      "start_ms": 2375280,
+      "text": "I made a distinction between theory and experiment before."
+    },
+    {
+      "end_ms": 2382240,
+      "source_event_index": 431,
+      "start_ms": 2379360,
+      "text": "In most sciences, there's an equal division between the theoretical side"
+    },
+    {
+      "end_ms": 2386160,
+      "source_event_index": 432,
+      "start_ms": 2382240,
+      "text": "and the experimental side. Math has been unique in"
+    },
+    {
+      "end_ms": 2393280,
+      "source_event_index": 433,
+      "start_ms": 2386160,
+      "text": "that it's almost entirely theoretical. We place a premium on trying to have coherent,"
+    },
+    {
+      "end_ms": 2399120,
+      "source_event_index": 434,
+      "start_ms": 2393280,
+      "text": "clean theories of why things are true and false. We haven't done many experiments as to,"
+    },
+    {
+      "end_ms": 2403520,
+      "source_event_index": 435,
+      "start_ms": 2399120,
+      "text": "if we have two different ways to solve a problem, which is more effective."
+    },
+    {
+      "end_ms": 2407920,
+      "source_event_index": 436,
+      "start_ms": 2404640,
+      "text": "We have some intuition, but we haven't done large-scale studies where we take a thousand"
+    },
+    {
+      "end_ms": 2413120,
+      "source_event_index": 437,
+      "start_ms": 2407920,
+      "text": "problems and just test them. But we can do that now."
+    },
+    {
+      "end_ms": 2419520,
+      "source_event_index": 438,
+      "start_ms": 2413120,
+      "text": "I think AI-type tools will actually revolutionize the experimental side of math,"
+    },
+    {
+      "end_ms": 2424880,
+      "source_event_index": 439,
+      "start_ms": 2419520,
+      "text": "where you don't care so much about individual problems and the process of solving them,"
+    },
+    {
+      "end_ms": 2430000,
+      "source_event_index": 440,
+      "start_ms": 2424880,
+      "text": "but you want to gather large-scale data about what things work and what things don't."
+    },
+    {
+      "end_ms": 2436240,
+      "source_event_index": 441,
+      "start_ms": 2430000,
+      "text": "The same way that if you're a software company and you want to roll out a thousand"
+    },
+    {
+      "end_ms": 2439280,
+      "source_event_index": 442,
+      "start_ms": 2436240,
+      "text": "pieces of software, you don't really want to handcraft each one and learn lessons from each."
+    },
+    {
+      "end_ms": 2442000,
+      "source_event_index": 443,
+      "start_ms": 2439280,
+      "text": "You just want to find what workflows let you scale."
+    },
+    {
+      "end_ms": 2449200,
+      "source_event_index": 444,
+      "start_ms": 2446000,
+      "text": "The idea of doing mathematics at scale is at its infancy."
+    },
+    {
+      "end_ms": 2452240,
+      "source_event_index": 445,
+      "start_ms": 2449200,
+      "text": "But that's where AI is really going to revolutionize the subject."
+    },
+    {
+      "end_ms": 2458880,
+      "source_event_index": 446,
+      "start_ms": 2453360,
+      "text": "I feel like a big crux in these conversations about how good AI will be for science is,"
+    },
+    {
+      "end_ms": 2464880,
+      "source_event_index": 447,
+      "start_ms": 2458880,
+      "text": "I think you said this, that they're using existing techniques and modifying them."
+    },
+    {
+      "end_ms": 2469680,
+      "source_event_index": 448,
+      "start_ms": 2466000,
+      "text": "It would be interesting to understand how much progress one"
+    },
+    {
+      "end_ms": 2474800,
+      "source_event_index": 449,
+      "start_ms": 2469680,
+      "text": "can make simply from using existing techniques. If I looked at the top math journals, how many of"
+    },
+    {
+      "end_ms": 2481200,
+      "source_event_index": 450,
+      "start_ms": 2475760,
+      "text": "the papers are coming up with a new technique, whatever that means, versus using existing"
+    },
+    {
+      "end_ms": 2487200,
+      "source_event_index": 451,
+      "start_ms": 2481200,
+      "text": "techniques on new problems? What is the overhang? If you just applied every known technique to every"
+    },
+    {
+      "end_ms": 2492560,
+      "source_event_index": 452,
+      "start_ms": 2487200,
+      "text": "open problem, would that constitute a humongous uplift in our civilization's knowledge, or would"
+    },
+    {
+      "end_ms": 2498640,
+      "source_event_index": 453,
+      "start_ms": 2492560,
+      "text": "that not be that impressive and useful? This is a great question, and we don't"
+    },
+    {
+      "end_ms": 2504640,
+      "source_event_index": 454,
+      "start_ms": 2498640,
+      "text": "have the data to fully answer it yet. Certainly, a lot of work that human"
+    },
+    {
+      "end_ms": 2510560,
+      "source_event_index": 455,
+      "start_ms": 2504640,
+      "text": "mathematicians do… When you take a new problem, one of the first things we do is we look at all"
+    },
+    {
+      "end_ms": 2513920,
+      "source_event_index": 456,
+      "start_ms": 2510560,
+      "text": "the standard things that have worked on similar problems in the past, and we try them one by one."
+    },
+    {
+      "end_ms": 2519920,
+      "source_event_index": 457,
+      "start_ms": 2514640,
+      "text": "Sometimes that works, and that's still worth publishing because the question was important."
+    },
+    {
+      "end_ms": 2521920,
+      "source_event_index": 458,
+      "start_ms": 2519920,
+      "text": "Sometimes they almost work, and you have to add one more"
+    },
+    {
+      "end_ms": 2528880,
+      "source_event_index": 459,
+      "start_ms": 2521920,
+      "text": "wrinkle to it, and that's also interesting. But the papers that go into the top journals"
+    },
+    {
+      "end_ms": 2534560,
+      "source_event_index": 460,
+      "start_ms": 2528880,
+      "text": "are usually ones where the existing methods can kind of solve 80% of the problem, but then"
+    },
+    {
+      "end_ms": 2540640,
+      "source_event_index": 461,
+      "start_ms": 2534560,
+      "text": "there is this 20% which is resistant and a new technique has to be invented to fill in the gaps."
+    },
+    {
+      "end_ms": 2546960,
+      "source_event_index": 462,
+      "start_ms": 2541760,
+      "text": "It's very rare now that a problem gets solved with no reliance on past literature,"
+    },
+    {
+      "end_ms": 2552880,
+      "source_event_index": 463,
+      "start_ms": 2546960,
+      "text": "where all the ideas come out of nowhere. That was more common in the past,"
+    },
+    {
+      "end_ms": 2562160,
+      "source_event_index": 464,
+      "start_ms": 2552880,
+      "text": "but math is so mature now that it's just so much of a handicap to not use the literature first."
+    },
+    {
+      "end_ms": 2569360,
+      "source_event_index": 465,
+      "start_ms": 2564800,
+      "text": "AI tools are getting really good at the first part of that, just trying all the"
+    },
+    {
+      "end_ms": 2575760,
+      "source_event_index": 466,
+      "start_ms": 2569360,
+      "text": "standard techniques on a problem, often making fewer mistakes in applying them than humans."
+    },
+    {
+      "end_ms": 2584720,
+      "source_event_index": 467,
+      "start_ms": 2575760,
+      "text": "They still make mistakes, but I've tested these tools on little tasks that I can do,"
+    },
+    {
+      "end_ms": 2587920,
+      "source_event_index": 468,
+      "start_ms": 2584720,
+      "text": "and sometimes they pick up errors that I make. Sometimes I pick up errors that they make."
+    },
+    {
+      "end_ms": 2596560,
+      "source_event_index": 469,
+      "start_ms": 2587920,
+      "text": "It's about a tie right now. But I haven't yet seen them take the next step."
+    },
+    {
+      "end_ms": 2604240,
+      "source_event_index": 470,
+      "start_ms": 2597280,
+      "text": "When there are holes in the argument where none of the things are working, then what do you do?"
+    },
+    {
+      "end_ms": 2611200,
+      "source_event_index": 471,
+      "start_ms": 2605360,
+      "text": "They can suggest random things, but often I find that trying to chase them down to"
+    },
+    {
+      "end_ms": 2614800,
+      "source_event_index": 472,
+      "start_ms": 2611200,
+      "text": "make them work, and finding they don't work, wastes more time than it saves."
+    },
+    {
+      "end_ms": 2622720,
+      "source_event_index": 473,
+      "start_ms": 2618560,
+      "text": "I think some fraction of problems that we currently think are hard will fall"
+    },
+    {
+      "end_ms": 2626640,
+      "source_event_index": 474,
+      "start_ms": 2622720,
+      "text": "from this method, especially the ones that haven't received enough attention."
+    },
+    {
+      "end_ms": 2633600,
+      "source_event_index": 475,
+      "start_ms": 2628160,
+      "text": "With the Erdős problems, almost all of the 50 problems that were solved by AIs were ones for"
+    },
+    {
+      "end_ms": 2637520,
+      "source_event_index": 476,
+      "start_ms": 2633600,
+      "text": "which there was basically no literature. Erdős posed the problem once or twice."
+    },
+    {
+      "end_ms": 2642720,
+      "source_event_index": 477,
+      "start_ms": 2639200,
+      "text": "Maybe some people tried it casually and couldn't do it, but they never wrote up anything."
+    },
+    {
+      "end_ms": 2648640,
+      "source_event_index": 478,
+      "start_ms": 2643920,
+      "text": "But it turned out that there was a solution, and it was just combining this one obscure"
+    },
+    {
+      "end_ms": 2652720,
+      "source_event_index": 479,
+      "start_ms": 2648640,
+      "text": "technique that not many people know about with some other result in the literature."
+    },
+    {
+      "end_ms": 2657440,
+      "source_event_index": 480,
+      "start_ms": 2652720,
+      "text": "That's the median level of what AI can accomplish, and that's really great."
+    },
+    {
+      "end_ms": 2662880,
+      "source_event_index": 481,
+      "start_ms": 2657440,
+      "text": "It clears out 50 of these problems. So I think you will see some isolated successes."
+    },
+    {
+      "end_ms": 2668080,
+      "source_event_index": 482,
+      "start_ms": 2664320,
+      "text": "But what we found… Some people have done large-scale sweeps of these Erdős problems."
+    },
+    {
+      "end_ms": 2672320,
+      "source_event_index": 483,
+      "start_ms": 2669360,
+      "text": "If you only focus on the success stories, the ones that get broadcast"
+    },
+    {
+      "end_ms": 2675840,
+      "source_event_index": 484,
+      "start_ms": 2672320,
+      "text": "on social media, it looks amazing. All these problems that haven't been"
+    },
+    {
+      "end_ms": 2680720,
+      "source_event_index": 485,
+      "start_ms": 2675840,
+      "text": "solved for decades, now they're falling. But whenever we do a systematic study,"
+    },
+    {
+      "end_ms": 2684800,
+      "source_event_index": 486,
+      "start_ms": 2680720,
+      "text": "on any given problem an AI tool has a success rate of maybe 1% or 2%."
+    },
+    {
+      "end_ms": 2690800,
+      "source_event_index": 487,
+      "start_ms": 2686000,
+      "text": "It's just that they can buy scale, and you just pick the winners. It looks great. I"
+    },
+    {
+      "end_ms": 2697120,
+      "source_event_index": 488,
+      "start_ms": 2690800,
+      "text": "think there'll be a similar thing happening with the hundreds of really prestigious,"
+    },
+    {
+      "end_ms": 2703760,
+      "source_event_index": 489,
+      "start_ms": 2697120,
+      "text": "difficult math problems out there. Some AI may get lucky and actually solve them,"
+    },
+    {
+      "end_ms": 2707840,
+      "source_event_index": 490,
+      "start_ms": 2703760,
+      "text": "and there will be some backdoor to solve the problem that everyone else missed."
+    },
+    {
+      "end_ms": 2712880,
+      "source_event_index": 491,
+      "start_ms": 2708400,
+      "text": "That will get a lot of publicity. But then people will try these fancy"
+    },
+    {
+      "end_ms": 2716560,
+      "source_event_index": 492,
+      "start_ms": 2712880,
+      "text": "tools on their own favorite problem, and they will again experience the 1% to 2% success rate."
+    },
+    {
+      "end_ms": 2724560,
+      "source_event_index": 493,
+      "start_ms": 2718480,
+      "text": "There'll be a lot of noise amongst the signal of when they're working and when they're not."
+    },
+    {
+      "end_ms": 2732640,
+      "source_event_index": 494,
+      "start_ms": 2728720,
+      "text": "It will be increasingly important to collect these really standardized datasets."
+    },
+    {
+      "end_ms": 2738160,
+      "source_event_index": 495,
+      "start_ms": 2732640,
+      "text": "There are efforts now to create a standard set of challenge problems for AIs to solve, and not just"
+    },
+    {
+      "end_ms": 2743920,
+      "source_event_index": 496,
+      "start_ms": 2738160,
+      "text": "rely on the AI companies to only publish their wins and not disclose their negative results."
+    },
+    {
+      "end_ms": 2748480,
+      "source_event_index": 497,
+      "start_ms": 2744560,
+      "text": "That will maybe give more clarity as to where we're actually at."
+    },
+    {
+      "end_ms": 2752080,
+      "source_event_index": 498,
+      "start_ms": 2748480,
+      "text": "Although I think it's worth emphasizing how much progress in AI it constitutes already,"
+    },
+    {
+      "end_ms": 2758080,
+      "source_event_index": 499,
+      "start_ms": 2752080,
+      "text": "to have models that are capable of applying some technique that nobody had written down"
+    },
+    {
+      "end_ms": 2762000,
+      "source_event_index": 500,
+      "start_ms": 2758080,
+      "text": "as applicable to this particular problem. The progress is simultaneously amazing"
+    },
+    {
+      "end_ms": 2765280,
+      "source_event_index": 501,
+      "start_ms": 2762000,
+      "text": "and disappointing. It is a very strange"
+    },
+    {
+      "end_ms": 2771920,
+      "source_event_index": 502,
+      "start_ms": 2765280,
+      "text": "feeling to see these tools in action. But people also acclimatize really quickly."
+    },
+    {
+      "end_ms": 2776000,
+      "source_event_index": 503,
+      "start_ms": 2772800,
+      "text": "I remember when Google's web search came out 20 years ago."
+    },
+    {
+      "end_ms": 2778160,
+      "source_event_index": 504,
+      "start_ms": 2776000,
+      "text": "It just blew all the other searches out of the water."
+    },
+    {
+      "end_ms": 2783760,
+      "source_event_index": 505,
+      "start_ms": 2778160,
+      "text": "You're getting relevant hits on the front page, exactly what you wanted."
+    },
+    {
+      "end_ms": 2786240,
+      "source_event_index": 506,
+      "start_ms": 2783760,
+      "text": "It was amazing, and then after a few years, you just took for"
+    },
+    {
+      "end_ms": 2795360,
+      "source_event_index": 507,
+      "start_ms": 2786240,
+      "text": "granted that you could Google anything. 2026-level AI would be stunning in 2021."
+    },
+    {
+      "end_ms": 2802160,
+      "source_event_index": 508,
+      "start_ms": 2795360,
+      "text": "A lot of it—face recognition, natural speech, doing college-level math problems—we just"
+    },
+    {
+      "end_ms": 2805520,
+      "source_event_index": 509,
+      "start_ms": 2802160,
+      "text": "take for granted now. Speaking of 2026 AI,"
+    },
+    {
+      "end_ms": 2812640,
+      "source_event_index": 510,
+      "start_ms": 2805520,
+      "text": "you made a prediction in 2023 that by 2026 it would be like a colleague in mathematics?"
+    },
+    {
+      "end_ms": 2817280,
+      "source_event_index": 511,
+      "start_ms": 2813280,
+      "text": "A trustworthy co-author if used correctly. Which is looking pretty good in retrospect."
+    },
+    {
+      "end_ms": 2823440,
+      "source_event_index": 512,
+      "start_ms": 2817280,
+      "text": "Yeah, I'm pretty pleased. So let's see if you can continue this streak."
+    },
+    {
+      "end_ms": 2828800,
+      "source_event_index": 513,
+      "start_ms": 2824000,
+      "text": "You personally are 2x more productive as a result of AI."
+    },
+    {
+      "end_ms": 2832640,
+      "source_event_index": 514,
+      "start_ms": 2828800,
+      "text": "What year would you say that? Productivity, I think,"
+    },
+    {
+      "end_ms": 2839280,
+      "source_event_index": 515,
+      "start_ms": 2832640,
+      "text": "is not quite a one-dimensional quantity. I'm definitely noticing that the style"
+    },
+    {
+      "end_ms": 2843440,
+      "source_event_index": 516,
+      "start_ms": 2839280,
+      "text": "in which I do mathematics is changing quite a bit, and the type of things I do."
+    },
+    {
+      "end_ms": 2846400,
+      "source_event_index": 517,
+      "start_ms": 2843440,
+      "text": "For example, my papers now have a lot more code, a lot more pictures,"
+    },
+    {
+      "end_ms": 2853760,
+      "source_event_index": 518,
+      "start_ms": 2849040,
+      "text": "because it's so easy to generate these things now. Some plot which would have taken me hours to do,"
+    },
+    {
+      "end_ms": 2857120,
+      "source_event_index": 519,
+      "start_ms": 2853760,
+      "text": "now I can do in minutes. But in the past, I just wouldn't have"
+    },
+    {
+      "end_ms": 2861040,
+      "source_event_index": 520,
+      "start_ms": 2857120,
+      "text": "put the plot in my paper in the first place. I would just talk about it in words."
+    },
+    {
+      "end_ms": 2870640,
+      "source_event_index": 521,
+      "start_ms": 2861600,
+      "text": "So it's hard to measure what 2x means. On the one hand, I think the type of"
+    },
+    {
+      "end_ms": 2874080,
+      "source_event_index": 522,
+      "start_ms": 2870640,
+      "text": "papers that I would write today, if I had to do them without AI assistance,"
+    },
+    {
+      "end_ms": 2878560,
+      "source_event_index": 523,
+      "start_ms": 2874080,
+      "text": "would definitely take five times longer. But I would not write my papers that way."
+    },
+    {
+      "end_ms": 2885360,
+      "source_event_index": 524,
+      "start_ms": 2878560,
+      "text": "5x? Yeah, but these are auxiliary tasks."
+    },
+    {
+      "end_ms": 2893520,
+      "source_event_index": 525,
+      "start_ms": 2886800,
+      "text": "Things like doing a much deeper literature search or supplying a lot more numerics."
+    },
+    {
+      "end_ms": 2904640,
+      "source_event_index": 526,
+      "start_ms": 2894480,
+      "text": "They enrich the paper. The core of what I do, actually solving the most difficult part of a"
+    },
+    {
+      "end_ms": 2908080,
+      "source_event_index": 527,
+      "start_ms": 2904640,
+      "text": "math problem, hasn't changed too much. I still use pen and paper for that."
+    },
+    {
+      "end_ms": 2915760,
+      "source_event_index": 528,
+      "start_ms": 2908080,
+      "text": "But there's lots of silly things. I use an AI agent now to reformat."
+    },
+    {
+      "end_ms": 2919680,
+      "source_event_index": 529,
+      "start_ms": 2915760,
+      "text": "Sometimes if all my parentheses are not quite the right size, I used to manually change them"
+    },
+    {
+      "end_ms": 2924400,
+      "source_event_index": 530,
+      "start_ms": 2919680,
+      "text": "by hand, and now I can get an AI agent to do all that quite nicely in the background."
+    },
+    {
+      "end_ms": 2933840,
+      "source_event_index": 531,
+      "start_ms": 2926800,
+      "text": "They've really sped up lots of secondary tasks. They haven't yet sped up the core thing that I do,"
+    },
+    {
+      "end_ms": 2937840,
+      "source_event_index": 532,
+      "start_ms": 2933840,
+      "text": "but it's allowed me to add more things to my papers."
+    },
+    {
+      "end_ms": 2946000,
+      "source_event_index": 533,
+      "start_ms": 2940800,
+      "text": "By the same token, if I were to write a paper I wrote in 2020 again—and not add all these"
+    },
+    {
+      "end_ms": 2950640,
+      "source_event_index": 534,
+      "start_ms": 2946000,
+      "text": "extra features, but just have something of the same level of functionality—it actually"
+    },
+    {
+      "end_ms": 2957360,
+      "source_event_index": 535,
+      "start_ms": 2951600,
+      "text": "hasn't saved that much time, to be honest. It's made the papers richer and broader,"
+    },
+    {
+      "end_ms": 2962160,
+      "source_event_index": 536,
+      "start_ms": 2957360,
+      "text": "but not necessarily deeper. You made this distinction between"
+    },
+    {
+      "end_ms": 2969280,
+      "source_event_index": 537,
+      "start_ms": 2962160,
+      "text": "artificial cleverness and artificial intelligence. I would like to better understand those concepts."
+    },
+    {
+      "end_ms": 2976080,
+      "source_event_index": 538,
+      "start_ms": 2969280,
+      "text": "What is an example of intelligence that is not just cleverness?"
+    },
+    {
+      "end_ms": 2981920,
+      "source_event_index": 539,
+      "start_ms": 2980080,
+      "text": "Intelligence is famously hard to define."
+    },
+    {
+      "end_ms": 2984000,
+      "source_event_index": 540,
+      "start_ms": 2981920,
+      "text": "It's one of these things that you know when you see it."
+    },
+    {
+      "end_ms": 2992480,
+      "source_event_index": 541,
+      "start_ms": 2985280,
+      "text": "But when I talk to someone and we're trying to collaboratively solve a math problem together,"
+    },
+    {
+      "end_ms": 2998240,
+      "source_event_index": 542,
+      "start_ms": 2993440,
+      "text": "there's this conversation where neither of us knows how to solve the problem initially."
+    },
+    {
+      "end_ms": 3005520,
+      "source_event_index": 543,
+      "start_ms": 3000080,
+      "text": "One of us has some idea and it looks promising, so then we have some sort of prototype strategy."
+    },
+    {
+      "end_ms": 3010480,
+      "source_event_index": 544,
+      "start_ms": 3006400,
+      "text": "We test it, and it doesn't work, but then we modify it."
+    },
+    {
+      "end_ms": 3018240,
+      "source_event_index": 545,
+      "start_ms": 3010480,
+      "text": "There's adaptivity and continual improvement of the idea over time."
+    },
+    {
+      "end_ms": 3023760,
+      "source_event_index": 546,
+      "start_ms": 3018240,
+      "text": "Eventually, we've systematically mapped out what doesn't work and what does work,"
+    },
+    {
+      "end_ms": 3028960,
+      "source_event_index": 547,
+      "start_ms": 3023760,
+      "text": "and we can see a path forward, but it's evolving with our discussion."
+    },
+    {
+      "end_ms": 3036560,
+      "source_event_index": 548,
+      "start_ms": 3030720,
+      "text": "This isn't quite what the AIs do. The AIs can mimic this a little bit."
+    },
+    {
+      "end_ms": 3043280,
+      "source_event_index": 549,
+      "start_ms": 3037280,
+      "text": "To go back to this analogy of these jumping robots, they can jump and fail, and jump and fail."
+    },
+    {
+      "end_ms": 3052720,
+      "source_event_index": 550,
+      "start_ms": 3044320,
+      "text": "But what they can't do is jump a little bit, reach some handhold, stay there, pull other people up,"
+    },
+    {
+      "end_ms": 3058560,
+      "source_event_index": 551,
+      "start_ms": 3052720,
+      "text": "and then try to jump from there. There isn't this cumulative process"
+    },
+    {
+      "end_ms": 3064640,
+      "source_event_index": 552,
+      "start_ms": 3058560,
+      "text": "which is built up interactively. It seems to be a lot more trial and"
+    },
+    {
+      "end_ms": 3072160,
+      "source_event_index": 553,
+      "start_ms": 3064640,
+      "text": "error and just repetition: brute force. It scales, and it can work amazingly"
+    },
+    {
+      "end_ms": 3077520,
+      "source_event_index": 554,
+      "start_ms": 3072160,
+      "text": "well in certain contexts. But this idea of building"
+    },
+    {
+      "end_ms": 3083280,
+      "source_event_index": 555,
+      "start_ms": 3077520,
+      "text": "up cumulatively from partial progress is what's still not quite there yet."
+    },
+    {
+      "end_ms": 3088880,
+      "source_event_index": 556,
+      "start_ms": 3083280,
+      "text": "Interesting. You're saying if Gemini 3 or Claude 4.5, whatever, solves a problem,"
+    },
+    {
+      "end_ms": 3092520,
+      "source_event_index": 557,
+      "start_ms": 3089760,
+      "text": "it is not the case that its own understanding of math has progressed."
+    },
+    {
+      "end_ms": 3093440,
+      "source_event_index": 558,
+      "start_ms": 3092520,
+      "text": "No. Or even if it works"
+    },
+    {
+      "end_ms": 3096880,
+      "source_event_index": 559,
+      "start_ms": 3093440,
+      "text": "on a problem without solving it, it's not that its own understanding of math has progressed."
+    },
+    {
+      "end_ms": 3100160,
+      "source_event_index": 560,
+      "start_ms": 3096880,
+      "text": "Yeah. You run a new session and it's forgotten what it just did."
+    },
+    {
+      "end_ms": 3109840,
+      "source_event_index": 561,
+      "start_ms": 3100160,
+      "text": "It has no new skills to build on related problems. Maybe what you just did is 0.001% of the"
+    },
+    {
+      "end_ms": 3113360,
+      "source_event_index": 562,
+      "start_ms": 3109840,
+      "text": "training data for the next generation. So maybe eventually some of it gets absorbed."
+    },
+    {
+      "end_ms": 3118000,
+      "source_event_index": 563,
+      "start_ms": 3114640,
+      "text": "So Terence talks about the importance of decomposing particularly gnarly"
+    },
+    {
+      "end_ms": 3123360,
+      "source_event_index": 564,
+      "start_ms": 3118000,
+      "text": "problems into a series of easier chunks. Even if this doesn't result in the full solution,"
+    },
+    {
+      "end_ms": 3127840,
+      "source_event_index": 565,
+      "start_ms": 3123360,
+      "text": "approaching problems in this way helps you build up the intuitions and practice the techniques"
+    },
+    {
+      "end_ms": 3131680,
+      "source_event_index": 566,
+      "start_ms": 3127840,
+      "text": "that you'll need to keep making progress. But models today tend to struggle with these"
+    },
+    {
+      "end_ms": 3134720,
+      "source_event_index": 567,
+      "start_ms": 3131680,
+      "text": "kinds of problem-solving techniques. That's where Labelbox comes in."
+    },
+    {
+      "end_ms": 3139280,
+      "source_event_index": 568,
+      "start_ms": 3134720,
+      "text": "Labelbox helps you train models not just to get the right answer, but to think the right way."
+    },
+    {
+      "end_ms": 3144160,
+      "source_event_index": 569,
+      "start_ms": 3139280,
+      "text": "They've operationalized these reasoning behaviors into rubrics, giving you the ability to evaluate"
+    },
+    {
+      "end_ms": 3148800,
+      "source_event_index": 570,
+      "start_ms": 3144160,
+      "text": "every important dimension of a model's output. These rubrics go beyond simple correctness."
+    },
+    {
+      "end_ms": 3151840,
+      "source_event_index": 571,
+      "start_ms": 3148800,
+      "text": "Did the model reach for the right tools? Did it check its own work and"
+    },
+    {
+      "end_ms": 3155520,
+      "source_event_index": 572,
+      "start_ms": 3151840,
+      "text": "explore alternative paths? How clear was its response?"
+    },
+    {
+      "end_ms": 3160560,
+      "source_event_index": 573,
+      "start_ms": 3155520,
+      "text": "These skills are useful across domains: math, physics, finance, psychology, and more."
+    },
+    {
+      "end_ms": 3164960,
+      "source_event_index": 574,
+      "start_ms": 3160560,
+      "text": "And they're becoming increasingly important as models take on harder, open-ended problems,"
+    },
+    {
+      "end_ms": 3168800,
+      "source_event_index": 575,
+      "start_ms": 3164960,
+      "text": "some of which have multiple solutions and some of which we don't even know the solutions to."
+    },
+    {
+      "end_ms": 3172320,
+      "source_event_index": 576,
+      "start_ms": 3168800,
+      "text": "Labelbox can get you rubrics tailored to your domain, helping you systematically"
+    },
+    {
+      "end_ms": 3180640,
+      "source_event_index": 577,
+      "start_ms": 3172320,
+      "text": "measure and shape how your models think. Learn more at labelbox.com/dwarkesh."
+    },
+    {
+      "end_ms": 3186480,
+      "source_event_index": 578,
+      "start_ms": 3180640,
+      "text": "One big question I have is how plausible is it that if we just keep training AIs—they get better"
+    },
+    {
+      "end_ms": 3192000,
+      "source_event_index": 579,
+      "start_ms": 3186480,
+      "text": "and better at solving problems in Lean—that they will continue to solve more and more impressive"
+    },
+    {
+      "end_ms": 3198000,
+      "source_event_index": 580,
+      "start_ms": 3192000,
+      "text": "problems, and then we will be surprised at how little insight we got from some Lean solution"
+    },
+    {
+      "end_ms": 3202000,
+      "source_event_index": 581,
+      "start_ms": 3198000,
+      "text": "to proving the Riemann hypothesis or something. Or do you think it is a necessary condition of"
+    },
+    {
+      "end_ms": 3205360,
+      "source_event_index": 582,
+      "start_ms": 3202000,
+      "text": "solving the Riemann hypothesis, even by an AI that is doing it entirely in Lean,"
+    },
+    {
+      "end_ms": 3212880,
+      "source_event_index": 583,
+      "start_ms": 3205360,
+      "text": "that the constructions and definitions created in the Lean program have to"
+    },
+    {
+      "end_ms": 3218480,
+      "source_event_index": 584,
+      "start_ms": 3212880,
+      "text": "advance our understanding of mathematics? Or could it just be assembly code gobbledygook?"
+    },
+    {
+      "end_ms": 3224320,
+      "source_event_index": 585,
+      "start_ms": 3220000,
+      "text": "We don't know. Some problems have been basically solved by pure brute force."
+    },
+    {
+      "end_ms": 3229360,
+      "source_event_index": 586,
+      "start_ms": 3224320,
+      "text": "The four color theorem is a famous example. We have still not found a conceptually elegant"
+    },
+    {
+      "end_ms": 3236400,
+      "source_event_index": 587,
+      "start_ms": 3229360,
+      "text": "proof of this theorem, and maybe we never will. Some problems may only be solvable by splitting"
+    },
+    {
+      "end_ms": 3240560,
+      "source_event_index": 588,
+      "start_ms": 3236400,
+      "text": "into an enormous number of cases and doing brute force,"
+    },
+    {
+      "end_ms": 3248560,
+      "source_event_index": 589,
+      "start_ms": 3240560,
+      "text": "uninsightful computer analysis on each case. Part of the reason we prize problems like"
+    },
+    {
+      "end_ms": 3254960,
+      "source_event_index": 590,
+      "start_ms": 3248560,
+      "text": "the Riemann hypothesis is that we're pretty sure a new type of mathematics"
+    },
+    {
+      "end_ms": 3258960,
+      "source_event_index": 591,
+      "start_ms": 3254960,
+      "text": "has to be created, or a new connection between two previously unconnected areas of mathematics"
+    },
+    {
+      "end_ms": 3264560,
+      "source_event_index": 592,
+      "start_ms": 3258960,
+      "text": "has to be discovered to make this work. We don't even know what the shape of the solution"
+    },
+    {
+      "end_ms": 3270400,
+      "source_event_index": 593,
+      "start_ms": 3264560,
+      "text": "is, but it doesn't feel like a problem that will be solved just by exhaustively checking cases."
+    },
+    {
+      "end_ms": 3277280,
+      "source_event_index": 594,
+      "start_ms": 3270400,
+      "text": "Or it could be false actually. Okay, there is an unlikely scenario"
+    },
+    {
+      "end_ms": 3282320,
+      "source_event_index": 595,
+      "start_ms": 3277280,
+      "text": "that the hypothesis is false, and you can just compute a zero off the line,"
+    },
+    {
+      "end_ms": 3291040,
+      "source_event_index": 596,
+      "start_ms": 3282320,
+      "text": "and a massive computer calculation verifies it. That would be very disappointing. I do"
+    },
+    {
+      "end_ms": 3298160,
+      "source_event_index": 597,
+      "start_ms": 3291040,
+      "text": "feel that fully autonomous, one-shot approaches are not the right approach for these problems."
+    },
+    {
+      "end_ms": 3304720,
+      "source_event_index": 598,
+      "start_ms": 3299200,
+      "text": "You'll get a lot more mileage out of the interplay of humans collaborating with these tools."
+    },
+    {
+      "end_ms": 3314560,
+      "source_event_index": 599,
+      "start_ms": 3308080,
+      "text": "I can see one of these problems being solved by smart humans"
+    },
+    {
+      "end_ms": 3320560,
+      "source_event_index": 600,
+      "start_ms": 3314560,
+      "text": "assisted by extremely powerful AI tools. But the exact dynamic may be very different"
+    },
+    {
+      "end_ms": 3324480,
+      "source_event_index": 601,
+      "start_ms": 3320560,
+      "text": "from what we envision right now. It could be a collaboration of"
+    },
+    {
+      "end_ms": 3335200,
+      "source_event_index": 602,
+      "start_ms": 3324480,
+      "text": "a type that just doesn't exist yet. There may be a way to generate a million variants"
+    },
+    {
+      "end_ms": 3341920,
+      "source_event_index": 603,
+      "start_ms": 3335200,
+      "text": "of the Riemann zeta function and do AI-assisted data analysis to discover some pattern connecting"
+    },
+    {
+      "end_ms": 3346400,
+      "source_event_index": 604,
+      "start_ms": 3341920,
+      "text": "them that we didn't know about before. This lets you transform the problem"
+    },
+    {
+      "end_ms": 3351200,
+      "source_event_index": 605,
+      "start_ms": 3346400,
+      "text": "into a different area of mathematics. There could be all kinds of scenarios."
+    },
+    {
+      "end_ms": 3359840,
+      "source_event_index": 606,
+      "start_ms": 3351200,
+      "text": "Suppose the AI figures it out, and latent in the Lean is some brand-new construction which,"
+    },
+    {
+      "end_ms": 3364720,
+      "source_event_index": 607,
+      "start_ms": 3359840,
+      "text": "if we realized its significance, we would be able to apply in all these different situations."
+    },
+    {
+      "end_ms": 3371600,
+      "source_event_index": 608,
+      "start_ms": 3364720,
+      "text": "How would we even recognize it? Again, a very naive question, but if you come"
+    },
+    {
+      "end_ms": 3377040,
+      "source_event_index": 609,
+      "start_ms": 3371600,
+      "text": "up with the equivalent of Descartes' idea that you can have a coordinate system unifying algebra"
+    },
+    {
+      "end_ms": 3380960,
+      "source_event_index": 610,
+      "start_ms": 3377040,
+      "text": "and geometry, in Lean code it would just look like R→R, and it wouldn't look that significant."
+    },
+    {
+      "end_ms": 3386160,
+      "source_event_index": 611,
+      "start_ms": 3382560,
+      "text": "I'm sure there are other constructions which have this kind of property."
+    },
+    {
+      "end_ms": 3389520,
+      "source_event_index": 612,
+      "start_ms": 3386160,
+      "text": "The beauty of formalizing a proof in something like Lean is that you can take"
+    },
+    {
+      "end_ms": 3399040,
+      "source_event_index": 613,
+      "start_ms": 3389520,
+      "text": "any piece of it and study it atomically. When I read a paper which solves some"
+    },
+    {
+      "end_ms": 3402640,
+      "source_event_index": 614,
+      "start_ms": 3399040,
+      "text": "difficult problem, there's often a big sequence of lemmas and theorems."
+    },
+    {
+      "end_ms": 3408480,
+      "source_event_index": 615,
+      "start_ms": 3404880,
+      "text": "Ideally, the author will talk their way through what's important and what's not."
+    },
+    {
+      "end_ms": 3412880,
+      "source_event_index": 616,
+      "start_ms": 3408480,
+      "text": "But sometimes they don't reveal what steps were the important ones and which ones"
+    },
+    {
+      "end_ms": 3419360,
+      "source_event_index": 617,
+      "start_ms": 3412880,
+      "text": "were just boilerplate, standard steps. You can study each lemma in isolation."
+    },
+    {
+      "end_ms": 3424000,
+      "source_event_index": 618,
+      "start_ms": 3419360,
+      "text": "Some of them I can see look fairly standard and resemble something I'm familiar with."
+    },
+    {
+      "end_ms": 3426320,
+      "source_event_index": 619,
+      "start_ms": 3424000,
+      "text": "I'm pretty sure there's nothing interesting going on there."
+    },
+    {
+      "end_ms": 3432080,
+      "source_event_index": 620,
+      "start_ms": 3426320,
+      "text": "But this other lemma, that's something I haven't seen before, and I can see why having this result"
+    },
+    {
+      "end_ms": 3439520,
+      "source_event_index": 621,
+      "start_ms": 3432080,
+      "text": "would really help prove the main result. You can assess whether a step is really key"
+    },
+    {
+      "end_ms": 3444240,
+      "source_event_index": 622,
+      "start_ms": 3441280,
+      "text": "to your argument or not, and Lean really facilitates that."
+    },
+    {
+      "end_ms": 3448720,
+      "source_event_index": 623,
+      "start_ms": 3446240,
+      "text": "The individual steps are identified really precisely."
+    },
+    {
+      "end_ms": 3455040,
+      "source_event_index": 624,
+      "start_ms": 3449520,
+      "text": "I think in the future, there will be entire professions of mathematicians who might take"
+    },
+    {
+      "end_ms": 3461120,
+      "source_event_index": 625,
+      "start_ms": 3455040,
+      "text": "a giant Lean-generated proof and do some ablation on it, trying to remove parts of"
+    },
+    {
+      "end_ms": 3466400,
+      "source_event_index": 626,
+      "start_ms": 3461120,
+      "text": "it and find more elegant ways. They might get other AIs to do"
+    },
+    {
+      "end_ms": 3472160,
+      "source_event_index": 627,
+      "start_ms": 3466400,
+      "text": "some reinforcement learning to make the proof more elegant, and maybe other AIs will grade"
+    },
+    {
+      "end_ms": 3478000,
+      "source_event_index": 628,
+      "start_ms": 3472160,
+      "text": "whether this proof looks better or not. One thing that will change quite a bit"
+    },
+    {
+      "end_ms": 3481920,
+      "source_event_index": 629,
+      "start_ms": 3478000,
+      "text": "in the near future is how we write papers. Until recently, writing papers was the most"
+    },
+    {
+      "end_ms": 3487120,
+      "source_event_index": 630,
+      "start_ms": 3481920,
+      "text": "time-consuming and expensive part of the job. So you did it very rarely."
+    },
+    {
+      "end_ms": 3494560,
+      "source_event_index": 631,
+      "start_ms": 3487760,
+      "text": "You only wrote up your results once all the other parts of your argument were checked out, because"
+    },
+    {
+      "end_ms": 3499360,
+      "source_event_index": 632,
+      "start_ms": 3494560,
+      "text": "rewriting and refactoring was just a total pain. That's become a lot easier now"
+    },
+    {
+      "end_ms": 3501600,
+      "source_event_index": 633,
+      "start_ms": 3499360,
+      "text": "with modern AI tools. You don't have to have just"
+    },
+    {
+      "end_ms": 3504960,
+      "source_event_index": 634,
+      "start_ms": 3501600,
+      "text": "one version of your paper. Once you have one,"
+    },
+    {
+      "end_ms": 3510320,
+      "source_event_index": 635,
+      "start_ms": 3504960,
+      "text": "people can generate hundreds more. One giant messy Lean proof may not be very"
+    },
+    {
+      "end_ms": 3515360,
+      "source_event_index": 636,
+      "start_ms": 3511040,
+      "text": "meaningful or understandable on its own, but other people can"
+    },
+    {
+      "end_ms": 3521680,
+      "source_event_index": 637,
+      "start_ms": 3515360,
+      "text": "refactor it and do all kinds of things with it. We've seen this with the Erdős problem website."
+    },
+    {
+      "end_ms": 3527840,
+      "source_event_index": 638,
+      "start_ms": 3522960,
+      "text": "An AI will generate a proof, and here are 3,000 lines of code that verify the proof."
+    },
+    {
+      "end_ms": 3532560,
+      "source_event_index": 639,
+      "start_ms": 3527840,
+      "text": "Then people got other AIs to summarize the proof, and people write their own"
+    },
+    {
+      "end_ms": 3540480,
+      "source_event_index": 640,
+      "start_ms": 3532560,
+      "text": "proofs. There's actually post-processing. Once you have one proof, we have a lot of"
+    },
+    {
+      "end_ms": 3547760,
+      "source_event_index": 641,
+      "start_ms": 3540480,
+      "text": "tools now to deconstruct and interpret it. It's a very nascent area of mathematics,"
+    },
+    {
+      "end_ms": 3552000,
+      "source_event_index": 642,
+      "start_ms": 3547760,
+      "text": "but I'm not as worried about it. Some people are concerned about what happens if"
+    },
+    {
+      "end_ms": 3554880,
+      "source_event_index": 643,
+      "start_ms": 3552000,
+      "text": "the Riemann hypothesis is proven with a completely incomprehensible proof."
+    },
+    {
+      "end_ms": 3560640,
+      "source_event_index": 644,
+      "start_ms": 3554880,
+      "text": "I think once you have the artifact of a proof, we can do a lot of analysis on it."
+    },
+    {
+      "end_ms": 3564960,
+      "source_event_index": 645,
+      "start_ms": 3560640,
+      "text": "You posted recently that it would be helpful to have a formal or semi-formal"
+    },
+    {
+      "end_ms": 3568960,
+      "source_event_index": 646,
+      "start_ms": 3564960,
+      "text": "language for mathematical strategies as opposed to just mathematical proofs,"
+    },
+    {
+      "end_ms": 3572160,
+      "source_event_index": 647,
+      "start_ms": 3568960,
+      "text": "which is what Lean specializes in. I would love to learn more about"
+    },
+    {
+      "end_ms": 3577840,
+      "source_event_index": 648,
+      "start_ms": 3572160,
+      "text": "what that would involve or look like. We don't really know. We've been very"
+    },
+    {
+      "end_ms": 3582400,
+      "source_event_index": 649,
+      "start_ms": 3577840,
+      "text": "lucky in mathematics that we have worked out the laws of logic and mathematics,"
+    },
+    {
+      "end_ms": 3587920,
+      "source_event_index": 650,
+      "start_ms": 3582400,
+      "text": "but this is a fairly recent accomplishment. It was started by Euclid two millennia ago,"
+    },
+    {
+      "end_ms": 3594640,
+      "source_event_index": 651,
+      "start_ms": 3587920,
+      "text": "but only in the early 20th century did we finally list out the axioms of mathematics,"
+    },
+    {
+      "end_ms": 3599600,
+      "source_event_index": 652,
+      "start_ms": 3594640,
+      "text": "the standard axioms of what we call ZFC, the axioms of first-order logic, and what a proof is."
+    },
+    {
+      "end_ms": 3604640,
+      "source_event_index": 653,
+      "start_ms": 3600400,
+      "text": "This we've managed to automate and have a formal language for."
+    },
+    {
+      "end_ms": 3612960,
+      "source_event_index": 654,
+      "start_ms": 3605840,
+      "text": "There could be some way to assess plausibility. You have a conjecture that something is true,"
+    },
+    {
+      "end_ms": 3618240,
+      "source_event_index": 655,
+      "start_ms": 3614080,
+      "text": "you test a few examples, and it works out. How does this increase your"
+    },
+    {
+      "end_ms": 3624560,
+      "source_event_index": 656,
+      "start_ms": 3618240,
+      "text": "confidence that the conjecture is true? We have a few sort of mathematical ways to model"
+    },
+    {
+      "end_ms": 3632320,
+      "source_event_index": 657,
+      "start_ms": 3624560,
+      "text": "this, like Bayesian probability, for example. But you often have to set certain base"
+    },
+    {
+      "end_ms": 3639440,
+      "source_event_index": 658,
+      "start_ms": 3632320,
+      "text": "assumptions, and there's a lot of subjectivity still in these tasks."
+    },
+    {
+      "end_ms": 3652240,
+      "source_event_index": 659,
+      "start_ms": 3644880,
+      "text": "This is more of a wish than a plan to develop these languages, but just seeing how successful"
+    },
+    {
+      "end_ms": 3659840,
+      "source_event_index": 660,
+      "start_ms": 3652240,
+      "text": "having a formal framework in place, like Lean, has made deductive proofs so much easier to automate"
+    },
+    {
+      "end_ms": 3670320,
+      "source_event_index": 661,
+      "start_ms": 3659840,
+      "text": "and train AI on… The bottleneck for using AI to create strategies and make conjectures is we have"
+    },
+    {
+      "end_ms": 3676880,
+      "source_event_index": 662,
+      "start_ms": 3670320,
+      "text": "to rely on human experts and the test of time to validate whether something is plausible or not."
+    },
+    {
+      "end_ms": 3682480,
+      "source_event_index": 663,
+      "start_ms": 3676880,
+      "text": "If there was some semi-formal framework where this could be done semi-automatically"
+    },
+    {
+      "end_ms": 3692240,
+      "source_event_index": 664,
+      "start_ms": 3682480,
+      "text": "in a way that isn't easily hackable... It's really important with these formal"
+    },
+    {
+      "end_ms": 3700720,
+      "source_event_index": 665,
+      "start_ms": 3692240,
+      "text": "proof assistants that there are no backdoors or exploits you can use to somehow get your"
+    },
+    {
+      "end_ms": 3704960,
+      "source_event_index": 666,
+      "start_ms": 3700720,
+      "text": "certified proof without actually proving it, because reinforcement learning is"
+    },
+    {
+      "end_ms": 3716160,
+      "source_event_index": 667,
+      "start_ms": 3704960,
+      "text": "just so good at finding these backdoors. If there's some framework that mimics how"
+    },
+    {
+      "end_ms": 3721280,
+      "source_event_index": 668,
+      "start_ms": 3716160,
+      "text": "scientists talk to each other in a semi-formal way, using data and argument,"
+    },
+    {
+      "end_ms": 3728960,
+      "source_event_index": 669,
+      "start_ms": 3721280,
+      "text": "but also constructing narratives... There's some subjective aspect of"
+    },
+    {
+      "end_ms": 3735680,
+      "source_event_index": 670,
+      "start_ms": 3728960,
+      "text": "science that we don't know how to capture in a way that we can insert AI into it in any useful way."
+    },
+    {
+      "end_ms": 3745600,
+      "source_event_index": 671,
+      "start_ms": 3738160,
+      "text": "This is a future problem. There are research efforts to try to create automated conjectures,"
+    },
+    {
+      "end_ms": 3755440,
+      "source_event_index": 672,
+      "start_ms": 3747360,
+      "text": "and maybe there are ways to benchmark these and simulate this, but it's all very new science."
+    },
+    {
+      "end_ms": 3765280,
+      "source_event_index": 673,
+      "start_ms": 3755440,
+      "text": "Can you help me get some intuition? I have two sub-questions. One, it would be very helpful"
+    },
+    {
+      "end_ms": 3776240,
+      "source_event_index": 674,
+      "start_ms": 3765280,
+      "text": "to have a specific example of what something like this would look like, the way scientists"
+    },
+    {
+      "end_ms": 3782000,
+      "source_event_index": 675,
+      "start_ms": 3776240,
+      "text": "communicate that we can't formalize yet. Two, it seems almost definitionally paradoxical"
+    },
+    {
+      "end_ms": 3790160,
+      "source_event_index": 676,
+      "start_ms": 3782000,
+      "text": "to say you're building up some narrative or natural language explanation and then also having"
+    },
+    {
+      "end_ms": 3796160,
+      "source_event_index": 677,
+      "start_ms": 3790160,
+      "text": "something which you could have formalized. I'm sure there's some intuition behind"
+    },
+    {
+      "end_ms": 3799680,
+      "source_event_index": 678,
+      "start_ms": 3796160,
+      "text": "where that overlap is, and I'd love to understand that better."
+    },
+    {
+      "end_ms": 3806480,
+      "source_event_index": 679,
+      "start_ms": 3800400,
+      "text": "An example of a conjecture: Gauss was interested in the prime numbers and"
+    },
+    {
+      "end_ms": 3811760,
+      "source_event_index": 680,
+      "start_ms": 3808000,
+      "text": "created one of the first mathematical datasets. He just computed the first 100,000 prime numbers"
+    },
+    {
+      "end_ms": 3817120,
+      "source_event_index": 681,
+      "start_ms": 3811760,
+      "text": "or so, hoping to find patterns. He did find a pattern,"
+    },
+    {
+      "end_ms": 3821120,
+      "source_event_index": 682,
+      "start_ms": 3817120,
+      "text": "but maybe not the pattern he was expecting. He found a statistical pattern in the primes"
+    },
+    {
+      "end_ms": 3827520,
+      "source_event_index": 683,
+      "start_ms": 3821120,
+      "text": "that if you count how many primes there are up to 100, 1,000, one million, and so forth,"
+    },
+    {
+      "end_ms": 3834080,
+      "source_event_index": 684,
+      "start_ms": 3827520,
+      "text": "they get sparser and sparser, but the drop-off in the density was inversely proportional to"
+    },
+    {
+      "end_ms": 3839360,
+      "source_event_index": 685,
+      "start_ms": 3834080,
+      "text": "the natural logarithm of the range of numbers. So he conjectured what we now call the prime"
+    },
+    {
+      "end_ms": 3844240,
+      "source_event_index": 686,
+      "start_ms": 3839360,
+      "text": "number theorem: the number of primes up to X is X divided by the natural log of X."
+    },
+    {
+      "end_ms": 3852080,
+      "source_event_index": 687,
+      "start_ms": 3845120,
+      "text": "He had no way to prove this. It was data-driven. This was a conjecture."
+    },
+    {
+      "end_ms": 3859520,
+      "source_event_index": 688,
+      "start_ms": 3852880,
+      "text": "It was revolutionary for its time because it was maybe the first really important conjecture"
+    },
+    {
+      "end_ms": 3863840,
+      "source_event_index": 689,
+      "start_ms": 3859520,
+      "text": "of math that was statistical in nature. Normally you're talking about a pattern,"
+    },
+    {
+      "end_ms": 3866320,
+      "source_event_index": 690,
+      "start_ms": 3863840,
+      "text": "like maybe the spacing between the primes has a certain regularity."
+    },
+    {
+      "end_ms": 3872000,
+      "source_event_index": 691,
+      "start_ms": 3867600,
+      "text": "But this didn't tell you exactly how many primes there were in any given range."
+    },
+    {
+      "end_ms": 3878880,
+      "source_event_index": 692,
+      "start_ms": 3872000,
+      "text": "It just gave you an approximation that got better and better as you went further and further out."
+    },
+    {
+      "end_ms": 3885200,
+      "source_event_index": 693,
+      "start_ms": 3882640,
+      "text": "It started the field of what we call analytic number theory."
+    },
+    {
+      "end_ms": 3891040,
+      "source_event_index": 694,
+      "start_ms": 3887040,
+      "text": "It was the first in many conjectures like this, many of which got proved,"
+    },
+    {
+      "end_ms": 3896880,
+      "source_event_index": 695,
+      "start_ms": 3891040,
+      "text": "which started consolidating the idea that the prime numbers didn't really have a pattern,"
+    },
+    {
+      "end_ms": 3902720,
+      "source_event_index": 696,
+      "start_ms": 3896880,
+      "text": "that they behaved like random sets of numbers with a certain density."
+    },
+    {
+      "end_ms": 3905680,
+      "source_event_index": 697,
+      "start_ms": 3903360,
+      "text": "They had some patterns, like they're almost all odd."
+    },
+    {
+      "end_ms": 3909680,
+      "source_event_index": 698,
+      "start_ms": 3907760,
+      "text": "They're also not actually random, they're what's called pseudo-random."
+    },
+    {
+      "end_ms": 3914160,
+      "source_event_index": 699,
+      "start_ms": 3910800,
+      "text": "There's no random number generation involved in creating the prime numbers."
+    },
+    {
+      "end_ms": 3919600,
+      "source_event_index": 700,
+      "start_ms": 3914160,
+      "text": "But over time, it became more and more productive to think of the primes as"
+    },
+    {
+      "end_ms": 3926000,
+      "source_event_index": 701,
+      "start_ms": 3919600,
+      "text": "if they were just generated by some god rolling dice all the time and creating this random set."
+    },
+    {
+      "end_ms": 3927840,
+      "source_event_index": 702,
+      "start_ms": 3926000,
+      "text": "This allowed us to make all these other predictions."
+    },
+    {
+      "end_ms": 3932640,
+      "source_event_index": 703,
+      "start_ms": 3928480,
+      "text": "There's a still-open conjecture in number theory called the twin prime conjecture, that"
+    },
+    {
+      "end_ms": 3937200,
+      "source_event_index": 704,
+      "start_ms": 3932640,
+      "text": "there should be infinitely many pairs of primes that are twins just two apart, like 11 and 13."
+    },
+    {
+      "end_ms": 3939840,
+      "source_event_index": 705,
+      "start_ms": 3937200,
+      "text": "We can't prove that, and there are good reasons why we can't prove it."
+    },
+    {
+      "end_ms": 3946240,
+      "source_event_index": 706,
+      "start_ms": 3941040,
+      "text": "But because of this statistical random model of the primes, we are absolutely convinced it's true."
+    },
+    {
+      "end_ms": 3951680,
+      "source_event_index": 707,
+      "start_ms": 3946240,
+      "text": "We know that if the primes were generated by flipping coins, we would just—by random chance"
+    },
+    {
+      "end_ms": 3956240,
+      "source_event_index": 708,
+      "start_ms": 3951680,
+      "text": "like infinite monkeys at a typewriter—see twin primes appear over and over again."
+    },
+    {
+      "end_ms": 3962320,
+      "source_event_index": 709,
+      "start_ms": 3957440,
+      "text": "We have over time developed this very accurate conceptual model of what the primes should behave"
+    },
+    {
+      "end_ms": 3967920,
+      "source_event_index": 710,
+      "start_ms": 3962320,
+      "text": "like based on statistics and probability. It's mostly heuristic and non-rigorous,"
+    },
+    {
+      "end_ms": 3972400,
+      "source_event_index": 711,
+      "start_ms": 3967920,
+      "text": "but extremely accurate. The few times when we actually"
+    },
+    {
+      "end_ms": 3976480,
+      "source_event_index": 712,
+      "start_ms": 3972400,
+      "text": "can prove things about the primes, it has matched up with the predictions of what we"
+    },
+    {
+      "end_ms": 3981600,
+      "source_event_index": 713,
+      "start_ms": 3976480,
+      "text": "call the random model of the primes. We have this conjectural concept"
+    },
+    {
+      "end_ms": 3985360,
+      "source_event_index": 714,
+      "start_ms": 3981600,
+      "text": "framework for understanding the primes that everyone believes in."
+    },
+    {
+      "end_ms": 3989680,
+      "source_event_index": 715,
+      "start_ms": 3985920,
+      "text": "It's the same reason why we believe the Riemann hypothesis is true, and why we"
+    },
+    {
+      "end_ms": 3993840,
+      "source_event_index": 716,
+      "start_ms": 3989680,
+      "text": "believe that cryptography based on the primes is mathematically secure."
+    },
+    {
+      "end_ms": 4000800,
+      "source_event_index": 717,
+      "start_ms": 3995120,
+      "text": "It's all part of this belief. In fact, one reason why we care"
+    },
+    {
+      "end_ms": 4004320,
+      "source_event_index": 718,
+      "start_ms": 4000800,
+      "text": "about the Riemann hypothesis is that if the Riemann hypothesis failed,"
+    },
+    {
+      "end_ms": 4009200,
+      "source_event_index": 719,
+      "start_ms": 4004320,
+      "text": "if we knew it was false, it would be a serious blow to this model."
+    },
+    {
+      "end_ms": 4013360,
+      "source_event_index": 720,
+      "start_ms": 4009920,
+      "text": "It would mean there's a secret pattern to the primes that we were not aware of."
+    },
+    {
+      "end_ms": 4018080,
+      "source_event_index": 721,
+      "start_ms": 4014720,
+      "text": "I think we would very rapidly abandon any cryptography based on the primes,"
+    },
+    {
+      "end_ms": 4021760,
+      "source_event_index": 722,
+      "start_ms": 4018080,
+      "text": "because if there was one pattern that we didn't know about, there are probably more, and these"
+    },
+    {
+      "end_ms": 4027680,
+      "source_event_index": 723,
+      "start_ms": 4021760,
+      "text": "patterns can lead to exploits in crypto. It would be a big shock."
+    },
+    {
+      "end_ms": 4030640,
+      "source_event_index": 724,
+      "start_ms": 4027680,
+      "text": "So we really want to make sure that doesn't happen."
+    },
+    {
+      "end_ms": 4038960,
+      "source_event_index": 725,
+      "start_ms": 4035360,
+      "text": "We've been convinced of things like the Riemann hypothesis over time."
+    },
+    {
+      "end_ms": 4044080,
+      "source_event_index": 726,
+      "start_ms": 4040320,
+      "text": "Some of it is experimental evidence, and some is that the few times we've been able to make"
+    },
+    {
+      "end_ms": 4050000,
+      "source_event_index": 727,
+      "start_ms": 4044080,
+      "text": "theoretical results, they've always aligned. It is possible that the consensus is wrong and"
+    },
+    {
+      "end_ms": 4054720,
+      "source_event_index": 728,
+      "start_ms": 4050000,
+      "text": "we've all just missed something very basic. There have been paradigm shifts in"
+    },
+    {
+      "end_ms": 4060480,
+      "source_event_index": 729,
+      "start_ms": 4054720,
+      "text": "the past in scientific history. But we don't really have a way of"
+    },
+    {
+      "end_ms": 4066800,
+      "source_event_index": 730,
+      "start_ms": 4060480,
+      "text": "measuring this, partly because we don't have enough data on how math or science develops."
+    },
+    {
+      "end_ms": 4073600,
+      "source_event_index": 731,
+      "start_ms": 4066800,
+      "text": "We have one timeline of history, and we have maybe 100 stories of turning points in history."
+    },
+    {
+      "end_ms": 4078640,
+      "source_event_index": 732,
+      "start_ms": 4073600,
+      "text": "If we had access to a million alien civilizations, each with a different"
+    },
+    {
+      "end_ms": 4084720,
+      "source_event_index": 733,
+      "start_ms": 4078640,
+      "text": "development of history and science in different orders, then maybe we'd actually have a decent"
+    },
+    {
+      "end_ms": 4092560,
+      "source_event_index": 734,
+      "start_ms": 4084720,
+      "text": "shot at understanding how we measure what progress is and what is a good strategy."
+    },
+    {
+      "end_ms": 4096480,
+      "source_event_index": 735,
+      "start_ms": 4092560,
+      "text": "We could maybe start formalizing it and actually having a framework."
+    },
+    {
+      "end_ms": 4104880,
+      "source_event_index": 736,
+      "start_ms": 4098320,
+      "text": "Maybe what we need to do is start creating lots of mini-universes or simulations of AI"
+    },
+    {
+      "end_ms": 4110240,
+      "source_event_index": 737,
+      "start_ms": 4104880,
+      "text": "solving very basic problems in arithmetic or whatever, but coming up with their"
+    },
+    {
+      "end_ms": 4114480,
+      "source_event_index": 738,
+      "start_ms": 4110240,
+      "text": "own strategies for doing these things and having these little laboratories to test."
+    },
+    {
+      "end_ms": 4119520,
+      "source_event_index": 739,
+      "start_ms": 4114480,
+      "text": "There are people who investigate what's the smallest neural network that can do"
+    },
+    {
+      "end_ms": 4124800,
+      "source_event_index": 740,
+      "start_ms": 4119520,
+      "text": "10-digit multiplication and things like that. I think we could learn a lot just from evolving"
+    },
+    {
+      "end_ms": 4130880,
+      "source_event_index": 741,
+      "start_ms": 4125680,
+      "text": "small AIs on simple problems. I was super excited when Mercury"
+    },
+    {
+      "end_ms": 4134480,
+      "source_event_index": 742,
+      "start_ms": 4130880,
+      "text": "reached out about sponsoring the podcast because I've been banking with them for years."
+    },
+    {
+      "end_ms": 4136720,
+      "source_event_index": 743,
+      "start_ms": 4134480,
+      "text": "I think I opened my first account with them in 2023."
+    },
+    {
+      "end_ms": 4139760,
+      "source_event_index": 744,
+      "start_ms": 4136720,
+      "text": "Something I've come to appreciate over the last few years is that Mercury is constantly"
+    },
+    {
+      "end_ms": 4143440,
+      "source_event_index": 745,
+      "start_ms": 4139760,
+      "text": "updating things and adding new features. Take their newest feature, Insights."
+    },
+    {
+      "end_ms": 4147360,
+      "source_event_index": 746,
+      "start_ms": 4143440,
+      "text": "Insights summarizes your money in and out, showing you your biggest transactions and calling"
+    },
+    {
+      "end_ms": 4151680,
+      "source_event_index": 747,
+      "start_ms": 4147360,
+      "text": "out anything that deserves extra attention. Like maybe your revenue from a particular partner"
+    },
+    {
+      "end_ms": 4155440,
+      "source_event_index": 748,
+      "start_ms": 4151680,
+      "text": "has gone down, or you've got a big uncategorized purchase that needs to be investigated."
+    },
+    {
+      "end_ms": 4159200,
+      "source_event_index": 749,
+      "start_ms": 4155440,
+      "text": "It's a super low-friction way for me to keep tabs on my business and make quick decisions."
+    },
+    {
+      "end_ms": 4163440,
+      "source_event_index": 750,
+      "start_ms": 4159200,
+      "text": "For example, I try to invest any cash that I don't need on hand to keep running the business."
+    },
+    {
+      "end_ms": 4166880,
+      "source_event_index": 751,
+      "start_ms": 4163440,
+      "text": "With Insights, with just a couple of clicks, I was able to see exactly how much money I"
+    },
+    {
+      "end_ms": 4171840,
+      "source_event_index": 752,
+      "start_ms": 4166880,
+      "text": "spent in each month of 2025 and that lets me know exactly how much cash I'll need for"
+    },
+    {
+      "end_ms": 4175040,
+      "source_event_index": 753,
+      "start_ms": 4171840,
+      "text": "the next year or so of operations. And then I can go invest the rest."
+    },
+    {
+      "end_ms": 4179760,
+      "source_event_index": 754,
+      "start_ms": 4175040,
+      "text": "Mercury just keeps adding new features like this. Go to mercury.com to check it out."
+    },
+    {
+      "end_ms": 4182960,
+      "source_event_index": 755,
+      "start_ms": 4179760,
+      "text": "Mercury is a fintech company, not an FDIC Insured Bank."
+    },
+    {
+      "end_ms": 4188880,
+      "source_event_index": 756,
+      "start_ms": 4182960,
+      "text": "Banking services provided through Choice Financial Group and Column NA, members FDIC."
+    },
+    {
+      "end_ms": 4193440,
+      "source_event_index": 757,
+      "start_ms": 4188880,
+      "text": "You have to learn about new fields not only very rapidly, but deeply enough"
+    },
+    {
+      "end_ms": 4197200,
+      "source_event_index": 758,
+      "start_ms": 4193440,
+      "text": "to contribute to the frontier. So in some sense, you're also"
+    },
+    {
+      "end_ms": 4204800,
+      "source_event_index": 759,
+      "start_ms": 4197200,
+      "text": "one of the world's greatest autodidacts. What is your process of learning about a new"
+    },
+    {
+      "end_ms": 4212480,
+      "source_event_index": 760,
+      "start_ms": 4204800,
+      "text": "subfield in math? What does that look like? We talked about depth and breadth before."
+    },
+    {
+      "end_ms": 4219360,
+      "source_event_index": 761,
+      "start_ms": 4212480,
+      "text": "It's not a purely human-AI distinction. Humans also, I think it was Berlin who"
+    },
+    {
+      "end_ms": 4223280,
+      "source_event_index": 762,
+      "start_ms": 4219360,
+      "text": "split them into hedgehogs and foxes. The hedgehog knows one thing very well,"
+    },
+    {
+      "end_ms": 4230080,
+      "source_event_index": 763,
+      "start_ms": 4223280,
+      "text": "and a fox knows a little bit about everything. I definitely think of myself as a fox."
+    },
+    {
+      "end_ms": 4235360,
+      "source_event_index": 764,
+      "start_ms": 4232240,
+      "text": "I work with hedgehogs a lot, and sometimes I can be a hedgehog if need be."
+    },
+    {
+      "end_ms": 4243280,
+      "source_event_index": 765,
+      "start_ms": 4240240,
+      "text": "I've always had a little bit of an obsessive streak."
+    },
+    {
+      "end_ms": 4248480,
+      "source_event_index": 766,
+      "start_ms": 4243280,
+      "text": "If there's something I read about which I feel like I have the capability to understand,"
+    },
+    {
+      "end_ms": 4253680,
+      "source_event_index": 767,
+      "start_ms": 4248480,
+      "text": "but I don't understand why it works and there's some magic in it… Someone was able"
+    },
+    {
+      "end_ms": 4258320,
+      "source_event_index": 768,
+      "start_ms": 4253680,
+      "text": "to use a type of mathematics I'm not familiar with and get a result I would like to prove."
+    },
+    {
+      "end_ms": 4261440,
+      "source_event_index": 769,
+      "start_ms": 4258320,
+      "text": "I can't do it myself, but they could do it by their method,"
+    },
+    {
+      "end_ms": 4266800,
+      "source_event_index": 770,
+      "start_ms": 4261440,
+      "text": "and I want to find out what their trick was. It bugs me that someone else can do something"
+    },
+    {
+      "end_ms": 4270960,
+      "source_event_index": 771,
+      "start_ms": 4266800,
+      "text": "I think I can do, but I can't. I've always had that obsessive,"
+    },
+    {
+      "end_ms": 4274160,
+      "source_event_index": 772,
+      "start_ms": 4270960,
+      "text": "completionist streak. I've had to wean myself off"
+    },
+    {
+      "end_ms": 4280160,
+      "source_event_index": 773,
+      "start_ms": 4274160,
+      "text": "computer games because if I start a game, I want to play it to completion, through all the levels."
+    },
+    {
+      "end_ms": 4289840,
+      "source_event_index": 774,
+      "start_ms": 4283840,
+      "text": "That's one way I learn new fields. I collaborate with a lot of people"
+    },
+    {
+      "end_ms": 4295520,
+      "source_event_index": 775,
+      "start_ms": 4289840,
+      "text": "who have taught me other types of mathematics. I just make friends with another mathematician"
+    },
+    {
+      "end_ms": 4298880,
+      "source_event_index": 776,
+      "start_ms": 4295520,
+      "text": "working on another area of mathematics. I find their problems interesting,"
+    },
+    {
+      "end_ms": 4304480,
+      "source_event_index": 777,
+      "start_ms": 4298880,
+      "text": "but they have to teach me some of the basic tricks, what's known, and what's not known."
+    },
+    {
+      "end_ms": 4308960,
+      "source_event_index": 778,
+      "start_ms": 4304480,
+      "text": "I learn a lot from that. I found that writing about"
+    },
+    {
+      "end_ms": 4312400,
+      "source_event_index": 779,
+      "start_ms": 4309840,
+      "text": "what I've learned helps. I have a blog where I sometimes"
+    },
+    {
+      "end_ms": 4318320,
+      "source_event_index": 780,
+      "start_ms": 4314800,
+      "text": "record things I've learned. In the past when I was younger,"
+    },
+    {
+      "end_ms": 4322240,
+      "source_event_index": 781,
+      "start_ms": 4318320,
+      "text": "I would learn something, do this cool trick, and say, \"Okay, I'm going to remember this.\""
+    },
+    {
+      "end_ms": 4326160,
+      "source_event_index": 782,
+      "start_ms": 4322240,
+      "text": "Then six months later, I'd forgotten it. I remember remembering it,"
+    },
+    {
+      "end_ms": 4331040,
+      "source_event_index": 783,
+      "start_ms": 4327440,
+      "text": "but I can't reconstruct my arguments. The first few times, it was so frustrating"
+    },
+    {
+      "end_ms": 4336960,
+      "source_event_index": 784,
+      "start_ms": 4331040,
+      "text": "to have understood something and then lost it. I resolved I should always write down"
+    },
+    {
+      "end_ms": 4342160,
+      "source_event_index": 785,
+      "start_ms": 4336960,
+      "text": "anything cool that I've learned. That's part of how this blog came about."
+    },
+    {
+      "end_ms": 4347840,
+      "source_event_index": 786,
+      "start_ms": 4342720,
+      "text": "How long does it take you to write a blog post? It's something I often do when I don't want"
+    },
+    {
+      "end_ms": 4350160,
+      "source_event_index": 787,
+      "start_ms": 4347840,
+      "text": "to do other work. There's some referee"
+    },
+    {
+      "end_ms": 4354560,
+      "source_event_index": 788,
+      "start_ms": 4350160,
+      "text": "report or something that feels slightly unpleasant for me to do at the time."
+    },
+    {
+      "end_ms": 4359840,
+      "source_event_index": 789,
+      "start_ms": 4355760,
+      "text": "Writing a blog feels creative and fun. It's something I do for myself."
+    },
+    {
+      "end_ms": 4366720,
+      "source_event_index": 790,
+      "start_ms": 4362400,
+      "text": "Depending on the topic, it could be a quick half an hour or several hours."
+    },
+    {
+      "end_ms": 4378000,
+      "source_event_index": 791,
+      "start_ms": 4369360,
+      "text": "Because it's something I do voluntarily, time flies when I write these things down, as"
+    },
+    {
+      "end_ms": 4383680,
+      "source_event_index": 792,
+      "start_ms": 4378000,
+      "text": "opposed to doing something I have to do for administrative reasons that is just drudgery."
+    },
+    {
+      "end_ms": 4386080,
+      "source_event_index": 793,
+      "start_ms": 4383680,
+      "text": "Those are tasks, by the way, that AI is really helping with nowadays."
+    },
+    {
+      "end_ms": 4394560,
+      "source_event_index": 794,
+      "start_ms": 4387760,
+      "text": "If civilization could from first principles decide how to use Terry Tao's time, as a"
+    },
+    {
+      "end_ms": 4402480,
+      "source_event_index": 795,
+      "start_ms": 4394560,
+      "text": "limited resource, what is the biggest difference? What if the veil of ignorance got to decide how to"
+    },
+    {
+      "end_ms": 4408320,
+      "source_event_index": 796,
+      "start_ms": 4402480,
+      "text": "use Terry Tao's time versus what it does now? This podcast wouldn't be happening."
+    },
+    {
+      "end_ms": 4414720,
+      "source_event_index": 797,
+      "start_ms": 4409760,
+      "text": "As much as I complain about certain tasks that I don't want to do, but have to do… As you get"
+    },
+    {
+      "end_ms": 4419920,
+      "source_event_index": 798,
+      "start_ms": 4414720,
+      "text": "more senior in academia, you get more and more responsibilities, more committees, and whatever."
+    },
+    {
+      "end_ms": 4427680,
+      "source_event_index": 799,
+      "start_ms": 4422000,
+      "text": "I have also found that a lot of events I reluctantly went to because I was"
+    },
+    {
+      "end_ms": 4431600,
+      "source_event_index": 800,
+      "start_ms": 4427680,
+      "text": "obliged to for one reason or another… Because it's outside my comfort zone,"
+    },
+    {
+      "end_ms": 4436480,
+      "source_event_index": 801,
+      "start_ms": 4431600,
+      "text": "it often results in interactions with people I wouldn't normally talk to, like you for instance."
+    },
+    {
+      "end_ms": 4440000,
+      "source_event_index": 802,
+      "start_ms": 4437520,
+      "text": "I would learn interesting things and have interesting experiences."
+    },
+    {
+      "end_ms": 4447440,
+      "source_event_index": 803,
+      "start_ms": 4441760,
+      "text": "I would have opportunities to then network with other people that I never would have before."
+    },
+    {
+      "end_ms": 4458000,
+      "source_event_index": 804,
+      "start_ms": 4448160,
+      "text": "So I do believe a lot in serendipity. I do optimize portions of my day"
+    },
+    {
+      "end_ms": 4464720,
+      "source_event_index": 805,
+      "start_ms": 4458000,
+      "text": "where I schedule very carefully. But I am willing to leave some portions just"
+    },
+    {
+      "end_ms": 4469600,
+      "source_event_index": 806,
+      "start_ms": 4465280,
+      "text": "to do something that is not my usual thing. Maybe it'll be a waste of my time,"
+    },
+    {
+      "end_ms": 4478160,
+      "source_event_index": 807,
+      "start_ms": 4469600,
+      "text": "but maybe I will learn something. More often than not, I get a positive"
+    },
+    {
+      "end_ms": 4484000,
+      "source_event_index": 808,
+      "start_ms": 4478160,
+      "text": "experience that I wouldn't have planned for. So I believe a lot in serendipity."
+    },
+    {
+      "end_ms": 4490080,
+      "source_event_index": 809,
+      "start_ms": 4485360,
+      "text": "Maybe there's a danger in modern societies, not just with AI, that we've"
+    },
+    {
+      "end_ms": 4497440,
+      "source_event_index": 810,
+      "start_ms": 4490080,
+      "text": "become really good at optimizing everything. We’re not optimizing our own optimization."
+    },
+    {
+      "end_ms": 4506640,
+      "source_event_index": 811,
+      "start_ms": 4499440,
+      "text": "With COVID, for example, we switched a lot to remote meetings, so everything was scheduled."
+    },
+    {
+      "end_ms": 4514480,
+      "source_event_index": 812,
+      "start_ms": 4507920,
+      "text": "We kept busy in academia. We met almost the same number of people we met in person,"
+    },
+    {
+      "end_ms": 4522640,
+      "source_event_index": 813,
+      "start_ms": 4514480,
+      "text": "but everything had to be planned in advance. What we lost out on was the casual knocking"
+    },
+    {
+      "end_ms": 4526240,
+      "source_event_index": 814,
+      "start_ms": 4522640,
+      "text": "on a hallway door, just meeting someone while getting a coffee."
+    },
+    {
+      "end_ms": 4537200,
+      "source_event_index": 815,
+      "start_ms": 4528000,
+      "text": "Those serendipitous interactions may not seem optimal, but they are actually really important."
+    },
+    {
+      "end_ms": 4542640,
+      "source_event_index": 816,
+      "start_ms": 4537200,
+      "text": "When I was a grad student, I would go to the library to look for a journal article."
+    },
+    {
+      "end_ms": 4546960,
+      "source_event_index": 817,
+      "start_ms": 4542640,
+      "text": "You had to physically check out the journal and read the article."
+    },
+    {
+      "end_ms": 4551440,
+      "source_event_index": 818,
+      "start_ms": 4546960,
+      "text": "You could browse through and sometimes the next article was also interesting."
+    },
+    {
+      "end_ms": 4556240,
+      "source_event_index": 819,
+      "start_ms": 4552160,
+      "text": "Sometimes it wasn’t, but you could accidentally find interesting things."
+    },
+    {
+      "end_ms": 4562080,
+      "source_event_index": 820,
+      "start_ms": 4556960,
+      "text": "That has basically been lost now. If you want to access an article,"
+    },
+    {
+      "end_ms": 4566480,
+      "source_event_index": 821,
+      "start_ms": 4562080,
+      "text": "you just type it into a search engine or an AI, and you get exactly what you want instantly."
+    },
+    {
+      "end_ms": 4573840,
+      "source_event_index": 822,
+      "start_ms": 4566480,
+      "text": "But you don't get the accidental things you might have found if you'd done it more inefficiently."
+    },
+    {
+      "end_ms": 4583920,
+      "source_event_index": 823,
+      "start_ms": 4580320,
+      "text": "I spent a year once at the Institute for Advanced Study, which is"
+    },
+    {
+      "end_ms": 4588880,
+      "source_event_index": 824,
+      "start_ms": 4583920,
+      "text": "a great place with no distractions. You're there just to do research."
+    },
+    {
+      "end_ms": 4593120,
+      "source_event_index": 825,
+      "start_ms": 4589440,
+      "text": "The first few weeks you're there, it's great. You're getting all these papers written up that"
+    },
+    {
+      "end_ms": 4595440,
+      "source_event_index": 826,
+      "start_ms": 4593120,
+      "text": "you've been wanting to do for a long time. You think about problems for"
+    },
+    {
+      "end_ms": 4599040,
+      "source_event_index": 827,
+      "start_ms": 4595440,
+      "text": "blocks of hours at a time. But I find if I stay there for more"
+    },
+    {
+      "end_ms": 4606880,
+      "source_event_index": 828,
+      "start_ms": 4599040,
+      "text": "than several months, I run out of inspiration. I get bored. I surf the internet a lot more."
+    },
+    {
+      "end_ms": 4610080,
+      "source_event_index": 829,
+      "start_ms": 4606880,
+      "text": "You actually do need a certain level of distraction in your life."
+    },
+    {
+      "end_ms": 4622560,
+      "source_event_index": 830,
+      "start_ms": 4610080,
+      "text": "It adds enough randomness and high temperature. I don't know the optimal way to schedule"
+    },
+    {
+      "end_ms": 4628000,
+      "source_event_index": 831,
+      "start_ms": 4622560,
+      "text": "my life. It just seems to work. I'm very curious when you expect AIs"
+    },
+    {
+      "end_ms": 4635360,
+      "source_event_index": 832,
+      "start_ms": 4628000,
+      "text": "that can actually do frontier math at least as well as the best human mathematicians."
+    },
+    {
+      "end_ms": 4641360,
+      "source_event_index": 833,
+      "start_ms": 4635920,
+      "text": "In some ways, they're already doing frontier math that is super intelligent that humans can't do,"
+    },
+    {
+      "end_ms": 4643600,
+      "source_event_index": 834,
+      "start_ms": 4641360,
+      "text": "but it's a different frontier from what we're used to."
+    },
+    {
+      "end_ms": 4649440,
+      "source_event_index": 835,
+      "start_ms": 4644320,
+      "text": "You could argue that calculators were doing frontier math that humans could not accomplish,"
+    },
+    {
+      "end_ms": 4658800,
+      "source_event_index": 836,
+      "start_ms": 4649440,
+      "text": "but it was number crunching. But replacing Terry Tao completely."
+    },
+    {
+      "end_ms": 4668000,
+      "source_event_index": 837,
+      "start_ms": 4658800,
+      "text": "I mean, what do you want me for? You'll just go on all the podcasts after."
+    },
+    {
+      "end_ms": 4681040,
+      "source_event_index": 838,
+      "start_ms": 4670800,
+      "text": "It might not be the right question to ask. I think within a decade, a lot of things that"
+    },
+    {
+      "end_ms": 4686320,
+      "source_event_index": 839,
+      "start_ms": 4681040,
+      "text": "math students currently do—what we spend the bulk of our time doing and a lot of stuff we"
+    },
+    {
+      "end_ms": 4692720,
+      "source_event_index": 840,
+      "start_ms": 4686320,
+      "text": "put in our papers today—can be done by AI. But we will find that that actually wasn't"
+    },
+    {
+      "end_ms": 4700400,
+      "source_event_index": 841,
+      "start_ms": 4692720,
+      "text": "the most important part of what we do. A hundred years ago, a lot of mathematicians"
+    },
+    {
+      "end_ms": 4706080,
+      "source_event_index": 842,
+      "start_ms": 4700400,
+      "text": "were just solving differential equations. Physicists needed some exact solution to"
+    },
+    {
+      "end_ms": 4713200,
+      "source_event_index": 843,
+      "start_ms": 4707440,
+      "text": "some system, and they hired a mathematician to laboriously go through the calculus and work out"
+    },
+    {
+      "end_ms": 4720000,
+      "source_event_index": 844,
+      "start_ms": 4713200,
+      "text": "the solution to this fluid equation, whatever. A lot of what a 19th-century mathematician would"
+    },
+    {
+      "end_ms": 4726320,
+      "source_event_index": 845,
+      "start_ms": 4720000,
+      "text": "do, you could make a call to Mathematica, Wolfram Alpha, a computer algebra package, or now more"
+    },
+    {
+      "end_ms": 4733120,
+      "source_event_index": 846,
+      "start_ms": 4726320,
+      "text": "recently to an AI, and it would just solve the problem in a few minutes. But we moved on. We"
+    },
+    {
+      "end_ms": 4737840,
+      "source_event_index": 847,
+      "start_ms": 4733120,
+      "text": "worked on different types of problems after that. Once computers came along—computers"
+    },
+    {
+      "end_ms": 4741040,
+      "source_event_index": 848,
+      "start_ms": 4739120,
+      "text": "used to be human. People used to laboriously"
+    },
+    {
+      "end_ms": 4745920,
+      "source_event_index": 849,
+      "start_ms": 4741040,
+      "text": "create log tables and work out primes as Gauss did, and that has all been outsourced"
+    },
+    {
+      "end_ms": 4756080,
+      "source_event_index": 850,
+      "start_ms": 4745920,
+      "text": "to computers. But we moved on. In genetics, to sequence the genome of a single organism,"
+    },
+    {
+      "end_ms": 4763440,
+      "source_event_index": 851,
+      "start_ms": 4756080,
+      "text": "that was an entire PhD of a geneticist, carefully separating all the chromosomes and whatever."
+    },
+    {
+      "end_ms": 4766800,
+      "source_event_index": 852,
+      "start_ms": 4763440,
+      "text": "Now you can just spend $1,000 and send it to a sequencer and get it done."
+    },
+    {
+      "end_ms": 4771040,
+      "source_event_index": 853,
+      "start_ms": 4766800,
+      "text": "But genetics is not dead as a subject. You move to a different scale."
+    },
+    {
+      "end_ms": 4774160,
+      "source_event_index": 854,
+      "start_ms": 4771040,
+      "text": "Maybe you study whole ecosystems rather than individuals."
+    },
+    {
+      "end_ms": 4778320,
+      "source_event_index": 855,
+      "start_ms": 4774160,
+      "text": "I take your point but when is most mathematical progress, or almost"
+    },
+    {
+      "end_ms": 4783200,
+      "source_event_index": 856,
+      "start_ms": 4778320,
+      "text": "all mathematical progress, happening by AI? If you find out this year a Millennium Prize"
+    },
+    {
+      "end_ms": 4789840,
+      "source_event_index": 857,
+      "start_ms": 4783200,
+      "text": "Problem has been solved, you would put 95% odds that an AI did it autonomously."
+    },
+    {
+      "end_ms": 4796720,
+      "source_event_index": 858,
+      "start_ms": 4789840,
+      "text": "Surely there will be such a year. I guess I do believe that hybrid"
+    },
+    {
+      "end_ms": 4804720,
+      "source_event_index": 859,
+      "start_ms": 4797600,
+      "text": "human plus AIs will dominate mathematics for a lot longer. It will depend. It will require"
+    },
+    {
+      "end_ms": 4809840,
+      "source_event_index": 860,
+      "start_ms": 4804720,
+      "text": "some additional breakthroughs beyond what we already have, so it's going to be stochastic."
+    },
+    {
+      "end_ms": 4815200,
+      "source_event_index": 861,
+      "start_ms": 4811120,
+      "text": "I think AIs currently are very good at certain things, but really terrible at others."
+    },
+    {
+      "end_ms": 4823360,
+      "source_event_index": 862,
+      "start_ms": 4816560,
+      "text": "While you can add more and more frameworks on top to reduce the error rates and make them work with"
+    },
+    {
+      "end_ms": 4833360,
+      "source_event_index": 863,
+      "start_ms": 4823360,
+      "text": "each other a bit more, it feels like we don't have all the ingredients to really have a truly"
+    },
+    {
+      "end_ms": 4840320,
+      "source_event_index": 864,
+      "start_ms": 4833360,
+      "text": "satisfactory replacement for all intellectual tasks. It is complementary currently. It's not"
+    },
+    {
+      "end_ms": 4854320,
+      "source_event_index": 865,
+      "start_ms": 4842720,
+      "text": "a replacement. Because current level AIs will accelerate science in so many ways,"
+    },
+    {
+      "end_ms": 4860000,
+      "source_event_index": 866,
+      "start_ms": 4854320,
+      "text": "hopefully new discoveries and new breakthroughs will happen more quickly."
+    },
+    {
+      "end_ms": 4866400,
+      "source_event_index": 867,
+      "start_ms": 4861200,
+      "text": "It's also possible that by destroying serendipity we actually inhibit certain types of progress."
+    },
+    {
+      "end_ms": 4871040,
+      "source_event_index": 868,
+      "start_ms": 4867200,
+      "text": "Anything is possible at this point. I think the world is very,"
+    },
+    {
+      "end_ms": 4876400,
+      "source_event_index": 869,
+      "start_ms": 4871040,
+      "text": "very unpredictable at this point in time. What is your advice to somebody who would"
+    },
+    {
+      "end_ms": 4885680,
+      "source_event_index": 870,
+      "start_ms": 4876400,
+      "text": "consider a career in math or is early in a career in math, especially in light of AI progress?"
+    },
+    {
+      "end_ms": 4887680,
+      "source_event_index": 871,
+      "start_ms": 4885680,
+      "text": "How should they be thinking about their career differently, if at all,"
+    },
+    {
+      "end_ms": 4891280,
+      "source_event_index": 872,
+      "start_ms": 4887680,
+      "text": "as a result of AI progress? We live in a time of change."
+    },
+    {
+      "end_ms": 4896080,
+      "source_event_index": 873,
+      "start_ms": 4892480,
+      "text": "As I said, we live in a particularly unpredictable era."
+    },
+    {
+      "end_ms": 4905680,
+      "source_event_index": 874,
+      "start_ms": 4901280,
+      "text": "Things that we've taken for granted for centuries may not hold anymore."
+    },
+    {
+      "end_ms": 4914080,
+      "source_event_index": 875,
+      "start_ms": 4908240,
+      "text": "The way we do everything, and not just mathematics, will change."
+    },
+    {
+      "end_ms": 4923280,
+      "source_event_index": 876,
+      "start_ms": 4919600,
+      "text": "In many ways, I would prefer the much more boring, quiet era where things are much the"
+    },
+    {
+      "end_ms": 4931280,
+      "source_event_index": 877,
+      "start_ms": 4923280,
+      "text": "same as they were 10 years ago, 20 years ago. But I think one just has to embrace that"
+    },
+    {
+      "end_ms": 4938560,
+      "source_event_index": 878,
+      "start_ms": 4932000,
+      "text": "there's going to be a lot of change. The things that you study, some of them"
+    },
+    {
+      "end_ms": 4943120,
+      "source_event_index": 879,
+      "start_ms": 4938560,
+      "text": "may become obsolete or revolutionized, but some things will be retained."
+    },
+    {
+      "end_ms": 4955200,
+      "source_event_index": 880,
+      "start_ms": 4946720,
+      "text": "You always have to keep an eye on opportunities for things that you wouldn't be able to do before."
+    },
+    {
+      "end_ms": 4962240,
+      "source_event_index": 881,
+      "start_ms": 4957680,
+      "text": "In math, you previously had to go through years and years of education and be a math"
+    },
+    {
+      "end_ms": 4965040,
+      "source_event_index": 882,
+      "start_ms": 4962240,
+      "text": "PhD before you could contribute to the frontier of math research."
+    },
+    {
+      "end_ms": 4969040,
+      "source_event_index": 883,
+      "start_ms": 4966160,
+      "text": "But now it's quite possible at the high school level, or whatever,"
+    },
+    {
+      "end_ms": 4972320,
+      "source_event_index": 884,
+      "start_ms": 4969040,
+      "text": "that you could get involved in a math project and actually make a real contribution because of all"
+    },
+    {
+      "end_ms": 4978160,
+      "source_event_index": 885,
+      "start_ms": 4972320,
+      "text": "these AI tools, Lean, and everything else. There will be a lot of non-traditional"
+    },
+    {
+      "end_ms": 4984080,
+      "source_event_index": 886,
+      "start_ms": 4978160,
+      "text": "opportunities to learn, so you need a very adaptable mindset."
+    },
+    {
+      "end_ms": 4990560,
+      "source_event_index": 887,
+      "start_ms": 4986640,
+      "text": "There will be room for pursuing things just for curiosity and for playing around."
+    },
+    {
+      "end_ms": 4996160,
+      "source_event_index": 888,
+      "start_ms": 4991840,
+      "text": "You still need to get your credentials. For a while it will still be important to"
+    },
+    {
+      "end_ms": 5003920,
+      "source_event_index": 889,
+      "start_ms": 4997440,
+      "text": "go through traditional education and learn math and science the old-fashioned way."
+    },
+    {
+      "end_ms": 5015680,
+      "source_event_index": 890,
+      "start_ms": 5008080,
+      "text": "But you should also be open to very different ways of doing science, some of which don't exist yet."
+    },
+    {
+      "end_ms": 5022320,
+      "source_event_index": 891,
+      "start_ms": 5017360,
+      "text": "It's a scary time, but also very exciting. That's a great note to close on. Terence,"
+    },
+    {
+      "end_ms": 5023280,
+      "source_event_index": 892,
+      "start_ms": 5022320,
+      "text": "thanks so much. Pleasure."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-5138466b70693138515855-terence-tao/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "a0a49c641d52b5d42f9900ab91e608d4a8c482c201c2165188af5b4dd6016542"
+  },
+  "translation": {
+    "event_count": 893,
+    "language": "zh-CN",
+    "payload_sha256": "e457766a4823dfdc6241e0592c9a7d634ff78735e0df04a39207aa660d5f05c7",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-5138466b70693138515855-terence-tao/transcript.zh-CN.md",
+    "rendered_sha256": "e319c4de73b3bf8bea63e47ea3ac6dc28a8c40c1797005f835f87989d0b0bbf7",
+    "source_track": "zh-Hans-en",
+    "track_type": "youtube-auto-translate"
+  }
+}

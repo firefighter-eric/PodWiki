@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { gzipSync } from "node:zlib";
 import matter from "gray-matter";
 
 const searchIndexFormat = "podwiki-search-index-v1";
@@ -10,6 +11,7 @@ const repositoryRoot = path.resolve(webRoot, "../..");
 const showsRoot = path.join(repositoryRoot, "shows");
 const outputDirectory = path.join(webRoot, ".generated");
 const outputPath = path.join(outputDirectory, "search-index.json");
+const bundlePath = path.join(outputDirectory, "search-index-bundle.json");
 const summaryH2 = /^##\s+(.+?)\s*$/gmu;
 const expectedSummaryHeadings = [
   "一句话总结",
@@ -277,9 +279,18 @@ fs.mkdirSync(outputDirectory, { recursive: true });
 const temporaryPath = `${outputPath}.${process.pid}.tmp`;
 fs.writeFileSync(temporaryPath, serialized);
 fs.renameSync(temporaryPath, outputPath);
+const bundled = `${JSON.stringify({
+  format: "podwiki-search-index-gzip-v1",
+  contentDigest: searchIndex.contentDigest,
+  payload: gzipSync(serialized, { level: 9 }).toString("base64"),
+})}\n`;
+const temporaryBundlePath = `${bundlePath}.${process.pid}.tmp`;
+fs.writeFileSync(temporaryBundlePath, bundled);
+fs.renameSync(temporaryBundlePath, bundlePath);
 console.log(JSON.stringify({
   output: path.relative(repositoryRoot, outputPath),
   episodes: searchIndex.documents.length,
   bytes: Buffer.byteLength(serialized),
+  bundleBytes: Buffer.byteLength(bundled),
   contentDigest: searchIndex.contentDigest,
 }));

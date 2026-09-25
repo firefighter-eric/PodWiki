@@ -1,0 +1,6834 @@
+{
+  "generated_at": "2026-09-22T16:22:13.087885Z",
+  "kind": "podwiki-youtube-subtitle-raw",
+  "payload": {
+    "events": [
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "I'm back with Reiner Pope, CEO \nof MatX, a new AI chip company. "
+          }
+        ],
+        "tStartMs": 80
+      },
+      {
+        "dDurationMs": 2560,
+        "segs": [
+          {
+            "utf8": "Last time we were talking about \nwhat happens inside a data center. "
+          }
+        ],
+        "tStartMs": 4880
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "Now I want to understand what \nhappens inside an AI chip. "
+          }
+        ],
+        "tStartMs": 7440
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "How does a chip actually work?\nFull disclosure, by the way:  "
+          }
+        ],
+        "tStartMs": 10560
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "I am an angel investor in MatX.\nSo hopefully you have designed a good chip. "
+          }
+        ],
+        "tStartMs": 13680
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "Hope so. I'll start with the smallest \nfundamental unit of chip design, and we'll  "
+          }
+        ],
+        "tStartMs": 19440
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "build up to what an actual production \nchip is and what its components are. "
+          }
+        ],
+        "tStartMs": 25840
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "At the very bottom level of a chip, the \nprimitives we work with are logic gates,  "
+          }
+        ],
+        "tStartMs": 30880
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "very simple things like AND, OR, and NOT.\nThese are connected together by wires that have to  "
+          }
+        ],
+        "tStartMs": 37120
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "be laid out physically as metal traces on a chip.\nThe main function that AI chips want to compute  "
+          }
+        ],
+        "tStartMs": 42640
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "is the multiplication of matrices.\nInside that, the fundamental primitive  "
+          }
+        ],
+        "tStartMs": 50080
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "is a multiply-accumulate of pairs of numbers.\nWe're going to demonstrate what that calculation  "
+          }
+        ],
+        "tStartMs": 54720
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "looks like by hand, and then infer what \na circuit would look like for that. "
+          }
+        ],
+        "tStartMs": 61680
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "It'll be easiest if I do a multiply-accumulate of \na four-bit number with another four-bit number. "
+          }
+        ],
+        "tStartMs": 68080
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "The clearest primitive is \nactually multiply-accumulate. "
+          }
+        ],
+        "tStartMs": 80240
+      },
+      {
+        "dDurationMs": 15920,
+        "segs": [
+          {
+            "utf8": "So there's a multiply of these two terms, and \nthen we're going to add in an eight-bit number. "
+          }
+        ],
+        "tStartMs": 84080
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "Can I ask a clarifying question?\nWhy is this the natural primitive for  "
+          }
+        ],
+        "tStartMs": 100560
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "whatever computation happens inside a computer?\nThere are a few reasons. "
+          }
+        ],
+        "tStartMs": 109280
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "It's a little bit more efficient, but the \nreason it's natural for AI chips is that if  "
+          }
+        ],
+        "tStartMs": 115280
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "you look at what's happening during a matrix \nmultiply… What is a matrix multiply in short? "
+          }
+        ],
+        "tStartMs": 120960
+      },
+      {
+        "dDurationMs": 12320,
+        "segs": [
+          {
+            "utf8": "There's a for-loop over i, over \nj, and over k, of output [i,  "
+          }
+        ],
+        "tStartMs": 129200
+      },
+      {
+        "dDurationMs": 14560,
+        "segs": [
+          {
+            "utf8": "k] += input [i, j] x other input [j, k].\nA multiply-accumulate happens at every  "
+          }
+        ],
+        "tStartMs": 141520
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "single step of a matrix multiply.\nThe other observation is that the  "
+          }
+        ],
+        "tStartMs": 156080
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "precision will almost always be higher in the \naccumulation step than in the multiplication step. "
+          }
+        ],
+        "tStartMs": 160640
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "This is specific to AI chips.\nYou're multiplying low-precision numbers,  "
+          }
+        ],
+        "tStartMs": 165520
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "and then when you accumulate, errors accumulate \nquickly, so you need more precision there. "
+          }
+        ],
+        "tStartMs": 169840
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "This is why we've chosen to do a four-bit \nmultiplication and an eight-bit addition. "
+          }
+        ],
+        "tStartMs": 174240
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "Let me make sure I understood that.\nThere are two ways to understand that. "
+          }
+        ],
+        "tStartMs": 178240
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "One is that the value will \nbe larger than the inputs. "
+          }
+        ],
+        "tStartMs": 181440
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "The other is that if it was a \nfloating-point number it would be…  "
+          }
+        ],
+        "tStartMs": 186000
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "Maybe that part is less intuitive to me.\nBut maybe it's the same principle? "
+          }
+        ],
+        "tStartMs": 190800
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "It really is the same principle.\nThe separate principle is that as  "
+          }
+        ],
+        "tStartMs": 194160
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "you're summing up this number, you're summing \nup a whole bunch of numbers, so you've got a  "
+          }
+        ],
+        "tStartMs": 200400
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "lot of rounding errors accumulating.\nWhereas in this case, there's only  "
+          }
+        ],
+        "tStartMs": 203680
+      },
+      {
+        "dDurationMs": 2560,
+        "segs": [
+          {
+            "utf8": "one multiplication in the chain, \nso there aren't a lot of rounding  "
+          }
+        ],
+        "tStartMs": 208000
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "errors accumulating in the multiplication.\nWhy are you summing up a whole bunch of numbers? "
+          }
+        ],
+        "tStartMs": 210560
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "There’s just two numbers there.\nThis summation is repeated j many times. "
+          }
+        ],
+        "tStartMs": 213920
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "Any errors accumulate. I see.\nSo how would we perform this calculation by hand? "
+          }
+        ],
+        "tStartMs": 219280
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "As a human, we would probably \nseparate it into two, but we can do  "
+          }
+        ],
+        "tStartMs": 225040
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "it all in one using long multiplication.\nFor the multiplication term first, we're  "
+          }
+        ],
+        "tStartMs": 228240
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "going to multiply this four-bit number by every \nsingle bit position in the other four-bit number. "
+          }
+        ],
+        "tStartMs": 235760
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "We write that out. First, 1001 \nmultiplied by this bit position. "
+          }
+        ],
+        "tStartMs": 243120
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "That is the number itself.\nThen shifted across by one,  "
+          }
+        ],
+        "tStartMs": 250240
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "we're multiplying by 0.\nThat gives us an all-0 number. "
+          }
+        ],
+        "tStartMs": 254800
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "Shifted across one more to \nmultiply by this one, we get 1001. "
+          }
+        ],
+        "tStartMs": 260720
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "Finally, for this last bit position, \nwe get an all-0 number again. "
+          }
+        ],
+        "tStartMs": 268800
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "This gives us a bunch of terms that \nwe have to add for the multiplication. "
+          }
+        ],
+        "tStartMs": 277120
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "While we're doing that summation, we might as \nwell add in the actual accumulator term as well. "
+          }
+        ],
+        "tStartMs": 283920
+      },
+      {
+        "dDurationMs": 9840,
+        "segs": [
+          {
+            "utf8": "So we just copy that directly across.\nSo this is the sum. "
+          }
+        ],
+        "tStartMs": 290160
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "It's a five-way sum that we want to compute. "
+          }
+        ],
+        "tStartMs": 300000
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "What logic gates did it take us \nto get to this intermediate step? "
+          }
+        ],
+        "tStartMs": 307520
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "We needed to produce all 16 \nof these partial products. "
+          }
+        ],
+        "tStartMs": 312160
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "How do I produce one of these partial products?\nLet's take this number 1, for example here. "
+          }
+        ],
+        "tStartMs": 317920
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "We produce it by multiplying this \nnumber by this one over here. "
+          }
+        ],
+        "tStartMs": 326080
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "We can produce that with an AND gate.\nThis number is 1 if both this bit  "
+          }
+        ],
+        "tStartMs": 331440
+      },
+      {
+        "dDurationMs": 2320,
+        "segs": [
+          {
+            "utf8": "is 1 and this bit is 1.\nIf either of them is 0,  "
+          }
+        ],
+        "tStartMs": 335600
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "then the multiplication of 0 times anything is 0.\nTo produce all of this, we ended up  "
+          }
+        ],
+        "tStartMs": 337920
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "consuming 16 AND gates.\nIn the general case,  "
+          }
+        ],
+        "tStartMs": 345600
+      },
+      {
+        "dDurationMs": 15680,
+        "segs": [
+          {
+            "utf8": "if I were doing a p bit multiply times a q bit \nmultiply, this will be p times q many ANDs. "
+          }
+        ],
+        "tStartMs": 350880
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "Finally, I sum them. Most of the work \nis going to happen in the summing. "
+          }
+        ],
+        "tStartMs": 370160
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "Let me describe the other \nlogic gate that we use here. "
+          }
+        ],
+        "tStartMs": 375680
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "AND is almost the simplest logic \ngate that exists on a chip. "
+          }
+        ],
+        "tStartMs": 380480
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "It's almost the smallest. At the other extreme, \nthe very largest logic gate you'll typically use  "
+          }
+        ],
+        "tStartMs": 383200
+      },
+      {
+        "dDurationMs": 8560,
+        "segs": [
+          {
+            "utf8": "is something called a full adder.\nComing from software, you might think  "
+          }
+        ],
+        "tStartMs": 390480
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "that a full adder adds 32-bit numbers together.\nIn this case, it just adds three single-bit  "
+          }
+        ],
+        "tStartMs": 399040
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "numbers together, so you can think \nof it as adding 0, 1, and 1 together. "
+          }
+        ],
+        "tStartMs": 403680
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "When I add these together, the result can \nbe 0, 1, 2, or 3, so I can express that  "
+          }
+        ],
+        "tStartMs": 410400
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "in binary using just two bits.\nAs input, it has three bits. "
+          }
+        ],
+        "tStartMs": 414320
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "As output, it has two bits.\nThe number 2 in binary is 10. "
+          }
+        ],
+        "tStartMs": 418880
+      },
+      {
+        "dDurationMs": 10720,
+        "segs": [
+          {
+            "utf8": "This is also known as a 3→2 compressor \nbecause it takes three bits of input  "
+          }
+        ],
+        "tStartMs": 426880
+      },
+      {
+        "dDurationMs": 1920,
+        "segs": [
+          {
+            "utf8": "and produces two bits of output.\nJust to make sure I understood: the  "
+          }
+        ],
+        "tStartMs": 437600
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "two inputs are an X and a Y value \nand then some carry that came in… "
+          }
+        ],
+        "tStartMs": 439520
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "The three inputs are all bits in the same bit \nposition, like three bits in a column here. "
+          }
+        ],
+        "tStartMs": 447120
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "The two outputs, I've drawn them vertically \nhere and horizontally here to match this  "
+          }
+        ],
+        "tStartMs": 455120
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "vertical versus horizontal layout.\nThis expresses that things in the same  "
+          }
+        ],
+        "tStartMs": 461360
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "column are in the same bit position, whereas \nthings in adjacent columns are different. "
+          }
+        ],
+        "tStartMs": 465920
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "This is a carry out, whereas this was the sum.\nSo if the inputs in the full adder were, say,  "
+          }
+        ],
+        "tStartMs": 470160
+      },
+      {
+        "dDurationMs": 2480,
+        "segs": [
+          {
+            "utf8": "101, then the output would be 10.\nIf it were 111, it'd be 11. "
+          }
+        ],
+        "tStartMs": 476800
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "If it were 000, it'd be 00.\nIf it were 010, it'd still be 01. "
+          }
+        ],
+        "tStartMs": 479280
+      },
+      {
+        "dDurationMs": 2640,
+        "segs": [
+          {
+            "utf8": "Got it.\nYeah. It's essentially just counting the  "
+          }
+        ],
+        "tStartMs": 486800
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "number of things and expressing that in binary.\nThis circuit captures what we as humans naturally  "
+          }
+        ],
+        "tStartMs": 489440
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "do when we're summing along a column.\nI'll show one iteration of using  "
+          }
+        ],
+        "tStartMs": 497120
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "the full adder to sum.\nThe way I sum here is going  "
+          }
+        ],
+        "tStartMs": 504960
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "to be a little unnatural for humans.\nWe would sum along the column and then  "
+          }
+        ],
+        "tStartMs": 507840
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "remember the carry, but instead of remembering \nthe carry, we'll explicitly write it out. "
+          }
+        ],
+        "tStartMs": 511760
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "We proceed from the rightmost \ncolumn toward the left. "
+          }
+        ],
+        "tStartMs": 519120
+      },
+      {
+        "dDurationMs": 9200,
+        "segs": [
+          {
+            "utf8": "On the rightmost column, we sum the 1 and the 1, \nand that produces a zero here and a carry of one. "
+          }
+        ],
+        "tStartMs": 522160
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "We've used this full adder circuit on this pair \nof bits and produced a pair of bits as output. "
+          }
+        ],
+        "tStartMs": 531360
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "Now we can do the same thing with this column.\nWe have a column of four numbers, so we'll take  "
+          }
+        ],
+        "tStartMs": 539200
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "the first three of them, run a full adder on \nthem, and that gives us a 0 and a 0 as output. "
+          }
+        ],
+        "tStartMs": 544880
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "The sum of these is 00.\nThat's the full adder applied to all these bits. "
+          }
+        ],
+        "tStartMs": 552320
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "As I've used up bits, I'll cross them \nout to indicate that I've handled them. "
+          }
+        ],
+        "tStartMs": 558720
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "Let's keep going a little bit more.\nI take these three numbers, I add  "
+          }
+        ],
+        "tStartMs": 565840
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "them, and that gives me a 1 and a 0.\nI've dealt with these three numbers. "
+          }
+        ],
+        "tStartMs": 571200
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "Now I take these three numbers and add \nthem, and that gives me a 1 and a 0,  "
+          }
+        ],
+        "tStartMs": 576880
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "and I've dealt with these numbers.\nThe way to view this is that I have  "
+          }
+        ],
+        "tStartMs": 584160
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "this whole grid of numbers that need to be added.\nI'm going to keep applying full adders to all the  "
+          }
+        ],
+        "tStartMs": 591840
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "bits here, constantly removing three numbers from \na column and writing out two numbers as output. "
+          }
+        ],
+        "tStartMs": 597120
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "Keep going over and over again until I \neventually get just one single number coming out. "
+          }
+        ],
+        "tStartMs": 603600
+      },
+      {
+        "dDurationMs": 14160,
+        "segs": [
+          {
+            "utf8": "This approach is called a Dadda multiplier.\nThis is the standard for how you do  "
+          }
+        ],
+        "tStartMs": 616640
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "area-efficient multipliers using full adders.\nLet's try to quantify the circuit size of  "
+          }
+        ],
+        "tStartMs": 631520
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "this so we have a sense of how big \nthings are and can compare them later. "
+          }
+        ],
+        "tStartMs": 638400
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "How many full adders did I use?\nHow many numbers did I start with? "
+          }
+        ],
+        "tStartMs": 644720
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "I have the 16 partial products, which is a product \nof all of these terms with all of these terms,  "
+          }
+        ],
+        "tStartMs": 650080
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "plus the eight terms that I'm adding here.\nI started off with 24 bits. "
+          }
+        ],
+        "tStartMs": 657200
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "Eventually I produced eight bits on the output.\nIn every step, I was crossing off three numbers  "
+          }
+        ],
+        "tStartMs": 666480
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "and writing two numbers out as a result.\nEvery single use of a full adder eliminates  "
+          }
+        ],
+        "tStartMs": 674480
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "one of the bits here.\nSo how many full adders? "
+          }
+        ],
+        "tStartMs": 680080
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "It must be 24 minus 8, so there \nwere 16 full adders in this circuit. "
+          }
+        ],
+        "tStartMs": 683840
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "This is true in the general case as well.\nThere will be p times q many  "
+          }
+        ],
+        "tStartMs": 690000
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "full adders in this circuit.\nLet me make sure I understand the logic of that. "
+          }
+        ],
+        "tStartMs": 694000
+      },
+      {
+        "dDurationMs": 2887,
+        "segs": [
+          {
+            "utf8": "The input bits, 24, is p x q, plus p + q.\nThe output bits are just p + q. "
+          }
+        ],
+        "tStartMs": 699520
+      },
+      {
+        "dDurationMs": 17673,
+        "segs": [
+          {
+            "utf8": "So p x q plus p + q, minus p + q equals p x q.\nThat's right. I think this explains,  "
+          }
+        ],
+        "tStartMs": 702407
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "or at least hints at, the second reason \nwe chose to do a multiply-accumulate. "
+          }
+        ],
+        "tStartMs": 720720
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "The first reason is that it's what \nshows up in matrix multiplication. "
+          }
+        ],
+        "tStartMs": 726400
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "The second is that it gave us this very \nslick, simple p x q, very simple algebra. "
+          }
+        ],
+        "tStartMs": 730960
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "We've described this whole procedure.\nEvery single atomic step that I took  "
+          }
+        ],
+        "tStartMs": 737600
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "here becomes a logic gate, and then \nthe wires are connected together. "
+          }
+        ],
+        "tStartMs": 742480
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "When I had these three inputs that I used to \nproduce these two outputs, if I think of mapping  "
+          }
+        ],
+        "tStartMs": 746640
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "this to a physical device, there would be a wire \nconnecting all three of these things together  "
+          }
+        ],
+        "tStartMs": 751840
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "into a logic gate that produced this output.\nThis is the main primitive, at different bit  "
+          }
+        ],
+        "tStartMs": 758560
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "widths, that's inside an AI chip.\nWe're going to build up from here  "
+          }
+        ],
+        "tStartMs": 766720
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "to how you would use it to run all \nthe other operations you might want. "
+          }
+        ],
+        "tStartMs": 774000
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "This might be the wrong time to ask, but \nwhenever Nvidia reports that this chip  "
+          }
+        ],
+        "tStartMs": 778000
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "can do X many FP4 or half as many FP8, it \nseems to imply those circuits are fungible,  "
+          }
+        ],
+        "tStartMs": 782800
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "that there's not a dedicated FP4 versus FP8.\nBut the way you're mapping it out here, it seems  "
+          }
+        ],
+        "tStartMs": 791680
+      },
+      {
+        "dDurationMs": 9680,
+        "segs": [
+          {
+            "utf8": "like if it has to be mapped out in the logic, you \nwould need a dedicated FP4 multiply-accumulate and  "
+          }
+        ],
+        "tStartMs": 797760
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "then a dedicated FP8 accumulate.\nCan you \"funge\" them? "
+          }
+        ],
+        "tStartMs": 807440
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "As drawn, they're not particularly fungible.\nThis is actually one of the main choices you  "
+          }
+        ],
+        "tStartMs": 813040
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "have to make when designing a chip: how \nmuch of FP4 and how much of FP8 do I have? "
+          }
+        ],
+        "tStartMs": 817920
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "Sometimes I'll make that consideration from \nthe point of view of the customer requirement. "
+          }
+        ],
+        "tStartMs": 822560
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "Another angle is to equalize the \npower budget between FP4 and FP8. "
+          }
+        ],
+        "tStartMs": 827760
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "When they report those numbers and it just happens \nto be the case that it does 2x as many FP4 as FP8,  "
+          }
+        ],
+        "tStartMs": 835280
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "they're just choosing to give equivalent \ndie areas to all the floating points,  "
+          }
+        ],
+        "tStartMs": 842000
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "and as a result it ends up being…?\nWhy is the ratio exactly 2x? "
+          }
+        ],
+        "tStartMs": 848320
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "Part of it is that surely it won't \nbe exactly equivalent to die area. "
+          }
+        ],
+        "tStartMs": 853680
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "There's a data movement reason.\nWe'll maybe come back to this when we  "
+          }
+        ],
+        "tStartMs": 860400
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "look at how it goes into and out of memories.\nThere's something really nice from a software  "
+          }
+        ],
+        "tStartMs": 864080
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "level about the fact that I can pack \ntwo four-bit numbers into the same  "
+          }
+        ],
+        "tStartMs": 868800
+      },
+      {
+        "dDurationMs": 2560,
+        "segs": [
+          {
+            "utf8": "storage as an eight-bit number.\nWhen I store that to memory,  "
+          }
+        ],
+        "tStartMs": 872080
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "the sizing of the buses that I wire out within \nthe chip makes that work out really nicely. "
+          }
+        ],
+        "tStartMs": 876960
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "Come to think of it, it's not just 2x.\nThe amount of area it takes sounds like  "
+          }
+        ],
+        "tStartMs": 884960
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "it's quadratic with the bit length.\nThat's why smaller precision is even  "
+          }
+        ],
+        "tStartMs": 894160
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "more favorable than you might think.\nThis is a really big reason. "
+          }
+        ],
+        "tStartMs": 900240
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "In fact, Nvidia made a change.\nHistorically, up until B100 or  "
+          }
+        ],
+        "tStartMs": 904160
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "B200, every time you halved the bit \nprecision, you doubled the FLOP count. "
+          }
+        ],
+        "tStartMs": 910640
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "For the reason you said, because of this quadratic \nscaling, that ratio is actually slightly wrong. "
+          }
+        ],
+        "tStartMs": 918160
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "You should get an even bigger speedup \nthan you might otherwise think. "
+          }
+        ],
+        "tStartMs": 921680
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "Nvidia’s product specs have started acknowledging \nthat in B300 and beyond, where the FP4 is three  "
+          }
+        ],
+        "tStartMs": 928080
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "times faster than the FP8.\nThough it should be 4x. "
+          }
+        ],
+        "tStartMs": 934960
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "Yeah. What I've shown here is the \nsimplest case of integer multiply. "
+          }
+        ],
+        "tStartMs": 938560
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "When you're dealing with floating point, as \nyou do in FP4 and FP8, there's this other term,  "
+          }
+        ],
+        "tStartMs": 942880
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "the exponent, that complicates the calculation.\nWhat can we see already from this? "
+          }
+        ],
+        "tStartMs": 949520
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "I think the big observation you've made is that \nthere's this quadratic scaling with bit width,  "
+          }
+        ],
+        "tStartMs": 954880
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "which is very effective and is \nthe single reason low-precision  "
+          }
+        ],
+        "tStartMs": 960000
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "arithmetic has worked so well for neural nets.\nThe other thing we're going to do now is compare  "
+          }
+        ],
+        "tStartMs": 964640
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "the area spent on the multiplication \nitself with all the circuitry around it. "
+          }
+        ],
+        "tStartMs": 971280
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "We'll walk back in time a little bit and \nsee how GPUs prior to Tensor Cores worked,  "
+          }
+        ],
+        "tStartMs": 980800
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "which is in fact the same way CPUs worked.\nWhere do we stick this multiply-accumulate unit? "
+          }
+        ],
+        "tStartMs": 988320
+      },
+      {
+        "dDurationMs": 10720,
+        "segs": [
+          {
+            "utf8": "Generically, I'll describe a CUDA core or a CPU.\nYou'll have some register file which stores some  "
+          }
+        ],
+        "tStartMs": 997120
+      },
+      {
+        "dDurationMs": 10640,
+        "segs": [
+          {
+            "utf8": "number of entries, maybe eight entries of, in this \ncase, 4-bit numbers, but typically 32-bit numbers. "
+          }
+        ],
+        "tStartMs": 1007840
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "Inside the CUDA core, I'll have \nsome register file of some depth,  "
+          }
+        ],
+        "tStartMs": 1023440
+      },
+      {
+        "dDurationMs": 11200,
+        "segs": [
+          {
+            "utf8": "and then I'll have my multiply-accumulate circuit.\nWhat it's going to do is take three arbitrary  "
+          }
+        ],
+        "tStartMs": 1026800
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "registers from this register file, \nperform the multiply-accumulate,  "
+          }
+        ],
+        "tStartMs": 1038000
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "and then write back to the register file.\nIt's going to write to this one,  "
+          }
+        ],
+        "tStartMs": 1041280
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "but it was able to read from this \none, this one, and another random one. "
+          }
+        ],
+        "tStartMs": 1045920
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "It will take three inputs like this.\nThis is the core data path of many processors. "
+          }
+        ],
+        "tStartMs": 1051440
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "Most processors look like this.\nYou've got some set of registers, and  "
+          }
+        ],
+        "tStartMs": 1059920
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "then you've got some set of logic units, or ALUs.\nWe want to analyze the cost of the data movement  "
+          }
+        ],
+        "tStartMs": 1062640
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "from the register file to the ALU and back.\nUltimately, there's going to be some  "
+          }
+        ],
+        "tStartMs": 1070800
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "circuit that says, \"Well, I don't \nalways have to select this guy. "
+          }
+        ],
+        "tStartMs": 1078320
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "I might select any of the \nregisters at any point in time.\" "
+          }
+        ],
+        "tStartMs": 1081040
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "The first question is: how can I build a circuit?\nThe circuit I'm going to look for is a mux. "
+          }
+        ],
+        "tStartMs": 1084480
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "In this case, it's going to have eight inputs, \none from each entry of the register file,  "
+          }
+        ],
+        "tStartMs": 1093040
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "and it's going to have one output, \nwhich is actually producing this output. "
+          }
+        ],
+        "tStartMs": 1097680
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "What is the cost of this thing?\nAll we have to build it out of is AND and OR. "
+          }
+        ],
+        "tStartMs": 1106080
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "How do we build it?\nWe do the dumbest thing possible. "
+          }
+        ],
+        "tStartMs": 1112960
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "We form a mask. When we want to read the \nthird entry, we're going to AND every  "
+          }
+        ],
+        "tStartMs": 1117680
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "single entry with either 1 or 0 based \non whether that's what we want to read,  "
+          }
+        ],
+        "tStartMs": 1124640
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "and then we're going to OR all of them together.\nJust to make sure I understand the basics. "
+          }
+        ],
+        "tStartMs": 1128000
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "What the mux is doing is just selecting an input?\nJust selecting, invisible to software. "
+          }
+        ],
+        "tStartMs": 1132240
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "You say \"I want input number three,\" \nand that means there's a mux here. "
+          }
+        ],
+        "tStartMs": 1139360
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "So what is the cost of this mux?\nAn n-input  "
+          }
+        ],
+        "tStartMs": 1142240
+      },
+      {
+        "dDurationMs": 10480,
+        "segs": [
+          {
+            "utf8": "mux operating on p bits.\nI have n rows. That's just eight  "
+          }
+        ],
+        "tStartMs": 1150640
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "rows, and each row is p bits wide.\nI have to AND every single bit,  "
+          }
+        ],
+        "tStartMs": 1161120
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "so I get n x p many AND gates.\nFor every single input I have to decide  "
+          }
+        ],
+        "tStartMs": 1165600
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "whether I'm going to mask it out or not.\nThen I'm going to OR them all together. "
+          }
+        ],
+        "tStartMs": 1172320
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "There's going to be n – 1 times p many OR gates.\nI've got all of these different things,  "
+          }
+        ],
+        "tStartMs": 1178960
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "almost all of them are 0s, but I need to collapse \nthem from my eight options down into one option. "
+          }
+        ],
+        "tStartMs": 1187040
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "Every step, I need to OR one \nrow into an existing row. "
+          }
+        ],
+        "tStartMs": 1194640
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "It's actually funny that you don't \nthink at the level of hardware. "
+          }
+        ],
+        "tStartMs": 1199440
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "You just think, \"Oh, I'll just select element \nthree,\" and something as simple as that is  "
+          }
+        ],
+        "tStartMs": 1204240
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "in and of itself quite a complicated circuit.\nThis is the first step of all of the hidden  "
+          }
+        ],
+        "tStartMs": 1211440
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "data movement costs that show up.\nWe're just going to compare. "
+          }
+        ],
+        "tStartMs": 1215280
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "I have to pay this cost.\nI've got one mux here, and in fact  "
+          }
+        ],
+        "tStartMs": 1223200
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "I have two more copies of that for each of the \nthree inputs to my multiply-accumulate operation. "
+          }
+        ],
+        "tStartMs": 1226080
+      },
+      {
+        "dDurationMs": 11680,
+        "segs": [
+          {
+            "utf8": "I have this cost, which is 3 x n x p AND gates \nover here, compared to p x q gates in the actual  "
+          }
+        ],
+        "tStartMs": 1230960
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "circuit that is doing the thing I care about.\nIf we plug in actual numbers, with n being  "
+          }
+        ],
+        "tStartMs": 1242640
+      },
+      {
+        "dDurationMs": 10800,
+        "segs": [
+          {
+            "utf8": "eight, I get 24 x p gates just in the data \nmovement, compared to—if q is four—4 x p  "
+          }
+        ],
+        "tStartMs": 1249760
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "gates just in the multiply-adder.\nWhere is the three coming from? "
+          }
+        ],
+        "tStartMs": 1260560
+      },
+      {
+        "dDurationMs": 9200,
+        "segs": [
+          {
+            "utf8": "Three different inputs here. What I'm \nhinting at is that all of this work,  "
+          }
+        ],
+        "tStartMs": 1265520
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "which scales as the size of the register \nfile—and this is a very small register  "
+          }
+        ],
+        "tStartMs": 1274720
+      },
+      {
+        "dDurationMs": 7440,
+        "segs": [
+          {
+            "utf8": "file—all of this work just moving the data from \nthe register file to the logic unit is many,  "
+          }
+        ],
+        "tStartMs": 1278640
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "many times more expensive than the logic unit.\nIn the most recent ClusterMAX report, SemiAnalysis  "
+          }
+        ],
+        "tStartMs": 1286080
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "ranked almost 100 different GPU clouds. Crusoe \nwas one of only five that made the gold tier. "
+          }
+        ],
+        "tStartMs": 1291040
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "SemiAnalysis found that gold-tier providers \nlike Crusoe had a total cost of ownership that  "
+          }
+        ],
+        "tStartMs": 1296480
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "was 5% to 15% lower than silver-tier ones, \neven when they had identical GPU pricing. "
+          }
+        ],
+        "tStartMs": 1301120
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "This makes sense because total cost of ownership \nis downstream of a bunch of different things that  "
+          }
+        ],
+        "tStartMs": 1306160
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "don't necessarily show up in the sticker \nprice, but that Crusoe has optimized. "
+          }
+        ],
+        "tStartMs": 1310480
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "Things like how well you detect faults \nand how quickly you replace failed nodes. "
+          }
+        ],
+        "tStartMs": 1314480
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "For example, Crusoe was one of the first clouds \nto adopt NVSentinel, NVIDIA's own GPU monitoring  "
+          }
+        ],
+        "tStartMs": 1318400
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "and self-healing software for enhanced \nGPU uptime, utilization, and reliability. "
+          }
+        ],
+        "tStartMs": 1324080
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "This lets Crusoe make use of everything that \nNVIDIA has learned about why chips fail across all  "
+          }
+        ],
+        "tStartMs": 1329440
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "their different fleets and deployments, so that \nCrusoe can catch faults earlier in the process. "
+          }
+        ],
+        "tStartMs": 1334240
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "And once they identify a failure, Crusoe can \nswap in a healthy node in less than 10 minutes. "
+          }
+        ],
+        "tStartMs": 1338880
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "Because they’re not running bare metal, Crusoe \ndoesn't have to spend time installing an  "
+          }
+        ],
+        "tStartMs": 1343760
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "operating system or configuring drivers.\nThey can just spin up a new VM on an  "
+          }
+        ],
+        "tStartMs": 1347200
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "already running and pre-qualified host.\nIf you want to learn more about this or  "
+          }
+        ],
+        "tStartMs": 1351120
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "the other reasons that Crusoe made \ngold tier, go to crusoe.ai/dwarkesh. "
+          }
+        ],
+        "tStartMs": 1354800
+      },
+      {
+        "dDurationMs": 2640,
+        "segs": [
+          {
+            "utf8": "It may be helpful to just \nsee what a mux looks like,  "
+          }
+        ],
+        "tStartMs": 1361840
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "maybe a two-bit or a four-bit mux.\nWe’ll do a two-way mux. "
+          }
+        ],
+        "tStartMs": 1364480
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "We've got two different numbers, \nwe’ve got these two inputs. "
+          }
+        ],
+        "tStartMs": 1373600
+      },
+      {
+        "dDurationMs": 13120,
+        "segs": [
+          {
+            "utf8": "These are the inputs that are being selected \nbetween, and the selector can either be \"I want  "
+          }
+        ],
+        "tStartMs": 1383120
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "this one\" or \"I want the other one.\"\nThis is a one-hot encoding. "
+          }
+        ],
+        "tStartMs": 1396240
+      },
+      {
+        "dDurationMs": 9360,
+        "segs": [
+          {
+            "utf8": "This is what we start with.\nLet's focus on this case. "
+          }
+        ],
+        "tStartMs": 1404800
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "This is the actual input we got, and we \nwant to produce this guy as the result. "
+          }
+        ],
+        "tStartMs": 1414160
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "Very laboriously, we AND \nthis bit with all of these. "
+          }
+        ],
+        "tStartMs": 1422560
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "That produces ANDing this bit with this row.\nLikewise, we AND this bit with this row. "
+          }
+        ],
+        "tStartMs": 1430240
+      },
+      {
+        "dDurationMs": 12160,
+        "segs": [
+          {
+            "utf8": "That produces all 0s. There are four ANDs here.\nFinally,  "
+          }
+        ],
+        "tStartMs": 1435200
+      },
+      {
+        "dDurationMs": 2080,
+        "segs": [
+          {
+            "utf8": "we OR these two together, and this gives a 1.\nWe OR these two together, this gives a 1. "
+          }
+        ],
+        "tStartMs": 1447360
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "We OR these two together, it gives a 0.\nWe OR these two together and it gives a 1. "
+          }
+        ],
+        "tStartMs": 1449440
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "Those are the four ORs.\nThis actually ends up  "
+          }
+        ],
+        "tStartMs": 1455680
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "looking a little bit like addition.\nWe did exactly the same set of ANDs. "
+          }
+        ],
+        "tStartMs": 1462560
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "We've ANDed all of these things together, \nbut then instead of collapsing it by using  "
+          }
+        ],
+        "tStartMs": 1468640
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "full adder circuits, we just get a \nvery simple collapsing with OR gates. "
+          }
+        ],
+        "tStartMs": 1474080
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "But that doesn't look like n times p.\nThis was with n=2 inputs. "
+          }
+        ],
+        "tStartMs": 1478560
+      },
+      {
+        "dDurationMs": 15600,
+        "segs": [
+          {
+            "utf8": "In the general case, we will have n \nrows, and we'll have p bits per row. "
+          }
+        ],
+        "tStartMs": 1488320
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "That gives us the n times p many AND gates.\nIn this circuit I've described, almost all of  "
+          }
+        ],
+        "tStartMs": 1503920
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "the cost, seven-eighths of the cost, is in reading \nand writing the register file, and only a tiny  "
+          }
+        ],
+        "tStartMs": 1511680
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "fraction of the cost is in the logic unit itself.\nThis is the problem to solve. "
+          }
+        ],
+        "tStartMs": 1519440
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "This essentially was the state of play prior \nto the Volta generation of Nvidia GPUs. "
+          }
+        ],
+        "tStartMs": 1524720
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "This kind of thing is what \nwas inside the CUDA cores. "
+          }
+        ],
+        "tStartMs": 1531760
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "This problem statement is what motivated \nthe introduction of Tensor Cores,  "
+          }
+        ],
+        "tStartMs": 1537360
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "which are more generically called systolic arrays.\nThink about how we're going to solve this problem. "
+          }
+        ],
+        "tStartMs": 1541760
+      },
+      {
+        "dDurationMs": 2240,
+        "segs": [
+          {
+            "utf8": "We're spending almost all of our \ncircuit area on something that we  "
+          }
+        ],
+        "tStartMs": 1546240
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "really don't care about and is hidden to the \nsoftware programmer, and the thing that we  "
+          }
+        ],
+        "tStartMs": 1548480
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "actually care about is not much of the area.\nMake this one bigger somehow while keeping  "
+          }
+        ],
+        "tStartMs": 1552080
+      },
+      {
+        "dDurationMs": 1920,
+        "segs": [
+          {
+            "utf8": "this at the same size.\nThat's the goal. "
+          }
+        ],
+        "tStartMs": 1557520
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "The evolution was that we had baked \nthis much into hardware at this stage. "
+          }
+        ],
+        "tStartMs": 1561360
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "This single line is a multiply-accumulate, \nand this single thing was baked into hardware. "
+          }
+        ],
+        "tStartMs": 1566320
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "The idea of a systolic array is to go \ntwo levels of loops up and bake this  "
+          }
+        ],
+        "tStartMs": 1571840
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "entire loop out here into hardware.\nThe idea is that if we have a much  "
+          }
+        ],
+        "tStartMs": 1577920
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "bigger granularity fixed-function \npiece of logic, maybe the taxes we  "
+          }
+        ],
+        "tStartMs": 1582480
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "pay on the input and output are much smaller.\nInteresting. It sounds like you're suggesting  "
+          }
+        ],
+        "tStartMs": 1587280
+      },
+      {
+        "dDurationMs": 11120,
+        "segs": [
+          {
+            "utf8": "that if you go up one step in the matrix \nmultiply loop, you can tilt the balance  "
+          }
+        ],
+        "tStartMs": 1590400
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "more towards compute than communication.\nThat's right. There are two effects we're  "
+          }
+        ],
+        "tStartMs": 1601520
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "going to take advantage of here.\nOne is that we can do more stuff  "
+          }
+        ],
+        "tStartMs": 1606080
+      },
+      {
+        "dDurationMs": 8800,
+        "segs": [
+          {
+            "utf8": "per every trip through our register file.\nThe other is that in some of this loop, we can  "
+          }
+        ],
+        "tStartMs": 1609840
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "take advantage of certain things staying fixed.\nVisually, we're going to look at this  "
+          }
+        ],
+        "tStartMs": 1618640
+      },
+      {
+        "dDurationMs": 2800,
+        "segs": [
+          {
+            "utf8": "matrix multiplication.\nThis portion of the loop  "
+          }
+        ],
+        "tStartMs": 1627040
+      },
+      {
+        "dDurationMs": 10400,
+        "segs": [
+          {
+            "utf8": "corresponds to a matrix-vector multiplication.\nWe'll take a matrix and multiply it by a vector. "
+          }
+        ],
+        "tStartMs": 1629840
+      },
+      {
+        "dDurationMs": 2160,
+        "segs": [
+          {
+            "utf8": "How do we do this?\nEvery column gets  "
+          }
+        ],
+        "tStartMs": 1641600
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "multiplied by the vector and then summed.\nWe're going to sum along columns. "
+          }
+        ],
+        "tStartMs": 1643760
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "This 0 and 3 gets multiplied by the 3 and \n7 and gets summed, and then the 1 and 2  "
+          }
+        ],
+        "tStartMs": 1648560
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "gets multiplied by the 3 and 7 and gets summed.\nThere is a multiply-accumulate associated with  "
+          }
+        ],
+        "tStartMs": 1652960
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "every single one of these entries in the matrix.\nWe'll draw out these four multiply-accumulates. "
+          }
+        ],
+        "tStartMs": 1658880
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "Just to make sure I understand why there are \nfour multiply-accumulates: each entry in the  "
+          }
+        ],
+        "tStartMs": 1673840
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "column that corresponds to the output \nvector is a dot product, and in this  "
+          }
+        ],
+        "tStartMs": 1681600
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "case it will be two multiplications and then \nthe addition of those two multiplications. "
+          }
+        ],
+        "tStartMs": 1689360
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "You're accumulating...\nReally there's only one addition per  "
+          }
+        ],
+        "tStartMs": 1696240
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "dot product, but we like to start with zero.\nBut it includes the initialization of zero. "
+          }
+        ],
+        "tStartMs": 1700240
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "Yeah. We want to have quadratically more compute. "
+          }
+        ],
+        "tStartMs": 1703760
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "We have x times y as much \ncompute as we had before. "
+          }
+        ],
+        "tStartMs": 1710240
+      },
+      {
+        "dDurationMs": 9440,
+        "segs": [
+          {
+            "utf8": "But we want to aim for having only \nx times as much communication. "
+          }
+        ],
+        "tStartMs": 1721360
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "The intention is to get this \nadvantage term going as y. "
+          }
+        ],
+        "tStartMs": 1732000
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "We've laid down the multiplications.\nWe want to bring in a vector of size two, and  "
+          }
+        ],
+        "tStartMs": 1737600
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "that is already in line with our columns target.\nThat's fine. However, we need to manage the  "
+          }
+        ],
+        "tStartMs": 1746080
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "communication of this matrix, \nwhich exceeds our budget of x. "
+          }
+        ],
+        "tStartMs": 1751920
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "The idea is that in an AI context, this matrix \nis going to stay fixed for a long period of time. "
+          }
+        ],
+        "tStartMs": 1758480
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "We've got some register files sitting over here.\nThe amount of stuff coming out of this register  "
+          }
+        ],
+        "tStartMs": 1769760
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "file… this is the term that we \nwant to go as x, in some sense. "
+          }
+        ],
+        "tStartMs": 1776480
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "We don't want to bring this full matrix \nin from the register file every cycle,  "
+          }
+        ],
+        "tStartMs": 1783920
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "because that would cost too much in \nterms of wiring from the register file. "
+          }
+        ],
+        "tStartMs": 1787360
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "Our key trick is that this matrix can \nbe stored locally to the systolic array. "
+          }
+        ],
+        "tStartMs": 1795200
+      },
+      {
+        "dDurationMs": 11200,
+        "segs": [
+          {
+            "utf8": "We'll store these numbers 0, 1, 2, and 3 \nin a gate called a register that physically  "
+          }
+        ],
+        "tStartMs": 1804080
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "stores these numbers, and we're going to \nreuse these numbers over and over again  "
+          }
+        ],
+        "tStartMs": 1815280
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "for a large number of different vectors.\nThe optimization here is that the nature of  "
+          }
+        ],
+        "tStartMs": 1819040
+      },
+      {
+        "dDurationMs": 11440,
+        "segs": [
+          {
+            "utf8": "matrix multiplication is that you can store this \nsquare quadratic thing directly where the logic is  "
+          }
+        ],
+        "tStartMs": 1823840
+      },
+      {
+        "dDurationMs": 10240,
+        "segs": [
+          {
+            "utf8": "happening, which has an extra dimension compared \nto the inputs that you keep swapping in and out. "
+          }
+        ],
+        "tStartMs": 1835280
+      },
+      {
+        "dDurationMs": 1280,
+        "segs": [
+          {
+            "utf8": "That’s right.\nThis is the nature of  "
+          }
+        ],
+        "tStartMs": 1845520
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "what a matrix multiplication is.\nYou do a lot of multiplication  "
+          }
+        ],
+        "tStartMs": 1846800
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "to get one value out.\nA dot product is the  "
+          }
+        ],
+        "tStartMs": 1852080
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "result of a lot of multiplications.\nSo that optimization means you can  "
+          }
+        ],
+        "tStartMs": 1855280
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "stuff a lot of multiplication in \nbefore you get some value out of it. "
+          }
+        ],
+        "tStartMs": 1859760
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "That's right. Just to complete the \npicture of concretely how that looks:  "
+          }
+        ],
+        "tStartMs": 1863040
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "I swapped the 3 and the 2 here.\nJust like this 0 and 3 is going  "
+          }
+        ],
+        "tStartMs": 1869360
+      },
+      {
+        "dDurationMs": 7680,
+        "segs": [
+          {
+            "utf8": "to multiply by the 3 and the 7, we're going \nto form a dot product along columns here. "
+          }
+        ],
+        "tStartMs": 1877440
+      },
+      {
+        "dDurationMs": 8720,
+        "segs": [
+          {
+            "utf8": "We're going to feed a 3 and a 7 in here.\nThis feeds into this multiplication and also  "
+          }
+        ],
+        "tStartMs": 1886480
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "feeds into this multiplication.\nLikewise, the 3 feeds  "
+          }
+        ],
+        "tStartMs": 1895200
+      },
+      {
+        "dDurationMs": 9040,
+        "segs": [
+          {
+            "utf8": "into here and also into here.\nThen we're going to sum along here. "
+          }
+        ],
+        "tStartMs": 1899360
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "Starting at the top of a column, we feed in 0s, \nand then coming out the bottom we get results. "
+          }
+        ],
+        "tStartMs": 1909120
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "Visually, there's a dot product performed along \ncolumns in a matrix, and that maps exactly to  "
+          }
+        ],
+        "tStartMs": 1915840
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "what is done spatially in the systolic array.\nThis is one dot product summed vertically,  "
+          }
+        ],
+        "tStartMs": 1923120
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "and this is a second dot \nproduct also summed vertically. "
+          }
+        ],
+        "tStartMs": 1929040
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "What is the data that needs to go \ninto and out of the register file? "
+          }
+        ],
+        "tStartMs": 1933600
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "We have x amount of data coming \nout on the output, and we also  "
+          }
+        ],
+        "tStartMs": 1937040
+      },
+      {
+        "dDurationMs": 10160,
+        "segs": [
+          {
+            "utf8": "have x amount of data coming from the input.\nWith respect to the input and output vectors  "
+          }
+        ],
+        "tStartMs": 1943680
+      },
+      {
+        "dDurationMs": 10880,
+        "segs": [
+          {
+            "utf8": "at least, we've met our goal of having only x as \nmuch data going in and out of the register file. "
+          }
+        ],
+        "tStartMs": 1953840
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "This leaves open the question: I said the \nweight matrix is stored locally in the systolic  "
+          }
+        ],
+        "tStartMs": 1964720
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "array, so how did it get there in the first place?\nAt some point, you need to boot your chip and  "
+          }
+        ],
+        "tStartMs": 1971120
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "populate this data, so where did that come from?\nThe trick is that we just do it very slowly. "
+          }
+        ],
+        "tStartMs": 1976800
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "We very slowly trickle-feed \nit into the systolic array. "
+          }
+        ],
+        "tStartMs": 1982240
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "The simplest strategy is that we run \nthis daisy chain: feed a number in here,  "
+          }
+        ],
+        "tStartMs": 1987200
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "and on the next clock cycle it will move \ndown to the next entry of the systolic array. "
+          }
+        ],
+        "tStartMs": 1993280
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "We can do that in every column in parallel, \nthis is also going to come from here,  "
+          }
+        ],
+        "tStartMs": 1998000
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "and that gives us another factor of \napproximately x units of bandwidth coming in. "
+          }
+        ],
+        "tStartMs": 2006320
+      },
+      {
+        "dDurationMs": 2240,
+        "segs": [
+          {
+            "utf8": "Would you mind repeating \nthat sentence one more time? "
+          }
+        ],
+        "tStartMs": 2012720
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "We know that we're going to be bringing \nnumbers only rarely into the matrix. "
+          }
+        ],
+        "tStartMs": 2016960
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "We just want to come up with any construction \nat all such that the amount of wiring that  "
+          }
+        ],
+        "tStartMs": 2023200
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "crosses the boundary of the systolic \narray is bounded to x and not go as xy. "
+          }
+        ],
+        "tStartMs": 2028960
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "A particularly simple strategy is that \nwe bring a number into the top row of  "
+          }
+        ],
+        "tStartMs": 2036720
+      },
+      {
+        "dDurationMs": 8400,
+        "segs": [
+          {
+            "utf8": "the systolic array in one clock cycle.\nThen, for y consecutive clock cycles,  "
+          }
+        ],
+        "tStartMs": 2043440
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "we bring in the top row every time and \nshift all the other rows down by one. "
+          }
+        ],
+        "tStartMs": 2051840
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "This keeps the wiring that needs to \ncome from this expensive register file  "
+          }
+        ],
+        "tStartMs": 2056800
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "only down to a factor of x rather than xy.\nI see. There are two questions in terms  "
+          }
+        ],
+        "tStartMs": 2062080
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "of communication: communication \ntime and communication bandwidth. "
+          }
+        ],
+        "tStartMs": 2067360
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "You're saying that since we're only going to be \nloading this in once, let's minimize bandwidth,  "
+          }
+        ],
+        "tStartMs": 2073840
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "because bandwidth equals die area.\nWe load it in slowly over smaller  "
+          }
+        ],
+        "tStartMs": 2079280
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "lanes because we're just going to \nkeep this value in there for a while. "
+          }
+        ],
+        "tStartMs": 2085760
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "Exactly.\nIt's interesting to me that when we were talking  "
+          }
+        ],
+        "tStartMs": 2088640
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "last time about inference across many chips, the \nbig high-level thing we're trying to optimize for  "
+          }
+        ],
+        "tStartMs": 2092160
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "is increasing the amount of compute per memory \nbandwidth, that is to say, per communication. "
+          }
+        ],
+        "tStartMs": 2098240
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "Here also, we're trying to increase \nthe amount of actual multiplies  "
+          }
+        ],
+        "tStartMs": 2103760
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "or additions relative to transporting \ninformation from registers to the logic. "
+          }
+        ],
+        "tStartMs": 2108640
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "In both cases, you're trying to maximize \ncompute relative to communication. "
+          }
+        ],
+        "tStartMs": 2116400
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "This shows up all the way up and down the stack.\nThis is close to the bottom, to the gates. "
+          }
+        ],
+        "tStartMs": 2120480
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "There's a version that's maybe even closer \nto the gates in the precision of the number  "
+          }
+        ],
+        "tStartMs": 2128400
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "format that you choose to use.\nWe saw that same effect. "
+          }
+        ],
+        "tStartMs": 2134640
+      },
+      {
+        "dDurationMs": 8240,
+        "segs": [
+          {
+            "utf8": "There's a squared versus linear term going \non both purely in the precision of the ALU,  "
+          }
+        ],
+        "tStartMs": 2139040
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "but also in the size of the matrix.\nThis unit is the next bigger unit. "
+          }
+        ],
+        "tStartMs": 2147280
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "We had the multiplication circuit, and on top \nof that we have a pretty large systolic array. "
+          }
+        ],
+        "tStartMs": 2155440
+      },
+      {
+        "dDurationMs": 9200,
+        "segs": [
+          {
+            "utf8": "I drew it as 2x2, but older TPUs were described \nas 128x128 of this circuit shown here. "
+          }
+        ],
+        "tStartMs": 2161840
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "This ends up being the most efficient known \ncircuit for implementing a matrix multiply. "
+          }
+        ],
+        "tStartMs": 2172240
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "We've talked about how it seems \nobvious that you should try to  "
+          }
+        ],
+        "tStartMs": 2181360
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "maximize compute relative to communication.\nWhat are non-obvious trade-offs that  "
+          }
+        ],
+        "tStartMs": 2186080
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "keep you up at night, about whether you should do \nX or Y and it's not obvious what the answer is? "
+          }
+        ],
+        "tStartMs": 2195040
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "Most of the decisions in chip \ndesign are sizing decisions. "
+          }
+        ],
+        "tStartMs": 2201360
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "Already in what we've drawn so far… AI \nchips all have this circuit in them. "
+          }
+        ],
+        "tStartMs": 2208640
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "They have a systolic array, and somewhere near \nit a register file providing inputs and outputs. "
+          }
+        ],
+        "tStartMs": 2216560
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "Even within this scope, the sizing questions you \nhave are: how big should I make my systolic array,  "
+          }
+        ],
+        "tStartMs": 2226400
+      },
+      {
+        "dDurationMs": 12080,
+        "segs": [
+          {
+            "utf8": "and how big should I make the register file?\nThese two questions are coupled. "
+          }
+        ],
+        "tStartMs": 2231120
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "One way to think of it is to set a \nbudget for what percentage of chip  "
+          }
+        ],
+        "tStartMs": 2245280
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "area you want to spend on data movement.\nMaybe I say that I want this to be 10%  "
+          }
+        ],
+        "tStartMs": 2252800
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "and the systolic array to be 90%.\nThen I can size my register file. "
+          }
+        ],
+        "tStartMs": 2256960
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "Bigger register files are more flexible.\nThey allow me to get more application-level  "
+          }
+        ],
+        "tStartMs": 2262640
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "performance out, but they take away from \nthe area spent on the systolic array. "
+          }
+        ],
+        "tStartMs": 2267520
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "I recently ran an essay contest where I asked \npeople to write about what I consider to be some  "
+          }
+        ],
+        "tStartMs": 2275040
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "of the biggest open questions about AI.\nThe submission window closed last week,  "
+          }
+        ],
+        "tStartMs": 2279520
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "so I used Cursor to create a couple of different \ninterfaces to help me review the entries. "
+          }
+        ],
+        "tStartMs": 2283040
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "One interface anonymizes submissions \nand hides the necessary information. "
+          }
+        ],
+        "tStartMs": 2287680
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "It lets me group responses by question, \nadd notes, and record my scores. "
+          }
+        ],
+        "tStartMs": 2290800
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "The other interface helps me review \nentrants who also want to be considered  "
+          }
+        ],
+        "tStartMs": 2294640
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "for the researcher role that I'm hiring for.\nThe UI puts the applicant's essay right next  "
+          }
+        ],
+        "tStartMs": 2297760
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "to their resume and their personal website \nso that I can see everything at once. "
+          }
+        ],
+        "tStartMs": 2301920
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "Cursor's harness is really good at helping \nthese models see and improve their UIs. "
+          }
+        ],
+        "tStartMs": 2305680
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "I watched it render these interfaces in \nthe built-in browser, take screenshots,  "
+          }
+        ],
+        "tStartMs": 2309600
+      },
+      {
+        "dDurationMs": 2960,
+        "segs": [
+          {
+            "utf8": "click through sections, and keep iterating.\nAt this point,  "
+          }
+        ],
+        "tStartMs": 2313840
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "Cursor is where I do most of my work.\nWhether I'm reading and visualizing a bunch  "
+          }
+        ],
+        "tStartMs": 2316800
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "of research papers, or coding up an interface to \nreview applications, or making flashcards for my  "
+          }
+        ],
+        "tStartMs": 2320320
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "blackboard lectures, Cursor just makes it very \neasy for an AI to look at whatever I'm looking at  "
+          }
+        ],
+        "tStartMs": 2325360
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "and help me understand it and work with me on it.\nSo whatever you're working on,  "
+          }
+        ],
+        "tStartMs": 2330480
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "you should do it in Cursor.\nGo to cursor.com/dwarkesh. "
+          }
+        ],
+        "tStartMs": 2334720
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "Where does the clock cycle of a chip come in?\nWhat determines what that is? "
+          }
+        ],
+        "tStartMs": 2340720
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "And what is a clock cycle of a chip?\nAt baseline, it's worth observing  "
+          }
+        ],
+        "tStartMs": 2348000
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "that chips are incredibly parallel.\nYou've got 100 billion transistors in a chip. "
+          }
+        ],
+        "tStartMs": 2352480
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "A key thing you need to do whenever you \nhave massive parallelism is synchronize  "
+          }
+        ],
+        "tStartMs": 2356880
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "between the different parallel units.\nIn software, typically you have these very  "
+          }
+        ],
+        "tStartMs": 2361200
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "expensive synchronization methods like a mutex.\nOne thread will finish what it's doing,  "
+          }
+        ],
+        "tStartMs": 2367360
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "grab a lock stored somewhere in memory, \nand notify the other thread that it's done. "
+          }
+        ],
+        "tStartMs": 2374560
+      },
+      {
+        "dDurationMs": 10480,
+        "segs": [
+          {
+            "utf8": "On chips, we take a very different approach.\nEvery nanosecond or so, all circuitry in the chip  "
+          }
+        ],
+        "tStartMs": 2379600
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "will pause for a moment and synchronize.\nThat is the clock cycle. "
+          }
+        ],
+        "tStartMs": 2390080
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "The entire chip typically goes in lockstep \nto the next operation in one fell swoop. "
+          }
+        ],
+        "tStartMs": 2398240
+      },
+      {
+        "dDurationMs": 11840,
+        "segs": [
+          {
+            "utf8": "What this looks like in circuitry is that \nthe clock is mediated by registers, which  "
+          }
+        ],
+        "tStartMs": 2406000
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "are these storage devices we've drawn elsewhere.\nThe way to think of it is: I have some storage  "
+          }
+        ],
+        "tStartMs": 2417840
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "holding a bit, which might be 0 or 1.\nThen I have some cloud of logic,  "
+          }
+        ],
+        "tStartMs": 2424400
+      },
+      {
+        "dDurationMs": 13200,
+        "segs": [
+          {
+            "utf8": "which maybe is this systolic array or multiplier.\nI have a bunch of inputs feeding into this cloud  "
+          }
+        ],
+        "tStartMs": 2429280
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "of logic, and eventually there's going to \nbe some output register that it writes to. "
+          }
+        ],
+        "tStartMs": 2442480
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "There is a global clock signal \ndriving all these registers. "
+          }
+        ],
+        "tStartMs": 2448640
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "At a certain instance in time, when the clock \nstrikes, whatever value happens to be on that  "
+          }
+        ],
+        "tStartMs": 2457120
+      },
+      {
+        "dDurationMs": 10160,
+        "segs": [
+          {
+            "utf8": "wire at that instant is what gets stored.\nThe challenge is that I would like to have  "
+          }
+        ],
+        "tStartMs": 2465120
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "my clock speed run as fast as possible.\nIf I run at two gigahertz, I get twice as  "
+          }
+        ],
+        "tStartMs": 2475280
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "many operations done per second \nas if I run at one gigahertz. "
+          }
+        ],
+        "tStartMs": 2479680
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "But what that ends up meaning is that I'm very \nsensitive to the delay through this cloud of  "
+          }
+        ],
+        "tStartMs": 2484960
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "logic, because any computation happening in there \nneeds to finish before the next clock cycle hits. "
+          }
+        ],
+        "tStartMs": 2490400
+      },
+      {
+        "dDurationMs": 12320,
+        "segs": [
+          {
+            "utf8": "A major point of optimization on any chip \nis to make this delay as short as possible. "
+          }
+        ],
+        "tStartMs": 2500880
+      },
+      {
+        "dDurationMs": 9600,
+        "segs": [
+          {
+            "utf8": "Interesting. The constraint here seems \nto be that if you add too much logic,  "
+          }
+        ],
+        "tStartMs": 2513200
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "you might risk missing the clock cycle.\nBut if you don't add enough, you're  "
+          }
+        ],
+        "tStartMs": 2522800
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "leaving potential compute on the table.\nIs there ever a situation where you take  "
+          }
+        ],
+        "tStartMs": 2527760
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "a probabilistic chance that a computation \nfinishes, or is it strictly that it either  "
+          }
+        ],
+        "tStartMs": 2535840
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "finishes by the clock cycle or it doesn't?\nIn standard chip design, you margin it such  "
+          }
+        ],
+        "tStartMs": 2543440
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "that there is a probability, but \nit's many standard deviations out. "
+          }
+        ],
+        "tStartMs": 2548720
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "For all intents and purposes, it is a \nreliable part and will always meet the clock. "
+          }
+        ],
+        "tStartMs": 2554640
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "There are some weird exceptions, like clock domain \ncrossings where you go from one clock to another. "
+          }
+        ],
+        "tStartMs": 2560720
+      },
+      {
+        "dDurationMs": 1840,
+        "segs": [
+          {
+            "utf8": "Then you actually do have to \nreason about this probability. "
+          }
+        ],
+        "tStartMs": 2565760
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "But in the main path, you margin it such that \nyou'll get there 25% of the clock cycle in  "
+          }
+        ],
+        "tStartMs": 2567600
+      },
+      {
+        "dDurationMs": 11760,
+        "segs": [
+          {
+            "utf8": "advance, making it very unlikely that it misses.\nWhere the clocks synchronize, where the  "
+          }
+        ],
+        "tStartMs": 2575760
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "registers are, is this something \nyou determine as a chip designer? "
+          }
+        ],
+        "tStartMs": 2587520
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "Or is it an artifact where you want a certain \nsequence of logic, and the software you use to  "
+          }
+        ],
+        "tStartMs": 2591360
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "convert your Verilog into what you send to \nTSMC just determines that to make it work,  "
+          }
+        ],
+        "tStartMs": 2598960
+      },
+      {
+        "dDurationMs": 8320,
+        "segs": [
+          {
+            "utf8": "you have to put a register here, here, and \nhere, making sure no single step makes the  "
+          }
+        ],
+        "tStartMs": 2605120
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "whole chip's clock cycle longer than it has to be?\nInserting them is actually a huge part of the  "
+          }
+        ],
+        "tStartMs": 2613440
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "work of designing a chip.\nIt's done by a combination  "
+          }
+        ],
+        "tStartMs": 2618240
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "of manual and automatic methods.\nTo show the very dumb version of  "
+          }
+        ],
+        "tStartMs": 2622560
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "what you can do here, you can take \nthis logic and split it in half. "
+          }
+        ],
+        "tStartMs": 2628960
+      },
+      {
+        "dDurationMs": 8720,
+        "segs": [
+          {
+            "utf8": "Instead of just one cloud of logic, I can have two \nsmaller clouds of logic that do the same thing,  "
+          }
+        ],
+        "tStartMs": 2633680
+      },
+      {
+        "dDurationMs": 10720,
+        "segs": [
+          {
+            "utf8": "but split them up by a register.\nIf you split it in the middle,  "
+          }
+        ],
+        "tStartMs": 2642400
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "you can hit twice the clock frequency.\nThat's great, you get twice the performance,  "
+          }
+        ],
+        "tStartMs": 2653120
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "but at the cost of an extra \nregister, which means more storage. "
+          }
+        ],
+        "tStartMs": 2657120
+      },
+      {
+        "dDurationMs": 2480,
+        "segs": [
+          {
+            "utf8": "Stepping back, why do we need \nto synchronize the whole chip? "
+          }
+        ],
+        "tStartMs": 2662080
+      },
+      {
+        "dDurationMs": 3589,
+        "segs": [
+          {
+            "utf8": "If you imagine playing Factorio or \nsomething, there's no global clock cycle. "
+          }
+        ],
+        "tStartMs": 2665360
+      },
+      {
+        "dDurationMs": 2811,
+        "segs": [
+          {
+            "utf8": "Things are just done when they're done.\nThere's iron on the plate, and you can  "
+          }
+        ],
+        "tStartMs": 2668949
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "take it if you want.\nTaking that analogy,  "
+          }
+        ],
+        "tStartMs": 2671760
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "the thing you need to be mindful of is if I \nhave two different paths through some logic. "
+          }
+        ],
+        "tStartMs": 2676640
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "Say I have to do computation \nf here and computation g here,  "
+          }
+        ],
+        "tStartMs": 2681840
+      },
+      {
+        "dDurationMs": 10880,
+        "segs": [
+          {
+            "utf8": "and they're going to meet for computation h.\nThere's going to be manufacturing variance. "
+          }
+        ],
+        "tStartMs": 2687520
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "In some chips f will take a little longer; \nin some chips g will take a little longer. "
+          }
+        ],
+        "tStartMs": 2699440
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "If I have a signal propagating through, and \nthe results from f and g have to meet up at h,  "
+          }
+        ],
+        "tStartMs": 2703920
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "what can go wrong is that f gets \nthere early and it meets the previous  "
+          }
+        ],
+        "tStartMs": 2712400
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "value of g, or the next value of g.\nAh. And h needs to know when to start,  "
+          }
+        ],
+        "tStartMs": 2716640
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "when the next iteration has…\nExactly. "
+          }
+        ],
+        "tStartMs": 2721440
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "This explains why different chips made \nat the same process node, the same TSMC  "
+          }
+        ],
+        "tStartMs": 2724320
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "technology, can have different clock cycles.\nTwo chips made at 3 nm might have different clock  "
+          }
+        ],
+        "tStartMs": 2732080
+      },
+      {
+        "dDurationMs": 9040,
+        "segs": [
+          {
+            "utf8": "cycles based on whether they were able to optimize \nto ensure no single critical path is so long that  "
+          }
+        ],
+        "tStartMs": 2738480
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "it slows down the whole chip's clock cycle.\nThat's right. This optimization I showed here  "
+          }
+        ],
+        "tStartMs": 2748800
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "is called pipeline register insertion.\nWe've inserted a register in the  "
+          }
+        ],
+        "tStartMs": 2753600
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "middle of the pipeline.\nThis is a pure trade-off  "
+          }
+        ],
+        "tStartMs": 2759040
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "between clock speed and area.\nThat is the easy case. "
+          }
+        ],
+        "tStartMs": 2762400
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "There is a harder case too.\nI drew out a pipeline of logic,  "
+          }
+        ],
+        "tStartMs": 2768000
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "but in other cases you may have some calculation \nwhich actually feeds back in on itself. "
+          }
+        ],
+        "tStartMs": 2774320
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "It runs some function f and \nthen writes back to itself. "
+          }
+        ],
+        "tStartMs": 2782240
+      },
+      {
+        "dDurationMs": 14640,
+        "segs": [
+          {
+            "utf8": "For example, this might be an addition where \nyou're adding a number every clock cycle. "
+          }
+        ],
+        "tStartMs": 2787760
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "This little circuit essentially sums all the \nnumbers presented on different clock cycles. "
+          }
+        ],
+        "tStartMs": 2803200
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "The challenge is, if this plus \ntakes too long, what can I do? "
+          }
+        ],
+        "tStartMs": 2809920
+      },
+      {
+        "dDurationMs": 7840,
+        "segs": [
+          {
+            "utf8": "If I try to put a pipeline register \nright in the middle of it, it  "
+          }
+        ],
+        "tStartMs": 2814320
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "changes the computation that's done.\nInstead of forming a running sum  "
+          }
+        ],
+        "tStartMs": 2825600
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "of everything that comes in, I will \nactually have two different running sums. "
+          }
+        ],
+        "tStartMs": 2828800
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "I'll end up with a running sum of the even \nnumbers and a running sum of the odd numbers. "
+          }
+        ],
+        "tStartMs": 2832880
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "This constraint—where I have a loop in my logic, \nwhich all chips have somewhere—is the hardest  "
+          }
+        ],
+        "tStartMs": 2838640
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "thing to address and sets the clock cycle.\nI don't understand why it would be  "
+          }
+        ],
+        "tStartMs": 2845760
+      },
+      {
+        "dDurationMs": 1680,
+        "segs": [
+          {
+            "utf8": "a problem to have that.\nI'm not even sure what it  "
+          }
+        ],
+        "tStartMs": 2849280
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "would mean to have a register there.\nIs it a sort of atomic operation? "
+          }
+        ],
+        "tStartMs": 2850960
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "Well, plus is not really atomic.\nAs you just demonstrated. "
+          }
+        ],
+        "tStartMs": 2856560
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "It took a whole lot of work to do a summation.\nYou can take the early parts of that work,  "
+          }
+        ],
+        "tStartMs": 2861040
+      },
+      {
+        "dDurationMs": 2480,
+        "segs": [
+          {
+            "utf8": "stick a register in the middle, and \nthen take the late parts of that work. "
+          }
+        ],
+        "tStartMs": 2865840
+      },
+      {
+        "dDurationMs": 8720,
+        "segs": [
+          {
+            "utf8": "Okay. TSMC offers a PDK which \nspecifies the primitives of  "
+          }
+        ],
+        "tStartMs": 2868320
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "logic they can grant you in the chip.\nIt's up to them to determine that no  "
+          }
+        ],
+        "tStartMs": 2878400
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "primitive is bigger than the clock cycle \nthey're hoping a process node targets. "
+          }
+        ],
+        "tStartMs": 2883920
+      },
+      {
+        "dDurationMs": 9040,
+        "segs": [
+          {
+            "utf8": "But other than that, can't you just take \nall the primitives from TSMC and keep adding  "
+          }
+        ],
+        "tStartMs": 2890240
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "registers between them as much as needed \nuntil you get to your desired clock cycle? "
+          }
+        ],
+        "tStartMs": 2899280
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "As a logic designer, the chip \narchitect sets the clock cycle. "
+          }
+        ],
+        "tStartMs": 2904160
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "For example, the primitives you get from TSMC \nare on the order of AND gates or full adders. "
+          }
+        ],
+        "tStartMs": 2908240
+      },
+      {
+        "dDurationMs": 9920,
+        "segs": [
+          {
+            "utf8": "It depends a lot on voltage and which library you \nchoose, but generally you can have about 10, 20,  "
+          }
+        ],
+        "tStartMs": 2916800
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "or 30 of these sequentially in a clock cycle.\nThese primitives are very fast,  "
+          }
+        ],
+        "tStartMs": 2926720
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "maybe 10 picoseconds.\nAs a logic designer, in principle,  "
+          }
+        ],
+        "tStartMs": 2931760
+      },
+      {
+        "dDurationMs": 9360,
+        "segs": [
+          {
+            "utf8": "if you just had a register and an AND gate in a \nloop, you could get an insanely fast clock speed,  "
+          }
+        ],
+        "tStartMs": 2937840
+      },
+      {
+        "dDurationMs": 9520,
+        "segs": [
+          {
+            "utf8": "more than four, five, or six gigahertz.\nBut if you take this really simple circuit  "
+          }
+        ],
+        "tStartMs": 2947200
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "and look at the area you're spending \nhere… This is called one gate equivalent  "
+          }
+        ],
+        "tStartMs": 2956720
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "in size, so unit of one in area.\nThis thing is maybe a unit of eight in area. "
+          }
+        ],
+        "tStartMs": 2963920
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "Again, almost all your cost \nbecomes synchronization or  "
+          }
+        ],
+        "tStartMs": 2971520
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "communication cost compared to the actual logic.\nThis would be a case where you've gone too far. "
+          }
+        ],
+        "tStartMs": 2974400
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "You've made your clock speed really \nfast at the cost of spending almost  "
+          }
+        ],
+        "tStartMs": 2980800
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "all of your area on pipeline registers.\nInteresting. So you're hinting at a dynamic  "
+          }
+        ],
+        "tStartMs": 2983840
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "where you can have a really fast clock speed \nbut you're not getting that much work done. "
+          }
+        ],
+        "tStartMs": 2990480
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "You can have low latency but low throughput.\nIt hurts your throughput, in fact, because  "
+          }
+        ],
+        "tStartMs": 2996480
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "the throughput of your chip is the product of \nhow much you get done per clock cycle—which  "
+          }
+        ],
+        "tStartMs": 3005760
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "is based on area efficiency—times \nhow many clocks you get per second. "
+          }
+        ],
+        "tStartMs": 3011680
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "This is actually so similar to the thing we \nwere discussing last time about batch size,  "
+          }
+        ],
+        "tStartMs": 3015440
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "where if you have a low batch size, any one \nuser can receive their next token really fast,  "
+          }
+        ],
+        "tStartMs": 3021680
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "but the total number of tokens processed in, say, \nan hour will be lower than it could otherwise be. "
+          }
+        ],
+        "tStartMs": 3028960
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "Exactly. You get less parallelism out if \nyou drive your clock speed up really high. "
+          }
+        ],
+        "tStartMs": 3034800
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "Language models are starting to compete \nagainst the best human forecasters. "
+          }
+        ],
+        "tStartMs": 3039280
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "I sat down with two senior Jane Streeters, Ron \nMinsky and Dan Pontecorvo, and asked: at some  "
+          }
+        ],
+        "tStartMs": 3042640
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "point, does AI just do what Jane Street does?\nThere's a world that we should take seriously  "
+          }
+        ],
+        "tStartMs": 3048240
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "where, you know, we're going to build large \nlanguage models or some other AI systems that  "
+          }
+        ],
+        "tStartMs": 3052160
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "are like strictly smarter than all humans on the \nplanet and more capable at all cognitive tasks. "
+          }
+        ],
+        "tStartMs": 3056720
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "Trading in particular feels to me as like kind \nof AGI complete, sort of like NP complete,  "
+          }
+        ],
+        "tStartMs": 3062240
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "because at the end of the day trading involves \nfiguring out what things are worth, which means  "
+          }
+        ],
+        "tStartMs": 3068160
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "making predictions about the future.\nJane Street isn't betting against AI. "
+          }
+        ],
+        "tStartMs": 3075120
+      },
+      {
+        "dDurationMs": 2080,
+        "segs": [
+          {
+            "utf8": "They just signed a six \nbillion dollar compute deal. "
+          }
+        ],
+        "tStartMs": 3078480
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "But Ron's view is that the edge keeps moving.\nI have never been more desperate to hire more  "
+          }
+        ],
+        "tStartMs": 3080560
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "engineers and more traders than I am today.\nYou know, you have the usual thing of like  "
+          }
+        ],
+        "tStartMs": 3085360
+      },
+      {
+        "dDurationMs": 2400,
+        "segs": [
+          {
+            "utf8": "the other hard parts that we \ndon't yet know how to automate. "
+          }
+        ],
+        "tStartMs": 3089040
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "Well, that ends up being where \nthe competitive edge lies. "
+          }
+        ],
+        "tStartMs": 3091440
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "You can find these open positions and watch \nthe full interview at janestreet.com/dwarkesh. "
+          }
+        ],
+        "tStartMs": 3094160
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "I remember talking to an FPGA engineer at \nJane Street, Clark, who helped me prep for  "
+          }
+        ],
+        "tStartMs": 3101360
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "the previous interview we did together.\nHe was explaining why they use FPGAs. "
+          }
+        ],
+        "tStartMs": 3108400
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "I imagine that for high-frequency trading, \nthroughput is less important than latency,  "
+          }
+        ],
+        "tStartMs": 3115200
+      },
+      {
+        "dDurationMs": 2080,
+        "segs": [
+          {
+            "utf8": "so having very specific control over the clock  "
+          }
+        ],
+        "tStartMs": 3121280
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "cycle in a deterministic way \nis the most important thing. "
+          }
+        ],
+        "tStartMs": 3123360
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "Maybe it'd be interesting to talk about why \nyou can't just achieve that with an ASIC,  "
+          }
+        ],
+        "tStartMs": 3128000
+      },
+      {
+        "dDurationMs": 9440,
+        "segs": [
+          {
+            "utf8": "or why you might use an FPGA to have deterministic \nclock cycles for high-frequency trading. "
+          }
+        ],
+        "tStartMs": 3134240
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "Let's consider the business \ncase for an FPGA versus an ASIC. "
+          }
+        ],
+        "tStartMs": 3145920
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "FPGAs and ASICs use largely \nthe same conceptual model. "
+          }
+        ],
+        "tStartMs": 3151200
+      },
+      {
+        "dDurationMs": 11040,
+        "segs": [
+          {
+            "utf8": "You have a series of gates built from small \nprimitives—ANDs, ORs, XORs—connected together  "
+          }
+        ],
+        "tStartMs": 3156960
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "with wires running in a fixed clock cycle.\nAnything you can express in an FPGA you  "
+          }
+        ],
+        "tStartMs": 3168000
+      },
+      {
+        "dDurationMs": 2480,
+        "segs": [
+          {
+            "utf8": "can express in an ASIC too.\nIt will be about an order of  "
+          }
+        ],
+        "tStartMs": 3173120
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "magnitude cheaper and have better energy \nefficiency on an ASIC than an FPGA. "
+          }
+        ],
+        "tStartMs": 3175600
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "The trade-off is that the first FPGA costs you \n$10,000, whereas the first ASIC you make costs $30  "
+          }
+        ],
+        "tStartMs": 3181760
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "million because it requires an entire tape-out.\nThe business use case for an FPGA is when you want  "
+          }
+        ],
+        "tStartMs": 3188640
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "something that has very deterministic \nlatency, fast runtime, and high parallelism,  "
+          }
+        ],
+        "tStartMs": 3196240
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "but you are going to change the \nworkload frequently, maybe every month. "
+          }
+        ],
+        "tStartMs": 3205680
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "You don't want to pay that \ntape-out cost every time. "
+          }
+        ],
+        "tStartMs": 3209760
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "How does an FPGA actually emulate the ASIC \nprogramming model in a fixed piece of hardware? "
+          }
+        ],
+        "tStartMs": 3214240
+      },
+      {
+        "dDurationMs": 12160,
+        "segs": [
+          {
+            "utf8": "At its core, it has the two \ncomponents we just talked about. "
+          }
+        ],
+        "tStartMs": 3222320
+      },
+      {
+        "dDurationMs": 8720,
+        "segs": [
+          {
+            "utf8": "It has registers as storage \ndevices, and it has lookup tables  "
+          }
+        ],
+        "tStartMs": 3234480
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "(LUTs) which provide all of the gates.\nThen there's a third component. "
+          }
+        ],
+        "tStartMs": 3243200
+      },
+      {
+        "dDurationMs": 19680,
+        "segs": [
+          {
+            "utf8": "We have a swarm of these registers and LUTs, \nand they are connected by a big set of muxes. "
+          }
+        ],
+        "tStartMs": 3251200
+      },
+      {
+        "dDurationMs": 8640,
+        "segs": [
+          {
+            "utf8": "In front of every single one of these, we have a \nmux which selects an input from everywhere else. "
+          }
+        ],
+        "tStartMs": 3270880
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "We have a whole bunch of different \noptions feeding into all of these things. "
+          }
+        ],
+        "tStartMs": 3284240
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "What this allows is essentially that when \nI program my FPGA, I can take all of these  "
+          }
+        ],
+        "tStartMs": 3294320
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "components and superimpose a particular wiring \nwhich goes through this LUT, feed it into another  "
+          }
+        ],
+        "tStartMs": 3301200
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "LUT, send it to this register, and then feed \nit into another LUT, or something like that. "
+          }
+        ],
+        "tStartMs": 3310080
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "What I've drawn in orange is how you… \nFPGA means Field-Programmable Gate Array. "
+          }
+        ],
+        "tStartMs": 3316080
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "The orange is what has been programmed in \nthe field, whereas the white is all the  "
+          }
+        ],
+        "tStartMs": 3322560
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "wires that must exist in the FPGA in order to \nactually make the device in the first place. "
+          }
+        ],
+        "tStartMs": 3326080
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "What does it mean to be programmed in the field?\nProgrammed in the field means the device is  "
+          }
+        ],
+        "tStartMs": 3330560
+      },
+      {
+        "dDurationMs": 1760,
+        "segs": [
+          {
+            "utf8": "being deployed in a data center.\nIt's sitting out in the world,  "
+          }
+        ],
+        "tStartMs": 3334800
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "and then you can come and program it.\nAh, not field as in like electric field. "
+          }
+        ],
+        "tStartMs": 3336560
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "Field as in like out there in the world, ok.\nIf I look at how the field programming comes  "
+          }
+        ],
+        "tStartMs": 3339680
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "out of the first lookup table and goes \ninto a second one, how does that work? "
+          }
+        ],
+        "tStartMs": 3348800
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "Where are the wires that make that happen?\nI got a little bit lazy in drawing all of these. "
+          }
+        ],
+        "tStartMs": 3357680
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "Every single device here has a mux sitting in \nfront of it, which can select from all of the  "
+          }
+        ],
+        "tStartMs": 3363040
+      },
+      {
+        "dDurationMs": 8640,
+        "segs": [
+          {
+            "utf8": "nearby circuits that are available.\nThe actual configuration of the  "
+          }
+        ],
+        "tStartMs": 3371120
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "FPGA amounts to the mux control.\nIn this mux, we have the data inputs,  "
+          }
+        ],
+        "tStartMs": 3379760
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "and we have the control that selects.\nThere's a little storage device sitting next  "
+          }
+        ],
+        "tStartMs": 3388240
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "to every single one of these muxes saying, \"This \nis where you're going to source your input from.\" "
+          }
+        ],
+        "tStartMs": 3394320
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "Programming it consists of configuring \nevery single one of these muxes. "
+          }
+        ],
+        "tStartMs": 3403920
+      },
+      {
+        "dDurationMs": 2240,
+        "segs": [
+          {
+            "utf8": "That makes sense. What is happening \ninside of the lookup table? "
+          }
+        ],
+        "tStartMs": 3407600
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "The lookup table is also going to have a \nlittle bit of control telling it what to do. "
+          }
+        ],
+        "tStartMs": 3411840
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "Its purpose is to configurably \ntake the role of an AND gate,  "
+          }
+        ],
+        "tStartMs": 3416160
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "OR gate, XOR, or any of those different things.\nThere are many ways you could consider doing that. "
+          }
+        ],
+        "tStartMs": 3423360
+      },
+      {
+        "dDurationMs": 15040,
+        "segs": [
+          {
+            "utf8": "The way it's done in traditional \nFPGAs… A lookup table has four bits  "
+          }
+        ],
+        "tStartMs": 3430880
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "of input and one bit of output.\nHow many different functions are  "
+          }
+        ],
+        "tStartMs": 3445920
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "there from four bits to one bit?\nThere are 16 different functions. "
+          }
+        ],
+        "tStartMs": 3451440
+      },
+      {
+        "dDurationMs": 12080,
+        "segs": [
+          {
+            "utf8": "You can tabulate this as 16 different numbers.\nYou've got a table of 0111001, 16 entries. "
+          }
+        ],
+        "tStartMs": 3457200
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "This table is stored in \nthis blue configuration bit. "
+          }
+        ],
+        "tStartMs": 3472080
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "It views these four bits as binary, looks up the \nrelevant row of the table, and emits that bit. "
+          }
+        ],
+        "tStartMs": 3480000
+      },
+      {
+        "dDurationMs": 2560,
+        "segs": [
+          {
+            "utf8": "This is essentially a truth-table \nview of lookup tables. "
+          }
+        ],
+        "tStartMs": 3488080
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "Okay, so if you think about an AND gate, OR gate, \nNOR gate, XOR gate, these all take as input… "
+          }
+        ],
+        "tStartMs": 3491360
+      },
+      {
+        "dDurationMs": 6560,
+        "segs": [
+          {
+            "utf8": "Those are two-input functions. Sometimes we have \na three-input function, like a three-way XOR,  "
+          }
+        ],
+        "tStartMs": 3498640
+      },
+      {
+        "dDurationMs": 2240,
+        "segs": [
+          {
+            "utf8": "or a four-way XOR.\nIn this case,  "
+          }
+        ],
+        "tStartMs": 3505200
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "does it just depend on how big it is?\nThe typical size for LUTs is four inputs. "
+          }
+        ],
+        "tStartMs": 3507440
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "It's sort of just a sweet spot.\nThere’s another compute vs. communication  "
+          }
+        ],
+        "tStartMs": 3512880
+      },
+      {
+        "dDurationMs": 2000,
+        "segs": [
+          {
+            "utf8": "trade-off here.\nIf it has too  "
+          }
+        ],
+        "tStartMs": 3517840
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "few inputs, you need to use more LUTs.\nBasically the lookup table is a truth table. "
+          }
+        ],
+        "tStartMs": 3519840
+      },
+      {
+        "dDurationMs": 2080,
+        "segs": [
+          {
+            "utf8": "With a truth table, you can \nprogram in any gate you want. "
+          }
+        ],
+        "tStartMs": 3527440
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "So instead of a lookup table, you can \njust think of it as a programmable gate. "
+          }
+        ],
+        "tStartMs": 3530800
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "That's right. One of the things you can do \nhere is you can see where the rule of thumb  "
+          }
+        ],
+        "tStartMs": 3533920
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "that an FPGA is an order of magnitude \nmore expensive than an ASIC comes from. "
+          }
+        ],
+        "tStartMs": 3539520
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "You count how many gates would \nbe inside this lookup table. "
+          }
+        ],
+        "tStartMs": 3544000
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "We can view this lookup table \nessentially as one of these muxes. "
+          }
+        ],
+        "tStartMs": 3550240
+      },
+      {
+        "dDurationMs": 4560,
+        "segs": [
+          {
+            "utf8": "It has to select between 16 different values,  "
+          }
+        ],
+        "tStartMs": 3554240
+      },
+      {
+        "dDurationMs": 17680,
+        "segs": [
+          {
+            "utf8": "so it's a mux with n=16 options and p=1 bits.\nAs we saw earlier, this circuit  "
+          }
+        ],
+        "tStartMs": 3559920
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "costs n times p many gates.\nSo it costs np, which is 16,  "
+          }
+        ],
+        "tStartMs": 3577600
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "AND gates, and also 16 ORs.\nThis circuit being the mux? "
+          }
+        ],
+        "tStartMs": 3585360
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "Exactly, the mux.\nThe mux that goes into the lookup table? "
+          }
+        ],
+        "tStartMs": 3592080
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "The lookup table itself you can think of \nas being a big mux that selects from all 16  "
+          }
+        ],
+        "tStartMs": 3596240
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "rows down to one output.\nThat's the lookup table. "
+          }
+        ],
+        "tStartMs": 3602240
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "But the way you've drawn it here, \nthere's a mux and then a lookup table. "
+          }
+        ],
+        "tStartMs": 3605520
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "It's muxes all the way down.\nThere is a second mux that is inside here. "
+          }
+        ],
+        "tStartMs": 3608720
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "This mux is this mux.\nAnd the other mux is just saying… "
+          }
+        ],
+        "tStartMs": 3612720
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "where it came from in this mess of gates.\nRight, and the second mux is, \"Okay,  "
+          }
+        ],
+        "tStartMs": 3618880
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "now you have one value, but that \nvalue is still a four-bit value.\" "
+          }
+        ],
+        "tStartMs": 3623600
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "Yeah, I've selected four bits from the soup.\nThen I use those four bits to select which  "
+          }
+        ],
+        "tStartMs": 3629840
+      },
+      {
+        "dDurationMs": 9760,
+        "segs": [
+          {
+            "utf8": "entry in the lookup table I'm going to use.\nSuppose in the first mux you're pulling  "
+          }
+        ],
+        "tStartMs": 3635440
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "from eight nearby registers as input.\nThat's a total of 32 bits going in. "
+          }
+        ],
+        "tStartMs": 3645200
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "Out of that, four bits come out.\nThose four bits go into the second mux,  "
+          }
+        ],
+        "tStartMs": 3653440
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "which is inside the lookup table.\nIn this case, these registers  "
+          }
+        ],
+        "tStartMs": 3658640
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "are single-bit registers.\nIf there are eight nearby  "
+          }
+        ],
+        "tStartMs": 3662720
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "registers and lookup tables, then I \nhave eight bits total coming in nearby. "
+          }
+        ],
+        "tStartMs": 3666400
+      },
+      {
+        "dDurationMs": 10320,
+        "segs": [
+          {
+            "utf8": "I select from eight down to four different values.\nThere are actually four different muxes, a little  "
+          }
+        ],
+        "tStartMs": 3671440
+      },
+      {
+        "dDurationMs": 4640,
+        "segs": [
+          {
+            "utf8": "mux associated with each of these input bits.\nEach of them is selecting one out of eight. "
+          }
+        ],
+        "tStartMs": 3681760
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "Where are those eight coming from?\nNearby registers and other LUTs. "
+          }
+        ],
+        "tStartMs": 3686400
+      },
+      {
+        "dDurationMs": 1920,
+        "segs": [
+          {
+            "utf8": "Each register is one bit.\nYes. "
+          }
+        ],
+        "tStartMs": 3690400
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "I guess AMD or whoever makes these FPGAs \nstill has to be opinionated about which  "
+          }
+        ],
+        "tStartMs": 3693360
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "registers are connected to which registers.\nYou can program in the actual gates,  "
+          }
+        ],
+        "tStartMs": 3702000
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "but they add a wire in the connect… \nthe communication topology, right? "
+          }
+        ],
+        "tStartMs": 3707680
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "You get flexibility at a local grain.\nThere's a nearby neighborhood you can select from,  "
+          }
+        ],
+        "tStartMs": 3713760
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "but for more coarse, long-distance \nconnections, they form an opinion on that. "
+          }
+        ],
+        "tStartMs": 3720000
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "And the reason it's 10x slower is why?\nIf you look at the cost of building this  "
+          }
+        ],
+        "tStartMs": 3726160
+      },
+      {
+        "dDurationMs": 5760,
+        "segs": [
+          {
+            "utf8": "lookup table, it's 32 gates.\nIt can give me the equivalent  "
+          }
+        ],
+        "tStartMs": 3731360
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "of—what’s an interesting thing I \ncan do here—a four-way AND gate. "
+          }
+        ],
+        "tStartMs": 3737120
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "A four-way AND means AND, AND, \nand then an AND of an AND. "
+          }
+        ],
+        "tStartMs": 3746960
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "This is a circuit I could implement in \nan ASIC directly using three AND gates. "
+          }
+        ],
+        "tStartMs": 3756400
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "Using a LUT, I can also implement it, but \nit's going to take 32 gates instead of three. "
+          }
+        ],
+        "tStartMs": 3761520
+      },
+      {
+        "dDurationMs": 11360,
+        "segs": [
+          {
+            "utf8": "So the overhead is really coming from \nthe fact that there's a more concise  "
+          }
+        ],
+        "tStartMs": 3767200
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "way to describe a truth table than listing out \nevery single possible combination of inputs,  "
+          }
+        ],
+        "tStartMs": 3778560
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "which is just to write out the gate.\nYes, to place down the polysilicon  "
+          }
+        ],
+        "tStartMs": 3786400
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "and the wires and so on.\nInteresting. One important point you  "
+          }
+        ],
+        "tStartMs": 3791360
+      },
+      {
+        "dDurationMs": 6480,
+        "segs": [
+          {
+            "utf8": "made to me is that the reason they prefer FPGAs to \nCPUs is that they get deterministic clock cycles. "
+          }
+        ],
+        "tStartMs": 3795120
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "They know when a packet will come in and go out.\nWhy isn't that a guarantee in CPUs? "
+          }
+        ],
+        "tStartMs": 3801600
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "You can actually design a CPU that \nhas deterministic latency as well. "
+          }
+        ],
+        "tStartMs": 3808720
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "In fact, the processors inside a lot of \nAI chips also have deterministic latency. "
+          }
+        ],
+        "tStartMs": 3814640
+      },
+      {
+        "dDurationMs": 2640,
+        "segs": [
+          {
+            "utf8": "Groq has advertised this. TPUs \nhave that in the core as well. "
+          }
+        ],
+        "tStartMs": 3820480
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "The challenge is getting deterministic \nlatency and high speed at the same time. "
+          }
+        ],
+        "tStartMs": 3826080
+      },
+      {
+        "dDurationMs": 8240,
+        "segs": [
+          {
+            "utf8": "Non-deterministic latency comes from \nspecific design choices in a CPU. "
+          }
+        ],
+        "tStartMs": 3833280
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "It's actually possible to remove those design \nchoices and make a CPU with deterministic latency,  "
+          }
+        ],
+        "tStartMs": 3843520
+      },
+      {
+        "dDurationMs": 5120,
+        "segs": [
+          {
+            "utf8": "but those are not very attractive in the \nmarket, so people don't make those CPUs anymore. "
+          }
+        ],
+        "tStartMs": 3848640
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "In some sense, deterministic latency is a simpler \nstarting point, and some chip designers have  "
+          }
+        ],
+        "tStartMs": 3856960
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "added things in to make it non-deterministic.\nTo take a concrete example, probably the most  "
+          }
+        ],
+        "tStartMs": 3864960
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "important source of non-determinism \non a CPU is the CPU cache itself. "
+          }
+        ],
+        "tStartMs": 3873440
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "In a CPU, you have the CPU die itself, \nand then DDR memory off on the side. "
+          }
+        ],
+        "tStartMs": 3883920
+      },
+      {
+        "dDurationMs": 12720,
+        "segs": [
+          {
+            "utf8": "You have a cache system inside that remembers \nrecent accesses to DDR and stores them. "
+          }
+        ],
+        "tStartMs": 3894400
+      },
+      {
+        "dDurationMs": 2400,
+        "segs": [
+          {
+            "utf8": "When I'm running through my \nCPU instructions, every time  "
+          }
+        ],
+        "tStartMs": 3909200
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "I have an instruction that accesses memory, it \nfirst checks if the data was stored in the cache. "
+          }
+        ],
+        "tStartMs": 3912240
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "If not, it fetches it from DDR.\nThis is a huge optimization. "
+          }
+        ],
+        "tStartMs": 3917600
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "The cache is two orders of \nmagnitude faster than the DDR. "
+          }
+        ],
+        "tStartMs": 3923840
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "If you never used the cache, basically all \nprograms would run a hundred times slower. "
+          }
+        ],
+        "tStartMs": 3927200
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "The presence of a cache is absolutely necessary \nfor a CPU to run at a reasonable speed. "
+          }
+        ],
+        "tStartMs": 3934160
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "But whether or not you get a cache hit \ndepends on the ambient environment of the CPU:  "
+          }
+        ],
+        "tStartMs": 3939360
+      },
+      {
+        "dDurationMs": 3120,
+        "segs": [
+          {
+            "utf8": "what other programs are running, what has \nrun recently, and what the random number  "
+          }
+        ],
+        "tStartMs": 3945760
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "generator inside the cache system is doing.\nThat is a big source of non-determinism  "
+          }
+        ],
+        "tStartMs": 3948880
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "in the runtime of a CPU.\nThat is the memory system for a CPU. "
+          }
+        ],
+        "tStartMs": 3953200
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "The big thing you can do differently \nis, instead of having the hardware say,  "
+          }
+        ],
+        "tStartMs": 3961600
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "\"I’m going to read memory\" and then the \nhardware decides whether or not it comes  "
+          }
+        ],
+        "tStartMs": 3966320
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "from the cache, you can bake this decision \ninto software, a different design philosophy. "
+          }
+        ],
+        "tStartMs": 3971280
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "You see this in TPUs, for example.\nI'll draw the same diagram,  "
+          }
+        ],
+        "tStartMs": 3982480
+      },
+      {
+        "dDurationMs": 7600,
+        "segs": [
+          {
+            "utf8": "but I'll call it a scratchpad.\nThe main difference is… This would be a TPU,  "
+          }
+        ],
+        "tStartMs": 3988640
+      },
+      {
+        "dDurationMs": 5440,
+        "segs": [
+          {
+            "utf8": "and you have HBM in this case rather than \nDDR, but it's still an off-chip memory. "
+          }
+        ],
+        "tStartMs": 3996240
+      },
+      {
+        "dDurationMs": 5200,
+        "segs": [
+          {
+            "utf8": "Instead of the software saying \"first access \nmemory\" and letting the hardware decide,  "
+          }
+        ],
+        "tStartMs": 4003280
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "you have one kind of instruction that goes to \nthe scratchpad and a totally different kind  "
+          }
+        ],
+        "tStartMs": 4008480
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "of instruction that goes to HBM.\nThis style is generically known  "
+          }
+        ],
+        "tStartMs": 4013280
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "as scratchpad instead of cache.\nThe key distinction is that you have  "
+          }
+        ],
+        "tStartMs": 4018160
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "one kind of instruction that says \"read or write \nscratchpad,\" and a totally different instruction  "
+          }
+        ],
+        "tStartMs": 4024160
+      },
+      {
+        "dDurationMs": 4400,
+        "segs": [
+          {
+            "utf8": "that says \"read or write HBM.\"\nSo scratchpad being the cache. "
+          }
+        ],
+        "tStartMs": 4028480
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "Yeah, this thing here is the scratchpad.\nStepping way back: people say computers have the  "
+          }
+        ],
+        "tStartMs": 4032880
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "\"von Neumann architecture\", where there's \nthis serial processing of information. "
+          }
+        ],
+        "tStartMs": 4042320
+      },
+      {
+        "dDurationMs": 2160,
+        "segs": [
+          {
+            "utf8": "Maybe it's just because we've \nbeen talking about parallel  "
+          }
+        ],
+        "tStartMs": 4048240
+      },
+      {
+        "dDurationMs": 10320,
+        "segs": [
+          {
+            "utf8": "accelerators, but the FPGA is super parallel.\nThe AI accelerators, the TPUs, are super parallel. "
+          }
+        ],
+        "tStartMs": 4050400
+      },
+      {
+        "dDurationMs": 3680,
+        "segs": [
+          {
+            "utf8": "Even CPUs are super parallel if you \nthink about all the cores they have. "
+          }
+        ],
+        "tStartMs": 4061280
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "In what sense is modern hardware \nactually the von Neumann architecture? "
+          }
+        ],
+        "tStartMs": 4066800
+      },
+      {
+        "dDurationMs": 2480,
+        "segs": [
+          {
+            "utf8": "Is that actually a fair way \nto describe modern hardware? "
+          }
+        ],
+        "tStartMs": 4070080
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "I think it's a fair way to describe CPUs.\nThe amount of parallelism you get on a CPU is  "
+          }
+        ],
+        "tStartMs": 4072560
+      },
+      {
+        "dDurationMs": 7200,
+        "segs": [
+          {
+            "utf8": "about 100 cores times maybe 16-way vector \nunits, so about 1,000-way parallelism on a CPU. "
+          }
+        ],
+        "tStartMs": 4078480
+      },
+      {
+        "dDurationMs": 8480,
+        "segs": [
+          {
+            "utf8": "One question: there is a die being used for \nthe CPU, and if there are fewer threads,  "
+          }
+        ],
+        "tStartMs": 4086800
+      },
+      {
+        "dDurationMs": 7120,
+        "segs": [
+          {
+            "utf8": "just as a matter of transistor voltages \nswitching on and off, is it that there's  "
+          }
+        ],
+        "tStartMs": 4095280
+      },
+      {
+        "dDurationMs": 3840,
+        "segs": [
+          {
+            "utf8": "literally one control flow—a small part of the \ndie—where voltages are switching on and off? "
+          }
+        ],
+        "tStartMs": 4102400
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "How do you actually occupy the die area of a CPU…\nIf there are so few cores, what are  "
+          }
+        ],
+        "tStartMs": 4108240
+      },
+      {
+        "dDurationMs": 1760,
+        "segs": [
+          {
+            "utf8": "you spending all of the die on?\nYeah, what is happening there? "
+          }
+        ],
+        "tStartMs": 4115600
+      },
+      {
+        "dDurationMs": 2480,
+        "segs": [
+          {
+            "utf8": "The cores are just much \nbigger and more complicated. "
+          }
+        ],
+        "tStartMs": 4117360
+      },
+      {
+        "dDurationMs": 6400,
+        "segs": [
+          {
+            "utf8": "We should compare a CPU core, which takes \nup one one-hundredth of the die, to a LUT. "
+          }
+        ],
+        "tStartMs": 4124240
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "A LUT is only 16 gates.\nIt's clear why there are so many  "
+          }
+        ],
+        "tStartMs": 4130640
+      },
+      {
+        "dDurationMs": 9600,
+        "segs": [
+          {
+            "utf8": "more LUTs in an FPGA than cores in a CPU.\nBut why are there more CUDA cores,  "
+          }
+        ],
+        "tStartMs": 4134720
+      },
+      {
+        "dDurationMs": 5680,
+        "segs": [
+          {
+            "utf8": "for example, than CPU cores?\nWhat's the difference between a CPU and a GPU? "
+          }
+        ],
+        "tStartMs": 4144320
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "Inside the CPU, one big use \nof the area is the cache. "
+          }
+        ],
+        "tStartMs": 4153600
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "Very little is actually the ALUs.\nMostly it's these register  "
+          }
+        ],
+        "tStartMs": 4163760
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "files rather than the logic units.\nBoth of those have equivalents in a GPU,  "
+          }
+        ],
+        "tStartMs": 4168240
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "so that's not a big difference.\nBut the thing that does not have  "
+          }
+        ],
+        "tStartMs": 4176320
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "an equivalent in a GPU is the branch predictor.\nThere is a whole big area in the CPU which is  "
+          }
+        ],
+        "tStartMs": 4179040
+      },
+      {
+        "dDurationMs": 9200,
+        "segs": [
+          {
+            "utf8": "just a bunch of predictors saying when the next \nbranch will be and where the branch target is. "
+          }
+        ],
+        "tStartMs": 4189120
+      },
+      {
+        "dDurationMs": 5360,
+        "segs": [
+          {
+            "utf8": "Stripping a lot of that out, as well \nas making these register files tighter,  "
+          }
+        ],
+        "tStartMs": 4198320
+      },
+      {
+        "dDurationMs": 3760,
+        "segs": [
+          {
+            "utf8": "drives a lot of the GPU gains over the CPU.\nWhat is the purpose of the branch predictor? "
+          }
+        ],
+        "tStartMs": 4206400
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "To execute both branches at \nonce, or what does it do? "
+          }
+        ],
+        "tStartMs": 4210160
+      },
+      {
+        "dDurationMs": 8560,
+        "segs": [
+          {
+            "utf8": "The issue is that when I've got a series \nof instructions, if I have a branch,  "
+          }
+        ],
+        "tStartMs": 4213440
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "the actual step of processing an \ninstruction takes a really long time. "
+          }
+        ],
+        "tStartMs": 4227920
+      },
+      {
+        "dDurationMs": 6960,
+        "segs": [
+          {
+            "utf8": "It takes maybe five nanoseconds.\nThe time to notice that I've got a branch,  "
+          }
+        ],
+        "tStartMs": 4232880
+      },
+      {
+        "dDurationMs": 6160,
+        "segs": [
+          {
+            "utf8": "evaluate whether the Boolean is true, update \nthe program counter to the new target,  "
+          }
+        ],
+        "tStartMs": 4243760
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "and then read from the instruction memory \ncould take five nanoseconds to finish. "
+          }
+        ],
+        "tStartMs": 4249920
+      },
+      {
+        "dDurationMs": 2720,
+        "segs": [
+          {
+            "utf8": "So in reality, this may \nfinish somewhere down here. "
+          }
+        ],
+        "tStartMs": 4256960
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "I want to run a clock speed that is much \nfaster than what five nanoseconds allows. "
+          }
+        ],
+        "tStartMs": 4263600
+      },
+      {
+        "dDurationMs": 4320,
+        "segs": [
+          {
+            "utf8": "Five nanoseconds is a 200 MHz clock speed.\nI would like to run at one or two gigahertz. "
+          }
+        ],
+        "tStartMs": 4267920
+      },
+      {
+        "dDurationMs": 7040,
+        "segs": [
+          {
+            "utf8": "So I need to run other instructions \nwhile the branch is being evaluated. "
+          }
+        ],
+        "tStartMs": 4273200
+      },
+      {
+        "dDurationMs": 5520,
+        "segs": [
+          {
+            "utf8": "I just want to keep running the \ninstructions that happen after me. "
+          }
+        ],
+        "tStartMs": 4281360
+      },
+      {
+        "dDurationMs": 2800,
+        "segs": [
+          {
+            "utf8": "But that might have been wrong.\nIf the branch ended up being taken, then  "
+          }
+        ],
+        "tStartMs": 4287680
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "I need to know that instead of evaluating these \ninstructions, I actually need to jump to wherever  "
+          }
+        ],
+        "tStartMs": 4290480
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "the target is and run those instructions instead.\nThe purpose of the branch predictor is to predict,  "
+          }
+        ],
+        "tStartMs": 4294560
+      },
+      {
+        "dDurationMs": 6640,
+        "segs": [
+          {
+            "utf8": "five cycles earlier, that a branch is going to \nhappen, before you even get to that instruction. "
+          }
+        ],
+        "tStartMs": 4302080
+      },
+      {
+        "dDurationMs": 2960,
+        "segs": [
+          {
+            "utf8": "If I think about how the brain works \nversus what you're describing here,  "
+          }
+        ],
+        "tStartMs": 4309520
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "at a high level the differences might be that \nwhile you can do structured sparsity in these  "
+          }
+        ],
+        "tStartMs": 4312480
+      },
+      {
+        "dDurationMs": 8080,
+        "segs": [
+          {
+            "utf8": "accelerators and save yourself some area that you \nwould have otherwise had to dedicate to gates,  "
+          }
+        ],
+        "tStartMs": 4319760
+      },
+      {
+        "dDurationMs": 4960,
+        "segs": [
+          {
+            "utf8": "in the brain there's unstructured sparsity.\nAny neuron can connect to any other neuron, and  "
+          }
+        ],
+        "tStartMs": 4327840
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "not in ways where they have the column aligned.\nThen there's the fact that memory  "
+          }
+        ],
+        "tStartMs": 4332800
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "and compute are co-located.\nAlthough I guess you could say in a way the memory  "
+          }
+        ],
+        "tStartMs": 4338800
+      },
+      {
+        "dDurationMs": 3360,
+        "segs": [
+          {
+            "utf8": "and compute are co-located on these dies too.\nThis is exactly the co-location,  "
+          }
+        ],
+        "tStartMs": 4342000
+      },
+      {
+        "dDurationMs": 5040,
+        "segs": [
+          {
+            "utf8": "in some sense, of the memory and compute.\nSo maybe that isn't a big difference. "
+          }
+        ],
+        "tStartMs": 4345360
+      },
+      {
+        "dDurationMs": 10320,
+        "segs": [
+          {
+            "utf8": "Another big difference is that the clock cycle \non the brain is much slower than on computers. "
+          }
+        ],
+        "tStartMs": 4350400
+      },
+      {
+        "dDurationMs": 6880,
+        "segs": [
+          {
+            "utf8": "Partly that's to preserve energy, because the \nfaster the clock cycle, the bigger the voltage  "
+          }
+        ],
+        "tStartMs": 4360720
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "needs to be in order for the signal to settle \nand to identify what state a transistor is in. "
+          }
+        ],
+        "tStartMs": 4367600
+      },
+      {
+        "dDurationMs": 1280,
+        "segs": [
+          {
+            "utf8": "That’s right.\nI don't know if  "
+          }
+        ],
+        "tStartMs": 4374880
+      },
+      {
+        "dDurationMs": 9280,
+        "segs": [
+          {
+            "utf8": "you have any commentary on what the brain \nmight be doing versus how these chips work. "
+          }
+        ],
+        "tStartMs": 4376160
+      },
+      {
+        "dDurationMs": 9840,
+        "segs": [
+          {
+            "utf8": "Let's take the clock speed one first.\nThe clock speed is quite high on a  "
+          }
+        ],
+        "tStartMs": 4386720
+      },
+      {
+        "dDurationMs": 9440,
+        "segs": [
+          {
+            "utf8": "chip because that drives higher throughput.\nWhen we compare a GPU running some workload,  "
+          }
+        ],
+        "tStartMs": 4396560
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "it's running batch size 1,000.\nWhereas the brain is not running  "
+          }
+        ],
+        "tStartMs": 4406000
+      },
+      {
+        "dDurationMs": 6320,
+        "segs": [
+          {
+            "utf8": "batch size 1,000, there's only one of me.\nYou could imagine saying, \"Take a GPU and  "
+          }
+        ],
+        "tStartMs": 4409440
+      },
+      {
+        "dDurationMs": 3600,
+        "segs": [
+          {
+            "utf8": "instead of running at a gigahertz, run \nit at a megahertz,\" and that would start  "
+          }
+        ],
+        "tStartMs": 4415760
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "to look a little more like the equivalent \nthings you're talking about in the brain. "
+          }
+        ],
+        "tStartMs": 4419360
+      },
+      {
+        "dDurationMs": 11120,
+        "segs": [
+          {
+            "utf8": "But in the way silicon works, that does not give \nyou a 1,000x advantage in energy efficiency. "
+          }
+        ],
+        "tStartMs": 4425600
+      },
+      {
+        "dDurationMs": 9360,
+        "segs": [
+          {
+            "utf8": "What it ends up looking like is you just \nrun this circuit once to stabilization,  "
+          }
+        ],
+        "tStartMs": 4438480
+      },
+      {
+        "dDurationMs": 2880,
+        "segs": [
+          {
+            "utf8": "and then it will sit idle \nfor a long period of time. "
+          }
+        ],
+        "tStartMs": 4447840
+      },
+      {
+        "dDurationMs": 2000,
+        "segs": [
+          {
+            "utf8": "It doesn't consume a lot of \nenergy while it's sitting  "
+          }
+        ],
+        "tStartMs": 4450720
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "idle because most of the energy is consumed \nin toggling bits from zero to one and back. "
+          }
+        ],
+        "tStartMs": 4452720
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "Let's talk about the energy \nconsumption of a circuit like this. "
+          }
+        ],
+        "tStartMs": 4462640
+      },
+      {
+        "dDurationMs": 6000,
+        "segs": [
+          {
+            "utf8": "The way to think of a bit being stored is that \nyou've deposited some charge in a capacitor  "
+          }
+        ],
+        "tStartMs": 4466560
+      },
+      {
+        "dDurationMs": 6080,
+        "segs": [
+          {
+            "utf8": "sitting somewhere in the chip implicitly.\nIt becomes charged when the bit becomes a one,  "
+          }
+        ],
+        "tStartMs": 4472560
+      },
+      {
+        "dDurationMs": 3280,
+        "segs": [
+          {
+            "utf8": "and then it becomes discharged \nwhen it next goes to a zero. "
+          }
+        ],
+        "tStartMs": 4478640
+      },
+      {
+        "dDurationMs": 3200,
+        "segs": [
+          {
+            "utf8": "That cycle of charging the capacitor \nand then dumping that charge out  "
+          }
+        ],
+        "tStartMs": 4481920
+      },
+      {
+        "dDurationMs": 4800,
+        "segs": [
+          {
+            "utf8": "to ground is where the energy is consumed.\nThis is called the dynamic or switching power,  "
+          }
+        ],
+        "tStartMs": 4485120
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "and it's most of the energy consumption of a chip.\nThere is some other energy consumption just  "
+          }
+        ],
+        "tStartMs": 4489920
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "coming from the fact that insulators \naren't perfect, but we'll discard that. "
+          }
+        ],
+        "tStartMs": 4494160
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "Most of the energy consumption comes from \ntoggling from zero to one and back to zero. "
+          }
+        ],
+        "tStartMs": 4500880
+      },
+      {
+        "dDurationMs": 3440,
+        "segs": [
+          {
+            "utf8": "If you run a chip much slower and you only \nclock it once every thousand clock cycles,  "
+          }
+        ],
+        "tStartMs": 4508640
+      },
+      {
+        "dDurationMs": 3520,
+        "segs": [
+          {
+            "utf8": "you will have 1,000 times fewer transitions.\nIt will be about 1,000 times  "
+          }
+        ],
+        "tStartMs": 4512720
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "less energy consumption.\nBut it's not a substantial  "
+          }
+        ],
+        "tStartMs": 4516240
+      },
+      {
+        "dDurationMs": 4080,
+        "segs": [
+          {
+            "utf8": "advantage in energy efficiency.\nOkay, so you described how a TPU  "
+          }
+        ],
+        "tStartMs": 4520960
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "works at a high level.\nWhat is the difference  "
+          }
+        ],
+        "tStartMs": 4525040
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "at a high level between how a GPU and a TPU work?\nThere is a high-level organization principle that  "
+          }
+        ],
+        "tStartMs": 4529040
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "is different, and then inside \nthe cores things are different. "
+          }
+        ],
+        "tStartMs": 4537200
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "Looking at the high level, we'll \ntake a GPU and a TPU and see what  "
+          }
+        ],
+        "tStartMs": 4541920
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "the top-level block structure looks like.\nIf you think of this as the whole chip  "
+          }
+        ],
+        "tStartMs": 4550320
+      },
+      {
+        "dDurationMs": 8160,
+        "segs": [
+          {
+            "utf8": "in each case, the organization \nof the GPU is mostly a bunch of  "
+          }
+        ],
+        "tStartMs": 4555040
+      },
+      {
+        "dDurationMs": 8880,
+        "segs": [
+          {
+            "utf8": "almost-identical units, which are the SMs.\nThey've got an L2 memory in the middle,  "
+          }
+        ],
+        "tStartMs": 4563200
+      },
+      {
+        "dDurationMs": 9440,
+        "segs": [
+          {
+            "utf8": "and then a bunch more of these SMs on the bottom.\nSo there is a fairly regular grid of cores. "
+          }
+        ],
+        "tStartMs": 4572080
+      },
+      {
+        "dDurationMs": 9600,
+        "segs": [
+          {
+            "utf8": "If we look at a TPU in comparison, you end \nup with much coarser-grained units of logic. "
+          }
+        ],
+        "tStartMs": 4584000
+      },
+      {
+        "dDurationMs": 14240,
+        "segs": [
+          {
+            "utf8": "You end up with just a few matrix units, \nwhich are the big systolic arrays. "
+          }
+        ],
+        "tStartMs": 4594160
+      },
+      {
+        "dDurationMs": 7520,
+        "segs": [
+          {
+            "utf8": "In the middle you've got some vector unit, and \nthen you've got your matrix units at the bottom. "
+          }
+        ],
+        "tStartMs": 4608400
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "These matrix units with a vector unit in \nthe middle make up the whole TPU chip. "
+          }
+        ],
+        "tStartMs": 4620640
+      },
+      {
+        "dDurationMs": 4240,
+        "segs": [
+          {
+            "utf8": "You can think of scaling this thing \ndown into a really tiny unit with a  "
+          }
+        ],
+        "tStartMs": 4626240
+      },
+      {
+        "dDurationMs": 5280,
+        "segs": [
+          {
+            "utf8": "smaller matrix unit and a smaller vector \nunit, and that is sort of what an SM is. "
+          }
+        ],
+        "tStartMs": 4630480
+      },
+      {
+        "dDurationMs": 8000,
+        "segs": [
+          {
+            "utf8": "From a very high-level point of view, the GPU has \na lot of tiny TPUs tiled across the whole chip. "
+          }
+        ],
+        "tStartMs": 4636400
+      },
+      {
+        "dDurationMs": 6800,
+        "segs": [
+          {
+            "utf8": "Oh, interesting. You're suggesting the tensor \ncore within a streaming SM is analogous to an MXU? "
+          }
+        ],
+        "tStartMs": 4644400
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "Yeah, it's all very similar.\nI see. If you had more lack of structure,  "
+          }
+        ],
+        "tStartMs": 4651200
+      },
+      {
+        "dDurationMs": 5600,
+        "segs": [
+          {
+            "utf8": "having a bunch of tiny TPUs makes a lot of sense.\nWhereas if you just have huge matrix  "
+          }
+        ],
+        "tStartMs": 4658480
+      },
+      {
+        "dDurationMs": 10320,
+        "segs": [
+          {
+            "utf8": "multiplications, you might want to avoid the \ncost of having individual SMs with their own  "
+          }
+        ],
+        "tStartMs": 4664080
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "registers and warp schedulers.\nWhy not just make a huge thing  "
+          }
+        ],
+        "tStartMs": 4674400
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "and amortize those costs across the whole thing?\nThis shows up in how large you can grow things. "
+          }
+        ],
+        "tStartMs": 4678400
+      },
+      {
+        "dDurationMs": 3920,
+        "segs": [
+          {
+            "utf8": "We've seen this theme, especially with the \nsystolic array, where a larger systolic  "
+          }
+        ],
+        "tStartMs": 4684320
+      },
+      {
+        "dDurationMs": 6240,
+        "segs": [
+          {
+            "utf8": "array amortizes the register file costs better.\nThis design allows you to have larger systolic  "
+          }
+        ],
+        "tStartMs": 4688240
+      },
+      {
+        "dDurationMs": 5920,
+        "segs": [
+          {
+            "utf8": "arrays, whereas the GPU design constrains \nyou to having small units of everything. "
+          }
+        ],
+        "tStartMs": 4694480
+      },
+      {
+        "dDurationMs": 7920,
+        "segs": [
+          {
+            "utf8": "There is a trade-off, however.\nBecause of this coarse-grained  "
+          }
+        ],
+        "tStartMs": 4701600
+      },
+      {
+        "dDurationMs": 4880,
+        "segs": [
+          {
+            "utf8": "separation of things, you need to move a lot of \ndata from the vector unit to the matrix units,  "
+          }
+        ],
+        "tStartMs": 4709520
+      },
+      {
+        "dDurationMs": 9120,
+        "segs": [
+          {
+            "utf8": "through just two lines of perimeter here.\nIf you look at the equivalent thing  "
+          }
+        ],
+        "tStartMs": 4717200
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "in a GPU, you've got vector units everywhere, and \nyou can move data through many different lines. "
+          }
+        ],
+        "tStartMs": 4726320
+      },
+      {
+        "dDurationMs": 4720,
+        "segs": [
+          {
+            "utf8": "The amount of data you can move between a \nvector unit and a matrix unit is actually  "
+          }
+        ],
+        "tStartMs": 4735520
+      },
+      {
+        "dDurationMs": 8720,
+        "segs": [
+          {
+            "utf8": "much higher in a GPU than in a TPU.\nInstead of having to move all the data  "
+          }
+        ],
+        "tStartMs": 4740240
+      },
+      {
+        "dDurationMs": 7760,
+        "segs": [
+          {
+            "utf8": "through just two lines, you're moving \nit through 16 lines of wiring in a GPU. "
+          }
+        ],
+        "tStartMs": 4748960
+      },
+      {
+        "dDurationMs": 4480,
+        "segs": [
+          {
+            "utf8": "Right. But also you might \nhave to move across less area. "
+          }
+        ],
+        "tStartMs": 4756720
+      },
+      {
+        "dDurationMs": 6720,
+        "segs": [
+          {
+            "utf8": "Which is an energy saving as well.\nSo if you can operate entirely within  "
+          }
+        ],
+        "tStartMs": 4761200
+      },
+      {
+        "dDurationMs": 5840,
+        "segs": [
+          {
+            "utf8": "an SM, the data movement is much smaller.\nBut the moment you want to operate across SMs,  "
+          }
+        ],
+        "tStartMs": 4767920
+      },
+      {
+        "dDurationMs": 4000,
+        "segs": [
+          {
+            "utf8": "it becomes more complicated and expensive.\nSo you don’t have to comment, but one might  "
+          }
+        ],
+        "tStartMs": 4773760
+      },
+      {
+        "dDurationMs": 7280,
+        "segs": [
+          {
+            "utf8": "expect that a thing MatX might try to do \nis get the GPU-like smaller structure of  "
+          }
+        ],
+        "tStartMs": 4777760
+      },
+      {
+        "dDurationMs": 10080,
+        "segs": [
+          {
+            "utf8": "systolic arrays surrounded by SRAM, but at the \nsame time make it so that the things you need in  "
+          }
+        ],
+        "tStartMs": 4785760
+      },
+      {
+        "dDurationMs": 7360,
+        "segs": [
+          {
+            "utf8": "an SM to support the CUDA architecture—which \ntake a bunch of space—you might discard. "
+          }
+        ],
+        "tStartMs": 4795840
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "We've talked publicly about something we \ncall a splittable systolic array, which  "
+          }
+        ],
+        "tStartMs": 4805280
+      },
+      {
+        "dDurationMs": 4160,
+        "segs": [
+          {
+            "utf8": "in some sense you can think of as big systolic \narrays that can be small systolic arrays too. "
+          }
+        ],
+        "tStartMs": 4809440
+      },
+      {
+        "dDurationMs": 3040,
+        "segs": [
+          {
+            "utf8": "Cool. Okay, I think that's \na good note to close on. "
+          }
+        ],
+        "tStartMs": 4813600
+      },
+      {
+        "dDurationMs": 2320,
+        "segs": [
+          {
+            "utf8": "Reiner, thank you so much.\nThanks, Dwarkesh."
+          }
+        ],
+        "tStartMs": 4816640
+      }
+    ],
+    "pens": [
+      {}
+    ],
+    "wireMagic": "pb3",
+    "wpWinPositions": [
+      {}
+    ],
+    "wsWinStyles": [
+      {}
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "canonical_url": "https://www.youtube.com/watch?v=oIk3R-sMX5o",
+    "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA",
+    "format": "json3",
+    "language": "en",
+    "payload_sha256": "e3af3fc453e7def481cfd3ad33e9ba187e08356d9a9aa37074d983ed70691394",
+    "platform": "youtube",
+    "track_type": "publisher-subtitle",
+    "uploader": "Dwarkesh Patel",
+    "video_id": "oIk3R-sMX5o"
+  }
+}

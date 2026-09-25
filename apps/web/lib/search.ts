@@ -1,13 +1,13 @@
 import "server-only";
-import generatedSearchIndex from "@/.generated/search-index.json";
+import generatedSearchBundle from "@/.generated/search-index-bundle.json";
+import { unpackSearchIndex } from "@/lib/search-bundle";
 import {
   createSearchContent,
   hydrateSearchIndex,
-  type GeneratedSearchIndex,
 } from "@/lib/search-core";
 
 const searchDocuments = hydrateSearchIndex(
-  generatedSearchIndex as GeneratedSearchIndex,
+  unpackSearchIndex(generatedSearchBundle),
 );
 
 export const searchContent = createSearchContent(async () => searchDocuments);
