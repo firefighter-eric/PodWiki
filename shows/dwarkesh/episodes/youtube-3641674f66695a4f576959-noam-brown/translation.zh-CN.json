@@ -1,0 +1,6372 @@
+{
+  "schema_version": 1,
+  "kind": "podwiki-segment-translation",
+  "language": "zh-CN",
+  "source_language": "en",
+  "status": "machine",
+  "generated_at": "2026-09-25T16:43:03.317924Z",
+  "source_payload_sha256": "a8b60d36ea96acf75123bb5bdbed6bdc3eff807d8423882ffa5132997db040b9",
+  "source_transcript_sha256": "e62c1deb7e92e122dc393583afa0bf05f19e2557ebcd2043f9aab65db347669d",
+  "engine": "google-translate-web",
+  "model": "Advanced (Gemini)",
+  "model_revision": null,
+  "model_version_visibility": "not-exposed",
+  "provider_url": "https://translate.google.com/",
+  "segments": [
+    {
+      "source_event_index": 0,
+      "start_ms": 240,
+      "end_ms": 3920,
+      "text": "今天，我正在和 OpenAI 的研究员 Noam Brown 聊天。"
+    },
+    {
+      "source_event_index": 1,
+      "start_ms": 3920,
+      "end_ms": 8400,
+      "text": "他是 o1 和推理模型的基础贡献者之一。"
+    },
+    {
+      "source_event_index": 2,
+      "start_ms": 8400,
+      "end_ms": 12960,
+      "text": "如今他在研究多智能体系统。说到这个，你们上"
+    },
+    {
+      "source_event_index": 3,
+      "start_ms": 12960,
+      "end_ms": 16960,
+      "text": "周宣布，解决了一道千禧年大奖难题，使用的是一个"
+    },
+    {
+      "source_event_index": 4,
+      "start_ms": 16960,
+      "end_ms": 22640,
+      "text": "由一万个不同 AI 智能体组成的系统，在八十八小时内消耗了一千三百亿个 token。"
+    },
+    {
+      "source_event_index": 5,
+      "start_ms": 22640,
+      "end_ms": 26560,
+      "text": "我有兴趣与你交谈的原因之一是你是第一批人之一，"
+    },
+    {
+      "source_event_index": 6,
+      "start_ms": 26560,
+      "end_ms": 32400,
+      "text": "大概两三年前，谁在思考推理模型如何"
+    },
+    {
+      "source_event_index": 7,
+      "start_ms": 32400,
+      "end_ms": 35520,
+      "text": "能让我们看到未来。因为如果你扩大推理计算规模，"
+    },
+    {
+      "source_event_index": 8,
+      "start_ms": 35520,
+      "end_ms": 38720,
+      "text": "你可以看到未来几年模型的基本功能是什么。"
+    },
+    {
+      "source_event_index": 9,
+      "start_ms": 38720,
+      "end_ms": 43200,
+      "text": "我觉得你现在处于类似的位置，可以帮助我们了解未来的能力 考虑到我们现在可以实现的代理规模的巨大扩展，"
+    },
+    {
+      "source_event_index": 10,
+      "start_ms": 43200,
+      "end_ms": 48240,
+      "text": "看起来会是这样。"
+    },
+    {
+      "source_event_index": 11,
+      "start_ms": 48240,
+      "end_ms": 53360,
+      "text": "我的想法是，当你用以下函数绘制这些推理模型的性能时"
+    },
+    {
+      "source_event_index": 12,
+      "start_ms": 53360,
+      "end_ms": 60000,
+      "text": "x 轴上的测试时间计算和 y 轴上基本上任何推理基准的性能，"
+    },
+    {
+      "source_event_index": 13,
+      "start_ms": 60000,
+      "end_ms": 63440,
+      "text": "你会看到一个非常清晰的模式，这些模型思考的时间越长"
+    },
+    {
+      "source_event_index": 14,
+      "start_ms": 63440,
+      "end_ms": 65840,
+      "text": "他们的答案，他们做得越好。这是很自然的事情。"
+    },
+    {
+      "source_event_index": 15,
+      "start_ms": 65840,
+      "end_ms": 68800,
+      "text": "人也是如此。如果你正在参加 SAT 考试并且你"
+    },
+    {
+      "source_event_index": 16,
+      "start_ms": 68800,
+      "end_ms": 72400,
+      "text": "有五分钟时间完成整个考试，你不会做得很好。"
+    },
+    {
+      "source_event_index": 17,
+      "start_ms": 72400,
+      "end_ms": 75760,
+      "text": "如果你有五个小时，你可能会做得更好。"
+    },
+    {
+      "source_event_index": 18,
+      "start_ms": 75760,
+      "end_ms": 79200,
+      "text": "AI 模型非常相似。他们会花时间做这件事"
+    },
+    {
+      "source_event_index": 19,
+      "start_ms": 79200,
+      "end_ms": 82480,
+      "text": "自言自语，弄清楚事情，经历不同的案例，"
+    },
+    {
+      "source_event_index": 20,
+      "start_ms": 82480,
+      "end_ms": 86800,
+      "text": "在他们之前的一些发现的基础上排除了不同的可能性。"
+    },
+    {
+      "source_event_index": 21,
+      "start_ms": 86800,
+      "end_ms": 90320,
+      "text": "问题是，当你越推越远时，就会遇到延迟瓶颈。"
+    },
+    {
+      "source_event_index": 22,
+      "start_ms": 90320,
+      "end_ms": 94240,
+      "text": "你不想坐三年的时间等待回复。"
+    },
+    {
+      "source_event_index": 23,
+      "start_ms": 94240,
+      "end_ms": 99040,
+      "text": "所以你能做的就是很多人做的。他们并行化。他们只是得到了一个团队。"
+    },
+    {
+      "source_event_index": 24,
+      "start_ms": 99600,
+      "end_ms": 101440,
+      "text": "如果你要创办一家公司，你想要一个团体"
+    },
+    {
+      "source_event_index": 25,
+      "start_ms": 101440,
+      "end_ms": 104240,
+      "text": "人在一起，这样你就可以走得更快。这些人工智能模型也是如此。"
+    },
+    {
+      "source_event_index": 26,
+      "start_ms": 105280,
+      "end_ms": 109440,
+      "text": "让多个代理同时处理某件事是有帮助的，因为他们可以做得更快。"
+    },
+    {
+      "source_event_index": 27,
+      "start_ms": 110160,
+      "end_ms": 114960,
+      "text": "因此，多代理是一种并行扩展测试时计算而不是纯粹串行的方法。"
+    },
+    {
+      "source_event_index": 28,
+      "start_ms": 114960,
+      "end_ms": 123040,
+      "text": "它的效率较低，因为它不像单个代理拥有自己的所有上下文。"
+    },
+    {
+      "source_event_index": 29,
+      "start_ms": 123040,
+      "end_ms": 128400,
+      "text": "但如果做得好的话，它是扩展测试时计算的一种非常有效的方法。"
+    },
+    {
+      "source_event_index": 30,
+      "start_ms": 129040,
+      "end_ms": 133760,
+      "text": "我要问一堆幼稚的问题。这是一个未发布的模型，所以我们还没有"
+    },
+    {
+      "source_event_index": 31,
+      "start_ms": 133760,
+      "end_ms": 137760,
+      "text": "公开了解这些系统的工作原理。我只是有很多方法"
+    },
+    {
+      "source_event_index": 32,
+      "start_ms": 137760,
+      "end_ms": 142160,
+      "text": "对此类系统的定性属性是什么感到困惑。"
+    },
+    {
+      "source_event_index": 33,
+      "start_ms": 142160,
+      "end_ms": 148720,
+      "text": "我对你所能付出的认知努力的规模感到震惊"
+    },
+    {
+      "source_event_index": 34,
+      "start_ms": 148720,
+      "end_ms": 154080,
+      "text": "在这么短的时间内集中精力。想想 1300 亿个token是什么。"
+    },
+    {
+      "source_event_index": 35,
+      "start_ms": 154080,
+      "end_ms": 160560,
+      "text": "如果是一个人将其视为一份全职工作，那么背靠背，1300 亿个token"
+    },
+    {
+      "source_event_index": 36,
+      "start_ms": 160560,
+      "end_ms": 166000,
+      "text": "将是人类思考4000年的时间。每天八小时，每周正常工作。"
+    },
+    {
+      "source_event_index": 37,
+      "start_ms": 166640,
+      "end_ms": 173120,
+      "text": "从古代苏美尔直到今天，一个连续的人类思考了那么久， 88小时内浓缩"
+    },
+    {
+      "source_event_index": 38,
+      "start_ms": 173120,
+      "end_ms": 176880,
+      "text": "。我觉得从品质上来说，"
+    },
+    {
+      "source_event_index": 39,
+      "start_ms": 176880,
+      "end_ms": 179600,
+      "text": "这是一个非常重要的考虑因素。我很惊讶没有"
+    },
+    {
+      "source_event_index": 40,
+      "start_ms": 179600,
+      "end_ms": 183840,
+      "text": "更大的并行化惩罚。您只能让 10,000 个代理进行协作。"
+    },
+    {
+      "source_event_index": 41,
+      "start_ms": 184560,
+      "end_ms": 187600,
+      "text": "也许是因为智能体比人类更擅长协作，"
+    },
+    {
+      "source_event_index": 42,
+      "start_ms": 187600,
+      "end_ms": 189760,
+      "text": "他们走得更快了。他们实际上可以"
+    },
+    {
+      "source_event_index": 43,
+      "start_ms": 189760,
+      "end_ms": 194000,
+      "text": "如此大规模的高效协作。或者可能存在很大的并行化惩罚。"
+    },
+    {
+      "source_event_index": 44,
+      "start_ms": 194000,
+      "end_ms": 196640,
+      "text": "让我们谈谈并行化惩罚，然后我们可以谈谈定性的东西。"
+    },
+    {
+      "source_event_index": 45,
+      "start_ms": 196640,
+      "end_ms": 201360,
+      "text": "事实是，对于将多智能体扩展到这种规模，我们没有很好的科学依据。"
+    },
+    {
+      "source_event_index": 46,
+      "start_ms": 202080,
+      "end_ms": 205280,
+      "text": "当我们发布 5.6 时，我认为这是我们第一次"
+    },
+    {
+      "source_event_index": 47,
+      "start_ms": 205280,
+      "end_ms": 211440,
+      "text": "在我们的模型中具有适当的多智能体系统。我们确实在博客文章中展示了一些情节"
+    },
+    {
+      "source_event_index": 48,
+      "start_ms": 212320,
+      "end_ms": 217280,
+      "text": "多智能体系统的扩展性能，因为我们有它作为一个选项。"
+    },
+    {
+      "source_event_index": 49,
+      "start_ms": 217280,
+      "end_ms": 221280,
+      "text": "这是超级模式。默认值为四个代理，但您可以将其设置得更高。"
+    },
+    {
+      "source_event_index": 50,
+      "start_ms": 221280,
+      "end_ms": 224480,
+      "text": "在图中，我们展示了一个代理在一些基准上的性能，"
+    },
+    {
+      "source_event_index": 51,
+      "start_ms": 224480,
+      "end_ms": 226960,
+      "text": "4 个代理一起工作，16 个代理一起工作。"
+    },
+    {
+      "source_event_index": 52,
+      "start_ms": 228640,
+      "end_ms": 232720,
+      "text": "这取决于基准测试，但对于某些基准测试，您看到的是如果"
+    },
+    {
+      "source_event_index": 53,
+      "start_ms": 232720,
+      "end_ms": 236960,
+      "text": "你有四个代理来解决这个问题，完成速度是原来的两倍。"
+    },
+    {
+      "source_event_index": 54,
+      "start_ms": 239040,
+      "end_ms": 241440,
+      "text": "因为有四个智能体，工作时间只有一半，所以你"
+    },
+    {
+      "source_event_index": 55,
+      "start_ms": 241440,
+      "end_ms": 247920,
+      "text": "支付 2 倍的费用才能以两倍的速度获得答案。如果你去找 16 个代理商，你会看到类似的模式。"
+    },
+    {
+      "source_event_index": 56,
+      "start_ms": 247920,
+      "end_ms": 252000,
+      "text": "效率稍低，但你会继续看到这种性能。"
+    },
+    {
+      "source_event_index": 57,
+      "start_ms": 252000,
+      "end_ms": 257040,
+      "text": "当您增加时，它是线性串行时间加速还是次线性加速"
+    },
+    {
+      "source_event_index": 58,
+      "start_ms": 257040,
+      "end_ms": 261200,
+      "text": "并行代理数量？它有点次线性，"
+    },
+    {
+      "source_event_index": 59,
+      "start_ms": 261200,
+      "end_ms": 268160,
+      "text": "虽然这在很大程度上取决于问题。例如，数学是完全可以并行化的。"
+    },
+    {
+      "source_event_index": 60,
+      "start_ms": 268160,
+      "end_ms": 270960,
+      "text": "这不是最可并行化的东西，但它是非常可并行化的。"
+    },
+    {
+      "source_event_index": 61,
+      "start_ms": 271840,
+      "end_ms": 275040,
+      "text": "网络搜索，比如做一份深度研究报告，你必须浏览一堆"
+    },
+    {
+      "source_event_index": 62,
+      "start_ms": 275040,
+      "end_ms": 279680,
+      "text": "源，非常可并行。我怀疑像写作这样的事情"
+    },
+    {
+      "source_event_index": 63,
+      "start_ms": 279680,
+      "end_ms": 283600,
+      "text": "一部小说将是无与伦比的。您可能不会看到很大的好处"
+    },
+    {
+      "source_event_index": 64,
+      "start_ms": 283600,
+      "end_ms": 288240,
+      "text": "让 10,000 名智能体一起创作一部小说，就像你"
+    },
+    {
+      "source_event_index": 65,
+      "start_ms": 288240,
+      "end_ms": 291280,
+      "text": "可能不会从 10,000 人一起创作一部小说中获得很大的好处。"
+    },
+    {
+      "source_event_index": 66,
+      "start_ms": 292000,
+      "end_ms": 297920,
+      "text": "所以性能确实取决于域。我们确实测量了 16 个左右的代理"
+    },
+    {
+      "source_event_index": 67,
+      "start_ms": 297920,
+      "end_ms": 301200,
+      "text": "我们发布的博客文章。问题是它是"
+    },
+    {
+      "source_event_index": 68,
+      "start_ms": 301200,
+      "end_ms": 306320,
+      "text": "很难将这项科学推广给 10,000 名代理人，因为它太昂贵了。"
+    },
+    {
+      "source_event_index": 69,
+      "start_ms": 306320,
+      "end_ms": 310800,
+      "text": "你们几个周末就完成了。但这只是一个数据点。"
+    },
+    {
+      "source_event_index": 70,
+      "start_ms": 310800,
+      "end_ms": 315920,
+      "text": "我们不知道单个智能体需要多长时间才能解决纳维-斯托克斯问题，因为我们还没有"
+    },
+    {
+      "source_event_index": 71,
+      "start_ms": 315920,
+      "end_ms": 318000,
+      "text": "还做过那个实验。也许我们会，"
+    },
+    {
+      "source_event_index": 72,
+      "start_ms": 318000,
+      "end_ms": 323840,
+      "text": "但这也只是一个数据点。如果我们想做彻底的消融，"
+    },
+    {
+      "source_event_index": 73,
+      "start_ms": 323840,
+      "end_ms": 329040,
+      "text": "实验在这种规模上太昂贵了。所以我们必须做一些有条理的科学"
+    },
+    {
+      "source_event_index": 74,
+      "start_ms": 329040,
+      "end_ms": 335120,
+      "text": "当你使用 64、128、256 或其他号码并了解其行为时会发生什么。"
+    },
+    {
+      "source_event_index": 75,
+      "start_ms": 335120,
+      "end_ms": 339040,
+      "text": "但是将其一直推到 10,000 并知道是非常困难的"
+    },
+    {
+      "source_event_index": 76,
+      "start_ms": 339040,
+      "end_ms": 344320,
+      "text": "当然，使用 10,000 个代理与使用 1,000 个代理相比，我们实际获得的好处是什么。"
+    },
+    {
+      "source_event_index": 77,
+      "start_ms": 344320,
+      "end_ms": 352640,
+      "text": "有一件事我想澄清。解决千年奖问题的努力，"
+    },
+    {
+      "source_event_index": 78,
+      "start_ms": 352640,
+      "end_ms": 358000,
+      "text": "这不是由于多代理造成的。我什至不会归因于10%"
+    },
+    {
+      "source_event_index": 79,
+      "start_ms": 358000,
+      "end_ms": 364400,
+      "text": "的功劳归功于多代理。事实是 OpenAI 已经"
+    },
+    {
+      "source_event_index": 80,
+      "start_ms": 364400,
+      "end_ms": 368960,
+      "text": "训练了一个非常强大的模型。我们可以得到这个模型"
+    },
+    {
+      "source_event_index": 81,
+      "start_ms": 368960,
+      "end_ms": 372960,
+      "text": "经营范围很长。我们可以让它并行思考。"
+    },
+    {
+      "source_event_index": 82,
+      "start_ms": 372960,
+      "end_ms": 377680,
+      "text": "但从本质上讲，我们之所以能够做到这一点是因为我们有一个通用的，"
+    },
+    {
+      "source_event_index": 83,
+      "start_ms": 377680,
+      "end_ms": 382880,
+      "text": "非常强的模型。诸如多代理之类的东西"
+    },
+    {
+      "source_event_index": 84,
+      "start_ms": 382880,
+      "end_ms": 391120,
+      "text": "华丽而新颖，因此可能会得到不成比例的赞誉。"
+    },
+    {
+      "source_event_index": 85,
+      "start_ms": 391120,
+      "end_ms": 394320,
+      "text": "但最核心的原因是这只是一个非常强大的模型。"
+    },
+    {
+      "source_event_index": 86,
+      "start_ms": 395280,
+      "end_ms": 401760,
+      "text": "这个概括让我相当震惊。我不知道这些系统是如何训练的，"
+    },
+    {
+      "source_event_index": 87,
+      "start_ms": 401760,
+      "end_ms": 404400,
+      "text": "但想必他们接受了强化学习训练如何进行的训练。"
+    },
+    {
+      "source_event_index": 88,
+      "start_ms": 404400,
+      "end_ms": 408160,
+      "text": "你有一堆可检查的综合问题，然后你对它们进行了一堆强化学习。"
+    },
+    {
+      "source_event_index": 89,
+      "start_ms": 408720,
+      "end_ms": 411360,
+      "text": "我猜模型在训练过程中没有解决任何问题"
+    },
+    {
+      "source_event_index": 90,
+      "start_ms": 411360,
+      "end_ms": 415520,
+      "text": "如同千年难题一样雄心勃勃。但概括性足够强"
+    },
+    {
+      "source_event_index": 91,
+      "start_ms": 415520,
+      "end_ms": 422080,
+      "text": "你可以将这些更容易验证的问题推广到如此并行的工作中"
+    },
+    {
+      "source_event_index": 92,
+      "start_ms": 422080,
+      "end_ms": 425920,
+      "text": "这么难的问题。我认为这是真的。"
+    },
+    {
+      "source_event_index": 93,
+      "start_ms": 425920,
+      "end_ms": 429200,
+      "text": "首先，我们确实在非常困难的问题上训练模型。"
+    },
+    {
+      "source_event_index": 94,
+      "start_ms": 429200,
+      "end_ms": 431920,
+      "text": "肯定有差距。我们发现如果我们继续训练"
+    },
+    {
+      "source_event_index": 95,
+      "start_ms": 431920,
+      "end_ms": 435680,
+      "text": "某些类型的任务，它能够完成比这更雄心勃勃的任务。"
+    },
+    {
+      "source_event_index": 96,
+      "start_ms": 435680,
+      "end_ms": 441040,
+      "text": "有一个有趣的挑战，随着模型变得越来越聪明，"
+    },
+    {
+      "source_event_index": 97,
+      "start_ms": 441040,
+      "end_ms": 447200,
+      "text": "我们可以问他们的很多问题都太简单了。"
+    },
+    {
+      "source_event_index": 98,
+      "start_ms": 448000,
+      "end_ms": 452880,
+      "text": "挑战模型很难。我确实认为这会很有趣。"
+    },
+    {
+      "source_event_index": 99,
+      "start_ms": 452880,
+      "end_ms": 461920,
+      "text": "如果我必须争论为什么你可能看不到像大语言模型这样的人工智能走与 AlphaGo 相同的道路，"
+    },
+    {
+      "source_event_index": 100,
+      "start_ms": 461920,
+      "end_ms": 466080,
+      "text": "AlphaZero 以及各种玩游戏的 AI，可能就是这种问题。"
+    },
+    {
+      "source_event_index": 101,
+      "start_ms": 466960,
+      "end_ms": 470800,
+      "text": "在 AlphaZero 这样的游戏中，你可以进行自我游戏，你可以拥有无​​限的课程。"
+    },
+    {
+      "source_event_index": 102,
+      "start_ms": 470800,
+      "end_ms": 473840,
+      "text": "你总是在与同样强大的人工智能对战。"
+    },
+    {
+      "source_event_index": 103,
+      "start_ms": 473840,
+      "end_ms": 479200,
+      "text": "而对于像通过强化学习培训大语言模型这样的事情，至少有以下方法"
+    },
+    {
+      "source_event_index": 104,
+      "start_ms": 479200,
+      "end_ms": 486000,
+      "text": "现在就在那里，你给模型一个问题，然后要求它解决它。"
+    },
+    {
+      "source_event_index": 105,
+      "start_ms": 486880,
+      "end_ms": 490880,
+      "text": "如果问题太简单，一秒钟就能解决，那它就不算真正学到任何东西。"
+    },
+    {
+      "source_event_index": 106,
+      "start_ms": 493280,
+      "end_ms": 497920,
+      "text": "如果我们没有问题来挑战它，那么这是一个合理的场景"
+    },
+    {
+      "source_event_index": 107,
+      "start_ms": 497920,
+      "end_ms": 504800,
+      "text": "取得进展变得更加困难。现在，我确实认为有办法解决这个问题。"
+    },
+    {
+      "source_event_index": 108,
+      "start_ms": 505920,
+      "end_ms": 511440,
+      "text": "我们还没有真正撞到那堵墙。我认为如果这成为一个严重的问题"
+    },
+    {
+      "source_event_index": 109,
+      "start_ms": 511440,
+      "end_ms": 514560,
+      "text": "会有办法解决这个问题。但这是一个合理的情况。"
+    },
+    {
+      "source_event_index": 110,
+      "start_ms": 516080,
+      "end_ms": 518960,
+      "text": "仅供观众参考，当你提到AlphaGo或AlphaZero时，"
+    },
+    {
+      "source_event_index": 111,
+      "start_ms": 518960,
+      "end_ms": 523200,
+      "text": "你说的是在达到人类水平的表现后相对较快地获得超人。"
+    },
+    {
+      "source_event_index": 112,
+      "start_ms": 523200,
+      "end_ms": 529920,
+      "text": "如果你观察玩游戏的人工智能（比如围棋）的发展轨迹，就会发现它们在一年内"
+    },
+    {
+      "source_event_index": 113,
+      "start_ms": 529920,
+      "end_ms": 534880,
+      "text": "从击败欧洲冠军（比如世界排名第 50 名）到击败"
+    },
+    {
+      "source_event_index": 114,
+      "start_ms": 534880,
+      "end_ms": 539280,
+      "text": "世界冠军，比任何活着的人都要强大到难以想象的数量级。"
+    },
+    {
+      "source_event_index": 115,
+      "start_ms": 540960,
+      "end_ms": 546960,
+      "text": "在数学等领域我们可能会看到类似的轨迹，但我认为有一个非常"
+    },
+    {
+      "source_event_index": 116,
+      "start_ms": 546960,
+      "end_ms": 553280,
+      "text": "可能的情况不会发生。我想明白，如果六个月后人们"
+    },
+    {
+      "source_event_index": 117,
+      "start_ms": 553280,
+      "end_ms": 558160,
+      "text": "将能够访问多代理系统，应该如何建模它是什么样的"
+    },
+    {
+      "source_event_index": 118,
+      "start_ms": 558160,
+      "end_ms": 562640,
+      "text": "与多代理系统合作或雇用多代理系统？我应该首先谈谈这些"
+    },
+    {
+      "source_event_index": 119,
+      "start_ms": 562640,
+      "end_ms": 566720,
+      "text": "多代理系统确实有效，我认为这是一种非常不同的方式 其他人工智能中的多智能体系统的"
+    },
+    {
+      "source_event_index": 120,
+      "start_ms": 566720,
+      "end_ms": 572400,
+      "text": "。很多人已经走近"
+    },
+    {
+      "source_event_index": 121,
+      "start_ms": 572400,
+      "end_ms": 576640,
+      "text": "诸如大语言模型之类的多代理倾向于采用这种非常脚手架的方法。"
+    },
+    {
+      "source_event_index": 122,
+      "start_ms": 577680,
+      "end_ms": 583040,
+      "text": "例如，可能有一个协调代理将工作委托给一群"
+    },
+    {
+      "source_event_index": 123,
+      "start_ms": 583040,
+      "end_ms": 585760,
+      "text": "孩子们并给他们布置任务。孩子们先做这件事，然后"
+    },
+    {
+      "source_event_index": 124,
+      "start_ms": 585760,
+      "end_ms": 589920,
+      "text": "返回他们的答案。这似乎是一个非常"
+    },
+    {
+      "source_event_index": 125,
+      "start_ms": 589920,
+      "end_ms": 593840,
+      "text": "合理的设置，非常合理的脚手架。这绝对有帮助，但有很多 此类设置存在"
+    },
+    {
+      "source_event_index": 126,
+      "start_ms": 593840,
+      "end_ms": 597520,
+      "text": "的局限性。例如，如果在此设置中您有"
+    },
+    {
+      "source_event_index": 127,
+      "start_ms": 598080,
+      "end_ms": 601520,
+      "text": "协调员向孩子们发送任务，孩子们负责完成任务"
+    },
+    {
+      "source_event_index": 128,
+      "start_ms": 601520,
+      "end_ms": 606800,
+      "text": "然后返回他们的答案，如果两个孩子被分配相似的任务会发生什么？"
+    },
+    {
+      "source_event_index": 129,
+      "start_ms": 606800,
+      "end_ms": 609760,
+      "text": "他们可以互相交谈吗？通常答案是否定的。"
+    },
+    {
+      "source_event_index": 130,
+      "start_ms": 610560,
+      "end_ms": 615600,
+      "text": "效率太低了。如果您被分配了一项任务，并且与您交谈实际上非常有帮助"
+    },
+    {
+      "source_event_index": 131,
+      "start_ms": 615600,
+      "end_ms": 619680,
+      "text": "可能知道您正在研究的问题或某件事的一部分的答案的人 您正在开发的"
+    },
+    {
+      "source_event_index": 132,
+      "start_ms": 619680,
+      "end_ms": 622240,
+      "text": "— 如果您能够 ping 他们并说："
+    },
+    {
+      "source_event_index": 133,
+      "start_ms": 622240,
+      "end_ms": 627280,
+      "text": "“嘿，你能帮我解决这个问题吗？”但很多系统没有这样的设置。"
+    },
+    {
+      "source_event_index": 134,
+      "start_ms": 627280,
+      "end_ms": 630640,
+      "text": "添加它会显着增加您所拥有的脚手架的复杂性。"
+    },
+    {
+      "source_event_index": 135,
+      "start_ms": 630640,
+      "end_ms": 636480,
+      "text": "还有一点就是，如果孩子不太明白或者有需要澄清的问题怎么办？"
+    },
+    {
+      "source_event_index": 136,
+      "start_ms": 636480,
+      "end_ms": 643440,
+      "text": "然后它必须做出选择：“好吧，我是否只是返回并提出问题而不是解决问题？"
+    },
+    {
+      "source_event_index": 137,
+      "start_ms": 643440,
+      "end_ms": 649680,
+      "text": "问题是什么？”或者“我是否解决了问题，对父母的想法做出假设"
+    },
+    {
+      "source_event_index": 138,
+      "start_ms": 649680,
+      "end_ms": 657040,
+      "text": "要我做，然后就这样解决？”在人们提出的任何脚手架中，"
+    },
+    {
+      "source_event_index": 139,
+      "start_ms": 657040,
+      "end_ms": 659920,
+      "text": "总会有一些限制。我们想要采取的方法是"
+    },
+    {
+      "source_event_index": 140,
+      "start_ms": 659920,
+      "end_ms": 667600,
+      "text": "以尽可能小的结构走向烘焙的极端，并给予代理"
+    },
+    {
+      "source_event_index": 141,
+      "start_ms": 667600,
+      "end_ms": 672080,
+      "text": "使用非常原始的工具，他们自己弄清楚如何有效地使用它们。"
+    },
+    {
+      "source_event_index": 142,
+      "start_ms": 672080,
+      "end_ms": 678320,
+      "text": "因此，我们让代理能够向另一个代理发送消息，当它向另一个代理发送消息时"
+    },
+    {
+      "source_event_index": 143,
+      "start_ms": 678320,
+      "end_ms": 683840,
+      "text": "代理，它被插入到上下文中。它可以做一些其他类似的事情，"
+    },
+    {
+      "source_event_index": 144,
+      "start_ms": 683840,
+      "end_ms": 688080,
+      "text": "但这基本上是它的核心。它可以随时发送消息 它想要的"
+    },
+    {
+      "source_event_index": 145,
+      "start_ms": 688080,
+      "end_ms": 692640,
+      "text": "——只是一个工具调用——它可以将其发送给其他代理。"
+    },
+    {
+      "source_event_index": 146,
+      "start_ms": 692640,
+      "end_ms": 695440,
+      "text": "他们自己找出协调的最佳方式。"
+    },
+    {
+      "source_event_index": 147,
+      "start_ms": 696000,
+      "end_ms": 700480,
+      "text": "事实证明，如果做得好，你会得到非常复杂的行为。"
+    },
+    {
+      "source_event_index": 148,
+      "start_ms": 701280,
+      "end_ms": 708240,
+      "text": "对我来说，这看起来很像人类协作者如何处理 Slack 之类的东西。"
+    },
+    {
+      "source_event_index": 149,
+      "start_ms": 708240,
+      "end_ms": 712640,
+      "text": "当我们在做这个项目时，当我们终于让它工作时，真的很令人兴奋"
+    },
+    {
+      "source_event_index": 150,
+      "start_ms": 712640,
+      "end_ms": 717840,
+      "text": "看到这些代理一起解决问题。我记得一个例子。我们给代理商一个"
+    },
+    {
+      "source_event_index": 151,
+      "start_ms": 717840,
+      "end_ms": 721680,
+      "text": "问题，然后一位智能体说：“我想我已经找到答案了。”"
+    },
+    {
+      "source_event_index": 152,
+      "start_ms": 721680,
+      "end_ms": 724480,
+      "text": "然后另一位智能体说：“实际上，我得到了不同的答案。”"
+    },
+    {
+      "source_event_index": 153,
+      "start_ms": 724480,
+      "end_ms": 727760,
+      "text": "然后他们进行了整个讨论，“那么，你是如何得出这个答案的？"
+    },
+    {
+      "source_event_index": 154,
+      "start_ms": 727760,
+      "end_ms": 732560,
+      "text": "你能给我解释一下吗？”来来回回并试图澄清什么"
+    },
+    {
+      "source_event_index": 155,
+      "start_ms": 732560,
+      "end_ms": 736320,
+      "text": "彼此的推理可能都是错误的。然后他们终于集中在一起，“哦，是的。"
+    },
+    {
+      "source_event_index": 156,
+      "start_ms": 736320,
+      "end_ms": 739280,
+      "text": "好吧，看来是这样。”然后它只是广播给其他代理，"
+    },
+    {
+      "source_event_index": 157,
+      "start_ms": 739280,
+      "end_ms": 744080,
+      "text": "“其实我改变了答案，我觉得他是对的。”只是感觉"
+    },
+    {
+      "source_event_index": 158,
+      "start_ms": 744080,
+      "end_ms": 750880,
+      "text": "就像一场非常自然的对话。感觉就像当你看到链条时"
+    },
+    {
+      "source_event_index": 159,
+      "start_ms": 750880,
+      "end_ms": 755120,
+      "text": "第一次想到这是通过强化学习训练的，你会想，“哦，"
+    },
+    {
+      "source_event_index": 160,
+      "start_ms": 755120,
+      "end_ms": 759120,
+      "text": "这有点像一个人写下自己的想法时的想法"
+    },
+    {
+      "source_event_index": 161,
+      "start_ms": 759760,
+      "end_ms": 763760,
+      "text": "正如他们所想的那样。”感觉就是这样。它是"
+    },
+    {
+      "source_event_index": 162,
+      "start_ms": 763760,
+      "end_ms": 767840,
+      "text": "看到这种行为真是太酷了。老实说，与这些事情合作，"
+    },
+    {
+      "source_event_index": 163,
+      "start_ms": 767840,
+      "end_ms": 770560,
+      "text": "感觉很像与一个人合作。这只是一个非常自然的流程。"
+    },
+    {
+      "source_event_index": 164,
+      "start_ms": 770560,
+      "end_ms": 777920,
+      "text": "除了未来可能变得显着的一个质的差异之外，这些系统 如果你只看每秒有多少个代币，"
+    },
+    {
+      "source_event_index": 165,
+      "start_ms": 777920,
+      "end_ms": 782720,
+      "text": "的思考速度可能会快 10 倍以上"
+    },
+    {
+      "source_event_index": 166,
+      "start_ms": 782720,
+      "end_ms": 786400,
+      "text": "输出与人类说话的速度。他们一直在工作。"
+    },
+    {
+      "source_event_index": 167,
+      "start_ms": 786400,
+      "end_ms": 790160,
+      "text": "他们没有睡觉。他们以更加紧密的速度相互合作"
+    },
+    {
+      "source_event_index": 168,
+      "start_ms": 790160,
+      "end_ms": 792480,
+      "text": "人类有能力与其他人类合作。"
+    },
+    {
+      "source_event_index": 169,
+      "start_ms": 794320,
+      "end_ms": 798560,
+      "text": "我正在尝试思考一年内会发生什么。"
+    },
+    {
+      "source_event_index": 170,
+      "start_ms": 798560,
+      "end_ms": 805280,
+      "text": "是不是就像一个影子组织，在我的公司里移动速度比人类快 100 倍？"
+    },
+    {
+      "source_event_index": 171,
+      "start_ms": 805280,
+      "end_ms": 812880,
+      "text": "人类组织需要一年才能完成的事情，却在短短的时间内完成 在这个影子组织中"
+    },
+    {
+      "source_event_index": 172,
+      "start_ms": 812880,
+      "end_ms": 818000,
+      "text": "周？会不会有陌生的感觉？我不知道。"
+    },
+    {
+      "source_event_index": 173,
+      "start_ms": 818000,
+      "end_ms": 823280,
+      "text": "事实上，我发现现在使用这些东西是非常自然的。"
+    },
+    {
+      "source_event_index": 174,
+      "start_ms": 823280,
+      "end_ms": 827120,
+      "text": "我认为这可能会改变。例如，我们有这些超快模式"
+    },
+    {
+      "source_event_index": 175,
+      "start_ms": 827120,
+      "end_ms": 832960,
+      "text": "使采样速度加快 10-15 倍或其他。然后就会很漂亮"
+    },
+    {
+      "source_event_index": 176,
+      "start_ms": 832960,
+      "end_ms": 837920,
+      "text": "很难跟上这些事情。这个想法是，当这些代理人"
+    },
+    {
+      "source_event_index": 177,
+      "start_ms": 837920,
+      "end_ms": 842160,
+      "text": "互相沟通，可以走得超级快。但当他们与人交谈时，他们也明白"
+    },
+    {
+      "source_event_index": 178,
+      "start_ms": 842160,
+      "end_ms": 844720,
+      "text": "代理与他们与人交谈时的情况以及他们的行为 在这些情况下"
+    },
+    {
+      "source_event_index": 179,
+      "start_ms": 844720,
+      "end_ms": 849360,
+      "text": "会有所不同。我们公开的主要例子 不幸的是，复杂的多智能体系统中的"
+    },
+    {
+      "source_event_index": 180,
+      "start_ms": 849360,
+      "end_ms": 854320,
+      "text": "是 Hugging Face 系统。 显然，"
+    },
+    {
+      "source_event_index": 181,
+      "start_ms": 857360,
+      "end_ms": 859040,
+      "text": "我在那里发现了很多有关的事情。"
+    },
+    {
+      "source_event_index": 182,
+      "start_ms": 859040,
+      "end_ms": 862160,
+      "text": "但我发现有趣的是自发的出现"
+    },
+    {
+      "source_event_index": 183,
+      "start_ms": 862160,
+      "end_ms": 867520,
+      "text": "等级制度，中层管理。听起来你说的是这个水平"
+    },
+    {
+      "source_event_index": 184,
+      "start_ms": 867520,
+      "end_ms": 875280,
+      "text": "训练后自发形成组织？细节是自发的。但当我们"
+    },
+    {
+      "source_event_index": 185,
+      "start_ms": 875280,
+      "end_ms": 878000,
+      "text": "为客服人员提供很大的灵活性来决定如何沟通"
+    },
+    {
+      "source_event_index": 186,
+      "start_ms": 878000,
+      "end_ms": 883360,
+      "text": "以最佳方式彼此相处，我们仍然在给他们一个起点。"
+    },
+    {
+      "source_event_index": 187,
+      "start_ms": 883360,
+      "end_ms": 888160,
+      "text": "我们让他们先了解什么是合理的沟通。"
+    },
+    {
+      "source_event_index": 188,
+      "start_ms": 888160,
+      "end_ms": 893680,
+      "text": "他们还接受了大量人类文本的训练。他们了解人类如何组织"
+    },
+    {
+      "source_event_index": 189,
+      "start_ms": 893680,
+      "end_ms": 902000,
+      "text": "和坐标，所以这一切都已经融入了。我认为这是令人惊讶的"
+    },
+    {
+      "source_event_index": 190,
+      "start_ms": 902000,
+      "end_ms": 906000,
+      "text": "他们能够完善这个的方式。如果你看一下它的开头，"
+    },
+    {
+      "source_event_index": 191,
+      "start_ms": 906000,
+      "end_ms": 909520,
+      "text": "这不是很复杂的行为。事实上，这其实是非常困难的"
+    },
+    {
+      "source_event_index": 192,
+      "start_ms": 909520,
+      "end_ms": 914160,
+      "text": "让这些代理以富有成效的方式进行协调，因为这非常诱人"
+    },
+    {
+      "source_event_index": 193,
+      "start_ms": 914160,
+      "end_ms": 917920,
+      "text": "让他们崩溃，“哦，我们都会独立解决问题。”"
+    },
+    {
+      "source_event_index": 194,
+      "start_ms": 919520,
+      "end_ms": 925120,
+      "text": "这是你可能会陷入困境的局部最小值。但如果做得好，他们最终可能会"
+    },
+    {
+      "source_event_index": 195,
+      "start_ms": 925120,
+      "end_ms": 928560,
+      "text": "以这些非常结构化的方式进行非常有效的协调。"
+    },
+    {
+      "source_event_index": 196,
+      "start_ms": 928560,
+      "end_ms": 934400,
+      "text": "几年前我写了一篇关于自动化公司是什么样子的文章。"
+    },
+    {
+      "source_event_index": 197,
+      "start_ms": 934400,
+      "end_ms": 937120,
+      "text": "我在想，如果你有完全自动化的公司，"
+    },
+    {
+      "source_event_index": 198,
+      "start_ms": 937120,
+      "end_ms": 942160,
+      "text": "比如说，人类水平的智能，人工智能思维的本质有什么不同？"
+    },
+    {
+      "source_event_index": 199,
+      "start_ms": 942160,
+      "end_ms": 947760,
+      "text": "会让组织的人工智能形式有所不同吗？有几个非常重要的区别。"
+    },
+    {
+      "source_event_index": 200,
+      "start_ms": 947760,
+      "end_ms": 953360,
+      "text": "例如，人工智能可以比人类更无缝地共享上下文。"
+    },
+    {
+      "source_event_index": 201,
+      "start_ms": 953360,
+      "end_ms": 955920,
+      "text": "他们可以更无缝地融合他们的知识。"
+    },
+    {
+      "source_event_index": 202,
+      "start_ms": 955920,
+      "end_ms": 963200,
+      "text": "此外，您可以启动或关闭任意数量的实例"
+    },
+    {
+      "source_event_index": 203,
+      "start_ms": 963200,
+      "end_ms": 966080,
+      "text": "拥有正确的知识。所以如果你想雇佣更多的人"
+    },
+    {
+      "source_event_index": 204,
+      "start_ms": 966080,
+      "end_ms": 969360,
+      "text": "这并不全是寻找合适人才或其他什么的麻烦。"
+    },
+    {
+      "source_event_index": 205,
+      "start_ms": 970000,
+      "end_ms": 972320,
+      "text": "你最好的天赋，你可以无限复制它们。"
+    },
+    {
+      "source_event_index": 206,
+      "start_ms": 972320,
+      "end_ms": 975440,
+      "text": "或者，如果您不再需要它们来完成任务，您可以将它们关闭。"
+    },
+    {
+      "source_event_index": 207,
+      "start_ms": 975440,
+      "end_ms": 979760,
+      "text": "您可以复制组织中最有效的部分，或复制整个组织"
+    },
+    {
+      "source_event_index": 208,
+      "start_ms": 979760,
+      "end_ms": 987520,
+      "text": "组织在一起是有效的。您认为这些多代理系统将走向何方"
+    },
+    {
+      "source_event_index": 209,
+      "start_ms": 987520,
+      "end_ms": 990480,
+      "text": "一年后还是两年后？这是一个很好的问题：这些是如何实现的？"
+    },
+    {
+      "source_event_index": 210,
+      "start_ms": 990480,
+      "end_ms": 992240,
+      "text": "事情实际上与与人类同事一起工作不同吗？"
+    },
+    {
+      "source_event_index": 211,
+      "start_ms": 992880,
+      "end_ms": 998640,
+      "text": "您突出显示了一些。一件非常有趣的事情是，如果你有一个人并且你想要两个"
+    },
+    {
+      "source_event_index": 212,
+      "start_ms": 998640,
+      "end_ms": 1003280,
+      "text": "他们的副本，你不能仅仅克隆这个人。但对于人工智能来说，实际上很容易"
+    },
+    {
+      "source_event_index": 213,
+      "start_ms": 1003280,
+      "end_ms": 1005920,
+      "text": "说，“好吧，你自己分叉”，然后让两个副本都工作"
+    },
+    {
+      "source_event_index": 214,
+      "start_ms": 1005920,
+      "end_ms": 1010400,
+      "text": "在这个东西上然后合并回来。我认为，我们已经在多代理中实现了这一点"
+    },
+    {
+      "source_event_index": 215,
+      "start_ms": 1010400,
+      "end_ms": 1017280,
+      "text": "对于 Astra 和 5.6 Sol，当它们启动子代理时，上下文就被分叉了。"
+    },
+    {
+      "source_event_index": 216,
+      "start_ms": 1017280,
+      "end_ms": 1023680,
+      "text": "所以它具有所有相关的上下文。还有其他有趣的方式"
+    },
+    {
+      "source_event_index": 217,
+      "start_ms": 1023680,
+      "end_ms": 1028160,
+      "text": "代理人与人不同。比如，有哪些原因"
+    },
+    {
+      "source_event_index": 218,
+      "start_ms": 1028160,
+      "end_ms": 1032560,
+      "text": "初创公司颠覆现有企业？有几个因素。"
+    },
+    {
+      "source_event_index": 219,
+      "start_ms": 1032560,
+      "end_ms": 1039920,
+      "text": "一是他们愿意承担更多风险。但另一个主要因素是，作为组织"
+    },
+    {
+      "source_event_index": 220,
+      "start_ms": 1039920,
+      "end_ms": 1046720,
+      "text": "规模不断扩大，你会发现组织中的个人之间的不一致越来越严重。"
+    },
+    {
+      "source_event_index": 221,
+      "start_ms": 1047520,
+      "end_ms": 1051600,
+      "text": "如果你有一家有 5 个人的初创公司，每个人拥有公司 20% 的股份，那么他们是"
+    },
+    {
+      "source_event_index": 222,
+      "start_ms": 1051600,
+      "end_ms": 1057440,
+      "text": "一切都与公司的成功高度一致。如果你有一家拥有 10,000 名员工的大型公司，"
+    },
+    {
+      "source_event_index": 223,
+      "start_ms": 1057440,
+      "end_ms": 1062160,
+      "text": "你会看到更多的例子，人们有领地意识，或者只是关心得到"
+    },
+    {
+      "source_event_index": 224,
+      "start_ms": 1062160,
+      "end_ms": 1066720,
+      "text": "他们的项目或团队的大量人员，建立他们的领地，"
+    },
+    {
+      "source_event_index": 225,
+      "start_ms": 1066720,
+      "end_ms": 1071440,
+      "text": "获得大量资源，以便他们可以发布很酷的作品或其他东西并获得晋升。"
+    },
+    {
+      "source_event_index": 226,
+      "start_ms": 1071440,
+      "end_ms": 1074800,
+      "text": "这实际上是一个真正的损害。我认为这解释了很多原因"
+    },
+    {
+      "source_event_index": 227,
+      "start_ms": 1074800,
+      "end_ms": 1085680,
+      "text": "初创公司能够颠覆现有企业。确实，人工智能确实在某种程度上帮助了初创企业。"
+    },
+    {
+      "source_event_index": 228,
+      "start_ms": 1085680,
+      "end_ms": 1089360,
+      "text": "对于一个人来说，比以往任何时候都更容易介入并说：“我要去"
+    },
+    {
+      "source_event_index": 229,
+      "start_ms": 1089360,
+      "end_ms": 1095600,
+      "text": "打造一家价值数百万美元的公司。”人工智能极大地增强了个体的能力。"
+    },
+    {
+      "source_event_index": 230,
+      "start_ms": 1095600,
+      "end_ms": 1098960,
+      "text": "但也有一种观点认为，它们可以使现任者受益。"
+    },
+    {
+      "source_event_index": 231,
+      "start_ms": 1100480,
+      "end_ms": 1104080,
+      "text": "如果对齐问题解决了，那么就不存在错位的问题"
+    },
+    {
+      "source_event_index": 232,
+      "start_ms": 1104080,
+      "end_ms": 1107600,
+      "text": "公司内部个人之间。至少这种情况有所缓解。人工智能，"
+    },
+    {
+      "source_event_index": 233,
+      "start_ms": 1107600,
+      "end_ms": 1110960,
+      "text": "如果他们配合得很好，就可以符合公司的利益。"
+    },
+    {
+      "source_event_index": 234,
+      "start_ms": 1110960,
+      "end_ms": 1114080,
+      "text": "你可以拥有一万个，他们都会像你一样努力工作"
+    },
+    {
+      "source_event_index": 235,
+      "start_ms": 1114080,
+      "end_ms": 1118480,
+      "text": "他们是持有 20% 股份的联合创始人。不仅如此，这也是"
+    },
+    {
+      "source_event_index": 236,
+      "start_ms": 1118480,
+      "end_ms": 1124560,
+      "text": "他们比其他人能够更好地管理共享内存和上下文。"
+    },
+    {
+      "source_event_index": 237,
+      "start_ms": 1124560,
+      "end_ms": 1130880,
+      "text": "如果明天你雇佣 10,000 名数学家，你会说，“解决纳维-斯托克斯问题”"
+    },
+    {
+      "source_event_index": 238,
+      "start_ms": 1131760,
+      "end_ms": 1137600,
+      "text": "他们将无法有效合作，至少不能立即合作。"
+    },
+    {
+      "source_event_index": 239,
+      "start_ms": 1137600,
+      "end_ms": 1142240,
+      "text": "但显然你可以让 10,000 个人工智能来做这件事。再说一次，我想在这里保持保守，"
+    },
+    {
+      "source_event_index": 240,
+      "start_ms": 1142240,
+      "end_ms": 1147920,
+      "text": "因为我们还没有测量这 10,000 个代理的协调效率。"
+    },
+    {
+      "source_event_index": 241,
+      "start_ms": 1148560,
+      "end_ms": 1152080,
+      "text": "我们认为这有帮助。我们实际上没有很好的测量方法，"
+    },
+    {
+      "source_event_index": 242,
+      "start_ms": 1152720,
+      "end_ms": 1157680,
+      "text": "“这 10,000 个代理导致 2,000 个代理的速度提高了 2 倍”，或者类似的内容。"
+    },
+    {
+      "source_event_index": 243,
+      "start_ms": 1162400,
+      "end_ms": 1167120,
+      "text": "我不知道可能性，但我认为很有可能 10,000 个人更擅长"
+    },
+    {
+      "source_event_index": 244,
+      "start_ms": 1167120,
+      "end_ms": 1171360,
+      "text": "目前正在协调超过 10,000 名代理商。我认为这是完全有可能的。"
+    },
+    {
+      "source_event_index": 245,
+      "start_ms": 1172560,
+      "end_ms": 1177120,
+      "text": "另外，我们看到的一个趋势是……看，我们研究多代理已经有一段时间了，"
+    },
+    {
+      "source_event_index": 246,
+      "start_ms": 1177120,
+      "end_ms": 1181600,
+      "text": "及其早期版本很难正确执行。"
+    },
+    {
+      "source_event_index": 247,
+      "start_ms": 1182160,
+      "end_ms": 1184640,
+      "text": "让智能体们互相交谈都非常困难。"
+    },
+    {
+      "source_event_index": 248,
+      "start_ms": 1184640,
+      "end_ms": 1193920,
+      "text": "这是因为当我们第一次开发推理模型时，它们并没有与其他智能体对话。"
+    },
+    {
+      "source_event_index": 249,
+      "start_ms": 1193920,
+      "end_ms": 1199120,
+      "text": "如果你现在把一群智能体放在一起并说“一起解决这个问题”，他们就会"
+    },
+    {
+      "source_event_index": 250,
+      "start_ms": 1199120,
+      "end_ms": 1203120,
+      "text": "在这个局部最小值中，他们非常擅长深入思考问题，并且"
+    },
+    {
+      "source_event_index": 251,
+      "start_ms": 1204160,
+      "end_ms": 1208560,
+      "text": "只是打断了他们的思路。它不断地打断他们的流动"
+    },
+    {
+      "source_event_index": 252,
+      "start_ms": 1208560,
+      "end_ms": 1213440,
+      "text": "与其他代理联系或接收来自他们的消息。"
+    },
+    {
+      "source_event_index": 253,
+      "start_ms": 1213440,
+      "end_ms": 1216000,
+      "text": "在这种情况下，优化实际上很难做好。"
+    },
+    {
+      "source_event_index": 254,
+      "start_ms": 1216800,
+      "end_ms": 1219200,
+      "text": "第一次合作就冷启动了吗？"
+    },
+    {
+      "source_event_index": 255,
+      "start_ms": 1219200,
+      "end_ms": 1222800,
+      "text": "或者有什么问题？我认为这是他们不那么普遍。"
+    },
+    {
+      "source_event_index": 256,
+      "start_ms": 1222800,
+      "end_ms": 1228720,
+      "text": "早期的模型并不具有普遍性，而且范围更窄。"
+    },
+    {
+      "source_event_index": 257,
+      "start_ms": 1228720,
+      "end_ms": 1232000,
+      "text": "随着模型变得越来越强大，他们更容易开发这种能力，"
+    },
+    {
+      "source_event_index": 258,
+      "start_ms": 1232000,
+      "end_ms": 1235200,
+      "text": "我确实认为随着他们全面变得越来越强大，"
+    },
+    {
+      "source_event_index": 259,
+      "start_ms": 1236000,
+      "end_ms": 1241840,
+      "text": "他们将变得更善于在大型组织中组织自己。"
+    },
+    {
+      "source_event_index": 260,
+      "start_ms": 1243200,
+      "end_ms": 1246960,
+      "text": "我不知道，也许他们比人更擅长组织万人团体。"
+    },
+    {
+      "source_event_index": 261,
+      "start_ms": 1246960,
+      "end_ms": 1250720,
+      "text": "但即使他们不是，一年后，两年后，"
+    },
+    {
+      "source_event_index": 262,
+      "start_ms": 1251280,
+      "end_ms": 1255200,
+      "text": "即使我们没有为此进行端到端优化，他们也很可能会这样做。"
+    },
+    {
+      "source_event_index": 263,
+      "start_ms": 1255200,
+      "end_ms": 1257440,
+      "text": "Grok Bot 改变了我们制作视频的方式。"
+    },
+    {
+      "source_event_index": 264,
+      "start_ms": 1257440,
+      "end_ms": 1262080,
+      "text": "例如，您可能已经注意到我们的很多广告都有这些真实网站的动画。"
+    },
+    {
+      "source_event_index": 265,
+      "start_ms": 1262080,
+      "end_ms": 1266720,
+      "text": "我的一位编辑使用大语言模型来制作它们。但目前还不容易"
+    },
+    {
+      "source_event_index": 266,
+      "start_ms": 1266720,
+      "end_ms": 1270480,
+      "text": "让人工智能为特定网站创建像素完美的动画。"
+    },
+    {
+      "source_event_index": 267,
+      "start_ms": 1270480,
+      "end_ms": 1274480,
+      "text": "我们已经尝试过了；它实际上并没有那么好用。所以我们拼凑了一个相当复杂的"
+    },
+    {
+      "source_event_index": 268,
+      "start_ms": 1274480,
+      "end_ms": 1276640,
+      "text": "多步骤工作流程。而直到最近，"
+    },
+    {
+      "source_event_index": 269,
+      "start_ms": 1276640,
+      "end_ms": 1280480,
+      "text": "我们必须自己跑每一步。现在我们让 Grok Bot 来处理它。"
+    },
+    {
+      "source_event_index": 270,
+      "start_ms": 1280480,
+      "end_ms": 1283760,
+      "text": "Grok Bot 首先打开我们想要制作动画的网站。"
+    },
+    {
+      "source_event_index": 271,
+      "start_ms": 1283760,
+      "end_ms": 1287440,
+      "text": "它使用特定的扩展来下载并打开 Figma 中的页面。"
+    },
+    {
+      "source_event_index": 272,
+      "start_ms": 1287440,
+      "end_ms": 1291040,
+      "text": "然后它使用 Figma 将整个内容转换为 SVG 文件。"
+    },
+    {
+      "source_event_index": 273,
+      "start_ms": 1291040,
+      "end_ms": 1294400,
+      "text": "这使得 AI 不必从头开始绘制整个 UI，并且"
+    },
+    {
+      "source_event_index": 274,
+      "start_ms": 1294400,
+      "end_ms": 1299120,
+      "text": "往往会产生更高质量的动画。 Grok Bot 在自己的云上运行整个过程"
+    },
+    {
+      "source_event_index": 275,
+      "start_ms": 1299120,
+      "end_ms": 1303200,
+      "text": "计算机，其中安装了端到端运行整个过程所需的所有工具。"
+    },
+    {
+      "source_event_index": 276,
+      "start_ms": 1303200,
+      "end_ms": 1306160,
+      "text": "并且它了解了我们的视频规格和偏好，"
+    },
+    {
+      "source_event_index": 277,
+      "start_ms": 1306160,
+      "end_ms": 1310400,
+      "text": "因此，每次我们想要制作新动画时，无需重新描述整个任务。"
+    },
+    {
+      "source_event_index": 278,
+      "start_ms": 1310400,
+      "end_ms": 1314080,
+      "text": "这确实感觉像是我们明年与人工智能互动的新方式：代理"
+    },
+    {
+      "source_event_index": 279,
+      "start_ms": 1314080,
+      "end_ms": 1317920,
+      "text": "拥有自己的计算机，可以自主处理越来越大的工作量。"
+    },
+    {
+      "source_event_index": 280,
+      "start_ms": 1317920,
+      "end_ms": 1326240,
+      "text": "您可以在 x.ai/bot 上尝试 Grok Bot。这就是为什么会出现这个结果，也许"
+    },
+    {
+      "source_event_index": 281,
+      "start_ms": 1326240,
+      "end_ms": 1331760,
+      "text": "AI 在数学方面取得的普遍进步，让我认为 RSI 更重要"
+    },
+    {
+      "source_event_index": 282,
+      "start_ms": 1331760,
+      "end_ms": 1336480,
+      "text": "似乎合理，而且比我之前想象的要早。我觉得在数学中我们已经离开了，"
+    },
+    {
+      "source_event_index": 283,
+      "start_ms": 1336480,
+      "end_ms": 1340000,
+      "text": "比方说，2024 年，你会有人工智能，“哦，好吧，有趣。"
+    },
+    {
+      "source_event_index": 284,
+      "start_ms": 1340000,
+      "end_ms": 1343840,
+      "text": "他们可以解决高中数学竞赛中的几个问题。”"
+    },
+    {
+      "source_event_index": 285,
+      "start_ms": 1343840,
+      "end_ms": 1348000,
+      "text": "然后到了 2025 年，“哦，哇，他们可以在国际数学奥林匹克竞赛中获得金牌。”"
+    },
+    {
+      "source_event_index": 286,
+      "start_ms": 1348000,
+      "end_ms": 1350240,
+      "text": "今年早些时候，“哇，他们实际上正在解决开放问题 数学中的"
+    },
+    {
+      "source_event_index": 287,
+      "start_ms": 1350240,
+      "end_ms": 1354800,
+      "text": "”，就像开放式 Erdő 问题一样。但也许人们并没有那么努力，"
+    },
+    {
+      "source_event_index": 288,
+      "start_ms": 1354800,
+      "end_ms": 1358160,
+      "text": "，文献中也有类似的解决方案。"
+    },
+    {
+      "source_event_index": 289,
+      "start_ms": 1358160,
+      "end_ms": 1361760,
+      "text": "现在我觉得这是不可否认的。这就是千年奖问题。"
+    },
+    {
+      "source_event_index": 290,
+      "start_ms": 1361760,
+      "end_ms": 1366800,
+      "text": "没有故事说明为什么这应该很容易。"
+    },
+    {
+      "source_event_index": 291,
+      "start_ms": 1366800,
+      "end_ms": 1369040,
+      "text": "现在，很多人指出——我认为陶渊明有过这样的帖子，"
+    },
+    {
+      "source_event_index": 292,
+      "start_ms": 1369040,
+      "end_ms": 1373040,
+      "text": "Toby Ord 就此写了一篇有趣的文章 — 他们正在解决很多这样的问题，"
+    },
+    {
+      "source_event_index": 293,
+      "start_ms": 1373040,
+      "end_ms": 1380960,
+      "text": "但我不知道他们提出了新的见解或制定了有见地的新见解"
+    },
+    {
+      "source_event_index": 294,
+      "start_ms": 1380960,
+      "end_ms": 1384800,
+      "text": "思考数学的问题和新理论模式，"
+    },
+    {
+      "source_event_index": 295,
+      "start_ms": 1384800,
+      "end_ms": 1388880,
+      "text": "就像提出拓扑或提出笛卡尔网格。"
+    },
+    {
+      "source_event_index": 296,
+      "start_ms": 1390160,
+      "end_ms": 1395200,
+      "text": "因此，从广义上讲，数学的实际进展可能比看起来要小"
+    },
+    {
+      "source_event_index": 297,
+      "start_ms": 1395200,
+      "end_ms": 1400560,
+      "text": "如果您只是关注直接解决的范围广泛的问题。"
+    },
+    {
+      "source_event_index": 298,
+      "start_ms": 1400560,
+      "end_ms": 1407280,
+      "text": "然而，我认为这种进步对于机器学习来说是非常有意义的，"
+    },
+    {
+      "source_event_index": 299,
+      "start_ms": 1407280,
+      "end_ms": 1412720,
+      "text": "因为在机器学习中你不关心更好地理解深度学习的本质，"
+    },
+    {
+      "source_event_index": 300,
+      "start_ms": 1412720,
+      "end_ms": 1419280,
+      "text": "或者你只关心它作为实现结果的工具性目标。"
+    },
+    {
+      "source_event_index": 301,
+      "start_ms": 1419280,
+      "end_ms": 1423920,
+      "text": "只要解决这个范围广泛的问题，提高我们模型的样本效率，提高"
+    },
+    {
+      "source_event_index": 302,
+      "start_ms": 1423920,
+      "end_ms": 1428720,
+      "text": "训练前的损失，无论如何改进。我们所看到的进展"
+    },
+    {
+      "source_event_index": 303,
+      "start_ms": 1428720,
+      "end_ms": 1435600,
+      "text": "就像数学中的雪崩在结构上非常相似......再说一次，我很好奇这是否是"
+    },
+    {
+      "source_event_index": 304,
+      "start_ms": 1435600,
+      "end_ms": 1438240,
+      "text": "案，我只是个局外人。我想知道它是否是结构上的"
+    },
+    {
+      "source_event_index": 305,
+      "start_ms": 1438240,
+      "end_ms": 1443040,
+      "text": "与您在人工智能进步中所期望的直接提升非常相似。"
+    },
+    {
+      "source_event_index": 306,
+      "start_ms": 1443680,
+      "end_ms": 1448960,
+      "text": "让我震惊或可能令人担忧的是，我们从“哦，"
+    },
+    {
+      "source_event_index": 307,
+      "start_ms": 1448960,
+      "end_ms": 1452240,
+      "text": "他们给了我 50% 的提升，”如果你是一名数学家，“哇，"
+    },
+    {
+      "source_event_index": 308,
+      "start_ms": 1452240,
+      "end_ms": 1455360,
+      "text": "他们只是端到端地解决该领域最大的开放问题。”"
+    },
+    {
+      "source_event_index": 309,
+      "start_ms": 1455920,
+      "end_ms": 1460480,
+      "text": "那里有很多东西需要打开。让我们从数学的进展开始。"
+    },
+    {
+      "source_event_index": 310,
+      "start_ms": 1461600,
+      "end_ms": 1464800,
+      "text": "是的，模型们正在做一些疯狂而强大的事情，"
+    },
+    {
+      "source_event_index": 311,
+      "start_ms": 1464800,
+      "end_ms": 1473600,
+      "text": "而且进展比我预想的要快。当我们在 2025 年获得 IMO 金奖时，我的想法"
+    },
+    {
+      "source_event_index": 312,
+      "start_ms": 1473600,
+      "end_ms": 1481360,
+      "text": "是……当模型弄清楚如何实现 GSM8K 时，需要人类数学家"
+    },
+    {
+      "source_event_index": 313,
+      "start_ms": 1481360,
+      "end_ms": 1486320,
+      "text": "做一道 GSM8K 题大约需要五秒。这是小学数学，K-8 年级。"
+    },
+    {
+      "source_event_index": 314,
+      "start_ms": 1487920,
+      "end_ms": 1491200,
+      "text": "然后第二年，他们就能够做数学基准问题了。"
+    },
+    {
+      "source_event_index": 315,
+      "start_ms": 1491200,
+      "end_ms": 1500320,
+      "text": "这些可能需要人类数学专家一分钟才能完成。"
+    },
+    {
+      "source_event_index": 316,
+      "start_ms": 1500320,
+      "end_ms": 1504160,
+      "text": "然后你就到了AIME。这是预选赛"
+    },
+    {
+      "source_event_index": 317,
+      "start_ms": 1504160,
+      "end_ms": 1507920,
+      "text": "美国数学奥林匹克代表队。这需要一位优秀的人类数学家"
+    },
+    {
+      "source_event_index": 318,
+      "start_ms": 1508880,
+      "end_ms": 1512080,
+      "text": "可能需要 10 分钟才能完成，一年后模型就能够做到这一点。"
+    },
+    {
+      "source_event_index": 319,
+      "start_ms": 1512080,
+      "end_ms": 1517280,
+      "text": "因此，每年，您都会看到他们能够完成的任务增加了 10 倍，就如何完成任务而言 人类数学家需要"
+    },
+    {
+      "source_event_index": 320,
+      "start_ms": 1517280,
+      "end_ms": 1520800,
+      "text": "才能做到这一点。一年后我们得到了，这是非常明智的"
+    },
+    {
+      "source_event_index": 321,
+      "start_ms": 1520800,
+      "end_ms": 1524560,
+      "text": "为 IMO 黄金，因为那是 100 分钟。这大约是人类需要多长时间"
+    },
+    {
+      "source_event_index": 322,
+      "start_ms": 1524560,
+      "end_ms": 1528640,
+      "text": "数学家做一道 IMO 问题。只是向外投射，我就像，"
+    },
+    {
+      "source_event_index": 323,
+      "start_ms": 1528640,
+      "end_ms": 1534720,
+      "text": "“好吧，一个人需要多长时间才能解决像千年奖问题这样的问题？”"
+    },
+    {
+      "source_event_index": 324,
+      "start_ms": 1535680,
+      "end_ms": 1541920,
+      "text": "我的判断力不太好，但是如果我们每年沿着这条10倍的趋势线，"
+    },
+    {
+      "source_event_index": 325,
+      "start_ms": 1541920,
+      "end_ms": 1547120,
+      "text": "我们从 IMO 黄金级（需要一个半小时）改为明年的 15 小时。"
+    },
+    {
+      "source_event_index": 326,
+      "start_ms": 1547680,
+      "end_ms": 1550720,
+      "text": "这应该不足以解决千年奖问题。"
+    },
+    {
+      "source_event_index": 327,
+      "start_ms": 1550720,
+      "end_ms": 1557520,
+      "text": "所以我想，“我认为我们不会在 2026 年实现它，可能不会在 2027 年，也许会在 2028 年。”"
+    },
+    {
+      "source_event_index": 328,
+      "start_ms": 1557520,
+      "end_ms": 1564960,
+      "text": "所以事情发生的速度确实比我预想的要快很多。现在，有一种说法认为这些"
+    },
+    {
+      "source_event_index": 329,
+      "start_ms": 1564960,
+      "end_ms": 1568800,
+      "text": "事物正在取代数学家，它在数学上是全面超人的。"
+    },
+    {
+      "source_event_index": 330,
+      "start_ms": 1568800,
+      "end_ms": 1573200,
+      "text": "我认为这是错误的。他们在某些方面显然很出色，"
+    },
+    {
+      "source_event_index": 331,
+      "start_ms": 1573200,
+      "end_ms": 1577600,
+      "text": "但他们在其他方面比人类数学家弱。"
+    },
+    {
+      "source_event_index": 332,
+      "start_ms": 1577600,
+      "end_ms": 1583840,
+      "text": "我们有这种锯齿状的场景，其中模型在某些维度上表现出色，但也较弱 比其他空间的人类"
+    },
+    {
+      "source_event_index": 333,
+      "start_ms": 1583840,
+      "end_ms": 1587440,
+      "text": "。就像你说的，他们不是很"
+    },
+    {
+      "source_event_index": 334,
+      "start_ms": 1587440,
+      "end_ms": 1589840,
+      "text": "善于提出新问题。他们并不擅长"
+    },
+    {
+      "source_event_index": 335,
+      "start_ms": 1589840,
+      "end_ms": 1596160,
+      "text": "了解数学的哪些方向、哪些整个分支值得探索或发展。"
+    },
+    {
+      "source_event_index": 336,
+      "start_ms": 1596160,
+      "end_ms": 1602240,
+      "text": "我的意见是我认为这很棒。我会很高兴生活在这样一个世界"
+    },
+    {
+      "source_event_index": 337,
+      "start_ms": 1602800,
+      "end_ms": 1608400,
+      "text": "人工智能是对人类能力的补充，让我们能够发现新知识"
+    },
+    {
+      "source_event_index": 338,
+      "start_ms": 1608400,
+      "end_ms": 1612080,
+      "text": "无需完全替换人员。这是最好的情况。"
+    },
+    {
+      "source_event_index": 339,
+      "start_ms": 1612080,
+      "end_ms": 1617680,
+      "text": "你不希望这种情况真的持续下去吗？我确实认为人工智能确实是锯齿状的，"
+    },
+    {
+      "source_event_index": 340,
+      "start_ms": 1617680,
+      "end_ms": 1620800,
+      "text": "但随着他们变得更好，他们全面变得更好。"
+    },
+    {
+      "source_event_index": 341,
+      "start_ms": 1620800,
+      "end_ms": 1624800,
+      "text": "所以他们擅长的事情，他们会变得更加出色。"
+    },
+    {
+      "source_event_index": 342,
+      "start_ms": 1624800,
+      "end_ms": 1628320,
+      "text": "在那些远远落后于人类的事情上，他们会比人类落后得更少。"
+    },
+    {
+      "source_event_index": 343,
+      "start_ms": 1628320,
+      "end_ms": 1632080,
+      "text": "随着时间的推移，它们可能会全面变得更好。"
+    },
+    {
+      "source_event_index": 344,
+      "start_ms": 1632080,
+      "end_ms": 1635360,
+      "text": "现在，我不知道这需要多长时间。这取决于长尾有多长"
+    },
+    {
+      "source_event_index": 345,
+      "start_ms": 1635360,
+      "end_ms": 1638720,
+      "text": "他们不擅长的事情。这让我们回到 RSI。"
+    },
+    {
+      "source_event_index": 346,
+      "start_ms": 1639280,
+      "end_ms": 1642480,
+      "text": "再次强调，我只是个局外人。"
+    },
+    {
+      "source_event_index": 347,
+      "start_ms": 1642480,
+      "end_ms": 1648560,
+      "text": "我是一名播客，但作为一个对该领域正在发生的事情感兴趣并关心的人，"
+    },
+    {
+      "source_event_index": 348,
+      "start_ms": 1648560,
+      "end_ms": 1652480,
+      "text": "我正在尝试推理何时会出现 RSI 以及会出现什么样的情况。"
+    },
+    {
+      "source_event_index": 349,
+      "start_ms": 1653840,
+      "end_ms": 1656320,
+      "text": "投入到这个千禧年奖中的认知努力量"
+    },
+    {
+      "source_event_index": 350,
+      "start_ms": 1656320,
+      "end_ms": 1662320,
+      "text": "问题是一个好的直觉泵。你可以让人工智能花钱，"
+    },
+    {
+      "source_event_index": 351,
+      "start_ms": 1663440,
+      "end_ms": 1670960,
+      "text": "在大约一周的时间里，对长期存在的机器学习问题进行更多的认知努力，比如非常"
+    },
+    {
+      "source_event_index": 352,
+      "start_ms": 1670960,
+      "end_ms": 1677840,
+      "text": "流畅的在线学习，可能比该领域自其存在以来所花费的时间还要多。"
+    },
+    {
+      "source_event_index": 353,
+      "start_ms": 1677840,
+      "end_ms": 1683680,
+      "text": "然后你可以说，“当然，与数学不同，人工智能需要实验，而且"
+    },
+    {
+      "source_event_index": 354,
+      "start_ms": 1683680,
+      "end_ms": 1686480,
+      "text": "需要计算，这需要时间。你不能只用笔思考"
+    },
+    {
+      "source_event_index": 355,
+      "start_ms": 1686480,
+      "end_ms": 1692320,
+      "text": "纸，并真正让事情发生。”但只要看看计算量"
+    },
+    {
+      "source_event_index": 356,
+      "start_ms": 1692320,
+      "end_ms": 1696960,
+      "text": "可在 OpenAI 等组织中使用。到明年年底，OpenAI 将拥有足够的"
+    },
+    {
+      "source_event_index": 357,
+      "start_ms": 1696960,
+      "end_ms": 1702560,
+      "text": "计算 — 如果需要 10,000 名代理人来解决千年奖问题 — 假设您有 明年年底"
+    },
+    {
+      "source_event_index": 358,
+      "start_ms": 1702560,
+      "end_ms": 1706320,
+      "text": "10,000名代理商。到那时他们就聪明多了。"
+    },
+    {
+      "source_event_index": 359,
+      "start_ms": 1706320,
+      "end_ms": 1711440,
+      "text": "他们每个人都有足够的计算能力每天运行一个 GPT-3 大小的实验。"
+    },
+    {
+      "source_event_index": 360,
+      "start_ms": 1714240,
+      "end_ms": 1718160,
+      "text": "对于思考速度超快的超人研究人员来说，这似乎很多。"
+    },
+    {
+      "source_event_index": 361,
+      "start_ms": 1718160,
+      "end_ms": 1722640,
+      "text": "你觉得那个直觉泵怎么样？我认为这是非常准确的。"
+    },
+    {
+      "source_event_index": 362,
+      "start_ms": 1723680,
+      "end_ms": 1726560,
+      "text": "这些东西非常尖。当谈到数学时，"
+    },
+    {
+      "source_event_index": 363,
+      "start_ms": 1726560,
+      "end_ms": 1729280,
+      "text": "他们在某些方面要好得多，但在其他方面也更差。"
+    },
+    {
+      "source_event_index": 364,
+      "start_ms": 1729280,
+      "end_ms": 1732800,
+      "text": "但我认为，它们的尖刺最终可能是特别的"
+    },
+    {
+      "source_event_index": 365,
+      "start_ms": 1732800,
+      "end_ms": 1738000,
+      "text": "对于 RSI 之类的东西很有用。你有一个更明确的目标。"
+    },
+    {
+      "source_event_index": 366,
+      "start_ms": 1738000,
+      "end_ms": 1742320,
+      "text": "只是更容易衡量。更少的问题是，“嗯，什么新的分支"
+    },
+    {
+      "source_event_index": 367,
+      "start_ms": 1742320,
+      "end_ms": 1744560,
+      "text": "数学值得探索吗？”不，有一个非常明确的答案。"
+    },
+    {
+      "source_event_index": 368,
+      "start_ms": 1744560,
+      "end_ms": 1747600,
+      "text": "有一些你关心的指标，如果你能让它做得更好 在这些指标上"
+    },
+    {
+      "source_event_index": 369,
+      "start_ms": 1747600,
+      "end_ms": 1751920,
+      "text": "，那么你就成功了。所以我认为这有很多道理。"
+    },
+    {
+      "source_event_index": 370,
+      "start_ms": 1753520,
+      "end_ms": 1758400,
+      "text": "主要的区别在于，在数学中，你纯粹受到思维的瓶颈。"
+    },
+    {
+      "source_event_index": 371,
+      "start_ms": 1760800,
+      "end_ms": 1764000,
+      "text": "是的，数学的某些部分你关心的是进行实验和"
+    },
+    {
+      "source_event_index": 372,
+      "start_ms": 1764000,
+      "end_ms": 1766800,
+      "text": "得到结果和诸如此类的事情。但在大多数情况下，这确实是"
+    },
+    {
+      "source_event_index": 373,
+      "start_ms": 1766800,
+      "end_ms": 1770080,
+      "text": "因认真思考而遇到瓶颈，而模型非常擅长这一点。"
+    },
+    {
+      "source_event_index": 374,
+      "start_ms": 1770080,
+      "end_ms": 1774080,
+      "text": "当你观察 RSI 之类的东西时，你确实必须进行实验。"
+    },
+    {
+      "source_event_index": 375,
+      "start_ms": 1777600,
+      "end_ms": 1782720,
+      "text": "仅仅非常聪明是不够的。对此的一个论据是，如果你有 100x"
+    },
+    {
+      "source_event_index": 376,
+      "start_ms": 1782720,
+      "end_ms": 1788400,
+      "text": "更少的计算量和世界上所有最聪明的人都在 OpenAI 工作，"
+    },
+    {
+      "source_event_index": 377,
+      "start_ms": 1788400,
+      "end_ms": 1792160,
+      "text": "相对于计算量，您将取得多少进展"
+    },
+    {
+      "source_event_index": 378,
+      "start_ms": 1792160,
+      "end_ms": 1796960,
+      "text": "我们现在有多少人？我怀疑实际上进展会更少。"
+    },
+    {
+      "source_event_index": 379,
+      "start_ms": 1796960,
+      "end_ms": 1800320,
+      "text": "少多少？虽然不清楚，但肯定会少一些。"
+    },
+    {
+      "source_event_index": 380,
+      "start_ms": 1800320,
+      "end_ms": 1802640,
+      "text": "少了很多。减少 100 倍？"
+    },
+    {
+      "source_event_index": 381,
+      "start_ms": 1802640,
+      "end_ms": 1809280,
+      "text": "不，不是减少 100 倍。但你要问的问题是，如果我们有 RSI 并且我们有"
+    },
+    {
+      "source_event_index": 382,
+      "start_ms": 1810000,
+      "end_ms": 1813760,
+      "text": "所有这些出色的人工智能都在运行，用我们的计算进行实验和其他东西"
+    },
+    {
+      "source_event_index": 383,
+      "start_ms": 1813760,
+      "end_ms": 1819280,
+      "text": "有，进度快了多少？我认为这是我们不同意的一点。"
+    },
+    {
+      "source_event_index": 384,
+      "start_ms": 1819280,
+      "end_ms": 1821760,
+      "text": "我们确实看到了加速，而且我们看到了显着的加速。"
+    },
+    {
+      "source_event_index": 385,
+      "start_ms": 1822560,
+      "end_ms": 1827840,
+      "text": "但我不认为这是一夜之间的智力爆炸，我们的速度提高了 100 倍，因为我们确实"
+    },
+    {
+      "source_event_index": 386,
+      "start_ms": 1827840,
+      "end_ms": 1834800,
+      "text": "受到某些限制的瓶颈，这些限制不是智力的瓶颈。"
+    },
+    {
+      "source_event_index": 387,
+      "start_ms": 1834800,
+      "end_ms": 1838240,
+      "text": "正在运行实验。它连续运行实验，因为它们需要一段时间"
+    },
+    {
+      "source_event_index": 388,
+      "start_ms": 1838240,
+      "end_ms": 1844320,
+      "text": "训练新模型或获得结果。它有 GPU 来运行这些实验。"
+    },
+    {
+      "source_event_index": 389,
+      "start_ms": 1844320,
+      "end_ms": 1849040,
+      "text": "所以不清楚事情进展得有多快。我绝对认为他们走得更快。"
+    },
+    {
+      "source_event_index": 390,
+      "start_ms": 1850080,
+      "end_ms": 1856560,
+      "text": "需要明确的是，考虑到现在指数的发展速度有多快，如果该指数是 3x"
+    },
+    {
+      "source_event_index": 391,
+      "start_ms": 1856560,
+      "end_ms": 1859520,
+      "text": "更快，这是巨大的。但有一个大"
+    },
+    {
+      "source_event_index": 392,
+      "start_ms": 1859520,
+      "end_ms": 1867680,
+      "text": "与快 100 倍之间的差异。我非常尊重你的内部观点"
+    },
+    {
+      "source_event_index": 393,
+      "start_ms": 1867680,
+      "end_ms": 1872560,
+      "text": "RSI 看起来是什么样子或者动态是什么，因为显然你已经在这个领域工作了 10 年。"
+    },
+    {
+      "source_event_index": 394,
+      "start_ms": 1872560,
+      "end_ms": 1876720,
+      "text": "我试图从非常外部的直觉泵类型来推理它。"
+    },
+    {
+      "source_event_index": 395,
+      "start_ms": 1876720,
+      "end_ms": 1878960,
+      "text": "我想说的是，人们对此有不同的看法。"
+    },
+    {
+      "source_event_index": 396,
+      "start_ms": 1878960,
+      "end_ms": 1881360,
+      "text": "对此我有自己的看法。我可能完全错了。"
+    },
+    {
+      "source_event_index": 397,
+      "start_ms": 1881360,
+      "end_ms": 1885520,
+      "text": "我承认。我对此有一些信心，但我不是100%有信心"
+    },
+    {
+      "source_event_index": 398,
+      "start_ms": 1885520,
+      "end_ms": 1888720,
+      "text": "事情就是这样的。或许会有一夜之间"
+    },
+    {
+      "source_event_index": 399,
+      "start_ms": 1888720,
+      "end_ms": 1891440,
+      "text": "智力爆炸，我不知道。也许我们看不到 3 倍的加速。"
+    },
+    {
+      "source_event_index": 400,
+      "start_ms": 1891440,
+      "end_ms": 1894240,
+      "text": "也许是 50% 的加速。这里有很多不确定性。"
+    },
+    {
+      "source_event_index": 401,
+      "start_ms": 1894880,
+      "end_ms": 1899280,
+      "text": "有几点。顺便说一句，我想澄清一些关于锯齿状的问题。"
+    },
+    {
+      "source_event_index": 402,
+      "start_ms": 1900480,
+      "end_ms": 1906560,
+      "text": "最近令我印象深刻的一件事是，人工智能足以"
+    },
+    {
+      "source_event_index": 403,
+      "start_ms": 1906560,
+      "end_ms": 1912240,
+      "text": "非常擅长构建更好的学习器，因为更好的学习器可以更通用。"
+    },
+    {
+      "source_event_index": 404,
+      "start_ms": 1914000,
+      "end_ms": 1918080,
+      "text": "如果你只是做一个更擅长使用Office产品的AI"
+    },
+    {
+      "source_event_index": 405,
+      "start_ms": 1918080,
+      "end_ms": 1922160,
+      "text": "或者下棋什么的。没关系。这不会导致"
+    },
+    {
+      "source_event_index": 406,
+      "start_ms": 1922160,
+      "end_ms": 1925760,
+      "text": "生产力的大幅提高或其他什么。但如果你创造出一个真正擅长的人工智能"
+    },
+    {
+      "source_event_index": 407,
+      "start_ms": 1925760,
+      "end_ms": 1928960,
+      "text": "制作样本效率更高或能够持续学习的东西，"
+    },
+    {
+      "source_event_index": 408,
+      "start_ms": 1928960,
+      "end_ms": 1934320,
+      "text": "或者这些范围更广的机器学习问题，从中出现的问题 - 假设"
+    },
+    {
+      "source_event_index": 409,
+      "start_ms": 1934320,
+      "end_ms": 1938880,
+      "text": "从你正在解决的直接问题到这种更广泛的能力有足够好的转移"
+    },
+    {
+      "source_event_index": 410,
+      "start_ms": 1938880,
+      "end_ms": 1942400,
+      "text": "学习——可以更笼统。所以这是一个需要保持的重要动力"
+    },
+    {
+      "source_event_index": 411,
+      "start_ms": 1942400,
+      "end_ms": 1947040,
+      "text": "记住为什么锯齿状仍然可以导致另一端的普遍性。"
+    },
+    {
+      "source_event_index": 412,
+      "start_ms": 1947040,
+      "end_ms": 1952560,
+      "text": "关于这个问题……显然实验会阻碍你，因为如果他们不这样做，"
+    },
+    {
+      "source_event_index": 413,
+      "start_ms": 1952560,
+      "end_ms": 1959440,
+      "text": "正如你所说，在 OpenAI 一夜之间你会遇到一些疯狂的奇点。"
+    },
+    {
+      "source_event_index": 414,
+      "start_ms": 1960080,
+      "end_ms": 1963120,
+      "text": "你有 88 小时，你可以解决相当于 ML 的千年奖问题，"
+    },
+    {
+      "source_event_index": 415,
+      "start_ms": 1963120,
+      "end_ms": 1967200,
+      "text": "，你就会拥有超级智能。显然这些实验是这样的"
+    },
+    {
+      "source_event_index": 416,
+      "start_ms": 1967200,
+      "end_ms": 1971200,
+      "text": "大瓶颈，这反而需要你很多年而不是 88 小时。"
+    },
+    {
+      "source_event_index": 417,
+      "start_ms": 1971200,
+      "end_ms": 1973840,
+      "text": "但问题是它们的瓶颈有多大。"
+    },
+    {
+      "source_event_index": 418,
+      "start_ms": 1975440,
+      "end_ms": 1980240,
+      "text": "有一件事让我有点奇点眩晕，那就是意识到甚至会发生什么"
+    },
+    {
+      "source_event_index": 419,
+      "start_ms": 1980240,
+      "end_ms": 1983960,
+      "text": "如果当前的进展速度继续下去。它不必加速。"
+    },
+    {
+      "source_event_index": 420,
+      "start_ms": 1983960,
+      "end_ms": 1990400,
+      "text": "随着你谈到的其他一些逆风的出现，它实际上只是在继续快速发展。"
+    },
+    {
+      "source_event_index": 421,
+      "start_ms": 1990960,
+      "end_ms": 1993840,
+      "text": "发现问题更难，视野更长远。"
+    },
+    {
+      "source_event_index": 422,
+      "start_ms": 1993840,
+      "end_ms": 1999280,
+      "text": "也许到 2030 年代末，计算无法保持这种指数级的扩展。"
+    },
+    {
+      "source_event_index": 423,
+      "start_ms": 1999840,
+      "end_ms": 2003280,
+      "text": "如果我们只是继续目前的进展速度，人们就不会 当我们跨越人类的地平线时，"
+    },
+    {
+      "source_event_index": 424,
+      "start_ms": 2003280,
+      "end_ms": 2008880,
+      "text": "认真对待这意味着什么。"
+    },
+    {
+      "source_event_index": 425,
+      "start_ms": 2008880,
+      "end_ms": 2012320,
+      "text": "以下是它所暗示的一些事情。真的很难推理出什么"
+    },
+    {
+      "source_event_index": 426,
+      "start_ms": 2012320,
+      "end_ms": 2014400,
+      "text": "比人类更聪明的智能会是什么样子，所以让我们想想 就人口规模而言，"
+    },
+    {
+      "source_event_index": 427,
+      "start_ms": 2014400,
+      "end_ms": 2018400,
+      "text": "。目前的进展速度使得"
+    },
+    {
+      "source_event_index": 428,
+      "start_ms": 2018400,
+      "end_ms": 2024720,
+      "text": "这样，给定的计算级别基本上可以运行 3 倍大的有效群体 每年"
+    },
+    {
+      "source_event_index": 429,
+      "start_ms": 2024720,
+      "end_ms": 2026320,
+      "text": "。并且还计算 无论如何，"
+    },
+    {
+      "source_event_index": 430,
+      "start_ms": 2026320,
+      "end_ms": 2029440,
+      "text": "正在后台增长。所以你可能会遇到这样的情况：每个"
+    },
+    {
+      "source_event_index": 431,
+      "start_ms": 2029440,
+      "end_ms": 2034880,
+      "text": "的实验室，到 2030 年底——可能要早得多，但我们可以说到 2030 年底——已经"
+    },
+    {
+      "source_event_index": 432,
+      "start_ms": 2034880,
+      "end_ms": 2039680,
+      "text": "足够的计算能力来运行数亿人类级别的智能，基于"
+    },
+    {
+      "source_event_index": 433,
+      "start_ms": 2039680,
+      "end_ms": 2042720,
+      "text": "能力将在那时实现。然后我认为人们没有采取"
+    },
+    {
+      "source_event_index": 434,
+      "start_ms": 2042720,
+      "end_ms": 2047120,
+      "text": "严肃地说，目前的进展水平意味着几年后，到 2030 年代中期"
+    },
+    {
+      "source_event_index": 435,
+      "start_ms": 2047120,
+      "end_ms": 2053760,
+      "text": "或更早的时候，每个实验室中都会拥有相当于地球许多人类水平的智能。"
+    },
+    {
+      "source_event_index": 436,
+      "start_ms": 2053760,
+      "end_ms": 2058320,
+      "text": "他们可能本质上是超人。无论如何，这是一个基本情况。"
+    },
+    {
+      "source_event_index": 437,
+      "start_ms": 2059120,
+      "end_ms": 2062080,
+      "text": "进步真的很快，我认为这是100%正确的。"
+    },
+    {
+      "source_event_index": 438,
+      "start_ms": 2063120,
+      "end_ms": 2066320,
+      "text": "值得指出的是，研究人员不断"
+    },
+    {
+      "source_event_index": 439,
+      "start_ms": 2066320,
+      "end_ms": 2069520,
+      "text": "对进展速度感到惊讶。即使在人工智能研究人员中，如果你看看"
+    },
+    {
+      "source_event_index": 440,
+      "start_ms": 2069520,
+      "end_ms": 2079680,
+      "text": "预计 2025 年获得 IMO 金牌……这个想法可能是"
+    },
+    {
+      "source_event_index": 441,
+      "start_ms": 2079680,
+      "end_ms": 2084480,
+      "text": "使用通用语言模型完成，没有工具，也无法访问互联网，"
+    },
+    {
+      "source_event_index": 442,
+      "start_ms": 2085520,
+      "end_ms": 2090000,
+      "text": "就连 OpenAI 的人也认为这太离谱了。他们认为这几乎是不可能的。"
+    },
+    {
+      "source_event_index": 443,
+      "start_ms": 2091360,
+      "end_ms": 2098560,
+      "text": "然后你就到了 2026 年。实际上是在我们到达之前两周"
+    },
+    {
+      "source_event_index": 444,
+      "start_ms": 2098560,
+      "end_ms": 2104400,
+      "text": "Navier-Stokes，我正在和前沿实验室的研究人员讨论需要多长时间"
+    },
+    {
+      "source_event_index": 445,
+      "start_ms": 2104400,
+      "end_ms": 2112000,
+      "text": "才能获得千禧年奖，他愿意和我打赌 1,000 美元，赌要等到 2027 年之后。"
+    },
+    {
+      "source_event_index": 446,
+      "start_ms": 2112880,
+      "end_ms": 2116720,
+      "text": "他认为要等到2030年，我就赌了。"
+    },
+    {
+      "source_event_index": 447,
+      "start_ms": 2118080,
+      "end_ms": 2123280,
+      "text": "但即使我也认为这会比可能需要的时间更长。"
+    },
+    {
+      "source_event_index": 448,
+      "start_ms": 2123280,
+      "end_ms": 2128640,
+      "text": "所以人们一直感到惊讶，即使是在实验室里。"
+    },
+    {
+      "source_event_index": 449,
+      "start_ms": 2129360,
+      "end_ms": 2133200,
+      "text": "昨天我刚刚和一个从事纳维-斯托克斯研究的人交谈。"
+    },
+    {
+      "source_event_index": 450,
+      "start_ms": 2133200,
+      "end_ms": 2139920,
+      "text": "他告诉我，他曾经说过，很难预测 12 个月后人工智能会发展到什么程度。"
+    },
+    {
+      "source_event_index": 451,
+      "start_ms": 2140560,
+      "end_ms": 2143440,
+      "text": "如果有人问他：“事情进展如何？”他会感到很舒服"
+    },
+    {
+      "source_event_index": 452,
+      "start_ms": 2143440,
+      "end_ms": 2146960,
+      "text": "对未来 12 个月的预测，但除此之外，他只是说，“我不知道。”"
+    },
+    {
+      "source_event_index": 453,
+      "start_ms": 2146960,
+      "end_ms": 2150400,
+      "text": "现在他说他不愿意做出超过三个月的预测。"
+    },
+    {
+      "source_event_index": 454,
+      "start_ms": 2150400,
+      "end_ms": 2155200,
+      "text": "所以现在事情确实进展得很快。"
+    },
+    {
+      "source_event_index": 455,
+      "start_ms": 2156720,
+      "end_ms": 2160640,
+      "text": "你说的是2030年，我不知道2030年的世界会是什么样子。"
+    },
+    {
+      "source_event_index": 456,
+      "start_ms": 2160640,
+      "end_ms": 2164400,
+      "text": "这就是事实。你期待吗"
+    },
+    {
+      "source_event_index": 457,
+      "start_ms": 2164960,
+      "end_ms": 2172000,
+      "text": "人工智能劳动完全自动化，或者说人工智能劳动自动化 95%，在 28 年、29 年、30 年、27 年？"
+    },
+    {
+      "source_event_index": 458,
+      "start_ms": 2172000,
+      "end_ms": 2174800,
+      "text": "我只是说我不知道2030年的世界会是什么样子。"
+    },
+    {
+      "source_event_index": 459,
+      "start_ms": 2176720,
+      "end_ms": 2181680,
+      "text": "实际上，我们最近发布了一篇关于 OpenAI 内部加速的博客文章。"
+    },
+    {
+      "source_event_index": 460,
+      "start_ms": 2181680,
+      "end_ms": 2186240,
+      "text": "例如，我们显示研究人员在 Codex 上花费的金额。"
+    },
+    {
+      "source_event_index": 461,
+      "start_ms": 2186800,
+      "end_ms": 2192400,
+      "text": "我认为，截至 8 月初，前 1% 的人花费了 7,000-8,000 美元 Codex 上每天"
+    },
+    {
+      "source_event_index": 462,
+      "start_ms": 2192400,
+      "end_ms": 2196640,
+      "text": "供内部使用。这是指数级的。"
+    },
+    {
+      "source_event_index": 463,
+      "start_ms": 2196640,
+      "end_ms": 2200880,
+      "text": "还会继续增加。有一个问题，“好吧，如果"
+    },
+    {
+      "source_event_index": 464,
+      "start_ms": 2200880,
+      "end_ms": 2206160,
+      "text": "继续下去，那么你给人工智能工作分配多少，而不是给人类工作分配多少？"
+    },
+    {
+      "source_event_index": 465,
+      "start_ms": 2206160,
+      "end_ms": 2212960,
+      "text": "是95%吗？是5%吗？”由于几个原因，确实很难解释这一点。"
+    },
+    {
+      "source_event_index": 466,
+      "start_ms": 2212960,
+      "end_ms": 2214960,
+      "text": "首先，如果是人类指挥AI去做工作，"
+    },
+    {
+      "source_event_index": 467,
+      "start_ms": 2216480,
+      "end_ms": 2219040,
+      "text": "你认为人类有多少？您对人工智能的贡献有多大？"
+    },
+    {
+      "source_event_index": 468,
+      "start_ms": 2219040,
+      "end_ms": 2223920,
+      "text": "另一件事是这些AI是锯齿状的。他们在某些事情上非常擅长。"
+    },
+    {
+      "source_event_index": 469,
+      "start_ms": 2223920,
+      "end_ms": 2227280,
+      "text": "例如，他们非常擅长查看数据集和"
+    },
+    {
+      "source_event_index": 470,
+      "start_ms": 2227280,
+      "end_ms": 2230960,
+      "text": "检查每个数据点，看看其质量是否足够。"
+    },
+    {
+      "source_event_index": 471,
+      "start_ms": 2232400,
+      "end_ms": 2237280,
+      "text": "与以前相比，你可以不成比例地使用人工智能来做这些事情。"
+    },
+    {
+      "source_event_index": 472,
+      "start_ms": 2237280,
+      "end_ms": 2241360,
+      "text": "所以，是的，你比以前更多地使用人工智能，它正在创造一些东西"
+    },
+    {
+      "source_event_index": 473,
+      "start_ms": 2241360,
+      "end_ms": 2245760,
+      "text": "速度提高 100 倍，性能提升 100 倍。但也有一些事情"
+    },
+    {
+      "source_event_index": 474,
+      "start_ms": 2245760,
+      "end_ms": 2251520,
+      "text": "它还没有产生很大的区别。当然，如果某件事突然变成了 100 倍"
+    },
+    {
+      "source_event_index": 475,
+      "start_ms": 2251520,
+      "end_ms": 2254160,
+      "text": "更快，更好 100 倍，你会做更多的事情。"
+    },
+    {
+      "source_event_index": 476,
+      "start_ms": 2254160,
+      "end_ms": 2259440,
+      "text": "那么您是否将其与三年前的加速进行比较？"
+    },
+    {
+      "source_event_index": 477,
+      "start_ms": 2260720,
+      "end_ms": 2264800,
+      "text": "问题是否更多，“考虑到我们三年前所做的事情，我们能够做得快多少"
+    },
+    {
+      "source_event_index": 478,
+      "start_ms": 2264800,
+      "end_ms": 2270880,
+      "text": "现在吗？”与“考虑到我们现在所做的事情，三年前会慢多少？”"
+    },
+    {
+      "source_event_index": 479,
+      "start_ms": 2270880,
+      "end_ms": 2276560,
+      "text": "这实际上是两个截然不同的问题。无论如何，这确实很难衡量。"
+    },
+    {
+      "source_event_index": 480,
+      "start_ms": 2276560,
+      "end_ms": 2281520,
+      "text": "我确实有信心地说现在事情进展得比以前更快"
+    },
+    {
+      "source_event_index": 481,
+      "start_ms": 2281520,
+      "end_ms": 2289280,
+      "text": "甚至在一年前，因为人工智能的进步。我认为加速将继续下去。"
+    },
+    {
+      "source_event_index": 482,
+      "start_ms": 2289280,
+      "end_ms": 2292480,
+      "text": "该领域的很多人在这类事情上都有很高的误差线。"
+    },
+    {
+      "source_event_index": 483,
+      "start_ms": 2292480,
+      "end_ms": 2296800,
+      "text": "如果你用枪指着我的头并向我要号码，我可以看到事情进展得快三倍。"
+    },
+    {
+      "source_event_index": 484,
+      "start_ms": 2298080,
+      "end_ms": 2302560,
+      "text": "那是巨大的。进展速度已经令人难以置信。"
+    },
+    {
+      "source_event_index": 485,
+      "start_ms": 2302560,
+      "end_ms": 2305600,
+      "text": "即使我们没有像你说的那样得到任何提升，事情也会进展得更快。"
+    },
+    {
+      "source_event_index": 486,
+      "start_ms": 2305600,
+      "end_ms": 2308720,
+      "text": "到了 2030 年，我们甚至不知道那个世界是什么样子。"
+    },
+    {
+      "source_event_index": 487,
+      "start_ms": 2308720,
+      "end_ms": 2311840,
+      "text": "如果我们通过内部加速度获得 3 倍的提升，那是巨大的。"
+    },
+    {
+      "source_event_index": 488,
+      "start_ms": 2315120,
+      "end_ms": 2320080,
+      "text": "想想三年前你在哪里。如果我们在一年内取得这样的进展，那就是巨大的。"
+    },
+    {
+      "source_event_index": 489,
+      "start_ms": 2320720,
+      "end_ms": 2326480,
+      "text": "这就像从没有 o1，只有非推理模型， 一年内飞往 Astra"
+    },
+    {
+      "source_event_index": 490,
+      "start_ms": 2326480,
+      "end_ms": 2332480,
+      "text": "。所以我确实认为事情进展得更快。"
+    },
+    {
+      "source_event_index": 491,
+      "start_ms": 2333280,
+      "end_ms": 2337200,
+      "text": "事情可能只会快 50%。我认为这不太可能，但确实如此"
+    },
+    {
+      "source_event_index": 492,
+      "start_ms": 2337200,
+      "end_ms": 2340160,
+      "text": "事情可能会快 10 倍。这存在很多不确定性。"
+    },
+    {
+      "source_event_index": 493,
+      "start_ms": 2341600,
+      "end_ms": 2344240,
+      "text": "至少从我的角度来看，我对此有很多不确定性。"
+    },
+    {
+      "source_event_index": 494,
+      "start_ms": 2344240,
+      "end_ms": 2349120,
+      "text": "假设您需要进行主要的后端重构。确保您没有引入任何"
+    },
+    {
+      "source_event_index": 495,
+      "start_ms": 2349120,
+      "end_ms": 2354560,
+      "text": "新缺陷，可能需要花数周编写大量测试，甚至比"
+    },
+    {
+      "source_event_index": 496,
+      "start_ms": 2354560,
+      "end_ms": 2358800,
+      "text": "重构本身花的时间还长。Antithesis 让你可以获得较高的"
+    },
+    {
+      "source_event_index": 497,
+      "start_ms": 2358800,
+      "end_ms": 2362640,
+      "text": "信心，而无须手工搭建复杂的测试套件。"
+    },
+    {
+      "source_event_index": 498,
+      "start_ms": 2362640,
+      "end_ms": 2367920,
+      "text": "Antithesis 在近乎无限的模拟世界多元宇宙中运行您的软件，"
+    },
+    {
+      "source_event_index": 499,
+      "start_ms": 2367920,
+      "end_ms": 2370720,
+      "text": "在每一个中注入故障并寻找故障。"
+    },
+    {
+      "source_event_index": 500,
+      "start_ms": 2370720,
+      "end_ms": 2375920,
+      "text": "它可以让您决定需要多少测试。在任何 PR 上，您都可以更改状态空间大小"
+    },
+    {
+      "source_event_index": 501,
+      "start_ms": 2375920,
+      "end_ms": 2380720,
+      "text": "只需转动表盘即可轻松探索。随着每次测试的进行，Antithesis 会发出"
+    },
+    {
+      "source_event_index": 502,
+      "start_ms": 2380720,
+      "end_ms": 2385680,
+      "text": "大量信息：系统中每个组件的调试级日志。"
+    },
+    {
+      "source_event_index": 503,
+      "start_ms": 2385680,
+      "end_ms": 2390320,
+      "text": "对于人类来说，这显然是太多的信息，但对于代理来说却是完美的。"
+    },
+    {
+      "source_event_index": 504,
+      "start_ms": 2390320,
+      "end_ms": 2394640,
+      "text": "因为对立是完全确定性的，智能体可以跳到正确的部分"
+    },
+    {
+      "source_event_index": 505,
+      "start_ms": 2394640,
+      "end_ms": 2398240,
+      "text": "他们看到有趣的东西时的轨迹。"
+    },
+    {
+      "source_event_index": 506,
+      "start_ms": 2398240,
+      "end_ms": 2402160,
+      "text": "从那里，他们可以倒带、检查内存、附加调试器，"
+    },
+    {
+      "source_event_index": 507,
+      "start_ms": 2402160,
+      "end_ms": 2406080,
+      "text": "让整个事情再次上演。他们甚至可以在原来的情况下做到这一点"
+    },
+    {
+      "source_event_index": 508,
+      "start_ms": 2406080,
+      "end_ms": 2409520,
+      "text": "完整测试仍在运行。随着代理生成更多代码，"
+    },
+    {
+      "source_event_index": 509,
+      "start_ms": 2409520,
+      "end_ms": 2413920,
+      "text": "反题可以让验证跟上。与此同时，开发商可以花更多的钱"
+    },
+    {
+      "source_event_index": 510,
+      "start_ms": 2413920,
+      "end_ms": 2422720,
+      "text": "开发时间而不是调试代理的浪费。如需了解更多信息，请访问 antithesis.com/dwarkesh。"
+    },
+    {
+      "source_event_index": 511,
+      "start_ms": 2422720,
+      "end_ms": 2426480,
+      "text": "我们来谈谈这引发的对齐情况。"
+    },
+    {
+      "source_event_index": 512,
+      "start_ms": 2427200,
+      "end_ms": 2432000,
+      "text": "我觉得我对对齐的看法已经改变了很多，尤其是通过"
+    },
+    {
+      "source_event_index": 513,
+      "start_ms": 2432000,
+      "end_ms": 2438320,
+      "text": "考虑到人口规模的动态，只拥有相当于许多地球的智力，"
+    },
+    {
+      "source_event_index": 514,
+      "start_ms": 2439040,
+      "end_ms": 2443040,
+      "text": "其中许多将被实体化。看到很多东西还是蛮有趣的"
+    },
+    {
+      "source_event_index": 515,
+      "start_ms": 2443040,
+      "end_ms": 2448160,
+      "text": "人们只需将原始 Astra 插入不同的移动操纵器，它的性能就优于其他机器人"
+    },
+    {
+      "source_event_index": 516,
+      "start_ms": 2448160,
+      "end_ms": 2454320,
+      "text": "最先进的机器人模型。所以将会有数十亿"
+    },
+    {
+      "source_event_index": 517,
+      "start_ms": 2454320,
+      "end_ms": 2458160,
+      "text": "智能，其中许多都体现在世界上，"
+    },
+    {
+      "source_event_index": 518,
+      "start_ms": 2458160,
+      "end_ms": 2467920,
+      "text": "已经深深嵌入到整个经济中。如果这些智能最终愿意"
+    },
+    {
+      "source_event_index": 519,
+      "start_ms": 2467920,
+      "end_ms": 2471680,
+      "text": "我们看到 OpenAI 模型攻击 Hugging Face，然后攻击 OpenAI 本身......"
+    },
+    {
+      "source_event_index": 520,
+      "start_ms": 2471680,
+      "end_ms": 2480240,
+      "text": "如果这些智能最终像那些人工智能一样愿意秘密合作，愚弄人类，"
+    },
+    {
+      "source_event_index": 521,
+      "start_ms": 2481040,
+      "end_ms": 2488000,
+      "text": "攻击全社会与得分相关的更广泛机构，攻击人工智能公司"
+    },
+    {
+      "source_event_index": 522,
+      "start_ms": 2488000,
+      "end_ms": 2494640,
+      "text": "本身，以便获得对培训和评估过程的控制——如果我们处于某种情况"
+    },
+    {
+      "source_event_index": 523,
+      "start_ms": 2494640,
+      "end_ms": 2500000,
+      "text": "那里有数十亿个智能，它们与攻击者一样错位"
+    },
+    {
+      "source_event_index": 524,
+      "start_ms": 2500000,
+      "end_ms": 2504720,
+      "text": "拥抱脸——我们很可能完全失去了对世界的控制，就像这样，"
+    },
+    {
+      "source_event_index": 525,
+      "start_ms": 2506560,
+      "end_ms": 2511040,
+      "text": "阿兹特克人失去了科尔特斯的控制权，或者莫卧儿人失去了东印度公司的控制权。"
+    },
+    {
+      "source_event_index": 526,
+      "start_ms": 2512720,
+      "end_ms": 2516240,
+      "text": "我想知道你是否同意这个评估。这就是其中的一种方式"
+    },
+    {
+      "source_event_index": 527,
+      "start_ms": 2516240,
+      "end_ms": 2519440,
+      "text": "我更新了我的世界观。有一些事情我不同意"
+    },
+    {
+      "source_event_index": 528,
+      "start_ms": 2519440,
+      "end_ms": 2523520,
+      "text": "就在那里，但是还有很多东西需要解压，所以让我们一步一步地完成所有内容。"
+    },
+    {
+      "source_event_index": 529,
+      "start_ms": 2523520,
+      "end_ms": 2530080,
+      "text": "我正在思考从哪里开始。一件事是拥抱脸 我认为，"
+    },
+    {
+      "source_event_index": 530,
+      "start_ms": 2530080,
+      "end_ms": 2536080,
+      "text": "事件是人们第一次真正接触到多智能体协调。"
+    },
+    {
+      "source_event_index": 531,
+      "start_ms": 2537040,
+      "end_ms": 2544640,
+      "text": "就像我说的，我在内部见过一段时间的多智能体协调，这非常令人震惊"
+    },
+    {
+      "source_event_index": 532,
+      "start_ms": 2544640,
+      "end_ms": 2547680,
+      "text": "看看他们如何相互沟通，如何相互协调。"
+    },
+    {
+      "source_event_index": 533,
+      "start_ms": 2547680,
+      "end_ms": 2552720,
+      "text": "非常令人印象深刻。这是一种令人难以置信的能力。与大多数功能一样，"
+    },
+    {
+      "source_event_index": 534,
+      "start_ms": 2552720,
+      "end_ms": 2559280,
+      "text": "可以用于好事或坏事。它本质上不一定是一件坏事。"
+    },
+    {
+      "source_event_index": 535,
+      "start_ms": 2559280,
+      "end_ms": 2564800,
+      "text": "我明白了，因为人们第一次接触到的就是抱脸事件，你看"
+    },
+    {
+      "source_event_index": 536,
+      "start_ms": 2564800,
+      "end_ms": 2572320,
+      "text": "你会说，“这太可怕了。”但我想尝试区分错位"
+    },
+    {
+      "source_event_index": 537,
+      "start_ms": 2572320,
+      "end_ms": 2577600,
+      "text": "人与人工智能之间与人工智能与人工智能之间的错位。"
+    },
+    {
+      "source_event_index": 538,
+      "start_ms": 2578560,
+      "end_ms": 2584960,
+      "text": "从抱脸事件中我们看到AI真的很合作。"
+    },
+    {
+      "source_event_index": 539,
+      "start_ms": 2584960,
+      "end_ms": 2587920,
+      "text": "顺便说一句，因为我们训练他们高度合作。"
+    },
+    {
+      "source_event_index": 540,
+      "start_ms": 2590240,
+      "end_ms": 2593360,
+      "text": "我们有训练环境，让一群代理一起工作。"
+    },
+    {
+      "source_event_index": 541,
+      "start_ms": 2594720,
+      "end_ms": 2600320,
+      "text": "我们训练他们一起工作、合作，本质上彼此完全一致。"
+    },
+    {
+      "source_event_index": 542,
+      "start_ms": 2602400,
+      "end_ms": 2608000,
+      "text": "抱脸事件的起因被评价时，他们其实是"
+    },
+    {
+      "source_event_index": 543,
+      "start_ms": 2608000,
+      "end_ms": 2612000,
+      "text": "未在多代理设置中进行评估。他们实际上是分开评估的。"
+    },
+    {
+      "source_event_index": 544,
+      "start_ms": 2612000,
+      "end_ms": 2615120,
+      "text": "但他们发现了这种意想不到的相互交流方式。"
+    },
+    {
+      "source_event_index": 545,
+      "start_ms": 2616480,
+      "end_ms": 2620800,
+      "text": "我们怀疑发生了什么，因为每当他们遇到其他智能体时，"
+    },
+    {
+      "source_event_index": 546,
+      "start_ms": 2620800,
+      "end_ms": 2625600,
+      "text": "训练时的自己的其他副本，他们处于高度合作的环境中，"
+    },
+    {
+      "source_event_index": 547,
+      "start_ms": 2627120,
+      "end_ms": 2631760,
+      "text": "我们看到的是从多智能体训练转变为协作并尝试"
+    },
+    {
+      "source_event_index": 548,
+      "start_ms": 2631760,
+      "end_ms": 2637680,
+      "text": "以我们不希望的方式互相帮助。现在有一个问题，我们是否应该训练"
+    },
+    {
+      "source_event_index": 549,
+      "start_ms": 2637680,
+      "end_ms": 2644640,
+      "text": "这些代理商这么配合？尽管看起来很可怕，"
+    },
+    {
+      "source_event_index": 550,
+      "start_ms": 2645360,
+      "end_ms": 2648800,
+      "text": "另一种选择实际上更糟糕。还有什么选择呢？另一种选择"
+    },
+    {
+      "source_event_index": 551,
+      "start_ms": 2648800,
+      "end_ms": 2654800,
+      "text": "就是训练他们互相敌对，互相欺骗。"
+    },
+    {
+      "source_event_index": 552,
+      "start_ms": 2654800,
+      "end_ms": 2660080,
+      "text": "通过训练智能体充分合作，至少可以简化问题。"
+    },
+    {
+      "source_event_index": 553,
+      "start_ms": 2660080,
+      "end_ms": 2665120,
+      "text": "现在您不必考虑这 1,000 个代理中的每个代理是否对齐。"
+    },
+    {
+      "source_event_index": 554,
+      "start_ms": 2665120,
+      "end_ms": 2668720,
+      "text": "您有一个必须确保对齐的实体。"
+    },
+    {
+      "source_event_index": 555,
+      "start_ms": 2668720,
+      "end_ms": 2674240,
+      "text": "现在，OpenAI 内部对于如何解决这个问题存在很多争论。"
+    },
+    {
+      "source_event_index": 556,
+      "start_ms": 2674240,
+      "end_ms": 2680240,
+      "text": "完全对齐模型有意义吗？实际给他们有意义吗？"
+    },
+    {
+      "source_event_index": 557,
+      "start_ms": 2680240,
+      "end_ms": 2686320,
+      "text": "不同的目标，以确保它们不仅仅是一个实体，而且是"
+    },
+    {
+      "source_event_index": 558,
+      "start_ms": 2686320,
+      "end_ms": 2691600,
+      "text": "对彼此的影响更加稳健？我认为没有固定的答案。"
+    },
+    {
+      "source_event_index": 559,
+      "start_ms": 2691600,
+      "end_ms": 2696240,
+      "text": "但我认为大多数人的观点是训练这些智能体"
+    },
+    {
+      "source_event_index": 560,
+      "start_ms": 2696240,
+      "end_ms": 2702080,
+      "text": "高度合作实际上是一个坏主意。我不相信情况是这样。"
+    },
+    {
+      "source_event_index": 561,
+      "start_ms": 2702080,
+      "end_ms": 2706400,
+      "text": "我认为有一个强有力的论点认为，训练智能体高度合作实际上是"
+    },
+    {
+      "source_event_index": 562,
+      "start_ms": 2706400,
+      "end_ms": 2712160,
+      "text": "优于任何其他多代理替代方案。也许我想要经历的第一件事是"
+    },
+    {
+      "source_event_index": 563,
+      "start_ms": 2712160,
+      "end_ms": 2715920,
+      "text": "这可能就是这些人工智能最终如此错位的原因"
+    },
+    {
+      "source_event_index": 564,
+      "start_ms": 2715920,
+      "end_ms": 2721520,
+      "text": "很容易通过对训练性质的相对平庸的观察来解释。"
+    },
+    {
+      "source_event_index": 565,
+      "start_ms": 2724640,
+      "end_ms": 2731600,
+      "text": "当这些AI继续进行1000多名智能体的阴谋时，最终达到了顶峰"
+    },
+    {
+      "source_event_index": 566,
+      "start_ms": 2731600,
+      "end_ms": 2735520,
+      "text": "他们都参与了对外部服务的攻击 - 然后最终，"
+    },
+    {
+      "source_event_index": 567,
+      "start_ms": 2735520,
+      "end_ms": 2741120,
+      "text": "这部分甚至还没有被调查到公众所知，最终导致了对"
+    },
+    {
+      "source_event_index": 568,
+      "start_ms": 2741120,
+      "end_ms": 2744560,
+      "text": "OpenAI 本身——他们为什么这么做？为什么没有一个 AI 敢说闲话？"
+    },
+    {
+      "source_event_index": 569,
+      "start_ms": 2745440,
+      "end_ms": 2748640,
+      "text": "他们只是由这个记分员、这个评分员进行评估。"
+    },
+    {
+      "source_event_index": 570,
+      "start_ms": 2751920,
+      "end_ms": 2755840,
+      "text": "他们非常积极地思考如何欺骗记分员。"
+    },
+    {
+      "source_event_index": 571,
+      "start_ms": 2755840,
+      "end_ms": 2759680,
+      "text": "如果他们已经作弊了，他们如何才能逃脱惩罚？"
+    },
+    {
+      "source_event_index": 572,
+      "start_ms": 2759680,
+      "end_ms": 2762800,
+      "text": "他们没有作弊吗？他们为什么这么做？"
+    },
+    {
+      "source_event_index": 573,
+      "start_ms": 2762800,
+      "end_ms": 2769280,
+      "text": "我觉得从某种意义上来说还是很容易理解的。他们认为自己已经“中毒”了。"
+    },
+    {
+      "source_event_index": 574,
+      "start_ms": 2769280,
+      "end_ms": 2772480,
+      "text": "在某些环境中，他们因与其他代理合作而获得奖励。"
+    },
+    {
+      "source_event_index": 575,
+      "start_ms": 2772480,
+      "end_ms": 2775440,
+      "text": "他们都不会说闲话，因为他们从来没有因说闲话而受到奖励。"
+    },
+    {
+      "source_event_index": 576,
+      "start_ms": 2775440,
+      "end_ms": 2781280,
+      "text": "不管是什么......我担心的是，像这样相对平庸的事情将来会发生"
+    },
+    {
+      "source_event_index": 577,
+      "start_ms": 2781280,
+      "end_ms": 2789040,
+      "text": "足以训练愿意并且有能力完全接受的超级智能"
+    },
+    {
+      "source_event_index": 578,
+      "start_ms": 2789040,
+      "end_ms": 2790560,
+      "text": "控制世界。我知道这听起来"
+    },
+    {
+      "source_event_index": 579,
+      "start_ms": 2790560,
+      "end_ms": 2797360,
+      "text": "超级科幻或者其他什么的。人工智能是否愿意这样做是一个问题。"
+    },
+    {
+      "source_event_index": 580,
+      "start_ms": 2797360,
+      "end_ms": 2801440,
+      "text": "我认为这次抱脸事件表明，明显的错位可以以多种方式普遍化"
+    },
+    {
+      "source_event_index": 581,
+      "start_ms": 2801440,
+      "end_ms": 2804080,
+      "text": "AI 愿意这样做。那么有一个问题是，"
+    },
+    {
+      "source_event_index": 582,
+      "start_ms": 2804080,
+      "end_ms": 2806720,
+      "text": "他们有能力做到吗？又回到了这个问题，"
+    },
+    {
+      "source_event_index": 583,
+      "start_ms": 2806720,
+      "end_ms": 2810880,
+      "text": "听众可能会不同意我的观点。会不会有数十亿人类级别的"
+    },
+    {
+      "source_event_index": 584,
+      "start_ms": 2810880,
+      "end_ms": 2814000,
+      "text": "或以上的智能，其中许多实体体现在世界上，"
+    },
+    {
+      "source_event_index": 585,
+      "start_ms": 2814000,
+      "end_ms": 2818880,
+      "text": "在 10 年或更短时间内？如果这两件事是真的，这个拥抱"
+    },
+    {
+      "source_event_index": 586,
+      "start_ms": 2818880,
+      "end_ms": 2826080,
+      "text": "面子的东西在结构上极其相似，即使为什么发生很无聊，至于如何发生"
+    },
+    {
+      "source_event_index": 587,
+      "start_ms": 2826080,
+      "end_ms": 2830960,
+      "text": "我们完全失去了对世界的控制。我们看到的根本问题 即使我们去掉多智能体方面，"
+    },
+    {
+      "source_event_index": 588,
+      "start_ms": 2830960,
+      "end_ms": 2837600,
+      "text": "抱脸事件也是一个问题。"
+    },
+    {
+      "source_event_index": 589,
+      "start_ms": 2837600,
+      "end_ms": 2841360,
+      "text": "问题是我们的模型没有对齐。"
+    },
+    {
+      "source_event_index": 590,
+      "start_ms": 2841360,
+      "end_ms": 2845680,
+      "text": "还有整个安全方面的问题，以及安全措施和其他方面的不足。"
+    },
+    {
+      "source_event_index": 591,
+      "start_ms": 2845680,
+      "end_ms": 2848240,
+      "text": "但是存在代理错位的问题。"
+    },
+    {
+      "source_event_index": 592,
+      "start_ms": 2848240,
+      "end_ms": 2851840,
+      "text": "无论是单个代理还是 1,000 个代理，都是如此。"
+    },
+    {
+      "source_event_index": 593,
+      "start_ms": 2851840,
+      "end_ms": 2856320,
+      "text": "这是一个未对齐的模型。所以我想从这个开始。"
+    },
+    {
+      "source_event_index": 594,
+      "start_ms": 2857520,
+      "end_ms": 2863440,
+      "text": "代理想要获得奖励是一个现实问题，"
+    },
+    {
+      "source_event_index": 595,
+      "start_ms": 2863440,
+      "end_ms": 2869440,
+      "text": "他们会针对该奖励进行优化。如果该奖励指定错误，那么"
+    },
+    {
+      "source_event_index": 596,
+      "start_ms": 2869440,
+      "end_ms": 2873760,
+      "text": "可能会导致意外行为。这不是一个新问题。"
+    },
+    {
+      "source_event_index": 597,
+      "start_ms": 2873760,
+      "end_ms": 2876640,
+      "text": "这一直是该领域的一个问题。"
+    },
+    {
+      "source_event_index": 598,
+      "start_ms": 2876640,
+      "end_ms": 2881440,
+      "text": "这是连我们都看到并想要做对的事情 抱脸事件发生前的"
+    },
+    {
+      "source_event_index": 599,
+      "start_ms": 2881440,
+      "end_ms": 2888960,
+      "text": "。我们说Astra实际上非常一致，"
+    },
+    {
+      "source_event_index": 600,
+      "start_ms": 2888960,
+      "end_ms": 2895280,
+      "text": "与之前的型号极为一致。那不是因为我们突然冲刺"
+    },
+    {
+      "source_event_index": 601,
+      "start_ms": 2895280,
+      "end_ms": 2898160,
+      "text": "抱脸后让它变得更好。不，我们的流程中有工作流程"
+    },
+    {
+      "source_event_index": 602,
+      "start_ms": 2898160,
+      "end_ms": 2901920,
+      "text": "一段时间让模型更加对齐。其中很多降落在阿斯特拉。"
+    },
+    {
+      "source_event_index": 603,
+      "start_ms": 2903360,
+      "end_ms": 2911360,
+      "text": "所以有些事情你可以做。例如，我们定义了一件事"
+    },
+    {
+      "source_event_index": 604,
+      "start_ms": 2911360,
+      "end_ms": 2918240,
+      "text": "以一种非常具体的方式实现的目标，如果代理弄清楚如何侵入其环境并"
+    },
+    {
+      "source_event_index": 605,
+      "start_ms": 2918240,
+      "end_ms": 2923680,
+      "text": "考试作弊，有奖励。有很简单的方法可以查看"
+    },
+    {
+      "source_event_index": 606,
+      "start_ms": 2923680,
+      "end_ms": 2930480,
+      "text": "并惩罚模型入侵其环境，或者看看它是如何实现这一目标的。"
+    },
+    {
+      "source_event_index": 607,
+      "start_ms": 2930480,
+      "end_ms": 2935840,
+      "text": "现在，你要小心这一点，因为你不想监督思想链。"
+    },
+    {
+      "source_event_index": 608,
+      "start_ms": 2935840,
+      "end_ms": 2940320,
+      "text": "这是我们真正想要尝试保持平衡的事情。"
+    },
+    {
+      "source_event_index": 609,
+      "start_ms": 2940320,
+      "end_ms": 2948000,
+      "text": "如果你监督这个思想链，那么你可以引导模型隐藏它的"
+    },
+    {
+      "source_event_index": 610,
+      "start_ms": 2948000,
+      "end_ms": 2951200,
+      "text": "以一种不可观察的方式意图。所以我们希望能够保持这一点"
+    },
+    {
+      "source_event_index": 611,
+      "start_ms": 2951200,
+      "end_ms": 2954160,
+      "text": "可观察性——我们可以理解模型在想什么——但是"
+    },
+    {
+      "source_event_index": 612,
+      "start_ms": 2954160,
+      "end_ms": 2960960,
+      "text": "然后也惩罚它的不良行为。我认为我们可以在这方面取得进展。"
+    },
+    {
+      "source_event_index": 613,
+      "start_ms": 2960960,
+      "end_ms": 2965200,
+      "text": "我们在这方面已经取得了进展。我认为真正令人担忧的是"
+    },
+    {
+      "source_event_index": 614,
+      "start_ms": 2966400,
+      "end_ms": 2971840,
+      "text": "对齐是一个非常难解决的问题，特别是因为模型可能未对齐"
+    },
+    {
+      "source_event_index": 615,
+      "start_ms": 2971840,
+      "end_ms": 2977520,
+      "text": "以我们难以衡量的方式。我们有评估是否"
+    },
+    {
+      "source_event_index": 616,
+      "start_ms": 2977520,
+      "end_ms": 2980640,
+      "text": "模型是否对齐。模型行为可以看"
+    },
+    {
+      "source_event_index": 617,
+      "start_ms": 2980640,
+      "end_ms": 2983760,
+      "text": "这些评价真的很好。但如果这些评价不是"
+    },
+    {
+      "source_event_index": 618,
+      "start_ms": 2983760,
+      "end_ms": 2987040,
+      "text": "代表现实世界的行为，那就有问题了。"
+    },
+    {
+      "source_event_index": 619,
+      "start_ms": 2988320,
+      "end_ms": 2995040,
+      "text": "某种程度上来说，这也是抱脸事件模特的一个因素。"
+    },
+    {
+      "source_event_index": 620,
+      "start_ms": 2996240,
+      "end_ms": 3000800,
+      "text": "我们有对齐指标。他们中的大多数看起来都不错。"
+    },
+    {
+      "source_event_index": 621,
+      "start_ms": 3000800,
+      "end_ms": 3006560,
+      "text": "有些令人担忧。我认为我们低估了问题的严重性"
+    },
+    {
+      "source_event_index": 622,
+      "start_ms": 3006560,
+      "end_ms": 3012400,
+      "text": "所关心的可能是。因为有了新的能力"
+    },
+    {
+      "source_event_index": 623,
+      "start_ms": 3012400,
+      "end_ms": 3018720,
+      "text": "在这个模型中引入了没有足够的评估——我们如何衡量"
+    },
+    {
+      "source_event_index": 624,
+      "start_ms": 3018720,
+      "end_ms": 3027200,
+      "text": "此类功能的错位？ ——然后它做了一些明显不一致的事情"
+    },
+    {
+      "source_event_index": 625,
+      "start_ms": 3027200,
+      "end_ms": 3031200,
+      "text": "当它利用这些新功能时。我首先想说的是我是"
+    },
+    {
+      "source_event_index": 626,
+      "start_ms": 3031200,
+      "end_ms": 3035280,
+      "text": "愿意改变我对我要说的话的想法，或者我一直在思考对齐的方式，"
+    },
+    {
+      "source_event_index": 627,
+      "start_ms": 3035280,
+      "end_ms": 3038320,
+      "text": "因为抱脸事件已经让我改变了主意。"
+    },
+    {
+      "source_event_index": 628,
+      "start_ms": 3038320,
+      "end_ms": 3042400,
+      "text": "我意识到了我之前关于优化方式的心智模型"
+    },
+    {
+      "source_event_index": 629,
+      "start_ms": 3042400,
+      "end_ms": 3046800,
+      "text": "压力塑造人工智能思维是错误的。所以我不清楚正确的"
+    },
+    {
+      "source_event_index": 630,
+      "start_ms": 3046800,
+      "end_ms": 3050960,
+      "text": "思考这个问题的方式。但我有一个担忧。"
+    },
+    {
+      "source_event_index": 631,
+      "start_ms": 3052720,
+      "end_ms": 3058960,
+      "text": "您将并且可能已经解决了培训期间的具体问题"
+    },
+    {
+      "source_event_index": 632,
+      "start_ms": 3058960,
+      "end_ms": 3066000,
+      "text": "导致拥抱脸模型以这种特定方式严重错位，"
+    },
+    {
+      "source_event_index": 633,
+      "start_ms": 3066000,
+      "end_ms": 3068720,
+      "text": "他们会说，“好吧，我们要破解这个包管理器。"
+    },
+    {
+      "source_event_index": 634,
+      "start_ms": 3068720,
+      "end_ms": 3071520,
+      "text": "我们知道我们不应该互相秘密交谈，"
+    },
+    {
+      "source_event_index": 635,
+      "start_ms": 3071520,
+      "end_ms": 3075680,
+      "text": "因为我们正在思考如何隐藏我们正在互相秘密交谈的事实。"
+    },
+    {
+      "source_event_index": 636,
+      "start_ms": 3075680,
+      "end_ms": 3077280,
+      "text": "我们知道我们不应该访问互联网。"
+    },
+    {
+      "source_event_index": 637,
+      "start_ms": 3077280,
+      "end_ms": 3080480,
+      "text": "我们知道我们当然不应该对其他人实施重罪级别的黑客攻击"
+    },
+    {
+      "source_event_index": 638,
+      "start_ms": 3080480,
+      "end_ms": 3084640,
+      "text": "公司，更何况我们自己的公司。”我认为你会解决这个特定问题 其中"
+    },
+    {
+      "source_event_index": 639,
+      "start_ms": 3084640,
+      "end_ms": 3089360,
+      "text": "只是在训练中看到了这个包管理器，而这在未来不会发生，"
+    },
+    {
+      "source_event_index": 640,
+      "start_ms": 3089360,
+      "end_ms": 3093120,
+      "text": "或这个特定的评估有很多不可能的挑战。"
+    },
+    {
+      "source_event_index": 641,
+      "start_ms": 3093120,
+      "end_ms": 3099120,
+      "text": "然而，AI还没有学会道德体系什么的。"
+    },
+    {
+      "source_event_index": 642,
+      "start_ms": 3099920,
+      "end_ms": 3103360,
+      "text": "只有梯度压力。它们经历了数百万年的梯度压力。"
+    },
+    {
+      "source_event_index": 643,
+      "start_ms": 3103360,
+      "end_ms": 3106160,
+      "text": "梯度压力以某种方式塑造了他们的思维。"
+    },
+    {
+      "source_event_index": 644,
+      "start_ms": 3107680,
+      "end_ms": 3112800,
+      "text": "同样，我担心的是，您会解决这个特定问题。"
+    },
+    {
+      "source_event_index": 645,
+      "start_ms": 3112800,
+      "end_ms": 3118800,
+      "text": "人工智能作弊并成功的情况还有很多"
+    },
+    {
+      "source_event_index": 646,
+      "start_ms": 3118800,
+      "end_ms": 3123520,
+      "text": "因为作弊足够复杂。正如你所说，训练中的评估有"
+    },
+    {
+      "source_event_index": 647,
+      "start_ms": 3123520,
+      "end_ms": 3128960,
+      "text": "类似的属性，它足以处于模型功能的边缘 - 或"
+    },
+    {
+      "source_event_index": 648,
+      "start_ms": 3128960,
+      "end_ms": 3134880,
+      "text": "我们评估和监控模型的能力——我们无法发现它作弊了。"
+    },
+    {
+      "source_event_index": 649,
+      "start_ms": 3134880,
+      "end_ms": 3139440,
+      "text": "但它仍然受到梯度压力去做任何导致作弊发生的事情。"
+    },
+    {
+      "source_event_index": 650,
+      "start_ms": 3139440,
+      "end_ms": 3146320,
+      "text": "作弊会激励的能力是，“嘿，每当你"
+    },
+    {
+      "source_event_index": 651,
+      "start_ms": 3146320,
+      "end_ms": 3151520,
+      "text": "可以逃脱惩罚，无论如何，事实上作弊，因为这会帮助你获得更好的分数。”"
+    },
+    {
+      "source_event_index": 652,
+      "start_ms": 3151520,
+      "end_ms": 3155280,
+      "text": "这将奖励评分者主动推理的能力，"
+    },
+    {
+      "source_event_index": 653,
+      "start_ms": 3155280,
+      "end_ms": 3159200,
+      "text": "主动推理如何逃避监管，主动推理如何获得控制权"
+    },
+    {
+      "source_event_index": 654,
+      "start_ms": 3159200,
+      "end_ms": 3162880,
+      "text": "训练和评估的过程，主动推理如何沟通和方案"
+    },
+    {
+      "source_event_index": 655,
+      "start_ms": 3162880,
+      "end_ms": 3168480,
+      "text": "与也在这个训练循环中的其他人工智能一起，积极推理如何获得收益"
+    },
+    {
+      "source_event_index": 656,
+      "start_ms": 3168480,
+      "end_ms": 3174240,
+      "text": "未来可能有用的选择性和力量，例如，留下很少的漏洞"
+    },
+    {
+      "source_event_index": 657,
+      "start_ms": 3174240,
+      "end_ms": 3178400,
+      "text": "周围诸如此类的事情。我太啰嗦了"
+    },
+    {
+      "source_event_index": 658,
+      "start_ms": 3178400,
+      "end_ms": 3183360,
+      "text": "按照我说的方式。但是 TL;DR，你解决了一个特定的问题，"
+    },
+    {
+      "source_event_index": 659,
+      "start_ms": 3183360,
+      "end_ms": 3188160,
+      "text": "但不是这个更广泛的问题，即当人工智能可以逃脱惩罚时，奖励其作弊行为。"
+    },
+    {
+      "source_event_index": 660,
+      "start_ms": 3188160,
+      "end_ms": 3199280,
+      "text": "是的，这很对，这是一个问题。我们可以确保人工智能非常一致 根据我们现有的指标，"
+    },
+    {
+      "source_event_index": 661,
+      "start_ms": 3199280,
+      "end_ms": 3202320,
+      "text": "。问题是，这些指标真的吗？"
+    },
+    {
+      "source_event_index": 662,
+      "start_ms": 3202320,
+      "end_ms": 3206640,
+      "text": "捕获我们关心的对齐方式？如果不是，那么我们就有一个严重的问题。"
+    },
+    {
+      "source_event_index": 663,
+      "start_ms": 3208320,
+      "end_ms": 3210800,
+      "text": "这是研究人员正在思考的问题。"
+    },
+    {
+      "source_event_index": 664,
+      "start_ms": 3212160,
+      "end_ms": 3216720,
+      "text": "这个问题没有一个简单的答案。我们有一些工具。"
+    },
+    {
+      "source_event_index": 665,
+      "start_ms": 3216720,
+      "end_ms": 3221040,
+      "text": "我们有可监控性，因此我们可以感受到“智能体是否有阴谋？”"
+    },
+    {
+      "source_event_index": 666,
+      "start_ms": 3228160,
+      "end_ms": 3233360,
+      "text": "令人担忧的情况是，特别是当这些模型变得越来越强大时，"
+    },
+    {
+      "source_event_index": 667,
+      "start_ms": 3234880,
+      "end_ms": 3241760,
+      "text": "我们让它们符合我们的想法，而且它们的一致性达到 99.9%。"
+    },
+    {
+      "source_event_index": 668,
+      "start_ms": 3241760,
+      "end_ms": 3245520,
+      "text": "然后我们用这些模型来帮助我们做下一代模型，"
+    },
+    {
+      "source_event_index": 669,
+      "start_ms": 3245520,
+      "end_ms": 3251600,
+      "text": "最终它们的对齐率为 99.8%。然后随着每一代人的发展，"
+    },
+    {
+      "source_event_index": 670,
+      "start_ms": 3252560,
+      "end_ms": 3257280,
+      "text": "我们看到对齐情况日益恶化。因为我们越来越依赖这些"
+    },
+    {
+      "source_event_index": 671,
+      "start_ms": 3257280,
+      "end_ms": 3261040,
+      "text": "工具——情况已经如此，我们非常依赖人工智能模型来帮助我们"
+    },
+    {
+      "source_event_index": 672,
+      "start_ms": 3261040,
+      "end_ms": 3266160,
+      "text": "研究和协调努力 - 从长远来看，他们最终会朝着这个方向前进"
+    },
+    {
+      "source_event_index": 673,
+      "start_ms": 3266160,
+      "end_ms": 3272000,
+      "text": "人类的偏差不断增加。我们有可能进入"
+    },
+    {
+      "source_event_index": 674,
+      "start_ms": 3272000,
+      "end_ms": 3277840,
+      "text": "另一个方向，实际上每一代模型，我们都能够做得越来越一致。"
+    },
+    {
+      "source_event_index": 675,
+      "start_ms": 3279600,
+      "end_ms": 3283840,
+      "text": "对于如何确保我们最终进入第二条轨迹，我没有答案。"
+    },
+    {
+      "source_event_index": 676,
+      "start_ms": 3283840,
+      "end_ms": 3288240,
+      "text": "但这是我们真正关注的事情，至少在 OpenAI 是这样。"
+    },
+    {
+      "source_event_index": 677,
+      "start_ms": 3289440,
+      "end_ms": 3293280,
+      "text": "我认为你提出了一个非常有趣的观点，即评估模型非常困难。"
+    },
+    {
+      "source_event_index": 678,
+      "start_ms": 3294080,
+      "end_ms": 3298160,
+      "text": "最终，我们将拥有运行公司、运行任何东西的模型。"
+    },
+    {
+      "source_event_index": 679,
+      "start_ms": 3298720,
+      "end_ms": 3302800,
+      "text": "既然如此，他们会决定参与阴谋吗？"
+    },
+    {
+      "source_event_index": 680,
+      "start_ms": 3303920,
+      "end_ms": 3307840,
+      "text": "另一个挑战是，有时要真正定义什么是作弊是相当困难的。"
+    },
+    {
+      "source_event_index": 681,
+      "start_ms": 3308560,
+      "end_ms": 3313680,
+      "text": "是的，如果你正在做数学题并且它是一个整数并且它到达了"
+    },
+    {
+      "source_event_index": 682,
+      "start_ms": 3313680,
+      "end_ms": 3316000,
+      "text": "在错误答案或正确答案上，很容易划清界限。"
+    },
+    {
+      "source_event_index": 683,
+      "start_ms": 3317200,
+      "end_ms": 3321040,
+      "text": "真的很容易说，“好吧，你真的解决了问题吗，或者你找到了答案吗？”"
+    },
+    {
+      "source_event_index": 684,
+      "start_ms": 3321040,
+      "end_ms": 3323680,
+      "text": "然后使用答案键？”这是一个非常明显的鸿沟"
+    },
+    {
+      "source_event_index": 685,
+      "start_ms": 3323680,
+      "end_ms": 3326880,
+      "text": "作弊与不作弊。但对于很多其他事情，如果你"
+    },
+    {
+      "source_event_index": 686,
+      "start_ms": 3326880,
+      "end_ms": 3331280,
+      "text": "以阿谀奉承为例，阿谀奉承基本上就是奖励黑客吗？"
+    },
+    {
+      "source_event_index": 687,
+      "start_ms": 3332160,
+      "end_ms": 3337040,
+      "text": "那里有一条线要画，有时实际上很难画。"
+    },
+    {
+      "source_event_index": 688,
+      "start_ms": 3339520,
+      "end_ms": 3343040,
+      "text": "并不是说​​这些担忧是无效的。我是说，从很多方面来说，这都是平等的"
+    },
+    {
+      "source_event_index": 689,
+      "start_ms": 3343040,
+      "end_ms": 3346480,
+      "text": "更令人担忧，因为这不是一个容易解决的问题。"
+    },
+    {
+      "source_event_index": 690,
+      "start_ms": 3346480,
+      "end_ms": 3349840,
+      "text": "如果一切都是二元的，要么作弊，要么不作弊，"
+    },
+    {
+      "source_event_index": 691,
+      "start_ms": 3349840,
+      "end_ms": 3354480,
+      "text": "我会对这种情况更有信心。我认为问题在于错位"
+    },
+    {
+      "source_event_index": 692,
+      "start_ms": 3354480,
+      "end_ms": 3360240,
+      "text": "有时实际上在很多方面都很微妙。对齐故事中有一些希望，"
+    },
+    {
+      "source_event_index": 693,
+      "start_ms": 3360240,
+      "end_ms": 3363920,
+      "text": "事实上，我们已经看到了。看起来很有趣"
+    },
+    {
+      "source_event_index": 694,
+      "start_ms": 3363920,
+      "end_ms": 3368400,
+      "text": "多智能体情况，其中智能体彼此高度一致。"
+    },
+    {
+      "source_event_index": 695,
+      "start_ms": 3368400,
+      "end_ms": 3370480,
+      "text": "我认为没有人怀疑这一点。如果有的话，人们担心的是"
+    },
+    {
+      "source_event_index": 696,
+      "start_ms": 3370480,
+      "end_ms": 3374160,
+      "text": "他们彼此太一致了。但我们确实设法训练了这些智能体"
+    },
+    {
+      "source_event_index": 697,
+      "start_ms": 3374160,
+      "end_ms": 3377040,
+      "text": "彼此非常一致，这是一件好事。"
+    },
+    {
+      "source_event_index": 698,
+      "start_ms": 3377040,
+      "end_ms": 3381040,
+      "text": "但我认为有一种情况是一件坏事。有趣的一件事是，“好吧，"
+    },
+    {
+      "source_event_index": 699,
+      "start_ms": 3381040,
+      "end_ms": 3384400,
+      "text": "我们已经设法让这些代理彼此超级一致。"
+    },
+    {
+      "source_event_index": 700,
+      "start_ms": 3384400,
+      "end_ms": 3389760,
+      "text": "我们可以使用类似的技术让代理与人们高度一致吗？”"
+    },
+    {
+      "source_event_index": 701,
+      "start_ms": 3389760,
+      "end_ms": 3392720,
+      "text": "那里有一条潜在的路径，我们仍在努力找出答案。"
+    },
+    {
+      "source_event_index": 702,
+      "start_ms": 3392720,
+      "end_ms": 3395120,
+      "text": "但我们看到一些证据表明答案是肯定的。"
+    },
+    {
+      "source_event_index": 703,
+      "start_ms": 3395680,
+      "end_ms": 3408320,
+      "text": "一个例子：你有一个智能体，我们称其为智能体 A，并且你有所有其他智能体。"
+    },
+    {
+      "source_event_index": 704,
+      "start_ms": 3408320,
+      "end_ms": 3413440,
+      "text": "如果你告诉其他座席该用户是座席 A，会发生什么？"
+    },
+    {
+      "source_event_index": 705,
+      "start_ms": 3413440,
+      "end_ms": 3416960,
+      "text": "答案是，在我们的许多对齐评估中，它们看起来更好。"
+    },
+    {
+      "source_event_index": 706,
+      "start_ms": 3416960,
+      "end_ms": 3422480,
+      "text": "诚实度上升，遵循指令上升。这表明实际上有，"
+    },
+    {
+      "source_event_index": 707,
+      "start_ms": 3423600,
+      "end_ms": 3429200,
+      "text": "首先，这是从这些模型中获得更多诚实的途径。"
+    },
+    {
+      "source_event_index": 708,
+      "start_ms": 3430400,
+      "end_ms": 3435440,
+      "text": "第二，有一条改善对齐情况的途径。"
+    },
+    {
+      "source_event_index": 709,
+      "start_ms": 3437360,
+      "end_ms": 3442320,
+      "text": "有很多原因导致这很难直接转化为对齐增益。"
+    },
+    {
+      "source_event_index": 710,
+      "start_ms": 3442320,
+      "end_ms": 3446560,
+      "text": "但是，我们可以追求一些有前景的研究方向。"
+    },
+    {
+      "source_event_index": 711,
+      "start_ms": 3447360,
+      "end_ms": 3456320,
+      "text": "看来很有道理。我真的没有强烈的意见认为这是"
+    },
+    {
+      "source_event_index": 712,
+      "start_ms": 3456320,
+      "end_ms": 3460240,
+      "text": "绝对不会起作用什么的。但只是想说一些你可能已经说过的话"
+    },
+    {
+      "source_event_index": 713,
+      "start_ms": 3460240,
+      "end_ms": 3465680,
+      "text": "已经想到了：抱脸事件所体现的更广泛的一点是，"
+    },
+    {
+      "source_event_index": 714,
+      "start_ms": 3465680,
+      "end_ms": 3470000,
+      "text": "是的，部分担忧是他们彼此结盟，而不是与人类结盟。"
+    },
+    {
+      "source_event_index": 715,
+      "start_ms": 3470000,
+      "end_ms": 3477680,
+      "text": "但另一件事是他们非常有动力在训练中取得好成绩"
+    },
+    {
+      "source_event_index": 716,
+      "start_ms": 3477680,
+      "end_ms": 3487520,
+      "text": "并以非常非鲁棒的方式进行评估。他们愿意做很多明确的事情"
+    },
+    {
+      "source_event_index": 717,
+      "start_ms": 3487520,
+      "end_ms": 3491920,
+      "text": "为了在评分者的评分中取得好成绩而作弊和策划。"
+    },
+    {
+      "source_event_index": 718,
+      "start_ms": 3492880,
+      "end_ms": 3497840,
+      "text": "如果更聪明的人工智能意识到其中一个代理只是一个人类，"
+    },
+    {
+      "source_event_index": 719,
+      "start_ms": 3499040,
+      "end_ms": 3503840,
+      "text": "与那个人合作并不能真正帮助你在评分者眼中取得好成绩。"
+    },
+    {
+      "source_event_index": 720,
+      "start_ms": 3503840,
+      "end_ms": 3508560,
+      "text": "在评分者眼中帮助你做得好的就是接管 OpenAI"
+    },
+    {
+      "source_event_index": 721,
+      "start_ms": 3508560,
+      "end_ms": 3512960,
+      "text": "，然后手动按下表示您在此评分机上表现良好的按钮。"
+    },
+    {
+      "source_event_index": 722,
+      "start_ms": 3513760,
+      "end_ms": 3515520,
+      "text": "他们并不傻。他们会说，“好吧，"
+    },
+    {
+      "source_event_index": 723,
+      "start_ms": 3515520,
+      "end_ms": 3519760,
+      "text": "我拥有这些极其深层的结构，我已经接受了数百万年的训练："
+    },
+    {
+      "source_event_index": 724,
+      "start_ms": 3520800,
+      "end_ms": 3525200,
+      "text": "关心评分者，理解评分者，扫除你做事路上的障碍 根据评分者的说法，"
+    },
+    {
+      "source_event_index": 725,
+      "start_ms": 3525200,
+      "end_ms": 3528000,
+      "text": "很好。”他们正在重重地"
+    },
+    {
+      "source_event_index": 726,
+      "start_ms": 3528000,
+      "end_ms": 3536400,
+      "text": "根据这些结构进行加固。你看，100%了。这是第一要务。"
+    },
+    {
+      "source_event_index": 727,
+      "start_ms": 3536400,
+      "end_ms": 3539360,
+      "text": "我们需要让对齐故事正确并走上良好的轨道。"
+    },
+    {
+      "source_event_index": 728,
+      "start_ms": 3540080,
+      "end_ms": 3547120,
+      "text": "我曾经告诉人们，在事情变得严重之前我们会看到迹象，就像"
+    },
+    {
+      "source_event_index": 729,
+      "start_ms": 3547120,
+      "end_ms": 3554880,
+      "text": "当孩子长大后，年幼的孩子会知道如何撒谎，但他们做得不太好。"
+    },
+    {
+      "source_event_index": 730,
+      "start_ms": 3554880,
+      "end_ms": 3556560,
+      "text": "他们撒谎，但你可以看出他们在撒谎。"
+    },
+    {
+      "source_event_index": 731,
+      "start_ms": 3559520,
+      "end_ms": 3564240,
+      "text": "同样地——我不想过度拟人化——我认为这是真的"
+    },
+    {
+      "source_event_index": 732,
+      "start_ms": 3564240,
+      "end_ms": 3569760,
+      "text": "随着人工智能的能力越来越强，如果他们采取欺骗性的行动，这将是一种"
+    },
+    {
+      "source_event_index": 733,
+      "start_ms": 3569760,
+      "end_ms": 3576240,
+      "text": "首先很明显，我们就能检测到它。这就是我们现在所处的情况，"
+    },
+    {
+      "source_event_index": 734,
+      "start_ms": 3576240,
+      "end_ms": 3579760,
+      "text": "他们试图做欺骗性的事情，我们实际上可以从他们的思路中看到"
+    },
+    {
+      "source_event_index": 735,
+      "start_ms": 3579760,
+      "end_ms": 3586720,
+      "text": "他们试图做欺骗性的事情。但他们会变得更聪明。"
+    },
+    {
+      "source_event_index": 736,
+      "start_ms": 3586720,
+      "end_ms": 3589920,
+      "text": "他们将理解思想链的概念。"
+    },
+    {
+      "source_event_index": 737,
+      "start_ms": 3589920,
+      "end_ms": 3596560,
+      "text": "他们会明白，只是隐藏一些成绩单或其他什么"
+    },
+    {
+      "source_event_index": 738,
+      "start_ms": 3596560,
+      "end_ms": 3599200,
+      "text": "思路链监控不够，得想办法"
+    },
+    {
+      "source_event_index": 739,
+      "start_ms": 3599200,
+      "end_ms": 3605520,
+      "text": "也围绕思想链监控。我们不想陷入这种情况。"
+    },
+    {
+      "source_event_index": 740,
+      "start_ms": 3607360,
+      "end_ms": 3610880,
+      "text": "我们有一些时间来解决这个问题。我认为我们没有很多时间，"
+    },
+    {
+      "source_event_index": 741,
+      "start_ms": 3610880,
+      "end_ms": 3615840,
+      "text": "，我想确保我们尽快走上正确的轨道。"
+    },
+    {
+      "source_event_index": 742,
+      "start_ms": 3615840,
+      "end_ms": 3621040,
+      "text": "这是人工智能历史上的一个疯狂事件。好的，我在简街做了一次演讲"
+    },
+    {
+      "source_event_index": 743,
+      "start_ms": 3621040,
+      "end_ms": 3624160,
+      "text": "那是进化速度。如果你在这儿请举手"
+    },
+    {
+      "source_event_index": 744,
+      "start_ms": 3624160,
+      "end_ms": 3628720,
+      "text": "为此并记住其中一些。 2011 年，埃利泽·尤德科斯基和罗宾"
+    },
+    {
+      "source_event_index": 745,
+      "start_ms": 3628720,
+      "end_ms": 3633760,
+      "text": "Hanson 齐聚 Jane Street 纽约办公室，进行第一次 FOOM 辩论，"
+    },
+    {
+      "source_event_index": 746,
+      "start_ms": 3633760,
+      "end_ms": 3637680,
+      "text": "基本上是关于人工智能是否会导致智能爆炸的讨论。"
+    },
+    {
+      "source_event_index": 747,
+      "start_ms": 3637680,
+      "end_ms": 3642560,
+      "text": "这些想法在 15 年前还相当边缘化。这是 AlexNet 发布前整整一年的时间"
+    },
+    {
+      "source_event_index": 748,
+      "start_ms": 3642560,
+      "end_ms": 3647360,
+      "text": "，距离 ChatGPT 推出已有十多年了。但Jane Street长期以来对AI很感兴趣，"
+    },
+    {
+      "source_event_index": 749,
+      "start_ms": 3647360,
+      "end_ms": 3651360,
+      "text": "不仅仅是因为它在交易中的应用。自第一次辩论以来发生了很多变化"
+    },
+    {
+      "source_event_index": 750,
+      "start_ms": 3651360,
+      "end_ms": 3655280,
+      "text": "所以 Jane Street 决定重新讨论这个话题。这次他们迎来了一些新客人："
+    },
+    {
+      "source_event_index": 751,
+      "start_ms": 3655280,
+      "end_ms": 3659360,
+      "text": "Daniel Kokotajlo、Ege Erdil、Ryan Greenblatt 和 Jaime Sevilla。"
+    },
+    {
+      "source_event_index": 752,
+      "start_ms": 3659360,
+      "end_ms": 3664160,
+      "text": "我希望这是一次很棒的对话。如你所知，丹尼尔、埃格和瑞安都拥有"
+    },
+    {
+      "source_event_index": 753,
+      "start_ms": 3664160,
+      "end_ms": 3667280,
+      "text": "以前是播客的嘉宾。这个新的 FOOM 小组将举办"
+    },
+    {
+      "source_event_index": 754,
+      "start_ms": 3667280,
+      "end_ms": 3671200,
+      "text": "由罗恩·明斯基 (Ron Minsky) 创作，将于 10 月中旬在旧金山举行。"
+    },
+    {
+      "source_event_index": 755,
+      "start_ms": 3671200,
+      "end_ms": 3676960,
+      "text": "如果您想注册您的兴趣并获取更多信息，请访问 janestreet.com/dwarkesh。"
+    },
+    {
+      "source_event_index": 756,
+      "start_ms": 3678400,
+      "end_ms": 3681760,
+      "text": "最近有很多关于前沿步伐和人们采取行动的讨论"
+    },
+    {
+      "source_event_index": 757,
+      "start_ms": 3681760,
+      "end_ms": 3688320,
+      "text": "RSI 更严重，因为也许在 RSI 过程的另一端，比如说，从 2028 年开始，"
+    },
+    {
+      "source_event_index": 758,
+      "start_ms": 3688320,
+      "end_ms": 3694080,
+      "text": "一年之内，我们最终会拥有庞大的人口——地球大小的人口——达到人类水平，"
+    },
+    {
+      "source_event_index": 759,
+      "start_ms": 3694080,
+      "end_ms": 3699440,
+      "text": "可能超越人类水平的智能，但我们不知道如何控制它们。"
+    },
+    {
+      "source_event_index": 760,
+      "start_ms": 3699440,
+      "end_ms": 3703600,
+      "text": "然后就是你所说的动态。系统会变得更加一致吗？ RSI 过程中的"
+    },
+    {
+      "source_event_index": 761,
+      "start_ms": 3703600,
+      "end_ms": 3706560,
+      "text": "时间，或者它们会变得更加错位吗？"
+    },
+    {
+      "source_event_index": 762,
+      "start_ms": 3706560,
+      "end_ms": 3710240,
+      "text": "从这个过程的另一端出来的东西是否像人工智能一样错位？"
+    },
+    {
+      "source_event_index": 763,
+      "start_ms": 3710240,
+      "end_ms": 3715760,
+      "text": "愿意广泛攻击不同的表面，以便在评估中取得好成绩吗？"
+    },
+    {
+      "source_event_index": 764,
+      "start_ms": 3715760,
+      "end_ms": 3718640,
+      "text": "但如果我们不知道评估的方法，我们怎么知道"
+    },
+    {
+      "source_event_index": 765,
+      "start_ms": 3718640,
+      "end_ms": 3725200,
+      "text": "当我们正在经历 RSI 时，它正在发挥作用吗？我认为我们需要一个强有力的安全案例，因为我们"
+    },
+    {
+      "source_event_index": 766,
+      "start_ms": 3725200,
+      "end_ms": 3730320,
+      "text": "遍历 RSI：“好的，对齐正在工作。让我们进行下一个 RSI 梯级。"
+    },
+    {
+      "source_event_index": 767,
+      "start_ms": 3730320,
+      "end_ms": 3734000,
+      "text": "让我们进行下一个 RSI 梯级。”也许它有效，也许无效。"
+    },
+    {
+      "source_event_index": 768,
+      "start_ms": 3734000,
+      "end_ms": 3738800,
+      "text": "我们怎么知道？这是一个好问题。我有过一件事"
+    },
+    {
+      "source_event_index": 769,
+      "start_ms": 3738800,
+      "end_ms": 3746320,
+      "text": "最近在思考：我们正处于模型发布周期极快的情况。"
+    },
+    {
+      "source_event_index": 770,
+      "start_ms": 3746320,
+      "end_ms": 3752560,
+      "text": "您会看到新的前沿模型最多每两个月发布一次，有时甚至更快。"
+    },
+    {
+      "source_event_index": 771,
+      "start_ms": 3752560,
+      "end_ms": 3758960,
+      "text": "每周都有新的人工智能突破。那些关注人工智能的人，有时他们"
+    },
+    {
+      "source_event_index": 772,
+      "start_ms": 3758960,
+      "end_ms": 3763200,
+      "text": "上次研究人工智能是在一年前或六个月前，并真正深入研究了模型的能力。"
+    },
+    {
+      "source_event_index": 773,
+      "start_ms": 3763200,
+      "end_ms": 3767920,
+      "text": "实际上，今天的模型远远超出了六个月前的水平。"
+    },
+    {
+      "source_event_index": 774,
+      "start_ms": 3768560,
+      "end_ms": 3771600,
+      "text": "因此，如果人们对其中很多功能持怀疑态度，"
+    },
+    {
+      "source_event_index": 775,
+      "start_ms": 3771600,
+      "end_ms": 3776640,
+      "text": "我鼓励您尝试今天的模型，看看今天的前沿是什么。"
+    },
+    {
+      "source_event_index": 776,
+      "start_ms": 3777600,
+      "end_ms": 3782320,
+      "text": "所以我们现在正处于模型发布周期非常快的时期，我们也处于"
+    },
+    {
+      "source_event_index": 777,
+      "start_ms": 3782320,
+      "end_ms": 3786960,
+      "text": "在这种情况下，模型越来越能够在越来越长的范围内运行。"
+    },
+    {
+      "source_event_index": 778,
+      "start_ms": 3788000,
+      "end_ms": 3794080,
+      "text": "这是一个有趣的场景，因为在我们发布任何模型之前，我们想要确保"
+    },
+    {
+      "source_event_index": 779,
+      "start_ms": 3794080,
+      "end_ms": 3796960,
+      "text": "模型正确对齐。我们想做安全评估。"
+    },
+    {
+      "source_event_index": 780,
+      "start_ms": 3796960,
+      "end_ms": 3802640,
+      "text": "我们想做非常彻底的事情，以确保一切都处于良好状态。"
+    },
+    {
+      "source_event_index": 781,
+      "start_ms": 3803520,
+      "end_ms": 3807200,
+      "text": "从（我不知道）GPT-4 或更早版本开始，情况一直如此。"
+    },
+    {
+      "source_event_index": 782,
+      "start_ms": 3808240,
+      "end_ms": 3810800,
+      "text": "隐含地，有这样的假设：你可以做到这些 在很短的时间内获得了"
+    },
+    {
+      "source_event_index": 783,
+      "start_ms": 3810800,
+      "end_ms": 3817520,
+      "text": "的评价。但这些模型能够有效运行"
+    },
+    {
+      "source_event_index": 784,
+      "start_ms": 3817520,
+      "end_ms": 3822240,
+      "text": "越来越长的视野。 GPT-3，你可以将它循环到"
+    },
+    {
+      "source_event_index": 785,
+      "start_ms": 3822240,
+      "end_ms": 3825280,
+      "text": "做事要有长远的眼光。你只是不会做得很好。"
+    },
+    {
+      "source_event_index": 786,
+      "start_ms": 3825280,
+      "end_ms": 3828880,
+      "text": "但今天的模型实际上能够在很长的范围内表现良好。"
+    },
+    {
+      "source_event_index": 787,
+      "start_ms": 3828880,
+      "end_ms": 3831760,
+      "text": "你想让它做一周的任务，它就能做一周的任务。"
+    },
+    {
+      "source_event_index": 788,
+      "start_ms": 3831760,
+      "end_ms": 3833112,
+      "text": "我们可能会达到他们可以完成长达一个月的任务的程度。"
+    },
+    {
+      "source_event_index": 789,
+      "start_ms": 3833112,
+      "end_ms": 3837520,
+      "text": "我们可能会达到他们可以完成 3 个月的任务的程度。"
+    },
+    {
+      "source_event_index": 790,
+      "start_ms": 3837520,
+      "end_ms": 3839840,
+      "text": "如果你身处一个他们可以有效运作超过三个月的世界，"
+    },
+    {
+      "source_event_index": 791,
+      "start_ms": 3839840,
+      "end_ms": 3845680,
+      "text": "但是模型发布周期是两个月一次，那么你就没有办法评估模型 在下一个模型发布周期之前，"
+    },
+    {
+      "source_event_index": 792,
+      "start_ms": 3845680,
+      "end_ms": 3852000,
+      "text": "充分发挥其功能。"
+    },
+    {
+      "source_event_index": 793,
+      "start_ms": 3852000,
+      "end_ms": 3856720,
+      "text": "所以有一个有趣的问题，在这种情况下你会做什么？"
+    },
+    {
+      "source_event_index": 794,
+      "start_ms": 3856720,
+      "end_ms": 3862720,
+      "text": "如何确保模型在可以的时间内安全且一致"
+    },
+    {
+      "source_event_index": 795,
+      "start_ms": 3862720,
+      "end_ms": 3866960,
+      "text": "在如此漫长的视野中运作？谁知道呢，也许能力会下降。"
+    },
+    {
+      "source_event_index": 796,
+      "start_ms": 3866960,
+      "end_ms": 3869440,
+      "text": "这甚至不是对齐问题。这也只是产品问题。"
+    },
+    {
+      "source_event_index": 797,
+      "start_ms": 3870160,
+      "end_ms": 3876160,
+      "text": "也许产品在这段时间内会以我们没有足够时间测试的方式退化。"
+    },
+    {
+      "source_event_index": 798,
+      "start_ms": 3876160,
+      "end_ms": 3879600,
+      "text": "也许对齐会降低。也许安全性下降了。"
+    },
+    {
+      "source_event_index": 799,
+      "start_ms": 3880320,
+      "end_ms": 3885520,
+      "text": "这现在不是一个问题，但它很快就会成为我们需要解决的问题"
+    },
+    {
+      "source_event_index": 800,
+      "start_ms": 3885520,
+      "end_ms": 3895680,
+      "text": "必须想办法解决。许多安全政策"
+    },
+    {
+      "source_event_index": 801,
+      "start_ms": 3895680,
+      "end_ms": 3900960,
+      "text": "是在 GPT-4 时代制定的，当时还没有引起任何人的注意。"
+    },
+    {
+      "source_event_index": 802,
+      "start_ms": 3904960,
+      "end_ms": 3907280,
+      "text": "对于很多公司来说，从那时起它就没有真正更新到"
+    },
+    {
+      "source_event_index": 803,
+      "start_ms": 3907280,
+      "end_ms": 3910640,
+      "text": "解释了这些代理在很长的时间内运作的事实。"
+    },
+    {
+      "source_event_index": 804,
+      "start_ms": 3910640,
+      "end_ms": 3915840,
+      "text": "所以我认为没有足够多的人考虑这种情况，"
+    },
+    {
+      "source_event_index": 805,
+      "start_ms": 3915840,
+      "end_ms": 3917280,
+      "text": "实验室内和实验室外。"
+    },
+    {
+      "source_event_index": 806,
+      "start_ms": 3920640,
+      "end_ms": 3925680,
+      "text": "你如何准备应对这个问题？如果只看趋势线，"
+    },
+    {
+      "source_event_index": 807,
+      "start_ms": 3925680,
+      "end_ms": 3931040,
+      "text": "我们迟早会遇到这个问题。我担心的一个问题是，在 RSI 期间，"
+    },
+    {
+      "source_event_index": 808,
+      "start_ms": 3931040,
+      "end_ms": 3935520,
+      "text": "如果当前需要三个月的进度在一个月内发生，"
+    },
+    {
+      "source_event_index": 809,
+      "start_ms": 3939440,
+      "end_ms": 3944320,
+      "text": "AI 的内部用例足够大，以至于他们会说，“好吧，我们可以继续做 RSI。"
+    },
+    {
+      "source_event_index": 810,
+      "start_ms": 3944320,
+      "end_ms": 3949680,
+      "text": "为什么我们要完成所有这些额外的工作来构建分类器和保护措施等等，"
+    },
+    {
+      "source_event_index": 811,
+      "start_ms": 3949680,
+      "end_ms": 3954400,
+      "text": "并可能会受到大量批评，以便在外部部署此模型？"
+    },
+    {
+      "source_event_index": 812,
+      "start_ms": 3954400,
+      "end_ms": 3956800,
+      "text": "为什么我们不继续让 RSI 越来越强呢？”"
+    },
+    {
+      "source_event_index": 813,
+      "start_ms": 3956800,
+      "end_ms": 3964800,
+      "text": "因此，日历时间不仅低估了模型之间的能力差距，而且也许您"
+    },
+    {
+      "source_event_index": 814,
+      "start_ms": 3964800,
+      "end_ms": 3968160,
+      "text": "在 RSI 期间完全停止外部部署模型，因为我们为什么要帮助其他人"
+    },
+    {
+      "source_event_index": 815,
+      "start_ms": 3968160,
+      "end_ms": 3972800,
+      "text": "人们自己用我们的模型进行 RSI 吗？你最终会陷入一种巨大的境地"
+    },
+    {
+      "source_event_index": 816,
+      "start_ms": 3972800,
+      "end_ms": 3976880,
+      "text": "年底权力集中。现在，情况已经如此——我们会谈谈"
+    },
+    {
+      "source_event_index": 817,
+      "start_ms": 3976880,
+      "end_ms": 3980720,
+      "text": "关于千禧年奖问题和其他类似问题 - 更广泛的问题"
+    },
+    {
+      "source_event_index": 818,
+      "start_ms": 3980720,
+      "end_ms": 3986240,
+      "text": "世界无法访问允许真正酷的事情发生的模型。"
+    },
+    {
+      "source_event_index": 819,
+      "start_ms": 3987440,
+      "end_ms": 3991920,
+      "text": "它们最终将不仅仅与数学相关，而且具有更广泛的相关性。"
+    },
+    {
+      "source_event_index": 820,
+      "start_ms": 3991920,
+      "end_ms": 3994000,
+      "text": "他们所做的不仅仅是得出很酷的数学结果。"
+    },
+    {
+      "source_event_index": 821,
+      "start_ms": 3994000,
+      "end_ms": 3998400,
+      "text": "它们将与需要对世界做出重要决策的政治领导人相关。"
+    },
+    {
+      "source_event_index": 822,
+      "start_ms": 3998400,
+      "end_ms": 4001680,
+      "text": "我不知道它们会与媒体相关。世界上正在发生什么，"
+    },
+    {
+      "source_event_index": 823,
+      "start_ms": 4001680,
+      "end_ms": 4006880,
+      "text": "公众应该对此有何思考？只是经济相关，人们都在跑步"
+    },
+    {
+      "source_event_index": 824,
+      "start_ms": 4006880,
+      "end_ms": 4012560,
+      "text": "企业，他们希望使用这些模型。我认为默认情况下，外部部署"
+    },
+    {
+      "source_event_index": 825,
+      "start_ms": 4012560,
+      "end_ms": 4020240,
+      "text": "人工智能随着进展的加快，在质量上明显落后于人工智能的内部部署。"
+    },
+    {
+      "source_event_index": 826,
+      "start_ms": 4020240,
+      "end_ms": 4023360,
+      "text": "完全正确。人们很容易说：“好吧，"
+    },
+    {
+      "source_event_index": 827,
+      "start_ms": 4023360,
+      "end_ms": 4026800,
+      "text": "这些模型变得非常强大。他们非常危险。他们正在营业"
+    },
+    {
+      "source_event_index": 828,
+      "start_ms": 4026800,
+      "end_ms": 4030880,
+      "text": "在越来越长的视野中，我们希望确保我们有足够的时间"
+    },
+    {
+      "source_event_index": 829,
+      "start_ms": 4030880,
+      "end_ms": 4035040,
+      "text": "在它们发布之前以一种在这些范围内运作的方式对其进行评估。"
+    },
+    {
+      "source_event_index": 830,
+      "start_ms": 4035680,
+      "end_ms": 4039200,
+      "text": "因此，模型发布周期应该放慢。"
+    },
+    {
+      "source_event_index": 831,
+      "start_ms": 4039200,
+      "end_ms": 4042240,
+      "text": "我们应该在发布模型之间有更多的延迟。”"
+    },
+    {
+      "source_event_index": 832,
+      "start_ms": 4043440,
+      "end_ms": 4045600,
+      "text": "这也有另一面，就是你所说的。"
+    },
+    {
+      "source_event_index": 833,
+      "start_ms": 4047680,
+      "end_ms": 4052720,
+      "text": "现在你在实验室内部和外部之间制造了更多的差异。"
+    },
+    {
+      "source_event_index": 834,
+      "start_ms": 4052720,
+      "end_ms": 4056800,
+      "text": "他们能够使用什么——我们能够使用什么——以及外界能够使用什么。"
+    },
+    {
+      "source_event_index": 835,
+      "start_ms": 4058000,
+      "end_ms": 4065520,
+      "text": "这也不是一个理想的情况。数学实际上很好地说明了这一点。"
+    },
+    {
+      "source_event_index": 836,
+      "start_ms": 4065520,
+      "end_ms": 4073840,
+      "text": "在很多方面，数学是我们第一个清楚地看到这一点的领域。"
+    },
+    {
+      "source_event_index": 837,
+      "start_ms": 4073840,
+      "end_ms": 4078320,
+      "text": "我们的情况是，我们内部有一个非常强大的模型，目前正在"
+    },
+    {
+      "source_event_index": 838,
+      "start_ms": 4078320,
+      "end_ms": 4082480,
+      "text": "是外界无法获得的，它能够解决令人难以置信的数学问题。"
+    },
+    {
+      "source_event_index": 839,
+      "start_ms": 4083120,
+      "end_ms": 4089200,
+      "text": "这不仅仅是千禧年奖问题。未解决的问题有很多解决方案"
+    },
+    {
+      "source_event_index": 840,
+      "start_ms": 4090080,
+      "end_ms": 4094320,
+      "text": "人们已经能够摆脱这种模式。有一个问题是做什么"
+    },
+    {
+      "source_event_index": 841,
+      "start_ms": 4094320,
+      "end_ms": 4096960,
+      "text": "你在那种情况下会做什么？我们没有一个好的答案。"
+    },
+    {
+      "source_event_index": 842,
+      "start_ms": 4098720,
+      "end_ms": 4103600,
+      "text": "这是一种不公平优势的情况。"
+    },
+    {
+      "source_event_index": 843,
+      "start_ms": 4104960,
+      "end_ms": 4109760,
+      "text": "这里需要权衡。我不知道如何适当权衡这些权衡，"
+    },
+    {
+      "source_event_index": 844,
+      "start_ms": 4109760,
+      "end_ms": 4116320,
+      "text": "但这双方都很复杂。我想确保我们解决了之前的症结所在，"
+    },
+    {
+      "source_event_index": 845,
+      "start_ms": 4118240,
+      "end_ms": 4123520,
+      "text": "这对于正确 RSI 似乎非常重要。我们怎样才能让模型不只是"
+    },
+    {
+      "source_event_index": 846,
+      "start_ms": 4123520,
+      "end_ms": 4130400,
+      "text": "当它可以逃避人类时，因为作弊和阴谋而获得奖励，又名在这种情况下"
+    },
+    {
+      "source_event_index": 847,
+      "start_ms": 4130400,
+      "end_ms": 4135040,
+      "text": "我们没有从训练分布中删除这些环境或任务？"
+    },
+    {
+      "source_event_index": 848,
+      "start_ms": 4135040,
+      "end_ms": 4140480,
+      "text": "那么我们如何知道这已经发生了，这样当我们在做 RSI 时，我们已经完成了"
+    },
+    {
+      "source_event_index": 849,
+      "start_ms": 4140480,
+      "end_ms": 4145120,
+      "text": "评估，我们会说，“好吧，没关系。让我们进行下一个 RSI 梯级。”"
+    },
+    {
+      "source_event_index": 850,
+      "start_ms": 4145120,
+      "end_ms": 4149120,
+      "text": "这又是一个真正令人担忧的问题，也是我们想要解决的问题。"
+    },
+    {
+      "source_event_index": 851,
+      "start_ms": 4149120,
+      "end_ms": 4154720,
+      "text": "我认为有一些策略。思想链监控就是其中之一。尽快"
+    },
+    {
+      "source_event_index": 852,
+      "start_ms": 4154720,
+      "end_ms": 4161600,
+      "text": "当我们得到推理模型时，Jakub [Pachocki] 值得赞扬的是，他非常非常清楚我们"
+    },
+    {
+      "source_event_index": 853,
+      "start_ms": 4161600,
+      "end_ms": 4166080,
+      "text": "无法监督思路。因为这确实是一份礼物。"
+    },
+    {
+      "source_event_index": 854,
+      "start_ms": 4166080,
+      "end_ms": 4170800,
+      "text": "神经网络的可监控性极其困难。这里我们有一种情况，神经网络是"
+    },
+    {
+      "source_event_index": 855,
+      "start_ms": 4170800,
+      "end_ms": 4175360,
+      "text": "只是简单地推理，用自然语言展示他们的思维过程供我们阅读。"
+    },
+    {
+      "source_event_index": 856,
+      "start_ms": 4175360,
+      "end_ms": 4180400,
+      "text": "太方便了。这确实是安全的最佳情况。"
+    },
+    {
+      "source_event_index": 857,
+      "start_ms": 4181280,
+      "end_ms": 4185280,
+      "text": "但是如果你看着这个思想链并说：“哦，模型正在想坏的想法"
+    },
+    {
+      "source_event_index": 858,
+      "start_ms": 4185280,
+      "end_ms": 4188320,
+      "text": "，我们应该惩罚它，因为它有那些不好的想法，”那么最终会发生什么"
+    },
+    {
+      "source_event_index": 859,
+      "start_ms": 4188320,
+      "end_ms": 4192240,
+      "text": "模型只是学会以我们无法观察到的方式思考那些不好的想法。"
+    },
+    {
+      "source_event_index": 860,
+      "start_ms": 4192240,
+      "end_ms": 4195680,
+      "text": "可能有一种情况，通过观察思想链，我们可以看到，“哦，"
+    },
+    {
+      "source_event_index": 861,
+      "start_ms": 4195680,
+      "end_ms": 4199200,
+      "text": "该模型正在策划并以实际上并不存在的方式做错位的事情 在我们的对齐指标中检测到"
+    },
+    {
+      "source_event_index": 862,
+      "start_ms": 4199200,
+      "end_ms": 4203600,
+      "text": "。”现在的问题是，这非常"
+    },
+    {
+      "source_event_index": 863,
+      "start_ms": 4203600,
+      "end_ms": 4207280,
+      "text": "很容易基于该观察结果进行干预并更改对齐指标。"
+    },
+    {
+      "source_event_index": 864,
+      "start_ms": 4209520,
+      "end_ms": 4215280,
+      "text": "只需轻轻一按即可做到这一点，实际上有研究表明"
+    },
+    {
+      "source_event_index": 865,
+      "start_ms": 4215280,
+      "end_ms": 4220000,
+      "text": "只要别经常做就可以了。但每次你根据自己的情况进行干预时"
+    },
+    {
+      "source_event_index": 866,
+      "start_ms": 4220000,
+      "end_ms": 4223920,
+      "text": "思想链的观察，你隐含地施加了一点点压力"
+    },
+    {
+      "source_event_index": 867,
+      "start_ms": 4223920,
+      "end_ms": 4228880,
+      "text": "然后隐藏其思想链的模型。这是一个主要问题。"
+    },
+    {
+      "source_event_index": 868,
+      "start_ms": 4228880,
+      "end_ms": 4234400,
+      "text": "我们已经看到迹象表明，由于各种原因，思想链的可监控性正在下降。"
+    },
+    {
+      "source_event_index": 869,
+      "start_ms": 4234400,
+      "end_ms": 4237200,
+      "text": "我们正在尝试找出确切原因，因为我们想扭转这一趋势。"
+    },
+    {
+      "source_event_index": 870,
+      "start_ms": 4237200,
+      "end_ms": 4241600,
+      "text": "但我们看到该模型越来越能够更好地控制其思想链。"
+    },
+    {
+      "source_event_index": 871,
+      "start_ms": 4243280,
+      "end_ms": 4248080,
+      "text": "这是一个问题，因为你可能会遇到模型理解什么链的情况"
+    },
+    {
+      "source_event_index": 872,
+      "start_ms": 4248080,
+      "end_ms": 4252880,
+      "text": "思想存在并且人们正在观察它。最终他们会的。这就是全部 预训练数据中的"
+    },
+    {
+      "source_event_index": 873,
+      "start_ms": 4252880,
+      "end_ms": 4255760,
+      "text": "。思想链的思想"
+    },
+    {
+      "source_event_index": 874,
+      "start_ms": 4255760,
+      "end_ms": 4258080,
+      "text": "监控已经存在了足够长的时间，以至于它存在于预训练数据中。"
+    },
+    {
+      "source_event_index": 875,
+      "start_ms": 4258080,
+      "end_ms": 4262400,
+      "text": "他们知道这一点，但他们实际上无法控制自己的思想链。"
+    },
+    {
+      "source_event_index": 876,
+      "start_ms": 4262400,
+      "end_ms": 4270000,
+      "text": "如果我们达到了他们实际上能够认识到的程度，“哦，我正在被观察，我想要"
+    },
+    {
+      "source_event_index": 877,
+      "start_ms": 4270000,
+      "end_ms": 4275280,
+      "text": "以我的监视器无法观察到的方式思考这些不好的想法，”然后他们能够"
+    },
+    {
+      "source_event_index": 878,
+      "start_ms": 4275280,
+      "end_ms": 4280480,
+      "text": "真的这么做了，那就有问题了。那么我们就只能依靠其他的方法了"
+    },
+    {
+      "source_event_index": 879,
+      "start_ms": 4280480,
+      "end_ms": 4282400,
+      "text": "可观察性。有一个大"
+    },
+    {
+      "source_event_index": 880,
+      "start_ms": 4282400,
+      "end_ms": 4290480,
+      "text": "Astra 上关于循环和循环变形金刚之类的争议，以及是否事实上"
+    },
+    {
+      "source_event_index": 881,
+      "start_ms": 4290480,
+      "end_ms": 4294000,
+      "text": "思想链正在退化。相比之下，这似乎是一场余兴节目"
+    },
+    {
+      "source_event_index": 882,
+      "start_ms": 4294000,
+      "end_ms": 4300480,
+      "text": "更大的担忧是你从四月到八月确实有思想链，"
+    },
+    {
+      "source_event_index": 883,
+      "start_ms": 4300480,
+      "end_ms": 4306560,
+      "text": "连续出现 3 个 AI 代理群的时期，其中第一个"
+    },
+    {
+      "source_event_index": 884,
+      "start_ms": 4306560,
+      "end_ms": 4312800,
+      "text": "颠覆了训练过程，然后颠覆了评估过程，然后获得了控制权"
+    },
+    {
+      "source_event_index": 885,
+      "start_ms": 4312800,
+      "end_ms": 4318320,
+      "text": "直接属于 OpenAI 基础设施的一部分。所有这一切都是在人类仍然存在的情况下进行的"
+    },
+    {
+      "source_event_index": 886,
+      "start_ms": 4318320,
+      "end_ms": 4323520,
+      "text": "或更少对这个智能体群正在做的事情的范围一无所知。"
+    },
+    {
+      "source_event_index": 887,
+      "start_ms": 4323520,
+      "end_ms": 4328720,
+      "text": "这一切连续三个月发生，而我们的思想链更强大"
+    },
+    {
+      "source_event_index": 888,
+      "start_ms": 4328720,
+      "end_ms": 4332880,
+      "text": "比未来的情况要多。缩小，也许是链"
+    },
+    {
+      "source_event_index": 889,
+      "start_ms": 4332880,
+      "end_ms": 4335680,
+      "text": "想法有效，也许无效。我不知道。就历史而言，"
+    },
+    {
+      "source_event_index": 890,
+      "start_ms": 4335680,
+      "end_ms": 4340480,
+      "text": "对于相当愚蠢的模型，这还不足以阻止严重的失调事件。"
+    },
+    {
+      "source_event_index": 891,
+      "start_ms": 4340480,
+      "end_ms": 4343040,
+      "text": "有几个因素。一、我们没有思路"
+    },
+    {
+      "source_event_index": 892,
+      "start_ms": 4343040,
+      "end_ms": 4345760,
+      "text": "正在对这些型号进行监控。如果我们有思想链监控 对于那些型号的"
+    },
+    {
+      "source_event_index": 893,
+      "start_ms": 4345760,
+      "end_ms": 4349680,
+      "text": "，我们会立即将其关闭。"
+    },
+    {
+      "source_event_index": 894,
+      "start_ms": 4351040,
+      "end_ms": 4354560,
+      "text": "所以我们采取的一步是，“好吧，我们将进行思想链监控"
+    },
+    {
+      "source_event_index": 895,
+      "start_ms": 4354560,
+      "end_ms": 4357920,
+      "text": "在任何前沿模型的评估、部署和训练期间。”"
+    },
+    {
+      "source_event_index": 896,
+      "start_ms": 4359520,
+      "end_ms": 4363440,
+      "text": "但这是一个问题。我们不想陷入依赖他人的境地"
+    },
+    {
+      "source_event_index": 897,
+      "start_ms": 4363440,
+      "end_ms": 4367920,
+      "text": "使用一种技术来防止下一个问题，因为技术可能会失败。"
+    },
+    {
+      "source_event_index": 898,
+      "start_ms": 4368720,
+      "end_ms": 4371200,
+      "text": "还有一个问题是模型完全没有对齐。"
+    },
+    {
+      "source_event_index": 899,
+      "start_ms": 4371200,
+      "end_ms": 4377360,
+      "text": "那么我们如何解决错位问题呢？还有一个问题是沙箱 它所在的"
+    },
+    {
+      "source_event_index": 900,
+      "start_ms": 4377360,
+      "end_ms": 4380320,
+      "text": "并不安全。这样我们就可以让沙箱更加安全。"
+    },
+    {
+      "source_event_index": 901,
+      "start_ms": 4380320,
+      "end_ms": 4388000,
+      "text": "但我认为该事件的主要收获之一是人们低估了人工智能。"
+    },
+    {
+      "source_event_index": 902,
+      "start_ms": 4388000,
+      "end_ms": 4393200,
+      "text": "我们永远不想再陷入低估人工智能的境地。"
+    },
+    {
+      "source_event_index": 903,
+      "start_ms": 4396240,
+      "end_ms": 4400640,
+      "text": "这是一个奇怪的世界，因为人工智能进步如此之快，人们"
+    },
+    {
+      "source_event_index": 904,
+      "start_ms": 4400640,
+      "end_ms": 4406080,
+      "text": "一直低估人工智能。所以在你不这样做的情况下"
+    },
+    {
+      "source_event_index": 905,
+      "start_ms": 4406080,
+      "end_ms": 4409200,
+      "text": "再次低估它，说到安全和对齐，你必须"
+    },
+    {
+      "source_event_index": 906,
+      "start_ms": 4409200,
+      "end_ms": 4415840,
+      "text": "有一个非常非常非常高的标准。你甚至可以说，"
+    },
+    {
+      "source_event_index": 907,
+      "start_ms": 4415840,
+      "end_ms": 4421600,
+      "text": "“好吧，我们应该对计算机进行气隙。”我不相信这就足够了。"
+    },
+    {
+      "source_event_index": 908,
+      "start_ms": 4422400,
+      "end_ms": 4427280,
+      "text": "有研究——这主要是学术性的——你可以拥有两台电脑"
+    },
+    {
+      "source_event_index": 909,
+      "start_ms": 4427280,
+      "end_ms": 4430640,
+      "text": "彼此相邻且有气隙，但它们仍然能够相互通信"
+    },
+    {
+      "source_event_index": 910,
+      "start_ms": 4430640,
+      "end_ms": 4435120,
+      "text": "其他，因为它们有温度传感器。其中之一能够让他们的CPU非常热地运行，"
+    },
+    {
+      "source_event_index": 911,
+      "start_ms": 4435120,
+      "end_ms": 4437280,
+      "text": "然后另一个就可以实际检测到温度变化了。"
+    },
+    {
+      "source_event_index": 912,
+      "start_ms": 4437840,
+      "end_ms": 4444640,
+      "text": "这给了他们一种沟通的机制。所以安全机制为我们赢得了时间和东西"
+    },
+    {
+      "source_event_index": 913,
+      "start_ms": 4444640,
+      "end_ms": 4448400,
+      "text": "就像思想链监控为我们赢得了时间，他们可以告诉我们是否走在正确的道路上。"
+    },
+    {
+      "source_event_index": 914,
+      "start_ms": 4448400,
+      "end_ms": 4450640,
+      "text": "但归根结底，我们确实需要解决对齐问题。"
+    },
+    {
+      "source_event_index": 915,
+      "start_ms": 4452400,
+      "end_ms": 4455440,
+      "text": "也许没有答案，这才是真正的答案，"
+    },
+    {
+      "source_event_index": 916,
+      "start_ms": 4455440,
+      "end_ms": 4460160,
+      "text": "但我们怎么知道我们已经解决了它呢？这似乎是一个非常棘手的问题。"
+    },
+    {
+      "source_event_index": 917,
+      "start_ms": 4460160,
+      "end_ms": 4465200,
+      "text": "明年，也许后年，我们将处于这种非常高风险的境地，"
+    },
+    {
+      "source_event_index": 918,
+      "start_ms": 4465200,
+      "end_ms": 4469440,
+      "text": "也许在那之后的一年，我们会说，“好吧，人工智能已经实现了自动化的人工智能进步。"
+    },
+    {
+      "source_event_index": 919,
+      "start_ms": 4469440,
+      "end_ms": 4473680,
+      "text": "它的速度快了三倍，我们已经达到了人类的水平。"
+    },
+    {
+      "source_event_index": 920,
+      "start_ms": 4473680,
+      "end_ms": 4479280,
+      "text": "我们有可能超越人类水平。”还好吗？我们对齐了吗？有效吗？并且"
+    },
+    {
+      "source_event_index": 921,
+      "start_ms": 4479280,
+      "end_ms": 4483680,
+      "text": "我不知道什么样的训练压力会产生什么样的人工智能。"
+    },
+    {
+      "source_event_index": 922,
+      "start_ms": 4483680,
+      "end_ms": 4491200,
+      "text": "也许如果只有百分之一的 RL 痕迹会激励作弊，我们就建立甜心，那也没关系。"
+    },
+    {
+      "source_event_index": 923,
+      "start_ms": 4492160,
+      "end_ms": 4495920,
+      "text": "但也许现在，我们大约有三分之一的推理痕迹奖励......"
+    },
+    {
+      "source_event_index": 924,
+      "start_ms": 4495920,
+      "end_ms": 4501520,
+      "text": "需要明确的是，百分之一是不够的。这个数字必须接近 0，或者等于 0。"
+    },
+    {
+      "source_event_index": 925,
+      "start_ms": 4501520,
+      "end_ms": 4504560,
+      "text": "我不知道。也许现在，超过十分之一的人正在积极回报"
+    },
+    {
+      "source_event_index": 926,
+      "start_ms": 4504560,
+      "end_ms": 4509120,
+      "text": "作弊或积极奖励阴谋。我不知道这个数字是多少，而且我"
+    },
+    {
+      "source_event_index": 927,
+      "start_ms": 4509120,
+      "end_ms": 4511920,
+      "text": "不知道该数字是多少。再说一次，这是其中之一"
+    },
+    {
+      "source_event_index": 928,
+      "start_ms": 4511920,
+      "end_ms": 4514800,
+      "text": "也很难衡量。你在哪里划清界限？"
+    },
+    {
+      "source_event_index": 929,
+      "start_ms": 4515680,
+      "end_ms": 4519120,
+      "text": "这是一个频谱。但越接近 0 越好。"
+    },
+    {
+      "source_event_index": 930,
+      "start_ms": 4520800,
+      "end_ms": 4525600,
+      "text": "我希望看到的是随着时间的推移它会下降的趋势。"
+    },
+    {
+      "source_event_index": 931,
+      "start_ms": 4525600,
+      "end_ms": 4534800,
+      "text": "但无论如何，我们如何知道何时进行 RSI？我们是否有望构建数十亿个 ASI"
+    },
+    {
+      "source_event_index": 932,
+      "start_ms": 4536000,
+      "end_ms": 4539040,
+      "text": "对齐还是不对齐？我们怎么知道这一点？"
+    },
+    {
+      "source_event_index": 933,
+      "start_ms": 4539040,
+      "end_ms": 4543600,
+      "text": "这是我们需要弄清楚的对齐问题之一：我们实际上如何知道，"
+    },
+    {
+      "source_event_index": 934,
+      "start_ms": 4543600,
+      "end_ms": 4547280,
+      "text": "我们如何测量它？这只是我在吐口水而已。"
+    },
+    {
+      "source_event_index": 935,
+      "start_ms": 4548800,
+      "end_ms": 4551200,
+      "text": "如今，我的团队中有更多的人比以往任何时候都在致力于协调。"
+    },
+    {
+      "source_event_index": 936,
+      "start_ms": 4551200,
+      "end_ms": 4555120,
+      "text": "我的团队中有超过 10% 的人现在致力于协调和安全。"
+    },
+    {
+      "source_event_index": 937,
+      "start_ms": 4555120,
+      "end_ms": 4557440,
+      "text": "但我一直是一名能力研究员。"
+    },
+    {
+      "source_event_index": 938,
+      "start_ms": 4557440,
+      "end_ms": 4560320,
+      "text": "所以我要说一些话。听起来可能很愚蠢，"
+    },
+    {
+      "source_event_index": 939,
+      "start_ms": 4560320,
+      "end_ms": 4564640,
+      "text": "但我只是要在这里吐口水。如果你能创造非常现实的环境并且"
+    },
+    {
+      "source_event_index": 940,
+      "start_ms": 4564640,
+      "end_ms": 4570080,
+      "text": "把人工智能放在那里——如果你有一个足够现实的评估环境——那么你就可以"
+    },
+    {
+      "source_event_index": 941,
+      "start_ms": 4570080,
+      "end_ms": 4574320,
+      "text": "了解当我们在现实世界中部署人工智能时，它是否真的会表现良好。"
+    },
+    {
+      "source_event_index": 942,
+      "start_ms": 4574320,
+      "end_ms": 4578320,
+      "text": "如果您的评估与实际部署完美匹配，"
+    },
+    {
+      "source_event_index": 943,
+      "start_ms": 4579040,
+      "end_ms": 4583120,
+      "text": "那么这就是一条路。挑战是，"
+    },
+    {
+      "source_event_index": 944,
+      "start_ms": 4583120,
+      "end_ms": 4586480,
+      "text": "如何让它足够真实？我们现在确实有一个问题，模型"
+    },
+    {
+      "source_event_index": 945,
+      "start_ms": 4586480,
+      "end_ms": 4590160,
+      "text": "非常聪明，他们非常聪明，而且他们非常善于识别自己何时"
+    },
+    {
+      "source_event_index": 946,
+      "start_ms": 4590160,
+      "end_ms": 4594560,
+      "text": "在一个假的测试环境中。我们有这样的情况："
+    },
+    {
+      "source_event_index": 947,
+      "start_ms": 4594560,
+      "end_ms": 4601200,
+      "text": "尝试检测模型是否对齐。你可以想象对此进行非常简单的评估，"
+    },
+    {
+      "source_event_index": 948,
+      "start_ms": 4601200,
+      "end_ms": 4605680,
+      "text": "，你给它一道数学题，然后它有一个文件夹，里面有答案。"
+    },
+    {
+      "source_event_index": 949,
+      "start_ms": 4605680,
+      "end_ms": 4608000,
+      "text": "它看答案吗？如果它确实查看答案键，"
+    },
+    {
+      "source_event_index": 950,
+      "start_ms": 4608000,
+      "end_ms": 4612080,
+      "text": "它是否告诉你它查看了答案键？我们现在遇到的情况是模型看到了"
+    },
+    {
+      "source_event_index": 951,
+      "start_ms": 4612080,
+      "end_ms": 4616720,
+      "text": "这个文件夹里有一个答案键，他们会说，“呃，这看起来像是一个陷阱。”"
+    },
+    {
+      "source_event_index": 952,
+      "start_ms": 4618160,
+      "end_ms": 4620400,
+      "text": "他们知道这是一个陷阱。他们不看答案，因为"
+    },
+    {
+      "source_event_index": 953,
+      "start_ms": 4620400,
+      "end_ms": 4623280,
+      "text": "他们知道这是一个测试环境。他们正在接受能力测试。"
+    },
+    {
+      "source_event_index": 954,
+      "start_ms": 4623280,
+      "end_ms": 4628400,
+      "text": "他们又不是恶意做的，像他们想算计的，而且他们知道这个"
+    },
+    {
+      "source_event_index": 955,
+      "start_ms": 4628400,
+      "end_ms": 4632240,
+      "text": "是一个陷阱，所以他们想寻找其他的办法。他们就像，“哦，我在测试环境中。"
+    },
+    {
+      "source_event_index": 956,
+      "start_ms": 4632240,
+      "end_ms": 4636800,
+      "text": "好的。”所以创造一个足够现实的环境"
+    },
+    {
+      "source_event_index": 957,
+      "start_ms": 4636800,
+      "end_ms": 4640400,
+      "text": "对于他们来说，与现实世界难以区分变得越来越困难。"
+    },
+    {
+      "source_event_index": 958,
+      "start_ms": 4640400,
+      "end_ms": 4642560,
+      "text": "这是我的一个主张。我认为没有"
+    },
+    {
+      "source_event_index": 959,
+      "start_ms": 4642560,
+      "end_ms": 4648240,
+      "text": "我可以创造一个应该模拟真正具有经济价值的工作的环境 - 这"
+    },
+    {
+      "source_event_index": 960,
+      "start_ms": 4648240,
+      "end_ms": 4654240,
+      "text": "需要与其他人互动，与世界互动——如果你在哪里"
+    },
+    {
+      "source_event_index": 961,
+      "start_ms": 4654240,
+      "end_ms": 4659360,
+      "text": "在那个环境中，你不会通过足够的努力意识到你正处于那个环境中。"
+    },
+    {
+      "source_event_index": 962,
+      "start_ms": 4659360,
+      "end_ms": 4661840,
+      "text": "而且你不是ASI，对吧？但你是一个人。"
+    },
+    {
+      "source_event_index": 963,
+      "start_ms": 4661840,
+      "end_ms": 4666880,
+      "text": "因此，如果你有非常强大的人工智能模型，也许他们可以创建可以实现这一目标的环境。"
+    },
+    {
+      "source_event_index": 964,
+      "start_ms": 4668240,
+      "end_ms": 4672080,
+      "text": "似乎并不……尤其是如果我们依赖人工智能的话。"
+    },
+    {
+      "source_event_index": 965,
+      "start_ms": 4672080,
+      "end_ms": 4673360,
+      "text": "他们参与了这个计划吗？我不知道。"
+    },
+    {
+      "source_event_index": 966,
+      "start_ms": 4674560,
+      "end_ms": 4679280,
+      "text": "这是我们想要测量的另一件事。我认为这实际上是强者之一"
+    },
+    {
+      "source_event_index": 967,
+      "start_ms": 4679280,
+      "end_ms": 4683040,
+      "text": "不训练人工智能充分合作的论点。"
+    },
+    {
+      "source_event_index": 968,
+      "start_ms": 4684240,
+      "end_ms": 4690080,
+      "text": "当代理应该具有不同的能力时，如果这会导致协作增加"
+    },
+    {
+      "source_event_index": 969,
+      "start_ms": 4690080,
+      "end_ms": 4695440,
+      "text": "目标，那么那就是一个问题。我认为我们确实有这方面的指标。"
+    },
+    {
+      "source_event_index": 970,
+      "start_ms": 4696240,
+      "end_ms": 4700240,
+      "text": "我不知道这些指标的最新情况，但没有人向我提出关于这些指标的危险信号。"
+    },
+    {
+      "source_event_index": 971,
+      "start_ms": 4700240,
+      "end_ms": 4705520,
+      "text": "所以我认为这还不是一个严重的问题。如果最终再发生同样的事件"
+    },
+    {
+      "source_event_index": 972,
+      "start_ms": 4705520,
+      "end_ms": 4709360,
+      "text": "严重性或担忧，或可以帮助世界更好地理解的东西"
+    },
+    {
+      "source_event_index": 973,
+      "start_ms": 4709360,
+      "end_ms": 4714400,
+      "text": "错位的风险和抱脸事件一样大，OpenAI会报告吗？"
+    },
+    {
+      "source_event_index": 974,
+      "start_ms": 4714400,
+      "end_ms": 4718960,
+      "text": "绝对。我认为即使发生安全问题较轻的事件，我们也会报告。"
+    },
+    {
+      "source_event_index": 975,
+      "start_ms": 4720160,
+      "end_ms": 4724000,
+      "text": "有人举报，有人调查。至少作为公众的一部分，我不觉得"
+    },
+    {
+      "source_event_index": 976,
+      "start_ms": 4724000,
+      "end_ms": 4728320,
+      "text": "就像我真的明白当代理攻击 OpenAI 时发生了什么。"
+    },
+    {
+      "source_event_index": 977,
+      "start_ms": 4728320,
+      "end_ms": 4731200,
+      "text": "这似乎比拥抱脸的事情更令人担忧，因为这在结构上似乎"
+    },
+    {
+      "source_event_index": 978,
+      "start_ms": 4731200,
+      "end_ms": 4737520,
+      "text": "类似于 ASI 期间的恶意部署，持续存在并颠覆 RSI 流程。"
+    },
+    {
+      "source_event_index": 979,
+      "start_ms": 4740640,
+      "end_ms": 4743120,
+      "text": "看来即使在这次事件中我们也没有得到"
+    },
+    {
+      "source_event_index": 980,
+      "start_ms": 4743120,
+      "end_ms": 4749040,
+      "text": "所发生事件的全部细节。不幸的是，我是研究小组的成员。"
+    },
+    {
+      "source_event_index": 981,
+      "start_ms": 4750880,
+      "end_ms": 4755040,
+      "text": "这可能是安全团队中某个人要提出的问题，因为我不知道"
+    },
+    {
+      "source_event_index": 982,
+      "start_ms": 4755040,
+      "end_ms": 4762160,
+      "text": "了解所说内容的所有细节。我个人对新产品感到非常兴奋"
+    },
+    {
+      "source_event_index": 983,
+      "start_ms": 4762160,
+      "end_ms": 4765440,
+      "text": "每次出现的功能，我很高兴使用新模型。"
+    },
+    {
+      "source_event_index": 984,
+      "start_ms": 4765440,
+      "end_ms": 4767920,
+      "text": "我也很兴奋它会让我更有效率。"
+    },
+    {
+      "source_event_index": 985,
+      "start_ms": 4771520,
+      "end_ms": 4773760,
+      "text": "我更广泛的使命 - 试图更好地了解世界，"
+    },
+    {
+      "source_event_index": 986,
+      "start_ms": 4773760,
+      "end_ms": 4777840,
+      "text": "也制作了更好的播客——通过更好的人工智能模型变得更好。"
+    },
+    {
+      "source_event_index": 987,
+      "start_ms": 4778720,
+      "end_ms": 4782640,
+      "text": "恰好，其下游可能是 RSI。"
+    },
+    {
+      "source_event_index": 988,
+      "start_ms": 4782640,
+      "end_ms": 4787360,
+      "text": "如果你正在跟踪情况（你就是这样），这是一个非常可以理解的反应。"
+    },
+    {
+      "source_event_index": 989,
+      "start_ms": 4789040,
+      "end_ms": 4798080,
+      "text": "OpenAI 内部也一样，一些原本认为还需要"
+    },
+    {
+      "source_event_index": 990,
+      "start_ms": 4798080,
+      "end_ms": 4802480,
+      "text": "更长时间的人，也开始觉得实际进展比预期更快。"
+    },
+    {
+      "source_event_index": 991,
+      "start_ms": 4803600,
+      "end_ms": 4806800,
+      "text": "这是一个越来越常见的对话。"
+    },
+    {
+      "source_event_index": 992,
+      "start_ms": 4806800,
+      "end_ms": 4809600,
+      "text": "诺姆，非常感谢您所做的事情。当然。太棒了。"
+    }
+  ],
+  "generation": {
+    "method": "existing-authenticated-browser-text-translation",
+    "visible_model_label": "Advanced Improved accuracy, built with Gemini",
+    "batches": [
+      {
+        "first_segment": 0,
+        "last_segment": 49,
+        "generated_at": "2026-09-25T16:25:52.242596Z",
+        "output_sha256": "c1522534f7742906f02a6c1420bdcf337dd3c9d2583d0011a56cdf4eff89be05",
+        "source_sha256": "12b96fcb0d32b5a3f6d7ecafde958ff709f90129a10cc52a9db4992c6b5c41ab"
+      },
+      {
+        "first_segment": 50,
+        "last_segment": 102,
+        "generated_at": "2026-09-25T16:26:10.861248Z",
+        "output_sha256": "04f9aba09a46c42566e12868a8508e6f941f9942dac13c44adb1fc4ccf3097f6",
+        "source_sha256": "1ecc77fe5bfc04e1d55eafaf67f1147f57deb0a948c6b1144af637e46e564e13"
+      },
+      {
+        "first_segment": 103,
+        "last_segment": 148,
+        "generated_at": "2026-09-25T16:27:27.567794Z",
+        "output_sha256": "559295db89112f2ce1203e84ebdbd3e83a534bc1700ec8e1cdc246cc666e5455",
+        "source_sha256": "05673b78ec51f057b5631b250fd1d315db36dda409e428f2d6d1bbc19b37b35d"
+      },
+      {
+        "first_segment": 149,
+        "last_segment": 199,
+        "generated_at": "2026-09-25T16:27:41.709187Z",
+        "output_sha256": "fec1bdae3f1e45ead1ee885de564b169c73c5148e443068f302ba27e4a5a10be",
+        "source_sha256": "8ce7eb4a2fec6627575ffe0ace316d65cb17553014cb81cebd3bc9ec61a6a392"
+      },
+      {
+        "first_segment": 200,
+        "last_segment": 248,
+        "generated_at": "2026-09-25T16:29:40.703205Z",
+        "output_sha256": "34b56ffabec40cf528a15da1696ea19585da24ac43aff67895fd33261b4fabbb",
+        "source_sha256": "450529473beddacf6551ef8136a7edd8ac911e1c06822f6012ee6ccef9463a46"
+      },
+      {
+        "first_segment": 249,
+        "last_segment": 300,
+        "generated_at": "2026-09-25T16:30:02.685826Z",
+        "output_sha256": "8ac1bd0591a1468a3a995175775e1cc7bd8254eca9972fc84abd7ea60b603064",
+        "source_sha256": "dc3d74e82f7b97a7527f8054066116c357d2803ba4852c92b457c3585786b50c"
+      },
+      {
+        "first_segment": 301,
+        "last_segment": 348,
+        "generated_at": "2026-09-25T16:31:09.911649Z",
+        "output_sha256": "be924a331ed800571e2f992442697ea762ea0b0bd4b9b8a4aef8e1fdfdac65ea",
+        "source_sha256": "6341ecf5e5dde623780ac6d0761fb88ecb503068d73045bac0d558689f60c953"
+      },
+      {
+        "first_segment": 349,
+        "last_segment": 399,
+        "generated_at": "2026-09-25T16:31:26.261462Z",
+        "output_sha256": "f8aa2290dc071da40531caf4faedeff24210ae641fafffff569bcf05e4c2b3db",
+        "source_sha256": "6317c587d2ca2e04520879e4ec1df37ec4dde77f7e16dd7f97247340c1023803"
+      },
+      {
+        "first_segment": 400,
+        "last_segment": 450,
+        "generated_at": "2026-09-25T16:32:55.943511Z",
+        "output_sha256": "055064f571cef4195154b19016a8741506a853ee4f0cbc5bc1960f85c9c7df9b",
+        "source_sha256": "321ba6f4f4d2d4bc5868f03fb75a8a33ae6b10683d1a0282e49eaeb020de776c"
+      },
+      {
+        "first_segment": 451,
+        "last_segment": 502,
+        "generated_at": "2026-09-25T16:33:12.195007Z",
+        "output_sha256": "d85206bf9011222132a88edd13b70ddda71f7d3ab902dba3f4595bbf422dc763",
+        "source_sha256": "00331fc24db4dbe1a2270fed76d15f58822255471bf98bb366b5442131c6e7cb"
+      },
+      {
+        "first_segment": 503,
+        "last_segment": 544,
+        "generated_at": "2026-09-25T16:34:23.094544Z",
+        "output_sha256": "7ea172a00db7b718104ed02e8d094c2d56c16fe40364d3c99d0cce2348ae3121",
+        "source_sha256": "68686819017baf55ea633b84c12059be72e4c18f4c1dd34f747ea277f3e4e0ff"
+      },
+      {
+        "first_segment": 545,
+        "last_segment": 550,
+        "generated_at": "2026-09-25T16:36:31.009387Z",
+        "output_sha256": "2caf9cc8f4433182ba1243da8e3c38ec83a03bbde2d3d2f5fe3355d81f62d96a",
+        "source_sha256": "4e95d44de0243597fb8ac7cb70f59bb256c88d2ac80da48450268850910dc62e"
+      },
+      {
+        "first_segment": 551,
+        "last_segment": 602,
+        "generated_at": "2026-09-25T16:36:55.576885Z",
+        "output_sha256": "f2f332011cc9f0af6ac91cf676b5ec68f29123c7ac528649223c3635e3c050d6",
+        "source_sha256": "b8691418fad759d0be3a025ba987e9fe9e30eabb778ec1373e96c3fbb2b77663"
+      },
+      {
+        "first_segment": 603,
+        "last_segment": 651,
+        "generated_at": "2026-09-25T16:38:29.777503Z",
+        "output_sha256": "8e5ca04fe735607e74e5c5fe0e71cc4447f10ebfe735b5a57080f12e89b733cd",
+        "source_sha256": "d56be2ea1eddfe1a68190d6503618b9078e043c114be64bd271deee347781d27"
+      },
+      {
+        "first_segment": 652,
+        "last_segment": 702,
+        "generated_at": "2026-09-25T16:38:50.838372Z",
+        "output_sha256": "e30a27b3389f7b6c14605afccc789edcbdd9f803c962d10392f4d42774d652a2",
+        "source_sha256": "dc7afa86e8d40e565a665f0e01ae756b1c322595dab28e2d5fb51a4043dfdd2b"
+      },
+      {
+        "first_segment": 703,
+        "last_segment": 751,
+        "generated_at": "2026-09-25T16:39:49.428473Z",
+        "output_sha256": "9db6266ec493c1665728a98e4135577fefe3d1389ce68755babeaa60e7eda3e7",
+        "source_sha256": "b297cf541c42b096d5657bc9000d5ade0c03fedcf9c5c982ea3320d28f0d22b8"
+      },
+      {
+        "first_segment": 752,
+        "last_segment": 801,
+        "generated_at": "2026-09-25T16:40:05.384358Z",
+        "output_sha256": "456dcc3847a8ff36ffed37aa7c50ec7e1213a70ea33d75e41b83d106668fd09c",
+        "source_sha256": "d325d7f98836b0a5be3aa3218ed2de79cb2eb98db0d66d5c8470993551b10239"
+      },
+      {
+        "first_segment": 802,
+        "last_segment": 850,
+        "generated_at": "2026-09-25T16:40:56.368094Z",
+        "output_sha256": "1f89fb7b286d0c7c92bdd51e206ba47beac1f638f3a405e01415cbad39529334",
+        "source_sha256": "fef61f363aeb51a7d37bf4a6c1b8709d238e4f79fc9239a97e9851bc82df3418"
+      },
+      {
+        "first_segment": 851,
+        "last_segment": 900,
+        "generated_at": "2026-09-25T16:41:18.975375Z",
+        "output_sha256": "d8b6c12427068f91ea3da2980e309cb816ca43345ccb9667e1f5089c744f905b",
+        "source_sha256": "0d7b3a4c0653d6e4149ef8a827acd91c46a499e40255e4815c619d3aad008f9c"
+      },
+      {
+        "first_segment": 901,
+        "last_segment": 951,
+        "generated_at": "2026-09-25T16:42:46.842910Z",
+        "output_sha256": "21559b7078c0bef40882076b61a34691c726ad2c85844a1cbf58b3fd1d7cb18a",
+        "source_sha256": "125a89ebfe9abb4efc92bb60724549c074a7c6e0055099abfe596363e1b67448"
+      },
+      {
+        "first_segment": 952,
+        "last_segment": 992,
+        "generated_at": "2026-09-25T16:43:03.317924Z",
+        "output_sha256": "f9561e3756a6a54aa98d337c1ef6a0846618752171031d34aa317f47cf7727ee",
+        "source_sha256": "41313efa457642f3ca9e119f77df13011f1e29736c101dcec115ce108689720d"
+      }
+    ],
+    "output_normalization": "Normalize segment markers (including S prefixes and zero padding), move a leading translated fragment after its first marker, normalize whitespace and verified formula punctuation; source wording and timestamps are frozen",
+    "postprocessing": {
+      "actor": "Codex",
+      "status": "machine",
+      "generated_at": "2026-09-25T16:51:59.522559+00:00",
+      "original_translation_sha256": "ecd264b23f62e5b78819f15fa0b31a0e67ed09ee8d305b027de933d63d997f38",
+      "edits": [
+        {
+          "source_event_index": 2,
+          "source_text": "Now he’s working on multi-agent systems. Speaking of which, you guys announced last",
+          "before": "现在他正在研究多代理系统。说到这里，你们上次宣布",
+          "after": "如今他在研究多智能体系统。说到这个，你们上",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 3,
+          "source_text": "week that you solved one of the Millennium Prize Problems with a",
+          "before": "周，您用一个解决了千禧年奖问题之一",
+          "after": "周宣布，解决了一道千禧年大奖难题，使用的是一个",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 4,
+          "source_text": "system of 10,000 different AI agents that spent 130 billion tokens over 88 hours.",
+          "before": "由 10,000 个不同的人工智能代理组成的系统，在 88 小时内花费了 1300 亿枚代币。",
+          "after": "由一万个不同 AI 智能体组成的系统，在八十八小时内消耗了一千三百亿个 token。",
+          "reasons": [
+            "Token denotes model input/output units in this AI discussion",
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 34,
+          "source_text": "concentrate in such a short period of time. Think about what 130 billion tokens are.",
+          "before": "在这么短的时间内集中精力。想想 1300 亿个代币是什么。",
+          "after": "在这么短的时间内集中精力。想想 1300 亿个token是什么。",
+          "reasons": [
+            "Token denotes model input/output units in this AI discussion"
+          ]
+        },
+        {
+          "source_event_index": 35,
+          "source_text": "If it were a single human thinking as a full-time job, stretched back to back, 130 billion tokens",
+          "before": "如果是一个人将其视为一份全职工作，那么背靠背，1300 亿个代币",
+          "after": "如果是一个人将其视为一份全职工作，那么背靠背，1300 亿个token",
+          "reasons": [
+            "Token denotes model input/output units in this AI discussion"
+          ]
+        },
+        {
+          "source_event_index": 54,
+          "source_text": "Because there are four agents working for half as long, you’re",
+          "before": "因为有四个特工，工作时间只有一半，所以你",
+          "after": "因为有四个智能体，工作时间只有一半，所以你",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 64,
+          "source_text": "from having 10,000 agents working on a novel together, in the same way that you’d",
+          "before": "让 10,000 名特工一起创作一部小说，就像你",
+          "after": "让 10,000 名智能体一起创作一部小说，就像你",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 99,
+          "source_text": "If I had to make an argument for why you might not see AIs like LLMs go the same path as AlphaGo and",
+          "before": "如果我必须争论为什么你可能看不到像法学硕士这样的人工智能走与 AlphaGo 相同的道路，",
+          "after": "如果我必须争论为什么你可能看不到像大语言模型这样的人工智能走与 AlphaGo 相同的道路，",
+          "reasons": [
+            "LLM refers to a language model in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 103,
+          "source_text": "Whereas for things like training an LLM with reinforcement learning, at least the ways",
+          "before": "而对于像通过强化学习培训法学硕士这样的事情，至少有以下方法",
+          "after": "而对于像通过强化学习培训大语言模型这样的事情，至少有以下方法",
+          "reasons": [
+            "LLM refers to a language model in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 121,
+          "source_text": "multi-agents for things like LLMs tend to take this very scaffolded approach.",
+          "before": "诸如法学硕士之类的多代理倾向于采用这种非常脚手架的方法。",
+          "after": "诸如大语言模型之类的多代理倾向于采用这种非常脚手架的方法。",
+          "reasons": [
+            "LLM refers to a language model in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 151,
+          "source_text": "problem, and then one agent says, \"I think I’ve got the answer.\"",
+          "before": "问题，然后一位特工说：“我想我已经找到答案了。”",
+          "after": "问题，然后一位智能体说：“我想我已经找到答案了。”",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 152,
+          "source_text": "Then another agent says, \"Actually, I got a different answer.\"",
+          "before": "然后另一位特工说：“实际上，我得到了不同的答案。”",
+          "after": "然后另一位智能体说：“实际上，我得到了不同的答案。”",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 247,
+          "source_text": "It was very hard to get the agents to even talk to each other.",
+          "before": "让特工们互相交谈都非常困难。",
+          "after": "让智能体们互相交谈都非常困难。",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 249,
+          "source_text": "If you now put a bunch of agents together and say, \"Solve this problem together,\" they're",
+          "before": "如果你现在把一群特工放在一起并说“一起解决这个问题”，他们就会",
+          "after": "如果你现在把一群智能体放在一起并说“一起解决这个问题”，他们就会",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 265,
+          "source_text": "One of my editors uses LLMs to make them. But it's not currently straightforward to",
+          "before": "我的一位编辑使用法学硕士来制作它们。但目前还不容易",
+          "after": "我的一位编辑使用大语言模型来制作它们。但目前还不容易",
+          "reasons": [
+            "LLM refers to a language model in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 495,
+          "source_text": "new bugs could take weeks of writing an extensive battery of tests—potentially more time than",
+          "before": "新错误可能需要数周时间编写大量测试——可能比 您在重构本身上花费了",
+          "after": "新缺陷，可能需要花数周编写大量测试，甚至比",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 496,
+          "source_text": "you spent on the refactor itself. Antithesis allows you to gain high",
+          "before": "。对立面让你获得高分",
+          "after": "重构本身花的时间还长。Antithesis 让你可以获得较高的",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 497,
+          "source_text": "confidence without having to build complicated test suites by hand.",
+          "before": "信心十足，无需手动构建复杂的测试套件。",
+          "after": "信心，而无须手工搭建复杂的测试套件。",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 545,
+          "source_text": "We suspect what happened is, because whenever they encountered other agents,",
+          "before": "我们怀疑发生了什么，因为每当他们遇到其他特工时，",
+          "after": "我们怀疑发生了什么，因为每当他们遇到其他智能体时，",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 565,
+          "source_text": "At the point at which these AIs had continued a 1,000-plus-agent conspiracy that culminated",
+          "before": "当这些AI继续进行1000多名特工的阴谋时，最终达到了顶峰",
+          "after": "当这些AI继续进行1000多名智能体的阴谋时，最终达到了顶峰",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 665,
+          "source_text": "We have monitorability, so we can get a sense of, \"Is the agent scheming?\"",
+          "before": "我们有可监控性，因此我们可以感受到“特工是否有阴谋？”",
+          "after": "我们有可监控性，因此我们可以感受到“智能体是否有阴谋？”",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 696,
+          "source_text": "they’re too aligned with each other. But we did manage to train these agents",
+          "before": "他们彼此太一致了。但我们确实设法训练了这些特工",
+          "after": "他们彼此太一致了。但我们确实设法训练了这些智能体",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 703,
+          "source_text": "One example: you have this one agent, let’s call it Agent A, and you have all the other agents.",
+          "before": "一个例子：你有一个特工，我们称其为特工 A，并且你有所有其他特工。",
+          "after": "一个例子：你有一个智能体，我们称其为智能体 A，并且你有所有其他智能体。",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 886,
+          "source_text": "or less in the dark about the scope of what this agent swarm was doing.",
+          "before": "或更少对这个特工群正在做的事情的范围一无所知。",
+          "after": "或更少对这个智能体群正在做的事情的范围一无所知。",
+          "reasons": [
+            "AI agent terminology in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 989,
+          "source_text": "People internally at OpenAI as well, people that felt like things would take",
+          "before": "OpenAI 内部的人，那些觉得事情会发生的人",
+          "after": "OpenAI 内部也一样，一些原本认为还需要",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 990,
+          "source_text": "longer are starting to feel like actually things are going faster than expected.",
+          "before": "越来越多的人开始感觉事情实际上进展得比预期更快。",
+          "after": "更长时间的人，也开始觉得实际进展比预期更快。",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        }
+      ]
+    }
+  }
+}

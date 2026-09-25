@@ -3429,8 +3429,11 @@ def validate_episode_navigation_title(
     parts = value.split(" · ")
     if len(parts) != 2 or not all(parts):
         errors.append(f"{relative(path)} navigation_title must use 'person · topic' format")
-    if len(value) > 40:
-        errors.append(f"{relative(path)} navigation_title must be at most 40 characters")
+    # Keep full verified participant names even when their combined length is
+    # already above 40; reserve at most 12 characters for the concise topic.
+    limit = max(40, len(parts[0]) + 15) if len(parts) == 2 else 40
+    if len(value) > limit:
+        errors.append(f"{relative(path)} navigation_title must be at most {limit} characters")
     if re.match(r"^(?:#|第\s*\d+|特访|特别)", value):
         errors.append(
             f"{relative(path)} navigation_title must not contain episode numbering or release labels"

@@ -265,7 +265,7 @@ describe("reader navigation", () => {
     expect(homeHtml).toContain("查看全部 6 期");
     expect(homeHtml).toContain("查看全部 5 期");
     expect(homeHtml).toContain("查看全部 21 期");
-    expect(homeHtml).toContain("查看全部 19 期");
+    expect(homeHtml).toContain("查看全部 29 期");
 
     const showHtml = renderToStaticMarkup(createElement(ShowCatalog, {
       shows,

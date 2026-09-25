@@ -1,0 +1,6880 @@
+{
+  "schema_version": 1,
+  "kind": "podwiki-segment-translation",
+  "language": "zh-CN",
+  "source_language": "en",
+  "status": "machine",
+  "generated_at": "2026-09-25T16:47:20.979049Z",
+  "source_payload_sha256": "56c1fd6c37f55f7bcdeabfeefb444fb2d9e44e0312414f9469d5dbf603bf3686",
+  "source_transcript_sha256": "f93e965a95f7c3ec022fe7b8afbace183f084857159cb749c79e31fc8a00b5a1",
+  "engine": "google-translate-web",
+  "model": "Advanced (Gemini)",
+  "model_revision": null,
+  "model_version_visibility": "not-exposed",
+  "provider_url": "https://translate.google.com/",
+  "segments": [
+    {
+      "source_event_index": 0,
+      "start_ms": 80,
+      "end_ms": 2800,
+      "text": "又请到了 Adam Brown。你目前在 Google"
+    },
+    {
+      "source_event_index": 1,
+      "start_ms": 2800,
+      "end_ms": 7760,
+      "text": "DeepMind 领导 BlueShift 团队，研究科学与推理问题。Adam 此前是一位成果丰硕的物理学家，"
+    },
+    {
+      "source_event_index": 2,
+      "start_ms": 7760,
+      "end_ms": 11360,
+      "text": "在斯坦福大学任教，研究范围从宇宙学到"
+    },
+    {
+      "source_event_index": 3,
+      "start_ms": 11360,
+      "end_ms": 14320,
+      "text": "弦论到广义相对论。据说广义相对论是"
+    },
+    {
+      "source_event_index": 4,
+      "start_ms": 14320,
+      "end_ms": 17840,
+      "text": "人类思想所想象或见过的最美丽的事物。"
+    },
+    {
+      "source_event_index": 5,
+      "start_ms": 17840,
+      "end_ms": 22880,
+      "text": "我很好奇是否有一种方法可以让像我这样的普通人能够理解正在发生的事情，"
+    },
+    {
+      "source_event_index": 6,
+      "start_ms": 22880,
+      "end_ms": 28080,
+      "text": "或者无需参加 20 讲的研究生课程，即可了解它为何如此美丽。"
+    },
+    {
+      "source_event_index": 7,
+      "start_ms": 28080,
+      "end_ms": 31360,
+      "text": "这就是本次讲座的提示。我很感激你愿意这样做。"
+    },
+    {
+      "source_event_index": 8,
+      "start_ms": 31360,
+      "end_ms": 35840,
+      "text": "来到这里超级令人兴奋。是的，我认为答案是肯定的，我们可以。"
+    },
+    {
+      "source_event_index": 9,
+      "start_ms": 36640,
+      "end_ms": 41680,
+      "text": "广义相对论，爱因斯坦的引力理论，正如你所说，是最美丽的"
+    },
+    {
+      "source_event_index": 10,
+      "start_ms": 41680,
+      "end_ms": 45760,
+      "text": "我们共同创造的产物。这是20世纪两大理论之一"
+    },
+    {
+      "source_event_index": 11,
+      "start_ms": 45760,
+      "end_ms": 49760,
+      "text": "物理学，以及量子力学。与量子力学不同的是，"
+    },
+    {
+      "source_event_index": 12,
+      "start_ms": 49760,
+      "end_ms": 52480,
+      "text": "基本上就是爱因斯坦。他有一点帮助，"
+    },
+    {
+      "source_event_index": 13,
+      "start_ms": 52480,
+      "end_ms": 58240,
+      "text": "但基本上是一个人顽强地追求这个想法10年然后他写下了"
+    },
+    {
+      "source_event_index": 14,
+      "start_ms": 58240,
+      "end_ms": 63840,
+      "text": "这个理论最终描述了太阳系中行星的运动"
+    },
+    {
+      "source_event_index": 15,
+      "start_ms": 63840,
+      "end_ms": 69920,
+      "text": "以及宇宙的起源和命运。这是相当非同寻常的。爱因斯坦花了"
+    },
+    {
+      "source_event_index": 16,
+      "start_ms": 69920,
+      "end_ms": 74080,
+      "text": "历史上最著名的思想家之一，大约需要十年的时间才能弄清楚。"
+    },
+    {
+      "source_event_index": 17,
+      "start_ms": 74080,
+      "end_ms": 80640,
+      "text": "但是当我教它时，我会做一个为期 10 周的课程，在 10 周内人们会"
+    },
+    {
+      "source_event_index": 18,
+      "start_ms": 80640,
+      "end_ms": 86000,
+      "text": "对广义相对论的了解比爱因斯坦在 10 年内真正了解的还要好。"
+    },
+    {
+      "source_event_index": 19,
+      "start_ms": 86000,
+      "end_ms": 90160,
+      "text": "那是因为我们有爱因斯坦没有的优势。"
+    },
+    {
+      "source_event_index": 20,
+      "start_ms": 90880,
+      "end_ms": 95600,
+      "text": "我们有爱因斯坦，还有许多像他一样走在我们前面的人，他们已经能够接受这些超级"
+    },
+    {
+      "source_event_index": 21,
+      "start_ms": 95600,
+      "end_ms": 99840,
+      "text": "复杂的想法——当时任何有知识的人都完全无法理解"
+    },
+    {
+      "source_event_index": 22,
+      "start_ms": 99840,
+      "end_ms": 106880,
+      "text": "低于爱因斯坦的智力水平——并将它们归结为本质，而不是做出许多"
+    },
+    {
+      "source_event_index": 23,
+      "start_ms": 106880,
+      "end_ms": 114480,
+      "text": "我们的祖先犯过同样的错误。在 10 或 20 分钟内，我无法给你更好的"
+    },
+    {
+      "source_event_index": 24,
+      "start_ms": 114480,
+      "end_ms": 120400,
+      "text": "广义相对论的思想比爱因斯坦的思想要多，但我们可以得到核心见解——爱因斯坦是什么"
+    },
+    {
+      "source_event_index": 25,
+      "start_ms": 120400,
+      "end_ms": 127280,
+      "text": "说的是他最美丽的想法——并推动它尝试并理解"
+    },
+    {
+      "source_event_index": 26,
+      "start_ms": 127280,
+      "end_ms": 133360,
+      "text": "这个理论的中心思想是什么。好吧，我们走吧。在广义相对论出现之前，"
+    },
+    {
+      "source_event_index": 27,
+      "start_ms": 134080,
+      "end_ms": 141280,
+      "text": "有狭义相对论。特殊，意味着它并不适用于所有地方。"
+    },
+    {
+      "source_event_index": 28,
+      "start_ms": 141280,
+      "end_ms": 151440,
+      "text": "这也是爱因斯坦在 10 年前，即 1905 年，在他的奇迹年期间发明的。"
+    },
+    {
+      "source_event_index": 29,
+      "start_ms": 152320,
+      "end_ms": 158560,
+      "text": "如果你想给狭义相对论打口号，你可以从观察开始，或者从"
+    },
+    {
+      "source_event_index": 30,
+      "start_ms": 158560,
+      "end_ms": 165200,
+      "text": "假设，没有什么能比光跑得更快。狭义相对论采取了这一观察，"
+    },
+    {
+      "source_event_index": 31,
+      "start_ms": 165200,
+      "end_ms": 170640,
+      "text": "将其提升为一项原则，并极其认真地将该原则视为"
+    },
+    {
+      "source_event_index": 32,
+      "start_ms": 170640,
+      "end_ms": 176880,
+      "text": "我们对时空理解的中心观察，你就得出了狭义相对论。"
+    },
+    {
+      "source_event_index": 33,
+      "start_ms": 176880,
+      "end_ms": 183440,
+      "text": "狭义相对论适用于电磁学。它适用——尽管爱因斯坦甚至不知道"
+    },
+    {
+      "source_event_index": 34,
+      "start_ms": 183440,
+      "end_ms": 189120,
+      "text": "当时关于这些——直接讨论强核力和弱核力，另外两种 我们所知道的"
+    },
+    {
+      "source_event_index": 35,
+      "start_ms": 189120,
+      "end_ms": 194800,
+      "text": "基本力。它显然不适用于重力。"
+    },
+    {
+      "source_event_index": 36,
+      "start_ms": 194800,
+      "end_ms": 204720,
+      "text": "10年后，爱因斯坦在广义相对论中纠正了这一点，"
+    },
+    {
+      "source_event_index": 37,
+      "start_ms": 204720,
+      "end_ms": 210800,
+      "text": "一个更普遍的理论，因为它包括重力。它完善了基本力的集合。"
+    },
+    {
+      "source_event_index": 38,
+      "start_ms": 210800,
+      "end_ms": 216960,
+      "text": "又是爱因斯坦经过10年的不懈追求，于1915年发明的。"
+    },
+    {
+      "source_event_index": 39,
+      "start_ms": 216960,
+      "end_ms": 223040,
+      "text": "如果你想给广义相对论打个口号，你可能会说，“连引力都不是。”"
+    },
+    {
+      "source_event_index": 40,
+      "start_ms": 223040,
+      "end_ms": 226960,
+      "text": "没有什么能比光跑得更快，即使是重力。"
+    },
+    {
+      "source_event_index": 41,
+      "start_ms": 226960,
+      "end_ms": 233920,
+      "text": "事情远不止这些，但它将完成这条虚无中心的弧线"
+    },
+    {
+      "source_event_index": 42,
+      "start_ms": 233920,
+      "end_ms": 243520,
+      "text": "能够比光速更快。要了解这里的一些背景，我们将有"
+    },
+    {
+      "source_event_index": 43,
+      "start_ms": 243520,
+      "end_ms": 248800,
+      "text": "一路回溯到爱因斯坦之前存在的引力理论。"
+    },
+    {
+      "source_event_index": 44,
+      "start_ms": 248800,
+      "end_ms": 253040,
+      "text": "爱因斯坦时代占主导地位的引力理论一路延伸"
+    },
+    {
+      "source_event_index": 45,
+      "start_ms": 253040,
+      "end_ms": 264320,
+      "text": "回到 17 世纪末的牛顿，牛顿定律，在他 1687 年的《原理》中。"
+    },
+    {
+      "source_event_index": 46,
+      "start_ms": 266160,
+      "end_ms": 270320,
+      "text": "嗯，他有一些。也许我们那个"
+    },
+    {
+      "source_event_index": 47,
+      "start_ms": 270320,
+      "end_ms": 281200,
+      "text": "今天最能聊的就是其中两个。他著名的第二定律指出加速度，"
+    },
+    {
+      "source_event_index": 48,
+      "start_ms": 281200,
+      "end_ms": 290880,
+      "text": "a，由力引起，由公式 ma=F 给出。如果有力F，就会产生加速度"
+    },
+    {
+      "source_event_index": 49,
+      "start_ms": 290880,
+      "end_ms": 299680,
+      "text": "在由 a 给出的物体上，质量告诉你物体抵抗加速的程度。"
+    },
+    {
+      "source_event_index": 50,
+      "start_ms": 299680,
+      "end_ms": 305440,
+      "text": "质量越大，产生给定加速度所需的力就越大。"
+    },
+    {
+      "source_event_index": 51,
+      "start_ms": 306160,
+      "end_ms": 313920,
+      "text": "一旦我们谈到广义相对论，这个定律，他的第二定律，仍然是正确的。"
+    },
+    {
+      "source_event_index": 52,
+      "start_ms": 313920,
+      "end_ms": 317040,
+      "text": "我们必须对武力的含义有更深入的理解"
+    },
+    {
+      "source_event_index": 53,
+      "start_ms": 317040,
+      "end_ms": 320880,
+      "text": "和加速度，但这将被广义相对论保留。"
+    },
+    {
+      "source_event_index": 54,
+      "start_ms": 320880,
+      "end_ms": 323920,
+      "text": "第二定律的一个特例是牛顿第一定律。"
+    },
+    {
+      "source_event_index": 55,
+      "start_ms": 323920,
+      "end_ms": 329680,
+      "text": "牛顿第一定律说，如果力为零，则加速度为零。"
+    },
+    {
+      "source_event_index": 56,
+      "start_ms": 329680,
+      "end_ms": 336400,
+      "text": "如果力为零，则物体始终继续沿直线移动。"
+    },
+    {
+      "source_event_index": 57,
+      "start_ms": 337360,
+      "end_ms": 340400,
+      "text": "这在广义相对论中也将继续成立。"
+    },
+    {
+      "source_event_index": 58,
+      "start_ms": 340400,
+      "end_ms": 345840,
+      "text": "如果不受外力作用，物体沿直线运动。"
+    },
+    {
+      "source_event_index": 59,
+      "start_ms": 345840,
+      "end_ms": 349600,
+      "text": "然而，我们必须提高对强制的理解"
+    },
+    {
+      "source_event_index": 60,
+      "start_ms": 349600,
+      "end_ms": 356000,
+      "text": "以及我们所说的直线的真正含义。这将继续是正确的。"
+    },
+    {
+      "source_event_index": 61,
+      "start_ms": 356000,
+      "end_ms": 359680,
+      "text": "牛顿万有引力定律不会一直成立。"
+    },
+    {
+      "source_event_index": 62,
+      "start_ms": 360720,
+      "end_ms": 365120,
+      "text": "牛顿引力告诉您力对加速度的影响，"
+    },
+    {
+      "source_event_index": 63,
+      "start_ms": 365120,
+      "end_ms": 368240,
+      "text": "但你需要知道是什么力量才能用它做任何事情。"
+    },
+    {
+      "source_event_index": 64,
+      "start_ms": 368240,
+      "end_ms": 378720,
+      "text": "牛顿万有引力定律指出，两个物体的万有引力相互作用产生的力是"
+    },
+    {
+      "source_event_index": 65,
+      "start_ms": 379440,
+      "end_ms": 384080,
+      "text": "所谓的牛顿常数——只是一些自然常数——乘以一个的质量"
+    },
+    {
+      "source_event_index": 66,
+      "start_ms": 384080,
+      "end_ms": 389200,
+      "text": "身体乘以另一个物体的质量（太阳的质量乘以地球的质量）除以"
+    },
+    {
+      "source_event_index": 67,
+      "start_ms": 389200,
+      "end_ms": 393680,
+      "text": "除以它们之间的距离的平方。这就是著名的平方反比定律。"
+    },
+    {
+      "source_event_index": 68,
+      "start_ms": 396080,
+      "end_ms": 400160,
+      "text": "是一个指向分离方向的向量，它是"
+    },
+    {
+      "source_event_index": 69,
+      "start_ms": 400160,
+      "end_ms": 408720,
+      "text": "有吸引力，所以那里有一个减号。这在广义相对论中是不正确的。"
+    },
+    {
+      "source_event_index": 70,
+      "start_ms": 408720,
+      "end_ms": 413840,
+      "text": "事实上，你立刻就会发现这个引力之间存在着张力"
+    },
+    {
+      "source_event_index": 71,
+      "start_ms": 413840,
+      "end_ms": 416960,
+      "text": "定律以及没有任何东西可以比光速更快的说法。"
+    },
+    {
+      "source_event_index": 72,
+      "start_ms": 416960,
+      "end_ms": 423760,
+      "text": "如果这确实是真的，那么通过摇动太阳，一个简单的方法"
+    },
+    {
+      "source_event_index": 73,
+      "start_ms": 423760,
+      "end_ms": 428720,
+      "text": "对该定律的解释只是说地球上的力立即变化。"
+    },
+    {
+      "source_event_index": 74,
+      "start_ms": 428720,
+      "end_ms": 433040,
+      "text": "我改变了地球和太阳的距离，所以我可以立即检测到它"
+    },
+    {
+      "source_event_index": 75,
+      "start_ms": 433040,
+      "end_ms": 440720,
+      "text": "地球，不是八分钟后，而是立即。这意味着你可以施加影响"
+    },
+    {
+      "source_event_index": 76,
+      "start_ms": 440720,
+      "end_ms": 443520,
+      "text": "比光速还快。牛顿力"
+    },
+    {
+      "source_event_index": 77,
+      "start_ms": 443520,
+      "end_ms": 452080,
+      "text": "法律不符合这一原则。当然，一种选择可能是这是真的"
+    },
+    {
+      "source_event_index": 78,
+      "start_ms": 452080,
+      "end_ms": 457120,
+      "text": "对于非重力，但一旦有重力就不是这样了，事实上，利用重力，"
+    },
+    {
+      "source_event_index": 79,
+      "start_ms": 457120,
+      "end_ms": 462720,
+      "text": "你也许可以利用重力效应建造一部比光速更快的电话。"
+    },
+    {
+      "source_event_index": 80,
+      "start_ms": 462720,
+      "end_ms": 467200,
+      "text": "这是一种可能性，但不是爱因斯坦真正想要拥抱的可能性。"
+    },
+    {
+      "source_event_index": 81,
+      "start_ms": 467200,
+      "end_ms": 473600,
+      "text": "他花了很多年寻找任何离开的可能性"
+    },
+    {
+      "source_event_index": 82,
+      "start_ms": 473600,
+      "end_ms": 480640,
+      "text": "比光速或任何超光速影响更快。所以爱因斯坦，事实上当时的很多人，"
+    },
+    {
+      "source_event_index": 83,
+      "start_ms": 480640,
+      "end_ms": 483280,
+      "text": "认为这是必须给予的。确实，这就是将要发生的事情"
+    },
+    {
+      "source_event_index": 84,
+      "start_ms": 483280,
+      "end_ms": 489600,
+      "text": "事实证明是真的。好吧，那么我们在哪里？"
+    },
+    {
+      "source_event_index": 85,
+      "start_ms": 489600,
+      "end_ms": 497920,
+      "text": "这里其实有平方反比定律被修改的先例"
+    },
+    {
+      "source_event_index": 86,
+      "start_ms": 497920,
+      "end_ms": 504320,
+      "text": "最终与狭义相对论一致，而这个先例是"
+    },
+    {
+      "source_event_index": 87,
+      "start_ms": 504320,
+      "end_ms": 509760,
+      "text": "自然的另一种力量，电力。还有静电力定律——不是"
+    },
+    {
+      "source_event_index": 88,
+      "start_ms": 509760,
+      "end_ms": 518000,
+      "text": "由牛顿写下，但在一个世纪左右之后写下——它说力导致了，"
+    },
+    {
+      "source_event_index": 89,
+      "start_ms": 518000,
+      "end_ms": 521760,
+      "text": "不是通过两个物体的引力相互作用，而是通过静电"
+    },
+    {
+      "source_event_index": 90,
+      "start_ms": 521760,
+      "end_ms": 527120,
+      "text": "两个带电物体的相互作用，与引力的形式非常相似。"
+    },
+    {
+      "source_event_index": 91,
+      "start_ms": 527120,
+      "end_ms": 533440,
+      "text": "它告诉你力等于某个常数乘以一个物体的电荷乘以"
+    },
+    {
+      "source_event_index": 92,
+      "start_ms": 533440,
+      "end_ms": 539920,
+      "text": "另一个物体的电荷，也指向两者之间分离的方向"
+    },
+    {
+      "source_event_index": 93,
+      "start_ms": 539920,
+      "end_ms": 547680,
+      "text": "个物体，除以距离的平方。这是另一个平方反比定律。再次，"
+    },
+    {
+      "source_event_index": 94,
+      "start_ms": 547680,
+      "end_ms": 554080,
+      "text": "出于完全相同的原因，静电学看起来与狭义相对论不一致。"
+    },
+    {
+      "source_event_index": 95,
+      "start_ms": 555200,
+      "end_ms": 560160,
+      "text": "但最终并非如此。或者最终，这并不是故事的全部。"
+    },
+    {
+      "source_event_index": 96,
+      "start_ms": 560720,
+      "end_ms": 565040,
+      "text": "静电只是电磁学真实理论的一个极限，"
+    },
+    {
+      "source_event_index": 97,
+      "start_ms": 565040,
+      "end_ms": 571120,
+      "text": "，这是麦克斯韦定律，它不仅有电力，还有磁力。"
+    },
+    {
+      "source_event_index": 98,
+      "start_ms": 572160,
+      "end_ms": 575760,
+      "text": "只有当没有物体移动时，电力才会像这样。"
+    },
+    {
+      "source_event_index": 99,
+      "start_ms": 575760,
+      "end_ms": 580480,
+      "text": "当事情开始发生变化时，会有额外的修正，所有"
+    },
+    {
+      "source_event_index": 100,
+      "start_ms": 580480,
+      "end_ms": 587120,
+      "text": "，这使得静电力定律完全符合狭义相对论。"
+    },
+    {
+      "source_event_index": 101,
+      "start_ms": 587120,
+      "end_ms": 591040,
+      "text": "事实上，历史的认识方向是相反的。"
+    },
+    {
+      "source_event_index": 102,
+      "start_ms": 591040,
+      "end_ms": 594000,
+      "text": "首先，你有第十九个中间的麦克斯韦"
+    },
+    {
+      "source_event_index": 103,
+      "start_ms": 594000,
+      "end_ms": 601280,
+      "text": "世纪写下了麦克斯韦方程组。直到后来人们才注意到，“嘿，麦克斯韦"
+    },
+    {
+      "source_event_index": 104,
+      "start_ms": 601280,
+      "end_ms": 607200,
+      "text": "方程实际上与没有任何物体的速度超过光速是完全一致的。”"
+    },
+    {
+      "source_event_index": 105,
+      "start_ms": 607200,
+      "end_ms": 612000,
+      "text": "这种一致性反映在称为麦克斯韦洛伦兹对称性的对称性中"
+    },
+    {
+      "source_event_index": 106,
+      "start_ms": 612000,
+      "end_ms": 616560,
+      "text": "场方程，直到被写下来后才被注意到，最终导致了爱因斯坦"
+    },
+    {
+      "source_event_index": 107,
+      "start_ms": 616560,
+      "end_ms": 622640,
+      "text": "制定狭义相对论。所以我们有一个先例"
+    },
+    {
+      "source_event_index": 108,
+      "start_ms": 622640,
+      "end_ms": 629360,
+      "text": "平方反比定律，然后将其装扮成完整的相对论不变理论。"
+    },
+    {
+      "source_event_index": 109,
+      "start_ms": 629360,
+      "end_ms": 633280,
+      "text": "所以你可能会说，好吧，让我们用重力做同样的事情 我们对静电学所做的"
+    },
+    {
+      "source_event_index": 110,
+      "start_ms": 633280,
+      "end_ms": 643120,
+      "text": "引力，是为了建立一些重磁理论，使得"
+    },
+    {
+      "source_event_index": 111,
+      "start_ms": 643120,
+      "end_ms": 650320,
+      "text": "牛顿第二定律是最终与狭义相对论一致的近似值。"
+    },
+    {
+      "source_event_index": 112,
+      "start_ms": 650320,
+      "end_ms": 653280,
+      "text": "从某种意义上来说，这就是我们最终要做的事情。"
+    },
+    {
+      "source_event_index": 113,
+      "start_ms": 653280,
+      "end_ms": 658320,
+      "text": "这就是爱因斯坦最终要做的事情。但这将是一个更加彻底的背离"
+    },
+    {
+      "source_event_index": 114,
+      "start_ms": 658320,
+      "end_ms": 665120,
+      "text": "比静电学的麦克斯韦推广。实际上有两个提示，两个都是"
+    },
+    {
+      "source_event_index": 115,
+      "start_ms": 665120,
+      "end_ms": 668400,
+      "text": "在此公式中可见，我们将不得不做一些稍微不同的事情"
+    },
+    {
+      "source_event_index": 116,
+      "start_ms": 668400,
+      "end_ms": 675760,
+      "text": "比我们对静电学所做的要多。之间的第一个区别"
+    },
+    {
+      "source_event_index": 117,
+      "start_ms": 675760,
+      "end_ms": 682160,
+      "text": "静电力定律和牛顿万有引力定律就是这个符号差。"
+    },
+    {
+      "source_event_index": 118,
+      "start_ms": 682160,
+      "end_ms": 687600,
+      "text": "有一个很大的区别，就是这里是减号，这里是加号。"
+    },
+    {
+      "source_event_index": 119,
+      "start_ms": 687600,
+      "end_ms": 693600,
+      "text": "这反映在以下事实：如果有两个正质量——地球和地球"
+    },
+    {
+      "source_event_index": 120,
+      "start_ms": 693600,
+      "end_ms": 702480,
+      "text": "太阳——它们通过引力相互吸引。相反，如果你有两项类似的指控，"
+    },
+    {
+      "source_event_index": 121,
+      "start_ms": 702480,
+      "end_ms": 711040,
+      "text": "它们在静电上相互排斥，这就是为什么那个是负号而那个是加号。"
+    },
+    {
+      "source_event_index": 122,
+      "start_ms": 711040,
+      "end_ms": 717200,
+      "text": "这意味着你不能对重力做同样的事情"
+    },
+    {
+      "source_event_index": 123,
+      "start_ms": 717200,
+      "end_ms": 722000,
+      "text": "对于电磁学，因为否则，如果你在数学上做了同样的技巧，"
+    },
+    {
+      "source_event_index": 124,
+      "start_ms": 722000,
+      "end_ms": 726560,
+      "text": "你最终会得到数学上相同的结果，即你会发现像质量"
+    },
+    {
+      "source_event_index": 125,
+      "start_ms": 726560,
+      "end_ms": 731040,
+      "text": "会排斥而不是吸引。不为超越自己，"
+    },
+    {
+      "source_event_index": 126,
+      "start_ms": 731040,
+      "end_ms": 738240,
+      "text": "但最终这是因为静电是由自旋 1 粒子（光子）介导的，"
+    },
+    {
+      "source_event_index": 127,
+      "start_ms": 738240,
+      "end_ms": 743040,
+      "text": "重力将由自旋 2 粒子介导，这就是原因"
+    },
+    {
+      "source_event_index": 128,
+      "start_ms": 743040,
+      "end_ms": 746880,
+      "text": "那里的标志发生了变化。这就是为什么你不能完全做到"
+    },
+    {
+      "source_event_index": 129,
+      "start_ms": 746880,
+      "end_ms": 751040,
+      "text": "与静电相同。所以爱因斯坦不得不寻找别的东西。"
+    },
+    {
+      "source_event_index": 130,
+      "start_ms": 751040,
+      "end_ms": 757840,
+      "text": "他必须寻找其他方法来尝试将其提升为相对论不变的理论。"
+    },
+    {
+      "source_event_index": 131,
+      "start_ms": 758720,
+      "end_ms": 763360,
+      "text": "这么做的时候，他有一个线索。有很多事情正在发生。"
+    },
+    {
+      "source_event_index": 132,
+      "start_ms": 763360,
+      "end_ms": 768000,
+      "text": "爱因斯坦的核心天才之一就是将其作为高度关注的焦点。"
+    },
+    {
+      "source_event_index": 133,
+      "start_ms": 768000,
+      "end_ms": 772480,
+      "text": "他应该看哪里的重要线索。有时被描述为他最美丽的"
+    },
+    {
+      "source_event_index": 134,
+      "start_ms": 772480,
+      "end_ms": 778000,
+      "text": "想，他会这么形容。线索是这样的。还有另一个"
+    },
+    {
+      "source_event_index": 135,
+      "start_ms": 778000,
+      "end_ms": 784800,
+      "text": "引力定律和静电学之间的区别，"
+    },
+    {
+      "source_event_index": 136,
+      "start_ms": 784800,
+      "end_ms": 794720,
+      "text": "这就是静电学中电荷模拟的物体，即重力。"
+    },
+    {
+      "source_event_index": 137,
+      "start_ms": 794720,
+      "end_ms": 804560,
+      "text": "事实上，坐在这里的是大众。这是一个奇怪的巧合"
+    },
+    {
+      "source_event_index": 138,
+      "start_ms": 804560,
+      "end_ms": 809600,
+      "text": "牛顿物理学。静电质量"
+    },
+    {
+      "source_event_index": 139,
+      "start_ms": 809600,
+      "end_ms": 816320,
+      "text": "力和加速度，只发挥一种作用。它就坐在这里。就是物体的惯性，"
+    },
+    {
+      "source_event_index": 140,
+      "start_ms": 816320,
+      "end_ms": 822880,
+      "text": "这就是抵抗加速的原因。这有时称为惯性质量。"
+    },
+    {
+      "source_event_index": 141,
+      "start_ms": 824400,
+      "end_ms": 826960,
+      "text": "那么电荷就完全不同了，与质量无关。"
+    },
+    {
+      "source_event_index": 142,
+      "start_ms": 826960,
+      "end_ms": 832320,
+      "text": "你可以拥有不带电荷的重物体，比如中子。"
+    },
+    {
+      "source_event_index": 143,
+      "start_ms": 832320,
+      "end_ms": 835520,
+      "text": "你可以拥有带有高电荷的轻物体，例如电子。"
+    },
+    {
+      "source_event_index": 144,
+      "start_ms": 835520,
+      "end_ms": 841200,
+      "text": "粒子的电荷与其质量之间没有必然关系。"
+    },
+    {
+      "source_event_index": 145,
+      "start_ms": 841200,
+      "end_ms": 847520,
+      "text": "它们只是两个完全独立的东西。在重力方面不正确。在重力作用下，这个质量"
+    },
+    {
+      "source_event_index": 146,
+      "start_ms": 847520,
+      "end_ms": 851680,
+      "text": "位于牛顿第二定律中——抵抗力的惯性质量"
+    },
+    {
+      "source_event_index": 147,
+      "start_ms": 852960,
+      "end_ms": 860720,
+      "text": "力——恰好等于牛顿万有引力定律中的质量，"
+    },
+    {
+      "source_event_index": 148,
+      "start_ms": 860720,
+      "end_ms": 865040,
+      "text": "这告诉你你被拉动了多少。这是相同的质量。所以这有时被称为"
+    },
+    {
+      "source_event_index": 149,
+      "start_ms": 865040,
+      "end_ms": 868720,
+      "text": "引力质量，有时称为惯性质量。"
+    },
+    {
+      "source_event_index": 150,
+      "start_ms": 870640,
+      "end_ms": 882640,
+      "text": "与静电学不同，此公式中出现的引力质量等于"
+    },
+    {
+      "source_event_index": 151,
+      "start_ms": 882640,
+      "end_ms": 890800,
+      "text": "有时称为该公式中的惯性质量。"
+    },
+    {
+      "source_event_index": 152,
+      "start_ms": 890800,
+      "end_ms": 893520,
+      "text": "这个方程在牛顿物理学中已经成立。 事实上，"
+    },
+    {
+      "source_event_index": 153,
+      "start_ms": 893520,
+      "end_ms": 897200,
+      "text": "牛顿注意到了这一点，并做了许多实验来证实这一点"
+    },
+    {
+      "source_event_index": 154,
+      "start_ms": 897200,
+      "end_ms": 901840,
+      "text": "大约千分之一是这样的。到了爱因斯坦的时代，我们就知道这是"
+    },
+    {
+      "source_event_index": 155,
+      "start_ms": 901840,
+      "end_ms": 905280,
+      "text": "准确度为十亿分之一，现在我们知道它的准确度为十亿分之一。"
+    },
+    {
+      "source_event_index": 156,
+      "start_ms": 908720,
+      "end_ms": 913600,
+      "text": "令人震惊的是，这两者——在牛顿物理学中完全是巧合，"
+    },
+    {
+      "source_event_index": 157,
+      "start_ms": 913600,
+      "end_ms": 916240,
+      "text": "本质上，它们是同一件事——尽管如此"
+    },
+    {
+      "source_event_index": 158,
+      "start_ms": 916240,
+      "end_ms": 923840,
+      "text": "被观察到是完全相同的。爱因斯坦深入研究了这一事实，这是他的"
+    },
+    {
+      "source_event_index": 159,
+      "start_ms": 923840,
+      "end_ms": 927440,
+      "text": "接下来该做什么的中心线索。这有时被称为"
+    },
+    {
+      "source_event_index": 160,
+      "start_ms": 927440,
+      "end_ms": 930000,
+      "text": "等价原则。它负责"
+    },
+    {
+      "source_event_index": 161,
+      "start_ms": 930000,
+      "end_ms": 937680,
+      "text": "事实上，如果你将一根羽毛和一块砖放入真空室中并将它们都扔掉，它们会"
+    },
+    {
+      "source_event_index": 162,
+      "start_ms": 937680,
+      "end_ms": 942160,
+      "text": "同时下落并落地。他们会同时掉落并落地"
+    },
+    {
+      "source_event_index": 163,
+      "start_ms": 942160,
+      "end_ms": 948000,
+      "text": "时间，因为即使砖块上的力比砖块上的力强得多"
+    },
+    {
+      "source_event_index": 164,
+      "start_ms": 948000,
+      "end_ms": 953440,
+      "text": "羽毛，因为它更重，这正好抵消了阻力的事实"
+    },
+    {
+      "source_event_index": 165,
+      "start_ms": 953440,
+      "end_ms": 960000,
+      "text": "砖块的加速度大于羽毛的加速度阻力，"
+    },
+    {
+      "source_event_index": 166,
+      "start_ms": 960000,
+      "end_ms": 964800,
+      "text": "并且它们以完全相同的速率下降。这两者的平等是有责任的"
+    },
+    {
+      "source_event_index": 167,
+      "start_ms": 964800,
+      "end_ms": 968880,
+      "text": "完全相等。爱因斯坦的天才在于"
+    },
+    {
+      "source_event_index": 168,
+      "start_ms": 968880,
+      "end_ms": 977280,
+      "text": "将此作为他最终将如何取代牛顿定律的中心线索。"
+    },
+    {
+      "source_event_index": 169,
+      "start_ms": 977280,
+      "end_ms": 984560,
+      "text": "它是中心线索的一个原因是因为事实上还有另一类力量——不是"
+    },
+    {
+      "source_event_index": 170,
+      "start_ms": 984560,
+      "end_ms": 989600,
+      "text": "像电磁力或重力这样的基本力，但是一组涌现力——"
+    },
+    {
+      "source_event_index": 171,
+      "start_ms": 989600,
+      "end_ms": 995840,
+      "text": "正是将这种属性融入其中，这是这些理论所保证的。"
+    },
+    {
+      "source_event_index": 172,
+      "start_ms": 996560,
+      "end_ms": 1002720,
+      "text": "为了解释这一点，我们现在将进入本次讨论的实验部分。"
+    },
+    {
+      "source_event_index": 173,
+      "start_ms": 1002720,
+      "end_ms": 1012160,
+      "text": "这是一个桶。这是桶里装满了一些水。"
+    },
+    {
+      "source_event_index": 174,
+      "start_ms": 1012720,
+      "end_ms": 1016400,
+      "text": "你最好了解你的物理学，亚当。否则你就会毁掉工作室。"
+    },
+    {
+      "source_event_index": 175,
+      "start_ms": 1016400,
+      "end_ms": 1020880,
+      "text": "没有技巧。你能把手指伸进去确认它是湿的吗？"
+    },
+    {
+      "source_event_index": 176,
+      "start_ms": 1023360,
+      "end_ms": 1026880,
+      "text": "这是桶。在底部，没有什么神秘的"
+    },
+    {
+      "source_event_index": 177,
+      "start_ms": 1026880,
+      "end_ms": 1032160,
+      "text": "为什么水不会从桶里掉出来。不会因为重力而掉下来 正如我们所理解的，"
+    },
+    {
+      "source_event_index": 178,
+      "start_ms": 1032160,
+      "end_ms": 1035520,
+      "text": "指向桶底。"
+    },
+    {
+      "source_event_index": 179,
+      "start_ms": 1035520,
+      "end_ms": 1042880,
+      "text": "但现在我们要做的就是稍微快一点并循环循环。"
+    },
+    {
+      "source_event_index": 180,
+      "start_ms": 1042880,
+      "end_ms": 1048160,
+      "text": "现在你可能会觉得表面上令人惊讶，"
+    },
+    {
+      "source_event_index": 181,
+      "start_ms": 1048160,
+      "end_ms": 1053520,
+      "text": "就是即使把水桶倒过来水也不会从水桶里掉出来。"
+    },
+    {
+      "source_event_index": 182,
+      "start_ms": 1054640,
+      "end_ms": 1058320,
+      "text": "有两种方法可以理解这一点。一种方法就是直接的方法。"
+    },
+    {
+      "source_event_index": 183,
+      "start_ms": 1059280,
+      "end_ms": 1067200,
+      "text": "你会说当水到达弧线的顶部时，水想要从桶中掉出来，"
+    },
+    {
+      "source_event_index": 184,
+      "start_ms": 1067200,
+      "end_ms": 1071760,
+      "text": "但当它自身加速到足以从桶中掉出来时，"
+    },
+    {
+      "source_event_index": 185,
+      "start_ms": 1071760,
+      "end_ms": 1079040,
+      "text": "水桶继续移动，现在位于下方，它只是没有时间从水桶中掉出来。"
+    },
+    {
+      "source_event_index": 186,
+      "start_ms": 1079040,
+      "end_ms": 1082640,
+      "text": "或者你可能会说宇航员最终没有坠落到地球的原因相同。"
+    },
+    {
+      "source_event_index": 187,
+      "start_ms": 1084400,
+      "end_ms": 1088320,
+      "text": "第二个观点，也是一个同样有效的观点，是想象你在"
+    },
+    {
+      "source_event_index": 188,
+      "start_ms": 1088320,
+      "end_ms": 1093040,
+      "text": "沿着桶里的水骑行。从这个角度来看，还有另一个"
+    },
+    {
+      "source_event_index": 189,
+      "start_ms": 1093040,
+      "end_ms": 1097760,
+      "text": "解释水为什么不会从桶里掉出来，那就是离心力。"
+    },
+    {
+      "source_event_index": 190,
+      "start_ms": 1097760,
+      "end_ms": 1102160,
+      "text": "从某人与桶一起移动的角度来看，有一个力在推动他们"
+    },
+    {
+      "source_event_index": 191,
+      "start_ms": 1102160,
+      "end_ms": 1110640,
+      "text": "朝向桶底部，该力称为离心力。"
+    },
+    {
+      "source_event_index": 192,
+      "start_ms": 1114240,
+      "end_ms": 1118240,
+      "text": "这就是所谓的虚拟力或惯性力。"
+    },
+    {
+      "source_event_index": 193,
+      "start_ms": 1118240,
+      "end_ms": 1126320,
+      "text": "离心力只是说存在因旋转而产生的力"
+    },
+    {
+      "source_event_index": 194,
+      "start_ms": 1126320,
+      "end_ms": 1133520,
+      "text": "参考系，由你的速度除以你要走的圆的半径得出"
+    },
+    {
+      "source_event_index": 195,
+      "start_ms": 1133520,
+      "end_ms": 1140080,
+      "text": "向内，正向向外。这就是固定的离心力"
+    },
+    {
+      "source_event_index": 196,
+      "start_ms": 1140080,
+      "end_ms": 1147040,
+      "text": "将你压到桶底，或者在你转弯时将你固定在车外。"
+    },
+    {
+      "source_event_index": 197,
+      "start_ms": 1148560,
+      "end_ms": 1153360,
+      "text": "我们注意到什么？我们注意到你在离心力作用下的电荷，"
+    },
+    {
+      "source_event_index": 198,
+      "start_ms": 1153360,
+      "end_ms": 1159600,
+      "text": "如果你愿意的话——你感受到的离心力有多强烈——再次，就像重力一样，但是"
+    },
+    {
+      "source_event_index": 199,
+      "start_ms": 1159600,
+      "end_ms": 1168160,
+      "text": "与静电不同，静电是由质量决定的。质量告诉您离心力有多大 您获得的"
+    },
+    {
+      "source_event_index": 200,
+      "start_ms": 1168160,
+      "end_ms": 1172080,
+      "text": "力由您的惯性质量给出。但当然，这绝对不是什么神秘的事情"
+    },
+    {
+      "source_event_index": 201,
+      "start_ms": 1172080,
+      "end_ms": 1180320,
+      "text": "不管怎样，为什么右边的质量是由你的惯性质量决定的。"
+    },
+    {
+      "source_event_index": 202,
+      "start_ms": 1180320,
+      "end_ms": 1185520,
+      "text": "它是由你的惯性质量给出的，正是因为你经历这种情况的原因"
+    },
+    {
+      "source_event_index": 203,
+      "start_ms": 1185520,
+      "end_ms": 1189920,
+      "text": "力正是大众希望沿直线运动的倾向。"
+    },
+    {
+      "source_event_index": 204,
+      "start_ms": 1189920,
+      "end_ms": 1193360,
+      "text": "事实上你不是沿着直线移动，而是沿着圆圈移动，"
+    },
+    {
+      "source_event_index": 205,
+      "start_ms": 1193360,
+      "end_ms": 1197760,
+      "text": "正是这种惯性趋势导致了质量的产生。"
+    },
+    {
+      "source_event_index": 206,
+      "start_ms": 1197760,
+      "end_ms": 1203760,
+      "text": "另一种说法：任何时候你有这些惯性力之一，"
+    },
+    {
+      "source_event_index": 207,
+      "start_ms": 1203760,
+      "end_ms": 1209200,
+      "text": "光是你的惯性造成的，在那个力的作用下冲锋肯定是这样的"
+    },
+    {
+      "source_event_index": 208,
+      "start_ms": 1209200,
+      "end_ms": 1217280,
+      "text": "由惯性质量给出。所以惯性力总是有"
+    },
+    {
+      "source_event_index": 209,
+      "start_ms": 1217280,
+      "end_ms": 1226000,
+      "text": "由惯性质量给出的电荷。重力有电荷，并且电荷 重力的"
+    },
+    {
+      "source_event_index": 210,
+      "start_ms": 1226000,
+      "end_ms": 1231600,
+      "text": "由惯性质量给出。于是爱因斯坦跳了起来：难道是这样吗？"
+    },
+    {
+      "source_event_index": 211,
+      "start_ms": 1231600,
+      "end_ms": 1238240,
+      "text": "这就是他的中心思想，重力本身就是一种惯性力？"
+    },
+    {
+      "source_event_index": 212,
+      "start_ms": 1238240,
+      "end_ms": 1242720,
+      "text": "这是允许的，因为引力质量等于惯性质量。"
+    },
+    {
+      "source_event_index": 213,
+      "start_ms": 1242720,
+      "end_ms": 1246560,
+      "text": "像电磁学这样的东西是完全不可能的，"
+    },
+    {
+      "source_event_index": 214,
+      "start_ms": 1246560,
+      "end_ms": 1251200,
+      "text": "因为它要求电磁电荷等于惯性质量，"
+    },
+    {
+      "source_event_index": 215,
+      "start_ms": 1251200,
+      "end_ms": 1255600,
+      "text": "这对于电磁学来说是完全错误的。爱因斯坦问道，难道是这样吗？"
+    },
+    {
+      "source_event_index": 216,
+      "start_ms": 1255600,
+      "end_ms": 1258880,
+      "text": "对于重力来说这是真的吗？这是事实所允许的。"
+    },
+    {
+      "source_event_index": 217,
+      "start_ms": 1258880,
+      "end_ms": 1262880,
+      "text": "这也可以解释这个事实，因为现在它不是像牛顿定律那样的偶然事实，"
+    },
+    {
+      "source_event_index": 218,
+      "start_ms": 1262880,
+      "end_ms": 1269840,
+      "text": "但这是世界的一个必然事实。这就是爱因斯坦 1907 年的中心思想，"
+    },
+    {
+      "source_event_index": 219,
+      "start_ms": 1269840,
+      "end_ms": 1273120,
+      "text": "他最美丽的想法。但这听起来完全疯狂。"
+    },
+    {
+      "source_event_index": 220,
+      "start_ms": 1274640,
+      "end_ms": 1281280,
+      "text": "这听起来很疯狂，因为它要求我们对直线的理解是错误的。"
+    },
+    {
+      "source_event_index": 221,
+      "start_ms": 1281280,
+      "end_ms": 1286320,
+      "text": "这是一个极其激进的主张，原因我现在将描述。"
+    },
+    {
+      "source_event_index": 222,
+      "start_ms": 1286320,
+      "end_ms": 1294800,
+      "text": "惯性力——例如离心力或科里奥利力或任何其他力 我们熟悉的"
+    },
+    {
+      "source_event_index": 223,
+      "start_ms": 1295440,
+      "end_ms": 1302560,
+      "text": "——是当您不沿直线移动时所经历的力。"
+    },
+    {
+      "source_event_index": 224,
+      "start_ms": 1302560,
+      "end_ms": 1309040,
+      "text": "当您沿直线移动时，您不会感受到任何惯性力。"
+    },
+    {
+      "source_event_index": 225,
+      "start_ms": 1309040,
+      "end_ms": 1316880,
+      "text": "因此，为了让这一点成为现实，我们不得不说，自由漂浮的宇航员"
+    },
+    {
+      "source_event_index": 226,
+      "start_ms": 1316880,
+      "end_ms": 1323200,
+      "text": "自由落体沿直线运动。我们不得不说，只是坐着的你"
+    },
+    {
+      "source_event_index": 227,
+      "start_ms": 1323200,
+      "end_ms": 1328480,
+      "text": "在那里，看似没有动，正在经历将你推到椅子上的重力。"
+    },
+    {
+      "source_event_index": 228,
+      "start_ms": 1328480,
+      "end_ms": 1331200,
+      "text": "我们不得不说你不是沿着直线移动。"
+    },
+    {
+      "source_event_index": 229,
+      "start_ms": 1331200,
+      "end_ms": 1335920,
+      "text": "所以我们对于谁沿着直线移动、谁不是沿着直线移动的判断肯定是非常错误的。"
+    },
+    {
+      "source_event_index": 230,
+      "start_ms": 1337680,
+      "end_ms": 1340560,
+      "text": "当我认识简街的人们时，我注意到他们中的很多人"
+    },
+    {
+      "source_event_index": 231,
+      "start_ms": 1340560,
+      "end_ms": 1343600,
+      "text": "有物理背景。我最近有机会与杰德·汤普森交谈，"
+    },
+    {
+      "source_event_index": 232,
+      "start_ms": 1343600,
+      "end_ms": 1348160,
+      "text": "在成为交易员之前是一名粒子物理学家，讲述他的物理训练是如何进行的"
+    },
+    {
+      "source_event_index": 233,
+      "start_ms": 1348160,
+      "end_ms": 1352480,
+      "text": "帮助他在简街的工作。我认为很少有简街商人或"
+    },
+    {
+      "source_event_index": 234,
+      "start_ms": 1352480,
+      "end_ms": 1356560,
+      "text": "研究人员具有任何金融背景或任何贸易背景。"
+    },
+    {
+      "source_event_index": 235,
+      "start_ms": 1356560,
+      "end_ms": 1361200,
+      "text": "当我以前学物理的时候，我想说的是，我几乎不做计算"
+    },
+    {
+      "source_event_index": 236,
+      "start_ms": 1361200,
+      "end_ms": 1365920,
+      "text": "还没有很好地猜测答案。在交易中，我认为也是如此。"
+    },
+    {
+      "source_event_index": 237,
+      "start_ms": 1365920,
+      "end_ms": 1371440,
+      "text": "这些东西从根本上来说是世界行为方式的模型。你可以建立良好的直觉"
+    },
+    {
+      "source_event_index": 238,
+      "start_ms": 1371440,
+      "end_ms": 1376640,
+      "text": "通过一遍又一遍地观察模式，直到达到你最想问的地步"
+    },
+    {
+      "source_event_index": 239,
+      "start_ms": 1376640,
+      "end_ms": 1381120,
+      "text": "从一开始就提出了正确的问题，这缩短了很多工作。"
+    },
+    {
+      "source_event_index": 240,
+      "start_ms": 1381120,
+      "end_ms": 1384720,
+      "text": "所以即使你没有金融背景，或者没有物理背景，"
+    },
+    {
+      "source_event_index": 241,
+      "start_ms": 1384720,
+      "end_ms": 1390800,
+      "text": "你还是应该考虑申请。请访问 janestreet.com/Dwarkesh 了解更多信息。"
+    },
+    {
+      "source_event_index": 242,
+      "start_ms": 1390800,
+      "end_ms": 1395040,
+      "text": "所以这是一个激进的想法，因为它要求我们对直线的理解是错误的。"
+    },
+    {
+      "source_event_index": 243,
+      "start_ms": 1395600,
+      "end_ms": 1403120,
+      "text": "特别是，你坐在这里，只是坐在你的椅子上......这是你距中心的高度 地球的"
+    },
+    {
+      "source_event_index": 244,
+      "start_ms": 1403120,
+      "end_ms": 1414960,
+      "text": "作为时间的函数。这是 Dwarkesh 只是"
+    },
+    {
+      "source_event_index": 245,
+      "start_ms": 1414960,
+      "end_ms": 1418960,
+      "text": "坐在这里，高度恒定。因为你正在体验到的力量"
+    },
+    {
+      "source_event_index": 246,
+      "start_ms": 1418960,
+      "end_ms": 1424880,
+      "text": "重力，如果重力是惯性力——因为你正在经历向下的力——这意味着"
+    },
+    {
+      "source_event_index": 247,
+      "start_ms": 1424880,
+      "end_ms": 1437280,
+      "text": "你必须沿着非直线移动。这就是你。相比之下，这支粉笔，"
+    },
+    {
+      "source_event_index": 248,
+      "start_ms": 1437280,
+      "end_ms": 1447040,
+      "text": "当它上下移动时，执行的操作非常近似于抛物线。"
+    },
+    {
+      "source_event_index": 249,
+      "start_ms": 1447040,
+      "end_ms": 1454560,
+      "text": "粉笔一直处于自由落体状态，直到我接住它，这意味着如果重力是"
+    },
+    {
+      "source_event_index": 250,
+      "start_ms": 1454560,
+      "end_ms": 1460720,
+      "text": "惯性力，这个必须是直的。现在，当然按照我绘制的方式，"
+    },
+    {
+      "source_event_index": 251,
+      "start_ms": 1460720,
+      "end_ms": 1465520,
+      "text": "这个看起来是直的，而那个则不是。所以如果重力是一种惯性力"
+    },
+    {
+      "source_event_index": 252,
+      "start_ms": 1465520,
+      "end_ms": 1471120,
+      "text": "我们对于什么是直线、什么不是直线的判断一定是错误的。"
+    },
+    {
+      "source_event_index": 253,
+      "start_ms": 1473040,
+      "end_ms": 1476960,
+      "text": "然而，这实际上是你应该熟悉的情况"
+    },
+    {
+      "source_event_index": 254,
+      "start_ms": 1476960,
+      "end_ms": 1481680,
+      "text": "如果您坐在飞机座位上并看着面前的屏幕。"
+    },
+    {
+      "source_event_index": 255,
+      "start_ms": 1481680,
+      "end_ms": 1487920,
+      "text": "想象一下您在飞机上看到的地图，并想象您在"
+    },
+    {
+      "source_event_index": 256,
+      "start_ms": 1487920,
+      "end_ms": 1496240,
+      "text": "从旧金山飞往伦敦。现在，我不擅长画地球，"
+    },
+    {
+      "source_event_index": 257,
+      "start_ms": 1496240,
+      "end_ms": 1501440,
+      "text": "但这是我的版本。我们现在在旧金山。"
+    },
+    {
+      "source_event_index": 258,
+      "start_ms": 1501440,
+      "end_ms": 1513600,
+      "text": "这里是从北极进来的格陵兰岛。这里是英格兰。这里是伦敦。"
+    },
+    {
+      "source_event_index": 259,
+      "start_ms": 1513600,
+      "end_ms": 1518480,
+      "text": "我可以看出你是一位物理学家，因为大陆的形状非常理想化。"
+    },
+    {
+      "source_event_index": 260,
+      "start_ms": 1522240,
+      "end_ms": 1527440,
+      "text": "有时候坐在飞机后座会很沮丧，"
+    },
+    {
+      "source_event_index": 261,
+      "start_ms": 1527440,
+      "end_ms": 1533120,
+      "text": "因为显然飞机应该像这样飞行，沿着"
+    },
+    {
+      "source_event_index": 262,
+      "start_ms": 1533120,
+      "end_ms": 1537760,
+      "text": "从一个地方到另一个地方的最短距离。但他们却走了这么大的弯路"
+    },
+    {
+      "source_event_index": 263,
+      "start_ms": 1538880,
+      "end_ms": 1546080,
+      "text": "夹住格陵兰岛并向下行驶。你知道事实并非如此。"
+    },
+    {
+      "source_event_index": 264,
+      "start_ms": 1546080,
+      "end_ms": 1552240,
+      "text": "你知道，事实上，无论它在图表上看起来如何，这都不是一条直线。"
+    },
+    {
+      "source_event_index": 265,
+      "start_ms": 1552240,
+      "end_ms": 1557680,
+      "text": "这条恒向线，有时被称为，不是直的，并且肯定不是"
+    },
+    {
+      "source_event_index": 266,
+      "start_ms": 1557680,
+      "end_ms": 1564960,
+      "text": "从旧金山到伦敦的最短路径。事实上，这是一个很好的近似，"
+    },
+    {
+      "source_event_index": 267,
+      "start_ms": 1564960,
+      "end_ms": 1570000,
+      "text": "一条直线。所以事实上，直 从旧金山到伦敦的"
+    },
+    {
+      "source_event_index": 268,
+      "start_ms": 1570000,
+      "end_ms": 1581520,
+      "text": "线确实经过格陵兰岛，正如我现在将演示的那样。"
+    },
+    {
+      "source_event_index": 269,
+      "start_ms": 1582160,
+      "end_ms": 1588400,
+      "text": "这里是旧金山，这里是伦敦。你可以看到这条直线"
+    },
+    {
+      "source_event_index": 270,
+      "start_ms": 1588400,
+      "end_ms": 1597600,
+      "text": "从一个地方直接到另一个地方会朝这个方向飞越格陵兰岛并到达伦敦。"
+    },
+    {
+      "source_event_index": 271,
+      "start_ms": 1599760,
+      "end_ms": 1605680,
+      "text": "这在这张地图上很明显，因为这张地图反映了地球的曲率。"
+    },
+    {
+      "source_event_index": 272,
+      "start_ms": 1605680,
+      "end_ms": 1610720,
+      "text": "这张地图变得混乱，它变得混乱是因为它"
+    },
+    {
+      "source_event_index": 273,
+      "start_ms": 1610720,
+      "end_ms": 1617680,
+      "text": "试图假装地球是平的。它试图忽略地球的曲率，"
+    },
+    {
+      "source_event_index": 274,
+      "start_ms": 1617680,
+      "end_ms": 1625040,
+      "text": "并且因为它试图将圆形地球映射到平板上，所以必须存在扭曲。"
+    },
+    {
+      "source_event_index": 275,
+      "start_ms": 1625040,
+      "end_ms": 1629280,
+      "text": "每当你尝试拿弯曲的东西并假装它没有弯曲时，"
+    },
+    {
+      "source_event_index": 276,
+      "start_ms": 1629280,
+      "end_ms": 1635200,
+      "text": "你不可避免地会弄错什么是直线、什么不是直线。"
+    },
+    {
+      "source_event_index": 277,
+      "start_ms": 1635200,
+      "end_ms": 1642000,
+      "text": "你在地球上看到了这个，这条线上升然后"
+    },
+    {
+      "source_event_index": 278,
+      "start_ms": 1642000,
+      "end_ms": 1649040,
+      "text": "下来其实是直线。你也可以在时空中看到它"
+    },
+    {
+      "source_event_index": 279,
+      "start_ms": 1649040,
+      "end_ms": 1656880,
+      "text": "相对论，粉笔抛起的抛物线处于自由落体状态，"
+    },
+    {
+      "source_event_index": 280,
+      "start_ms": 1656880,
+      "end_ms": 1661600,
+      "text": "是广义相对论中的直线。就像广义相对论一样，"
+    },
+    {
+      "source_event_index": 281,
+      "start_ms": 1661600,
+      "end_ms": 1665840,
+      "text": "你对什么是直的什么是不直的感到困惑的原因是"
+    },
+    {
+      "source_event_index": 282,
+      "start_ms": 1665840,
+      "end_ms": 1672400,
+      "text": "你试图用这张图假装你处于平坦的时空中。"
+    },
+    {
+      "source_event_index": 283,
+      "start_ms": 1672960,
+      "end_ms": 1678640,
+      "text": "事实上，你处在一个弯曲的时空中。所以在爱因斯坦的理论中，"
+    },
+    {
+      "source_event_index": 284,
+      "start_ms": 1678640,
+      "end_ms": 1685680,
+      "text": "物质将会弯曲时空。通过弯曲时空，它将"
+    },
+    {
+      "source_event_index": 285,
+      "start_ms": 1685680,
+      "end_ms": 1688960,
+      "text": "改变什么是直线，什么不是直线。"
+    },
+    {
+      "source_event_index": 286,
+      "start_ms": 1690480,
+      "end_ms": 1697200,
+      "text": "沿着他们错误地认为是直线的人将会经历"
+    },
+    {
+      "source_event_index": 287,
+      "start_ms": 1697200,
+      "end_ms": 1702960,
+      "text": "万有引力，而宇航员不会感受到万有引力。"
+    },
+    {
+      "source_event_index": 288,
+      "start_ms": 1702960,
+      "end_ms": 1711360,
+      "text": "这里唯一缺少的部分是用数学方法描述时空弯曲的方式。"
+    },
+    {
+      "source_event_index": 289,
+      "start_ms": 1713040,
+      "end_ms": 1717600,
+      "text": "在牛顿物理学中，牛顿力是由质量的存在引起的。"
+    },
+    {
+      "source_event_index": 290,
+      "start_ms": 1717600,
+      "end_ms": 1721360,
+      "text": "在爱因斯坦的广义相对论中，它将是曲率 由质量引起的时空"
+    },
+    {
+      "source_event_index": 291,
+      "start_ms": 1721360,
+      "end_ms": 1729920,
+      "text": "。从1907年开始，他奋斗了八年，"
+    },
+    {
+      "source_event_index": 292,
+      "start_ms": 1729920,
+      "end_ms": 1736000,
+      "text": "当他大致绘制出这张图时，以及 1915 年，当他在其中写下"
+    },
+    {
+      "source_event_index": 293,
+      "start_ms": 1736000,
+      "end_ms": 1742160,
+      "text": "完成了他的广义相对论。这八年最后的产出是他的"
+    },
+    {
+      "source_event_index": 294,
+      "start_ms": 1742160,
+      "end_ms": 1763520,
+      "text": "著名的公式，我不会解释，但会写下来，这恰好抓住了他的直觉。"
+    },
+    {
+      "source_event_index": 295,
+      "start_ms": 1763520,
+      "end_ms": 1767840,
+      "text": "我将引导您完成这个公式。这只是一个美丽的公式。"
+    },
+    {
+      "source_event_index": 296,
+      "start_ms": 1769200,
+      "end_ms": 1775840,
+      "text": "左边是一些东欧人发明的数学"
+    },
+    {
+      "source_event_index": 297,
+      "start_ms": 1775840,
+      "end_ms": 1782160,
+      "text": "表征时空的曲率。这表示时空弯曲了多少。"
+    },
+    {
+      "source_event_index": 298,
+      "start_ms": 1782160,
+      "end_ms": 1787760,
+      "text": "这是一些张量，如果时空平坦并且非零，则张量将为零"
+    },
+    {
+      "source_event_index": 299,
+      "start_ms": 1787760,
+      "end_ms": 1794560,
+      "text": "当时空以特定方式弯曲时。右手边不再是时空。"
+    },
+    {
+      "source_event_index": 300,
+      "start_ms": 1794560,
+      "end_ms": 1799680,
+      "text": "右边是物质。有一些不变的东西：我们的老"
+    },
+    {
+      "source_event_index": 301,
+      "start_ms": 1799680,
+      "end_ms": 1805440,
+      "text": "朋友牛顿常数，π 是一个更老的朋友，还有光速。"
+    },
+    {
+      "source_event_index": 302,
+      "start_ms": 1805440,
+      "end_ms": 1810480,
+      "text": "然后是这个量 T_(μν)。 T_(μν) 就像相对论"
+    },
+    {
+      "source_event_index": 303,
+      "start_ms": 1810480,
+      "end_ms": 1818320,
+      "text": "位于牛顿力方程右侧的质量的推广。"
+    },
+    {
+      "source_event_index": 304,
+      "start_ms": 1818320,
+      "end_ms": 1824080,
+      "text": "所以说质量的存在——事实上不仅仅是质量，而是所有形式的质量 右侧的"
+    },
+    {
+      "source_event_index": 305,
+      "start_ms": 1824080,
+      "end_ms": 1831360,
+      "text": "和能量导致左侧的时空弯曲。"
+    },
+    {
+      "source_event_index": 306,
+      "start_ms": 1831360,
+      "end_ms": 1837120,
+      "text": "或者用一句口号来说：物质告诉时空如何弯曲。"
+    },
+    {
+      "source_event_index": 307,
+      "start_ms": 1837120,
+      "end_ms": 1842000,
+      "text": "一旦物质告诉时空如何弯曲，时空的曲率就会告诉物质"
+    },
+    {
+      "source_event_index": 308,
+      "start_ms": 1842000,
+      "end_ms": 1847360,
+      "text": "如何移动，在口号的后半部分。时空的曲率告诉物质移动"
+    },
+    {
+      "source_event_index": 309,
+      "start_ms": 1847360,
+      "end_ms": 1851440,
+      "text": "沿着弯曲空间的直线，因此如果你"
+    },
+    {
+      "source_event_index": 310,
+      "start_ms": 1851440,
+      "end_ms": 1856400,
+      "text": "尝试假装时空是平坦的。这就是爱因斯坦的一般理论 简而言之，"
+    },
+    {
+      "source_event_index": 311,
+      "start_ms": 1856400,
+      "end_ms": 1859440,
+      "text": "相对论。备份：惊人的"
+    },
+    {
+      "source_event_index": 312,
+      "start_ms": 1859440,
+      "end_ms": 1866800,
+      "text": "关于牛顿引力的事情是他发明了它，据说是由于某种想法"
+    },
+    {
+      "source_event_index": 313,
+      "start_ms": 1866800,
+      "end_ms": 1871600,
+      "text": "用苹果从树上掉下来做实验。它不仅描述了一个苹果从树上掉下来，"
+    },
+    {
+      "source_event_index": 314,
+      "start_ms": 1871600,
+      "end_ms": 1877600,
+      "text": "而是天上物体的运动。它描述的是一个巨大的交叉打击"
+    },
+    {
+      "source_event_index": 315,
+      "start_ms": 1877600,
+      "end_ms": 1881280,
+      "text": "行星运动以及苹果从树上掉下来。"
+    },
+    {
+      "source_event_index": 316,
+      "start_ms": 1881280,
+      "end_ms": 1886320,
+      "text": "这就是牛顿统一天地、创造奇迹的事情"
+    },
+    {
+      "source_event_index": 317,
+      "start_ms": 1886320,
+      "end_ms": 1889680,
+      "text": "一个适用于两者的公式。广义相对论做了所有"
+    },
+    {
+      "source_event_index": 318,
+      "start_ms": 1889680,
+      "end_ms": 1892880,
+      "text": "更进一步。它描述了苹果下落的运动"
+    },
+    {
+      "source_event_index": 319,
+      "start_ms": 1892880,
+      "end_ms": 1897360,
+      "text": "离树，它描述了水星和太阳系行星的运动，它描述了"
+    },
+    {
+      "source_event_index": 320,
+      "start_ms": 1897360,
+      "end_ms": 1902320,
+      "text": "整个宇宙的膨胀。这是一个疯狂的、巨大的数字 它达到了"
+    },
+    {
+      "source_event_index": 321,
+      "start_ms": 1902320,
+      "end_ms": 1907520,
+      "text": "的数量级。你刚才说的是"
+    },
+    {
+      "source_event_index": 322,
+      "start_ms": 1907520,
+      "end_ms": 1912320,
+      "text": "这个理论的美妙之处在于它以所有这些有趣的方式达到了目的"
+    },
+    {
+      "source_event_index": 323,
+      "start_ms": 1912320,
+      "end_ms": 1917600,
+      "text": "最初没有预料到，以解决爱因斯坦最初的观察。"
+    },
+    {
+      "source_event_index": 324,
+      "start_ms": 1917600,
+      "end_ms": 1923360,
+      "text": "显然，其中之一就是黑洞。我希望获得比高层更多的见解"
+    },
+    {
+      "source_event_index": 325,
+      "start_ms": 1923360,
+      "end_ms": 1928400,
+      "text": "学校版本——光落入其中而无法出去——解释黑洞为何如此运作。"
+    },
+    {
+      "source_event_index": 326,
+      "start_ms": 1928960,
+      "end_ms": 1935200,
+      "text": "黑洞是广义相对论中令人着迷的物体，实际上是广义相对论中的典型物体"
+    },
+    {
+      "source_event_index": 327,
+      "start_ms": 1935200,
+      "end_ms": 1939120,
+      "text": "广义相对论在牛顿物理学中并不以同样的方式存在。"
+    },
+    {
+      "source_event_index": 328,
+      "start_ms": 1940480,
+      "end_ms": 1945280,
+      "text": "这个故事有点疯狂。爱因斯坦写下了他的场方程，"
+    },
+    {
+      "source_event_index": 329,
+      "start_ms": 1945280,
+      "end_ms": 1949920,
+      "text": "我们写在黑板上的场方程，描述了曲率之间的关系"
+    },
+    {
+      "source_event_index": 330,
+      "start_ms": 1949920,
+      "end_ms": 1955360,
+      "text": "以及系统中的能量。他认为这些方程是这样的"
+    },
+    {
+      "source_event_index": 331,
+      "start_ms": 1955360,
+      "end_ms": 1960000,
+      "text": "复杂，没有人能想出精确的解决方案，我们只是"
+    },
+    {
+      "source_event_index": 332,
+      "start_ms": 1960000,
+      "end_ms": 1964000,
+      "text": "总是需要做近似值。事实证明这是不正确的。"
+    },
+    {
+      "source_event_index": 333,
+      "start_ms": 1964000,
+      "end_ms": 1970560,
+      "text": "史瓦西是第一次世界大战中的普鲁士炮兵军官。"
+    },
+    {
+      "source_event_index": 334,
+      "start_ms": 1970560,
+      "end_ms": 1979520,
+      "text": "在计算火炮弹道的间隙，他们向 方向投掷 他们的敌人的"
+    },
+    {
+      "source_event_index": 335,
+      "start_ms": 1979520,
+      "end_ms": 1984880,
+      "text": "，他发现了爱因斯坦方程——几乎是在爱因斯坦之后"
+    },
+    {
+      "source_event_index": 336,
+      "start_ms": 1984880,
+      "end_ms": 1991040,
+      "text": "在几个月内就把它们写下来了——事实上已经有了一个精确的解决方案，一个"
+    },
+    {
+      "source_event_index": 337,
+      "start_ms": 1991040,
+      "end_ms": 1998560,
+      "text": "解现在称为史瓦西方程，我们现在知道它描述了一个黑洞。"
+    },
+    {
+      "source_event_index": 338,
+      "start_ms": 1998560,
+      "end_ms": 2002640,
+      "text": "这是一个没有任何物质的解决方案，除了可能在"
+    },
+    {
+      "source_event_index": 339,
+      "start_ms": 2002640,
+      "end_ms": 2008640,
+      "text": "我们不会以某种方式描述它的中心。它是一个类似中心点的物质量。"
+    },
+    {
+      "source_event_index": 340,
+      "start_ms": 2008640,
+      "end_ms": 2011760,
+      "text": "它描述了周围时空的样子。"
+    },
+    {
+      "source_event_index": 341,
+      "start_ms": 2011760,
+      "end_ms": 2014640,
+      "text": "它被称为史瓦西解，它描述了一个黑洞。"
+    },
+    {
+      "source_event_index": 342,
+      "start_ms": 2014640,
+      "end_ms": 2019520,
+      "text": "当时它们还不被称为黑洞。事实上，人们非常困惑"
+    },
+    {
+      "source_event_index": 343,
+      "start_ms": 2019520,
+      "end_ms": 2023760,
+      "text": "这个解决方案到底意味着什么。人们写下错误的东西"
+    },
+    {
+      "source_event_index": 344,
+      "start_ms": 2023760,
+      "end_ms": 2028160,
+      "text": "大约半个世纪以来关于这意味着什么。也许最严重的罪犯是爱因斯坦，"
+    },
+    {
+      "source_event_index": 345,
+      "start_ms": 2028160,
+      "end_ms": 2031200,
+      "text": "谁对此感到非常困惑。他对我的事情感到特别困惑"
+    },
+    {
+      "source_event_index": 346,
+      "start_ms": 2031200,
+      "end_ms": 2034880,
+      "text": "将描述为事件视界，并且写了各种关于对象如何发生的错误内容"
+    },
+    {
+      "source_event_index": 347,
+      "start_ms": 2034880,
+      "end_ms": 2038400,
+      "text": "可能会从视界反弹。他只是完全困惑，但从"
+    },
+    {
+      "source_event_index": 348,
+      "start_ms": 2038400,
+      "end_ms": 2041760,
+      "text": "从现代的角度来看，理解正在发生的事情非常简单。"
+    },
+    {
+      "source_event_index": 349,
+      "start_ms": 2041760,
+      "end_ms": 2046240,
+      "text": "那么让我告诉你什么是黑洞。正如我们所建立的广义相对论，"
+    },
+    {
+      "source_event_index": 350,
+      "start_ms": 2046240,
+      "end_ms": 2050400,
+      "text": "是关于重力和有限光速之间的碰撞。"
+    },
+    {
+      "source_event_index": 351,
+      "start_ms": 2050400,
+      "end_ms": 2054960,
+      "text": "你能做的最简单的碰撞实际上早在 18 世纪就被人们注意到了。"
+    },
+    {
+      "source_event_index": 352,
+      "start_ms": 2054960,
+      "end_ms": 2060320,
+      "text": "我们有狭义相对论或类似的东西。他们只是问了一个非常简单的问题。"
+    },
+    {
+      "source_event_index": 353,
+      "start_ms": 2060320,
+      "end_ms": 2065760,
+      "text": "如果你想在地球上拍摄一些东西，你知道你需要用"
+    },
+    {
+      "source_event_index": 354,
+      "start_ms": 2065760,
+      "end_ms": 2070960,
+      "text": "某个速度，逃逸速度。如果你需要射击的话，你需要足够快"
+    },
+    {
+      "source_event_index": 355,
+      "start_ms": 2070960,
+      "end_ms": 2075120,
+      "text": "想要逃离地球很远，让你所在物体的动能"
+    },
+    {
+      "source_event_index": 356,
+      "start_ms": 2075120,
+      "end_ms": 2080560,
+      "text": "射击等于地球表面的引力结合能。"
+    },
+    {
+      "source_event_index": 357,
+      "start_ms": 2080560,
+      "end_ms": 2083360,
+      "text": "M 是地球的质量，r 是地球的表面。"
+    },
+    {
+      "source_event_index": 358,
+      "start_ms": 2083920,
+      "end_ms": 2088720,
+      "text": "对于地球来说，逃逸速度约为每秒 11 公里。"
+    },
+    {
+      "source_event_index": 359,
+      "start_ms": 2088720,
+      "end_ms": 2094640,
+      "text": "但对于较重或较紧凑的物体，逃逸速度较大。"
+    },
+    {
+      "source_event_index": 360,
+      "start_ms": 2094640,
+      "end_ms": 2098800,
+      "text": "例如，对于木星来说，它是每秒数百公里。"
+    },
+    {
+      "source_event_index": 361,
+      "start_ms": 2098800,
+      "end_ms": 2106560,
+      "text": "你可以想象那些非常重或非常紧凑的物体实际上无法逃脱"
+    },
+    {
+      "source_event_index": 362,
+      "start_ms": 2106560,
+      "end_ms": 2112480,
+      "text": "速度变得等于光速。于是人们不禁好奇接下来会发生什么。"
+    },
+    {
+      "source_event_index": 363,
+      "start_ms": 2112480,
+      "end_ms": 2116560,
+      "text": "他们没有解决这个问题的工具，但在 18 世纪他们想知道会发生什么。"
+    },
+    {
+      "source_event_index": 364,
+      "start_ms": 2116560,
+      "end_ms": 2121520,
+      "text": "你可以计算出速度的临界值是多少。"
+    },
+    {
+      "source_event_index": 365,
+      "start_ms": 2121520,
+      "end_ms": 2129120,
+      "text": "只要将速度设置为等于光速，就会给出 2GM 的临界半径——"
+    },
+    {
+      "source_event_index": 366,
+      "start_ms": 2129120,
+      "end_ms": 2137200,
+      "text": "物体的质量抵消——除以 c²。所以这有点暗示性。如果你有"
+    },
+    {
+      "source_event_index": 367,
+      "start_ms": 2137200,
+      "end_ms": 2143520,
+      "text": "一个如此紧凑且具有如此质量的物体，逃逸速度将由 c 给出，"
+    },
+    {
+      "source_event_index": 368,
+      "start_ms": 2143520,
+      "end_ms": 2144880,
+      "text": "光速。连接方式 你指出的"
+    },
+    {
+      "source_event_index": 369,
+      "start_ms": 2144880,
+      "end_ms": 2148400,
+      "text": "是牛顿的。在GR之前有人建立过这种联系吗？"
+    },
+    {
+      "source_event_index": 370,
+      "start_ms": 2148400,
+      "end_ms": 2152240,
+      "text": "绝对的。 18世纪末人们写下了这个公式。"
+    },
+    {
+      "source_event_index": 371,
+      "start_ms": 2152240,
+      "end_ms": 2158800,
+      "text": "我认为米歇尔和拉普拉斯都有这个。他们说如果你有一个物体"
+    },
+    {
+      "source_event_index": 372,
+      "start_ms": 2159360,
+      "end_ms": 2164480,
+      "text": "那是那么巨大和紧凑，光将无法逃逸。"
+    },
+    {
+      "source_event_index": 373,
+      "start_ms": 2164480,
+      "end_ms": 2168560,
+      "text": "按照现代标准，这个理由并不是特别引人注目，但事实证明"
+    },
+    {
+      "source_event_index": 374,
+      "start_ms": 2168560,
+      "end_ms": 2172800,
+      "text": "特别正确，疯狂地包括2这个因数，这是正确的"
+    },
+    {
+      "source_event_index": 375,
+      "start_ms": 2172800,
+      "end_ms": 2177200,
+      "text": "出于完全巧合的原因。但让我给你一个更有说服力的"
+    },
+    {
+      "source_event_index": 376,
+      "start_ms": 2177920,
+      "end_ms": 2182560,
+      "text": "认为在这个半径周围将会发生一些有趣的事情。"
+    },
+    {
+      "source_event_index": 377,
+      "start_ms": 2182560,
+      "end_ms": 2187520,
+      "text": "为此，让我们考虑尝试通过降低物体的能量来提取能量"
+    },
+    {
+      "source_event_index": 378,
+      "start_ms": 2187520,
+      "end_ms": 2192240,
+      "text": "物体向下朝向中心质量。让我们从地球开始吧。"
+    },
+    {
+      "source_event_index": 379,
+      "start_ms": 2192240,
+      "end_ms": 2199120,
+      "text": "在这里。我们将从距离地球很远的地方出发，带着一块质量为 m 的砖块。"
+    },
+    {
+      "source_event_index": 380,
+      "start_ms": 2199120,
+      "end_ms": 2203920,
+      "text": "我要把这块砖块连接到滑轮系统上，"
+    },
+    {
+      "source_event_index": 381,
+      "start_ms": 2203920,
+      "end_ms": 2209680,
+      "text": "，然后慢慢地将砖块降低到地球表面，并将其沉积为零"
+    },
+    {
+      "source_event_index": 382,
+      "start_ms": 2209680,
+      "end_ms": 2217040,
+      "text": "地球表面的速度。通过这样做，我可以从砖块中提取能量。"
+    },
+    {
+      "source_event_index": 383,
+      "start_ms": 2217040,
+      "end_ms": 2222160,
+      "text": "我从砖块中提取了能量，因为有一个力将砖块拉下来。"
+    },
+    {
+      "source_event_index": 384,
+      "start_ms": 2222160,
+      "end_ms": 2225840,
+      "text": "我在一定距离内施加的力量，会给你能量。"
+    },
+    {
+      "source_event_index": 385,
+      "start_ms": 2225840,
+      "end_ms": 2229040,
+      "text": "至少在牛顿物理学中，我们知道能量的公式是什么 从砖块中提取的"
+    },
+    {
+      "source_event_index": 386,
+      "start_ms": 2229040,
+      "end_ms": 2238240,
+      "text": "为：G乘以地球质量乘以砖块质量，"
+    },
+    {
+      "source_event_index": 387,
+      "start_ms": 2238240,
+      "end_ms": 2242720,
+      "text": "除以 r，距离半径。这是一种能量，而不是力，所以它是一个倒数"
+    },
+    {
+      "source_event_index": 388,
+      "start_ms": 2243680,
+      "end_ms": 2247600,
+      "text": "距离定律，不是平方反比距离定律。这就是你可以从中提取的能量"
+    },
+    {
+      "source_event_index": 389,
+      "start_ms": 2247600,
+      "end_ms": 2250560,
+      "text": "砖块，将其降低到距地球距离 r 处。"
+    },
+    {
+      "source_event_index": 390,
+      "start_ms": 2250560,
+      "end_ms": 2254160,
+      "text": "当然，如果你尝试将其降低到地球表面之外，这个公式就会改变。"
+    },
+    {
+      "source_event_index": 391,
+      "start_ms": 2254160,
+      "end_ms": 2258315,
+      "text": "但我们还是把它放在地球表面吧。这就是我提取的能量"
+    },
+    {
+      "source_event_index": 392,
+      "start_ms": 2258315,
+      "end_ms": 2264400,
+      "text": "来自砖块，距离这里很远。你可以问，剩下的占几分之几"
+    },
+    {
+      "source_event_index": 393,
+      "start_ms": 2264400,
+      "end_ms": 2268640,
+      "text": "我提取了砖块的质量能量吗？这是一个你自然会想到的问题"
+    },
+    {
+      "source_event_index": 394,
+      "start_ms": 2268640,
+      "end_ms": 2273280,
+      "text": "一旦你发明了狭义相对论并知道其余质量能量由 mc² 给出。"
+    },
+    {
+      "source_event_index": 395,
+      "start_ms": 2275760,
+      "end_ms": 2280720,
+      "text": "我们可以直接计算出，至少在这个近似值中， 您提取的"
+    },
+    {
+      "source_event_index": 396,
+      "start_ms": 2280720,
+      "end_ms": 2288320,
+      "text": "能量除以您开始时的剩余质量能量。"
+    },
+    {
+      "source_event_index": 397,
+      "start_ms": 2288320,
+      "end_ms": 2292240,
+      "text": "砖块的质量当然会抵消，但地球的质量不会。"
+    },
+    {
+      "source_event_index": 398,
+      "start_ms": 2292880,
+      "end_ms": 2299200,
+      "text": "这将由 G 乘以地球质量除以 c² 得出"
+    },
+    {
+      "source_event_index": 399,
+      "start_ms": 2299200,
+      "end_ms": 2305760,
+      "text": "乘以你停下来的距地球的半径，即地球的半径。"
+    },
+    {
+      "source_event_index": 400,
+      "start_ms": 2305760,
+      "end_ms": 2314080,
+      "text": "那么我从中得到了多少呢？如果你下降到地球表面"
+    },
+    {
+      "source_event_index": 401,
+      "start_ms": 2314080,
+      "end_ms": 2318560,
+      "text": "答案是你还没有真正从砖块中提取那么多。"
+    },
+    {
+      "source_event_index": 402,
+      "start_ms": 2318560,
+      "end_ms": 2326240,
+      "text": "您提取了砖块原始静止质量能量的 7x10⁻1⁰ 的一小部分，"
+    },
+    {
+      "source_event_index": 403,
+      "start_ms": 2326800,
+      "end_ms": 2334160,
+      "text": "在很远的地方做有用的工作。第一个观察：这很小。"
+    },
+    {
+      "source_event_index": 404,
+      "start_ms": 2334160,
+      "end_ms": 2337200,
+      "text": "换句话说，地球表面某物的引力结合能"
+    },
+    {
+      "source_event_index": 405,
+      "start_ms": 2337200,
+      "end_ms": 2343120,
+      "text": "在自然单位中相当小。这就是为什么我们没有真正注意到"
+    },
+    {
+      "source_event_index": 406,
+      "start_ms": 2343120,
+      "end_ms": 2349120,
+      "text": "地球表面的广义相对论直到我们做了非常敏感的实验，因为广义相对论"
+    },
+    {
+      "source_event_index": 407,
+      "start_ms": 2349120,
+      "end_ms": 2353680,
+      "text": "相对论在某种意义上是这个数的泰勒展开式，其中相对论效应，"
+    },
+    {
+      "source_event_index": 408,
+      "start_ms": 2353680,
+      "end_ms": 2357680,
+      "text": "其中第一个阶项只是牛顿项，然后下一个阶项将为您提供"
+    },
+    {
+      "source_event_index": 409,
+      "start_ms": 2357680,
+      "end_ms": 2362800,
+      "text": "对牛顿答案的广义相对论修正。第二个观察结果，这是"
+    },
+    {
+      "source_event_index": 410,
+      "start_ms": 2362800,
+      "end_ms": 2371120,
+      "text": "题外话，这纯粹是巧合，这里的数字非常接近"
+    },
+    {
+      "source_event_index": 411,
+      "start_ms": 2371120,
+      "end_ms": 2376880,
+      "text": "火箭燃料的化学结合能。所以如果你使用火箭燃料"
+    },
+    {
+      "source_event_index": 412,
+      "start_ms": 2376880,
+      "end_ms": 2383280,
+      "text": "就像氧氢混合物一样，将火箭结合在一起的化学能，这就是能量"
+    },
+    {
+      "source_event_index": 413,
+      "start_ms": 2383280,
+      "end_ms": 2392000,
+      "text": "当你燃烧它以使你的火箭发射时你要提取的，除以 mc²"
+    },
+    {
+      "source_event_index": 414,
+      "start_ms": 2392000,
+      "end_ms": 2399120,
+      "text": "要混合在一起的氧气和氢气由 1.5x10⁻1⁰ 给出。"
+    },
+    {
+      "source_event_index": 415,
+      "start_ms": 2401680,
+      "end_ms": 2404640,
+      "text": "第一个观察：这两个人虽然来了，但彼此很接近"
+    },
+    {
+      "source_event_index": 416,
+      "start_ms": 2404640,
+      "end_ms": 2408640,
+      "text": "来自完全不同的计算。这是一个重力计算"
+    },
+    {
+      "source_event_index": 417,
+      "start_ms": 2408640,
+      "end_ms": 2413760,
+      "text": "与地球有关。这是化学性质"
+    },
+    {
+      "source_event_index": 418,
+      "start_ms": 2413760,
+      "end_ms": 2419040,
+      "text": "氢和氧。这也是很小的。"
+    },
+    {
+      "source_event_index": 419,
+      "start_ms": 2419040,
+      "end_ms": 2423920,
+      "text": "它很小的原因是几乎所有的能量都在氢和氧中"
+    },
+    {
+      "source_event_index": 420,
+      "start_ms": 2423920,
+      "end_ms": 2428000,
+      "text": "不存储在这些物质在一起的化学结合能中。"
+    },
+    {
+      "source_event_index": 421,
+      "start_ms": 2428000,
+      "end_ms": 2434320,
+      "text": "其中绝大多数仅存储在质子和中子的剩余质量能量中，"
+    },
+    {
+      "source_event_index": 422,
+      "start_ms": 2434320,
+      "end_ms": 2440160,
+      "text": "化学燃烧根本不影响。第二大金额存储在"
+    },
+    {
+      "source_event_index": 423,
+      "start_ms": 2440160,
+      "end_ms": 2443120,
+      "text": "质子和中子彼此的核结合能，给定"
+    },
+    {
+      "source_event_index": 424,
+      "start_ms": 2443120,
+      "end_ms": 2447200,
+      "text": "由强力和弱力组成，这又是根本不发生化学反应的。"
+    },
+    {
+      "source_event_index": 425,
+      "start_ms": 2447200,
+      "end_ms": 2452080,
+      "text": "这是一个很小的数字，因为与化学键相比，化学键非常弱"
+    },
+    {
+      "source_event_index": 426,
+      "start_ms": 2452080,
+      "end_ms": 2457200,
+      "text": "我们正在考虑的事情还有很多。这两个小数字几乎完全一致"
+    },
+    {
+      "source_event_index": 427,
+      "start_ms": 2457200,
+      "end_ms": 2463120,
+      "text": "彼此相等，这就是为什么我们可以使用化学火箭到达太空，但是很难。"
+    },
+    {
+      "source_event_index": 428,
+      "start_ms": 2463120,
+      "end_ms": 2472400,
+      "text": "特别地，这个数字比这个数字大几倍，这意味着你的有效载荷 当尝试使用化学火箭进入太空时，"
+    },
+    {
+      "source_event_index": 429,
+      "start_ms": 2472400,
+      "end_ms": 2477120,
+      "text": "分数相当小，"
+    },
+    {
+      "source_event_index": 430,
+      "start_ms": 2477120,
+      "end_ms": 2485040,
+      "text": "因为你的大部分燃料无法进入轨道。你必须付出火箭般的代价"
+    },
+    {
+      "source_event_index": 431,
+      "start_ms": 2485040,
+      "end_ms": 2489600,
+      "text": "告诉你发射台上的大部分东西都将被烧毁"
+    },
+    {
+      "source_event_index": 432,
+      "start_ms": 2489600,
+      "end_ms": 2497520,
+      "text": "在进入太空之前，为了将火箭的一小部分送入太空。"
+    },
+    {
+      "source_event_index": 433,
+      "start_ms": 2497520,
+      "end_ms": 2501280,
+      "text": "换句话说，我们可以使用化学火箭以这样的方式到达太空： 如果我们试图从太阳表面做到这一点，"
+    },
+    {
+      "source_event_index": 434,
+      "start_ms": 2501280,
+      "end_ms": 2506800,
+      "text": "是完全不可能的，但这很难。"
+    },
+    {
+      "source_event_index": 435,
+      "start_ms": 2506800,
+      "end_ms": 2510320,
+      "text": "好吧，这就是地球上的分数。但这个公式告诉你，如果你"
+    },
+    {
+      "source_event_index": 436,
+      "start_ms": 2510320,
+      "end_ms": 2516960,
+      "text": "有一个更重或更紧凑的物体，其能量的分数"
+    },
+    {
+      "source_event_index": 437,
+      "start_ms": 2516960,
+      "end_ms": 2519760,
+      "text": "通过将物体降低到表面来提取将会更大。"
+    },
+    {
+      "source_event_index": 438,
+      "start_ms": 2519760,
+      "end_ms": 2525680,
+      "text": "例如，如果你不是将其降低到地球表面而是降低到太阳表面，"
+    },
+    {
+      "source_event_index": 439,
+      "start_ms": 2525680,
+      "end_ms": 2530080,
+      "text": "这个会更大。它会大一百万倍，"
+    },
+    {
+      "source_event_index": 440,
+      "start_ms": 2530080,
+      "end_ms": 2535200,
+      "text": "因为太阳的质量是地球的几百万倍，但它也更大，"
+    },
+    {
+      "source_event_index": 441,
+      "start_ms": 2535200,
+      "end_ms": 2543040,
+      "text": "这样就稍微带走了一点。你最终得到 2x10⁻⁶，著名的"
+    },
+    {
+      "source_event_index": 442,
+      "start_ms": 2543040,
+      "end_ms": 2548400,
+      "text": "太阳表面的红移。您可以从那里升级。"
+    },
+    {
+      "source_event_index": 443,
+      "start_ms": 2548400,
+      "end_ms": 2553760,
+      "text": "你可以想象将类似太阳的质量塞进类似地球的物体中"
+    },
+    {
+      "source_event_index": 444,
+      "start_ms": 2553760,
+      "end_ms": 2557120,
+      "text": "半径使这个公式变得更大。太阳质量，地球半径。这几乎是完全正确的"
+    },
+    {
+      "source_event_index": 445,
+      "start_ms": 2557120,
+      "end_ms": 2575120,
+      "text": "像天狼星 B 这样的白矮星会发生什么。而且这会再次变得更大。"
+    },
+    {
+      "source_event_index": 446,
+      "start_ms": 2575120,
+      "end_ms": 2580000,
+      "text": "通过将物体降低到表面来提取物体质量的较大部分。"
+    },
+    {
+      "source_event_index": 447,
+      "start_ms": 2580560,
+      "end_ms": 2584160,
+      "text": "但在我们做出决定之前，确实感觉必须付出一些东西"
+    },
+    {
+      "source_event_index": 448,
+      "start_ms": 2584160,
+      "end_ms": 2593200,
+      "text": "物体太大且太紧凑。特别是，如果你看看这个公式，你会发现什么 当 r 小于或等于 c² 上的 GM 时，"
+    },
+    {
+      "source_event_index": 449,
+      "start_ms": 2593200,
+      "end_ms": 2607360,
+      "text": "会发生吗？如果这个物体如此紧凑且如此重"
+    },
+    {
+      "source_event_index": 450,
+      "start_ms": 2607360,
+      "end_ms": 2614000,
+      "text": "它的半径小于物体的质量除以 c²，它看起来确实像你"
+    },
+    {
+      "source_event_index": 451,
+      "start_ms": 2614000,
+      "end_ms": 2617600,
+      "text": "可以得到百分之一百以上。分数将大于一。"
+    },
+    {
+      "source_event_index": 452,
+      "start_ms": 2617600,
+      "end_ms": 2621920,
+      "text": "通过降低砖块的重量，您可以获得百分之一百以上的重量"
+    },
+    {
+      "source_event_index": 453,
+      "start_ms": 2621920,
+      "end_ms": 2626640,
+      "text": "它下降到该物体的表面。这感觉不对。感觉上，其实"
+    },
+    {
+      "source_event_index": 454,
+      "start_ms": 2626640,
+      "end_ms": 2632240,
+      "text": "比这里发生的事情更错误，因为现在你已经把所有这些能量都带到了很远的地方。"
+    },
+    {
+      "source_event_index": 455,
+      "start_ms": 2632240,
+      "end_ms": 2635440,
+      "text": "你也许可以用它来制作一块全新的砖块。"
+    },
+    {
+      "source_event_index": 456,
+      "start_ms": 2635440,
+      "end_ms": 2640720,
+      "text": "您拥有的这一切比 mc² 还要多。把那个放下来，感觉就像我们已经"
+    },
+    {
+      "source_event_index": 457,
+      "start_ms": 2640720,
+      "end_ms": 2646000,
+      "text": "找到了一种方法，可以在以前没有能量的地方产生大量的能量。"
+    },
+    {
+      "source_event_index": 458,
+      "start_ms": 2648160,
+      "end_ms": 2652160,
+      "text": "这个论点很有暗示性，表明一定会出现问题"
+    },
+    {
+      "source_event_index": 459,
+      "start_ms": 2652160,
+      "end_ms": 2656080,
+      "text": "到达该半径的时间。事实上，当你进行计算时——这"
+    },
+    {
+      "source_event_index": 460,
+      "start_ms": 2656080,
+      "end_ms": 2660320,
+      "text": "是牛顿计算，所以它只是暗示性的——在完全广义相对论中，"
+    },
+    {
+      "source_event_index": 461,
+      "start_ms": 2660320,
+      "end_ms": 2663600,
+      "text": "确实出了问题。出错的地方是"
+    },
+    {
+      "source_event_index": 462,
+      "start_ms": 2663600,
+      "end_ms": 2668720,
+      "text": "你形成了一个黑洞。你可以想象两个"
+    },
+    {
+      "source_event_index": 463,
+      "start_ms": 2668720,
+      "end_ms": 2674080,
+      "text": "可以避免这个结论的方法。其中之一就是重力会变得非常大 当你接近一个巨大的物体时，"
+    },
+    {
+      "source_event_index": 464,
+      "start_ms": 2674080,
+      "end_ms": 2681120,
+      "text": "很弱，比牛顿定律预测的要弱。"
+    },
+    {
+      "source_event_index": 465,
+      "start_ms": 2681120,
+      "end_ms": 2688000,
+      "text": "如果你尝试在电磁学中重复同样的技巧，这就是拯救你的方法，"
+    },
+    {
+      "source_event_index": 466,
+      "start_ms": 2688000,
+      "end_ms": 2690960,
+      "text": "将一项费用降低到另一项费用并尝试提取 它们之间存在"
+    },
+    {
+      "source_event_index": 467,
+      "start_ms": 2690960,
+      "end_ms": 2696880,
+      "text": "静电能。发生的情况基本上是由于"
+    },
+    {
+      "source_event_index": 468,
+      "start_ms": 2696880,
+      "end_ms": 2701520,
+      "text": "量子效应，当一个离另一个太近时，它们就会开始模糊。"
+    },
+    {
+      "source_event_index": 469,
+      "start_ms": 2704960,
+      "end_ms": 2710240,
+      "text": "像逆 r 一样的能量会被软化，你无法提取更多的能量，因为它们"
+    },
+    {
+      "source_event_index": 470,
+      "start_ms": 2710240,
+      "end_ms": 2714400,
+      "text": "别再那么用力地互相吸引了。所以这是一种可能， 当您接近另一个物体时，"
+    },
+    {
+      "source_event_index": 471,
+      "start_ms": 2715520,
+      "end_ms": 2722000,
+      "text": "力会比牛顿定律预测的要弱。"
+    },
+    {
+      "source_event_index": 472,
+      "start_ms": 2722000,
+      "end_ms": 2725760,
+      "text": "这实际上与广义相对论解决这个问题的方式相反。"
+    },
+    {
+      "source_event_index": 473,
+      "start_ms": 2725760,
+      "end_ms": 2731200,
+      "text": "广义相对论通过力得到解决了这个悖论"
+    },
+    {
+      "source_event_index": 474,
+      "start_ms": 2731200,
+      "end_ms": 2738880,
+      "text": "强于牛顿定律的预测。特别是，当力量变得如此强大时"
+    },
+    {
+      "source_event_index": 475,
+      "start_ms": 2738880,
+      "end_ms": 2743120,
+      "text": "你试图进入这个半径内，事实上你不能慢慢地将砖块降低到"
+    },
+    {
+      "source_event_index": 476,
+      "start_ms": 2743120,
+      "end_ms": 2748880,
+      "text": "表面，因为你已经形成了一个黑洞。引力在某一点变为无穷大"
+    },
+    {
+      "source_event_index": 477,
+      "start_ms": 2748880,
+      "end_ms": 2754560,
+      "text": "有限距离——不是在 r=0 处，而是在 r 的某个有限值处——砖块简单地得到"
+    },
+    {
+      "source_event_index": 478,
+      "start_ms": 2754560,
+      "end_ms": 2758720,
+      "text": "从你手中夺走，你无法从中提取更多能量。"
+    },
+    {
+      "source_event_index": 479,
+      "start_ms": 2758720,
+      "end_ms": 2761920,
+      "text": "这就是广义相对论为这个悖论提供的解决方案。"
+    },
+    {
+      "source_event_index": 480,
+      "start_ms": 2761920,
+      "end_ms": 2765120,
+      "text": "特别是，你会发现你已经形成了一个黑洞。"
+    },
+    {
+      "source_event_index": 481,
+      "start_ms": 2765120,
+      "end_ms": 2768720,
+      "text": "Crusoe 让我们提前接触到了他们的无服务器微调产品，"
+    },
+    {
+      "source_event_index": 482,
+      "start_ms": 2768720,
+      "end_ms": 2772480,
+      "text": "可让您微调开放模型，而无需处理基础设施或配置。"
+    },
+    {
+      "source_event_index": 483,
+      "start_ms": 2772480,
+      "end_ms": 2776400,
+      "text": "我认为尝试使用成绩单微调问题生成器会很酷"
+    },
+    {
+      "source_event_index": 484,
+      "start_ms": 2776400,
+      "end_ms": 2780640,
+      "text": "我以前的采访。模型是否变得如此出色，如果他们有我所有的研究和准备，"
+    },
+    {
+      "source_event_index": 485,
+      "start_ms": 2780640,
+      "end_ms": 2785120,
+      "text": "他们可以查看到目前为止的对话，他们可以比我更好地提出下一个问题吗？"
+    },
+    {
+      "source_event_index": 486,
+      "start_ms": 2785120,
+      "end_ms": 2789120,
+      "text": "Crusoe 使实现变得非常简单。我刚刚上传了数据，"
+    },
+    {
+      "source_event_index": 487,
+      "start_ms": 2789120,
+      "end_ms": 2793360,
+      "text": "选择了一个开放模型，开始运行。我不必触及任何超参数。"
+    },
+    {
+      "source_event_index": 488,
+      "start_ms": 2793360,
+      "end_ms": 2798720,
+      "text": "Crusoe 的应用人工智能团队为每个模型维护着最佳配方，所以我只是将所有内容设置为自动。"
+    },
+    {
+      "source_event_index": 489,
+      "start_ms": 2798720,
+      "end_ms": 2802320,
+      "text": "运行完成后，我将其部署为自助端点，并为我的构建了一个评估"
+    },
+    {
+      "source_event_index": 490,
+      "start_ms": 2802320,
+      "end_ms": 2807760,
+      "text": "团队。我让他们从三个匿名选项中选择最好的下一个问题：一个是生成的"
+    },
+    {
+      "source_event_index": 491,
+      "start_ms": 2807760,
+      "end_ms": 2812880,
+      "text": "由基础模型生成，一个由微调模型生成，一个是我实际询问的。"
+    },
+    {
+      "source_event_index": 492,
+      "start_ms": 2812880,
+      "end_ms": 2816400,
+      "text": "幸运的是，我的团队大约三分之二的时间更喜欢我的实际问题。"
+    },
+    {
+      "source_event_index": 493,
+      "start_ms": 2816400,
+      "end_ms": 2821120,
+      "text": "希望这个基准不会饱和。在其余情况下，他们几乎总是更喜欢"
+    },
+    {
+      "source_event_index": 494,
+      "start_ms": 2821120,
+      "end_ms": 2824960,
+      "text": "在基础模型上进行微调的模型。无服务器推理现已上线，"
+    },
+    {
+      "source_event_index": 495,
+      "start_ms": 2824960,
+      "end_ms": 2831760,
+      "text": "和无服务器微调将于下周上线。如需了解更多信息，请访问 crusoe.ai/Dwarkesh。"
+    },
+    {
+      "source_event_index": 496,
+      "start_ms": 2832480,
+      "end_ms": 2834800,
+      "text": "到目前为止，我们在黑板上写下的所有内容都是牛顿力学的。"
+    },
+    {
+      "source_event_index": 497,
+      "start_ms": 2834800,
+      "end_ms": 2838320,
+      "text": "这只是牛顿力学，当你开始插入光速时，你就会开始感到困惑。"
+    },
+    {
+      "source_event_index": 498,
+      "start_ms": 2838320,
+      "end_ms": 2842320,
+      "text": "要真正回答我们提出的一些问题，您需要转到一般信息"
+    },
+    {
+      "source_event_index": 499,
+      "start_ms": 2842320,
+      "end_ms": 2848320,
+      "text": "相对论，正确统一光速和引力的理论。"
+    },
+    {
+      "source_event_index": 500,
+      "start_ms": 2849440,
+      "end_ms": 2852400,
+      "text": "这是史瓦西在黑洞的背景下首次完成的，他写下了"
+    },
+    {
+      "source_event_index": 501,
+      "start_ms": 2852400,
+      "end_ms": 2856960,
+      "text": "描述中心质量周围引力场的史瓦西度量，"
+    },
+    {
+      "source_event_index": 502,
+      "start_ms": 2856960,
+      "end_ms": 2861920,
+      "text": "可能包括黑洞周围。让我写下一些 出现的"
+    },
+    {
+      "source_event_index": 503,
+      "start_ms": 2861920,
+      "end_ms": 2864080,
+      "text": "公式。事实上，我想我会去"
+    },
+    {
+      "source_event_index": 504,
+      "start_ms": 2864080,
+      "end_ms": 2868080,
+      "text": "写下三个公式，史瓦西度规的三个直接结果。"
+    },
+    {
+      "source_event_index": 505,
+      "start_ms": 2868080,
+      "end_ms": 2872320,
+      "text": "他们将让我们直观地了解黑洞外部和内部的情况。"
+    },
+    {
+      "source_event_index": 506,
+      "start_ms": 2872880,
+      "end_ms": 2878560,
+      "text": "我要写下的第一个公式是引力场的公式"
+    },
+    {
+      "source_event_index": 507,
+      "start_ms": 2878560,
+      "end_ms": 2886800,
+      "text": "如果你试图在中心质量之外保持静止，你会遇到这种情况。"
+    },
+    {
+      "source_event_index": 508,
+      "start_ms": 2888320,
+      "end_ms": 2892560,
+      "text": "那么我们只讨论静态观察者。我可以讨论如何升级这些"
+    },
+    {
+      "source_event_index": 509,
+      "start_ms": 2892560,
+      "end_ms": 2896000,
+      "text": "适用于四处走动的观察者。但现在我只能想象"
+    },
+    {
+      "source_event_index": 510,
+      "start_ms": 2896000,
+      "end_ms": 2906000,
+      "text": "你正试图坐在距黑洞某个固定半径 r 处。"
+    },
+    {
+      "source_event_index": 511,
+      "start_ms": 2906640,
+      "end_ms": 2912640,
+      "text": "你没有掉下去的原因，也许是我用滑轮把你放了下来。"
+    },
+    {
+      "source_event_index": 512,
+      "start_ms": 2912640,
+      "end_ms": 2914560,
+      "text": "你只是坐在这里拿着滑轮。"
+    },
+    {
+      "source_event_index": 513,
+      "start_ms": 2914560,
+      "end_ms": 2918160,
+      "text": "问题是，你需要多大的力量才能让你不摔倒？"
+    },
+    {
+      "source_event_index": 514,
+      "start_ms": 2918160,
+      "end_ms": 2921680,
+      "text": "你下降的速度非常慢。你是静态的。什么是当地的"
+    },
+    {
+      "source_event_index": 515,
+      "start_ms": 2921680,
+      "end_ms": 2926640,
+      "text": "你感受到的重力吗？或者你可以想象你正坐着"
+    },
+    {
+      "source_event_index": 516,
+      "start_ms": 2926640,
+      "end_ms": 2929600,
+      "text": "这里，你静止的原因是你正在非常努力地发射火箭。"
+    },
+    {
+      "source_event_index": 517,
+      "start_ms": 2930880,
+      "end_ms": 2934400,
+      "text": "问题是，你局部感受到的加速度是多​​少？"
+    },
+    {
+      "source_event_index": 518,
+      "start_ms": 2934400,
+      "end_ms": 2944880,
+      "text": "所以无论通过什么机制，你都保持静止。您感受到的局部重力是多少？"
+    },
+    {
+      "source_event_index": 519,
+      "start_ms": 2944880,
+      "end_ms": 2948320,
+      "text": "在牛顿物理学中，你知道这个问题的答案是什么。"
+    },
+    {
+      "source_event_index": 520,
+      "start_ms": 2948320,
+      "end_ms": 2958320,
+      "text": "万有引力为GM/r²，这是牛顿著名的平方反比定律。"
+    },
+    {
+      "source_event_index": 521,
+      "start_ms": 2958320,
+      "end_ms": 2961520,
+      "text": "但这得到了广义相对论的修正。"
+    },
+    {
+      "source_event_index": 522,
+      "start_ms": 2961520,
+      "end_ms": 2977040,
+      "text": "修正值为 1/√(1-2GM/(c²r))，这与我们随处可见的 2GM/c² 相同。"
+    },
+    {
+      "source_event_index": 523,
+      "start_ms": 2978240,
+      "end_ms": 2984640,
+      "text": "这告诉你什么：首先，如果你距离黑洞很远，"
+    },
+    {
+      "source_event_index": 524,
+      "start_ms": 2984640,
+      "end_ms": 2992080,
+      "text": "这本质上就是其中之一。 r 非常大，你又可以得到牛顿力定律。"
+    },
+    {
+      "source_event_index": 525,
+      "start_ms": 2994080,
+      "end_ms": 3001280,
+      "text": "对于地球来说，这是非常小的。正如我们所讨论的，它下降了 10⁻10 倍，"
+    },
+    {
+      "source_event_index": 526,
+      "start_ms": 3004480,
+      "end_ms": 3008160,
+      "text": "然后求平方根。所以你并没有真正注意到它，"
+    },
+    {
+      "source_event_index": 527,
+      "start_ms": 3008160,
+      "end_ms": 3013680,
+      "text": "但你可以将其泰勒展开到大 r 处，你会发现你得到了修正。"
+    },
+    {
+      "source_event_index": 528,
+      "start_ms": 3013680,
+      "end_ms": 3017120,
+      "text": "你得到一个平方反比定律加上一个立方反比定律校正加上一个"
+    },
+    {
+      "source_event_index": 529,
+      "start_ms": 3017120,
+      "end_ms": 3022400,
+      "text": "逆第四定律修正。你发现重力很短"
+    },
+    {
+      "source_event_index": 530,
+      "start_ms": 3022400,
+      "end_ms": 3026400,
+      "text": "距离比牛顿物理学中的距离更强。"
+    },
+    {
+      "source_event_index": 531,
+      "start_ms": 3026400,
+      "end_ms": 3033280,
+      "text": "这是广义相对论修正，它使引力场更强。"
+    },
+    {
+      "source_event_index": 532,
+      "start_ms": 3033280,
+      "end_ms": 3037680,
+      "text": "你必须更加努力地加速才不会掉进黑洞。"
+    },
+    {
+      "source_event_index": 533,
+      "start_ms": 3037680,
+      "end_ms": 3044000,
+      "text": "特别是，一旦 r 等于 2GM/c²，即所谓的史瓦西半径，"
+    },
+    {
+      "source_event_index": 534,
+      "start_ms": 3044000,
+      "end_ms": 3048960,
+      "text": "你必须无限加速。需要适当的加速度"
+    },
+    {
+      "source_event_index": 535,
+      "start_ms": 3050080,
+      "end_ms": 3058320,
+      "text": "不动，r 趋于无穷大。事实上，如果我们现在将其转换为"
+    },
+    {
+      "source_event_index": 536,
+      "start_ms": 3058320,
+      "end_ms": 3063040,
+      "text": "地球到黑洞，这是一个非常重要的半径，2GM/c²。"
+    },
+    {
+      "source_event_index": 537,
+      "start_ms": 3067600,
+      "end_ms": 3076320,
+      "text": "它被称为事件视界。它被称为事件视界，因为"
+    },
+    {
+      "source_event_index": 538,
+      "start_ms": 3076320,
+      "end_ms": 3081520,
+      "text": "如果你想在事件视界之外保持静止，远离事件视界，"
+    },
+    {
+      "source_event_index": 539,
+      "start_ms": 3081520,
+      "end_ms": 3088160,
+      "text": "你只需要以一定的速度加速即可保持静止。"
+    },
+    {
+      "source_event_index": 540,
+      "start_ms": 3088160,
+      "end_ms": 3091680,
+      "text": "你需要有一个有限的引力场。但引力场，当你接近时"
+    },
+    {
+      "source_event_index": 541,
+      "start_ms": 3091680,
+      "end_ms": 3095600,
+      "text": "事件视界，变得无限大。因此，一旦您参加活动或活动结束后"
+    },
+    {
+      "source_event_index": 542,
+      "start_ms": 3095600,
+      "end_ms": 3099520,
+      "text": "地平线，不可能保持静止。你将不可避免地陷入黑暗 无论你多么努力地发射火箭，"
+    },
+    {
+      "source_event_index": 543,
+      "start_ms": 3099520,
+      "end_ms": 3104640,
+      "text": "洞。现在，这只是一个静态公式。"
+    },
+    {
+      "source_event_index": 544,
+      "start_ms": 3104640,
+      "end_ms": 3109440,
+      "text": "你可能会想，“好吧，不可能比这更接近保持静态，"
+    },
+    {
+      "source_event_index": 545,
+      "start_ms": 3109440,
+      "end_ms": 3114000,
+      "text": "但也许我可以通过非常非常快的轨道运行来避免掉入黑洞。"
+    },
+    {
+      "source_event_index": 546,
+      "start_ms": 3114000,
+      "end_ms": 3119040,
+      "text": "如果我的轨道速度非常快，我就会有巨大的离心力将我推离黑洞，"
+    },
+    {
+      "source_event_index": 547,
+      "start_ms": 3119040,
+      "end_ms": 3123840,
+      "text": "这样我就能留在黑洞外。”这其实行不通。它"
+    },
+    {
+      "source_event_index": 548,
+      "start_ms": 3123840,
+      "end_ms": 3128160,
+      "text": "之所以行不通，可以帮助我们理解引力吸引"
+    },
+    {
+      "source_event_index": 549,
+      "start_ms": 3128160,
+      "end_ms": 3131440,
+      "text": "在广义相对论中是如何发生的。当然，如果你想一想"
+    },
+    {
+      "source_event_index": 550,
+      "start_ms": 3131440,
+      "end_ms": 3134160,
+      "text": "国际空间站，为什么不向地球坠落？"
+    },
+    {
+      "source_event_index": 551,
+      "start_ms": 3134160,
+      "end_ms": 3139440,
+      "text": "事实正是它在绕轨道运行。它绕轨道运行的事实赋予它"
+    },
+    {
+      "source_event_index": 552,
+      "start_ms": 3139440,
+      "end_ms": 3143520,
+      "text": "使宇航员远离地球的离心力，恰好平衡"
+    },
+    {
+      "source_event_index": 553,
+      "start_ms": 3143520,
+      "end_ms": 3149200,
+      "text": "宇航员身上的引力场，这就是为什么他们感觉失重。"
+    },
+    {
+      "source_event_index": 554,
+      "start_ms": 3149200,
+      "end_ms": 3156000,
+      "text": "所以，如果你距离黑洞很远，轨道角动量可以帮助你远离黑洞 来自黑洞的"
+    },
+    {
+      "source_event_index": 555,
+      "start_ms": 3156000,
+      "end_ms": 3161600,
+      "text": "，阻止你掉进去。有这样一种科幻概念："
+    },
+    {
+      "source_event_index": 556,
+      "start_ms": 3161600,
+      "end_ms": 3166560,
+      "text": "黑洞会吞噬周围的一切。不正确。你完全可以绕轨道运行"
+    },
+    {
+      "source_event_index": 557,
+      "start_ms": 3166560,
+      "end_ms": 3171680,
+      "text": "一个黑洞，如果你距离它很远，就像你围绕任何中心质量旋转一样。"
+    },
+    {
+      "source_event_index": 558,
+      "start_ms": 3171680,
+      "end_ms": 3174240,
+      "text": "你并非不可避免地掉入黑洞。"
+    },
+    {
+      "source_event_index": 559,
+      "start_ms": 3174240,
+      "end_ms": 3178160,
+      "text": "你可以很好地绕轨道运行。但轨道运行不再有帮助"
+    },
+    {
+      "source_event_index": 560,
+      "start_ms": 3178160,
+      "end_ms": 3182800,
+      "text": "当你太靠近黑洞时。我们说事件视界是2GM/c²。"
+    },
+    {
+      "source_event_index": 561,
+      "start_ms": 3183920,
+      "end_ms": 3189760,
+      "text": "事实上，一旦你已经在 3GM/c² 之内，轨道运行就会适得其反"
+    },
+    {
+      "source_event_index": 562,
+      "start_ms": 3189760,
+      "end_ms": 3195280,
+      "text": "如果你想远离黑洞。那是因为绕轨道运行有两种效应。"
+    },
+    {
+      "source_event_index": 563,
+      "start_ms": 3195280,
+      "end_ms": 3197680,
+      "text": "一种效果可以帮助你远离黑洞。"
+    },
+    {
+      "source_event_index": 564,
+      "start_ms": 3197680,
+      "end_ms": 3201600,
+      "text": "这就是离心效应。轨道角动量将你推离"
+    },
+    {
+      "source_event_index": 565,
+      "start_ms": 3201600,
+      "end_ms": 3208240,
+      "text": "由于离心效应而形成的黑洞。写下版本并不难"
+    },
+    {
+      "source_event_index": 566,
+      "start_ms": 3208240,
+      "end_ms": 3211360,
+      "text": "这个公式适用于有角动量的情况，你会看到"
+    },
+    {
+      "source_event_index": 567,
+      "start_ms": 3211360,
+      "end_ms": 3214960,
+      "text": "将你推离黑洞。但还有另一个影响"
+    },
+    {
+      "source_event_index": 568,
+      "start_ms": 3214960,
+      "end_ms": 3219440,
+      "text": "你走向黑洞，这就是广义相对论中的事实，"
+    },
+    {
+      "source_event_index": 569,
+      "start_ms": 3219440,
+      "end_ms": 3227840,
+      "text": "所有能量都会产生引力，而不仅仅是静止质量能量。动能也有引力。所以效果是"
+    },
+    {
+      "source_event_index": 570,
+      "start_ms": 3227840,
+      "end_ms": 3235360,
+      "text": "轨道运行是指你从两者之间的耦合中获得了向黑洞的额外下拉力"
+    },
+    {
+      "source_event_index": 571,
+      "start_ms": 3238240,
+      "end_ms": 3244160,
+      "text": "黑洞质量和轨道角能量之间的引力。"
+    },
+    {
+      "source_event_index": 572,
+      "start_ms": 3244720,
+      "end_ms": 3249360,
+      "text": "当你远离黑洞时，离心力是更重要的术语。"
+    },
+    {
+      "source_event_index": 573,
+      "start_ms": 3249360,
+      "end_ms": 3254080,
+      "text": "当你靠近黑洞时，耦合是更重要的术语。"
+    },
+    {
+      "source_event_index": 574,
+      "start_ms": 3254080,
+      "end_ms": 3261680,
+      "text": "事实上，一旦达到 3GM 以内，轨道角动量就不再有帮助，而是开始产生伤害。"
+    },
+    {
+      "source_event_index": 575,
+      "start_ms": 3261680,
+      "end_ms": 3266240,
+      "text": "没有任何弹道轨道在 3GM 范围内并且能够再次逃脱。"
+    },
+    {
+      "source_event_index": 576,
+      "start_ms": 3266240,
+      "end_ms": 3271680,
+      "text": "这就是第一个公式。它告诉你引力场是什么"
+    },
+    {
+      "source_event_index": 577,
+      "start_ms": 3271680,
+      "end_ms": 3277040,
+      "text": "距黑洞距离r。特别是，它向您展示了一旦"
+    },
+    {
+      "source_event_index": 578,
+      "start_ms": 3277040,
+      "end_ms": 3280880,
+      "text": "达到这个临界半径，引力场变得无穷大。"
+    },
+    {
+      "source_event_index": 579,
+      "start_ms": 3282000,
+      "end_ms": 3285680,
+      "text": "如果你穿过它，你必须前往黑洞的中心，"
+    },
+    {
+      "source_event_index": 580,
+      "start_ms": 3285680,
+      "end_ms": 3289040,
+      "text": "无论你多么努力地发射火箭。这就是所谓的事件视界。"
+    },
+    {
+      "source_event_index": 581,
+      "start_ms": 3289040,
+      "end_ms": 3293440,
+      "text": "在事件视界，你还没有死。然而，如果你"
+    },
+    {
+      "source_event_index": 582,
+      "start_ms": 3293440,
+      "end_ms": 3295760,
+      "text": "跨越视界。你将永远无法逃脱"
+    },
+    {
+      "source_event_index": 583,
+      "start_ms": 3295760,
+      "end_ms": 3298720,
+      "text": "如果你将自己转变为光并尝试射杀自己，则不会，如果"
+    },
+    {
+      "source_event_index": 584,
+      "start_ms": 3298720,
+      "end_ms": 3304160,
+      "text": "你无限用力地发射你的火箭。当然另一个地方是r=0，"
+    },
+    {
+      "source_event_index": 585,
+      "start_ms": 3304880,
+      "end_ms": 3308480,
+      "text": "这是你真正死亡的地方。这就是奇点，我们将"
+    },
+    {
+      "source_event_index": 586,
+      "start_ms": 3308480,
+      "end_ms": 3312720,
+      "text": "稍后描述一下。在牛顿物理学中，引力"
+    },
+    {
+      "source_event_index": 587,
+      "start_ms": 3312720,
+      "end_ms": 3316240,
+      "text": "力只会在那里变得无限。在广义相对论中，它变成 如果你试图抵抗重力，"
+    },
+    {
+      "source_event_index": 588,
+      "start_ms": 3316240,
+      "end_ms": 3321200,
+      "text": "已经在事件视界中无穷大了。"
+    },
+    {
+      "source_event_index": 589,
+      "start_ms": 3321200,
+      "end_ms": 3325360,
+      "text": "这是第一个公式。现在我们来做第二个公式。"
+    },
+    {
+      "source_event_index": 590,
+      "start_ms": 3327920,
+      "end_ms": 3332880,
+      "text": "我要写下的所有三个公式都彼此密切相关。"
+    },
+    {
+      "source_event_index": 591,
+      "start_ms": 3332880,
+      "end_ms": 3334920,
+      "text": "他们真的将是彼此的重新表述。"
+    },
+    {
+      "source_event_index": 592,
+      "start_ms": 3334920,
+      "end_ms": 3339600,
+      "text": "第二个公式询问引力时间膨胀。"
+    },
+    {
+      "source_event_index": 593,
+      "start_ms": 3339600,
+      "end_ms": 3345280,
+      "text": "让我们再次想象你坐在这里，Dwarkesh坐在这里一定半径"
+    },
+    {
+      "source_event_index": 594,
+      "start_ms": 3345280,
+      "end_ms": 3352080,
+      "text": "r 远离黑洞。我坐在这儿，"
+    },
+    {
+      "source_event_index": 595,
+      "start_ms": 3352080,
+      "end_ms": 3356240,
+      "text": "在无限远的地方，只是看着你。我们相对于彼此是静态的。"
+    },
+    {
+      "source_event_index": 596,
+      "start_ms": 3356240,
+      "end_ms": 3361280,
+      "text": "没有相对运动。你只是被滑轮系统悬挂在这里。"
+    },
+    {
+      "source_event_index": 597,
+      "start_ms": 3361280,
+      "end_ms": 3365600,
+      "text": "问题是，你的手表相对于我的走得有多快？"
+    },
+    {
+      "source_event_index": 598,
+      "start_ms": 3365600,
+      "end_ms": 3370320,
+      "text": "当然，就您而言，您的手表每秒走一秒。"
+    },
+    {
+      "source_event_index": 599,
+      "start_ms": 3370320,
+      "end_ms": 3372800,
+      "text": "就我而言，我的手表每秒走一秒。"
+    },
+    {
+      "source_event_index": 600,
+      "start_ms": 3372800,
+      "end_ms": 3378560,
+      "text": "但如果我看着你，我发现你的手表走得很慢。"
+    },
+    {
+      "source_event_index": 601,
+      "start_ms": 3378560,
+      "end_ms": 3382080,
+      "text": "如果你看着我，你会发现我的手表跑得很快。"
+    },
+    {
+      "source_event_index": 602,
+      "start_ms": 3382080,
+      "end_ms": 3389817,
+      "text": "第二个公式进行了定量。你的手表慢了多少——哪个"
+    },
+    {
+      "source_event_index": 603,
+      "start_ms": 3389817,
+      "end_ms": 3395360,
+      "text": "比我的更接近黑洞——跑？它表示时间间隔，通过测量"
+    },
+    {
+      "source_event_index": 604,
+      "start_ms": 3395360,
+      "end_ms": 3407120,
+      "text": "你的手表，是由我的手表在很远的地方测量的时间间隔给出的，"
+    },
+    {
+      "source_event_index": 605,
+      "start_ms": 3407120,
+      "end_ms": 3411280,
+      "text": "乘以随处可见的完全相同的平方根因子："
+    },
+    {
+      "source_event_index": 606,
+      "start_ms": 3411280,
+      "end_ms": 3422320,
+      "text": "1-2GM/(rc²) 的平方根。这里这个因素小于一。"
+    },
+    {
+      "source_event_index": 607,
+      "start_ms": 3422320,
+      "end_ms": 3427200,
+      "text": "所以如果我认为已经过去了一秒，那么你认为过去的时间还不到一秒。"
+    },
+    {
+      "source_event_index": 608,
+      "start_ms": 3427200,
+      "end_ms": 3433440,
+      "text": "换句话说，如果我慢慢地将你降低到黑洞——你会停留一段有限的距离"
+    },
+    {
+      "source_event_index": 609,
+      "start_ms": 3433440,
+      "end_ms": 3440000,
+      "text": "远离黑洞对你来说感觉就像一年，然后我把你举起很长一段时间"
+    },
+    {
+      "source_event_index": 610,
+      "start_ms": 3440000,
+      "end_ms": 3445760,
+      "text": "远离黑洞——你将回到一个比你老得多的世界。"
+    },
+    {
+      "source_event_index": 611,
+      "start_ms": 3447200,
+      "end_ms": 3454400,
+      "text": "这个公式使这个结果更加精确。我观察到你的手表走得很慢。"
+    },
+    {
+      "source_event_index": 612,
+      "start_ms": 3454400,
+      "end_ms": 3462640,
+      "text": "你观察我的手表跑得很快。这里的时间过得比上面慢。"
+    },
+    {
+      "source_event_index": 613,
+      "start_ms": 3462640,
+      "end_ms": 3466720,
+      "text": "这是迄今为止已通过实验得到非常好的观察的事实。"
+    },
+    {
+      "source_event_index": 614,
+      "start_ms": 3466720,
+      "end_ms": 3470880,
+      "text": "20世纪50年代，在哈佛物理系，他们放了两个原子钟"
+    },
+    {
+      "source_event_index": 615,
+      "start_ms": 3470880,
+      "end_ms": 3477440,
+      "text": "在建筑物的两个不同高度，并注意到较高的那个是"
+    },
+    {
+      "source_event_index": 616,
+      "start_ms": 3477440,
+      "end_ms": 3483920,
+      "text": "比较低的跑得快。这个效果现在已经相当显着了"
+    },
+    {
+      "source_event_index": 617,
+      "start_ms": 3483920,
+      "end_ms": 3488320,
+      "text": "在 GPS 等精度范围内。它只需要减去该影响，否则"
+    },
+    {
+      "source_event_index": 618,
+      "start_ms": 3488320,
+      "end_ms": 3493280,
+      "text": "一切都会漂得到处都是。位于地球上的 GPS 时钟 与在轨道上发送信号的原子钟相比，"
+    },
+    {
+      "source_event_index": 619,
+      "start_ms": 3493280,
+      "end_ms": 3502080,
+      "text": "表面运行缓慢。"
+    },
+    {
+      "source_event_index": 620,
+      "start_ms": 3502080,
+      "end_ms": 3509600,
+      "text": "您必须考虑到该差异并将其减去才能获得准确的读数。"
+    },
+    {
+      "source_event_index": 621,
+      "start_ms": 3509600,
+      "end_ms": 3514160,
+      "text": "这被称为引力时间膨胀。请注意，它与相对论完全不同"
+    },
+    {
+      "source_event_index": 622,
+      "start_ms": 3514160,
+      "end_ms": 3517440,
+      "text": "你在狭义相对论中看到的时间膨胀，这是由两个引起的"
+    },
+    {
+      "source_event_index": 623,
+      "start_ms": 3517440,
+      "end_ms": 3521840,
+      "text": "物体彼此相对运动。在这里，我们彼此之间没有相对运动。"
+    },
+    {
+      "source_event_index": 624,
+      "start_ms": 3521840,
+      "end_ms": 3525440,
+      "text": "我们都是静态的。我们已经确定了。这是因为我们在不同的地方造成的"
+    },
+    {
+      "source_event_index": 625,
+      "start_ms": 3525440,
+      "end_ms": 3529360,
+      "text": "在引力势上，你在引力势上比我更深。"
+    },
+    {
+      "source_event_index": 626,
+      "start_ms": 3529360,
+      "end_ms": 3533920,
+      "text": "所以这是两个不同的时间膨胀源，并且它们是叠加的。"
+    },
+    {
+      "source_event_index": 627,
+      "start_ms": 3534560,
+      "end_ms": 3538000,
+      "text": "假设你不是静止不动，而是在轨道上。"
+    },
+    {
+      "source_event_index": 628,
+      "start_ms": 3538000,
+      "end_ms": 3541360,
+      "text": "你距离足够远，可以绕黑洞运行。"
+    },
+    {
+      "source_event_index": 629,
+      "start_ms": 3542960,
+      "end_ms": 3546960,
+      "text": "我看你的动作有多慢？现在有两个贡献，"
+    },
+    {
+      "source_event_index": 630,
+      "start_ms": 3546960,
+      "end_ms": 3551840,
+      "text": "相对于我来说，这两者都让你看起来很慢。其中一项贡献是引力时间"
+    },
+    {
+      "source_event_index": 631,
+      "start_ms": 3551840,
+      "end_ms": 3557360,
+      "text": "膨胀由该公式给出。第二个贡献是好的"
+    },
+    {
+      "source_event_index": 632,
+      "start_ms": 3557360,
+      "end_ms": 3562800,
+      "text": "旧的狭义相对论修正，移动的观察者看起来像是在移动"
+    },
+    {
+      "source_event_index": 633,
+      "start_ms": 3562800,
+      "end_ms": 3567040,
+      "text": "慢，我们将同时获得这两种效果。所以你看起来会走得更慢"
+    },
+    {
+      "source_event_index": 634,
+      "start_ms": 3567040,
+      "end_ms": 3573600,
+      "text": "比你绕着黑洞绕行时所做的还要多。"
+    },
+    {
+      "source_event_index": 635,
+      "start_ms": 3574160,
+      "end_ms": 3578800,
+      "text": "这与狭义相对论之间似乎不同的一件事是不存在对称性。"
+    },
+    {
+      "source_event_index": 636,
+      "start_ms": 3578800,
+      "end_ms": 3583440,
+      "text": "在狭义相对论中，两个观察者都会感觉对方比自己衰老得慢，"
+    },
+    {
+      "source_event_index": 637,
+      "start_ms": 3583440,
+      "end_ms": 3587360,
+      "text": "因为它们都以相同的速率相对移动，"
+    },
+    {
+      "source_event_index": 638,
+      "start_ms": 3587360,
+      "end_ms": 3593920,
+      "text": "并且不存在真正的惯性路径。但在这里，它确实看起来像"
+    },
+    {
+      "source_event_index": 639,
+      "start_ms": 3593920,
+      "end_ms": 3603040,
+      "text": "在全球意义上，一个惯性系比另一个更相关。"
+    },
+    {
+      "source_event_index": 640,
+      "start_ms": 3603040,
+      "end_ms": 3606800,
+      "text": "你说得对。在狭义相对论中，如果你和我彼此相对运动，"
+    },
+    {
+      "source_event_index": 641,
+      "start_ms": 3606800,
+      "end_ms": 3610000,
+      "text": "我觉得你的表走得慢，你觉得我的表走得慢。"
+    },
+    {
+      "source_event_index": 642,
+      "start_ms": 3610000,
+      "end_ms": 3613760,
+      "text": "我们谁都不比谁更正确。相对论原理告诉你"
+    },
+    {
+      "source_event_index": 643,
+      "start_ms": 3613760,
+      "end_ms": 3618320,
+      "text": "我们的观点同样有效。在这里，我们的观点并不相同"
+    },
+    {
+      "source_event_index": 644,
+      "start_ms": 3618320,
+      "end_ms": 3622080,
+      "text": "有效，因为不存在狭义相对论中的对称性。"
+    },
+    {
+      "source_event_index": 645,
+      "start_ms": 3622080,
+      "end_ms": 3624640,
+      "text": "特别是，对称性被黑洞打破了。"
+    },
+    {
+      "source_event_index": 646,
+      "start_ms": 3625200,
+      "end_ms": 3629120,
+      "text": "我们都同意你在引力井中比我更深，"
+    },
+    {
+      "source_event_index": 647,
+      "start_ms": 3630720,
+      "end_ms": 3638080,
+      "text": "而且你的时钟走得比我的慢。你没有看到我的时钟往复走慢。"
+    },
+    {
+      "source_event_index": 648,
+      "start_ms": 3638080,
+      "end_ms": 3642480,
+      "text": "事实上，你看到我加速了。如果你观察我，你会发现"
+    },
+    {
+      "source_event_index": 649,
+      "start_ms": 3642480,
+      "end_ms": 3647120,
+      "text": "我的生活快进着。所以这是第二个公式。"
+    },
+    {
+      "source_event_index": 650,
+      "start_ms": 3647120,
+      "end_ms": 3651280,
+      "text": "它表示我们的手表相对于彼此移动的速度有多快。"
+    },
+    {
+      "source_event_index": 651,
+      "start_ms": 3651280,
+      "end_ms": 3655920,
+      "text": "现在让我们想象一下您带着慢速移动的手表在这里，"
+    },
+    {
+      "source_event_index": 652,
+      "start_ms": 3655920,
+      "end_ms": 3662080,
+      "text": "你向我发出光芒。假设光具有特定的频率。 例如，"
+    },
+    {
+      "source_event_index": 653,
+      "start_ms": 3662080,
+      "end_ms": 3671280,
+      "text": "你是通过钠转变来实现的。当光向上传播时，到了"
+    },
+    {
+      "source_event_index": 654,
+      "start_ms": 3671280,
+      "end_ms": 3676640,
+      "text": "它到达了我，我会认为它的频率比你想象的要低"
+    },
+    {
+      "source_event_index": 655,
+      "start_ms": 3676640,
+      "end_ms": 3679760,
+      "text": "是你发送的时候。为什么？因为频率是"
+    },
+    {
+      "source_event_index": 656,
+      "start_ms": 3679760,
+      "end_ms": 3686400,
+      "text": "关于它振荡的速度。我只是觉得你的一切"
+    },
+    {
+      "source_event_index": 657,
+      "start_ms": 3686400,
+      "end_ms": 3690880,
+      "text": "do 相对于我来说进展缓慢。你认为它振荡得更慢。"
+    },
+    {
+      "source_event_index": 658,
+      "start_ms": 3690880,
+      "end_ms": 3695920,
+      "text": "它的频率较低，这意味着它会向频谱的红色部分移动。"
+    },
+    {
+      "source_event_index": 659,
+      "start_ms": 3695920,
+      "end_ms": 3699360,
+      "text": "我们使用的词是红移，引力红移。"
+    },
+    {
+      "source_event_index": 660,
+      "start_ms": 3699360,
+      "end_ms": 3703920,
+      "text": "它发生红移：频率较低，因此能量较少。"
+    },
+    {
+      "source_event_index": 661,
+      "start_ms": 3703920,
+      "end_ms": 3708960,
+      "text": "如果向上发送一个光子，则该光子的能量由频率给出。"
+    },
+    {
+      "source_event_index": 662,
+      "start_ms": 3708960,
+      "end_ms": 3716160,
+      "text": "到达我这里时，它会比它离开你时有更多的红移和更低的能量。"
+    },
+    {
+      "source_event_index": 663,
+      "start_ms": 3716160,
+      "end_ms": 3724400,
+      "text": "相反，如果我在这里，我向你发送一个由钠跃迁产生的光子，"
+    },
+    {
+      "source_event_index": 664,
+      "start_ms": 3724400,
+      "end_ms": 3729680,
+      "text": "正如你所观察到的，当光到达你时——你看到我在移动"
+    },
+    {
+      "source_event_index": 665,
+      "start_ms": 3729680,
+      "end_ms": 3736160,
+      "text": "快进——你认为它的频率比我想象的要高。"
+    },
+    {
+      "source_event_index": 666,
+      "start_ms": 3736160,
+      "end_ms": 3741680,
+      "text": "它向光谱的蓝色部分移动。我们说它是蓝移的。"
+    },
+    {
+      "source_event_index": 667,
+      "start_ms": 3743600,
+      "end_ms": 3753920,
+      "text": "所以这个思想实验告诉你，知道不同时间流逝的汇率"
+    },
+    {
+      "source_event_index": 668,
+      "start_ms": 3753920,
+      "end_ms": 3761920,
+      "text": "海拔高度直接为您提供不同海拔高度能量值的汇率。"
+    },
+    {
+      "source_event_index": 669,
+      "start_ms": 3761920,
+      "end_ms": 3766880,
+      "text": "如果你试图给我发送一些能量，当它到达我手中时，它对我来说比你更有价值"
+    },
+    {
+      "source_event_index": 670,
+      "start_ms": 3766880,
+      "end_ms": 3771920,
+      "text": "认为它对你来说是值得的。减少的金额是"
+    },
+    {
+      "source_event_index": 671,
+      "start_ms": 3771920,
+      "end_ms": 3777040,
+      "text": "由控制其他一切的相同平方根公式精确给出。"
+    },
+    {
+      "source_event_index": 672,
+      "start_ms": 3777040,
+      "end_ms": 3783920,
+      "text": "这样我们就得到了第三个方程。第三个公式说：假设你，"
+    },
+    {
+      "source_event_index": 673,
+      "start_ms": 3783920,
+      "end_ms": 3790080,
+      "text": "Dwarkesh，有一个质量为 mc² 的物体，与你坐在下面这个固定半径处。"
+    },
+    {
+      "source_event_index": 674,
+      "start_ms": 3790080,
+      "end_ms": 3796400,
+      "text": "在距离黑洞很远的地方测量到的能量对我来说值多少？"
+    },
+    {
+      "source_event_index": 675,
+      "start_ms": 3798080,
+      "end_ms": 3802720,
+      "text": "当然，如果我有的话，那就值mc²的能量了。"
+    },
+    {
+      "source_event_index": 676,
+      "start_ms": 3802720,
+      "end_ms": 3805280,
+      "text": "但我没带。不幸的是，它坐在一起"
+    },
+    {
+      "source_event_index": 677,
+      "start_ms": 3805280,
+      "end_ms": 3810240,
+      "text": "你深陷引力势之中。所以对我来说它的价值还不到mc²。"
+    },
+    {
+      "source_event_index": 678,
+      "start_ms": 3810240,
+      "end_ms": 3814480,
+      "text": "事实上，这只是完全相同的公式。它对我来说有价值的能量， 当它到达我手中时，"
+    },
+    {
+      "source_event_index": 679,
+      "start_ms": 3814480,
+      "end_ms": 3821520,
+      "text": "是 GM/(rc²)。有几种方法可以看到这一点。"
+    },
+    {
+      "source_event_index": 680,
+      "start_ms": 3821520,
+      "end_ms": 3827360,
+      "text": "一种是我们刚才说的方式。假设你拿起质量为 m 的物体。"
+    },
+    {
+      "source_event_index": 681,
+      "start_ms": 3827920,
+      "end_ms": 3833760,
+      "text": "这只是阿伏伽德罗碳原子数的一半"
+    },
+    {
+      "source_event_index": 682,
+      "start_ms": 3833760,
+      "end_ms": 3842320,
+      "text": "阿伏加德罗反碳原子数。你可以给我发送能量的一种方法是"
+    },
+    {
+      "source_event_index": 683,
+      "start_ms": 3842320,
+      "end_ms": 3846800,
+      "text": "将它们撞在一起，剧烈的爆炸。你将所有能量转化为光"
+    },
+    {
+      "source_event_index": 684,
+      "start_ms": 3846800,
+      "end_ms": 3852160,
+      "text": "你试图将光能量传送给我。但你发现的，正是因为这样"
+    },
+    {
+      "source_event_index": 685,
+      "start_ms": 3852160,
+      "end_ms": 3857440,
+      "text": "引力时间膨胀，当它到达我这里时，我已经没有 mc² 值得了。"
+    },
+    {
+      "source_event_index": 686,
+      "start_ms": 3857440,
+      "end_ms": 3860720,
+      "text": "根据我们刚才给出的论点，我得到的结果是，小于 mc² 的价值。"
+    },
+    {
+      "source_event_index": 687,
+      "start_ms": 3860720,
+      "end_ms": 3868640,
+      "text": "我要取出 1-GM/(rc²)。这里的质量遭受红移，因为它"
+    },
+    {
+      "source_event_index": 688,
+      "start_ms": 3868640,
+      "end_ms": 3873120,
+      "text": "上升，当它达到无穷大时，其能量比开始时要少。"
+    },
+    {
+      "source_event_index": 689,
+      "start_ms": 3873120,
+      "end_ms": 3877840,
+      "text": "你可以通过另一种方式将能量传递给我，而不是通过将其以光的形式发射出来，"
+    },
+    {
+      "source_event_index": 690,
+      "start_ms": 3877840,
+      "end_ms": 3886640,
+      "text": "但只需拿起你的质量物体，将其连接到滑轮上，然后让我将物体拉出来。"
+    },
+    {
+      "source_event_index": 691,
+      "start_ms": 3886640,
+      "end_ms": 3890960,
+      "text": "当我把它拉出来时，我现在已经把 mc² 坐在这里了，"
+    },
+    {
+      "source_event_index": 692,
+      "start_ms": 3890960,
+      "end_ms": 3895680,
+      "text": "距离黑洞很远。所以我确实有足够的能量。"
+    },
+    {
+      "source_event_index": 693,
+      "start_ms": 3895680,
+      "end_ms": 3900160,
+      "text": "但要得到它，我需要付费。我需要付出的正是"
+    },
+    {
+      "source_event_index": 694,
+      "start_ms": 3900160,
+      "end_ms": 3905040,
+      "text": "将其从引力势中拉出来。所以从这个角度来看，"
+    },
+    {
+      "source_event_index": 695,
+      "start_ms": 3905040,
+      "end_ms": 3911040,
+      "text": "这就是为什么我剩下的能量少于 mc²，因为我必须付费才能将其拉出"
+    },
+    {
+      "source_event_index": 696,
+      "start_ms": 3911040,
+      "end_ms": 3916400,
+      "text": "获得该质量的潜力。所以这个公式告诉你：如果我有一块砖头"
+    },
+    {
+      "source_event_index": 697,
+      "start_ms": 3916400,
+      "end_ms": 3924240,
+      "text": "质量，mc²，位于距黑洞一定半径 r 处，我可以从中提取多少能量"
+    },
+    {
+      "source_event_index": 698,
+      "start_ms": 3924240,
+      "end_ms": 3932240,
+      "text": "如果我离黑洞很远的话，那块砖头呢？如果我们知道这个公式，那么我们实际上可以"
+    },
+    {
+      "source_event_index": 699,
+      "start_ms": 3932240,
+      "end_ms": 3938160,
+      "text": "精确计算这个公式：我从"
+    },
+    {
+      "source_event_index": 700,
+      "start_ms": 3938160,
+      "end_ms": 3943600,
+      "text": "砖块降低到半径 r？嗯，我们知道这个问题的答案。"
+    },
+    {
+      "source_event_index": 701,
+      "start_ms": 3943600,
+      "end_ms": 3950000,
+      "text": "它开始时的能量是mc²。它现在拥有的能量就是这样。"
+    },
+    {
+      "source_event_index": 702,
+      "start_ms": 3950000,
+      "end_ms": 3955680,
+      "text": "所以我在用滑轮慢慢降低砖块时从砖块中提取的能量"
+    },
+    {
+      "source_event_index": 703,
+      "start_ms": 3955680,
+      "end_ms": 3961360,
+      "text": "系统必须是我开始时的能量mc²减去它现在拥有的能量。"
+    },
+    {
+      "source_event_index": 704,
+      "start_ms": 3961360,
+      "end_ms": 3967280,
+      "text": "换句话说，我通过降低能量提取的能量比例"
+    },
+    {
+      "source_event_index": 705,
+      "start_ms": 3967280,
+      "end_ms": 3985600,
+      "text": "到半径 r 就是 mc² 减去该值，全部除以 mc²：1 - √(1 - 2GM/(c²r))。"
+    },
+    {
+      "source_event_index": 706,
+      "start_ms": 3987440,
+      "end_ms": 3991840,
+      "text": "这是提取能量比例的正确答案。"
+    },
+    {
+      "source_event_index": 707,
+      "start_ms": 3991840,
+      "end_ms": 3995840,
+      "text": "它看起来并不完全像这样，因为这仅在牛顿极限下才是正确的。"
+    },
+    {
+      "source_event_index": 708,
+      "start_ms": 3995840,
+      "end_ms": 3999760,
+      "text": "我们利用牛顿物理学推导了这一点。这是完全正确的，不仅在"
+    },
+    {
+      "source_event_index": 709,
+      "start_ms": 3999760,
+      "end_ms": 4006160,
+      "text": "牛顿极限，但一直到广义相对论效应很重要的地方。"
+    },
+    {
+      "source_event_index": 710,
+      "start_ms": 4006160,
+      "end_ms": 4009280,
+      "text": "现在，如果你距离黑洞非常非常远——r就很大，"
+    },
+    {
+      "source_event_index": 711,
+      "start_ms": 4009280,
+      "end_ms": 4015280,
+      "text": "比 2GM/c² 大得多，那么您可以对这个公式进行泰勒展开。"
+    },
+    {
+      "source_event_index": 712,
+      "start_ms": 4015280,
+      "end_ms": 4018160,
+      "text": "一阶项就是旧的牛顿公式。"
+    },
+    {
+      "source_event_index": 713,
+      "start_ms": 4018160,
+      "end_ms": 4023440,
+      "text": "最好是这样。最好是广义相对论的长距离极限恢复了牛顿力学 我们最初发现的"
+    },
+    {
+      "source_event_index": 714,
+      "start_ms": 4023440,
+      "end_ms": 4027440,
+      "text": "物理学。但当你离黑色越来越近"
+    },
+    {
+      "source_event_index": 715,
+      "start_ms": 4027440,
+      "end_ms": 4033040,
+      "text": "洞，这开始偏离牛顿的答案，最终会出现这样的结果"
+    },
+    {
+      "source_event_index": 716,
+      "start_ms": 4033040,
+      "end_ms": 4037840,
+      "text": "解决了我们最初的思想实验，将一块砖头向下扔向黑洞。"
+    },
+    {
+      "source_event_index": 717,
+      "start_ms": 4037840,
+      "end_ms": 4044000,
+      "text": "那么，看看这个公式，我从 当我将"
+    },
+    {
+      "source_event_index": 718,
+      "start_ms": 4044000,
+      "end_ms": 4052400,
+      "text": "砖块向黑洞放低时？如果 r 等于无穷大——如果砖块仍然很长"
+    },
+    {
+      "source_event_index": 719,
+      "start_ms": 4052400,
+      "end_ms": 4058720,
+      "text": "远离黑洞——然后我提取了1-1=0。我还没有提取出任何能量。"
+    },
+    {
+      "source_event_index": 720,
+      "start_ms": 4059920,
+      "end_ms": 4066400,
+      "text": "当我把它越来越靠近黑洞时，最初我只得到了牛顿公式。"
+    },
+    {
+      "source_event_index": 721,
+      "start_ms": 4066400,
+      "end_ms": 4071520,
+      "text": "所以事实上，这些在广义相对论中也非常接近正确，"
+    },
+    {
+      "source_event_index": 722,
+      "start_ms": 4071520,
+      "end_ms": 4076480,
+      "text": "因为当这项变成一阶时，修正只会开始变大，"
+    },
+    {
+      "source_event_index": 723,
+      "start_ms": 4076480,
+      "end_ms": 4080480,
+      "text": "而且这里还是很小。所以这些基本上都是正确的。"
+    },
+    {
+      "source_event_index": 724,
+      "start_ms": 4080480,
+      "end_ms": 4084640,
+      "text": "但是一旦我越来越接近黑洞，它们就不再正确了。"
+    },
+    {
+      "source_event_index": 725,
+      "start_ms": 4084640,
+      "end_ms": 4090320,
+      "text": "我看到的是，当 r 接近黑洞事件视界时，"
+    },
+    {
+      "source_event_index": 726,
+      "start_ms": 4090320,
+      "end_ms": 4098800,
+      "text": "当这个公式变为零时，我已经从砖块中提取了所有的能量。"
+    },
+    {
+      "source_event_index": 727,
+      "start_ms": 4098800,
+      "end_ms": 4105200,
+      "text": "所以我从距离黑洞非常非常远的地方开始，把它绑在一根绳子上，慢慢地"
+    },
+    {
+      "source_event_index": 728,
+      "start_ms": 4105200,
+      "end_ms": 4110400,
+      "text": "将砖块向视界降低。当然，我不能在活动结束后降低它"
+    },
+    {
+      "source_event_index": 729,
+      "start_ms": 4110400,
+      "end_ms": 4115280,
+      "text": "地平线，否则我会失去对砖块的控制。但我把它降低到事件视界的正上方——"
+    },
+    {
+      "source_event_index": 730,
+      "start_ms": 4115280,
+      "end_ms": 4119920,
+      "text": "我可以将其降低到的最后一个可能的位置，然后以零速度放开它。"
+    },
+    {
+      "source_event_index": 731,
+      "start_ms": 4119920,
+      "end_ms": 4125040,
+      "text": "砖块落入黑洞，我已经提取了用于"
+    },
+    {
+      "source_event_index": 732,
+      "start_ms": 4125040,
+      "end_ms": 4132640,
+      "text": "在我滑轮系统的砖块里。所以它正好解决了我们的这个问题。"
+    },
+    {
+      "source_event_index": 733,
+      "start_ms": 4132640,
+      "end_ms": 4135920,
+      "text": "是否有可能从砖块中提取超过 mc² 的物质？"
+    },
+    {
+      "source_event_index": 734,
+      "start_ms": 4135920,
+      "end_ms": 4141760,
+      "text": "否。是否可以使用黑洞从砖块中提取完整的 mc²？"
+    },
+    {
+      "source_event_index": 735,
+      "start_ms": 4141760,
+      "end_ms": 4146160,
+      "text": "是的，是的。这实际上非常简洁，也是人们谈论的原因"
+    },
+    {
+      "source_event_index": 736,
+      "start_ms": 4146160,
+      "end_ms": 4152000,
+      "text": "使用黑洞作为发电厂。目前大多数发电厂都在运行"
+    },
+    {
+      "source_event_index": 737,
+      "start_ms": 4152000,
+      "end_ms": 4156000,
+      "text": "通过燃烧化学能。这效率不高。"
+    },
+    {
+      "source_event_index": 738,
+      "start_ms": 4156000,
+      "end_ms": 4160160,
+      "text": "你必须支付10⁻¹⁰的系数，因为化学键是超级 与其他物体相比，"
+    },
+    {
+      "source_event_index": 739,
+      "start_ms": 4160160,
+      "end_ms": 4165760,
+      "text": "较弱。你实际上只提取了一小部分"
+    },
+    {
+      "source_event_index": 740,
+      "start_ms": 4165760,
+      "end_ms": 4171120,
+      "text": "您正在考虑的燃料的剩余质量。你可以通过进入核能来升级"
+    },
+    {
+      "source_event_index": 741,
+      "start_ms": 4171120,
+      "end_ms": 4179040,
+      "text": "能量，它不再处理原子之间微弱的电磁键，而是开始"
+    },
+    {
+      "source_event_index": 742,
+      "start_ms": 4179040,
+      "end_ms": 4185440,
+      "text": "关注原子核内质子和中子之间的核力。"
+    },
+    {
+      "source_event_index": 743,
+      "start_ms": 4185440,
+      "end_ms": 4191520,
+      "text": "因此，对于裂变，您可以从大约 10⁻1⁰ 增加到大约 10⁻3，对于聚变，可以从 10⁻² 增加到大约 10⁻²。"
+    },
+    {
+      "source_event_index": 744,
+      "start_ms": 4191520,
+      "end_ms": 4195280,
+      "text": "但这已经是你能做到的最好的了，即使有裂变和聚变。"
+    },
+    {
+      "source_event_index": 745,
+      "start_ms": 4195280,
+      "end_ms": 4199520,
+      "text": "因为即使你可以从强核力中提取能量，"
+    },
+    {
+      "source_event_index": 746,
+      "start_ms": 4200800,
+      "end_ms": 4205840,
+      "text": "裂变和聚变都不会改变过程中质子加中子的总数。"
+    },
+    {
+      "source_event_index": 747,
+      "start_ms": 4205840,
+      "end_ms": 4210960,
+      "text": "大部分能量（99% 的能量）不是存储在电磁相互作用中，"
+    },
+    {
+      "source_event_index": 748,
+      "start_ms": 4210960,
+      "end_ms": 4215200,
+      "text": "不是在强相互作用中，而是在质子和的剩余质量能中"
+    },
+    {
+      "source_event_index": 749,
+      "start_ms": 4215200,
+      "end_ms": 4220640,
+      "text": "中子，化学反应和核反应都接触不到的东西。"
+    },
+    {
+      "source_event_index": 750,
+      "start_ms": 4220640,
+      "end_ms": 4226160,
+      "text": "但重力可以触及它们。如果我从一个质量为 m 的物体开始，"
+    },
+    {
+      "source_event_index": 751,
+      "start_ms": 4226160,
+      "end_ms": 4231040,
+      "text": "我可以提取，直到量子校正，基本上 100% 我所携带的剩余质量能量的"
+    },
+    {
+      "source_event_index": 752,
+      "start_ms": 4231040,
+      "end_ms": 4235920,
+      "text": "。它是最高效的发电厂，"
+    },
+    {
+      "source_event_index": 753,
+      "start_ms": 4235920,
+      "end_ms": 4240320,
+      "text": "因为通过构建这样的装置，原则上我可以提取100%"
+    },
+    {
+      "source_event_index": 754,
+      "start_ms": 4240320,
+      "end_ms": 4245920,
+      "text": "是我开始时的能量。我凭直觉就知道能量是如何等于质量的。"
+    },
+    {
+      "source_event_index": 755,
+      "start_ms": 4246720,
+      "end_ms": 4250800,
+      "text": "有这些化学键。那些被溶解，它们释放能量。 如果这些债券被释放，"
+    },
+    {
+      "source_event_index": 756,
+      "start_ms": 4250800,
+      "end_ms": 4255120,
+      "text": "东西的重量就会减轻。我什至知道如果质子之间的键"
+    },
+    {
+      "source_event_index": 757,
+      "start_ms": 4255120,
+      "end_ms": 4260000,
+      "text": "，中子被破坏，释放能量并使物体的质量减少。"
+    },
+    {
+      "source_event_index": 758,
+      "start_ms": 4260000,
+      "end_ms": 4267120,
+      "text": "但是，如果带有质子和中子的物体略高于事件视界，"
+    },
+    {
+      "source_event_index": 759,
+      "start_ms": 4267120,
+      "end_ms": 4272400,
+      "text": "是那些质子和中子在那时停止存在的解释吗？"
+    },
+    {
+      "source_event_index": 760,
+      "start_ms": 4272400,
+      "end_ms": 4278080,
+      "text": "对于它们来说，拥有原始质量的 1%、2% 或 5% 意味着什么？"
+    },
+    {
+      "source_event_index": 761,
+      "start_ms": 4279040,
+      "end_ms": 4284000,
+      "text": "这是一个很好的问题。一旦你打开量子力学，它就真的变得重要了，"
+    },
+    {
+      "source_event_index": 762,
+      "start_ms": 4284000,
+      "end_ms": 4288560,
+      "text": "这超出了今天讨论的范围。经典地讲，黑洞"
+    },
+    {
+      "source_event_index": 763,
+      "start_ms": 4288560,
+      "end_ms": 4290800,
+      "text": "就永远坐在那里。所以你可以说：“好吧，"
+    },
+    {
+      "source_event_index": 764,
+      "start_ms": 4290800,
+      "end_ms": 4292960,
+      "text": "质子和中子发生了什么？”你说：“好吧，他们现在生活"
+    },
+    {
+      "source_event_index": 765,
+      "start_ms": 4292960,
+      "end_ms": 4297120,
+      "text": "黑洞内部。”质子加中子的数量"
+    },
+    {
+      "source_event_index": 766,
+      "start_ms": 4297120,
+      "end_ms": 4300720,
+      "text": "在宇宙中仍然是保守的。只是你需要分配所谓的"
+    },
+    {
+      "source_event_index": 767,
+      "start_ms": 4300720,
+      "end_ms": 4307120,
+      "text": "黑洞本身的核子数。就经典而言，这很好。"
+    },
+    {
+      "source_event_index": 768,
+      "start_ms": 4307120,
+      "end_ms": 4311840,
+      "text": "量子力学——远远超出了今天讲座的范围——霍金和贝肯斯坦"
+    },
+    {
+      "source_event_index": 769,
+      "start_ms": 4311840,
+      "end_ms": 4316480,
+      "text": "发现黑洞会辐射能量，最终黑洞会消失。"
+    },
+    {
+      "source_event_index": 770,
+      "start_ms": 4316480,
+      "end_ms": 4322080,
+      "text": "如果你计算的话，所有的能量最终都会变成引力子和光子，也许还有一些中微子。"
+    },
+    {
+      "source_event_index": 771,
+      "start_ms": 4322080,
+      "end_ms": 4325360,
+      "text": "它们都没有，或者几乎没有，最终形成质子和中子。"
+    },
+    {
+      "source_event_index": 772,
+      "start_ms": 4325360,
+      "end_ms": 4329600,
+      "text": "所以这是一个非常有趣的事实，一旦你打开量子引力，"
+    },
+    {
+      "source_event_index": 773,
+      "start_ms": 4329600,
+      "end_ms": 4334720,
+      "text": "黑洞吃掉核子数。这个看似保存完好的东西，"
+    },
+    {
+      "source_event_index": 774,
+      "start_ms": 4334720,
+      "end_ms": 4339680,
+      "text": "至少是通过电磁力和核力进行扰动，"
+    },
+    {
+      "source_event_index": 775,
+      "start_ms": 4339680,
+      "end_ms": 4344880,
+      "text": "最终被重力吞噬。人们喜欢宣传这一点——我们"
+    },
+    {
+      "source_event_index": 776,
+      "start_ms": 4344880,
+      "end_ms": 4349920,
+      "text": "现在谈论量子引力——量子引力的一般原理"
+    },
+    {
+      "source_event_index": 777,
+      "start_ms": 4349920,
+      "end_ms": 4354720,
+      "text": "不尊重任何全局对称性。它不尊重核子数对称性。"
+    },
+    {
+      "source_event_index": 778,
+      "start_ms": 4354720,
+      "end_ms": 4358320,
+      "text": "它不尊重任何这些对称性。那是另一堆蠕虫"
+    },
+    {
+      "source_event_index": 779,
+      "start_ms": 4358320,
+      "end_ms": 4361920,
+      "text": "我们可以改天营业。我最近写了这篇博文，其中我"
+    },
+    {
+      "source_event_index": 780,
+      "start_ms": 4361920,
+      "end_ms": 4366720,
+      "text": "推测训练期间的样本效率实际上并没有比过去提高那么多"
+    },
+    {
+      "source_event_index": 781,
+      "start_ms": 4366720,
+      "end_ms": 4371600,
+      "text": "几年了，更确切地说，我们刚刚显着改进并扩大了数据分布。"
+    },
+    {
+      "source_event_index": 782,
+      "start_ms": 4371600,
+      "end_ms": 4375200,
+      "text": "最近我和朋友一起吃饭，然后我有了一个想法，如何可以得到一些"
+    },
+    {
+      "source_event_index": 783,
+      "start_ms": 4375200,
+      "end_ms": 4379840,
+      "text": "关于这个问题的经验信息。人们相互竞争的 nanoGPT 速跑游戏"
+    },
+    {
+      "source_event_index": 784,
+      "start_ms": 4379840,
+      "end_ms": 4385200,
+      "text": "使用越来越少的计算将 Karpathy 的 GPT-2 基线训练到固定损失。训练数据有"
+    },
+    {
+      "source_event_index": 785,
+      "start_ms": 4385200,
+      "end_ms": 4389760,
+      "text": "冻结了，所以我想知道每条记录随时间变化的损失曲线是否可以告诉你"
+    },
+    {
+      "source_event_index": 786,
+      "start_ms": 4389760,
+      "end_ms": 4394240,
+      "text": "样本效率的提升速度大致有多快。于是我拿出手机，把这个想法倾倒在"
+    },
+    {
+      "source_event_index": 787,
+      "start_ms": 4394240,
+      "end_ms": 4398720,
+      "text": "光标应用程序中的语音注释，然后回去吃晚饭。然后大约15分钟后我收到通知"
+    },
+    {
+      "source_event_index": 788,
+      "start_ms": 4398720,
+      "end_ms": 4403920,
+      "text": "之后：Cursor代理克隆了修改后的nanoGPT存储库，分析了所有的损失曲线"
+    },
+    {
+      "source_event_index": 789,
+      "start_ms": 4403920,
+      "end_ms": 4409600,
+      "text": "记录，并估计样本效率每年提高约 2-5 倍。"
+    },
+    {
+      "source_event_index": 790,
+      "start_ms": 4409600,
+      "end_ms": 4413840,
+      "text": "当然，这是非常幼稚的间接证据，但它启发了我开始写一篇"
+    },
+    {
+      "source_event_index": 791,
+      "start_ms": 4413840,
+      "end_ms": 4418400,
+      "text": "与朋友的完整帖子，我们使用许多不同的方法调查这个问题。"
+    },
+    {
+      "source_event_index": 792,
+      "start_ms": 4418400,
+      "end_ms": 4421600,
+      "text": "摩擦力在这里真的很重要。如果我"
+    },
+    {
+      "source_event_index": 793,
+      "start_ms": 4421600,
+      "end_ms": 4424800,
+      "text": "无法使用 Cursor 应用程序立即开始调查。"
+    },
+    {
+      "source_event_index": 794,
+      "start_ms": 4424800,
+      "end_ms": 4430560,
+      "text": "如果您想尝试 Cursor 的 iOS 应用程序，请访问cursor.com/Dwarkesh。"
+    },
+    {
+      "source_event_index": 795,
+      "start_ms": 4430560,
+      "end_ms": 4432880,
+      "text": "好的，亚当。我喜欢认为在这个播客中我们不仅传播"
+    },
+    {
+      "source_event_index": 796,
+      "start_ms": 4432880,
+      "end_ms": 4438080,
+      "text": "理论知识和实践知识。所以假设一个人学会了所有这些方程"
+    },
+    {
+      "source_event_index": 797,
+      "start_ms": 4438080,
+      "end_ms": 4442400,
+      "text": "但随后发现自己不幸落入黑洞。"
+    },
+    {
+      "source_event_index": 798,
+      "start_ms": 4442400,
+      "end_ms": 4447360,
+      "text": "他们会看到什么？很好的问题。其实有"
+    },
+    {
+      "source_event_index": 799,
+      "start_ms": 4447360,
+      "end_ms": 4451920,
+      "text": "您可以采取两种不同的观点。一种是我看你的视角"
+    },
+    {
+      "source_event_index": 800,
+      "start_ms": 4451920,
+      "end_ms": 4455360,
+      "text": "掉入黑洞。另一个是视角"
+    },
+    {
+      "source_event_index": 801,
+      "start_ms": 4455360,
+      "end_ms": 4459520,
+      "text": "你掉进黑洞了。这两种观点是一致的"
+    },
+    {
+      "source_event_index": 802,
+      "start_ms": 4459520,
+      "end_ms": 4462960,
+      "text": "彼此不同，但有趣的是不同，所以也许我应该描述它们。"
+    },
+    {
+      "source_event_index": 803,
+      "start_ms": 4462960,
+      "end_ms": 4467360,
+      "text": "首先我们问一个问题：当你掉进黑洞时我看到了什么？"
+    },
+    {
+      "source_event_index": 804,
+      "start_ms": 4468560,
+      "end_ms": 4472800,
+      "text": "这就是你需要多努力才能发射火箭才能不陷入黑暗"
+    },
+    {
+      "source_event_index": 805,
+      "start_ms": 4472800,
+      "end_ms": 4475600,
+      "text": "洞，但你不会这样做。你只要在这里坐很久"
+    },
+    {
+      "source_event_index": 806,
+      "start_ms": 4475600,
+      "end_ms": 4480880,
+      "text": "距离黑洞很远，关掉你的火箭，接受即将到来的一切。"
+    },
+    {
+      "source_event_index": 807,
+      "start_ms": 4480880,
+      "end_ms": 4485840,
+      "text": "接下来的事情是你将以牛顿首先给出的速度缓慢加速到黑洞"
+    },
+    {
+      "source_event_index": 808,
+      "start_ms": 4485840,
+      "end_ms": 4492160,
+      "text": "公式，然后，当你接近黑洞时，开始学习广义相对论"
+    },
+    {
+      "source_event_index": 809,
+      "start_ms": 4492160,
+      "end_ms": 4497280,
+      "text": "对牛顿平方反比定律的修正。当我看着你坠落时我会看到什么"
+    },
+    {
+      "source_event_index": 810,
+      "start_ms": 4497280,
+      "end_ms": 4502560,
+      "text": "黑洞是，首先当你从黑洞中掉下来时，你会走得越来越快。"
+    },
+    {
+      "source_event_index": 811,
+      "start_ms": 4502560,
+      "end_ms": 4509520,
+      "text": "黑洞的引力势。但接下来会发生一些奇怪的事情。"
+    },
+    {
+      "source_event_index": 812,
+      "start_ms": 4509520,
+      "end_ms": 4512240,
+      "text": "你将不再走得更快，而是开始变慢。"
+    },
+    {
+      "source_event_index": 813,
+      "start_ms": 4512240,
+      "end_ms": 4518160,
+      "text": "你走得慢的原因是，当我看着你时，你开始受到引力的影响 当你跌倒时"
+    },
+    {
+      "source_event_index": 814,
+      "start_ms": 4518160,
+      "end_ms": 4524400,
+      "text": "时间膨胀，我开始看到你的时钟走慢。"
+    },
+    {
+      "source_event_index": 815,
+      "start_ms": 4524400,
+      "end_ms": 4531120,
+      "text": "静态公式并不完全适用，因为您正在移动，但公式有"
+    },
+    {
+      "source_event_index": 816,
+      "start_ms": 4531120,
+      "end_ms": 4536240,
+      "text": "同样的效果，就是当你距离黑洞越来越近时，你的手表"
+    },
+    {
+      "source_event_index": 817,
+      "start_ms": 4536240,
+      "end_ms": 4540880,
+      "text": "开始跑得越来越慢。事实上，如果你进行适当的积分，"
+    },
+    {
+      "source_event_index": 818,
+      "start_ms": 4540880,
+      "end_ms": 4543760,
+      "text": "我从未见过你跨越事件视界。我只是看到你越来越近"
+    },
+    {
+      "source_event_index": 819,
+      "start_ms": 4543760,
+      "end_ms": 4547440,
+      "text": "到事件视界，但当你接近它时，速度会越来越慢。"
+    },
+    {
+      "source_event_index": 820,
+      "start_ms": 4550240,
+      "end_ms": 4555600,
+      "text": "当我看着你时——我大概是在用光来观察你——光变得越来越红移。"
+    },
+    {
+      "source_event_index": 821,
+      "start_ms": 4555600,
+      "end_ms": 4559440,
+      "text": "波长越来越长，光的波长也越来越长，"
+    },
+    {
+      "source_event_index": 822,
+      "start_ms": 4559440,
+      "end_ms": 4563760,
+      "text": "真正见到你就越困难。你开始被离域化"
+    },
+    {
+      "source_event_index": 823,
+      "start_ms": 4563760,
+      "end_ms": 4567200,
+      "text": "光的波长，最终我完全看不到你了。"
+    },
+    {
+      "source_event_index": 824,
+      "start_ms": 4567200,
+      "end_ms": 4573120,
+      "text": "你发射出最后一个光子，然后你就褪色为黑色，从红色褪色为黑色。"
+    },
+    {
+      "source_event_index": 825,
+      "start_ms": 4573120,
+      "end_ms": 4580400,
+      "text": "我从未见过你跨越事件视界。这在早期就被人们注意到了 广义相对论的"
+    },
+    {
+      "source_event_index": 826,
+      "start_ms": 4580400,
+      "end_ms": 4586800,
+      "text": "让他们非常困惑。他们开始认为你会经历"
+    },
+    {
+      "source_event_index": 827,
+      "start_ms": 4586800,
+      "end_ms": 4589760,
+      "text": "当你跌入视界时，你自己发生了一些有趣的事情。"
+    },
+    {
+      "source_event_index": 828,
+      "start_ms": 4589760,
+      "end_ms": 4595520,
+      "text": "这不是真的。如果我转而采用你的观点，从你的角度来看"
+    },
+    {
+      "source_event_index": 829,
+      "start_ms": 4595520,
+      "end_ms": 4598880,
+      "text": "看来，你的时钟走得并不慢。它以每秒一秒的速度运行。"
+    },
+    {
+      "source_event_index": 830,
+      "start_ms": 4598880,
+      "end_ms": 4602960,
+      "text": "如果你回头看我，可能会发现一些有趣的事情与我跑得快有关。"
+    },
+    {
+      "source_event_index": 831,
+      "start_ms": 4602960,
+      "end_ms": 4605360,
+      "text": "但对你来说，一切都很正常。"
+    },
+    {
+      "source_event_index": 832,
+      "start_ms": 4606240,
+      "end_ms": 4610720,
+      "text": "你向黑洞加速，越接近它就越快。"
+    },
+    {
+      "source_event_index": 833,
+      "start_ms": 4611600,
+      "end_ms": 4615520,
+      "text": "你完全像平常一样航行穿过事件视界。"
+    },
+    {
+      "source_event_index": 834,
+      "start_ms": 4615520,
+      "end_ms": 4618640,
+      "text": "事件视界对你来说并不是一个特别暴力的地方。"
+    },
+    {
+      "source_event_index": 835,
+      "start_ms": 4618640,
+      "end_ms": 4626000,
+      "text": "您可以计算接近并穿过事件视界时的潮汐力。"
+    },
+    {
+      "source_event_index": 836,
+      "start_ms": 4626000,
+      "end_ms": 4629600,
+      "text": "它们并不是特别大，或者更确切地说，对于大黑洞来说，它们并不是特别大。"
+    },
+    {
+      "source_event_index": 837,
+      "start_ms": 4629600,
+      "end_ms": 4634240,
+      "text": "对于太阳质量的黑洞来说，它们会非常大并且会非常痛苦。"
+    },
+    {
+      "source_event_index": 838,
+      "start_ms": 4634240,
+      "end_ms": 4638400,
+      "text": "你会发现你的脚越来越被黑洞吸引"
+    },
+    {
+      "source_event_index": 839,
+      "start_ms": 4638400,
+      "end_ms": 4642880,
+      "text": "比你的头更用力，因为它们更接近，你最终会被拉伸。"
+    },
+    {
+      "source_event_index": 840,
+      "start_ms": 4642880,
+      "end_ms": 4645760,
+      "text": "但如果我拿一个足够大的黑洞，你就不会注意到任何东西"
+    },
+    {
+      "source_event_index": 841,
+      "start_ms": 4645760,
+      "end_ms": 4651680,
+      "text": "有趣的事情发生了。黑洞越大，"
+    },
+    {
+      "source_event_index": 842,
+      "start_ms": 4651680,
+      "end_ms": 4656080,
+      "text": "潮汐影响越小。如果我把黑洞的质量 银河系的"
+    },
+    {
+      "source_event_index": 843,
+      "start_ms": 4656080,
+      "end_ms": 4659520,
+      "text": "，当你穿过事件视界时基本上没问题。"
+    },
+    {
+      "source_event_index": 844,
+      "start_ms": 4659520,
+      "end_ms": 4663200,
+      "text": "如果我有一个比这更大的黑洞，你就可以活一辈子 在撞上奇点之前"
+    },
+    {
+      "source_event_index": 845,
+      "start_ms": 4663200,
+      "end_ms": 4668720,
+      "text": "已经穿过了事件视界，这是致命的。"
+    },
+    {
+      "source_event_index": 846,
+      "start_ms": 4671600,
+      "end_ms": 4678560,
+      "text": "当你跨越事件视界时，你就注定失败。你注定要失败，因为一旦你穿越了事件"
+    },
+    {
+      "source_event_index": 847,
+      "start_ms": 4678560,
+      "end_ms": 4682160,
+      "text": "地平线，你必须前往奇点。你不可能发射火箭来阻止"
+    },
+    {
+      "source_event_index": 848,
+      "start_ms": 4682160,
+      "end_ms": 4687840,
+      "text": "你自己撞上了奇点。你注定了，但你并没有死。"
+    },
+    {
+      "source_event_index": 849,
+      "start_ms": 4687840,
+      "end_ms": 4692000,
+      "text": "一旦你到达奇点并被面条化，你就肯定死了，"
+    },
+    {
+      "source_event_index": 850,
+      "start_ms": 4692000,
+      "end_ms": 4695680,
+      "text": "被潮汐力破坏。但对于足够大的黑洞来说"
+    },
+    {
+      "source_event_index": 851,
+      "start_ms": 4695680,
+      "end_ms": 4701440,
+      "text": "你可能注定要失败，甚至不知道。事件视界确实不是"
+    },
+    {
+      "source_event_index": 852,
+      "start_ms": 4701440,
+      "end_ms": 4704720,
+      "text": "本地可测量数量。这是一个目的论事实。"
+    },
+    {
+      "source_event_index": 853,
+      "start_ms": 4704720,
+      "end_ms": 4709120,
+      "text": "它说一旦你跨越了事件视界，你就必须前往奇点。"
+    },
+    {
+      "source_event_index": 854,
+      "start_ms": 4709120,
+      "end_ms": 4712640,
+      "text": "但是对于足够大的黑洞来说可能需要很长时间才能到达那里。"
+    },
+    {
+      "source_event_index": 855,
+      "start_ms": 4713440,
+      "end_ms": 4721920,
+      "text": "原则上，对于一个直径有几个光世纪的黑洞来说，"
+    },
+    {
+      "source_event_index": 856,
+      "start_ms": 4721920,
+      "end_ms": 4723760,
+      "text": "你可以活一辈子。你可以有后代，"
+    },
+    {
+      "source_event_index": 857,
+      "start_ms": 4723760,
+      "end_ms": 4728880,
+      "text": "所有人都生活在黑洞内。只有当你真正接近奇点时"
+    },
+    {
+      "source_event_index": 858,
+      "start_ms": 4728880,
+      "end_ms": 4734640,
+      "text": "潮汐力量会变得强大并杀死你吗？正如你所说，GR 解释道"
+    },
+    {
+      "source_event_index": 859,
+      "start_ms": 4734640,
+      "end_ms": 4737600,
+      "text": "或者预言了很多现象。有些我们认为是正确的，"
+    },
+    {
+      "source_event_index": 860,
+      "start_ms": 4737600,
+      "end_ms": 4740080,
+      "text": "有些我们不知道是否正确。为什么我们认为黑洞"
+    },
+    {
+      "source_event_index": 861,
+      "start_ms": 4740080,
+      "end_ms": 4743280,
+      "text": "是正确的，但不是虫洞？这是一个很好的问题。人"
+    },
+    {
+      "source_event_index": 862,
+      "start_ms": 4743280,
+      "end_ms": 4745520,
+      "text": "一开始就不相信。史瓦西写下他的 爱因斯坦写出场方程后几乎立即就得到了"
+    },
+    {
+      "source_event_index": 863,
+      "start_ms": 4745520,
+      "end_ms": 4748720,
+      "text": "解。"
+    },
+    {
+      "source_event_index": 864,
+      "start_ms": 4748720,
+      "end_ms": 4751920,
+      "text": "人们认为这个方程在某种程度上是病态的，它是一个度量"
+    },
+    {
+      "source_event_index": 865,
+      "start_ms": 4751920,
+      "end_ms": 4755680,
+      "text": "零永远不会发生的事情。这是一些数学上的怪物，"
+    },
+    {
+      "source_event_index": 866,
+      "start_ms": 4755680,
+      "end_ms": 4760400,
+      "text": "但在真实的宇宙中不可能自然产生黑洞。"
+    },
+    {
+      "source_event_index": 867,
+      "start_ms": 4760400,
+      "end_ms": 4765280,
+      "text": "他们错了，因为黑洞确实存在。我们现在非常有信心。有"
+    },
+    {
+      "source_event_index": 868,
+      "start_ms": 4765280,
+      "end_ms": 4769680,
+      "text": "理论发展，并且有实验证据表明黑洞存在。"
+    },
+    {
+      "source_event_index": 869,
+      "start_ms": 4769680,
+      "end_ms": 4774880,
+      "text": "最大的理论发展是彭罗斯，然后是霍金和彭罗斯——为此他"
+    },
+    {
+      "source_event_index": 870,
+      "start_ms": 4774880,
+      "end_ms": 4780320,
+      "text": "获得诺贝尔奖——从理论上证明黑洞的形成是一个通用的"
+    },
+    {
+      "source_event_index": 871,
+      "start_ms": 4780320,
+      "end_ms": 4784000,
+      "text": "广义相对论的特征。这不仅仅是一些病态的事情 如果您微调初始条件，则会发生"
+    },
+    {
+      "source_event_index": 872,
+      "start_ms": 4784000,
+      "end_ms": 4789520,
+      "text": "。如果您从通用初始条件开始，"
+    },
+    {
+      "source_event_index": 873,
+      "start_ms": 4789520,
+      "end_ms": 4791440,
+      "text": "黑洞的发展是一个通用特征。"
+    },
+    {
+      "source_event_index": 874,
+      "start_ms": 4792320,
+      "end_ms": 4795680,
+      "text": "这是一个巨大的进步。然后是实验方面。"
+    },
+    {
+      "source_event_index": 875,
+      "start_ms": 4795680,
+      "end_ms": 4800000,
+      "text": "我们现在拥有的有关黑洞的实验证据非常多。"
+    },
+    {
+      "source_event_index": 876,
+      "start_ms": 4800000,
+      "end_ms": 4803120,
+      "text": "它们在爱因斯坦时代并不存在，在爱因斯坦之后的 50 年里，"
+    },
+    {
+      "source_event_index": 877,
+      "start_ms": 4803120,
+      "end_ms": 4806720,
+      "text": "人们对黑洞感到非常困惑，并认为它们不存在。"
+    },
+    {
+      "source_event_index": 878,
+      "start_ms": 4806720,
+      "end_ms": 4810960,
+      "text": "但有大量证据。我认为最具视觉吸引力的作品"
+    },
+    {
+      "source_event_index": 879,
+      "start_ms": 4810960,
+      "end_ms": 4816240,
+      "text": "证据正在观察我们银河系的中心。"
+    },
+    {
+      "source_event_index": 880,
+      "start_ms": 4816240,
+      "end_ms": 4821040,
+      "text": "如果你看一下银河系的中心——剧透警告——那里有一个黑洞。"
+    },
+    {
+      "source_event_index": 881,
+      "start_ms": 4821040,
+      "end_ms": 4824240,
+      "text": "我们称之为射手座 A*。这是一个巨大的黑洞，重量"
+    },
+    {
+      "source_event_index": 882,
+      "start_ms": 4824240,
+      "end_ms": 4831680,
+      "text": "太阳质量的数百万倍。你无法直接看到黑洞，"
+    },
+    {
+      "source_event_index": 883,
+      "start_ms": 4831680,
+      "end_ms": 4835680,
+      "text": "因为它是黑色的。你能看到的是它周围的星星。"
+    },
+    {
+      "source_event_index": 884,
+      "start_ms": 4835680,
+      "end_ms": 4840480,
+      "text": "如果你在过去几十年里观察这些明星——我们现在有几十年的"
+    },
+    {
+      "source_event_index": 885,
+      "start_ms": 4840480,
+      "end_ms": 4846560,
+      "text": "对它们的观察——你会看到星星不是沿着我们所说的直线移动，"
+    },
+    {
+      "source_event_index": 886,
+      "start_ms": 4846560,
+      "end_ms": 4851520,
+      "text": "而是以漂亮的小椭圆或进动椭圆移动。"
+    },
+    {
+      "source_event_index": 887,
+      "start_ms": 4852400,
+      "end_ms": 4856480,
+      "text": "这些椭圆看起来像是在绕某物运行。"
+    },
+    {
+      "source_event_index": 888,
+      "start_ms": 4856480,
+      "end_ms": 4860080,
+      "text": "你看不到那个东西，但你可以看到绕它运行的星星。"
+    },
+    {
+      "source_event_index": 889,
+      "start_ms": 4861040,
+      "end_ms": 4865360,
+      "text": "你可以计算一下它有多大，有多大。"
+    },
+    {
+      "source_event_index": 890,
+      "start_ms": 4865360,
+      "end_ms": 4869440,
+      "text": "你发现它确实很大，也确实很小。"
+    },
+    {
+      "source_event_index": 891,
+      "start_ms": 4869440,
+      "end_ms": 4874000,
+      "text": "你知道它很小，因为星星离它非常近，但似乎并没有与它相撞。"
+    },
+    {
+      "source_event_index": 892,
+      "start_ms": 4874000,
+      "end_ms": 4879600,
+      "text": "所以通过追踪这些轨道，你可以看出有一个超重的东西，"
+    },
+    {
+      "source_event_index": 893,
+      "start_ms": 4879600,
+      "end_ms": 4882800,
+      "text": "超级黑暗，并且位于银河系中心超级紧凑。"
+    },
+    {
+      "source_event_index": 894,
+      "start_ms": 4882800,
+      "end_ms": 4886640,
+      "text": "那是人马座 A*，我们银河系中心的黑洞。"
+    },
+    {
+      "source_event_index": 895,
+      "start_ms": 4886640,
+      "end_ms": 4890800,
+      "text": "这是一项令人信服的证据。另一个令人信服的证据："
+    },
+    {
+      "source_event_index": 896,
+      "start_ms": 4890800,
+      "end_ms": 4894160,
+      "text": "大约十年前，我们不仅看到了黑洞，还感觉到了它们。"
+    },
+    {
+      "source_event_index": 897,
+      "start_ms": 4894880,
+      "end_ms": 4902640,
+      "text": "LIGO 是我们在多个不同地点建造的巨大激光干涉仪，即"
+    },
+    {
+      "source_event_index": 898,
+      "start_ms": 4902640,
+      "end_ms": 4908720,
+      "text": "超级适应时空本身的振动。马上就有一个著名的事件发生"
+    },
+    {
+      "source_event_index": 899,
+      "start_ms": 4908720,
+      "end_ms": 4914880,
+      "text": "2015年底我们打开它后，我们感觉到时空震动。"
+    },
+    {
+      "source_event_index": 900,
+      "start_ms": 4914880,
+      "end_ms": 4918960,
+      "text": "你知道这是时空震动，而不仅仅是地球震动，因为我们有"
+    },
+    {
+      "source_event_index": 901,
+      "start_ms": 4918960,
+      "end_ms": 4925600,
+      "text": "一堆这样的探测器——然后是两个，现在是四个——位于地球上的不同地点，"
+    },
+    {
+      "source_event_index": 902,
+      "start_ms": 4925600,
+      "end_ms": 4929760,
+      "text": "他们都以完全相同的方式震动。所以这不能仅仅用卡车来解释"
+    },
+    {
+      "source_event_index": 903,
+      "start_ms": 4929760,
+      "end_ms": 4932880,
+      "text": "通过其中一个而不是另一个，或者地震事件发生在一个而不是另一个上。"
+    },
+    {
+      "source_event_index": 904,
+      "start_ms": 4932880,
+      "end_ms": 4937120,
+      "text": "它们都以完全相同的方式震动，我们能够反算出"
+    },
+    {
+      "source_event_index": 905,
+      "start_ms": 4937120,
+      "end_ms": 4941360,
+      "text": "让他们摇晃的是两个巨大黑洞的碰撞。"
+    },
+    {
+      "source_event_index": 906,
+      "start_ms": 4941360,
+      "end_ms": 4945840,
+      "text": "两个黑洞，其重量均约为太阳的 30 倍，位于地球的另一侧"
+    },
+    {
+      "source_event_index": 907,
+      "start_ms": 4945840,
+      "end_ms": 4952720,
+      "text": "宇宙，距离约16亿光年。那次碰撞发生了大约16亿年"
+    },
+    {
+      "source_event_index": 908,
+      "start_ms": 4952720,
+      "end_ms": 4957120,
+      "text": "之前，恰好在我们打开 LIGO 探测器几周后到达地球。"
+    },
+    {
+      "source_event_index": 909,
+      "start_ms": 4957120,
+      "end_ms": 4964880,
+      "text": "我们现在已经感受到了与数千次黑洞合并相对应的数千次此类震动。"
+    },
+    {
+      "source_event_index": 910,
+      "start_ms": 4964880,
+      "end_ms": 4971440,
+      "text": "然后还有更多证据。后来，我们有了所谓的事件视界"
+    },
+    {
+      "source_event_index": 911,
+      "start_ms": 4971440,
+      "end_ms": 4975360,
+      "text": "望远镜，这是遍布地球的射电望远镜的巨大组合，"
+    },
+    {
+      "source_event_index": 912,
+      "start_ms": 4975360,
+      "end_ms": 4980720,
+      "text": "能够非常仔细地观察我们银河系中心的黑洞，人马座 A*，"
+    },
+    {
+      "source_event_index": 913,
+      "start_ms": 4980720,
+      "end_ms": 4988480,
+      "text": "以及我们邻近星系中心的更大黑洞，并且非常微弱地看到"
+    },
+    {
+      "source_event_index": 914,
+      "start_ms": 4988480,
+      "end_ms": 4993680,
+      "text": "落入这些黑洞的物质发出的无线电发射，在落入黑洞时会发出超明亮的光芒。"
+    },
+    {
+      "source_event_index": 915,
+      "start_ms": 4996560,
+      "end_ms": 5002240,
+      "text": "所以我们感觉到了它们，我们已经看到了它们，并且我们已经看到了它们对轨道恒星的引力影响。"
+    },
+    {
+      "source_event_index": 916,
+      "start_ms": 5002240,
+      "end_ms": 5006160,
+      "text": "现阶段我们非常有信心黑洞的存在。"
+    },
+    {
+      "source_event_index": 917,
+      "start_ms": 5006160,
+      "end_ms": 5009760,
+      "text": "太美了，不仅一个人可以想出这个理论，而且这个理论还有如此多的意义"
+    },
+    {
+      "source_event_index": 918,
+      "start_ms": 5009760,
+      "end_ms": 5016720,
+      "text": "影响深远，我们可以拿出评估、干扰和理解的机制"
+    },
+    {
+      "source_event_index": 919,
+      "start_ms": 5016720,
+      "end_ms": 5023040,
+      "text": "它的含义有很多不同的疯狂方式。自由度的数量太疯狂了"
+    },
+    {
+      "source_event_index": 920,
+      "start_ms": 5023040,
+      "end_ms": 5029040,
+      "text": "它涵盖的数量级。你首先通过思考来开始思考它"
+    },
+    {
+      "source_event_index": 921,
+      "start_ms": 5029040,
+      "end_ms": 5035040,
+      "text": "在电梯里跳上跳下的实验，然后它伸手去描述"
+    },
+    {
+      "source_event_index": 922,
+      "start_ms": 5035040,
+      "end_ms": 5040640,
+      "text": "水星轨道和太阳系内可检测到的轨道动力学扰动，"
+    },
+    {
+      "source_event_index": 923,
+      "start_ms": 5040640,
+      "end_ms": 5046080,
+      "text": "然后是光的弯曲，然后它描述了整个星系的旋转，"
+    },
+    {
+      "source_event_index": 924,
+      "start_ms": 5046080,
+      "end_ms": 5050880,
+      "text": "然后描述了整个宇宙的膨胀和潜在的命运。"
+    },
+    {
+      "source_event_index": 925,
+      "start_ms": 5050880,
+      "end_ms": 5054480,
+      "text": "这确实是很多数量级，而且令人印象深刻的是"
+    },
+    {
+      "source_event_index": 926,
+      "start_ms": 5054480,
+      "end_ms": 5059440,
+      "text": "几乎是一个人的作品。坦率地说，我们的宇宙应该受到尊重"
+    },
+    {
+      "source_event_index": 927,
+      "start_ms": 5059440,
+      "end_ms": 5063280,
+      "text": "用如此美丽的理论来描述。你能讲一下 GR 的故事吗？"
+    },
+    {
+      "source_event_index": 928,
+      "start_ms": 5063280,
+      "end_ms": 5067360,
+      "text": "爱因斯坦的理论让全世界都相信是真的？"
+    },
+    {
+      "source_event_index": 929,
+      "start_ms": 5068080,
+      "end_ms": 5072160,
+      "text": "这就是光的弯曲。牛顿存在已知的异常现象"
+    },
+    {
+      "source_event_index": 930,
+      "start_ms": 5072160,
+      "end_ms": 5077840,
+      "text": "事先了解物理，就像我们无法完全正确地获得水星的轨道一样。"
+    },
+    {
+      "source_event_index": 931,
+      "start_ms": 5078800,
+      "end_ms": 5082080,
+      "text": "广义相对论非常好的早期测试之一是它确实"
+    },
+    {
+      "source_event_index": 932,
+      "start_ms": 5082080,
+      "end_ms": 5086640,
+      "text": "使水星的轨道完全正确。所以这是一个很好的确认。"
+    },
+    {
+      "source_event_index": 933,
+      "start_ms": 5086640,
+      "end_ms": 5089760,
+      "text": "但与此同时，这并不是那么令人满意，因为它是一个数字"
+    },
+    {
+      "source_event_index": 934,
+      "start_ms": 5089760,
+      "end_ms": 5093680,
+      "text": "是已知的，而不是你发明一种理论然后它正确预测的理论。"
+    },
+    {
+      "source_event_index": 935,
+      "start_ms": 5093680,
+      "end_ms": 5098080,
+      "text": "如果你在不知道的情况下得到了正确的答案，那就更令人印象深刻了"
+    },
+    {
+      "source_event_index": 936,
+      "start_ms": 5098080,
+      "end_ms": 5101440,
+      "text": "提前知道正确答案是什么。这就是光的弯曲。"
+    },
+    {
+      "source_event_index": 937,
+      "start_ms": 5101440,
+      "end_ms": 5103360,
+      "text": "当然，从历史上看，这是最有影响力的。"
+    },
+    {
+      "source_event_index": 938,
+      "start_ms": 5105200,
+      "end_ms": 5112880,
+      "text": "根据广义相对论，所有能量都有引力，所有能量都受到引力的影响。"
+    },
+    {
+      "source_event_index": 939,
+      "start_ms": 5112880,
+      "end_ms": 5117520,
+      "text": "所以光，当它经过像太阳这样的大质量物体时，会向这个方向弯曲 太阳的"
+    },
+    {
+      "source_event_index": 940,
+      "start_ms": 5117520,
+      "end_ms": 5118960,
+      "text": "。事实上，"
+    },
+    {
+      "source_event_index": 941,
+      "start_ms": 5118960,
+      "end_ms": 5124160,
+      "text": "同样的情况也会发生在牛顿物理学中。假设有一个粒子在移动。"
+    },
+    {
+      "source_event_index": 942,
+      "start_ms": 5127840,
+      "end_ms": 5130720,
+      "text": "你知道它经过太阳时弯曲了多少，具体取决于"
+    },
+    {
+      "source_event_index": 943,
+      "start_ms": 5130720,
+      "end_ms": 5134720,
+      "text": "它的冲击参数，还有它的速度。速度越快，弯曲就越少。"
+    },
+    {
+      "source_event_index": 944,
+      "start_ms": 5134720,
+      "end_ms": 5139200,
+      "text": "所以你只需采用牛顿公式，代入等于光速的速度，"
+    },
+    {
+      "source_event_index": 945,
+      "start_ms": 5139200,
+      "end_ms": 5141280,
+      "text": "看看你会得到什么答案。达到一定金额即可领取"
+    },
+    {
+      "source_event_index": 946,
+      "start_ms": 5141280,
+      "end_ms": 5146880,
+      "text": "通过牛顿物理学弯曲。在广义相对论中，你可以做"
+    },
+    {
+      "source_event_index": 947,
+      "start_ms": 5146880,
+      "end_ms": 5150080,
+      "text": "同样的计算，你实际上得到双倍的牛顿答案。"
+    },
+    {
+      "source_event_index": 948,
+      "start_ms": 5151680,
+      "end_ms": 5156320,
+      "text": "它的历史有点奇怪。在他写完之前"
+    },
+    {
+      "source_event_index": 949,
+      "start_ms": 5156320,
+      "end_ms": 5165040,
+      "text": "广义相对论，爱因斯坦根据他对等价性的理解做出了预测"
+    },
+    {
+      "source_event_index": 950,
+      "start_ms": 5165040,
+      "end_ms": 5169280,
+      "text": "这个答案应该是什么的原则。他写下了答案，然后在"
+    },
+    {
+      "source_event_index": 951,
+      "start_ms": 5169280,
+      "end_ms": 5173520,
+      "text": "对他和其他一些对此感兴趣的人的回应，人们正在发送"
+    },
+    {
+      "source_event_index": 952,
+      "start_ms": 5173520,
+      "end_ms": 5177600,
+      "text": "出去探险并尝试测量它。我认为他做的第一件事就是"
+    },
+    {
+      "source_event_index": 953,
+      "start_ms": 5177600,
+      "end_ms": 5186400,
+      "text": "给天文台打电话说：“你能看看太阳后面遥远的星星并测量它们如何"
+    },
+    {
+      "source_event_index": 954,
+      "start_ms": 5186400,
+      "end_ms": 5190400,
+      "text": "光线经过太阳时会弯曲吗？”这是真正的理论家举动，"
+    },
+    {
+      "source_event_index": 955,
+      "start_ms": 5190400,
+      "end_ms": 5195360,
+      "text": "因为我认为威尔逊山天文台台长说：“绝对不是。"
+    },
+    {
+      "source_event_index": 956,
+      "start_ms": 5195360,
+      "end_ms": 5197920,
+      "text": "我们不能这样做。如果你用望远镜对着太阳，你就会失明。"
+    },
+    {
+      "source_event_index": 957,
+      "start_ms": 5197920,
+      "end_ms": 5200960,
+      "text": "如果你把它指向太阳旁边，你就会被日冕冲走"
+    },
+    {
+      "source_event_index": 958,
+      "start_ms": 5200960,
+      "end_ms": 5204720,
+      "text": "太阳，你将看不到任何东西。”除非有一次你不会得到"
+    },
+    {
+      "source_event_index": 959,
+      "start_ms": 5204720,
+      "end_ms": 5210320,
+      "text": "被太阳冲走，那是在日全食期间，当月亮挡住太阳时"
+    },
+    {
+      "source_event_index": 960,
+      "start_ms": 5210320,
+      "end_ms": 5215520,
+      "text": "您可以看到距离太阳非常近的恒星并测量它们后面光线的弯曲。"
+    },
+    {
+      "source_event_index": 961,
+      "start_ms": 5215520,
+      "end_ms": 5219200,
+      "text": "所以在 1910 年代，有一大堆探险活动"
+    },
+    {
+      "source_event_index": 962,
+      "start_ms": 5219200,
+      "end_ms": 5228080,
+      "text": "发送来测量光的偏转。他们会把车停在全食路径上，然后看"
+    },
+    {
+      "source_event_index": 963,
+      "start_ms": 5228080,
+      "end_ms": 5233920,
+      "text": "通过望远镜观察太阳旁边的恒星，看看它们是否在天空中移动，"
+    },
+    {
+      "source_event_index": 964,
+      "start_ms": 5233920,
+      "end_ms": 5238480,
+      "text": "如果他们搬了，搬了多少。我认为第一次是在 1911 年。"
+    },
+    {
+      "source_event_index": 965,
+      "start_ms": 5238480,
+      "end_ms": 5243520,
+      "text": "他们去阿根廷看日食，一切都准备好了。"
+    },
+    {
+      "source_event_index": 966,
+      "start_ms": 5243520,
+      "end_ms": 5247600,
+      "text": "这就是这个东西的问题。你到达那里，一路到达阿根廷，"
+    },
+    {
+      "source_event_index": 967,
+      "start_ms": 5247600,
+      "end_ms": 5251440,
+      "text": "那时候走了很远的路，然后就被云彩冲走了。"
+    },
+    {
+      "source_event_index": 968,
+      "start_ms": 5251440,
+      "end_ms": 5261360,
+      "text": "你什么也看不到，这非常令人沮丧。下一次是由德国赞助的探险队"
+    },
+    {
+      "source_event_index": 969,
+      "start_ms": 5261360,
+      "end_ms": 5267520,
+      "text": "军火制造商克虏伯公司前往克里米亚并试图在那里进行测量。"
+    },
+    {
+      "source_event_index": 970,
+      "start_ms": 5267520,
+      "end_ms": 5274960,
+      "text": "日食发生前夕，第一次世界大战爆发，现在德国和俄罗斯正处于战争状态。"
+    },
+    {
+      "source_event_index": 971,
+      "start_ms": 5274960,
+      "end_ms": 5280160,
+      "text": "他们都被逮捕并在战争的剩余时间里转交，所以这也失败了。"
+    },
+    {
+      "source_event_index": 972,
+      "start_ms": 5280160,
+      "end_ms": 5283920,
+      "text": "他们都失败了，这对爱因斯坦来说实际上是一件好事。"
+    },
+    {
+      "source_event_index": 973,
+      "start_ms": 5283920,
+      "end_ms": 5287040,
+      "text": "事实证明，爱因斯坦最初的等价原理论证——在他拥有完全的一般性之前"
+    },
+    {
+      "source_event_index": 974,
+      "start_ms": 5287040,
+      "end_ms": 5297040,
+      "text": "相对论——是错误的，并导致他预测广义相对论中光的弯曲会"
+    },
+    {
+      "source_event_index": 975,
+      "start_ms": 5297040,
+      "end_ms": 5301600,
+      "text": "与牛顿物理学中的相同。战争期间，当一切都关闭时"
+    },
+    {
+      "source_event_index": 976,
+      "start_ms": 5301600,
+      "end_ms": 5306320,
+      "text": "下来，没有人考虑日食探险，他纠正了这个错误并且"
+    },
+    {
+      "source_event_index": 977,
+      "start_ms": 5306320,
+      "end_ms": 5310640,
+      "text": "提出了一个新的预测，实际上它将是牛顿预测的两倍。"
+    },
+    {
+      "source_event_index": 978,
+      "start_ms": 5310640,
+      "end_ms": 5315200,
+      "text": "然后在 1919 年，阿瑟·爱丁顿爵士发起了一支英国探险队前往"
+    },
+    {
+      "source_event_index": 979,
+      "start_ms": 5315200,
+      "end_ms": 5320640,
+      "text": "观察世界各地的日食并成功回来并宣告"
+    },
+    {
+      "source_event_index": 980,
+      "start_ms": 5321360,
+      "end_ms": 5327120,
+      "text": "确实是爱因斯坦的预言。这是牛顿预测的两倍。"
+    },
+    {
+      "source_event_index": 981,
+      "start_ms": 5327120,
+      "end_ms": 5330560,
+      "text": "这才是爱因斯坦成为全球名人的真正原因。"
+    },
+    {
+      "source_event_index": 982,
+      "start_ms": 5330560,
+      "end_ms": 5338240,
+      "text": "这项英国实验证实了德国起源理论，是战后和解的一部分，"
+    },
+    {
+      "source_event_index": 983,
+      "start_ms": 5338240,
+      "end_ms": 5344960,
+      "text": "和爱因斯坦已经弄清楚了一切。我想说的是，一般情况下，"
+    },
+    {
+      "source_event_index": 984,
+      "start_ms": 5344960,
+      "end_ms": 5350560,
+      "text": "相对论成为共识，人们对这个令人印象深刻的测试非常信服。"
+    },
+    {
+      "source_event_index": 985,
+      "start_ms": 5350560,
+      "end_ms": 5356320,
+      "text": "如今，我们已经做了比这多得多的测试，非常精确的轨道动力学。"
+    },
+    {
+      "source_event_index": 986,
+      "start_ms": 5356320,
+      "end_ms": 5359680,
+      "text": "你可以在水星轨道甚至其他行星上看到它。"
+    },
+    {
+      "source_event_index": 987,
+      "start_ms": 5360320,
+      "end_ms": 5365120,
+      "text": "你可以测量光的红移，引力"
+    },
+    {
+      "source_event_index": 988,
+      "start_ms": 5365120,
+      "end_ms": 5368960,
+      "text": "对光的传播或光的能量的影响，遍布各处。"
+    },
+    {
+      "source_event_index": 989,
+      "start_ms": 5368960,
+      "end_ms": 5373120,
+      "text": "但从历史上看，这是对广义相对论最令人印象深刻的证实。"
+    },
+    {
+      "source_event_index": 990,
+      "start_ms": 5373120,
+      "end_ms": 5377280,
+      "text": "你可以问的一个问题是，作为一个社会，我们可能正在花费，"
+    },
+    {
+      "source_event_index": 991,
+      "start_ms": 5377280,
+      "end_ms": 5381280,
+      "text": "数十亿，也许数百亿美元用于建造这些巨大的物理实验。"
+    },
+    {
+      "source_event_index": 992,
+      "start_ms": 5382640,
+      "end_ms": 5389040,
+      "text": "如果你看看有史以来最美丽、最重要的物理理论，"
+    },
+    {
+      "source_event_index": 993,
+      "start_ms": 5389040,
+      "end_ms": 5393520,
+      "text": "看起来就像是一个在山洞里思考的人。这似乎是该理论的经验基础"
+    },
+    {
+      "source_event_index": 994,
+      "start_ms": 5393520,
+      "end_ms": 5397760,
+      "text": "也许知道光有速度，也许你需要通过实验测量G。"
+    },
+    {
+      "source_event_index": 995,
+      "start_ms": 5397760,
+      "end_ms": 5401280,
+      "text": "不是真的。 G是广义相对论中的自由参数。"
+    },
+    {
+      "source_event_index": 996,
+      "start_ms": 5401280,
+      "end_ms": 5407600,
+      "text": "不是必需的。你是对的，经验基础相当薄弱。"
+    },
+    {
+      "source_event_index": 997,
+      "start_ms": 5407600,
+      "end_ms": 5411600,
+      "text": "你不需要太多，而且理论物理学家的费用相当便宜。"
+    },
+    {
+      "source_event_index": 998,
+      "start_ms": 5412640,
+      "end_ms": 5416000,
+      "text": "诱惑很大。为什么我们不把所有的钱都花在理论物理学家身上"
+    },
+    {
+      "source_event_index": 999,
+      "start_ms": 5416000,
+      "end_ms": 5422160,
+      "text": "不做这些极其昂贵的实验吗？嗯，这些AI公司确实在增加"
+    },
+    {
+      "source_event_index": 1000,
+      "start_ms": 5422160,
+      "end_ms": 5428480,
+      "text": "理论物理学家的需求曲线。没错，现在已经不那么便宜了。"
+    },
+    {
+      "source_event_index": 1001,
+      "start_ms": 5428480,
+      "end_ms": 5431920,
+      "text": "但这能让你走多远呢？我想说广义相对论"
+    },
+    {
+      "source_event_index": 1002,
+      "start_ms": 5431920,
+      "end_ms": 5437920,
+      "text": "或许是其中的一个极端。通常情况并非如此"
+    },
+    {
+      "source_event_index": 1003,
+      "start_ms": 5437920,
+      "end_ms": 5445440,
+      "text": "研究物理学史。这确实更接近一些安兰德英雄"
+    },
+    {
+      "source_event_index": 1004,
+      "start_ms": 5445440,
+      "end_ms": 5450880,
+      "text": "独自坐着，一心的产物。他得到了各方面的帮助，"
+    },
+    {
+      "source_event_index": 1005,
+      "start_ms": 5450880,
+      "end_ms": 5454240,
+      "text": "但这确实是他多年来追求的独特愿景。"
+    },
+    {
+      "source_event_index": 1006,
+      "start_ms": 5457840,
+      "end_ms": 5461440,
+      "text": "他把它写下来，很多人几乎立刻就印象深刻。"
+    },
+    {
+      "source_event_index": 1007,
+      "start_ms": 5461440,
+      "end_ms": 5466240,
+      "text": "它确实需要发起一次有点昂贵的日食探险才能去"
+    },
+    {
+      "source_event_index": 1008,
+      "start_ms": 5466240,
+      "end_ms": 5471040,
+      "text": "在他真正获得全球名人之前确认这一点，并且大多数人都被它所吸引。"
+    },
+    {
+      "source_event_index": 1009,
+      "start_ms": 5471040,
+      "end_ms": 5478800,
+      "text": "但这可能是最极端的例子之一，有人只是坐下来思考"
+    },
+    {
+      "source_event_index": 1010,
+      "start_ms": 5478800,
+      "end_ms": 5483520,
+      "text": "非常努力，写下了一个真实的理论。从某种意义上说，物理学"
+    },
+    {
+      "source_event_index": 1011,
+      "start_ms": 5483520,
+      "end_ms": 5487840,
+      "text": "从那时起就一直追求这个高度。人们喜欢这种浪漫的愿景"
+    },
+    {
+      "source_event_index": 1012,
+      "start_ms": 5487840,
+      "end_ms": 5492080,
+      "text": "他们自己只是坐下来，很少有经验性的见解，并且思考得非常，"
+    },
+    {
+      "source_event_index": 1013,
+      "start_ms": 5492080,
+      "end_ms": 5497520,
+      "text": "非常努力地做思想实验。通常效果不太好"
+    },
+    {
+      "source_event_index": 1014,
+      "start_ms": 5497520,
+      "end_ms": 5501280,
+      "text": "对于其他人来说就像对爱因斯坦一样。事实上，它的效果甚至没有那么好"
+    },
+    {
+      "source_event_index": 1015,
+      "start_ms": 5501280,
+      "end_ms": 5508400,
+      "text": "爱因斯坦职业生涯的后期。仅靠思考你能走多远？"
+    },
+    {
+      "source_event_index": 1016,
+      "start_ms": 5508400,
+      "end_ms": 5512880,
+      "text": "广义相对论需要什么？你需要光速的有限性。"
+    },
+    {
+      "source_event_index": 1017,
+      "start_ms": 5512880,
+      "end_ms": 5515840,
+      "text": "你需要说服自己不仅光速是有限的，"
+    },
+    {
+      "source_event_index": 1018,
+      "start_ms": 5515840,
+      "end_ms": 5521200,
+      "text": "但是对称性可以保护这一点，这是爱因斯坦在狭义相对论中提出的。"
+    },
+    {
+      "source_event_index": 1019,
+      "start_ms": 5521200,
+      "end_ms": 5526240,
+      "text": "那么您可能需要等效原理：这是一个经验事实"
+    },
+    {
+      "source_event_index": 1020,
+      "start_ms": 5526240,
+      "end_ms": 5529360,
+      "text": "一切事物的惯性质量和引力质量都是相同的。"
+    },
+    {
+      "source_event_index": 1021,
+      "start_ms": 5529360,
+      "end_ms": 5533280,
+      "text": "但这非常稀疏。仅从这两件事来看……"
+    },
+    {
+      "source_event_index": 1022,
+      "start_ms": 5533280,
+      "end_ms": 5536720,
+      "text": "还有一些选择。但如果你有很多很多"
+    },
+    {
+      "source_event_index": 1023,
+      "start_ms": 5536720,
+      "end_ms": 5541280,
+      "text": "大型语言模型，选项数量有限，您可以探索"
+    },
+    {
+      "source_event_index": 1024,
+      "start_ms": 5541280,
+      "end_ms": 5546080,
+      "text": "整棵树并说：“好吧，专注于此。等效原理是"
+    },
+    {
+      "source_event_index": 1025,
+      "start_ms": 5546080,
+      "end_ms": 5551840,
+      "text": "超级重要，还有另一件事。现在放弃同时性，看看如何"
+    },
+    {
+      "source_event_index": 1026,
+      "start_ms": 5551840,
+      "end_ms": 5553920,
+      "text": "能带你走多远。”只有有限个"
+    },
+    {
+      "source_event_index": 1027,
+      "start_ms": 5553920,
+      "end_ms": 5559040,
+      "text": "那里有很多值得探索的东西。我认为他们非常非常幸运"
+    },
+    {
+      "source_event_index": 1028,
+      "start_ms": 5559040,
+      "end_ms": 5563120,
+      "text": "广义相对论，在这种情况下它非常强大。"
+    },
+    {
+      "source_event_index": 1029,
+      "start_ms": 5563120,
+      "end_ms": 5570240,
+      "text": "但是如果你有很多很多爱因斯坦并且你给了他们每个人不同的选择，"
+    },
+    {
+      "source_event_index": 1030,
+      "start_ms": 5570240,
+      "end_ms": 5574720,
+      "text": "你大概可以同时看到它们。在当今物理学的前沿，"
+    },
+    {
+      "source_event_index": 1031,
+      "start_ms": 5574720,
+      "end_ms": 5578240,
+      "text": "根据您的经验，感觉是否就像只有数百万个机器自主运行一样"
+    },
+    {
+      "source_event_index": 1032,
+      "start_ms": 5578240,
+      "end_ms": 5585040,
+      "text": "你可能会有巨大的发现，或者我们现在处于不同的时代，真的"
+    },
+    {
+      "source_event_index": 1033,
+      "start_ms": 5586400,
+      "end_ms": 5589920,
+      "text": "这种并行性的用处有限？我觉得还是有用处的。"
+    },
+    {
+      "source_event_index": 1034,
+      "start_ms": 5589920,
+      "end_ms": 5594960,
+      "text": "我确实认为科学的不同部分有不同的分支分数，以及如何"
+    },
+    {
+      "source_event_index": 1035,
+      "start_ms": 5594960,
+      "end_ms": 5602080,
+      "text": "你需要做很多实验才能剪掉那根树枝。我谈到了追逐爱因斯坦的巅峰。"
+    },
+    {
+      "source_event_index": 1036,
+      "start_ms": 5602080,
+      "end_ms": 5605760,
+      "text": "可以说，弦理论确实在这方面全力以赴。"
+    },
+    {
+      "source_event_index": 1037,
+      "start_ms": 5606960,
+      "end_ms": 5610720,
+      "text": "爱因斯坦的理论只是广义相对论。还有量子力学。尝试结婚"
+    },
+    {
+      "source_event_index": 1038,
+      "start_ms": 5610720,
+      "end_ms": 5614080,
+      "text": "这两者是一致的——广义相对论根本做不到这一点，"
+    },
+    {
+      "source_event_index": 1039,
+      "start_ms": 5614080,
+      "end_ms": 5619600,
+      "text": "广义相对论中没有量子力学——激励了很多人。"
+    },
+    {
+      "source_event_index": 1040,
+      "start_ms": 5619600,
+      "end_ms": 5625040,
+      "text": "问题是，为了在实验中看到这一点，如果你只做维度"
+    },
+    {
+      "source_event_index": 1041,
+      "start_ms": 5625040,
+      "end_ms": 5628960,
+      "text": "分析，你需要巨大的粒子对撞机，绝对是银河系大小的粒子对撞机。"
+    },
+    {
+      "source_event_index": 1042,
+      "start_ms": 5628960,
+      "end_ms": 5634640,
+      "text": "很难看到这些东西。但这并不能阻止人们。"
+    },
+    {
+      "source_event_index": 1043,
+      "start_ms": 5634640,
+      "end_ms": 5637920,
+      "text": "我的意思是，它阻止了很多人，但很多人并没有停止并继续尝试这样做。"
+    },
+    {
+      "source_event_index": 1044,
+      "start_ms": 5638480,
+      "end_ms": 5645600,
+      "text": "所以你只需要希望它的结果有点像广义相对论，"
+    },
+    {
+      "source_event_index": 1045,
+      "start_ms": 5645600,
+      "end_ms": 5650880,
+      "text": "只需非常非常努力地思考，用最少的实验输入，"
+    },
+    {
+      "source_event_index": 1046,
+      "start_ms": 5650880,
+      "end_ms": 5660000,
+      "text": "你可以摸索找到正确答案。为了实现这一点，您拥有的工具"
+    },
+    {
+      "source_event_index": 1047,
+      "start_ms": 5660000,
+      "end_ms": 5664960,
+      "text": "您的处理是数学一致性以及它是否在已知限制内正确减少。"
+    },
+    {
+      "source_event_index": 1048,
+      "start_ms": 5664960,
+      "end_ms": 5670480,
+      "text": "所以你最好希望只有一个或极少数可能一致"
+    },
+    {
+      "source_event_index": 1049,
+      "start_ms": 5670480,
+      "end_ms": 5675200,
+      "text": "如果你打算这样做的话。如果事实证明有无限的"
+    },
+    {
+      "source_event_index": 1050,
+      "start_ms": 5675200,
+      "end_ms": 5679040,
+      "text": "大量一致的理论，你永远不会摸索到正确的答案，"
+    },
+    {
+      "source_event_index": 1051,
+      "start_ms": 5679040,
+      "end_ms": 5682880,
+      "text": "因为它们都是一致的，而你拥有的唯一工具就是一致性，"
+    },
+    {
+      "source_event_index": 1052,
+      "start_ms": 5682880,
+      "end_ms": 5687680,
+      "text": "也许还有一些美学概念。但如果只有几个，那么也许"
+    },
+    {
+      "source_event_index": 1053,
+      "start_ms": 5687680,
+      "end_ms": 5689760,
+      "text": "你完全可以做到。所以弦理论有一种 我想说，"
+    },
+    {
+      "source_event_index": 1054,
+      "start_ms": 5689760,
+      "end_ms": 5694400,
+      "text": "全力以赴。尝试用最少的实验输入，"
+    },
+    {
+      "source_event_index": 1055,
+      "start_ms": 5694400,
+      "end_ms": 5697600,
+      "text": "相信只有一种一致的引力理论，并且只要做足够的事情"
+    },
+    {
+      "source_event_index": 1056,
+      "start_ms": 5697600,
+      "end_ms": 5704960,
+      "text": "一致性检查你可以找到它。对于其他示例，则要困难得多。"
+    },
+    {
+      "source_event_index": 1057,
+      "start_ms": 5704960,
+      "end_ms": 5708320,
+      "text": "在凝聚态物理中，通常你只需要去做一个"
+    },
+    {
+      "source_event_index": 1058,
+      "start_ms": 5708320,
+      "end_ms": 5713360,
+      "text": "实验看看哪一个是正确的。每当我们未来的人工智能文明到来时"
+    },
+    {
+      "source_event_index": 1059,
+      "start_ms": 5713360,
+      "end_ms": 5718800,
+      "text": "越来越多统一的物理理论，或者做出更好预测的更深层次的理论，"
+    },
+    {
+      "source_event_index": 1060,
+      "start_ms": 5718800,
+      "end_ms": 5727440,
+      "text": "你认为人类能够跟上吗？一旦采取这一步，我们真的会"
+    },
+    {
+      "source_event_index": 1061,
+      "start_ms": 5727440,
+      "end_ms": 5731440,
+      "text": "能够理解我们的人工智能文明所理解的内容吗？"
+    },
+    {
+      "source_event_index": 1062,
+      "start_ms": 5731440,
+      "end_ms": 5736240,
+      "text": "我不知道我们能否完全跟上，但我认为我们会跟得更好"
+    },
+    {
+      "source_event_index": 1063,
+      "start_ms": 5736240,
+      "end_ms": 5741520,
+      "text": "比悲观的预测所暗示的要多。让我们把数学当作"
+    },
+    {
+      "source_event_index": 1064,
+      "start_ms": 5741520,
+      "end_ms": 5747360,
+      "text": "比物理更简单的例子。许多数学家担心这些"
+    },
+    {
+      "source_event_index": 1065,
+      "start_ms": 5747360,
+      "end_ms": 5753040,
+      "text": "大语言模型将变成证明机器。陶渊明有一个词，“消化不良”，他用的是，"
+    },
+    {
+      "source_event_index": 1066,
+      "start_ms": 5753040,
+      "end_ms": 5761600,
+      "text": "，其中这些大语言模型将生成数十亿行难以理解的精益代码，这些代码将作为"
+    },
+    {
+      "source_event_index": 1067,
+      "start_ms": 5761600,
+      "end_ms": 5765520,
+      "text": "证明特定定理是正确的，但不提供任何见解"
+    },
+    {
+      "source_event_index": 1068,
+      "start_ms": 5765520,
+      "end_ms": 5769520,
+      "text": "为什么这可能是真的。那岂不是一个 数学家们说，"
+    },
+    {
+      "source_event_index": 1069,
+      "start_ms": 5769520,
+      "end_ms": 5773760,
+      "text": "令人沮丧的世界。我认为这是一个可能的未来，但实际上"
+    },
+    {
+      "source_event_index": 1070,
+      "start_ms": 5773760,
+      "end_ms": 5780000,
+      "text": "认为这不太可能是未来。因为除了成为超人的证明者之外，"
+    },
+    {
+      "source_event_index": 1071,
+      "start_ms": 5780000,
+      "end_ms": 5784160,
+      "text": "我们还期望这些大型语言模型能够成为超人的解释者。"
+    },
+    {
+      "source_event_index": 1072,
+      "start_ms": 5784960,
+      "end_ms": 5789680,
+      "text": "也许他们会做完全相反的事情。也许他们会采取非常困难的证明"
+    },
+    {
+      "source_event_index": 1073,
+      "start_ms": 5789680,
+      "end_ms": 5794960,
+      "text": "去理解，并通过顽强地尝试、尝试、再尝试，他们将能够来"
+    },
+    {
+      "source_event_index": 1074,
+      "start_ms": 5794960,
+      "end_ms": 5801040,
+      "text": "采用人类可以理解的方式。他们将采取难以取得的证据"
+    },
+    {
+      "source_event_index": 1075,
+      "start_ms": 5801040,
+      "end_ms": 5806320,
+      "text": "理解并使它们易于理解。我认为经验证据还处于早期阶段"
+    },
+    {
+      "source_event_index": 1076,
+      "start_ms": 5806320,
+      "end_ms": 5809680,
+      "text": "但这非常支持这种更积极的愿景。"
+    },
+    {
+      "source_event_index": 1077,
+      "start_ms": 5812160,
+      "end_ms": 5817680,
+      "text": "有一个 Erdős 问题几个月前就被证明了，它"
+    },
+    {
+      "source_event_index": 1078,
+      "start_ms": 5817680,
+      "end_ms": 5820953,
+      "text": "不仅仅是一套难以理解的精益。事实上，这一点甚至在精益中根本没有得到证明。"
+    },
+    {
+      "source_event_index": 1079,
+      "start_ms": 5820953,
+      "end_ms": 5825200,
+      "text": "已被非正式证明。一些人类数学家发表了一篇后续论文，其中采用了这些"
+    },
+    {
+      "source_event_index": 1080,
+      "start_ms": 5825200,
+      "end_ms": 5830560,
+      "text": "机器为证明这个 Erdő 猜想而提出的新的、人类可解释的想法，"
+    },
+    {
+      "source_event_index": 1081,
+      "start_ms": 5830560,
+      "end_ms": 5836160,
+      "text": "并用它们证明新的定理。所以这与那个案例完全相反。"
+    },
+    {
+      "source_event_index": 1082,
+      "start_ms": 5836160,
+      "end_ms": 5842720,
+      "text": "它提出了一个非常人性化的解释想法，然后人类能够完全理解它，"
+    },
+    {
+      "source_event_index": 1083,
+      "start_ms": 5842720,
+      "end_ms": 5846080,
+      "text": "理解得非常好，他们能够将其部署到新场景中。"
+    },
+    {
+      "source_event_index": 1084,
+      "start_ms": 5846080,
+      "end_ms": 5850880,
+      "text": "我们自始至终都看到了这一点。我认为单位距离猜想是一个很好的例子"
+    },
+    {
+      "source_event_index": 1085,
+      "start_ms": 5850880,
+      "end_ms": 5855040,
+      "text": "您一直在讨论的一些主题。一是它完全可以理解，"
+    },
+    {
+      "source_event_index": 1086,
+      "start_ms": 5855040,
+      "end_ms": 5861760,
+      "text": "对其所提出的单位距离猜想的反驳。"
+    },
+    {
+      "source_event_index": 1087,
+      "start_ms": 5861760,
+      "end_ms": 5863520,
+      "text": "或许对你来说。对于一些数学家来说。我不是数学家。"
+    },
+    {
+      "source_event_index": 1088,
+      "start_ms": 5864640,
+      "end_ms": 5870000,
+      "text": "人类之所以没有反驳单位距离猜想，或许是因为他们"
+    },
+    {
+      "source_event_index": 1089,
+      "start_ms": 5870000,
+      "end_ms": 5874640,
+      "text": "错误地相信猜想是正确的。大型语言模型的好处是"
+    },
+    {
+      "source_event_index": 1090,
+      "start_ms": 5874640,
+      "end_ms": 5878800,
+      "text": "它们愿意跨过这道障碍，去做在人类"
+    },
+    {
+      "source_event_index": 1091,
+      "start_ms": 5878800,
+      "end_ms": 5884000,
+      "text": "看来像是浪费时间的事：尝试推翻被认为正确的猜想，最终走到另一端。"
+    },
+    {
+      "source_event_index": 1092,
+      "start_ms": 5884000,
+      "end_ms": 5888880,
+      "text": "这是大型语言模型的另一个方面，让我非常乐观。"
+    },
+    {
+      "source_event_index": 1093,
+      "start_ms": 5888880,
+      "end_ms": 5891760,
+      "text": "他们只是有极大的耐心，即使是做一些可能"
+    },
+    {
+      "source_event_index": 1094,
+      "start_ms": 5891760,
+      "end_ms": 5895920,
+      "text": "看起来成功的可能性很低。亚当，非常感谢你回来"
+    },
+    {
+      "source_event_index": 1095,
+      "start_ms": 5895920,
+      "end_ms": 5899680,
+      "text": "并在你可以构建超级智能的同时执行此操作。"
+    },
+    {
+      "source_event_index": 1096,
+      "start_ms": 5899680,
+      "end_ms": 5902080,
+      "text": "你正在解释 100 年前的物理学，但这非常有趣。"
+    },
+    {
+      "source_event_index": 1097,
+      "start_ms": 5902080,
+      "end_ms": 5904160,
+      "text": "这是一个超级有趣的主题。我非常高兴分享它。"
+    }
+  ],
+  "generation": {
+    "method": "existing-authenticated-browser-text-translation",
+    "visible_model_label": "Advanced Improved accuracy, built with Gemini",
+    "batches": [
+      {
+        "first_segment": 0,
+        "last_segment": 45,
+        "generated_at": "2026-09-25T16:27:39.201042Z",
+        "output_sha256": "58b7a89bc72b6395bf9b50a6569754ea953084b0e0bdc79061d22338e5a3f93f",
+        "source_sha256": "9b09011a7b286bf1107485b95bfb270675950376482dbc90f2c67bb96083697e"
+      },
+      {
+        "first_segment": 46,
+        "last_segment": 95,
+        "generated_at": "2026-09-25T16:29:32.211132Z",
+        "output_sha256": "25b830208f20689afe00f3676850ed2d98bd91e86fc4f5eaf769eb60839370c6",
+        "source_sha256": "2629bac3644476eedb9d51529b657c617d421882e44d5f69a68e0bdbf329d848"
+      },
+      {
+        "first_segment": 96,
+        "last_segment": 144,
+        "generated_at": "2026-09-25T16:29:50.969469Z",
+        "output_sha256": "84ed5645cb8e88fe59e55db3a21ce15e9577a772ffe29999afbc446243ad656d",
+        "source_sha256": "d7a682811e963547a3da70141015510fa5ecef97557d549cd2efe3b0a29bfe04"
+      },
+      {
+        "first_segment": 145,
+        "last_segment": 192,
+        "generated_at": "2026-09-25T16:31:10.845535Z",
+        "output_sha256": "0ebcb345e2e81fa85c504bb1a58de737a0646d86cb374a0a41f8a79012a00c90",
+        "source_sha256": "26060d1cc66d5feb2029913f32fa81169761552cb2d52e0a2282f4a2b3f17177"
+      },
+      {
+        "first_segment": 193,
+        "last_segment": 239,
+        "generated_at": "2026-09-25T16:31:22.751319Z",
+        "output_sha256": "364ad3dfbaadfe309901d1c0c32dde8c8ab1b295cc2a24bd1b0a955f37989845",
+        "source_sha256": "59e34c37865762706c86361e3bc89bf7fa34cad0cfb2641ea3771db51b4fc6d5"
+      },
+      {
+        "first_segment": 240,
+        "last_segment": 288,
+        "generated_at": "2026-09-25T16:32:52.361102Z",
+        "output_sha256": "f3b61994d3a58b5f55f4b28342d0327536ef0e5f2ba702a40d6523c33bf9f6bc",
+        "source_sha256": "821813477ee8240f63b6a3c1753881c9e22d5b824f8a38ef8d40a1bf36701004"
+      },
+      {
+        "first_segment": 289,
+        "last_segment": 337,
+        "generated_at": "2026-09-25T16:33:08.870002Z",
+        "output_sha256": "f3cca7f2df2ea69e2aedc820d089cc1e1da53bb293e912b78a4e401aca0c34ea",
+        "source_sha256": "7d9a132402c33bceceecde565ff3021ea0d60c7c365c92546b82a3c60e299b66"
+      },
+      {
+        "first_segment": 338,
+        "last_segment": 384,
+        "generated_at": "2026-09-25T16:34:23.943965Z",
+        "output_sha256": "60300aa011dd25f0235a1e1d23863f94749e1f70f7103650b9a98203b949d6b2",
+        "source_sha256": "3443596d4c5110922a05629640c1d59f5dbb191929ecedec4a2bcce4a76cd01a"
+      },
+      {
+        "first_segment": 385,
+        "last_segment": 432,
+        "generated_at": "2026-09-25T16:34:54.410841Z",
+        "output_sha256": "0a4b6b314ff5ac2751d1cb295a19864bc8f87f05d5e1464555160b5547868ce2",
+        "source_sha256": "8df370838e17a0eceb734feeff353dc5f777dee0dc9286eb3536ed0a1f266c40"
+      },
+      {
+        "first_segment": 433,
+        "last_segment": 482,
+        "generated_at": "2026-09-25T16:36:34.659783Z",
+        "output_sha256": "ca90535fb39c937cbe77ee3fd1459009af2ecfc19055d3ee55446ac587dd661a",
+        "source_sha256": "f9c1093a5882637f9b13925fe7e5057c824c7879bab72bbd8ce12b246daa3822"
+      },
+      {
+        "first_segment": 483,
+        "last_segment": 532,
+        "generated_at": "2026-09-25T16:37:01.760622Z",
+        "output_sha256": "386fa510afe73f710d71997af6b76eda9a2e23cb6eac08910d1f8fa127370dea",
+        "source_sha256": "eab59a170c2085fbd0c77cff6ebcdb2601be1fa90ea790e365571c1016f15c11"
+      },
+      {
+        "first_segment": 533,
+        "last_segment": 580,
+        "generated_at": "2026-09-25T16:38:33.309996Z",
+        "output_sha256": "2feb8ada953c92b355c04ded1049bd7e263ae378db8b8d85d84758e88c02cb0e",
+        "source_sha256": "119faea75a40b798c42b49a9dbaae4b515ebbc8f0929a49f98855b0bc91661fd"
+      },
+      {
+        "first_segment": 581,
+        "last_segment": 628,
+        "generated_at": "2026-09-25T16:38:49.168447Z",
+        "output_sha256": "83fa0ca65c11d851d21b48460047c6d441cb160408ea70a5a3bafabd3230bea6",
+        "source_sha256": "c5f5049c3fb7b05c64a9d6d6ca2a356e08bfe3cee78dfd7fec6d15b88ab8a095"
+      },
+      {
+        "first_segment": 629,
+        "last_segment": 679,
+        "generated_at": "2026-09-25T16:39:49.567889Z",
+        "output_sha256": "b6ec912a067ce753287a06fddd6f9f72b1246e0c4f0da8f61e582225d419c8c1",
+        "source_sha256": "33397965d848f193586d5e2b914b6621b3116e770a6fc9a9f47b359e8060ad8f"
+      },
+      {
+        "first_segment": 680,
+        "last_segment": 726,
+        "generated_at": "2026-09-25T16:40:14.192768Z",
+        "output_sha256": "8928d65a5cfde182951b371a20286ac2f3b597240cb1780beb3ca8540e63ef24",
+        "source_sha256": "198a2f9e54c53ed09ac650ea13804f010956b8133eb4109e125c2379a48ccc32"
+      },
+      {
+        "first_segment": 727,
+        "last_segment": 771,
+        "generated_at": "2026-09-25T16:41:00.943794Z",
+        "output_sha256": "eebf23e650a8bf275c53801d0e82c43e422433f15f0f453a0701cd0cd9372fa9",
+        "source_sha256": "b94ae43f570f3f7282c491581216c44020b7cd809433ccc5f2e9e910d8bc6c85"
+      },
+      {
+        "first_segment": 772,
+        "last_segment": 820,
+        "generated_at": "2026-09-25T16:41:21.566971Z",
+        "output_sha256": "f2cc48b7c9207b46b8a23e6bdcd3b02844327c13961781be86eeb578ea02ceaf",
+        "source_sha256": "880c82d60e39b84f62530bd5cd2d4aa73986c2052d15c94d509a843bcda1c8d3"
+      },
+      {
+        "first_segment": 821,
+        "last_segment": 868,
+        "generated_at": "2026-09-25T16:42:42.533949Z",
+        "output_sha256": "efe65f7a2de287fc6cfa37554cddc5b31b702e2ed1bffc92f68c7cca9a4166df",
+        "source_sha256": "106195040c7908e778a4679fa17bad5c9e13be7481e6fc1da162d6779cb2e990"
+      },
+      {
+        "first_segment": 869,
+        "last_segment": 916,
+        "generated_at": "2026-09-25T16:43:01.000320Z",
+        "output_sha256": "f29fd419a8b263d2044550e292be0375dc1efff0a7a65bf215a06091b5fc842f",
+        "source_sha256": "700373bbc5b96e0690a2fa6c31916d3e39f5e41eb3b50efa96c547cc80ad960f"
+      },
+      {
+        "first_segment": 917,
+        "last_segment": 965,
+        "generated_at": "2026-09-25T16:43:48.325676Z",
+        "output_sha256": "9f723617a7bed55e4e066d15f5f8a373da576d85ea0ba005bd167fde7829566f",
+        "source_sha256": "3a79e516bd257bf29e4819a52cf53de3937f3306afdd7b9dbe2fbf100726ffed"
+      },
+      {
+        "first_segment": 966,
+        "last_segment": 1008,
+        "generated_at": "2026-09-25T16:44:17.742394Z",
+        "output_sha256": "c5829ecbb9d1edf9c09801af24c90c281d4d3d6ffb075cc4dc38c6d9fb924bfe",
+        "source_sha256": "37d9a59c0ae18b498e460a400e08126d985daa7b3f78118fbdc41cdf2cc8abb4"
+      },
+      {
+        "first_segment": 1009,
+        "last_segment": 1056,
+        "generated_at": "2026-09-25T16:46:35.437064Z",
+        "output_sha256": "79da0bad89692c206fa3d365c8f1a6a323d0f5f4f997bc832ef629d5f88fae52",
+        "source_sha256": "c35068a3b88f1e7629a7af3bb64315810015f41b6d2c296e56caa28d6d9df418"
+      },
+      {
+        "first_segment": 1057,
+        "last_segment": 1097,
+        "generated_at": "2026-09-25T16:47:20.979049Z",
+        "output_sha256": "5d7b5cb4d630061ec883d3c1deb3470f183d1f3db8c0521ccbf65040d7074737",
+        "source_sha256": "4ddb34ad751d0ef8fd3b87689f871fccd1c870579dae2f6d6f526bce23f91e68"
+      }
+    ],
+    "output_normalization": "Normalize segment markers (including S prefixes and zero padding), move a leading translated fragment after its first marker, normalize whitespace and verified formula punctuation; source wording and timestamps are frozen",
+    "postprocessing": {
+      "actor": "Codex",
+      "status": "machine",
+      "generated_at": "2026-09-25T16:51:59.539781+00:00",
+      "original_translation_sha256": "dc3d7d76bee297e186a1617d041f08a7d56e2aca84831a533800707183b73e6f",
+      "edits": [
+        {
+          "source_event_index": 0,
+          "source_text": "I'm back with Adam Brown. You currently lead BlueShift at Google",
+          "before": "我和亚当·布朗一起回来了。您目前领导 Google 的 BlueShift",
+          "after": "又请到了 Adam Brown。你目前在 Google",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 1,
+          "source_text": "DeepMind, which is cracking science and reasoning. In a previous life, Adam was a prolific physicist,",
+          "before": "DeepMind，正在破解科学和推理。亚当的前世是一位多产的物理学家，",
+          "after": "DeepMind 领导 BlueShift 团队，研究科学与推理问题。Adam 此前是一位成果丰硕的物理学家，",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 547,
+          "source_text": "and I can stay out of the black hole that way.\" That actually doesn't work. The reason it",
+          "before": "这样我就可以远离黑洞了。”这实际上是行不通的。其原因在于",
+          "after": "这样我就能留在黑洞外。”这其实行不通。它",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 548,
+          "source_text": "doesn't work is somewhat instructive for the way gravitational attraction",
+          "before": "不起作用对于万有引力的方式有一定的指导意义",
+          "after": "之所以行不通，可以帮助我们理解引力吸引",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 549,
+          "source_text": "happens in general relativity. Of course, if you think about",
+          "before": "发生在广义相对论中。当然，如果你考虑一下",
+          "after": "在广义相对论中是如何发生的。当然，如果你想一想",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 552,
+          "source_text": "centrifugal force that shoots the astronauts away from the Earth and precisely balances",
+          "before": "将宇航员射离地球并精确平衡的离心力",
+          "after": "使宇航员远离地球的离心力，恰好平衡",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 593,
+          "source_text": "Let's again imagine that you're sitting here, Dwarkesh sitting here some radius",
+          "before": "让我们再次想象你坐在这里，矮人坐在这里一定半径",
+          "after": "让我们再次想象你坐在这里，Dwarkesh坐在这里一定半径",
+          "reasons": [
+            "Preserve the named host"
+          ]
+        },
+        {
+          "source_event_index": 1065,
+          "source_text": "LLMs are just going to turn into proof machines. Terry Tao has this phrase, \"indigestion\", he uses,",
+          "before": "法学硕士将变成证明机器。陶渊明有一个词，“消化不良”，他用的是，",
+          "after": "大语言模型将变成证明机器。陶渊明有一个词，“消化不良”，他用的是，",
+          "reasons": [
+            "LLM refers to a language model in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 1066,
+          "source_text": "in which these LLMs will produce billion-line inscrutable Lean code that will serve as a",
+          "before": "，其中这些法学硕士将生成数十亿行难以理解的精益代码，这些代码将作为",
+          "after": "，其中这些大语言模型将生成数十亿行难以理解的精益代码，这些代码将作为",
+          "reasons": [
+            "LLM refers to a language model in the frozen source"
+          ]
+        },
+        {
+          "source_event_index": 1090,
+          "source_text": "that they're willing to push through that barrier and just waste their time, as a",
+          "before": "他们愿意突破这个障碍，只是浪费时间，作为一个",
+          "after": "它们愿意跨过这道障碍，去做在人类",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        },
+        {
+          "source_event_index": 1091,
+          "source_text": "human would understand it, trying to disprove a presumed true conjecture and reach the other end.",
+          "before": "人类会理解它，试图反驳一个假定的真实猜想并到达另一端。",
+          "after": "看来像是浪费时间的事：尝试推翻被认为正确的猜想，最终走到另一端。",
+          "reasons": [
+            "Machine post-edit after comparison with adjacent frozen source segments"
+          ]
+        }
+      ]
+    }
+  }
+}
