@@ -3126,6 +3126,16 @@ class ExistingMarkdownValidationTests(unittest.TestCase):
         self.assertTrue(any("person · topic" in error for error in invalid_errors))
         self.assertTrue(any("release labels" in error for error in invalid_errors))
 
+    def test_long_navigation_names_keep_a_bounded_topic(self) -> None:
+        path = ROOT / "shows" / "example" / "episodes" / "001" / "README.md"
+        people = "John Schulman、Charlie O’Neill、Beren Millidge"
+        for topic, accepted in (("递归改进还有多远", True), ("很" * 13, False)):
+            errors: list[str] = []
+            validate_episode_navigation_title(
+                path, f'---\nnavigation_title: "{people} · {topic}"\n---\n', errors,
+            )
+            self.assertEqual(not errors, accepted)
+
     def test_front_matter_checks_remain_active(self) -> None:
         path = ROOT / "shows" / "example" / "README.md"
         errors: list[str] = []

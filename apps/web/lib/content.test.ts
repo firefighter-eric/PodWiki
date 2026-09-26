@@ -294,7 +294,7 @@ describe("PodWiki content loader", () => {
         typeof file === "string" && file.endsWith(".md") ? [path.resolve(file)] : []
       ));
 
-      expect(cards).toHaveLength(166);
+      expect(cards).toHaveLength(177);
       expect(markdownReads.some((file) => path.basename(file).startsWith("summary."))).toBe(true);
       expect(markdownReads.filter((file) => path.basename(file).startsWith("transcript."))).toEqual([]);
     } finally {
@@ -368,6 +368,35 @@ describe("PodWiki content loader", () => {
     }, async (content) => {
       await expect(content.getEpisodeCards()).rejects.toThrow("Missing summary for example:001");
     });
+  });
+
+  it("preserves long verified guest names while limiting the topic", async () => {
+    const people = "John Schulman、Charlie O’Neill、Beren Millidge";
+    for (const topic of ["递归改进还有多远", "很".repeat(13)]) {
+      await withFixtureRepository((repositoryRoot) => {
+        const episodeRoot = writeFixtureEpisode({
+          repositoryRoot, folder: "001-long-names", episodeKey: "001",
+        });
+        rewriteFixtureReadme(path.join(episodeRoot, "README.md"), (readme) => readme
+          .replace('navigation_title: "测试人物 · 测试主题"', `navigation_title: "${people} · ${topic}"`)
+          .replace("    name: 测试人物\n    role: guest", `    name: John Schulman
+    role: guest
+  - id: charlie-oneill
+    name: Charlie O’Neill
+    role: guest
+  - id: beren-millidge
+    name: Beren Millidge
+    role: guest`));
+      }, async (content) => {
+        if (topic.length <= 12) {
+          await expect(content.getEpisodeCards()).resolves.toEqual([
+            expect.objectContaining({ navigationTitle: `${people} · ${topic}` }),
+          ]);
+        } else {
+          await expect(content.getEpisodeCards()).rejects.toThrow("navigation_title must be at most");
+        }
+      });
+    }
   });
 
   it("rejects invalid episode metadata before publishing it", async () => {
@@ -795,9 +824,9 @@ workflow:`,
       "xuhuazhe",
       "dwarkesh",
     ]);
-    expect(episodes).toHaveLength(166);
+    expect(episodes).toHaveLength(177);
     expect(Object.fromEntries(shows.map((show) => [show.id, show.episodeCount]))).toEqual({
-      zhangxiaojun: 31,
+      zhangxiaojun: 32,
       sv101: 14,
       svvector: 12,
       latetalk: 20,
@@ -806,7 +835,7 @@ workflow:`,
       whynottv: 5,
       yiqitietalk: 21,
       xuhuazhe: 1,
-      dwarkesh: 19,
+      dwarkesh: 29,
     });
     expect(shows.every((show) => show.episodeCount > 0)).toBe(true);
     expect(episodes.every((episode) => episode.summaryRaw && episode.transcriptSegments.length > 0)).toBe(true);
@@ -879,7 +908,7 @@ workflow:`,
       expect(navigationNames).not.toBe("");
       expect(episode.navigationTitle).toMatch(/^.+ · .+$/u);
       expect(episode.navigationTitle.startsWith(`${navigationNames} · `)).toBe(true);
-      expect(episode.navigationTitle.length).toBeLessThanOrEqual(40);
+      expect(episode.navigationTitle.length).toBeLessThanOrEqual(Math.max(40, navigationNames.length + 15));
       expect(episode.summaryIntro.length).toBeGreaterThan(0);
       expect(episode.summaryIntro).not.toContain("##");
       expect(episode.summaryIntro).not.toMatch(/\[(?:\d{2}:){2}\d{2}\]/u);

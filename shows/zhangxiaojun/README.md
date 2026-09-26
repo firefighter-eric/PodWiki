@@ -29,7 +29,7 @@ sources:
     url: https://feed.xyzfm.space/dk4yh3pkpjp3
     identifiers:
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
-last_verified_at: 2026-08-27
+last_verified_at: 2026-09-26
 ---
 
 # 张小珺商业访谈录
@@ -45,11 +45,13 @@ last_verified_at: 2026-08-27
 - 第 101 期 Bilibili 版比 RSS 短约 4 分 28 秒；发布者明确称其为“三小时访谈”，本地音频抽样又从 RSS 开头、连续正文采样点匹配到结尾，支持其为删去停顿或压缩节奏的完整官方视频播客版，而非高光短版。核验方法与边界保存在冻结 intake 证据中。
 - 第 149 期截至 2026-08-15 仍仅见于官方 RSS，尚无可核实 BVID；保留为 RSS-only 待核实项，不猜测或补造 Bilibili 来源。第 150 期已通过官方 RSS 的期号、嘉宾、纲要与时长匹配到发布者 Bilibili 正片。
 - 第 152 期由官方 RSS 明确标为“学习播客”，并与发布者 Bilibili `技术之美` 播客合集中的完整正片在标题、嘉宾和时长上对应；登录态页面提供中文 AI 字幕。
+- 第 153 期已于 2026-09-26 通过官方 RSS、小宇宙与 Bilibili 完整正片对应核实；B 站音轨比 RSS 展示时长长约 5 秒。平台返回字幕主题错配，经用户授权改用完整音频本地 Qwen ASR，逐字稿为 `machine`、总结为 `draft`，仍需人工核听与事实核查。
 
 ## 单集
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [和曾鸣聊产业史观：残酷的真相、会消亡的公司、优秀≠卓越、“OAI、Anth大概率不是原生时代大赢家”](https://www.bilibili.com/video/BV1XNtJ6UEmm/) | 张小珺商业访谈录 | 2026-09-03 | [总结](./episodes/153-zeng-ming/summary.zh-CN.md) | [逐字稿](./episodes/153-zeng-ming/transcript.zh-CN.md) |
 | [领读Kimi K3技术报告：从架构创新聊起，注意力美学、多教师蒸馏和开源MoE](https://www.bilibili.com/video/BV1KZ8X6uEPL/) | 张小珺商业访谈录 | 2026-08-26 | [总结](./episodes/152-sun-yutao/summary.zh-CN.md) | [逐字稿](./episodes/152-sun-yutao/transcript.zh-CN.md) |
 | [对英伟达研究副总裁刘洺堉的4小时访谈：Cosmos 3、世界模型、武术、黄仁勋影响我的，和你不需要击败所有对手](https://www.bilibili.com/video/BV1fmgj66EtD/) | 张小珺商业访谈录 | 2026-08-13 | [总结](./episodes/150-liu-mingyu/summary.zh-CN.md) | [逐字稿](./episodes/150-liu-mingyu/transcript.zh-CN.md) |
 | [对游凯超3小时访谈：开源Infra、和模型Co-design 、“如果vLLM失败，我们会后悔一辈子”](https://www.bilibili.com/video/BV18Qg96YE1W/) | 张小珺商业访谈录 | 2026-07-28 | [总结](./episodes/148-you-kaichao/summary.zh-CN.md) | [逐字稿](./episodes/148-you-kaichao/transcript.zh-CN.md) |

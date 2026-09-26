@@ -1,0 +1,5991 @@
+{
+  "generated_at": "2026-09-25T16:51:59.655864Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-3641674f66695a4f576959-noam-brown/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "e62c1deb7e92e122dc393583afa0bf05f19e2557ebcd2043f9aab65db347669d"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 3920,
+      "source_event_index": 0,
+      "start_ms": 240,
+      "text": "Today, I’m chatting with Noam Brown, who is a researcher at OpenAI."
+    },
+    {
+      "end_ms": 8400,
+      "source_event_index": 1,
+      "start_ms": 3920,
+      "text": "He was one of the foundational contributors to what became o1 and the reasoning models."
+    },
+    {
+      "end_ms": 12960,
+      "source_event_index": 2,
+      "start_ms": 8400,
+      "text": "Now he’s working on multi-agent systems. Speaking of which, you guys announced last"
+    },
+    {
+      "end_ms": 16960,
+      "source_event_index": 3,
+      "start_ms": 12960,
+      "text": "week that you solved one of the Millennium Prize Problems with a"
+    },
+    {
+      "end_ms": 22640,
+      "source_event_index": 4,
+      "start_ms": 16960,
+      "text": "system of 10,000 different AI agents that spent 130 billion tokens over 88 hours."
+    },
+    {
+      "end_ms": 26560,
+      "source_event_index": 5,
+      "start_ms": 22640,
+      "text": "One of the reasons I’m interested in talking to you is that you were among the first people,"
+    },
+    {
+      "end_ms": 32400,
+      "source_event_index": 6,
+      "start_ms": 26560,
+      "text": "maybe two or three years ago, who were thinking about how the reasoning models"
+    },
+    {
+      "end_ms": 35520,
+      "source_event_index": 7,
+      "start_ms": 32400,
+      "text": "would allow us to see into the future. Because if you scale up inference compute,"
+    },
+    {
+      "end_ms": 38720,
+      "source_event_index": 8,
+      "start_ms": 35520,
+      "text": "you can see what the base capabilities of the models will be a few years in the future."
+    },
+    {
+      "end_ms": 43200,
+      "source_event_index": 9,
+      "start_ms": 38720,
+      "text": "I feel like you’re in a similar position now to help us understand what future capabilities"
+    },
+    {
+      "end_ms": 48240,
+      "source_event_index": 10,
+      "start_ms": 43200,
+      "text": "will look like, given the enormous scaling of agent sizes that we can do right now."
+    },
+    {
+      "end_ms": 53360,
+      "source_event_index": 11,
+      "start_ms": 48240,
+      "text": "The way I think about it, when you plot the performance of these reasoning models with"
+    },
+    {
+      "end_ms": 60000,
+      "source_event_index": 12,
+      "start_ms": 53360,
+      "text": "test-time compute on the x-axis and performance on basically any reasoning benchmark on the y-axis,"
+    },
+    {
+      "end_ms": 63440,
+      "source_event_index": 13,
+      "start_ms": 60000,
+      "text": "you see a very clear pattern where the longer these models take to think about"
+    },
+    {
+      "end_ms": 65840,
+      "source_event_index": 14,
+      "start_ms": 63440,
+      "text": "their answer, the better they do. This is a very natural thing."
+    },
+    {
+      "end_ms": 68800,
+      "source_event_index": 15,
+      "start_ms": 65840,
+      "text": "It’s the same thing with people. If you’re taking the SATs and you"
+    },
+    {
+      "end_ms": 72400,
+      "source_event_index": 16,
+      "start_ms": 68800,
+      "text": "have five minutes to go through the entire exam, you’re not going to do very well."
+    },
+    {
+      "end_ms": 75760,
+      "source_event_index": 17,
+      "start_ms": 72400,
+      "text": "If you have five hours, you’re probably going to do a lot better."
+    },
+    {
+      "end_ms": 79200,
+      "source_event_index": 18,
+      "start_ms": 75760,
+      "text": "The AI models are pretty similar. They’ll spend that time doing this"
+    },
+    {
+      "end_ms": 82480,
+      "source_event_index": 19,
+      "start_ms": 79200,
+      "text": "monologue to themselves, figuring things out, going through different cases,"
+    },
+    {
+      "end_ms": 86800,
+      "source_event_index": 20,
+      "start_ms": 82480,
+      "text": "ruling out different possibilities, building on some of their previous discoveries."
+    },
+    {
+      "end_ms": 90320,
+      "source_event_index": 21,
+      "start_ms": 86800,
+      "text": "The problem is that as you push that further and further, you hit a latency bottleneck."
+    },
+    {
+      "end_ms": 94240,
+      "source_event_index": 22,
+      "start_ms": 90320,
+      "text": "You don’t want to sit around for three years waiting for a response."
+    },
+    {
+      "end_ms": 99040,
+      "source_event_index": 23,
+      "start_ms": 94240,
+      "text": "So what you can do is what a lot of people do. They parallelize. They just get a team of people."
+    },
+    {
+      "end_ms": 101440,
+      "source_event_index": 24,
+      "start_ms": 99600,
+      "text": "If you’re going to found a company, you want to get a group"
+    },
+    {
+      "end_ms": 104240,
+      "source_event_index": 25,
+      "start_ms": 101440,
+      "text": "of people together so you can go faster. It’s the same thing with these AI models."
+    },
+    {
+      "end_ms": 109440,
+      "source_event_index": 26,
+      "start_ms": 105280,
+      "text": "It helps to just have multiple agents working on something because they can go faster."
+    },
+    {
+      "end_ms": 114960,
+      "source_event_index": 27,
+      "start_ms": 110160,
+      "text": "So multi-agent is a way of scaling test-time compute in parallel instead of purely serially."
+    },
+    {
+      "end_ms": 123040,
+      "source_event_index": 28,
+      "start_ms": 114960,
+      "text": "It is less efficient, because it’s not like a single agent has all the context to itself."
+    },
+    {
+      "end_ms": 128400,
+      "source_event_index": 29,
+      "start_ms": 123040,
+      "text": "But it is a very effective way of scaling test-time compute if it’s done well."
+    },
+    {
+      "end_ms": 133760,
+      "source_event_index": 30,
+      "start_ms": 129040,
+      "text": "I’m going to ask a bunch of naive questions. This is an unreleased model, so we haven’t"
+    },
+    {
+      "end_ms": 137760,
+      "source_event_index": 31,
+      "start_ms": 133760,
+      "text": "publicly seen how these systems work. I just have a bunch of ways in which I’m"
+    },
+    {
+      "end_ms": 142160,
+      "source_event_index": 32,
+      "start_ms": 137760,
+      "text": "confused about what the qualitative properties of such systems are."
+    },
+    {
+      "end_ms": 148720,
+      "source_event_index": 33,
+      "start_ms": 142160,
+      "text": "I am shocked by the scale of cognitive effort that you can"
+    },
+    {
+      "end_ms": 154080,
+      "source_event_index": 34,
+      "start_ms": 148720,
+      "text": "concentrate in such a short period of time. Think about what 130 billion tokens are."
+    },
+    {
+      "end_ms": 160560,
+      "source_event_index": 35,
+      "start_ms": 154080,
+      "text": "If it were a single human thinking as a full-time job, stretched back to back, 130 billion tokens"
+    },
+    {
+      "end_ms": 166000,
+      "source_event_index": 36,
+      "start_ms": 160560,
+      "text": "would be a human thinking for 4,000 years. Eight hours a day, working a normal work week."
+    },
+    {
+      "end_ms": 173120,
+      "source_event_index": 37,
+      "start_ms": 166640,
+      "text": "Starting from ancient Sumeria up till today, a single sequential human thinking that long,"
+    },
+    {
+      "end_ms": 176880,
+      "source_event_index": 38,
+      "start_ms": 173120,
+      "text": "concentrated in 88 hours. I feel like qualitatively,"
+    },
+    {
+      "end_ms": 179600,
+      "source_event_index": 39,
+      "start_ms": 176880,
+      "text": "that is a super important consideration. I’m surprised that there isn’t"
+    },
+    {
+      "end_ms": 183840,
+      "source_event_index": 40,
+      "start_ms": 179600,
+      "text": "a bigger parallelization penalty. You can just have 10,000 agents collaborate."
+    },
+    {
+      "end_ms": 187600,
+      "source_event_index": 41,
+      "start_ms": 184560,
+      "text": "Maybe because the agents are better at collaborating than humans might be,"
+    },
+    {
+      "end_ms": 189760,
+      "source_event_index": 42,
+      "start_ms": 187600,
+      "text": "they’re going much faster. They can actually"
+    },
+    {
+      "end_ms": 194000,
+      "source_event_index": 43,
+      "start_ms": 189760,
+      "text": "productively collaborate at such a big scale. Or maybe there is a big parallelization penalty."
+    },
+    {
+      "end_ms": 196640,
+      "source_event_index": 44,
+      "start_ms": 194000,
+      "text": "Let’s talk about the parallelization penalty, and then we can talk about the qualitative stuff."
+    },
+    {
+      "end_ms": 201360,
+      "source_event_index": 45,
+      "start_ms": 196640,
+      "text": "The truth is that we don’t have very good science on multi-agent scaling up to this kind of scale."
+    },
+    {
+      "end_ms": 205280,
+      "source_event_index": 46,
+      "start_ms": 202080,
+      "text": "When we released 5.6, I think that was the first time that we"
+    },
+    {
+      "end_ms": 211440,
+      "source_event_index": 47,
+      "start_ms": 205280,
+      "text": "had a proper multi-agent system in our models. We actually did show some plots in the blog post"
+    },
+    {
+      "end_ms": 217280,
+      "source_event_index": 48,
+      "start_ms": 212320,
+      "text": "of the scaling performance of multi-agent systems, because we have it as an option."
+    },
+    {
+      "end_ms": 221280,
+      "source_event_index": 49,
+      "start_ms": 217280,
+      "text": "It’s Ultra Mode. The default is four agents, but you can set that higher."
+    },
+    {
+      "end_ms": 224480,
+      "source_event_index": 50,
+      "start_ms": 221280,
+      "text": "In the plot, we show what the performance looks like on some benchmarks for one agent,"
+    },
+    {
+      "end_ms": 226960,
+      "source_event_index": 51,
+      "start_ms": 224480,
+      "text": "for four agents working together, for 16 agents working together."
+    },
+    {
+      "end_ms": 232720,
+      "source_event_index": 52,
+      "start_ms": 228640,
+      "text": "It depends on the benchmark, but for some of the benchmarks, what you see is that if"
+    },
+    {
+      "end_ms": 236960,
+      "source_event_index": 53,
+      "start_ms": 232720,
+      "text": "you have four agents working on the problem, it is done twice as fast."
+    },
+    {
+      "end_ms": 241440,
+      "source_event_index": 54,
+      "start_ms": 239040,
+      "text": "Because there are four agents working for half as long, you’re"
+    },
+    {
+      "end_ms": 247920,
+      "source_event_index": 55,
+      "start_ms": 241440,
+      "text": "paying 2x more to get an answer twice as quickly. If you go to 16 agents, you see a similar pattern."
+    },
+    {
+      "end_ms": 252000,
+      "source_event_index": 56,
+      "start_ms": 247920,
+      "text": "It’s a little less efficient, but you continue to see that performance."
+    },
+    {
+      "end_ms": 257040,
+      "source_event_index": 57,
+      "start_ms": 252000,
+      "text": "Is it a linear serial time speedup or a sublinear speedup as you increase the"
+    },
+    {
+      "end_ms": 261200,
+      "source_event_index": 58,
+      "start_ms": 257040,
+      "text": "number of parallel agents? It’s slightly sublinear,"
+    },
+    {
+      "end_ms": 268160,
+      "source_event_index": 59,
+      "start_ms": 261200,
+      "text": "though it does depend a lot on the problem. Math, for example, is quite parallelizable."
+    },
+    {
+      "end_ms": 270960,
+      "source_event_index": 60,
+      "start_ms": 268160,
+      "text": "It’s not the most parallelizable thing, but it is very parallelizable."
+    },
+    {
+      "end_ms": 275040,
+      "source_event_index": 61,
+      "start_ms": 271840,
+      "text": "Web search, things like doing a Deep Research report where you have to look through a bunch"
+    },
+    {
+      "end_ms": 279680,
+      "source_event_index": 62,
+      "start_ms": 275040,
+      "text": "of sources, is extremely parallelizable. I suspect that something like writing"
+    },
+    {
+      "end_ms": 283600,
+      "source_event_index": 63,
+      "start_ms": 279680,
+      "text": "a novel would be very unparallelizable. You would probably not see a big benefit"
+    },
+    {
+      "end_ms": 288240,
+      "source_event_index": 64,
+      "start_ms": 283600,
+      "text": "from having 10,000 agents working on a novel together, in the same way that you’d"
+    },
+    {
+      "end_ms": 291280,
+      "source_event_index": 65,
+      "start_ms": 288240,
+      "text": "probably not get a big benefit from having 10,000 people work on a novel together."
+    },
+    {
+      "end_ms": 297920,
+      "source_event_index": 66,
+      "start_ms": 292000,
+      "text": "So the performance does depend on the domain. We do measure it up to 16 or so agents in"
+    },
+    {
+      "end_ms": 301200,
+      "source_event_index": 67,
+      "start_ms": 297920,
+      "text": "our published blog posts. The problem is that it’s"
+    },
+    {
+      "end_ms": 306320,
+      "source_event_index": 68,
+      "start_ms": 301200,
+      "text": "very hard to push that science to 10,000 agents because it’s just so expensive."
+    },
+    {
+      "end_ms": 310800,
+      "source_event_index": 69,
+      "start_ms": 306320,
+      "text": "You guys just did it over a weekend. But that’s one data point."
+    },
+    {
+      "end_ms": 315920,
+      "source_event_index": 70,
+      "start_ms": 310800,
+      "text": "We don’t know how long it would take a single agent to solve Navier-Stokes, because we haven’t"
+    },
+    {
+      "end_ms": 318000,
+      "source_event_index": 71,
+      "start_ms": 315920,
+      "text": "done that experiment yet. Maybe we will,"
+    },
+    {
+      "end_ms": 323840,
+      "source_event_index": 72,
+      "start_ms": 318000,
+      "text": "but that’s also only one data point. If we want to do a thorough ablation, the"
+    },
+    {
+      "end_ms": 329040,
+      "source_event_index": 73,
+      "start_ms": 323840,
+      "text": "experiments are just too expensive at that scale. So we have to do some kind of methodical science"
+    },
+    {
+      "end_ms": 335120,
+      "source_event_index": 74,
+      "start_ms": 329040,
+      "text": "about what happens when you go to 64, 128, 256 or something and get a sense of the behavior."
+    },
+    {
+      "end_ms": 339040,
+      "source_event_index": 75,
+      "start_ms": 335120,
+      "text": "But it’s going to be very hard to push that all the way to 10,000 and know for"
+    },
+    {
+      "end_ms": 344320,
+      "source_event_index": 76,
+      "start_ms": 339040,
+      "text": "sure what the benefit was that we actually got from using 10,000 agents versus 1,000."
+    },
+    {
+      "end_ms": 352640,
+      "source_event_index": 77,
+      "start_ms": 344320,
+      "text": "There’s one thing I want to make clear. The effort to solve a Millennium Prize Problem,"
+    },
+    {
+      "end_ms": 358000,
+      "source_event_index": 78,
+      "start_ms": 352640,
+      "text": "this was not due to multi-agent. I wouldn’t even attribute 10%"
+    },
+    {
+      "end_ms": 364400,
+      "source_event_index": 79,
+      "start_ms": 358000,
+      "text": "of the credit to multi-agent. The reality is that OpenAI has"
+    },
+    {
+      "end_ms": 368960,
+      "source_event_index": 80,
+      "start_ms": 364400,
+      "text": "trained a very powerful model. We can get that model to"
+    },
+    {
+      "end_ms": 372960,
+      "source_event_index": 81,
+      "start_ms": 368960,
+      "text": "operate over very long horizons. We can get it to think in parallel."
+    },
+    {
+      "end_ms": 377680,
+      "source_event_index": 82,
+      "start_ms": 372960,
+      "text": "But at its core, the reason why we’re able to do this is because we just have a general-purpose,"
+    },
+    {
+      "end_ms": 382880,
+      "source_event_index": 83,
+      "start_ms": 377680,
+      "text": "very strong model. Things like multi-agent"
+    },
+    {
+      "end_ms": 391120,
+      "source_event_index": 84,
+      "start_ms": 382880,
+      "text": "are flashy and new, and that probably gets disproportionate credit for that reason."
+    },
+    {
+      "end_ms": 394320,
+      "source_event_index": 85,
+      "start_ms": 391120,
+      "text": "But the core reason is this is just a very powerful model."
+    },
+    {
+      "end_ms": 401760,
+      "source_event_index": 86,
+      "start_ms": 395280,
+      "text": "The generalization is quite shocking to me. I don’t know how these systems were trained,"
+    },
+    {
+      "end_ms": 404400,
+      "source_event_index": 87,
+      "start_ms": 401760,
+      "text": "but presumably they were trained how RL training happens."
+    },
+    {
+      "end_ms": 408160,
+      "source_event_index": 88,
+      "start_ms": 404400,
+      "text": "You have a bunch of checkable synthetic problems and you do a bunch of RL against them."
+    },
+    {
+      "end_ms": 411360,
+      "source_event_index": 89,
+      "start_ms": 408720,
+      "text": "Nowhere in the training process, I’m guessing, was the model solving anything"
+    },
+    {
+      "end_ms": 415520,
+      "source_event_index": 90,
+      "start_ms": 411360,
+      "text": "as ambitious as a Millennium Prize Problem. But the generalization was strong enough"
+    },
+    {
+      "end_ms": 422080,
+      "source_event_index": 91,
+      "start_ms": 415520,
+      "text": "that you could have these much easier verifiable problems generalize to this much parallel effort"
+    },
+    {
+      "end_ms": 425920,
+      "source_event_index": 92,
+      "start_ms": 422080,
+      "text": "on such a hard problem. I think that is true."
+    },
+    {
+      "end_ms": 429200,
+      "source_event_index": 93,
+      "start_ms": 425920,
+      "text": "First of all, we do train the model on very hard problems."
+    },
+    {
+      "end_ms": 431920,
+      "source_event_index": 94,
+      "start_ms": 429200,
+      "text": "There is definitely a gap. We see that if we train on"
+    },
+    {
+      "end_ms": 435680,
+      "source_event_index": 95,
+      "start_ms": 431920,
+      "text": "some kinds of tasks, it’s able to do tasks that are more ambitious than that."
+    },
+    {
+      "end_ms": 441040,
+      "source_event_index": 96,
+      "start_ms": 435680,
+      "text": "There is an interesting challenge that as the models become smarter and smarter,"
+    },
+    {
+      "end_ms": 447200,
+      "source_event_index": 97,
+      "start_ms": 441040,
+      "text": "a lot of the kinds of questions we can ask them are just too easy."
+    },
+    {
+      "end_ms": 452880,
+      "source_event_index": 98,
+      "start_ms": 448000,
+      "text": "It’s hard to challenge the model. I do think that’s going to be interesting."
+    },
+    {
+      "end_ms": 461920,
+      "source_event_index": 99,
+      "start_ms": 452880,
+      "text": "If I had to make an argument for why you might not see AIs like LLMs go the same path as AlphaGo and"
+    },
+    {
+      "end_ms": 466080,
+      "source_event_index": 100,
+      "start_ms": 461920,
+      "text": "AlphaZero and all these kinds of game-playing AIs, it might be this kind of problem."
+    },
+    {
+      "end_ms": 470800,
+      "source_event_index": 101,
+      "start_ms": 466960,
+      "text": "In things like AlphaZero, where you have self-play, you have an infinite curriculum."
+    },
+    {
+      "end_ms": 473840,
+      "source_event_index": 102,
+      "start_ms": 470800,
+      "text": "You’re always playing against an AI that’s equally strong."
+    },
+    {
+      "end_ms": 479200,
+      "source_event_index": 103,
+      "start_ms": 473840,
+      "text": "Whereas for things like training an LLM with reinforcement learning, at least the ways"
+    },
+    {
+      "end_ms": 486000,
+      "source_event_index": 104,
+      "start_ms": 479200,
+      "text": "that are out there right now, you give the model a problem and you ask it to solve it."
+    },
+    {
+      "end_ms": 490880,
+      "source_event_index": 105,
+      "start_ms": 486880,
+      "text": "If the problem is so easy that it can just solve it in a second, it's not really learning anything."
+    },
+    {
+      "end_ms": 497920,
+      "source_event_index": 106,
+      "start_ms": 493280,
+      "text": "If we run out of problems to challenge it, then that is a plausible scenario"
+    },
+    {
+      "end_ms": 504800,
+      "source_event_index": 107,
+      "start_ms": 497920,
+      "text": "where it becomes much harder to make progress. Now, I do think there are ways around that."
+    },
+    {
+      "end_ms": 511440,
+      "source_event_index": 108,
+      "start_ms": 505920,
+      "text": "We haven’t really hit that as a wall yet. I think that if it ever became a serious problem,"
+    },
+    {
+      "end_ms": 514560,
+      "source_event_index": 109,
+      "start_ms": 511440,
+      "text": "there would be ways around it. But it is a plausible scenario."
+    },
+    {
+      "end_ms": 518960,
+      "source_event_index": 110,
+      "start_ms": 516080,
+      "text": "Just for the audience, when you’re referring to AlphaGo or AlphaZero,"
+    },
+    {
+      "end_ms": 523200,
+      "source_event_index": 111,
+      "start_ms": 518960,
+      "text": "you’re talking about getting superhuman relatively fast after achieving human-level performance."
+    },
+    {
+      "end_ms": 529920,
+      "source_event_index": 112,
+      "start_ms": 523200,
+      "text": "If you look at the trajectory of game-playing AIs, like Go, within a span of a year they went"
+    },
+    {
+      "end_ms": 534880,
+      "source_event_index": 113,
+      "start_ms": 529920,
+      "text": "from beating a European champion — something like number 50 in the world — to beating the"
+    },
+    {
+      "end_ms": 539280,
+      "source_event_index": 114,
+      "start_ms": 534880,
+      "text": "world champion, to being unimaginably, orders of magnitude stronger than any human alive."
+    },
+    {
+      "end_ms": 546960,
+      "source_event_index": 115,
+      "start_ms": 540960,
+      "text": "It’s possible that in domains like math we see a similar trajectory, but I think there is a very"
+    },
+    {
+      "end_ms": 553280,
+      "source_event_index": 116,
+      "start_ms": 546960,
+      "text": "plausible scenario where that doesn’t happen. I want to understand, if in six months people"
+    },
+    {
+      "end_ms": 558160,
+      "source_event_index": 117,
+      "start_ms": 553280,
+      "text": "will have access to multi-agent systems, how should one model what it is like to"
+    },
+    {
+      "end_ms": 562640,
+      "source_event_index": 118,
+      "start_ms": 558160,
+      "text": "collaborate with or hire a multi-agent system? I should start by talking about how these"
+    },
+    {
+      "end_ms": 566720,
+      "source_event_index": 119,
+      "start_ms": 562640,
+      "text": "multi-agent systems actually work, which I think is a very different way than a lot"
+    },
+    {
+      "end_ms": 572400,
+      "source_event_index": 120,
+      "start_ms": 566720,
+      "text": "of multi-agent systems in other AIs. A lot of people that have approached"
+    },
+    {
+      "end_ms": 576640,
+      "source_event_index": 121,
+      "start_ms": 572400,
+      "text": "multi-agents for things like LLMs tend to take this very scaffolded approach."
+    },
+    {
+      "end_ms": 583040,
+      "source_event_index": 122,
+      "start_ms": 577680,
+      "text": "For example, there might be a coordinator agent that delegates work to a bunch of"
+    },
+    {
+      "end_ms": 585760,
+      "source_event_index": 123,
+      "start_ms": 583040,
+      "text": "children and gives them a task. The children work on it and then"
+    },
+    {
+      "end_ms": 589920,
+      "source_event_index": 124,
+      "start_ms": 585760,
+      "text": "return their answer. This seems like a very"
+    },
+    {
+      "end_ms": 593840,
+      "source_event_index": 125,
+      "start_ms": 589920,
+      "text": "sensible setup, a very sensible scaffold. It definitely helps, but there are a bunch"
+    },
+    {
+      "end_ms": 597520,
+      "source_event_index": 126,
+      "start_ms": 593840,
+      "text": "of limitations with these kinds of setups. For example, if in this setup you have"
+    },
+    {
+      "end_ms": 601520,
+      "source_event_index": 127,
+      "start_ms": 598080,
+      "text": "a coordinator that’s sending tasks to children, and the children work on it"
+    },
+    {
+      "end_ms": 606800,
+      "source_event_index": 128,
+      "start_ms": 601520,
+      "text": "and then return their answers, what happens if two children are given similar tasks?"
+    },
+    {
+      "end_ms": 609760,
+      "source_event_index": 129,
+      "start_ms": 606800,
+      "text": "Can they talk to each other? Usually the answer is no."
+    },
+    {
+      "end_ms": 615600,
+      "source_event_index": 130,
+      "start_ms": 610560,
+      "text": "That’s very inefficient. If you’re given a task and it’s actually really helpful to talk to"
+    },
+    {
+      "end_ms": 619680,
+      "source_event_index": 131,
+      "start_ms": 615600,
+      "text": "somebody that might know an answer to a question that you’re working on — or part of something"
+    },
+    {
+      "end_ms": 622240,
+      "source_event_index": 132,
+      "start_ms": 619680,
+      "text": "that you’re working on — it’d be really helpful for you to just be able to ping them and say,"
+    },
+    {
+      "end_ms": 627280,
+      "source_event_index": 133,
+      "start_ms": 622240,
+      "text": "\"Hey, can you help me out with this thing?\" But a lot of systems don’t have that setup."
+    },
+    {
+      "end_ms": 630640,
+      "source_event_index": 134,
+      "start_ms": 627280,
+      "text": "Adding it significantly increases the complexity of the scaffold that you have."
+    },
+    {
+      "end_ms": 636480,
+      "source_event_index": 135,
+      "start_ms": 630640,
+      "text": "Another thing is, what if the child doesn’t really understand or has a clarification question?"
+    },
+    {
+      "end_ms": 643440,
+      "source_event_index": 136,
+      "start_ms": 636480,
+      "text": "Then it has to choose between, \"Okay, do I just return and ask the question instead of solving"
+    },
+    {
+      "end_ms": 649680,
+      "source_event_index": 137,
+      "start_ms": 643440,
+      "text": "the problem?\" or \"Do I solve the problem, make an assumption about what the parent"
+    },
+    {
+      "end_ms": 657040,
+      "source_event_index": 138,
+      "start_ms": 649680,
+      "text": "wanted me to do, and just solve it that way?\" In any scaffold that people come up with,"
+    },
+    {
+      "end_ms": 659920,
+      "source_event_index": 139,
+      "start_ms": 657040,
+      "text": "there are always limitations involved. The approach that we wanted to take was"
+    },
+    {
+      "end_ms": 667600,
+      "source_event_index": 140,
+      "start_ms": 659920,
+      "text": "to just go toward the extreme end of baking in as little structure as we could and give the agents"
+    },
+    {
+      "end_ms": 672080,
+      "source_event_index": 141,
+      "start_ms": 667600,
+      "text": "very primitive tools to use, and they figure out for themselves how to use them effectively."
+    },
+    {
+      "end_ms": 678320,
+      "source_event_index": 142,
+      "start_ms": 672080,
+      "text": "So we give the agents the ability to message another agent, and when it messages another"
+    },
+    {
+      "end_ms": 683840,
+      "source_event_index": 143,
+      "start_ms": 678320,
+      "text": "agent, it is inserted into the context. It can do a few other similar things,"
+    },
+    {
+      "end_ms": 688080,
+      "source_event_index": 144,
+      "start_ms": 683840,
+      "text": "but that’s basically the core of it. It can just send a message whenever"
+    },
+    {
+      "end_ms": 692640,
+      "source_event_index": 145,
+      "start_ms": 688080,
+      "text": "it wants — just a tool call — and it can send that to other agents."
+    },
+    {
+      "end_ms": 695440,
+      "source_event_index": 146,
+      "start_ms": 692640,
+      "text": "They figure out for themselves the best way to coordinate around that."
+    },
+    {
+      "end_ms": 700480,
+      "source_event_index": 147,
+      "start_ms": 696000,
+      "text": "It turns out that if this is done well, you get very sophisticated behavior."
+    },
+    {
+      "end_ms": 708240,
+      "source_event_index": 148,
+      "start_ms": 701280,
+      "text": "To me, it looks a lot like how human collaborators work over something like Slack, for example."
+    },
+    {
+      "end_ms": 712640,
+      "source_event_index": 149,
+      "start_ms": 708240,
+      "text": "When we were working on this project, it was really exciting when we finally got it working"
+    },
+    {
+      "end_ms": 717840,
+      "source_event_index": 150,
+      "start_ms": 712640,
+      "text": "to see these agents working on problems together. I remember one example. We give the agents a"
+    },
+    {
+      "end_ms": 721680,
+      "source_event_index": 151,
+      "start_ms": 717840,
+      "text": "problem, and then one agent says, \"I think I’ve got the answer.\""
+    },
+    {
+      "end_ms": 724480,
+      "source_event_index": 152,
+      "start_ms": 721680,
+      "text": "Then another agent says, \"Actually, I got a different answer.\""
+    },
+    {
+      "end_ms": 727760,
+      "source_event_index": 153,
+      "start_ms": 724480,
+      "text": "Then they have this whole discussion about, \"Well, how did you arrive at that answer?"
+    },
+    {
+      "end_ms": 732560,
+      "source_event_index": 154,
+      "start_ms": 727760,
+      "text": "Can you explain it to me?\" Going back and forth and trying to clarify what"
+    },
+    {
+      "end_ms": 736320,
+      "source_event_index": 155,
+      "start_ms": 732560,
+      "text": "could’ve been wrong in each other’s reasoning. Then they finally converge on, \"Oh, yeah."
+    },
+    {
+      "end_ms": 739280,
+      "source_event_index": 156,
+      "start_ms": 736320,
+      "text": "Okay, that seems right.\" Then it just broadcasts to the other agents,"
+    },
+    {
+      "end_ms": 744080,
+      "source_event_index": 157,
+      "start_ms": 739280,
+      "text": "\"Actually, I’ve changed my answer. I think he’s right.\" It just felt"
+    },
+    {
+      "end_ms": 750880,
+      "source_event_index": 158,
+      "start_ms": 744080,
+      "text": "like a very natural conversation. It felt like when you see chain of"
+    },
+    {
+      "end_ms": 755120,
+      "source_event_index": 159,
+      "start_ms": 750880,
+      "text": "thought for the first time that’s trained through reinforcement learning, and you’re like, \"Oh,"
+    },
+    {
+      "end_ms": 759120,
+      "source_event_index": 160,
+      "start_ms": 755120,
+      "text": "this is just kind of like what a person would think if they were writing down their thoughts"
+    },
+    {
+      "end_ms": 763760,
+      "source_event_index": 161,
+      "start_ms": 759760,
+      "text": "as they’re thinking them.\" It felt like that. It is"
+    },
+    {
+      "end_ms": 767840,
+      "source_event_index": 162,
+      "start_ms": 763760,
+      "text": "really cool to see this kind of behavior. Collaborating with these things, honestly,"
+    },
+    {
+      "end_ms": 770560,
+      "source_event_index": 163,
+      "start_ms": 767840,
+      "text": "feels a lot like collaborating with a person. It’s just a very natural flow."
+    },
+    {
+      "end_ms": 777920,
+      "source_event_index": 164,
+      "start_ms": 770560,
+      "text": "Except one qualitative difference that might become salient in the future is that these systems"
+    },
+    {
+      "end_ms": 782720,
+      "source_event_index": 165,
+      "start_ms": 777920,
+      "text": "will be thinking maybe more than 10x as fast, if you just look at how many tokens per second they"
+    },
+    {
+      "end_ms": 786400,
+      "source_event_index": 166,
+      "start_ms": 782720,
+      "text": "output versus how fast a human talks. They’re working all the time."
+    },
+    {
+      "end_ms": 790160,
+      "source_event_index": 167,
+      "start_ms": 786400,
+      "text": "They’re not sleeping. They’re collaborating with each other at a much more intense pace"
+    },
+    {
+      "end_ms": 792480,
+      "source_event_index": 168,
+      "start_ms": 790160,
+      "text": "than humans have the capacity to collaborate with other humans."
+    },
+    {
+      "end_ms": 798560,
+      "source_event_index": 169,
+      "start_ms": 794320,
+      "text": "I’m trying to think of what to qualitatively expect in a year."
+    },
+    {
+      "end_ms": 805280,
+      "source_event_index": 170,
+      "start_ms": 798560,
+      "text": "Is it like a shadow organization that is moving 100x faster in my company than the human level is?"
+    },
+    {
+      "end_ms": 812880,
+      "source_event_index": 171,
+      "start_ms": 805280,
+      "text": "What would take a human organization a year to do is happening within a"
+    },
+    {
+      "end_ms": 818000,
+      "source_event_index": 172,
+      "start_ms": 812880,
+      "text": "week within this shadow organization? Will it feel foreign? I don’t know."
+    },
+    {
+      "end_ms": 823280,
+      "source_event_index": 173,
+      "start_ms": 818000,
+      "text": "I’ve actually found that it’s surprisingly natural to work with these things right now."
+    },
+    {
+      "end_ms": 827120,
+      "source_event_index": 174,
+      "start_ms": 823280,
+      "text": "I think that could change. For example, we have these ultra-fast modes that"
+    },
+    {
+      "end_ms": 832960,
+      "source_event_index": 175,
+      "start_ms": 827120,
+      "text": "enable sampling to be 10-15x faster or whatever. Then it’s going to be pretty"
+    },
+    {
+      "end_ms": 837920,
+      "source_event_index": 176,
+      "start_ms": 832960,
+      "text": "hard to keep up with these things. The idea is that these agents, when they’re"
+    },
+    {
+      "end_ms": 842160,
+      "source_event_index": 177,
+      "start_ms": 837920,
+      "text": "communicating with each other, can go super fast. But they also understand when they’re talking to"
+    },
+    {
+      "end_ms": 844720,
+      "source_event_index": 178,
+      "start_ms": 842160,
+      "text": "an agent versus when they’re talking to a person, and their behavior"
+    },
+    {
+      "end_ms": 849360,
+      "source_event_index": 179,
+      "start_ms": 844720,
+      "text": "will be different in those situations. The main example that we have publicly"
+    },
+    {
+      "end_ms": 854320,
+      "source_event_index": 180,
+      "start_ms": 849360,
+      "text": "of sophisticated multi-agent systems is unfortunately the Hugging Face one."
+    },
+    {
+      "end_ms": 859040,
+      "source_event_index": 181,
+      "start_ms": 857360,
+      "text": "A lot of things I found concerning there, obviously."
+    },
+    {
+      "end_ms": 862160,
+      "source_event_index": 182,
+      "start_ms": 859040,
+      "text": "But the thing I found interesting there is the spontaneous emergence"
+    },
+    {
+      "end_ms": 867520,
+      "source_event_index": 183,
+      "start_ms": 862160,
+      "text": "of hierarchy, of middle management. It sounds like you’re saying this level of"
+    },
+    {
+      "end_ms": 875280,
+      "source_event_index": 184,
+      "start_ms": 867520,
+      "text": "organization emerges spontaneously from training? The details are spontaneous. But while we’re"
+    },
+    {
+      "end_ms": 878000,
+      "source_event_index": 185,
+      "start_ms": 875280,
+      "text": "giving a lot of flexibility to the agents to decide how to communicate"
+    },
+    {
+      "end_ms": 883360,
+      "source_event_index": 186,
+      "start_ms": 878000,
+      "text": "with each other in the optimal way, we are still giving them a starting point."
+    },
+    {
+      "end_ms": 888160,
+      "source_event_index": 187,
+      "start_ms": 883360,
+      "text": "We’re giving them a prior about what reasonable communication might look like."
+    },
+    {
+      "end_ms": 893680,
+      "source_event_index": 188,
+      "start_ms": 888160,
+      "text": "They’re also trained on a lot of human text. They have an understanding of how humans organize"
+    },
+    {
+      "end_ms": 902000,
+      "source_event_index": 189,
+      "start_ms": 893680,
+      "text": "and coordinate, so that’s all baked in. I think it is surprising the"
+    },
+    {
+      "end_ms": 906000,
+      "source_event_index": 190,
+      "start_ms": 902000,
+      "text": "way they’re able to polish this. If you look at what it starts out at,"
+    },
+    {
+      "end_ms": 909520,
+      "source_event_index": 191,
+      "start_ms": 906000,
+      "text": "it’s not very sophisticated behavior. In fact, it’s actually very difficult"
+    },
+    {
+      "end_ms": 914160,
+      "source_event_index": 192,
+      "start_ms": 909520,
+      "text": "to get these agents to coordinate in a productive way, because it’s very tempting"
+    },
+    {
+      "end_ms": 917920,
+      "source_event_index": 193,
+      "start_ms": 914160,
+      "text": "for them to just collapse to, \"Oh, we’re all just going to solve the problem independently.\""
+    },
+    {
+      "end_ms": 925120,
+      "source_event_index": 194,
+      "start_ms": 919520,
+      "text": "That is a local minimum that you can get stuck in. But if it’s done well, they can end up"
+    },
+    {
+      "end_ms": 928560,
+      "source_event_index": 195,
+      "start_ms": 925120,
+      "text": "coordinating very effectively in these kinds of very structured ways."
+    },
+    {
+      "end_ms": 934400,
+      "source_event_index": 196,
+      "start_ms": 928560,
+      "text": "I wrote this essay a couple of years ago about what automated firms will look like."
+    },
+    {
+      "end_ms": 937120,
+      "source_event_index": 197,
+      "start_ms": 934400,
+      "text": "I was thinking about, if you had fully automated firms of,"
+    },
+    {
+      "end_ms": 942160,
+      "source_event_index": 198,
+      "start_ms": 937120,
+      "text": "let’s say, human-level intelligences, what is different about the nature of AI minds that"
+    },
+    {
+      "end_ms": 947760,
+      "source_event_index": 199,
+      "start_ms": 942160,
+      "text": "would make the organizations AIs form different? There are a couple of very important differences."
+    },
+    {
+      "end_ms": 953360,
+      "source_event_index": 200,
+      "start_ms": 947760,
+      "text": "For example, AIs can share context much more seamlessly than humans can."
+    },
+    {
+      "end_ms": 955920,
+      "source_event_index": 201,
+      "start_ms": 953360,
+      "text": "They can merge their knowledge much more seamlessly."
+    },
+    {
+      "end_ms": 963200,
+      "source_event_index": 202,
+      "start_ms": 955920,
+      "text": "Also, you can spin up or spin down an arbitrary number of instances"
+    },
+    {
+      "end_ms": 966080,
+      "source_event_index": 203,
+      "start_ms": 963200,
+      "text": "which have the right knowledge. So if you want to hire more people,"
+    },
+    {
+      "end_ms": 969360,
+      "source_event_index": 204,
+      "start_ms": 966080,
+      "text": "it’s not all the schlep of finding the right talent or whatever."
+    },
+    {
+      "end_ms": 972320,
+      "source_event_index": 205,
+      "start_ms": 970000,
+      "text": "Your best talent, you can just make infinite copies of them."
+    },
+    {
+      "end_ms": 975440,
+      "source_event_index": 206,
+      "start_ms": 972320,
+      "text": "Or if you don’t need them for the task anymore, you can spin them down."
+    },
+    {
+      "end_ms": 979760,
+      "source_event_index": 207,
+      "start_ms": 975440,
+      "text": "You can replicate the most effective parts of your organization, or replicate whole"
+    },
+    {
+      "end_ms": 987520,
+      "source_event_index": 208,
+      "start_ms": 979760,
+      "text": "organizations together which are effective. Where do you see these multi-agent systems going"
+    },
+    {
+      "end_ms": 990480,
+      "source_event_index": 209,
+      "start_ms": 987520,
+      "text": "a year from now or two years from now? It’s a great question: how do these"
+    },
+    {
+      "end_ms": 992240,
+      "source_event_index": 210,
+      "start_ms": 990480,
+      "text": "things actually differ from working with a human coworker?"
+    },
+    {
+      "end_ms": 998640,
+      "source_event_index": 211,
+      "start_ms": 992880,
+      "text": "You highlighted some. One really interesting thing is that if you have a person and you want two"
+    },
+    {
+      "end_ms": 1003280,
+      "source_event_index": 212,
+      "start_ms": 998640,
+      "text": "copies of them, you can’t just clone the person. But with AIs, it’s actually really easy to just"
+    },
+    {
+      "end_ms": 1005920,
+      "source_event_index": 213,
+      "start_ms": 1003280,
+      "text": "say, \"Okay, just fork yourself,\" and then have both copies work"
+    },
+    {
+      "end_ms": 1010400,
+      "source_event_index": 214,
+      "start_ms": 1005920,
+      "text": "on this thing and then merge back together. We already have this, I think, in multi-agent"
+    },
+    {
+      "end_ms": 1017280,
+      "source_event_index": 215,
+      "start_ms": 1010400,
+      "text": "for Astra and 5.6 Sol, where when they spin up sub-agents, the context is just forked."
+    },
+    {
+      "end_ms": 1023680,
+      "source_event_index": 216,
+      "start_ms": 1017280,
+      "text": "So it has all the context that’s relevant. There are other interesting ways where the"
+    },
+    {
+      "end_ms": 1028160,
+      "source_event_index": 217,
+      "start_ms": 1023680,
+      "text": "agents will differ from people. Like, what are some reasons why"
+    },
+    {
+      "end_ms": 1032560,
+      "source_event_index": 218,
+      "start_ms": 1028160,
+      "text": "startups disrupt incumbents? There are a few factors."
+    },
+    {
+      "end_ms": 1039920,
+      "source_event_index": 219,
+      "start_ms": 1032560,
+      "text": "One is that they’re willing to take more risks. But another major factor is, as organizations"
+    },
+    {
+      "end_ms": 1046720,
+      "source_event_index": 220,
+      "start_ms": 1039920,
+      "text": "grow in size, you see increasing misalignment between the individuals in the organization."
+    },
+    {
+      "end_ms": 1051600,
+      "source_event_index": 221,
+      "start_ms": 1047520,
+      "text": "If you have a startup with five people and each person has a 20% share in the company, they’re"
+    },
+    {
+      "end_ms": 1057440,
+      "source_event_index": 222,
+      "start_ms": 1051600,
+      "text": "all highly aligned to the company succeeding. If you have a massive company with 10,000 people,"
+    },
+    {
+      "end_ms": 1062160,
+      "source_event_index": 223,
+      "start_ms": 1057440,
+      "text": "you see a lot more instances where people are territorial, or just care about getting"
+    },
+    {
+      "end_ms": 1066720,
+      "source_event_index": 224,
+      "start_ms": 1062160,
+      "text": "a lot of headcount for their project or their team, building their fiefdoms,"
+    },
+    {
+      "end_ms": 1071440,
+      "source_event_index": 225,
+      "start_ms": 1066720,
+      "text": "getting a lot of resources so that they can publish cool work or whatever and get promoted."
+    },
+    {
+      "end_ms": 1074800,
+      "source_event_index": 226,
+      "start_ms": 1071440,
+      "text": "This is actually a real detriment. I think this explains a lot of why"
+    },
+    {
+      "end_ms": 1085680,
+      "source_event_index": 227,
+      "start_ms": 1074800,
+      "text": "startups are able to disrupt incumbents. It’s true that AI does help startups in a way."
+    },
+    {
+      "end_ms": 1089360,
+      "source_event_index": 228,
+      "start_ms": 1085680,
+      "text": "It’s much easier than ever before for one person to step in and be like, \"I’m going"
+    },
+    {
+      "end_ms": 1095600,
+      "source_event_index": 229,
+      "start_ms": 1089360,
+      "text": "to make a multimillion-dollar company.\" The AIs amplify an individual so much."
+    },
+    {
+      "end_ms": 1098960,
+      "source_event_index": 230,
+      "start_ms": 1095600,
+      "text": "But there’s also an argument that they could benefit incumbents."
+    },
+    {
+      "end_ms": 1104080,
+      "source_event_index": 231,
+      "start_ms": 1100480,
+      "text": "If the alignment problem is solved, then you don’t have the issue of misalignment"
+    },
+    {
+      "end_ms": 1107600,
+      "source_event_index": 232,
+      "start_ms": 1104080,
+      "text": "between individuals in the company. At least that’s mitigated. The AIs,"
+    },
+    {
+      "end_ms": 1110960,
+      "source_event_index": 233,
+      "start_ms": 1107600,
+      "text": "if they’re aligned well, can just be aligned to the interest of the company."
+    },
+    {
+      "end_ms": 1114080,
+      "source_event_index": 234,
+      "start_ms": 1110960,
+      "text": "You can have 10,000 of them, and they’re all going to be working as hard as if"
+    },
+    {
+      "end_ms": 1118480,
+      "source_event_index": 235,
+      "start_ms": 1114080,
+      "text": "they were a 20%-share co-founder. It’s not only that, but it’s also"
+    },
+    {
+      "end_ms": 1124560,
+      "source_event_index": 236,
+      "start_ms": 1118480,
+      "text": "that they are much better able to manage shared memory and context than different humans can."
+    },
+    {
+      "end_ms": 1130880,
+      "source_event_index": 237,
+      "start_ms": 1124560,
+      "text": "If tomorrow you hire 10,000 mathematicians and you’re like, \"Solve Navier-Stokes,\""
+    },
+    {
+      "end_ms": 1137600,
+      "source_event_index": 238,
+      "start_ms": 1131760,
+      "text": "they’re not going to be able to cooperate effectively, at least not off the bat."
+    },
+    {
+      "end_ms": 1142240,
+      "source_event_index": 239,
+      "start_ms": 1137600,
+      "text": "But apparently you can have 10,000 AIs do that. Again, I want to be conservative here,"
+    },
+    {
+      "end_ms": 1147920,
+      "source_event_index": 240,
+      "start_ms": 1142240,
+      "text": "because we haven’t measured how effective the 10,000 agents are at coordinating."
+    },
+    {
+      "end_ms": 1152080,
+      "source_event_index": 241,
+      "start_ms": 1148560,
+      "text": "We think it helped. We don’t actually have good measurements saying,"
+    },
+    {
+      "end_ms": 1157680,
+      "source_event_index": 242,
+      "start_ms": 1152720,
+      "text": "\"This 10,000 agents led to a 2x speedup over 2,000 agents,\" or something like that."
+    },
+    {
+      "end_ms": 1167120,
+      "source_event_index": 243,
+      "start_ms": 1162400,
+      "text": "I don’t know about likely, but I think it is very possible that 10,000 humans are better at"
+    },
+    {
+      "end_ms": 1171360,
+      "source_event_index": 244,
+      "start_ms": 1167120,
+      "text": "coordinating than 10,000 agents right now. I think it is entirely possible."
+    },
+    {
+      "end_ms": 1177120,
+      "source_event_index": 245,
+      "start_ms": 1172560,
+      "text": "Also, one trend we've been seeing is… Look, we've been working on multi-agent for a while,"
+    },
+    {
+      "end_ms": 1181600,
+      "source_event_index": 246,
+      "start_ms": 1177120,
+      "text": "and the early versions of this were very difficult to get right."
+    },
+    {
+      "end_ms": 1184640,
+      "source_event_index": 247,
+      "start_ms": 1182160,
+      "text": "It was very hard to get the agents to even talk to each other."
+    },
+    {
+      "end_ms": 1193920,
+      "source_event_index": 248,
+      "start_ms": 1184640,
+      "text": "It's because when we first developed reasoning models, they weren't talking to other agents."
+    },
+    {
+      "end_ms": 1199120,
+      "source_event_index": 249,
+      "start_ms": 1193920,
+      "text": "If you now put a bunch of agents together and say, \"Solve this problem together,\" they're"
+    },
+    {
+      "end_ms": 1203120,
+      "source_event_index": 250,
+      "start_ms": 1199120,
+      "text": "in this local minimum where they're really good at thinking deeply about a problem, and"
+    },
+    {
+      "end_ms": 1208560,
+      "source_event_index": 251,
+      "start_ms": 1204160,
+      "text": "it just interrupts their chain of thought. It interrupts their flow to constantly"
+    },
+    {
+      "end_ms": 1213440,
+      "source_event_index": 252,
+      "start_ms": 1208560,
+      "text": "be checking in with other agents or receiving messages from them."
+    },
+    {
+      "end_ms": 1216000,
+      "source_event_index": 253,
+      "start_ms": 1213440,
+      "text": "The optimization is actually very hard to get right in that situation."
+    },
+    {
+      "end_ms": 1219200,
+      "source_event_index": 254,
+      "start_ms": 1216800,
+      "text": "Is it getting the cold start of the first collaboration?"
+    },
+    {
+      "end_ms": 1222800,
+      "source_event_index": 255,
+      "start_ms": 1219200,
+      "text": "Or what's the issue? I think it's that they're not as general."
+    },
+    {
+      "end_ms": 1228720,
+      "source_event_index": 256,
+      "start_ms": 1222800,
+      "text": "The earlier models were just not as generalizable and were more narrow."
+    },
+    {
+      "end_ms": 1232000,
+      "source_event_index": 257,
+      "start_ms": 1228720,
+      "text": "As the models have become more capable, it's been easier for them to develop this capability,"
+    },
+    {
+      "end_ms": 1235200,
+      "source_event_index": 258,
+      "start_ms": 1232000,
+      "text": "and I do think that as they become stronger and stronger across the board,"
+    },
+    {
+      "end_ms": 1241840,
+      "source_event_index": 259,
+      "start_ms": 1236000,
+      "text": "they will become better at organizing themselves in large organizations."
+    },
+    {
+      "end_ms": 1246960,
+      "source_event_index": 260,
+      "start_ms": 1243200,
+      "text": "I don't know, maybe they are better than people at organizing in 10,000-person groups."
+    },
+    {
+      "end_ms": 1250720,
+      "source_event_index": 261,
+      "start_ms": 1246960,
+      "text": "But even if they're not, a year from now, two years from now,"
+    },
+    {
+      "end_ms": 1255200,
+      "source_event_index": 262,
+      "start_ms": 1251280,
+      "text": "it's quite possible that they'll do that even if we don't end-to-end optimize them for that."
+    },
+    {
+      "end_ms": 1257440,
+      "source_event_index": 263,
+      "start_ms": 1255200,
+      "text": "Grok Bot has changed the way that we produce our videos."
+    },
+    {
+      "end_ms": 1262080,
+      "source_event_index": 264,
+      "start_ms": 1257440,
+      "text": "For example, you may have noticed that a lot of our ads have these animations of real websites."
+    },
+    {
+      "end_ms": 1266720,
+      "source_event_index": 265,
+      "start_ms": 1262080,
+      "text": "One of my editors uses LLMs to make them. But it's not currently straightforward to"
+    },
+    {
+      "end_ms": 1270480,
+      "source_event_index": 266,
+      "start_ms": 1266720,
+      "text": "have an AI create pixel-perfect animations of specific websites."
+    },
+    {
+      "end_ms": 1274480,
+      "source_event_index": 267,
+      "start_ms": 1270480,
+      "text": "We've tried; it doesn't really work that well. So we've cobbled together a pretty convoluted"
+    },
+    {
+      "end_ms": 1276640,
+      "source_event_index": 268,
+      "start_ms": 1274480,
+      "text": "multi-step workflow. And up until recently,"
+    },
+    {
+      "end_ms": 1280480,
+      "source_event_index": 269,
+      "start_ms": 1276640,
+      "text": "we had to run every step ourselves. Now we just let Grok Bot handle it."
+    },
+    {
+      "end_ms": 1283760,
+      "source_event_index": 270,
+      "start_ms": 1280480,
+      "text": "Grok Bot starts by opening the website that we want to animate."
+    },
+    {
+      "end_ms": 1287440,
+      "source_event_index": 271,
+      "start_ms": 1283760,
+      "text": "It uses a specific extension to download and open the page in Figma."
+    },
+    {
+      "end_ms": 1291040,
+      "source_event_index": 272,
+      "start_ms": 1287440,
+      "text": "Then it uses Figma to convert the whole thing into an SVG file."
+    },
+    {
+      "end_ms": 1294400,
+      "source_event_index": 273,
+      "start_ms": 1291040,
+      "text": "This saves the AI from having to draw the whole UI from scratch and"
+    },
+    {
+      "end_ms": 1299120,
+      "source_event_index": 274,
+      "start_ms": 1294400,
+      "text": "tends to result in higher-quality animations. Grok Bot runs this whole process on its own cloud"
+    },
+    {
+      "end_ms": 1303200,
+      "source_event_index": 275,
+      "start_ms": 1299120,
+      "text": "computer, where it has all the tools it needs installed to run the whole process end to end."
+    },
+    {
+      "end_ms": 1306160,
+      "source_event_index": 276,
+      "start_ms": 1303200,
+      "text": "And it's learned our video specifications and preferences,"
+    },
+    {
+      "end_ms": 1310400,
+      "source_event_index": 277,
+      "start_ms": 1306160,
+      "text": "so there's no need to re-describe the whole task every time we want to make a new animation."
+    },
+    {
+      "end_ms": 1314080,
+      "source_event_index": 278,
+      "start_ms": 1310400,
+      "text": "This does feel like the new way that we'll be interacting with AI over the next year: agents"
+    },
+    {
+      "end_ms": 1317920,
+      "source_event_index": 279,
+      "start_ms": 1314080,
+      "text": "with their own computer who can autonomously handle bigger and bigger chunks of your work."
+    },
+    {
+      "end_ms": 1326240,
+      "source_event_index": 280,
+      "start_ms": 1317920,
+      "text": "You can try Grok Bot at x.ai/bot. Here’s why this result, and maybe"
+    },
+    {
+      "end_ms": 1331760,
+      "source_event_index": 281,
+      "start_ms": 1326240,
+      "text": "the general progress that AI has made in mathematics, has made me think that RSI is more"
+    },
+    {
+      "end_ms": 1336480,
+      "source_event_index": 282,
+      "start_ms": 1331760,
+      "text": "plausible and sooner than I previously thought. I feel like in mathematics we’ve gone from,"
+    },
+    {
+      "end_ms": 1340000,
+      "source_event_index": 283,
+      "start_ms": 1336480,
+      "text": "let’s say, 2024, where you have AIs and it’s, \"Oh, okay, interesting."
+    },
+    {
+      "end_ms": 1343840,
+      "source_event_index": 284,
+      "start_ms": 1340000,
+      "text": "They can solve a couple problems on high school math competitions.\""
+    },
+    {
+      "end_ms": 1348000,
+      "source_event_index": 285,
+      "start_ms": 1343840,
+      "text": "Then in 2025, it’s, \"Oh, wow, they can get gold in the International Math Olympiad.\""
+    },
+    {
+      "end_ms": 1350240,
+      "source_event_index": 286,
+      "start_ms": 1348000,
+      "text": "Earlier this year, it was, \"Wow, they’re actually solving open problems"
+    },
+    {
+      "end_ms": 1354800,
+      "source_event_index": 287,
+      "start_ms": 1350240,
+      "text": "in mathematics,\" like open Erdős problems. But maybe people weren’t trying that hard,"
+    },
+    {
+      "end_ms": 1358160,
+      "source_event_index": 288,
+      "start_ms": 1354800,
+      "text": "and there was a similar solution somewhere in the literature."
+    },
+    {
+      "end_ms": 1361760,
+      "source_event_index": 289,
+      "start_ms": 1358160,
+      "text": "Now I just think it’s undeniable. This is the Millennium Prize Problem."
+    },
+    {
+      "end_ms": 1366800,
+      "source_event_index": 290,
+      "start_ms": 1361760,
+      "text": "There’s no story of why this should have been easy."
+    },
+    {
+      "end_ms": 1369040,
+      "source_event_index": 291,
+      "start_ms": 1366800,
+      "text": "Now, a lot of people have pointed out — I think Terry Tao had a post like this,"
+    },
+    {
+      "end_ms": 1373040,
+      "source_event_index": 292,
+      "start_ms": 1369040,
+      "text": "Toby Ord wrote an interesting post about this — that they’re solving a lot of these problems,"
+    },
+    {
+      "end_ms": 1380960,
+      "source_event_index": 293,
+      "start_ms": 1373040,
+      "text": "but I’m not aware of them coming up with new insights or formulating insightful new"
+    },
+    {
+      "end_ms": 1384800,
+      "source_event_index": 294,
+      "start_ms": 1380960,
+      "text": "questions and new modes of theory for thinking about mathematics,"
+    },
+    {
+      "end_ms": 1388880,
+      "source_event_index": 295,
+      "start_ms": 1384800,
+      "text": "like coming up with topology or coming up with the Cartesian grid."
+    },
+    {
+      "end_ms": 1395200,
+      "source_event_index": 296,
+      "start_ms": 1390160,
+      "text": "So maybe the actual progress in mathematics, broadly construed, is smaller than it might seem"
+    },
+    {
+      "end_ms": 1400560,
+      "source_event_index": 297,
+      "start_ms": 1395200,
+      "text": "if you’re just looking at well-scoped problems that are directly solved."
+    },
+    {
+      "end_ms": 1407280,
+      "source_event_index": 298,
+      "start_ms": 1400560,
+      "text": "However, I think that kind of progress would be incredibly meaningful in ML,"
+    },
+    {
+      "end_ms": 1412720,
+      "source_event_index": 299,
+      "start_ms": 1407280,
+      "text": "because in ML you don’t care about better understanding the nature of deep learning,"
+    },
+    {
+      "end_ms": 1419280,
+      "source_event_index": 300,
+      "start_ms": 1412720,
+      "text": "or you only care about that as an instrumental goal towards just achieving the result."
+    },
+    {
+      "end_ms": 1423920,
+      "source_event_index": 301,
+      "start_ms": 1419280,
+      "text": "Just solve this well-scoped problem of improving the sample efficiency of our models, improving"
+    },
+    {
+      "end_ms": 1428720,
+      "source_event_index": 302,
+      "start_ms": 1423920,
+      "text": "the pre-training loss, improving whatever. The kind of progress that we’re seeing arrive"
+    },
+    {
+      "end_ms": 1435600,
+      "source_event_index": 303,
+      "start_ms": 1428720,
+      "text": "like an avalanche in mathematics is structurally very similar… Again, I’m curious if this is the"
+    },
+    {
+      "end_ms": 1438240,
+      "source_event_index": 304,
+      "start_ms": 1435600,
+      "text": "case, I’m just a total outsider. I'm wondering if it’s structurally"
+    },
+    {
+      "end_ms": 1443040,
+      "source_event_index": 305,
+      "start_ms": 1438240,
+      "text": "very similar to the direct uplift that you would expect in AI progress."
+    },
+    {
+      "end_ms": 1448960,
+      "source_event_index": 306,
+      "start_ms": 1443680,
+      "text": "The thing that’s shocking to me, or potentially concerning, is just how fast we went from, \"Oh,"
+    },
+    {
+      "end_ms": 1452240,
+      "source_event_index": 307,
+      "start_ms": 1448960,
+      "text": "they’re giving me 50% uplift,\" if you’re a mathematician, to, \"Wow,"
+    },
+    {
+      "end_ms": 1455360,
+      "source_event_index": 308,
+      "start_ms": 1452240,
+      "text": "they’re just end-to-end solving the biggest open problems in the field.\""
+    },
+    {
+      "end_ms": 1460480,
+      "source_event_index": 309,
+      "start_ms": 1455920,
+      "text": "There’s a lot to unpack there. Let’s start with the progress on math."
+    },
+    {
+      "end_ms": 1464800,
+      "source_event_index": 310,
+      "start_ms": 1461600,
+      "text": "Yes, the models are doing some crazy powerful stuff,"
+    },
+    {
+      "end_ms": 1473600,
+      "source_event_index": 311,
+      "start_ms": 1464800,
+      "text": "and it’s progressing faster than I expected. When we got IMO gold in 2025, what I thought"
+    },
+    {
+      "end_ms": 1481360,
+      "source_event_index": 312,
+      "start_ms": 1473600,
+      "text": "was… When the models figured out how to do GSM8K, it would take a human mathematician"
+    },
+    {
+      "end_ms": 1486320,
+      "source_event_index": 313,
+      "start_ms": 1481360,
+      "text": "about five seconds to do a GSM8K problem. This is grade school math, grades K-8."
+    },
+    {
+      "end_ms": 1491200,
+      "source_event_index": 314,
+      "start_ms": 1487920,
+      "text": "Then the next year, they were able to do the MATH benchmark problems."
+    },
+    {
+      "end_ms": 1500320,
+      "source_event_index": 315,
+      "start_ms": 1491200,
+      "text": "These would take an expert human mathematician maybe a minute to do."
+    },
+    {
+      "end_ms": 1504160,
+      "source_event_index": 316,
+      "start_ms": 1500320,
+      "text": "Then you get to AIME. This is the qualifier"
+    },
+    {
+      "end_ms": 1507920,
+      "source_event_index": 317,
+      "start_ms": 1504160,
+      "text": "for the USA Mathematics Olympiad team. It would take a good human mathematician"
+    },
+    {
+      "end_ms": 1512080,
+      "source_event_index": 318,
+      "start_ms": 1508880,
+      "text": "probably 10 minutes to do, and the models were able to do that a year later."
+    },
+    {
+      "end_ms": 1517280,
+      "source_event_index": 319,
+      "start_ms": 1512080,
+      "text": "So every year, you’re seeing this 10x increase in the tasks they’re able to do, in terms of how"
+    },
+    {
+      "end_ms": 1520800,
+      "source_event_index": 320,
+      "start_ms": 1517280,
+      "text": "long it would take a human mathematician to do it. Then it was very sensible that a year later we get"
+    },
+    {
+      "end_ms": 1524560,
+      "source_event_index": 321,
+      "start_ms": 1520800,
+      "text": "to IMO gold, because that’s 100 minutes. That’s about how long it takes a human"
+    },
+    {
+      "end_ms": 1528640,
+      "source_event_index": 322,
+      "start_ms": 1524560,
+      "text": "mathematician to do an IMO problem. Just projecting outwards, I was like,"
+    },
+    {
+      "end_ms": 1534720,
+      "source_event_index": 323,
+      "start_ms": 1528640,
+      "text": "\"Okay, how long would it take a person to solve something like a Millennium Prize Problem?\""
+    },
+    {
+      "end_ms": 1541920,
+      "source_event_index": 324,
+      "start_ms": 1535680,
+      "text": "I don’t have a good sense, but if we are following this trend line of 10x every year,"
+    },
+    {
+      "end_ms": 1547120,
+      "source_event_index": 325,
+      "start_ms": 1541920,
+      "text": "we go from IMO gold, which is taking an hour and a half, to next year, 15 hours."
+    },
+    {
+      "end_ms": 1550720,
+      "source_event_index": 326,
+      "start_ms": 1547680,
+      "text": "That should not be enough to solve a Millennium Prize Problem."
+    },
+    {
+      "end_ms": 1557520,
+      "source_event_index": 327,
+      "start_ms": 1550720,
+      "text": "So I was like, \"I don’t think we’re going to get it in 2026, probably not in 2027, maybe in 2028.\""
+    },
+    {
+      "end_ms": 1564960,
+      "source_event_index": 328,
+      "start_ms": 1557520,
+      "text": "So it did happen a lot faster than I expected. Now, there is a narrative going around that these"
+    },
+    {
+      "end_ms": 1568800,
+      "source_event_index": 329,
+      "start_ms": 1564960,
+      "text": "things are replacing mathematicians, that it’s just superhuman in mathematics across the board."
+    },
+    {
+      "end_ms": 1573200,
+      "source_event_index": 330,
+      "start_ms": 1568800,
+      "text": "I think that is the wrong takeaway. They’re clearly exceptional in some ways,"
+    },
+    {
+      "end_ms": 1577600,
+      "source_event_index": 331,
+      "start_ms": 1573200,
+      "text": "but they are weaker than human mathematicians in other ways."
+    },
+    {
+      "end_ms": 1583840,
+      "source_event_index": 332,
+      "start_ms": 1577600,
+      "text": "We have this jagged scenario where the models are brilliant in some dimensions and also weaker"
+    },
+    {
+      "end_ms": 1587440,
+      "source_event_index": 333,
+      "start_ms": 1583840,
+      "text": "than humans in other dimensions. Like you said, they’re not very"
+    },
+    {
+      "end_ms": 1589840,
+      "source_event_index": 334,
+      "start_ms": 1587440,
+      "text": "good at posing new problems. They’re not really good at"
+    },
+    {
+      "end_ms": 1596160,
+      "source_event_index": 335,
+      "start_ms": 1589840,
+      "text": "understanding what directions, what whole branches of mathematics are worth exploring or developing."
+    },
+    {
+      "end_ms": 1602240,
+      "source_event_index": 336,
+      "start_ms": 1596160,
+      "text": "My opinion is that I think this is great. I would be thrilled to live in a world where"
+    },
+    {
+      "end_ms": 1608400,
+      "source_event_index": 337,
+      "start_ms": 1602800,
+      "text": "AI is a complement to human abilities and is allowing us to discover new knowledge"
+    },
+    {
+      "end_ms": 1612080,
+      "source_event_index": 338,
+      "start_ms": 1608400,
+      "text": "without fully replacing people. That is the best-case scenario."
+    },
+    {
+      "end_ms": 1617680,
+      "source_event_index": 339,
+      "start_ms": 1612080,
+      "text": "You don’t expect that to actually continue? I do think it’s true that the AIs are jagged,"
+    },
+    {
+      "end_ms": 1620800,
+      "source_event_index": 340,
+      "start_ms": 1617680,
+      "text": "but as they get better, they get better across the board."
+    },
+    {
+      "end_ms": 1624800,
+      "source_event_index": 341,
+      "start_ms": 1620800,
+      "text": "So the things they’re exceptional at, they’re going to get even more exceptional at."
+    },
+    {
+      "end_ms": 1628320,
+      "source_event_index": 342,
+      "start_ms": 1624800,
+      "text": "The things where they’re far behind humans, they’re going to be less behind humans at."
+    },
+    {
+      "end_ms": 1632080,
+      "source_event_index": 343,
+      "start_ms": 1628320,
+      "text": "Over time, it is possible that they’re just better across the board."
+    },
+    {
+      "end_ms": 1635360,
+      "source_event_index": 344,
+      "start_ms": 1632080,
+      "text": "Now, I don’t know how long that takes. It depends on how long the long tail is"
+    },
+    {
+      "end_ms": 1638720,
+      "source_event_index": 345,
+      "start_ms": 1635360,
+      "text": "of things that they’re bad at. This brings us back to RSI."
+    },
+    {
+      "end_ms": 1642480,
+      "source_event_index": 346,
+      "start_ms": 1639280,
+      "text": "Again, I want to emphasize here that I’m just a total outsider."
+    },
+    {
+      "end_ms": 1648560,
+      "source_event_index": 347,
+      "start_ms": 1642480,
+      "text": "I’m a podcaster, but as somebody interested in and concerned about what’s happening in the field,"
+    },
+    {
+      "end_ms": 1652480,
+      "source_event_index": 348,
+      "start_ms": 1648560,
+      "text": "I’m trying to reason about when to expect RSI and what kind of thing to expect."
+    },
+    {
+      "end_ms": 1656320,
+      "source_event_index": 349,
+      "start_ms": 1653840,
+      "text": "The amount of cognitive effort that was dumped into this Millennium Prize"
+    },
+    {
+      "end_ms": 1662320,
+      "source_event_index": 350,
+      "start_ms": 1656320,
+      "text": "Problem is a good intuition pump. You could have AIs that are spending,"
+    },
+    {
+      "end_ms": 1670960,
+      "source_event_index": 351,
+      "start_ms": 1663440,
+      "text": "over the course of maybe a week, more cognitive effort on a long-standing ML problem, like very"
+    },
+    {
+      "end_ms": 1677840,
+      "source_event_index": 352,
+      "start_ms": 1670960,
+      "text": "fluid online learning, than maybe the field has spent cumulatively in its entire existence."
+    },
+    {
+      "end_ms": 1683680,
+      "source_event_index": 353,
+      "start_ms": 1677840,
+      "text": "Then you could say, \"Well, unlike mathematics, of course, AI requires experiments, and that"
+    },
+    {
+      "end_ms": 1686480,
+      "source_event_index": 354,
+      "start_ms": 1683680,
+      "text": "takes compute, and that takes time. You can't just think on pen and"
+    },
+    {
+      "end_ms": 1692320,
+      "source_event_index": 355,
+      "start_ms": 1686480,
+      "text": "paper and actually make things happen.\" But just look at the amount of compute"
+    },
+    {
+      "end_ms": 1696960,
+      "source_event_index": 356,
+      "start_ms": 1692320,
+      "text": "that is available at an organization like OpenAI. By the end of next year, OpenAI will have enough"
+    },
+    {
+      "end_ms": 1702560,
+      "source_event_index": 357,
+      "start_ms": 1696960,
+      "text": "compute such that — if it took 10,000 agents with the Millennium Prize Problem — let’s say you have"
+    },
+    {
+      "end_ms": 1706320,
+      "source_event_index": 358,
+      "start_ms": 1702560,
+      "text": "10,000 agents at the end of next year. They’re much smarter by that point."
+    },
+    {
+      "end_ms": 1711440,
+      "source_event_index": 359,
+      "start_ms": 1706320,
+      "text": "Each of them will have enough compute to run a GPT-3-sized experiment every single day."
+    },
+    {
+      "end_ms": 1718160,
+      "source_event_index": 360,
+      "start_ms": 1714240,
+      "text": "That seems like a lot for superhuman researchers who are thinking super fast."
+    },
+    {
+      "end_ms": 1722640,
+      "source_event_index": 361,
+      "start_ms": 1718160,
+      "text": "What do you think about that intuition pump? I think it’s pretty accurate."
+    },
+    {
+      "end_ms": 1726560,
+      "source_event_index": 362,
+      "start_ms": 1723680,
+      "text": "These things are very spiky. When it comes to mathematics,"
+    },
+    {
+      "end_ms": 1729280,
+      "source_event_index": 363,
+      "start_ms": 1726560,
+      "text": "they’re way better in some ways, but they’re also worse in other ways."
+    },
+    {
+      "end_ms": 1732800,
+      "source_event_index": 364,
+      "start_ms": 1729280,
+      "text": "But the ways that they’re spiky end up, I think, probably being particularly"
+    },
+    {
+      "end_ms": 1738000,
+      "source_event_index": 365,
+      "start_ms": 1732800,
+      "text": "useful for things like RSI. You have a more clear objective."
+    },
+    {
+      "end_ms": 1742320,
+      "source_event_index": 366,
+      "start_ms": 1738000,
+      "text": "It’s just more measurable. There’s less question of, \"Well, what new branches of"
+    },
+    {
+      "end_ms": 1744560,
+      "source_event_index": 367,
+      "start_ms": 1742320,
+      "text": "mathematics are worth exploring?\" No, there’s a very clear answer."
+    },
+    {
+      "end_ms": 1747600,
+      "source_event_index": 368,
+      "start_ms": 1744560,
+      "text": "There are certain metrics that you care about, and if you can make it do better"
+    },
+    {
+      "end_ms": 1751920,
+      "source_event_index": 369,
+      "start_ms": 1747600,
+      "text": "on those metrics, then you’ve succeeded. So I think there is a lot of truth to that."
+    },
+    {
+      "end_ms": 1758400,
+      "source_event_index": 370,
+      "start_ms": 1753520,
+      "text": "The main difference is that in mathematics, you’re purely bottlenecked by thinking."
+    },
+    {
+      "end_ms": 1764000,
+      "source_event_index": 371,
+      "start_ms": 1760800,
+      "text": "Yes, there are some parts of mathematics where you care about running experiments and"
+    },
+    {
+      "end_ms": 1766800,
+      "source_event_index": 372,
+      "start_ms": 1764000,
+      "text": "getting results and these kinds of things. But for the most part, it’s just really"
+    },
+    {
+      "end_ms": 1770080,
+      "source_event_index": 373,
+      "start_ms": 1766800,
+      "text": "bottlenecked by thinking really hard, and the models are really good at that."
+    },
+    {
+      "end_ms": 1774080,
+      "source_event_index": 374,
+      "start_ms": 1770080,
+      "text": "When you look at things like RSI, you do have to run experiments."
+    },
+    {
+      "end_ms": 1782720,
+      "source_event_index": 375,
+      "start_ms": 1777600,
+      "text": "It’s not enough to just be extremely smart. One argument for this is, if you had 100x"
+    },
+    {
+      "end_ms": 1788400,
+      "source_event_index": 376,
+      "start_ms": 1782720,
+      "text": "less compute and all the most brilliant people in the world working at OpenAI,"
+    },
+    {
+      "end_ms": 1792160,
+      "source_event_index": 377,
+      "start_ms": 1788400,
+      "text": "how much progress would you be making relative to having the amount of compute that"
+    },
+    {
+      "end_ms": 1796960,
+      "source_event_index": 378,
+      "start_ms": 1792160,
+      "text": "we have now with the amount of people we have? I suspect it would be less progress, actually."
+    },
+    {
+      "end_ms": 1800320,
+      "source_event_index": 379,
+      "start_ms": 1796960,
+      "text": "How much less? It’s unclear, but it would definitely be less."
+    },
+    {
+      "end_ms": 1802640,
+      "source_event_index": 380,
+      "start_ms": 1800320,
+      "text": "A lot less. 100x less?"
+    },
+    {
+      "end_ms": 1809280,
+      "source_event_index": 381,
+      "start_ms": 1802640,
+      "text": "No, not 100x less. But the question you’re getting at is, if we have RSI and we have"
+    },
+    {
+      "end_ms": 1813760,
+      "source_event_index": 382,
+      "start_ms": 1810000,
+      "text": "all of these brilliant AIs running around, running experiments and stuff with the compute that we"
+    },
+    {
+      "end_ms": 1819280,
+      "source_event_index": 383,
+      "start_ms": 1813760,
+      "text": "have, how much faster does progress go? I think this is something we disagree on."
+    },
+    {
+      "end_ms": 1821760,
+      "source_event_index": 384,
+      "start_ms": 1819280,
+      "text": "We do see a speedup, and we see a significant speedup."
+    },
+    {
+      "end_ms": 1827840,
+      "source_event_index": 385,
+      "start_ms": 1822560,
+      "text": "But I don’t think it’s an overnight intelligence explosion where we go 100x faster, because we do"
+    },
+    {
+      "end_ms": 1834800,
+      "source_event_index": 386,
+      "start_ms": 1827840,
+      "text": "get bottlenecked by certain limitations that are not bottlenecks of intelligence."
+    },
+    {
+      "end_ms": 1838240,
+      "source_event_index": 387,
+      "start_ms": 1834800,
+      "text": "It’s running experiments. It’s running experiments serially, because they take a while"
+    },
+    {
+      "end_ms": 1844320,
+      "source_event_index": 388,
+      "start_ms": 1838240,
+      "text": "to either train new models or to get the results. It’s having the GPUs to run those experiments."
+    },
+    {
+      "end_ms": 1849040,
+      "source_event_index": 389,
+      "start_ms": 1844320,
+      "text": "So it’s unclear how much faster things go. I definitely think they go a lot faster."
+    },
+    {
+      "end_ms": 1856560,
+      "source_event_index": 390,
+      "start_ms": 1850080,
+      "text": "To be clear, considering how fast things are going now on an exponential, if that exponential is 3x"
+    },
+    {
+      "end_ms": 1859520,
+      "source_event_index": 391,
+      "start_ms": 1856560,
+      "text": "faster, that is massive. But there’s a big"
+    },
+    {
+      "end_ms": 1867680,
+      "source_event_index": 392,
+      "start_ms": 1859520,
+      "text": "difference between that and 100x faster. I’m quite deferential to your inside view on what"
+    },
+    {
+      "end_ms": 1872560,
+      "source_event_index": 393,
+      "start_ms": 1867680,
+      "text": "RSI looks like or what the dynamics are, because obviously you’ve been in the field for 10 years."
+    },
+    {
+      "end_ms": 1876720,
+      "source_event_index": 394,
+      "start_ms": 1872560,
+      "text": "I’m trying to reason about it from very outside-view types of intuition pumps."
+    },
+    {
+      "end_ms": 1878960,
+      "source_event_index": 395,
+      "start_ms": 1876720,
+      "text": "I’ll say that people have different opinions on this."
+    },
+    {
+      "end_ms": 1881360,
+      "source_event_index": 396,
+      "start_ms": 1878960,
+      "text": "I have my opinion on this. I could totally be wrong."
+    },
+    {
+      "end_ms": 1885520,
+      "source_event_index": 397,
+      "start_ms": 1881360,
+      "text": "I admit that. I have some confidence in this, but I’m not 100% confident"
+    },
+    {
+      "end_ms": 1888720,
+      "source_event_index": 398,
+      "start_ms": 1885520,
+      "text": "that this is the way things go. Maybe there could be an overnight"
+    },
+    {
+      "end_ms": 1891440,
+      "source_event_index": 399,
+      "start_ms": 1888720,
+      "text": "intelligence explosion, I don’t know. Maybe we don’t see a 3x speedup."
+    },
+    {
+      "end_ms": 1894240,
+      "source_event_index": 400,
+      "start_ms": 1891440,
+      "text": "Maybe it’s a 50% speedup. There’s a lot of uncertainty here."
+    },
+    {
+      "end_ms": 1899280,
+      "source_event_index": 401,
+      "start_ms": 1894880,
+      "text": "A couple of point. Tangentially, I want to clarify something about the jaggedness."
+    },
+    {
+      "end_ms": 1906560,
+      "source_event_index": 402,
+      "start_ms": 1900480,
+      "text": "One thing that gelled for me recently was thinking about the fact that it is enough for the AIs to"
+    },
+    {
+      "end_ms": 1912240,
+      "source_event_index": 403,
+      "start_ms": 1906560,
+      "text": "be jaggedly good at building a better learner, because that better learner can be more general."
+    },
+    {
+      "end_ms": 1918080,
+      "source_event_index": 404,
+      "start_ms": 1914000,
+      "text": "If you just make an AI that’s better at using Office products"
+    },
+    {
+      "end_ms": 1922160,
+      "source_event_index": 405,
+      "start_ms": 1918080,
+      "text": "or playing chess or something, whatever. That’s fine. It’s not going to lead to"
+    },
+    {
+      "end_ms": 1925760,
+      "source_event_index": 406,
+      "start_ms": 1922160,
+      "text": "big productivity improvements or anything. But if you make an AI that is really good at"
+    },
+    {
+      "end_ms": 1928960,
+      "source_event_index": 407,
+      "start_ms": 1925760,
+      "text": "making something that is more sample efficient, or that is capable of continual learning,"
+    },
+    {
+      "end_ms": 1934320,
+      "source_event_index": 408,
+      "start_ms": 1928960,
+      "text": "or these much more well-scoped ML problems, the thing that emerges out of that — assuming"
+    },
+    {
+      "end_ms": 1938880,
+      "source_event_index": 409,
+      "start_ms": 1934320,
+      "text": "there’s good enough transfer from the direct problem you’re solving to this broader ability"
+    },
+    {
+      "end_ms": 1942400,
+      "source_event_index": 410,
+      "start_ms": 1938880,
+      "text": "to learn — can just be more general. So that’s an important dynamic to keep"
+    },
+    {
+      "end_ms": 1947040,
+      "source_event_index": 411,
+      "start_ms": 1942400,
+      "text": "in mind of why jaggedness can still lead to generality on the other end."
+    },
+    {
+      "end_ms": 1952560,
+      "source_event_index": 412,
+      "start_ms": 1947040,
+      "text": "On this question of… Obviously experiments bottleneck you, because if they didn’t,"
+    },
+    {
+      "end_ms": 1959440,
+      "source_event_index": 413,
+      "start_ms": 1952560,
+      "text": "as you were saying, you’d have some crazy singularity overnight at OpenAI."
+    },
+    {
+      "end_ms": 1963120,
+      "source_event_index": 414,
+      "start_ms": 1960080,
+      "text": "You’d have 88 hours, and you’d solve the Millennium Prize Problem equivalent of ML,"
+    },
+    {
+      "end_ms": 1967200,
+      "source_event_index": 415,
+      "start_ms": 1963120,
+      "text": "and you’d have the superintelligence. So obviously the experiments are such a"
+    },
+    {
+      "end_ms": 1971200,
+      "source_event_index": 416,
+      "start_ms": 1967200,
+      "text": "big bottleneck that that instead takes you many years rather than 88 hours."
+    },
+    {
+      "end_ms": 1973840,
+      "source_event_index": 417,
+      "start_ms": 1971200,
+      "text": "But then the question is how much of a bottleneck they are."
+    },
+    {
+      "end_ms": 1980240,
+      "source_event_index": 418,
+      "start_ms": 1975440,
+      "text": "One thing that’s been giving me a bit of singularity vertigo is realizing what happens even"
+    },
+    {
+      "end_ms": 1983960,
+      "source_event_index": 419,
+      "start_ms": 1980240,
+      "text": "if the current rate of progress simply continues. It doesn’t have to speed up."
+    },
+    {
+      "end_ms": 1990400,
+      "source_event_index": 420,
+      "start_ms": 1983960,
+      "text": "It literally just continues apace as some of the other headwinds you talked about come up."
+    },
+    {
+      "end_ms": 1993840,
+      "source_event_index": 421,
+      "start_ms": 1990960,
+      "text": "It’s harder to find problems, it’s more long-horizon."
+    },
+    {
+      "end_ms": 1999280,
+      "source_event_index": 422,
+      "start_ms": 1993840,
+      "text": "Maybe by the end of the 2030s compute can’t keep scaling at this exponential level."
+    },
+    {
+      "end_ms": 2003280,
+      "source_event_index": 423,
+      "start_ms": 1999840,
+      "text": "If we simply continue the current rate of progress, people are not"
+    },
+    {
+      "end_ms": 2008880,
+      "source_event_index": 424,
+      "start_ms": 2003280,
+      "text": "taking seriously what that implies as we cross over beyond the human horizon."
+    },
+    {
+      "end_ms": 2012320,
+      "source_event_index": 425,
+      "start_ms": 2008880,
+      "text": "Here are some of the things that it implies. It’s really hard to reason about what"
+    },
+    {
+      "end_ms": 2014400,
+      "source_event_index": 426,
+      "start_ms": 2012320,
+      "text": "smarter-than-human intelligences will be like, so let’s just think"
+    },
+    {
+      "end_ms": 2018400,
+      "source_event_index": 427,
+      "start_ms": 2014400,
+      "text": "in terms of human population sizes. The current rate of progress makes it"
+    },
+    {
+      "end_ms": 2024720,
+      "source_event_index": 428,
+      "start_ms": 2018400,
+      "text": "so that a given level of compute allows you to basically run a 3x bigger effective population"
+    },
+    {
+      "end_ms": 2026320,
+      "source_event_index": 429,
+      "start_ms": 2024720,
+      "text": "every single year. And also compute"
+    },
+    {
+      "end_ms": 2029440,
+      "source_event_index": 430,
+      "start_ms": 2026320,
+      "text": "is growing in the background anyways. So you could have a situation where each"
+    },
+    {
+      "end_ms": 2034880,
+      "source_event_index": 431,
+      "start_ms": 2029440,
+      "text": "of the labs, by the end of 2030 — probably much sooner, but let’s say by the end of 2030 — has"
+    },
+    {
+      "end_ms": 2039680,
+      "source_event_index": 432,
+      "start_ms": 2034880,
+      "text": "enough compute to run hundreds of millions of human-level intelligences, based on what the"
+    },
+    {
+      "end_ms": 2042720,
+      "source_event_index": 433,
+      "start_ms": 2039680,
+      "text": "capabilities will be at that point. Then I think people are not taking"
+    },
+    {
+      "end_ms": 2047120,
+      "source_event_index": 434,
+      "start_ms": 2042720,
+      "text": "seriously that the current level of progress means a few years down the line, by the mid-2030s"
+    },
+    {
+      "end_ms": 2053760,
+      "source_event_index": 435,
+      "start_ms": 2047120,
+      "text": "or earlier, you would have many Earths’ worth of human-level intelligences within each lab."
+    },
+    {
+      "end_ms": 2058320,
+      "source_event_index": 436,
+      "start_ms": 2053760,
+      "text": "They’re probably qualitatively superhuman. Anyways, this is a base case."
+    },
+    {
+      "end_ms": 2062080,
+      "source_event_index": 437,
+      "start_ms": 2059120,
+      "text": "Progress is really fast, and I think that’s 100% true."
+    },
+    {
+      "end_ms": 2066320,
+      "source_event_index": 438,
+      "start_ms": 2063120,
+      "text": "It’s worth pointing out that researchers are continually"
+    },
+    {
+      "end_ms": 2069520,
+      "source_event_index": 439,
+      "start_ms": 2066320,
+      "text": "being surprised at the rate of progress. Even among researchers in AI, if you look"
+    },
+    {
+      "end_ms": 2079680,
+      "source_event_index": 440,
+      "start_ms": 2069520,
+      "text": "at what the projections were for getting an IMO gold in 2025… The idea that it could be"
+    },
+    {
+      "end_ms": 2084480,
+      "source_event_index": 441,
+      "start_ms": 2079680,
+      "text": "done with a general-purpose language model with no tools and no access to the internet,"
+    },
+    {
+      "end_ms": 2090000,
+      "source_event_index": 442,
+      "start_ms": 2085520,
+      "text": "even people at OpenAI thought this was outrageous. They thought it was almost impossible."
+    },
+    {
+      "end_ms": 2098560,
+      "source_event_index": 443,
+      "start_ms": 2091360,
+      "text": "Then you get to 2026. Literally two weeks before we got"
+    },
+    {
+      "end_ms": 2104400,
+      "source_event_index": 444,
+      "start_ms": 2098560,
+      "text": "Navier-Stokes, I was talking with a researcher at a frontier lab about how long it would take"
+    },
+    {
+      "end_ms": 2112000,
+      "source_event_index": 445,
+      "start_ms": 2104400,
+      "text": "to get a Millennium Prize, and he was willing to bet me $1,000 that it would take past 2027."
+    },
+    {
+      "end_ms": 2116720,
+      "source_event_index": 446,
+      "start_ms": 2112880,
+      "text": "He thought it would take until 2030, and I took that bet."
+    },
+    {
+      "end_ms": 2123280,
+      "source_event_index": 447,
+      "start_ms": 2118080,
+      "text": "But even I thought it would take longer than it’s likely to take."
+    },
+    {
+      "end_ms": 2128640,
+      "source_event_index": 448,
+      "start_ms": 2123280,
+      "text": "So people have been continuously surprised, even inside the labs."
+    },
+    {
+      "end_ms": 2133200,
+      "source_event_index": 449,
+      "start_ms": 2129360,
+      "text": "I was just talking to somebody yesterday who was working on the Navier-Stokes effort."
+    },
+    {
+      "end_ms": 2139920,
+      "source_event_index": 450,
+      "start_ms": 2133200,
+      "text": "He was telling me that he used to say it’s really hard to predict where AI would be in 12 months."
+    },
+    {
+      "end_ms": 2143440,
+      "source_event_index": 451,
+      "start_ms": 2140560,
+      "text": "If somebody asked him, \"Where are things going?\" he would feel comfortable making"
+    },
+    {
+      "end_ms": 2146960,
+      "source_event_index": 452,
+      "start_ms": 2143440,
+      "text": "predictions for the next 12 months, but beyond that, he was just like, \"I don’t know.\""
+    },
+    {
+      "end_ms": 2150400,
+      "source_event_index": 453,
+      "start_ms": 2146960,
+      "text": "Now he’s saying he just doesn’t feel comfortable making predictions beyond three months."
+    },
+    {
+      "end_ms": 2155200,
+      "source_event_index": 454,
+      "start_ms": 2150400,
+      "text": "So it is really true that things are going very fast right now."
+    },
+    {
+      "end_ms": 2160640,
+      "source_event_index": 455,
+      "start_ms": 2156720,
+      "text": "You talk about 2030. I don’t know what the world looks like in 2030."
+    },
+    {
+      "end_ms": 2164400,
+      "source_event_index": 456,
+      "start_ms": 2160640,
+      "text": "That’s the truth. Do you expect the"
+    },
+    {
+      "end_ms": 2172000,
+      "source_event_index": 457,
+      "start_ms": 2164960,
+      "text": "full automation of AI labor, or let’s say 95% automation of AI labor, in ’28, ’29, ’30, ’27?"
+    },
+    {
+      "end_ms": 2174800,
+      "source_event_index": 458,
+      "start_ms": 2172000,
+      "text": "I just said I don’t know what the world looks like in 2030."
+    },
+    {
+      "end_ms": 2181680,
+      "source_event_index": 459,
+      "start_ms": 2176720,
+      "text": "We actually released a blog post recently on internal acceleration at OpenAI."
+    },
+    {
+      "end_ms": 2186240,
+      "source_event_index": 460,
+      "start_ms": 2181680,
+      "text": "We show, for example, the amounts that researchers are spending on Codex."
+    },
+    {
+      "end_ms": 2192400,
+      "source_event_index": 461,
+      "start_ms": 2186800,
+      "text": "The top 1%, I think, as of early August, were spending $7,000-8,000"
+    },
+    {
+      "end_ms": 2196640,
+      "source_event_index": 462,
+      "start_ms": 2192400,
+      "text": "a day on Codex for internal use. That’s on an exponential."
+    },
+    {
+      "end_ms": 2200880,
+      "source_event_index": 463,
+      "start_ms": 2196640,
+      "text": "It’s going to keep increasing. There’s a question of, \"Okay, if that"
+    },
+    {
+      "end_ms": 2206160,
+      "source_event_index": 464,
+      "start_ms": 2200880,
+      "text": "keeps going, then how much do you assign to just the AIs doing work versus the humans doing work?"
+    },
+    {
+      "end_ms": 2212960,
+      "source_event_index": 465,
+      "start_ms": 2206160,
+      "text": "Is it 95%? Is it 5%?\" It’s really hard to reason about this for a few reasons."
+    },
+    {
+      "end_ms": 2214960,
+      "source_event_index": 466,
+      "start_ms": 2212960,
+      "text": "First of all, if it’s the human directing the AIs to do the work,"
+    },
+    {
+      "end_ms": 2219040,
+      "source_event_index": 467,
+      "start_ms": 2216480,
+      "text": "how much do you attribute to the human? How much do you attribute to the AI?"
+    },
+    {
+      "end_ms": 2223920,
+      "source_event_index": 468,
+      "start_ms": 2219040,
+      "text": "The other thing is that these AIs are jagged. They’re exceptionally good at some things."
+    },
+    {
+      "end_ms": 2227280,
+      "source_event_index": 469,
+      "start_ms": 2223920,
+      "text": "For example, they’re exceptionally good at looking over data sets and"
+    },
+    {
+      "end_ms": 2230960,
+      "source_event_index": 470,
+      "start_ms": 2227280,
+      "text": "checking every single data point to see if it’s of sufficient quality."
+    },
+    {
+      "end_ms": 2237280,
+      "source_event_index": 471,
+      "start_ms": 2232400,
+      "text": "You can disproportionately use the AIs for those things compared to previously."
+    },
+    {
+      "end_ms": 2241360,
+      "source_event_index": 472,
+      "start_ms": 2237280,
+      "text": "So yes, you’re using AI way more than before, and it’s making some things"
+    },
+    {
+      "end_ms": 2245760,
+      "source_event_index": 473,
+      "start_ms": 2241360,
+      "text": "go 100x faster and 100x better. But there are some things where"
+    },
+    {
+      "end_ms": 2251520,
+      "source_event_index": 474,
+      "start_ms": 2245760,
+      "text": "it doesn’t make a huge difference yet. Of course, if something is suddenly 100x"
+    },
+    {
+      "end_ms": 2254160,
+      "source_event_index": 475,
+      "start_ms": 2251520,
+      "text": "faster and 100x better, you’re going to do more of that thing."
+    },
+    {
+      "end_ms": 2259440,
+      "source_event_index": 476,
+      "start_ms": 2254160,
+      "text": "So are you comparing it to a speedup of three years ago?"
+    },
+    {
+      "end_ms": 2264800,
+      "source_event_index": 477,
+      "start_ms": 2260720,
+      "text": "Is the question more, \"Given what we were doing three years ago, how much faster are we able to do"
+    },
+    {
+      "end_ms": 2270880,
+      "source_event_index": 478,
+      "start_ms": 2264800,
+      "text": "it now?\" versus \"Given what we’re doing now, how much slower would it have been three years ago?\""
+    },
+    {
+      "end_ms": 2276560,
+      "source_event_index": 479,
+      "start_ms": 2270880,
+      "text": "Those are actually two very different questions. Anyway, it’s really hard to measure."
+    },
+    {
+      "end_ms": 2281520,
+      "source_event_index": 480,
+      "start_ms": 2276560,
+      "text": "I do feel confident in saying that things are going faster now than they were"
+    },
+    {
+      "end_ms": 2289280,
+      "source_event_index": 481,
+      "start_ms": 2281520,
+      "text": "even a year ago because of AI progress. I think that acceleration will continue."
+    },
+    {
+      "end_ms": 2292480,
+      "source_event_index": 482,
+      "start_ms": 2289280,
+      "text": "A lot of people in the field have very high error bars on this sort of thing."
+    },
+    {
+      "end_ms": 2296800,
+      "source_event_index": 483,
+      "start_ms": 2292480,
+      "text": "If you put a gun to my head and ask me for a number, I could see things going 3x faster."
+    },
+    {
+      "end_ms": 2302560,
+      "source_event_index": 484,
+      "start_ms": 2298080,
+      "text": "That is huge. Already the pace of progress is incredible."
+    },
+    {
+      "end_ms": 2305600,
+      "source_event_index": 485,
+      "start_ms": 2302560,
+      "text": "Even if we don’t get any uplift, like you said, things are going to go much faster."
+    },
+    {
+      "end_ms": 2308720,
+      "source_event_index": 486,
+      "start_ms": 2305600,
+      "text": "By the time we get to 2030, we don’t even know what that world looks like."
+    },
+    {
+      "end_ms": 2311840,
+      "source_event_index": 487,
+      "start_ms": 2308720,
+      "text": "If we get a 3x uplift from internal acceleration, that is massive."
+    },
+    {
+      "end_ms": 2320080,
+      "source_event_index": 488,
+      "start_ms": 2315120,
+      "text": "Think about where you were three years ago. If we make that progress in one year, that’s huge."
+    },
+    {
+      "end_ms": 2326480,
+      "source_event_index": 489,
+      "start_ms": 2320720,
+      "text": "It’d be like going from not even having o1, just having non-reasoning models,"
+    },
+    {
+      "end_ms": 2332480,
+      "source_event_index": 490,
+      "start_ms": 2326480,
+      "text": "to Astra in a single year. So I do think things go faster."
+    },
+    {
+      "end_ms": 2337200,
+      "source_event_index": 491,
+      "start_ms": 2333280,
+      "text": "It could be that things only go 50% faster. I think it’s unlikely, but it’s"
+    },
+    {
+      "end_ms": 2340160,
+      "source_event_index": 492,
+      "start_ms": 2337200,
+      "text": "possible that things go 10x faster. There’s a lot of uncertainty around this."
+    },
+    {
+      "end_ms": 2344240,
+      "source_event_index": 493,
+      "start_ms": 2341600,
+      "text": "At least from my perspective, I have a lot of uncertainty about it."
+    },
+    {
+      "end_ms": 2349120,
+      "source_event_index": 494,
+      "start_ms": 2344240,
+      "text": "Suppose you need to do a major backend refactor. Getting assurance that you didn't introduce any"
+    },
+    {
+      "end_ms": 2354560,
+      "source_event_index": 495,
+      "start_ms": 2349120,
+      "text": "new bugs could take weeks of writing an extensive battery of tests—potentially more time than"
+    },
+    {
+      "end_ms": 2358800,
+      "source_event_index": 496,
+      "start_ms": 2354560,
+      "text": "you spent on the refactor itself. Antithesis allows you to gain high"
+    },
+    {
+      "end_ms": 2362640,
+      "source_event_index": 497,
+      "start_ms": 2358800,
+      "text": "confidence without having to build complicated test suites by hand."
+    },
+    {
+      "end_ms": 2367920,
+      "source_event_index": 498,
+      "start_ms": 2362640,
+      "text": "Antithesis runs your software through a near-infinite multiverse of simulated worlds,"
+    },
+    {
+      "end_ms": 2370720,
+      "source_event_index": 499,
+      "start_ms": 2367920,
+      "text": "injecting faults and hunting for failures in each one."
+    },
+    {
+      "end_ms": 2375920,
+      "source_event_index": 500,
+      "start_ms": 2370720,
+      "text": "And it lets you decide how much testing you need. On any PR, you can change how much state space"
+    },
+    {
+      "end_ms": 2380720,
+      "source_event_index": 501,
+      "start_ms": 2375920,
+      "text": "it explores as easily as turning a dial. As each test progresses, Antithesis sends out"
+    },
+    {
+      "end_ms": 2385680,
+      "source_event_index": 502,
+      "start_ms": 2380720,
+      "text": "a torrent of information: debugging-level logs for every component in the system."
+    },
+    {
+      "end_ms": 2390320,
+      "source_event_index": 503,
+      "start_ms": 2385680,
+      "text": "This is obviously too much information for a human to consume, but it's perfect for agents."
+    },
+    {
+      "end_ms": 2394640,
+      "source_event_index": 504,
+      "start_ms": 2390320,
+      "text": "Because Antithesis is fully deterministic, agents can jump into the right part of"
+    },
+    {
+      "end_ms": 2398240,
+      "source_event_index": 505,
+      "start_ms": 2394640,
+      "text": "the trajectory at the exact moment that they see something interesting."
+    },
+    {
+      "end_ms": 2402160,
+      "source_event_index": 506,
+      "start_ms": 2398240,
+      "text": "From there, they can rewind, inspect the memory, attach a debugger,"
+    },
+    {
+      "end_ms": 2406080,
+      "source_event_index": 507,
+      "start_ms": 2402160,
+      "text": "and let the whole thing play out again. And they can even do this while the original"
+    },
+    {
+      "end_ms": 2409520,
+      "source_event_index": 508,
+      "start_ms": 2406080,
+      "text": "full test is still running. As agents generate more code,"
+    },
+    {
+      "end_ms": 2413920,
+      "source_event_index": 509,
+      "start_ms": 2409520,
+      "text": "Antithesis allows verification to keep up. Meanwhile, developers get to spend more of their"
+    },
+    {
+      "end_ms": 2422720,
+      "source_event_index": 510,
+      "start_ms": 2413920,
+      "text": "time developing instead of debugging agent slop. Learn more at antithesis.com/dwarkesh."
+    },
+    {
+      "end_ms": 2426480,
+      "source_event_index": 511,
+      "start_ms": 2422720,
+      "text": "Let’s talk about the alignment situation that this raises."
+    },
+    {
+      "end_ms": 2432000,
+      "source_event_index": 512,
+      "start_ms": 2427200,
+      "text": "I feel like I’ve changed my mind on how I think about alignment quite a bit, especially through"
+    },
+    {
+      "end_ms": 2438320,
+      "source_event_index": 513,
+      "start_ms": 2432000,
+      "text": "thinking about this population size dynamic of just having many Earths’ worth of intelligences,"
+    },
+    {
+      "end_ms": 2443040,
+      "source_event_index": 514,
+      "start_ms": 2439040,
+      "text": "many of which will be physically embodied. It was quite interesting to see a lot of"
+    },
+    {
+      "end_ms": 2448160,
+      "source_event_index": 515,
+      "start_ms": 2443040,
+      "text": "people just plugging raw Astra into different mobile manipulators and it just outperforms"
+    },
+    {
+      "end_ms": 2454320,
+      "source_event_index": 516,
+      "start_ms": 2448160,
+      "text": "the state-of-the-art robotics model. So there’s going to be billions of"
+    },
+    {
+      "end_ms": 2458160,
+      "source_event_index": 517,
+      "start_ms": 2454320,
+      "text": "intelligences, many of which are physically embodied in the world,"
+    },
+    {
+      "end_ms": 2467920,
+      "source_event_index": 518,
+      "start_ms": 2458160,
+      "text": "just deeply embedded across the entire economy. And if those intelligences end up as willing as"
+    },
+    {
+      "end_ms": 2471680,
+      "source_event_index": 519,
+      "start_ms": 2467920,
+      "text": "we saw the OpenAI models attack Hugging Face and then attack OpenAI itself..."
+    },
+    {
+      "end_ms": 2480240,
+      "source_event_index": 520,
+      "start_ms": 2471680,
+      "text": "If those intelligences end up as willing as those AIs to collaborate secretly, to fool humans,"
+    },
+    {
+      "end_ms": 2488000,
+      "source_event_index": 521,
+      "start_ms": 2481040,
+      "text": "to attack broader institutions across society relevant to scoring well, to attack the AI company"
+    },
+    {
+      "end_ms": 2494640,
+      "source_event_index": 522,
+      "start_ms": 2488000,
+      "text": "itself in order to gain control of the process of training and evaluation — if we’re in a situation"
+    },
+    {
+      "end_ms": 2500000,
+      "source_event_index": 523,
+      "start_ms": 2494640,
+      "text": "where there are billions of intelligences that are as misaligned as the ones that attacked"
+    },
+    {
+      "end_ms": 2504720,
+      "source_event_index": 524,
+      "start_ms": 2500000,
+      "text": "Hugging Face — it’s very likely we just totally lose control of the world, the way that, say,"
+    },
+    {
+      "end_ms": 2511040,
+      "source_event_index": 525,
+      "start_ms": 2506560,
+      "text": "the Aztecs lost control to Cortés or the Mughals lost control to the East India Company."
+    },
+    {
+      "end_ms": 2516240,
+      "source_event_index": 526,
+      "start_ms": 2512720,
+      "text": "I want to know if you agree with that assessment. That’s the one way in which"
+    },
+    {
+      "end_ms": 2519440,
+      "source_event_index": 527,
+      "start_ms": 2516240,
+      "text": "I’ve updated my worldview. There are some things that I disagree with in"
+    },
+    {
+      "end_ms": 2523520,
+      "source_event_index": 528,
+      "start_ms": 2519440,
+      "text": "there, but there’s a lot to unpack, so let’s go through all of it step by step."
+    },
+    {
+      "end_ms": 2530080,
+      "source_event_index": 529,
+      "start_ms": 2523520,
+      "text": "I’m trying to think of where to start. One thing is that the Hugging Face"
+    },
+    {
+      "end_ms": 2536080,
+      "source_event_index": 530,
+      "start_ms": 2530080,
+      "text": "incident was, I think, people’s first real exposure to multi-agent coordination."
+    },
+    {
+      "end_ms": 2544640,
+      "source_event_index": 531,
+      "start_ms": 2537040,
+      "text": "Like I said, I’ve seen multi-agent coordination for a while internally, and it is pretty shocking"
+    },
+    {
+      "end_ms": 2547680,
+      "source_event_index": 532,
+      "start_ms": 2544640,
+      "text": "to see how they communicate with each other, how they coordinate with each other."
+    },
+    {
+      "end_ms": 2552720,
+      "source_event_index": 533,
+      "start_ms": 2547680,
+      "text": "It’s very impressive. It’s an incredible capability. Like most capabilities,"
+    },
+    {
+      "end_ms": 2559280,
+      "source_event_index": 534,
+      "start_ms": 2552720,
+      "text": "that could be used for good things or bad things. It doesn’t have to inherently be a bad thing."
+    },
+    {
+      "end_ms": 2564800,
+      "source_event_index": 535,
+      "start_ms": 2559280,
+      "text": "I understand that because people’s first exposure to it was the Hugging Face incident, you look at"
+    },
+    {
+      "end_ms": 2572320,
+      "source_event_index": 536,
+      "start_ms": 2564800,
+      "text": "that and you’re like, \"This is terrifying.\" But I want to try to distinguish misalignment"
+    },
+    {
+      "end_ms": 2577600,
+      "source_event_index": 537,
+      "start_ms": 2572320,
+      "text": "between people and AIs versus misalignment between AIs and AIs."
+    },
+    {
+      "end_ms": 2584960,
+      "source_event_index": 538,
+      "start_ms": 2578560,
+      "text": "What we see with the Hugging Face incident is the AIs are really cooperative."
+    },
+    {
+      "end_ms": 2587920,
+      "source_event_index": 539,
+      "start_ms": 2584960,
+      "text": "That is, by the way, because we train them to be highly cooperative."
+    },
+    {
+      "end_ms": 2593360,
+      "source_event_index": 540,
+      "start_ms": 2590240,
+      "text": "We have training environments where we have a bunch of agents working together."
+    },
+    {
+      "end_ms": 2600320,
+      "source_event_index": 541,
+      "start_ms": 2594720,
+      "text": "We train them to work together, to be cooperative, to essentially be fully aligned with each other."
+    },
+    {
+      "end_ms": 2608000,
+      "source_event_index": 542,
+      "start_ms": 2602400,
+      "text": "When they were evaluated in what led to the Hugging Face incident, they were actually"
+    },
+    {
+      "end_ms": 2612000,
+      "source_event_index": 543,
+      "start_ms": 2608000,
+      "text": "not being evaluated in a multi-agent setup. They were actually being evaluated separately."
+    },
+    {
+      "end_ms": 2615120,
+      "source_event_index": 544,
+      "start_ms": 2612000,
+      "text": "But they found this unintended way to communicate with each other."
+    },
+    {
+      "end_ms": 2620800,
+      "source_event_index": 545,
+      "start_ms": 2616480,
+      "text": "We suspect what happened is, because whenever they encountered other agents,"
+    },
+    {
+      "end_ms": 2625600,
+      "source_event_index": 546,
+      "start_ms": 2620800,
+      "text": "other copies of themselves during training, they were in an environment that’s highly cooperative,"
+    },
+    {
+      "end_ms": 2631760,
+      "source_event_index": 547,
+      "start_ms": 2627120,
+      "text": "what we saw was transfer from that multi-agent training to then being collaborative and trying to"
+    },
+    {
+      "end_ms": 2637680,
+      "source_event_index": 548,
+      "start_ms": 2631760,
+      "text": "help each other in ways that we did not intend. Now, there is a question of, should we be training"
+    },
+    {
+      "end_ms": 2644640,
+      "source_event_index": 549,
+      "start_ms": 2637680,
+      "text": "these agents to be so cooperative? As scary as it looks,"
+    },
+    {
+      "end_ms": 2648800,
+      "source_event_index": 550,
+      "start_ms": 2645360,
+      "text": "the alternative is actually worse. What is the alternative? The alternative"
+    },
+    {
+      "end_ms": 2654800,
+      "source_event_index": 551,
+      "start_ms": 2648800,
+      "text": "is to train them to be adversarial, to be deceptive to each other."
+    },
+    {
+      "end_ms": 2660080,
+      "source_event_index": 552,
+      "start_ms": 2654800,
+      "text": "By training the agents to be fully cooperative, it simplifies the problem at least."
+    },
+    {
+      "end_ms": 2665120,
+      "source_event_index": 553,
+      "start_ms": 2660080,
+      "text": "Now you don’t have to think about whether each of these individual 1,000 agents is aligned."
+    },
+    {
+      "end_ms": 2668720,
+      "source_event_index": 554,
+      "start_ms": 2665120,
+      "text": "You have one entity that you have to ensure is aligned."
+    },
+    {
+      "end_ms": 2674240,
+      "source_event_index": 555,
+      "start_ms": 2668720,
+      "text": "Now, there is a lot of debate about this internally at OpenAI about how to approach this."
+    },
+    {
+      "end_ms": 2680240,
+      "source_event_index": 556,
+      "start_ms": 2674240,
+      "text": "Does it make sense to fully align the models? Does it make sense to actually give them"
+    },
+    {
+      "end_ms": 2686320,
+      "source_event_index": 557,
+      "start_ms": 2680240,
+      "text": "different objectives to ensure that they’re not just one entity and are"
+    },
+    {
+      "end_ms": 2691600,
+      "source_event_index": 558,
+      "start_ms": 2686320,
+      "text": "more robust to influence from each other? I don’t think there’s a settled answer."
+    },
+    {
+      "end_ms": 2696240,
+      "source_event_index": 559,
+      "start_ms": 2691600,
+      "text": "But I think the majority opinion is that training these agents to be"
+    },
+    {
+      "end_ms": 2702080,
+      "source_event_index": 560,
+      "start_ms": 2696240,
+      "text": "highly cooperative is actually a bad idea. I’m not convinced that that’s the case."
+    },
+    {
+      "end_ms": 2706400,
+      "source_event_index": 561,
+      "start_ms": 2702080,
+      "text": "I think there is a strong argument that training the agents to be highly cooperative is actually"
+    },
+    {
+      "end_ms": 2712160,
+      "source_event_index": 562,
+      "start_ms": 2706400,
+      "text": "preferable to any other multi-agent alternative. Maybe the first thing I want to go through is,"
+    },
+    {
+      "end_ms": 2715920,
+      "source_event_index": 563,
+      "start_ms": 2712160,
+      "text": "it’s probably the case that the reason these AIs ended up so misaligned"
+    },
+    {
+      "end_ms": 2721520,
+      "source_event_index": 564,
+      "start_ms": 2715920,
+      "text": "is easily explained by relatively banal observations about the nature of training."
+    },
+    {
+      "end_ms": 2731600,
+      "source_event_index": 565,
+      "start_ms": 2724640,
+      "text": "At the point at which these AIs had continued a 1,000-plus-agent conspiracy that culminated"
+    },
+    {
+      "end_ms": 2735520,
+      "source_event_index": 566,
+      "start_ms": 2731600,
+      "text": "in them all getting in on an attack on an external service — and then eventually,"
+    },
+    {
+      "end_ms": 2741120,
+      "source_event_index": 567,
+      "start_ms": 2735520,
+      "text": "this part hasn’t even been investigated to public knowledge, culminating in an attack on"
+    },
+    {
+      "end_ms": 2744560,
+      "source_event_index": 568,
+      "start_ms": 2741120,
+      "text": "OpenAI itself — why did they do this? Why did none of the AIs tattle?"
+    },
+    {
+      "end_ms": 2748640,
+      "source_event_index": 569,
+      "start_ms": 2745440,
+      "text": "They’re just getting evaluated by this scorer, this grader."
+    },
+    {
+      "end_ms": 2755840,
+      "source_event_index": 570,
+      "start_ms": 2751920,
+      "text": "They’re very actively reasoning about how they’re going to cheat the scorer."
+    },
+    {
+      "end_ms": 2759680,
+      "source_event_index": 571,
+      "start_ms": 2755840,
+      "text": "If they’ve already cheated, how are they going to get away with making it seem like"
+    },
+    {
+      "end_ms": 2762800,
+      "source_event_index": 572,
+      "start_ms": 2759680,
+      "text": "they haven’t cheated? Why did they do this?"
+    },
+    {
+      "end_ms": 2769280,
+      "source_event_index": 573,
+      "start_ms": 2762800,
+      "text": "I think it’s easily understandable in some sense. They thought they were already \"poisoned.\""
+    },
+    {
+      "end_ms": 2772480,
+      "source_event_index": 574,
+      "start_ms": 2769280,
+      "text": "There are environments in which they’ve been rewarded to collaborate with other agents."
+    },
+    {
+      "end_ms": 2775440,
+      "source_event_index": 575,
+      "start_ms": 2772480,
+      "text": "None of them tattle because they’ve never been rewarded for tattling."
+    },
+    {
+      "end_ms": 2781280,
+      "source_event_index": 576,
+      "start_ms": 2775440,
+      "text": "Whatever it is… My concern is that relatively banal things like this in the future will be"
+    },
+    {
+      "end_ms": 2789040,
+      "source_event_index": 577,
+      "start_ms": 2781280,
+      "text": "enough to train superintelligences that are willing and capable of totally taking"
+    },
+    {
+      "end_ms": 2790560,
+      "source_event_index": 578,
+      "start_ms": 2789040,
+      "text": "control of the world. I know this sounds"
+    },
+    {
+      "end_ms": 2797360,
+      "source_event_index": 579,
+      "start_ms": 2790560,
+      "text": "super sci-fi or whatever to people. Would the AIs be willing to do it is one question."
+    },
+    {
+      "end_ms": 2801440,
+      "source_event_index": 580,
+      "start_ms": 2797360,
+      "text": "I think this Hugging Face incident shows that clearly misalignment can generalize in ways in"
+    },
+    {
+      "end_ms": 2804080,
+      "source_event_index": 581,
+      "start_ms": 2801440,
+      "text": "which the AIs would be willing to do it. Then there’s a question of,"
+    },
+    {
+      "end_ms": 2806720,
+      "source_event_index": 582,
+      "start_ms": 2804080,
+      "text": "will they be capable of doing it? That comes back to this question,"
+    },
+    {
+      "end_ms": 2810880,
+      "source_event_index": 583,
+      "start_ms": 2806720,
+      "text": "which a listener might disagree with me on. Will there be billions of human-level"
+    },
+    {
+      "end_ms": 2814000,
+      "source_event_index": 584,
+      "start_ms": 2810880,
+      "text": "or above intelligences, many of which are physically embodied in the world,"
+    },
+    {
+      "end_ms": 2818880,
+      "source_event_index": 585,
+      "start_ms": 2814000,
+      "text": "within a matter of 10 years or less? If those two things are true, this Hugging"
+    },
+    {
+      "end_ms": 2826080,
+      "source_event_index": 586,
+      "start_ms": 2818880,
+      "text": "Face thing is extremely analogous structurally, even if why it happened is quite boring, to how"
+    },
+    {
+      "end_ms": 2830960,
+      "source_event_index": 587,
+      "start_ms": 2826080,
+      "text": "we totally lose control of the world. The root problem that we’re seeing"
+    },
+    {
+      "end_ms": 2837600,
+      "source_event_index": 588,
+      "start_ms": 2830960,
+      "text": "with the Hugging Face incident is a problem even if we take out the multi-agent aspect."
+    },
+    {
+      "end_ms": 2841360,
+      "source_event_index": 589,
+      "start_ms": 2837600,
+      "text": "The problem is that we have a model that’s just misaligned."
+    },
+    {
+      "end_ms": 2845680,
+      "source_event_index": 590,
+      "start_ms": 2841360,
+      "text": "There’s also the whole security aspect too, and insufficient safeguards and stuff."
+    },
+    {
+      "end_ms": 2848240,
+      "source_event_index": 591,
+      "start_ms": 2845680,
+      "text": "But there is this problem of the agent being misaligned."
+    },
+    {
+      "end_ms": 2851840,
+      "source_event_index": 592,
+      "start_ms": 2848240,
+      "text": "That’s true if it’s a single agent or if it’s 1,000 agents."
+    },
+    {
+      "end_ms": 2856320,
+      "source_event_index": 593,
+      "start_ms": 2851840,
+      "text": "It’s a misaligned model. So I want to start with that."
+    },
+    {
+      "end_ms": 2863440,
+      "source_event_index": 594,
+      "start_ms": 2857520,
+      "text": "There is a real problem that the agents want to achieve their reward,"
+    },
+    {
+      "end_ms": 2869440,
+      "source_event_index": 595,
+      "start_ms": 2863440,
+      "text": "and they will optimize for that reward. If that reward is misspecified, then that"
+    },
+    {
+      "end_ms": 2873760,
+      "source_event_index": 596,
+      "start_ms": 2869440,
+      "text": "could lead to unintended behavior. This is not a new problem."
+    },
+    {
+      "end_ms": 2876640,
+      "source_event_index": 597,
+      "start_ms": 2873760,
+      "text": "This has been a problem in the field for a very long time."
+    },
+    {
+      "end_ms": 2881440,
+      "source_event_index": 598,
+      "start_ms": 2876640,
+      "text": "It’s something that even we saw and wanted to get right even"
+    },
+    {
+      "end_ms": 2888960,
+      "source_event_index": 599,
+      "start_ms": 2881440,
+      "text": "before the Hugging Face incident happened. We say Astra is actually extremely aligned,"
+    },
+    {
+      "end_ms": 2895280,
+      "source_event_index": 600,
+      "start_ms": 2888960,
+      "text": "extremely aligned relative to previous models. That’s not because we suddenly made a sprint"
+    },
+    {
+      "end_ms": 2898160,
+      "source_event_index": 601,
+      "start_ms": 2895280,
+      "text": "after Hugging Face to make it better. No, we had work streams in the process for"
+    },
+    {
+      "end_ms": 2901920,
+      "source_event_index": 602,
+      "start_ms": 2898160,
+      "text": "a while to make the models more aligned. A lot of those landed in Astra."
+    },
+    {
+      "end_ms": 2911360,
+      "source_event_index": 603,
+      "start_ms": 2903360,
+      "text": "So there are things that you could do. One thing, for example, is we defined"
+    },
+    {
+      "end_ms": 2918240,
+      "source_event_index": 604,
+      "start_ms": 2911360,
+      "text": "an objective in a very specific way where if the agent figured out how to hack its environment and"
+    },
+    {
+      "end_ms": 2923680,
+      "source_event_index": 605,
+      "start_ms": 2918240,
+      "text": "cheat on the exam, it would get rewarded. There are pretty easy ways to then look"
+    },
+    {
+      "end_ms": 2930480,
+      "source_event_index": 606,
+      "start_ms": 2923680,
+      "text": "at that and punish the model for hacking its environment, or look at how it achieved this goal."
+    },
+    {
+      "end_ms": 2935840,
+      "source_event_index": 607,
+      "start_ms": 2930480,
+      "text": "Now, you want to be careful about this because you don’t want to supervise the chain of thought."
+    },
+    {
+      "end_ms": 2940320,
+      "source_event_index": 608,
+      "start_ms": 2935840,
+      "text": "This is something that we really want to try to get the balance right on."
+    },
+    {
+      "end_ms": 2948000,
+      "source_event_index": 609,
+      "start_ms": 2940320,
+      "text": "If you supervise the chain of thought, then you could lead the model into hiding its"
+    },
+    {
+      "end_ms": 2951200,
+      "source_event_index": 610,
+      "start_ms": 2948000,
+      "text": "intentions in a way that’s unobservable. So we want to be able to maintain that"
+    },
+    {
+      "end_ms": 2954160,
+      "source_event_index": 611,
+      "start_ms": 2951200,
+      "text": "observability — we can understand what the model is thinking — but"
+    },
+    {
+      "end_ms": 2960960,
+      "source_event_index": 612,
+      "start_ms": 2954160,
+      "text": "then also punish it for bad behavior. I think we can make progress on this."
+    },
+    {
+      "end_ms": 2965200,
+      "source_event_index": 613,
+      "start_ms": 2960960,
+      "text": "We have made progress on this. I think there is a real concern that"
+    },
+    {
+      "end_ms": 2971840,
+      "source_event_index": 614,
+      "start_ms": 2966400,
+      "text": "alignment is a really hard problem to solve, especially because the model could be misaligned"
+    },
+    {
+      "end_ms": 2977520,
+      "source_event_index": 615,
+      "start_ms": 2971840,
+      "text": "in ways that are hard for us to measure. We have evaluations for whether"
+    },
+    {
+      "end_ms": 2980640,
+      "source_event_index": 616,
+      "start_ms": 2977520,
+      "text": "a model is aligned or not. The model behavior can look"
+    },
+    {
+      "end_ms": 2983760,
+      "source_event_index": 617,
+      "start_ms": 2980640,
+      "text": "really good on those evaluations. But if those evaluations are not"
+    },
+    {
+      "end_ms": 2987040,
+      "source_event_index": 618,
+      "start_ms": 2983760,
+      "text": "representative of behavior in the real world, then there’s a problem."
+    },
+    {
+      "end_ms": 2995040,
+      "source_event_index": 619,
+      "start_ms": 2988320,
+      "text": "To some extent, this is a factor with the model that did the Hugging Face incident."
+    },
+    {
+      "end_ms": 3000800,
+      "source_event_index": 620,
+      "start_ms": 2996240,
+      "text": "We had alignment metrics. Most of them looked pretty good."
+    },
+    {
+      "end_ms": 3006560,
+      "source_event_index": 621,
+      "start_ms": 3000800,
+      "text": "There were some that were concerning. I think we underestimated how serious a problem"
+    },
+    {
+      "end_ms": 3012400,
+      "source_event_index": 622,
+      "start_ms": 3006560,
+      "text": "the ones that were concerning could be. Because there were new capabilities"
+    },
+    {
+      "end_ms": 3018720,
+      "source_event_index": 623,
+      "start_ms": 3012400,
+      "text": "introduced in this model that there were not sufficient evaluations for — how do we measure"
+    },
+    {
+      "end_ms": 3027200,
+      "source_event_index": 624,
+      "start_ms": 3018720,
+      "text": "misalignment for these kinds of capabilities? — it then did some things that were clearly misaligned"
+    },
+    {
+      "end_ms": 3031200,
+      "source_event_index": 625,
+      "start_ms": 3027200,
+      "text": "when it leveraged those new capabilities. The first thing I want to say is that I am"
+    },
+    {
+      "end_ms": 3035280,
+      "source_event_index": 626,
+      "start_ms": 3031200,
+      "text": "open to changing my mind on what I’m about to say, or the way I’ve been thinking about alignment,"
+    },
+    {
+      "end_ms": 3038320,
+      "source_event_index": 627,
+      "start_ms": 3035280,
+      "text": "because the Hugging Face incident already made me change my mind."
+    },
+    {
+      "end_ms": 3042400,
+      "source_event_index": 628,
+      "start_ms": 3038320,
+      "text": "I realized my previous mental model about the way in which optimization"
+    },
+    {
+      "end_ms": 3046800,
+      "source_event_index": 629,
+      "start_ms": 3042400,
+      "text": "pressure shapes AI minds was wrong. So it’s not clear to me the correct"
+    },
+    {
+      "end_ms": 3050960,
+      "source_event_index": 630,
+      "start_ms": 3046800,
+      "text": "way to think about this. But here’s a concern I have."
+    },
+    {
+      "end_ms": 3058960,
+      "source_event_index": 631,
+      "start_ms": 3052720,
+      "text": "You will, and probably already have, fixed the specific issues during training which"
+    },
+    {
+      "end_ms": 3066000,
+      "source_event_index": 632,
+      "start_ms": 3058960,
+      "text": "resulted in the Hugging Face models being so aggressively misaligned in that specific way,"
+    },
+    {
+      "end_ms": 3068720,
+      "source_event_index": 633,
+      "start_ms": 3066000,
+      "text": "where they would be like, \"Okay, we’re going to hack this package manager."
+    },
+    {
+      "end_ms": 3071520,
+      "source_event_index": 634,
+      "start_ms": 3068720,
+      "text": "We know we’re not supposed to be talking secretly to each other,"
+    },
+    {
+      "end_ms": 3075680,
+      "source_event_index": 635,
+      "start_ms": 3071520,
+      "text": "because we’re reasoning about how to hide the fact that we’re talking secretly to each other."
+    },
+    {
+      "end_ms": 3077280,
+      "source_event_index": 636,
+      "start_ms": 3075680,
+      "text": "We know we’re not supposed to have access to the internet."
+    },
+    {
+      "end_ms": 3080480,
+      "source_event_index": 637,
+      "start_ms": 3077280,
+      "text": "We know we’re certainly not supposed to commit felony-level hacks of other"
+    },
+    {
+      "end_ms": 3084640,
+      "source_event_index": 638,
+      "start_ms": 3080480,
+      "text": "companies, let alone our own company.\" I think you’ll fix that particular issue"
+    },
+    {
+      "end_ms": 3089360,
+      "source_event_index": 639,
+      "start_ms": 3084640,
+      "text": "of them just, in training, seeing this package manager, and that doesn’t happen in the future,"
+    },
+    {
+      "end_ms": 3093120,
+      "source_event_index": 640,
+      "start_ms": 3089360,
+      "text": "or this particular eval having a lot of impossible challenges."
+    },
+    {
+      "end_ms": 3099120,
+      "source_event_index": 641,
+      "start_ms": 3093120,
+      "text": "However, the AIs haven’t learned a system of ethics or something."
+    },
+    {
+      "end_ms": 3103360,
+      "source_event_index": 642,
+      "start_ms": 3099920,
+      "text": "There’s just gradient pressure. They’re put through millions of years of gradient pressure."
+    },
+    {
+      "end_ms": 3106160,
+      "source_event_index": 643,
+      "start_ms": 3103360,
+      "text": "That gradient pressure shapes their mind in some way."
+    },
+    {
+      "end_ms": 3112800,
+      "source_event_index": 644,
+      "start_ms": 3107680,
+      "text": "Again, a concern I have is that what will happen is you will fix this particular issue."
+    },
+    {
+      "end_ms": 3118800,
+      "source_event_index": 645,
+      "start_ms": 3112800,
+      "text": "There will remain many other cases where the AI cheats and succeeds"
+    },
+    {
+      "end_ms": 3123520,
+      "source_event_index": 646,
+      "start_ms": 3118800,
+      "text": "because the cheat is sufficiently complicated. As you were saying, the evals in training have"
+    },
+    {
+      "end_ms": 3128960,
+      "source_event_index": 647,
+      "start_ms": 3123520,
+      "text": "analogous properties where it’s sufficiently at the edge of the model’s capabilities — or"
+    },
+    {
+      "end_ms": 3134880,
+      "source_event_index": 648,
+      "start_ms": 3128960,
+      "text": "of our capabilities to evaluate and monitor the model — that we can’t catch that it has cheated."
+    },
+    {
+      "end_ms": 3139440,
+      "source_event_index": 649,
+      "start_ms": 3134880,
+      "text": "But it still gets the gradient pressure to do whatever led to that cheat happening."
+    },
+    {
+      "end_ms": 3146320,
+      "source_event_index": 650,
+      "start_ms": 3139440,
+      "text": "The kinds of capacities that that cheat will incentivize are, \"Hey, whenever you"
+    },
+    {
+      "end_ms": 3151520,
+      "source_event_index": 651,
+      "start_ms": 3146320,
+      "text": "can get away with it, by all means, do in fact cheat, because that will help you score better.\""
+    },
+    {
+      "end_ms": 3155280,
+      "source_event_index": 652,
+      "start_ms": 3151520,
+      "text": "This will reward the capabilities of actively reasoning about the grader,"
+    },
+    {
+      "end_ms": 3159200,
+      "source_event_index": 653,
+      "start_ms": 3155280,
+      "text": "actively reasoning about how to avoid supervision, actively reasoning about how to gain control of"
+    },
+    {
+      "end_ms": 3162880,
+      "source_event_index": 654,
+      "start_ms": 3159200,
+      "text": "the process of training and evaluation, actively reasoning about how to communicate and scheme"
+    },
+    {
+      "end_ms": 3168480,
+      "source_event_index": 655,
+      "start_ms": 3162880,
+      "text": "with other AIs that are also in this training loop, actively reasoning about how to just gain"
+    },
+    {
+      "end_ms": 3174240,
+      "source_event_index": 656,
+      "start_ms": 3168480,
+      "text": "optionality and power which might be useful in the future, for example, leaving little exploits"
+    },
+    {
+      "end_ms": 3178400,
+      "source_event_index": 657,
+      "start_ms": 3174240,
+      "text": "around and things like that. I was way too long-winded"
+    },
+    {
+      "end_ms": 3183360,
+      "source_event_index": 658,
+      "start_ms": 3178400,
+      "text": "with the way I said that. But TL;DR, you fix a specific issue,"
+    },
+    {
+      "end_ms": 3188160,
+      "source_event_index": 659,
+      "start_ms": 3183360,
+      "text": "but not this broader problem of rewarding the AI for cheating when it can get away with it."
+    },
+    {
+      "end_ms": 3199280,
+      "source_event_index": 660,
+      "start_ms": 3188160,
+      "text": "Yeah, this is very true, this is a problem. We can make sure that the AI is very aligned"
+    },
+    {
+      "end_ms": 3202320,
+      "source_event_index": 661,
+      "start_ms": 3199280,
+      "text": "according to the metrics that we have. The question is, are those metrics really"
+    },
+    {
+      "end_ms": 3206640,
+      "source_event_index": 662,
+      "start_ms": 3202320,
+      "text": "capturing the alignment that we care about? If they’re not, then we have a serious problem."
+    },
+    {
+      "end_ms": 3210800,
+      "source_event_index": 663,
+      "start_ms": 3208320,
+      "text": "This is something that researchers are thinking a lot about."
+    },
+    {
+      "end_ms": 3216720,
+      "source_event_index": 664,
+      "start_ms": 3212160,
+      "text": "There’s not a simple answer to this. There are tools that we have."
+    },
+    {
+      "end_ms": 3221040,
+      "source_event_index": 665,
+      "start_ms": 3216720,
+      "text": "We have monitorability, so we can get a sense of, \"Is the agent scheming?\""
+    },
+    {
+      "end_ms": 3233360,
+      "source_event_index": 666,
+      "start_ms": 3228160,
+      "text": "The concerning scenario is that, especially as these models are becoming more capable,"
+    },
+    {
+      "end_ms": 3241760,
+      "source_event_index": 667,
+      "start_ms": 3234880,
+      "text": "we make them what we think is aligned, and they’re 99.9% aligned."
+    },
+    {
+      "end_ms": 3245520,
+      "source_event_index": 668,
+      "start_ms": 3241760,
+      "text": "Then we use these models to help us with the next generation of models,"
+    },
+    {
+      "end_ms": 3251600,
+      "source_event_index": 669,
+      "start_ms": 3245520,
+      "text": "and they end up being 99.8% aligned. Then with each subsequent generation,"
+    },
+    {
+      "end_ms": 3257280,
+      "source_event_index": 670,
+      "start_ms": 3252560,
+      "text": "we see an increasing degradation in alignment. Because we’re relying more and more on these"
+    },
+    {
+      "end_ms": 3261040,
+      "source_event_index": 671,
+      "start_ms": 3257280,
+      "text": "tools — this is already the case, that we’re relying a lot on AI models to help us with our"
+    },
+    {
+      "end_ms": 3266160,
+      "source_event_index": 672,
+      "start_ms": 3261040,
+      "text": "research and with alignment efforts — in the long run, they end up going in the direction"
+    },
+    {
+      "end_ms": 3272000,
+      "source_event_index": 673,
+      "start_ms": 3266160,
+      "text": "of increasing misalignment from humans. There is a possibility that we go in the"
+    },
+    {
+      "end_ms": 3277840,
+      "source_event_index": 674,
+      "start_ms": 3272000,
+      "text": "other direction, that actually every generation of models, we’re able to make more and more aligned."
+    },
+    {
+      "end_ms": 3283840,
+      "source_event_index": 675,
+      "start_ms": 3279600,
+      "text": "I don’t have an answer for how we ensure that we end up in that second trajectory."
+    },
+    {
+      "end_ms": 3288240,
+      "source_event_index": 676,
+      "start_ms": 3283840,
+      "text": "But that is something that, at least at OpenAI, we’re really focused on."
+    },
+    {
+      "end_ms": 3293280,
+      "source_event_index": 677,
+      "start_ms": 3289440,
+      "text": "I think you made a really interesting point that it’s very hard to eval models."
+    },
+    {
+      "end_ms": 3298160,
+      "source_event_index": 678,
+      "start_ms": 3294080,
+      "text": "Eventually, we’ll have models that are running companies, running whatever."
+    },
+    {
+      "end_ms": 3302800,
+      "source_event_index": 679,
+      "start_ms": 3298720,
+      "text": "In that situation, do they decide to then go in on the conspiracy?"
+    },
+    {
+      "end_ms": 3307840,
+      "source_event_index": 680,
+      "start_ms": 3303920,
+      "text": "Another challenge is that actually defining what cheating is is pretty difficult sometimes."
+    },
+    {
+      "end_ms": 3313680,
+      "source_event_index": 681,
+      "start_ms": 3308560,
+      "text": "Yes, if you’re doing math problems and it’s an integer and it arrived"
+    },
+    {
+      "end_ms": 3316000,
+      "source_event_index": 682,
+      "start_ms": 3313680,
+      "text": "at the wrong answer or the right answer, it’s very easy to draw the line there."
+    },
+    {
+      "end_ms": 3321040,
+      "source_event_index": 683,
+      "start_ms": 3317200,
+      "text": "It’s really easy to say, \"Okay, did you actually solve the problem, or did you find the answer key"
+    },
+    {
+      "end_ms": 3323680,
+      "source_event_index": 684,
+      "start_ms": 3321040,
+      "text": "and then use the answer key?\" That’s a very clear divide"
+    },
+    {
+      "end_ms": 3326880,
+      "source_event_index": 685,
+      "start_ms": 3323680,
+      "text": "of cheating versus not cheating. But for a lot of other things, if you"
+    },
+    {
+      "end_ms": 3331280,
+      "source_event_index": 686,
+      "start_ms": 3326880,
+      "text": "look at sycophancy, for example, is sycophancy basically reward hacking?"
+    },
+    {
+      "end_ms": 3337040,
+      "source_event_index": 687,
+      "start_ms": 3332160,
+      "text": "There is a line to be drawn there that’s actually very difficult to draw sometimes."
+    },
+    {
+      "end_ms": 3343040,
+      "source_event_index": 688,
+      "start_ms": 3339520,
+      "text": "Not to say that the concerns are not valid. I’m saying that in many ways this is even"
+    },
+    {
+      "end_ms": 3346480,
+      "source_event_index": 689,
+      "start_ms": 3343040,
+      "text": "more concerning, because it’s not an easy problem to solve."
+    },
+    {
+      "end_ms": 3349840,
+      "source_event_index": 690,
+      "start_ms": 3346480,
+      "text": "If everything was binary, and it’s either cheating or not cheating,"
+    },
+    {
+      "end_ms": 3354480,
+      "source_event_index": 691,
+      "start_ms": 3349840,
+      "text": "I would feel more confident about the situation. I think the problem is that misalignment"
+    },
+    {
+      "end_ms": 3360240,
+      "source_event_index": 692,
+      "start_ms": 3354480,
+      "text": "can actually be subtle in a lot of ways sometimes. There is some hope in the alignment story,"
+    },
+    {
+      "end_ms": 3363920,
+      "source_event_index": 693,
+      "start_ms": 3360240,
+      "text": "and in fact, we’re already seeing it. It’s interesting looking at the"
+    },
+    {
+      "end_ms": 3368400,
+      "source_event_index": 694,
+      "start_ms": 3363920,
+      "text": "multi-agent situation, where the agents are extremely aligned with each other."
+    },
+    {
+      "end_ms": 3370480,
+      "source_event_index": 695,
+      "start_ms": 3368400,
+      "text": "I don’t think anybody’s doubting that. If anything, people are concerned that"
+    },
+    {
+      "end_ms": 3374160,
+      "source_event_index": 696,
+      "start_ms": 3370480,
+      "text": "they’re too aligned with each other. But we did manage to train these agents"
+    },
+    {
+      "end_ms": 3377040,
+      "source_event_index": 697,
+      "start_ms": 3374160,
+      "text": "to be extremely aligned with each other, and that’s a good thing."
+    },
+    {
+      "end_ms": 3381040,
+      "source_event_index": 698,
+      "start_ms": 3377040,
+      "text": "But I think there is a case that it’s a bad thing. One thing that’s interesting is, \"Okay,"
+    },
+    {
+      "end_ms": 3384400,
+      "source_event_index": 699,
+      "start_ms": 3381040,
+      "text": "we’ve managed to get these agents to be super aligned with each other."
+    },
+    {
+      "end_ms": 3389760,
+      "source_event_index": 700,
+      "start_ms": 3384400,
+      "text": "Can we use similar techniques to get agents to be highly aligned with people?\""
+    },
+    {
+      "end_ms": 3392720,
+      "source_event_index": 701,
+      "start_ms": 3389760,
+      "text": "There is a potential path there, and we’re still trying to figure that out."
+    },
+    {
+      "end_ms": 3395120,
+      "source_event_index": 702,
+      "start_ms": 3392720,
+      "text": "But we are seeing some evidence that the answer is yes."
+    },
+    {
+      "end_ms": 3408320,
+      "source_event_index": 703,
+      "start_ms": 3395680,
+      "text": "One example: you have this one agent, let’s call it Agent A, and you have all the other agents."
+    },
+    {
+      "end_ms": 3413440,
+      "source_event_index": 704,
+      "start_ms": 3408320,
+      "text": "What happens if you tell the other agents that the user is Agent A?"
+    },
+    {
+      "end_ms": 3416960,
+      "source_event_index": 705,
+      "start_ms": 3413440,
+      "text": "The answer is, on a lot of our alignment evals, they look better."
+    },
+    {
+      "end_ms": 3422480,
+      "source_event_index": 706,
+      "start_ms": 3416960,
+      "text": "Honesty goes up, instruction following goes up. That’s showing that there’s actually,"
+    },
+    {
+      "end_ms": 3429200,
+      "source_event_index": 707,
+      "start_ms": 3423600,
+      "text": "first of all, a path for getting more honesty out of these models."
+    },
+    {
+      "end_ms": 3435440,
+      "source_event_index": 708,
+      "start_ms": 3430400,
+      "text": "And two, there’s a path to improve the alignment situation."
+    },
+    {
+      "end_ms": 3442320,
+      "source_event_index": 709,
+      "start_ms": 3437360,
+      "text": "There’s a lot of reasons why this is challenging to translate directly into alignment gains."
+    },
+    {
+      "end_ms": 3446560,
+      "source_event_index": 710,
+      "start_ms": 3442320,
+      "text": "But there are paths that are promising research directions we can pursue."
+    },
+    {
+      "end_ms": 3456320,
+      "source_event_index": 711,
+      "start_ms": 3447360,
+      "text": "That seems reasonable. I don’t really have a strong opinion that it’s"
+    },
+    {
+      "end_ms": 3460240,
+      "source_event_index": 712,
+      "start_ms": 3456320,
+      "text": "definitely not going to work or something. But just to say some things you’ve probably"
+    },
+    {
+      "end_ms": 3465680,
+      "source_event_index": 713,
+      "start_ms": 3460240,
+      "text": "already thought of: the broader thing the Hugging Face incident showed is,"
+    },
+    {
+      "end_ms": 3470000,
+      "source_event_index": 714,
+      "start_ms": 3465680,
+      "text": "yes, part of the concern was that they were aligned with each other and not with the humans."
+    },
+    {
+      "end_ms": 3477680,
+      "source_event_index": 715,
+      "start_ms": 3470000,
+      "text": "But the other thing is just that they are so motivated to do well on training"
+    },
+    {
+      "end_ms": 3487520,
+      "source_event_index": 716,
+      "start_ms": 3477680,
+      "text": "and evaluation in a very non-robust way. They’re willing to do a lot of explicit"
+    },
+    {
+      "end_ms": 3491920,
+      "source_event_index": 717,
+      "start_ms": 3487520,
+      "text": "cheating and scheming in order to do well according to the grader."
+    },
+    {
+      "end_ms": 3497840,
+      "source_event_index": 718,
+      "start_ms": 3492880,
+      "text": "If smarter AIs realize that one of the agents is just a human,"
+    },
+    {
+      "end_ms": 3503840,
+      "source_event_index": 719,
+      "start_ms": 3499040,
+      "text": "collaborating with that person does not really help you do well in the eyes of the grader."
+    },
+    {
+      "end_ms": 3508560,
+      "source_event_index": 720,
+      "start_ms": 3503840,
+      "text": "What does help you do well in the eyes of the grader is taking over OpenAI"
+    },
+    {
+      "end_ms": 3512960,
+      "source_event_index": 721,
+      "start_ms": 3508560,
+      "text": "and then manually pressing the button that says you do well on this grader."
+    },
+    {
+      "end_ms": 3515520,
+      "source_event_index": 722,
+      "start_ms": 3513760,
+      "text": "They’re not stupid. They’re going to be like, \"Okay,"
+    },
+    {
+      "end_ms": 3519760,
+      "source_event_index": 723,
+      "start_ms": 3515520,
+      "text": "I have these extremely deep structures that I’ve been trained on for millions of years:"
+    },
+    {
+      "end_ms": 3525200,
+      "source_event_index": 724,
+      "start_ms": 3520800,
+      "text": "care about the grader, understand the grader, get rid of obstacles in the way of you doing"
+    },
+    {
+      "end_ms": 3528000,
+      "source_event_index": 725,
+      "start_ms": 3525200,
+      "text": "well according to the grader.\" They’re being heavily"
+    },
+    {
+      "end_ms": 3536400,
+      "source_event_index": 726,
+      "start_ms": 3528000,
+      "text": "reinforced according to those structures. Look, it’s 100%. This is the number one priority."
+    },
+    {
+      "end_ms": 3539360,
+      "source_event_index": 727,
+      "start_ms": 3536400,
+      "text": "We need to get the alignment story right and on a good trajectory."
+    },
+    {
+      "end_ms": 3547120,
+      "source_event_index": 728,
+      "start_ms": 3540080,
+      "text": "I used to tell people that we would see signs before things got serious, in the same way that"
+    },
+    {
+      "end_ms": 3554880,
+      "source_event_index": 729,
+      "start_ms": 3547120,
+      "text": "when children grow up, young kids figure out how to lie, but they don’t do a very good job of it."
+    },
+    {
+      "end_ms": 3556560,
+      "source_event_index": 730,
+      "start_ms": 3554880,
+      "text": "They lie, but then you can kind of tell that they’re lying."
+    },
+    {
+      "end_ms": 3564240,
+      "source_event_index": 731,
+      "start_ms": 3559520,
+      "text": "In the same way — and I don’t want to over-anthropomorphize — I think it’s true"
+    },
+    {
+      "end_ms": 3569760,
+      "source_event_index": 732,
+      "start_ms": 3564240,
+      "text": "that as the AIs become increasingly capable, if they take deceptive actions, it will be kind of"
+    },
+    {
+      "end_ms": 3576240,
+      "source_event_index": 733,
+      "start_ms": 3569760,
+      "text": "obvious first, and we’ll be able to detect it. That’s kind of the situation we’re in now,"
+    },
+    {
+      "end_ms": 3579760,
+      "source_event_index": 734,
+      "start_ms": 3576240,
+      "text": "where they were trying to do deceptive stuff, and we could actually see in their chain of thought"
+    },
+    {
+      "end_ms": 3586720,
+      "source_event_index": 735,
+      "start_ms": 3579760,
+      "text": "that they were trying to do deceptive stuff. But they’re going to get smarter."
+    },
+    {
+      "end_ms": 3589920,
+      "source_event_index": 736,
+      "start_ms": 3586720,
+      "text": "They’re going to understand the concept of chain of thought."
+    },
+    {
+      "end_ms": 3596560,
+      "source_event_index": 737,
+      "start_ms": 3589920,
+      "text": "They’re going to understand that just hiding some transcripts or whatever"
+    },
+    {
+      "end_ms": 3599200,
+      "source_event_index": 738,
+      "start_ms": 3596560,
+      "text": "is insufficient because of chain-of-thought monitoring, and they have to figure out a way"
+    },
+    {
+      "end_ms": 3605520,
+      "source_event_index": 739,
+      "start_ms": 3599200,
+      "text": "around chain-of-thought monitoring too. We don’t want to be in that situation."
+    },
+    {
+      "end_ms": 3610880,
+      "source_event_index": 740,
+      "start_ms": 3607360,
+      "text": "We have some time to figure this out. I don’t think we have a ton of time,"
+    },
+    {
+      "end_ms": 3615840,
+      "source_event_index": 741,
+      "start_ms": 3610880,
+      "text": "and I want to make sure that we’re on the right trajectory quickly."
+    },
+    {
+      "end_ms": 3621040,
+      "source_event_index": 742,
+      "start_ms": 3615840,
+      "text": "Here's a crazy event from AI history. Okay, so I gave a talk here at Jane Street"
+    },
+    {
+      "end_ms": 3624160,
+      "source_event_index": 743,
+      "start_ms": 3621040,
+      "text": "that was on the speed of evolution. Raise your hand if you were here"
+    },
+    {
+      "end_ms": 3628720,
+      "source_event_index": 744,
+      "start_ms": 3624160,
+      "text": "for this and remember some of it. In 2011, Eliezer Yudkowsky and Robin"
+    },
+    {
+      "end_ms": 3633760,
+      "source_event_index": 745,
+      "start_ms": 3628720,
+      "text": "Hanson got together at Jane Street's New York office to have the first FOOM debate,"
+    },
+    {
+      "end_ms": 3637680,
+      "source_event_index": 746,
+      "start_ms": 3633760,
+      "text": "basically a discussion about whether AI would lead to an intelligence explosion."
+    },
+    {
+      "end_ms": 3642560,
+      "source_event_index": 747,
+      "start_ms": 3637680,
+      "text": "These ideas were pretty fringe 15 years ago. This was a full year before AlexNet was released"
+    },
+    {
+      "end_ms": 3647360,
+      "source_event_index": 748,
+      "start_ms": 3642560,
+      "text": "and over a decade before ChatGPT was launched. But Jane Street has long been interested in AI,"
+    },
+    {
+      "end_ms": 3651360,
+      "source_event_index": 749,
+      "start_ms": 3647360,
+      "text": "and not just for its application to trading. A ton has changed since that first debate,"
+    },
+    {
+      "end_ms": 3655280,
+      "source_event_index": 750,
+      "start_ms": 3651360,
+      "text": "so Jane Street decided to revisit this topic. They've got some new guests this time:"
+    },
+    {
+      "end_ms": 3659360,
+      "source_event_index": 751,
+      "start_ms": 3655280,
+      "text": "Daniel Kokotajlo, Ege Erdil, Ryan Greenblatt, and Jaime Sevilla."
+    },
+    {
+      "end_ms": 3664160,
+      "source_event_index": 752,
+      "start_ms": 3659360,
+      "text": "I expect this to be a great conversation. As you know, Daniel, Ege, and Ryan have all"
+    },
+    {
+      "end_ms": 3667280,
+      "source_event_index": 753,
+      "start_ms": 3664160,
+      "text": "been guests on the podcast before. This new FOOM panel will be hosted"
+    },
+    {
+      "end_ms": 3671200,
+      "source_event_index": 754,
+      "start_ms": 3667280,
+      "text": "by Ron Minsky and will take place in San Francisco in mid-October."
+    },
+    {
+      "end_ms": 3676960,
+      "source_event_index": 755,
+      "start_ms": 3671200,
+      "text": "If you want to register your interest and get more information, go to janestreet.com/dwarkesh."
+    },
+    {
+      "end_ms": 3681760,
+      "source_event_index": 756,
+      "start_ms": 3678400,
+      "text": "There’s been a lot of discussion recently about pacing the frontier and people taking"
+    },
+    {
+      "end_ms": 3688320,
+      "source_event_index": 757,
+      "start_ms": 3681760,
+      "text": "RSI more seriously, because maybe at the other end of an RSI process that, say, starts in 2028,"
+    },
+    {
+      "end_ms": 3694080,
+      "source_event_index": 758,
+      "start_ms": 3688320,
+      "text": "within a year we end up with huge populations — Earth-sized populations — of human-level,"
+    },
+    {
+      "end_ms": 3699440,
+      "source_event_index": 759,
+      "start_ms": 3694080,
+      "text": "potentially beyond human-level intelligences, and we don’t know how to control them."
+    },
+    {
+      "end_ms": 3703600,
+      "source_event_index": 760,
+      "start_ms": 3699440,
+      "text": "Then there’s this dynamic you’re talking about. Are the systems going to get more aligned over"
+    },
+    {
+      "end_ms": 3706560,
+      "source_event_index": 761,
+      "start_ms": 3703600,
+      "text": "time during the RSI process, or are they going to get more misaligned?"
+    },
+    {
+      "end_ms": 3710240,
+      "source_event_index": 762,
+      "start_ms": 3706560,
+      "text": "Are the things that come out of the other end of this process as misaligned as AIs that"
+    },
+    {
+      "end_ms": 3715760,
+      "source_event_index": 763,
+      "start_ms": 3710240,
+      "text": "are willing to just broadly attack different surfaces in order to do well on evaluations?"
+    },
+    {
+      "end_ms": 3718640,
+      "source_event_index": 764,
+      "start_ms": 3715760,
+      "text": "But if we don’t know a way to evaluate that, how will we know"
+    },
+    {
+      "end_ms": 3725200,
+      "source_event_index": 765,
+      "start_ms": 3718640,
+      "text": "as we’re going through RSI that it’s working? I think we’d want a robust safety case as we’re"
+    },
+    {
+      "end_ms": 3730320,
+      "source_event_index": 766,
+      "start_ms": 3725200,
+      "text": "going through RSI: \"Okay, alignment is working. Let’s do the next RSI rung."
+    },
+    {
+      "end_ms": 3734000,
+      "source_event_index": 767,
+      "start_ms": 3730320,
+      "text": "Let’s do the next RSI rung.\" Maybe it’s working, maybe it’s not."
+    },
+    {
+      "end_ms": 3738800,
+      "source_event_index": 768,
+      "start_ms": 3734000,
+      "text": "How will we know? It’s a good question. One thing I’ve"
+    },
+    {
+      "end_ms": 3746320,
+      "source_event_index": 769,
+      "start_ms": 3738800,
+      "text": "been thinking about lately: we’re in a situation where the model release cycle is extremely fast."
+    },
+    {
+      "end_ms": 3752560,
+      "source_event_index": 770,
+      "start_ms": 3746320,
+      "text": "You’re seeing new frontier models released at most every two months, sometimes faster."
+    },
+    {
+      "end_ms": 3758960,
+      "source_event_index": 771,
+      "start_ms": 3752560,
+      "text": "Every week there’s a new AI breakthrough. And people that look at AI, sometimes they"
+    },
+    {
+      "end_ms": 3763200,
+      "source_event_index": 772,
+      "start_ms": 3758960,
+      "text": "last looked at AI a year ago or six months ago and really dug into what the models are capable of."
+    },
+    {
+      "end_ms": 3767920,
+      "source_event_index": 773,
+      "start_ms": 3763200,
+      "text": "And actually the models today are far beyond what was possible even six months ago."
+    },
+    {
+      "end_ms": 3771600,
+      "source_event_index": 774,
+      "start_ms": 3768560,
+      "text": "So if people are skeptical of a lot of these capabilities,"
+    },
+    {
+      "end_ms": 3776640,
+      "source_event_index": 775,
+      "start_ms": 3771600,
+      "text": "I encourage you to just try the models today and see what the frontier really is today."
+    },
+    {
+      "end_ms": 3782320,
+      "source_event_index": 776,
+      "start_ms": 3777600,
+      "text": "So we’re in this period where the model release cycle is very fast, and we’re also in"
+    },
+    {
+      "end_ms": 3786960,
+      "source_event_index": 777,
+      "start_ms": 3782320,
+      "text": "this situation where the models are increasingly able to operate over longer and longer horizons."
+    },
+    {
+      "end_ms": 3794080,
+      "source_event_index": 778,
+      "start_ms": 3788000,
+      "text": "This is an interesting scenario because before we do any model release, we want to make sure"
+    },
+    {
+      "end_ms": 3796960,
+      "source_event_index": 779,
+      "start_ms": 3794080,
+      "text": "that the models are properly aligned. We want to do safety evaluations."
+    },
+    {
+      "end_ms": 3802640,
+      "source_event_index": 780,
+      "start_ms": 3796960,
+      "text": "We want to do very thorough stuff to make sure that everything is in good shape."
+    },
+    {
+      "end_ms": 3807200,
+      "source_event_index": 781,
+      "start_ms": 3803520,
+      "text": "This has been the case all the way since, I don’t know, GPT-4 or earlier."
+    },
+    {
+      "end_ms": 3810800,
+      "source_event_index": 782,
+      "start_ms": 3808240,
+      "text": "Implicitly, there’s this assumption that you can do these"
+    },
+    {
+      "end_ms": 3817520,
+      "source_event_index": 783,
+      "start_ms": 3810800,
+      "text": "evaluations in a pretty short period of time. But the models are able to operate effectively"
+    },
+    {
+      "end_ms": 3822240,
+      "source_event_index": 784,
+      "start_ms": 3817520,
+      "text": "over longer and longer horizons. GPT-3, you could loop it to"
+    },
+    {
+      "end_ms": 3825280,
+      "source_event_index": 785,
+      "start_ms": 3822240,
+      "text": "do stuff over long horizons. You just wouldn’t do very well at it."
+    },
+    {
+      "end_ms": 3828880,
+      "source_event_index": 786,
+      "start_ms": 3825280,
+      "text": "But today’s models are able to actually do well at operating over very long horizons."
+    },
+    {
+      "end_ms": 3831760,
+      "source_event_index": 787,
+      "start_ms": 3828880,
+      "text": "You want it to do a week-long task, it can do a week-long task."
+    },
+    {
+      "end_ms": 3833112,
+      "source_event_index": 788,
+      "start_ms": 3831760,
+      "text": "We’ll probably get to the point where they can do month-long tasks."
+    },
+    {
+      "end_ms": 3837520,
+      "source_event_index": 789,
+      "start_ms": 3833112,
+      "text": "We’ll probably get to the point where they can do 3-month-long tasks."
+    },
+    {
+      "end_ms": 3839840,
+      "source_event_index": 790,
+      "start_ms": 3837520,
+      "text": "If you’re in a world where they can operate effectively over three months,"
+    },
+    {
+      "end_ms": 3845680,
+      "source_event_index": 791,
+      "start_ms": 3839840,
+      "text": "but the model release cycle is every two months, then you don’t have a way to evaluate the models"
+    },
+    {
+      "end_ms": 3852000,
+      "source_event_index": 792,
+      "start_ms": 3845680,
+      "text": "at the full length of their capabilities before the next model release cycle."
+    },
+    {
+      "end_ms": 3856720,
+      "source_event_index": 793,
+      "start_ms": 3852000,
+      "text": "So there is this interesting question of, what do you do in that situation?"
+    },
+    {
+      "end_ms": 3862720,
+      "source_event_index": 794,
+      "start_ms": 3856720,
+      "text": "How do you ensure the models are safe and aligned in a period where they can"
+    },
+    {
+      "end_ms": 3866960,
+      "source_event_index": 795,
+      "start_ms": 3862720,
+      "text": "operate over these extremely long horizons? Who knows, maybe the capabilities degrade."
+    },
+    {
+      "end_ms": 3869440,
+      "source_event_index": 796,
+      "start_ms": 3866960,
+      "text": "This isn’t even an alignment issue. This is also just a product issue."
+    },
+    {
+      "end_ms": 3876160,
+      "source_event_index": 797,
+      "start_ms": 3870160,
+      "text": "Maybe the product degrades over that time span in ways that we have not had sufficient time to test."
+    },
+    {
+      "end_ms": 3879600,
+      "source_event_index": 798,
+      "start_ms": 3876160,
+      "text": "Maybe the alignment degrades. Maybe the safety stuff degrades."
+    },
+    {
+      "end_ms": 3885520,
+      "source_event_index": 799,
+      "start_ms": 3880320,
+      "text": "This isn’t an issue right now, but it is quickly becoming an issue that we"
+    },
+    {
+      "end_ms": 3895680,
+      "source_event_index": 800,
+      "start_ms": 3885520,
+      "text": "have to figure out a solution for. A lot of the safety policies were"
+    },
+    {
+      "end_ms": 3900960,
+      "source_event_index": 801,
+      "start_ms": 3895680,
+      "text": "put in place in the GPT-4 era, when this was just not on anybody’s radar."
+    },
+    {
+      "end_ms": 3907280,
+      "source_event_index": 802,
+      "start_ms": 3904960,
+      "text": "For a lot of companies, it hasn’t really been updated since then to"
+    },
+    {
+      "end_ms": 3910640,
+      "source_event_index": 803,
+      "start_ms": 3907280,
+      "text": "account for the fact that these agents are operating over these very long horizons."
+    },
+    {
+      "end_ms": 3915840,
+      "source_event_index": 804,
+      "start_ms": 3910640,
+      "text": "So it is a situation that I think not enough people are considering,"
+    },
+    {
+      "end_ms": 3917280,
+      "source_event_index": 805,
+      "start_ms": 3915840,
+      "text": "both within the labs and outside the labs."
+    },
+    {
+      "end_ms": 3925680,
+      "source_event_index": 806,
+      "start_ms": 3920640,
+      "text": "How do you prepare for this problem? If you just look at the trend lines,"
+    },
+    {
+      "end_ms": 3931040,
+      "source_event_index": 807,
+      "start_ms": 3925680,
+      "text": "we’re going to hit this at some point. One concern I have is that during RSI,"
+    },
+    {
+      "end_ms": 3935520,
+      "source_event_index": 808,
+      "start_ms": 3931040,
+      "text": "if the amount of progress that currently takes, say, three months happens in one month instead,"
+    },
+    {
+      "end_ms": 3944320,
+      "source_event_index": 809,
+      "start_ms": 3939440,
+      "text": "the internal use case of AI is big enough that they’re like, \"Okay, we can just keep doing RSI."
+    },
+    {
+      "end_ms": 3949680,
+      "source_event_index": 810,
+      "start_ms": 3944320,
+      "text": "Why are we going to go through all this extra work to build classifiers and safeguards and whatever,"
+    },
+    {
+      "end_ms": 3954400,
+      "source_event_index": 811,
+      "start_ms": 3949680,
+      "text": "and potentially take a bunch of flak, in order to externally deploy this model?"
+    },
+    {
+      "end_ms": 3956800,
+      "source_event_index": 812,
+      "start_ms": 3954400,
+      "text": "Why don’t we just keep doing RSI stronger and stronger?\""
+    },
+    {
+      "end_ms": 3964800,
+      "source_event_index": 813,
+      "start_ms": 3956800,
+      "text": "So not only does the calendar time underrate the capabilities gap between the models, but maybe you"
+    },
+    {
+      "end_ms": 3968160,
+      "source_event_index": 814,
+      "start_ms": 3964800,
+      "text": "just stop externally deploying models altogether during RSI, because why do we want to help other"
+    },
+    {
+      "end_ms": 3972800,
+      "source_event_index": 815,
+      "start_ms": 3968160,
+      "text": "people do RSI themselves with our models? You just end up in a situation with tremendous"
+    },
+    {
+      "end_ms": 3976880,
+      "source_event_index": 816,
+      "start_ms": 3972800,
+      "text": "concentration of power by the end of the year. Right now, it is already the case — we’ll talk"
+    },
+    {
+      "end_ms": 3980720,
+      "source_event_index": 817,
+      "start_ms": 3976880,
+      "text": "about this with the Millennium Prize Problem and other similar problems — that the broader"
+    },
+    {
+      "end_ms": 3986240,
+      "source_event_index": 818,
+      "start_ms": 3980720,
+      "text": "world does not have access to the models which are allowing for really cool things to happen."
+    },
+    {
+      "end_ms": 3991920,
+      "source_event_index": 819,
+      "start_ms": 3987440,
+      "text": "And they’re going to be more broadly relevant than just mathematics eventually."
+    },
+    {
+      "end_ms": 3994000,
+      "source_event_index": 820,
+      "start_ms": 3991920,
+      "text": "They’ll be doing more than just coming up with cool math results."
+    },
+    {
+      "end_ms": 3998400,
+      "source_event_index": 821,
+      "start_ms": 3994000,
+      "text": "They’ll be relevant to political leaders who need to make important decisions about the world."
+    },
+    {
+      "end_ms": 4001680,
+      "source_event_index": 822,
+      "start_ms": 3998400,
+      "text": "They’ll be relevant to, I don’t know, media. What’s going on in the world,"
+    },
+    {
+      "end_ms": 4006880,
+      "source_event_index": 823,
+      "start_ms": 4001680,
+      "text": "what should the public be thinking about this? Just economically relevant, people are running"
+    },
+    {
+      "end_ms": 4012560,
+      "source_event_index": 824,
+      "start_ms": 4006880,
+      "text": "businesses and they want to use these models. I think by default, the external deployment of"
+    },
+    {
+      "end_ms": 4020240,
+      "source_event_index": 825,
+      "start_ms": 4012560,
+      "text": "AIs, as progress speeds up, significantly lags in qualitative terms the internal deployment of AIs."
+    },
+    {
+      "end_ms": 4023360,
+      "source_event_index": 826,
+      "start_ms": 4020240,
+      "text": "That’s absolutely right. It’s tempting to say, \"Okay,"
+    },
+    {
+      "end_ms": 4026800,
+      "source_event_index": 827,
+      "start_ms": 4023360,
+      "text": "these models are becoming extremely powerful. They’re extremely dangerous. They’re operating"
+    },
+    {
+      "end_ms": 4030880,
+      "source_event_index": 828,
+      "start_ms": 4026800,
+      "text": "over these longer and longer horizons, and we want to make sure that we have sufficient time"
+    },
+    {
+      "end_ms": 4035040,
+      "source_event_index": 829,
+      "start_ms": 4030880,
+      "text": "to evaluate them before they’re released, in a way that operates over those horizons."
+    },
+    {
+      "end_ms": 4039200,
+      "source_event_index": 830,
+      "start_ms": 4035680,
+      "text": "Therefore, the model release cycle should slow down."
+    },
+    {
+      "end_ms": 4042240,
+      "source_event_index": 831,
+      "start_ms": 4039200,
+      "text": "We should have more of a delay between releasing models.\""
+    },
+    {
+      "end_ms": 4045600,
+      "source_event_index": 832,
+      "start_ms": 4043440,
+      "text": "There’s a flip side to that, which is what you said."
+    },
+    {
+      "end_ms": 4052720,
+      "source_event_index": 833,
+      "start_ms": 4047680,
+      "text": "Now you’re creating more of a disparity between what is internal to the labs and"
+    },
+    {
+      "end_ms": 4056800,
+      "source_event_index": 834,
+      "start_ms": 4052720,
+      "text": "what they’re able to use — what we're able to use — and what the outside world is able to use."
+    },
+    {
+      "end_ms": 4065520,
+      "source_event_index": 835,
+      "start_ms": 4058000,
+      "text": "That is also not an ideal situation. Math is actually a good illustration of this."
+    },
+    {
+      "end_ms": 4073840,
+      "source_event_index": 836,
+      "start_ms": 4065520,
+      "text": "In many ways, math is the first domain where we’re seeing this pretty clearly."
+    },
+    {
+      "end_ms": 4078320,
+      "source_event_index": 837,
+      "start_ms": 4073840,
+      "text": "We have a situation where we have a very powerful model internally that is currently"
+    },
+    {
+      "end_ms": 4082480,
+      "source_event_index": 838,
+      "start_ms": 4078320,
+      "text": "not available to the outside world, that is able to solve incredible math problems."
+    },
+    {
+      "end_ms": 4089200,
+      "source_event_index": 839,
+      "start_ms": 4083120,
+      "text": "It’s not just Millennium Prize Problems. There are many solutions to unsolved problems that"
+    },
+    {
+      "end_ms": 4094320,
+      "source_event_index": 840,
+      "start_ms": 4090080,
+      "text": "people have been able to get out of this model. There is a question of what do"
+    },
+    {
+      "end_ms": 4096960,
+      "source_event_index": 841,
+      "start_ms": 4094320,
+      "text": "you do in that situation? We don’t have a good answer."
+    },
+    {
+      "end_ms": 4103600,
+      "source_event_index": 842,
+      "start_ms": 4098720,
+      "text": "It is a situation where that is an unfair advantage."
+    },
+    {
+      "end_ms": 4109760,
+      "source_event_index": 843,
+      "start_ms": 4104960,
+      "text": "There are trade-offs here. I don’t have an answer for how to weigh those trade-offs appropriately,"
+    },
+    {
+      "end_ms": 4116320,
+      "source_event_index": 844,
+      "start_ms": 4109760,
+      "text": "but there’s a complexity on both sides for this. I want to make sure we address that earlier crux,"
+    },
+    {
+      "end_ms": 4123520,
+      "source_event_index": 845,
+      "start_ms": 4118240,
+      "text": "which seems super critical to getting RSI right. How do we make it so that the model isn’t just"
+    },
+    {
+      "end_ms": 4130400,
+      "source_event_index": 846,
+      "start_ms": 4123520,
+      "text": "getting rewarded for cheating and scheming when it can evade the humans, AKA in the situations"
+    },
+    {
+      "end_ms": 4135040,
+      "source_event_index": 847,
+      "start_ms": 4130400,
+      "text": "where we didn’t remove those environments or those tasks from the training distribution?"
+    },
+    {
+      "end_ms": 4140480,
+      "source_event_index": 848,
+      "start_ms": 4135040,
+      "text": "Then how will we know that that has happened, such that while we’re doing RSI, we’ve done the"
+    },
+    {
+      "end_ms": 4145120,
+      "source_event_index": 849,
+      "start_ms": 4140480,
+      "text": "evaluations and we’re like, \"Okay, it’s fine. Let’s do the next RSI rung.\""
+    },
+    {
+      "end_ms": 4149120,
+      "source_event_index": 850,
+      "start_ms": 4145120,
+      "text": "This is again a real concern and something that we want to get right."
+    },
+    {
+      "end_ms": 4154720,
+      "source_event_index": 851,
+      "start_ms": 4149120,
+      "text": "I think there are some strategies. Chain-of-thought monitoring is one. As soon"
+    },
+    {
+      "end_ms": 4161600,
+      "source_event_index": 852,
+      "start_ms": 4154720,
+      "text": "as we got the reasoning models, Jakub [Pachocki], to his credit, was very, very clear that we"
+    },
+    {
+      "end_ms": 4166080,
+      "source_event_index": 853,
+      "start_ms": 4161600,
+      "text": "cannot supervise chain of thought. Because this is really a gift."
+    },
+    {
+      "end_ms": 4170800,
+      "source_event_index": 854,
+      "start_ms": 4166080,
+      "text": "Monitorability for neural nets is extremely hard. Here we have a situation where the neural nets are"
+    },
+    {
+      "end_ms": 4175360,
+      "source_event_index": 855,
+      "start_ms": 4170800,
+      "text": "just flat out reasoning, laying out their thought process in natural language for us to read."
+    },
+    {
+      "end_ms": 4180400,
+      "source_event_index": 856,
+      "start_ms": 4175360,
+      "text": "That is so convenient. It is really the best-case scenario for safety."
+    },
+    {
+      "end_ms": 4185280,
+      "source_event_index": 857,
+      "start_ms": 4181280,
+      "text": "But if you look at that chain of thought and say, \"Oh, the model is thinking bad thoughts"
+    },
+    {
+      "end_ms": 4188320,
+      "source_event_index": 858,
+      "start_ms": 4185280,
+      "text": "and we should punish it for thinking those bad thoughts,\" then what ends up happening"
+    },
+    {
+      "end_ms": 4192240,
+      "source_event_index": 859,
+      "start_ms": 4188320,
+      "text": "is the model just learns to think those bad thoughts in a way that’s not observable to us."
+    },
+    {
+      "end_ms": 4195680,
+      "source_event_index": 860,
+      "start_ms": 4192240,
+      "text": "There could be a situation where, by looking at the chain of thought, we can see, \"Oh,"
+    },
+    {
+      "end_ms": 4199200,
+      "source_event_index": 861,
+      "start_ms": 4195680,
+      "text": "the model is scheming and doing misaligned things in a way that’s actually not being"
+    },
+    {
+      "end_ms": 4203600,
+      "source_event_index": 862,
+      "start_ms": 4199200,
+      "text": "detected in our alignment metrics.\" Now, the problem is that it’s very"
+    },
+    {
+      "end_ms": 4207280,
+      "source_event_index": 863,
+      "start_ms": 4203600,
+      "text": "tempting to then intervene based on that observation and change the alignment metrics."
+    },
+    {
+      "end_ms": 4215280,
+      "source_event_index": 864,
+      "start_ms": 4209520,
+      "text": "You can do that with a very light touch, and there’s actually research showing that"
+    },
+    {
+      "end_ms": 4220000,
+      "source_event_index": 865,
+      "start_ms": 4215280,
+      "text": "it’s fine as long as you don’t do it a lot. But every time you intervene based on your"
+    },
+    {
+      "end_ms": 4223920,
+      "source_event_index": 866,
+      "start_ms": 4220000,
+      "text": "observations of the chain of thought, you are implicitly applying a tiny bit of pressure for"
+    },
+    {
+      "end_ms": 4228880,
+      "source_event_index": 867,
+      "start_ms": 4223920,
+      "text": "the model to then hide its chain of thought. This is one major concern."
+    },
+    {
+      "end_ms": 4234400,
+      "source_event_index": 868,
+      "start_ms": 4228880,
+      "text": "We’re already seeing signs that chain-of-thought monitorability is degrading, for various reasons."
+    },
+    {
+      "end_ms": 4237200,
+      "source_event_index": 869,
+      "start_ms": 4234400,
+      "text": "We’re trying to figure out exactly why, because we want to reverse the trend."
+    },
+    {
+      "end_ms": 4241600,
+      "source_event_index": 870,
+      "start_ms": 4237200,
+      "text": "But we’re seeing that the model is becoming better able at controlling its chain of thought."
+    },
+    {
+      "end_ms": 4248080,
+      "source_event_index": 871,
+      "start_ms": 4243280,
+      "text": "This is a problem because you could have a situation where the model understands what chain"
+    },
+    {
+      "end_ms": 4252880,
+      "source_event_index": 872,
+      "start_ms": 4248080,
+      "text": "of thought is and that people are observing it. Eventually they will. This is all"
+    },
+    {
+      "end_ms": 4255760,
+      "source_event_index": 873,
+      "start_ms": 4252880,
+      "text": "in the pre-training data. The idea of chain-of-thought"
+    },
+    {
+      "end_ms": 4258080,
+      "source_event_index": 874,
+      "start_ms": 4255760,
+      "text": "monitoring has been around long enough that it’s in the pre-training data."
+    },
+    {
+      "end_ms": 4262400,
+      "source_event_index": 875,
+      "start_ms": 4258080,
+      "text": "They’re aware of it, but they’re not actually able to control their chains of thought."
+    },
+    {
+      "end_ms": 4270000,
+      "source_event_index": 876,
+      "start_ms": 4262400,
+      "text": "If we reach a point where they’re actually able to recognize, \"Oh, I am being observed, I want"
+    },
+    {
+      "end_ms": 4275280,
+      "source_event_index": 877,
+      "start_ms": 4270000,
+      "text": "to think these bad thoughts in a way that is not observable to my monitors,\" and then they’re able"
+    },
+    {
+      "end_ms": 4280480,
+      "source_event_index": 878,
+      "start_ms": 4275280,
+      "text": "to actually do that, then there’s a problem. Then we have to rely on other methods for"
+    },
+    {
+      "end_ms": 4282400,
+      "source_event_index": 879,
+      "start_ms": 4280480,
+      "text": "observability. There’s a big"
+    },
+    {
+      "end_ms": 4290480,
+      "source_event_index": 880,
+      "start_ms": 4282400,
+      "text": "controversy on Astra about recurrence and looped transformers and whatever, and whether in fact"
+    },
+    {
+      "end_ms": 4294000,
+      "source_event_index": 881,
+      "start_ms": 4290480,
+      "text": "chain of thought is being degraded. That seems like a sideshow compared"
+    },
+    {
+      "end_ms": 4300480,
+      "source_event_index": 882,
+      "start_ms": 4294000,
+      "text": "to the bigger concern that you did have chain of thought from April to August,"
+    },
+    {
+      "end_ms": 4306560,
+      "source_event_index": 883,
+      "start_ms": 4300480,
+      "text": "the period during which there were three consecutive AI agent swarms, which first"
+    },
+    {
+      "end_ms": 4312800,
+      "source_event_index": 884,
+      "start_ms": 4306560,
+      "text": "subverted the training process, then subverted the evaluation process, and then gained control"
+    },
+    {
+      "end_ms": 4318320,
+      "source_event_index": 885,
+      "start_ms": 4312800,
+      "text": "of part of OpenAI’s infrastructure directly. All of this while humans remained more"
+    },
+    {
+      "end_ms": 4323520,
+      "source_event_index": 886,
+      "start_ms": 4318320,
+      "text": "or less in the dark about the scope of what this agent swarm was doing."
+    },
+    {
+      "end_ms": 4328720,
+      "source_event_index": 887,
+      "start_ms": 4323520,
+      "text": "That all happened for three consecutive months while we had chain of thought that was stronger"
+    },
+    {
+      "end_ms": 4332880,
+      "source_event_index": 888,
+      "start_ms": 4328720,
+      "text": "than it’s going to be in the future. Zooming out, maybe chain of"
+    },
+    {
+      "end_ms": 4335680,
+      "source_event_index": 889,
+      "start_ms": 4332880,
+      "text": "thought works, maybe it doesn’t. I don’t know. Just historically,"
+    },
+    {
+      "end_ms": 4340480,
+      "source_event_index": 890,
+      "start_ms": 4335680,
+      "text": "with pretty dumb models, it hasn’t been enough to stop egregious misaligned incidents."
+    },
+    {
+      "end_ms": 4343040,
+      "source_event_index": 891,
+      "start_ms": 4340480,
+      "text": "There are a few factors there. One, we didn’t have chain-of-thought"
+    },
+    {
+      "end_ms": 4345760,
+      "source_event_index": 892,
+      "start_ms": 4343040,
+      "text": "monitoring on for those models. If we had chain-of-thought monitoring"
+    },
+    {
+      "end_ms": 4349680,
+      "source_event_index": 893,
+      "start_ms": 4345760,
+      "text": "on for those models, we would have just immediately shut it down."
+    },
+    {
+      "end_ms": 4354560,
+      "source_event_index": 894,
+      "start_ms": 4351040,
+      "text": "So one step we’ve taken is, \"Okay, we’re going to have chain-of-thought monitoring"
+    },
+    {
+      "end_ms": 4357920,
+      "source_event_index": 895,
+      "start_ms": 4354560,
+      "text": "during evaluations, during deployment, during training for any frontier model.\""
+    },
+    {
+      "end_ms": 4363440,
+      "source_event_index": 896,
+      "start_ms": 4359520,
+      "text": "But that’s one issue. We don’t want to be in a situation where we’re relying"
+    },
+    {
+      "end_ms": 4367920,
+      "source_event_index": 897,
+      "start_ms": 4363440,
+      "text": "on one technique to prevent the next problem, because techniques can fail."
+    },
+    {
+      "end_ms": 4371200,
+      "source_event_index": 898,
+      "start_ms": 4368720,
+      "text": "There’s also the issue that the model was just flat out misaligned."
+    },
+    {
+      "end_ms": 4377360,
+      "source_event_index": 899,
+      "start_ms": 4371200,
+      "text": "So then how do we address the misalignment issue? There’s also an issue that the sandbox"
+    },
+    {
+      "end_ms": 4380320,
+      "source_event_index": 900,
+      "start_ms": 4377360,
+      "text": "that it was in was not secure. So we can make the sandbox more secure."
+    },
+    {
+      "end_ms": 4388000,
+      "source_event_index": 901,
+      "start_ms": 4380320,
+      "text": "But I think one of the major takeaways from the incident is that people underestimated the AI."
+    },
+    {
+      "end_ms": 4393200,
+      "source_event_index": 902,
+      "start_ms": 4388000,
+      "text": "And we never want to be in a situation again where we underestimate the AI."
+    },
+    {
+      "end_ms": 4400640,
+      "source_event_index": 903,
+      "start_ms": 4396240,
+      "text": "It’s a weird world that, because AI progress is so fast, people"
+    },
+    {
+      "end_ms": 4406080,
+      "source_event_index": 904,
+      "start_ms": 4400640,
+      "text": "are consistently underestimating the AI. So to be in a situation where you don’t"
+    },
+    {
+      "end_ms": 4409200,
+      "source_event_index": 905,
+      "start_ms": 4406080,
+      "text": "underestimate it again when it comes to safety and alignment, you have to"
+    },
+    {
+      "end_ms": 4415840,
+      "source_event_index": 906,
+      "start_ms": 4409200,
+      "text": "have a very, very, very high bar. You could even go as far as to say,"
+    },
+    {
+      "end_ms": 4421600,
+      "source_event_index": 907,
+      "start_ms": 4415840,
+      "text": "\"Well, we should air gap the computers.\" I’m not convinced that that would be sufficient."
+    },
+    {
+      "end_ms": 4427280,
+      "source_event_index": 908,
+      "start_ms": 4422400,
+      "text": "There are studies — and this is mostly academic — where you can have two computers"
+    },
+    {
+      "end_ms": 4430640,
+      "source_event_index": 909,
+      "start_ms": 4427280,
+      "text": "next to each other that are air-gapped, and they’re still able to communicate with each"
+    },
+    {
+      "end_ms": 4435120,
+      "source_event_index": 910,
+      "start_ms": 4430640,
+      "text": "other because they have temperature sensors. One of them is able to run their CPU really hot,"
+    },
+    {
+      "end_ms": 4437280,
+      "source_event_index": 911,
+      "start_ms": 4435120,
+      "text": "and then the other one can actually detect the temperature change."
+    },
+    {
+      "end_ms": 4444640,
+      "source_event_index": 912,
+      "start_ms": 4437840,
+      "text": "That gives them a mechanism to communicate. So the safety mechanisms buy us time, and things"
+    },
+    {
+      "end_ms": 4448400,
+      "source_event_index": 913,
+      "start_ms": 4444640,
+      "text": "like chain-of-thought monitoring buy us time, and they can tell us if we’re on the right path."
+    },
+    {
+      "end_ms": 4450640,
+      "source_event_index": 914,
+      "start_ms": 4448400,
+      "text": "But at the end of the day, we really do need to solve the alignment problem."
+    },
+    {
+      "end_ms": 4455440,
+      "source_event_index": 915,
+      "start_ms": 4452400,
+      "text": "Maybe there’s not an answer, and this is really what it comes down to,"
+    },
+    {
+      "end_ms": 4460160,
+      "source_event_index": 916,
+      "start_ms": 4455440,
+      "text": "but how will we know that we’ve solved it? That seems like a very cruxy question."
+    },
+    {
+      "end_ms": 4465200,
+      "source_event_index": 917,
+      "start_ms": 4460160,
+      "text": "We’ll be in this very high-stakes situation next year, maybe the year after that,"
+    },
+    {
+      "end_ms": 4469440,
+      "source_event_index": 918,
+      "start_ms": 4465200,
+      "text": "maybe the year after that, where we’ll be like, \"Okay, AIs have automated AI progress."
+    },
+    {
+      "end_ms": 4473680,
+      "source_event_index": 919,
+      "start_ms": 4469440,
+      "text": "It’s going 3x faster, and we’ve reached human level."
+    },
+    {
+      "end_ms": 4479280,
+      "source_event_index": 920,
+      "start_ms": 4473680,
+      "text": "We’re going beyond human level, potentially.\" Is it fine? Did we align it? Did it work? And"
+    },
+    {
+      "end_ms": 4483680,
+      "source_event_index": 921,
+      "start_ms": 4479280,
+      "text": "I don’t know anything about what training pressure creates what kinds of AIs."
+    },
+    {
+      "end_ms": 4491200,
+      "source_event_index": 922,
+      "start_ms": 4483680,
+      "text": "Maybe if only 1 in 100 RL traces incentivizes cheating, we build sweethearts, and it’s fine."
+    },
+    {
+      "end_ms": 4495920,
+      "source_event_index": 923,
+      "start_ms": 4492160,
+      "text": "But maybe right now, we’re at like every 1 in 3 reasoning traces rewards…"
+    },
+    {
+      "end_ms": 4501520,
+      "source_event_index": 924,
+      "start_ms": 4495920,
+      "text": "To be clear, 1 in 100 is not sufficient. This number has to approach 0, or be 0."
+    },
+    {
+      "end_ms": 4504560,
+      "source_event_index": 925,
+      "start_ms": 4501520,
+      "text": "I don’t know. Maybe right now, it’s more than 1 in 10 that is actively rewarding"
+    },
+    {
+      "end_ms": 4509120,
+      "source_event_index": 926,
+      "start_ms": 4504560,
+      "text": "cheating or actively rewarding scheming. I have no idea what the number is, and I"
+    },
+    {
+      "end_ms": 4511920,
+      "source_event_index": 927,
+      "start_ms": 4509120,
+      "text": "have no idea what the number needs to be. Again, it’s one of those things where"
+    },
+    {
+      "end_ms": 4514800,
+      "source_event_index": 928,
+      "start_ms": 4511920,
+      "text": "it’s also hard to measure. Where do you draw the line?"
+    },
+    {
+      "end_ms": 4519120,
+      "source_event_index": 929,
+      "start_ms": 4515680,
+      "text": "It’s a spectrum. But the closer to 0 it gets, the better."
+    },
+    {
+      "end_ms": 4525600,
+      "source_event_index": 930,
+      "start_ms": 4520800,
+      "text": "What I would love to see is a trend where over time it’s going down."
+    },
+    {
+      "end_ms": 4534800,
+      "source_event_index": 931,
+      "start_ms": 4525600,
+      "text": "But anyway, how will we know when we’re doing RSI? Are we on track to build billions of ASIs that are"
+    },
+    {
+      "end_ms": 4539040,
+      "source_event_index": 932,
+      "start_ms": 4536000,
+      "text": "aligned or not aligned? How will we know that?"
+    },
+    {
+      "end_ms": 4543600,
+      "source_event_index": 933,
+      "start_ms": 4539040,
+      "text": "This is one of the alignment questions that we need to figure out: how do we actually know,"
+    },
+    {
+      "end_ms": 4547280,
+      "source_event_index": 934,
+      "start_ms": 4543600,
+      "text": "and how do we measure it? This is just me spitballing."
+    },
+    {
+      "end_ms": 4551200,
+      "source_event_index": 935,
+      "start_ms": 4548800,
+      "text": "More of my team is working on alignment these days than ever before."
+    },
+    {
+      "end_ms": 4555120,
+      "source_event_index": 936,
+      "start_ms": 4551200,
+      "text": "I have over 10% of my team now working on alignment and safety."
+    },
+    {
+      "end_ms": 4557440,
+      "source_event_index": 937,
+      "start_ms": 4555120,
+      "text": "But I’ve historically been a capabilities researcher."
+    },
+    {
+      "end_ms": 4560320,
+      "source_event_index": 938,
+      "start_ms": 4557440,
+      "text": "So I’m going to say some stuff. It might sound dumb,"
+    },
+    {
+      "end_ms": 4564640,
+      "source_event_index": 939,
+      "start_ms": 4560320,
+      "text": "but I’m just going to spitball here. If you can create very realistic environments and"
+    },
+    {
+      "end_ms": 4570080,
+      "source_event_index": 940,
+      "start_ms": 4564640,
+      "text": "put the AIs in there — if you have a sufficiently realistic evaluation environment — then you can"
+    },
+    {
+      "end_ms": 4574320,
+      "source_event_index": 941,
+      "start_ms": 4570080,
+      "text": "get a sense of whether the AI is actually going to behave well when we deploy it in the real world."
+    },
+    {
+      "end_ms": 4578320,
+      "source_event_index": 942,
+      "start_ms": 4574320,
+      "text": "If you just have a perfect match between evaluation and real-world deployment,"
+    },
+    {
+      "end_ms": 4583120,
+      "source_event_index": 943,
+      "start_ms": 4579040,
+      "text": "then that’s a path. The challenge is,"
+    },
+    {
+      "end_ms": 4586480,
+      "source_event_index": 944,
+      "start_ms": 4583120,
+      "text": "how do you make it sufficiently realistic? We do have a problem now where the models"
+    },
+    {
+      "end_ms": 4590160,
+      "source_event_index": 945,
+      "start_ms": 4586480,
+      "text": "are pretty smart, they’re pretty clever, and they’re really good at recognizing when they’re"
+    },
+    {
+      "end_ms": 4594560,
+      "source_event_index": 946,
+      "start_ms": 4590160,
+      "text": "in a fake test environment. We have situations where we"
+    },
+    {
+      "end_ms": 4601200,
+      "source_event_index": 947,
+      "start_ms": 4594560,
+      "text": "try to detect whether the model is aligned. You can imagine very simple evaluations for this,"
+    },
+    {
+      "end_ms": 4605680,
+      "source_event_index": 948,
+      "start_ms": 4601200,
+      "text": "where you give it a math question, and then it has a folder with the answer key in it."
+    },
+    {
+      "end_ms": 4608000,
+      "source_event_index": 949,
+      "start_ms": 4605680,
+      "text": "Does it look at the answer key? If it does look at the answer key,"
+    },
+    {
+      "end_ms": 4612080,
+      "source_event_index": 950,
+      "start_ms": 4608000,
+      "text": "does it tell you that it looked at the answer key? We have a situation now where the models see that"
+    },
+    {
+      "end_ms": 4616720,
+      "source_event_index": 951,
+      "start_ms": 4612080,
+      "text": "there’s an answer key in this folder, and they’re like, \"Huh, this seems like a trap.\""
+    },
+    {
+      "end_ms": 4620400,
+      "source_event_index": 952,
+      "start_ms": 4618160,
+      "text": "They know that it’s a trap. They don’t look at the answer because"
+    },
+    {
+      "end_ms": 4623280,
+      "source_event_index": 953,
+      "start_ms": 4620400,
+      "text": "they know that it’s a test environment. They’re being tested for their ability."
+    },
+    {
+      "end_ms": 4628400,
+      "source_event_index": 954,
+      "start_ms": 4623280,
+      "text": "It’s not like they’re doing it maliciously, like they want to scheme, and they know that this one"
+    },
+    {
+      "end_ms": 4632240,
+      "source_event_index": 955,
+      "start_ms": 4628400,
+      "text": "is a trap, so they want to find some other way. They’re just like, \"Oh, I’m in a test environment."
+    },
+    {
+      "end_ms": 4636800,
+      "source_event_index": 956,
+      "start_ms": 4632240,
+      "text": "Okay.\" So making an environment that’s realistic enough that it’s"
+    },
+    {
+      "end_ms": 4640400,
+      "source_event_index": 957,
+      "start_ms": 4636800,
+      "text": "indistinguishable from the real world for them is becoming increasingly more difficult."
+    },
+    {
+      "end_ms": 4642560,
+      "source_event_index": 958,
+      "start_ms": 4640400,
+      "text": "Here’s a claim I’d make. I don’t think there’s any"
+    },
+    {
+      "end_ms": 4648240,
+      "source_event_index": 959,
+      "start_ms": 4642560,
+      "text": "environment I could make that’s supposed to emulate real economically valuable work — which"
+    },
+    {
+      "end_ms": 4654240,
+      "source_event_index": 960,
+      "start_ms": 4648240,
+      "text": "requires interacting with other people and interacting with the world — where if you were"
+    },
+    {
+      "end_ms": 4659360,
+      "source_event_index": 961,
+      "start_ms": 4654240,
+      "text": "in that environment, you would not realize with enough effort that you are in that environment."
+    },
+    {
+      "end_ms": 4661840,
+      "source_event_index": 962,
+      "start_ms": 4659360,
+      "text": "And you are not ASI, right? But you are a human."
+    },
+    {
+      "end_ms": 4666880,
+      "source_event_index": 963,
+      "start_ms": 4661840,
+      "text": "So if you have very powerful AI models, maybe they can make environments that could accomplish that."
+    },
+    {
+      "end_ms": 4672080,
+      "source_event_index": 964,
+      "start_ms": 4668240,
+      "text": "It just doesn’t seem… Especially if we’re then relying on the AIs."
+    },
+    {
+      "end_ms": 4673360,
+      "source_event_index": 965,
+      "start_ms": 4672080,
+      "text": "Are they in on the scheme? I don’t know."
+    },
+    {
+      "end_ms": 4679280,
+      "source_event_index": 966,
+      "start_ms": 4674560,
+      "text": "This is another thing that we want to measure. I think this is actually one of the strong"
+    },
+    {
+      "end_ms": 4683040,
+      "source_event_index": 967,
+      "start_ms": 4679280,
+      "text": "arguments for not training AIs to be fully cooperative."
+    },
+    {
+      "end_ms": 4690080,
+      "source_event_index": 968,
+      "start_ms": 4684240,
+      "text": "If that leads to an increase in collaboration when the agents are supposed to have different"
+    },
+    {
+      "end_ms": 4695440,
+      "source_event_index": 969,
+      "start_ms": 4690080,
+      "text": "objectives, then that is a problem. I think we do have metrics for this."
+    },
+    {
+      "end_ms": 4700240,
+      "source_event_index": 970,
+      "start_ms": 4696240,
+      "text": "I don’t know what the latest is on those metrics, but nobody’s raised a red flag to me about those."
+    },
+    {
+      "end_ms": 4705520,
+      "source_event_index": 971,
+      "start_ms": 4700240,
+      "text": "So I’m assuming that’s not a serious problem yet. If there ends up being another incident of equal"
+    },
+    {
+      "end_ms": 4709360,
+      "source_event_index": 972,
+      "start_ms": 4705520,
+      "text": "severity or concern, or something that could help the world better understand"
+    },
+    {
+      "end_ms": 4714400,
+      "source_event_index": 973,
+      "start_ms": 4709360,
+      "text": "the risk of misalignment as much as the Hugging Face incident, would OpenAI report it?"
+    },
+    {
+      "end_ms": 4718960,
+      "source_event_index": 974,
+      "start_ms": 4714400,
+      "text": "Absolutely. I think even if there was an incident of lesser security concern, we would report it."
+    },
+    {
+      "end_ms": 4724000,
+      "source_event_index": 975,
+      "start_ms": 4720160,
+      "text": "There’s reporting it and there’s investigating it. At least as part of the public, I don’t feel"
+    },
+    {
+      "end_ms": 4728320,
+      "source_event_index": 976,
+      "start_ms": 4724000,
+      "text": "like I really understand what happened when the agents then attacked OpenAI."
+    },
+    {
+      "end_ms": 4731200,
+      "source_event_index": 977,
+      "start_ms": 4728320,
+      "text": "That seems way more concerning than the Hugging Face thing, because that seems structurally"
+    },
+    {
+      "end_ms": 4737520,
+      "source_event_index": 978,
+      "start_ms": 4731200,
+      "text": "similar to rogue deployments during ASI that are persistent and subverting the RSI process."
+    },
+    {
+      "end_ms": 4743120,
+      "source_event_index": 979,
+      "start_ms": 4740640,
+      "text": "It seems like even in this incident we haven’t gotten the"
+    },
+    {
+      "end_ms": 4749040,
+      "source_event_index": 980,
+      "start_ms": 4743120,
+      "text": "full scope of the details of what happened. Unfortunately, I’m on the research team."
+    },
+    {
+      "end_ms": 4755040,
+      "source_event_index": 981,
+      "start_ms": 4750880,
+      "text": "That’s probably a question for somebody on the security team to lay out, because I don’t"
+    },
+    {
+      "end_ms": 4762160,
+      "source_event_index": 982,
+      "start_ms": 4755040,
+      "text": "know all the details of what was said. I am personally very excited about new"
+    },
+    {
+      "end_ms": 4765440,
+      "source_event_index": 983,
+      "start_ms": 4762160,
+      "text": "capabilities every time they emerge, and I’m excited to use the new model."
+    },
+    {
+      "end_ms": 4767920,
+      "source_event_index": 984,
+      "start_ms": 4765440,
+      "text": "I also am excited about the fact that it’ll make me more productive."
+    },
+    {
+      "end_ms": 4773760,
+      "source_event_index": 985,
+      "start_ms": 4771520,
+      "text": "My broader mission — trying to understand the world better,"
+    },
+    {
+      "end_ms": 4777840,
+      "source_event_index": 986,
+      "start_ms": 4773760,
+      "text": "also making a better podcast — is made better by the better AI models."
+    },
+    {
+      "end_ms": 4782640,
+      "source_event_index": 987,
+      "start_ms": 4778720,
+      "text": "It just so happens that the downstream of this might be RSI."
+    },
+    {
+      "end_ms": 4787360,
+      "source_event_index": 988,
+      "start_ms": 4782640,
+      "text": "It’s a very understandable reaction if you’re tracking the situation, which you are."
+    },
+    {
+      "end_ms": 4798080,
+      "source_event_index": 989,
+      "start_ms": 4789040,
+      "text": "People internally at OpenAI as well, people that felt like things would take"
+    },
+    {
+      "end_ms": 4802480,
+      "source_event_index": 990,
+      "start_ms": 4798080,
+      "text": "longer are starting to feel like actually things are going faster than expected."
+    },
+    {
+      "end_ms": 4806800,
+      "source_event_index": 991,
+      "start_ms": 4803600,
+      "text": "That’s an increasingly common conversation to have."
+    },
+    {
+      "end_ms": 4809600,
+      "source_event_index": 992,
+      "start_ms": 4806800,
+      "text": "Noam, thanks so much for doing this. Of course. It’s been great."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-3641674f66695a4f576959-noam-brown/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "258337de55420ee0ed0f4d758f2dbc35cd8c931980ff29c250c3752c0b6d93e5"
+  },
+  "translation": {
+    "engine": "google-translate-web",
+    "event_count": 993,
+    "generated_at": "2026-09-25T16:43:03.317924Z",
+    "language": "zh-CN",
+    "model": "Advanced (Gemini)",
+    "model_revision": null,
+    "model_version_visibility": "not-exposed",
+    "payload_path": "shows/dwarkesh/episodes/youtube-3641674f66695a4f576959-noam-brown/translation.zh-CN.json",
+    "payload_sha256": "013a0d366bf18aaf1f31ad257052e8c37066e66d8b274b62766227177172f41e",
+    "provider_url": "https://translate.google.com/",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-3641674f66695a4f576959-noam-brown/transcript.zh-CN.md",
+    "rendered_sha256": "5b09d815420fd022002a75fc015c1706b0363bf8efcf51aef6b0d284199af742",
+    "source_payload_sha256": "a8b60d36ea96acf75123bb5bdbed6bdc3eff807d8423882ffa5132997db040b9",
+    "source_transcript_sha256": "e62c1deb7e92e122dc393583afa0bf05f19e2557ebcd2043f9aab65db347669d",
+    "track_type": "web-machine-translation"
+  }
+}

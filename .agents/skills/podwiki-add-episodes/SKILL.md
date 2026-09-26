@@ -73,9 +73,8 @@ Stop without downloading or creating tracked files when:
 - podcast or complete-episode evidence is absent, ambiguous, or conflicts with fresh metadata;
 - the item is paid, membership-only, private, regional, or otherwise restricted;
 - the authorized access context exposes a subtitle that the matching platform guide cannot import;
-- a YouTube publisher caption lacks the exact event-aligned Chinese machine-translation track
-  required for an English Web-publishable episode, unless the user approves stopping before Web
-  publication;
+- an English YouTube publisher caption has neither a complete event-aligned platform translation
+  nor a complete cached segment translation meeting the frozen-source contract in the runbook;
 - source identity cannot be preserved without leaking credentials.
 
 User-authorized login is an access context only. Keep cookies, tokens, and browser material under

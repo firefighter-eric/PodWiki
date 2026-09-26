@@ -427,7 +427,7 @@ const episodeSchema = z
       note: z.string().min(1).optional(),
     }).strict(),
     title: z.string().min(1),
-    navigation_title: z.string().min(1).max(40),
+    navigation_title: z.string().min(1),
     catalog_keyword: z.string().min(1).max(20).refine(
       (value) => value === value.trim(),
       "catalog_keyword must not have leading or trailing whitespace",
@@ -472,6 +472,14 @@ const episodeSchema = z
       participantIds.add(participant.id);
     });
     const expectedNavigationPerson = getExpectedNavigationPerson(value.participants);
+    const navigationTitleLimit = Math.max(40, (expectedNavigationPerson?.length ?? 0) + 15);
+    if (value.navigation_title.length > navigationTitleLimit) {
+      context.addIssue({
+        code: "custom",
+        path: ["navigation_title"],
+        message: `navigation_title must be at most ${navigationTitleLimit} characters`,
+      });
+    }
     const navigationPerson = value.navigation_title.split(" · ", 1)[0];
     if (expectedNavigationPerson && navigationPerson !== expectedNavigationPerson) {
       context.addIssue({

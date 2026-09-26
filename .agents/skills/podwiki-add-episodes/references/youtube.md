@@ -28,6 +28,13 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/import_youtube_captio
   `.cache/`, but a retry is rate-limited, pass `--metadata-json`, `--source-json3`, and
   `--translation-json3` together. The importer revalidates the canonical URL, public/non-live
   state, video ID, channel ID, and caption alignment; it rejects inputs outside `.cache/`.
+- If the platform translation is empty or incomplete, retain the complete publisher English
+  caption and generate a separate one-to-one Chinese machine translation under the runbook.
+  Import it with `--translation-segments-json` together with the frozen metadata and source JSON3.
+  Require both source hashes, every original event index and timestamp, actual engine/model, and
+  generation time. Pin local model revisions; for Google Translate Advanced explicitly record
+  the provider and that its exact model version is not exposed. Never label this as a YouTube
+  translation track. Use `--replace-translation` to preserve existing raw and English bytes.
 - If a subtitle exists but this exact import contract cannot consume it, stop. Do not ignore it and
   silently run audio ASR. When no supported subtitle exists, local Qwen audio ASR is allowed under
   the normal backend contract.

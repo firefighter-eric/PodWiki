@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "episode_id": "zhangxiaojun:153",
+  "version": "publisher-names-and-local-terms-v1",
+  "input_asr_sha256": "b2d9a2bbd1ad1cca9cfcb9c39bd04488dae810ad3197a11dcea9e0698e107f6a",
+  "rules": [
+    {
+      "id": "guest-name-professor",
+      "match": "曾明教授",
+      "replacement": "曾鸣教授",
+      "reason": "Publisher-confirmed guest name in the exact episode title and description.",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "guest-name-teacher",
+      "match": "郑明老师",
+      "replacement": "曾鸣老师",
+      "reason": "The host addresses the same publisher-confirmed sole guest 曾鸣.",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "host-name-introduction",
+      "match": "我是小军",
+      "replacement": "我是小珺",
+      "reason": "Publisher-confirmed host 张小珺 introducing herself.",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "studio-name",
+      "match": "语言级世界",
+      "replacement": "语言即世界",
+      "reason": "Exact studio name supplied in the publisher description.",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "netscape-company-name",
+      "match": "谁是Nestle",
+      "replacement": "谁是Netscape",
+      "reason": "Publisher description explicitly names Netscape in the same browser-and-Yahoo comparison.",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "one-person-company",
+      "match": "艺人公司",
+      "replacement": "一人公司",
+      "reason": "Immediate preceding question and following discussion explicitly concern a one-person company, not entertainers.",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "entropy-increase",
+      "match": "商增",
+      "replacement": "熵增",
+      "reason": "Same paragraph contrasts information proliferation and cognitive load reduction; entropy terminology.",
+      "case_sensitive": true,
+      "expected_hits": 3
+    },
+    {
+      "id": "entropy-reduction",
+      "match": "商减",
+      "replacement": "熵减",
+      "reason": "Same paragraph contrasts information proliferation and cognitive load reduction; entropy terminology.",
+      "case_sensitive": true,
+      "expected_hits": 3
+    }
+  ]
+}

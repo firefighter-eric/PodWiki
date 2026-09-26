@@ -102,7 +102,7 @@ Windows/CUDA 使用官方模型：
 | `.agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py` | 校验扫描覆盖、候选状态、计数和仓库去重 | 终端校验结果 |
 | `scripts/acquire_media.py` | 获取一个已通过播客边界核实的公开 Bilibili/YouTube 视频版单集或小宇宙单集音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
 | `scripts/import_bilibili_subtitles.py` | 从被 Git 忽略的登录态响应导入单个 Bilibili 中文 AI 字幕，并绑定公开免费来源身份 | tracked raw/refined 与中文逐段 Markdown |
-| `scripts/import_youtube_captions.py` | 导入单个公开 YouTube 发布者英文 `json3` 字幕及事件对齐的简中机器译轨 | tracked raw/refined、中英逐段 Markdown |
+| `scripts/import_youtube_captions.py` | 导入单个公开 YouTube 发布者英文 `json3` 字幕及平台、本地或网页逐段中文机器译稿 | tracked raw/refined、中英逐段 Markdown；另行生成的译稿保存根目录翻译载荷 |
 | `scripts/transcribe_qwen3_asr.py` | 使用 Qwen3-ASR 转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/transcribe_qwen3_asr_cuda.py` | 在 Windows/NVIDIA CUDA 上使用官方 Qwen 模型转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/render_asr_transcript.py` | 清理对齐结果并渲染逐字稿 | `refined.json`、`transcript.<language>.md` |
@@ -110,6 +110,23 @@ Windows/CUDA 使用官方模型：
 | `scripts/transcribe_audio.py` | 生成 MLX Whisper 对比基线 | Whisper `raw.json` |
 | `scripts/validate.py` | 校验内容、来源和 ASR 产物链 | 终端校验结果 |
 | `scripts/audit_correction_migration.py` | 重放按集修正规则并校验旧产物等价性 | JSON 审计报告 |
+
+### 从冻结的英文字幕导入缓存中文译稿
+
+```bash
+env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/import_youtube_captions.py \
+  --url <canonical-youtube-video-url> \
+  --episode-dir shows/<show-id>/episodes/<episode-folder> \
+  --metadata-json .cache/intake/<source-id>/source.metadata.json \
+  --source-json3 .cache/intake/<source-id>/caption.en.json3 \
+  --translation-segments-json .cache/translations/<source-id>/translation.zh-CN.json
+```
+
+缓存译稿载荷的字段与完成检查见[处理流程第 8 节](./episode-processing.md#8-英文正式稿生成逐行中文译稿)。
+本地模型记录固定版本；网页服务如未公开模型版本，必须明确记录这一限制。
+三个缓存输入必须一起提供。平台原始译轨使用 `--translation-json3`，不能与缓存译稿
+参数同时使用。替换已存在的不完整中文稿时额外加 `--replace-translation`；该模式保留
+raw 与英文 Markdown 的原始字节，拒绝同时使用 `--overwrite`。
 
 ## 准备并校验扫描清单
 

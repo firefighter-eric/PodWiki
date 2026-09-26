@@ -36,7 +36,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--run-id", default=DEFAULT_RUN_ID)
     parser.add_argument("--metadata-json", type=Path)
     parser.add_argument("--source-json3", type=Path)
-    parser.add_argument("--translation-json3", type=Path)
+    translations = parser.add_mutually_exclusive_group()
+    translations.add_argument("--translation-json3", type=Path)
+    translations.add_argument("--translation-segments-json", type=Path)
+    parser.add_argument("--replace-translation", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument(
         "--verbose",
@@ -175,6 +178,76 @@ def validate_aligned_translation(
                 )
 
 
+def local_translation_segments(
+    payload: bytes,
+    *,
+    source_payload: bytes,
+    source_transcript: bytes,
+    source_segments: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    document = json.loads(
+        payload.decode("utf-8"), object_pairs_hook=reject_duplicate_keys,
+        parse_constant=reject_non_finite,
+    )
+    expected = {
+        "schema_version": 1, "kind": "podwiki-segment-translation",
+        "language": "zh-CN", "source_language": "en", "status": "machine",
+        "source_payload_sha256": sha256_bytes(source_payload),
+        "source_transcript_sha256": sha256_bytes(source_transcript),
+    }
+    if not isinstance(document, dict):
+        raise ValueError("local translation must be an object")
+    for key, value in expected.items():
+        if type(document.get(key)) is not type(value) or document.get(key) != value:
+            raise ValueError(f"local translation {key} does not match the frozen source")
+    for key in ("engine", "model", "generated_at"):
+        if not isinstance(document.get(key), str) or not document[key].strip():
+            raise ValueError(f"local translation requires {key}")
+    revision = document.get("model_revision")
+    web_translation = document["engine"] == "google-translate-web"
+    if web_translation:
+        # The web service exposes a model label, not an immutable model version.
+        # Record that limitation explicitly instead of inventing a commit pin.
+        if (
+            document["model"] != "Advanced (Gemini)"
+            or "model_revision" not in document
+            or revision is not None
+            or document.get("model_version_visibility") != "not-exposed"
+            or document.get("provider_url") != "https://translate.google.com/"
+        ):
+            raise ValueError("web translation requires its observed provider and model label")
+    elif not isinstance(revision, str) or re.fullmatch(r"[0-9a-f]{40}", revision) is None:
+        raise ValueError("local translation requires a pinned model revision")
+    try:
+        timestamp = datetime.fromisoformat(document["generated_at"].replace("Z", "+00:00"))
+    except ValueError as error:
+        raise ValueError("local translation generated_at must be RFC 3339") from error
+    if timestamp.tzinfo is None:
+        raise ValueError("local translation generated_at requires a timezone")
+    segments = document.get("segments")
+    if not isinstance(segments, list) or len(segments) != len(source_segments):
+        raise ValueError("local translation must preserve the complete segment count")
+    for segment in segments:
+        if not isinstance(segment, dict):
+            raise ValueError("local translation segment must be an object")
+        for key in ("source_event_index", "start_ms", "end_ms"):
+            if type(segment.get(key)) is not int:
+                raise ValueError(f"local translation {key} must be an integer")
+        value = segment.get("text")
+        if not isinstance(value, str) or not value.strip() or "\n" in value or "\r" in value:
+            raise ValueError("local translation text must be a non-empty single line")
+    validate_aligned_translation(source_segments, segments)
+    provenance = {key: document[key] for key in (
+        "engine", "model", "model_revision", "generated_at",
+        "source_payload_sha256", "source_transcript_sha256",
+    )}
+    if web_translation:
+        provenance.update({key: document[key] for key in (
+            "provider_url", "model_version_visibility",
+        )})
+    return segments, provenance
+
+
 def format_timestamp(milliseconds: int) -> str:
     total_seconds = milliseconds // 1000
     hours, remainder = divmod(total_seconds, 3600)
@@ -283,16 +356,31 @@ def build_outputs(
     raw_repository_path: str,
     transcript_repository_path: str,
     translation_repository_path: str,
+    local_translation: bool = False,
 ) -> tuple[bytes, bytes, bytes, bytes]:
     source_payload = load_json3(source_payload_bytes, label="source caption")
-    translation_payload = load_json3(
-        translation_payload_bytes,
-        label="translated caption",
-    )
     source_segments = caption_segments(source_payload, label="source caption")
-    translated_segments = caption_segments(translation_payload, label="translated caption")
-    validate_aligned_translation(source_segments, translated_segments)
     source_transcript = transcript_bytes(title, source_segments)
+    if local_translation:
+        translated_segments, translation_provenance = local_translation_segments(
+            translation_payload_bytes, source_payload=source_payload_bytes,
+            source_transcript=source_transcript, source_segments=source_segments,
+        )
+        translation_provenance["track_type"] = (
+            "web-machine-translation"
+            if translation_provenance["engine"] == "google-translate-web"
+            else "local-machine-translation"
+        )
+        translation_provenance["payload_path"] = str(
+            Path(translation_repository_path).with_name("translation.zh-CN.json")
+        )
+    else:
+        translation_payload = load_json3(translation_payload_bytes, label="translated caption")
+        translated_segments = caption_segments(translation_payload, label="translated caption")
+        validate_aligned_translation(source_segments, translated_segments)
+        translation_provenance = {
+            "source_track": translation_track, "track_type": "youtube-auto-translate",
+        }
     translated_transcript = transcript_bytes(title, translated_segments)
 
     video_id = info.get("id")
@@ -339,8 +427,7 @@ def build_outputs(
         },
         "translation": {
             "language": "zh-CN",
-            "source_track": translation_track,
-            "track_type": "youtube-auto-translate",
+            **translation_provenance,
             "payload_sha256": sha256_bytes(translation_payload_bytes),
             "event_count": len(translated_segments),
             "rendered_path": translation_repository_path,
@@ -368,18 +455,21 @@ def main() -> int:
     ):
         raise ValueError("episode directory must be shows/<show>/episodes/<episode>")
 
-    cached_paths = (args.metadata_json, args.source_json3, args.translation_json3)
+    if args.replace_translation and (not args.translation_segments_json or args.overwrite):
+        raise ValueError("--replace-translation requires cached segments and forbids --overwrite")
+    translation_input = args.translation_json3 or args.translation_segments_json
+    cached_paths = (args.metadata_json, args.source_json3, translation_input)
     if any(path is not None for path in cached_paths) and not all(
         path is not None for path in cached_paths
     ):
         raise ValueError(
-            "--metadata-json, --source-json3, and --translation-json3 must be provided together"
+            "--metadata-json, --source-json3, and one translation input must be provided together"
         )
     if all(path is not None for path in cached_paths):
         info, source_payload, translation_payload = load_cached_inputs(
             metadata_path=args.metadata_json,
             source_path=args.source_json3,
-            translation_path=args.translation_json3,
+            translation_path=translation_input,
             canonical_url=canonical_url,
         )
     else:
@@ -394,6 +484,9 @@ def main() -> int:
         raise ValueError("YouTube metadata has no title")
     generated_at = utc_now()
     run_dir = episode_dir / "asr" / args.run_id
+    if args.replace_translation:
+        existing_raw = json.loads((run_dir / "raw.json").read_bytes())
+        generated_at = existing_raw["generated_at"]
     run_relative = run_dir.relative_to(ROOT).as_posix()
     translation_relative = (episode_dir / "transcript.zh-CN.md").relative_to(ROOT).as_posix()
     raw, refined, source_transcript, translated_transcript = build_outputs(
@@ -408,6 +501,7 @@ def main() -> int:
         raw_repository_path=f"{run_relative}/raw.json",
         transcript_repository_path=f"{run_relative}/transcript.en.md",
         translation_repository_path=translation_relative,
+        local_translation=args.translation_segments_json is not None,
     )
     outputs = {
         run_dir / "raw.json": raw,
@@ -416,8 +510,33 @@ def main() -> int:
         episode_dir / "transcript.en.md": source_transcript,
         episode_dir / "transcript.zh-CN.md": translated_transcript,
     }
+    if args.translation_segments_json:
+        outputs[episode_dir / "translation.zh-CN.json"] = translation_payload
+    if args.replace_translation:
+        # Replacement only changes the translation and its provenance. Raw publisher
+        # captions and both selected English copies must remain byte-identical.
+        for path in (
+            run_dir / "raw.json",
+            run_dir / "transcript.en.md",
+            episode_dir / "transcript.en.md",
+        ):
+            if not path.is_file() or path.read_bytes() != outputs[path]:
+                raise ValueError("translation replacement would change the publisher source")
+    # Check all destinations before writing any of them.
+    replaceable = {
+        run_dir / "refined.json",
+        episode_dir / "transcript.zh-CN.md",
+        episode_dir / "translation.zh-CN.json",
+    }
     for path, payload in outputs.items():
-        write_atomically(path, payload, overwrite=args.overwrite)
+        allow_replace = args.overwrite or (args.replace_translation and path in replaceable)
+        if path.exists() and path.read_bytes() != payload and not allow_replace:
+            raise FileExistsError(f"refusing to replace existing output: {path}")
+    for path, payload in outputs.items():
+        write_atomically(
+            path, payload,
+            overwrite=args.overwrite or (args.replace_translation and path in replaceable),
+        )
 
     refined_document = json.loads(refined)
     refined_segments = refined_document.get("segments")

@@ -17,6 +17,8 @@ feed 或栏目。发现更新、证明扫描覆盖范围和生成候选清单时
 ForcedAligner 生成机器逐字稿；以及官方 YouTube 完整播客正片使用发布者英文 `json3`
 字幕和逐事件对齐的 `zh-Hans-en` 平台机器译轨生成中英机器稿。所有路径都要求先通过
 节目与完整单集边界。
+平台译轨有空段或漏译时，可以保留发布者英文字幕并按第 8 节生成本地逐段机器译稿，
+再以带源文件哈希的本地载荷导入；这不改变原始字幕来源，也不需要重跑 ASR。
 PodWiki 只收录符合[内容标准第 0 节](./content-standard.md#0-收录边界只收录播客)的
 播客完整单集；长视频、访谈或频道投稿本身不构成收录依据。
 用户明确授权时，也可以把一个已核实播客的公开免费单集作为冻结后的有界批次处理：
@@ -371,7 +373,9 @@ importer 固定下载 `json3`，把发布者英文原始载荷保存在
 README 中 selected run 使用非 Qwen provenance：engine 为 `youtube-subtitles`，model
 记录发布者字幕语言；artifacts 至少绑定 raw、refined 和 run transcript。英文 selected
 仍指向 `transcript.en.md`，中文稿只登记在 `transcript.translations`。若发布者字幕存在
-但 importer 无法满足该契约，停止并报告；不能改跑音频 ASR。
+但平台译轨无法满足该契约，先停止该次导入；按第 8 节补全译稿后再导入，不能改跑
+音频 ASR。事件数量和时间轴一致并不能排除译轨只翻译了多行字幕中的一行，还必须
+抽查正文，发现漏译时不得把结构校验通过写成内容完整。
 
 ### 无受支持字幕时使用 Qwen
 
@@ -596,6 +600,32 @@ shasum -a 256 shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/refined.js
 YouTube 字幕 importer 可以把时间轴完全一致的 `zh-Hans-en` 平台机器译轨作为上述
 分块翻译的替代来源；它仍须逐事件检查一对一结构，并在 refined provenance 中绑定
 译轨原始载荷 SHA-256。该译稿只可标为 `machine`，平台能返回中文不代表已经人工审核。
+
+对于基于完整英文生成或补全的 YouTube 中文译稿，使用 `--translation-segments-json`，与
+`--translation-json3` 互斥。输入必须保存在 `.cache/`，并包含：
+
+- `schema_version: 1`、`kind: podwiki-segment-translation`、`language: zh-CN`、
+  `source_language: en`、`status: machine`；
+- 发布者 `json3` 的 `source_payload_sha256` 与最终选中英文 Markdown 的
+  `source_transcript_sha256`；
+- 实际 `engine`、`model` 和带时区的 `generated_at`；本地模型必须提供 40 位
+  commit pin `model_revision`。通过现有浏览器的 Google Translate Advanced 生成时，
+  使用 `engine: google-translate-web`、`model: Advanced (Gemini)`、
+  `provider_url: https://translate.google.com/`，并明确记录 `model_revision: null`、
+  `model_version_visibility: not-exposed`，不得虚构服务未公开的模型版本；
+- 完整 `segments` 数组，每项保留英文的 `source_event_index`、`start_ms`、`end_ms`，
+  并提供非空、单行的中文 `text`。
+
+importer 拒绝源哈希不符、段数不齐和时间轴漂移，保存根目录 `translation.zh-CN.json`，
+并在 refined 的 translation provenance 中区分 `local-machine-translation` 与
+`web-machine-translation`，记录模型版本或版本不可见状态、输入载荷哈希和输出稿哈希；
+不得把另行生成的文字标成 YouTube 平台机器译轨。网页翻译还须核对实际输入和界面模型，
+缓存连续分块及原始输出，并拒绝缺号、漏译或源文本被追加导致的错误范围。
+
+已有英文稿需要替换不完整中文稿时，加 `--replace-translation`，不能同时加
+`--overwrite`。替换前会核对 raw 与两份英文稿均保持字节一致，并预检全部输出冲突；
+只允许替换中文稿、中文载荷及 refined 中的翻译 provenance。导入后还要同步 README
+中的译稿哈希、生成时间、来源说明和审核状态。
 
 结构完成后由 `scripts/validate.py` 检查标题、行数、逐行时间戳、顺序和哈希。自动
 校验不能证明翻译语义正确；未经人工逐段审核保持 `status: machine`。
