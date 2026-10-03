@@ -1428,6 +1428,11 @@ button {
   contain-intrinsic-block-size: auto 104px;
 }
 
+/* Timestamp navigation needs complete row heights before the browser scrolls. */
+.transcript-lines:has(> .transcript-line:target) > .transcript-line {
+  content-visibility: visible;
+}
+
 .transcript-line:target {
   margin-inline: -12px;
   padding-inline: 12px;
