@@ -72,6 +72,10 @@ test("keeps a long bilingual transcript at the timestamp selected from its summa
   const summaryPath = "/shows/dwarkesh/episodes/youtube-4c775151376e4243475373-si-sheppard";
   await page.goto(summaryPath);
   await expect(page.getByRole("heading", { level: 1, name: "Si Sheppard" })).toBeVisible();
+  // Exercise the same Chinese webfont path as Linux, including on macOS hosts.
+  await page.addStyleTag({
+    content: ":root { --sans: var(--font-sf-pro), var(--font-noto-sans-sc), sans-serif; --mono: var(--font-sf-mono), var(--font-noto-sans-sc), monospace; }",
+  });
   await page.locator("main").getByRole("link", { name: "00:17:15", exact: true }).first().click();
   await expect(page).toHaveURL(`${summaryPath}/transcript#t-00-17-15`);
   const target = page.locator("#t-00-17-15");
@@ -99,7 +103,7 @@ test("keeps a long bilingual transcript at the timestamp selected from its summa
   // Simulate a font/layout change after the initial one-second alignment window.
   await page.waitForTimeout(1500);
   await page.addStyleTag({
-    content: "html { overflow-anchor: none; } .transcript-lines { font-size: 24px; --body-leading: 2.2; } .transcript-line { content-visibility: visible; }",
+    content: "html { overflow-anchor: none; } .transcript-lines { font-size: 24px; --body-leading: 2.2; }",
   });
   await assertAnchorIsVisible();
   await expect(target.locator('[lang="en"]')).toContainText("just as critical was the diplomacy");

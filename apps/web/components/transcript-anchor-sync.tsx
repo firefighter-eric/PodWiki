@@ -34,7 +34,7 @@ export function TranscriptAnchorSync() {
       const target = document.getElementById(id);
       if (!target) return;
       const margin = Number.parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
-      // Avoid forcing another lazy-layout pass when the anchor is already aligned.
+      // Do not scroll again when the anchor is already aligned.
       if (Math.abs(target.getBoundingClientRect().top - margin) > 1) {
         target.scrollIntoView({ block: "start", behavior: "instant" });
       }
@@ -48,7 +48,7 @@ export function TranscriptAnchorSync() {
       });
     };
 
-    // Deferred paragraphs and font swaps can change offsets after the timers finish.
+    // Font swaps and reader preferences can change offsets after the timers finish.
     const layoutObserver = new ResizeObserver(scheduleAlignment);
 
     const stopAlignment = () => {
