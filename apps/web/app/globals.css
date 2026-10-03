@@ -1420,6 +1420,17 @@ button {
   margin: 0;
   grid-template-columns: 72px minmax(0, 1fr);
   border-bottom: 1px solid #eeebe5;
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 52px;
+}
+
+.bilingual-transcript-line {
+  contain-intrinsic-block-size: auto 104px;
+}
+
+/* Timestamp navigation needs complete row heights before the browser scrolls. */
+.transcript-lines:has(> .transcript-line:target) > .transcript-line {
+  content-visibility: visible;
 }
 
 .transcript-line:target {
