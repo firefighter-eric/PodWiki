@@ -32,7 +32,12 @@ export function TranscriptAnchorSync() {
       const id = decodeTranscriptAnchor(window.location.hash);
       if (!id) return;
       const target = document.getElementById(id);
-      target?.scrollIntoView({ block: "start", behavior: "instant" });
+      if (!target) return;
+      const margin = Number.parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+      // Avoid forcing another lazy-layout pass when the anchor is already aligned.
+      if (Math.abs(target.getBoundingClientRect().top - margin) > 1) {
+        target.scrollIntoView({ block: "start", behavior: "instant" });
+      }
     };
 
     const scheduleAlignment = () => {
