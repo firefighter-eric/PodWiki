@@ -75,17 +75,54 @@ test("keeps a long bilingual transcript at the timestamp selected from its summa
   await page.locator("main").getByRole("link", { name: "00:17:15", exact: true }).first().click();
   await expect(page).toHaveURL(`${summaryPath}/transcript#t-00-17-15`);
   const target = page.locator("#t-00-17-15");
-  let visibleSamples = 0;
-  await expect.poll(async () => {
-    const visible = await target.evaluate((element) => {
-      const bounds = element.getBoundingClientRect();
-      return bounds.top >= 0 && bounds.top < window.innerHeight;
-    });
-    visibleSamples = visible ? visibleSamples + 1 : 0;
-    return visibleSamples;
-  }, { intervals: [200, 500, 500], timeout: 10_000 }).toBeGreaterThanOrEqual(3);
+  const assertAnchorIsVisible = async () => {
+    let visibleSamples = 0;
+    const samples: Array<{ top: number; viewport: number; fonts: string }> = [];
+    try {
+      await expect.poll(async () => {
+        const sample = await target.evaluate((element) => ({
+          top: element.getBoundingClientRect().top,
+          viewport: window.innerHeight,
+          fonts: document.fonts.status,
+        }));
+        samples.push(sample);
+        const visible = sample.top >= 0 && sample.top < sample.viewport;
+        visibleSamples = visible ? visibleSamples + 1 : 0;
+        return visibleSamples;
+      }, { intervals: [200, 500, 500], timeout: 10_000 }).toBeGreaterThanOrEqual(3);
+    } catch (error) {
+      throw new Error(`Timestamp layout samples: ${JSON.stringify(samples.slice(-5))}`, { cause: error });
+    }
+  };
+  await assertAnchorIsVisible();
+
+  // Simulate a font/layout change after the initial one-second alignment window.
+  await page.waitForTimeout(1500);
+  await page.addStyleTag({
+    content: "html { overflow-anchor: none; } .transcript-lines { font-size: 24px; --body-leading: 2.2; } .transcript-line { content-visibility: visible; }",
+  });
+  await assertAnchorIsVisible();
   await expect(target.locator('[lang="en"]')).toContainText("just as critical was the diplomacy");
   await expect(target.locator('[lang="zh-CN"]')).toContainText("外交");
+
+  await page.keyboard.press("PageDown");
+  await expect.poll(() => target.evaluate((element) => element.getBoundingClientRect().top))
+    .toBeLessThan(0);
+  let manualScrollY = -1;
+  let settledSamples = 0;
+  await expect.poll(async () => {
+    const scrollY = await page.evaluate(() => window.scrollY);
+    settledSamples = Math.abs(scrollY - manualScrollY) < 1 ? settledSamples + 1 : 0;
+    manualScrollY = scrollY;
+    return settledSamples;
+  }, { intervals: [200, 500, 500] }).toBeGreaterThanOrEqual(3);
+  await page.addStyleTag({ content: ".transcript-lines { font-size: 26px; }" });
+  let manualScrollSamples = 0;
+  await expect.poll(async () => {
+    const scrollY = await page.evaluate(() => window.scrollY);
+    manualScrollSamples = Math.abs(scrollY - manualScrollY) < 1 ? manualScrollSamples + 1 : 0;
+    return manualScrollSamples;
+  }, { intervals: [200, 500, 500] }).toBeGreaterThanOrEqual(3);
   assertConsoleIsClean();
 });
 
