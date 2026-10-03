@@ -40,7 +40,7 @@ sources:
     url: https://podcasts.apple.com/podcast/id1498541229
     identifiers:
       apple_podcasts_id: "1498541229"
-last_verified_at: 2026-08-28
+last_verified_at: 2026-10-02
 ---
 
 # 硅谷101
@@ -51,6 +51,7 @@ last_verified_at: 2026-08-28
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [硅谷睡眠外挂：富人的玩具，还是预防医疗的入口？｜对话Eight Sleep创始人【硅谷101视频播客】](https://www.bilibili.com/video/BV1Chhb6YENK/) | 硅谷101 | 2026-09-24 | [总结](./episodes/252-eight-sleep/summary.zh-CN.md) | [英文逐字稿](./episodes/252-eight-sleep/transcript.en.md) · [中文译稿](./episodes/252-eight-sleep/transcript.zh-CN.md) |
 | [对话艾博生物CEO英博：“一人一药”，Moderna，AI制药，癌症疫苗的边界与未来【101视频播客】](https://www.bilibili.com/video/BV1aZtc68EzJ/) | 硅谷101 | 2026-08-28 | [总结](./episodes/250-ying-bo/summary.zh-CN.md) | [逐字稿](./episodes/250-ying-bo/transcript.zh-CN.md) |
 | [AI可解释性与对齐：J-Space，思维链，AI人格，幻觉，与金门大桥【101视频播客】](https://www.bilibili.com/video/BV1gyhF6wEDD/) | 硅谷101 | 2026-08-27 | [总结](./episodes/bili-bv1gyhf6wedd-aryaman-arora/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1gyhf6wedd-aryaman-arora/transcript.zh-CN.md) |
 | [Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路【硅谷101播客】](https://www.bilibili.com/video/BV1yFbo66E4q/) | 硅谷101 | 2026-08-20 | [总结](./episodes/249-zhang-hongjiang-huang-dongxu/summary.zh-CN.md) | [逐字稿](./episodes/249-zhang-hongjiang-huang-dongxu/transcript.zh-CN.md) |

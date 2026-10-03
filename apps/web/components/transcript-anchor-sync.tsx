@@ -29,7 +29,7 @@ export function TranscriptAnchorSync() {
       const id = decodeTranscriptAnchor(window.location.hash);
       if (!id) return;
       const target = document.getElementById(id);
-      target?.scrollIntoView({ block: "start" });
+      target?.scrollIntoView({ block: "start", behavior: "instant" });
     };
 
     const alignToHash = () => {

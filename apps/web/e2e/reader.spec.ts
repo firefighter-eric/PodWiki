@@ -63,6 +63,32 @@ test("renders the complete reader summary without editorial workflow copy", asyn
   assertConsoleIsClean();
 });
 
+test("keeps a long bilingual transcript at the timestamp selected from its summary", async ({ page }) => {
+  const assertConsoleIsClean = watchConsole(page);
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width > 960) {
+    await page.setViewportSize({ width: 1272, height: 740 });
+  }
+  const summaryPath = "/shows/dwarkesh/episodes/youtube-4c775151376e4243475373-si-sheppard";
+  await page.goto(summaryPath);
+  await expect(page.getByRole("heading", { level: 1, name: "Si Sheppard" })).toBeVisible();
+  await page.locator("main").getByRole("link", { name: "00:17:15", exact: true }).first().click();
+  await expect(page).toHaveURL(`${summaryPath}/transcript#t-00-17-15`);
+  const target = page.locator("#t-00-17-15");
+  let visibleSamples = 0;
+  await expect.poll(async () => {
+    const visible = await target.evaluate((element) => {
+      const bounds = element.getBoundingClientRect();
+      return bounds.top >= 0 && bounds.top < window.innerHeight;
+    });
+    visibleSamples = visible ? visibleSamples + 1 : 0;
+    return visibleSamples;
+  }, { intervals: [200, 500, 500], timeout: 10_000 }).toBeGreaterThanOrEqual(3);
+  await expect(target.locator('[lang="en"]')).toContainText("just as critical was the diplomacy");
+  await expect(target.locator('[lang="zh-CN"]')).toContainText("外交");
+  assertConsoleIsClean();
+});
+
 test("keeps the keyboard-active search result inside the scroll viewport and restores focus", async ({
   page,
 }) => {
