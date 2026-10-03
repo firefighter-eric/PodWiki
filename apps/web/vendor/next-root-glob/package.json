@@ -1,0 +1,10 @@
+{
+  "name": "@podwiki/next-root-glob",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs",
+  "dependencies": {
+    "tinyglobby": "0.2.17"
+  }
+}

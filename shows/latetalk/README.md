@@ -38,7 +38,7 @@ sources:
     url: https://podcasts.apple.com/sg/podcast/id1564877433
     identifiers:
       apple_podcasts_id: "1564877433"
-last_verified_at: 2026-08-23
+last_verified_at: 2026-10-02
 ---
 
 # 晚点聊 LateTalk
@@ -49,6 +49,7 @@ last_verified_at: 2026-08-23
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [对话梁琛奇：抖音→猫箱→创业，他们都搞生产力，我想用 AI 创造开心【晚点聊LateTalk】](https://www.bilibili.com/video/BV1Vbao6aEYM/) | 晚点聊 LateTalk | 2026-09-30 | [总结](./episodes/182-liang-chenqi/summary.zh-CN.md) | [逐字稿](./episodes/182-liang-chenqi/transcript.zh-CN.md) |
 | [对话 Shopee 刘江宏：穿越变化，回到商业的本质](https://www.bilibili.com/video/BV1Atew6aExh/) | 晚点聊 LateTalk | 2026-09-16 | [总结](./episodes/181-liu-jianghong-shopee/summary.zh-CN.md) | [逐字稿](./episodes/181-liu-jianghong-shopee/transcript.zh-CN.md) |
 | [具身智能的金钱游戏【晚点聊LateTalk】](https://www.bilibili.com/video/BV17MtZ6wEiL/) | 晚点聊 LateTalk | 2026-09-03 | [总结](./episodes/180-embodied-ai-capital/summary.zh-CN.md) | [逐字稿](./episodes/180-embodied-ai-capital/transcript.zh-CN.md) |
 | [世界模型是具身的永动机？【晚点LatePost】](https://www.bilibili.com/video/BV1wQ8y63EyG/) | 晚点聊 LateTalk | 2026-08-22 | [总结](./episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/transcript.zh-CN.md) |

@@ -51,7 +51,13 @@
     "@types/react-dom": "^19.2.4",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.6",
+    "fast-glob": "file:vendor/next-root-glob",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "@next/eslint-plugin-next": {
+      "fast-glob": "$fast-glob"
+    }
   }
 }

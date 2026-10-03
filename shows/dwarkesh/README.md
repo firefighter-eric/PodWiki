@@ -30,7 +30,7 @@ sources:
     url: https://api.substack.com/feed/podcast/69345.rss
     identifiers:
       feed_url: https://api.substack.com/feed/podcast/69345.rss
-last_verified_at: 2026-08-18
+last_verified_at: 2026-10-02
 ---
 
 # Dwarkesh Podcast
@@ -41,6 +41,7 @@ Dwarkesh Patel 主持的英文长篇访谈播客，以深入准备的对谈讨�
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [How did a few hundred Spanish soldiers topple two empires? – Si Sheppard](https://www.youtube.com/watch?v=LwQQ7nBCGSs) | Dwarkesh Podcast | 2026-10-02 | [总结](./episodes/youtube-4c775151376e4243475373-si-sheppard/summary.zh-CN.md) | [英文逐字稿](./episodes/youtube-4c775151376e4243475373-si-sheppard/transcript.en.md) · [中文译稿](./episodes/youtube-4c775151376e4243475373-si-sheppard/transcript.zh-CN.md) |
 | [OpenAI researcher on agent swarms & recursive self-improvement](https://www.youtube.com/watch?v=6AgOfiZOWiY) | Dwarkesh Podcast | 2026-09-17 | [总结](./episodes/youtube-3641674f66695a4f576959-noam-brown/summary.zh-CN.md) | [英文逐字稿](./episodes/youtube-3641674f66695a4f576959-noam-brown/transcript.en.md) · [中文译稿](./episodes/youtube-3641674f66695a4f576959-noam-brown/transcript.zh-CN.md) |
 | [AI researchers debate how close we are to recursive self-improvement](https://www.youtube.com/watch?v=PrSf7IOYu-I) | Dwarkesh Podcast | 2026-09-12 | [总结](./episodes/youtube-5072536637494f59752d49-ai-researchers/summary.zh-CN.md) | [英文逐字稿](./episodes/youtube-5072536637494f59752d49-ai-researchers/transcript.en.md) · [中文译稿](./episodes/youtube-5072536637494f59752d49-ai-researchers/transcript.zh-CN.md) |
 | [Ajeya Cotra – "This might be the clearest warning shot we ever get"](https://www.youtube.com/watch?v=X50zezLFWWI) | Dwarkesh Podcast | 2026-09-02 | [总结](./episodes/youtube-5835307a657a4c46575749-ajeya-cotra/summary.zh-CN.md) | [英文逐字稿](./episodes/youtube-5835307a657a4c46575749-ajeya-cotra/transcript.en.md) · [中文译稿](./episodes/youtube-5835307a657a4c46575749-ajeya-cotra/transcript.zh-CN.md) |
