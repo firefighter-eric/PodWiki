@@ -66,6 +66,21 @@ uv sync --active --locked --extra media --extra asr-cuda
 `*-pinned-v2` 与 CUDA native 的 `*-pinned-v3` 目录都不得与缺少逐文件 metadata
 的旧 snapshot/symlink cache 混用。
 
+下载任何模型前，先初始化共享目录引用（macOS/Linux 和 PowerShell 均使用同一命令）：
+
+```bash
+uv run --no-sync python scripts/setup_shared_models.py
+```
+
+默认将 `.cache/models` 链接到当前用户的 `~/Models/PodWiki`；Windows 无符号链接权限时
+使用目录 junction。可通过 `--shared-root <绝对路径>` 指定共享目录。新 checkout 也必须
+执行这一步，不能假定 Git 忽略的链接已存在。
+
+迁移已有本地模型前，先确认没有正在运行的模型下载或 ASR 任务。目标不存在时，脚本
+以同一文件系统内的重命名迁移现有目录；目标已存在且本地目录非空时拒绝覆盖，先核对
+模型版本与文件并处理冲突。跨文件系统迁移也会停止，不自动复制或删除权重。原路径
+最终通过链接引用共享权重，下面的下载命令无需改动。
+
 下载 Apple Silicon/MLX 使用的 Qwen3-ASR 和 ForcedAligner：
 
 ```bash
