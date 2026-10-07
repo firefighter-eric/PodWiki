@@ -63,7 +63,7 @@ Use only the sections needed for the selected show's sources.
 - Enumerate metadata without media bytes. A supported local command is:
 
   ```bash
-  env UV_CACHE_DIR=.cache/uv uv run --no-sync yt-dlp \
+  uv run --no-sync yt-dlp \
     --flat-playlist --dump-single-json <canonical-playlist-url>
   ```
 

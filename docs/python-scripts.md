@@ -32,21 +32,19 @@ Apple Silicon/MLX 使用：
 
 ```bash
 uv sync --locked --extra media --extra asr
-env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
+uv run --no-sync hf --help
 ```
 
-后续 MLX 命令统一使用仓库内的 uv 缓存，并通过 `--no-sync` 避免 worker 运行期间
+后续 MLX 命令默认使用 uv 的用户级共享缓存，并通过 `--no-sync` 避免 worker 运行期间
 改写共享 `.venv`：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python <script> <arguments>
+uv run --no-sync python <script> <arguments>
 ```
 
-PowerShell 不提供 POSIX 的 `env`、`export` 或反斜杠续行。先在当前终端设置环境变量，
-再运行后续命令；多行命令可改成单行，或把示例中的 `\` 换成 PowerShell 反引号：
+PowerShell 不提供 POSIX 的 `env`、`export` 或反斜杠续行。直接运行后续 `uv` 命令；多行命令可改成单行，或把示例中的 `\` 换成 PowerShell 反引号：
 
 ```powershell
-$env:UV_CACHE_DIR = ".cache/uv"
 uv run --no-sync python <script> <arguments>
 ```
 
@@ -61,23 +59,37 @@ uv sync --active --locked --extra media --extra asr-cuda
 正式 worker 直接使用
 `.cache/venvs/qwen-cuda/Scripts/python.exe`，不要在长任务运行期间同步依赖。
 
-本页余下 `env UV_CACHE_DIR=.cache/uv ...` 示例在 PowerShell 中均省略该前缀，沿用上面已
-设置的 `$env:UV_CACHE_DIR`。模型下载默认使用 Hugging Face 官方入口；仅当官方入口在
+所有平台默认使用 uv 的用户级共享缓存；可用 `uv cache dir` 查看位置。需要临时覆盖时，由操作者显式设置 `UV_CACHE_DIR`。模型下载默认使用 Hugging Face 官方入口；仅当官方入口在
 当前网络不可达时，才临时设置 `HF_ENDPOINT` 镜像。镜像只是传输入口，不是上游真实性
 证明；完整 commit pin、每个下载 payload 的 metadata/ETag 与重新计算的 SHA-256
 只负责锁定和复现取得的本地 snapshot，来源信任仍以官方 Hub 为准。MLX 的
 `*-pinned-v2` 与 CUDA native 的 `*-pinned-v3` 目录都不得与缺少逐文件 metadata
 的旧 snapshot/symlink cache 混用。
 
+下载任何模型前，先初始化共享目录引用（macOS/Linux 和 PowerShell 均使用同一命令）：
+
+```bash
+uv run --no-sync python scripts/setup_shared_models.py
+```
+
+默认将 `.cache/models` 链接到当前用户的 `~/Models/PodWiki`；Windows 无符号链接权限时
+使用目录 junction。可通过 `--shared-root <绝对路径>` 指定共享目录。新 checkout 也必须
+执行这一步，不能假定 Git 忽略的链接已存在。
+
+迁移已有本地模型前，先确认没有正在运行的模型下载或 ASR 任务。目标不存在时，脚本
+以同一文件系统内的重命名迁移现有目录；目标已存在且本地目录非空时拒绝覆盖，先核对
+模型版本与文件并处理冲突。跨文件系统迁移也会停止，不自动复制或删除权重。原路径
+最终通过链接引用共享权重，下面的下载命令无需改动。
+
 下载 Apple Silicon/MLX 使用的 Qwen3-ASR 和 ForcedAligner：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
+uv run --no-sync hf download \
   mlx-community/Qwen3-ASR-1.7B-8bit \
   --revision a8379a2e2f9e313c9292cdf1af4055ab56d50d55 \
   --local-dir .cache/models/qwen3-asr-1.7b-8bit-pinned-v2
 
-env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
+uv run --no-sync hf download \
   mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
   --revision 0e1a68e91d815300c7c9754b2a7639378b23db15 \
   --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit-pinned-v2
@@ -114,7 +126,7 @@ Windows/CUDA 使用官方模型：
 ### 从冻结的英文字幕导入缓存中文译稿
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/import_youtube_captions.py \
+uv run --no-sync python scripts/import_youtube_captions.py \
   --url <canonical-youtube-video-url> \
   --episode-dir shows/<show-id>/episodes/<episode-folder> \
   --metadata-json .cache/intake/<source-id>/source.metadata.json \
@@ -134,7 +146,7 @@ raw 与英文 Markdown 的原始字节，拒绝同时使用 `--overwrite`。
 规范 URL、BVID/eid/GUID 等稳定来源键，用于精确去重，不把标题相似度当作身份：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python \
+uv run --no-sync python \
   .agents/skills/podwiki-scan-episodes/scripts/build_episode_inventory.py \
   --repository-root . \
   --show <show-id> \
@@ -144,7 +156,7 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python \
 按扫描 skill 完成来源覆盖和逐项判定后，校验每个节目的 strict JSON 清单：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python \
+uv run --no-sync python \
   .agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py \
   .cache/scans/<scan-id>/scan.json \
   --repository-root .
@@ -194,7 +206,7 @@ intake，不下载媒体、不创建 tracked 单集。
 上述规范视频地址；脚本会拒绝直接传入活动页。
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url https://www.bilibili.com/video/BVID/ \
   --output .cache/media/<show-id>/<episode-folder>/source.m4a
 ```
@@ -213,7 +225,7 @@ extractor 或传输错误不会触发这条回退。回退要求 `state == 0`，
 只检查来源而不下载：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url https://www.bilibili.com/video/BVID/ \
   --output .cache/media/<show-id>/<episode-folder>/source.m4a \
   --metadata-only
@@ -230,7 +242,7 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 已有音频缺 sidecar 时，只有已从独立记录核对出原音频 SHA-256 才能恢复：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url <canonical-url> \
   --output .cache/media/<show-id>/<episode-folder>/source.m4a \
   --metadata-only --repair-metadata \
@@ -244,7 +256,7 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 小宇宙输入必须是单集页，播客栏目页不能直接下载：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url https://www.xiaoyuzhoufm.com/episode/<episode-id> \
   --output .cache/media/<show-id>/<episode-folder>/source.m4a
 ```
@@ -286,7 +298,7 @@ Qwen3-ForcedAligner 0.6B 8-bit：
 
 ```bash
 env HF_HUB_OFFLINE=1 \
-  UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/transcribe_qwen3_asr.py \
+  uv run --no-sync python scripts/transcribe_qwen3_asr.py \
   --input .cache/media/<show-id>/<episode-folder>/source.m4a \
   --output shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/raw.json \
   --aligned-output shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/aligned.json \
@@ -365,7 +377,7 @@ raw 缺 aligned、CUDA pending raw 需要 reconciliation，或请求 `--realign`
 其他语言使用对应的 BCP 47 文件名和 `--language`：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/render_asr_transcript.py \
+uv run --no-sync python scripts/render_asr_transcript.py \
   --input shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/aligned.json \
   --refined-output shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/refined.json \
   --output shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/transcript.zh-CN.md \
@@ -423,7 +435,7 @@ Apple Silicon/MLX 示例：
 
 ```bash
 env HF_HUB_OFFLINE=1 \
-  UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  uv run --no-sync python scripts/process_qwen3_asr_batch.py \
   --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --model-path .cache/models/qwen3-asr-1.7b-8bit-pinned-v2 \
@@ -486,7 +498,7 @@ Windows/CUDA 命令追加相同的两个语言参数即可：
 
 ```bash
 env HF_HUB_OFFLINE=1 \
-  UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  uv run --no-sync python scripts/process_qwen3_asr_batch.py \
   --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --language English --transcript-language en \
@@ -499,7 +511,7 @@ env HF_HUB_OFFLINE=1 \
 MLX Whisper 只用于保留已有基线或显式对比，不作为当前中文单集的默认正式逐字稿：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/transcribe_audio.py \
+uv run --no-sync python scripts/transcribe_audio.py \
   --input .cache/media/<show-id>/<episode-folder>/source.m4a \
   --output .cache/benchmarks/<show-id>/<episode-folder>/whisper/raw.json \
   --model mlx-community/whisper-large-v3-turbo-q4 \
@@ -516,14 +528,14 @@ Whisper worker 会在写入前拒绝 `NaN`、`Infinity` 或不可序列化值，
 运行单元测试：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python -m unittest discover -s tests -v
+uv run --no-sync python -m unittest discover -s tests -v
 ```
 
 校验 Markdown、规范来源 URL、严格 JSON、Qwen 产物路径及 SHA-256 lineage：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/audit_correction_migration.py
+uv run --no-sync python scripts/validate.py
+uv run --no-sync python scripts/audit_correction_migration.py
 ```
 
 首次 checkout 或 lockfile 变化后先安装锁定依赖：

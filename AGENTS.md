@@ -26,6 +26,17 @@
 
 按流程选择相关模板和脚本，不要从已有单集反向猜测未核实的元数据。
 
+## 本地大模型与共享资源
+
+- 翻译、总结、全文阅读笔记等文本大模型任务，优先使用 LM Studio 中已安装且适合任务的模型，通过其本地 API 调用；先核对模型标识、量化格式、上下文容量和服务可用性，避免在项目中重复下载权重。
+- 首次用于正式批量处理前，用少量代表性片段核对漏译、术语、逐段对应和耗时；不凭版本号或推理引擎名称宣称质量更好、速度更快。执行记录中保存实际模型、提示词、参数和输入来源，保留原有 machine／draft 审核状态。
+- LM Studio 不支持或不适合的专用模型，先检查用户 Models 目录中的可用副本，再按需下载到共享位置。此机器的共享位置为 `/Users/eric/Models`，PodWiki 模型存放在 `/Users/eric/Models/PodWiki`，项目 `.cache/models` 通过软链接引用；可提交代码中的路径应支持配置，不写死个人绝对路径。
+- 新 checkout 下载模型前先运行 `uv run --no-sync python scripts/setup_shared_models.py`，
+  创建用户级共享目录的链接；可用 `--shared-root` 覆盖位置。迁移前确认没有活动模型任务，
+  两处都存在模型时先核对冲突，禁止覆盖。
+- ASR 和时间戳对齐继续使用对应的专用模型；文本大模型不替代转写或对齐，不因 LM Studio 不可用而静默改用远端服务。
+- uv 默认使用用户级共享依赖缓存，可用 `uv cache dir` 核对。不要重新设置项目本地 `.cache/uv`，除非操作者为明确的隔离需求显式覆盖。
+
 ## 不可省略的规则
 
 - PodWiki 只收录播客。账号或频道身份、视频时长、访谈外观、标题中的 `EP` 都不能
@@ -43,7 +54,8 @@
   `scripts/import_bilibili_subtitles.py`；不得记录带 `auth_key` 的签名 URL，也不得忽略
   已发现字幕改跑音频 ASR。
 - 保留已有来源和 ASR 产物；只有明确要求覆盖时才使用重转写或重对齐选项。
-- 下载媒体、模型、日志和临时文件只放在 `.cache/`，不得提交到 Git。
+- 下载媒体、日志和临时文件只放在 `.cache/`；模型权重按上面的共享资源规则存放，
+  项目仅保留被忽略的引用。上述本地资源不得提交到 Git。
 - 正式本地 Qwen ASR 按平台选择 Apple Silicon/MLX 或 Windows/NVIDIA CUDA；不得因
   平台不同而静默切换到远端服务。
 - 本地长 ASR 逐集、逐子进程串行执行，避免并发争用 Metal 统一内存或 CUDA 显存，
@@ -62,8 +74,8 @@
 提交前至少完成以下检查，并分别报告每集达到的状态和剩余人工审核项：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python -m unittest discover -s tests -v
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py
+uv run --no-sync python -m unittest discover -s tests -v
+uv run --no-sync python scripts/validate.py
 npm --prefix apps/web run check
 git diff --check
 git status --short

@@ -148,11 +148,12 @@ class BackendTests(unittest.TestCase):
                 aligner_path=None,
             )
         self.assertNotIn("HF_ENDPOINT", default_environment)
+        self.assertNotIn("UV_CACHE_DIR", default_environment)
 
         explicit_endpoint = "https://explicit.example.invalid"
         with patch.dict(
             batch.os.environ,
-            {"HF_ENDPOINT": explicit_endpoint},
+            {"HF_ENDPOINT": explicit_endpoint, "UV_CACHE_DIR": "/operator/cache"},
             clear=True,
         ):
             explicit_environment = batch.build_worker_environment(
@@ -160,6 +161,7 @@ class BackendTests(unittest.TestCase):
                 aligner_path=Path("aligner"),
             )
         self.assertEqual(explicit_environment["HF_ENDPOINT"], explicit_endpoint)
+        self.assertEqual(explicit_environment["UV_CACHE_DIR"], "/operator/cache")
         self.assertEqual(explicit_environment["HF_HUB_OFFLINE"], "1")
         self.assertEqual(explicit_environment["TRANSFORMERS_OFFLINE"], "1")
 

@@ -40,10 +40,10 @@ together or synchronize an environment while an ASR worker is running.
 ## Run the same gates as CI
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv lock --check
-env UV_CACHE_DIR=.cache/uv uv run --no-sync ruff check \
+uv lock --check
+uv run --no-sync ruff check \
   scripts tests .agents/skills/podwiki-scan-episodes/scripts
-env UV_CACHE_DIR=.cache/uv uv run --no-sync mypy \
+uv run --no-sync mypy \
   .agents/skills/podwiki-scan-episodes/scripts/build_episode_inventory.py \
   .agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py \
   scripts/acquire_media.py scripts/audit_correction_migration.py scripts/asr_lineage.py \
@@ -53,12 +53,12 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync mypy \
   scripts/render_asr_transcript.py \
   scripts/transcribe_audio.py scripts/transcribe_qwen3_asr.py \
   scripts/transcribe_qwen3_asr_cuda.py
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python -m compileall -q \
+uv run --no-sync python -m compileall -q \
   scripts tests .agents/skills/podwiki-scan-episodes/scripts
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python -m unittest discover -s tests -v
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/audit_correction_migration.py
-env UV_CACHE_DIR=.cache/uv uv run --no-sync pip-audit --local --strict --progress-spinner off
+uv run --no-sync python -m unittest discover -s tests -v
+uv run --no-sync python scripts/validate.py
+uv run --no-sync python scripts/audit_correction_migration.py
+uv run --no-sync pip-audit --local --strict --progress-spinner off
 npm --prefix apps/web audit --audit-level=high
 npm --prefix apps/web exec -- playwright install --with-deps chromium
 npm --prefix apps/web run check

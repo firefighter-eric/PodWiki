@@ -60,7 +60,7 @@ Create an ignored scan directory and generate a deterministic repository invento
 discovery. Use UTC in directory names.
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python \
+uv run --no-sync python \
   .agents/skills/podwiki-scan-episodes/scripts/build_episode_inventory.py \
   --repository-root . \
   --show <show-id> \
@@ -95,7 +95,7 @@ regenerate the inventory before final classification and record the new commit.
    inside the scan directory; do not use the media cache and do not download bytes.
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url <canonical-episode-url> \
   --output .cache/scans/<scan-id>/intake/<source-id>/source.m4a \
   --metadata-only
@@ -138,7 +138,7 @@ description, chapters, and publication time are corroborating evidence; record d
 Write one `scan.json` per show under `.cache/scans/<scan-id>/`, then run:
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python \
+uv run --no-sync python \
   .agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py \
   .cache/scans/<scan-id>/scan.json \
   --repository-root .
