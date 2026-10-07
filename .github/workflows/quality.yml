@@ -12,9 +12,6 @@ concurrency:
   group: quality-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  UV_CACHE_DIR: .cache/uv
-
 jobs:
   python-content:
     name: Python, supply chain, and content

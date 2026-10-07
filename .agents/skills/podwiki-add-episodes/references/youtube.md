@@ -14,7 +14,7 @@
   both available, import them with:
 
 ~~~bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/import_youtube_captions.py \
+uv run --no-sync python scripts/import_youtube_captions.py \
   --url <canonical-video-url> \
   --episode-dir shows/<show-id>/episodes/<episode-folder>
 ~~~

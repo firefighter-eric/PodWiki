@@ -40,7 +40,7 @@
 4. Keep the anonymous metadata intake sidecar for the same canonical URL, then import:
 
 ~~~bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/import_bilibili_subtitles.py \
+uv run --no-sync python scripts/import_bilibili_subtitles.py \
   --url https://www.bilibili.com/video/<BVID>/ \
   --episode-dir shows/<show-id>/episodes/<episode-folder> \
   --metadata-json .cache/intake/<BVID>/source.metadata.json \

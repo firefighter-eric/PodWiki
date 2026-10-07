@@ -300,7 +300,6 @@ def build_worker_environment(
     if model_path is not None and aligner_path is not None:
         environment["HF_HUB_OFFLINE"] = "1"
         environment["TRANSFORMERS_OFFLINE"] = "1"
-    environment.setdefault("UV_CACHE_DIR", str(ROOT / ".cache" / "uv"))
     return environment
 
 

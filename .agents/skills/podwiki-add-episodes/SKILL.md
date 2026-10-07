@@ -19,7 +19,7 @@ identity, resumability, provenance, and review status. Discovery is deliberately
 3. When consuming a scan manifest, validate it against the current repository:
 
 ~~~bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python \
+uv run --no-sync python \
   .agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py \
   <scan.json> --repository-root .
 ~~~
@@ -57,7 +57,7 @@ Canonicalize the exact URL and remove tracking parameters. Run metadata-only int
 authorized access context intended for acquisition:
 
 ~~~bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url <canonical-url> \
   --output .cache/intake/<source-id>/source.m4a \
   --metadata-only
@@ -108,7 +108,7 @@ coverage, and create tracked raw/refined/run transcript artifacts. Record only `
 ## Acquire and verify media
 
 ~~~bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url <canonical-url> \
   --output .cache/media/<show-id>/<episode-folder>/source.m4a
 ~~~
@@ -176,9 +176,9 @@ Never index an intake, outline, or source-acquired record.
 Run the repository completion gate from the root:
 
 ~~~bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python -m unittest discover -s tests -v
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/audit_correction_migration.py
+uv run --no-sync python -m unittest discover -s tests -v
+uv run --no-sync python scripts/validate.py
+uv run --no-sync python scripts/audit_correction_migration.py
 npm --prefix apps/web audit --audit-level=high
 npm --prefix apps/web run check
 git diff --check

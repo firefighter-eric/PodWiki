@@ -89,13 +89,12 @@ Apple Silicon/MLX 使用：
 
 ```bash
 uv sync --locked --extra media --extra asr
-env UV_CACHE_DIR=.cache/uv uv run --no-sync hf --help
+uv run --no-sync hf --help
 ```
 
 Windows/CUDA 建议使用被 Git 忽略的独立环境，避免改写项目 `.venv`。首次创建时：
 
 ```powershell
-$env:UV_CACHE_DIR = ".cache/uv"
 uv venv --python 3.12 .cache/venvs/qwen-cuda
 . .\.cache\venvs\qwen-cuda\Scripts\Activate.ps1
 uv sync --active --locked --extra media --extra asr-cuda
@@ -104,8 +103,8 @@ uv sync --active --locked --extra media --extra asr-cuda
 之后的 CUDA 命令直接调用
 `.cache/venvs/qwen-cuda/Scripts/python.exe`，不在 worker 运行期间同步依赖。
 
-PowerShell 先设置 `$env:UV_CACHE_DIR = ".cache/uv"`，再省略命令前的 POSIX `env`
-写法；`export` 与反斜杠续行的替换规则见[脚本用法](./python-scripts.md#环境准备)。
+所有平台默认使用 uv 的用户级共享缓存，可用 `uv cache dir` 查看位置。PowerShell 的
+`export` 与反斜杠续行的替换规则见[脚本用法](./python-scripts.md#环境准备)。
 
 首次 checkout 或 `apps/web/package-lock.json` 变化后安装锁定的前端依赖：
 
@@ -117,11 +116,11 @@ npm --prefix apps/web exec -- playwright install --with-deps chromium
 首次准备 Apple Silicon/MLX 模型时，默认直接使用 Hugging Face 官方入口：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
+uv run --no-sync hf download \
   mlx-community/Qwen3-ASR-1.7B-8bit \
   --revision a8379a2e2f9e313c9292cdf1af4055ab56d50d55 \
   --local-dir .cache/models/qwen3-asr-1.7b-8bit-pinned-v2
-env UV_CACHE_DIR=.cache/uv uv run --no-sync hf download \
+uv run --no-sync hf download \
   mlx-community/Qwen3-ForcedAligner-0.6B-8bit \
   --revision 0e1a68e91d815300c7c9754b2a7639378b23db15 \
   --local-dir .cache/models/qwen3-forced-aligner-0.6b-8bit-pinned-v2
@@ -172,7 +171,7 @@ metadata 的旧模型目录。MLX 继续使用其独立的 `*-pinned-v2` 目录�
 不要把活动页直接传给脚本。先用来源 ID 做临时 intake，只读取元数据而不下载：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url <canonical-url> \
   --output .cache/intake/<source-id>/source.m4a \
   --metadata-only
@@ -300,7 +299,7 @@ cp -n templates/episode/README.md shows/<show-id>/episodes/<episode-folder>/READ
 确定最终目录后，把来源下载到规范 cache 位置：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url <canonical-url> \
   --output .cache/media/<show-id>/<episode-folder>/source.m4a
 ```
@@ -314,7 +313,7 @@ env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
 README/raw 等独立记录核对出音频 SHA-256，才运行显式恢复：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/acquire_media.py \
+uv run --no-sync python scripts/acquire_media.py \
   --url <canonical-url> \
   --output .cache/media/<show-id>/<episode-folder>/source.m4a \
   --metadata-only --repair-metadata \
@@ -338,7 +337,7 @@ sidecar；若进程在两次提升之间中断，下一次相同目标调用会�
 保留同一规范 URL 的 metadata intake sidecar，然后运行：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/import_bilibili_subtitles.py \
+uv run --no-sync python scripts/import_bilibili_subtitles.py \
   --url https://www.bilibili.com/video/<BVID>/ \
   --episode-dir shows/<show-id>/episodes/<episode-folder> \
   --metadata-json .cache/intake/<BVID>/source.metadata.json \
@@ -359,7 +358,7 @@ YouTube metadata intake 同时发现发布者英文轨与 `zh-Hans-en` 自动译
 字幕 importer，不加载 ASR 模型：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/import_youtube_captions.py \
+uv run --no-sync python scripts/import_youtube_captions.py \
   --url <canonical-youtube-video-url> \
   --episode-dir shows/<show-id>/episodes/<episode-folder>
 ```
@@ -388,7 +387,7 @@ Apple Silicon/MLX 中文组：
 
 ```bash
 env HF_HUB_OFFLINE=1 \
-  UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  uv run --no-sync python scripts/process_qwen3_asr_batch.py \
   --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --model-path .cache/models/qwen3-asr-1.7b-8bit-pinned-v2 \
@@ -399,7 +398,7 @@ Apple Silicon/MLX 英文组：
 
 ```bash
 env HF_HUB_OFFLINE=1 \
-  UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/process_qwen3_asr_batch.py \
+  uv run --no-sync python scripts/process_qwen3_asr_batch.py \
   --backend mlx \
   --episode shows/<show-id>/episodes/<episode-folder> \
   --language English \
@@ -678,9 +677,9 @@ SHA-256。完整机器稿可以支持 `workflow.summary: draft`；没有回听�
 从仓库根目录依次运行：
 
 ```bash
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python -m unittest discover -s tests -v
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/validate.py
-env UV_CACHE_DIR=.cache/uv uv run --no-sync python scripts/audit_correction_migration.py
+uv run --no-sync python -m unittest discover -s tests -v
+uv run --no-sync python scripts/validate.py
+uv run --no-sync python scripts/audit_correction_migration.py
 npm --prefix apps/web audit --audit-level=high
 npm --prefix apps/web run check
 git diff --check
