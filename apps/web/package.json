@@ -53,7 +53,7 @@
     "eslint-config-next": "^16.3.8",
     "fast-glob": "file:vendor/next-root-glob",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.10"
+    "vitest": "^5.0.3"
   },
   "overrides": {
     "@next/eslint-plugin-next": {
