@@ -21,6 +21,17 @@ updates:
       day: monday
       timezone: Asia/Shanghai
     open-pull-requests-limit: 5
+    # Keep the working lint toolchain until its plugins support these majors.
+    # eslint-plugin-react 7.37.5 supports ESLint through 9 (PR #22).
+    # typescript-eslint supports TypeScript <6.1, and rejects TS 7.0 (PR #23).
+    # Remove these guards only after the full web quality gate passes.
+    ignore:
+      - dependency-name: eslint
+        update-types:
+          - version-update:semver-major
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-major
     groups:
       web-minor-patch:
         update-types:
