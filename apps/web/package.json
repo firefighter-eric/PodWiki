@@ -30,8 +30,8 @@
     "@phosphor-icons/react": "^2.1.10",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
-    "motion": "^13.0.0",
-    "next": "^16.3.8",
+    "motion": "^14.0.0",
+    "next": "^16.4.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "rehype-sanitize": "^6.0.0",
@@ -45,15 +45,15 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@playwright/test": "1.63.0",
+    "@playwright/test": "1.64.0",
     "@types/node": "^26.6.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.8",
+    "eslint-config-next": "^16.4.0",
     "fast-glob": "file:vendor/next-root-glob",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.10"
+    "vitest": "^5.0.3"
   },
   "overrides": {
     "@next/eslint-plugin-next": {
