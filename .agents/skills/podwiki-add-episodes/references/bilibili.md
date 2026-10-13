@@ -28,6 +28,13 @@
 
 ## Import an authenticated AI subtitle
 
+Before starting a batch, verify that the authorized browser backend can export a network
+**response body** to an ignored file. Resource inventory alone is insufficient: `pageAssets`
+may report an AI subtitle as `other`, while its bundle operation cannot export that JSON.
+An unrelated or unauthenticated browser backend does not inherit the existing login context.
+If body export is unavailable, report an acquisition-tool blocker before creating tracked files;
+do not classify visible subtitles as absent or silently use ASR.
+
 1. In the authorized existing browser session, confirm the exact BVID page is logged in and the
    player exposes an active Chinese subtitle. Do not inspect or export cookies, local storage,
    passwords, or unrelated browser state.
@@ -58,3 +65,42 @@ byte-identical root transcript. Record engine `bilibili-subtitles`, model
 If no supported track exists in the actual authorized context, record that result and use public
 audio plus local Qwen. If a different Bilibili subtitle format appears, stop rather than coercing it
 through this importer.
+
+## Transport signatures and diagnosis
+
+Canonicalization applies to the tracked **episode source URL**, not the temporary subtitle
+transport request. Keep the publisher-issued subtitle request intact inside the authorized
+browser/backend memory. In particular, do not remove `auth_key` before requesting its body.
+Not storing a signed URL is different from stripping its authorization parameters in transit.
+Prefer exporting the response already loaded after selecting Chinese: this avoids expired links,
+repeated CDN requests, and exporting browser credentials.
+
+For an operator-assisted fallback, `scripts/fetch_bilibili_subtitle_body.py` accepts an intact
+temporary URL only through a hidden interactive terminal prompt. It does not discover tracks,
+read cookies, create signatures, or prove which video an otherwise anonymous subtitle body belongs
+to. The operator must bind the URL to the exact current video's active Chinese track. Follow the
+command and limitations in `docs/python-scripts.md`; never paste the temporary URL into chat,
+command arguments, environment variables, or files. Live validation is still required.
+
+When a browser backend supports a network response handle, select the exact response internally
+and export only its `response-body` to `.cache/intake/<BVID>/subtitle.zh-CN.ai.json`. Do not print
+the request list, request headers, signed URL, or response headers. If request discovery returns
+signed URLs, filter its result inside the tool orchestration process and expose only opaque
+response indices/handles and non-sensitive identity checks; never save the discovery result.
+Confirm that the backend is the same authorized session and that requests belong to the current
+canonical video after its Chinese track was selected. Validate the captured body with the importer;
+a resource handle, screenshot, or successfully written HTML error page is not a completed capture.
+
+Classify failures separately:
+
+| Observation | Meaning and next step |
+| --- | --- |
+| Anonymous list is empty and requires login | Subtitle availability in the authorized session is unknown. |
+| Chinese subtitle visibly plays but JSON export is unsupported | Acquisition-tool blocker; the website is still supplying captions. |
+| A request after removing `auth_key` returns 403 | Invalid comparison with the original authorized request; cannot establish an interface change or subtitle absence. |
+| A fresh, intact publisher-issued request fails | Record only status/error category; reselect the track once to obtain a fresh response, then stop if it still fails. Do not fabricate or repair signatures. |
+| Captured JSON fails language, identity, cue or edge checks | Keep the failed input ignored and report validation failure; do not mark intake complete. |
+
+Use a newly captured, importer-validated Chinese body as the live acceptance check for any changed
+acquisition method. Until that succeeds, label the method unverified; do not promise permanent
+availability or treat an old successful episode as current end-to-end proof.

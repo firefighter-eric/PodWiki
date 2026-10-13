@@ -44,3 +44,6 @@ last_verified_at: 2026-08-27
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
 | [对话研究员 Jed Yang｜在人形机器人公司 Figure 上班是种什么体验？](https://www.bilibili.com/video/BV1RS8i66Eng/) | 许华哲的自定义地图 | 2026-08-25 | [总结](./episodes/bili-bv1rs8i66eng-jed-yang/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1rs8i66eng-jed-yang/transcript.zh-CN.md) |
+| [老友记：MIT博士的机器人创业路](https://www.bilibili.com/video/BV1jxuE66EmY/) | 许华哲的自定义地图 | 2026-08-06 | [总结](./episodes/bili-bv1jxue66emy-mu-beipeng/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1jxue66emy-mu-beipeng/transcript.zh-CN.md) |
+| [对话DYNA机器人联创York Yang](https://www.bilibili.com/video/BV1DKMt6HEvk/) | 许华哲的自定义地图 | 2026-07-07 | [总结](./episodes/bili-bv1dkmt6hevk-york-yang/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1dkmt6hevk-york-yang/transcript.zh-CN.md) |
+| [不学建筑的投资人不是好高考状元—对话井琳](https://www.bilibili.com/video/BV1Jr7U6nE2h/) | 许华哲的自定义地图 | 2026-06-06 | [总结](./episodes/bili-bv1jr7u6ne2h-jing-lin/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1jr7u6ne2h-jing-lin/transcript.zh-CN.md) |

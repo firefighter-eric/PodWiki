@@ -1,0 +1,6871 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "sv101:253",
+  "language": "zh-CN",
+  "source": {
+    "input_asr_path": "shows/sv101/episodes/253-he-yunzhong-sun-yiyou/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "d6695c9dbbabe4dfc93975afcd7215f3b50e74836bebb1901533843f790539aa",
+    "engine": "mlx-audio",
+    "model": "mlx-community/Qwen3-ASR-1.7B-8bit",
+    "aligner": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit",
+    "model_identity": {
+      "schema_version": 1,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "requested_revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "resolved_commit": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "files_sha256": {
+        ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "README.md": "b356d4bdfbe7287b06b9b5ad084d9557a24ca98ca277a839beb2e682037b08f6",
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "config.json": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "model.safetensors": "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c",
+        "model.safetensors.index.json": "0a5d0ec11188602242ff81a9969883d0fdeb98cd5d85cd1413089d897c201af5",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "aligner_identity": {
+      "schema_version": 1,
+      "repository": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit",
+      "requested_revision": "0e1a68e91d815300c7c9754b2a7639378b23db15",
+      "resolved_commit": "0e1a68e91d815300c7c9754b2a7639378b23db15",
+      "files_sha256": {
+        ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "README.md": "28c8a32f6bb223a4082f6bc38062890abbc1c702b13957388e52465dfdc06a56",
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "config.json": "8dc126e1a4ac001acb02f3a9ca6277c8a20a25485fde293bc99eeab3aedc604d",
+        "generation_config.json": "948d089b23bca1d214e768d59c4438365665f52ec6d33678f4062206b3fbbb8c",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "model.safetensors": "be19ef8ac4326d032e7673342930b14c2df30bd68c1632493b0f563e30829f91",
+        "model.safetensors.index.json": "766eb50873855eeb4d95ab92def358cfd173bfc8c7aabd8635ababa1edf6db79",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "tokenizer_config.json": "3ab80063f8511deb9566e6ad438d17b7a6277fcffd52d92854112f19d36bd81c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    }
+  },
+  "rendered_transcript": {
+    "path": "shows/sv101/episodes/253-he-yunzhong-sun-yiyou/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "3606f18fcf16c98a6386ddfd2ac25557b4a85b2872ebb213a1804342b61060c6"
+  },
+  "generated_at": "2026-10-13T17:58:42.896220Z",
+  "corrections": {
+    "status": "none",
+    "rules": [],
+    "total_hits": 0
+  },
+  "statistics": {
+    "source_segments": 496,
+    "refined_segments": 496,
+    "rendered_blocks": 121,
+    "rendered_lines": 496
+  },
+  "segments": [
+    {
+      "start": 0.08,
+      "end": 10.64,
+      "text": "通常构造这个benchmark的人呢，对于这一块的领域可能认识比较深，那么就自然会给他一定卖数据的权威性，大家会比较相信你手上卖的数据，这个生意就这么产生了。",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 11.12,
+      "end": 18.88,
+      "text": "你去刷分，但你只要刷的是有益的分，是有益的题，那它模型带来的提升，对于人的日常工作来说就是实打实的提升。",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 20.16,
+      "end": 25.92,
+      "text": "节目开始之前呢，跟大家分享一个我们硅谷幺零幺即将在湾区举办的黑客松活动。",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 26.32,
+      "end": 42.56,
+      "text": "今年硅谷幺零幺将在我们的年度活动Alignment二零二六上举办Story一零一Lab AI视频创作挑战赛，让影视创作者和AI科学家们在现场一起探索AI到底能给讲故事带来哪些新的可能。",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 43.44,
+      "end": 48.48,
+      "text": "无论你是已经在用AI拍片的专业团队啊，还是想要尝试的新手，都欢迎参加。",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 48.88,
+      "end": 54.24,
+      "text": "比赛设有探索组和专业组，我们也会提供免费的workshop培训。",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 54.64,
+      "end": 59.52,
+      "text": "优胜作品呢还有机会赢得丰厚的奖金，并在千人线下活动中展映。",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 60.08,
+      "end": 66.0,
+      "text": "活动时间是十月十号到十一号，地点在Sunnyvale的Plug and Play Tech Center。",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 66.56,
+      "end": 69.76,
+      "text": "报名链接呢我们已经放在本期节目的show notes里面了。",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 70.16,
+      "end": 75.44,
+      "text": "另外啊，我们Alignment二零二六的活动本身的报名呢也在持续进行当中。",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 75.84,
+      "end": 84.08,
+      "text": "这次我们邀请了来自OpenAI、英伟达、Milo Ventures、Cerebras等等公司和机构的嘉宾，期待在线下和大家对话。",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 87.12,
+      "end": 90.08,
+      "text": "Hello，大家好，欢迎回到硅谷幺零幺，我是易文。",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 90.64,
+      "end": 96.56,
+      "text": "很多投资人呢在和我们聊天的时候啊，都提到了他们最近很关注的一个赛道，那就是数据。",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 97.2,
+      "end": 103.36,
+      "text": "随着模型能力的不断提升，模型公司对训练数据的需求也变得越来越复杂，越来越具体。",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 103.76,
+      "end": 109.84,
+      "text": "硅谷因此出现了一批增长很快的数据公司，专门为这些模型公司提供服务。",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 110.48,
+      "end": 117.84,
+      "text": "比如由三名二十多岁的年轻人创办的After Query，今年四月宣布A轮融资的时候，估值还是三亿美元。",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 118.24,
+      "end": 130.8,
+      "text": "到了九月呢，新一轮融资就已经把它的估值推到了三十二亿美元，不到半年啊涨到了十倍之多，创下了YC旗下公司从启动到成为独角兽的最快纪录。",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 131.44,
+      "end": 136.4,
+      "text": "那我们更熟悉的几家大型数据公司呢，估值也已经达到了百亿美元的级别。",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 136.96,
+      "end": 141.68,
+      "text": "去年Meta入股Scale AI的时候给出的估值超过二百九十亿美元。",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 142.08,
+      "end": 145.92,
+      "text": "McQuar去年十月这轮融资的估值啊也达到了一百亿美元。",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 146.4,
+      "end": 151.2,
+      "text": "但这些高估值背后的数据生意到底是怎么做的，外界其实很难看清。",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 151.6,
+      "end": 157.84,
+      "text": "所以啊，我也很好奇这些公司究竟在卖什么，模型公司又为什么愿意给那么多钱呢？",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 158.4,
+      "end": 165.12,
+      "text": "过去提到数据标注，大家很容易想到给图片打标签，给模型的回答打分这些人工标注。",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 165.52,
+      "end": 172.88,
+      "text": "现在啊，数据公司还需要请来各类行业专家，把他们的知识和工作经验转化成AI可以学习的任务。",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 173.44,
+      "end": 181.2,
+      "text": "其中一类重要的数据是请专家写清楚一个回答，一份工作成果到底满足哪些条件才算好。",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 181.68,
+      "end": 184.72,
+      "text": "这套评分标准也就是我们经常听到的Rubric。",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 185.28,
+      "end": 196.64,
+      "text": "再往前一步啊，数据公司还要搭出让AI实际动手的环境，配上任务、工具和反馈机制，让它在里面操作软件，反复尝试，并且根据结果学习。",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 196.96,
+      "end": 201.6,
+      "text": "这就是强化学习环境，也就是我们经常听到的RL environment。",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 202.88,
+      "end": 214.16,
+      "text": "与此同时呢，新的AI评测也层出不穷，从金融、法律等等垂直领域到让Agent完成一整套工作流程，模型要参加的考试是越来越多了。",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 214.48,
+      "end": 218.64,
+      "text": "但榜单上的分数提高了，究竟代表哪些能力变强了呢？",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 219.12,
+      "end": 222.96,
+      "text": "针对榜单做优化，什么时候会让模型更好用？",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 223.2,
+      "end": 226.32,
+      "text": "什么时候又会变成单纯的刷分行为？",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 227.12,
+      "end": 230.0,
+      "text": "这期播客啊，我们就想把这些问题聊清楚。",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 230.4,
+      "end": 241.28,
+      "text": "我请来了两位非常适合聊数据这个话题的嘉宾，分别是在Scale AI负责后训练和评测研究的何允中，以及加州大学伯克利分校的博士后。",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 241.389,
+      "end": 246.269,
+      "text": "Agents Last Exam项目的研究者孙易游，以下就是我们的对话。",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 250.109,
+      "end": 254.109,
+      "text": "Hello，允中，Hello，易游，欢迎来到硅谷幺零幺，大家介绍一下自己吧。",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 254.909,
+      "end": 258.669,
+      "text": "OK，我叫允中，现在在Scale负责Post Training和Eval Research。",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 259.069,
+      "end": 275.389,
+      "text": "大部分人关注我们，可能是看我们发布的这个Benchmark，还有一些RL Data Recipe的文章，但是实际上我们其实也是给整个大模型行业提供数据，还有一些方法论的支持吧，有一点像整个行业的一个外包数据Research团队。",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 275.629,
+      "end": 280.189,
+      "text": "观点都是个人观点，不代表Scale AI，也跟客户没有关系。",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 280.669,
+      "end": 287.869,
+      "text": "谢谢允中，我是易游，我现在在U C Berkeley读Post Doc，现在关注的也是Agent Evaluation这个方向。",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 288.269,
+      "end": 306.989,
+      "text": "我们最近推出的工作就是一个Agents Last Exam，目标是构建于迄今为止规模最大、覆盖面最广的智能体评测基准，是由Berkeley R D I和三百多位行业专家共同领导和牵头的，是希望能够衡量智能体在有可验证结果的长期啊具备经济价值任务中的一些表现。",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 307.789,
+      "end": 311.629,
+      "text": "目前的话，公开的任务大概有一百五十多个，覆盖了五十多个细分的行业。",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 312.429,
+      "end": 317.389,
+      "text": "然后我们目标在下一次发布中直接放出一千多个任务，在每个领域上做的更深一些。",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 317.709,
+      "end": 319.709,
+      "text": "我们可能几个月内就会发布V two的版本。",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 320.109,
+      "end": 325.309,
+      "text": "呃，允中要不要给我们讲一下现在市面上的因为也有林林总总的数据公司嘛？",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 325.309,
+      "end": 327.629,
+      "text": "你觉得大致的一个分类是什么样的？",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 328.189,
+      "end": 333.069,
+      "text": "对，这里面有几个大的玩家，还有一些新秀，有一些几个人的Shop。",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 333.389,
+      "end": 351.709,
+      "text": "在我看来最有意思的是大家基因可能不太一样，比如说有做招聘出身的，像是什么McQuarre Handshake，Scale是这种传统书商，从众包网络出身的，然后也有一些新的是做合成的，还有在最新的一些呢，可能是某一些领域公司转行做数据了。",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 351.789,
+      "end": 362.829,
+      "text": "这里面值得说一下是这个巨深，巨深现在的这个行业状况是有很多做模型的公司暂时没赚到钱，但是他花了很大量的精力投资做素材，然后就顺便做起了素材生意。",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 363.069,
+      "end": 368.509,
+      "text": "很多各个行各业的人也发现了自己的数据的价值，然后转行来做这么一个数据公司。",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 368.509,
+      "end": 375.869,
+      "text": "我觉得大致有这么几个分类吧，几个大的玩家，比如说像是McQuarre Search Scale基本上试图什么东西都能cover。",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 376.269,
+      "end": 385.549,
+      "text": "除此之外，其实一些新秀玩家把一些领域做的比较好的，像是什么Bespoke或者Snorkel，他们可能是比较偏Research跟Engineering一点的。",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 386.029,
+      "end": 391.149,
+      "text": "我猜测他们主要生产代码或者是脱靠这一类的环境，就是抓住了今年的这么一个风口。",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 391.549,
+      "end": 406.429,
+      "text": "另外我还看到一些小的公司，他们可能是解决了一些垂直领域的问题，甚至他们可能不像我们是做标注数据的，就是一些Broken，比如说可能是好莱坞的一个人，他有特别多的版权数据，他知道怎么把这东西卖出去，就是有林林总总的不同领域的东西。",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 406.429,
+      "end": 414.669,
+      "text": "然后现在可能在最新兴起的就是做这些垂直领域，把一个领域做的特别好，可能是有一些领域的专家组成的，大概是这么几个分类吧。",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 414.749,
+      "end": 422.029,
+      "text": "我会觉得说机会还很多，大的书商有大的书商的优势，就是想进入一个领域有比较多的资源。",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 422.269,
+      "end": 423.949,
+      "text": "我觉得整个饼是越来越大。",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 424.349,
+      "end": 431.469,
+      "text": "你讲到说像McQuarre Search这样的公司是所谓的招聘公司，这个能不能再给我们具体讲一下招聘是一个什么样的商业模式？",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 431.789,
+      "end": 439.389,
+      "text": "呃，Search应该不是，但是McQuarre他是做招聘起家的，他有自己的一个自动AI面试的这么一些产品吧。",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 439.789,
+      "end": 447.229,
+      "text": "他可能自己主打的一个重点就是说我能够在比较短的时间内找到足够量的专家，有这么一个专家网络。",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 447.789,
+      "end": 452.189,
+      "text": "然后Search我觉得更多的是把这个东西In House，这里反正有一些取舍吧。",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 452.189,
+      "end": 462.509,
+      "text": "基本上每个书商可能都需要面临这么一些取舍，就是说如果我是自己完全全职培养的人，那他肯定能力强一点，但是这个灵活度就不够，产能可能会差一点。",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 462.989,
+      "end": 469.389,
+      "text": "如果是更多的依靠众包的网络，那么可能我的灵活性大一点，但是就是每个人的质量就比较难保障。",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 469.949,
+      "end": 477.149,
+      "text": "然后这里面就涉及到一些质检的问题了，比如说像Scale这些公司的一些优势就是说我们有一些质检的经验，不光是在数据上，也在人上。",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 477.778,
+      "end": 480.658,
+      "text": "尹中要不要讲一下你是什么时候加入Scale的？",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 480.658,
+      "end": 485.618,
+      "text": "在当时到现在整个市场，你觉得对于数据的需求有发生什么变化吗？",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 485.858,
+      "end": 487.458,
+      "text": "对，故事还挺好玩的。",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 487.538,
+      "end": 500.978,
+      "text": "当时我是在Meta入股之前签的Offer，我一到人就走了，所以我经历了整个大模型行业开始，不管从人才的战争，还有薪酬体系都开始go crazy的这么一个故事。",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 501.458,
+      "end": 511.938,
+      "text": "当时我来之前，我的老板刘冰跟我说，有这么一个技术，各个lab都在做，但每个人都做的不太一样，说你赶紧进来，我这个能跟你讲，然后我们在这里好好做些研究。",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 512.258,
+      "end": 516.498,
+      "text": "然后我来了，那个时候是rubric data，那个时候还比较新，可能一年多之前吧。",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 516.978,
+      "end": 524.658,
+      "text": "现在rubric感觉已经过时了，大家都在讲RL environment各种各样的东西，就是这一年确实经历了非常多的变化。",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 524.898,
+      "end": 533.298,
+      "text": "其实我们关注这个话题也是因为大概从二零二四年到现在，感觉整个对于数据的一个需求发生了一个比较大的变化哈。",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 533.618,
+      "end": 541.138,
+      "text": "因为二四年之前我们在聊数据的时候，大家想到的很多还是人工标注，就是一些比较基础的数据吧。",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 541.458,
+      "end": 545.058,
+      "text": "我们会需要非常多的数据来做pretrain来训练模型。",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 545.378,
+      "end": 552.978,
+      "text": "但是从二零二四年，呃，其实McQuarrie之前有提到过，是因为DeepSearch的兴起，导致整个行业转移到了一个所谓的agentic data。",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 553.378,
+      "end": 561.698,
+      "text": "我们会需要像你刚刚说的rubric，然后包括RL环境啊，现在就是更多真实工作流数据，能不能帮我们先梳理一下这几个概念吧？",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 561.938,
+      "end": 570.738,
+      "text": "我们先讲一下这个行业从crowdsourcing data，就是这些人工标注数据到agentic数据这个中间是经历了一个什么样的变化？",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 571.058,
+      "end": 583.058,
+      "text": "啊，对，首先说明一下pretraining还是很重要的，不过就确实从我身边的人的兴趣来说，大家经历了一个shift，大家觉得pretraining感觉干的有点无聊了，就是再继续scale调数据配比。",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 583.058,
+      "end": 589.538,
+      "text": "那个时候是O系列模型出来了，大家都在做reasoning，发现这RL跑通了嘛，一下子大家兴趣都在RL上。",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 589.858,
+      "end": 602.818,
+      "text": "然后RL比较有意思的一个问题就是说，我需要一个可验证的信号，可验证的信号在代码或者数学，尤其是最早的推理模型是从数学上做出来，就很简单，我这个选择题答错答对了就知道了，或者就是一个数字算出来。",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 603.378,
+      "end": 613.058,
+      "text": "但是之后大家就在想说，那我数学可以做RL了，我在其他领域呢，比如说像是这些什么医疗、金融，或者就是更基础的指令遵循，这里我能不能做RL？",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 613.858,
+      "end": 623.778,
+      "text": "这里它存在的一个问题就是说，它是有一些客观标答的，不像在之前的一个阶段，大家做RLHF就是reward model，可能没什么标答，只是把大家的喜好学出来。",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 624.018,
+      "end": 643.378,
+      "text": "然后这里面其实就有一个标答，只是它这个标答它比较不结构化，就好像我去答这个历史考题，历史考题是有标答的，但是呢，每个人的写法可能都不太一样，就我很难做这个pattern match，就是说A B C D检查你有没有答对，这个时候就是一个rubric方式，相当于我让一个TA拿着教授写的打分规则来给你打分。",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 643.778,
+      "end": 648.898,
+      "text": "然后因为这个打分规则是提前标好的，是教授写的，所以这个TA也不需要特别聪明。",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 649.378,
+      "end": 655.618,
+      "text": "这是整个大模型数据中的一个核心概念，就是叫weak to strong supervision，就是我能不能用弱模型来监督强模型？",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 656.098,
+      "end": 662.018,
+      "text": "那它这里成立的条件就是说我有个专家把他脑海里的知识给写下来了，这样弱的模型拿着他改卷子就行了。",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 662.338,
+      "end": 666.738,
+      "text": "这就是rubric data，这个东西应该是火了很长一段时间，当然现在还很重要。",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 667.138,
+      "end": 672.338,
+      "text": "但是这里面很快就把各个专家领域的rubric，而且比较容易获得的收集的比较干净了。",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 672.418,
+      "end": 676.498,
+      "text": "看到比如说像McQuarrie或者Search的崛起，其实跟这一块的专家rubric有关系。",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 676.738,
+      "end": 678.818,
+      "text": "但是再往前走呢，就大家需要动手了。",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 678.978,
+      "end": 685.378,
+      "text": "比如说现在做这种代码模型，或者像Deepo他们做的ALE，虽然它不是做代码，但它需要动手，要解各种各样的问题。",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 685.778,
+      "end": 709.378,
+      "text": "这个时候呢，它就不再是说我只是验证你一个聊天的输出了，那我需要是在一个A卷子的这个setting之下，那我可能需要给他一些工具，还有一些更复杂的验证方式，它还包含了rubric，但是可能我需要一些检查这个环境里面的变量是不是执行了，这个数据库是不是写入了或者被删除了，甚至如果像是我生成一些文档，里面可能有些图，这个东西我还是需要rubric，",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 709.378,
+      "end": 711.858,
+      "text": "但是我需要一个A卷子来检查，就变得更加多样了。",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 712.258,
+      "end": 715.378,
+      "text": "现在可能大家追求的比较大的一个方向就是环境。",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    },
+    {
+      "start": 715.693,
+      "end": 730.013,
+      "text": "它不光是我标注好的一些打分规则了，而是说我可能包含了一整套我要做什么，在什么样的环境里面做，包括了它需要的一些工具，需要执行的一些沙盒，以及还有一套跟 task 比较相关的验证方式。",
+      "source_segment_indexes": [
+        94
+      ],
+      "source_segment_ids": [
+        94
+      ]
+    },
+    {
+      "start": 730.093,
+      "end": 736.973,
+      "text": "验证方式非常的多样，比如说有这种 programmatic check，有这种 rubric，还有 preference，我让人选我比较喜欢哪一种。",
+      "source_segment_indexes": [
+        95
+      ],
+      "source_segment_ids": [
+        95
+      ]
+    },
+    {
+      "start": 737.053,
+      "end": 739.453,
+      "text": "这里面我暂时还没有形成特别大的共识。",
+      "source_segment_indexes": [
+        96
+      ],
+      "source_segment_ids": [
+        96
+      ]
+    },
+    {
+      "start": 739.693,
+      "end": 742.653,
+      "text": "我又看到有点像当年 rubric，时代每家要的东西都不一样。",
+      "source_segment_indexes": [
+        97
+      ],
+      "source_segment_ids": [
+        97
+      ]
+    },
+    {
+      "start": 742.973,
+      "end": 747.373,
+      "text": "就比如说像什么 terminal bench，他们就不要 rubric，他们就是纯 programmatic。",
+      "source_segment_indexes": [
+        98
+      ],
+      "source_segment_ids": [
+        98
+      ]
+    },
+    {
+      "start": 747.373,
+      "end": 749.613,
+      "text": "这里面又有不同的流派，还挺有意思的。",
+      "source_segment_indexes": [
+        99
+      ],
+      "source_segment_ids": [
+        99
+      ]
+    },
+    {
+      "start": 749.933,
+      "end": 750.653,
+      "text": "哎，这个很有意思。",
+      "source_segment_indexes": [
+        100
+      ],
+      "source_segment_ids": [
+        100
+      ]
+    },
+    {
+      "start": 750.653,
+      "end": 755.213,
+      "text": "EO，你要不要从 ALE 的具体的例子来跟我们讲一下需要哪些要素？",
+      "source_segment_indexes": [
+        101
+      ],
+      "source_segment_ids": [
+        101
+      ]
+    },
+    {
+      "start": 755.373,
+      "end": 761.053,
+      "text": "其实我跟云中的看法其实有一点反过来了，就是云中认为现在 rubric 差不多已经做到头了。",
+      "source_segment_indexes": [
+        102
+      ],
+      "source_segment_ids": [
+        102
+      ]
+    },
+    {
+      "start": 762.093,
+      "end": 766.813,
+      "text": "但我的看法是，我觉得 rubric 这一块意思专家那种主观的判断题，其实还做的远远不够。",
+      "source_segment_indexes": [
+        103
+      ],
+      "source_segment_ids": [
+        103
+      ]
+    },
+    {
+      "start": 767.693,
+      "end": 769.613,
+      "text": "我可以先从 ALE 的初衷讲一下。",
+      "source_segment_indexes": [
+        104
+      ],
+      "source_segment_ids": [
+        104
+      ]
+    },
+    {
+      "start": 770.013,
+      "end": 777.453,
+      "text": "ALE 当时建立的初衷就是跟云中讲的一样，就是我们怎么样把 web coding 迅速发展的这个趋势推广到 web everything。",
+      "source_segment_indexes": [
+        105
+      ],
+      "source_segment_ids": [
+        105
+      ]
+    },
+    {
+      "start": 778.093,
+      "end": 780.013,
+      "text": "当时 web coding 为什么发展那么快？",
+      "source_segment_indexes": [
+        106
+      ],
+      "source_segment_ids": [
+        106
+      ]
+    },
+    {
+      "start": 780.093,
+      "end": 787.213,
+      "text": "就是因为当时有非常非常多的 benchmark 都在 coding 这个领域，而且 coding 它比较容易 verify，它是一个确定性的 rubrics。",
+      "source_segment_indexes": [
+        107
+      ],
+      "source_segment_ids": [
+        107
+      ]
+    },
+    {
+      "start": 787.693,
+      "end": 790.893,
+      "text": "大家为了刷这个榜，所以在 coding 这上面的发展非常迅猛。",
+      "source_segment_indexes": [
+        108
+      ],
+      "source_segment_ids": [
+        108
+      ]
+    },
+    {
+      "start": 791.373,
+      "end": 807.693,
+      "text": "那么用同样的思路呢，我们如果在其他的各个领域上，尤其是工程能够客观打分的这些领域上，能够建立各种各样的这样评测体系，你去刷分，但你只要刷的是有益的分，是有益的题，那它模型带来的提升，对于人的日常工作来说就是实打实的提升。",
+      "source_segment_indexes": [
+        109
+      ],
+      "source_segment_ids": [
+        109
+      ]
+    },
+    {
+      "start": 808.093,
+      "end": 810.093,
+      "text": "所以这就是我们当时想建立一个这样的初衷。",
+      "source_segment_indexes": [
+        110
+      ],
+      "source_segment_ids": [
+        110
+      ]
+    },
+    {
+      "start": 810.653,
+      "end": 814.333,
+      "text": "当然，世界上大家职业各式各样，实在是太多了，浩如烟海。",
+      "source_segment_indexes": [
+        111
+      ],
+      "source_segment_ids": [
+        111
+      ]
+    },
+    {
+      "start": 814.573,
+      "end": 820.493,
+      "text": "所以我们只是说在第一个版本里面给出了一个相对来说覆盖面比较广的初次的一个尝试。",
+      "source_segment_indexes": [
+        112
+      ],
+      "source_segment_ids": [
+        112
+      ]
+    },
+    {
+      "start": 821.053,
+      "end": 824.413,
+      "text": "然后我们还会继续努力，希望把这个覆盖的更广一些。",
+      "source_segment_indexes": [
+        113
+      ],
+      "source_segment_ids": [
+        113
+      ]
+    },
+    {
+      "start": 824.733,
+      "end": 826.893,
+      "text": "到某一天，希望它能成为真正的 last exam。",
+      "source_segment_indexes": [
+        114
+      ],
+      "source_segment_ids": [
+        114
+      ]
+    },
+    {
+      "start": 827.133,
+      "end": 832.333,
+      "text": "就当你解决这个 benchmark 的时候，基本上就能解决人类社会在某些领域的真正的有益的问题。",
+      "source_segment_indexes": [
+        115
+      ],
+      "source_segment_ids": [
+        115
+      ]
+    },
+    {
+      "start": 832.653,
+      "end": 836.653,
+      "text": "我同意 EO 的观点，各个领域的训练肯定是远远没有到头的。",
+      "source_segment_indexes": [
+        116
+      ],
+      "source_segment_ids": [
+        116
+      ]
+    },
+    {
+      "start": 836.733,
+      "end": 841.453,
+      "text": "然后很多东西都可能还没有被 rubric 的方式表征出来，所以这里面还有很大的空间。",
+      "source_segment_indexes": [
+        117
+      ],
+      "source_segment_ids": [
+        117
+      ]
+    },
+    {
+      "start": 841.773,
+      "end": 844.813,
+      "text": "可能我刚刚说 rubric 到头了，更多的是个行业趋势吧。",
+      "source_segment_indexes": [
+        118
+      ],
+      "source_segment_ids": [
+        118
+      ]
+    },
+    {
+      "start": 844.893,
+      "end": 855.053,
+      "text": "就这种静态的单轮或者多轮聊天出一个文本，然后用 rubric 来检查它，就是纯知识类的，甚至也不是说到头了，因为毕竟还有不同的 lab，每家的水平都不一样。",
+      "source_segment_indexes": [
+        119
+      ],
+      "source_segment_ids": [
+        119
+      ]
+    },
+    {
+      "start": 855.373,
+      "end": 861.773,
+      "text": "只是说今年的一个大趋势是在做这个 coding，然后 coding 逐渐转向了 analogy work，大家要动手了。",
+      "source_segment_indexes": [
+        120
+      ],
+      "source_segment_ids": [
+        120
+      ]
+    },
+    {
+      "start": 861.853,
+      "end": 867.613,
+      "text": "这个时候呢，就是纯这种文本的 rubric，我看到需求量小了一点，但还是很大，还是有很多东西没解决。",
+      "source_segment_indexes": [
+        121
+      ],
+      "source_segment_ids": [
+        121
+      ]
+    },
+    {
+      "start": 867.933,
+      "end": 873.613,
+      "text": "就云中刚才提到了，对于很多这种文本式的输出，就说它这个文章写的好不好，你可能有些这样打分的点。",
+      "source_segment_indexes": [
+        122
+      ],
+      "source_segment_ids": [
+        122
+      ]
+    },
+    {
+      "start": 874.013,
+      "end": 884.093,
+      "text": "但是事实上，对于工程领域的一些产出，其实有很多的评测，我们确实发现了，除非你把输入固定的特别死，不然它的输出其实有非常非常多的可能性。",
+      "source_segment_indexes": [
+        123
+      ],
+      "source_segment_ids": [
+        123
+      ]
+    },
+    {
+      "start": 884.893,
+      "end": 888.813,
+      "text": "我举个例子，你让它生成一个游戏，甚至有些数学解法它都不是唯一的。",
+      "source_segment_indexes": [
+        124
+      ],
+      "source_segment_ids": [
+        124
+      ]
+    },
+    {
+      "start": 889.133,
+      "end": 895.373,
+      "text": "那这种情况下，如果你给一个确定性的评判，就是你一定要跟你这个 ground truth 来对比，那很多时候就会造成不一致的这个问题。",
+      "source_segment_indexes": [
+        125
+      ],
+      "source_segment_ids": [
+        125
+      ]
+    },
+    {
+      "start": 896.093,
+      "end": 907.293,
+      "text": "所以说，很多时候说我们怎么样定义这个 rubric，让它能够兼容这种多式多样的输出，其实这也是我们在构建 benchmark 中遇到的问题啊，也是未来想要去思考解决的一个方向。",
+      "source_segment_indexes": [
+        126
+      ],
+      "source_segment_ids": [
+        126
+      ]
+    },
+    {
+      "start": 907.933,
+      "end": 920.173,
+      "text": "稍微抛砖引玉一下，我的一个想法就是未来的这个发展趋势可能会，比如说人类他对于一些好玩、好看，他没有办法把它固化下来，成为一个可以被量化的一个指标。",
+      "source_segment_indexes": [
+        127
+      ],
+      "source_segment_ids": [
+        127
+      ]
+    },
+    {
+      "start": 920.493,
+      "end": 933.773,
+      "text": "比如游戏好不好玩，但实际上有些游戏的入门教科书里其实是有各种各样的评判的方式，比如说它那个奖励曲线是不是平滑，符合大脑的那个多巴胺的，它意思就是有科学的指标可以去量化这个好玩和好看这个东西。",
+      "source_segment_indexes": [
+        128
+      ],
+      "source_segment_ids": [
+        128
+      ]
+    },
+    {
+      "start": 934.093,
+      "end": 943.533,
+      "text": "但我目前在现在的这 benchmark 上，我还没有看到一个做的特别完整的公开出来的评测体系，因为这个东西难度也确实非常高，因为需要专家的更加更加深度的参与。",
+      "source_segment_indexes": [
+        129
+      ],
+      "source_segment_ids": [
+        129
+      ]
+    },
+    {
+      "start": 944.173,
+      "end": 950.333,
+      "text": "所以这一点我也想看看云中那边关于在数据公司里有没有看到这一个趋势，或者或者怎么去解决这一类的问题。",
+      "source_segment_indexes": [
+        130
+      ],
+      "source_segment_ids": [
+        130
+      ]
+    },
+    {
+      "start": 950.823,
+      "end": 954.663,
+      "text": "哦，对这个问题特别好，这也是每天我们在绞尽脑汁的问题。",
+      "source_segment_indexes": [
+        131
+      ],
+      "source_segment_ids": [
+        131
+      ]
+    },
+    {
+      "start": 954.984,
+      "end": 960.264,
+      "text": "其实整个 rubric 或者整个大模型的验证体系，我觉得它整体上是有这么一个思路。",
+      "source_segment_indexes": [
+        132
+      ],
+      "source_segment_ids": [
+        132
+      ]
+    },
+    {
+      "start": 960.423,
+      "end": 965.463,
+      "text": "大家希望左脚踩右脚，就是当我的模型变强了，我这个验证器也变强了。",
+      "source_segment_indexes": [
+        133
+      ],
+      "source_segment_ids": [
+        133
+      ]
+    },
+    {
+      "start": 965.864,
+      "end": 969.384,
+      "text": "验证器变强了之后呢，我就可以允许一些更复杂的 rubric。",
+      "source_segment_indexes": [
+        134
+      ],
+      "source_segment_ids": [
+        134
+      ]
+    },
+    {
+      "start": 969.463,
+      "end": 976.583,
+      "text": "就比如说，如果我是一个很弱的验证器，那么我就只能写一些，就是一个傻子都能看出来，就知道是对还是错的这个 rubric。",
+      "source_segment_indexes": [
+        135
+      ],
+      "source_segment_ids": [
+        135
+      ]
+    },
+    {
+      "start": 977.144,
+      "end": 984.024,
+      "text": "但是呢，随着这个模型能力的提升，那我的 rubric 就可以写的越来越模糊，可以把更多的知识交给验证器来解决。",
+      "source_segment_indexes": [
+        136
+      ],
+      "source_segment_ids": [
+        136
+      ]
+    },
+    {
+      "start": 984.024,
+      "end": 994.504,
+      "text": "但是我觉得这里总体的一个思路还是说，这个 rubric 加上验证这两块加起来的这个知识和能力，应该比我要训练的模型要多，不然就达不到训练模型的目的了嘛。",
+      "source_segment_indexes": [
+        137
+      ],
+      "source_segment_ids": [
+        137
+      ]
+    },
+    {
+      "start": 994.744,
+      "end": 999.463,
+      "text": "那么就回到，比如说像这种做 video game 这种特别特别主观的东西，对吧？",
+      "source_segment_indexes": [
+        138
+      ],
+      "source_segment_ids": [
+        138
+      ]
+    },
+    {
+      "start": 999.543,
+      "end": 1010.744,
+      "text": "我觉得未来可能是这样的，你可能很难把它以很显式的条件一条一条写下来，一个好的游戏是怎么样的，那它可能有多种多样的可能，所以这个时候我的 rubric 就会被迫写的更加模糊。",
+      "source_segment_indexes": [
+        139
+      ],
+      "source_segment_ids": [
+        139
+      ]
+    },
+    {
+      "start": 1010.823,
+      "end": 1013.543,
+      "text": "这个东西就 by the way，其实不是我们想要的。",
+      "source_segment_indexes": [
+        140
+      ],
+      "source_segment_ids": [
+        140
+      ]
+    },
+    {
+      "start": 1013.543,
+      "end": 1016.504,
+      "text": "就通常来说，我们会建议这个 rubric 写的越严谨越好。",
+      "source_segment_indexes": [
+        141
+      ],
+      "source_segment_ids": [
+        141
+      ]
+    },
+    {
+      "start": 1016.823,
+      "end": 1019.303,
+      "text": "但是在某一些领域，你可能就必须要写的很模糊。",
+      "source_segment_indexes": [
+        142
+      ],
+      "source_segment_ids": [
+        142
+      ]
+    },
+    {
+      "start": 1019.303,
+      "end": 1022.904,
+      "text": "这个时候需要验证的模型来自己做一些主观的判断。",
+      "source_segment_indexes": [
+        143
+      ],
+      "source_segment_ids": [
+        143
+      ]
+    },
+    {
+      "start": 1023.144,
+      "end": 1027.303,
+      "text": "那这个验证的模型，我觉得甚至有可能是我要训练一个这个 reward model。",
+      "source_segment_indexes": [
+        144
+      ],
+      "source_segment_ids": [
+        144
+      ]
+    },
+    {
+      "start": 1027.303,
+      "end": 1032.504,
+      "text": "我知道，比如说在不少 lab 里面，就但这不是客户透露给我们的东西，是我自己的一些经验。",
+      "source_segment_indexes": [
+        145
+      ],
+      "source_segment_ids": [
+        145
+      ]
+    },
+    {
+      "start": 1032.823,
+      "end": 1038.024,
+      "text": "比如说生图，生图它有两个部分，一个是 instruction following，有没有遵循我的这个要求？",
+      "source_segment_indexes": [
+        146
+      ],
+      "source_segment_ids": [
+        146
+      ]
+    },
+    {
+      "start": 1038.103,
+      "end": 1042.184,
+      "text": "比如说我图里面有猫有狗，有一个背景板写了哪几个字儿？",
+      "source_segment_indexes": [
+        147
+      ],
+      "source_segment_ids": [
+        147
+      ]
+    },
+    {
+      "start": 1042.504,
+      "end": 1049.464,
+      "text": "这个时候呢，我是会有 rubric，我就写这里要有一只猫，那里有只狗，甚至我跑一下 OCR 把那个字提出来，然后看看是不是我想要的那几个字。",
+      "source_segment_indexes": [
+        148
+      ],
+      "source_segment_ids": [
+        148
+      ]
+    },
+    {
+      "start": 1049.704,
+      "end": 1051.063,
+      "text": "就这一块是属于 rubric。",
+      "source_segment_indexes": [
+        149
+      ],
+      "source_segment_ids": [
+        149
+      ]
+    },
+    {
+      "start": 1051.383,
+      "end": 1059.383,
+      "text": "但是还有一块呢，就是说这个字要写的好，这个猫要是一只可爱的猫，这种东西呢，就是我可以写成 rubric，但它非常主观。",
+      "source_segment_indexes": [
+        150
+      ],
+      "source_segment_ids": [
+        150
+      ]
+    },
+    {
+      "start": 1059.464,
+      "end": 1066.744,
+      "text": "那我可能甚至专门训练一个模型，就这个模型它可能掌握了一些人类的主观体验，这些东西可能跟 rubric 结合在一起。",
+      "source_segment_indexes": [
+        151
+      ],
+      "source_segment_ids": [
+        151
+      ]
+    },
+    {
+      "start": 1067.063,
+      "end": 1070.343,
+      "text": "大概率这个问题如果要解决的话，可能是这么一个混合的方向。",
+      "source_segment_indexes": [
+        152
+      ],
+      "source_segment_ids": [
+        152
+      ]
+    },
+    {
+      "start": 1070.744,
+      "end": 1077.543,
+      "text": "因为我们刚刚好像把 rubric 和环境这两个事情好像是放在对立面来说的，但是听起来一他们是可以结合在一起使用的。",
+      "source_segment_indexes": [
+        153
+      ],
+      "source_segment_ids": [
+        153
+      ]
+    },
+    {
+      "start": 1077.623,
+      "end": 1082.664,
+      "text": "二有没有一些任务是用 rubric 来做会比较好的，或者用环境来做比较好的？",
+      "source_segment_indexes": [
+        154
+      ],
+      "source_segment_ids": [
+        154
+      ]
+    },
+    {
+      "start": 1082.903,
+      "end": 1085.063,
+      "text": "我觉得这个肯定是不能拆开来讲的。",
+      "source_segment_indexes": [
+        155
+      ],
+      "source_segment_ids": [
+        155
+      ]
+    },
+    {
+      "start": 1085.063,
+      "end": 1094.744,
+      "text": "环境或者说任务数据，它只是一个执行的基准，但是 rubric 是最终用来打分、用来奖励模型做的好还是不好，所以它肯定是相辅相成，又必须结合在一起来看的。",
+      "source_segment_indexes": [
+        156
+      ],
+      "source_segment_ids": [
+        156
+      ]
+    },
+    {
+      "start": 1095.224,
+      "end": 1104.984,
+      "text": "我个人更希望去从一个任务分类的一个角度去看，而且人和 agent 这两个角色如何去合作，它分别担任一个什么角色，这也很重要。",
+      "source_segment_indexes": [
+        157
+      ],
+      "source_segment_ids": [
+        157
+      ]
+    },
+    {
+      "start": 1105.383,
+      "end": 1112.664,
+      "text": "我们从历史上来看，就是从最早期 Viper 刚出来的时候，就大家用 cursor，其实就是一个人类也是参与在执行这个代码当中的。",
+      "source_segment_indexes": [
+        158
+      ],
+      "source_segment_ids": [
+        158
+      ]
+    },
+    {
+      "start": 1112.984,
+      "end": 1116.583,
+      "text": "agent 它只负责执行很小的一一个模块的一些写代码。",
+      "source_segment_indexes": [
+        159
+      ],
+      "source_segment_ids": [
+        159
+      ]
+    },
+    {
+      "start": 1116.903,
+      "end": 1125.383,
+      "text": "但后来随着 agent 能力越来越强，agent 就你给他一个非常模糊指令，他能够完成一个非常大的一个 project 的时候，那这个时候人和 agent 的角色又产生了一些变化。",
+      "source_segment_indexes": [
+        160
+      ],
+      "source_segment_ids": [
+        160
+      ]
+    },
+    {
+      "start": 1125.623,
+      "end": 1130.423,
+      "text": "那现在可以大致分成这两类，就是人负责决策，agent 负责执行。",
+      "source_segment_indexes": [
+        161
+      ],
+      "source_segment_ids": [
+        161
+      ]
+    },
+    {
+      "start": 1130.664,
+      "end": 1134.024,
+      "text": "人把你决策的东西说的越清楚，agent 就能做得更好。",
+      "source_segment_indexes": [
+        162
+      ],
+      "source_segment_ids": [
+        162
+      ]
+    },
+    {
+      "start": 1134.343,
+      "end": 1137.623,
+      "text": "基于这两个分类，我们来看 rubric 该如何去设计。",
+      "source_segment_indexes": [
+        163
+      ],
+      "source_segment_ids": [
+        163
+      ]
+    },
+    {
+      "start": 1137.704,
+      "end": 1147.143,
+      "text": "如果我们我们需要 agent 参与的角色，它只是执行，就你如果把一个任务说的很清楚，它的输出基本上是固定的、唯一性的，那这个东西 rubric 它就是一个确定性的 rubric。",
+      "source_segment_indexes": [
+        164
+      ],
+      "source_segment_ids": [
+        164
+      ]
+    },
+    {
+      "start": 1147.464,
+      "end": 1152.664,
+      "text": "它打分的话，就是完全可以基于一个你自己做出来的一个成品来进行打分，因为一般会有 ground truth 基准数。",
+      "source_segment_indexes": [
+        165
+      ],
+      "source_segment_ids": [
+        165
+      ]
+    },
+    {
+      "start": 1152.984,
+      "end": 1159.863,
+      "text": "如果我们咱们讨论未来数据需要什么样去，就是当人的这个决策的这部分会不会也被 agent 所慢慢去取代？",
+      "source_segment_indexes": [
+        166
+      ],
+      "source_segment_ids": [
+        166
+      ]
+    },
+    {
+      "start": 1160.024,
+      "end": 1168.744,
+      "text": "那这一部分就是我觉得会回到之前云中说的，大家现在反而没太重视这些 rubric，因为决策很多是非常模糊，很难去量化。",
+      "source_segment_indexes": [
+        167
+      ],
+      "source_segment_ids": [
+        167
+      ]
+    },
+    {
+      "start": 1169.063,
+      "end": 1173.704,
+      "text": "而且云中说，你对于一个具体的 domain，猫可不可爱，你可以 train 一个这样的 verifier。",
+      "source_segment_indexes": [
+        168
+      ],
+      "source_segment_ids": [
+        168
+      ]
+    },
+    {
+      "start": 1173.944,
+      "end": 1178.984,
+      "text": "但是对于一个，尤其是一个上市公司一个领导层的一个决策，你该如何去 train 一个 reward？",
+      "source_segment_indexes": [
+        169
+      ],
+      "source_segment_ids": [
+        169
+      ]
+    },
+    {
+      "start": 1179.143,
+      "end": 1186.823,
+      "text": "它每天的那个任务都在变，你很难去收集到足够的数据，让你来训练出这样一个 reward model 来替你做这样的决策。",
+      "source_segment_indexes": [
+        170
+      ],
+      "source_segment_ids": [
+        170
+      ]
+    },
+    {
+      "start": 1187.704,
+      "end": 1193.543,
+      "text": "所以我个人认为，在这一块的模型的发展还有很长的路需要去走，而且这可能是会成为一个未来发展趋势。",
+      "source_segment_indexes": [
+        171
+      ],
+      "source_segment_ids": [
+        171
+      ]
+    },
+    {
+      "start": 1193.937,
+      "end": 1197.857,
+      "text": "这里有特别同意，就比如说这个 A L E 的这个方案，我觉得就是面向未来。",
+      "source_segment_indexes": [
+        172
+      ],
+      "source_segment_ids": [
+        172
+      ]
+    },
+    {
+      "start": 1198.017,
+      "end": 1199.537,
+      "text": "比如说像这个猫可不可爱？",
+      "source_segment_indexes": [
+        173
+      ],
+      "source_segment_ids": [
+        173
+      ]
+    },
+    {
+      "start": 1199.937,
+      "end": 1204.177,
+      "text": "比如说我要是在这个 Meta，我有一些用户行为的反馈，我可以训练这个模型。",
+      "source_segment_indexes": [
+        174
+      ],
+      "source_segment_ids": [
+        174
+      ]
+    },
+    {
+      "start": 1204.417,
+      "end": 1207.057,
+      "text": "但是公司的决策，我就很难收到这些数据了。",
+      "source_segment_indexes": [
+        175
+      ],
+      "source_segment_ids": [
+        175
+      ]
+    },
+    {
+      "start": 1207.617,
+      "end": 1212.817,
+      "text": "比如说像 A L E 这种，就让大家把以往做过的东西还有决策交起来，其实是一个方案。",
+      "source_segment_indexes": [
+        176
+      ],
+      "source_segment_ids": [
+        176
+      ]
+    },
+    {
+      "start": 1212.897,
+      "end": 1221.857,
+      "text": "我会觉得以后收数据可能是大家怎么样找到好的激励方式，让大家把一些重要的东西交出来，尽量的能够回溯当时这些重要的决策。",
+      "source_segment_indexes": [
+        177
+      ],
+      "source_segment_ids": [
+        177
+      ]
+    },
+    {
+      "start": 1222.257,
+      "end": 1228.657,
+      "text": "非常有意思，我想再追溯一下评测的近几年的整个一个发展，然后以及它和卖数据之间的关系。",
+      "source_segment_indexes": [
+        178
+      ],
+      "source_segment_ids": [
+        178
+      ]
+    },
+    {
+      "start": 1228.977,
+      "end": 1234.897,
+      "text": "因为其实我和两位私下都聊过，就是卖 benchmark 和卖数据这两件事情，大家都觉得不能混为一谈嘛。",
+      "source_segment_indexes": [
+        179
+      ],
+      "source_segment_ids": [
+        179
+      ]
+    },
+    {
+      "start": 1235.217,
+      "end": 1245.457,
+      "text": "Scale 之前推出了 Humanity Slash Exam，就 H L E 这个评测，能不能给我们讲一下这个评测，然后以及你觉得它和数据之间是怎么样联系起来的？",
+      "source_segment_indexes": [
+        180
+      ],
+      "source_segment_ids": [
+        180
+      ]
+    },
+    {
+      "start": 1245.697,
+      "end": 1246.577,
+      "text": "这是个好问题。",
+      "source_segment_indexes": [
+        181
+      ],
+      "source_segment_ids": [
+        181
+      ]
+    },
+    {
+      "start": 1246.657,
+      "end": 1259.857,
+      "text": "我觉得从原理上来说，评测它体现的是模型距离我们想要的理想状态中间的这个 gap，就是它更多的是一个科学研究这么一个基准，就是我想要模型在哪，它现在没到哪。",
+      "source_segment_indexes": [
+        182
+      ],
+      "source_segment_ids": [
+        182
+      ]
+    },
+    {
+      "start": 1260.257,
+      "end": 1263.777,
+      "text": "但是这个事情跟卖数据联系起来呢，也比较有意思。",
+      "source_segment_indexes": [
+        183
+      ],
+      "source_segment_ids": [
+        183
+      ]
+    },
+    {
+      "start": 1264.257,
+      "end": 1269.297,
+      "text": "因为很多时候它提升这个模型能力的数据和它榜单的评测方式是息息相关的。",
+      "source_segment_indexes": [
+        184
+      ],
+      "source_segment_ids": [
+        184
+      ]
+    },
+    {
+      "start": 1269.377,
+      "end": 1271.217,
+      "text": "这里面可能比较难的是找到一个平衡。",
+      "source_segment_indexes": [
+        185
+      ],
+      "source_segment_ids": [
+        185
+      ]
+    },
+    {
+      "start": 1271.777,
+      "end": 1278.257,
+      "text": "如果我就生产大量的跟这个榜单差不多的数据，那么它可能就在 benchmarking。",
+      "source_segment_indexes": [
+        186
+      ],
+      "source_segment_ids": [
+        186
+      ]
+    },
+    {
+      "start": 1278.737,
+      "end": 1281.777,
+      "text": "但是呢，就是这个大模型训练还是有各种各样的维度。",
+      "source_segment_indexes": [
+        187
+      ],
+      "source_segment_ids": [
+        187
+      ]
+    },
+    {
+      "start": 1281.857,
+      "end": 1288.817,
+      "text": "确实，如果我想要提升某一类的能力，我需要抓住某一个维度，那么就是说它跟 benchmark 肯定是有一定的相关性。",
+      "source_segment_indexes": [
+        188
+      ],
+      "source_segment_ids": [
+        188
+      ]
+    },
+    {
+      "start": 1289.297,
+      "end": 1295.297,
+      "text": "这个是大家需要找到的一个平衡，因为大家对 A G I 的期待太高了，觉得人能做到的事情它都能做到。",
+      "source_segment_indexes": [
+        189
+      ],
+      "source_segment_ids": [
+        189
+      ]
+    },
+    {
+      "start": 1295.697,
+      "end": 1302.897,
+      "text": "那么就是说我在各种各样的领域都可以想到一些方式，构造一个 benchmark，然后发现它这个模型距离理想状态当中还有一些差距。",
+      "source_segment_indexes": [
+        190
+      ],
+      "source_segment_ids": [
+        190
+      ]
+    },
+    {
+      "start": 1303.297,
+      "end": 1313.937,
+      "text": "通常构造这个 benchmark 的人呢，对于这一块的领域可能认识比较深，那么就自然会给他一定卖数据的权威性，大家会比较相信你手上卖的数据，这个生意就这么产生了。",
+      "source_segment_indexes": [
+        191
+      ],
+      "source_segment_ids": [
+        191
+      ]
+    },
+    {
+      "start": 1313.937,
+      "end": 1323.777,
+      "text": "我相信 E O 应该也就 A L E 现在做的火的 benchmark 应该也有不少人，像问你卖不卖数据啊，或者是有可能 V C 想找你投资，结果逐渐逐渐的就成了一个生意。",
+      "source_segment_indexes": [
+        192
+      ],
+      "source_segment_ids": [
+        192
+      ]
+    },
+    {
+      "start": 1323.857,
+      "end": 1333.537,
+      "text": "我觉得就是也有好有坏吧，就是说这个生态其实也还比较野蛮发展，有多少是在做科学，多少在做 benchmarking，我觉得确实需要仔细权衡一下。",
+      "source_segment_indexes": [
+        193
+      ],
+      "source_segment_ids": [
+        193
+      ]
+    },
+    {
+      "start": 1333.617,
+      "end": 1337.457,
+      "text": "但是这确实有很多的这个利益驱动，所以现在是一个挺繁荣的市场。",
+      "source_segment_indexes": [
+        194
+      ],
+      "source_segment_ids": [
+        194
+      ]
+    },
+    {
+      "start": 1337.777,
+      "end": 1347.377,
+      "text": "对，这里的话我也是要给大家敲个警钟，因为云中提到了现在做 benchmark 的人会受到各种各样的诱惑，就是要去把 benchmark 数据去卖了。",
+      "source_segment_indexes": [
+        195
+      ],
+      "source_segment_ids": [
+        195
+      ]
+    },
+    {
+      "start": 1347.697,
+      "end": 1353.217,
+      "text": "我甚至我私下听到是有一些数据公司他踩了这个红线，就是他把自己在做评测的数据去卖。",
+      "source_segment_indexes": [
+        196
+      ],
+      "source_segment_ids": [
+        196
+      ]
+    },
+    {
+      "start": 1353.217,
+      "end": 1362.577,
+      "text": "当然这个是大家千万不能碰的一条线，不能让你做的生意然后污染你这个 benchmark 的权威性，不然的话你不仅毁了你的 benchmark，也毁了其他人的模型。",
+      "source_segment_indexes": [
+        197
+      ],
+      "source_segment_ids": [
+        197
+      ]
+    },
+    {
+      "start": 1363.217,
+      "end": 1373.057,
+      "text": "我个人认为 benchmark 和卖数据这两个东西角色是不一样的，在这个生态系统里的地位是不就我认为 benchmark 面向的是未来，做数据面向的是现在。",
+      "source_segment_indexes": [
+        198
+      ],
+      "source_segment_ids": [
+        198
+      ]
+    },
+    {
+      "start": 1373.537,
+      "end": 1379.297,
+      "text": "benchmark 是面向于未来，大家还希望这个模型公司去解决什么目前还没有解决的什么问题。",
+      "source_segment_indexes": [
+        199
+      ],
+      "source_segment_ids": [
+        199
+      ]
+    },
+    {
+      "start": 1379.937,
+      "end": 1387.057,
+      "text": "其实 A L E，其实我们在今年一月份、二月份做的时候，我们特别害怕 benchmark 做的太难，导致这个 benchmark 失去意义。",
+      "source_segment_indexes": [
+        200
+      ],
+      "source_segment_ids": [
+        200
+      ]
+    },
+    {
+      "start": 1387.057,
+      "end": 1392.737,
+      "text": "因为当时的模型很多，基本上平均分只有百分之十到二十，很大部分题目它都是只有拿到了零分。",
+      "source_segment_indexes": [
+        201
+      ],
+      "source_segment_ids": [
+        201
+      ]
+    },
+    {
+      "start": 1392.977,
+      "end": 1398.977,
+      "text": "我们很担心这样的评测它会失去意义，但实际上没有必要担心这个事情，因为 benchmark 本身就是要面向于未来的模型去做的。",
+      "source_segment_indexes": [
+        202
+      ],
+      "source_segment_ids": [
+        202
+      ]
+    },
+    {
+      "start": 1399.697,
+      "end": 1407.217,
+      "text": "数据的话，更多是去解决这个 benchmark 所产生的一些需求，所以说更多是现在大家在刷这个榜单，然后怎么样去把这东西做好。",
+      "source_segment_indexes": [
+        203
+      ],
+      "source_segment_ids": [
+        203
+      ]
+    },
+    {
+      "start": 1407.857,
+      "end": 1422.497,
+      "text": "我认为 benchmarking 它有好有坏，你只要面向的它这个数据，它不是直接污染你这个 benchmark，然后你这个 benchmark 刷的又是有意义的一个榜单，只要这个 benchmark 和人的真实用户的体验非常接近，我觉得这 benchmarking 它不一定是一个贬义词。",
+      "source_segment_indexes": [
+        204
+      ],
+      "source_segment_ids": [
+        204
+      ]
+    },
+    {
+      "start": 1422.977,
+      "end": 1431.697,
+      "text": "对 benchmarking 这件事其实特别有意思哈，因为一方面我们确实需要一个评测的基准，然后另一方面你又不希望模型公司为了刷评测而去刷评测。",
+      "source_segment_indexes": [
+        205
+      ],
+      "source_segment_ids": [
+        205
+      ]
+    },
+    {
+      "start": 1431.915,
+      "end": 1436.155,
+      "text": "我觉得这里很自然就产生一个问题，就是什么样的评测才是有意义的评测呢？",
+      "source_segment_indexes": [
+        206
+      ],
+      "source_segment_ids": [
+        206
+      ]
+    },
+    {
+      "start": 1436.395,
+      "end": 1448.235,
+      "text": "因为我们现在一周就感觉可以看到很多新的benchmark，比如说从模型公司的角度来说，他们应该怎么样去选、去刷哪些评测，或者把哪些评测作为他们下一步提升模型能力的目标？",
+      "source_segment_indexes": [
+        207
+      ],
+      "source_segment_ids": [
+        207
+      ]
+    },
+    {
+      "start": 1448.235,
+      "end": 1453.034,
+      "text": "然后从你们供应商还有researcher的角度来看，你是怎么样去看待这件事情的？",
+      "source_segment_indexes": [
+        208
+      ],
+      "source_segment_ids": [
+        208
+      ]
+    },
+    {
+      "start": 1453.274,
+      "end": 1461.834,
+      "text": "我觉得做模型能力提升最大的ROI还是我要放在能力上，这些能力提升了，它应该是汇集各个benchmark。",
+      "source_segment_indexes": [
+        209
+      ],
+      "source_segment_ids": [
+        209
+      ]
+    },
+    {
+      "start": 1462.074,
+      "end": 1466.395,
+      "text": "当然，就可能有些人有不同观点，因为就对于一些模型厂商来说，应用也非常重要。",
+      "source_segment_indexes": [
+        210
+      ],
+      "source_segment_ids": [
+        210
+      ]
+    },
+    {
+      "start": 1466.794,
+      "end": 1473.274,
+      "text": "就比如说，如果我的这个benchmark是比较贴近一个应用场景，他们其实有动机就把这个场景做好，对他们也是有益的。",
+      "source_segment_indexes": [
+        211
+      ],
+      "source_segment_ids": [
+        211
+      ]
+    },
+    {
+      "start": 1473.594,
+      "end": 1476.955,
+      "text": "最有意义的事情是，大家至少口头上还是奔着AGI去的嘛？",
+      "source_segment_indexes": [
+        212
+      ],
+      "source_segment_ids": [
+        212
+      ]
+    },
+    {
+      "start": 1477.354,
+      "end": 1481.195,
+      "text": "那我应该考虑哪一些核心的这个认知能力是我需要提高的？",
+      "source_segment_indexes": [
+        213
+      ],
+      "source_segment_ids": [
+        213
+      ]
+    },
+    {
+      "start": 1481.594,
+      "end": 1484.635,
+      "text": "那么它体现在benchmark上，就是说我可以看到一些泛化性。",
+      "source_segment_indexes": [
+        214
+      ],
+      "source_segment_ids": [
+        214
+      ]
+    },
+    {
+      "start": 1485.034,
+      "end": 1489.034,
+      "text": "如果我做了一个提高，它只涨这个，别的都不涨，那么可能有一些不好。",
+      "source_segment_indexes": [
+        215
+      ],
+      "source_segment_ids": [
+        215
+      ]
+    },
+    {
+      "start": 1489.034,
+      "end": 1503.195,
+      "text": "所以就回到一开始的问题，未必是说怎样的一个benchmark是最好的，而是说不同的benchmark它测试了不同的东西，我可能要关注的是哪一些这共同的能力能够让他们一起提升，而不是说我只专注于优化同一个benchmark。",
+      "source_segment_indexes": [
+        216
+      ],
+      "source_segment_ids": [
+        216
+      ]
+    },
+    {
+      "start": 1503.995,
+      "end": 1511.354,
+      "text": "另外再回到benchmark本身的问题，我倒是觉得除此之外，大家确实会关心一些贴近场景的benchmark。",
+      "source_segment_indexes": [
+        217
+      ],
+      "source_segment_ids": [
+        217
+      ]
+    },
+    {
+      "start": 1511.514,
+      "end": 1516.314,
+      "text": "如果这些场景是大家在意的，它确实反映了这个用户体验，这也是个好benchmark。",
+      "source_segment_indexes": [
+        218
+      ],
+      "source_segment_ids": [
+        218
+      ]
+    },
+    {
+      "start": 1516.395,
+      "end": 1522.475,
+      "text": "它未必是那么universal，未必是那么大的朝着AGI去的，但是它就确实体现了大家的体验吧。",
+      "source_segment_indexes": [
+        219
+      ],
+      "source_segment_ids": [
+        219
+      ]
+    },
+    {
+      "start": 1522.715,
+      "end": 1526.955,
+      "text": "在这个角度上来说呢，那benchmark肯定是有千奇百怪，就你总会找到一个场景。",
+      "source_segment_indexes": [
+        220
+      ],
+      "source_segment_ids": [
+        220
+      ]
+    },
+    {
+      "start": 1527.354,
+      "end": 1533.755,
+      "text": "我觉得可能是两个要素，就是说这个场景的这个gap它是不是体现了一个非常具体的能力的缺陷？",
+      "source_segment_indexes": [
+        221
+      ],
+      "source_segment_ids": [
+        221
+      ]
+    },
+    {
+      "start": 1534.074,
+      "end": 1549.195,
+      "text": "如果只是因为这一个场景一些场景知识不太懂，同时这个场景由于不太重要，就是我在一个犄角旮旯里面我解了一个什么很奇怪的智力题，出了一个benchmark，这个能力提升了，未必代表这个模型本身的认知能力提升了，那么可能就不是一个好的benchmark。",
+      "source_segment_indexes": [
+        222
+      ],
+      "source_segment_ids": [
+        222
+      ]
+    },
+    {
+      "start": 1549.594,
+      "end": 1559.675,
+      "text": "另外一块就是说，就算不反映核心的能力，它至少反映一个大家在意的场景，比如说现在特别火的是personal assistant，就最近这个Muse，这是一个很具体的场景，大家都希望有这么一个东西。",
+      "source_segment_indexes": [
+        223
+      ],
+      "source_segment_ids": [
+        223
+      ]
+    },
+    {
+      "start": 1559.834,
+      "end": 1563.915,
+      "text": "那么这个benchmark它甚至未必测的是模型本身，它可能还测了你的harness。",
+      "source_segment_indexes": [
+        224
+      ],
+      "source_segment_ids": [
+        224
+      ]
+    },
+    {
+      "start": 1564.794,
+      "end": 1574.554,
+      "text": "最后这个benchmark它甚至不是为了卖模型的训练数据，而是告诉你我的harness错在哪，可能我可以做些工程优化，就是贴近大家需求场景的benchmark也是好的benchmark。",
+      "source_segment_indexes": [
+        225
+      ],
+      "source_segment_ids": [
+        225
+      ]
+    },
+    {
+      "start": 1574.554,
+      "end": 1580.475,
+      "text": "所以在我看来，一个是反映了核心的认知能力，一种是贴合场景，当然两个都有的话是最好的。",
+      "source_segment_indexes": [
+        226
+      ],
+      "source_segment_ids": [
+        226
+      ]
+    },
+    {
+      "start": 1580.874,
+      "end": 1585.115,
+      "text": "我觉得最重要，现在大模型公司很看重的一个就是benchmark的分布。",
+      "source_segment_indexes": [
+        227
+      ],
+      "source_segment_ids": [
+        227
+      ]
+    },
+    {
+      "start": 1585.675,
+      "end": 1594.874,
+      "text": "大家应该可能都听说过artificial analysis这个评测体系，他们其实做的事情很简单，就是把各家benchmark给不同的权重，然后把它综合到一起来得到一个分数。",
+      "source_segment_indexes": [
+        228
+      ],
+      "source_segment_ids": [
+        228
+      ]
+    },
+    {
+      "start": 1595.274,
+      "end": 1600.554,
+      "text": "但这样它就存在一个问题，它这个分布的这个权重是不是真的是大伙需要的这个权重？",
+      "source_segment_indexes": [
+        229
+      ],
+      "source_segment_ids": [
+        229
+      ]
+    },
+    {
+      "start": 1601.274,
+      "end": 1603.274,
+      "text": "那个权重以什么方式去进行迭代？",
+      "source_segment_indexes": [
+        230
+      ],
+      "source_segment_ids": [
+        230
+      ]
+    },
+    {
+      "start": 1603.274,
+      "end": 1604.715,
+      "text": "这个都是挺主观的一个事情。",
+      "source_segment_indexes": [
+        231
+      ],
+      "source_segment_ids": [
+        231
+      ]
+    },
+    {
+      "start": 1605.115,
+      "end": 1608.554,
+      "text": "大家质疑的更多不是这个模型本身，而是质疑这个榜单本身。",
+      "source_segment_indexes": [
+        232
+      ],
+      "source_segment_ids": [
+        232
+      ]
+    },
+    {
+      "start": 1609.115,
+      "end": 1615.195,
+      "text": "我现在倾向于认为，大家可能benchmark还不够好，做到大家心目中要的distribution那种级别很难达到in ground truth。",
+      "source_segment_indexes": [
+        233
+      ],
+      "source_segment_ids": [
+        233
+      ]
+    },
+    {
+      "start": 1615.274,
+      "end": 1622.715,
+      "text": "所以现在很厉害的模型厂商，比如Anthropic或者Open，他们都会倾向于去自建一个评测体系，来让它更接近他们心目中的分布。",
+      "source_segment_indexes": [
+        234
+      ],
+      "source_segment_ids": [
+        234
+      ]
+    },
+    {
+      "start": 1623.354,
+      "end": 1626.635,
+      "text": "只不过第三方的支撑可以让他们对外发布的时候更有说服力一些。",
+      "source_segment_indexes": [
+        235
+      ],
+      "source_segment_ids": [
+        235
+      ]
+    },
+    {
+      "start": 1627.514,
+      "end": 1635.594,
+      "text": "当然，比如说云中说的一个垂直领域的肯定是非常重要的，因为这个就是面向一类群体，它这个分布就是那个群体需要每天在做的事情。",
+      "source_segment_indexes": [
+        236
+      ],
+      "source_segment_ids": [
+        236
+      ]
+    },
+    {
+      "start": 1635.594,
+      "end": 1643.195,
+      "text": "如果他能把那个分刷高了，比如金融啊、法律，他们律师每天做的事情，能能把那个做扎实了，那他们法律只需要看这一个benchmark就足够了。",
+      "source_segment_indexes": [
+        237
+      ],
+      "source_segment_ids": [
+        237
+      ]
+    },
+    {
+      "start": 1643.755,
+      "end": 1647.354,
+      "text": "第二点就是提云中提到了，有些benchmark它并不能代表真实的人设。",
+      "source_segment_indexes": [
+        238
+      ],
+      "source_segment_ids": [
+        238
+      ]
+    },
+    {
+      "start": 1647.755,
+      "end": 1652.235,
+      "text": "比如说之前有一些benchmark它是测agent智力的，就是玩那种小游戏，那arc challenge这种游戏。",
+      "source_segment_indexes": [
+        239
+      ],
+      "source_segment_ids": [
+        239
+      ]
+    },
+    {
+      "start": 1652.554,
+      "end": 1666.715,
+      "text": "对arc two、arc three这种，对，是他这个benchmark的初衷是说，觉得能解这些游戏是人类的一个智力的体现，但是没想到，就这个智力其实也是可以做的特别特化，我一个小模型也能把它搞出来，那还挺有意思。",
+      "source_segment_indexes": [
+        240
+      ],
+      "source_segment_ids": [
+        240
+      ]
+    },
+    {
+      "start": 1667.165,
+      "end": 1674.125,
+      "text": "那有没有什么特别 niche 的 benchmark，但是可能大众不太了解，但其实是非常有用的测试这个模型能力的例子？",
+      "source_segment_indexes": [
+        241
+      ],
+      "source_segment_ids": [
+        241
+      ]
+    },
+    {
+      "start": 1674.525,
+      "end": 1688.765,
+      "text": "我可以举个我们的例子，我们有一些 benchmark 可能不太经常出现在大家的榜单上，比如说我们前一阵子做的 drug discovery，还有一个跟 AI tutor 相关的，它可能关心的是一个比较小的垂直领域。",
+      "source_segment_indexes": [
+        242
+      ],
+      "source_segment_ids": [
+        242
+      ]
+    },
+    {
+      "start": 1688.925,
+      "end": 1697.485,
+      "text": "但是跟我和各个 lab 的交流，负责相关领域的团队，他们通常就会有这么一个人，他们会看市面上跟他领域相关的评测，他都会把它收回来。",
+      "source_segment_indexes": [
+        243
+      ],
+      "source_segment_ids": [
+        243
+      ]
+    },
+    {
+      "start": 1697.965,
+      "end": 1703.165,
+      "text": "然后另外一个就是说这个 benchmark 最后上不上榜单，火不火，其实也有很多随机因素。",
+      "source_segment_indexes": [
+        244
+      ],
+      "source_segment_ids": [
+        244
+      ]
+    },
+    {
+      "start": 1703.245,
+      "end": 1716.525,
+      "text": "比如说 AA 就有一个很好玩的事儿，AI 用了我们做的一个榜单叫 Suite Atlas，我们当时是做了几个不同风味的 Suite test，其中有 Q&A，就是代码仓库问答，还有代码重构，还有写 test。",
+      "source_segment_indexes": [
+        245
+      ],
+      "source_segment_ids": [
+        245
+      ]
+    },
+    {
+      "start": 1716.845,
+      "end": 1727.245,
+      "text": "只不过我们是分三个阶段推出的，所以 Q&A 先推出，推出之后呢，我们还没来得及把另外两个推出，把它们合在一起，然后 somehow 那个 Q&A 就先被 AA 剪去了。",
+      "source_segment_indexes": [
+        246
+      ],
+      "source_segment_ids": [
+        246
+      ]
+    },
+    {
+      "start": 1727.885,
+      "end": 1733.005,
+      "text": "Q&A 上了 AA 之后呢，大家就开始 set 这个东西，突然间就这一块需求就变大了。",
+      "source_segment_indexes": [
+        247
+      ],
+      "source_segment_ids": [
+        247
+      ]
+    },
+    {
+      "start": 1733.005,
+      "end": 1746.045,
+      "text": "我们当时想的很不理解，Q&A 是最简单的一个场景，就是我们花了那么多心血做了更复杂的 benchmark，结果就是因为可能是时间关系，还有的时候是某一个 lab 用了，可能是碰巧它的分好。",
+      "source_segment_indexes": [
+        248
+      ],
+      "source_segment_ids": [
+        248
+      ]
+    },
+    {
+      "start": 1746.765,
+      "end": 1752.845,
+      "text": "这里面其实是有一些随机因素，就是你在这个榜单上，就大家 tech report 上看的东西呢，有一定随机性。",
+      "source_segment_indexes": [
+        249
+      ],
+      "source_segment_ids": [
+        249
+      ]
+    },
+    {
+      "start": 1753.005,
+      "end": 1760.685,
+      "text": "AA 收这些榜单有一些随机性，最后就是你没看到的东西，其实背后可能也有人在用，就这个生态其实水还比较深，还比较复杂一点。",
+      "source_segment_indexes": [
+        250
+      ],
+      "source_segment_ids": [
+        250
+      ]
+    },
+    {
+      "start": 1761.005,
+      "end": 1761.405,
+      "text": "明白。",
+      "source_segment_indexes": [
+        251
+      ],
+      "source_segment_ids": [
+        251
+      ]
+    },
+    {
+      "start": 1761.805,
+      "end": 1773.725,
+      "text": "又其实我还想再问一下，就你刚才提到的大家对于 artificial analysis 这样榜单的质疑，然后你觉得说是不接近于大家理想中的分布，这个分布现在有没有一个共识呢？",
+      "source_segment_indexes": [
+        252
+      ],
+      "source_segment_ids": [
+        252
+      ]
+    },
+    {
+      "start": 1773.725,
+      "end": 1778.525,
+      "text": "因为我理解每个模型公司对于分布的需求其实也是不太一样的，是吧？",
+      "source_segment_indexes": [
+        253
+      ],
+      "source_segment_ids": [
+        253
+      ]
+    },
+    {
+      "start": 1778.765,
+      "end": 1783.165,
+      "text": "如果是在这种情况下的话，我们怎么样去理解这个理想状态下的分布？",
+      "source_segment_indexes": [
+        254
+      ],
+      "source_segment_ids": [
+        254
+      ]
+    },
+    {
+      "start": 1783.325,
+      "end": 1787.725,
+      "text": "它是应该比较接近真实世界的这样一些任务，还是说是别的分布？",
+      "source_segment_indexes": [
+        255
+      ],
+      "source_segment_ids": [
+        255
+      ]
+    },
+    {
+      "start": 1788.205,
+      "end": 1799.485,
+      "text": "我觉得真实的分布其实本质上就是大家的用户体验，就是世界上假设说存在这样一个 ground truth，就真实的分布的真实的打分，其实有点类似于 LM Arena 这种模式。",
+      "source_segment_indexes": [
+        256
+      ],
+      "source_segment_ids": [
+        256
+      ]
+    },
+    {
+      "start": 1799.885,
+      "end": 1807.885,
+      "text": "假设说你每天 prompt 这个 agent 的时候，你能够有多条模型一直在执行，然后给他们打分，这是最真实的评价。",
+      "source_segment_indexes": [
+        257
+      ],
+      "source_segment_ids": [
+        257
+      ]
+    },
+    {
+      "start": 1808.205,
+      "end": 1811.805,
+      "text": "但是这个现实生活中能够做到这样的榜单有那么以下几种因素。",
+      "source_segment_indexes": [
+        258
+      ],
+      "source_segment_ids": [
+        258
+      ]
+    },
+    {
+      "start": 1812.445,
+      "end": 1821.405,
+      "text": "LM Arena 之前做好是因为之前的 Q&A 它这个很快，它开销很低，你给它一个问题，它能够几秒钟之内给你个答案，你很快就能进行打分。",
+      "source_segment_indexes": [
+        259
+      ],
+      "source_segment_ids": [
+        259
+      ]
+    },
+    {
+      "start": 1821.805,
+      "end": 1832.845,
+      "text": "但现在在 agent 的时代，一个长程任务动辄几个小时，一个用户也没有那么多的超能力，每次执行一个任务都连着开几个 agent 的一起去执行，然后也没有个机制去反馈把它收集起来。",
+      "source_segment_indexes": [
+        260
+      ],
+      "source_segment_ids": [
+        260
+      ]
+    },
+    {
+      "start": 1833.245,
+      "end": 1837.965,
+      "text": "所以说大家的评价很多都是一个偏主观的，它很难拿到这样一个真正的 ground truth。",
+      "source_segment_indexes": [
+        261
+      ],
+      "source_segment_ids": [
+        261
+      ]
+    },
+    {
+      "start": 1838.205,
+      "end": 1842.125,
+      "text": "但如果说有哪家公司或者有家有某种方式解决了这个问题，那肯定很厉害。",
+      "source_segment_indexes": [
+        262
+      ],
+      "source_segment_ids": [
+        262
+      ]
+    },
+    {
+      "start": 1842.525,
+      "end": 1851.725,
+      "text": "但我相信他们大模型公司内部肯定是有这样一个机制的，就是让它有几个版本的模型，然后有一些用户他是真实用了这个东西，然后去测。",
+      "source_segment_indexes": [
+        263
+      ],
+      "source_segment_ids": [
+        263
+      ]
+    },
+    {
+      "start": 1852.125,
+      "end": 1858.605,
+      "text": "我的意思是，假设有这样一个 distribution，然后你这个评测的分数的分布接近于这个东西，那它就是一个很好的 benchmark。",
+      "source_segment_indexes": [
+        264
+      ],
+      "source_segment_ids": [
+        264
+      ]
+    },
+    {
+      "start": 1859.005,
+      "end": 1873.645,
+      "text": "对我听到一些比较有意思的，很多评测 benchmark 跟我线上做 A/B test 测出来结果是不一样的，就是用户的反馈跟评测其实有时候不太一样，甚至很难说哪个好，因为用户有时候也比较主观嘛。",
+      "source_segment_indexes": [
+        265
+      ],
+      "source_segment_ids": [
+        265
+      ]
+    },
+    {
+      "start": 1874.205,
+      "end": 1875.405,
+      "text": "像这种聊天的，对吧？",
+      "source_segment_indexes": [
+        266
+      ],
+      "source_segment_ids": [
+        266
+      ]
+    },
+    {
+      "start": 1875.405,
+      "end": 1883.185,
+      "text": "你可能给他特别多这种 factual 的东西，versus 给他很多这种 clickbait，就说他爱听的话，可能这个结果也不一样。",
+      "source_segment_indexes": [
+        267
+      ],
+      "source_segment_ids": [
+        267
+      ]
+    },
+    {
+      "start": 1883.325,
+      "end": 1884.445,
+      "text": "所以这块还是挺复杂。",
+      "source_segment_indexes": [
+        268
+      ],
+      "source_segment_ids": [
+        268
+      ]
+    },
+    {
+      "start": 1885.085,
+      "end": 1885.725,
+      "text": "对，是这样的。",
+      "source_segment_indexes": [
+        269
+      ],
+      "source_segment_ids": [
+        269
+      ]
+    },
+    {
+      "start": 1886.045,
+      "end": 1897.725,
+      "text": "就像 code code，我觉得在 Arena 上分数一直聊很领先，就是因为我觉得 code code 它有个特点就是尤其中文用户或者英文用，它的给出来的这个 output format 更贴近于人们心目中想看到的，就非常容易去理解。",
+      "source_segment_indexes": [
+        270
+      ],
+      "source_segment_ids": [
+        270
+      ]
+    },
+    {
+      "start": 1898.285,
+      "end": 1905.165,
+      "text": "相反呢，CodeX 它可能执行的更细致一些，但是输出的东西就没有那么人那么容易去，相对没那么理解，所以说稍微吃了点亏。",
+      "source_segment_indexes": [
+        271
+      ],
+      "source_segment_ids": [
+        271
+      ]
+    },
+    {
+      "start": 1905.426,
+      "end": 1907.986,
+      "text": "但我个人体验用户下来，他们俩可能是不相上下。",
+      "source_segment_indexes": [
+        272
+      ],
+      "source_segment_ids": [
+        272
+      ]
+    },
+    {
+      "start": 1907.986,
+      "end": 1912.626,
+      "text": "其实我个人还更偏好于OpenAI那边一点，因为它做的更细致，犯的错误更少。",
+      "source_segment_indexes": [
+        273
+      ],
+      "source_segment_ids": [
+        273
+      ]
+    },
+    {
+      "start": 1912.946,
+      "end": 1916.386,
+      "text": "所以这个确实也是很主观的一个事情，去怎么定义好这个distribution。",
+      "source_segment_indexes": [
+        274
+      ],
+      "source_segment_ids": [
+        274
+      ]
+    },
+    {
+      "start": 1916.786,
+      "end": 1922.466,
+      "text": "所以在这种情况下，模型公司还会把benchmark视为判断自己模型能力的一个标准吗？",
+      "source_segment_indexes": [
+        275
+      ],
+      "source_segment_ids": [
+        275
+      ]
+    },
+    {
+      "start": 1922.626,
+      "end": 1924.466,
+      "text": "他们肯定是也是在乎外部的评价。",
+      "source_segment_indexes": [
+        276
+      ],
+      "source_segment_ids": [
+        276
+      ]
+    },
+    {
+      "start": 1924.786,
+      "end": 1931.666,
+      "text": "不同模型公司，我是说先说美国那几家大的，他们肯定是倾向于自建为主，就是自家的evaluation团队，因为他们有这个能力去建。",
+      "source_segment_indexes": [
+        277
+      ],
+      "source_segment_ids": [
+        277
+      ]
+    },
+    {
+      "start": 1931.746,
+      "end": 1948.706,
+      "text": "但是对于一些比如说刚成立的或者相对没有那么有名气的一些frontier labs，或者它不是头部的frontier labs，他们肯定是会非常依赖于外部的评测，因为它内部的评测团队可能没有那么有经验或者那么完善，或者说他们的人力资源更希望投入到模型的训练和开发当中，而不是去直接利用。",
+      "source_segment_indexes": [
+        278
+      ],
+      "source_segment_ids": [
+        278
+      ]
+    },
+    {
+      "start": 1948.706,
+      "end": 1950.466,
+      "text": "就所以这个每个公司的策略都不太一样。",
+      "source_segment_indexes": [
+        279
+      ],
+      "source_segment_ids": [
+        279
+      ]
+    },
+    {
+      "start": 1950.866,
+      "end": 1959.346,
+      "text": "其实我的个人判断是说，当一个产品逐渐成熟之后，或者当你积累了一定体量的用户之后，最后你其实关心的还是用户增长。",
+      "source_segment_indexes": [
+        280
+      ],
+      "source_segment_ids": [
+        280
+      ]
+    },
+    {
+      "start": 1959.826,
+      "end": 1965.746,
+      "text": "比如说我之前其实做了很多年，在Meta做搜索跟推荐，逐渐的就变成了一个类似搜索推荐的问题。",
+      "source_segment_indexes": [
+        281
+      ],
+      "source_segment_ids": [
+        281
+      ]
+    },
+    {
+      "start": 1965.746,
+      "end": 1970.706,
+      "text": "就你看什么样的指标跟用户增长最相关，最后就朝着赚钱的方向走的。",
+      "source_segment_indexes": [
+        282
+      ],
+      "source_segment_ids": [
+        282
+      ]
+    },
+    {
+      "start": 1971.266,
+      "end": 1978.706,
+      "text": "现在可能真正能够评测到这个能力的lab不太多，需要一定的用户体量，可能在这个聊天的场景就比较成熟了。",
+      "source_segment_indexes": [
+        283
+      ],
+      "source_segment_ids": [
+        283
+      ]
+    },
+    {
+      "start": 1979.186,
+      "end": 1982.946,
+      "text": "但是呢，在这些A卷的场景上呢，能做到这个程度就更复杂一点。",
+      "source_segment_indexes": [
+        284
+      ],
+      "source_segment_ids": [
+        284
+      ]
+    },
+    {
+      "start": 1983.426,
+      "end": 1987.586,
+      "text": "大模型可能跟传统这个搜推不太一样的地方就在于说它的场景很复杂。",
+      "source_segment_indexes": [
+        285
+      ],
+      "source_segment_ids": [
+        285
+      ]
+    },
+    {
+      "start": 1987.826,
+      "end": 1995.666,
+      "text": "就算我能够在这个chat场景做好很好的这个A/B test，甚至训这个reward model来朝用户喜欢的方向发展，我总会有新的东西出来。",
+      "source_segment_indexes": [
+        286
+      ],
+      "source_segment_ids": [
+        286
+      ]
+    },
+    {
+      "start": 1996.066,
+      "end": 2006.306,
+      "text": "而且大家一直在看新的东西，比如说现在大家都在卷这个科学发现，科学发现我不可能有足够量的科学家给我显著的A/B test的结果，必须还是要依靠场景构造benchmark。",
+      "source_segment_indexes": [
+        287
+      ],
+      "source_segment_ids": [
+        287
+      ]
+    },
+    {
+      "start": 2006.386,
+      "end": 2016.866,
+      "text": "我会说，因为大家对这里的这个应用场景的期待太高了，场景增长的速度赶不上我在这个领域用户沉淀的速度，还是有大量的需求要依靠这个benchmark来做评价标准。",
+      "source_segment_indexes": [
+        288
+      ],
+      "source_segment_ids": [
+        288
+      ]
+    },
+    {
+      "start": 2016.946,
+      "end": 2027.266,
+      "text": "但我会觉得在某一些领域沉淀下来之后，大家会有更多的线上评测体系，然后可能会像这种传统的互联网增长，看看哪些指标跟用户的DAU增长更相关。",
+      "source_segment_indexes": [
+        289
+      ],
+      "source_segment_ids": [
+        289
+      ]
+    },
+    {
+      "start": 2027.826,
+      "end": 2030.306,
+      "text": "对，能不能深入讲一下数据采购这件事情？",
+      "source_segment_indexes": [
+        290
+      ],
+      "source_segment_ids": [
+        290
+      ]
+    },
+    {
+      "start": 2030.386,
+      "end": 2031.986,
+      "text": "我觉得就是有几个点非常有意思。",
+      "source_segment_indexes": [
+        291
+      ],
+      "source_segment_ids": [
+        291
+      ]
+    },
+    {
+      "start": 2032.146,
+      "end": 2044.146,
+      "text": "第一，你提到了刚才有很多小的公司其实是现在一个创业机会嘛，这也是为什么我们看到很多最近兴起的一些四五个人甚至两三个人的这些数据创业公司拿到了非常高的估值。",
+      "source_segment_indexes": [
+        292
+      ],
+      "source_segment_ids": [
+        292
+      ]
+    },
+    {
+      "start": 2044.386,
+      "end": 2049.186,
+      "text": "这是不是就是因为他们的目标就是这些非常垂直的领域的数据？",
+      "source_segment_indexes": [
+        293
+      ],
+      "source_segment_ids": [
+        293
+      ]
+    },
+    {
+      "start": 2049.586,
+      "end": 2052.066,
+      "text": "对我觉得这里可能有几块问题。",
+      "source_segment_indexes": [
+        294
+      ],
+      "source_segment_ids": [
+        294
+      ]
+    },
+    {
+      "start": 2052.546,
+      "end": 2068.146,
+      "text": "首先，我觉得最近兴起的这些RL environment公司呢，其实更多的是在做合成，因为整个数据行业已经从找人标注慢慢的过渡，你要交付的是一整套环境，然后这个环境可能需要大量的这些工程工作在里面。",
+      "source_segment_indexes": [
+        295
+      ],
+      "source_segment_ids": [
+        295
+      ]
+    },
+    {
+      "start": 2068.546,
+      "end": 2076.626,
+      "text": "很多在这些合成的技术栈上做的比较好的一个小团队呢，其实可以比较短的时间交付大量的合成环境，这未必是不好的。",
+      "source_segment_indexes": [
+        296
+      ],
+      "source_segment_ids": [
+        296
+      ]
+    },
+    {
+      "start": 2076.706,
+      "end": 2084.466,
+      "text": "就合成它有时候你也可以基于一些强的模型，或者说基于一些半成品的这些artifact是可以做出一些好东西来的。",
+      "source_segment_indexes": [
+        297
+      ],
+      "source_segment_ids": [
+        297
+      ]
+    },
+    {
+      "start": 2084.546,
+      "end": 2105.666,
+      "text": "现在这里是一块增长，但是再往下走呢，这里面比较有意思的就是说这个东西之所以能成立，因为大家今年的主题是在卷代码，软件行业是最奇怪的一个，就它非常的open，有大量的公开资料，而且就是我们生产数据的公司，同时大家都懂代码，所以就这个比较好解决，让一些小的团队有很多机会可以自己造很多数据。",
+      "source_segment_indexes": [
+        298
+      ],
+      "source_segment_ids": [
+        298
+      ]
+    },
+    {
+      "start": 2105.906,
+      "end": 2110.866,
+      "text": "但是我觉得再往后面走，比如说这些其他领域的垂位就更复杂了。",
+      "source_segment_indexes": [
+        299
+      ],
+      "source_segment_ids": [
+        299
+      ]
+    },
+    {
+      "start": 2110.946,
+      "end": 2114.066,
+      "text": "这里面我会看到了有一些公司，他们可能解决两个不同的问题。",
+      "source_segment_indexes": [
+        300
+      ],
+      "source_segment_ids": [
+        300
+      ]
+    },
+    {
+      "start": 2114.546,
+      "end": 2117.346,
+      "text": "比如说像我们做后训练数据，其实在我看来是两个问题。",
+      "source_segment_indexes": [
+        301
+      ],
+      "source_segment_ids": [
+        301
+      ]
+    },
+    {
+      "start": 2117.346,
+      "end": 2121.266,
+      "text": "第一次采购，就是我把原材料买回来，就好像ALE让大家上传，对吧？",
+      "source_segment_indexes": [
+        302
+      ],
+      "source_segment_ids": [
+        302
+      ]
+    },
+    {
+      "start": 2121.266,
+      "end": 2122.866,
+      "text": "这是一个比较新的激励机制。",
+      "source_segment_indexes": [
+        303
+      ],
+      "source_segment_ids": [
+        303
+      ]
+    },
+    {
+      "start": 2123.266,
+      "end": 2130.466,
+      "text": "然后加工，加工就是我们再把它标注，或者是通过一些A卷的pipeline把它做成适合大模型训练的环境。",
+      "source_segment_indexes": [
+        304
+      ],
+      "source_segment_ids": [
+        304
+      ]
+    },
+    {
+      "start": 2131.026,
+      "end": 2134.226,
+      "text": "在这个垂直领域问题上呢，其实采购变得越来越复杂。",
+      "source_segment_indexes": [
+        305
+      ],
+      "source_segment_ids": [
+        305
+      ]
+    },
+    {
+      "start": 2134.626,
+      "end": 2140.226,
+      "text": "就甚至代码领域，其实采购一些私域的这个代码仓库啊，谁能把这个问题解决好，其实就是一个巨大的优势。",
+      "source_segment_indexes": [
+        306
+      ],
+      "source_segment_ids": [
+        306
+      ]
+    },
+    {
+      "start": 2140.226,
+      "end": 2144.066,
+      "text": "那么在垂直行业，比如说我如果是做芯片设计的。",
+      "source_segment_indexes": [
+        307
+      ],
+      "source_segment_ids": [
+        307
+      ]
+    },
+    {
+      "start": 2144.487,
+      "end": 2152.967,
+      "text": "我可能要把整个芯片设计的环境给造出来，可能当中涉及到一些商业软件，那我怎么样把这些商业软件的版权拿到，把它包在这里面，就是一个问题。",
+      "source_segment_indexes": [
+        308
+      ],
+      "source_segment_ids": [
+        308
+      ]
+    },
+    {
+      "start": 2153.047,
+      "end": 2170.407,
+      "text": "还有一个就比如说做DevOps，我要是一个系统工程师，我要操作什么AWS之类的，然后我知道有个公司做了一整套AWS模拟器，每一个垂类的这个环境都有一些很深的东西，你可能要采购，可能要定制软件，大家抓住一两个垂类把这个东西做好，其实创造了很多新的机会。",
+      "source_segment_indexes": [
+        309
+      ],
+      "source_segment_ids": [
+        309
+      ]
+    },
+    {
+      "start": 2170.727,
+      "end": 2185.047,
+      "text": "明白，因为刚才我们提到这些垂直场景，比如说在Drug Discovery这些生物医药方面的，还有一些具体行业的评测下面，我们可能没有足够的场景，或者没有足够的好的评测，在这种情况下，我们有足够的好的数据吗？",
+      "source_segment_indexes": [
+        310
+      ],
+      "source_segment_ids": [
+        310
+      ]
+    },
+    {
+      "start": 2185.287,
+      "end": 2202.967,
+      "text": "这里其实有一个难点，每个领域它需要一些人把他的专业知识吐出来之外呢，我还要需要这个领域的这个东西，像药物发现啊，我可能需要很多一些私有的数据库，就这里面我觉得是目前这个行业一个大的卡点，就是你先要能把这东西买到，知道大家手上有什么，才能把它做成benchmark。",
+      "source_segment_indexes": [
+        311
+      ],
+      "source_segment_ids": [
+        311
+      ]
+    },
+    {
+      "start": 2203.367,
+      "end": 2205.607,
+      "text": "ALE其实很大程度上是在解决这个问题。",
+      "source_segment_indexes": [
+        312
+      ],
+      "source_segment_ids": [
+        312
+      ]
+    },
+    {
+      "start": 2205.927,
+      "end": 2223.047,
+      "text": "对，ALE就是希望大家能够以众包的方式，让专家把之前自己做过的project交上来，当然这里面有一些不符合规范的我们都筛掉了，因为他们甚至把一些非常非常私的东西都交上来了，比如说什么法院的一些证据，什么就是就是非常对，然后我们尽量把这个都筛掉了。",
+      "source_segment_indexes": [
+        313
+      ],
+      "source_segment_ids": [
+        313
+      ]
+    },
+    {
+      "start": 2223.367,
+      "end": 2241.047,
+      "text": "比如说我们现在在V2中，我们也尝试去收一些数据，比如说Steam上的一个游戏库，就游戏开发的一个任务，它一个那种名不见经传的一个大概几千人体量的一个MOBA类的游戏，它要价能要到两三百万人民币一条，我觉得哪家数据公司或者做benchmark都没有这个财力去做这个事情。",
+      "source_segment_indexes": [
+        314
+      ],
+      "source_segment_ids": [
+        314
+      ]
+    },
+    {
+      "start": 2241.207,
+      "end": 2246.407,
+      "text": "就是这个游戏公司会要价要到两三百万对对对对对，要这个游戏的源码对。",
+      "source_segment_indexes": [
+        315
+      ],
+      "source_segment_ids": [
+        315
+      ]
+    },
+    {
+      "start": 2246.727,
+      "end": 2266.007,
+      "text": "就比如说很多公司想要采一些游戏的视频，然后做些标注，游戏的视频可能是版权数据，这里有一个巨大的采购问题，我觉得这里是一个商业机会，我现在其实看到不少startup在解决这些问题，就大的书商我们自己也在投入做一些采购方面的工作，但是总体上来说，我觉得这里还有巨大的问题没有被解决。",
+      "source_segment_indexes": [
+        316
+      ],
+      "source_segment_ids": [
+        316
+      ]
+    },
+    {
+      "start": 2266.487,
+      "end": 2270.727,
+      "text": "有哪些现在非常热门的垂类是数据非常少的？",
+      "source_segment_indexes": [
+        317
+      ],
+      "source_segment_ids": [
+        317
+      ]
+    },
+    {
+      "start": 2270.967,
+      "end": 2279.607,
+      "text": "我会说至少医疗算一个，就是数据比较敏感，就是谁能拿到大量的病例数据，那就非常有优势。",
+      "source_segment_indexes": [
+        318
+      ],
+      "source_segment_ids": [
+        318
+      ]
+    },
+    {
+      "start": 2279.847,
+      "end": 2292.327,
+      "text": "对，因为其实也有很多新闻讲到说，可能在法律或者金融的这些领域，会有一些之前离职的员工可能会去分享他们的工作流，呃不过可能工作流数据和像医疗数据里面这些病人的data还是不太一样。",
+      "source_segment_indexes": [
+        319
+      ],
+      "source_segment_ids": [
+        319
+      ]
+    },
+    {
+      "start": 2292.807,
+      "end": 2301.287,
+      "text": "是的，各个领域，我觉得甚至现在大家之所以都在说金融、医疗，就是因为跟大家比较息息相关吧，大家多少还懂一点。",
+      "source_segment_indexes": [
+        320
+      ],
+      "source_segment_ids": [
+        320
+      ]
+    },
+    {
+      "start": 2301.447,
+      "end": 2315.927,
+      "text": "其实这个世界上有很多我都不知道的行业，就是你真的要跟他们聊才知道，就比如说我才知道，就做这个药物研发，大家还会交易这些分子，一个分子还能倒腾几套，这里面还要坐滴滴，所以可能没有做，只是因为大家不知道。",
+      "source_segment_indexes": [
+        321
+      ],
+      "source_segment_ids": [
+        321
+      ]
+    },
+    {
+      "start": 2316.247,
+      "end": 2342.647,
+      "text": "对，就是我们在做ALE V2，想要把比如说一个领域做深的时候，我们会尝试先捋一个领域，它会有哪些工作流，会有一个树状这样结构，然后尤其在生物学这一方面，然后我们基于Nature这个publication，它会有自然的分类，它对子学科分类，然后把这个树展开到第三级的时候，大概有三千个节点，然后我们也做一下工作，就是把现在已有的市面上的Life和Bio的这个benchmark已经覆盖了多少，",
+      "source_segment_indexes": [
+        322
+      ],
+      "source_segment_ids": [
+        322
+      ]
+    },
+    {
+      "start": 2342.887,
+      "end": 2352.887,
+      "text": "做了一个统计，大概是可能百分之十、百分之五都不到，甚至它连一个成型就是覆盖面完全的一个benchmark市面上都没有，更别说是针对这个去做相应的数据。",
+      "source_segment_indexes": [
+        323
+      ],
+      "source_segment_ids": [
+        323
+      ]
+    },
+    {
+      "start": 2353.207,
+      "end": 2360.007,
+      "text": "明白，那像我们刚刚提到的这些做合成数据的小公司，他们能赚钱的周期有多长呢？",
+      "source_segment_indexes": [
+        324
+      ],
+      "source_segment_ids": [
+        324
+      ]
+    },
+    {
+      "start": 2360.247,
+      "end": 2365.207,
+      "text": "因为听起来好像都是这几年新出现的这样一些公司，这些数据它的生命周期有多长呢？",
+      "source_segment_indexes": [
+        325
+      ],
+      "source_segment_ids": [
+        325
+      ]
+    },
+    {
+      "start": 2365.207,
+      "end": 2375.847,
+      "text": "嗯，这是个好问题，至少现在需求还是挺大的，然后未来很难说，比如说这一波coding卷完了，那么他们需要新的品类，大家你能不能抓住下一个机会？",
+      "source_segment_indexes": [
+        326
+      ],
+      "source_segment_ids": [
+        326
+      ]
+    },
+    {
+      "start": 2376.087,
+      "end": 2386.887,
+      "text": "而且下一个机会可能跟你现在的运行模式不太一样，比如说我自己会觉得采购会很重要，那么采购能力比较差的可能就比较难，或者就像EU他们，你可能有些新的激励机制，让大家把东西。",
+      "source_segment_indexes": [
+        327
+      ],
+      "source_segment_ids": [
+        327
+      ]
+    },
+    {
+      "start": 2387.135,
+      "end": 2387.774,
+      "text": "交进来，对吧？",
+      "source_segment_indexes": [
+        328
+      ],
+      "source_segment_ids": [
+        328
+      ]
+    },
+    {
+      "start": 2387.774,
+      "end": 2397.455,
+      "text": "所以可能以前的一个激励机制是招聘平台，或者就给你一个小时工，但是以后可能有新的激励机制，就谁能把这些东西玩得转，可能会继续有一些优势。",
+      "source_segment_indexes": [
+        329
+      ],
+      "source_segment_ids": [
+        329
+      ]
+    },
+    {
+      "start": 2397.854,
+      "end": 2406.895,
+      "text": "这个地方我想问云中你的看法，因为我个人认为，随着模型能力越来越强，模型公司自己内部创造数据的能力也越来越强。",
+      "source_segment_indexes": [
+        330
+      ],
+      "source_segment_ids": [
+        330
+      ]
+    },
+    {
+      "start": 2407.374,
+      "end": 2417.774,
+      "text": "这一点你认为这个饼是越来越大的，但有没有可能会出现一个情况，这个饼面向于非头部公司的这个机会反而是门槛是越来越高的，入场券是越来越难拿的。",
+      "source_segment_indexes": [
+        331
+      ],
+      "source_segment_ids": [
+        331
+      ]
+    },
+    {
+      "start": 2418.015,
+      "end": 2426.415,
+      "text": "比如说数学这块领域，之前的话大家只需要去影印那些奥数课本，就能够去批量造出大量的数据，但这些数据现在基本上是零价值。",
+      "source_segment_indexes": [
+        332
+      ],
+      "source_segment_ids": [
+        332
+      ]
+    },
+    {
+      "start": 2427.215,
+      "end": 2428.814,
+      "text": "所以你是怎么看待这个趋势？",
+      "source_segment_indexes": [
+        333
+      ],
+      "source_segment_ids": [
+        333
+      ]
+    },
+    {
+      "start": 2429.055,
+      "end": 2431.294,
+      "text": "就未来的数据公司的这个发展方向？",
+      "source_segment_indexes": [
+        334
+      ],
+      "source_segment_ids": [
+        334
+      ]
+    },
+    {
+      "start": 2431.374,
+      "end": 2436.655,
+      "text": "对，我会觉得从第一性原则上来说，还有巨量的问题没有解决。",
+      "source_segment_indexes": [
+        335
+      ],
+      "source_segment_ids": [
+        335
+      ]
+    },
+    {
+      "start": 2436.735,
+      "end": 2440.735,
+      "text": "你要想这个世界上还有多少东西没被蒸馏干净，是巨大的机会。",
+      "source_segment_indexes": [
+        336
+      ],
+      "source_segment_ids": [
+        336
+      ]
+    },
+    {
+      "start": 2441.135,
+      "end": 2447.774,
+      "text": "但是如果你就看现在大家是怎么运行的，这个事情当然会越来越难，因为越来越多的这个玩家进来了。",
+      "source_segment_indexes": [
+        337
+      ],
+      "source_segment_ids": [
+        337
+      ]
+    },
+    {
+      "start": 2447.774,
+      "end": 2451.294,
+      "text": "我觉得大家如果只盯着我手上的工作，这个一定是越来越难做的。",
+      "source_segment_indexes": [
+        338
+      ],
+      "source_segment_ids": [
+        338
+      ]
+    },
+    {
+      "start": 2451.535,
+      "end": 2456.175,
+      "text": "就算这个 lab 不自己做，越来越多的竞争对手进来，你的 margin 也会越来越低。",
+      "source_segment_indexes": [
+        339
+      ],
+      "source_segment_ids": [
+        339
+      ]
+    },
+    {
+      "start": 2456.495,
+      "end": 2466.095,
+      "text": "所以在我看来，一个好的数商其实最后解决的是个研发问题了，就好像一个软件公司一样，我要提前投入未来大家需要的东西，赚到钱之后我再投入下一个东西。",
+      "source_segment_indexes": [
+        340
+      ],
+      "source_segment_ids": [
+        340
+      ]
+    },
+    {
+      "start": 2466.334,
+      "end": 2472.334,
+      "text": "在 lab 本身呢，我有个暴论，可能 labs 未必有最好的基因来解决数据的问题。",
+      "source_segment_indexes": [
+        341
+      ],
+      "source_segment_ids": [
+        341
+      ]
+    },
+    {
+      "start": 2472.655,
+      "end": 2485.854,
+      "text": "这里面可能有几块，比如说合成数据，合成数据其实按理说很多就是这个 lab research 的本职工作了，尤其是搞后训练的，大部分时间都在花在搞数据上了，就是买数据、核数据、验证数据、洗数据。",
+      "source_segment_indexes": [
+        342
+      ],
+      "source_segment_ids": [
+        342
+      ]
+    },
+    {
+      "start": 2486.334,
+      "end": 2489.935,
+      "text": "但是这个领域你会觉得为什么外面的人会有机会呢？",
+      "source_segment_indexes": [
+        343
+      ],
+      "source_segment_ids": [
+        343
+      ]
+    },
+    {
+      "start": 2490.415,
+      "end": 2498.095,
+      "text": "三炮今年的这一波增长都来自于一些懂行的人在外面把这个数据核了再卖回去，所以这个事情是存在的。",
+      "source_segment_indexes": [
+        344
+      ],
+      "source_segment_ids": [
+        344
+      ]
+    },
+    {
+      "start": 2498.415,
+      "end": 2503.294,
+      "text": "我觉得一方面是因为大模型公司现在有太多的钱，就是你自己造，外面买其实也不矛盾。",
+      "source_segment_indexes": [
+        345
+      ],
+      "source_segment_ids": [
+        345
+      ]
+    },
+    {
+      "start": 2503.615,
+      "end": 2508.415,
+      "text": "但是在更长远上来说呢，其实有很多问题可能模型公司没有太好的基因解决。",
+      "source_segment_indexes": [
+        346
+      ],
+      "source_segment_ids": [
+        346
+      ]
+    },
+    {
+      "start": 2508.575,
+      "end": 2518.655,
+      "text": "比如说如果我要采购，我要把一些行业的东西先采购回来蒸馏出来，这个时候我会觉得大的 lab 可能未必有那么大的优势，它甚至可能会有一些 conflict of interest。",
+      "source_segment_indexes": [
+        347
+      ],
+      "source_segment_ids": [
+        347
+      ]
+    },
+    {
+      "start": 2518.814,
+      "end": 2529.854,
+      "text": "比如说一方面把你的这个 fde 派到了人家企业里面，然后另一方面你有一波人在搞这个企业数据，那么我会觉得如果我是一个企业，我是不太放心把我的数据交给你的。",
+      "source_segment_indexes": [
+        348
+      ],
+      "source_segment_ids": [
+        348
+      ]
+    },
+    {
+      "start": 2530.015,
+      "end": 2538.575,
+      "text": "出于这些原因，有一些东西可能 lab 不太适合自己做，它可能还是需要第三方的这个人帮他做一些采购，或者深入到一些行业领域里面去。",
+      "source_segment_indexes": [
+        349
+      ],
+      "source_segment_ids": [
+        349
+      ]
+    },
+    {
+      "start": 2538.895,
+      "end": 2557.294,
+      "text": "我会觉得一个数商真正要做的事情是来研发，看看未来还有哪些行业是重要的，这些行业有哪些东西我要值得投入，把东西买回来，然后我自己先投入 R and D，把这个行业的问题给研究清楚，然后再把它做成 benchmark 或者数据，甚至证明这个东西的有效性，然后我再转手卖给 lab。",
+      "source_segment_indexes": [
+        350
+      ],
+      "source_segment_ids": [
+        350
+      ]
+    },
+    {
+      "start": 2557.374,
+      "end": 2560.175,
+      "text": "从 lab 来说呢，就是大家的这个 deadline 都很死。",
+      "source_segment_indexes": [
+        351
+      ],
+      "source_segment_ids": [
+        351
+      ]
+    },
+    {
+      "start": 2560.575,
+      "end": 2567.455,
+      "text": "如果我是一个 lab 的 research，如果你让我花半年的时间来解决一个行业，可能有时候大家其实没有自由度。",
+      "source_segment_indexes": [
+        352
+      ],
+      "source_segment_ids": [
+        352
+      ]
+    },
+    {
+      "start": 2567.615,
+      "end": 2572.415,
+      "text": "就是这个时候你看到，哎，那边有一个数商说，我把那个行业的东西搞清楚了，你要不要？",
+      "source_segment_indexes": [
+        353
+      ],
+      "source_segment_ids": [
+        353
+      ]
+    },
+    {
+      "start": 2572.495,
+      "end": 2573.535,
+      "text": "大家通常都会看一眼。",
+      "source_segment_indexes": [
+        354
+      ],
+      "source_segment_ids": [
+        354
+      ]
+    },
+    {
+      "start": 2573.615,
+      "end": 2577.135,
+      "text": "所以我觉得其实长期来说拼的还是一个研发能力。",
+      "source_segment_indexes": [
+        355
+      ],
+      "source_segment_ids": [
+        355
+      ]
+    },
+    {
+      "start": 2577.135,
+      "end": 2580.495,
+      "text": "你觉得这个趋势对于大模型公司来说会持续吗？",
+      "source_segment_indexes": [
+        356
+      ],
+      "source_segment_ids": [
+        356
+      ]
+    },
+    {
+      "start": 2580.814,
+      "end": 2589.055,
+      "text": "因为现在模型公司里面也有自己的数据团队嘛，但是你觉得他们更愿意去从第三方那里收数据，而不是自己去造环境造数据？",
+      "source_segment_indexes": [
+        357
+      ],
+      "source_segment_ids": [
+        357
+      ]
+    },
+    {
+      "start": 2589.455,
+      "end": 2594.175,
+      "text": "这里我觉得可能不矛盾吧，因为最后模型公司最高的优先级还是把东西做好。",
+      "source_segment_indexes": [
+        358
+      ],
+      "source_segment_ids": [
+        358
+      ]
+    },
+    {
+      "start": 2594.575,
+      "end": 2599.135,
+      "text": "如果他们自己能生产好的数据的话，有可能会倾向于自己生产。",
+      "source_segment_indexes": [
+        359
+      ],
+      "source_segment_ids": [
+        359
+      ]
+    },
+    {
+      "start": 2599.215,
+      "end": 2605.294,
+      "text": "只是现在大方向上来看，这个世界上还有太多的这个工作流没有被折腾清楚了。",
+      "source_segment_indexes": [
+        360
+      ],
+      "source_segment_ids": [
+        360
+      ]
+    },
+    {
+      "start": 2605.854,
+      "end": 2609.215,
+      "text": "那么对外部数商的依赖，我觉得是长期存在的。",
+      "source_segment_indexes": [
+        361
+      ],
+      "source_segment_ids": [
+        361
+      ]
+    },
+    {
+      "start": 2609.374,
+      "end": 2615.774,
+      "text": "甚至就是一个大模型实验室自己可能未必想要投入那么多的资源做的这么重，可能更 prefer 灵活一点。",
+      "source_segment_indexes": [
+        362
+      ],
+      "source_segment_ids": [
+        362
+      ]
+    },
+    {
+      "start": 2615.774,
+      "end": 2621.535,
+      "text": "缺点就是说大家可能希望更多的东西是第一方的，不希望所有人都能从数商中获得这些能力。",
+      "source_segment_indexes": [
+        363
+      ],
+      "source_segment_ids": [
+        363
+      ]
+    },
+    {
+      "start": 2621.695,
+      "end": 2622.975,
+      "text": "所以就从这个角度来看。",
+      "source_segment_indexes": [
+        364
+      ],
+      "source_segment_ids": [
+        364
+      ]
+    },
+    {
+      "start": 2623.335,
+      "end": 2631.495,
+      "text": "会有一定的动机自己研发，然后就比如说现在可能很多labs他在做这个expert matching，就是说你把人派到我这里来，就也有这么一些趋势。",
+      "source_segment_indexes": [
+        365
+      ],
+      "source_segment_ids": [
+        365
+      ]
+    },
+    {
+      "start": 2631.975,
+      "end": 2638.375,
+      "text": "我自己也会觉得说，现在有太多东西没有被解决了，不管是谁把这些问题解决了，那他一定是有赚钱的机会。",
+      "source_segment_indexes": [
+        366
+      ],
+      "source_segment_ids": [
+        366
+      ]
+    },
+    {
+      "start": 2638.615,
+      "end": 2644.135,
+      "text": "这个东西可能跟在哪里发生不是很有所谓，现在是机会多，饼在越变大了这么一个阶段。",
+      "source_segment_indexes": [
+        367
+      ],
+      "source_segment_ids": [
+        367
+      ]
+    },
+    {
+      "start": 2644.535,
+      "end": 2655.895,
+      "text": "哎，但这也是大家对于数据一直有一个问题，也就是说，如果一个第三方供应商把同样的数据卖给不同的模型公司，那它中间怎么样去区分呢？",
+      "source_segment_indexes": [
+        368
+      ],
+      "source_segment_ids": [
+        368
+      ]
+    },
+    {
+      "start": 2656.215,
+      "end": 2660.855,
+      "text": "这里通常来说有个比较简单的解决方案，就是说你可以花多点钱把这个数据买断。",
+      "source_segment_indexes": [
+        369
+      ],
+      "source_segment_ids": [
+        369
+      ]
+    },
+    {
+      "start": 2661.335,
+      "end": 2668.135,
+      "text": "你觉得对于模型公司来说，在数据供应商收到那么多数据的情况下，他们怎么样去使用这些数据？",
+      "source_segment_indexes": [
+        370
+      ],
+      "source_segment_ids": [
+        370
+      ]
+    },
+    {
+      "start": 2668.135,
+      "end": 2669.415,
+      "text": "这个流程能不能给我们讲一下？",
+      "source_segment_indexes": [
+        371
+      ],
+      "source_segment_ids": [
+        371
+      ]
+    },
+    {
+      "start": 2669.895,
+      "end": 2675.335,
+      "text": "就这里面一般来说它是有一些比较固定的训练方式，我们把它叫training recipe。",
+      "source_segment_indexes": [
+        372
+      ],
+      "source_segment_ids": [
+        372
+      ]
+    },
+    {
+      "start": 2675.735,
+      "end": 2682.135,
+      "text": "就比如说像是比较简单的这种数据，我可能就是直接SFT，就是我把对的答案给他就行了。",
+      "source_segment_indexes": [
+        373
+      ],
+      "source_segment_ids": [
+        373
+      ]
+    },
+    {
+      "start": 2682.375,
+      "end": 2688.055,
+      "text": "然后像是rubric这一种呢，它可能就是在做强化学习，因为就是不停的有一个模型在给他打分嘛。",
+      "source_segment_indexes": [
+        374
+      ],
+      "source_segment_ids": [
+        374
+      ]
+    },
+    {
+      "start": 2688.535,
+      "end": 2698.215,
+      "text": "比较有意思的是现在这些RL环境，比如说最近大家在卷的一些特别长程的任务，现在今年的一个主题是RSI嘛，就是recursive self improvement。",
+      "source_segment_indexes": [
+        375
+      ],
+      "source_segment_ids": [
+        375
+      ]
+    },
+    {
+      "start": 2698.375,
+      "end": 2701.415,
+      "text": "它其实是个buzzword，就是说AI自己研发自己。",
+      "source_segment_indexes": [
+        376
+      ],
+      "source_segment_ids": [
+        376
+      ]
+    },
+    {
+      "start": 2701.655,
+      "end": 2709.415,
+      "text": "那大家最近就在看那些我跑一把可能要跑个几天一个星期，其中你可能要有个GPU真的在上面模型训模型的任务。",
+      "source_segment_indexes": [
+        377
+      ],
+      "source_segment_ids": [
+        377
+      ]
+    },
+    {
+      "start": 2709.735,
+      "end": 2713.175,
+      "text": "这里的训练方式其实就开始变得有一些模糊了。",
+      "source_segment_indexes": [
+        378
+      ],
+      "source_segment_ids": [
+        378
+      ]
+    },
+    {
+      "start": 2713.415,
+      "end": 2722.215,
+      "text": "我们也在一起研究这里面的训练方式要怎么搞，但是我自己就觉得这里面其实还没有太多的共识，所以还有很多有意思的空间。",
+      "source_segment_indexes": [
+        379
+      ],
+      "source_segment_ids": [
+        379
+      ]
+    },
+    {
+      "start": 2722.295,
+      "end": 2732.615,
+      "text": "就对于数商来说，有时候也不完全是就造一个模拟的task这么简单，你还要考虑到它模型公司拿去要怎么训，然后针对它怎么训，可能还要有一些定制。",
+      "source_segment_indexes": [
+        380
+      ],
+      "source_segment_ids": [
+        380
+      ]
+    },
+    {
+      "start": 2733.015,
+      "end": 2748.295,
+      "text": "对这一块我也比较好奇，如果说你就是为了benchmarking，就是你拿ALE的一些任务你直接去训练，就类似做一批这样的数据，那你怎么保证这个数据它训练出来，它模型能力泛化能力是能够提升，能够被迁移到其他的任务上去？",
+      "source_segment_indexes": [
+        381
+      ],
+      "source_segment_ids": [
+        381
+      ]
+    },
+    {
+      "start": 2748.375,
+      "end": 2753.015,
+      "text": "然后这个东西有没有一些比较系统化的科学化的方法来做这样的验证呢？",
+      "source_segment_indexes": [
+        382
+      ],
+      "source_segment_ids": [
+        382
+      ]
+    },
+    {
+      "start": 2753.415,
+      "end": 2758.375,
+      "text": "如何在不训一个模型基础上，然后能够评判这个数据能给模型带来怎样的提升？",
+      "source_segment_indexes": [
+        383
+      ],
+      "source_segment_ids": [
+        383
+      ]
+    },
+    {
+      "start": 2758.775,
+      "end": 2766.055,
+      "text": "对我觉得这里其实有一些技术，比如说现在如果我要造一个环境，大家最怕的就是reward hack，就它有捷径。",
+      "source_segment_indexes": [
+        384
+      ],
+      "source_segment_ids": [
+        384
+      ]
+    },
+    {
+      "start": 2766.775,
+      "end": 2777.015,
+      "text": "如果明明我没有完成这个task，我可能是做死了一些手脚，结果somehow我的这个分儿可以打的很高，就是我训出来这个模型肯定会变成一个耍滑头模型。",
+      "source_segment_indexes": [
+        385
+      ],
+      "source_segment_ids": [
+        385
+      ]
+    },
+    {
+      "start": 2777.735,
+      "end": 2779.575,
+      "text": "这种东西肯定是不希望发生的。",
+      "source_segment_indexes": [
+        386
+      ],
+      "source_segment_ids": [
+        386
+      ]
+    },
+    {
+      "start": 2779.655,
+      "end": 2788.775,
+      "text": "那么通常来说会有一些技术可以用agent来做这个retesting，就是我会让一些比较强的模型来试试看能不能在这个task里面找到捷径。",
+      "source_segment_indexes": [
+        387
+      ],
+      "source_segment_ids": [
+        387
+      ]
+    },
+    {
+      "start": 2789.335,
+      "end": 2794.455,
+      "text": "另外就是就这里面很多是我自己的个人猜想，就不代表Scale AI或者任何客户。",
+      "source_segment_indexes": [
+        388
+      ],
+      "source_segment_ids": [
+        388
+      ]
+    },
+    {
+      "start": 2794.455,
+      "end": 2801.975,
+      "text": "就是说在训练这些东西的时候呢，很多benchmark我们可能只关心最后有没有完成这个任务，就是我们验证器是围绕这些东西设计的。",
+      "source_segment_indexes": [
+        389
+      ],
+      "source_segment_ids": [
+        389
+      ]
+    },
+    {
+      "start": 2802.455,
+      "end": 2806.375,
+      "text": "但是我怎么样完成它，这些东西可能也会在模型训练里面有一些关键作用。",
+      "source_segment_indexes": [
+        390
+      ],
+      "source_segment_ids": [
+        390
+      ]
+    },
+    {
+      "start": 2806.535,
+      "end": 2814.615,
+      "text": "一个比较trivial的例子就是说budget，就比如说我训模型的时候，我会关心它是不是消耗了过多的token或者用了这些部署。",
+      "source_segment_indexes": [
+        391
+      ],
+      "source_segment_ids": [
+        391
+      ]
+    },
+    {
+      "start": 2815.175,
+      "end": 2825.095,
+      "text": "那么我们在训练它，比如说在拿ALE的模型数据训练的时候呢，肯定我最后reward会很复杂，不是说我把这东西解出来就行了，我可能还关注它消耗了多少资源。",
+      "source_segment_indexes": [
+        392
+      ],
+      "source_segment_ids": [
+        392
+      ]
+    },
+    {
+      "start": 2825.655,
+      "end": 2833.415,
+      "text": "最后可能是在各种各样维度的检查reward，防止它作弊这些东西结合起来才能完成一个训练的recipe。",
+      "source_segment_indexes": [
+        393
+      ],
+      "source_segment_ids": [
+        393
+      ]
+    },
+    {
+      "start": 2833.415,
+      "end": 2840.855,
+      "text": "其实就感觉也没那么简单，这些可能是训练数据更多要考虑的问题，就是说我这些数据能不能导出一个比较好的训练方式。",
+      "source_segment_indexes": [
+        394
+      ],
+      "source_segment_ids": [
+        394
+      ]
+    },
+    {
+      "start": 2841.175,
+      "end": 2850.935,
+      "text": "嗯，能不能讲一下像RSI或者就因为刚刚我们也提到很多new lab嘛，像在这些情况下做这些训练需要的数据有什么不一样吗？",
+      "source_segment_indexes": [
+        395
+      ],
+      "source_segment_ids": [
+        395
+      ]
+    },
+    {
+      "start": 2850.935,
+      "end": 2852.855,
+      "text": "或者需要的定制有什么不一样吗？",
+      "source_segment_indexes": [
+        396
+      ],
+      "source_segment_ids": [
+        396
+      ]
+    },
+    {
+      "start": 2853.015,
+      "end": 2855.975,
+      "text": "通常来说最常见的定制其实是难度。",
+      "source_segment_indexes": [
+        397
+      ],
+      "source_segment_ids": [
+        397
+      ]
+    },
+    {
+      "start": 2856.455,
+      "end": 2864.055,
+      "text": "大家做benchmark的时候一般来说至少希望它不那么饱和，那就意味着越难越好，但也不一定，就像一有所的也不要。",
+      "source_segment_indexes": [
+        398
+      ],
+      "source_segment_ids": [
+        398
+      ]
+    },
+    {
+      "start": 2864.52,
+      "end": 2870.76,
+      "text": "就完全解不出来，就是 benchmark 的难度更多的是一个客观的反映我这个行业难度的事情。",
+      "source_segment_indexes": [
+        399
+      ],
+      "source_segment_ids": [
+        399
+      ]
+    },
+    {
+      "start": 2870.92,
+      "end": 2875.96,
+      "text": "但是在我训模型的时候，需要做一个特化，就是说这个难度对它的模型要是适中的。",
+      "source_segment_indexes": [
+        400
+      ],
+      "source_segment_ids": [
+        400
+      ]
+    },
+    {
+      "start": 2876.36,
+      "end": 2882.6,
+      "text": "我们有时候会做这个事情，模型厂商会把它甚至还没有发布的这个模型给我们，然后我们帮它筛数据。",
+      "source_segment_indexes": [
+        401
+      ],
+      "source_segment_ids": [
+        401
+      ]
+    },
+    {
+      "start": 2882.76,
+      "end": 2891.0,
+      "text": "这个题目对它来说不能太难，也不能太简单，因为现在做这个强化学习是说让模型在上面自己试，如果试对了的话，它就能学到一些东西。",
+      "source_segment_indexes": [
+        402
+      ],
+      "source_segment_ids": [
+        402
+      ]
+    },
+    {
+      "start": 2891.0,
+      "end": 2893.48,
+      "text": "那我给它题太难了，它啥也做不出来，肯定就不行。",
+      "source_segment_indexes": [
+        403
+      ],
+      "source_segment_ids": [
+        403
+      ]
+    },
+    {
+      "start": 2894.04,
+      "end": 2896.28,
+      "text": "所以在这个难度上会做一些适配。",
+      "source_segment_indexes": [
+        404
+      ],
+      "source_segment_ids": [
+        404
+      ]
+    },
+    {
+      "start": 2896.76,
+      "end": 2914.76,
+      "text": "然后另外可能我们会做一些轨迹采集，就比如说如果你把你的模型的轨迹给我们，我们可能把这些轨迹采集出来，然后帮你做一些筛选，甚至我们想办法用人给你搞一些可以解这些问题的轨迹，这样你可以拿回去不需要做强化学习，你可以直接照着这个轨迹做 SFT。",
+      "source_segment_indexes": [
+        405
+      ],
+      "source_segment_ids": [
+        405
+      ]
+    },
+    {
+      "start": 2915.08,
+      "end": 2918.68,
+      "text": "针对它的这个训练需求，其实也有一些特化的这种工作。",
+      "source_segment_indexes": [
+        406
+      ],
+      "source_segment_ids": [
+        406
+      ]
+    },
+    {
+      "start": 2919.32,
+      "end": 2928.84,
+      "text": "OK，接下来还想再聊一下数据污染的这个问题啊，因为今年二月的时候呢，OpenAI 就宣布停止报告它在 SWEBench Verify 里面的分数。",
+      "source_segment_indexes": [
+        407
+      ],
+      "source_segment_ids": [
+        407
+      ]
+    },
+    {
+      "start": 2929.24,
+      "end": 2937.8,
+      "text": "这个其实也是一套评测啊，那具体来说呢，就是让 AI 修复真实开源软件里面的项目问题，再通过这个测试来判断它有没有修好。",
+      "source_segment_indexes": [
+        408
+      ],
+      "source_segment_ids": [
+        408
+      ]
+    },
+    {
+      "start": 2938.12,
+      "end": 2946.76,
+      "text": "当时呢，OpenAI 主要是指出了两类问题，一类是它测试本身可能会有缺陷，比如说有的功能上正确的解法也会被判错。",
+      "source_segment_indexes": [
+        409
+      ],
+      "source_segment_ids": [
+        409
+      ]
+    },
+    {
+      "start": 2947.24,
+      "end": 2950.12,
+      "text": "另一类呢，就是数据污染，这个我觉得很有意思啊。",
+      "source_segment_indexes": [
+        410
+      ],
+      "source_segment_ids": [
+        410
+      ]
+    },
+    {
+      "start": 2950.12,
+      "end": 2965.0,
+      "text": "他们发现是在特定提示下面，模型能够复现部分题目原本的人类修复代码，也就是说呢，模型很可能在训练过程当中就已经接触过相关内容了，所以这个分数就变得有点难解释了。",
+      "source_segment_indexes": [
+        411
+      ],
+      "source_segment_ids": [
+        411
+      ]
+    },
+    {
+      "start": 2965.56,
+      "end": 2968.68,
+      "text": "我想问一下两位是怎么理解数据污染这个问题的呢？",
+      "source_segment_indexes": [
+        412
+      ],
+      "source_segment_ids": [
+        412
+      ]
+    },
+    {
+      "start": 2968.92,
+      "end": 2975.08,
+      "text": "就 SWEBench 这一类数据其实有一个问题，它可能甚至还不是污染，就是它 task 可能就做的不够好。",
+      "source_segment_indexes": [
+        413
+      ],
+      "source_segment_ids": [
+        413
+      ]
+    },
+    {
+      "start": 2975.4,
+      "end": 2986.36,
+      "text": "就比如说有时候有一些错误是假错误，就比如说可能我的测试脚本要求的太多了，或者是我的 task 没讲清楚，有这么一些类型的原因吧。",
+      "source_segment_indexes": [
+        414
+      ],
+      "source_segment_ids": [
+        414
+      ]
+    },
+    {
+      "start": 2987.08,
+      "end": 2995.32,
+      "text": "另外一个污染可能是说模型预训练的时候把这些东西都训练进去了，这里面其实是有一些技术可以检测到这些东西。",
+      "source_segment_indexes": [
+        415
+      ],
+      "source_segment_ids": [
+        415
+      ]
+    },
+    {
+      "start": 2995.4,
+      "end": 2997.56,
+      "text": "我想在 ALE 上面应该会有一些这种经验。",
+      "source_segment_indexes": [
+        416
+      ],
+      "source_segment_ids": [
+        416
+      ]
+    },
+    {
+      "start": 2997.96,
+      "end": 3016.68,
+      "text": "又不然他说不采用 SWEBench，是它是连 SWEBench Verify 也不采用，就是当一个 benchmark 它，我印象中它是在过去的六个月内只从百分之七十四提升到了百分之八十，然后剩下那些问题可能是脚本写的太 hard 了，然后或者它的题目本身就是不可解，或者是会有各种各样的问题。",
+      "source_segment_indexes": [
+        417
+      ],
+      "source_segment_ids": [
+        417
+      ]
+    },
+    {
+      "start": 3016.92,
+      "end": 3021.32,
+      "text": "然后它剩下的可能百分之二十都是集中在这个问题上，那这个 benchmark 本身可能就失去了它对比的意义。",
+      "source_segment_indexes": [
+        418
+      ],
+      "source_segment_ids": [
+        418
+      ]
+    },
+    {
+      "start": 3021.88,
+      "end": 3031.88,
+      "text": "ALE 没有解决一个问题，这个也也想跟云中探讨一下，就当一个专家他本身提交上来的材料本身是错的时候，我该如何去预防这个问题？",
+      "source_segment_indexes": [
+        419
+      ],
+      "source_segment_ids": [
+        419
+      ]
+    },
+    {
+      "start": 3032.44,
+      "end": 3036.76,
+      "text": "这个是我们真实发生过的，因为我们专家这个五花八门的，当然这个这样的人很少。",
+      "source_segment_indexes": [
+        420
+      ],
+      "source_segment_ids": [
+        420
+      ]
+    },
+    {
+      "start": 3037.08,
+      "end": 3046.12,
+      "text": "他是为了提交这个任务，然后为了拿到作者，因为我们的奖励机制就是你提交了这个东西，然后我们接纳了你这个任务，你就能被纳为作者列表的一部分。",
+      "source_segment_indexes": [
+        421
+      ],
+      "source_segment_ids": [
+        421
+      ]
+    },
+    {
+      "start": 3046.92,
+      "end": 3057.16,
+      "text": "确实是有人为了提交而提交，然后他甚至起了 agent 去合成了一堆乱七八糟的数据，甚至有些数据交上来，我用肉眼看出来它就是编的。",
+      "source_segment_indexes": [
+        422
+      ],
+      "source_segment_ids": [
+        422
+      ]
+    },
+    {
+      "start": 3057.56,
+      "end": 3060.2,
+      "text": "这个东西是确实对我们的工作造成了很大的困扰。",
+      "source_segment_indexes": [
+        423
+      ],
+      "source_segment_ids": [
+        423
+      ]
+    },
+    {
+      "start": 3060.36,
+      "end": 3064.36,
+      "text": "这是个特别大的问题，scale 总是有人，总是可以靠人解决的。",
+      "source_segment_indexes": [
+        424
+      ],
+      "source_segment_ids": [
+        424
+      ]
+    },
+    {
+      "start": 3065.0,
+      "end": 3077.0,
+      "text": "这里有个特别有意思的问题，比如说一游提到了我给他这个 authorship 是一种奖励机制，那它会带来一定的问题，比如说就 scale 那更原始的，比如说我就给你小时工，那大家也有一些偷懒作弊的方案。",
+      "source_segment_indexes": [
+        425
+      ],
+      "source_segment_ids": [
+        425
+      ]
+    },
+    {
+      "start": 3077.56,
+      "end": 3081.0,
+      "text": "我会觉得这个奖励机制是个特别特别难的问题。",
+      "source_segment_indexes": [
+        426
+      ],
+      "source_segment_ids": [
+        426
+      ]
+    },
+    {
+      "start": 3081.0,
+      "end": 3084.52,
+      "text": "长远来说，比如说我的目标是把人类都蒸馏干净，对吧？",
+      "source_segment_indexes": [
+        427
+      ],
+      "source_segment_ids": [
+        427
+      ]
+    },
+    {
+      "start": 3084.92,
+      "end": 3088.68,
+      "text": "怎么样设计一个好的奖励机制，把大家的目标都 align？",
+      "source_segment_indexes": [
+        428
+      ],
+      "source_segment_ids": [
+        428
+      ]
+    },
+    {
+      "start": 3088.84,
+      "end": 3093.0,
+      "text": "我觉得这里其实有特别大的空间，这里可能是一个巨大的 research area。",
+      "source_segment_indexes": [
+        429
+      ],
+      "source_segment_ids": [
+        429
+      ]
+    },
+    {
+      "start": 3093.08,
+      "end": 3103.16,
+      "text": "我自己心中可能有一些方案，proof of work，就比如说我要求你把做这个东西的一整段工作流程全部都录下来，你必须要做到多少时长或者怎么样？",
+      "source_segment_indexes": [
+        430
+      ],
+      "source_segment_ids": [
+        430
+      ]
+    },
+    {
+      "start": 3103.4,
+      "end": 3106.76,
+      "text": "不同形式的问题，它有不同形式的奖励和验证机制。",
+      "source_segment_indexes": [
+        431
+      ],
+      "source_segment_ids": [
+        431
+      ]
+    },
+    {
+      "start": 3107.262,
+      "end": 3109.582,
+      "text": "这里面其实有很多玩法值得大家探索。",
+      "source_segment_indexes": [
+        432
+      ],
+      "source_segment_ids": [
+        432
+      ]
+    },
+    {
+      "start": 3109.982,
+      "end": 3120.862,
+      "text": "这里面其实也涉及到一个更大的问题啊，就是很多数据它本来也就是公开数据嘛，就是网上的一些资料啊、公开代码啊这些东西，所以这些数据是不是本身就注定了会有污染？",
+      "source_segment_indexes": [
+        433
+      ],
+      "source_segment_ids": [
+        433
+      ]
+    },
+    {
+      "start": 3120.942,
+      "end": 3122.622,
+      "text": "一般是怎么样处理这些情况？",
+      "source_segment_indexes": [
+        434
+      ],
+      "source_segment_ids": [
+        434
+      ]
+    },
+    {
+      "start": 3122.942,
+      "end": 3126.542,
+      "text": "其实最简单的污染，你直接其实问agent它都能找到。",
+      "source_segment_indexes": [
+        435
+      ],
+      "source_segment_ids": [
+        435
+      ]
+    },
+    {
+      "start": 3126.862,
+      "end": 3129.662,
+      "text": "公开数据其实还好检测，我觉得最难的是编造数据。",
+      "source_segment_indexes": [
+        436
+      ],
+      "source_segment_ids": [
+        436
+      ]
+    },
+    {
+      "start": 3130.062,
+      "end": 3139.102,
+      "text": "比如说让你去做一个化学模拟，就他根本就没有跑过这个任务，他自己编了一套似是而非的东西，你没有个几个月根本查不出来这个问题，因为它看上去很真。",
+      "source_segment_indexes": [
+        437
+      ],
+      "source_segment_ids": [
+        437
+      ]
+    },
+    {
+      "start": 3139.582,
+      "end": 3140.542,
+      "text": "什么时候能发现这个问题？",
+      "source_segment_indexes": [
+        438
+      ],
+      "source_segment_ids": [
+        438
+      ]
+    },
+    {
+      "start": 3140.622,
+      "end": 3149.422,
+      "text": "当所有的agent它的能力基本上远超这个问题本身的时候，他发现所有的答案他们都是做出来是一样的，但是跟这个真实答案是不一致，这个时候就我们就会查出问题。",
+      "source_segment_indexes": [
+        439
+      ],
+      "source_segment_ids": [
+        439
+      ]
+    },
+    {
+      "start": 3149.822,
+      "end": 3151.022,
+      "text": "但这个周期会非常长。",
+      "source_segment_indexes": [
+        440
+      ],
+      "source_segment_ids": [
+        440
+      ]
+    },
+    {
+      "start": 3151.342,
+      "end": 3158.782,
+      "text": "但是你让另外一个专家去验证这个问题，它成本又非常非常高，因为它本身这个问题它都是要专家花一个多礼拜或者两个礼拜才能做出来。",
+      "source_segment_indexes": [
+        441
+      ],
+      "source_segment_ids": [
+        441
+      ]
+    },
+    {
+      "start": 3158.942,
+      "end": 3166.702,
+      "text": "对，然后那个验证的专家你要保证他，验证的专家他本身也会为了一些东西偷奸耍滑，说这个东西哎，它就是对的。",
+      "source_segment_indexes": [
+        442
+      ],
+      "source_segment_ids": [
+        442
+      ]
+    },
+    {
+      "start": 3166.782,
+      "end": 3169.342,
+      "text": "所以每个涉及到专家评测都会有这个问题吗？",
+      "source_segment_indexes": [
+        443
+      ],
+      "source_segment_ids": [
+        443
+      ]
+    },
+    {
+      "start": 3169.422,
+      "end": 3170.062,
+      "text": "对，都会有。",
+      "source_segment_indexes": [
+        444
+      ],
+      "source_segment_ids": [
+        444
+      ]
+    },
+    {
+      "start": 3170.222,
+      "end": 3171.662,
+      "text": "众包的benchmark为什么难做？",
+      "source_segment_indexes": [
+        445
+      ],
+      "source_segment_ids": [
+        445
+      ]
+    },
+    {
+      "start": 3171.662,
+      "end": 3173.742,
+      "text": "就是难做在这里，人性是非常复杂的。",
+      "source_segment_indexes": [
+        446
+      ],
+      "source_segment_ids": [
+        446
+      ]
+    },
+    {
+      "start": 3173.822,
+      "end": 3178.862,
+      "text": "是，我觉得这里它可能甚至验证是一环，我自己觉得确实在奖励机制上。",
+      "source_segment_indexes": [
+        447
+      ],
+      "source_segment_ids": [
+        447
+      ]
+    },
+    {
+      "start": 3179.022,
+      "end": 3183.182,
+      "text": "比如说，如果你就让他在那老老实实待着做十二个小时，对吧？",
+      "source_segment_indexes": [
+        448
+      ],
+      "source_segment_ids": [
+        448
+      ]
+    },
+    {
+      "start": 3183.182,
+      "end": 3191.262,
+      "text": "就你给我核假假数据，你也要把每一步都给我交出来，要求你必须做这么多的动作，那他可能就没有那么大的动机给你核假数据了。",
+      "source_segment_indexes": [
+        449
+      ],
+      "source_segment_ids": [
+        449
+      ]
+    },
+    {
+      "start": 3191.982,
+      "end": 3194.382,
+      "text": "这些是比较值得研究的方向。",
+      "source_segment_indexes": [
+        450
+      ],
+      "source_segment_ids": [
+        450
+      ]
+    },
+    {
+      "start": 3194.782,
+      "end": 3196.062,
+      "text": "嗯，很有意思。",
+      "source_segment_indexes": [
+        451
+      ],
+      "source_segment_ids": [
+        451
+      ]
+    },
+    {
+      "start": 3196.462,
+      "end": 3202.462,
+      "text": "其实我本来是想问一下真实工作流的数据，但是听下来大家现在还是在卷coding数据是吗？",
+      "source_segment_indexes": [
+        452
+      ],
+      "source_segment_ids": [
+        452
+      ]
+    },
+    {
+      "start": 3202.622,
+      "end": 3204.462,
+      "text": "就不是在做真的workflow？",
+      "source_segment_indexes": [
+        453
+      ],
+      "source_segment_ids": [
+        453
+      ]
+    },
+    {
+      "start": 3204.702,
+      "end": 3212.462,
+      "text": "因为我理解是，比如说像McQuar这样的公司，就是有在卖一些真的workflow的数据，但是听起来coding现在还是这个赛道最卷的。",
+      "source_segment_indexes": [
+        454
+      ],
+      "source_segment_ids": [
+        454
+      ]
+    },
+    {
+      "start": 3212.782,
+      "end": 3214.782,
+      "text": "其实你怎么定义真实工作流的数据？",
+      "source_segment_indexes": [
+        455
+      ],
+      "source_segment_ids": [
+        455
+      ]
+    },
+    {
+      "start": 3214.782,
+      "end": 3218.462,
+      "text": "就真实工作流的数据本质上它都能够被划归到一个coding的问题。",
+      "source_segment_indexes": [
+        456
+      ],
+      "source_segment_ids": [
+        456
+      ]
+    },
+    {
+      "start": 3218.942,
+      "end": 3225.262,
+      "text": "就是比如说对3D建模这个问题，其实有很多，比如说FreeCAD什么，它都是提供了现成的API让你去做这个事情的。",
+      "source_segment_indexes": [
+        457
+      ],
+      "source_segment_ids": [
+        457
+      ]
+    },
+    {
+      "start": 3225.742,
+      "end": 3232.462,
+      "text": "就是这不是传统意义上的coding，就是让你去写一段代码去解一个lead code的这种coding题，它是用coding去解决真实workflow。",
+      "source_segment_indexes": [
+        458
+      ],
+      "source_segment_ids": [
+        458
+      ]
+    },
+    {
+      "start": 3232.782,
+      "end": 3239.982,
+      "text": "所以说只要有足够的MCP API调用，它其实本质上百分之九十五以上的它任务都能够被划归到coding的问题上来。",
+      "source_segment_indexes": [
+        459
+      ],
+      "source_segment_ids": [
+        459
+      ]
+    },
+    {
+      "start": 3240.622,
+      "end": 3251.022,
+      "text": "对，就是可能有一些小的，可以看它这个task本身是要的什么东西，它涉及到的一些环节是什么，能把它归结到不同领域的工作流上去。",
+      "source_segment_indexes": [
+        460
+      ],
+      "source_segment_ids": [
+        460
+      ]
+    },
+    {
+      "start": 3251.182,
+      "end": 3259.662,
+      "text": "但是就我从Eo说的，现在因为你让agent来做事情，代码就是它的手跟脚嘛，所以它其实归根结底coding肯定是其中的一环。",
+      "source_segment_indexes": [
+        461
+      ],
+      "source_segment_ids": [
+        461
+      ]
+    },
+    {
+      "start": 3260.222,
+      "end": 3261.262,
+      "text": "嗯，明白。",
+      "source_segment_indexes": [
+        462
+      ],
+      "source_segment_ids": [
+        462
+      ]
+    },
+    {
+      "start": 3261.582,
+      "end": 3273.342,
+      "text": "你们觉得在私有数据需求依然很大的情况下，未来的数据公司会不会从卷采购本身变成卷并购，就是去收购一些垂直领域的公司？",
+      "source_segment_indexes": [
+        463
+      ],
+      "source_segment_ids": [
+        463
+      ]
+    },
+    {
+      "start": 3273.662,
+      "end": 3275.102,
+      "text": "对，不评论Scale AI。",
+      "source_segment_indexes": [
+        464
+      ],
+      "source_segment_ids": [
+        464
+      ]
+    },
+    {
+      "start": 3275.582,
+      "end": 3288.862,
+      "text": "我是听说有一块很大的private equity business，就是说以前大家是flip公司嘛，现在flip公司的一个新的方式就是说我买的这个公司，然后我用AI让它提效，把一些人裁了，之后呢把这个公司的价值做上去，再把它卖了。",
+      "source_segment_indexes": [
+        465
+      ],
+      "source_segment_ids": [
+        465
+      ]
+    },
+    {
+      "start": 3289.262,
+      "end": 3311.262,
+      "text": "现在就多了一层，就是除了我买这个公司可以帮它重组打包用AI提效之外呢，我还能把它的数据发掘出来，它的数据还能卖一些钱，所以就是让这些整个买公司的行业又多了一个玩法，就很自然的大家就是数商或者就传统做private equity的公司也在看这个数据怎么能够卖钱，然后就兴起了一整个领域。",
+      "source_segment_indexes": [
+        466
+      ],
+      "source_segment_ids": [
+        466
+      ]
+    },
+    {
+      "start": 3311.342,
+      "end": 3324.702,
+      "text": "我甚至觉得说，如果真的未来比如说五年、十年还是这个速度发展，大家还没有遇到瓶颈的话，把各个行业的东西都给拿出来，可能这个东西跟大模型本身就是世界上最大的两个行业。",
+      "source_segment_indexes": [
+        467
+      ],
+      "source_segment_ids": [
+        467
+      ]
+    },
+    {
+      "start": 3324.782,
+      "end": 3329.502,
+      "text": "当然这是比较极端的，这个AI多misuse可能会导出这么一个事件。",
+      "source_segment_indexes": [
+        468
+      ],
+      "source_segment_ids": [
+        468
+      ]
+    },
+    {
+      "start": 3329.742,
+      "end": 3330.702,
+      "text": "嗯，是的。",
+      "source_segment_indexes": [
+        469
+      ],
+      "source_segment_ids": [
+        469
+      ]
+    },
+    {
+      "start": 3330.702,
+      "end": 3338.622,
+      "text": "但是听起来其实数据行业本身也是在变化的非常快，因为就像我们刚才提到从这个Rubric Data叫RL环境的这样一个变化。",
+      "source_segment_indexes": [
+        470
+      ],
+      "source_segment_ids": [
+        470
+      ]
+    },
+    {
+      "start": 3339.022,
+      "end": 3344.222,
+      "text": "所以有什么信号会让你觉得有某一个领域或者某一个赛道它可以持续的增长吗？",
+      "source_segment_indexes": [
+        471
+      ],
+      "source_segment_ids": [
+        471
+      ]
+    },
+    {
+      "start": 3344.566,
+      "end": 3348.886,
+      "text": "哦，我会觉得，就首先还有很多没有解决的问题，机会还是很多的。",
+      "source_segment_indexes": [
+        472
+      ],
+      "source_segment_ids": [
+        472
+      ]
+    },
+    {
+      "start": 3349.206,
+      "end": 3353.366,
+      "text": "另外一方面，有越来越多的玩家进来了，比如说每年都有很多新的 new lab。",
+      "source_segment_indexes": [
+        473
+      ],
+      "source_segment_ids": [
+        473
+      ]
+    },
+    {
+      "start": 3353.526,
+      "end": 3356.726,
+      "text": "资本市场还是以这个方式运作的话，就这个饼是越来越大的。",
+      "source_segment_indexes": [
+        474
+      ],
+      "source_segment_ids": [
+        474
+      ]
+    },
+    {
+      "start": 3357.286,
+      "end": 3362.086,
+      "text": "但是这个数据变化很快，不太像是一个我可以躺在一个地方一直吃老本的生意。",
+      "source_segment_indexes": [
+        475
+      ],
+      "source_segment_ids": [
+        475
+      ]
+    },
+    {
+      "start": 3362.246,
+      "end": 3367.286,
+      "text": "树商要疯狂的迭代自己，那么最后可能是拼大家的 R N D 的能力。",
+      "source_segment_indexes": [
+        476
+      ],
+      "source_segment_ids": [
+        476
+      ]
+    },
+    {
+      "start": 3367.286,
+      "end": 3375.286,
+      "text": "那或者说谁能把这个 R N D 的这个能力本身固化，做成一个 flywheel，我有一个流水线可以一直在发掘新的东西。",
+      "source_segment_indexes": [
+        477
+      ],
+      "source_segment_ids": [
+        477
+      ]
+    },
+    {
+      "start": 3375.366,
+      "end": 3377.046,
+      "text": "也许这个是未来最大的优势。",
+      "source_segment_indexes": [
+        478
+      ],
+      "source_segment_ids": [
+        478
+      ]
+    },
+    {
+      "start": 3377.046,
+      "end": 3380.726,
+      "text": "但是就从业上来说，我会觉得现在是百花齐放吧，未来机会还很多。",
+      "source_segment_indexes": [
+        479
+      ],
+      "source_segment_ids": [
+        479
+      ]
+    },
+    {
+      "start": 3381.206,
+      "end": 3394.166,
+      "text": "这我也也是从一些地方听说，就是树商的它估值空间一般没有传统的这个公司来的大，就是因为它很难把这个杠杆保持住，然后让你以很轻松的方式，在一个积累了用户量情况下，就能躺在那里吃老本挣钱。",
+      "source_segment_indexes": [
+        480
+      ],
+      "source_segment_ids": [
+        480
+      ]
+    },
+    {
+      "start": 3394.726,
+      "end": 3399.446,
+      "text": "就像 Facebook 啊 Google 的一些生物一样，它已经有积累大量用户，它就能躺在这些 app 上赚钱。",
+      "source_segment_indexes": [
+        481
+      ],
+      "source_segment_ids": [
+        481
+      ]
+    },
+    {
+      "start": 3399.446,
+      "end": 3405.926,
+      "text": "但树商生意，领导者必须持续的去思考下一步在哪里，持续去迭代，因为模型迭代速度太恐怖了。",
+      "source_segment_indexes": [
+        482
+      ],
+      "source_segment_ids": [
+        482
+      ]
+    },
+    {
+      "start": 3406.326,
+      "end": 3410.486,
+      "text": "嗯，你觉得你们现在在做 A L E 二点零的时候最难的是什么？",
+      "source_segment_indexes": [
+        483
+      ],
+      "source_segment_ids": [
+        483
+      ]
+    },
+    {
+      "start": 3410.806,
+      "end": 3416.886,
+      "text": "我觉得学术上相对容易一些的，比他们 scale 在做商业上，因为他们给我们的数据很多都是无偿的。",
+      "source_segment_indexes": [
+        484
+      ],
+      "source_segment_ids": [
+        484
+      ]
+    },
+    {
+      "start": 3417.686,
+      "end": 3430.006,
+      "text": "但是我能够想象的出，我如果是一家树商，要去收这个数据，它这些都是天文数字，就那些收上来的原始项目和代码，而且很难找到一个很好的奖励机制，让这些专家能够自愿的把这个交上来。",
+      "source_segment_indexes": [
+        485
+      ],
+      "source_segment_ids": [
+        485
+      ]
+    },
+    {
+      "start": 3430.406,
+      "end": 3442.646,
+      "text": "我拿 Mercury 他们官网上的给专家的一个小时的那个价格来算，就说制造业的工程师大概是可能一两百刀一个小时，这种价格就限定了，它不可能招到特别特别高级的工程师。",
+      "source_segment_indexes": [
+        486
+      ],
+      "source_segment_ids": [
+        486
+      ]
+    },
+    {
+      "start": 3443.126,
+      "end": 3444.406,
+      "text": "但是为什么学术界好做？",
+      "source_segment_indexes": [
+        487
+      ],
+      "source_segment_ids": [
+        487
+      ]
+    },
+    {
+      "start": 3444.406,
+      "end": 3453.766,
+      "text": "因为我们能够自然而然吸引到一些这种级别的人来帮我们收集数据，因为因为他们不求钱，他们图的是大家一起把这个事情做好，图的是个名。",
+      "source_segment_indexes": [
+        488
+      ],
+      "source_segment_ids": [
+        488
+      ]
+    },
+    {
+      "start": 3453.846,
+      "end": 3458.486,
+      "text": "所以说这个奖励机制不一样，就导致能吸引到的人不一样，你的上游是不一样。",
+      "source_segment_indexes": [
+        489
+      ],
+      "source_segment_ids": [
+        489
+      ]
+    },
+    {
+      "start": 3458.966,
+      "end": 3460.086,
+      "text": "OK，很有意思。",
+      "source_segment_indexes": [
+        490
+      ],
+      "source_segment_ids": [
+        490
+      ]
+    },
+    {
+      "start": 3460.406,
+      "end": 3462.086,
+      "text": "好呀，那我们就到这里结束吧。",
+      "source_segment_indexes": [
+        491
+      ],
+      "source_segment_ids": [
+        491
+      ]
+    },
+    {
+      "start": 3462.166,
+      "end": 3464.086,
+      "text": "谢谢尹中，谢谢叶欧参加我们的节目。",
+      "source_segment_indexes": [
+        492
+      ],
+      "source_segment_ids": [
+        492
+      ]
+    },
+    {
+      "start": 3464.166,
+      "end": 3465.606,
+      "text": "谢谢叶文，谢谢谢谢。",
+      "source_segment_indexes": [
+        493
+      ],
+      "source_segment_ids": [
+        493
+      ]
+    },
+    {
+      "start": 3470.086,
+      "end": 3472.646,
+      "text": "好啦，以上就是我们这期播客的全部内容了。",
+      "source_segment_indexes": [
+        494
+      ],
+      "source_segment_ids": [
+        494
+      ]
+    },
+    {
+      "start": 3472.646,
+      "end": 3474.566,
+      "text": "谢谢大家，我们下次再见啦。",
+      "source_segment_indexes": [
+        495
+      ],
+      "source_segment_ids": [
+        495
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 0.08,
+      "end": 25.92,
+      "text": "通常构造这个benchmark的人呢，对于这一块的领域可能认识比较深，那么就自然会给他一定卖数据的权威性，大家会比较相信你手上卖的数据，这个生意就这么产生了。你去刷分，但你只要刷的是有益的分，是有益的题，那它模型带来的提升，对于人的日常工作来说就是实打实的提升。节目开始之前呢，跟大家分享一个我们硅谷幺零幺即将在湾区举办的黑客松活动。",
+      "refined_segment_indexes": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "start": 26.32,
+      "end": 59.52,
+      "text": "今年硅谷幺零幺将在我们的年度活动Alignment二零二六上举办Story一零一Lab AI视频创作挑战赛，让影视创作者和AI科学家们在现场一起探索AI到底能给讲故事带来哪些新的可能。无论你是已经在用AI拍片的专业团队啊，还是想要尝试的新手，都欢迎参加。比赛设有探索组和专业组，我们也会提供免费的workshop培训。优胜作品呢还有机会赢得丰厚的奖金，并在千人线下活动中展映。",
+      "refined_segment_indexes": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "start": 60.08,
+      "end": 84.08,
+      "text": "活动时间是十月十号到十一号，地点在Sunnyvale的Plug and Play Tech Center。报名链接呢我们已经放在本期节目的show notes里面了。另外啊，我们Alignment二零二六的活动本身的报名呢也在持续进行当中。这次我们邀请了来自OpenAI、英伟达、Milo Ventures、Cerebras等等公司和机构的嘉宾，期待在线下和大家对话。",
+      "refined_segment_indexes": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "start": 87.12,
+      "end": 117.84,
+      "text": "Hello，大家好，欢迎回到硅谷幺零幺，我是易文。很多投资人呢在和我们聊天的时候啊，都提到了他们最近很关注的一个赛道，那就是数据。随着模型能力的不断提升，模型公司对训练数据的需求也变得越来越复杂，越来越具体。硅谷因此出现了一批增长很快的数据公司，专门为这些模型公司提供服务。比如由三名二十多岁的年轻人创办的After Query，今年四月宣布A轮融资的时候，估值还是三亿美元。",
+      "refined_segment_indexes": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "start": 118.24,
+      "end": 151.2,
+      "text": "到了九月呢，新一轮融资就已经把它的估值推到了三十二亿美元，不到半年啊涨到了十倍之多，创下了YC旗下公司从启动到成为独角兽的最快纪录。那我们更熟悉的几家大型数据公司呢，估值也已经达到了百亿美元的级别。去年Meta入股Scale AI的时候给出的估值超过二百九十亿美元。McQuar去年十月这轮融资的估值啊也达到了一百亿美元。但这些高估值背后的数据生意到底是怎么做的，外界其实很难看清。",
+      "refined_segment_indexes": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "start": 151.6,
+      "end": 184.72,
+      "text": "所以啊，我也很好奇这些公司究竟在卖什么，模型公司又为什么愿意给那么多钱呢？过去提到数据标注，大家很容易想到给图片打标签，给模型的回答打分这些人工标注。现在啊，数据公司还需要请来各类行业专家，把他们的知识和工作经验转化成AI可以学习的任务。其中一类重要的数据是请专家写清楚一个回答，一份工作成果到底满足哪些条件才算好。这套评分标准也就是我们经常听到的Rubric。",
+      "refined_segment_indexes": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "start": 185.28,
+      "end": 218.64,
+      "text": "再往前一步啊，数据公司还要搭出让AI实际动手的环境，配上任务、工具和反馈机制，让它在里面操作软件，反复尝试，并且根据结果学习。这就是强化学习环境，也就是我们经常听到的RL environment。与此同时呢，新的AI评测也层出不穷，从金融、法律等等垂直领域到让Agent完成一整套工作流程，模型要参加的考试是越来越多了。但榜单上的分数提高了，究竟代表哪些能力变强了呢？",
+      "refined_segment_indexes": [
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "start": 219.12,
+      "end": 246.269,
+      "text": "针对榜单做优化，什么时候会让模型更好用？什么时候又会变成单纯的刷分行为？这期播客啊，我们就想把这些问题聊清楚。我请来了两位非常适合聊数据这个话题的嘉宾，分别是在Scale AI负责后训练和评测研究的何允中，以及加州大学伯克利分校的博士后。Agents Last Exam项目的研究者孙易游，以下就是我们的对话。",
+      "refined_segment_indexes": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "start": 250.109,
+      "end": 280.189,
+      "text": "Hello，允中，Hello，易游，欢迎来到硅谷幺零幺，大家介绍一下自己吧。OK，我叫允中，现在在Scale负责Post Training和Eval Research。大部分人关注我们，可能是看我们发布的这个Benchmark，还有一些RL Data Recipe的文章，但是实际上我们其实也是给整个大模型行业提供数据，还有一些方法论的支持吧，有一点像整个行业的一个外包数据Research团队。观点都是个人观点，不代表Scale AI，也跟客户没有关系。",
+      "refined_segment_indexes": [
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "start": 280.669,
+      "end": 311.629,
+      "text": "谢谢允中，我是易游，我现在在U C Berkeley读Post Doc，现在关注的也是Agent Evaluation这个方向。我们最近推出的工作就是一个Agents Last Exam，目标是构建于迄今为止规模最大、覆盖面最广的智能体评测基准，是由Berkeley R D I和三百多位行业专家共同领导和牵头的，是希望能够衡量智能体在有可验证结果的长期啊具备经济价值任务中的一些表现。目前的话，公开的任务大概有一百五十多个，覆盖了五十多个细分的行业。",
+      "refined_segment_indexes": [
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "start": 312.429,
+      "end": 333.069,
+      "text": "然后我们目标在下一次发布中直接放出一千多个任务，在每个领域上做的更深一些。我们可能几个月内就会发布V two的版本。呃，允中要不要给我们讲一下现在市面上的因为也有林林总总的数据公司嘛？你觉得大致的一个分类是什么样的？对，这里面有几个大的玩家，还有一些新秀，有一些几个人的Shop。",
+      "refined_segment_indexes": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "start": 333.389,
+      "end": 362.829,
+      "text": "在我看来最有意思的是大家基因可能不太一样，比如说有做招聘出身的，像是什么McQuarre Handshake，Scale是这种传统书商，从众包网络出身的，然后也有一些新的是做合成的，还有在最新的一些呢，可能是某一些领域公司转行做数据了。这里面值得说一下是这个巨深，巨深现在的这个行业状况是有很多做模型的公司暂时没赚到钱，但是他花了很大量的精力投资做素材，然后就顺便做起了素材生意。",
+      "refined_segment_indexes": [
+        47,
+        48
+      ]
+    },
+    {
+      "start": 363.069,
+      "end": 391.149,
+      "text": "很多各个行各业的人也发现了自己的数据的价值，然后转行来做这么一个数据公司。我觉得大致有这么几个分类吧，几个大的玩家，比如说像是McQuarre Search Scale基本上试图什么东西都能cover。除此之外，其实一些新秀玩家把一些领域做的比较好的，像是什么Bespoke或者Snorkel，他们可能是比较偏Research跟Engineering一点的。我猜测他们主要生产代码或者是脱靠这一类的环境，就是抓住了今年的这么一个风口。",
+      "refined_segment_indexes": [
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "start": 391.549,
+      "end": 423.949,
+      "text": "另外我还看到一些小的公司，他们可能是解决了一些垂直领域的问题，甚至他们可能不像我们是做标注数据的，就是一些Broken，比如说可能是好莱坞的一个人，他有特别多的版权数据，他知道怎么把这东西卖出去，就是有林林总总的不同领域的东西。然后现在可能在最新兴起的就是做这些垂直领域，把一个领域做的特别好，可能是有一些领域的专家组成的，大概是这么几个分类吧。我会觉得说机会还很多，大的书商有大的书商的优势，就是想进入一个领域有比较多的资源。我觉得整个饼是越来越大。",
+      "refined_segment_indexes": [
+        53,
+        54,
+        55,
+        56
+      ]
+    },
+    {
+      "start": 424.349,
+      "end": 452.189,
+      "text": "你讲到说像McQuarre Search这样的公司是所谓的招聘公司，这个能不能再给我们具体讲一下招聘是一个什么样的商业模式？呃，Search应该不是，但是McQuarre他是做招聘起家的，他有自己的一个自动AI面试的这么一些产品吧。他可能自己主打的一个重点就是说我能够在比较短的时间内找到足够量的专家，有这么一个专家网络。然后Search我觉得更多的是把这个东西In House，这里反正有一些取舍吧。",
+      "refined_segment_indexes": [
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    {
+      "start": 452.189,
+      "end": 485.618,
+      "text": "基本上每个书商可能都需要面临这么一些取舍，就是说如果我是自己完全全职培养的人，那他肯定能力强一点，但是这个灵活度就不够，产能可能会差一点。如果是更多的依靠众包的网络，那么可能我的灵活性大一点，但是就是每个人的质量就比较难保障。然后这里面就涉及到一些质检的问题了，比如说像Scale这些公司的一些优势就是说我们有一些质检的经验，不光是在数据上，也在人上。尹中要不要讲一下你是什么时候加入Scale的？在当时到现在整个市场，你觉得对于数据的需求有发生什么变化吗？",
+      "refined_segment_indexes": [
+        61,
+        62,
+        63,
+        64,
+        65
+      ]
+    },
+    {
+      "start": 485.858,
+      "end": 516.498,
+      "text": "对，故事还挺好玩的。当时我是在Meta入股之前签的Offer，我一到人就走了，所以我经历了整个大模型行业开始，不管从人才的战争，还有薪酬体系都开始go crazy的这么一个故事。当时我来之前，我的老板刘冰跟我说，有这么一个技术，各个lab都在做，但每个人都做的不太一样，说你赶紧进来，我这个能跟你讲，然后我们在这里好好做些研究。然后我来了，那个时候是rubric data，那个时候还比较新，可能一年多之前吧。",
+      "refined_segment_indexes": [
+        66,
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "start": 516.978,
+      "end": 545.058,
+      "text": "现在rubric感觉已经过时了，大家都在讲RL environment各种各样的东西，就是这一年确实经历了非常多的变化。其实我们关注这个话题也是因为大概从二零二四年到现在，感觉整个对于数据的一个需求发生了一个比较大的变化哈。因为二四年之前我们在聊数据的时候，大家想到的很多还是人工标注，就是一些比较基础的数据吧。我们会需要非常多的数据来做pretrain来训练模型。",
+      "refined_segment_indexes": [
+        70,
+        71,
+        72,
+        73
+      ]
+    },
+    {
+      "start": 545.378,
+      "end": 570.738,
+      "text": "但是从二零二四年，呃，其实McQuarrie之前有提到过，是因为DeepSearch的兴起，导致整个行业转移到了一个所谓的agentic data。我们会需要像你刚刚说的rubric，然后包括RL环境啊，现在就是更多真实工作流数据，能不能帮我们先梳理一下这几个概念吧？我们先讲一下这个行业从crowdsourcing data，就是这些人工标注数据到agentic数据这个中间是经历了一个什么样的变化？",
+      "refined_segment_indexes": [
+        74,
+        75,
+        76
+      ]
+    },
+    {
+      "start": 571.058,
+      "end": 602.818,
+      "text": "啊，对，首先说明一下pretraining还是很重要的，不过就确实从我身边的人的兴趣来说，大家经历了一个shift，大家觉得pretraining感觉干的有点无聊了，就是再继续scale调数据配比。那个时候是O系列模型出来了，大家都在做reasoning，发现这RL跑通了嘛，一下子大家兴趣都在RL上。然后RL比较有意思的一个问题就是说，我需要一个可验证的信号，可验证的信号在代码或者数学，尤其是最早的推理模型是从数学上做出来，就很简单，我这个选择题答错答对了就知道了，或者就是一个数字算出来。",
+      "refined_segment_indexes": [
+        77,
+        78,
+        79
+      ]
+    },
+    {
+      "start": 603.378,
+      "end": 623.778,
+      "text": "但是之后大家就在想说，那我数学可以做RL了，我在其他领域呢，比如说像是这些什么医疗、金融，或者就是更基础的指令遵循，这里我能不能做RL？这里它存在的一个问题就是说，它是有一些客观标答的，不像在之前的一个阶段，大家做RLHF就是reward model，可能没什么标答，只是把大家的喜好学出来。",
+      "refined_segment_indexes": [
+        80,
+        81
+      ]
+    },
+    {
+      "start": 624.018,
+      "end": 655.618,
+      "text": "然后这里面其实就有一个标答，只是它这个标答它比较不结构化，就好像我去答这个历史考题，历史考题是有标答的，但是呢，每个人的写法可能都不太一样，就我很难做这个pattern match，就是说A B C D检查你有没有答对，这个时候就是一个rubric方式，相当于我让一个TA拿着教授写的打分规则来给你打分。然后因为这个打分规则是提前标好的，是教授写的，所以这个TA也不需要特别聪明。这是整个大模型数据中的一个核心概念，就是叫weak to strong supervision，就是我能不能用弱模型来监督强模型？",
+      "refined_segment_indexes": [
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "start": 656.098,
+      "end": 685.378,
+      "text": "那它这里成立的条件就是说我有个专家把他脑海里的知识给写下来了，这样弱的模型拿着他改卷子就行了。这就是rubric data，这个东西应该是火了很长一段时间，当然现在还很重要。但是这里面很快就把各个专家领域的rubric，而且比较容易获得的收集的比较干净了。看到比如说像McQuarrie或者Search的崛起，其实跟这一块的专家rubric有关系。但是再往前走呢，就大家需要动手了。比如说现在做这种代码模型，或者像Deepo他们做的ALE，虽然它不是做代码，但它需要动手，要解各种各样的问题。",
+      "refined_segment_indexes": [
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ]
+    },
+    {
+      "start": 685.778,
+      "end": 715.378,
+      "text": "这个时候呢，它就不再是说我只是验证你一个聊天的输出了，那我需要是在一个A卷子的这个setting之下，那我可能需要给他一些工具，还有一些更复杂的验证方式，它还包含了rubric，但是可能我需要一些检查这个环境里面的变量是不是执行了，这个数据库是不是写入了或者被删除了，甚至如果像是我生成一些文档，里面可能有些图，这个东西我还是需要rubric，但是我需要一个A卷子来检查，就变得更加多样了。现在可能大家追求的比较大的一个方向就是环境。",
+      "refined_segment_indexes": [
+        91,
+        92,
+        93
+      ]
+    },
+    {
+      "start": 715.693,
+      "end": 742.653,
+      "text": "它不光是我标注好的一些打分规则了，而是说我可能包含了一整套我要做什么，在什么样的环境里面做，包括了它需要的一些工具，需要执行的一些沙盒，以及还有一套跟 task 比较相关的验证方式。验证方式非常的多样，比如说有这种 programmatic check，有这种 rubric，还有 preference，我让人选我比较喜欢哪一种。这里面我暂时还没有形成特别大的共识。我又看到有点像当年 rubric，时代每家要的东西都不一样。",
+      "refined_segment_indexes": [
+        94,
+        95,
+        96,
+        97
+      ]
+    },
+    {
+      "start": 742.973,
+      "end": 769.613,
+      "text": "就比如说像什么 terminal bench，他们就不要 rubric，他们就是纯 programmatic。这里面又有不同的流派，还挺有意思的。哎，这个很有意思。EO，你要不要从 ALE 的具体的例子来跟我们讲一下需要哪些要素？其实我跟云中的看法其实有一点反过来了，就是云中认为现在 rubric 差不多已经做到头了。但我的看法是，我觉得 rubric 这一块意思专家那种主观的判断题，其实还做的远远不够。我可以先从 ALE 的初衷讲一下。",
+      "refined_segment_indexes": [
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "start": 770.013,
+      "end": 790.893,
+      "text": "ALE 当时建立的初衷就是跟云中讲的一样，就是我们怎么样把 web coding 迅速发展的这个趋势推广到 web everything。当时 web coding 为什么发展那么快？就是因为当时有非常非常多的 benchmark 都在 coding 这个领域，而且 coding 它比较容易 verify，它是一个确定性的 rubrics。大家为了刷这个榜，所以在 coding 这上面的发展非常迅猛。",
+      "refined_segment_indexes": [
+        105,
+        106,
+        107,
+        108
+      ]
+    },
+    {
+      "start": 791.373,
+      "end": 824.413,
+      "text": "那么用同样的思路呢，我们如果在其他的各个领域上，尤其是工程能够客观打分的这些领域上，能够建立各种各样的这样评测体系，你去刷分，但你只要刷的是有益的分，是有益的题，那它模型带来的提升，对于人的日常工作来说就是实打实的提升。所以这就是我们当时想建立一个这样的初衷。当然，世界上大家职业各式各样，实在是太多了，浩如烟海。所以我们只是说在第一个版本里面给出了一个相对来说覆盖面比较广的初次的一个尝试。然后我们还会继续努力，希望把这个覆盖的更广一些。",
+      "refined_segment_indexes": [
+        109,
+        110,
+        111,
+        112,
+        113
+      ]
+    },
+    {
+      "start": 824.733,
+      "end": 855.053,
+      "text": "到某一天，希望它能成为真正的 last exam。就当你解决这个 benchmark 的时候，基本上就能解决人类社会在某些领域的真正的有益的问题。我同意 EO 的观点，各个领域的训练肯定是远远没有到头的。然后很多东西都可能还没有被 rubric 的方式表征出来，所以这里面还有很大的空间。可能我刚刚说 rubric 到头了，更多的是个行业趋势吧。就这种静态的单轮或者多轮聊天出一个文本，然后用 rubric 来检查它，就是纯知识类的，甚至也不是说到头了，因为毕竟还有不同的 lab，每家的水平都不一样。",
+      "refined_segment_indexes": [
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ]
+    },
+    {
+      "start": 855.373,
+      "end": 888.813,
+      "text": "只是说今年的一个大趋势是在做这个 coding，然后 coding 逐渐转向了 analogy work，大家要动手了。这个时候呢，就是纯这种文本的 rubric，我看到需求量小了一点，但还是很大，还是有很多东西没解决。就云中刚才提到了，对于很多这种文本式的输出，就说它这个文章写的好不好，你可能有些这样打分的点。但是事实上，对于工程领域的一些产出，其实有很多的评测，我们确实发现了，除非你把输入固定的特别死，不然它的输出其实有非常非常多的可能性。我举个例子，你让它生成一个游戏，甚至有些数学解法它都不是唯一的。",
+      "refined_segment_indexes": [
+        120,
+        121,
+        122,
+        123,
+        124
+      ]
+    },
+    {
+      "start": 889.133,
+      "end": 920.173,
+      "text": "那这种情况下，如果你给一个确定性的评判，就是你一定要跟你这个 ground truth 来对比，那很多时候就会造成不一致的这个问题。所以说，很多时候说我们怎么样定义这个 rubric，让它能够兼容这种多式多样的输出，其实这也是我们在构建 benchmark 中遇到的问题啊，也是未来想要去思考解决的一个方向。稍微抛砖引玉一下，我的一个想法就是未来的这个发展趋势可能会，比如说人类他对于一些好玩、好看，他没有办法把它固化下来，成为一个可以被量化的一个指标。",
+      "refined_segment_indexes": [
+        125,
+        126,
+        127
+      ]
+    },
+    {
+      "start": 920.493,
+      "end": 954.663,
+      "text": "比如游戏好不好玩，但实际上有些游戏的入门教科书里其实是有各种各样的评判的方式，比如说它那个奖励曲线是不是平滑，符合大脑的那个多巴胺的，它意思就是有科学的指标可以去量化这个好玩和好看这个东西。但我目前在现在的这 benchmark 上，我还没有看到一个做的特别完整的公开出来的评测体系，因为这个东西难度也确实非常高，因为需要专家的更加更加深度的参与。所以这一点我也想看看云中那边关于在数据公司里有没有看到这一个趋势，或者或者怎么去解决这一类的问题。哦，对这个问题特别好，这也是每天我们在绞尽脑汁的问题。",
+      "refined_segment_indexes": [
+        128,
+        129,
+        130,
+        131
+      ]
+    },
+    {
+      "start": 954.984,
+      "end": 984.024,
+      "text": "其实整个 rubric 或者整个大模型的验证体系，我觉得它整体上是有这么一个思路。大家希望左脚踩右脚，就是当我的模型变强了，我这个验证器也变强了。验证器变强了之后呢，我就可以允许一些更复杂的 rubric。就比如说，如果我是一个很弱的验证器，那么我就只能写一些，就是一个傻子都能看出来，就知道是对还是错的这个 rubric。但是呢，随着这个模型能力的提升，那我的 rubric 就可以写的越来越模糊，可以把更多的知识交给验证器来解决。",
+      "refined_segment_indexes": [
+        132,
+        133,
+        134,
+        135,
+        136
+      ]
+    },
+    {
+      "start": 984.024,
+      "end": 1016.504,
+      "text": "但是我觉得这里总体的一个思路还是说，这个 rubric 加上验证这两块加起来的这个知识和能力，应该比我要训练的模型要多，不然就达不到训练模型的目的了嘛。那么就回到，比如说像这种做 video game 这种特别特别主观的东西，对吧？我觉得未来可能是这样的，你可能很难把它以很显式的条件一条一条写下来，一个好的游戏是怎么样的，那它可能有多种多样的可能，所以这个时候我的 rubric 就会被迫写的更加模糊。这个东西就 by the way，其实不是我们想要的。就通常来说，我们会建议这个 rubric 写的越严谨越好。",
+      "refined_segment_indexes": [
+        137,
+        138,
+        139,
+        140,
+        141
+      ]
+    },
+    {
+      "start": 1016.823,
+      "end": 1042.184,
+      "text": "但是在某一些领域，你可能就必须要写的很模糊。这个时候需要验证的模型来自己做一些主观的判断。那这个验证的模型，我觉得甚至有可能是我要训练一个这个 reward model。我知道，比如说在不少 lab 里面，就但这不是客户透露给我们的东西，是我自己的一些经验。比如说生图，生图它有两个部分，一个是 instruction following，有没有遵循我的这个要求？比如说我图里面有猫有狗，有一个背景板写了哪几个字儿？",
+      "refined_segment_indexes": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147
+      ]
+    },
+    {
+      "start": 1042.504,
+      "end": 1070.343,
+      "text": "这个时候呢，我是会有 rubric，我就写这里要有一只猫，那里有只狗，甚至我跑一下 OCR 把那个字提出来，然后看看是不是我想要的那几个字。就这一块是属于 rubric。但是还有一块呢，就是说这个字要写的好，这个猫要是一只可爱的猫，这种东西呢，就是我可以写成 rubric，但它非常主观。那我可能甚至专门训练一个模型，就这个模型它可能掌握了一些人类的主观体验，这些东西可能跟 rubric 结合在一起。大概率这个问题如果要解决的话，可能是这么一个混合的方向。",
+      "refined_segment_indexes": [
+        148,
+        149,
+        150,
+        151,
+        152
+      ]
+    },
+    {
+      "start": 1070.744,
+      "end": 1104.984,
+      "text": "因为我们刚刚好像把 rubric 和环境这两个事情好像是放在对立面来说的，但是听起来一他们是可以结合在一起使用的。二有没有一些任务是用 rubric 来做会比较好的，或者用环境来做比较好的？我觉得这个肯定是不能拆开来讲的。环境或者说任务数据，它只是一个执行的基准，但是 rubric 是最终用来打分、用来奖励模型做的好还是不好，所以它肯定是相辅相成，又必须结合在一起来看的。我个人更希望去从一个任务分类的一个角度去看，而且人和 agent 这两个角色如何去合作，它分别担任一个什么角色，这也很重要。",
+      "refined_segment_indexes": [
+        153,
+        154,
+        155,
+        156,
+        157
+      ]
+    },
+    {
+      "start": 1105.383,
+      "end": 1134.024,
+      "text": "我们从历史上来看，就是从最早期 Viper 刚出来的时候，就大家用 cursor，其实就是一个人类也是参与在执行这个代码当中的。agent 它只负责执行很小的一一个模块的一些写代码。但后来随着 agent 能力越来越强，agent 就你给他一个非常模糊指令，他能够完成一个非常大的一个 project 的时候，那这个时候人和 agent 的角色又产生了一些变化。那现在可以大致分成这两类，就是人负责决策，agent 负责执行。人把你决策的东西说的越清楚，agent 就能做得更好。",
+      "refined_segment_indexes": [
+        158,
+        159,
+        160,
+        161,
+        162
+      ]
+    },
+    {
+      "start": 1134.343,
+      "end": 1159.863,
+      "text": "基于这两个分类，我们来看 rubric 该如何去设计。如果我们我们需要 agent 参与的角色，它只是执行，就你如果把一个任务说的很清楚，它的输出基本上是固定的、唯一性的，那这个东西 rubric 它就是一个确定性的 rubric。它打分的话，就是完全可以基于一个你自己做出来的一个成品来进行打分，因为一般会有 ground truth 基准数。如果我们咱们讨论未来数据需要什么样去，就是当人的这个决策的这部分会不会也被 agent 所慢慢去取代？",
+      "refined_segment_indexes": [
+        163,
+        164,
+        165,
+        166
+      ]
+    },
+    {
+      "start": 1160.024,
+      "end": 1186.823,
+      "text": "那这一部分就是我觉得会回到之前云中说的，大家现在反而没太重视这些 rubric，因为决策很多是非常模糊，很难去量化。而且云中说，你对于一个具体的 domain，猫可不可爱，你可以 train 一个这样的 verifier。但是对于一个，尤其是一个上市公司一个领导层的一个决策，你该如何去 train 一个 reward？它每天的那个任务都在变，你很难去收集到足够的数据，让你来训练出这样一个 reward model 来替你做这样的决策。",
+      "refined_segment_indexes": [
+        167,
+        168,
+        169,
+        170
+      ]
+    },
+    {
+      "start": 1187.704,
+      "end": 1221.857,
+      "text": "所以我个人认为，在这一块的模型的发展还有很长的路需要去走，而且这可能是会成为一个未来发展趋势。这里有特别同意，就比如说这个 A L E 的这个方案，我觉得就是面向未来。比如说像这个猫可不可爱？比如说我要是在这个 Meta，我有一些用户行为的反馈，我可以训练这个模型。但是公司的决策，我就很难收到这些数据了。比如说像 A L E 这种，就让大家把以往做过的东西还有决策交起来，其实是一个方案。我会觉得以后收数据可能是大家怎么样找到好的激励方式，让大家把一些重要的东西交出来，尽量的能够回溯当时这些重要的决策。",
+      "refined_segment_indexes": [
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177
+      ]
+    },
+    {
+      "start": 1222.257,
+      "end": 1246.577,
+      "text": "非常有意思，我想再追溯一下评测的近几年的整个一个发展，然后以及它和卖数据之间的关系。因为其实我和两位私下都聊过，就是卖 benchmark 和卖数据这两件事情，大家都觉得不能混为一谈嘛。Scale 之前推出了 Humanity Slash Exam，就 H L E 这个评测，能不能给我们讲一下这个评测，然后以及你觉得它和数据之间是怎么样联系起来的？这是个好问题。",
+      "refined_segment_indexes": [
+        178,
+        179,
+        180,
+        181
+      ]
+    },
+    {
+      "start": 1246.657,
+      "end": 1278.257,
+      "text": "我觉得从原理上来说，评测它体现的是模型距离我们想要的理想状态中间的这个 gap，就是它更多的是一个科学研究这么一个基准，就是我想要模型在哪，它现在没到哪。但是这个事情跟卖数据联系起来呢，也比较有意思。因为很多时候它提升这个模型能力的数据和它榜单的评测方式是息息相关的。这里面可能比较难的是找到一个平衡。如果我就生产大量的跟这个榜单差不多的数据，那么它可能就在 benchmarking。",
+      "refined_segment_indexes": [
+        182,
+        183,
+        184,
+        185,
+        186
+      ]
+    },
+    {
+      "start": 1278.737,
+      "end": 1302.897,
+      "text": "但是呢，就是这个大模型训练还是有各种各样的维度。确实，如果我想要提升某一类的能力，我需要抓住某一个维度，那么就是说它跟 benchmark 肯定是有一定的相关性。这个是大家需要找到的一个平衡，因为大家对 A G I 的期待太高了，觉得人能做到的事情它都能做到。那么就是说我在各种各样的领域都可以想到一些方式，构造一个 benchmark，然后发现它这个模型距离理想状态当中还有一些差距。",
+      "refined_segment_indexes": [
+        187,
+        188,
+        189,
+        190
+      ]
+    },
+    {
+      "start": 1303.297,
+      "end": 1333.537,
+      "text": "通常构造这个 benchmark 的人呢，对于这一块的领域可能认识比较深，那么就自然会给他一定卖数据的权威性，大家会比较相信你手上卖的数据，这个生意就这么产生了。我相信 E O 应该也就 A L E 现在做的火的 benchmark 应该也有不少人，像问你卖不卖数据啊，或者是有可能 V C 想找你投资，结果逐渐逐渐的就成了一个生意。我觉得就是也有好有坏吧，就是说这个生态其实也还比较野蛮发展，有多少是在做科学，多少在做 benchmarking，我觉得确实需要仔细权衡一下。",
+      "refined_segment_indexes": [
+        191,
+        192,
+        193
+      ]
+    },
+    {
+      "start": 1333.617,
+      "end": 1362.577,
+      "text": "但是这确实有很多的这个利益驱动，所以现在是一个挺繁荣的市场。对，这里的话我也是要给大家敲个警钟，因为云中提到了现在做 benchmark 的人会受到各种各样的诱惑，就是要去把 benchmark 数据去卖了。我甚至我私下听到是有一些数据公司他踩了这个红线，就是他把自己在做评测的数据去卖。当然这个是大家千万不能碰的一条线，不能让你做的生意然后污染你这个 benchmark 的权威性，不然的话你不仅毁了你的 benchmark，也毁了其他人的模型。",
+      "refined_segment_indexes": [
+        194,
+        195,
+        196,
+        197
+      ]
+    },
+    {
+      "start": 1363.217,
+      "end": 1392.737,
+      "text": "我个人认为 benchmark 和卖数据这两个东西角色是不一样的，在这个生态系统里的地位是不就我认为 benchmark 面向的是未来，做数据面向的是现在。benchmark 是面向于未来，大家还希望这个模型公司去解决什么目前还没有解决的什么问题。其实 A L E，其实我们在今年一月份、二月份做的时候，我们特别害怕 benchmark 做的太难，导致这个 benchmark 失去意义。因为当时的模型很多，基本上平均分只有百分之十到二十，很大部分题目它都是只有拿到了零分。",
+      "refined_segment_indexes": [
+        198,
+        199,
+        200,
+        201
+      ]
+    },
+    {
+      "start": 1392.977,
+      "end": 1407.217,
+      "text": "我们很担心这样的评测它会失去意义，但实际上没有必要担心这个事情，因为 benchmark 本身就是要面向于未来的模型去做的。数据的话，更多是去解决这个 benchmark 所产生的一些需求，所以说更多是现在大家在刷这个榜单，然后怎么样去把这东西做好。",
+      "refined_segment_indexes": [
+        202,
+        203
+      ]
+    },
+    {
+      "start": 1407.857,
+      "end": 1436.155,
+      "text": "我认为 benchmarking 它有好有坏，你只要面向的它这个数据，它不是直接污染你这个 benchmark，然后你这个 benchmark 刷的又是有意义的一个榜单，只要这个 benchmark 和人的真实用户的体验非常接近，我觉得这 benchmarking 它不一定是一个贬义词。对 benchmarking 这件事其实特别有意思哈，因为一方面我们确实需要一个评测的基准，然后另一方面你又不希望模型公司为了刷评测而去刷评测。我觉得这里很自然就产生一个问题，就是什么样的评测才是有意义的评测呢？",
+      "refined_segment_indexes": [
+        204,
+        205,
+        206
+      ]
+    },
+    {
+      "start": 1436.395,
+      "end": 1466.395,
+      "text": "因为我们现在一周就感觉可以看到很多新的benchmark，比如说从模型公司的角度来说，他们应该怎么样去选、去刷哪些评测，或者把哪些评测作为他们下一步提升模型能力的目标？然后从你们供应商还有researcher的角度来看，你是怎么样去看待这件事情的？我觉得做模型能力提升最大的ROI还是我要放在能力上，这些能力提升了，它应该是汇集各个benchmark。当然，就可能有些人有不同观点，因为就对于一些模型厂商来说，应用也非常重要。",
+      "refined_segment_indexes": [
+        207,
+        208,
+        209,
+        210
+      ]
+    },
+    {
+      "start": 1466.794,
+      "end": 1489.034,
+      "text": "就比如说，如果我的这个benchmark是比较贴近一个应用场景，他们其实有动机就把这个场景做好，对他们也是有益的。最有意义的事情是，大家至少口头上还是奔着AGI去的嘛？那我应该考虑哪一些核心的这个认知能力是我需要提高的？那么它体现在benchmark上，就是说我可以看到一些泛化性。如果我做了一个提高，它只涨这个，别的都不涨，那么可能有一些不好。",
+      "refined_segment_indexes": [
+        211,
+        212,
+        213,
+        214,
+        215
+      ]
+    },
+    {
+      "start": 1489.034,
+      "end": 1522.475,
+      "text": "所以就回到一开始的问题，未必是说怎样的一个benchmark是最好的，而是说不同的benchmark它测试了不同的东西，我可能要关注的是哪一些这共同的能力能够让他们一起提升，而不是说我只专注于优化同一个benchmark。另外再回到benchmark本身的问题，我倒是觉得除此之外，大家确实会关心一些贴近场景的benchmark。如果这些场景是大家在意的，它确实反映了这个用户体验，这也是个好benchmark。它未必是那么universal，未必是那么大的朝着AGI去的，但是它就确实体现了大家的体验吧。",
+      "refined_segment_indexes": [
+        216,
+        217,
+        218,
+        219
+      ]
+    },
+    {
+      "start": 1522.715,
+      "end": 1549.195,
+      "text": "在这个角度上来说呢，那benchmark肯定是有千奇百怪，就你总会找到一个场景。我觉得可能是两个要素，就是说这个场景的这个gap它是不是体现了一个非常具体的能力的缺陷？如果只是因为这一个场景一些场景知识不太懂，同时这个场景由于不太重要，就是我在一个犄角旮旯里面我解了一个什么很奇怪的智力题，出了一个benchmark，这个能力提升了，未必代表这个模型本身的认知能力提升了，那么可能就不是一个好的benchmark。",
+      "refined_segment_indexes": [
+        220,
+        221,
+        222
+      ]
+    },
+    {
+      "start": 1549.594,
+      "end": 1574.554,
+      "text": "另外一块就是说，就算不反映核心的能力，它至少反映一个大家在意的场景，比如说现在特别火的是personal assistant，就最近这个Muse，这是一个很具体的场景，大家都希望有这么一个东西。那么这个benchmark它甚至未必测的是模型本身，它可能还测了你的harness。最后这个benchmark它甚至不是为了卖模型的训练数据，而是告诉你我的harness错在哪，可能我可以做些工程优化，就是贴近大家需求场景的benchmark也是好的benchmark。",
+      "refined_segment_indexes": [
+        223,
+        224,
+        225
+      ]
+    },
+    {
+      "start": 1574.554,
+      "end": 1608.554,
+      "text": "所以在我看来，一个是反映了核心的认知能力，一种是贴合场景，当然两个都有的话是最好的。我觉得最重要，现在大模型公司很看重的一个就是benchmark的分布。大家应该可能都听说过artificial analysis这个评测体系，他们其实做的事情很简单，就是把各家benchmark给不同的权重，然后把它综合到一起来得到一个分数。但这样它就存在一个问题，它这个分布的这个权重是不是真的是大伙需要的这个权重？那个权重以什么方式去进行迭代？这个都是挺主观的一个事情。大家质疑的更多不是这个模型本身，而是质疑这个榜单本身。",
+      "refined_segment_indexes": [
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232
+      ]
+    },
+    {
+      "start": 1609.115,
+      "end": 1635.594,
+      "text": "我现在倾向于认为，大家可能benchmark还不够好，做到大家心目中要的distribution那种级别很难达到in ground truth。所以现在很厉害的模型厂商，比如Anthropic或者Open，他们都会倾向于去自建一个评测体系，来让它更接近他们心目中的分布。只不过第三方的支撑可以让他们对外发布的时候更有说服力一些。当然，比如说云中说的一个垂直领域的肯定是非常重要的，因为这个就是面向一类群体，它这个分布就是那个群体需要每天在做的事情。",
+      "refined_segment_indexes": [
+        233,
+        234,
+        235,
+        236
+      ]
+    },
+    {
+      "start": 1635.594,
+      "end": 1652.235,
+      "text": "如果他能把那个分刷高了，比如金融啊、法律，他们律师每天做的事情，能能把那个做扎实了，那他们法律只需要看这一个benchmark就足够了。第二点就是提云中提到了，有些benchmark它并不能代表真实的人设。比如说之前有一些benchmark它是测agent智力的，就是玩那种小游戏，那arc challenge这种游戏。",
+      "refined_segment_indexes": [
+        237,
+        238,
+        239
+      ]
+    },
+    {
+      "start": 1652.554,
+      "end": 1674.125,
+      "text": "对arc two、arc three这种，对，是他这个benchmark的初衷是说，觉得能解这些游戏是人类的一个智力的体现，但是没想到，就这个智力其实也是可以做的特别特化，我一个小模型也能把它搞出来，那还挺有意思。那有没有什么特别 niche 的 benchmark，但是可能大众不太了解，但其实是非常有用的测试这个模型能力的例子？",
+      "refined_segment_indexes": [
+        240,
+        241
+      ]
+    },
+    {
+      "start": 1674.525,
+      "end": 1703.165,
+      "text": "我可以举个我们的例子，我们有一些 benchmark 可能不太经常出现在大家的榜单上，比如说我们前一阵子做的 drug discovery，还有一个跟 AI tutor 相关的，它可能关心的是一个比较小的垂直领域。但是跟我和各个 lab 的交流，负责相关领域的团队，他们通常就会有这么一个人，他们会看市面上跟他领域相关的评测，他都会把它收回来。然后另外一个就是说这个 benchmark 最后上不上榜单，火不火，其实也有很多随机因素。",
+      "refined_segment_indexes": [
+        242,
+        243,
+        244
+      ]
+    },
+    {
+      "start": 1703.245,
+      "end": 1733.005,
+      "text": "比如说 AA 就有一个很好玩的事儿，AI 用了我们做的一个榜单叫 Suite Atlas，我们当时是做了几个不同风味的 Suite test，其中有 Q&A，就是代码仓库问答，还有代码重构，还有写 test。只不过我们是分三个阶段推出的，所以 Q&A 先推出，推出之后呢，我们还没来得及把另外两个推出，把它们合在一起，然后 somehow 那个 Q&A 就先被 AA 剪去了。Q&A 上了 AA 之后呢，大家就开始 set 这个东西，突然间就这一块需求就变大了。",
+      "refined_segment_indexes": [
+        245,
+        246,
+        247
+      ]
+    },
+    {
+      "start": 1733.005,
+      "end": 1761.405,
+      "text": "我们当时想的很不理解，Q&A 是最简单的一个场景，就是我们花了那么多心血做了更复杂的 benchmark，结果就是因为可能是时间关系，还有的时候是某一个 lab 用了，可能是碰巧它的分好。这里面其实是有一些随机因素，就是你在这个榜单上，就大家 tech report 上看的东西呢，有一定随机性。AA 收这些榜单有一些随机性，最后就是你没看到的东西，其实背后可能也有人在用，就这个生态其实水还比较深，还比较复杂一点。明白。",
+      "refined_segment_indexes": [
+        248,
+        249,
+        250,
+        251
+      ]
+    },
+    {
+      "start": 1761.805,
+      "end": 1787.725,
+      "text": "又其实我还想再问一下，就你刚才提到的大家对于 artificial analysis 这样榜单的质疑，然后你觉得说是不接近于大家理想中的分布，这个分布现在有没有一个共识呢？因为我理解每个模型公司对于分布的需求其实也是不太一样的，是吧？如果是在这种情况下的话，我们怎么样去理解这个理想状态下的分布？它是应该比较接近真实世界的这样一些任务，还是说是别的分布？",
+      "refined_segment_indexes": [
+        252,
+        253,
+        254,
+        255
+      ]
+    },
+    {
+      "start": 1788.205,
+      "end": 1821.405,
+      "text": "我觉得真实的分布其实本质上就是大家的用户体验，就是世界上假设说存在这样一个 ground truth，就真实的分布的真实的打分，其实有点类似于 LM Arena 这种模式。假设说你每天 prompt 这个 agent 的时候，你能够有多条模型一直在执行，然后给他们打分，这是最真实的评价。但是这个现实生活中能够做到这样的榜单有那么以下几种因素。LM Arena 之前做好是因为之前的 Q&A 它这个很快，它开销很低，你给它一个问题，它能够几秒钟之内给你个答案，你很快就能进行打分。",
+      "refined_segment_indexes": [
+        256,
+        257,
+        258,
+        259
+      ]
+    },
+    {
+      "start": 1821.805,
+      "end": 1851.725,
+      "text": "但现在在 agent 的时代，一个长程任务动辄几个小时，一个用户也没有那么多的超能力，每次执行一个任务都连着开几个 agent 的一起去执行，然后也没有个机制去反馈把它收集起来。所以说大家的评价很多都是一个偏主观的，它很难拿到这样一个真正的 ground truth。但如果说有哪家公司或者有家有某种方式解决了这个问题，那肯定很厉害。但我相信他们大模型公司内部肯定是有这样一个机制的，就是让它有几个版本的模型，然后有一些用户他是真实用了这个东西，然后去测。",
+      "refined_segment_indexes": [
+        260,
+        261,
+        262,
+        263
+      ]
+    },
+    {
+      "start": 1852.125,
+      "end": 1885.725,
+      "text": "我的意思是，假设有这样一个 distribution，然后你这个评测的分数的分布接近于这个东西，那它就是一个很好的 benchmark。对我听到一些比较有意思的，很多评测 benchmark 跟我线上做 A/B test 测出来结果是不一样的，就是用户的反馈跟评测其实有时候不太一样，甚至很难说哪个好，因为用户有时候也比较主观嘛。像这种聊天的，对吧？你可能给他特别多这种 factual 的东西，versus 给他很多这种 clickbait，就说他爱听的话，可能这个结果也不一样。所以这块还是挺复杂。对，是这样的。",
+      "refined_segment_indexes": [
+        264,
+        265,
+        266,
+        267,
+        268,
+        269
+      ]
+    },
+    {
+      "start": 1886.045,
+      "end": 1912.626,
+      "text": "就像 code code，我觉得在 Arena 上分数一直聊很领先，就是因为我觉得 code code 它有个特点就是尤其中文用户或者英文用，它的给出来的这个 output format 更贴近于人们心目中想看到的，就非常容易去理解。相反呢，CodeX 它可能执行的更细致一些，但是输出的东西就没有那么人那么容易去，相对没那么理解，所以说稍微吃了点亏。但我个人体验用户下来，他们俩可能是不相上下。其实我个人还更偏好于OpenAI那边一点，因为它做的更细致，犯的错误更少。",
+      "refined_segment_indexes": [
+        270,
+        271,
+        272,
+        273
+      ]
+    },
+    {
+      "start": 1912.946,
+      "end": 1931.666,
+      "text": "所以这个确实也是很主观的一个事情，去怎么定义好这个distribution。所以在这种情况下，模型公司还会把benchmark视为判断自己模型能力的一个标准吗？他们肯定是也是在乎外部的评价。不同模型公司，我是说先说美国那几家大的，他们肯定是倾向于自建为主，就是自家的evaluation团队，因为他们有这个能力去建。",
+      "refined_segment_indexes": [
+        274,
+        275,
+        276,
+        277
+      ]
+    },
+    {
+      "start": 1931.746,
+      "end": 1965.746,
+      "text": "但是对于一些比如说刚成立的或者相对没有那么有名气的一些frontier labs，或者它不是头部的frontier labs，他们肯定是会非常依赖于外部的评测，因为它内部的评测团队可能没有那么有经验或者那么完善，或者说他们的人力资源更希望投入到模型的训练和开发当中，而不是去直接利用。就所以这个每个公司的策略都不太一样。其实我的个人判断是说，当一个产品逐渐成熟之后，或者当你积累了一定体量的用户之后，最后你其实关心的还是用户增长。比如说我之前其实做了很多年，在Meta做搜索跟推荐，逐渐的就变成了一个类似搜索推荐的问题。",
+      "refined_segment_indexes": [
+        278,
+        279,
+        280,
+        281
+      ]
+    },
+    {
+      "start": 1965.746,
+      "end": 1995.666,
+      "text": "就你看什么样的指标跟用户增长最相关，最后就朝着赚钱的方向走的。现在可能真正能够评测到这个能力的lab不太多，需要一定的用户体量，可能在这个聊天的场景就比较成熟了。但是呢，在这些A卷的场景上呢，能做到这个程度就更复杂一点。大模型可能跟传统这个搜推不太一样的地方就在于说它的场景很复杂。就算我能够在这个chat场景做好很好的这个A/B test，甚至训这个reward model来朝用户喜欢的方向发展，我总会有新的东西出来。",
+      "refined_segment_indexes": [
+        282,
+        283,
+        284,
+        285,
+        286
+      ]
+    },
+    {
+      "start": 1996.066,
+      "end": 2030.306,
+      "text": "而且大家一直在看新的东西，比如说现在大家都在卷这个科学发现，科学发现我不可能有足够量的科学家给我显著的A/B test的结果，必须还是要依靠场景构造benchmark。我会说，因为大家对这里的这个应用场景的期待太高了，场景增长的速度赶不上我在这个领域用户沉淀的速度，还是有大量的需求要依靠这个benchmark来做评价标准。但我会觉得在某一些领域沉淀下来之后，大家会有更多的线上评测体系，然后可能会像这种传统的互联网增长，看看哪些指标跟用户的DAU增长更相关。对，能不能深入讲一下数据采购这件事情？",
+      "refined_segment_indexes": [
+        287,
+        288,
+        289,
+        290
+      ]
+    },
+    {
+      "start": 2030.386,
+      "end": 2052.066,
+      "text": "我觉得就是有几个点非常有意思。第一，你提到了刚才有很多小的公司其实是现在一个创业机会嘛，这也是为什么我们看到很多最近兴起的一些四五个人甚至两三个人的这些数据创业公司拿到了非常高的估值。这是不是就是因为他们的目标就是这些非常垂直的领域的数据？对我觉得这里可能有几块问题。",
+      "refined_segment_indexes": [
+        291,
+        292,
+        293,
+        294
+      ]
+    },
+    {
+      "start": 2052.546,
+      "end": 2084.466,
+      "text": "首先，我觉得最近兴起的这些RL environment公司呢，其实更多的是在做合成，因为整个数据行业已经从找人标注慢慢的过渡，你要交付的是一整套环境，然后这个环境可能需要大量的这些工程工作在里面。很多在这些合成的技术栈上做的比较好的一个小团队呢，其实可以比较短的时间交付大量的合成环境，这未必是不好的。就合成它有时候你也可以基于一些强的模型，或者说基于一些半成品的这些artifact是可以做出一些好东西来的。",
+      "refined_segment_indexes": [
+        295,
+        296,
+        297
+      ]
+    },
+    {
+      "start": 2084.546,
+      "end": 2117.346,
+      "text": "现在这里是一块增长，但是再往下走呢，这里面比较有意思的就是说这个东西之所以能成立，因为大家今年的主题是在卷代码，软件行业是最奇怪的一个，就它非常的open，有大量的公开资料，而且就是我们生产数据的公司，同时大家都懂代码，所以就这个比较好解决，让一些小的团队有很多机会可以自己造很多数据。但是我觉得再往后面走，比如说这些其他领域的垂位就更复杂了。这里面我会看到了有一些公司，他们可能解决两个不同的问题。比如说像我们做后训练数据，其实在我看来是两个问题。",
+      "refined_segment_indexes": [
+        298,
+        299,
+        300,
+        301
+      ]
+    },
+    {
+      "start": 2117.346,
+      "end": 2144.066,
+      "text": "第一次采购，就是我把原材料买回来，就好像ALE让大家上传，对吧？这是一个比较新的激励机制。然后加工，加工就是我们再把它标注，或者是通过一些A卷的pipeline把它做成适合大模型训练的环境。在这个垂直领域问题上呢，其实采购变得越来越复杂。就甚至代码领域，其实采购一些私域的这个代码仓库啊，谁能把这个问题解决好，其实就是一个巨大的优势。那么在垂直行业，比如说我如果是做芯片设计的。",
+      "refined_segment_indexes": [
+        302,
+        303,
+        304,
+        305,
+        306,
+        307
+      ]
+    },
+    {
+      "start": 2144.487,
+      "end": 2170.407,
+      "text": "我可能要把整个芯片设计的环境给造出来，可能当中涉及到一些商业软件，那我怎么样把这些商业软件的版权拿到，把它包在这里面，就是一个问题。还有一个就比如说做DevOps，我要是一个系统工程师，我要操作什么AWS之类的，然后我知道有个公司做了一整套AWS模拟器，每一个垂类的这个环境都有一些很深的东西，你可能要采购，可能要定制软件，大家抓住一两个垂类把这个东西做好，其实创造了很多新的机会。",
+      "refined_segment_indexes": [
+        308,
+        309
+      ]
+    },
+    {
+      "start": 2170.727,
+      "end": 2205.607,
+      "text": "明白，因为刚才我们提到这些垂直场景，比如说在Drug Discovery这些生物医药方面的，还有一些具体行业的评测下面，我们可能没有足够的场景，或者没有足够的好的评测，在这种情况下，我们有足够的好的数据吗？这里其实有一个难点，每个领域它需要一些人把他的专业知识吐出来之外呢，我还要需要这个领域的这个东西，像药物发现啊，我可能需要很多一些私有的数据库，就这里面我觉得是目前这个行业一个大的卡点，就是你先要能把这东西买到，知道大家手上有什么，才能把它做成benchmark。ALE其实很大程度上是在解决这个问题。",
+      "refined_segment_indexes": [
+        310,
+        311,
+        312
+      ]
+    },
+    {
+      "start": 2205.927,
+      "end": 2223.047,
+      "text": "对，ALE就是希望大家能够以众包的方式，让专家把之前自己做过的project交上来，当然这里面有一些不符合规范的我们都筛掉了，因为他们甚至把一些非常非常私的东西都交上来了，比如说什么法院的一些证据，什么就是就是非常对，然后我们尽量把这个都筛掉了。",
+      "refined_segment_indexes": [
+        313
+      ]
+    },
+    {
+      "start": 2223.367,
+      "end": 2246.407,
+      "text": "比如说我们现在在V2中，我们也尝试去收一些数据，比如说Steam上的一个游戏库，就游戏开发的一个任务，它一个那种名不见经传的一个大概几千人体量的一个MOBA类的游戏，它要价能要到两三百万人民币一条，我觉得哪家数据公司或者做benchmark都没有这个财力去做这个事情。就是这个游戏公司会要价要到两三百万对对对对对，要这个游戏的源码对。",
+      "refined_segment_indexes": [
+        314,
+        315
+      ]
+    },
+    {
+      "start": 2246.727,
+      "end": 2279.607,
+      "text": "就比如说很多公司想要采一些游戏的视频，然后做些标注，游戏的视频可能是版权数据，这里有一个巨大的采购问题，我觉得这里是一个商业机会，我现在其实看到不少startup在解决这些问题，就大的书商我们自己也在投入做一些采购方面的工作，但是总体上来说，我觉得这里还有巨大的问题没有被解决。有哪些现在非常热门的垂类是数据非常少的？我会说至少医疗算一个，就是数据比较敏感，就是谁能拿到大量的病例数据，那就非常有优势。",
+      "refined_segment_indexes": [
+        316,
+        317,
+        318
+      ]
+    },
+    {
+      "start": 2279.847,
+      "end": 2301.287,
+      "text": "对，因为其实也有很多新闻讲到说，可能在法律或者金融的这些领域，会有一些之前离职的员工可能会去分享他们的工作流，呃不过可能工作流数据和像医疗数据里面这些病人的data还是不太一样。是的，各个领域，我觉得甚至现在大家之所以都在说金融、医疗，就是因为跟大家比较息息相关吧，大家多少还懂一点。",
+      "refined_segment_indexes": [
+        319,
+        320
+      ]
+    },
+    {
+      "start": 2301.447,
+      "end": 2315.927,
+      "text": "其实这个世界上有很多我都不知道的行业，就是你真的要跟他们聊才知道，就比如说我才知道，就做这个药物研发，大家还会交易这些分子，一个分子还能倒腾几套，这里面还要坐滴滴，所以可能没有做，只是因为大家不知道。",
+      "refined_segment_indexes": [
+        321
+      ]
+    },
+    {
+      "start": 2316.247,
+      "end": 2342.647,
+      "text": "对，就是我们在做ALE V2，想要把比如说一个领域做深的时候，我们会尝试先捋一个领域，它会有哪些工作流，会有一个树状这样结构，然后尤其在生物学这一方面，然后我们基于Nature这个publication，它会有自然的分类，它对子学科分类，然后把这个树展开到第三级的时候，大概有三千个节点，然后我们也做一下工作，就是把现在已有的市面上的Life和Bio的这个benchmark已经覆盖了多少，",
+      "refined_segment_indexes": [
+        322
+      ]
+    },
+    {
+      "start": 2342.887,
+      "end": 2375.847,
+      "text": "做了一个统计，大概是可能百分之十、百分之五都不到，甚至它连一个成型就是覆盖面完全的一个benchmark市面上都没有，更别说是针对这个去做相应的数据。明白，那像我们刚刚提到的这些做合成数据的小公司，他们能赚钱的周期有多长呢？因为听起来好像都是这几年新出现的这样一些公司，这些数据它的生命周期有多长呢？嗯，这是个好问题，至少现在需求还是挺大的，然后未来很难说，比如说这一波coding卷完了，那么他们需要新的品类，大家你能不能抓住下一个机会？",
+      "refined_segment_indexes": [
+        323,
+        324,
+        325,
+        326
+      ]
+    },
+    {
+      "start": 2376.087,
+      "end": 2406.895,
+      "text": "而且下一个机会可能跟你现在的运行模式不太一样，比如说我自己会觉得采购会很重要，那么采购能力比较差的可能就比较难，或者就像EU他们，你可能有些新的激励机制，让大家把东西。交进来，对吧？所以可能以前的一个激励机制是招聘平台，或者就给你一个小时工，但是以后可能有新的激励机制，就谁能把这些东西玩得转，可能会继续有一些优势。这个地方我想问云中你的看法，因为我个人认为，随着模型能力越来越强，模型公司自己内部创造数据的能力也越来越强。",
+      "refined_segment_indexes": [
+        327,
+        328,
+        329,
+        330
+      ]
+    },
+    {
+      "start": 2407.374,
+      "end": 2440.735,
+      "text": "这一点你认为这个饼是越来越大的，但有没有可能会出现一个情况，这个饼面向于非头部公司的这个机会反而是门槛是越来越高的，入场券是越来越难拿的。比如说数学这块领域，之前的话大家只需要去影印那些奥数课本，就能够去批量造出大量的数据，但这些数据现在基本上是零价值。所以你是怎么看待这个趋势？就未来的数据公司的这个发展方向？对，我会觉得从第一性原则上来说，还有巨量的问题没有解决。你要想这个世界上还有多少东西没被蒸馏干净，是巨大的机会。",
+      "refined_segment_indexes": [
+        331,
+        332,
+        333,
+        334,
+        335,
+        336
+      ]
+    },
+    {
+      "start": 2441.135,
+      "end": 2472.334,
+      "text": "但是如果你就看现在大家是怎么运行的，这个事情当然会越来越难，因为越来越多的这个玩家进来了。我觉得大家如果只盯着我手上的工作，这个一定是越来越难做的。就算这个 lab 不自己做，越来越多的竞争对手进来，你的 margin 也会越来越低。所以在我看来，一个好的数商其实最后解决的是个研发问题了，就好像一个软件公司一样，我要提前投入未来大家需要的东西，赚到钱之后我再投入下一个东西。在 lab 本身呢，我有个暴论，可能 labs 未必有最好的基因来解决数据的问题。",
+      "refined_segment_indexes": [
+        337,
+        338,
+        339,
+        340,
+        341
+      ]
+    },
+    {
+      "start": 2472.655,
+      "end": 2503.294,
+      "text": "这里面可能有几块，比如说合成数据，合成数据其实按理说很多就是这个 lab research 的本职工作了，尤其是搞后训练的，大部分时间都在花在搞数据上了，就是买数据、核数据、验证数据、洗数据。但是这个领域你会觉得为什么外面的人会有机会呢？三炮今年的这一波增长都来自于一些懂行的人在外面把这个数据核了再卖回去，所以这个事情是存在的。我觉得一方面是因为大模型公司现在有太多的钱，就是你自己造，外面买其实也不矛盾。",
+      "refined_segment_indexes": [
+        342,
+        343,
+        344,
+        345
+      ]
+    },
+    {
+      "start": 2503.615,
+      "end": 2529.854,
+      "text": "但是在更长远上来说呢，其实有很多问题可能模型公司没有太好的基因解决。比如说如果我要采购，我要把一些行业的东西先采购回来蒸馏出来，这个时候我会觉得大的 lab 可能未必有那么大的优势，它甚至可能会有一些 conflict of interest。比如说一方面把你的这个 fde 派到了人家企业里面，然后另一方面你有一波人在搞这个企业数据，那么我会觉得如果我是一个企业，我是不太放心把我的数据交给你的。",
+      "refined_segment_indexes": [
+        346,
+        347,
+        348
+      ]
+    },
+    {
+      "start": 2530.015,
+      "end": 2560.175,
+      "text": "出于这些原因，有一些东西可能 lab 不太适合自己做，它可能还是需要第三方的这个人帮他做一些采购，或者深入到一些行业领域里面去。我会觉得一个数商真正要做的事情是来研发，看看未来还有哪些行业是重要的，这些行业有哪些东西我要值得投入，把东西买回来，然后我自己先投入 R and D，把这个行业的问题给研究清楚，然后再把它做成 benchmark 或者数据，甚至证明这个东西的有效性，然后我再转手卖给 lab。从 lab 来说呢，就是大家的这个 deadline 都很死。",
+      "refined_segment_indexes": [
+        349,
+        350,
+        351
+      ]
+    },
+    {
+      "start": 2560.575,
+      "end": 2594.175,
+      "text": "如果我是一个 lab 的 research，如果你让我花半年的时间来解决一个行业，可能有时候大家其实没有自由度。就是这个时候你看到，哎，那边有一个数商说，我把那个行业的东西搞清楚了，你要不要？大家通常都会看一眼。所以我觉得其实长期来说拼的还是一个研发能力。你觉得这个趋势对于大模型公司来说会持续吗？因为现在模型公司里面也有自己的数据团队嘛，但是你觉得他们更愿意去从第三方那里收数据，而不是自己去造环境造数据？这里我觉得可能不矛盾吧，因为最后模型公司最高的优先级还是把东西做好。",
+      "refined_segment_indexes": [
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358
+      ]
+    },
+    {
+      "start": 2594.575,
+      "end": 2622.975,
+      "text": "如果他们自己能生产好的数据的话，有可能会倾向于自己生产。只是现在大方向上来看，这个世界上还有太多的这个工作流没有被折腾清楚了。那么对外部数商的依赖，我觉得是长期存在的。甚至就是一个大模型实验室自己可能未必想要投入那么多的资源做的这么重，可能更 prefer 灵活一点。缺点就是说大家可能希望更多的东西是第一方的，不希望所有人都能从数商中获得这些能力。所以就从这个角度来看。",
+      "refined_segment_indexes": [
+        359,
+        360,
+        361,
+        362,
+        363,
+        364
+      ]
+    },
+    {
+      "start": 2623.335,
+      "end": 2655.895,
+      "text": "会有一定的动机自己研发，然后就比如说现在可能很多labs他在做这个expert matching，就是说你把人派到我这里来，就也有这么一些趋势。我自己也会觉得说，现在有太多东西没有被解决了，不管是谁把这些问题解决了，那他一定是有赚钱的机会。这个东西可能跟在哪里发生不是很有所谓，现在是机会多，饼在越变大了这么一个阶段。哎，但这也是大家对于数据一直有一个问题，也就是说，如果一个第三方供应商把同样的数据卖给不同的模型公司，那它中间怎么样去区分呢？",
+      "refined_segment_indexes": [
+        365,
+        366,
+        367,
+        368
+      ]
+    },
+    {
+      "start": 2656.215,
+      "end": 2688.055,
+      "text": "这里通常来说有个比较简单的解决方案，就是说你可以花多点钱把这个数据买断。你觉得对于模型公司来说，在数据供应商收到那么多数据的情况下，他们怎么样去使用这些数据？这个流程能不能给我们讲一下？就这里面一般来说它是有一些比较固定的训练方式，我们把它叫training recipe。就比如说像是比较简单的这种数据，我可能就是直接SFT，就是我把对的答案给他就行了。然后像是rubric这一种呢，它可能就是在做强化学习，因为就是不停的有一个模型在给他打分嘛。",
+      "refined_segment_indexes": [
+        369,
+        370,
+        371,
+        372,
+        373,
+        374
+      ]
+    },
+    {
+      "start": 2688.535,
+      "end": 2722.215,
+      "text": "比较有意思的是现在这些RL环境，比如说最近大家在卷的一些特别长程的任务，现在今年的一个主题是RSI嘛，就是recursive self improvement。它其实是个buzzword，就是说AI自己研发自己。那大家最近就在看那些我跑一把可能要跑个几天一个星期，其中你可能要有个GPU真的在上面模型训模型的任务。这里的训练方式其实就开始变得有一些模糊了。我们也在一起研究这里面的训练方式要怎么搞，但是我自己就觉得这里面其实还没有太多的共识，所以还有很多有意思的空间。",
+      "refined_segment_indexes": [
+        375,
+        376,
+        377,
+        378,
+        379
+      ]
+    },
+    {
+      "start": 2722.295,
+      "end": 2753.015,
+      "text": "就对于数商来说，有时候也不完全是就造一个模拟的task这么简单，你还要考虑到它模型公司拿去要怎么训，然后针对它怎么训，可能还要有一些定制。对这一块我也比较好奇，如果说你就是为了benchmarking，就是你拿ALE的一些任务你直接去训练，就类似做一批这样的数据，那你怎么保证这个数据它训练出来，它模型能力泛化能力是能够提升，能够被迁移到其他的任务上去？然后这个东西有没有一些比较系统化的科学化的方法来做这样的验证呢？",
+      "refined_segment_indexes": [
+        380,
+        381,
+        382
+      ]
+    },
+    {
+      "start": 2753.415,
+      "end": 2779.575,
+      "text": "如何在不训一个模型基础上，然后能够评判这个数据能给模型带来怎样的提升？对我觉得这里其实有一些技术，比如说现在如果我要造一个环境，大家最怕的就是reward hack，就它有捷径。如果明明我没有完成这个task，我可能是做死了一些手脚，结果somehow我的这个分儿可以打的很高，就是我训出来这个模型肯定会变成一个耍滑头模型。这种东西肯定是不希望发生的。",
+      "refined_segment_indexes": [
+        383,
+        384,
+        385,
+        386
+      ]
+    },
+    {
+      "start": 2779.655,
+      "end": 2806.375,
+      "text": "那么通常来说会有一些技术可以用agent来做这个retesting，就是我会让一些比较强的模型来试试看能不能在这个task里面找到捷径。另外就是就这里面很多是我自己的个人猜想，就不代表Scale AI或者任何客户。就是说在训练这些东西的时候呢，很多benchmark我们可能只关心最后有没有完成这个任务，就是我们验证器是围绕这些东西设计的。但是我怎么样完成它，这些东西可能也会在模型训练里面有一些关键作用。",
+      "refined_segment_indexes": [
+        387,
+        388,
+        389,
+        390
+      ]
+    },
+    {
+      "start": 2806.535,
+      "end": 2840.855,
+      "text": "一个比较trivial的例子就是说budget，就比如说我训模型的时候，我会关心它是不是消耗了过多的token或者用了这些部署。那么我们在训练它，比如说在拿ALE的模型数据训练的时候呢，肯定我最后reward会很复杂，不是说我把这东西解出来就行了，我可能还关注它消耗了多少资源。最后可能是在各种各样维度的检查reward，防止它作弊这些东西结合起来才能完成一个训练的recipe。其实就感觉也没那么简单，这些可能是训练数据更多要考虑的问题，就是说我这些数据能不能导出一个比较好的训练方式。",
+      "refined_segment_indexes": [
+        391,
+        392,
+        393,
+        394
+      ]
+    },
+    {
+      "start": 2841.175,
+      "end": 2875.96,
+      "text": "嗯，能不能讲一下像RSI或者就因为刚刚我们也提到很多new lab嘛，像在这些情况下做这些训练需要的数据有什么不一样吗？或者需要的定制有什么不一样吗？通常来说最常见的定制其实是难度。大家做benchmark的时候一般来说至少希望它不那么饱和，那就意味着越难越好，但也不一定，就像一有所的也不要。就完全解不出来，就是 benchmark 的难度更多的是一个客观的反映我这个行业难度的事情。但是在我训模型的时候，需要做一个特化，就是说这个难度对它的模型要是适中的。",
+      "refined_segment_indexes": [
+        395,
+        396,
+        397,
+        398,
+        399,
+        400
+      ]
+    },
+    {
+      "start": 2876.36,
+      "end": 2896.28,
+      "text": "我们有时候会做这个事情，模型厂商会把它甚至还没有发布的这个模型给我们，然后我们帮它筛数据。这个题目对它来说不能太难，也不能太简单，因为现在做这个强化学习是说让模型在上面自己试，如果试对了的话，它就能学到一些东西。那我给它题太难了，它啥也做不出来，肯定就不行。所以在这个难度上会做一些适配。",
+      "refined_segment_indexes": [
+        401,
+        402,
+        403,
+        404
+      ]
+    },
+    {
+      "start": 2896.76,
+      "end": 2928.84,
+      "text": "然后另外可能我们会做一些轨迹采集，就比如说如果你把你的模型的轨迹给我们，我们可能把这些轨迹采集出来，然后帮你做一些筛选，甚至我们想办法用人给你搞一些可以解这些问题的轨迹，这样你可以拿回去不需要做强化学习，你可以直接照着这个轨迹做 SFT。针对它的这个训练需求，其实也有一些特化的这种工作。OK，接下来还想再聊一下数据污染的这个问题啊，因为今年二月的时候呢，OpenAI 就宣布停止报告它在 SWEBench Verify 里面的分数。",
+      "refined_segment_indexes": [
+        405,
+        406,
+        407
+      ]
+    },
+    {
+      "start": 2929.24,
+      "end": 2950.12,
+      "text": "这个其实也是一套评测啊，那具体来说呢，就是让 AI 修复真实开源软件里面的项目问题，再通过这个测试来判断它有没有修好。当时呢，OpenAI 主要是指出了两类问题，一类是它测试本身可能会有缺陷，比如说有的功能上正确的解法也会被判错。另一类呢，就是数据污染，这个我觉得很有意思啊。",
+      "refined_segment_indexes": [
+        408,
+        409,
+        410
+      ]
+    },
+    {
+      "start": 2950.12,
+      "end": 2975.08,
+      "text": "他们发现是在特定提示下面，模型能够复现部分题目原本的人类修复代码，也就是说呢，模型很可能在训练过程当中就已经接触过相关内容了，所以这个分数就变得有点难解释了。我想问一下两位是怎么理解数据污染这个问题的呢？就 SWEBench 这一类数据其实有一个问题，它可能甚至还不是污染，就是它 task 可能就做的不够好。",
+      "refined_segment_indexes": [
+        411,
+        412,
+        413
+      ]
+    },
+    {
+      "start": 2975.4,
+      "end": 2997.56,
+      "text": "就比如说有时候有一些错误是假错误，就比如说可能我的测试脚本要求的太多了，或者是我的 task 没讲清楚，有这么一些类型的原因吧。另外一个污染可能是说模型预训练的时候把这些东西都训练进去了，这里面其实是有一些技术可以检测到这些东西。我想在 ALE 上面应该会有一些这种经验。",
+      "refined_segment_indexes": [
+        414,
+        415,
+        416
+      ]
+    },
+    {
+      "start": 2997.96,
+      "end": 3021.32,
+      "text": "又不然他说不采用 SWEBench，是它是连 SWEBench Verify 也不采用，就是当一个 benchmark 它，我印象中它是在过去的六个月内只从百分之七十四提升到了百分之八十，然后剩下那些问题可能是脚本写的太 hard 了，然后或者它的题目本身就是不可解，或者是会有各种各样的问题。然后它剩下的可能百分之二十都是集中在这个问题上，那这个 benchmark 本身可能就失去了它对比的意义。",
+      "refined_segment_indexes": [
+        417,
+        418
+      ]
+    },
+    {
+      "start": 3021.88,
+      "end": 3046.12,
+      "text": "ALE 没有解决一个问题，这个也也想跟云中探讨一下，就当一个专家他本身提交上来的材料本身是错的时候，我该如何去预防这个问题？这个是我们真实发生过的，因为我们专家这个五花八门的，当然这个这样的人很少。他是为了提交这个任务，然后为了拿到作者，因为我们的奖励机制就是你提交了这个东西，然后我们接纳了你这个任务，你就能被纳为作者列表的一部分。",
+      "refined_segment_indexes": [
+        419,
+        420,
+        421
+      ]
+    },
+    {
+      "start": 3046.92,
+      "end": 3081.0,
+      "text": "确实是有人为了提交而提交，然后他甚至起了 agent 去合成了一堆乱七八糟的数据，甚至有些数据交上来，我用肉眼看出来它就是编的。这个东西是确实对我们的工作造成了很大的困扰。这是个特别大的问题，scale 总是有人，总是可以靠人解决的。这里有个特别有意思的问题，比如说一游提到了我给他这个 authorship 是一种奖励机制，那它会带来一定的问题，比如说就 scale 那更原始的，比如说我就给你小时工，那大家也有一些偷懒作弊的方案。我会觉得这个奖励机制是个特别特别难的问题。",
+      "refined_segment_indexes": [
+        422,
+        423,
+        424,
+        425,
+        426
+      ]
+    },
+    {
+      "start": 3081.0,
+      "end": 3109.582,
+      "text": "长远来说，比如说我的目标是把人类都蒸馏干净，对吧？怎么样设计一个好的奖励机制，把大家的目标都 align？我觉得这里其实有特别大的空间，这里可能是一个巨大的 research area。我自己心中可能有一些方案，proof of work，就比如说我要求你把做这个东西的一整段工作流程全部都录下来，你必须要做到多少时长或者怎么样？不同形式的问题，它有不同形式的奖励和验证机制。这里面其实有很多玩法值得大家探索。",
+      "refined_segment_indexes": [
+        427,
+        428,
+        429,
+        430,
+        431,
+        432
+      ]
+    },
+    {
+      "start": 3109.982,
+      "end": 3140.542,
+      "text": "这里面其实也涉及到一个更大的问题啊，就是很多数据它本来也就是公开数据嘛，就是网上的一些资料啊、公开代码啊这些东西，所以这些数据是不是本身就注定了会有污染？一般是怎么样处理这些情况？其实最简单的污染，你直接其实问agent它都能找到。公开数据其实还好检测，我觉得最难的是编造数据。比如说让你去做一个化学模拟，就他根本就没有跑过这个任务，他自己编了一套似是而非的东西，你没有个几个月根本查不出来这个问题，因为它看上去很真。什么时候能发现这个问题？",
+      "refined_segment_indexes": [
+        433,
+        434,
+        435,
+        436,
+        437,
+        438
+      ]
+    },
+    {
+      "start": 3140.622,
+      "end": 3173.742,
+      "text": "当所有的agent它的能力基本上远超这个问题本身的时候，他发现所有的答案他们都是做出来是一样的，但是跟这个真实答案是不一致，这个时候就我们就会查出问题。但这个周期会非常长。但是你让另外一个专家去验证这个问题，它成本又非常非常高，因为它本身这个问题它都是要专家花一个多礼拜或者两个礼拜才能做出来。对，然后那个验证的专家你要保证他，验证的专家他本身也会为了一些东西偷奸耍滑，说这个东西哎，它就是对的。所以每个涉及到专家评测都会有这个问题吗？对，都会有。众包的benchmark为什么难做？就是难做在这里，人性是非常复杂的。",
+      "refined_segment_indexes": [
+        439,
+        440,
+        441,
+        442,
+        443,
+        444,
+        445,
+        446
+      ]
+    },
+    {
+      "start": 3173.822,
+      "end": 3204.462,
+      "text": "是，我觉得这里它可能甚至验证是一环，我自己觉得确实在奖励机制上。比如说，如果你就让他在那老老实实待着做十二个小时，对吧？就你给我核假假数据，你也要把每一步都给我交出来，要求你必须做这么多的动作，那他可能就没有那么大的动机给你核假数据了。这些是比较值得研究的方向。嗯，很有意思。其实我本来是想问一下真实工作流的数据，但是听下来大家现在还是在卷coding数据是吗？就不是在做真的workflow？",
+      "refined_segment_indexes": [
+        447,
+        448,
+        449,
+        450,
+        451,
+        452,
+        453
+      ]
+    },
+    {
+      "start": 3204.702,
+      "end": 3232.462,
+      "text": "因为我理解是，比如说像McQuar这样的公司，就是有在卖一些真的workflow的数据，但是听起来coding现在还是这个赛道最卷的。其实你怎么定义真实工作流的数据？就真实工作流的数据本质上它都能够被划归到一个coding的问题。就是比如说对3D建模这个问题，其实有很多，比如说FreeCAD什么，它都是提供了现成的API让你去做这个事情的。就是这不是传统意义上的coding，就是让你去写一段代码去解一个lead code的这种coding题，它是用coding去解决真实workflow。",
+      "refined_segment_indexes": [
+        454,
+        455,
+        456,
+        457,
+        458
+      ]
+    },
+    {
+      "start": 3232.782,
+      "end": 3261.262,
+      "text": "所以说只要有足够的MCP API调用，它其实本质上百分之九十五以上的它任务都能够被划归到coding的问题上来。对，就是可能有一些小的，可以看它这个task本身是要的什么东西，它涉及到的一些环节是什么，能把它归结到不同领域的工作流上去。但是就我从Eo说的，现在因为你让agent来做事情，代码就是它的手跟脚嘛，所以它其实归根结底coding肯定是其中的一环。嗯，明白。",
+      "refined_segment_indexes": [
+        459,
+        460,
+        461,
+        462
+      ]
+    },
+    {
+      "start": 3261.582,
+      "end": 3288.862,
+      "text": "你们觉得在私有数据需求依然很大的情况下，未来的数据公司会不会从卷采购本身变成卷并购，就是去收购一些垂直领域的公司？对，不评论Scale AI。我是听说有一块很大的private equity business，就是说以前大家是flip公司嘛，现在flip公司的一个新的方式就是说我买的这个公司，然后我用AI让它提效，把一些人裁了，之后呢把这个公司的价值做上去，再把它卖了。",
+      "refined_segment_indexes": [
+        463,
+        464,
+        465
+      ]
+    },
+    {
+      "start": 3289.262,
+      "end": 3311.262,
+      "text": "现在就多了一层，就是除了我买这个公司可以帮它重组打包用AI提效之外呢，我还能把它的数据发掘出来，它的数据还能卖一些钱，所以就是让这些整个买公司的行业又多了一个玩法，就很自然的大家就是数商或者就传统做private equity的公司也在看这个数据怎么能够卖钱，然后就兴起了一整个领域。",
+      "refined_segment_indexes": [
+        466
+      ]
+    },
+    {
+      "start": 3311.342,
+      "end": 3344.222,
+      "text": "我甚至觉得说，如果真的未来比如说五年、十年还是这个速度发展，大家还没有遇到瓶颈的话，把各个行业的东西都给拿出来，可能这个东西跟大模型本身就是世界上最大的两个行业。当然这是比较极端的，这个AI多misuse可能会导出这么一个事件。嗯，是的。但是听起来其实数据行业本身也是在变化的非常快，因为就像我们刚才提到从这个Rubric Data叫RL环境的这样一个变化。所以有什么信号会让你觉得有某一个领域或者某一个赛道它可以持续的增长吗？",
+      "refined_segment_indexes": [
+        467,
+        468,
+        469,
+        470,
+        471
+      ]
+    },
+    {
+      "start": 3344.566,
+      "end": 3377.046,
+      "text": "哦，我会觉得，就首先还有很多没有解决的问题，机会还是很多的。另外一方面，有越来越多的玩家进来了，比如说每年都有很多新的 new lab。资本市场还是以这个方式运作的话，就这个饼是越来越大的。但是这个数据变化很快，不太像是一个我可以躺在一个地方一直吃老本的生意。树商要疯狂的迭代自己，那么最后可能是拼大家的 R N D 的能力。那或者说谁能把这个 R N D 的这个能力本身固化，做成一个 flywheel，我有一个流水线可以一直在发掘新的东西。也许这个是未来最大的优势。",
+      "refined_segment_indexes": [
+        472,
+        473,
+        474,
+        475,
+        476,
+        477,
+        478
+      ]
+    },
+    {
+      "start": 3377.046,
+      "end": 3410.486,
+      "text": "但是就从业上来说，我会觉得现在是百花齐放吧，未来机会还很多。这我也也是从一些地方听说，就是树商的它估值空间一般没有传统的这个公司来的大，就是因为它很难把这个杠杆保持住，然后让你以很轻松的方式，在一个积累了用户量情况下，就能躺在那里吃老本挣钱。就像 Facebook 啊 Google 的一些生物一样，它已经有积累大量用户，它就能躺在这些 app 上赚钱。但树商生意，领导者必须持续的去思考下一步在哪里，持续去迭代，因为模型迭代速度太恐怖了。嗯，你觉得你们现在在做 A L E 二点零的时候最难的是什么？",
+      "refined_segment_indexes": [
+        479,
+        480,
+        481,
+        482,
+        483
+      ]
+    },
+    {
+      "start": 3410.806,
+      "end": 3444.406,
+      "text": "我觉得学术上相对容易一些的，比他们 scale 在做商业上，因为他们给我们的数据很多都是无偿的。但是我能够想象的出，我如果是一家树商，要去收这个数据，它这些都是天文数字，就那些收上来的原始项目和代码，而且很难找到一个很好的奖励机制，让这些专家能够自愿的把这个交上来。我拿 Mercury 他们官网上的给专家的一个小时的那个价格来算，就说制造业的工程师大概是可能一两百刀一个小时，这种价格就限定了，它不可能招到特别特别高级的工程师。但是为什么学术界好做？",
+      "refined_segment_indexes": [
+        484,
+        485,
+        486,
+        487
+      ]
+    },
+    {
+      "start": 3444.406,
+      "end": 3465.606,
+      "text": "因为我们能够自然而然吸引到一些这种级别的人来帮我们收集数据，因为因为他们不求钱，他们图的是大家一起把这个事情做好，图的是个名。所以说这个奖励机制不一样，就导致能吸引到的人不一样，你的上游是不一样。OK，很有意思。好呀，那我们就到这里结束吧。谢谢尹中，谢谢叶欧参加我们的节目。谢谢叶文，谢谢谢谢。",
+      "refined_segment_indexes": [
+        488,
+        489,
+        490,
+        491,
+        492,
+        493
+      ]
+    },
+    {
+      "start": 3470.086,
+      "end": 3474.566,
+      "text": "好啦，以上就是我们这期播客的全部内容了。谢谢大家，我们下次再见啦。",
+      "refined_segment_indexes": [
+        494,
+        495
+      ]
+    }
+  ],
+  "lineage_schema_version": 2
+}
