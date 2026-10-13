@@ -114,6 +114,7 @@ Windows/CUDA 使用官方模型：
 | `.agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py` | 校验扫描覆盖、候选状态、计数和仓库去重 | 终端校验结果 |
 | `scripts/acquire_media.py` | 获取一个已通过播客边界核实的公开 Bilibili/YouTube 视频版单集或小宇宙单集音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
 | `scripts/import_bilibili_subtitles.py` | 从被 Git 忽略的登录态响应导入单个 Bilibili 中文 AI 字幕，并绑定公开免费来源身份 | tracked raw/refined 与中文逐段 Markdown |
+| `scripts/fetch_bilibili_subtitle_body.py` | 用隐藏终端输入的完整临时地址获取单个已授权 Bilibili 中文 AI 字幕；不读取 cookies、不枚举节目 | 校验后的 ignored 字幕 JSON 正文 |
 | `scripts/import_youtube_captions.py` | 导入单个公开 YouTube 发布者英文 `json3` 字幕及平台、本地或网页逐段中文机器译稿 | tracked raw/refined、中英逐段 Markdown；另行生成的译稿保存根目录翻译载荷 |
 | `scripts/transcribe_qwen3_asr.py` | 使用 Qwen3-ASR 转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/transcribe_qwen3_asr_cuda.py` | 在 Windows/NVIDIA CUDA 上使用官方 Qwen 模型转写并强制对齐 | `raw.json`、`aligned.json` |
@@ -122,6 +123,32 @@ Windows/CUDA 使用官方模型：
 | `scripts/transcribe_audio.py` | 生成 MLX Whisper 对比基线 | Whisper `raw.json` |
 | `scripts/validate.py` | 校验内容、来源和 ASR 产物链 | 终端校验结果 |
 | `scripts/audit_correction_migration.py` | 重放按集修正规则并校验旧产物等价性 | JSON 审计报告 |
+
+### Bilibili 字幕正文的交互式备用获取
+
+优先使用已授权浏览器的响应正文导出。浏览器没有该能力、但操作者能从当前视频
+已激活的中文 AI 轨获得完整临时字幕地址时，可在本地终端运行备用下载器：
+
+```bash
+uv run --no-sync python scripts/fetch_bilibili_subtitle_body.py \
+  --url https://www.bilibili.com/video/BV186pW6kEzU/ \
+  --metadata-json .cache/intake/BV186pW6kEzU/source.metadata.json
+```
+
+该示例只适用于已获准的精确单集；其他单集必须使用自己的 BVID 和匹配 sidecar。
+在隐藏提示中输入播放器刚加载的完整 `aisubtitle.hdslb.com/bfs/ai_subtitle/` 地址，
+保留它的 `auth_key`。不要把临时地址发到聊天、写进命令参数、环境变量或脚本，也
+不要使用“Copy as cURL”导出请求头。工具不读取或导出浏览器 cookies，不取得新签名。
+
+工具仅在交互终端中接受隐藏输入；拒绝输入回显回退、其他域名、重定向、过大响应、
+不匹配的来源、非中文 AI 字幕或不完整的时间覆盖。验证通过后只保存原始 JSON 正文
+到 `.cache/intake/<BVID>/subtitle.zh-CN.ai.json`，已有不同文件不会被覆盖。它不下载
+媒体、不创建单集、不更新索引，也不启动 ASR；随后仍须运行字幕 importer 和完整
+收录流程。
+
+这条备用路径需要操作者确认临时地址来自当前精确视频的中文轨；字幕正文通常不含
+BVID，不能仅靠正文格式和时长自动证明绑定关系。新网络路径仍须用一次真实捕获和
+importer 校验作为验收，离线测试通过不代表当前字幕已经下载。
 
 ### 从冻结的英文字幕导入缓存中文译稿
 

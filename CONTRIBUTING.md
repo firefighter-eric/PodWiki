@@ -48,6 +48,7 @@ uv run --no-sync mypy \
   .agents/skills/podwiki-scan-episodes/scripts/validate_scan_manifest.py \
   scripts/acquire_media.py scripts/audit_correction_migration.py scripts/asr_lineage.py \
   scripts/import_bilibili_subtitles.py \
+  scripts/fetch_bilibili_subtitle_body.py \
   scripts/import_youtube_captions.py \
   scripts/process_qwen3_asr_batch.py scripts/qwen3_asr_transformers_adapter.py \
   scripts/render_asr_transcript.py \

@@ -344,10 +344,20 @@ sidecar；若进程在两次提升之间中断，下一次相同目标调用会�
 
 ### Bilibili 登录态 AI 字幕
 
+批次开始前先确认同一个已授权浏览器后端能导出网络响应正文。仅能列出资源的工具
+不一定能导出 JSON；`pageAssets` 中出现字幕资源不代表已经取得字幕。正文导出能力
+缺失时报告“字幕采集工具受限”，不能据此记录“没有字幕”或自动切换 ASR。
+
 用户明确授权具体 Bilibili 身份与单集后，使用现有浏览器会话确认当前 BVID 播放器的
 中文 AI 字幕。只读取该页已加载的 `aisubtitle.hdslb.com/bfs/ai_subtitle/` 响应，把
 响应 body 保存到 `.cache/intake/<BVID>/subtitle.zh-CN.ai.json`；不得导出 Cookie，
 不得打印或保存带 `auth_key` 的签名 URL、账号标识或浏览器配置路径。
+
+上述“不保存签名 URL”不等于请求前删除签名：`auth_key` 等临时传输参数应在授权
+浏览器或后端内存中保留，优先直接导出当前播放器已经加载的响应正文。去掉签名后的
+403 不能证明 B 站改了接口或字幕不可用。规范化仅适用于需要长期登记的单集来源 URL。
+响应列表也可能含签名，须在工具内部筛选，只对外返回响应句柄等非敏感结果；不能
+打印整份网络请求列表。详细诊断见[来源指南](../.agents/skills/podwiki-add-episodes/references/bilibili.md)。
 
 保留同一规范 URL 的 metadata intake sidecar，然后运行：
 
