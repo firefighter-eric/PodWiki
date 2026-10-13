@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "episode_id": "alanshao:bili-bv1fchd6cew3",
+  "version": "publisher-confirmed-host-and-lean-muscle-v2",
+  "input_asr_sha256": "da7406a147245c5f12f9911a5b72da86cec3fecd7d39c6077a93f18c2954b57c",
+  "rules": [
+    {
+      "id": "host-name",
+      "match": "邵一伦",
+      "replacement": "邵艾伦",
+      "reason": "Publisher-confirmed host name in the source episode and verified show identity.",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "stuttered-lean-muscle-term",
+      "match": "搏搏击",
+      "replacement": "薄肌",
+      "reason": "Two frozen utterances refer to the publisher-confirmed 薄肌圣经 and 薄肌版本. Normalize the duplicated leading syllable before the generic term rule so it does not leave 搏薄肌.",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "lean-muscle-term",
+      "match": "搏击",
+      "replacement": "薄肌",
+      "reason": "Publisher episode description explicitly names 薄肌 training; all matching segment contexts refer to muscle, fitness, or the host's 薄肌 theory and tutorial. Scoped to this frozen episode, not combat-sport normalization across shows.",
+      "case_sensitive": true,
+      "expected_hits": 184
+    }
+  ]
+}
