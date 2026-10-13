@@ -48,11 +48,13 @@ npm run check
 | [一起铁TALK](https://www.xiaoyuzhoufm.com/podcast/6951e312febad13106eb017e) | 以跑步为入口，聊训练、生活经验和真实处境。 | [README](./shows/yiqitietalk/) |
 | [许华哲的自定义地图](https://www.xiaoyuzhoufm.com/podcast/68e683b4152f6199cd806824) | 从 AI、机器人和技术职业出发，访谈研究者与创业者的经历和判断。 | [README](./shows/xuhuazhe/) |
 | [Dwarkesh Podcast](https://www.dwarkesh.com/) | Dwarkesh Patel 主持的英文长篇访谈播客，以深入准备的对谈讨论人工智能、科学、历史及其长期影响。 | [README](./shows/dwarkesh/) |
+| [邵艾伦Alan播客栏目](https://www.xiaoyuzhoufm.com/podcast/6ac9b4c0ea31d4852ed6bf04) | 邵艾伦 Alan 主持的深度对话，围绕商业、科技、财富、成长和人生选择展开讨论。 | [README](./shows/alanshao/) |
 
 ## 单集索引
 
 | 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |
 | --- | --- | --- | --- | --- | --- |
+| [对话孙宇晨：年轻人如何抓住AI时代的机会？](https://www.bilibili.com/video/BV1fcHD6cEw3/) | 孙宇晨 | [邵艾伦Alan播客栏目](./shows/alanshao/) | 2026-10-10 | [总结](./shows/alanshao/episodes/bili-bv1fchd6cew3-sun-yuchen/summary.zh-CN.md) | [逐字稿](./shows/alanshao/episodes/bili-bv1fchd6cew3-sun-yuchen/transcript.zh-CN.md) |
 | [How did a few hundred Spanish soldiers topple two empires? – Si Sheppard](https://www.youtube.com/watch?v=LwQQ7nBCGSs) | Si Sheppard | [Dwarkesh Podcast](./shows/dwarkesh/) | 2026-10-02 | [总结](./shows/dwarkesh/episodes/youtube-4c775151376e4243475373-si-sheppard/summary.zh-CN.md) | [英文逐字稿](./shows/dwarkesh/episodes/youtube-4c775151376e4243475373-si-sheppard/transcript.en.md) · [中文译稿](./shows/dwarkesh/episodes/youtube-4c775151376e4243475373-si-sheppard/transcript.zh-CN.md) |
 | [对话梁琛奇：抖音→猫箱→创业，他们都搞生产力，我想用 AI 创造开心【晚点聊LateTalk】](https://www.bilibili.com/video/BV1Vbao6aEYM/) | 梁琛奇 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-09-30 | [总结](./shows/latetalk/episodes/182-liang-chenqi/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/182-liang-chenqi/transcript.zh-CN.md) |
 | [硅谷睡眠外挂：富人的玩具，还是预防医疗的入口？｜对话Eight Sleep创始人【硅谷101视频播客】](https://www.bilibili.com/video/BV1Chhb6YENK/) | Matteo Franceschetti、Alex Zatarain | [硅谷101](./shows/sv101/) | 2026-09-24 | [总结](./shows/sv101/episodes/252-eight-sleep/summary.zh-CN.md) | [英文逐字稿](./shows/sv101/episodes/252-eight-sleep/transcript.en.md) · [中文译稿](./shows/sv101/episodes/252-eight-sleep/transcript.zh-CN.md) |
