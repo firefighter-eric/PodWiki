@@ -61,7 +61,7 @@ summary:
     engine: mlx-audio
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     selection_status: selected
-    sha256: 540eaa02fe2835c67a202b3278d8e5781f976f64abeee674465bb0ed5f32f983
+    sha256: 62e417685e4157bd00860cbe776a24a2d768608292e633ca5f79c24195ec10a4
 transcript:
   path: transcript.zh-CN.md
   acquisition_method: audio-asr
@@ -87,7 +87,7 @@ transcript:
     effective_total_token_budget: 270336
     token_budget_scope: adaptive-bisect-per-leaf-v2
     max_sentence_characters: 160
-  generated_at: '2026-10-13T05:47:29.652231Z'
+  generated_at: '2026-10-13T11:44:31.914767Z'
   access_context: anonymous
   quality:
     source_chunks: 66
@@ -141,7 +141,7 @@ asr_runs:
     engine: mlx-audio
     model: mlx-community/Qwen3-ASR-1.7B-8bit
     aligner: mlx-community/Qwen3-ForcedAligner-0.6B-8bit
-    generated_at: '2026-10-13T05:47:29.652231Z'
+    generated_at: '2026-10-13T11:44:31.914767Z'
     artifacts:
       raw: asr/qwen3-asr/raw.json
       aligned: asr/qwen3-asr/aligned.json

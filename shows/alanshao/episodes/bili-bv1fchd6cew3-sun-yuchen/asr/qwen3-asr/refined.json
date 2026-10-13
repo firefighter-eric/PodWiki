@@ -50,15 +50,15 @@
   },
   "rendered_transcript": {
     "path": "shows/alanshao/episodes/bili-bv1fchd6cew3-sun-yuchen/asr/qwen3-asr/transcript.zh-CN.md",
-    "sha256": "540eaa02fe2835c67a202b3278d8e5781f976f64abeee674465bb0ed5f32f983"
+    "sha256": "62e417685e4157bd00860cbe776a24a2d768608292e633ca5f79c24195ec10a4"
   },
-  "generated_at": "2026-10-13T05:47:29.652231Z",
+  "generated_at": "2026-10-13T11:44:31.914767Z",
   "corrections": {
     "status": "applied",
     "map_path": "shows/alanshao/episodes/bili-bv1fchd6cew3-sun-yuchen/asr/corrections.json",
-    "map_sha256": "e0a3c63c40d00a9b19f70a51336f429bafcc5b0dd9e70a19c77351a91db45dc7",
+    "map_sha256": "140dcac2f18408eb83a96ff7f30c92ae58bcb58094f454e63cb5408307ee0f89",
     "schema_version": 1,
-    "version": "publisher-confirmed-host-and-lean-muscle-v1",
+    "version": "publisher-confirmed-host-and-lean-muscle-v2",
     "input_asr_sha256": "da7406a147245c5f12f9911a5b72da86cec3fecd7d39c6077a93f18c2954b57c",
     "rules": [
       {
@@ -71,13 +71,22 @@
         "hits": 1
       },
       {
+        "id": "stuttered-lean-muscle-term",
+        "match": "搏搏击",
+        "replacement": "薄肌",
+        "reason": "Two frozen utterances refer to the publisher-confirmed 薄肌圣经 and 薄肌版本. Normalize the duplicated leading syllable before the generic term rule so it does not leave 搏薄肌.",
+        "case_sensitive": true,
+        "expected_hits": 2,
+        "hits": 2
+      },
+      {
         "id": "lean-muscle-term",
         "match": "搏击",
         "replacement": "薄肌",
         "reason": "Publisher episode description explicitly names 薄肌 training; all matching segment contexts refer to muscle, fitness, or the host's 薄肌 theory and tutorial. Scoped to this frozen episode, not combat-sport normalization across shows.",
         "case_sensitive": true,
-        "expected_hits": 186,
-        "hits": 186
+        "expected_hits": 184,
+        "hits": 184
       }
     ],
     "total_hits": 187
@@ -6879,7 +6888,7 @@
     {
       "start": 4725.558,
       "end": 4735.398,
-      "text": "您说，就是搏薄肌圣经的人呢，一定得是认识到了薄肌理论是对的，才能读进去。",
+      "text": "您说，就是薄肌圣经的人呢，一定得是认识到了薄肌理论是对的，才能读进去。",
       "source_segment_indexes": [
         617
       ],
@@ -24776,7 +24785,7 @@
     {
       "start": 15725.062,
       "end": 15732.022,
-      "text": "好的，好的，那非非常非常感谢孙哥，然后呃，希望尽快看到孙哥的搏薄肌版版本答案。",
+      "text": "好的，好的，那非非常非常感谢孙哥，然后呃，希望尽快看到孙哥的薄肌版版本答案。",
       "source_segment_indexes": [
         2244
       ],
@@ -26650,7 +26659,7 @@
     {
       "start": 4704.438,
       "end": 4739.158,
-      "text": "而且我逐帧逐句给AI都看了啊啊，逐帧逐句给AI都看了。这个这个我觉得是非常有用啊。这个但是呢，我觉得呢，唯一一个就是就是我觉得这个podcast咱们这个podcast聊的有一个点，嗯，就是可以弥补这个薄肌圣经的啊。您说，就是搏薄肌圣经的人呢，一定得是认识到了薄肌理论是对的，才能读进去。嗯，否则呢，他就直接就划过。",
+      "text": "而且我逐帧逐句给AI都看了啊啊，逐帧逐句给AI都看了。这个这个我觉得是非常有用啊。这个但是呢，我觉得呢，唯一一个就是就是我觉得这个podcast咱们这个podcast聊的有一个点，嗯，就是可以弥补这个薄肌圣经的啊。您说，就是薄肌圣经的人呢，一定得是认识到了薄肌理论是对的，才能读进去。嗯，否则呢，他就直接就划过。",
       "refined_segment_indexes": [
         614,
         615,
@@ -30867,7 +30876,7 @@
     {
       "start": 15713.462,
       "end": 15748.422,
-      "text": "对，行，好，那那这一采访差不多就到这边，您还有任何要补充的吗？啊，没有了，没有了，嗯，啊，应该是cover了所有的话题了。啊啊啊，对，cover了。好的，好的，那非非常非常感谢孙哥，然后呃，希望尽快看到孙哥的搏薄肌版版本答案。好，薄肌版本版本。好的，好的，应该快了。认知，因为现在已经到位了，对时间问题，认知到位了，时间问题就快了啊。好嘞，好嘞，感感谢孙哥，感谢孙哥。啊，嗯，好的，谢谢。好的，再联系。好，好，拜拜。好，拜拜。嗯，谢谢。",
+      "text": "对，行，好，那那这一采访差不多就到这边，您还有任何要补充的吗？啊，没有了，没有了，嗯，啊，应该是cover了所有的话题了。啊啊啊，对，cover了。好的，好的，那非非常非常感谢孙哥，然后呃，希望尽快看到孙哥的薄肌版版本答案。好，薄肌版本版本。好的，好的，应该快了。认知，因为现在已经到位了，对时间问题，认知到位了，时间问题就快了啊。好嘞，好嘞，感感谢孙哥，感谢孙哥。啊，嗯，好的，谢谢。好的，再联系。好，好，拜拜。好，拜拜。嗯，谢谢。",
       "refined_segment_indexes": [
         2241,
         2242,
