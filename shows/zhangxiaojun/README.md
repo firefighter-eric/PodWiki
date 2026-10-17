@@ -47,10 +47,13 @@ last_verified_at: 2026-09-26
 - 第 152 期由官方 RSS 明确标为“学习播客”，并与发布者 Bilibili `技术之美` 播客合集中的完整正片在标题、嘉宾和时长上对应；登录态页面提供中文 AI 字幕。
 - 第 153 期已于 2026-09-26 通过官方 RSS、小宇宙与 Bilibili 完整正片对应核实；B 站音轨比 RSS 展示时长长约 5 秒。平台返回字幕主题错配，经用户授权改用完整音频本地 Qwen ASR，逐字稿为 `machine`、总结为 `draft`，仍需人工核听与事实核查。
 
+- 第 154 期于 2026-10-17 通过官方 RSS 与 Bilibili 完整正片的嘉宾、简介、章节及完整时长对应核实。匿名访问未发现可用字幕，使用完整音频生成本地 Qwen ASR；逐字稿为 `machine`，全文总结为 `draft`，仍需人工核听与事实核查。
+
 ## 单集
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [对Dyna创始人Lindon Gao的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明](https://www.bilibili.com/video/BV1wgpy69Ekz/) | 张小珺商业访谈录 | 2026-10-15 | [总结](./episodes/154-lindon-gao/summary.zh-CN.md) | [逐字稿](./episodes/154-lindon-gao/transcript.zh-CN.md) |
 | [和曾鸣聊产业史观：残酷的真相、会消亡的公司、优秀≠卓越、“OAI、Anth大概率不是原生时代大赢家”](https://www.bilibili.com/video/BV1XNtJ6UEmm/) | 张小珺商业访谈录 | 2026-09-03 | [总结](./episodes/153-zeng-ming/summary.zh-CN.md) | [逐字稿](./episodes/153-zeng-ming/transcript.zh-CN.md) |
 | [领读Kimi K3技术报告：从架构创新聊起，注意力美学、多教师蒸馏和开源MoE](https://www.bilibili.com/video/BV1KZ8X6uEPL/) | 张小珺商业访谈录 | 2026-08-26 | [总结](./episodes/152-sun-yutao/summary.zh-CN.md) | [逐字稿](./episodes/152-sun-yutao/transcript.zh-CN.md) |
 | [对英伟达研究副总裁刘洺堉的4小时访谈：Cosmos 3、世界模型、武术、黄仁勋影响我的，和你不需要击败所有对手](https://www.bilibili.com/video/BV1fmgj66EtD/) | 张小珺商业访谈录 | 2026-08-13 | [总结](./episodes/150-liu-mingyu/summary.zh-CN.md) | [逐字稿](./episodes/150-liu-mingyu/transcript.zh-CN.md) |

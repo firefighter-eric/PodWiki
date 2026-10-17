@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "episode_id": "zhangxiaojun:154",
+  "version": "publisher-confirmed-names-v2",
+  "input_asr_sha256": "3457a60e628df2fff9349e99f90d310a9f9ea869e27df9dc1c4e29a0e3dd4c51",
+  "rules": [
+    {
+      "id": "publisher-company-name",
+      "match": "Dana",
+      "replacement": "Dyna",
+      "reason": "发布者原标题和本集简介明确公司为 Dyna Robotics。",
+      "case_sensitive": true,
+      "expected_hits": 6
+    },
+    {
+      "id": "publisher-guest-name",
+      "match": "Linden",
+      "replacement": "Lindon",
+      "reason": "发布者原标题和本集简介明确嘉宾为 Lindon Gao。",
+      "case_sensitive": true,
+      "expected_hits": 4
+    },
+    {
+      "id": "publisher-host-name",
+      "match": "小俊",
+      "replacement": "小珺",
+      "reason": "节目官方身份和主持人姓名为张小珺；仅规范化本集开场自报姓名。",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "publisher-book-title",
+      "match": "读陈思路",
+      "replacement": "读《沉思录》",
+      "reason": "本集发布者原标题明确书名《沉思录》；此处上下文明确为读书而非人名。",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "publisher-company-name-second-spelling",
+      "match": "Daina",
+      "replacement": "Dyna",
+      "reason": "本集发布者确认的公司名为Dyna；三处均明确指代本公司版本或企业文化。",
+      "case_sensitive": true,
+      "expected_hits": 3
+    }
+  ]
+}

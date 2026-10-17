@@ -54,6 +54,7 @@ npm run check
 
 | 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |
 | --- | --- | --- | --- | --- | --- |
+| [对Dyna创始人Lindon Gao的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明](https://www.bilibili.com/video/BV1wgpy69Ekz/) | Lindon Gao | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-10-15 | [总结](./shows/zhangxiaojun/episodes/154-lindon-gao/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/154-lindon-gao/transcript.zh-CN.md) |
 | [对话孙宇晨：年轻人如何抓住AI时代的机会？](https://www.bilibili.com/video/BV1fcHD6cEw3/) | 孙宇晨 | [邵艾伦Alan播客栏目](./shows/alanshao/) | 2026-10-10 | [总结](./shows/alanshao/episodes/bili-bv1fchd6cew3-sun-yuchen/summary.zh-CN.md) | [逐字稿](./shows/alanshao/episodes/bili-bv1fchd6cew3-sun-yuchen/transcript.zh-CN.md) |
 | [模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔【硅谷101播客】](https://www.bilibili.com/video/BV186pW6kEzU/) | 张阔 | [硅谷101](./shows/sv101/) | 2026-10-09 | [总结](./shows/sv101/episodes/255-zhang-kuo/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/255-zhang-kuo/transcript.zh-CN.md) |
 | [AI 季报 26Q3：从 Meta 到 OpenAI，个人助理卷土重来【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1wqHD6qEqU/) | Henry Yin | [晚点聊 LateTalk](./shows/latetalk/) | 2026-10-08 | [总结](./shows/latetalk/episodes/183-henry-yin/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/183-henry-yin/transcript.zh-CN.md) |
