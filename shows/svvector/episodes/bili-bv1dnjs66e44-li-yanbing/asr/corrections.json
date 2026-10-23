@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "episode_id": "svvector:bili-bv1dnjs66e44",
+  "version": "publisher-confirmed-names-v1",
+  "input_asr_sha256": "c81099575cd4f94e9bc730f69d9041096097e8b6da643b552ac08fbcd6c32e46",
+  "rules": [
+    {
+      "id": "guest-name",
+      "match": "严斌",
+      "replacement": "严冰",
+      "reason": "发布者确认的嘉宾姓名为李严冰；两处均明确称呼嘉宾。",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "host-name",
+      "match": "青云",
+      "replacement": "卿云",
+      "reason": "发布者确认主持人为曹卿云；两处均为主持人称呼。",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "conference-name",
+      "match": "Heister",
+      "replacement": "HYSTA",
+      "reason": "发布者确认本期在HYSTA年会现场录制，此处均指该会议。",
+      "case_sensitive": true,
+      "expected_hits": 3
+    },
+    {
+      "id": "company-case",
+      "match": "DataDog",
+      "replacement": "Datadog",
+      "reason": "发布者简介明确公司规范拼写为Datadog。",
+      "case_sensitive": true,
+      "expected_hits": 3
+    },
+    {
+      "id": "conference-case",
+      "match": "Neurips",
+      "replacement": "NeurIPS",
+      "reason": "统一本集明确学术会议缩写的大小写。",
+      "case_sensitive": true,
+      "expected_hits": 1
+    }
+  ]
+}

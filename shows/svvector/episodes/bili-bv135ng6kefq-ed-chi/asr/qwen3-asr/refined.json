@@ -1,0 +1,2573 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "svvector:bili-bv135ng6kefq",
+  "language": "zh-CN",
+  "source": {
+    "input_asr_path": "shows/svvector/episodes/bili-bv135ng6kefq-ed-chi/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "e1fb2428986ed98fef0038cbda7dd733dc202c1fb5435cf56e91cc53842768e0",
+    "engine": "mlx-audio",
+    "model": "mlx-community/Qwen3-ASR-1.7B-8bit",
+    "aligner": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit",
+    "model_identity": {
+      "schema_version": 1,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "requested_revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "resolved_commit": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "files_sha256": {
+        ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "README.md": "b356d4bdfbe7287b06b9b5ad084d9557a24ca98ca277a839beb2e682037b08f6",
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "config.json": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "model.safetensors": "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c",
+        "model.safetensors.index.json": "0a5d0ec11188602242ff81a9969883d0fdeb98cd5d85cd1413089d897c201af5",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "aligner_identity": {
+      "schema_version": 1,
+      "repository": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit",
+      "requested_revision": "0e1a68e91d815300c7c9754b2a7639378b23db15",
+      "resolved_commit": "0e1a68e91d815300c7c9754b2a7639378b23db15",
+      "files_sha256": {
+        ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "README.md": "28c8a32f6bb223a4082f6bc38062890abbc1c702b13957388e52465dfdc06a56",
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "config.json": "8dc126e1a4ac001acb02f3a9ca6277c8a20a25485fde293bc99eeab3aedc604d",
+        "generation_config.json": "948d089b23bca1d214e768d59c4438365665f52ec6d33678f4062206b3fbbb8c",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "model.safetensors": "be19ef8ac4326d032e7673342930b14c2df30bd68c1632493b0f563e30829f91",
+        "model.safetensors.index.json": "766eb50873855eeb4d95ab92def358cfd173bfc8c7aabd8635ababa1edf6db79",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "tokenizer_config.json": "3ab80063f8511deb9566e6ad438d17b7a6277fcffd52d92854112f19d36bd81c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    }
+  },
+  "rendered_transcript": {
+    "path": "shows/svvector/episodes/bili-bv135ng6kefq-ed-chi/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "c74ddfc45e64401cb7005c705975dea81b88b7362319f7ffbdc8202f530b07e7"
+  },
+  "generated_at": "2026-10-23T15:17:04.226872Z",
+  "corrections": {
+    "status": "none",
+    "rules": [],
+    "total_hits": 0
+  },
+  "statistics": {
+    "source_segments": 167,
+    "refined_segments": 167,
+    "rendered_blocks": 71,
+    "rendered_lines": 167
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 12.32,
+      "text": "开源模型之所以能够追上这个闭源的模型，其中一个原因就是因为我 co-author 这个 chain of thought 这个 paper，他们用 chain of thought 的方法来复制推理的方式。",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 12.88,
+      "end": 20.96,
+      "text": "当你有一天你的 grandma 指着你的机器人骂他说你怎么这么笨，你就知道说通用助理的时代真的到了。",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 21.36,
+      "end": 27.28,
+      "text": "所有 AI 的东西最终都是 capability over cost，啊，这是毋容置疑。",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 28.0,
+      "end": 31.2,
+      "text": "你怎么看就是 DeepMind 在 Frontier Lab 里面的竞争力？",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 31.52,
+      "end": 32.72,
+      "text": "这个是一个很好的问题。",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 38.16,
+      "end": 40.16,
+      "text": "艾德很高兴今天来参加采访。",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 40.48,
+      "end": 46.4,
+      "text": "嗯，对我想问一问，就是今天你在 panel 上讲了哪些信息，能跟我们 recap 一下吗？",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 46.72,
+      "end": 59.84,
+      "text": "当然好啊，我今天最主要的 focus 的地方就是让大家知道说，啊，过去这三十年来，特别是前面二十年，我们 focus 的地方，呃，很多时候都是 recommendation 跟 search 的东西。",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 60.32,
+      "end": 77.68,
+      "text": "但是过去十年，我们现在因为神经网络的关系，已经知道怎么样子用 next token prediction 跟 chain of thought 的方法来发掘这个呃机器能够做一些呃基本的认知跟呃 reasoning 这样子的一些推理。",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 78.16,
+      "end": 90.56,
+      "text": "那从这个知识链这这个部分啊，思维链这个部分能够做出一些啊思考的动作呢，啊这个由来跟它里面的理念是怎么样子啊开始的。",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 90.96,
+      "end": 112.72,
+      "text": "所以今天跟大家分享就是这里面基本的认知跟怎么样子去想下一步的更 complex 的 reasoning 啊，啊更 complex 的这个呃 memory 的问题啊，或者是这里面 RSI 啊 recursive 啊 self improvement 的问题啊，这怎么样子去思考这这这方面的这个以后的学术研究？",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 113.36,
+      "end": 113.84,
+      "text": "嗯，你好。",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 114.24,
+      "end": 130.72,
+      "text": "对，呃，今天我们想跟您探讨一下，就是您关于这个 consumer AI，呃，这个方向最近硅谷这边很火的一个 Instinct，还有刚刚 release 的这个 Muse Spark，啊，我们都觉得个人助理似乎又是让大家在这边又又开始掀起了新一轮的讨论。",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 130.96,
+      "end": 133.6,
+      "text": "对，您是怎么看个人助理这样的产品的？",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 134.0,
+      "end": 150.48,
+      "text": "从 personalization 的这种个人化的这种呃这个角度来看的话呢，事实上呃 Google 比如说我们的这个 AI mode search 这个 capability，它原本是在 consumer services 这边大概是 LOM application 最大的一层。",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 150.96,
+      "end": 160.32,
+      "text": "事实上是从 search 这边开始，然后变成 AI mode，啊这样子的一个搜寻，啊或者是说问答这样子的一个趋势。",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 160.64,
+      "end": 178.88,
+      "text": "那么啊 Muse 或者说 Instinct 这样子的，他们是想要从问答这个方面往通用助理，也就是说它甚至于可以帮我们做一些事情啊，比如说订机票啊、订旅店啊，或者是啊买东西啊这这方面的这种 direction 去去去发展。",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 179.44,
+      "end": 192.32,
+      "text": "那这一部分因为嗯有很多这种权限的问题，之前呢大家这个 reliability 还不够高啊，很怕说我们把信用卡给了这个通用助理，结果他到处乱买东西的这种情况会发生。",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 192.88,
+      "end": 211.28,
+      "text": "所以啊，二零二六年刚开始的时候，这种 Open QA 这样子的一个 exploration，让大家慢慢的了解这方面的 technology，然后已经现在有一些小厂啊跟大厂在 explore 这方面的这种通用助理这种 service 的一些一些 exploration。",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 211.68,
+      "end": 229.12,
+      "text": "那我觉得我个人认为事实上我们还是在一个很出奇的阶段，因为像有很多的这种比如说 confirmation，啊就是说好啊你帮我买机票，结果买对还是买错啊这种问题，我们事实上都还没有真正的看到一些啊新的 data 出来。",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 229.44,
+      "end": 235.28,
+      "text": "那那呃我预测大概这六个月到一年之间的时间，我们会",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 235.644,
+      "end": 245.404,
+      "text": "把这个通用助理跟刚才讲的这种AI mode这样子的一个search的之间的关系，跟跟跟interface会会会搞得更清楚一点。",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 245.804,
+      "end": 251.404,
+      "text": "对，你们就是Invision的未来这样的一个消费级的AI的应用，它是个什么样子的？",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 251.884,
+      "end": 255.884,
+      "text": "以我个人的观点来看，这个不代表我们Google公司的观点。",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 255.884,
+      "end": 261.324,
+      "text": "我是一直觉得说AI因为它的推理能力已经一直不停的在加强。",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 261.804,
+      "end": 270.204,
+      "text": "你们想想看，我们三四年前在写这个Chain of Thought这篇paper的时候，我们是在solve这种小学生的数学问题。",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 270.684,
+      "end": 278.204,
+      "text": "到了今年，我们是在solve这种Navier-Stokes equation这样子物理或者是数学里面最困难的一些问题。",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 278.684,
+      "end": 286.924,
+      "text": "所以代表它这个推理的能力在三年四年的时间已经达到可以甚至于可以说是用一种巅峰的呃情况已经看到了。",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 287.004,
+      "end": 293.164,
+      "text": "但是它因为现在目前为止这些推理的能力都还是比较focus在一些specific domain里面。",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 293.644,
+      "end": 313.244,
+      "text": "那所以通用助理这个universal这个部分，比如说它在呃产品上面的一些推理，如果像我个人是一个高尔夫球爱好者，那么嗯他对这个高尔夫球的呃原理啊，这个呃equipment的understanding杆啊球啊这些的，它到底有多少推理的能力呢？",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 313.244,
+      "end": 315.644,
+      "text": "这些又是跟数学不一样，对吧？",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 316.124,
+      "end": 327.324,
+      "text": "所以我们在做这方面的应用的时候，一定要了解这整个这个模型对不同领域的这种推理的能力达到了什么样子的一个一个level。",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 328.204,
+      "end": 336.444,
+      "text": "其实我们感觉这个个人助手现在这样的一个东西很简单，它有时候就是在这个text message里面，对，或者是一个app的形态。",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 336.764,
+      "end": 340.364,
+      "text": "您觉得就是这种好的个人助理它的护城河是什么？",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 341.084,
+      "end": 363.724,
+      "text": "护城河，我觉得很多人会认为，特别是在consumer这边，常常真正的护城河就是所谓的用户他第一个他对这个产品的这个体验啊，他感觉，嗯，这个地方为什么很多人比较conservative一点的原因是因为他只要犯过一个很严重的错误，你可能就会对他改观。",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 364.284,
+      "end": 383.884,
+      "text": "这跟我们不管他是不是这个呃AI做的通用助理，还是这个真正用金钱去请一个私人助理回到这这家里面或者是在公司里面，你对他这个做出错误的决定或者是行为的时候的这个容忍度是有多高的这种问题。",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 384.604,
+      "end": 407.244,
+      "text": "我在之前呃在台湾呃参加过另外一个这个podcast的时候，我就提出一个叫做grandma test这样子的一个一个concept，就是说当你有一天你的这个呃这个grandma指着你的机器人骂他说你怎么这么笨，你就知道说这个所谓什么叫做通用助理的时代真的到了。",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 407.404,
+      "end": 419.164,
+      "text": "因为这个grandma对这个通用助理的这种expectation非常的高，然后呢他犯的错误变得非常的严重的时候，你就会觉得说这个是是有问题的，对吧？",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 419.164,
+      "end": 428.764,
+      "text": "啊，所以我们现在正在那个呃不管是产品这边也好，或者是说从科学的角度来来说也好，我们正在正在explore这个boundary。",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 430.044,
+      "end": 435.724,
+      "text": "你觉得跟现在市场上的已经有的这些竞争对手来比，谷歌的优势是什么？",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 435.884,
+      "end": 438.204,
+      "text": "在做这个消费者AI产品？",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 438.364,
+      "end": 446.204,
+      "text": "你以consumer这边的这个整个的的这个ecosystem来讲的话，事实上它是分成呃software跟hardware这两块。",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 447.084,
+      "end": 456.524,
+      "text": "有很多公司它现在呃focus事实上是在hardware这边，比如记忆体啊这些问题，呃产产业链的这些问题。",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 456.524,
+      "end": 472.204,
+      "text": "那这个hardware这边是看起来嗯是还有很多呃exploration的的的opportunity，原因其中一个就是on device versus not on device的这个model的这个interaction的问题。",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 472.684,
+      "end": 480.444,
+      "text": "这边呃Apple比如说之前提出这个hybrid intelligence这样子的一个concept，啊，那这一块呢就是hardware以后",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 480.554,
+      "end": 483.354,
+      "text": "特别是consumer hardware这块，以后会怎么走？",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 483.434,
+      "end": 488.074,
+      "text": "我认为还是一个很大的一个空白的一个一个时代。",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 488.714,
+      "end": 490.794,
+      "text": "然后另外一边呢，是属于software。",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 490.874,
+      "end": 497.354,
+      "text": "software我们现在当然都是在讲services，而不是downloadable software，downloadable app这样子的一个concept。",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 497.994,
+      "end": 519.194,
+      "text": "那这个部分我觉得比较interesting的地方是，将来呢会是属于一种啊，经过比如说像search这样子的一个渠道，而大家能够啊进入一个通用助理这样子的一个environment，还是说是经过手机，还是或者经过智慧眼镜，还是会经过什么样子的一个device。",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 519.754,
+      "end": 531.674,
+      "text": "所以这个services这边，就software这边，啊，在某种程度上，我们现在已经这一两年来，已经看到一些很新颖的一些新的比较大胆的一点的这个exploration。",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 532.074,
+      "end": 548.314,
+      "text": "但我觉得我们并没有啊得到任何结论啊，像比如说我们手机为什么现在还是我整天还需要去想着说我我app有没有更新啊，干嘛这种这种就十五年前我们在worry的这种问题。",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 548.714,
+      "end": 555.674,
+      "text": "通用助理之后不应该你要整天在那边download app到这个机器人身上对吧？",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 556.074,
+      "end": 565.594,
+      "text": "所以呃，我觉得这个consumer services这边，啊，基本上我们也还是属于一个比较起步的阶段。",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 566.394,
+      "end": 575.914,
+      "text": "如果以后有一个现象级的这样的一个消费级的产品，你觉得会是像谷歌Meta呀，还是像Apple这样做硬件呢，或者是一个初创公司？",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 575.914,
+      "end": 577.914,
+      "text": "你觉得可能是最后是哪里出来的这个？",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 578.154,
+      "end": 605.194,
+      "text": "我觉得从整个这个呃生态系统来讲的话，这个地方是从哪儿来，可能有时候反而不那么重要，因为而是说它怎么样子普及啊，怎怎么样子才是正确的一个跟人互动的一个interface的这个问题，这个才是从科学家的角度来来看那个发展这方面呃这个research的人会觉得这个部分才是最interesting的地方。",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 605.594,
+      "end": 612.234,
+      "text": "如果说是比如说一些新创公司开始做这些方面的话，那它也有很可能被大厂被购买，对吧？",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 612.714,
+      "end": 627.594,
+      "text": "所以我觉得从投资人或者是说从啊这个呃开发者的角度来看的话呢，就是希望它以后这个是一个healthy的ecosystem，让大家呃整个嗯整个这个industry可以去explore这个space。",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 627.914,
+      "end": 641.914,
+      "text": "关于这个Deep Mind，然后我们看到Deep Mind有很多的人事变动，嗯，然后模型发布的这个节奏也有一些变化，嗯嗯，您您怎么看就是Deep Mind谷歌的这个模型在整个这个Frontier Lab里面的竞争力？",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 641.994,
+      "end": 643.274,
+      "text": "这个是一个很好的问题。",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 643.274,
+      "end": 650.554,
+      "text": "我们呃当然没有停停下来我们的脚步，我们也是继续在呃发展我们的模型。",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 650.634,
+      "end": 667.674,
+      "text": "呃最近这几个月来，我们可能啊发表出来的一些模型是属于比较小型一点的模型，而是把想要把小型的模型在应用这边，像我们刚刚在聊的很多通用助理呃个人化的这些东西，都是事实上都需要小的模型，而不是大的模型。",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 668.314,
+      "end": 671.434,
+      "text": "大的模型它的好处是它的推理能力更强。",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 672.074,
+      "end": 685.114,
+      "text": "那我们最近这呃这一段时间啊focus的energy啊发表出来的大部分都是稍微小一点模型的，我们希望能够就是在应用这边能够有更多的提升。",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 685.674,
+      "end": 692.314,
+      "text": "那么呃当然我们也有也有在呃这个有在develop大一点的模型，这个我们可以拭目以待啊。",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 692.634,
+      "end": 693.114,
+      "text": "对，明白。",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 693.114,
+      "end": 700.154,
+      "text": "就是所以说前沿这A G I这个目标还要继续的追求，谷歌的这个算力还是会给这些A G I的这些模型是吧？",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 700.554,
+      "end": 717.594,
+      "text": "对，嗯，我会这样觉觉得吧，就是说从整个生态系统这种呃发展的角度来看这件事情的话，你如果有很多的资源，你有多少你会啊把它放在啊比如说application development这边有多少你会把资源放在。",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 718.052,
+      "end": 727.172,
+      "text": "啊，这个大模型或者是更厉害的这种推理能力的模模型，coding capability模型，这这个资源怎么分配，这个是事情。",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 727.572,
+      "end": 733.732,
+      "text": "事实上，从长远的角度来看的话，是见仁见智的事情，啊，并不是只有一个单一的answer。",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 734.052,
+      "end": 751.972,
+      "text": "那因为现在所谓就是这个叫做呃AGI pill的这一帮人，特别是在湾区，呃，特别是在San Francisco这边呃的这一些tech bro，他们就觉得说啊，software took over the world，那我只要把coding把software做好，那我就take over the world。",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 751.972,
+      "end": 760.852,
+      "text": "所以这才会造成大家对超级大模型就ultra size model的这种模型的这种一种热爱吧，可以这样说。",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 761.412,
+      "end": 783.012,
+      "text": "嗯，但是从我们刚刚聊的这些话题来讲，比如说application的普及啊，或者是呃这个那手机上面的这种应用啊，这些东西事实上啊，不见得完全呃以后会是用我最起码我个人会是不希望它是ultra size的model，因为这个运算啊需要的能量实在太高了。",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 783.092,
+      "end": 794.372,
+      "text": "所以呃这个大模型跟小模型之间的这个平平衡，事实上是连公司大厂里面投资都这种分布都是一个难题。",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 795.412,
+      "end": 800.932,
+      "text": "对，你觉得Deep Mind跟其他的Frontier Lab相比，Deep Mind团队的优势是什么？",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 801.652,
+      "end": 829.252,
+      "text": "我觉得我们这边可能就是人才济济吧，可以这样说，这个人才实在是太多了，大家都想要做大模型，卡又永远不够啊，所以我觉得嗯这个方面呃可以，我觉得可以用另外一个角度来看，Google的用户对Google一定会有一种期许，希望说我们的模型不是使用人家的，啊，也不是使用比如说Open weights的model，对吧？",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 829.332,
+      "end": 838.132,
+      "text": "我们他们的期许一定是我们Google会拥有这个技术，这也许可以说是一种技术的sovereignty的这种味道啊。",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 838.692,
+      "end": 846.612,
+      "text": "那么从这个角度来讲的话，是Google是不可能会啊会give up on model development，这个是完全不可能发生的事情。",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 847.252,
+      "end": 851.412,
+      "text": "但是Google有一个好处就是说，你刚刚在问说它优势在什么地方？",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 851.492,
+      "end": 874.452,
+      "text": "它是一个full stack的company，我们从模型的开发到application跟services是在公司里面，但是往下走啊，hyperscaler token factory，甚至于chip的开发，然后到底下这个能源的使用跟控制，我们是token最cheap的的的这个capability，呃呃，就是说我们的cost是最低的，",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 874.772,
+      "end": 891.492,
+      "text": "能够控制这些，有可能以后啊是最重要的护城河啊，因为你如果模型的capability被普及的话，那么你最重要的事实上是cost control，能够deliver最好的capability for the cheapest amount of the cost。",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 891.892,
+      "end": 903.892,
+      "text": "我们现在这个整个领域，现在目前为止，很多人没有在看cost这件事情，但是所有economic的东西最终都是capability over cost啊，这是毋容置疑的。",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 904.372,
+      "end": 913.972,
+      "text": "大家会担心，比如说像Frontier Lab都已经投了很多的carpax，今年明年更夸张，特别像谷歌这样的大厂的现金流也被弄成拖成了负的。",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 914.372,
+      "end": 922.452,
+      "text": "我们看到可能cloud这块的revenue是有起色的，margin也在增强，然后但是就是AI的这块应用的收入可能还没有看。",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 922.692,
+      "end": 930.132,
+      "text": "但我刚听您说，就是之后谷歌的这个focus也是会把它的应用，把这个应用的这个IOI可能会再去往好。",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 930.372,
+      "end": 942.852,
+      "text": "没错，没错，你可以这样讲，就是说从一个长远的角度来看这个问题的话，就像我刚刚讲的，你如果是很short term的company，你就会只是想着是quality accuracy这样子的问题。",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 943.172,
+      "end": 955.812,
+      "text": "你如果是一个长远的公司，在投资的眼光是以五年、十年这样子在计算的话，你就会开始在想说what's what's in the future，你这个真正的该optimize的metric是什么东西？",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 956.372,
+      "end": 958.212,
+      "text": "不见得只是capability，而是",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 958.754,
+      "end": 983.954,
+      "text": "capability over cost这样子的问题，谷歌最厉害的地方，实际上就是这个啊，它等于就是在技术上面，或者在很多其他的地方，它都会double insure啊，它就是这边如果有这个可能这边投，如果有这个可能这边投，那所有的地方它都有一些投资，所以它是一个比较怎么讲，它不是说它不肯innovate，而是说它所有的地方都在innovate，",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 984.754,
+      "end": 984.914,
+      "text": "对吧？",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 985.074,
+      "end": 993.954,
+      "text": "所以我们不是只是在模型上面innovate，application也innovate啊，这个chip方面也要innovate，呃，所以整个的full stack我们都在做innovation。",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 994.434,
+      "end": 1012.114,
+      "text": "因为您现在也在研，就是做这个memory方面的研究，我们知道谷歌的哲学是能存的东西就尽量存，然后现在整个memory的supply chain又出现一个短缺，DRAM呃，包括NAND还有HDD可能都是整个都是短缺的，那你们去怎么balance这个？",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 1012.674,
+      "end": 1032.674,
+      "text": "对这个部分从computer science的角度来讲的话，我们知道呃，从以前的做过的research都知道说memory跟computation之间事实上它是有个转换的，就是有时候你有一些东西是用更多的memory，有时候你是用更多的computation，那你如果有一个很长远的这种investment plan的话，",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    },
+    {
+      "start": 1033.154,
+      "end": 1060.754,
+      "text": "你就比较不会担心一时的这个memory的短缺，因为你可以用computation来代替啊，那所以呃，现在做memory的research事实上不并不只是整个这个供应链啊，这个hardware这方面的问题，而是说我们计算方法需要用多少的memory，需要用多少的memory bandwidth啊，然后里面的这个神经网络它的design是不是应该降低它的memory requirement啊，",
+      "source_segment_indexes": [
+        94
+      ],
+      "source_segment_ids": [
+        94
+      ]
+    },
+    {
+      "start": 1060.754,
+      "end": 1078.274,
+      "text": "或者甚至于呃计算方法，像Himi所做出来的model，他们叫做Delta的attention model啊，Delta的attention model它的computation的memory的呃的用法呃，跟full attention的order and square的attention跟sparse attention的model的memory的用法又不一样，",
+      "source_segment_indexes": [
+        95
+      ],
+      "source_segment_ids": [
+        95
+      ]
+    },
+    {
+      "start": 1078.674,
+      "end": 1102.034,
+      "text": "那这只是在讲这个sequential transaction model里面memory的的东西而已，我们还没有聊到呃，甚至于像比如说啊个人化里面的这个memory的问题啊，KV cache的memory的问题啊，然后还有另外就是说我们现在所谓的memory啊，常常是在讲硬体或者是软体里面一些记忆，我们所谓记忆的东西，",
+      "source_segment_indexes": [
+        96
+      ],
+      "source_segment_ids": [
+        96
+      ]
+    },
+    {
+      "start": 1102.114,
+      "end": 1129.474,
+      "text": "嗯，但是事实上从人类认知学角度来看memory的话，它memory也是一种program，它并不只是memory，不只是只是一个没有活的东西，它它是一个一个一不停在变，然后它是一个在指导啊事情该怎么样发生，就是它是一个program for programming的AGI machinery的一个东西，所以我们做research的时候有在注意就是啊，",
+      "source_segment_indexes": [
+        97
+      ],
+      "source_segment_ids": [
+        97
+      ]
+    },
+    {
+      "start": 1129.874,
+      "end": 1145.794,
+      "text": "不只是这个低层的memory的运用，而是像比如说啊这个context buffer里面的这个这个呃整理讯息在context buffer里面的这种啊呃这种research我们也也也都花很多精力在那。",
+      "source_segment_indexes": [
+        98
+      ],
+      "source_segment_ids": [
+        98
+      ]
+    },
+    {
+      "start": 1145.794,
+      "end": 1147.474,
+      "text": "对，现在最大的bottleneck在哪里？",
+      "source_segment_indexes": [
+        99
+      ],
+      "source_segment_ids": [
+        99
+      ]
+    },
+    {
+      "start": 1147.794,
+      "end": 1151.394,
+      "text": "现在我们memory的现在整个研究最大的挑战在哪里？",
+      "source_segment_indexes": [
+        100
+      ],
+      "source_segment_ids": [
+        100
+      ]
+    },
+    {
+      "start": 1152.194,
+      "end": 1169.394,
+      "text": "我会个人认为觉得说，嗯，从transformer的model的角度来讲的话，我们现在最大的context buffer大概可以做到呃one million或two million token这样子的一个规模，那么事实上这个是呃在我看来是完全不够的，所以这个是一个bottleneck。",
+      "source_segment_indexes": [
+        101
+      ],
+      "source_segment_ids": [
+        101
+      ]
+    },
+    {
+      "start": 1170.194,
+      "end": 1193.234,
+      "text": "那另外就是说我们对memory的看法又是像我们刚刚讲的，就是它只是一个存跟提取这个memory retrieval这样子的一个机制的东西而已，而并不是把它想成呃memory从人的这个认知学或者是说我们思考能力的角度来看，memory事实上是非常非常重要的，对吧？",
+      "source_segment_indexes": [
+        102
+      ],
+      "source_segment_ids": [
+        102
+      ]
+    },
+    {
+      "start": 1193.234,
+      "end": 1198.834,
+      "text": "它不是只是一个retrieval的东西，所以这个我认为在啊。",
+      "source_segment_indexes": [
+        103
+      ],
+      "source_segment_ids": [
+        103
+      ]
+    },
+    {
+      "start": 1199.453,
+      "end": 1222.813,
+      "text": "在research的角度也是也是一个也是一个包包 bottleneck啊，大家还没把这个memory这个东西给想清楚，对对对，感觉好像嗯人脑的这个可以就是做主动遗忘，它可以学到新的东西，可以把原来东西再压缩，这个东西基本上是模型现在呃没错，那continue learning这个没错，那所以呃念过computer science的很多人就会觉得说，",
+      "source_segment_indexes": [
+        104
+      ],
+      "source_segment_ids": [
+        104
+      ]
+    },
+    {
+      "start": 1223.213,
+      "end": 1247.933,
+      "text": "那机器的memory就不需要这样想啊，它不需要忘记东西，但事实上并不是这样子的，因为你你mem很多人觉得这个memory是你记得还不记得的一个问题，事实上memory是一个ranking的问题啊，什么是最重要的，这个才是真正memory的重要memory它最其中一个最重要的的的的problem事实上是一个ranking的问题，",
+      "source_segment_indexes": [
+        105
+      ],
+      "source_segment_ids": [
+        105
+      ]
+    },
+    {
+      "start": 1248.013,
+      "end": 1271.693,
+      "text": "就是说你在想，比如说我如果随便讲一个一个一个location，我说Paris，那你记得你去巴黎的时候有什么样的记忆，这事实上是个ranking的问题，而不是说一涌而来把所有Paris的东西全部都对对，像memory现在有很多这些创业公司，它也是在做专门做这个memory memory layer，你觉得像这个memory这么重要的一件事情，",
+      "source_segment_indexes": [
+        106
+      ],
+      "source_segment_ids": [
+        106
+      ]
+    },
+    {
+      "start": 1272.173,
+      "end": 1277.133,
+      "text": "觉得这件事情是会startup公司来做，还是感觉是基本上都是大厂来做？",
+      "source_segment_indexes": [
+        107
+      ],
+      "source_segment_ids": [
+        107
+      ]
+    },
+    {
+      "start": 1277.773,
+      "end": 1301.373,
+      "text": "嗯，现在也有一些嗯在硬体那边的话，就是有一些在想怎么样子把memory跟computation结合的一些新新一点的idea，并没有在大厂里面做，但当然大大厂也有人在做这方面的东西，我觉得memory跟computation之间的这个relationship，我觉得再过来这这几年可能会有一些新development。",
+      "source_segment_indexes": [
+        108
+      ],
+      "source_segment_ids": [
+        108
+      ]
+    },
+    {
+      "start": 1301.693,
+      "end": 1306.093,
+      "text": "嗯，如果就是您今天要出来创业，您觉得最好的创业方向是什么？",
+      "source_segment_indexes": [
+        109
+      ],
+      "source_segment_ids": [
+        109
+      ]
+    },
+    {
+      "start": 1306.093,
+      "end": 1339.853,
+      "text": "哇，这个好问题，我觉得啊，嗯，现在感觉上是有一个趋势，就是说啊模型的这个capability感觉上有一点点开始在commoditise啊，那如果在这种情况下，我不是意思是说它完全被commoditise，但是它只要被更flatten一点，就是说没那个最好的模型跟最差的模型之间的那个gap比较低一点的话，那它造成的情况就是说那个value creation会往application跟token factory这两边跑，",
+      "source_segment_indexes": [
+        110
+      ],
+      "source_segment_ids": [
+        110
+      ]
+    },
+    {
+      "start": 1340.253,
+      "end": 1365.293,
+      "text": "因为大家都在找护城河嘛，那你当你model capability并不是最强的护城河的时候，你的护城河得往其他地方去找，那application这边的话，可能就是比如说用户的login啊stickiness这种问题，然后刚刚讲的就是说呃用起来这种体验有多好的这种问题，那么嗯hyperscaler那边的话呢，嗯就有很多是跟cost有关了，",
+      "source_segment_indexes": [
+        111
+      ],
+      "source_segment_ids": [
+        111
+      ]
+    },
+    {
+      "start": 1365.773,
+      "end": 1366.013,
+      "text": "对吧？",
+      "source_segment_indexes": [
+        112
+      ],
+      "source_segment_ids": [
+        112
+      ]
+    },
+    {
+      "start": 1366.013,
+      "end": 1384.333,
+      "text": "你能源的使用量，你的chip design好不好，然后你memory跟computation之间的relationship有没有搞好，有多少将来会是在on device上面，有多少将来不是在on device上面，所以以我的观点来看的话，就是这些都还是open question，非常的exciting。",
+      "source_segment_indexes": [
+        113
+      ],
+      "source_segment_ids": [
+        113
+      ]
+    },
+    {
+      "start": 1384.573,
+      "end": 1389.373,
+      "text": "对，就像比如说您的观点，你怎么看这个呃开源模型跟闭源模型？",
+      "source_segment_indexes": [
+        114
+      ],
+      "source_segment_ids": [
+        114
+      ]
+    },
+    {
+      "start": 1389.773,
+      "end": 1394.653,
+      "text": "现在我们知道这开源模型就是追赶的都很紧嘛，但你未来看这个gap是会变大还是变小？",
+      "source_segment_indexes": [
+        115
+      ],
+      "source_segment_ids": [
+        115
+      ]
+    },
+    {
+      "start": 1395.213,
+      "end": 1425.933,
+      "text": "这个问题非常的有意思的原因是啊开源模型之所以能够追上这个闭源的模型，其中一个原因就是因为我们的配我的paper啊我的co author这个chain of thought这个paper，他们用chain of thought的方法来发掘这个model里面的这种思思维链，嗯啊它的思考模式是怎么样子，然后用这个思考模式来啊复制复啊拷贝啊这个呃这个推理的方式，",
+      "source_segment_indexes": [
+        116
+      ],
+      "source_segment_ids": [
+        116
+      ]
+    },
+    {
+      "start": 1426.573,
+      "end": 1444.013,
+      "text": "那么嗯现在大厂里面就有很多的work在想办法把这个推理链啊这个思维链把它藏起来啊，然后藏起来的话呢，让它复制的这个可能性就会更低，那事实上不只是这个问题，我认为。",
+      "source_segment_indexes": [
+        117
+      ],
+      "source_segment_ids": [
+        117
+      ]
+    },
+    {
+      "start": 1444.63,
+      "end": 1477.35,
+      "text": "模型在往前走啊，比如说 multimodality 的 capability，这这个都是很难复制的，所以嗯，我我觉得很多人好像讲的像是这个呃已经是个定论似的，我觉得我我个人认为这个是啊不大成熟的想法，嗯，看起来是会有一些 capability 会因为这种蒸馏的方法而变得更 commercialized，但是有一些 capability 是啊目前为止是看不出这种 commercialization 的，",
+      "source_segment_indexes": [
+        118
+      ],
+      "source_segment_ids": [
+        118
+      ]
+    },
+    {
+      "start": 1477.59,
+      "end": 1482.39,
+      "text": "所以嗯有很多的 debate 现在这样。",
+      "source_segment_indexes": [
+        119
+      ],
+      "source_segment_ids": [
+        119
+      ]
+    },
+    {
+      "start": 1482.39,
+      "end": 1494.39,
+      "text": "对，大家好像觉得就是 open source model，他们能做的事情越来越多了，然后留给 SOTA 模型能够 monetize 的空间就更小，嗯，是不是能撑起这样的一个估值和撑起这样的一个大的 capex？",
+      "source_segment_indexes": [
+        120
+      ],
+      "source_segment_ids": [
+        120
+      ]
+    },
+    {
+      "start": 1494.55,
+      "end": 1495.35,
+      "text": "您会担心吗？",
+      "source_segment_indexes": [
+        121
+      ],
+      "source_segment_ids": [
+        121
+      ]
+    },
+    {
+      "start": 1495.99,
+      "end": 1520.95,
+      "text": "我觉得这个就是为什么有些人在想说，如果我们这个 AI 这个部分有一部分的这个 market 是泡沫性的，我并不会觉得整个那个 market 是一个泡沫性的东西，但是它肯定在不同的地方有不同的泡沫，啊，像比如说啊 Facebook and ChatGPT 那边可能有一些这个 unrealistic 的这种 expectation，",
+      "source_segment_indexes": [
+        122
+      ],
+      "source_segment_ids": [
+        122
+      ]
+    },
+    {
+      "start": 1521.51,
+      "end": 1535.35,
+      "text": "啊，然后呃这个刚刚讲的这个 multimodality 这一块啊，我们的 visual reasoning capability 很多的 model 都是非常啊糟糕的，那所以这个你就可以看得出来，这是为什么跟大家的这种信念不一样。",
+      "source_segment_indexes": [
+        123
+      ],
+      "source_segment_ids": [
+        123
+      ]
+    },
+    {
+      "start": 1535.91,
+      "end": 1545.43,
+      "text": "你如果觉得 software took over the world，那我们 solve solve the software 用 agent 的方法 solve 了这个 software 的 problem，那所有的问题就解决了。",
+      "source_segment_indexes": [
+        124
+      ],
+      "source_segment_ids": [
+        124
+      ]
+    },
+    {
+      "start": 1545.91,
+      "end": 1551.19,
+      "text": "那如果你有这样子的 perspective 的话，那那我刚刚讲的很多东西就不 apply，对吧？",
+      "source_segment_indexes": [
+        125
+      ],
+      "source_segment_ids": [
+        125
+      ]
+    },
+    {
+      "start": 1551.43,
+      "end": 1557.35,
+      "text": "但是如果你觉得说你 solve 了 software，你还是没有 solve 所有的问题的话，那我们还有很多戏可以唱。",
+      "source_segment_indexes": [
+        126
+      ],
+      "source_segment_ids": [
+        126
+      ]
+    },
+    {
+      "start": 1557.83,
+      "end": 1569.75,
+      "text": "对，嗯，您觉得因为现在的好多的这种就是我们看到了呃 Frontier Lab 他们在 coding 上已经有很多的商业化的变现，您觉得下面一个更加一个 setting 的机会可能是哪一些领域呢？",
+      "source_segment_indexes": [
+        127
+      ],
+      "source_segment_ids": [
+        127
+      ]
+    },
+    {
+      "start": 1570.87,
+      "end": 1595.91,
+      "text": "刚刚讲的就是说有很多现在的呃应用都是呃像比如说呃这个 Anthropic 和 OpenAI 这边的这个 revenue 有很多是像是 enterprise 这边 driven 的一些 subscription 的啊的 revenue，啊，我挺看好就是在往前走 consumer 这一块的的崛起，啊，那当然从这边从龙龙头的角度来讲，",
+      "source_segment_indexes": [
+        128
+      ],
+      "source_segment_ids": [
+        128
+      ]
+    },
+    {
+      "start": 1595.99,
+      "end": 1598.55,
+      "text": "为什么我还留在 Google 继续在 Google 做事？",
+      "source_segment_indexes": [
+        129
+      ],
+      "source_segment_ids": [
+        129
+      ]
+    },
+    {
+      "start": 1598.95,
+      "end": 1609.11,
+      "text": "原因就是因为这个 consumer services 这边实际上一直是 Google 啊最强的一个一个地方，那当然这个不代表将来没有新的 space，对吧？",
+      "source_segment_indexes": [
+        130
+      ],
+      "source_segment_ids": [
+        130
+      ]
+    },
+    {
+      "start": 1609.11,
+      "end": 1612.23,
+      "text": "啊，所以这个是呃大家拭目以待的地方。",
+      "source_segment_indexes": [
+        131
+      ],
+      "source_segment_ids": [
+        131
+      ]
+    },
+    {
+      "start": 1612.63,
+      "end": 1614.47,
+      "text": "对我们我们接下来该期待什么？",
+      "source_segment_indexes": [
+        132
+      ],
+      "source_segment_ids": [
+        132
+      ]
+    },
+    {
+      "start": 1614.55,
+      "end": 1615.35,
+      "text": "什么样的产品？",
+      "source_segment_indexes": [
+        133
+      ],
+      "source_segment_ids": [
+        133
+      ]
+    },
+    {
+      "start": 1615.35,
+      "end": 1621.75,
+      "text": "就是谷歌比如说在未来的一年或两年之内有一些什么我们可以期待的 AI 的产品？",
+      "source_segment_indexes": [
+        134
+      ],
+      "source_segment_ids": [
+        134
+      ]
+    },
+    {
+      "start": 1622.47,
+      "end": 1625.83,
+      "text": "我会从整个 industry 的角度来回答这个问题吧。",
+      "source_segment_indexes": [
+        135
+      ],
+      "source_segment_ids": [
+        135
+      ]
+    },
+    {
+      "start": 1625.91,
+      "end": 1641.75,
+      "text": "我会觉得说，嗯，现在已经开始有一些人在，呃，嗯，讲讲直一点的话，就是说，嗯，他们在想着说是将来将会是一个 super app 这样子的年代呢，还是说我们整个手机都会改变呢？",
+      "source_segment_indexes": [
+        136
+      ],
+      "source_segment_ids": [
+        136
+      ]
+    },
+    {
+      "start": 1641.91,
+      "end": 1671.43,
+      "text": "或者甚至于说我们佩戴身体上面佩戴的眼镜啊，呃，耳环啊，或者是这个耳机啊，都会有啊有很大的变化啊，或者甚至于啊衣着上面的呃一些改变啊，然后家里的这个我们之前做的这种智慧音箱的东西，做做做做，怎么做了这个四四五年，突然好像没人在做了啊，然后以前还喊着什么有智慧的这个呃冰箱啊什么之类的，对吧？",
+      "source_segment_indexes": [
+        137
+      ],
+      "source_segment_ids": [
+        137
+      ]
+    },
+    {
+      "start": 1671.51,
+      "end": 1686.39,
+      "text": "你这从从这个私人通用助助理的角度来看的话，你冰箱上面要放个屏幕，然后连这个 internet，如此而已的东西，你就能够把整个智慧给做起来，这比比这个。",
+      "source_segment_indexes": [
+        138
+      ],
+      "source_segment_ids": [
+        138
+      ]
+    },
+    {
+      "start": 1686.714,
+      "end": 1689.434,
+      "text": "七八年前要做简单多了，对吧？",
+      "source_segment_indexes": [
+        139
+      ],
+      "source_segment_ids": [
+        139
+      ]
+    },
+    {
+      "start": 1690.074,
+      "end": 1696.314,
+      "text": "啊，所以consumer hardware这边，我事实上还是呃，相当，我觉得还是相当的exciting的。",
+      "source_segment_indexes": [
+        140
+      ],
+      "source_segment_ids": [
+        140
+      ]
+    },
+    {
+      "start": 1696.794,
+      "end": 1699.034,
+      "text": "我问题问完了，有什么您觉得想补充的吗？",
+      "source_segment_indexes": [
+        141
+      ],
+      "source_segment_ids": [
+        141
+      ]
+    },
+    {
+      "start": 1699.354,
+      "end": 1701.114,
+      "text": "没有啊，我觉得你问的问题都很好。",
+      "source_segment_indexes": [
+        142
+      ],
+      "source_segment_ids": [
+        142
+      ]
+    },
+    {
+      "start": 1701.194,
+      "end": 1717.994,
+      "text": "我觉得呃，作为一个科学家，呃，我觉得非常exciting的地方就是大家都可以看看得出来啊，不管是在呃enterprise这边也好啊，consumer这边也好，就是这个creativity seems to be everywhere。",
+      "source_segment_indexes": [
+        143
+      ],
+      "source_segment_ids": [
+        143
+      ]
+    },
+    {
+      "start": 1718.394,
+      "end": 1734.634,
+      "text": "那我在刚刚在台上的时候也分享，就是说我们当年在做Chain of Thought思维链这方面的研究的时候，只是在solve这种小学生的问题啊，一加一等于二，然后买了五个Apple，再买了六个Apple，有多少个Apple？",
+      "source_segment_indexes": [
+        144
+      ],
+      "source_segment_ids": [
+        144
+      ]
+    },
+    {
+      "start": 1734.634,
+      "end": 1741.754,
+      "text": "五加六是十一，这样子的问题，当时我们的model都这种accuracy也只做到三十三个percent。",
+      "source_segment_indexes": [
+        145
+      ],
+      "source_segment_ids": [
+        145
+      ]
+    },
+    {
+      "start": 1741.914,
+      "end": 1752.554,
+      "text": "现在我们才刚刚经历这个啊，最大的模型现在是可以solve这个Millennium Prize的数学的问题Navier-Stokes equation。",
+      "source_segment_indexes": [
+        146
+      ],
+      "source_segment_ids": [
+        146
+      ]
+    },
+    {
+      "start": 1753.194,
+      "end": 1764.874,
+      "text": "那从这个角度来看的话，就是说我们现在能够想象的这个这个capability啊，是肯定是是还不够的，它还是会继续在在在expand。",
+      "source_segment_indexes": [
+        147
+      ],
+      "source_segment_ids": [
+        147
+      ]
+    },
+    {
+      "start": 1765.434,
+      "end": 1768.394,
+      "text": "那这是对科学家来讲是一个非常exciting的事情。",
+      "source_segment_indexes": [
+        148
+      ],
+      "source_segment_ids": [
+        148
+      ]
+    },
+    {
+      "start": 1768.634,
+      "end": 1777.274,
+      "text": "很多人觉得现在AI已经可以把数学都这么好，那我们比如说现在如果要从小培养的孩子，他的时间应该花在数学上吗？",
+      "source_segment_indexes": [
+        149
+      ],
+      "source_segment_ids": [
+        149
+      ]
+    },
+    {
+      "start": 1777.434,
+      "end": 1781.114,
+      "text": "还是应该把更多精力去放一些他解决AI解决不了的问题上面？",
+      "source_segment_indexes": [
+        150
+      ],
+      "source_segment_ids": [
+        150
+      ]
+    },
+    {
+      "start": 1781.194,
+      "end": 1799.594,
+      "text": "我觉得你问这个问题很有意思的地方，就是说啊，我们呃这个快要十年前发展这个AlphaGo的时候，在Google发发发展AlphaGo的时候，就很多人那个跟棋王对决之后呢，就说啊，完了，这人类以后不下棋了啊。",
+      "source_segment_indexes": [
+        151
+      ],
+      "source_segment_ids": [
+        151
+      ]
+    },
+    {
+      "start": 1800.074,
+      "end": 1805.514,
+      "text": "结果后来反而下棋的人更多了啊，想要去研究这个围棋的人更多。",
+      "source_segment_indexes": [
+        152
+      ],
+      "source_segment_ids": [
+        152
+      ]
+    },
+    {
+      "start": 1805.994,
+      "end": 1816.314,
+      "text": "这意思就是说数学我觉得也一样啊，很多人会觉得说啊，这下子我们Navier-Stokes equation都用这个方法来解决了，那以后没人想要念数学了。",
+      "source_segment_indexes": [
+        153
+      ],
+      "source_segment_ids": [
+        153
+      ]
+    },
+    {
+      "start": 1816.714,
+      "end": 1824.074,
+      "text": "我觉得有可能是刚刚好相反，会有更多人会觉得数学这么的interesting，我想要去研究它。",
+      "source_segment_indexes": [
+        154
+      ],
+      "source_segment_ids": [
+        154
+      ]
+    },
+    {
+      "start": 1824.394,
+      "end": 1839.434,
+      "text": "因为之前可能有一些motivation是为了exploration，what is the boundary of knowledge的这样子的一个motivation，但现在有很多的motivation是跟understanding有关啊，或者是跟entertainment或乐趣有关。",
+      "source_segment_indexes": [
+        155
+      ],
+      "source_segment_ids": [
+        155
+      ]
+    },
+    {
+      "start": 1840.074,
+      "end": 1850.234,
+      "text": "那所以去执行像这种数学在这方面的研究的人，我觉得以后可能会更从内心的那种curiosity在做这方面的研究。",
+      "source_segment_indexes": [
+        156
+      ],
+      "source_segment_ids": [
+        156
+      ]
+    },
+    {
+      "start": 1850.874,
+      "end": 1863.274,
+      "text": "有没有可能就是说以前数学是门槛是很高的，那如果是把数学能够通过AI把这数学当成一个工具，那很多可能就是文科生也可以去利用这样的一个工具去解决更多更更create。",
+      "source_segment_indexes": [
+        157
+      ],
+      "source_segment_ids": [
+        157
+      ]
+    },
+    {
+      "start": 1863.274,
+      "end": 1877.194,
+      "text": "你你像以前学围棋的话，你得去请教练，请请老师啊，然后还要找这个跟你棋力相相同的啊朋友们一起下棋，然后花很多时间。",
+      "source_segment_indexes": [
+        158
+      ],
+      "source_segment_ids": [
+        158
+      ]
+    },
+    {
+      "start": 1877.194,
+      "end": 1896.474,
+      "text": "现在你拿个手机，你就可以download一些很呃相当不错的这种围棋的这个A呃这个呃application，它反而带动了很多这围棋界的一些呃学习小朋友啊啊也都在用这些软体，所以它事实上反而啊激励了这个很多人。",
+      "source_segment_indexes": [
+        159
+      ],
+      "source_segment_ids": [
+        159
+      ]
+    },
+    {
+      "start": 1896.634,
+      "end": 1899.914,
+      "text": "那跟刚刚讲的那个呃search engine也有关系。",
+      "source_segment_indexes": [
+        160
+      ],
+      "source_segment_ids": [
+        160
+      ]
+    },
+    {
+      "start": 1900.074,
+      "end": 1907.274,
+      "text": "那个我们当时就很多人会觉得说啊，这下子这个大语言模型来了，这个search engine没那么relevant。",
+      "source_segment_indexes": [
+        161
+      ],
+      "source_segment_ids": [
+        161
+      ]
+    },
+    {
+      "start": 1907.274,
+      "end": 1916.474,
+      "text": "没有，Google反而看到很多这个search的application反而是在增加而不是在减少，所以嗯，我觉得还是有一些optimism的。",
+      "source_segment_indexes": [
+        162
+      ],
+      "source_segment_ids": [
+        162
+      ]
+    },
+    {
+      "start": 1916.874,
+      "end": 1927.914,
+      "text": "当然我不否认啊，它是会改变呃很多我们我们现在的既有的这样子的structure啊，但是也有新的呃新的这个possibility。",
+      "source_segment_indexes": [
+        163
+      ],
+      "source_segment_ids": [
+        163
+      ]
+    },
+    {
+      "start": 1928.523,
+      "end": 1930.203,
+      "text": "对，嗯嗯，非常感谢。",
+      "source_segment_indexes": [
+        164
+      ],
+      "source_segment_ids": [
+        164
+      ]
+    },
+    {
+      "start": 1930.363,
+      "end": 1930.763,
+      "text": "哪里？",
+      "source_segment_indexes": [
+        165
+      ],
+      "source_segment_ids": [
+        165
+      ]
+    },
+    {
+      "start": 1930.843,
+      "end": 1932.923,
+      "text": "非常非常感谢，谢谢谢谢。",
+      "source_segment_indexes": [
+        166
+      ],
+      "source_segment_ids": [
+        166
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 0.0,
+      "end": 32.72,
+      "text": "开源模型之所以能够追上这个闭源的模型，其中一个原因就是因为我 co-author 这个 chain of thought 这个 paper，他们用 chain of thought 的方法来复制推理的方式。当你有一天你的 grandma 指着你的机器人骂他说你怎么这么笨，你就知道说通用助理的时代真的到了。所有 AI 的东西最终都是 capability over cost，啊，这是毋容置疑。你怎么看就是 DeepMind 在 Frontier Lab 里面的竞争力？这个是一个很好的问题。",
+      "refined_segment_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "start": 38.16,
+      "end": 59.84,
+      "text": "艾德很高兴今天来参加采访。嗯，对我想问一问，就是今天你在 panel 上讲了哪些信息，能跟我们 recap 一下吗？当然好啊，我今天最主要的 focus 的地方就是让大家知道说，啊，过去这三十年来，特别是前面二十年，我们 focus 的地方，呃，很多时候都是 recommendation 跟 search 的东西。",
+      "refined_segment_indexes": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "start": 60.32,
+      "end": 90.56,
+      "text": "但是过去十年，我们现在因为神经网络的关系，已经知道怎么样子用 next token prediction 跟 chain of thought 的方法来发掘这个呃机器能够做一些呃基本的认知跟呃 reasoning 这样子的一些推理。那从这个知识链这这个部分啊，思维链这个部分能够做出一些啊思考的动作呢，啊这个由来跟它里面的理念是怎么样子啊开始的。",
+      "refined_segment_indexes": [
+        8,
+        9
+      ]
+    },
+    {
+      "start": 90.96,
+      "end": 113.84,
+      "text": "所以今天跟大家分享就是这里面基本的认知跟怎么样子去想下一步的更 complex 的 reasoning 啊，啊更 complex 的这个呃 memory 的问题啊，或者是这里面 RSI 啊 recursive 啊 self improvement 的问题啊，这怎么样子去思考这这这方面的这个以后的学术研究？嗯，你好。",
+      "refined_segment_indexes": [
+        10,
+        11
+      ]
+    },
+    {
+      "start": 114.24,
+      "end": 133.6,
+      "text": "对，呃，今天我们想跟您探讨一下，就是您关于这个 consumer AI，呃，这个方向最近硅谷这边很火的一个 Instinct，还有刚刚 release 的这个 Muse Spark，啊，我们都觉得个人助理似乎又是让大家在这边又又开始掀起了新一轮的讨论。对，您是怎么看个人助理这样的产品的？",
+      "refined_segment_indexes": [
+        12,
+        13
+      ]
+    },
+    {
+      "start": 134.0,
+      "end": 160.32,
+      "text": "从 personalization 的这种个人化的这种呃这个角度来看的话呢，事实上呃 Google 比如说我们的这个 AI mode search 这个 capability，它原本是在 consumer services 这边大概是 LOM application 最大的一层。事实上是从 search 这边开始，然后变成 AI mode，啊这样子的一个搜寻，啊或者是说问答这样子的一个趋势。",
+      "refined_segment_indexes": [
+        14,
+        15
+      ]
+    },
+    {
+      "start": 160.64,
+      "end": 192.32,
+      "text": "那么啊 Muse 或者说 Instinct 这样子的，他们是想要从问答这个方面往通用助理，也就是说它甚至于可以帮我们做一些事情啊，比如说订机票啊、订旅店啊，或者是啊买东西啊这这方面的这种 direction 去去去发展。那这一部分因为嗯有很多这种权限的问题，之前呢大家这个 reliability 还不够高啊，很怕说我们把信用卡给了这个通用助理，结果他到处乱买东西的这种情况会发生。",
+      "refined_segment_indexes": [
+        16,
+        17
+      ]
+    },
+    {
+      "start": 192.88,
+      "end": 211.28,
+      "text": "所以啊，二零二六年刚开始的时候，这种 Open QA 这样子的一个 exploration，让大家慢慢的了解这方面的 technology，然后已经现在有一些小厂啊跟大厂在 explore 这方面的这种通用助理这种 service 的一些一些 exploration。",
+      "refined_segment_indexes": [
+        18
+      ]
+    },
+    {
+      "start": 211.68,
+      "end": 245.404,
+      "text": "那我觉得我个人认为事实上我们还是在一个很出奇的阶段，因为像有很多的这种比如说 confirmation，啊就是说好啊你帮我买机票，结果买对还是买错啊这种问题，我们事实上都还没有真正的看到一些啊新的 data 出来。那那呃我预测大概这六个月到一年之间的时间，我们会把这个通用助理跟刚才讲的这种AI mode这样子的一个search的之间的关系，跟跟跟interface会会会搞得更清楚一点。",
+      "refined_segment_indexes": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "start": 245.804,
+      "end": 278.204,
+      "text": "对，你们就是Invision的未来这样的一个消费级的AI的应用，它是个什么样子的？以我个人的观点来看，这个不代表我们Google公司的观点。我是一直觉得说AI因为它的推理能力已经一直不停的在加强。你们想想看，我们三四年前在写这个Chain of Thought这篇paper的时候，我们是在solve这种小学生的数学问题。到了今年，我们是在solve这种Navier-Stokes equation这样子物理或者是数学里面最困难的一些问题。",
+      "refined_segment_indexes": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "start": 278.684,
+      "end": 313.244,
+      "text": "所以代表它这个推理的能力在三年四年的时间已经达到可以甚至于可以说是用一种巅峰的呃情况已经看到了。但是它因为现在目前为止这些推理的能力都还是比较focus在一些specific domain里面。那所以通用助理这个universal这个部分，比如说它在呃产品上面的一些推理，如果像我个人是一个高尔夫球爱好者，那么嗯他对这个高尔夫球的呃原理啊，这个呃equipment的understanding杆啊球啊这些的，它到底有多少推理的能力呢？",
+      "refined_segment_indexes": [
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "start": 313.244,
+      "end": 340.364,
+      "text": "这些又是跟数学不一样，对吧？所以我们在做这方面的应用的时候，一定要了解这整个这个模型对不同领域的这种推理的能力达到了什么样子的一个一个level。其实我们感觉这个个人助手现在这样的一个东西很简单，它有时候就是在这个text message里面，对，或者是一个app的形态。您觉得就是这种好的个人助理它的护城河是什么？",
+      "refined_segment_indexes": [
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "start": 341.084,
+      "end": 363.724,
+      "text": "护城河，我觉得很多人会认为，特别是在consumer这边，常常真正的护城河就是所谓的用户他第一个他对这个产品的这个体验啊，他感觉，嗯，这个地方为什么很多人比较conservative一点的原因是因为他只要犯过一个很严重的错误，你可能就会对他改观。",
+      "refined_segment_indexes": [
+        34
+      ]
+    },
+    {
+      "start": 364.284,
+      "end": 383.884,
+      "text": "这跟我们不管他是不是这个呃AI做的通用助理，还是这个真正用金钱去请一个私人助理回到这这家里面或者是在公司里面，你对他这个做出错误的决定或者是行为的时候的这个容忍度是有多高的这种问题。",
+      "refined_segment_indexes": [
+        35
+      ]
+    },
+    {
+      "start": 384.604,
+      "end": 419.164,
+      "text": "我在之前呃在台湾呃参加过另外一个这个podcast的时候，我就提出一个叫做grandma test这样子的一个一个concept，就是说当你有一天你的这个呃这个grandma指着你的机器人骂他说你怎么这么笨，你就知道说这个所谓什么叫做通用助理的时代真的到了。因为这个grandma对这个通用助理的这种expectation非常的高，然后呢他犯的错误变得非常的严重的时候，你就会觉得说这个是是有问题的，对吧？",
+      "refined_segment_indexes": [
+        36,
+        37
+      ]
+    },
+    {
+      "start": 419.164,
+      "end": 446.204,
+      "text": "啊，所以我们现在正在那个呃不管是产品这边也好，或者是说从科学的角度来来说也好，我们正在正在explore这个boundary。你觉得跟现在市场上的已经有的这些竞争对手来比，谷歌的优势是什么？在做这个消费者AI产品？你以consumer这边的这个整个的的这个ecosystem来讲的话，事实上它是分成呃software跟hardware这两块。",
+      "refined_segment_indexes": [
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "start": 447.084,
+      "end": 480.444,
+      "text": "有很多公司它现在呃focus事实上是在hardware这边，比如记忆体啊这些问题，呃产产业链的这些问题。那这个hardware这边是看起来嗯是还有很多呃exploration的的的opportunity，原因其中一个就是on device versus not on device的这个model的这个interaction的问题。这边呃Apple比如说之前提出这个hybrid intelligence这样子的一个concept，啊，那这一块呢就是hardware以后",
+      "refined_segment_indexes": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "start": 480.554,
+      "end": 497.354,
+      "text": "特别是consumer hardware这块，以后会怎么走？我认为还是一个很大的一个空白的一个一个时代。然后另外一边呢，是属于software。software我们现在当然都是在讲services，而不是downloadable software，downloadable app这样子的一个concept。",
+      "refined_segment_indexes": [
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "start": 497.994,
+      "end": 531.674,
+      "text": "那这个部分我觉得比较interesting的地方是，将来呢会是属于一种啊，经过比如说像search这样子的一个渠道，而大家能够啊进入一个通用助理这样子的一个environment，还是说是经过手机，还是或者经过智慧眼镜，还是会经过什么样子的一个device。所以这个services这边，就software这边，啊，在某种程度上，我们现在已经这一两年来，已经看到一些很新颖的一些新的比较大胆的一点的这个exploration。",
+      "refined_segment_indexes": [
+        49,
+        50
+      ]
+    },
+    {
+      "start": 532.074,
+      "end": 565.594,
+      "text": "但我觉得我们并没有啊得到任何结论啊，像比如说我们手机为什么现在还是我整天还需要去想着说我我app有没有更新啊，干嘛这种这种就十五年前我们在worry的这种问题。通用助理之后不应该你要整天在那边download app到这个机器人身上对吧？所以呃，我觉得这个consumer services这边，啊，基本上我们也还是属于一个比较起步的阶段。",
+      "refined_segment_indexes": [
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "start": 566.394,
+      "end": 577.914,
+      "text": "如果以后有一个现象级的这样的一个消费级的产品，你觉得会是像谷歌Meta呀，还是像Apple这样做硬件呢，或者是一个初创公司？你觉得可能是最后是哪里出来的这个？",
+      "refined_segment_indexes": [
+        54,
+        55
+      ]
+    },
+    {
+      "start": 578.154,
+      "end": 612.234,
+      "text": "我觉得从整个这个呃生态系统来讲的话，这个地方是从哪儿来，可能有时候反而不那么重要，因为而是说它怎么样子普及啊，怎怎么样子才是正确的一个跟人互动的一个interface的这个问题，这个才是从科学家的角度来来看那个发展这方面呃这个research的人会觉得这个部分才是最interesting的地方。如果说是比如说一些新创公司开始做这些方面的话，那它也有很可能被大厂被购买，对吧？",
+      "refined_segment_indexes": [
+        56,
+        57
+      ]
+    },
+    {
+      "start": 612.714,
+      "end": 643.274,
+      "text": "所以我觉得从投资人或者是说从啊这个呃开发者的角度来看的话呢，就是希望它以后这个是一个healthy的ecosystem，让大家呃整个嗯整个这个industry可以去explore这个space。关于这个Deep Mind，然后我们看到Deep Mind有很多的人事变动，嗯，然后模型发布的这个节奏也有一些变化，嗯嗯，您您怎么看就是Deep Mind谷歌的这个模型在整个这个Frontier Lab里面的竞争力？这个是一个很好的问题。",
+      "refined_segment_indexes": [
+        58,
+        59,
+        60
+      ]
+    },
+    {
+      "start": 643.274,
+      "end": 671.434,
+      "text": "我们呃当然没有停停下来我们的脚步，我们也是继续在呃发展我们的模型。呃最近这几个月来，我们可能啊发表出来的一些模型是属于比较小型一点的模型，而是把想要把小型的模型在应用这边，像我们刚刚在聊的很多通用助理呃个人化的这些东西，都是事实上都需要小的模型，而不是大的模型。大的模型它的好处是它的推理能力更强。",
+      "refined_segment_indexes": [
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "start": 672.074,
+      "end": 700.154,
+      "text": "那我们最近这呃这一段时间啊focus的energy啊发表出来的大部分都是稍微小一点模型的，我们希望能够就是在应用这边能够有更多的提升。那么呃当然我们也有也有在呃这个有在develop大一点的模型，这个我们可以拭目以待啊。对，明白。就是所以说前沿这A G I这个目标还要继续的追求，谷歌的这个算力还是会给这些A G I的这些模型是吧？",
+      "refined_segment_indexes": [
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "start": 700.554,
+      "end": 733.732,
+      "text": "对，嗯，我会这样觉觉得吧，就是说从整个生态系统这种呃发展的角度来看这件事情的话，你如果有很多的资源，你有多少你会啊把它放在啊比如说application development这边有多少你会把资源放在。啊，这个大模型或者是更厉害的这种推理能力的模模型，coding capability模型，这这个资源怎么分配，这个是事情。事实上，从长远的角度来看的话，是见仁见智的事情，啊，并不是只有一个单一的answer。",
+      "refined_segment_indexes": [
+        68,
+        69,
+        70
+      ]
+    },
+    {
+      "start": 734.052,
+      "end": 760.852,
+      "text": "那因为现在所谓就是这个叫做呃AGI pill的这一帮人，特别是在湾区，呃，特别是在San Francisco这边呃的这一些tech bro，他们就觉得说啊，software took over the world，那我只要把coding把software做好，那我就take over the world。所以这才会造成大家对超级大模型就ultra size model的这种模型的这种一种热爱吧，可以这样说。",
+      "refined_segment_indexes": [
+        71,
+        72
+      ]
+    },
+    {
+      "start": 761.412,
+      "end": 794.372,
+      "text": "嗯，但是从我们刚刚聊的这些话题来讲，比如说application的普及啊，或者是呃这个那手机上面的这种应用啊，这些东西事实上啊，不见得完全呃以后会是用我最起码我个人会是不希望它是ultra size的model，因为这个运算啊需要的能量实在太高了。所以呃这个大模型跟小模型之间的这个平平衡，事实上是连公司大厂里面投资都这种分布都是一个难题。",
+      "refined_segment_indexes": [
+        73,
+        74
+      ]
+    },
+    {
+      "start": 795.412,
+      "end": 829.252,
+      "text": "对，你觉得Deep Mind跟其他的Frontier Lab相比，Deep Mind团队的优势是什么？我觉得我们这边可能就是人才济济吧，可以这样说，这个人才实在是太多了，大家都想要做大模型，卡又永远不够啊，所以我觉得嗯这个方面呃可以，我觉得可以用另外一个角度来看，Google的用户对Google一定会有一种期许，希望说我们的模型不是使用人家的，啊，也不是使用比如说Open weights的model，对吧？",
+      "refined_segment_indexes": [
+        75,
+        76
+      ]
+    },
+    {
+      "start": 829.332,
+      "end": 851.412,
+      "text": "我们他们的期许一定是我们Google会拥有这个技术，这也许可以说是一种技术的sovereignty的这种味道啊。那么从这个角度来讲的话，是Google是不可能会啊会give up on model development，这个是完全不可能发生的事情。但是Google有一个好处就是说，你刚刚在问说它优势在什么地方？",
+      "refined_segment_indexes": [
+        77,
+        78,
+        79
+      ]
+    },
+    {
+      "start": 851.492,
+      "end": 874.452,
+      "text": "它是一个full stack的company，我们从模型的开发到application跟services是在公司里面，但是往下走啊，hyperscaler token factory，甚至于chip的开发，然后到底下这个能源的使用跟控制，我们是token最cheap的的的这个capability，呃呃，就是说我们的cost是最低的，",
+      "refined_segment_indexes": [
+        80
+      ]
+    },
+    {
+      "start": 874.772,
+      "end": 903.892,
+      "text": "能够控制这些，有可能以后啊是最重要的护城河啊，因为你如果模型的capability被普及的话，那么你最重要的事实上是cost control，能够deliver最好的capability for the cheapest amount of the cost。我们现在这个整个领域，现在目前为止，很多人没有在看cost这件事情，但是所有economic的东西最终都是capability over cost啊，这是毋容置疑的。",
+      "refined_segment_indexes": [
+        81,
+        82
+      ]
+    },
+    {
+      "start": 904.372,
+      "end": 930.132,
+      "text": "大家会担心，比如说像Frontier Lab都已经投了很多的carpax，今年明年更夸张，特别像谷歌这样的大厂的现金流也被弄成拖成了负的。我们看到可能cloud这块的revenue是有起色的，margin也在增强，然后但是就是AI的这块应用的收入可能还没有看。但我刚听您说，就是之后谷歌的这个focus也是会把它的应用，把这个应用的这个IOI可能会再去往好。",
+      "refined_segment_indexes": [
+        83,
+        84,
+        85
+      ]
+    },
+    {
+      "start": 930.372,
+      "end": 958.212,
+      "text": "没错，没错，你可以这样讲，就是说从一个长远的角度来看这个问题的话，就像我刚刚讲的，你如果是很short term的company，你就会只是想着是quality accuracy这样子的问题。你如果是一个长远的公司，在投资的眼光是以五年、十年这样子在计算的话，你就会开始在想说what's what's in the future，你这个真正的该optimize的metric是什么东西？不见得只是capability，而是",
+      "refined_segment_indexes": [
+        86,
+        87,
+        88
+      ]
+    },
+    {
+      "start": 958.754,
+      "end": 984.914,
+      "text": "capability over cost这样子的问题，谷歌最厉害的地方，实际上就是这个啊，它等于就是在技术上面，或者在很多其他的地方，它都会double insure啊，它就是这边如果有这个可能这边投，如果有这个可能这边投，那所有的地方它都有一些投资，所以它是一个比较怎么讲，它不是说它不肯innovate，而是说它所有的地方都在innovate，对吧？",
+      "refined_segment_indexes": [
+        89,
+        90
+      ]
+    },
+    {
+      "start": 985.074,
+      "end": 1012.114,
+      "text": "所以我们不是只是在模型上面innovate，application也innovate啊，这个chip方面也要innovate，呃，所以整个的full stack我们都在做innovation。因为您现在也在研，就是做这个memory方面的研究，我们知道谷歌的哲学是能存的东西就尽量存，然后现在整个memory的supply chain又出现一个短缺，DRAM呃，包括NAND还有HDD可能都是整个都是短缺的，那你们去怎么balance这个？",
+      "refined_segment_indexes": [
+        91,
+        92
+      ]
+    },
+    {
+      "start": 1012.674,
+      "end": 1032.674,
+      "text": "对这个部分从computer science的角度来讲的话，我们知道呃，从以前的做过的research都知道说memory跟computation之间事实上它是有个转换的，就是有时候你有一些东西是用更多的memory，有时候你是用更多的computation，那你如果有一个很长远的这种investment plan的话，",
+      "refined_segment_indexes": [
+        93
+      ]
+    },
+    {
+      "start": 1033.154,
+      "end": 1060.754,
+      "text": "你就比较不会担心一时的这个memory的短缺，因为你可以用computation来代替啊，那所以呃，现在做memory的research事实上不并不只是整个这个供应链啊，这个hardware这方面的问题，而是说我们计算方法需要用多少的memory，需要用多少的memory bandwidth啊，然后里面的这个神经网络它的design是不是应该降低它的memory requirement啊，",
+      "refined_segment_indexes": [
+        94
+      ]
+    },
+    {
+      "start": 1060.754,
+      "end": 1078.274,
+      "text": "或者甚至于呃计算方法，像Himi所做出来的model，他们叫做Delta的attention model啊，Delta的attention model它的computation的memory的呃的用法呃，跟full attention的order and square的attention跟sparse attention的model的memory的用法又不一样，",
+      "refined_segment_indexes": [
+        95
+      ]
+    },
+    {
+      "start": 1078.674,
+      "end": 1102.034,
+      "text": "那这只是在讲这个sequential transaction model里面memory的的东西而已，我们还没有聊到呃，甚至于像比如说啊个人化里面的这个memory的问题啊，KV cache的memory的问题啊，然后还有另外就是说我们现在所谓的memory啊，常常是在讲硬体或者是软体里面一些记忆，我们所谓记忆的东西，",
+      "refined_segment_indexes": [
+        96
+      ]
+    },
+    {
+      "start": 1102.114,
+      "end": 1129.474,
+      "text": "嗯，但是事实上从人类认知学角度来看memory的话，它memory也是一种program，它并不只是memory，不只是只是一个没有活的东西，它它是一个一个一不停在变，然后它是一个在指导啊事情该怎么样发生，就是它是一个program for programming的AGI machinery的一个东西，所以我们做research的时候有在注意就是啊，",
+      "refined_segment_indexes": [
+        97
+      ]
+    },
+    {
+      "start": 1129.874,
+      "end": 1151.394,
+      "text": "不只是这个低层的memory的运用，而是像比如说啊这个context buffer里面的这个这个呃整理讯息在context buffer里面的这种啊呃这种research我们也也也都花很多精力在那。对，现在最大的bottleneck在哪里？现在我们memory的现在整个研究最大的挑战在哪里？",
+      "refined_segment_indexes": [
+        98,
+        99,
+        100
+      ]
+    },
+    {
+      "start": 1152.194,
+      "end": 1169.394,
+      "text": "我会个人认为觉得说，嗯，从transformer的model的角度来讲的话，我们现在最大的context buffer大概可以做到呃one million或two million token这样子的一个规模，那么事实上这个是呃在我看来是完全不够的，所以这个是一个bottleneck。",
+      "refined_segment_indexes": [
+        101
+      ]
+    },
+    {
+      "start": 1170.194,
+      "end": 1198.834,
+      "text": "那另外就是说我们对memory的看法又是像我们刚刚讲的，就是它只是一个存跟提取这个memory retrieval这样子的一个机制的东西而已，而并不是把它想成呃memory从人的这个认知学或者是说我们思考能力的角度来看，memory事实上是非常非常重要的，对吧？它不是只是一个retrieval的东西，所以这个我认为在啊。",
+      "refined_segment_indexes": [
+        102,
+        103
+      ]
+    },
+    {
+      "start": 1199.453,
+      "end": 1222.813,
+      "text": "在research的角度也是也是一个也是一个包包 bottleneck啊，大家还没把这个memory这个东西给想清楚，对对对，感觉好像嗯人脑的这个可以就是做主动遗忘，它可以学到新的东西，可以把原来东西再压缩，这个东西基本上是模型现在呃没错，那continue learning这个没错，那所以呃念过computer science的很多人就会觉得说，",
+      "refined_segment_indexes": [
+        104
+      ]
+    },
+    {
+      "start": 1223.213,
+      "end": 1247.933,
+      "text": "那机器的memory就不需要这样想啊，它不需要忘记东西，但事实上并不是这样子的，因为你你mem很多人觉得这个memory是你记得还不记得的一个问题，事实上memory是一个ranking的问题啊，什么是最重要的，这个才是真正memory的重要memory它最其中一个最重要的的的的problem事实上是一个ranking的问题，",
+      "refined_segment_indexes": [
+        105
+      ]
+    },
+    {
+      "start": 1248.013,
+      "end": 1277.133,
+      "text": "就是说你在想，比如说我如果随便讲一个一个一个location，我说Paris，那你记得你去巴黎的时候有什么样的记忆，这事实上是个ranking的问题，而不是说一涌而来把所有Paris的东西全部都对对，像memory现在有很多这些创业公司，它也是在做专门做这个memory memory layer，你觉得像这个memory这么重要的一件事情，觉得这件事情是会startup公司来做，还是感觉是基本上都是大厂来做？",
+      "refined_segment_indexes": [
+        106,
+        107
+      ]
+    },
+    {
+      "start": 1277.773,
+      "end": 1306.093,
+      "text": "嗯，现在也有一些嗯在硬体那边的话，就是有一些在想怎么样子把memory跟computation结合的一些新新一点的idea，并没有在大厂里面做，但当然大大厂也有人在做这方面的东西，我觉得memory跟computation之间的这个relationship，我觉得再过来这这几年可能会有一些新development。嗯，如果就是您今天要出来创业，您觉得最好的创业方向是什么？",
+      "refined_segment_indexes": [
+        108,
+        109
+      ]
+    },
+    {
+      "start": 1306.093,
+      "end": 1339.853,
+      "text": "哇，这个好问题，我觉得啊，嗯，现在感觉上是有一个趋势，就是说啊模型的这个capability感觉上有一点点开始在commoditise啊，那如果在这种情况下，我不是意思是说它完全被commoditise，但是它只要被更flatten一点，就是说没那个最好的模型跟最差的模型之间的那个gap比较低一点的话，那它造成的情况就是说那个value creation会往application跟token factory这两边跑，",
+      "refined_segment_indexes": [
+        110
+      ]
+    },
+    {
+      "start": 1340.253,
+      "end": 1366.013,
+      "text": "因为大家都在找护城河嘛，那你当你model capability并不是最强的护城河的时候，你的护城河得往其他地方去找，那application这边的话，可能就是比如说用户的login啊stickiness这种问题，然后刚刚讲的就是说呃用起来这种体验有多好的这种问题，那么嗯hyperscaler那边的话呢，嗯就有很多是跟cost有关了，对吧？",
+      "refined_segment_indexes": [
+        111,
+        112
+      ]
+    },
+    {
+      "start": 1366.013,
+      "end": 1394.653,
+      "text": "你能源的使用量，你的chip design好不好，然后你memory跟computation之间的relationship有没有搞好，有多少将来会是在on device上面，有多少将来不是在on device上面，所以以我的观点来看的话，就是这些都还是open question，非常的exciting。对，就像比如说您的观点，你怎么看这个呃开源模型跟闭源模型？现在我们知道这开源模型就是追赶的都很紧嘛，但你未来看这个gap是会变大还是变小？",
+      "refined_segment_indexes": [
+        113,
+        114,
+        115
+      ]
+    },
+    {
+      "start": 1395.213,
+      "end": 1425.933,
+      "text": "这个问题非常的有意思的原因是啊开源模型之所以能够追上这个闭源的模型，其中一个原因就是因为我们的配我的paper啊我的co author这个chain of thought这个paper，他们用chain of thought的方法来发掘这个model里面的这种思思维链，嗯啊它的思考模式是怎么样子，然后用这个思考模式来啊复制复啊拷贝啊这个呃这个推理的方式，",
+      "refined_segment_indexes": [
+        116
+      ]
+    },
+    {
+      "start": 1426.573,
+      "end": 1444.013,
+      "text": "那么嗯现在大厂里面就有很多的work在想办法把这个推理链啊这个思维链把它藏起来啊，然后藏起来的话呢，让它复制的这个可能性就会更低，那事实上不只是这个问题，我认为。",
+      "refined_segment_indexes": [
+        117
+      ]
+    },
+    {
+      "start": 1444.63,
+      "end": 1477.35,
+      "text": "模型在往前走啊，比如说 multimodality 的 capability，这这个都是很难复制的，所以嗯，我我觉得很多人好像讲的像是这个呃已经是个定论似的，我觉得我我个人认为这个是啊不大成熟的想法，嗯，看起来是会有一些 capability 会因为这种蒸馏的方法而变得更 commercialized，但是有一些 capability 是啊目前为止是看不出这种 commercialization 的，",
+      "refined_segment_indexes": [
+        118
+      ]
+    },
+    {
+      "start": 1477.59,
+      "end": 1495.35,
+      "text": "所以嗯有很多的 debate 现在这样。对，大家好像觉得就是 open source model，他们能做的事情越来越多了，然后留给 SOTA 模型能够 monetize 的空间就更小，嗯，是不是能撑起这样的一个估值和撑起这样的一个大的 capex？您会担心吗？",
+      "refined_segment_indexes": [
+        119,
+        120,
+        121
+      ]
+    },
+    {
+      "start": 1495.99,
+      "end": 1520.95,
+      "text": "我觉得这个就是为什么有些人在想说，如果我们这个 AI 这个部分有一部分的这个 market 是泡沫性的，我并不会觉得整个那个 market 是一个泡沫性的东西，但是它肯定在不同的地方有不同的泡沫，啊，像比如说啊 Facebook and ChatGPT 那边可能有一些这个 unrealistic 的这种 expectation，",
+      "refined_segment_indexes": [
+        122
+      ]
+    },
+    {
+      "start": 1521.51,
+      "end": 1545.43,
+      "text": "啊，然后呃这个刚刚讲的这个 multimodality 这一块啊，我们的 visual reasoning capability 很多的 model 都是非常啊糟糕的，那所以这个你就可以看得出来，这是为什么跟大家的这种信念不一样。你如果觉得 software took over the world，那我们 solve solve the software 用 agent 的方法 solve 了这个 software 的 problem，那所有的问题就解决了。",
+      "refined_segment_indexes": [
+        123,
+        124
+      ]
+    },
+    {
+      "start": 1545.91,
+      "end": 1569.75,
+      "text": "那如果你有这样子的 perspective 的话，那那我刚刚讲的很多东西就不 apply，对吧？但是如果你觉得说你 solve 了 software，你还是没有 solve 所有的问题的话，那我们还有很多戏可以唱。对，嗯，您觉得因为现在的好多的这种就是我们看到了呃 Frontier Lab 他们在 coding 上已经有很多的商业化的变现，您觉得下面一个更加一个 setting 的机会可能是哪一些领域呢？",
+      "refined_segment_indexes": [
+        125,
+        126,
+        127
+      ]
+    },
+    {
+      "start": 1570.87,
+      "end": 1598.55,
+      "text": "刚刚讲的就是说有很多现在的呃应用都是呃像比如说呃这个 Anthropic 和 OpenAI 这边的这个 revenue 有很多是像是 enterprise 这边 driven 的一些 subscription 的啊的 revenue，啊，我挺看好就是在往前走 consumer 这一块的的崛起，啊，那当然从这边从龙龙头的角度来讲，为什么我还留在 Google 继续在 Google 做事？",
+      "refined_segment_indexes": [
+        128,
+        129
+      ]
+    },
+    {
+      "start": 1598.95,
+      "end": 1625.83,
+      "text": "原因就是因为这个 consumer services 这边实际上一直是 Google 啊最强的一个一个地方，那当然这个不代表将来没有新的 space，对吧？啊，所以这个是呃大家拭目以待的地方。对我们我们接下来该期待什么？什么样的产品？就是谷歌比如说在未来的一年或两年之内有一些什么我们可以期待的 AI 的产品？我会从整个 industry 的角度来回答这个问题吧。",
+      "refined_segment_indexes": [
+        130,
+        131,
+        132,
+        133,
+        134,
+        135
+      ]
+    },
+    {
+      "start": 1625.91,
+      "end": 1641.75,
+      "text": "我会觉得说，嗯，现在已经开始有一些人在，呃，嗯，讲讲直一点的话，就是说，嗯，他们在想着说是将来将会是一个 super app 这样子的年代呢，还是说我们整个手机都会改变呢？",
+      "refined_segment_indexes": [
+        136
+      ]
+    },
+    {
+      "start": 1641.91,
+      "end": 1671.43,
+      "text": "或者甚至于说我们佩戴身体上面佩戴的眼镜啊，呃，耳环啊，或者是这个耳机啊，都会有啊有很大的变化啊，或者甚至于啊衣着上面的呃一些改变啊，然后家里的这个我们之前做的这种智慧音箱的东西，做做做做，怎么做了这个四四五年，突然好像没人在做了啊，然后以前还喊着什么有智慧的这个呃冰箱啊什么之类的，对吧？",
+      "refined_segment_indexes": [
+        137
+      ]
+    },
+    {
+      "start": 1671.51,
+      "end": 1701.114,
+      "text": "你这从从这个私人通用助助理的角度来看的话，你冰箱上面要放个屏幕，然后连这个 internet，如此而已的东西，你就能够把整个智慧给做起来，这比比这个。七八年前要做简单多了，对吧？啊，所以consumer hardware这边，我事实上还是呃，相当，我觉得还是相当的exciting的。我问题问完了，有什么您觉得想补充的吗？没有啊，我觉得你问的问题都很好。",
+      "refined_segment_indexes": [
+        138,
+        139,
+        140,
+        141,
+        142
+      ]
+    },
+    {
+      "start": 1701.194,
+      "end": 1734.634,
+      "text": "我觉得呃，作为一个科学家，呃，我觉得非常exciting的地方就是大家都可以看看得出来啊，不管是在呃enterprise这边也好啊，consumer这边也好，就是这个creativity seems to be everywhere。那我在刚刚在台上的时候也分享，就是说我们当年在做Chain of Thought思维链这方面的研究的时候，只是在solve这种小学生的问题啊，一加一等于二，然后买了五个Apple，再买了六个Apple，有多少个Apple？",
+      "refined_segment_indexes": [
+        143,
+        144
+      ]
+    },
+    {
+      "start": 1734.634,
+      "end": 1768.394,
+      "text": "五加六是十一，这样子的问题，当时我们的model都这种accuracy也只做到三十三个percent。现在我们才刚刚经历这个啊，最大的模型现在是可以solve这个Millennium Prize的数学的问题Navier-Stokes equation。那从这个角度来看的话，就是说我们现在能够想象的这个这个capability啊，是肯定是是还不够的，它还是会继续在在在expand。那这是对科学家来讲是一个非常exciting的事情。",
+      "refined_segment_indexes": [
+        145,
+        146,
+        147,
+        148
+      ]
+    },
+    {
+      "start": 1768.634,
+      "end": 1799.594,
+      "text": "很多人觉得现在AI已经可以把数学都这么好，那我们比如说现在如果要从小培养的孩子，他的时间应该花在数学上吗？还是应该把更多精力去放一些他解决AI解决不了的问题上面？我觉得你问这个问题很有意思的地方，就是说啊，我们呃这个快要十年前发展这个AlphaGo的时候，在Google发发发展AlphaGo的时候，就很多人那个跟棋王对决之后呢，就说啊，完了，这人类以后不下棋了啊。",
+      "refined_segment_indexes": [
+        149,
+        150,
+        151
+      ]
+    },
+    {
+      "start": 1800.074,
+      "end": 1824.074,
+      "text": "结果后来反而下棋的人更多了啊，想要去研究这个围棋的人更多。这意思就是说数学我觉得也一样啊，很多人会觉得说啊，这下子我们Navier-Stokes equation都用这个方法来解决了，那以后没人想要念数学了。我觉得有可能是刚刚好相反，会有更多人会觉得数学这么的interesting，我想要去研究它。",
+      "refined_segment_indexes": [
+        152,
+        153,
+        154
+      ]
+    },
+    {
+      "start": 1824.394,
+      "end": 1850.234,
+      "text": "因为之前可能有一些motivation是为了exploration，what is the boundary of knowledge的这样子的一个motivation，但现在有很多的motivation是跟understanding有关啊，或者是跟entertainment或乐趣有关。那所以去执行像这种数学在这方面的研究的人，我觉得以后可能会更从内心的那种curiosity在做这方面的研究。",
+      "refined_segment_indexes": [
+        155,
+        156
+      ]
+    },
+    {
+      "start": 1850.874,
+      "end": 1877.194,
+      "text": "有没有可能就是说以前数学是门槛是很高的，那如果是把数学能够通过AI把这数学当成一个工具，那很多可能就是文科生也可以去利用这样的一个工具去解决更多更更create。你你像以前学围棋的话，你得去请教练，请请老师啊，然后还要找这个跟你棋力相相同的啊朋友们一起下棋，然后花很多时间。",
+      "refined_segment_indexes": [
+        157,
+        158
+      ]
+    },
+    {
+      "start": 1877.194,
+      "end": 1907.274,
+      "text": "现在你拿个手机，你就可以download一些很呃相当不错的这种围棋的这个A呃这个呃application，它反而带动了很多这围棋界的一些呃学习小朋友啊啊也都在用这些软体，所以它事实上反而啊激励了这个很多人。那跟刚刚讲的那个呃search engine也有关系。那个我们当时就很多人会觉得说啊，这下子这个大语言模型来了，这个search engine没那么relevant。",
+      "refined_segment_indexes": [
+        159,
+        160,
+        161
+      ]
+    },
+    {
+      "start": 1907.274,
+      "end": 1932.923,
+      "text": "没有，Google反而看到很多这个search的application反而是在增加而不是在减少，所以嗯，我觉得还是有一些optimism的。当然我不否认啊，它是会改变呃很多我们我们现在的既有的这样子的structure啊，但是也有新的呃新的这个possibility。对，嗯嗯，非常感谢。哪里？非常非常感谢，谢谢谢谢。",
+      "refined_segment_indexes": [
+        162,
+        163,
+        164,
+        165,
+        166
+      ]
+    }
+  ],
+  "lineage_schema_version": 2
+}

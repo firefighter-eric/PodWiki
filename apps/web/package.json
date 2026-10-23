@@ -31,7 +31,7 @@
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "motion": "^14.0.0",
-    "next": "^16.4.0",
+    "next": "^16.4.3",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "rehype-sanitize": "^6.0.0",
@@ -50,7 +50,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.0",
+    "eslint-config-next": "^16.4.3",
     "fast-glob": "file:vendor/next-root-glob",
     "typescript": "^6.0.3",
     "vitest": "^5.0.3"

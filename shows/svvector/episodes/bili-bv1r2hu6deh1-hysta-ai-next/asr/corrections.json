@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "episode_id": "svvector:bili-bv1r2hu6deh1",
+  "version": "publisher-confirmed-names-v1",
+  "input_asr_sha256": "9b380dc2be1fdb38d6d6fa0d62095761106cc8fc4b48ee300622eaaad7020d9a",
+  "rules": [
+    {
+      "id": "guest-name",
+      "match": "严斌",
+      "replacement": "严冰",
+      "reason": "发布者列出嘉宾李严冰；两处均称呼该嘉宾。",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "host-name",
+      "match": "青云",
+      "replacement": "卿云",
+      "reason": "发布者列出主持人曹卿云；两处均称呼该主持人。",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "conference-name",
+      "match": "Hasta",
+      "replacement": "HYSTA",
+      "reason": "发布者明确本期是HYSTA年会专题；匹配项均指该会议。",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "fireworks-guest-name",
+      "match": "乔林",
+      "replacement": "乔琳",
+      "reason": "发布者明确Fireworks创始人为乔琳；该处完整上下文明示Fireworks创始人。",
+      "case_sensitive": true,
+      "expected_hits": 1
+    }
+  ]
+}

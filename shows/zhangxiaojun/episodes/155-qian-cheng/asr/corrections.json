@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "episode_id": "zhangxiaojun:155",
+  "version": "publisher-confirmed-names-v1",
+  "input_asr_sha256": "7f5d18684ab24de71a094ab71ff56b781370f6f75550657e0759fad747106f7d",
+  "rules": [
+    {
+      "id": "guest-name",
+      "match": "钱晨",
+      "replacement": "钱程",
+      "reason": "发布者原标题和简介明确嘉宾为科沃斯CEO钱程；匹配处均指本集嘉宾。",
+      "case_sensitive": true,
+      "expected_hits": 4
+    },
+    {
+      "id": "host-name",
+      "match": "小俊",
+      "replacement": "小珺",
+      "reason": "发布者确认主持人为张小珺；两处均为主持人姓名。",
+      "case_sensitive": true,
+      "expected_hits": 2
+    },
+    {
+      "id": "guest-name-context",
+      "match": "叫前程啊",
+      "replacement": "叫钱程啊",
+      "reason": "该处明确询问嘉宾姓名；随后前程似锦等普通词语继续原样保留。",
+      "case_sensitive": true,
+      "expected_hits": 1
+    }
+  ]
+}
