@@ -1,0 +1,1496 @@
+{
+  "schema_version": 1,
+  "kind": "refined-asr",
+  "episode_id": "svvector:bili-bv1dnjs66e44",
+  "language": "zh-CN",
+  "source": {
+    "input_asr_path": "shows/svvector/episodes/bili-bv1dnjs66e44-li-yanbing/asr/qwen3-asr/aligned.json",
+    "input_asr_sha256": "c81099575cd4f94e9bc730f69d9041096097e8b6da643b552ac08fbcd6c32e46",
+    "engine": "mlx-audio",
+    "model": "mlx-community/Qwen3-ASR-1.7B-8bit",
+    "aligner": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit",
+    "model_identity": {
+      "schema_version": 1,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "requested_revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "resolved_commit": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "files_sha256": {
+        ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "README.md": "b356d4bdfbe7287b06b9b5ad084d9557a24ca98ca277a839beb2e682037b08f6",
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "config.json": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7",
+        "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "model.safetensors": "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c",
+        "model.safetensors.index.json": "0a5d0ec11188602242ff81a9969883d0fdeb98cd5d85cd1413089d897c201af5",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "aligner_identity": {
+      "schema_version": 1,
+      "repository": "mlx-community/Qwen3-ForcedAligner-0.6B-8bit",
+      "requested_revision": "0e1a68e91d815300c7c9754b2a7639378b23db15",
+      "resolved_commit": "0e1a68e91d815300c7c9754b2a7639378b23db15",
+      "files_sha256": {
+        ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "README.md": "28c8a32f6bb223a4082f6bc38062890abbc1c702b13957388e52465dfdc06a56",
+        "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "config.json": "8dc126e1a4ac001acb02f3a9ca6277c8a20a25485fde293bc99eeab3aedc604d",
+        "generation_config.json": "948d089b23bca1d214e768d59c4438365665f52ec6d33678f4062206b3fbbb8c",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "model.safetensors": "be19ef8ac4326d032e7673342930b14c2df30bd68c1632493b0f563e30829f91",
+        "model.safetensors.index.json": "766eb50873855eeb4d95ab92def358cfd173bfc8c7aabd8635ababa1edf6db79",
+        "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "tokenizer_config.json": "3ab80063f8511deb9566e6ad438d17b7a6277fcffd52d92854112f19d36bd81c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    }
+  },
+  "rendered_transcript": {
+    "path": "shows/svvector/episodes/bili-bv1dnjs66e44-li-yanbing/asr/qwen3-asr/transcript.zh-CN.md",
+    "sha256": "0ed7466d44692b49912801ba01e99cc68eddd0d280c925192e293c67ef5a4718"
+  },
+  "generated_at": "2026-10-23T15:20:48.145225Z",
+  "corrections": {
+    "status": "applied",
+    "map_path": "shows/svvector/episodes/bili-bv1dnjs66e44-li-yanbing/asr/corrections.json",
+    "map_sha256": "39f0b53dbfaae6f03a022516709eec2ef24a7881e33d4b1e8a4981df36c5cb9c",
+    "schema_version": 1,
+    "version": "publisher-confirmed-names-v1",
+    "input_asr_sha256": "c81099575cd4f94e9bc730f69d9041096097e8b6da643b552ac08fbcd6c32e46",
+    "rules": [
+      {
+        "id": "guest-name",
+        "match": "严斌",
+        "replacement": "严冰",
+        "reason": "发布者确认的嘉宾姓名为李严冰；两处均明确称呼嘉宾。",
+        "case_sensitive": true,
+        "expected_hits": 2,
+        "hits": 2
+      },
+      {
+        "id": "host-name",
+        "match": "青云",
+        "replacement": "卿云",
+        "reason": "发布者确认主持人为曹卿云；两处均为主持人称呼。",
+        "case_sensitive": true,
+        "expected_hits": 2,
+        "hits": 2
+      },
+      {
+        "id": "conference-name",
+        "match": "Heister",
+        "replacement": "HYSTA",
+        "reason": "发布者确认本期在HYSTA年会现场录制，此处均指该会议。",
+        "case_sensitive": true,
+        "expected_hits": 3,
+        "hits": 3
+      },
+      {
+        "id": "company-case",
+        "match": "DataDog",
+        "replacement": "Datadog",
+        "reason": "发布者简介明确公司规范拼写为Datadog。",
+        "case_sensitive": true,
+        "expected_hits": 3,
+        "hits": 3
+      },
+      {
+        "id": "conference-case",
+        "match": "Neurips",
+        "replacement": "NeurIPS",
+        "reason": "统一本集明确学术会议缩写的大小写。",
+        "case_sensitive": true,
+        "expected_hits": 1,
+        "hits": 1
+      }
+    ],
+    "total_hits": 11
+  },
+  "statistics": {
+    "source_segments": 94,
+    "refined_segments": 94,
+    "rendered_blocks": 35,
+    "rendered_lines": 94
+  },
+  "segments": [
+    {
+      "start": 0.08,
+      "end": 7.92,
+      "text": "AI落地推广最大的一个障碍呢，就是如何对它进行运维管控。",
+      "source_segment_indexes": [
+        0
+      ],
+      "source_segment_ids": [
+        0
+      ]
+    },
+    {
+      "start": 8.4,
+      "end": 19.28,
+      "text": "今年年初的时候，我们整个SaaS在市值的都有大规模的滑落，然后Datadog也是其中，但是我们应该是率先从低谷中啊脱颖而出的。",
+      "source_segment_indexes": [
+        1
+      ],
+      "source_segment_ids": [
+        1
+      ]
+    },
+    {
+      "start": 20.08,
+      "end": 27.92,
+      "text": "大家的现在的市场上共识是AI需要更多的observability，我们在哪里工作，你的工具就应该在哪里。",
+      "source_segment_indexes": [
+        2
+      ],
+      "source_segment_ids": [
+        2
+      ]
+    },
+    {
+      "start": 33.04,
+      "end": 37.76,
+      "text": "严冰你好，今年的HYSTA你觉得跟往年的HYSTA的这个会议有什么不一样？",
+      "source_segment_indexes": [
+        3
+      ],
+      "source_segment_ids": [
+        3
+      ]
+    },
+    {
+      "start": 38.0,
+      "end": 60.96,
+      "text": "卿云你好，我觉着HYSTA的会议就是一年都会上升一个新高度，尤其是最近几年我们的主题都是AI，随着中国人在AI方面的影响力越来越大，所以感觉今天的这个盛会，无论是参与者，或者是我们的话题，或者我们的嘉宾，都是质量又有一个质的提升。",
+      "source_segment_indexes": [
+        4
+      ],
+      "source_segment_ids": [
+        4
+      ]
+    },
+    {
+      "start": 61.6,
+      "end": 63.36,
+      "text": "今年会主要讲一些哪些主题呢？",
+      "source_segment_indexes": [
+        5
+      ],
+      "source_segment_ids": [
+        5
+      ]
+    },
+    {
+      "start": 64.4,
+      "end": 68.88,
+      "text": "今天我们主要是AI的真正的这个scaling的这样的主题。",
+      "source_segment_indexes": [
+        6
+      ],
+      "source_segment_ids": [
+        6
+      ]
+    },
+    {
+      "start": 69.2,
+      "end": 74.32,
+      "text": "呃，我知道卿云你也是很关注我们华人在AI行业的影响力。",
+      "source_segment_indexes": [
+        7
+      ],
+      "source_segment_ids": [
+        7
+      ]
+    },
+    {
+      "start": 74.48,
+      "end": 98.08,
+      "text": "其实前几天我看到一个非常令我呃惊讶的一个数据，这就是前三天才出炉的一个Carnegie的一个research，说最近这个NeurIPS作为AI界的一个最重要的科研大会，它从一万个这个作者中进行了一些统计，百分之五十七的作者他的本科教育来自中国。",
+      "source_segment_indexes": [
+        8
+      ],
+      "source_segment_ids": [
+        8
+      ]
+    },
+    {
+      "start": 98.56,
+      "end": 107.28,
+      "text": "当然这个有包括在中国的作者，包括在美国和世界其他的各地，大家可以看到现在华人在AI圈的重量。",
+      "source_segment_indexes": [
+        9
+      ],
+      "source_segment_ids": [
+        9
+      ]
+    },
+    {
+      "start": 107.6,
+      "end": 115.92,
+      "text": "当然我们华人呢不只是做AI的研究，而且还把AI转化成这个entrepreneurship转化成啊企业。",
+      "source_segment_indexes": [
+        10
+      ],
+      "source_segment_ids": [
+        10
+      ]
+    },
+    {
+      "start": 116.24,
+      "end": 135.12,
+      "text": "我还看到另外一个也让我非常惊讶的呃话题，就是说呃来自中国的这个founder或者是co-founder已经在美国有四十一个这个十亿美元量级以上的这样的公司，然后很多这些公司今天都会在我们的盛会上。",
+      "source_segment_indexes": [
+        11
+      ],
+      "source_segment_ids": [
+        11
+      ]
+    },
+    {
+      "start": 135.44,
+      "end": 149.36,
+      "text": "所以说从啊华元今年这个AI大会的主题呢，就不仅仅是说最前沿的研究、最前沿的企业应用，还有很多很多的这个founder真正见到了business上的成功。",
+      "source_segment_indexes": [
+        12
+      ],
+      "source_segment_ids": [
+        12
+      ]
+    },
+    {
+      "start": 150.4,
+      "end": 157.52,
+      "text": "您是这个呃Datadog的首席产品官，然后也是在硅谷华人女性中间非常杰出的代表。",
+      "source_segment_indexes": [
+        13
+      ],
+      "source_segment_ids": [
+        13
+      ]
+    },
+    {
+      "start": 157.92,
+      "end": 163.84,
+      "text": "嗯，我想跟您请教一下，就是在AI时代，您看到这个AI运维它是怎么样的一个趋势发展？",
+      "source_segment_indexes": [
+        14
+      ],
+      "source_segment_ids": [
+        14
+      ]
+    },
+    {
+      "start": 163.92,
+      "end": 166.0,
+      "text": "这里面最好的机会未来会在哪里？",
+      "source_segment_indexes": [
+        15
+      ],
+      "source_segment_ids": [
+        15
+      ]
+    },
+    {
+      "start": 166.56,
+      "end": 168.64,
+      "text": "对我觉得这个问题问的非常好。",
+      "source_segment_indexes": [
+        16
+      ],
+      "source_segment_ids": [
+        16
+      ]
+    },
+    {
+      "start": 168.64,
+      "end": 186.96,
+      "text": "从我的呃作为呃Datadog的这个是首席产品官的角度来看，其实现在AI落地推广啊，加大规模的被大家广泛采用，最大的一个障碍呢，就是如何在对它进行运维管控。",
+      "source_segment_indexes": [
+        17
+      ],
+      "source_segment_ids": [
+        17
+      ]
+    },
+    {
+      "start": 187.2,
+      "end": 197.44,
+      "text": "所以说其实最开始大家看到AI感觉非常的兴奋呢，只是说哎这个AI到底会不会work啊？",
+      "source_segment_indexes": [
+        18
+      ],
+      "source_segment_ids": [
+        18
+      ]
+    },
+    {
+      "start": 197.52,
+      "end": 208.8,
+      "text": "然后呢很快又意识到哇，我们知道这个AI worked非常非常好，那我可不可以相信它的这个安全保障这样的一些方面的问题？",
+      "source_segment_indexes": [
+        19
+      ],
+      "source_segment_ids": [
+        19
+      ]
+    },
+    {
+      "start": 209.2,
+      "end": 222.4,
+      "text": "那到今年呢，大家又意识到即使我能相信我的AI，但是发现它的这个token cost或者是它这个AI的这个预算是成本是远远超出了预算。",
+      "source_segment_indexes": [
+        20
+      ],
+      "source_segment_ids": [
+        20
+      ]
+    },
+    {
+      "start": 222.72,
+      "end": 234.88,
+      "text": "所以说无论是从这个AI是不是啊产生正确的结果，是不是我们可以对AI的有这个可控、可信任的啊这样的一个感觉。",
+      "source_segment_indexes": [
+        21
+      ],
+      "source_segment_ids": [
+        21
+      ]
+    },
+    {
+      "start": 235.219,
+      "end": 248.099,
+      "text": "到我们能不能对AI所提供真正的这个商业价值，而不是看大家都在token max，而真正能deliver商业化的这个ROI，我觉得现在反而是大家最关注的问题。",
+      "source_segment_indexes": [
+        22
+      ],
+      "source_segment_ids": [
+        22
+      ]
+    },
+    {
+      "start": 248.339,
+      "end": 262.259,
+      "text": "那这些关注的问题，它的背后有一个很重要的点，就是我们叫做observability，就是能够深入的了解AI究竟在做什么，agents之间的关系是什么，究竟采用什么样的价值。",
+      "source_segment_indexes": [
+        23
+      ],
+      "source_segment_ids": [
+        23
+      ]
+    },
+    {
+      "start": 262.579,
+      "end": 275.859,
+      "text": "所以说，Data Dog在这个时候呢，也是处在一个非常好的风口，就是说对AI的observability现在是一个AI量产化这个大规模的采采用的一个重要的一个环节。",
+      "source_segment_indexes": [
+        24
+      ],
+      "source_segment_ids": [
+        24
+      ]
+    },
+    {
+      "start": 276.099,
+      "end": 280.419,
+      "text": "我们看到这个就Data Dog的市值也是一路飙升，现在也是在史高的位置。",
+      "source_segment_indexes": [
+        25
+      ],
+      "source_segment_ids": [
+        25
+      ]
+    },
+    {
+      "start": 280.739,
+      "end": 288.979,
+      "text": "嗯，我们看到整个这个可观测性以前都是可能给工程师去让他们观测，现在以后未来给agents观测，然后这观测数据量也变大了。",
+      "source_segment_indexes": [
+        26
+      ],
+      "source_segment_ids": [
+        26
+      ]
+    },
+    {
+      "start": 289.219,
+      "end": 292.179,
+      "text": "然后未来可能这样的产品形态会有什么样的变化？",
+      "source_segment_indexes": [
+        27
+      ],
+      "source_segment_ids": [
+        27
+      ]
+    },
+    {
+      "start": 292.339,
+      "end": 304.979,
+      "text": "比如说今年年初的时候，我们整个SaaS有一个这个SaaS complex的这样的一个景象，就大家统统的这个呃在市值的都有大规模的滑落，然后Data Dog也是其中。",
+      "source_segment_indexes": [
+        28
+      ],
+      "source_segment_ids": [
+        28
+      ]
+    },
+    {
+      "start": 305.059,
+      "end": 310.419,
+      "text": "但是我们应该是率先从这个低谷中啊脱颖而出的。",
+      "source_segment_indexes": [
+        29
+      ],
+      "source_segment_ids": [
+        29
+      ]
+    },
+    {
+      "start": 310.659,
+      "end": 314.659,
+      "text": "所以说我们今年从年初到现在市值已经翻倍了。",
+      "source_segment_indexes": [
+        30
+      ],
+      "source_segment_ids": [
+        30
+      ]
+    },
+    {
+      "start": 314.979,
+      "end": 325.619,
+      "text": "但是这个其中很多的并不是大家一个主观性的说，哎，这个AI需要更多的observability，其实是看真正的数据的。",
+      "source_segment_indexes": [
+        31
+      ],
+      "source_segment_ids": [
+        31
+      ]
+    },
+    {
+      "start": 325.939,
+      "end": 336.179,
+      "text": "比如说我们看世界上最大的十家AI公司，都需要用Data Dog来帮助他们做可见性这个observability。",
+      "source_segment_indexes": [
+        32
+      ],
+      "source_segment_ids": [
+        32
+      ]
+    },
+    {
+      "start": 336.419,
+      "end": 347.939,
+      "text": "所以说大家对于AI能取代observability这个观念已经完全给抛弃了，而是大家的现在的市场上的共识是AI需要更多的observability。",
+      "source_segment_indexes": [
+        33
+      ],
+      "source_segment_ids": [
+        33
+      ]
+    },
+    {
+      "start": 348.019,
+      "end": 349.299,
+      "text": "所以这也是我们的机会。",
+      "source_segment_indexes": [
+        34
+      ],
+      "source_segment_ids": [
+        34
+      ]
+    },
+    {
+      "start": 349.539,
+      "end": 365.539,
+      "text": "当然我们现在从这个产品形态的角度来讲，可以考虑到以前呢，呃，Data Dog产品是有非常丰富的这个user experience，有非常漂亮的UI，有很漂亮的dashboard，是设计给人来使用的。",
+      "source_segment_indexes": [
+        35
+      ],
+      "source_segment_ids": [
+        35
+      ]
+    },
+    {
+      "start": 365.859,
+      "end": 386.259,
+      "text": "那我觉着在未来的发展是人和agents来共同使用使用这样的产品，而且这个产品的呃交互呢，也从这种网页型mobile型为主呢，变成呃it goes anywhere we do our work，就是我们在哪里工作，你的工具就应该在哪里。",
+      "source_segment_indexes": [
+        36
+      ],
+      "source_segment_ids": [
+        36
+      ]
+    },
+    {
+      "start": 386.259,
+      "end": 395.699,
+      "text": "如果你在一个CLI里编程，那你可以访问它；如果你在一个Slack里和你的团队进行交互，你也可以在那里啊。",
+      "source_segment_indexes": [
+        37
+      ],
+      "source_segment_ids": [
+        37
+      ]
+    },
+    {
+      "start": 395.699,
+      "end": 408.179,
+      "text": "所以说，我觉着AI是完全改变了我们对产品的这个固定的原来的这个边界，而是在任何的时候，任何的工作方式都可以访访问到它。",
+      "source_segment_indexes": [
+        38
+      ],
+      "source_segment_ids": [
+        38
+      ]
+    },
+    {
+      "start": 408.819,
+      "end": 416.179,
+      "text": "我觉得就是今年早些时候，一个大家觉得Open I可能会不会自己就出来做了，而且现在这个模型能力这么强，自己会写代码了。",
+      "source_segment_indexes": [
+        39
+      ],
+      "source_segment_ids": [
+        39
+      ]
+    },
+    {
+      "start": 416.579,
+      "end": 421.059,
+      "text": "然后您觉得未来Data Dog它的这个护城河在哪里？",
+      "source_segment_indexes": [
+        40
+      ],
+      "source_segment_ids": [
+        40
+      ]
+    },
+    {
+      "start": 421.139,
+      "end": 422.899,
+      "text": "就是说它可它的不可替代性？",
+      "source_segment_indexes": [
+        41
+      ],
+      "source_segment_ids": [
+        41
+      ]
+    },
+    {
+      "start": 423.459,
+      "end": 432.579,
+      "text": "对，其实呃护城河我觉着有几点，一个是operation呢是不仅只是mission critical，它是复杂度是非常高的。",
+      "source_segment_indexes": [
+        42
+      ],
+      "source_segment_ids": [
+        42
+      ]
+    },
+    {
+      "start": 432.819,
+      "end": 453.299,
+      "text": "我之前是做呃自动驾驶，我原来在偶尔做过，就是在呃偶尔是一个自动驾驶卡车公司，它是美国第一家，应该现在也是世界唯一一家在这个呃公共高速公路上可以跑这个自动驾驶的商业卡车的啊一个领先的这样一个公司。",
+      "source_segment_indexes": [
+        43
+      ],
+      "source_segment_ids": [
+        43
+      ]
+    },
+    {
+      "start": 453.539,
+      "end": 461.219,
+      "text": "当然我们在做自动驾驶的时候，就是说从有人到无人的这个突破在哪里？",
+      "source_segment_indexes": [
+        44
+      ],
+      "source_segment_ids": [
+        44
+      ]
+    },
+    {
+      "start": 461.219,
+      "end": 463.539,
+      "text": "当然是感觉是一个非常难的问题。",
+      "source_segment_indexes": [
+        45
+      ],
+      "source_segment_ids": [
+        45
+      ]
+    },
+    {
+      "start": 463.539,
+      "end": 471.139,
+      "text": "但是其实想想呢，自动驾驶比起运维大规模的这个生产型的这个软件和系统。",
+      "source_segment_indexes": [
+        46
+      ],
+      "source_segment_ids": [
+        46
+      ]
+    },
+    {
+      "start": 471.557,
+      "end": 472.837,
+      "text": "其实复杂度是很低的。",
+      "source_segment_indexes": [
+        47
+      ],
+      "source_segment_ids": [
+        47
+      ]
+    },
+    {
+      "start": 472.837,
+      "end": 478.837,
+      "text": "你想想，啊，比如开车，你只需要了解一下你视线所及的这个本地的场景。",
+      "source_segment_indexes": [
+        48
+      ],
+      "source_segment_ids": [
+        48
+      ]
+    },
+    {
+      "start": 479.317,
+      "end": 485.637,
+      "text": "另外，你在开车的时候，你只有三个控制，你只能加速、减速和打方向盘。",
+      "source_segment_indexes": [
+        49
+      ],
+      "source_segment_ids": [
+        49
+      ]
+    },
+    {
+      "start": 486.277,
+      "end": 502.917,
+      "text": "而在一个大规模的这个软件和硬件和基础架构非常复杂的一个系统，因为现在有很复杂的这个AI agent在里边，这个复杂度是远远超过于这个自动驾驶这样的。",
+      "source_segment_indexes": [
+        50
+      ],
+      "source_segment_ids": [
+        50
+      ]
+    },
+    {
+      "start": 502.917,
+      "end": 513.797,
+      "text": "所以说，嗯，从完全能够真正的实现完全自动化的这种大规模的生产运维，其实还是有很长的一段距离。",
+      "source_segment_indexes": [
+        51
+      ],
+      "source_segment_ids": [
+        51
+      ]
+    },
+    {
+      "start": 513.797,
+      "end": 519.397,
+      "text": "所以我想说的问题呢，就是说这个operation是一个非常高度的complexity。",
+      "source_segment_indexes": [
+        52
+      ],
+      "source_segment_ids": [
+        52
+      ]
+    },
+    {
+      "start": 519.716,
+      "end": 527.557,
+      "text": "比如说比起coding，coding也是有很多技术难度，但是它是一个相对简单的一个一个事情，就是产生code。",
+      "source_segment_indexes": [
+        53
+      ],
+      "source_segment_ids": [
+        53
+      ]
+    },
+    {
+      "start": 528.117,
+      "end": 531.877,
+      "text": "而运维呢，它是一个非常非常多元化的一个事情。",
+      "source_segment_indexes": [
+        54
+      ],
+      "source_segment_ids": [
+        54
+      ]
+    },
+    {
+      "start": 532.117,
+      "end": 538.757,
+      "text": "所以说我们不担心自己被AI取代，因为我们自己也在研发很多AI。",
+      "source_segment_indexes": [
+        55
+      ],
+      "source_segment_ids": [
+        55
+      ]
+    },
+    {
+      "start": 538.837,
+      "end": 547.637,
+      "text": "那回到你的这个护城河来讲，第一这个问题非常复杂，所以我们是有很多多年积累的这个domain expertise。",
+      "source_segment_indexes": [
+        56
+      ],
+      "source_segment_ids": [
+        56
+      ]
+    },
+    {
+      "start": 548.197,
+      "end": 555.716,
+      "text": "第二呢是数据，我们拥有世界上最大的这个关于运维的这样的一个数据。",
+      "source_segment_indexes": [
+        57
+      ],
+      "source_segment_ids": [
+        57
+      ]
+    },
+    {
+      "start": 556.197,
+      "end": 574.437,
+      "text": "啊，第三呢，我们也在invest in啊intelligence，比如说这种general purpose的大模型可以解决很多很多的问题，但是它有时候比较慢，有时候非常贵，而且有时候对非常专业性的这个domain呢，它不一定能给出最好的答案。",
+      "source_segment_indexes": [
+        58
+      ],
+      "source_segment_ids": [
+        58
+      ]
+    },
+    {
+      "start": 574.757,
+      "end": 586.837,
+      "text": "比如说我们有自己的这个AI research，这周我刚刚看到一个结果，比起最frontier的model，我们是用这个observability的数据trained我们自己这个observability的frontier model。",
+      "source_segment_indexes": [
+        59
+      ],
+      "source_segment_ids": [
+        59
+      ]
+    },
+    {
+      "start": 587.236,
+      "end": 602.277,
+      "text": "那可以看到，比起这种最前沿的frontier model，我们这个呃自己特制的model呢，质量是非常非常相像的，但成本是有至少一个量级的这个减少。",
+      "source_segment_indexes": [
+        60
+      ],
+      "source_segment_ids": [
+        60
+      ]
+    },
+    {
+      "start": 602.756,
+      "end": 618.917,
+      "text": "啊，所以说我们认为自己的护城河，无论是我们自己的这个数据，呃，我们对于这个research和foundation model的投入，还有我们就是专攻这一个领域的这种经验的积累，我觉得都是我们的护城河。",
+      "source_segment_indexes": [
+        61
+      ],
+      "source_segment_ids": [
+        61
+      ]
+    },
+    {
+      "start": 619.476,
+      "end": 635.716,
+      "text": "所以您觉得就像Datadog这样的enterprise，它其实还是最后会选择用开源模型，然后用自己的数据，然后做自己的模型，不一定需要去用frontier lab呃啊，我觉得API，我觉得这个就是各取所需，因为不同的model有不同的呃强项。",
+      "source_segment_indexes": [
+        62
+      ],
+      "source_segment_ids": [
+        62
+      ]
+    },
+    {
+      "start": 635.877,
+      "end": 646.277,
+      "text": "我相信现在业界的共识呢，将来的model并不是说最frontier的model一统天下，也不是几家frontier model就提供世界上所有的model。",
+      "source_segment_indexes": [
+        63
+      ],
+      "source_segment_ids": [
+        63
+      ]
+    },
+    {
+      "start": 646.277,
+      "end": 655.157,
+      "text": "我觉得大家在做这个post training已经是非常非常常见的，因为这样你可以把自己的数据变成你真正的护城河。",
+      "source_segment_indexes": [
+        64
+      ],
+      "source_segment_ids": [
+        64
+      ]
+    },
+    {
+      "start": 655.557,
+      "end": 663.877,
+      "text": "其实前几天我去访问一个世界上前几名的领先的一个AI lab，因为我们是他的客户，他也是我们的客户。",
+      "source_segment_indexes": [
+        65
+      ],
+      "source_segment_ids": [
+        65
+      ]
+    },
+    {
+      "start": 664.197,
+      "end": 676.596,
+      "text": "但是这个讨论其实最有趣的话题呢，他就是说严冰，我们非常想在这种运维的场景上做的更好，你能不能把你们的数据label好了卖给我们？",
+      "source_segment_indexes": [
+        66
+      ],
+      "source_segment_ids": [
+        66
+      ]
+    },
+    {
+      "start": 676.837,
+      "end": 687.317,
+      "text": "所以说就是可以看到，就是说即使是世界上最前沿的lab，在某个这种非常专业化的场景呢，它也是缺少这方面的积累的。",
+      "source_segment_indexes": [
+        67
+      ],
+      "source_segment_ids": [
+        67
+      ]
+    },
+    {
+      "start": 687.877,
+      "end": 698.517,
+      "text": "然后当然就是我们觉得，即使是大家有数据呢，我觉得有一个general purpose的model很难去最好的服务所有所有的应用场景。",
+      "source_segment_indexes": [
+        68
+      ],
+      "source_segment_ids": [
+        68
+      ]
+    },
+    {
+      "start": 698.837,
+      "end": 711.317,
+      "text": "所以我们在这方面有自己呃一些organic的investment，我们去年也买了一个呃leading RL company叫Adaptive ML，也就是帮我们加速这方面的投入。",
+      "source_segment_indexes": [
+        69
+      ],
+      "source_segment_ids": [
+        69
+      ]
+    },
+    {
+      "start": 712.146,
+      "end": 718.466,
+      "text": "像Data Dog在你们在自己企业内部去采用AI的时候，有碰到什么样的挑战吗？",
+      "source_segment_indexes": [
+        70
+      ],
+      "source_segment_ids": [
+        70
+      ]
+    },
+    {
+      "start": 719.106,
+      "end": 722.706,
+      "text": "就你们现在的AI adoption这个比例大概有多少？",
+      "source_segment_indexes": [
+        71
+      ],
+      "source_segment_ids": [
+        71
+      ]
+    },
+    {
+      "start": 723.106,
+      "end": 728.066,
+      "text": "对我们其实我觉得和很多企业的挑战都是有一些类似的。",
+      "source_segment_indexes": [
+        72
+      ],
+      "source_segment_ids": [
+        72
+      ]
+    },
+    {
+      "start": 728.386,
+      "end": 734.226,
+      "text": "可能我们作为一个呃开发这种工程师产品的这样的一个公司呢，我们可能起步的早一些。",
+      "source_segment_indexes": [
+        73
+      ],
+      "source_segment_ids": [
+        73
+      ]
+    },
+    {
+      "start": 734.546,
+      "end": 754.786,
+      "text": "但是我觉得就是说对AI的使用，我呃刚刚呃对明年的我们的这个研发经费或者是AI经费做啊啊预算的时候，我们当时就是说啊大跌眼镜的一个感觉，因为这个增长呢是远远超出我们直觉的一个一个预期。",
+      "source_segment_indexes": [
+        74
+      ],
+      "source_segment_ids": [
+        74
+      ]
+    },
+    {
+      "start": 755.026,
+      "end": 768.386,
+      "text": "当然这个AI的投入，我觉得一个是面向内部的这种啊效率的提升，另外是面向外部的这个呃放在我们的产品这两方面呢都是有非常大幅度的提升。",
+      "source_segment_indexes": [
+        75
+      ],
+      "source_segment_ids": [
+        75
+      ]
+    },
+    {
+      "start": 768.706,
+      "end": 782.786,
+      "text": "产品这一方面其实很简单，这个提升呢是一个很好的现象，因为这说明我们的这个客户对于我们这种AI enable的产品的使用率是更高的提升的。",
+      "source_segment_indexes": [
+        76
+      ],
+      "source_segment_ids": [
+        76
+      ]
+    },
+    {
+      "start": 782.786,
+      "end": 791.186,
+      "text": "这个我们都在成多少倍数的在增长，所以大家觉得在这方面的这个AI的投入是非常非常值得的。",
+      "source_segment_indexes": [
+        77
+      ],
+      "source_segment_ids": [
+        77
+      ]
+    },
+    {
+      "start": 791.506,
+      "end": 812.146,
+      "text": "当然我们产品的投入也有对于这个research的这个投入，这个投入呢则是要一定有一个这种长期的回报的，因为啊从research投入，无论是买GPU或者是这个搭建这个AI的基础架构到多少的这个training run都是非常非常大的一个投入。",
+      "source_segment_indexes": [
+        78
+      ],
+      "source_segment_ids": [
+        78
+      ]
+    },
+    {
+      "start": 812.546,
+      "end": 825.266,
+      "text": "那从内部的效率提升呢，啊我觉得有两面的，一个是工程师对coding agent的使用，我觉得这个现在可能还是最大的一个预算的这一块儿。",
+      "source_segment_indexes": [
+        79
+      ],
+      "source_segment_ids": [
+        79
+      ]
+    },
+    {
+      "start": 825.506,
+      "end": 835.106,
+      "text": "这一块儿呢，可能我们主要是看如何把这方面的这个投入真正转化成啊这个engineering velocity。",
+      "source_segment_indexes": [
+        80
+      ],
+      "source_segment_ids": [
+        80
+      ]
+    },
+    {
+      "start": 835.586,
+      "end": 848.466,
+      "text": "呃，这个就是比较好的是，我们就是干这方面的，所以我们其实呃不仅知道大家用多少token在哪里用，而且知道它最后的这个outcome是什么。",
+      "source_segment_indexes": [
+        81
+      ],
+      "source_segment_ids": [
+        81
+      ]
+    },
+    {
+      "start": 848.786,
+      "end": 865.586,
+      "text": "比如说你对于这个呃P R的速度，对这个产品的稳定性，对产品的feature的视频，对产品的这个安全的呃这个提升，我们都是能看得清清楚楚，就是这个AI的投入是产生了这样的结果。",
+      "source_segment_indexes": [
+        82
+      ],
+      "source_segment_ids": [
+        82
+      ]
+    },
+    {
+      "start": 865.986,
+      "end": 876.626,
+      "text": "呃，我觉得现在比较担心的是一种像这种针对于knowledge work的这种AI使用，因为这时候大家很多还是处在vibe code的这样一个状态。",
+      "source_segment_indexes": [
+        83
+      ],
+      "source_segment_ids": [
+        83
+      ]
+    },
+    {
+      "start": 876.946,
+      "end": 887.266,
+      "text": "比如说我一个销售，他并不是一个工程师，他写了自己一个用于销售的一个工具，或者是呃我们的这个HR团队写了一些针对他的这样的场景。",
+      "source_segment_indexes": [
+        84
+      ],
+      "source_segment_ids": [
+        84
+      ]
+    },
+    {
+      "start": 887.666,
+      "end": 903.906,
+      "text": "我觉得这对这一类的agent现在其实非常非常多，就是比较业余一点的这样的agent，其实很多时候它对于token的使用不是最优化的，最重要的是它可能有时候对安全的考量不是最高的。",
+      "source_segment_indexes": [
+        85
+      ],
+      "source_segment_ids": [
+        85
+      ]
+    },
+    {
+      "start": 904.146,
+      "end": 910.546,
+      "text": "我觉得就是说安全对AI现在是一个当下非常热门的话题。",
+      "source_segment_indexes": [
+        86
+      ],
+      "source_segment_ids": [
+        86
+      ]
+    },
+    {
+      "start": 910.786,
+      "end": 923.986,
+      "text": "当然大家想象的都是这种什么世界末日的场景，比如AI杀死了人类，或者是这个几千个AI agent一起从这个sandbox跑出来对别的公司进行攻击。",
+      "source_segment_indexes": [
+        87
+      ],
+      "source_segment_ids": [
+        87
+      ]
+    },
+    {
+      "start": 923.986,
+      "end": 927.746,
+      "text": "最近的这些呃头条新闻都是这个性质的。",
+      "source_segment_indexes": [
+        88
+      ],
+      "source_segment_ids": [
+        88
+      ]
+    },
+    {
+      "start": 928.146,
+      "end": 936.386,
+      "text": "但是其实真正的实际的从企业的AI的角度，我们考虑的很多安全的问题都是更现实的。",
+      "source_segment_indexes": [
+        89
+      ],
+      "source_segment_ids": [
+        89
+      ]
+    },
+    {
+      "start": 936.786,
+      "end": 953.106,
+      "text": "比如说你一个比较业余的AI agent把自己的商业数据啊不小心泄露了，或者是你一个不专业的呃没有经过很好的这个AI的review或者是控制的这样一个东西。",
+      "source_segment_indexes": [
+        90
+      ],
+      "source_segment_ids": [
+        90
+      ]
+    },
+    {
+      "start": 953.337,
+      "end": 963.737,
+      "text": "把自己的API Key暴露了，其实很多的我们现在考虑的安全的问题是更基本的，还不是一个世界末日这样的这样的问题。",
+      "source_segment_indexes": [
+        91
+      ],
+      "source_segment_ids": [
+        91
+      ]
+    },
+    {
+      "start": 963.737,
+      "end": 970.697,
+      "text": "我觉得这个也是企业更啊更多的采用AI的一个比较重要的啊一个barrier。",
+      "source_segment_indexes": [
+        92
+      ],
+      "source_segment_ids": [
+        92
+      ]
+    },
+    {
+      "start": 971.177,
+      "end": 974.537,
+      "text": "谢谢您今天的分享，谢谢，您问题非常非常专业。",
+      "source_segment_indexes": [
+        93
+      ],
+      "source_segment_ids": [
+        93
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "start": 0.08,
+      "end": 27.92,
+      "text": "AI落地推广最大的一个障碍呢，就是如何对它进行运维管控。今年年初的时候，我们整个SaaS在市值的都有大规模的滑落，然后Datadog也是其中，但是我们应该是率先从低谷中啊脱颖而出的。大家的现在的市场上共识是AI需要更多的observability，我们在哪里工作，你的工具就应该在哪里。",
+      "refined_segment_indexes": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "start": 33.04,
+      "end": 63.36,
+      "text": "严冰你好，今年的HYSTA你觉得跟往年的HYSTA的这个会议有什么不一样？卿云你好，我觉着HYSTA的会议就是一年都会上升一个新高度，尤其是最近几年我们的主题都是AI，随着中国人在AI方面的影响力越来越大，所以感觉今天的这个盛会，无论是参与者，或者是我们的话题，或者我们的嘉宾，都是质量又有一个质的提升。今年会主要讲一些哪些主题呢？",
+      "refined_segment_indexes": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "start": 64.4,
+      "end": 98.08,
+      "text": "今天我们主要是AI的真正的这个scaling的这样的主题。呃，我知道卿云你也是很关注我们华人在AI行业的影响力。其实前几天我看到一个非常令我呃惊讶的一个数据，这就是前三天才出炉的一个Carnegie的一个research，说最近这个NeurIPS作为AI界的一个最重要的科研大会，它从一万个这个作者中进行了一些统计，百分之五十七的作者他的本科教育来自中国。",
+      "refined_segment_indexes": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "start": 98.56,
+      "end": 115.92,
+      "text": "当然这个有包括在中国的作者，包括在美国和世界其他的各地，大家可以看到现在华人在AI圈的重量。当然我们华人呢不只是做AI的研究，而且还把AI转化成这个entrepreneurship转化成啊企业。",
+      "refined_segment_indexes": [
+        9,
+        10
+      ]
+    },
+    {
+      "start": 116.24,
+      "end": 149.36,
+      "text": "我还看到另外一个也让我非常惊讶的呃话题，就是说呃来自中国的这个founder或者是co-founder已经在美国有四十一个这个十亿美元量级以上的这样的公司，然后很多这些公司今天都会在我们的盛会上。所以说从啊华元今年这个AI大会的主题呢，就不仅仅是说最前沿的研究、最前沿的企业应用，还有很多很多的这个founder真正见到了business上的成功。",
+      "refined_segment_indexes": [
+        11,
+        12
+      ]
+    },
+    {
+      "start": 150.4,
+      "end": 168.64,
+      "text": "您是这个呃Datadog的首席产品官，然后也是在硅谷华人女性中间非常杰出的代表。嗯，我想跟您请教一下，就是在AI时代，您看到这个AI运维它是怎么样的一个趋势发展？这里面最好的机会未来会在哪里？对我觉得这个问题问的非常好。",
+      "refined_segment_indexes": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "start": 168.64,
+      "end": 197.44,
+      "text": "从我的呃作为呃Datadog的这个是首席产品官的角度来看，其实现在AI落地推广啊，加大规模的被大家广泛采用，最大的一个障碍呢，就是如何在对它进行运维管控。所以说其实最开始大家看到AI感觉非常的兴奋呢，只是说哎这个AI到底会不会work啊？",
+      "refined_segment_indexes": [
+        17,
+        18
+      ]
+    },
+    {
+      "start": 197.52,
+      "end": 222.4,
+      "text": "然后呢很快又意识到哇，我们知道这个AI worked非常非常好，那我可不可以相信它的这个安全保障这样的一些方面的问题？那到今年呢，大家又意识到即使我能相信我的AI，但是发现它的这个token cost或者是它这个AI的这个预算是成本是远远超出了预算。",
+      "refined_segment_indexes": [
+        19,
+        20
+      ]
+    },
+    {
+      "start": 222.72,
+      "end": 248.099,
+      "text": "所以说无论是从这个AI是不是啊产生正确的结果，是不是我们可以对AI的有这个可控、可信任的啊这样的一个感觉。到我们能不能对AI所提供真正的这个商业价值，而不是看大家都在token max，而真正能deliver商业化的这个ROI，我觉得现在反而是大家最关注的问题。",
+      "refined_segment_indexes": [
+        21,
+        22
+      ]
+    },
+    {
+      "start": 248.339,
+      "end": 280.419,
+      "text": "那这些关注的问题，它的背后有一个很重要的点，就是我们叫做observability，就是能够深入的了解AI究竟在做什么，agents之间的关系是什么，究竟采用什么样的价值。所以说，Data Dog在这个时候呢，也是处在一个非常好的风口，就是说对AI的observability现在是一个AI量产化这个大规模的采采用的一个重要的一个环节。我们看到这个就Data Dog的市值也是一路飙升，现在也是在史高的位置。",
+      "refined_segment_indexes": [
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "start": 280.739,
+      "end": 314.659,
+      "text": "嗯，我们看到整个这个可观测性以前都是可能给工程师去让他们观测，现在以后未来给agents观测，然后这观测数据量也变大了。然后未来可能这样的产品形态会有什么样的变化？比如说今年年初的时候，我们整个SaaS有一个这个SaaS complex的这样的一个景象，就大家统统的这个呃在市值的都有大规模的滑落，然后Data Dog也是其中。但是我们应该是率先从这个低谷中啊脱颖而出的。所以说我们今年从年初到现在市值已经翻倍了。",
+      "refined_segment_indexes": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "start": 314.979,
+      "end": 349.299,
+      "text": "但是这个其中很多的并不是大家一个主观性的说，哎，这个AI需要更多的observability，其实是看真正的数据的。比如说我们看世界上最大的十家AI公司，都需要用Data Dog来帮助他们做可见性这个observability。所以说大家对于AI能取代observability这个观念已经完全给抛弃了，而是大家的现在的市场上的共识是AI需要更多的observability。所以这也是我们的机会。",
+      "refined_segment_indexes": [
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "start": 349.539,
+      "end": 365.539,
+      "text": "当然我们现在从这个产品形态的角度来讲，可以考虑到以前呢，呃，Data Dog产品是有非常丰富的这个user experience，有非常漂亮的UI，有很漂亮的dashboard，是设计给人来使用的。",
+      "refined_segment_indexes": [
+        35
+      ]
+    },
+    {
+      "start": 365.859,
+      "end": 395.699,
+      "text": "那我觉着在未来的发展是人和agents来共同使用使用这样的产品，而且这个产品的呃交互呢，也从这种网页型mobile型为主呢，变成呃it goes anywhere we do our work，就是我们在哪里工作，你的工具就应该在哪里。如果你在一个CLI里编程，那你可以访问它；如果你在一个Slack里和你的团队进行交互，你也可以在那里啊。",
+      "refined_segment_indexes": [
+        36,
+        37
+      ]
+    },
+    {
+      "start": 395.699,
+      "end": 422.899,
+      "text": "所以说，我觉着AI是完全改变了我们对产品的这个固定的原来的这个边界，而是在任何的时候，任何的工作方式都可以访访问到它。我觉得就是今年早些时候，一个大家觉得Open I可能会不会自己就出来做了，而且现在这个模型能力这么强，自己会写代码了。然后您觉得未来Data Dog它的这个护城河在哪里？就是说它可它的不可替代性？",
+      "refined_segment_indexes": [
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "start": 423.459,
+      "end": 453.299,
+      "text": "对，其实呃护城河我觉着有几点，一个是operation呢是不仅只是mission critical，它是复杂度是非常高的。我之前是做呃自动驾驶，我原来在偶尔做过，就是在呃偶尔是一个自动驾驶卡车公司，它是美国第一家，应该现在也是世界唯一一家在这个呃公共高速公路上可以跑这个自动驾驶的商业卡车的啊一个领先的这样一个公司。",
+      "refined_segment_indexes": [
+        42,
+        43
+      ]
+    },
+    {
+      "start": 453.539,
+      "end": 485.637,
+      "text": "当然我们在做自动驾驶的时候，就是说从有人到无人的这个突破在哪里？当然是感觉是一个非常难的问题。但是其实想想呢，自动驾驶比起运维大规模的这个生产型的这个软件和系统。其实复杂度是很低的。你想想，啊，比如开车，你只需要了解一下你视线所及的这个本地的场景。另外，你在开车的时候，你只有三个控制，你只能加速、减速和打方向盘。",
+      "refined_segment_indexes": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ]
+    },
+    {
+      "start": 486.277,
+      "end": 519.397,
+      "text": "而在一个大规模的这个软件和硬件和基础架构非常复杂的一个系统，因为现在有很复杂的这个AI agent在里边，这个复杂度是远远超过于这个自动驾驶这样的。所以说，嗯，从完全能够真正的实现完全自动化的这种大规模的生产运维，其实还是有很长的一段距离。所以我想说的问题呢，就是说这个operation是一个非常高度的complexity。",
+      "refined_segment_indexes": [
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "start": 519.716,
+      "end": 547.637,
+      "text": "比如说比起coding，coding也是有很多技术难度，但是它是一个相对简单的一个一个事情，就是产生code。而运维呢，它是一个非常非常多元化的一个事情。所以说我们不担心自己被AI取代，因为我们自己也在研发很多AI。那回到你的这个护城河来讲，第一这个问题非常复杂，所以我们是有很多多年积累的这个domain expertise。",
+      "refined_segment_indexes": [
+        53,
+        54,
+        55,
+        56
+      ]
+    },
+    {
+      "start": 548.197,
+      "end": 574.437,
+      "text": "第二呢是数据，我们拥有世界上最大的这个关于运维的这样的一个数据。啊，第三呢，我们也在invest in啊intelligence，比如说这种general purpose的大模型可以解决很多很多的问题，但是它有时候比较慢，有时候非常贵，而且有时候对非常专业性的这个domain呢，它不一定能给出最好的答案。",
+      "refined_segment_indexes": [
+        57,
+        58
+      ]
+    },
+    {
+      "start": 574.757,
+      "end": 602.277,
+      "text": "比如说我们有自己的这个AI research，这周我刚刚看到一个结果，比起最frontier的model，我们是用这个observability的数据trained我们自己这个observability的frontier model。那可以看到，比起这种最前沿的frontier model，我们这个呃自己特制的model呢，质量是非常非常相像的，但成本是有至少一个量级的这个减少。",
+      "refined_segment_indexes": [
+        59,
+        60
+      ]
+    },
+    {
+      "start": 602.756,
+      "end": 635.716,
+      "text": "啊，所以说我们认为自己的护城河，无论是我们自己的这个数据，呃，我们对于这个research和foundation model的投入，还有我们就是专攻这一个领域的这种经验的积累，我觉得都是我们的护城河。所以您觉得就像Datadog这样的enterprise，它其实还是最后会选择用开源模型，然后用自己的数据，然后做自己的模型，不一定需要去用frontier lab呃啊，我觉得API，我觉得这个就是各取所需，因为不同的model有不同的呃强项。",
+      "refined_segment_indexes": [
+        61,
+        62
+      ]
+    },
+    {
+      "start": 635.877,
+      "end": 663.877,
+      "text": "我相信现在业界的共识呢，将来的model并不是说最frontier的model一统天下，也不是几家frontier model就提供世界上所有的model。我觉得大家在做这个post training已经是非常非常常见的，因为这样你可以把自己的数据变成你真正的护城河。其实前几天我去访问一个世界上前几名的领先的一个AI lab，因为我们是他的客户，他也是我们的客户。",
+      "refined_segment_indexes": [
+        63,
+        64,
+        65
+      ]
+    },
+    {
+      "start": 664.197,
+      "end": 698.517,
+      "text": "但是这个讨论其实最有趣的话题呢，他就是说严冰，我们非常想在这种运维的场景上做的更好，你能不能把你们的数据label好了卖给我们？所以说就是可以看到，就是说即使是世界上最前沿的lab，在某个这种非常专业化的场景呢，它也是缺少这方面的积累的。然后当然就是我们觉得，即使是大家有数据呢，我觉得有一个general purpose的model很难去最好的服务所有所有的应用场景。",
+      "refined_segment_indexes": [
+        66,
+        67,
+        68
+      ]
+    },
+    {
+      "start": 698.837,
+      "end": 728.066,
+      "text": "所以我们在这方面有自己呃一些organic的investment，我们去年也买了一个呃leading RL company叫Adaptive ML，也就是帮我们加速这方面的投入。像Data Dog在你们在自己企业内部去采用AI的时候，有碰到什么样的挑战吗？就你们现在的AI adoption这个比例大概有多少？对我们其实我觉得和很多企业的挑战都是有一些类似的。",
+      "refined_segment_indexes": [
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "start": 728.386,
+      "end": 754.786,
+      "text": "可能我们作为一个呃开发这种工程师产品的这样的一个公司呢，我们可能起步的早一些。但是我觉得就是说对AI的使用，我呃刚刚呃对明年的我们的这个研发经费或者是AI经费做啊啊预算的时候，我们当时就是说啊大跌眼镜的一个感觉，因为这个增长呢是远远超出我们直觉的一个一个预期。",
+      "refined_segment_indexes": [
+        73,
+        74
+      ]
+    },
+    {
+      "start": 755.026,
+      "end": 782.786,
+      "text": "当然这个AI的投入，我觉得一个是面向内部的这种啊效率的提升，另外是面向外部的这个呃放在我们的产品这两方面呢都是有非常大幅度的提升。产品这一方面其实很简单，这个提升呢是一个很好的现象，因为这说明我们的这个客户对于我们这种AI enable的产品的使用率是更高的提升的。",
+      "refined_segment_indexes": [
+        75,
+        76
+      ]
+    },
+    {
+      "start": 782.786,
+      "end": 812.146,
+      "text": "这个我们都在成多少倍数的在增长，所以大家觉得在这方面的这个AI的投入是非常非常值得的。当然我们产品的投入也有对于这个research的这个投入，这个投入呢则是要一定有一个这种长期的回报的，因为啊从research投入，无论是买GPU或者是这个搭建这个AI的基础架构到多少的这个training run都是非常非常大的一个投入。",
+      "refined_segment_indexes": [
+        77,
+        78
+      ]
+    },
+    {
+      "start": 812.546,
+      "end": 835.106,
+      "text": "那从内部的效率提升呢，啊我觉得有两面的，一个是工程师对coding agent的使用，我觉得这个现在可能还是最大的一个预算的这一块儿。这一块儿呢，可能我们主要是看如何把这方面的这个投入真正转化成啊这个engineering velocity。",
+      "refined_segment_indexes": [
+        79,
+        80
+      ]
+    },
+    {
+      "start": 835.586,
+      "end": 865.586,
+      "text": "呃，这个就是比较好的是，我们就是干这方面的，所以我们其实呃不仅知道大家用多少token在哪里用，而且知道它最后的这个outcome是什么。比如说你对于这个呃P R的速度，对这个产品的稳定性，对产品的feature的视频，对产品的这个安全的呃这个提升，我们都是能看得清清楚楚，就是这个AI的投入是产生了这样的结果。",
+      "refined_segment_indexes": [
+        81,
+        82
+      ]
+    },
+    {
+      "start": 865.986,
+      "end": 887.266,
+      "text": "呃，我觉得现在比较担心的是一种像这种针对于knowledge work的这种AI使用，因为这时候大家很多还是处在vibe code的这样一个状态。比如说我一个销售，他并不是一个工程师，他写了自己一个用于销售的一个工具，或者是呃我们的这个HR团队写了一些针对他的这样的场景。",
+      "refined_segment_indexes": [
+        83,
+        84
+      ]
+    },
+    {
+      "start": 887.666,
+      "end": 910.546,
+      "text": "我觉得这对这一类的agent现在其实非常非常多，就是比较业余一点的这样的agent，其实很多时候它对于token的使用不是最优化的，最重要的是它可能有时候对安全的考量不是最高的。我觉得就是说安全对AI现在是一个当下非常热门的话题。",
+      "refined_segment_indexes": [
+        85,
+        86
+      ]
+    },
+    {
+      "start": 910.786,
+      "end": 936.386,
+      "text": "当然大家想象的都是这种什么世界末日的场景，比如AI杀死了人类，或者是这个几千个AI agent一起从这个sandbox跑出来对别的公司进行攻击。最近的这些呃头条新闻都是这个性质的。但是其实真正的实际的从企业的AI的角度，我们考虑的很多安全的问题都是更现实的。",
+      "refined_segment_indexes": [
+        87,
+        88,
+        89
+      ]
+    },
+    {
+      "start": 936.786,
+      "end": 970.697,
+      "text": "比如说你一个比较业余的AI agent把自己的商业数据啊不小心泄露了，或者是你一个不专业的呃没有经过很好的这个AI的review或者是控制的这样一个东西。把自己的API Key暴露了，其实很多的我们现在考虑的安全的问题是更基本的，还不是一个世界末日这样的这样的问题。我觉得这个也是企业更啊更多的采用AI的一个比较重要的啊一个barrier。",
+      "refined_segment_indexes": [
+        90,
+        91,
+        92
+      ]
+    },
+    {
+      "start": 971.177,
+      "end": 974.537,
+      "text": "谢谢您今天的分享，谢谢，您问题非常非常专业。",
+      "refined_segment_indexes": [
+        93
+      ]
+    }
+  ],
+  "lineage_schema_version": 2
+}
