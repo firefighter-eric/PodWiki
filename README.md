@@ -12,11 +12,11 @@ PodWiki 是一个使用 Markdown 构建的播客 Wiki，只收录可核实播客
 [内容标准](./docs/content-standard.md)与
 [PodWiki 添加剧集 skill](./.agents/skills/podwiki-add-episodes/SKILL.md)。
 
-2026-11-08 更新核对截至北京时间 22:45:14：
-[一起铁TALK](./shows/yiqitietalk/#本次更新核对2026-11-08)的增量扫描完整，发现 3 集新正片，音频已核验；本地 ASR 的长音频对齐门禁失败，尚未新增可发布单集；
-[罗永浩的十字路口](./shows/luoyonghao/#本次更新核对2026-11-08)为 `partial`，
-[张小珺商业访谈录](./shows/zhangxiaojun/#本次更新核对2026-11-08)为 `blocked`，均不能据此判断没有更新。
-三个节目的正式单集索引分别仍为 21、37、34 集；候选与恢复条件见节目页。
+2026-11-08 更新扫描截至北京时间 22:45:14；本批处理状态于 2026-11-09 核对：
+[一起铁TALK](./shows/yiqitietalk/#本次更新核对2026-11-08)增量扫描完整，新增李大林/李晓霞、梁田田、吴向东 3 集，正式索引共 24 集；
+[罗永浩的十字路口](./shows/luoyonghao/#本次更新核对2026-11-08)的 Bilibili 扫描仍为 `partial`，经精确小宇宙来源授权新增叶洪新 1 集，正式索引共 38 集。
+上述 4 集均有完整本地机器逐字稿与基于全文的七段总结，分别保持 `machine`、`draft`，仍需人工核听与事实核查。
+[张小珺商业访谈录](./shows/zhangxiaojun/#本次更新核对2026-11-08)的 Bilibili 扫描保持 `blocked`；经精确授权处理的苏庭灏、刘子鸣两集未通过音频覆盖或跨块衔接门禁，失败断点保留，本批可发布新增 0 集，正式索引仍 34 集。`partial` / `blocked` 均不表示没有更新。
 
 ## Web 阅读器
 
@@ -60,10 +60,14 @@ npm run check
 
 | 标题 | 访谈人物 | 播客名称 | 日期 | 总结 | 逐字稿 |
 | --- | --- | --- | --- | --- | --- |
+| [24 李大林：被说“捡漏”后北马再夺冠。扬眉吐气的李大林与晓霞，背后经历了什么？](https://www.xiaoyuzhoufm.com/episode/6aeca1ea5b7c4709bfe1b7bf) | 李大林、李晓霞 | [一起铁TALK](./shows/yiqitietalk/) | 2026-11-05 | [总结](./shows/yiqitietalk/episodes/xiaoyuzhou-6aeca1ea5b7c4709bfe1b7bf-li-dalin-li-xiaoxia/summary.zh-CN.md) | [逐字稿](./shows/yiqitietalk/episodes/xiaoyuzhou-6aeca1ea5b7c4709bfe1b7bf-li-dalin-li-xiaoxia/transcript.zh-CN.md) |
+| [徕芬科技创始人叶洪新×罗永浩！初中毕业后，我先造飞机去了......](https://www.xiaoyuzhoufm.com/episode/6aea8204c96c8942ec16ee88) | 叶洪新 | [罗永浩的十字路口](./shows/luoyonghao/) | 2026-11-04 | [总结](./shows/luoyonghao/episodes/xiaoyuzhou-6aea8204c96c8942ec16ee88-ye-hongxin/summary.zh-CN.md) | [逐字稿](./shows/luoyonghao/episodes/xiaoyuzhou-6aea8204c96c8942ec16ee88-ye-hongxin/transcript.zh-CN.md) |
 | [和科沃斯钱程聊，父与子、企二代接班的样本与肌理、机器人、我内心的追寻](https://www.bilibili.com/video/BV1NtJB6TEkE/) | 钱程 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-10-21 | [总结](./shows/zhangxiaojun/episodes/155-qian-cheng/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/155-qian-cheng/transcript.zh-CN.md) |
+| [23 梁田田：穿牛仔裤跑 800 米的女孩，如今成长为全国冠军，赛场之外和场上有何不同？](https://www.xiaoyuzhoufm.com/episode/6ad89de4ef67611cac7a05ee) | 梁田田 | [一起铁TALK](./shows/yiqitietalk/) | 2026-10-21 | [总结](./shows/yiqitietalk/episodes/xiaoyuzhou-6ad89de4ef67611cac7a05ee-liang-tiantian/summary.zh-CN.md) | [逐字稿](./shows/yiqitietalk/episodes/xiaoyuzhou-6ad89de4ef67611cac7a05ee-liang-tiantian/transcript.zh-CN.md) |
 | [硅谷坐标 x 谷歌DeepMind研究副总裁 Ed H. Chi（纪怀新）：个性化通用助理的未来](https://www.bilibili.com/video/BV135ng6KEfQ/) | Ed H. Chi | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-10-18 | [总结](./shows/svvector/episodes/bili-bv135ng6kefq-ed-chi/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv135ng6kefq-ed-chi/transcript.zh-CN.md) |
 | [硅谷坐标 x Datadog首席产品官｜HYSTA主席李严冰: AI 落地进入 ROI 时代](https://www.bilibili.com/video/BV1DnJS66E44/) | 李严冰 | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-10-16 | [总结](./shows/svvector/episodes/bili-bv1dnjs66e44-li-yanbing/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv1dnjs66e44-li-yanbing/transcript.zh-CN.md) |
 | [对Dyna创始人Lindon Gao的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明](https://www.bilibili.com/video/BV1wgpy69Ekz/) | Lindon Gao | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-10-15 | [总结](./shows/zhangxiaojun/episodes/154-lindon-gao/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/154-lindon-gao/transcript.zh-CN.md) |
+| [22 吴向东：2:07:55 PB背后，一起“搞个大的”](https://www.xiaoyuzhoufm.com/episode/6ace0097e742e36efcc2599d) | — | [一起铁TALK](./shows/yiqitietalk/) | 2026-10-13 | [总结](./shows/yiqitietalk/episodes/xiaoyuzhou-6ace0097e742e36efcc2599d-wu-xiangdong/summary.zh-CN.md) | [逐字稿](./shows/yiqitietalk/episodes/xiaoyuzhou-6ace0097e742e36efcc2599d-wu-xiangdong/transcript.zh-CN.md) |
 | [对话孙宇晨：年轻人如何抓住AI时代的机会？](https://www.bilibili.com/video/BV1fcHD6cEw3/) | 孙宇晨 | [邵艾伦Alan播客栏目](./shows/alanshao/) | 2026-10-10 | [总结](./shows/alanshao/episodes/bili-bv1fchd6cew3-sun-yuchen/summary.zh-CN.md) | [逐字稿](./shows/alanshao/episodes/bili-bv1fchd6cew3-sun-yuchen/transcript.zh-CN.md) |
 | [模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔【硅谷101播客】](https://www.bilibili.com/video/BV186pW6kEzU/) | 张阔 | [硅谷101](./shows/sv101/) | 2026-10-09 | [总结](./shows/sv101/episodes/255-zhang-kuo/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/255-zhang-kuo/transcript.zh-CN.md) |
 | [AI 季报 26Q3：从 Meta 到 OpenAI，个人助理卷土重来【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1wqHD6qEqU/) | Henry Yin | [晚点聊 LateTalk](./shows/latetalk/) | 2026-10-08 | [总结](./shows/latetalk/episodes/183-henry-yin/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/183-henry-yin/transcript.zh-CN.md) |
