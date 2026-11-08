@@ -120,6 +120,7 @@ def xiaoyuzhou_episode_document() -> dict[str, object]:
                     "mediaKey": XIAOYUZHOU_MEDIA_ID,
                     "transcript": {"mediaId": XIAOYUZHOU_MEDIA_ID},
                     "transcriptMediaId": XIAOYUZHOU_MEDIA_ID,
+                    "isTranscriptEnabled": True,
                     "media": {
                         "id": XIAOYUZHOU_MEDIA_ID,
                         "size": 1_234_567,
@@ -324,6 +325,9 @@ class XiaoyuzhouMetadataTests(unittest.TestCase):
         )
 
         self.assertEqual(metadata["subtitle"]["tracks"], [])
+        self.assertIs(
+            metadata["subtitle"]["page_fields"]["isTranscriptEnabled"], True
+        )
         self.assertEqual(
             metadata["subtitle"]["page_fields"]["transcript"],
             {"mediaId": XIAOYUZHOU_MEDIA_ID},
@@ -336,6 +340,7 @@ class XiaoyuzhouMetadataTests(unittest.TestCase):
     def test_preserves_and_discovers_public_transcript_tracks(self) -> None:
         document = xiaoyuzhou_episode_document()
         episode = document["props"]["pageProps"]["episode"]
+        episode["isTranscriptEnabled"] = False
         episode["transcript"] = {
             "tracks": [
                 {
@@ -366,6 +371,9 @@ class XiaoyuzhouMetadataTests(unittest.TestCase):
         )
 
         self.assertEqual(len(metadata["subtitle"]["tracks"]), 2)
+        self.assertIs(
+            metadata["subtitle"]["page_fields"]["isTranscriptEnabled"], False
+        )
         self.assertEqual(
             metadata["subtitle"]["tracks"][0]["url"],
             "https://public.example/transcript.zh-CN.vtt",
@@ -380,6 +388,15 @@ class XiaoyuzhouMetadataTests(unittest.TestCase):
             ],
             episode["automaticCaptions"],
         )
+
+    def test_rejects_non_boolean_transcript_enabled_flags(self) -> None:
+        for value in [None, 0, 1, "true", {}, []]:
+            document = xiaoyuzhou_episode_document()
+            document["props"]["pageProps"]["episode"]["isTranscriptEnabled"] = value
+            with self.subTest(value=value), self.assertRaisesRegex(
+                ValueError, "isTranscriptEnabled must be boolean"
+            ):
+                parse_xiaoyuzhou_episode_metadata(document, XIAOYUZHOU_EID)
 
     def test_rejects_unknown_ambiguous_or_malformed_transcript_fields(self) -> None:
         cases: list[tuple[str, dict[str, object], str]] = []

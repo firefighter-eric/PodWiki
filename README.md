@@ -12,6 +12,12 @@ PodWiki 是一个使用 Markdown 构建的播客 Wiki，只收录可核实播客
 [内容标准](./docs/content-standard.md)与
 [PodWiki 添加剧集 skill](./.agents/skills/podwiki-add-episodes/SKILL.md)。
 
+2026-11-08 更新核对截至北京时间 22:45:14：
+[一起铁TALK](./shows/yiqitietalk/#本次更新核对2026-11-08)的增量扫描完整，发现 3 集新正片，音频已核验；本地 ASR 的长音频对齐门禁失败，尚未新增可发布单集；
+[罗永浩的十字路口](./shows/luoyonghao/#本次更新核对2026-11-08)为 `partial`，
+[张小珺商业访谈录](./shows/zhangxiaojun/#本次更新核对2026-11-08)为 `blocked`，均不能据此判断没有更新。
+三个节目的正式单集索引分别仍为 21、37、34 集；候选与恢复条件见节目页。
+
 ## Web 阅读器
 
 `apps/web` 是基于 Next.js App Router 的浅色阅读器，直接从仓库中的节目 Markdown 构建页面，提供节目切换、全文搜索、章节定位、摘要/逐字稿切换和本地阅读设置。当前版本专注文字阅读，不包含音频播放器。

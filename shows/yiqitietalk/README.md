@@ -20,12 +20,40 @@ sources:
     external_id: 6951e312febad13106eb017e
     url: https://www.xiaoyuzhoufm.com/podcast/6951e312febad13106eb017e
     preferred: true
-last_verified_at: 2026-08-25
+last_verified_at: 2026-11-08
 ---
 
 # 一起铁TALK
 
 一档面向在生活中持续“狂奔”的人的对谈节目，以跑步为入口，聊训练、生活经验和真实处境，为听众提供一个可以原地休息的角落。
+
+## 本次更新核对（2026-11-08）
+
+- 增量窗口：北京时间 `2026-05-22T11:59:31.882+08:00` 至 `2026-11-08T22:45:14.002517+08:00`；匿名访问，扫描结果为 `complete`。
+- 官方栏目页按发布时间倒序返回 24 集中的前 15 集，整批读至 2026-03-21，已越过窗口起点。窗口内 11 集全部完成分类：8 集已收录、3 集 `eligible-new`，无排除项或身份待判项；这不表示已扫描全部历史。
+- 当前正式索引仍为 **21** 集，本次新增可发布单集 **0** 集。下列 3 集已冻结为精确候选；没有新增正式单集目录或索引行。表中保留发布者原标题，不据此建立正式期号。
+
+| 发布日期（北京时间） | 发布者原标题与规范来源 | 处理状态 |
+| --- | --- | --- |
+| 2026-11-05 | [24 李大林：被说“捡漏”后北马再夺冠。扬眉吐气的李大林与晓霞，背后经历了什么？](https://www.xiaoyuzhoufm.com/episode/6aeca1ea5b7c4709bfe1b7bf) | ASR 原始检查点已保存；01:58:00 对齐唯一性门禁失败 |
+| 2026-10-21 | [23 梁田田：穿牛仔裤跑 800 米的女孩，如今成长为全国冠军，赛场之外和场上有何不同？](https://www.xiaoyuzhoufm.com/episode/6ad89de4ef67611cac7a05ee) | 音频已核验；因前一集长音频资格失败而中止 |
+| 2026-10-13 | [22 吴向东：2:07:55 PB背后，一起“搞个大的”](https://www.xiaoyuzhoufm.com/episode/6ace0097e742e36efcc2599d) | 音频已核验；因长音频资格失败而未启动正式 ASR |
+
+三集公开页面均绑定本栏目 PID，明确为 `NORMAL`、`FREE`、非私密和 `PUBLIC`，完整简介、章节与 M4A 身份可核对。
+单集页面的 `isTranscriptEnabled: true` 是功能开关，`transcript` 只提供与音频一致的 `mediaId` 占位，没有显式公开正文、segment 或字幕 URL。
+首次 metadata-only intake 因未知布尔字段失败关闭；本次修复采集器后，严格校验并保留该原值，继续独立发现真实字幕载荷，未屏蔽任何已发现的字幕。
+三集重新 intake 均通过，当前匿名上下文的公开字幕 tracks 为空；音频已按冻结顺序串行获取，并完成字节数、ffprobe、时长与 SHA-256 核验，媒体与 sidecar 只保留在 Git 忽略的 `.cache/`。
+
+本次按用户明确授权，以 Linux / RTX 5090 实测替代指定 RTX A2000 的资格门禁；使用固定 revision 的 Qwen3-ASR 1.7B 与 ForcedAligner，以及 PyTorch 2.13.0/CUDA 13.0、Transformers 5.14.1、NumPy 2.4.6 独立环境。模型关键文件哈希、成对英文金标准与 245 秒中文跨块样本均通过核验，这不代表 A2000 已验证。
+
+首个完整单集在 `7080.000s` 的重叠边界出现一条 41 字匹配链与两条“怎么样”紧密短链冲突，无法证明唯一单调映射。原有门禁正确失败关闭；只保留 `pending` raw，没有完整 aligned、refined、正式 Markdown 或全文总结。
+按用户“验证失败就停止”的条件，已停止本任务后续 GPU 处理：第二集刚启动后被中止，第三集没有启动。不放宽边界门禁，也不把短样本成功或未完成的 raw 当作完整稿。
+
+恢复需先在新的明确指示下解决该边界歧义并重新通过长音频资格门禁；`pending` raw 不能作为下游输入，也不能伪造为可直接 align-only 续跑的完整检查点。后续仍需完整逐字稿、全文总结及逐集核听、说话人和专名校对、高影响事实核查；本次没有新内容被标为 `machine`、`draft` 或 `reviewed`。
+
+扫描证据、inventory 和通过校验的 `scan.json` 在被 Git 忽略的 `.cache/scans/20261108T143900Z-three-shows/yiqitietalk/` 及其父目录；
+冻结清单位于 `.cache/intake/yiqitietalk/manifest.json`，绑定来源 scan 的 SHA-256，范围仅为上表 3 个 eid。
+媒体在 `.cache/media/yiqitietalk/`；原始检查点与处理中元数据保存在 `.cache/pending-episodes/yiqitietalk/`，文件哈希清单为 `.cache/pipeline/pending-episode-artifacts.json`。所有失败与中止证据均留在忽略目录，没有把不完整单集提交为已收录内容。
 
 ## 单集
 
