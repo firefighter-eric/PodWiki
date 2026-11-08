@@ -2930,6 +2930,120 @@ class ArgumentAndResultValidationTests(unittest.TestCase):
         self.assertEqual(record["ambiguity_checked_run_count"], 3)
         self.assertEqual(record["ambiguity_checked_pair_count"], 15)
 
+    def test_identical_window_preserves_both_fast_repeated_phrases(self) -> None:
+        fixture = read_json_strict(ROOT / "tests/fixtures/cuda-identical-window.json")
+        left, right = fixture["left"], fixture["right"]
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left, right, seam_seconds=7080.0, shared_start=7075.0, shared_end=7085.0
+        )
+        self.assertEqual((left_stop, right_start), (21, 21))
+        self.assertEqual(
+            record["ambiguity_resolution"],
+            cuda_worker.IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION,
+        )
+        self.assertEqual(record["ambiguity_checked_run_count"], 3)
+        self.assertEqual(record["ambiguity_checked_pair_count"], 47)
+        spliced = "".join(item["text"] for item in left[1:left_stop] + right[right_start:-1])
+        self.assertEqual(spliced, "".join(item["text"] for item in left[1:-1]))
+        self.assertIn("怎么样怎么样", spliced)
+        self.assertEqual(len(spliced), 41)
+
+        segments = [
+            {"decode_start": 7075.0, "decode_end": 7085.0,
+             "decoded_text": "".join(item["text"] for item in items)}
+            for items in (left, right)
+        ]
+        validate = cuda_worker._validate_identical_window_candidate_proof
+        validate(record, index=0, left_segment=segments[0], right_segment=segments[1])
+        cases = []
+        wrong_cut = copy.deepcopy(record)
+        wrong_cut["match_run_repair"]["resulting_cut"]["right_start"] += 3
+        cases.append(wrong_cut)
+        wrong_count = copy.deepcopy(record)
+        wrong_count["ambiguity_checked_pair_count"] -= 3
+        cases.append(wrong_count)
+        wrong_text = copy.deepcopy(record)
+        wrong_text["match_run_repair"]["candidate_proof"]["right_items"][20]["cleaned_text"] = "错"
+        cases.append(wrong_text)
+        cropped = copy.deepcopy(record)
+        cropped["match_run_repair"]["candidate_proof"]["left_items"].pop(0)
+        cases.append(cropped)
+        wrong_anchor = copy.deepcopy(record)
+        wrong_anchor["anchor_midpoint_seconds"] += 0.08
+        cases.append(wrong_anchor)
+        for tampered in cases:
+            with self.subTest(tampered=tampered), self.assertRaises(ValueError):
+                validate(tampered, index=0, left_segment=segments[0], right_segment=segments[1])
+
+    def test_identical_window_proof_binds_raw_cut_and_owned_alignment(self) -> None:
+        fixture = read_json_strict(ROOT / "tests/fixtures/cuda-identical-window.json")
+        left, right = [shifted_alignment_items(fixture[side], -6960.0) for side in ("left", "right")]
+        left_stop, right_start, record = cuda_worker.seam_crossover(
+            left, right, seam_seconds=120.0, shared_start=115.0, shared_end=125.0
+        )
+        args, options, document = completed_two_chunk_raw_fixture(
+            chunk_context=5.0, left_items=left, right_items=right,
+            left_stop=left_stop, right_start=right_start, seam_record=record,
+        )
+        cuda_worker.validate_cuda_raw_integrity(document, args=args, backend_options=options)
+        wrong_cut = copy.deepcopy(document)
+        wrong_cut["segments"][0]["owned_item_stop"] += 1
+        with self.assertRaisesRegex(ValueError, "cut does not match its chunks"):
+            cuda_worker.validate_cuda_raw_integrity(wrong_cut, args=args, backend_options=options)
+        raw_path = ROOT / "identical-window-fixture-raw.json"
+        aligned = aligned_document_for_two_chunk_fixture(
+            document, left_items=left, right_items=right, raw_output_path=raw_path
+        )
+        cuda_worker.validate_cuda_aligned_integrity(
+            aligned, raw_output_path=raw_path, raw_document=document
+        )
+        wrong_time = copy.deepcopy(aligned)
+        wrong_time["chunks"][0]["alignment"][-2]["end"] += 0.01
+        with self.assertRaisesRegex(ValueError, "proof does not match owned items"):
+            cuda_worker.validate_cuda_aligned_integrity(
+                wrong_time, raw_output_path=raw_path, raw_document=document
+            )
+
+    def test_identical_window_rejects_changed_repetition_counts_or_timing(self) -> None:
+        fixture = read_json_strict(ROOT / "tests/fixtures/cuda-identical-window.json")
+        left = fixture["left"]
+        right = fixture["right"]
+        removed = right[:17] + right[20:]
+        added = right[:17] + copy.deepcopy(right[17:20]) + right[17:]
+        changed = copy.deepcopy(right)
+        changed[17]["text"] = "错"
+        loose = [{**item, "start": item["start"] + 0.3, "end": item["end"] + 0.3} for item in right]
+        for label, selected_right in [
+            ("missing occurrence", removed), ("extra occurrence", added),
+            ("different text", changed), ("loose diagonal", loose),
+        ]:
+            with self.subTest(label=label):
+                candidates = [
+                    [(i, item) for i, item in enumerate(items)
+                     if 7077.0 <= cuda_worker.alignment_item_midpoint(item) <= 7083.0]
+                    for items in (left, selected_right)
+                ]
+                _, _, runs = cuda_worker._reliable_match_run_stages(
+                    *candidates, seam_seconds=7080.0
+                )
+                self.assertIsNone(cuda_worker._identical_window_preserved_cut(
+                    runs, *candidates, seam_seconds=7080.0
+                ))
+
+        candidates = [
+            [(i, item) for i, item in enumerate(items)
+             if 7077.0 <= cuda_worker.alignment_item_midpoint(item) <= 7083.0]
+            for items in (left, right)
+        ]
+        _, _, runs = cuda_worker._reliable_match_run_stages(
+            *candidates, seam_seconds=7079.88
+        )
+        # A swapped occurrence is now the original nearest anchor. Even though
+        # other diagonal cuts would preserve the window, do not search for one.
+        self.assertIsNone(cuda_worker._identical_window_preserved_cut(
+            runs, *candidates, seam_seconds=7079.88
+        ))
+
     def test_ownership_cut_guard_covers_observed_shapes_and_crossings(self) -> None:
         left_overlap = [(index, {}) for index in range(520)]
         right_overlap = [(index, {}) for index in range(190)]

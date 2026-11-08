@@ -75,6 +75,8 @@ CONTAINED_DOMINANCE_MIN_DELTA_MARGIN_SECONDS = 0.25
 LEGACY_BOUNDARY_RECONCILIATION_METHOD = "forced-alignment-time-crossover-v2"
 BOUNDARY_RECONCILIATION_METHOD = "forced-alignment-time-crossover-v3"
 OWNERSHIP_CUT_AMBIGUITY_RESOLUTION = "ownership-cut-consistent-v1"
+IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION = "identical-window-preserved-cut-v1"
+MIN_IDENTICAL_WINDOW_CHARACTERS = 16
 REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION = (
     "adjacent-diagonal-repeated-token-indel-bubble-v1"
 )
@@ -1040,6 +1042,56 @@ def _validate_single_axis_weak_run_candidate_proof(
     }
 
 
+def _validate_identical_window_candidate_proof(
+    seam: dict[str, Any],
+    *,
+    index: int,
+    left_segment: dict[str, Any],
+    right_segment: dict[str, Any],
+) -> dict[str, Any]:
+    repair = seam.get("match_run_repair")
+    if not isinstance(repair, dict) or set(repair) != {
+        "method", "candidate_proof", "selected_anchor_pair", "resulting_cut"
+    } or repair["method"] != IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION:
+        raise ValueError(f"raw ASR boundary seam {index} has invalid identical-window proof")
+    proof = _validated_bounded_candidate_proof(
+        seam, index=index, left_segment=left_segment, right_segment=right_segment
+    )
+    matched, _, runs = _reliable_match_run_stages(
+        proof["left_candidates"], proof["right_candidates"],
+        seam_seconds=proof["seam_seconds"],
+    )
+    selected = _identical_window_preserved_cut(
+        runs, proof["left_candidates"], proof["right_candidates"],
+        seam_seconds=proof["seam_seconds"],
+    )
+    if selected is None:
+        raise ValueError(f"raw ASR boundary seam {index} does not prove an identical window")
+    left_stop, right_start = selected["cut"]
+    expected = {
+        "anchor_text": selected["text"],
+        "anchor_owner": selected["owner"],
+        "anchor_run_characters": selected["characters"],
+        "anchor_midpoint_seconds": rounded_seconds(selected["midpoint"]),
+        "anchor_run_max_pair_delta_seconds": rounded_seconds(selected["maximum_delta"]),
+        "matched_characters": matched,
+        "ambiguity_checked_run_count": len(runs),
+        "ambiguity_checked_pair_count": sum(len(run) for run, _, _ in runs),
+    }
+    if (
+        any(seam.get(key) != value for key, value in expected.items())
+        or repair["selected_anchor_pair"] != list(selected["pair"])
+        or repair["resulting_cut"] != {"left_stop": left_stop, "right_start": right_start}
+    ):
+        raise ValueError(f"raw ASR boundary seam {index} identical-window cut is not proof-derived")
+    return {
+        "left_items": proof["left_items"],
+        "right_items": proof["right_items"],
+        "left_stop": left_stop,
+        "right_start": right_start,
+    }
+
+
 def _validate_exhausted_side_context_anchor(
     seam: dict[str, Any],
     *,
@@ -1686,6 +1738,7 @@ def validate_cuda_raw_integrity(
                         REPEATED_TOKEN_INDEL_AMBIGUITY_RESOLUTION,
                         ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION,
                         SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION,
+                        IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION,
                     }
                 )
                 invalid_anchor_delta = not missing_refreshable_anchor_delta and (
@@ -1843,6 +1896,7 @@ def validate_cuda_raw_integrity(
                     in {
                         ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION,
                         SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION,
+                        IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION,
                     }
                 ):
                     if strict_short_anchor:
@@ -1860,6 +1914,11 @@ def validate_cuda_raw_integrity(
                                 left_segment=left_segment,
                                 right_segment=right_segment,
                             )
+                        )
+                    elif ambiguity_resolution == IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION:
+                        validated_proof = _validate_identical_window_candidate_proof(
+                            seam, index=index,
+                            left_segment=left_segment, right_segment=right_segment,
                         )
                     else:
                         validated_proof = (
@@ -2055,6 +2114,7 @@ def validate_cuda_aligned_integrity(
             in {
                 ZERO_DURATION_RIGHT_INDEL_AMBIGUITY_RESOLUTION,
                 SINGLE_AXIS_WEAK_RUN_AMBIGUITY_RESOLUTION,
+                IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION,
             }
         ):
             left_raw_chunk = raw_chunks[index]
@@ -2076,6 +2136,11 @@ def validate_cuda_aligned_integrity(
                         left_segment=left_raw_chunk,
                         right_segment=right_raw_chunk,
                     )
+                )
+            elif seam.get("ambiguity_resolution") == IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION:
+                validated_proof = _validate_identical_window_candidate_proof(
+                    seam, index=index,
+                    left_segment=left_raw_chunk, right_segment=right_raw_chunk,
                 )
             else:
                 validated_proof = (
@@ -3581,6 +3646,66 @@ def _validate_unique_monotonic_match_runs(
                 )
 
 
+def _identical_window_preserved_cut(
+    runs: list[tuple[list[tuple[int, int]], int, float]],
+    left_items: list[tuple[int, dict[str, Any]]],
+    right_items: list[tuple[int, dict[str, Any]]],
+    *,
+    seam_seconds: float,
+) -> dict[str, Any] | None:
+    """Prove the original nearest cut preserves one entire identical window.
+
+    Fast repeated speech can give tight off-diagonal matches even when both
+    decodes agree character for character. Require one tight diagonal covering
+    *every* item on both sides of the bounded window. The unchanged nearest
+    anchor must lie on that diagonal, with the same local cut on both copies.
+    This proves the concatenation equals the common sequence, including every
+    repeated occurrence. Unequal counts, partial diagonals and a nearest anchor
+    on a swapped occurrence remain ambiguous; no alternative cut is searched.
+    """
+    count = len(left_items)
+    if count < MIN_IDENTICAL_WINDOW_CHARACTERS or count != len(right_items):
+        return None
+    left_text = [cleaned_alignment_text(str(item["text"])) for _, item in left_items]
+    right_text = [cleaned_alignment_text(str(item["text"])) for _, item in right_items]
+    if left_text != right_text or any(len(text) != 1 for text in left_text):
+        return None
+    if any(
+        items[index][0] != items[0][0] + index
+        for items in (left_items, right_items)
+        for index in range(count)
+    ):
+        return None
+    diagonal = [(index, index) for index in range(count)]
+    complete_runs = [
+        candidate for candidate in runs
+        if candidate[0] == diagonal
+        and candidate[1] == count
+        and candidate[2] <= STRICT_SEAM_ANCHOR_MAX_DELTA_SECONDS
+    ]
+    if len(complete_runs) != 1 or len(runs) < 2:
+        return None
+    selected = _selected_match_run_anchor(
+        runs, left_items, right_items,
+        seam_seconds=seam_seconds, reject_cut_ties=True,
+    )
+    if selected is None:
+        return None
+    left_local = selected["pair"][0] - left_items[0][0]
+    right_local = selected["pair"][1] - right_items[0][0]
+    cut_left = selected["cut"][0] - left_items[0][0]
+    cut_right = selected["cut"][1] - right_items[0][0]
+    if (
+        left_local != right_local
+        or cut_left != cut_right
+        or not MIN_SEAM_ANCHOR_RUN_CHARACTERS <= cut_left
+        <= count - MIN_SEAM_ANCHOR_RUN_CHARACTERS
+        or left_text[:cut_left] + right_text[cut_right:] != left_text
+    ):
+        return None
+    return selected
+
+
 def _ownership_cut_consistency(
     runs: list[tuple[list[tuple[int, int]], int, float]],
     left_overlap: list[tuple[int, dict[str, Any]]],
@@ -4279,6 +4404,7 @@ def seam_crossover(
             )
         anchors.extend(run_anchors)
     ambiguity_evidence: tuple[int, int] | None = None
+    identical_window_evidence: dict[str, Any] | None = None
     if reliable_match_runs:
         try:
             _validate_unique_monotonic_match_runs(
@@ -4318,6 +4444,23 @@ def seam_crossover(
             )
             if consistent:
                 ambiguity_evidence = (checked_runs, checked_pairs)
+            elif (identical := _identical_window_preserved_cut(
+                reliable_match_runs, left_overlap, right_overlap,
+                seam_seconds=seam_seconds,
+            )) is not None:
+                identical_window_evidence = {
+                    "method": IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION,
+                    "selected_anchor_pair": list(identical["pair"]),
+                    "resulting_cut": {
+                        "left_stop": identical["cut"][0],
+                        "right_start": identical["cut"][1],
+                    },
+                    "candidate_proof": {
+                        "window_seconds": [rounded_seconds(anchor_start), rounded_seconds(anchor_end)],
+                        "left_items": _bounded_match_candidate_proof(left_items, left_overlap, side="left"),
+                        "right_items": _bounded_match_candidate_proof(right_items, right_overlap, side="right"),
+                    },
+                }
             else:
                 candidate_summary = [
                     {
@@ -4624,6 +4767,13 @@ def seam_crossover(
                     "ambiguity_checked_pair_count": ambiguity_evidence[1],
                 }
             )
+        if identical_window_evidence is not None:
+            record.update({
+                "ambiguity_resolution": IDENTICAL_WINDOW_AMBIGUITY_RESOLUTION,
+                "ambiguity_checked_run_count": len(reliable_match_runs),
+                "ambiguity_checked_pair_count": sum(len(run) for run, _, _ in reliable_match_runs),
+                "match_run_repair": identical_window_evidence,
+            })
         if indel_repair_evidence is not None:
             record.update(
                 {

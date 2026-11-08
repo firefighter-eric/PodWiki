@@ -456,9 +456,9 @@ engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B-hf
 若一条完全位于 seam 单侧的可靠链与跨 seam 长链仅复用长链相邻边缘 1–2 字，worker 会保留单侧链并裁掉长链的重复前缀或后缀；
 裁后长链仍须至少两倍长、seam 两侧各有至少 3 字且全部配对在 250 ms 内。其余达到门限的最大连续候选链
 在两份对齐中必须形成不重叠、不交叉的唯一单调映射，
-等长、时间更紧或无法比较的重复短语多解通常仍失败关闭。唯一例外是先按既有排序选出的最终 ownership cut 能证明所有可靠 exact pair
+等长、时间更紧或无法比较的重复短语多解通常仍失败关闭。一种例外是先按既有排序选出的最终 ownership cut 能证明所有可靠 exact pair
 都完整落在 cut 同一侧：此时多解只存在于最终完全取自同一个 decode 的内部，不会造成正文双留或双删；产物必须记录
-`ownership-cut-consistent-v1`、核对的 run 数和 pair 数。任何一对被 cut 分到不同 ownership 侧（包括只有一端恰好落在边界）仍立即失败，不得另找一个较宽松的 cut。
+`ownership-cut-consistent-v1`、核对的 run 数和 pair 数。任何一对被 cut 分到不同 ownership 侧（包括只有一端恰好落在边界）都不能使用这条证明，不得另找一个较宽松的 cut。
 重复单字造成相邻 diagonal 分叉时，只允许
 `adjacent-diagonal-repeated-token-indel-bubble-v1` 这一种窄修复：右侧必须恰好多一个相同单字，tight chain 与 shifted chain 的 offset 恰差 1，
 冲突只能位于前链尾部与后链开头的 1–2 个 pair。替代 pair 的时间差不得优于 tight chain，平均劣势至少 250 ms；裁去 shifted chain 的冲突前缀后，
@@ -476,6 +476,13 @@ engine/model/aligner 分别是 `qwen-asr-transformers`、`Qwen/Qwen3-ASR-1.7B-hf
 aligned validator 还把 proof 中最终 owned 的每个 index/text/time 逐项绑定正式 alignment。非零时长、左侧或多 item indel、4 字弱链、部分覆盖、额外 run、proof 缺项或任何无法唯一分解的近邻形状一律不适用。
 
 其后的统一例外 `single-axis-dominated-weak-runs-v1` 只在 repeated-token、上述 zero-duration repair 和原有 ownership-cut guard 都不能解决歧义时尝试，并复用同一 bounded `candidate_proof`，不信任持久化的 run 或 delta 摘要。dominance 与 edge repair 后必须有至少两条互不交叉、严格有序且全部 pair 在 250 ms 内的 tight backbone；每条待删除弱链至少 3 字且每个 pair 都松散到超过 400 ms，必须由同一条至少两倍长的 tight chain 在一侧逐 item 完整覆盖，每项时间优势至少 250 ms。弱链另一侧未被所有 tight chains 覆盖的 index 最多连续 2 项，并须严格夹在相邻 backbone 范围之间。所有在原始快照中合格的弱链必须原子删除，禁止级联或挑选子集；删除后映射必须唯一单调，正常最近 anchor 必须来自 tight backbone，且只有一个 ownership-consistent cut。raw validator 从 proof 重算完整 dominance/edge/atomic-drop/anchor/cut 流程；aligned validator继续逐项绑定最终 owned proof。任一 proof 篡改、覆盖缺口、边缘 gap、tie、残留冲突或更早 repair 可适用时均失败关闭。
+
+上述路径仍无法消歧时，`identical-window-preserved-cut-v1` 可证明两份完全相同窗口的拼接保留全部重复词。
+seam±3 秒窗口内两侧必须有完全相同、至少 16 个连续单字 item，且有一条覆盖两侧所有 item 的完整 diagonal，每个配对时间差均在 250 ms 内。
+保留全部原候选及既有排序选出的最近 anchor；该 anchor 必须位于完整 diagonal，且没有不同 cut 的并列最近候选。
+两侧的窗口内 cut offset 必须相等，cut 前后各至少 3 字，拼接结果必须逐字等于完整公共窗口，不增删任何重复出现。
+这条证明不降低旧 dominance 门限、不删除紧密短链，也不搜索替代 cut。任一侧多词、少词、错字、不完整 diagonal、过大时差或原最近 anchor 指向交叉重复词时仍失败关闭。
+产物保存相同的 bounded `candidate_proof`、原 anchor pair 和 cut；raw validator 绑定两份 decoded text 并重算全部候选及原切点，aligned validator 逐项绑定最终 owned 的文字与时间。
 
 标准 3 字 anchor、严格 2 字 anchor 和 aligned-gap 全部无解时，worker 还可识别
 `exhausted-side-context-anchor`，但当前只允许左候选在 seam 前至少 15 秒、且至少占该 ownership core 的 15%（上限 27 秒）时明确耗尽；右候选还必须在默认 seam±3 秒窗口两侧各至少覆盖 3 字且有 item 跨 seam。
