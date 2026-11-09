@@ -259,7 +259,7 @@ describe("reader navigation", () => {
     expect(homeHtml).not.toContain('href="/shows/xinkoukaihe"');
     expect(homeHtml).not.toContain('href="/shows/erdesancifang"');
     expect(homeHtml).toContain("查看全部 24 期");
-    expect(homeHtml).toContain("查看全部 34 期");
+    expect(homeHtml).toContain("查看全部 36 期");
     expect(homeHtml).toContain("查看全部 22 期");
     expect(homeHtml).toContain("查看全部 15 期");
     expect(homeHtml).toContain("查看全部 38 期");

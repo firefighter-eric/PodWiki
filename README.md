@@ -13,10 +13,10 @@ PodWiki 是一个使用 Markdown 构建的播客 Wiki，只收录可核实播客
 [PodWiki 添加剧集 skill](./.agents/skills/podwiki-add-episodes/SKILL.md)。
 
 2026-11-08 更新扫描截至北京时间 22:45:14；本批处理状态于 2026-11-09 核对：
-[一起铁TALK](./shows/yiqitietalk/#本次更新核对2026-11-08)增量扫描完整，新增李大林/李晓霞、梁田田、吴向东 3 集，正式索引共 24 集；
-[罗永浩的十字路口](./shows/luoyonghao/#本次更新核对2026-11-08)的 Bilibili 扫描仍为 `partial`，经精确小宇宙来源授权新增叶洪新 1 集，正式索引共 38 集。
-上述 4 集均有完整本地机器逐字稿与基于全文的七段总结，分别保持 `machine`、`draft`，仍需人工核听与事实核查。
-[张小珺商业访谈录](./shows/zhangxiaojun/#本次更新核对2026-11-08)的 Bilibili 扫描保持 `blocked`；经精确授权处理的苏庭灏、刘子鸣两集未通过音频覆盖、跨块衔接或时间戳对齐门禁，失败断点保留，本批可发布新增 0 集，正式索引仍 34 集。`partial` / `blocked` 均不表示没有更新。
+[一起铁TALK](./shows/yiqitietalk/#本次更新核对2026-11-08)增量扫描完整，新增李大林/李晓霞、梁田田、吴向东3集，正式索引24集；
+[罗永浩的十字路口](./shows/luoyonghao/#本次更新核对2026-11-08)经精确小宇宙授权新增叶洪新1集，正式索引38集，Bilibili扫描仍为 `partial`；
+[张小珺商业访谈录](./shows/zhangxiaojun/#本次更新核对2026-11-08)新增苏庭灏、刘子鸣2集，正式索引36集，原Bilibili扫描保持 `blocked`。
+本批新增6集都有完整本地机器逐字稿及基于全文的七段总结，分别保持 `machine`、`draft`，仍需人工核听与事实核查。`partial` / `blocked` 不表示没有更新。
 
 ## Web 阅读器
 
@@ -97,6 +97,7 @@ npm run check
 | [世界模型是具身的永动机？【晚点LatePost】](https://www.bilibili.com/video/BV1wQ8y63EyG/) | 戴勇、张怡、唐都玉 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-08-22 | [总结](./shows/latetalk/episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/bili-bv1wq8y63eyg-dai-yong-zhang-yi-tang-duyu/transcript.zh-CN.md) |
 | [郑小倩：首马 229，竟怀疑自己，场地冠军到到浙江纪录](https://www.xiaoyuzhoufm.com/episode/6a8675c1ef65145dfcc264f8) | 郑小倩 | [一起铁TALK](./shows/yiqitietalk/) | 2026-08-20 | [总结](./shows/yiqitietalk/episodes/21-zheng-xiaoqian/summary.zh-CN.md) | [逐字稿](./shows/yiqitietalk/episodes/21-zheng-xiaoqian/transcript.zh-CN.md) |
 | [Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路【硅谷101播客】](https://www.bilibili.com/video/BV1yFbo66E4q/) | 张宏江、黄东旭 | [硅谷101](./shows/sv101/) | 2026-08-20 | [总结](./shows/sv101/episodes/249-zhang-hongjiang-huang-dongxu/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/249-zhang-hongjiang-huang-dongxu/transcript.zh-CN.md) |
+| [151. 17岁被2026年ICML收录论文的小少年：我bet开心！开心！开心！](https://www.xiaoyuzhoufm.com/episode/6a8472b95aeb2a5712e8de78) | 苏庭灏 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-08-19 | [总结](./shows/zhangxiaojun/episodes/xiaoyuzhou-6a8472b95aeb2a5712e8de78-su-tinghao/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/xiaoyuzhou-6a8472b95aeb2a5712e8de78-su-tinghao/transcript.zh-CN.md) |
 | [蒸馏风暴：一场大家不愿公开谈论的技术竞赛【晚点聊LateTalk】](https://www.bilibili.com/video/BV14fbv6DELm/) | 程曼祺 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-08-18 | [总结](./shows/latetalk/episodes/179-cheng-manqi/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/179-cheng-manqi/transcript.zh-CN.md) |
 | [【视频播客】硅谷坐标 x Fireworks 联创Benny Chen：开源模型、token增速、推理优化和模型定制](https://www.bilibili.com/video/BV1mJbU6REts/) | Benny Chen | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-08-16 | [总结](./shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/summary.zh-CN.md) | [逐字稿](./shows/svvector/episodes/bili-bv1mjbu6rets-benny-chen/transcript.zh-CN.md) |
 | [对话前DeepMind曹原：AI for Science爆发，一个新时代到来了【101视频播客】](https://www.bilibili.com/video/BV1GQgg6yEy5/) | 曹原 | [硅谷101](./shows/sv101/) | 2026-08-15 | [总结](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/bili-bv1gqgg6yey5-cao-yuan/transcript.zh-CN.md) |
@@ -112,6 +113,7 @@ npm run check
 | [何谓蒸馏？聊聊硅谷如何看中国开放模型逼近前沿【硅谷101播客】](https://www.bilibili.com/video/BV1AoGN6XESP/) | 王铁震、Keith Zhai | [硅谷101](./shows/sv101/) | 2026-08-01 | [总结](./shows/sv101/episodes/246-wang-tiezhen-keith-zhai/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/246-wang-tiezhen-keith-zhai/transcript.zh-CN.md) |
 | [【正片】零跑汽车朱江明×罗永浩！零跑汽车十年：不会讲故事的人，如何卖成了第一](https://www.bilibili.com/video/BV1iQ3F6oENZ/) | 朱江明 | [罗永浩的十字路口](./shows/luoyonghao/) | 2026-07-31 | [总结](./shows/luoyonghao/episodes/035-zhu-jiangming/summary.zh-CN.md) | [逐字稿](./shows/luoyonghao/episodes/035-zhu-jiangming/transcript.zh-CN.md) |
 | [硅谷坐标 × Lam Research 创始人林杰屏：AI超级周期和四十年半导体周期感悟](https://www.bilibili.com/video/BV1JZGc6iEjv/) | 林杰屏 | [硅谷坐标 SV-Vector](./shows/svvector/) | 2026-07-31 | [总结](./shows/svvector/episodes/bili-bv1jzgc6iejv-lin-jieping/summary.zh-CN.md) | [英文逐字稿](./shows/svvector/episodes/bili-bv1jzgc6iejv-lin-jieping/transcript.en.md) · [中文译稿](./shows/svvector/episodes/bili-bv1jzgc6iejv-lin-jieping/transcript.zh-CN.md) |
+| [149. 亲历中美neo labs资本狂潮，和清华刘子鸣聊：AI for AI、机制可解释性和Max Tegmark](https://www.xiaoyuzhoufm.com/episode/6a69b07eb581962ce2bd4d97) | 刘子鸣 | [张小珺商业访谈录](./shows/zhangxiaojun/) | 2026-07-31 | [总结](./shows/zhangxiaojun/episodes/xiaoyuzhou-6a69b07eb581962ce2bd4d97-liu-ziming/summary.zh-CN.md) | [逐字稿](./shows/zhangxiaojun/episodes/xiaoyuzhou-6a69b07eb581962ce2bd4d97-liu-ziming/transcript.zh-CN.md) |
 | [对话 Liblib 陈冕：关于活下来，以及所有接近死亡的时刻【晚点聊LateTalk】](https://www.bilibili.com/video/BV1ZP3863E3E/) | 陈冕 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-07-30 | [总结](./shows/latetalk/episodes/175-chen-mian/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/175-chen-mian/transcript.zh-CN.md) |
 | [AI 冲击企业软件巨头？与SAP原欣聊大模型 to B 的颠覆与边界【晚点聊LateTalk】](https://www.bilibili.com/video/BV1zQ3i6YErP/) | 原欣 | [晚点聊 LateTalk](./shows/latetalk/) | 2026-07-28 | [总结](./shows/latetalk/episodes/174-yuan-xin/summary.zh-CN.md) | [逐字稿](./shows/latetalk/episodes/174-yuan-xin/transcript.zh-CN.md) |
 | [对话叶奇意：“寻找”月之暗面杨植麟、中国两代AI、十年人才迁徙，与AGI信仰【101视频播客】](https://www.bilibili.com/video/BV1wK3i6NEdQ/) | 叶奇意 | [硅谷101](./shows/sv101/) | 2026-07-28 | [总结](./shows/sv101/episodes/bili-bv1wk3i6nedq-ye-qiyi/summary.zh-CN.md) | [逐字稿](./shows/sv101/episodes/bili-bv1wk3i6nedq-ye-qiyi/transcript.zh-CN.md) |
