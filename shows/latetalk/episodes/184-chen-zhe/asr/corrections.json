@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "episode_id": "latetalk:184",
+  "version": "publisher-confirmed-names-v1",
+  "input_asr_sha256": "9b8bb84a18ead08ddecf04ac4fcaa89c73563f7b600ebb5da925ef4fd95ce804",
+  "rules": [
+    {
+      "id": "publisher-confirmed-term-1",
+      "match": "巨神",
+      "replacement": "具身",
+      "reason": "本期发布者RSS简介及章节明确主题为具身智能、模型Astra、机构Alphaist Partners及主持人程曼祺；仅统一已核实专名，不改数字与观点。",
+      "case_sensitive": true,
+      "expected_hits": 30
+    },
+    {
+      "id": "publisher-confirmed-term-2",
+      "match": "巨深",
+      "replacement": "具身",
+      "reason": "本期发布者RSS简介及章节明确主题为具身智能、模型Astra、机构Alphaist Partners及主持人程曼祺；仅统一已核实专名，不改数字与观点。",
+      "case_sensitive": true,
+      "expected_hits": 9
+    },
+    {
+      "id": "publisher-confirmed-term-3",
+      "match": "巨胜",
+      "replacement": "具身",
+      "reason": "本期发布者RSS简介及章节明确主题为具身智能、模型Astra、机构Alphaist Partners及主持人程曼祺；仅统一已核实专名，不改数字与观点。",
+      "case_sensitive": true,
+      "expected_hits": 11
+    },
+    {
+      "id": "publisher-confirmed-term-4",
+      "match": "Alpha Institute",
+      "replacement": "Alphaist Partners",
+      "reason": "本期发布者RSS简介及章节明确主题为具身智能、模型Astra、机构Alphaist Partners及主持人程曼祺；仅统一已核实专名，不改数字与观点。",
+      "case_sensitive": true,
+      "expected_hits": 3
+    },
+    {
+      "id": "publisher-confirmed-term-5",
+      "match": "曼奇",
+      "replacement": "曼祺",
+      "reason": "本期发布者RSS简介及章节明确主题为具身智能、模型Astra、机构Alphaist Partners及主持人程曼祺；仅统一已核实专名，不改数字与观点。",
+      "case_sensitive": true,
+      "expected_hits": 1
+    },
+    {
+      "id": "publisher-confirmed-term-6",
+      "match": "astral",
+      "replacement": "Astra",
+      "reason": "本期发布者RSS简介及章节明确主题为具身智能、模型Astra、机构Alphaist Partners及主持人程曼祺；仅统一已核实专名，不改数字与观点。",
+      "case_sensitive": true,
+      "expected_hits": 18
+    },
+    {
+      "id": "publisher-confirmed-term-7",
+      "match": "Astro",
+      "replacement": "Astra",
+      "reason": "本期发布者RSS简介及章节明确主题为具身智能、模型Astra、机构Alphaist Partners及主持人程曼祺；仅统一已核实专名，不改数字与观点。",
+      "case_sensitive": true,
+      "expected_hits": 25
+    },
+    {
+      "id": "publisher-confirmed-term-8",
+      "match": "Extra",
+      "replacement": "Astra",
+      "reason": "本期发布者RSS简介及章节明确主题为具身智能、模型Astra、机构Alphaist Partners及主持人程曼祺；仅统一已核实专名，不改数字与观点。",
+      "case_sensitive": true,
+      "expected_hits": 10
+    },
+    {
+      "id": "company-name",
+      "match": "语数",
+      "replacement": "宇树",
+      "reason": "发布者RSS明确第三个话题为宇树IPO，匹配段落均讨论该机器人公司；仅统一专名。",
+      "case_sensitive": true,
+      "expected_hits": 22
+    }
+  ]
+}

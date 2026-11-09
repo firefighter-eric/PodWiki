@@ -153,6 +153,26 @@ Fix all validation errors before reporting. Report each show separately with:
 - stable exclusion counts/reasons and repository matches;
 - the manifest and inventory paths.
 
+Then give an explicit localized `Recommended to add` section so the user does not have to infer an
+action from candidate counts:
+
+- state the total number of recommended episodes and list every recommended title with its show,
+  canonical URL, and a short evidence-based reason;
+- recommend only validated `eligible-new` candidates; never recommend `already-present`,
+  `excluded`, `needs-review`, cross-check-only leads, or items missing a policy-required source;
+- distinguish `current update` candidates that are newer than the frozen inventory's newest stored
+  episode from older `backfill` gaps, and present current updates first;
+- an item-level verified `eligible-new` candidate from a `partial` scan may still be recommended,
+  but label the show coverage as incomplete and say that the recommendation list may not be
+  exhaustive;
+- put `needs-review` items and unpromoted leads in a separate localized `Do not add yet / needs
+  verification` section with the missing evidence or blocking source;
+- when there are no validated `eligible-new` candidates, say explicitly that this scan has no
+  verified episodes to recommend adding.
+
+This recommendation is advisory output from the scan. It does not authorize ingestion or select a
+subset on the user's behalf when the user later asks to add only specific candidates.
+
 Use the phrase `no updates` only when status is `complete`, the manifest validates, and
 `eligible_new` is zero. Otherwise say that the result is incomplete or unverified.
 

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode_id": "moonuncle:bili-bv18zn96rexw",
+  "version": "publisher-confirmed-names-v1",
+  "input_asr_sha256": "77c40be1c449468da1b29f32e57e3d983151a385150ae59f6ba0a0412ba9032c",
+  "rules": [
+    {
+      "id": "guest-name",
+      "match": "春雨",
+      "replacement": "春宇",
+      "reason": "发布者原标题与简介明确嘉宾为陈春宇；8段均为嘉宾姓名或称呼，保留raw/aligned原始识别。",
+      "case_sensitive": true,
+      "expected_hits": 9
+    }
+  ]
+}

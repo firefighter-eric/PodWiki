@@ -50,6 +50,7 @@ last_verified_at: 2026-08-25
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [陈春宇：清华，辍学，睡地板，精英的傲慢，硅谷，创业，情商，聊天软件，全球翻译，生物，爱自己](https://www.bilibili.com/video/BV18Zn96REXW/) | 月球大叔的硅谷播客 | 2026-10-26 | [总结](./episodes/bili-bv18zn96rexw-chen-chunyu/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv18zn96rexw-chen-chunyu/transcript.zh-CN.md) |
 | [陈然：全职奶爸，清华，CMU，AI斩杀线，0人公司，百亿token，财务规划，职业选择，创业收购，主体性，硅谷](https://www.bilibili.com/video/BV1MWHD6LEE5/) | 月球大叔的硅谷播客 | 2026-10-08 | [总结](./episodes/bili-bv1mwhd6lee5-chen-ran/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1mwhd6lee5-chen-ran/transcript.zh-CN.md) |
 | [肖志斌：AI芯片，英伟达，全球供应链，3纳米，中美日韩，Groq，Cerebras，SambaNova，创业，AI原生](https://www.bilibili.com/video/BV1JcYp62E4N/) | 月球大叔的硅谷播客 | 2026-09-09 | [总结](./episodes/bili-bv1jcyp62e4n-xiao-zhibin/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1jcyp62e4n-xiao-zhibin/transcript.zh-CN.md) |
 | [徐天音：系统，UIUC，教授，最佳论文，Agent Infra，云计算，形式化验证，容错，纯粹](https://www.bilibili.com/video/BV1F1846pEYT/) | 月球大叔的硅谷播客 | 2026-08-23 | [总结](./episodes/bili-bv1f1846peyt-xu-tianyin/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1f1846peyt-xu-tianyin/transcript.zh-CN.md) |
