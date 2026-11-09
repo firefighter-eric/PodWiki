@@ -45,6 +45,16 @@ sources:
     identifiers:
       feed_url: "https://feed.xyzfm.space/wmnkvmrpwuww"
       guid: "6aea8204c96c8942ec16ee88"
+  - platform: "bilibili"
+    kind: "video"
+    title: "官方视频版同集"
+    url: "https://www.bilibili.com/video/BV1Pqxm6CEmt/"
+    preferred: false
+    identifiers:
+      bvid: "BV1Pqxm6CEmt"
+      aid: "117555251381948"
+      cid: "43306911178"
+      page: 1
 workflow:
   metadata: "verified"
   summary: "draft"

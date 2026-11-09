@@ -32,8 +32,9 @@ Before starting a batch, verify that the authorized browser backend can export a
 **response body** to an ignored file. Resource inventory alone is insufficient: `pageAssets`
 may report an AI subtitle as `other`, while its bundle operation cannot export that JSON.
 An unrelated or unauthenticated browser backend does not inherit the existing login context.
-If body export is unavailable, report an acquisition-tool blocker before creating tracked files;
-do not classify visible subtitles as absent or silently use ASR.
+If direct body export is unavailable, consider the explicitly authorized yt-dlp fallback below.
+If neither path can obtain a validated body, report an acquisition-tool blocker before creating
+tracked files; do not classify visible subtitles as absent or silently use ASR.
 
 1. In the authorized existing browser session, confirm the exact BVID page is logged in and the
    player exposes an active Chinese subtitle. Do not inspect or export cookies, local storage,
@@ -65,6 +66,30 @@ byte-identical root transcript. Record engine `bilibili-subtitles`, model
 If no supported track exists in the actual authorized context, record that result and use public
 audio plus local Qwen. If a different Bilibili subtitle format appears, stop rather than coercing it
 through this importer.
+
+### Authorized yt-dlp fallback
+
+If the existing Chrome backend cannot export JSON bodies, an operator may explicitly authorize
+yt-dlp to reuse that same signed-in Chrome profile for the exact approved source or frozen batch.
+This is an alternative transport, not authorization to inspect unrelated browser data or expand
+the episode list. Do not silently choose a default or different profile when identity is ambiguous.
+
+Use a quiet in-process adapter with a logger that discards URLs and credential-bearing errors.
+Validate the cached public-free metadata first, request the player for its exact BVID/aid/cid,
+verify the returned identity, and select only the Chinese `ai-zh` track before downloading its body.
+Preserve the intact publisher-issued URL only in memory. Save and validate the original Chinese
+`AIsubtitle` JSON; yt-dlp's ordinary SRT conversion does not preserve this importer's raw lineage.
+Use `scripts/import_bilibili_subtitles.py` as the final acceptance check. Do not write an info JSON,
+debug request dump, cookie export, or signed URL. Configure any temporary browser-database copies
+under ignored `.cache/credentials/`, restrict their permissions, and remove them after acquisition.
+
+On macOS, distinguish filesystem/privacy denial from network restrictions and Keychain prompts.
+Where available, the operator can grant the running host app access specifically to Google Chrome
+under Privacy & Security → Files & Folders; Full Disk Access is not the default remedy. The operator
+must handle any `Chrome Safe Storage` password prompt locally. Never request a password in chat,
+disable OS protection, or interpret an authorization failure as missing publisher subtitles.
+Keep only sanitized outcome categories, source identity, body hashes and cue-coverage results.
+One successful capture validates that run, not permanent compatibility with future site changes.
 
 ## Transport signatures and diagnosis
 

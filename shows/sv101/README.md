@@ -51,6 +51,8 @@ last_verified_at: 2026-10-02
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [对话Maxinsights：具身“卖铲人”的250倍增长、机器人Ego数据狂潮、Doordash与丰田模式，与“自由的鸟”【101视频播客】](https://www.bilibili.com/video/BV1L4xh6jEqo/) | 硅谷101 | 2026-11-02 | [总结](./episodes/bili-bv1l4xh6jeqo-yuan-yuguang/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1l4xh6jeqo-yuan-yuguang/transcript.zh-CN.md) |
+| [再访Dyna Robotics：被部署教训了300天后，找到机器人Scaling Law【101视频播客】](https://www.bilibili.com/video/BV1vWnE6wEyj/) | 硅谷101 | 2026-10-19 | [总结](./episodes/bili-bv1vwne6weyj-jason-ma/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1vwne6weyj-jason-ma/transcript.zh-CN.md) |
 | [模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔【硅谷101播客】](https://www.bilibili.com/video/BV186pW6kEzU/) | 硅谷101 | 2026-10-09 | [总结](./episodes/255-zhang-kuo/summary.zh-CN.md) | [逐字稿](./episodes/255-zhang-kuo/transcript.zh-CN.md) |
 | [超级厄尔尼诺来了，我们的日常所需真会因它涨价吗？【硅谷101播客】](https://www.bilibili.com/video/BV1fZap6CEw6/) | 硅谷101 | 2026-09-30 | [总结](./episodes/254-zhang-siqi/summary.zh-CN.md) | [逐字稿](./episodes/254-zhang-siqi/transcript.zh-CN.md) |
 | [谁在给大模型出题、卖题、判卷？聊聊AI数据行业的野蛮生长【硅谷101播客】](https://www.bilibili.com/video/BV1imaq6mEof/) | 硅谷101 | 2026-09-28 | [总结](./episodes/253-he-yunzhong-sun-yiyou/summary.zh-CN.md) | [逐字稿](./episodes/253-he-yunzhong-sun-yiyou/transcript.zh-CN.md) |
