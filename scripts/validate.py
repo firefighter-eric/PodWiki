@@ -1901,16 +1901,17 @@ def validate_selected_qwen_readme_provenance(
     if not isinstance(raw_audio, dict) or not isinstance(raw_options, dict):
         return
     readme_options = nested_front_matter_mapping(front_matter, "transcript", "options")
-    for field, description in (
-        ("audio_decode_profile", "audio decode profile"),
-        ("asr_language_conditioning", "ASR language conditioning"),
+    run_options = selected_run.get("options", {})
+    for field, description, default in (
+        ("audio_decode_profile", "audio decode profile", "legacy-rematrix-v1"),
+        ("asr_language_conditioning", "ASR language conditioning", "system-hint-v1"),
     ):
-        if field in raw_options:
-            expected = raw_options[field]
-            run_options = selected_run.get("options")
-            for label, options in (("transcript", readme_options), ("selected run", run_options)):
-                if not isinstance(options, dict) or options.get(field) != expected:
-                    errors.append(f"{label} {description} must equal selected raw.options")
+        # Historical/default CUDA runs omit these fields. Their effective modes
+        # still bind README claims, while omitted metadata retains the defaults.
+        expected = raw_options.get(field, default)
+        for label, options in (("transcript", readme_options), ("selected run", run_options)):
+            if not isinstance(options, dict) or options.get(field, default) != expected:
+                errors.append(f"{label} {description} must equal selected raw.options")
     precise_markers = (
         "sample_count" in raw_audio,
         "planned_chunk_count" in raw_options,
