@@ -1496,6 +1496,21 @@ class QwenArtifactChainTests(unittest.TestCase):
                 _, errors = fixture.validate()
                 self.assertTrue(any("audio decode profile" in e for e in errors), errors)
 
+    def test_cuda_language_conditioning_is_bound_across_stages(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            options = {**cuda_native_options(), "asr_language_conditioning": "forced-prefix-v1"}
+            fixture.upgrade_to_v2(
+                engine="qwen-asr-transformers", model=CUDA_QWEN_MODEL,
+                model_revision=CUDA_QWEN_MODEL_REVISION, aligner=CUDA_QWEN_ALIGNER,
+                aligner_revision=CUDA_QWEN_ALIGNER_REVISION,
+                raw_options=options, aligned_options=options,
+            )
+            self.assertEqual(fixture.validate(), (True, []))
+            fixture.rewrite_aligned(lambda d: d["options"].pop("asr_language_conditioning"))
+            _, errors = fixture.validate()
+            self.assertTrue(any("language conditioning" in e for e in errors), errors)
+
     def test_rejects_legacy_qwen_asr_cuda_v2_chain(self) -> None:
         legacy_options = {
             "backend": "qwen-asr",

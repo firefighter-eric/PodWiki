@@ -4290,6 +4290,28 @@ class ResumableWorkerTests(unittest.TestCase):
         ):
             return cuda_worker.main()
 
+    def test_forced_language_reaches_loader_and_is_bound_to_both_stages(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            args = worker_args(Path(directory))
+            args.input.write_bytes(b"fake-audio")
+            args.asr_language_conditioning = "forced-prefix-v1"
+            harness = WorkerHarness()
+            self.assertEqual(self.run_worker(args, harness), 0)
+            raw = read_json_strict(args.output)
+            aligned = read_json_strict(args.aligned_output)
+            self.assertEqual(raw["options"]["asr_language_conditioning"], "forced-prefix-v1")
+            self.assertEqual(aligned["options"]["asr_language_conditioning"], "forced-prefix-v1")
+            request = next(value for event, value in harness.events if event == "load-asr")
+            self.assertEqual(request[1]["language_conditioning"], "forced-prefix-v1")
+            aligned["options"].pop("asr_language_conditioning")
+            with self.assertRaisesRegex(ValueError, "conditioning does not match raw"):
+                cuda_worker.validate_cuda_aligned_integrity(
+                    aligned, raw_output_path=args.output, raw_document=raw
+                )
+            args.asr_language_conditioning = "system-hint-v1"
+            with self.assertRaisesRegex(ValueError, "decoding options|option .*mismatch"):
+                self.run_worker(args, harness)
+
     def test_fresh_run_writes_strict_lineage_and_uses_batch_one(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

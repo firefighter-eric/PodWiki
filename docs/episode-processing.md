@@ -497,6 +497,13 @@ owned alignment，再把这份全局并集分别裁剪到每个归属区间；�
 如果全局并集在归属区间的首部、相邻 item 之间或尾部留下长空洞，worker 必须实际探测对应音频；只有安静区域可以继续，
 持续活跃时失败关闭。首块、末块和句末标点都不构成默认豁免，不得将截断结果标记为完成。
 
+CUDA 可显式选择 `--asr-language-conditioning forced-prefix-v1`，遵循
+[Qwen 官方推理实现](https://github.com/QwenLM/Qwen3-ASR/blob/main/qwen_asr/inference/qwen3_asr.py)的语言控制方式：
+在 assistant 起始位置预填 `language Chinese<asr_text>`（或其他受支持的完整语言名称），
+system 上下文保持空；音频仍由同一固定 native processor/model 处理，不以词汇提示或事后翻译替代转写。
+该选项绑定到 raw/aligned options、根逐字稿与 selected run 元数据，切换时必须重新转写。
+缺省 `system-hint-v1` 保留历史调用，旧产物不回填新选项；未知模式、跨阶段不一致或未记录模式的元数据均失败关闭。
+
 CUDA 可显式选择 `--audio-decode-profile normalized-rematrix-v1`，以
 `aresample=rematrix_maxval=1.0` 对全部 ASR、对齐与声学探测统一执行防溢出的声道降混。
 [FFmpeg 的默认实现](https://www.ffmpeg.org/doxygen/trunk/rematrix_8c_source.html)对整数输出归一化混音系数，

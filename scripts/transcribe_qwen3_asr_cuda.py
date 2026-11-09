@@ -28,8 +28,11 @@ from qwen3_asr_transformers_adapter import (
     DEFAULT_MODEL,
     TORCH_PUBLIC_VERSION,
     TRANSFORMERS_PACKAGE_VERSION,
+    FORCED_PREFIX_LANGUAGE_CONDITIONING,
+    SYSTEM_LANGUAGE_CONDITIONING,
     load_transformers_native_runtime,
     pinned_native_revision,
+    validated_language_conditioning,
 )
 from transcribe_qwen3_asr import (
     SAMPLE_RATE,
@@ -184,6 +187,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--language", default="Chinese")
     parser.add_argument(
+        "--asr-language-conditioning",
+        choices=(SYSTEM_LANGUAGE_CONDITIONING, FORCED_PREFIX_LANGUAGE_CONDITIONING),
+        default=SYSTEM_LANGUAGE_CONDITIONING,
+        help="Use Qwen's official assistant language prefix instead of a system hint",
+    )
+    parser.add_argument(
         "--audio-decode-profile",
         choices=(LEGACY_AUDIO_DECODE_PROFILE, NORMALIZED_AUDIO_DECODE_PROFILE),
         default=LEGACY_AUDIO_DECODE_PROFILE,
@@ -256,6 +265,7 @@ def raw_backend_options(args: argparse.Namespace) -> dict[str, Any]:
         "max_inference_batch_size": MAX_INFERENCE_BATCH_SIZE,
         "final_outro_exemption_seconds": args.final_outro_exemption_seconds,
         **audio_decode_options(args),
+        **language_conditioning_options(args),
     }
 
 
@@ -274,6 +284,7 @@ def aligned_backend_options(args: argparse.Namespace) -> dict[str, Any]:
         "aligned_gap_guard": ALIGNED_GAP_GUARD,
         "final_outro_exemption_seconds": args.final_outro_exemption_seconds,
         **audio_decode_options(args),
+        **language_conditioning_options(args),
     }
 
 
@@ -281,6 +292,13 @@ def validated_audio_decode_profile(value: Any) -> str:
     if value not in (LEGACY_AUDIO_DECODE_PROFILE, NORMALIZED_AUDIO_DECODE_PROFILE):
         raise ValueError("unsupported audio decode profile")
     return str(value)
+
+
+def language_conditioning_options(args: argparse.Namespace) -> dict[str, str]:
+    mode = validated_language_conditioning(
+        getattr(args, "asr_language_conditioning", SYSTEM_LANGUAGE_CONDITIONING)
+    )
+    return {} if mode == SYSTEM_LANGUAGE_CONDITIONING else {"asr_language_conditioning": mode}
 
 
 def audio_decode_options(args: argparse.Namespace) -> dict[str, str]:
@@ -2044,6 +2062,14 @@ def validate_cuda_aligned_integrity(
     )
     if raw_profile != aligned_profile:
         raise ValueError("aligned ASR audio decode profile does not match raw")
+    raw_conditioning = validated_language_conditioning(
+        raw_options.get("asr_language_conditioning", SYSTEM_LANGUAGE_CONDITIONING)
+    )
+    aligned_conditioning = validated_language_conditioning(
+        aligned_options.get("asr_language_conditioning", SYSTEM_LANGUAGE_CONDITIONING)
+    )
+    if raw_conditioning != aligned_conditioning:
+        raise ValueError("aligned ASR language conditioning does not match raw")
     aligned_final_outro = validated_final_outro_exemption_seconds(
         aligned_options.get("final_outro_exemption_seconds")
     )
@@ -5870,7 +5896,7 @@ def run_worker(args: argparse.Namespace) -> int:
                 }
                 replace_final_outro_option = True
         markerless_legacy = loaded_lineage_version is None
-        if markerless_legacy and audio_decode_options(args):
+        if markerless_legacy and (audio_decode_options(args) or language_conditioning_options(args)):
             raise ValueError("legacy audio preprocessing cannot change; pass --retranscribe")
         validation_model = LEGACY_MODEL if markerless_legacy else args.model
         validation_raw_options = (
@@ -6037,9 +6063,12 @@ def run_worker(args: argparse.Namespace) -> int:
     if raw_document is None:
         torch.cuda.reset_peak_memory_stats(device_index)
         model_load_started = time.perf_counter()
+        asr_load_kwargs = dict(load_kwargs)
+        if language_conditioning_options(args):
+            asr_load_kwargs["language_conditioning"] = FORCED_PREFIX_LANGUAGE_CONDITIONING
         model = runtime.load_asr(
             model_load_target,
-            **load_kwargs,
+            **asr_load_kwargs,
         )
         cuda_synchronize(torch, device_index)
         model_load_seconds = time.perf_counter() - model_load_started
