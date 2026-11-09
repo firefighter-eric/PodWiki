@@ -20,17 +20,45 @@ sources:
     external_id: 6951e312febad13106eb017e
     url: https://www.xiaoyuzhoufm.com/podcast/6951e312febad13106eb017e
     preferred: true
-last_verified_at: 2026-08-25
+last_verified_at: 2026-11-09
 ---
 
 # 一起铁TALK
 
 一档面向在生活中持续“狂奔”的人的对谈节目，以跑步为入口，聊训练、生活经验和真实处境，为听众提供一个可以原地休息的角落。
 
+## 本次更新核对（2026-11-08）
+
+- 增量窗口：北京时间 `2026-05-22T11:59:31.882+08:00` 至 `2026-11-08T22:45:14.002517+08:00`；匿名访问，扫描结果为 `complete`。
+- 官方栏目页倒序返回 24 集中的前 15 集，整批读至 2026-03-21，已越过窗口起点。窗口内 11 集全部分类：8 集已收录、3 集 `eligible-new`；这不表示扫描了全部历史。
+- 三个精确 eid 在添加前冻结，现已全部完成，本次新增 **3** 集，正式索引共 **24** 集。发布者原标题中的数字标签保留，不由标题单独推断正式期号。
+
+| 发布日期（北京时间） | 新增完整单集 | 状态与人工待办 |
+| --- | --- | --- |
+| 2026-11-05 | [李大林、李晓霞](./episodes/xiaoyuzhou-6aeca1ea5b7c4709bfe1b7bf-li-dalin-li-xiaoxia/) | `transcript: machine`、`summary: draft`；待核听、说话人和专名校对，成绩、奖金及反兴奋剂相关说法核查 |
+| 2026-10-21 | [梁田田](./episodes/xiaoyuzhou-6ad89de4ef67611cac7a05ee-liang-tiantian/) | `transcript: machine`、`summary: draft`；待核听、专名与赛事/纪录、睡眠及训练说法核查 |
+| 2026-10-13 | [吴向东](./episodes/xiaoyuzhou-6ace0097e742e36efcc2599d-wu-xiangdong/) | `transcript: machine`、`summary: draft`；待核听，PB秒数、日期、治疗/HRV、产品名及赛事规则核查 |
+
+三集匿名页面均绑定本栏目 PID，明确为 `NORMAL`、`FREE`、非私密、`PUBLIC` 的完整正片。
+`isTranscriptEnabled: true` 及匹配音频的 mediaId 占位已严格校验并保留；当前上下文没有公开正文、segments 或字幕轨，不忽略实际字幕载荷。
+公开 M4A 及 sidecar 均通过字节数、ffprobe、时长与 SHA-256 校验，媒体只存放于被 Git 忽略的 `.cache/`。
+
+按本批明确授权，使用 Linux / RTX 5090 实测替代指定 A2000 资格门禁；ASR 与 ForcedAligner 均使用仓库固定 native revision，独立环境为 PyTorch 2.13.0/CUDA 13.0、Transformers 5.14.1、NumPy 2.4.6，不代表 A2000 已验证。
+首集在 01:58:00 的快速重复词边界曾失败关闭；原 pending raw 和失败记录完整保留。修复新增完整相同窗口证明，保留原最近切点、全部重复词和候选，不降低时间差门限或改找切点；反例测试、英文金标准、中文跨块样本及三集完整链现已通过。
+
+每集均串行生成 raw、aligned、refined 和 Markdown，根稿与 selected 运行稿字节一致，单集页列出真实模型 revision、哈希链与处理参数。
+全文总结基于完整逐字稿逐段通读并核对全部引用时间码；均保持 `draft`，没有人工审核的内容不标为 `reviewed`。
+
+扫描 inventory、证据与通过校验的 `scan.json` 位于 `.cache/scans/20261108T143900Z-three-shows/yiqitietalk/`；
+冻结清单 `.cache/intake/yiqitietalk/manifest.json` 绑定来源 scan 哈希，范围始终为上述 3 个 eid。旧失败记录和 pending 文件仍在忽略缓存，未覆盖既有已收录单集。
+
 ## 单集
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [24 李大林：被说“捡漏”后北马再夺冠。扬眉吐气的李大林与晓霞，背后经历了什么？](https://www.xiaoyuzhoufm.com/episode/6aeca1ea5b7c4709bfe1b7bf) | 一起铁TALK | 2026-11-05 | [总结](./episodes/xiaoyuzhou-6aeca1ea5b7c4709bfe1b7bf-li-dalin-li-xiaoxia/summary.zh-CN.md) | [逐字稿](./episodes/xiaoyuzhou-6aeca1ea5b7c4709bfe1b7bf-li-dalin-li-xiaoxia/transcript.zh-CN.md) |
+| [23 梁田田：穿牛仔裤跑 800 米的女孩，如今成长为全国冠军，赛场之外和场上有何不同？](https://www.xiaoyuzhoufm.com/episode/6ad89de4ef67611cac7a05ee) | 一起铁TALK | 2026-10-21 | [总结](./episodes/xiaoyuzhou-6ad89de4ef67611cac7a05ee-liang-tiantian/summary.zh-CN.md) | [逐字稿](./episodes/xiaoyuzhou-6ad89de4ef67611cac7a05ee-liang-tiantian/transcript.zh-CN.md) |
+| [22 吴向东：2:07:55 PB背后，一起“搞个大的”](https://www.xiaoyuzhoufm.com/episode/6ace0097e742e36efcc2599d) | 一起铁TALK | 2026-10-13 | [总结](./episodes/xiaoyuzhou-6ace0097e742e36efcc2599d-wu-xiangdong/summary.zh-CN.md) | [逐字稿](./episodes/xiaoyuzhou-6ace0097e742e36efcc2599d-wu-xiangdong/transcript.zh-CN.md) |
 | [郑小倩：首马 229，竟怀疑自己，场地冠军到到浙江纪录](https://www.xiaoyuzhoufm.com/episode/6a8675c1ef65145dfcc264f8) | 一起铁TALK | 2026-08-20 | [总结](./episodes/21-zheng-xiaoqian/summary.zh-CN.md) | [逐字稿](./episodes/21-zheng-xiaoqian/transcript.zh-CN.md) |
 | [姚妙“教”吴向东越野？不不不，让我们一起撒开脚丫](https://www.xiaoyuzhoufm.com/episode/6a5f4d33a3fec224d5a1136a) | 一起铁TALK | 2026-07-21 | [总结](./episodes/20-yao-miao/summary.zh-CN.md) | [逐字稿](./episodes/20-yao-miao/transcript.zh-CN.md) |
 | [此沙与吴向东的首次越野赛](https://www.xiaoyuzhoufm.com/episode/6a5cd2586356eb2d9be50430) | 一起铁TALK | 2026-07-20 | [总结](./episodes/19-ci-sha/summary.zh-CN.md) | [逐字稿](./episodes/19-ci-sha/transcript.zh-CN.md) |

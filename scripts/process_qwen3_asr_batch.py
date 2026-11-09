@@ -103,6 +103,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--aligner-path", type=Path)
     parser.add_argument("--language", default="Chinese")
     parser.add_argument(
+        "--asr-language-conditioning", choices=("system-hint-v1", "forced-prefix-v1"),
+        help="CUDA-only, provenance-recorded Qwen language prompting",
+    )
+    parser.add_argument(
+        "--audio-decode-profile",
+        choices=("legacy-rematrix-v1", "normalized-rematrix-v1"),
+        help="CUDA-only, provenance-recorded channel mixing profile",
+    )
+    parser.add_argument(
         "--transcript-language",
         default="zh-CN",
         help="BCP 47 language tag used in the rendered transcript filename",
@@ -305,12 +314,18 @@ def build_worker_environment(
 
 def main() -> int:
     args = parse_args()
+    decode_profile = getattr(args, "audio_decode_profile", None)
+    language_conditioning = getattr(args, "asr_language_conditioning", None)
     validate_replacement_scope(
         args.episode,
         retranscribe=args.retranscribe,
         realign=args.realign,
         rerender=bool(getattr(args, "rerender", False)),
     )
+    if decode_profile is not None and args.backend != "cuda":
+        raise ValueError("--audio-decode-profile is supported by the CUDA backend only")
+    if language_conditioning is not None and args.backend != "cuda":
+        raise ValueError("--asr-language-conditioning is supported by the CUDA backend only")
     if (
         not math.isfinite(args.final_outro_exemption_seconds)
         or args.final_outro_exemption_seconds < 0.0
@@ -413,6 +428,10 @@ def main() -> int:
                 "--no-verbose",
             ]
             if args.backend == "cuda":
+                if language_conditioning is not None:
+                    transcribe_command.extend(["--asr-language-conditioning", language_conditioning])
+                if decode_profile is not None:
+                    transcribe_command.extend(["--audio-decode-profile", decode_profile])
                 transcribe_command.extend(
                     [
                         "--chunk-context",

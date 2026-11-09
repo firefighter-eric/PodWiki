@@ -12,6 +12,10 @@
   episode's own pid; syndicated episodes can belong to another podcast.
 - Fail closed unless the episode is NORMAL and FREE, isPrivateMedia is false, and media source is
   explicitly PUBLIC.
+- Preserve the boolean isTranscriptEnabled feature flag in subtitle.page_fields. A matching
+  mediaId-only transcript stub is not a public text/segment/track payload, even when this flag is
+  true. Discover actual public subtitle payloads independently of the flag; keep rejecting malformed
+  flags and unknown transcript fields rather than discarding them.
 - Accept only an HTTPS M4A enclosure on media.xyzcdn.net whose path equals /<media-id>. Reject
   credentials, queries, fragments, redirects, unknown restriction state, or mismatched enclosure.
 - Stream to URL-bound ignored staging with atomic checkpoints. On resume, rehash the partial prefix

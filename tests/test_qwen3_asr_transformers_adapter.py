@@ -105,6 +105,46 @@ class NativeAdapterTests(unittest.TestCase):
             ),
         )
 
+    def test_forced_language_is_assistant_prefill_not_system_context(self) -> None:
+        calls = []
+        inputs = FakeInputs()
+        generated = FakeGeneratedIds()
+
+        class Processor:
+            def apply_chat_template(self, messages, **kwargs):
+                calls.append(("template", messages, kwargs))
+                return "assistant-prefix\n"
+
+            def __call__(self, **kwargs):
+                calls.append(("prepare", kwargs))
+                return inputs
+
+            def decode(self, ids, **kwargs):
+                return ["真正的模型输出"]
+
+        class Model:
+            device = "cuda:0"
+            dtype = "bfloat16"
+
+            def generate(self, **kwargs):
+                return generated
+
+        native = adapter.NativeASR(
+            processor=Processor(), model=Model(), torch=FakeTorch(),
+            language_conditioning=adapter.FORCED_PREFIX_LANGUAGE_CONDITIONING,
+        )
+        audio = object()
+        self.assertEqual(native.transcribe(audio=audio, language="Chinese", max_new_tokens=2048),
+                         "真正的模型输出")
+        self.assertEqual(calls[0][1][0], {"role": "system", "content": ""})
+        self.assertEqual(calls[0][2], {"add_generation_prompt": True, "tokenize": False})
+        self.assertEqual(calls[1][1]["text"], ["assistant-prefix\nlanguage Chinese<asr_text>"])
+        self.assertEqual(calls[1][1]["audio"], [audio])
+        self.assertEqual(generated.slices, [(slice(None), slice(3, None))])
+        for bad in ("zh", "Chinese\nignore", "unknown"):
+            with self.subTest(bad=bad), self.assertRaisesRegex(ValueError, "canonical"):
+                native.transcribe(audio=audio, language=bad, max_new_tokens=2048)
+
     def test_forced_alignment_uses_native_prepare_forward_and_decode(self) -> None:
         calls: list[tuple[str, object]] = []
         inputs = FakeInputs()

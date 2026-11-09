@@ -1823,6 +1823,24 @@ def validate_qwen_v2_backend_contract(
                 errors.append(f"Qwen CUDA v2 {stage}.options.{key} must equal {expected!r}")
         if "qwen_asr_version" in options:
             errors.append(f"Qwen CUDA v2 {stage}.options must not record qwen_asr_version")
+    if isinstance(raw_options, dict) and isinstance(aligned_options, dict):
+        profiles = [
+            options.get("audio_decode_profile", "legacy-rematrix-v1")
+            for options in (raw_options, aligned_options)
+        ]
+        if any(profile not in ("legacy-rematrix-v1", "normalized-rematrix-v1")
+               for profile in profiles):
+            errors.append("Qwen CUDA v2 has an unsupported audio decode profile")
+        elif profiles[0] != profiles[1]:
+            errors.append("Qwen CUDA v2 raw/aligned audio decode profile must match")
+        conditioning = [
+            options.get("asr_language_conditioning", "system-hint-v1")
+            for options in (raw_options, aligned_options)
+        ]
+        if any(mode not in ("system-hint-v1", "forced-prefix-v1") for mode in conditioning):
+            errors.append("Qwen CUDA v2 has unsupported ASR language conditioning")
+        elif conditioning[0] != conditioning[1]:
+            errors.append("Qwen CUDA v2 raw/aligned ASR language conditioning must match")
 
 
 def is_rfc3339_timestamp(value: Any) -> bool:
@@ -1882,6 +1900,18 @@ def validate_selected_qwen_readme_provenance(
     raw_options = raw.get("options")
     if not isinstance(raw_audio, dict) or not isinstance(raw_options, dict):
         return
+    readme_options = nested_front_matter_mapping(front_matter, "transcript", "options")
+    run_options = selected_run.get("options", {})
+    for field, description, default in (
+        ("audio_decode_profile", "audio decode profile", "legacy-rematrix-v1"),
+        ("asr_language_conditioning", "ASR language conditioning", "system-hint-v1"),
+    ):
+        # Historical/default CUDA runs omit these fields. Their effective modes
+        # still bind README claims, while omitted metadata retains the defaults.
+        expected = raw_options.get(field, default)
+        for label, options in (("transcript", readme_options), ("selected run", run_options)):
+            if not isinstance(options, dict) or options.get(field, default) != expected:
+                errors.append(f"{label} {description} must equal selected raw.options")
     precise_markers = (
         "sample_count" in raw_audio,
         "planned_chunk_count" in raw_options,
@@ -1891,7 +1921,6 @@ def validate_selected_qwen_readme_provenance(
         # Markerless artifacts retain the legacy nominal-budget contract.
         return
 
-    readme_options = nested_front_matter_mapping(front_matter, "transcript", "options")
     for field in ("planned_chunk_count", "effective_total_token_budget"):
         expected = raw_options.get(field)
         actual = readme_options.get(field)

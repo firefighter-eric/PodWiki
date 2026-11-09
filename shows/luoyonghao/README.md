@@ -33,7 +33,13 @@ sources:
     preferred: false
     identifiers:
       feed_url: https://feed.xyzfm.space/wmnkvmrpwuww
-last_verified_at: 2026-08-09
+  - platform: xiaoyuzhou
+    kind: podcast
+    title: 罗永浩的十字路口
+    url: https://www.xiaoyuzhoufm.com/podcast/68981df29e7bcd326eb91d88
+    preferred: false
+    external_id: "68981df29e7bcd326eb91d88"
+last_verified_at: 2026-11-09
 ---
 
 # 罗永浩的十字路口
@@ -43,7 +49,7 @@ last_verified_at: 2026-08-09
 ## 当前收录范围
 
 - 2026-08-09 匿名核验的 Bilibili 官方“正片合集”（`season_id: 6259086`）共有 36 个完整播客视频，并与官方 RSS 当前 36 个单集逐一对应。
-- 36 集均已有可审计的单集元数据、总结与逐字稿，并全部列入下方 Web 主索引表；本次新增的 30 集当前为 `metadata: verified`、`summary: draft`、`transcript: machine`。
+- 截至 2026-11-09，仓库已有 38 集可审计的单集元数据、总结与逐字稿，均列入下方 Web 主索引表，其中包括 2026-09-01 的手工耿一期。此前批量新增的 30 集保持 `metadata: verified`、`summary: draft`、`transcript: machine`，不代表已经人工审核。
 - 官方“播客精选片段”（`season_id: 8315719`）以及账号内预告、切片、活动、大会、产品视频和其他非播客投稿均不在收录范围。
 
 ## 人工审核边界
@@ -51,10 +57,21 @@ last_verified_at: 2026-08-09
 - 30 集规范 `source.m4a` 与 media sidecar 已完成来源身份、大小、时长和 SHA-256 核验；媒体继续只保留在 Git 忽略的 `.cache/`。机器逐字稿与基于全文生成的总结均已完成，但仍需逐集核听、专名校对和高影响事实核查，完成前不得标记为 `reviewed`。
 - 刘谦、杨笠、“无聊斋”、王晶及 6 集《X字路口》支线未发现发布者正式期号，继续保留来源 BVID 稳定键，不从发布日期或合集顺序补号。
 
+## 本次更新核对（2026-11-08）
+
+- 原增量窗口：北京时间 `2026-06-03T12:00:00+08:00` 至 `2026-11-08T22:45:14.002517+08:00`；Bilibili 匿名扫描保持 `partial`，不能据此判断没有更新。
+- 官方正片合集报告总数 37，实际响应只有 36 条；窗口内观察到的 8 个 BVID 均已收录。后续列表返回 `-352`，频道页返回验证码，缺失槽位及完整窗口仍未核实。
+- 经用户对[叶洪新完整单集](https://www.xiaoyuzhoufm.com/episode/6aea8204c96c8942ec16ee88)的精确授权，本批使用发布者官方小宇宙公开免费音频新增 **1** 集，当前正式索引 **38** 集。官方 RSS GUID 与 eid 相同；保留原标题，不推断正式期号或 BVID。
+- 用户要求 Bilibili 可用时优先。旧视频的匿名音频传输探测成功，但目标发现仍受验证码及 HTTP 412 等限制，未能核实本集 BVID，因此采用已获授权的小宇宙来源；没有使用个人 cookies、修改代理或绕过访问控制。
+- 完整本地 Qwen3-ASR 1.7B 与 ForcedAligner 生成 raw、aligned、refined、Markdown 和哈希链；根稿与 selected run 字节一致。全文通读后生成七段总结并核对全部时间码，状态为 `transcript: machine`、`summary: draft`，仍需人工核听、专名与事实核查。
+- 本任务经明确授权在 Linux / RTX 5090 实测固定模型 revision；不代表仓库原要求的 RTX A2000 已获资格验证。短样本和完整长音频校验通过，既有单集产物不变。
+- 原 inventory、响应和校验通过的 scan manifest 位于被忽略的 `.cache/scans/20261108T143900Z-three-shows/luoyonghao/`；补充官方小宇宙分页与精确授权证据在 `.cache/scans/20261108T165256Z-xiaoyuzhou-followup/` 和 `.cache/intake/luoyonghao/`。补充来源没有将原 Bilibili 扫描改为 complete。
+
 ## 单集
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [徕芬科技创始人叶洪新×罗永浩！初中毕业后，我先造飞机去了......](https://www.xiaoyuzhoufm.com/episode/6aea8204c96c8942ec16ee88) | 罗永浩的十字路口 | 2026-11-04 | [总结](./episodes/xiaoyuzhou-6aea8204c96c8942ec16ee88-ye-hongxin/summary.zh-CN.md) | [逐字稿](./episodes/xiaoyuzhou-6aea8204c96c8942ec16ee88-ye-hongxin/transcript.zh-CN.md) |
 | [【正片】手工耿×罗永浩！“村口的五金店里，出现了一个达达主义艺术家”](https://www.bilibili.com/video/BV1QutM6jEKd/) | 罗永浩的十字路口 | 2026-09-01 | [总结](./episodes/036-shougong-geng/summary.zh-CN.md) | [逐字稿](./episodes/036-shougong-geng/transcript.zh-CN.md) |
 | [【正片】罗永浩的X字路口！我们能活到今天，多亏了祖传的势利眼](https://www.bilibili.com/video/BV1ukM26zESF/) | 罗永浩的十字路口 | 2026-08-06 | [总结](./episodes/bili-bv1ukm26zesf-x-shiliyan/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1ukm26zesf-x-shiliyan/transcript.zh-CN.md) |
 | [【正片】零跑汽车朱江明×罗永浩！零跑汽车十年：不会讲故事的人，如何卖成了第一](https://www.bilibili.com/video/BV1iQ3F6oENZ/) | 罗永浩的十字路口 | 2026-07-31 | [总结](./episodes/035-zhu-jiangming/summary.zh-CN.md) | [逐字稿](./episodes/035-zhu-jiangming/transcript.zh-CN.md) |

@@ -29,7 +29,13 @@ sources:
     url: https://feed.xyzfm.space/dk4yh3pkpjp3
     identifiers:
       feed_url: https://feed.xyzfm.space/dk4yh3pkpjp3
-last_verified_at: 2026-09-26
+  - platform: xiaoyuzhou
+    kind: podcast
+    title: 张小珺商业访谈录
+    url: https://www.xiaoyuzhoufm.com/podcast/626b46ea9cbbf0451cf5a962
+    preferred: false
+    external_id: "626b46ea9cbbf0451cf5a962"
+last_verified_at: 2026-11-09
 ---
 
 # 张小珺商业访谈录
@@ -43,11 +49,24 @@ last_verified_at: 2026-09-26
 - 截至 2026-08-15 核验的 34 条 Bilibili 播客相关投稿中，30 集完整正片均已列入下方主索引；批量补录的 17 集与第 150 期当前为 `metadata: verified`、`summary: draft`、`transcript: machine`，仍需人工核听、专名校对和高影响事实核查，完成前不得标记为 `reviewed`。2026-08-27 又通过官方 RSS 与 Bilibili 正片逐集对应，新增第 152 期。
 - 第 87、95、100 期为剪辑版，排除；第 108 期比官方 RSS 音频短 23 分 20 秒，且删减边界不明，暂不收录。
 - 第 101 期 Bilibili 版比 RSS 短约 4 分 28 秒；发布者明确称其为“三小时访谈”，本地音频抽样又从 RSS 开头、连续正文采样点匹配到结尾，支持其为删去停顿或压缩节奏的完整官方视频播客版，而非高光短版。核验方法与边界保存在冻结 intake 证据中。
-- 第 149 期截至 2026-08-15 仍仅见于官方 RSS，尚无可核实 BVID；保留为 RSS-only 待核实项，不猜测或补造 Bilibili 来源。第 150 期已通过官方 RSS 的期号、嘉宾、纲要与时长匹配到发布者 Bilibili 正片。
+- 第 149 期原为仅有官方 RSS 的待核实项。本批经用户明确授权其精确官方小宇宙 URL，已核实公开免费完整音频；现已完成完整本地 Qwen 链与全文总结并进入索引，不猜测或补造 BVID。第 150 期已通过官方 RSS 的期号、嘉宾、纲要与时长匹配到发布者 Bilibili 正片。
 - 第 152 期由官方 RSS 明确标为“学习播客”，并与发布者 Bilibili `技术之美` 播客合集中的完整正片在标题、嘉宾和时长上对应；登录态页面提供中文 AI 字幕。
 - 第 153 期已于 2026-09-26 通过官方 RSS、小宇宙与 Bilibili 完整正片对应核实；B 站音轨比 RSS 展示时长长约 5 秒。平台返回字幕主题错配，经用户授权改用完整音频本地 Qwen ASR，逐字稿为 `machine`、总结为 `draft`，仍需人工核听与事实核查。
 
 - 第 154 期于 2026-10-17 通过官方 RSS 与 Bilibili 完整正片的嘉宾、简介、章节及完整时长对应核实。匿名访问未发现可用字幕，使用完整音频生成本地 Qwen ASR；逐字稿为 `machine`，全文总结为 `draft`，仍需人工核听与事实核查。
+
+## 本次更新核对（2026-11-08）
+
+- 原增量窗口：北京时间 `2026-07-23T08:00:00+08:00` 至 `2026-11-08T22:45:14.002517+08:00`；必需 Bilibili 匿名发现面保持 `blocked`，不能报告“没有更新”。频道页返回验证码，列表返回 `-799`，未取得可信完整分页。
+- 官方 RSS 的 158 条记录用于身份交叉核对，最新第 155 期已收录。本批经用户明确批准两个精确小宇宙 URL，作为本批来源例外，不修改节目常规 Bilibili 策略，也不将原扫描改为 complete。
+- [151 苏庭灏](https://www.xiaoyuzhoufm.com/episode/6a8472b95aeb2a5712e8de78)：本批精确授权的官方小宇宙公开免费完整音频，已完成完整本地Qwen链与全文总结，保持 `machine` / `draft`。原生浮点降混的额外增益引发尾段覆盖误报；新运行显式记录 `normalized-rematrix-v1`，120秒归属块、5秒上下文，片尾豁免0秒，全部原门禁通过，根稿与selected运行稿字节一致。
+
+- [149 刘子鸣](https://www.xiaoyuzhoufm.com/episode/6a69b07eb581962ce2bd4d97)：本批精确授权的官方小宇宙公开免费完整音频，现已完成完整本地Qwen链与全文总结，保持 `machine` / `draft`。新运行显式记录 `normalized-rematrix-v1`、官方 `forced-prefix-v1` 中文语言前缀，60秒归属块、8秒上下文，片尾豁免0秒；从原始完整音频重新转写，对齐及全部原门禁通过，没有事后翻译、截断item或修改旧raw。
+- 本次新增 **2** 集，正式索引 **36** 集。全文分别通读苏庭灏723行、刘子鸣882行；61和60个不同的精确时间码引用通过自动核验。两集仍需人工核听、专名校对及高影响事实核查。
+
+- Bilibili 旧视频传输探测成功并未提供这两集的可信 BVID；匿名目标发现仍受风控。本批没有个人 cookies、代理配置变更或访问控制绕过，保持用户的 Bilibili 可用时优先要求。
+- 人工核听优先覆盖苏庭灏约 `01:09:17–01:09:50`、刘子鸣约 `01:27:55–01:30:05` 与 `00:13:48–00:15:58`，再核对首尾、接缝、说话人及术语。苏庭灏的论文、费用、学校与AI陪伴个案，以及刘子鸣的研究/任职经历、论文/定理、架构数字、融资及竞品路线仍需原始资料核查。自动门禁通过不等于人工审核完成。
+- 原扫描 inventory、响应及校验通过的 `scan.json` 在 `.cache/scans/20261108T143900Z-three-shows/zhangxiaojun/`；补充官方小宇宙证据在 `.cache/scans/20261108T165256Z-xiaoyuzhou-followup/`。媒体、失败 raw、诊断与日志均保留在被 Git 忽略的 `.cache/`。
 
 ## 单集
 
@@ -57,7 +76,9 @@ last_verified_at: 2026-09-26
 | [对Dyna创始人Lindon Gao的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明](https://www.bilibili.com/video/BV1wgpy69Ekz/) | 张小珺商业访谈录 | 2026-10-15 | [总结](./episodes/154-lindon-gao/summary.zh-CN.md) | [逐字稿](./episodes/154-lindon-gao/transcript.zh-CN.md) |
 | [和曾鸣聊产业史观：残酷的真相、会消亡的公司、优秀≠卓越、“OAI、Anth大概率不是原生时代大赢家”](https://www.bilibili.com/video/BV1XNtJ6UEmm/) | 张小珺商业访谈录 | 2026-09-03 | [总结](./episodes/153-zeng-ming/summary.zh-CN.md) | [逐字稿](./episodes/153-zeng-ming/transcript.zh-CN.md) |
 | [领读Kimi K3技术报告：从架构创新聊起，注意力美学、多教师蒸馏和开源MoE](https://www.bilibili.com/video/BV1KZ8X6uEPL/) | 张小珺商业访谈录 | 2026-08-26 | [总结](./episodes/152-sun-yutao/summary.zh-CN.md) | [逐字稿](./episodes/152-sun-yutao/transcript.zh-CN.md) |
+| [151. 17岁被2026年ICML收录论文的小少年：我bet开心！开心！开心！](https://www.xiaoyuzhoufm.com/episode/6a8472b95aeb2a5712e8de78) | 张小珺商业访谈录 | 2026-08-19 | [总结](./episodes/xiaoyuzhou-6a8472b95aeb2a5712e8de78-su-tinghao/summary.zh-CN.md) | [逐字稿](./episodes/xiaoyuzhou-6a8472b95aeb2a5712e8de78-su-tinghao/transcript.zh-CN.md) |
 | [对英伟达研究副总裁刘洺堉的4小时访谈：Cosmos 3、世界模型、武术、黄仁勋影响我的，和你不需要击败所有对手](https://www.bilibili.com/video/BV1fmgj66EtD/) | 张小珺商业访谈录 | 2026-08-13 | [总结](./episodes/150-liu-mingyu/summary.zh-CN.md) | [逐字稿](./episodes/150-liu-mingyu/transcript.zh-CN.md) |
+| [149. 亲历中美neo labs资本狂潮，和清华刘子鸣聊：AI for AI、机制可解释性和Max Tegmark](https://www.xiaoyuzhoufm.com/episode/6a69b07eb581962ce2bd4d97) | 张小珺商业访谈录 | 2026-07-31 | [总结](./episodes/xiaoyuzhou-6a69b07eb581962ce2bd4d97-liu-ziming/summary.zh-CN.md) | [逐字稿](./episodes/xiaoyuzhou-6a69b07eb581962ce2bd4d97-liu-ziming/transcript.zh-CN.md) |
 | [对游凯超3小时访谈：开源Infra、和模型Co-design 、“如果vLLM失败，我们会后悔一辈子”](https://www.bilibili.com/video/BV18Qg96YE1W/) | 张小珺商业访谈录 | 2026-07-28 | [总结](./episodes/148-you-kaichao/summary.zh-CN.md) | [逐字稿](./episodes/148-you-kaichao/transcript.zh-CN.md) |
 | [对华为半导体首席科学家廖恒的5小时访谈：一部昇腾史、18层宝塔与全球芯片恢弘30年史诗\| B站 x WAIC AI会客厅](https://www.bilibili.com/video/BV1nB3u6tERu/) | 张小珺商业访谈录 | 2026-07-25 | [总结](./episodes/bili-bv1nb3u6teru-liao-heng/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1nb3u6teru-liao-heng/transcript.zh-CN.md) |
 | [和蚂蚁灵波沈宇军聊：机器人原生基础模型、大脑和本体的关系、预训练与数据scale up、老师汤晓鸥](https://www.bilibili.com/video/BV1cRK86zEpQ/) | 张小珺商业访谈录 | 2026-07-22 | [总结](./episodes/147-shen-yujun/summary.zh-CN.md) | [逐字稿](./episodes/147-shen-yujun/transcript.zh-CN.md) |

@@ -48,6 +48,7 @@ XIAOYUZHOU_PUBLIC_TRANSCRIPT_FIELDS = {
     "automatic_captions": True,
 }
 XIAOYUZHOU_TRANSCRIPT_MARKER_FIELD = "transcriptMediaId"
+XIAOYUZHOU_TRANSCRIPT_ENABLED_FIELD = "isTranscriptEnabled"
 XIAOYUZHOU_LANGUAGE_RE = re.compile(
     r"^(?:und|[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*)$"
 )
@@ -697,6 +698,7 @@ def extract_xiaoyuzhou_public_transcripts(
     allowed_fields = {
         *XIAOYUZHOU_PUBLIC_TRANSCRIPT_FIELDS,
         XIAOYUZHOU_TRANSCRIPT_MARKER_FIELD,
+        XIAOYUZHOU_TRANSCRIPT_ENABLED_FIELD,
     }
     for field in episode:
         if not isinstance(field, str):
@@ -709,6 +711,13 @@ def extract_xiaoyuzhou_public_transcripts(
                 )
 
     page_fields: dict[str, Any] = {}
+    if XIAOYUZHOU_TRANSCRIPT_ENABLED_FIELD in episode:
+        enabled = episode[XIAOYUZHOU_TRANSCRIPT_ENABLED_FIELD]
+        if not isinstance(enabled, bool):
+            raise ValueError("Xiaoyuzhou isTranscriptEnabled must be boolean")
+        # A feature flag is not a public transcript payload. Preserve it while
+        # discovering actual text, segments and track URLs independently below.
+        page_fields[XIAOYUZHOU_TRANSCRIPT_ENABLED_FIELD] = enabled
     tracks: list[dict[str, Any]] = []
     for field, automatic in XIAOYUZHOU_PUBLIC_TRANSCRIPT_FIELDS.items():
         if field not in episode:

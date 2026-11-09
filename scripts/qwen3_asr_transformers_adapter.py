@@ -15,6 +15,18 @@ DEFAULT_MODEL = "Qwen/Qwen3-ASR-1.7B-hf"
 DEFAULT_MODEL_REVISION = "bcd2b5b7f32b480ab5790554cfa8347f246a14f3"
 DEFAULT_ALIGNER = "Qwen/Qwen3-ForcedAligner-0.6B-hf"
 DEFAULT_ALIGNER_REVISION = "c07281df297b9905d24a508279258cccf987a064"
+SYSTEM_LANGUAGE_CONDITIONING = "system-hint-v1"
+FORCED_PREFIX_LANGUAGE_CONDITIONING = "forced-prefix-v1"
+FORCED_PREFIX_LANGUAGES = frozenset({
+    "Chinese", "Cantonese", "English", "French", "German", "Italian",
+    "Japanese", "Korean", "Portuguese", "Russian", "Spanish",
+})
+
+
+def validated_language_conditioning(value: Any) -> str:
+    if value not in (SYSTEM_LANGUAGE_CONDITIONING, FORCED_PREFIX_LANGUAGE_CONDITIONING):
+        raise ValueError("unsupported ASR language conditioning")
+    return str(value)
 
 
 def pinned_native_revision(repository: str, requested_revision: str | None) -> str:
@@ -81,6 +93,7 @@ class NativeASR:
     processor: Any
     model: Any
     torch: Any
+    language_conditioning: str = SYSTEM_LANGUAGE_CONDITIONING
 
     def transcribe(
         self,
@@ -89,10 +102,23 @@ class NativeASR:
         language: str,
         max_new_tokens: int,
     ) -> str:
-        inputs = self.processor.apply_transcription_request(
-            audio=audio,
-            language=language,
-        )
+        conditioning = validated_language_conditioning(self.language_conditioning)
+        if conditioning == FORCED_PREFIX_LANGUAGE_CONDITIONING:
+            if language not in FORCED_PREFIX_LANGUAGES:
+                raise ValueError("forced-prefix language must be a supported canonical name")
+            messages = [
+                {"role": "system", "content": ""},
+                {"role": "user", "content": [{"type": "audio", "audio": audio}]},
+            ]
+            base = self.processor.apply_chat_template(
+                messages, add_generation_prompt=True, tokenize=False,
+            )
+            # Match Qwen's official _build_text_prompt: language is an assistant
+            # prefill, not vocabulary/context placed in the system message.
+            prompt = base + f"language {language}<asr_text>"
+            inputs = self.processor(text=[prompt], audio=[audio], return_tensors="pt", padding=True)
+        else:
+            inputs = self.processor.apply_transcription_request(audio=audio, language=language)
         inputs = inputs.to(self.model.device, self.model.dtype)
         prompt_tokens = inputs["input_ids"].shape[1]
         with self.torch.inference_mode():
@@ -151,7 +177,11 @@ class TransformersNativeRuntime:
     auto_multimodal_model: Any
     auto_token_classification_model: Any
 
-    def load_asr(self, target: str, *, device_map: str, **model_kwargs: Any) -> NativeASR:
+    def load_asr(
+        self, target: str, *, device_map: str,
+        language_conditioning: str = SYSTEM_LANGUAGE_CONDITIONING, **model_kwargs: Any,
+    ) -> NativeASR:
+        validated_language_conditioning(language_conditioning)
         processor = self.auto_processor.from_pretrained(
             target,
             local_files_only=True,
@@ -164,7 +194,10 @@ class TransformersNativeRuntime:
         # The worker validates one explicit CUDA device; no dispatch/offload is needed.
         model.to(device_map)
         model.eval()
-        return NativeASR(processor=processor, model=model, torch=self.torch)
+        return NativeASR(
+            processor=processor, model=model, torch=self.torch,
+            language_conditioning=language_conditioning,
+        )
 
     def load_aligner(
         self, target: str, *, device_map: str, **model_kwargs: Any

@@ -1477,6 +1477,95 @@ class QwenArtifactChainTests(unittest.TestCase):
 
             self.assertEqual(fixture.validate(), (True, []))
 
+    def test_cuda_audio_profile_is_bound_across_stages(self) -> None:
+        for changed in (None, "legacy-rematrix-v1", "unknown-profile"):
+            with self.subTest(changed=changed), tempfile.TemporaryDirectory() as directory:
+                fixture = QwenChainFixture(Path(directory))
+                options = {**cuda_native_options(),
+                           "audio_decode_profile": "normalized-rematrix-v1"}
+                fixture.upgrade_to_v2(
+                    engine="qwen-asr-transformers", model=CUDA_QWEN_MODEL,
+                    model_revision=CUDA_QWEN_MODEL_REVISION, aligner=CUDA_QWEN_ALIGNER,
+                    aligner_revision=CUDA_QWEN_ALIGNER_REVISION,
+                    raw_options=options, aligned_options=options,
+                )
+                self.assertEqual(fixture.validate(), (True, []))
+                fixture.rewrite_aligned(
+                    lambda d: d["options"].__setitem__("audio_decode_profile", changed)
+                )
+                _, errors = fixture.validate()
+                self.assertTrue(any("audio decode profile" in e for e in errors), errors)
+
+    def test_cuda_language_conditioning_is_bound_across_stages(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = QwenChainFixture(Path(directory))
+            options = {**cuda_native_options(), "asr_language_conditioning": "forced-prefix-v1"}
+            fixture.upgrade_to_v2(
+                engine="qwen-asr-transformers", model=CUDA_QWEN_MODEL,
+                model_revision=CUDA_QWEN_MODEL_REVISION, aligner=CUDA_QWEN_ALIGNER,
+                aligner_revision=CUDA_QWEN_ALIGNER_REVISION,
+                raw_options=options, aligned_options=options,
+            )
+            self.assertEqual(fixture.validate(), (True, []))
+            fixture.rewrite_aligned(lambda d: d["options"].pop("asr_language_conditioning"))
+            _, errors = fixture.validate()
+            self.assertTrue(any("language conditioning" in e for e in errors), errors)
+
+    def test_selected_cuda_readme_modes_match_effective_raw_defaults(self) -> None:
+        modes = (
+            ("audio_decode_profile", "legacy-rematrix-v1", "normalized-rematrix-v1"),
+            ("asr_language_conditioning", "system-hint-v1", "forced-prefix-v1"),
+        )
+        for field, default, alternative in modes:
+            for explicit_raw in (False, True):
+                for location in ("transcript", "selected run"):
+                    for claimed in (None, default, alternative, "unknown-mode", "null"):
+                        with (
+                            self.subTest(field=field, explicit_raw=explicit_raw,
+                                         location=location, claimed=claimed),
+                            tempfile.TemporaryDirectory() as directory,
+                        ):
+                            fixture = QwenChainFixture(Path(directory))
+                            options = cuda_native_options()
+                            if explicit_raw:
+                                options[field] = alternative
+                            fixture.upgrade_to_v2(
+                                engine="qwen-asr-transformers", model=CUDA_QWEN_MODEL,
+                                model_revision=CUDA_QWEN_MODEL_REVISION,
+                                aligner=CUDA_QWEN_ALIGNER,
+                                aligner_revision=CUDA_QWEN_ALIGNER_REVISION,
+                                raw_options=options, aligned_options=options,
+                            )
+                            fixture.configure_web_ready_qwen_provenance(precise_budget=False)
+                            readme = fixture.readme_path.read_text(encoding="utf-8")
+                            readme = readme.replace(
+                                "    selection_status: selected\n",
+                                '    selection_status: selected\n'
+                                '    generated_at: "2026-08-09T12:02:00Z"\n',
+                            )
+                            expected = alternative if explicit_raw else default
+                            for label, anchor, indent in (
+                                ("transcript", f"  path: {fixture.transcript_name}\n", "  "),
+                                ("selected run", "    selection_status: selected\n", "    "),
+                            ):
+                                value = claimed if label == location else expected
+                                if value is not None:
+                                    readme = readme.replace(
+                                        anchor,
+                                        anchor + f"{indent}options:\n{indent}  {field}: {value}\n",
+                                        1,
+                                    )
+                            fixture.readme_path.write_text(readme, encoding="utf-8")
+                            _, errors = fixture.validate()
+                            if claimed == expected or (claimed is None and not explicit_raw):
+                                self.assertEqual(errors, [])
+                            else:
+                                self.assertTrue(
+                                    any(location in error and "raw.options" in error
+                                        for error in errors),
+                                    errors,
+                                )
+
     def test_rejects_legacy_qwen_asr_cuda_v2_chain(self) -> None:
         legacy_options = {
             "backend": "qwen-asr",
