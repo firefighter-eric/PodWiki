@@ -13,6 +13,7 @@ import shutil
 import subprocess
 import sys
 import time
+from contextvars import ContextVar
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterator
@@ -65,6 +66,11 @@ FINAL_AUDIO_DECODE_SHORTFALL_TOLERANCE_SECONDS = 0.125
 DEFAULT_CHUNK_CONTEXT_SECONDS = 5.0
 DEFAULT_FINAL_OUTRO_EXEMPTION_SECONDS = 0.0
 MAX_FINAL_OUTRO_EXEMPTION_SECONDS = 30.0
+LEGACY_AUDIO_DECODE_PROFILE = "legacy-rematrix-v1"
+NORMALIZED_AUDIO_DECODE_PROFILE = "normalized-rematrix-v1"
+AUDIO_DECODE_PROFILE: ContextVar[str] = ContextVar(
+    "qwen_audio_decode_profile", default=LEGACY_AUDIO_DECODE_PROFILE
+)
 SEAM_MATCH_TOLERANCE_SECONDS = 1.0
 SEAM_ANCHOR_SEARCH_RADIUS_SECONDS = 3.0
 MIN_SEAM_ANCHOR_RUN_CHARACTERS = 3
@@ -178,6 +184,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--language", default="Chinese")
     parser.add_argument(
+        "--audio-decode-profile",
+        choices=(LEGACY_AUDIO_DECODE_PROFILE, NORMALIZED_AUDIO_DECODE_PROFILE),
+        default=LEGACY_AUDIO_DECODE_PROFILE,
+        help="Opt in to format-independent, overflow-safe channel mixing; recorded in lineage",
+    )
+    parser.add_argument(
         "--temperature",
         type=float,
         default=0.0,
@@ -243,6 +255,7 @@ def raw_backend_options(args: argparse.Namespace) -> dict[str, Any]:
         "attention_implementation": args.attention_implementation,
         "max_inference_batch_size": MAX_INFERENCE_BATCH_SIZE,
         "final_outro_exemption_seconds": args.final_outro_exemption_seconds,
+        **audio_decode_options(args),
     }
 
 
@@ -260,7 +273,22 @@ def aligned_backend_options(args: argparse.Namespace) -> dict[str, Any]:
         "alignment_coverage_guard": ALIGNMENT_COVERAGE_GUARD,
         "aligned_gap_guard": ALIGNED_GAP_GUARD,
         "final_outro_exemption_seconds": args.final_outro_exemption_seconds,
+        **audio_decode_options(args),
     }
+
+
+def validated_audio_decode_profile(value: Any) -> str:
+    if value not in (LEGACY_AUDIO_DECODE_PROFILE, NORMALIZED_AUDIO_DECODE_PROFILE):
+        raise ValueError("unsupported audio decode profile")
+    return str(value)
+
+
+def audio_decode_options(args: argparse.Namespace) -> dict[str, str]:
+    profile = validated_audio_decode_profile(
+        getattr(args, "audio_decode_profile", LEGACY_AUDIO_DECODE_PROFILE)
+    )
+    # Omission retains the byte-level historical options contract.
+    return {} if profile == LEGACY_AUDIO_DECODE_PROFILE else {"audio_decode_profile": profile}
 
 
 def legacy_raw_backend_options(args: argparse.Namespace) -> dict[str, Any]:
@@ -2008,6 +2036,14 @@ def validate_cuda_aligned_integrity(
     raw_options = raw_document.get("options")
     if not isinstance(aligned_options, dict) or not isinstance(raw_options, dict):
         raise ValueError("aligned ASR has invalid final outro provenance")
+    raw_profile = validated_audio_decode_profile(
+        raw_options.get("audio_decode_profile", LEGACY_AUDIO_DECODE_PROFILE)
+    )
+    aligned_profile = validated_audio_decode_profile(
+        aligned_options.get("audio_decode_profile", LEGACY_AUDIO_DECODE_PROFILE)
+    )
+    if raw_profile != aligned_profile:
+        raise ValueError("aligned ASR audio decode profile does not match raw")
     aligned_final_outro = validated_final_outro_exemption_seconds(
         aligned_options.get("final_outro_exemption_seconds")
     )
@@ -5426,6 +5462,11 @@ def decode_audio_chunk(
     numpy_module: Any,
 ) -> Any:
     duration = end_seconds - start_seconds
+    mixing_options = (
+        ["-af", "aresample=rematrix_maxval=1.0"]
+        if AUDIO_DECODE_PROFILE.get() == NORMALIZED_AUDIO_DECODE_PROFILE
+        else []
+    )
     completed = subprocess.run(
         [
             ffmpeg,
@@ -5442,6 +5483,7 @@ def decode_audio_chunk(
             "-map",
             "0:a:0",
             "-vn",
+            *mixing_options,
             "-ac",
             "1",
             "-ar",
@@ -5699,6 +5741,17 @@ def validate_arguments(args: argparse.Namespace) -> None:
 
 def main() -> int:
     args = parse_args()
+    profile = validated_audio_decode_profile(
+        getattr(args, "audio_decode_profile", LEGACY_AUDIO_DECODE_PROFILE)
+    )
+    token = AUDIO_DECODE_PROFILE.set(profile)
+    try:
+        return run_worker(args)
+    finally:
+        AUDIO_DECODE_PROFILE.reset(token)
+
+
+def run_worker(args: argparse.Namespace) -> int:
     validate_arguments(args)
     input_path = args.input.resolve()
     output_path = args.output.resolve()
@@ -5817,6 +5870,8 @@ def main() -> int:
                 }
                 replace_final_outro_option = True
         markerless_legacy = loaded_lineage_version is None
+        if markerless_legacy and audio_decode_options(args):
+            raise ValueError("legacy audio preprocessing cannot change; pass --retranscribe")
         validation_model = LEGACY_MODEL if markerless_legacy else args.model
         validation_raw_options = (
             legacy_raw_backend_options(args) if markerless_legacy else raw_options

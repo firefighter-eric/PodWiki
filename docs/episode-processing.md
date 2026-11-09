@@ -497,6 +497,15 @@ owned alignment，再把这份全局并集分别裁剪到每个归属区间；�
 如果全局并集在归属区间的首部、相邻 item 之间或尾部留下长空洞，worker 必须实际探测对应音频；只有安静区域可以继续，
 持续活跃时失败关闭。首块、末块和句末标点都不构成默认豁免，不得将截断结果标记为完成。
 
+CUDA 可显式选择 `--audio-decode-profile normalized-rematrix-v1`，以
+`aresample=rematrix_maxval=1.0` 对全部 ASR、对齐与声学探测统一执行防溢出的声道降混。
+[FFmpeg 的默认实现](https://www.ffmpeg.org/doxygen/trunk/rematrix_8c_source.html)对整数输出归一化混音系数，
+对浮点输出则默认不归一化；相关立体声会因此得到不同幅度，甚至超过浮点音频的单位满量程。
+显式系数归一化使浮点输入与常规整数 PCM 的降混幅度一致；不对单独片段设置音量，不改变音频时长、
+覆盖阈值、时间戳容差或片尾豁免。新增回归测试验证整数/浮点幅度一致、源文件哈希不变及响亮漏转语音仍失败关闭。
+默认 `legacy-rematrix-v1` 保留历史处理行为与选项；新 profile 写入 raw/aligned options，并要求二者一致。
+切换 profile 需要 fresh `--retranscribe`，不能为旧 raw 回填该字段或在 align-only/realign 中偷偷切换预处理。
+
 唯一的活跃音频例外是显式 `--final-outro-exemption-seconds <seconds>`：默认值为 `0`、硬上限为 30 秒，且只适用于最后一个归属区间中
 最后一个全局 aligned item 之后、不超过所给额度的 trailing gap。首部、内部和非末块空洞仍必须通过声学门禁。使用该选项前必须取得并保留
 人工完整试听记录，或发布者章节、节目说明等能够证明该段只是告别后的片尾而非漏转写语音的证据；在单集处理记录或 PR 说明中写明证据和实际秒数。

@@ -1477,6 +1477,25 @@ class QwenArtifactChainTests(unittest.TestCase):
 
             self.assertEqual(fixture.validate(), (True, []))
 
+    def test_cuda_audio_profile_is_bound_across_stages(self) -> None:
+        for changed in (None, "legacy-rematrix-v1", "unknown-profile"):
+            with self.subTest(changed=changed), tempfile.TemporaryDirectory() as directory:
+                fixture = QwenChainFixture(Path(directory))
+                options = {**cuda_native_options(),
+                           "audio_decode_profile": "normalized-rematrix-v1"}
+                fixture.upgrade_to_v2(
+                    engine="qwen-asr-transformers", model=CUDA_QWEN_MODEL,
+                    model_revision=CUDA_QWEN_MODEL_REVISION, aligner=CUDA_QWEN_ALIGNER,
+                    aligner_revision=CUDA_QWEN_ALIGNER_REVISION,
+                    raw_options=options, aligned_options=options,
+                )
+                self.assertEqual(fixture.validate(), (True, []))
+                fixture.rewrite_aligned(
+                    lambda d: d["options"].__setitem__("audio_decode_profile", changed)
+                )
+                _, errors = fixture.validate()
+                self.assertTrue(any("audio decode profile" in e for e in errors), errors)
+
     def test_rejects_legacy_qwen_asr_cuda_v2_chain(self) -> None:
         legacy_options = {
             "backend": "qwen-asr",
