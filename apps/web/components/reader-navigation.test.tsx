@@ -258,16 +258,15 @@ describe("reader navigation", () => {
     expect(homeHtml).not.toContain('href="/shows/dagaizhishi"');
     expect(homeHtml).not.toContain('href="/shows/xinkoukaihe"');
     expect(homeHtml).not.toContain('href="/shows/erdesancifang"');
-    expect(homeHtml).toContain("查看全部 24 期");
-    expect(homeHtml).toContain("查看全部 36 期");
-    expect(homeHtml).toContain("查看全部 24 期");
-    expect(homeHtml).toContain("查看全部 23 期");
-    expect(homeHtml).toContain("查看全部 15 期");
     expect(homeHtml).toContain("查看全部 38 期");
-    expect(homeHtml).toContain("查看全部 8 期");
+    expect(homeHtml).toContain("查看全部 26 期");
+    expect(homeHtml).toContain("查看全部 28 期");
+    expect(homeHtml).toContain("查看全部 16 期");
+    expect(homeHtml).toContain("查看全部 39 期");
+    expect(homeHtml).toContain("查看全部 9 期");
     expect(homeHtml).toContain("查看全部 5 期");
     expect(homeHtml).toContain("查看全部 24 期");
-    expect(homeHtml).toContain("查看全部 30 期");
+    expect(homeHtml).toContain("查看全部 33 期");
 
     const showHtml = renderToStaticMarkup(createElement(ShowCatalog, {
       shows,

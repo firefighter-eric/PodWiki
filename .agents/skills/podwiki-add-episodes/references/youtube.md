@@ -10,13 +10,17 @@
   characters and use `youtube-<hex>` as the stable episode key. The tracked identifier remains the
   original video ID; playlist order never becomes an episode number.
 - Check publisher subtitles and automatic captions in the actual authorized context before audio
-  ASR. If a publisher English track and an event-aligned `zh-Hans-en` automatic translation are
-  both available, import them with:
+  ASR. Freeze the publisher English `json3` and metadata sidecar. Assign consecutive events to
+  Codex Luna subagents (`gpt-6-luna`) for one-to-one Chinese translation under the runbook.
+  Use the following command to import the assembled translation.
 
 ~~~bash
 uv run --no-sync python scripts/import_youtube_captions.py \
   --url <canonical-video-url> \
-  --episode-dir shows/<show-id>/episodes/<episode-folder>
+  --episode-dir shows/<show-id>/episodes/<episode-folder> \
+  --metadata-json .cache/<episode>/metadata.json \
+  --source-json3 .cache/<episode>/source.en.json3 \
+  --translation-segments-json .cache/<episode>/translation.zh-CN.json
 ~~~
 
 - The importer selects `json3`, preserves the exact publisher payload in tracked `raw.json`,
@@ -24,17 +28,14 @@ uv run --no-sync python scripts/import_youtube_captions.py \
   non-Qwen `refined.json`, promotes a byte-identical English root transcript, and generates the
   segment-aligned Chinese root translation. Any missing track, empty event, timing drift, or source
   identity mismatch fails closed. Keep both transcript and translation states `machine`.
-- If both JSON3 tracks and the `acquire_media.py --metadata-only` sidecar are already frozen under
-  `.cache/`, but a retry is rate-limited, pass `--metadata-json`, `--source-json3`, and
-  `--translation-json3` together. The importer revalidates the canonical URL, public/non-live
-  state, video ID, channel ID, and caption alignment; it rejects inputs outside `.cache/`.
-- If the platform translation is empty or incomplete, retain the complete publisher English
-  caption and generate a separate one-to-one Chinese machine translation under the runbook.
-  Import it with `--translation-segments-json` together with the frozen metadata and source JSON3.
-  Require both source hashes, every original event index and timestamp, actual engine/model, and
-  generation time. Pin local model revisions; for Google Translate Advanced explicitly record
-  the provider and that its exact model version is not exposed. Never label this as a YouTube
-  translation track. Use `--replace-translation` to preserve existing raw and English bytes.
+- Record both source hashes, every original event index and timestamp, generation time, and
+  `engine: codex-subagent`, `model: gpt-6-luna`, `model_revision: null`, and
+  `model_version_visibility: not-exposed`. Use `--replace-translation` to preserve existing raw
+  and English bytes.
+- Re-import an existing event-aligned `zh-Hans-en` platform translation with the original frozen
+  `--metadata-json`, `--source-json3`, and `--translation-json3` inputs. The importer revalidates
+  the canonical URL, public/non-live state, video ID, channel ID, and caption alignment. It
+  rejects inputs outside `.cache/`.
 - If a subtitle exists but this exact import contract cannot consume it, stop. Do not ignore it and
   silently run audio ASR. When no supported subtitle exists, local Qwen audio ASR is allowed under
   the normal backend contract.

@@ -160,6 +160,40 @@ class YoutubeCaptionImportTests(unittest.TestCase):
                         source_transcript=english, source_segments=segments,
                     )
 
+    def test_luna_translation_records_subagent_provenance(self):
+        source, segments, english, document = self.local_translation_fixture()
+        document.update(
+            engine="codex-subagent", model="gpt-6-luna",
+            model_revision=None, model_version_visibility="not-exposed",
+        )
+        _, refined, rendered_en, _ = build_outputs(
+            canonical_url="https://www.youtube.com/watch?v=-RXD4bTuFTo",
+            info={"id": "-RXD4bTuFTo", "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA"},
+            source_payload_bytes=source,
+            translation_payload_bytes=json.dumps(document).encode(),
+            title="An episode", generated_at="2026-08-18T00:00:00Z",
+            source_language="en", translation_track="zh-Hans-en",
+            raw_repository_path="raw.json", transcript_repository_path="transcript.en.md",
+            translation_repository_path="shows/example/episodes/example/transcript.zh-CN.md",
+            local_translation=True,
+        )
+        self.assertEqual(rendered_en, english)
+        provenance = json.loads(refined)["translation"]
+        self.assertEqual(provenance["track_type"], "subagent-machine-translation")
+        self.assertEqual(provenance["model"], "gpt-6-luna")
+        self.assertIsNone(provenance["model_revision"])
+        self.assertEqual(provenance["model_version_visibility"], "not-exposed")
+        for overrides in (
+            {"model": "another-model"},
+            {"model_revision": "a" * 40},
+            {"model_version_visibility": None},
+        ):
+            with self.subTest(overrides=overrides), self.assertRaises(ValueError):
+                local_translation_segments(
+                    json.dumps(document | overrides).encode(), source_payload=source,
+                    source_transcript=english, source_segments=segments,
+                )
+
     def test_translation_replacement_changes_only_translation_and_provenance(self):
         source, _, english, document = self.local_translation_fixture()
         (ROOT / ".cache").mkdir(exist_ok=True)

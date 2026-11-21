@@ -71,6 +71,7 @@ last_verified_at: 2026-11-09
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [【正片】纪录片导演陈晓卿×罗永浩！他一直被命运推着，却走出了自己的路](https://www.bilibili.com/video/BV182sM6gERA/) | 罗永浩的十字路口 | 2026-11-17 | [总结](./episodes/bili-bv182sm6gera-chen-xiaoqing/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv182sm6gera-chen-xiaoqing/transcript.zh-CN.md) |
 | [徕芬科技创始人叶洪新×罗永浩！初中毕业后，我先造飞机去了......](https://www.xiaoyuzhoufm.com/episode/6aea8204c96c8942ec16ee88) | 罗永浩的十字路口 | 2026-11-04 | [总结](./episodes/xiaoyuzhou-6aea8204c96c8942ec16ee88-ye-hongxin/summary.zh-CN.md) | [逐字稿](./episodes/xiaoyuzhou-6aea8204c96c8942ec16ee88-ye-hongxin/transcript.zh-CN.md) |
 | [【正片】手工耿×罗永浩！“村口的五金店里，出现了一个达达主义艺术家”](https://www.bilibili.com/video/BV1QutM6jEKd/) | 罗永浩的十字路口 | 2026-09-01 | [总结](./episodes/036-shougong-geng/summary.zh-CN.md) | [逐字稿](./episodes/036-shougong-geng/transcript.zh-CN.md) |
 | [【正片】罗永浩的X字路口！我们能活到今天，多亏了祖传的势利眼](https://www.bilibili.com/video/BV1ukM26zESF/) | 罗永浩的十字路口 | 2026-08-06 | [总结](./episodes/bili-bv1ukm26zesf-x-shiliyan/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1ukm26zesf-x-shiliyan/transcript.zh-CN.md) |

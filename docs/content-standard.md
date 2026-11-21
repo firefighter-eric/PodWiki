@@ -553,9 +553,9 @@ selected 英文稿和中文译稿，英文原稿发生变化后必须重新生�
    绑定 BVID/aid/cid/page 与公开免费 metadata sidecar，并导入 tracked raw/refined 与
    字节一致的根中文稿；带 `auth_key` 的签名 URL、Cookie 和账号标识不得持久化。
 3. YouTube 存在发布者英文字幕时，优先导入 `json3` 原始载荷，并用同一事件时间轴
-   生成 selected 英文稿；存在逐事件对齐的 `zh-Hans-en` 平台机器翻译时，可同时生成
-   `status: machine` 的中文逐段译稿，并记录两份载荷哈希。字幕事件数或时间轴不一致
-   时失败关闭，不得自行合并或猜测对齐。
+   生成 selected 英文稿。按[处理流程第 8 节](./episode-processing.md#8-英文正式稿生成逐行中文译稿)
+   用 Luna 子代理生成 `status: machine` 的中文逐段译稿，并记录两份载荷哈希。导入
+   既有 `zh-Hans-en` 平台机器译轨时，仍要求字幕事件数和时间轴完全一致。
 4. 其他平台字幕、Bilibili 非 `AIsubtitle` 或 YouTube 不受支持的字幕格式仍停在
    发现阶段；不得静默忽略可用字幕改跑音频 ASR。
 5. 有权处理且没有当前授权访问上下文可用的字幕时，再从媒体生成 ASR。

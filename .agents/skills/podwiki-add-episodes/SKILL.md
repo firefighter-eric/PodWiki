@@ -73,9 +73,11 @@ Stop without downloading or creating tracked files when:
 - podcast or complete-episode evidence is absent, ambiguous, or conflicts with fresh metadata;
 - the item is paid, membership-only, private, regional, or otherwise restricted;
 - the authorized access context exposes a subtitle that the matching platform guide cannot import;
-- an English YouTube publisher caption has neither a complete event-aligned platform translation
-  nor a complete cached segment translation meeting the frozen-source contract in the runbook;
 - source identity cannot be preserved without leaking credentials.
+
+For a supported English YouTube caption, freeze the approved publisher `json3` in `.cache/` and
+generate the Luna segment translation before creating tracked output. An existing event-aligned
+platform translation can be re-imported through its original path.
 
 User-authorized login is an access context only. Keep cookies, tokens, and browser material under
 ignored .cache/credentials/; never print or record secrets in logs, sidecars, Markdown, or Git.
@@ -159,9 +161,10 @@ authorized context has no usable track, continue to public audio acquisition and
 2. Record actual engine, model, aligner, options, timestamps, counts, paths, and SHA-256 values in the
    episode README. Mark exactly one ASR run selected; preserve older runs as candidate or
    superseded.
-3. For an English selected transcript, keep transcript.en.md selected and create a one-to-one,
-   timestamp-preserving root transcript.zh-CN.md translation with the complete hashes and status
-   contract from the runbook.
+3. For an English selected transcript, keep transcript.en.md selected and delegate the Chinese
+   translation to Codex Luna subagents (`gpt-6-luna`). Assign consecutive source segments.
+   Assemble the one-to-one root transcript.zh-CN.md, verify each index and timestamp, and record
+   the complete hashes, translation provenance, and status from the runbook.
 4. Generate summary.zh-CN.md only from the selected complete transcript. Validate every summary
    timestamp against that transcript's exact timestamp set.
 5. Machine output remains workflow.transcript: machine, workflow.summary: draft, and translation

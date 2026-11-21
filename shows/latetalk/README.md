@@ -49,6 +49,11 @@ last_verified_at: 2026-10-02
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [Geodesic 顾全全：用 Scaling 方法改变 AI 制药【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1xYst6DEwS/) | 晚点聊 LateTalk | 2026-11-19 | [总结](./episodes/189-gu-quanquan/summary.zh-CN.md) | [逐字稿](./episodes/189-gu-quanquan/transcript.zh-CN.md) |
+| [黄仁勋闪电离职之后，英伟达和 AI 行业失去了什么【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1GAsM66E1E/) | 晚点聊 LateTalk | 2026-11-17 | [总结](./episodes/188-liu-yilun-todd/summary.zh-CN.md) | [逐字稿](./episodes/188-liu-yilun-todd/transcript.zh-CN.md) |
+| [LiberAI 刘松铭：Astra 之后，胜率最高的具身打法【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1ZZs36bERt/) | 晚点聊 LateTalk | 2026-11-14 | [总结](./episodes/187-liu-songming/summary.zh-CN.md) | [逐字稿](./episodes/187-liu-songming/transcript.zh-CN.md) |
+| [Anthropic 招股书：与 Amont 李肇宇聊定价逻辑和潜在风险【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1dVWy6yEy7/) | 晚点聊 LateTalk | 2026-11-11 | [总结](./episodes/185-li-zhaoyu/summary.zh-CN.md) | [逐字稿](./episodes/185-li-zhaoyu/transcript.zh-CN.md) |
+| [Anthropic 招股书：与 Fusion Fund 张璐聊大企业在想什么【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1mhWy6AEkh/) | 晚点聊 LateTalk | 2026-11-11 | [总结](./episodes/186-zhang-lu/summary.zh-CN.md) | [逐字稿](./episodes/186-zhang-lu/transcript.zh-CN.md) |
 | [具身季报 26Q3：Astra 之后，重新划分物理 AI 与通用 AI 的边界【晚点聊LateTalk】](https://www.bilibili.com/video/BV1fdsR6SEVR/) | 晚点聊 LateTalk | 2026-10-29 | [总结](./episodes/184-chen-zhe/summary.zh-CN.md) | [逐字稿](./episodes/184-chen-zhe/transcript.zh-CN.md) |
 | [AI 季报 26Q3：从 Meta 到 OpenAI，个人助理卷土重来【晚点聊 LateTalk】](https://www.bilibili.com/video/BV1wqHD6qEqU/) | 晚点聊 LateTalk | 2026-10-08 | [总结](./episodes/183-henry-yin/summary.zh-CN.md) | [逐字稿](./episodes/183-henry-yin/transcript.zh-CN.md) |
 | [对话梁琛奇：抖音→猫箱→创业，他们都搞生产力，我想用 AI 创造开心【晚点聊LateTalk】](https://www.bilibili.com/video/BV1Vbao6aEYM/) | 晚点聊 LateTalk | 2026-09-30 | [总结](./episodes/182-liang-chenqi/summary.zh-CN.md) | [逐字稿](./episodes/182-liang-chenqi/transcript.zh-CN.md) |

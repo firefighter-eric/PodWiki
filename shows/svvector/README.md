@@ -45,6 +45,7 @@ last_verified_at: 2026-08-26
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [硅谷坐标 × FundaAI 周默：深度拆解科技巨头 Q3 财报｜AI 投资进入验证期](https://www.bilibili.com/video/BV1upWh6wEHT/) | 硅谷坐标 SV-Vector | 2026-11-13 | [总结](./episodes/bili-bv1upwh6weht-zhou-mo-q3/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1upwh6weht-zhou-mo-q3/transcript.zh-CN.md) |
 | [硅谷坐标 x 谷歌DeepMind研究副总裁 Ed H. Chi（纪怀新）：个性化通用助理的未来](https://www.bilibili.com/video/BV135ng6KEfQ/) | 硅谷坐标 SV-Vector | 2026-10-18 | [总结](./episodes/bili-bv135ng6kefq-ed-chi/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv135ng6kefq-ed-chi/transcript.zh-CN.md) |
 | [硅谷坐标 x Datadog首席产品官｜HYSTA主席李严冰: AI 落地进入 ROI 时代](https://www.bilibili.com/video/BV1DnJS66E44/) | 硅谷坐标 SV-Vector | 2026-10-16 | [总结](./episodes/bili-bv1dnjs66e44-li-yanbing/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1dnjs66e44-li-yanbing/transcript.zh-CN.md) |
 | [【硅谷坐标 × 华源HYSTA 特别节目】：AI 的下一程：对话11 位硅谷顶级AI从业者](https://www.bilibili.com/video/BV1R2HU6DEh1/) | 硅谷坐标 SV-Vector | 2026-10-08 | [总结](./episodes/bili-bv1r2hu6deh1-hysta-ai-next/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1r2hu6deh1-hysta-ai-next/transcript.zh-CN.md) |

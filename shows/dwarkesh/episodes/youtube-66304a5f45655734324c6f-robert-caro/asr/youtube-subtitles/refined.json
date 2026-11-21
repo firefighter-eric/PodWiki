@@ -1,0 +1,3302 @@
+{
+  "generated_at": "2026-11-21T08:25:42.833837Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-66304a5f45655734324c6f-robert-caro/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "c3bc019bd9be430036ec47b2014e67b93b8fac5265ad058c8cd10a0763e2f031"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 4480,
+      "source_event_index": 0,
+      "start_ms": 240,
+      "text": "\"If you do everything, you will win.\" That is the maxim by which Lyndon"
+    },
+    {
+      "end_ms": 8400,
+      "source_event_index": 1,
+      "start_ms": 4480,
+      "text": "Johnson lived his life. My guest today is Robert Caro."
+    },
+    {
+      "end_ms": 14240,
+      "source_event_index": 2,
+      "start_ms": 8400,
+      "text": "Over the 50 years that he has spent writing about Lyndon Johnson, he has lived in the"
+    },
+    {
+      "end_ms": 18800,
+      "source_event_index": 3,
+      "start_ms": 14240,
+      "text": "edges of the Texas Hill Country to understand the poverty and loneliness of Johnson’s youth."
+    },
+    {
+      "end_ms": 23520,
+      "source_event_index": 4,
+      "start_ms": 18800,
+      "text": "He has sifted through millions of documents in the Senate and presidential libraries"
+    },
+    {
+      "end_ms": 27040,
+      "source_event_index": 5,
+      "start_ms": 23520,
+      "text": "of the entire nation. He has chased down for"
+    },
+    {
+      "end_ms": 32080,
+      "source_event_index": 6,
+      "start_ms": 27040,
+      "text": "interviews everyone, from the former goon who helped Johnson steal an election to the chauffeur"
+    },
+    {
+      "end_ms": 37360,
+      "source_event_index": 7,
+      "start_ms": 32080,
+      "text": "who drove him on his first desperate campaign. In other words, my guest today is a man"
+    },
+    {
+      "end_ms": 43120,
+      "source_event_index": 8,
+      "start_ms": 37360,
+      "text": "who understands Johnson’s aphorism: \"If you do everything, you’ll win.\""
+    },
+    {
+      "end_ms": 45840,
+      "source_event_index": 9,
+      "start_ms": 43120,
+      "text": "Mr. Caro, it is such a huge honor to have you on the show."
+    },
+    {
+      "end_ms": 49920,
+      "source_event_index": 10,
+      "start_ms": 45840,
+      "text": "It’s great to be here. My first question is what"
+    },
+    {
+      "end_ms": 55760,
+      "source_event_index": 11,
+      "start_ms": 49920,
+      "text": "I hinted at in the introduction. How much do you see yourself"
+    },
+    {
+      "end_ms": 60640,
+      "source_event_index": 12,
+      "start_ms": 55760,
+      "text": "represented in Johnson or in Moses? Is part of the reason you’re able to"
+    },
+    {
+      "end_ms": 65040,
+      "source_event_index": 13,
+      "start_ms": 60640,
+      "text": "write so compellingly about them that you share some of their qualities?"
+    },
+    {
+      "end_ms": 75760,
+      "source_event_index": 14,
+      "start_ms": 66640,
+      "text": "Let me say first, I think, I hope, there are qualities of both these guys that I don’t share."
+    },
+    {
+      "end_ms": 80160,
+      "source_event_index": 15,
+      "start_ms": 75760,
+      "text": "Among other things they’re so, I’ll use the word, ruthless."
+    },
+    {
+      "end_ms": 90240,
+      "source_event_index": 16,
+      "start_ms": 80160,
+      "text": "You say they’d do anything to win. That’s part of their greatness."
+    },
+    {
+      "end_ms": 96160,
+      "source_event_index": 17,
+      "start_ms": 90240,
+      "text": "I remember when I started learning about Robert Moses, I went to the La Guardia"
+    },
+    {
+      "end_ms": 104320,
+      "source_event_index": 18,
+      "start_ms": 96160,
+      "text": "papers, which were kept in the Boat Basin. They were stored by the Municipal Archives,"
+    },
+    {
+      "end_ms": 110800,
+      "source_event_index": 19,
+      "start_ms": 104320,
+      "text": "literally in the 79th Street Boat Basin on the Hudson River, three levels down."
+    },
+    {
+      "end_ms": 115760,
+      "source_event_index": 20,
+      "start_ms": 110800,
+      "text": "There was this row of file cabinets against the wall."
+    },
+    {
+      "end_ms": 120160,
+      "source_event_index": 21,
+      "start_ms": 115760,
+      "text": "I’m sitting there day after day going through these documents."
+    },
+    {
+      "end_ms": 126880,
+      "source_event_index": 22,
+      "start_ms": 120160,
+      "text": "Occasionally I’d come across a note that Robert Moses wrote, and I realized I’m"
+    },
+    {
+      "end_ms": 133120,
+      "source_event_index": 23,
+      "start_ms": 126880,
+      "text": "following the same path he was. It’s fascinating, actually."
+    },
+    {
+      "end_ms": 137840,
+      "source_event_index": 24,
+      "start_ms": 133120,
+      "text": "Obviously, not all the qualities. But the quality I’m referring to"
+    },
+    {
+      "end_ms": 144720,
+      "source_event_index": 25,
+      "start_ms": 137840,
+      "text": "here is that just like Johnson or just like Moses, you refuse to take no for an answer."
+    },
+    {
+      "end_ms": 148320,
+      "source_event_index": 26,
+      "start_ms": 144720,
+      "text": "If somebody says, \"I won’t give you an interview,\" you don’t stop there."
+    },
+    {
+      "end_ms": 154000,
+      "source_event_index": 27,
+      "start_ms": 148320,
+      "text": "You refuse to leave a stone unturned. So there is a relentlessness that"
+    },
+    {
+      "end_ms": 159040,
+      "source_event_index": 28,
+      "start_ms": 154000,
+      "text": "you share with these subjects. I’m going to take that as a compliment."
+    },
+    {
+      "end_ms": 169120,
+      "source_event_index": 29,
+      "start_ms": 159040,
+      "text": "Yes. You feel there are certain people that you have to interview."
+    },
+    {
+      "end_ms": 175120,
+      "source_event_index": 30,
+      "start_ms": 169120,
+      "text": "If they don’t want to give you an interview, you can’t, I feel, say no."
+    },
+    {
+      "end_ms": 184720,
+      "source_event_index": 31,
+      "start_ms": 175120,
+      "text": "Like Lyndon Johnson’s first secretary, the one who rode in the car with him on the campaigns."
+    },
+    {
+      "end_ms": 191440,
+      "source_event_index": 32,
+      "start_ms": 184720,
+      "text": "I said, \"There’s no other human being on earth who knows what Lyndon Johnson is doing all"
+    },
+    {
+      "end_ms": 198000,
+      "source_event_index": 33,
+      "start_ms": 191440,
+      "text": "these hours driving back and forth across Texas. I don’t know what I have to do, but I have to get"
+    },
+    {
+      "end_ms": 203920,
+      "source_event_index": 34,
+      "start_ms": 198000,
+      "text": "him to tell me honestly about this thing.\" This raises another question"
+    },
+    {
+      "end_ms": 209040,
+      "source_event_index": 35,
+      "start_ms": 203920,
+      "text": "that I wanted to ask you. You’re interviewing all these people,"
+    },
+    {
+      "end_ms": 217200,
+      "source_event_index": 36,
+      "start_ms": 209040,
+      "text": "and in many cases, they must know that it’s not good for them to tell you what you want to know."
+    },
+    {
+      "end_ms": 223760,
+      "source_event_index": 37,
+      "start_ms": 217760,
+      "text": "In many cases, they tell you anyway. How do you get people to tell you things"
+    },
+    {
+      "end_ms": 229760,
+      "source_event_index": 38,
+      "start_ms": 223760,
+      "text": "that they know they shouldn’t tell you? You ask terrific questions. Sometimes"
+    },
+    {
+      "end_ms": 237760,
+      "source_event_index": 39,
+      "start_ms": 229760,
+      "text": "you’re sitting there and you know this person doesn’t want to talk to you about what you"
+    },
+    {
+      "end_ms": 246160,
+      "source_event_index": 40,
+      "start_ms": 237760,
+      "text": "want to get out of them, like John Connally on how Johnson used money to get political power."
+    },
+    {
+      "end_ms": 252560,
+      "source_event_index": 41,
+      "start_ms": 246160,
+      "text": "I’m thinking, \"But I’ve been through the notes. Connally collected the money and gave it out at"
+    },
+    {
+      "end_ms": 259760,
+      "source_event_index": 42,
+      "start_ms": 252560,
+      "text": "Johnson’s instructions, so he’s the only guy who can tell me how Johnson did this,"
+    },
+    {
+      "end_ms": 264880,
+      "source_event_index": 43,
+      "start_ms": 260320,
+      "text": "how he judged who to give money to.\" Sometimes Johnson would write"
+    },
+    {
+      "end_ms": 269120,
+      "source_event_index": 44,
+      "start_ms": 264880,
+      "text": "on a request for money. If the guy asked for $1,500,"
+    },
+    {
+      "end_ms": 276160,
+      "source_event_index": 45,
+      "start_ms": 269120,
+      "text": "Johnson would write, \"Okay, 1,500.\" Sometimes he’d write 500, sometimes he’d"
+    },
+    {
+      "end_ms": 286640,
+      "source_event_index": 46,
+      "start_ms": 276160,
+      "text": "write no, but sometimes he’d write, \"No, never.\" I asked Connally what that meant, and he said,"
+    },
+    {
+      "end_ms": 291360,
+      "source_event_index": 47,
+      "start_ms": 286640,
+      "text": "\"This guy was never going to get money from Lyndon Johnson.\""
+    },
+    {
+      "end_ms": 298960,
+      "source_event_index": 48,
+      "start_ms": 291360,
+      "text": "Then when you ask why he felt this way about this particular congressman, that’s when the"
+    },
+    {
+      "end_ms": 305840,
+      "source_event_index": 49,
+      "start_ms": 298960,
+      "text": "really fascinating stories emerge. Before we get more into Johnson,"
+    },
+    {
+      "end_ms": 313280,
+      "source_event_index": 50,
+      "start_ms": 305840,
+      "text": "I want to first start with Moses. In the last decade or two,"
+    },
+    {
+      "end_ms": 319920,
+      "source_event_index": 51,
+      "start_ms": 313280,
+      "text": "people have been complaining that it’s become too hard and too difficult to build things,"
+    },
+    {
+      "end_ms": 324080,
+      "source_event_index": 52,
+      "start_ms": 319920,
+      "text": "especially for the government to build things. If you look at the Second Avenue subway,"
+    },
+    {
+      "end_ms": 328400,
+      "source_event_index": 53,
+      "start_ms": 324080,
+      "text": "they’ve been building it for around 50 years. They’ve opened up a mile and a half."
+    },
+    {
+      "end_ms": 332560,
+      "source_event_index": 54,
+      "start_ms": 328400,
+      "text": "It cost more than $4 billion. People have been saying,"
+    },
+    {
+      "end_ms": 337920,
+      "source_event_index": 55,
+      "start_ms": 333760,
+      "text": "\"The Power Broker came out. It was an immensely influential book."
+    },
+    {
+      "end_ms": 345280,
+      "source_event_index": 56,
+      "start_ms": 337920,
+      "text": "We were concerned about so much power being centralized and delegated to one"
+    },
+    {
+      "end_ms": 348720,
+      "source_event_index": 57,
+      "start_ms": 345280,
+      "text": "person so they could build. We wanted to prevent that,"
+    },
+    {
+      "end_ms": 356720,
+      "source_event_index": 58,
+      "start_ms": 348720,
+      "text": "and so we made environmental review and land use review and community boards and litigation.\""
+    },
+    {
+      "end_ms": 362400,
+      "source_event_index": 59,
+      "start_ms": 356720,
+      "text": "People say, \"We’ve overcorrected. We’ve gone too far in the other direction.\""
+    },
+    {
+      "end_ms": 366720,
+      "source_event_index": 60,
+      "start_ms": 362400,
+      "text": "What do you think of that? They also say that because"
+    },
+    {
+      "end_ms": 372800,
+      "source_event_index": 61,
+      "start_ms": 366720,
+      "text": "of all these safeguards, Robert Moses could not operate in the same way today."
+    },
+    {
+      "end_ms": 378000,
+      "source_event_index": 62,
+      "start_ms": 372800,
+      "text": "But the fact is, when Robert Moses started, there were also safeguards."
+    },
+    {
+      "end_ms": 380960,
+      "source_event_index": 63,
+      "start_ms": 378000,
+      "text": "People were also saying, \"You can’t build anything.\""
+    },
+    {
+      "end_ms": 384800,
+      "source_event_index": 64,
+      "start_ms": 380960,
+      "text": "This was in the 1920s. People were saying,"
+    },
+    {
+      "end_ms": 389040,
+      "source_event_index": 65,
+      "start_ms": 384800,
+      "text": "\"Government can’t build anything. There are too many blocks."
+    },
+    {
+      "end_ms": 394240,
+      "source_event_index": 66,
+      "start_ms": 389040,
+      "text": "Nothing’s getting built. We need highways. It’s the age of cars."
+    },
+    {
+      "end_ms": 398800,
+      "source_event_index": 67,
+      "start_ms": 394240,
+      "text": "Everyone’s getting automobiles, but we have the same old roads."
+    },
+    {
+      "end_ms": 405520,
+      "source_event_index": 68,
+      "start_ms": 398800,
+      "text": "Nobody can build them because the property owners don’t want the roads built through their land.\""
+    },
+    {
+      "end_ms": 414240,
+      "source_event_index": 69,
+      "start_ms": 406080,
+      "text": "Robert Moses comes along, and all of a sudden those things vanish because, despite all the"
+    },
+    {
+      "end_ms": 422000,
+      "source_event_index": 70,
+      "start_ms": 414240,
+      "text": "safeguards and everything else, he just builds. Doing The Power Broker, it was just fascinating"
+    },
+    {
+      "end_ms": 428400,
+      "source_event_index": 71,
+      "start_ms": 422000,
+      "text": "to me to see how he gets around everything. It doesn’t matter what it is."
+    },
+    {
+      "end_ms": 434000,
+      "source_event_index": 72,
+      "start_ms": 428400,
+      "text": "He’s going to build a beach at Jones Beach. He sees it one day."
+    },
+    {
+      "end_ms": 437520,
+      "source_event_index": 73,
+      "start_ms": 434000,
+      "text": "He says, \"This is the greatest beach I’ve ever seen."
+    },
+    {
+      "end_ms": 445520,
+      "source_event_index": 74,
+      "start_ms": 437520,
+      "text": "It’s only 27 miles from New York City. If I can build a road out here, I will give"
+    },
+    {
+      "end_ms": 452080,
+      "source_event_index": 75,
+      "start_ms": 445520,
+      "text": "the people of New York City this great beach.\" But it seems impossible to build that road"
+    },
+    {
+      "end_ms": 460960,
+      "source_event_index": 76,
+      "start_ms": 452080,
+      "text": "because the property owners don’t want the road going through their farms and property."
+    },
+    {
+      "end_ms": 467680,
+      "source_event_index": 77,
+      "start_ms": 460960,
+      "text": "He basically says, \"I’m going to build it.\" To watch him do it, to overcome each obstacle,"
+    },
+    {
+      "end_ms": 472320,
+      "source_event_index": 78,
+      "start_ms": 467680,
+      "text": "there are so many, and then all of a sudden it’s open and you have Jones"
+    },
+    {
+      "end_ms": 478960,
+      "source_event_index": 79,
+      "start_ms": 472320,
+      "text": "Beach and you have it accessible to New York. It’s an act of political genius, and it’s also"
+    },
+    {
+      "end_ms": 487520,
+      "source_event_index": 80,
+      "start_ms": 478960,
+      "text": "an act of will: \"I’m going to do it.\" That’s fascinating to learn about."
+    },
+    {
+      "end_ms": 492480,
+      "source_event_index": 81,
+      "start_ms": 487520,
+      "text": "So you think today if there were a Moses-type figure, they would figure out a way to work"
+    },
+    {
+      "end_ms": 500640,
+      "source_event_index": 82,
+      "start_ms": 492480,
+      "text": "around everything that’s been set up? The answer to that is, when Moses was"
+    },
+    {
+      "end_ms": 506480,
+      "source_event_index": 83,
+      "start_ms": 500640,
+      "text": "building, they were saying the same thing. \"Nobody’s ever going to build."
+    },
+    {
+      "end_ms": 509840,
+      "source_event_index": 84,
+      "start_ms": 506480,
+      "text": "We need roads for the automobiles, but they’d have to go through"
+    },
+    {
+      "end_ms": 517760,
+      "source_event_index": 85,
+      "start_ms": 510640,
+      "text": "dozens of farms, scores of properties. No one’s ever going to be able to do it.\""
+    },
+    {
+      "end_ms": 525920,
+      "source_event_index": 86,
+      "start_ms": 517760,
+      "text": "But he comes along and does it. So today someone would come along and do it."
+    },
+    {
+      "end_ms": 533760,
+      "source_event_index": 87,
+      "start_ms": 525920,
+      "text": "This, I think, is a profound question for democracies: how do we end up in a"
+    },
+    {
+      "end_ms": 542720,
+      "source_event_index": 88,
+      "start_ms": 533760,
+      "text": "place which is not the extremes of ’50s or ’60s Moses, but also not where we are now?"
+    },
+    {
+      "end_ms": 548720,
+      "source_event_index": 89,
+      "start_ms": 543440,
+      "text": "Where I live in California, we’ve spent, I don’t know, $15 billion over the last decade."
+    },
+    {
+      "end_ms": 553040,
+      "source_event_index": 90,
+      "start_ms": 548720,
+      "text": "We haven’t gotten a single new line or single new mile of railway that"
+    },
+    {
+      "end_ms": 559840,
+      "source_event_index": 91,
+      "start_ms": 553040,
+      "text": "those $15 billion have been spent to build. Whereas in a different system… You could say China"
+    },
+    {
+      "end_ms": 565600,
+      "source_event_index": 92,
+      "start_ms": 559840,
+      "text": "today is like New York City in the ’40s and ’50s. They have a very Moses-type attitude and they"
+    },
+    {
+      "end_ms": 570240,
+      "source_event_index": 93,
+      "start_ms": 565600,
+      "text": "put up tens of thousands of miles of railways over the last 10-20 years."
+    },
+    {
+      "end_ms": 577200,
+      "source_event_index": 94,
+      "start_ms": 570240,
+      "text": "But of course, at the cost of similar amounts of displacement of people and recklessness."
+    },
+    {
+      "end_ms": 582720,
+      "source_event_index": 95,
+      "start_ms": 577200,
+      "text": "So how do we land in a good spot between either extreme?"
+    },
+    {
+      "end_ms": 589680,
+      "source_event_index": 96,
+      "start_ms": 582720,
+      "text": "I’m not sure there is a good spot. What you just said is the situation."
+    },
+    {
+      "end_ms": 598800,
+      "source_event_index": 97,
+      "start_ms": 589680,
+      "text": "To build anything on a large scale, you’re confronted with dozens or"
+    },
+    {
+      "end_ms": 604880,
+      "source_event_index": 98,
+      "start_ms": 598800,
+      "text": "scores or perhaps hundreds of property owners who don’t want it built there."
+    },
+    {
+      "end_ms": 613520,
+      "source_event_index": 99,
+      "start_ms": 604880,
+      "text": "So the question is, how does anything get built? Then someone comes along and can do it."
+    },
+    {
+      "end_ms": 622880,
+      "source_event_index": 100,
+      "start_ms": 614720,
+      "text": "When Robert Moses started, it seemed impossible, actually impossible, to build roads out into"
+    },
+    {
+      "end_ms": 629920,
+      "source_event_index": 101,
+      "start_ms": 622880,
+      "text": "Long Island because the road would have to cross scores of properties, most of whose"
+    },
+    {
+      "end_ms": 634560,
+      "source_event_index": 102,
+      "start_ms": 629920,
+      "text": "owners didn’t want the roads coming through. They had the power to stop them then because"
+    },
+    {
+      "end_ms": 643680,
+      "source_event_index": 103,
+      "start_ms": 634560,
+      "text": "he didn’t have the power of eminent domain. But Moses said basically, \"I’m going to build it.\""
+    },
+    {
+      "end_ms": 651520,
+      "source_event_index": 104,
+      "start_ms": 643680,
+      "text": "He would find a way to overcome each difficulty. What am I trying to say by that?"
+    },
+    {
+      "end_ms": 660320,
+      "source_event_index": 105,
+      "start_ms": 651520,
+      "text": "I’m trying to say that every once in a while someone comes along who’s a genius,"
+    },
+    {
+      "end_ms": 666560,
+      "source_event_index": 106,
+      "start_ms": 660320,
+      "text": "if that’s the right word, at getting big things built for the public."
+    },
+    {
+      "end_ms": 674480,
+      "source_event_index": 107,
+      "start_ms": 666560,
+      "text": "Decades may pass when there’s no one like that. You say, \"Everything’s stalled. Nothing big"
+    },
+    {
+      "end_ms": 680160,
+      "source_event_index": 108,
+      "start_ms": 674480,
+      "text": "is ever going to be built again.\" Then someone suddenly comes along"
+    },
+    {
+      "end_ms": 686960,
+      "source_event_index": 109,
+      "start_ms": 680160,
+      "text": "and all of a sudden things get built. That’s the nature of political genius."
+    },
+    {
+      "end_ms": 695680,
+      "source_event_index": 110,
+      "start_ms": 686960,
+      "text": "I happen to be writing about two guys, Lyndon Johnson and Robert Moses, Johnson with civil"
+    },
+    {
+      "end_ms": 702480,
+      "source_event_index": 111,
+      "start_ms": 695680,
+      "text": "rights and Moses with public works, where people were saying, \"You can’t do this.\""
+    },
+    {
+      "end_ms": 707360,
+      "source_event_index": 112,
+      "start_ms": 704160,
+      "text": "But they did it. Correct me if I’m putting"
+    },
+    {
+      "end_ms": 716160,
+      "source_event_index": 113,
+      "start_ms": 707360,
+      "text": "words in your mouth, but if I may attempt an interpretation of what you said, it sounds like"
+    },
+    {
+      "end_ms": 728560,
+      "source_event_index": 114,
+      "start_ms": 716160,
+      "text": "you think we need a little Moses today. A great insight. I sometimes wonder"
+    },
+    {
+      "end_ms": 736960,
+      "source_event_index": 115,
+      "start_ms": 728560,
+      "text": "about just what you said. The answer is, I certainly"
+    },
+    {
+      "end_ms": 748480,
+      "source_event_index": 116,
+      "start_ms": 736960,
+      "text": "don’t want someone who’s as ruthless and disregarding public opinion as a Robert Moses."
+    },
+    {
+      "end_ms": 755520,
+      "source_event_index": 117,
+      "start_ms": 748480,
+      "text": "But at the same time, you need someone who’s going to find a way to get things built."
+    },
+    {
+      "end_ms": 762720,
+      "source_event_index": 118,
+      "start_ms": 755520,
+      "text": "He’s going to have to find a way despite the fact that so many people don’t want it built."
+    },
+    {
+      "end_ms": 766640,
+      "source_event_index": 119,
+      "start_ms": 762720,
+      "text": "A lot of people who haven’t read the book have this impression that you think everything"
+    },
+    {
+      "end_ms": 771920,
+      "source_event_index": 120,
+      "start_ms": 766640,
+      "text": "Moses did was bad, and that we need to make sure that we can never have a Moses again."
+    },
+    {
+      "end_ms": 777760,
+      "source_event_index": 121,
+      "start_ms": 773600,
+      "text": "So it’s interesting to hear you say that we need a little Moses again."
+    },
+    {
+      "end_ms": 785360,
+      "source_event_index": 122,
+      "start_ms": 778400,
+      "text": "When people say to me everything was bad that he did, what I say is, \"You didn’t read the book.\""
+    },
+    {
+      "end_ms": 792560,
+      "source_event_index": 123,
+      "start_ms": 785360,
+      "text": "Because certainly the first parts of the book, hundreds of pages, are about a young idealist"
+    },
+    {
+      "end_ms": 800240,
+      "source_event_index": 124,
+      "start_ms": 792560,
+      "text": "who sees this great need for recreation, for beaches on Long Island for the city people,"
+    },
+    {
+      "end_ms": 806720,
+      "source_event_index": 125,
+      "start_ms": 800240,
+      "text": "and is going to find a way to make them accessible to people in the city."
+    },
+    {
+      "end_ms": 816720,
+      "source_event_index": 126,
+      "start_ms": 808240,
+      "text": "It’s an act of genius and willpower the way he does it, and that’s great."
+    },
+    {
+      "end_ms": 829600,
+      "source_event_index": 127,
+      "start_ms": 816720,
+      "text": "Now, does it evolve into where Moses listens to nobody, and the only thing that matters is"
+    },
+    {
+      "end_ms": 836800,
+      "source_event_index": 128,
+      "start_ms": 829600,
+      "text": "what he wants to get built? It does evolve into that."
+    },
+    {
+      "end_ms": 844880,
+      "source_event_index": 129,
+      "start_ms": 836800,
+      "text": "He does change. But the young Moses, the idealist, before he’s building, is an expert"
+    },
+    {
+      "end_ms": 852800,
+      "source_event_index": 130,
+      "start_ms": 844880,
+      "text": "in the technicalities of civil service. He devotes all his energies to trying to"
+    },
+    {
+      "end_ms": 860880,
+      "source_event_index": 131,
+      "start_ms": 852800,
+      "text": "reform the civil service so that people get promoted on merit instead of political pull."
+    },
+    {
+      "end_ms": 862400,
+      "source_event_index": 132,
+      "start_ms": 860880,
+      "text": "He works so hard at that. You see a real idealism."
+    },
+    {
+      "end_ms": 870560,
+      "source_event_index": 133,
+      "start_ms": 862400,
+      "text": "You see a real idealism in his early works, when he says, \"I want to make"
+    },
+    {
+      "end_ms": 878240,
+      "source_event_index": 134,
+      "start_ms": 870560,
+      "text": "these beaches accessible to New York.\" Now, does that evolve into \"I think there"
+    },
+    {
+      "end_ms": 883760,
+      "source_event_index": 135,
+      "start_ms": 878240,
+      "text": "ought to be a highway here no matter what anybody says, and no matter how"
+    },
+    {
+      "end_ms": 889920,
+      "source_event_index": 136,
+      "start_ms": 883760,
+      "text": "many thousands of people are in the way,\" like the Cross Bronx Expressway, \"I’ll evict them\"?"
+    },
+    {
+      "end_ms": 901120,
+      "source_event_index": 137,
+      "start_ms": 889920,
+      "text": "It does. He changes. That to me is a big part of the story of The Power Broker:"
+    },
+    {
+      "end_ms": 913440,
+      "source_event_index": 138,
+      "start_ms": 901120,
+      "text": "how this guy who’s in the beginning a young, idealistic guy who wants to build to make"
+    },
+    {
+      "end_ms": 921200,
+      "source_event_index": 139,
+      "start_ms": 913440,
+      "text": "lives better for people, to give them access to the ocean and beaches, changes into someone who"
+    },
+    {
+      "end_ms": 928320,
+      "source_event_index": 140,
+      "start_ms": 921200,
+      "text": "just wants to build because he thinks something should be built no matter what anyone else says."
+    },
+    {
+      "end_ms": 934800,
+      "source_event_index": 141,
+      "start_ms": 928320,
+      "text": "He’s going to do it no matter how many hundreds, thousands of people he has to evict,"
+    },
+    {
+      "end_ms": 939920,
+      "source_event_index": 142,
+      "start_ms": 934800,
+      "text": "no matter how bad an idea it is, like the Cross Bronx Expressway."
+    },
+    {
+      "end_ms": 943360,
+      "source_event_index": 143,
+      "start_ms": 939920,
+      "text": "People are telling him not to do that before he does it."
+    },
+    {
+      "end_ms": 948960,
+      "source_event_index": 144,
+      "start_ms": 943360,
+      "text": "The minute this road opens, it’s the world’s longest traffic jam."
+    },
+    {
+      "end_ms": 953920,
+      "source_event_index": 145,
+      "start_ms": 948960,
+      "text": "Not thousands, but tens of thousands of people were evicted, thrown out of their"
+    },
+    {
+      "end_ms": 968880,
+      "source_event_index": 146,
+      "start_ms": 953920,
+      "text": "homes by him without any relocation provisions. So in a way it’s a story of how you give somebody"
+    },
+    {
+      "end_ms": 978800,
+      "source_event_index": 147,
+      "start_ms": 968880,
+      "text": "power without the power, in a way — I don’t want to use the word \"corrupting\" him — but hardening"
+    },
+    {
+      "end_ms": 990240,
+      "source_event_index": 148,
+      "start_ms": 978800,
+      "text": "him to anyone who opposes him, to any opposition. Coding agents work best when they get fast,"
+    },
+    {
+      "end_ms": 993120,
+      "source_event_index": 149,
+      "start_ms": 990240,
+      "text": "detailed feedback. My sponsor, Antithesis,"
+    },
+    {
+      "end_ms": 997440,
+      "source_event_index": 150,
+      "start_ms": 993120,
+      "text": "gives your agents some of the richest feedback there is by running every change they make"
+    },
+    {
+      "end_ms": 1002240,
+      "source_event_index": 151,
+      "start_ms": 997440,
+      "text": "through thousands of hostile simulations. This usually isn't feasible. Simulation"
+    },
+    {
+      "end_ms": 1007040,
+      "source_event_index": 152,
+      "start_ms": 1002240,
+      "text": "testing is hard. It normally requires rebuilding your software around a fake network and clock,"
+    },
+    {
+      "end_ms": 1010000,
+      "source_event_index": 153,
+      "start_ms": 1007040,
+      "text": "among other things. So most teams don't bother."
+    },
+    {
+      "end_ms": 1013680,
+      "source_event_index": 154,
+      "start_ms": 1010000,
+      "text": "Even if they do, getting enough coverage typically takes hours."
+    },
+    {
+      "end_ms": 1018880,
+      "source_event_index": 155,
+      "start_ms": 1013680,
+      "text": "So they run these simulations overnight, by which point all the day's changes are jumbled together,"
+    },
+    {
+      "end_ms": 1022720,
+      "source_event_index": 156,
+      "start_ms": 1018880,
+      "text": "and it's harder for the agents to tell which PR broke something."
+    },
+    {
+      "end_ms": 1027200,
+      "source_event_index": 157,
+      "start_ms": 1022720,
+      "text": "Antithesis solves both problems. It runs your software inside a fully"
+    },
+    {
+      "end_ms": 1031280,
+      "source_event_index": 158,
+      "start_ms": 1027200,
+      "text": "deterministic simulated computer, so you don't have to rebuild anything yourself."
+    },
+    {
+      "end_ms": 1034640,
+      "source_event_index": 159,
+      "start_ms": 1031280,
+      "text": "And it explores fast enough that you can test every PR."
+    },
+    {
+      "end_ms": 1040320,
+      "source_event_index": 160,
+      "start_ms": 1034640,
+      "text": "On a recent project, it packed 15 hours of simulation testing into each 15-minute run."
+    },
+    {
+      "end_ms": 1043600,
+      "source_event_index": 161,
+      "start_ms": 1040320,
+      "text": "That speed comes from both parallelism and branching."
+    },
+    {
+      "end_ms": 1047280,
+      "source_event_index": 162,
+      "start_ms": 1043600,
+      "text": "Because it's deterministic, whenever Antithesis finds an interesting state,"
+    },
+    {
+      "end_ms": 1051600,
+      "source_event_index": 163,
+      "start_ms": 1047280,
+      "text": "it can save that exact moment and branch off hundreds of different futures."
+    },
+    {
+      "end_ms": 1055520,
+      "source_event_index": 164,
+      "start_ms": 1051600,
+      "text": "It never wastes time replaying events, hoping to stumble across that state again."
+    },
+    {
+      "end_ms": 1057680,
+      "source_event_index": 165,
+      "start_ms": 1055520,
+      "text": "And it doesn't just explore randomly."
+    },
+    {
+      "end_ms": 1061760,
+      "source_event_index": 166,
+      "start_ms": 1057680,
+      "text": "Antithesis systematically injects faults and tweaks your system in"
+    },
+    {
+      "end_ms": 1066080,
+      "source_event_index": 167,
+      "start_ms": 1061760,
+      "text": "the ways most likely to break it. So every minute in Antithesis is"
+    },
+    {
+      "end_ms": 1069920,
+      "source_event_index": 168,
+      "start_ms": 1066080,
+      "text": "one of the unluckiest hours your software will ever experience."
+    },
+    {
+      "end_ms": 1083120,
+      "source_event_index": 169,
+      "start_ms": 1069920,
+      "text": "Learn more at antithesis.com/dwarkesh. You start writing the book in ’66, ’67."
+    },
+    {
+      "end_ms": 1090400,
+      "source_event_index": 170,
+      "start_ms": 1083120,
+      "text": "You’re writing it while Moses is losing power. His career is not over yet."
+    },
+    {
+      "end_ms": 1096320,
+      "source_event_index": 171,
+      "start_ms": 1091360,
+      "text": "So the story changes while you’re writing it. I don’t know if you’ve talked about that,"
+    },
+    {
+      "end_ms": 1100960,
+      "source_event_index": 172,
+      "start_ms": 1096320,
+      "text": "but presumably the conclusion changes because you don’t know whether he’s"
+    },
+    {
+      "end_ms": 1107440,
+      "source_event_index": 173,
+      "start_ms": 1100960,
+      "text": "going to lose that power or not when you start. That’s a great question. I watch that happen,"
+    },
+    {
+      "end_ms": 1113760,
+      "source_event_index": 174,
+      "start_ms": 1107440,
+      "text": "and I’m young. Whatever my age was,"
+    },
+    {
+      "end_ms": 1122560,
+      "source_event_index": 175,
+      "start_ms": 1113760,
+      "text": "I didn’t really know what I was doing. I watched him lose power, and I learned enough"
+    },
+    {
+      "end_ms": 1134480,
+      "source_event_index": 176,
+      "start_ms": 1122560,
+      "text": "about him to know how sad this was going to be. If I could think a moment, there's a moment that"
+    },
+    {
+      "end_ms": 1143680,
+      "source_event_index": 177,
+      "start_ms": 1134480,
+      "text": "this happened… Yeah… His office was still up at the Triborough Bridge Authority."
+    },
+    {
+      "end_ms": 1150160,
+      "source_event_index": 178,
+      "start_ms": 1143680,
+      "text": "When he was in power, I interviewed him in that office several times."
+    },
+    {
+      "end_ms": 1156480,
+      "source_event_index": 179,
+      "start_ms": 1150160,
+      "text": "You felt his power. You felt outside there were all these people sitting"
+    },
+    {
+      "end_ms": 1161280,
+      "source_event_index": 180,
+      "start_ms": 1156480,
+      "text": "around waiting for his decisions. As soon as I finished, the secretary"
+    },
+    {
+      "end_ms": 1169600,
+      "source_event_index": 181,
+      "start_ms": 1161280,
+      "text": "would come in with a list of telephone calls from people who had called wanting"
+    },
+    {
+      "end_ms": 1180640,
+      "source_event_index": 182,
+      "start_ms": 1169600,
+      "text": "something from him while I was talking to him. I remember I had one long interview with him."
+    },
+    {
+      "end_ms": 1184560,
+      "source_event_index": 183,
+      "start_ms": 1180640,
+      "text": "Maybe it was my last one. By the time I finished, I realized"
+    },
+    {
+      "end_ms": 1191760,
+      "source_event_index": 184,
+      "start_ms": 1185200,
+      "text": "there had been no calls. The secretary had nothing to tell him."
+    },
+    {
+      "end_ms": 1201680,
+      "source_event_index": 185,
+      "start_ms": 1191760,
+      "text": "So whatever you thought of Moses, you felt the poignance of someone losing power."
+    },
+    {
+      "end_ms": 1206640,
+      "source_event_index": 186,
+      "start_ms": 1204000,
+      "text": "That’s fascinating. That’s what I was wondering about."
+    },
+    {
+      "end_ms": 1218400,
+      "source_event_index": 187,
+      "start_ms": 1207440,
+      "text": "You couldn’t help feeling sad for him, even though you knew what he had done."
+    },
+    {
+      "end_ms": 1224960,
+      "source_event_index": 188,
+      "start_ms": 1218400,
+      "text": "You couldn’t help feeling, \"Oh, this is, in a way, tragic that no one’s calling"
+    },
+    {
+      "end_ms": 1231920,
+      "source_event_index": 189,
+      "start_ms": 1224960,
+      "text": "and asking him for a favor anymore.\" Did he realize that was happening?"
+    },
+    {
+      "end_ms": 1238880,
+      "source_event_index": 190,
+      "start_ms": 1232560,
+      "text": "I don’t think he really did. In a way, I’m sure he did."
+    },
+    {
+      "end_ms": 1246960,
+      "source_event_index": 191,
+      "start_ms": 1238880,
+      "text": "But by that time he was so insulated. Whatever his age was, he was up in his 80s."
+    },
+    {
+      "end_ms": 1258800,
+      "source_event_index": 192,
+      "start_ms": 1246960,
+      "text": "He was deaf. He still had at the Triborough headquarters on Randall’s Island all these"
+    },
+    {
+      "end_ms": 1267360,
+      "source_event_index": 193,
+      "start_ms": 1258800,
+      "text": "Moses men who were loyal to him and treated him with the same deference they always had."
+    },
+    {
+      "end_ms": 1275120,
+      "source_event_index": 194,
+      "start_ms": 1267360,
+      "text": "He knew he wasn’t getting his projects done. But I know he felt he was just going to keep"
+    },
+    {
+      "end_ms": 1278800,
+      "source_event_index": 195,
+      "start_ms": 1275120,
+      "text": "pushing like he always did, and he was going to win again."
+    },
+    {
+      "end_ms": 1284800,
+      "source_event_index": 196,
+      "start_ms": 1279600,
+      "text": "The answer to your question is no, I don’t think he did ever realize that."
+    },
+    {
+      "end_ms": 1297440,
+      "source_event_index": 197,
+      "start_ms": 1287280,
+      "text": "In, I think, ’62, as you say, he tries to pull a trick on Nelson Rockefeller that he had pulled on"
+    },
+    {
+      "end_ms": 1303840,
+      "source_event_index": 198,
+      "start_ms": 1297440,
+      "text": "countless previous mayors and governors, which is to threaten to resign if he didn’t get his way."
+    },
+    {
+      "end_ms": 1312800,
+      "source_event_index": 199,
+      "start_ms": 1306400,
+      "text": "Rockefeller says, \"I regretfully accept,\" and nothing happens."
+    },
+    {
+      "end_ms": 1318400,
+      "source_event_index": 200,
+      "start_ms": 1312800,
+      "text": "That made me wonder as I was reading it. Could all those previous governors and mayors who"
+    },
+    {
+      "end_ms": 1325760,
+      "source_event_index": 201,
+      "start_ms": 1318400,
+      "text": "were getting threatened have done the same thing? Great question. Yeah, the answer is yes."
+    },
+    {
+      "end_ms": 1329280,
+      "source_event_index": 202,
+      "start_ms": 1325760,
+      "text": "Well, you say, \"could they have done the same thing?\""
+    },
+    {
+      "end_ms": 1338240,
+      "source_event_index": 203,
+      "start_ms": 1331440,
+      "text": "In part, the answer is yes. They had the power to fire him."
+    },
+    {
+      "end_ms": 1346320,
+      "source_event_index": 204,
+      "start_ms": 1338240,
+      "text": "He wasn’t an elected official. But there wasn’t really a possibility."
+    },
+    {
+      "end_ms": 1353200,
+      "source_event_index": 205,
+      "start_ms": 1346320,
+      "text": "The answer to the question at the bottom is no, they couldn’t, because he was simply too popular."
+    },
+    {
+      "end_ms": 1361840,
+      "source_event_index": 206,
+      "start_ms": 1353200,
+      "text": "You couldn’t fire Robert Moses. That’s like firing some person"
+    },
+    {
+      "end_ms": 1368720,
+      "source_event_index": 207,
+      "start_ms": 1361840,
+      "text": "who was the idol of New York. But in addition, with his genius,"
+    },
+    {
+      "end_ms": 1376880,
+      "source_event_index": 208,
+      "start_ms": 1368720,
+      "text": "he had created, in all his different posts — chairman of the State Power Authority,"
+    },
+    {
+      "end_ms": 1383600,
+      "source_event_index": 209,
+      "start_ms": 1376880,
+      "text": "chairman of Triborough Bridge Authority, Parks Commissioner, Long Island Parks Commissioner,"
+    },
+    {
+      "end_ms": 1391360,
+      "source_event_index": 210,
+      "start_ms": 1383600,
+      "text": "Jones Beach Commissioner — such an interlocking web that you couldn’t fire him from everything,"
+    },
+    {
+      "end_ms": 1397680,
+      "source_event_index": 211,
+      "start_ms": 1391360,
+      "text": "because the terms ended in different ways, and some you didn’t have the power to fire him from."
+    },
+    {
+      "end_ms": 1406320,
+      "source_event_index": 212,
+      "start_ms": 1397680,
+      "text": "He had really made it impossible. Well, almost impossible, because at the end,"
+    },
+    {
+      "end_ms": 1412400,
+      "source_event_index": 213,
+      "start_ms": 1406320,
+      "text": "if you wanted to do it, Rockefeller did it. But by that time,"
+    },
+    {
+      "end_ms": 1418080,
+      "source_event_index": 214,
+      "start_ms": 1412400,
+      "text": "cracks had appeared in the armor. I think for decades, the answer to your"
+    },
+    {
+      "end_ms": 1422960,
+      "source_event_index": 215,
+      "start_ms": 1418080,
+      "text": "question is you couldn’t do it. But then as he got older,"
+    },
+    {
+      "end_ms": 1431200,
+      "source_event_index": 216,
+      "start_ms": 1422960,
+      "text": "cracks appeared in the armor. If you wanted to brave criticism"
+    },
+    {
+      "end_ms": 1441680,
+      "source_event_index": 217,
+      "start_ms": 1431200,
+      "text": "in all the newspapers and public criticism and everything else, you probably could have done it."
+    },
+    {
+      "end_ms": 1445760,
+      "source_event_index": 218,
+      "start_ms": 1441680,
+      "text": "Which leads into the next question I want to ask you."
+    },
+    {
+      "end_ms": 1452160,
+      "source_event_index": 219,
+      "start_ms": 1446400,
+      "text": "You interviewed him seven times. The seventh time, you mentioned"
+    },
+    {
+      "end_ms": 1460240,
+      "source_event_index": 220,
+      "start_ms": 1452160,
+      "text": "your awareness of a donation that was made to his commission by a millionaire whose golf course was"
+    },
+    {
+      "end_ms": 1466400,
+      "source_event_index": 221,
+      "start_ms": 1460240,
+      "text": "spared by the new route for his parkway. After that, he didn’t talk to you again."
+    },
+    {
+      "end_ms": 1473360,
+      "source_event_index": 222,
+      "start_ms": 1467040,
+      "text": "If you had gotten an eighth interview with Robert Moses, what is the one question"
+    },
+    {
+      "end_ms": 1487600,
+      "source_event_index": 223,
+      "start_ms": 1473360,
+      "text": "you would most want to ask him? Oh, God, what a great question."
+    },
+    {
+      "end_ms": 1501360,
+      "source_event_index": 224,
+      "start_ms": 1488640,
+      "text": "Off the top of my head, if I only had one question to ask him, I’d ask him,"
+    },
+    {
+      "end_ms": 1507360,
+      "source_event_index": 225,
+      "start_ms": 1501360,
+      "text": "\"Did you realize you were changing?\" That’s off the top... That’s"
+    },
+    {
+      "end_ms": 1514160,
+      "source_event_index": 226,
+      "start_ms": 1507360,
+      "text": "a great question you asked. But that’s the answer I’ll give for now."
+    },
+    {
+      "end_ms": 1519920,
+      "source_event_index": 227,
+      "start_ms": 1514160,
+      "text": "That’s something I always would like to have asked him."
+    },
+    {
+      "end_ms": 1529760,
+      "source_event_index": 228,
+      "start_ms": 1520960,
+      "text": "Do you think he realized that he was changing? No. I think he felt from the beginning that he had"
+    },
+    {
+      "end_ms": 1538640,
+      "source_event_index": 229,
+      "start_ms": 1529760,
+      "text": "this vision to build roads here and parks there. That was the best thing to do."
+    },
+    {
+      "end_ms": 1544960,
+      "source_event_index": 230,
+      "start_ms": 1538640,
+      "text": "It was going to get done, and it should get done. No matter how many hardships he had to inflict"
+    },
+    {
+      "end_ms": 1551440,
+      "source_event_index": 231,
+      "start_ms": 1544960,
+      "text": "on people, no matter how many thousands he had to evict, no matter what he had to do,"
+    },
+    {
+      "end_ms": 1557920,
+      "source_event_index": 232,
+      "start_ms": 1551440,
+      "text": "he was going to get the roads built. You see this increasing ruthlessness,"
+    },
+    {
+      "end_ms": 1563200,
+      "source_event_index": 233,
+      "start_ms": 1557920,
+      "text": "this utter ruthlessness of him. If someone stood in his way, he was going to"
+    },
+    {
+      "end_ms": 1570080,
+      "source_event_index": 234,
+      "start_ms": 1563200,
+      "text": "find a way to remove that person as an obstacle. I’ll give you an example of that if you want."
+    },
+    {
+      "end_ms": 1577440,
+      "source_event_index": 235,
+      "start_ms": 1570080,
+      "text": "There’s a politician in the Bronx named Henry Epstein."
+    },
+    {
+      "end_ms": 1582240,
+      "source_event_index": 236,
+      "start_ms": 1577440,
+      "text": "Henry Epstein is opposing the Cross Bronx Expressway."
+    },
+    {
+      "end_ms": 1586640,
+      "source_event_index": 237,
+      "start_ms": 1582240,
+      "text": "He’s saying to Robert Moses, \"You’re putting it right through a neighborhood where you"
+    },
+    {
+      "end_ms": 1591840,
+      "source_event_index": 238,
+      "start_ms": 1586640,
+      "text": "have to evict tens of thousands of people. You can just move it two blocks to the south,"
+    },
+    {
+      "end_ms": 1595120,
+      "source_event_index": 239,
+      "start_ms": 1591840,
+      "text": "and you only have to evict a couple of hundred people.\""
+    },
+    {
+      "end_ms": 1602880,
+      "source_event_index": 240,
+      "start_ms": 1595120,
+      "text": "Moses sets out to destroy Epstein, and basically does, by making it known he’s having an affair."
+    },
+    {
+      "end_ms": 1607360,
+      "source_event_index": 241,
+      "start_ms": 1602880,
+      "text": "If he can find a weakness in somebody, that he has a mistress,"
+    },
+    {
+      "end_ms": 1615280,
+      "source_event_index": 242,
+      "start_ms": 1607360,
+      "text": "that he’s taking money or something, he’ll use it. He’ll use whatever he has to to get things done."
+    },
+    {
+      "end_ms": 1624720,
+      "source_event_index": 243,
+      "start_ms": 1616080,
+      "text": "He learns that, in my opinion, by failing to get things done when he’s very young."
+    },
+    {
+      "end_ms": 1632320,
+      "source_event_index": 244,
+      "start_ms": 1624720,
+      "text": "He has things that he wants to get done, and they don’t get done."
+    },
+    {
+      "end_ms": 1636640,
+      "source_event_index": 245,
+      "start_ms": 1632320,
+      "text": "The awareness comes on him. We can see it in the book,"
+    },
+    {
+      "end_ms": 1642320,
+      "source_event_index": 246,
+      "start_ms": 1636640,
+      "text": "or in my learning about him. I try to show how he learns"
+    },
+    {
+      "end_ms": 1652800,
+      "source_event_index": 247,
+      "start_ms": 1642320,
+      "text": "that he has to find weaknesses in people. If he has a weakness, he’s going to use it."
+    },
+    {
+      "end_ms": 1660080,
+      "source_event_index": 248,
+      "start_ms": 1652800,
+      "text": "He’s going to get things done. There’s a hardening, an increased"
+    },
+    {
+      "end_ms": 1666720,
+      "source_event_index": 249,
+      "start_ms": 1660080,
+      "text": "ruthlessness, where the only thing that matters is to get the thing done."
+    },
+    {
+      "end_ms": 1669120,
+      "source_event_index": 250,
+      "start_ms": 1666720,
+      "text": "Anyone who stands in his way is going to get whatever it takes."
+    },
+    {
+      "end_ms": 1677760,
+      "source_event_index": 251,
+      "start_ms": 1669120,
+      "text": "If Moses has to destroy him, he’ll destroy him. As you say, you’re writing not the history"
+    },
+    {
+      "end_ms": 1685360,
+      "source_event_index": 252,
+      "start_ms": 1677760,
+      "text": "of one man, but of an era in America. One of the most interesting things about"
+    },
+    {
+      "end_ms": 1693040,
+      "source_event_index": 253,
+      "start_ms": 1685360,
+      "text": "The Power Broker is, especially in the period in which he’s able to accomplish so much so quickly,"
+    },
+    {
+      "end_ms": 1699440,
+      "source_event_index": 254,
+      "start_ms": 1693600,
+      "text": "what’s happening, and you talk about this, is the Great Depression."
+    },
+    {
+      "end_ms": 1705280,
+      "source_event_index": 255,
+      "start_ms": 1699440,
+      "text": "He’s hiring thousands of architects, tens of thousands of linemen, for pennies on the"
+    },
+    {
+      "end_ms": 1714160,
+      "source_event_index": 256,
+      "start_ms": 1705280,
+      "text": "dollar to do big public works for the city. So I wonder how big a part of Moses’ early"
+    },
+    {
+      "end_ms": 1720480,
+      "source_event_index": 257,
+      "start_ms": 1714160,
+      "text": "achievements is just that the government, because of the Great Depression, could"
+    },
+    {
+      "end_ms": 1728720,
+      "source_event_index": 258,
+      "start_ms": 1720480,
+      "text": "compete with the private sector for the top talent and for lots and lots of labor working"
+    },
+    {
+      "end_ms": 1736080,
+      "source_event_index": 259,
+      "start_ms": 1728720,
+      "text": "24/7 through the winter, moving fast. Another great question. The answer is"
+    },
+    {
+      "end_ms": 1743600,
+      "source_event_index": 260,
+      "start_ms": 1736080,
+      "text": "that it played a big role. He needed architects for something."
+    },
+    {
+      "end_ms": 1747280,
+      "source_event_index": 261,
+      "start_ms": 1743600,
+      "text": "I don’t remember what it is. It’s in The Power Broker."
+    },
+    {
+      "end_ms": 1753280,
+      "source_event_index": 262,
+      "start_ms": 1747280,
+      "text": "They lined up on Fifth Avenue, thousands of out-of-work architects"
+    },
+    {
+      "end_ms": 1763200,
+      "source_event_index": 263,
+      "start_ms": 1754720,
+      "text": "that he could hire for very low wages. But more than the wages, they were available,"
+    },
+    {
+      "end_ms": 1771200,
+      "source_event_index": 264,
+      "start_ms": 1763760,
+      "text": "because they didn’t have anything to do. He was able to hire so many people,"
+    },
+    {
+      "end_ms": 1780080,
+      "source_event_index": 265,
+      "start_ms": 1771200,
+      "text": "and hire and fire them in a ruthless way, making the workmen work hard."
+    },
+    {
+      "end_ms": 1783120,
+      "source_event_index": 266,
+      "start_ms": 1780080,
+      "text": "He could just fire them. It was the Depression. They"
+    },
+    {
+      "end_ms": 1788160,
+      "source_event_index": 267,
+      "start_ms": 1783120,
+      "text": "didn’t have other jobs to go to. He used that. Yes."
+    },
+    {
+      "end_ms": 1799760,
+      "source_event_index": 268,
+      "start_ms": 1790400,
+      "text": "As somebody who has studied urban development so deeply, here is one thing I’m curious about."
+    },
+    {
+      "end_ms": 1804880,
+      "source_event_index": 269,
+      "start_ms": 1799760,
+      "text": "You look at the things that were built at the beginning of the last century,"
+    },
+    {
+      "end_ms": 1810480,
+      "source_event_index": 270,
+      "start_ms": 1804880,
+      "text": "or before the beginning of the last century — Grand Central Station and all the beautiful"
+    },
+    {
+      "end_ms": 1817040,
+      "source_event_index": 271,
+      "start_ms": 1810480,
+      "text": "architecture in New York — versus the things that were built in the second half of the century."
+    },
+    {
+      "end_ms": 1821200,
+      "source_event_index": 272,
+      "start_ms": 1817040,
+      "text": "They look a lot less beautiful. The earlier, more beautiful things"
+    },
+    {
+      "end_ms": 1826720,
+      "source_event_index": 273,
+      "start_ms": 1821200,
+      "text": "were built by a much poorer country. What changed? Why were you able to"
+    },
+    {
+      "end_ms": 1830560,
+      "source_event_index": 274,
+      "start_ms": 1826720,
+      "text": "build more beautiful things before? One thing that changed is you had all"
+    },
+    {
+      "end_ms": 1839040,
+      "source_event_index": 275,
+      "start_ms": 1830560,
+      "text": "these out-of-work artisans who could, we’ll just say, carve stonework on buildings."
+    },
+    {
+      "end_ms": 1844720,
+      "source_event_index": 276,
+      "start_ms": 1839040,
+      "text": "My apartment is on the 15th floor of an apartment house."
+    },
+    {
+      "end_ms": 1853600,
+      "source_event_index": 277,
+      "start_ms": 1846000,
+      "text": "Across the street is a building that’s 15-16 stories high."
+    },
+    {
+      "end_ms": 1858880,
+      "source_event_index": 278,
+      "start_ms": 1853600,
+      "text": "You say, \"Look at all the beautiful carving that’s done in the stonework"
+    },
+    {
+      "end_ms": 1862320,
+      "source_event_index": 279,
+      "start_ms": 1858880,
+      "text": "of that building up on the roof.\" I said, \"The only people who can"
+    },
+    {
+      "end_ms": 1867600,
+      "source_event_index": 280,
+      "start_ms": 1862320,
+      "text": "see it are the people in my apartment and the people in the apartment next to it.\""
+    },
+    {
+      "end_ms": 1873280,
+      "source_event_index": 281,
+      "start_ms": 1867600,
+      "text": "Someone was willing to spend that money because the builders who built that could"
+    },
+    {
+      "end_ms": 1884640,
+      "source_event_index": 282,
+      "start_ms": 1873280,
+      "text": "hire skilled people at such low wages that they could make them do the decorations"
+    },
+    {
+      "end_ms": 1895200,
+      "source_event_index": 283,
+      "start_ms": 1884640,
+      "text": "to make a building beautiful up on floors that nobody’s going to see, because people came cheap."
+    },
+    {
+      "end_ms": 1898240,
+      "source_event_index": 284,
+      "start_ms": 1895200,
+      "text": "If you want your agents to do real work, they need to be able to use"
+    },
+    {
+      "end_ms": 1902480,
+      "source_event_index": 285,
+      "start_ms": 1898240,
+      "text": "the tools that your company runs on. Things like email or Slack or Stripe."
+    },
+    {
+      "end_ms": 1905920,
+      "source_event_index": 286,
+      "start_ms": 1902480,
+      "text": "But giving them unfettered access is risky, because they could send"
+    },
+    {
+      "end_ms": 1910160,
+      "source_event_index": 287,
+      "start_ms": 1905920,
+      "text": "confidential information to a customer or refund a bunch of payments that they shouldn't have."
+    },
+    {
+      "end_ms": 1915120,
+      "source_event_index": 288,
+      "start_ms": 1910160,
+      "text": "Of course, you could just review every request manually, but that doesn't typically last."
+    },
+    {
+      "end_ms": 1920480,
+      "source_event_index": 289,
+      "start_ms": 1915120,
+      "text": "That's why my sponsor, WorkOS, built Airlock. It's a judgment layer that sits between"
+    },
+    {
+      "end_ms": 1923760,
+      "source_event_index": 290,
+      "start_ms": 1920480,
+      "text": "your agents and your tools. Any time that an agent wants to"
+    },
+    {
+      "end_ms": 1927520,
+      "source_event_index": 291,
+      "start_ms": 1923760,
+      "text": "do something, it makes a request to Airlock, which evaluates it against"
+    },
+    {
+      "end_ms": 1932880,
+      "source_event_index": 292,
+      "start_ms": 1927520,
+      "text": "your company's policies and decides whether to allow it, block it, or escalate it to a human."
+    },
+    {
+      "end_ms": 1937680,
+      "source_event_index": 293,
+      "start_ms": 1932880,
+      "text": "Whenever a request is allowed, Airlock takes the relevant action for the agent,"
+    },
+    {
+      "end_ms": 1940640,
+      "source_event_index": 294,
+      "start_ms": 1937680,
+      "text": "hitting the necessary endpoints and passing along the response."
+    },
+    {
+      "end_ms": 1944880,
+      "source_event_index": 295,
+      "start_ms": 1940640,
+      "text": "That way, your agents never see your API keys, and so they can't leak them"
+    },
+    {
+      "end_ms": 1949120,
+      "source_event_index": 296,
+      "start_ms": 1944880,
+      "text": "or use them for unauthorized purposes. Since Airlock holds the keys to all your"
+    },
+    {
+      "end_ms": 1954000,
+      "source_event_index": 297,
+      "start_ms": 1949120,
+      "text": "tools, it has to be rock solid. Fortunately, WorkOS has spent the"
+    },
+    {
+      "end_ms": 1959120,
+      "source_event_index": 298,
+      "start_ms": 1954000,
+      "text": "better part of the last decade building auth and permissions products, and they're battle-tested."
+    },
+    {
+      "end_ms": 1963680,
+      "source_event_index": 299,
+      "start_ms": 1959120,
+      "text": "More than 3,000 companies rely on WorkOS, including OpenAI and Anthropic."
+    },
+    {
+      "end_ms": 1971840,
+      "source_event_index": 300,
+      "start_ms": 1963680,
+      "text": "Airlock is in early access. If you're interested, go to workos.com/airlock."
+    },
+    {
+      "end_ms": 1978640,
+      "source_event_index": 301,
+      "start_ms": 1971840,
+      "text": "I want to ask you about Johnson now. In Master of the Senate, you make two"
+    },
+    {
+      "end_ms": 1982880,
+      "source_event_index": 302,
+      "start_ms": 1978640,
+      "text": "points about how Johnson is effective, at least this is the way I read it."
+    },
+    {
+      "end_ms": 1987760,
+      "source_event_index": 303,
+      "start_ms": 1982880,
+      "text": "One is that he’s very persuasive if you’re talking to him."
+    },
+    {
+      "end_ms": 1995360,
+      "source_event_index": 304,
+      "start_ms": 1988480,
+      "text": "The other is he’s put himself in a position of leverage such that he has things to"
+    },
+    {
+      "end_ms": 2000240,
+      "source_event_index": 305,
+      "start_ms": 1995360,
+      "text": "promise you or things to threaten you with. It’s not that he’s convinced you of anything,"
+    },
+    {
+      "end_ms": 2004320,
+      "source_event_index": 306,
+      "start_ms": 2000240,
+      "text": "but you know that you need his favor if you want to be successful."
+    },
+    {
+      "end_ms": 2010640,
+      "source_event_index": 307,
+      "start_ms": 2005840,
+      "text": "Of the two, I’m curious which was really the source of his power:"
+    },
+    {
+      "end_ms": 2018080,
+      "source_event_index": 308,
+      "start_ms": 2010640,
+      "text": "his leverage or his persuasion? Behind his persuasion was the power."
+    },
+    {
+      "end_ms": 2022160,
+      "source_event_index": 309,
+      "start_ms": 2018080,
+      "text": "When you were talking to him, if he asked something of you,"
+    },
+    {
+      "end_ms": 2029920,
+      "source_event_index": 310,
+      "start_ms": 2022160,
+      "text": "you knew he had the power behind him to give you or deny you things that you wanted."
+    },
+    {
+      "end_ms": 2035760,
+      "source_event_index": 311,
+      "start_ms": 2029920,
+      "text": "Say he was asking a senator for a vote on a specific issue."
+    },
+    {
+      "end_ms": 2041120,
+      "source_event_index": 312,
+      "start_ms": 2035760,
+      "text": "The senator might not agree with him, might not want to give him the vote, but he would know."
+    },
+    {
+      "end_ms": 2047040,
+      "source_event_index": 313,
+      "start_ms": 2041120,
+      "text": "He wants a committee assignment. Johnson has the power to give him that or not."
+    },
+    {
+      "end_ms": 2052880,
+      "source_event_index": 314,
+      "start_ms": 2047040,
+      "text": "Or he would know he wants a specific law. Johnson has the power to get"
+    },
+    {
+      "end_ms": 2057280,
+      "source_event_index": 315,
+      "start_ms": 2052880,
+      "text": "that law passed or not. Behind everything — when Johnson"
+    },
+    {
+      "end_ms": 2064480,
+      "source_event_index": 316,
+      "start_ms": 2057280,
+      "text": "is talking to you, and he puts his arm around you, and he leans into you — it’s not just the force of"
+    },
+    {
+      "end_ms": 2071360,
+      "source_event_index": 317,
+      "start_ms": 2064480,
+      "text": "his personality that he’s bringing to bear on you. Behind that personality, you know he has the"
+    },
+    {
+      "end_ms": 2078240,
+      "source_event_index": 318,
+      "start_ms": 2071360,
+      "text": "power to do things to you or for you that you better be aware of."
+    },
+    {
+      "end_ms": 2086560,
+      "source_event_index": 319,
+      "start_ms": 2079600,
+      "text": "Means of Ascent, the book about the election with Coke Stevenson, the 1948 Senate election."
+    },
+    {
+      "end_ms": 2095600,
+      "source_event_index": 320,
+      "start_ms": 2087440,
+      "text": "That is my favorite book perhaps ever. You paint such a compelling portrait of this"
+    },
+    {
+      "end_ms": 2100960,
+      "source_event_index": 321,
+      "start_ms": 2096400,
+      "text": "person, Coke Stevenson, governor of Texas. They called him Mr. Texas."
+    },
+    {
+      "end_ms": 2107040,
+      "source_event_index": 322,
+      "start_ms": 2101520,
+      "text": "As you were writing his profile and writing this book, did part of you wish"
+    },
+    {
+      "end_ms": 2116880,
+      "source_event_index": 323,
+      "start_ms": 2107040,
+      "text": "that he had won the Senate election? You couldn’t help feeling… I’ll"
+    },
+    {
+      "end_ms": 2119680,
+      "source_event_index": 324,
+      "start_ms": 2116880,
+      "text": "answer you directly. The answer is yes. I"
+    },
+    {
+      "end_ms": 2125360,
+      "source_event_index": 325,
+      "start_ms": 2119680,
+      "text": "think Coke Stevenson, although he was an idealist, he knew how to get things done."
+    },
+    {
+      "end_ms": 2128960,
+      "source_event_index": 326,
+      "start_ms": 2125360,
+      "text": "When he was governor of Texas, he really accomplished things."
+    },
+    {
+      "end_ms": 2136080,
+      "source_event_index": 327,
+      "start_ms": 2130240,
+      "text": "I think if he had gone to the Senate, he would have been a great senator and accomplished things."
+    },
+    {
+      "end_ms": 2147760,
+      "source_event_index": 328,
+      "start_ms": 2136080,
+      "text": "So you wish that he had won. You feel the tragedy that"
+    },
+    {
+      "end_ms": 2154880,
+      "source_event_index": 329,
+      "start_ms": 2147760,
+      "text": "he lost because of the way he lost. The thing about Coke Stevenson, he really"
+    },
+    {
+      "end_ms": 2165760,
+      "source_event_index": 330,
+      "start_ms": 2154880,
+      "text": "didn’t realize someone could do all the things to him in the election that Lyndon Johnson did."
+    },
+    {
+      "end_ms": 2172480,
+      "source_event_index": 331,
+      "start_ms": 2165760,
+      "text": "He didn’t come to grips with that. Suppose that Kennedy wins in ’60,"
+    },
+    {
+      "end_ms": 2179360,
+      "source_event_index": 332,
+      "start_ms": 2172480,
+      "text": "but Johnson refuses the vice presidency, so he’s still majority leader."
+    },
+    {
+      "end_ms": 2186000,
+      "source_event_index": 333,
+      "start_ms": 2179360,
+      "text": "How different do you think the bills that Kennedy would pass under Johnson as majority"
+    },
+    {
+      "end_ms": 2193040,
+      "source_event_index": 334,
+      "start_ms": 2186000,
+      "text": "leader would be from the laws that Johnson as president was eventually able to pass?"
+    },
+    {
+      "end_ms": 2196800,
+      "source_event_index": 335,
+      "start_ms": 2193040,
+      "text": "That is to say, the things that happened in ’63 and ’64 and ’65,"
+    },
+    {
+      "end_ms": 2205280,
+      "source_event_index": 336,
+      "start_ms": 2196800,
+      "text": "would they have just happened earlier? No, because Kennedy did not have the"
+    },
+    {
+      "end_ms": 2214720,
+      "source_event_index": 337,
+      "start_ms": 2205280,
+      "text": "overriding desire to change America. John Kennedy was utterly charming."
+    },
+    {
+      "end_ms": 2219360,
+      "source_event_index": 338,
+      "start_ms": 2214720,
+      "text": "He was a good president. He was good in foreign policy,"
+    },
+    {
+      "end_ms": 2229120,
+      "source_event_index": 339,
+      "start_ms": 2219360,
+      "text": "where Johnson certainly was not. But what he did not have was this"
+    },
+    {
+      "end_ms": 2238160,
+      "source_event_index": 340,
+      "start_ms": 2229840,
+      "text": "vision, this desire to change America that Lyndon Johnson had."
+    },
+    {
+      "end_ms": 2247040,
+      "source_event_index": 341,
+      "start_ms": 2238160,
+      "text": "Lyndon Johnson comes back from his year teaching the poor kids in Cotulla determined to change the"
+    },
+    {
+      "end_ms": 2256000,
+      "source_event_index": 342,
+      "start_ms": 2247040,
+      "text": "education system to help poor people more, to do all these other things to help poor people."
+    },
+    {
+      "end_ms": 2260080,
+      "source_event_index": 343,
+      "start_ms": 2256000,
+      "text": "That determination is something that’s really unique."
+    },
+    {
+      "end_ms": 2264720,
+      "source_event_index": 344,
+      "start_ms": 2260080,
+      "text": "It’s what made him domestically such a great president, that we have all these"
+    },
+    {
+      "end_ms": 2272320,
+      "source_event_index": 345,
+      "start_ms": 2264720,
+      "text": "civil rights laws, these anti-poverty laws that we wouldn’t have had without Lyndon Johnson."
+    },
+    {
+      "end_ms": 2278560,
+      "source_event_index": 346,
+      "start_ms": 2272320,
+      "text": "His presidency ends in tragedy because of foreign policy, because of Vietnam."
+    },
+    {
+      "end_ms": 2292880,
+      "source_event_index": 347,
+      "start_ms": 2278560,
+      "text": "But he has this desire to get things done to help people in America that’s almost unique."
+    },
+    {
+      "end_ms": 2300720,
+      "source_event_index": 348,
+      "start_ms": 2292880,
+      "text": "You say, \"Gee, he’s determined to do this.\" He’s going to find a way to do it."
+    },
+    {
+      "end_ms": 2307200,
+      "source_event_index": 349,
+      "start_ms": 2300720,
+      "text": "You watch him doing it. Then you say, \"He was doing it.\""
+    },
+    {
+      "end_ms": 2322000,
+      "source_event_index": 350,
+      "start_ms": 2307200,
+      "text": "When his attention turns to Vietnam, everything falls apart, and his presidency is ruined."
+    },
+    {
+      "end_ms": 2328080,
+      "source_event_index": 351,
+      "start_ms": 2322000,
+      "text": "The things he started out to do domestically don’t get done in the way he would have done them."
+    },
+    {
+      "end_ms": 2334880,
+      "source_event_index": 352,
+      "start_ms": 2328080,
+      "text": "But he starts out after the election with the education laws, with the anti-poverty"
+    },
+    {
+      "end_ms": 2339280,
+      "source_event_index": 353,
+      "start_ms": 2334880,
+      "text": "bills to change the country. He’s on his way to doing it."
+    },
+    {
+      "end_ms": 2347200,
+      "source_event_index": 354,
+      "start_ms": 2339280,
+      "text": "That’s the great tragedy of Johnson and Vietnam. If I can ask about that, and it’s okay if you"
+    },
+    {
+      "end_ms": 2350720,
+      "source_event_index": 355,
+      "start_ms": 2347200,
+      "text": "don’t want to talk about this because it’s in the next book."
+    },
+    {
+      "end_ms": 2356160,
+      "source_event_index": 356,
+      "start_ms": 2351280,
+      "text": "But if you’re willing to talk about it, fundamentally,"
+    },
+    {
+      "end_ms": 2364720,
+      "source_event_index": 357,
+      "start_ms": 2356160,
+      "text": "why did Johnson keep escalating, even when— The answer to your question is I’m still trying"
+    },
+    {
+      "end_ms": 2369840,
+      "source_event_index": 358,
+      "start_ms": 2364720,
+      "text": "to figure that out right now, so I’m not going to— That’s fine."
+    },
+    {
+      "end_ms": 2374880,
+      "source_event_index": 359,
+      "start_ms": 2369840,
+      "text": "Because that’s quite a mystery. One of the things that’s true of"
+    },
+    {
+      "end_ms": 2381600,
+      "source_event_index": 360,
+      "start_ms": 2374880,
+      "text": "both Johnson and Moses is this inexhaustible energy, working 16"
+    },
+    {
+      "end_ms": 2387360,
+      "source_event_index": 361,
+      "start_ms": 2381600,
+      "text": "hours a day, sometimes even more than that. I wonder how much you think that is the fact"
+    },
+    {
+      "end_ms": 2395440,
+      "source_event_index": 362,
+      "start_ms": 2387360,
+      "text": "that they had a different constitution, that they just had different reserves of energy."
+    },
+    {
+      "end_ms": 2398400,
+      "source_event_index": 363,
+      "start_ms": 2395440,
+      "text": "Or do you think it was just that their will was so strong?"
+    },
+    {
+      "end_ms": 2404480,
+      "source_event_index": 364,
+      "start_ms": 2398400,
+      "text": "I think it’s just their will. A lot of people have their energy."
+    },
+    {
+      "end_ms": 2414800,
+      "source_event_index": 365,
+      "start_ms": 2404480,
+      "text": "When you see Robert Moses sleeping very little, showing that he’d do anything to get his way,"
+    },
+    {
+      "end_ms": 2423840,
+      "source_event_index": 366,
+      "start_ms": 2415600,
+      "text": "to get things done, being tired or something doesn’t even seem to figure into the equation."
+    },
+    {
+      "end_ms": 2428400,
+      "source_event_index": 367,
+      "start_ms": 2423840,
+      "text": "Sometimes I’m looking at something — I can’t remember one off the top of"
+    },
+    {
+      "end_ms": 2435200,
+      "source_event_index": 368,
+      "start_ms": 2428400,
+      "text": "my head — and you’ll say, \"Johnson’s making this call at 2:00 and 3:00 in the morning."
+    },
+    {
+      "end_ms": 2441040,
+      "source_event_index": 369,
+      "start_ms": 2435200,
+      "text": "He’s up making these calls to get his way.\" In fact, there’s a funny anecdote."
+    },
+    {
+      "end_ms": 2450320,
+      "source_event_index": 370,
+      "start_ms": 2441040,
+      "text": "Johnson calls one senator at 5:00 AM to ask him for his vote on something,"
+    },
+    {
+      "end_ms": 2457120,
+      "source_event_index": 371,
+      "start_ms": 2450320,
+      "text": "and the senator says, \"Oh, Lyndon, I was just lying here waiting for your call.\""
+    },
+    {
+      "end_ms": 2464720,
+      "source_event_index": 372,
+      "start_ms": 2457120,
+      "text": "So it’s their will. I want to ask you a little bit about writing biography now."
+    },
+    {
+      "end_ms": 2472880,
+      "source_event_index": 373,
+      "start_ms": 2466320,
+      "text": "One question I have is, you spend 5-10 years writing a single book."
+    },
+    {
+      "end_ms": 2478720,
+      "source_event_index": 374,
+      "start_ms": 2473680,
+      "text": "Through that process, maybe your editor and your wife are"
+    },
+    {
+      "end_ms": 2485840,
+      "source_event_index": 375,
+      "start_ms": 2478720,
+      "text": "the only people who have seen the manuscript. So how do you make sure you’re on the right track?"
+    },
+    {
+      "end_ms": 2491520,
+      "source_event_index": 376,
+      "start_ms": 2485840,
+      "text": "Because you’ve got to wait so long from when you start to when you get public feedback."
+    },
+    {
+      "end_ms": 2495120,
+      "source_event_index": 377,
+      "start_ms": 2491520,
+      "text": "How do you make sure that everything’s going to hang together and you’re"
+    },
+    {
+      "end_ms": 2501360,
+      "source_event_index": 378,
+      "start_ms": 2495120,
+      "text": "pursuing the message the way you want to? Part of your question is, how do you be"
+    },
+    {
+      "end_ms": 2505280,
+      "source_event_index": 379,
+      "start_ms": 2501360,
+      "text": "sure you’re on the right track? The answer to that is you’re not."
+    },
+    {
+      "end_ms": 2512640,
+      "source_event_index": 380,
+      "start_ms": 2507600,
+      "text": "But how do you try to stay on the right track? I do have a device for that."
+    },
+    {
+      "end_ms": 2521360,
+      "source_event_index": 381,
+      "start_ms": 2512640,
+      "text": "Before I start a book — I learned this the hard way with The Power Broker, because I didn’t do"
+    },
+    {
+      "end_ms": 2531920,
+      "source_event_index": 382,
+      "start_ms": 2521360,
+      "text": "it with The Power Broker — I think through what I want the book to be, the whole book."
+    },
+    {
+      "end_ms": 2534800,
+      "source_event_index": 383,
+      "start_ms": 2531920,
+      "text": "People say, \"You mean you think it through to the end?\""
+    },
+    {
+      "end_ms": 2540560,
+      "source_event_index": 384,
+      "start_ms": 2534800,
+      "text": "The answer is yes. Then you say, \"What is this book about?\""
+    },
+    {
+      "end_ms": 2546240,
+      "source_event_index": 385,
+      "start_ms": 2540560,
+      "text": "I sit at that desk sometimes for a long time before I start writing, when I’m"
+    },
+    {
+      "end_ms": 2554800,
+      "source_event_index": 386,
+      "start_ms": 2546240,
+      "text": "thinking about the book, just asking myself in one way or another, \"What is this book about?\""
+    },
+    {
+      "end_ms": 2559840,
+      "source_event_index": 387,
+      "start_ms": 2554800,
+      "text": "You’ve got to get it down to one sentence. You say, \"You can’t get it down to one sentence.\""
+    },
+    {
+      "end_ms": 2564720,
+      "source_event_index": 388,
+      "start_ms": 2559840,
+      "text": "Then you say, \"Yeah, but Bob, you learned you better get it down to one sentence,"
+    },
+    {
+      "end_ms": 2569840,
+      "source_event_index": 389,
+      "start_ms": 2564720,
+      "text": "or three years from now you’re going to be writing and you’re going to be saying, ‘What am I trying"
+    },
+    {
+      "end_ms": 2581600,
+      "source_event_index": 390,
+      "start_ms": 2569840,
+      "text": "to do?’\" Before I start a book, I try to get it down to a sentence or at most a paragraph and say,"
+    },
+    {
+      "end_ms": 2587040,
+      "source_event_index": 391,
+      "start_ms": 2581600,
+      "text": "\"Really, what is this book about?\" I try to make everything"
+    },
+    {
+      "end_ms": 2593440,
+      "source_event_index": 392,
+      "start_ms": 2587040,
+      "text": "hang together around that point. Back in August, my sponsor, Jane Street, released"
+    },
+    {
+      "end_ms": 2599120,
+      "source_event_index": 393,
+      "start_ms": 2593440,
+      "text": "the design files for a mystery chip and challenged my audience to figure out its true purpose."
+    },
+    {
+      "end_ms": 2602400,
+      "source_event_index": 394,
+      "start_ms": 2599120,
+      "text": "The challenge is over, and Jane Street has released a blog post highlighting"
+    },
+    {
+      "end_ms": 2606080,
+      "source_event_index": 395,
+      "start_ms": 2602400,
+      "text": "some of their favorite submissions. They also reveal the ASIC's purpose."
+    },
+    {
+      "end_ms": 2609680,
+      "source_event_index": 396,
+      "start_ms": 2606080,
+      "text": "I won't spoil it here, but if you're curious, I've linked to it in the show notes."
+    },
+    {
+      "end_ms": 2613840,
+      "source_event_index": 397,
+      "start_ms": 2609680,
+      "text": "Anish, who helped design the puzzle, walked me through some of the best write-ups."
+    },
+    {
+      "end_ms": 2618800,
+      "source_event_index": 398,
+      "start_ms": 2613840,
+      "text": "I think my favorite submission was probably this insane visualization made by Kjartan van Driel and"
+    },
+    {
+      "end_ms": 2625760,
+      "source_event_index": 399,
+      "start_ms": 2618800,
+      "text": "Leander Post, who started by showing in 3D how a chip is made from standard cells, how all of the"
+    },
+    {
+      "end_ms": 2631600,
+      "source_event_index": 400,
+      "start_ms": 2625760,
+      "text": "metal layers fit together to actually comprise the logic of the chip, and then showed each component"
+    },
+    {
+      "end_ms": 2636960,
+      "source_event_index": 401,
+      "start_ms": 2631600,
+      "text": "of our puzzle design, what it does, and how they reverse-engineered it, before then showing how"
+    },
+    {
+      "end_ms": 2640720,
+      "source_event_index": 402,
+      "start_ms": 2636960,
+      "text": "it all fits back together into the puzzle. Don't worry if you missed this challenge."
+    },
+    {
+      "end_ms": 2643760,
+      "source_event_index": 403,
+      "start_ms": 2640720,
+      "text": "There's a new one live right now. So the goal with this new challenge"
+    },
+    {
+      "end_ms": 2648640,
+      "source_event_index": 404,
+      "start_ms": 2643760,
+      "text": "is we want people to design a hardware protocol emulator chip that can be used to analyze and"
+    },
+    {
+      "end_ms": 2652560,
+      "source_event_index": 405,
+      "start_ms": 2648640,
+      "text": "emulate different communication protocols. And as a bonus, we're going to pay to"
+    },
+    {
+      "end_ms": 2657840,
+      "source_event_index": 406,
+      "start_ms": 2652560,
+      "text": "fabricate our favorite submissions, and you'll actually get your chip back, mounted on a board,"
+    },
+    {
+      "end_ms": 2662480,
+      "source_event_index": 407,
+      "start_ms": 2657840,
+      "text": "ready for you to test in real life. The competition is open until January 18th."
+    },
+    {
+      "end_ms": 2671600,
+      "source_event_index": 408,
+      "start_ms": 2662480,
+      "text": "Go to janestreet.com/dwarkesh to get started. A lot of your books you’ve written before we"
+    },
+    {
+      "end_ms": 2679040,
+      "source_event_index": 409,
+      "start_ms": 2671600,
+      "text": "had digital archives, the internet, and all the resources that made available."
+    },
+    {
+      "end_ms": 2682720,
+      "source_event_index": 410,
+      "start_ms": 2679040,
+      "text": "How much of a difference have those resources made?"
+    },
+    {
+      "end_ms": 2690560,
+      "source_event_index": 411,
+      "start_ms": 2683360,
+      "text": "They’re making a big difference right now. The book I’m doing now, I’m writing about Vietnam."
+    },
+    {
+      "end_ms": 2697120,
+      "source_event_index": 412,
+      "start_ms": 2692160,
+      "text": "Let’s say I want to do a battle. I want to write in detail."
+    },
+    {
+      "end_ms": 2703680,
+      "source_event_index": 413,
+      "start_ms": 2697120,
+      "text": "This just happened. I picked a battle that I wanted to do in detail."
+    },
+    {
+      "end_ms": 2709040,
+      "source_event_index": 414,
+      "start_ms": 2703680,
+      "text": "It’s called the Battle of the Ia Drang Valley. Nobody’s written about it in detail."
+    },
+    {
+      "end_ms": 2716560,
+      "source_event_index": 415,
+      "start_ms": 2709040,
+      "text": "But I could go to my computer and I could look up where the oral histories are from soldiers"
+    },
+    {
+      "end_ms": 2726960,
+      "source_event_index": 416,
+      "start_ms": 2716560,
+      "text": "who fought in that battle, what colleges the oral histories are at, what documents"
+    },
+    {
+      "end_ms": 2733600,
+      "source_event_index": 417,
+      "start_ms": 2726960,
+      "text": "are available, in a way you couldn’t do before. Do you think it would’ve made a big difference"
+    },
+    {
+      "end_ms": 2745200,
+      "source_event_index": 418,
+      "start_ms": 2733600,
+      "text": "when you were writing the earlier volumes? No. It might’ve made things faster, but just the"
+    },
+    {
+      "end_ms": 2753520,
+      "source_event_index": 419,
+      "start_ms": 2745200,
+      "text": "way I am, I would look at the documents anyway. Things would go faster now."
+    },
+    {
+      "end_ms": 2759040,
+      "source_event_index": 420,
+      "start_ms": 2753520,
+      "text": "But I think about what you just asked. I was thinking about it the other day."
+    },
+    {
+      "end_ms": 2766400,
+      "source_event_index": 421,
+      "start_ms": 2759040,
+      "text": "It’s difficult for me to explain it, but I don’t think it would’ve gone any faster."
+    },
+    {
+      "end_ms": 2775520,
+      "source_event_index": 422,
+      "start_ms": 2766400,
+      "text": "I can’t quite tell you why. Certainly you could find the documents faster."
+    },
+    {
+      "end_ms": 2779760,
+      "source_event_index": 423,
+      "start_ms": 2775520,
+      "text": "But finding them is a small thing compared to reading them."
+    },
+    {
+      "end_ms": 2786400,
+      "source_event_index": 424,
+      "start_ms": 2781280,
+      "text": "A question just occurs to me. I’m curious to get your answer."
+    },
+    {
+      "end_ms": 2797120,
+      "source_event_index": 425,
+      "start_ms": 2787200,
+      "text": "If we were able to time travel back to ’75 and I could tell Robert Caro then that these"
+    },
+    {
+      "end_ms": 2805360,
+      "source_event_index": 426,
+      "start_ms": 2798080,
+      "text": "three new volumes on Lyndon Johnson he’s about to embark on will take more than 40 years,"
+    },
+    {
+      "end_ms": 2811360,
+      "source_event_index": 427,
+      "start_ms": 2805360,
+      "text": "how do you think 40-something-year-old Robert Caro would have reacted to that?"
+    },
+    {
+      "end_ms": 2814880,
+      "source_event_index": 428,
+      "start_ms": 2811360,
+      "text": "Would he have been happy? Would he have been afraid?"
+    },
+    {
+      "end_ms": 2830720,
+      "source_event_index": 429,
+      "start_ms": 2814880,
+      "text": "You ask terrific questions. The realization came to me when I was thinking about Johnson."
+    },
+    {
+      "end_ms": 2837760,
+      "source_event_index": 430,
+      "start_ms": 2832240,
+      "text": "I’ll give you a long answer, but this is the accurate answer."
+    },
+    {
+      "end_ms": 2845600,
+      "source_event_index": 431,
+      "start_ms": 2837760,
+      "text": "I had to cut so much out of The Power Broker. I cut out so much stuff that"
+    },
+    {
+      "end_ms": 2851920,
+      "source_event_index": 432,
+      "start_ms": 2845600,
+      "text": "shouldn’t have been cut out. I gave Bob Gottlieb, my editor,"
+    },
+    {
+      "end_ms": 2860560,
+      "source_event_index": 433,
+      "start_ms": 2851920,
+      "text": "a manuscript that was 1,050,000 words long. The most they could fit into one volume — and"
+    },
+    {
+      "end_ms": 2872800,
+      "source_event_index": 434,
+      "start_ms": 2860560,
+      "text": "he really worked at this, because I was determined it would only be one volume — was 700 pages, or"
+    },
+    {
+      "end_ms": 2885280,
+      "source_event_index": 435,
+      "start_ms": 2874320,
+      "text": "about 700,000 words, instead of 1,050,000 words, which meant we had to cut 350,000 words."
+    },
+    {
+      "end_ms": 2893360,
+      "source_event_index": 436,
+      "start_ms": 2885280,
+      "text": "He has said, \"I cut a lot of the best stuff I ever read.\""
+    },
+    {
+      "end_ms": 2899840,
+      "source_event_index": 437,
+      "start_ms": 2893360,
+      "text": "I felt a lot of the stuff that I cut out, it’s tragic that no one knows it."
+    },
+    {
+      "end_ms": 2903920,
+      "source_event_index": 438,
+      "start_ms": 2899840,
+      "text": "To this day, people ask me about things. I say, \"Oh, I wrote that.\""
+    },
+    {
+      "end_ms": 2913600,
+      "source_event_index": 439,
+      "start_ms": 2903920,
+      "text": "Then they say, \"Well, no one ever read it.\" But the way I am, I don’t know that it would’ve"
+    },
+    {
+      "end_ms": 2918400,
+      "source_event_index": 440,
+      "start_ms": 2913600,
+      "text": "changed anything, because as I’m writing the book, I’m saying, \"Oh, this is too long."
+    },
+    {
+      "end_ms": 2922880,
+      "source_event_index": 441,
+      "start_ms": 2918400,
+      "text": "This is going to be too long. I’m going to have to cut so much.\""
+    },
+    {
+      "end_ms": 2930080,
+      "source_event_index": 442,
+      "start_ms": 2922880,
+      "text": "But I don’t seem to have the ability not to write the stuff that I think should be written,"
+    },
+    {
+      "end_ms": 2935440,
+      "source_event_index": 443,
+      "start_ms": 2930080,
+      "text": "even though I know so much of it is going to have to be cut."
+    },
+    {
+      "end_ms": 2944480,
+      "source_event_index": 444,
+      "start_ms": 2935440,
+      "text": "Speaking of which, you have, in the other room here, cabinets and cabinets of notes on"
+    },
+    {
+      "end_ms": 2950640,
+      "source_event_index": 445,
+      "start_ms": 2944480,
+      "text": "interviews, notes as you’re working, things which have never been published before."
+    },
+    {
+      "end_ms": 2956320,
+      "source_event_index": 446,
+      "start_ms": 2950640,
+      "text": "Eventually other historians will be able to study those notes and those documents"
+    },
+    {
+      "end_ms": 2962320,
+      "source_event_index": 447,
+      "start_ms": 2956320,
+      "text": "that you have compiled over your career. What is it that you hope they do with it?"
+    },
+    {
+      "end_ms": 2968160,
+      "source_event_index": 448,
+      "start_ms": 2962320,
+      "text": "What kind of scholarship do you hope for? I cut out so much stuff from"
+    },
+    {
+      "end_ms": 2977120,
+      "source_event_index": 449,
+      "start_ms": 2968160,
+      "text": "the books that I wish people knew. Sometimes you’re reading something and you’re"
+    },
+    {
+      "end_ms": 2985120,
+      "source_event_index": 450,
+      "start_ms": 2977120,
+      "text": "saying, \"Oh, if I had written about that, the newspapers wouldn’t be covering it the same way."
+    },
+    {
+      "end_ms": 2991200,
+      "source_event_index": 451,
+      "start_ms": 2985120,
+      "text": "There’d be a different understanding of it.\" I’ll give you an easy example."
+    },
+    {
+      "end_ms": 2997200,
+      "source_event_index": 452,
+      "start_ms": 2991200,
+      "text": "Sam Rayburn. I have a brief chapter on Rayburn in my books."
+    },
+    {
+      "end_ms": 3004640,
+      "source_event_index": 453,
+      "start_ms": 2997200,
+      "text": "But Rayburn is a great figure in American history. There’s no good biography of Sam Rayburn,"
+    },
+    {
+      "end_ms": 3011120,
+      "source_event_index": 454,
+      "start_ms": 3004640,
+      "text": "yet he ran the House of Representatives. He passed so many of Roosevelt’s"
+    },
+    {
+      "end_ms": 3015920,
+      "source_event_index": 455,
+      "start_ms": 3011120,
+      "text": "bills and other bills. He did so much for America"
+    },
+    {
+      "end_ms": 3024800,
+      "source_event_index": 456,
+      "start_ms": 3015920,
+      "text": "that it’s a tragedy for me that nobody knows it. The material to know it is in those cabinets."
+    },
+    {
+      "end_ms": 3032800,
+      "source_event_index": 457,
+      "start_ms": 3025600,
+      "text": "There happen to be a lot of examples of things where I said, \"Whoa, that stuff didn’t make it"
+    },
+    {
+      "end_ms": 3037520,
+      "source_event_index": 458,
+      "start_ms": 3032800,
+      "text": "into the books,\" but they’re there. I have hundreds of interviews."
+    },
+    {
+      "end_ms": 3042800,
+      "source_event_index": 459,
+      "start_ms": 3038720,
+      "text": "I think I have 700 interviews for The Power Broker alone."
+    },
+    {
+      "end_ms": 3050480,
+      "source_event_index": 460,
+      "start_ms": 3042800,
+      "text": "The notes for those interviews are in the file cabinets: detailed, typed-up notes."
+    },
+    {
+      "end_ms": 3058160,
+      "source_event_index": 461,
+      "start_ms": 3050480,
+      "text": "So there’s a lot of material there that I think would help people"
+    },
+    {
+      "end_ms": 3069520,
+      "source_event_index": 462,
+      "start_ms": 3058160,
+      "text": "understand how New York evolved the way it did. With Johnson, well, I’m writing about it now,"
+    },
+    {
+      "end_ms": 3076000,
+      "source_event_index": 463,
+      "start_ms": 3070320,
+      "text": "things that happened under his presidency. There’s more understanding of it."
+    },
+    {
+      "end_ms": 3080640,
+      "source_event_index": 464,
+      "start_ms": 3076000,
+      "text": "It’s not going to make its way into my books. But they’re going to be there."
+    },
+    {
+      "end_ms": 3086320,
+      "source_event_index": 465,
+      "start_ms": 3080640,
+      "text": "That’s why I gave my archive to the New-York Historical Society."
+    },
+    {
+      "end_ms": 3093360,
+      "source_event_index": 466,
+      "start_ms": 3086320,
+      "text": "Now, I have to say, I was offered a lot more money by other places."
+    },
+    {
+      "end_ms": 3100960,
+      "source_event_index": 467,
+      "start_ms": 3093360,
+      "text": "But I took a lot less money, a great deal less money, an amount that mattered a lot to me,"
+    },
+    {
+      "end_ms": 3106720,
+      "source_event_index": 468,
+      "start_ms": 3100960,
+      "text": "because I wanted them to be easily accessible. I wanted them to be in New York."
+    },
+    {
+      "end_ms": 3114560,
+      "source_event_index": 469,
+      "start_ms": 3108240,
+      "text": "I didn’t want them to be at the University of Texas, where you have to fly down there."
+    },
+    {
+      "end_ms": 3120880,
+      "source_event_index": 470,
+      "start_ms": 3114560,
+      "text": "I wanted it to be in New York. The material is there for a lot of"
+    },
+    {
+      "end_ms": 3127360,
+      "source_event_index": 471,
+      "start_ms": 3120880,
+      "text": "stuff that I never got to put in my books. But it’s there if somebody wants it."
+    },
+    {
+      "end_ms": 3133360,
+      "source_event_index": 472,
+      "start_ms": 3127360,
+      "text": "I’ll give you an example. I wrote so much more."
+    },
+    {
+      "end_ms": 3142720,
+      "source_event_index": 473,
+      "start_ms": 3134480,
+      "text": "I interviewed so many senators, so many assistants to senators, to try and write about the Senate."
+    },
+    {
+      "end_ms": 3151680,
+      "source_event_index": 474,
+      "start_ms": 3142720,
+      "text": "Then I had to cut out or not write or not even go into the vast majority — I don’t want to say 90%,"
+    },
+    {
+      "end_ms": 3156240,
+      "source_event_index": 475,
+      "start_ms": 3151680,
+      "text": "because I don’t really know a percent — of what I learned that is not in the books,"
+    },
+    {
+      "end_ms": 3158160,
+      "source_event_index": 476,
+      "start_ms": 3156240,
+      "text": "but is in the file cabinets."
+    },
+    {
+      "end_ms": 3164720,
+      "source_event_index": 477,
+      "start_ms": 3158960,
+      "text": "So they are there for someone to look at. That's why my archives are in New York."
+    },
+    {
+      "end_ms": 3170706,
+      "source_event_index": 478,
+      "start_ms": 3164720,
+      "text": "It’s great to know that that research will pay dividends through many generations of scholars."
+    },
+    {
+      "end_ms": 3172560,
+      "source_event_index": 479,
+      "start_ms": 3170706,
+      "text": "Well, hope so. Because obviously it"
+    },
+    {
+      "end_ms": 3179120,
+      "source_event_index": 480,
+      "start_ms": 3172560,
+      "text": "will not be possible to interview the folks you interviewed in the ’60s, ’70s, and ’80s again."
+    },
+    {
+      "end_ms": 3188320,
+      "source_event_index": 481,
+      "start_ms": 3179920,
+      "text": "This makes me wonder. In order to paint a picture of the era that you’re writing about,"
+    },
+    {
+      "end_ms": 3195680,
+      "source_event_index": 482,
+      "start_ms": 3188320,
+      "text": "and the eras which shaped Moses and Johnson, in The Power Broker you talk about the Gold Coast"
+    },
+    {
+      "end_ms": 3198880,
+      "source_event_index": 483,
+      "start_ms": 3195680,
+      "text": "in New York and the tenements. In the Johnson biographies,"
+    },
+    {
+      "end_ms": 3202320,
+      "source_event_index": 484,
+      "start_ms": 3198880,
+      "text": "you talk about what the Hill Country was like when the frontier was being settled."
+    },
+    {
+      "end_ms": 3209600,
+      "source_event_index": 485,
+      "start_ms": 3204640,
+      "text": "One thing that’s interesting is that even if Johnson had not become president,"
+    },
+    {
+      "end_ms": 3216080,
+      "source_event_index": 486,
+      "start_ms": 3211440,
+      "text": "the story of what was happening in the Hill Country would still be fascinating."
+    },
+    {
+      "end_ms": 3221840,
+      "source_event_index": 487,
+      "start_ms": 3216080,
+      "text": "It’s an odd thought, but it makes me wonder if you could spend 10-20 years writing the"
+    },
+    {
+      "end_ms": 3228400,
+      "source_event_index": 488,
+      "start_ms": 3221840,
+      "text": "biography of a totally ordinary person, because a lot of what was true about Johnson would have"
+    },
+    {
+      "end_ms": 3231600,
+      "source_event_index": 489,
+      "start_ms": 3228400,
+      "text": "still been fascinating even if his career didn’t end up where it did."
+    },
+    {
+      "end_ms": 3237280,
+      "source_event_index": 490,
+      "start_ms": 3232240,
+      "text": "The example that you give of what the Hill Country was like."
+    },
+    {
+      "end_ms": 3244880,
+      "source_event_index": 491,
+      "start_ms": 3238240,
+      "text": "We see all these Western movies and all. But when I started to learn about the people"
+    },
+    {
+      "end_ms": 3255280,
+      "source_event_index": 492,
+      "start_ms": 3244880,
+      "text": "who settled Johnson City — Lyndon Johnson’s ancestors, but only the generation before him,"
+    },
+    {
+      "end_ms": 3263680,
+      "source_event_index": 493,
+      "start_ms": 3255280,
+      "text": "or at most two generations before him — you say, \"God is this fascinating, what it was like.\""
+    },
+    {
+      "end_ms": 3270480,
+      "source_event_index": 494,
+      "start_ms": 3263680,
+      "text": "What was it like? I wanted to do this book. What was it like to take your"
+    },
+    {
+      "end_ms": 3279200,
+      "source_event_index": 495,
+      "start_ms": 3270480,
+      "text": "family and move them to the frontier? To move them, on one level, to Indian country,"
+    },
+    {
+      "end_ms": 3290240,
+      "source_event_index": 496,
+      "start_ms": 3279200,
+      "text": "where you might find your family massacred one day, and all these other difficulties."
+    },
+    {
+      "end_ms": 3300960,
+      "source_event_index": 497,
+      "start_ms": 3291840,
+      "text": "That’s in my notes, because when I was talking to people, they would talk about their grandfathers,"
+    },
+    {
+      "end_ms": 3309840,
+      "source_event_index": 498,
+      "start_ms": 3300960,
+      "text": "or what their grandfathers told them. When I’m talking to them about Johnson, I’m"
+    },
+    {
+      "end_ms": 3320640,
+      "source_event_index": 499,
+      "start_ms": 3309840,
+      "text": "learning all about what life was like in that era. I said, \"What an amazing, amazing story this is.\""
+    },
+    {
+      "end_ms": 3325840,
+      "source_event_index": 500,
+      "start_ms": 3320640,
+      "text": "You say, \"Well, there are a lot of books on it.\" I happen to think there are not enough."
+    },
+    {
+      "end_ms": 3332720,
+      "source_event_index": 501,
+      "start_ms": 3325840,
+      "text": "What’s also so amazing is just how different of a country it was."
+    },
+    {
+      "end_ms": 3339280,
+      "source_event_index": 502,
+      "start_ms": 3332720,
+      "text": "You think about Johnson growing up in Johnson City, in this tiny little lonely town, and"
+    },
+    {
+      "end_ms": 3348400,
+      "source_event_index": 503,
+      "start_ms": 3339280,
+      "text": "even then being on a ranch that is tens of miles away from the city, versus America in the ’60s."
+    },
+    {
+      "end_ms": 3352480,
+      "source_event_index": 504,
+      "start_ms": 3348400,
+      "text": "It’s such a different place. I wonder if Johnson ever felt some"
+    },
+    {
+      "end_ms": 3358800,
+      "source_event_index": 505,
+      "start_ms": 3352480,
+      "text": "shock at how different his upbringing was from the country he was leading."
+    },
+    {
+      "end_ms": 3373840,
+      "source_event_index": 506,
+      "start_ms": 3359440,
+      "text": "The answer is yes. He was very aware of the frontier, of what his grandfather’s land was like."
+    },
+    {
+      "end_ms": 3379360,
+      "source_event_index": 507,
+      "start_ms": 3373840,
+      "text": "When he grew up in Johnson City — in the outskirts on the Johnson Ranch,"
+    },
+    {
+      "end_ms": 3387040,
+      "source_event_index": 508,
+      "start_ms": 3379360,
+      "text": "which after all was 18 miles beyond Johnson City — what it was like to grow up on a ranch"
+    },
+    {
+      "end_ms": 3396400,
+      "source_event_index": 509,
+      "start_ms": 3387040,
+      "text": "like that… In so many ways it was different. It formed your character in a different way."
+    },
+    {
+      "end_ms": 3404080,
+      "source_event_index": 510,
+      "start_ms": 3396400,
+      "text": "Loneliness is a big deal. I wrote a section,"
+    },
+    {
+      "end_ms": 3411440,
+      "source_event_index": 511,
+      "start_ms": 3404080,
+      "text": "and then I had to cut it down to about three pages, on his mother and how lonely she was."
+    },
+    {
+      "end_ms": 3419280,
+      "source_event_index": 512,
+      "start_ms": 3411440,
+      "text": "What it was like for people to settle their farms and ranches where there was nobody around you."
+    },
+    {
+      "end_ms": 3426400,
+      "source_event_index": 513,
+      "start_ms": 3419280,
+      "text": "I think I have a line where she could walk out in the afternoon and walk up on a hill,"
+    },
+    {
+      "end_ms": 3432720,
+      "source_event_index": 514,
+      "start_ms": 3426400,
+      "text": "and there was nothing to see but more hills. There were no other houses near there."
+    },
+    {
+      "end_ms": 3443360,
+      "source_event_index": 515,
+      "start_ms": 3432720,
+      "text": "I myself was shocked. I was trying to interview everybody who grew up with"
+    },
+    {
+      "end_ms": 3453600,
+      "source_event_index": 516,
+      "start_ms": 3443360,
+      "text": "Lyndon Johnson, so they were elderly people. You’d call an elderly woman, and she’d say,"
+    },
+    {
+      "end_ms": 3465840,
+      "source_event_index": 517,
+      "start_ms": 3455840,
+      "text": "\"You drive out of Austin 22 miles and look on your left, you’ll find a cattle guard."
+    },
+    {
+      "end_ms": 3470480,
+      "source_event_index": 518,
+      "start_ms": 3466720,
+      "text": "There’s a dirt road there. You turn left on the dirt road,"
+    },
+    {
+      "end_ms": 3478000,
+      "source_event_index": 519,
+      "start_ms": 3470480,
+      "text": "and it’s 22 miles to our farm.\" And you say, \"I drove 22 miles."
+    },
+    {
+      "end_ms": 3482080,
+      "source_event_index": 520,
+      "start_ms": 3478000,
+      "text": "I didn’t pass another house. I didn’t pass another person.\""
+    },
+    {
+      "end_ms": 3490800,
+      "source_event_index": 521,
+      "start_ms": 3482080,
+      "text": "And this woman is living there all her life. With all the wonderful books that have been"
+    },
+    {
+      "end_ms": 3501440,
+      "source_event_index": 522,
+      "start_ms": 3490800,
+      "text": "written, I’m not sure that America understands the heroism of, forgetting Indians and raiders,"
+    },
+    {
+      "end_ms": 3509680,
+      "source_event_index": 523,
+      "start_ms": 3501440,
+      "text": "just the loneliness of what life was like for these people."
+    },
+    {
+      "end_ms": 3515360,
+      "source_event_index": 524,
+      "start_ms": 3509680,
+      "text": "I want to close on that, on loneliness, because obviously you’re not living on a"
+    },
+    {
+      "end_ms": 3518240,
+      "source_event_index": 525,
+      "start_ms": 3515360,
+      "text": "ranch in the middle of nowhere. You’re living in New York City."
+    },
+    {
+      "end_ms": 3528080,
+      "source_event_index": 526,
+      "start_ms": 3518240,
+      "text": "But you and Ina have together basically been working alone for so long."
+    },
+    {
+      "end_ms": 3535280,
+      "source_event_index": 527,
+      "start_ms": 3528080,
+      "text": "How has loneliness affected your work and also your life?"
+    },
+    {
+      "end_ms": 3544720,
+      "source_event_index": 528,
+      "start_ms": 3536320,
+      "text": "Great question. A lot. Let me think how I can say this."
+    },
+    {
+      "end_ms": 3562000,
+      "source_event_index": 529,
+      "start_ms": 3549680,
+      "text": "I come here in the morning. I turn off my telephone."
+    },
+    {
+      "end_ms": 3572160,
+      "source_event_index": 530,
+      "start_ms": 3563840,
+      "text": "I’m not going to talk to anybody all day. I’m a friendly guy."
+    },
+    {
+      "end_ms": 3580640,
+      "source_event_index": 531,
+      "start_ms": 3575440,
+      "text": "Sometimes that very fact is hard, as a matter of fact."
+    },
+    {
+      "end_ms": 3586800,
+      "source_event_index": 532,
+      "start_ms": 3580640,
+      "text": "You’d like to pick up the phone and chat with somebody, but you say,"
+    },
+    {
+      "end_ms": 3591440,
+      "source_event_index": 533,
+      "start_ms": 3586800,
+      "text": "\"I’m concentrating on the book. I can’t do that. It’s going"
+    },
+    {
+      "end_ms": 3600800,
+      "source_event_index": 534,
+      "start_ms": 3591440,
+      "text": "to break the concentration.\" That sounds like such a phony thing."
+    },
+    {
+      "end_ms": 3610480,
+      "source_event_index": 535,
+      "start_ms": 3600800,
+      "text": "But you say, \"I can’t really do that. I’m trying to think about this other thing.\""
+    },
+    {
+      "end_ms": 3622080,
+      "source_event_index": 536,
+      "start_ms": 3610480,
+      "text": "I think it’s impacted my entire life. Some people understand, but some people"
+    },
+    {
+      "end_ms": 3628080,
+      "source_event_index": 537,
+      "start_ms": 3622080,
+      "text": "don’t understand that you don’t call them back. If people call me, I’m not going to call"
+    },
+    {
+      "end_ms": 3634080,
+      "source_event_index": 538,
+      "start_ms": 3628080,
+      "text": "them back till the end of the day. I have friends who understand that,"
+    },
+    {
+      "end_ms": 3642880,
+      "source_event_index": 539,
+      "start_ms": 3634080,
+      "text": "but a lot of people don’t understand that. So that’s a fact of my life."
+    },
+    {
+      "end_ms": 3647920,
+      "source_event_index": 540,
+      "start_ms": 3644320,
+      "text": "Robert Caro, I can’t tell you how much of an honor it’s been."
+    },
+    {
+      "end_ms": 3653840,
+      "source_event_index": 541,
+      "start_ms": 3647920,
+      "text": "For six years that I’ve had this podcast, people will ask me, \"Who is the person you most want to"
+    },
+    {
+      "end_ms": 3659120,
+      "source_event_index": 542,
+      "start_ms": 3653840,
+      "text": "have on that you haven’t had on the podcast?\" Every single time, I’ve said Robert Caro."
+    },
+    {
+      "end_ms": 3662000,
+      "source_event_index": 543,
+      "start_ms": 3659120,
+      "text": "So it’s a huge, huge honor. Thank you so much for doing this."
+    },
+    {
+      "end_ms": 3667200,
+      "source_event_index": 544,
+      "start_ms": 3662000,
+      "text": "It was a terrific interview. Thank you very much."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-66304a5f45655734324c6f-robert-caro/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "55677363ebb10f656b2bccabe15ac0349865bb4d6900a2e8b7403067aa419447"
+  },
+  "translation": {
+    "engine": "codex-subagent",
+    "event_count": 545,
+    "generated_at": "2026-11-21T09:14:12.471394+00:00",
+    "language": "zh-CN",
+    "model": "gpt-6-luna",
+    "model_revision": null,
+    "model_version_visibility": "not-exposed",
+    "payload_path": "shows/dwarkesh/episodes/youtube-66304a5f45655734324c6f-robert-caro/translation.zh-CN.json",
+    "payload_sha256": "26325224f16b1c3358a692deba74c4691c94e1f4d4f1f41822596084fd10e830",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-66304a5f45655734324c6f-robert-caro/transcript.zh-CN.md",
+    "rendered_sha256": "3d6ba2ff3b4b22850a20481169b99689118e6fdebdfd3f6009b78dbc0c0f7de7",
+    "source_payload_sha256": "021296ec3ffae3a525f31d6a0f19e49af4f43d05b0e0be792ad7441295dc7804",
+    "source_transcript_sha256": "c3bc019bd9be430036ec47b2014e67b93b8fac5265ad058c8cd10a0763e2f031",
+    "track_type": "subagent-machine-translation"
+  }
+}
