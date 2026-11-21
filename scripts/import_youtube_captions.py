@@ -196,55 +196,56 @@ def local_translation_segments(
         "source_transcript_sha256": sha256_bytes(source_transcript),
     }
     if not isinstance(document, dict):
-        raise ValueError("local translation must be an object")
+        raise ValueError("segment translation must be an object")
     for key, value in expected.items():
         if type(document.get(key)) is not type(value) or document.get(key) != value:
-            raise ValueError(f"local translation {key} does not match the frozen source")
+            raise ValueError(f"segment translation {key} does not match the frozen source")
     for key in ("engine", "model", "generated_at"):
         if not isinstance(document.get(key), str) or not document[key].strip():
-            raise ValueError(f"local translation requires {key}")
+            raise ValueError(f"segment translation requires {key}")
     revision = document.get("model_revision")
     web_translation = document["engine"] == "google-translate-web"
-    if web_translation:
-        # The web service exposes a model label, not an immutable model version.
-        # Record that limitation explicitly instead of inventing a commit pin.
+    subagent_translation = document["engine"] == "codex-subagent"
+    if web_translation or subagent_translation:
+        expected_model = "Advanced (Gemini)" if web_translation else "gpt-6-luna"
         if (
-            document["model"] != "Advanced (Gemini)"
+            document["model"] != expected_model
             or "model_revision" not in document
             or revision is not None
             or document.get("model_version_visibility") != "not-exposed"
-            or document.get("provider_url") != "https://translate.google.com/"
         ):
-            raise ValueError("web translation requires its observed provider and model label")
+            raise ValueError("hosted translation requires its observed model and revision visibility")
+        if web_translation and document.get("provider_url") != "https://translate.google.com/":
+            raise ValueError("web translation requires its observed provider")
     elif not isinstance(revision, str) or re.fullmatch(r"[0-9a-f]{40}", revision) is None:
         raise ValueError("local translation requires a pinned model revision")
     try:
         timestamp = datetime.fromisoformat(document["generated_at"].replace("Z", "+00:00"))
     except ValueError as error:
-        raise ValueError("local translation generated_at must be RFC 3339") from error
+        raise ValueError("segment translation generated_at must be RFC 3339") from error
     if timestamp.tzinfo is None:
-        raise ValueError("local translation generated_at requires a timezone")
+        raise ValueError("segment translation generated_at requires a timezone")
     segments = document.get("segments")
     if not isinstance(segments, list) or len(segments) != len(source_segments):
-        raise ValueError("local translation must preserve the complete segment count")
+        raise ValueError("segment translation must preserve the complete segment count")
     for segment in segments:
         if not isinstance(segment, dict):
-            raise ValueError("local translation segment must be an object")
+            raise ValueError("segment translation row must be an object")
         for key in ("source_event_index", "start_ms", "end_ms"):
             if type(segment.get(key)) is not int:
-                raise ValueError(f"local translation {key} must be an integer")
+                raise ValueError(f"segment translation {key} must be an integer")
         value = segment.get("text")
         if not isinstance(value, str) or not value.strip() or "\n" in value or "\r" in value:
-            raise ValueError("local translation text must be a non-empty single line")
+            raise ValueError("segment translation text must be a non-empty single line")
     validate_aligned_translation(source_segments, segments)
     provenance = {key: document[key] for key in (
         "engine", "model", "model_revision", "generated_at",
         "source_payload_sha256", "source_transcript_sha256",
     )}
+    if web_translation or subagent_translation:
+        provenance["model_version_visibility"] = document["model_version_visibility"]
     if web_translation:
-        provenance.update({key: document[key] for key in (
-            "provider_url", "model_version_visibility",
-        )})
+        provenance["provider_url"] = document["provider_url"]
     return segments, provenance
 
 
@@ -366,11 +367,10 @@ def build_outputs(
             translation_payload_bytes, source_payload=source_payload_bytes,
             source_transcript=source_transcript, source_segments=source_segments,
         )
-        translation_provenance["track_type"] = (
-            "web-machine-translation"
-            if translation_provenance["engine"] == "google-translate-web"
-            else "local-machine-translation"
-        )
+        translation_provenance["track_type"] = {
+            "google-translate-web": "web-machine-translation",
+            "codex-subagent": "subagent-machine-translation",
+        }.get(translation_provenance["engine"], "local-machine-translation")
         translation_provenance["payload_path"] = str(
             Path(translation_repository_path).with_name("translation.zh-CN.json")
         )

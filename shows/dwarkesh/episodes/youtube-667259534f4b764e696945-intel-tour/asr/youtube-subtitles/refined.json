@@ -1,0 +1,5120 @@
+{
+  "generated_at": "2026-11-21T08:39:05.376486Z",
+  "kind": "podwiki-youtube-subtitle-refined",
+  "rendered_transcript": {
+    "path": "shows/dwarkesh/episodes/youtube-667259534f4b764e696945-intel-tour/asr/youtube-subtitles/transcript.en.md",
+    "sha256": "749cb9b58dc32090235a24e5af24dff51a68d3c0600add0b05ed3e93cdbc7b14"
+  },
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 3680,
+      "source_event_index": 0,
+      "start_ms": 320,
+      "text": "There’s never been as big a shock to the semiconductor industry"
+    },
+    {
+      "end_ms": 9760,
+      "source_event_index": 1,
+      "start_ms": 3680,
+      "text": "as the current surge in demand from AI. AI is driving incredible computing demand."
+    },
+    {
+      "end_ms": 13920,
+      "source_event_index": 2,
+      "start_ms": 9760,
+      "text": "Easily 40-50% above our maximum capacity, which I’ve never seen before."
+    },
+    {
+      "end_ms": 17680,
+      "source_event_index": 3,
+      "start_ms": 13920,
+      "text": "Progress in AI has been driven by exponentially increasing compute."
+    },
+    {
+      "end_ms": 21440,
+      "source_event_index": 4,
+      "start_ms": 17680,
+      "text": "To sustain that progress, foundries like Intel will need to manufacture far more"
+    },
+    {
+      "end_ms": 26560,
+      "source_event_index": 5,
+      "start_ms": 21440,
+      "text": "leading-edge compute, both by producing more chips and by improving what each chip can do."
+    },
+    {
+      "end_ms": 31280,
+      "source_event_index": 6,
+      "start_ms": 26560,
+      "text": "But the production of these chips is bottlenecked by tools that Intel buys from their suppliers."
+    },
+    {
+      "end_ms": 34880,
+      "source_event_index": 7,
+      "start_ms": 31280,
+      "text": "Most famously, ASML’s EUV machines. If they don’t have the equipment,"
+    },
+    {
+      "end_ms": 38000,
+      "source_event_index": 8,
+      "start_ms": 34880,
+      "text": "they can’t make the chips here. I spent two days touring Intel’s fabs to"
+    },
+    {
+      "end_ms": 42240,
+      "source_event_index": 9,
+      "start_ms": 38000,
+      "text": "prepare for these interviews with its leadership. I wanted to understand what it takes to"
+    },
+    {
+      "end_ms": 47760,
+      "source_event_index": 10,
+      "start_ms": 42240,
+      "text": "manufacture the world’s most advanced chips and how hardware is shaping the future of AI."
+    },
+    {
+      "end_ms": 51120,
+      "source_event_index": 11,
+      "start_ms": 47760,
+      "text": "I’m joined by Chris Auth, who leads development of all the processes"
+    },
+    {
+      "end_ms": 54400,
+      "source_event_index": 12,
+      "start_ms": 51120,
+      "text": "that are currently under manufacturing. The thing I want to understand in more"
+    },
+    {
+      "end_ms": 60160,
+      "source_event_index": 13,
+      "start_ms": 54400,
+      "text": "concrete detail is how the development of a new process actually happens."
+    },
+    {
+      "end_ms": 63600,
+      "source_event_index": 14,
+      "start_ms": 60160,
+      "text": "If 14A is going to come out in three years or two years from now,"
+    },
+    {
+      "end_ms": 67840,
+      "source_event_index": 15,
+      "start_ms": 63600,
+      "text": "what is happening from now till then? I want you to walk me through as much"
+    },
+    {
+      "end_ms": 72000,
+      "source_event_index": 16,
+      "start_ms": 67840,
+      "text": "detail as you can, everything from the level of “how is the yield improving?” to what"
+    },
+    {
+      "end_ms": 75440,
+      "source_event_index": 17,
+      "start_ms": 72000,
+      "text": "kind of telemetry you guys look at? What kind of experiments do you guys run?"
+    },
+    {
+      "end_ms": 80160,
+      "source_event_index": 18,
+      "start_ms": 75440,
+      "text": "I want to understand what is going to happen over the next two years as concretely as possible."
+    },
+    {
+      "end_ms": 87840,
+      "source_event_index": 19,
+      "start_ms": 82800,
+      "text": "14A has been in development for about three-plus years at this stage,"
+    },
+    {
+      "end_ms": 92240,
+      "source_event_index": 20,
+      "start_ms": 88400,
+      "text": "so quite a bit of pre-work has been done to get it to the stage that it’s at right now."
+    },
+    {
+      "end_ms": 95360,
+      "source_event_index": 21,
+      "start_ms": 92240,
+      "text": "Right now, we’re getting very close to where we’re finalizing the process."
+    },
+    {
+      "end_ms": 98720,
+      "source_event_index": 22,
+      "start_ms": 95360,
+      "text": "We’re finalizing the tool sets that it will be manufactured on,"
+    },
+    {
+      "end_ms": 102480,
+      "source_event_index": 23,
+      "start_ms": 98720,
+      "text": "and we’re working on the fine-tuning of each of the process steps."
+    },
+    {
+      "end_ms": 106480,
+      "source_event_index": 24,
+      "start_ms": 102480,
+      "text": "There are about 2,000 steps in the factory that you have to go do."
+    },
+    {
+      "end_ms": 111040,
+      "source_event_index": 25,
+      "start_ms": 106480,
+      "text": "You need to do really intricate work at each one of those to make sure it’s fine-tuned,"
+    },
+    {
+      "end_ms": 115840,
+      "source_event_index": 26,
+      "start_ms": 111040,
+      "text": "it can go into manufacturing, it can run thousands of wafers a week on this process,"
+    },
+    {
+      "end_ms": 120400,
+      "source_event_index": 27,
+      "start_ms": 115840,
+      "text": "and it can be repeatable every single time. Right now, you might have a certain yield."
+    },
+    {
+      "end_ms": 123680,
+      "source_event_index": 28,
+      "start_ms": 120400,
+      "text": "Walk me through how that increases month over month."
+    },
+    {
+      "end_ms": 127120,
+      "source_event_index": 29,
+      "start_ms": 123680,
+      "text": "There’s a line running at 14A. What happens from now till next"
+    },
+    {
+      "end_ms": 130960,
+      "source_event_index": 30,
+      "start_ms": 127120,
+      "text": "month that will result in the yield changing? How do you identify where the defects are?"
+    },
+    {
+      "end_ms": 133600,
+      "source_event_index": 31,
+      "start_ms": 130960,
+      "text": "How do you fix that? There’s a constant"
+    },
+    {
+      "end_ms": 138880,
+      "source_event_index": 32,
+      "start_ms": 133600,
+      "text": "process that we go through in identifying defects. There are two main ways that we’ll identify them."
+    },
+    {
+      "end_ms": 142560,
+      "source_event_index": 33,
+      "start_ms": 138880,
+      "text": "One is we have inline metrology. We have tools that will look at"
+    },
+    {
+      "end_ms": 146640,
+      "source_event_index": 34,
+      "start_ms": 142560,
+      "text": "the wafers and say, “Ah, there’s a defect there, there’s a defect there, there’s a defect there.”"
+    },
+    {
+      "end_ms": 152480,
+      "source_event_index": 35,
+      "start_ms": 146640,
+      "text": "Then also at the end of line, either electrical test or we sort and see where the fails are."
+    },
+    {
+      "end_ms": 156800,
+      "source_event_index": 36,
+      "start_ms": 152480,
+      "text": "We will identify failures, and then we will get analysis on those failures."
+    },
+    {
+      "end_ms": 160640,
+      "source_event_index": 37,
+      "start_ms": 156800,
+      "text": "We’ll cross-section it. You were in the TEM lab yesterday,"
+    },
+    {
+      "end_ms": 163760,
+      "source_event_index": 38,
+      "start_ms": 160640,
+      "text": "and you saw how you can get cross-sections. You’ll get a cross-section of a defect,"
+    },
+    {
+      "end_ms": 167840,
+      "source_event_index": 39,
+      "start_ms": 163760,
+      "text": "and from that, you’ll be able to say, “Oh, that defect is between these layers, so it"
+    },
+    {
+      "end_ms": 173040,
+      "source_event_index": 40,
+      "start_ms": 167840,
+      "text": "must have come from this section of the flow. Oh, we have inline metrology in that section,"
+    },
+    {
+      "end_ms": 177200,
+      "source_event_index": 41,
+      "start_ms": 173040,
+      "text": "which has identified defects. Those are the defects we need to go after.”"
+    },
+    {
+      "end_ms": 182000,
+      "source_event_index": 42,
+      "start_ms": 177200,
+      "text": "What we’ve learned is that you don’t want to do too much innovation in one node,"
+    },
+    {
+      "end_ms": 185920,
+      "source_event_index": 43,
+      "start_ms": 182000,
+      "text": "because the more innovation that you do, the more complex it becomes."
+    },
+    {
+      "end_ms": 190160,
+      "source_event_index": 44,
+      "start_ms": 185920,
+      "text": "While you’ll be able to get that to work, you need to hit a certain schedule, and that’s the"
+    },
+    {
+      "end_ms": 194480,
+      "source_event_index": 45,
+      "start_ms": 190160,
+      "text": "schedule that your customer ultimately wants. Having that predictable schedule is a key piece."
+    },
+    {
+      "end_ms": 200080,
+      "source_event_index": 46,
+      "start_ms": 194480,
+      "text": "You’ve got to figure out how much innovation you can put in in order to meet the customer’s"
+    },
+    {
+      "end_ms": 204240,
+      "source_event_index": 47,
+      "start_ms": 200080,
+      "text": "requirements in the timeline that they need it. Intel learned how costly that tradeoff can"
+    },
+    {
+      "end_ms": 208880,
+      "source_event_index": 48,
+      "start_ms": 204240,
+      "text": "be with delays to its 10 nanometer node, whose original target launch date was 2016,"
+    },
+    {
+      "end_ms": 214880,
+      "source_event_index": 49,
+      "start_ms": 208880,
+      "text": "but which didn’t begin manufacturing until 2018. Usually Intel has been the keeper of Moore’s Law,"
+    },
+    {
+      "end_ms": 218800,
+      "source_event_index": 50,
+      "start_ms": 214880,
+      "text": "a new cadence of manufacturing every two years, but their last"
+    },
+    {
+      "end_ms": 224320,
+      "source_event_index": 51,
+      "start_ms": 218800,
+      "text": "set of products slipped almost four years. Intel today having its worst day in four months,"
+    },
+    {
+      "end_ms": 229360,
+      "source_event_index": 52,
+      "start_ms": 224320,
+      "text": "the stock now down more than 15%. I also want to point out Taiwan"
+    },
+    {
+      "end_ms": 237200,
+      "source_event_index": 53,
+      "start_ms": 229360,
+      "text": "Semiconductor up 13% off of Intel’s bad news. Walk me through what lessons you think Intel"
+    },
+    {
+      "end_ms": 241760,
+      "source_event_index": 54,
+      "start_ms": 237200,
+      "text": "has learned from 10 nanometer. Ten nanometer was a good example"
+    },
+    {
+      "end_ms": 246560,
+      "source_event_index": 55,
+      "start_ms": 241760,
+      "text": "of where we had very aggressive targets. We were doing what was called hyperscaling"
+    },
+    {
+      "end_ms": 250640,
+      "source_event_index": 56,
+      "start_ms": 246560,
+      "text": "at the time, so we were scaling much faster than what had been historically done."
+    },
+    {
+      "end_ms": 258160,
+      "source_event_index": 57,
+      "start_ms": 250640,
+      "text": "In order to do that, we came up with all sorts of innovative ideas on how we could achieve that"
+    },
+    {
+      "end_ms": 263040,
+      "source_event_index": 58,
+      "start_ms": 258880,
+      "text": "without new tools, because the tools weren’t ready."
+    },
+    {
+      "end_ms": 266560,
+      "source_event_index": 59,
+      "start_ms": 263040,
+      "text": "That put a lot of burden on the process and a lot of burden on the engineers."
+    },
+    {
+      "end_ms": 270480,
+      "source_event_index": 60,
+      "start_ms": 267520,
+      "text": "Now, at the end of the day, 10 nanometer is a great technology."
+    },
+    {
+      "end_ms": 274480,
+      "source_event_index": 61,
+      "start_ms": 270480,
+      "text": "It has world-class yield, it has world-class performance, it has world-class cost,"
+    },
+    {
+      "end_ms": 278240,
+      "source_event_index": 62,
+      "start_ms": 274480,
+      "text": "but it took us longer to do that than what we would have liked."
+    },
+    {
+      "end_ms": 283120,
+      "source_event_index": 63,
+      "start_ms": 278240,
+      "text": "So we’ve tried to take that learning into future technology nodes and say, “Hey, we"
+    },
+    {
+      "end_ms": 286800,
+      "source_event_index": 64,
+      "start_ms": 283120,
+      "text": "need to limit the amount of innovation we put in there to make sure that we keep it on schedule.”"
+    },
+    {
+      "end_ms": 292160,
+      "source_event_index": 65,
+      "start_ms": 286800,
+      "text": "What do you think was the main technology that should’ve been saved for a future version?"
+    },
+    {
+      "end_ms": 296400,
+      "source_event_index": 66,
+      "start_ms": 292160,
+      "text": "EUV was probably the big thing. When we started to define 10 nanometer,"
+    },
+    {
+      "end_ms": 303200,
+      "source_event_index": 67,
+      "start_ms": 296400,
+      "text": "the conclusion was EUV was not ready. EUV is extreme ultraviolet lithography."
+    },
+    {
+      "end_ms": 307520,
+      "source_event_index": 68,
+      "start_ms": 303200,
+      "text": "It prints chip patterns with light at a wavelength of 13.5 nanometers,"
+    },
+    {
+      "end_ms": 313440,
+      "source_event_index": 69,
+      "start_ms": 307520,
+      "text": "about 14 times shorter than that emitted by previous tools that chipmakers had relied on."
+    },
+    {
+      "end_ms": 318000,
+      "source_event_index": 70,
+      "start_ms": 313440,
+      "text": "The shorter the wavelength, the finer the features that a single exposure can print."
+    },
+    {
+      "end_ms": 321760,
+      "source_event_index": 71,
+      "start_ms": 318000,
+      "text": "But Intel decided this technology wasn’t going to be ready in time."
+    },
+    {
+      "end_ms": 324960,
+      "source_event_index": 72,
+      "start_ms": 321760,
+      "text": "TSMC transitioned to EUV much sooner."
+    },
+    {
+      "end_ms": 332480,
+      "source_event_index": 73,
+      "start_ms": 324960,
+      "text": "It put EUV into volume manufacturing in 2019 and ramped it up further on its 5nm node in 2020."
+    },
+    {
+      "end_ms": 338800,
+      "source_event_index": 74,
+      "start_ms": 332480,
+      "text": "Intel’s first EUV process did not reach products until 2023, so TSMC had about four more years"
+    },
+    {
+      "end_ms": 343920,
+      "source_event_index": 75,
+      "start_ms": 338800,
+      "text": "of experience with these machines. Yesterday, we were at the research"
+    },
+    {
+      "end_ms": 350880,
+      "source_event_index": 76,
+      "start_ms": 343920,
+      "text": "lab getting a preview of 2D materials and CFET and ruthenium interconnects."
+    },
+    {
+      "end_ms": 355520,
+      "source_event_index": 77,
+      "start_ms": 350880,
+      "text": "I’m curious about how you decide whether that technology is mature enough for the next node."
+    },
+    {
+      "end_ms": 360640,
+      "source_event_index": 78,
+      "start_ms": 355520,
+      "text": "One thing that did also come out of 10 nanometer is we started to define a set of maturity metrics."
+    },
+    {
+      "end_ms": 365440,
+      "source_event_index": 79,
+      "start_ms": 360640,
+      "text": "We use those maturity metrics in a process which we call phase gate, where we would say,"
+    },
+    {
+      "end_ms": 370000,
+      "source_event_index": 80,
+      "start_ms": 365440,
+      "text": "“To go from pathfinding into development, these are the criteria that we need to go hit.”"
+    },
+    {
+      "end_ms": 374080,
+      "source_event_index": 81,
+      "start_ms": 370000,
+      "text": "There are yield criteria, defect criteria, performance criteria, and we need to hit those"
+    },
+    {
+      "end_ms": 378000,
+      "source_event_index": 82,
+      "start_ms": 374080,
+      "text": "in order to move to the next set of the flow. If there’s something that doesn’t make that,"
+    },
+    {
+      "end_ms": 381200,
+      "source_event_index": 83,
+      "start_ms": 378000,
+      "text": "then it misses that, and it goes on to the next technology."
+    },
+    {
+      "end_ms": 386960,
+      "source_event_index": 84,
+      "start_ms": 381200,
+      "text": "We focus on the items that are ready and we can run and put into a process, because"
+    },
+    {
+      "end_ms": 391200,
+      "source_event_index": 85,
+      "start_ms": 386960,
+      "text": "one of the key things is staying on schedule. Staying on schedule is hard partly because new"
+    },
+    {
+      "end_ms": 395440,
+      "source_event_index": 86,
+      "start_ms": 391200,
+      "text": "transistor designs take decades to mature. Modern chip transistors evolved from the"
+    },
+    {
+      "end_ms": 401280,
+      "source_event_index": 87,
+      "start_ms": 395440,
+      "text": "planar MOS transistor, demonstrated in 1960. The history of transistors since has been"
+    },
+    {
+      "end_ms": 406640,
+      "source_event_index": 88,
+      "start_ms": 401280,
+      "text": "the progression from two dimensions into three. Each development that Chris goes on to describe,"
+    },
+    {
+      "end_ms": 410400,
+      "source_event_index": 89,
+      "start_ms": 406640,
+      "text": "from FinFET to gate-all-around, is a step in that progression."
+    },
+    {
+      "end_ms": 415520,
+      "source_event_index": 90,
+      "start_ms": 410400,
+      "text": "So it’ll help to first look at a basic transistor and how its parts have changed over time."
+    },
+    {
+      "end_ms": 420240,
+      "source_event_index": 91,
+      "start_ms": 415520,
+      "text": "A transistor is basically a switch. When it’s turned on, it allows current"
+    },
+    {
+      "end_ms": 425360,
+      "source_event_index": 92,
+      "start_ms": 420240,
+      "text": "to flow between its two ends, which are called the source and the drain."
+    },
+    {
+      "end_ms": 431280,
+      "source_event_index": 93,
+      "start_ms": 425360,
+      "text": "A piece called a gate sits on top of the silicon between the source and the drain."
+    },
+    {
+      "end_ms": 436080,
+      "source_event_index": 94,
+      "start_ms": 431280,
+      "text": "Applying a positive voltage to the gate turns the switch on, because the positive"
+    },
+    {
+      "end_ms": 442080,
+      "source_event_index": 95,
+      "start_ms": 436080,
+      "text": "voltage pulls negatively charged electrons in the silicon beneath up toward the gate."
+    },
+    {
+      "end_ms": 445920,
+      "source_event_index": 96,
+      "start_ms": 442080,
+      "text": "However, a thin layer of insulation stops them from actually reaching the gate."
+    },
+    {
+      "end_ms": 452080,
+      "source_event_index": 97,
+      "start_ms": 445920,
+      "text": "So the electrons collect just beneath that insulation and form a thin conducting path"
+    },
+    {
+      "end_ms": 456000,
+      "source_event_index": 98,
+      "start_ms": 452080,
+      "text": "from the source to the drain. This is called the channel."
+    },
+    {
+      "end_ms": 461280,
+      "source_event_index": 99,
+      "start_ms": 456000,
+      "text": "Remove the voltage and the electrons disperse, the channel disappears, and the switch turns off."
+    },
+    {
+      "end_ms": 465440,
+      "source_event_index": 100,
+      "start_ms": 461280,
+      "text": "As transistors shrank, the source and the drain got so close together"
+    },
+    {
+      "end_ms": 470240,
+      "source_event_index": 101,
+      "start_ms": 465440,
+      "text": "that current could flow through the channel even when the switch was supposed to be off."
+    },
+    {
+      "end_ms": 474960,
+      "source_event_index": 102,
+      "start_ms": 470240,
+      "text": "We needed a better way to control the channel and prevent current from leaking through."
+    },
+    {
+      "end_ms": 480320,
+      "source_event_index": 103,
+      "start_ms": 474960,
+      "text": "The fix was to give the gate a tighter grip on the channel by touching it from more sides."
+    },
+    {
+      "end_ms": 484880,
+      "source_event_index": 104,
+      "start_ms": 480320,
+      "text": "In the original planar transistor, the gate only touches the channel from the top."
+    },
+    {
+      "end_ms": 489520,
+      "source_event_index": 105,
+      "start_ms": 484880,
+      "text": "The FinFET transistor squeezes the channel into a thin vertical fin of silicon."
+    },
+    {
+      "end_ms": 494480,
+      "source_event_index": 106,
+      "start_ms": 489520,
+      "text": "The gate drapes over the fin, so it controls the channel from three sides."
+    },
+    {
+      "end_ms": 497520,
+      "source_event_index": 107,
+      "start_ms": 494480,
+      "text": "The next progression from there was to cover not only the top and"
+    },
+    {
+      "end_ms": 502000,
+      "source_event_index": 108,
+      "start_ms": 497520,
+      "text": "the sides of the channel, but also the bottom. This technology is called gate-all-around, and"
+    },
+    {
+      "end_ms": 507440,
+      "source_event_index": 109,
+      "start_ms": 502000,
+      "text": "it slices the channel into thin ribbons, each of which gets completely wrapped around by the gate."
+    },
+    {
+      "end_ms": 511760,
+      "source_event_index": 110,
+      "start_ms": 507440,
+      "text": "But getting gate-all-around to work required new materials and new manufacturing steps."
+    },
+    {
+      "end_ms": 516720,
+      "source_event_index": 111,
+      "start_ms": 511760,
+      "text": "To build these floating ribbons of silicon, you first sandwich them between alternating"
+    },
+    {
+      "end_ms": 522720,
+      "source_event_index": 112,
+      "start_ms": 516720,
+      "text": "layers of a temporary placeholder material, which holds the space where the gate will eventually go."
+    },
+    {
+      "end_ms": 526880,
+      "source_event_index": 113,
+      "start_ms": 522720,
+      "text": "We use a placeholder because the materials in the real gate wouldn’t survive the processing"
+    },
+    {
+      "end_ms": 532000,
+      "source_event_index": 114,
+      "start_ms": 526880,
+      "text": "that comes after, which involves baking the wafer at around 1,000 degrees Celsius."
+    },
+    {
+      "end_ms": 535120,
+      "source_event_index": 115,
+      "start_ms": 532000,
+      "text": "Once these hot steps are done, chipmakers etch away the"
+    },
+    {
+      "end_ms": 539600,
+      "source_event_index": 116,
+      "start_ms": 535120,
+      "text": "placeholder, leaving the ribbons suspended. Then they fill the gaps around every ribbon"
+    },
+    {
+      "end_ms": 544960,
+      "source_event_index": 117,
+      "start_ms": 539600,
+      "text": "with a thin coat of a special insulator called a high-k material, whose purpose is to let the gate"
+    },
+    {
+      "end_ms": 549040,
+      "source_event_index": 118,
+      "start_ms": 544960,
+      "text": "pull more strongly on the channel. And then on top of this material,"
+    },
+    {
+      "end_ms": 554960,
+      "source_event_index": 119,
+      "start_ms": 549040,
+      "text": "they put the metal of the gate itself. FinFET was demonstrated in a lab in 1989"
+    },
+    {
+      "end_ms": 560880,
+      "source_event_index": 120,
+      "start_ms": 554960,
+      "text": "and reached volume production at Intel in 2011. A gate-all-around transistor had been demonstrated"
+    },
+    {
+      "end_ms": 567520,
+      "source_event_index": 121,
+      "start_ms": 560880,
+      "text": "a year earlier, in 1988, but Samsung didn’t begin producing gate-all-around chips until 2022."
+    },
+    {
+      "end_ms": 572000,
+      "source_event_index": 122,
+      "start_ms": 567520,
+      "text": "So these ideas, FinFET and gate-all-around, were developed around the same time,"
+    },
+    {
+      "end_ms": 577040,
+      "source_event_index": 123,
+      "start_ms": 572000,
+      "text": "but they reached production a decade apart. I wanted to ask Chris why it took so long to"
+    },
+    {
+      "end_ms": 581280,
+      "source_event_index": 124,
+      "start_ms": 577040,
+      "text": "get to this current gate-all-around technology. Maybe you can walk me through the process of"
+    },
+    {
+      "end_ms": 584640,
+      "source_event_index": 125,
+      "start_ms": 581280,
+      "text": "getting into high-volume manufacturing. I want to understand concretely,"
+    },
+    {
+      "end_ms": 588480,
+      "source_event_index": 126,
+      "start_ms": 584640,
+      "text": "once you have an idea that, “Hey, we’re going to make the channel smaller, we’re going to"
+    },
+    {
+      "end_ms": 596240,
+      "source_event_index": 127,
+      "start_ms": 588480,
+      "text": "surround it…” All the other problems of material science, figuring out how to not destroy the gate,"
+    },
+    {
+      "end_ms": 598800,
+      "source_event_index": 128,
+      "start_ms": 596240,
+      "text": "how do they actually get figured out? Why does it take so long?"
+    },
+    {
+      "end_ms": 602080,
+      "source_event_index": 129,
+      "start_ms": 598800,
+      "text": "Gate-all-around’s a good example, because back in the ’90s we knew of this idea."
+    },
+    {
+      "end_ms": 605280,
+      "source_event_index": 130,
+      "start_ms": 602080,
+      "text": "But we knew there were going to be these problems on how you put this"
+    },
+    {
+      "end_ms": 608800,
+      "source_event_index": 131,
+      "start_ms": 605280,
+      "text": "into high-volume manufacturing. At the same time, there are other"
+    },
+    {
+      "end_ms": 613520,
+      "source_event_index": 132,
+      "start_ms": 608800,
+      "text": "things like high-K metal gate. There’s strained silicon,"
+    },
+    {
+      "end_ms": 617120,
+      "source_event_index": 133,
+      "start_ms": 613520,
+      "text": "there’s FinFETs that are out there. It’s a question of when’s the right"
+    },
+    {
+      "end_ms": 620800,
+      "source_event_index": 134,
+      "start_ms": 617120,
+      "text": "time to go and tackle those? Well, you don’t want to"
+    },
+    {
+      "end_ms": 624880,
+      "source_event_index": 135,
+      "start_ms": 620800,
+      "text": "tackle something before you have to. If you have these other things that can drive"
+    },
+    {
+      "end_ms": 627600,
+      "source_event_index": 136,
+      "start_ms": 624880,
+      "text": "performance, you would go and do that. So we went through this path."
+    },
+    {
+      "end_ms": 632720,
+      "source_event_index": 137,
+      "start_ms": 628320,
+      "text": "We did strained silicon, high-K metal gate, we did FinFETs, and then it became, “Well,"
+    },
+    {
+      "end_ms": 635440,
+      "source_event_index": 138,
+      "start_ms": 632720,
+      "text": "we need to do things further. How do we get there?”"
+    },
+    {
+      "end_ms": 638880,
+      "source_event_index": 139,
+      "start_ms": 635440,
+      "text": "Well, gate-all-around’s really the ultimate transistor out there."
+    },
+    {
+      "end_ms": 643440,
+      "source_event_index": 140,
+      "start_ms": 638880,
+      "text": "Maybe it’s time to go and start tackling some of those issues that you have."
+    },
+    {
+      "end_ms": 648000,
+      "source_event_index": 141,
+      "start_ms": 643440,
+      "text": "You’re right, now you have to look at how do you put high-K metal gate in with gate-all-around."
+    },
+    {
+      "end_ms": 652320,
+      "source_event_index": 142,
+      "start_ms": 648000,
+      "text": "It’s that innovation that takes time. Sometimes you need new materials."
+    },
+    {
+      "end_ms": 657760,
+      "source_event_index": 143,
+      "start_ms": 652320,
+      "text": "Sometimes you need a different tool in order to be able to do some of the"
+    },
+    {
+      "end_ms": 661760,
+      "source_event_index": 144,
+      "start_ms": 657760,
+      "text": "things that you need to go do, and that requires invention from the tool vendors."
+    },
+    {
+      "end_ms": 664960,
+      "source_event_index": 145,
+      "start_ms": 661760,
+      "text": "You have to go to the tool vendor and say, “Hey, I need a tool that can do XYZ."
+    },
+    {
+      "end_ms": 669600,
+      "source_event_index": 146,
+      "start_ms": 664960,
+      "text": "I need a gas that can deposit this particular material that goes into that."
+    },
+    {
+      "end_ms": 674240,
+      "source_event_index": 147,
+      "start_ms": 669600,
+      "text": "I need a heating chuck that has this characteristic to it.”"
+    },
+    {
+      "end_ms": 677760,
+      "source_event_index": 148,
+      "start_ms": 674240,
+      "text": "All those things take time. Some of it’s iterative,"
+    },
+    {
+      "end_ms": 681440,
+      "source_event_index": 149,
+      "start_ms": 677760,
+      "text": "where you have to run a gate-all-around transistor and say, “Oh, well, that didn’t work."
+    },
+    {
+      "end_ms": 685520,
+      "source_event_index": 150,
+      "start_ms": 681440,
+      "text": "Let me figure out what was wrong with my hypothesis and"
+    },
+    {
+      "end_ms": 694320,
+      "source_event_index": 151,
+      "start_ms": 685520,
+      "text": "try it again with some different structure.” How has the nature of R&D changed from the era of"
+    },
+    {
+      "end_ms": 699440,
+      "source_event_index": 152,
+      "start_ms": 695280,
+      "text": "just making planar transistors smaller and smaller and getting the benefits of Dennard scaling,"
+    },
+    {
+      "end_ms": 702160,
+      "source_event_index": 153,
+      "start_ms": 699440,
+      "text": "to the world we’re in today? Is it just a totally different"
+    },
+    {
+      "end_ms": 703840,
+      "source_event_index": 154,
+      "start_ms": 702160,
+      "text": "kind of R&D process? Previously it was,"
+    },
+    {
+      "end_ms": 707360,
+      "source_event_index": 155,
+      "start_ms": 703840,
+      "text": "“Let’s make things smaller, smaller, smaller.” Now you look at all these other facets"
+    },
+    {
+      "end_ms": 712320,
+      "source_event_index": 156,
+      "start_ms": 707360,
+      "text": "of performance at the same time, and improvements in size don’t come as easily."
+    },
+    {
+      "end_ms": 715520,
+      "source_event_index": 157,
+      "start_ms": 712320,
+      "text": "Walk me through whether there was some crucial change in the R&D process at that point."
+    },
+    {
+      "end_ms": 719600,
+      "source_event_index": 158,
+      "start_ms": 715520,
+      "text": "If you look at the ’80s and ’90s, yes, it was driven really by Dennard scaling, lithography."
+    },
+    {
+      "end_ms": 723840,
+      "source_event_index": 159,
+      "start_ms": 719600,
+      "text": "We just made things smaller, transistors got faster, they got more reliable,"
+    },
+    {
+      "end_ms": 729280,
+      "source_event_index": 160,
+      "start_ms": 723840,
+      "text": "and it was a very predictable cadence. When we started to hit the 2000s, we saw,"
+    },
+    {
+      "end_ms": 731920,
+      "source_event_index": 161,
+      "start_ms": 729280,
+      "text": "“That’s not good enough anymore. We need to do something different.”"
+    },
+    {
+      "end_ms": 736000,
+      "source_event_index": 162,
+      "start_ms": 731920,
+      "text": "To me, it became this golden age of innovation. For each technology node,"
+    },
+    {
+      "end_ms": 741040,
+      "source_event_index": 163,
+      "start_ms": 736000,
+      "text": "how are you going to provide more scaling? How are you going to provide more performance?"
+    },
+    {
+      "end_ms": 744942,
+      "source_event_index": 164,
+      "start_ms": 741040,
+      "text": "It drove things like strained silicon. It drove high-K metal gate."
+    },
+    {
+      "end_ms": 749040,
+      "source_event_index": 165,
+      "start_ms": 744942,
+      "text": "It drove FinFETs. It drove gate-all-around. It drove backside power."
+    },
+    {
+      "end_ms": 752960,
+      "source_event_index": 166,
+      "start_ms": 749040,
+      "text": "These are things that in the ’80s and ’90s you would be like, “Oh no,"
+    },
+    {
+      "end_ms": 755920,
+      "source_event_index": 167,
+      "start_ms": 752960,
+      "text": "we’re not touching any of that,” because we just continued to have the same process flow."
+    },
+    {
+      "end_ms": 760480,
+      "source_event_index": 168,
+      "start_ms": 755920,
+      "text": "We just scaled it, scaled it, scaled it. But for somebody like me who’s a"
+    },
+    {
+      "end_ms": 766080,
+      "source_event_index": 169,
+      "start_ms": 760480,
+      "text": "transistor junkie, it’s awesome, because now the playbook’s open."
+    },
+    {
+      "end_ms": 769760,
+      "source_event_index": 170,
+      "start_ms": 766080,
+      "text": "You can do all sorts of things out there. You can bring in new materials."
+    },
+    {
+      "end_ms": 772960,
+      "source_event_index": 171,
+      "start_ms": 769760,
+      "text": "Just look at the number of materials we used to use in the ’90s versus the materials today."
+    },
+    {
+      "end_ms": 776480,
+      "source_event_index": 172,
+      "start_ms": 772960,
+      "text": "It’s probably gone up 10X. There’s a lot of innovation."
+    },
+    {
+      "end_ms": 781280,
+      "source_event_index": 173,
+      "start_ms": 776480,
+      "text": "There’s atomic layer deposition. You’re controlling this stuff atom by atom."
+    },
+    {
+      "end_ms": 785200,
+      "source_event_index": 174,
+      "start_ms": 782160,
+      "text": "So it’s changed a lot how you approach the process."
+    },
+    {
+      "end_ms": 791160,
+      "source_event_index": 175,
+      "start_ms": 786160,
+      "text": "Before, it was, “Try to not change anything.” Now it’s, “Take the sledgehammer and start tearing"
+    },
+    {
+      "end_ms": 796080,
+      "source_event_index": 176,
+      "start_ms": 791160,
+      "text": "the thing up and come up with some new idea.” For 14A, Intel is using a new kind"
+    },
+    {
+      "end_ms": 802240,
+      "source_event_index": 177,
+      "start_ms": 796080,
+      "text": "of lithography machine: High-NA EUV. It uses the same extreme ultraviolet light"
+    },
+    {
+      "end_ms": 809280,
+      "source_event_index": 178,
+      "start_ms": 802240,
+      "text": "as today’s EUV machines, but changes the optics. NA, or numerical aperture, is a measure of how"
+    },
+    {
+      "end_ms": 814080,
+      "source_event_index": 179,
+      "start_ms": 809280,
+      "text": "wide a cone of light the machine’s mirrors can focus onto the wafer."
+    },
+    {
+      "end_ms": 818880,
+      "source_event_index": 180,
+      "start_ms": 814080,
+      "text": "The wider the cone you can focus, the smaller the spot that your light can carve."
+    },
+    {
+      "end_ms": 825360,
+      "source_event_index": 181,
+      "start_ms": 818880,
+      "text": "Standard EUV machines have an NA of 0.33. High-NA widens it to 0.55."
+    },
+    {
+      "end_ms": 831040,
+      "source_event_index": 182,
+      "start_ms": 825360,
+      "text": "So High-NA can print features about 1.7 times smaller in a single pass."
+    },
+    {
+      "end_ms": 835520,
+      "source_event_index": 183,
+      "start_ms": 831040,
+      "text": "When features are smaller than the lithography machine can print, chipmakers have to split"
+    },
+    {
+      "end_ms": 840800,
+      "source_event_index": 184,
+      "start_ms": 835520,
+      "text": "the pattern across several passes, each printing a different set of features."
+    },
+    {
+      "end_ms": 846000,
+      "source_event_index": 185,
+      "start_ms": 840800,
+      "text": "The most tightly packed patterns can require two, three, or even four passes."
+    },
+    {
+      "end_ms": 850960,
+      "source_event_index": 186,
+      "start_ms": 846000,
+      "text": "Each additional pass takes up valuable time on a machine that costs around $200 million,"
+    },
+    {
+      "end_ms": 856640,
+      "source_event_index": 187,
+      "start_ms": 850960,
+      "text": "and it introduces another opportunity for defects. High-NA machines cost about twice as much,"
+    },
+    {
+      "end_ms": 859200,
+      "source_event_index": 188,
+      "start_ms": 856640,
+      "text": "but they can reduce the number of passes that are needed."
+    },
+    {
+      "end_ms": 862240,
+      "source_event_index": 189,
+      "start_ms": 859200,
+      "text": "So the question which determines whether they justify their higher"
+    },
+    {
+      "end_ms": 867200,
+      "source_event_index": 190,
+      "start_ms": 862240,
+      "text": "price is how much more time they save and how much they reduce the risk of defects."
+    },
+    {
+      "end_ms": 872480,
+      "source_event_index": 191,
+      "start_ms": 867200,
+      "text": "Now you guys are using High-NA EUV tools for 14A, whereas TSMC has said"
+    },
+    {
+      "end_ms": 879840,
+      "source_event_index": 192,
+      "start_ms": 872480,
+      "text": "that they don’t make economic sense yet for them. How do you decide whether the next litho tool is"
+    },
+    {
+      "end_ms": 885200,
+      "source_event_index": 193,
+      "start_ms": 879840,
+      "text": "the one that is ready to adopt or not? High-NA’s a good example of where,"
+    },
+    {
+      "end_ms": 892640,
+      "source_event_index": 194,
+      "start_ms": 885200,
+      "text": "because of the architecture of our technology versus TSMC’s, we make different conclusions"
+    },
+    {
+      "end_ms": 896160,
+      "source_event_index": 195,
+      "start_ms": 892640,
+      "text": "off of the same tool set. We use backside power."
+    },
+    {
+      "end_ms": 901680,
+      "source_event_index": 196,
+      "start_ms": 896160,
+      "text": "That means that you actually alleviate some of the pitch requirements you have on the front side."
+    },
+    {
+      "end_ms": 904800,
+      "source_event_index": 197,
+      "start_ms": 901680,
+      "text": "That allows you to print that directly with High-NA."
+    },
+    {
+      "end_ms": 908880,
+      "source_event_index": 198,
+      "start_ms": 904800,
+      "text": "TSMC has to run tighter pitches because they don’t have backside power,"
+    },
+    {
+      "end_ms": 912480,
+      "source_event_index": 199,
+      "start_ms": 908880,
+      "text": "and they can’t do that with High-NA, so they have to use double patterning EUV."
+    },
+    {
+      "end_ms": 916560,
+      "source_event_index": 200,
+      "start_ms": 912480,
+      "text": "So for them, it’s not very helpful. For us, it is very helpful."
+    },
+    {
+      "end_ms": 920400,
+      "source_event_index": 201,
+      "start_ms": 916560,
+      "text": "Now at 14A, we’ve left it as an option, and it’s something that we’ll have a discussion"
+    },
+    {
+      "end_ms": 924880,
+      "source_event_index": 202,
+      "start_ms": 920400,
+      "text": "with the customer on, because there’s some value proposition to it, and there’s some"
+    },
+    {
+      "end_ms": 927040,
+      "source_event_index": 203,
+      "start_ms": 924880,
+      "text": "complexity that it adds. Chris is referring to"
+    },
+    {
+      "end_ms": 931280,
+      "source_event_index": 204,
+      "start_ms": 927040,
+      "text": "a feature called backside power. A chip has two different kinds of wiring."
+    },
+    {
+      "end_ms": 935440,
+      "source_event_index": 205,
+      "start_ms": 931280,
+      "text": "Power lines deliver electricity to the transistors, and they need to be thick."
+    },
+    {
+      "end_ms": 938320,
+      "source_event_index": 206,
+      "start_ms": 935440,
+      "text": "Signal lines let the transistors talk to each other."
+    },
+    {
+      "end_ms": 942880,
+      "source_event_index": 207,
+      "start_ms": 938320,
+      "text": "They’re much thinner, but they need to be spaced apart so that the signal from one wire doesn’t"
+    },
+    {
+      "end_ms": 946560,
+      "source_event_index": 208,
+      "start_ms": 942880,
+      "text": "interfere with the signal from another. In the past, all of these power lines"
+    },
+    {
+      "end_ms": 950160,
+      "source_event_index": 209,
+      "start_ms": 946560,
+      "text": "and signal lines had to be crammed together on top of the transistors."
+    },
+    {
+      "end_ms": 955760,
+      "source_event_index": 210,
+      "start_ms": 950160,
+      "text": "Intel’s newest process moves these power lines below the transistors, to the back of the wafer."
+    },
+    {
+      "end_ms": 960160,
+      "source_event_index": 211,
+      "start_ms": 955760,
+      "text": "This frees up space on top, so the signal lines don’t have to be packed as tightly."
+    },
+    {
+      "end_ms": 965360,
+      "source_event_index": 212,
+      "start_ms": 960160,
+      "text": "This change makes High-NA worth it for Intel. Without backside power, the wiring is so"
+    },
+    {
+      "end_ms": 969440,
+      "source_event_index": 213,
+      "start_ms": 965360,
+      "text": "tight that it would require multiple passes to print, even with High-NA."
+    },
+    {
+      "end_ms": 973280,
+      "source_event_index": 214,
+      "start_ms": 969440,
+      "text": "With backside power, a single High-NA pass is enough."
+    },
+    {
+      "end_ms": 977680,
+      "source_event_index": 215,
+      "start_ms": 973280,
+      "text": "Outside companies can now commission Intel to manufacture chips that they’ve designed."
+    },
+    {
+      "end_ms": 984000,
+      "source_event_index": 216,
+      "start_ms": 977680,
+      "text": "They follow Intel’s process design kit, or PDK: the menu of what a given process can build,"
+    },
+    {
+      "end_ms": 986880,
+      "source_event_index": 217,
+      "start_ms": 984000,
+      "text": "and the rules for building it. Do you need to lock that into"
+    },
+    {
+      "end_ms": 990640,
+      "source_event_index": 218,
+      "start_ms": 986880,
+      "text": "your PDK right now for customers who are planning on developing on 14A?"
+    },
+    {
+      "end_ms": 995520,
+      "source_event_index": 219,
+      "start_ms": 990640,
+      "text": "It’s an option in the PDK today, and we’re handling it as a customer-by-customer"
+    },
+    {
+      "end_ms": 999200,
+      "source_event_index": 220,
+      "start_ms": 995520,
+      "text": "discussion as to whether or not they want to go down that path or not."
+    },
+    {
+      "end_ms": 1004000,
+      "source_event_index": 221,
+      "start_ms": 999200,
+      "text": "For 18A, there was public reporting that there were delays in or issues with the PDK,"
+    },
+    {
+      "end_ms": 1007680,
+      "source_event_index": 222,
+      "start_ms": 1004000,
+      "text": "such that some instructions didn’t work, and it was difficult for people to use"
+    },
+    {
+      "end_ms": 1011280,
+      "source_event_index": 223,
+      "start_ms": 1007680,
+      "text": "your foundry to build their chips. Tell me about the process of Intel"
+    },
+    {
+      "end_ms": 1017040,
+      "source_event_index": 224,
+      "start_ms": 1011280,
+      "text": "becoming a foundry and then having a PDK that other customers can use to make"
+    },
+    {
+      "end_ms": 1020160,
+      "source_event_index": 225,
+      "start_ms": 1017040,
+      "text": "whatever chip they’re making as well. There’s definitely a learning curve to"
+    },
+    {
+      "end_ms": 1022240,
+      "source_event_index": 226,
+      "start_ms": 1020160,
+      "text": "how you become a foundry. That’s something that our"
+    },
+    {
+      "end_ms": 1025920,
+      "source_event_index": 227,
+      "start_ms": 1022240,
+      "text": "competitors have gone through as well. PDK is a good example of that."
+    },
+    {
+      "end_ms": 1029520,
+      "source_event_index": 228,
+      "start_ms": 1025920,
+      "text": "For decades, we’ve been an IDM. We’ve gone to our product teams"
+    },
+    {
+      "end_ms": 1032800,
+      "source_event_index": 229,
+      "start_ms": 1029520,
+      "text": "and shown them our transistor data, and we share that data back and forth, and we haven’t"
+    },
+    {
+      "end_ms": 1036960,
+      "source_event_index": 230,
+      "start_ms": 1032800,
+      "text": "had a formal PDK-type process. So that’s a new process that"
+    },
+    {
+      "end_ms": 1042400,
+      "source_event_index": 231,
+      "start_ms": 1036960,
+      "text": "we’ve had to implement on 18A. 18A started out not having a PDK."
+    },
+    {
+      "end_ms": 1047680,
+      "source_event_index": 232,
+      "start_ms": 1043120,
+      "text": "There’s definitely a lot of feedback we’ve gotten from the customers as to what they expect"
+    },
+    {
+      "end_ms": 1053280,
+      "source_event_index": 233,
+      "start_ms": 1047680,
+      "text": "for quality and maturity of the PDK and what sort of information they want to see in there."
+    },
+    {
+      "end_ms": 1057120,
+      "source_event_index": 234,
+      "start_ms": 1053280,
+      "text": "We’ve tried to incorporate that into making sure that we have a PDK that"
+    },
+    {
+      "end_ms": 1060160,
+      "source_event_index": 235,
+      "start_ms": 1057120,
+      "text": "meets our customers’ requirements. That’s where we’ve ended up."
+    },
+    {
+      "end_ms": 1065600,
+      "source_event_index": 236,
+      "start_ms": 1060720,
+      "text": "We’re starting to get PDKs that have this, and 14A will have that from the get-go."
+    },
+    {
+      "end_ms": 1069440,
+      "source_event_index": 237,
+      "start_ms": 1065600,
+      "text": "It has very high quality PDKs. Again, there are maturity metrics for"
+    },
+    {
+      "end_ms": 1076240,
+      "source_event_index": 238,
+      "start_ms": 1069440,
+      "text": "what is a PDK 0.5 versus a 0.9 versus a 1.0. We’re constantly going through and taking"
+    },
+    {
+      "end_ms": 1080880,
+      "source_event_index": 239,
+      "start_ms": 1076240,
+      "text": "customer feedback and incorporating that into the quality of our PDK."
+    },
+    {
+      "end_ms": 1084960,
+      "source_event_index": 240,
+      "start_ms": 1080880,
+      "text": "For most of its history, Intel’s fabs made only Intel’s chips."
+    },
+    {
+      "end_ms": 1087680,
+      "source_event_index": 241,
+      "start_ms": 1084960,
+      "text": "That could be part of what allowed TSMC to gain an edge."
+    },
+    {
+      "end_ms": 1092880,
+      "source_event_index": 242,
+      "start_ms": 1087680,
+      "text": "Serving many customers gave TSMC more wafers to learn from, more revenue to reinvest,"
+    },
+    {
+      "end_ms": 1096720,
+      "source_event_index": 243,
+      "start_ms": 1092880,
+      "text": "and more pressure to hit deadlines. Basically, all enterprise customers"
+    },
+    {
+      "end_ms": 1100400,
+      "source_event_index": 244,
+      "start_ms": 1096720,
+      "text": "have a shared set of product requirements that you have to meet if you want to even"
+    },
+    {
+      "end_ms": 1104560,
+      "source_event_index": 245,
+      "start_ms": 1100400,
+      "text": "start talking about doing business with them. These are things like SSO, so employees can"
+    },
+    {
+      "end_ms": 1109840,
+      "source_event_index": 246,
+      "start_ms": 1104560,
+      "text": "log into your app with their company accounts, or directory sync, so that whenever someone leaves,"
+    },
+    {
+      "end_ms": 1113840,
+      "source_event_index": 247,
+      "start_ms": 1109840,
+      "text": "their access gets shut off automatically. These features are harder to get right than"
+    },
+    {
+      "end_ms": 1117200,
+      "source_event_index": 248,
+      "start_ms": 1113840,
+      "text": "you think, and the risk-reward for building them in-house doesn’t really make sense:"
+    },
+    {
+      "end_ms": 1120720,
+      "source_event_index": 249,
+      "start_ms": 1117200,
+      "text": "a slightly better version of SSO probably won’t accelerate your growth,"
+    },
+    {
+      "end_ms": 1125840,
+      "source_event_index": 250,
+      "start_ms": 1120720,
+      "text": "but a broken one will definitely stunt it. WorkOS gives you access to battle-tested versions"
+    },
+    {
+      "end_ms": 1131920,
+      "source_event_index": 251,
+      "start_ms": 1125840,
+      "text": "of all the most common enterprise features—things like SSO, SCIM, RBAC, audit logs, and more."
+    },
+    {
+      "end_ms": 1136880,
+      "source_event_index": 252,
+      "start_ms": 1131920,
+      "text": "WorkOS also has versions of these features that are purpose-built for agents, so they can log in,"
+    },
+    {
+      "end_ms": 1139840,
+      "source_event_index": 253,
+      "start_ms": 1136880,
+      "text": "grab the right permissions, and take actions within your product."
+    },
+    {
+      "end_ms": 1143840,
+      "source_event_index": 254,
+      "start_ms": 1139840,
+      "text": "All of these features can be plugged in with just a few lines of code, so you can"
+    },
+    {
+      "end_ms": 1148960,
+      "source_event_index": 255,
+      "start_ms": 1143840,
+      "text": "add them and get started selling to enterprises. OpenAI, Anthropic, and Thinking Machines—as well"
+    },
+    {
+      "end_ms": 1155440,
+      "source_event_index": 256,
+      "start_ms": 1148960,
+      "text": "as more than 3,000 other companies—all rely on WorkOS to meet their enterprise requirements."
+    },
+    {
+      "end_ms": 1160000,
+      "source_event_index": 257,
+      "start_ms": 1155440,
+      "text": "If you want to join them, go to workos.com and tell them that I sent you."
+    },
+    {
+      "end_ms": 1164960,
+      "source_event_index": 258,
+      "start_ms": 1160000,
+      "text": "If a butterfly flapped its wings in the ’60s, could you imagine a world where gate-all-around"
+    },
+    {
+      "end_ms": 1168080,
+      "source_event_index": 259,
+      "start_ms": 1164960,
+      "text": "is not even a word people have heard of, an idea people are familiar with, but people are thinking"
+    },
+    {
+      "end_ms": 1171840,
+      "source_event_index": 260,
+      "start_ms": 1168080,
+      "text": "of an extremely different branch of the tech tree? How far down the tech tree do you think"
+    },
+    {
+      "end_ms": 1175200,
+      "source_event_index": 261,
+      "start_ms": 1171840,
+      "text": "things could be totally different? Could it be that we’re not even using copper?"
+    },
+    {
+      "end_ms": 1182080,
+      "source_event_index": 262,
+      "start_ms": 1175200,
+      "text": "If you look at, say, transistors and interconnects, where we’ve gotten to,"
+    },
+    {
+      "end_ms": 1186640,
+      "source_event_index": 263,
+      "start_ms": 1182080,
+      "text": "as far as the transistor and gate-all-around and it being the ideal transistor structure,"
+    },
+    {
+      "end_ms": 1189520,
+      "source_event_index": 264,
+      "start_ms": 1187520,
+      "text": "was somewhat inevitable. As I said, in the ’90s we were"
+    },
+    {
+      "end_ms": 1194080,
+      "source_event_index": 265,
+      "start_ms": 1189520,
+      "text": "already talking about these types of things. Backside power, that one’s pretty out there."
+    },
+    {
+      "end_ms": 1200560,
+      "source_event_index": 266,
+      "start_ms": 1194800,
+      "text": "Even in the ’90s, the idea that you’re going to strip off the entire silicon substrate and put"
+    },
+    {
+      "end_ms": 1206240,
+      "source_event_index": 267,
+      "start_ms": 1200560,
+      "text": "lines on the backside, that one is probably something that’s a little bit out there."
+    },
+    {
+      "end_ms": 1211280,
+      "source_event_index": 268,
+      "start_ms": 1206880,
+      "text": "Copper, of course copper wires are the best, so I don’t know how you would end"
+    },
+    {
+      "end_ms": 1214560,
+      "source_event_index": 269,
+      "start_ms": 1211280,
+      "text": "up somewhere else besides copper. But you guys are exploring other—"
+    },
+    {
+      "end_ms": 1220400,
+      "source_event_index": 270,
+      "start_ms": 1214560,
+      "text": "For some of the very tightest pitches, it’s inevitable that you will replace copper."
+    },
+    {
+      "end_ms": 1224160,
+      "source_event_index": 271,
+      "start_ms": 1220400,
+      "text": "That’s a good example of where you will have another material that will come in there."
+    },
+    {
+      "end_ms": 1227360,
+      "source_event_index": 272,
+      "start_ms": 1224160,
+      "text": "But for the larger lines, I think copper is about where it’s at."
+    },
+    {
+      "end_ms": 1233840,
+      "source_event_index": 273,
+      "start_ms": 1228160,
+      "text": "Once you start to do gate-all-around transistors and you do backside power,"
+    },
+    {
+      "end_ms": 1236880,
+      "source_event_index": 274,
+      "start_ms": 1233840,
+      "text": "now you start to enter a very different regime."
+    },
+    {
+      "end_ms": 1241840,
+      "source_event_index": 275,
+      "start_ms": 1236880,
+      "text": "Now you see it’s not, “Hey, there’s just some substrate and you stack everything on top.”"
+    },
+    {
+      "end_ms": 1245360,
+      "source_event_index": 276,
+      "start_ms": 1241840,
+      "text": "Now you’ve got a transistor which is floating in interconnect, and you’re like, “Okay, well,"
+    },
+    {
+      "end_ms": 1250160,
+      "source_event_index": 277,
+      "start_ms": 1245360,
+      "text": "why don’t I have transistors, interconnect, a little more transistors, more interconnect?”"
+    },
+    {
+      "end_ms": 1255520,
+      "source_event_index": 278,
+      "start_ms": 1250160,
+      "text": "This whole 3D stacking that we now do with just discrete chips that we stack on top of each other."
+    },
+    {
+      "end_ms": 1259360,
+      "source_event_index": 279,
+      "start_ms": 1255520,
+      "text": "Now you’re like, “Why can’t I just build an entire structure like this?”"
+    },
+    {
+      "end_ms": 1266320,
+      "source_event_index": 280,
+      "start_ms": 1259360,
+      "text": "You see it with memory, NAND, DRAM. They have some incredible 3D structures."
+    },
+    {
+      "end_ms": 1270560,
+      "source_event_index": 281,
+      "start_ms": 1266320,
+      "text": "NAND already does it, DRAM talks about it, but I think that DRAM inevitably"
+    },
+    {
+      "end_ms": 1273200,
+      "source_event_index": 282,
+      "start_ms": 1270560,
+      "text": "is going to go there too. A lot of people say, “Oh no,"
+    },
+    {
+      "end_ms": 1276160,
+      "source_event_index": 283,
+      "start_ms": 1273200,
+      "text": "we’re not going to do this because we can’t do it in the next five years.”"
+    },
+    {
+      "end_ms": 1278720,
+      "source_event_index": 284,
+      "start_ms": 1276160,
+      "text": "Well, come on, let’s put a larger timescale on this."
+    },
+    {
+      "end_ms": 1283280,
+      "source_event_index": 285,
+      "start_ms": 1278720,
+      "text": "Let’s put 10 years, 20 years. In 2045, do you think you could do it?"
+    },
+    {
+      "end_ms": 1285840,
+      "source_event_index": 286,
+      "start_ms": 1283280,
+      "text": "Now you start to say, “Oh yeah, I could see us having some pretty"
+    },
+    {
+      "end_ms": 1289920,
+      "source_event_index": 287,
+      "start_ms": 1285840,
+      "text": "exotic structures at that point.” We limit ourselves by what we see"
+    },
+    {
+      "end_ms": 1294000,
+      "source_event_index": 288,
+      "start_ms": 1289920,
+      "text": "as possible in the next four years. As I’ve always said, when people say,"
+    },
+    {
+      "end_ms": 1298560,
+      "source_event_index": 289,
+      "start_ms": 1294800,
+      "text": "“How do you see technology scaling going?”, we have visibility for about four years."
+    },
+    {
+      "end_ms": 1301120,
+      "source_event_index": 290,
+      "start_ms": 1298560,
+      "text": "Then you get out to the four years, and you go, “Yeah, I think there’s something"
+    },
+    {
+      "end_ms": 1304240,
+      "source_event_index": 291,
+      "start_ms": 1301120,
+      "text": "we can do another four years out of that.” And you get to that four years, and you’re like,"
+    },
+    {
+      "end_ms": 1307120,
+      "source_event_index": 292,
+      "start_ms": 1304240,
+      "text": "“Yeah, I think you can do something.” But if you start to talk about 10 years,"
+    },
+    {
+      "end_ms": 1310880,
+      "source_event_index": 293,
+      "start_ms": 1307120,
+      "text": "it becomes hard to say what it’s going to be. Chris’s idea of building upward could start"
+    },
+    {
+      "end_ms": 1314880,
+      "source_event_index": 294,
+      "start_ms": 1310880,
+      "text": "with the transistors themselves. Chips use two types of transistor,"
+    },
+    {
+      "end_ms": 1320080,
+      "source_event_index": 295,
+      "start_ms": 1314880,
+      "text": "called n-type and p-type, which work the same way, but with the charges reversed."
+    },
+    {
+      "end_ms": 1326400,
+      "source_event_index": 296,
+      "start_ms": 1320080,
+      "text": "Nearly every circuit is built by pairing them up. Today, chipmakers build them side by side."
+    },
+    {
+      "end_ms": 1331040,
+      "source_event_index": 297,
+      "start_ms": 1326400,
+      "text": "The next step is to stack them directly on top of each other in order to save space."
+    },
+    {
+      "end_ms": 1335200,
+      "source_event_index": 298,
+      "start_ms": 1331040,
+      "text": "In principle, that fits twice as many transistors into the same area."
+    },
+    {
+      "end_ms": 1340000,
+      "source_event_index": 299,
+      "start_ms": 1335200,
+      "text": "This design is called a CFET, short for complementary field-effect transistor."
+    },
+    {
+      "end_ms": 1344960,
+      "source_event_index": 300,
+      "start_ms": 1340000,
+      "text": "But every extra layer adds manufacturing steps and cost, and also leads to heat building"
+    },
+    {
+      "end_ms": 1351200,
+      "source_event_index": 301,
+      "start_ms": 1344960,
+      "text": "up that doesn’t have a clear way to escape. Because logic consumes more power than memory, you"
+    },
+    {
+      "end_ms": 1358720,
+      "source_event_index": 302,
+      "start_ms": 1351200,
+      "text": "can’t do stacks of DRAM that make HBM or 3D NAND as easily with logic, because of the heat issue."
+    },
+    {
+      "end_ms": 1362880,
+      "source_event_index": 303,
+      "start_ms": 1358720,
+      "text": "Is that the fundamental issue over the long run? How you—"
+    },
+    {
+      "end_ms": 1368880,
+      "source_event_index": 304,
+      "start_ms": 1362880,
+      "text": "Thermals. There are three things you have when you try to say, “Hey, what limits compute?”"
+    },
+    {
+      "end_ms": 1373760,
+      "source_event_index": 305,
+      "start_ms": 1369600,
+      "text": "It’s how fast can you do the switch, so the frequency of the device."
+    },
+    {
+      "end_ms": 1378400,
+      "source_event_index": 306,
+      "start_ms": 1373760,
+      "text": "How much power does it take in order to do that switch, so the power efficiency of it."
+    },
+    {
+      "end_ms": 1382560,
+      "source_event_index": 307,
+      "start_ms": 1378400,
+      "text": "The third one is, how do you dissipate the heat that was generated by doing that switch?"
+    },
+    {
+      "end_ms": 1387280,
+      "source_event_index": 308,
+      "start_ms": 1382560,
+      "text": "That’s the thermals piece of it. These are not new problems."
+    },
+    {
+      "end_ms": 1390320,
+      "source_event_index": 309,
+      "start_ms": 1387280,
+      "text": "You can go back 20 years and you can see articles on these three things."
+    },
+    {
+      "end_ms": 1393600,
+      "source_event_index": 310,
+      "start_ms": 1390320,
+      "text": "The question is, thermals… how do you deal with that, particularly when you"
+    },
+    {
+      "end_ms": 1401280,
+      "source_event_index": 311,
+      "start_ms": 1393600,
+      "text": "start to talk about these 3D-type devices? There is a need for that sort of system-level"
+    },
+    {
+      "end_ms": 1404720,
+      "source_event_index": 312,
+      "start_ms": 1401280,
+      "text": "analysis and simulation tools. I think we’re in its infancy"
+    },
+    {
+      "end_ms": 1411280,
+      "source_event_index": 313,
+      "start_ms": 1404720,
+      "text": "because we’ve just started to look at this. It is a limiter, and it will be a limiter, but"
+    },
+    {
+      "end_ms": 1416240,
+      "source_event_index": 314,
+      "start_ms": 1411280,
+      "text": "again, these are problems that we can go solve. The problems respond to work, but engineering time"
+    },
+    {
+      "end_ms": 1421360,
+      "source_event_index": 315,
+      "start_ms": 1416240,
+      "text": "is finite, and so are the wafers for experiments. Deciding where they go across thousands"
+    },
+    {
+      "end_ms": 1425360,
+      "source_event_index": 316,
+      "start_ms": 1421360,
+      "text": "of problems is itself one of the hardest parts of bringing up a node."
+    },
+    {
+      "end_ms": 1430400,
+      "source_event_index": 317,
+      "start_ms": 1425360,
+      "text": "I sat in on one of Intel’s Hot Topics meetings, where those decisions get made."
+    },
+    {
+      "end_ms": 1434320,
+      "source_event_index": 318,
+      "start_ms": 1430400,
+      "text": "I’m here with Kevin Fischer, who was laying down the law this morning at the Hot Topics meeting,"
+    },
+    {
+      "end_ms": 1438800,
+      "source_event_index": 319,
+      "start_ms": 1434320,
+      "text": "where you guys were discussing how you’re improving 18A and 18A-P technologies."
+    },
+    {
+      "end_ms": 1441040,
+      "source_event_index": 320,
+      "start_ms": 1438800,
+      "text": "People would come to you with different experiments they were running,"
+    },
+    {
+      "end_ms": 1446320,
+      "source_event_index": 321,
+      "start_ms": 1441040,
+      "text": "different ideas they had for improving yield and performance, and then you and"
+    },
+    {
+      "end_ms": 1451920,
+      "source_event_index": 322,
+      "start_ms": 1446320,
+      "text": "your integration engineers would tell them what data you needed, how they should proceed,"
+    },
+    {
+      "end_ms": 1455200,
+      "source_event_index": 323,
+      "start_ms": 1451920,
+      "text": "how you think they could move things faster. I want people to have a sense of"
+    },
+    {
+      "end_ms": 1460640,
+      "source_event_index": 324,
+      "start_ms": 1455200,
+      "text": "the culture at these meetings. One thing I found striking is that this"
+    },
+    {
+      "end_ms": 1464720,
+      "source_event_index": 325,
+      "start_ms": 1460640,
+      "text": "is bottlenecking your most advanced node. You want progress to happen fast,"
+    },
+    {
+      "end_ms": 1469840,
+      "source_event_index": 326,
+      "start_ms": 1464720,
+      "text": "so you kind of lay down the hammer. I would say the average engineer doesn’t"
+    },
+    {
+      "end_ms": 1479840,
+      "source_event_index": 327,
+      "start_ms": 1469840,
+      "text": "understand the stakes or the urgency of how this is going to impact Intel’s bottom line,"
+    },
+    {
+      "end_ms": 1485600,
+      "source_event_index": 328,
+      "start_ms": 1479840,
+      "text": "how it’s going to impact our customer. They just have no visibility into those issues."
+    },
+    {
+      "end_ms": 1492480,
+      "source_event_index": 329,
+      "start_ms": 1485600,
+      "text": "They will typically have a certain set of criteria that they want to go capture."
+    },
+    {
+      "end_ms": 1499120,
+      "source_event_index": 330,
+      "start_ms": 1492480,
+      "text": "They’ll hit boundaries of, “I asked for something and someone said no, and I’m done."
+    },
+    {
+      "end_ms": 1506560,
+      "source_event_index": 331,
+      "start_ms": 1500560,
+      "text": "I guess I can’t have this thing that I asked for.” One thing you learn in this industry is that"
+    },
+    {
+      "end_ms": 1510480,
+      "source_event_index": 332,
+      "start_ms": 1506560,
+      "text": "you will never have a complete data set. If you want to wait for a complete data set,"
+    },
+    {
+      "end_ms": 1512720,
+      "source_event_index": 333,
+      "start_ms": 1510480,
+      "text": "you’ve waited too long. It’s already too late."
+    },
+    {
+      "end_ms": 1518800,
+      "source_event_index": 334,
+      "start_ms": 1512720,
+      "text": "A lot of what I end up doing in those meetings is deciding how much risk we’re"
+    },
+    {
+      "end_ms": 1523280,
+      "source_event_index": 335,
+      "start_ms": 1518800,
+      "text": "going to take on a certain decision or not take on a certain decision."
+    },
+    {
+      "end_ms": 1527920,
+      "source_event_index": 336,
+      "start_ms": 1523280,
+      "text": "You need to say, “Look, do we go now? Do we start risking production?”"
+    },
+    {
+      "end_ms": 1531120,
+      "source_event_index": 337,
+      "start_ms": 1527920,
+      "text": "Because you’re risking the bottom line. You’re risking revenue."
+    },
+    {
+      "end_ms": 1535520,
+      "source_event_index": 338,
+      "start_ms": 1531120,
+      "text": "I’m worried you’re going to put me in the light of being an ogre because I’m"
+    },
+    {
+      "end_ms": 1539280,
+      "source_event_index": 339,
+      "start_ms": 1535520,
+      "text": "putting the hammer down on people. That’s a great reputation to have."
+    },
+    {
+      "end_ms": 1543200,
+      "source_event_index": 340,
+      "start_ms": 1539280,
+      "text": "It’s really conveying urgency. Every day counts."
+    },
+    {
+      "end_ms": 1547120,
+      "source_event_index": 341,
+      "start_ms": 1543200,
+      "text": "Can you walk me through a particular issue that might come up?"
+    },
+    {
+      "end_ms": 1551360,
+      "source_event_index": 342,
+      "start_ms": 1547120,
+      "text": "One of the examples you saw this morning is epi nodules."
+    },
+    {
+      "end_ms": 1556880,
+      "source_event_index": 343,
+      "start_ms": 1551360,
+      "text": "Epi is short for epitaxy, which means growing new material on top of an existing one."
+    },
+    {
+      "end_ms": 1562480,
+      "source_event_index": 344,
+      "start_ms": 1556880,
+      "text": "Chipmakers flow gases over a heated wafer, and the gases leave atoms on its surface."
+    },
+    {
+      "end_ms": 1566160,
+      "source_event_index": 345,
+      "start_ms": 1562480,
+      "text": "The crystal structure of the material underneath acts as a template."
+    },
+    {
+      "end_ms": 1571360,
+      "source_event_index": 346,
+      "start_ms": 1566160,
+      "text": "Each new atom lines up with the atoms below it, and the new layer continues the same crystal."
+    },
+    {
+      "end_ms": 1574960,
+      "source_event_index": 347,
+      "start_ms": 1571360,
+      "text": "Chipmakers use epitaxy at several stages of making a chip."
+    },
+    {
+      "end_ms": 1578800,
+      "source_event_index": 348,
+      "start_ms": 1574960,
+      "text": "In the step Kevin describes, they use it to grow the source and the drain as small"
+    },
+    {
+      "end_ms": 1583280,
+      "source_event_index": 349,
+      "start_ms": 1578800,
+      "text": "crystals on either side of the gate. During the deposition of our epitaxy,"
+    },
+    {
+      "end_ms": 1586960,
+      "source_event_index": 350,
+      "start_ms": 1583280,
+      "text": "we get abnormal growth, a little thing like a tumor."
+    },
+    {
+      "end_ms": 1590240,
+      "source_event_index": 351,
+      "start_ms": 1586960,
+      "text": "It’s growing super fast. That causes problems,"
+    },
+    {
+      "end_ms": 1595840,
+      "source_event_index": 352,
+      "start_ms": 1590240,
+      "text": "because one epi will short to the wrong epi and you get transistors not working."
+    },
+    {
+      "end_ms": 1599120,
+      "source_event_index": 353,
+      "start_ms": 1595840,
+      "text": "Then you’ve got to narrow it down to how you’re going to fix it."
+    },
+    {
+      "end_ms": 1603520,
+      "source_event_index": 354,
+      "start_ms": 1599120,
+      "text": "For the past decade, Intel’s chips have had this feature called Processor Trace."
+    },
+    {
+      "end_ms": 1607760,
+      "source_event_index": 355,
+      "start_ms": 1603520,
+      "text": "When you turn it on, it starts recording all the code your program runs, and it captures"
+    },
+    {
+      "end_ms": 1612160,
+      "source_event_index": 356,
+      "start_ms": 1607760,
+      "text": "enough detail that you can go back later and reconstruct every single function call."
+    },
+    {
+      "end_ms": 1616960,
+      "source_event_index": 357,
+      "start_ms": 1612160,
+      "text": "Most companies don’t need that level of detail. But Jane Street does: they need to investigate"
+    },
+    {
+      "end_ms": 1620080,
+      "source_event_index": 358,
+      "start_ms": 1616960,
+      "text": "specific, fleeting moments in their trading systems—things like"
+    },
+    {
+      "end_ms": 1624480,
+      "source_event_index": 359,
+      "start_ms": 1620080,
+      "text": "a delayed response to a network packet. Those events tend to be too brief for"
+    },
+    {
+      "end_ms": 1627600,
+      "source_event_index": 360,
+      "start_ms": 1624480,
+      "text": "most debugging tools to catch. So when one of Jane Street’s"
+    },
+    {
+      "end_ms": 1631120,
+      "source_event_index": 361,
+      "start_ms": 1627600,
+      "text": "engineers noticed Processor Trace, he started playing around with it."
+    },
+    {
+      "end_ms": 1636960,
+      "source_event_index": 362,
+      "start_ms": 1631120,
+      "text": "And then he and a summer intern turned that exploration into a new tool called magic-trace."
+    },
+    {
+      "end_ms": 1641120,
+      "source_event_index": 363,
+      "start_ms": 1636960,
+      "text": "Magic-trace leverages the output from Processor Trace to give Jane Street a"
+    },
+    {
+      "end_ms": 1645200,
+      "source_event_index": 364,
+      "start_ms": 1641120,
+      "text": "history of every function call leading up to a specific moment of interest."
+    },
+    {
+      "end_ms": 1648160,
+      "source_event_index": 365,
+      "start_ms": 1645200,
+      "text": "This project was completely bottom-up—it started just as something that one"
+    },
+    {
+      "end_ms": 1651920,
+      "source_event_index": 366,
+      "start_ms": 1648160,
+      "text": "engineer thought would be valuable. And now, traders and developers across"
+    },
+    {
+      "end_ms": 1656000,
+      "source_event_index": 367,
+      "start_ms": 1651920,
+      "text": "Jane Street use magic-trace every single day. If you want to work somewhere where you’re trusted"
+    },
+    {
+      "end_ms": 1661280,
+      "source_event_index": 368,
+      "start_ms": 1656000,
+      "text": "to pursue the ideas that you think matter most, Jane Street is hiring researchers and engineers."
+    },
+    {
+      "end_ms": 1667920,
+      "source_event_index": 369,
+      "start_ms": 1661280,
+      "text": "Go to janestreet.com/dwarkesh to learn more. One of the pieces that you observed this morning"
+    },
+    {
+      "end_ms": 1673200,
+      "source_event_index": 370,
+      "start_ms": 1667920,
+      "text": "was a special clean that we were looking at, which would eliminate the nodule."
+    },
+    {
+      "end_ms": 1676160,
+      "source_event_index": 371,
+      "start_ms": 1673200,
+      "text": "The nodule would deposit, and then we’d get rid of it."
+    },
+    {
+      "end_ms": 1679520,
+      "source_event_index": 372,
+      "start_ms": 1676160,
+      "text": "Some of the other discussion was about the source of the nodule."
+    },
+    {
+      "end_ms": 1684240,
+      "source_event_index": 373,
+      "start_ms": 1679520,
+      "text": "Get rid of the source of the nodule. There’s some issue. How do you"
+    },
+    {
+      "end_ms": 1687680,
+      "source_event_index": 374,
+      "start_ms": 1684240,
+      "text": "decide what the source of it is? For the most part, we work highly parallel."
+    },
+    {
+      "end_ms": 1690880,
+      "source_event_index": 375,
+      "start_ms": 1688320,
+      "text": "How do you decide? It’s not always evident"
+    },
+    {
+      "end_ms": 1695680,
+      "source_event_index": 376,
+      "start_ms": 1690880,
+      "text": "what the easiest way to fix the problem is, so you work on all the potential fixes."
+    },
+    {
+      "end_ms": 1702480,
+      "source_event_index": 377,
+      "start_ms": 1696480,
+      "text": "Sometimes it’s not the one you expect first. Once we’ve identified it as a primary problem"
+    },
+    {
+      "end_ms": 1707440,
+      "source_event_index": 378,
+      "start_ms": 1702480,
+      "text": "for the technology, that’s where this Hot Topics meeting gets involved."
+    },
+    {
+      "end_ms": 1713360,
+      "source_event_index": 379,
+      "start_ms": 1707440,
+      "text": "That’s how we align the resources into those engineering teams so that"
+    },
+    {
+      "end_ms": 1716320,
+      "source_event_index": 380,
+      "start_ms": 1713360,
+      "text": "we can accelerate the work. You said that there’s some"
+    },
+    {
+      "end_ms": 1720640,
+      "source_event_index": 381,
+      "start_ms": 1716320,
+      "text": "fast-track process where wafers can move through faster if they’re bottlenecking some experiment."
+    },
+    {
+      "end_ms": 1724240,
+      "source_event_index": 382,
+      "start_ms": 1720640,
+      "text": "We have a tiered system of what we call hot boxes in the factory."
+    },
+    {
+      "end_ms": 1731040,
+      "source_event_index": 383,
+      "start_ms": 1724960,
+      "text": "Every grade of hot box goes a little bit faster. It’s just how the factory prioritizes that"
+    },
+    {
+      "end_ms": 1734880,
+      "source_event_index": 384,
+      "start_ms": 1731040,
+      "text": "particular lot, that block of silicon that’s running through the factory."
+    },
+    {
+      "end_ms": 1740480,
+      "source_event_index": 385,
+      "start_ms": 1735680,
+      "text": "Our highest grade of hot box, HotBox 1, races through the factory."
+    },
+    {
+      "end_ms": 1744800,
+      "source_event_index": 386,
+      "start_ms": 1740480,
+      "text": "It gets priority at every single tool, but it’s a drag on the entire factory."
+    },
+    {
+      "end_ms": 1749600,
+      "source_event_index": 387,
+      "start_ms": 1744800,
+      "text": "If you had a factory person in here, they don’t like playing that card,"
+    },
+    {
+      "end_ms": 1756000,
+      "source_event_index": 388,
+      "start_ms": 1749600,
+      "text": "because you end up using the tools inefficiently so that you can go super fast."
+    },
+    {
+      "end_ms": 1760880,
+      "source_event_index": 389,
+      "start_ms": 1756000,
+      "text": "Think of it as a highway, and you set aside that one lane for the carpool,"
+    },
+    {
+      "end_ms": 1763440,
+      "source_event_index": 390,
+      "start_ms": 1760880,
+      "text": "which everyone could use, but you’re saying, “Okay, it’s just the carpool.”"
+    },
+    {
+      "end_ms": 1766400,
+      "source_event_index": 391,
+      "start_ms": 1763440,
+      "text": "That’s our HotBox 1. Everyone clear out of"
+    },
+    {
+      "end_ms": 1770720,
+      "source_event_index": 392,
+      "start_ms": 1766400,
+      "text": "that lane except for that one experiment, and that one experiment races down the highway."
+    },
+    {
+      "end_ms": 1775040,
+      "source_event_index": 393,
+      "start_ms": 1770720,
+      "text": "Kevin’s job is deciding what goes onto the production line now, but the day before, I"
+    },
+    {
+      "end_ms": 1781280,
+      "source_event_index": 394,
+      "start_ms": 1775040,
+      "text": "went to Intel’s research lab with Jack Kavalieros to see ideas that aren’t ready for the node yet."
+    },
+    {
+      "end_ms": 1785600,
+      "source_event_index": 395,
+      "start_ms": 1781280,
+      "text": "We started with wiring. A transistor is only useful once it’s connected"
+    },
+    {
+      "end_ms": 1790320,
+      "source_event_index": 396,
+      "start_ms": 1785600,
+      "text": "to others, and on a modern chip that takes more than a dozen layers of metal wire stacked"
+    },
+    {
+      "end_ms": 1795840,
+      "source_event_index": 397,
+      "start_ms": 1790320,
+      "text": "above the transistors, called interconnect. Those wires are made of copper, and as they"
+    },
+    {
+      "end_ms": 1801360,
+      "source_event_index": 398,
+      "start_ms": 1795840,
+      "text": "shrink, copper starts to run into trouble. Intel is exploring a replacement: ruthenium."
+    },
+    {
+      "end_ms": 1805280,
+      "source_event_index": 399,
+      "start_ms": 1801360,
+      "text": "Ruthenium has higher resistivity, so why are you guys exploring ruthenium for the future?"
+    },
+    {
+      "end_ms": 1811440,
+      "source_event_index": 400,
+      "start_ms": 1805280,
+      "text": "Interestingly enough, as you scale the dimensions of those copper wires, you run into challenges."
+    },
+    {
+      "end_ms": 1817680,
+      "source_event_index": 401,
+      "start_ms": 1811440,
+      "text": "For example, copper typically requires a liner in order to deposit the copper to fill those lines."
+    },
+    {
+      "end_ms": 1823680,
+      "source_event_index": 402,
+      "start_ms": 1817680,
+      "text": "Ruthenium is very different in that regard because it’s a material that we can actually etch."
+    },
+    {
+      "end_ms": 1830320,
+      "source_event_index": 403,
+      "start_ms": 1823680,
+      "text": "As such, by etching it, we don’t need that liner. Now you scale those very fine dimensions,"
+    },
+    {
+      "end_ms": 1837600,
+      "source_event_index": 404,
+      "start_ms": 1830320,
+      "text": "and if you can trade off that resistive liner with no liner, ruthenium starts to win."
+    },
+    {
+      "end_ms": 1840960,
+      "source_event_index": 405,
+      "start_ms": 1837600,
+      "text": "There is a crossover point where ruthenium will have much better"
+    },
+    {
+      "end_ms": 1846960,
+      "source_event_index": 406,
+      "start_ms": 1840960,
+      "text": "conductivity, better resistivity than copper. That’s roughly in the 20-nanometer pitch range,"
+    },
+    {
+      "end_ms": 1852480,
+      "source_event_index": 407,
+      "start_ms": 1846960,
+      "text": "which means, if you can imagine, half of the pitch is your metal line, and the other half is"
+    },
+    {
+      "end_ms": 1855680,
+      "source_event_index": 408,
+      "start_ms": 1852480,
+      "text": "the dielectric that isolates them. So what is the liner?"
+    },
+    {
+      "end_ms": 1862240,
+      "source_event_index": 409,
+      "start_ms": 1856960,
+      "text": "Think of it almost like a glue layer or transition layer that we need in order to deposit the copper"
+    },
+    {
+      "end_ms": 1865920,
+      "source_event_index": 410,
+      "start_ms": 1862240,
+      "text": "and have it stick, and have it make that connection to the copper lines below it."
+    },
+    {
+      "end_ms": 1870400,
+      "source_event_index": 411,
+      "start_ms": 1865920,
+      "text": "These are all interlocking copper lines that interconnect to each other."
+    },
+    {
+      "end_ms": 1875680,
+      "source_event_index": 412,
+      "start_ms": 1870400,
+      "text": "But every time you deposit copper, you’ve always had a liner underneath it."
+    },
+    {
+      "end_ms": 1877920,
+      "source_event_index": 413,
+      "start_ms": 1875680,
+      "text": "In the past, that liner may have been a significant"
+    },
+    {
+      "end_ms": 1884480,
+      "source_event_index": 414,
+      "start_ms": 1877920,
+      "text": "portion of the entirety of that conduction path. But over time, we’ve scaled it, made it thinner,"
+    },
+    {
+      "end_ms": 1890960,
+      "source_event_index": 415,
+      "start_ms": 1884480,
+      "text": "and so copper comes back into play as a contender. One thing I’d be curious to know is how you"
+    },
+    {
+      "end_ms": 1895760,
+      "source_event_index": 416,
+      "start_ms": 1890960,
+      "text": "decide that a technology is mature and ready for high-volume manufacturing."
+    },
+    {
+      "end_ms": 1900640,
+      "source_event_index": 417,
+      "start_ms": 1896320,
+      "text": "With 10 nanometer, you were mentioning you guys moved on from copper to cobalt,"
+    },
+    {
+      "end_ms": 1904400,
+      "source_event_index": 418,
+      "start_ms": 1900640,
+      "text": "and there were potential issues with that. How do you decide that this"
+    },
+    {
+      "end_ms": 1908960,
+      "source_event_index": 419,
+      "start_ms": 1904400,
+      "text": "technology is going to work at scale? The integration of these materials into such"
+    },
+    {
+      "end_ms": 1914800,
+      "source_event_index": 420,
+      "start_ms": 1908960,
+      "text": "a complex system as the transistor ecosystem involves many, many different components."
+    },
+    {
+      "end_ms": 1919440,
+      "source_event_index": 421,
+      "start_ms": 1914800,
+      "text": "The scalability is one part, but its ability to integrate is another."
+    },
+    {
+      "end_ms": 1922800,
+      "source_event_index": 422,
+      "start_ms": 1919440,
+      "text": "At the time we made a decision for cobalt, it was the forerunner."
+    },
+    {
+      "end_ms": 1927520,
+      "source_event_index": 423,
+      "start_ms": 1922800,
+      "text": "The results were stronger at the time. But as we work with our ecosystem externally,"
+    },
+    {
+      "end_ms": 1933280,
+      "source_event_index": 424,
+      "start_ms": 1927520,
+      "text": "the vendor ecosystem that provides these materials and the tools that we integrate them with, we find"
+    },
+    {
+      "end_ms": 1940480,
+      "source_event_index": 425,
+      "start_ms": 1933280,
+      "text": "solutions down the road that may bring copper back in line as being the stronger of the two."
+    },
+    {
+      "end_ms": 1944720,
+      "source_event_index": 426,
+      "start_ms": 1940480,
+      "text": "That’s exactly what happens. Every technology that we go through,"
+    },
+    {
+      "end_ms": 1950800,
+      "source_event_index": 427,
+      "start_ms": 1944720,
+      "text": "we will evaluate multiple options. As we get closer to our time horizon"
+    },
+    {
+      "end_ms": 1955760,
+      "source_event_index": 428,
+      "start_ms": 1950800,
+      "text": "for delivering a manufacturing-worthy product, we have to make a decision."
+    },
+    {
+      "end_ms": 1959440,
+      "source_event_index": 429,
+      "start_ms": 1955760,
+      "text": "The leading option at the time was cobalt. Now it’s copper again,"
+    },
+    {
+      "end_ms": 1965360,
+      "source_event_index": 430,
+      "start_ms": 1959440,
+      "text": "and perhaps in the future it’ll be ruthenium. I’d love to get your thoughts on CFET, basically"
+    },
+    {
+      "end_ms": 1970880,
+      "source_event_index": 431,
+      "start_ms": 1965360,
+      "text": "stacking the transistors on top of each other. What is progress like there?"
+    },
+    {
+      "end_ms": 1973120,
+      "source_event_index": 432,
+      "start_ms": 1970880,
+      "text": "Can you keep making more and more layers? Is it just two?"
+    },
+    {
+      "end_ms": 1975440,
+      "source_event_index": 433,
+      "start_ms": 1973120,
+      "text": "Can you go three, four? How high can you get?"
+    },
+    {
+      "end_ms": 1983200,
+      "source_event_index": 434,
+      "start_ms": 1975440,
+      "text": "That evaluation of CFET is currently underway. Not just by us, by our competition."
+    },
+    {
+      "end_ms": 1987600,
+      "source_event_index": 435,
+      "start_ms": 1983200,
+      "text": "Labs externally are looking at it. It is the ultimate in stackability."
+    },
+    {
+      "end_ms": 1990640,
+      "source_event_index": 436,
+      "start_ms": 1987600,
+      "text": "We’re taking transistors that had to be compressed more and more,"
+    },
+    {
+      "end_ms": 1995360,
+      "source_event_index": 437,
+      "start_ms": 1990640,
+      "text": "and we’re relaxing that in some ways because we’re going to stack them on top of each other."
+    },
+    {
+      "end_ms": 1998640,
+      "source_event_index": 438,
+      "start_ms": 1995360,
+      "text": "But the act of stacking does not mean that they’re not interconnected."
+    },
+    {
+      "end_ms": 2001840,
+      "source_event_index": 439,
+      "start_ms": 1998640,
+      "text": "What used to be connections on the top or even on the bottom,"
+    },
+    {
+      "end_ms": 2007840,
+      "source_event_index": 440,
+      "start_ms": 2001840,
+      "text": "as we’ve seen from our press release, now has to go vertically in between the transistors."
+    },
+    {
+      "end_ms": 2012880,
+      "source_event_index": 441,
+      "start_ms": 2007840,
+      "text": "That’s a new challenge because the aspect ratio of creating trenches and filling those"
+    },
+    {
+      "end_ms": 2017520,
+      "source_event_index": 442,
+      "start_ms": 2012880,
+      "text": "trenches becomes more and more difficult. It’s not as straightforward as stacking the"
+    },
+    {
+      "end_ms": 2020560,
+      "source_event_index": 443,
+      "start_ms": 2017520,
+      "text": "transistors, because you still have to think about interconnecting them."
+    },
+    {
+      "end_ms": 2025280,
+      "source_event_index": 444,
+      "start_ms": 2020560,
+      "text": "Is the issue there the etch to get that deep hole? Aspect ratio for the etches is a big part of it."
+    },
+    {
+      "end_ms": 2029040,
+      "source_event_index": 445,
+      "start_ms": 2025280,
+      "text": "We’re working with our vendors to evolve on that and to improve that, but it’s also what"
+    },
+    {
+      "end_ms": 2034480,
+      "source_event_index": 446,
+      "start_ms": 2029040,
+      "text": "you fill those very tiny spaces with. Because filling can sometimes leave"
+    },
+    {
+      "end_ms": 2038960,
+      "source_event_index": 447,
+      "start_ms": 2034480,
+      "text": "air gaps or holes that are never really filled, and that’s not ideal."
+    },
+    {
+      "end_ms": 2042000,
+      "source_event_index": 448,
+      "start_ms": 2038960,
+      "text": "I assume there’s a version of CFET that works inside this lab."
+    },
+    {
+      "end_ms": 2046000,
+      "source_event_index": 449,
+      "start_ms": 2042000,
+      "text": "What is the kind of wafer or process that is working right now?"
+    },
+    {
+      "end_ms": 2047648,
+      "source_event_index": 450,
+      "start_ms": 2046000,
+      "text": "Then what’s the next step? What’s the next step after that,"
+    },
+    {
+      "end_ms": 2055280,
+      "source_event_index": 451,
+      "start_ms": 2048160,
+      "text": "until it’s inside the full high-volume process? Part of the process of evolving these"
+    },
+    {
+      "end_ms": 2060720,
+      "source_event_index": 452,
+      "start_ms": 2055280,
+      "text": "technologies, especially something more complex like an architecture — not just a basic chemistry"
+    },
+    {
+      "end_ms": 2066480,
+      "source_event_index": 453,
+      "start_ms": 2060720,
+      "text": "or a material, but a full architecture like CFET — is that we have to make short-loop vehicles"
+    },
+    {
+      "end_ms": 2070880,
+      "source_event_index": 454,
+      "start_ms": 2066480,
+      "text": "that can give us faster turnaround. The normal manufacturing process can"
+    },
+    {
+      "end_ms": 2075680,
+      "source_event_index": 455,
+      "start_ms": 2070880,
+      "text": "take a month or longer to complete the thousands of steps that it goes through."
+    },
+    {
+      "end_ms": 2081760,
+      "source_event_index": 456,
+      "start_ms": 2075680,
+      "text": "Our goal here is to take unit cells of that process and qualify them."
+    },
+    {
+      "end_ms": 2087600,
+      "source_event_index": 457,
+      "start_ms": 2081760,
+      "text": "We take advantage of short-loop vehicles that can give us electrical parameters,"
+    },
+    {
+      "end_ms": 2092880,
+      "source_event_index": 458,
+      "start_ms": 2087600,
+      "text": "chemical parameters that can resolve some of those challenges, those speed bumps."
+    },
+    {
+      "end_ms": 2098800,
+      "source_event_index": 459,
+      "start_ms": 2092880,
+      "text": "Once we’ve resolved them, then we combine them into a more complex test vehicle."
+    },
+    {
+      "end_ms": 2101760,
+      "source_event_index": 460,
+      "start_ms": 2098800,
+      "text": "What you would find in here is something very simple."
+    },
+    {
+      "end_ms": 2108720,
+      "source_event_index": 461,
+      "start_ms": 2101760,
+      "text": "You might be making a diode, you might be making a capacitor, which are components of the transistor."
+    },
+    {
+      "end_ms": 2114800,
+      "source_event_index": 462,
+      "start_ms": 2108720,
+      "text": "As those evolve and become stronger, better performing, you combine them to make the next"
+    },
+    {
+      "end_ms": 2120800,
+      "source_event_index": 463,
+      "start_ms": 2114800,
+      "text": "stage, which might be the transistor itself. In the CFET example, you might not choose to"
+    },
+    {
+      "end_ms": 2125840,
+      "source_event_index": 464,
+      "start_ms": 2120800,
+      "text": "do four ribbons on top of four ribbons. You might just choose to do one on one,"
+    },
+    {
+      "end_ms": 2129040,
+      "source_event_index": 465,
+      "start_ms": 2125840,
+      "text": "because naturally the aspect ratio of dealing with something that"
+    },
+    {
+      "end_ms": 2135360,
+      "source_event_index": 466,
+      "start_ms": 2129040,
+      "text": "much taller becomes more and more challenging. So we would have a simplified version of a CFET,"
+    },
+    {
+      "end_ms": 2140560,
+      "source_event_index": 467,
+      "start_ms": 2135360,
+      "text": "which has only one wire for the NMOS and one wire for the PMOS."
+    },
+    {
+      "end_ms": 2146000,
+      "source_event_index": 468,
+      "start_ms": 2140560,
+      "text": "That simplifies our job, but it still helps us evaluate the stacking of devices"
+    },
+    {
+      "end_ms": 2149520,
+      "source_event_index": 469,
+      "start_ms": 2146000,
+      "text": "and how they will interconnect. But are the feature sizes here as"
+    },
+    {
+      "end_ms": 2152080,
+      "source_event_index": 470,
+      "start_ms": 2149520,
+      "text": "small as they will be eventually? Or are the feature sizes bigger?"
+    },
+    {
+      "end_ms": 2159280,
+      "source_event_index": 471,
+      "start_ms": 2152080,
+      "text": "Oh, absolutely. In some cases, at least as small. For example, you’ve heard of 2D materials,"
+    },
+    {
+      "end_ms": 2163840,
+      "source_event_index": 472,
+      "start_ms": 2159280,
+      "text": "these transition layer dichalcogenides, as they’re called."
+    },
+    {
+      "end_ms": 2167680,
+      "source_event_index": 473,
+      "start_ms": 2163840,
+      "text": "They’re very, very thin materials. They’re essentially one monolayer"
+    },
+    {
+      "end_ms": 2172320,
+      "source_event_index": 474,
+      "start_ms": 2167680,
+      "text": "of atoms that we deal with. Those depositions can happen in this lab."
+    },
+    {
+      "end_ms": 2177520,
+      "source_event_index": 475,
+      "start_ms": 2172320,
+      "text": "We can evaluate those films in terms of conductivity, our ability to contact them,"
+    },
+    {
+      "end_ms": 2182400,
+      "source_event_index": 476,
+      "start_ms": 2177520,
+      "text": "our ability to modulate that conductivity, which is what the transistor does."
+    },
+    {
+      "end_ms": 2190480,
+      "source_event_index": 477,
+      "start_ms": 2182400,
+      "text": "So yes, we do have the ability to not only deposit films that are very small and thin to the"
+    },
+    {
+      "end_ms": 2198080,
+      "source_event_index": 478,
+      "start_ms": 2190480,
+      "text": "atomic scale, but also print very small features. We have EUV technology, or E-beam technology, that"
+    },
+    {
+      "end_ms": 2202640,
+      "source_event_index": 479,
+      "start_ms": 2198080,
+      "text": "can allow us to print very small features similar to what we will eventually make in production."
+    },
+    {
+      "end_ms": 2211840,
+      "source_event_index": 480,
+      "start_ms": 2203280,
+      "text": "I guess I don’t understand intuitively, lacking the context in this process,"
+    },
+    {
+      "end_ms": 2216960,
+      "source_event_index": 481,
+      "start_ms": 2211840,
+      "text": "if you have the features that are as small for a working CFET right now."
+    },
+    {
+      "end_ms": 2220480,
+      "source_event_index": 482,
+      "start_ms": 2217520,
+      "text": "Why will it take 10 years for it to be in my phone?"
+    },
+    {
+      "end_ms": 2225520,
+      "source_event_index": 483,
+      "start_ms": 2221520,
+      "text": "I understand that there’s a process, but why is it such a long process?"
+    },
+    {
+      "end_ms": 2229040,
+      "source_event_index": 484,
+      "start_ms": 2225520,
+      "text": "The answer is slightly different when you’re dealing with an architecture"
+    },
+    {
+      "end_ms": 2234320,
+      "source_event_index": 485,
+      "start_ms": 2229040,
+      "text": "like CFET versus a novel material. Materials have, of course, the"
+    },
+    {
+      "end_ms": 2241040,
+      "source_event_index": 486,
+      "start_ms": 2234320,
+      "text": "challenges of being deposited, etched, removed. Their compatibility with other layers above and"
+    },
+    {
+      "end_ms": 2246400,
+      "source_event_index": 487,
+      "start_ms": 2241040,
+      "text": "below, all those things have to be researched first before you put them in a production line."
+    },
+    {
+      "end_ms": 2251680,
+      "source_event_index": 488,
+      "start_ms": 2246400,
+      "text": "An architecture may seem like a simple evolution. “Oh, you’re making nanoribbon"
+    },
+    {
+      "end_ms": 2254800,
+      "source_event_index": 489,
+      "start_ms": 2251680,
+      "text": "transistors next to each other. What’s wrong with just stacking them?”"
+    },
+    {
+      "end_ms": 2261680,
+      "source_event_index": 490,
+      "start_ms": 2255360,
+      "text": "But the act of stacking them, of course, increases the aspect ratio for etches, depositions, cleans,"
+    },
+    {
+      "end_ms": 2267600,
+      "source_event_index": 491,
+      "start_ms": 2261680,
+      "text": "and the technology may simply not be ready yet. But if you’ve already made it here, there’s a"
+    },
+    {
+      "end_ms": 2272560,
+      "source_event_index": 492,
+      "start_ms": 2267600,
+      "text": "version of the technology that’s ready, right? Correct. We’ve made a simplified version that"
+    },
+    {
+      "end_ms": 2280160,
+      "source_event_index": 493,
+      "start_ms": 2272560,
+      "text": "may not be an advantage over our current side-by-side technology of nanoribbons,"
+    },
+    {
+      "end_ms": 2284960,
+      "source_event_index": 494,
+      "start_ms": 2280160,
+      "text": "but we need to evolve it to make it maybe two nanoribbons, or to add the right type of"
+    },
+    {
+      "end_ms": 2290320,
+      "source_event_index": 495,
+      "start_ms": 2284960,
+      "text": "metals and dielectrics, in order to extract the maximum performance out of that device."
+    },
+    {
+      "end_ms": 2294320,
+      "source_event_index": 496,
+      "start_ms": 2290320,
+      "text": "Got it. So it’s like a long tail of— There’s a thousand different steps that"
+    },
+    {
+      "end_ms": 2300560,
+      "source_event_index": 497,
+      "start_ms": 2294320,
+      "text": "all have to come together in a very unique way to make the performance compatible or actually"
+    },
+    {
+      "end_ms": 2303600,
+      "source_event_index": 498,
+      "start_ms": 2300560,
+      "text": "supersede the prior technology. Where do the ideas tend to fail?"
+    },
+    {
+      "end_ms": 2309280,
+      "source_event_index": 499,
+      "start_ms": 2304480,
+      "text": "You have 20 ideas like 2D materials. What is the way in which you decide"
+    },
+    {
+      "end_ms": 2317840,
+      "source_event_index": 500,
+      "start_ms": 2309280,
+      "text": "this is actually not worth pursuing further? Sometimes we discover fundamentals about the"
+    },
+    {
+      "end_ms": 2322800,
+      "source_event_index": 501,
+      "start_ms": 2317840,
+      "text": "material that will be incompatible with the rest of the processing that we do."
+    },
+    {
+      "end_ms": 2328320,
+      "source_event_index": 502,
+      "start_ms": 2324320,
+      "text": "The first level of experiments may simply be very simple depositions."
+    },
+    {
+      "end_ms": 2333040,
+      "source_event_index": 503,
+      "start_ms": 2328320,
+      "text": "You say, “Okay, I can deposit the film, I can look at it, I can measure it."
+    },
+    {
+      "end_ms": 2336720,
+      "source_event_index": 504,
+      "start_ms": 2333040,
+      "text": "But the moment I try to make a contact to it, nothing sticks.”"
+    },
+    {
+      "end_ms": 2340560,
+      "source_event_index": 505,
+      "start_ms": 2336720,
+      "text": "It could be something as fundamental as the adhesion."
+    },
+    {
+      "end_ms": 2346400,
+      "source_event_index": 506,
+      "start_ms": 2340560,
+      "text": "The next step in the process simply has no way to adhere to the material."
+    },
+    {
+      "end_ms": 2350320,
+      "source_event_index": 507,
+      "start_ms": 2346400,
+      "text": "So you may rule out a material because of something as simple as that."
+    },
+    {
+      "end_ms": 2356880,
+      "source_event_index": 508,
+      "start_ms": 2350880,
+      "text": "More complex challenges might be that the subsequent processing may"
+    },
+    {
+      "end_ms": 2363600,
+      "source_event_index": 509,
+      "start_ms": 2356880,
+      "text": "have gaseous interactions with downstream steps. For example, I’ve deposited the film, I’ve capped"
+    },
+    {
+      "end_ms": 2370080,
+      "source_event_index": 510,
+      "start_ms": 2363600,
+      "text": "it with other materials, but they’re not hermetic. So my third or fourth or fifth step in the"
+    },
+    {
+      "end_ms": 2374080,
+      "source_event_index": 511,
+      "start_ms": 2370080,
+      "text": "process may actually still interact with it and change its properties."
+    },
+    {
+      "end_ms": 2380320,
+      "source_event_index": 512,
+      "start_ms": 2374080,
+      "text": "That makes it unstable, and now we have to find better hermetic sealing for that process."
+    },
+    {
+      "end_ms": 2385760,
+      "source_event_index": 513,
+      "start_ms": 2380320,
+      "text": "If we don’t find a way to control it, then it’s a dead end for us."
+    },
+    {
+      "end_ms": 2390960,
+      "source_event_index": 514,
+      "start_ms": 2385760,
+      "text": "Stacking transistors is still in the research lab. Stacking whole chips is already in production,"
+    },
+    {
+      "end_ms": 2395200,
+      "source_event_index": 515,
+      "start_ms": 2390960,
+      "text": "and it tackles a different problem: how separate chips communicate with each other."
+    },
+    {
+      "end_ms": 2399760,
+      "source_event_index": 516,
+      "start_ms": 2395200,
+      "text": "Modern computers are divided into multiple parts, each optimized for a different task."
+    },
+    {
+      "end_ms": 2406240,
+      "source_event_index": 517,
+      "start_ms": 2399760,
+      "text": "For example, Nvidia’s Blackwell data-center GPU joins two huge processor chips and surrounds them"
+    },
+    {
+      "end_ms": 2410400,
+      "source_event_index": 518,
+      "start_ms": 2406240,
+      "text": "with eight stacks of high-bandwidth memory. These chips have to constantly send"
+    },
+    {
+      "end_ms": 2415120,
+      "source_event_index": 519,
+      "start_ms": 2410400,
+      "text": "data back and forth with each other. And in AI, the speed of that traffic,"
+    },
+    {
+      "end_ms": 2420000,
+      "source_event_index": 520,
+      "start_ms": 2415120,
+      "text": "not the raw computation itself, is often what limits how fast the workload finishes."
+    },
+    {
+      "end_ms": 2424000,
+      "source_event_index": 521,
+      "start_ms": 2420000,
+      "text": "Imagine two chips side by side, communicating through their facing edges."
+    },
+    {
+      "end_ms": 2428480,
+      "source_event_index": 522,
+      "start_ms": 2424000,
+      "text": "If you double each chip’s width and length, you’ll have four times the area for circuitry,"
+    },
+    {
+      "end_ms": 2433520,
+      "source_event_index": 523,
+      "start_ms": 2428480,
+      "text": "but only twice the edge length for connections. This is the area-versus-perimeter problem."
+    },
+    {
+      "end_ms": 2437840,
+      "source_event_index": 524,
+      "start_ms": 2433520,
+      "text": "As transistors become denser, a chip’s ability to do computations increases"
+    },
+    {
+      "end_ms": 2442160,
+      "source_event_index": 525,
+      "start_ms": 2437840,
+      "text": "faster than its ability to move data around. The industry has known about this problem"
+    },
+    {
+      "end_ms": 2445600,
+      "source_event_index": 526,
+      "start_ms": 2442160,
+      "text": "for years, so multiple technologies have been invented to address it."
+    },
+    {
+      "end_ms": 2451440,
+      "source_event_index": 527,
+      "start_ms": 2445600,
+      "text": "The completed circuits must undergo two last operations: bonding and packaging."
+    },
+    {
+      "end_ms": 2456320,
+      "source_event_index": 528,
+      "start_ms": 2451440,
+      "text": "Once a chip is made, it still has to be connected to other chips and to the rest of the computer."
+    },
+    {
+      "end_ms": 2460240,
+      "source_event_index": 529,
+      "start_ms": 2456320,
+      "text": "That step is called packaging, and it has changed a lot in the last few decades."
+    },
+    {
+      "end_ms": 2464320,
+      "source_event_index": 530,
+      "start_ms": 2460240,
+      "text": "At a high level, you can think of the evolution of packaging like this: initially,"
+    },
+    {
+      "end_ms": 2467840,
+      "source_event_index": 531,
+      "start_ms": 2464320,
+      "text": "chips were laid out side by side. Wires connecting them went out"
+    },
+    {
+      "end_ms": 2471280,
+      "source_event_index": 532,
+      "start_ms": 2467840,
+      "text": "the side of one chip to another. To allow for more communication"
+    },
+    {
+      "end_ms": 2475040,
+      "source_event_index": 533,
+      "start_ms": 2471280,
+      "text": "density, the industry introduced a shared piece of silicon, called an"
+    },
+    {
+      "end_ms": 2479360,
+      "source_event_index": 534,
+      "start_ms": 2475040,
+      "text": "interposer, for multiple chips to sit on. A chip can talk to other chips through the"
+    },
+    {
+      "end_ms": 2485440,
+      "source_event_index": 535,
+      "start_ms": 2479360,
+      "text": "wiring that runs directly through the interposer. This type of packaging is often called “2.5D”."
+    },
+    {
+      "end_ms": 2490400,
+      "source_event_index": 536,
+      "start_ms": 2485440,
+      "text": "Another way to increase connection density is to bond chips directly to one another."
+    },
+    {
+      "end_ms": 2495840,
+      "source_event_index": 537,
+      "start_ms": 2490400,
+      "text": "This allows for shorter connections between chips, but the early versions of this idea used solder"
+    },
+    {
+      "end_ms": 2501680,
+      "source_event_index": 538,
+      "start_ms": 2495840,
+      "text": "bumps, which are bulky and increased resistance. It would be better to skip the solder and fuse"
+    },
+    {
+      "end_ms": 2505520,
+      "source_event_index": 539,
+      "start_ms": 2501680,
+      "text": "the signal wire connections of the two chips directly to each other."
+    },
+    {
+      "end_ms": 2508800,
+      "source_event_index": 540,
+      "start_ms": 2505520,
+      "text": "This is called hybrid bonding, and it is one of the technologies the"
+    },
+    {
+      "end_ms": 2513600,
+      "source_event_index": 541,
+      "start_ms": 2508800,
+      "text": "semiconductor industry is investing in the most. Hybrid bonding works by aligning the copper"
+    },
+    {
+      "end_ms": 2518160,
+      "source_event_index": 542,
+      "start_ms": 2513600,
+      "text": "interconnects of one chip with those of another. Then these chips are pushed together and heated"
+    },
+    {
+      "end_ms": 2521280,
+      "source_event_index": 543,
+      "start_ms": 2518160,
+      "text": "so their interconnects expand and bridge the gap between the chips."
+    },
+    {
+      "end_ms": 2525280,
+      "source_event_index": 544,
+      "start_ms": 2521280,
+      "text": "This process makes the insulating surfaces around the copper bond as well."
+    },
+    {
+      "end_ms": 2529120,
+      "source_event_index": 545,
+      "start_ms": 2525280,
+      "text": "And so by removing the solder bumps, you end up with much denser connections."
+    },
+    {
+      "end_ms": 2532800,
+      "source_event_index": 546,
+      "start_ms": 2529120,
+      "text": "But the reason this technology is only now entering volume manufacturing is because"
+    },
+    {
+      "end_ms": 2536960,
+      "source_event_index": 547,
+      "start_ms": 2532800,
+      "text": "it took a while to iron out the alignment and defect challenges that it introduced."
+    },
+    {
+      "end_ms": 2542240,
+      "source_event_index": 548,
+      "start_ms": 2536960,
+      "text": "In the packaging lab, I asked Tyler Osborn, a director in Intel’s advanced packaging"
+    },
+    {
+      "end_ms": 2545440,
+      "source_event_index": 549,
+      "start_ms": 2542240,
+      "text": "technology development group, how they put this into practice."
+    },
+    {
+      "end_ms": 2548880,
+      "source_event_index": 550,
+      "start_ms": 2545440,
+      "text": "Intel has spent over 50 years optimizing its CPUs for speed."
+    },
+    {
+      "end_ms": 2552240,
+      "source_event_index": 551,
+      "start_ms": 2548880,
+      "text": "But lots of these optimizations—like caching and branch prediction and"
+    },
+    {
+      "end_ms": 2556720,
+      "source_event_index": 552,
+      "start_ms": 2552240,
+      "text": "speculative execution—reduce predictability. The exact same instructions can take four"
+    },
+    {
+      "end_ms": 2561200,
+      "source_event_index": 553,
+      "start_ms": 2556720,
+      "text": "cycles to execute one time and 300 the next. When you stack billions of instructions together"
+    },
+    {
+      "end_ms": 2565840,
+      "source_event_index": 554,
+      "start_ms": 2561200,
+      "text": "and execute them across multiple threads and cores, these non-determinisms compound into"
+    },
+    {
+      "end_ms": 2569520,
+      "source_event_index": 555,
+      "start_ms": 2565840,
+      "text": "all sorts of hard-to-reproduce bugs. If you work on serious systems,"
+    },
+    {
+      "end_ms": 2573520,
+      "source_event_index": 556,
+      "start_ms": 2569520,
+      "text": "you’ve definitely experienced this. Antithesis solved this by doing something a bit"
+    },
+    {
+      "end_ms": 2581440,
+      "source_event_index": 557,
+      "start_ms": 2573520,
+      "text": "crazy: they built a 100% deterministic computer. They identified every single door in Intel’s x86"
+    },
+    {
+      "end_ms": 2585760,
+      "source_event_index": 558,
+      "start_ms": 2581440,
+      "text": "architecture where non-determinism could leak in—network packets, disk reads,"
+    },
+    {
+      "end_ms": 2589840,
+      "source_event_index": 559,
+      "start_ms": 2585760,
+      "text": "temperature sensors, even time itself. And they either welded each of these"
+    },
+    {
+      "end_ms": 2595360,
+      "source_event_index": 560,
+      "start_ms": 2589840,
+      "text": "shut or slotted in a controlled simulation. This deterministic computer is just a foundation."
+    },
+    {
+      "end_ms": 2598720,
+      "source_event_index": 561,
+      "start_ms": 2595360,
+      "text": "On top of it, Antithesis built a testing platform that compresses"
+    },
+    {
+      "end_ms": 2602720,
+      "source_event_index": 562,
+      "start_ms": 2598720,
+      "text": "years of production hardening into minutes. It runs your software through thousands of"
+    },
+    {
+      "end_ms": 2606880,
+      "source_event_index": 563,
+      "start_ms": 2602720,
+      "text": "parallel worlds, injecting faults and intelligently steering each one"
+    },
+    {
+      "end_ms": 2610560,
+      "source_event_index": 564,
+      "start_ms": 2606880,
+      "text": "towards a one-in-a-billion failure that you’d never be able to test yourself."
+    },
+    {
+      "end_ms": 2614320,
+      "source_event_index": 565,
+      "start_ms": 2610560,
+      "text": "This determinism is what’s behind all the other insane Antithesis features that I’ve"
+    },
+    {
+      "end_ms": 2618080,
+      "source_event_index": 566,
+      "start_ms": 2614320,
+      "text": "mentioned over the past few episodes. It’s what lets you reproduce any bug"
+    },
+    {
+      "end_ms": 2622160,
+      "source_event_index": 567,
+      "start_ms": 2618080,
+      "text": "and time travel to any point in the test run. Most importantly, it’s what lets you—or your"
+    },
+    {
+      "end_ms": 2633200,
+      "source_event_index": 568,
+      "start_ms": 2622160,
+      "text": "agents—trace every failure back to its root cause. Go to antithesis.com/dwarkesh to learn more."
+    },
+    {
+      "end_ms": 2638400,
+      "source_event_index": 569,
+      "start_ms": 2633200,
+      "text": "Two different ways you could do hybrid bonding: die to die and die to wafer."
+    },
+    {
+      "end_ms": 2643200,
+      "source_event_index": 570,
+      "start_ms": 2639200,
+      "text": "Maybe you can talk about the advantages of both and which one actually practically works better."
+    },
+    {
+      "end_ms": 2647280,
+      "source_event_index": 571,
+      "start_ms": 2643200,
+      "text": "Sure. Around Intel, what I think you’re referring to as die to die,"
+    },
+    {
+      "end_ms": 2650240,
+      "source_event_index": 572,
+      "start_ms": 2647280,
+      "text": "we typically call wafer to wafer. We actually take a full wafer and"
+    },
+    {
+      "end_ms": 2654160,
+      "source_event_index": 573,
+      "start_ms": 2650240,
+      "text": "another wafer and bond them together. That’s an approach that’s really popular"
+    },
+    {
+      "end_ms": 2659120,
+      "source_event_index": 574,
+      "start_ms": 2654160,
+      "text": "right now in the CMOS image sensor industry. In fact, it basically dominates it."
+    },
+    {
+      "end_ms": 2661840,
+      "source_event_index": 575,
+      "start_ms": 2659120,
+      "text": "It’s being looked at for other things like memory stacking."
+    },
+    {
+      "end_ms": 2664640,
+      "source_event_index": 576,
+      "start_ms": 2662640,
+      "text": "People have published ideas about all kinds of stuff."
+    },
+    {
+      "end_ms": 2669040,
+      "source_event_index": 577,
+      "start_ms": 2664640,
+      "text": "One of the challenges with that, though, is that you need dies that perfectly match each other, and"
+    },
+    {
+      "end_ms": 2675120,
+      "source_event_index": 578,
+      "start_ms": 2669040,
+      "text": "are perfectly left-handed and right-handed, so you have to be able to bond exactly one to the other."
+    },
+    {
+      "end_ms": 2679360,
+      "source_event_index": 579,
+      "start_ms": 2675120,
+      "text": "One-to-one die size is a challenge. If they’re not the exact same design"
+    },
+    {
+      "end_ms": 2683040,
+      "source_event_index": 580,
+      "start_ms": 2679360,
+      "text": "device on top and bottom, that’s a problem. With wafer to wafer, it’s challenging to make"
+    },
+    {
+      "end_ms": 2686160,
+      "source_event_index": 581,
+      "start_ms": 2683040,
+      "text": "sure that you have wafers that match really well in terms of the sort."
+    },
+    {
+      "end_ms": 2689280,
+      "source_event_index": 582,
+      "start_ms": 2686160,
+      "text": "So sort good array here versus sort good array here."
+    },
+    {
+      "end_ms": 2693600,
+      "source_event_index": 583,
+      "start_ms": 2689280,
+      "text": "If they match exactly — good die and bad die all match — I can get 100% yield"
+    },
+    {
+      "end_ms": 2697760,
+      "source_event_index": 584,
+      "start_ms": 2693600,
+      "text": "of that operation of the good dies. But the chances of that are very low."
+    },
+    {
+      "end_ms": 2701600,
+      "source_event_index": 585,
+      "start_ms": 2697760,
+      "text": "There’s going to be some randomization of the two, and whatever that randomization is,"
+    },
+    {
+      "end_ms": 2706960,
+      "source_event_index": 586,
+      "start_ms": 2701600,
+      "text": "will be loss of good bonding to bad. Whereas with chip to wafer,"
+    },
+    {
+      "end_ms": 2711200,
+      "source_event_index": 587,
+      "start_ms": 2706960,
+      "text": "I can dictate the terms. I can singulate and have known good dies"
+    },
+    {
+      "end_ms": 2716640,
+      "source_event_index": 588,
+      "start_ms": 2711200,
+      "text": "that I’ve tested at the chip level, and then only bond known good to a known good base position."
+    },
+    {
+      "end_ms": 2719760,
+      "source_event_index": 589,
+      "start_ms": 2716640,
+      "text": "Do you think then chip to wafer is the way that you’ll do hybrid bonding in the future?"
+    },
+    {
+      "end_ms": 2723120,
+      "source_event_index": 590,
+      "start_ms": 2719760,
+      "text": "I think we’re going to do both. We definitely have the capability to do both."
+    },
+    {
+      "end_ms": 2726960,
+      "source_event_index": 591,
+      "start_ms": 2723120,
+      "text": "It’s really customer and architecture driven, but certainly chip to wafer in"
+    },
+    {
+      "end_ms": 2731200,
+      "source_event_index": 592,
+      "start_ms": 2726960,
+      "text": "the logic-to-logic space makes a lot of sense. You were explaining that going from advanced"
+    },
+    {
+      "end_ms": 2734560,
+      "source_event_index": 593,
+      "start_ms": 2731200,
+      "text": "packaging to hybrid bonding, the size of the pitches is decreasing."
+    },
+    {
+      "end_ms": 2737360,
+      "source_event_index": 594,
+      "start_ms": 2734560,
+      "text": "How much further could that go? That’s a wonderful question."
+    },
+    {
+      "end_ms": 2741600,
+      "source_event_index": 595,
+      "start_ms": 2738000,
+      "text": "Historically, like we were saying, 15 years ago first-level interconnect"
+    },
+    {
+      "end_ms": 2746080,
+      "source_event_index": 596,
+      "start_ms": 2741600,
+      "text": "was 130-150 micrometer pitch. Today in HVM, we’re doing 25"
+    },
+    {
+      "end_ms": 2750400,
+      "source_event_index": 597,
+      "start_ms": 2746080,
+      "text": "micrometer pitch in Foveros. Here we’re doing sub-10,"
+    },
+    {
+      "end_ms": 2754560,
+      "source_event_index": 598,
+      "start_ms": 2750400,
+      "text": "but there’s already been literature out there. In fact, the biggest conference every year"
+    },
+    {
+      "end_ms": 2758400,
+      "source_event_index": 599,
+      "start_ms": 2754560,
+      "text": "in packaging is the IEEE ECTC conference that happens in May."
+    },
+    {
+      "end_ms": 2763200,
+      "source_event_index": 600,
+      "start_ms": 2759120,
+      "text": "There was a paper there this year showing reliability data on a"
+    },
+    {
+      "end_ms": 2768800,
+      "source_event_index": 601,
+      "start_ms": 2763200,
+      "text": "0.45 micron pitch hybrid bonded device. So you can imagine that’s a whole other"
+    },
+    {
+      "end_ms": 2773440,
+      "source_event_index": 602,
+      "start_ms": 2768800,
+      "text": "order of magnitude in density again from where we are right now in HVM."
+    },
+    {
+      "end_ms": 2778800,
+      "source_event_index": 603,
+      "start_ms": 2774160,
+      "text": "That scalability has already been proven. So I see a long runway there."
+    },
+    {
+      "end_ms": 2783280,
+      "source_event_index": 604,
+      "start_ms": 2778800,
+      "text": "Within interconnect, within a single wafer, how far separated are they usually?"
+    },
+    {
+      "end_ms": 2790320,
+      "source_event_index": 605,
+      "start_ms": 2783280,
+      "text": "In the back end of the fab, you can imagine the few layers below packaging are typically around"
+    },
+    {
+      "end_ms": 2795600,
+      "source_event_index": 606,
+      "start_ms": 2790320,
+      "text": "one micron to a half micron in size. So if you can push packaging down"
+    },
+    {
+      "end_ms": 2802480,
+      "source_event_index": 607,
+      "start_ms": 2795600,
+      "text": "to 0.5 microns or below, you can almost think about taking layers off the top of the die and"
+    },
+    {
+      "end_ms": 2806160,
+      "source_event_index": 608,
+      "start_ms": 2802480,
+      "text": "connecting a lower layer within the silicon to another lower layer within the silicon."
+    },
+    {
+      "end_ms": 2809680,
+      "source_event_index": 609,
+      "start_ms": 2806720,
+      "text": "That’s really where the beauty of hybrid bonding happens."
+    },
+    {
+      "end_ms": 2813600,
+      "source_event_index": 610,
+      "start_ms": 2809680,
+      "text": "You could think someday about even having reduced interconnect layers on both sides"
+    },
+    {
+      "end_ms": 2819520,
+      "source_event_index": 611,
+      "start_ms": 2813600,
+      "text": "that we can bond together and have less total IR drop between the two transistor layers."
+    },
+    {
+      "end_ms": 2824160,
+      "source_event_index": 612,
+      "start_ms": 2819520,
+      "text": "It’s really cool to think about where that could go once we get into those regimes."
+    },
+    {
+      "end_ms": 2827840,
+      "source_event_index": 613,
+      "start_ms": 2824160,
+      "text": "Actually, I am very curious about… For AI, it makes sense why hybrid"
+    },
+    {
+      "end_ms": 2831120,
+      "source_event_index": 614,
+      "start_ms": 2827840,
+      "text": "bonding is so powerful, because then you can get higher bandwidth to the memory."
+    },
+    {
+      "end_ms": 2834080,
+      "source_event_index": 615,
+      "start_ms": 2831120,
+      "text": "But you were saying there are issues with heat and everything."
+    },
+    {
+      "end_ms": 2837840,
+      "source_event_index": 616,
+      "start_ms": 2834080,
+      "text": "What is the advantage for non-AI applications of hybrid bonding?"
+    },
+    {
+      "end_ms": 2841040,
+      "source_event_index": 617,
+      "start_ms": 2837840,
+      "text": "Excellent question. There are companies out there that are looking at it for"
+    },
+    {
+      "end_ms": 2848080,
+      "source_event_index": 618,
+      "start_ms": 2841040,
+      "text": "non-AI applications, even in client devices. One of the big things I think it can help"
+    },
+    {
+      "end_ms": 2852400,
+      "source_event_index": 619,
+      "start_ms": 2848080,
+      "text": "with there is, number one, obviously the same raw interconnect density, especially"
+    },
+    {
+      "end_ms": 2857920,
+      "source_event_index": 620,
+      "start_ms": 2852400,
+      "text": "between something like a CPU and a GPU. But the other one is around power."
+    },
+    {
+      "end_ms": 2861360,
+      "source_event_index": 621,
+      "start_ms": 2857920,
+      "text": "Like we talked about before, as you get to finer and finer interconnects,"
+    },
+    {
+      "end_ms": 2866000,
+      "source_event_index": 622,
+      "start_ms": 2861360,
+      "text": "you can reduce the total power consumption, in picojoules per bit, for that interface."
+    },
+    {
+      "end_ms": 2869920,
+      "source_event_index": 623,
+      "start_ms": 2866000,
+      "text": "With hybrid bonding in those applications, you could think about that as another way"
+    },
+    {
+      "end_ms": 2872720,
+      "source_event_index": 624,
+      "start_ms": 2869920,
+      "text": "that packaging can help reduce the total system power budget."
+    },
+    {
+      "end_ms": 2878000,
+      "source_event_index": 625,
+      "start_ms": 2873680,
+      "text": "That gives you lots of benefits: lower power, less heat, for the same benefit"
+    },
+    {
+      "end_ms": 2882960,
+      "source_event_index": 626,
+      "start_ms": 2878000,
+      "text": "in terms of actual electrical performance. So far, this has been about making better chips."
+    },
+    {
+      "end_ms": 2887920,
+      "source_event_index": 627,
+      "start_ms": 2882960,
+      "text": "The other half of the question is how many chips the industry can make if AI labs are"
+    },
+    {
+      "end_ms": 2891040,
+      "source_event_index": 628,
+      "start_ms": 2887920,
+      "text": "willing to pay for far more of them. I’m getting a chance to talk to"
+    },
+    {
+      "end_ms": 2896320,
+      "source_event_index": 629,
+      "start_ms": 2891040,
+      "text": "Pushkar Ranade, who is the CTO of Intel. I’m very interested in understanding how"
+    },
+    {
+      "end_ms": 2900400,
+      "source_event_index": 630,
+      "start_ms": 2896320,
+      "text": "the fact that the entire industry has to rely on the same suppliers bottlenecks"
+    },
+    {
+      "end_ms": 2904800,
+      "source_event_index": 631,
+      "start_ms": 2900400,
+      "text": "your ability to ramp up production. For this EUV tool, ASML produces"
+    },
+    {
+      "end_ms": 2908080,
+      "source_event_index": 632,
+      "start_ms": 2904800,
+      "text": "fewer than 100 of them a year. They don’t plan to produce more"
+    },
+    {
+      "end_ms": 2909840,
+      "source_event_index": 633,
+      "start_ms": 2908080,
+      "text": "than 100 a year, or significantly more, even by the end of the decade."
+    },
+    {
+      "end_ms": 2915120,
+      "source_event_index": 634,
+      "start_ms": 2911360,
+      "text": "That has to be split between you, between TSMC, between all the memory makers who"
+    },
+    {
+      "end_ms": 2918400,
+      "source_event_index": 635,
+      "start_ms": 2915120,
+      "text": "are ramping up production, like SK Hynix. How does that limit your ability to scale"
+    },
+    {
+      "end_ms": 2920400,
+      "source_event_index": 636,
+      "start_ms": 2918400,
+      "text": "up to all this demand? It is a limiter."
+    },
+    {
+      "end_ms": 2925840,
+      "source_event_index": 637,
+      "start_ms": 2922080,
+      "text": "We have to make the most of the capacity that we already have installed."
+    },
+    {
+      "end_ms": 2930080,
+      "source_event_index": 638,
+      "start_ms": 2925840,
+      "text": "We’ll try to increase the output from our existing fleet of tools."
+    },
+    {
+      "end_ms": 2936480,
+      "source_event_index": 639,
+      "start_ms": 2930080,
+      "text": "But EUV or ASML is not the only bottleneck. It is definitely a bigger bottleneck than"
+    },
+    {
+      "end_ms": 2943200,
+      "source_event_index": 640,
+      "start_ms": 2936480,
+      "text": "some of the other tools, but to a large extent, we’re seeing"
+    },
+    {
+      "end_ms": 2950640,
+      "source_event_index": 641,
+      "start_ms": 2944000,
+      "text": "all equipment seeing tremendous supply shortage. Even though there are multiple providers of other"
+    },
+    {
+      "end_ms": 2957680,
+      "source_event_index": 642,
+      "start_ms": 2950640,
+      "text": "tools, once you lock into a process flow — let’s say 18A, which is a mature process"
+    },
+    {
+      "end_ms": 2962240,
+      "source_event_index": 643,
+      "start_ms": 2957680,
+      "text": "now — we need a specific tool. We can’t just go and get a"
+    },
+    {
+      "end_ms": 2967760,
+      "source_event_index": 644,
+      "start_ms": 2962240,
+      "text": "different tool for the same process. So we’re locked into that one tool,"
+    },
+    {
+      "end_ms": 2972400,
+      "source_event_index": 645,
+      "start_ms": 2967760,
+      "text": "one supplier, and we rely on that. What lessons does this give for"
+    },
+    {
+      "end_ms": 2976160,
+      "source_event_index": 646,
+      "start_ms": 2972400,
+      "text": "14A in terms of how you structure it? By 2028, it’s going to be such a crazy world."
+    },
+    {
+      "end_ms": 2979680,
+      "source_event_index": 647,
+      "start_ms": 2976160,
+      "text": "How do you structure things in such a way that you have flexibility in ramping?"
+    },
+    {
+      "end_ms": 2984160,
+      "source_event_index": 648,
+      "start_ms": 2980640,
+      "text": "The way to do it — and we’ve been doing it, and generally everybody does it — is"
+    },
+    {
+      "end_ms": 2988960,
+      "source_event_index": 649,
+      "start_ms": 2984160,
+      "text": "you try to maintain as much fungibility as possible going from one node to the next node."
+    },
+    {
+      "end_ms": 2994320,
+      "source_event_index": 650,
+      "start_ms": 2988960,
+      "text": "Going from 18A to 14A, maybe you would say 80% of the tool set can be reused."
+    },
+    {
+      "end_ms": 3001280,
+      "source_event_index": 651,
+      "start_ms": 2994320,
+      "text": "Then, of course, 14A would require some new capabilities because it’s a denser geometry,"
+    },
+    {
+      "end_ms": 3005840,
+      "source_event_index": 652,
+      "start_ms": 3001280,
+      "text": "so it would require some unique tools. Do you have a sense of what the ultimate"
+    },
+    {
+      "end_ms": 3011120,
+      "source_event_index": 653,
+      "start_ms": 3005840,
+      "text": "bottleneck is on how many wafers you guys could produce a month, even if you were to decide"
+    },
+    {
+      "end_ms": 3017600,
+      "source_event_index": 654,
+      "start_ms": 3011120,
+      "text": "to invest infinity money into doing CapEx? Given the existing constraints, let’s say we had"
+    },
+    {
+      "end_ms": 3025360,
+      "source_event_index": 655,
+      "start_ms": 3017600,
+      "text": "to maximize the output from a given footprint of tools, then I think it’s incremental, because the"
+    },
+    {
+      "end_ms": 3031360,
+      "source_event_index": 656,
+      "start_ms": 3025360,
+      "text": "process today is already yielding pretty high. If your yield is already pretty high,"
+    },
+    {
+      "end_ms": 3038160,
+      "source_event_index": 657,
+      "start_ms": 3031360,
+      "text": "getting every 1% extra yield is extremely hard because it’s already a finely tuned process."
+    },
+    {
+      "end_ms": 3040960,
+      "source_event_index": 658,
+      "start_ms": 3038160,
+      "text": "Are there enough tools in the world so you could 10X the amount of wafers you’re"
+    },
+    {
+      "end_ms": 3045280,
+      "source_event_index": 659,
+      "start_ms": 3040960,
+      "text": "producing at the leading edge? Not 10X, but probably 2X, yes."
+    },
+    {
+      "end_ms": 3049360,
+      "source_event_index": 660,
+      "start_ms": 3045280,
+      "text": "That’s quite interesting, because the AI industry for a decade has"
+    },
+    {
+      "end_ms": 3055280,
+      "source_event_index": 661,
+      "start_ms": 3049360,
+      "text": "been 3Xing compute year over year. You’re saying that just can’t continue."
+    },
+    {
+      "end_ms": 3061280,
+      "source_event_index": 662,
+      "start_ms": 3055280,
+      "text": "Unless the entire supply chain — starting from the equipment suppliers, their suppliers,"
+    },
+    {
+      "end_ms": 3067200,
+      "source_event_index": 663,
+      "start_ms": 3061280,
+      "text": "their sub-suppliers — unless everybody produces more, you can’t increase the output."
+    },
+    {
+      "end_ms": 3073680,
+      "source_event_index": 664,
+      "start_ms": 3067920,
+      "text": "Just to give the audience a sense of how big the AI demand is and how well it monetizes the"
+    },
+    {
+      "end_ms": 3078400,
+      "source_event_index": 665,
+      "start_ms": 3073680,
+      "text": "products you guys are producing: you can crunch the numbers, and the numbers seem to suggest"
+    },
+    {
+      "end_ms": 3084720,
+      "source_event_index": 666,
+      "start_ms": 3078400,
+      "text": "that just a couple billion dollars of CapEx on Intel’s account results in enough chips — or the"
+    },
+    {
+      "end_ms": 3090080,
+      "source_event_index": 667,
+      "start_ms": 3084720,
+      "text": "logic for enough chips — to produce, say, $100 billion of revenue for the AI model companies."
+    },
+    {
+      "end_ms": 3092720,
+      "source_event_index": 668,
+      "start_ms": 3090080,
+      "text": "Of course, there are so many other players within that stack."
+    },
+    {
+      "end_ms": 3098800,
+      "source_event_index": 669,
+      "start_ms": 3092720,
+      "text": "There’s also memory and other things. But it’s crazy that a couple billion"
+    },
+    {
+      "end_ms": 3104160,
+      "source_event_index": 670,
+      "start_ms": 3098800,
+      "text": "dollars of CapEx, which can be amortized over many different years, produces $100 billion"
+    },
+    {
+      "end_ms": 3107280,
+      "source_event_index": 671,
+      "start_ms": 3104160,
+      "text": "of revenue every single year. That seems to suggest that at"
+    },
+    {
+      "end_ms": 3112400,
+      "source_event_index": 672,
+      "start_ms": 3107280,
+      "text": "some point that should percolate down. At some point, the AI labs could just say,"
+    },
+    {
+      "end_ms": 3114800,
+      "source_event_index": 673,
+      "start_ms": 3112400,
+      "text": "“We’ll just buy everything. Produce as much as you can."
+    },
+    {
+      "end_ms": 3119360,
+      "source_event_index": 674,
+      "start_ms": 3114800,
+      "text": "We’ll guarantee future income streams.” There are early signs that could"
+    },
+    {
+      "end_ms": 3124640,
+      "source_event_index": 675,
+      "start_ms": 3119360,
+      "text": "actually be happening already. The demand signals are just so high."
+    },
+    {
+      "end_ms": 3131760,
+      "source_event_index": 676,
+      "start_ms": 3124640,
+      "text": "But I think you were alluding to how the value is accumulating at the top of the technology stack."
+    },
+    {
+      "end_ms": 3140400,
+      "source_event_index": 677,
+      "start_ms": 3133600,
+      "text": "What is essentially happening is we moved from a fully vertically integrated industry 30-40"
+    },
+    {
+      "end_ms": 3146960,
+      "source_event_index": 678,
+      "start_ms": 3140400,
+      "text": "years ago, maybe longer, to a very horizontal industry, where you have foundries, you have"
+    },
+    {
+      "end_ms": 3154080,
+      "source_event_index": 679,
+      "start_ms": 3146960,
+      "text": "equipment makers, you have their suppliers. Today, every hyperscaler is designing their"
+    },
+    {
+      "end_ms": 3158320,
+      "source_event_index": 680,
+      "start_ms": 3154080,
+      "text": "own chips, and the scale of the hyperscalers is so large."
+    },
+    {
+      "end_ms": 3164080,
+      "source_event_index": 681,
+      "start_ms": 3158880,
+      "text": "Some of the model companies, for example, their demand is so high"
+    },
+    {
+      "end_ms": 3171760,
+      "source_event_index": 682,
+      "start_ms": 3164720,
+      "text": "they could easily consume an entire fab’s worth of silicon on their own, or multiple fabs’ worth,"
+    },
+    {
+      "end_ms": 3181600,
+      "source_event_index": 683,
+      "start_ms": 3173040,
+      "text": "and they definitely have the capital to fund that. So in some sense, we are moving from a horizontal"
+    },
+    {
+      "end_ms": 3190720,
+      "source_event_index": 684,
+      "start_ms": 3181600,
+      "text": "world again to a pseudo-vertical world. It’s not monolithically vertically integrated,"
+    },
+    {
+      "end_ms": 3197520,
+      "source_event_index": 685,
+      "start_ms": 3190720,
+      "text": "but it’s kind of virtually vertically integrated. What is the nature of economies of"
+    },
+    {
+      "end_ms": 3201760,
+      "source_event_index": 686,
+      "start_ms": 3197520,
+      "text": "scale in this business? If you look at how many"
+    },
+    {
+      "end_ms": 3208000,
+      "source_event_index": 687,
+      "start_ms": 3201760,
+      "text": "wafers at the leading edge TSMC versus Intel is shipping, it’s upwards of 3X for TSMC."
+    },
+    {
+      "end_ms": 3212640,
+      "source_event_index": 688,
+      "start_ms": 3208960,
+      "text": "What kinds of advantages do you get at this point from economies of scale?"
+    },
+    {
+      "end_ms": 3216480,
+      "source_event_index": 689,
+      "start_ms": 3212640,
+      "text": "Or is it that once you reach a certain point, the economies of scale get weaker?"
+    },
+    {
+      "end_ms": 3221600,
+      "source_event_index": 690,
+      "start_ms": 3216480,
+      "text": "That’s a very important question. This entire business just"
+    },
+    {
+      "end_ms": 3229680,
+      "source_event_index": 691,
+      "start_ms": 3221600,
+      "text": "relies on economies of scale. If you look at all the advanced manufacturing"
+    },
+    {
+      "end_ms": 3236160,
+      "source_event_index": 692,
+      "start_ms": 3229680,
+      "text": "companies out there, in semiconductor foundries the scale economics is probably the purest."
+    },
+    {
+      "end_ms": 3240720,
+      "source_event_index": 693,
+      "start_ms": 3236720,
+      "text": "The reason for that is the fixed cost is just so incredibly high."
+    },
+    {
+      "end_ms": 3247200,
+      "source_event_index": 694,
+      "start_ms": 3242160,
+      "text": "Once you build a fab, like 80% of your cost structure is fixed."
+    },
+    {
+      "end_ms": 3256160,
+      "source_event_index": 695,
+      "start_ms": 3247200,
+      "text": "What that means is every extra percentage of utilization is adding far more in revenue."
+    },
+    {
+      "end_ms": 3259600,
+      "source_event_index": 696,
+      "start_ms": 3256160,
+      "text": "So it’s extremely important. We’ll fight for every extra"
+    },
+    {
+      "end_ms": 3265040,
+      "source_event_index": 697,
+      "start_ms": 3259600,
+      "text": "percent of fab utilization, but also every extra percentage of fab output."
+    },
+    {
+      "end_ms": 3270960,
+      "source_event_index": 698,
+      "start_ms": 3265680,
+      "text": "Let’s say I’m making some wafers today and the yield is 60%."
+    },
+    {
+      "end_ms": 3278960,
+      "source_event_index": 699,
+      "start_ms": 3270960,
+      "text": "If I improve the process and the die yield becomes 65% or 70%, it’s not a linear advantage."
+    },
+    {
+      "end_ms": 3281760,
+      "source_event_index": 700,
+      "start_ms": 3278960,
+      "text": "I’m getting way more output for the given footprint."
+    },
+    {
+      "end_ms": 3285920,
+      "source_event_index": 701,
+      "start_ms": 3282400,
+      "text": "So there’s always room to improve the economies of scale."
+    },
+    {
+      "end_ms": 3293440,
+      "source_event_index": 702,
+      "start_ms": 3285920,
+      "text": "That’s one of the reasons why you’re seeing so much consolidation in this business."
+    },
+    {
+      "end_ms": 3298320,
+      "source_event_index": 703,
+      "start_ms": 3293440,
+      "text": "There are only three foundries left at the advanced node for that exact reason."
+    },
+    {
+      "end_ms": 3304000,
+      "source_event_index": 704,
+      "start_ms": 3299600,
+      "text": "Along the way, many companies just stopped manufacturing."
+    },
+    {
+      "end_ms": 3307440,
+      "source_event_index": 705,
+      "start_ms": 3304000,
+      "text": "I don’t know if you’ve seen… There’s a chart where 40"
+    },
+    {
+      "end_ms": 3313840,
+      "source_event_index": 706,
+      "start_ms": 3307440,
+      "text": "years ago there were like 20 foundries. Over time the number of foundries kept"
+    },
+    {
+      "end_ms": 3317680,
+      "source_event_index": 707,
+      "start_ms": 3313840,
+      "text": "diminishing until today there are only three. What is then the concrete master"
+    },
+    {
+      "end_ms": 3321200,
+      "source_event_index": 708,
+      "start_ms": 3317680,
+      "text": "plan to catch up to TSMC? Even though TSMC is ahead,"
+    },
+    {
+      "end_ms": 3326640,
+      "source_event_index": 709,
+      "start_ms": 3321200,
+      "text": "there’s so much overflow demand at their leading edge, where N3 is now majority AI"
+    },
+    {
+      "end_ms": 3332640,
+      "source_event_index": 710,
+      "start_ms": 3326640,
+      "text": "accelerators and maybe majority Nvidia alone. There’s all this demand for CPUs, for other"
+    },
+    {
+      "end_ms": 3336080,
+      "source_event_index": 711,
+      "start_ms": 3332640,
+      "text": "things, which are also, by the way, needed for AI. There’s this humongous influx"
+    },
+    {
+      "end_ms": 3339360,
+      "source_event_index": 712,
+      "start_ms": 3336080,
+      "text": "in demand for CPUs because of AI. How do you see this opportunity right now,"
+    },
+    {
+      "end_ms": 3344080,
+      "source_event_index": 713,
+      "start_ms": 3339360,
+      "text": "where Intel’s a few years behind, while TSMC is just way oversaturated?"
+    },
+    {
+      "end_ms": 3352560,
+      "source_event_index": 714,
+      "start_ms": 3344080,
+      "text": "Catching up to TSMC has multiple facets. The catch-up that we need to do is in scale."
+    },
+    {
+      "end_ms": 3358400,
+      "source_event_index": 715,
+      "start_ms": 3352560,
+      "text": "Like you said, they’re just a much larger wafer manufacturer today than we are,"
+    },
+    {
+      "end_ms": 3367360,
+      "source_event_index": 716,
+      "start_ms": 3358960,
+      "text": "and even bigger than what Samsung is. Catching up in scale will be a gradual process."
+    },
+    {
+      "end_ms": 3378000,
+      "source_event_index": 717,
+      "start_ms": 3368880,
+      "text": "If you meant catching up in terms of just the technology, I think we’re already there."
+    },
+    {
+      "end_ms": 3387600,
+      "source_event_index": 718,
+      "start_ms": 3378560,
+      "text": "We might be a few percent off on performance or power or area density."
+    },
+    {
+      "end_ms": 3398160,
+      "source_event_index": 719,
+      "start_ms": 3388240,
+      "text": "But this sort of benchmarking, where one foundry is ahead or one foundry is behind,"
+    },
+    {
+      "end_ms": 3405200,
+      "source_event_index": 720,
+      "start_ms": 3398160,
+      "text": "makes sense when you’re a whole generation behind or two generations behind or ahead."
+    },
+    {
+      "end_ms": 3409280,
+      "source_event_index": 721,
+      "start_ms": 3405200,
+      "text": "That’s when it makes a meaningful difference in your die output or your"
+    },
+    {
+      "end_ms": 3417413,
+      "source_event_index": 722,
+      "start_ms": 3409280,
+      "text": "die area or functionality like power. But if you’re within a few percent,"
+    },
+    {
+      "end_ms": 3425600,
+      "source_event_index": 723,
+      "start_ms": 3419520,
+      "text": "you’re splitting hairs at that point in time, because it’s not very unidimensional."
+    },
+    {
+      "end_ms": 3431040,
+      "source_event_index": 724,
+      "start_ms": 3426240,
+      "text": "It’s not just about density, it’s not just about raw performance."
+    },
+    {
+      "end_ms": 3437200,
+      "source_event_index": 725,
+      "start_ms": 3431920,
+      "text": "Different applications require different vectors. You can be off by a few percent,"
+    },
+    {
+      "end_ms": 3440960,
+      "source_event_index": 726,
+      "start_ms": 3437200,
+      "text": "but you need to be on time. Your execution needs to be"
+    },
+    {
+      "end_ms": 3446400,
+      "source_event_index": 727,
+      "start_ms": 3440960,
+      "text": "such that your yields are very high to support very large and very rapid ramps."
+    },
+    {
+      "end_ms": 3453440,
+      "source_event_index": 728,
+      "start_ms": 3447120,
+      "text": "That actually is more important than catching up on a few percent in performance or area."
+    },
+    {
+      "end_ms": 3456240,
+      "source_event_index": 729,
+      "start_ms": 3453440,
+      "text": "I was looking at some SemiAnalysis numbers that seem to suggest that in"
+    },
+    {
+      "end_ms": 3463520,
+      "source_event_index": 730,
+      "start_ms": 3456240,
+      "text": "terms of transistor density, 14A — which will come out in 2028 — would be comparable to N2."
+    },
+    {
+      "end_ms": 3467280,
+      "source_event_index": 731,
+      "start_ms": 3463520,
+      "text": "First of all, I would dispute your benchmarking."
+    },
+    {
+      "end_ms": 3476880,
+      "source_event_index": 732,
+      "start_ms": 3467280,
+      "text": "But like I said, it’s important to be generally in the right ballpark and be very predictable."
+    },
+    {
+      "end_ms": 3481680,
+      "source_event_index": 733,
+      "start_ms": 3476880,
+      "text": "Also, it’s not unidimensional. We don’t build one type of"
+    },
+    {
+      "end_ms": 3487760,
+      "source_event_index": 734,
+      "start_ms": 3481680,
+      "text": "transistor, let’s say 14A or 18A. You build a few different types of transistors."
+    },
+    {
+      "end_ms": 3493520,
+      "source_event_index": 735,
+      "start_ms": 3488400,
+      "text": "There’s a low-leakage transistor, there’s a high-performance, high drive current transistor."
+    },
+    {
+      "end_ms": 3498720,
+      "source_event_index": 736,
+      "start_ms": 3493520,
+      "text": "You’re building SRAMs. There’s a high-density SRAM, there’s a high-performance SRAM."
+    },
+    {
+      "end_ms": 3504640,
+      "source_event_index": 737,
+      "start_ms": 3498720,
+      "text": "There are many other functionalities like analog circuits, RF circuits."
+    },
+    {
+      "end_ms": 3509520,
+      "source_event_index": 738,
+      "start_ms": 3504640,
+      "text": "It’s the sum of all of those that makes a technology competitive."
+    },
+    {
+      "end_ms": 3512400,
+      "source_event_index": 739,
+      "start_ms": 3509520,
+      "text": "I guess that makes the CapEx you do right now even more important."
+    },
+    {
+      "end_ms": 3518000,
+      "source_event_index": 740,
+      "start_ms": 3514000,
+      "text": "TSMC is on track to do around $50 billion in CapEx this year."
+    },
+    {
+      "end_ms": 3521680,
+      "source_event_index": 741,
+      "start_ms": 3518000,
+      "text": "You’re on track to do around $20 billion. If the tools you’re buying right now will"
+    },
+    {
+      "end_ms": 3526800,
+      "source_event_index": 742,
+      "start_ms": 3521680,
+      "text": "determine who can service all this crazy AI demand that’s coming up, it makes the difference"
+    },
+    {
+      "end_ms": 3532160,
+      "source_event_index": 743,
+      "start_ms": 3526800,
+      "text": "in CapEx right now even more important, or for the US versus other countries."
+    },
+    {
+      "end_ms": 3538960,
+      "source_event_index": 744,
+      "start_ms": 3532160,
+      "text": "Yes, very much. It’s a little bit of an unfair comparison between us and TSMC today,"
+    },
+    {
+      "end_ms": 3545680,
+      "source_event_index": 745,
+      "start_ms": 3538960,
+      "text": "just because today they’re a foundry for basically everybody and we’re largely a foundry for Intel."
+    },
+    {
+      "end_ms": 3551200,
+      "source_event_index": 746,
+      "start_ms": 3545680,
+      "text": "We’ll become a foundry for others. In due course, our CapEx will also grow."
+    },
+    {
+      "end_ms": 3559520,
+      "source_event_index": 747,
+      "start_ms": 3551200,
+      "text": "Intel started as a DRAM business in the late ’60s. You guys were producing DRAM, which you sold off."
+    },
+    {
+      "end_ms": 3562160,
+      "source_event_index": 748,
+      "start_ms": 3559520,
+      "text": "A couple years ago, you sold off your flash business."
+    },
+    {
+      "end_ms": 3568880,
+      "source_event_index": 749,
+      "start_ms": 3565520,
+      "text": "Thoughts on that? For context for the audience, these are"
+    },
+    {
+      "end_ms": 3575680,
+      "source_event_index": 750,
+      "start_ms": 3568880,
+      "text": "now multi-trillion-dollar industries because they’ve just exploded as a result of AI demand."
+    },
+    {
+      "end_ms": 3582640,
+      "source_event_index": 751,
+      "start_ms": 3576960,
+      "text": "Clearly, in hindsight, probably not the smartest time to sell off a flash memory business."
+    },
+    {
+      "end_ms": 3585440,
+      "source_event_index": 752,
+      "start_ms": 3582640,
+      "text": "There were good reasons why we did that when we did."
+    },
+    {
+      "end_ms": 3600560,
+      "source_event_index": 753,
+      "start_ms": 3586400,
+      "text": "Clearly, nobody could see this enormous demand. But today, the world will eat up as much compute"
+    },
+    {
+      "end_ms": 3606000,
+      "source_event_index": 754,
+      "start_ms": 3600560,
+      "text": "as can possibly be made, and it’ll eat up as much memory as can possibly be made."
+    },
+    {
+      "end_ms": 3612960,
+      "source_event_index": 755,
+      "start_ms": 3606000,
+      "text": "I would argue that the supply crunch is larger for memory today than it is for compute."
+    },
+    {
+      "end_ms": 3616560,
+      "source_event_index": 756,
+      "start_ms": 3612960,
+      "text": "Can I summarize what seems to me the takeaways from your projections?"
+    },
+    {
+      "end_ms": 3617760,
+      "source_event_index": 757,
+      "start_ms": 3616560,
+      "text": "You can tell me if that’s correct."
+    },
+    {
+      "end_ms": 3622160,
+      "source_event_index": 758,
+      "start_ms": 3617760,
+      "text": "That marginal production can increase actually very fast — on the scale of 12"
+    },
+    {
+      "end_ms": 3627200,
+      "source_event_index": 759,
+      "start_ms": 3622160,
+      "text": "months — but the amount of increase up till the end of the decade is extremely limited."
+    },
+    {
+      "end_ms": 3630240,
+      "source_event_index": 760,
+      "start_ms": 3627200,
+      "text": "Production could be higher next year than what people are forecasting, but production"
+    },
+    {
+      "end_ms": 3633040,
+      "source_event_index": 761,
+      "start_ms": 3630240,
+      "text": "in 2030 is not going to be significantly higher than what people are forecasting."
+    },
+    {
+      "end_ms": 3636320,
+      "source_event_index": 762,
+      "start_ms": 3633040,
+      "text": "Unless the entire supply chain ramps up production very quickly."
+    },
+    {
+      "end_ms": 3642560,
+      "source_event_index": 763,
+      "start_ms": 3636320,
+      "text": "We’re already in the middle of ’26, so there’s not that many years until the end of the decade."
+    },
+    {
+      "end_ms": 3645920,
+      "source_event_index": 764,
+      "start_ms": 3642560,
+      "text": "Given the lead times… Let’s say you place an"
+    },
+    {
+      "end_ms": 3652240,
+      "source_event_index": 765,
+      "start_ms": 3645920,
+      "text": "enormous order for tools today, and you’re looking at 18 months to get those tools."
+    },
+    {
+      "end_ms": 3657040,
+      "source_event_index": 766,
+      "start_ms": 3652240,
+      "text": "You’re already into basically ’28. From that point on, if you have to"
+    },
+    {
+      "end_ms": 3662160,
+      "source_event_index": 767,
+      "start_ms": 3657040,
+      "text": "build a new shell, build a new fab, you’re basically looking at the end of the decade."
+    },
+    {
+      "end_ms": 3667760,
+      "source_event_index": 768,
+      "start_ms": 3662160,
+      "text": "I think it’ll be interesting to discuss the partnership you guys have with Elon on Terafab."
+    },
+    {
+      "end_ms": 3674640,
+      "source_event_index": 769,
+      "start_ms": 3667760,
+      "text": "What’s going on there? Well, Elon’s publicly talked"
+    },
+    {
+      "end_ms": 3679840,
+      "source_event_index": 770,
+      "start_ms": 3674640,
+      "text": "about his desire to build a fab. We either build the Terafab or"
+    },
+    {
+      "end_ms": 3683360,
+      "source_event_index": 771,
+      "start_ms": 3679840,
+      "text": "we don’t have the chips. And we need the chips,"
+    },
+    {
+      "end_ms": 3685600,
+      "source_event_index": 772,
+      "start_ms": 3683360,
+      "text": "so we’re going to build the Terafab. Sort of the same thinking."
+    },
+    {
+      "end_ms": 3694800,
+      "source_event_index": 773,
+      "start_ms": 3686320,
+      "text": "He’s seeing just an enormous increase in demand for silicon, for compute and for memory."
+    },
+    {
+      "end_ms": 3700320,
+      "source_event_index": 774,
+      "start_ms": 3694800,
+      "text": "I think he came to the conclusion that his own businesses are going to require a lot of silicon."
+    },
+    {
+      "end_ms": 3706160,
+      "source_event_index": 775,
+      "start_ms": 3702480,
+      "text": "He thought maybe he should just do it all on his own."
+    },
+    {
+      "end_ms": 3712560,
+      "source_event_index": 776,
+      "start_ms": 3706160,
+      "text": "But unlike building a car, for example, this is such an intricate and complicated"
+    },
+    {
+      "end_ms": 3719440,
+      "source_event_index": 777,
+      "start_ms": 3712560,
+      "text": "process that we thought we could work together to help accelerate his bringing up his fab."
+    },
+    {
+      "end_ms": 3724240,
+      "source_event_index": 778,
+      "start_ms": 3719440,
+      "text": "But because of the bottleneck at the tool level, it seems like the net"
+    },
+    {
+      "end_ms": 3729360,
+      "source_event_index": 779,
+      "start_ms": 3724240,
+      "text": "amount of silicon in the world won’t increase. It’s just that maybe if somebody were to start"
+    },
+    {
+      "end_ms": 3734240,
+      "source_event_index": 780,
+      "start_ms": 3729360,
+      "text": "a new fab, they would get access to guaranteed supply in a way that they wouldn’t have if they’re"
+    },
+    {
+      "end_ms": 3738160,
+      "source_event_index": 781,
+      "start_ms": 3734240,
+      "text": "working with another person’s foundry. It’s not just tools."
+    },
+    {
+      "end_ms": 3744000,
+      "source_event_index": 782,
+      "start_ms": 3738800,
+      "text": "A fab does require a lot of power, a lot of water, a lot of consumables."
+    },
+    {
+      "end_ms": 3748720,
+      "source_event_index": 783,
+      "start_ms": 3744000,
+      "text": "There are many other input variables as well. But those can be scaled in the"
+    },
+    {
+      "end_ms": 3754400,
+      "source_event_index": 784,
+      "start_ms": 3748720,
+      "text": "way that tools cannot. Some more than others, but yes."
+    },
+    {
+      "end_ms": 3762640,
+      "source_event_index": 785,
+      "start_ms": 3754400,
+      "text": "In one sense, yes, we need a lot more equipment. But it is true, we also just need a lot more raw"
+    },
+    {
+      "end_ms": 3768480,
+      "source_event_index": 786,
+      "start_ms": 3762640,
+      "text": "fab space, raw clean room capacity. If you think of a foundry like Intel,"
+    },
+    {
+      "end_ms": 3775600,
+      "source_event_index": 787,
+      "start_ms": 3768480,
+      "text": "which has to build these expensive facilities and buy expensive tools, I wonder what you think the"
+    },
+    {
+      "end_ms": 3779280,
+      "source_event_index": 788,
+      "start_ms": 3775600,
+      "text": "economics of that fundamentally could look like, whether it could get more economical,"
+    },
+    {
+      "end_ms": 3783120,
+      "source_event_index": 789,
+      "start_ms": 3779280,
+      "text": "whether it could scale faster. Like I described earlier,"
+    },
+    {
+      "end_ms": 3791360,
+      "source_event_index": 790,
+      "start_ms": 3783120,
+      "text": "this is an extremely capital-heavy business. If you just plot how much it costs to build"
+    },
+    {
+      "end_ms": 3799520,
+      "source_event_index": 791,
+      "start_ms": 3791360,
+      "text": "a fab over the last 20, 30, 40 years, I think it’s doubling every 4-5 years."
+    },
+    {
+      "end_ms": 3804160,
+      "source_event_index": 792,
+      "start_ms": 3799520,
+      "text": "Even inside the fab, if you look at the cost to do lithography, which is the most"
+    },
+    {
+      "end_ms": 3811040,
+      "source_event_index": 793,
+      "start_ms": 3804160,
+      "text": "expensive module — just patterning — that itself is doubling at more than that rate."
+    },
+    {
+      "end_ms": 3820560,
+      "source_event_index": 794,
+      "start_ms": 3811680,
+      "text": "Today, a High-NA EUV scanner and all its associated equipment costs like $400 million."
+    },
+    {
+      "end_ms": 3824560,
+      "source_event_index": 795,
+      "start_ms": 3821280,
+      "text": "So what does that mean? If that rate were to continue,"
+    },
+    {
+      "end_ms": 3830560,
+      "source_event_index": 796,
+      "start_ms": 3824560,
+      "text": "if you just draw the line, does that mean four years from now the cost of patterning"
+    },
+    {
+      "end_ms": 3836640,
+      "source_event_index": 797,
+      "start_ms": 3830560,
+      "text": "is going to be like $800 million? It doesn’t really make sense."
+    },
+    {
+      "end_ms": 3845920,
+      "source_event_index": 798,
+      "start_ms": 3838160,
+      "text": "A very interesting thought exercise is to ask, are there things that could be"
+    },
+    {
+      "end_ms": 3854160,
+      "source_event_index": 799,
+      "start_ms": 3845920,
+      "text": "just very radically different that we could do today that we perhaps couldn’t do 20 years ago?"
+    },
+    {
+      "end_ms": 3859440,
+      "source_event_index": 800,
+      "start_ms": 3854160,
+      "text": "This is a very risk-averse industry for very good reason, for exactly that reason."
+    },
+    {
+      "end_ms": 3865200,
+      "source_event_index": 801,
+      "start_ms": 3859440,
+      "text": "You put in tens of billions of dollars, and you really don’t want to take any risks."
+    },
+    {
+      "end_ms": 3869600,
+      "source_event_index": 802,
+      "start_ms": 3865200,
+      "text": "You want to keep doing things the way they’ve been done for literally decades."
+    },
+    {
+      "end_ms": 3872960,
+      "source_event_index": 803,
+      "start_ms": 3869600,
+      "text": "This is not just true of semiconductors, but everything really."
+    },
+    {
+      "end_ms": 3880800,
+      "source_event_index": 804,
+      "start_ms": 3873760,
+      "text": "If you’ve just kept on doing that for decade upon decade, you just become indoctrinated."
+    },
+    {
+      "end_ms": 3888880,
+      "source_event_index": 805,
+      "start_ms": 3882080,
+      "text": "There are engineers who probably work at Intel who are new, who come in and they’re taught, “This is"
+    },
+    {
+      "end_ms": 3893680,
+      "source_event_index": 806,
+      "start_ms": 3888880,
+      "text": "how the fab works, this is the process flow.” They just take that as gospel."
+    },
+    {
+      "end_ms": 3897040,
+      "source_event_index": 807,
+      "start_ms": 3893680,
+      "text": "That’s just how it is done. But is that really the best"
+    },
+    {
+      "end_ms": 3902480,
+      "source_event_index": 808,
+      "start_ms": 3897040,
+      "text": "way to build a chip today? It’s a really valid question."
+    },
+    {
+      "end_ms": 3906800,
+      "source_event_index": 809,
+      "start_ms": 3902480,
+      "text": "I’m very curious what you’re hinting at, because it could be anything from figuring"
+    },
+    {
+      "end_ms": 3913360,
+      "source_event_index": 810,
+      "start_ms": 3906800,
+      "text": "out ways to use fewer litho passes and economize on this expensive component, to maybe we need to"
+    },
+    {
+      "end_ms": 3918240,
+      "source_event_index": 811,
+      "start_ms": 3913360,
+      "text": "rethink the transistor. What is the level of—"
+    },
+    {
+      "end_ms": 3925040,
+      "source_event_index": 812,
+      "start_ms": 3919280,
+      "text": "All of the above. Transistor architecture is evolving."
+    },
+    {
+      "end_ms": 3933200,
+      "source_event_index": 813,
+      "start_ms": 3925840,
+      "text": "Just the silicon transistor has continued to evolve over 30, 40 years, and that will continue."
+    },
+    {
+      "end_ms": 3936080,
+      "source_event_index": 814,
+      "start_ms": 3933200,
+      "text": "You’ve seen the evolution from the planar transistor"
+    },
+    {
+      "end_ms": 3944320,
+      "source_event_index": 815,
+      "start_ms": 3936080,
+      "text": "to FinFETs to now gate-all-around transistors. There’ll be more. That roadmap exists, it’s pretty"
+    },
+    {
+      "end_ms": 3949440,
+      "source_event_index": 816,
+      "start_ms": 3944320,
+      "text": "well defined, with a lot of people working on it. But there are things like…"
+    },
+    {
+      "end_ms": 3957280,
+      "source_event_index": 817,
+      "start_ms": 3951120,
+      "text": "Do you really need a clean room today? Do you need the infrastructure to be as"
+    },
+    {
+      "end_ms": 3964000,
+      "source_event_index": 818,
+      "start_ms": 3958240,
+      "text": "sophisticated, as complex as it is today? Surely one can run an experiment where you"
+    },
+    {
+      "end_ms": 3971360,
+      "source_event_index": 819,
+      "start_ms": 3965520,
+      "text": "have people eating hamburgers and smoking cigars in the research fab and see what happens to yield."
+    },
+    {
+      "end_ms": 3980480,
+      "source_event_index": 820,
+      "start_ms": 3972880,
+      "text": "That would be a great experiment to run, but no incumbent — Intel or TSMC or Samsung — would"
+    },
+    {
+      "end_ms": 3985360,
+      "source_event_index": 821,
+      "start_ms": 3980480,
+      "text": "want to willingly do that. That’s what I meant by this."
+    },
+    {
+      "end_ms": 3992560,
+      "source_event_index": 822,
+      "start_ms": 3986160,
+      "text": "It’s a very risk-averse business, for good reason. Every one day lost in productivity is…"
+    },
+    {
+      "end_ms": 3995840,
+      "source_event_index": 823,
+      "start_ms": 3992560,
+      "text": "I don’t know how many dollars. But you save so much money in"
+    },
+    {
+      "end_ms": 4001360,
+      "source_event_index": 824,
+      "start_ms": 3995840,
+      "text": "not having to build clean rooms in the future. But it’s really the risk, the fear of the unknown."
+    },
+    {
+      "end_ms": 4009600,
+      "source_event_index": 825,
+      "start_ms": 4001360,
+      "text": "Nobody is going to willingly take that risk. That’s why I think sometimes it’s good to just"
+    },
+    {
+      "end_ms": 4019440,
+      "source_event_index": 826,
+      "start_ms": 4009600,
+      "text": "start with a clean slate and rethink everything. The same thing applies to chip design, by the way."
+    },
+    {
+      "end_ms": 4026720,
+      "source_event_index": 827,
+      "start_ms": 4019440,
+      "text": "Many of the ways we do CPU design were probably locked in 30 years ago."
+    },
+    {
+      "end_ms": 4031360,
+      "source_event_index": 828,
+      "start_ms": 4026720,
+      "text": "Does that mean it’s smart to still do it the same way?"
+    },
+    {
+      "end_ms": 4045120,
+      "source_event_index": 829,
+      "start_ms": 4031360,
+      "text": "Probably not. But this is a very complex problem. In chip design, I guess the capacity to take"
+    },
+    {
+      "end_ms": 4049840,
+      "source_event_index": 830,
+      "start_ms": 4045120,
+      "text": "risk is maybe higher. This one, less so."
+    },
+    {
+      "end_ms": 4055360,
+      "source_event_index": 831,
+      "start_ms": 4049840,
+      "text": "But given where the economics is today, I think it’s a very valid question to ask."
+    },
+    {
+      "end_ms": 4060880,
+      "source_event_index": 832,
+      "start_ms": 4056720,
+      "text": "Maybe there’s a smarter way to do this. To close out, maybe we’ll start off at"
+    },
+    {
+      "end_ms": 4067760,
+      "source_event_index": 833,
+      "start_ms": 4060880,
+      "text": "the same question we began the interview with, which is, how does Intel respond to this crazy AI"
+    },
+    {
+      "end_ms": 4074480,
+      "source_event_index": 834,
+      "start_ms": 4067760,
+      "text": "demand that’s incoming and has already arrived? It sounds like what Intel ought to do — if the"
+    },
+    {
+      "end_ms": 4078560,
+      "source_event_index": 835,
+      "start_ms": 4074480,
+      "text": "ultimate bottleneck is that you guys already have these foundries, you already have the"
+    },
+    {
+      "end_ms": 4085760,
+      "source_event_index": 836,
+      "start_ms": 4078560,
+      "text": "ability to expand these foundries, but what you will eventually lack is the tools from upstream"
+    },
+    {
+      "end_ms": 4090480,
+      "source_event_index": 837,
+      "start_ms": 4085760,
+      "text": "in the supply chain — is to just raise as much capital as possible right now."
+    },
+    {
+      "end_ms": 4095920,
+      "source_event_index": 838,
+      "start_ms": 4090480,
+      "text": "The same way that Nvidia has locked down memory and other components for reportedly hundreds"
+    },
+    {
+      "end_ms": 4101120,
+      "source_event_index": 839,
+      "start_ms": 4095920,
+      "text": "of billions of dollars worth of commitments that it’s made, Intel should maybe do the same thing:"
+    },
+    {
+      "end_ms": 4108400,
+      "source_event_index": 840,
+      "start_ms": 4101120,
+      "text": "make all these commitments so that over the coming years, the US is in good position to"
+    },
+    {
+      "end_ms": 4112720,
+      "source_event_index": 841,
+      "start_ms": 4108400,
+      "text": "have the bulk of semiconductor manufacturing at the most advanced levels happening here."
+    },
+    {
+      "end_ms": 4115600,
+      "source_event_index": 842,
+      "start_ms": 4112720,
+      "text": "You’re suggesting we should be buying a lot more tools, right?"
+    },
+    {
+      "end_ms": 4119440,
+      "source_event_index": 843,
+      "start_ms": 4115600,
+      "text": "Yeah, because it sounds like otherwise in a couple years you’d just be in a position"
+    },
+    {
+      "end_ms": 4122640,
+      "source_event_index": 844,
+      "start_ms": 4119440,
+      "text": "where you’re like, “Oh man, we could be making trillions of dollars right now,"
+    },
+    {
+      "end_ms": 4127840,
+      "source_event_index": 845,
+      "start_ms": 4122640,
+      "text": "but all the tools are in Taiwan.” Yes, that’s a very valid question."
+    },
+    {
+      "end_ms": 4132960,
+      "source_event_index": 846,
+      "start_ms": 4127840,
+      "text": "Had we known what we know today, we would have invested more like a year ago."
+    },
+    {
+      "end_ms": 4137600,
+      "source_event_index": 847,
+      "start_ms": 4132960,
+      "text": "Knowing what we know now, I think we’ll be investing more."
+    }
+  ],
+  "source": {
+    "normalization": "youtube-json3-events-v1",
+    "raw_path": "shows/dwarkesh/episodes/youtube-667259534f4b764e696945-intel-tour/asr/youtube-subtitles/raw.json",
+    "raw_sha256": "53092c9db592b65e11ac8bb4bf6489bb42f0bc475a922b9152a9ea3ab5d2f0ca"
+  },
+  "translation": {
+    "engine": "codex-subagent",
+    "event_count": 848,
+    "generated_at": "2026-11-21T09:24:58.526936+00:00",
+    "language": "zh-CN",
+    "model": "gpt-6-luna",
+    "model_revision": null,
+    "model_version_visibility": "not-exposed",
+    "payload_path": "shows/dwarkesh/episodes/youtube-667259534f4b764e696945-intel-tour/translation.zh-CN.json",
+    "payload_sha256": "9660b91bbbcc5e4aacb701663f59bc35c9775960c99f644c79ad0939959d5317",
+    "rendered_path": "shows/dwarkesh/episodes/youtube-667259534f4b764e696945-intel-tour/transcript.zh-CN.md",
+    "rendered_sha256": "975b846d01da2aa4d06e3e64b8eb6325fdd5046dab464c44b99325ce0e47422a",
+    "source_payload_sha256": "68ad8bebed6b2d71f9e2b47e5480b681abd49245ed25bbaef1b29a53580fca8c",
+    "source_transcript_sha256": "749cb9b58dc32090235a24e5af24dff51a68d3c0600add0b05ed3e93cdbc7b14",
+    "track_type": "subagent-machine-translation"
+  }
+}

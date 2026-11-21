@@ -51,6 +51,8 @@ last_verified_at: 2026-10-02
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [聊聊中国版MUSE：蚂蚁灵光2.0，支付宝，超级App的生态优势与挑战｜对话蚂蚁灵光CTO【101视频播客】](https://www.bilibili.com/video/BV1R1WL6cEzo/) | 硅谷101 | 2026-11-11 | [总结](./episodes/bili-bv1r1wl6cezo-mo-linjian/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1r1wl6cezo-mo-linjian/transcript.zh-CN.md) |
+| [揭秘硅谷最火创业孵化器HF0：打造增长奇迹，先学“做减法”【硅谷101视频播客】](https://www.bilibili.com/video/BV1FeW46MEZU/) | 硅谷101 | 2026-11-09 | [总结](./episodes/bili-bv1few46mezu-guo-jing/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1few46mezu-guo-jing/transcript.zh-CN.md) |
 | [对话Maxinsights：具身“卖铲人”的250倍增长、机器人Ego数据狂潮、Doordash与丰田模式，与“自由的鸟”【101视频播客】](https://www.bilibili.com/video/BV1L4xh6jEqo/) | 硅谷101 | 2026-11-02 | [总结](./episodes/bili-bv1l4xh6jeqo-yuan-yuguang/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1l4xh6jeqo-yuan-yuguang/transcript.zh-CN.md) |
 | [再访Dyna Robotics：被部署教训了300天后，找到机器人Scaling Law【101视频播客】](https://www.bilibili.com/video/BV1vWnE6wEyj/) | 硅谷101 | 2026-10-19 | [总结](./episodes/bili-bv1vwne6weyj-jason-ma/summary.zh-CN.md) | [逐字稿](./episodes/bili-bv1vwne6weyj-jason-ma/transcript.zh-CN.md) |
 | [模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔【硅谷101播客】](https://www.bilibili.com/video/BV186pW6kEzU/) | 硅谷101 | 2026-10-09 | [总结](./episodes/255-zhang-kuo/summary.zh-CN.md) | [逐字稿](./episodes/255-zhang-kuo/transcript.zh-CN.md) |

@@ -72,6 +72,8 @@ last_verified_at: 2026-11-09
 
 | 标题 | 播客名称 | 日期 | 总结链接 | 逐字稿链接 |
 | --- | --- | --- | --- | --- |
+| [复盘Personal Agent集体诞生背后：和蔡伟聊AI产品史、需求真伪、入口与未来想象](https://www.bilibili.com/video/BV1LjsC6mEyq/) | 张小珺商业访谈录 | 2026-11-18 | [总结](./episodes/157-cai-wei/summary.zh-CN.md) | [逐字稿](./episodes/157-cai-wei/transcript.zh-CN.md) |
+| [《侠》｜对影之刃零制作人梁其伟6小时访谈](https://www.bilibili.com/video/BV1PNWD6LE5p/) | 张小珺商业访谈录 | 2026-11-13 | [总结](./episodes/156-liang-qiwei/summary.zh-CN.md) | [逐字稿](./episodes/156-liang-qiwei/transcript.zh-CN.md) |
 | [和科沃斯钱程聊，父与子、企二代接班的样本与肌理、机器人、我内心的追寻](https://www.bilibili.com/video/BV1NtJB6TEkE/) | 张小珺商业访谈录 | 2026-10-21 | [总结](./episodes/155-qian-cheng/summary.zh-CN.md) | [逐字稿](./episodes/155-qian-cheng/transcript.zh-CN.md) |
 | [对Dyna创始人Lindon Gao的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明](https://www.bilibili.com/video/BV1wgpy69Ekz/) | 张小珺商业访谈录 | 2026-10-15 | [总结](./episodes/154-lindon-gao/summary.zh-CN.md) | [逐字稿](./episodes/154-lindon-gao/transcript.zh-CN.md) |
 | [和曾鸣聊产业史观：残酷的真相、会消亡的公司、优秀≠卓越、“OAI、Anth大概率不是原生时代大赢家”](https://www.bilibili.com/video/BV1XNtJ6UEmm/) | 张小珺商业访谈录 | 2026-09-03 | [总结](./episodes/153-zeng-ming/summary.zh-CN.md) | [逐字稿](./episodes/153-zeng-ming/transcript.zh-CN.md) |

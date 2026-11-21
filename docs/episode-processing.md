@@ -14,11 +14,9 @@ feed 或栏目。发现更新、证明扫描覆盖范围和生成候选清单时
 
 当前完整 happy path 包括：公开免费 Bilibili 视频版单集在用户授权登录态中使用中文
 `AIsubtitle`，或 Bilibili/小宇宙在没有可直接使用字幕时以本地 Qwen3-ASR 和
-ForcedAligner 生成机器逐字稿；以及官方 YouTube 完整播客正片使用发布者英文 `json3`
-字幕和逐事件对齐的 `zh-Hans-en` 平台机器译轨生成中英机器稿。所有路径都要求先通过
-节目与完整单集边界。
-平台译轨有空段或漏译时，可以保留发布者英文字幕并按第 8 节生成本地逐段机器译稿，
-再以带源文件哈希的本地载荷导入；这不改变原始字幕来源，也不需要重跑 ASR。
+ForcedAligner 生成机器逐字稿。官方 YouTube 完整播客正片保留发布者英文 `json3`
+字幕，按第 8 节用 Luna 子代理生成中文逐段译稿，再以带源文件哈希的载荷导入。
+所有路径都要求先通过节目与完整单集边界。
 PodWiki 只收录符合[内容标准第 0 节](./content-standard.md#0-收录边界只收录播客)的
 播客完整单集；长视频、访谈或频道投稿本身不构成收录依据。
 用户明确授权时，也可以把一个已核实播客的公开免费单集作为冻结后的有界批次处理：
@@ -43,8 +41,7 @@ YouTube tracked episode 使用大小写敏感的 `video_id`、官方 `channel_id
   无法在不泄露凭据并保留完整来源 sidecar 的前提下使用该登录态；
 - 会员专属、付费、私密、地区、年龄或其他受限内容；
 - 找到当前授权访问上下文可用、但没有对应安全 importer 的字幕；当前支持路径只有
-  Bilibili 中文 `AIsubtitle`，以及 YouTube 发布者英文 `json3` 与逐事件时间轴完全
-  一致的 `zh-Hans-en` 译轨；
+  Bilibili 中文 `AIsubtitle`，以及以 YouTube 发布者英文 `json3` 为原稿的中英对照稿；
 - 只有本地媒体但没有可核实的来源与授权记录；
 - 当前机器既不满足 Apple Silicon/MLX，也不满足 Windows x86-64/NVIDIA CUDA
   本地路径，却需要新跑正式 ASR；
@@ -205,8 +202,8 @@ uv run --no-sync python scripts/acquire_media.py \
 6. `source.availability`、`source.live_status` 和平台字段表明来源公开免费、非直播、
    非会员专属、非付费、非私密且不受地区或其他访问限制；登录态只影响传输上下文；
 7. 对 Bilibili，匿名列表为空但已授权登录态可见中文 `AIsubtitle` 时进入受支持的
-   登录态字幕导入路径；对 YouTube，`source.subtitle_languages` 中的发布者英文轨和
-   `source.automatic_caption_languages` 中的 `zh-Hans-en` 进入受支持的字幕导入路径；
+   登录态字幕导入路径；对 YouTube，`source.subtitle_languages` 中的发布者英文轨
+   进入字幕导入路径，使用第 8 节的 Luna 子代理流程生成中译稿；
    其他字幕格式与平台仍要求当前授权访问上下文没有可用字幕。
 
 存在不受支持的可用字幕时在这里停止。不要忽略字幕改跑音频 ASR。
@@ -379,27 +376,28 @@ selected run 使用 engine `bilibili-subtitles`、model `bilibili-ai-subtitle-zh
 
 ### YouTube 发布者字幕
 
-YouTube metadata intake 同时发现发布者英文轨与 `zh-Hans-en` 自动译轨时，先使用
-字幕 importer，不加载 ASR 模型：
+YouTube metadata intake 发现发布者英文轨时，固定原始 `json3` 和 metadata
+sidecar，按第 8 节用 Luna 子代理生成中译稿，再运行以下命令导入。
 
 ```bash
 uv run --no-sync python scripts/import_youtube_captions.py \
   --url <canonical-youtube-video-url> \
-  --episode-dir shows/<show-id>/episodes/<episode-folder>
+  --episode-dir shows/<show-id>/episodes/<episode-folder> \
+  --metadata-json .cache/<episode>/metadata.json \
+  --source-json3 .cache/<episode>/source.en.json3 \
+  --translation-segments-json .cache/<episode>/translation.zh-CN.json
 ```
 
 importer 固定下载 `json3`，把发布者英文原始载荷保存在
 `asr/youtube-subtitles/raw.json`，并生成 `refined.json`、run `transcript.en.md`、
 字节一致的根英文稿和根 `transcript.zh-CN.md`。英文与中文轨必须拥有完全相同的事件
 数量、开始时间与结束时间；任一空事件、时间漂移、video/channel 身份错误都失败关闭。
-中文稿来自 YouTube 平台机器翻译，状态保持 `machine`；未经逐段人工核对不得升级。
+中文稿保留 Luna 子代理的来源记录，状态为 `machine`。
 
 README 中 selected run 使用非 Qwen provenance：engine 为 `youtube-subtitles`，model
 记录发布者字幕语言；artifacts 至少绑定 raw、refined 和 run transcript。英文 selected
-仍指向 `transcript.en.md`，中文稿只登记在 `transcript.translations`。若发布者字幕存在
-但平台译轨无法满足该契约，先停止该次导入；按第 8 节补全译稿后再导入，不能改跑
-音频 ASR。事件数量和时间轴一致并不能排除译轨只翻译了多行字幕中的一行，还必须
-抽查正文，发现漏译时不得把结构校验通过写成内容完整。
+仍指向 `transcript.en.md`，中文稿只登记在 `transcript.translations`。中文稿未满足
+契约时，按第 8 节补全并抽查正文后再导入。继续使用发布者字幕作为英文源稿。
 
 ### 无受支持字幕时使用 Qwen
 
@@ -633,20 +631,23 @@ shasum -a 256 shows/<show-id>/episodes/<episode-folder>/asr/qwen3-asr/refined.js
 当正式稿是 `transcript.en.md` 时，英文仍是 selected 原文；根目录必须另有
 `transcript.zh-CN.md`，并登记在 `transcript.translations`，不能放进 `asr/`。
 
-长稿使用可恢复的逐段流程：
+新生成或重做中译稿时，由主代理启动 Codex 的 Luna 子代理（`gpt-6-luna`）
+逐段翻译，并负责组装、核验和记录来源。长稿按以下步骤恢复处理。
 
 1. 固定英文源文件并先计算 SHA-256；翻译期间源文件不得变化；
-2. 按连续 segment 范围分块，每块保留源行号、首尾时间戳和术语表；
+2. 按连续 segment 范围向 Luna 子代理分派任务，每块保留源行号、首尾时间戳和术语表。
+   先用小块验证译文是否忠实保留每个编号中的句首、句尾和跨段残句，再确定分块大小。
 3. 中间结果写入 `.cache/translations/<show-id>/<episode-folder>/`；
 4. 每个英文 segment 只生成一个中文 segment，保留相同时间戳和 Markdown 硬换行；
 5. 逐块检查无合并、拆分、遗漏、增行和时间戳漂移，再按原顺序组装；
-6. 对开头、中段、结尾、姓名、公司、模型和关键数字做语义抽样；
+6. 将分块首尾和块内源文与译文按编号并排核对，检查内容串位和实质漏译。抽查姓名、
+   公司、模型和关键数字，发现问题时由 Luna 子代理逐段修订。
 7. 计算最终中译稿 SHA-256，填写 `source_sha256`、`sha256`、RFC 3339
    `generated_at` 和真实审核状态。
 
-YouTube 字幕 importer 可以把时间轴完全一致的 `zh-Hans-en` 平台机器译轨作为上述
-分块翻译的替代来源；它仍须逐事件检查一对一结构，并在 refined provenance 中绑定
-译轨原始载荷 SHA-256。该译稿只可标为 `machine`，平台能返回中文不代表已经人工审核。
+已有 YouTube `zh-Hans-en` 平台机器译稿通过 `--translation-json3` 使用原有
+导入流程。导入器逐事件检查时间轴，在 refined provenance 中绑定译轨载荷 SHA-256，
+并保留 `machine` 状态。
 
 对于基于完整英文生成或补全的 YouTube 中文译稿，使用 `--translation-segments-json`，与
 `--translation-json3` 互斥。输入必须保存在 `.cache/`，并包含：
@@ -655,8 +656,10 @@ YouTube 字幕 importer 可以把时间轴完全一致的 `zh-Hans-en` 平台机
   `source_language: en`、`status: machine`；
 - 发布者 `json3` 的 `source_payload_sha256` 与最终选中英文 Markdown 的
   `source_transcript_sha256`；
-- 实际 `engine`、`model` 和带时区的 `generated_at`；本地模型必须提供 40 位
-  commit pin `model_revision`。通过现有浏览器的 Google Translate Advanced 生成时，
+- 实际 `engine`、`model` 和带时区的 `generated_at`。Luna 子代理使用
+  `engine: codex-subagent`、`model: gpt-6-luna`、`model_revision: null` 和
+  `model_version_visibility: not-exposed`。导入既有本地模型译稿时，保留 40 位
+  commit pin `model_revision`。导入既有 Google Translate Advanced 译稿时，
   使用 `engine: google-translate-web`、`model: Advanced (Gemini)`、
   `provider_url: https://translate.google.com/`，并明确记录 `model_revision: null`、
   `model_version_visibility: not-exposed`，不得虚构服务未公开的模型版本；
@@ -664,10 +667,11 @@ YouTube 字幕 importer 可以把时间轴完全一致的 `zh-Hans-en` 平台机
   并提供非空、单行的中文 `text`。
 
 importer 拒绝源哈希不符、段数不齐和时间轴漂移，保存根目录 `translation.zh-CN.json`，
-并在 refined 的 translation provenance 中区分 `local-machine-translation` 与
-`web-machine-translation`，记录模型版本或版本不可见状态、输入载荷哈希和输出稿哈希；
-不得把另行生成的文字标成 YouTube 平台机器译轨。网页翻译还须核对实际输入和界面模型，
-缓存连续分块及原始输出，并拒绝缺号、漏译或源文本被追加导致的错误范围。
+并在 refined 的 translation provenance 中用 `subagent-machine-translation` 记录
+Luna 译稿，用 `local-machine-translation` 和 `web-machine-translation` 分别记录
+既有本地和网页译稿，并记录模型版本或版本不可见状态、输入载荷哈希和输出稿哈希。
+YouTube 平台机器译轨的标记只适用于平台原始载荷。网页翻译还须核对实际输入和界面
+模型，缓存连续分块及原始输出，并拒绝缺号、漏译或源文本被追加导致的错误范围。
 
 已有英文稿需要替换不完整中文稿时，加 `--replace-translation`，不能同时加
 `--overwrite`。替换前会核对 raw 与两份英文稿均保持字节一致，并预检全部输出冲突；

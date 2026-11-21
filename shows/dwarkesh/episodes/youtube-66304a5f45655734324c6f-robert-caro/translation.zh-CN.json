@@ -1,0 +1,3286 @@
+{
+  "engine": "codex-subagent",
+  "generated_at": "2026-11-21T09:14:12.471394+00:00",
+  "kind": "podwiki-segment-translation",
+  "language": "zh-CN",
+  "model": "gpt-6-luna",
+  "model_revision": null,
+  "model_version_visibility": "not-exposed",
+  "schema_version": 1,
+  "segments": [
+    {
+      "end_ms": 4480,
+      "source_event_index": 0,
+      "start_ms": 240,
+      "text": "‘凡事都做到，你就会赢。’这是林登·约翰逊奉行的格言……"
+    },
+    {
+      "end_ms": 8400,
+      "source_event_index": 1,
+      "start_ms": 4480,
+      "text": "……约翰逊一生都按这句话行事。今天我的嘉宾是罗伯特·卡罗。"
+    },
+    {
+      "end_ms": 14240,
+      "source_event_index": 2,
+      "start_ms": 8400,
+      "text": "过去50年里，他一直在写林登·约翰逊，也曾住在"
+    },
+    {
+      "end_ms": 18800,
+      "source_event_index": 3,
+      "start_ms": 14240,
+      "text": "德克萨斯丘陵乡村，去了解约翰逊青年时期的贫困与孤独。"
+    },
+    {
+      "end_ms": 23520,
+      "source_event_index": 4,
+      "start_ms": 18800,
+      "text": "他在参议院和总统图书馆里翻阅了数百万份文件，"
+    },
+    {
+      "end_ms": 27040,
+      "source_event_index": 5,
+      "start_ms": 23520,
+      "text": "遍及全国。他还追访了"
+    },
+    {
+      "end_ms": 32080,
+      "source_event_index": 6,
+      "start_ms": 27040,
+      "text": "各种各样的人，做访谈：从帮约翰逊操纵选举的前打手，到那位司机；"
+    },
+    {
+      "end_ms": 37360,
+      "source_event_index": 7,
+      "start_ms": 32080,
+      "text": "他曾在约翰逊第一次孤注一掷的竞选中开车载着他。换句话说，我今天的嘉宾是个"
+    },
+    {
+      "end_ms": 43120,
+      "source_event_index": 8,
+      "start_ms": 37360,
+      "text": "真正理解约翰逊这句格言的人：‘只要事事都做到位，你就会赢。’"
+    },
+    {
+      "end_ms": 45840,
+      "source_event_index": 9,
+      "start_ms": 43120,
+      "text": "卡罗先生，能请您来节目，我感到无比荣幸。"
+    },
+    {
+      "end_ms": 49920,
+      "source_event_index": 10,
+      "start_ms": 45840,
+      "text": "很高兴来到这里。我的第一个问题是"
+    },
+    {
+      "end_ms": 55760,
+      "source_event_index": 11,
+      "start_ms": 49920,
+      "text": "我在开场介绍里提到的那个问题。您觉得自己有多大程度上"
+    },
+    {
+      "end_ms": 60640,
+      "source_event_index": 12,
+      "start_ms": 55760,
+      "text": "能在约翰逊或摩西身上看到自己的影子？您之所以能"
+    },
+    {
+      "end_ms": 65040,
+      "source_event_index": 13,
+      "start_ms": 60640,
+      "text": "把他们写得如此引人入胜，是否因为您也有他们的一些特质？"
+    },
+    {
+      "end_ms": 75760,
+      "source_event_index": 14,
+      "start_ms": 66640,
+      "text": "我先说，我想、也希望，这两个人身上有些特质我并不具备。"
+    },
+    {
+      "end_ms": 80160,
+      "source_event_index": 15,
+      "start_ms": 75760,
+      "text": "其中一点是，他们都非常——我就用这个词吧——冷酷无情。"
+    },
+    {
+      "end_ms": 90240,
+      "source_event_index": 16,
+      "start_ms": 80160,
+      "text": "你说他们为了赢什么事都做得出来，这正是他们伟大的一部分。"
+    },
+    {
+      "end_ms": 96160,
+      "source_event_index": 17,
+      "start_ms": 90240,
+      "text": "我记得刚开始了解罗伯特·摩西时，我去了拉瓜迪亚"
+    },
+    {
+      "end_ms": 104320,
+      "source_event_index": 18,
+      "start_ms": 96160,
+      "text": "的档案，那些档案保存在船坞盆地，由市政档案馆收藏，"
+    },
+    {
+      "end_ms": 110800,
+      "source_event_index": 19,
+      "start_ms": 104320,
+      "text": "就在哈德逊河畔第79街的船坞盆地，地下三层。"
+    },
+    {
+      "end_ms": 115760,
+      "source_event_index": 20,
+      "start_ms": 110800,
+      "text": "墙边有一排档案柜。"
+    },
+    {
+      "end_ms": 120160,
+      "source_event_index": 21,
+      "start_ms": 115760,
+      "text": "我日复一日坐在那里翻阅这些文件。"
+    },
+    {
+      "end_ms": 126880,
+      "source_event_index": 22,
+      "start_ms": 120160,
+      "text": "偶尔会看到罗伯特·摩西写的一张便条，我意识到自己正在"
+    },
+    {
+      "end_ms": 133120,
+      "source_event_index": 23,
+      "start_ms": 126880,
+      "text": "走他走过的同一条路。这其实很有意思。"
+    },
+    {
+      "end_ms": 137840,
+      "source_event_index": 24,
+      "start_ms": 133120,
+      "text": "显然，我并非拥有他们所有的特质。但我说的那种特质"
+    },
+    {
+      "end_ms": 144720,
+      "source_event_index": 25,
+      "start_ms": 137840,
+      "text": "是：就像约翰逊或摩西一样，你不会接受别人说不。"
+    },
+    {
+      "end_ms": 148320,
+      "source_event_index": 26,
+      "start_ms": 144720,
+      "text": "如果有人说‘我不接受采访’，你不会就此打住。"
+    },
+    {
+      "end_ms": 154000,
+      "source_event_index": 27,
+      "start_ms": 148320,
+      "text": "你会穷尽一切办法。所以，你和这些研究对象有一种不懈的劲头，"
+    },
+    {
+      "end_ms": 159040,
+      "source_event_index": 28,
+      "start_ms": 154000,
+      "text": "你们都不肯放弃。我就把这当作夸奖了。"
+    },
+    {
+      "end_ms": 169120,
+      "source_event_index": 29,
+      "start_ms": 159040,
+      "text": "没错。你会觉得有些人是非采访不可的。"
+    },
+    {
+      "end_ms": 175120,
+      "source_event_index": 30,
+      "start_ms": 169120,
+      "text": "如果他们不愿意接受采访，我觉得你不能就这么算了。"
+    },
+    {
+      "end_ms": 184720,
+      "source_event_index": 31,
+      "start_ms": 175120,
+      "text": "比如林登·约翰逊的第一任秘书，就是那个竞选时坐在车里陪他的人。"
+    },
+    {
+      "end_ms": 191440,
+      "source_event_index": 32,
+      "start_ms": 184720,
+      "text": "我说：‘世上没有其他人知道林登·约翰逊在德州来回奔波的那些"
+    },
+    {
+      "end_ms": 198000,
+      "source_event_index": 33,
+      "start_ms": 191440,
+      "text": "个小时里都在做什么。我不知道该怎么做，但我必须让他"
+    },
+    {
+      "end_ms": 203920,
+      "source_event_index": 34,
+      "start_ms": 198000,
+      "text": "如实告诉我这件事。’这就引出了我想问您的另一个问题。"
+    },
+    {
+      "end_ms": 209040,
+      "source_event_index": 35,
+      "start_ms": 203920,
+      "text": "您采访了这么多人，"
+    },
+    {
+      "end_ms": 217200,
+      "source_event_index": 36,
+      "start_ms": 209040,
+      "text": "很多时候，他们肯定知道，告诉您想知道的事对自己没好处。"
+    },
+    {
+      "end_ms": 223760,
+      "source_event_index": 37,
+      "start_ms": 217760,
+      "text": "但很多时候，他们还是会告诉您。您是怎么让人说出那些"
+    },
+    {
+      "end_ms": 229760,
+      "source_event_index": 38,
+      "start_ms": 223760,
+      "text": "他们明知不该告诉您的事的？您问的问题非常好。有时候"
+    },
+    {
+      "end_ms": 237760,
+      "source_event_index": 39,
+      "start_ms": 229760,
+      "text": "你坐在那里，知道这个人不想跟你谈你想"
+    },
+    {
+      "end_ms": 246160,
+      "source_event_index": 40,
+      "start_ms": 237760,
+      "text": "从他口中问出的事，比如约翰·康纳利，以及约翰逊如何用金钱换取政治权力。"
+    },
+    {
+      "end_ms": 252560,
+      "source_event_index": 41,
+      "start_ms": 246160,
+      "text": "我心里想：‘可我看过那些笔记。康纳利收了钱，再按"
+    },
+    {
+      "end_ms": 259760,
+      "source_event_index": 42,
+      "start_ms": 252560,
+      "text": "约翰逊的指示把钱发出去，所以只有他能告诉我约翰逊是怎么做的，"
+    },
+    {
+      "end_ms": 264880,
+      "source_event_index": 43,
+      "start_ms": 260320,
+      "text": "又是怎么判断该把钱给谁的。’有时候约翰逊会在"
+    },
+    {
+      "end_ms": 269120,
+      "source_event_index": 44,
+      "start_ms": 264880,
+      "text": "一份要钱的申请上写字。要是那人要1,500美元，"
+    },
+    {
+      "end_ms": 276160,
+      "source_event_index": 45,
+      "start_ms": 269120,
+      "text": "约翰逊就会写‘好，1,500’。有时他会写500，有时会"
+    },
+    {
+      "end_ms": 286640,
+      "source_event_index": 46,
+      "start_ms": 276160,
+      "text": "写‘不’，但有时会写‘不，永远不行’。我问康纳利这是什么意思，他说："
+    },
+    {
+      "end_ms": 291360,
+      "source_event_index": 47,
+      "start_ms": 286640,
+      "text": "‘这家伙永远别想从林登·约翰逊那里拿到钱。’"
+    },
+    {
+      "end_ms": 298960,
+      "source_event_index": 48,
+      "start_ms": 291360,
+      "text": "接着你问他为什么对这个国会议员有这种看法，这时"
+    },
+    {
+      "end_ms": 305840,
+      "source_event_index": 49,
+      "start_ms": 298960,
+      "text": "真正精彩的故事才会浮现出来。在我们继续深入谈约翰逊之前，"
+    },
+    {
+      "end_ms": 313280,
+      "source_event_index": 50,
+      "start_ms": 305840,
+      "text": "我想先从摩西谈起。过去十几二十年里，"
+    },
+    {
+      "end_ms": 319920,
+      "source_event_index": 51,
+      "start_ms": 313280,
+      "text": "人们一直抱怨，如今建造东西变得太难了，"
+    },
+    {
+      "end_ms": 324080,
+      "source_event_index": 52,
+      "start_ms": 319920,
+      "text": "尤其是政府项目。看看第二大道地铁，"
+    },
+    {
+      "end_ms": 328400,
+      "source_event_index": 53,
+      "start_ms": 324080,
+      "text": "已经修了大约50年，通车的只有一英里半。"
+    },
+    {
+      "end_ms": 332560,
+      "source_event_index": 54,
+      "start_ms": 328400,
+      "text": "花费超过40亿美元。有人说："
+    },
+    {
+      "end_ms": 337920,
+      "source_event_index": 55,
+      "start_ms": 333760,
+      "text": "《权力掮客》出版了，是一本影响巨大的书。"
+    },
+    {
+      "end_ms": 345280,
+      "source_event_index": 56,
+      "start_ms": 337920,
+      "text": "我们担心权力过度集中、被授予一个人，"
+    },
+    {
+      "end_ms": 348720,
+      "source_event_index": 57,
+      "start_ms": 345280,
+      "text": "好让他能推动建设。我们想防止这种事，"
+    },
+    {
+      "end_ms": 356720,
+      "source_event_index": 58,
+      "start_ms": 348720,
+      "text": "于是有了环境审查、土地使用审查、社区委员会和诉讼。’"
+    },
+    {
+      "end_ms": 362400,
+      "source_event_index": 59,
+      "start_ms": 356720,
+      "text": "人们说：‘我们矫枉过正了，走到了另一个极端。’"
+    },
+    {
+      "end_ms": 366720,
+      "source_event_index": 60,
+      "start_ms": 362400,
+      "text": "您怎么看？他们还说，正因为"
+    },
+    {
+      "end_ms": 372800,
+      "source_event_index": 61,
+      "start_ms": 366720,
+      "text": "有了这些保障，罗伯特·摩西今天不可能像当年那样行事。"
+    },
+    {
+      "end_ms": 378000,
+      "source_event_index": 62,
+      "start_ms": 372800,
+      "text": "但事实上，罗伯特·摩西刚起步时，也有各种保障措施。"
+    },
+    {
+      "end_ms": 380960,
+      "source_event_index": 63,
+      "start_ms": 378000,
+      "text": "当时也有人说：‘什么都建不成。’"
+    },
+    {
+      "end_ms": 384800,
+      "source_event_index": 64,
+      "start_ms": 380960,
+      "text": "那是在20世纪20年代。人们说："
+    },
+    {
+      "end_ms": 389040,
+      "source_event_index": 65,
+      "start_ms": 384800,
+      "text": "‘政府什么都建不成，处处受阻。"
+    },
+    {
+      "end_ms": 394240,
+      "source_event_index": 66,
+      "start_ms": 389040,
+      "text": "什么都没建起来。我们需要高速公路，那是汽车时代。"
+    },
+    {
+      "end_ms": 398800,
+      "source_event_index": 67,
+      "start_ms": 394240,
+      "text": "人人都买了汽车，可路还是老样子。"
+    },
+    {
+      "end_ms": 405520,
+      "source_event_index": 68,
+      "start_ms": 398800,
+      "text": "没人能修路，因为业主不愿让道路穿过他们的土地。’"
+    },
+    {
+      "end_ms": 414240,
+      "source_event_index": 69,
+      "start_ms": 406080,
+      "text": "罗伯特·摩西来了，突然之间那些阻碍都消失了，因为尽管"
+    },
+    {
+      "end_ms": 422000,
+      "source_event_index": 70,
+      "start_ms": 414240,
+      "text": "有各种保障和其他限制，他还是动手把东西建了起来。写《权力掮客》时，我特别"
+    },
+    {
+      "end_ms": 428400,
+      "source_event_index": 71,
+      "start_ms": 422000,
+      "text": "惊讶地看到他如何绕开一切障碍。不管是什么障碍，"
+    },
+    {
+      "end_ms": 434000,
+      "source_event_index": 72,
+      "start_ms": 428400,
+      "text": "他都要在琼斯海滩建一座海滩。他有一天看到那里，"
+    },
+    {
+      "end_ms": 437520,
+      "source_event_index": 73,
+      "start_ms": 434000,
+      "text": "就说：‘这是我见过最棒的海滩。"
+    },
+    {
+      "end_ms": 445520,
+      "source_event_index": 74,
+      "start_ms": 437520,
+      "text": "离纽约市只有27英里。只要我能修一条路到那里，就能把"
+    },
+    {
+      "end_ms": 452080,
+      "source_event_index": 75,
+      "start_ms": 445520,
+      "text": "这片绝美海滩带给纽约市民。’可修路似乎不可能，"
+    },
+    {
+      "end_ms": 460960,
+      "source_event_index": 76,
+      "start_ms": 452080,
+      "text": "因为业主不愿让路穿过他们的农场和地产。"
+    },
+    {
+      "end_ms": 467680,
+      "source_event_index": 77,
+      "start_ms": 460960,
+      "text": "他基本上就说：‘我就是要修。’看着他克服一个又一个障碍，"
+    },
+    {
+      "end_ms": 472320,
+      "source_event_index": 78,
+      "start_ms": 467680,
+      "text": "障碍多得数不清，最后突然路通了，琼斯"
+    },
+    {
+      "end_ms": 478960,
+      "source_event_index": 79,
+      "start_ms": 472320,
+      "text": "海滩也建成了，纽约人也能到那里了。这是政治天才的表现，同时也是"
+    },
+    {
+      "end_ms": 487520,
+      "source_event_index": 80,
+      "start_ms": 478960,
+      "text": "一种意志力：‘我就是要办成。’了解这段经历很有意思。"
+    },
+    {
+      "end_ms": 492480,
+      "source_event_index": 81,
+      "start_ms": 487520,
+      "text": "所以您觉得，今天如果有个摩西式人物，也能想办法绕过"
+    },
+    {
+      "end_ms": 500640,
+      "source_event_index": 82,
+      "start_ms": 492480,
+      "text": "已经建立起来的种种机制？摩西在"
+    },
+    {
+      "end_ms": 506480,
+      "source_event_index": 83,
+      "start_ms": 500640,
+      "text": "建造时，人们说的也是同样的话：‘谁也建不成。"
+    },
+    {
+      "end_ms": 509840,
+      "source_event_index": 84,
+      "start_ms": 506480,
+      "text": "汽车需要道路，可路得穿过"
+    },
+    {
+      "end_ms": 517760,
+      "source_event_index": 85,
+      "start_ms": 510640,
+      "text": "几十个农场、几十处地产，根本没人办得到。’"
+    },
+    {
+      "end_ms": 525920,
+      "source_event_index": 86,
+      "start_ms": 517760,
+      "text": "但他来了，做到了。所以今天也会有人站出来办成。"
+    },
+    {
+      "end_ms": 533760,
+      "source_event_index": 87,
+      "start_ms": 525920,
+      "text": "我觉得这对民主制度是个深刻的问题：我们怎样才能找到一个"
+    },
+    {
+      "end_ms": 542720,
+      "source_event_index": 88,
+      "start_ms": 533760,
+      "text": "既不是摩西在五六十年代那种极端、又不是如今这种局面的平衡点？"
+    },
+    {
+      "end_ms": 548720,
+      "source_event_index": 89,
+      "start_ms": 543440,
+      "text": "我住在加州，过去十年里我们花了大概150亿美元。"
+    },
+    {
+      "end_ms": 553040,
+      "source_event_index": 90,
+      "start_ms": 548720,
+      "text": "一条新铁路线路也没建成，一英里铁路也没有；"
+    },
+    {
+      "end_ms": 559840,
+      "source_event_index": 91,
+      "start_ms": 553040,
+      "text": "那150亿美元本来是用来修铁路的。换一种制度的话……今天的中国"
+    },
+    {
+      "end_ms": 565600,
+      "source_event_index": 92,
+      "start_ms": 559840,
+      "text": "可以说就像四五十年代的纽约市。他们很有摩西式的作风，"
+    },
+    {
+      "end_ms": 570240,
+      "source_event_index": 93,
+      "start_ms": 565600,
+      "text": "过去10到20年间建成了数万英里的铁路。"
+    },
+    {
+      "end_ms": 577200,
+      "source_event_index": 94,
+      "start_ms": 570240,
+      "text": "当然，代价也是大规模迁拆和鲁莽行事。"
+    },
+    {
+      "end_ms": 582720,
+      "source_event_index": 95,
+      "start_ms": 577200,
+      "text": "那么，我们怎样才能在两个极端之间找到一个好位置？"
+    },
+    {
+      "end_ms": 589680,
+      "source_event_index": 96,
+      "start_ms": 582720,
+      "text": "我不确定有没有什么好位置。你刚才描述的就是现实。"
+    },
+    {
+      "end_ms": 598800,
+      "source_event_index": 97,
+      "start_ms": 589680,
+      "text": "要大规模建造任何东西，你都会面对几十个、"
+    },
+    {
+      "end_ms": 604880,
+      "source_event_index": 98,
+      "start_ms": 598800,
+      "text": "甚至上百个不想让项目建在那里的业主。"
+    },
+    {
+      "end_ms": 613520,
+      "source_event_index": 99,
+      "start_ms": 604880,
+      "text": "问题是，究竟怎样才能建成东西？然后有人站出来，把它办成。"
+    },
+    {
+      "end_ms": 622880,
+      "source_event_index": 100,
+      "start_ms": 614720,
+      "text": "罗伯特·摩西刚开始时，向长岛修路看起来根本不可能，因为道路必须穿过"
+    },
+    {
+      "end_ms": 629920,
+      "source_event_index": 101,
+      "start_ms": 622880,
+      "text": "数十处地产，而大多数业主都不愿让路经过。"
+    },
+    {
+      "end_ms": 634560,
+      "source_event_index": 102,
+      "start_ms": 629920,
+      "text": "那些业主不愿让路经过。当时他们有权阻止修路，因为……"
+    },
+    {
+      "end_ms": 643680,
+      "source_event_index": 103,
+      "start_ms": 634560,
+      "text": "他没有征用权。但摩西大致说：“我会把路修出来。”"
+    },
+    {
+      "end_ms": 651520,
+      "source_event_index": 104,
+      "start_ms": 643680,
+      "text": "他会想办法克服每一个困难。我想表达什么？"
+    },
+    {
+      "end_ms": 660320,
+      "source_event_index": 105,
+      "start_ms": 651520,
+      "text": "我是说，时不时就会有人出现，他在把大项目建成这件事上是个天才，"
+    },
+    {
+      "end_ms": 666560,
+      "source_event_index": 106,
+      "start_ms": 660320,
+      "text": "如果用‘天才’这个词合适的话，而且是为了公众利益。"
+    },
+    {
+      "end_ms": 674480,
+      "source_event_index": 107,
+      "start_ms": 666560,
+      "text": "可能几十年都不会有这样的人。你会说：‘一切都停滞了，"
+    },
+    {
+      "end_ms": 680160,
+      "source_event_index": 108,
+      "start_ms": 674480,
+      "text": "再也不会有大型建设了。’然后忽然有人出现，"
+    },
+    {
+      "end_ms": 686960,
+      "source_event_index": 109,
+      "start_ms": 680160,
+      "text": "突然之间，事情就建起来了。这就是政治天才的本质。"
+    },
+    {
+      "end_ms": 695680,
+      "source_event_index": 110,
+      "start_ms": 686960,
+      "text": "我碰巧在写两个人：林登·约翰逊和罗伯特·摩西。约翰逊推动民权，"
+    },
+    {
+      "end_ms": 702480,
+      "source_event_index": 111,
+      "start_ms": 695680,
+      "text": "摩西推动公共工程，当时人们都说：‘这事你做不到。’"
+    },
+    {
+      "end_ms": 707360,
+      "source_event_index": 112,
+      "start_ms": 704160,
+      "text": "可他们做到了。要是我把你的"
+    },
+    {
+      "end_ms": 716160,
+      "source_event_index": 113,
+      "start_ms": 707360,
+      "text": "意思说歪了，请纠正我；不过我试着解释一下你的话，听起来"
+    },
+    {
+      "end_ms": 728560,
+      "source_event_index": 114,
+      "start_ms": 716160,
+      "text": "你觉得今天我们需要一个稍微像摩西的人。这见解很棒。我有时会想"
+    },
+    {
+      "end_ms": 736960,
+      "source_event_index": 115,
+      "start_ms": 728560,
+      "text": "你刚才说的那个问题。我的回答是，我当然"
+    },
+    {
+      "end_ms": 748480,
+      "source_event_index": 116,
+      "start_ms": 736960,
+      "text": "不想要一个像罗伯特·摩西那样冷酷、完全不顾公众意见的人。"
+    },
+    {
+      "end_ms": 755520,
+      "source_event_index": 117,
+      "start_ms": 748480,
+      "text": "但与此同时，我们需要有人能想办法把事情建起来。"
+    },
+    {
+      "end_ms": 762720,
+      "source_event_index": 118,
+      "start_ms": 755520,
+      "text": "即使很多人不希望建，他也得想办法推进。"
+    },
+    {
+      "end_ms": 766640,
+      "source_event_index": 119,
+      "start_ms": 762720,
+      "text": "很多没读过这本书的人以为你觉得摩西做的每件事"
+    },
+    {
+      "end_ms": 771920,
+      "source_event_index": 120,
+      "start_ms": 766640,
+      "text": "都很糟糕，我们必须确保再也不能出现第二个摩西。"
+    },
+    {
+      "end_ms": 777760,
+      "source_event_index": 121,
+      "start_ms": 773600,
+      "text": "所以听到你说我们需要一点摩西式人物，还挺有意思。"
+    },
+    {
+      "end_ms": 785360,
+      "source_event_index": 122,
+      "start_ms": 778400,
+      "text": "有人对我说他做的所有事都不好，我就回答：‘你没读过这本书。’"
+    },
+    {
+      "end_ms": 792560,
+      "source_event_index": 123,
+      "start_ms": 785360,
+      "text": "因为这本书前面几百页写的，确实是一个年轻的理想主义者，"
+    },
+    {
+      "end_ms": 800240,
+      "source_event_index": 124,
+      "start_ms": 792560,
+      "text": "他看到人们很需要休闲场所，需要长岛的海滩，让城里人也能去，"
+    },
+    {
+      "end_ms": 806720,
+      "source_event_index": 125,
+      "start_ms": 800240,
+      "text": "于是他要想办法让城市居民能方便地到那里。"
+    },
+    {
+      "end_ms": 816720,
+      "source_event_index": 126,
+      "start_ms": 808240,
+      "text": "他办到这件事的方式，体现了天才和意志力，这很了不起。"
+    },
+    {
+      "end_ms": 829600,
+      "source_event_index": 127,
+      "start_ms": 816720,
+      "text": "后来，他会不会变成谁都不听、只在乎……"
+    },
+    {
+      "end_ms": 836800,
+      "source_event_index": 128,
+      "start_ms": 829600,
+      "text": "他想建成什么？确实会演变成那样。"
+    },
+    {
+      "end_ms": 844880,
+      "source_event_index": 129,
+      "start_ms": 836800,
+      "text": "他变了。但年轻的理想主义者摩西在开始建设之前，是一位……专家"
+    },
+    {
+      "end_ms": 852800,
+      "source_event_index": 130,
+      "start_ms": 844880,
+      "text": "熟悉公务员制度的技术细节。他把全部精力投入到……"
+    },
+    {
+      "end_ms": 860880,
+      "source_event_index": 131,
+      "start_ms": 852800,
+      "text": "改革公务员制度，让人们凭能力晋升，而不是靠政治关系。"
+    },
+    {
+      "end_ms": 862400,
+      "source_event_index": 132,
+      "start_ms": 860880,
+      "text": "他在这件事上付出极大努力。你能看到真正的理想主义。"
+    },
+    {
+      "end_ms": 870560,
+      "source_event_index": 133,
+      "start_ms": 862400,
+      "text": "在他早期的工作里也能看到理想主义。他说：‘我要让"
+    },
+    {
+      "end_ms": 878240,
+      "source_event_index": 134,
+      "start_ms": 870560,
+      "text": "纽约人能去这些海滩。’但后来会不会变成‘我认为这里"
+    },
+    {
+      "end_ms": 883760,
+      "source_event_index": 135,
+      "start_ms": 878240,
+      "text": "就该修高速公路，不管别人怎么说，也不管有"
+    },
+    {
+      "end_ms": 889920,
+      "source_event_index": 136,
+      "start_ms": 883760,
+      "text": "成千上万的人挡路’，就像克罗斯布朗克斯高速公路那样，‘我会把他们赶走’？"
+    },
+    {
+      "end_ms": 901120,
+      "source_event_index": 137,
+      "start_ms": 889920,
+      "text": "确实如此。他变了。对我来说，这是《权力掮客》故事的重要部分："
+    },
+    {
+      "end_ms": 913440,
+      "source_event_index": 138,
+      "start_ms": 901120,
+      "text": "一个起初年轻而理想主义、想通过建设改善"
+    },
+    {
+      "end_ms": 921200,
+      "source_event_index": 139,
+      "start_ms": 913440,
+      "text": "人们生活、让他们能去海边和海滩的人，后来变成了"
+    },
+    {
+      "end_ms": 928320,
+      "source_event_index": 140,
+      "start_ms": 921200,
+      "text": "一个只要觉得该建，就不管别人说什么都要建的人。"
+    },
+    {
+      "end_ms": 934800,
+      "source_event_index": 141,
+      "start_ms": 928320,
+      "text": "不管他得驱逐几百人、几千人，"
+    },
+    {
+      "end_ms": 939920,
+      "source_event_index": 142,
+      "start_ms": 934800,
+      "text": "不管这想法有多糟，比如克罗斯布朗克斯高速公路。"
+    },
+    {
+      "end_ms": 943360,
+      "source_event_index": 143,
+      "start_ms": 939920,
+      "text": "在他动工前，人们就劝他别这么做。"
+    },
+    {
+      "end_ms": 948960,
+      "source_event_index": 144,
+      "start_ms": 943360,
+      "text": "这条路一开放，就成了世界上最长的交通堵塞。"
+    },
+    {
+      "end_ms": 953920,
+      "source_event_index": 145,
+      "start_ms": 948960,
+      "text": "被他赶走的不是几千人，而是几万人；他们被迫离开"
+    },
+    {
+      "end_ms": 968880,
+      "source_event_index": 146,
+      "start_ms": 953920,
+      "text": "家园，却没有任何安置安排。所以从某种意义上说，这是个故事：有人被赋予权力后，"
+    },
+    {
+      "end_ms": 978800,
+      "source_event_index": 147,
+      "start_ms": 968880,
+      "text": "权力如何——我不想说‘腐化’了他——而是让他变得强硬，"
+    },
+    {
+      "end_ms": 990240,
+      "source_event_index": 148,
+      "start_ms": 978800,
+      "text": "让他对任何反对他的人、任何反对意见都变得更加强硬。编码代理只有获得快速、"
+    },
+    {
+      "end_ms": 993120,
+      "source_event_index": 149,
+      "start_ms": 990240,
+      "text": "详细反馈才能发挥最佳表现。我的赞助商 Antithesis，"
+    },
+    {
+      "end_ms": 997440,
+      "source_event_index": 150,
+      "start_ms": 993120,
+      "text": "通过让代理把每项改动都经过数千次恶意模拟，为它们提供极为丰富的反馈。"
+    },
+    {
+      "end_ms": 1002240,
+      "source_event_index": 151,
+      "start_ms": 997440,
+      "text": "这种做法通常不可行。模拟测试"
+    },
+    {
+      "end_ms": 1007040,
+      "source_event_index": 152,
+      "start_ms": 1002240,
+      "text": "很困难。通常得围绕虚假的网络和时钟重构软件，"
+    },
+    {
+      "end_ms": 1010000,
+      "source_event_index": 153,
+      "start_ms": 1007040,
+      "text": "还要做其他工作。所以多数团队干脆不做。"
+    },
+    {
+      "end_ms": 1013680,
+      "source_event_index": 154,
+      "start_ms": 1010000,
+      "text": "即使他们做了，获得足够覆盖率通常也要花好几个小时。"
+    },
+    {
+      "end_ms": 1018880,
+      "source_event_index": 155,
+      "start_ms": 1013680,
+      "text": "于是他们让模拟通宵运行，等到结束时，当天所有改动已经混在一起，"
+    },
+    {
+      "end_ms": 1022720,
+      "source_event_index": 156,
+      "start_ms": 1018880,
+      "text": "代理也更难判断是哪个拉取请求出了问题。"
+    },
+    {
+      "end_ms": 1027200,
+      "source_event_index": 157,
+      "start_ms": 1022720,
+      "text": "Antithesis同时解决了这两个问题。它让软件运行在一台完全"
+    },
+    {
+      "end_ms": 1031280,
+      "source_event_index": 158,
+      "start_ms": 1027200,
+      "text": "确定性的模拟计算机里，因此你不必自己重构任何东西。"
+    },
+    {
+      "end_ms": 1034640,
+      "source_event_index": 159,
+      "start_ms": 1031280,
+      "text": "它探索得足够快，所以每个拉取请求都能测试。"
+    },
+    {
+      "end_ms": 1040320,
+      "source_event_index": 160,
+      "start_ms": 1034640,
+      "text": "在最近的一个项目中，它把15小时的模拟测试压缩到每次15分钟运行里。"
+    },
+    {
+      "end_ms": 1043600,
+      "source_event_index": 161,
+      "start_ms": 1040320,
+      "text": "这种速度既来自并行处理，也来自分支探索。"
+    },
+    {
+      "end_ms": 1047280,
+      "source_event_index": 162,
+      "start_ms": 1043600,
+      "text": "因为模拟是确定性的，Antithesis一旦发现有意思的状态，"
+    },
+    {
+      "end_ms": 1051600,
+      "source_event_index": 163,
+      "start_ms": 1047280,
+      "text": "就能保存那个精确时刻，并从那里分出数百种不同的未来。"
+    },
+    {
+      "end_ms": 1055520,
+      "source_event_index": 164,
+      "start_ms": 1051600,
+      "text": "它不用浪费时间重放事件，指望再碰巧遇到那个状态。"
+    },
+    {
+      "end_ms": 1057680,
+      "source_event_index": 165,
+      "start_ms": 1055520,
+      "text": "而且它不只是随机探索。"
+    },
+    {
+      "end_ms": 1061760,
+      "source_event_index": 166,
+      "start_ms": 1057680,
+      "text": "Antithesis会系统地注入故障，并调整系统，"
+    },
+    {
+      "end_ms": 1066080,
+      "source_event_index": 167,
+      "start_ms": 1061760,
+      "text": "采用最有可能让系统出错的方式。所以在 Antithesis 里每过一分钟，"
+    },
+    {
+      "end_ms": 1069920,
+      "source_event_index": 168,
+      "start_ms": 1066080,
+      "text": "都相当于你的软件经历了最倒霉的一个小时。"
+    },
+    {
+      "end_ms": 1083120,
+      "source_event_index": 169,
+      "start_ms": 1069920,
+      "text": "详情请见 antithesis.com/dwarkesh。你在66、67年开始写这本书。"
+    },
+    {
+      "end_ms": 1090400,
+      "source_event_index": 170,
+      "start_ms": 1083120,
+      "text": "你写作时，摩西正在失势，但他的仕途还没有结束。"
+    },
+    {
+      "end_ms": 1096320,
+      "source_event_index": 171,
+      "start_ms": 1091360,
+      "text": "所以故事在你写作期间发生了变化。我不知道你是否谈过这点，"
+    },
+    {
+      "end_ms": 1100960,
+      "source_event_index": 172,
+      "start_ms": 1096320,
+      "text": "但想必结尾也变了，因为刚开始写时，你还不知道他会不会"
+    },
+    {
+      "end_ms": 1107440,
+      "source_event_index": 173,
+      "start_ms": 1100960,
+      "text": "失去权力。这问题问得很好。我亲眼看着这一切发生，而我当时还年轻。"
+    },
+    {
+      "end_ms": 1113760,
+      "source_event_index": 174,
+      "start_ms": 1107440,
+      "text": "我当时到底多大，"
+    },
+    {
+      "end_ms": 1122560,
+      "source_event_index": 175,
+      "start_ms": 1113760,
+      "text": "其实并不清楚自己在做什么。我眼看着他失势，也逐渐了解他，"
+    },
+    {
+      "end_ms": 1134480,
+      "source_event_index": 176,
+      "start_ms": 1122560,
+      "text": "知道这会多么令人难过。让我想一想，有个时刻就是这样……"
+    },
+    {
+      "end_ms": 1143680,
+      "source_event_index": 177,
+      "start_ms": 1134480,
+      "text": "对……他的办公室当时还设在三州大桥管理局。"
+    },
+    {
+      "end_ms": 1150160,
+      "source_event_index": 178,
+      "start_ms": 1143680,
+      "text": "他当权时，我曾在那间办公室采访过他几次。"
+    },
+    {
+      "end_ms": 1156480,
+      "source_event_index": 179,
+      "start_ms": 1150160,
+      "text": "你能感受到他的权力。你会感觉外面有一群人坐在那里，"
+    },
+    {
+      "end_ms": 1161280,
+      "source_event_index": 180,
+      "start_ms": 1156480,
+      "text": "等着他做决定。我每次采访结束后，秘书"
+    },
+    {
+      "end_ms": 1169600,
+      "source_event_index": 181,
+      "start_ms": 1161280,
+      "text": "都会拿来一张电话名单，列着我和他谈话期间打来、想找他办事的人。"
+    },
+    {
+      "end_ms": 1180640,
+      "source_event_index": 182,
+      "start_ms": 1169600,
+      "text": "我记得有一次和他长谈。"
+    },
+    {
+      "end_ms": 1184560,
+      "source_event_index": 183,
+      "start_ms": 1180640,
+      "text": "那也许是我最后一次采访他。等我结束时，我意识到"
+    },
+    {
+      "end_ms": 1191760,
+      "source_event_index": 184,
+      "start_ms": 1185200,
+      "text": "一个电话也没有。秘书没什么事可向他汇报。"
+    },
+    {
+      "end_ms": 1201680,
+      "source_event_index": 185,
+      "start_ms": 1191760,
+      "text": "无论你怎么看摩西，你都会感到一个人失去权力时的悲凉。"
+    },
+    {
+      "end_ms": 1206640,
+      "source_event_index": 186,
+      "start_ms": 1204000,
+      "text": "这很有意思。这正是我想问的。"
+    },
+    {
+      "end_ms": 1218400,
+      "source_event_index": 187,
+      "start_ms": 1207440,
+      "text": "即使你知道他做过什么，也难免为他感到难过。"
+    },
+    {
+      "end_ms": 1224960,
+      "source_event_index": 188,
+      "start_ms": 1218400,
+      "text": "你会忍不住想：‘唉，从某种意义上说，这很悲凉，再也没有人打电话"
+    },
+    {
+      "end_ms": 1231920,
+      "source_event_index": 189,
+      "start_ms": 1224960,
+      "text": "来求他帮忙了。’他意识到这正在发生吗？"
+    },
+    {
+      "end_ms": 1238880,
+      "source_event_index": 190,
+      "start_ms": 1232560,
+      "text": "我觉得他并没有真正意识到。从某种程度上说，我相信他是知道的。"
+    },
+    {
+      "end_ms": 1246960,
+      "source_event_index": 191,
+      "start_ms": 1238880,
+      "text": "但那时他已经被隔绝得太深。不管他多大年纪，已经八十多岁了。"
+    },
+    {
+      "end_ms": 1258800,
+      "source_event_index": 192,
+      "start_ms": 1246960,
+      "text": "他耳朵聋了。在兰德尔岛的三州大桥总部，仍有一群"
+    },
+    {
+      "end_ms": 1267360,
+      "source_event_index": 193,
+      "start_ms": 1258800,
+      "text": "摩西的部下忠心耿耿，还是像从前那样恭敬地对待他。"
+    },
+    {
+      "end_ms": 1275120,
+      "source_event_index": 194,
+      "start_ms": 1267360,
+      "text": "他知道自己的项目没能推进。但我知道他觉得自己只要像过去一样继续"
+    },
+    {
+      "end_ms": 1278800,
+      "source_event_index": 195,
+      "start_ms": 1275120,
+      "text": "努力，就还能再赢一次。"
+    },
+    {
+      "end_ms": 1284800,
+      "source_event_index": 196,
+      "start_ms": 1279600,
+      "text": "回答你的问题：不，我觉得他始终没有意识到这一点。"
+    },
+    {
+      "end_ms": 1297440,
+      "source_event_index": 197,
+      "start_ms": 1287280,
+      "text": "我想是1962年，正如你说的，他试图对纳尔逊·洛克菲勒故伎重施；他过去对"
+    },
+    {
+      "end_ms": 1303840,
+      "source_event_index": 198,
+      "start_ms": 1297440,
+      "text": "许多市长和州长都这么做过：如果不答应他的要求，他就威胁辞职。"
+    },
+    {
+      "end_ms": 1312800,
+      "source_event_index": 199,
+      "start_ms": 1306400,
+      "text": "洛克菲勒说：‘我遗憾地接受。’结果什么也没发生。"
+    },
+    {
+      "end_ms": 1318400,
+      "source_event_index": 200,
+      "start_ms": 1312800,
+      "text": "我读到这里时就在想：以前那些受到这种威胁的州长和市长，"
+    },
+    {
+      "end_ms": 1325760,
+      "source_event_index": 201,
+      "start_ms": 1318400,
+      "text": "都能这样做吗？问得好。答案是能。"
+    },
+    {
+      "end_ms": 1329280,
+      "source_event_index": 202,
+      "start_ms": 1325760,
+      "text": "你会问：‘他们真的能这么做吗？’"
+    },
+    {
+      "end_ms": 1338240,
+      "source_event_index": 203,
+      "start_ms": 1331440,
+      "text": "有一部分答案是能。他们有权解雇他。"
+    },
+    {
+      "end_ms": 1346320,
+      "source_event_index": 204,
+      "start_ms": 1338240,
+      "text": "他不是民选官员。但实际上，这并不现实。"
+    },
+    {
+      "end_ms": 1353200,
+      "source_event_index": 205,
+      "start_ms": 1346320,
+      "text": "根本问题的答案是否定的：他们做不到，因为他实在太受欢迎了。"
+    },
+    {
+      "end_ms": 1361840,
+      "source_event_index": 206,
+      "start_ms": 1353200,
+      "text": "你不能解雇罗伯特·摩西。这就像解雇一个"
+    },
+    {
+      "end_ms": 1368720,
+      "source_event_index": 207,
+      "start_ms": 1361840,
+      "text": "被纽约人奉若偶像的人。此外，凭着他的才干，"
+    },
+    {
+      "end_ms": 1376880,
+      "source_event_index": 208,
+      "start_ms": 1368720,
+      "text": "他在所有不同职务之间——州电力管理局主席、"
+    },
+    {
+      "end_ms": 1383600,
+      "source_event_index": 209,
+      "start_ms": 1376880,
+      "text": "三州大桥管理局主席、公园局局长、长岛公园局局长、"
+    },
+    {
+      "end_ms": 1391360,
+      "source_event_index": 210,
+      "start_ms": 1383600,
+      "text": "琼斯海滩委员会委员——编织出了互相勾连的权力网络，你没法把他所有职务都撤掉，"
+    },
+    {
+      "end_ms": 1397680,
+      "source_event_index": 211,
+      "start_ms": 1391360,
+      "text": "因为任期结束的时间各不相同，有些职务你也没有权力解除他。"
+    },
+    {
+      "end_ms": 1406320,
+      "source_event_index": 212,
+      "start_ms": 1397680,
+      "text": "他确实让解雇自己变得不可能了。差不多不可能，因为最终，"
+    },
+    {
+      "end_ms": 1412400,
+      "source_event_index": 213,
+      "start_ms": 1406320,
+      "text": "如果你真想动手，洛克菲勒还是做到了。但那时，"
+    },
+    {
+      "end_ms": 1418080,
+      "source_event_index": 214,
+      "start_ms": 1412400,
+      "text": "他的盔甲已经出现裂缝。我认为几十年来，对你刚才那个问题的答案是："
+    },
+    {
+      "end_ms": 1422960,
+      "source_event_index": 215,
+      "start_ms": 1418080,
+      "text": "你做不到。但后来随着他年纪渐长，"
+    },
+    {
+      "end_ms": 1431200,
+      "source_event_index": 216,
+      "start_ms": 1422960,
+      "text": "他的盔甲开始出现裂缝。如果你愿意承受"
+    },
+    {
+      "end_ms": 1441680,
+      "source_event_index": 217,
+      "start_ms": 1431200,
+      "text": "各家报纸的批评、公众的责难以及其他压力，也许就能办到。"
+    },
+    {
+      "end_ms": 1445760,
+      "source_event_index": 218,
+      "start_ms": 1441680,
+      "text": "这就引出了我接下来想问的问题。"
+    },
+    {
+      "end_ms": 1452160,
+      "source_event_index": 219,
+      "start_ms": 1446400,
+      "text": "你采访过他七次。第七次时，你提到"
+    },
+    {
+      "end_ms": 1460240,
+      "source_event_index": 220,
+      "start_ms": 1452160,
+      "text": "你知道有位百万富翁向他的委员会捐过钱，而那人的高尔夫球场恰好没受新公园道路路线影响。"
+    },
+    {
+      "end_ms": 1466400,
+      "source_event_index": 221,
+      "start_ms": 1460240,
+      "text": "从那以后，他就再也不肯跟你说话了。"
+    },
+    {
+      "end_ms": 1473360,
+      "source_event_index": 222,
+      "start_ms": 1467040,
+      "text": "如果你能再采访罗伯特·摩西一次，你最想问他的一个问题会是什么？"
+    },
+    {
+      "end_ms": 1487600,
+      "source_event_index": 223,
+      "start_ms": 1473360,
+      "text": "天哪，问得真好。"
+    },
+    {
+      "end_ms": 1501360,
+      "source_event_index": 224,
+      "start_ms": 1488640,
+      "text": "不假思索地说，如果我只能问他一个问题，我会问："
+    },
+    {
+      "end_ms": 1507360,
+      "source_event_index": 225,
+      "start_ms": 1501360,
+      "text": "‘你意识到自己正在改变吗？’这是我脱口而出的答案……这真是"
+    },
+    {
+      "end_ms": 1514160,
+      "source_event_index": 226,
+      "start_ms": 1507360,
+      "text": "个好问题。但我暂时就给出这个答案。"
+    },
+    {
+      "end_ms": 1519920,
+      "source_event_index": 227,
+      "start_ms": 1514160,
+      "text": "这是我一直想问他的事。"
+    },
+    {
+      "end_ms": 1529760,
+      "source_event_index": 228,
+      "start_ms": 1520960,
+      "text": "你觉得他意识到自己变了吗？我觉得没有。他从一开始就认为自己有"
+    },
+    {
+      "end_ms": 1538640,
+      "source_event_index": 229,
+      "start_ms": 1529760,
+      "text": "一个愿景：在这里修路，在那里建公园。这是最好的选择。"
+    },
+    {
+      "end_ms": 1544960,
+      "source_event_index": 230,
+      "start_ms": 1538640,
+      "text": "事情会办成，也应该办成。无论他不得不让人承受多少苦难，"
+    },
+    {
+      "end_ms": 1551440,
+      "source_event_index": 231,
+      "start_ms": 1544960,
+      "text": "无论要驱逐几千人，无论他得做什么，"
+    },
+    {
+      "end_ms": 1557920,
+      "source_event_index": 232,
+      "start_ms": 1551440,
+      "text": "他都要把路修出来。你能看到他的冷酷越来越强，"
+    },
+    {
+      "end_ms": 1563200,
+      "source_event_index": 233,
+      "start_ms": 1557920,
+      "text": "变得彻底无情。只要有人挡路，他就会"
+    },
+    {
+      "end_ms": 1570080,
+      "source_event_index": 234,
+      "start_ms": 1563200,
+      "text": "想办法把那个人清除掉，扫除障碍。你要是愿意，我可以举个例子。"
+    },
+    {
+      "end_ms": 1577440,
+      "source_event_index": 235,
+      "start_ms": 1570080,
+      "text": "布朗克斯区有个政客叫亨利·爱泼斯坦。"
+    },
+    {
+      "end_ms": 1582240,
+      "source_event_index": 236,
+      "start_ms": 1577440,
+      "text": "亨利·爱泼斯坦反对克罗斯布朗克斯高速公路。"
+    },
+    {
+      "end_ms": 1586640,
+      "source_event_index": 237,
+      "start_ms": 1582240,
+      "text": "他对罗伯特·摩西说：‘你要把路直接穿过一个社区，得"
+    },
+    {
+      "end_ms": 1591840,
+      "source_event_index": 238,
+      "start_ms": 1586640,
+      "text": "驱逐几万人。你把路线往南挪两个街区，"
+    },
+    {
+      "end_ms": 1595120,
+      "source_event_index": 239,
+      "start_ms": 1591840,
+      "text": "只用驱逐几百人。’"
+    },
+    {
+      "end_ms": 1602880,
+      "source_event_index": 240,
+      "start_ms": 1595120,
+      "text": "摩西开始想办法毁掉爱泼斯坦，最后也基本得逞了，因为他放出消息说爱泼斯坦有外遇。"
+    },
+    {
+      "end_ms": 1607360,
+      "source_event_index": 241,
+      "start_ms": 1602880,
+      "text": "如果他能找到某人的弱点，比如有情妇、"
+    },
+    {
+      "end_ms": 1615280,
+      "source_event_index": 242,
+      "start_ms": 1607360,
+      "text": "拿了钱或别的什么，他就会利用。他会不择手段把事情办成。"
+    },
+    {
+      "end_ms": 1624720,
+      "source_event_index": 243,
+      "start_ms": 1616080,
+      "text": "我认为，他年轻时办不成事情，正是让他学会这一套的原因。"
+    },
+    {
+      "end_ms": 1632320,
+      "source_event_index": 244,
+      "start_ms": 1624720,
+      "text": "他有想做的事，却没能做成。"
+    },
+    {
+      "end_ms": 1636640,
+      "source_event_index": 245,
+      "start_ms": 1632320,
+      "text": "他逐渐意识到了这一点。我们可以在书里看到，"
+    },
+    {
+      "end_ms": 1642320,
+      "source_event_index": 246,
+      "start_ms": 1636640,
+      "text": "或者说，我在了解他时看到了这一过程。我努力展现"
+    },
+    {
+      "end_ms": 1652800,
+      "source_event_index": 247,
+      "start_ms": 1642320,
+      "text": "他如何学会寻找别人的弱点。一旦找到，他就会利用。"
+    },
+    {
+      "end_ms": 1660080,
+      "source_event_index": 248,
+      "start_ms": 1652800,
+      "text": "他会把事情办成。他变得更强硬，越来越"
+    },
+    {
+      "end_ms": 1666720,
+      "source_event_index": 249,
+      "start_ms": 1660080,
+      "text": "冷酷，唯一重要的就是把事情做完。"
+    },
+    {
+      "end_ms": 1669120,
+      "source_event_index": 250,
+      "start_ms": 1666720,
+      "text": "任何挡他路的人，都要付出相应代价。"
+    },
+    {
+      "end_ms": 1677760,
+      "source_event_index": 251,
+      "start_ms": 1669120,
+      "text": "摩西要是得毁掉那个人，他就会毁掉他。正如你说的，你写的不是"
+    },
+    {
+      "end_ms": 1685360,
+      "source_event_index": 252,
+      "start_ms": 1677760,
+      "text": "一个人的历史，而是美国一个时代的历史。《权力掮客》最有意思的一点是，"
+    },
+    {
+      "end_ms": 1693040,
+      "source_event_index": 253,
+      "start_ms": 1685360,
+      "text": "尤其在他能又快又多地完成建设的那段时期，"
+    },
+    {
+      "end_ms": 1699440,
+      "source_event_index": 254,
+      "start_ms": 1693600,
+      "text": "当时发生的是大萧条，你也写到了这一点。"
+    },
+    {
+      "end_ms": 1705280,
+      "source_event_index": 255,
+      "start_ms": 1699440,
+      "text": "他用极低的薪水雇了数千名建筑师、数万名电线工，"
+    },
+    {
+      "end_ms": 1714160,
+      "source_event_index": 256,
+      "start_ms": 1705280,
+      "text": "为市政府建造大型公共工程。所以我想知道，摩西早期的成就有多大程度上"
+    },
+    {
+      "end_ms": 1720480,
+      "source_event_index": 257,
+      "start_ms": 1714160,
+      "text": "摩西早期成就有多大程度上得益于大萧条时期政府能够……"
+    },
+    {
+      "end_ms": 1728720,
+      "source_event_index": 258,
+      "start_ms": 1720480,
+      "text": "与私营部门争夺顶尖人才，也能雇用大量劳动力，让他们……"
+    },
+    {
+      "end_ms": 1736080,
+      "source_event_index": 259,
+      "start_ms": 1728720,
+      "text": "在冬季全天候工作、快速推进？问得好。答案是……"
+    },
+    {
+      "end_ms": 1743600,
+      "source_event_index": 260,
+      "start_ms": 1736080,
+      "text": "这确实起了很大作用。他需要建筑师做某件事。"
+    },
+    {
+      "end_ms": 1747280,
+      "source_event_index": 261,
+      "start_ms": 1743600,
+      "text": "我不记得具体是什么了，《权力掮客》里写过。"
+    },
+    {
+      "end_ms": 1753280,
+      "source_event_index": 262,
+      "start_ms": 1747280,
+      "text": "当时第五大道上排起长队，数千名失业建筑师"
+    },
+    {
+      "end_ms": 1763200,
+      "source_event_index": 263,
+      "start_ms": 1754720,
+      "text": "等着他以很低的工资聘用。但不光是工资低，他们也随时可用，"
+    },
+    {
+      "end_ms": 1771200,
+      "source_event_index": 264,
+      "start_ms": 1763760,
+      "text": "因为他们无事可做。他能雇那么多人，"
+    },
+    {
+      "end_ms": 1780080,
+      "source_event_index": 265,
+      "start_ms": 1771200,
+      "text": "再冷酷地随意雇人、解雇人，让工人拼命干活。"
+    },
+    {
+      "end_ms": 1783120,
+      "source_event_index": 266,
+      "start_ms": 1780080,
+      "text": "他可以直接开除他们。那是大萧条时期，他们"
+    },
+    {
+      "end_ms": 1788160,
+      "source_event_index": 267,
+      "start_ms": 1783120,
+      "text": "没有别的工作可找。他就利用了这一点。没错。"
+    },
+    {
+      "end_ms": 1799760,
+      "source_event_index": 268,
+      "start_ms": 1790400,
+      "text": "作为一个深入研究城市发展的学者，我有件事很好奇。"
+    },
+    {
+      "end_ms": 1804880,
+      "source_event_index": 269,
+      "start_ms": 1799760,
+      "text": "你看看上世纪初，"
+    },
+    {
+      "end_ms": 1810480,
+      "source_event_index": 270,
+      "start_ms": 1804880,
+      "text": "甚至更早建成的那些建筑，比如中央车站和纽约那些漂亮建筑，"
+    },
+    {
+      "end_ms": 1817040,
+      "source_event_index": 271,
+      "start_ms": 1810480,
+      "text": "再看看本世纪后半叶建的东西。"
+    },
+    {
+      "end_ms": 1821200,
+      "source_event_index": 272,
+      "start_ms": 1817040,
+      "text": "后来的建筑看起来不那么漂亮。早期那些更漂亮的建筑"
+    },
+    {
+      "end_ms": 1826720,
+      "source_event_index": 273,
+      "start_ms": 1821200,
+      "text": "是在一个穷得多的国家建成的。发生了什么变化？为什么以前能"
+    },
+    {
+      "end_ms": 1830560,
+      "source_event_index": 274,
+      "start_ms": 1826720,
+      "text": "建出更漂亮的东西？一个变化是，当时大家都"
+    },
+    {
+      "end_ms": 1839040,
+      "source_event_index": 275,
+      "start_ms": 1830560,
+      "text": "这些失业的工匠都能派上用场，比如给建筑雕刻石饰。"
+    },
+    {
+      "end_ms": 1844720,
+      "source_event_index": 276,
+      "start_ms": 1839040,
+      "text": "我的公寓在一栋公寓楼的15层。"
+    },
+    {
+      "end_ms": 1853600,
+      "source_event_index": 277,
+      "start_ms": 1846000,
+      "text": "街对面有栋15到16层高的楼。"
+    },
+    {
+      "end_ms": 1858880,
+      "source_event_index": 278,
+      "start_ms": 1853600,
+      "text": "你会说：“看看那栋楼石雕装饰多漂亮，……”"
+    },
+    {
+      "end_ms": 1862320,
+      "source_event_index": 279,
+      "start_ms": 1858880,
+      "text": "“就在屋顶上。’我说：‘能看到它的只有……”"
+    },
+    {
+      "end_ms": 1867600,
+      "source_event_index": 280,
+      "start_ms": 1862320,
+      "text": "我公寓里的人和隔壁公寓里的人才能看到它。"
+    },
+    {
+      "end_ms": 1873280,
+      "source_event_index": 281,
+      "start_ms": 1867600,
+      "text": "可有人愿意花这笔钱，因为建楼的人能"
+    },
+    {
+      "end_ms": 1884640,
+      "source_event_index": 282,
+      "start_ms": 1873280,
+      "text": "以极低的工资雇到熟练工人，让他们为建筑做装饰，"
+    },
+    {
+      "end_ms": 1895200,
+      "source_event_index": 283,
+      "start_ms": 1884640,
+      "text": "把漂亮的雕刻做在那些没人会看到的楼层上；因为劳动力便宜。"
+    },
+    {
+      "end_ms": 1898240,
+      "source_event_index": 284,
+      "start_ms": 1895200,
+      "text": "如果你希望代理真正干活，它们就得能使用"
+    },
+    {
+      "end_ms": 1902480,
+      "source_event_index": 285,
+      "start_ms": 1898240,
+      "text": "你们公司实际运行的工具，比如电子邮件、Slack 或 Stripe。"
+    },
+    {
+      "end_ms": 1905920,
+      "source_event_index": 286,
+      "start_ms": 1902480,
+      "text": "但不受限制地开放访问很危险，因为它们可能把"
+    },
+    {
+      "end_ms": 1910160,
+      "source_event_index": 287,
+      "start_ms": 1905920,
+      "text": "机密信息发给客户，或退还一大笔本不该退的款项。"
+    },
+    {
+      "end_ms": 1915120,
+      "source_event_index": 288,
+      "start_ms": 1910160,
+      "text": "当然，你可以手动审核每个请求，但通常坚持不了多久。"
+    },
+    {
+      "end_ms": 1920480,
+      "source_event_index": 289,
+      "start_ms": 1915120,
+      "text": "这就是赞助商 WorkOS 开发 Airlock 的原因。它是一个判断层，介于"
+    },
+    {
+      "end_ms": 1923760,
+      "source_event_index": 290,
+      "start_ms": 1920480,
+      "text": "你的代理和工具之间。只要代理想"
+    },
+    {
+      "end_ms": 1927520,
+      "source_event_index": 291,
+      "start_ms": 1923760,
+      "text": "采取行动，就会向 Airlock 发出请求；Airlock 会根据"
+    },
+    {
+      "end_ms": 1932880,
+      "source_event_index": 292,
+      "start_ms": 1927520,
+      "text": "公司的政策评估请求，并决定允许、拦截，还是提交给人工审核。"
+    },
+    {
+      "end_ms": 1937680,
+      "source_event_index": 293,
+      "start_ms": 1932880,
+      "text": "请求获准后，Airlock 就会替代理执行相关操作，"
+    },
+    {
+      "end_ms": 1940640,
+      "source_event_index": 294,
+      "start_ms": 1937680,
+      "text": "调用必要的接口并传回响应。"
+    },
+    {
+      "end_ms": 1944880,
+      "source_event_index": 295,
+      "start_ms": 1940640,
+      "text": "这样，代理永远看不到你的 API 密钥，也就无法泄漏密钥"
+    },
+    {
+      "end_ms": 1949120,
+      "source_event_index": 296,
+      "start_ms": 1944880,
+      "text": "或将其用于未授权的目的。既然 Airlock 掌握了所有"
+    },
+    {
+      "end_ms": 1954000,
+      "source_event_index": 297,
+      "start_ms": 1949120,
+      "text": "工具的密钥，它就必须坚如磐石。幸运的是，WorkOS近"
+    },
+    {
+      "end_ms": 1959120,
+      "source_event_index": 298,
+      "start_ms": 1954000,
+      "text": "十年来一直在打造身份验证和权限管理产品，早已经过实战检验。"
+    },
+    {
+      "end_ms": 1963680,
+      "source_event_index": 299,
+      "start_ms": 1959120,
+      "text": "包括 OpenAI 和 Anthropic 在内，已有超过3,000家公司依赖 WorkOS。"
+    },
+    {
+      "end_ms": 1971840,
+      "source_event_index": 300,
+      "start_ms": 1963680,
+      "text": "Airlock 正在早期开放测试。如果你感兴趣，请访问 workos.com/airlock。"
+    },
+    {
+      "end_ms": 1978640,
+      "source_event_index": 301,
+      "start_ms": 1971840,
+      "text": "现在我想问问您关于约翰逊的事。在《参议院之王》里，您提出了两"
+    },
+    {
+      "end_ms": 1982880,
+      "source_event_index": 302,
+      "start_ms": 1978640,
+      "text": "点来说明约翰逊为何有效——至少我是这么理解的。"
+    },
+    {
+      "end_ms": 1987760,
+      "source_event_index": 303,
+      "start_ms": 1982880,
+      "text": "第一，跟他当面谈时，他很有说服力。"
+    },
+    {
+      "end_ms": 1995360,
+      "source_event_index": 304,
+      "start_ms": 1988480,
+      "text": "第二，他把自己放在一个有利位置，能给你某些承诺，"
+    },
+    {
+      "end_ms": 2000240,
+      "source_event_index": 305,
+      "start_ms": 1995360,
+      "text": "或拿某些事情威胁你。并非他真的说服了你，"
+    },
+    {
+      "end_ms": 2004320,
+      "source_event_index": 306,
+      "start_ms": 2000240,
+      "text": "而是你知道，想有所成就就得得到他的支持。"
+    },
+    {
+      "end_ms": 2010640,
+      "source_event_index": 307,
+      "start_ms": 2005840,
+      "text": "两者之中，我想知道，哪一个才是他权力的真正来源："
+    },
+    {
+      "end_ms": 2018080,
+      "source_event_index": 308,
+      "start_ms": 2010640,
+      "text": "手中的筹码，还是说服力？他的说服力背后是权力。"
+    },
+    {
+      "end_ms": 2022160,
+      "source_event_index": 309,
+      "start_ms": 2018080,
+      "text": "你跟他谈话时，如果他向你提出要求，"
+    },
+    {
+      "end_ms": 2029920,
+      "source_event_index": 310,
+      "start_ms": 2022160,
+      "text": "你知道他有权给你或不给你想要的东西。"
+    },
+    {
+      "end_ms": 2035760,
+      "source_event_index": 311,
+      "start_ms": 2029920,
+      "text": "比如他要一名参议员在某个议题上投票支持他。"
+    },
+    {
+      "end_ms": 2041120,
+      "source_event_index": 312,
+      "start_ms": 2035760,
+      "text": "参议员可能不同意他，也不想投那一票，但他知道——"
+    },
+    {
+      "end_ms": 2047040,
+      "source_event_index": 313,
+      "start_ms": 2041120,
+      "text": "他想要个委员会席位，而约翰逊有权给他，也有权不给。"
+    },
+    {
+      "end_ms": 2052880,
+      "source_event_index": 314,
+      "start_ms": 2047040,
+      "text": "或者，他想让一项特定法案通过。约翰逊有能力让"
+    },
+    {
+      "end_ms": 2057280,
+      "source_event_index": 315,
+      "start_ms": 2052880,
+      "text": "那项法案通过，也可以让它通不过。约翰逊做任何事时，"
+    },
+    {
+      "end_ms": 2064480,
+      "source_event_index": 316,
+      "start_ms": 2057280,
+      "text": "包括他跟你交谈、搂着你的肩、向你靠近的时候，都不只是"
+    },
+    {
+      "end_ms": 2071360,
+      "source_event_index": 317,
+      "start_ms": 2064480,
+      "text": "在用他的人格魅力影响你。你知道他的魅力背后还隐藏着"
+    },
+    {
+      "end_ms": 2078240,
+      "source_event_index": 318,
+      "start_ms": 2071360,
+      "text": "实实在在的权力，他能对你做些什么，或为你做些什么，而你最好心里有数。"
+    },
+    {
+      "end_ms": 2086560,
+      "source_event_index": 319,
+      "start_ms": 2079600,
+      "text": "《崛起之路》写的是1948年参议院选举，科克·史蒂文森竞选参议员的那场选举。"
+    },
+    {
+      "end_ms": 2095600,
+      "source_event_index": 320,
+      "start_ms": 2087440,
+      "text": "那可能是我最喜欢的一本书。你把"
+    },
+    {
+      "end_ms": 2100960,
+      "source_event_index": 321,
+      "start_ms": 2096400,
+      "text": "德州州长科克·史蒂文森刻画得极为生动，人们称他为‘德州先生’。"
+    },
+    {
+      "end_ms": 2107040,
+      "source_event_index": 322,
+      "start_ms": 2101520,
+      "text": "写他的人物画像和这本书时，你是否也有一部分希望"
+    },
+    {
+      "end_ms": 2116880,
+      "source_event_index": 323,
+      "start_ms": 2107040,
+      "text": "他赢得参议院选举？你难免会这么想……我"
+    },
+    {
+      "end_ms": 2119680,
+      "source_event_index": 324,
+      "start_ms": 2116880,
+      "text": "直接回答你：是的。"
+    },
+    {
+      "end_ms": 2125360,
+      "source_event_index": 325,
+      "start_ms": 2119680,
+      "text": "我认为科克·史蒂文森虽然是理想主义者，但也懂得怎样把事情办成。"
+    },
+    {
+      "end_ms": 2128960,
+      "source_event_index": 326,
+      "start_ms": 2125360,
+      "text": "他担任德州州长时，确实做成了不少事。"
+    },
+    {
+      "end_ms": 2136080,
+      "source_event_index": 327,
+      "start_ms": 2130240,
+      "text": "我想，如果他进了参议院，会成为一位出色的参议员，也会有所作为。"
+    },
+    {
+      "end_ms": 2147760,
+      "source_event_index": 328,
+      "start_ms": 2136080,
+      "text": "所以你希望他赢得选举。你会觉得，他落败令人惋惜，"
+    },
+    {
+      "end_ms": 2154880,
+      "source_event_index": 329,
+      "start_ms": 2147760,
+      "text": "尤其是败选的方式。说到科克·史蒂文森，他确实没想到"
+    },
+    {
+      "end_ms": 2165760,
+      "source_event_index": 330,
+      "start_ms": 2154880,
+      "text": "林登·约翰逊竟会在选举中对他做出那些事。"
+    },
+    {
+      "end_ms": 2172480,
+      "source_event_index": 331,
+      "start_ms": 2165760,
+      "text": "他没能正视这一点。假设肯尼迪在60年赢得大选，"
+    },
+    {
+      "end_ms": 2179360,
+      "source_event_index": 332,
+      "start_ms": 2172480,
+      "text": "但约翰逊拒绝出任副总统，于是他仍是参议院多数党领袖。"
+    },
+    {
+      "end_ms": 2186000,
+      "source_event_index": 333,
+      "start_ms": 2179360,
+      "text": "你觉得肯尼迪在约翰逊担任多数党领袖期间通过的法案，"
+    },
+    {
+      "end_ms": 2193040,
+      "source_event_index": 334,
+      "start_ms": 2186000,
+      "text": "会跟约翰逊后来当总统时通过的法律有多大不同？"
+    },
+    {
+      "end_ms": 2196800,
+      "source_event_index": 335,
+      "start_ms": 2193040,
+      "text": "也就是说，63、64、65年发生的那些事，"
+    },
+    {
+      "end_ms": 2205280,
+      "source_event_index": 336,
+      "start_ms": 2196800,
+      "text": "会不会只是提前发生？不会，因为肯尼迪并没有"
+    },
+    {
+      "end_ms": 2214720,
+      "source_event_index": 337,
+      "start_ms": 2205280,
+      "text": "那种压倒一切、要改变美国的决心。约翰·肯尼迪极有魅力，"
+    },
+    {
+      "end_ms": 2219360,
+      "source_event_index": 338,
+      "start_ms": 2214720,
+      "text": "也是位不错的总统。他的外交政策做得很好，"
+    },
+    {
+      "end_ms": 2229120,
+      "source_event_index": 339,
+      "start_ms": 2219360,
+      "text": "约翰逊肯定就不擅长。但他缺少的是这种……"
+    },
+    {
+      "end_ms": 2238160,
+      "source_event_index": 340,
+      "start_ms": 2229840,
+      "text": "肯尼迪缺少的，是林登·约翰逊那种愿景和改变美国的渴望。"
+    },
+    {
+      "end_ms": 2247040,
+      "source_event_index": 341,
+      "start_ms": 2238160,
+      "text": "林登·约翰逊从科图拉教贫困孩子一年后回来，决心改变"
+    },
+    {
+      "end_ms": 2256000,
+      "source_event_index": 342,
+      "start_ms": 2247040,
+      "text": "教育制度，让它更能帮助穷人，还要做很多其他事情来帮助穷人。"
+    },
+    {
+      "end_ms": 2260080,
+      "source_event_index": 343,
+      "start_ms": 2256000,
+      "text": "这种决心非常独特。"
+    },
+    {
+      "end_ms": 2264720,
+      "source_event_index": 344,
+      "start_ms": 2260080,
+      "text": "正是它让他成为一位出色的内政总统，也让我们有了这些"
+    },
+    {
+      "end_ms": 2272320,
+      "source_event_index": 345,
+      "start_ms": 2264720,
+      "text": "民权法案和反贫困法案；没有林登·约翰逊，我们就不会有这些法律。"
+    },
+    {
+      "end_ms": 2278560,
+      "source_event_index": 346,
+      "start_ms": 2272320,
+      "text": "他的总统生涯因外交政策、因越南而以悲剧告终。"
+    },
+    {
+      "end_ms": 2292880,
+      "source_event_index": 347,
+      "start_ms": 2278560,
+      "text": "但他有一种几乎独一无二的愿望，想为美国人民办成事情。"
+    },
+    {
+      "end_ms": 2300720,
+      "source_event_index": 348,
+      "start_ms": 2292880,
+      "text": "你会说：‘哎，他下定决心要做这件事。’他会想办法做到。"
+    },
+    {
+      "end_ms": 2307200,
+      "source_event_index": 349,
+      "start_ms": 2300720,
+      "text": "你看着他去做，然后会说：‘他真的做到了。’"
+    },
+    {
+      "end_ms": 2322000,
+      "source_event_index": 350,
+      "start_ms": 2307200,
+      "text": "后来他的注意力转向越南，一切都崩溃了，他的总统生涯也毁了。"
+    },
+    {
+      "end_ms": 2328080,
+      "source_event_index": 351,
+      "start_ms": 2322000,
+      "text": "他起初打算在国内推行的事情，最终没能按他原本的设想实现。"
+    },
+    {
+      "end_ms": 2334880,
+      "source_event_index": 352,
+      "start_ms": 2328080,
+      "text": "但他在大选后开始推动教育法案和反贫困"
+    },
+    {
+      "end_ms": 2339280,
+      "source_event_index": 353,
+      "start_ms": 2334880,
+      "text": "法案，想改变国家。他正朝着这个目标前进。"
+    },
+    {
+      "end_ms": 2347200,
+      "source_event_index": 354,
+      "start_ms": 2339280,
+      "text": "这就是约翰逊与越南之间的巨大悲剧。要是我能问一下这件事，不方便的话你"
+    },
+    {
+      "end_ms": 2350720,
+      "source_event_index": 355,
+      "start_ms": 2347200,
+      "text": "也可以不谈，因为这会写进下一本书。"
+    },
+    {
+      "end_ms": 2356160,
+      "source_event_index": 356,
+      "start_ms": 2351280,
+      "text": "不过如果你愿意谈，从根本上说，"
+    },
+    {
+      "end_ms": 2364720,
+      "source_event_index": 357,
+      "start_ms": 2356160,
+      "text": "约翰逊为什么不断升级冲突？即使在……我现在还在努力"
+    },
+    {
+      "end_ms": 2369840,
+      "source_event_index": 358,
+      "start_ms": 2364720,
+      "text": "弄清楚你这个问题的答案，所以我先不谈……没关系。"
+    },
+    {
+      "end_ms": 2374880,
+      "source_event_index": 359,
+      "start_ms": 2369840,
+      "text": "这确实是个谜。约翰逊和摩西身上都有一点，那就是"
+    },
+    {
+      "end_ms": 2381600,
+      "source_event_index": 360,
+      "start_ms": 2374880,
+      "text": "精力仿佛用不完，一天工作16"
+    },
+    {
+      "end_ms": 2387360,
+      "source_event_index": 361,
+      "start_ms": 2381600,
+      "text": "个小时，有时甚至更久。你觉得这有多大程度上是因为"
+    },
+    {
+      "end_ms": 2395440,
+      "source_event_index": 362,
+      "start_ms": 2387360,
+      "text": "他们的体质不同，天生精力储备更多？"
+    },
+    {
+      "end_ms": 2398400,
+      "source_event_index": 363,
+      "start_ms": 2395440,
+      "text": "还是因为他们意志特别坚定？"
+    },
+    {
+      "end_ms": 2404480,
+      "source_event_index": 364,
+      "start_ms": 2398400,
+      "text": "我觉得就是意志力。很多人也精力充沛。"
+    },
+    {
+      "end_ms": 2414800,
+      "source_event_index": 365,
+      "start_ms": 2404480,
+      "text": "你看到罗伯特·摩西睡得很少，为了按自己的意思办事、"
+    },
+    {
+      "end_ms": 2423840,
+      "source_event_index": 366,
+      "start_ms": 2415600,
+      "text": "把事情做成不惜一切，疲惫之类的事似乎根本不在他的考虑范围内。"
+    },
+    {
+      "end_ms": 2428400,
+      "source_event_index": 367,
+      "start_ms": 2423840,
+      "text": "有时我看着某段材料——一下想不起具体例子——"
+    },
+    {
+      "end_ms": 2435200,
+      "source_event_index": 368,
+      "start_ms": 2428400,
+      "text": "会看到‘约翰逊凌晨两三点打这个电话’，"
+    },
+    {
+      "end_ms": 2441040,
+      "source_event_index": 369,
+      "start_ms": 2435200,
+      "text": "他半夜起来打这些电话，只为让事情按他的意思办。其实还有个有趣的轶事。"
+    },
+    {
+      "end_ms": 2450320,
+      "source_event_index": 370,
+      "start_ms": 2441040,
+      "text": "约翰逊早上5点打给一位参议员，想请他在某件事上投票支持自己，"
+    },
+    {
+      "end_ms": 2457120,
+      "source_event_index": 371,
+      "start_ms": 2450320,
+      "text": "那位参议员说：“哦，林登，我正躺在这里等你电话呢。”"
+    },
+    {
+      "end_ms": 2464720,
+      "source_event_index": 372,
+      "start_ms": 2457120,
+      "text": "所以这就是他们的意志力。现在我想问问您写传记的事。"
+    },
+    {
+      "end_ms": 2472880,
+      "source_event_index": 373,
+      "start_ms": 2466320,
+      "text": "我有个问题：你写一本书要花5到10年。"
+    },
+    {
+      "end_ms": 2478720,
+      "source_event_index": 374,
+      "start_ms": 2473680,
+      "text": "在这段时间里，可能只有编辑和妻子"
+    },
+    {
+      "end_ms": 2485840,
+      "source_event_index": 375,
+      "start_ms": 2478720,
+      "text": "看过手稿。你怎么确定自己方向没错？"
+    },
+    {
+      "end_ms": 2491520,
+      "source_event_index": 376,
+      "start_ms": 2485840,
+      "text": "毕竟从开始写，到得到公众反馈，要等很久。"
+    },
+    {
+      "end_ms": 2495120,
+      "source_event_index": 377,
+      "start_ms": 2491520,
+      "text": "你怎么确认整本书能连贯起来，自己"
+    },
+    {
+      "end_ms": 2501360,
+      "source_event_index": 378,
+      "start_ms": 2495120,
+      "text": "讲述的主题也没有偏离？你的问题有一部分是：怎么"
+    },
+    {
+      "end_ms": 2505280,
+      "source_event_index": 379,
+      "start_ms": 2501360,
+      "text": "确定方向没错？答案是你没法确定。"
+    },
+    {
+      "end_ms": 2512640,
+      "source_event_index": 380,
+      "start_ms": 2507600,
+      "text": "那怎么努力保持在正确轨道上？我确实有一套办法。"
+    },
+    {
+      "end_ms": 2521360,
+      "source_event_index": 381,
+      "start_ms": 2512640,
+      "text": "在我开始写一本书之前——《权力掮客》让我吃过亏，因为当时我没"
+    },
+    {
+      "end_ms": 2531920,
+      "source_event_index": 382,
+      "start_ms": 2521360,
+      "text": "这么做——我会想清楚整本书想写成什么样。"
+    },
+    {
+      "end_ms": 2534800,
+      "source_event_index": 383,
+      "start_ms": 2531920,
+      "text": "有人问：‘你是说连结尾都会想清楚吗？’"
+    },
+    {
+      "end_ms": 2540560,
+      "source_event_index": 384,
+      "start_ms": 2534800,
+      "text": "答案是会。然后你会问：‘这本书到底讲什么？’"
+    },
+    {
+      "end_ms": 2546240,
+      "source_event_index": 385,
+      "start_ms": 2540560,
+      "text": "我有时会在开始写作前，长时间坐在书桌前，"
+    },
+    {
+      "end_ms": 2554800,
+      "source_event_index": 386,
+      "start_ms": 2546240,
+      "text": "反复思考这本书，再问自己：‘这本书到底讲什么？’"
+    },
+    {
+      "end_ms": 2559840,
+      "source_event_index": 387,
+      "start_ms": 2554800,
+      "text": "你得把它浓缩成一句话。有人会说：‘不可能缩成一句话。’"
+    },
+    {
+      "end_ms": 2564720,
+      "source_event_index": 388,
+      "start_ms": 2559840,
+      "text": "然后你会说：‘没错，但鲍勃，你已经学会了，最好真把它缩成一句话，"
+    },
+    {
+      "end_ms": 2569840,
+      "source_event_index": 389,
+      "start_ms": 2564720,
+      "text": "不然三年后你写着写着就会问自己：“我到底想"
+    },
+    {
+      "end_ms": 2581600,
+      "source_event_index": 390,
+      "start_ms": 2569840,
+      "text": "做什么？”’开始写书之前，我会尽量把它归纳成一句话，最多一段话，然后问："
+    },
+    {
+      "end_ms": 2587040,
+      "source_event_index": 391,
+      "start_ms": 2581600,
+      "text": "‘这本书真正讲的是什么？’我努力让全书的内容"
+    },
+    {
+      "end_ms": 2593440,
+      "source_event_index": 392,
+      "start_ms": 2587040,
+      "text": "都围绕这一点连贯起来。去年8月，我的赞助商 Jane Street 发布了"
+    },
+    {
+      "end_ms": 2599120,
+      "source_event_index": 393,
+      "start_ms": 2593440,
+      "text": "一款神秘芯片的设计文件，邀请观众猜出它的真正用途。"
+    },
+    {
+      "end_ms": 2602400,
+      "source_event_index": 394,
+      "start_ms": 2599120,
+      "text": "挑战已经结束，Jane Street 也发布了一篇博客，介绍"
+    },
+    {
+      "end_ms": 2606080,
+      "source_event_index": 395,
+      "start_ms": 2602400,
+      "text": "他们最喜欢的几份投稿，并揭晓了这款 ASIC 的用途。"
+    },
+    {
+      "end_ms": 2609680,
+      "source_event_index": 396,
+      "start_ms": 2606080,
+      "text": "我先不剧透；想知道的话，我在节目说明里放了链接。"
+    },
+    {
+      "end_ms": 2613840,
+      "source_event_index": 397,
+      "start_ms": 2609680,
+      "text": "参与设计谜题的 Anish 带我看了几篇精彩的解读。"
+    },
+    {
+      "end_ms": 2618800,
+      "source_event_index": 398,
+      "start_ms": 2613840,
+      "text": "我最喜欢的投稿大概是 Kjartan van Driel 和"
+    },
+    {
+      "end_ms": 2625760,
+      "source_event_index": 399,
+      "start_ms": 2618800,
+      "text": "Leander Post 制作的这段惊人可视化：他们先用3D展示芯片如何由标准单元构成，"
+    },
+    {
+      "end_ms": 2631600,
+      "source_event_index": 400,
+      "start_ms": 2625760,
+      "text": "各金属层如何组合起来形成芯片逻辑，然后逐一介绍"
+    },
+    {
+      "end_ms": 2636960,
+      "source_event_index": 401,
+      "start_ms": 2631600,
+      "text": "我们谜题设计中的每个组件、它的用途，以及他们如何逆向分析，"
+    },
+    {
+      "end_ms": 2640720,
+      "source_event_index": 402,
+      "start_ms": 2636960,
+      "text": "最后再展示所有部分如何组合回谜题。错过这次挑战也没关系。"
+    },
+    {
+      "end_ms": 2643760,
+      "source_event_index": 403,
+      "start_ms": 2640720,
+      "text": "现在已经有一个新的挑战上线了。这个新挑战的目标是"
+    },
+    {
+      "end_ms": 2648640,
+      "source_event_index": 404,
+      "start_ms": 2643760,
+      "text": "希望大家设计一种硬件协议仿真芯片，可用于分析和……"
+    },
+    {
+      "end_ms": 2652560,
+      "source_event_index": 405,
+      "start_ms": 2648640,
+      "text": "模拟不同的通信协议。作为额外奖励，我们会出资制造最喜欢的投稿，"
+    },
+    {
+      "end_ms": 2657840,
+      "source_event_index": 406,
+      "start_ms": 2652560,
+      "text": "你还会拿到装在电路板上的芯片，"
+    },
+    {
+      "end_ms": 2662480,
+      "source_event_index": 407,
+      "start_ms": 2657840,
+      "text": "可以直接拿来做现实测试。竞赛开放到1月18日。"
+    },
+    {
+      "end_ms": 2671600,
+      "source_event_index": 408,
+      "start_ms": 2662480,
+      "text": "访问 janestreet.com/dwarkesh 即可开始。你写的许多书都早于"
+    },
+    {
+      "end_ms": 2679040,
+      "source_event_index": 409,
+      "start_ms": 2671600,
+      "text": "数字档案、互联网和各种可用资源出现。"
+    },
+    {
+      "end_ms": 2682720,
+      "source_event_index": 410,
+      "start_ms": 2679040,
+      "text": "这些资源带来了多大影响？"
+    },
+    {
+      "end_ms": 2690560,
+      "source_event_index": 411,
+      "start_ms": 2683360,
+      "text": "现在影响很大。我正在写的这本书是关于越南的。"
+    },
+    {
+      "end_ms": 2697120,
+      "source_event_index": 412,
+      "start_ms": 2692160,
+      "text": "比如说，我想写一场战役，想详细写。"
+    },
+    {
+      "end_ms": 2703680,
+      "source_event_index": 413,
+      "start_ms": 2697120,
+      "text": "就在最近，我挑了一场想详细写的战役。"
+    },
+    {
+      "end_ms": 2709040,
+      "source_event_index": 414,
+      "start_ms": 2703680,
+      "text": "它叫作 Ia Drang 山谷战役。以前没人详细写过。"
+    },
+    {
+      "end_ms": 2716560,
+      "source_event_index": 415,
+      "start_ms": 2709040,
+      "text": "我可以在电脑上查到哪些参战士兵留下了口述史，"
+    },
+    {
+      "end_ms": 2726960,
+      "source_event_index": 416,
+      "start_ms": 2716560,
+      "text": "口述史保存在什么大学，还有哪些文件"
+    },
+    {
+      "end_ms": 2733600,
+      "source_event_index": 417,
+      "start_ms": 2726960,
+      "text": "可以查阅。这种事以前做不到。你觉得写早期几卷时"
+    },
+    {
+      "end_ms": 2745200,
+      "source_event_index": 418,
+      "start_ms": 2733600,
+      "text": "这些资源会带来很大改变吗？不会。也许能快一点，但以我的做事方式，"
+    },
+    {
+      "end_ms": 2753520,
+      "source_event_index": 419,
+      "start_ms": 2745200,
+      "text": "我无论如何都会去看那些文件。现在做起来是会更快。"
+    },
+    {
+      "end_ms": 2759040,
+      "source_event_index": 420,
+      "start_ms": 2753520,
+      "text": "不过你刚才的问题让我想了起来，前几天我也在想这件事。"
+    },
+    {
+      "end_ms": 2766400,
+      "source_event_index": 421,
+      "start_ms": 2759040,
+      "text": "我很难解释清楚，但我不觉得整个过程会快多少。"
+    },
+    {
+      "end_ms": 2775520,
+      "source_event_index": 422,
+      "start_ms": 2766400,
+      "text": "我说不清原因。当然，你可以更快找到文件。"
+    },
+    {
+      "end_ms": 2779760,
+      "source_event_index": 423,
+      "start_ms": 2775520,
+      "text": "但比起阅读文件，找到它们只是小事。"
+    },
+    {
+      "end_ms": 2786400,
+      "source_event_index": 424,
+      "start_ms": 2781280,
+      "text": "我突然想到一个问题，很想听听你的回答。"
+    },
+    {
+      "end_ms": 2797120,
+      "source_event_index": 425,
+      "start_ms": 2787200,
+      "text": "假如我们能穿越时空回到1975年，告诉当时的罗伯特·卡罗：他即将开始写的"
+    },
+    {
+      "end_ms": 2805360,
+      "source_event_index": 426,
+      "start_ms": 2798080,
+      "text": "这三卷林登·约翰逊传记会花40多年才写完，"
+    },
+    {
+      "end_ms": 2811360,
+      "source_event_index": 427,
+      "start_ms": 2805360,
+      "text": "你觉得那时四十来岁的罗伯特·卡罗会有什么反应？"
+    },
+    {
+      "end_ms": 2814880,
+      "source_event_index": 428,
+      "start_ms": 2811360,
+      "text": "他会高兴吗？会害怕吗？"
+    },
+    {
+      "end_ms": 2830720,
+      "source_event_index": 429,
+      "start_ms": 2814880,
+      "text": "你问的问题真棒。我当时在思考约翰逊时，意识到了这一点。"
+    },
+    {
+      "end_ms": 2837760,
+      "source_event_index": 430,
+      "start_ms": 2832240,
+      "text": "我会给你一个很长的回答，但这是准确的答案。"
+    },
+    {
+      "end_ms": 2845600,
+      "source_event_index": 431,
+      "start_ms": 2837760,
+      "text": "我不得不从《权力掮客》里删掉很多内容，删掉了许多"
+    },
+    {
+      "end_ms": 2851920,
+      "source_event_index": 432,
+      "start_ms": 2845600,
+      "text": "本不该删的东西。我交给编辑鲍勃·戈特利布的"
+    },
+    {
+      "end_ms": 2860560,
+      "source_event_index": 433,
+      "start_ms": 2851920,
+      "text": "手稿有105万字。他们能塞进一本书里的最大篇幅——"
+    },
+    {
+      "end_ms": 2872800,
+      "source_event_index": 434,
+      "start_ms": 2860560,
+      "text": "他确实努力过，因为我坚持只出一卷——是700页，"
+    },
+    {
+      "end_ms": 2885280,
+      "source_event_index": 435,
+      "start_ms": 2874320,
+      "text": "也就是大约70万字，而不是105万字。这意味着我们得删掉35万字。"
+    },
+    {
+      "end_ms": 2893360,
+      "source_event_index": 436,
+      "start_ms": 2885280,
+      "text": "他说过：‘我删掉了许多我读过的最好的内容。’"
+    },
+    {
+      "end_ms": 2899840,
+      "source_event_index": 437,
+      "start_ms": 2893360,
+      "text": "我觉得，删掉的许多内容再也无人知晓，实在令人惋惜。"
+    },
+    {
+      "end_ms": 2903920,
+      "source_event_index": 438,
+      "start_ms": 2899840,
+      "text": "直到今天，人们还会问我一些事。我会说：‘哦，我写过那个。’"
+    },
+    {
+      "end_ms": 2913600,
+      "source_event_index": 439,
+      "start_ms": 2903920,
+      "text": "他们就会说：‘可没人读到过啊。’不过以我的性格，我也不知道这会不会"
+    },
+    {
+      "end_ms": 2918400,
+      "source_event_index": 440,
+      "start_ms": 2913600,
+      "text": "改变什么，因为写书时我会想：‘哎，这太长了。"
+    },
+    {
+      "end_ms": 2922880,
+      "source_event_index": 441,
+      "start_ms": 2918400,
+      "text": "肯定太长了。我得删掉很多。’"
+    },
+    {
+      "end_ms": 2930080,
+      "source_event_index": 442,
+      "start_ms": 2922880,
+      "text": "但我好像没法不写那些我认为应该写下来的东西，"
+    },
+    {
+      "end_ms": 2935440,
+      "source_event_index": 443,
+      "start_ms": 2930080,
+      "text": "即使我知道其中很多最后都得删掉。"
+    },
+    {
+      "end_ms": 2944480,
+      "source_event_index": 444,
+      "start_ms": 2935440,
+      "text": "说到这儿，你这间房子里有一柜又一柜的采访笔记，"
+    },
+    {
+      "end_ms": 2950640,
+      "source_event_index": 445,
+      "start_ms": 2944480,
+      "text": "还有工作过程中的笔记，以及从未发表过的材料。"
+    },
+    {
+      "end_ms": 2956320,
+      "source_event_index": 446,
+      "start_ms": 2950640,
+      "text": "将来其他历史学家能研究这些笔记和文件，"
+    },
+    {
+      "end_ms": 2962320,
+      "source_event_index": 447,
+      "start_ms": 2956320,
+      "text": "也能研究你这些年积累下来的资料。你希望他们怎么利用这些材料？"
+    },
+    {
+      "end_ms": 2968160,
+      "source_event_index": 448,
+      "start_ms": 2962320,
+      "text": "你希望看到什么样的学术研究？我从书里删掉了太多内容，"
+    },
+    {
+      "end_ms": 2977120,
+      "source_event_index": 449,
+      "start_ms": 2968160,
+      "text": "很希望人们能知道。有时你读到某件事，会想："
+    },
+    {
+      "end_ms": 2985120,
+      "source_event_index": 450,
+      "start_ms": 2977120,
+      "text": "‘如果我写了这件事，报纸报道它的方式就会不一样，"
+    },
+    {
+      "end_ms": 2991200,
+      "source_event_index": 451,
+      "start_ms": 2985120,
+      "text": "“人们对它的理解也会不同。”我举个简单的例子。"
+    },
+    {
+      "end_ms": 2997200,
+      "source_event_index": 452,
+      "start_ms": 2991200,
+      "text": "萨姆·雷伯恩。我在书里只简短写过一章关于雷伯恩的内容。"
+    },
+    {
+      "end_ms": 3004640,
+      "source_event_index": 453,
+      "start_ms": 2997200,
+      "text": "但雷伯恩是美国历史上的重要人物。至今没有一本好的萨姆·雷伯恩传记，"
+    },
+    {
+      "end_ms": 3011120,
+      "source_event_index": 454,
+      "start_ms": 3004640,
+      "text": "但他曾担任众议院议长，通过了罗斯福的许多"
+    },
+    {
+      "end_ms": 3015920,
+      "source_event_index": 455,
+      "start_ms": 3011120,
+      "text": "法案和其他法案。他为美国做了那么多事，"
+    },
+    {
+      "end_ms": 3024800,
+      "source_event_index": 456,
+      "start_ms": 3015920,
+      "text": "可没人知道，这让我觉得非常遗憾。了解这些的材料就在那些文件柜里。"
+    },
+    {
+      "end_ms": 3032800,
+      "source_event_index": 457,
+      "start_ms": 3025600,
+      "text": "有很多这样的例子，我会想：‘哇，这些内容没能写进"
+    },
+    {
+      "end_ms": 3037520,
+      "source_event_index": 458,
+      "start_ms": 3032800,
+      "text": "书里’，但材料都在。我有数百次采访的记录。"
+    },
+    {
+      "end_ms": 3042800,
+      "source_event_index": 459,
+      "start_ms": 3038720,
+      "text": "光是写《权力掮客》，我想就做了700次采访。"
+    },
+    {
+      "end_ms": 3050480,
+      "source_event_index": 460,
+      "start_ms": 3042800,
+      "text": "这些采访的笔记都在文件柜里，记录详细，都是打字整理的。"
+    },
+    {
+      "end_ms": 3058160,
+      "source_event_index": 461,
+      "start_ms": 3050480,
+      "text": "我觉得那里有大量材料，能帮助人们"
+    },
+    {
+      "end_ms": 3069520,
+      "source_event_index": 462,
+      "start_ms": 3058160,
+      "text": "理解纽约为何会演变成今天这样。约翰逊这边，我现在正在写"
+    },
+    {
+      "end_ms": 3076000,
+      "source_event_index": 463,
+      "start_ms": 3070320,
+      "text": "他总统任内发生的事情，人们对那段历史了解得更多了。"
+    },
+    {
+      "end_ms": 3080640,
+      "source_event_index": 464,
+      "start_ms": 3076000,
+      "text": "这些内容进不了我的书，但会留在那里。"
+    },
+    {
+      "end_ms": 3086320,
+      "source_event_index": 465,
+      "start_ms": 3080640,
+      "text": "所以我把档案捐给了纽约历史学会。"
+    },
+    {
+      "end_ms": 3093360,
+      "source_event_index": 466,
+      "start_ms": 3086320,
+      "text": "我得说，其他机构给我的钱多得多。"
+    },
+    {
+      "end_ms": 3100960,
+      "source_event_index": 467,
+      "start_ms": 3093360,
+      "text": "但我接受了少得多、少很多的一笔钱，尽管这笔钱对我很重要，"
+    },
+    {
+      "end_ms": 3106720,
+      "source_event_index": 468,
+      "start_ms": 3100960,
+      "text": "因为我希望这些档案容易查阅，也希望它们留在纽约。"
+    },
+    {
+      "end_ms": 3114560,
+      "source_event_index": 469,
+      "start_ms": 3108240,
+      "text": "我不想把档案放在德州大学，那样你得专程飞过去。"
+    },
+    {
+      "end_ms": 3120880,
+      "source_event_index": 470,
+      "start_ms": 3114560,
+      "text": "我希望它们留在纽约。那里保存着许多我没能写进"
+    },
+    {
+      "end_ms": 3127360,
+      "source_event_index": 471,
+      "start_ms": 3120880,
+      "text": "书里的材料，只要有人想查，就能查到。"
+    },
+    {
+      "end_ms": 3133360,
+      "source_event_index": 472,
+      "start_ms": 3127360,
+      "text": "我举个例子。我写过的内容多得多。"
+    },
+    {
+      "end_ms": 3142720,
+      "source_event_index": 473,
+      "start_ms": 3134480,
+      "text": "我采访了很多参议员，也采访了很多参议员助理，想把参议院写清楚。"
+    },
+    {
+      "end_ms": 3151680,
+      "source_event_index": 474,
+      "start_ms": 3142720,
+      "text": "后来我不得不删掉、不写，或者根本不深入探讨绝大多数内容——我不想说90%，"
+    },
+    {
+      "end_ms": 3156240,
+      "source_event_index": 475,
+      "start_ms": 3151680,
+      "text": "因为我不知道具体比例——那些我了解到、但没写进书里的内容，"
+    },
+    {
+      "end_ms": 3158160,
+      "source_event_index": 476,
+      "start_ms": 3156240,
+      "text": "如今都在文件柜里。"
+    },
+    {
+      "end_ms": 3164720,
+      "source_event_index": 477,
+      "start_ms": 3158960,
+      "text": "所以任何人都可以去查阅。这就是我的档案放在纽约的原因。"
+    },
+    {
+      "end_ms": 3170706,
+      "source_event_index": 478,
+      "start_ms": 3164720,
+      "text": "知道这些研究成果能造福一代又一代学者，真好。"
+    },
+    {
+      "end_ms": 3172560,
+      "source_event_index": 479,
+      "start_ms": 3170706,
+      "text": "但愿如此。因为显然，"
+    },
+    {
+      "end_ms": 3179120,
+      "source_event_index": 480,
+      "start_ms": 3172560,
+      "text": "我们不可能再去采访六七八十年代你采访过的那些人了。"
+    },
+    {
+      "end_ms": 3188320,
+      "source_event_index": 481,
+      "start_ms": 3179920,
+      "text": "这让我想到，为了描绘你写作的时代，以及"
+    },
+    {
+      "end_ms": 3195680,
+      "source_event_index": 482,
+      "start_ms": 3188320,
+      "text": "塑造摩西和约翰逊的那些时代，《权力掮客》里你写了纽约的黄金海岸区"
+    },
+    {
+      "end_ms": 3198880,
+      "source_event_index": 483,
+      "start_ms": 3195680,
+      "text": "和贫民窟。在约翰逊传记里，"
+    },
+    {
+      "end_ms": 3202320,
+      "source_event_index": 484,
+      "start_ms": 3198880,
+      "text": "你写了边疆开拓时期丘陵乡村的样子。"
+    },
+    {
+      "end_ms": 3209600,
+      "source_event_index": 485,
+      "start_ms": 3204640,
+      "text": "有趣的是，即使约翰逊没有当上总统，"
+    },
+    {
+      "end_ms": 3216080,
+      "source_event_index": 486,
+      "start_ms": 3211440,
+      "text": "丘陵乡村发生的故事本身仍然很精彩。"
+    },
+    {
+      "end_ms": 3221840,
+      "source_event_index": 487,
+      "start_ms": 3216080,
+      "text": "这个想法有点奇怪，但我不禁想：你能不能花10到20年写"
+    },
+    {
+      "end_ms": 3228400,
+      "source_event_index": 488,
+      "start_ms": 3221840,
+      "text": "一个非常普通人的传记？约翰逊身上有很多事情，"
+    },
+    {
+      "end_ms": 3231600,
+      "source_event_index": 489,
+      "start_ms": 3228400,
+      "text": "即使他的事业没有走到后来那个地步，也依然会很吸引人。"
+    },
+    {
+      "end_ms": 3237280,
+      "source_event_index": 490,
+      "start_ms": 3232240,
+      "text": "比如你写的丘陵乡村是什么样。"
+    },
+    {
+      "end_ms": 3244880,
+      "source_event_index": 491,
+      "start_ms": 3238240,
+      "text": "我们看过那么多西部片。但当我开始了解"
+    },
+    {
+      "end_ms": 3255280,
+      "source_event_index": 492,
+      "start_ms": 3244880,
+      "text": "建立约翰逊城的人——林登·约翰逊的祖先，只比他早一代，"
+    },
+    {
+      "end_ms": 3263680,
+      "source_event_index": 493,
+      "start_ms": 3255280,
+      "text": "最多也就早两代——我会想：‘天啊，他们的生活太有意思了，’"
+    },
+    {
+      "end_ms": 3270480,
+      "source_event_index": 494,
+      "start_ms": 3263680,
+      "text": "那究竟是什么样？我真想写这本书：把"
+    },
+    {
+      "end_ms": 3279200,
+      "source_event_index": 495,
+      "start_ms": 3270480,
+      "text": "全家带到边疆定居是什么感觉？把他们迁到某种意义上算是印第安人领地的地方，"
+    },
+    {
+      "end_ms": 3290240,
+      "source_event_index": 496,
+      "start_ms": 3279200,
+      "text": "可能某天家人就遭到屠杀，还得面对种种其他困难。"
+    },
+    {
+      "end_ms": 3300960,
+      "source_event_index": 497,
+      "start_ms": 3291840,
+      "text": "这些内容都在我的笔记里，因为我和人们交谈时，他们会讲祖父的事，"
+    },
+    {
+      "end_ms": 3309840,
+      "source_event_index": 498,
+      "start_ms": 3300960,
+      "text": "或者祖父告诉他们的事情。我采访他们了解约翰逊时，"
+    },
+    {
+      "end_ms": 3320640,
+      "source_event_index": 499,
+      "start_ms": 3309840,
+      "text": "也就了解到那个时代的生活是什么样。我说：‘这真是一个了不起的故事。’"
+    },
+    {
+      "end_ms": 3325840,
+      "source_event_index": 500,
+      "start_ms": 3320640,
+      "text": "有人会说：‘关于这个已经有很多书了。’我倒觉得还不够多。"
+    },
+    {
+      "end_ms": 3332720,
+      "source_event_index": 501,
+      "start_ms": 3325840,
+      "text": "还有一件特别让人惊讶的事，那就是当时的美国跟现在截然不同。"
+    },
+    {
+      "end_ms": 3339280,
+      "source_event_index": 502,
+      "start_ms": 3332720,
+      "text": "想想约翰逊在约翰逊城长大，那是个偏僻又孤独的小镇，"
+    },
+    {
+      "end_ms": 3348400,
+      "source_event_index": 503,
+      "start_ms": 3339280,
+      "text": "而且他当时甚至住在距离镇子几十英里的牧场上；再看看60年代的美国。"
+    },
+    {
+      "end_ms": 3352480,
+      "source_event_index": 504,
+      "start_ms": 3348400,
+      "text": "那是截然不同的地方。我想知道，约翰逊是否曾经"
+    },
+    {
+      "end_ms": 3358800,
+      "source_event_index": 505,
+      "start_ms": 3352480,
+      "text": "对自己的成长环境和他所领导的国家之间的差异感到震惊。"
+    },
+    {
+      "end_ms": 3373840,
+      "source_event_index": 506,
+      "start_ms": 3359440,
+      "text": "答案是肯定的。他很清楚边疆生活，也知道祖父的土地是什么样。"
+    },
+    {
+      "end_ms": 3379360,
+      "source_event_index": 507,
+      "start_ms": 3373840,
+      "text": "他在约翰逊城长大时——住在约翰逊牧场的外围，"
+    },
+    {
+      "end_ms": 3387040,
+      "source_event_index": 508,
+      "start_ms": 3379360,
+      "text": "那地方毕竟在约翰逊城以外18英里——在那样的牧场上长大是什么感觉……"
+    },
+    {
+      "end_ms": 3396400,
+      "source_event_index": 509,
+      "start_ms": 3387040,
+      "text": "很多方面都截然不同，会以不同方式塑造一个人的性格。"
+    },
+    {
+      "end_ms": 3404080,
+      "source_event_index": 510,
+      "start_ms": 3396400,
+      "text": "孤独是个大问题。我写过一段，"
+    },
+    {
+      "end_ms": 3411440,
+      "source_event_index": 511,
+      "start_ms": 3404080,
+      "text": "后来不得不压缩到大约三页，讲他的母亲有多孤独。"
+    },
+    {
+      "end_ms": 3419280,
+      "source_event_index": 512,
+      "start_ms": 3411440,
+      "text": "人们在周围空无一人的地方开垦农场、牧场，日子是什么样。"
+    },
+    {
+      "end_ms": 3426400,
+      "source_event_index": 513,
+      "start_ms": 3419280,
+      "text": "我记得有句话说，她下午可以走出门，走上山丘，"
+    },
+    {
+      "end_ms": 3432720,
+      "source_event_index": 514,
+      "start_ms": 3426400,
+      "text": "放眼望去只有一座又一座山，附近连一栋房子都没有。"
+    },
+    {
+      "end_ms": 3443360,
+      "source_event_index": 515,
+      "start_ms": 3432720,
+      "text": "我自己也很震惊。我试着采访所有和林登·约翰逊"
+    },
+    {
+      "end_ms": 3453600,
+      "source_event_index": 516,
+      "start_ms": 3443360,
+      "text": "一起长大的人，所以他们都已年事很高。你打电话给一位老妇人，她会说："
+    },
+    {
+      "end_ms": 3465840,
+      "source_event_index": 517,
+      "start_ms": 3455840,
+      "text": "‘你从奥斯汀开出来22英里，往左看，会看到一个牲畜通行栅门。’"
+    },
+    {
+      "end_ms": 3470480,
+      "source_event_index": 518,
+      "start_ms": 3466720,
+      "text": "‘那儿有条土路，你在那儿左转，"
+    },
+    {
+      "end_ms": 3478000,
+      "source_event_index": 519,
+      "start_ms": 3470480,
+      "text": "再开22英里就是我们的农场。’你就会说：‘我开了22英里，"
+    },
+    {
+      "end_ms": 3482080,
+      "source_event_index": 520,
+      "start_ms": 3478000,
+      "text": "一路上没经过一栋房子，也没见到一个人。’"
+    },
+    {
+      "end_ms": 3490800,
+      "source_event_index": 521,
+      "start_ms": 3482080,
+      "text": "而这位女士一辈子都住在那里。尽管已经有那么多优秀的书写过"
+    },
+    {
+      "end_ms": 3501440,
+      "source_event_index": 522,
+      "start_ms": 3490800,
+      "text": "这段历史，我不确定美国是否理解这些人的英雄气概——先不说印第安人和劫掠者，"
+    },
+    {
+      "end_ms": 3509680,
+      "source_event_index": 523,
+      "start_ms": 3501440,
+      "text": "光是他们生活中的孤独就足够惊人。"
+    },
+    {
+      "end_ms": 3515360,
+      "source_event_index": 524,
+      "start_ms": 3509680,
+      "text": "我想以孤独作为结束的话题。显然，你不是住在"
+    },
+    {
+      "end_ms": 3518240,
+      "source_event_index": 525,
+      "start_ms": 3515360,
+      "text": "荒郊野外的牧场上，而是住在纽约市。"
+    },
+    {
+      "end_ms": 3528080,
+      "source_event_index": 526,
+      "start_ms": 3518240,
+      "text": "但你和艾娜这么多年来基本上一直一起埋头工作。"
+    },
+    {
+      "end_ms": 3535280,
+      "source_event_index": 527,
+      "start_ms": 3528080,
+      "text": "孤独对你的工作和生活产生了什么影响？"
+    },
+    {
+      "end_ms": 3544720,
+      "source_event_index": 528,
+      "start_ms": 3536320,
+      "text": "问得好。影响很大。让我想想怎么说。"
+    },
+    {
+      "end_ms": 3562000,
+      "source_event_index": 529,
+      "start_ms": 3549680,
+      "text": "我早上来到这里，就把电话关掉。"
+    },
+    {
+      "end_ms": 3572160,
+      "source_event_index": 530,
+      "start_ms": 3563840,
+      "text": "我一整天都不打算跟任何人说话。我是个友善的人。"
+    },
+    {
+      "end_ms": 3580640,
+      "source_event_index": 531,
+      "start_ms": 3575440,
+      "text": "实际上，有时候光是这件事就很难受。"
+    },
+    {
+      "end_ms": 3586800,
+      "source_event_index": 532,
+      "start_ms": 3580640,
+      "text": "你会想拿起电话跟人聊几句，但又会说："
+    },
+    {
+      "end_ms": 3591440,
+      "source_event_index": 533,
+      "start_ms": 3586800,
+      "text": "‘我在专心写书，不能这么做。那会"
+    },
+    {
+      "end_ms": 3600800,
+      "source_event_index": 534,
+      "start_ms": 3591440,
+      "text": "打断思路。’听起来好像特别假。"
+    },
+    {
+      "end_ms": 3610480,
+      "source_event_index": 535,
+      "start_ms": 3600800,
+      "text": "可你又会说：‘我真的不能这样。我在试着思考另一件事。’"
+    },
+    {
+      "end_ms": 3622080,
+      "source_event_index": 536,
+      "start_ms": 3610480,
+      "text": "我觉得这影响了我的整个生活。有些人理解，但有些人"
+    },
+    {
+      "end_ms": 3628080,
+      "source_event_index": 537,
+      "start_ms": 3622080,
+      "text": "不理解为什么我不回电话。有人打给我，我可能要到当天结束才"
+    },
+    {
+      "end_ms": 3634080,
+      "source_event_index": 538,
+      "start_ms": 3628080,
+      "text": "会回电话。我有些朋友能理解这一点，"
+    },
+    {
+      "end_ms": 3642880,
+      "source_event_index": 539,
+      "start_ms": 3634080,
+      "text": "但很多人不能理解。所以这就是我生活中的现实。"
+    },
+    {
+      "end_ms": 3647920,
+      "source_event_index": 540,
+      "start_ms": 3644320,
+      "text": "罗伯特·卡罗，我无法用言语表达这次采访让我有多荣幸。"
+    },
+    {
+      "end_ms": 3653840,
+      "source_event_index": 541,
+      "start_ms": 3647920,
+      "text": "做这个播客六年来，人们总会问我：‘你最想请来节目、"
+    },
+    {
+      "end_ms": 3659120,
+      "source_event_index": 542,
+      "start_ms": 3653840,
+      "text": "但还没能请到的人是谁？’每次我都回答罗伯特·卡罗。"
+    },
+    {
+      "end_ms": 3662000,
+      "source_event_index": 543,
+      "start_ms": 3659120,
+      "text": "所以我感到无比荣幸。非常感谢您愿意来。"
+    },
+    {
+      "end_ms": 3667200,
+      "source_event_index": 544,
+      "start_ms": 3662000,
+      "text": "这次采访太棒了。非常感谢。"
+    }
+  ],
+  "source_language": "en",
+  "source_payload_sha256": "021296ec3ffae3a525f31d6a0f19e49af4f43d05b0e0be792ad7441295dc7804",
+  "source_transcript_sha256": "c3bc019bd9be430036ec47b2014e67b93b8fac5265ad058c8cd10a0763e2f031",
+  "status": "machine"
+}

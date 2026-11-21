@@ -115,7 +115,7 @@ Windows/CUDA 使用官方模型：
 | `scripts/acquire_media.py` | 获取一个已通过播客边界核实的公开 Bilibili/YouTube 视频版单集或小宇宙单集音轨 | `.cache/media/.../source.m4a` 与来源 sidecar |
 | `scripts/import_bilibili_subtitles.py` | 从被 Git 忽略的登录态响应导入单个 Bilibili 中文 AI 字幕，并绑定公开免费来源身份 | tracked raw/refined 与中文逐段 Markdown |
 | `scripts/fetch_bilibili_subtitle_body.py` | 用隐藏终端输入的完整临时地址获取单个已授权 Bilibili 中文 AI 字幕；不读取 cookies、不枚举节目 | 校验后的 ignored 字幕 JSON 正文 |
-| `scripts/import_youtube_captions.py` | 导入单个公开 YouTube 发布者英文 `json3` 字幕及平台、本地或网页逐段中文机器译稿 | tracked raw/refined、中英逐段 Markdown；另行生成的译稿保存根目录翻译载荷 |
+| `scripts/import_youtube_captions.py` | 导入单个公开 YouTube 发布者英文 `json3` 字幕及 Luna 子代理逐段中文译稿，支持导入既有平台、本地或网页译稿 | tracked raw/refined、中英逐段 Markdown、根目录翻译载荷（适用于另行生成的译稿） |
 | `scripts/transcribe_qwen3_asr.py` | 使用 Qwen3-ASR 转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/transcribe_qwen3_asr_cuda.py` | 在 Windows/NVIDIA CUDA 上使用官方 Qwen 模型转写并强制对齐 | `raw.json`、`aligned.json` |
 | `scripts/render_asr_transcript.py` | 清理对齐结果并渲染逐字稿 | `refined.json`、`transcript.<language>.md` |
@@ -162,7 +162,7 @@ uv run --no-sync python scripts/import_youtube_captions.py \
 ```
 
 缓存译稿载荷的字段与完成检查见[处理流程第 8 节](./episode-processing.md#8-英文正式稿生成逐行中文译稿)。
-本地模型记录固定版本；网页服务如未公开模型版本，必须明确记录这一限制。
+新译稿交给 Luna 子代理逐段生成，记录模型标识及版本可见性。既有本地模型译稿保留固定版本。
 三个缓存输入必须一起提供。平台原始译轨使用 `--translation-json3`，不能与缓存译稿
 参数同时使用。替换已存在的不完整中文稿时额外加 `--replace-translation`；该模式保留
 raw 与英文 Markdown 的原始字节，拒绝同时使用 `--overwrite`。
