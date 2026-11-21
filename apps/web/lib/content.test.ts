@@ -926,12 +926,13 @@ workflow:`,
       .toBe("OpenAI");
   });
 
-  it("returns summary and timestamped transcript search results", async () => {
+  // The first search builds the index from the entire growing episode catalog.
+  it("returns summary and timestamped transcript search results", { timeout: 15_000 }, async () => {
     const results = await searchContent("第一性原理");
     expect(results.some((result) => result.section === "总结")).toBe(true);
     expect(results.some((result) => result.section === "逐字稿" && result.timestamp)).toBe(true);
 
-    const episodes = await getEpisodes();
+    const episodes = await getEpisodeCards();
     for (const result of results) {
       const episode = episodes.find((candidate) => result.id.startsWith(`${candidate.id}:`));
       expect(episode).toBeDefined();
